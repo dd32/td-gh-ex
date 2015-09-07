@@ -10,7 +10,8 @@
  * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-// Ladies, Gentalmen, boys and girls let's start our engine
+/* Ladies and Gentleman, boys and girls let's start our engine */
+
 add_action('after_setup_theme', 'anarcho_notepad_setup');
 
 function anarcho_notepad_setup() {
@@ -59,13 +60,13 @@ function anarcho_notepad_setup() {
         add_editor_style();
     }
 
-// Add Theme Information Page.
+/* Add Theme Information Page */
 require get_template_directory() . '/inc/theme_info.php';
 
-// Add Theme Customizer functionality.
+/* Add Theme Customizer functionality */
 require get_template_directory() . '/inc/customizer.php';
 
-// Add IE conditional HTML5 shim to header
+/* Add IE conditional HTML5 shim to header */
 function anarcho_add_ie_html5_shim () {
      global $is_IE;
      if ($is_IE)
@@ -75,7 +76,7 @@ function anarcho_add_ie_html5_shim () {
 }
 add_action('wp_head', 'anarcho_add_ie_html5_shim');
 
-// This feature enables widgets area in the sidebar.
+/* This feature enables widgets area in the sidebar */
 function anarcho_widgets_init() {
 	register_sidebar(array(
 			'name' => __('Sidebar Area 1', 'anarcho-notepad'),
@@ -116,7 +117,7 @@ function anarcho_widgets_init() {
 }
 add_action( 'widgets_init', 'anarcho_widgets_init' );
 
-// This feature enables widgets area in the footer.
+/* This feature enables widgets area in the footer */
 function anarcho_widgets_footer_init() {
 	register_sidebar(array(
 			'name' => __('Footer Area 1', 'anarcho-notepad'),
@@ -148,7 +149,7 @@ function anarcho_widgets_footer_init() {
 }
 add_action( 'widgets_init', 'anarcho_widgets_footer_init' );
 
-// Adds a custom default avatar
+/* Adds a custom default avatar */
 function anarcho_avatar( $avatar_defaults ) {
 	$myavatar = get_stylesheet_directory_uri() . '/images/anarchy-symbol.png';
 	$avatar_defaults[$myavatar] = 'Anarcho symbol';
@@ -156,27 +157,27 @@ function anarcho_avatar( $avatar_defaults ) {
 }
 add_filter( 'avatar_defaults', 'anarcho_avatar' );
 
-// Include Font-Awesome styles
+/* Include Font-Awesome styles */
 function anarcho_include_font_awesome_styles() {
     wp_register_style( 'font_awesome_styles', get_template_directory_uri() . '/fonts/font-awesome-4.0.0/font-awesome.min.css', 'screen' );
     wp_enqueue_style( 'font_awesome_styles' );
 }
 add_action( 'wp_enqueue_scripts', 'anarcho_include_font_awesome_styles' );
 
-// Enable smoothscroll.js
+/* Enable smoothscroll.js */
 function anarcho_include_smoothscroll_script() {
 	wp_enqueue_script( 'back-top', get_template_directory_uri() . '/js/smoothscroll.js', array( 'jquery' ), '',  true );
 }
 add_action( 'wp_enqueue_scripts', 'anarcho_include_smoothscroll_script' );
 
-// Display block "About the Author".
+/* Display block "About the Author" */
 function anarcho_author_bio() {
     if(get_theme_mod('disable_about_bio') !== '1') {
 	if ( ( get_the_author_meta( 'description' ) != '' ) ) echo esc_html(get_template_part( 'author-bio' ));
     }
 }
 
-// Red data ribbons.
+/* Red data ribbons */
 function anarcho_ribbons() {
     if(get_theme_mod('disable_ribbons') !== '1') {
       if(get_theme_mod('enable_year_ribbons') !== '1') {
@@ -212,9 +213,8 @@ function anarcho_ribbons() {
       }
     }
 }
-// END-Red Data Ribbons
 
-// Enable Breadcrumbs
+/* Enable Breadcrumbs */
 function anarcho_breadcrumbs() {
  if(get_theme_mod('enable_breadcrumbs') == '1') {
 	$delimiter = '&raquo;';
@@ -298,10 +298,11 @@ function anarcho_breadcrumbs() {
 	echo '</nav>';
  }
 }
-// END-Breadcrumbs
 
-// Page Navigation
-/* Display navigation to next/previous set of posts when applicable. */
+/*
+ * Page Navigation
+ * Display navigation to next/previous set of posts when applicable
+ */
 function anarcho_page_nav() {
  if(get_theme_mod('enable_page-nav') == '1') {
   global $wp_query, $wp_rewrite;
@@ -345,10 +346,11 @@ function anarcho_page_nav() {
 	<?php
  }
 }
-// END-Page Navigation
 
-// Post navigation
-/* Display navigation to next/previous post when applicable. */
+/*
+ * Post navigation
+ * Display navigation to next/previous post when applicable
+ */
 function anarcho_post_nav() {
 	global $post;
 
@@ -370,18 +372,18 @@ function anarcho_post_nav() {
 	</nav><!-- .navigation -->
 	<?php
 }
-// END-Post navigation
 
-// Comments
-// Enable comment_reply
+/*
+ * Comments
+ * Enable comment_reply
+ */
 function anarcho_include_comment_reply() {
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 }
 add_action( 'wp_enqueue_scripts', 'anarcho_include_comment_reply' );
 
-/**
+/*
  * Template for comments and pingbacks.
- *
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
 function anarcho_comment( $comment, $args, $depth ) {
@@ -434,10 +436,11 @@ function anarcho_comment( $comment, $args, $depth ) {
 		break;
 	endswitch; // end comment_type check
 }
-// END-Comments
 
-// Creates a nicely formatted and more specific title element text
-// for output in head of document, based on current view.
+/*
+ * Creates a nicely formatted and more specific title element text
+ * for output in head of document, based on current view
+ */
 function anarcho_wp_title( $title, $sep ) {
 	global $paged, $page;
 
@@ -460,18 +463,23 @@ function anarcho_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'anarcho_wp_title', 10, 2 );
 
-// Copyright
-/* Enable info about copyright. */
+/*
+ * Copyright
+ * Enable info about copyright
+ */
 function anarcho_copyright() {
  if(get_theme_mod('disable_anarcho_copy') !== '1') {
-	echo '<a href="http://mycyberuniverse.com/author.html">Theme "Anarcho Notepad" designed and engineered by Arthur "Berserkr" Gareginyan.</a><br/>';
+     $anarcho_copy_uri = "http://mycyberuniverse.com/author.html";
+     $anarcho_copy_text = 'Theme "Anarcho Notepad" designed and engineered by Arthur "Berserkr" Gareginyan.';
+     echo '<a title="Theme author" target="_blank" href=' . $anarcho_copy_uri . '>' . $anarcho_copy_text . '</a><br/>';
  }
 }
 add_action ('wp_footer','anarcho_copyright', 999);
-// END-Copyright
 
-// Queries
-/* Display info about a database queries. */
+/*
+ * Queries
+ * Display info about a database queries
+ */
 function anarcho_mysql_queries() {
  if(get_theme_mod('show_info_line') == '1') {
  	echo "\n";
@@ -486,20 +494,22 @@ function anarcho_mysql_queries() {
  }
 }
 add_action ('wp_footer','anarcho_mysql_queries', 999);
-// END-Queries
 
-// Top Button
-/* Enable Top Button. */
+/*
+ * Top Button
+ * Enable Top Button
+ */
 function anarcho_top_button() {
  if(get_theme_mod('disable_top_button') !== '1') {
 	echo '<a id="back-top" href="#top"><i class="fa fa-arrow-up fa-lg"></i></a>';
  }
 }
 add_action ('wp_footer','anarcho_top_button', 999);
-// END-Top Button
 
-// No Content
-/* The Message if no content */
+/*
+ * No Content
+ * The Message if no content
+ */
 function anarcho_not_found() {
 	?>
 		<div class="no-results">
@@ -508,10 +518,11 @@ function anarcho_not_found() {
 		</div>
 	<?php
 }
-// END-Not Found
 
-// Entry Meta
-/* Display Entry Meta */
+/*
+ * Entry Meta
+ * Display Entry Meta
+ */
 function anarcho_entry_meta() {
 	?>
            <div class="meta">
@@ -536,6 +547,5 @@ function anarcho_entry_meta() {
            </div>
 	<?php
 }
-// END-Entry Meta
 
 ?>

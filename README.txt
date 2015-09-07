@@ -14,7 +14,7 @@
 
 == About Anarcho Notepad ==
 
-	Inspired by the idea of anarchy, I designed this theme for your personal blogs and diaries. This theme is perfect for writers and artists. "Anarcho Notepad" can be easily customised and already translated to different languages. It utilises latest HTML-5, CSS-3, PHP and WordPress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalise it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it. I'm glad to present you the Most Anarchist WP-Theme Of All! Enjoy!
+	Inspired by the idea of anarchy, I designed this free premium WordPress theme for your personal blogs and diaries. This theme is perfect for writers and artists. "Anarcho Notepad" can be easily customised and already translated to different languages. It utilises latest HTML-5, CSS-3, PHP and WordPress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalise it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it. I'm glad to present you the Most Anarchist WP-Theme Of All! Enjoy!
 
 == Copyrights for Resources used in this theme.
 
@@ -37,13 +37,13 @@ Everything else used in this theme has been created by me, especially for "Anarc
 		2. Upload the Anarcho Notepad files to the new directory on your host server.
 		3. Follow the instructions below for selecting the Anarcho Notepad.
 
-	To select Anarcho Notepad for your site:
+	To select Anarcho Notepad for your website:
 		1. Log in to the WordPress Administration Panel.
 		2. Select the Appearance panel, then Themes.
 		3. From the Available Themes section, click on the Theme title (or Theme screenshot) for Anarcho Notepad to activate.
 		4. A preview of the Theme will be shown.
 		5. To activate the Theme click the Activate "Anarcho Notepad" link in the top right.
-		6. Then you need to go to the Appearance > Customize for further customisation of your theme.
+		6. Then you need to go to the Appearance —> Customize for further customisation of your theme.
 
 	Your selection should immediately become active.
 
@@ -51,9 +51,9 @@ Everything else used in this theme has been created by me, especially for "Anarc
 
 == Customizing Anarcho Notepad ==
 
-	To customise Anarcho Notepad using the built in options, Anarcho Notepad Should already be active:
+	To customise Anarcho Notepad using the built in options, Anarcho Notepad should already be active:
 		1. Log in to the WordPress Administration Panel.
-		2. Select the Appearance panel, then Theme Options.
+		2. Select the Appearance panel, then Customize.
 		3. A page explaining the options will be displayed.
 		4. Click save to finalise your selections.
 
@@ -67,20 +67,20 @@ Everything else used in this theme has been created by me, especially for "Anarc
 
     2.1   (2013.10.22) - added : russian translation.
                          added : (css) rtl styles for hebrew or arabic.
-                         added : (css) comment navigation styling, similar to post navigation
-                         added : (php) (css) author box styling (if bio field not empty)
+                         added : (css) comment navigation styling, similar to post navigation.
+                         added : (php) (css) author box styling (if bio field not empty).
                          added : (js) smooth transition for "back to top" link.
-                         added : (css) font-icons to title of archive, search, 404
+                         added : (css) font-icons to title of archive, search, 404.
                          fixed : many more minor fixes and changes.
-    2.1.1 (2013.10.30) - Minor additions and fixes
-    2.1.2 (2013.11.01) - Minor additions and fixes
-    2.1.3 (2013.11.18) - Minor additions and fixes
-    2.1.4 (2013.11.22) - Minor additions and fixes
-    2.1.5 (2013.12.2)  - Minor additions and fixes
-    2.1.6 (2013.12.13) - Minor additions and fixes
-    2.1.7 (2013.12.19) - Minor additions and fixes
-    2.2   (2014.1.5)   - added : more widget areas
-    2.3   (2014.1.9)   - added : support for php versions below 5.3
+    2.1.1 (2013.10.30) - minor additions and fixes.
+    2.1.2 (2013.11.01) - minor additions and fixes.
+    2.1.3 (2013.11.18) - minor additions and fixes.
+    2.1.4 (2013.11.22) - minor additions and fixes.
+    2.1.5 (2013.12.2)  - minor additions and fixes.
+    2.1.6 (2013.12.13) - minor additions and fixes.
+    2.1.7 (2013.12.19) - minor additions and fixes.
+    2.2   (2014.1.5)   - added : more widget areas.
+    2.3   (2014.1.9)   - added : support for php versions below 5.3.
                          fixed : many more minor fixes and changes. 
     2.4   (2014.1.19)  - added : a lot more options for customisation.
                          added : ability to turn off unnecessary elements.
@@ -89,14 +89,14 @@ Everything else used in this theme has been created by me, especially for "Anarc
                          fixed : the method of output of the title of the posts.
                          fixed : stretch of the background images.
                          fixed : many more minor fixes and changes.
-    2.4.1 (2014.1.22)  - Minor additions and fixes
+    2.4.1 (2014.1.22)  - minor additions and fixes.
     2.5   (2014.1.27)  - added : the ability to change the font of entries.
                          fixed : many more minor fixes and changes.
-    2.5.1 (2014.2.1)   - Minor additions and fixes
-    2.5.2 (2014.2.1)   - Minor additions and fixes
+    2.5.1 (2014.2.1)   - minor additions and fixes.
+    2.5.2 (2014.2.1)   - minor additions and fixes.
     2.6   (2014.2.17)  - added : the ability to change the font size of entries.
                          fixed : many more minor fixes and changes.
-    2.7   (2014.2.23)  - Minor additions and fixes
+    2.7   (2014.2.23)  - minor additions and fixes.
     2.8   (2014.3.23)  - fixed : rtl styles.
     2.9   (2014.3.29)  - translation : afrikaans.
     2.10  (2014.4.3)   - translation : ukraine.
@@ -120,7 +120,7 @@ Everything else used in this theme has been created by me, especially for "Anarc
     2.19   (2014.9.25) - translation : spanish.
                          fixed : many more minor fixes and changes.
     2.20   (2014.9.30) - translation : polish.
-                         added : rss-feed icon by specificfeeds.
+                         added : rss-feed icon by specificfeeds.com.
                          fixed : many more minor fixes and changes.
     2.21  (2014.10.16) - translation : german.
                          fixed : google fonts on https websites.
@@ -135,6 +135,9 @@ Everything else used in this theme has been created by me, especially for "Anarc
     2.24  (2015.08.26) - translation : catalan.
                          fixed : some options in the customizer was not worked.
                          fixed : many more minor fixes and changes.
+    2.25  (2015.09.07) - translation : danish.
+                         added: new screenshot 1200x900px.
+                         minor additions and fixes.
 
 
 == Contact & Issues for Anarcho Notepad ==

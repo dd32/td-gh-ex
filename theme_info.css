@@ -2,7 +2,7 @@
  * Styles for theme info page.
  *
  * @package	Anarcho Notepad
- * @since	2.15
+ * @since	2.25
  * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright © 2013-2015, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -56,7 +56,7 @@
 	text-decoration: none;
 	font-weight: bold; }
 .cover a:hover {
-	color: #FFF;
+	color: #000;
 	text-decoration: none;
 	font-weight: bold; }
 .cover a img { border:none; }
@@ -100,6 +100,8 @@
 #page .content ul {
 	list-style: inherit;
 	padding: 0 0 0 40px; }
+#page .content ul li {
+    margin-bottom: 0px; }
 
 #page .welcome {
 	font-size: 90%;

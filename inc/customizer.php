@@ -11,12 +11,10 @@
  */
 
 
-/**
- * Implement Theme Customizer additions and adjustments.
- */
+/* Implement Theme Customizer additions and adjustments */
 function anarcho_customize_register( $wp_customize ) {
 
-//class Anarcho_Customize_Textarea_Control
+/* Class Anarcho_Customize_Textarea_Control */
 class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 		public $type = 'textarea';
 		public function render_content() { ?>
@@ -29,53 +27,53 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
    // META SECTION
    $wp_customize->add_section( 'meta_section', array(
-	'title'				=> __( 'Meta', 'anarcho-notepad' ),
-	'priority'			=> 1,
+		'title'				=> __( 'Meta', 'anarcho-notepad' ),
+		'priority'			=> 1,
    ));
 
 		// About box in sidebar
 		$wp_customize->add_setting( 'about_box', array(
-			'default'			=> __( 'Paste here small text about You and/or about site', 'anarcho-notepad' ),
-			'sanitize_callback'		=> 'esc_attr',
+				'default'			=> __( 'Paste here small text about You and/or about site', 'anarcho-notepad' ),
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'about_box', array(
-			'priority'			=> 1,
-		        'label'				=> __( 'About box - "What is this place?"', 'anarcho-notepad' ),
-		        'section'			=> 'meta_section',
-			'settings'			=> 'about_box',
+				'priority'			=> 1,
+				'label'				=> __( 'About box - "What is this place?"', 'anarcho-notepad' ),
+				'section'			=> 'meta_section',
+				'settings'			=> 'about_box',
 		)));
 
 		// Copyright after post
 		$wp_customize->add_setting( 'copyright_post', array(
-			'default'			=> 'Copyright 2015. All rights reserved.',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'			=> 'Copyright 2015. All rights reserved.',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'copyright_post', array(
-			'priority'			=> 2,
-			'label'				=> __( 'Copyright after post', 'anarcho-notepad' ),
-			'section'			=> 'meta_section',
-			'settings'			=> 'copyright_post',
+				'priority'			=> 2,
+				'label'				=> __( 'Copyright after post', 'anarcho-notepad' ),
+				'section'			=> 'meta_section',
+				'settings'			=> 'copyright_post',
 		)));
 
 		// Site-info in footer
 		$wp_customize->add_setting( 'site-info', array(
-			'default'			=> 'Copyright 2015. All rights reserved.',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'			=> 'Copyright 2015. All rights reserved.',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'site-info', array(
-			'priority'			=> 3,
-		        'label'				=> __( 'Site-info in footer', 'anarcho-notepad' ),
-		        'section'			=> 'meta_section',
-			'settings'			=> 'site-info',
+				'priority'			=> 3,
+				'label'				=> __( 'Site-info in footer', 'anarcho-notepad' ),
+				'section'			=> 'meta_section',
+				'settings'			=> 'site-info',
 		)));
 
 		// Disable copyright of the author of theme in footer
 		$wp_customize->add_setting('disable_anarcho_copy', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'disable_anarcho_copy', array(
-			'priority'			=> 4,
+				'priority'			=> 4,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable copyright of the author of theme in footer', 'anarcho-notepad' ),
 		        'section'			=> 'meta_section',
@@ -84,17 +82,17 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
    // STUFF SECTION
    $wp_customize->add_section( 'stuff_section', array(
-	'title'				=> __( 'Stuff', 'anarcho-notepad' ),
-	'priority'			=> 2,
+		'title'				=> __( 'Stuff', 'anarcho-notepad' ),
+		'priority'			=> 2,
    ));
 
 		// Enable Title Animation
 		$wp_customize->add_setting('enable_title_animation', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'enable_title_animation', array(
-			'priority'			=> 1,
+				'priority'			=> 1,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Enable "Title animation"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -102,11 +100,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Disable "Paper Search"
 		$wp_customize->add_setting('disable_paper_search', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'disable_paper_search', array(
-			'priority'			=> 2,
+				'priority'			=> 2,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable "Paper Search"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -114,11 +112,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Disable box "What is this place"
 		$wp_customize->add_setting('disable_about_box', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'disable_about_box', array(
-			'priority'			=> 3,
+				'priority'			=> 3,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable box "What is this place?"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -126,11 +124,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Disable box "Friends & Links"
 		$wp_customize->add_setting('disable_links_box', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'disable_links_box', array(
-			'priority'			=> 4,
+				'priority'			=> 4,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable box "Friends & Links"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -138,11 +136,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Enable Year in Red Data Ribbons
 		$wp_customize->add_setting('enable_year_ribbons', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'enable_year_ribbons', array(
-			'priority'			=> 5,
+				'priority'			=> 5,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Enable Year in "Red Data Ribbons"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -150,11 +148,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Disable Red Data Ribbons
 		$wp_customize->add_setting('disable_ribbons', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'disable_ribbons', array(
-			'priority'			=> 6,
+				'priority'			=> 6,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable "Red Data Ribbons"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -162,11 +160,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Disable Recent Posts Sticker
 		$wp_customize->add_setting('disable_recent_sticker', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'disable_recent_sticker', array(
-			'priority'			=> 7,
+				'priority'			=> 7,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable "Recent Posts Sticker"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -174,11 +172,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Enable "Breadcrumbs"
 		$wp_customize->add_setting('enable_breadcrumbs', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'enable_breadcrumbs', array(
-			'priority'			=> 8,
+				'priority'			=> 8,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Enable "Breadcrumbs"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -186,11 +184,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Enable "Page Navigation"
 		$wp_customize->add_setting('enable_page-nav', array(
-			'default'        		=> '1',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '1',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'enable_page-nav', array(
-			'priority'			=> 9,
+				'priority'			=> 9,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Enable "Page Navigation"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -198,11 +196,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Disable "About the Author"
 		$wp_customize->add_setting('disable_about_bio', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'disable_about_bio', array(
-			'priority'			=> 10,
+				'priority'			=> 10,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable block "About the Author"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -210,11 +208,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Disable button "To Top"
 		$wp_customize->add_setting('disable_top_button', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'disable_top_button', array(
-			'priority'			=> 11,
+				'priority'			=> 11,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable button "To Top"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -222,11 +220,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Show info line in footer
 		$wp_customize->add_setting('show_info_line', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'show_info_line', array(
-			'priority'			=> 12,
+				'priority'			=> 12,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Show info line in footer', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -234,11 +232,11 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Disable RSS icon in sidebar
 		$wp_customize->add_setting('disable_rss_icon', array(
-			'default'        		=> '0',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'           => '0',
+				'sanitize_callback' => 'esc_attr',
 		));
 		$wp_customize->add_control( 'disable_rss_icon', array(
-			'priority'			=> 13,
+				'priority'			=> 13,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable RSS icon in sidebar', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section',
@@ -246,129 +244,129 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Create an Array for number of recent post
 		$num_recent_post_array = array(
-			'2' => '3',
-			'3' => '4',
-			'4' => '5',
-			'5' => '6',
-			'6' => '7',
-			'7' => '8',
-			'8' => '9',
-			'9' => '10'
+				'2' => '3',
+				'3' => '4',
+				'4' => '5',
+				'5' => '6',
+				'6' => '7',
+				'7' => '8',
+				'8' => '9',
+				'9' => '10'
 		);
 		// Enable number of recent post
 		$wp_customize->add_setting( 'num_recent_post', array(
-			'default'	           	=> '6',
-			'control'           		=> 'select',
-			'sanitize_callback'		=> 'esc_attr',
+				'default'	           	=> '6',
+				'control'               => 'select',
+				'sanitize_callback'		=> 'esc_attr',
 		));
 		$wp_customize->add_control( 'num_recent_post', array(
-			'label'					=> __('Numbers of recent posts in sidebar', 'anarcho-notepad'),
-			'priority'				=> 14,
-			'section'				=> 'stuff_section',
-			'settings'				=> 'num_recent_post',
-			'type'					=> 'select',
-			'choices'				=> $num_recent_post_array,
+				'label'					=> __('Numbers of recent posts in sidebar', 'anarcho-notepad'),
+				'priority'				=> 14,
+				'section'				=> 'stuff_section',
+				'settings'				=> 'num_recent_post',
+				'type'					=> 'select',
+				'choices'				=> $num_recent_post_array,
 		));
 
-   // SCRIPTS SECTION
-   $wp_customize->add_section( 'scripts_section', array(
-	'title'				=> __( 'Scripts', 'anarcho-notepad' ),
-	'description'			=> __( 'Put here your scripts', 'anarcho-notepad' ),
-	'priority'			=> 3,
-   ));
+    // SCRIPTS SECTION
+    $wp_customize->add_section( 'scripts_section', array(
+		'title'				=> __( 'Scripts', 'anarcho-notepad' ),
+		'description'       => __( 'Put here your scripts', 'anarcho-notepad' ),
+		'priority'			=> 3,
+    ));
 
 		// Scripts before posts
-                $wp_customize->add_setting( 'scripts_before_posts', array(
-			'Default'           		=> '',
-			'sanitize_callback'		=> 'esc_attr',
+		$wp_customize->add_setting( 'scripts_before_posts', array(
+				'Default'               => '',
+				'sanitize_callback'     => 'esc_attr',
 		));
-                $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_before_posts', array(
-			'priority'			=> 2,
-                        'label'                         => __( 'Scripts before posts', 'anarcho-notepad' ),
-                        'section'                       => 'scripts_section',
-                        'settings'                      => 'scripts_before_posts',
+		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_before_posts', array(
+				'priority'              => 2,
+				'label'                 => __( 'Scripts before posts', 'anarcho-notepad' ),
+				'section'               => 'scripts_section',
+				'settings'              => 'scripts_before_posts',
 		)));
 
 		// Scripts at the beginning of the posts
-                $wp_customize->add_setting( 'scripts_beginning_posts', array(
-			'Default'           		=> '',
-			'sanitize_callback'		=> 'esc_attr',
+		$wp_customize->add_setting( 'scripts_beginning_posts', array(
+				'Default'               => '',
+				'sanitize_callback'     => 'esc_attr',
 		));
-                $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_beginning_posts', array(
-			'priority'			=> 3,
-                        'label'                         => __( 'Scripts at the beginning of the posts', 'anarcho-notepad' ),
-                        'section'                       => 'scripts_section',
-                        'settings'                      => 'scripts_beginning_posts',
+		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_beginning_posts', array(
+				'priority'              => 3,
+				'label'                 => __( 'Scripts at the beginning of the posts', 'anarcho-notepad' ),
+				'section'               => 'scripts_section',
+				'settings'              => 'scripts_beginning_posts',
 		)));
 
 		// Scripts at the end of the posts
-                $wp_customize->add_setting( 'scripts_end_posts', array(
-			'Default'           		=> '',
-			'sanitize_callback'		=> 'esc_attr',
+		$wp_customize->add_setting( 'scripts_end_posts', array(
+				'Default'               => '',
+				'sanitize_callback'     => 'esc_attr',
 		));
-                $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_end_posts', array(
-			'priority'			=> 4,
-                        'label'                         => __( 'Scripts at the end of the posts', 'anarcho-notepad' ),
-                        'section'                       => 'scripts_section',
-                        'settings'                      => 'scripts_end_posts',
+		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_end_posts', array(
+				'priority'              => 4,
+				'label'                 => __( 'Scripts at the end of the posts', 'anarcho-notepad' ),
+				'section'               => 'scripts_section',
+				'settings'              => 'scripts_end_posts',
 		)));
 
 		// Scripts after posts
-                $wp_customize->add_setting( 'scripts_after_posts', array(
-			'Default'           		=> '',
-			'sanitize_callback'		=> 'esc_attr',
+		$wp_customize->add_setting( 'scripts_after_posts', array(
+				'Default'           	=> '',
+				'sanitize_callback'		=> 'esc_attr',
 		));
-                $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_after_posts', array(
-			'priority'			=> 5,
-                        'label'                         => __( 'Scripts after posts', 'anarcho-notepad' ),
-                        'section'                       => 'scripts_section',
-                        'settings'                      => 'scripts_after_posts',
+		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_after_posts', array(
+				'priority'              => 5,
+				'label'                 => __( 'Scripts after posts', 'anarcho-notepad' ),
+				'section'               => 'scripts_section',
+				'settings'              => 'scripts_after_posts',
 		)));
 
-   // POST SECTION
-   $wp_customize->add_section( 'post_section', array(
-	'title'				=> __( 'Post', 'anarcho-notepad' ),
-	'priority'			=> 10,
-   ));
+    // POST SECTION
+    $wp_customize->add_section( 'post_section', array(
+		'title'                         => __( 'Post', 'anarcho-notepad' ),
+		'priority'                      => 10,
+    ));
 
-	// Create an Array for font size
-	$font_size_array = array(
-		'Default'       => 'Default',
-		'80%'           => '80%',
-		'90%'           => '90%',
-		'100%'          => '100%',
-		'110%'          => '110%',
-		'120%'          => '120%',
-		'130%'          => '130%',
-		'140%'          => '140%',
-		'150%'          => '150%'
-	);
+		// Create an Array for font size
+		$font_size_array = array(
+				'Default'               => 'Default',
+				'80%'                   => '80%',
+				'90%'                   => '90%',
+				'100%'                  => '100%',
+				'110%'                  => '110%',
+				'120%'                  => '120%',
+				'130%'                  => '130%',
+				'140%'                  => '140%',
+				'150%'                  => '150%'
+		);
 
-	// Enable font size for posts
-	$wp_customize->add_setting( 'post_font_size', array(
-		'Default'           		=> 'Default',
-		'control'           		=> 'select',
-		'sanitize_callback'		=> 'esc_attr',
-	));
-	$wp_customize->add_control( 'post_font_size', array(
-		'label'					=> __('Font size of posts', 'anarcho-notepad'),
-		'priority'				=> 1,
-		'section'				=> 'post_section',
-		'settings'				=> 'post_font_size',
-		'type'					=> 'select',
-		'choices'				=> $font_size_array,
-	));
+		// Enable font size for posts
+		$wp_customize->add_setting( 'post_font_size', array(
+				'Default'           => 'Default',
+				'control'           => 'select',
+				'sanitize_callback' => 'esc_attr',
+		));
+		$wp_customize->add_control( 'post_font_size', array(
+				'label'             => __('Font size of posts', 'anarcho-notepad'),
+				'priority'          => 1,
+				'section'           => 'post_section',
+				'settings'          => 'post_font_size',
+				'type'              => 'select',
+				'choices'           => $font_size_array,
+		));
 
-	// Create an Array with a ton of Google Fonts
-	$google_font_array = array(
+		// Create an Array with a ton of Google Fonts
+		$google_font_array = array(
 			'Default'				=> 'Default',
 			'Questrial'				=> 'Questrial',
 			'Astloch'				=> 'Astloch',
-			'IM+Fell+English+SC'			=> 'IM+Fell+English+SC',
+			'IM+Fell+English+SC'    => 'IM+Fell+English+SC',
 			'Lekton'				=> 'Lekton',
-			'Nova+Round'				=> 'Nova+Round',
+			'Nova+Round'            => 'Nova+Round',
 			'Nova+Oval'				=> 'Nova+Oval',
-			'League+Script'				=> 'League+Script',
+			'League+Script'         => 'League+Script',
 			'Caudex'				=> 'Caudex',
 			'IM+Fell+DW+Pica'			=> 'IM+Fell+DW+Pica',
 			'Nova+Script'				=> 'Nova+Script',
@@ -624,169 +622,169 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 			'Gruppo'				=> 'Gruppo',
 			'Cuprum'				=> 'Cuprum',
 			'Anonymous+Pro'				=> 'Anonymous+Pro',
-			'UnifrakturMaguntia'			=> 'UnifrakturMaguntia',
-			'Covered+By+Your+Grace' 		=> 'Covered+By+Your+Grace',
+			'UnifrakturMaguntia'        => 'UnifrakturMaguntia',
+			'Covered+By+Your+Grace'     => 'Covered+By+Your+Grace',
 			'Homemade+Apple'			=> 'Homemade+Apple',
 			'Lobster+Two'				=> 'Lobster+Two',
 			'Coming+Soon'				=> 'Coming+Soon',
-			'Mountains+of+Christmas'		=> 'Mountains+of+Christmas',
-			'Architects+Daughter'			=> 'Architects+Daughter',
-			'Dawning+of+a+New+Day'			=> 'Dawning+of+a+New+Day',
-			'Kranky'				=> 'Kranky',
-			'Adamina'				=> 'Adamina',
+			'Mountains+of+Christmas'    => 'Mountains+of+Christmas',
+			'Architects+Daughter'       => 'Architects+Daughter',
+			'Dawning+of+a+New+Day'      => 'Dawning+of+a+New+Day',
+			'Kranky'                    => 'Kranky',
+			'Adamina'                   => 'Adamina',
 			'Carter+One'				=> 'Carter+One',
-			'Bentham'				=> 'Bentham',
-			'IM+Fell+Great+Primer+SC' 		=> 'IM+Fell+Great+Primer+SC',
-			'Chewy'					=> 'Chewy',
+			'Bentham'                   => 'Bentham',
+			'IM+Fell+Great+Primer+SC'   => 'IM+Fell+Great+Primer+SC',
+			'Chewy'                     => 'Chewy',
 			'IM+Fell+English'			=> 'IM+Fell+English',
 			'Inconsolata'				=> 'Inconsolata',
-			'Vibur'					=> 'Vibur',
-			'Andada'				=> 'Andada',
-			'IM+Fell+Double+Pica'			=> 'IM+Fell+Double+Pica',
-			'Kenia'					=> 'Kenia',
-			'Meddon'				=> 'Meddon',
-			'Metrophobic'				=> 'Metrophobic',
-			'Play'					=> 'Play',
+			'Vibur'                     => 'Vibur',
+			'Andada'                    => 'Andada',
+			'IM+Fell+Double+Pica'       => 'IM+Fell+Double+Pica',
+			'Kenia'                     => 'Kenia',
+			'Meddon'                    => 'Meddon',
+			'Metrophobic'               => 'Metrophobic',
+			'Play'                      => 'Play',
 			'Special+Elite'				=> 'Special+Elite',
-			'IM+Fell+Double+Pica+SC' 		=> 'IM+Fell+Double+Pica+SC',
+			'IM+Fell+Double+Pica+SC'    => 'IM+Fell+Double+Pica+SC',
 			'Didact+Gothic'				=> 'Didact+Gothic',
 			'Modern+Antiqua'			=> 'Modern+Antiqua',
-			'VT323'					=> 'VT323',
-			'Annie+Use+Your+Telescope' 		=> 'Annie+Use+Your+Telescope');
+			'VT323'                     => 'VT323',
+			'Annie+Use+Your+Telescope'  => 'Annie+Use+Your+Telescope');
 
-	// Enable Google Fonts for posts
-	$wp_customize->add_setting( 'post_font', array(
-		'Default'           		=> 'Default',
-		'control'           		=> 'select',
-		'sanitize_callback'		=> 'esc_attr',
-	));
-	$wp_customize->add_control( 'post_font', array(
-		'label'					=> __('Font of posts (Google Webfonts)', 'anarcho-notepad'),
-		'priority'				=> 1,
-		'section'				=> 'post_section',
-		'settings'				=> 'post_font',
-		'type'					=> 'select',
-		'choices'				=> $google_font_array,
-	));
-
-
-   // HEADER SECTION
+		// Enable Google Fonts for posts
+		$wp_customize->add_setting( 'post_font', array(
+				'Default'               => 'Default',
+				'control'               => 'select',
+				'sanitize_callback'		=> 'esc_attr',
+		));
+		$wp_customize->add_control( 'post_font', array(
+				'label'					=> __('Font of posts (Google Webfonts)', 'anarcho-notepad'),
+				'priority'				=> 1,
+				'section'				=> 'post_section',
+				'settings'				=> 'post_font',
+				'type'					=> 'select',
+				'choices'				=> $google_font_array,
+		));
 
 
-   // TITLE SECTION
+    // HEADER SECTION
 
-	// Enable Google Fonts for Title
-	$wp_customize->add_setting( 'titlefontstyle_setting', array(
-		'Default'           		=> 'Permanent+Marker',
-		'control'           		=> 'select',
-		'sanitize_callback'		=> 'esc_attr',
-	));
-	$wp_customize->add_control( 'titlefontstyle_control', array(
-		'label'					=> __('Site Title font (Google Webfonts)', 'anarcho-notepad'),
-		'priority'				=> 10,
-		'section'				=> 'title_tagline',
-		'settings'				=> 'titlefontstyle_setting',
-		'type'					=> 'select',
-		'choices'				=> $google_font_array,
-	));
 
-	// Enable Google Fonts for Tagline
-	$wp_customize->add_setting( 'taglinefontstyle_setting', array(
-		'Default'          		=> 'Permanent+Marker',
-		'control'           		=> 'select',
-		'sanitize_callback'		=> 'esc_attr',
-	));
-	$wp_customize->add_control( 'taglinefontstyle_control', array(
-		'label'					=> __('Site Tagline font (Google Webfonts)', 'anarcho-notepad'),
-		'priority'				=> 11,
-		'section'				=> 'title_tagline',
-		'settings'				=> 'taglinefontstyle_setting',
-		'type'					=> 'select',
-		'choices'				=> $google_font_array,
-	));
+    // TITLE SECTION
 
-	// Title color
-	$wp_customize->add_setting( 'title_color', array(
-		'default' 			=> '#e5e5e5',
-                'transport'                     => 'postMessage',
-		'type'           		=> 'option',
-		'sanitize_callback'		=> 'esc_attr',
-	));
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'title_color', array(
+		// Enable Google Fonts for Title
+		$wp_customize->add_setting( 'titlefontstyle_setting', array(
+				'Default'               => 'Permanent+Marker',
+				'control'               => 'select',
+				'sanitize_callback'		=> 'esc_attr',
+		));
+		$wp_customize->add_control( 'titlefontstyle_control', array(
+				'label'					=> __('Site Title font (Google Webfonts)', 'anarcho-notepad'),
+				'priority'				=> 10,
+				'section'				=> 'title_tagline',
+				'settings'				=> 'titlefontstyle_setting',
+				'type'					=> 'select',
+				'choices'				=> $google_font_array,
+		));
+
+		// Enable Google Fonts for Tagline
+		$wp_customize->add_setting( 'taglinefontstyle_setting', array(
+				'Default'          		=> 'Permanent+Marker',
+				'control'               => 'select',
+				'sanitize_callback'		=> 'esc_attr',
+		));
+		$wp_customize->add_control( 'taglinefontstyle_control', array(
+				'label'					=> __('Site Tagline font (Google Webfonts)', 'anarcho-notepad'),
+				'priority'				=> 11,
+				'section'				=> 'title_tagline',
+				'settings'				=> 'taglinefontstyle_setting',
+				'type'					=> 'select',
+				'choices'				=> $google_font_array,
+		));
+
+		// Title color
+		$wp_customize->add_setting( 'title_color', array(
+				'default'               => '#e5e5e5',
+				'transport'             => 'postMessage',
+				'type'           		=> 'option',
+				'sanitize_callback'		=> 'esc_attr',
+		));
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'title_color', array(
                 'label' 				=> __('Site Title color', 'anarcho-notepad'),
                 'section' 				=> 'title_tagline',
                 'settings' 				=> 'title_color',
-		'priority'				=> 12,
-	)));
+                'priority'				=> 12,
+		)));
 
-        // Tagline color
+		// Tagline color
         $wp_customize->add_setting( 'tagline_color', array(
-		'default' 			=> '#9b9b9b',
-                'transport'                     => 'postMessage',
-		'type'           		=> 'option',
-		'sanitize_callback'		=> 'esc_attr',
-	));
-        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'tagline_color', array(
+                'default'               => '#9b9b9b',
+                'transport'             => 'postMessage',
+                'type'           		=> 'option',
+                'sanitize_callback'		=> 'esc_attr',
+		));
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'tagline_color', array(
                 'label' 				=> __('Site Tagline color', 'anarcho-notepad'),
                 'section' 				=> 'title_tagline',
-                'settings' 				=> 'tagline_color',
-		'priority'				=> 13,
+				'settings' 				=> 'tagline_color',
+                'priority'				=> 13,
         )));
 
         // Title Position
         $wp_customize->add_setting( 'title_position', array(
-		'default' 			=> 'left',
-		'sanitize_callback'		=> 'esc_attr',
-	));
+				'default'               => 'left',
+				'sanitize_callback'		=> 'esc_attr',
+		));
         $wp_customize->add_control( 'title_position', array(
-                'label' 				=> __('Site Title Position', 'anarcho-notepad'),
+				'label' 				=> __('Site Title Position', 'anarcho-notepad'),
                 'section' 				=> 'title_tagline',
                 'settings' 				=> 'title_position',
-		'priority'				=> 14,
-		'type'           			=> 'radio',
-		'choices'           			=> array(
-            							'left'    	=> __('Left', 'anarcho-notepad'),
-            							'center'   	=> __('Center', 'anarcho-notepad')
-					            	   ),
+                'priority'				=> 14,
+                'type'                  => 'radio',
+                'choices'               => array(
+                                                 'left'     => __('Left', 'anarcho-notepad'),
+                                                 'center'   => __('Center', 'anarcho-notepad')
+                                                 ),
         ));
 
-   // BACKGROUND SECTION
-   $wp_customize->get_section( 'background_image' );
+    // BACKGROUND SECTION
+    $wp_customize->get_section( 'background_image' );
 
-	// Background color
+		// Background color
         $wp_customize->add_setting( 'background_color' , array(
-		'default'     			=> '000000',
-		'transport'   			=> 'postMessage',
-		'sanitize_callback'		=> 'esc_attr',
-	));
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'background_color', array(
-		'label'				=> __('Background Color', 'anarcho-notepad'),
-		'section'			=> 'background_image',
-	)));
+				'default'     			=> '000000',
+				'transport'   			=> 'postMessage',
+				'sanitize_callback'		=> 'esc_attr',
+		));
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'background_color', array(
+				'label'                 => __('Background Color', 'anarcho-notepad'),
+				'section'               => 'background_image',
+		)));
 
-	// Add the option to use the CSS3 property Background-size
-	$wp_customize->add_setting( 'backgroundsize_setting', array(
-		'default'        		=> 'auto',
-		'control'        		=> 'select',
-		'sanitize_callback'		=> 'esc_attr',
-	));
-	$wp_customize->add_control( 'backgroundsize_control', array(
-		'label'				=> __('Background Size', 'anarcho-notepad'),
-		'section'			=> 'background_image',
-		'settings'			=> 'backgroundsize_setting',
-		'priority'			=> 10,
-		'type'				=> 'radio',
-		'choices'			=> array(
-							'auto'		=> __('Auto (Default)', 'anarcho-notepad'),
-							'contain'	=> __('Contain', 'anarcho-notepad'),
-							'cover'		=> __('Cover', 'anarcho-notepad'),
-						   ),
-	));
+		// Add the option to use the CSS3 property Background-size
+		$wp_customize->add_setting( 'backgroundsize_setting', array(
+				'default'        		=> 'auto',
+				'control'        		=> 'select',
+				'sanitize_callback'		=> 'esc_attr',
+		));
+		$wp_customize->add_control( 'backgroundsize_control', array(
+				'label'                 => __('Background Size', 'anarcho-notepad'),
+				'section'               => 'background_image',
+				'settings'              => 'backgroundsize_setting',
+				'priority'              => 10,
+				'type'                  => 'radio',
+				'choices'               => array(
+												'auto'		=> __('Auto (Default)', 'anarcho-notepad'),
+												'contain'	=> __('Contain', 'anarcho-notepad'),
+                                                'cover'		=> __('Cover', 'anarcho-notepad'),
+                                            ),
+		));
 
 }
 add_action( 'customize_register', 'anarcho_customize_register' );
 
-// Inject the Customizer Choices into the Theme
+/* Inject the Customizer Choices into the Theme */
 add_action('wp_head', 'anarcho_notepad_inline_css');
 function anarcho_notepad_inline_css() {
 

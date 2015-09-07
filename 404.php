@@ -16,7 +16,7 @@
 <section id="content" role="main">
   <div class="col01">
 
-<!-- YOU CAN EDIT FROM HERE -->
+    <!-- YOU CAN EDIT FROM HERE -->
 
     <h1><?php _e('Page Not Found', 'anarcho-notepad'); ?></h1>
     <p><?php _e('We\'re very sorry, but the page you requested has not been found! It may have been moved or deleted.', 'anarcho-notepad'); ?></p>
@@ -24,11 +24,11 @@
     <p><?php _e('If there isn\'t, you could try searching my website for the content you were looking for:', 'anarcho-notepad'); ?></p>
     <?php get_search_form(); ?>
 
-<!-- YOU CAN EDIT UP TO HERE -->
+    <!-- YOU CAN EDIT UP TO HERE -->
 
   </div>
 
-   <?php get_sidebar(); ?>
+  <?php get_sidebar(); ?>
 </section><br clear="all" />
 
 <?php get_footer(); ?>
