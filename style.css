@@ -4,7 +4,7 @@ Theme URI: http://themehorse.com/themes/attitude
 Author: Theme Horse
 Author URI: http://themehorse.com
 Description: Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Theme is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Available Translation: Traditional Chinese (Taiwan), Spanish, Norwegian (Nynorsk), German, Russian, Dutch, Italian and Danish. Get free support on http://themehorse.com/support-forum/
-Version: 2.0.1
+Version: 2.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, blue, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fluid-layout, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
@@ -428,12 +428,16 @@ img#wpstats {
 }
 
 /* Assistive text */
-.assistive-text {
+.assistive-text,
+.screen-reader-text {
 	position: absolute !important;
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
 }
-#access a.assistive-text:active, #access a.assistive-text:focus {
+#access a.assistive-text:active,
+#access a.assistive-text:focus,
+.screen-reader-text:active,
+.screen-reader-text:focus {
 	background: #eee;
 	border-bottom: 1px solid #ddd;
 	color: #1982d1;
@@ -712,33 +716,6 @@ li.default-menu {
 #access ul li:hover > a {
 	color: #05A9C5;
 }
-#access ul ul {
-
-}
-#access ul ul ul {
-
-}
-#access ul ul a {
-
-}
-#access li:hover > a,
-#access ul ul :hover > a,
-#access a:focus {
-	
-}
-#access li:hover > a,
-#access a:focus {
-	
-}
-#access ul li:hover > ul {
-	
-}
-#access .current-menu-item > a,
-#access .current-menu-ancestor > a,
-#access .current_page_item > a,
-#access .current_page_ancestor > a {
-
-}
 
 /* Dropdown */
 #access ul li ul, 
@@ -928,37 +905,6 @@ li.default-menu {
 #branding .searchform {
 	float: right;
 }
-#branding .searchform div {
-	
-}
-#branding #s {
-
-}
-#branding #s:focus {
-	
-}
-#branding #searchsubmit {
-	
-}
-#branding .only-search .searchform {
-	
-}
-#branding .only-search #s {
-	
-}
-#branding .only-search #s,
-#branding .only-search #s:focus {
-
-}
-#branding .only-search #s:focus {
-	
-}
-#branding .with-image .searchform {
-	
-}
-#branding .only-search + #access div {
-
-}
 
 /* =Content
 ----------------------------------------------- */
@@ -1043,10 +989,6 @@ li.default-menu {
 	padding-top: 7px;
 	padding-bottom: 0;
 }
-.sticky {
-	background-color: #E6E6E6;
-   padding: 20px;
-}
 
 #primary {
 	float: left;
@@ -1057,6 +999,14 @@ li.default-menu {
 	padding-top: 10px; 
    padding-bottom: 40px;   
 	border-top: 1px solid #eaeaea;
+}
+#content .sticky {
+	background-color: #E6E6E6;
+	padding: 20px 20px 30px;
+	margin-bottom: 40px;
+}
+.sticky .entry-meta-bar {
+	border-color: rgba(0, 0, 0, 0.1);
 }
 .page-title-wrap {
 	background-color: #F9F9F9;
@@ -1073,12 +1023,6 @@ li.default-menu {
 }
 .page-title a {
 	color: #555;
-}
-.entry-title,
-.entry-header .entry-meta {
-	
-}
-.entry-header {
 }
 .entry-title {
 	font: 24px 'Philosopher', sans-serif;
@@ -1123,9 +1067,6 @@ li.default-menu {
 }
 .tags a:hover {
 	color: #05A9C5;
-}
-.single-author .entry-meta .by-author {
-	
 }
 .post-featured-image {
 	margin-bottom: 30px;
@@ -1432,25 +1373,10 @@ label ~ span.required {
 }
 
 /* Image borders */
-img[class*="align"], 
-img[class*="wp-image-"] {/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
-
-}
-a:focus img[class*="align"], 
-a:hover img[class*="align"], 
-a:active img[class*="align"], 
-a:focus img[class*="wp-image-"], 
-a:hover img[class*="wp-image-"], 
-a:active img[class*="wp-image-"] {/* Add some useful style to those fancy borders for linked images ... */
-
-}
 .img-border {
 	background-color: #fff;
   	padding: 5px;
   	border: 1px solid #ccc;
- }
-.img-border a:hover {
-
  }
 
 /* =Pagination
@@ -1764,9 +1690,6 @@ div.bbp-search-form button {
 .widget_article {
 	margin-bottom: 20px;
 }
-.widget_article .article-title, .widget_article .article-title a {
-	
-}
 .widget_article .article-title a:hover {
 	text-decoration: underline;
 }
@@ -1819,10 +1742,10 @@ div.bbp-search-form button {
 	margin-right: 5px;
 	color: #777;
 	padding: 10px 0; 
-	}
+}
 .widget_tag_cloud a:hover {
 	color: #05A9C5;
-	}
+}
 
 /* Custom Tag Cloud */
 .widget_custom-tagcloud {
@@ -1869,7 +1792,6 @@ div.bbp-search-form button {
 .widget_recent_work {
 	margin-bottom: 10px;
 }
-
 
 /* WP Caption */
 .wp-caption {	
@@ -1950,35 +1872,6 @@ div.bbp-search-form button {
 #colophon .widget_info, 
 #colophon .widget_text {
 	margin-bottom: 15px;
-}
-#colophon a {
-
-}
-#colophon a:hover {
-
-}
-#colophon ul {
-	
-}
-#supplementary .widget-area {
-
-}
-#supplementary .widget-title {
-
-}
-#supplementary #first, 
-#supplementary #second, 
-#supplementary #third {
-	
-}
-#supplementary #first {
-
-}
-#supplementary #second {
-	
-}
-#supplementary #third {
-	
 }
 
 /* Site Generator */
@@ -2429,4 +2322,4 @@ div.bbp-search-form button {
 		background-image: url('images/testimonial-icon@2x.png'); 
 		background-size: 25px 19px;
 	}
-}   		
+}  	

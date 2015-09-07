@@ -592,7 +592,7 @@ function attitude_theme_options_do_page() {
 									<tr>
 										<th scope="row"><label class="handle"><?php _e( 'Featured Slider Post/Page #', 'attitude' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
 										<td><input type="text" name="attitude_theme_options[featured_post_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_post_slider', $options ) && array_key_exists( $i, $options[ 'featured_post_slider' ] ) ) echo absint( $options[ 'featured_post_slider' ][ $i ] ); ?>" />
-										<a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_post_slider', $options ) && array_key_exists ( $i, $options[ 'featured_post_slider' ] ) ) echo absint( $options[ 'featured_post_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'attitude' ); ?></a>
+										<a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_post_slider', $options ) && array_key_exists ( $i, $options[ 'featured_post_slider' ] ) ) echo absint( $options[ 'featured_post_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit', 'attitude'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'attitude' ); ?></a>
 										</td>
 									</tr>                           
 									<?php endfor; ?>

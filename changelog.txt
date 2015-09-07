@@ -1,4 +1,9 @@
 == Change Log ==
+= 2.0.2 =
+* Fix - Missing text-domain added
+* Fix - Sticky post display issue fixed and CSS cleaned
+* Update - screen-reader-text css added
+
 = 2.0.1 =
 * Fix - Heading tag placement fixed for better SEO
 
