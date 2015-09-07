@@ -391,14 +391,14 @@ function weaverx_posted_in($type='') {
 		|| weaverx_is_checked_post_opt('_pp_hide_bottom_post_meta')
 		|| weaverx_is_checked_page_opt('_pp_hide_infobottom')
 		|| weaverx_t_get('hide_bottom_info')) {	// hide bottom?
-
 		weaverx_edit_link();
 		return;
 	}
 
 	if (weaverx_is_checked_page_opt('_pp_hide_infobottom')
-		&& !weaverx_t_get('showposts'))
+		&& !weaverx_t_get('showposts')) {
 		return;
+	}
 
 	$pi = "\n<div " . weaverx_meta_info_class( 'post_info_bottom' ) . ">\n";
 
@@ -716,8 +716,6 @@ function weaverx_fi( $who, $where ) {
 			return true;
 		}
 	}
-
-	return false;
 }
 }
 //--
@@ -740,6 +738,7 @@ function weaverx_the_contnt(  ) {
 	the_content(weaverx_continue_reading_link());
 }
 //--
+
 
 // ========================= special content =========================
 
@@ -809,11 +808,11 @@ function weaverx_show_only_title() {
 			  )
 		) {
 		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
-		echo "\t</article><!-- /#post -->\n";
+		echo "\t</article><!-- /#post; -->\n";
 		return true;
 	} elseif ( weaverx_t_get('showposts') && weaverx_t_get('show') == 'title_featured') {
 		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
-		echo "\t</article><!-- /#post -->\n";
+		echo "\t</article><!-- /#post. -->\n";
 		return true;
 	} elseif ( weaverx_t_get('showposts') && (weaverx_t_get('show') == 'title' || weaverx_t_get('show') == 'titlelist')) {
 		echo "\t</article><!-- /#post -->\n";

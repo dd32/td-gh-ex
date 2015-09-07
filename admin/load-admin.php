@@ -14,6 +14,9 @@ if (current_user_can('edit_posts')) {
 
 
 	function weaverx_add_admin() {	// action definition
+
+	require_once(get_template_directory() . '/admin/customizer.php'); // start by loading customizer features
+
 	/* adds our admin panel  (add_action: admin_menu) */
 	// 'edit_theme_options' works for both single and multisite
 	$page = add_theme_page('WeaverX',  __('Theme Options', 'weaver-xtreme' /*adm*/), 'edit_theme_options', 'WeaverX', 'weaverx_admin_theme_page');

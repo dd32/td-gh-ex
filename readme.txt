@@ -7,9 +7,9 @@ Tags: custom-header, custom-colors, custom-background, custom-menu, theme-option
 fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red, tan, dark, white, light,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1015 Bruce E Wampler
-Requires at least: 3.9
+Requires at least: 4.0
 Tested up to: 4.2
-Stable tag: 1.2
+Stable tag: 1.3
 
 == Description ==
 
@@ -168,5 +168,19 @@ with testing and feature suggestions.
 = Version 1.2.4 =
 * Fix: problem with 2 and 3 column post layout
 * Fix: Failure to translate Post Comment and Leave a Reply
+
+= Version 1.3 =
+* New: Custom Menu Placeholder item hover cursor specification
+* New: New item on Customizer Menu: link to Theme Options
+* New: Extend multiple column post display to archive-like pages (archive, author, category, tag)
+* Fix: <!--nextpage--> support on pages
+* Fix: style for weaver slider FI's
+* Fix: various translation text domain issues
+* Tweak: Weaver Xtreme Theme Support plugin nag
+* Tweak: Recommended Plugins wording, TGMPA update
+* Tweak: moved loading of style sheets to weaverx_enqueue_scripts() action
+* Tweak: support for shortcodes in Smart Menus (Plus)
+* Tweak: Comment form translation fix
+* Tweak: Page with Posts: sticky + author filter
 
 = *** Release Notes also found on Help Tab  *** =

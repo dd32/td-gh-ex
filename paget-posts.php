@@ -75,7 +75,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	if ( function_exists( 'atw_showposts_installed' ) && $filter != '') {
 		$params = atw_posts_get_filter_params( $filter );
 		if ($params != '') {        // they specified a $filter arg, so use it and wipe out anything else...
-		   $fargs = shortcode_parse_atts( $params );
+			$fargs = shortcode_parse_atts( $params );
 		} else {
 			$fargs = '';
 		}
@@ -96,6 +96,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	if ( have_posts() ) {				// same loop as index.php
 		global $weaverx_sticky;
 
+
 		weaverx_content_nav( 'nav-above' );
 		$sticky_posts = false;
 
@@ -107,11 +108,12 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		if (!weaverx_is_checked_page_opt('_pp_hide_sticky')
 			&& (weaverx_get_per_page_value('_pp_category')
 			|| weaverx_get_per_page_value('_pp_tag')
+			|| weaverx_get_per_page_value('_pp_author')
 		)) {	// move sticky posts when cat or tag filters?
-		// Put sticky posts at the top of the posts array
-		$sticky_posts = get_option('sticky_posts');
-		global $page;
-			if ($page <= 1 && is_array($sticky_posts) && !empty($sticky_posts)) {
+			// Put sticky posts at the top of the posts array
+			$sticky_posts = get_option('sticky_posts');
+			global $page;
+			if (is_array($sticky_posts) && !empty($sticky_posts)) {
 				$num_posts = count($wp_query->posts);
 				$sticky_offset = 0;
 				// Loop over posts and relocate stickies to the front.
@@ -147,6 +149,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		echo ("<div class=\"wvrx-posts\">\n");
 		while ( have_posts() ) {
 			the_post();
+
 			weaverx_post_count_bump();
 
 			if ( weaverx_post_count() <= $hide_n_posts ) {
@@ -203,6 +206,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		}	// end while have posts
 		weaverx_masonry('end-posts');
 		echo ("</div>\n");
+
 
 		weaverx_content_nav( 'nav-below' );
 	} else {

@@ -263,14 +263,14 @@ function weaverx_form_widget_area( $value, $submit = false ) {
 
 		array(  'name' => '<span class="i-left dashicons dashicons-align-none"></span>' . __('Padding', 'weaver-xtreme' /*adm*/) ,
 			'id' => $id . '_padding', 'type' => 'text_tb',
-			'info' => '<em>' . $name . '</em>' . __(': Top/Bottom Inner padding (Default: ', 'weaver-xtreme' /*adm*/) . $def_tb . ')' ),
+			'info' => '<em>' . $name . '</em>' . __(': Top/Bottom Inner padding [Default: ', 'weaver-xtreme') . $def_tb . ']' ),
 
 		array(  'name' => '', 'id' => $id . '_padding', 'type' => $lr_type,
-			'info' => '<em>' . $name . '</em>' . __(': Left/Right Inner padding (Default: ', 'weaver-xtreme' /*adm*/) . $def_lr . ')' ),
+			'info' => '<em>' . $name . '</em>' . __(': Left/Right Inner padding [Default: ', 'weaver-xtreme') . $def_lr . ']' ),
 
-		array(  'name' => '<span class="i-left dashicons dashicons-align-none"></span>' . __('Top/Bottom Margins', 'weaver-xtreme' /*adm*/),
+		array(  'name' => '<span class="i-left dashicons dashicons-align-none"></span>' . __('Top/Bottom Margins', 'weaver-xtreme'),
 			'id' => $id . '_margin', 'type' => 'text_tb',
-			'info' => '<em>' . $name . '</em>' . __(': Top/Bottom margins. <em>Side margins auto-generated.</em> (Default: ', 'weaver-xtreme' /*adm*/) . $def_marg . ')' )
+			'info' => '<em>' . $name . '</em>' . __(': Top/Bottom margins. <em>Side margins auto-generated.</em> [Default: ', 'weaver-xtreme') . $def_marg . ']' )
 
 	);
 
@@ -565,7 +565,7 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 			'id' => $id .'_right_padding_dec' , 'type' => 'val_em',
 			'info' => '<em>' . $name . '</em>' . __(': Add space between desktop menu bar items (Use value &gt; 1.0)', 'weaver-xtreme' /*adm*/) ),
 
-		array( 'name' => '<span class="i-left">{ }</span> <small>' . __('Add Classes','weaverx-xtreme' /*adm*/) . '</small>',
+		array( 'name' => '<span class="i-left">{ }</span> <small>' . __('Add Classes','weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id . '_add_class', 'type' => '+widetext',
 			'info' => '<em>' . $name . '</em>' . __(': Space separated class names to add to this area (<em>Advanced option</em>) (&starf;Plus)', 'weaver-xtreme' /*adm*/) ),
 		array('name' => '<span class="i-left dashicons dashicons-editor-code"></span><small>' . __('Left HTML', 'weaver-xtreme' /*adm*/) . '</small>',

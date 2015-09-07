@@ -10,7 +10,6 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 weaverx_per_post_style();
 weaverx_fi( 'post', 'post-before' );
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('content-single post-content ' . weaverx_post_class(true)); ?>>

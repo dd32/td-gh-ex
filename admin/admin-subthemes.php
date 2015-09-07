@@ -9,7 +9,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 function weaverx_admin_subthemes() {
 
 
-	weaverx_tab_title(__('Predefined Weaver Xtreme Subthemes','weaverx_axtreme'), 'help.html#PredefinedThemes', __('Help for Weaver Xtreme Predefined Themes', 'weaver-xtreme' /*adm*/)); ?>
+	weaverx_tab_title(__('Predefined Weaver Xtreme Subthemes','weaver-xtreme'), 'help.html#PredefinedThemes', __('Help for Weaver Xtreme Predefined Themes', 'weaver-xtreme' /*adm*/)); ?>
 <small style="font-weight:normal;font-size:10px;"><?php _e('You can click the ?\'s found throughout Weaver Xtreme admin pages for context specific help.', 'weaver-xtreme' /*adm*/);?></small>
 
 <?php _e('<h3>Welcome to Weaver X</h3>', 'weaver-xtreme' /*adm*/);?>
@@ -65,7 +65,7 @@ function weaverx_st_pick_theme($list_in) {
 	if ($cur_addon == '') {
 	echo ucwords(str_replace('-',' ',$cur_theme));
 	} else {
-		echo __('Add-on Subtheme: ','weaverx-xtreme') . ucwords(str_replace('-',' ',$cur_addon));
+		echo __('Add-on Subtheme: ','weaver-xtreme') . ucwords(str_replace('-',' ',$cur_addon));
 		$cur_theme = '';
 	}
 ?>

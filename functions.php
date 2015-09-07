@@ -98,7 +98,6 @@ function weaverx_setup() {
 	if (!$width)
 		$width = 940;
 
-
 	$height = weaverx_getopt('header_image_height_int');
 	if (!$height)
 		$height = 188;          // now that everything is responsive, we can just set this to an arbitrary height.
@@ -310,9 +309,9 @@ function weaverx_wp_head() {	// action definition
 }
 //--
 
-add_action('wp_head', 'weaverx_wp_head_early',7);
 
-function weaverx_wp_head_early() {
+if (!function_exists('weaverx_enqueue_styles')) {
+function weaverx_enqueue_styles() {
 	// Add stylesheets
 	$sheet = get_template_directory_uri() . '/assets/css/fonts'.WEAVERX_MINIFY.'.css';
 	wp_enqueue_style('weaverx-font-sheet',$sheet,array(),WEAVERX_VERSION,'all');
@@ -335,6 +334,7 @@ function weaverx_wp_head_early() {
 		wp_enqueue_style( 'weaverx-root-style-sheet', $sheet, array('weaverx-style-sheet'), WEAVERX_VERSION, 'all');
 	}
 }
+}
 
 
 //--
@@ -343,6 +343,8 @@ function weaverx_wp_head_early() {
 add_action('wp_enqueue_scripts', 'weaverx_enqueue_scripts' );
 
 function weaverx_enqueue_scripts() {	// action definition
+
+	weaverx_enqueue_styles();	// add the styles
 
 	// need to know the page template for some conditional script inclusion
 	global $weaverx_cur_template;

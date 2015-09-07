@@ -17,6 +17,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		$paged = weaverx_get_page();
 
 		weaverx_content_nav( 'nav-above' );
+
 		$num_cols = weaverx_getopt('blog_cols');
 		if (!$num_cols || $num_cols > 3) $num_cols = 1;
 

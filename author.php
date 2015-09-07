@@ -42,22 +42,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 		weaverx_author_info();
 
-		/* Start the Loop */
+		/* The Loop */
+		weaverx_archive_loop( 'author' );
 
-		weaverx_post_count_clear();
-		weaverx_masonry('begin-posts');
-		while ( have_posts() ) {
-			the_post();
-			weaverx_post_count_bump();
-			weaverx_masonry('begin-post');
-			/* Include the Post-Format-specific template for the content.
-			* If you want to overload this in a child theme then include a file
-			* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-			*/
-			get_template_part( 'templates/content', get_post_format() );
-			weaverx_masonry('end-post');
-		}
-		weaverx_masonry('end-posts');
 		weaverx_content_nav( 'nav-below' );
 
 	} else {

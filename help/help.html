@@ -1910,10 +1910,15 @@ If you need a joined class (e.g. #post-nnn.content-single), then put a vertical 
           specific CSS rules here, but you must wrap them in a
           &lt;style&gt;...&lt;/style&gt; block.</p>
         <p>The other options match one to one with the equivalent Advanced
-          Options HTML Insertion areas. These include:</p>
+          Options HTML Insertion areas. For example, to add Per Page prewrapper
+		  content, define a Custom Field with the name <em>prewrapper</em> and
+		  a Value with the HTML you want to add. The insertion areas include:</p>
         <p> <em>prewrapper<br />
+			postfooter<br /><br />
+			<strong>Following also supported by Weaver Xtreme Plus:</strong><br />
             preheader<br />
             header<br />
+			postheader<br />
             container_top<br />
             precontent<br />
             pagecontentbottom<br />
@@ -1923,8 +1928,7 @@ If you need a joined class (e.g. #post-nnn.content-single), then put a vertical 
             prefooter<br />
             presidebar<br />
             fixedbottom<br />
-            fixedtop<br />
-            postfooter</em>  </p>
+            fixedtop</em>  </p>
         <h2><a name="AdminOptions" id="AdminOptions"></a>Weaver Admin Options</h2>
         <p>These options control some options that may be important for some
           users. The options are explained on the page.</p>
@@ -3023,7 +3027,7 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
 
 <b>&lt;</b><b>body</b> class<i>=</i><b>"search search-no-results weaverx-page-search weaverx-sb-right"</b><b>&gt;</b> <i>&lt;!-- failed search --&gt;</i>
     ...
-        
+
     </pre>
         <h3><a name="ClassReference" id="ClassReference"></a>Weaver Xtreme Class
           Reference</h3>

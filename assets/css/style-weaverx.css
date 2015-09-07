@@ -921,8 +921,8 @@ p img,
 }
 
 /* =Featured Images */
-.atwk-slide .post img.fi-alignleft,		/* needs this for compatibility with show sliders. */
-.atwk-slide .post img.fi-alignleft-pb,
+.atwkslider .atwk-slide .post img.fi-alignleft,		/* needs this for compatibility with show sliders. */
+.atwkslider .atwk-slide .post img.fi-alignleft-pb,
 img.fi-alignleft,
 img.fi-alignleft-pb {
 	float:			left;

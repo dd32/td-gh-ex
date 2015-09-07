@@ -59,6 +59,7 @@ function weaverx_page_menu( $args = array() ) {
 	$list_args['title_li'] = '';
 
 	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages( $list_args) );
+	
 
 	$left = weaverx_getopt('m_primary' . '_html_left');
 	$right = weaverx_getopt('m_primary' . '_html_right');
@@ -216,6 +217,18 @@ function weaverx_hidden_meta_boxes($hidden, $screen) {	// filter definition
 
 
 // =============================== >>> FILTER: weaverx_get_wp_title_rss <<< ================================
+add_filter('comment_form_defaults', 'weaverx_comment_form_defaults',10,1);
+
+function weaverx_comment_form_defaults( $defaults ) {		// filter definition
+	$defaults['title_reply'] = apply_filters('weaverx_leave_reply_form', $defaults['title_reply'] );
+	$defaults['cancel_reply_link'] = apply_filters('weaverx_cancel_reply_form',$defaults['cancel_reply_link']);
+	$defaults['label_submit'] = apply_filters('weaverx_post_comment_form',$defaults['label_submit']);
+	return $defaults;
+}
+//--
+
+
+// =============================== >>>weaver FILTER: weaverx_get_wp_title_rss <<< ================================
 add_filter('get_wp_title_rss', 'weaverx_get_wp_title_rss',10,1);
 
 function weaverx_get_wp_title_rss($title) {		// filter definition

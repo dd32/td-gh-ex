@@ -53,7 +53,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	$content = str_replace('<p></p>', '', $content);
 	echo $content;
 
-	weaverx_fi( 'page', 'content-bottom' ); ?>
+	weaverx_fi( 'page', 'content-bottom' );
+	weaverx_link_pages(); ?>
+
 
 	</div><div style="clear:both;"></div><!-- .entry-content -->
 	<footer class="entry-utility-page">

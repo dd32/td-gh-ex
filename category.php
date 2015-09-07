@@ -28,23 +28,8 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 				<?php
 					weaverx_content_nav( 'nav-above' );
 
-					/* Start the Loop */
-
-					weaverx_masonry('begin-posts');
-					weaverx_post_count_clear();
-
-					while ( have_posts() ) {
-						the_post();
-						weaverx_masonry('begin-post');
-						weaverx_post_count_bump();
-						/* Include the Post-Format-specific template for the content.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'templates/content', get_post_format() );
-						weaverx_masonry('end-post');
-						}
-					weaverx_masonry('end-posts');
+					/* The Loop */
+					weaverx_archive_loop( 'category' );
 
 					weaverx_content_nav( 'nav-below' );
 

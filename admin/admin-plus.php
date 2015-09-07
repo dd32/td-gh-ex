@@ -6,7 +6,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 function weaverx_admin_pro() {
 
-	weaverx_tab_title(__('Theme Add-ons','weaverx_axtreme'), 'help.html#WeaverXPlus', __('Help for theme Add-ons', 'weaver-xtreme' /*adm*/));
+	weaverx_tab_title(__('Theme Add-ons','weaver-xtreme'), 'help.html#WeaverXPlus', __('Help for theme Add-ons', 'weaver-xtreme' /*adm*/));
 
 	do_action('weaverx_show_licenses');
 

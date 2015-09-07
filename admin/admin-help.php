@@ -18,11 +18,14 @@ function weaverx_admin_help() {
 <p>
 <?php _e('This is the Weaver Xtreme Admin help button: ', 'weaver-xtreme' /*adm*/); ?>
 <?php weaverx_help_link('help.html#top', __('Weaver Xtreme Help', 'weaver-xtreme' /*adm*/)); ?>
+&nbsp;&nbsp;
 <?php _e('Clicking the ? will open the Weaver Xtreme Help	document to the appropriate section.', 'weaver-xtreme' /*adm*/); ?>
 </p>
-<p>
-<?php _e('More help is available at the ', 'weaver-xtreme' /*adm*/); ?><?php weaverx_site(); ?><strong><?php _e('Weaver Xtreme Theme web site', 'weaver-xtreme' /*adm*/); ?></strong></a><?php _e(', which includes a support forum.', 'weaver-xtreme' /*adm*/); ?>
-</p>
+<h2>
+<?php _e('Please see our active ', 'weaver-xtreme' /*adm*/); ?>
+<?php 		weaverx_site('','//forum.weavertheme.com/',__('Weaver Support Forum', 'weaver-xtreme' /*adm*/)); ?>
+<?php _e('Support Forum</a> for online help.', 'weaver-xtreme' /*adm*/); ?>
+</h2>
 <?php
 	do_action('weaverxplus_admin','help');
 ?>
@@ -52,34 +55,16 @@ function weaverx_admin_help() {
 </h3>
 <p>
 <pre>
-= Version 1.2 =
-* New: Multiple Column option for Page content
-* New: Full Width Subthemes - Dark and Light plus Demo versions
-* New: Set menu bar switch desktop/mobile point (Plus)
-* Tweak: additional support for Plus
-* Tweak: Recommend Plugins - added WP Edit and WP Retina 2x
-* Tweak: A few documentation changes
-* Tweak: removed auto-generation of media library header sized image. This generated image was
-         never actually used - cropping the header image when adding is an independent action.
-* Fix: IE8 compatibility script loading
-* Fix: Fatal error bug when Page with Post compact post option set
-* Fix: Infobar centering
-
-= Version 1.2.2 =
-* Tweak: Beginning of Admin code reorganization - moved admin files to new directories
-* Fix: Mobile menu bug on non-SmartMenus
-* Fix: ignore mobile toggle set point if not SmartMenu
-
-= Version 1.2.3 =
-* New: Plain - Full Width subtheme
-* Tweak: Moved Edit button inside .entry-content on Pages
-* Tweak: Updated to new TGM library (for installing recommended plugins)
-* Fix: 3-column Post display on small tablets
-* Fix: z-index for Smart Menu HTML areas
-
-= Version 1.2.4 =
-* Fix: problem with 2 and 3 column post layout
-* Fix: Failure to translate Post Comment and Leave a Reply
+= Version 1.3 =
+* New: Custom Menu Placeholder item hover cursor specification
+* New: New item on Customizer Menu: link to Weaver Xtreme Appearance &rarr; Theme Options
+* Fix: &lt;!--nextpage--&gt; support on pages
+* Fix: style for weaver slider FI's
+* Tweak: Recommended Plugins wording, TGMPA update
+* Tweak: moved loading of style sheets to weaverx_enqueue_scripts() action
+* Tweak: support for shortcodes in Smart Menus (Plus)
+* Tweak: Comment form translation fix
+* Tweak: Page with Posts: sticky + author filter
 </pre>
 </p>
 	</div>
@@ -91,22 +76,21 @@ function weaverx_admin_help() {
 <?php _e('Some recommended plugins to use with your Weaver Xtreme Theme', 'weaver-xtreme' /*adm*/); ?>
 </strong></p>
 <ul>
-<li><a href="//wordpress.org/plugins/weaverx-theme-support/" target="_blank"><?php _e('Weaver Xtreme Theme Support', 'weaver-xtreme' /*adm*/); ?></a>
-<?php _e('- provides additional Weaver Xtreme theme options and useful shortcodes', 'weaver-xtreme' /*adm*/); ?>
+<li style="font-size:120%;"><a href="//wordpress.org/plugins/weaverx-theme-support/" target="_blank"><?php _e('Weaver Xtreme Theme Support', 'weaver-xtreme' /*adm*/); ?></a>
+<?php _e('- provides <strong>essential</strong> Weaver Xtreme theme options and useful shortcodes', 'weaver-xtreme' /*adm*/); ?>
 </li>
 <li><a href="//wordpress.org/plugins/show-posts/" target="_blank"><?php _e('Weaver Show Posts', 'weaver-xtreme' /*adm*/); ?></a>
 <?php _e('- adds the [show_posts] shortcode to selectively display posts filtered by category, tag, order, id, etc.
 Also adds additional filtering options to the Weaver Xtreme Page with Posts page template.
-This formerly was integrated with Weaver, and was considered an important part of the theme.
-Themes are no longer allowed to include shortcodes, so it is now a plugin that can be used with any theme.', 'weaver-xtreme' /*adm*/); ?>
+This formerly was integrated with Weaver, and was considered an important part of the theme.', 'weaver-xtreme' /*adm*/); ?>
 </li>
 <li><a href="//wordpress.org/plugins/show-sliders/" target="_blank"><?php _e('Weaver Show Sliders', 'weaver-xtreme' /*adm*/); ?></a>
 <?php _e('- good for any kind of slideshows - images, posts, [gallery] replacement', 'weaver-xtreme' /*adm*/);?>
 </li>
 <li><a href="https://wordpress.org/plugins/wp-retina-2x/" target="_blank"><?php _e('WP Retina 2x', 'weaver-xtreme' /*adm*/); ?></a>
-<?php _e('- Weaver Xtreme is Retina Ready - this plugin makes your Media Library Retina Ready, too.', 'weaver-xtreme' /*adm*/); ?>
+<?php _e('- Weaver Xtreme is Retina Ready - this plugin makes your Media Library Retina Ready, too. Only needed if you use HD images.', 'weaver-xtreme' /*adm*/); ?>
 </li>
-<li><a href="https://wordpress.org/plugins/wp-edit/" target="_blank">WP Edit</a>
+<li><a href="https://wordpress.org/plugins/wp-edit/" target="_blank">WP Edit</a> -
 <?php _e('WP Edit adds additional editing functionality to the default WordPress editor.
 Allows content formatting without the need for extra HTML or CSS.
 Also includes advanced features to manage your content such as post and page revision control.', 'weaver-xtreme' /*adm*/); ?>

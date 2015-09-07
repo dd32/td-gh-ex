@@ -466,6 +466,63 @@ function weaverx_post_count() {
 }
 
 
+function weaverx_archive_loop( $type ) {
+	// output loop for archive-like pages.
+
+	$num_cols = weaverx_getopt('blog_cols');
+	$archive_cols = weaverx_getopt('archive_cols');
+
+	if (!$num_cols || $num_cols > 3) $num_cols = 1;
+
+	if (!$archive_cols)
+		$num_cols = 1;
+
+	$masonry_wrap = false;	// need this for one-column posts
+	$col = 0;
+
+	weaverx_post_count_clear();
+	echo ("<div class=\"wvrx-posts\">\n");		// needed here, and all post loops to make content-n-col work with :nth-of-type
+
+
+	while ( have_posts() ) {
+		the_post();
+		weaverx_post_count_bump();
+
+		if ($archive_cols && !$masonry_wrap) {
+			$masonry_wrap = true;
+			if (weaverx_masonry('begin-posts'))	// wrap all posts
+				$num_cols = 1;		// force to 1 cols
+		}
+		weaverx_masonry('begin-post');	// wrap each post
+		switch ($num_cols) {
+			case 1:
+				get_template_part( 'templates/content', get_post_format() );
+				break;
+
+			case 2:
+				$col++;
+				echo ('<div class="content-2-col">' . "\n");
+				get_template_part( 'templates/content', get_post_format() );
+				echo ("</div> <!-- content-2-col -->\n");
+				break;
+
+			case 3:
+				$col++;
+				echo ('<div class="content-3-col">' . "\n");
+				get_template_part( 'templates/content', get_post_format() );
+				echo ("</div> <!-- content-3-col -->\n");
+				break;
+
+			default:
+				get_template_part( 'templates/content', get_post_format() );
+		}   // end switch num cols
+		weaverx_masonry('end-post');
+
+	}	// end while have posts
+	weaverx_masonry('end-posts');
+	echo ("</div>\n");
+
+}
 
 function weaverx_post_class($hidecount = false) {
 	global $weaverx_cur_post_count;
@@ -908,25 +965,29 @@ class weaverx_Walker_Nav_Menu extends Walker {
 		$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
 
 		$attributes = '';
+		$aclass = '';
 		foreach ( $atts as $attr => $value ) {
 			if ( ! empty( $value ) ) {
 				$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+				if ( $attr === 'href' && $value === '#' && weaverx_getopt('placeholder_cursor')) {
+					$aclass = ' style="cursor:' . weaverx_getopt('placeholder_cursor') .';"';
+				}
 				$attributes .= ' ' . $attr . '="' . $value . '"';
 			}
 		}
 
 
 		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'>';
+		$item_output .= "<a{$attributes}{$aclass}>";
 		/** This filter is documented in wp-includes/post-template.php */
-		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output .= '</a>';
+		$item_output .= $args->link_before . do_shortcode(apply_filters( 'the_title', $item->title, $item->ID )) . $args->link_after;
+		$item_output .= "</a>";
 		$item_output .= $args->after;
 
 		if ( $megamenu ) {
 			$desc = ! empty($item->description) ? $item->description :
 					__('Please enter MegaMenu content to Description.', 'weaver-xtreme');
-			$item_output .= '<ul class="mega-menu"><li>' . $desc . '</li></ul>';
+			$item_output .= '<ul class="mega-menu"><li>' . do_shortcode($desc) . '</li></ul>';
 		}
 
 		/**

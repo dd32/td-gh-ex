@@ -344,8 +344,8 @@ function weaverx_validate_all_options($in) {
 	}
 
 	if (false && $wvr_last != 'Weaver Xtreme') {
-		$err_msg .= __('Warning - your host may be configured to limit how many input var options you are allowed to pass via PHP.' .
-		' Unfortunately, this means your settings may not be saved correctly. See the "Weaver II Doesn\'t Save Settings" FAQ on weavertheme.com.<br />', 'weaver-xtreme' /*adm*/);
+		$err_msg .= __('Warning - your host may be configured to limit how many input var options you are allowed to pass via PHP.
+Unfortunately, this means your settings may not be saved correctly. See the "Weaver II Doesn\'t Save Settings" FAQ on weavertheme.com.<br />', 'weaver-xtreme' /*adm*/);
 	}
 
 
@@ -409,12 +409,20 @@ function weaverx_clear_messages() {
 ?>
 <form style="float:right;margin-right:15px;" name="clearweaverx_form" method="post">
 <?php
+
+	if (!function_exists('wvrx_ts_installed')) {
+		if (!is_multisite() || (is_multisite() && current_user_can('manage_network_themes')) ) {
+			echo '<div style="display:inline-block;background-color:pink;border:1px solid black;padding:3px;margin-right:4px;font-style:italic;font-size:80%;line-height:1.2;">' .
+			__('Please install and activate the<br />Weaver Xtreme Theme Support Plugin.', 'weaver-xtreme') . '</div>';
+		}
+	}
 	if (!function_exists('weaverxplus_plugin_installed')) {
 		echo '<strong style="border:1px solid blue;background:yellow;padding:4px;margin:5px;">';
 		weaverx_site('','//plus.weavertheme.com/',__('Weaver Xtreme Plus', 'weaver-xtreme' /*adm*/));
-		echo __('Get Weaver Xtreme Plus!','weaverx-xtreme' /*adm*/) . '</a> </strong>';
+		echo __('Get Weaver Xtreme Plus!','weaver-xtreme' /*adm*/) . '</a> </strong>';
 	}
 	do_action('weaverx_check_licenses');
+
 ?>
 	<span class="submit"><input type="submit" name="weaverx_clear_messages" value="<?php _e('Clear Messages', 'weaver-xtreme' /*adm*/); ?>"/></span>
 	<?php weaverx_nonce_field('weaverx_clear_messages'); ?>

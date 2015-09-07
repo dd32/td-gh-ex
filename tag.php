@@ -28,21 +28,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	<?php
 		weaverx_content_nav( 'nav-above' );
 
-		/* Start the Loop */
+		/* The Loop */
+		weaverx_archive_loop( 'tag' );
 
-		weaverx_post_count_clear();
-		weaverx_masonry('begin-posts');
-		while ( have_posts() ) {
-			the_post();
-			weaverx_post_count_bump();
-
-			weaverx_masonry('begin-post');
-			get_template_part( 'templates/content', get_post_format() );
-			weaverx_masonry('end-post');
-		}
-
-
-		weaverx_masonry('end-posts');
 		weaverx_content_nav( 'nav-below' );
 	} else {
 		weaverx_not_found_search(__FILE__);

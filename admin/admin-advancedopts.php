@@ -19,7 +19,7 @@ function weaverx_admin_advancedopts() {
 	weaverx_elink('#asp_tab_admin', __('Basic Administrative Options', 'weaver-xtreme' /*adm*/), __('Admin Options', 'weaver-xtreme' /*adm*/), '<li>','</li>');
 ?>
 		</ul>
-	<?php weaverx_tab_title(__('Advanced Options','weaverx_axtreme'), 'help.html#AdvancedOptions', __('Help for Advanced Options', 'weaver-xtreme' /*adm*/)); ?>
+	<?php weaverx_tab_title(__('Advanced Options','weaver-xtreme'), 'help.html#AdvancedOptions', __('Help for Advanced Options', 'weaver-xtreme' /*adm*/)); ?>
 
 <?php weaverx_sapi_submit('', '<br /><br />'); ?>
 
