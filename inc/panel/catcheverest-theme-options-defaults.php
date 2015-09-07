@@ -89,4 +89,75 @@ function catcheverest_options_set_defaults( $catcheverest_options_defaults ) {
 	return $catcheverest_options_settings;
 }
 
-?>
+
+/**
+ * Returns an array of sidebar layout options
+ *
+ * @since Catch Everest 2.5
+ */
+function catcheverest_sidebar_layout_options() {
+	$options = array(
+		'right-sidebar' 		=> __( 'Right Sidebar', 'catch-everest' ),
+		'left-sidebar' 			=> __( 'Left Sidebar', 'catch-everest' ),
+		'no-sidebar'			=> __( 'No Sidebar', 'catch-everest' ),
+		'no-sidebar-full-width' => __( 'No Sidebar, Full Width', 'catch-everest' )
+	);
+
+	return apply_filters( 'catcheverest_sidebar_layout_options', $options );
+}
+
+
+/**
+ * Returns an array of content layout options
+ *
+ * @since Catch Everest 2.5
+ */
+function catcheverest_content_layout_options() {
+	$options = array(
+		'full' 		=> __( 'Full Content Display', 'catch-everest' ),
+		'excerpt' 	=> __( 'Excerpt/Blog Display', 'catch-everest' ),
+	);
+
+	return apply_filters( 'catcheverest_content_layout_options', $options );
+}
+
+/**
+ * Returns an array of featured post slider enable options
+ *
+ * @since Catch Everest 2.5
+ */
+function catcheverest_enable_slider_options() {
+	$options = array(
+		'enable-slider-homepage'=> __( 'Homepage / Frontpage', 'catch-everest' ),
+		'enable-slider-allpage' => __( 'Entire Site', 'catch-everest' ),
+		'disable-slider' 		=> __( 'Disable', 'catch-everest' ),
+	);
+
+	return apply_filters( 'catcheverest_content_layout_options', $options );
+}
+
+
+/**
+ * Returns an array of slider transition effects
+ *
+ * @since Catch Everest 2.5
+ */
+function catcheverest_transition_effects() {
+	$options = array(
+		'fade'			=> __( 'fade', 'catch-everest' ),
+		'wipe' 			=> __( 'wipe', 'catch-everest' ),
+		'scrollUp' 		=> __( 'scrollUp', 'catch-everest' ),
+		'scrollDown'	=> __( 'scrollDown', 'catch-everest' ),
+		'scrollUp' 		=> __( 'scrollUp', 'catch-everest' ),
+		'scrollLeft'	=> __( 'scrollLeft', 'catch-everest' ),
+		'scrollRight'	=> __( 'scrollRight', 'catch-everest' ),
+		'blindX' 		=> __( 'blindX', 'catch-everest' ),
+		'blindY' 		=> __( 'blindY', 'catch-everest' ),
+		'blindZ' 		=> __( 'blindZ', 'catch-everest' ),
+		'cover' 		=> __( 'cover', 'catch-everest' ),
+		'shuffle' 		=> __( 'shuffle', 'catch-everest' ),
+	);
+
+	return apply_filters( 'catcheverest_transition_effects', $options );
+}
+

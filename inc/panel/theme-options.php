@@ -107,7 +107,13 @@ function catcheverest_theme_options_do_page() {
                         <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','catch-everest')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'catch-everest'); ?>" target="_blank"><?php printf(__('Twitter','catch-everest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/catch-everest','catch-everest')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'catch-everest'); ?>" target="_blank"><?php printf(__('5 Star Rating','catch-everest')); ?></a></li>
                     </ul>
-                </div><!-- #theme-support --> 
+                </div><!-- #theme-support -->
+
+                <div id="theme-option-header-notice">
+                    <p class="notice">
+                        <?php printf( _x( 'Theme Options Panel will be retired on future versions. Please use %1$s Customizer %2$s instead.','1: Customizer Link Start, 2: Customizer Link End' , 'catch-box' ) , '<a href="' . esc_url ( admin_url( 'customize.php' ) ) . '">', '</a>' ); ?>
+                    </p>
+                </div><!-- #theme-option-header --> 
                  
             </div><!-- #theme-option-header -->              
  
@@ -1235,26 +1241,3 @@ function catcheverest_assets(){
     $catcheverest_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-everest' ) . ' &copy; '. catcheverest_the_year() . ' ' . catcheverest_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catch-everest' ) . '.</div><div class="powered">'. catcheverest_theme_name() . catcheverest_theme_author() . '</div>';
     return $catcheverest_content;
 }
-
-
-/**
- * Custom scripts and styles on Customizer for Catch Everest
- *
- * @since Catch Everest 1.9
- */
-function catcheverest_customize_scripts() {
-    wp_register_script( 'catcheverest_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140107', true );
-
-    $catcheverest_misc_links = array(
-                            'upgrade_link'              => esc_url( admin_url( 'themes.php?page=theme_options' ) ),
-                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'catch-everest' ),
-                            );
-
-    //Add Upgrade Button and old WordPress message via localized script
-    wp_localize_script( 'catcheverest_customizer_custom', 'catcheverest_misc_links', $catcheverest_misc_links );
-
-    wp_enqueue_script( 'catcheverest_customizer_custom' );
-
-    wp_enqueue_style( 'catcheverest_customizer_custom', get_template_directory_uri() . '/inc/panel/catcheverest-customizer.css');
-}
-add_action( 'customize_controls_print_footer_scripts', 'catcheverest_customize_scripts');

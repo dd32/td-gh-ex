@@ -187,3 +187,8 @@ add_action( 'after_setup_theme', 'catcheverest_setup' );
  * Implement the Custom Header feature
  */
 require( get_template_directory() . '/inc/custom-header.php' );
+
+/**
+ * Customizer Options
+ */
+require( get_template_directory() . '/inc/panel/customizer/customizer.php' );

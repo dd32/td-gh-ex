@@ -1,5 +1,9 @@
 == Changelog ==
 
+version 2.5
+* Added all theme options to customizer
+* Updated German language file
+
 version 2.4
 * Added Danish translation da_DK.po and da_DK.mo files
 * Compatible with WordPress 4.3

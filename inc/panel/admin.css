@@ -281,3 +281,6 @@ a.readmore:hover {
 .option-content .form-table th, .option-content p {
     padding-left: 10px;
 }
+#theme-option-header-notice{
+    text-align:center;
+}
