@@ -37,7 +37,7 @@
 				);
 				 if ( $wp_query ) : 
 					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-				<div class="<?php echo $itemsize;?>">
+				<div class="<?php echo esc_attr($itemsize);?>">
                 	<div <?php post_class('blog_item grid_item'); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
 	                    		<?php if (has_post_thumbnail( $post->ID ) ) {
 										$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 

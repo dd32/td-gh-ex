@@ -51,7 +51,7 @@ class kadence_Nav_Walker extends Walker_Nav_Menu {
 
     $item_output  = $args->before;
     $item_output .= '<a'. $attributes . '>'.$icon;
-    $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) .  __($description)  . $args->link_after;
+    $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $description . $args->link_after;
     $item_output .= '</a>';
     $item_output .= $args->after;
 
@@ -158,7 +158,7 @@ class kadence_mobile_walker extends Walker_Nav_Menu {
 
     $item_output  = $args->before;
     $item_output .= '<a'. $attributes . '>'.$icon;
-    $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . __($description) . $args->link_after;
+    $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $description . $args->link_after;
     $item_output .= '</a>';
     if( $has_sub ){
       $item_output.= '<span class="kad-submenu-accordion collapse-next  kad-submenu-accordion-open" data-parent=".kad-nav-collapse" data-toggle="collapse" data-target=""><i class="icon-chevron-down"></i><i class="icon-chevron-up"></i></span>';

@@ -1863,7 +1863,7 @@ Redux::setSection( $opt_name, array(
             'customizer' => true,
             'title' => __('Custom CSS', 'virtue'), 
             'subtitle' => __('Quickly add some CSS to your theme by adding it to this block.', 'virtue'),
-            'validate' => 'css',
+            //'validate' => 'css',
             ),
         ),
     )

@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2015-02-24 15:24-0700\n"
-"PO-Revision-Date: 2015-02-24 16:26-0700\n"
-"Last-Translator: \n"
+"Project-Id-Version: Virtue\n"
+"POT-Creation-Date: 2015-08-25 13:28-0700\n"
+"PO-Revision-Date: 2015-08-25 13:28-0700\n"
+"Last-Translator: Janneke Assink <jannekeassink@gmail.com>\n"
 "Language-Team: \n"
-"Language: en\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:11
@@ -47,7 +47,7 @@ msgstr "Laatste berichten"
 #: ../lib/authorbox.php:13 ../lib/authorbox.php:16 ../lib/authorbox.php:20
 #: ../lib/authorbox.php:24 ../lib/authorbox.php:28 ../lib/authorbox.php:32
 #: ../lib/authorbox.php:36 ../lib/authorbox.php:40 ../lib/authorbox.php:44
-#: ../lib/authorbox.php:48
+#: ../lib/authorbox.php:48 ../lib/authorbox.php:52
 msgid "Follow"
 msgstr "Volgen"
 
@@ -64,180 +64,255 @@ msgid "on Google Plus"
 msgstr "op Google Plus"
 
 #: ../lib/authorbox.php:28
+msgid "on YouTube"
+msgstr ""
+
+#: ../lib/authorbox.php:32
 msgid "on Flickr"
 msgstr "op Flickr"
 
-#: ../lib/authorbox.php:32
+#: ../lib/authorbox.php:36
 msgid "on Vimeo"
 msgstr "op Vimeo"
 
-#: ../lib/authorbox.php:36
+#: ../lib/authorbox.php:40
 msgid "on linkedin"
 msgstr "op Linkedin"
 
-#: ../lib/authorbox.php:40
+#: ../lib/authorbox.php:44
 msgid "on Dribbble"
 msgstr "op Dribble"
 
-#: ../lib/authorbox.php:44
+#: ../lib/authorbox.php:48
 msgid "on Pinterest"
 msgstr "op Pinterest"
 
-#: ../lib/authorbox.php:48
+#: ../lib/authorbox.php:52
 msgid "on Instagram"
 msgstr "op Instagram"
 
-#: ../lib/authorbox.php:65
+#: ../lib/authorbox.php:69
 msgid "Latest posts from"
 msgstr "Laatste berichten van"
 
-#: ../lib/class-tgm-plugin-activation.php:155
+#: ../lib/class-tgm-plugin-activation.php:303
 #: ../lib/virtuetoolkit-activate.php:34
 msgid "Install Required Plugins"
 msgstr "Installatie vereist plugins"
 
-#: ../lib/class-tgm-plugin-activation.php:156
+#: ../lib/class-tgm-plugin-activation.php:304
 #: ../lib/virtuetoolkit-activate.php:35
 msgid "Install Plugins"
 msgstr "Installeer plugins"
 
-#: ../lib/class-tgm-plugin-activation.php:157
+#: ../lib/class-tgm-plugin-activation.php:305
 #: ../lib/virtuetoolkit-activate.php:36
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr "Installeert Plugin: %s"
 
-#: ../lib/class-tgm-plugin-activation.php:158
-msgid "Something went wrong."
-msgstr "Er is een fout opgetreden."
+#: ../lib/class-tgm-plugin-activation.php:306
+#: ../lib/virtuetoolkit-activate.php:37
+msgid "Something went wrong with the plugin API."
+msgstr "Er is iets fout gegaan met de Plugin API."
 
-#: ../lib/class-tgm-plugin-activation.php:169
+#: ../lib/class-tgm-plugin-activation.php:368
 #: ../lib/virtuetoolkit-activate.php:48
 msgid "Return to Required Plugins Installer"
 msgstr "Ga terug naar de vereiste plugin installatie"
 
-#: ../lib/class-tgm-plugin-activation.php:170
+#: ../lib/class-tgm-plugin-activation.php:369
 msgid "Return to the dashboard"
 msgstr "Ga terug naar het dashboard"
 
-#: ../lib/class-tgm-plugin-activation.php:171
-#: ../lib/class-tgm-plugin-activation.php:1838
+#: ../lib/class-tgm-plugin-activation.php:370
+#: ../lib/class-tgm-plugin-activation.php:3052
 #: ../lib/virtuetoolkit-activate.php:49
 msgid "Plugin activated successfully."
 msgstr "De Plugin is succesvol geactiveert"
 
-#: ../lib/class-tgm-plugin-activation.php:172
-#: ../lib/class-tgm-plugin-activation.php:1536
+#: ../lib/class-tgm-plugin-activation.php:371
+#: ../lib/class-tgm-plugin-activation.php:2873
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] "De volgende plugin was succesvol geactiveerd:"
 msgstr[1] "De volgende plugins zijn succesvol geactiveerd:"
 
-#: ../lib/class-tgm-plugin-activation.php:173
+#: ../lib/class-tgm-plugin-activation.php:372
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:373
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:374
 #, fuzzy, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "Alle geinstalleerde plugins zijn succesvol geactiveerd. %1s"
 
-#: ../lib/class-tgm-plugin-activation.php:174
+#: ../lib/class-tgm-plugin-activation.php:375
 msgid "Dismiss this notice"
 msgstr "Verwijder deze melding"
 
-#: ../lib/class-tgm-plugin-activation.php:1084
-msgid "External Link"
-msgstr "Externe link"
+#: ../lib/class-tgm-plugin-activation.php:376
+msgid "Please contact the administrator of this site for help."
+msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1089
-msgid "Private Repository"
-msgstr "Privé opslagplaats"
+#: ../lib/class-tgm-plugin-activation.php:494
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1092
-msgid "Pre-Packaged"
-msgstr "Voorverpakte"
-
-#: ../lib/class-tgm-plugin-activation.php:1096
-msgid "WordPress Repository"
-msgstr "Wordpress opslagplaats"
-
-#: ../lib/class-tgm-plugin-activation.php:1099
+#: ../lib/class-tgm-plugin-activation.php:2218
 msgid "Required"
 msgstr "Vereiste"
 
-#: ../lib/class-tgm-plugin-activation.php:1099
+#: ../lib/class-tgm-plugin-activation.php:2221
 msgid "Recommended"
 msgstr "Aanbevolen"
 
-#: ../lib/class-tgm-plugin-activation.php:1102
+#: ../lib/class-tgm-plugin-activation.php:2238
+msgid "WordPress Repository"
+msgstr "Wordpress opslagplaats"
+
+#: ../lib/class-tgm-plugin-activation.php:2242
+msgid "External Source"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2246
+msgid "Pre-Packaged"
+msgstr "Voorverpakte"
+
+#: ../lib/class-tgm-plugin-activation.php:2265
 msgid "Not Installed"
 msgstr "Niet geinstalleerd"
 
-#: ../lib/class-tgm-plugin-activation.php:1104
+#: ../lib/class-tgm-plugin-activation.php:2269
 msgid "Installed But Not Activated"
 msgstr "Geinstalleerd maar niet geactiveerd"
 
-#: ../lib/class-tgm-plugin-activation.php:1274
+#: ../lib/class-tgm-plugin-activation.php:2271
+msgid "Active"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2277
+msgid "Required Update not Available"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2280
+msgid "Requires Update"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2283
+msgid "Update recommended"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2344
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/class-tgm-plugin-activation.php:2348
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/class-tgm-plugin-activation.php:2352
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/class-tgm-plugin-activation.php:2453
+msgid "Installed version:"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2461
+msgid "Minimum required version:"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2473
+msgid "Available version:"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2497
 #, php-format
 msgid ""
-"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
-"Dashboard\">Return to the Dashboard</a>"
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
 msgstr ""
-"Geen plugins geactiveerd of actief <a href=\"%1$s\" title=\"Return to the "
-"Dashboard\">Return to the Dashboard</a>"
 
-#: ../lib/class-tgm-plugin-activation.php:1290
+#: ../lib/class-tgm-plugin-activation.php:2513
 msgid "Plugin"
 msgstr "Plugin"
 
-#: ../lib/class-tgm-plugin-activation.php:1291
+#: ../lib/class-tgm-plugin-activation.php:2514
 msgid "Source"
 msgstr "Bron"
 
-#: ../lib/class-tgm-plugin-activation.php:1292
+#: ../lib/class-tgm-plugin-activation.php:2515
 msgid "Type"
 msgstr "Type"
 
-#: ../lib/class-tgm-plugin-activation.php:1293
+#: ../lib/class-tgm-plugin-activation.php:2519
+msgid "Version"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2520
 msgid "Status"
 msgstr "Status"
 
-#: ../lib/class-tgm-plugin-activation.php:1311
+#: ../lib/class-tgm-plugin-activation.php:2660
 msgid "Install"
 msgstr "Installeer"
 
-#: ../lib/class-tgm-plugin-activation.php:1312
+#: ../lib/class-tgm-plugin-activation.php:2666
+msgid "Update"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2669
 msgid "Activate"
 msgstr "Activeer"
 
-#: ../lib/class-tgm-plugin-activation.php:1821
-msgid "Install package not available."
-msgstr "Installatie pakket niet beschikbaar."
-
-#: ../lib/class-tgm-plugin-activation.php:1822
-#, php-format
-msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+#: ../lib/class-tgm-plugin-activation.php:2730
+msgid "No plugins are available to be installed at this time."
 msgstr ""
-"Installatie pakket word gedownload van <span class=\"code\">%s</span>&#8230;"
 
-#: ../lib/class-tgm-plugin-activation.php:1823
-msgid "Unpacking the package&#8230;"
-msgstr "Uitpakket van pakket&#8230;"
+#: ../lib/class-tgm-plugin-activation.php:2732
+msgid "No plugins are available to be updated at this time."
+msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1824
-msgid "Installing the plugin&#8230;"
-msgstr "Installeren van plugin&#8230;"
-
-#: ../lib/class-tgm-plugin-activation.php:1825
-msgid "Plugin install failed."
-msgstr "Plugin installatie mislukt."
-
-#: ../lib/class-tgm-plugin-activation.php:1826
-msgid "Plugin installed successfully."
-msgstr "Plugin succesvol geinstalleerd."
-
-#: ../lib/class-tgm-plugin-activation.php:1837
+#: ../lib/class-tgm-plugin-activation.php:3051
 msgid "Plugin activation failed."
 msgstr "Plugin activatie mislukt."
 
-#: ../lib/class-tgm-plugin-activation.php:1947
+#: ../lib/class-tgm-plugin-activation.php:3390
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:3394
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+"Er is een fout opgetreden tijdens de installatie van %1$s: <strong>%2$s</"
+"strong>."
+
+#: ../lib/class-tgm-plugin-activation.php:3395
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "De installatie van %1$s is mislukt."
+
+#: ../lib/class-tgm-plugin-activation.php:3399
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
@@ -245,31 +320,21 @@ msgstr ""
 "Het installatie en activatie proces word gestart Dit proces neemt enige tijd "
 "in beslag op bepaalde hostings, wees geduldig."
 
-#: ../lib/class-tgm-plugin-activation.php:1948
+#: ../lib/class-tgm-plugin-activation.php:3400
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr "%1$s succesvol geinstallerd en geactiveerd."
 
-#: ../lib/class-tgm-plugin-activation.php:1948
-#: ../lib/class-tgm-plugin-activation.php:1957
-msgid "Show Details"
-msgstr "Bekijk Details"
-
-#: ../lib/class-tgm-plugin-activation.php:1948
-#: ../lib/class-tgm-plugin-activation.php:1957
-msgid "Hide Details"
-msgstr "Verberg Details"
-
-#: ../lib/class-tgm-plugin-activation.php:1949
+#: ../lib/class-tgm-plugin-activation.php:3401
 msgid "All installations and activations have been completed."
 msgstr "Alle instalaties en activaties zijn voltooid."
 
-#: ../lib/class-tgm-plugin-activation.php:1950
+#: ../lib/class-tgm-plugin-activation.php:3402
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr "Installeerd en Activeert Plugin  %1$s (%2$d/%3$d)"
 
-#: ../lib/class-tgm-plugin-activation.php:1954
+#: ../lib/class-tgm-plugin-activation.php:3406
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
@@ -277,40 +342,19 @@ msgstr ""
 "Het installatie proces word gestart. Dit proces neemt wat tijd in beslag op "
 "bepaalde hostings, wees alstublieft geduldig."
 
-#: ../lib/class-tgm-plugin-activation.php:1955
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-"Er is een fout opgetreden tijdens de installatie van %1$s: <strong>%2$s</"
-"strong>."
-
-#: ../lib/class-tgm-plugin-activation.php:1956
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr "De installatie van %1$s is mislukt."
-
-#: ../lib/class-tgm-plugin-activation.php:1957
-#, php-format
-msgid "%1$s installed successfully."
-msgstr "%1$s is succesvol geinstalleerd."
-
-#: ../lib/class-tgm-plugin-activation.php:1958
+#: ../lib/class-tgm-plugin-activation.php:3408
 msgid "All installations have been completed."
 msgstr "Alles instalaties zijn voltooid."
 
-#: ../lib/class-tgm-plugin-activation.php:1959
+#: ../lib/class-tgm-plugin-activation.php:3409
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Instaleren Plugin %1$s (%2$d/%3$d)"
 
-#: ../lib/class-tgm-plugin-activation.php:2050
-msgid "Return to the Dashboard"
-msgstr "Keer terug naar het Dashboard"
-
 #: ../lib/cleanup.php:104 ../templates/content-fullpost.php:74
 #: ../templates/content-fullpostfull.php:75
 msgid "Continued"
-msgstr "Vervolgd"
+msgstr "Lees verder"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:47
 msgid "Please Try Again"
@@ -360,7 +404,8 @@ msgid "Clear"
 msgstr "Wissen"
 
 #: ../lib/cmb/init.php:244 ../lib/metaboxes.php:98 ../lib/metaboxes.php:123
-#: ../themeoptions/framework.php:2153
+#: ../lib/metaboxes.php:154 ../lib/metaboxes.php:165
+#: ../themeoptions/framework.php:1748
 msgid "Default"
 msgstr "Standaardwaarde"
 
@@ -387,61 +432,65 @@ msgstr "| (Bewerk)"
 
 #: ../lib/comments.php:49 ../templates/comment.php:11
 msgid "Your comment is awaiting moderation."
-msgstr "Uw commentaar wacht op moderatie."
+msgstr "Je bericht wacht op moderatie."
 
-#: ../lib/custom-woocommerce.php:95 ../templates/header.php:39
+#: ../lib/custom-woocommerce.php:109 ../templates/header.php:39
 msgid "View your shopping cart"
 msgstr "Bekijk uw winkelwagen"
 
-#: ../lib/custom-woocommerce.php:96 ../templates/header.php:40
+#: ../lib/custom-woocommerce.php:110 ../templates/header.php:40
 msgid "Your Cart"
 msgstr "Jouw winkelwagen"
 
-#: ../lib/custom.php:404 ../templates/entry-post-links.php:3
+#: ../lib/custom.php:416 ../templates/entry-post-links.php:3
 msgid "Previous Post"
 msgstr "Vorige bericht"
 
-#: ../lib/custom.php:404 ../templates/entry-post-links.php:6
+#: ../lib/custom.php:416 ../templates/entry-post-links.php:6
 msgid "Next Post"
 msgstr "Volgende bericht"
 
-#: ../lib/custom.php:496
+#: ../lib/custom.php:516
 msgid "Occupation"
 msgstr "Beroep"
 
-#: ../lib/custom.php:499
+#: ../lib/custom.php:519
 msgid "Please enter your Occupation."
 msgstr "Vul uw beroep in."
 
-#: ../lib/custom.php:506
+#: ../lib/custom.php:526
 msgid "Please enter your Twitter username."
 msgstr "Vul uw twitter gebruikersnaam in."
 
-#: ../lib/custom.php:513
+#: ../lib/custom.php:533
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr "Vul uw Facebook url in. (gebruik ook http://)"
 
-#: ../lib/custom.php:520
+#: ../lib/custom.php:540
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr "Vul uw Google Plus url in. (gebruik ook http://)"
 
-#: ../lib/custom.php:527
+#: ../lib/custom.php:547
+msgid "Please enter your YourTube url. (be sure to include http://)"
+msgstr ""
+
+#: ../lib/custom.php:554
 msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr "Vul uw Flick url in. (gebruik ook http://)"
 
-#: ../lib/custom.php:534
+#: ../lib/custom.php:561
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr "Vul uw Linkedin url in. (gebruik ook http://)"
 
-#: ../lib/custom.php:541
+#: ../lib/custom.php:568
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr "Vul uw Flick Dribble in. (gebruik ook http://)"
 
-#: ../lib/custom.php:548
+#: ../lib/custom.php:575
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr "Vul uw Pinterest url in. (gebruik ook http://)"
 
-#: ../lib/custom.php:555
+#: ../lib/custom.php:582
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr "Vul uw Instagram url in. (gebruik ook http://)"
 
@@ -465,7 +514,7 @@ msgstr "Topbalk navigatie"
 msgid "Footer Navigation"
 msgstr "Footer navigatie"
 
-#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:203
+#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:205
 msgid "All"
 msgstr "Alle"
 
@@ -493,20 +542,20 @@ msgstr "Bericht opties"
 msgid "Head Content"
 msgstr "Hoofd inhoud"
 
-#: ../lib/metaboxes.php:99 ../themeoptions/options.php:1540
+#: ../lib/metaboxes.php:99 ../themeoptions/options.php:1510
 msgid "None"
 msgstr ""
 
-#: ../lib/metaboxes.php:100 ../themeoptions/options.php:1540
+#: ../lib/metaboxes.php:100 ../themeoptions/options.php:1510
 msgid "Image Slider"
 msgstr "Afbeeldingen Slider"
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129
-#: ../themeoptions/options.php:1540
+#: ../themeoptions/options.php:1510
 msgid "Video"
 msgstr "Video"
 
-#: ../lib/metaboxes.php:102 ../themeoptions/options.php:1540
+#: ../lib/metaboxes.php:102 ../themeoptions/options.php:1510
 msgid "Image"
 msgstr "Afbeelding"
 
@@ -556,24 +605,24 @@ msgstr "Portret Afbeelding Slider"
 msgid "Landscape Image Slider"
 msgstr "Landschaps Afbeelding Slider"
 
-#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:232
+#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:234
 msgid "Display Sidebar?"
-msgstr "Laat Siderbar zien?"
+msgstr "Laat Sidebar zien?"
 
-#: ../lib/metaboxes.php:134 ../lib/metaboxes.php:233
+#: ../lib/metaboxes.php:134 ../lib/metaboxes.php:235
 msgid "Choose if layout is fullwidth or sidebar"
 msgstr "Kies of de layout volledige breedte of met sidebar is"
 
-#: ../lib/metaboxes.php:138 ../lib/metaboxes.php:155 ../lib/metaboxes.php:237
+#: ../lib/metaboxes.php:138 ../lib/metaboxes.php:156 ../lib/metaboxes.php:239
 msgid "Yes"
 msgstr "Ja"
 
-#: ../lib/metaboxes.php:139 ../lib/metaboxes.php:154 ../lib/metaboxes.php:164
-#: ../lib/metaboxes.php:238
+#: ../lib/metaboxes.php:139 ../lib/metaboxes.php:155 ../lib/metaboxes.php:166
+#: ../lib/metaboxes.php:240
 msgid "No"
 msgstr "Nee"
 
-#: ../lib/metaboxes.php:143 ../lib/metaboxes.php:242 ../lib/metaboxes.php:261
+#: ../lib/metaboxes.php:143 ../lib/metaboxes.php:244 ../lib/metaboxes.php:263
 msgid "Choose Sidebar"
 msgstr "Kies Sidebar"
 
@@ -585,62 +634,62 @@ msgstr "Auteur Informatie"
 msgid "Display an author info box?"
 msgstr "Laat Auteur informatie box zien?"
 
-#: ../lib/metaboxes.php:159
+#: ../lib/metaboxes.php:160
 msgid "Posts Carousel"
 msgstr "Berichten Carrousel"
 
-#: ../lib/metaboxes.php:160
+#: ../lib/metaboxes.php:161
 msgid "Display a carousel with similar or recent posts?"
 msgstr "Toon een carousel met vergelijkbaare of recente berichten?"
 
-#: ../lib/metaboxes.php:165
+#: ../lib/metaboxes.php:167 ../themeoptions/options.php:1540
 msgid "Yes - Display Recent Posts"
 msgstr "Ja - Laat recente berichten zien"
 
-#: ../lib/metaboxes.php:166
+#: ../lib/metaboxes.php:168 ../themeoptions/options.php:1540
 msgid "Yes - Display Similar Posts"
 msgstr "Ja - Laat vergelijkbare berichten zien"
 
-#: ../lib/metaboxes.php:171
+#: ../lib/metaboxes.php:173
 msgid "Carousel Title"
 msgstr "Carousel Titel"
 
-#: ../lib/metaboxes.php:172
+#: ../lib/metaboxes.php:174
 msgid "ex. Similar Posts"
 msgstr "ex. Vergelijkbare Berichten"
 
-#: ../lib/metaboxes.php:182
+#: ../lib/metaboxes.php:184
 msgid "Blog List Options"
 msgstr "Blog Lijst Opties"
 
-#: ../lib/metaboxes.php:191
+#: ../lib/metaboxes.php:193
 msgid "Blog Category"
 msgstr "Blog Categorie"
 
-#: ../lib/metaboxes.php:192
+#: ../lib/metaboxes.php:194
 msgid "Select all blog posts or a specific category to show"
 msgstr ""
 "Selecteerd alle blog berichten of een specifieke categorie om te laten zien"
 
-#: ../lib/metaboxes.php:198
+#: ../lib/metaboxes.php:200
 msgid "How Many Posts Per Page"
 msgstr "Hoeveel Berichten Per Pagina"
 
-#: ../lib/metaboxes.php:222
+#: ../lib/metaboxes.php:224
 msgid "Display Post Content as:"
 msgstr "Laat Bericht Inhoud zien als:"
 
-#: ../lib/metaboxes.php:227
+#: ../lib/metaboxes.php:229
 msgid "Summary"
 msgstr "Samenvatting"
 
-#: ../lib/metaboxes.php:228
+#: ../lib/metaboxes.php:230
 msgid "Full"
 msgstr "Volledige bericht"
 
-#: ../lib/metaboxes.php:252
+#: ../lib/metaboxes.php:254
 msgid "Sidebar Options"
-msgstr "Siderbar Opties"
+msgstr "Sidebar Opties"
 
 #: ../lib/scripts.php:33
 msgid ""
@@ -674,18 +723,14 @@ msgstr "Jaarlijks Archief: %s"
 msgid "Author Archives: %s"
 msgstr "Auteur Archief: %s"
 
-#: ../lib/utils.php:81
+#: ../lib/utils.php:80
 #, php-format
 msgid "Search Results for %s"
 msgstr "Zoekresultaten voor: %s"
 
-#: ../lib/utils.php:84
+#: ../lib/utils.php:82
 msgid "Not Found"
 msgstr "Niet Gevonden"
-
-#: ../lib/virtuetoolkit-activate.php:37
-msgid "Something went wrong with the plugin API."
-msgstr "Er is iets fout gegaan met de Plugin API."
 
 #: ../lib/virtuetoolkit-activate.php:50
 #, php-format
@@ -939,14 +984,14 @@ msgstr "Afbeelding herhaalopties"
 msgid "Text/Caption (optional)"
 msgstr ""
 
-#: ../page-blog.php:70 ../templates/home/blog-home.php:136
+#: ../page-blog.php:70 ../templates/home/blog-home.php:141
 #: ../templates/home/latest-slider.php:58
 #: ../templates/recentblog-carousel.php:71
 #: ../templates/similarblog-carousel.php:77
 msgid "Sorry, no blog entries found."
 msgstr "Onze excuses, geen berichten gevonden."
 
-#: ../page-portfolio.php:130 ../templates/home/portfolio-carousel.php:86
+#: ../page-portfolio.php:132 ../templates/home/portfolio-carousel.php:86
 #: ../templates/recentportfolio-carousel.php:54
 msgid "Sorry, no portfolio entries found."
 msgstr "Sorry, er zijn geen portfolio items gevonden."
@@ -1041,7 +1086,8 @@ msgid "Submit Comment"
 msgstr "Voeg Reactie toe"
 
 #: ../templates/content-fullpost.php:80
-#: ../templates/content-fullpostfull.php:81 ../templates/content-single.php:96
+#: ../templates/content-fullpostfull.php:81
+#: ../templates/content-single.php:109
 #: ../templates/content-singleportfolio.php:181
 msgid "Pages:"
 msgstr "Paginas:"
@@ -1081,7 +1127,7 @@ msgstr "Menu"
 msgid "Latest from the Blog"
 msgstr "Laatste van de Blog"
 
-#: ../templates/home/blog-home.php:126
+#: ../templates/home/blog-home.php:131
 msgid "READ MORE"
 msgstr "LEES MEER"
 
@@ -1097,21 +1143,24 @@ msgstr "Recente Projecten"
 msgid "Similar Posts"
 msgstr "Vergelijkbare Berichten"
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:531
-#: ../themeoptions/framework.php:1850
+#: ../themeoptions/core/enqueue.php:397
 msgid "You have changes that are not saved. Would you like to save them now?"
 msgstr ""
 "U heeft aanpassingen gemaakt die nog niet zijn opgeslagen. Wilt u ze nu "
 "opslaan?"
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:532
-#: ../themeoptions/framework.php:1858
+#: ../themeoptions/core/enqueue.php:405
 msgid "Are you sure? Resetting will lose all custom values."
 msgstr ""
 "Weet u het zeker? Door te resetten zullen al uw aanpassingen verdwijnen."
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:533
-#: ../themeoptions/framework.php:1874
+#: ../themeoptions/core/enqueue.php:413
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+"Weet u het zeker? Door te resetten zullen al uw aanpassingen van deze sectie "
+"verdwijnen."
+
+#: ../themeoptions/core/enqueue.php:421
 msgid ""
 "Your current options will be replaced with the values of this preset. Would "
 "you like to proceed?"
@@ -1119,64 +1168,89 @@ msgstr ""
 "Uw huidige opties zullen worden vervangen door de standaardwaardes. Wilt u "
 "doorgaan?"
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:566
-msgid "You have changes that are not saved.  Would you like to save them now?"
-msgstr ""
-"U heeft aanpassingen gedaan die niet opgeslagen zijn. Wilt u ze nu opslaan?"
+#: ../themeoptions/core/enqueue.php:428
+msgid "Please Wait"
+msgstr "Een moment geduld"
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:567
-msgid "Are you sure?  Resetting will lose all custom values."
+#: ../themeoptions/core/enqueue.php:439
+msgid "There was an error saving. Here is the result of your action:"
 msgstr ""
-"Weet u dat zeker? Resetten zorgt er voor dat alle aanpassingen verloren gaan."
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:568
+#: ../themeoptions/core/enqueue.php:440
 msgid ""
-"Your current options will be replaced with the values of this preset.  Would "
-"you like to proceed?"
+"There was a problem with your action. Please try again or reload the page."
 msgstr ""
-"Uw huidige instellingen zullen worden vervangen door de standaard "
-"instellingen. Wilt u doorgaan?"
 
-#: ../themeoptions/framework.php:209
+#: ../themeoptions/core/panel.php:65
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+"Waarschuwing - Dit optie paneel zal niet goed werken zonder javascript!"
+
+#: ../themeoptions/core/panel.php:141
+msgid "Settings Imported!"
+msgstr "Instellingen geimporteerd!"
+
+#: ../themeoptions/core/panel.php:156
+msgid "All Defaults Restored!"
+msgstr "Alle Standaardwaardes zijn teruggezet!"
+
+#: ../themeoptions/core/panel.php:170
+msgid "Section Defaults Restored!"
+msgstr "Alle Standaardwaardes van sectie zijn teruggezet!"
+
+#: ../themeoptions/core/panel.php:184
+msgid "Settings Saved!"
+msgstr "Instellingen opgeslagen!"
+
+#: ../themeoptions/core/panel.php:204
+msgid "Settings have changed, you should save them!"
+msgstr "Instellingen zijn veranderd, u moet ze opslaan!"
+
+#: ../themeoptions/core/panel.php:212
+msgid "error(s) were found!"
+msgstr "Foutmelding(en) opgetreden!"
+
+#: ../themeoptions/core/panel.php:220
+msgid "warning(s) were found!"
+msgstr "Waarschuwing(en) opgetreden!"
+
+#: ../themeoptions/core/panel.php:326
+msgid ""
+"<strong>Your panel has bundled outdated copies of Redux Framework template "
+"files</strong> &#8211; if you encounter functionality issues this could be "
+"the reason. Ensure you update or remove them."
+msgstr ""
+
+#: ../themeoptions/framework.php:218
 #, php-format
 msgid "Options panel created using %1$s"
 msgstr "Opties paneel gemaakt door gebruik van %1$s"
 
-#: ../themeoptions/framework.php:209
+#: ../themeoptions/framework.php:218
 msgid "Redux Framework"
 msgstr "Redux Framework"
 
-#: ../themeoptions/framework.php:213 ../themeoptions/framework.php:217
+#: ../themeoptions/framework.php:222 ../themeoptions/framework.php:226
 msgid "Options"
 msgstr "Opties"
 
-#: ../themeoptions/framework.php:1866
-msgid "Are you sure? Resetting will lose all custom values in this section."
-msgstr ""
-"Weet u het zeker? Door te resetten zullen al uw aanpassingen van deze sectie "
-"verdwijnen."
-
-#: ../themeoptions/framework.php:1881
-msgid "Please Wait"
-msgstr "Een moment geduld"
-
-#: ../themeoptions/framework.php:2006
+#: ../themeoptions/framework.php:1599
 msgid "Enable"
 msgstr ""
 
-#: ../themeoptions/framework.php:2011
+#: ../themeoptions/framework.php:1604
 msgid "Disable"
 msgstr ""
 
-#: ../themeoptions/framework.php:2017
+#: ../themeoptions/framework.php:1610
 msgid "moving the mouse over"
 msgstr ""
 
-#: ../themeoptions/framework.php:2019
+#: ../themeoptions/framework.php:1612
 msgid "clicking"
 msgstr ""
 
-#: ../themeoptions/framework.php:2023
+#: ../themeoptions/framework.php:1616
 #, php-format
 msgid ""
 "Hints are tooltips that popup when %d the hint icon, offering addition "
@@ -1184,70 +1258,17 @@ msgid ""
 "the link below."
 msgstr ""
 
-#: ../themeoptions/framework.php:2028
+#: ../themeoptions/framework.php:1621
 msgid "Hints"
 msgstr "Hints"
 
-#: ../themeoptions/framework.php:3256
-msgid "Warning- This options panel will not work properly without javascript!"
-msgstr ""
-"Waarschuwing - Dit optie paneel zal niet goed werken zonder javascript!"
-
-#: ../themeoptions/framework.php:3307
-msgid "Developer Mode Enabled"
+#: ../themeoptions/framework.php:2587
+msgid "Invalid security credential, please reload the page and try again."
 msgstr ""
 
-#: ../themeoptions/framework.php:3336
-msgid "Expand"
-msgstr "Uitvougen"
-
-#: ../themeoptions/framework.php:3338 ../themeoptions/framework.php:3648
-msgid "Save Changes"
-msgstr "Aanpassingen Opslaan"
-
-#: ../themeoptions/framework.php:3342 ../themeoptions/framework.php:3652
-msgid "Reset Section"
-msgstr "Reset Sectie"
-
-#: ../themeoptions/framework.php:3344 ../themeoptions/framework.php:3654
-msgid "Reset All"
-msgstr "Reset Alles"
-
-#: ../themeoptions/framework.php:3349 ../themeoptions/framework.php:3659
-msgid "Working..."
-msgstr "Aan het werk..."
-
-#: ../themeoptions/framework.php:3369
-msgid "Settings Imported!"
-msgstr "Instellingen geimporteerd!"
-
-#: ../themeoptions/framework.php:3384
-msgid "All Defaults Restored!"
-msgstr "Alle Standaardwaardes zijn teruggezet!"
-
-#: ../themeoptions/framework.php:3398
-msgid "Section Defaults Restored!"
-msgstr "Alle Standaardwaardes van sectie zijn teruggezet!"
-
-#: ../themeoptions/framework.php:3412
-msgid "Settings Saved!"
-msgstr "Instellingen opgeslagen!"
-
-#: ../themeoptions/framework.php:3432
-msgid "Settings have changed, you should save them!"
-msgstr "Instellingen zijn veranderd, u moet ze opslaan!"
-
-#: ../themeoptions/framework.php:3440
-msgid "error(s) were found!"
-msgstr "Foutmelding(en) opgetreden!"
-
-#: ../themeoptions/framework.php:3448
-msgid "warning(s) were found!"
-msgstr "Waarschuwing(en) opgetreden!"
-
-#: ../themeoptions/framework.php:3512 ../themeoptions/framework.php:3591
-msgid "System Info"
-msgstr "Systeem Informatie"
+#: ../themeoptions/framework.php:2673
+msgid "Your panel has no fields. Nothing to save."
+msgstr ""
 
 #: ../themeoptions/options.php:56
 msgid "Main Settings"
@@ -1269,35 +1290,35 @@ msgstr "Voor Thema documentatie bezoek"
 msgid "For support please visit"
 msgstr "Voor ondersteuning bezoek"
 
-#: ../themeoptions/options.php:70
+#: ../themeoptions/options.php:71
 msgid "Site Layout Style"
 msgstr "Site Lay-out Stijl"
 
-#: ../themeoptions/options.php:71
+#: ../themeoptions/options.php:72
 msgid "Select Boxed or Wide Site Layout Style"
 msgstr "Selecteerd Boxed of Wijde Site Lay-out Stijl"
 
-#: ../themeoptions/options.php:82
+#: ../themeoptions/options.php:83
 msgid "Footer Widget Layout"
 msgstr "Footer Widget Lay-out"
 
-#: ../themeoptions/options.php:83
+#: ../themeoptions/options.php:84
 msgid "Select how many columns for footer widgets"
 msgstr "Selecteer hoeveel kolommen voor footer widgets"
 
-#: ../themeoptions/options.php:94
+#: ../themeoptions/options.php:95
 msgid "Logo Options"
 msgstr "Logo Opties"
 
-#: ../themeoptions/options.php:100
+#: ../themeoptions/options.php:101
 msgid "Logo Layout"
 msgstr "Logo Lay-out"
 
-#: ../themeoptions/options.php:101
+#: ../themeoptions/options.php:102
 msgid "Choose how you want your logo to be laid out"
 msgstr "Kies hoe u wilt dat uw logo word uitgelijnd"
 
-#: ../themeoptions/options.php:113
+#: ../themeoptions/options.php:114
 msgid "Logo"
 msgstr "Logo"
 
@@ -1324,8 +1345,8 @@ msgstr ""
 "Kies de grootte en stijl uw sitenaam, als u geen logo afbeelding gebruikt."
 
 #: ../themeoptions/options.php:154
-msgid "Site Tagline - Below Logo\""
-msgstr "Site onderschrift - Onder logo\""
+msgid "Site Tagline - Below Logo"
+msgstr ""
 
 #: ../themeoptions/options.php:155
 msgid "An optional line of text below your logo"
@@ -1437,8 +1458,8 @@ msgstr ""
 "Dit verplaatst de linker items naar rechts en de rechter items naar links."
 
 #: ../themeoptions/options.php:313
-msgid "Slider Settings"
-msgstr "Slider Instellingen"
+msgid "Home Slider Settings"
+msgstr ""
 
 #: ../themeoptions/options.php:314
 msgid "Home Page Slider Options"
@@ -1527,8 +1548,8 @@ msgstr ""
 "hier."
 
 #: ../themeoptions/options.php:408
-msgid "Mobile Slider"
-msgstr "Mobiele Slider"
+msgid "Home Mobile Slider"
+msgstr ""
 
 #: ../themeoptions/options.php:409
 msgid "Create a more lightweight home slider for your mobile visitors."
@@ -1691,8 +1712,8 @@ msgid "Shop Settings"
 msgstr "Winkel Instellingen"
 
 #: ../themeoptions/options.php:683
-msgid "Shop Archive Page Settings"
-msgstr "Winkel Archief Pagina Instellingen"
+msgid "Shop Archive Page Settings (Woocommerce plugin required)"
+msgstr ""
 
 #: ../themeoptions/options.php:689
 msgid "Display the sidebar on shop archives?"
@@ -1732,47 +1753,79 @@ msgid ""
 msgstr ""
 
 #: ../themeoptions/options.php:731
+msgid "Shop Category Image Size"
+msgstr ""
+
+#: ../themeoptions/options.php:736
+msgid "Category Image Aspect Ratio"
+msgstr ""
+
+#: ../themeoptions/options.php:737
+msgid "This sets how you want your category images to be cropped."
+msgstr ""
+
+#: ../themeoptions/options.php:738
+msgid "Square 1:1"
+msgstr ""
+
+#: ../themeoptions/options.php:738
+msgid "Portrait 3:4"
+msgstr ""
+
+#: ../themeoptions/options.php:738
+msgid "Landscape 4:3"
+msgstr ""
+
+#: ../themeoptions/options.php:738
+msgid "Wide Landscape 4:2"
+msgstr ""
+
+#: ../themeoptions/options.php:738
+msgid "Turn Off"
+msgstr ""
+
+#: ../themeoptions/options.php:745
 msgid "Shop Product Title Settings"
 msgstr "Winkel Product Titel Instellingen"
 
-#: ../themeoptions/options.php:736
+#: ../themeoptions/options.php:750
 msgid "Shop & archive Product title Font"
 msgstr "Winkel & Archief Product Titel Lettertype"
 
-#: ../themeoptions/options.php:751
+#: ../themeoptions/options.php:765
 msgid "Choose Size and Style for product titles on category and archive pages."
 msgstr ""
 "Kies Grootte en Style voor product titels en op categorie en archief paginas."
 
-#: ../themeoptions/options.php:762
+#: ../themeoptions/options.php:776
 msgid "Set Product Title to Uppercase?"
 msgstr "Stel Product Titels in naar Hoofdletters"
 
-#: ../themeoptions/options.php:763
+#: ../themeoptions/options.php:777
 msgid "This makes your product titles uppercase on Category pages"
 msgstr ""
 "Dit veranderd al de product titels in hoofdletters op Categorie paginas"
 
-#: ../themeoptions/options.php:769
+#: ../themeoptions/options.php:783
 msgid "Product title Min Height"
 msgstr "Product titel Minimale Hoogte"
 
-#: ../themeoptions/options.php:770
+#: ../themeoptions/options.php:784
 msgid ""
 "If your titles are long increase this to help align your products height."
 msgstr ""
 "Verhoogt getal dit als uw titels te lang zijn, dit helpt om uw "
 "producthoogtes beter uit te lijnen."
 
-#: ../themeoptions/options.php:779
+#: ../themeoptions/options.php:793
 msgid "Product Image Sizes"
 msgstr "Product Afbeelding Grootte"
 
-#: ../themeoptions/options.php:784
+#: ../themeoptions/options.php:798
 msgid "Enable Product Image Crop on Catalog pages"
 msgstr "Stelt Product Afbeelding bijsnijden in op Catalogus Paginas"
 
-#: ../themeoptions/options.php:785
+#: ../themeoptions/options.php:799
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 270px for Catalog Images"
@@ -1781,11 +1834,11 @@ msgstr ""
 "woocommerce instellingen - aanbevolen breedte: 270px voor Catalogus "
 "Afbeeldingen"
 
-#: ../themeoptions/options.php:791
+#: ../themeoptions/options.php:805
 msgid "Enable Product Image Crop on product Page"
 msgstr "Stelt Product Afbeelding bijsnijden in op Productpaginas"
 
-#: ../themeoptions/options.php:792
+#: ../themeoptions/options.php:806
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 468px for Single Product Image"
@@ -1794,39 +1847,39 @@ msgstr ""
 "woocommerce instellingen - aanbevolen breedte: 468px voor Productpagina "
 "Afbeeldingen"
 
-#: ../themeoptions/options.php:798
+#: ../themeoptions/options.php:812
 msgid "Product Page Settings"
 msgstr "Product Pagina Instellingen"
 
-#: ../themeoptions/options.php:803
+#: ../themeoptions/options.php:817
 msgid "Display product tabs?"
 msgstr "Laat Producten Tabs zien?"
 
-#: ../themeoptions/options.php:804
+#: ../themeoptions/options.php:818
 msgid "This determines if product tabs are displayed"
 msgstr "Dit bepaalt of producten tabs worden weergegeven"
 
-#: ../themeoptions/options.php:810
+#: ../themeoptions/options.php:825
 msgid "Display related products?"
 msgstr "Laat gerelateerde producten zien?"
 
-#: ../themeoptions/options.php:811
+#: ../themeoptions/options.php:826
 msgid "This determines related products are displayed"
 msgstr "Dit bepaalt of gerelateerde producten worden weergegeven"
 
-#: ../themeoptions/options.php:819
+#: ../themeoptions/options.php:834
 msgid "Basic Styling"
 msgstr "Basis Styling"
 
-#: ../themeoptions/options.php:820
+#: ../themeoptions/options.php:835
 msgid "Basic Stylng"
 msgstr "Basis Stylng"
 
-#: ../themeoptions/options.php:825
+#: ../themeoptions/options.php:840
 msgid "Theme Skin Stylesheet"
 msgstr "Theme Skin Stylesheet"
 
-#: ../themeoptions/options.php:826
+#: ../themeoptions/options.php:841
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
@@ -1834,231 +1887,247 @@ msgstr ""
 "Let op* veranderingen gemaakt in het optiepaneel zullen deze stylesheet "
 "overschijven. Bijvoorbeeld: De Kleuren ingesteld in typografie."
 
-#: ../themeoptions/options.php:835
+#: ../themeoptions/options.php:851
 msgid "Primary Color"
 msgstr "Primaire Kleur"
 
-#: ../themeoptions/options.php:836
+#: ../themeoptions/options.php:852
 msgid "Choose the default Highlight color for your site."
 msgstr "Kies de standaard Highlight kleur voor uw site"
 
-#: ../themeoptions/options.php:845
+#: ../themeoptions/options.php:861
 msgid "20% lighter than Primary Color"
 msgstr "20% lichter dan Primaire Kleur"
 
-#: ../themeoptions/options.php:846
+#: ../themeoptions/options.php:862
 msgid "This is used for hover effects"
 msgstr "Dit wordt gebruikt voor hover effecten"
 
-#: ../themeoptions/options.php:855
+#: ../themeoptions/options.php:871
 msgid "Sitewide Gray Fonts"
 msgstr "Sitewide Grijze Tekst"
 
-#: ../themeoptions/options.php:865
+#: ../themeoptions/options.php:881
 msgid "Footer Font Color"
 msgstr "Footer Tekst kleur"
 
-#: ../themeoptions/options.php:877
+#: ../themeoptions/options.php:893
 msgid "Advanced Styling"
 msgstr "Geavanceerde Styling"
 
-#: ../themeoptions/options.php:878
+#: ../themeoptions/options.php:894
 msgid "Main Content Background"
 msgstr "Hoofd Inhoud Achtergrond"
 
-#: ../themeoptions/options.php:883
+#: ../themeoptions/options.php:899
 msgid "Content Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:892 ../themeoptions/options.php:932
-#: ../themeoptions/options.php:972 ../themeoptions/options.php:1012
-#: ../themeoptions/options.php:1052 ../themeoptions/options.php:1092
-#: ../themeoptions/options.php:1132
+#: ../themeoptions/options.php:908 ../themeoptions/options.php:948
+#: ../themeoptions/options.php:988 ../themeoptions/options.php:1028
+#: ../themeoptions/options.php:1068 ../themeoptions/options.php:1108
+#: ../themeoptions/options.php:1148
 msgid "Upload background image or texture"
 msgstr "Upload achtergrond afbeelding of textuur"
 
-#: ../themeoptions/options.php:897 ../themeoptions/options.php:937
-#: ../themeoptions/options.php:977 ../themeoptions/options.php:1017
-#: ../themeoptions/options.php:1057 ../themeoptions/options.php:1097
-#: ../themeoptions/options.php:1137
+#: ../themeoptions/options.php:913 ../themeoptions/options.php:953
+#: ../themeoptions/options.php:993 ../themeoptions/options.php:1033
+#: ../themeoptions/options.php:1073 ../themeoptions/options.php:1113
+#: ../themeoptions/options.php:1153
 msgid "Image repeat options"
 msgstr "Afbeelding herhaalopties"
 
-#: ../themeoptions/options.php:904 ../themeoptions/options.php:944
-#: ../themeoptions/options.php:984 ../themeoptions/options.php:1024
-#: ../themeoptions/options.php:1064 ../themeoptions/options.php:1104
-#: ../themeoptions/options.php:1144
+#: ../themeoptions/options.php:920 ../themeoptions/options.php:960
+#: ../themeoptions/options.php:1000 ../themeoptions/options.php:1040
+#: ../themeoptions/options.php:1080 ../themeoptions/options.php:1120
+#: ../themeoptions/options.php:1160
 msgid "X image placement options"
 msgstr "X Afbeelding plaatsingsmogelijkheden"
 
-#: ../themeoptions/options.php:911 ../themeoptions/options.php:951
-#: ../themeoptions/options.php:991 ../themeoptions/options.php:1031
-#: ../themeoptions/options.php:1071 ../themeoptions/options.php:1111
-#: ../themeoptions/options.php:1151
+#: ../themeoptions/options.php:927 ../themeoptions/options.php:967
+#: ../themeoptions/options.php:1007 ../themeoptions/options.php:1047
+#: ../themeoptions/options.php:1087 ../themeoptions/options.php:1127
+#: ../themeoptions/options.php:1167
 msgid "Y image placement options"
 msgstr "Y Afbeelding plaatsingsmogelijkheden"
 
-#: ../themeoptions/options.php:918
+#: ../themeoptions/options.php:934
 msgid "Topbar Background"
 msgstr "Topbalk Achtergrond"
 
-#: ../themeoptions/options.php:923
+#: ../themeoptions/options.php:939
 msgid "Topbar Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:958
+#: ../themeoptions/options.php:974
 msgid "Header Background"
 msgstr "Header Achtergrond"
 
-#: ../themeoptions/options.php:963
+#: ../themeoptions/options.php:979
 msgid "Header Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:998
+#: ../themeoptions/options.php:1014
 msgid "Secondary Menu Background"
 msgstr "Tweede Menu Achtergrond"
 
-#: ../themeoptions/options.php:1003
+#: ../themeoptions/options.php:1019
 msgid "Secondary menu Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:1038
+#: ../themeoptions/options.php:1054
 msgid "Mobile Menu Background"
 msgstr "Mobiel Menu Achtergrond"
 
-#: ../themeoptions/options.php:1043
+#: ../themeoptions/options.php:1059
 msgid "Mobile Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:1078
+#: ../themeoptions/options.php:1094
 msgid "Footer Background"
 msgstr "Footer Achtergrond"
 
-#: ../themeoptions/options.php:1083
+#: ../themeoptions/options.php:1099
 msgid "Footer Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:1118
+#: ../themeoptions/options.php:1134
 msgid "Body Background"
 msgstr "Body Achtergrond"
 
-#: ../themeoptions/options.php:1123
+#: ../themeoptions/options.php:1139
 msgid "Body Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:1158
+#: ../themeoptions/options.php:1174
 msgid "Fixed or Scroll"
 msgstr "Vast of Scrollend"
 
-#: ../themeoptions/options.php:1167
+#: ../themeoptions/options.php:1183
 msgid "Typography"
 msgstr "Typografie"
 
-#: ../themeoptions/options.php:1168
+#: ../themeoptions/options.php:1184
 msgid "Header Font Options"
 msgstr "Header Test Opties"
 
-#: ../themeoptions/options.php:1173
+#: ../themeoptions/options.php:1189
 msgid "H1 Headings"
 msgstr "H1 Headings"
 
-#: ../themeoptions/options.php:1188
+#: ../themeoptions/options.php:1204
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
 msgstr "Kies Grootte en Stijl voor h1 (Deze dient voor uw Pagina Titels)"
 
-#: ../themeoptions/options.php:1199
+#: ../themeoptions/options.php:1215
 msgid "H2 Headings"
 msgstr "H2 Heading"
 
-#: ../themeoptions/options.php:1214
+#: ../themeoptions/options.php:1230
 msgid "Choose Size and Style for h2"
 msgstr "Kies Grootte en Stijl voor h2"
 
-#: ../themeoptions/options.php:1225
+#: ../themeoptions/options.php:1241
 msgid "H3 Headings"
 msgstr "H3 Headings"
 
-#: ../themeoptions/options.php:1240
+#: ../themeoptions/options.php:1256
 msgid "Choose Size and Style for h3"
 msgstr "Kies Grootte en Stijl voor h3"
 
-#: ../themeoptions/options.php:1251
+#: ../themeoptions/options.php:1267
 msgid "H4 Headings"
 msgstr "H4 Headings"
 
-#: ../themeoptions/options.php:1266
+#: ../themeoptions/options.php:1282
 msgid "Choose Size and Style for h4"
 msgstr "Kies Grootte en Stijl voor h4"
 
-#: ../themeoptions/options.php:1277
+#: ../themeoptions/options.php:1293
 msgid "H5 Headings"
 msgstr "H5 Headings"
 
-#: ../themeoptions/options.php:1292
+#: ../themeoptions/options.php:1308
 msgid "Choose Size and Style for h5"
 msgstr "Kies Grootte en Stijl voor h5"
 
-#: ../themeoptions/options.php:1303
+#: ../themeoptions/options.php:1319
 msgid "Body Font Options"
 msgstr "Body Tekst Opties"
 
-#: ../themeoptions/options.php:1308
+#: ../themeoptions/options.php:1324
 msgid "Body Font"
 msgstr "Body Tekst"
 
-#: ../themeoptions/options.php:1323
+#: ../themeoptions/options.php:1339
 msgid "Choose Size and Style for paragraphs"
 msgstr "Kies Grootte en Stijl voor paragrafen"
 
-#: ../themeoptions/options.php:1336
+#: ../themeoptions/options.php:1352
 msgid "Menu Settings"
 msgstr "Menu Instellingen"
 
-#: ../themeoptions/options.php:1337
+#: ../themeoptions/options.php:1353
 msgid "Primary Menu Options"
 msgstr "Hoofdmenu Opties"
 
-#: ../themeoptions/options.php:1342
+#: ../themeoptions/options.php:1358
 msgid "Primary Menu Font"
 msgstr "Hoofmenu lettertype"
 
-#: ../themeoptions/options.php:1357
+#: ../themeoptions/options.php:1373
 msgid "Choose Size and Style for primary menu"
 msgstr "Kies Grootte en Stijl voor het hoofdmenu"
 
-#: ../themeoptions/options.php:1368
+#: ../themeoptions/options.php:1384
 msgid "Secondary Menu Options"
 msgstr "Tweede Menu Opties"
 
-#: ../themeoptions/options.php:1373
+#: ../themeoptions/options.php:1389
 msgid "Secondary Menu Font"
 msgstr "Tweede Menu Lettertype"
 
-#: ../themeoptions/options.php:1388
+#: ../themeoptions/options.php:1404
 msgid "Choose Size and Style for secondary menu"
 msgstr "Kies Grootte en Stijl voor het tweede menu"
 
-#: ../themeoptions/options.php:1399
+#: ../themeoptions/options.php:1415
 msgid "Mobile Menu Options"
 msgstr "Mobiel Menu Opties"
 
-#: ../themeoptions/options.php:1404
+#: ../themeoptions/options.php:1420
+msgid "Submenu items collapse until opened"
+msgstr ""
+
+#: ../themeoptions/options.php:1426
 msgid "Mobile Menu Font"
 msgstr "Mobiel Menu Lettertype"
 
-#: ../themeoptions/options.php:1419
+#: ../themeoptions/options.php:1441
 msgid "Choose Size and Style for Mobile Menu"
 msgstr "Kies Grootte en Stijl voor het Mobiele Menu"
 
-#: ../themeoptions/options.php:1433 ../themeoptions/options.php:1434
-msgid "Misc Settings"
-msgstr "Diverse instellingen"
+#: ../themeoptions/options.php:1454
+msgid "Page/Post Settings"
+msgstr ""
 
-#: ../themeoptions/options.php:1441
+#: ../themeoptions/options.php:1455
+msgid "Page and Post Settings"
+msgstr ""
+
+#: ../themeoptions/options.php:1460
+msgid "Allow Comments on Pages"
+msgstr ""
+
+#: ../themeoptions/options.php:1461
+msgid "Turn on to allow comments on pages"
+msgstr ""
+
+#: ../themeoptions/options.php:1469
 msgid "All Projects Portfolio Page"
 msgstr "Alle Projecten Portfolio Pagina"
 
-#: ../themeoptions/options.php:1442
+#: ../themeoptions/options.php:1470
 msgid ""
 "This sets the link in every single portfolio page. *note: You still have to "
 "set the page template to portfolio."
@@ -2066,63 +2135,49 @@ msgstr ""
 "Dit stelt de link in voor elke portfolio pagina. Let op: U moet nog steeds "
 "de pagina template op portfolio zetten."
 
-#: ../themeoptions/options.php:1447
-msgid "Allow Comments on Pages"
-msgstr ""
-
-#: ../themeoptions/options.php:1448
-msgid "Turn on to allow comments on pages"
-msgstr ""
-
-#: ../themeoptions/options.php:1454
+#: ../themeoptions/options.php:1475
 msgid "Allow Comments on Portfolio Posts"
 msgstr "Sta reacties toe op Portfolio items"
 
-#: ../themeoptions/options.php:1455
+#: ../themeoptions/options.php:1476
 msgid "Turn on to allow comments on Portfolio posts"
 msgstr ""
 
-#: ../themeoptions/options.php:1461
-msgid "Hide Image Border"
-msgstr "Verberg Afbeeldings Rand"
-
-#: ../themeoptions/options.php:1462
-msgid "Choose to show or hide image border for images added in pages or posts"
-msgstr ""
-
-#: ../themeoptions/options.php:1468
-msgid "Blog Archive"
-msgstr "Blog Archief"
-
-#: ../themeoptions/options.php:1469
-msgid "Choose to show full post or post excerpt."
-msgstr "Kies voor het weergeven van het volledige bericht of de samenvatting."
-
-#: ../themeoptions/options.php:1477
+#: ../themeoptions/options.php:1482
 msgid "Show Comments Closed Text?"
 msgstr "Laat reacties zijn niet toegestaan tekst zien?"
 
-#: ../themeoptions/options.php:1478
+#: ../themeoptions/options.php:1483
 msgid "Choose to show or hide comments closed alert below posts."
 msgstr ""
 "Kies voor het weergeven of verbergen van de melding dat reacties niet "
 "toegestaan zijn onder berichten."
 
-#: ../themeoptions/options.php:1484
-msgid "Show Author Icon with posts?"
-msgstr "Laat Auteur incoon zien bij berichten?"
+#: ../themeoptions/options.php:1489
+msgid "Blog Post Defaults"
+msgstr "Blog Bericht Standaardwaarde"
 
-#: ../themeoptions/options.php:1485
-msgid "Choose to show or hide author icon under post title."
+#: ../themeoptions/options.php:1494
+msgid "Blog Post Summary Default"
+msgstr "Blog Bericht Samenvatting Standaardwaarde"
+
+#: ../themeoptions/options.php:1503
+msgid "Default post summary feature Image"
 msgstr ""
-"Kies voor het weergeven of verbergen van het auteur icoon en naam onder de "
-"titel van berichten."
 
-#: ../themeoptions/options.php:1491
+#: ../themeoptions/options.php:1504
+msgid "Replace theme default feature image for posts without a featured image"
+msgstr ""
+
+#: ../themeoptions/options.php:1509
+msgid "Blog Post Head Content Default"
+msgstr "Blog Bericht Hoofd Inhoud Standaardwaarde"
+
+#: ../themeoptions/options.php:1517
 msgid "Show Previous and Next posts links?"
 msgstr "Laat Vorige en Volgende bricht links zien?"
 
-#: ../themeoptions/options.php:1492
+#: ../themeoptions/options.php:1518
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
@@ -2130,30 +2185,80 @@ msgstr ""
 "Kies voor het weergeven of verbergen van de links 'volgende' en 'vorige' "
 "onderaan een bericht."
 
-#: ../themeoptions/options.php:1499
+#: ../themeoptions/options.php:1524
+msgid "Show Author Icon with posts?"
+msgstr "Laat Auteur incoon zien bij berichten?"
+
+#: ../themeoptions/options.php:1525
+msgid "Choose to show or hide author icon under post title."
+msgstr ""
+"Kies voor het weergeven of verbergen van het auteur icoon en naam onder de "
+"titel van berichten."
+
+#: ../themeoptions/options.php:1531
+msgid "Blog Post Author Box Default"
+msgstr ""
+
+#: ../themeoptions/options.php:1532 ../themeoptions/options.php:1540
+msgid "No, Do not Show"
+msgstr ""
+
+#: ../themeoptions/options.php:1532
+msgid "Yes, Show"
+msgstr ""
+
+#: ../themeoptions/options.php:1539
+msgid "Blog Post Bottom Carousel Default"
+msgstr ""
+
+#: ../themeoptions/options.php:1547
+msgid "Blog Category/Archive Defaults"
+msgstr ""
+
+#: ../themeoptions/options.php:1552
+msgid "Blog Archive"
+msgstr "Blog Archief"
+
+#: ../themeoptions/options.php:1553
+msgid "Choose to show full post or post excerpt."
+msgstr "Kies voor het weergeven van het volledige bericht of de samenvatting."
+
+#: ../themeoptions/options.php:1564 ../themeoptions/options.php:1565
+msgid "Misc Settings"
+msgstr "Diverse instellingen"
+
+#: ../themeoptions/options.php:1570
+msgid "Hide Image Border"
+msgstr "Verberg Afbeeldings Rand"
+
+#: ../themeoptions/options.php:1571
+msgid "Choose to show or hide image border for images added in pages or posts"
+msgstr ""
+
+#: ../themeoptions/options.php:1578
 msgid "Custom Favicon"
 msgstr "Eigen Favicon"
 
-#: ../themeoptions/options.php:1500
+#: ../themeoptions/options.php:1579
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
 "Upload een 16px x 16px png/gif/ico afbeelding welke uw website representeerd"
 
-#: ../themeoptions/options.php:1505
+#: ../themeoptions/options.php:1584
 msgid "Contact Form Email"
 msgstr "Contact Formulier E-mail"
 
-#: ../themeoptions/options.php:1506
+#: ../themeoptions/options.php:1585
 msgid "Sets the email for the contact page email form."
 msgstr "Stel het e-mailadres in voor het formulier op de contact pagina."
 
-#: ../themeoptions/options.php:1512
+#: ../themeoptions/options.php:1591
 msgid "Footer Copyright Text"
 msgstr "Footer Copyright Tekst"
 
-#: ../themeoptions/options.php:1513
+#: ../themeoptions/options.php:1592
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
@@ -2161,51 +2266,31 @@ msgstr ""
 "Schrijf uw eigen copyright text hier. U kan de volgende shortcodes "
 "gebruiken: [copyright] [site-name] [the-year]"
 
-#: ../themeoptions/options.php:1519
-msgid "Blog Post Defaults"
-msgstr "Blog Bericht Standaardwaarde"
-
-#: ../themeoptions/options.php:1524
-msgid "Blog Post Summary Default"
-msgstr "Blog Bericht Samenvatting Standaardwaarde"
-
-#: ../themeoptions/options.php:1533
-msgid "Default post summary feature Image"
-msgstr ""
-
-#: ../themeoptions/options.php:1534
-msgid "Replace theme default feature image for posts without a featured image"
-msgstr ""
-
-#: ../themeoptions/options.php:1539
-msgid "Blog Post Head Content Default"
-msgstr "Blog Bericht Hoofd Inhoud Standaardwaarde"
-
-#: ../themeoptions/options.php:1547
+#: ../themeoptions/options.php:1598
 msgid "Create Sidebars"
 msgstr "Maak Sidebars aan"
 
-#: ../themeoptions/options.php:1552
+#: ../themeoptions/options.php:1603
 msgid "Create Custom Sidebars"
 msgstr "Maak Aangepaste Sidebars"
 
-#: ../themeoptions/options.php:1553
+#: ../themeoptions/options.php:1604
 msgid "Type new sidebar name into textbox"
 msgstr "Type nieuwe sidebar naam in het tekstvak"
 
-#: ../themeoptions/options.php:1554
+#: ../themeoptions/options.php:1605
 msgid "Extra Sidebar"
 msgstr "Extra Sidebar"
 
-#: ../themeoptions/options.php:1559
+#: ../themeoptions/options.php:1610
 msgid "Wordpress Galleries"
 msgstr "Wordpress Gallerijen"
 
-#: ../themeoptions/options.php:1564
+#: ../themeoptions/options.php:1615
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr "Schakel Vitrue Gallerijen in om die van Wordpress te overschrijven"
 
-#: ../themeoptions/options.php:1565
+#: ../themeoptions/options.php:1616
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
@@ -2213,27 +2298,35 @@ msgstr ""
 "Schakel deze uit als u een plugin gebruikt voor aangepaste gallerijen, "
 "bijvoorbeeld: jetpack tiled gallery"
 
-#: ../themeoptions/options.php:1573
+#: ../themeoptions/options.php:1622
+msgid "Theme Lightbox"
+msgstr ""
+
+#: ../themeoptions/options.php:1627
+msgid "Turn Off Theme Lightbox?"
+msgstr ""
+
+#: ../themeoptions/options.php:1635
 msgid "Advanced Settings"
 msgstr "Geavanceerde Instellingen"
 
-#: ../themeoptions/options.php:1574
+#: ../themeoptions/options.php:1636
 msgid "Custom CSS Box"
 msgstr "Aangepast CSS veld"
 
-#: ../themeoptions/options.php:1579
+#: ../themeoptions/options.php:1641
 msgid "Custom CSS"
 msgstr "Aangepaste CSS"
 
-#: ../themeoptions/options.php:1580
+#: ../themeoptions/options.php:1642
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr "Voeg snel CSS code toe aan het Thema door het hier te plaatsen."
 
-#: ../themeoptions/options.php:1599 ../themeoptions/options.php:1600
+#: ../themeoptions/options.php:1663 ../themeoptions/options.php:1664
 msgid "Theme Options"
 msgstr "Thema Opties"
 
-#: ../themeoptions/options.php:1607
+#: ../themeoptions/options.php:1673
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
@@ -2241,40 +2334,42 @@ msgstr ""
 "Bedankt voor het gebruik van the Virtue Theme door <a href=\"http://"
 "kadencethemes.com/\" target=\"_blank\">Kadence Themes</a>."
 
+#: ../themeoptions/templates/panel/footer.tpl.php:47
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:20
+msgid "Save Changes"
+msgstr "Aanpassingen Opslaan"
+
+#: ../themeoptions/templates/panel/footer.tpl.php:50
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:22
+msgid "Reset Section"
+msgstr "Reset Sectie"
+
+#: ../themeoptions/templates/panel/footer.tpl.php:51
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:23
+msgid "Reset All"
+msgstr "Reset Alles"
+
+#: ../themeoptions/templates/panel/footer.tpl.php:56
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:26
+msgid "Working..."
+msgstr "Aan het werk..."
+
+#: ../themeoptions/templates/panel/header.tpl.php:18
+msgid "Developer Mode Enabled"
+msgstr ""
+
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:16
+msgid "Expand"
+msgstr "Uitvougen"
+
+#: ../themeoptions/templates/panel/menu_container.tpl.php:63
+msgid "System Info"
+msgstr "Systeem Informatie"
+
 #: ../woocommerce/loop/sale-flash.php:16
 #: ../woocommerce/single-product/sale-flash.php:16
 msgid "Sale!"
 msgstr "Verkoop!"
-
-#: ../woocommerce/order/form-tracking.php:17
-msgid ""
-"To track your order please enter your Order ID in the box below and press "
-"return. This was given to you on your receipt and in the confirmation email "
-"you should have received."
-msgstr ""
-"Om uw bestelling te volgen geef uw Order-ID in het vak hieronder op en druk "
-"op enter.UW Order-ID vind u op de bon en in de orderbevestiging e-mail die u "
-"ontvangen heeft."
-
-#: ../woocommerce/order/form-tracking.php:19
-msgid "Order ID"
-msgstr "Order ID"
-
-#: ../woocommerce/order/form-tracking.php:19
-msgid "Found in your order confirmation email."
-msgstr "Te vinden in uw orderbevestiging e-mail"
-
-#: ../woocommerce/order/form-tracking.php:20
-msgid "Billing Email"
-msgstr "Betalings e-mail"
-
-#: ../woocommerce/order/form-tracking.php:20
-msgid "Email you used during checkout."
-msgstr "E-mail die u heeft gebruikt tijdens het afrekenen"
-
-#: ../woocommerce/order/form-tracking.php:23
-msgid "Track"
-msgstr "Volg"
 
 #: ../woocommerce/single-product.php:27 ../woocommerce/single-product.php:29
 msgid "Back to"
@@ -2312,6 +2407,109 @@ msgstr "Uw reactie wacht op goedkeuring"
 #: ../woocommerce/single-product/review.php:43
 msgid "verified owner"
 msgstr "Geverifieerde eigenaar"
+
+#~ msgid "Something went wrong."
+#~ msgstr "Er is een fout opgetreden."
+
+#~ msgid "External Link"
+#~ msgstr "Externe link"
+
+#~ msgid "Private Repository"
+#~ msgstr "Privé opslagplaats"
+
+#~ msgid ""
+#~ "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+#~ "Dashboard\">Return to the Dashboard</a>"
+#~ msgstr ""
+#~ "Geen plugins geactiveerd of actief <a href=\"%1$s\" title=\"Return to the "
+#~ "Dashboard\">Return to the Dashboard</a>"
+
+#~ msgid "Install package not available."
+#~ msgstr "Installatie pakket niet beschikbaar."
+
+#~ msgid ""
+#~ "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+#~ msgstr ""
+#~ "Installatie pakket word gedownload van <span class=\"code\">%s</"
+#~ "span>&#8230;"
+
+#~ msgid "Unpacking the package&#8230;"
+#~ msgstr "Uitpakket van pakket&#8230;"
+
+#~ msgid "Installing the plugin&#8230;"
+#~ msgstr "Installeren van plugin&#8230;"
+
+#~ msgid "Plugin install failed."
+#~ msgstr "Plugin installatie mislukt."
+
+#~ msgid "Plugin installed successfully."
+#~ msgstr "Plugin succesvol geinstalleerd."
+
+#~ msgid "Show Details"
+#~ msgstr "Bekijk Details"
+
+#~ msgid "Hide Details"
+#~ msgstr "Verberg Details"
+
+#~ msgid "%1$s installed successfully."
+#~ msgstr "%1$s is succesvol geinstalleerd."
+
+#~ msgid "Return to the Dashboard"
+#~ msgstr "Keer terug naar het Dashboard"
+
+#~ msgid ""
+#~ "You have changes that are not saved.  Would you like to save them now?"
+#~ msgstr ""
+#~ "U heeft aanpassingen gedaan die niet opgeslagen zijn. Wilt u ze nu "
+#~ "opslaan?"
+
+#~ msgid "Are you sure?  Resetting will lose all custom values."
+#~ msgstr ""
+#~ "Weet u dat zeker? Resetten zorgt er voor dat alle aanpassingen verloren "
+#~ "gaan."
+
+#~ msgid ""
+#~ "Your current options will be replaced with the values of this preset.  "
+#~ "Would you like to proceed?"
+#~ msgstr ""
+#~ "Uw huidige instellingen zullen worden vervangen door de standaard "
+#~ "instellingen. Wilt u doorgaan?"
+
+#~ msgid "Site Tagline - Below Logo\""
+#~ msgstr "Site onderschrift - Onder logo\""
+
+#~ msgid "Slider Settings"
+#~ msgstr "Slider Instellingen"
+
+#~ msgid "Mobile Slider"
+#~ msgstr "Mobiele Slider"
+
+#~ msgid "Shop Archive Page Settings"
+#~ msgstr "Winkel Archief Pagina Instellingen"
+
+#~ msgid ""
+#~ "To track your order please enter your Order ID in the box below and press "
+#~ "return. This was given to you on your receipt and in the confirmation "
+#~ "email you should have received."
+#~ msgstr ""
+#~ "Om uw bestelling te volgen geef uw Order-ID in het vak hieronder op en "
+#~ "druk op enter.UW Order-ID vind u op de bon en in de orderbevestiging e-"
+#~ "mail die u ontvangen heeft."
+
+#~ msgid "Order ID"
+#~ msgstr "Order ID"
+
+#~ msgid "Found in your order confirmation email."
+#~ msgstr "Te vinden in uw orderbevestiging e-mail"
+
+#~ msgid "Billing Email"
+#~ msgstr "Betalings e-mail"
+
+#~ msgid "Email you used during checkout."
+#~ msgstr "E-mail die u heeft gebruikt tijdens het afrekenen"
+
+#~ msgid "Track"
+#~ msgstr "Volg"
 
 #~ msgid "Please enter your name."
 #~ msgstr "Voer uw naam in."

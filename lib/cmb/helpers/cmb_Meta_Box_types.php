@@ -147,7 +147,7 @@ class cmb_Meta_Box_types {
 	 * @since 1.0.0
 	 */
 	private static function repeat_table_close() {
-		echo '</tbody></table><p class="add-row"><a data-selector="', cmb_Meta_Box::$field['id'] ,'_repeat" class="add-row-button button" href="#">'. __( 'Add Row', 'cmb' ) .'</a></p>';
+		echo '</tbody></table><p class="add-row"><a data-selector="', cmb_Meta_Box::$field['id'] ,'_repeat" class="add-row-button button" href="#">'. __( 'Add Row', 'virtue' ) .'</a></p>';
 	}
 
 	/**

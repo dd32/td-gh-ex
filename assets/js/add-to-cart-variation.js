@@ -14,6 +14,9 @@
 		var $xhr                = false;
 		var $reset_variations   = $form.find( '.reset_variations' );
 
+		var $single_variation_wrap = $(this).find('.single_variation_wrap_kad');
+		$single_variation_wrap.find('.quantity').hide();
+
 		// Unbind any existing events
 		$form.unbind( 'check_variations update_variation_values found_variation' );
 		$form.find( '.reset_variations' ).unbind( 'click' );
@@ -81,7 +84,7 @@
 		// On changing an attribute
 		.on( 'change', '.variations select', function() {
 			$('.kad-select').trigger('update');
-			
+
 			$form.find( 'input[name="variation_id"], input.variation_id' ).val( '' ).change();
 			$form.find( '.wc-no-matching-variations' ).remove();
 

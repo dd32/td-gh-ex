@@ -6,9 +6,9 @@
   	if(is_page()) {
   		$bsub = get_post_meta( $post->ID, '_kad_subtitle', true );
   		if(!empty($bsub)){
-  			echo '<p class="subtitle"> '.__($bsub).' </p>';
+  			echo '<p class="subtitle"> '.$bsub.' </p>';
   		} 
 	} else if(is_category()) { 
-   		echo '<p class="subtitle">'.__(category_description()).' </p>';
+   		echo '<p class="subtitle">'.category_description().' </p>';
    	} ?>
 </div>
