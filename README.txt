@@ -1,4 +1,4 @@
-Swell Lite v1.1.2
+Swell Lite v1.1.3
 http://www.swelltheme.com
 http://organicthemes.com
 
@@ -90,3 +90,7 @@ CHANGELOG v1.1.2:
 - Changed text domain
 - Regenerated translation files
 - Added screen reader text class
+
+CHANGELOG v1.1.3:
+- More text domain fixes
+- Regenerated translation files
