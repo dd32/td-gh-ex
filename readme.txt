@@ -52,6 +52,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.1
+1. Solve Theme Check Error.
 @Version 1.6
 1. Add Pro Feature in Customizer for Demo Purpose.
 2. Add Screen Reader Css.
