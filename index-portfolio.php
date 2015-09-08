@@ -17,12 +17,13 @@ $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array()
 			</div>
 		</div>
 		<div class="row">
+		<?php if($current_options['portfolio_image_one']) { ?>
 			<div class="col-md-3 col-md-6 home-portfolio-area">
 				<div class="home-portfolio-showcase">
 					<div class="home-portfolio-showcase-media">
-					<?php if($current_options['portfolio_image_one']) { ?>
+					
 						<img class="img-responsive home-portfolio-img" alt="Sleek &amp; Beautiful" src="<?php echo esc_url($current_options['portfolio_image_one']); ?>">
-					<?php } ?>
+					
 						<div class="home-portfolio-showcase-overlay">
 							<div class="home-portfolio-showcase-overlay-inner">
 								<div class="home-portfolio-showcase-detail">
@@ -38,13 +39,14 @@ $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array()
 					</div>
 				</div>
 			</div>
-			
+			<?php } 
+			 if($current_options['portfolio_image_two']) { ?>
 			<div class="col-md-3 col-md-6 home-portfolio-area">
 				<div class="home-portfolio-showcase">
 					<div class="home-portfolio-showcase-media">
-					<?php if($current_options['portfolio_image_two']) { ?>
+					
 						<img class="img-responsive home-portfolio-img" alt="Sleek &amp; Beautiful" src="<?php echo esc_url($current_options['portfolio_image_two']); ?>">
-					<?php } ?>
+					
 						<div class="home-portfolio-showcase-overlay">
 							<div class="home-portfolio-showcase-overlay-inner">
 								<div class="home-portfolio-showcase-detail">
@@ -60,13 +62,14 @@ $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array()
 					</div>
 				</div>
 			</div>
-			
+			<?php }
+			if($current_options['portfolio_image_three']) { ?>
 			<div class="col-md-3 col-md-6 home-portfolio-area">
 				<div class="home-portfolio-showcase">
 					<div class="home-portfolio-showcase-media">
-					<?php if($current_options['portfolio_image_three']) { ?>
+					
 						<img class="img-responsive home-portfolio-img" alt="Sleek &amp; Beautiful" src="<?php echo esc_url($current_options['portfolio_image_three']); ?>">
-					<?php } ?>
+				
 						<div class="home-portfolio-showcase-overlay">
 							<div class="home-portfolio-showcase-overlay-inner">
 								<div class="home-portfolio-showcase-detail">
@@ -82,13 +85,14 @@ $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array()
 					</div>
 				</div>
 			</div>
-			
+				<?php }
+				if($current_options['portfolio_title_four']) { ?>
 			<div class="col-md-3 col-md-6 home-portfolio-area">
 				<div class="home-portfolio-showcase">
 					<div class="home-portfolio-showcase-media">
-					<?php if($current_options['portfolio_title_four']) { ?>
+					
 						<img class="img-responsive home-portfolio-img" alt="Sleek &amp; Beautiful" src="<?php echo esc_url($current_options['portfolio_image_four']); ?>">
-					<?php } ?>
+				
 						<div class="home-portfolio-showcase-overlay">
 							<div class="home-portfolio-showcase-overlay-inner">
 								<div class="home-portfolio-showcase-detail">
@@ -104,7 +108,7 @@ $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array()
 					</div>
 				</div>
 			</div>
-
+	<?php } ?>
 		</div>
 </div>	
 </div>
