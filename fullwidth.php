@@ -2,7 +2,7 @@
 /*
 	Template Name: Full Width
  	Socialia Theme's Full Width Page to show the Pages Selected Full Width
-	Copyright: 2012-2014, D5 Creation, www.d5creation.com
+	Copyright: 2012-2015, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Socialia 2.0
 */
@@ -16,10 +16,10 @@
  <?php if (!is_front_page()): ?><h1 class="page-title"><?php the_title(); ?></h1><?php endif; ?>
  <div class="entrytext">
  <?php the_content(); ?>
- <?php wp_link_pages(array('before' => '<p><strong>' . of_get_option ('pages', 'Pages'). ': </strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+ <?php wp_link_pages(array('before' => '<p><strong>' . __('Pages','d5-socialia'). ': </strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
  </div><div class="clear"> </div>
  <?php edit_post_link('Edit', '<p>', '</p>'); ?>
-<?php if (of_get_option ('cpage', '' ) != '1' ): if (comments_open( $post->ID ) == true ): comments_template('', true); endif; endif;?>
+<?php if (d5socialia_get_option ('cpage', '' ) != '1' ): if (comments_open( $post->ID ) == true ): comments_template('', true); endif; endif;?>
  <?php endwhile; endif; ?>
  
 
