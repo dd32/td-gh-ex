@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.5.6 | 8th September 2015 =
+* Bug Fix: woocommerce rating.
+
 = Version 2.5.5 | 7th September 2015 =
 * Update: Small CSS change.
 * Update: Small JS varitions change.
