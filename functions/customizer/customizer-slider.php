@@ -1,20 +1,10 @@
 <?php
 function wallstreet_slider_customizer( $wp_customize ) {
 
-	//slider Section 
-	$wp_customize->add_panel( 'wallstreet_slider_setting', array(
-		'priority'       => 500,
-		'capability'     => 'edit_theme_options',
-		'title'      => __('Banner Image Settings', 'wallstreet'),
-	) );
-	
 	$wp_customize->add_section(
         'slider_section_settings',
         array(
-            'title' => __('Banner Image Settings','wallstreet'),
-            'description' => '',
-			'panel'  => 'wallstreet_slider_setting',)
-    );
+            'title' => __('Banner Image Settings','wallstreet')));
 	
 	
 	$wp_customize->add_setting( 'wallstreet_pro_options[slider_image]',array('default' => get_template_directory_uri().'/images/slider.jpg',

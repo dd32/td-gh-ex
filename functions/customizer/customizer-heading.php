@@ -1,21 +1,13 @@
 <?php
 function wallstreet_template_customizer( $wp_customize ) {
 
-//Template panel 
-	$wp_customize->add_panel( 'wallstreet_template', array(
-		'priority'       => 500,
-		'capability'     => 'edit_theme_options',
-		'title'      => __('Section Heading', 'wallstreet'),
-	) );
-	
-	
-	// add section to manage Section heading
+
+// add section to manage Section heading
 	$wp_customize->add_section(
         'section_heading',
         array(
             'title' => __('Section Heading','wallstreet'),
-			'panel'  => 'wallstreet_template',
-			'priority'   => 100,
+			'priority'   => 500,
 			)
     );
 	

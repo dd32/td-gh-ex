@@ -106,7 +106,8 @@
     margin: 0;
 }
 .flex_btn {
-    font-family: 'RobotoMedium';
+    font-family:'Roboto';
+	font-weight:400;
     font-size: 12px;
     line-height: 18px;
     margin-bottom: 5px;
@@ -218,7 +219,8 @@
     margin: 0;
 }
 .flex_btn {
-    font-family: 'RobotoBold';
+    font-family:'Roboto';
+	font-weight:700;
     font-size: 9px;
     line-height: 18px;
     margin-bottom: 5px;
@@ -455,7 +457,8 @@
 
 .flex_btn {
     border: 1px solid #FFFFFF;
-    font-family: 'RobotoBold';
+    font-family:'Roboto';
+	font-weight:700;
     font-size: 7px;
     line-height: 16px;
     margin-bottom: 5px;
@@ -741,5 +744,4 @@
 }
 /* for small size screen all the nested comments comes at the same hierarchical level*/
 .comment-section ul.children{padding-left:0px;}
-
 }

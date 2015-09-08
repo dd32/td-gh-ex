@@ -52,6 +52,11 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6
+1. Add Pro Feature in Customizer for Demo Purpose.
+2. Add Screen Reader Css.
+3. Add Google Font.
+4. Update Font Awesome Folder.
 @Version 1.5.3
 1. Fixed for blank values in portfolio/project item images.
 @Version 1.5.2

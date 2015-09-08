@@ -20,7 +20,8 @@
 	border-color: none;
 }
 .navbar-brand {
-	font-family: 'RobotoMedium';
+	font-family: 'Roboto';
+	fonr-weight:300;
     font-size: 40px;
     height: auto;
     line-height: 40px;
@@ -79,7 +80,8 @@
     padding: 40px 19px;
 	border-radius: 0px 0px 0px 0px;
 	color: #ffffff;
-	font-family: 'RobotoRegular';
+	font-family:'Roboto';
+	font-weight:400;
 	font-size: 16px;
 	
 }
@@ -108,7 +110,8 @@
 }
 .dropdown-menu > li > a {
     color: #ffffff;
-    font-family: 'RobotoRegular';
+    font-family:'Roboto';
+	font-weight:400;
     font-size: 15px;
     line-height: 20px;
     padding: 15px 20px;

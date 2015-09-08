@@ -9,6 +9,7 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php'); 
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/webriti_nav_walker.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/breadcrumbs/breadcrumbs.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
 	
 	
 	//Customizer 
@@ -21,6 +22,14 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-heading.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-feature.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-testimonial.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-client.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-template.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-typography.php');
+	
+	
+	
 	
 	
 	
@@ -115,8 +124,7 @@ function webriti_scripts()
 	wp_enqueue_style('wallstreet-style', get_stylesheet_uri() );
 	wp_enqueue_style('wallstreet-bootstrap', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');	
 	wp_enqueue_style('wallstreet-theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');
-	wp_enqueue_style('wallstreet-media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');
-	wp_enqueue_style('wallstreet-font', WEBRITI_TEMPLATE_DIR_URI . '/css/font/font.css');	
+	wp_enqueue_style('wallstreet-media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');	
 	wp_enqueue_style('wallstreet-font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome/css/font-awesome.min.css');
 	wp_enqueue_style('wallstreet-tool-tip', WEBRITI_TEMPLATE_DIR_URI . '/css/css-tooltips.css');
 	
