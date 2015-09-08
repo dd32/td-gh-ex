@@ -184,7 +184,7 @@ function swelllite_comment( $comment, $args, $depth ) {
 						echo get_avatar( $comment, $avatar_size );
 
 						/* translators: 1: comment author, 2: date and time */
-						printf( esc_html__( '%1$s <br/> %2$s <br/>', 'swelllite' ),
+						printf( __( '%1$s <br/> %2$s <br/>', 'swelllite' ),
 							sprintf( '<span class="fn">%s</span>', wp_kses_post( get_comment_author_link() ) ),
 							sprintf( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
 								esc_url( get_comment_link( $comment->comment_ID ) ),

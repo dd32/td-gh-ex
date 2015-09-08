@@ -187,12 +187,25 @@ function swelllite_theme_customizer( $wp_customize ) {
 		) ) );
 		
 	//-------------------------------------------------------------------------------------------------------------------//
+	// Theme Options Panel
+	//-------------------------------------------------------------------------------------------------------------------//
+
+	$wp_customize->add_panel( 'swelllite_theme_options', array(
+	    'priority' => 1,
+	    'capability' => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title' => esc_html__( 'Theme Options', 'swelllite' ),
+	    'description' => esc_html__( 'This panel allows you to customize specific areas of the theme.', 'swelllite' ),
+	) );
+		
+	//-------------------------------------------------------------------------------------------------------------------//
 	// Layout
 	//-------------------------------------------------------------------------------------------------------------------//
 	
 	$wp_customize->add_section( 'swelllite_layout_section' , array(
 		'title'       => esc_html__( 'Layout', 'swelllite' ),
 		'priority'    => 104,
+		'panel' => 'swelllite_theme_options',
 	) );
 		
 		// Display Blog Author
