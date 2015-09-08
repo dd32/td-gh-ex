@@ -1,0 +1,591 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WIP\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-08 18:41+0100\n"
+"PO-Revision-Date: 2015-09-08 18:41+0100\n"
+"Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.6.8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:11
+msgid "Not found"
+msgstr ""
+
+#: 404.php:12 search.php:34
+msgid "Sorry, no posts matched your criteria"
+msgstr ""
+
+#: archive.php:49
+msgid "Sorry, no posts matched into "
+msgstr ""
+
+#: archive.php:89 index.php:86 sidebar.php:14 template-left-sidebar.php:60
+#: template-right-sidebar.php:60
+msgid "Calendar"
+msgstr ""
+
+#: comments.php:5 core/post-formats/aside.php:42
+#: core/post-formats/audio.php:42 core/post-formats/chat.php:42
+#: core/post-formats/gallery.php:42 core/post-formats/image.php:42
+#: core/post-formats/link.php:42 core/post-formats/quote.php:42
+#: core/post-formats/standard.php:42 core/post-formats/status.php:42
+#: core/post-formats/video.php:42
+msgid "No comments"
+msgstr ""
+
+#: comments.php:5 core/post-formats/aside.php:42
+#: core/post-formats/audio.php:42 core/post-formats/chat.php:42
+#: core/post-formats/gallery.php:42 core/post-formats/image.php:42
+#: core/post-formats/link.php:42 core/post-formats/quote.php:42
+#: core/post-formats/standard.php:42 core/post-formats/status.php:42
+#: core/post-formats/video.php:42
+msgid "comment"
+msgstr ""
+
+#: comments.php:5 core/post-formats/aside.php:42
+#: core/post-formats/audio.php:42 core/post-formats/chat.php:42
+#: core/post-formats/gallery.php:42 core/post-formats/image.php:42
+#: core/post-formats/link.php:42 core/post-formats/quote.php:42
+#: core/post-formats/standard.php:42 core/post-formats/status.php:42
+#: core/post-formats/video.php:42
+msgid "comments"
+msgstr ""
+
+#: comments.php:31
+#, php-format
+msgid "<cite>%s</cite>"
+msgstr ""
+
+#: comments.php:33
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: comments.php:35
+msgid "(Edit)"
+msgstr ""
+
+#: comments.php:41
+msgid "Your comment is awaiting approval."
+msgstr ""
+
+#: comments.php:57
+msgid "&laquo;"
+msgstr ""
+
+#: comments.php:58
+msgid "&raquo;"
+msgstr ""
+
+#: comments.php:66
+msgid "Comment"
+msgstr ""
+
+#: core/admin/customize/customize.php:11
+msgid "Full Image Background"
+msgstr ""
+
+#: core/admin/customize/customize.php:12
+msgid ""
+"Do you want to set a full background image? (After the upload, check "
+"'Fixed', from the Background Attachment section)"
+msgstr ""
+
+#: core/admin/customize/customize.php:17
+#: core/admin/customize/customize.php:119
+#: core/admin/customize/customize.php:135
+#: core/admin/customize/customize.php:432
+msgid "No"
+msgstr ""
+
+#: core/admin/customize/customize.php:18
+#: core/admin/customize/customize.php:120
+#: core/admin/customize/customize.php:136
+#: core/admin/customize/customize.php:433
+msgid "Yes"
+msgstr ""
+
+#: core/admin/customize/customize.php:29 core/admin/customize/customize.php:30
+msgid "General"
+msgstr ""
+
+#: core/admin/customize/customize.php:39
+msgid "Load system"
+msgstr ""
+
+#: core/admin/customize/customize.php:49
+msgid "Choose a load system"
+msgstr ""
+
+#: core/admin/customize/customize.php:50
+msgid ""
+"Select a load system, if you've some problems with the theme (for example a "
+"blank page)."
+msgstr ""
+
+#: core/admin/customize/customize.php:55
+msgid "Mode a"
+msgstr ""
+
+#: core/admin/customize/customize.php:56
+msgid "Mode b"
+msgstr ""
+
+#: core/admin/customize/customize.php:67
+msgid "Color Scheme"
+msgstr ""
+
+#: core/admin/customize/customize.php:77
+msgid "Predefined Color Schemes"
+msgstr ""
+
+#: core/admin/customize/customize.php:78
+msgid "Choose your Color Scheme"
+msgstr ""
+
+#: core/admin/customize/customize.php:84
+msgid "Cyan"
+msgstr ""
+
+#: core/admin/customize/customize.php:85
+msgid "Orange"
+msgstr ""
+
+#: core/admin/customize/customize.php:86
+msgid "Blue"
+msgstr ""
+
+#: core/admin/customize/customize.php:87
+msgid "Red"
+msgstr ""
+
+#: core/admin/customize/customize.php:88
+msgid "Pink"
+msgstr ""
+
+#: core/admin/customize/customize.php:89
+msgid "Purple"
+msgstr ""
+
+#: core/admin/customize/customize.php:90
+msgid "Yellow"
+msgstr ""
+
+#: core/admin/customize/customize.php:91
+msgid "Green"
+msgstr ""
+
+#: core/admin/customize/customize.php:103
+msgid "Settings"
+msgstr ""
+
+#: core/admin/customize/customize.php:113
+msgid "Read more"
+msgstr ""
+
+#: core/admin/customize/customize.php:114
+msgid "Do you want to display the read more button?"
+msgstr ""
+
+#: core/admin/customize/customize.php:129
+msgid "Author"
+msgstr ""
+
+#: core/admin/customize/customize.php:130
+msgid "Do you want to view the author?"
+msgstr ""
+
+#: core/admin/customize/customize.php:145
+msgid "Styles"
+msgstr ""
+
+#: core/admin/customize/customize.php:155
+msgid "Custom css"
+msgstr ""
+
+#: core/admin/customize/customize.php:156
+msgid "Insert your custom css code."
+msgstr ""
+
+#: core/admin/customize/customize.php:168
+msgid "Layouts"
+msgstr ""
+
+#: core/admin/customize/customize.php:178
+msgid "Home Blog Layout"
+msgstr ""
+
+#: core/admin/customize/customize.php:179
+msgid "If you've set the latest articles, for the homepage, choose a layout."
+msgstr ""
+
+#: core/admin/customize/customize.php:184
+#: core/admin/customize/customize.php:202 core/metaboxes/post.php:32
+msgid "Full Width"
+msgstr ""
+
+#: core/admin/customize/customize.php:185
+#: core/admin/customize/customize.php:203 core/metaboxes/post.php:33
+msgid "Left Sidebar"
+msgstr ""
+
+#: core/admin/customize/customize.php:186
+#: core/admin/customize/customize.php:204 core/metaboxes/post.php:34
+msgid "Right Sidebar"
+msgstr ""
+
+#: core/admin/customize/customize.php:196
+#, fuzzy
+msgid "Category Layout"
+msgstr "Categorisa"
+
+#: core/admin/customize/customize.php:197
+msgid "Select a layout for category pages."
+msgstr ""
+
+#: core/admin/customize/customize.php:215
+msgid "Login Area"
+msgstr ""
+
+#: core/admin/customize/customize.php:225
+#: core/admin/customize/customize.php:260
+msgid "Custom Logo"
+msgstr ""
+
+#: core/admin/customize/customize.php:226
+msgid "Upload your custom logo, for the admin area.( Max 320px as width )"
+msgstr ""
+
+#: core/admin/customize/customize.php:237
+msgid "Height"
+msgstr ""
+
+#: core/admin/customize/customize.php:238
+msgid ""
+"Insert the height of your custom logo, without “px” (for example 550 and not "
+"550px)."
+msgstr ""
+
+#: core/admin/customize/customize.php:250
+msgid "Header"
+msgstr ""
+
+#: core/admin/customize/customize.php:261
+msgid "Insert the url of your custom logo"
+msgstr ""
+
+#: core/admin/customize/customize.php:273
+msgid "Footer"
+msgstr ""
+
+#: core/admin/customize/customize.php:283
+msgid "Copyright Text"
+msgstr ""
+
+#: core/admin/customize/customize.php:284
+msgid "Insert your copyright text."
+msgstr ""
+
+#: core/admin/customize/customize.php:294
+msgid "Facebook Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:295
+msgid "Insert Facebook Url (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:305
+msgid "Twitter Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:306
+msgid "Insert Twitter Url (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:316
+msgid "Flickr Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:317
+msgid "Insert Flickr Url (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:327
+msgid "Google Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:328
+msgid "Insert Google Url (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:338
+msgid "Linkedin Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:339
+msgid "Insert Linkedin Url (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:349
+msgid "Myspace Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:350
+msgid "Insert Myspace Url (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:360
+msgid "Pinterest Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:361
+msgid "Insert Pinterest Url (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:371
+msgid "Tumblr Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:372
+msgid "Insert Tumblr Url (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:382
+msgid "Youtube Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:383
+msgid "Insert Youtube Url (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:393
+msgid "Vimeo Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:394
+msgid "Insert Vimeo Url (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:404
+msgid "Skype Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:405
+msgid "Insert Skype ID (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:415
+msgid "Email Address"
+msgstr ""
+
+#: core/admin/customize/customize.php:416
+msgid "Insert Email Address (empty if you want to hide the button)"
+msgstr ""
+
+#: core/admin/customize/customize.php:426
+msgid "Feed Rss Button"
+msgstr ""
+
+#: core/admin/customize/customize.php:427
+msgid "Do you want to display the Feed Rss button?"
+msgstr ""
+
+#: core/admin/customize/customize.php:444
+#: core/admin/customize/customize.php:445
+msgid "Typography"
+msgstr ""
+
+#: core/admin/customize/customize.php:456
+msgid "Logo"
+msgstr ""
+
+#: core/admin/customize/customize.php:466
+#: core/admin/customize/customize.php:500
+#: core/admin/customize/customize.php:523
+msgid "Font size"
+msgstr ""
+
+#: core/admin/customize/customize.php:467
+msgid "Insert a size, for logo font (For example, 60px) "
+msgstr ""
+
+#: core/admin/customize/customize.php:477
+msgid "Description font size"
+msgstr ""
+
+#: core/admin/customize/customize.php:478
+msgid "Insert a size, for logo description (For example, 14px) "
+msgstr ""
+
+#: core/admin/customize/customize.php:490
+msgid "Menu"
+msgstr ""
+
+#: core/admin/customize/customize.php:501
+msgid "Insert a size, for menu font (For example, 14px) "
+msgstr ""
+
+#: core/admin/customize/customize.php:513
+msgid "Content"
+msgstr ""
+
+#: core/admin/customize/customize.php:524
+msgid "Insert a size, for content font (For example, 14px) "
+msgstr ""
+
+#: core/admin/customize/customize.php:537
+msgid "Headlines"
+msgstr ""
+
+#: core/admin/customize/customize.php:547
+msgid "H1 headline"
+msgstr ""
+
+#: core/admin/customize/customize.php:548
+msgid "Insert a size, for for H1 elements (For example, 24px) "
+msgstr ""
+
+#: core/admin/customize/customize.php:558
+msgid "H2 headline"
+msgstr ""
+
+#: core/admin/customize/customize.php:559
+msgid "Insert a size, for for H2 elements (For example, 22px) "
+msgstr ""
+
+#: core/admin/customize/customize.php:569
+msgid "H3 headline"
+msgstr ""
+
+#: core/admin/customize/customize.php:570
+msgid "Insert a size, for for H3 elements (For example, 20px) "
+msgstr ""
+
+#: core/admin/customize/customize.php:580
+msgid "H4 headline"
+msgstr ""
+
+#: core/admin/customize/customize.php:581
+msgid "Insert a size, for for H4 elements (For example, 18px) "
+msgstr ""
+
+#: core/admin/customize/customize.php:591
+msgid "H5 headline"
+msgstr ""
+
+#: core/admin/customize/customize.php:592
+msgid "Insert a size, for for H5 elements (For example, 16px) "
+msgstr ""
+
+#: core/admin/customize/customize.php:602
+msgid "H6 headline"
+msgstr ""
+
+#: core/admin/customize/customize.php:603
+msgid "Insert a size, for for H6 elements (For example, 14px) "
+msgstr ""
+
+#: core/classes/customize.php:34
+msgid "Upgrade to Sueva Premium"
+msgstr ""
+
+#: core/functions/theme-widgets.php:21
+msgid "This sidebar will be shown for the homepage"
+msgstr ""
+
+#: core/main.php:32
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: core/metaboxes/post.php:15 core/metaboxes/post.php:23
+msgid "Setting"
+msgstr ""
+
+#: core/metaboxes/post.php:27
+msgid "Template"
+msgstr ""
+
+#: core/metaboxes/post.php:28
+msgid "Select a template for this page"
+msgstr ""
+
+#: core/post-formats/aside.php:48
+msgid "Aside"
+msgstr ""
+
+#: core/post-formats/audio.php:48
+msgid "Audio"
+msgstr ""
+
+#: core/post-formats/chat.php:48
+msgid "Chat"
+msgstr ""
+
+#: core/post-formats/gallery.php:48
+msgid "Gallery"
+msgstr ""
+
+#: core/post-formats/image.php:48
+msgid "Image"
+msgstr ""
+
+#: core/post-formats/link.php:48
+msgid "Link"
+msgstr ""
+
+#: core/post-formats/quote.php:48
+msgid "Quote"
+msgstr ""
+
+#: core/post-formats/standard.php:48
+msgid "Article"
+msgstr ""
+
+#: core/post-formats/status.php:48
+msgid "Status"
+msgstr ""
+
+#: core/post-formats/video.php:48
+msgid "Video"
+msgstr ""
+
+#: core/templates/after-content.php:36
+#, fuzzy
+msgid "Categories: "
+msgstr "Categorisa"
+
+#: core/templates/read-more.php:26
+msgid "Read More"
+msgstr ""
+
+#: footer.php:25
+msgid "Copyright"
+msgstr ""
+
+#: footer.php:27
+msgid "Theme by"
+msgstr ""
+
+#: footer.php:28
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: index.php:42
+msgid "Sorry, no posts found."
+msgstr ""
+
+#: search.php:12
+msgid "<span>Search </span> results for"
+msgstr ""

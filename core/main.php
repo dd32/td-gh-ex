@@ -315,6 +315,52 @@ function suevafree_template($id) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* LOGIN AREA */
+/*-----------------------------------------------------------------------------------*/ 
+
+if ( ! function_exists( 'suevafree_custom_login_logo' ) ) {
+ 
+	function suevafree_custom_login_logo() { 
+	
+		if ( suevafree_setting('suevafree_login_logo') ) : ?>
+	
+			<style type="text/css">
+
+				body.login div#login h1 a {
+					background-image: url('<?php echo esc_url(suevafree_setting('suevafree_login_logo')); ?>');
+					-webkit-background-size: inherit;
+					background-size: inherit ;
+					width:100%;
+					
+					<?php 
+					
+						if ( suevafree_setting('suevafree_login_logo_height') ) :
+						
+							echo 'height:'.suevafree_setting('suevafree_login_logo_height').'px;';
+						
+						else:
+
+							echo 'height:550px;';
+
+						endif;
+					
+					?>
+				
+				}
+				
+			</style>
+		
+	<?php 
+	
+		endif;
+	
+	}
+	
+	add_action( 'login_enqueue_scripts', 'suevafree_custom_login_logo' );
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* Excerpt */
 /*-----------------------------------------------------------------------------------*/ 
 

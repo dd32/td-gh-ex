@@ -104,7 +104,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"type" => "section",
 				"id" => "settings_section",
 				"panel" => "general_panel",
-				"priority" => "13",
+				"priority" => "12",
 
 			),
 
@@ -146,7 +146,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"type" => "section",
 				"id" => "styles_section",
 				"panel" => "general_panel",
-				"priority" => "14",
+				"priority" => "13",
 
 			),
 
@@ -169,7 +169,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"type" => "section",
 				"id" => "layouts_section",
 				"panel" => "general_panel",
-				"priority" => "16",
+				"priority" => "14",
 
 			),
 
@@ -207,6 +207,41 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"std" => "right-sidebar",
 			
 			),
+			
+			/* LOGIN AREA SECTION */ 
+
+			array( 
+
+				"title" => __( "Login Area",'suevafree'),
+				"type" => "section",
+				"id" => "login_area_section",
+				"panel" => "general_panel",
+				"priority" => "15",
+
+			),
+
+			array( 
+
+				"label" => __( "Custom Logo",'suevafree'),
+				"description" => __( "Upload your custom logo, for the admin area.( Max 320px as width )",'suevafree'),
+				"id" => "suevafree_login_logo",
+				"type" => "upload",
+				"section" => "login_area_section",
+				"std" => "",
+
+			),
+
+
+			array( 
+
+				"label" => __( "Height",'suevafree'),
+				"description" => __( "Insert the height of your custom logo, without “px” (for example 550 and not 550px).",'suevafree'),
+				"id" => "suevafree_login_logo_height",
+				"type" => "text",
+				"section" => "login_area_section",
+				"std" => "550",
+
+			),
 
 			/* HEADER AREA SECTION */ 
 
@@ -216,7 +251,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"type" => "section",
 				"id" => "header_section",
 				"panel" => "general_panel",
-				"priority" => "19",
+				"priority" => "16",
 
 			),
 
@@ -225,18 +260,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => __( "Custom Logo","suevafree"),
 				"description" => __( "Insert the url of your custom logo","suevafree"),
 				"id" => "suevafree_custom_logo",
-				"type" => "url",
-				"section" => "header_section",
-				"std" => "",
-
-			),
-
-			array( 
-
-				"label" => __( "Custom Favicon","suevafree"),
-				"description" => __( "Insert the url of your custom favicon.","suevafree"),
-				"id" => "suevafree_custom_favicon",
-				"type" => "url",
+				"type" => "upload",
 				"section" => "header_section",
 				"std" => "",
 
@@ -250,7 +274,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"type" => "section",
 				"id" => "footer_section",
 				"panel" => "general_panel",
-				"priority" => "20",
+				"priority" => "17",
 
 			),
 
@@ -467,7 +491,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"type" => "section",
 				"id" => "menu_section",
 				"panel" => "typography_panel",
-				"priority" => "12",
+				"priority" => "11",
 
 			),
 
@@ -490,7 +514,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"type" => "section",
 				"id" => "content_section",
 				"panel" => "typography_panel",
-				"priority" => "13",
+				"priority" => "12",
 
 			),
 
@@ -514,7 +538,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"type" => "section",
 				"id" => "headlines_section",
 				"panel" => "typography_panel",
-				"priority" => "14",
+				"priority" => "13",
 
 			),
 
