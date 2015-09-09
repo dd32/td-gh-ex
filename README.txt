@@ -71,6 +71,9 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.3
+* Fixed textdomain error
+
 #### 1.2.2
 * Change widgets titles to h4
 * Exclude slider category from sidebar categories widget

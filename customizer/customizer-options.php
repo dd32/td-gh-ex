@@ -249,7 +249,7 @@ function customizer_library_topshop_options() {
     );
     $options['topshop-blog-list-image-type'] = array(
         'id' => 'topshop-blog-list-image-type',
-        'label'   => __( 'Blog List Image', 'topshop-premium' ),
+        'label'   => __( 'Blog List Image', 'topshop' ),
         'section' => $section,
         'type'    => 'select',
         'choices' => $choices,

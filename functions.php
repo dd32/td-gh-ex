@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.2.2' );
+define( 'TOPSHOP_THEME_VERSION' , '1.2.3' );
 
 if ( ! function_exists( 'topshop_theme_setup' ) ) :
 /**
@@ -224,11 +224,11 @@ function topshop_recommended_plugin_notice() {
     if ( $pagenow == 'plugins.php' ) {
 	    if ( ! get_user_meta( $user_id, 'topshop_recommended_plugin_ignore_notice' ) ) {
 	        echo '<div class="updated"><p>';
-            printf( __('<p>Install the plugins we at <a href="http://www.kairaweb.com/" target="_blank">Kaira</a> recommended | <a href="%1$s">Hide Notice</a></p>'), '?topshop_recommended_plugin_nag_ignore=0' ); ?>
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'WooCommerce', 'topshop' ), 'WordPress' ); ?></a><br />
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'SiteOrigin\'s Page Builder', 'topshop' ), 'WordPress' ); ?></a><br />
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Meta Slider', 'topshop' ), 'WordPress' ); ?></a><br />
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Breadcrumb NavXT', 'topshop' ), 'WordPress' ); ?></a>
+            printf( __( '<p>Install the plugins we at <a href="http://www.kairaweb.com/" target="_blank">Kaira</a> recommended | <a href="%1$s">Hide Notice</a></p>', 'topshop' ), '?topshop_recommended_plugin_nag_ignore=0' ); ?>
+            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'WooCommerce', 'topshop' ), 'topshop' ); ?></a><br />
+            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'SiteOrigin\'s Page Builder', 'topshop' ), 'topshop' ); ?></a><br />
+            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Meta Slider', 'topshop' ), 'topshop' ); ?></a><br />
+            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Breadcrumb NavXT', 'topshop' ), 'topshop' ); ?></a>
             <?php
 	        echo "</p></div>";
 	    }
