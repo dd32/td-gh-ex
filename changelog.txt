@@ -1,5 +1,8 @@
 == Change log ==
 
+= 1.8 =
+* Added German translation de_DE.po and de_DE.mo
+
 = 1.7 =
 * Added: Missing keywords esc_attr_x in .pot file
 * Bug Fixed: Changed esc_attr_e to echo esc_attr in searchform.php
