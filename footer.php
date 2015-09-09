@@ -64,14 +64,14 @@ endif;
                    
                    
                    
-                   <div class="copyright">
-                   <?php if( get_theme_mod( 'hide_copyright' ) == '') { ?>
-    <?php esc_attr_e('&copy;', 'bbird-under'); ?> <?php echo date('Y'); ?><a href="<?php echo esc_url( home_url( '/' )) ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
-        <?php
-        
-        echo  get_theme_mod( 'copyright_textbox','Default copyright text'); ?>
-    </a><?php } // end if ?>
-                        <p> This site is powered by <a href="https://wordpress.org/">WordPress</a></p>
+                 <div class="copyright">
+                    <p>   &copy; <?php echo date("Y") ?> <?php printf( __( 'Copyright text', 'bbird-under' )); ?> </p>                    
+                    <p>  
+                        <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bbird-under' ) ); ?>">
+                        <?php printf( __( 'Proudly powered by %s', 'bbird-under' ), 'WordPress' ); ?>
+                        </a>
+                    </p>
+                  
                  	  </div>
 			
 		</div><!-- .site-info -->

@@ -22,3 +22,11 @@ Version 1.0.2
 - few bugs fixed
 - removed some functions integrated into WP 4.3 core
 - Google fonts properly loaded
+
+-----------------------------------------------------------------------------------------
+Version 1.0.3
+-----------------------------------------------------------------------------------------
+
+- few bugs fixed
+- unneeded scripts removed
+- Font Awesome updated

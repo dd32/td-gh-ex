@@ -54,6 +54,11 @@ function bbird_under_setup() {
         //  Declare WooCommerce Support
         
          add_theme_support( 'woocommerce' );
+
+        // Apply theme's stylesheet to the visual editor.
+
+         add_editor_style( get_stylesheet_uri() );
+         
 }
 endif; // bbird_under_setup
 add_action( 'after_setup_theme', 'bbird_under_setup' );
@@ -136,7 +141,7 @@ add_action( 'widgets_init', 'bbird_under_widgets_init' );
 
 function bbird_under_load_google_fonts() {
 
-wp_enqueue_style( 'bbird-under-google-fonts', 'http://fonts.googleapis.com/css?family=Oswald:400,300,700', false ); 
+wp_enqueue_style( 'bbird-under-google-fonts', '//fonts.googleapis.com/css?family=Oswald:400,300,700', false ); 
 }
 
 add_action( 'wp_enqueue_scripts', 'bbird_under_load_google_fonts' );
@@ -162,8 +167,6 @@ function bbird_under_scripts() {
 	wp_enqueue_script( 'fastclick', get_template_directory_uri() . '/js/vendor/fastclick.js', array(), '', false );
 	       
         wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array('jquery'), '', true );
-        
-        wp_enqueue_script( 'loadiframe', get_stylesheet_directory_uri() . '/js/loadiframe.js', array('jquery'));
         
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -263,16 +266,6 @@ class bbird_under_offcanvas_walker extends Walker_Nav_Menu {
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$output .= "\n<ul class=\"left-submenu\">\n<li class=\"back\"><a href=\"#\">". __( 'Back', 'bbird-under' ) ."</a></li>\n";
 	}
-
-}
-
-add_action( 'init', 'bbird_under_add_editor_styles' );
-/**
- * Apply theme's stylesheet to the visual editor.
- */
-function  bbird_under_add_editor_styles() {
-
-    add_editor_style( get_stylesheet_uri() );
 
 }
 

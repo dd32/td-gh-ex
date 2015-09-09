@@ -29,27 +29,7 @@ function bbird_under_customize_register($wp_customize)
         'description' => '',
         'panel' => 'footer_panel'
     ));
-    
-    
-    $wp_customize->add_setting('copyright_textbox', array(
-        'sanitize_callback' => 'bbird_under_sanitize_text_field',
-        'default' => __('Default copyright text', 'bbird-under'),
-     
-    ));
-    
-     
-    $wp_customize->add_control('copyright_textbox', array(
-        'section' => 'footer_section',
-        'type' => 'text',
-        
-        
-        
-    ));
-    
-    $wp_customize->add_setting('hide_copyright', array(
-         'sanitize_callback' => 'bbird_under_sanitize_checkbox'        
-    ));
-    
+  
         
     $wp_customize->add_section('footer_widgets', array(
         'title' => 'Widget options',
