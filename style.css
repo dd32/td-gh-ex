@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/tracks/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, social media icons, search bar, comment display controls, premium layouts and features, and more.  See our fully-setup live demo here: https://www.competethemes.com/tracks-live-demo/
-Version: 1.39
+Version: 1.40
 Tags: black, gray, silver, white, dark, one-column, fluid-layout, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: tracks
 License: GNU General Public License v2 or later
@@ -1573,7 +1573,7 @@ li.pingback:first-child {
 }
 /* page */
 .singular-page .entry,
-.error-404 .entry,
+.error404 .entry,
 .search .entry {
   padding-top: 3em;
 }
@@ -1583,11 +1583,11 @@ li.pingback:first-child {
   margin-bottom: 3em;
 }
 
-.error-404 input,
+.error404 input,
 .search input {
   margin: 0.75em 0;
 }
-.error-404 input[type="search"],
+.error404 input[type="search"],
 .search input[type="search"] {
   margin-right: 0.75em;
 }
@@ -1709,6 +1709,9 @@ li.pingback:first-child {
 .menu-footer-items a:hover, .menu-footer-items a:active, .menu-footer-items a:focus {
   color: #8c8c8c;
   opacity: 0.9;
+}
+.menu-footer-items ul {
+  list-style: none;
 }
 
 /* 700px */
@@ -2071,171 +2074,83 @@ li.pingback:first-child {
     margin-right: 0px !important;
   }
 }
-/* gallery styles copied from Hybrid Core */
 /**
- * Cleaner Gallery Stylesheet
- * @version 20130526
+ * 14.2 Galleries
  */
 .gallery {
-  display: block;
-  clear: both;
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-.gallery-row {
-  display: block;
-  clear: both;
-  overflow: hidden;
-  margin: 0;
+  margin: 2.25em auto;
 }
 
 .gallery-item {
-  overflow: hidden;
-  float: left;
-  margin: 0;
-  padding: 0;
+  display: inline-block;
+  padding: 0.75em;
   text-align: center;
-  list-style: none;
-  border: none;
-  background: transparent;
+  vertical-align: top;
+  width: 100%;
+  margin: 0;
+}
+.gallery-item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+  max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+  max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+  max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+  max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+  max-width: 11.11%;
 }
 
 .gallery-icon img {
-  width: auto;
-  max-width: 89%;
-  height: auto;
   margin: 0 auto;
-  padding: 1%;
 }
 
 .gallery-caption {
-  margin-left: 0;
+  color: #8c8c8c;
+  display: block;
+  font-family: "raleway", sans-serif;
+  font-size: 12px;
+  padding: 0.5em 0;
 }
 
-/* Gallery item sizes depending on the number of columns */
-.gallery-col-0 .gallery-item {
-  width: 100%;
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+  display: none;
 }
 
-.gallery-col-1 .gallery-item {
-  width: 100%;
+/* Jetpack Galleries */
+.tiled-gallery {
+  margin: 2.25em auto !important;
 }
-
-.gallery-col-2 .gallery-item {
-  width: 50%;
-}
-
-.gallery-col-3 .gallery-item {
-  width: 33.33%;
-}
-
-.gallery-col-4 .gallery-item {
-  width: 25%;
-}
-
-.gallery-col-5 .gallery-item {
-  width: 20%;
-}
-
-.gallery-col-6 .gallery-item {
-  width: 16.66%;
-}
-
-.gallery-col-7 .gallery-item {
-  width: 14.28%;
-}
-
-.gallery-col-8 .gallery-item {
-  width: 12.5%;
-}
-
-.gallery-col-9 .gallery-item {
-  width: 11.11%;
-}
-
-.gallery-col-10 .gallery-item {
-  width: 10%;
-}
-
-.gallery-col-11 .gallery-item {
-  width: 9.09%;
-}
-
-.gallery-col-12 .gallery-item {
-  width: 8.33%;
-}
-
-.gallery-col-13 .gallery-item {
-  width: 7.69%;
-}
-
-.gallery-col-14 .gallery-item {
-  width: 7.14%;
-}
-
-.gallery-col-15 .gallery-item {
-  width: 6.66%;
-}
-
-.gallery-col-16 .gallery-item {
-  width: 6.25%;
-}
-
-.gallery-col-17 .gallery-item {
-  width: 5.88%;
-}
-
-.gallery-col-18 .gallery-item {
-  width: 5.55%;
-}
-
-.gallery-col-19 .gallery-item {
-  width: 5.26%;
-}
-
-.gallery-col-20 .gallery-item {
-  width: 5%;
-}
-
-.gallery-col-21 .gallery-item {
-  width: 4.76%;
-}
-
-.gallery-col-22 .gallery-item {
-  width: 4.54%;
-}
-
-.gallery-col-23 .gallery-item {
-  width: 4.34%;
-}
-
-.gallery-col-24 .gallery-item {
-  width: 4.16%;
-}
-
-.gallery-col-25 .gallery-item {
-  width: 4%;
-}
-
-.gallery-col-26 .gallery-item {
-  width: 3.84%;
-}
-
-.gallery-col-27 .gallery-item {
-  width: 3.7%;
-}
-
-.gallery-col-28 .gallery-item {
-  width: 3.57%;
-}
-
-.gallery-col-29 .gallery-item {
-  width: 3.44%;
-}
-
-.gallery-col-30 .gallery-item {
-  width: 3.33%;
+.tiled-gallery .gallery-row {
+  margin: 0 auto;
 }
 
 /* Styles for when user selects a dark header */
@@ -2647,3 +2562,15 @@ li.pingback:first-child {
     width: 500px !important;
   }
 }
+/*
+
+ATTENTION:
+
+CSS edits made here won't have any effect. Tracks doesn't load the style.css file because
+it loads a minified version of the stylesheet instead (style.min.css) to make your site faster.
+
+If you want to make CSS edits to your site, use the "Custom CSS" section in the Customizer.
+
+If you want more information about customizing Tracks with CSS, check out this guide: https://www.competethemes.com/help/custom-css-tracks/
+
+*/

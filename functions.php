@@ -1,24 +1,24 @@
 <?php
 
-/* Load the core theme framework. */
-require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
-new Hybrid();
+if ( ! isset( $content_width ) ) {
+    $content_width = 711;
+}
 
 if( ! function_exists( 'ct_tracks_theme_setup' ) ) {
     function ct_tracks_theme_setup() {
-
-        /* Get action/filter hook prefix. */
-        $prefix = hybrid_get_prefix();
-
-        /* Theme-supported features go here. */
-        add_theme_support( 'hybrid-core-template-hierarchy' );
-        add_theme_support( 'loop-pagination' );
-        add_theme_support( 'cleaner-gallery' );
 
         // from WordPress core not theme hybrid
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'automatic-feed-links' );
         add_theme_support( 'title-tag' );
+
+        /*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+        add_theme_support( 'html5', array(
+            'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+        ) );
 
         register_nav_menus( array(
             'primary'   => __( 'Primary', 'tracks' ),
@@ -48,35 +48,37 @@ if( ! function_exists( 'ct_tracks_theme_setup' ) ) {
 }
 add_action( 'after_setup_theme', 'ct_tracks_theme_setup', 10 );
 
-function ct_tracks_remove_cleaner_gallery() {
-
-	if( class_exists( 'Jetpack' ) && ( Jetpack::is_module_active( 'carousel' ) || Jetpack::is_module_active( 'tiled-gallery' ) ) ) {
-		remove_theme_support( 'cleaner-gallery' );
-	}
-}
-add_action( 'after_setup_theme', 'ct_tracks_remove_cleaner_gallery', 11 );
-
 function ct_tracks_register_widget_areas(){
 
     /* register after post content widget area */
-    hybrid_register_sidebar( array(
+    register_sidebar( array(
         'name'         => __( 'After Post Content', 'tracks' ),
         'id'           => 'after-post-content',
-        'description'  => __( 'Widgets in this area will be shown after post content before the prev/next post links', 'tracks' )
+        'description'  => __( 'Widgets in this area will be shown after post content before the prev/next post links', 'tracks' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>'
     ) );
 
     /* register after page content widget area */
-    hybrid_register_sidebar( array(
+    register_sidebar( array(
         'name'         => __( 'After Page Content', 'tracks' ),
         'id'           => 'after-page-content',
-        'description'  => __( 'Widgets in this area will be shown after page content', 'tracks' )
+        'description'  => __( 'Widgets in this area will be shown after page content', 'tracks' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>'
     ) );
 
 	/* register footer widget area */
-	hybrid_register_sidebar( array(
+	register_sidebar( array(
 		'name'         => __( 'Footer', 'tracks' ),
 		'id'           => 'footer',
 		'description'  => __( 'Widgets in this area will be shown in the footer', 'tracks' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>'
 	) );
@@ -321,17 +323,17 @@ if( ! function_exists( 'ct_tracks_featured_image' ) ) {
         if ( $has_image == true ) {
             // if lazy loading is enabled
             if ( get_theme_mod( 'additional_options_lazy_load_settings' ) == 'yes' && ( is_archive() || is_home() ) ) {
-	            $featured_image = "<div class='featured-image lazy lazy-bg-image' data-background='$image'></div>";
+	            $featured_image = "<div class='featured-image lazy lazy-bg-image' data-background='" . esc_url( $image ) . "'></div>";
             } // if lazy loading is NOT enabled
             else {
-	            $featured_image = "<div class='featured-image' style=\"background-image: url('" . $image . "')\"></div>";
+	            $featured_image = "<div class='featured-image' style='background-image: url(" . esc_url( $image ) . ")'></div>";
             }
         }
 	    // allow videos to be added
 	    $featured_image = apply_filters( 'ct_tracks_featured_image', $featured_image, $image, $has_image );
 
 	    if( $featured_image ) {
-		    echo $featured_image;
+            echo $featured_image;
 	    }
     }
 }
@@ -339,7 +341,23 @@ if( ! function_exists( 'ct_tracks_featured_image' ) ) {
 /* add conditional classes for premium layouts */
 function ct_tracks_body_class( $classes ) {
 
+    global $post;
+
 	$premium_layout_setting = get_theme_mod('premium_layouts_setting');
+
+    if ( is_singular() ) {
+        $classes[] = 'singular';
+        if ( is_singular('page') ) {
+            $classes[] = 'singular-page';
+            $classes[] = 'singular-page-' . $post->ID;
+        } elseif ( is_singular('post') ) {
+            $classes[] = 'singular-post';
+            $classes[] = 'singular-post-' . $post->ID;
+        }  elseif ( is_singular('attachment') ) {
+            $classes[] = 'singular-attachment';
+            $classes[] = 'singular-attachment-' . $post->ID;
+        }
+    }
 
 	if ( ! is_front_page() ) {
         $classes[] = 'not-front';
@@ -382,7 +400,6 @@ function ct_tracks_body_class( $classes ) {
 	    if( !is_search() ) {
 		    $classes[] = 'two-column-images';
 	    }
-
     }
     if(get_theme_mod( 'ct_tracks_background_image_setting')){
         $classes[] = 'background-image-active';
@@ -390,6 +407,7 @@ function ct_tracks_body_class( $classes ) {
     if(get_theme_mod( 'ct_tracks_texture_display_setting') == 'yes'){
         $classes[] = 'background-texture-active';
     }
+
     return $classes;
 }
 add_filter( 'body_class', 'ct_tracks_body_class' );
@@ -411,24 +429,19 @@ function ct_tracks_post_class_update($classes){
 
 	global $post;
 
-    $remove = array();
-    $remove[] = 'entry';
-
-	// remove 'entry' class newer version of Hybrid Core adds
+	// if on blog, add excerpt class and zoom class
     if ( ! is_singular() ) {
-        foreach ( $classes as $key => $class ) {
 
-            if ( in_array( $class, $remove ) ){
-                unset( $classes[ $key ] );
-                $classes[] = 'excerpt';
-            }
-        }
+        $classes[] = 'excerpt';
 
 	    // add image zoom class
 	    $setting = get_theme_mod('additional_options_image_zoom_settings');
 	    if( $setting != 'no-zoom' ) {
 		    $classes[] = 'zoom';
 	    }
+    }
+    if ( is_singular() ) {
+        $classes[] = 'entry';
     }
 	// add class for posts with Featured Videos
 	if( get_post_meta( $post->ID, 'ct_tracks_video_key', true ) ) {
@@ -459,12 +472,6 @@ function ct_tracks_post_class_update($classes){
     return $classes;
 }
 add_filter( 'post_class', 'ct_tracks_post_class_update' );
-
-// fix for bug with Disqus saying comments are closed
-if ( function_exists( 'dsq_options' ) ) {
-    remove_filter( 'comments_template', 'dsq_comments_template' );
-    add_filter( 'comments_template', 'dsq_comments_template', 99 ); // You can use any priority higher than '10'
-}
 
 /* add a smaller size for the portfolio page */
 if( function_exists('add_image_size')){
@@ -544,11 +551,11 @@ function ct_tracks_custom_css_output(){
 
     /* output custom css */
     if($custom_css) {
+        $custom_css = wp_filter_nohtml_kses( $custom_css );
         wp_add_inline_style('style', $custom_css);
     }
 }
-add_action('wp_enqueue_scripts','ct_tracks_custom_css_output');
-
+add_action('wp_enqueue_scripts','ct_tracks_custom_css_output', 20);
 
 function ct_tracks_background_image_output(){
 
@@ -564,7 +571,7 @@ function ct_tracks_background_image_output(){
         wp_add_inline_style('style', $background_image_css);
     }
 }
-add_action('wp_enqueue_scripts','ct_tracks_background_image_output');
+add_action('wp_enqueue_scripts','ct_tracks_background_image_output', 20);
 
 function ct_tracks_background_texture_output(){
 
@@ -581,7 +588,7 @@ function ct_tracks_background_texture_output(){
         wp_add_inline_style('style', $background_texture_css);
     }
 }
-add_action('wp_enqueue_scripts','ct_tracks_background_texture_output');
+add_action('wp_enqueue_scripts','ct_tracks_background_texture_output', 20);
 
 // green checkmark icon used in Post Video input
 function ct_tracks_green_checkmark_svg() {
@@ -608,15 +615,6 @@ function ct_tracks_loading_indicator_svg() {
 
 	return $svg;
 }
-
-function ct_tracks_wp_backwards_compatibility() {
-
-	// not using this function, simply remove it so use of "has_image_size" doesn't break < 3.9
-	if( version_compare( get_bloginfo('version'), '3.9', '<') ) {
-		remove_filter( 'image_size_names_choose', 'hybrid_image_size_names_choose' );
-	}
-}
-add_action('init', 'ct_tracks_wp_backwards_compatibility');
 
 if ( ! function_exists( '_wp_render_title_tag' ) ) :
     function ct_tracks_add_title_tag() {
@@ -680,3 +678,43 @@ function ct_tracks_full_width_images_featured_image($featured_image, $image, $ha
 	return $featured_image;
 }
 add_filter( 'ct_tracks_featured_image', 'ct_tracks_full_width_images_featured_image', 10, 3 );
+
+function ct_tracks_loop_pagination(){
+
+    /* Set up some default arguments for the paginate_links() function. */
+    $defaults = array(
+        'base'         => add_query_arg( 'paged', '%#%' ),
+        'format'       => '',
+        'mid_size'     => 1
+    );
+
+    $loop_pagination = '<nav class="pagination loop-pagination">';
+    $loop_pagination .= paginate_links( $defaults );
+    $loop_pagination .= '</nav>';
+
+    return $loop_pagination;
+}
+
+// Adds useful meta tags
+function ct_tracks_add_meta_elements() {
+
+    $meta_elements = '';
+
+    /* Charset */
+    $meta_elements .= sprintf( '<meta charset="%s" />' . "\n", get_bloginfo( 'charset' ) );
+
+    /* Viewport */
+    $meta_elements .= '<meta name="viewport" content="width=device-width, initial-scale=1" />' . "\n";
+
+    /* Theme name and current version */
+    $theme    = wp_get_theme( get_template() );
+    $template = sprintf( '<meta name="template" content="%s %s" />' . "\n", esc_attr( $theme->get( 'Name' ) ), esc_attr( $theme->get( 'Version' ) ) );
+    $meta_elements .= $template;
+
+    echo $meta_elements;
+}
+add_action( 'wp_head', 'ct_tracks_add_meta_elements', 1 );
+
+/* Move the WordPress generator to a better priority. */
+remove_action( 'wp_head', 'wp_generator' );
+add_action( 'wp_head', 'wp_generator', 1 );
