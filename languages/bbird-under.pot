@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BBird Under\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sat Sep 05 2015 20:25:49 GMT+0200 (Central European "
+"POT-Creation-Date: Wed Sep 09 2015 17:28:57 GMT+0200 (Central European "
 "Daylight Time)\n"
-"POT-Revision-Date: Sat Sep 05 2015 20:26:08 GMT+0200 (Central European "
+"POT-Revision-Date: Wed Sep 09 2015 17:29:15 GMT+0200 (Central European "
 "Daylight Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
@@ -85,8 +85,21 @@ msgid ""
 "and name fields before posting a comment.)"
 msgstr ""
 
-#: ../footer.php:69
-msgid "&copy;"
+#: ../footer.php:68
+msgid "Copyright text"
+msgstr ""
+
+#: ../footer.php:70
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: ../footer.php:71
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: ../footer.php:80
+msgid "Top"
 msgstr ""
 
 #: ../functions.php:28
@@ -97,78 +110,78 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: ../functions.php:67
+#: ../functions.php:72
 msgid "Right Sidebar"
 msgstr ""
 
-#: ../functions.php:77
+#: ../functions.php:82
 msgid "WooCommerce Sidebar"
 msgstr ""
 
-#: ../functions.php:79
+#: ../functions.php:84
 msgid "Widgets for WooCommerce page templates"
 msgstr ""
 
-#: ../functions.php:88
+#: ../functions.php:93
 msgid "First Footer Sidebar"
 msgstr ""
 
-#: ../functions.php:89
+#: ../functions.php:94
 msgid "Widgets for first footer column"
 msgstr ""
 
-#: ../functions.php:99
+#: ../functions.php:104
 msgid "Second Footer Sidebar"
 msgstr ""
 
-#: ../functions.php:100
+#: ../functions.php:105
 msgid "Widgets for second footer column"
 msgstr ""
 
-#: ../functions.php:110
+#: ../functions.php:115
 msgid "Third Footer Sidebar"
 msgstr ""
 
-#: ../functions.php:111
+#: ../functions.php:116
 msgid "Widgets for third footer column"
 msgstr ""
 
-#: ../functions.php:121
+#: ../functions.php:126
 msgid "Fourth Footer Sidebar"
 msgstr ""
 
-#: ../functions.php:122
+#: ../functions.php:127
 msgid "Widgets for fourth footer column"
 msgstr ""
 
-#: ../functions.php:264
+#: ../functions.php:267
 msgid "Back"
 msgstr ""
 
-#: ../functions.php:298
+#: ../functions.php:291
 #, php-format
 msgid "<span class=\"commenter\">%s</span>"
 msgstr ""
 
-#: ../functions.php:304
+#: ../functions.php:297
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../functions.php:311
+#: ../functions.php:304
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../functions.php:379
+#: ../functions.php:372
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:380
+#: ../functions.php:373
 msgid "Email"
 msgstr ""
 
-#: ../functions.php:381
+#: ../functions.php:374
 msgid "Website"
 msgstr ""
 
@@ -632,16 +645,36 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../inc/customizer.php:21
+#: ../inc/customizer.php:20
 msgid "Footer"
 msgstr ""
 
-#: ../inc/customizer.php:28
-msgid "Copyright text"
+#: ../inc/customizer.php:24
+msgid "Widget options"
 msgstr ""
 
 #: ../inc/customizer.php:36
-msgid "Default copyright text"
+msgid "Choose the number of footer widgets"
+msgstr ""
+
+#: ../inc/customizer.php:39
+msgid "No widgets"
+msgstr ""
+
+#: ../inc/customizer.php:40
+msgid "One (Full width)"
+msgstr ""
+
+#: ../inc/customizer.php:41
+msgid "Two (One Half)"
+msgstr ""
+
+#: ../inc/customizer.php:42
+msgid "Three (One-third layout)"
+msgstr ""
+
+#: ../inc/customizer.php:43
+msgid "Four (One-fourth layout)"
 msgstr ""
 
 #: ../inc/template-tags.php:28

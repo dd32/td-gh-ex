@@ -17,7 +17,7 @@ function bbird_under_jetpack_setup() {
 		'container' => 'main',
 		'render'    => 'bbird_under_infinite_scroll_render',
 		'footer'    => 'page',
-            'type'           => 'click',
+                'type'           => 'click',
 	) );
 } // end function asd_jetpack_setup
 add_action( 'after_setup_theme', 'bbird_under_jetpack_setup' );

@@ -17,22 +17,11 @@ function bbird_under_customize_register($wp_customize)
     $wp_customize->add_panel('footer_panel', array(
         'priority' => 120,
         'capability' => 'edit_theme_options',
-        'theme_supports' => '',
         'title' => __('Footer', 'bbird-under')
     ));
-    
-    $wp_customize->add_section('footer_section', array(
-        'priority' => 10,
-        'capability' => 'edit_theme_options',
-        'theme_supports' => '',
-        'title' => __('Copyright text', 'bbird-under'),
-        'description' => '',
-        'panel' => 'footer_panel'
-    ));
-  
-        
+          
     $wp_customize->add_section('footer_widgets', array(
-        'title' => 'Widget options',
+        'title' => __('Widget options', 'bbird-under'),
         'priority' => 12,
         'panel' => 'footer_panel'
     ));
@@ -44,14 +33,14 @@ function bbird_under_customize_register($wp_customize)
     
     $wp_customize->add_control('footer_widgets', array(
         'type' => 'radio',
-        'label' => 'Choose the number of footer widgets',
-        'section' => 'footer_widgets',
+        'label' => __('Choose the number of footer widgets', 'bbird-under'),
+         'section' => 'footer_widgets',
         'choices' => array(
-            'no' => 'No widgets',
-            'one' => 'One (Full width)',
-            'two' => 'Two (One Half)',
-            'three' => 'Three (One-third layout)',
-            'four' => 'Four (One-fourth layout)'
+            'no' => __('No widgets', 'bbird-under'),
+            'one' => __('One (Full width)', 'bbird-under'),
+            'two' => __('Two (One Half)', 'bbird-under'),
+            'three' => __('Three (One-third layout)', 'bbird-under'),
+            'four' => __('Four (One-fourth layout)', 'bbird-under'),
         )
     ));
     

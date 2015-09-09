@@ -77,7 +77,7 @@ endif;
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-<a href="#0" class="go-back">Top</a>
+<a href="#0" class="go-back"><?php printf( __( 'Top', 'bbird-under' )); ?></a>
   </div> <!--inner wrap  -->
     </div> <!--inner wrap  -->
 <?php wp_footer(); ?>
