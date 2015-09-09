@@ -89,6 +89,10 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.24.3
+* Polylang Plugin translation bug for Call to action section fixed
+* Minor CSS fix in the admin Panel
+
 Version 1.24.2
 * Option name mismatch for the child theme fixed
 * Issue of bxslider not working for RTL Website fixed

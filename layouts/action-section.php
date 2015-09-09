@@ -7,18 +7,24 @@
 ?>
 
 	<div class="call-to-action">
-
-		<h1><?php echo $page->post_title; ?></h1>
+		<?php  
+            $query = new WP_Query( 'page_id='.$section['page'] );
+            while ( $query->have_posts() ) : $query->the_post();
+        ?>
+		<h1><?php the_title(); ?></h1>
 
 		<div class="parallax-content">
-			<?php if($page->post_content != "") : ?>
+			<?php if(get_the_content() != "") : ?>
 			<div class="page-content">
-				<?php echo do_shortcode(wpautop($page->post_content)); ?>
+				<?php the_content(); ?>
 			</div>
 			<?php endif; ?>
 		</div>
-
-	</div><!-- #primary -->
+		<?php 
+	        endwhile;    
+	        wp_reset_postdata();
+        ?>
+	</div><!-- .call-to-action -->
 
 
 
