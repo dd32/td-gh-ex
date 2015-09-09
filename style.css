@@ -2,7 +2,7 @@
 Theme Name: Anarcho Notepad
 Theme URI: http://mycyberuniverse.com/anarcho-notepad.html
 Description: Inspired by the idea of anarchy, I designed this free premium WordPress theme for your personal blogs and diaries. This theme is perfect for writers and artists. "Anarcho Notepad" can be easily customised and already translated to different languages. It utilises latest HTML-5, CSS-3, PHP and WordPress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalise it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it. I'm glad to present you the Most Anarchist WP-Theme Of All! Enjoy!
-Version: 2.25
+Version: 2.26
 Author: Arthur "Berserkr" Gareginyan
 Author URI: http://mycyberuniverse.com/author.html
 Tags: black, white, light, two-columns, right-sidebar, fluid-layout, custom-header, custom-background, featured-images, rtl-language-support, translation-ready, theme-options, threaded-comments
@@ -395,7 +395,6 @@ blockquote cite:before {
 	width:170px;
 	margin-left: 10px;
 	padding:4px 0 4px 25px;
-	//background:url(images/bullet.gif) no-repeat 5px 8px;
 	-webkit-transition: margin .3s;
 	-moz-transition: margin .3s;
 	-ms-transition: margin .3s;
@@ -440,18 +439,13 @@ blockquote cite:before {
 	color:#21565E;
 	display:block;
 	width:170px;
-	margin-left: 10px;
-	padding:4px 0 4px 25px;
-	background:url(images/bullet.gif) no-repeat 5px 8px;
-	-webkit-transition: margin .3s;
-	-moz-transition: margin .3s;
-	-ms-transition: margin .3s;
-	-o-transition: margin .3s;
-	transition: margin .3s; }
+	padding:4px 0 4px 25px; }
 #sidebar .recent-posts ul li a:hover {
 	text-decoration:none;
-	//margin-left: 20px;
 	color:#000; }
+#sidebar .recent-posts ul li i {
+    color: navy;
+    font-size: 70%; }
 #sidebar .recent-posts-bottom {
 	width:188px;
 	height:62px;

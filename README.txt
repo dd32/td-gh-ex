@@ -21,7 +21,7 @@
 	I) Font-Awesome Icons are under the MIT Licnese. http://fontawesome.io
 	II) Font Name "Forum" are under the SIL Open Font License v1.1.
 	III) The Default Background Image (images/background.jpg) is under public domain: http://wallbox.ru/wallpaper/9422/#.UnLDFNQhCRs
-	IV) The images bullet.gif, notepad-back.gif, pages-back.gif, pages-bottom.gif, postit-back.gif, postit-upper.gif, recent-posts-bottom.gif are under the General Public License. http://www.evaneckard.com/
+	IV) The images notepad-back.gif, pages-back.gif, pages-bottom.gif, postit-back.gif, postit-upper.gif, recent-posts-bottom.gif are under the General Public License. http://www.evaneckard.com/
 	V) The images anarchy-symbol-big.jpg, anarchy-symbol.jpg and anarchy-symbol.png is under public domain: http://www.layoutsparks.com/1/213916/anarchy-perfect-black-A-31000.html
 	VI) The images links_box.gif, about_box.gif, line.gif, outer-back.png, outer-back-search.png and notepad-bottom.png has been created by me and under GPLv3 license.
 	VII) The file html5.js present in the "/js" folder are under the MIT/GPL2 Licnese. https://github.com/aFarkas/html5shiv
@@ -137,6 +137,9 @@ Everything else used in this theme has been created by me, especially for "Anarc
                          fixed : many more minor fixes and changes.
     2.25  (2015.09.07) - translation : danish.
                          added: new screenshot 1200x900px.
+                         minor additions and fixes.
+    2.26  (2015.09.09) - updated: font-awesome updated to v4.4.0.
+                         removed: image bullet.gif.
                          minor additions and fixes.
 
 

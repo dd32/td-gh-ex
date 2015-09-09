@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.24
+ * @since	2.26
  * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2015, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -15,7 +15,7 @@
 add_action('after_setup_theme', 'anarcho_notepad_setup');
 
 function anarcho_notepad_setup() {
-        global $content_width;
+	global $content_width;
 
 	// Localization Init
 	load_theme_textdomain( 'anarcho-notepad', get_template_directory() . '/languages' );
@@ -56,8 +56,8 @@ function anarcho_notepad_setup() {
 	// This feature enables Link Manager in Admin page.
 	add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
-        // Add Callback for Custom TinyMCE editor stylesheets. (editor-style.css)
-        add_editor_style();
+	// Add Callback for Custom TinyMCE editor stylesheets. (editor-style.css)
+	add_editor_style();
     }
 
 /* Add Theme Information Page */
@@ -159,7 +159,7 @@ add_filter( 'avatar_defaults', 'anarcho_avatar' );
 
 /* Include Font-Awesome styles */
 function anarcho_include_font_awesome_styles() {
-    wp_register_style( 'font_awesome_styles', get_template_directory_uri() . '/fonts/font-awesome-4.0.0/font-awesome.min.css', 'screen' );
+    wp_register_style( 'font_awesome_styles', get_template_directory_uri() . '/fonts/font-awesome-4.4.0/css/font-awesome.min.css', 'screen' );
     wp_enqueue_style( 'font_awesome_styles' );
 }
 add_action( 'wp_enqueue_scripts', 'anarcho_include_font_awesome_styles' );
@@ -529,19 +529,19 @@ function anarcho_entry_meta() {
 	<?php
 		if ( is_page() ) {
 			if ((the_category() != '')) {
-				_e('Category: ', 'anarcho-notepad'); the_category(', ');
+				?><i class="fa fa-folder-open"></i> <?php _e('Category: ', 'anarcho-notepad'); the_category(', ');
 			}
-			edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
+			edit_post_link(__('EDIT', 'anarcho-notepad' ), ' | <i class="fa fa-pencil"> ', '</i>');
 		} elseif ( is_single() ) {
-			_e('Posted ', 'anarcho-notepad'); the_date(get_option('m.d.Y')); _e(' by ', 'anarcho-notepad'); the_author(); _e(' in category "', 'anarcho-notepad'); the_category('", "'); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), '" | ');
+			_e('Posted ', 'anarcho-notepad'); the_date(get_option('m.d.Y')); _e(' by ', 'anarcho-notepad'); the_author(); _e(' in category "', 'anarcho-notepad'); the_category('", "'); edit_post_link(__('EDIT', 'anarcho-notepad' ), '" | <i class="fa fa-pencil"> ', '</i>');
 			?>
 			   <br/>
 			<?php
 			anarcho_author_bio();
 		} elseif ( is_home() || is_category() || is_archive() || is_search() ) {
-			_e('Category: ', 'anarcho-notepad'); the_category(', '); ?> | <?php comments_popup_link(__('LEAVE A COMMENT', 'anarcho-notepad' )); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
+			?><i class="fa fa-folder-open"></i> <?php _e('Category: ', 'anarcho-notepad'); the_category(', '); ?> | <i class="fa fa-comment"></i> <?php comments_popup_link(__('LEAVE A COMMENT', 'anarcho-notepad' )); edit_post_link(__('EDIT', 'anarcho-notepad' ), ' | <i class="fa fa-pencil"> ', '</i>');
 		} else {
-			_e('Category: ', 'anarcho-notepad'); the_category(', '); ?> | <?php comments_popup_link(__('LEAVE A COMMENT', 'anarcho-notepad' )); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
+			?><i class="fa fa-folder-open"></i> <?php _e('Category: ', 'anarcho-notepad'); the_category(', '); ?> | <i class="fa fa-comment"></i> <?php comments_popup_link(__('LEAVE A COMMENT', 'anarcho-notepad' )); edit_post_link(__('EDIT', 'anarcho-notepad' ), ' | <i class="fa fa-pencil"> ', '</i>');
 		}
 	?>
            </div>

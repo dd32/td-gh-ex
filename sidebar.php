@@ -3,7 +3,7 @@
  * The sidebar containing the secondary widget area, displays on posts and pages.
  *
  * @package	Anarcho Notepad
- * @since	2.24
+ * @since	2.26
  * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2015, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -67,7 +67,7 @@
     <?php while ($query->have_posts()): $query->the_post(); ?>
     <ul>
        <li>
-          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            <a href="<?php the_permalink(); ?>"><i class="fa fa-asterisk"></i>&nbsp;&nbsp;<?php the_title(); ?></a>
        </li>
     </ul>
     <?php endwhile; ?>

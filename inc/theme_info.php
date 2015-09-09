@@ -3,7 +3,7 @@
  * Theme Information Page
  *
  * @package	Anarcho Notepad
- * @since	2.25
+ * @since	2.26
  * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2015, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -13,6 +13,7 @@
 /* Add some CSS so I can Style the Theme Options Page */
 function anarcho_include_theme_options_style() {
 	wp_enqueue_style('anarcho_theme_options_styles', get_template_directory_uri() . '/theme_info.css', false, '1.0');
+	wp_enqueue_style('font_awesome_styles', get_template_directory_uri() . '/fonts/font-awesome-4.4.0/css/font-awesome.min.css', 'screen');
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'anarcho_include_theme_options_style');
 
@@ -41,34 +42,34 @@ function anarcho_theme_options_do_page() { ?>
         </p>
 
         <p>
-            <h4>Features</h4>
-            <b>**Current features**</b>
-            <ul>
-                <li>HTML5 Inside</li>
-                <li>CSS3 Inside</li>
-                <li>Easy to set up - Theme Customizer</li>
-                <li>Customize using "Google Web Fonts"</li>
-                <li>Widget ready (in sidebar and footer)</li>
-                <li>Built-in Pagination</li>
-                <li>Built-in Breadcrumbs</li>
-                <li>Template page "HTML map of the website"</li>
-                <li>Template page "Without date"</li>
-                <li>Block "About Author" below posts</li>
-                <li>Custom text of copyright below posts</li>
-                <li>Custom text of copyright in footer</li>
-                <li>Custom header image</li>
-                <li>Custom logo together or instead of the title of website</li>
-                <li>Custom background</br>
-                <li>Custom menu</br>
-                <li>Ready for translation (Translated to 11 languages)</li>
-                <li>Published to the repository WordPess.org</li>
+            <h4><i class="fa fa-cogs"></i></i>&nbsp;Features</h4>
+            <i class="fa fa-list-ul"></i>&nbsp;<b>Current features:</b>
+            <ul class="fa-ul">
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>HTML5 Inside</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>CSS3 Inside</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Easy to set up - Theme Customizer</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Customize using "Google Web Fonts"</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Built-in iconic font "Font Awesome"</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Widget ready (in sidebar and footer)</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Built-in Pagination</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Built-in Breadcrumbs</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Template page "HTML map of the website"</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Template page "Without date"</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Block "About Author" below posts</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Custom text of copyright below posts</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Custom text of copyright in footer</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Custom header image</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Custom logo together or instead of the title of website</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Custom background</br>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Custom menu</br>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Ready for translation (Translated to 11 languages)</li>
+                <li type="none"><i class="fa-li fa fa-check-square-o"></i>Published to the repository WordPess.org</li>
             </ul>
-            And much more!</br>
             </br>
-            <b>**Coming soon**</b>
-            <ul>
-                <li>Responsive designe</li>
-                <li>Sticky Posts</li>
+            <i class="fa fa-list-ul"></i>&nbsp;<b>Coming soon:</b>
+            <ul type="none" class="fa-ul">
+                <li type="none"><i class="fa-li fa fa-square-o"></i>Responsive designe</li>
+                <li type="none"><i class="fa-li fa fa-square-o"></i>Sticky Posts</li>
             </ul>
         </p>
         <p>
@@ -79,23 +80,23 @@ function anarcho_theme_options_do_page() { ?>
             <a class="button" target="_blank" href="<?php echo $anarcho_theme_uri; ?>"> My Website </a>
         </p>
 
-        <h4><?php _e('Translation', 'anarcho-notepad'); ?></h4>
+        <h4><i class="fa fa-globe"></i>&nbsp;<?php _e('Translation', 'anarcho-notepad'); ?></h4>
         <p>
             <?php _e('The theme is in the process of translation into other languages of the world. Already supports 11 languages! If you have the desire then you can help me in translation to your native language. Just send the translation files (*.po, *.mo) to me at the arthurgareginyan@gmail.com and I will include the translation within the one of the next theme update. Many of theme users would be delighted if you shared your translation with the community.', 'anarcho-notepad'); ?>
         </p>
         <p>
             <?php _e('"Anarcho-Notepad" written on <strong>English</strong> and translated into:', 'anarcho-notepad'); ?>
-            <ul>
-                <li><strong>Russian</strong> (translated by <strong>Arthur Gareginyan</strong>)</li>
-                <li><strong>Ukrainian</strong> (translated by <strong>Svetlana Drotyanko</strong>)</li>
-                <li><strong>Slovak</strong> (translated by <strong>Martin Petrus</strong>)</li>
-                <li><strong>Afrikaans</strong> (translated by <strong>MadriVictor</strong>)</li>
-                <li><strong>Spanish</strong> (translated by <strong>Ivan Ratinoff</strong>)</li>
-                <li><strong>Polish</strong> (translated by <strong>Krzysztof Goral</strong>)</li>
-                <li><strong>German</strong> (translated by <strong>Alexander v. Falkenhausen</strong>)</li>
-                <li><strong>Estonian</strong> (translated by <strong>Taavi Tiitsmaa</strong>)</li>
-                <li><strong>Catalan</strong> (translated by <strong>Nestor Malet</strong>)</li>
-                <li><strong>Danish</strong> (translated by <strong>Chano Klinck Andersen</strong>)</li>
+            <ul class="fa-ul">
+                <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Russian</strong> (translated by <strong>Arthur Gareginyan</strong>)</li>
+                <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Ukrainian</strong> (translated by <strong>Svetlana Drotyanko</strong>)</li>
+                <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Slovak</strong> (translated by <strong>Martin Petrus</strong>)</li>
+                <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Afrikaans</strong> (translated by <strong>MadriVictor</strong>)</li>
+                <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Spanish</strong> (translated by <strong>Ivan Ratinoff</strong>)</li>
+                <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Polish</strong> (translated by <strong>Krzysztof Goral</strong>)</li>
+                <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>German</strong> (translated by <strong>Alexander v. Falkenhausen</strong>)</li>
+                <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Estonian</strong> (translated by <strong>Taavi Tiitsmaa</strong>)</li>
+                <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Catalan</strong> (translated by <strong>Nestor Malet</strong>)</li>
+                <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Danish</strong> (translated by <strong>Chano Klinck Andersen</strong>)</li>
             </ul>
             </br>
             <em><b><?php _e('Thanks to all who helped me translate "Anarcho-Notepad" into other languages!', 'anarcho-notepad'); ?></b></em>
@@ -108,7 +109,7 @@ function anarcho_theme_options_do_page() { ?>
             <div class="comment">
                 <h3><?php _e('Happy to enjoy the Anarcho-Notepad?', 'anarcho-notepad');?></h3>
                 <p>
-                    <a class="button-primary review-customizr" title="Leave a comment" href="http://wordpress.org/support/view/theme-reviews/anarcho-notepad" target="_blank"><?php _e('Leave a comment', 'anarcho-notepad');?></a>
+                    <a class="button-primary review-customizr" title="Leave a comment" href="http://wordpress.org/support/view/theme-reviews/anarcho-notepad" target="_blank"><i class="fa fa-commenting fa-lg"></i>&nbsp;<?php _e('Leave a comment', 'anarcho-notepad');?></a>
                 </p>
             </div><!--<div class="comment">-->
 
@@ -124,11 +125,11 @@ function anarcho_theme_options_do_page() { ?>
 
             <div class="follow">
                 <h3><?php _e('Follow me :', 'anarcho-notepad');?></h3>
-                <p style="font-family:FontAwesome;">
-                    <a href="<?php echo $anarcho_twitter; ?>" target="_blank"> &#xf099; </a>
-                    <a href="<?php echo $anarcho_facebook; ?>" target="_blank"> &#xf09a; </a>
-                    <a href="<?php echo $anarcho_instagram; ?>" target="_blank"> &#xf16d; </a>
-                    <a href="<?php echo $anarcho_googlepluse; ?>" target="_blank"> &#xf0d5; </a>
+                <p>
+                    <a href="<?php echo $anarcho_twitter; ?>" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="<?php echo $anarcho_facebook; ?>" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                    <a href="<?php echo $anarcho_instagram; ?>" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="<?php echo $anarcho_googlepluse; ?>" target="_blank"><i class="fa fa-google-plus-square"></i></a>
                 </p>
             </div><!--<div class="follow">-->
 
