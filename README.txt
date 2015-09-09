@@ -71,6 +71,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.2
+* Change widgets titles to h4
+* Exclude slider category from sidebar categories widget
+* Fix blog to use featured image
+* Add extra blog setting
+* Styling tweaks
+* Update language .pot file
+
 #### 1.2.1
 * Change custom header image to have flex width and height
 * Styling tweaks

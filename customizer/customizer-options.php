@@ -88,7 +88,7 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Show Top Bar', 'topshop' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'This will show/hide the top bar in the header<br /><a href="http://support.kairaweb.com/knowledgebase/top-bar-not-showing/" target="_blank">Not working? See here</a><br /><br /><a href="http://support.kairaweb.com/knowledgebase/topshop-hooks-for-developers/" target="_blank">TopShop Premium has hooks</a> integrated for developers to hook on to.', 'topshop' ),
+        'description' => __( 'This will show/hide the top bar in the header<br /><a href="http://kairaweb.com/support/topic/settings-not-showing-on-theme/" target="_blank">Not working? See here</a><br /><br /><a href="http://kairaweb.com/support/topic/topshop-hooks-for-developers/" target="_blank">TopShop Premium has hooks</a> integrated for developers to hook on to.', 'topshop' ),
         'default' => 1,
     );
     
@@ -120,7 +120,7 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Slider Categories', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
-        'description' => __( 'Enter the ID\'s of the post categories you want to display in the slider. Eg: "13,17,19" (no spaces and only comma\'s)<br /><a href="http://support.kairaweb.com/knowledgebase/setup-the-topshop-default-slider/" target="_blank"><b>Follow instructions here</b></a>', 'topshop' )
+        'description' => __( 'Enter the ID\'s of the post categories you want to display in the slider. Eg: "13,17,19" (no spaces and only comma\'s)<br /><a href="http://kairaweb.com/support/topic/setting-up-the-default-slider/" target="_blank"><b>Follow instructions here</b></a>', 'topshop' )
     );
     $options['topshop-meta-slider-shortcode'] = array(
         'id' => 'topshop-meta-slider-shortcode',
@@ -242,6 +242,18 @@ function customizer_library_topshop_options() {
         'section' => $section,
         'type'    => 'text',
         'description' => __( 'Enter the ID\'s of the post categories you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />Eg: "-13, -17, -19"<br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in those categories.', 'topshop' )
+    );
+    $choices = array(
+        'blog-use-images-loop' => 'Post Images Carousel',
+        'blog-use-featured-image' => 'Use only the featured image'
+    );
+    $options['topshop-blog-list-image-type'] = array(
+        'id' => 'topshop-blog-list-image-type',
+        'label'   => __( 'Blog List Image', 'topshop-premium' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => 'blog-use-featured-image'
     );
     
     

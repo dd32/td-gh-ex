@@ -1,20 +1,24 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TopShop\n"
-"POT-Creation-Date: 2015-03-20 09:38+0200\n"
-"PO-Revision-Date: 2015-03-20 09:39+0200\n"
+"POT-Creation-Date: 2015-09-09 09:25+0200\n"
+"PO-Revision-Date: 2015-09-09 09:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
-"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_html_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_attr\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: js\n"
+"X-Poedit-SearchPathExcluded-0: js/waypoints.js\n"
+"X-Poedit-SearchPathExcluded-1: js/waypoints.min.js\n"
+"X-Poedit-SearchPathExcluded-2: js/waypoints-custom.js\n"
+"X-Poedit-SearchPathExcluded-3: js/waypoints-sticky.js\n"
+"X-Poedit-SearchPathExcluded-4: js/waypoints-sticky.min.js\n"
 
 #: comments.php:35 comments.php:52
 msgid "Comment navigation"
@@ -46,7 +50,7 @@ msgstr ""
 msgid "Search Again"
 msgstr ""
 
-#: content-page.php:15 content-single.php:25 content.php:61
+#: content-page.php:15 content-single.php:25 content.php:65
 msgid "Pages:"
 msgstr ""
 
@@ -59,7 +63,7 @@ msgid "Buy TopShop Premium"
 msgstr ""
 
 #: customizer/customizer-library/custom-controls/upsell.php:28
-msgid "See the <a href=\""
+msgid "TopShop Premium is only <b>$15</b><br />See the <a href=\""
 msgstr ""
 
 #: customizer/customizer-library/extensions/fonts.php:115
@@ -114,11 +118,11 @@ msgstr ""
 msgid "Layout Options"
 msgstr ""
 
-#: customizer/customizer-options.php:57 upgrade/kaira-upgrade-page.php:19
+#: customizer/customizer-options.php:57 upgrade/kaira-upgrade-page.php:21
 msgid "Site Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:65 upgrade/kaira-upgrade-page.php:31
+#: customizer/customizer-options.php:65 upgrade/kaira-upgrade-page.php:33
 msgid "Header Layout"
 msgstr ""
 
@@ -143,10 +147,15 @@ msgid "Show Top Bar"
 msgstr ""
 
 #: customizer/customizer-options.php:91
-msgid "This will show/hide the top bar in the header"
+msgid ""
+"This will show/hide the top bar in the header<br /><a href=\"http://kairaweb."
+"com/support/topic/settings-not-showing-on-theme/\" target=\"_blank\">Not "
+"working? See here</a><br /><br /><a href=\"http://kairaweb.com/support/topic/"
+"topshop-hooks-for-developers/\" target=\"_blank\">TopShop Premium has hooks</"
+"a> integrated for developers to hook on to."
 msgstr ""
 
-#: customizer/customizer-options.php:101
+#: customizer/customizer-options.php:101 upgrade/kaira-upgrade-page.php:79
 msgid "Slider Options"
 msgstr ""
 
@@ -161,7 +170,9 @@ msgstr ""
 #: customizer/customizer-options.php:123
 msgid ""
 "Enter the ID's of the post categories you want to display in the slider. Eg: "
-"\"13,17,19\" (no spaces and only comma's)"
+"\"13,17,19\" (no spaces and only comma's)<br /><a href=\"http://kairaweb.com/"
+"support/topic/setting-up-the-default-slider/\" target=\"_blank\"><b>Follow "
+"instructions here</b></a>"
 msgstr ""
 
 #: customizer/customizer-options.php:127
@@ -172,59 +183,67 @@ msgstr ""
 msgid "Enter the shortcode give by meta slider."
 msgstr ""
 
-#: customizer/customizer-options.php:140
+#: customizer/customizer-options.php:136
+msgid "Extra Slider Settings"
+msgstr ""
+
+#: customizer/customizer-options.php:148
 msgid "Styling Options"
 msgstr ""
 
-#: customizer/customizer-options.php:146
+#: customizer/customizer-options.php:154
 msgid "Main Color"
 msgstr ""
 
-#: customizer/customizer-options.php:153
+#: customizer/customizer-options.php:161
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:161
+#: customizer/customizer-options.php:169
 msgid "Body Font"
 msgstr ""
 
-#: customizer/customizer-options.php:169
+#: customizer/customizer-options.php:177
 msgid "Body Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:176
+#: customizer/customizer-options.php:184
 msgid "Headings Font"
 msgstr ""
 
-#: customizer/customizer-options.php:184
+#: customizer/customizer-options.php:192
 msgid "Heading Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:192
+#: customizer/customizer-options.php:201
+msgid "Extra Styling options"
+msgstr ""
+
+#: customizer/customizer-options.php:208
 msgid "Custom CSS"
 msgstr ""
 
-#: customizer/customizer-options.php:196
+#: customizer/customizer-options.php:212
 msgid "Add custom CSS to your theme"
 msgstr ""
 
-#: customizer/customizer-options.php:205
+#: customizer/customizer-options.php:221
 msgid "Blog Options"
 msgstr ""
 
-#: customizer/customizer-options.php:212
+#: customizer/customizer-options.php:228
 msgid "Blog Post Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:218
+#: customizer/customizer-options.php:234
 msgid "Blog Page Title"
 msgstr ""
 
-#: customizer/customizer-options.php:225
+#: customizer/customizer-options.php:241
 msgid "Exclude Blog Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:228
+#: customizer/customizer-options.php:244
 msgid ""
 "Enter the ID's of the post categories you'd like to EXCLUDE from the Blog, "
 "enter only the ID's with a minus sign (-) before them, separated by a comma "
@@ -232,89 +251,93 @@ msgid ""
 "then it'll show ONLY posts in those categories."
 msgstr ""
 
-#: customizer/customizer-options.php:237 upgrade/kaira-upgrade-page.php:55
+#: customizer/customizer-options.php:252
+msgid "Blog List Image"
+msgstr ""
+
+#: customizer/customizer-options.php:265 upgrade/kaira-upgrade-page.php:90
 msgid "Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:244
+#: customizer/customizer-options.php:272
 msgid "Add Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:255
+#: customizer/customizer-options.php:283
 msgid "Website Text"
 msgstr ""
 
-#: customizer/customizer-options.php:261
+#: customizer/customizer-options.php:289
 msgid "Header Info Text"
 msgstr ""
 
-#: customizer/customizer-options.php:264
+#: customizer/customizer-options.php:292
 msgid "Call Us: 082 444 BOOM"
 msgstr ""
 
-#: customizer/customizer-options.php:265
+#: customizer/customizer-options.php:293
 msgid "This is the text in the header"
 msgstr ""
 
-#: customizer/customizer-options.php:270
+#: customizer/customizer-options.php:298
 msgid "Site Copy Text"
 msgstr ""
 
-#: customizer/customizer-options.php:276
+#: customizer/customizer-options.php:304
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:279
+#: customizer/customizer-options.php:307
 msgid "Oops! <span>404</span>"
 msgstr ""
 
-#: customizer/customizer-options.php:280
+#: customizer/customizer-options.php:308
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: customizer/customizer-options.php:284
+#: customizer/customizer-options.php:312
 msgid "Error 404 Message"
 msgstr ""
 
-#: customizer/customizer-options.php:287
+#: customizer/customizer-options.php:315
 msgid ""
 "It looks like that page does not exist. <br />Return home or try a search"
 msgstr ""
 
-#: customizer/customizer-options.php:288
+#: customizer/customizer-options.php:316
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: customizer/customizer-options.php:292
+#: customizer/customizer-options.php:320
 msgid "No Search Results"
 msgstr ""
 
-#: customizer/customizer-options.php:295
+#: customizer/customizer-options.php:323
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: customizer/customizer-options.php:296
+#: customizer/customizer-options.php:324
 msgid "Enter the default text for when no search results are found"
 msgstr ""
 
-#: footer.php:25
+#: footer.php:21
 #, php-format
 msgid ""
-"<div class=\"site-container\"><div class=\"site-footer-bottom-bar-left"
-"\">Theme: %1$s by %2$s"
+"</div></div><div class=\"site-footer-bottom-bar\"><div class=\"site-container"
+"\"><div class=\"site-footer-bottom-bar-left\">Theme: %1$s by %2$s"
 msgstr ""
 
-#: footer.php:27
+#: footer.php:23
 msgid "Proudly powered by "
 msgstr ""
 
-#: footer.php:27
+#: footer.php:23
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: footer.php:27
+#: footer.php:23
 #, php-format
 msgid "%s"
 msgstr ""
@@ -363,7 +386,7 @@ msgid "Breadcrumb NavXT"
 msgstr ""
 
 #: functions.php:289
-msgid "TopShop Premium"
+msgid "TOPSHOP Premium"
 msgstr ""
 
 #: includes/inc/extras.php:64
@@ -516,42 +539,71 @@ msgstr ""
 
 #: upgrade/kaira-upgrade-page.php:13
 msgid ""
-"We also have the option for you to <a href=\"http://demo.kairaweb.com/"
-"topshop-setup-demo/\" target=\"_blank\"><big>buy a fully setup demo</big></"
-"a> of TopShop which has the pages you will need already set up."
+"<a href=\"http://app.sellwire.net/p/TV\" target=\"_blank\"><big>Upgrade to "
+"Premium</big></a> for only <big><b>$15</b></big>"
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:26
+#: upgrade/kaira-upgrade-page.php:15
 msgid ""
-"<a href=\"http://app.sellwire.net/p/K3\" target=\"_blank\">Upgrade to "
+"TopShop Premium now has a <a href=\"http://support.kairaweb.com/"
+"knowledgebase/topshop-hooks-for-developers/\" target=\"_blank\">list of "
+"hooks</a> added for developers to hook on to."
+msgstr ""
+
+#: upgrade/kaira-upgrade-page.php:28
+msgid ""
+"<a href=\"http://app.sellwire.net/p/TV\" target=\"_blank\">Upgrade to "
 "premium</a> to enable the option to select between the website being full "
 "width or boxed layout."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:38
+#: upgrade/kaira-upgrade-page.php:40
 msgid ""
 "Enable the option to select between two different header layouts, standard "
 "or centered layout."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:43
+#: upgrade/kaira-upgrade-page.php:45
+msgid "Extra Styling Settings"
+msgstr ""
+
+#: upgrade/kaira-upgrade-page.php:51
+msgid ""
+"On premium we've also ebabled the option to choose your own color for the "
+"Navigation and the Footer."
+msgstr ""
+
+#: upgrade/kaira-upgrade-page.php:56
 msgid "Blog Posts Layout"
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:50
+#: upgrade/kaira-upgrade-page.php:63
 msgid ""
 "Enable the option to select between two different blog layouts, side layout "
 "or top layout."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:61
+#: upgrade/kaira-upgrade-page.php:68
+msgid "Blog Width"
+msgstr ""
+
+#: upgrade/kaira-upgrade-page.php:74
+msgid ""
+"Enable the option to make the blog (and archive/search pages) full width."
+msgstr ""
+
+#: upgrade/kaira-upgrade-page.php:85
+msgid "Enable extra settings on the default slider."
+msgstr ""
+
+#: upgrade/kaira-upgrade-page.php:96
 msgid "Enable social links on the theme to link to all your social profiles."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:66
+#: upgrade/kaira-upgrade-page.php:101
 msgid "Website copy text"
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:72
+#: upgrade/kaira-upgrade-page.php:107
 msgid "Change the website copy to link out to your own website."
 msgstr ""

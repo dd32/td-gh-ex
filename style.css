@@ -4,7 +4,7 @@ Theme URI: http://kairaweb.com/theme/topshop/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: TopShop is the perfect theme for all users from the beginner to the developer. With all our settings built neatly into the customizer you can easily edit the website live before publishing. We've packed a lot of settings into TopShop from 2 header layouts, full-width or boxed website, different blog layouts, adding social links, unlimited color selection and being able to change the colors of lots of elements from fonts to naviagtion and lots lots more. We've integrated with some of the best plugins such as SiteOrigin's Page Builder to easily build any page layouts you want, WooCommerce to simply turn your website into an online store, Meta Slider for slick responsive sliders and lots more. For the developers we've added hooks all around the theme to easily add on custom elements or extra functionality. There's also the option of upgrading to premium for a cheap price. Go on... give it a try!
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: topshop
@@ -1173,7 +1173,7 @@ a:active {
 	display: none;
 }
 
-.widget-area .widget h1 {
+.widget-area .widget-title {
     padding: 0 0 6px;
     margin: 0 0 10px 0;
     font-size: 13px;
@@ -1255,6 +1255,10 @@ a:active {
     float: left;
     border-radius: 3px;
     overflow: hidden;
+}
+.blog-post-side-layout .post-loop-images img {
+	display: block;
+	margin: 0;
 }
 .post-no-img .post-loop-images {
     display: none;
@@ -1356,6 +1360,7 @@ a:active {
 
 article .entry-title {
     margin: 0 0 8px;
+    font-size: 30px;
 }
 article .entry-meta {
     color: #B0B0B0;
@@ -1578,7 +1583,7 @@ object {
 	display: block;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 782px) {
     
     .site-top-bar-left {
         float: none !important;
@@ -1666,11 +1671,12 @@ object {
         display: block;
     }
     .main-navigation ul ul li a{
-        padding: 5px 10px;
+        padding: 8px 10px;
         text-align: center;
     }
     .main-navigation ul ul ul {
         display: none;
+        left: 0 !important;
     }
     
     .home-slider div h3 {

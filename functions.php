@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.2.1' );
+define( 'TOPSHOP_THEME_VERSION' , '1.2.2' );
 
 if ( ! function_exists( 'topshop_theme_setup' ) ) :
 /**
@@ -101,8 +101,8 @@ function topshop_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>'
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>'
 	) );
 	
 	register_sidebar(array(
@@ -297,6 +297,19 @@ add_action( 'admin_menu', 'topshop_premium_admin_menu' );
 function topshop_upgrade_page_render() {
     locate_template( 'upgrade/kaira-upgrade-page.php', true, false );
 }
+
+/**
+ * Exclude the selected slider category from the categories widget
+ */
+function topshop_exclude_slider_categories_widget( $args ) {
+	$exclude = ''; // ID's of the categories to exclude
+	if ( get_theme_mod( 'topshop-slider-cats', false ) ) {
+        $exclude = get_theme_mod( 'topshop-slider-cats' );
+    }
+	$args['exclude'] = $exclude;
+	return $args;
+}
+add_filter( 'widget_categories_args', 'topshop_exclude_slider_categories_widget' );
 
 /**
  * Enqueue TopShop admin stylesheet only on upgrade page.

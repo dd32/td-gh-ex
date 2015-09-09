@@ -774,13 +774,13 @@
 
 @media screen and (max-width: 980px) {
     
-    .woocommerce .content-has-sidebar ul.products,
-    .woocommerce-page .content-has-sidebar ul.products {
+    .woocommerce ul.products,
+    .woocommerce-page ul.products {
         margin: 0 -1% 30px;
     }
     
-    .woocommerce .content-has-sidebar ul.products li.product,
-    .woocommerce-page .content-has-sidebar ul.products li.product {
+    .woocommerce ul.products li.product,
+    .woocommerce-page ul.products li.product {
         width: 48%;
         margin: 0 1% 22px;
     }
@@ -806,13 +806,13 @@
 
 @media screen and (max-width: 769px) {
     
-    .woocommerce .content-no-sidebar ul.products,
-    .woocommerce-page .content-no-sidebar ul.products {
+    .woocommerce ul.products,
+    .woocommerce-page ul.products {
         margin: 0 -1% 30px;
     }
     
-    .woocommerce .content-no-sidebar ul.products li.product,
-    .woocommerce-page .content-no-sidebar ul.products li.product {
+    .woocommerce ul.products li.product,
+    .woocommerce-page ul.products li.product {
         width: 48%;
         margin: 0 1% 22px;
     }
@@ -845,13 +845,13 @@
         float: none;
     }
     
-    .woocommerce .content-has-sidebar ul.products,
-    .woocommerce-page .content-has-sidebar ul.products {
+    .woocommerce ul.products,
+    .woocommerce-page ul.products {
         margin: 0 0 10px;
     }
     
-    .woocommerce .content-has-sidebar ul.products li.product,
-    .woocommerce-page .content-has-sidebar ul.products li.product {
+    .woocommerce ul.products li.product,
+    .woocommerce-page ul.products li.product {
         width: 100%;
         margin: 0 0 24px;
     }
@@ -877,13 +877,13 @@
 
 @media screen and (max-width: 460px) {
     
-    .woocommerce .content-no-sidebar ul.products,
-    .woocommerce-page .content-no-sidebar ul.products {
+    .woocommerce ul.products,
+    .woocommerce-page ul.products {
         margin: 0 0 10px;
     }
     
-    .woocommerce .content-no-sidebar ul.products li.product,
-    .woocommerce-page .content-no-sidebar ul.products li.product {
+    .woocommerce ul.products li.product,
+    .woocommerce-page ul.products li.product {
         width: 100%;
         margin: 0 0 24px;
     }
