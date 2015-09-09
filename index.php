@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div id="primary" class="site-content col-md-9">
-		<div id="content" role="main" <?php if( ! is_single() && ! is_singular() && get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
+		<div id="content" role="main" <?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' && ! is_singular() ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -51,6 +51,15 @@ get_header(); ?>
 		<?php endif; // end have_posts() check ?>
 
 		</div><!-- #content -->
+		
+		<?php if( get_theme_mod('agama_blog_infinite_scroll', false) && get_theme_mod('agama_blog_infinite_trigger', 'button') == 'button' ): ?>
+		
+			<a id="infinite-loadmore" class="button button-3d button-rounded">
+				<i class="fa fa-spinner fa-spin"></i> <?php _e( 'Load More', 'agama' ); ?>
+			</a>
+		
+		<?php endif; ?>
+		
 		<?php agama_content_nav( 'nav-below' ); ?>
 	</div><!-- #primary -->
 

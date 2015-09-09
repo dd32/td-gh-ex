@@ -12,17 +12,19 @@
 		</div>
 		
 		<nav role="navigation" class="col-md-8">
-			<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_class' => 'sticky-nav' ) ); ?>
+			
+			<?php echo Agama::menu( 'top', 'sticky-nav' ); ?>
+			
 		</nav><!-- .top-navigation -->
 		
-		<div class="mobile-nav col-md-8">
+		<div class="mobile-nav">
 			<div class="mobile-nav-icons">
 				<?php if( class_exists('Woocommerce') ): global $woocommerce; ?>
 				<a href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" class="fa fa-2x fa-shopping-cart"></a>
 				<?php endif; ?>
 				<a class="fa fa-2x fa-bars"></a>
 			</div>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'mobile-nav-menu' ) ); ?>
+			<?php echo Agama::menu( 'top', 'mobile-nav-menu' ); ?>
 		</div><!-- .mobile-nav -->
 		
 	</div>

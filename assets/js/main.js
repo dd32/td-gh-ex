@@ -20,6 +20,13 @@ jQuery(document).ready(function($) {
 });
 
 /*!
+ Custom Classes
+*/
+jQuery(document).ready(function($) {
+	$('a.comment-reply-link').append('<i class="fa fa-reply"></i>');
+});
+
+/*!
  SuperFish
 */
 jQuery(document).ready(function(){
@@ -40,18 +47,6 @@ jQuery(function ($) {
 		e.preventDefault()
 		$(this).tab('show');
   })
-});
-
-/*!
- Call Portfolio lightGallery
-*/
-jQuery(document).ready(function($) {
-	$(".vision-portfolio").lightGallery({
-		selector: '.portfolio-item',
-		cssEasing: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)',
-		speed: 1500
-	});
-	jQuery("#toTop").scrollToTop(1000);
 });
 
 /*!

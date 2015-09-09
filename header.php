@@ -5,7 +5,8 @@
  * @package Theme-Vision
  * @subpackage Agama
  * @since Agama 1.0
- */ ?>
+ */ 
+ ?>
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
@@ -28,7 +29,7 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('stretched'); ?>>
 
 <!-- Main Wrappe -->
 <div id="main-wrapper">
@@ -48,4 +49,7 @@
 
 	<div id="page" class="hfeed site">
 		<div id="main" class="wrapper">
-			<div class="vision-row">
+			<div class="vision-row clearfix">
+				<?php if( get_theme_mod('agama_frontpage_boxes_everywhere', false) || is_home() || is_front_page() ): ?>
+					<?php get_template_part('framework/frontpage-boxes'); ?>
+				<?php endif; ?>

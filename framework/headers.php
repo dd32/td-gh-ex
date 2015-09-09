@@ -1,4 +1,4 @@
-<?php if( get_theme_mod('agama_header_style', 'default') == 'sticky' ): // Sticky header ?>
+<?php if( get_theme_mod('agama_header_style', 'sticky') == 'sticky' ): // Sticky header ?>
 
 	<?php get_template_part( 'framework/headers/header-sticky' ); ?>
 

@@ -3,6 +3,9 @@
 // Include framework init file
 get_template_part('framework/framework-init');
 
+// Include Agama class
+get_template_part('includes/agama-class');
+
 // Include WooCommerce class file
 get_template_part('includes/woocommerce');
 
@@ -58,6 +61,7 @@ function agama_setup() {
 	// Register custom image sizes
 	add_image_size( 'agama-blog-large', 776, 310, true );
     add_image_size( 'agama-blog-medium', 320, 202, true );
+	add_image_size( 'agama-blog-small', 400, 300, true );
     add_image_size( 'agama-related-img', 180, 138, true );
     add_image_size( 'agama-recent-posts', 700, 441, true );
 	
@@ -81,16 +85,6 @@ function agama_slug_render_title() {
 	}
 	add_action( 'wp_head', 'agama_slug_render_title' );
 }
-
-/**
- * Excerpt Lenght
- *
- * @since Agama v1.0
- */
-function agama_excerpt_length( $length ) {
-	return esc_attr( get_theme_mod('agama_blog_excerpt', '60') );
-}
-add_filter( 'excerpt_length', 'agama_excerpt_length', 999 );
 
 /**
  * Agama Thumb Title
@@ -198,37 +192,41 @@ function agama_comment( $comment, $args, $depth ) {
 		global $post;
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<header class="comment-meta comment-author vcard">
+		<div id="comment-<?php comment_ID(); ?>" class="comment-wrap clearfix">
+			
+			<div class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="comment-avatar clearfix">
+						<?php echo get_avatar( $comment, 44 ); ?>
+					</span>
+				</div>
+			</div><!-- .comment-meta -->
+
+			<div class="comment-content comment">
+				<div class="comment-author">
 				<?php
-					echo get_avatar( $comment, 44 );
-					printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
-						get_comment_author_link(),
-						// If current post author is also comment author, make it known visually.
-						( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author', 'agama' ) . '</span>' : ''
-					);
-					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+				printf( '<a href="%1$s">%2$s %3$s</a>', get_permalink(), get_comment_author_link(),
+							// If current post author is also comment author, make it known visually.
+							( $comment->user_id === $post->post_author ) ? '<cite>' . __( 'author', 'agama' ) . '</cite>' : ''
+				);
+				printf( '<span><a href="%1$s"><time datetime="%2$s">%3$s</time></a></span>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
 						sprintf( __( '%1$s at %2$s', 'agama' ), get_comment_date(), get_comment_time() )
-					);
+				);
 				?>
-			</header><!-- .comment-meta -->
-
+				</div>
+				<?php comment_text(); ?>
+				<?php //edit_comment_link( __( '<i class="fa fa-edit"></i> Edit', 'agama' ), '<p class="edit-link">', '</p>' ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+			</div><!-- .comment-content -->
+			
 			<?php if ( '0' == $comment->comment_approved ) : ?>
 				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'agama' ); ?></p>
 			<?php endif; ?>
-
-			<section class="comment-content comment">
-				<?php comment_text(); ?>
-				<?php edit_comment_link( __( 'Edit', 'agama' ), '<p class="edit-link">', '</p>' ); ?>
-			</section><!-- .comment-content -->
-
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'agama' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div><!-- .reply -->
-		</article><!-- #comment-## -->
+			
+		</div><!-- #comment-## -->
 	<?php
 		break;
 	endswitch; // end comment_type check
@@ -255,7 +253,7 @@ function agama_entry_meta() {
 	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
+		esc_attr( get_the_date('c') ),
 		esc_html( get_the_date() )
 	);
 
@@ -285,124 +283,27 @@ function agama_entry_meta() {
 endif;
 
 /**
- * Extend the default WordPress body classes.
- *
- * @since Agama 1.0
- * @param array $classes Existing class values.
- * @return array Filtered class values.
- */
-function agama_body_class( $classes ) {
-	$background_color = get_background_color();
-	$background_image = get_background_image();
-	
-	if( get_theme_mod( 'agama_header_style', 'default' ) == 'sticky' ) {
-		$classes[] = 'sticky_header';
-	}
-
-	if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'page-templates/full-width.php' ) )
-		$classes[] = 'full-width';
-	
-	if( is_page_template( 'page-templates/portfolio-one-column.php' ) ) {
-		$classes[] = 'portfolio-one-column';
-	}
-	
-	if( is_page_template( 'page-templates/portfolio-two-columns.php' ) ) {
-		$classes[] = 'portfolio-two-columns';
-	}
-	
-	if( is_page_template( 'page-templates/portfolio-three-columns.php' ) ) {
-		$classes[] = 'portfolio-three-columns';
-	}
-	
-	if( is_page_template( 'page-templates/portfolio-four-columns.php' ) ) {
-		$classes[] = 'portfolio-four-columns';
-	}
-
-	if ( is_page_template( 'page-templates/front-page.php' ) ) {
-		$classes[] = 'template-front-page';
-		if ( has_post_thumbnail() )
-			$classes[] = 'has-post-thumbnail';
-		if ( is_active_sidebar( 'sidebar-2' ) )
-			$classes[] = 'two-sidebars';
-	}
-
-	if ( empty( $background_image ) ) {
-		if ( empty( $background_color ) )
-			$classes[] = 'custom-background-empty';
-		elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) )
-			$classes[] = 'custom-background-white';
-	}
-
-	// Enable custom font class only if the font CSS is queued to load.
-	if ( wp_style_is( 'PTSans', 'queue' ) )
-		$classes[] = 'custom-font-enabled';
-
-	if ( ! is_multi_author() )
-		$classes[] = 'single-author';
-
-	return $classes;
-}
-add_filter( 'body_class', 'agama_body_class' );
-
-/**
  * .article-wrapper Grid, List - Style
  *
  * @since Agama v1.0.1
  */
 function agama_article_wrapper_class() {
-	if( get_theme_mod('agama_blog_layout', 'list') == 'list' ) {
-		echo 'list-style';
-	}
-	else
-	if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ) {
-		echo 'grid-style';
-	} else {
-		echo 'list-style';
-	}
-}
-
-/**
- * Agama Social Icons
- *
- * @since Agama v1.0.1
- */
-if( ! function_exists( 'agama_social_icons' ) ) {
-	function agama_social_icons( $tip_position = '' ) {
-		$_target = esc_attr( get_theme_mod('agama_social_url_target', '_self') ); // URL target
-		$social  = array(
-			'Facebook'	=> esc_url( get_theme_mod('social_facebook', '') ),
-			'Twitter'	=> esc_url( get_theme_mod('social_twitter', '') ),
-			'Flickr'	=> esc_url( get_theme_mod('social_flickr', '') ),
-			'Vimeo'		=> esc_url( get_theme_mod('social_vimeo', '') ),
-			'Youtube'	=> esc_url( get_theme_mod('social_youtube', '') ),
-			'Instagram'	=> esc_url( get_theme_mod('social_instagram', '') ),
-			'Pinterest'	=> esc_url( get_theme_mod('social_pinterest', '') ),
-			'Tumblr'	=> esc_url( get_theme_mod('social_tumblr', '') ),
-			'Google'	=> esc_url( get_theme_mod('social_google', '') ),
-			'Dribbble'	=> esc_url( get_theme_mod('social_dribbble', '') ),
-			'Digg'		=> esc_url( get_theme_mod('social_digg', '') ),
-			'Linkedin'	=> esc_url( get_theme_mod('social_linkedin', '') ),
-			'Blogger'	=> esc_url( get_theme_mod('social_blogger', '') ),
-			'Skype'		=> esc_html( get_theme_mod('social_skype', '') ),
-			'Forrst'	=> esc_url( get_theme_mod('social_forrst', '') ),
-			'Myspace'	=> esc_url( get_theme_mod('social_myspace', '') ),
-			'Deviantart'=> esc_url( get_theme_mod('social_deviantart', '') ),
-			'Yahoo'		=> esc_url( get_theme_mod('social_yahoo', '') ),
-			'Reddit'	=> esc_url( get_theme_mod('social_reddit', '') ),
-			'PayPal'	=> esc_url( get_theme_mod('social_paypal', '') ),
-			'Dropbox'	=> esc_url( get_theme_mod('social_dropbox', '') ),
-			'Soundcloud'=> esc_url( get_theme_mod('social_soundcloud', '') ),
-			'VK'		=> esc_url( get_theme_mod('social_vk', '') ),
-			'Email'		=> esc_url( get_theme_mod('social_email', '') ),
-			'RSS'		=> esc_url( get_theme_mod('social_rss', get_bloginfo('rss2_url')) )
-		);
-		// Output icons
-		foreach( $social as $name => $url ) {
-			if( ! empty( $url ) ) {
-				echo sprintf( '<a class="social-icons %s" href="%s" target="%s" data-toggle="tooltip" data-placement="%s" title="%s"></a>', strtolower($name), $url, $_target, $tip_position, $name );
-			}
-		}
-	}
+	$blog_layout = get_theme_mod('agama_blog_layout', 'list');
+	switch( $blog_layout ):
+		
+		case 'list':
+			echo 'list-style';
+		break;
+		
+		case 'grid':
+			echo 'grid-style';
+		break;
+		
+		case 'small_thumbs':
+			echo 'small_thumbs';
+		break;
+	
+	endswitch;
 }
 
 /**
@@ -414,28 +315,6 @@ if( ! function_exists( 'agama_render_blog_post_date' ) ) {
 	function agama_render_blog_post_date() {
 		global $post;
 		
-		// Get post format
-		$format = get_post_format( $post->ID );
-		
-		switch( $format ):
-			case 'aside':
-				$fa_class = 'fa fa-2x fa-outdent';
-			break;
-			case 'image':
-				$fa_class = 'fa fa-2x fa-picture-o';
-			break;
-			case 'link':
-				$fa_class = 'fa fa-2x fa-link';
-			break;
-			case 'quote':
-				$fa_class = 'fa fa-2x fa-quote-left';
-			break;
-			case 'status':
-				$fa_class = 'fa fa-2x fa-comment';
-			break;
-			default: $fa_class = 'fa fa-2x fa-file-text';
-		endswitch;
-		
 		// If not single post
 		if( !is_single() ) {
 			echo '<div class="entry-date">';
@@ -444,7 +323,7 @@ if( ! function_exists( 'agama_render_blog_post_date' ) ) {
 			echo sprintf( '<span class="month-year">%s</span>', get_the_time('m, Y') ); // Get month, year
 			echo '</div>';
 			echo '<div class="format-box">';
-			echo sprintf( '<i class="%s"></i>', $fa_class );
+			echo sprintf( '%s', Agama::post_format() );
 			echo '</div>';
 			echo '</div><!-- .entry-date -->';
 		}
@@ -459,35 +338,25 @@ add_action( 'agama_blog_post_date_and_format', 'agama_render_blog_post_date', 10
  */
 if( ! function_exists( 'agama_render_blog_post_meta' ) ) {
 	function agama_render_blog_post_meta() {
-		_e( 'By', 'agama' );
-		echo '<span class="vcard">';
-		echo '<span class="fn">';
-		echo ' '.get_the_author_link();
-		echo '</span>';
-		echo '</span>';
-		echo '<span class="inline-sep">|</span>';
-		echo sprintf( '<span>%s</span>', get_the_time('F j, Y') );
+		
+		echo sprintf( 
+			'%s <span class="vcard"><span class="fn">%s</span></span>', 
+			'<i class="fa fa-user"></i>', get_the_author_link() 
+		);
+		
+		echo '<span class="inline-sep">/</span>';
+		
+		echo sprintf( '%s <span>%s</span>', '<i class="fa fa-calendar"></i>', get_the_time('F j, Y') );
 		
 		// Output next details only on list blog layout or on single post page
 		if( get_theme_mod('agama_blog_layout', 'list') == 'list' || is_single() ) {
-			echo '<span class="inline-sep">|</span>';
-			
-			// Get category
-			$categories = get_the_category();
-			$separator = ',';
-			$output = '';
-			if( $categories ):
-				foreach($categories as $category) {
-					$output .= '<a href="'.esc_url( get_category_link( $category->term_id ) ).'" title="' . esc_attr( sprintf( __( "View all posts in %s", 'agama' ), $category->name ) ) . '">'.esc_html( $category->cat_name ).'</a>'.$separator;
-					echo trim( $output, $separator );
-				}
-			endif;
-			
-			echo '<span class="inline-sep">|</span>';
+			echo '<span class="inline-sep">/</span>';
+			echo sprintf( '%s %s', '<i class="fa fa-folder-open"></i>', get_the_category_list(', ') );
+			echo '<span class="inline-sep">/</span>';
 			
 			// Comments number
 			if( comments_open() ) {
-				echo sprintf( '<a href="%s">%s</a>', get_comments_link(), get_comments_number().__( ' comments', 'agama' ) );
+				echo sprintf( '%s <a href="%s">%s</a>', '<i class="fa fa-comments"></i>', get_comments_link(), get_comments_number().__( ' comments', 'agama' ) );
 			}
 		}
 	}
@@ -502,7 +371,7 @@ add_action( 'agama_blog_post_meta', 'agama_render_blog_post_meta', 10 );
 function agama_infinite_scroll_init() { ?>
 <script>
 jQuery(function($){
-	<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
+	<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' && ! is_singular() ): ?>
 	var $container = $('#content').imagesLoaded(function(){
 	
 		$container.isotope({
@@ -528,6 +397,21 @@ jQuery(function($){
 				$container.isotope( 'appended', $( newElements ) ); 
 			}
 		);
+		
+		<?php if( get_theme_mod('agama_blog_infinite_trigger', 'button') == 'button'): ?>
+		jQuery(window).unbind('.infscr');
+		jQuery('.navigation').css('display', 'none');
+		
+		jQuery('#infinite-loadmore').click(function() {
+			jQuery('#content').infinitescroll('retrieve');
+				return false;
+		});
+		
+		jQuery(document).ajaxError(function(e,xhr,opt) {
+			if(xhr.status==404)
+				jQuery('.navigation .nav-previous a').remove();
+		});
+		<?php endif; ?>
 	});
 	<?php else: ?>
 	jQuery('#content').infinitescroll({
@@ -539,6 +423,22 @@ jQuery(function($){
 			img: '<?php echo AGAMA_IMG .'loader.gif'; ?>'
 		},
 	});
+	
+	<?php if( get_theme_mod('agama_blog_infinite_trigger', 'button') == 'button'): ?>
+	jQuery(window).unbind('.infscr');
+	jQuery('.navigation').css('display', 'none');
+	
+	jQuery('#infinite-loadmore').click(function() {
+		jQuery('#content').infinitescroll('retrieve');
+			return false;
+	});
+	
+	jQuery(document).ajaxError(function(e,xhr,opt) {
+		if(xhr.status==404)
+			jQuery('.navigation .nav-previous a').remove();
+	});
+	<?php endif; ?>
+	
 	<?php endif; ?>
 });
 </script>

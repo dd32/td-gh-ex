@@ -59,9 +59,12 @@
 			
 			<?php if( get_theme_mod('agama_footer_social', true) ): ?>
 			<div class="social col-md-6">
-				<?php agama_social_icons( 'top' ); ?>
+				
+				<?php Agama::sociali('top'); ?>
+				
 			</div>
 			<?php endif; ?>
+			
 		</div>
 	</footer><!-- #colophon -->
 	

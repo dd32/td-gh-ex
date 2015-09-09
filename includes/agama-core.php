@@ -28,7 +28,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 
 			// Set up Agama version
 			if( !defined( 'AGAMA_VER' ) ) {
-				define( 'AGAMA_VER', '1.1.0' );
+				define( 'AGAMA_VER', '1.1.1' );
 			}
 			
 			// Defina Agama URI
@@ -77,15 +77,19 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			
 			// Open Sans
 			wp_register_style( 'OpenSans', esc_url( '//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,latin-ext' ) );
-			 wp_enqueue_style( 'OpenSans' );
+			wp_enqueue_style( 'OpenSans' );
 			 
 			// PT Sans
 			wp_register_style( 'PTSans', esc_url( '//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' ) );
-			 wp_enqueue_style( 'PTSans' );
+			wp_enqueue_style( 'PTSans' );
 			 
 			// Raleway
 			wp_register_style( 'Raleway', esc_url( '//fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900,200,100' ) );
-			 wp_enqueue_style( 'Raleway' );
+			wp_enqueue_style( 'Raleway' );
+			 
+			// Crete Round
+			wp_register_style( 'CreteRound', esc_url( '//fonts.googleapis.com/css?family=Crete+Round:400,400italic' ) );
+			wp_enqueue_style( 'CreteRound' );
 			
 			/*
 			 * Adds JavaScript to pages with the comment form to support
@@ -101,14 +105,6 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			// NiceScroll
 			wp_register_script( 'NiceScroll', AGAMA_JS.'jquery.nicescroll.min.js' );
 			 wp_enqueue_script( 'NiceScroll' );
-			
-			// lightGallery JS
-			wp_register_script( 'lightGallery', AGAMA_JS.'lightGallery.min.js' );
-			 wp_enqueue_script( 'lightGallery' );
-			 
-			// lightGallery CSS
-			wp_register_style( 'lightGallery', AGAMA_CSS.'lightGallery.min.css' );
-			 wp_enqueue_style( 'lightGallery' );
 			
 			// FontAwesome
 			wp_register_style( 'fontawesome', AGAMA_CSS.'font-awesome.min.css' );

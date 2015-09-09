@@ -52,7 +52,8 @@ function agama_customize_headers_register($wp_customize) {
 		public function render_content() { ?>
 			<div class="theme-headers">
 				<label>
-					<span class="customize-control-title"><?php _e( 'Select Header Style', 'agama' ); ?></span>
+					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 					<input name="agama_header_style" type="radio" value="default" data-customize-setting-link="agama_header_style">
 					<img src="<?php echo AGAMA_IMG . 'headers/header-default.jpg'; ?>">
 				</label>
@@ -131,6 +132,27 @@ function agama_customize_register( $wp_customize ) {
 		'capability'     => 'edit_theme_options',
 		'title'          => __('Agama Theme Options', 'agama')
 	));
+/******************** Agama Body Background Animated Settings ******************************************/
+	$wp_customize->add_section('agama_body_background_animated_section', array(
+		'title'		=> __( 'Body Background Animated', 'agama' ),
+		'priority'	=> 4,
+		'panel'		=> 'agama_theme_options'
+	));
+	$wp_customize->add_setting('agama_body_background_animated', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize, 'agama_body_background_animated', array(
+				'label'		=> __( 'Animated Background', 'agama' ),
+				'section'	=> 'agama_body_background_animated_section',
+				'settings'	=> 'agama_body_background_animated'
+			)
+		)
+	);
 /******************** Agama Layout Settings ******************************************/
 	$wp_customize->add_section('agama_layout_section', array(
 		'title'		=> __( 'Layout', 'agama' ),
@@ -155,6 +177,27 @@ function agama_customize_register( $wp_customize ) {
 				(
 					'fullwidth' => __( 'Fullwidth', 'agama' ),
 					'boxed'		=> __( 'Boxed Layout', 'agama' )
+				)
+			)
+		)
+	); // Sidebar Position
+	$wp_customize->add_setting('agama_sidebar_position', array(
+		'default'			=> 'right',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_sidebar_position', array(
+				'label'		=> __( 'Sidebar Position', 'agama' ),
+				'section'	=> 'agama_layout_section',
+				'settings'	=> 'agama_sidebar_position',
+				'type'		=> 'select',
+				'choices'	=> array
+				(
+					'left'	=> __( 'Left', 'agama' ),
+					'right'	=> __( 'Right', 'agama' )
 				)
 			)
 		)
@@ -223,7 +266,7 @@ function agama_customize_register( $wp_customize ) {
 		'panel'		=> 'agama_theme_options'
 	)); // Top Navigation
 	$wp_customize->add_setting('agama_top_navigation', array(
-		'default'			=> 1,
+		'default'			=> true,
 		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_key'
@@ -241,7 +284,7 @@ function agama_customize_register( $wp_customize ) {
 		) 
 	); // Header Style
 	$wp_customize->add_setting( 'agama_header_style', array(
-		'default'			=> 'default',
+		'default'			=> 'sticky',
 		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
@@ -249,8 +292,8 @@ function agama_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new Agama_Customize_Agama_Headers(
 			$wp_customize, 'agama_header_style', array(
-				'label'			=> __( 'Choose Header', 'agama' ),
-				'description'	=> __( 'Choose header style.', 'agama' ),
+				'label'			=> __( 'Header Style', 'agama' ),
+				'description'	=> __( 'Select header style.', 'agama' ),
 				'section'		=> 'agama_header_section',
 				'settings'		=> 'agama_header_style'
 			)
@@ -317,12 +360,373 @@ function agama_customize_register( $wp_customize ) {
 			) 
 		) 
 	);
+/******************** Agama Frontpage Boxes Settings ******************************************/
+	$wp_customize->add_section( 'agama_frontpage_boxes_section', array(
+		'title'		=> __('Frontpage Boxes', 'agama'),
+		'priority'	=> 40,
+		'panel'		=> 'agama_theme_options'
+	)); // Enable Frontpage Boxes Everywhere
+	$wp_customize->add_setting( 'agama_frontpage_boxes_everywhere', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_boxes_everywhere', array(
+				'label'		=> __( 'Enable Frontpage Boxes on All Pages ?', 'agama' ),
+				'description' => __( 'If not enabled, the frontpage boxes will be shown only on homepage or frontpage.', 'agama' ),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_boxes_everywhere',
+				'type'		=> 'checkbox'
+			)
+		)
+	); // Frontpage Box 1 Enable
+	$wp_customize->add_setting( 'agama_frontpage_box_1_enable', array(
+		'default'			=> true,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_key'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_1_enable', array(
+				'label'		=> __('Box 1 Enable ?', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_1_enable',
+				'type'		=> 'checkbox'
+			)
+		)
+	); // Frontpage Box 1 Title
+	$wp_customize->add_setting( 'agama_frontpage_box_1_title', array(
+		'default'			=> 'Responsive Layout',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_1_title', array(
+				'label'		=> __('Box 1 Title', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_1_title',
+				'type'		=> 'text'
+			)
+		)
+	); // Frontpage Box 1 FA Icon
+	$wp_customize->add_setting( 'agama_frontpage_box_1_icon', array(
+		'default'			=> 'fa-tablet',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_1_icon', array(
+				'label'			=> __('Box 1 FontAwesome Icon', 'agama'),
+				'description'	=> sprintf('%s <a href="https://fortawesome.github.io/Font-Awesome/icons/" target="_blank">here</a> %s', __('Accepted inputs is "fa-*" ex: fa-tablet, check', 'agama'), __('for all FontAwesome icon classes.', 'agama')),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_box_1_icon',
+				'type'			=> 'text'
+			)
+		)
+	); // Frontpage Box 1 Icon Color
+	$wp_customize->add_setting( 'agama_frontpage_box_1_icon_color', array(
+		'default'			=> '#f7a805',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'agama_frontpage_box_1_icon_color', array(
+				'label'		=> __('Box 1 Icon Color', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_1_icon_color'
+			)
+		)
+	); // Frontpage Box 1 Text
+	$wp_customize->add_setting( 'agama_frontpage_box_1_text', array(
+		'default'			=> 'Powerful Layout with Responsive functionality that can be adapted to any screen size.',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_1_text', array(
+				'label'		=> __('Box 1 Text', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_1_text',
+				'type'		=> 'textarea'
+			)
+		)
+	); // Frontpage Box 2 Enable
+	$wp_customize->add_setting( 'agama_frontpage_box_2_enable', array(
+		'default'			=> true,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_key'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_2_enable', array(
+				'label'		=> __('Box 2 Enable ?', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_2_enable',
+				'type'		=> 'checkbox'
+			)
+		)
+	); // Frontpage Box 2 Title
+	$wp_customize->add_setting( 'agama_frontpage_box_2_title', array(
+		'default'			=> 'Endless Possibilities',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_2_title', array(
+				'label'		=> __('Box 2 Title', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_2_title',
+				'type'		=> 'text'
+			)
+		)
+	); // Frontpage Box 2 FA Icon
+	$wp_customize->add_setting( 'agama_frontpage_box_2_icon', array(
+		'default'			=> 'fa-cogs',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_2_icon', array(
+				'label'			=> __('Box 2 FontAwesome Icon', 'agama'),
+				'description'	=> sprintf('%s <a href="https://fortawesome.github.io/Font-Awesome/icons/" target="_blank">here</a> %s', __('Accepted inputs is "fa-*" ex: fa-tablet, check', 'agama'), __('for all FontAwesome icon classes.', 'agama')),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_box_2_icon',
+				'type'			=> 'text'
+			)
+		)
+	); // Frontpage Box 2 Icon Color
+	$wp_customize->add_setting( 'agama_frontpage_box_2_icon_color', array(
+		'default'			=> '#f7a805',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'agama_frontpage_box_2_icon_color', array(
+				'label'		=> __('Box 2 Icon Color', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_2_icon_color'
+			)
+		)
+	); // Frontpage Box 2 Text
+	$wp_customize->add_setting( 'agama_frontpage_box_2_text', array(
+		'default'			=> 'Complete control on each & every element that provides endless customization possibilities.',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_2_text', array(
+				'label'		=> __('Box 2 Text', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_2_text',
+				'type'		=> 'textarea'
+			)
+		)
+	); // Frontpage Box 3 Enable
+	$wp_customize->add_setting( 'agama_frontpage_box_3_enable', array(
+		'default'			=> true,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_key'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_3_enable', array(
+				'label'		=> __('Box 3 Enable ?', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_3_enable',
+				'type'		=> 'checkbox'
+			)
+		)
+	); // Frontpage Box 3 Title
+	$wp_customize->add_setting( 'agama_frontpage_box_3_title', array(
+		'default'			=> 'Boxed & Wide Layouts',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_3_title', array(
+				'label'		=> __('Box 3 Title', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_3_title',
+				'type'		=> 'text'
+			)
+		)
+	); // Frontpage Box 3 FA Icon
+	$wp_customize->add_setting( 'agama_frontpage_box_3_icon', array(
+		'default'			=> 'fa-laptop',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_3_icon', array(
+				'label'			=> __('Box 3 FontAwesome Icon', 'agama'),
+				'description'	=> sprintf('%s <a href="https://fortawesome.github.io/Font-Awesome/icons/" target="_blank">here</a> %s', __('Accepted inputs is "fa-*" ex: fa-tablet, check', 'agama'), __('for all FontAwesome icon classes.', 'agama')),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_box_3_icon',
+				'type'			=> 'text'
+			)
+		)
+	); // Frontpage Box 3 Icon Color
+	$wp_customize->add_setting( 'agama_frontpage_box_3_icon_color', array(
+		'default'			=> '#f7a805',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'agama_frontpage_box_3_icon_color', array(
+				'label'		=> __('Box 3 Icon Color', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_3_icon_color'
+			)
+		)
+	);	// Frontpage Box 3 Text
+	$wp_customize->add_setting( 'agama_frontpage_box_3_text', array(
+		'default'			=> 'Stretch your Website to the Full Width or make it boxed to surprise your visitors.',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_3_text', array(
+				'label'		=> __('Box 3 Text', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_3_text',
+				'type'		=> 'textarea'
+			)
+		)
+	); // Frontpage Box 4 Enable
+	$wp_customize->add_setting( 'agama_frontpage_box_4_enable', array(
+		'default'			=> true,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_key'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_4_enable', array(
+				'label'		=> __('Box 4 Enable ?', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_4_enable',
+				'type'		=> 'checkbox'
+			)
+		)
+	); // Frontpage Box 4 Title
+	$wp_customize->add_setting( 'agama_frontpage_box_4_title', array(
+		'default'			=> 'Powerful Performance',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_4_title', array(
+				'label'		=> __('Box 4 Title', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_4_title',
+				'type'		=> 'text'
+			)
+		)
+	); // Frontpage Box 4 FA Icon
+	$wp_customize->add_setting( 'agama_frontpage_box_4_icon', array(
+		'default'			=> 'fa-magic',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_4_icon', array(
+				'label'			=> __('Box 4 FontAwesome Icon', 'agama'),
+				'description'	=> sprintf('%s <a href="https://fortawesome.github.io/Font-Awesome/icons/" target="_blank">here</a> %s', __('Accepted inputs is "fa-*" ex: fa-tablet, check', 'agama'), __('for all FontAwesome icon classes.', 'agama')),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_box_4_icon',
+				'type'			=> 'text'
+			)
+		)
+	); // Frontpage Box 4 Icon Color
+	$wp_customize->add_setting( 'agama_frontpage_box_4_icon_color', array(
+		'default'			=> '#f7a805',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'agama_frontpage_box_4_icon_color', array(
+				'label'		=> __('Box 4 Icon Color', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_4_icon_color'
+			)
+		)
+	);
+	// Frontpage Box 4 Text
+	$wp_customize->add_setting( 'agama_frontpage_box_4_text', array(
+		'default'			=> 'Optimized code that are completely customizable and deliver unmatched fast performance.',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_4_text', array(
+				'label'		=> __('Box 4 Text', 'agama'),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_4_text',
+				'type'		=> 'textarea'
+			)
+		)
+	);
 /******************** Agama Blog Settings ******************************************/
 	$wp_customize->add_section( 'agama_blog_section', array(
 		'title'		=> __('Blog', 'agama'),
-		'priority' 	=> 40,
+		'priority' 	=> 50,
 		'panel'		=> 'agama_theme_options'
-	)); // Blog Infinite Scroll
+	)); // About Author
+	$wp_customize->add_setting( 'agama_blog_about_author', array(
+		'default'			=> true,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_blog_about_author', array(
+				'label'			=> __('Enable About Author ?', 'agama'),
+				'description'	=> __('Display about author block below post.', 'agama'),
+				'section'		=> 'agama_blog_section',
+				'settings'		=> 'agama_blog_about_author',
+				'type'			=> 'checkbox'
+			)
+		)
+	); // Blog Infinite Scroll
 	$wp_customize->add_setting( 'agama_blog_infinite_scroll', array(
 		'default'			=> false,
 		'capability'		=> 'edit_theme_options',
@@ -338,7 +742,29 @@ function agama_customize_register( $wp_customize ) {
 				'type'		=> 'checkbox'
 			) 
 		) 
-	); // Blog Layout
+	); // Infinite Scroll Trigger
+	$wp_customize->add_setting( 'agama_blog_infinite_trigger', array(
+		'default'			=> 'button',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_blog_infinite_trigger', array(
+				'label'		=> __( 'Infinite Scroll Trigger', 'agama' ),
+				'section'	=> 'agama_blog_section',
+				'settings'	=> 'agama_blog_infinite_trigger',
+				'type'		=> 'select',
+				'choices'	=> array
+				(
+					'auto'	 => __( 'Automatic Trigger', 'agama' ),
+					'button' => __( 'Button Trigger', 'agama' )
+				)
+			)
+		)
+	);
+	// Blog Layout
 	$wp_customize->add_setting( 'agama_blog_layout', array(
 		'default'			=> 'list',
 		'capability'		=> 'edit_theme_options',
@@ -354,8 +780,9 @@ function agama_customize_register( $wp_customize ) {
 				'type'		=> 'select',
 				'choices'	=> array
 				(
-					'list'	=> __( 'List Style', 'agama' ),
-					'grid'	=> __( 'Grid Style', 'agama' )
+					'list'			=> __( 'List Style', 'agama' ),
+					'grid'			=> __( 'Grid Style', 'agama' ),
+					'small_thumbs'	=> __( 'Small Thumbs Style', 'agama' )
 				)
 			) 
 		) 
@@ -364,7 +791,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> 60,
 		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'sanitize_key'
 	));
 	$wp_customize->add_control( 
 		new WP_Customize_Control( 
@@ -388,11 +815,27 @@ function agama_customize_register( $wp_customize ) {
 				)
 			) 
 		) 
+	); // Blog Excerpt Enable Read More URL
+	$wp_customize->add_setting( 'agama_blog_readmore_url', array(
+		'default'			=> true,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_key'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_blog_readmore_url', array(
+				'label'		=> __( 'Enable Read More URL ?', 'agama' ),
+				'section'	=> 'agama_blog_section',
+				'settings'	=> 'agama_blog_readmore_url',
+				'type'		=> 'checkbox'
+			)
+		)
 	);
 /******************** Agama Slider Settings ******************************************/
 	$wp_customize->add_section( 'agama_slider_section', array(
 		'title'		=> __( 'Sliders', 'agama' ),
-		'priority'	=> 50,
+		'priority'	=> 60,
 		'panel'		=> 'agama_theme_options'
 	)); // Agama Pro Feature
 	$wp_customize->add_setting( 'agama_sliders', array(
@@ -413,7 +856,7 @@ function agama_customize_register( $wp_customize ) {
 /******************** Agama Typography Settings ******************************************/
 	$wp_customize->add_section( 'agama_typography_section', array(
 		'title'		=> __( 'Typography', 'agama' ),
-		'priority'	=> 60,
+		'priority'	=> 70,
 		'panel'		=> 'agama_theme_options'
 	)); // Agama Pro Feature
 	$wp_customize->add_setting( 'agama_typography', array(
@@ -434,7 +877,7 @@ function agama_customize_register( $wp_customize ) {
 /******************** Agama Colours Settings ******************************************/
 	$wp_customize->add_section( 'colors', array(
 		'title'		=> __('Colours', 'agama'),
-		'priority'	=> 70,
+		'priority'	=> 80,
 		'panel'		=> 'agama_theme_options'
 	)); // Agama Primary Color
 	$wp_customize->add_setting('agama_primary_color', array(
@@ -476,7 +919,7 @@ function agama_customize_register( $wp_customize ) {
 /******************** Agama Social Icons Settings ******************************************/
 	$wp_customize->add_section( 'agama_social_icons_section', array(
 		'title'		=> __( 'Social Icons', 'agama' ),
-		'priority'	=> 80,
+		'priority'	=> 90,
 		'panel'		=> 'agama_theme_options'
 	)); // Social Icons in Top Navigation ?
 	$wp_customize->add_setting( 'agama_top_nav_social', array(
@@ -929,7 +1372,7 @@ function agama_customize_register( $wp_customize ) {
 /******************** Agama WooCommerce Settings ******************************************/
 	$wp_customize->add_section( 'agama_woocommerce_section', array(
 		'title'		=> __( 'WooCommerce', 'agama' ),
-		'priority'	=> 90,
+		'priority'	=> 100,
 		'panel'		=> 'agama_theme_options'
 	)); // Products per Page
 	$wp_customize->add_setting( 'agama_woocommerce', array(
@@ -950,7 +1393,7 @@ function agama_customize_register( $wp_customize ) {
 /******************** Agama Custom CSS ******************************************/
 	$wp_customize->add_section( 'agama_custom_css_section', array(
 		'title'		=> __('Custom CSS', 'agama'),
-		'priority'	=> 100,
+		'priority'	=> 110,
 		'panel'		=> 'agama_theme_options'
 	));
 	$wp_customize->add_setting( 'agama_custom_css', array(
@@ -971,7 +1414,7 @@ function agama_customize_register( $wp_customize ) {
 /******************** Agama Footer Settings ******************************************/
 	$wp_customize->add_section( 'agama_footer_section', array(
 		'title'		=> __('Footer', 'agama'),
-		'priority'	=> 110,
+		'priority'	=> 120,
 		'panel'		=> 'agama_theme_options'
 	)); // Copyright
 	$wp_customize->add_setting( 'agama_footer_copyright', array(
@@ -1017,17 +1460,20 @@ add_action( 'customize_preview_init', 'agama_customize_preview_js' );
  *
  * @since Agama 1.0
  */
-function agama_customize_css() 
-{ global $Agama; ?>
+function agama_customize_css() { ?>
 	<style type="text/css" id="agama-customize-css"> 
 	a:hover,
 	.site-header h1 a:hover, 
 	.site-header h2 a:hover,
 	.list-style .entry-content .entry-title a:hover,
+	#posts .entry-meta a:hover,
 	.entry-content a:hover, .comment-content a:hover,
+	.entry-header .single-line-meta a:hover,
 	a.comment-reply-link:hover, 
 	a.comment-edit-link:hover,
 	.comments-area article header a:hover,
+	#comments .comments-title span,
+	#respond .comment-reply-title span,
 	.widget-area .widget a:hover,
 	.comments-link a:hover, 
 	.entry-meta a:hover,
@@ -1036,13 +1482,31 @@ function agama_customize_css()
 		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>; 
 	}
 	
+	.sm-form-control:focus {
+		border-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
+	}
+	
+	.entry-content .more-link {
+		border-bottom: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
+		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
+	}
+	
+	.comment-content .comment-author cite {
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
+		border: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
+	}
+	
+	#respond #submit {
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
+	}
+	
 	<?php if( is_rtl() ): ?>
 	blockquote {
-		border-right: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>
+		border-right: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
 	<?php else: ?>
 	blockquote {
-		border-left: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>
+		border-left: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
 	<?php endif; ?>
 	
@@ -1086,9 +1550,16 @@ function agama_customize_css()
 		left: 25%;
 	}
 	<?php endif; ?>
+	
+	.button,
 	.entry-date .date-box {
 		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
+	
+	.button-3d:hover {
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?> !important;
+	}
+	
 	.entry-date .format-box i {
 		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
@@ -1143,20 +1614,23 @@ function customize_styles_agama_support( $input ) { ?>
 		#accordion-section-agama_slider_section .accordion-section-content,
 		#accordion-section-agama_typography_section .accordion-section-content,
 		#accordion-section-agama_woocommerce_section .accordion-section-content,
-		#accordion-section-agama_custom_css_section .accordion-section-content {
+		#accordion-section-agama_custom_css_section .accordion-section-content,
+		#accordion-section-agama_body_background_animated_section .accordion-section-content {
 			background-color: #f7a805;
 			color: #fff;
 		}
 		#accordion-section-agama_slider_section .accordion-section-content a,
 		#accordion-section-agama_typography_section .accordion-section-content a,
 		#accordion-section-agama_woocommerce_section .accordion-section-content a,
-		#accordion-section-agama_custom_css_section .accordion-section-content a {
+		#accordion-section-agama_custom_css_section .accordion-section-content a,
+		#accordion-section-agama_body_background_animated_section .accordion-section-content a {
 			color: #000;
 		}
 		#accordion-section-agama_slider_section .accordion-section-content a:hover,
 		#accordion-section-agama_typography_section .accordion-section-content a:hover,
 		#accordion-section-agama_woocommerce_section .accordion-section-content a:hover,
-		#accordion-section-agama_custom_css_section .accordion-section-content a:hover {
+		#accordion-section-agama_custom_css_section .accordion-section-content a:hover,
+		#accordion-section-agama_body_background_animated_section .accordion-section-content a:hover {
 			color: #fff;
 		}
 	</style>

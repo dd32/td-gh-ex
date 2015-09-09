@@ -2,16 +2,32 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.1.1 Sep 10 =
+* ADDED: Frontpage boxes feature.
+* ADDED: About author enable / disable feature.
+* ADDED: 1 new blog layout (small thumbs) feature.
+* ADDED: sidebar align (left / right) feature.
+* ADDED: Enable / Disable "Read More" blog url feature.
+* CLEAN: Unused files & code.
+* FIXED: Blog grid style, comments overlap with posts.
+* FIXED: Few issues in mobile navigation.
+* FIXED: Duplicated post categories bug.
+* IMPROVED: Editor stylesheet.
+* IMPROVED: Infinite scroll, added trigger feature (auto / button).
+* IMPROVED: Blog posts styling.
+* IMPROVED: Comments layout restyled.
+* IMPROVED: Overall styling.
+
 = 1.1.0 Aug 30 =
-FIXED: textdomain issue in customizer.
+* FIXED: textdomain issue in customizer.
 
 = 1.0.9 Aug 28 2015 =
-ADDED: Layout style options (Boxed / Fullwidth).
-FIXED: Blog list feature thumbnail size issue.
-IMPROVED: Right to Left (RTL) stylesheet issues.
-IMPROVED: Header style select options.
-IMPROVED: Sticky header navigation.
-IMPROVED: WooCommerce shop page.
+* ADDED: Layout style options (Boxed / Fullwidth).
+* FIXED: Blog list feature thumbnail size issue.
+* IMPROVED: Right to Left (RTL) stylesheet issues.
+* IMPROVED: Header style select options.
+* IMPROVED: Sticky header navigation.
+* IMPROVED: WooCommerce shop page.
 
 = 1.0.8 Aug 17 2015 =
 * FIXED: minor notices
@@ -70,7 +86,6 @@ IMPROVED: WooCommerce shop page.
  * HTML5 Shiv - https://github.com/afarkas/html5shiv - GPL2 License
  * Isotope - http://isotope.metafizzy.co - GPL3 License
  * NiceScroll - http://areaaperta.com/nicescroll, https://github.com/inuyaksa/jquery.nicescroll - MIT License
- * lightGallery - http://sachinchoolur.github.io/lightGallery/ - MIT License
  * Superfish - http://users.tpg.com.au/j_birch/plugins/superfish/ - MIT License
  * Infinite Scroll - https://github.com/paulirish/infinite-scroll - MIT License
  * imagesLoaded - http://imagesloaded.desandro.com/ - MIT License
@@ -78,8 +93,8 @@ IMPROVED: WooCommerce shop page.
  
  Images used in Screenshot are licensed under Creative Commons Zero License:
 
- * Anthony DELANOIX - http://princeandgreene.fr/ - http://princeandgreene.fr/monte-carlo-monaco/ - (Check homepage "About Me" for license) - CC0 1.0 License
- * Ryan McGuire - http://www.laughandpee.com/ - Downloaded from (Nature category): http://www.gratisography.com/ - CC0 1.0 License
+ * Pixabay - http://pixabay.com - https://pixabay.com/en/office-freelancer-computer-business-583839/ - CC0 1.0 License
+ * Vadim Sherbakov - http://tumblr.unsplash.com/post/56830717581/download-by-vadim-sherbakov - CC0 1.0 License
  
  Unless otherwise specified, all the theme files, scripts and images
  are licensed under GNU General Public License version 2, see file license.txt.

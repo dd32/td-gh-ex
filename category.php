@@ -12,9 +12,8 @@
 get_header(); ?>
 
 	<section id="primary" class="site-content col-md-9">
-		<div id="content" role="main">
-
-		<?php if ( have_posts() ) : ?>
+		
+		<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
 			<header class="archive-header">
 				<h1 class="archive-title"><?php printf( __( 'Category Archives: %s', 'agama' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?></h1>
 
@@ -22,6 +21,21 @@ get_header(); ?>
 				<div class="archive-meta"><?php echo category_description(); ?></div>
 			<?php endif; ?>
 			</header><!-- .archive-header -->
+		<?php endif; ?>
+		
+		<div id="content" role="main" <?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' && ! is_singular() ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
+
+		<?php if ( have_posts() ) : ?>
+		
+			<?php if( get_theme_mod('agama_blog_layout', 'list') != 'grid' ): ?>
+			<header class="archive-header">
+				<h1 class="archive-title"><?php printf( __( 'Category Archives: %s', 'agama' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?></h1>
+
+			<?php if ( category_description() ) : // Show an optional category description ?>
+				<div class="archive-meta"><?php echo category_description(); ?></div>
+			<?php endif; ?>
+			</header><!-- .archive-header -->
+			<?php endif; ?>
 
 			<?php
 			/* Start the Loop */
@@ -34,8 +48,10 @@ get_header(); ?>
 				get_template_part( 'content', get_post_format() );
 
 			endwhile;
-
-			agama_content_nav( 'nav-below' );
+			
+			if( get_theme_mod('agama_blog_layout', 'list') != 'grid' ) {
+				agama_content_nav( 'nav-below' );
+			}
 			?>
 
 		<?php else : ?>
@@ -43,6 +59,9 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</div><!-- #content -->
+		<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
+			<?php agama_content_nav( 'nav-below' ); ?>
+		<?php endif; ?>
 	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
