@@ -22,7 +22,7 @@ function optionsframework_options() {
 
 	//Slide options for homepage slider
     $options_slides = array();
-    $options_slides[0] = __( '--Select Number of slides--', 'accesspress-mag' );
+    $options_slides[0] = __( 'Default', 'accesspress-mag' );
     for($i=1;$i<=6;$i++)
     {
         $options_slides[$i] = $i ;
@@ -30,7 +30,7 @@ function optionsframework_options() {
     
     //No.of posts for homepage blocks
     $options_block_posts = array();
-    $options_block_posts[-1]= __( '-- All posts --', 'accesspress-mag' );
+    $options_block_posts[-1]= __( 'All posts', 'accesspress-mag' );
     for($i=4;$i<=10;$i++)
     {
         $options_block_posts[$i] = $i ;
@@ -460,6 +460,7 @@ function optionsframework_options() {
             'desc' => __( 'Choose number of posts for block (first)', 'accesspress-mag' ),
             'id' => 'posts_for_block1', 
             'type' => 'select',
+            'std' => '6',
             'options' => $options_block_posts
             );
     $options[] = array(
@@ -474,6 +475,7 @@ function optionsframework_options() {
             'desc' => __( 'Choose number of posts for block (second)', 'accesspress-mag' ),
             'id' => 'posts_for_block2', 
             'type' => 'select',
+            'std' => '5',
             'options' => $options_block_posts
             );
     $options[] = array(
@@ -488,6 +490,7 @@ function optionsframework_options() {
             'desc' => __( 'Choose number of posts for block (third)', 'accesspress-mag' ),
             'id' => 'posts_for_block3', 
             'type' => 'select',
+            'std' => '6',
             'options' => $options_block_posts
             );
     $options[] = array(
@@ -502,12 +505,13 @@ function optionsframework_options() {
             'desc' => __( 'Choose number of posts for block (fourth)', 'accesspress-mag' ),
             'id' => 'posts_for_block4', 
             'type' => 'select',
+            'std' => '6',
             'options' => $options_block_posts
             );
     $options[] = array(
             'type' => 'groupend'
             );
-            
+    /*--------------------Editor pick show in homepage sidebar---------------------------------------*/        
     $options[] = array(
             'name' => __( 'Editor pick settings', 'accesspress-mag' ),
             'id'   => 'editor_pick_setting',

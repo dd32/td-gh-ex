@@ -87,7 +87,7 @@ function accesspress_mag_slider_cb(){
         $slider_category = of_get_option( 'homepage_slider_category' );
         $slide_count = of_get_option( 'count_slides' );
         if( $slide_count == 0 ){
-            $posts_perpage_value = 1;
+            $posts_perpage_value = 4;
         } elseif( empty( $slider_category ) && $slider_posts_option == 'cat' ) {
             $posts_perpage_value = 1;
         }
@@ -172,7 +172,7 @@ function accesspress_mag_slider_mobile_cb(){
         $slider_category = of_get_option( 'homepage_slider_category' );
         $slide_count = of_get_option( 'count_slides' );
         if( $slide_count == 0 ){
-            $posts_perpage_value = 1;
+            $posts_perpage_value = 4;
         } elseif( empty( $slider_category ) && $slider_posts_option == 'cat' ) {
             $posts_perpage_value = 1;
         }

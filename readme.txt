@@ -66,6 +66,13 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.1.2
+ * Translation .pot file updated
+ * Unused images removed
+ * AccessPress Instagram Feed mention in TGMPA
+ * Changed default posts for homepage slider function
+ * Changed screenshot image 
+
 Version 2.1.1
  * Added Current date at top header section.
  * Fixed bugs on auto update meta value of post's sidebar.

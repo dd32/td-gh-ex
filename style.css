@@ -4,7 +4,7 @@ Theme URI: http://accesspressthemes.com/accesspress-mag/
 Author: AccessPress Theme
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-Version: 2.1.1
+Version: 2.1.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: accesspress-mag
@@ -3107,3 +3107,19 @@ Galleries
 .top-menu-wrapper.no_menu {
     display: none;
 }
+
+/*Instagram*/
+.instagram-widget li {
+    width: 33.33%;
+    float: left;
+    padding-left: 0px !important;
+    padding: 5px 5px 0px 0px;
+    margin-bottom: 0px !important;
+}
+.instagram-widget {
+    margin: 0;
+    padding: 0;
+    margin-right: -5px;
+    display: inline-block;
+}
+ 

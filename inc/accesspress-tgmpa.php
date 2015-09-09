@@ -32,26 +32,33 @@ function accesspress_mag_required_plugins() {
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
-            'name'      => __( 'AccessPress Social Icons', 'accesspress-mag' ), //The plugin name
-            'slug'      => 'accesspress-social-icons',  // The plugin slug (typically the folder name)
-            'required'  => false,  // If false, the plugin is only 'recommended' instead of required.
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+            'name'      => __( 'AccessPress Social Icons', 'accesspress-mag' ),
+            'slug'      => 'accesspress-social-icons',
+            'required'  => false,
+            'force_activation'   => false,
+            'force_deactivation' => false,
             ),
          array(
-            'name'      => __( 'AccessPress Social Counter', 'accesspress-mag' ), //The plugin name
-            'slug'      => 'accesspress-social-counter',  // The plugin slug (typically the folder name)
-            'required'  => false,  // If false, the plugin is only 'recommended' instead of required.
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+            'name'      => __( 'AccessPress Social Counter', 'accesspress-mag' ),
+            'slug'      => 'accesspress-social-counter',
+            'required'  => false,
+            'force_activation'   => false,
+            'force_deactivation' => false,
             ),
          array(
-            'name'      => __( 'AccessPress Social Share', 'accesspress-mag' ), //The plugin name
-            'slug'      => 'accesspress-social-share',  // The plugin slug (typically the folder name)
-            'required'  => false,  // If false, the plugin is only 'recommended' instead of required.
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-            ),         
+            'name'      => __( 'AccessPress Social Share', 'accesspress-mag' ),
+            'slug'      => 'accesspress-social-share',
+            'required'  => false,
+            'force_activation'   => false,
+            'force_deactivation' => false,
+            ),
+         array(
+            'name'      => __( 'AccessPress Instagram Feed', 'accesspress-mag' ),
+            'slug'      => 'accesspress-instagram-feed',
+            'required'  => false,
+            'force_activation'   => false,
+            'force_deactivation' => false,
+            ),        
     );
 
     /**
