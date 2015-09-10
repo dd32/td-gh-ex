@@ -1,12 +1,13 @@
 # Copyright (C) 2015 WooThemes
 # This file is distributed under the GNU General Public License v2 or later.
 # Translators:
+# Iman Sugirman <nakamuraagatha@mail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Storefront\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
-"POT-Creation-Date: 2015-08-11 11:08:07+00:00\n"
-"PO-Revision-Date: 2015-08-11 11:07+0000\n"
+"POT-Creation-Date: 2015-09-10 10:48:10+00:00\n"
+"PO-Revision-Date: 2015-09-10 10:48+0000\n"
 "Last-Translator: James Koster <jay@woothemes.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/woothemes/storefront-1/language/id/)\n"
 "MIME-Version: 1.0\n"
@@ -26,17 +27,13 @@ msgid ""
 "below."
 msgstr ""
 
-#: 404.php:39 inc/structure/template-tags.php:103
-msgid "Featured Products"
-msgstr ""
-
-#: 404.php:50 inc/structure/template-tags.php:26
+#: 404.php:45 inc/structure/template-tags.php:26
 msgid "Product Categories"
-msgstr ""
+msgstr "Kategori Produk"
 
-#: 404.php:59
+#: 404.php:54
 msgid "Popular Products"
-msgstr ""
+msgstr "Produk Populer"
 
 #: comments.php:33 comments.php:51
 msgid "Comment navigation"
@@ -52,11 +49,11 @@ msgstr ""
 
 #: comments.php:60
 msgid "Comments are closed."
-msgstr ""
+msgstr "Komentar ditutup"
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "Tidak ditemukan"
 
 #: content-none.php:19
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
@@ -318,7 +315,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:36
 msgid "Configure menus"
-msgstr ""
+msgstr "Konfigurasi Menu"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:40
 msgid "Create a color scheme"
@@ -336,7 +333,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:46
 msgid "Add your logo"
-msgstr ""
+msgstr "Tambahkan Logo"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:47
 msgid ""
@@ -490,7 +487,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:36
 msgid "Storefront at GitHub"
-msgstr ""
+msgstr "Storefront di GitHub"
 
 #: inc/admin/welcome-screen/sections/who.php:36
 msgid "Storefront at Transifex"
@@ -547,7 +544,7 @@ msgstr ""
 
 #: inc/customizer/controls.php:28 inc/functions/setup.php:114
 msgid "Header"
-msgstr ""
+msgstr "Header"
 
 #: inc/customizer/controls.php:45
 msgid "Typography"
@@ -555,7 +552,7 @@ msgstr ""
 
 #: inc/customizer/controls.php:59 inc/customizer/controls.php:211
 msgid "Heading color"
-msgstr ""
+msgstr "Warna Header"
 
 #: inc/customizer/controls.php:75 inc/customizer/controls.php:154
 #: inc/customizer/controls.php:227 inc/customizer/controls.php:283
@@ -568,7 +565,7 @@ msgstr ""
 
 #: inc/customizer/controls.php:103
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: inc/customizer/controls.php:110
 msgid "Looking to add a logo? Install the %sJetpack%s plugin! %sRead more%s."
@@ -581,7 +578,7 @@ msgstr ""
 #: inc/customizer/controls.php:138 inc/customizer/controls.php:195
 #: inc/customizer/controls.php:268
 msgid "Background color"
-msgstr ""
+msgstr "Warna Background"
 
 #: inc/customizer/controls.php:170 inc/customizer/controls.php:243
 msgid "Link color"
@@ -589,7 +586,7 @@ msgstr ""
 
 #: inc/customizer/controls.php:180
 msgid "Footer"
-msgstr ""
+msgstr "Footer"
 
 #: inc/customizer/controls.php:182
 msgid "Customise the look & feel of your web site footer."
@@ -629,7 +626,7 @@ msgstr ""
 
 #: inc/functions/setup.php:60
 msgid "Primary Menu"
-msgstr ""
+msgstr "Menu Utama"
 
 #: inc/functions/setup.php:61
 msgid "Secondary Menu"
@@ -641,11 +638,11 @@ msgstr ""
 
 #: inc/functions/setup.php:104
 msgid "Sidebar"
-msgstr ""
+msgstr "Sidebar"
 
 #: inc/functions/setup.php:127
 msgid "Footer %d"
-msgstr ""
+msgstr "Footer %d"
 
 #: inc/functions/setup.php:129
 msgid "Widgetized Footer Region %d."
@@ -657,11 +654,11 @@ msgstr ""
 
 #: inc/structure/comments.php:43
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Komentar anda sedang menunggu persetujuan"
 
 #: inc/structure/comments.php:59
 msgid "Edit"
-msgstr ""
+msgstr "Ubah"
 
 #: inc/structure/footer.php:60
 msgid "%1$s designed by %2$s."
@@ -669,11 +666,11 @@ msgstr ""
 
 #: inc/structure/header.php:54
 msgid "Primary Navigation"
-msgstr ""
+msgstr "Navigasi Utama"
 
 #: inc/structure/header.php:55
 msgid "Navigation"
-msgstr ""
+msgstr "Navigasi"
 
 #: inc/structure/header.php:84
 msgid "Secondary Navigation"
@@ -689,11 +686,11 @@ msgstr ""
 
 #: inc/structure/page.php:36 inc/structure/post.php:51
 msgid "Pages:"
-msgstr ""
+msgstr "Halaman:"
 
 #: inc/structure/post.php:45
 msgid "Continue reading %s"
-msgstr ""
+msgstr "Lanjutkan Membaca %s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/structure/post.php:72 inc/structure/post.php:85
@@ -702,7 +699,7 @@ msgstr ""
 
 #: inc/structure/post.php:77
 msgid "Categories: "
-msgstr ""
+msgstr "Kategori:"
 
 #: inc/structure/post.php:90
 msgid "Tags: "
@@ -710,19 +707,23 @@ msgstr ""
 
 #: inc/structure/post.php:99
 msgid "Leave a comment"
-msgstr ""
+msgstr "Tinggalkan Komentar"
 
 #: inc/structure/post.php:99
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Komentar"
 
 #: inc/structure/post.php:99
 msgid "% Comments"
-msgstr ""
+msgstr "% Komentar"
 
 #: inc/structure/template-tags.php:65
 msgid "Recent Products"
-msgstr ""
+msgstr "Produk Terbaru"
+
+#: inc/structure/template-tags.php:103 inc/woocommerce/template-tags.php:144
+msgid "Featured Products"
+msgstr "Produk Unggulan"
 
 #: inc/structure/template-tags.php:142
 msgid "Top Rated Products"
@@ -734,16 +735,24 @@ msgstr ""
 
 #: inc/woocommerce/template-tags.php:18
 msgid "View your shopping cart"
-msgstr ""
+msgstr "Lihat Keranjang Belanja Anda"
 
 #: inc/woocommerce/template-tags.php:19
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 
+#: inc/woocommerce/template-tags.php:152
+msgid "On Sale Now"
+msgstr ""
+
+#: inc/woocommerce/template-tags.php:160
+msgid "New In Store"
+msgstr ""
+
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Hasil Pencarian Untuk: %s"
 
 #. Theme Name of the plugin/theme
 msgid "Storefront"
@@ -751,7 +760,7 @@ msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "http://www.woothemes.com/storefront"
-msgstr ""
+msgstr "http://www.woothemes.com/storefront"
 
 #. Description of the plugin/theme
 msgid ""
@@ -765,7 +774,7 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "WooThemes"
-msgstr ""
+msgstr "WooThemes"
 
 #. Author URI of the plugin/theme
 msgid "http://www.woothemes.com"
@@ -773,7 +782,7 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Full width"
-msgstr ""
+msgstr "Halaman Penuh"
 
 #. Template Name of the plugin/theme
 msgid "Homepage"
@@ -788,12 +797,12 @@ msgstr[0] ""
 #: inc/structure/post.php:115
 msgctxt "Next post"
 msgid "Next"
-msgstr ""
+msgstr "Selanjutnya"
 
 #: inc/structure/post.php:116
 msgctxt "Previous post"
 msgid "Previous"
-msgstr ""
+msgstr "Sebelumnya"
 
 #: inc/structure/post.php:154
 msgctxt "post date"
@@ -803,4 +812,4 @@ msgstr ""
 #: inc/structure/post.php:159
 msgctxt "post author"
 msgid "by %s"
-msgstr ""
+msgstr "oleh %s"
