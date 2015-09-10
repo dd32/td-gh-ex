@@ -302,6 +302,12 @@
     .wpcf7-form textarea{
         width:100%;
     }
+
+    .span1, .span2, .span3, .span4, .span5, .span6{
+	    width: 100%;
+	    float: none;
+	    margin-left: 0;
+	}
 }
 
 @media screen and (max-width: 580px) {

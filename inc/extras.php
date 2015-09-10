@@ -375,7 +375,7 @@ function accesspresslite_excerpt( $accesspresslite_content , $accesspresslite_le
 	$accesspresslite_striped_content = strip_shortcodes($accesspresslite_content);
 	$accesspresslite_striped_content = strip_tags($accesspresslite_striped_content);
 	$accesspresslite_excerpt = mb_substr($accesspresslite_striped_content, 0, $accesspresslite_letter_count );
-	if($accesspresslite_striped_content > $accesspresslite_excerpt){
+	if(strlen($accesspresslite_striped_content) > strlen($accesspresslite_excerpt)){
 		$accesspresslite_excerpt .= "...";
 	}
 	return $accesspresslite_excerpt;
