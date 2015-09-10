@@ -11,6 +11,7 @@
 }
 
 .pgwSlider .ps-current {
+	max-height: 423px !important;
     float: left;
     width: 75%;
     overflow: hidden;
@@ -84,22 +85,22 @@ ul.pgwSlider > li:hover,
 
 ul.pgwSlider > li img,
 .pgwSlider > ul > li img {
-    width: 100%;
+    min-width: 100%;
     min-height: 100%;
     display: block;
 }
 
 @media (min-width: 481px) {
-	ul.pgwSlider > li:first-child,
-    .pgwSlider > ul > li:first-child {
-        width: 100% !important;
-    }
-    ul.pgwSlider > li,
-    .pgwSlider > ul > li {
-        width: 48% !important;
+	ul.pgwSlider > li:first-child, .pgwSlider > ul > li:first-child {
+		width: 100% !important;
+		max-height: 135px !important;
+	}
+	ul.pgwSlider > li, .pgwSlider > ul > li {
+		width: 48% !important;
 		float:left;
 		margin-bottom:12px;
-    }
+		max-height:132px !important;
+	}
 }
 
 @media (max-width: 480px) {

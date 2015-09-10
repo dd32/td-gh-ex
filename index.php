@@ -13,9 +13,11 @@
 ?>
 <?php get_header(); ?>
 <div class="row">
-	<div class="col-md-12">            	
-                <?php get_template_part( 'inc/slider' ) ?>
-    </div>
+	<?php if (!get_theme_mod('wp_fanzone_disable_slider') ) { ?>
+        <div class="col-md-12">            	
+                    <?php get_template_part( 'inc/slider' ) ?>
+        </div>
+    <?php } ?>
     <div class="clearfix"></div>
     <div class="margin-bottom-separator"></div> 
 	<div id="primary" class="content-area col-md-9" >      

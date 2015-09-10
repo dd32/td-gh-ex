@@ -205,7 +205,10 @@ if ( ! function_exists( 'wp_fanzone_theme_customizer' ) ) :
 			'type' => 'checkbox',
 		));
 		
+		
 		//slider
+		
+		
 		$categories = get_categories();
 				$cats = array();
 				$i = 0;
@@ -223,6 +226,18 @@ if ( ! function_exists( 'wp_fanzone_theme_customizer' ) ) :
         'title'    => __('Slider Option', 'wp-fanzone'),
         'priority' => 114,
 		));
+		$wp_customize->add_setting('wp_fanzone_disable_slider', array(
+			'default'        => 0,
+			'sanitize_callback' => 'wp_fanzone_sanitize_checkbox',
+		));
+		
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_fanzone_disable_slider', array(
+			'label'    => __( 'Disable Slider', 'wp-fanzone' ),
+			'section'  => 'wp_fanzone_slider',
+			'settings' => 'wp_fanzone_disable_slider',
+			'type'     => 'checkbox',
+			'priority'    => 115,
+		) ) );
 		 
 		
 		$wp_customize->add_setting(
@@ -240,8 +255,22 @@ if ( ! function_exists( 'wp_fanzone_theme_customizer' ) ) :
 				'label' => 'Select Category:',
 				'section' => 'wp_fanzone_slider',
 				'choices' => $cats,
+				'priority'    => 116,
 			)
 		);
+		
+		$wp_customize->add_setting('wp_fanzone_hide_slider_thumb', array(
+			'default'        => 0,
+			'sanitize_callback' => 'wp_fanzone_sanitize_checkbox',
+		));
+		
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_fanzone_hide_slider_thumb', array(
+			'label'    => __( 'Hide Slider Thumbnails', 'wp-fanzone' ),
+			'section'  => 'wp_fanzone_slider',
+			'settings' => 'wp_fanzone_hide_slider_thumb',
+			'type'     => 'checkbox',
+			'priority'    => 117,
+		) ) );
 		
 		$wp_customize->add_setting( 'wp_fanzone_slider_speed', array (
 			'default' => '6000',
@@ -252,7 +281,7 @@ if ( ! function_exists( 'wp_fanzone_theme_customizer' ) ) :
 			'label'    => __( 'Slider Speed (milliseconds)', 'wp-fanzone' ),
 			'section'  => 'wp_fanzone_slider',
 			'settings' => 'wp_fanzone_slider_speed',
-			'priority'    => 115,
+			'priority'    => 118,
 		) ) );
 				
 		
@@ -298,10 +327,10 @@ endif;
  */
 if ( ! function_exists( 'wp_fanzone_sanitize_checkbox' ) ) :
 	function wp_fanzone_sanitize_checkbox( $input ) {
-		if ( $input == 1 ) {
-			return 1;
+		if ( $input != 1 ) {
+			return 0;
 		} else {
-			return '0';
+			return 1;
 		}
 	}
 endif;
@@ -334,3 +363,17 @@ if ( ! function_exists( 'wp_fanzone_apply_color' ) ) :
   }
 endif;
 add_action( 'wp_head', 'wp_fanzone_apply_color' );
+
+if ( ! function_exists( 'wp_fanzone_hide_slide_thumb' ) ) :
+	function wp_fanzone_hide_slide_thumb() {
+		if (get_theme_mod('wp_fanzone_hide_slider_thumb') ) {
+		?>
+        <style>
+			ul.pgwSlider{display:none;}
+			.pgwSlider .ps-current{width:100%;}			
+		</style>
+		<?php
+		}
+	}
+endif;
+add_action( 'wp_head', 'wp_fanzone_hide_slide_thumb' );
