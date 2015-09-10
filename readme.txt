@@ -80,3 +80,6 @@ Version 2.0.4
 
 Version 2.0.5
 * Fixed Woocommerce Product Image not displaying problem.
+
+Version 2.0.6
+* Added the feature to open the slider links in same widow or in new tab.

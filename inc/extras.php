@@ -74,6 +74,7 @@ endif;
         global $apbasic_options;
         $apbasic_settings = get_option('apbasic_options', $apbasic_options);
         $mode = $apbasic_settings['slider_mode'];
+        $ositab = $apbasic_settings['open_slider_link_in_new_tab'];
         //print_r($apbasic_settings);
         for($i = 1; $i <= 4; $i++) :
             if(!empty($apbasic_settings['slide'.$i])) :
@@ -120,7 +121,7 @@ endif;
                                         <div class="caption-description"><?php echo wp_kses_post($slide['caption_description']); ?></div>
                                     <?php endif; ?>
                                     <?php if(!empty($slide['readmore_text'])) : ?>
-                                        <a class="readmore-button slide_readmore-button" href="<?php echo esc_url($slide['readmore_link']); ?>" target="_blank"><i class="fa <?php echo $slide['readmore_icon']; ?>"></i><?php echo $slide['readmore_text']; ?></a>
+                                        <a class="readmore-button slide_readmore-button" href="<?php echo esc_url($slide['readmore_link']); ?>" <?php if($ositab){echo 'target="_blank"';} ?>><i class="fa <?php echo $slide['readmore_icon']; ?>"></i><?php echo $slide['readmore_text']; ?></a>
                                     <?php endif; ?>
                                 </div>
                                 <?php endif; ?>

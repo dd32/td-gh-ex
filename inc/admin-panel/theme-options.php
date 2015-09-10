@@ -23,6 +23,7 @@
         'show_footer_featured_section' => '',
         'enable_comments_page' => '',
         'enable_comments_post' => '',
+        'open_slider_link_in_new_tab' => 1,
         
         //Slider Settings
         'show_slider' => 'no',
@@ -584,6 +585,15 @@
                                         <?php endforeach; ?>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th><label><?php _e('Slider Links Option','accesspress-basic'); ?></label></th>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="open_slider_link_in_new_tab" name="apbasic_options[open_slider_link_in_new_tab]" value="1" <?php checked(true,$settings['open_slider_link_in_new_tab']); ?> />
+                                            <label for="open_slider_link_in_new_tab"><?php _e('Open Slider Links in new Tab','accesspress-basic'); ?></label>
+                                        </div>
+                                    </td>
+                                </tr>
                                 <?php for($i = 1; $i <= 4; $i++) : ?>
                                 <tr>
                                     <th><label for="<?php echo 'slide'.$i; ?>"><?php echo 'Slide-'.$i; ?></label></th>
@@ -846,6 +856,12 @@
         }
         
         $apbasic_inputs['slider_mode'] = sanitize_text_field($input['slider_mode']);
+
+        if(!isset($input['open_slider_link_in_new_tab'])){
+            $apbasic_inputs['open_slider_link_in_new_tab'] = null;
+        }else{
+            $apbasic_inputs['open_slider_link_in_new_tab'] = 1;
+        }
         
         if(isset($input['slide1'])){
             $apbasic_inputs['slide1'] = esc_url_raw($input['slide1']);
