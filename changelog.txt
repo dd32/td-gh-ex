@@ -1,5 +1,10 @@
 === changelog ===
 
+= (9/10/2015) - 1.3.13 =
+* Adjust main title line height on mobile
+* Improve navigation search when navigation is in a sidebar
+* Fix double search icon on mobile when menu is opened
+
 = (9/4/2015) - 1.3.12 =
 * Fix subscription toggle link in bbPress
 * Fix bug in Dutch translation
