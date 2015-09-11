@@ -37,7 +37,7 @@
 					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span><a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></span></h1>
 					<div class="post">
 						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-						<?php the_content( '' ); ?><div class="more-link"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php _e( 'Read more...', 'alanding-lite' ); ?></a></div>
+						<?php the_content( '' ); ?><div class="more-link"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php _e( 'Read more...', 'alanding-lite' ); ?><span class="screen-reader-text"><?php the_title();?></span></a></div>
 						<span class="entry-comments"><?php comments_popup_link( ) ?></span>
 						<div class="categories"><div class="tagi"><?php the_tags(); ?></div>	<?php _e( 'Categories:', 'alanding-lite' ); ?> <?php the_category(' '); ?></div>
 					</div>
