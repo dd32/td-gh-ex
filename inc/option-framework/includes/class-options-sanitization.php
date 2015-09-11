@@ -61,6 +61,19 @@ function of_sanitize_textarea( $input ) {
 add_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
 
 /**
+ * Sanitization for number field
+ *
+ * @param $input string
+ * @return $output sanitized string
+ */
+function of_sanitize_num($input) {
+    $output = intval($input);
+    return $output;
+}
+
+add_filter('of_sanitize_num', 'of_sanitize_num');
+
+/**
  * Sanitization for checkbox input
  *
  * @param $input string (1 or empty) checkbox state

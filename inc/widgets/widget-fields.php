@@ -191,15 +191,15 @@ function accesspress_mag_widgets_show_widget_field($instance = '', $widget_field
             }
             $output .= '<div class="sub-option widget-upload">';
             $output .= '<label for="'.$instance->get_field_id($accesspress_mag_widgets_name).'">'.$accesspress_mag_widgets_title.'</label><br/>';
-            $output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="' . $name . '" value="' . $value . '" placeholder="' . __('No file chosen', 'textdomain') . '" />' . "\n";
+            $output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="' . $name . '" value="' . $value . '" placeholder="' . __('No file chosen', 'accesspress-mag') . '" />' . "\n";
             if (function_exists('wp_enqueue_media')) {
                 if (( $value == '')) {
-                    $output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __('Upload', 'textdomain') . '" />' . "\n";
+                    $output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __('Upload', 'accesspress-mag') . '" />' . "\n";
                 } else {
-                    $output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __('Remove', 'textdomain') . '" />' . "\n";
+                    $output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __('Remove', 'accesspress-mag') . '" />' . "\n";
                 }
             } else {
-                $output .= '<p><i>' . __('Upgrade your version of WordPress for full media support.', 'textdomain') . '</i></p>';
+                $output .= '<p><i>' . __('Upgrade your version of WordPress for full media support.', 'accesspress-mag') . '</i></p>';
             }
 
             $output .= '<div class="screenshot team-thumb" id="' . $id . '-image">' . "\n";

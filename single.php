@@ -63,7 +63,7 @@ do_action( 'accesspress_mag_before_body_content' );
 					comments_template();
 				endif;
                 
-                accesspress_mag_setPostViews( get_the_ID() ); 
+                //accesspress_mag_setPostViews( get_the_ID() ); 
             ?>
 
 		<?php endwhile; // end of the loop. ?>

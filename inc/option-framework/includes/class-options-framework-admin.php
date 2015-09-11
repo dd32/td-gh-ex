@@ -201,7 +201,7 @@ class Options_Framework_Admin {
               <a target="_blank" href="<?php echo esc_url( 'http://accesspressthemes.com/accesspress-mag/' ); ?>"><?php _e( 'Demo', 'accesspress-mag' ); ?></a> |
               <a target="_blank" href="<?php echo esc_url( 'https://accesspressthemes.com/accesspress-mag-documentation' ); ?>"><?php _e( 'Documentation', 'accesspress-mag' ); ?></a> |  
               <!--<a target="_blank" href="<?php //echo esc_url( 'https://wordpress.org/support/theme/accesspress-mag'); ?>"><?php //_e( 'Support', 'accesspress-mag'); ?></a>-->
-              <?php echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspresslite'),esc_url('https://accesspressthemes.com/contact/')); ?>  
+              <?php echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspress-mag'),esc_url('https://accesspressthemes.com/contact/')); ?>  
             </p>
         </div>
         

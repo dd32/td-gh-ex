@@ -66,6 +66,12 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.1.3
+ * Removed function about plugin territory
+ * Fixed multiple text domain
+ * Updated version of TGM Class
+ * Added license.txt file
+
 Version 2.1.2
  * Translation .pot file updated
  * Unused images removed

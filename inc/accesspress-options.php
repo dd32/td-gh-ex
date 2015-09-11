@@ -85,10 +85,7 @@ function optionsframework_options() {
 	$options = array();
 
 /*-----------------------Basic Setting------------------------*/
-	$options[] = array(
-            'name' => __( 'Basic Settings', 'accesspress-mag' ),
-            'type' => 'heading'
-            );
+	
     /*----------------Background settings--------------------------*/
     $options[] = array(
             'name' => __( 'Background Settings', 'accesspress-mag' ),
@@ -545,8 +542,7 @@ function optionsframework_options() {
             'name' => __( 'Additional Settings', 'accesspress-mag' ),
             'id'   => 'post_settings',
             'type' => 'groupstart'
-            );
-            
+            );            
     $options[] = array(
             'name' => __( 'Show Date', 'accesspress-mag' ),                
             'desc' => __( 'Enable or disable the post date', 'accesspress-mag' ),
@@ -556,7 +552,7 @@ function optionsframework_options() {
             'std' => '1',
             'type' => 'switch'
             );
-            
+    /*        
     $options[] = array(
             'name' => __( 'Show Post Views', 'accesspress-mag' ),                
             'desc' => __( 'Enable or disable the post views', 'accesspress-mag' ),
@@ -566,6 +562,7 @@ function optionsframework_options() {
             'std' => '1',
             'type' => 'switch'
             );
+    */
     $options[] = array(
             'name' => __( 'Show Comment Count', 'accesspress-mag' ),                
             'desc' => __( 'Enable or disable comment number', 'accesspress-mag' ),
@@ -770,7 +767,7 @@ function optionsframework_options() {
             'name' => __( 'Excerpt Length', 'accesspress-mag' ),
             'desc' => __( 'Define - Excerpt length of words/letters for archive pages', 'accesspress-mag' ),
             'id' => 'excerpt_lenght',
-            'type' => 'text',
+            'type' => 'num',
             'std' => 50, 
             );
     $options[] = array(

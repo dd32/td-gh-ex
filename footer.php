@@ -75,7 +75,7 @@
             <?php } ?>
                 <div class="ak-info">
                     <?php _e( 'Powered by ', 'accesspress-mag' );  ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspress-mag' ) ); ?>"><?php _e( 'WordPress', 'accesspress-mag' ); ?> </a>
-                    <?php _e( '| Theme: ' );?>
+                    <?php _e( '| Theme: ', 'accesspress-mag' );?>
                     <a title="AccessPress Themes" href="<?php echo esc_url( 'http://accesspressthemes.com', 'accesspress-mag' ); ?>"><?php _e( 'AccessPress Mag', 'accesspress-mag' ); ?></a>
                 </div>
              <?php if ( ( has_nav_menu( 'footer_menu' ) ) && ( $accesspress_mag_sub_footer_switch == 1 ) ) { ?>      
