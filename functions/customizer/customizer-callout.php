@@ -13,7 +13,6 @@ function appointment_callout_customizer( $wp_customize ) {
         'callout_section_settings',
         array(
             'title' => __('Contact call-out Settings','appointment'),
-            'description' => '',
 			'panel'  => 'appointment_homecallout_setting',)
     );
 	
@@ -74,6 +73,7 @@ function appointment_callout_customizer( $wp_customize ) {
     $wp_customize->add_setting( 'appointment_options[callout_background]', array(
       'sanitize_callback' => 'esc_url_raw',
 	  'type' => 'option',
+	  
     ) );
     
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'appointment_options[callout_background]', array(
@@ -89,7 +89,6 @@ function appointment_callout_customizer( $wp_customize ) {
         'callout_purchase_now_settings',
         array(
             'title' => __('Button one','appointment'),
-            'description' => __('','appointment'),
 			'panel'  => 'appointment_homecallout_setting',)
     );
 	 

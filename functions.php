@@ -15,6 +15,7 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/breadcrumbs/breadcrumbs.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
 	//Customizer
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_style.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-callout.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-slider.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
@@ -22,6 +23,16 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-news.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-testimonial.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-client.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-footer-callout.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-template.php');
+	
+	
+	
+	
+	
 	
 	// Custom Category control 
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/custom-controls/select/category-dropdown-custom-control.php');
@@ -66,7 +77,7 @@ function appointment_title( $title, $sep )
 			$title = "$title $sep $site_description";
 		// Add a page number if necessary.
 		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( _e( 'Page', 'appointment' ), max( $paged, $page ) );
+			$title = "$title $sep " . sprintf( __( 'Page', 'appointment' ), max( $paged, $page ) );
 		return $title;
 }	
 add_filter( 'wp_title', 'appointment_title', 10,2 );

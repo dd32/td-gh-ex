@@ -234,6 +234,7 @@ $wp_customize->remove_control('header_textcolor');
         'type' => 'checkbox',
         'label' => __('Open Link New tab/window','appointment'),
         'section' => 'header_social_icon',
+		'disabled' => 'disabled',
     )
 );
 

@@ -20,7 +20,7 @@ get_header(); ?>
         <p><?php echo get_post_meta( get_the_ID(), 'post_description', true ) ; ?></p>
         <?php } ?>
         <div class="qua-separator" id=""></div>
-		</h1><</div>
+		</h1></div>
 				</div>
 				<div class="col-md-6">
 					<ul class="page-breadcrumb">

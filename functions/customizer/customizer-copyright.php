@@ -2,7 +2,7 @@
 // Footer copyright section 
 	function appointment_copyright_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'appointment_copyright_setting', array(
-		'priority'       => 900,
+		'priority'       => 700,
 		'capability'     => 'edit_theme_options',
 		'title'      => __('Footer Copyright Settings', 'appointment'),
 	) );

@@ -94,6 +94,14 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.4.2
+1. Resolved Text domain error.
+2. Add setting sanatize error resoved.
+@version 2.4.1
+1. Resolved Theme Check error.
+@version 2.4
+1. Add Default.css. 
+2. Styling issue fixed.
 @version 2.2.3
 1. Change the label orange info Widget.
 @version 2.2.2

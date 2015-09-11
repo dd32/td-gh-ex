@@ -467,7 +467,6 @@ $wp_customize->add_section( 'service_section_pro' , array(
 $wp_customize->add_setting(
      'appointment_options[service_pro]',
     array(
-        'default' => __('','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',

@@ -1,5 +1,11 @@
 <?php
 function appointment_slider_customizer( $wp_customize ) {
+class appointment_Customize_slider_upgrade extends WP_Customize_Control {
+		public function render_content() { ?>
+        <h3><?php _e('Want different varition of slides just like our premium version than','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','appointment'); ?> </a>  
+		<?php
+		}
+	}
 
 	//slider Section 
 	$wp_customize->add_panel( 'appointment_slider_setting', array(
@@ -137,6 +143,23 @@ $wp_customize->add_control(
         'label' => __('Input Number of slides','appointment'),
         'section' => 'slider_section_settings',)
 		);
+	
+	$wp_customize->add_setting( 'appointment_options[slider_upgrade]', array(
+		'default'				=> false,
+		'capability'			=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new appointment_Customize_slider_upgrade(
+		$wp_customize,
+		'appointment_options[slider_upgrade]',
+			array(
+				'label'					=> __('Appointment Upgrade','appointment'),
+				'section'				=> 'slider_section_settings',
+				'settings'				=> 'appointment_options[slider_upgrade]',
+			)
+		)
+	);	
 	
 		}
 	add_action( 'customize_register', 'appointment_slider_customizer' );

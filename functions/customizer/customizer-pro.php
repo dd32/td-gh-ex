@@ -54,7 +54,6 @@ class WP_Review_Customize_Control extends WP_Customize_Control {
 $wp_customize->add_setting(
     'pro_Review',
     array(
-        'default' => __('','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
     )	

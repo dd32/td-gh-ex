@@ -4,6 +4,7 @@
 function appointment_scripts()
  {
 		wp_enqueue_style('appointment-style', get_stylesheet_uri() );
+		wp_enqueue_style('appointment-default',WEBRITI_TEMPLATE_DIR_URI.'/css/default.css');
         wp_enqueue_style('appointment-bootstrap-css',WEBRITI_TEMPLATE_DIR_URI.'/css/bootstrap.css');
 		wp_enqueue_style('appointment-menu-css',WEBRITI_TEMPLATE_DIR_URI.'/css/theme-menu.css');
 	/* Font Awesome */
@@ -41,4 +42,11 @@ function head_enqueue_custom_css()
 	</style>
 	<?php } 
 }
+// define the customize_controls_enqueue_scripts callback
+function custom_customize_enqueue(  ) 
+{
+    wp_enqueue_script( 'custom-customize', WEBRITI_TEMPLATE_DIR_URI. '/js/custom.customize.js', array( 'jquery', 'customize-controls' ), true );
+};   
+// add the action
+add_action( 'customize_controls_enqueue_scripts', 'custom_customize_enqueue', 10, 0 );
 ?>
