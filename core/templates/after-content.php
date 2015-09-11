@@ -13,7 +13,7 @@ if (!function_exists('suevafree_after_content_function')) {
 
 	function suevafree_after_content_function() {
 		
-		if ((is_home()) || (suevafree_get_archive_title()) || (is_page()) || (is_search()) ) {
+		if ( ! suevafree_is_single() ) {
 			
 			if ( (!suevafree_setting('suevafree_view_readmore')) || (suevafree_setting('suevafree_view_readmore') == "on" ) ) {
 			
