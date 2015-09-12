@@ -11,7 +11,7 @@
 
 function alhenalite_after_content_function() {
 
-	if ((is_home()) || (alhenalite_get_archive_title()) || (is_page() )):
+	if ( ! alhenalite_is_single() ):
 		
 		alhenalite_excerpt(); 
 	

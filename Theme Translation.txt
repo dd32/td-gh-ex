@@ -1,0 +1,7 @@
+- Theme Translation
+
+We suggest Poedit, to translate Alhena Lite. It’s available for free on poedit.net.
+
+Open Poedit, go to File > New from POT file and choose alhena-lite.pot , under alhena-lite/languages/ and choose your native language.
+
+When you’ve finished, upload bot files with your language code (for example it_IT.po and it_IT.mo ), under the language folder of Alhena Lite using a FTP client.

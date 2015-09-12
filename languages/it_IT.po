@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-16 20:38+0100\n"
-"PO-Revision-Date: 2015-07-16 21:03+0100\n"
+"POT-Creation-Date: 2015-09-12 17:45+0100\n"
+"PO-Revision-Date: 2015-09-12 17:46+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -20,19 +20,11 @@ msgstr ""
 msgid "Not Found"
 msgstr "Non Trovato"
 
-#: 404.php:15 archive.php:71 index.php:45
+#: 404.php:15 archive.php:63 index.php:43
 msgid "Sorry, no posts matched your criteria"
 msgstr "Spiacente, nessun articolo risponde ai criteri di ricerca impostati."
 
-#: archive.php:19
-msgid "Tag"
-msgstr "Tag"
-
-#: archive.php:23
-msgid "Category"
-msgstr "Categoria"
-
-#: archive.php:115 index.php:87 sidebar.php:13
+#: archive.php:107 index.php:85 sidebar.php:13
 msgid "Calendar"
 msgstr "Calendario"
 
@@ -87,7 +79,7 @@ msgstr "&raquo;"
 msgid "Comment"
 msgstr "Commenta"
 
-#: core/admin/customize/customize.php:11 core/admin/customize/customize.php:85
+#: core/admin/customize/customize.php:11
 msgid "Full Image Background"
 msgstr "Immagine di sfondo, a piena pagina"
 
@@ -99,140 +91,31 @@ msgstr ""
 "Vuoi impostare uno sfondo a piena pagina? (Dopo l'upload, seleziona \"Fixed"
 "\" dalle impostazioni di attaccamento dell'immagine)"
 
-#: core/admin/customize/customize.php:17 core/admin/customize/customize.php:91
-#: core/admin/customize/customize.php:222
-#: core/admin/customize/customize.php:495
+#: core/admin/customize/customize.php:17
+#: core/admin/customize/customize.php:125
+#: core/admin/customize/customize.php:387
 msgid "No"
 msgstr "No"
 
-#: core/admin/customize/customize.php:18 core/admin/customize/customize.php:92
-#: core/admin/customize/customize.php:223
-#: core/admin/customize/customize.php:496
+#: core/admin/customize/customize.php:18
+#: core/admin/customize/customize.php:126
+#: core/admin/customize/customize.php:388
 msgid "Yes"
 msgstr "Si"
 
-#: core/admin/customize/customize.php:27
-msgid "Background Repeat"
-msgstr "Ripetizione sfondo"
-
-#: core/admin/customize/customize.php:28
-msgid "Choose a background repeat."
-msgstr "Scegli la ripetizione, per lo sfondo"
-
-#: core/admin/customize/customize.php:33 core/admin/customize/customize.php:51
-msgid "None"
-msgstr "Nessuna"
-
-#: core/admin/customize/customize.php:34
-msgid "Repeat"
-msgstr "Ripeti"
-
-#: core/admin/customize/customize.php:35
-msgid "Horizontal Repeat"
-msgstr "Ripeti orizzontalmente"
-
-#: core/admin/customize/customize.php:36
-msgid "Vertical Repeat"
-msgstr "Ripetizione verticale"
-
-#: core/admin/customize/customize.php:45
-msgid "Background Position"
-msgstr "Posizione dell'immagine di background"
-
-#: core/admin/customize/customize.php:46
-msgid "Choose a background position."
-msgstr "Scegli una posizione, per lo sfondo"
-
-#: core/admin/customize/customize.php:52
-msgid "Top Left"
-msgstr "In alto, a sinistra"
-
-#: core/admin/customize/customize.php:53
-msgid "Top Center"
-msgstr "In alto, al centro"
-
-#: core/admin/customize/customize.php:54
-msgid "Top Right"
-msgstr "In alto, a destra"
-
-#: core/admin/customize/customize.php:55
-msgid "Left"
-msgstr "Sinistra"
-
-#: core/admin/customize/customize.php:56
-msgid "Center"
-msgstr "Centro"
-
-#: core/admin/customize/customize.php:57
-msgid "Right"
-msgstr "Destra"
-
-#: core/admin/customize/customize.php:58
-msgid "Bottom Left"
-msgstr "In basso a sinistra"
-
-#: core/admin/customize/customize.php:59
-msgid "Bottom Center"
-msgstr "In "
-
-#: core/admin/customize/customize.php:60
-msgid "Bottom Right"
-msgstr "In basso a destra"
-
-#: core/admin/customize/customize.php:69
-msgid "Background Attachment"
-msgstr "Tipo di attaccamento dello sfondo"
-
-#: core/admin/customize/customize.php:70
-msgid "Choose a background attachment."
-msgstr "Scegli un attaccamento, per lo sfondo"
-
-#: core/admin/customize/customize.php:75
-msgid "Scroll"
-msgstr "Scrollabile"
-
-#: core/admin/customize/customize.php:76
-msgid "Fixed"
-msgstr "Fisso"
-
-#: core/admin/customize/customize.php:86
-msgid ""
-"Do you want to set a full background image?(Recommended with a fixed "
-"attachment)"
-msgstr ""
-"Vuoi impostare un'immagine di sfondo a piena pagina? (Consigliato, "
-"impostando un attaccamento fisso dell'immagine)"
-
-#: core/admin/customize/customize.php:101
-msgid "Header padding"
-msgstr "TestataPadding della testata."
-
-#: core/admin/customize/customize.php:102
-msgid "Change the top and bottom padding, for increase the header height."
-msgstr "Cambia il padding, per incrementare l'altezza della testata."
-
-#: core/admin/customize/customize.php:112
-msgid "Header Text Color Hover"
-msgstr "Colore per la testata, al passaggio del mouse"
-
-#: core/admin/customize/customize.php:113
-msgid " "
-msgstr " "
-
-#: core/admin/customize/customize.php:126
-#: core/admin/customize/customize.php:127
+#: core/admin/customize/customize.php:29 core/admin/customize/customize.php:30
 msgid "General"
 msgstr "Generali"
 
-#: core/admin/customize/customize.php:136
+#: core/admin/customize/customize.php:39
 msgid "Load system"
 msgstr "Sistema di caricamento"
 
-#: core/admin/customize/customize.php:146
+#: core/admin/customize/customize.php:49
 msgid "Choose a load system"
 msgstr "Scegli un sistema di caricamento"
 
-#: core/admin/customize/customize.php:147
+#: core/admin/customize/customize.php:50
 msgid ""
 "Select a load system, if you've some problems with the theme (for example a "
 "blank page)."
@@ -240,391 +123,383 @@ msgstr ""
 "Scegli un sistema di caricamento, nel caso tu abbia qualche problema con il "
 "tema (per esempio, pagina bianca)"
 
-#: core/admin/customize/customize.php:152
+#: core/admin/customize/customize.php:55
 msgid "Mode a"
 msgstr "Tipo a"
 
-#: core/admin/customize/customize.php:153
+#: core/admin/customize/customize.php:56
 msgid "Mode b"
 msgstr "Tipo b"
 
-#: core/admin/customize/customize.php:164
+#: core/admin/customize/customize.php:67
 msgid "Color Scheme"
 msgstr "Schema di colori"
 
-#: core/admin/customize/customize.php:174
+#: core/admin/customize/customize.php:77
 msgid "Predefined Color Schemes"
 msgstr "Colore schema predefinito"
 
-#: core/admin/customize/customize.php:175
+#: core/admin/customize/customize.php:78
 msgid "Choose your Color Scheme"
 msgstr "Scegli uno schema di colori"
 
-#: core/admin/customize/customize.php:181
+#: core/admin/customize/customize.php:84
 msgid "Light & Blue"
 msgstr "Chiaro & Blu"
 
-#: core/admin/customize/customize.php:182
+#: core/admin/customize/customize.php:85
 msgid "Light & Turquoise"
 msgstr "Chiaro & Turchese"
 
-#: core/admin/customize/customize.php:183
+#: core/admin/customize/customize.php:86
 msgid "Light & Orange"
 msgstr "Chiaro & Arancione"
 
-#: core/admin/customize/customize.php:184
+#: core/admin/customize/customize.php:87
 msgid "Light & Red"
 msgstr "Chiaro & Rosso"
 
-#: core/admin/customize/customize.php:185
+#: core/admin/customize/customize.php:88
 msgid "Light & Purple"
 msgstr "Chiaro & Viola"
 
-#: core/admin/customize/customize.php:186
+#: core/admin/customize/customize.php:89
 msgid "Light & Yellow"
 msgstr "Chiaro & Giallo"
 
-#: core/admin/customize/customize.php:187
+#: core/admin/customize/customize.php:90
 msgid "Light & Green"
 msgstr "Chiaro & Verde"
 
-#: core/admin/customize/customize.php:188
+#: core/admin/customize/customize.php:91
 msgid "Dark & Blue"
 msgstr "Scuro & Blu"
 
-#: core/admin/customize/customize.php:189
+#: core/admin/customize/customize.php:92
 msgid "Dark & Turquoise"
 msgstr "Scuro & Turchese"
 
-#: core/admin/customize/customize.php:190
+#: core/admin/customize/customize.php:93
 msgid "Dark & Orange"
 msgstr "Scuro & Arancione"
 
-#: core/admin/customize/customize.php:191
+#: core/admin/customize/customize.php:94
 msgid "Dark & Red"
 msgstr "Scuro & Rosso"
 
-#: core/admin/customize/customize.php:192
+#: core/admin/customize/customize.php:95
 msgid "Dark & Purple"
 msgstr "Scuro & Viola"
 
-#: core/admin/customize/customize.php:193
+#: core/admin/customize/customize.php:96
 msgid "Dark & Yellow"
 msgstr "Scuro & Giallo"
 
-#: core/admin/customize/customize.php:194
+#: core/admin/customize/customize.php:97
 msgid "Dark & Green"
 msgstr "Scuro & Verde"
 
-#: core/admin/customize/customize.php:206
+#: core/admin/customize/customize.php:109
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: core/admin/customize/customize.php:216
+#: core/admin/customize/customize.php:119
 msgid "Comments"
 msgstr "Commenti"
 
-#: core/admin/customize/customize.php:217
+#: core/admin/customize/customize.php:120
 msgid "Do you want to view the comments after articles?"
 msgstr "Vuoi visualizzare i commenti dopo gli articoli?"
 
-#: core/admin/customize/customize.php:232
+#: core/admin/customize/customize.php:135
 msgid "Styles"
 msgstr "Stili"
 
-#: core/admin/customize/customize.php:242
+#: core/admin/customize/customize.php:145
 msgid "Custom css"
 msgstr "Css personalizzato"
 
-#: core/admin/customize/customize.php:243
+#: core/admin/customize/customize.php:146
 msgid "Insert your custom css code."
 msgstr "Inserisci il tuo codice css personalizzato."
 
-#: core/admin/customize/customize.php:255
+#: core/admin/customize/customize.php:158
 msgid "Layouts"
 msgstr "Layout"
 
-#: core/admin/customize/customize.php:265
+#: core/admin/customize/customize.php:168
 msgid "Home Blog Layout"
 msgstr "Layout per la Homepage"
 
-#: core/admin/customize/customize.php:266
+#: core/admin/customize/customize.php:169
 msgid "If you've set the latest articles, for the homepage, choose a layout."
 msgstr ""
 "Se hai scelto di visualizzare gli ultimi articoli, nella pagina principale, "
 "scegli un layout"
 
-#: core/admin/customize/customize.php:271
-#: core/admin/customize/customize.php:289 core/metaboxes/page.php:38
+#: core/admin/customize/customize.php:174
+#: core/admin/customize/customize.php:192 core/metaboxes/page.php:38
 #: core/metaboxes/post.php:32
 msgid "Full Width"
 msgstr "Piena pagina"
 
-#: core/admin/customize/customize.php:272
-#: core/admin/customize/customize.php:290 core/metaboxes/page.php:39
+#: core/admin/customize/customize.php:175
+#: core/admin/customize/customize.php:193 core/metaboxes/page.php:39
 #: core/metaboxes/post.php:33
 msgid "Left Sidebar"
 msgstr "Sidebar a sinistra"
 
-#: core/admin/customize/customize.php:273
-#: core/admin/customize/customize.php:291 core/metaboxes/page.php:40
+#: core/admin/customize/customize.php:176
+#: core/admin/customize/customize.php:194 core/metaboxes/page.php:40
 #: core/metaboxes/post.php:34
 msgid "Right Sidebar"
 msgstr "Sidebar a destra"
 
-#: core/admin/customize/customize.php:283
+#: core/admin/customize/customize.php:186
 msgid "Category Layout"
 msgstr "Layout categoria"
 
-#: core/admin/customize/customize.php:284
+#: core/admin/customize/customize.php:187
 msgid "Select a layout for category pages."
 msgstr "Seleziona un layout per le categorie."
 
-#: core/admin/customize/customize.php:302
+#: core/admin/customize/customize.php:205
 msgid "Header"
 msgstr "Testata"
 
-#: core/admin/customize/customize.php:312
+#: core/admin/customize/customize.php:215
 msgid "Custom Logo"
 msgstr "Logo personalizzato"
 
-#: core/admin/customize/customize.php:313
-msgid "Insert the url of your custom logo"
-msgstr "Inserisci l'url del tuo logo."
+#: core/admin/customize/customize.php:216
+msgid "Upload an image as logo"
+msgstr "Carica un'immagine come logo"
 
-#: core/admin/customize/customize.php:323
-msgid "Custom Favicon"
-msgstr "Favicon personalizzata."
-
-#: core/admin/customize/customize.php:324
-msgid "Insert the url of your custom favicon."
-msgstr "Inserisci l'url della tua favicon."
-
-#: core/admin/customize/customize.php:336
+#: core/admin/customize/customize.php:228
 msgid "Footer"
 msgstr "Footer"
 
-#: core/admin/customize/customize.php:346
+#: core/admin/customize/customize.php:238
 msgid "Copyright Text"
 msgstr "Testo del copyright"
 
-#: core/admin/customize/customize.php:347
+#: core/admin/customize/customize.php:239
 msgid "Insert your copyright text."
 msgstr "Inserisci il testo per il copyright"
 
-#: core/admin/customize/customize.php:357
+#: core/admin/customize/customize.php:249
 msgid "Facebook Url"
 msgstr "Url Facebook"
 
-#: core/admin/customize/customize.php:358
+#: core/admin/customize/customize.php:250
 msgid "Insert Facebook Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Facebook, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:368
+#: core/admin/customize/customize.php:260
 msgid "Twitter Url"
 msgstr "Url Twitter"
 
-#: core/admin/customize/customize.php:369
+#: core/admin/customize/customize.php:261
 msgid "Insert Twitter Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Twitter, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:379
+#: core/admin/customize/customize.php:271
 msgid "Flickr Url"
 msgstr "Flickr Url"
 
-#: core/admin/customize/customize.php:380
+#: core/admin/customize/customize.php:272
 msgid "Insert Flickr Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Flickr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:390
+#: core/admin/customize/customize.php:282
 msgid "Google Url"
 msgstr "Url Google"
 
-#: core/admin/customize/customize.php:391
+#: core/admin/customize/customize.php:283
 msgid "Insert Google Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Google, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:401
+#: core/admin/customize/customize.php:293
 msgid "Linkedin Url"
 msgstr "Url Linkedin"
 
-#: core/admin/customize/customize.php:402
+#: core/admin/customize/customize.php:294
 msgid "Insert Linkedin Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Linkedin, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:412
+#: core/admin/customize/customize.php:304
 msgid "Myspace Url"
 msgstr "Url Myspace"
 
-#: core/admin/customize/customize.php:413
+#: core/admin/customize/customize.php:305
 msgid "Insert Myspace Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Myspace, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:423
+#: core/admin/customize/customize.php:315
 msgid "Pinterest Url"
 msgstr "Url Pinterest"
 
-#: core/admin/customize/customize.php:424
+#: core/admin/customize/customize.php:316
 msgid "Insert Pinterest Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Pinterest, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:434
+#: core/admin/customize/customize.php:326
 msgid "Tumblr Url"
 msgstr "Url Tumblr"
 
-#: core/admin/customize/customize.php:435
+#: core/admin/customize/customize.php:327
 msgid "Insert Tumblr Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Tumblr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:445
+#: core/admin/customize/customize.php:337
 msgid "Youtube Url"
 msgstr "Url Youtube"
 
-#: core/admin/customize/customize.php:446
+#: core/admin/customize/customize.php:338
 msgid "Insert Youtube Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Youtube, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:456
+#: core/admin/customize/customize.php:348
 msgid "Vimeo Url"
 msgstr "Url Vimeo"
 
-#: core/admin/customize/customize.php:457
+#: core/admin/customize/customize.php:349
 msgid "Insert Vimeo Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Vimeo, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:467
+#: core/admin/customize/customize.php:359
 msgid "Skype Url"
 msgstr "Url Skype"
 
-#: core/admin/customize/customize.php:468
+#: core/admin/customize/customize.php:360
 msgid "Insert Skype ID (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Skype, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:478
+#: core/admin/customize/customize.php:370
 msgid "Email Address"
 msgstr "Indirizzo email"
 
-#: core/admin/customize/customize.php:479
+#: core/admin/customize/customize.php:371
 msgid "Insert Email Address (empty if you want to hide the button)"
 msgstr ""
 "Inserisci la tua email, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:489
+#: core/admin/customize/customize.php:381
 msgid "Feed Rss Button"
 msgstr "Pulsante Feed Rss"
 
-#: core/admin/customize/customize.php:490
+#: core/admin/customize/customize.php:382
 msgid "Do you want to display the Feed Rss button?"
 msgstr "Vuoi visualizzare il pulsante dei Feed Rss?"
 
-#: core/admin/customize/customize.php:507
-#: core/admin/customize/customize.php:508
+#: core/admin/customize/customize.php:399
+#: core/admin/customize/customize.php:400
 msgid "Typography"
 msgstr "Tipografia"
 
-#: core/admin/customize/customize.php:519
+#: core/admin/customize/customize.php:411
 msgid "Logo"
 msgstr "Font per il logo"
 
-#: core/admin/customize/customize.php:529
-#: core/admin/customize/customize.php:552
-#: core/admin/customize/customize.php:575
+#: core/admin/customize/customize.php:421
+#: core/admin/customize/customize.php:444
+#: core/admin/customize/customize.php:467
 msgid "Font size"
 msgstr "Grandezza del font"
 
-#: core/admin/customize/customize.php:530
+#: core/admin/customize/customize.php:422
 msgid "Insert a size, for logo font (For example, 60px) "
 msgstr "Inserisci una grandezza, per il logo ( Per esempio, 60px )"
 
-#: core/admin/customize/customize.php:542
+#: core/admin/customize/customize.php:434
 msgid "Menu"
 msgstr "Font per il menu"
 
-#: core/admin/customize/customize.php:553
+#: core/admin/customize/customize.php:445
 msgid "Insert a size, for menu font (For example, 14px) "
 msgstr "Inserisci una grandezza, per il menu ( Per esempio, 14px )"
 
-#: core/admin/customize/customize.php:565
+#: core/admin/customize/customize.php:457
 msgid "Content"
 msgstr "Contenuto"
 
-#: core/admin/customize/customize.php:576
+#: core/admin/customize/customize.php:468
 msgid "Insert a size, for content font (For example, 14px) "
 msgstr ""
 "Inserisci una grandezza, per il font dei contenuti ( Per esempio, 14px )"
 
-#: core/admin/customize/customize.php:589
+#: core/admin/customize/customize.php:481
 msgid "Headlines"
 msgstr "Titoli"
 
-#: core/admin/customize/customize.php:599
+#: core/admin/customize/customize.php:491
 msgid "H1 headline"
 msgstr "Elementi H1"
 
-#: core/admin/customize/customize.php:600
+#: core/admin/customize/customize.php:492
 msgid "Insert a size, for for H1 elements (For example, 24px) "
 msgstr "Inserisci una grandezza, per i titoli H1 ( Per esempio, 24px )"
 
-#: core/admin/customize/customize.php:610
+#: core/admin/customize/customize.php:502
 msgid "H2 headline"
 msgstr "Elementi H2"
 
-#: core/admin/customize/customize.php:611
+#: core/admin/customize/customize.php:503
 msgid "Insert a size, for for H2 elements (For example, 22px) "
 msgstr "Inserisci una grandezza, per i titoli H2 ( Per esempio, 22px )"
 
-#: core/admin/customize/customize.php:621
+#: core/admin/customize/customize.php:513
 msgid "H3 headline"
 msgstr "Elementi H3"
 
-#: core/admin/customize/customize.php:622
+#: core/admin/customize/customize.php:514
 msgid "Insert a size, for for H3 elements (For example, 20px) "
 msgstr "Inserisci una grandezza, per i titoli H3 ( Per esempio, 20px )"
 
-#: core/admin/customize/customize.php:632
+#: core/admin/customize/customize.php:524
 msgid "H4 headline"
 msgstr "Elementi H4"
 
-#: core/admin/customize/customize.php:633
+#: core/admin/customize/customize.php:525
 msgid "Insert a size, for for H4 elements (For example, 18px) "
 msgstr "Inserisci una grandezza, per i titoli H4 ( Per esempio, 18px )"
 
-#: core/admin/customize/customize.php:643
+#: core/admin/customize/customize.php:535
 msgid "H5 headline"
 msgstr "Elementi H5"
 
-#: core/admin/customize/customize.php:644
+#: core/admin/customize/customize.php:536
 msgid "Insert a size, for for H5 elements (For example, 16px) "
 msgstr "Inserisci una grandezza, per i titoli H5 ( Per esempio, 16px )"
 
-#: core/admin/customize/customize.php:654
+#: core/admin/customize/customize.php:546
 msgid "H6 headline"
 msgstr "Elementi H6"
 
-#: core/admin/customize/customize.php:655
+#: core/admin/customize/customize.php:547
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr "Inserisci una grandezza, per i titoli H6 ( Per esempio, 14px )"
 
@@ -652,12 +527,12 @@ msgstr "Questa sidebar verrà visualizzata a lato del blog"
 msgid "This sidebar will be shown after the content"
 msgstr "Questa sidebar verrà visualizzata dopo il contenuto della pagina"
 
-#: core/main.php:43
+#: core/main.php:79
 #, php-format
 msgid "Page %s"
 msgstr "Pagine %s"
 
-#: core/main.php:102
+#: core/main.php:138
 msgid "Read More"
 msgstr "Continua"
 
@@ -746,6 +621,103 @@ msgstr "Cerca"
 #: search.php:51
 msgid "Search"
 msgstr "Cerca"
+
+#~ msgid "Tag"
+#~ msgstr "Tag"
+
+#~ msgid "Category"
+#~ msgstr "Categoria"
+
+#~ msgid "Background Repeat"
+#~ msgstr "Ripetizione sfondo"
+
+#~ msgid "Choose a background repeat."
+#~ msgstr "Scegli la ripetizione, per lo sfondo"
+
+#~ msgid "None"
+#~ msgstr "Nessuna"
+
+#~ msgid "Repeat"
+#~ msgstr "Ripeti"
+
+#~ msgid "Horizontal Repeat"
+#~ msgstr "Ripeti orizzontalmente"
+
+#~ msgid "Vertical Repeat"
+#~ msgstr "Ripetizione verticale"
+
+#~ msgid "Background Position"
+#~ msgstr "Posizione dell'immagine di background"
+
+#~ msgid "Choose a background position."
+#~ msgstr "Scegli una posizione, per lo sfondo"
+
+#~ msgid "Top Left"
+#~ msgstr "In alto, a sinistra"
+
+#~ msgid "Top Center"
+#~ msgstr "In alto, al centro"
+
+#~ msgid "Top Right"
+#~ msgstr "In alto, a destra"
+
+#~ msgid "Left"
+#~ msgstr "Sinistra"
+
+#~ msgid "Center"
+#~ msgstr "Centro"
+
+#~ msgid "Right"
+#~ msgstr "Destra"
+
+#~ msgid "Bottom Left"
+#~ msgstr "In basso a sinistra"
+
+#~ msgid "Bottom Center"
+#~ msgstr "In "
+
+#~ msgid "Bottom Right"
+#~ msgstr "In basso a destra"
+
+#~ msgid "Background Attachment"
+#~ msgstr "Tipo di attaccamento dello sfondo"
+
+#~ msgid "Choose a background attachment."
+#~ msgstr "Scegli un attaccamento, per lo sfondo"
+
+#~ msgid "Scroll"
+#~ msgstr "Scrollabile"
+
+#~ msgid "Fixed"
+#~ msgstr "Fisso"
+
+#~ msgid ""
+#~ "Do you want to set a full background image?(Recommended with a fixed "
+#~ "attachment)"
+#~ msgstr ""
+#~ "Vuoi impostare un'immagine di sfondo a piena pagina? (Consigliato, "
+#~ "impostando un attaccamento fisso dell'immagine)"
+
+#~ msgid "Header padding"
+#~ msgstr "TestataPadding della testata."
+
+#~ msgid "Change the top and bottom padding, for increase the header height."
+#~ msgstr "Cambia il padding, per incrementare l'altezza della testata."
+
+#~ msgid "Header Text Color Hover"
+#~ msgstr "Colore per la testata, al passaggio del mouse"
+
+#~ msgid " "
+#~ msgstr " "
+
+#~ msgid "Insert the url of your custom logo"
+#~ msgstr "Inserisci l'url del tuo logo."
+
+#~ msgid "Custom Favicon"
+#~ msgstr "Favicon personalizzata."
+
+#~ msgid "Insert the url of your custom favicon."
+#~ msgstr "Inserisci l'url della tua favicon."
 
 #~ msgid "Alhena Options"
 #~ msgstr "Opzioni Alhena"
@@ -945,9 +917,6 @@ msgstr "Cerca"
 
 #~ msgid "Upload Custom Logo"
 #~ msgstr "Carica un logo personalizzato"
-
-#~ msgid "Upload a custom logo"
-#~ msgstr "Carica una un logo personalizzato"
 
 #~ msgid "Upload a custom favicon"
 #~ msgstr "Carica una favicon personalizzata"

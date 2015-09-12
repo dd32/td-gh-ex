@@ -213,20 +213,9 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Custom Logo","alhenalite"),
-				"description" => __( "Insert the url of your custom logo","alhenalite"),
+				"description" => __( "Upload an image as logo","alhenalite"),
 				"id" => "wip_custom_logo",
-				"type" => "url",
-				"section" => "header_section",
-				"std" => "",
-
-			),
-
-			array( 
-
-				"label" => __( "Custom Favicon","alhenalite"),
-				"description" => __( "Insert the url of your custom favicon.","alhenalite"),
-				"id" => "wip_custom_favicon",
-				"type" => "url",
+				"type" => "upload",
 				"section" => "header_section",
 				"std" => "",
 

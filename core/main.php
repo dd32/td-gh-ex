@@ -28,6 +28,24 @@ if (!function_exists('alhenalite_get_archive_title')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* IS SINGLE */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('alhenalite_is_single')) {
+
+	function alhenalite_is_single() {
+		
+		if ( is_single() || is_page() ) :
+		
+			return true;
+		
+		endif;
+	
+	}
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* Default menu */
 /*-----------------------------------------------------------------------------------*/   
 
@@ -439,6 +457,8 @@ if (!function_exists('alhenalite_scripts_styles')) {
 	function alhenalite_scripts_styles() {
 	
 		alhenalite_enqueue_style('/inc/css');
+
+		wp_enqueue_style( 'alhenalite-style', get_stylesheet_uri(), array() );
 
 		if ( ( get_theme_mod('wip_skin') ) && ( get_theme_mod('wip_skin') <> "light_blue" ) ):
 	

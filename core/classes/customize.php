@@ -16,7 +16,7 @@ class alhenalite_customize {
 	public function customize_scripts() {
 
 		wp_enqueue_style ( 
-			'jaxlite_panel', 
+			'alhenalite_panel', 
 			get_template_directory_uri() . '/core/admin/inc/css/customize.css', 
 			array(), 
 			''
@@ -30,12 +30,12 @@ class alhenalite_customize {
 			  true
 		);
 
-		$jaxlite_details = array(
+		$alhenalite_details = array(
 			'label' => __( 'Upgrade to Alhena Premium', 'alhenalite' ),
 			'url' => esc_url('https://www.themeinprogress.com/alhena-free-responsive-corporate-wordpress-theme/?ref=panel')
 		);
 	
-		wp_localize_script( 'customizer-preview', 'alhenalite_details', $jaxlite_details );
+		wp_localize_script( 'customizer-preview', 'alhenalite_details', $alhenalite_details );
 	  
 	}
 	
@@ -54,7 +54,8 @@ class alhenalite_customize {
 						'title' => $element['title'],
 						'priority' => $element['priority'],
 						'description' => $element['description'],
-					
+						'capability' => 'edit_theme_options',
+
 					) );
 			 
 				break;
@@ -66,7 +67,8 @@ class alhenalite_customize {
 						'title' => $element['title'],
 						'panel' => $element['panel'],
 						'priority' => $element['priority'],
-					
+						'capability' => 'edit_theme_options',
+
 					) );
 					
 				break;
@@ -77,6 +79,7 @@ class alhenalite_customize {
 					
 						'sanitize_callback' => 'sanitize_text_field',
 						'default' => $element['std'],
+						'capability' => 'edit_theme_options',
 
 					) );
 											 
@@ -97,6 +100,7 @@ class alhenalite_customize {
 					
 						'sanitize_callback' => 'esc_url_raw',
 						'default' => $element['std'],
+						'capability' => 'edit_theme_options',
 
 					) );
 											 
@@ -111,12 +115,35 @@ class alhenalite_customize {
 							
 				break;
 
+				case 'upload' :
+							
+					$wp_customize->add_setting( $element['id'], array(
+
+						'default' => $element['std'],
+						'capability' => 'edit_theme_options',
+						'sanitize_callback' => 'esc_url_raw',
+						'capability' => 'edit_theme_options',
+
+					) );
+
+					$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, $element['id'], array(
+					
+						'label' => $element['label'],
+						'description' => $element['description'],
+						'section' => $element['section'],
+						'settings' => $element['id'],
+
+					)));
+
+				break;
+
 				case 'color' :
 							
 					$wp_customize->add_setting( $element['id'], array(
 					
 						'sanitize_callback' => 'sanitize_hex_color',
 						'default' => $element['std'],
+						'capability' => 'edit_theme_options',
 
 					) );
 											 
@@ -137,6 +164,7 @@ class alhenalite_customize {
 					
 						'sanitize_callback' => array( &$this, 'customize_button_sanize' ),
 						'default' => $element['std'],
+						'capability' => 'edit_theme_options',
 
 					) );
 											 
@@ -157,6 +185,7 @@ class alhenalite_customize {
 					
 						'sanitize_callback' => 'esc_textarea',
 						'default' => $element['std'],
+						'capability' => 'edit_theme_options',
 
 					) );
 											 
@@ -177,6 +206,7 @@ class alhenalite_customize {
 
 						'sanitize_callback' => array( &$this, 'customize_select_sanize' ),
 						'default' => $element['std'],
+						'capability' => 'edit_theme_options',
 
 					) );
 
@@ -222,8 +252,8 @@ class alhenalite_customize {
 		
 		$sanize = array (
 		
-			'jaxlite_footer_email_button' => 'mailto:',
-			'jaxlite_footer_skype_button' => 'skype:',
+			'wip_footer_email_button' => 'mailto:',
+			'wip_footer_skype_button' => 'skype:',
 		
 		);
 

@@ -1,0 +1,73 @@
+Alhena Lite WordPress Theme Documentation
+
+---------------------
+
+- Installation
+
+Decompress the “alhena-lite.zip” file, into the package, under “wp-content /themes” and then activate the theme from Appearance => Themes.
+As an alternative, go to Appearance => Themes => Add New => Upload Theme and choose“alhena-lite.zip” file.
+
+- Option panel
+
+When the theme is activated, you can manage Alhena Lite, from “Customize” section.
+
+- General Tab
+
+-- Load system.
+If you've some problems with the theme (for example a blank page), you can change the load system.
+
+-- Color Scheme.
+It is possible to choose up to 16 different styles that will replace any previously saved settings.
+
+-- Settings.
+You can decide if display the comments section.
+
+-- Styles.
+You can add a custom css code. It is recommended that this feature be used only if absolutely necessary and if you know what will be modified.
+
+-- Layouts.
+You can decide the layout for each section of the site (home, archive, search page etc)
+
+-- Thumbnails setting.
+You can set the height of the thumbnails. After saving, is necessary reupload the images or use a free plugin called “Regenerate Thumbnails”. The default value is 690px.
+
+-- Header settings.
+You can replace the sideman with an image as logo.
+
+-- Footer settings.
+From here, it is possible choose the layout for the bottom sidebar, insert the text at the end of the site, links to social networks, the footer layout
+
+--- Copyright text.
+Text displayed at the end of the site.
+
+--- Social networks.
+Insert the link; the icon of the relative social network will be displayed
+
+-- Fonts
+The theme uses the fonts found in the Google directory. They may be selected from a list of more than 600 fonts. The default fonts are “Dr Sugiyama, Roboto Slab e Droid Serif”. It is possible to change the font and size of the character of the logo, menu, widget titles, pages and title of the paragraph.
+
+- Typography Tab
+
+-- Logo, Menu, Content and Headlines
+You can insert the font size for each section, logo (if it’s not an image), menu, content and headlines.
+
+- Background Image Tab
+It’s possible to set a full background image, from “Full image background” option.
+
+- Homepage
+Wordpress displays the last articles in the homepage. To use a static page that was previously created, in which the slides and other elements are present, go to “Settings” -> “Reading” and check off the “a static page” item by choosing the one previously created by the list
+
+- Menu
+It is possible to create and manage a custom menu with a drag and drop system. Go to http://codex.wordpress.org/Appearance_Menus_SubPanel. Once the main menu is created, select it in “Main menu”.
+
+- Theme Translation
+
+We suggest Poedit, to translate Alhena Lite. It’s available for free on poedit.net.
+
+Open Poedit, go to File > New from POT file and choose alhena-lite.pot , under alhena-lite/languages/ and choose your native language.
+
+When you’ve finished, upload bot files with your language code (for example it_IT.po and it_IT.mo ), under the language folder of Alhena Lite using a FTP client.
+
+- Premium Version
+
+If you need more features, you can found the premium version from this page: https://www.themeinprogress.com/sean-free-creative-portfolio-wordpress-theme
