@@ -69,7 +69,7 @@
                           if(empty($image)) { $image = $thumbnailURL; } ?>
                               <div class="imghoverclass img-margin-center">
                                 <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                  <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" <?php if($hardcrop) {echo 'width="'.esc_attr($image_width).'" height="'.esc_attr($image_height).'"';}?> class="iconhover" style="display:block;">
+                                  <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" <?php if($hardcrop) {echo 'width="'.esc_attr($image_width).'" height="'.esc_attr($image_height).'"';}?> itemprop="image" class="iconhover" style="display:block;">
                                 </a> 
                               </div>
                               <?php $image = null; $thumbnailURL = null; ?>
@@ -87,7 +87,7 @@
                                             if(empty($image)) {$image = $attachment_url;} ?>
                                             <li>
                                                 <a href="<?php the_permalink() ?>">
-                                                    <img src="<?php echo esc_url($image); ?>" <?php echo 'width="'.esc_attr($image_width).'" height="'.esc_attr($image_height).'"';?> class="" alt="<?php the_title(); ?>" />
+                                                    <img src="<?php echo esc_url($image); ?>" <?php echo 'width="'.esc_attr($image_width).'" height="'.esc_attr($image_height).'"';?> itemprop="image" class="" alt="<?php the_title(); ?>" />
                                                 </a>
                                             </li>
                                           <?php }

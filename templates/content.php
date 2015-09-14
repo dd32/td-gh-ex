@@ -87,7 +87,7 @@
                                 <div class="col-md-12">
                                     <div class="imghoverclass img-margin-center" itemprop="image">
                                       <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                        <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                        <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" itemprop="image" class="iconhover" style="display:block;">
                                       </a> 
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                 <div class="<?php echo esc_attr($portraitimg);?>">
                                     <div class="imghoverclass img-margin-center" itemprop="image">
                                         <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                            <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                            <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" itemprop="image" class="iconhover" style="display:block;">
                                         </a> 
                                      </div>
                                  </div>
@@ -125,7 +125,7 @@
                                                     if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>">
-                                                        <img src="<?php echo esc_url($image); ?>" class="" alt="<?php esc_attr($attachment_post->post_excerpt);?>" />
+                                                        <img src="<?php echo esc_url($image); ?>" class="" itemprop="image" alt="<?php esc_attr($attachment_post->post_excerpt);?>" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -150,7 +150,7 @@
                                                     if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                        <img src="<?php echo esc_url($image); ?>" class="" />
+                                                        <img src="<?php echo esc_url($image); ?>" itemprop="image" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 

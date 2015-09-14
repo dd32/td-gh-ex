@@ -1683,6 +1683,15 @@ Redux::setSection( $opt_name, array(
             'title' => __('Post Default Subtitle', 'pinnacle'),
             'required' => array('single_post_header_title','=','custom'),
             ),
+            array(
+            'id'=>'single_post_title_output',
+            'type' => 'select',
+            'title' => __('Blog Post non-Head Title Output', 'pinnacle'), 
+            'options' => array('h1' => __('Use H1 tag', 'pinnacle'), 'h2' => __('Use H2 tag', 'pinnacle'), 'none' => __('Do not display', 'pinnacle')),
+            'width' => 'width:60%',
+            'customizer' => false,
+            'default' => 'h1',
+            ),
       array(
             'id'=>'info_blog_defaults',
             'type' => 'info',

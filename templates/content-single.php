@@ -77,7 +77,7 @@
                                         $attachment_url = wp_get_attachment_url($attachment , 'full');
                                         $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
                                           if(empty($image)) {$image = $attachment_url;}
-                                        echo '<li><a href="'.esc_attr($attachment_url).'" data-rel="lightbox"><img src="'.esc_attr($image).'"/></a></li>';
+                                        echo '<li><a href="'.esc_attr($attachment_url).'" data-rel="lightbox"><img src="'.esc_attr($image).'" width="'.esc_attr($slidewidth).'" height="'.esc_attr($slideheight).'" itemprop="image"/></a></li>';
                                       }
                                     }
                                   }?>                            
@@ -99,7 +99,7 @@
                                                     if(empty($image)) {$image = array($attachment_url,$slidewidth,$slideheight);} 
                                                     echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.esc_attr($image[2]).'px;">';
                                                     echo '<div class="carousel_gallery_item_inner" style="vertical-align: middle; display: table-cell;">';
-                                                    echo '<img src="'.esc_attr($image[0]).'" width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'" />';
+                                                    echo '<img src="'.esc_attr($image[0]).'" width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'" itemprop="image" />';
                                                       ?>
                                                     </div>
                                                   </div>
@@ -126,7 +126,7 @@
                     <section class="postfeat">
                         <div class="imghoverclass post-single-img" itemprop="image">
                             <a href="<?php echo esc_url($img_url); ?>" data-rel="lightbox" class="">
-                              <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" />
+                              <img src="<?php echo esc_url($image); ?>" itemprop="image" alt="<?php the_title(); ?>" />
                             </a>
                           </div>
                     </section>
@@ -136,7 +136,14 @@
                           get_template_part('templates/entry', 'meta-author'); 
                   } ?>
                   <header>
+                      <?php if(isset($pinnacle['single_post_title_output']) && $pinnacle['single_post_title_output'] == 'h2' ) { ?>
+                      <h2 class="entry-title" itemprop="name headline"><?php the_title(); ?></h2>
+                      <?php 
+                      } else if(isset($pinnacle['single_post_title_output']) && $pinnacle['single_post_title_output'] == 'none' ) {
+                        // Do nothing
+                      } else { ?>
                       <h1 class="entry-title" itemprop="name headline"><?php the_title(); ?></h1>
+                      <?php } ?>
                       <?php get_template_part('templates/entry', 'meta-subhead'); ?>
                   </header>
                   <div class="entry-content clearfix" itemprop="description articleBody">

@@ -1,5 +1,4 @@
 <?php
-
 function pinnacle_lang_setup() {
 load_theme_textdomain('pinnacle', get_template_directory() . '/languages');
 }
@@ -45,3 +44,4 @@ require_once locate_template('/lib/template-actions.php');         					    // T
 require_once locate_template('/lib/admin_scripts.php');    								// Admin Scripts functions
 require_once locate_template('/lib/scripts.php');        								// Scripts and stylesheets
 require_once locate_template('/lib/output_css.php'); 									// Fontend Custom CSS
+

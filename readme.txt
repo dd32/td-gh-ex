@@ -32,6 +32,11 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.3.1 | 14th September 2015 = 
+* Bug Fix: Varitaions on certain servers.
+* Add: Tag output option on blog posts.
+* Update: Google Schema output.
+
 = 1.3.0 | 12th August 2015 = 
 * Add: Customizer Options.
 * Update: wp_widget to construct.

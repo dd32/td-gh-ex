@@ -66,7 +66,7 @@ function pinnacle_html_tag_schema() {
     $schema = 'http://schema.org/';
 
     if( is_singular( 'post' ) ) {
-        $type = "Article";
+        $type = 'WebPage';
     } else if( is_page_template('page-contact.php') ) {
         $type = 'ContactPage';
     } elseif( is_author() ) {

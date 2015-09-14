@@ -25,7 +25,7 @@
                         }?>
                         <div class="imghoverclass img-margin-center">
                               <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" itemprop="image" class="iconhover" style="display:block;">
                               </a> 
                         </div>
                         <?php $image = null; $thumbnailURL = null;   ?>
