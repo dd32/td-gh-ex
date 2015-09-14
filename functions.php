@@ -4,26 +4,27 @@
  * Prefix: ct_author = Compete Themes Author
  */
 
-// Load the core theme framework.
-require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
-new Hybrid();
+// set the content width
+if ( ! isset( $content_width ) ) {
+	$content_width = 622;
+}
 
 // theme setup
 if( !function_exists('ct_author_theme_setup' ) ) {
 	function ct_author_theme_setup() {
 
-		/* Get action/filter hook prefix. */
-		$prefix = hybrid_get_prefix();
-
-		// add Hybrid core functionality
-		add_theme_support( 'hybrid-core-template-hierarchy' );
-		add_theme_support( 'loop-pagination' );
-		add_theme_support( 'cleaner-gallery' );
-
 		// add functionality from WordPress core
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
+
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support( 'html5', array(
+			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+		) );
 
 		// load theme options page
 		require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
@@ -44,35 +45,16 @@ if( !function_exists('ct_author_theme_setup' ) ) {
 }
 add_action( 'after_setup_theme', 'ct_author_theme_setup', 10 );
 
-// remove filters adding partial micro-data due to validation issues
-function ct_author_remove_hybrid_filters() {
-    remove_filter( 'the_author_posts_link', 'hybrid_the_author_posts_link', 5 );
-    remove_filter( 'get_comment_author_link', 'hybrid_get_comment_author_link', 5 );
-    remove_filter( 'get_comment_author_url_link', 'hybrid_get_comment_author_url_link', 5 );
-    remove_filter( 'comment_reply_link', 'hybrid_comment_reply_link_filter', 5 );
-    remove_filter( 'get_avatar', 'hybrid_get_avatar', 5 );
-    remove_filter( 'post_thumbnail_html', 'hybrid_post_thumbnail_html', 5 );
-    remove_filter( 'comments_popup_link_attributes', 'hybrid_comments_popup_link_attributes', 5 );
-}
-add_action('after_setup_theme', 'ct_author_remove_hybrid_filters');
-
-// turn off cleaner gallery if Jetpack gallery functions being used
-function ct_author_remove_cleaner_gallery() {
-
-	if( class_exists( 'Jetpack' ) && ( Jetpack::is_module_active( 'carousel' ) || Jetpack::is_module_active( 'tiled-gallery' ) ) ) {
-		remove_theme_support( 'cleaner-gallery' );
-	}
-}
-add_action( 'after_setup_theme', 'ct_author_remove_cleaner_gallery', 11 );
-
 // register widget areas
 function ct_author_register_widget_areas(){
 
     /* register after post content widget area */
-    hybrid_register_sidebar( array(
+    register_sidebar( array(
         'name'         => __( 'Primary Sidebar', 'author' ),
         'id'           => 'primary',
         'description'  => __( 'Widgets in this area will be shown in the sidebar', 'author' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>'
     ) );
@@ -315,7 +297,7 @@ if( !function_exists('ct_author_featured_image' ) ) {
 			$image = $image[0];
 
 			// if alt text is empty, nothing else equal to title string
-			$title = empty($image_alt_text) ? '' : "title='$image_alt_text'";
+			$title = empty($image_alt_text) ? '' : "title='" . esc_attr( $image_alt_text ) . "'";
 
 			// set to true
 			$has_image = true;
@@ -324,11 +306,11 @@ if( !function_exists('ct_author_featured_image' ) ) {
 
 			// on posts/pages display the featured image
 			if ( is_singular() ) {
-				$featured_image = "<div class='featured-image' style=\"background-image: url('" . $image . "')\" $title></div>";
+				$featured_image = "<div class='featured-image' style=\"background-image: url('" . esc_url( $image ) . "')\" $title></div>";
 			} // on blog/archives display with a link
 			else {
 				$featured_image = "
-                <div class='featured-image' style=\"background-image: url('" . $image . "')\" $title>
+                <div class='featured-image' style=\"background-image: url('" . esc_url( $image ) . "')\" $title>
                     <a href='" . get_permalink() . "'>" . get_the_title() . "</a>
                 </div>
                 ";
@@ -342,12 +324,6 @@ if( !function_exists('ct_author_featured_image' ) ) {
 			echo $featured_image;
 		}
 	}
-}
-
-// fix for bug with Disqus saying comments are closed
-if ( function_exists( 'dsq_options' ) ) {
-    remove_filter( 'comments_template', 'dsq_comments_template' );
-    add_filter( 'comments_template', 'dsq_comments_template', 99 ); // You can use any priority higher than '10'
 }
 
 // associative array of social media sites
@@ -471,15 +447,6 @@ function ct_author_wp_page_menu() {
     );
 }
 
-function ct_author_wp_backwards_compatibility() {
-
-	// not using this function, simply remove it so use of "has_image_size" doesn't break < 3.9
-	if( version_compare( get_bloginfo('version'), '3.9', '<') ) {
-		remove_filter( 'image_size_names_choose', 'hybrid_image_size_names_choose' );
-	}
-}
-add_action('init', 'ct_author_wp_backwards_compatibility');
-
 // used in header.php for primary avatar and comments
 function ct_author_output_avatar() {
 
@@ -529,6 +496,7 @@ function ct_author_custom_css_output(){
 
     /* output custom css */
     if( $custom_css ) {
+	    $custom_css = wp_filter_nohtml_kses( $custom_css );
         wp_add_inline_style( 'ct-author-style', $custom_css );
         wp_add_inline_style( 'ct-author-style-rtl', $custom_css );
     }
@@ -537,6 +505,8 @@ add_action('wp_enqueue_scripts', 'ct_author_custom_css_output', 20);
 
 function ct_author_body_class( $classes ) {
 
+	global $post;
+
     /* get full post setting */
     $full_post = get_theme_mod('full_post');
 
@@ -544,9 +514,32 @@ function ct_author_body_class( $classes ) {
     if( $full_post == 'yes' ) {
         $classes[] = 'full-post';
     }
+
+	if ( is_singular() ) {
+		$classes[] = 'singular';
+		if ( is_singular('page') ) {
+			$classes[] = 'singular-page';
+			$classes[] = 'singular-page-' . $post->ID;
+		} elseif ( is_singular('post') ) {
+			$classes[] = 'singular-post';
+			$classes[] = 'singular-post-' . $post->ID;
+		} elseif ( is_singular('attachment') ) {
+			$classes[] = 'singular-attachment';
+			$classes[] = 'singular-attachment-' . $post->ID;
+		}
+	}
+
     return $classes;
 }
 add_filter( 'body_class', 'ct_author_body_class' );
+
+function ct_author_post_class( $classes ) {
+
+	$classes[] = 'entry';
+
+	return $classes;
+}
+add_filter( 'post_class', 'ct_author_post_class' );
 
 function ct_author_reset_customizer_options() {
 
@@ -601,3 +594,50 @@ function ct_author_sticky_post_marker() {
     }
 }
 add_action( 'archive_post_before', 'ct_author_sticky_post_marker' );
+
+function ct_author_loop_pagination(){
+
+	global $wp_query;
+
+	// If there's not more than one page, return nothing.
+	if ( 1 >= $wp_query->max_num_pages ) {
+		return;
+	}
+
+	/* Set up some default arguments for the paginate_links() function. */
+	$defaults = array(
+		'base'         => add_query_arg( 'paged', '%#%' ),
+		'format'       => '',
+		'mid_size'     => 1
+	);
+
+	$loop_pagination = '<nav class="pagination loop-pagination">';
+	$loop_pagination .= paginate_links( $defaults );
+	$loop_pagination .= '</nav>';
+
+	return $loop_pagination;
+}
+
+// Adds useful meta tags
+function ct_author_add_meta_elements() {
+
+	$meta_elements = '';
+
+	/* Charset */
+	$meta_elements .= sprintf( '<meta charset="%s" />' . "\n", get_bloginfo( 'charset' ) );
+
+	/* Viewport */
+	$meta_elements .= '<meta name="viewport" content="width=device-width, initial-scale=1" />' . "\n";
+
+	/* Theme name and current version */
+	$theme    = wp_get_theme( get_template() );
+	$template = sprintf( '<meta name="template" content="%s %s" />' . "\n", esc_attr( $theme->get( 'Name' ) ), esc_attr( $theme->get( 'Version' ) ) );
+	$meta_elements .= $template;
+
+	echo $meta_elements;
+}
+add_action( 'wp_head', 'ct_author_add_meta_elements', 1 );
+
+/* Move the WordPress generator to a better priority. */
+remove_action( 'wp_head', 'wp_generator' );
+add_action( 'wp_head', 'wp_generator', 1 );
