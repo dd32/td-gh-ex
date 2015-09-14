@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Aron\n"
-"POT-Creation-Date: 2015-08-02 04:38+0530\n"
-"PO-Revision-Date: 2015-08-02 04:38+0530\n"
+"POT-Creation-Date: 2015-09-14 17:30+0530\n"
+"PO-Revision-Date: 2015-09-14 17:31+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -259,15 +259,7 @@ msgstr ""
 msgid "Additional sidebar that appears on the right."
 msgstr ""
 
-#: functions.php:238
-msgid "Footer Sidebar"
-msgstr ""
-
-#: functions.php:240
-msgid "Appears on footer side"
-msgstr ""
-
-#: functions.php:306
+#: functions.php:298
 msgid "Enter Your Comments"
 msgstr ""
 
@@ -330,97 +322,92 @@ msgstr ""
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer.php:142 inc/customizer.php:475
-msgid "Heading"
-msgstr ""
-
-#: inc/customizer.php:150
-msgid "Blog Heading"
-msgstr ""
-
-#: inc/customizer.php:159 inc/customizer.php:324 inc/customizer.php:435
-#: inc/customizer.php:494
-msgid "Description"
-msgstr ""
-
-#: inc/customizer.php:167
-msgid "Blog Description"
-msgstr ""
-
-#: inc/customizer.php:204
+#: inc/customizer.php:166
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:267
+#: inc/customizer.php:229
 msgid "Slider 1"
 msgstr ""
 
-#: inc/customizer.php:268
+#: inc/customizer.php:230
 msgid "Slider 2"
 msgstr ""
 
-#: inc/customizer.php:272
+#: inc/customizer.php:234
 msgid "Slider Setting"
 msgstr ""
 
-#: inc/customizer.php:273
+#: inc/customizer.php:235
 msgid "You can upload here images for slider"
 msgstr ""
 
-#: inc/customizer.php:299
+#: inc/customizer.php:261
 msgid "File Upload"
 msgstr ""
 
-#: inc/customizer.php:309 inc/customizer.php:418 inc/customizer.php:423
+#: inc/customizer.php:271 inc/customizer.php:381 inc/customizer.php:386
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:314
+#: inc/customizer.php:276
 msgid "Slider Title"
 msgstr ""
 
-#: inc/customizer.php:330
+#: inc/customizer.php:286 inc/customizer.php:398 inc/customizer.php:457
+msgid "Description"
+msgstr ""
+
+#: inc/customizer.php:292
 msgid "Slider Description"
 msgstr ""
 
-#: inc/customizer.php:362 template-front-page.php:63
+#: inc/customizer.php:324 template-front-page.php:63
 msgid "Icon 1"
 msgstr ""
 
-#: inc/customizer.php:363 template-front-page.php:64
+#: inc/customizer.php:325 template-front-page.php:64
 msgid "Icon 2"
 msgstr ""
 
-#: inc/customizer.php:364 template-front-page.php:65
+#: inc/customizer.php:326 template-front-page.php:65
 msgid "Icon 3"
 msgstr ""
 
-#: inc/customizer.php:369
+#: inc/customizer.php:327 template-front-page.php:66
+msgid "Icon 4"
+msgstr ""
+
+#: inc/customizer.php:332
 msgid "Services Setting"
 msgstr ""
 
-#: inc/customizer.php:370
+#: inc/customizer.php:333
 msgid ""
 "This is a Services settings section to change the servise section Details."
 msgstr ""
 
-#: inc/customizer.php:403
+#: inc/customizer.php:366
 msgid "Font class Name"
 msgstr ""
 
-#: inc/customizer.php:408
+#: inc/customizer.php:371
 msgid "Class Name"
 msgstr ""
 
-#: inc/customizer.php:441
+#: inc/customizer.php:404
 msgid "Services Description"
 msgstr ""
 
-#: inc/customizer.php:484
+#: inc/customizer.php:438
+msgid "Heading"
+msgstr ""
+
+#: inc/customizer.php:447
 msgid "Main Heading"
 msgstr ""
 
-#: inc/customizer.php:503
+#: inc/customizer.php:466
 msgid "Main Description"
 msgstr ""
 
@@ -460,15 +447,11 @@ msgid ""
 "risus fringilla."
 msgstr ""
 
-#: template-front-page.php:66
-msgid "Icon 4"
-msgstr ""
-
 #: template-front-page.php:77
 msgid "Our Services"
 msgstr ""
 
-#: template-front-page.php:79 template-front-page.php:129
+#: template-front-page.php:79
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam"
@@ -482,8 +465,4 @@ msgstr ""
 msgid ""
 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
 "Lorem Ipsum."
-msgstr ""
-
-#: template-front-page.php:127
-msgid "Blog"
 msgstr ""

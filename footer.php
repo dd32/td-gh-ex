@@ -1,4 +1,4 @@
-<div  class="footergap clearfix">
+<div  class="footergap ">
  <?php if ( has_nav_menu( 'secondary' ) ) : ?>
 	<nav role="navigation" class="navigation site-navigation secondary-navigation">
 		<?php wp_nav_menu( array( 'theme_location' => 'secondary','menu_id' => 'nava','depth'=>-1 ) ); ?>
@@ -10,7 +10,7 @@
 <footer>
 		<div class="container">
         	
-            <a id="back-top"><div id="scrolltop"><div id="scrolltopi"><i class="fa fa-angle-double-up"></i></div></div></a>
+           <div id="topp"> <a href="#top"><div id="scrolltop"><div id="scrolltopi"><i class="fa fa-angle-double-up"></i></div></div></a></div>
             
            
             

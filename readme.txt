@@ -2,7 +2,7 @@
 
 == Theme: Aron==
 
-Aron is Multipurpose, Elegant, Responsive and beautiful Theme with Easy Customization Options. Aron Theme is Single Click Intall feature, Just press activate button and your website will get ready. Aron is a bootstrap based fully responsive theme that works on any device. You can use it for your business, portfolio, blogging, fitness, GYM, Travels Agencies or any type of site. Its comes with beautiful slider. It has a very easy admin option panel where you can change lot of things easily. You can upload logo , fevicon etc. This theme made by arinio.com.
+Aron is a Best Multipurpose, Elegant, Responsive and Beautiful Theme with Easy and Powerfull Customization Options. Aron Theme is Single Click Intall feature, Just press activate button and your website will get ready. Aron is a bootstrap based fully responsive theme that works on any device. You can use it for your business, portfolio, blogging, fitness, GYM, Magazine, News, Travels Agencies or any type of site. Its comes with beautiful slider. It has a very easy admin option panel where you can change lot of things easily. You can upload logo , fevicon etc. you can customize this theme without any coding knowledge.  This theme made by arinio.com.
 
 * By ArinioThemes, http://arinio.com/
 

@@ -137,50 +137,12 @@ function aron_theme_customizer( $wp_customize ) {
 	
 	
 	
-		$wp_customize->add_setting(
-	    'aron_blog_head', array(
-		    'default' => __( 'Heading', 'aron' ),
-			'transport' => 'postMessage',
-		    'sanitize_callback' => 'aron_sanitize_text',
-	    )
-	);
-	
-	$wp_customize->add_control(
-		'aron_blog_head', array(
-			'label'    => __( 'Blog Heading', 'aron' ),
-			'section' => 'aron_logo_section',
-			'type' => 'text',
-		)
-	);
-	
-	
-		$wp_customize->add_setting(
-	    'aron_blog_desc', array(
-		    'default' => __( 'Description', 'aron' ),
-			'transport' => 'postMessage',
-		    'sanitize_callback' => 'aron_sanitize_textarea',
-	    )
-	);
-	
-	$wp_customize->add_control(
-		'aron_blog_desc', array(
-			'label'    => __( 'Blog Description', 'aron' ),
-			'section' => 'aron_logo_section',
-			'type' => 'textarea',
-		)
-	);
+		 
 	
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	 
 	
 	
 	
@@ -362,6 +324,7 @@ function servicesText_customizer( $wp_customize ) {
 		'one'		=> __( 'Icon 1', 'aron' ),
 		'two'		=> __( 'Icon 2', 'aron' ),
 		'three'		=> __( 'Icon 3', 'aron' ),
+		'four'		=> __( 'Icon 4', 'aron' ),
 	);
 	
 	
@@ -484,7 +447,7 @@ function servicesText_customizer( $wp_customize ) {
 			'label'    => __( 'Main Heading', 'aron' ),
 			'section' => 'aron_servicesText_section_contact',
 			'type' => 'text',
-			'priority' => '19',
+			'priority' => '20',
 		)
 	);
 	
@@ -503,7 +466,7 @@ function servicesText_customizer( $wp_customize ) {
 			'label'    => __( 'Main Description', 'aron' ),
 			'section' => 'aron_servicesText_section_contact',
 			'type' => 'textarea',
-			'priority' => '20',
+			'priority' => '21',
 		)
 	);
 	 

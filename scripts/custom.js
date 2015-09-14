@@ -1,16 +1,4 @@
-/* 
- * Create HTML5 elements for IE's sake
- */
 
-/* catch ie10 */
-if (/*@cc_on!@*/false) {  
-    document.documentElement.className+=' ie10';  
-}
-/* slider */
-jQuery(window).load(function() {
-    jQuery('ul.sf-menu').superfish();
-  });
-  
  /* scroll to top */
  jQuery(document).ready(function(){
 
@@ -28,7 +16,7 @@ jQuery(window).load(function() {
 		});
 
 		// scroll body to 0px on click
-		jQuery('#back-top a').click(function () {
+		jQuery('#topp a').click(function () {
 			jQuery('body,html').animate({
 				scrollTop: 0
 			}, 800);
@@ -47,8 +35,8 @@ jQuery(window).load(function() {
 
 //slider
 
-$(document).ready(function() {
-	$('#myCarousel').carousel({
+jQuery(document).ready(function() {
+	jQuery('#myCarousel').carousel({
 	  interval: 7000
 	});
 	

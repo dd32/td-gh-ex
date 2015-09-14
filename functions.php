@@ -234,15 +234,7 @@ function aron_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 	
-	register_sidebar( array(
-		'name' => __( 'Footer Sidebar', 'aron' ),
-		'id' => 'footer-sidebar',
-		'description' => __( 'Appears on footer side', 'aron' ),
-		'before_widget' => '<div id="%1$s" class="col-md-3 footer-separator %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	) );
+	 
 }
 add_action( 'widgets_init', 'aron_widgets_init' );
 /* aron Theme End */
@@ -295,7 +287,7 @@ add_action( 'wp_enqueue_scripts', 'aron_scripts_styles' );
 
 
 
-
+ 
  
 
 // placeholder to textarea
@@ -416,6 +408,6 @@ function aron_paginate($pages = '', $range = 1)
 require get_template_directory() . '/inc/customizer.php';
 
 
-
+require get_template_directory() . '/inc/aron-admin_page.php';
 
 
