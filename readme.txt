@@ -64,6 +64,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.9 =
+* Danish language file added. Thanks to Mr. Steffan Christensen for providing the language files.
+
 = Version 1.1.8 =
 * WordPress default gallery alignment issue fixed. Also, responsiveness adjustment done for WordPress default gallery.
 
