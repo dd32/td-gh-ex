@@ -80,12 +80,15 @@ function optionsframework_options() {
     $translation_id = array(
                             'you_are_here','editor_picks','home','search_results_for','tagged','next_article','previous_article','older_posts','newer_posts','advertisement','search_button','search_placeholder','top_arrow'
                             );
-    $trans_count = count($translation_id);
+    $trans_count = count( $translation_id );
 
 	$options = array();
 
 /*-----------------------Basic Setting------------------------*/
-	
+	$options[] = array(
+            'name' => __( 'Basic Settings', 'accesspress-mag' ),
+            'type' => 'heading'
+            );
     /*----------------Background settings--------------------------*/
     $options[] = array(
             'name' => __( 'Background Settings', 'accesspress-mag' ),
@@ -271,7 +274,7 @@ function optionsframework_options() {
             'name' => __( 'Copyright text', 'accesspress-mag' ),
             'desc' => __( 'Set footer copyright text', 'accesspress-mag' ),
             'id' => 'mag_footer_copyright',
-            'std' => __( get_bloginfo('name'), 'accesspress-mag' ),
+            'std' => get_bloginfo( 'name' ),
             'type' => 'text' 
             );
     

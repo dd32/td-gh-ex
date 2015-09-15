@@ -760,6 +760,7 @@ endif;
 /**
  * Change value of post template layout
  */
+/* 
 add_action( 'admin_init', 'change_post_style_meta' );
 
 function change_post_style_meta() {
@@ -783,3 +784,4 @@ function change_post_style_meta() {
         }
     }
 }
+*/

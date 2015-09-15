@@ -66,6 +66,10 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.1.4
+ * Fixed small bugs in theme option panel
+ * Removed function about changing post layout value in database
+ 
 Version 2.1.3
  * Removed function about plugin territory
  * Fixed multiple text domain
