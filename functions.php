@@ -177,7 +177,7 @@ function anderson_register_sidebars() {
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',
 	));
-
+	
 }
 endif;
 
