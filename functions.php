@@ -151,7 +151,7 @@ add_action( 'widgets_init', 'courage_register_sidebars' );
 if ( ! function_exists( 'courage_register_sidebars' ) ):
 function courage_register_sidebars() {
 
-	// Register Sidebars
+	// Register Sidebar
 	register_sidebar( array(
 		'name' => __( 'Sidebar', 'courage' ),
 		'id' => 'sidebar',
@@ -161,6 +161,8 @@ function courage_register_sidebars() {
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',
 	));
+	
+	// Register Magazine Homepage
 	register_sidebar( array(
 		'name' => __( 'Magazine Homepage', 'courage' ),
 		'id' => 'magazine-homepage',
