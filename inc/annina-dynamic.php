@@ -81,8 +81,188 @@ function annina_color_primary_register( $wp_customize ) {
 	);
 	
 	}
+	
+	/*
+	Start Annina Options
+	=====================================================
+	*/
+	$wp_customize->add_section( 'cresta_annina_options', array(
+	     'title'    => esc_attr__( 'Annina Theme Options', 'annina' ),
+	     'priority' => 50,
+	) );
+	
+	/*
+	Social Icons
+	=====================================================
+	*/
+	$socialmedia = array();
+	
+	$socialmedia[] = array(
+	'slug'=>'facebookurl', 
+	'default' => '#',
+	'label' => __('Facebook URL', 'annina')
+	);
+	$socialmedia[] = array(
+	'slug'=>'twitterurl', 
+	'default' => '#',
+	'label' => __('Twitter URL', 'annina')
+	);
+	$socialmedia[] = array(
+	'slug'=>'googleplusurl', 
+	'default' => '#',
+	'label' => __('Google Plus URL', 'annina')
+	);
+	$socialmedia[] = array(
+	'slug'=>'linkedinurl', 
+	'default' => '#',
+	'label' => __('Linkedin URL', 'annina')
+	);
+	$socialmedia[] = array(
+	'slug'=>'instagramurl', 
+	'default' => '#',
+	'label' => __('Instagram URL', 'annina')
+	);
+	$socialmedia[] = array(
+	'slug'=>'youtubeurl', 
+	'default' => '#',
+	'label' => __('YouTube URL', 'annina')
+	);
+	$socialmedia[] = array(
+	'slug'=>'pinteresturl', 
+	'default' => '#',
+	'label' => __('Pinterest URL', 'annina')
+	);
+	$socialmedia[] = array(
+	'slug'=>'vkurl', 
+	'default' => '#',
+	'label' => __('VK URL', 'annina')
+	);
+	$socialmedia[] = array(
+	'slug'=>'emailurl', 
+	'default' => '#',
+	'label' => __('You Email', 'annina')
+	);
+	
+	foreach( $socialmedia as $annina_theme_options ) {
+		// SETTINGS
+		$wp_customize->add_setting(
+			'annina_theme_options_' . $annina_theme_options['slug'], array(
+				'default' => $annina_theme_options['default'],
+				'capability'     => 'edit_theme_options',
+				'sanitize_callback' => 'esc_url_raw',
+				'type'     => 'theme_mod',
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control(
+			$annina_theme_options['slug'], 
+			array('label' => $annina_theme_options['label'], 
+			'section'    => 'cresta_annina_options',
+			'settings' =>'annina_theme_options_' . $annina_theme_options['slug'],
+			)
+		);
+	}
+	
+	/*
+	Search Button
+	=====================================================
+	*/
+	$wp_customize->add_setting('annina_theme_options_hidesearch', array(
+        'default'    => '1',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'annina_sanitize_checkbox'
+    ) );
+	
+	$wp_customize->add_control('annina_theme_options_hidesearch', array(
+        'label'      => __( 'Show Search Button in Main Menu', 'annina' ),
+        'section'    => 'cresta_annina_options',
+        'settings'   => 'annina_theme_options_hidesearch',
+        'type'       => 'checkbox',
+    ) );
+	
+	/*
+	Masonry Style
+	=====================================================
+	*/
+	$wp_customize->add_setting('annina_theme_options_masonrybig', array(
+        'default'    => '0',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'annina_sanitize_checkbox'
+    ) );
+	
+	$wp_customize->add_control('annina_theme_options_masonrybig', array(
+        'label'      => __( 'Last Post Box Big?', 'annina' ),
+        'section'    => 'cresta_annina_options',
+        'settings'   => 'annina_theme_options_masonrybig',
+        'type'       => 'checkbox',
+    ) );
+	
+	/*
+	Upgrade to PRO
+	=====================================================
+	*/
+    class Annina_Customize_Upgrade_Control extends WP_Customize_Control {
+        public function render_content() {  ?>
+        	<p class="annina-upgrade-title">
+        		<span class="customize-control-title">
+					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php _e('Get Annina PRO WP Theme for only', 'annina'); ?> 24,90&euro;</h3>
+        		</span>
+        	</p>
+			<p style="text-align:center;" class="annina-upgrade-button">
+				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/annina-pro/" class="button button-secondary">
+					<?php _e('Watch the demo', 'annina'); ?>
+				</a>
+				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/downloads/annina/" class="button button-secondary">
+					<?php _e('Get Annina PRO Theme', 'annina'); ?>
+				</a>
+			</p>
+			<ul>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Advanced Theme Options', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Logo Upload', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Choose sidebar position', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Font switcher', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Loading Page', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Unlimited Colors and Skin', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Post views counter', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Post format', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('7 Shortcodes', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('12 Exclusive Widgets', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Related Posts Box', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Information About Author Box', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Sticky Sidebar', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('And much more...', 'annina'); ?></b></li>
+			<ul><?php
+        }
+    }
+	
+	$wp_customize->add_section( 'cresta_upgrade_pro', array(
+	     'title'    => __( 'More features? Upgrade to PRO', 'annina' ),
+	     'priority' => 999,
+	));
+	
+	$wp_customize->add_setting('annina_section_upgrade_pro', array(
+		'default' => '',
+		'type' => 'option',
+		'sanitize_callback' => 'esc_attr'
+	));
+	
+	$wp_customize->add_control(new Annina_Customize_Upgrade_Control($wp_customize, 'annina_section_upgrade_pro', array(
+		'section' => 'cresta_upgrade_pro',
+		'settings' => 'annina_section_upgrade_pro',
+	)));
+	
 }
 add_action( 'customize_register', 'annina_color_primary_register' );
+
+function annina_sanitize_checkbox( $input ) {
+	if ( $input == 1 ) {
+		return 1;
+	} else {
+		return '';
+	}
+}
 
 /**
  * Add Custom CSS to Header 

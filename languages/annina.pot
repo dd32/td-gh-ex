@@ -206,11 +206,11 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:39 content.php:46 inc/template-tags.php:123
+#: content-page.php:39 content.php:45 inc/template-tags.php:123
 msgid "Edit"
 msgstr ""
 
-#: content.php:45
+#: content.php:44
 msgid "Read More"
 msgstr ""
 
@@ -236,24 +236,64 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:35
+#: header.php:43
 msgid "Search for:"
 msgstr ""
 
-#: header.php:36
+#: header.php:44
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: header.php:39
+#: header.php:47
 msgid "Close"
 msgstr ""
 
-#: header.php:45
+#: header.php:53
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:54
+#: header.php:62
 msgid "Main Menu"
+msgstr ""
+
+#: header.php:68
+msgid "Facebook"
+msgstr ""
+
+#: header.php:72
+msgid "Twitter"
+msgstr ""
+
+#: header.php:76
+msgid "Google Plus"
+msgstr ""
+
+#: header.php:80
+msgid "Linkedin"
+msgstr ""
+
+#: header.php:84
+msgid "Instagram"
+msgstr ""
+
+#: header.php:88
+msgid "YouTube"
+msgstr ""
+
+#: header.php:92
+msgid "Pinterest"
+msgstr ""
+
+#: header.php:96
+msgid "VK"
+msgstr ""
+
+#: header.php:100
+msgid "Email"
+msgstr ""
+
+#: header.php:100
+msgid "Tumblr"
 msgstr ""
 
 #: inc/annina-dynamic.php:41
@@ -270,6 +310,126 @@ msgstr ""
 
 #: inc/annina-dynamic.php:59
 msgid "Special Color"
+msgstr ""
+
+#: inc/annina-dynamic.php:90
+msgid "Annina Theme Options"
+msgstr ""
+
+#: inc/annina-dynamic.php:103
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/annina-dynamic.php:108
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/annina-dynamic.php:113
+msgid "Google Plus URL"
+msgstr ""
+
+#: inc/annina-dynamic.php:118
+msgid "Linkedin URL"
+msgstr ""
+
+#: inc/annina-dynamic.php:123
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/annina-dynamic.php:128
+msgid "YouTube URL"
+msgstr ""
+
+#: inc/annina-dynamic.php:133
+msgid "Pinterest URL"
+msgstr ""
+
+#: inc/annina-dynamic.php:138
+msgid "VK URL"
+msgstr ""
+
+#: inc/annina-dynamic.php:143
+msgid "You Email"
+msgstr ""
+
+#: inc/annina-dynamic.php:178
+msgid "Show Search Button in Main Menu"
+msgstr ""
+
+#: inc/annina-dynamic.php:196
+msgid "Last Post Box Big?"
+msgstr ""
+
+#: inc/annina-dynamic.php:210
+msgid "Get Annina PRO WP Theme for only"
+msgstr ""
+
+#: inc/annina-dynamic.php:215
+msgid "Watch the demo"
+msgstr ""
+
+#: inc/annina-dynamic.php:218
+msgid "Get Annina PRO Theme"
+msgstr ""
+
+#: inc/annina-dynamic.php:222
+msgid "Advanced Theme Options"
+msgstr ""
+
+#: inc/annina-dynamic.php:223
+msgid "Logo Upload"
+msgstr ""
+
+#: inc/annina-dynamic.php:224
+msgid "Choose sidebar position"
+msgstr ""
+
+#: inc/annina-dynamic.php:225
+msgid "Font switcher"
+msgstr ""
+
+#: inc/annina-dynamic.php:226
+msgid "Loading Page"
+msgstr ""
+
+#: inc/annina-dynamic.php:227
+msgid "Unlimited Colors and Skin"
+msgstr ""
+
+#: inc/annina-dynamic.php:228
+msgid "Post views counter"
+msgstr ""
+
+#: inc/annina-dynamic.php:229
+msgid "Post format"
+msgstr ""
+
+#: inc/annina-dynamic.php:230
+msgid "7 Shortcodes"
+msgstr ""
+
+#: inc/annina-dynamic.php:231
+msgid "12 Exclusive Widgets"
+msgstr ""
+
+#: inc/annina-dynamic.php:232
+msgid "Related Posts Box"
+msgstr ""
+
+#: inc/annina-dynamic.php:233
+msgid "Information About Author Box"
+msgstr ""
+
+#: inc/annina-dynamic.php:234
+msgid "Sticky Sidebar"
+msgstr ""
+
+#: inc/annina-dynamic.php:235
+msgid "And much more..."
+msgstr ""
+
+#: inc/annina-dynamic.php:241
+msgid "More features? Upgrade to PRO"
 msgstr ""
 
 #: inc/extras.php:64
@@ -345,215 +505,6 @@ msgstr ""
 #: inc/template-tags.php:120
 #, php-format
 msgid "<i class=\"fa fa-tags spaceRight\"></i>%1$s"
-msgstr ""
-
-#: inc/theme-options.php:24 inc/theme-options.php:48
-msgid "Annina Theme Options"
-msgstr ""
-
-#: inc/theme-options.php:61
-msgid " Free Theme Options"
-msgstr ""
-
-#: inc/theme-options.php:64
-msgid "Need more features and options? Upgrade to PRO!"
-msgstr ""
-
-#: inc/theme-options.php:65
-msgid "Get"
-msgstr ""
-
-#: inc/theme-options.php:65
-msgid "Annina PRO"
-msgstr ""
-
-#: inc/theme-options.php:65
-msgid "WordPress Theme for only"
-msgstr ""
-
-#: inc/theme-options.php:67
-msgid "Demo (Annina PRO)"
-msgstr ""
-
-#: inc/theme-options.php:69
-msgid "Get The Pro Version"
-msgstr ""
-
-#: inc/theme-options.php:73
-msgid "Advanced Theme Options"
-msgstr ""
-
-#: inc/theme-options.php:73
-msgid ""
-"(Manage Loading Page, Additional Custom Code, Font switcher and much more...)"
-msgstr ""
-
-#: inc/theme-options.php:74
-msgid "Logo Upload"
-msgstr ""
-
-#: inc/theme-options.php:75
-msgid "Unlimited Colors and Skin"
-msgstr ""
-
-#: inc/theme-options.php:76
-msgid "Post views counter"
-msgstr ""
-
-#: inc/theme-options.php:77
-msgid "Infinite Scroll"
-msgstr ""
-
-#: inc/theme-options.php:78
-msgid "Sticky Sidebar"
-msgstr ""
-
-#: inc/theme-options.php:79
-msgid "Breadcrumb"
-msgstr ""
-
-#: inc/theme-options.php:80
-msgid "7 Shortcodes"
-msgstr ""
-
-#: inc/theme-options.php:80
-msgid "(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)"
-msgstr ""
-
-#: inc/theme-options.php:81
-msgid "11 Exclusive Widgets"
-msgstr ""
-
-#: inc/theme-options.php:81
-msgid ""
-"(Latest Tweet, Instagram, Social Buttons, Recent Posts with Thumbnail and "
-"Most Commented Posts...)"
-msgstr ""
-
-#: inc/theme-options.php:82
-msgid "Related Posts Box"
-msgstr ""
-
-#: inc/theme-options.php:83
-msgid "Information About Author Box"
-msgstr ""
-
-#: inc/theme-options.php:84
-msgid "Advertising system"
-msgstr ""
-
-#: inc/theme-options.php:85
-msgid "And much more..."
-msgstr ""
-
-#: inc/theme-options.php:90
-msgid ""
-"These options will let you setup the social icons at the bottom of the "
-"theme. You can enter the URLs of your profiles to have the icons show up."
-msgstr ""
-
-#: inc/theme-options.php:92
-msgid "Options saved"
-msgstr ""
-
-#: inc/theme-options.php:107
-msgid "Last post box big?"
-msgstr ""
-
-#: inc/theme-options.php:110
-msgid "Enable it if you want the last post box big"
-msgstr ""
-
-#: inc/theme-options.php:119
-msgid "Hide Search Button?"
-msgstr ""
-
-#: inc/theme-options.php:122
-msgid "Hide the Search button?"
-msgstr ""
-
-#: inc/theme-options.php:131
-msgid "Enter your Facebook URL"
-msgstr ""
-
-#: inc/theme-options.php:134
-msgid "Leave blank to hide Facebook Icon"
-msgstr ""
-
-#: inc/theme-options.php:143
-msgid "Enter your Twitter URL"
-msgstr ""
-
-#: inc/theme-options.php:146
-msgid "Leave blank to hide Twitter Icon"
-msgstr ""
-
-#: inc/theme-options.php:155
-msgid "Enter your Google + URL"
-msgstr ""
-
-#: inc/theme-options.php:158
-msgid "Leave blank to hide Google + Icon"
-msgstr ""
-
-#: inc/theme-options.php:167
-msgid "Enter your Linkedin URL"
-msgstr ""
-
-#: inc/theme-options.php:170
-msgid "Leave blank to hide Linkedin Icon"
-msgstr ""
-
-#: inc/theme-options.php:179
-msgid "Enter your Instagram URL"
-msgstr ""
-
-#: inc/theme-options.php:182
-msgid "Leave blank to hide Instagram Icon"
-msgstr ""
-
-#: inc/theme-options.php:191
-msgid "Enter your YouTube URL"
-msgstr ""
-
-#: inc/theme-options.php:194
-msgid "Leave blank to hide YouTube Icon"
-msgstr ""
-
-#: inc/theme-options.php:203
-msgid "Enter your Pinterest URL"
-msgstr ""
-
-#: inc/theme-options.php:206
-msgid "Leave blank to hide Pinterest Icon"
-msgstr ""
-
-#: inc/theme-options.php:215
-msgid "Enter your VK URL"
-msgstr ""
-
-#: inc/theme-options.php:218
-msgid "Leave blank to hide VK Icon"
-msgstr ""
-
-#: inc/theme-options.php:227
-msgid "Enter your Email"
-msgstr ""
-
-#: inc/theme-options.php:230
-msgid "Leave blank to hide Email Icon"
-msgstr ""
-
-#: inc/theme-options.php:239
-msgid "Theme Colors"
-msgstr ""
-
-#: inc/theme-options.php:241
-msgid "Click here to customize colors"
-msgstr ""
-
-#: inc/theme-options.php:248
-msgid "Save Options"
 msgstr ""
 
 #: search.php:17

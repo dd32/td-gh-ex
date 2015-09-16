@@ -23,10 +23,18 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 <?php 
-	global $annina_theme_options;
-	$se_options = get_option( 'annina_theme_options', $annina_theme_options );
-?>
-<?php if ( ! $se_options['hidesearch'] ) : ?>
+		$hideSearch = get_theme_mod('annina_theme_options_hidesearch', '1');
+		$facebookURL = get_theme_mod('annina_theme_options_facebookurl', '#');
+		$twitterURL = get_theme_mod('annina_theme_options_twitterurl', '#');
+		$googleplusURL = get_theme_mod('annina_theme_options_googleplusurl', '#');
+		$linkedinURL = get_theme_mod('annina_theme_options_linkedinurl', '#');
+		$instagramURL = get_theme_mod('annina_theme_options_instagramurl', '#');
+		$youtubeURL = get_theme_mod('annina_theme_options_youtubeurl', '#');
+		$pinterestURL = get_theme_mod('annina_theme_options_pinteresturl', '#');
+		$vkURL = get_theme_mod('annina_theme_options_vkurl', '#');
+		$emailURL = get_theme_mod('annina_theme_options_emailurl', '#');
+	?>
+<?php if ( $hideSearch == 1 ) : ?>
 <!-- Start: Search Form -->
 					<div id="search-full">
 						<div class="search-container">
@@ -56,43 +64,43 @@
 		</nav><!-- #site-navigation -->
 
 			<div class="socialLine annCenter">
-				<?php if ( $se_options['facebookurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['facebookurl']); ?>" title="Facebook" target="_blank"><i class="fa spaceRightDouble fa-facebook"></i></a>
+				<?php if (!empty($facebookURL)) : ?>
+					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'annina' ); ?>"><i class="fa fa-facebook spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Facebook', 'annina' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($twitterURL)) : ?>
+					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'annina' ); ?>"><i class="fa fa-twitter spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Twitter', 'annina' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($googleplusURL)) : ?>
+					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'annina' ); ?>"><i class="fa fa-google-plus spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Google Plus', 'annina' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($linkedinURL)) : ?>
+					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'annina' ); ?>"><i class="fa fa-linkedin spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin', 'annina' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($instagramURL)) : ?>
+					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'annina' ); ?>"><i class="fa fa-instagram spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Instagram', 'annina' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($youtubeURL)) : ?>
+					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'annina' ); ?>"><i class="fa fa-youtube spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'YouTube', 'annina' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($pinterestURL)) : ?>
+					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'annina' ); ?>"><i class="fa fa-pinterest spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest', 'annina' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($vkURL)) : ?>
+					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'annina' ); ?>"><i class="fa fa-vk spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'VK', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['twitterurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['twitterurl']); ?>" title="Twitter" target="_blank"><i class="fa spaceRightDouble fa-twitter"></i></a>
+				<?php if (!empty($emailURL)) : ?>
+					<a href="mailto:<?php echo sanitize_email($emailURL); ?>" title="<?php esc_attr_e( 'Email', 'annina' ); ?>"><i class="fa fa-envelope spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['googleplusurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['googleplusurl']); ?>" title="Google Plus" target="_blank"><i class="fa spaceRightDouble fa-google-plus"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['linkedinurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['linkedinurl']); ?>" title="Linkedin" target="_blank"><i class="fa spaceRightDouble fa-linkedin"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['instagramurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['instagramurl']); ?>" title="Instagram" target="_blank"><i class="fa spaceRightDouble fa-instagram"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['youtubeurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['youtubeurl']); ?>" title="YouTube" target="_blank"><i class="fa spaceRightDouble fa-youtube"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['pinteresturl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['pinteresturl']); ?>" title="Pinterest" target="_blank"><i class="fa spaceRightDouble fa-pinterest"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['vkurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['vkurl']); ?>" title="VK" target="_blank"><i class="fa spaceRightDouble fa-vk"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['emailurl'] != '' ) : ?>
-					<a href="mailto:<?php echo sanitize_email($se_options['emailurl']); ?>" title="Email"><i class="fa spaceRightDouble fa-envelope"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( ! $se_options['hidesearch'] ) : ?>
+				<?php if ( $hideSearch == 1 ) : ?>
 					<div id="open-search" class="top-search"><i class="fa spaceRightDouble fa-search"></i></div>
 				<?php endif; ?>
 			</div>

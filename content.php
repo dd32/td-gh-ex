@@ -5,10 +5,9 @@
 ?>
 <?php 
 	global $i; 
-	global $annina_theme_options;
-	$se_options = get_option( 'annina_theme_options', $annina_theme_options );
+	$lastbig = get_theme_mod('annina_theme_options_masonrybig', '0');
 ?>
-<?php if ($i == 0 && $se_options['firstbig'] ) : ?>
+<?php if ($i == 0 && $lastbig == 1 ) : ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('anninamas w2'); ?>>
 <?php else : ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('anninamas'); ?>>
@@ -18,7 +17,7 @@
 	<?php
 		if ( '' != get_the_post_thumbnail() ) {
 			echo '<div class="entry-featuredImg"><a href="' .get_permalink(). '"><span class="overlay-img"></span>';
-			if ($i == 0 && $se_options['firstbig'] ) {
+			if ($i == 0 && $lastbig == 1 ) {
 				the_post_thumbnail('annina-normal-post');
 			} else {
 				the_post_thumbnail('annina-masonry-post');

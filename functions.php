@@ -140,11 +140,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
-* Load the Theme Options Page for social media icons
-*/
-require get_template_directory() . '/inc/theme-options.php';
-
-/**
  * Load Annina Dynamic.
  */
 require get_template_directory() . '/inc/annina-dynamic.php';
