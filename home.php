@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * home.php for our theme.
  *
@@ -21,8 +21,8 @@
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php 
-						if ( of_get_option( 'freedom_posts_page_display_type', 'photo_blogging_two_column' ) == 'photo_blogging_two_column' ) {
+					<?php
+						if ( get_theme_mod( 'freedom_posts_page_display_type', 'photo_blogging_two_column' ) == 'photo_blogging_two_column' ) {
 							$view_type = 'home';
 						}
 						else {
@@ -39,14 +39,14 @@
 			<?php else : ?>
 
 				<?php get_template_part( 'no-results', 'none' ); ?>
-				
+
 			<?php endif; ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
-	
+
 	<?php freedom_sidebar_select(); ?>
-	
+
 	<?php do_action( 'freedom_after_body_content' ); ?>
 
 <?php get_footer(); ?>

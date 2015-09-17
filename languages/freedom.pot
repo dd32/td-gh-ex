@@ -1,19 +1,21 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Freedom\n"
-"POT-Creation-Date: 2014-10-21 22:38+0545\n"
-"PO-Revision-Date: 2014-10-21 22:38+0545\n"
+"POT-Creation-Date: 2015-09-14 17:09+0545\n"
+"PO-Revision-Date: 2015-09-14 17:09+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeGrill <themegrill@gmail.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.4\n"
-"X-Poedit-Basepath: ../\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.7\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_x;_x;_nx;_ex;esc_attr__;esc_attr_e\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:22
@@ -24,55 +26,58 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Try the search below."
 msgstr ""
 
-#: archive.php:34 inc/header-functions.php:143
+#: archive.php:34 inc/header-functions.php:162
 #, php-format
 msgid "Author: %s"
 msgstr ""
 
-#: archive.php:42 inc/header-functions.php:151
+#: archive.php:42 inc/header-functions.php:170
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
-#: archive.php:45 inc/header-functions.php:154
+#: archive.php:45 inc/header-functions.php:173
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
-#: archive.php:48 inc/header-functions.php:157
+#: archive.php:48 inc/header-functions.php:176
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
-#: archive.php:51 inc/header-functions.php:160
+#: archive.php:51 inc/header-functions.php:179
 msgid "Asides"
 msgstr ""
 
-#: archive.php:54 inc/header-functions.php:163
+#: archive.php:54 inc/header-functions.php:182
 msgid "Images"
 msgstr ""
 
-#: archive.php:57 inc/header-functions.php:166
+#: archive.php:57 inc/header-functions.php:185
 msgid "Videos"
 msgstr ""
 
-#: archive.php:60 inc/header-functions.php:169
+#: archive.php:60 inc/header-functions.php:188
 msgid "Quotes"
 msgstr ""
 
-#: archive.php:63 inc/header-functions.php:172
+#: archive.php:63 inc/header-functions.php:191
 msgid "Links"
 msgstr ""
 
-#: archive.php:66 inc/header-functions.php:175 sidebar-left.php:29
+#: archive.php:66 inc/header-functions.php:194 sidebar-left.php:29
 #: sidebar.php:29
 msgid "Archives"
 msgstr ""
 
 #: comments.php:31
 #, php-format
+msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr ""
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
 
 #: comments.php:38 comments.php:55
 msgid "Comment navigation"
@@ -98,7 +103,28 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: header.php:87
+#: functions.php:166
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: functions.php:168
+msgid "Theme Options"
+msgstr ""
+
+#: functions.php:170
+#, php-format
+msgid ""
+"<p style=\"font-size: 16px; max-width: 800px\";>As our themes are hosted on "
+"WordPress repository, we need to follow the WordPress theme guidelines and "
+"as per the new guiedlines we have migrated all our Theme Options to "
+"Customizer.</p><p style=\"font-size: 16px; max-width: 800px\";>We too think "
+"this is a better move in the long run. All the options are unchanged, it is "
+"just that they are moved to customizer. So, please use this <a href=\"%1$s"
+"\">link</a> to customize your site. If you have any issues then do let us "
+"know via our <a href=\"%2$s\">Contact form</a></p>"
+msgstr ""
+
+#: header.php:79
 msgid "Menu"
 msgstr ""
 
@@ -126,238 +152,312 @@ msgstr ""
 msgid "No Sidebar Content Centered"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:85
-#: inc/admin/options/includes/class-options-framework-admin.php:86
-#: inc/admin/options/includes/class-options-framework-admin.php:307
-msgid "Theme Options"
+#: inc/customizer.php:22
+msgid "Upgrade to Pro"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:173
-msgid "Save Options"
+#: inc/customizer.php:26
+msgid "Support Forum"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:174
-msgid "Restore Defaults"
+#: inc/customizer.php:30
+msgid "Documentation"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:174
-msgid "Click OK to reset. Any theme settings will be lost!"
+#: inc/customizer.php:34
+msgid "View Demo"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:205
-msgid "Default options restored."
+#: inc/customizer.php:46
+msgid "Freedom"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:259
-msgid "Options saved."
+#: inc/customizer.php:68
+msgid "Header"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-media-uploader.php:63
-msgid "No file chosen"
+#: inc/customizer.php:74
+msgid "Header Logo"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-media-uploader.php:66
-#: inc/admin/options/includes/class-options-media-uploader.php:119
-msgid "Upload"
+#: inc/customizer.php:85
+msgid "Upload logo for your header."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-media-uploader.php:68
-#: inc/admin/options/includes/class-options-media-uploader.php:120
-msgid "Remove"
+#: inc/customizer.php:93
+msgid "Show"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-media-uploader.php:71
-msgid "Upgrade your version of WordPress for full media support."
+#: inc/customizer.php:105
+msgid "Choose the option that you want."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-media-uploader.php:95
-msgid "View File"
+#: inc/customizer.php:108
+msgid "Header Logo Only"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:241
-msgid "No Repeat"
+#: inc/customizer.php:109
+msgid "Header Text Only"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:242
-msgid "Repeat Horizontally"
+#: inc/customizer.php:110
+msgid "Show Both"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:243
-msgid "Repeat Vertically"
+#: inc/customizer.php:111
+msgid "Disable"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:244
-msgid "Repeat All"
+#: inc/customizer.php:120
+msgid "Design"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:257
-msgid "Top Left"
+#: inc/customizer.php:126
+msgid "Site Layout"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:258
-msgid "Top Center"
+#: inc/customizer.php:138
+msgid "Choose your site layout. The change is reflected in whole site."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:259
-msgid "Top Right"
+#: inc/customizer.php:140
+msgid "Boxed layout"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:260
-msgid "Middle Left"
+#: inc/customizer.php:141
+msgid "Wide layout"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:261
-msgid "Middle Center"
+#: inc/customizer.php:209
+msgid "Default layout"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:262
-msgid "Middle Right"
+#: inc/customizer.php:221
+msgid ""
+"Select default layout. This layout will be reflected in whole site archives, "
+"categories, search page etc. The layout for a single post and page can be "
+"controlled from below options."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:263
-msgid "Bottom Left"
+#: inc/customizer.php:235
+msgid "Default layout for pages only"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:264
-msgid "Bottom Center"
+#: inc/customizer.php:247
+msgid ""
+"Select default layout for pages. This layout will be reflected in all pages "
+"unless unique layout is set for specific page."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:265
-msgid "Bottom Right"
+#: inc/customizer.php:261
+msgid "Default layout for single posts only"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:278
-msgid "Scroll Normally"
+#: inc/customizer.php:273
+msgid ""
+"Select default layout for single posts. This layout will be reflected in all "
+"single posts unless unique layout is set for specific post."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:279
-msgid "Fixed in Place"
+#: inc/customizer.php:287
+msgid "Posts page listing display type"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:353
-msgid "Normal"
+#: inc/customizer.php:299
+msgid ""
+"Choose the display type for the latest posts view or posts page view (static "
+"front page)."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:354
-msgid "Italic"
+#: inc/customizer.php:301 inc/customizer.php:324
+msgid "Photo blogging view (two column)"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:355
-msgid "Bold"
+#: inc/customizer.php:302 inc/customizer.php:325
+msgid "Normal view"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:356
-msgid "Bold Italic"
+#: inc/customizer.php:310
+msgid "Archive/Category posts listing display type"
 msgstr ""
 
-#: inc/functions.php:222 inc/functions.php:238 inc/functions.php:270
+#: inc/customizer.php:322
+msgid "Choose the display type for the archive/category view."
+msgstr ""
+
+#: inc/customizer.php:334
+msgid "Primary color option"
+msgstr ""
+
+#: inc/customizer.php:345
+msgid ""
+"This will reflect in links, buttons and many others. Choose a color to match "
+"your site."
+msgstr ""
+
+#: inc/customizer.php:368
+msgid "Custom CSS"
+msgstr ""
+
+#: inc/customizer.php:380
+msgid "Write your custom css."
+msgstr ""
+
+#: inc/customizer.php:406
+msgid "Slider"
+msgstr ""
+
+#: inc/customizer.php:412
+msgid "Activate slider"
+msgstr ""
+
+#: inc/customizer.php:424
+msgid "Check to activate slider."
+msgstr ""
+
+#: inc/customizer.php:433
+#, php-format
+msgid "Slider #%1$s"
+msgstr ""
+
+#: inc/customizer.php:445
+msgid "Upload Image"
+msgstr ""
+
+#: inc/customizer.php:458
+msgid "Enter title for this slide"
+msgstr ""
+
+#: inc/customizer.php:471
+msgid "Enter description for this slide"
+msgstr ""
+
+#: inc/customizer.php:484
+msgid "Enter the button text."
+msgstr ""
+
+#: inc/customizer.php:497
+msgid "Enter link to redirect for the slide"
+msgstr ""
+
+#: inc/customizer.php:560
+msgid "Theme Info"
+msgstr ""
+
+#: inc/customizer.php:561
+msgid "View PRO version"
+msgstr ""
+
+#: inc/functions.php:222 inc/functions.php:243 inc/functions.php:280
 msgid ", "
 msgstr ""
 
-#: inc/functions.php:223 inc/functions.php:271
+#: inc/functions.php:223 inc/functions.php:281
 #, php-format
 msgid ""
 "<span class=\"cat-links\"><i class=\"fa fa-folder-open\"></i>%1$s</span>"
 msgstr ""
 
-#: inc/functions.php:232 inc/functions.php:264
+#: inc/functions.php:237 inc/functions.php:274
 #, php-format
 msgid ""
 "<span class=\"posted-on\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark"
 "\"><i class=\"fa fa-calendar-o\"></i> %3$s</a></span>"
 msgstr ""
 
-#: inc/functions.php:242
+#: inc/functions.php:247
 msgid "<i class=\"fa fa-comment\"></i> 0 Comment"
 msgstr ""
 
-#: inc/functions.php:242
+#: inc/functions.php:247
 msgid "<i class=\"fa fa-comment\"></i> 1 Comment"
 msgstr ""
 
-#: inc/functions.php:242
+#: inc/functions.php:247
 msgid "<i class=\"fa fa-comments\"></i> % Comments"
 msgstr ""
 
-#: inc/functions.php:245
+#: inc/functions.php:250
 msgid "Edit"
 msgstr ""
 
-#: inc/functions.php:347
+#: inc/functions.php:357
 msgid "Post navigation"
 msgstr ""
 
-#: inc/functions.php:351 navigation.php:44
+#: inc/functions.php:361 navigation.php:44
+msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: inc/functions.php:352 navigation.php:45
+#: inc/functions.php:362 navigation.php:45
+msgctxt "Next post link"
 msgid "&rarr;"
 msgstr ""
 
-#: inc/functions.php:357
+#: inc/functions.php:367
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/functions.php:361
+#: inc/functions.php:371
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/functions.php:387
+#: inc/functions.php:397
 msgid "Pingback:"
 msgstr ""
 
-#: inc/functions.php:387
+#: inc/functions.php:397
 msgid "(Edit)"
 msgstr ""
 
-#: inc/functions.php:402
+#: inc/functions.php:412
 msgid "Post author"
 msgstr ""
 
-#: inc/functions.php:405
+#: inc/functions.php:415
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/functions.php:413
+#: inc/functions.php:423
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/functions.php:418
+#: inc/functions.php:428
 msgid "Reply"
 msgstr ""
 
-#: inc/functions.php:436
+#: inc/functions.php:446
 msgid "WordPress"
 msgstr ""
 
-#: inc/functions.php:437
+#: inc/functions.php:447
 msgid "ThemeGrill"
 msgstr ""
 
-#: inc/functions.php:439
+#: inc/functions.php:449
 msgid "Copyright &copy; "
 msgstr ""
 
-#: inc/functions.php:439
+#: inc/functions.php:449
 msgid ".&nbsp;Powered by&nbsp;"
 msgstr ""
 
-#: inc/functions.php:439
+#: inc/functions.php:449
 msgid "."
 msgstr ""
 
-#: inc/header-functions.php:47
+#: inc/header-functions.php:64
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: inc/header-functions.php:180
+#: inc/header-functions.php:199
 msgid "Page NOT Found"
 msgstr ""
 
-#: inc/header-functions.php:183
+#: inc/header-functions.php:202
 msgid "Search Results"
 msgstr ""
 
@@ -433,213 +533,6 @@ msgstr ""
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
-
-#: options.php:27
-msgid "Header"
-msgstr ""
-
-#: options.php:33
-msgid "Header Logo"
-msgstr ""
-
-#: options.php:34
-msgid "Upload logo for your header."
-msgstr ""
-
-#: options.php:41
-msgid "Header Logo Only"
-msgstr ""
-
-#: options.php:42
-msgid "Header Text Only"
-msgstr ""
-
-#: options.php:43
-msgid "Show Both"
-msgstr ""
-
-#: options.php:44
-msgid "Disable"
-msgstr ""
-
-#: options.php:47
-msgid "Show"
-msgstr ""
-
-#: options.php:48
-msgid "Choose the option that you want."
-msgstr ""
-
-#: options.php:57
-msgid "Need to replace Header Image?"
-msgstr ""
-
-#: options.php:58 options.php:158
-#, php-format
-msgid "<a href=\"%1$s\">Click Here</a>"
-msgstr ""
-
-#: options.php:65
-msgid "Design"
-msgstr ""
-
-#: options.php:70
-msgid "Site Layout"
-msgstr ""
-
-#: options.php:71
-msgid "Choose your site layout. The change is reflected in whole site."
-msgstr ""
-
-#: options.php:76
-msgid "Boxed layout"
-msgstr ""
-
-#: options.php:77
-msgid "Wide layout"
-msgstr ""
-
-#: options.php:82
-msgid "Default layout"
-msgstr ""
-
-#: options.php:83
-msgid ""
-"Select default layout. This layout will be reflected in whole site archives, "
-"categories, search page etc. The layout for a single post and page can be "
-"controlled from below options."
-msgstr ""
-
-#: options.php:96
-msgid "Default layout for pages only"
-msgstr ""
-
-#: options.php:97
-msgid ""
-"Select default layout for pages. This layout will be reflected in all pages "
-"unless unique layout is set for specific page."
-msgstr ""
-
-#: options.php:110
-msgid "Default layout for single posts only"
-msgstr ""
-
-#: options.php:111
-msgid ""
-"Select default layout for single posts. This layout will be reflected in all "
-"single posts unless unique layout is set for specific post."
-msgstr ""
-
-#: options.php:124
-msgid "Posts page listing display type"
-msgstr ""
-
-#: options.php:125
-msgid ""
-"Choose the display type for the latest posts view or posts page view (static "
-"front page)."
-msgstr ""
-
-#: options.php:130 options.php:142
-msgid "Photo blogging view (two column)"
-msgstr ""
-
-#: options.php:131 options.php:143
-msgid "Normal view"
-msgstr ""
-
-#: options.php:136
-msgid "Archive/Category posts listing display type"
-msgstr ""
-
-#: options.php:137
-msgid "Choose the display type for the archive/category view."
-msgstr ""
-
-#: options.php:149
-msgid "Primary color option"
-msgstr ""
-
-#: options.php:150
-msgid ""
-"This will reflect in links, buttons and many others. Choose a color to match "
-"your site."
-msgstr ""
-
-#: options.php:157
-msgid "Need to replace default background?"
-msgstr ""
-
-#: options.php:158
-msgid ""
-"Note: The background will only be seen if you choose any of the boxed layout "
-"option in site layout option."
-msgstr ""
-
-#: options.php:163
-msgid "Custom CSS"
-msgstr ""
-
-#: options.php:164
-msgid "Write your custom css."
-msgstr ""
-
-#: options.php:173
-msgid "Slider"
-msgstr ""
-
-#: options.php:179
-msgid "Activate slider"
-msgstr ""
-
-#: options.php:180
-msgid "Check to activate slider."
-msgstr ""
-
-#: options.php:189
-#, php-format
-msgid "Slider #%1$s"
-msgstr ""
-
-#: options.php:190
-msgid "Upload image"
-msgstr ""
-
-#: options.php:195
-msgid "Enter title for this slide"
-msgstr ""
-
-#: options.php:201
-msgid "Enter description for this slide"
-msgstr ""
-
-#: options.php:207
-msgid "Enter the button text."
-msgstr ""
-
-#: options.php:213
-msgid "Enter link to redirect for the slide"
-msgstr ""
-
-#: options.php:234
-msgid "Freedom"
-msgstr ""
-
-#: options.php:236
-msgid "Upgrade to Pro"
-msgstr ""
-
-#: options.php:237
-msgid "Support Forum"
-msgstr ""
-
-#: options.php:238
-msgid "Documentation"
-msgstr ""
-
-#: options.php:239
-msgid "View Demo"
 msgstr ""
 
 #: searchform.php:11 searchform.php:12

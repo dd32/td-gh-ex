@@ -34,15 +34,15 @@ wp_head();
 				<div id="header-text-nav-wrap" class="clearfix">
 					<div id="header-left-section">
 						<?php
-						if( ( of_get_option( 'freedom_show_header_logo_text', 'text_only' ) == 'both' || of_get_option( 'freedom_show_header_logo_text', 'text_only' ) == 'logo_only' ) && of_get_option( 'freedom_header_logo_image', '' ) != '' ) {
+						if( ( get_theme_mod( 'freedom_show_header_logo_text', 'text_only' ) == 'both' || get_theme_mod( 'freedom_show_header_logo_text', 'text_only' ) == 'logo_only' ) && get_theme_mod( 'freedom_header_logo_image', '' ) != '' ) {
 						?>
 							<div id="header-logo-image">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo of_get_option( 'freedom_header_logo_image', '' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'freedom_header_logo_image', '' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
 							</div><!-- #header-logo-image -->
 						<?php
 						}
 
-						if( of_get_option( 'freedom_show_header_logo_text', 'text_only' ) == 'both' || of_get_option( 'freedom_show_header_logo_text', 'text_only' ) == 'text_only' ) {
+						if( get_theme_mod( 'freedom_show_header_logo_text', 'text_only' ) == 'both' || get_theme_mod( 'freedom_show_header_logo_text', 'text_only' ) == 'text_only' ) {
 						?>
 						<div id="header-text">
 							<h1 id="site-title">
@@ -91,7 +91,7 @@ wp_head();
 		</div><!-- #header-text-nav-container -->
 
 		<?php
-   	if( of_get_option( 'freedom_activate_slider', '0' ) == '1' ) {
+   	if( get_theme_mod( 'freedom_activate_slider', '0' ) == '1' ) {
 			if ( is_front_page() ) {
    			freedom_featured_image_slider();
 			}

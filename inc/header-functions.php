@@ -101,11 +101,11 @@ function freedom_featured_image_slider() {
 				<div class="slider-rotate">
 					<?php
 					for( $i = 1; $i <= 4; $i++ ) {
-						$freedom_slider_title = of_get_option( 'freedom_slider_title'.$i , '' );
-						$freedom_slider_text = of_get_option( 'freedom_slider_text'.$i , '' );
-						$freedom_slider_image = of_get_option( 'freedom_slider_image'.$i , '' );
-						$freedom_slider_button_text = of_get_option( 'freedom_slider_button_text'.$i , '' );
-						$freedom_slider_link = of_get_option( 'freedom_slider_link'.$i , '#' );
+						$freedom_slider_title = get_theme_mod( 'freedom_slider_title'.$i , '' );
+						$freedom_slider_text = get_theme_mod( 'freedom_slider_text'.$i , '' );
+						$freedom_slider_image = get_theme_mod( 'freedom_slider_image'.$i , '' );
+						$freedom_slider_button_text = get_theme_mod( 'freedom_slider_button_text'.$i , '' );
+						$freedom_slider_link = get_theme_mod( 'freedom_slider_link'.$i , '#' );
 
 						if( !empty( $freedom_header_title ) || !empty( $freedom_slider_text ) || !empty( $freedom_slider_image ) ) {
 							if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
