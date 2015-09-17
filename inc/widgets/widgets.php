@@ -192,7 +192,7 @@ class esteem_service_widget extends WP_Widget {
 							?>
 							<h3 class="service-title"><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo $page_title; ?></a></h3>
 							<?php the_excerpt(); ?>
-							<a class="read-more" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo of_get_option( 'esteem_read_more_text', __( 'Read more', 'esteem' ) ); ?></a>
+							<a class="read-more" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo __( 'Read more', 'esteem' ); ?></a>
 						</div>
 					<?php else : ?>
 						<?php $esteem_icon = get_post_meta( $post->ID, '_esteem_font_icon', true );

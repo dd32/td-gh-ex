@@ -42,6 +42,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.8 =
+* Theme Options migrated to customizer as per new WordPress theme review guidelines.
+
 = Version 1.2.7 =
 * Minor Bug Fixed
 * WordPress default gallery support added.

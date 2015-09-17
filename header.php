@@ -28,15 +28,15 @@ wp_head();
 			<div class="inner-wrap">
 				<div class="hgroup-wrap clearfix">
 					<div class="site-branding">
-						<?php if( ( of_get_option( 'esteem_show_header_logo_text', 'text_only' ) == 'both' || of_get_option( 'esteem_show_header_logo_text', 'text_only' ) == 'logo_only' ) && of_get_option( 'esteem_header_logo_image', '' ) != '' ) {
+						<?php if( ( get_theme_mod( 'esteem_show_header_logo_text', 'text_only' ) == 'both' || get_theme_mod( 'esteem_show_header_logo_text', 'text_only' ) == 'logo_only' ) && get_theme_mod( 'esteem_header_logo_image', '' ) != '' ) {
 						?>
 							<div class="header-logo-image">
 								<a rel="home" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<img alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" src="<?php echo of_get_option( 'esteem_header_logo_image', '' ); ?>">
+	<img alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" src="<?php echo get_theme_mod( 'esteem_header_logo_image', '' ); ?>">
 	</a>
 							</div><!-- .header-logo-image -->
 						<?php }
-						if( of_get_option( 'esteem_show_header_logo_text', 'text_only' ) == 'both' || of_get_option( 'esteem_show_header_logo_text', 'text_only' ) == 'text_only' ) {
+						if( get_theme_mod( 'esteem_show_header_logo_text', 'text_only' ) == 'both' || get_theme_mod( 'esteem_show_header_logo_text', 'text_only' ) == 'text_only' ) {
 						?>
 							<div class="header-text">
 								<h1 id="site-title">
@@ -74,16 +74,16 @@ wp_head();
 			<?php esteem_render_header_image(); ?>
 
 			<?php
-   			if( of_get_option( 'esteem_activate_slider', '0' ) == '1' ) {
+   			if( get_theme_mod( 'esteem_activate_slider', '0' ) == '1' ) {
 				if ( is_front_page() ) {
    					esteem_slider();
 				}
    			}
 
-			$esteem_slogan 				= of_get_option('esteem_slogan');
-			$esteem_sub_slogan		 		= of_get_option('esteem_sub_slogan');
-			$esteem_button_text 			= of_get_option('esteem_button_text');
-			$esteem_button_redirect_link 	= of_get_option('esteem_button_redirect_link');
+			$esteem_slogan 				= get_theme_mod('esteem_slogan');
+			$esteem_sub_slogan		 		= get_theme_mod('esteem_sub_slogan');
+			$esteem_button_text 			= get_theme_mod('esteem_button_text');
+			$esteem_button_redirect_link 	= get_theme_mod('esteem_button_redirect_link');
    			if ( is_front_page() && !empty( $esteem_slogan) && !empty( $esteem_sub_slogan ) ) { ?>
 	   			<section id="promo-box">
 	   				<div class="inner-wrap clearfix">
@@ -96,7 +96,7 @@ wp_head();
 
 			   				<?php if ( !empty( $esteem_sub_slogan ) ) { ?>
 			   					<div class="promo-text">
-			   						<?php echo esc_html( of_get_option('esteem_sub_slogan') ); ?>
+			   						<?php echo esc_html( get_theme_mod('esteem_sub_slogan') ); ?>
 			   					</div>
 			   				<?php  } ?>
 		   				</div><!-- .promo-wrap -->

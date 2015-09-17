@@ -98,10 +98,10 @@ function esteem_slider() { ?>
 		<div class="slider-cycle">
 			<?php
 			for( $i = 1; $i <= 4; $i++ ) {
-				$esteem_slider_title = of_get_option( 'esteem_slider_title'.$i , '' );
-				$esteem_slider_text = of_get_option( 'esteem_slider_text'.$i , '' );
-				$esteem_slider_image = of_get_option( 'esteem_slider_image'.$i , '' );
-				$esteem_slider_link = of_get_option( 'esteem_slider_link'.$i , '#' );
+				$esteem_slider_title = get_theme_mod( 'esteem_slider_title'.$i , '' );
+				$esteem_slider_text = get_theme_mod( 'esteem_slider_text'.$i , '' );
+				$esteem_slider_image = get_theme_mod( 'esteem_slider_image'.$i , '' );
+				$esteem_slider_link = get_theme_mod( 'esteem_slider_link'.$i , '#' );
 
 				if( !empty( $esteem_slider_image ) ) {
 					if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }

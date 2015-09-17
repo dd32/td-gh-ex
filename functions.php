@@ -68,6 +68,53 @@ function esteem_setup() {
 }
 endif;
 
+add_action('after_setup_theme', 'esteem_options_migrate', 12);
+if( !function_exists( 'esteem_options_migrate' ) ) :
+/**
+ * Migrate Options Framework data to Customizer
+ *
+ */
+function esteem_options_migrate() {
+
+	// Shifting Users data from Theme Option to Customizer
+	if ( get_option( 'esteem_customizer_transfer' ) )
+	   return;
+
+	// Set transfer
+	update_option( 'esteem_customizer_transfer', 1 );
+
+	$esteem_themename = get_option( 'stylesheet' );
+	$esteem_themename_preg = preg_replace("/\W/", "_", strtolower($esteem_themename) );
+	if ( false === ( $mods = get_option( $esteem_themename_preg ) ) )
+	   return;
+
+	$esteem_theme_options = array();
+	$esteem_theme_mods = array();
+
+	// When child theme is active.
+	if( is_child_theme() ) {
+		$esteem_theme_options = get_option( $esteem_themename_preg );
+		$esteem_theme_mods = get_theme_mods();
+
+		foreach($esteem_theme_options as $key => $value ){
+			$esteem_theme_mods[ $key ] = $value;
+		}
+		update_option( 'theme_mods_'. $esteem_themename, $esteem_theme_mods );
+	}
+	// For parent theme data Transfer
+	if ( false !== ( $mods = get_option( 'esteem' ) ) ) {
+		$esteem_theme_options = get_option( 'esteem' );
+		$esteem_theme_mods = get_option( 'theme_mods_esteem' );
+
+		foreach($esteem_theme_options as $key => $value ){
+			$esteem_theme_mods[ $key ] = $value;
+		}
+
+		update_option( 'theme_mods_esteem', $esteem_theme_mods );
+	}
+}
+endif;
+
 /**
  * esteem_init hook
  *
@@ -155,18 +202,34 @@ function esteem_include_files() {
 	/** Load Widgets and Widgetized Area */
 	require_once( ESTEEM_WIDGETS_DIR . '/widgets.php' );
 
+	/** Customizer */
+	require_once( ESTEEM_INCLUDES_DIR . '/customizer.php' );
+
 }
 }
 do_action( 'esteem_init' );
 
 /**
- * Adds support for a theme option.
+ * Adding Admin Menu for theme options
  */
-if ( !function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/admin/options/' );
-	require_once( ESTEEM_ADMIN_DIR . '/options/options-framework.php' );
-	// Loads options.php from child or parent theme
-	$optionsfile = locate_template( 'options.php' );
-	load_template( $optionsfile );
+add_action( 'admin_menu', 'esteem_theme_options_menu' );
+
+function esteem_theme_options_menu() {
+
+   add_theme_page( 'Theme Options', 'Theme Options', 'manage_options', 'esteem-theme-options', 'esteem_theme_options' );
+
+}
+function esteem_theme_options() {
+
+   if ( !current_user_can( 'manage_options' ) )  {
+      wp_die( __( 'You do not have sufficient permissions to access this page.', 'esteem' ) );
+   } ?>
+
+   <h1 class="esteem-theme-options"><?php _e( 'Theme Options', 'esteem' ); ?></h1>
+   <?php
+   printf( __('<p style="font-size: 16px; max-width: 800px";>As our themes are hosted on WordPress repository, we need to follow the WordPress theme guidelines and as per the new guiedlines we have migrated all our Theme Options to Customizer.</p><p style="font-size: 16px; max-width: 800px";>We too think this is a better move in the long run. All the options are unchanged, it is just that they are moved to customizer. So, please use this <a href="%1$s">link</a> to customize your site. If you have any issues then do let us know via our <a href="%2$s">Contact form</a></p>', 'esteem'),
+      esc_url(admin_url( 'customize.php' ) ),
+      esc_url('http://themegrill.com/contact/')
+   );
 }
 ?>
