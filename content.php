@@ -31,13 +31,12 @@
 		<?php endif; ?>
 		
 		<?php 
-			global $blogghiamo_theme_options;
-			$se_options = get_option( 'blogghiamo_theme_options', $blogghiamo_theme_options );
+			$showfullpost = get_theme_mod('blogghiamo_theme_options_postshow', '1');
 		?>
-		<?php if ( $se_options['showfullpost'] != '' ) : ?>
-			<?php the_content(); ?>
-		<?php else: ?>
+		<?php if ( $showfullpost == 1 ) : ?>
 			<?php the_excerpt(); ?>
+		<?php else: ?>
+			<?php the_content(); ?>
 		<?php endif; ?>
 		
 	</div><!-- .entry-content -->

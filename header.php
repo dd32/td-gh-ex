@@ -31,60 +31,70 @@
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div>
 		<?php 
-			global $blogghiamo_theme_options;
-			$se_options = get_option( 'blogghiamo_theme_options', $blogghiamo_theme_options );
+			$hideSearch = get_theme_mod('blogghiamo_theme_options_hidesearch', '1');
+			$hideRss = get_theme_mod('blogghiamo_theme_options_rss', '1');
+			$facebookURL = get_theme_mod('blogghiamo_theme_options_facebookurl', '#');
+			$twitterURL = get_theme_mod('blogghiamo_theme_options_twitterurl', '#');
+			$googleplusURL = get_theme_mod('blogghiamo_theme_options_googleplusurl', '#');
+			$linkedinURL = get_theme_mod('blogghiamo_theme_options_linkedinurl', '#');
+			$instagramURL = get_theme_mod('blogghiamo_theme_options_instagramurl', '#');
+			$youtubeURL = get_theme_mod('blogghiamo_theme_options_youtubeurl', '#');
+			$pinterestURL = get_theme_mod('blogghiamo_theme_options_pinteresturl', '#');
+			$vkURL = get_theme_mod('blogghiamo_theme_options_vkurl', '#');
+			$tumblrURL = get_theme_mod('blogghiamo_theme_options_tumblrurl', '#');
+			$emailURL = get_theme_mod('blogghiamo_theme_options_emailurl', '#');
 		?>
 
 			<div class="socialLine" role="navigation">
-				<?php if ( $se_options['facebookurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['facebookurl']); ?>" title="Facebook"><i class="fa spaceRightDouble fa-facebook"><span class="screen-reader-text">Facebook</span></i></a>
+				<?php if (!empty($facebookURL)) : ?>
+					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'blogghiamo' ); ?>"><i class="fa fa-facebook spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Facebook', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($twitterURL)) : ?>
+					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'blogghiamo' ); ?>"><i class="fa fa-twitter spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Twitter', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($googleplusURL)) : ?>
+					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'blogghiamo' ); ?>"><i class="fa fa-google-plus spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Google Plus', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($linkedinURL)) : ?>
+					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'blogghiamo' ); ?>"><i class="fa fa-linkedin spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($instagramURL)) : ?>
+					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'blogghiamo' ); ?>"><i class="fa fa-instagram spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Instagram', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($youtubeURL)) : ?>
+					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'blogghiamo' ); ?>"><i class="fa fa-youtube spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'YouTube', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($pinterestURL)) : ?>
+					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'blogghiamo' ); ?>"><i class="fa fa-pinterest spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($vkURL)) : ?>
+					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'blogghiamo' ); ?>"><i class="fa fa-vk spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'VK', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['twitterurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['twitterurl']); ?>" title="Twitter"><i class="fa spaceRightDouble fa-twitter"><span class="screen-reader-text">Twitter</span></i></a>
+				<?php if (!empty($tumblrURL)) : ?>
+					<a href="<?php echo esc_url($tumblrURL); ?>" title="<?php esc_attr_e( 'Tumblr', 'blogghiamo' ); ?>"><i class="fa fa-tumblr spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['googleplusurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['googleplusurl']); ?>" title="Google Plus"><i class="fa spaceRightDouble fa-google-plus"><span class="screen-reader-text">Google Plus</span></i></a>
+				<?php if (!empty($emailURL)) : ?>
+					<a href="mailto:<?php echo sanitize_email($emailURL); ?>" title="<?php esc_attr_e( 'Email', 'blogghiamo' ); ?>"><i class="fa fa-envelope spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['linkedinurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['linkedinurl']); ?>" title="Linkedin"><i class="fa spaceRightDouble fa-linkedin"><span class="screen-reader-text">Linkedin</span></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['instagramurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['instagramurl']); ?>" title="Instagram"><i class="fa spaceRightDouble fa-instagram"><span class="screen-reader-text">Instagram</span></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['youtubeurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['youtubeurl']); ?>" title="YouTube"><i class="fa spaceRightDouble fa-youtube"><span class="screen-reader-text">YouTube</span></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['pinteresturl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['pinteresturl']); ?>" title="Pinterest"><i class="fa spaceRightDouble fa-pinterest"><span class="screen-reader-text">Pinterest</span></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['tumblrurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['tumblrurl']); ?>" title="Tumblr"><i class="fa spaceRightDouble fa-tumblr"><span class="screen-reader-text">Tumblr</span></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['vkurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['vkurl']); ?>" title="VK"><i class="fa spaceRightDouble fa-vk"><span class="screen-reader-text">VK</span></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['emailurl'] != '' ) : ?>
-					<a href="mailto:<?php echo sanitize_email($se_options['emailurl']); ?>" title="Email"><i class="fa spaceRightDouble fa-envelope"><span class="screen-reader-text">Email</span></i></a>
-				<?php endif; ?>
-				
-				<?php if ( ! $se_options['hiderss'] ) : ?>
+				<?php if ( $hideRss == 1 ) : ?>
 					<a href="<?php bloginfo( 'rss2_url' ); ?>" title="RSS"><i class="fa spaceRightDouble fa-rss"><span class="screen-reader-text">RSS</span></i></a>
 				<?php endif; ?>
 				
-				<?php if ( ! $se_options['hidesearch'] ) : ?>
+				<?php if ( $hideSearch == 1 ) : ?>
 					<a href="#" class="top-search"><i class="fa spaceRightDouble fa-search"><span class="screen-reader-text">Search</span></i></a>
 				<?php endif; ?>
 			</div>
-			<?php if ( ! $se_options['hidesearch'] ) : ?>
+			<?php if ( $hideSearch == 1 ) : ?>
 				<div class="topSearchForm">
 						<form role="search" method="get" id="searchform" action="<?php echo esc_url(home_url( '/' ) ); ?>">
 							<label>

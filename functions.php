@@ -143,8 +143,3 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Blogghiamo Dynamic.
  */
 require get_template_directory() . '/inc/blogghiamo-dynamic.php';
-
-/**
-* Load the Theme Options Page for social media icons
-*/
-require get_template_directory() . '/inc/theme-options.php';

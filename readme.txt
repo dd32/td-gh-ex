@@ -94,3 +94,8 @@ Version 1.2.9
 * Added VK social button
 * Fixed Previous and Next Post translation bug
 * Minor bug fixes
+
+Version 1.3.3
+* Updated FontAwesome to 4.4.0 Version
+* Move the "Theme Options" in "WP Customizer"
+* Minor bug fixes

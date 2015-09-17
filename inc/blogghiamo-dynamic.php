@@ -68,8 +68,212 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 		);
 	}
 	
+	/*
+	Start Blogghiamo Options
+	=====================================================
+	*/
+	$wp_customize->add_section( 'cresta_blogghiamo_options', array(
+	     'title'    => esc_attr__( 'Blogghiamo Theme Options', 'blogghiamo' ),
+	     'priority' => 50,
+	) );
+	
+	/*
+	Social Icons
+	=====================================================
+	*/
+	$socialmedia = array();
+	
+	$socialmedia[] = array(
+	'slug'=>'facebookurl', 
+	'default' => '#',
+	'label' => __('Facebook URL', 'blogghiamo')
+	);
+	$socialmedia[] = array(
+	'slug'=>'twitterurl', 
+	'default' => '#',
+	'label' => __('Twitter URL', 'blogghiamo')
+	);
+	$socialmedia[] = array(
+	'slug'=>'googleplusurl', 
+	'default' => '#',
+	'label' => __('Google Plus URL', 'blogghiamo')
+	);
+	$socialmedia[] = array(
+	'slug'=>'linkedinurl', 
+	'default' => '#',
+	'label' => __('Linkedin URL', 'blogghiamo')
+	);
+	$socialmedia[] = array(
+	'slug'=>'instagramurl', 
+	'default' => '#',
+	'label' => __('Instagram URL', 'blogghiamo')
+	);
+	$socialmedia[] = array(
+	'slug'=>'youtubeurl', 
+	'default' => '#',
+	'label' => __('YouTube URL', 'blogghiamo')
+	);
+	$socialmedia[] = array(
+	'slug'=>'pinteresturl', 
+	'default' => '#',
+	'label' => __('Pinterest URL', 'blogghiamo')
+	);
+	$socialmedia[] = array(
+	'slug'=>'tumblrurl', 
+	'default' => '#',
+	'label' => __('Tumblr URL', 'blogghiamo')
+	);
+	$socialmedia[] = array(
+	'slug'=>'vkurl', 
+	'default' => '#',
+	'label' => __('VK URL', 'blogghiamo')
+	);
+	$socialmedia[] = array(
+	'slug'=>'emailurl', 
+	'default' => '#',
+	'label' => __('You Email', 'blogghiamo')
+	);
+	
+	foreach( $socialmedia as $blogghiamo_theme_options ) {
+		// SETTINGS
+		$wp_customize->add_setting(
+			'blogghiamo_theme_options_' . $blogghiamo_theme_options['slug'], array(
+				'default' => $blogghiamo_theme_options['default'],
+				'capability'     => 'edit_theme_options',
+				'sanitize_callback' => 'esc_url_raw',
+				'type'     => 'theme_mod',
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control(
+			$blogghiamo_theme_options['slug'], 
+			array('label' => $blogghiamo_theme_options['label'], 
+			'section'    => 'cresta_blogghiamo_options',
+			'settings' =>'blogghiamo_theme_options_' . $blogghiamo_theme_options['slug'],
+			)
+		);
+	}
+	
+	/*
+	Search Button
+	=====================================================
+	*/
+	$wp_customize->add_setting('blogghiamo_theme_options_hidesearch', array(
+        'default'    => '1',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'blogghiamo_sanitize_checkbox'
+    ) );
+	
+	$wp_customize->add_control('blogghiamo_theme_options_hidesearch', array(
+        'label'      => __( 'Show Search Button', 'blogghiamo' ),
+        'section'    => 'cresta_blogghiamo_options',
+        'settings'   => 'blogghiamo_theme_options_hidesearch',
+        'type'       => 'checkbox',
+    ) );
+	
+	/*
+	RSS Icon
+	=====================================================
+	*/
+	$wp_customize->add_setting('blogghiamo_theme_options_rss', array(
+        'default'    => '1',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'blogghiamo_sanitize_checkbox'
+    ) );
+	
+	$wp_customize->add_control('blogghiamo_theme_options_rss', array(
+        'label'      => __( 'Show RSS Icon', 'blogghiamo' ),
+        'section'    => 'cresta_blogghiamo_options',
+        'settings'   => 'blogghiamo_theme_options_rss',
+        'type'       => 'checkbox',
+    ) );
+	
+	/*
+	Full or Excerpt post
+	=====================================================
+	*/
+	$wp_customize->add_setting('blogghiamo_theme_options_postshow', array(
+        'default'    => '1',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'blogghiamo_sanitize_checkbox'
+    ) );
+	
+	$wp_customize->add_control('blogghiamo_theme_options_postshow', array(
+        'label'      => __( 'Check if you want to show excerpt, uncheck if you want to show full post', 'blogghiamo' ),
+        'section'    => 'cresta_blogghiamo_options',
+        'settings'   => 'blogghiamo_theme_options_postshow',
+        'type'       => 'checkbox',
+    ) );
+	
+	/*
+	Upgrade to PRO
+	=====================================================
+	*/
+    class Blogghiamo_Customize_Upgrade_Control extends WP_Customize_Control {
+        public function render_content() {  ?>
+        	<p class="blogghiamo-upgrade-title">
+        		<span class="customize-control-title">
+					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php _e('Get Blogghiamo PRO WP Theme for only', 'blogghiamo'); ?> 24,90&euro;</h3>
+        		</span>
+        	</p>
+			<p style="text-align:center;" class="blogghiamo-upgrade-button">
+				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/blogghiamo-pro/" class="button button-secondary">
+					<?php _e('Watch the demo', 'blogghiamo'); ?>
+				</a>
+				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/downloads/blogghiamo/" class="button button-secondary">
+					<?php _e('Get Blogghiamo PRO Theme', 'blogghiamo'); ?>
+				</a>
+			</p>
+			<ul>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Advanced Theme Options', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Logo Upload', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Font switcher', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Loading Page', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Unlimited Colors and Skin', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Beautiful Slider', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breaking News', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post views counter', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breadcrumb', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post format', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '7 Shortcodes', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '12 Exclusive Widgets', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Related Posts Box', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Information About Author Box', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Advertising System', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'And much more...', 'blogghiamo' ); ?></b></li>
+			<ul><?php
+        }
+    }
+	
+	$wp_customize->add_section( 'cresta_upgrade_pro', array(
+	     'title'    => __( 'More features? Upgrade to PRO', 'blogghiamo' ),
+	     'priority' => 999,
+	));
+	
+	$wp_customize->add_setting('blogghiamo_section_upgrade_pro', array(
+		'default' => '',
+		'type' => 'option',
+		'sanitize_callback' => 'esc_attr'
+	));
+	
+	$wp_customize->add_control(new Blogghiamo_Customize_Upgrade_Control($wp_customize, 'blogghiamo_section_upgrade_pro', array(
+		'section' => 'cresta_upgrade_pro',
+		'settings' => 'blogghiamo_section_upgrade_pro',
+	)));
+	
 }
 add_action( 'customize_register', 'blogghiamo_color_primary_register' );
+
+function blogghiamo_sanitize_checkbox( $input ) {
+	if ( $input == 1 ) {
+		return 1;
+	} else {
+		return '';
+	}
+}
 
 /**
  * Add Custom CSS to Header 
