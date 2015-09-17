@@ -5,7 +5,7 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.6.6' );
+define( 'KAIRA_THEME_VERSION' , '1.6.7' );
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
@@ -321,10 +321,10 @@ function kaira_recommended_plugin_notice() {
     if ( $pagenow == 'plugins.php' ) {
         if ( ! get_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice' ) ) {
             echo '<div class="updated"><p>';
-            printf( __('<p>Install the plugins we at <a href="http://www.kairaweb.com/" target="_blank">Kaira</a> recommended | <a href="%1$s">Hide Notice</a></p>'), '?kaira_recommended_plugin_nag_ignore=0' ); ?>
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'SiteOrigin\'s Page Builder', 'kaira' ), 'WordPress' ); ?></a><br />
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Contact Form 7', 'kaira' ), 'WordPress' ); ?></a><br />
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Breadcrumb NavXT', 'kaira' ), 'WordPress' ); ?></a>
+            printf( __( '<p>Install the plugins we at <a href="http://www.kairaweb.com/" target="_blank">Kaira</a> recommended | <a href="%1$s">Hide Notice</a></p>', 'albar' ), '?kaira_recommended_plugin_nag_ignore=0' ); ?>
+            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'SiteOrigin\'s Page Builder', 'albar' ), 'albar' ); ?></a><br />
+            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Contact Form 7', 'albar' ), 'albar' ); ?></a><br />
+            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Breadcrumb NavXT', 'albar' ), 'albar' ); ?></a>
             <?php
             echo "</p></div>";
         }
@@ -341,3 +341,16 @@ function kaira_recommended_plugin_nag_ignore() {
         add_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice', 'true', true );
     }
 }
+
+/**
+ * Exclude slider category from sidebar widgets.
+ */
+function kaira_exclude_slider_categories_widget( $args ) {
+    $exclude = ''; // ID's of the categories to exclude
+    if ( kaira_theme_option( 'kra-slider-categories', false ) ) {
+        $exclude = kaira_theme_option( 'kra-slider-categories' );
+    }
+    $args['exclude'] = $exclude;
+    return $args;
+}
+add_filter( 'widget_categories_args', 'kaira_exclude_slider_categories_widget' );

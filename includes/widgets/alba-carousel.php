@@ -62,7 +62,7 @@ $output .= '<div class="alba-carousel-wrapper columns-' . esc_attr( $instance['c
                             endif;
                             
                             //if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) :
-                    $output .= '<span class="comments-link"><i class="fa fa-comments"></i>' . get_comments_number( __( '0', 'kaira' ), __( '1', 'kaira' ), __( '%', 'kaira' ) ) . '</span>';
+                    $output .= '<span class="comments-link"><i class="fa fa-comments"></i>' . get_comments_number( __( '0', 'albar' ), __( '1', 'albar' ), __( '%', 'albar' ) ) . '</span>';
                             //endif;
                                 
         		$output .= '</div>';
@@ -110,7 +110,7 @@ $output .= '</div>';
 		<p>
 			<label for="<?php echo $this->get_field_id( 'category' ) ?>"><?php echo __( 'Category', 'albar' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'category' ) ?>" id="<?php echo $this->get_field_id( 'category' ) ?>" value="<?php echo esc_attr( $instance['category'] ) ?>" />
-            <span class="widgets-desc"><?php echo __( 'Enter the ID\'s of the <a href="' . admin_url( 'edit-tags.php?taxonomy=category' ) . '" target="_blank">post categories</a> you want to show in this carousel. Eg: "4,6,8". Or leave blank to show ALL posts.', 'albar' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Enter the ID\'s of the post categories you want to show in this carousel. Eg: "4,6,8". Or leave blank to show ALL posts.', 'albar' ) ?></span>
 		</p>
 		
 		<p>

@@ -6,6 +6,13 @@
     
     jQuery( document ).ready( function() {
         
+        // Add button to sub-menu item to show nested pages / Only used on mobile
+        $( '.navigation-main li.page_item_has_children, .navigation-main li.menu-item-has-children' ).prepend( '<span class="menu-dropdown-btn"><i class="fa fa-angle-down"></i></span>' );
+        // Mobile nav button functionality
+        $( '.menu-dropdown-btn' ).bind( 'click', function() {
+            $(this).parent().toggleClass( 'open-page-item' );
+        });
+        
 		// Adding padding to the footer widgets
 		$('.footer-widgets .widget').wrapInner('<div class="footer-widgets-pad" />');
 		// Add class to last footer widget

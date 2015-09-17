@@ -68,6 +68,13 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.6.7
+** Added/improved nested mobile navigation.
+** Remove slider category from sidebar widget.
+** Styling tweaks.
+** Fixed textdomain errors.
+** Updated language .pot file.
+
 #### 1.6.6
 ** Fixed text in header to be translatable.
 

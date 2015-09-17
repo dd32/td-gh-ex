@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Albar\n"
-"POT-Creation-Date: 2015-07-27 03:25+0200\n"
-"PO-Revision-Date: 2015-07-27 03:25+0200\n"
+"POT-Creation-Date: 2015-09-17 06:03+0200\n"
+"PO-Revision-Date: 2015-09-17 06:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
-"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr;esc_attr_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_attr;_n:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: archive.php:23
@@ -154,22 +154,22 @@ msgstr ""
 msgid "Alba Footer"
 msgstr ""
 
-#: functions.php:320
+#: functions.php:324
 #, php-format
 msgid ""
 "<p>Install the plugins we at <a href=\"http://www.kairaweb.com/\" target="
 "\"_blank\">Kaira</a> recommended | <a href=\"%1$s\">Hide Notice</a></p>"
 msgstr ""
 
-#: functions.php:321
+#: functions.php:325
 msgid "SiteOrigin's Page Builder"
 msgstr ""
 
-#: functions.php:322
+#: functions.php:326
 msgid "Contact Form 7"
 msgstr ""
 
-#: functions.php:323
+#: functions.php:327
 msgid "Breadcrumb NavXT"
 msgstr ""
 
@@ -236,10 +236,17 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: includes/headers/header-layout-one.php:43
-#: includes/inc/woocommerce-inc.php:9
+#: includes/headers/header-layout-one.php:43 includes/inc/woocommerce-inc.php:9
 msgid "View your shopping cart"
 msgstr ""
+
+#: includes/headers/header-layout-one.php:47
+#: includes/inc/woocommerce-inc.php:13
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
 
 #: includes/headers/header-layout-one.php:81
 msgid "Menu"
@@ -563,7 +570,7 @@ msgid "Save Changes"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:251
-msgid "Upgrade to premium only <b>$15</b>"
+msgid "Upgrade to premium for only <b>$16</b>"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:276
@@ -592,7 +599,7 @@ msgstr ""
 #: settings/class.kaira-theme-settings.php:348
 #: settings/class.kaira-theme-settings.php:476
 #: settings/class.kaira-theme-settings.php:624
-msgid "http://sllwi.re/p/Eu"
+msgid "http://app.sellwire.net/p/Wu"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:308
@@ -865,8 +872,8 @@ msgstr ""
 
 #: settings/tpl/upsell-page.php:11
 msgid ""
-"<a href=\"http://sllwi.re/p/Eu\" target=\"_blank\">Upgrade to Albar Premium</"
-"a> to get all the features for the Albar theme."
+"<a href=\"http://app.sellwire.net/p/Wu\" target=\"_blank\">Upgrade to Albar "
+"Premium</a> to get all the features for the Albar theme."
 msgstr ""
 
 #: settings/tpl/upsell-page.php:20

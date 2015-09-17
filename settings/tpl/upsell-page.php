@@ -8,7 +8,7 @@
 <div class="premium-upsell-wrap">
     
     <h4>
-        <?php echo __( '<a href="http://sllwi.re/p/Eu" target="_blank">Upgrade to Albar Premium</a> to get all the features for the Albar theme.', 'albar' ); ?>
+        <?php echo __( '<a href="http://app.sellwire.net/p/Wu" target="_blank">Upgrade to Albar Premium</a> to get all the features for the Albar theme.', 'albar' ); ?>
     </h4>
     
     <div class="premium-albar-wrap">

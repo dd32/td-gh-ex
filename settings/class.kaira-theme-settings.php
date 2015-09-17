@@ -113,7 +113,7 @@ class Kaira_theme_settings {
 		echo '<div class="wrap kaira-theme-options-wrap">
             	<div class="icon32" id="icon-options-general"></div>
             	<h2>' . __( 'Albar Theme Settings', 'albar' ) . '</h2>
-                <div class="kaira-recommended-plugins">' . __( 'Install <a href="'. admin_url('plugin-install.php?tab=favorites&user=kaira') . '" target="_blank">recommended plugins</a> to make your website development easier', 'albar' ) . '</div>';
+                <div class="kaira-recommended-plugins">' . __( 'Install our recommended plugins to make your website development easier', 'albar' ) . '</div>';
             		if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == true )
             			echo '<div class="updated fade"><p>' . __( 'Theme options updated.', 'albar' ) . '</p></div>';
             		
@@ -248,7 +248,7 @@ class Kaira_theme_settings {
                 
             case 'upsell':
                 echo '<a href="' . esc_url( $desc ) . '" class="kaira-upsell-btn" target="_blank">Upgrade to Albar Premium</a>';
-                echo '<br /><span class="description">' . __( 'Upgrade to premium only <b>$15</b>', 'albar' ) . '</span></label>';
+                echo '<br /><span class="description">' . __( 'Upgrade to premium for only <b>$16</b>', 'albar' ) . '</span></label>';
                 break;
 						
 			case 'text':
@@ -299,7 +299,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-one'] = array(
             'section' => 'general',
             'title'   => __( 'Header Layout', 'albar' ),
-            'desc'    => __( 'http://sllwi.re/p/Eu', 'albar' ),
+            'desc'    => __( 'http://app.sellwire.net/p/Wu', 'albar' ),
             'type'    => 'upsell',
             'std'     => ''
         );
@@ -313,7 +313,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-two'] = array(
             'section' => 'general',
             'title'   => __( 'Sticky Header', 'albar' ),
-            'desc'    => __( 'http://sllwi.re/p/Eu', 'albar' ),
+            'desc'    => __( 'http://app.sellwire.net/p/Wu', 'albar' ),
             'type'    => 'upsell',
             'std'     => ''
         );
@@ -338,14 +338,14 @@ class Kaira_theme_settings {
         $this->settings['kra-slider-categories'] = array(
             'section' => 'slider',
             'title'   => __( 'Slider Categories', 'albar' ),
-            'desc'    => __( 'Enter the ID of the <a href="'. admin_url('edit-tags.php?taxonomy=category') . '" target="_blank">post categories</a> you\'d like to display in the Homepage Slider, separated by a comma (,) -> Eg: "13, 17, 19"', 'albar' ),
+            'desc'    => __( 'Enter the ID of the post category you\'d like to display in the Home page Slider, separated by a comma (,) -> Eg: "13, 17, 19"', 'albar' ),
             'type'    => 'text',
             'std'     => ''
         );
         $this->settings['kra-heading-upsell-three'] = array(
             'section' => 'slider',
             'title'   => __( 'Slider Transitions', 'albar' ),
-            'desc'    => __( 'http://sllwi.re/p/Eu', 'albar' ),
+            'desc'    => __( 'http://app.sellwire.net/p/Wu', 'albar' ),
             'type'    => 'upsell',
             'std'     => ''
         );
@@ -473,14 +473,14 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-four'] = array(
             'section' => 'blog',
             'title'   => __( 'Blog Layout', 'albar' ),
-            'desc'    => __( 'http://sllwi.re/p/Eu', 'albar' ),
+            'desc'    => __( 'http://app.sellwire.net/p/Wu', 'albar' ),
             'type'    => 'upsell',
             'std'     => ''
         );
         $this->settings['kra-blog-excl-categories'] = array(
             'section' => 'blog',
             'title'   => __( 'Blog Categories', 'albar' ),
-            'desc'    => __( 'Enter the ID of the <a href="'. admin_url('edit-tags.php?taxonomy=category') . '" target="_blank">post categories</a> you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in that category.<br />Eg: "-13, -17, -19"', 'albar' ),
+            'desc'    => __( 'Enter the ID of the post categories you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in that category.<br />Eg: "-13, -17, -19"', 'albar' ),
             'type'    => 'text',
             'std'     => ''
         );
@@ -621,7 +621,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-five'] = array(
             'section' => 'website',
             'title'   => __( 'Footer Copy Text', 'albar' ),
-            'desc'    => __( 'http://sllwi.re/p/Eu', 'albar' ),
+            'desc'    => __( 'http://app.sellwire.net/p/Wu', 'albar' ),
             'type'    => 'upsell',
             'std'     => ''
         );
