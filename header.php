@@ -1,7 +1,7 @@
 <?php
 
 /* 	Smartia Theme's Header
-	Copyright: 2012-2014, D5 Creation, www.d5creation.com
+	Copyright: 2012-2015, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Smartia 2.0
 */
@@ -13,7 +13,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php wp_title() ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
@@ -31,17 +30,17 @@ wp_head(); ?>
   	 <div id="top-menu-container">
          
     <div id="social">
-	<a href="<?php echo of_get_option('lin_link', '#'); ?>" class="lin-link" target="_blank"></a>
- 	<a href="<?php echo of_get_option('ytube_link', '#'); ?>" class="ytube-link" target="_blank"></a>
- 	<a href="<?php echo of_get_option('blog_link', '#'); ?>" class="blog-link" target="_blank"></a>
+	<a href="<?php echo esc_url(d5smartia_get_option('lin_link', '#')); ?>" class="lin-link" target="_blank"></a>
+ 	<a href="<?php echo esc_url(d5smartia_get_option('ytube_link', '#')); ?>" class="ytube-link" target="_blank"></a>
+ 	<a href="<?php echo esc_url(d5smartia_get_option('blog_link', '#')); ?>" class="blog-link" target="_blank"></a>
 	</div>
 	</div><div class="clear"> </div>
 
 <div id="site-container">
       <div id ="header">
       <div id ="header-content">
-      <div class="floatleft bannerad"><?php echo of_get_option('adcodel', '<a href="#" target="_blank"><img src="'.get_template_directory_uri() . '/images/bannerad.jpg'. '" /></a>'); ?></div>
-      <div class="floatright bannerad"><?php echo of_get_option('adcoder', '<a href="#" target="_blank"><img src="'.get_template_directory_uri() . '/images/bannerad.jpg'. '" /></a>'); ?></div>      
+      <div class="floatleft bannerad"><img src="<?php echo esc_url(d5smartia_get_option('adcodel',get_template_directory_uri() . '/images/bannerad.jpg')); ?>" /></div>
+      <div class="floatright bannerad"><img src="<?php echo esc_url(d5smartia_get_option('adcoder',get_template_directory_uri() . '/images/bannerad.jpg')); ?>" /></div>      
       
 		<!-- Site Titele and Description Goes Here -->
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><h1 class="site-title"><?php echo bloginfo( 'name' ); ?></h1></a> 
@@ -57,7 +56,7 @@ wp_head(); ?>
       
       </div><!-- header -->
       
-<div id="slide-container"><div class="box_skitter box_skitter_large"><ul> <?php foreach (range(1, 2) as $sinumber) { ?><li><img src="<?php echo of_get_option('slide-image-' . $sinumber,  get_template_directory_uri() . '/images/slides/(' . $sinumber . ').jpg'); ?>" class="<?php echo of_get_option('slide-effect', 'fade'); ?>" /></a><div class="label_text"><p><?php echo '<span>' . of_get_option('slide-image-' . $sinumber . '-title', 'Slide Image ' . $sinumber .' Title | Welcome to D5 Smartia Theme, Visit D5 Creation for Details'). '</span><br />'; echo of_get_option('slide-image-' . $sinumber . '-description', 'You can use D5 Smartia for Black and White looking Smart Blogging, Personal or Corporate Websites.  This is a Sample Description and you can change these from Samrtia Options.'); ?></p></div></li>
+<div id="slide-container"><div class="box_skitter box_skitter_large"><ul> <?php foreach (range(1, 2) as $sinumber) { ?><li><img src="<?php echo esc_url(d5smartia_get_option('slide-image-' . $sinumber,  get_template_directory_uri() . '/images/slides/(' . $sinumber . ').jpg')); ?>" class="<?php echo d5smartia_get_option('slide-effect', 'fade'); ?>" /></a><div class="label_text"><p><?php echo '<span>' . esc_textarea(d5smartia_get_option('slide-image-' . $sinumber . '-title', 'Slide Image ' . $sinumber .' Title | Welcome to D5 Smartia Theme, Visit D5 Creation for Details')). '</span><br />'; echo esc_textarea(d5smartia_get_option('slide-image-' . $sinumber . '-description', 'You can use D5 Smartia for Black and White looking Smart Blogging, Personal or Corporate Websites.  This is a Sample Description and you can change these from Samrtia Options')); ?></p></div></li>
 <?php } ?></ul></div > <!-- slide --></div> <!-- slide-container -->
 
 <div id="container">
