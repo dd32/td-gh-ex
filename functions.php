@@ -50,9 +50,6 @@ function attitude_constants() {
 	define( 'ATTITUDE_IMAGES_URL', ATTITUDE_PARENT_URL . '/images' );
 	define( 'ATTITUDE_LIBRARY_URL', ATTITUDE_PARENT_URL . '/library' );
 	define( 'ATTITUDE_ADMIN_URL', ATTITUDE_LIBRARY_URL . '/admin' );
-	define( 'ATTITUDE_ADMIN_IMAGES_URL', ATTITUDE_ADMIN_URL . '/images' );
-	define( 'ATTITUDE_ADMIN_JS_URL', ATTITUDE_ADMIN_URL . '/js' );
-	define( 'ATTITUDE_ADMIN_CSS_URL', ATTITUDE_ADMIN_URL . '/css' );
 	define( 'ATTITUDE_JS_URL', ATTITUDE_LIBRARY_URL . '/js' );
 	define( 'ATTITUDE_CSS_URL', ATTITUDE_LIBRARY_URL . '/css' );
 	define( 'ATTITUDE_FUNCTIONS_URL', ATTITUDE_LIBRARY_URL . '/functions' );
@@ -82,9 +79,9 @@ function attitude_load_files() {
 	require_once( ATTITUDE_FUNCTIONS_DIR . '/i18n.php' );
 	require_once( ATTITUDE_FUNCTIONS_DIR . '/custom-header.php' );
 	require_once( ATTITUDE_FUNCTIONS_DIR . '/functions.php' );
+	require_once( ATTITUDE_FUNCTIONS_DIR . '/customizer.php' );
 
 	require_once( ATTITUDE_ADMIN_DIR . '/attitude-themeoptions-defaults.php' );
-	require_once( ATTITUDE_ADMIN_DIR . '/theme-options.php' );
 	require_once( ATTITUDE_ADMIN_DIR . '/attitude-metaboxes.php' );
 	require_once( ATTITUDE_ADMIN_DIR . '/attitude-show-post-id.php' );
 

@@ -1,4 +1,7 @@
 == Change Log ==
+= 3.0 =
+* Update - Theme Option settings moved to Customizer as of WordPress guidelines
+
 = 2.0.2 =
 * Fix - Missing text-domain added
 * Fix - Sticky post display issue fixed and CSS cleaned

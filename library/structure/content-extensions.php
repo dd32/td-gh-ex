@@ -17,8 +17,8 @@ add_action( 'attitude_main_container', 'attitude_content', 10 );
  */
 function attitude_content() {
 	global $post;	
-	global $attitude_theme_options_settings;
-	$options = $attitude_theme_options_settings;
+	global $options, $array_of_default_settings;
+	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ), attitude_get_option_defaults());
 	if( $post ) {
 		$layout = get_post_meta( $post->ID, 'attitude_sidebarlayout', true );
 	}

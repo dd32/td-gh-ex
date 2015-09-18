@@ -10,8 +10,9 @@
  * @since Attitude 1.0
  */
 
-global $attitude_theme_options_defaults;
-$attitude_theme_options_defaults = array(
+function attitude_get_option_defaults() {
+	global $array_of_default_settings;
+	$array_of_default_settings = array(
 	'hide_header_searchform'			=> '0',
  	'disable_slogan' 						=> '0',
  	'home_slogan1'							=> '',
@@ -54,12 +55,7 @@ $attitude_theme_options_defaults = array(
 
 
  );
-global $attitude_theme_options_settings;
-$attitude_theme_options_settings = attitude_theme_options_set_defaults( $attitude_theme_options_defaults );
-
-function attitude_theme_options_set_defaults( $attitude_theme_options_defaults) {
-	$attitude_theme_options_settings = array_merge( $attitude_theme_options_defaults, (array) get_option( 'attitude_theme_options', array() ) );
-	return apply_filters( 'attitude_theme_options_settings', $attitude_theme_options_settings );
+return apply_filters( 'attitude_get_option_defaults', $array_of_default_settings);
 }
 
 ?>

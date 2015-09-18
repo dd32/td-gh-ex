@@ -44,26 +44,20 @@ add_action( 'attitude_links', 'attitude_favicon', 15 );
 // Load Favicon in Admin Section
 add_action( 'admin_head', 'attitude_favicon' );
 /**
- * Get the favicon Image from theme options
+ * Get the favicon Image from theme options via Customize
  * display favicon
- *
- * @uses set_transient and delete_transient 
  */
 function attitude_favicon() {	
 	
 	$attitude_favicon = '';
-	if( ( !$attitude_favicon = get_transient( 'attitude_favicon' ) ) ) {
-		global $attitude_theme_options_settings;
-      $options = $attitude_theme_options_settings;
+	global $options, $array_of_default_settings;
+	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ), attitude_get_option_defaults());
 
-		if ( "0" == $options[ 'disable_favicon' ] ) {
+		if ( 1 != $options[ 'disable_favicon' ] ) {
 			if ( !empty( $options[ 'favicon' ] ) ) {
 				$attitude_favicon .= '<link rel="shortcut icon" href="'.esc_url( $options[ 'favicon' ] ).'" type="image/x-icon" />';
 			}
 		}
-		
-	set_transient( 'attitude_favicon', $attitude_favicon, 86940 );	
-	}	
 	echo $attitude_favicon ;	
 }
 
@@ -72,26 +66,20 @@ function attitude_favicon() {
 // Load webpageicon in Header Section
 add_action( 'attitude_links', 'attitude_webpageicon', 20 );
 /**
- * Get the webpageicon Image from theme options
+ * Get the webpageicon Image from theme options via Customize
  * display webpageicon
- *
- * @uses set_transient and delete_transient 
  */
 function attitude_webpageicon() {	
 	
 	$attitude_webpageicon = '';
-	if( ( !$attitude_webpageicon = get_transient( 'attitude_webpageicon' ) ) ) {
-		global $attitude_theme_options_settings;
-      $options = $attitude_theme_options_settings;
+	global $options, $array_of_default_settings;
+	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ),attitude_get_option_defaults());
 
-		if ( "0" == $options[ 'disable_webpageicon' ] ) {
+		if ( 1 != $options[ 'disable_webpageicon' ] ) {
 			if ( !empty( $options[ 'webpageicon' ] ) ) {
 				$attitude_webpageicon .= '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'webpageicon' ] ).'" />';
 			}
 		}
-		
-	set_transient( 'attitude_webpageicon', $attitude_webpageicon, 86940 );	
-	}	
 	echo $attitude_webpageicon ;	
 }
 
@@ -106,8 +94,8 @@ add_action( 'attitude_header', 'attitude_headerdetails', 10 );
 function attitude_headerdetails() {	
 ?>
 	<?php
-		global $attitude_theme_options_settings;
-   	$options = $attitude_theme_options_settings;
+	global $options, $array_of_default_settings;
+	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ), attitude_get_option_defaults());
 
    	$elements = array();
 		$elements = array( 	$options[ 'social_facebook' ], 
@@ -221,7 +209,9 @@ function attitude_headerdetails() {
 					</nav><!-- #access -->';
 		}
 	?> 		
-		<?php	
+		<?php
+		global $options, $array_of_default_settings;
+		$options = wp_parse_args(  get_option( 'attitude_theme_options', array() ),  attitude_get_option_defaults());	
 		if( 'above-slider' == $options[ 'slogan_position' ] &&  ( is_home() || is_front_page() ) ) 
 			if( function_exists( 'attitude_home_slogan' ) )
 				attitude_home_slogan(); 
@@ -265,11 +255,11 @@ if ( ! function_exists( 'attitude_socialnetworks' ) ) :
  */
 function attitude_socialnetworks( $flag ) {
 	
-	global $attitude_theme_options_settings;
-   $options = $attitude_theme_options_settings;
+	global $options, $array_of_default_settings;
+	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ), attitude_get_option_defaults());
 
 	$attitude_socialnetworks = '';
-	if ( ( !$attitude_socialnetworks = get_transient( 'attitude_socialnetworks' ) ) && ( 1 == $flag ) )  {
+	if ( ( !$attitude_socialnetworks) && ( 1 == $flag ) )  {
 		
 		$attitude_socialnetworks .='
 			<div class="social-profiles clearfix">
@@ -313,9 +303,7 @@ function attitude_socialnetworks( $flag ) {
 		
 				$attitude_socialnetworks .='
 			</ul>
-			</div><!-- .social-profiles -->';
-		
-		set_transient( 'attitude_socialnetworks', $attitude_socialnetworks, 86940 );	 
+			</div><!-- .social-profiles -->'; 
 	}
 	echo $attitude_socialnetworks;
 }
@@ -330,11 +318,11 @@ if ( ! function_exists( 'attitude_home_slogan' ) ) :
  * Function that enable/disable the home slogan1 and home slogan2.
  */
 function attitude_home_slogan() {	
-	global $attitude_theme_options_settings;
-   $options = $attitude_theme_options_settings;
+	global $options, $array_of_default_settings;
+	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ), attitude_get_option_defaults());
 	
 	$attitude_home_slogan = '';
-	if( ( !$attitude_home_slogan = get_transient( 'attitude_home_slogan' ) ) && ( !empty( $options[ 'home_slogan1' ] ) || !empty( $options[ 'home_slogan2' ] ) ) ) {
+	if(( !empty( $options[ 'home_slogan1' ] ) || !empty( $options[ 'home_slogan2' ] ) ) ) {
       
 		if ( "0" == $options[ 'disable_slogan' ] ) {
 			$attitude_home_slogan .= '<section class="slogan-wrap clearfix"><div class="container"><div class="slogan">';
@@ -350,8 +338,6 @@ function attitude_home_slogan() {
 			}
 			$attitude_home_slogan .= '</div><!-- .container --></section><!-- .slogan-wrap -->';
 		}
-		
-	set_transient( 'attitude_home_slogan', $attitude_home_slogan, 86940 );	
 	}	
 	echo $attitude_home_slogan;
 }
@@ -362,17 +348,14 @@ endif;
 if ( ! function_exists( 'attitude_featured_post_slider' ) ) :
 /**
  * display featured post slider
- *
- * @uses set_transient and delete_transient
  */
 function attitude_featured_post_slider() {	
 	global $post;
-		
-	global $attitude_theme_options_settings;
-   $options = $attitude_theme_options_settings;
+	global $options, $array_of_default_settings;
+	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ), attitude_get_option_defaults());
 	
 	$attitude_featured_post_slider = '';
-	if( ( !$attitude_featured_post_slider = get_transient( 'attitude_featured_post_slider' ) ) && !empty( $options[ 'featured_post_slider' ] ) ) {
+	if( !empty( $options[ 'featured_post_slider' ] ) ) {
 
 		if( 'wide-layout' == $options[ 'site_layout' ] ) {
 			$slider_size = 'slider-wide';
@@ -420,8 +403,6 @@ function attitude_featured_post_slider() {
 		$attitude_featured_post_slider .= '</div>				
 		<nav id="controllers" class="clearfix">
 		</nav><!-- #controllers --></section><!-- .featured-slider -->';
-			
-	set_transient( 'attitude_featured_post_slider', $attitude_featured_post_slider, 86940 );
 	}
 	echo $attitude_featured_post_slider;	
 }

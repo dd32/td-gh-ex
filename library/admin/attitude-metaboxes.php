@@ -35,38 +35,38 @@ $sidebar_layout = array(
 							'default-sidebar' 		=> array(
 															'id'			=> 'attitude_sidebarlayout',
 															'value' 		=> 'default',
-															'label' 		=> __( 'Default Layout Set in', 'attitude' ).' '.'<a href="'.esc_url( home_url() ).'/wp-admin/themes.php?page=theme_options" target="_blank">'.__( 'Theme Settings', 'attitude' ).'</a>',
+															'label' 		=> __( 'Default Layout Set in', 'attitude' ).' '.'<a href="'.wp_customize_url() .'?autofocus[section]=attitude_default_layout" target="_blank">'.__( 'Customizer', 'attitude' ).'</a>',
 															'thumbnail' => ' '
 															),
 							'no-sidebar' 				=> array(
 															'id'			=> 'attitude_sidebarlayout',
 															'value' 		=> 'no-sidebar',
 															'label' 		=> __( 'No sidebar', 'attitude' ),
-															'thumbnail' => ATTITUDE_ADMIN_IMAGES_URL . '/no-sidebar.png'
+															'thumbnail' => ''
 															),
 							'no-sidebar-full-width' => array(
 															'id'			=> 'attitude_sidebarlayout',
 															'value' 		=> 'no-sidebar-full-width',
 															'label' 		=> __( 'No sidebar, Full Width', 'attitude' ),
-															'thumbnail' => ATTITUDE_ADMIN_IMAGES_URL . '/no-sidebar-fullwidth.png'
+															'thumbnail' => ''
 															),
 							'no-sidebar-one-column' => array(
 															'id'			=> 'attitude_sidebarlayout',
 															'value' 		=> 'no-sidebar-one-column',
 															'label' 		=> __( 'No Sidebar, One Column', 'attitude' ),
-															'thumbnail' => ATTITUDE_ADMIN_IMAGES_URL . '/one-column.png'
+															'thumbnail' => ''
 															),		
 							'left-sidebar' => array(
 															'id'			=> 'attitude_sidebarlayout',
 															'value' 		=> 'left-sidebar',
 															'label' 		=> __( 'Left sidebar', 'attitude' ),
-															'thumbnail' => ATTITUDE_ADMIN_IMAGES_URL . '/left-sidebar.png'
+															'thumbnail' => ''
 															),
 							'right-sidebar' => array(
 															'id' 			=> 'attitude_sidebarlayout',
 															'value' 		=> 'right-sidebar',
 															'label' 		=> __( 'Right sidebar', 'attitude' ),
-															'thumbnail' => ATTITUDE_ADMIN_IMAGES_URL . '/right-sidebar.png'
+															'thumbnail' => ''
 															)
 						);
 	
@@ -97,7 +97,6 @@ function attitude_sidebar_layout() {
 					<?php else: ?>
 						<td>
 							<label class="description">
-							<span><img src="<?php echo esc_url( $field['thumbnail'] ); ?>" width="136" height="122" alt="" /></span></br>
 							<input type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $meta ); ?>/>&nbsp;&nbsp;<?php echo $field['label']; ?>
 							</label>
 						</td>

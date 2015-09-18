@@ -1,5 +1,5 @@
 === Attitude ===
-Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Theme is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Available Translation: Traditional Chinese (Taiwan), Spanish, Norwegian (Nynorsk), German, Russian, Dutch, Italian and Danish. Get free support on http://themehorse.com/support-forum/
+Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Theme is easily customizable with numerous theme options via Customize. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Available Translation: Traditional Chinese (Taiwan), Spanish, Norwegian (Nynorsk), German, Russian, Dutch, Italian and Danish. Get free support on http://themehorse.com/support-forum/
 
 == Installation ==
 
@@ -19,15 +19,8 @@ are licensed under GNU General Public License version 2, see file license.txt.
 The exceptions to this license are as follows:
 * The script html5.js is licensed under MIT
 * The script jquery.cycle.all.js is dual licensed under GPL & MIT
-* The script jquery.fancybox-1.3.4.js is dual licensed under GPL & MIT
-* The script jquery.cookie.min.js is dual licensed under GPL & MIT
+* The script attitude_customizer.js is themehorse own creation which is licensed under GPL & MIT
 * The social media icons are the theme's designer personal creations and are free for personal and commercial use.
-
-Some of the code is derivatived from below themes which is under GNU General Public License v2 or later:
-http://wordpress.org/themes/news
-http://wordpress.org/themes/graphene
-http://wordpress.org/themes/responsive
-http://wordpress.org/themes/simple-catch
 
 == Theme Notes ==
 About the theme in the following link.
