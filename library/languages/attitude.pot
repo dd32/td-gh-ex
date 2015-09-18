@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Attitude\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-18 16:14+0530\n"
-"PO-Revision-Date: 2015-09-18 16:14+0530\n"
+"POT-Creation-Date: 2015-09-18 17:18+0530\n"
+"PO-Revision-Date: 2015-09-18 17:18+0530\n"
 "Last-Translator: \n"
 "Language-Team: Team Horse <support@themehorse.com>\n"
 "MIME-Version: 1.0\n"
@@ -155,7 +155,7 @@ msgid "Featured Post/ Page Slider"
 msgstr ""
 
 #: library/functions/customizer.php:88
-msgid "What's new on Attitude Pro?"
+msgid "What is new on Attitude Pro?"
 msgstr ""
 
 #: library/functions/customizer.php:101

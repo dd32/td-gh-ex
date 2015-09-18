@@ -85,7 +85,7 @@ function attitude_customize_register($wp_customize){
 	$options = wp_parse_args(  get_option( 'attitude_theme_options', array() ), attitude_get_option_defaults());
 /********************Attitude Upgrade ******************************************/
 	$wp_customize->add_section('attitude_upgrade_to_pro', array(
-		'title'					=> __('What'."'".'s new on Attitude Pro?', 'attitude'),
+		'title'					=> __('What is new on Attitude Pro?', 'attitude'),
 		'priority'				=> 0.5,
 	));
 	$wp_customize->add_setting( 'attitude_theme_settings[attitude_upgrade_to_pro]', array(

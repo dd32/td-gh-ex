@@ -1,4 +1,7 @@
 == Change Log ==
+= 3.0.1 =
+* Fix - Undefined offset issue fixed
+
 = 3.0 =
 * Update - Theme Option settings moved to Customizer as of WordPress guidelines
 
