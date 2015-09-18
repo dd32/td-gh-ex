@@ -1,7 +1,7 @@
 ----------------------------------
 Smartia Theme
 ----------------------------------
-Version: 	3.0
+Version: 	3.01
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -14,7 +14,10 @@ License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same GPL or Compatible License.
 
 Images and The Scripts License Description URLs:
-bannerad.jpg - https://pixabay.com/en/girl-eyes-makeup-sexy-glamor-237871/
+themefeatures.png - FontAwesome Icons' Image, http://fortawesome.github.io/Font-Awesome/
+innovation.png - https://pixabay.com/en/woman-model-ipad-happiness-joy-692799/
+premium.png, newspress.png, simplify.png - https://pixabay.com/en/model-girl-beauty-bella-fashion-456964/
+
 (1).jpg - https://pixabay.com/en/water-creative-modern-art-263054/
 (2).jpg - https://pixabay.com/en/couple-kissing-hugging-love-man-789824/
 
