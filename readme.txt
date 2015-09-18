@@ -58,7 +58,11 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-@Version 1.2.2
+@version 1.3
+1. Added Customizer.
+2. Add Screen Reader CSS.
+3. Update Font-awesome Version.
+@version 1.2.2
 1. Add Home page template.
 @Version 1.2.1
 1. Add Theme URI.
