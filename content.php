@@ -14,7 +14,7 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
+	<?php the_post_thumbnail();?>
 	<div class="entry-content">
 			<?php
 			/* translators: %s: Name of current post */

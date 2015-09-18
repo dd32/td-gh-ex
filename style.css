@@ -4,7 +4,7 @@ Theme URI:
 Author: Masum Billah
 Author URI: http://getmasum.net/
 Description: Responsive WordPress Theme.This theme made with Responsive Framework Skeleton v2.0.4. Used some css3 effects.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
@@ -38,13 +38,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 12.0 Media
 	12.1 Captions
 	12.2 Galleries
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-1.0 Skeleton 
---------------------------------------------------------------*/
-@import url("css/normalize.css");
-@import url("css/skeleton.css");
-@import url("css/hover.css");
 
 /*--------------------------------------------------------------
 1.0 Normalize
@@ -292,7 +285,7 @@ h6
 {
 	clear: both;
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 p {
@@ -499,6 +492,15 @@ textarea {
 	padding-left: 3px;
 	width: 100%;
 }
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="submit"] ,
+textarea{
+	font-size: 14px;
+}
 
 /*--------------------------------------------------------------
 5.0 Table
@@ -572,9 +574,9 @@ a:active {
 }
 
 .container{
-	box-shadow: 0 0 16px #524963;
-	-moz-box-shadow: 0 0 16px #524963;
-	-webkit-box-shadow: 0 0 16px #524963;
+	box-shadow: 0 0 3px #ccc;
+	-moz-box-shadow: 0 0 3px #ccc;
+	-webkit-box-shadow: 0 0 3px #ccc;
 }
 /*--------------------------------------------------------------
 5.2 Header
@@ -693,13 +695,13 @@ a:active {
 	margin:3px;
 	margin-top: 0;
 	margin-bottom: 0px;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #f7f7f7;
 	
 }
 .main-navigation  li ul li:last-child{border: none;}
 .main-navigation li ul{
 	background:#fff;
-	border: 1px  solid #ddd;
+	border: 1px  solid #f7f7f7;
 	padding-top: 3px;
 	padding-bottom: 3px;
 }
@@ -798,11 +800,11 @@ a:active {
 #content, .site-content{
 	background: #fff;
 	padding: 20px 15px;
-	border-top: 8px solid #dddddd;
-	border-bottom: 8px solid #dddddd;
+	border-top: 8px solid #f7f7f7;
+	border-bottom: 8px solid #f7f7f7;
 }
 article.single-post{
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #ccc;
 	padding-bottom:2em;
 	margin-bottom: 2em;
 }
@@ -836,6 +838,9 @@ h1.entry-title a:hover{
 	transition: all 0.8s ease 0s;
 	
 }
+.entry-meta {
+  margin-bottom: 0.5em;
+}
 .entry-meta,.entry-footer{font-size: 1.5em;}
 .entry-meta .entry-date{margin-top: -3px; display: block;}
 .entry-meta a{text-decoration: none; color: #404040;}
@@ -845,7 +850,7 @@ h1.entry-title a:hover{
 #primary a:hover{color: #d10046;}
 
 .page-title{
-	border: 1px solid #ddd;
+	border: 1px solid #f7f7f7;
 	font-size: 1.8em;
 	margin-bottom: 1em;
 	padding: 1em;
@@ -1069,8 +1074,7 @@ h1.entry-title a:hover{
 	padding-top: 0;
 }
 .single-widget{
-	background: #dddddd none repeat scroll 0 0;
-	border: 1px solid #999;
+	background: #f7f7f7 none repeat scroll 0 0;
 	margin-bottom: 3em;
 	padding: 1em;
 }
@@ -1087,7 +1091,7 @@ h1.entry-title a:hover{
 10.3 Comments
 --------------------------------------------------------------*/
 #comments{
-	border: 2px solid #ddd;
+	border: 2px solid #f7f7f7;
 	margin-top: 3em;
 	padding: 3em 3em 2em;
 }
@@ -1126,7 +1130,7 @@ h1.entry-title a:hover{
 	
 }
 .comment-meta{
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #f7f7f7;
 	padding-bottom: .5em;
 	margin-bottom: .5em;
 	
@@ -1172,28 +1176,7 @@ h1.entry-title a:hover{
 }
 #form-allowed-tags{display: none;}
 
-/*--------------------------------------------------------------
-11.0 Infinite scroll
---------------------------------------------------------------*/
-#scrollUp {
-	bottom: 20px;
-	right: 20px;
-	background: url("img/arrow13.png") no-repeat;
-	width: 41px;
-	height: 41px;
-	text-indent: -99999px;
-	 -webkit-transform: none;
-	transform: none;
-	opacity: .5;
-	transition: all 0.8s ease 0s;
-}
-#scrollUp:hover{
-	opacity: 1;
-}
 
-#scrollUp-active{
-	display: none;
-}
 /*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/

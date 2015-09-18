@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic" />
 
 <!--[if lt IE 9]>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
@@ -30,8 +31,8 @@
 		<div class="row">
 			<header id="masthead" class="site-header twelve columns" role="banner">
 				<div class="site-branding">
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="hvr-pulse"><?php bloginfo( 'name' ); ?></a></h1>
-					<p class="site-description hvr-grow-rotate"><?php bloginfo( 'description' ); ?></p>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<p class="site-description"><?php bloginfo( 'description'); ?></p>
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation hvr-bounce-to-bottom hvr-bounce-to-right" role="navigation">
