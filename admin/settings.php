@@ -716,7 +716,7 @@ function cryout_setting_himage_fn() {
 	global $mantra_options;
 	$checkedClass = ($mantra_options['mantra_hcenter']=='1') ? ' checkedClass' : '';
 	$checkedClass2 = ($mantra_options['mantra_hratio']=='1') ? ' checkedClass' : '';
-	echo "<a href=\"?page=custom-header\" class=\"button\" target=\"_blank\">".__('Define header image')."</a>";
+	echo "<a href=\"?page=custom-header\" class=\"button\" target=\"_blank\">".__('Define header image','mantra')."</a>";
 	echo "<div><small>".__("The header image should not be used to display logos.<br> Enable ratio preservation to force the header image aspect ratio. Keep in mind that short images will become very small on mobile devices.","mantra")."</small></div>";
 	echo "<br><label id='hcenter' for='mantra_hcenter' class='socialsdisplay $checkedClass'><input ";
 		 checked($mantra_options['mantra_hcenter'],'1');
@@ -1173,7 +1173,7 @@ foreach($items as $id=>$item) {
 ////////////////////////////////
 
 function cryout_setting_sitebackground_fn() {
-     echo "<a href=\"?page=custom-background\" class=\"button\" target=\"_blank\">".__('Define background image')."</a>";
+     echo "<a href=\"?page=custom-background\" class=\"button\" target=\"_blank\">".__('Define background image','mantra')."</a>";
 } // cryout_setting_sitebackground_fn()
 
 
@@ -1831,9 +1831,9 @@ foreach($items as $id=>$item) {
 	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("By default WordPress excerpts remove all HTML tags (".htmlspecialchars('<pre>, <a>, <b>')." and all others) and only clean text is left in the excerpt.
+	echo "<div><small>".sprintf(__("By default WordPress excerpts remove all HTML tags (%s and all others) and only clean text is left in the excerpt.
 Enabling this option allows HTML tags to remain in excerpts so all your default formating will be kept.<br /> <b>Just a warning: </b>If HTML tags are enabled, you have to make sure
-they are not left open. So if within your post you have an opened HTML tag but the except ends before that tag closes, the rest of the site will be contained in that HTML tag. -- Leave 'Disable' if unsure -- ","mantra")."</small></div>";
+they are not left open. So if within your post you have an opened HTML tag but the except ends before that tag closes, the rest of the site will be contained in that HTML tag. -- Leave 'Disable' if unsure -- </small></div>","mantra"),htmlspecialchars('<pre>, <a>, <b>') );
 }
 
 

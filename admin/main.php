@@ -298,14 +298,23 @@ The Parabola Settings page cannot function without jQuery. </em></div>
 		<div class="inside"><?php echo "<p>Here at Cryout Creations (the developers of yours truly Mantra Theme), we spend night after night improving the Mantra Theme. We fix a lot of bugs (that we previously created); we add more and more customization options while also trying to keep things as simple as possible; then... we might play a game or two but rest assured that we return to read and (in most cases) reply to your late night emails and comments, take notes and draw dashboards of things to implement in future versions.</p>
 			<p>So you might ask yourselves: <i>How do they do it? How can they keep so fresh after all that hard labor for that darned theme? </i> Well folks, it's simple. We drink coffee. Industrial quantities of hot boiling coffee. We love it! So if you want to help with the further development of the Mantra Theme...</p>"; ?>
 			<div style="display:block;float:none;margin:0 auto;text-align:center;">
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-">
-<input type="image" src="<?php echo get_template_directory_uri() . '/admin/images/coffee.png' ?>" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
 
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+				<input type="hidden" name="cmd" value="_donations">
+				<input type="hidden" name="business" value="KYL26KAN4PJC8">
+				<input type="hidden" name="item_name" value="Cryout Creations / Mantra Theme donation">
+				<input type="hidden" name="currency_code" value="EUR">
+				<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHosted">
+				<input type="image" src="<?php echo get_template_directory_uri() . '/admin/images/coffee.png' ?>" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+
+			</div>
+			<p>Or socially smother, caress and embrace us:</p>
+			<div style="display:table;float:none;margin:0 auto;">
+				<div id="fb-root"></div><div class="fb-like" data-href="https://www.facebook.com/CryoutCreations" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+				<a href="https://twitter.com/cryoutcreations" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @cryoutcreations</a>
+				<script src="https://apis.google.com/js/platform.js" async defer></script> <div class="g-plusone" data-href="https://plus.google.com/+CryoutcreationsEuCR2"  data-size="medium" data-annotation="none"></div>
 			</div>
 		</div><!-- inside -->
 	</div><!-- donate -->
@@ -349,9 +358,8 @@ The Parabola Settings page cannot function without jQuery. </em></div>
                 	foreach( $news_items as $news_item ) : ?>
                     	<li>
                         	<a class="news-header" href='<?php echo esc_url( $news_item->get_permalink() ); ?>'><?php echo esc_html( $news_item->get_title() ); ?></a><br />
-                   <span class="news-item-date"><?php _e('Posted on','mantra');echo $news_item->get_date(' j F Y, H:i'); ?></span><br />
-                            <?php echo mantra_truncate_words(strip_tags( $news_item->get_description() ),40,'...') ; ?>
-					<br><a class="news-read" href='<?php echo esc_url( $news_item->get_permalink() ); ?>'>Read more &raquo;</a>
+                   <span class="news-item-date"><?php _e('Posted on','mantra');echo $news_item->get_date(' j F Y'); ?></span><br />
+                           <a class="news-read" href='<?php echo esc_url( $news_item->get_permalink() ); ?>'>Read more &raquo;</a>
                         </li>
                     <?php endforeach; endif; ?>
                 </ul>

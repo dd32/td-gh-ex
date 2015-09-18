@@ -621,3 +621,12 @@ border-color: #BCE8F1; border-style: solid; border-radius: 0; border-width: 0 0 
 padding:5px 10px;
 }
 
+/* FB button fix */
+
+.fb-like.fb_iframe_widget > span {
+	vertical-align: baseline !important;
+}
+.twitter-follow-button.twitter-follow-button {
+	margin:0 8px;
+}
+

@@ -11,7 +11,6 @@
  ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<title><?php wp_title( '', true, 'right' ); ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
 <?php  	cryout_seo_hook(); ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />

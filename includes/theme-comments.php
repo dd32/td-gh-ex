@@ -82,7 +82,7 @@ if ( ! function_exists( 'mantra_comments_on' ) ) :
  * Number of comments on loop post if comments are enabled.
  */
 function mantra_comments_on() {
-printf ( comments_popup_link( __( 'Leave a comment', 'mantra' ), __( '<b>1</b> Comment', 'mantra' ), __( '<b>%</b> Comments', 'mantra' ) ));
+	printf ( comments_popup_link( __( 'Leave a comment', 'mantra' ), __( '<b>1</b> Comment', 'mantra' ), __( '<b>%</b> Comments', 'mantra' ) ));
 }
 endif;
 
