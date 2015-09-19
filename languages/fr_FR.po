@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2015-09-10 10:11+0200\n"
-"PO-Revision-Date: 2015-09-10 10:11+0200\n"
+"POT-Creation-Date: 2015-09-19 12:42+0200\n"
+"PO-Revision-Date: 2015-09-19 12:43+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 search.php:39
+#: 404.php:9 archive.php:56 index.php:47 search.php:39
 msgid "Nothing Found"
 msgstr "Recherche infructueuse"
 
-#: 404.php:10 archive.php:56 index.php:47 search.php:40
+#: 404.php:10 archive.php:57 index.php:48 search.php:40
 msgid "Sorry, no posts matched your criteria."
 msgstr "Désolé, il n'y a pas de résultats correspondant aux critères demandés."
 
@@ -52,8 +52,7 @@ msgstr "Archives par auteur"
 msgid "Tag Archives"
 msgstr "Achives du mot-clé"
 
-#: archive.php:28 index.php:19 page-knowledge-four.php:27
-#: page-knowledge-three.php:27 search.php:17
+#: archive.php:28 index.php:19 search.php:17
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalien vers %s"
@@ -99,15 +98,15 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 commentaire sur %2$s"
 msgstr[1] "%1$s commentaires sur %2$s"
 
-#: comments.php:33
+#: comments.php:29
 msgid "&laquo; Older Comments"
 msgstr "&laquo; Commentaires précédents"
 
-#: comments.php:34
+#: comments.php:30
 msgid "Newer Comments &raquo;"
 msgstr "Commentaires plus récents &raquo;"
 
-#: comments.php:40
+#: comments.php:35
 msgid "Comments are closed"
 msgstr "Les commentaires sont fermés"
 
@@ -207,12 +206,12 @@ msgid ""
 "friendly WordPress theme for a 3 or 4 column Knowledge Base, Bulletin Board, "
 "FAQ, Wiki or link Portal. It uses the default WP categories and posts. "
 "Please check readme file how to set up such a website. Default theme "
-"language is English but Dutch, German, Spanish and French are supported too. "
-"Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-"
-"image, custom background, display logo or blogname and description, full "
-"width page-template and dropdown navigation are included. Besides this no "
-"theme settingspage, no fancy options, no slideshow, this one only has the "
-"basic options. Enjoy."
+"language is English but Dutch, German, Spanish, French and Swedish are "
+"supported too. Primary sidebar, homepage sidebar, 3 widget-area's in footer, "
+"custom header-image, custom background, display logo or blogname and "
+"description, full width page-template and dropdown navigation are included. "
+"Besides this no theme settingspage, no fancy options, no slideshow, this one "
+"only has the basic options. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme

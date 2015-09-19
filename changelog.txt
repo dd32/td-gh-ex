@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-MyKnowledgeBase version 2.3 - september 2015
+MyKnowledgeBase version 2.4 - september 2015
 - updated knowledgebase page templates 
 - updated file comments
 - updated pagelink
