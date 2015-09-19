@@ -1,10 +1,10 @@
 /*
 Theme Name: GridBulletin
 Theme URI: http://www.guidovanderleest.nl/gridbulletin
-Version: 2.4
+Version: 2.5
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: GridBulletin is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme in bulletin board layout. Default theme language is English but Dutch, German, Spanish and French are supported too. Grid layout on homepage and archive page, primary sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: GridBulletin is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme in bulletin board layout. Default theme language is English but Dutch, German, Spanish, French and Swedish are supported too. Grid layout on homepage and archive page, primary sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
 Tags: one-column, two-columns, four-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, blue, orange, light, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -69,7 +69,10 @@ table {
 /* BODY AND CONTAINER */
 body {background:#eee; font-family:'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
 #container {max-width:1200px; background:#fff; border:0; margin:10px auto 10px; padding:20px 0 0; text-align:left; word-wrap:break-word; border-top-right-radius:10px; -moz-border-top-right-radius:10px; border-top-left-radius:10px; -moz-border-top-left-radius:10px;}
-#content {width:56%; float:left; margin:20px 2%; padding:15px 2%; background:#eee; border-bottom:2px solid #ec6500; word-wrap:break-word; border-top-right-radius:10px; -moz-border-top-right-radius:10px; border-top-left-radius:10px; -moz-border-top-left-radius:10px; word-wrap: break-word;}
+
+
+/* MAIN CONTENT AREA */
+#content {width:59%; float:left; margin:20px 2%; padding:15px 2%; background:#eee; border-bottom:2px solid #ec6500; word-wrap:break-word; border-top-right-radius:10px; -moz-border-top-right-radius:10px; border-top-left-radius:10px; -moz-border-top-left-radius:10px; word-wrap: break-word;}
 #content:after {content:''; display:block; clear:both;}
 #content-full {width:92%; float:left; margin:20px 2%; padding:15px 2%; background:#eee; border-bottom:2px solid #ec6500; word-wrap:break-word; border-top-right-radius:10px; -moz-border-top-right-radius:10px; border-top-left-radius:10px; -moz-border-top-left-radius:10px; word-wrap:break-word;}
 #content-full:after {content:''; display:block; clear:both;}
@@ -170,7 +173,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 .post-title {clear:both; margin:5px 0 10px; text-align:center; font-weight:bold;}
 .sticky {text-align:center; clear:both; color:#fff; background:#ec6500; margin:10px 0; padding:5px;}
 .postmetadata {clear:both; margin:10px 0; padding:2px 10px; background:#0066ff; color:#fff;}
-.postmetadata a{color:#fff;}
+.postmetadata a {color:#fff;}
 
 
 .post-home {width: 21.5%; float:left; margin:10px 2% 10px 0; padding:1%; border-bottom:2px solid #ec6500; background:#fff; color:#333; border-top-right-radius:10px; -moz-border-top-right-radius:10px; border-top-left-radius:10px; -moz-border-top-left-radius:10px;}
@@ -218,7 +221,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* SEARCHFORM */
 .search-form {padding:10px 0;}
 .search-field {width:50%; margin:0 5px 0 0;}
-.screen-reader-text {display:none;}
+.search-form .screen-reader-text {display:none;}
 
 
 /* COMMENTS */
@@ -245,7 +248,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* SIDEBAR AND WIDGETS */
-#sidebar {width:34%; float:right; margin:20px 2% 0 0; padding:0; word-wrap: break-word;}
+#sidebar {width:31%; float:right; margin:20px 2% 0 0; padding:0; word-wrap: break-word;}
 .widget {padding:15px 15px; margin:0 0 20px; background:#eee; border-bottom:2px solid #ec6500; border-top-right-radius:10px; -moz-border-top-right-radius:10px; border-top-left-radius:10px; -moz-border-top-left-radius:10px;}
 .widgettitle {margin:0 0 10px;}
 
@@ -272,6 +275,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	body {font-size:1em; line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
 	#container {width:94%; padding:5px 2%; margin:5px auto 5px;}
+
+	/* MAIN CONTENT AREA */
 	#content, #content-full {width:96%; padding:10px 2%; margin:10px 0;}
 
 	/* HEADER */
@@ -281,9 +286,20 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#header-first .logo h4 {padding:0; font-size:1.3em;}
 	#header-second .header-img {margin:10px 0 0;}
 
+	/* MENU */
+	.nav-head ul {display: none;} 
+	.nav-head {margin:0;}
+	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#0066ff; border:0;}
+
 	/* CONTENT */
 	.post-home, .post-home.left, .post-home.right {width:100%; border:0; margin:5px 0 0; padding:0; float:left; background:none;} 
 	.post-archive, .post-archive.left, .post-archive.right {width:100%; border:0; margin:5px 0 0; padding:0; float:left; background:none;} 
+
+	/* HEADINGS */
+	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em; text-align:left;}
+
+	/* IMAGES */
+	.wp-post-image, .single-image, .list-image {float:left; width:50%; margin:0.3em 0.5em 0.3em 0;}
 
 	/* SIDEBAR */
 	#sidebar {width:100%; margin:0; float:left;}
@@ -293,15 +309,4 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#footer {width:100%;}
 	#footer-widgets {width:100%; padding:0;}
 	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
-
-	/* HEADINGS */
-	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em; text-align:left;}
-
-	/* IMAGES */
-	.wp-post-image, .single-image, .list-image {float:left; width:50%; margin:0.3em 0.5em 0.3em 0;}
-
-	/* MENU */
-	.nav-head ul {display: none;} 
-	.nav-head {margin:0;}
-	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#0066ff; border:0;}
 }
