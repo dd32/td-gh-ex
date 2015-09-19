@@ -19,8 +19,7 @@
 	<?php } ?> 
 
 	<div class="site-info">
-		<?php _e('Copyright', 'shipyard'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
-		<a href="http://wordpress.org" title="<?php _e('WordPress Blog Platform', 'shipyard'); ?>"><?php _e('Proudly powered by WordPress', 'shipyard'); ?></a>
+		<?php _e('Copyright', 'shipyard'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php _e('Shipyard WordPress Theme', 'shipyard'); ?>  
 	</div>
 
 </div>
