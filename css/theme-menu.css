@@ -10,6 +10,7 @@
 .navbar-inverse .navbar-toggle {
     background: none repeat scroll 0 0 #66d1b9;
     border-color: #ffffff;
+	width: 45px;
 }
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {

@@ -1,5 +1,6 @@
 <!--Footer Section-->
-<?php $current_options = get_option('corpbiz_options',theme_data_setup()); ?>
+<?php $corpbiz_options=theme_data_setup(); 
+	  $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $corpbiz_options ); ?>
 <div class="footer_section">
 	<div class="container">
 		<div class="row">
@@ -14,13 +15,9 @@
 <!--Footer Copyright Section-->
 <div class="container">
 	<div class="row copyright_menu_section">
-		<?php if($current_options['footer_customizations']!='') { ?>
+		<?php if($current_options['footer_copyright']!='') { ?>
 		<div class="col-md-6">			
-			<p> <?php echo esc_html($current_options['footer_customizations']); ?>
-			 <?php if($current_options['created_by_webriti_text']!='') {   ?>
-			<a rel="nofollow" href="<?php if($current_options['created_by_link']!='') { echo esc_url($current_options['created_by_link']); } ?>"> <?php  echo esc_html($current_options['created_by_webriti_text']);  ?></a>
-			<?php } ?>
-			</p>
+			<p><?php echo $current_options['footer_copyright'];?></p>
 		</div>	
 		<?php } ?>
 		<div class="col-md-6">			

@@ -4,12 +4,13 @@ if ( ! function_exists( 'corpbiz_post_meta_content' ) ) :
 
 function corpbiz_post_meta_content()
 { 
-$current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), theme_data_setup() );
+$corpbiz_options=theme_data_setup(); 
+$current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $corpbiz_options );
 ?>
     <div class="post_title_wrapper">
 					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<?php  $current_options=get_option('corpbiz_options'); 
-			        if($current_options['blog_meta_section_settings'] != 'off') { ?>
+			        if($current_options['blog_meta_section_settings'] != true) { ?>
 					<div class="post_detail">
 						<a href="<?php echo get_month_link(get_post_time('Y'),get_post_time('m')); ?>"><i class="fa fa-calendar"></i> <?php echo get_the_date('M j, Y'); ?> </a>
 						<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><i class="fa fa-user"></i> <?php _e('Posted by: &nbsp;','corpbiz'); ?> <?php the_author(); ?></a>

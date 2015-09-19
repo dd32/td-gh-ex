@@ -53,6 +53,10 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.4
+1. Addes Customizer
+2. Add Screen Reader Css
+3. Update Font awesome Folder.
 @Version 1.3
 1. Resolve Theme check plugin error.
 2. All  Css issue Fixed.

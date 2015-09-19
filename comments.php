@@ -4,8 +4,8 @@
 	
 	<?php
 		// code for comment
-		if ( ! function_exists( 'webriti_comment' ) ) {
-		function webriti_comment( $comment, $args, $depth ) 
+		if ( ! function_exists( 'corpbiz_comment' ) ) {
+		function corpbiz_comment( $comment, $args, $depth ) 
 		{
 		$GLOBALS['comment'] = $comment;
 		//get theme data
@@ -16,11 +16,11 @@
 	
 		<div class="media comment_box">
 			<a class="pull_left_comment" href="<?php the_author_meta('user_url'); ?>">
-			<?php echo get_avatar( get_the_author_meta( 'ID') , 224); ?>		
+			<?php echo get_avatar($comment,$size = '224'); ?>			
 			</a>
 			<div class="media-body">
 				<div class="comment_detail">
-					<h4 class="comment_detail_title"><?php the_author(); ?><span class="comment_date"><?php echo comment_date('M j, Y \a\t g:i A') ?></span></h4>
+					<h4 class="comment_detail_title"><?php printf(('%s'), get_comment_author_link()) ?><span class="comment_date"><?php comment_date('F j, Y');?>&nbsp;<?php _e('at','corpbiz');?>&nbsp;<?php comment_time('g:i a'); ?></span></h4>
 					<?php comment_text(); ?>
 				
 					<div class="reply">
@@ -43,7 +43,7 @@
 <div class="comment_section">
 	<div class="comment_title"><h3><i class="fa fa-comments"></i> <?php comments_number('No Comments', '1 Comment','% Comments'); ?> </h3>
 	</div>
-	<?php wp_list_comments( array( 'callback' => 'webriti_comment' ) ); ?>
+	<?php wp_list_comments( array( 'callback' => 'corpbiz_comment' ) ); ?>
 </div> <!---comment_section--->
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
@@ -62,7 +62,9 @@
 	<?php if ( get_option('comment_registration') && !$user_ID ) { ?>
 <p><?php _e("You must be",'corpbiz'); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e("logged in",'corpbiz')?></a> <?php _e("to post a comment",'corpbiz'); ?>
 </p>
-<?php } else {  ?>
+<?php } else { 
+	//echo "fdfdf";
+?>
 
 <div class="comment_form_section">
 	<?php  

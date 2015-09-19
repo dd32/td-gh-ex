@@ -17,6 +17,9 @@
 		//****** get index project  ********
 		get_template_part('index', 'portfolio');
 		
+		//****** get index project  ********
+		get_template_part('index', 'blog');
+		
 		get_footer();
 		}
 ?>

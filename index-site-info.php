@@ -1,4 +1,6 @@
-<?php $current_options = get_option('corpbiz_options',theme_data_setup()); ?>
+<?php $corpbiz_options=theme_data_setup(); 
+$current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $corpbiz_options ); 
+ if($current_options['home_call_out_area_enabled'] == false) { ?>
 <div class="homepage_top_callout">
 	<div class="container">
 		<div class="row">
@@ -24,3 +26,4 @@
 		</div>
 	</div>
 </div>
+<?php } ?>

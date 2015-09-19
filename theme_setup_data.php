@@ -1,31 +1,22 @@
 <?php
 function theme_data_setup()
 {	
-	$imag_url= WEBRITI_TEMPLATE_DIR_URI . "/images/1140x420.png";
-	
 	$port_image1= WEBRITI_TEMPLATE_DIR_URI . "/images/port1.jpg";
 	$port_image2= WEBRITI_TEMPLATE_DIR_URI . "/images/port2.jpg";
 				
 	return $theme_options=array(
 			//Logo and Fevicon header			
-			'front_page'  => 'on',			
 			'upload_image_logo'=>'',
 			'height'=>'50',
 			'width'=>'100',
-			'text_title'=>'on',
+			'text_title'=>true,
 			'upload_image_favicon'=>'',
 			'webrit_custom_css'=>'',
 			
 			//Slider
-			'home_slider_enabled'=>'on',
-			'animation' => 'fade',
+			'home_slider_enabled'=>true,
 			'animationSpeed' => '1500',
 			'slideshowSpeed' => '2500',
-			'slider_list'=>'',
-			'total_slide'=>'',
-			
-			
-			
 			'home_banner_enabled'=>'on',
 			'home_post_enabled' => 'on',
 			'slider_total' => 4,
@@ -36,35 +27,38 @@ function theme_data_setup()
 			'featured_slider_post' => '',
 			
 			//Site info
+			'home_call_out_area_enabled' => false,
 			'site_title_one'=>'40+',
 			'site_title_two'=>'Sample Pages',
 			'site_description'=>__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque faucibus risus non iaculis. Fusce a augue ante, pellentesque pretium erat. Fusce in turpis in velit tempor pretium. Integer a leo libero','corpbiz'),
 			'siteinfo_button_one_text'=>__('Buy it now','corpbiz'),
 			'siteinfo_button_two_text'=>__('View Portfolio','corpbiz'),
 			
+			//Service
+			'service_section_enabled' => true,
 			'service_icon_one'=> "fa-mobile",
 			'service_title_one'=> __('Responsive Design','corpbiz'),
 			'service_description_one'=> __('Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv','corpbiz'),
 			'home_service_one_link' => '#',
-			'home_service_one_link_target' => "on",
+			'home_service_one_link_target' => true,
 				
 			'service_icon_two'=> "fa-rocket",
 			'service_title_two'=>__('Power full Admin','corpbiz'),
 			'service_description_two'=> __('Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv','corpbiz'),
 			'home_service_two_link' => '#',
-			'home_service_two_link_target' => "on",
+			'home_service_two_link_target' => true,
 			
 			'service_icon_three'=> "fa-thumbs-o-up",
 			'service_title_three'=> __('Great Support','corpbiz'),
 			'service_description_three'=>__('Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv','corpbiz'),
 			'home_service_third_link' => '#',
-			'home_service_third_link_target' => "on",
+			'home_service_third_link_target' => true,
 			
 			'service_icon_four'=> "fa-laptop",
 			'service_title_four'=> __('Clean Minimal Design','corpbiz'),
 			'service_description_four'=>__('Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv','corpbiz'),
 			'home_service_fourth_link' => '#',
-			'home_service_fourth_link_target' => "on",
+			'home_service_fourth_link_target' => true,
 			
 			// portfolio 
 			'portfolio_title' =>__('Our Work Speaks Thousand Words','corpbiz'),
@@ -94,12 +88,15 @@ function theme_data_setup()
 			'home_service_title'=>__('Our Nice Services','corpbiz'),
 			'home_service_description' =>__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque faucibus risus non iaculis.','corpbiz'),
 			
-			'footer_customizations' => __('@ Copyright 2014  Corpbiz Design & Developed by','corpbiz'),
-			'created_by_webriti_text' => __('Webriti','corpbiz'),
-			'created_by_link' => 'http://www.webriti.com',
+			'footer_copyright' => sprintf (__('@ Copyright 2014  Corpbiz Design & Developed by <a href="%1$s" target="_blank">Webriti</a>','corpbiz'),'http://www.webriti.com'),
 			
 			//blog meta section settings
-			'blog_meta_section_settings' => "on",
+			'blog_section_enabled' => true,
+			'blog_meta_section_settings' => false,
+			'blog_selected_category_id'=> 1,
+			'blog_title' => 'From Blog',
+			'blog_description' => 'Latest blog Description',
+			'post_display_count' => '3' ,
 		
 		);
 }

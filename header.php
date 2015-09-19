@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<?php $current_options = get_option('corpbiz_options',theme_data_setup()); ?>
+	<?php $corpbiz_options=theme_data_setup(); 
+		  $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $corpbiz_options ); ?>
 	<?php if($current_options['upload_image_favicon']!=''){ ?>
 	<link rel="shortcut icon" href="<?php  echo esc_url( $current_options['upload_image_favicon'] ); ?>" /> 
 	<?php } ?>	
@@ -25,7 +26,7 @@
 				</button>
 				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<?php 
-				if($current_options['text_title'] =="on")
+				if($current_options['text_title'] ==true)
 				{ echo "<div class=qua_title_head>" . get_bloginfo( ). "</div>"; }
 				else if($current_options['upload_image_logo']!='') 
 				{ ?>

@@ -9,6 +9,18 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/woo/woocommerce.php' );
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/template-tag.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
+	
+	//Customizer 
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-slider.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-home.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-callout.php');
+	
+	
 	//wp title tag starts here
 	function webriti_head( $title, $sep )
 	{	global $paged, $page;		
@@ -48,8 +60,6 @@
 		 add_theme_support( "title-tag" );
 		
 		require_once('theme_setup_data.php');
-		require( WEBRITI_THEME_FUNCTIONS_PATH . '/theme_options/option_pannel.php' ); // for Option Panel Settings		
-		
 	} 
 	
 	add_filter('get_avatar','webriti_gravatar_class');
@@ -82,19 +92,26 @@
 			'after_title' => '</h2>',
 		) );
 	}
-	
 	/*******corpbiz css and js *******/
 	function webriti_scripts()
 	{	
 		wp_enqueue_style('corpbiz-style', get_stylesheet_uri() );
 		wp_enqueue_style('corpbiz-bootstrap-css', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');
+		wp_enqueue_style('corpbiz-submenu', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap-submenu.css');
 		wp_enqueue_style('corpbiz-theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');	
 		wp_enqueue_style('corpbiz-font-awesome-min',WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome/css/font-awesome.min.css');	
 		wp_enqueue_style('corpbiz-media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');	
 		
-		wp_enqueue_script('corpbiz-menu', WEBRITI_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
-		wp_enqueue_script('jquery-flexslider-min-js', WEBRITI_TEMPLATE_DIR_URI .'/js/flexslider/jquery.flexslider-min.js');
+		
 		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script('jquery-collapse', WEBRITI_TEMPLATE_DIR_URI .'/js/collapse.js');
+		wp_enqueue_script('jquery-flexslider-min-js', WEBRITI_TEMPLATE_DIR_URI .'/js/flexslider/jquery.flexslider-min.js');
+		wp_enqueue_script('corpbiz-menu', WEBRITI_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
+		
+		
+		
+		
+		
 		
 		if ( is_singular() ){ wp_enqueue_script( "comment-reply" );	}
 	}
@@ -105,4 +122,39 @@
 		return '<div class="blog-btn-col"><a href="' . get_permalink() . "\" class=\"blog-btn\">Read More</a></div>";
 	}   
 	add_filter( 'the_content_more_link', 'corpbiz_content_more' );
+	
+	add_action('wp_head','head_enqueue_custom_css');
+	function head_enqueue_custom_css()
+	{
+	$corpbiz_options=theme_data_setup(); 
+	$current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $corpbiz_options ); 
+	if($current_options['webrit_custom_css']!='') {  ?>
+	<style>
+	<?php echo $current_options['webrit_custom_css']; ?>
+	</style>
+<?php } } 
+function corpbiz_custmizer_style()
+ {
+		wp_enqueue_style('corpbiz-customizer-css',WEBRITI_TEMPLATE_DIR_URI.'/css/cust-style.css');
+}
+add_action('customize_controls_print_styles','corpbiz_custmizer_style');
+
+function get_home_blog_excerpt()
+	{
+		global $post;
+		$excerpt = get_the_content();
+		$excerpt = strip_tags(preg_replace(" (\[.*?\])",'',$excerpt));
+		$excerpt = strip_shortcodes($excerpt);		
+		$original_len = strlen($excerpt);
+		$excerpt = substr($excerpt, 0, 145);		
+		$len=strlen($excerpt);	 
+		if($original_len>275) {
+		$excerpt = $excerpt;
+		return $excerpt . '<div class="home-blog-btn"><a href="' . get_permalink() . '">Read More</a></div>';
+		}
+		else
+		{ return $excerpt; }
+	}
+
+
 ?>
