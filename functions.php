@@ -9,7 +9,7 @@
 	// Set max content width for img, video, and more
 		global $content_width; 
 		if ( ! isset( $content_width ) )
-		$content_width = 700;
+		$content_width = 760;
 
 	// Make theme available for translation
 		load_theme_textdomain('bluegray', get_template_directory() . '/languages');  
@@ -96,7 +96,7 @@
 	register_sidebar( array(
 		'name' => __( 'Primary Sidebar', 'bluegray' ),
 		'id' => 'primary',
-		'description' => __( 'Select widgets from the right-hand side.', 'bluegray' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -106,7 +106,7 @@
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar Right', 'bluegray' ),
 		'id' => 'homepage-right',
-		'description' => __( 'Select widgets from the right-hand side.', 'bluegray' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -116,7 +116,7 @@
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar Middle', 'bluegray' ),
 		'id' => 'homepage-middle',
-		'description' => __( 'Select widgets from the right-hand side.', 'bluegray' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -126,7 +126,7 @@
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar Left', 'bluegray' ),
 		'id' => 'homepage-left',
-		'description' => __( 'Select widgets from the right-hand side.', 'bluegray' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -136,7 +136,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Right', 'bluegray' ),
 		'id' => 'footer-right',
-		'description' => __( 'Select widgets from the right-hand side.', 'bluegray' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -146,7 +146,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Middle', 'bluegray' ),
 		'id' => 'footer-middle',
-		'description' => __( 'Select widgets from the right-hand side.', 'bluegray' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -156,7 +156,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Left', 'bluegray' ),
 		'id' => 'footer-left',
-		'description' => __( 'Select widgets from the right-hand side.', 'bluegray' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -202,7 +202,7 @@
 		$wp_customize->add_section( 'bluegray_logo_section' , array( 
 			'title' => __( 'Logo', 'bluegray' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header', 'bluegray' ),
+			'description' => __( 'Upload a logo to replace blogname and description in header.', 'bluegray' ),
 		) );
 		$wp_customize->add_setting( 'bluegray_logo', array( 
 			'capability' => 'edit_theme_options', 

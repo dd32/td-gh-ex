@@ -25,8 +25,7 @@
 	<?php } ?>	
 	
 	<div class="site-info">
-		<?php _e('Copyright', 'bluegray'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
-		<a href="http://wordpress.org" title="<?php _e('WordPress Blog Platform', 'bluegray'); ?>"><?php _e('Proudly powered by WordPress', 'bluegray'); ?></a>
+		<?php _e('Copyright', 'bluegray'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php _e('BlueGray WordPress Theme', 'bluegray'); ?>  
 	</div>
 
 </div>

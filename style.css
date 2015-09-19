@@ -1,10 +1,10 @@
 /*
 Theme Name: BlueGray
 Theme URI: http://www.guidovanderleest.nl/bluegray
-Version: 2.9
+Version: 3.0
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: BlueGray is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Default theme language is English but Dutch, German, Spanish and French are supported too. Primary sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, full width custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: BlueGray is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Default theme language is English but Dutch, German, Spanish, French and Swedish are supported too. Primary sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, full width custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, blue, light, dark, gray, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -71,7 +71,10 @@ body {background:#eee; font-family:'Open Sans', sans-serif; font-size:1em; color
 #container {width:100%; margin:0 auto 0; padding:0; word-wrap:break-word;}
 #main-content {max-width:1160px; margin:0 auto 0; padding:0 20px 0; text-align:left; word-wrap:break-word;}
 #main-content:after {content:''; display:block; clear:both;}
-#content {width:60%; float:left; padding:20px 2% 20px 0; word-wrap:break-word;}
+
+
+/* MAIN CONTENT AREA */
+#content {width:66%; float:left; padding:20px 2% 20px 0; word-wrap:break-word;}
 #content:after {content:''; display:block; clear:both;}
 #content-full {width:100%; float:left; padding:20px 0; word-wrap:break-word;}
 #content-full:after {content:''; display:block; clear:both;}
@@ -224,7 +227,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* SEARCHFORM */
 .search-form {padding:10px 0;}
 .search-field {width:50%; margin:0 5px 0 0;}
-.screen-reader-text {display:none;}
+.search-form .screen-reader-text {display:none;}
 
 
 /* COMMENTS */
@@ -251,7 +254,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* SIDEBAR AND WIDGETS */
-#sidebar {width:38%; float:right; margin:0; padding:20px 0 0; word-wrap:break-word;}
+#sidebar {width:32%; float:right; margin:0; padding:20px 0 0; word-wrap:break-word;}
 .widget {padding:15px 5%; margin:0 0 20px; background:#f8f8f8; border:1px solid #ddd;}
 .widgettitle {margin:0 0 10px; padding:0 0 5px; color:#00aaff; border-bottom:2px solid #00aaff;}
 
@@ -288,6 +291,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	body.custom-background {background-image:none !important;}
 	#container {width:98%; padding:0 1%;}
 	#main-content {width:100%; padding:0;}
+
+	/* MAIN CONTENT AREA */
 	#content, #content-full {width:100%; padding:10px 0;}
 
 	/* HEADER */
@@ -296,6 +301,17 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#header-first .logo h4 {padding:0; font-size:1.3em;}
 	#header-widgets {border:0; margin:10px 0 0;}
 	.home-right, .home-middle, .home-left {width:100%; margin:0; float:left;} 
+
+	/* MENU */
+	.nav-head ul {display:none;} 
+	.nav-head {margin:0 0 10px;}
+	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#333; border:0;}
+
+	/* HEADINGS */
+	.post-title, .page-title, .archive-title, .widgettitle, #footer .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em; text-align:left;}
+
+	/* IMAGES */
+	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
 
 	/* SIDEBAR */
 	#sidebar {width:100%; padding:0; float:left;}
@@ -306,15 +322,4 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#footer .site-info {padding:10px 0;}
 	#footer-widgets {padding:0;}
 	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
-
-	/* HEADINGS */
-	.post-title, .page-title, .archive-title, .widgettitle, #footer .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em; text-align:left;}
-
-	/* IMAGES */
-	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
-
-	/* MENU */
-	.nav-head ul {display:none;} 
-	.nav-head {margin:0 0 10px;}
-	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#333; border:0;}
 }
