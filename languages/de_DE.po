@@ -1,260 +1,212 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DarkOrange v3.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-01-11 12:23:47+0000\n"
-"Last-Translator: Guido van der Leest\n"
+"Project-Id-Version: DarkOrange\n"
+"POT-Creation-Date: 2015-09-11 18:57+0200\n"
+"PO-Revision-Date: 2015-09-11 18:57+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: CSL v1.x\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-Bookmarks: \n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Textdomain-Support: yes"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9
-#: search.php:39
-#@ darkorange
+#: 404.php:9 search.php:39
 msgid "Nothing Found"
 msgstr "Nichts gefunden"
 
-#: 404.php:10
-#: archive.php:50
-#: index.php:44
-#: search.php:40
-#@ darkorange
+#: 404.php:10 archive.php:57 index.php:51 search.php:40
 msgid "Sorry, no posts matched your criteria."
 msgstr "Entschuldigung, es existieren keine entsprechenden Beiträge."
 
 #: archive.php:12
-#@ darkorange
 msgid "Archive"
 msgstr "Archive"
 
 #: archive.php:14
-#@ darkorange
 msgid "Daily Archives"
 msgstr "Tägliche Archive"
 
 #: archive.php:16
-#@ darkorange
 msgid "Monthly Archives"
 msgstr "Monatliche Archive"
 
 #: archive.php:18
-#@ darkorange
 msgid "Yearly Archives"
 msgstr "Jährliche Archive"
 
 #: archive.php:20
-#@ darkorange
 msgid "Author Archives"
 msgstr "Autor Archive"
 
 #: archive.php:22
-#@ darkorange
 msgid "Tag Archives"
 msgstr "Schlagwort Archive"
 
-#: archive.php:29
-#: index.php:21
-#: search.php:17
+#: archive.php:29 index.php:21 search.php:17
 #, php-format
-#@ darkorange
 msgid "Permalink to %s"
 msgstr "Permalink zu %s"
 
-#: archive.php:33
-#: index.php:25
-#: search.php:21
-#: single.php:18
+#: archive.php:33 index.php:25 search.php:21 single.php:17
 #, php-format
-#@ darkorange
 msgid "Posted on %s"
 msgstr "Veröffentlicht am %s"
 
-#: archive.php:34
-#: index.php:26
-#: search.php:22
-#: single.php:19
+#: archive.php:34 index.php:26 search.php:22 single.php:18
 #, php-format
-#@ darkorange
 msgid "By %s"
 msgstr "Von %s"
 
-#: archive.php:36
-#: index.php:28
-#: search.php:24
-#: single.php:21
-#@ darkorange
+#: archive.php:36 index.php:28 search.php:24 single.php:20
 msgid "Leave a response"
 msgstr "Reaktion hinterlassen"
 
-#: archive.php:36
-#: index.php:28
-#: search.php:24
-#: single.php:21
-#@ darkorange
+#: archive.php:36 index.php:28 search.php:24 single.php:20
 msgid "1 response"
 msgstr "1 Reaktion"
 
-#: archive.php:36
-#: index.php:28
-#: search.php:24
-#: single.php:21
-#@ darkorange
+#: archive.php:36 index.php:28 search.php:24 single.php:20
 msgid "% responses"
 msgstr "% Reaktionen"
 
-#: archive.php:46
-#: index.php:38
-#: search.php:34
-#@ darkorange
+#: archive.php:46 index.php:38 search.php:34
 msgid "Read More &raquo;"
 msgstr "Weiterlesen &raquo;"
 
-#: archive.php:54
-#: index.php:48
-#: search.php:47
-#@ darkorange
+#: archive.php:52 index.php:46 search.php:47
 msgid "&laquo; Older posts"
 msgstr "&laquo; Ältere Beiträge"
 
-#: archive.php:55
-#: index.php:49
-#: search.php:48
-#@ darkorange
+#: archive.php:53 index.php:47 search.php:48
 msgid "Newer posts &raquo;"
 msgstr "Neuere Beiträge &raquo;"
 
-#: comments.php:17
+#: comments.php:16
 #, php-format
-#@ darkorange
 msgid "1 response on %2$s"
 msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 Reaktion auf %2$s"
 msgstr[1] "%1$s Reaktionen auf %2$s"
 
-#: comments.php:35
-#@ darkorange
+#: comments.php:29
 msgid "&laquo; Older Comments"
 msgstr "&laquo; Ältere Kommentare"
 
-#: comments.php:36
-#@ darkorange
+#: comments.php:30
 msgid "Newer Comments &raquo;"
 msgstr "Neuere Kommentare &raquo;"
 
-#: comments.php:42
-#@ darkorange
+#: comments.php:35
 msgid "Comments are closed"
 msgstr "Kommentare sind geschlossen"
 
 #: footer.php:22
-#@ darkorange
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:23
-#@ darkorange
-msgid "WordPress Blog Platform"
-msgstr "WordPress Blog Plattform"
-
-#: footer.php:23
-#@ darkorange
-msgid "Proudly powered by WordPress"
-msgstr "Stolz präsentiert von WordPress"
+#: footer.php:22
+msgid "DarkOrange WordPress Theme"
+msgstr ""
 
 #: functions.php:19
-#@ darkorange
 msgid "Primary Navigation"
 msgstr "Primäre Navigation"
 
 #: functions.php:43
-#@ darkorange
 msgid "Boats"
 msgstr "Boote"
 
-#: functions.php:124
-#@ darkorange
+#: functions.php:99
 msgid "Primary Sidebar"
 msgstr "Primäre Seitenleiste"
 
-#: functions.php:126
-#: functions.php:136
-#: functions.php:146
-#: functions.php:156
-#@ darkorange
-msgid "Select widgets from the right-hand side."
-msgstr "Wählen Sie die Widgets auf der rechten Seite."
+#: functions.php:101 functions.php:111 functions.php:121 functions.php:131
+msgid "You can add one or multiple widgets here."
+msgstr "Sie können hier einen oder mehrere Widgets hinzufügen."
 
-#: functions.php:144
-#@ darkorange
+#: functions.php:109
+msgid "Homepage Sidebar"
+msgstr "Startseite Seitenleiste"
+
+#: functions.php:119
 msgid "Footer Sidebar Right"
 msgstr "Fusszeile Seitenleiste rechts"
 
-#: functions.php:154
-#@ darkorange
+#: functions.php:129
 msgid "Footer Sidebar Left"
 msgstr "Fusszeile Seitenleiste links"
 
-#: functions.php:183
-#: functions.php:192
-#@ darkorange
+#: functions.php:175 functions.php:184
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:185
-#@ darkorange
-msgid "Upload a logo to replace blogname and description in header"
-msgstr "Laden Sie ein Logo hoch um den Blognamen und die Beschreibung in der Kopfzeile zu ersetzen"
+#: functions.php:177
+msgid "Upload a logo to replace blogname and description in header."
+msgstr ""
+"Laden Sie ein Logo hoch um den Blognamen und die Beschreibung in der "
+"Kopfzeile zu ersetzen."
 
 #: index.php:16
-#@ darkorange
 msgid "Featured post"
 msgstr "Besonderer Beitrag"
 
-#: page-full.php:27
-#: page.php:26
-#: single.php:40
-#@ darkorange
+#: page-full.php:29 page.php:28 single.php:40
 msgid "Edit"
 msgstr "Bearbeiten"
 
 #: search.php:12
 #, php-format
-#@ darkorange
 msgid "Search Results for: %s"
 msgstr "Suchergebnisse für: %s"
 
-#: single.php:29
+#: single.php:30
 #, php-format
-#@ darkorange
 msgid "Posted in %s"
 msgstr "Veröffentlicht in %s"
 
-#: single.php:29
-#: single.php:30
-#@ darkorange
+#: single.php:30 single.php:31
 msgid ", "
 msgstr ", "
 
-#: single.php:30
+#: single.php:31
 #, php-format
-#@ darkorange
 msgid "Tags: %s"
 msgstr "Schlagworte: %s"
 
-#: functions.php:134
-#@ darkorange
-msgid "Homepage Sidebar"
-msgstr "Startseite Seitenleiste"
+#. Theme Name of the plugin/theme
+msgid "DarkOrange"
+msgstr ""
 
+#. Theme URI of the plugin/theme
+msgid "http://www.guidovanderleest.nl/darkorange"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"DarkOrange is a free, basic, clean, minimalistic, responsive, mobile "
+"friendly WordPress theme. Default theme language is English but Dutch, "
+"German, Spanish, French and Swedish are supported too. Primary sidebar, "
+"homepage sidebar, 2 widget-area's in footer, custom header-image, custom "
+"background, display logo or blogname and description, full width page-"
+"template and dropdown navigation are included. Besides this no theme "
+"settingspage, no fancy options, no slideshow, this one only has the basic "
+"options. Enjoy."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Guido van der Leest"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.guidovanderleest.nl"
+msgstr ""

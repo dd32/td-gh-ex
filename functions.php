@@ -9,7 +9,7 @@
 	// Set max content width for img, video, and more
 		global $content_width; 
 		if ( ! isset( $content_width ) )
-		$content_width = 675;
+		$content_width = 670;
 
 	// Make theme available for translation
 		load_theme_textdomain('darkorange', get_template_directory() . '/languages');  
@@ -98,7 +98,7 @@ function darkorange_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Primary Sidebar', 'darkorange' ),
 		'id' => 'primary',
-		'description' => __( 'Select widgets from the right-hand side.', 'darkorange' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'darkorange' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -108,7 +108,7 @@ function darkorange_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar', 'darkorange' ),
 		'id' => 'homepage',
-		'description' => __( 'Select widgets from the right-hand side.', 'darkorange' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'darkorange' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -118,7 +118,7 @@ function darkorange_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Right', 'darkorange' ),
 		'id' => 'footer-right',
-		'description' => __( 'Select widgets from the right-hand side.', 'darkorange' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'darkorange' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -128,7 +128,7 @@ function darkorange_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Left', 'darkorange' ),
 		'id' => 'footer-left',
-		'description' => __( 'Select widgets from the right-hand side.', 'darkorange' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'darkorange' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -174,7 +174,7 @@ function darkorange_widgets_init() {
 		$wp_customize->add_section( 'darkorange_logo_section' , array( 
 			'title' => __( 'Logo', 'darkorange' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header', 'darkorange' ),
+			'description' => __( 'Upload a logo to replace blogname and description in header.', 'darkorange' ),
 		) );
 		$wp_customize->add_setting( 'darkorange_logo', array( 
 			'capability' => 'edit_theme_options', 
