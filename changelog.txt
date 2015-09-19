@@ -1,6 +1,18 @@
 CHANGELOG
 =========
 
+DarkElements version 2.6 - september 2015
+- updated file comments
+- updated pagelink
+- file footer: copyrights
+- file archive and index: added pagetitle when no posts are found
+- changed postmetadata heading into div
+- removed background color from post and page editor
+- reordered mobile stylesheet
+- added Swedish translation (thanks Stefan)
+- updated language files
+- several small adjustments
+
 DarkElements version 2.5 - june 2015
 - file page and single: fixed closing div
 - file single: removed if statement 

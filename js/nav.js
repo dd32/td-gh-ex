@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
 	// build <select> dropdown
 	jQuery("<select />").appendTo("div.nav-head");
 
-	// create deafult option "Menu..."
+	// create option "Menu..."
 	jQuery("<option />", {
 		"selected": "selected",
 		"value": "",

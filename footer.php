@@ -23,8 +23,7 @@
 	<?php } ?>	
 
 	<div class="site-info">
-		<?php _e('Copyright', 'darkelements'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
-		<a href="http://wordpress.org" title="<?php _e('WordPress Blog Platform', 'darkelements'); ?>"><?php _e('Proudly powered by WordPress', 'darkelements'); ?></a>
+		<?php _e('Copyright', 'darkelements'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php _e('DarkElements WordPress Theme', 'darkelements'); ?>  
 	</div>
 
 </div>

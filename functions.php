@@ -95,7 +95,7 @@
 	register_sidebar( array(
 		'name' => __( 'Primary Sidebar', 'darkelements' ),
 		'id' => 'primary',
-		'description' => __( 'Select widgets from the right-hand side.', 'darkelements' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'darkelements' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -105,7 +105,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Right', 'darkelements' ),
 		'id' => 'footer-right',
-		'description' => __( 'Select widgets from the right-hand side.', 'darkelements' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'darkelements' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -115,7 +115,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Middle', 'darkelements' ),
 		'id' => 'footer-middle',
-		'description' => __( 'Select widgets from the right-hand side.', 'darkelements' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'darkelements' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -125,7 +125,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Left', 'darkelements' ),
 		'id' => 'footer-left',
-		'description' => __( 'Select widgets from the right-hand side.', 'darkelements' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'darkelements' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -171,7 +171,7 @@
 		$wp_customize->add_section( 'darkelements_logo_section' , array( 
 			'title' => __( 'Logo', 'darkelements' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header', 'darkelements' ),
+			'description' => __( 'Upload a logo to replace blogname and description in header.', 'darkelements' ),
 		) );
 		$wp_customize->add_setting( 'darkelements_logo', array( 
 			'capability' => 'edit_theme_options', 
