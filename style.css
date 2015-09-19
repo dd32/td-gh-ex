@@ -1,10 +1,10 @@
 /*
 Theme Name: OneColumn
 Theme URI: http://www.guidovanderleest.nl/onecolumn
-Version: 3.2
+Version: 3.3
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: OneColumn is a free, basic, clean, responsive, mobile friendly, one-column WordPress theme. Default theme language is English but Dutch, German, Spanish and French are supported too. 2 widget-areas underneath header-image, 2 widget-areas in footer, custom header-image, custom background, display logo or blogname and description and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: OneColumn is a free, basic, clean, responsive, mobile friendly, one-column WordPress theme. Default theme language is English but Dutch, German, Spanish, French and Swedish are supported too. 2 widget-areas underneath header-image, 2 widget-areas in footer, custom header-image, custom background, display logo or blogname and description and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
 Tags: one-column, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, gray, orange, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -69,6 +69,9 @@ table {
 /* BODY AND CONTAINER */
 body {background:#fff; font-family:'Open Sans', sans-serif; font-size:1em; line-height:1.5em; color:#333;}
 #container {width:100%; padding:0; margin:0 auto 0; background:none; text-align:left; word-wrap:break-word;}
+
+
+/* MAIN CONTENT AREA */
 #content {max-width:880px; margin:0 auto 0; padding:20px 40px; background:#f8f8f8; word-wrap:break-word;}
 #content:after {content:''; display:block; clear:both;}
 
@@ -217,7 +220,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* SEARCHFORM */
 .search-form {padding:10px 0;}
 .search-field {width:50%; margin:0 5px 0 0;}
-.screen-reader-text {display:none;}
+.search-form .screen-reader-text {display:none;}
 
 
 /* COMMENTS */
@@ -268,6 +271,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* BODY AND CONTAINER */
 	body {line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
+
+	/* MAIN CONTENT AREA */
 	#content {width:96%; padding:10px 2%;}
 
 	/* HEADER */
@@ -279,8 +284,19 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#header-widgets {width:96%; padding:0 2%;}
 	.home-left, .home-right {width:100%; float:left;} 
 
+	/* MENU */
+	.nav-head ul {display:none;} 
+	.nav-head {padding:0;}
+	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.1em; color:#333; background:#f8f8f8; border:0;}
+
 	/* CONTENT */
 	.postmetadata {margin:10px 0;} 
+
+	/* HEADINGS */
+	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
+
+	/* IMAGES */
+	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;} 
 
 	/* SIDEBAR */
 	#sidebar {width:96%; padding:10px 2%;}
@@ -288,15 +304,4 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* FOOTER */
 	#footer {width:96%; padding:10px 2%;}
 	.footer-left, .footer-right {width:100%; float:left;} 
-
-	/* HEADINGS */
-	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
-
-	/* IMAGES */
-	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
-
-	/* MENU */
-	.nav-head ul {display:none;} 
-	.nav-head {padding:0;}
-	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.1em; color:#333; background:#f8f8f8; border:0;}
 }

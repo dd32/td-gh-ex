@@ -1,259 +1,211 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: OneColumn v3.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-01-11 13:39:17+0000\n"
-"Last-Translator: Guido van der Leest\n"
+"Project-Id-Version: OneColumn\n"
+"POT-Creation-Date: 2015-09-11 21:01+0200\n"
+"PO-Revision-Date: 2015-09-11 21:01+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Generator: CSL v1.x\n"
-"X-Poedit-Language: French\n"
-"X-Poedit-Country: FRANCE\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-Bookmarks: \n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Textdomain-Support: yes"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:10
-#: search.php:38
-#@ onecolumn
+#: 404.php:9 search.php:39
 msgid "Nothing Found"
 msgstr "Recherche infructueuse"
 
-#: 404.php:11
-#: archive.php:49
-#: index.php:40
-#: search.php:39
-#@ onecolumn
+#: 404.php:10 archive.php:57 index.php:47 search.php:40
 msgid "Sorry, no posts matched your criteria."
 msgstr "Désolé, il n'y a pas de résultats correspondant aux critères demandés."
 
 #: archive.php:12
-#@ onecolumn
 msgid "Archive"
 msgstr "Archive"
 
 #: archive.php:14
-#@ onecolumn
 msgid "Daily Archives"
 msgstr "Archives du jour"
 
 #: archive.php:16
-#@ onecolumn
 msgid "Monthly Archives"
 msgstr "Archives du mois"
 
 #: archive.php:18
-#@ onecolumn
 msgid "Yearly Archives"
 msgstr "Archives de l'année"
 
 #: archive.php:20
-#@ onecolumn
 msgid "Author Archives"
 msgstr "Archives par auteur"
 
 #: archive.php:22
-#@ onecolumn
 msgid "Tag Archives"
 msgstr "Achives du mot-clé"
 
-#: archive.php:29
-#: index.php:20
-#: search.php:17
+#: archive.php:29 index.php:19 search.php:17
 #, php-format
-#@ onecolumn
 msgid "Permalink to %s"
 msgstr "Permalien vers %s"
 
-#: archive.php:33
-#: index.php:24
-#: search.php:21
-#: single.php:17
+#: archive.php:33 index.php:23 search.php:21 single.php:16
 #, php-format
-#@ onecolumn
 msgid "Posted on %s"
 msgstr "Publié le %s"
 
-#: archive.php:34
-#: index.php:25
-#: search.php:22
-#: single.php:18
+#: archive.php:34 index.php:24 search.php:22 single.php:17
 #, php-format
-#@ onecolumn
 msgid "By %s"
 msgstr "Par %s"
 
-#: archive.php:36
-#: index.php:27
-#: search.php:24
-#: single.php:20
-#@ onecolumn
+#: archive.php:36 index.php:26 search.php:24 single.php:19
 msgid "Leave a response"
 msgstr "Commenter"
 
-#: archive.php:36
-#: index.php:27
-#: search.php:24
-#: single.php:20
-#@ onecolumn
+#: archive.php:36 index.php:26 search.php:24 single.php:19
 msgid "1 response"
 msgstr "1 commentaire"
 
-#: archive.php:36
-#: index.php:27
-#: search.php:24
-#: single.php:20
-#@ onecolumn
+#: archive.php:36 index.php:26 search.php:24 single.php:19
 msgid "% responses"
 msgstr "% commentaires"
 
-#: archive.php:45
-#: index.php:36
-#: search.php:33
-#@ onecolumn
+#: archive.php:46 index.php:36 search.php:34
 msgid "Read More &raquo;"
 msgstr "Lire la suite &raquo;"
 
-#: archive.php:53
-#: index.php:44
-#: search.php:45
-#@ onecolumn
+#: archive.php:52 index.php:42 search.php:47
 msgid "&laquo; Older posts"
 msgstr "&laquo; Articles précédents"
 
-#: archive.php:54
-#: index.php:45
-#: search.php:46
-#@ onecolumn
+#: archive.php:53 index.php:43 search.php:48
 msgid "Newer posts &raquo;"
 msgstr "Articles plus récents &raquo;"
 
-#: comments.php:18
+#: comments.php:16
 #, php-format
-#@ onecolumn
 msgid "1 response on %2$s"
 msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 commentaire sur %2$s"
 msgstr[1] "%1$s commentaires sur %2$s"
 
-#: comments.php:38
-#@ onecolumn
+#: comments.php:29
 msgid "&laquo; Older Comments"
 msgstr "&laquo; Commentaires précédents"
 
-#: comments.php:39
-#@ onecolumn
+#: comments.php:30
 msgid "Newer Comments &raquo;"
 msgstr "Commentaires plus récents &raquo;"
 
-#: comments.php:45
-#@ onecolumn
+#: comments.php:35
 msgid "Comments are closed"
 msgstr "Les commentaires sont fermés"
 
 #: footer.php:10
-#@ onecolumn
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:11
-#@ onecolumn
-msgid "WordPress Blog Platform"
-msgstr "Plateforme de blog WordPress"
+#: footer.php:10
+msgid "OneColumn WordPress Theme"
+msgstr ""
 
-#: footer.php:11
-#@ onecolumn
-msgid "Proudly powered by WordPress"
-msgstr "Fièrement propulsé par WordPress"
-
-#: functions.php:20
-#@ onecolumn
+#: functions.php:19
 msgid "Primary Navigation"
 msgstr "Navigation principale"
 
-#: functions.php:41
-#@ onecolumn
+#: functions.php:43
 msgid "Boats"
 msgstr "Bateaux"
 
-#: functions.php:108
-#: functions.php:118
-#: functions.php:129
-#: functions.php:139
-#@ onecolumn
-msgid "Select widgets from the right-hand side."
-msgstr "Choisir les widgets sur le côté droit."
-
-#: functions.php:127
-#@ onecolumn
-msgid "Footer Sidebar Right"
-msgstr "Pied de page Barre latérale à droite"
-
-#: functions.php:137
-#@ onecolumn
-msgid "Footer Sidebar Left"
-msgstr "Pied de page Barre latérale à gauche"
-
-#: functions.php:166
-#: functions.php:175
-#@ onecolumn
-msgid "Logo"
-msgstr "Logo"
-
-#: functions.php:168
-#@ onecolumn
-msgid "Upload a logo to replace blogname and description in header"
-msgstr "Télécharger un logo pour remplacer le nom du blog et sa description dans l'en-tête"
-
-#: index.php:15
-#@ onecolumn
-msgid "Featured post"
-msgstr "Articles mis en avant"
-
-#: page.php:25
-#: single.php:38
-#@ onecolumn
-msgid "Edit"
-msgstr "Modifier"
-
-#: search.php:11
-#, php-format
-#@ onecolumn
-msgid "Search Results for: %s"
-msgstr "Résultats de la recherche pour: %s"
-
-#: single.php:27
-#, php-format
-#@ onecolumn
-msgid "Posted in %s"
-msgstr "Publié dans %s"
-
-#: single.php:27
-#: single.php:28
-#@ onecolumn
-msgid ", "
-msgstr ", "
-
-#: single.php:28
-#, php-format
-#@ onecolumn
-msgid "Tags: %s"
-msgstr "Mots-clés: %s"
-
-#: functions.php:106
-#@ onecolumn
+#: functions.php:96
 msgid "Homepage Sidebar Right"
 msgstr "Page d'accueil Barre latérale à droite"
 
-#: functions.php:116
-#@ onecolumn
+#: functions.php:98 functions.php:108 functions.php:118 functions.php:128
+msgid "You can add one or multiple widgets here."
+msgstr "Vous pouvez ajouter un ou plusieurs widgets ici."
+
+#: functions.php:106
 msgid "Homepage Sidebar Left"
 msgstr "Page d'accueil Barre latérale à gauche"
 
+#: functions.php:116
+msgid "Footer Sidebar Right"
+msgstr "Pied de page Barre latérale à droite"
+
+#: functions.php:126
+msgid "Footer Sidebar Left"
+msgstr "Pied de page Barre latérale à gauche"
+
+#: functions.php:171 functions.php:180
+msgid "Logo"
+msgstr "Logo"
+
+#: functions.php:173
+msgid "Upload a logo to replace blogname and description in header."
+msgstr ""
+"Télécharger un logo pour remplacer le nom du blog et sa description dans "
+"l'en-tête."
+
+#: index.php:14
+msgid "Featured post"
+msgstr "Articles mis en avant"
+
+#: page.php:27 single.php:38
+msgid "Edit"
+msgstr "Modifier"
+
+#: search.php:12
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Résultats de la recherche pour: %s"
+
+#: single.php:29
+#, php-format
+msgid "Posted in %s"
+msgstr "Publié dans %s"
+
+#: single.php:29 single.php:30
+msgid ", "
+msgstr ", "
+
+#: single.php:30
+#, php-format
+msgid "Tags: %s"
+msgstr "Mots-clés: %s"
+
+#. Theme Name of the plugin/theme
+msgid "OneColumn"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://www.guidovanderleest.nl/onecolumn"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"OneColumn is a free, basic, clean, responsive, mobile friendly, one-column "
+"WordPress theme. Default theme language is English but Dutch, German, "
+"Spanish, French and Swedish are supported too. 2 widget-areas underneath "
+"header-image, 2 widget-areas in footer, custom header-image, custom "
+"background, display logo or blogname and description and dropdown navigation "
+"are included. Besides this no theme settings page, no fancy options, no "
+"slideshow, this one only has the basic options. Enjoy."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Guido van der Leest"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.guidovanderleest.nl"
+msgstr ""

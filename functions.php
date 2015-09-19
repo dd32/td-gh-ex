@@ -95,7 +95,7 @@
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar Right', 'onecolumn' ),
 		'id' => 'homepage-right',
-		'description' => __( 'Select widgets from the right-hand side.', 'onecolumn' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -105,7 +105,7 @@
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar Left', 'onecolumn' ),
 		'id' => 'homepage-left',
-		'description' => __( 'Select widgets from the right-hand side.', 'onecolumn' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -115,7 +115,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Right', 'onecolumn' ),
 		'id' => 'footer-right',
-		'description' => __( 'Select widgets from the right-hand side.', 'onecolumn' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -125,7 +125,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Left', 'onecolumn' ),
 		'id' => 'footer-left',
-		'description' => __( 'Select widgets from the right-hand side.', 'onecolumn' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -170,7 +170,7 @@
 		$wp_customize->add_section( 'onecolumn_logo_section' , array( 
 			'title' => __( 'Logo', 'onecolumn' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header', 'onecolumn' ),
+			'description' => __( 'Upload a logo to replace blogname and description in header.', 'onecolumn' ),
 		) );
 		$wp_customize->add_setting( 'onecolumn_logo', array( 
 			'capability' => 'edit_theme_options', 

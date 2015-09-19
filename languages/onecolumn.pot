@@ -1,249 +1,207 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OneColumn\n"
-"POT-Creation-Date: 2014-03-06 19:24+0100\n"
-"PO-Revision-Date: 2014-03-06 19:26+0100\n"
+"POT-Creation-Date: 2015-09-11 20:31+0200\n"
+"PO-Revision-Date: 2015-09-10 10:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:10
-#: search.php:38
-#@ onecolumn
+#: 404.php:9 search.php:39
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:11
-#: archive.php:49
-#: index.php:40
-#: search.php:39
-#@ onecolumn
+#: 404.php:10 archive.php:57 index.php:47 search.php:40
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
 #: archive.php:12
-#@ onecolumn
 msgid "Archive"
 msgstr ""
 
 #: archive.php:14
-#@ onecolumn
 msgid "Daily Archives"
 msgstr ""
 
 #: archive.php:16
-#@ onecolumn
 msgid "Monthly Archives"
 msgstr ""
 
 #: archive.php:18
-#@ onecolumn
 msgid "Yearly Archives"
 msgstr ""
 
 #: archive.php:20
-#@ onecolumn
 msgid "Author Archives"
 msgstr ""
 
 #: archive.php:22
-#@ onecolumn
 msgid "Tag Archives"
 msgstr ""
 
-#: archive.php:29
-#: index.php:20
-#: search.php:17
+#: archive.php:29 index.php:19 search.php:17
 #, php-format
-#@ onecolumn
 msgid "Permalink to %s"
 msgstr ""
 
-#: archive.php:33
-#: index.php:24
-#: search.php:21
-#: single.php:17
+#: archive.php:33 index.php:23 search.php:21 single.php:16
 #, php-format
-#@ onecolumn
 msgid "Posted on %s"
 msgstr ""
 
-#: archive.php:34
-#: index.php:25
-#: search.php:22
-#: single.php:18
+#: archive.php:34 index.php:24 search.php:22 single.php:17
 #, php-format
-#@ onecolumn
 msgid "By %s"
 msgstr ""
 
-#: archive.php:36
-#: index.php:27
-#: search.php:24
-#: single.php:20
-#@ onecolumn
+#: archive.php:36 index.php:26 search.php:24 single.php:19
 msgid "Leave a response"
 msgstr ""
 
-#: archive.php:36
-#: index.php:27
-#: search.php:24
-#: single.php:20
-#@ onecolumn
+#: archive.php:36 index.php:26 search.php:24 single.php:19
 msgid "1 response"
 msgstr ""
 
-#: archive.php:36
-#: index.php:27
-#: search.php:24
-#: single.php:20
-#@ onecolumn
+#: archive.php:36 index.php:26 search.php:24 single.php:19
 msgid "% responses"
 msgstr ""
 
-#: archive.php:45
-#: index.php:36
-#: search.php:33
-#@ onecolumn
+#: archive.php:46 index.php:36 search.php:34
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:53
-#: index.php:44
-#: search.php:45
-#@ onecolumn
+#: archive.php:52 index.php:42 search.php:47
 msgid "&laquo; Older posts"
 msgstr ""
 
-#: archive.php:54
-#: index.php:45
-#: search.php:46
-#@ onecolumn
+#: archive.php:53 index.php:43 search.php:48
 msgid "Newer posts &raquo;"
 msgstr ""
 
-#: comments.php:18
+#: comments.php:16
 #, php-format
-#@ onecolumn
 msgid "1 response on %2$s"
 msgid_plural "%1$s responses on %2$s"
 msgstr[0] ""
-msgstr[1] ""
 
-#: comments.php:38
-#@ onecolumn
+#: comments.php:29
 msgid "&laquo; Older Comments"
 msgstr ""
 
-#: comments.php:39
-#@ onecolumn
+#: comments.php:30
 msgid "Newer Comments &raquo;"
 msgstr ""
 
-#: comments.php:45
-#@ onecolumn
+#: comments.php:35
 msgid "Comments are closed"
 msgstr ""
 
 #: footer.php:10
-#@ onecolumn
 msgid "Copyright"
 msgstr ""
 
-#: footer.php:11
-#@ onecolumn
-msgid "WordPress Blog Platform"
+#: footer.php:10
+msgid "OneColumn WordPress Theme"
 msgstr ""
 
-#: footer.php:11
-#@ onecolumn
-msgid "Proudly powered by WordPress"
-msgstr ""
-
-#: functions.php:20
-#@ onecolumn
+#: functions.php:19
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:41
-#@ onecolumn
+#: functions.php:43
 msgid "Boats"
 msgstr ""
 
-#: functions.php:103
-#@ onecolumn
+#: functions.php:96
 msgid "Homepage Sidebar Right"
 msgstr ""
 
-#: functions.php:105
-#: functions.php:115
-#: functions.php:126
-#: functions.php:136
-#@ onecolumn
-msgid "Select widgets from the right-hand side."
+#: functions.php:98 functions.php:108 functions.php:118 functions.php:128
+msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:113
-#@ onecolumn
+#: functions.php:106
 msgid "Homepage Sidebar Left"
 msgstr ""
 
-#: functions.php:124
-#@ onecolumn
+#: functions.php:116
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:134
-#@ onecolumn
+#: functions.php:126
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:158
-#: functions.php:164
-#@ onecolumn
+#: functions.php:171 functions.php:180
 msgid "Logo"
 msgstr ""
 
-#: functions.php:160
-#@ onecolumn
-msgid "Upload a logo to replace blogname and description in header"
+#: functions.php:173
+msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
-#: index.php:15
-#@ onecolumn
+#: index.php:14
 msgid "Featured post"
 msgstr ""
 
-#: page.php:19
-#: single.php:38
-#@ onecolumn
+#: page.php:27 single.php:38
 msgid "Edit"
 msgstr ""
 
-#: search.php:11
+#: search.php:12
 #, php-format
-#@ onecolumn
 msgid "Search Results for: %s"
 msgstr ""
 
-#: single.php:27
+#: single.php:29
 #, php-format
-#@ onecolumn
 msgid "Posted in %s"
 msgstr ""
 
-#: single.php:27
-#: single.php:28
-#@ onecolumn
+#: single.php:29 single.php:30
 msgid ", "
 msgstr ""
 
-#: single.php:28
+#: single.php:30
 #, php-format
-#@ onecolumn
 msgid "Tags: %s"
 msgstr ""
 
+#. Theme Name of the plugin/theme
+msgid "OneColumn"
+msgstr ""
 
+#. Theme URI of the plugin/theme
+msgid "http://www.guidovanderleest.nl/onecolumn"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"OneColumn is a free, basic, clean, responsive, mobile friendly, one-column "
+"WordPress theme. Default theme language is English but Dutch, German, "
+"Spanish, French and Swedish are supported too. 2 widget-areas underneath "
+"header-image, 2 widget-areas in footer, custom header-image, custom "
+"background, display logo or blogname and description and dropdown "
+"navigation are included. Besides this no theme settings page, no fancy "
+"options, no slideshow, this one only has the basic options. Enjoy."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Guido van der Leest"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.guidovanderleest.nl"
+msgstr ""
