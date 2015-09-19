@@ -29,6 +29,9 @@ Araiz includes support for Infinite Scroll in Jetpack.
 
 == Change log ==
 
+= 1.0.9 - September 19 2015 =
+* Search orientation fixed
+
 = 1.0.8 - September 13 2015 =
 * Widgets margin & padding removed
 

@@ -27,8 +27,8 @@ function premium_customizer( $wp_customize ) {
 			</p> <?php
         }
     }
-     	$wp_customize->add_section('araiz_general', array('title' => __('Theme Options', 'araiz-corporate-basic'), 'priority' => 1));
-	$wp_customize->add_section('araiz_upgrade', array('title' => __('Upgrade to Premium', 'araiz-corporate-basic'), 'priority' => 999));
+     	$wp_customize->add_section('araiz_general', array('title' => __('Theme Options', 'araiz'), 'priority' => 1));
+	$wp_customize->add_section('araiz_upgrade', array('title' => __('Upgrade to Premium', 'araiz'), 'priority' => 999));
 
      
     $wp_customize->add_setting('araizc_options[premium_version_label]', array('default' => '', 'type' => 'option', 'sanitize_callback' => 'esc_attr'));
@@ -37,9 +37,9 @@ function premium_customizer( $wp_customize ) {
 
     
     
-    $wp_customize->add_control(new araiz_Customize_Header_Control($wp_customize, 'premium_version_label', array('label' => __('Need more features and options?', 'araiz-corporate-basic'), 'section' => 'araiz_upgrade', 'settings' => 'araizc_options[premium_version_label]', 'priority' => 1)));
-	$wp_customize->add_control(new araiz_Customize_Text_Control($wp_customize, 'premium_version_text', array('label' => __('Check out the Premium Version of this theme which comes with additional features and advanced customization options for your website.', 'araiz-corporate-basic'), 'section' => 'araiz_upgrade', 'settings' => 'araizc_options[premium_version_text]', 'priority' => 2)));
-	$wp_customize->add_control(new araiz_Customize_Button_Control($wp_customize, 'premium_version_button', array('label' => __('Learn more about the Premium Version', 'araiz-corporate-basic'), 'section' => 'araiz_upgrade', 'settings' => 'araizc_options[premium_version_button]', 'priority' => 3)));
+    $wp_customize->add_control(new araiz_Customize_Header_Control($wp_customize, 'premium_version_label', array('label' => __('Need more features and options?', 'araiz'), 'section' => 'araiz_upgrade', 'settings' => 'araizc_options[premium_version_label]', 'priority' => 1)));
+	$wp_customize->add_control(new araiz_Customize_Text_Control($wp_customize, 'premium_version_text', array('label' => __('Check out the Premium Version of this theme which comes with additional features and advanced customization options for your website.', 'araiz'), 'section' => 'araiz_upgrade', 'settings' => 'araizc_options[premium_version_text]', 'priority' => 2)));
+	$wp_customize->add_control(new araiz_Customize_Button_Control($wp_customize, 'premium_version_button', array('label' => __('Learn more about the Premium Version', 'araiz'), 'section' => 'araiz_upgrade', 'settings' => 'araizc_options[premium_version_button]', 'priority' => 3)));
         
 }
 add_action( 'customize_register', 'premium_customizer' );
