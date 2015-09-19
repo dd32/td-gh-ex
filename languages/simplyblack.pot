@@ -1,250 +1,207 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SimplyBlack\n"
-"POT-Creation-Date: 2014-03-06 19:24+0100\n"
-"PO-Revision-Date: 2014-03-06 19:26+0100\n"
+"POT-Creation-Date: 2015-09-11 20:39+0200\n"
+"PO-Revision-Date: 2015-09-10 10:17+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9
-#: search.php:38
-#@ simplyblack
+#: 404.php:9 search.php:38
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:10
-#: archive.php:49
-#: index.php:39
-#: search.php:39
-#@ simplyblack
+#: 404.php:10 archive.php:57 index.php:47 search.php:39
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
 #: archive.php:12
-#@ simplyblack
 msgid "Archive"
 msgstr ""
 
 #: archive.php:14
-#@ simplyblack
 msgid "Daily Archives"
 msgstr ""
 
 #: archive.php:16
-#@ simplyblack
 msgid "Monthly Archives"
 msgstr ""
 
 #: archive.php:18
-#@ simplyblack
 msgid "Yearly Archives"
 msgstr ""
 
 #: archive.php:20
-#@ simplyblack
 msgid "Author Archives"
 msgstr ""
 
 #: archive.php:22
-#@ simplyblack
 msgid "Tag Archives"
 msgstr ""
 
-#: archive.php:29
-#: index.php:19
-#: search.php:17
+#: archive.php:29 index.php:19 search.php:16
 #, php-format
-#@ simplyblack
 msgid "Permalink to %s"
 msgstr ""
 
-#: archive.php:33
-#: index.php:23
-#: search.php:21
-#: single.php:17
+#: archive.php:33 index.php:23 search.php:20 single.php:16
 #, php-format
-#@ simplyblack
 msgid "Posted on %s"
 msgstr ""
 
-#: archive.php:34
-#: index.php:24
-#: search.php:22
-#: single.php:18
+#: archive.php:34 index.php:24 search.php:21 single.php:17
 #, php-format
-#@ simplyblack
 msgid "By %s"
 msgstr ""
 
-#: archive.php:36
-#: index.php:26
-#: search.php:24
-#: single.php:20
-#@ simplyblack
+#: archive.php:36 index.php:26 search.php:23 single.php:19
 msgid "Leave a response"
 msgstr ""
 
-#: archive.php:36
-#: index.php:26
-#: search.php:24
-#: single.php:20
-#@ simplyblack
+#: archive.php:36 index.php:26 search.php:23 single.php:19
 msgid "1 response"
 msgstr ""
 
-#: archive.php:36
-#: index.php:26
-#: search.php:24
-#: single.php:20
-#@ simplyblack
+#: archive.php:36 index.php:26 search.php:23 single.php:19
 msgid "% responses"
 msgstr ""
 
-#: archive.php:45
-#: index.php:35
-#: search.php:33
-#@ simplyblack
+#: archive.php:46 index.php:36 search.php:33
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:53
-#: index.php:43
-#: search.php:45
-#@ simplyblack
+#: archive.php:52 index.php:42 search.php:46
 msgid "&laquo; Older posts"
 msgstr ""
 
-#: archive.php:54
-#: index.php:44
-#: search.php:46
-#@ simplyblack
+#: archive.php:53 index.php:43 search.php:47
 msgid "Newer posts &raquo;"
 msgstr ""
 
-#: comments.php:18
+#: comments.php:17
 #, php-format
-#@ simplyblack
 msgid "1 response on %2$s"
 msgid_plural "%1$s responses on %2$s"
 msgstr[0] ""
-msgstr[1] ""
 
-#: comments.php:39
-#@ simplyblack
+#: comments.php:30
 msgid "&laquo; Older Comments"
 msgstr ""
 
-#: comments.php:40
-#@ simplyblack
+#: comments.php:31
 msgid "Newer Comments &raquo;"
 msgstr ""
 
-#: comments.php:46
-#@ simplyblack
+#: comments.php:36
 msgid "Comments are closed"
 msgstr ""
 
-#: footer.php:40
-#@ simplyblack
+#: footer.php:26
 msgid "Copyright"
 msgstr ""
 
-#: footer.php:41
-#@ simplyblack
-msgid "WordPress Blog Platform"
-msgstr ""
-
-#: footer.php:41
-#@ simplyblack
-msgid "Proudly powered by WordPress"
+#: footer.php:26
+msgid "SimplyBlack WordPress Theme"
 msgstr ""
 
 #: functions.php:19
-#@ simplyblack
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:40
-#@ simplyblack
+#: functions.php:43
 msgid "Boats"
 msgstr ""
 
-#: functions.php:104
-#@ simplyblack
+#: functions.php:96
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:106
-#: functions.php:116
-#: functions.php:126
-#: functions.php:136
-#@ simplyblack
-msgid "Select widgets from the right-hand side."
+#: functions.php:98 functions.php:108 functions.php:118 functions.php:128
+msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:114
-#@ simplyblack
+#: functions.php:106
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:124
-#@ simplyblack
+#: functions.php:116
 msgid "Footer Sidebar Middle"
 msgstr ""
 
-#: functions.php:134
-#@ simplyblack
+#: functions.php:126
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:158
-#: functions.php:164
-#@ simplyblack
+#: functions.php:172 functions.php:181
 msgid "Logo"
 msgstr ""
 
-#: functions.php:160
-#@ simplyblack
-msgid "Upload a logo to replace blogname and description in header"
+#: functions.php:174
+msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
 #: index.php:14
-#@ simplyblack
 msgid "Featured post"
 msgstr ""
 
-#: page-full.php:20
-#: page.php:19
-#: single.php:38
-#@ simplyblack
+#: page-full.php:29 page.php:28 single.php:38
 msgid "Edit"
 msgstr ""
 
 #: search.php:11
 #, php-format
-#@ simplyblack
 msgid "Search Results for: %s"
 msgstr ""
 
-#: single.php:27
+#: single.php:29
 #, php-format
-#@ simplyblack
 msgid "Posted in %s"
 msgstr ""
 
-#: single.php:27
-#: single.php:28
-#@ simplyblack
+#: single.php:29 single.php:30
 msgid ", "
 msgstr ""
 
-#: single.php:28
+#: single.php:30
 #, php-format
-#@ simplyblack
 msgid "Tags: %s"
 msgstr ""
 
+#. Theme Name of the plugin/theme
+msgid "SimplyBlack"
+msgstr ""
 
+#. Theme URI of the plugin/theme
+msgid "http://www.guidovanderleest.nl/simplyblack"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"SimplyBlack is a free, basic, clean, minimalistic, responsive, mobile "
+"friendly WordPress theme. Default theme language is English but Dutch, "
+"German, Spanish, French and Swedish are supported too. Primary sidebar, 3 "
+"widget-area's in footer, custom header-image, custom background, display "
+"logo or blogname and description, full width page-template and dropdown "
+"navigation are included. Besides this no theme settings page, no fancy "
+"options, no slideshow, this one only has the basic options. Enjoy."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Guido van der Leest"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.guidovanderleest.nl"
+msgstr ""

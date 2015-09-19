@@ -23,8 +23,7 @@
 	<?php } ?>	
 
 	<div class="site-info">
-		<?php _e('Copyright', 'simplyblack'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
-		<a href="http://wordpress.org" title="<?php _e('WordPress Blog Platform', 'simplyblack'); ?>"><?php _e('Proudly powered by WordPress', 'simplyblack'); ?></a>
+		<?php _e('Copyright', 'simplyblack'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php _e('SimplyBlack WordPress Theme', 'simplyblack'); ?>  
 	</div>
 
 </div>
