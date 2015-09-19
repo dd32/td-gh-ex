@@ -135,12 +135,14 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 }
 endif;
 
-// remove mantra functions action hooks
-function remove_mantra_functions() {
+// remove obsolete mantra functions action hooks
+if ( ! function_exists( 'mantra_remove_obsolete_functions' ) ) :
+function mantra_remove_obsolete_functions() {
     remove_filter( 'wp_title', 'mantra_filter_wp_title' );
 	remove_filter('wp_title_rss','mantra_filter_wp_title_rss');
 }
-add_action('init','remove_mantra_functions');
+add_action('init','mantra_remove_obsolete_functions');
+endif; 
 
 // Backwards compatibility for the title-tag
 if ( ! function_exists( '_wp_render_title_tag' ) ) :
