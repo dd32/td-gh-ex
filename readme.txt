@@ -14,7 +14,7 @@ To set a static homepage go to your WordPress Dashboard > Settings > Reading and
 HOW TO CHANGE HEADER IMAGE
 ==========================
 You can change the header-image via WordPress Dashboard > Appearance > Header.
-I advice you to use a header-image of 650px wide and 450px high. 
+I advice you to use a header-image of 570px wide and 350px high. 
 
 
 HOW TO SET LOGO
@@ -36,7 +36,7 @@ You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 TRANSLATION
 ===========
-This theme is translation-ready (Dutch, German, Spanish and French translation included). 
+This theme is translation-ready (Dutch, German, Spanish, French and Swedish translation included). 
 More translations are very welcome! Please contact me via my website.
 
 

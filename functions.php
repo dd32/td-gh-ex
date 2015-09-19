@@ -9,7 +9,7 @@
 	// Set max content width for img, video, and more
 		global $content_width; 
 		if ( ! isset( $content_width ) )
-		$content_width = 700;
+		$content_width = 760;
 
 	// Make theme available for translation
 		load_theme_textdomain('multicolors', get_template_directory() . '/languages');  
@@ -27,8 +27,8 @@
 
 	// Custom header	
 		$args = array(		
-		'width' => 650,
-		'height' => 450,
+		'width' => 570,
+		'height' => 350,
 		'default-image' => get_template_directory_uri() . '/images/boats.jpg',
 		'header-text' => false,
 		'uploads' => true,
@@ -95,7 +95,7 @@
 	register_sidebar( array(
 		'name' => __( 'Primary Sidebar', 'multicolors' ),
 		'id' => 'primary',
-		'description' => __( 'Select widgets from the right-hand side.', 'multicolors' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -105,7 +105,7 @@
 	register_sidebar( array(
 		'name' => __( 'Header Sidebar', 'multicolors' ),
 		'id' => 'header',
-		'description' => __( 'Select widgets from the right-hand side.', 'multicolors' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -115,7 +115,7 @@
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar Right', 'multicolors' ),
 		'id' => 'homepage-right',
-		'description' => __( 'Select widgets from the right-hand side.', 'multicolors' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -125,7 +125,7 @@
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar Middle', 'multicolors' ),
 		'id' => 'homepage-middle',
-		'description' => __( 'Select widgets from the right-hand side.', 'multicolors' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -135,7 +135,7 @@
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar Left', 'multicolors' ),
 		'id' => 'homepage-left',
-		'description' => __( 'Select widgets from the right-hand side.', 'multicolors' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -145,7 +145,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Right', 'multicolors' ),
 		'id' => 'footer-right',
-		'description' => __( 'Select widgets from the right-hand side.', 'multicolors' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -155,7 +155,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Middle', 'multicolors' ),
 		'id' => 'footer-middle',
-		'description' => __( 'Select widgets from the right-hand side.', 'multicolors' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -165,7 +165,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Left', 'multicolors' ),
 		'id' => 'footer-left',
-		'description' => __( 'Select widgets from the right-hand side.', 'multicolors' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -211,7 +211,7 @@
 		$wp_customize->add_section( 'multicolors_logo_section' , array( 
 			'title' => __( 'Logo', 'multicolors' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header', 'multicolors' ),
+			'description' => __( 'Upload a logo to replace blogname and description in header.', 'multicolors' ),
 		) );
 		$wp_customize->add_setting( 'multicolors_logo', array( 
 			'capability' => 'edit_theme_options', 

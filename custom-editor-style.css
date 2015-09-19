@@ -3,7 +3,7 @@ Used to style the post and page TinyMCE editor.
 */
 
 @import url(//fonts.googleapis.com/css?family=Open+Sans);
-body {background:#00aaff; font-family:'Open Sans', sans-serif; font-size:1em; color:#eee; line-height:1.5em;}
+body {font-family:'Open Sans', sans-serif; font-size:1em; color:#333; line-height:1.5em;}
 
 
 /* RESET STYLESHEET */
@@ -44,7 +44,7 @@ h6 {font-size:0.75em; line-height:2em;}
 
 
 /* LINKS AND HTML TAGS */
-a {text-decoration:underline; color:#eee;}
+a {text-decoration:underline; color:#333;}
 a:hover {text-decoration:none;}
 
 strong, b {font-weight:bold;}
@@ -54,15 +54,15 @@ sub {vertical-align:sub; font-size:0.9em;}
 sup {vertical-align:super; font-size:0.9em;}
 ins, mark {font-weight:bold; background:none; color:#333;}
 cite, em, abbr, acronym {font-style:italic;}
-code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #eee; word-wrap:break-word;}
-blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #eee;}
-address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #eee;}
+code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #333; word-wrap:break-word;}
+blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #333;}
+address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #333;}
 p {margin:0 0 10px; text-align:justify;}
 
 
 /* TABLE AND LISTS */
 table {margin:10px 0; border-collapse:collapse;}
-table, th, td {border: 1px solid #eee; padding:5px 10px;}
+table, th, td {border:1px solid #333; padding:5px 10px;}
 table th {font-weight:bold;}
 
 ul {list-style:square; margin:2px 0 2px 0;}
