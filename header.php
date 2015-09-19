@@ -41,7 +41,7 @@
 	<?php endif; ?>
 </div>
 
-<div id="main">
+<div id="main-content">
 
 <?php if ( is_home() || is_front_page() ) {?> 
 <?php if ( get_header_image() ) {?> 

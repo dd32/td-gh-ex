@@ -1,10 +1,10 @@
 /*
 Theme Name: Medical
 Theme URI: http://www.guidovanderleest.nl/medical
-Version: 2.5
+Version: 2.6
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: Medical is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Default theme language is English but Dutch, German, Spanish and French are supported too. Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: Medical is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Default theme language is English but Dutch, German, Spanish, French and Swedish are supported too. Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, blue, light, gray, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -69,9 +69,12 @@ table {
 /* BODY AND CONTAINER */
 body {background:#fff url('images/border.png') repeat-x; background-position:50% 250px; font-family:'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
 #container {max-width:960px; margin:0 auto 0; padding:0 1%; text-align:left; word-wrap:break-word;}
-#main {clear:both; padding:0 2%; background:#fff; border:1px solid #ddd; border-radius:15px; -moz-border-radius:15px; box-shadow:0 0 20px #ddd;}
-#main:after {content:''; display:block; clear:both;}
-#content {width:60%; float:left; padding:20px 0; word-wrap:break-word;}
+#main-content {clear:both; padding:0 2%; background:#fff; border:1px solid #ddd; border-radius:15px; -moz-border-radius:15px; box-shadow:0 0 20px #ddd;}
+#main-content:after {content:''; display:block; clear:both;}
+
+
+/* MAIN CONTENT AREA */
+#content {width:67%; float:left; padding:20px 0; word-wrap:break-word;}
 #content:after {content:''; display:block; clear:both;}
 #content-full {width:100%; float:left; padding:20px 0; word-wrap:break-word;}
 #content-full:after {content:''; display:block; clear:both;}
@@ -157,17 +160,17 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER SECOND */
-#header-second {margin:0; padding:20px 0 10px; border-bottom:10px solid #08a0ff;border-radius:15px; -moz-border-radius:15px;}
+#header-second {clear:both; padding:20px 0 10px; border-bottom:10px solid #08a0ff;border-radius:15px; -moz-border-radius:15px;}
 #header-second:after {content:''; display:block; clear:both;}
 
 
 /* HEADER SECOND HOMEPAGE IMAGE */
-#header-second .image-homepage {width:52%; float:left;}
+#header-second .image-homepage {width:49%; float:left;}
 #header-second .header-img {width:100%; height:auto; border-top-left-radius:15px; moz-border-radius-topleft:15px;}
 
 
 /* HEADER SECOND HOMEPAGE SIDEBAR */
-#header-second .sidebar-homepage {width:46%; float:right; word-wrap:break-word; background:#08a0ff; border-top-right-radius:15px; moz-border-radius-topright:15px;}
+#header-second .sidebar-homepage {width:49%; float:right; word-wrap:break-word; background:#08a0ff; border-top-right-radius:15px; moz-border-radius-topright:15px;}
 #header-second .widget {margin:15px 0; padding:0 15px; background:none; color:#fff; border:0;}
 #header-second .widget a {color:#fff;}
 
@@ -223,7 +226,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* SEARCHFORM */
 .search-form {padding:10px 0;}
 .search-field {width:50%; margin:0 5px 0 0;}
-.screen-reader-text {display:none;}
+.search-form .screen-reader-text {display:none;}
 
 
 /* COMMENTS */
@@ -250,7 +253,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* SIDEBAR AND WIDGETS */
-#sidebar {width:36%; float:right; margin:0; padding:20px 0 0; word-wrap:break-word;}
+#sidebar {width:31%; float:right; margin:0; padding:20px 0 0; word-wrap:break-word;}
 .widget {padding:0 0 10px; margin:0 0 20px; background:none; border-bottom:1px solid #ddd;}
 .widgettitle {margin:0 0 10px;}
 
@@ -267,9 +270,9 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 #footer .widget {margin:15px 0 0;}
 
-.footer-left {float:left; width:30%; margin:5px 0 0; padding:0; word-wrap:break-word;}
-.footer-middle {float:left; width:30%; margin:5px 5% 0; padding:0; word-wrap:break-word;}
-.footer-right {float:right; width:30%; margin:5px 0 0; padding:0; word-wrap:break-word;}
+.footer-left {float:left; width:32%; margin:5px 0 0; padding:0; word-wrap:break-word;}
+.footer-middle {float:left; width:32%; margin:5px 2% 0; padding:0; word-wrap:break-word;}
+.footer-right {float:right; width:32%; margin:5px 0 0; padding:0; word-wrap:break-word;}
 
 
 /* MOBILE */
@@ -278,7 +281,9 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	body {font-size:1em; line-height:1.2em; background:none;}
 	body.custom-background {background-image:none !important;}
 	#container {width:98%;}
-	#main {margin:10px 0 0;}
+	#main-content {margin:10px 0 0;}
+
+	/* MAIN CONTENT AREA */
 	#content, #content-full {width:100%; padding:10px 0;}
 
 	/* HEADER */
@@ -291,6 +296,17 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#header-second .header-img {border-radius:15px; -moz-border-radius:15px;}
 	#header-second .sidebar-homepage {width:100%; float:left; border-radius:15px; -moz-border-radius:15px;}
 
+	/* MENU */
+	.nav-head ul {display:none;} 
+	.nav-head {width:100%; margin:5px 0 0;}
+	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#08a0ff; border:0;}
+
+	/* HEADINGS */
+	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
+
+	/* IMAGES */
+	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
+
 	/* SIDEBAR */
 	#sidebar {width:100%; padding:0 0 10px; float:left;}
 	.widget {margin:10px 0;}
@@ -299,15 +315,4 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#footer {width:100%; padding:10px 0 0;}
 	#footer .widget {margin:5px 0;}
 	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
-
-	/* HEADINGS */
-	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
-
-	/* IMAGES */
-	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
-
-	/* MENU */
-	.nav-head ul {display:none;} 
-	.nav-head {width:100%; margin:5px 0 0;}
-	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#08a0ff; border:0;}
 }

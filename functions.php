@@ -9,7 +9,7 @@
 	// Set max content width for img, video, and more
 		global $content_width; 
 		if ( ! isset( $content_width ) )
-		$content_width = 560;
+		$content_width = 610;
 
 	// Make theme available for translation
 		load_theme_textdomain('medical', get_template_directory() . '/languages');  
@@ -27,8 +27,8 @@
 
 	// Custom header	
 		$args = array(		
-		'width' => 500,
-		'height' => 350,
+		'width' => 460,
+		'height' => 300,
 		'default-image' => get_template_directory_uri() . '/images/boats.jpg',
 		'header-text' => false,
 		'uploads' => true,
@@ -95,7 +95,7 @@
 	register_sidebar( array(
 		'name' => __( 'Primary Sidebar', 'medical' ),
 		'id' => 'primary',
-		'description' => __( 'Select widgets from the right-hand side.', 'medical' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'medical' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -105,7 +105,7 @@
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar', 'medical' ),
 		'id' => 'homepage',
-		'description' => __( 'Select widgets from the right-hand side.', 'medical' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'medical' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -115,7 +115,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Right', 'medical' ),
 		'id' => 'footer-right',
-		'description' => __( 'Select widgets from the right-hand side.', 'medical' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'medical' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -125,7 +125,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Middle', 'medical' ),
 		'id' => 'footer-middle',
-		'description' => __( 'Select widgets from the right-hand side.', 'medical' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'medical' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -135,7 +135,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Left', 'medical' ),
 		'id' => 'footer-left',
-		'description' => __( 'Select widgets from the right-hand side.', 'medical' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'medical' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -181,7 +181,7 @@
 		$wp_customize->add_section( 'medical_logo_section' , array( 
 			'title' => __( 'Logo', 'medical' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header', 'medical' ),
+			'description' => __( 'Upload a logo to replace blogname and description in header.', 'medical' ),
 		) );
 		$wp_customize->add_setting( 'medical_logo', array( 
 			'capability' => 'edit_theme_options', 

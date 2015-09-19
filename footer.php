@@ -3,7 +3,7 @@
  * The footer for displaying footer widgets and site-info.
  */
 ?>
-</div><!-- #main -->
+</div><!-- #main-content -->
 <div id="footer">
 
 	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?> 
@@ -23,8 +23,7 @@
 	<?php } ?>	
 
 	<div class="site-info">
-		<?php _e('Copyright', 'medical'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
-		<a href="http://wordpress.org" title="<?php _e('WordPress Blog Platform', 'medical'); ?>"><?php _e('Proudly powered by WordPress', 'medical'); ?></a>
+		<?php _e('Copyright', 'medical'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php _e('Medical WordPress Theme', 'medical'); ?>  
 	</div>
 
 </div>
