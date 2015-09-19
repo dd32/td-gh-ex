@@ -1,11 +1,15 @@
 <div class="scroll-sidebar">
 	
     <div class="post-article">
+ 
         <nav id="mainmenu">
+ 
         	<h3 class="title">Menu</h3>
             <?php wp_nav_menu( array('theme_location' => 'main-menu', 'container' => 'false','depth' => 3  )); ?>
+    
         </nav> 
-	</div>
+	
+    </div>
 
 	<?php 
 		
@@ -25,8 +29,8 @@
 			dynamic_sidebar('side-sidebar-area');
 		}
 	
+		do_action('lookilite_socials'); 
+	
 	?>
-    
-    <?php do_action('lookilite_socials'); ?>
     
 </div>

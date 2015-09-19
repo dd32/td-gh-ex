@@ -1,5 +1,11 @@
+
+
+</div>
+
 <footer id="footer">
+
 	<div class="container">
+    
 		<div class="row" >
              
 			<div class="col-md-12" >
@@ -20,13 +26,14 @@
 				</div>
             
                 <div class="back-to-top"><i class="fa fa-chevron-up"></i> </div>
-                
                 <div class="clear"></div>
                 
 			</div>
                 
 		</div>
+        
 	</div>
+    
 </footer>
 
 </div>

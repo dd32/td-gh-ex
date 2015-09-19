@@ -1,0 +1,121 @@
+#header,
+#footer,
+.scroll-sidebar,
+.scroll-sidebar .post-article {
+    background-color: #ffffff;
+}
+.navigation i,
+.back-to-top i,
+#footer a,
+#footer p,
+.scroll-sidebar h3.title,
+.scroll-sidebar a,
+.scroll-sidebar p,
+.scroll-sidebar li,
+.scroll-sidebar address,
+.scroll-sidebar dd,
+.scroll-sidebar blockquote,
+.scroll-sidebar td,
+.scroll-sidebar th,
+.scroll-sidebar label,
+.scroll-sidebar .textwidget,
+nav#mainmenu li a {
+    color: #333333;
+}
+.scroll-sidebar,
+.navigation i,
+.back-to-top i,
+.scroll-sidebar li,
+ul.widget-category,
+ul.widget-category li a,
+ul.contact-info li,
+.bottom_widget ul.contact-info li,
+.tagcloud a,
+.socials a,
+nav#mainmenu ul,
+nav#mainmenu li a,
+nav#mainmenu li:last-of-type a,
+nav#mainmenu li:last-of-type a:hover,
+.scroll-sidebar .post-article {
+    border-color: #dddddd;
+}
+::-moz-selection {
+    background-color: #f4d03f;
+}
+::selection {
+    background-color: #f4d03f;
+}
+.skills .views,
+.filter,
+.scroll-sidebar #searchform input[type=submit],
+.scroll-sidebar .contact-form input[type=submit],
+.scroll-sidebar #commentform input[type=submit],
+.wp-pagenavi a:hover,
+.wp-pagenavi span.current {
+    background-color: #f4d03f;
+    border-color: #f1c40f;
+}
+a.more:hover,
+a:hover,
+.scroll-sidebar a:hover,
+.post-info a:hover,
+#footer a:hover {
+    color: #f4d03f;
+}
+.skills .views,
+.filter {
+    border-color: #f4d03f;
+}
+#subheader,
+nav#mainmenu li a:hover,
+nav#mainmenu li:hover > a,
+nav#mainmenu li.current-menu-item > a,
+nav#mainmenu li.current-menu-ancestor > a,
+.navigation i.open,
+.navigation i:hover,
+.back-to-top i.open,
+.back-to-top i:hover,
+.post-article .link a:hover,
+.post-article .quote:hover,
+.skills .views.active,
+.skills .views:hover,
+.filter li:hover,
+.filter li.active,
+#searchform input[type=submit]:hover,
+.contact-form input[type=submit]:hover,
+#commentform input[type=submit]:hover,
+ul.widget-category li a:hover,
+.scroll-sidebar #searchform input[type=submit]:hover,
+.scroll-sidebar .contact-form input[type=submit]:hover,
+.scroll-sidebar #commentform input[type=submit]:hover,
+#wp-calendar #today,
+#wp-calendar #today a,
+.tagcloud a:hover,
+.tabs li a:hover,
+.tabs li.ui-tabs-active a,
+.tabs li.ui-state-active a,
+.toggle_container h5.element:hover,
+.toggle_container h5.inactive,
+.toggle_container h5.inactive:hover,
+.socials a:hover {
+    background-color: #f1c40f;
+}
+.post-article .title a:hover,
+.filterable-grid h4.title a:hover,
+.filterable-grid h4.title a:focus {
+    color: #f1c40f;
+}
+ul.widget-category li a:hover,
+.toggle_container h5.element:hover,
+.toggle_container h5.inactive,
+.toggle_container h5.inactive:hover,
+.toggle_container h5.element:hover:last-of-type,
+.toggle_container h5.inactive:last-of-type,
+.toggle_container h5.inactive:hover:last-of-type,
+.socials a:hover,
+.navigation i.open,
+.navigation i:hover,
+.back-to-top i.open,
+.back-to-top i:hover {
+    border-color: #f1c40f;
+}

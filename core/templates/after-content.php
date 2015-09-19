@@ -13,7 +13,7 @@ function lookilite_after_content_function() {
 
 	if ((is_home()) || (is_category()) || (is_search()) || (is_tag()) || ( (is_page()) && (get_post_type() <> "page")) ):
 		
-		lookilite_excerpt();
+		do_action('lookilite_excerpt');
 		 
 	?>
 

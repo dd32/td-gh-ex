@@ -7,20 +7,8 @@
         <div class="row">
             
             <div class="col-md-12">
-				
-				<?php if (is_tag()) { ?>
 
-                    <p><?php _e( 'Tag','lookilite'); ?> : <?php single_tag_title(); ?> </p>
-				
-				<?php  } else if (is_category()) { ?>
-                
-                    <p><?php _e( 'Category','lookilite'); ?> : <?php single_cat_title(); ?> </p>
-
-				<?php  } else if (is_month()) { ?>
-
-                    <p><?php _e( 'Archive for','lookilite'); ?> : <?php the_time('F, Y'); ?> </p>
-
-                <?php } ?>
+				<p><?php echo lookilite_get_archive_title(); ?> </p>
                 
             </div>   
                  
