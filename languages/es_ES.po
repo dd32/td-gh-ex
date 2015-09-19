@@ -1,271 +1,222 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PrivateBusiness v3.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-01-23 16:22:25+0000\n"
-"Last-Translator: Guido van der Leest\n"
+"Project-Id-Version: PrivateBusiness\n"
+"POT-Creation-Date: 2015-09-11 20:35+0200\n"
+"PO-Revision-Date: 2015-09-11 20:35+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: CSL v1.x\n"
-"X-Poedit-Language: Spanish\n"
-"X-Poedit-Country: SPAIN\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-Bookmarks: \n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Textdomain-Support: yes"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9
-#: search.php:38
-#@ privatebusiness
+#: 404.php:9 search.php:38
 msgid "Nothing Found"
 msgstr "No se ha encontrado nada"
 
-#: 404.php:10
-#: archive.php:49
-#: index.php:40
-#: search.php:39
-#@ privatebusiness
+#: 404.php:10 archive.php:56 index.php:47 search.php:39
 msgid "Sorry, no posts matched your criteria."
 msgstr "Ninguna publicación coincide con tus indicaciones."
 
 #: archive.php:12
-#@ privatebusiness
 msgid "Archive"
 msgstr "Archivo"
 
 #: archive.php:14
-#@ privatebusiness
 msgid "Daily Archives"
 msgstr "Archivos diarios"
 
 #: archive.php:16
-#@ privatebusiness
 msgid "Monthly Archives"
 msgstr "Archivos mensuales"
 
 #: archive.php:18
-#@ privatebusiness
 msgid "Yearly Archives"
 msgstr "Archivos anuales"
 
 #: archive.php:20
-#@ privatebusiness
 msgid "Author Archives"
 msgstr "Archivos por autor"
 
 #: archive.php:22
-#@ privatebusiness
 msgid "Tag Archives"
 msgstr "Archivos por etiqueta"
 
-#: archive.php:28
-#: index.php:19
-#: search.php:16
+#: archive.php:28 index.php:19 search.php:16
 #, php-format
-#@ privatebusiness
 msgid "Permalink to %s"
 msgstr "Enlace permanente a %s"
 
-#: archive.php:32
-#: index.php:23
-#: search.php:20
-#: single.php:17
+#: archive.php:32 index.php:23 search.php:20 single.php:16
 #, php-format
-#@ privatebusiness
 msgid "Posted on %s"
 msgstr "Publicado en %s"
 
-#: archive.php:33
-#: index.php:24
-#: search.php:21
-#: single.php:18
+#: archive.php:33 index.php:24 search.php:21 single.php:17
 #, php-format
-#@ privatebusiness
 msgid "By %s"
 msgstr "Por %s"
 
-#: archive.php:35
-#: index.php:26
-#: search.php:23
-#: single.php:20
-#@ privatebusiness
+#: archive.php:35 index.php:26 search.php:23 single.php:19
 msgid "Leave a response"
 msgstr "Añadir una respuesta"
 
-#: archive.php:35
-#: index.php:26
-#: search.php:23
-#: single.php:20
-#@ privatebusiness
+#: archive.php:35 index.php:26 search.php:23 single.php:19
 msgid "1 response"
 msgstr "1 respuesta"
 
-#: archive.php:35
-#: index.php:26
-#: search.php:23
-#: single.php:20
-#@ privatebusiness
+#: archive.php:35 index.php:26 search.php:23 single.php:19
 msgid "% responses"
 msgstr "% respuestas"
 
-#: archive.php:45
-#: index.php:36
-#: search.php:33
-#@ privatebusiness
+#: archive.php:45 index.php:36 search.php:33
 msgid "Read More &raquo;"
 msgstr "Leer más &raquo;"
 
-#: archive.php:53
-#: index.php:44
-#: search.php:46
-#@ privatebusiness
+#: archive.php:51 index.php:42 search.php:46
 msgid "&laquo; Older posts"
 msgstr "&laquo; Publicaciones anteriores"
 
-#: archive.php:54
-#: index.php:45
-#: search.php:47
-#@ privatebusiness
+#: archive.php:52 index.php:43 search.php:47
 msgid "Newer posts &raquo;"
 msgstr "Últimas publicaciones &raquo;"
 
-#: comments.php:17
+#: comments.php:16
 #, php-format
-#@ privatebusiness
 msgid "1 response on %2$s"
 msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 respuesta en %2$s"
 msgstr[1] "%1$s respuestas en %2$s"
 
-#: comments.php:35
-#@ privatebusiness
+#: comments.php:29
 msgid "&laquo; Older Comments"
 msgstr "&laquo; Comentarios anteriores"
 
-#: comments.php:36
-#@ privatebusiness
+#: comments.php:30
 msgid "Newer Comments &raquo;"
 msgstr "Últimos comentarios &raquo;"
 
-#: comments.php:42
-#@ privatebusiness
+#: comments.php:35
 msgid "Comments are closed"
 msgstr "No se admiten más comentarios"
 
 #: footer.php:22
-#@ privatebusiness
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:23
-#@ privatebusiness
-msgid "WordPress Blog Platform"
-msgstr "Plataforma WordPress Blog"
-
-#: footer.php:23
-#@ privatebusiness
-msgid "Proudly powered by WordPress"
-msgstr "Proudly powered by WordPress"
+#: footer.php:22
+msgid "PrivateBusiness WordPress Theme"
+msgstr ""
 
 #: functions.php:19
-#@ privatebusiness
 msgid "Primary Navigation"
 msgstr "Navegación primaria"
 
+#: functions.php:20
+msgid "Secondary Navigation"
+msgstr "Navegación secundaria"
+
 #: functions.php:44
-#@ privatebusiness
 msgid "Boats"
 msgstr "Barcos"
 
-#: functions.php:123
-#@ privatebusiness
+#: functions.php:98
 msgid "Primary Sidebar"
 msgstr "Barra lateral primaria"
 
-#: functions.php:125
-#: functions.php:135
-#: functions.php:145
-#: functions.php:155
-#: functions.php:165
-#@ privatebusiness
-msgid "Select widgets from the right-hand side."
-msgstr "Seleccionar los widgets de la derecha."
+#: functions.php:100 functions.php:110 functions.php:120 functions.php:130
+#: functions.php:140
+msgid "You can add one or multiple widgets here."
+msgstr "Puede añadir uno o varios widgets aquí."
 
-#: functions.php:133
-#@ privatebusiness
+#: functions.php:108
 msgid "Homepage Sidebar Right"
 msgstr "Barra lateral, página de inicio, derecha"
 
-#: functions.php:143
-#@ privatebusiness
+#: functions.php:118
 msgid "Homepage Sidebar Left"
 msgstr "Barra lateral, página de inicio, izquierda"
 
-#: functions.php:153
-#@ privatebusiness
+#: functions.php:128
 msgid "Footer Sidebar Right"
 msgstr "Barra lateral al pie, derecha"
 
-#: functions.php:163
-#@ privatebusiness
+#: functions.php:138
 msgid "Footer Sidebar Left"
 msgstr "Barra lateral al pie, izquierda"
 
-#: functions.php:197
-#: functions.php:206
-#@ privatebusiness
+#: functions.php:184 functions.php:193
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:199
-#@ privatebusiness
-msgid "Upload a logo to replace blogname and description in header"
-msgstr "Subir un logo para sustituir el nombre del blog y la descripción en el encabezamiento"
+#: functions.php:186
+msgid "Upload a logo to replace blogname and description in header."
+msgstr ""
+"Subir un logo para sustituir el nombre del blog y la descripción en el "
+"encabezamiento."
 
 #: index.php:14
-#@ privatebusiness
 msgid "Featured post"
 msgstr "Publicación destacada"
 
-#: page-full.php:27
-#: page.php:26
-#: single.php:38
-#@ privatebusiness
+#: page-full.php:29 page.php:28 single.php:38
 msgid "Edit"
 msgstr "Editar"
 
 #: search.php:11
 #, php-format
-#@ privatebusiness
 msgid "Search Results for: %s"
 msgstr "Resultados de búsqueda para: %s"
 
-#: single.php:28
+#: single.php:29
 #, php-format
-#@ privatebusiness
 msgid "Posted in %s"
 msgstr "Publicado en %s"
 
-#: single.php:28
-#: single.php:29
-#@ privatebusiness
+#: single.php:29 single.php:30
 msgid ", "
 msgstr ", "
 
-#: single.php:29
+#: single.php:30
 #, php-format
-#@ privatebusiness
 msgid "Tags: %s"
 msgstr "Etiquetas: %s"
 
-#: functions.php:20
-#@ privatebusiness
-msgid "Secondary Navigation"
-msgstr "Navegación secundaria"
+#. Theme Name of the plugin/theme
+msgid "PrivateBusiness"
+msgstr ""
 
+#. Theme URI of the plugin/theme
+msgid "http://www.guidovanderleest.nl/privatebusiness"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"PrivateBusiness is a free, basic, clean, minimalistic, responsive, mobile "
+"friendly WordPress theme for Private or Business website. Default theme "
+"language is English but Dutch, German, Spanish, French and Swedish are "
+"supported too. Primary sidebar, 2 widget-areas underneath header-image, 2 "
+"widget-area's in footer, custom header-image, custom background, display "
+"logo or blogname and description, full width page-template, header "
+"navigation and dropdown navigation are included. Besides this no theme "
+"settingspage, no fancy options, no slideshow, this one only has the basic "
+"options. Enjoy."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Guido van der Leest"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.guidovanderleest.nl"
+msgstr ""

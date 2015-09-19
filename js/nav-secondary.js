@@ -14,7 +14,7 @@ jQuery(document).ready(function() {
 	jQuery("<option />", {
 		"selected": "selected",
 		"value": "",
-		"text": "Menu Top..."  
+		"text": "Menu..."  
 	}).appendTo(".nav-head-secondary select");
 
 	// populate
@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
 		var el = jQuery(this);
 
 		if(el.parents('.nav-head-secondary ul ul').length) {
-			// if there are ul in li
+			// if there are ul in li do nothing
 		} else { 
 			// if no ul in li
 			jQuery('<option />', {

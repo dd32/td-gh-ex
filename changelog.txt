@@ -1,6 +1,18 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 3.5 - september 2015
+- changed name of mobile menubar from 'Menu top' into 'Menu' and changed background color
+- updated file comments
+- updated pagelink
+- file footer: copyrights
+- file archive and index: added pagetitle when no posts are found
+- changed postmetadata heading into div
+- reordered mobile stylesheet
+- added Swedish translation (thanks Stefan)
+- updated language files
+- several small adjustments
+
 PrivateBusiness version 3.4 - june 2015
 - files functions, header, style and js: renamed nav-head into nav-head-primary
 - file single: removed if statement
