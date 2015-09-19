@@ -23,8 +23,7 @@
 	<?php } ?>	
 
 	<div class="site-info">
-		<?php _e('Copyright', 'leftside'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
-		<a href="http://wordpress.org" title="<?php _e('WordPress Blog Platform', 'leftside'); ?>"><?php _e('Proudly powered by WordPress', 'leftside'); ?></a>
+		<?php _e('Copyright', 'leftside'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php _e('LeftSide WordPress Theme', 'leftside'); ?>  
 	</div>
 
 </div>
