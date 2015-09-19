@@ -5,7 +5,6 @@
 ?>
 
 <?php 
-// If the post is protected by a password and the visitor has not yet entered the password no comments are loaded.
 if ( post_password_required() )
 	return;
 ?>
@@ -14,8 +13,7 @@ if ( post_password_required() )
 
 	<?php if ( have_comments() ) : ?>
 		<h4 class="comments-title">
-			<?php printf( _n( '1 response on %2$s', '%1$s responses on %2$s', get_comments_number(), 'myknowledgebase' ), 
-			number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' ); ?>
+			<?php printf( _n( '1 response on %2$s', '%1$s responses on %2$s', get_comments_number(), 'myknowledgebase' ), number_format_i18n( get_comments_number() ), get_the_title() ); ?>
 		</h4>
 
 		<ol class="comment-list">
@@ -24,26 +22,21 @@ if ( post_password_required() )
 				'short_ping'  => true,
 				'avatar_size' => 32,
 			) ); ?>
-		</ol><!-- .comment-list -->
+		</ol>
 
-		<?php
-			// Are there comments to navigate through?
-			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
-		?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+			<div class="comment-nav">
+				<?php previous_comments_link( __( '&laquo; Older Comments', 'myknowledgebase' ) ); ?>
+				<?php next_comments_link( __( 'Newer Comments &raquo;', 'myknowledgebase' ) ); ?>
+			</div>
+		<?php endif; ?>
 
-		<div class="comment-nav">
-			<?php previous_comments_link( __( '&laquo; Older Comments', 'myknowledgebase' ) ); ?>
-			<?php next_comments_link( __( 'Newer Comments &raquo;', 'myknowledgebase' ) ); ?>
-		</div>
+		<?php if ( ! comments_open() && get_comments_number() ) : ?>
+			<h4 class="no-comments"><?php _e( 'Comments are closed' , 'myknowledgebase' ); ?></h4>
+		<?php endif; ?>
 
-	<?php endif; // Check for comment navigation ?>
-
-	<?php if ( ! comments_open() && get_comments_number() ) : ?>
-		<h4 class="no-comments"><?php _e( 'Comments are closed' , 'myknowledgebase' ); ?></h4>
 	<?php endif; ?>
-
-	<?php endif; // have_comments() ?>
 
 	<?php comment_form(); ?>
 
-</div><!-- #comments -->
+</div>

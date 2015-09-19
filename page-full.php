@@ -18,13 +18,15 @@
 
 		<?php the_content(); ?>
 
-		<div class="pagelink"><?php wp_link_pages(); ?></div>
+		<?php if ( $multipage ) { ?>
+			<div class="pagelink"><?php wp_link_pages(); ?></div>
+		<?php } ?> 
 
 		<?php comments_template(); ?>
 
 	<?php endwhile; ?>
 
-	<?php edit_post_link( __( 'Edit', 'myknowledgebase' ), '<div class="edit-link">', '</div>' ) ?>
+	<?php edit_post_link( __( 'Edit', 'myknowledgebase' ), '<div class="edit-link">', '</div>' ); ?>
 
 </div>	
 <?php get_footer(); ?>

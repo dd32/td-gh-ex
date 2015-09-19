@@ -9,30 +9,35 @@
 <div id="content">
 <div id="categories-three">
 
-<?php $myknowledgebase_cats = get_categories('hide_empty=0&orderby=name&order=asc');
-
-foreach ($myknowledgebase_cats as $cat) :
-	echo '<ul class="cat-list-three"><li class="cat-name"><a href="' . get_category_link( $cat->term_id ) . '" title="' . $cat->name . '" >' . $cat->name . '</a></li>';
-
-$myknowledgebase_args = array(
-	'posts_per_page' => -1, // max number of post per category
-	'cat' => $cat->term_id
+<?php $myknowledgebase_cat_args = array(
+	'hide_empty' => 0, // 0 means also list empty categories
+	'orderby' => 'name', // sort categories by name
+	'order' => 'asc' // list categories in ascending order
 );
 
-query_posts($myknowledgebase_args); 
+$myknowledgebase_cats = get_categories( $myknowledgebase_cat_args );
 
-if (have_posts()) :
-	while (have_posts()) : the_post(); ?>
-		<li class="post-name">
-		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'myknowledgebase'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a>
-		</li>
-	<?php endwhile;
-endif;
+foreach ( $myknowledgebase_cats as $cat ) :
+	echo '<ul class="cat-list-three"><li class="cat-name"><a href="' . get_category_link( $cat->cat_ID ) . '" title="' . $cat->name . '" >' . $cat->name . '</a></li>';
 
-wp_reset_query(); ?>
+	$myknowledgebase_post_args = array(
+		'posts_per_page' => -1, // -1 means list all posts
+		'orderby' => 'date', // sort posts by date
+		'order' => 'desc', // list posts in descending order
+		'category__in' => $cat->cat_ID // list posts from all categories and posts from sub category will be hidden from their parent category
+	);
 
-<?php echo '</ul>'; ?>
+	$myknowledgebase_posts = get_posts( $myknowledgebase_post_args ); 
 
+	foreach( $myknowledgebase_posts AS $single_post ) :
+		echo '<li class="post-name"><a href="'. get_permalink( $single_post->ID ) .'" rel="bookmark" title="'. get_the_title( $single_post->ID ) .'">'. get_the_title( $single_post->ID ) .'</a></li>'; 
+	endforeach;
+	
+	wp_reset_postdata(); 
+
+	?>
+
+	<?php echo '</ul>'; ?>
 <?php endforeach; ?>
 
 </div>	

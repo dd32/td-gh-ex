@@ -9,7 +9,7 @@
 	// Set max content width for img, video, and more
 		global $content_width; 
 		if ( ! isset( $content_width ) )
-		$content_width = 810;
+		$content_width = 780;
 
 	// Make theme available for translation
 		load_theme_textdomain('myknowledgebase', get_template_directory() . '/languages');  
@@ -95,7 +95,7 @@
 	register_sidebar( array(
 		'name' => __( 'Primary Sidebar', 'myknowledgebase' ),
 		'id' => 'primary',
-		'description' => __( 'Select widgets from the right-hand side.', 'myknowledgebase' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'myknowledgebase' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -105,7 +105,7 @@
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar', 'myknowledgebase' ),
 		'id' => 'homepage',
-		'description' => __( 'Select widgets from the right-hand side.', 'myknowledgebase' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'myknowledgebase' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -115,7 +115,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Right', 'myknowledgebase' ),
 		'id' => 'footer-right',
-		'description' => __( 'Select widgets from the right-hand side.', 'myknowledgebase' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'myknowledgebase' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -125,7 +125,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Middle', 'myknowledgebase' ),
 		'id' => 'footer-middle',
-		'description' => __( 'Select widgets from the right-hand side.', 'myknowledgebase' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'myknowledgebase' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -135,7 +135,7 @@
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar Left', 'myknowledgebase' ),
 		'id' => 'footer-left',
-		'description' => __( 'Select widgets from the right-hand side.', 'myknowledgebase' ),
+		'description' => __( 'You can add one or multiple widgets here.', 'myknowledgebase' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -181,7 +181,7 @@
 		$wp_customize->add_section( 'myknowledgebase_logo_section' , array( 
 			'title' => __( 'Logo', 'myknowledgebase' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header', 'myknowledgebase' ),
+			'description' => __( 'Upload a logo to replace blogname and description in header.', 'myknowledgebase' ),
 		) );
 		$wp_customize->add_setting( 'myknowledgebase_logo', array( 
 			'capability' => 'edit_theme_options', 

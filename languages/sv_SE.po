@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2015-09-10 10:11+0200\n"
-"PO-Revision-Date: 2015-09-10 10:11+0200\n"
+"POT-Creation-Date: 2015-09-11 20:29+0200\n"
+"PO-Revision-Date: 2015-09-11 20:31+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: fr_FR\n"
+"Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -22,94 +22,94 @@ msgstr ""
 
 #: 404.php:9 search.php:39
 msgid "Nothing Found"
-msgstr "Recherche infructueuse"
+msgstr "Hittar inte något"
 
 #: 404.php:10 archive.php:56 index.php:47 search.php:40
 msgid "Sorry, no posts matched your criteria."
-msgstr "Désolé, il n'y a pas de résultats correspondant aux critères demandés."
+msgstr "Inga inlägg matchade din sökning."
 
 #: archive.php:12
 msgid "Archive"
-msgstr "Archive"
+msgstr "Arkiv"
 
 #: archive.php:14
 msgid "Daily Archives"
-msgstr "Archives du jour"
+msgstr "Dag Arkiv"
 
 #: archive.php:16
 msgid "Monthly Archives"
-msgstr "Archives du mois"
+msgstr "Månads Arkiv"
 
 #: archive.php:18
 msgid "Yearly Archives"
-msgstr "Archives de l'année"
+msgstr "Års Arkiv"
 
 #: archive.php:20
 msgid "Author Archives"
-msgstr "Archives par auteur"
+msgstr "Skribent Arkiv"
 
 #: archive.php:22
 msgid "Tag Archives"
-msgstr "Achives du mot-clé"
+msgstr "Etikett Arkiv"
 
 #: archive.php:28 index.php:19 page-knowledge-four.php:27
 #: page-knowledge-three.php:27 search.php:17
 #, php-format
 msgid "Permalink to %s"
-msgstr "Permalien vers %s"
+msgstr "Permalänk till %s"
 
 #: archive.php:32 index.php:23 search.php:21 single.php:16
 #, php-format
 msgid "Posted on %s"
-msgstr "Publié le %s"
+msgstr "Publicerat %s"
 
 #: archive.php:33 index.php:24 search.php:22 single.php:17
 #, php-format
 msgid "By %s"
-msgstr "Par %s"
+msgstr "Av %s"
 
 #: archive.php:35 index.php:26 search.php:24 single.php:19
 msgid "Leave a response"
-msgstr "Commenter"
+msgstr "Kommentera"
 
 #: archive.php:35 index.php:26 search.php:24 single.php:19
 msgid "1 response"
-msgstr "1 commentaire"
+msgstr "1 kommentar"
 
 #: archive.php:35 index.php:26 search.php:24 single.php:19
 msgid "% responses"
-msgstr "% commentaires"
+msgstr "% kommentarer"
 
 #: archive.php:45 index.php:36 search.php:34
 msgid "Read More &raquo;"
-msgstr "Lire la suite &raquo;"
+msgstr "Läs Mer &raquo;"
 
 #: archive.php:51 index.php:42 search.php:47
 msgid "&laquo; Older posts"
-msgstr "&laquo; Articles précédents"
+msgstr "&laquo; Tidigare inlägg"
 
 #: archive.php:52 index.php:43 search.php:48
 msgid "Newer posts &raquo;"
-msgstr "Articles plus récents &raquo;"
+msgstr "Nyare inlägg &raquo;"
 
 #: comments.php:16
 #, php-format
 msgid "1 response on %2$s"
 msgid_plural "%1$s responses on %2$s"
-msgstr[0] "1 commentaire sur %2$s"
-msgstr[1] "%1$s commentaires sur %2$s"
+msgstr[0] "1 kommentar på %2$s"
+msgstr[1] "%1$s kommentarer på %2$s"
 
-#: comments.php:33
+#: comments.php:29
 msgid "&laquo; Older Comments"
-msgstr "&laquo; Commentaires précédents"
+msgstr "&laquo; Tidigare Kommentarer"
 
-#: comments.php:34
+#: comments.php:30
 msgid "Newer Comments &raquo;"
-msgstr "Commentaires plus récents &raquo;"
+msgstr "Nyare Kommentarer &raquo;"
 
-#: comments.php:40
+#: comments.php:35
 msgid "Comments are closed"
-msgstr "Les commentaires sont fermés"
+msgstr "Kommenterer är avstängda"
 
 #: footer.php:25
 msgid "Copyright"
@@ -121,68 +121,67 @@ msgstr ""
 
 #: functions.php:19
 msgid "Primary Navigation"
-msgstr "Navigation principale"
+msgstr "Primär navigation"
 
 #: functions.php:43
 msgid "Boats"
-msgstr "Bateaux"
+msgstr "Båtar"
 
 #: functions.php:96
 msgid "Primary Sidebar"
-msgstr "Colonne latérale pincipale"
+msgstr "Primär Fält"
 
 #: functions.php:98 functions.php:108 functions.php:118 functions.php:128
 #: functions.php:138
 msgid "You can add one or multiple widgets here."
-msgstr "Vous pouvez ajouter un ou plusieurs widgets ici."
+msgstr "Du kan lägga till en eller flera widgetar här."
 
 #: functions.php:106
 msgid "Homepage Sidebar"
-msgstr "Page d'accueil Barre latérale"
+msgstr "Startsidans fält"
 
 #: functions.php:116
 msgid "Footer Sidebar Right"
-msgstr "Pied de page Barre latérale à droite"
+msgstr "Sidfotens högra fält"
 
 #: functions.php:126
 msgid "Footer Sidebar Middle"
-msgstr "Pied de page Barre latérale au centre"
+msgstr "Sidfotens mellersta fält"
 
 #: functions.php:136
 msgid "Footer Sidebar Left"
-msgstr "Pied de page Barre latérale à gauche"
+msgstr "Sidfotens vänstra fält"
 
 #: functions.php:182 functions.php:191
 msgid "Logo"
-msgstr "Logo"
+msgstr "Logotyp"
 
 #: functions.php:184
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
-"Télécharger un logo pour remplacer le nom du blog et sa description dans "
-"l'en-tête."
+"Ladda upp en logotyp som ersätter bloggnamn och beskrivningen i sidhuvudet."
 
 #: header.php:65
 msgid "Search website"
-msgstr "Rechercher le site"
+msgstr "Sök webbplats"
 
 #: index.php:14
 msgid "Featured post"
-msgstr "Articles mis en avant"
+msgstr "Klistrat inlägg"
 
 #: page-full.php:29 page.php:28 single.php:38
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Redigera"
 
 #: search.php:12
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Résultats de la recherche pour: %s"
+msgstr "Sökträffar för: %s"
 
 #: single.php:29
 #, php-format
 msgid "Posted in %s"
-msgstr "Publié dans %s"
+msgstr "Publicerad i %s"
 
 #: single.php:29 single.php:30
 msgid ", "
@@ -191,7 +190,7 @@ msgstr ", "
 #: single.php:30
 #, php-format
 msgid "Tags: %s"
-msgstr "Mots-clés: %s"
+msgstr "Etiketter: %s"
 
 #. Theme Name of the plugin/theme
 msgid "MyKnowledgeBase"
@@ -207,12 +206,12 @@ msgid ""
 "friendly WordPress theme for a 3 or 4 column Knowledge Base, Bulletin Board, "
 "FAQ, Wiki or link Portal. It uses the default WP categories and posts. "
 "Please check readme file how to set up such a website. Default theme "
-"language is English but Dutch, German, Spanish and French are supported too. "
-"Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-"
-"image, custom background, display logo or blogname and description, full "
-"width page-template and dropdown navigation are included. Besides this no "
-"theme settingspage, no fancy options, no slideshow, this one only has the "
-"basic options. Enjoy."
+"language is English but Dutch, German, Spanish, French and Swedish are "
+"supported too. Primary sidebar, homepage sidebar, 3 widget-area's in footer, "
+"custom header-image, custom background, display logo or blogname and "
+"description, full width page-template and dropdown navigation are included. "
+"Besides this no theme settingspage, no fancy options, no slideshow, this one "
+"only has the basic options. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme

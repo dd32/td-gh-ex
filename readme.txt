@@ -49,7 +49,7 @@ You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 TRANSLATION
 ===========
-This theme is translation-ready (Dutch, German, Spanish and French translation included). 
+This theme is translation-ready (Dutch, German, Spanish, French and Swedish translation included). 
 More translations are very welcome! Please contact me via my website.
 
 
