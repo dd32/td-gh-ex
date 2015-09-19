@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-DarkElements version 2.6 - september 2015
+DarkElements version 2.7 - september 2015
 - updated file comments
 - updated pagelink
 - file footer: copyrights
