@@ -1,22 +1,41 @@
-<?php get_header(); ?>
-	<div id="content" class="narrowcolumn">
-
-<div id="header-responsive">		
-<?php if (is_home()) { ?><h1><?php } ?>
-<a class="blogtitle" href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('name'); ?></a><?php if (is_home()) { ?></h1><?php } ?><div class="description"><?php bloginfo('description'); ?></div>
-</div>
-
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<div class="post" id="post-<?php the_ID(); ?>">
-		<h2><?php the_title(); ?></h2>
-			<div class="entry">
-				<?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
-				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-			</div>
-		</div>
-	<?php comments_template(); ?>
-		<?php endwhile; endif; ?>
-	<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
-	</div>
-<?php get_sidebar(); ?>
+<?php get_header(); ?>
+
+<div id="content" class="narrowcolumn">
+<main>
+<section>
+
+
+ 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<article class="post" id="post-<?php the_ID(); ?>">
+		<h2><?php the_title(); ?></h2>
+			<div class="entry">
+				<?php the_content(); ?>
+					<?php wp_link_pages(array(
+		'before' => '<div class="page-links"><span class="page-links-title">' . __( '<b>Pages:</b>', 'quickchic' ) . '</span>', 
+		'after' => '</div>',
+		'link_before' => '<span>', 
+		'link_after'  => '</span>',
+		'next_or_number' => 'number'
+		)); 
+		?>
+	
+		<p><?php the_tags( __( 'Tags: ', 'quickchic' ), ', ', ''); ?></p> 
+		</div>
+		
+	<?php comments_template(); ?>
+	</article>
+
+	<?php endwhile; ?>
+	<?php else: ?>
+		<article>
+		<h2><?php _e( 'Content Not Found', 'quickchic'); ?></h2>
+		</article>
+		<?php endif; ?>
+
+<?php edit_post_link(); ?>
+
+</section>
+</main>
+</div>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
