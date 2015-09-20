@@ -38,7 +38,7 @@
 		<?php endwhile; ?>
 		<?php else: ?>
 			<article>
-				<h2><?php _e( 'Content Not Found', 'quickstrap'); ?></h2>
+				<h2><?php _e( 'Content Not Found', 'quickchic'); ?></h2>
 			</article>
 		<?php endif; ?>
 
