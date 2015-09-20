@@ -11,7 +11,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <!--[if lt IE 9]>
@@ -30,59 +29,63 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
 		<?php 
-			global $semplicemente_theme_options;
-			$se_options = get_option( 'semplicemente_theme_options', $semplicemente_theme_options );
+			$hideSearch = get_theme_mod('semplicemente_theme_options_hidesearch', '1');
+			$facebookURL = get_theme_mod('semplicemente_theme_options_facebookurl', '#');
+			$twitterURL = get_theme_mod('semplicemente_theme_options_twitterurl', '#');
+			$googleplusURL = get_theme_mod('semplicemente_theme_options_googleplusurl', '#');
+			$linkedinURL = get_theme_mod('semplicemente_theme_options_linkedinurl', '#');
+			$instagramURL = get_theme_mod('semplicemente_theme_options_instagramurl', '#');
+			$youtubeURL = get_theme_mod('semplicemente_theme_options_youtubeurl', '#');
+			$pinterestURL = get_theme_mod('semplicemente_theme_options_pinteresturl', '#');
+			$tumblrURL = get_theme_mod('semplicemente_theme_options_tumblrurl', '#');
+			$vkURL = get_theme_mod('semplicemente_theme_options_vkurl', '#');
 		?>
 
 		<div class="site-social">
 			<div class="socialLine">
 			
-				<?php if ( $se_options['facebookurl'] ) : ?>
-					<a href="<?php echo esc_url($se_options['facebookurl']); ?>" title="Facebook" target="_blank" rel="nofollow"><i class="fa spaceLeftDouble fa-facebook"></i></a>
+				<?php if (!empty($facebookURL)) : ?>
+					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'semplicemente' ); ?>"><i class="fa fa-facebook spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Facebook', 'semplicemente' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($twitterURL)) : ?>
+					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'semplicemente' ); ?>"><i class="fa fa-twitter spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Twitter', 'semplicemente' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($googleplusURL)) : ?>
+					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'semplicemente' ); ?>"><i class="fa fa-google-plus spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Google Plus', 'semplicemente' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($linkedinURL)) : ?>
+					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'semplicemente' ); ?>"><i class="fa fa-linkedin spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin', 'semplicemente' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($instagramURL)) : ?>
+					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'semplicemente' ); ?>"><i class="fa fa-instagram spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Instagram', 'semplicemente' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($youtubeURL)) : ?>
+					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'semplicemente' ); ?>"><i class="fa fa-youtube spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'YouTube', 'semplicemente' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($pinterestURL)) : ?>
+					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'semplicemente' ); ?>"><i class="fa fa-pinterest spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['twitterurl'] ) : ?>
-					<a href="<?php echo esc_url($se_options['twitterurl']); ?>" title="Twitter" target="_blank" rel="nofollow"><i class="fa spaceLeftDouble fa-twitter"></i></a>
+				<?php if (!empty($tumblrURL)) : ?>
+					<a href="<?php echo esc_url($tumblrURL); ?>" title="<?php esc_attr_e( 'Tumblr', 'semplicemente' ); ?>"><i class="fa fa-tumblr spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr', 'semplicemente' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($vkURL)) : ?>
+					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'semplicemente' ); ?>"><i class="fa fa-vk spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'VK', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['googleplusurl'] ) : ?>
-					<a href="<?php echo esc_url($se_options['googleplusurl']); ?>" title="Google Plus" target="_blank" rel="nofollow"><i class="fa spaceLeftDouble fa-google-plus"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['linkedinurl'] ) : ?>
-					<a href="<?php echo esc_url($se_options['linkedinurl']); ?>" title="Linkedin" target="_blank" rel="nofollow"><i class="fa spaceLeftDouble fa-linkedin"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['instagramurl'] ) : ?>
-					<a href="<?php echo esc_url($se_options['instagramurl']); ?>" title="Instagram" target="_blank" rel="nofollow"><i class="fa spaceLeftDouble fa-instagram"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['youtubeurl'] ) : ?>
-					<a href="<?php echo esc_url($se_options['youtubeurl']); ?>" title="YouTube" target="_blank" rel="nofollow"><i class="fa spaceLeftDouble fa-youtube"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['pinteresturl'] ) : ?>
-					<a href="<?php echo esc_url($se_options['pinteresturl']); ?>" title="Pinterest" target="_blank" rel="nofollow"><i class="fa spaceLeftDouble fa-pinterest"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['tumblrurl'] ) : ?>
-					<a href="<?php echo esc_url($se_options['tumblrurl']); ?>" title="Tumblr" target="_blank" rel="nofollow"><i class="fa spaceLeftDouble fa-tumblr"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( $se_options['vkurl'] ) : ?>
-					<a href="<?php echo esc_url($se_options['vkurl']); ?>" title="VK" target="_blank" rel="nofollow"><i class="fa spaceLeftDouble fa-vk"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( ! $se_options['hiderss'] ) : ?>
-					<a href="<?php bloginfo( 'rss2_url' ); ?>" title="RSS"><i class="fa spaceLeftDouble fa-rss"></i></a>
-				<?php endif; ?>
-				
-				<?php if ( ! $se_options['hidesearch'] ) : ?>
+				<?php if ( $hideSearch == 1 ) : ?>
 					<a href="#" class="top-search"><i class="fa spaceLeftDouble fa-search"></i></a>
 				<?php endif; ?>
 				
 			</div>
-				<?php if ( ! $se_options['hidesearch'] ) : ?>
+				<?php if ( $hideSearch == 1 ) : ?>
 				<div class="topSearchForm">
 						<?php get_search_form(); ?>
 				</div>

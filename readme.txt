@@ -22,7 +22,7 @@ Scripts used in the site are as below:
 	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
 
 Image used in Theme Screenshot
-	1. Picjumbo (http://picjumbo.com/morning-fog-in-dubai/) Free photos for commercial and personal works
+	1. Picjumbo (https://picjumbo.com/a-girl-drinking-milkshake-drink-in-caffe/) Free photos for commercial and personal works
 
 == Translation ==
 Semplicemente theme is translation ready. 
@@ -80,4 +80,9 @@ Version 1.5.2
 Version 1.5.3
 * Fixed Previous and Next Post translation bug
 * Added VK Social Network button
+* Minor bug fixes
+
+Version 1.5.7
+* Update FontAwesome to 4.4.0v
+* Move the "Theme Options" in "WP Customizer"
 * Minor bug fixes
