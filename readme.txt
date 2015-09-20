@@ -3,7 +3,7 @@
 Theme Name: QuickPress 
 Theme URI: http://www.quickonlinethemes.com/wordpress/quickpress/
 Description: A lightweight, 2-3 columns, widget ready, SEO optimized, fast loading, easy to customize wordpress theme.
-Version: 1.7.4
+
 Author: QuickOnlineTips
 Author URI: http://www.quickonlinethemes.com/
 Tags: white, blue, gray, silver, light, two-columns, three-columns, right-sidebar, fixed-width, threaded-comments, sticky-post
@@ -11,5 +11,4 @@ Tags: white, blue, gray, silver, light, two-columns, three-columns, right-sideba
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-=== Customization ===
-Navigation: Individual links can be added in header.php to create a navigational link structure. Home and RSS links are already added.
+ 

@@ -8,6 +8,11 @@ if ( ! isset( $content_width ) )
 if ( ! function_exists( 'quickpress_setup' ) ) :
 function quickpress_setup() {
 
+	// Register menus
+	register_nav_menus( array(
+	'header-nav' => 'Header Menu',
+	) );
+
 	// add title tag
 	add_theme_support( 'title-tag' );
 
@@ -54,15 +59,6 @@ register_sidebar(array(
         'after_widget' => '',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
-)); 
-register_sidebar(array(
-         'name' => 'Header Nav Menu',
-	'description' => 'Add Custom Menu Here WITHOUT title',
-        'id' => 'nav-menu',
-        'before_widget' => '',
-        'after_widget' => '',
-        'before_title' => '',
-        'after_title' => '',
 )); 
 }
 add_action( 'widgets_init', 'quickpress_widgets_init' );
