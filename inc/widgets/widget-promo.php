@@ -22,7 +22,7 @@ class accesspress_storemo extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'accesspress_storemo', 'AP : Promo Widget', array(
-                'description' => __('A widget that Gives Promo of the object', 'accesspress')
+                'description' => __('A widget that Gives Promo of the object', 'accesspress-store')
                 )
             );
     }

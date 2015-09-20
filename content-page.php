@@ -22,7 +22,7 @@
             </div>
             <?php
             wp_link_pages(array(
-                'before' => '<div class="page-links">' . __('Pages:', 'accesspress-root'),
+                'before' => '<div class="page-links">' . __('Pages:', 'accesspress-store'),
                 'after' => '</div>',
             ));
             ?>
@@ -30,7 +30,7 @@
     </div><!-- .entry-content -->
 <!--
     <footer class="entry-footer">
-        <?php edit_post_link(__('Edit', 'accesspress-root'), '<span class="edit-link">', '</span>'); ?>
+        <?php edit_post_link(__('Edit', 'accesspress-store'), '<span class="edit-link">', '</span>'); ?>
     </footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

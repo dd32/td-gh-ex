@@ -189,11 +189,11 @@ class Options_Framework_Admin {
 		
 		<div class="theme-header clearfix">
             <div class="accesspress-root-logo">
-                <img src="<?php echo get_template_directory_uri(); ?>/inc/option-framework/images/logo.png" alt="<?php esc_attr_e('AccessPress Themes', 'accesspress-root'); ?>" />
+                <img src="<?php echo get_template_directory_uri(); ?>/inc/option-framework/images/logo.png" alt="<?php esc_attr_e('AccessPress Themes', 'accesspress-store'); ?>" />
             </div>
 
             <div class="ak-socials">
-                <p><?php _e('Follow us for new updates', 'accesspress-root') ?></p>
+                <p><?php _e('Follow us for new updates', 'accesspress-store') ?></p>
                 <div class="social-bttns">
                     
                        

@@ -205,15 +205,15 @@ function accesspress_store_widgets_show_widget_field($instance = '', $widget_fie
             }
             $output .= '<div class="sub-option section widget-upload">';
             $output .= '<label for="'.$instance->get_field_id($accesspress_store_widgets_name).'">'.$accesspress_store_widgets_title.'</label><br/>';
-            $output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="' . $name . '" value="' . $value . '" placeholder="' . __('No file chosen', 'textdomain') . '" />' . "\n";
+            $output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="' . $name . '" value="' . $value . '" placeholder="' . __('No file chosen', 'accesspress-store') . '" />' . "\n";
             if (function_exists('wp_enqueue_media')) {
                 if (( $value == '')) {
-                    $output .= '<input id="upload-' . $id . '" class="upload-button-wdgt button" type="button" value="' . __('Upload', 'textdomain') . '" />' . "\n";
+                    $output .= '<input id="upload-' . $id . '" class="upload-button-wdgt button" type="button" value="' . __('Upload', 'accesspress-store') . '" />' . "\n";
                 } else {
-                    $output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __('Remove', 'textdomain') . '" />' . "\n";
+                    $output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __('Remove', 'accesspress-store') . '" />' . "\n";
                 }
             } else {
-                $output .= '<p><i>' . __('Upgrade your version of WordPress for full media support.', 'textdomain') . '</i></p>';
+                $output .= '<p><i>' . __('Upgrade your version of WordPress for full media support.', 'accesspress-store') . '</i></p>';
             }
 
             $output .= '<div class="screenshot team-thumb" id="' . $id . '-image">' . "\n";
@@ -232,7 +232,7 @@ function accesspress_store_widgets_show_widget_field($instance = '', $widget_fie
                     $output .= '';
 
                     // Standard generic output if it's not an image.
-                    $title = __('View File', 'textdomain');
+                    $title = __('View File', 'accesspress-store');
                     $output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">' . $title . '</a></span></div>';
                 }
             }

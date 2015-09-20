@@ -96,11 +96,11 @@ function accesspress_slider_setting($wp_customize){
 
    $wp_customize->add_control('slider_transition', array(
                                   'type' => 'select',
-                                  'label' => __('Slider Transitions (Slide/Fade)', 'accesspress_staple'),
+                                  'label' => __('Slider Transitions (Slide/Fade)', 'accesspress-store'),
                                   'section' => 'slider_basic',
                                   'choices' => array(
-                                     'true' => __('Fade', 'accesspress-staple'),
-                                     'false' => __('Slide', 'accesspress-staple'),
+                                     'true' => __('Fade', 'accesspress-store'),
+                                     'false' => __('Slide', 'accesspress-store'),
                                   )
                                ));
     
@@ -217,7 +217,7 @@ function accesspress_slider_setting($wp_customize){
     ));
     $wp_customize->add_control( 'slider_1_post', array(
         'settings' => 'slider_1_post',
-        'label'   => __('Select Post For Slider One','fotography'),
+        'label'   => __('Select Post For Slider One','accesspress-store'),
         'section'  => 'slider_1',
         'type'    => 'select',
         'choices' => $fg_pages,
@@ -261,7 +261,7 @@ function accesspress_slider_setting($wp_customize){
     ));
     $wp_customize->add_control( 'slider_2_post', array(
         'settings' => 'slider_2_post',
-        'label'   => __('Select Post For Slider Two','fotography'),
+        'label'   => __('Select Post For Slider Two','accesspress-store'),
         'section'  => 'slider_2',
         'type'    => 'select',
         'choices' => $fg_pages,
@@ -305,7 +305,7 @@ function accesspress_slider_setting($wp_customize){
     ));
     $wp_customize->add_control( 'slider_3_post', array(
         'settings' => 'slider_3_post',
-        'label'   => __('Select Post For Slider Three','fotography'),
+        'label'   => __('Select Post For Slider Three','accesspress-store'),
         'section'  => 'slider_3',
         'type'    => 'select',
         'choices' => $fg_pages,
@@ -349,7 +349,7 @@ function accesspress_slider_setting($wp_customize){
     ));
     $wp_customize->add_control( 'slider_4_post', array(
         'settings' => 'slider_4_post',
-        'label'   => __('Select Post For Slider Four','fotography'),
+        'label'   => __('Select Post For Slider Four','accesspress-store'),
         'section'  => 'slider_4',
         'type'    => 'select',
         'choices' => $fg_pages,
@@ -392,7 +392,7 @@ function accesspress_slider_setting($wp_customize){
     ));
     $wp_customize->add_control( 'slider_5_post', array(
         'settings' => 'slider_5_post',
-        'label'   => __('Select Post For Slider Five','fotography'),
+        'label'   => __('Select Post For Slider Five','accesspress-store'),
         'section'  => 'slider_5',
         'type'    => 'select',
         'choices' => $fg_pages,

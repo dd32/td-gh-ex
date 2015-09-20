@@ -84,8 +84,8 @@
    
    function accesspress_store_slider_transition_sanitize($input) {
       $valid_keys = array(
-        'true' => __('Fade', 'accesspress-staple'),
-        'false' => __('Slide', 'accesspress-staple'),
+        'true' => __('Fade', 'accesspress-store'),
+        'false' => __('Slide', 'accesspress-store'),
       );
       if ( array_key_exists( $input, $valid_keys ) ) {
          return $input;

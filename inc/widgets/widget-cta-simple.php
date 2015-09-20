@@ -22,7 +22,7 @@ class Accesspress_cta_simple extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'accesspress_cta_simple', 'AP :  Call to Action', array(
-            'description' => __('A widget that shows Simple Call to Action', 'accesspress')
+            'description' => __('A widget that shows Simple Call to Action', 'accesspress-store')
                 )
         );
     }
@@ -35,28 +35,28 @@ class Accesspress_cta_simple extends WP_Widget {
         $fields = array(
             'cta_simple_title' => array(
                 'accesspress_store_widgets_name' => 'cta_simple_title',
-                'accesspress_store_widgets_title' => __('Title', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Title', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'title'
             ),
             'cta_simple_phone' => array(
                 'accesspress_store_widgets_name' => 'cta_simple_desc',
-                'accesspress_store_widgets_title' => __('Description', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Description', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'textarea',
                 'accesspress_store_widgets_row' => '4'
             ),
             'cta_simple_website' => array(
                 'accesspress_store_widgets_name' => 'cta_simple_btn_text',
-                'accesspress_store_widgets_title' => __('Button Text', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Button Text', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text',
             ),
             'cta_simple_font_awesome' => array(
                 'accesspress_store_widgets_name' => 'cta_simple_font_awsome',
-                'accesspress_store_widgets_title' => __('Enter Fontawesome Class to show in button', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Enter Fontawesome Class to show in button', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text',
             ),
             'cta_simple_address' => array(
                 'accesspress_store_widgets_name' => 'cta_simple_btn_url',
-                'accesspress_store_widgets_title' => __('Button Url', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Button Url', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text'
                 
             )

@@ -18,7 +18,7 @@ class WP_Customize_Switch_Control extends WP_Customize_Control {
                   <span class="switch_enable"> <?php _e('Enable', 'accesspress-store'); ?> </span>
                   <span class="switch_disable"> <?php _e('Disable', 'accesspress-store'); ?> </span>  
                   <input type="hidden" id="enable_prev_next" <?php $this->link(); ?> value="<?php echo $this->value(); ?>" />							
-                  <!--<label for="enable_prev_next"><?php _e('Check to Enable', 'accesspressray_pro'); ?></label>-->
+                  <!--<label for="enable_prev_next"><?php _e('Check to Enable', 'accesspress-store'); ?></label>-->
                 </div>
             </label>
 		<?php

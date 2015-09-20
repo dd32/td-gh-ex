@@ -21,7 +21,7 @@ function accesspress_ticker_setting($wp_customize){
   $wp_customize->add_setting(
     'accesspress_ticker_checkbox',
     array(
-      'default' =>  '0',
+      'default' =>  '1',
       'sanitize_callback'     =>  'accesspress_store_checkbox_sanitize'
       )
     );
@@ -249,7 +249,7 @@ function accesspress_ticker_setting($wp_customize){
   $wp_customize->add_setting(
     'accesspress_ed_responsive',
     array(
-      'default'       =>      '',
+      'default'       =>      '1',
       'sanitize_callback' => 'accesspress_store_integer_sanitize'
       )
     );

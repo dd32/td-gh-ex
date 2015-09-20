@@ -20,7 +20,7 @@
         </div>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-root' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-store' ),
 				'after'  => '</div>',
 			) );
 		?>

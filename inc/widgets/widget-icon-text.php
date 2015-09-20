@@ -22,7 +22,7 @@ class accesspress_store_Icon_Text extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'accesspress_store_icon_text', 'AP : Icon Text Block', array(
-            'description' => __('A widget that shows Text with Icon', 'accesspress')
+            'description' => __('A widget that shows Text with Icon', 'accesspress-store')
                 )
         );
     }
@@ -43,34 +43,34 @@ class accesspress_store_Icon_Text extends WP_Widget {
             // Other fields
             'icon_text_title' => array(
                 'accesspress_store_widgets_name' => 'icon_text_title',
-                'accesspress_store_widgets_title' => __('Title', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Title', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text',
             ),
             'icon_text_content' => array(
                 'accesspress_store_widgets_name' => 'icon_text_content',
-                'accesspress_store_widgets_title' => __('Content', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Content', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'textarea',
                 'accesspress_store_widgets_row' => '6'
             ),
             'icon_text_icon' => array(
                 'accesspress_store_widgets_name' => 'icon_text_icon',
-                'accesspress_store_widgets_title' => __('Icon', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Icon', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'icon',
             ),
             'icon_text_readmore' => array(
                 'accesspress_store_widgets_name' => 'icon_text_readmore',
-                'accesspress_store_widgets_title' => __('Read More Text', 'accesspress'),
-                 'accesspress_store_widgets_desc' => __('Leave Empty not to show', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Read More Text', 'accesspress-store'),
+                 'accesspress_store_widgets_desc' => __('Leave Empty not to show', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text',
             ),
             'icon_text_readmore_link' => array(
                 'accesspress_store_widgets_name' => 'icon_text_readmore_link',
-                'accesspress_store_widgets_title' => __('Read More Link', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Read More Link', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'url',
             ),
             'icon_text_style' => array(
                 'accesspress_store_widgets_name' => 'icon_text_style',
-                'accesspress_store_widgets_title' => __('Style', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Style', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'select',
                 'accesspress_store_widgets_field_options' => $style
             ),

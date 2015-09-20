@@ -22,7 +22,7 @@ class accesspress_cta_video extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'accesspress_cta_video', 'AP : Call to Action with Video', array(
-            'description' => __('A widget that shows Call to Action with Video', 'accesspress')
+            'description' => __('A widget that shows Call to Action with Video', 'accesspress-store')
                 )
         );
     }
@@ -35,29 +35,29 @@ class accesspress_cta_video extends WP_Widget {
         $fields = array(
             'cta_video_title' => array(
                 'accesspress_store_widgets_name' => 'cta_video_title',
-                'accesspress_store_widgets_title' => __('Title', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Title', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'title',
             ),
             'cta_video_phone' => array(
                 'accesspress_store_widgets_name' => 'cta_video_desc',
-                'accesspress_store_widgets_title' => __('Description', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Description', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'textarea',
                 'accesspress_store_widgets_row' => '4'
             ),
             'cta_video_email' => array(
                 'accesspress_store_widgets_name' => 'cta_video_iframe',
-                'accesspress_store_widgets_title' => __('Video Iframe', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Video Iframe', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'iframe_textarea',
                 'accesspress_store_widgets_row' => '4'
             ),
             'cta_video_website' => array(
                 'accesspress_store_widgets_name' => 'cta_video_btn_text',
-                'accesspress_store_widgets_title' => __('Button Text', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Button Text', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text',
             ),
             'cta_video_address' => array(
                 'accesspress_store_widgets_name' => 'cta_video_btn_url',
-                'accesspress_store_widgets_title' => __('Button Url', 'accesspress'),
+                'accesspress_store_widgets_title' => __('Button Url', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text'
                 
             )

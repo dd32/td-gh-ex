@@ -7,7 +7,7 @@
  * @package AccessPress Store
  */
 get_header();
-$archive_page_layout = get_theme_mod('archive_page_layout');
+$archive_page_layout = get_theme_mod('archive_page_layout','right-sidebar');
 ?>
 <?php if (have_posts()) : ?>
 

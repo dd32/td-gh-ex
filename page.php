@@ -14,7 +14,7 @@ get_header();
 global $post;
 $single_page_layout = get_post_meta($post->ID, 'accesspress_store_sidebar_layout', true);
 if (empty($single_page_layout)) {
-    $single_page_layout = get_theme_mod('single_page_layout');
+    $single_page_layout = get_theme_mod('single_page_layout','right-sidebar');
 }
 if (is_page('cart') || is_page('checkout')) {
     $single_page_layout = "no-sidebar";

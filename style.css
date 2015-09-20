@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -545,8 +545,9 @@ a {
 }
 .main-navigation {
     position: relative;
-    background: #2b2f3a;
+    background: #313131;
     width: auto;
+	padding-left:61px;
 }
 .main-navigation ul {
     list-style: none;
@@ -584,6 +585,9 @@ a {
     position: relative;
     margin: 0;
     padding: 0;
+}
+.main-navigation ul.menu > li:last-child a{
+	padding:15px 0 15px 15px;	
 }
 .main-navigation ul.menu > #menu-button {
     display: none;
@@ -1207,7 +1211,7 @@ body {
 }
 
 #site-navigation li a{
-    color: #4b4b4b;
+    color: #fff;
     font-size: 14px;
     text-transform: uppercase;
     -webkit-transition: color 0.3s ease 0s;
@@ -1217,7 +1221,8 @@ body {
     position: relative;
     display: block;
     margin-left: 10px;
-    padding-right: 10px;
+    padding: 15px;
+	line-height:30px;
 }
 
 #site-navigation > ul > li > a:hover,
@@ -1234,6 +1239,7 @@ body {
     content: "/";
     color: #AAA;
 }
+
 
 /*--------------------------------------------------------------
         Search Home css
@@ -4518,8 +4524,8 @@ div.view-cart .sub-menu {
     position:absolute;
     bottom:0;
     right:0;
-    width:50%;
-    min-height:61px;
+    min-width:30%;
+    min-height:60px;
     height:100%;
     content:"";
     background: #313131;
@@ -4544,8 +4550,13 @@ a.quick-wishlist{float:right;border-left:1px solid #919191;border-right:1px soli
     margin-bottom:10px;
 }
 
-.right-header{background:#313131;position:relative;padding-left:60px;margin:0px;padding-bottom: 1px;}
-.right-header:after {
+.right-header{position:relative;padding-left:60px;margin:0px;}
+
+#menu{
+	float:right;
+	position:relative;	
+}
+#menu:after {
     content: " ";
     display: block;
     width: 0;

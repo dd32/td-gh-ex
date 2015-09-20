@@ -41,7 +41,7 @@ if ( $products->have_posts() ) : ?>
 
 		<div class="title-bg">
 			
-			<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
+			<h2><?php _e( 'Related Products', 'accesspress-store' ); ?></h2>
 
 		</div>
 

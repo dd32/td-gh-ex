@@ -13,11 +13,7 @@
         <?php endif; ?>
 
         <div class="blog_desc">
-            <header class="entry-header"> 
-            <span class="cat-name">
-            	<?php $category = get_the_category();
-				echo $category[0]->cat_name; ?>
-			</span>                           
+            <header class="entry-header">                                        
                 <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
                     <div class="entry-meta">                                        
                         <p class="meta-info">
@@ -27,6 +23,7 @@
                             <?php the_time('g:i a'); ?> 
                             <?php echo __('by', 'accesspress-store'); ?>
                             <?php the_author_posts_link(); ?> /  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
+                            / <?php the_category(','); ?>
                         </p>
                     </div><!-- .entry-meta -->
             </header><!-- .entry-header -->

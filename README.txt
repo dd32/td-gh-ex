@@ -48,6 +48,12 @@ Images
 
 == Changelog ==
 
+= 1.0.3 =
+** TGM activation plugins added
+** Fixed menu style
+** Fixed the responsive issues
+** Fixed the page sidebar issues
+
 = 1.0.1 =
 **Fixed Minor Bugs,changed arrows of sliders.
 

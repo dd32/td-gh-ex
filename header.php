@@ -80,7 +80,7 @@
                     get_currentuserinfo();
                     ?>
 
-                    <a href="<?php echo wp_logout_url(); ?>" class="logout">
+                    <a href="<?php echo wp_logout_url( home_url() ); ?>" class="logout">
                         <?php _e(' LogOut', 'accesspress-store'); ?>
                     </a>
                     <?php

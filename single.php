@@ -8,7 +8,7 @@ get_header();
 global $post;
 $single_post_layout = get_post_meta($post->ID, 'accesspress_store_sidebar_layout', true);
 if (empty($single_post_layout)) {
-    $single_post_layout = esc_attr(get_theme_mod('single_post_layout'));
+    $single_post_layout = esc_attr(get_theme_mod('single_post_layout','right-sidebar'));
 }
 ?>
 
@@ -17,7 +17,6 @@ if (empty($single_post_layout)) {
         <header class="entry-header">
             <?php the_title('<h2 class="entry-title">', '</h2>'); ?>
         </header><!-- .entry-header -->
-
         <?php accesspress_breadcrumbs() ?>
     </div>
 </div>
