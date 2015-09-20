@@ -98,6 +98,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.6.9
+- Updated: Prep for Customizer integration. Redux global variable changed from $redux -> $thinkup_redux_variables. Migration function thinkup_migrate_redux_option().
+
 Version 1.6.8
 - Fixed:   Textdomain added to all translatable strings.
 - Fixed:   Custom social media icons now display correctly.
