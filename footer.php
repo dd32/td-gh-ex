@@ -26,7 +26,7 @@
 						
 							if (diarjolite_setting('diarjolite_copyright_text')):
 							
-								echo stripslashes(diarjolite_setting('diarjolite_copyright_text')) . " | ";
+								echo esc_html(diarjolite_setting('diarjolite_copyright_text')) . " | ";
 								
 							else: 
 							

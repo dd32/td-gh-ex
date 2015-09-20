@@ -6,9 +6,9 @@ if (!function_exists('diarjolite_loadwidgets')) {
 
 		register_sidebar(array(
 		
-			'name' => 'Sidebar',
+			'name' => __('Sidebar','diarjolite'),
 			'id'   => 'side-sidebar-area',
-			'description'   => 'This sidebar will be shown after the content.',
+			'description' => __('This sidebar will be shown after the content.','diarjolite'),
 			'before_widget' => '<div class="post-article">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="title">',
@@ -17,10 +17,10 @@ if (!function_exists('diarjolite_loadwidgets')) {
 		));
 	
 		register_sidebar(array(
-		
-			'name' => 'Home Sidebar',
+
+			'name' => __('Home Sidebar','diarjolite'),
 			'id'   => 'home-sidebar-area',
-			'description'   => 'This sidebar will be shown in the homepage.',
+			'description' => __('This sidebar will be shown in the homepage.','diarjolite'),
 			'before_widget' => '<div class="post-article">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="title">',
@@ -29,10 +29,10 @@ if (!function_exists('diarjolite_loadwidgets')) {
 		));
 	
 		register_sidebar(array(
-		
-			'name' => 'Category Sidebar',
+
+			'name' => __('Category Sidebar','diarjolite'),
 			'id'   => 'category-sidebar-area',
-			'description'   => 'This sidebar will be shown at the side of content.',
+			'description' => __('This sidebar will be shown at the side of content.','diarjolite'),
 			'before_widget' => '<div class="post-article">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="title">',
@@ -41,10 +41,11 @@ if (!function_exists('diarjolite_loadwidgets')) {
 		));
 	
 		register_sidebar(array(
-		
-			'name' => 'Bottom Sidebar',
+
+			'name' => __('Bottom Sidebar','diarjolite'),
 			'id'   => 'bottom-sidebar-area',
-			'before_widget' => '<div class="'.diarjolite_setting('diarjolite_bottom_layout').' widget-box">',
+			'description' => __('This sidebar will be shown at the bottom of page.','diarjolite'),
+			'before_widget' => '<div class="col-md-4 widget-box">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="title">',
 			'after_title'   => '</h4>'

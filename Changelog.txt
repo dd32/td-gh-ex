@@ -1,5 +1,11 @@
 Diarjo Lite Changelog
 
+Version 1.1.0 - Released: 20.09.2015
+
+Moved : Option panel under WordPress Customizer.
+Edit  : Code optimized.
+Updated : Font Awesome 4.4.0
+
 Version 1.0.9 - Released: 24.01.2015
 
 Fixed : Category pagination with the last version of WordPress.

@@ -37,13 +37,17 @@
 					<ul>
 			
 						<?php 
-										
-						foreach ($value['item'] as $option => $name ) {
-							echo "<li class='".$option."'><a href='#".str_replace(" ", "", $option)."'>".$name."</a></li>";
-						}
-						
+											
+							foreach ($value['item'] as $option => $name ) {
+							
+								echo "<li class='".$option."'><a href='#".str_replace(" ", "", $option)."'>".$name."</a></li>";
+							
+							}
+							
 						?>
-					   
+					   	
+                        <li class="clear"></li>
+                        
 					</ul>
 					   
 			<?php	
@@ -124,9 +128,12 @@
 						<div class="input-right">
 						
 							<select name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" style="width:100%">
+								
 								<?php foreach ($field['options'] as $option => $values) { ?>
-								<option <?php if (diarjolite_postmeta( $field['id']) == $option) { echo 'selected="selected"'; } ?> value="<?php echo $option; ?>"><?php echo $values; ?></option><?php } ?>
-							</select>
+                                
+                                <option <?php if (( diarjolite_postmeta( $field['id'] ) == $option) || ( ( !diarjolite_postmeta($field['id'])) && ( $field['std'] == $option) )) { echo 'selected="selected"'; } ?> value="<?php echo $option; ?>"><?php echo $values; ?></option><?php } ?>
+							
+                            </select>
 						
 						</div>
 						
@@ -145,14 +152,18 @@
 					?>
 					
 					<p class="wip_inputbox">
-						<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
-						<select name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" style="width:100%">
+						
+                        <label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
+						
+                        <select name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" style="width:100%">
 							<option value="all"> All </option>
 							<?php foreach ( $wp_terms as $option => $values) { ?>
 							<option <?php if (diarjolite_postmeta( $field['id']) == $option) { echo 'selected="selected"'; } ?> value="<?php echo $option; ?>"><?php echo $values; ?></option><?php } ?>
 						</select>
-						<em> <?php echo $field['desc']; ?> </em>
-					</p>
+						
+                        <em> <?php echo $field['desc']; ?> </em>
+					
+                    </p>
 				
 				
 					<?php break;
@@ -189,6 +200,7 @@
 				$metaboxes_fields = $this->metaboxes_fields ;
 		
 				foreach ($metaboxes_fields as $value) {
+					
 					foreach ($value as $field) {
 
 						if ((isset($field['id'])) && (isset($_POST[$field['id']]))) {
@@ -203,9 +215,7 @@
 						}
 					}
 				}
-				
+			}
 		}
-	
-	}
 
 ?>

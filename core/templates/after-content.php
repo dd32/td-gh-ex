@@ -14,7 +14,7 @@ function diarjolite_after_content_function() {
 
 	if ((is_home()) || (is_category()) || (is_search()) || (is_tag()) || ( (is_page()) && (get_post_type() <> "page")) ):
 		
-		diarjolite_excerpt();
+		do_action('diarjolite_excerpt');
 		 
 	?>
 

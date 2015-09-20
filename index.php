@@ -2,7 +2,7 @@
 
 	get_header();
 	
-	get_template_part('home','blog');
+	get_template_part('layouts/home-blog'); 
 	
 	get_footer(); 
 

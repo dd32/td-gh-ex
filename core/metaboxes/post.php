@@ -35,6 +35,9 @@ array( "type" => "begintab",
 				   "left-sidebar" =>  __( "Left Sidebar","diarjolite"),
 				   "right-sidebar" => __( "Right Sidebar","diarjolite"),
 			  ),
+			  
+			  "std" => "right-sidebar"
+			  
 		),
 			
 ),

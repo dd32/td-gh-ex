@@ -28,6 +28,8 @@ function diarjolite_socials_functions() {
 		"fa fa-skype" => "skype" ,
 		"fa fa-instagram" => "instagram" ,
 		"fa fa-github" => "github" ,
+		"fa fa-xing" => "xing" ,
+		"fa fa-whatsapp" => "whatsapp" ,
 		"fa fa-envelope" => "email" ,
 	);
 	
