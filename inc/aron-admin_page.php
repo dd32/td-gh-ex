@@ -228,15 +228,15 @@ add_action('admin_head', 'aron_custom_admin_colors');
 		echo "</button></a></div>";
 		
 		echo '<div class="col-1-3"><h2>'; 
-		printf( __('Documentation', 'aron' ));
+		printf( __('Get Free This Theme', 'aron' ));
         echo '</h2>';  
 		
 		echo '<p>';
-		printf( __('Check out our Aron Documentation to learn how to use Aron. Click the link below.', 'aron' )); 
+		printf( __('If you want to get Pro version of this theme Totally Free. Click the link below.', 'aron' )); 
 		echo '</p>'; 
 		
-		echo '<a href="http://arinio.com/document/" target="_blank"><button>'; 
-		printf( __('Read Docs', 'aron' ));
+		echo '<a href="http://arinio.com/get-free-our-theme/" target="_blank"><button>'; 
+		printf( __('Read More', 'aron' ));
 		echo "</button></a></div>";
 		
 		echo '<div class="col-1-3"><h2>'; 
