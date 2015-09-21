@@ -67,6 +67,13 @@
 	padding: 0 15px;
 }
 
+.btn-upgrade a.btn-help {
+	padding: 0 10px;
+	background-color: #CECBCB;
+	color: #000;
+	margin-left: 10px;
+}
+
 .redux-group-tab .form-table .one-third {
 	border: 2px solid #E8E8E8;
     min-height: 160px;

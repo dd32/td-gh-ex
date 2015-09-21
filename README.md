@@ -106,4 +106,6 @@ Version 1.2.4
 Version 1.2.5
 	* Table CSS Tweak
 	* Services Section Tweak
-	
+
+Version 1.2.6
+	* Added Help / Documentation buttons

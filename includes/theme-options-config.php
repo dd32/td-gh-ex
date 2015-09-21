@@ -101,8 +101,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
         function dynamic_section($sections) {
             //$sections = array();
             $sections[] = array(
-                'title' => __('Section via hook', 'redux-framework-demo'),
-                'desc' => __('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'redux-framework-demo'),
+                'title' => __('Section via hook', 'abaris'),
+                'desc' => __('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'abaris'),
                 'icon' => 'el el-paper-clip',
                 // Leave this as a blank section, no options just some intro text set above.
                 'fields' => array()
@@ -180,16 +180,16 @@ if (!class_exists("Redux_Framework_sample_config")) {
             $screenshot = $this->theme->get_screenshot();
             $class = $screenshot ? 'has-screenshot' : '';
 
-            $customize_title = sprintf(__('Customize &#8220;%s&#8221;', 'redux-framework-demo'), $this->theme->display('Name'));
+            $customize_title = sprintf(__('Customize &#8220;%s&#8221;', 'abaris'), $this->theme->display('Name'));
             ?>
             <div id="current-theme" class="<?php echo esc_attr($class); ?>">
             <?php if ($screenshot) : ?>
                 <?php if (current_user_can('edit_theme_options')) : ?>
                         <a href="<?php echo wp_customize_url(); ?>" class="load-customize hide-if-no-customize" title="<?php echo esc_attr($customize_title); ?>">
-                            <img src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview'); ?>" />
+                            <img src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview','abaris'); ?>" />
                         </a>
                 <?php endif; ?>
-                    <img class="hide-if-customize" src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview'); ?>" />
+                    <img class="hide-if-customize" src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview','abaris'); ?>" />
             <?php endif; ?>
 
                 <h4>
@@ -198,14 +198,14 @@ if (!class_exists("Redux_Framework_sample_config")) {
 
                 <div>
                     <ul class="theme-info">
-                        <li><?php printf(__('By %s', 'redux-framework-demo'), $this->theme->display('Author')); ?></li>
-                        <li><?php printf(__('Version %s', 'redux-framework-demo'), $this->theme->display('Version')); ?></li>
-                        <li><?php echo '<strong>' . __('Tags', 'redux-framework-demo') . ':</strong> '; ?><?php printf($this->theme->display('Tags')); ?></li>
+                        <li><?php printf(__('By %s', 'abaris'), $this->theme->display('Author')); ?></li>
+                        <li><?php printf(__('Version %s', 'abaris'), $this->theme->display('Version')); ?></li>
+                        <li><?php echo '<strong>' . __('Tags', 'abaris') . ':</strong> '; ?><?php printf($this->theme->display('Tags')); ?></li>
                     </ul>
                     <p class="theme-description"><?php echo $this->theme->display('Description'); ?></p>
                 <?php
                 if ($this->theme->parent()) {
-                    printf(' <p class="howto">' . __('This <a href="%1$s">child theme</a> requires its parent theme, %2$s.') . '</p>', __('http://codex.wordpress.org/Child_Themes', 'redux-framework-demo'), $this->theme->parent()->display('Name'));
+                    printf(' <p class="howto">' . __('This <a href="%1$s">child theme</a> requires its parent theme, %2$s.', 'abaris') . '</p>', __('http://codex.wordpress.org/Child_Themes', 'abaris'), $this->theme->parent()->display('Name'));
                 }
                 ?>
 
@@ -1074,7 +1074,7 @@ FEATURES;
                         'id'        => 'support-notice',
                         'type'      => 'info',
                         'style'     => 'critical',
-                        'title'     => __('Support and Documentation.', 'redux-framework-demo'),
+                        'title'     => __('Support and Documentation.', 'abaris'),
                         'desc'      => __('Please refer to <a href="http://demo.webulous.in/abaris/documentation/">documentation</a> page of this site\'s demo to know how to use theme options specific to this theme. For professional support about customization and other advices from theme author, Please <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade</a> to Abaris Pro Version', 'abaris')
                     ),
                 )
@@ -1431,9 +1431,9 @@ FEATURES;
                     array(
                         'id'       => 'opt-link-color',
                         'type'     => 'link_color',
-                        'title'    => __('Links Color Option', 'redux-framework-demo'),
-                        'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
-                        'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+                        'title'    => __('Links Color Option', 'abaris'),
+                        'subtitle' => __('Only color validation can be done on this field type', 'abaris'),
+                        'desc'     => __('This is the description field, again good for additional info.', 'abaris'),
                         'default'  => array(
                             'regular'  => '#ff4200', // blue
                             'hover'    => '#ff4200', // red
@@ -1445,26 +1445,26 @@ FEATURES;
                     array(
                         'id'        => 'dummy-typography',
                         'type'      => 'typography',
-                        'title'     => __('Font Preview', 'redux-framework-demo'),
+                        'title'     => __('Font Preview', 'abaris'),
                         'google'    => true,
                         'text-align'    => false,
                         'subsets'   => false,
                         'line-height'   => false,
                         'color' => false,
-                        'subtitle'  => __('Preview Google fonts using this field. Sets nothing, just preview.', 'redux-framework-demo'),
+                        'subtitle'  => __('Preview Google fonts using this field. Sets nothing, just preview.', 'abaris'),
                         'default'   => array( 'font-family' => 'Abel', 'font-size' => '24px' )
                     ),
 
                     array(
                         'id'        => 'bd-typography',
                         'type'      => 'typography',
-                        'title'     => __('Body Font', 'redux-framework-demo'),
+                        'title'     => __('Body Font', 'abaris'),
                         'google'    => true,
                         'text-align'    => false,
                         'subsets'   => false,
                         'line-height'   => false,
                         'preview'   => false,
-                        'subtitle'  => __('Specify the body font properties.', 'redux-framework-demo'),
+                        'subtitle'  => __('Specify the body font properties.', 'abaris'),
                         'default'   => array(
                             'color'         => '#333',
                             'font-style'    => '400',
@@ -1478,13 +1478,13 @@ FEATURES;
                     array(
                         'id'        => 'nav-typography',
                         'type'      => 'typography',
-                        'title'     => __('Navigation Font', 'redux-framework-demo'),
+                        'title'     => __('Navigation Font', 'abaris'),
                         'google'    => true,
                         'text-align'    => false,
                         'subsets'   => false,
                         'line-height'   => false,
                         'preview'   => false,
-                        'subtitle'  => __('Specify the navigation font properties.', 'redux-framework-demo'),
+                        'subtitle'  => __('Specify the navigation font properties.', 'abaris'),
                         'default'   => array(
                             'color'         => '#ffffff',
                             'font-style'    => '400',
@@ -1497,13 +1497,13 @@ FEATURES;
                     array(
                         'id'        => 'h1-typography',
                         'type'      => 'typography',
-                        'title'     => __('H1 Font Properties', 'redux-framework-demo'),
+                        'title'     => __('H1 Font Properties', 'abaris'),
                         'google'    => true,
                         'text-align'    => false,
                         'subsets'   => false,
                         'line-height'   => false,
                         'preview'   => false,
-                        'subtitle'  => __('Specify the h1 font properties.', 'redux-framework-demo'),
+                        'subtitle'  => __('Specify the h1 font properties.', 'abaris'),
                         'default'   => array(
                             'color'         => '#333',
                             'font-style'    => '400',
@@ -1516,13 +1516,13 @@ FEATURES;
                     array(
                         'id'        => 'h2-typography',
                         'type'      => 'typography',
-                        'title'     => __('H2 Font Properties', 'redux-framework-demo'),
+                        'title'     => __('H2 Font Properties', 'abaris'),
                         'google'    => true,
                         'text-align'    => false,
                         'subsets'   => false,
                         'line-height'   => false,
                         'preview'   => false,
-                        'subtitle'  => __('Specify the h2 font properties.', 'redux-framework-demo'),
+                        'subtitle'  => __('Specify the h2 font properties.', 'abaris'),
                         'default'   => array(
                             'color'         => '#333',
                             'font-style'    => '400',
@@ -1535,13 +1535,13 @@ FEATURES;
                     array(
                         'id'        => 'h3-typography',
                         'type'      => 'typography',
-                        'title'     => __('H3 Font Properties', 'redux-framework-demo'),
+                        'title'     => __('H3 Font Properties', 'abaris'),
                         'google'    => true,
                         'text-align'    => false,
                         'subsets'   => false,
                         'line-height'   => false,
                         'preview'   => false,
-                        'subtitle'  => __('Specify the h3 font properties.', 'redux-framework-demo'),
+                        'subtitle'  => __('Specify the h3 font properties.', 'abaris'),
                         'default'   => array(
                             'color'         => '#333',
                             'font-style'    => '400',
@@ -1554,13 +1554,13 @@ FEATURES;
                     array(
                         'id'        => 'h4-typography',
                         'type'      => 'typography',
-                        'title'     => __('H4 Font Properties', 'redux-framework-demo'),
+                        'title'     => __('H4 Font Properties', 'abaris'),
                         'google'    => true,
                         'text-align'    => false,
                         'subsets'   => false,
                         'line-height'   => false,
                         'preview'   => false,
-                        'subtitle'  => __('Specify the h4 font properties.', 'redux-framework-demo'),
+                        'subtitle'  => __('Specify the h4 font properties.', 'abaris'),
                         'default'   => array(
                             'color'         => '#333',
                             'font-style'    => '400',
@@ -1573,13 +1573,13 @@ FEATURES;
                     array(
                         'id'        => 'h5-typography',
                         'type'      => 'typography',
-                        'title'     => __('H5 Font Properties', 'redux-framework-demo'),
+                        'title'     => __('H5 Font Properties', 'abaris'),
                         'google'    => true,
                         'text-align'    => false,
                         'subsets'   => false,
                         'line-height'   => false,
                         'preview'   => false,
-                        'subtitle'  => __('Specify the h5 font properties.', 'redux-framework-demo'),
+                        'subtitle'  => __('Specify the h5 font properties.', 'abaris'),
                         'default'   => array(
                             'color'         => '#333',
                             'font-style'    => '400',
@@ -1592,13 +1592,13 @@ FEATURES;
                     array(
                         'id'        => 'h6-typography',
                         'type'      => 'typography',
-                        'title'     => __('H6 Font Properties', 'redux-framework-demo'),
+                        'title'     => __('H6 Font Properties', 'abaris'),
                         'google'    => true,
                         'text-align'    => false,
                         'subsets'   => false,
                         'line-height'   => false,
                         'preview'   => false,
-                        'subtitle'  => __('Specify the h6 font properties.', 'redux-framework-demo'),
+                        'subtitle'  => __('Specify the h6 font properties.', 'abaris'),
                         'default'   => array(
                             'color'         => '#333',
                             'font-style'    => '400',
@@ -1617,18 +1617,18 @@ FEATURES;
             // Custom page help tabs, displayed using the help API. Tabs are shown in order of definition.
             $this->args['help_tabs'][] = array(
                 'id' => 'redux-opts-1',
-                'title' => __('Theme Information 1', 'redux-framework-demo'),
-                'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo')
+                'title' => __('Theme Information 1', 'abaris'),
+                'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'abaris')
             );
 
             $this->args['help_tabs'][] = array(
                 'id' => 'redux-opts-2',
-                'title' => __('Theme Information 2', 'redux-framework-demo'),
-                'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo')
+                'title' => __('Theme Information 2', 'abaris'),
+                'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'abaris')
             );
 
             // Set the help sidebar
-            $this->args['help_sidebar'] = __('<p>This is the sidebar content, HTML is allowed.</p>', 'redux-framework-demo');
+            $this->args['help_sidebar'] = __('<p>This is the sidebar content, HTML is allowed.</p>', 'abaris');
         }
 
         /**
@@ -1648,8 +1648,8 @@ FEATURES;
                 'display_version' => $theme->get('Version'), // Version that appears at the top of your panel
                 'menu_type' => 'menu', //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
                 'allow_sub_menu' => true, // Show the sections below the admin menu item or not
-                'menu_title' => __('Theme Options', 'redux-framework-demo'),
-                'page' => __('Theme Options', 'redux-framework-demo'),
+                'menu_title' => __('Theme Options', 'abaris'),
+                'page' => __('Theme Options', 'abaris'),
                 // You will need to generate a Google API key to use this feature.
                 // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
                 'google_api_key' => '', // Must be defined to add google fonts to the typography module
@@ -1715,16 +1715,16 @@ FEATURES;
                 } else {
                     $v = str_replace("-", "_", $this->args['opt_name']);
                 }
-                //$this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo'), $v);
-                $this->args['intro_text'] = sprintf(__('<p class="btn-upgrade"><a href="http://www.webulousthemes.com/?add-to-cart=21"><i class="el el-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/abarispro/" class="vide-demo"><i class="el el-eye-open"></i>View Demo</p>', 'redux-framework-demo'), $v);
+                //$this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'abaris'), $v);
+                $this->args['intro_text'] = sprintf(__('<p class="btn-upgrade"><a href="http://www.webulousthemes.com/?add-to-cart=21"><i class="el el-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/abarispro/" class="vide-demo"><i class="el el-eye-open"></i>View Demo</a><a href="http://www.webulousthemes.com/forums/forum/free-support/" target="_blank" class="btn-help">Ask A Question</a><a href="http://docs.webulous.in/abaris-free/" target="_blank" class="btn-help">Documentation</a></p>', 'abaris'), $v);
             } else {
-                $this->args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo');
+                $this->args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'abaris');
             }
             
-           //$this->args['intro_text'] = __('<p><a href="#">Buy Pro Version</a> <a href="#">Donate</a> <a href="#">Support</a> <a href="#">Rate This Theme</a></p>', 'redux-framework-demo');
+           //$this->args['intro_text'] = __('<p><a href="#">Buy Pro Version</a> <a href="#">Donate</a> <a href="#">Support</a> <a href="#">Rate This Theme</a></p>', 'abaris');
 
             // Add content after the form.
-            $this->args['footer_text'] = __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo');
+            $this->args['footer_text'] = __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'abaris');
            $this->args['footer_text'] .= '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">';
            $this->args['footer_text'] .= '<input type="hidden" name="cmd" value="_donations">';
            $this->args['footer_text'] .= '<input type="hidden" name="business" value="uma@codinggeek.om">';
