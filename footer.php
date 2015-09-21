@@ -1,4 +1,4 @@
-<?php hybrid_do_atomic( 'main_after' ); ?>
+<?php do_action( 'main_after' ); ?>
 
 </section> <!-- .main -->
 
@@ -8,26 +8,27 @@
 
 <footer id="site-footer" class="site-footer" role="contentinfo">
 
-	<?php hybrid_do_atomic( 'footer_before' ); ?>
+	<?php do_action( 'footer_before' ); ?>
 
 	<div class="footer-content">
 	    <h4 class="site-title"><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('title'); ?></a></h4>
 		<p class="site-description"><?php bloginfo('description'); ?></p>
 	</div>
 
-	<?php hybrid_do_atomic( 'footer_widgets' ); ?>
+	<?php do_action( 'footer_widgets' ); ?>
 
     <div class="design-credit">
         <span>
             <?php
-                $site_url = 'https://www.competethemes.com/unlimited/?utm_source=Footer%20Link&utm_medium=Referral&utm_campaign=Unlimited%20Footer%20Link';
+                $site_url = 'https://www.competethemes.com/unlimited/';
                 $footer_text = sprintf( __( '<a target="_blank" href="%s">Unlimited WordPress Theme</a> by Compete Themes', 'unlimited' ), esc_url( $site_url ) );
-                echo apply_filters('footer_text', $footer_text );
+                $footer_text = apply_filters('footer_text', $footer_text );
+                echo wp_kses_post( $footer_text );
             ?>
         </span>
     </div>
 
-	<?php hybrid_do_atomic( 'footer_after' ); ?>
+	<?php do_action( 'footer_after' ); ?>
 
 </footer>
 
@@ -35,7 +36,7 @@
 
 <?php wp_footer(); ?>
 
-<?php hybrid_do_atomic( 'body_after' ); ?>
+<?php do_action( 'body_after' ); ?>
 
 </body>
 
