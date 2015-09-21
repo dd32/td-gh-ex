@@ -13,8 +13,12 @@ if ( ! isset( $content_width ) )
 //	Add Theme Options Panel & Assign Variable Values
 //----------------------------------------------------------------------------------
 
-	// Add Redux Framework - Credits attributable to http://reduxframework.com/
-	require_once (get_template_directory() . '/admin/main/framework.php');
+	// Add Redux Framework
+	require_once( get_template_directory() . '/admin/main/framework.php' );
+	require_once( get_template_directory() . '/admin/main/options.php' );
+
+	// Add Notice Informing Users Theme Options Have Moved To Customizer
+	require_once( get_template_directory() . '/admin/main/customizer_migration_notice/customizer_migration_notice.php' );
 
 	// Load Theme Variables.
 	require_once( get_template_directory() . '/admin/main/options/00.variables.php' ); 
@@ -83,7 +87,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_style( 'thinkup-bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.css', '', '2.3.2' );
 	wp_enqueue_style( 'thinkup-prettyPhoto', get_template_directory_uri() . '/lib/extentions/prettyPhoto/css/prettyPhoto.css', '', '3.1.6' );
 	wp_enqueue_style( 'thinkup-shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
-	wp_enqueue_style( 'thinkup-style', get_stylesheet_uri(), '', '1.1.2' );
+	wp_enqueue_style( 'thinkup-style', get_stylesheet_uri(), '', '1.2.0' );
 
 	// Add Font Packages.
 	wp_enqueue_style( 'dashicons' );

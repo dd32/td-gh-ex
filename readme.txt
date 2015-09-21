@@ -2,8 +2,8 @@
 
 - By Think Up Themes, http://www.thinkupthemes.com/
 
-Requires at least:	3.4.1
-Tested up to:		4.0.0
+Requires at least:	3.6.0
+Tested up to:		4.3.1
 
 Renden (Pro) is a multi-purpose professional Premium WordPress Theme ideal for a business or blog website. The theme is responsive, HD retina ready and comes with 600+ Google Fonts which can easily be selected directly from the theme options panel. Never code again with the awesome page builder. Simply drag, drop and you're done! It couldn't be easier to create stunning websites with the beauty of Renden (Pro).
 
@@ -92,6 +92,15 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.2.0
+- New:     Customizer support added. All Theme options settings now controlled from within Customizer.
+- New:     Dummy "Theme Options" section added under Appearance to guide users to location of new theme options and relevant information - Remove in upcoming update.
+- Fixed:   Pagination clears correctly when inner paginated pages are being viewed.
+- Fixed:   Migration script updated to prevent loss of data. If data doesn't migrate to customizer. Support can still retrieve from database.
+- Removed: Redundant Redux css code from style-backend.css.
+- Removed: Redundant Redux jQuery code from main-backend.js.
+- Removed: Theme options panel removed - replaced with customizer to comply with new WordPress guidelines.
 
 Version 1.1.2
 - Updated: Prep for Customizer integration. Redux global variable changed from $redux -> $thinkup_redux_variables. Migration function thinkup_migrate_redux_option().

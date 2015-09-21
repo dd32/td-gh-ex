@@ -209,6 +209,7 @@ $pag_before  = NULL;
 $pag_after   = NULL;
 $pag_current = NULL;
 $pag_close   = NULL;
+$pag_clear   = NULL;
 
 	$showitems = ($range)+1;  
 
@@ -222,10 +223,11 @@ $pag_close   = NULL;
 	}
 
 if ( $paged > 1 ) {
-	$pag_before = '<span class="pag-before">';
+	$pag_before  = '<span class="pag-before">';
 	$pag_current = '</span><span class="pag-current">';
-	$pag_after = '</span><span class="pag-after">';
-	$pag_close = '</span>';
+	$pag_after   = '</span><span class="pag-after">';
+	$pag_close   = '</span>';
+	$pag_clear   = '<span class="clearboth"></span>';
 }
 
 if ( $paged == 1 ) {
@@ -264,6 +266,8 @@ if ( $paged == 1 ) {
 				echo '<li class="pag-last" ><a href="' . get_pagenum_link($pages) . '"><i class="fa fa-angle-double-right"></i></a></li>';
 
 			echo $pag_close;
+			echo $pag_clear;
+
 		echo '</ul>';
 	}
 }
@@ -603,6 +607,7 @@ add_action( 'wp_enqueue_scripts', 'thinkup_googlefonts_scripts' );
 function thinkup_migrate_redux_option() {
 
 	// try to get the new option
+	$thinkup_redux_migrate   = get_option('thinkup_redux_migrate');
 	$thinkup_redux_variables = get_option('thinkup_redux_variables');
 
 	if ($thinkup_redux_variables && isset($thinkup_redux_variables['migrated']) && $thinkup_redux_variables['migrated'] == 1) {
@@ -615,11 +620,16 @@ function thinkup_migrate_redux_option() {
 		$redux_option = get_option('redux');
 
 		// Only migrate if not already migrated
-		if ( $redux_option['migrated'] !== 1 ) {
-			// set the migrated	flag
-			$redux_option['migrated'] = 1;	
-			update_option('redux',$redux_option);
-			update_option('thinkup_redux_variables',$redux_option);
+		if ( $thinkup_redux_migrate != 1 ) {
+
+
+			// Check if migration was already performed with old migration script
+			if ( $redux_option['migrated'] !== 1 ) {
+
+				// set the migrated	flag
+				update_option('thinkup_redux_migrate', 1);
+				update_option('thinkup_redux_variables',$redux_option);
+			}
 		}
 	}	
 }
