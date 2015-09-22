@@ -67,7 +67,7 @@
 				'theme_location' => 'primary' , 
 				'container'      => '',
 				'menu_class'      => 'nav',
-				'fallback_cb'     => '',
+				//'fallback_cb'     => '',
 				) );
 			endif; ?>
 		

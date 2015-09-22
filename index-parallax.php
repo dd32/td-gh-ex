@@ -105,5 +105,7 @@
 	<?php
 	endif; 
 	endforeach;
+	else:
+        get_template_part('demo');
 	endif;
 ?>

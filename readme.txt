@@ -89,6 +89,11 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.24.4
+* FontAwesome updated to latest version
+* Translation pot file updated 
+* Minor Bug fixed in Home Page
+
 Version 1.24.3
 * Polylang Plugin translation bug for Call to action section fixed
 * Minor CSS fix in the admin Panel
