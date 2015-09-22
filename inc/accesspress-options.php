@@ -555,17 +555,6 @@ function optionsframework_options() {
             'std' => '1',
             'type' => 'switch'
             );
-    /*        
-    $options[] = array(
-            'name' => __( 'Show Post Views', 'accesspress-mag' ),                
-            'desc' => __( 'Enable or disable the post views', 'accesspress-mag' ),
-            'id' => 'show_post_views',
-            'on' => __( 'Yes', 'accesspress-mag'),
-            'off' => __( 'No', 'accesspress-mag'),
-            'std' => '1',
-            'type' => 'switch'
-            );
-    */
     $options[] = array(
             'name' => __( 'Show Comment Count', 'accesspress-mag' ),                
             'desc' => __( 'Enable or disable comment number', 'accesspress-mag' ),
@@ -606,6 +595,15 @@ function optionsframework_options() {
             'name' => __( 'Show Navigation in Posts', 'accesspress-mag' ),                
             'desc' => __( 'Show or hide `next` and `previous` posts', 'accesspress-mag' ),
             'id' => 'show_post_nextprev',
+            'on' => __( 'Yes', 'accesspress-mag'),
+            'off' => __( 'No', 'accesspress-mag'),
+            'std' => '1',
+            'type' => 'switch'
+            );
+    $options[] = array(
+            'name' => __( 'Lightbox Effect', 'accesspress-mag' ),                
+            'desc' => __( 'Enable or disable lightbox effect for galleries images.', 'accesspress-mag' ),
+            'id' => 'show_lightbox_effect',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
             'std' => '1',

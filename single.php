@@ -72,7 +72,7 @@ do_action( 'accesspress_mag_before_body_content' );
 	</div><!-- #primary -->
 
 <?php 
-    $global_sidebar= of_get_option( 'global_post_sidebar' );
+    $global_sidebar = of_get_option( 'global_post_sidebar' );
     $post_sidebar = 'right-sidebar';
     $post_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_sidebar_layout', true );
     if( $post_sidebar == 'global-sidebar' ){

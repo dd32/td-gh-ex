@@ -104,7 +104,7 @@ function accesspress_mag_scripts() {
     );
     wp_enqueue_style('google-fonts', add_query_arg($font_args, "//fonts.googleapis.com/css"));
     $my_theme = wp_get_theme();
-    $theme_version = $my_theme->get('Version');
+    $theme_version = $my_theme->get( 'Version' );
     wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css');
     
     wp_enqueue_style( 'fontawesome-font', get_template_directory_uri(). '/css/font-awesome.min.css' );
@@ -113,10 +113,20 @@ function accesspress_mag_scripts() {
 
     wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css', array(), esc_attr($theme_version) );
     
-   if ( of_get_option( 'menu_sticky', '1' ) == 1 ) {
+    if ( of_get_option( 'menu_sticky', '1' ) == 1 ) {
+        
       wp_enqueue_script( 'jquery-sticky', get_template_directory_uri(). '/js/sticky/jquery.sticky.js', array( 'jquery' ), '1.0.2', true );
 
-      wp_enqueue_script( 'accesspress-mag-sticky-menu-setting', get_template_directory_uri(). '/js/sticky/sticky-setting.js', array( 'jquery-sticky' ), esc_attr($theme_version), true );
+      wp_enqueue_script( 'accesspress-mag-sticky-menu-setting', get_template_directory_uri(). '/js/sticky/sticky-setting.js', array( 'jquery-sticky' ), esc_attr( $theme_version ), true );
+    }
+    
+    if( of_get_option( 'show_lightbox_effect', '1' ) ==1 ) {
+        
+        wp_enqueue_style( 'accesspress-mag-nivolightbox-style', get_template_directory_uri(). '/js/lightbox/nivo-lightbox.css', '1.2.0' );
+        
+        wp_enqueue_script( 'accesspress-mag-nivolightbox', get_template_directory_uri() . '/js/lightbox/nivo-lightbox.js', array(), '1.2.0', true );
+        
+        wp_enqueue_script( 'accesspress-mag-nivolightbox-settings', get_template_directory_uri() . '/js/lightbox/lightbox-settings.js', array('accesspress-mag-nivolightbox'), esc_attr( $theme_version ), true );
     }
    
     wp_enqueue_script( 'bxslider-js', get_template_directory_uri(). '/js/jquery.bxslider.min.js', array( 'jquery' ), '4.1.2', true );

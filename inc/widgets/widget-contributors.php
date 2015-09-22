@@ -8,10 +8,10 @@
 /**
  * Adds accesspress_mag_contributors widget.
  */
-add_action('widgets_init', 'article_contributors_widget');
+add_action( 'widgets_init', 'article_contributors_widget' );
 
 function article_contributors_widget() {
-    register_widget('accesspress_mag_article_contributors');
+    register_widget( 'accesspress_mag_article_contributors' );
 }
 
 class Accesspress_mag_article_contributors extends WP_Widget {
@@ -22,7 +22,7 @@ class Accesspress_mag_article_contributors extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'Accesspress_mag_article_contributors', 'AP-Mag :  Article Contributors', array(
-            'description' => __('A widget that shows article contributors', 'accesspress-mag')
+            'description' => __( 'A widget that shows article contributors', 'accesspress-mag' )
                 )
         );
     }
@@ -35,7 +35,7 @@ class Accesspress_mag_article_contributors extends WP_Widget {
         $fields = array(
             'contributors_title' => array(
                 'accesspress_mag_widgets_name' => 'contributors_title',
-                'accesspress_mag_widgets_title' => __('Title', 'accesspress-mag'),
+                'accesspress_mag_widgets_title' => __( 'Title', 'accesspress-mag' ),
                 'accesspress_mag_widgets_field_type' => 'title',
             ),            
         );
@@ -59,7 +59,7 @@ class Accesspress_mag_article_contributors extends WP_Widget {
            <h1 class="widget-title"><span><?php if( !empty( $contributors_title )  ){ echo esc_attr($contributors_title); } ?></span></h1>     
            <div class="single-user-wrapper">
                  <?php
-                    $roles = array('Administrator', 'Author', 'Editor');
+                    $roles = array( 'Administrator', 'Author', 'Editor' );
                     foreach($roles as $role)
                     {
                         $user_args = array(
