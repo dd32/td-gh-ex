@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package Awesome One
+ * @package Awesomeone
  */
 
 get_header(); ?>

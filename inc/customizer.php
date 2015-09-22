@@ -46,7 +46,7 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
         array(
             'title' => __('Logo (PRO Version)', 'awesomeone'),
             'priority' => 1,
-            'description' => __('<strong>Logo and favicon Settings available in <a href="'.esc_url(pro_theme_url).'" target="_blank">PRO Version</a>.</strong>','awesomeone'),
+            'description' => __('<strong>Logo settings available in</strong>','awesomeone'). '<a href="'.esc_url(pro_theme_url).'" target="_blank">PRO Version</a>.',
         )
     );  
     $wp_customize->add_setting('Awesomeone_options[font-info]', array(
@@ -64,7 +64,7 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
 	
 	$wp_customize->add_section('opacity',array(
 			'title'	=> __('Background Opacity (PRO Version)','awesomeone'),
-			'description'	=> __('<strong>Background opacity available in <a href="'.esc_url(pro_theme_url).'">PRO Version</a></strong>'),
+			'description'	=> __('<strong>Background opacity available in</strong>','awesomeone'). '<a href="'.esc_url(pro_theme_url).'">PRO Version</a>',
 			'priority'	=> 2
 	));
 	
@@ -93,7 +93,7 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control($wp_customize,'color_scheme',array(
 			'label' => __('Color Scheme','awesomeone'),
-			'description'	=> '<strong>More color options in <a href="'.esc_url(pro_theme_url).'" target="_blank">PRO version</a></strong>',
+			'description'	=> __('<strong>More color options in</strong>','awesomeone'). '<a href="'.esc_url(pro_theme_url).'" target="_blank">PRO version</a>',
 			'section' => 'colors',
 			'settings' => 'color_scheme'
 		))
@@ -108,7 +108,7 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
 	
 	$wp_customize->add_section('slider_section',array(
 		'title'	=> __('Slider Settings','awesomeone'),
-		'description'	=> __('Add slider images here. <br><strong>More slider settings available in <a href="'.esc_url(pro_theme_url).'" target="_blank">PRO version</a>.</strong>','awesomeone'),
+		'description'	=> __('Add slider images here. <br><strong>More slider settings available in</strong>','awesomeone'). '<a href="'.esc_url(pro_theme_url).'" target="_blank">PRO version</a>.',
 		'priority'		=> null
 	));
 	
@@ -143,7 +143,7 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
 	
 	$wp_customize->add_setting('slide_desc1',array(
 		'default'	=> 'This is description for slider one.',
-		'sanitize_callback'	=> 'wp_htmledit_pre',
+		'sanitize_callback'	=> 'format_for_editor',
 	));
 	
 	$wp_customize->add_control(
@@ -200,7 +200,7 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
 	
 	$wp_customize->add_setting('slide_desc2',array(
 		'default'	=> 'This is description for slide two',
-		'sanitize_callback'	=> 'wp_htmledit_pre',
+		'sanitize_callback'	=> 'format_for_editor',
 	));
 	
 	$wp_customize->add_control(
@@ -257,7 +257,7 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
 	
 	$wp_customize->add_setting('slide_desc3',array(
 		'default'	=> 'This is description for slide three',
-		'sanitize_callback'	=> 'wp_htmledit_pre',
+		'sanitize_callback'	=> 'format_for_editor',
 	));
 	
 	$wp_customize->add_control(
@@ -318,7 +318,7 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
         array(
             'title' => __('Layout Settings (PRO Version)', 'awesomeone'),
             'priority' => null,
-            'description' => __('<strong>Layout Settings available in  <a href="'.esc_url(pro_theme_url).'" target="_blank">PRO Version</a>.</strong>','awesomeone'),
+            'description' => __('<strong>Layout Settings available in</strong>','awesomeone'). '<a href="'.esc_url(pro_theme_url).'" target="_blank">PRO Version</a>.',
         )
     );  
     $wp_customize->add_setting('Awesomeone_options[layout-info]', array(
@@ -339,7 +339,7 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
         array(
             'title' => __('Fonts Settings (PRO Version)', 'awesomeone'),
             'priority' => null,
-            'description' => __('<strong>Font Settings available in <a href="'.esc_url(pro_theme_url).'" target="_blank">PRO Version</a>.</strong>','awesomeone'),
+            'description' => __('<strong>Font Settings available in</strong>','awesomeone'). '<a href="'.esc_url(pro_theme_url).'" target="_blank">PRO Version</a>.',
         )
     );  
     $wp_customize->add_setting('Awesomeone_options[font-info]', array(
@@ -360,7 +360,7 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
         array(
             'title' => __('Documentation &amp; Support', 'awesomeone'),
             'priority' => null,
-            'description' => __('For documentation and support check this link : <a href="'.esc_url(theme_doc).'" target="_blank">Awesomeone Lite Documentation</a>','awesomeone'),
+            'description' => __('For documentation and support check this link :','awesomeone'). '<a href="'.esc_url(theme_doc).'" target="_blank">Awesomeone Documentation</a>',
         )
     );  
     $wp_customize->add_setting('Awesomeone_options[info]', array(

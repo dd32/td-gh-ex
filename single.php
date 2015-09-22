@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package Awesome One
+ * @package Awesomeone
  */
 
 get_header(); ?>

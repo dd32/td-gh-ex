@@ -2,7 +2,7 @@
 /**
  * The template for displaying image attachments.
  *
- * @package Awesome One
+ * @package Awesomeone
  */
 
 get_header(); ?>

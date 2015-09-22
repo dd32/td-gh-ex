@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Awesome One
+ * @package Awesomeone
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('single-post'); ?>>

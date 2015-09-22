@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package Awesome One
+ * @package Awesomeone
  */
 ?>
 <?php if( function_exists('is_woocommerce') && is_woocommerce() ) { ?>

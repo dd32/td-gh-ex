@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Awesome One
+ * @package Awesomeone
  */
 ?>
 <div class="blog-post-repeat">

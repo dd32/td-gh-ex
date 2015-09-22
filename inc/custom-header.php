@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Awesome One
+ * @package Awesomeone
  * Setup the WordPress core custom header feature.
  *
  * @uses awesomeone_header_style()

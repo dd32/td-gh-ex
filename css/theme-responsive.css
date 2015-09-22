@@ -185,7 +185,7 @@ a.contact{ margin-top:15px !important; font-size:18px !important;}
 
 @media screen and (min-width: 1000px) {
 .header .header-inner .nav ul li ul li{display:block; position:relative; float:none; }
-.header .header-inner .nav ul li ul li a{color:#000; display:block; padding-top:10px; padding-bottom:10px; border-bottom:1px #313131 solid;}
+.header .header-inner .nav ul li ul li a{color:#ffffff; display:block; padding-top:10px; padding-bottom:10px; border-bottom:1px #313131 solid;}
 }
 
 @media screen and (min-width:1000px) and (max-width:1159px){

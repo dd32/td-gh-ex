@@ -2,7 +2,7 @@
 /**
  * Awesome One functions and definitions
  *
- * @package Awesome One
+ * @package Awesomeone
  */
 
 /**
@@ -131,12 +131,27 @@ function awesomeone_scripts() {
 		wp_enqueue_script( 'awesomeone-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	}
 	wp_enqueue_script( 'awesomeone-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
-	wp_enqueue_style( 'awesomeone-font-awesome-style', get_template_directory_uri().'/css/font-awesome.min.css' );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'awesomeone_scripts' );
+
+function awesomeone_ie_stylesheet(){
+	global $wp_styles;
+	
+	/** Load our IE-only stylesheet for all versions of IE.
+	*   <!--[if lt IE 9]> ... <![endif]-->
+	*
+	*  Note: It is also possible to just check and see if the $is_IE global in WordPress is set to true before
+	*  calling the wp_enqueue_style() function. If you are trying to load a stylesheet for all browsers
+	*  EXCEPT for IE, then you would HAVE to check the $is_IE global since WordPress doesn't have a way to
+	*  properly handle non-IE conditional comments.
+	*/
+	wp_enqueue_style('awesomeone-ie', get_template_directory_uri().'/css/ie.css', array('awesomeone-ie-style'));
+	$wp_styles->add_data('awesomeone-ie','conditional','IE');
+	}
+add_action('wp_enqueue_scripts','awesomeone_ie_stylesheet');
 
 
 function awesomeone_pagination() {

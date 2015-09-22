@@ -7,7 +7,7 @@
  * handled by a callback to awesomeone_comment() which is
  * located in the inc/template-tags.php file.
  *
- * @package Awesome One
+ * @package Awesomeone
  */
 
 /*

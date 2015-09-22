@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package Awesome One
+ * @package Awesomeone
  */
 
 get_header(); ?>
