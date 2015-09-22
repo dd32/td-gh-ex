@@ -1,15 +1,15 @@
 /*
 Theme Name: GREEN EYE 
-Theme URI: http://d5creation.com/2013/09/30/green-eye/
+Theme URI: http://d5creation.com/themes/green-eye/
 
 Author: D5 Creation
 Author URI: http://d5creation.com/
 
-Description: GREEN EYE is a CSS3 Powered and WordPress 3.6 Ready Responsive Theme for Environment Friendly Institutions of Companies running on Green Energy. Customizable Background and other options will give the WordPress Driven Site an attractive look.  GREEN EYE is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices.  Full Wide Template can be used for showing showcase or other pages. You can Visit the GREEN EYE Demo <a href="http://demo.d5creation.com/wp/themes/green-eye/" target="_blank"><strong>Here</strong></a>. Minimum Requirement: WordPress 3.5
+Description: GREEN EYE is a CSS3 Powered and WordPress 3.6 Ready Responsive Theme for Environment Friendly Institutions or Companies running on Green Energy. Customizable Background and other options will give the WordPress Driven Site an attractive look.  GREEN EYE is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices.  Full Wide Template can be used for showing showcase or other pages. You can Visit the GREEN EYE Demo Here: http://demo.d5creation.com/themes/?theme=GREEN%20EYE
 
-Version: 1.3.4
+Version: 1.5
 
-Tags: green, light, white, two-columns, right-sidebar, fixed-width, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, front-page-post-form, full-width-template, theme-options 
+Tags: green, light, white, two-columns, right-sidebar, fixed-layout, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, front-page-post-form, full-width-template, theme-options, translation-ready 
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -17,7 +17,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 GREEN WordPress Theme, Copyright 2013: D5 Creation (www.d5creation.com)
 GREEN is distributed under the terms of the GNU GPL
 
-Text Domain: green
+Text Domain: green-eye
 
 */
 
@@ -82,8 +82,8 @@ img{max-width:100%;border:0 none;}
 .large{height:50px;border-bottom:1px solid #025c1c;font-weight:bold;margin-bottom:-50px;}
 .small{height:81px;border-bottom:1px solid #43c382;font-weight:bold;position:fixed;top:0;box-shadow:0 0 3px 1px #333333;}
 #header-fpage{height:110px;background:#caefd5;}
-img.site-logol{max-width:350px;max-height:100px;padding:5px 0;float:left;display:block;}
-img.site-logos{max-width:250px;max-height:70px;padding:5px 0;float:left;position:fixed;float:left;z-index:10001;display:block;}
+img.site-logol, h1.site-logol {max-width:350px;max-height:100px;padding:5px 0;float:left;display:block; font-size: 50px; color: #4ba614; line-height: 1.5;}
+img.site-logos, h1.site-logos{max-width:250px;max-height:70px;padding:5px 0;float:left;position:fixed;float:left;z-index:10001;display:block; font-size: 40px;}
 .site-title-hidden{display:none;}
 #content{float:left;width:70%;}
 #content-full{width:930px;}
@@ -379,4 +379,7 @@ ul.lboxd label, label{display:block;margin-bottom:5px;}
 #header-fpage #searchform input[type="submit"]{display:none;}
 #header-fpage #searchform{display:block;float:right;position:relative;margin-top:30px;}
 #bvideo { position: relative; background: #CAEFD5; overflow: hidden; width: 100%;}
+/* Text meant only for screen readers. */
+.screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; overflow: hidden; }
+.screen-reader-text:focus { background-color: #f1f1f1; border-radius: 3px; box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); clip: auto !important; color: #21759b; 	display: block; font-size: 14px; font-size: 0.875rem; font-weight: bold; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; 	text-decoration: none; top: 5px; width: auto; z-index: 100000; /* Above WP toolbar. */ }
 	

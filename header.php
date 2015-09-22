@@ -1,7 +1,7 @@
 <?php
 
 /* 	GREEN EYE Theme's Header
-	Copyright: 2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2015, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN 1.0
 */
@@ -12,7 +12,6 @@
 <html <?php language_attributes(); ?>><head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php wp_title() ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
@@ -27,18 +26,16 @@
   <?php if (is_front_page()): ?>
   <div id="header-fpage"><div class="header-content">
 <!-- Site Titele and Description Goes Here -->
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="site-logol" src="<?php header_image(); ?>"/></a>
-                
-        <h1 class="site-title-hidden"><?php bloginfo( 'name' ); ?></h1>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if ( get_header_image() !='' ): ?><img class="slogo site-logol" src="<?php header_image(); ?>"/><?php else: ?><h1 class="slogo site-logol"><?php echo bloginfo( 'name' ); ?></h1><?php endif; ?></a>
 		<h2 class="site-title-hidden"><?php bloginfo( 'description' ); ?></h2>
         
         <div id="social">
-		<?php  if (of_get_option('gplus-link', '#') !='') : ?>
-		<a href="<?php echo of_get_option('gplus-link', '#'); ?>" class="gplus-link" target="_blank"></a>
-		<?php  endif; if (of_get_option('li-link', '#') !='') : ?>
-		<a href="<?php echo of_get_option('li-link', '#'); ?>" class="li-link" target="_blank"></a>
-		<?php  endif; if (of_get_option('feed-link', '#') !='') : ?>
-		<a href="<?php echo of_get_option('feed-link', '#'); ?>" class="feed-link" target="_blank"></a>
+		<?php  if (green_get_option('gplus-link', '#') !='') : ?>
+		<a href="<?php echo green_get_option('gplus-link', '#'); ?>" class="gplus-link" target="_blank"></a>
+		<?php  endif; if (green_get_option('li-link', '#') !='') : ?>
+		<a href="<?php echo green_get_option('li-link', '#'); ?>" class="li-link" target="_blank"></a>
+		<?php  endif; if (green_get_option('feed-link', '#') !='') : ?>
+		<a href="<?php echo green_get_option('feed-link', '#'); ?>" class="feed-link" target="_blank"></a>
 		<?php  endif; ?>
 		</div>
         
@@ -51,11 +48,11 @@
  
 	<div id="iebanner"><div id="iebcontent">
     <div id="iefc">
-    <h3 class="ibcon"><?php echo of_get_option ( 'slide-image1-title', 'This is a Test Image Title'); ?></h3>
-    <p class="ibcon"><?php echo of_get_option('slide-image1-caption', 'This is a Test Image for GREEN EYE Theme. If you feel any problem please contact with D5 Creation.'); ?></p>
-    <?php if (of_get_option('slide-image1-link', '#')): ?><a class="jms-link" href="<?php echo of_get_option('slide-image1-link', '#'); ?>">Read more</a><?php endif; ?>
+    <h3 class="ibcon"><?php echo green_get_option ( 'slide-image1-title', 'This is a Test Image Title'); ?></h3>
+    <p class="ibcon"><?php echo green_get_option('slide-image1-caption', 'This is a Test Image for GREEN EYE Theme. If you feel any problem please contact with D5 Creation.'); ?></p>
+    <?php if (green_get_option('slide-image1-link', '#')): ?><a class="jms-link" href="<?php echo green_get_option('slide-image1-link', '#'); ?>">Read more</a><?php endif; ?>
     </div><div id="iesc">
-    <img class="ibcon" src="<?php echo of_get_option('slide-image1', get_template_directory_uri() . '/images/slide-image/1.png'); ?>" />
+    <img class="ibcon" src="<?php echo green_get_option('slide-image1', get_template_directory_uri() . '/images/slide-image/1.png'); ?>" />
     </div></div></div>	
 
 <div id ="header" class="large">
@@ -72,10 +69,9 @@
       <div id ="header" class="small">
       <div class ="header-content">
 		<!-- Site Titele and Description Goes Here -->
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="site-logos" src="<?php header_image(); ?>"/></a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if ( get_header_image() !='' ): ?><img class="slogo site-logos" src="<?php header_image(); ?>"/><?php else: ?><h1 class="slogo site-logos"><?php echo bloginfo( 'name' ); ?></h1><?php endif; ?></a>
                 
-        <h1 class="site-title-hidden"><?php bloginfo( 'name' ); ?></h1>
-		<h2 class="site-title-hidden"><?php bloginfo( 'description' ); ?></h2>
+  		<h2 class="site-title-hidden"><?php bloginfo( 'description' ); ?></h2>
                 
         
         <!-- Site Main Menu Goes Here -->
