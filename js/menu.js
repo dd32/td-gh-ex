@@ -33,7 +33,8 @@ jQuery(document).ready(function() {
 					clearTimeout(nTimer);
 					oMenus.removeClass('open');
 					jQuery(this).addClass('open').slideDown();
-				  },});
+				  },				 
+				});
 				jQuery('ul.dropdown-menu li a').on('click touchend', function() { 
 					var link = jQuery(this).attr('href');   
 					window.open(link,'_self'); // opens in new window as requested
@@ -46,6 +47,11 @@ jQuery(document).ready(function() {
 					oMenus.removeClass('open');
 					jQuery(this).addClass('open').slideDown();
 					},
+					'mouseleave': function() {
+					nTimer = setTimeout(function() {
+					  oMenus.removeClass('open');
+					}, 500);
+				  },				  
 				});
 			}
 		}
