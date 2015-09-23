@@ -19,7 +19,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'accesspress-store'); ?></a>
-<header id="masthead" class="site-header" role="banner">
+<header id="mastheads" class="site-header" role="banner">
     <?php if (as_before_top_header_enabled()): ?>
         <div class="before-top-header">
             <div class="ak-container clearfix">

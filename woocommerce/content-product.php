@@ -6,7 +6,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     2.4.0
  */
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
@@ -77,7 +77,7 @@ if (0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'])
              * @hooked woocommerce_template_loop_price - 10
              */
             do_action('woocommerce_after_shop_loop_item_title');
-            remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+            
             /**
              * woocommerce_after_shop_loop_item hook
              *

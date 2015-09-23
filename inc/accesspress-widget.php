@@ -64,3 +64,10 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
  * @since Accesspress Widget Pack 1.0
  */
 require get_template_directory() . '/inc/widgets/widget-cta-video.php';
+
+/**
+ * Include helper functions that display widget fields in the dashboard
+ *
+ * @since Accesspress Widget Pack 1.0
+ */
+require get_template_directory() . '/inc/widgets/widget-full-promo.php';

@@ -7,7 +7,6 @@
  * @package AccessPress Store
  */
 ?>
-
 </div><!-- #content -->
 
 <footer id="colophon" class="site-footer" role="contentinfo">
@@ -85,9 +84,17 @@
 
         </div>
         <div class="site-info">
-            <?php printf( __( 'Copyright &copy; 2015 %1$s', 'accesspress-store' ),'<a href="'.esc_url( __( 'https://accesspressthemes.com', 'accesspress-store' ) ).'">AccessPress Themes</a>' ); ?>
-            <span class="sep"> | </span>
-            <?php printf( __( 'Theme: %1$s', 'accesspress-store' ), '<a href="'.esc_url( __( 'https://wordpress.org', 'accesspress-store' ) ).'">AccessPress Store</a>'  ); ?>
+
+          <?php
+           $copyright = get_theme_mod('accesspress_store_copyright');
+            if(!empty($copyright)) :
+                echo $copyright;
+            else : 
+              printf(__('&copy; %1$s %2$s', 'accesspress-store'), get_the_time("Y"), get_bloginfo('name'));
+            endif;
+          ?> - <?php  
+              printf( __( 'WordPress Theme : %1$s by %2$s', 'accesspress-store' ), '<a href="'.esc_url('https://wordpress.org').'">AccessPress Store</a>', '<a href="'.esc_url('https://accesspressthemes.com' ).'">AccessPress Themes</a>'  ); 
+          ?>
         </div><!-- .site-info -->
     </div>
 </div>

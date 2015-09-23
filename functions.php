@@ -55,6 +55,8 @@ function accesspress_store_setup() {
     add_image_size('accesspress-service-thumbnail', 380, 252, true);
     
     add_image_size('accesspress-blog-big-thumbnail', 760, 300, true);
+
+    add_image_size('accesspress-slider', 1350, 570, true);
     
     
 	// This theme uses wp_nav_menu() in one location.

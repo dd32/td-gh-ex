@@ -1,6 +1,5 @@
-
-
 jQuery(function ($) {
+
     //Navigation toggle
     $("#toggle").click(function () {
         $(this).toggleClass("on");
@@ -10,12 +9,7 @@ jQuery(function ($) {
         iheader = $('.right-header-main').outerHeight();
         $(".inner_home .ak-container").css({"min-height": iheader});
     });
-    // $(document).off( 'click', '.add_to_cart_button' );
-    // $(document).on( 'click', '.add_to_cart_button', function() {
-    //     $("body .sub-menu").perfectScrollbar();
-    // });
-
-    //$("body .sub-menu").perfectScrollbar();
+    
 
     $('.search-icon a').click(function () {
         $('.search-box').addClass('active');

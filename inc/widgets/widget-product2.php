@@ -54,11 +54,11 @@ class accesspress_store_product2 extends WP_Widget {
               
                         );
         $woocommerce_categories = array();
-	    $woocommerce_categories_obj = get_categories($args);
+      $woocommerce_categories_obj = get_categories($args);
         $woocommerce_categories[''] = 'Select Product Category:';
-    	foreach ($woocommerce_categories_obj as $category) {
-    		$woocommerce_categories[$category->term_id] = $category->name;
-    	}
+      foreach ($woocommerce_categories_obj as $category) {
+        $woocommerce_categories[$category->term_id] = $category->name;
+      }
         
         $fields = array(
             'product_type' => array(
@@ -195,12 +195,12 @@ class accesspress_store_product2 extends WP_Widget {
      *
      * @see WP_Widget::update()
      *
-     * @param	array	$new_instance	Values just sent to be saved.
-     * @param	array	$old_instance	Previously saved values from database.
+     * @param array $new_instance Values just sent to be saved.
+     * @param array $old_instance Previously saved values from database.
      *
-     * @uses	accesspress_store_widgets_updated_field_value()		defined in widget-fields.php
+     * @uses  accesspress_store_widgets_updated_field_value()   defined in widget-fields.php
      *
-     * @return	array Updated safe values to be saved.
+     * @return  array Updated safe values to be saved.
      */
     public function update($new_instance, $old_instance) {
         $instance = $old_instance;
@@ -224,9 +224,9 @@ class accesspress_store_product2 extends WP_Widget {
      *
      * @see WP_Widget::form()
      *
-     * @param	array $instance Previously saved values from database.
+     * @param array $instance Previously saved values from database.
      *
-     * @uses	accesspress_store_widgets_show_widget_field()		defined in widget-fields.php
+     * @uses  accesspress_store_widgets_show_widget_field()   defined in widget-fields.php
      */
     public function form($instance) {
         $widget_fields = $this->widget_fields();

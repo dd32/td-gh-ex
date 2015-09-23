@@ -48,6 +48,13 @@ Images
 
 == Changelog ==
 
+= 1.0.4 =
+** Product Single page title margin bug fixed.
+** Slider captions bugs fixed.
+** Added customizable field to copyright section.
+** Updated woocomerce verison.
+** Added full width promo widget section.
+
 = 1.0.3 =
 ** TGM activation plugins added
 ** Fixed menu style

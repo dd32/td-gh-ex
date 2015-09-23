@@ -228,12 +228,12 @@ public function widget($args, $instance){
      *
      * @see WP_Widget::update()
      *
-     * @param	array	$new_instance	Values just sent to be saved.
-     * @param	array	$old_instance	Previously saved values from database.
+     * @param array $new_instance Values just sent to be saved.
+     * @param array $old_instance Previously saved values from database.
      *
-     * @uses	accesspress_store_widgets_updated_field_value()		defined in widget-fields.php
+     * @uses  accesspress_store_widgets_updated_field_value()   defined in widget-fields.php
      *
-     * @return	array Updated safe values to be saved.
+     * @return  array Updated safe values to be saved.
      */
 public function update($new_instance, $old_instance) {
   $instance = $old_instance;
@@ -257,9 +257,9 @@ public function update($new_instance, $old_instance) {
      *
      * @see WP_Widget::form()
      *
-     * @param	array $instance Previously saved values from database.
+     * @param array $instance Previously saved values from database.
      *
-     * @uses	accesspress_store_widgets_show_widget_field()		defined in widget-fields.php
+     * @uses  accesspress_store_widgets_show_widget_field()   defined in widget-fields.php
      */
     public function form($instance) {
       $widget_fields = $this->widget_fields();

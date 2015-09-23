@@ -252,11 +252,11 @@ function accesspress_ticker_header_customizer(){
 }
 
 function accesspress_slickliderscript(){
-	$accesspress_show_slider = get_theme_mod('show_slider') ;
-	$accesspress_show_pager = (get_theme_mod('show_pager') == "0") ? "false" : "true";
-	$accesspress_show_controls = (get_theme_mod('show_controls') == "0") ? "false" : "true";
-	$accesspress_auto_transition = (get_theme_mod('auto_transition') == "0") ? "false" : "true";
-	$accesspress_slider_transition = (!get_theme_mod('slider_transition')) ? "true" : get_theme_mod('slider_transition');
+	$accesspress_show_slider = get_theme_mod('show_slider','1') ;
+	$accesspress_show_pager = (get_theme_mod('show_pager','1') == "0") ? "false" : "true";
+	$accesspress_show_controls = (get_theme_mod('show_controls','1') == "0") ? "false" : "true";
+	$accesspress_auto_transition = (get_theme_mod('auto_transition','1') == "0") ? "false" : "true";
+	$accesspress_slider_transition = (get_theme_mod('slider_transition','true')) ? "true" : "false";
 	$accesspress_slider_speed = (!get_theme_mod('slider_speed')) ? "5000" : get_theme_mod('slider_speed');
 	$accesspress_slider_pause = (!get_theme_mod('slider_pause')) ? "5000" : get_theme_mod('slider_pause');
 	if( $accesspress_show_slider == "1") : 
@@ -283,8 +283,8 @@ function accesspress_slickliderscript(){
 add_action('wp_head', 'accesspress_slickliderscript');
 
 function accesspress_slidercb(){
-	$accesspress_show_slider = get_theme_mod('show_slider') ;
-	$accesspress_show_caption = get_theme_mod('show_caption') ;
+	$accesspress_show_slider = get_theme_mod('show_slider','1') ;
+	$accesspress_show_caption = get_theme_mod('show_caption','1') ;
 	if( $accesspress_show_slider == 1) :
 		?>
 	<section id="main-slider">
@@ -303,7 +303,7 @@ function accesspress_slidercb(){
 						$query1 = new WP_Query( $args );
 						while ( $query1->have_posts() ) {
 							$query1->the_post();
-							$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full', true);
+							$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'accesspress-slider', true);
 					?>
 						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(the_title()); ?>"/>
 					
@@ -392,45 +392,7 @@ if(is_woocommerce_activated()):
 		$cart_url = $woocommerce->cart->get_cart_url();  
 		?>
 		<div class="view-cart"><a title="View your shopping cart" href="<?php echo $cart_url; ?>" class="wcmenucart-contents"><?php echo __('CART', 'accesspress-store'); ?> [ <?php echo $woocommerce->cart->cart_contents_count; ?> / <span class="amount"><?php echo $woocommerce->cart->get_cart_total(); ?></span> ]</a>
-			<?php /*
-			<ul class="sub-menu <?php if ( sizeof( WC()->cart->get_cart() ) < 1 ){ echo "empty";}?>">
-				<?php if ( sizeof( WC()->cart->get_cart() ) > 0 ) : ?>
-
-					<?php
-					foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-						$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-						$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
-						if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-							$product_name  = apply_filters( 'woocommerce_cart_item_name',sprintf( '<a class="quick-cart-title" href="%s">%s </a>', esc_url( $_product->get_permalink( $cart_item ) ), $_product->get_title() ), $cart_item, $cart_item_key );
-							$thumbnail     = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-							$product_price = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
-							?>
-							<li class="<?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
-								<?php echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s">&times;</a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'accesspress-store' ) ), $cart_item_key ); ?>
-								<?php if ( ! $_product->is_visible() ) : ?>
-									<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name . '&nbsp;'; ?>
-								<?php else : ?>
-									<a href="<?php echo esc_url( $_product->get_permalink( $cart_item ) ); ?>">
-										<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name . '&nbsp;'; ?>
-									</a>
-								<?php endif; ?>
-								<?php echo WC()->cart->get_item_data( $cart_item ); ?>
-
-								<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
-							</li>
-							<?php
-						}
-					}
-					?>
-
-				<?php else : ?>
-
-					<li class="empty"><?php _e( 'No products in the cart.', 'accesspress-sore' ); ?></li>
-
-				<?php endif; ?>
-
-			</ul>
-			*/ ?>
+		
 		</div>
 		<?php
 		$fragments['div.view-cart'] = ob_get_clean();
@@ -734,6 +696,8 @@ function special_nav_class($classes, $item){
 // 	'custom_header_menu' => 'Custom Header Menu'
 // 	) );
 
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+
 function as_before_top_header_enabled()
 {
 	if(is_user_logged_in() || get_theme_mod('accesspress_ticker_checkbox')===1)
@@ -868,6 +832,16 @@ function accesspress_store_register_required_plugins() {
     );
     tgmpa($plugins, $config);
 }
-
 add_action('tgmpa_register', 'accesspress_store_register_required_plugins');
 
+
+function accesspress_store_custom_css()
+{
+	$accesspress_store_css = get_theme_mod('accesspress_store_css');
+?>
+	<style type="text/css">
+		<?php echo wp_filter_nohtml_kses($accesspress_store_css); ?>
+	</style>
+<?php
+}
+add_action('wp_head','accesspress_store_custom_css');

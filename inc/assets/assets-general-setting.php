@@ -264,6 +264,47 @@ function accesspress_ticker_setting($wp_customize){
       )
     ));
 
+  //Custom css section
+    $wp_customize->add_section('accesspress_store_setting', array(
+       'priority'         =>      '115',
+        'title' => __('Custom CSS Section', 'accesspress-store'),
+        'panel' => 'general_setting',
+    ));
+
+    $wp_customize->add_setting( 'accesspress_store_css', array(
+        'default' => '',
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'wp_filter_nohtml_kses',
+    ) );
+ 
+    $wp_customize->add_control('accesspress_store_css', array(
+      'type' => 'textarea',
+      'label' => __('Custom CSS', 'accesspress-store'),
+      'section' => 'accesspress_store_setting',
+      'setting' => 'accesspress_store_css',
+      'description' => '',
+    ));
+
+  //Copyright section
+    $wp_customize->add_section('accesspress_store_copyright_section', array(
+       'priority'         =>      '120',
+        'title' => __('Footer Copyright', 'accesspress-store'),
+        'panel' => 'general_setting',
+    ));
+
+    $wp_customize->add_setting( 'accesspress_store_copyright', array(
+        'default' => '',
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'accesspress_store_sanitize_text',
+    ) );
+ 
+    $wp_customize->add_control('accesspress_store_copyright', array(
+      'type' => 'textarea',
+      'label' => __('Copyright Text', 'accesspress-store'),
+      'section' => 'accesspress_store_copyright_section',
+      'setting' => 'accesspress_store_copyright',
+      'description' => '',
+    ));
 
 
 
