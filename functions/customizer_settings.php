@@ -275,6 +275,10 @@ function adamos_register_theme_customizer( $wp_customize ) {
 			'sanitize_callback' => 'adamos_sanitize_url',
 		)
 	);
+	$wp_customize->add_setting( 'featured_button_url', array(
+			'sanitize_callback' => 'adamos_sanitize_url',
+		)
+	);
 
 	$wp_customize->add_setting('homepage_service_bool', array(
 			'default' 			=> false,
@@ -528,10 +532,9 @@ function adamos_register_theme_customizer( $wp_customize ) {
 	    )
 	);
 
-	$wp_customize->add_control( 'header_one_url_control', array(
-			'label'    		=> __( 'Link URL', 'adamos' ),
-			'section' 		=> 'featured_section_top',
-			'settings'		=> 'header_one_url',
+	$wp_customize->add_control( 'featured_button_url', array(
+			'label'    	=> __( 'Featured Button url', 'adamos' ),
+			'section' 	=> 'featured_section_top',
 			'priority'	 	=> $priority++,
 		)
 	);

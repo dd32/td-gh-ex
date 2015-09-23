@@ -5,6 +5,9 @@ Theme instructions can be found at http://templateexpress.com/adam/documentation
 Changelog
 --------------------------------------------
 
+Version: 2.6
+* Fixed promo bar and featured box one having same url
+
 Version: 2.5
 * Screen reader styles added
 * Screenshot size extended for retina screens
