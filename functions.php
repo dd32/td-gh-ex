@@ -152,7 +152,7 @@ if (is_attachment()) {
 	elseif (!is_single() && !is_page() && get_post_type() != 'post') {
         $post_type = get_post_type_object(get_post_type());
         //echo $before . $post_type->labels->singular_name . $after;
-        echo $before . '<li class="active">'. __('Search Results for "','aron').'' . get_search_query() . '"' . $after; echo "</li>";
+        echo '<li class="active">'. __('Search Results for "','aron').'' . get_search_query() . '"' ; echo "</li>";
     }
     }
  

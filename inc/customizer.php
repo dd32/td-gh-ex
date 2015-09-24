@@ -31,10 +31,9 @@
 			<a href="<?php echo esc_url( 'http://arinio.com/aron-responsive-multipurpose-wordpress-theme/' ); ?>" title="<?php esc_attr_e( 'View Demo', 'aron' ); ?>" target="_blank">
 			<?php _e( 'View Demo', 'aron' ); ?>
 			</a>
-            <a href="<?php echo esc_url( 'http://arinio.com/get-free-our-theme/' ); ?>" title="<?php esc_attr_e( 'Get Free This Theme', 'aron' ); ?>" target="_blank">
-			<?php _e( 'Get Free This Theme', 'aron' ); ?>
+           <a href="<?php echo esc_url( 'http://arinio.com/get-free-our-theme/' ); ?>" title="<?php esc_attr_e( 'Get Free Pro Version', 'aron' ); ?>" target="_blank">
+			<?php _e( 'Get Free Pro Version', 'aron' ); ?>
 			</a>
-           
 		</div>
 		<?php
 		}

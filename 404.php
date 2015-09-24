@@ -33,7 +33,7 @@ get_header();
              
             <h1> <?php _e( 'Not Found', 'aron' ); ?> </h1>
             <p> <?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'aron' ); ?> </p>
-            <?php get_search_form(); ?>
+             
             <?php the_widget('WP_Widget_Recent_Posts', array('number' => 10), array('widget_id' => '404')); ?>
         
          </div>
