@@ -109,8 +109,8 @@ function storto_custom_settings_register( $wp_customize ) {
 	
 	foreach( $socialmedia as $storto_theme_options ) {
 		// SETTINGS
-			$wp_customize->add_setting(
-				'storto_theme_options[' . $storto_theme_options['slug'] . ']', array(
+		$wp_customize->add_setting(
+			'storto_theme_options_' . $storto_theme_options['slug'], array(
 				'default' => $storto_theme_options['default'],
 				'capability'     => 'edit_theme_options',
 				'sanitize_callback' => 'esc_url_raw',
@@ -122,7 +122,7 @@ function storto_custom_settings_register( $wp_customize ) {
 			$storto_theme_options['slug'], 
 			array('label' => $storto_theme_options['label'], 
 			'section'    => 'cresta_social_icons',
-			'settings' =>'storto_theme_options[' . $storto_theme_options['slug'] . ']',
+			'settings' =>'storto_theme_options_' . $storto_theme_options['slug'],
 			)
 		);
 	}
@@ -131,7 +131,7 @@ function storto_custom_settings_register( $wp_customize ) {
 	Search Button
 	=====================================================
 	*/
-	$wp_customize->add_setting('storto_theme_options[hidesearch]', array(
+	$wp_customize->add_setting('storto_theme_options_hidesearch', array(
         'default'    => '1',
         'type'       => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -141,7 +141,7 @@ function storto_custom_settings_register( $wp_customize ) {
 	$wp_customize->add_control('hidesearch', array(
         'label'      => __( 'Show Search Button', 'storto' ),
         'section'    => 'cresta_social_icons',
-        'settings'   => 'storto_theme_options[hidesearch]',
+        'settings'   => 'storto_theme_options_hidesearch',
         'type'       => 'checkbox',
     ) );
 	
@@ -153,7 +153,7 @@ function storto_custom_settings_register( $wp_customize ) {
         public function render_content() {  ?>
         	<p class="storto-upgrade-title">
         		<span class="customize-control-title">
-					<h3><div class="dashicons dashicons-megaphone"></div> <?php _e('Get Gigante WP Theme for only', 'storto'); ?> 24,90&euro;</h3>
+					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php _e('Get Gigante WP Theme for only', 'storto'); ?> 24,90&euro;</h3>
         		</span>
         	</p>
 			<p style="text-align:center;" class="storto-upgrade-button">

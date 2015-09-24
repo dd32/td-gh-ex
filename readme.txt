@@ -79,3 +79,7 @@ Version 1.3.3
 Version 1.3.4
 * Move the "Theme Options" in "WP Customizer"
 * Minor bug fixes
+
+Version 1.3.5
+* Update FontAwesome to 4.4.0v
+* Minor bug fixes

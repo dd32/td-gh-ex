@@ -29,55 +29,54 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
 		<?php 
-			global $storto_theme_options;
-			$se_options = get_theme_mod( 'storto_theme_options', $storto_theme_options );
+			$hideSearch = get_theme_mod('storto_theme_options_hidesearch', '1');
+			$facebookURL = get_theme_mod('storto_theme_options_facebookurl', '#');
+			$twitterURL = get_theme_mod('storto_theme_options_twitterurl', '#');
+			$googleplusURL = get_theme_mod('storto_theme_options_googleplusurl', '#');
+			$linkedinURL = get_theme_mod('storto_theme_options_linkedinurl', '#');
+			$instagramURL = get_theme_mod('storto_theme_options_instagramurl', '#');
+			$youtubeURL = get_theme_mod('storto_theme_options_youtubeurl', '#');
+			$pinterestURL = get_theme_mod('storto_theme_options_pinteresturl', '#');
+			$tumblrURL = get_theme_mod('storto_theme_options_tumblrurl', '#');
+			$vkURL = get_theme_mod('storto_theme_options_vkurl', '#');
 		?>
 
 			<div class="socialLine smallPart">
-				<?php if (!empty($se_options['facebookurl'])) : ?>
-					<a href="<?php echo esc_url($se_options['facebookurl']); ?>" title="Facebook" target="_blank"><i class="fa spaceRightDouble fa-facebook"></i></a>
+				<?php if (!empty($facebookURL)) : ?>
+					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'storto' ); ?>"><i class="fa spaceRightDouble fa-facebook"><span class="screen-reader-text"><?php esc_attr_e( 'Facebook', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if (!empty($se_options['twitterurl'])) : ?>
-					<a href="<?php echo esc_url($se_options['twitterurl']); ?>" title="Twitter" target="_blank"><i class="fa spaceRightDouble fa-twitter"></i></a>
+				<?php if (!empty($twitterURL)) : ?>
+					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'storto' ); ?>"><i class="fa spaceRightDouble fa-twitter"><span class="screen-reader-text"><?php esc_attr_e( 'Twitter', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if (!empty($se_options['googleplusurl'])) : ?>
-					<a href="<?php echo esc_url($se_options['googleplusurl']); ?>" title="Google Plus" target="_blank"><i class="fa spaceRightDouble fa-google-plus"></i></a>
+				<?php if (!empty($googleplusURL)) : ?>
+					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'storto' ); ?>"><i class="fa spaceRightDouble fa-google-plus"><span class="screen-reader-text"><?php esc_attr_e( 'Google Plus', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if (!empty($se_options['linkedinurl'])) : ?>
-					<a href="<?php echo esc_url($se_options['linkedinurl']); ?>" title="Linkedin" target="_blank"><i class="fa spaceRightDouble fa-linkedin"></i></a>
+				<?php if (!empty($linkedinURL)) : ?>
+					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'storto' ); ?>"><i class="fa spaceRightDouble fa-linkedin"><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if (!empty($se_options['instagramurl'])) : ?>
-					<a href="<?php echo esc_url($se_options['instagramurl']); ?>" title="Instagram" target="_blank"><i class="fa spaceRightDouble fa-instagram"></i></a>
+				<?php if (!empty($instagramURL)) : ?>
+					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'storto' ); ?>"><i class="fa spaceRightDouble fa-instagram"><span class="screen-reader-text"><?php esc_attr_e( 'Instagram', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if (!empty($se_options['youtubeurl'])) : ?>
-					<a href="<?php echo esc_url($se_options['youtubeurl']); ?>" title="YouTube" target="_blank"><i class="fa spaceRightDouble fa-youtube"></i></a>
+				<?php if (!empty($youtubeURL)) : ?>
+					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'storto' ); ?>"><i class="fa spaceRightDouble fa-youtube"><span class="screen-reader-text"><?php esc_attr_e( 'YouTube', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if (!empty($se_options['pinteresturl'])) : ?>
-					<a href="<?php echo esc_url($se_options['pinteresturl']); ?>" title="Pinterest" target="_blank"><i class="fa spaceRightDouble fa-pinterest"></i></a>
+				<?php if (!empty($pinterestURL)) : ?>
+					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'storto' ); ?>"><i class="fa spaceRightDouble fa-pinterest"><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if (!empty($se_options['tumblrurl'])) : ?>
-					<a href="<?php echo esc_url($se_options['tumblrurl']); ?>" title="Tumblr" target="_blank"><i class="fa spaceRightDouble fa-tumblr"></i></a>
+				<?php if (!empty($tumblrURL)) : ?>
+					<a href="<?php echo esc_url($tumblrURL); ?>" title="<?php esc_attr_e( 'Tumblr', 'storto' ); ?>"><i class="fa spaceRightDouble fa-tumblr"><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if (!empty($se_options['vkurl'])) : ?>
-					<a href="<?php echo esc_url($se_options['vkurl']); ?>" title="VK" target="_blank"><i class="fa spaceRightDouble fa-vk"></i></a>
+				<?php if (!empty($vkURL)) : ?>
+					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'storto' ); ?>"><i class="fa spaceRightDouble fa-vk"><span class="screen-reader-text"><?php esc_attr_e( 'VK', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if ($se_options['hidesearch'] == 1 ) : ?>
+				<?php if ($hideSearch == 1 ) : ?>
 					<a href="#" class="top-search"><i class="fa spaceRightDouble fa-search"></i></a>
 				<?php endif; ?>
 				
 			</div>
-				<?php if ($se_options['hidesearch'] == 1 ) : ?>
+				<?php if ($hideSearch == 1 ) : ?>
 				<div class="topSearchForm">
-						<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>"><input type="search" name="s" class="search" placeholder="<?php _e('Type and hit enter...', 'semplicemente'); ?>"></form>
+						<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>"><input type="search" name="s" class="search" placeholder="<?php _e('Type and hit enter...', 'storto'); ?>"></form>
 				</div>
 				<?php endif; ?>
 

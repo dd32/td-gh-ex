@@ -257,20 +257,56 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:135
-#, php-format
-msgid ""
-"Thank you for installing <b>Storto</b> WordPress Theme! <a href=\"%2$s"
-"\"><b>Click here to go to the Theme Options</b></a>  | <a href=\"%1$s\">Hide "
-"Notice</a>"
+#: header.php:46
+msgid "Facebook"
 msgstr ""
 
-#: header.php:80
+#: header.php:49
+msgid "Twitter"
+msgstr ""
+
+#: header.php:52
+msgid "Google Plus"
+msgstr ""
+
+#: header.php:55
+msgid "Linkedin"
+msgstr ""
+
+#: header.php:58
+msgid "Instagram"
+msgstr ""
+
+#: header.php:61
+msgid "YouTube"
+msgstr ""
+
+#: header.php:64
+msgid "Pinterest"
+msgstr ""
+
+#: header.php:67
+msgid "Tumblr"
+msgstr ""
+
+#: header.php:70
+msgid "VK"
+msgstr ""
+
+#: header.php:79
 msgid "Type and hit enter..."
 msgstr ""
 
-#: header.php:85
+#: header.php:84
 msgid "Select a page..."
+msgstr ""
+
+#: inc/customizer.php:38
+msgid "Demo Gigante Theme"
+msgstr ""
+
+#: inc/customizer.php:39 inc/storto-dynamic.php:164
+msgid "Get Gigante Theme"
 msgstr ""
 
 #: inc/extras.php:64
@@ -336,10 +372,6 @@ msgstr ""
 
 #: inc/storto-dynamic.php:161
 msgid "Watch the demo"
-msgstr ""
-
-#: inc/storto-dynamic.php:164
-msgid "Get Gigante Theme"
 msgstr ""
 
 #: inc/storto-dynamic.php:168
