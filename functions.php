@@ -85,9 +85,9 @@ endif; // bhost_setup
 add_action( 'after_setup_theme', 'bhost_setup' );
 
 //default menu
-function default_menu(){
+function bhost_default_menu(){
 	echo '<ul class="nav">';
-	echo '<li><a href="'.esc_url(home_url()).'">Home</a></li>';
+	echo '<li class="current-menu-item"><a href="'.esc_url(home_url()).'">'.__('Home' , 'bhost').'</a></li>';
 	echo '</ul>';
 }
 
@@ -110,12 +110,31 @@ function bhost_widgets_init() {
 }
 add_action( 'widgets_init', 'bhost_widgets_init' );
 
+/**
+ * Google font For Bhost theme
+ */
+function bhost_font_url() {
+	$font_url = '';
+	/*
+	 * Translators: If there are characters in your language that are not supported
+	 * by Raleway:400,500,600,700, translate this to 'off'. Do not translate into your own language.
+	 */
+	if ( 'off' !== _x( 'on', 'Raleway font: on or off', 'bhost' ) ) {
+		$query_args = array(
+			'family' => urlencode( 'Raleway:400,500,600,700' ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$font_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
 
-
+	return $font_url;
+}
 /**
  * Enqueue scripts and styles.
  */
 function bhost_scripts() {
+	// Add Open sanse font, used in the main stylesheet.
+	wp_enqueue_style( 'bhost-Raleway', bhost_font_url(), array(), null );
 	wp_enqueue_style( 'normalize', get_template_directory_uri() .'/css/normalize.css' );
 	wp_enqueue_style( 'skeleton', get_template_directory_uri() .'/css/skeleton.css' );
 	wp_enqueue_style( 'hover', get_template_directory_uri() .'/css/hover.css' );
@@ -125,20 +144,12 @@ function bhost_scripts() {
 
 	wp_enqueue_script( 'bhost-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 		
-	wp_enqueue_script( 'bhost-table', get_template_directory_uri() . '/js/table.js', array(), true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'bhost_scripts' );
 
-
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

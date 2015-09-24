@@ -13,7 +13,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic" />
 
 <!--[if lt IE 9]>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
@@ -37,7 +36,7 @@
 
 				<nav id="site-navigation" class="main-navigation hvr-bounce-to-bottom hvr-bounce-to-right" role="navigation">
 					<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'bhost' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'default_menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'bhost_default_menu' ) ); ?>
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
 		</div>

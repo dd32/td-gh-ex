@@ -41,6 +41,7 @@ Underscores Theme is distributed under the terms of the GNU GPL.
 
 == Credits ==
 
+* Screenshot Image source from here https://www.pexels.com/photo/macbook-mockup-ping-pong-office-7082/ 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * Skeleton www.getskeleton.com, (C) 2014, Dave Gamache, Free to use under the MIT license: http://www.opensource.org/licenses/mit-license.php

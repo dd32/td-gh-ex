@@ -4,12 +4,11 @@ Theme URI:
 Author: Masum Billah
 Author URI: http://getmasum.net/
 Description: Responsive WordPress Theme.This theme made with Responsive Framework Skeleton v2.0.4. Used some css3 effects.
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
-Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
-
+Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-menu, featured-images, flexible-header, sticky-post
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -40,18 +39,25 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	12.2 Galleries
 
 /*--------------------------------------------------------------
+Google Fonts
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
 1.0 Normalize
 --------------------------------------------------------------*/
+
 html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 	
 }
-
+body, h1, h2, h3, h4, h5, h6{
+	font-family: 'Raleway', sans-serif, arial;
+}
 body {
-	margin: 0;
-	font-family: 'Open Sans', sans-serif;
+	margin: 0;	
 	font-weight: 300;
+	font-size: 14px;
 }
 
 article,
@@ -166,7 +172,7 @@ code,
 kbd,
 pre,
 samp {
-	font-family: monospace, monospace;
+
 	font-size: 1em;
 }
 
@@ -261,7 +267,11 @@ td,
 th {
 	padding: 0;
 }
-
+img{
+	display: inline-block;
+	width: 100%;
+	
+}
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
@@ -284,7 +294,6 @@ h5,
 h6
 {
 	clear: both;
-	font-family: 'Open Sans', sans-serif;
 	font-weight: 500;
 }
 
@@ -311,7 +320,6 @@ address {
 
 pre {
 	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	line-height: 1.6;
@@ -325,7 +333,6 @@ code,
 kbd,
 tt,
 var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
@@ -507,12 +514,10 @@ textarea{
 --------------------------------------------------------------*/
 
 table {
-  font-family: 'Arial';
-  margin: 25px auto;
   border-collapse: collapse;
   border: 1px solid #eee;
   border-bottom: 2px solid #d10046;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
 	
   }
 table tr:hover {
@@ -530,7 +535,6 @@ th:last-child, td:last-child{
 table th, table td {
   color: #999;
   border: 1px solid #eee;
-  padding: 12px 35px;
   border-collapse: collapse;
   text-align: center;
 }
@@ -538,10 +542,13 @@ table th {
   background: #509bb7;
   color: #fff;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 14px;
 }
 table th.last {
   border-right: none;
+}
+caption {
+  margin-bottom: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -587,7 +594,9 @@ a:active {
 	background: #333333;
 	color: #fff;
 }
-.site-branding{padding: 3em;}
+.site-branding{
+	padding: 4em 3em;
+}
 
 .site-branding h1.site-title{
 	margin-bottom: 5px;
@@ -603,6 +612,8 @@ a:active {
     transition: all .25s linear;
 	position: relative;
 	display: inline-block;
+	text-transform: uppercase;
+	font-weight: 700;
 	
 }
 .site-branding h1.site-title a:hover{
@@ -613,7 +624,9 @@ a:active {
 
 .site-branding .site-description{
 	font-size: 1.5em;
-	font-family: 'Roboto', sans-serif;
+}
+.site-description{
+	margin-bottom: 0;
 }
 /*--------------------------------------------------------------
 5.2 Menus
@@ -704,6 +717,7 @@ a:active {
 	border: 1px  solid #f7f7f7;
 	padding-top: 3px;
 	padding-bottom: 3px;
+	z-index: 99999;
 }
 .main-navigation li ul li a{
 	color: #444;
@@ -966,7 +980,7 @@ h1.entry-title a:hover{
 
 }
 .single-widget .widget-title{
-	font-size: 2em;
+	font-size: 24px;
 	margin-bottom: 0.6em;
 }
 .single-widget .widget-title:before{
@@ -988,7 +1002,7 @@ h1.entry-title a:hover{
 .single-widget a{
 	text-decoration: none;
 	color: #404040;
-	font-size: 1.5em;
+	font-weight: 500;
 }
 .single-widget a:hover{
 	color: #d10046;
@@ -996,10 +1010,6 @@ h1.entry-title a:hover{
 .comment-author-link{
 	color: #404040;
 	font-size: 1.3em;
-}
-/* Make sure select elements fit in widgets. */
-.widget select {
-	max-width: 100%;
 }
 
 /* Search widget. */
@@ -1010,7 +1020,7 @@ h1.entry-title a:hover{
 	font-size: 1.3em;
 	font-weight: 400;
 	padding: 0 0.8em;
-	width: 96.5%;
+	width: 90%;
 }
 
 /*--------------------------------------------------------------
@@ -1077,10 +1087,15 @@ h1.entry-title a:hover{
 	background: #f7f7f7 none repeat scroll 0 0;
 	margin-bottom: 3em;
 	padding: 1em;
+	font-size: 15px;
+}
+select{
+	width: 100%;
+	font-size: 15px;
 }
 .search-form{
 	margin: 0;
-	width: 95%;
+	width: 97%;
 }
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
