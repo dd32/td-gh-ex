@@ -4,12 +4,12 @@ Theme URI: http://crestaproject.com/downloads/zenzero/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Zenzero is a modern and Minimal WordPress Theme with generous white space and large legible fonts, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com. Live demo http://crestaproject.com/demo/zenzero/
-Version: 1.2.4
+Version: 1.2.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zenzero
 Domain Path: /languages
-Tags: one-column, left-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready
+Tags: one-column, left-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, white, gray, black, dark, light
 */
 
 /*--------------------------------------------------------------
@@ -1283,6 +1283,7 @@ body.menu-opened .sidebarButton:before {
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+	word-wrap: break-word;
 }
 
 .page-content {

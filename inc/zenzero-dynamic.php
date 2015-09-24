@@ -73,8 +73,186 @@ function zenzero_color_primary_register( $wp_customize ) {
 		)
 	);
 	}
+	
+	/*
+	Start Zenzero Options
+	=====================================================
+	*/
+	$wp_customize->add_section( 'cresta_zenzero_options', array(
+	     'title'    => esc_attr__( 'Zenzero Theme Options', 'zenzero' ),
+	     'priority' => 50,
+	) );
+	
+	/*
+	Social Icons
+	=====================================================
+	*/
+	$socialmedia = array();
+	
+	$socialmedia[] = array(
+	'slug'=>'facebookurl', 
+	'default' => '#',
+	'label' => __('Facebook URL', 'zenzero')
+	);
+	$socialmedia[] = array(
+	'slug'=>'twitterurl', 
+	'default' => '#',
+	'label' => __('Twitter URL', 'zenzero')
+	);
+	$socialmedia[] = array(
+	'slug'=>'googleplusurl', 
+	'default' => '#',
+	'label' => __('Google Plus URL', 'zenzero')
+	);
+	$socialmedia[] = array(
+	'slug'=>'linkedinurl', 
+	'default' => '#',
+	'label' => __('Linkedin URL', 'zenzero')
+	);
+	$socialmedia[] = array(
+	'slug'=>'instagramurl', 
+	'default' => '#',
+	'label' => __('Instagram URL', 'zenzero')
+	);
+	$socialmedia[] = array(
+	'slug'=>'youtubeurl', 
+	'default' => '#',
+	'label' => __('YouTube URL', 'zenzero')
+	);
+	$socialmedia[] = array(
+	'slug'=>'pinteresturl', 
+	'default' => '#',
+	'label' => __('Pinterest URL', 'zenzero')
+	);
+	$socialmedia[] = array(
+	'slug'=>'tumblrurl', 
+	'default' => '#',
+	'label' => __('Tumblr URL', 'zenzero')
+	);
+	$socialmedia[] = array(
+	'slug'=>'vkurl', 
+	'default' => '#',
+	'label' => __('VK URL', 'zenzero')
+	);
+	
+	foreach( $socialmedia as $zenzero_theme_options ) {
+		// SETTINGS
+		$wp_customize->add_setting(
+			'zenzero_theme_options_' . $zenzero_theme_options['slug'], array(
+				'default' => $zenzero_theme_options['default'],
+				'capability'     => 'edit_theme_options',
+				'sanitize_callback' => 'esc_url_raw',
+				'type'     => 'theme_mod',
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control(
+			$zenzero_theme_options['slug'], 
+			array('label' => $zenzero_theme_options['label'], 
+			'section'    => 'cresta_zenzero_options',
+			'settings' =>'zenzero_theme_options_' . $zenzero_theme_options['slug'],
+			)
+		);
+	}
+	
+	/*
+	RSS Button
+	=====================================================
+	*/
+	$wp_customize->add_setting('zenzero_theme_options_rss', array(
+        'default'    => '1',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'zenzero_sanitize_checkbox'
+    ) );
+	
+	$wp_customize->add_control('zenzero_theme_options_rss', array(
+        'label'      => __( 'Show RSS Button', 'zenzero' ),
+        'section'    => 'cresta_zenzero_options',
+        'settings'   => 'zenzero_theme_options_rss',
+        'type'       => 'checkbox',
+    ) );
+	
+	/*
+	Search Button
+	=====================================================
+	*/
+	$wp_customize->add_setting('zenzero_theme_options_hidesearch', array(
+        'default'    => '1',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'zenzero_sanitize_checkbox'
+    ) );
+	
+	$wp_customize->add_control('zenzero_theme_options_hidesearch', array(
+        'label'      => __( 'Show Search Button in Main Menu', 'zenzero' ),
+        'section'    => 'cresta_zenzero_options',
+        'settings'   => 'zenzero_theme_options_hidesearch',
+        'type'       => 'checkbox',
+    ) );
+	
+	/*
+	Upgrade to PRO
+	=====================================================
+	*/
+    class Zenzero_Customize_Upgrade_Control extends WP_Customize_Control {
+        public function render_content() {  ?>
+        	<p class="zenzero-upgrade-title">
+        		<span class="customize-control-title">
+					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php _e('Get Zenzero PRO WP Theme for only', 'zenzero'); ?> 19,90&euro;</h3>
+        		</span>
+        	</p>
+			<p style="text-align:center;" class="zenzero-upgrade-button">
+				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/zenzero-pro/" class="button button-secondary">
+					<?php _e('Watch the demo', 'zenzero'); ?>
+				</a>
+				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/downloads/zenzero/" class="button button-secondary">
+					<?php _e('Get Zenzero PRO Theme', 'zenzero'); ?>
+				</a>
+			</p>
+			<ul>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Advanced Theme Options', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Logo Upload', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Loading Page', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Font Switcher', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Unlimited Colors and Skin', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post views counter', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breadcrumb', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post format', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '7 Shortcodes', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '5 Exclusive Widgets', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Related Posts Box', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Information About Author Box', 'zenzero' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'And much more...', 'zenzero' ); ?></b></li>
+			<ul><?php
+        }
+    }
+	
+	$wp_customize->add_section( 'cresta_upgrade_pro', array(
+	     'title'    => __( 'More features? Upgrade to PRO', 'zenzero' ),
+	     'priority' => 999,
+	));
+	
+	$wp_customize->add_setting('zenzero_section_upgrade_pro', array(
+		'default' => '',
+		'type' => 'option',
+		'sanitize_callback' => 'esc_attr'
+	));
+	
+	$wp_customize->add_control(new Zenzero_Customize_Upgrade_Control($wp_customize, 'zenzero_section_upgrade_pro', array(
+		'section' => 'cresta_upgrade_pro',
+		'settings' => 'zenzero_section_upgrade_pro',
+	)));
 }
 add_action( 'customize_register', 'zenzero_color_primary_register' );
+
+function zenzero_sanitize_checkbox( $input ) {
+	if ( $input == 1 ) {
+		return 1;
+	} else {
+		return '';
+	}
+}
 
 /**
  * Add Custom CSS to Header 

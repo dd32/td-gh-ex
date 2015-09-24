@@ -232,6 +232,46 @@ msgstr ""
 msgid "%1$s by %2$s."
 msgstr ""
 
+#: footer.php:34
+msgid "Facebook"
+msgstr ""
+
+#: footer.php:37
+msgid "Twitter"
+msgstr ""
+
+#: footer.php:40
+msgid "Google Plus"
+msgstr ""
+
+#: footer.php:43
+msgid "Linkedin"
+msgstr ""
+
+#: footer.php:46
+msgid "Instagram"
+msgstr ""
+
+#: footer.php:49
+msgid "YouTube"
+msgstr ""
+
+#: footer.php:52
+msgid "Pinterest"
+msgstr ""
+
+#: footer.php:55
+msgid "Tumblr"
+msgstr ""
+
+#: footer.php:58
+msgid "VK"
+msgstr ""
+
+#: footer.php:61
+msgid "RSS"
+msgstr ""
+
 #: footer.php:74
 msgid "Type here and hit enter..."
 msgstr ""
@@ -248,16 +288,16 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:120
-#, php-format
-msgid ""
-"Thank you for installing <b>Zenzero</b> WordPress Theme! <a href=\"%2$s"
-"\"><b>Click here to go to the Theme Options</b></a>  | <a href=\"%1$s\">Hide "
-"Notice</a>"
+#: header.php:32
+msgid "Main Menu"
 msgstr ""
 
-#: header.php:33
-msgid "Main Menu"
+#: inc/customizer.php:38
+msgid "Demo PRO version"
+msgstr ""
+
+#: inc/customizer.php:39
+msgid "Get PRO Version"
 msgstr ""
 
 #: inc/extras.php:64
@@ -323,140 +363,6 @@ msgstr ""
 msgid "<i class=\"fa fa-tags spaceRight\"></i>%1$s"
 msgstr ""
 
-#: inc/theme-options.php:24 inc/theme-options.php:47
-msgid "Zenzero Theme Options"
-msgstr ""
-
-#: inc/theme-options.php:60
-msgid " Free Theme Options"
-msgstr ""
-
-#: inc/theme-options.php:63
-msgid "Need more features and options? Upgrade to PRO!"
-msgstr ""
-
-#: inc/theme-options.php:64
-msgid "Get"
-msgstr ""
-
-#: inc/theme-options.php:64
-msgid "Zenzero PRO"
-msgstr ""
-
-#: inc/theme-options.php:64
-msgid "WordPress Theme for only"
-msgstr ""
-
-#: inc/theme-options.php:66
-msgid "Demo (Zenzero PRO)"
-msgstr ""
-
-#: inc/theme-options.php:68
-msgid "Get The Pro Version"
-msgstr ""
-
-#: inc/theme-options.php:87
-msgid ""
-"These options will let you setup the social icons at the bottom of the "
-"theme. You can enter the URLs of your profiles to have the icons show up."
-msgstr ""
-
-#: inc/theme-options.php:89
-msgid "Options saved"
-msgstr ""
-
-#: inc/theme-options.php:104
-msgid "Hide RSS Icon?"
-msgstr ""
-
-#: inc/theme-options.php:107
-msgid "Hide the RSS feed icon?"
-msgstr ""
-
-#: inc/theme-options.php:116
-msgid "Hide Search Button?"
-msgstr ""
-
-#: inc/theme-options.php:119
-msgid "Hide the Search button?"
-msgstr ""
-
-#: inc/theme-options.php:128
-msgid "Enter your Facebook URL"
-msgstr ""
-
-#: inc/theme-options.php:131
-msgid "Leave blank to hide Facebook Icon"
-msgstr ""
-
-#: inc/theme-options.php:140
-msgid "Enter your Twitter URL"
-msgstr ""
-
-#: inc/theme-options.php:143
-msgid "Leave blank to hide Twitter Icon"
-msgstr ""
-
-#: inc/theme-options.php:152
-msgid "Enter your Google + URL"
-msgstr ""
-
-#: inc/theme-options.php:155
-msgid "Leave blank to hide Google + Icon"
-msgstr ""
-
-#: inc/theme-options.php:164
-msgid "Enter your Linkedin URL"
-msgstr ""
-
-#: inc/theme-options.php:167
-msgid "Leave blank to hide Linkedin Icon"
-msgstr ""
-
-#: inc/theme-options.php:176
-msgid "Enter your Instagram URL"
-msgstr ""
-
-#: inc/theme-options.php:179
-msgid "Leave blank to hide Instagram Icon"
-msgstr ""
-
-#: inc/theme-options.php:188
-msgid "Enter your YouTube URL"
-msgstr ""
-
-#: inc/theme-options.php:191
-msgid "Leave blank to hide YouTube Icon"
-msgstr ""
-
-#: inc/theme-options.php:200
-msgid "Enter your Pinterest URL"
-msgstr ""
-
-#: inc/theme-options.php:203
-msgid "Leave blank to hide Pinterest Icon"
-msgstr ""
-
-#: inc/theme-options.php:212
-msgid "Enter your Tumblr URL"
-msgstr ""
-
-#: inc/theme-options.php:215
-msgid "Leave blank to hide Tumblr Icon"
-msgstr ""
-
-#: inc/theme-options.php:224
-msgid "Enter your VK URL"
-msgstr ""
-
-#: inc/theme-options.php:227
-msgid "Leave blank to hide VK Icon"
-msgstr ""
-
-#: inc/theme-options.php:234
-msgid "Save Options"
-msgstr ""
-
 #: inc/zenzero-dynamic.php:34
 msgid "Box Text Color"
 msgstr ""
@@ -471,6 +377,122 @@ msgstr ""
 
 #: inc/zenzero-dynamic.php:52
 msgid "Header / Footer / Sidebar Text Color"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:82
+msgid "Zenzero Theme Options"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:95
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:100
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:105
+msgid "Google Plus URL"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:110
+msgid "Linkedin URL"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:115
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:120
+msgid "YouTube URL"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:125
+msgid "Pinterest URL"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:130
+msgid "Tumblr URL"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:135
+msgid "VK URL"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:170
+msgid "Show RSS Button"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:188
+msgid "Show Search Button in Main Menu"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:202
+msgid "Get Zenzero PRO WP Theme for only"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:207
+msgid "Watch the demo"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:210
+msgid "Get Zenzero PRO Theme"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:214
+msgid "Advanced Theme Options"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:215
+msgid "Logo Upload"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:216
+msgid "Loading Page"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:217
+msgid "Font Switcher"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:218
+msgid "Unlimited Colors and Skin"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:219
+msgid "Post views counter"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:220
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:221
+msgid "Post format"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:222
+msgid "7 Shortcodes"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:223
+msgid "5 Exclusive Widgets"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:224
+msgid "Related Posts Box"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:225
+msgid "Information About Author Box"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:226
+msgid "And much more..."
+msgstr ""
+
+#: inc/zenzero-dynamic.php:232
+msgid "More features? Upgrade to PRO"
 msgstr ""
 
 #: search.php:16

@@ -17,55 +17,55 @@
 			<?php printf( __( '%1$s by %2$s.', 'zenzero' ), 'Zenzero', '<a target="_blank" href="http://crestaproject.com" rel="designer" title="CrestaProject">CrestaProject</a>' ); ?>
 		</div><!-- .site-info -->
 		<div class="site-social smallPart">
-		<?php 
-			global $zenzero_theme_options;
-			$zenzero_options = get_option( 'zenzero_theme_options', $zenzero_theme_options );
-		?>
-			<?php if ( $zenzero_options['facebookurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($zenzero_options['facebookurl']); ?>" title="Facebook" target="_blank" rel="nofollow"><i class="fa spaceLeftRight fa-facebook"></i></a>
+			<?php 
+				$hideRss = get_theme_mod('zenzero_theme_options_rss', '1');
+				$hideSearch = get_theme_mod('zenzero_theme_options_hidesearch', '1');
+				$facebookURL = get_theme_mod('zenzero_theme_options_facebookurl', '#');
+				$twitterURL = get_theme_mod('zenzero_theme_options_twitterurl', '#');
+				$googleplusURL = get_theme_mod('zenzero_theme_options_googleplusurl', '#');
+				$linkedinURL = get_theme_mod('zenzero_theme_options_linkedinurl', '#');
+				$instagramURL = get_theme_mod('zenzero_theme_options_instagramurl', '#');
+				$youtubeURL = get_theme_mod('zenzero_theme_options_youtubeurl', '#');
+				$pinterestURL = get_theme_mod('zenzero_theme_options_pinteresturl', '#');
+				$tumblrURL = get_theme_mod('zenzero_theme_options_tumblrurl', '#');
+				$vkURL = get_theme_mod('zenzero_theme_options_vkurl', '#');
+			?>
+				<?php if (!empty($facebookURL)) : ?>
+					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-facebook"><span class="screen-reader-text"><?php esc_attr_e( 'Facebook', 'zenzero' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if ( $zenzero_options['twitterurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($zenzero_options['twitterurl']); ?>" title="Twitter" target="_blank" rel="nofollow"><i class="fa spaceLeftRight fa-twitter"></i></a>
+				<?php if (!empty($twitterURL)) : ?>
+					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-twitter"><span class="screen-reader-text"><?php esc_attr_e( 'Twitter', 'zenzero' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if ( $zenzero_options['googleplusurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($zenzero_options['googleplusurl']); ?>" title="Google Plus" target="_blank" rel="nofollow"><i class="fa spaceLeftRight fa-google-plus"></i></a>
+				<?php if (!empty($googleplusURL)) : ?>
+					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-google-plus"><span class="screen-reader-text"><?php esc_attr_e( 'Google Plus', 'zenzero' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if ( $zenzero_options['linkedinurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($zenzero_options['linkedinurl']); ?>" title="Linkedin" target="_blank" rel="nofollow"><i class="fa spaceLeftRight fa-linkedin"></i></a>
+				<?php if (!empty($linkedinURL)) : ?>
+					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-linkedin"><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin', 'zenzero' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if ( $zenzero_options['instagramurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($zenzero_options['instagramurl']); ?>" title="Instagram" target="_blank" rel="nofollow"><i class="fa spaceLeftRight fa-instagram"></i></a>
+				<?php if (!empty($instagramURL)) : ?>
+					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-instagram"><span class="screen-reader-text"><?php esc_attr_e( 'Instagram', 'zenzero' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if ( $zenzero_options['youtubeurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($zenzero_options['youtubeurl']); ?>" title="YouTube" target="_blank" rel="nofollow"><i class="fa spaceLeftRight fa-youtube"></i></a>
+				<?php if (!empty($youtubeURL)) : ?>
+					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-youtube"><span class="screen-reader-text"><?php esc_attr_e( 'YouTube', 'zenzero' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if ( $zenzero_options['pinteresturl'] != '' ) : ?>
-					<a href="<?php echo esc_url($zenzero_options['pinteresturl']); ?>" title="Pinterest" target="_blank" rel="nofollow"><i class="fa spaceLeftRight fa-pinterest"></i></a>
+				<?php if (!empty($pinterestURL)) : ?>
+					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-pinterest"><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest', 'zenzero' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if ( $zenzero_options['tumblrurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($zenzero_options['tumblrurl']); ?>" title="Tumblr" target="_blank" rel="nofollow"><i class="fa spaceLeftRight fa-tumblr"></i></a>
+				<?php if (!empty($tumblrURL)) : ?>
+					<a href="<?php echo esc_url($tumblrURL); ?>" title="<?php esc_attr_e( 'Tumblr', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-tumblr"><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr', 'zenzero' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if ( $zenzero_options['vkurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($zenzero_options['vkurl']); ?>" title="VK" target="_blank" rel="nofollow"><i class="fa spaceLeftRight fa-vk"></i></a>
+				<?php if (!empty($vkURL)) : ?>
+					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-vk"><span class="screen-reader-text"><?php esc_attr_e( 'VK', 'zenzero' ); ?></span></i></a>
 				<?php endif; ?>
-				
-				<?php if ( ! $zenzero_options['hiderss'] ) : ?>
-					<a href="<?php bloginfo( 'rss2_url' ); ?>" title="RSS"><i class="fa spaceLeftRight fa-rss"></i></a>
+				<?php if ($hideRss == 1 ) : ?>
+					<a href="<?php bloginfo( 'rss2_url' ); ?>" title="<?php esc_attr_e( 'RSS', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-rss"><span class="screen-reader-text"><?php esc_attr_e( 'RSS', 'zenzero' ); ?></span></i></a>
 				<?php endif; ?>
 		</div><!-- .site-social -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <?php get_sidebar(); ?>
 <a href="#top" id="toTop" class="showTop"><i class="fa fa-angle-up"></i></a>
-<?php if ( ! $zenzero_options['hidesearch'] ) : ?>
+<?php if ($hideSearch == 1 ) : ?>
 	<div id="open-search" class="showSearch"><i class="fa fa-search"></i></div>
 	<!-- Start: Search Form -->
 	<div id="search-full">
