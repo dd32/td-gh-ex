@@ -56,7 +56,7 @@ function boxy_theme_font_url($font) {
 	 * Translators: If there are characters in your language that are not supported
 	 * by Font, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Font: on or off', 'colorist' ) ) {
+	if ( 'off' !== _x( 'on', 'Font: on or off', 'boxy' ) ) {
 		$font_url = esc_url( add_query_arg( 'family', urlencode($font), "//fonts.googleapis.com/css" ) );
 	}
 

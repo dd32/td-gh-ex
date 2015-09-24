@@ -25,14 +25,19 @@ require BOXY_INCLUDES_DIR . '/template-tags.php';
 require BOXY_INCLUDES_DIR . '/extras.php';
 
 /**
- * Load Redux Framework
+ * Load Theme Options Page
+ * This uses Redux Framework Plugin
  */
-require_once BOXY_PARENT_DIR . '/admin/admin-init.php';
+require_once BOXY_INCLUDES_DIR . '/load-plugins.php';
 
 /**
  * Load Theme Options
  */
-require_once BOXY_INCLUDES_DIR . '/theme-options-config.php';
+if( class_exists('ReduxFrameworkPlugin')) {
+	require_once BOXY_INCLUDES_DIR . '/theme-options-config.php';
+} else {
+	$boxy = get_option('boxy');
+}
 
 /**
  * Load Sane Defaults

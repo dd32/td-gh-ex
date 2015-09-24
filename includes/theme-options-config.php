@@ -157,10 +157,10 @@ if ( ! class_exists( "Redux_Framework_sample_config" ) ) {
             <?php if ( $screenshot ) : ?>
                 <?php if ( current_user_can( 'edit_theme_options' ) ) : ?>
                         <a href="<?php echo wp_customize_url(); ?>" class="load-customize hide-if-no-customize" title="<?php echo esc_attr( $customize_title ); ?>">
-                            <img src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview' ); ?>" />
+                            <img src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview', 'boxy' ); ?>" />
                         </a>
                 <?php endif; ?>
-                    <img class="hide-if-customize" src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview' ); ?>" />
+                    <img class="hide-if-customize" src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview', 'boxy' ); ?>" />
             <?php endif; ?>
 
                 <h4>
@@ -176,7 +176,7 @@ if ( ! class_exists( "Redux_Framework_sample_config" ) ) {
                     <p class="theme-description"><?php echo $this->theme->display( 'Description' ); ?></p>
                 <?php
             if ( $this->theme->parent() ) {
-                printf( ' <p class="howto">' . __( 'This <a href="%1$s">child theme</a> requires its parent theme, %2$s.' ) . '</p>', __( 'http://codex.wordpress.org/Child_Themes', 'boxy' ), $this->theme->parent()->display( 'Name' ) );
+                printf( ' <p class="howto">' . __( 'This <a href="%1$s">child theme</a> requires its parent theme, %2$s.', 'boxy' ) . '</p>', __( 'http://codex.wordpress.org/Child_Themes', 'boxy' ), $this->theme->parent()->display( 'Name' ) );
             }
 ?>
 
@@ -1351,7 +1351,7 @@ FEATURES;
                     $v = str_replace( "-", "_", $this->args['opt_name'] );
                 }
                 //$this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'boxy'), $v);
-                $this->args['intro_text'] = sprintf( __( '<p class="btn-upgrade"><a href="http://www.webulousthemes.com/?add-to-cart=25"><i class="fa fa-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/boxy/" class="vide-demo"><i class="fa fa-eye"></i>View Demo</p>', 'boxy' ), $v );
+                $this->args['intro_text'] = sprintf( __( '<p class="btn-upgrade"><a href="http://www.webulousthemes.com/?add-to-cart=25"><i class="fa fa-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/boxy/" class="vide-demo"><i class="fa fa-eye"></i>View Demo</a><a href="http://www.webulousthemes.com/forums/forum/free-support/" target="_blank" class="btn-help">Ask A Question</a><a href="http://docs.webulous.in/boxy-free/" target="_blank" class="btn-help">Documentation</a></p>', 'boxy' ), $v );
             } else {
                 $this->args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'boxy' );
             }
