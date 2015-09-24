@@ -1,7 +1,5 @@
 <?php
-// Add Custom Active link Color End
 /**
- * functions and constants for Raindrops theme
  *
  *
  * @package Raindrops
@@ -1005,6 +1003,7 @@ if ( !function_exists( 'raindrops_posted_in' ) ) {
 		$tag_list		 = get_the_tag_list( '', ' ' );
 		$categories_list = get_the_category_list( ' ' );
 
+
 		if ( ! empty($exclude_category_conditionals) && is_array( $exclude_category_conditionals ) ) {
 
 			foreach( $exclude_category_conditionals as  $key => $conditional ) {
@@ -1065,15 +1064,15 @@ if ( !function_exists( 'raindrops_posted_in' ) ) {
 
 				$posted_in = '<span class="this-posted-in">' .
 								 $category_label.
-							'</span> %1$s <span class="tagged">' .
+							'</span><span class="post-category"> %1$s </span><span class="tagged">' .
 								 $tag_label.
-							'</span> %2$s';
+							'</span><span class="post-tag"> %2$s </span>';
 
 
 
 			} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
 
-				$posted_in = '<span class="this-posted-in">' . $category_label . '</span> %1$s ';
+				$posted_in = '<span class="this-posted-in">' . $category_label . '</span><span class="post-category">  %1$s </span>';
 
 			} else {
 
@@ -1088,10 +1087,10 @@ if ( !function_exists( 'raindrops_posted_in' ) ) {
 
 			if ( $tag_list ) {
 
-				$posted_in = '<span class="this-posted-in">' . $category_label . '</span> %1$s <span class="tagged">' . $tag_label . '</span> %2$s ' . '  <span class="post-format-text">%4$s</span> <a href="%3$s"> <span class="post-format">%5$s</span></a>';
+				$posted_in = '<span class="this-posted-in">' . $category_label . '</span><span class="post-category"> %1$s </span><span class="tagged">' . $tag_label . '</span> <span class="post-tag"> %2$s </span>' . '  <span class="post-format-text">%4$s</span> <a href="%3$s"> <span class="post-format">%5$s</span></a>';
 			} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
 
-				$posted_in = '<span class="this-posted-in">' . $category_label . '</span> %1$s %2$s' . '  <span class="post-format-text">%4$s</span><a href="%3$s"> <span class="post-format">%5$s</span></a>';
+				$posted_in = '<span class="this-posted-in">' . $category_label . '</span> <span class="post-category">%1$s %2$s</span>' . '  <span class="post-format-text">%4$s</span><a href="%3$s"> <span class="post-format">%5$s</span></a>';
 			} else {
 
 				$posted_in = '<a href="%3$s">   <span class="post-format-text">%4$s</span> <span class="post-format">%5$s</span></a>';
@@ -1724,7 +1723,6 @@ if ( !function_exists( "raindrops_add_stylesheet" ) ) {
 			wp_enqueue_script( 'raindrops' );
 		}
 	}
-
 }
 /**
  * filter function comment form
@@ -4244,7 +4242,8 @@ if ( !function_exists( 'raindrops_header_image' ) ) {
 
 				$add_class = $text_attr;
 			}
-			$text_attr	 = ' style="color:#' . esc_attr( get_theme_mod( 'header_textcolor' ) ) . ';' . esc_attr( $add_style ) . '" ' . esc_html( $add_class );
+			/* @1.326 remove inline style ' style="color:#' . esc_attr( get_theme_mod( 'header_textcolor' ) ) . ';' . */
+			$text_attr	 = esc_attr( $add_style ) . ' ' . esc_html( $add_class );
 			$text_attr	 = apply_filters( 'raindrops_header_image_description_attr', $text_attr );
 		}
 
@@ -5889,22 +5888,22 @@ if ( !function_exists( 'raindrops_entry_content' ) ) {
 			}
 
 			$content = ''; // wp-includes/post-template.php:265 - Trying to get property of non-object
-			
+
 			if ( isset( $post ) ) {
 				$content .= get_the_content( $more_link_text, $stripteaser );
 			}
-		
+
 			$content = apply_filters( 'the_content', $content );
 			$content = apply_filters( 'raindrops_entry_content', $content );
 			$content = str_replace( ']]>', ']]&gt;', $content );
 			/**
 			 * @1.325
 			 */
-			if ( has_excerpt() && empty( $content )) { 
-				
+			if ( has_excerpt() && empty( $content )) {
+
 				$content .= sprintf( '<div class="entry-content-fallback">%1$s</div>', get_the_excerpt() );
-			} 
-		
+			}
+
 			echo $content;
 
 		}
@@ -5937,10 +5936,10 @@ if ( !function_exists( 'raindrops_next_prev_links' ) ) {
 	}
 }
 
-if ( version_compare( $wp_version, '4.0.1', '>' ) ) {
+//@ 1.325 if ( version_compare( $wp_version, '4.0.1', '>' ) ) {
 
 	add_filter( 'raindrops_next_prev_links', 'raindrops_the_pagenation', 10, 2);
-}
+//}
 function raindrops_the_pagenation( $html , $position){
 	global $raindrops_document_type;
 	if ( function_exists( 'get_the_posts_pagination' ) && $position == 'nav-below' ) {
@@ -5999,7 +5998,7 @@ if ( !function_exists( 'raindrops_link_get' ) ) {
 	function raindrops_link_get( $text = '' ) {
 		/**
 		 * @1.325
-		 * remove ~ from regex 
+		 * remove ~ from regex
  		 * for theme check plugin
 		 */
 		if ( preg_match_all( "/(https?:\/\/)([-_.!*\'()a-zA-Z0-9;\/?:@&=+$,%#]+)/iu", $text, $matches, PREG_SET_ORDER ) ) {
@@ -7393,12 +7392,12 @@ if ( !function_exists( 'raindrops_nav_menu_primary' ) ) {
 						<a href="#access" class="open"><span class="raindrops-nav-menu-expand" title="nav menu expand">Expand</span></a><span class="menu-text">menu</span>
 						<a href="#%1$s" class="close"><span class="raindrops-nav-menu-shrunk" title="nav menu shrunk">Shrunk</span></a>
 						 </p>
-						<%3$s id="' . esc_attr( $args[ 'wrap_element_id' ] ) . '" class="clearfix">
+						<%3$s id="' . esc_attr( $args[ 'wrap_element_id' ] ) . '" class="clearfix" aria-label="%4$s">
 						%2$s
 						</%3$s>';
 
 			do_action( 'raindrops_nav_menu_primary' );
-			$html = sprintf( $template, esc_attr( raindrops_warehouse( 'raindrops_page_width' ) ), $raindrops_nav_menu_primary, raindrops_doctype_elements( 'div', 'nav', false ) );
+			$html = sprintf( $template, esc_attr( raindrops_warehouse( 'raindrops_page_width' ) ), $raindrops_nav_menu_primary, raindrops_doctype_elements( 'div', 'nav', false ) , esc_attr__( 'Primary Navigation', 'raindrops' ) );
 			echo apply_filters( 'raindrops_nav_menu_primary_html', $html );
 		} //raindrops_warehouse(  'raindrops_show_menu_primary'  )
 	}
@@ -7504,7 +7503,7 @@ if ( !function_exists( 'raindrops_chat_filter' ) ) {
 		$html			 = '<dt class="raindrops-chat raindrops-chat-author-%1$s">%2$s</dt><dd class="raindrops-chat-text raindrops-chat-author-text-%1$s">%3$s</dd>';
 
 		foreach ( $new_contents as $key => $new ) {
-			
+
 			$new = str_replace( '</p>', '', $new );
 
 			preg_match( '|([^\:]+)(\:)(.+)|si', $new, $regs );
@@ -7696,7 +7695,7 @@ if ( !function_exists( 'raindrops_non_breaking_content' ) ) {
 		if ( !is_admin() && 'html5' == $raindrops_document_type ) {
 		/**
 		 * @1.325
-		 * remove ~ from regex 
+		 * remove ~ from regex
 		 * for theme check plugin
 		 */
 
@@ -10477,10 +10476,10 @@ if ( !function_exists( 'raindrops_content_shareing' ) ) {
 			$style			 = '';
 			$post_thumbnail	 = '';
 			$site_icon		 = '';
-			$html			 = '<div style="border:1px solid gray;padding:1em;box-sizing:border-box;"><h3><a href="%3$s">%4$s</a></h3><div>%5$s</div><div>%6$s</div></div>';
+			$html			 = '<div style="border:1px solid gray;padding:1em;box-sizing:border-box;"><h3><a href="%3$s" rel="nofollow">%4$s</a></h3><div>%5$s</div><div>%6$s</div></div>';
 		} else {
 
-			$html = '<div><style scoped="scoped">%1$s</style><ul id="quote-raindrops"><li class="first">%2$s</li><li class="second"><h3><a href="%3$s">%4$s</a></h3><div>%5$s</div><div>%6$s</div></li></ul></div>';
+			$html = '<div><style scoped="scoped">%1$s</style><ul id="quote-raindrops"><li class="first">%2$s</li><li class="second"><h3><a href="%3$s" rel="nofollow">%4$s</a></h3><div>%5$s</div><div>%6$s</div></li></ul></div>';
 		}
 
 		if ( 'post_thumbnail' == $type ) {
