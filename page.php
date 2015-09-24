@@ -38,6 +38,7 @@ get_header(); ?>
         			    <?php endwhile; // end of the loop. ?>
                         
                     </div>
+                    <div class="clearboth"></div>
                     
                     <?php electa_paging_nav(); ?>
                     

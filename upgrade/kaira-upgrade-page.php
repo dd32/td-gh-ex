@@ -42,7 +42,7 @@
                 <a href="<?php echo $premium_link; ?>" target="_blank">
                     <img src="<?php echo get_template_directory_uri() . '/upgrade/images/blog-blocks-layout.jpg'; ?>" alt="" class="kaira-page-img" />
                 </a>
-                <p class="description"><?php _e( 'Enable the option to select the grid layout for the blog blocks layout.', 'electa' ); ?></p>
+                <p class="description"><?php _e( 'Enable the option to select the grid layout for the blog blocks layout, and for the categories and archives pages.', 'electa' ); ?></p>
             </td>
         </tr>
         <tr>

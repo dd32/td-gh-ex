@@ -65,9 +65,10 @@
                     
                 <?php endwhile; ?>
                 
-                <?php electa_paging_nav(); ?>
-                
             </div>
+            <div class="clearboth"></div>
+            
+            <?php electa_paging_nav(); ?>
 
         <?php else : ?> <?php /* have_posts() else : */ ?>
 

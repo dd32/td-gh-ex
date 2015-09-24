@@ -46,7 +46,7 @@ Customizer Sections can be defined like this:
 
 $sections[] = array(
 	'id' => 'example', // Required
-	'title' => __( 'Example Section', 'textdomain' ), // Required
+	'title' => __( 'Example Section', 'electa' ), // Required
 	'priority' => '30', // Optional
 	'description' => 'Example description' // Optional
 );
@@ -65,7 +65,7 @@ The Customizer_Library uses the core function `$wp_customize->add_section($id, $
 ~~~php
 $options['example-text'] = array(
 	'id' => 'example-text',
-	'label'   => __( 'Example Text Input', 'textdomain' ),
+	'label'   => __( 'Example Text Input', 'electa' ),
 	'section' => $section,
 	'type'    => 'text',
 );
@@ -76,7 +76,7 @@ $options['example-text'] = array(
 ~~~php
 $options['example-checkbox'] = array(
 	'id' => 'example-checkbox',
-	'label'   => __( 'Example Checkbox', 'textdomain' ),
+	'label'   => __( 'Example Checkbox', 'electa' ),
 	'section' => $section,
 	'type'    => 'checkbox',
 	'default' => 0,
@@ -94,7 +94,7 @@ $choices = array(
 
 $options['example-select'] = array(
 	'id' => 'example-select',
-	'label'   => __( 'Example Select', 'textdomain' ),
+	'label'   => __( 'Example Select', 'electa' ),
 	'section' => $section,
 	'type'    => 'select',
 	'choices' => $choices,
@@ -113,7 +113,7 @@ $choices = array(
 
 $options['example-radio'] = array(
 	'id' => 'example-radio',
-	'label'   => __( 'Example Radio', 'textdomain' ),
+	'label'   => __( 'Example Radio', 'electa' ),
 	'section' => $section,
 	'type'    => 'radio',
 	'choices' => $choices,

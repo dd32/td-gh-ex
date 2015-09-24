@@ -98,6 +98,7 @@ function customizer_library_kaira_options() {
         'label'   => __( 'Home Categories', 'electa' ),
         'section' => $section,
         'type'    => 'text',
+        'description' => __( 'Enter the ID\'s of the post categories you want to display in the home blocks.<br />Eg: "13,17,19"<br />(no spaces and only comma\'s and category ID\'s... NOT post ID\'s)<br /><br />Leaving it blank displays all posts.', 'electa' )
     );
     // Upsell Button Two
     $options['kra-upsell-two'] = array(
@@ -186,7 +187,7 @@ function customizer_library_kaira_options() {
     
     $options['kra-blog-blocks-layout'] = array(
         'id' => 'kra-blog-blocks-layout',
-        'label'   => __( 'Enable home blocks layout', 'electa' ),
+        'label'   => __( 'Enable blog blocks layout', 'electa' ),
         'section' => $section,
         'type'    => 'checkbox',
         'description' => __( 'Enable this to change the layout of the blog page to list posts as blocks. This shows ALL posts', 'electa' ),
@@ -194,9 +195,10 @@ function customizer_library_kaira_options() {
     );
     $options['kra-blog-cats'] = array(
         'id' => 'kra-blog-cats',
-        'label'   => __( 'Home Categories', 'electa' ),
+        'label'   => __( 'Blog Categories', 'electa' ),
         'section' => $section,
         'type'    => 'text',
+        'description' => __( 'Enter the ID\'s of the post categories you want to EXCLUDE from the blog, with a minus(-) before it.<br />Eg: "-13,-17,-19" (no spaces and only comma\'s and category ID\'s... NOT post ID\'s)', 'electa' )
     );
     // Upsell Button Three
     $options['kra-upsell-three'] = array(
@@ -211,6 +213,13 @@ function customizer_library_kaira_options() {
         'section' => $section,
         'type'    => 'text',
         'default' => 'Blog'
+    );
+    // Upsell Button Three
+    $options['kra-upsell-three-two'] = array(
+        'id' => 'kra-upsell-three-two',
+        'label'   => __( 'Category/Archive Blogs layout', 'electa' ),
+        'section' => $section,
+        'type'    => 'upsell',
     );
     
     

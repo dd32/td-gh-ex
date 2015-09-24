@@ -61,6 +61,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.4
+* Bug fixes
+* Fix translation textdomain error
+
 #### 1.2.3
 * Updated language .pot file.
 
