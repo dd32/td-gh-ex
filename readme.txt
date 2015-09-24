@@ -5,6 +5,9 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 2.0 [24/09/2015]
+1. Menus Fixes.
+
 @Version: 1.9.8[22/09/2015]
 1. MENU HOVER ISSUE FIXED.
 @Version: 1.9.7[03/09/2015]
