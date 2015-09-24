@@ -62,5 +62,13 @@ $('.main-navigation-responsive .sub-toggle').click(function() {
     $(this).children('.fa-angle-right').first().toggleClass('fa-angle-down');
 });
 
+$( window ).resize(function() {
+  var bscWidth = window.innerWidth;
+  if(bscWidth > 1000){
+    $(".main-navigation-responsive").css('display', 'none');
+  }
+});
+
+
 
 });

@@ -83,3 +83,6 @@ Version 2.0.5
 
 Version 2.0.6
 * Added the feature to open the slider links in same widow or in new tab.
+
+Version 2.0.7
+* Fixed the Responsive menu displaying in window resize issue.
