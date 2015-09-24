@@ -4,7 +4,7 @@ Theme URI:
 Author: Masum Billah
 Author URI: http://getmasum.net/
 Description: Responsive WordPress Theme.This theme made with Responsive Framework Skeleton v2.0.4. Used some css3 effects.
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
@@ -423,8 +423,13 @@ img {
 }
 
 table {
+	
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px 0 0 1px;	
 	margin: 0 0 1.5em;
 	width: 100%;
+	table-layout: fixed; /* Prevents HTML tables from becoming too wide */
 }
 
 /*--------------------------------------------------------------
@@ -1021,6 +1026,12 @@ h1.entry-title a:hover{
 	font-weight: 400;
 	padding: 0 0.8em;
 	width: 90%;
+}
+
+.single-widget {
+  -moz-hyphens: auto;
+  color: rgba(51, 51, 51, 0.7);
+  word-wrap: break-word;
 }
 
 /*--------------------------------------------------------------
