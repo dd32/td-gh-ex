@@ -1,10 +1,10 @@
 /*
 Theme Name: Araiz
-Theme URI: http://lodse.com/?theme=araiz
+Theme URI: http://lodse.com/araiz-wordpress-blog-theme/
 Author: Waqass Khalid
 Author URI: https://profiles.wordpress.org/waqasskhalid
 Description: Araiz is a basic theme great for simple blogging. It is a blend between classic design and a modern interface. It is basically a fast theme with fully responsive interface.
-Version: 1.0.9
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: araiz
@@ -635,6 +635,12 @@ margin: 0px;
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+}
+.menu-toggle{
+    padding: 10px;
+    font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media screen and (min-width: 769px) {
