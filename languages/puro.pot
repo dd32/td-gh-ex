@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Puro\n"
-"POT-Creation-Date: 2015-09-03 14:04+0200\n"
-"PO-Revision-Date: 2015-09-03 14:04+0200\n"
+"POT-Creation-Date: 2015-09-25 20:28+0200\n"
+"PO-Revision-Date: 2015-09-25 20:28+0200\n"
 "Last-Translator: Puro <support@purothemes.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -80,7 +80,9 @@ msgid ""
 msgstr ""
 
 #: ../content-page.php:25 ../content-single.php:28 ../content-video.php:43
-#: ../content.php:38 ../page-templates/full-width-no-title.php:28
+#: ../content.php:38 ../loops/loop-medium-left.php:49
+#: ../loops/loop-thumbnail-left.php:49
+#: ../page-templates/full-width-no-title.php:28
 #: ../page-templates/full-width-unconstrained-content-no-title.php:28
 #: ../page-templates/no-title.php:28
 msgid "Pages:"
@@ -88,7 +90,8 @@ msgstr ""
 
 #: ../content-page.php:33 ../content-search.php:24 ../content-single.php:38
 #: ../content-video.php:53 ../content.php:48
-#: ../extras/settings/settings.php:548
+#: ../extras/settings/settings.php:548 ../loops/loop-medium-left.php:61
+#: ../loops/loop-thumbnail-left.php:61
 #: ../page-templates/full-width-no-title.php:35
 #: ../page-templates/full-width-unconstrained-content-no-title.php:35
 #: ../page-templates/no-title.php:35
@@ -568,7 +571,7 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: ../functions.php:196
+#: ../functions.php:214
 #, php-format
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
@@ -723,177 +726,185 @@ msgid "Display the featured image on pages."
 msgstr ""
 
 #: ../inc/settings.php:89
+msgid "Blog Archive Layout"
+msgstr ""
+
+#: ../inc/settings.php:91
+msgid "Choose the layout to be used on blog and archive pages."
+msgstr ""
+
+#: ../inc/settings.php:94
 msgid "Archive Featured Image"
 msgstr ""
 
-#: ../inc/settings.php:90
+#: ../inc/settings.php:95
 msgid "Display the featured image on the blog archive pages."
 msgstr ""
 
-#: ../inc/settings.php:93
+#: ../inc/settings.php:98
 msgid "Archive Post Content"
 msgstr ""
 
-#: ../inc/settings.php:95
+#: ../inc/settings.php:100
 msgid "Full Post Content"
 msgstr ""
 
-#: ../inc/settings.php:96
+#: ../inc/settings.php:101
 msgid "Post Excerpt"
 msgstr ""
 
-#: ../inc/settings.php:98
+#: ../inc/settings.php:103
 msgid ""
 "Choose how to display your post content on blog and archive pages. Select "
 "Full Post Content if using the \"more\" quicktag."
 msgstr ""
 
-#: ../inc/settings.php:101
+#: ../inc/settings.php:106
 msgid "Read More Text"
 msgstr ""
 
-#: ../inc/settings.php:102
+#: ../inc/settings.php:107
 msgid ""
 "The link text displayed when posts are split using the \"more\" quicktag."
 msgstr ""
 
-#: ../inc/settings.php:111
+#: ../inc/settings.php:116
 msgid "Post Excerpt Length"
 msgstr ""
 
-#: ../inc/settings.php:112
+#: ../inc/settings.php:117
 msgid ""
 "If no manual post excerpt is added one will be generated. How many words "
 "should it be?"
 msgstr ""
 
-#: ../inc/settings.php:121
+#: ../inc/settings.php:126
 msgid "Post Featured Image"
 msgstr ""
 
-#: ../inc/settings.php:122
+#: ../inc/settings.php:127
 msgid "Display the featured image on the single post page."
 msgstr ""
 
-#: ../inc/settings.php:125
+#: ../inc/settings.php:130
 msgid "Post Date"
 msgstr ""
 
-#: ../inc/settings.php:126
+#: ../inc/settings.php:131
 msgid "Display the post date."
 msgstr ""
 
-#: ../inc/settings.php:129
+#: ../inc/settings.php:134
 msgid "Post Author"
 msgstr ""
 
-#: ../inc/settings.php:130
+#: ../inc/settings.php:135
 msgid "Display the post author."
 msgstr ""
 
-#: ../inc/settings.php:133
+#: ../inc/settings.php:138
 msgid "Post Categories"
 msgstr ""
 
-#: ../inc/settings.php:134
+#: ../inc/settings.php:139
 msgid "Display the post categories."
 msgstr ""
 
-#: ../inc/settings.php:137
+#: ../inc/settings.php:142
 msgid "Post Tags"
 msgstr ""
 
-#: ../inc/settings.php:138
+#: ../inc/settings.php:143
 msgid "Display the post tags."
 msgstr ""
 
-#: ../inc/settings.php:141
+#: ../inc/settings.php:146
 msgid "Post Comment Count"
 msgstr ""
 
-#: ../inc/settings.php:142
+#: ../inc/settings.php:147
 msgid "Display the post comment count."
 msgstr ""
 
-#: ../inc/settings.php:145
+#: ../inc/settings.php:150
 msgid "Post Edit Link"
 msgstr ""
 
-#: ../inc/settings.php:146
+#: ../inc/settings.php:151
 msgid ""
 "Display an Edit link below post content. Visible if a user is logged in and "
 "allowed to edit the content. Also applies to Pages."
 msgstr ""
 
-#: ../inc/settings.php:150
+#: ../inc/settings.php:155
 msgid "Comment Form Allowed Tags"
 msgstr ""
 
-#: ../inc/settings.php:151
+#: ../inc/settings.php:156
 msgid ""
 "Display the explanatory text below the comment form that lets users know "
 "which HTML tags may be used."
 msgstr ""
 
-#: ../inc/settings.php:154 ../upgrade/upgrade.php:40
+#: ../inc/settings.php:159 ../upgrade/upgrade.php:40
 msgid "Ajax Comments"
 msgstr ""
 
-#: ../inc/settings.php:155
+#: ../inc/settings.php:160
 msgid "Allow users to submit comments without a page re-load on submit."
 msgstr ""
 
-#: ../inc/settings.php:160 ../upgrade/upgrade.php:46
+#: ../inc/settings.php:165 ../upgrade/upgrade.php:46
 msgid "Post Sharing"
 msgstr ""
 
-#: ../inc/settings.php:161
+#: ../inc/settings.php:166
 msgid ""
 "Show icons to share your posts on Facebook, Twitter, Google+ and LinkedIn."
 msgstr ""
 
-#: ../inc/settings.php:165
+#: ../inc/settings.php:170
 msgid "Twitter Handle"
 msgstr ""
 
-#: ../inc/settings.php:166
+#: ../inc/settings.php:171
 msgid "This handle will be recommended after a user shares one of your posts."
 msgstr ""
 
-#: ../inc/settings.php:171
+#: ../inc/settings.php:176
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../inc/settings.php:172
+#: ../inc/settings.php:177
 msgid ""
 "{site-title}, {copyright} and {year} can be used to display your website "
 "title, a copyright symbol and the current year."
 msgstr ""
 
-#: ../inc/settings.php:175
+#: ../inc/settings.php:180
 msgid "Footer Attribution Link"
 msgstr ""
 
-#: ../inc/settings.php:176
+#: ../inc/settings.php:181
 msgid ""
 "Remove the theme attribution link from your footer without editing any code."
 msgstr ""
 
-#: ../inc/settings.php:180
+#: ../inc/settings.php:185
 msgid "Enqueue JavaScript in Footer"
 msgstr ""
 
-#: ../inc/settings.php:181
+#: ../inc/settings.php:186
 msgid ""
 "Enqueue theme JavaScript files in the footer. Doing so can improve site load "
 "time."
 msgstr ""
 
-#: ../inc/settings.php:213
+#: ../inc/settings.php:219
 msgid "Continue reading"
 msgstr ""
 
-#: ../inc/settings.php:229
+#: ../inc/settings.php:235
 msgid "Copyright {year}"
 msgstr ""
 
@@ -940,99 +951,6 @@ msgstr ""
 #: ../inc/template-tags.php:151
 #, php-format
 msgid "%s Logo"
-msgstr ""
-
-#: ../inc/template-tags.php:183
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:185
-#, php-format
-msgid "Tag: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:187
-#, php-format
-msgid "Author: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:189
-#, php-format
-msgid "Year: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:189
-msgid "Y"
-msgstr ""
-
-#: ../inc/template-tags.php:191
-#, php-format
-msgid "Month: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:191
-msgid "F Y"
-msgstr ""
-
-#: ../inc/template-tags.php:193
-#, php-format
-msgid "Day: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:193
-msgid "F j, Y"
-msgstr ""
-
-#: ../inc/template-tags.php:196
-msgid "Asides"
-msgstr ""
-
-#: ../inc/template-tags.php:198
-msgid "Galleries"
-msgstr ""
-
-#: ../inc/template-tags.php:200
-msgid "Images"
-msgstr ""
-
-#: ../inc/template-tags.php:202
-msgid "Videos"
-msgstr ""
-
-#: ../inc/template-tags.php:204
-msgid "Quotes"
-msgstr ""
-
-#: ../inc/template-tags.php:206
-msgid "Links"
-msgstr ""
-
-#: ../inc/template-tags.php:208
-msgid "Statuses"
-msgstr ""
-
-#: ../inc/template-tags.php:210
-msgid "Audio"
-msgstr ""
-
-#: ../inc/template-tags.php:212
-msgid "Chats"
-msgstr ""
-
-#: ../inc/template-tags.php:215
-#, php-format
-msgid "Archives: %s"
-msgstr ""
-
-#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-#: ../inc/template-tags.php:219
-#, php-format
-msgid "%1$s: %2$s"
-msgstr ""
-
-#: ../inc/template-tags.php:221
-msgid "Archives"
 msgstr ""
 
 #: ../search.php:18

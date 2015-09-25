@@ -88,17 +88,38 @@ Screenshot Waves and Rocks image sourced from http://unsplash.com by Angelina Od
 
 == Bundled Resources ==
 
+FitVids, Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+Released under the WTFPL license.
+
+Flex Slider, Copyright 2012 WooThemes
+Free to use under the GPLv2 license
+Source: http://www.woothemes.com/flexslider/
+
+Flexie, Copyright 2010 Richard Herrera
+Licensed under the MIT License
+Source: https://github.com/doctyper/flexie
+
 FontAwesome by Dave Gandy 
 Font released under the SIL OFL 1.1, CSS released under the MIT License.
 
-FitVids, Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
-Released under the WTFPL license.
+HTML5 Shiv, Copyright 2014 Alexander Farkas (aFarkas)
+Licensed under a dual license system (MIT or GPL version 2)
+Source: https://github.com/aFarkas/html5shiv
+
+Selectivizr, Copyright Keith Clark
+Licensed under the MIT License
+Source: https://github.com/keithclark/selectivizr
 
 == SiteOrigin Extras ==
 
 This theme makes use of the SiteOrigin Extras Framework contained in the folder extras/. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header. 
 
 == Changelog ==
+
+= 1.0.7.2 =
+* Removed the_archive_title and the_archive_description functions from template-tags.php. These functions are now included in the WordPress core.
+* Added legacy browser support.
+* Added new blog archive layouts. New layouts can be accessed from Theme > Settings > Blog > Blog Archive Layout or Page Builder Post Loop widget.
 
 = 1.0.7.1 =
 * Reduced size of teaser images.

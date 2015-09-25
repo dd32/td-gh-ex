@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.7.1' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.7.2' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' ); 
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
@@ -183,6 +183,24 @@ function puro_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'puro_scripts' );
+
+if ( ! function_exists( 'puro_browser_compatiblity' ) ):
+/**
+ * Improve legacy browser support.
+ */
+function puro_browser_compatiblity() {
+	?>
+	<!--[if lte IE 9]> 
+		<script src="<?php echo get_template_directory_uri(); ?>/js/flexie.js" type="text/javascript"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv-printshiv.js" type="text/javascript"></script>
+	<![endif]-->
+	<!--[if (gte IE 6)&(lte IE 8)]>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/selectivizr.min.js" type="text/javascript"></script>
+	<![endif]-->
+	<?php
+}
+add_action( 'wp_head', 'puro_browser_compatiblity' );
+endif;
 
 /**
  * Filter the comment form.

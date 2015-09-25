@@ -4,7 +4,7 @@ Author: Puro
 Author URI: http://purothemes.com/
 Theme URI: http://purothemes.com/themes/puro/
 Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our <a href="http://purothemes.com/documentation/">theme documentation</a> (http://purothemes.com/documentation/) or ask a question on our <a href="http://purothemes.com/support/">support forum</a> (http://purothemes.com/support/).
-Version: 1.0.7.1
+Version: 1.0.7.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: puro
@@ -46,8 +46,10 @@ child theme.
 	10.6 - Search
 11.0 - Content
 	11.1 - Posts and Pages
-	11.2 - Asides
-	11.3 - Comments
+	11.2 - Left Thumbnail Post Loop
+	11.3 - Left Medium Post Loop
+	11.4 - Asides
+	11.5 - Comments
 12.0 - Media
 	12.1 - Captions
 	12.2 - Galleries
@@ -252,47 +254,17 @@ Full Width Page - Unconstrained Content - No Title
   width: 100%;
 }
 
-.one-column #primary .page-header,
-.one-column #primary .page-content,
-.one-column #primary .entry-header,
-.one-column #primary .entry-summary,
-.one-column #primary .entry-content,
-.one-column #primary .entry-footer,
-.one-column #primary #comments,
-.page-template-page-templatesfull-width-php #primary .page-header,
-.page-template-page-templatesfull-width-php #primary .page-content,
-.page-template-page-templatesfull-width-php #primary .entry-header,
-.page-template-page-templatesfull-width-php #primary .entry-summary,
-.page-template-page-templatesfull-width-php #primary .entry-content,
-.page-template-page-templatesfull-width-php #primary .entry-footer,
-.page-template-page-templatesfull-width-php #primary #comments,
-.page-template-page-templatesfull-width-no-title-php #primary .page-header,
-.page-template-page-templatesfull-width-no-title-php #primary .page-content,
-.page-template-page-templatesfull-width-no-title-php #primary .entry-header,
-.page-template-page-templatesfull-width-no-title-php #primary .entry-summary,
-.page-template-page-templatesfull-width-no-title-php #primary .entry-content,
-.page-template-page-templatesfull-width-no-title-php #primary .entry-footer,
-.page-template-page-templatesfull-width-no-title-php #primary #comments,
-.error404 #primary {
+.one-column #primary #main,
+.page-template-page-templatesfull-width-php #primary #main,
+.page-template-page-templatesfull-width-no-title-php #primary #main,
+.error404 #primary #main {
   margin-right: auto;
   margin-left: auto;
   max-width: 71.3889%;
 }
 
-.page-template-page-templatesfull-width-unconstrained-content-php #primary .page-header,
-.page-template-page-templatesfull-width-unconstrained-content-php #primary .page-content,
-.page-template-page-templatesfull-width-unconstrained-content-php #primary .entry-header,
-.page-template-page-templatesfull-width-unconstrained-content-php #primary .entry-summary,
-.page-template-page-templatesfull-width-unconstrained-content-php #primary .entry-content,
-.page-template-page-templatesfull-width-unconstrained-content-php #primary .entry-footer,
-.page-template-page-templatesfull-width-unconstrained-content-php #primary #comments,
-.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .page-header,
-.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .page-content,
-.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .entry-header,
-.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .entry-summary,
-.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .entry-content,
-.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .entry-footer,
-.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary #comments {
+.page-template-page-templatesfull-width-unconstrained-content-php #primary #main,
+.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary #main {
   margin-right: auto;
   margin-left: auto;
   max-width: 100%;
@@ -1605,7 +1577,91 @@ article:last-of-type {
   }
 }
 /*--------------------------------------------------------------
-11.2 - Asides
+11.2 - Left Thumbnail Post Loop
+--------------------------------------------------------------*/
+.puro-left-thumb-loop .featured-image .entry-thumbnail {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding-right: 2.53125em;
+  width: 25%;
+}
+@media (max-width: 48rem) {
+  .resp .puro-left-thumb-loop .featured-image .entry-thumbnail {
+    float: none;
+    padding-right: 0;
+    width: 100%;
+  }
+}
+.puro-left-thumb-loop .featured-image .entry-header,
+.puro-left-thumb-loop .featured-image .entry-content {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 75%;
+}
+@media (max-width: 48rem) {
+  .resp .puro-left-thumb-loop .featured-image .entry-header, .resp
+  .puro-left-thumb-loop .featured-image .entry-content {
+    float: none;
+    width: 100%;
+  }
+}
+.puro-left-thumb-loop .featured-image .entry-header h1.entry-title {
+  margin-top: -0.4em;
+}
+@media (max-width: 48rem) {
+  .resp .puro-left-thumb-loop .featured-image .entry-header h1.entry-title {
+    margin: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+11.3 - Left Medium Post Loop
+--------------------------------------------------------------*/
+.puro-left-medium-loop .featured-image .entry-thumbnail {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding-right: 2.53125em;
+  width: 45%;
+}
+@media (max-width: 48rem) {
+  .resp .puro-left-medium-loop .featured-image .entry-thumbnail {
+    float: none;
+    padding-right: 0;
+    width: 100%;
+  }
+}
+.puro-left-medium-loop .featured-image .entry-header,
+.puro-left-medium-loop .featured-image .entry-content {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 55%;
+}
+@media (max-width: 48rem) {
+  .resp .puro-left-medium-loop .featured-image .entry-header, .resp
+  .puro-left-medium-loop .featured-image .entry-content {
+    float: none;
+    width: 100%;
+  }
+}
+.puro-left-medium-loop .featured-image .entry-header h1.entry-title {
+  margin-top: -0.4em;
+}
+@media (max-width: 48rem) {
+  .resp .puro-left-medium-loop .featured-image .entry-header h1.entry-title {
+    margin: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+11.4 - Asides
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
@@ -1613,7 +1669,7 @@ article:last-of-type {
 }
 
 /*--------------------------------------------------------------
-11.3 - Comments
+11.5 - Comments
 --------------------------------------------------------------*/
 .comments-area .comments-title {
   margin-top: 2.53125em;

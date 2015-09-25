@@ -86,6 +86,11 @@ function puro_theme_settings(){
 
 
 	// Blog
+	siteorigin_settings_add_field('blog', 'archive_layout', 'select', __('Blog Archive Layout', 'puro'), array(
+		'options' => puro_blog_layout_options(),
+		'description' => __('Choose the layout to be used on blog and archive pages.', 'puro')
+	) );
+
     siteorigin_settings_add_field('blog', 'archive_featured_image', 'checkbox', __('Archive Featured Image', 'puro'), array(
         'description' => __('Display the featured image on the blog archive pages.', 'puro')
     ) );   
@@ -208,6 +213,7 @@ function puro_theme_setting_defaults($defaults){
 
 	$defaults['pages_page_featured_image'] = true;		
 
+	$defaults['blog_archive_layout'] = 'blog';
 	$defaults['blog_archive_featured_image'] = true;
 	$defaults['blog_archive_content'] = 'full';
 	$defaults['blog_read_more'] = __('Continue reading', 'puro');
@@ -238,3 +244,18 @@ function puro_siteorigin_settings_page_icon($icon){
 	return get_template_directory_uri().'/images/settings-icon.png';
 }
 add_filter('siteorigin_settings_page_icon', 'puro_siteorigin_settings_page_icon');
+
+function puro_blog_layout_options(){
+	$layouts = array();
+	foreach( glob(get_template_directory().'/loops/loop-*.php') as $template ) {
+		$headers = get_file_data( $template, array(
+			'loop_name' => 'Loop Name',
+		) );
+
+		preg_match('/loop\-(.*?)\.php/', basename($template), $matches);
+		if(!empty($matches[1])) {
+			$layouts[$matches[1]] = $headers['loop_name'];
+		}
+	}
+	return $layouts;
+}

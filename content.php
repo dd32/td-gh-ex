@@ -7,7 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>	
-	<?php if ( !is_single() && has_post_thumbnail() && siteorigin_setting('blog_archive_featured_image') ) : ?>
+	<?php if ( ! is_single() && has_post_thumbnail() && siteorigin_setting('blog_archive_featured_image') ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php the_post_thumbnail(); ?>
