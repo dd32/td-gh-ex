@@ -29,6 +29,9 @@ Araiz includes support for Infinite Scroll in Jetpack.
 
 == Change log ==
 
+= 1.1.1 - September 26 2015 =
+* Post Submit Button Enlarged
+
 = 1.1.0 - September 25 2015 =
 * Mobile Menu Buttons Enlarged
 
