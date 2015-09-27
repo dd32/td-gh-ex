@@ -1,0 +1,1 @@
+jQuery(function(){$(function(){var o=$("#sticky_header").offset().top,i=function(){var i=$(window).scrollTop();$("#sticky_header").css(i>o?{position:"fixed",top:0,left:0,"box-shadow":"0 1px 2px rgba(0, 0, 0, 0.15)"}:{position:"relative","box-shadow":"none"})};i(),$(window).scroll(function(){i()})})});
