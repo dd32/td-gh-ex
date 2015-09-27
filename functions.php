@@ -13,8 +13,12 @@ if ( ! isset( $content_width ) )
 //	Add Theme Options Panel & Assign Variable Values
 //----------------------------------------------------------------------------------
 
-	// Add Redux Framework - Credits attributable to http://reduxframework.com/
-	require_once (get_template_directory() . '/admin/main/framework.php');
+	// Add Redux Framework
+	require_once( get_template_directory() . '/admin/main/framework.php' );
+	require_once( get_template_directory() . '/admin/main/options.php' );
+
+	// Add Notice Informing Users Theme Options Have Moved To Customizer
+	require_once( get_template_directory() . '/admin/main/customizer_migration_notice/customizer_migration_notice.php' );
 
 	// Load demo functions if required.
 	if( file_exists( get_template_directory() . '/demo/functions/demo-variable.php' ) )
@@ -102,13 +106,13 @@ function thinkup_frontscripts() {
 
 	// Add theme stylesheets.
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.min.css', '', '2.3.2' );
-	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.6.9' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.7.0' );
 	wp_enqueue_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 
 	// Add Font Packages.
 	wp_enqueue_style( 'font-awesome-min', get_template_directory_uri() . '/lib/extentions/font-awesome/css/font-awesome.min.css', '', '3.2.1' );
 	wp_enqueue_style( 'font-awesome-cdn', '//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', '', '4.2.0' );
-	wp_enqueue_style( 'elusive-min', get_template_directory_uri() . '/lib/extentions/elusive-icons/elusive-webfont.css', '', '2.0' );
+	wp_enqueue_style( 'elusive-icons-css', get_template_directory_uri() . '/lib/extentions/elusive-icons/elusive-icons.css', '', '2.0' );
 
 	// Add theme scripts
 	wp_enqueue_script( 'frontend', get_template_directory_uri() . '/lib/scripts/main-frontend.js', array( 'jquery' ), '1.1', true );

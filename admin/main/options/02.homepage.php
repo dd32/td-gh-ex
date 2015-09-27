@@ -120,6 +120,11 @@ global $thinkup_homepage_section3_link;
 	if ( empty( $thinkup_homepage_section2_icon ) ) $thinkup_homepage_section2_icon = 'icon-gift';
 	if ( empty( $thinkup_homepage_section3_icon ) ) $thinkup_homepage_section3_icon = 'icon-star-empty';
 
+	// Update selected icon for Elusive Icon v2
+	if ( strpos( $thinkup_homepage_section1_icon, 'el-icon-' ) !== false) $thinkup_homepage_section1_icon = str_replace( 'el-icon-', 'el el-', $thinkup_homepage_section1_icon );
+	if ( strpos( $thinkup_homepage_section2_icon, 'el-icon-' ) !== false) $thinkup_homepage_section2_icon = str_replace( 'el-icon-', 'el el-', $thinkup_homepage_section2_icon );
+	if ( strpos( $thinkup_homepage_section3_icon, 'el-icon-' ) !== false) $thinkup_homepage_section3_icon = str_replace( 'el-icon-', 'el el-', $thinkup_homepage_section3_icon );
+
 	// Set default values for titles
 	if ( empty( $thinkup_homepage_section1_title ) ) $thinkup_homepage_section1_title = 'Section 1';
 	if ( empty( $thinkup_homepage_section2_title ) ) $thinkup_homepage_section2_title = 'Section 2';

@@ -2,8 +2,8 @@
 
 - By Think Up Themes, http://www.thinkupthemes.com/
 
-Requires at least:	3.4.1
-Tested up to:		3.9.2
+Requires at least:	4.0.0
+Tested up to:		4.3.1
 
 Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme is responsive, HD retina ready and comes with 600+ Google Fonts which can easily be selected directly from the theme options panel.
 
@@ -97,6 +97,15 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.7.0
+- New:     Customizer support added. All Theme options settings now controlled from within Customizer.
+- Fixed:   thinkup_check_ishome() now works correctly on all sites.
+- Fixed:   Migration script updated to prevent loss of data. If data doesn't migrate to customizer. Support can still retrieve from database.
+- Updated: Elusive icons updated to 2.0 to ensure smooth transition of featured content icons from old to new Redux version.
+- Removed: Redux styling in style-backend.css no longer needed.
+- Removed: jQuery used to add "required" settings to theme options now longer needed.
+- Removed: Theme options panel removed - replaced with customizer to comply with new WordPress guidelines.
 
 Version 1.6.9
 - Updated: Prep for Customizer integration. Redux global variable changed from $redux -> $thinkup_redux_variables. Migration function thinkup_migrate_redux_option().
