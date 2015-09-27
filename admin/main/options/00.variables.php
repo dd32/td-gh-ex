@@ -14,7 +14,7 @@
 function thinkup_reduxvariables() { 
 
 	// Fetch options stored in $data.
-	global $redux;
+	global $thinkup_redux_variables;
 
 	//  1.1.     General settings.
 	$GLOBALS['thinkup_general_logoswitch']                  = thinkup_var ( 'thinkup_general_logoswitch' );

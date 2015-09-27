@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.2
+- Updated: Prep for Customizer integration. Redux global variable changed from $redux -> $thinkup_redux_variables. Migration function thinkup_migrate_redux_option().
+
 Version 1.2.1
 - New:     .screen-reader-text class added to style.css - unstyled.
 - Fixed:   Text "Current theme preview" now fully translation ready.

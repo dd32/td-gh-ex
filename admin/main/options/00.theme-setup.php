@@ -553,4 +553,40 @@ function thinkup_googlefonts_scripts() {
 add_action( 'wp_enqueue_scripts', 'thinkup_googlefonts_scripts' );
 
 
+//----------------------------------------------------------------------------------
+//	MIGRATION OF REDUX GLOBAL VARIABLE IN PREPARATION FOR CUSTOMIZER SUPPORT - $redux -> $thinkup_redux_variables 
+//----------------------------------------------------------------------------------
+
+function thinkup_migrate_redux_option() {
+
+	// try to get the new option
+	$thinkup_redux_migrate   = get_option('thinkup_redux_migrate');
+	$thinkup_redux_variables = get_option('thinkup_redux_variables');
+
+	if ($thinkup_redux_variables && isset($thinkup_redux_variables['migrated']) && $thinkup_redux_variables['migrated'] == 1) {
+		return;
+	}
+
+	// else add the new option
+	else {
+
+		$redux_option = get_option('redux');
+
+		// Only migrate if not already migrated
+		if ( $thinkup_redux_migrate != 1 ) {
+
+
+			// Check if migration was already performed with old migration script
+			if ( $redux_option['migrated'] !== 1 ) {
+
+				// set the migrated	flag
+				update_option('thinkup_redux_migrate', 1);
+				update_option('thinkup_redux_variables',$redux_option);
+			}
+		}
+	}	
+}
+add_action('init','thinkup_migrate_redux_option');
+
+
 ?>
