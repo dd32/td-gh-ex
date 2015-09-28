@@ -50,7 +50,7 @@ $wp_customize->add_panel( 'quality_service_options', array(
 	$wp_customize->add_control(
     'quality_pro_options[service_title]',
     array(
-        'label' => __('Service Title','appintment'),
+        'label' => __('Service Title','quality'),
         'section' => 'service_section_head',
         'type' => 'text',
     )

@@ -29,9 +29,6 @@ function quality_custmizer_style()
 		wp_enqueue_style('quality-customizer-css',QUALITY_TEMPLATE_DIR_URI.'/css/cust-style.css');
 }
 add_action('customize_controls_print_styles','quality_custmizer_style');
-
-
-
 add_action('wp_head','head_enqueue_custom_css');
 function head_enqueue_custom_css()
 {

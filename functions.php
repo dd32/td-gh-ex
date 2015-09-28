@@ -77,7 +77,7 @@
 	add_action('admin_menu', 'quality_admin_menu_pannel');  
 	function quality_admin_menu_pannel()
 	{	
-	add_theme_page( __('Option panel','quality'), __('Option panel','health'), 'edit_theme_options', 'option_panel', 'quality_option_page' );
+	add_theme_page( __('Option panel','quality'), __('Option panel','quality'), 'edit_theme_options', 'option_panel', 'quality_option_page' );
 	}
 	function quality_option_page ()
 	{require_once('option-panel.php');}

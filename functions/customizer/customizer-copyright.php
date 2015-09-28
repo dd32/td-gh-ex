@@ -14,8 +14,9 @@
 	$wp_customize->add_setting(
     'quality_pro_options[footer_copyright_text]',
     array(
-        'default' => __('<p>@ Copyright 2014 Quality Center Design And Developed by  <a href="'.esc_url('http://www.webriti.com').'" target="_blank">WordPress Theme</a></p>','quality'),
-		'type' =>'option',
+         
+		 'default' => sprintf (__('<p>@ Copyright 2014 Quality Center Design And Developed by <a href="%1$s" target="_blank">WordPress Theme</a><p>','quality'),'http://www.webriti.com'),
+		 'type' =>'option',
 		'sanitize_callback' => 'quality_copyright_sanitize_text',
     )
 	

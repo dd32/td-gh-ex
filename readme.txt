@@ -131,6 +131,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@Version 1.3.1
+1. Update Font-awesome Folder.
+2. Fixed Theme Check Error.
 @Version 1.3
 1. Fixed Styling issue
 2. Fixed Front page issue.
