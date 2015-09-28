@@ -5,7 +5,7 @@ Tested up to: WordPress 4.3-trunk
 Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-menu, featured-images, flexible-header, sticky-post
 
 == Description ==
 Responsive WordPress Theme.This theme made with Responsive Framework Skeleton v2.0.4. Used some css3 effects. You can use this theme for blog,portfolio etc.

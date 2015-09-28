@@ -30,9 +30,6 @@ function bhost_setup() {
 	 */
 	load_theme_textdomain( 'bhost', get_template_directory() . '/languages' );
 	
-	// This theme styles the visual editor with editor-style.css to match the theme style.
-	add_editor_style();
-
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -124,11 +121,24 @@ function bhost_font_url() {
 			'family' => urlencode( 'Raleway:400,500,600,700' ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
-		$font_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		$font_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 	}
 
 	return $font_url;
 }
+
+/**
+ * HTML5 Js file.
+ */
+ 
+function bhost_html5js(){ ?>
+	<!--[if lt IE 9]>
+	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
+	<![endif]-->
+<?php }
+
+add_action('wp_head' , 'bhost_html5js');
+
 /**
  * Enqueue scripts and styles.
  */
