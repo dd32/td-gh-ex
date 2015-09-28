@@ -1,28 +1,33 @@
-jQuery(document).ready(function($) {
+( function( $ ) {
 
-  $('.widget').find("ul").addClass("list-unstyled");
+	'use strict';
 
-  jQuery('#site-navigation').meanmenu({
-    meanScreenWidth: "640"
-  });
+	$( document ).ready( function( $ ) {
 
-  // Implement go to top
-  if ( $('#btn-scrollup').length > 0 ) {
+		$( '.widget' ).find( 'ul' ).addClass( 'list-unstyled' );
 
-    $(window).scroll(function(){
-        if ($(this).scrollTop() > 100) {
-            $('#btn-scrollup').fadeIn();
-        } else {
-            $('#btn-scrollup').fadeOut();
-        }
-    });
+		$( '#site-navigation' ).meanmenu( {
+			meanScreenWidth: '640'
+		});
 
-    $('#btn-scrollup').click(function(){
-        $("html, body").animate({ scrollTop: 0 }, 600);
-        return false;
-    });
+		// Implement go to top.
+		if ( $( '#btn-scrollup' ).length > 0 ) {
 
-  }
+			$( window ).scroll( function() {
+				if ( $( this ).scrollTop() > 100 ) {
+					$( '#btn-scrollup' ).fadeIn();
+				} else {
+					$( '#btn-scrollup' ).fadeOut();
+				}
+			});
 
+			$( '#btn-scrollup' ).click( function() {
+				$( 'html, body' ).animate( { scrollTop: 0 }, 600 );
+				return false;
+			});
 
-});
+		}
+
+	});
+
+} )( jQuery );

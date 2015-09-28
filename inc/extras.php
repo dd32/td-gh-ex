@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package Simple Life
+ * @package Simple_Life
  */
 
 /**
@@ -34,72 +34,3 @@ function simple_life_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'simple_life_body_classes' );
-
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-  /**
-   * Filters wp_title to print a neat <title> tag based on what is being viewed.
-   *
-   * @param string $title Default title text for current view.
-   * @param string $sep Optional separator.
-   * @return string The filtered title.
-   */
-  function simple_life_wp_title( $title, $sep ) {
-    if ( is_feed() ) {
-      return $title;
-    }
-
-    global $page, $paged;
-
-    // Add the blog name
-    $title .= get_bloginfo( 'name', 'display' );
-
-    // Add the blog description for the home/front page.
-    $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description && ( is_home() || is_front_page() ) ) {
-      $title .= " $sep $site_description";
-    }
-
-    // Add a page number if necessary:
-    if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-      $title .= " $sep " . sprintf( __( 'Page %s', 'simple-life' ), max( $paged, $page ) );
-    }
-
-    return $title;
-  }
-  add_filter( 'wp_title', 'simple_life_wp_title', 10, 2 );
-
-  /**
-   * Title shim for sites older than WordPress 4.1.
-   *
-   * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-   * @todo Remove this function when WordPress 4.3 is released.
-   */
-  function simple_life_render_title() {
-    ?>
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
-    <?php
-  }
-  add_action( 'wp_head', 'simple_life_render_title' );
-endif;
-
-
-/**
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
- */
-function simple_life_setup_author() {
-	global $wp_query;
-
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-	}
-}
-add_action( 'wp', 'simple_life_setup_author' );

@@ -5,6 +5,9 @@
  */
 
 ( function( $ ) {
+
+	'use strict';
+
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -16,12 +19,14 @@
 			$( '.site-description' ).text( to );
 		} );
 	} );
+
 	// Copyright.
 	wp.customize( 'simple_life_options[copyright_text]', function( value ) {
 		value.bind( function( to ) {
 			$( '.copyright-text' ).text( to );
 		} );
 	} );
+
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
