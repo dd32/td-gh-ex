@@ -21,7 +21,7 @@ jQuery(window).bind('resize orientationchange', function() {
 });
 
 var adjustMenu = function() {
-	if (ww < 768) {
+	if (ww < 720) {
 		jQuery(".toggleMenu").css("display", "block");
 		if (!jQuery(".toggleMenu").hasClass("active")) {
 			jQuery(".nav").hide();
