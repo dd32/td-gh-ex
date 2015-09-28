@@ -110,6 +110,28 @@ class novalite_customize {
 					) );
 							
 				break;
+				
+				case 'upload' :
+							
+					$wp_customize->add_setting( $element['id'], array(
+
+						'default' => $element['std'],
+						'capability' => 'edit_theme_options',
+						'sanitize_callback' => 'esc_url_raw'
+
+					) );
+
+					$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, $element['id'], array(
+					
+						'label' => $element['label'],
+						'description' => $element['description'],
+						'section' => $element['section'],
+						'settings' => $element['id'],
+						'capability' => 'edit_theme_options',
+
+					)));
+
+				break;
 
 				case 'color' :
 							

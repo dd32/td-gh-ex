@@ -205,7 +205,7 @@ if (!function_exists('novalite_customize_panel_function')) {
 				"label" => __( "Custom Logo","novalite"),
 				"description" => __( "Insert the url of your custom logo","novalite"),
 				"id" => "novalite_custom_logo",
-				"type" => "url",
+				"type" => "upload",
 				"section" => "header_section",
 				"std" => "",
 
