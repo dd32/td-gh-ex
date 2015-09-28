@@ -1,4 +1,8 @@
 == CHANGE LOG ==
+= 1.0.1 =
+	- JavaScript source added according to WordPress guidelines
+	- Boxed Layout and Small Boxed Layout Options added
+	- Added Theme Instructions and changed the link for html5shiv in readme.txt
 
 = 1.0 =
 	- Initial Release

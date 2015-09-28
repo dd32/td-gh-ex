@@ -99,4 +99,22 @@
 		'hide-meta' => __('Hide Entry Format','arise'),
 	),
 	));
+	$wp_customize->add_setting('arise_theme_options[arise_design_layout]', array(
+		'default'        => 'on',
+		'sanitize_callback' => 'arise_sanitize_dropdown',
+		'type'                  => 'option',
+	));
+	$wp_customize->add_control('arise_design_layout', array(
+	'priority'  =>50,
+	'label'      => __('Design Layout', 'arise'),
+	'section'    => 'arise_layout_options',
+	'settings'  => 'arise_theme_options[arise_design_layout]',
+	'type'       => 'select',
+	'checked'   => 'checked',
+	'choices'    => array(
+		'wide-layout' => __('Full Width Layout','arise'),
+		'boxed-layout' => __('Boxed Layout','arise'),
+		'small-boxed-layout' => __('Small Boxed Layout','arise'),
+	),
+));
 ?>

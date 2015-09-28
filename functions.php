@@ -94,7 +94,7 @@ function arise_get_theme_options() {
 }
 
 /***************************************************************************************/
-require get_template_directory() . '/inc/admin-panel/arise-default-values.php';
+require get_template_directory() . '/inc/customizer/arise-default-values.php';
 require( get_template_directory() . '/inc/settings/arise-functions.php' );
 require( get_template_directory() . '/inc/settings/arise-common-functions.php' );
 require get_template_directory() . '/inc/jetpack.php';

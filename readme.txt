@@ -26,8 +26,8 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 		http://genericons.com/
 
 	-JS Files
-		HTML5.js: HTML5 is Licensed under the MIT and GPL licenses
-		https://code.google.com/p/html5shiv/
+		HTML5.js:  HTML5-Shiv is Licensed under the MIT and GPL licenses
+		https://github.com/afarkas/html5shiv
 
 		jQuery.cycle.all:  JQuery Cylcle all is Licensed under the MIT and GPL licenses
 		http://jquery.malsup.com/cycle2/
@@ -89,3 +89,9 @@ Arise theme is translation ready
 == Change Log ==
 
 Please refer to changelog.txt file
+
+=================================================================================
+
+= Theme Instructions =
+
+For detail instructions visit http://themefreesia.com/theme-instruction/arise/
