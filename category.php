@@ -16,7 +16,7 @@
         if (!empty($afford_category_description)) {
             echo '<span>' . $afford_category_description . '</span>';
         } else {
-            printf(__('Archive of posts published in the category: %s', 'afford'), single_cat_title('', false));
+            printf(__('Archive of posts published in the category:', 'afford').' %s', single_cat_title('', false));
         }
         ?>
     </div>

@@ -58,6 +58,11 @@ function afford_setup() {
     add_theme_support('custom-background', array('default-color' => 'FFFFFF', 'wp-head-callback' => 'afford_custom_background_cb'));
     
     /**
+     * Adds title tag automatically
+     */
+    add_theme_support( 'title-tag' );
+    
+    /**
      * Adds supports for Theme menu.
      * Afford uses wp_nav_menu() in a single location to diaplay one single menu.
      */
@@ -301,36 +306,6 @@ add_filter( 'excerpt_more', 'afford_auto_excerpt_more' );
 
 
 /**
- * Modifies the default title of the blog and is hooked to wp_title filter.
- * 
- * @since 1.0
- */
-function afford_modify_title( $title, $sep ) {
-    
-    global $page, $paged;
-
-    if (is_feed())
-        return $title;
-
-    // Add the blog name
-    $title .= get_bloginfo('name', 'display');
-
-    // Add the blog description for the home/front page.
-    $site_description = get_bloginfo('description', 'display');
-    if ($site_description && ( is_home() || is_front_page() ))
-        $title .= " $sep $site_description";
-
-    // Add a page number if necessary:
-    if ($paged >= 2 || $page >= 2)
-        $title .= " $sep " . sprintf(__('Page %s', 'afford'), max($paged, $page));
-
-    return $title;
-}
-add_filter( 'wp_title', 'afford_modify_title', 10, 2 );
-
-
-
-/**
  * Used to return body classes
  * 
  * @param array $classes
@@ -455,9 +430,9 @@ function afford_404_show(){
                 <?php if (is_404()) : ?>
                     <h1><?php _e('Ooops! Nothing Found', 'afford'); ?></h1>
                 <?php elseif (is_search()) : ?>
-                    <h1><?php printf(__('Nothing found for: %s', 'afford'), get_search_query()); ?></h1>
+                    <h1><?php printf(__('Nothing found for:', 'afford').' %s', get_search_query()); ?></h1>
                 <?php else : ?>
-                    <h1><?php printf(__('Nothing found for: %s', 'afford'), single_term_title('', false)); ?></h1>
+                    <h1><?php printf(__('Nothing found for:', 'afford').' %s', single_term_title('', false)); ?></h1>
                 <?php endif; ?>
             </div>
         </div><!-- Archive Meta Container ends -->
@@ -510,8 +485,8 @@ function afford_archive_nav() {
     if ($wp_query->max_num_pages > 1): ?>
         
         <div class="archive-nav grid-col-16 clearfix">
-            <div class="nav-next"><?php previous_posts_link(__('<span class="meta-nav">&larr;</span> Newer posts', 'afford')); ?></div>
-            <div class="nav-previous"><?php next_posts_link(__('Older posts <span class="meta-nav">&rarr;</span>', 'afford')); ?></div>
+            <div class="nav-next"><?php previous_posts_link('<span class="meta-nav">&larr;</span> '.__('Newer posts', 'afford')); ?></div>
+            <div class="nav-previous"><?php next_posts_link(__('Older posts', 'afford').' <span class="meta-nav">&rarr;</span>'); ?></div>
         </div>
         
 <?php endif;
@@ -583,8 +558,8 @@ function afford_comment_callback( $comment, $args, $depth ) {
                           <div class="comment-author vcard">
                               <div class="comment-author-avatar-container"><?php echo get_avatar($comment, 125); ?></div>
                               <div class="comment-author-info-container">
-                                  <div class="comment-author-name"><?php printf(__('%s <span class="says"></span>', 'afford'), sprintf('<cite class="fn">%s</cite>', get_comment_author_link())) ?></div>
-                                  <div class="comment-meta comment-date"><a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">(<?php printf(__('%1$s ago', 'afford'), human_time_diff(get_comment_time( 'U' ), current_time( 'timestamp' ))); ?>)</a></div>
+                                  <div class="comment-author-name"><?php printf('%s <span class="says"></span>', sprintf('<cite class="fn">%s</cite>', get_comment_author_link())) ?></div>
+                                  <div class="comment-meta comment-date"><a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">(<?php printf('%1$s '.__('ago', 'afford'), human_time_diff(get_comment_time( 'U' ), current_time( 'timestamp' ))); ?>)</a></div>
                               </div>
                           </div><!-- .comment-author .vcard -->
                      </div>
@@ -687,7 +662,7 @@ function afford_customizer_css() {
 
     foreach ($options_color as $option => $location) {
         if (afford_get_option($option)) {
-            $output .= $location . '{color:' . afford_get_option($option) . ';}';
+            $output .= $location . '{color:' . wp_filter_nohtml_kses(afford_get_option($option)) . ';}';
         }
     }
 

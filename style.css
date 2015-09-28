@@ -2,7 +2,7 @@
 Theme Name: Afford
 Theme URI: http://www.mudthemes.com/afford
 Description: Afford is a responsive and multipurpose theme for magazine and personal blogs. This theme can be customized using Theme Customizer options. It is fully Translation ready and comes with online documentation.
-Version: 1.0.0
+Version: 1.0.1
 Author: mudThemes
 Author URI: http://www.mudthemes.com
 Tags: white, orange, light, responsive-layout, fluid-layout, one-column, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: afford
 
 ======================================================
-Afford WordPress Theme, Copyright 2014 mudthemes.com
+Afford WordPress Theme, Copyright 2015 mudthemes.com
 Afford is distributed under the terms of the GNU GPL
 ======================================================
 
@@ -640,7 +640,7 @@ body {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  border-bottom: 1px solid #f3f3f3;
+  border-bottom: 1px solid #f0f0f0;
 }
 .cta-bg-section {
   width: 100%;
@@ -872,9 +872,6 @@ body {
   cursor: pointer;
   z-index: 101;
   vertical-align: bottom;
-}
-.header-bg-section {
-  padding-bottom: 10px;
 }
 .header-section {
   overflow: visible;
@@ -2168,24 +2165,16 @@ body {
 .orange .nav-section {
   background-color: #ffffff;
 }
-.orange .primarymenu-section li.current-menu-item > a,
-.orange .primarymenu-section li.current-menu-ancestor > a,
-.orange .primarymenu-section li.current_page_item > a,
-.orange .primarymenu-section li.current_page_ancestor > a {
-  color: #555555;
-  border-bottom: 1px solid #ffb07b;
-}
 .orange .primarymenu-section a {
   color: #555555;
   background-color: #ffffff;
-  border-bottom: 1px solid #FFFFFF;
   -moz-transition: border-color 750ms;
   -webkit-transition: border-color 750ms;
   -o-transition: border-color 750ms;
   transition: border-color 750ms;
 }
 .orange .primarymenu-section a:hover {
-  border-bottom-color: #ffb07b;
+  color: #ff7315;
 }
 .orange .primarymenu-section li.menu-item-has-children > a {
   border-bottom-color: #fff;
@@ -2228,9 +2217,6 @@ body {
 .orange .primarymenu-section.menuClicked .sub-menu a:hover,
 .orange .primarymenu-section.menuClicked .children a:hover {
   color: #222222;
-}
-.orange .loop-section-col .loop-section {
-  border-right: 1px dashed #ffcfa8;
 }
 .orange .loop-post-title a {
   color: #444444;
@@ -2670,3 +2656,4 @@ body #scrollUp:hover {
 
 .sticky{}
 .bypostauthor{}
+.screen-reader-text {}

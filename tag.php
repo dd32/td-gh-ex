@@ -16,7 +16,7 @@
         if (!empty($afford_tag_description)) {
             echo $afford_tag_description;
         } else {
-            printf(__('Archive of posts published in the tag: %s', 'afford'), single_term_title('', false));
+            printf(__('Archive of posts published in the tag:', 'afford').' %s', single_term_title('', false));
         }
         ?>
     </div>

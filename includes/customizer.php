@@ -85,7 +85,7 @@ function afford_customizer_options($type){
     
     $options[] = array(
         'id' => 'disable_site_desc',
-        'default' => false,
+        'default' => true,
         'label' => __('Hide Site Description','afford'),
         'description' => '',
         'type' => 'checkbox',
