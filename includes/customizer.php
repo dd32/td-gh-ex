@@ -1,6 +1,6 @@
 <?php
 
-function avis_customize_register( $wp_customize ) {
+function avis_lite_customize_register( $wp_customize ) {
 
 	// define image directory path
 	$imagepath =  get_template_directory_uri() . '/images/';
@@ -14,55 +14,47 @@ function avis_customize_register( $wp_customize ) {
 	// = Background Image Size for custom-background
 	// ====================================
 	$wp_customize->add_setting( 'background_size', array(
-		'type'				=> 'theme_mod',
-		'capability' 		=> 'edit_theme_options',
 		'default'       	=> 'cover',
 		'theme_supports'	=> 'custom-background',
-		'sanitize_callback' => 'avis_sanitize_textarea',
+		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	));
 	$wp_customize->add_control('background_size', array(
 		'section'		=> 'background_image',
-		'label' 		=> __('Background Image Size','avis'),
-		'description' 	=> '',
+		'label' 		=> __('Background Image Size','avis-lite'),
 	));
 	// ====================================
 	// = Avis Lite Theme Pannel
 	// ====================================
 	$wp_customize->add_panel( 'sketchthemes', array(
-		'title' 	=> __( 'Avis Lite Options','avis'),
-		'description' => __( 'This section allows you to change and preview theme options before saving them.','avis'),
+		'title' 	=> __( 'Avis Lite Options','avis-lite'),
+		'description' => __( 'This section allows you to change and preview theme options before saving them.','avis-lite'),
 		'priority' 	=> 10,
 	) );
 	// ====================================
 	// = Avis Lite Theme Sections
 	// ====================================
 	$wp_customize->add_section( 'header_section' , array(
-		'title' 		=> __('Header Settings','avis'),
-		'description'	=> '',
+		'title' 		=> __('Header Settings','avis-lite'),
 		'priority' 		=> 1,
 		'panel' 		=> 'sketchthemes',
 	) );
 	$wp_customize->add_section( 'breadcrumb_section' , array(
-		'title' 		=> __('Breadcrumb Settings','avis'),
-		'description'	=> '',
+		'title' 		=> __('Breadcrumb Settings','avis-lite'),
 		'priority' 		=> 2,
 		'panel' 		=> 'sketchthemes',
 	) );
 	$wp_customize->add_section( 'home_page_section' , array(
-		'title' 		=> __('Front Page Settings','avis'),
-		'description' 	=> '',
+		'title' 		=> __('Front Page Settings','avis-lite'),
 		'priority'		=> 3,
 		'panel' 		=> 'sketchthemes',
 	) );
 	$wp_customize->add_section( 'blog_page_section' , array(
-		'title' 		=> __('Blog Page Settings','avis'),
-		'description' 	=> '',
+		'title' 		=> __('Blog Page Settings','avis-lite'),
 		'priority' 		=> 4,
 		'panel' 		=> 'sketchthemes',
 	) );
 	$wp_customize->add_section( 'footer_section' , array(
-		'title' 		=> __('Footer Settings','avis'),
-		'description' 	=> '',
+		'title' 		=> __('Footer Settings','avis-lite'),
 		'priority' 		=> 5,
 		'panel' 		=> 'sketchthemes',
 	) );
@@ -77,7 +69,7 @@ function avis_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'avis_pri_color', array(
 		'priority' 		=> 1,
 		'section'     	=> 'colors',
-		'label'       	=> __( 'Primary Color Scheme', 'avis' ),
+		'label'       	=> __( 'Primary Color Scheme', 'avis-lite' ),
 	) ) );
 	$wp_customize->add_setting( 'avis_sec_color', array(
 		'default'           => '#353b48',
@@ -86,7 +78,7 @@ function avis_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'avis_sec_color', array(
 		'priority' 		=> 2,
 		'section'     	=> 'colors',
-		'label'       	=> __( 'Secondary Color Scheme', 'avis' ),
+		'label'       	=> __( 'Secondary Color Scheme', 'avis-lite' ),
 	) ) );
 
 	// ====================================
@@ -98,26 +90,26 @@ function avis_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control(  new WP_Customize_Image_Control( $wp_customize, 'avis_logo_img', array(
 		'section' 		=> 'header_section',
-		'label' 		=> __( 'Logo Image', 'avis' ),
-		'description' 	=> __('Uplaod your beautiful logo image from here. Recomended size 220x40 px.', 'avis' ),
+		'label' 		=> __( 'Logo Image', 'avis-lite' ),
+		'description' 	=> __('Uplaod your beautiful logo image from here. Recomended size 220x40 px.', 'avis-lite' ),
 	) ) );
 	
 	$wp_customize->add_setting( 'avis_logo_width', array(
 		'default'           => '120',
-		'sanitize_callback' => 'avis_sanitize_textarea',
+		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	) );
 	$wp_customize->add_control( 'avis_logo_width', array(
 		'section'  		=> 'header_section',
-		'label'    		=> __( 'Logo Width', 'avis' ),
+		'label'    		=> __( 'Logo Width', 'avis-lite' ),
 	) );
 	
 	$wp_customize->add_setting( 'avis_logo_height', array(
 		'default'           => '40',
-		'sanitize_callback' => 'avis_sanitize_textarea',
+		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	) );
 	$wp_customize->add_control( 'avis_logo_height', array(
 		'section'  		=> 'header_section',
-		'label'    		=> __( 'Logo Height', 'avis' ),
+		'label'    		=> __( 'Logo Height', 'avis-lite' ),
 	) );
 	// ====================================
 	// = Home Page Settings Sections
@@ -128,25 +120,25 @@ function avis_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control(  new WP_Customize_Image_Control( $wp_customize, 'avis_bread_img', array(
 		'section' 		=> 'breadcrumb_section',
-		'label' 		=> __( 'Breadcrumb Background Image', 'avis' ),
+		'label' 		=> __( 'Breadcrumb Background Image', 'avis-lite' ),
 	) ) );
 	
 	$wp_customize->add_setting( 'avis_bread_position', array(
 		'default'           => 'center',
-		'sanitize_callback' => 'avis_sanitize_textarea',
+		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	) );
 	$wp_customize->add_control( 'avis_bread_position', array(
 		'section'  		=> 'breadcrumb_section',
-		'label'    		=> __( 'Breadcrumb Background Position', 'avis' ),
+		'label'    		=> __( 'Breadcrumb Background Position', 'avis-lite' ),
 	) );
 	
 	$wp_customize->add_setting( 'avis_bread_repeat', array(
 		'default'           => 'no-repeat',
-		'sanitize_callback' => 'avis_sanitize_textarea',
+		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	) );
 	$wp_customize->add_control( 'avis_bread_repeat', array(
 		'section'  		=> 'breadcrumb_section',
-		'label'    		=> __( 'Breadcrumb Background Repeat', 'avis' ),
+		'label'    		=> __( 'Breadcrumb Background Repeat', 'avis-lite' ),
 		'description'   => 'repeat, repeat-x, repeat-y, no-repeat'
 	) );
 	// ====================================
@@ -154,111 +146,102 @@ function avis_customize_register( $wp_customize ) {
 	// ====================================
 	$wp_customize->add_setting( 'avis_home_blog_sec', array(
 		'default'           => 'on',
-		'sanitize_callback' => 'avis_sanitize_on_off',
+		'sanitize_callback' => 'avis_lite_sanitize_on_off',
 	) );
 	$wp_customize->add_control( 'avis_home_blog_sec', array(
 		'type' => 'radio',
 		'section' => 'home_page_section',
-		'label' => __( 'Blog Section ON/OFF', 'avis' ),
-		'description' => __('Enable/Disable the Front Page Blog Section.', 'avis' ),
+		'label' => __( 'Blog Section ON/OFF', 'avis-lite' ),
+		'description' => __('Enable/Disable the Front Page Blog Section.', 'avis-lite' ),
 		'choices' => array(
-			'on' => __('ON', 'avis' ),
-			'off'=> __('OFF', 'avis' ),
+			'on' => __('ON', 'avis-lite' ),
+			'off'=> __('OFF', 'avis-lite' ),
 		),
 		'active_callback' => 'is_front_page',
 	) );
 	$wp_customize->add_setting( 'avis_home_blog_title', array(
-		'default'        => __('Latest Posts', 'avis'),
-		'sanitize_callback' => 'avis_sanitize_textarea',
+		'default'        => __('Latest Posts', 'avis-lite'),
+		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	));
 	$wp_customize->add_control('avis_home_blog_title', array(
 		'section' => 'home_page_section',
-		'label' => __('Front Page Blog Section Title','avis'),
+		'label' => __('Front Page Blog Section Title','avis-lite'),
 		'active_callback' => 'is_front_page',
 	));
 	$wp_customize->add_setting( 'avis_home_blog_num', array(
 		'capability' => 'edit_theme_options',
 		'default'        => '8',
-		'sanitize_callback' => 'avis_sanitize_textarea',
+		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	));
 	$wp_customize->add_control('avis_home_blog_num', array(
 		'section' => 'home_page_section',
-		'label' => __('Number of Blogs to show on front','avis'),
-		'description' => 'select number of blog post to show. Leave field empty for to show all.',
+		'label' => __('Number of Blogs to show on front','avis-lite'),
+		'description' => __('Select number of blog post to show. Leave field empty to show all.', 'avis-lite'),
 		'active_callback' => 'is_front_page',
 	));
 	$wp_customize->add_setting( 'avis_home_feature_sec', array(
-		'type'	=> 'theme_mod',
-		'capability' => 'edit_theme_options',
 		'default'           => 'on',
-		'sanitize_callback' => 'avis_sanitize_on_off',
+		'sanitize_callback' => 'avis_lite_sanitize_on_off',
 	) );
 	$wp_customize->add_control( 'avis_home_feature_sec', array(
 		'type' => 'radio',
 		'section' => 'home_page_section',
 		'settings' 		=> 'avis_home_feature_sec',
-		'label' => __( 'Feature Section ON/OFF', 'avis' ),
-		'description' => __('Add the "Featured Box - Avis Lite" widget in Home Featured Sidebar. They will be shown in this services section when it is ON', 'avis' ),
+		'label' => __( 'Feature Section ON/OFF', 'avis-lite' ),
+		'description' => __('Add the "Featured Box - Avis Lite" widget in Home Featured Sidebar. They will be shown in this services section when it is ON', 'avis-lite' ),
 		'choices' => array(
-			'on' => __('ON', 'avis' ),
-			'off'=> __('OFF', 'avis' ),
+			'on' => __('ON', 'avis-lite' ),
+			'off'=> __('OFF', 'avis-lite' ),
 		),
 		'active_callback' => 'is_front_page',
 	) );
 	// Service Section Title
 	$wp_customize->add_setting( 'avis_home_feature_sec_title', array(
-		'type'	=> 'theme_mod',
-		'capability' => 'edit_theme_options',
-		'default'        => __('Features', 'avis'),
-		'sanitize_callback' => 'avis_sanitize_textarea',
+		'default'        => __('Features', 'avis-lite'),
+		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	));
 	$wp_customize->add_control('avis_home_feature_sec_title', array(
 		'section' => 'home_page_section',
-		'label' => __('Features Section Title','avis'),
-		'description' => '',
-		'active_callback' => 'avis_active_home_feature_sec',
+		'label' => __('Features Section Title','avis-lite'),
+		'active_callback' => 'avis_lite_active_home_feature_sec',
 	));
 	// Service Section Description
 	$wp_customize->add_setting( 'avis_home_feature_sec_desc', array(
-		'default'        => __('All of our features created with functionality and design in mind.', 'avis'),
-		'sanitize_callback' => 'avis_sanitize_textarea',
+		'default'        => __('All of our features created with functionality and design in mind.', 'avis-lite'),
+		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	));
 	$wp_customize->add_control('avis_home_feature_sec_desc', array(
 		'type'	=> 'textarea',
 		'section' => 'home_page_section',
 		'settings' 		=> 'avis_home_feature_sec_desc',
-		'label' => __('Features Section Content','avis'),
-		'description' => '',
-		'active_callback' => 'avis_active_home_feature_sec',
+		'label' => __('Features Section Content','avis-lite'),
+		'active_callback' => 'avis_lite_active_home_feature_sec',
 	));
 	
 	// ====================================
 	// = Blog Page Settings Sections
 	// ====================================
 	$wp_customize->add_setting( 'avis_blogpage_heading', array(
-		'type'	=> 'theme_mod',
-		'capability' => 'edit_theme_options',
-		'default'        => __('Blog', 'avis'),
-		'sanitize_callback' => 'avis_sanitize_textarea',
+		'default'        => __('Blog', 'avis-lite'),
+		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	));
 	$wp_customize->add_control('avis_blogpage_heading', array(
 		'priority' => 1,
 		'section' => 'blog_page_section',
 		'settings' 		=> 'avis_blogpage_heading',
-		'label' => __('Blog Page Title','avis'),
-		'description' => '',
+		'label' => __('Blog Page Title','avis-lite'),
 	));
 	// ====================================
 	// = Footer Settings Sections
 	// ====================================
 	$wp_customize->add_setting( 'avis_copyright', array(
-		'default'        => __('Copyright Text', 'avis'),
-		'sanitize_callback' => 'avis_sanitize_textarea',
+		'default'        => __('Copyright Text Powered by WordPress', 'avis-lite'),
+		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	));
 	$wp_customize->add_control('avis_copyright', array(
 		'section' => 'footer_section',
-		'label' => __('Copyright Text','avis'),
-		'description' => 'You can use HTML for links',
+		'label' => __('Copyright Text','avis-lite'),
+		'description' => __('You can use HTML for links', 'avis-lite'),
 	));
 	$wp_customize->add_setting( 'avis_fb_url', array(
 		'default'           => '#',
@@ -267,7 +250,7 @@ function avis_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'avis_fb_url', array(
 		'type'     		=> 'url',
 		'section'  		=> 'footer_section',
-		'label'    		=> __( 'Facebook URL', 'avis' ),
+		'label'    		=> __( 'Facebook URL', 'avis-lite' ),
 	) );
 	// Flickr
 	$wp_customize->add_setting( 'avis_fl_url', array(
@@ -277,7 +260,7 @@ function avis_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'avis_fl_url', array(
 		'type'     		=> 'url',
 		'section'  		=> 'footer_section',
-		'label'    		=> __( 'Flickr URL', 'avis' ),
+		'label'    		=> __( 'Flickr URL', 'avis-lite' ),
 	) );
 	// LinkedIn
 	$wp_customize->add_setting( 'avis_lin_url', array(
@@ -287,7 +270,7 @@ function avis_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'avis_lin_url', array(
 		'type'     		=> 'url',
 		'section'  		=> 'footer_section',
-		'label'    		=> __( 'LinkedIn URL', 'avis' ),
+		'label'    		=> __( 'LinkedIn URL', 'avis-lite' ),
 	) );
 	// Goggle+
 	$wp_customize->add_setting( 'avis_gplus_url', array(
@@ -297,7 +280,7 @@ function avis_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'avis_gplus_url', array(
 		'type'     		=> 'url',
 		'section'  		=> 'footer_section',
-		'label'    		=> __( 'Google+ URL', 'avis' ),
+		'label'    		=> __( 'Google+ URL', 'avis-lite' ),
 	) );
 	// Twitter
 	$wp_customize->add_setting( 'avis_tw_url', array(
@@ -307,32 +290,32 @@ function avis_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'avis_tw_url', array(
 		'type'     		=> 'url',
 		'section'  		=> 'footer_section',
-		'label'    		=> __( 'Twitter URL', 'avis' ),
+		'label'    		=> __( 'Twitter URL', 'avis-lite' ),
 	) );
 
 }
-add_action( 'customize_register', 'avis_customize_register' );
+add_action( 'customize_register', 'avis_lite_customize_register' );
 
 /**
  * Binds JS handlers to make the Customizer preview reload changes asynchronously.
  *
  * @since Avis Lite 1.0
  */
-function avis_customize_preview_js() {
-	wp_enqueue_script( 'foxeed-lite-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20141216', true );
+function avis_lite_customize_preview_js() {
+	wp_enqueue_script( 'avis-lite-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20141216', true );
 }
-add_action( 'customize_preview_init', 'avis_customize_preview_js' );
+add_action( 'customize_preview_init', 'avis_lite_customize_preview_js' );
 
 
 // sanitize textarea
-function avis_sanitize_textarea( $input ) {
+function avis_lite_sanitize_textarea( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
 }
 
-function avis_sanitize_on_off( $input ) {
+function avis_lite_sanitize_on_off( $input ) {
 	$valid = array(
-		'on' => __('ON', 'avis' ),
-		'off'=> __('OFF', 'avis' ),
+		'on' => __('ON', 'avis-lite' ),
+		'off'=> __('OFF', 'avis-lite' ),
     );
  
     if ( array_key_exists( $input, $valid ) ) {
@@ -342,7 +325,7 @@ function avis_sanitize_on_off( $input ) {
     }
 }
 
-function avis_active_home_feature_sec( $control ) {
+function avis_lite_active_home_feature_sec( $control ) {
 	if ( $control->manager->get_setting('avis_home_feature_sec')->value() == 'on' && is_front_page() ) {
 		return true;
 	} else {

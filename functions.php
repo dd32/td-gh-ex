@@ -24,63 +24,57 @@
 /********************************************************
  INCLUDE REQUIRED FILE FOR THEME (PLEASE DON'T REMOVE IT)
 *********************************************************/
-/**
- * THEMENAME & SHORTNAME	
- */
-
-$avis_shortname = 'avis';	
-$avis_themename = 'Avis';	
  
 /**
  * FUNTION TO ADD CSS CLASS TO BODY
  */
-function avis_add_class( $classes ) {
+function avis_lite_add_class( $classes ) {
 	if ( 'page' == get_option( 'show_on_front' ) && ( '' != get_option( 'page_for_posts' ) ) && is_front_page() ) {
 		$classes[] = 'front-page';
 	}
 	return $classes;
 }
-add_filter( 'body_class','avis_add_class' );
+add_filter( 'body_class','avis_lite_add_class' );
 
  
 /**
  * REGISTERS WIDGET AREAS
  */
-function avis_widgets_init() {
+function avis_lite_widgets_init() {
 	register_sidebar(array(
-		'name'          => __( 'Home Featured Sidebar', 'avis' ),
-		'id'            => 'Home Featured Sidebar',
+		'name'          => __( 'Home Featured Sidebar', 'avis-lite' ),
+		'id'            => 'home-featured-sidebar',
 		'before_widget' => '<li id="%1$s" class="avis-containerr %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '',
 		'after_title' => '',
 	));
 	register_sidebar(array(
-		'name'          => __( 'Page Sidebar', 'avis' ),
-		'id'            => 'Page Sidebar',
+		'name'          => __( 'Page Sidebar', 'avis-lite' ),
+		'id'            => 'page-sidebar',
 		'before_widget' => '<li id="%1$s" class="avis-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="avis-title">',
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name'          => __( 'Blog Sidebar', 'avis' ),
-		'id'            => 'Blog Sidebar',
+		'name'          => __( 'Blog Sidebar', 'avis-lite' ),
+		'id'            => 'blog-sidebar',
 		'before_widget' => '<li id="%1$s" class="avis-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="avis-title">',
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name'          => __( 'Footer Sidebar', 'avis' ),
-		'id'            => 'Footer Sidebar',
+		'name'          => __( 'Footer Sidebar', 'avis-lite' ),
+		'id'            => 'footer-sidebar',
 		'before_widget' => '<div id="%1$s" class="avis-footer-container span3 avis-container %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="avis-title avis-footer-title">',
 		'after_title' => '</h3>',
 	));
 }
-add_action( 'widgets_init', 'avis_widgets_init' );
+add_action( 'widgets_init', 'avis_lite_widgets_init' );
 
 /**
  * Sets up theme defaults and registers the various WordPress features that
@@ -94,16 +88,16 @@ add_action( 'widgets_init', 'avis_widgets_init' );
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
 */
-function avis_theme_setup() {
+function avis_lite_theme_setup() {
 	/*
 	 * Makes  available for translation.
 	 *
 	 * Translations can be added to the /languages/ directory.
 	 * If you're building a theme based on Twenty Thirteen, use a find and
-	 * replace to change 'avis' to the name of your theme in all
+	 * replace to change 'avis-lite' to the name of your theme in all
 	 * template files.
 	 */
-	load_theme_textdomain( 'avis', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'avis-lite', get_template_directory() . '/languages' );
 	 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
@@ -137,15 +131,15 @@ function avis_theme_setup() {
 	 */
 	add_theme_support( 'post-formats', array('video', 'gallery', 'quote') );
 	set_post_thumbnail_size( 850, 400, true );
-	add_image_size( 'avis_standard_img',850,400,true);  //standard size
-	add_image_size( 'avis_fullblog_img',1170,400,true); //Full Blog size
+	add_image_size( 'avis_standard_img', 850, 400, true);  //standard size
+	add_image_size( 'avis_fullblog_img', 1170, 400, true); //Full Blog size
 	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'Header' => __( 'Main Navigation', 'avis' ),
+		'Header' => __( 'Main Navigation', 'avis-lite' ),
 	));
 }
-add_action( 'after_setup_theme', 'avis_theme_setup' ); 
+add_action( 'after_setup_theme', 'avis_lite_theme_setup' ); 
 
 /**
  * Add Customizer 

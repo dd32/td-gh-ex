@@ -2,8 +2,6 @@
 /********************************************
  FRAME WORK CODE STARTS HERE
 *********************************************/
-global $avis_themename;
-global $avis_shortname;
 require_once('avis-functions.php');			// PAGINATION, EXCERPT CONTROL ETC.
 require_once('avis-enqueue.php');			// ENQUEUE CSS SCRIPTS
 require_once('avis-breadcrumb.php');		// INCLUDE BREADCRUMB

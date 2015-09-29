@@ -4,12 +4,11 @@
 * Learn more: http://codex.wordpress.org/Template_Hierarchy
 */
 get_header(); ?>
-<?php global $avis_shortname; ?>
 <div class="main-wrapper-item">
 	<div class="container post-wrap"> 
 		<div class="row-fluid">
 			<div id="container" class="span9">
-				<div id="content">
+				<div id="content" role="main">
 					<?php if(have_posts()) : ?>
 					<?php while(have_posts()) : the_post(); ?>
 					<?php get_template_part( 'content', get_post_format() ); ?>
@@ -23,7 +22,7 @@ get_header(); ?>
 			</div>
 			<!-- container --> 
 			<!-- Sidebar -->
-			<div id="sidebar" class="span3">
+			<div id="sidebar" class="span3" role="complementary">
 				<?php get_sidebar(); ?>
 			</div>
 			<!-- Sidebar -->

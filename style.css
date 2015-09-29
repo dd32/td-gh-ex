@@ -1,13 +1,14 @@
 /*
 Theme Name: Avis Lite
-Theme URI: http://www.sketchthemes.com/themes/avis-consulting-business-wordpress-theme/
+Theme URI: https://sketchthemes.com/premium-themes/business-wordpress-theme-for-consulting-agency/
 Description: Avis Lite is an all new clean and brilliant Consulting Business WordPress Theme specially meant for advocate, business consultant, attorney, corporate lawyer, legal consultant and professionals running consultation company or legal office. With the advanced features like Portfolio, Skills, Multi Language Support and Advanced Contact Map Template, Avis Lite is for sure one of the finest themes by SketchThemes for all consultants.Take your consulting business to new high with Avis Lite. Get it now.
-Version: 1.0.1
+Version: 1.0.2
 Author: SketchThemes
 Author URI: http://www.Sketchthemes.com/
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: two-columns, custom-menu, sticky-post, translation-ready,  featured-image-header, featured-images, full-width-template, theme-options, threaded-comments
+Tags: two-columns, custom-menu, sticky-post, translation-ready,  featured-image-header, featured-images, theme-options, threaded-comments
+Text Domain: avis
 
 Avis Lite WordPress Theme, Copyright 2015 SketchThemes.
 Avis Lite WordPress theme is distributed under the terms of the GNU GPL.
@@ -606,7 +607,6 @@ ul.childpages {list-style-type: disc;  margin-left: 20px;  }
 .sticky {}
 .gallery-caption {}
 .screen-reader-text {
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
   display: block;

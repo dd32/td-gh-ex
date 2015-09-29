@@ -18,23 +18,23 @@
 			<?php } ?>
 		</div>
 		<div class="post_inner_wrap clearfix">
-		<?php if(is_sticky($post->ID)) { _e("<div class='sticky-post'>featured</div>",'avis'); } ?>
-			<h1 class="post-title">
+		<?php if(is_sticky($post->ID)) { _e("<div class='sticky-post'>featured</div>",'avis-lite'); } ?>
+			<h2 class="post-title">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 					<?php the_title(); ?>
 				</a>
-			</h1>
+			</h2>
 			<div class="skepost-meta clearfix">			    
 			    <div class="author-img"><?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?></div>
 			    <div class="comment-date">
-				    <div class="comments"><?php _e('by ','avis');?><span class="author-name"><?php the_author_posts_link(); ?></span><?php _e(' with ','avis');?><span class="commentnum"><?php comments_popup_link(__('No Comments','avis'), __('1 Comment ','avis'), __('% Comments ','avis')) ; ?></span></div>
+				    <div class="comments"><?php _e('by ','avis-lite');?><span class="author-name"><?php the_author_posts_link(); ?></span><?php _e(' with ','avis-lite');?><span class="commentnum"><?php comments_popup_link(__('No Comments','avis-lite'), __('1 Comment ','avis-lite'), __('% Comments ','avis-lite')) ; ?></span></div>
 				    <div class="date"><?php the_time('F j, Y') ?></div>
 				</div>
 	        </div>
 			<!-- skepost-meta -->
 	        <div class="skepost">
 				<?php the_excerpt(); ?> 
-				<div class="continue"><a href="<?php the_permalink(); ?>"><?php _e('Read More','avis');?></a></div>		  
+				<div class="continue"><a href="<?php the_permalink(); ?>"><?php _e('Read More','avis-lite');?></a></div>		  
 	        </div>
 	        <!-- skepost -->
         </div>

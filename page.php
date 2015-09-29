@@ -9,19 +9,17 @@
 */
 get_header(); ?>
 
-<?php global $avis_shortname; ?>
-
 <div class="main-wrapper-item"> 
 	<?php if(have_posts()) : ?>
 	<?php while(have_posts()) : the_post(); ?>
 		<div class="page-content default-pagetemp">
 		<div class="container post-wrap">
 			<div class="row-fluid">
-				<div id="content" class="span9">
+				<div id="content" class="span9" role="main">
 					<div class="post" id="post-<?php the_ID(); ?>">
 						<div class="skepost">
 							<?php the_content(); ?>
-							<?php wp_link_pages(__('<p><strong>Pages:</strong> ','avis'), '</p>', __('number','avis')); ?>
+							<?php wp_link_pages(__('<p><strong>Pages:</strong> ','avis-lite'), '</p>', __('number','avis-lite')); ?>
 						</div>
 					<!-- skepost --> 
 					</div>
@@ -33,7 +31,7 @@ get_header(); ?>
 					<?php endwhile; ?>
 					<?php else :  ?>
 						<div class="post">
-							<h2><?php _e('Page Does Not Exist','avis'); ?></h2>
+							<h2><?php _e('Page Does Not Exist','avis-lite'); ?></h2>
 						</div>
 					<?php endif; ?>
 						<div class="clearfix"></div>
@@ -42,7 +40,7 @@ get_header(); ?>
 				<!-- content -->
 
 				<!-- Sidebar -->
-				<div id="sidebar" class="span3">
+				<div id="sidebar" class="span3" role="complementary">
 					<?php get_sidebar('page'); ?>
 				</div>
 				<div class="clearfix"></div>

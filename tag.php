@@ -7,7 +7,6 @@
 
 get_header(); ?>
 
-<?php global $avis_shortname; ?>
 <div class="main-wrapper-item">
 	<div class="container post-wrap"> 
 		<div class="row-fluid">
@@ -27,7 +26,7 @@ get_header(); ?>
 			<!-- #container --> 
 
 			<!-- Sidebar -->
-			<div id="sidebar" class="span3">
+			<div id="sidebar" class="span3" role="complementary">
 				<?php get_sidebar(); ?>
 			</div>
 			<div class="clearfix"></div>

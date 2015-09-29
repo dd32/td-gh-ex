@@ -1,8 +1,7 @@
-<?php global $avis_shortname, $avis_themename, $post;  ?>
 <?php 
 	$_primary_color_scheme ="";
 
-function avis_skeHex2RGB($hexStr, $returnAsString = false, $seperator = ',') {
+function avis_lite_skeHex2RGB($hexStr, $returnAsString = false, $seperator = ',') {
     $hexStr = preg_replace("/[^0-9A-Fa-f]/", '', $hexStr); // Gets a proper hex string
     $rgbArray = array();
     if (strlen($hexStr) == 6) { //If a proper hex code, convert using bitwise operation. No overhead... faster
@@ -29,7 +28,7 @@ function avis_skeHex2RGB($hexStr, $returnAsString = false, $seperator = ',') {
 	$avis_logo_hght = esc_attr( get_theme_mod('avis_logo_height', '40px') );
 	
 	$rgb=array();
-	$rgb = avis_skeHex2RGB($color_scheme);
+	$rgb = avis_lite_skeHex2RGB($color_scheme);
 	$R = $rgb['red'];
 	$G = $rgb['green'];
 	$B = $rgb['blue'];
@@ -37,7 +36,7 @@ function avis_skeHex2RGB($hexStr, $returnAsString = false, $seperator = ',') {
 	$bdrrgbcolor = "rgba(". $R .",". $G .",". $B .",.7)";
 
 
-	$hrgb = avis_skeHex2RGB($_primary_color_scheme);
+	$hrgb = avis_lite_skeHex2RGB($_primary_color_scheme);
 	$hR = $hrgb['red'];
 	$hG = $hrgb['green'];
 	$hB = $hrgb['blue'];
@@ -268,10 +267,3 @@ function avis_skeHex2RGB($hexStr, $returnAsString = false, $seperator = ',') {
 		}
 	}
 </style>
-
-<script type="text/javascript">
-jQuery(document).ready(function(){
-'use strict';
-	jQuery('#menu-main').sktmobilemenu();
-});
-</script> 

@@ -6,49 +6,41 @@
 * #main and #page div elements.
 *
 */
-global $avis_shortname, $avis_themename;
 $avis_facebook  = esc_url( get_theme_mod('avis_fb_url', '#') );
 $avis_flickr    = esc_url( get_theme_mod('avis_fl_url', '#') );
 $avis_linkedin  = esc_url( get_theme_mod('avis_lin_url', '#') );
 $avis_gpluseone = esc_url( get_theme_mod('avis_gplus_url', '#') );
 $avis_twitter   = esc_url( get_theme_mod('avis_tw_url', '#') );
+
 ?>
 	<div class="clearfix"></div>
 </div>
 <!-- #main --> 
 
 <!-- #footer -->
-<div id="footer" class="avis-section">
+<div id="footer" class="avis-section" role="contentinfo">
 	<div class="container">
 		<div class="row-fluid">
 			<div class="second_wrapper">
-				<?php if( is_active_sidebar('Footer Sidebar') ) { ?>	
-					<?php dynamic_sidebar( 'Footer Sidebar' ); ?>
+				<?php if( is_active_sidebar('footer-sidebar') ) { ?>	
+					<?php dynamic_sidebar( 'footer-sidebar' ); ?>
 				<?php } else { ?>
 					<div class="avis-footer-container span3 avis-container widget_archive">
-						<h3 class="avis-title avis-footer-title"><?php _e('Archives','avis'); ?></h3>
+						<h3 class="avis-title avis-footer-title"><?php _e('Archives','avis-lite'); ?></h3>
 						<ul>
 							<?php wp_get_archives(array( 'limit' => 5 )); ?>
 						</ul>
 					</div>
 					<div class="avis-footer-container span3 avis-container widget_archive">
-						<h3 class="avis-title avis-footer-title"><?php _e('Popular Post','avis'); ?></h3>
+						<h3 class="avis-title avis-footer-title"><?php _e('Popular Post','avis-lite'); ?></h3>
 						<ul>
 							<?php wp_get_archives(array( 'limit' => 5 )); ?>
 						</ul>
 					</div>
 					<div class="avis-footer-container span3 avis-container widget_search widget_tag_cloud">
-						<form method="get" id="searchform" action="<?php echo esc_url(home_url('/')); ?>">
-							<div class="searchleft">
-								<input type="text" value="" placeholder="Search" name="s" id="searchbox" class="searchinput">
-							</div>
-							<div class="searchright">
-								<input type="submit" class="submitbutton" value=""><i class="fa fa-search"></i>
-							</div>
-							<div class="clearfix"></div>
-						</form>
+						<?php get_search_form( ); ?>
 						<br/>
-						<h3 class="avis-title avis-footer-title"><?php _e('More Links','avis'); ?></h3>
+						<h3 class="avis-title avis-footer-title"><?php _e('More Links','avis-lite'); ?></h3>
 						<div class="menu-footer-menu-container">
 							<ul id="menu-footer-menu" class="menu">
 								<?php wp_tag_cloud( array('number' => 7) );  ?>
@@ -70,7 +62,7 @@ $avis_twitter   = esc_url( get_theme_mod('avis_tw_url', '#') );
 					if ($r->have_posts()) :
 					?>
 					<div class="avis-footer-container span3 avis-container widget_recent_entries">
-						<h3 class="avis-title avis-footer-title"><?php _e('Top Categories','avis'); ?></h3>
+						<h3 class="avis-title avis-footer-title"><?php _e('Top Categories','avis-lite'); ?></h3>
 						<ul>
 							<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 								<li><a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a></li>
@@ -91,8 +83,7 @@ $avis_twitter   = esc_url( get_theme_mod('avis_tw_url', '#') );
 	<div class="third_wrapper">
 		<div class="container">
 			<div class="row-fluid">
-				<?php $sktURL = 'http://www.sketchthemes.com/'; ?>
-				<div class="copyright span6 alpha omega"> <?php echo wp_kses_post(get_theme_mod('avis_copyright','Copyright &copy; Powered by WordPress')); ?><p><?php if(isset($avis_themename)){ echo $avis_themename; } _e(' By','avis'); ?> <a href="<?php echo $sktURL; ?>" title="Sketch Themes"><?php _e('SketchThemes','avis'); ?></a></p></div>
+				<div class="copyright span6 alpha omega"> <?php echo wp_kses_post(get_theme_mod('avis_copyright', __('Copyright &copy; Powered by WordPress', 'avis-lite') ) ); ?><p><?php _e('Avis Theme By ','avis-lite'); ?><a href="<?php echo esc_url('https://sketchthemes.com/'); ?>" title="SketchThemes">SketchThemes</a></p></div>
 				<div class="owner span6 alpha omega">
 					<!-- Footer Follow Us Section Start -->
 						<div class="social-icons">
@@ -113,7 +104,7 @@ $avis_twitter   = esc_url( get_theme_mod('avis_tw_url', '#') );
 
 </div>
 <!-- #wrapper -->
-	<a href="JavaScript:void(0);" title="Back To Top" id="backtop"></a>
+	<a href="JavaScript:void(0);" title="<?php _e('Back To Top', 'avis-lite'); ?>" id="backtop"></a>
 	<?php wp_footer(); ?>	
 </body>
 </html>

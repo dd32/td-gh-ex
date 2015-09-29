@@ -20,7 +20,7 @@ class avis_breadcrumb_class {
 
         global $post, $options;
 
-        echo '<section class="cont_nav"><div class="cont_nav_inner"><p><a href="' . home_url() . '/">' . __('Home', 'avis') . '</a>';
+        echo '<section class="cont_nav"><div class="cont_nav_inner"><p><a href="' . esc_url( home_url('/') ) . '/">' . __('Home', 'avis-lite') . '</a>';
 
        
 
@@ -33,8 +33,7 @@ class avis_breadcrumb_class {
 
         if (!is_front_page() && is_home()) {
             
-            global $avis_shortname;
-            echo get_theme_mod('avis_blogpage_heading', 'Blog');
+            echo esc_attr( get_theme_mod('avis_blogpage_heading', __('Blog', 'avis-lite') ) );
 
         }
 
@@ -158,7 +157,7 @@ class avis_breadcrumb_class {
 
             $curauth = $wp_query->get_queried_object();	
 
-            return __('Author', 'avis') . ' : ' . $curauth->display_name;
+            return __('Author', 'avis-lite') . ' : ' . $curauth->display_name;
 
         }
 
@@ -166,7 +165,7 @@ class avis_breadcrumb_class {
 
         if (is_tag()) {
 
-            return __('Tag', 'avis') . ' : ' . single_tag_title('', false);
+            return __('Tag', 'avis-lite') . ' : ' . single_tag_title('', false);
 
         }
 
@@ -174,12 +173,14 @@ class avis_breadcrumb_class {
 
         if (is_search()) {
 
-            return __('Search', 'avis');
+            return __('Search', 'avis-lite');
 
         }
 
-		if (is_404()) {            return __('Error 404', 'avis');        }
+		if (is_404()) { 
 
+            return __('Error 404', 'avis-lite');
+        }
 
 
         if (is_year()) {

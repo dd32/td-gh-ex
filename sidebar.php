@@ -6,17 +6,17 @@
 ?>
 <div id="sidebar_2" class="avis_widget">
 	<ul class="skeside">
-		<?php if ( is_active_sidebar('Blog Sidebar') ) { ?>
-			<?php dynamic_sidebar( 'Blog Sidebar' ); ?>
+		<?php if ( is_active_sidebar('blog-sidebar') ) { ?>
+			<?php dynamic_sidebar( 'blog-sidebar' ); ?>
 		<?php } else { ?>
 			<div class="avis-container widget_archive">
-				<h3 class="avis-title"><?php _e('Archives','avis'); ?></h3>
+				<h3 class="avis-title"><?php _e('Archives','avis-lite'); ?></h3>
 				<ul>
 					<?php wp_get_archives(array( 'limit' => 5 )); ?>
 				</ul>
 			</div>
 			<div class="avis-container widget_archive">
-				<h3 class="avis-title"><?php _e('Popular Post','avis'); ?></h3>
+				<h3 class="avis-title"><?php _e('Popular Post','avis-lite'); ?></h3>
 				<ul>
 					<?php wp_get_archives(array( 'limit' => 5 )); ?>
 				</ul>
@@ -32,7 +32,7 @@
 					<div class="clearfix"></div>
 				</form>
 				<br/>
-				<h3 class="avis-title"><?php _e('More Links','avis'); ?></h3>
+				<h3 class="avis-title"><?php _e('More Links','avis-lite'); ?></h3>
 				<div class="menu-container">
 					<ul class="menu">
 						<?php wp_tag_cloud( array('number' => 7) );  ?>
@@ -54,7 +54,7 @@
 			if ($r->have_posts()) :
 			?>
 			<div class="avis-container widget_recent_entries">
-				<h3 class="avis-title"><?php _e('Top Categories','avis'); ?></h3>
+				<h3 class="avis-title"><?php _e('Top Categories','avis-lite'); ?></h3>
 				<ul>
 					<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 						<li><a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a></li>

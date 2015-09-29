@@ -31,7 +31,8 @@ return methods.init();
 //-----------------------------------------------------
 jQuery(document).ready(function(){
 	'use strict';
-	 jQuery('#menu-main').superfish();
+	jQuery('#menu-main').sktmobilemenu();
+	jQuery('#menu-main').superfish();
 	jQuery('#menu-main li.current-menu-item,#menu-main li.current_page_item,#menu-main li.current-menu-parent,#menu-main li.current-menu-ancestor,#menu-main li.current_page_ancestor').each(function(){
 		jQuery(this).prepend('<span class="item_selected"></span>');
 	});

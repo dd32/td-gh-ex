@@ -3,7 +3,6 @@
 * The Header for our theme.
 */
 ?><!DOCTYPE html>
-<?php global $avis_shortname, $avis_themename; ?>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -52,7 +51,7 @@
 								
 								<!-- .top-nav-menu --> 
 								<div class="top-nav-menu span8">
-									<div class="top-nav-menu">
+									<div class="top-nav-menu" role="navigation">
 										<?php 
 											if( function_exists( 'has_nav_menu' ) && has_nav_menu( 'Header' ) ) {
 												wp_nav_menu(array( 'container_class' => 'avis-menu', 'container_id' => 'skenav', 'menu_id' => 'menu-main','menu' => 'Primary Menu','theme_location' => 'Header' )); 
@@ -90,40 +89,40 @@
 								<?php if( is_archive() ) {
 
 										if ( is_day() ) :
-											printf( __( 'Daily Archives : <span>%s</span>', 'avis' ), get_the_date() );
+											printf( __( 'Daily Archives : <span>%s</span>', 'avis-lite' ), get_the_date() );
 										elseif ( is_month() ) :
-											printf( __( 'Monthly Archives : <span>%s</span>', 'avis' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'avis' ) ) );
+											printf( __( 'Monthly Archives : <span>%s</span>', 'avis-lite' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'avis-lite' ) ) );
 										elseif ( is_year() ) :
-											printf( __( 'Yearly Archives : <span>%s</span>', 'avis' ), get_the_date( _x( 'Y', 'yearly archives date format', 'avis' ) ) );
+											printf( __( 'Yearly Archives : <span>%s</span>', 'avis-lite' ), get_the_date( _x( 'Y', 'yearly archives date format', 'avis-lite' ) ) );
 										else :
-											_e( 'Blog Archives', 'avis' );
+											_e( 'Blog Archives', 'avis-lite' );
 										endif;
 
 									} else if (is_author()) {
 
 										$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-									    _e('Author Archives : ','avis'); echo $curauth->display_name;
+									    _e('Author Archives : ','avis-lite'); echo $curauth->display_name;
 
 
 									} elseif (is_category()) { 
 
-										printf( __( 'Category Archives : %s', 'avis' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+										printf( __( 'Category Archives : %s', 'avis-lite' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
 									} elseif (is_search()) {
 
-										printf( __( 'Search Results for : %s', 'avis' ), '<span>' . get_search_query() . '</span>' );
+										printf( __( 'Search Results for : %s', 'avis-lite' ), '<span>' . get_search_query() . '</span>' );
 
 									} elseif (is_tag()) {
 
-										printf( __( 'Tag Archives : %s', 'avis' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+										printf( __( 'Tag Archives : %s', 'avis-lite' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
 									} elseif (is_home()) {
 
-           								echo get_theme_mod('avis_blogpage_heading', 'Blog');
+           								echo esc_attr( get_theme_mod('avis_blogpage_heading', __('Blog', 'avis-lite') ) );
 
 									} elseif (is_404()) {
 
-										_e('404', 'avis');
+										_e('404', 'avis-lite');
 
 									} else{ 
 

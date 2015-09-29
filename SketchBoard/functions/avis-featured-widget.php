@@ -9,10 +9,10 @@ class AvisFeaturedBox extends WP_Widget {
     * Register widget with WordPress.
     */
     function __construct() {
-        $widget_ops = array('classname' => 'mid-box span4 avis_start_animation  fade_in_hide element_fade_in', 'description' => __('Avis Lite Themes widget for Featured Box','avis') );
+        $widget_ops = array('classname' => 'mid-box span4 avis_start_animation  fade_in_hide element_fade_in', 'description' => __('Avis Lite Themes widget for Featured Box','avis-lite') );
         parent::__construct(
             'AvisFeaturedBox', // Base ID
-            __('Featured Box - Avis Lite','avis'), // Name
+            __('Featured Box - Avis Lite','avis-lite'), // Name
            $widget_ops ); // Args
     }
     
@@ -45,7 +45,7 @@ class AvisFeaturedBox extends WP_Widget {
                             <h4><a href="<?php echo $fb_link; ?>"><?php if($title) { echo $title; } ?></a></h4>
                         </div>
                     </div>
-                    <div class="iconbox-content"><?php if($fb_content) { echo avis_slider_limit_words($fb_content, '40'); } ?></div>          
+                    <div class="iconbox-content"><?php if($fb_content) { echo avis_lite_limit_words($fb_content, '40'); } ?></div>          
                     <div class="clearfix"></div>        
                 </div>
 
@@ -91,13 +91,13 @@ class AvisFeaturedBox extends WP_Widget {
 		if(isset($instance['fb_content'])){$fb_content = esc_attr($instance['fb_content']);}			
 		if(isset($instance['fb_link'])){$fb_link = esc_attr($instance['fb_link']);}
         ?>
-         <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','avis'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php if(isset($title)){echo $title;} else { echo '';}  ?>" /></label></p>
+         <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','avis-lite'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php if(isset($title)){echo $title;} else { echo '';}  ?>" /></label></p>
 
-         <p><label for="<?php echo $this->get_field_id('fb_icon_class'); ?>"><?php _e('Featured Box Icon Class:','avis'); ?> <input class="widefat" id="<?php echo $this->get_field_id('fb_icon_class'); ?>" name="<?php echo $this->get_field_name('fb_icon_class'); ?>" type="text" value="<?php if(isset($fb_icon_class)){echo $fb_icon_class;} else { echo '';} ?>" /></label></p>
+         <p><label for="<?php echo $this->get_field_id('fb_icon_class'); ?>"><?php _e('Featured Box Icon Class:','avis-lite'); ?> <input class="widefat" id="<?php echo $this->get_field_id('fb_icon_class'); ?>" name="<?php echo $this->get_field_name('fb_icon_class'); ?>" type="text" value="<?php if(isset($fb_icon_class)){echo $fb_icon_class;} else { echo '';} ?>" /></label></p>
 
-         <p><label for="<?php echo $this->get_field_id('fb_content'); ?>"><?php _e('Featured Box Content:','avis'); ?> <textarea rows="4" cols="50" class="widefat" id="<?php echo $this->get_field_id('fb_content'); ?>" name="<?php echo $this->get_field_name('fb_content'); ?>"><?php if(isset($fb_content)){echo $fb_content;} else { echo '';} ?></textarea></label></p>
+         <p><label for="<?php echo $this->get_field_id('fb_content'); ?>"><?php _e('Featured Box Content:','avis-lite'); ?> <textarea rows="4" cols="50" class="widefat" id="<?php echo $this->get_field_id('fb_content'); ?>" name="<?php echo $this->get_field_name('fb_content'); ?>"><?php if(isset($fb_content)){echo $fb_content;} else { echo '';} ?></textarea></label></p>
 
-		 <p><label for="<?php echo $this->get_field_id('fb_link'); ?>"><?php _e('Featured Box Link:','avis'); ?> <input class="widefat" id="<?php echo $this->get_field_id('fb_link'); ?>" name="<?php echo $this->get_field_name('fb_link'); ?>" type="text" value="<?php if(isset($fb_link)){echo $fb_link;} else { echo '';}?>" /></label></p>	
+		 <p><label for="<?php echo $this->get_field_id('fb_link'); ?>"><?php _e('Featured Box Link:','avis-lite'); ?> <input class="widefat" id="<?php echo $this->get_field_id('fb_link'); ?>" name="<?php echo $this->get_field_name('fb_link'); ?>" type="text" value="<?php if(isset($fb_link)){echo $fb_link;} else { echo '';}?>" /></label></p>	
 
          <?php 
     }
