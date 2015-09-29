@@ -399,7 +399,7 @@ span[class*=tc-icon]:before {
 	overflow-y: auto;
 }
 li[id*="customize-control-"] {
-	margin-bottom: 8px;
+	margin: 8px 0;
 }
 #customize-info .accordion-section-title {
 	padding-bottom: 0px;
@@ -421,9 +421,14 @@ li[id*="customize-control-"] {
 	right: 10px;
 	opacity:0.7;
 }
-.rtl .control-section.control-panel > .accordion-section-title:after {
-  left: 8px;
-  right: initial;
+.rtl .control-section.control-panel .accordion-section-title:after {
+	-webkit-transition: left .3s ease-in-out, opacity .3s ease-in-out;
+	-moz-transition: left .3s ease-in-out, opacity .3s ease-in-out;
+	-ms-transition: left .3s ease-in-out, opacity .3s ease-in-out;
+	-o-transition: left .3s ease-in-out, opacity .3s ease-in-out;
+	transition: left .3s ease-in-out, opacity .3s ease-in-out;
+	left: 10px;
+	right: initial;
 }
 #customize-theme-controls .control-section.control-panel h3.accordion-section-title:hover:after ,  #customize-theme-controls .control-section.control-panel h3.accordion-section-title:focus:after {
 	right: 8px;
@@ -472,7 +477,7 @@ li[id*="customize-control-"] {
 	text-transform: uppercase;
 	/* text-shadow: 0 1px 0 #FFF; */
 	margin: 1em 0em 5px 0em;
-	font-size: 14px!important;
+	font-size: 15px!important;
 	border-bottom: 1px dotted #1ABC9C;
 	padding-bottom: 5px;
   text-align: center;
@@ -786,50 +791,50 @@ li#customize-control-tc_theme_options-tc_custom_css textarea {
 
 
 /* SELECT 2 SPECIFICS */
-.wp-customizer .select2-container {
+body .select2-container {
 	width: 100%
 }
-.wp-customizer .select2-drop {
+body .select2-drop {
 	z-index: 999999;
 }
-.wp-customizer .select2-drop-active {
+body .select2-drop-active {
     border: 1px solid #1ABC9C;
 }
-.wp-customizer .select2-drop.select2-drop-above.select2-drop-active {
+body .select2-drop.select2-drop-above.select2-drop-active {
     border-top: 1px solid #1ABC9C;
 }
-.wp-customizer .select2-container-active .select2-choices {
+body .select2-container-active .select2-choices {
     border: 1px solid #1ABC9C;
 }
-.wp-customizer .select2-container-multi.select2-container-active .select2-choices {
+body .select2-container-multi.select2-container-active .select2-choices {
     border: 1px solid #1ABC9C;
 }
-.wp-customizer .select2-container-active .select2-choice,
-.wp-customizer .select2-container-active .select2-choices {
+body .select2-container-active .select2-choice,
+body .select2-container-active .select2-choices {
     border: 1px solid #1ABC9C;
 }
-.wp-customizer .select2-container .select2-choice > .select2-chosen {
+body .select2-container .select2-choice > .select2-chosen {
 	margin-right: 0px;
 }
-.wp-customizer .select2-container .select2-choice {
+body .select2-container .select2-choice {
 	padding: 0px;
 }
-.wp-customizer li.select2-results-dept-0.select2-result.select2-result-selectable {
+body li.select2-results-dept-0.select2-result.select2-result-selectable {
 	padding: 0;
 }
-.wp-customizer .select2-results .select2-result-label {
+body .select2-results .select2-result-label {
 	padding: 0;
 }
-.wp-customizer .select2-results .select2-highlighted {
+body .select2-results .select2-highlighted {
     background: #eee;
 }
-.wp-customizer .select2-results li em {
+body .select2-results li em {
     background: #F4F4F4;
 }
 .select2-results .tc-select2-skin-color {
 	padding: 8px 0px;
 }
-.wp-customizer .select2-results {
+body .select2-results {
 	max-height: 360px
 }
 .tc-select2-skin-color {
@@ -954,7 +959,14 @@ li#customize-control-tc_theme_options-tc_custom_css textarea {
   font-weight: bold;
   color: #fff;
 }
-
+.tc-in-control-cta-wrap .tc-notice-ext-icon {
+  font-size: 17px;
+  text-decoration: none;
+}
+.tc-in-control-cta-wrap .tc-notice-inline-link {
+  color: #fff;
+  text-decoration: underline!important;
+}
 .tc-cta .tc-cta-btn:hover {
   background: #1B8D71;
   color: #FFF;
@@ -992,6 +1004,10 @@ li#customize-control-tc_theme_options-tc_custom_css textarea {
 .in-sub-panel #tc-donate-customizer,
 .in-sub-panel .tc-cta-wrap {
   left: -450px;
+}
+.rtl .in-sub-panel #tc-donate-customizer,
+.rtl .in-sub-panel .tc-cta-wrap {
+  right: -450px;
 }
 .tc-grid-control-section {
   width: 100%;

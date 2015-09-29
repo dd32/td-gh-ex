@@ -260,12 +260,12 @@ if ( ! class_exists( 'TC_init' ) ) :
 
           //Default sidebar widgets
           $this -> sidebar_widgets    = array(
-            'right'         => array(
-                            'name'                 => __( 'Right Sidebar' , 'customizr' ),
-                            'description'          => __( 'Appears on posts, static pages, archives and search pages' , 'customizr' )
-            ),
             'left'          => array(
                             'name'                 => __( 'Left Sidebar' , 'customizr' ),
+                            'description'          => __( 'Appears on posts, static pages, archives and search pages' , 'customizr' )
+            ),
+            'right'         => array(
+                            'name'                 => __( 'Right Sidebar' , 'customizr' ),
                             'description'          => __( 'Appears on posts, static pages, archives and search pages' , 'customizr' )
             )
           );//end of array
@@ -513,7 +513,7 @@ if ( ! class_exists( 'TC_init' ) ) :
       function tc_register_menus() {
         /* This theme uses wp_nav_menu() in one location. */
         register_nav_menu( 'main' , __( 'Main Menu' , 'customizr' ) );
-        register_nav_menu( 'secondary' , __( 'Secondary Menu' , 'customizr' ) );
+        register_nav_menu( 'secondary' , __( 'Secondary (horizontal) Menu' , 'customizr' ) );
       }
 
 

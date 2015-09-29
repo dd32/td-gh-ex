@@ -4,7 +4,59 @@
  * @since Customizr 1.0
  */
 (function (wp, $, _) {
-  var api = wp.customize;
+  var api = wp.customize,
+      $_nav_section_container,
+      translatedStrings = TCControlParams.translatedStrings || {};
+
+  api.bind( 'ready' , function() {
+    _setControlVisibilities();
+  } );
+
+
+  //FIX FOR CONTROL VISIBILITY LOST ON PREVIEW REFRESH #1
+  //This solves the problem of control visiblity settings being lost on preview refresh since WP 4.3
+  //this overrides the wp method only for the control instances
+  //it check if there's been a customizations
+  //=> args.unchanged is true for all cases, for example when api.previewer.loading and the preview send 'ready'created during the frame synchronisation
+  api.Control.prototype.onChangeActive = function ( active, args ) {
+    if ( args.unchanged )
+      return;
+    if ( this.container[0] && ! $.contains( document, this.container[0] ) ) {
+      // jQuery.fn.slideUp is not hiding an element if it is not in the DOM
+      this.container.toggle( active );
+      if ( args.completeCallback ) {
+        args.completeCallback();
+      }
+    } else if ( active ) {
+      this.container.slideDown( args.duration, args.completeCallback );
+    } else {
+      this.container.slideUp( args.duration, args.completeCallback );
+    }
+  };
+
+  /* Multiple Picker */
+  /**
+   * @constructor
+   * @augments wp.customize.Control
+   * @augments wp.customize.Class
+   */
+  api.TCMultiplePickerControl = api.Control.extend({
+    ready: function() {
+      var control  = this,
+          _select  = this.container.find('select');
+
+      //handle case when all choices become unselected
+      _select.on('change', function(e){
+        if ( 0 === $(this).find("option:selected").length ) 
+          control.setting.set([]);    
+      });
+    }    
+  });
+  $.extend( api.controlConstructor, {
+    tc_multiple_picker : api.TCMultiplePickerControl    
+  });
+
+
 
   /**
    * @constructor
@@ -69,10 +121,76 @@
   });
 
 
+
+
+  //bind all actions to wp.customize ready event
+  //map each setting with its dependencies
+  var _setControlVisibilities = function() {
+    _.map( _controlDependencies , function( opts , setId ) {
+      _prepare_visibilities( setId, opts );
+    });
+
+    //additional dependencies
+    _handle_grid_dependencies();
+    _header_layout_dependency();
+
+    //favicon note on load and on change(since wp 4.3)
+    _handleFaviconNote();
+
+    //nav section visibilities
+    //=> backward compat if api.section not defined
+    if ( 'function' == typeof api.section ) {
+      $_nav_section_container = api.section('nav').container;
+      //on nav section open
+      api.section('nav').expanded.callbacks.add( function() {
+        _hideAllmenusActions( api('tc_theme_options[tc_hide_all_menus]').get() );
+      });//add()
+    } else {
+      $_nav_section_container = $('li#accordion-section-nav');
+      //on nav section open
+      $_nav_section_container.on( 'click keydown', '.accordion-section-title', function(event) {
+        //special treatment for click events
+        if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
+          return;
+        }
+        event.preventDefault(); // Keep this AFTER the key filter above)
+
+        _hideAllmenusActions( api('tc_theme_options[tc_hide_all_menus]').get() );
+      });//on()
+    }//else
+
+    //specific callback for the tc_hide_all_menus setting
+    api('tc_theme_options[tc_hide_all_menus]').callbacks.add( _hideAllmenusActions );
+  };
+
+
   /*
   * Main control dependencies object
   */
   var _controlDependencies = {
+    //we have to show restrict blog/home posts when
+    //1. show page on front and a page of posts is selected
+    //2, show posts on front
+    'page_for_posts' : {
+       controls: [
+         'tc_blog_restrict_by_cat'    
+       ],
+       callback : function (to) {
+         return '0' !== to;  
+       },
+    },
+    'show_on_front' : {
+      controls: [
+        'tc_blog_restrict_by_cat'    
+      ],
+      callback : function (to) {
+        if ( 'posts' == to )
+          return true;
+        if ( 'page' == to )
+          return '0' !== api( _build_setId('page_for_posts') ).get() ;
+        return false;
+      },
+    },
     'tc_show_featured_pages': {
       controls: TCControlParams.FPControls,
       callback: function (to) {
@@ -85,10 +203,57 @@
         'tc_slider_delay',
         'tc_slider_default_height',
         'tc_slider_default_height_apply_all',
+        'tc_slider_change_default_img_size',
+        'tc_posts_slider_number',
+        'tc_posts_slider_type',
+        'tc_posts_slider_title',
+        'tc_posts_slider_text',
+        'tc_posts_slider_link',
+        'tc_posts_slider_button_text'
+      ],
+      callback: function (to, targetSetId) {
+        //posts slider options must be hidden when the posts slider not choosen
+        if ( targetSetId.indexOf('tc_posts_slider_') > -1 )
+          return 'tc_posts_slider' == to;
+
+        //if user select the post slider option, append a notice in the label element
+        var $_front_slider_container = api.control( _build_setId('tc_front_slider') ).container;
+        if ( 'tc_posts_slider' == to ) {
+          var $_label = $( 'label' , $_front_slider_container );
+          if ( 0 !== $_label.length && ! $('.tc-notice' , $_label ).length ) {
+            var $_notice = $('<span>', { class: 'tc-notice', html : translatedStrings.postSliderNote || '' } );
+            $_label.append( $_notice );
+          } else {
+            $('.tc-notice' , $_label ).show();
+          }
+        } else {
+          if ( 0 !== $( '.tc-notice' , $_front_slider_container ).length )
+            $( '.tc-notice' , $_front_slider_container ).hide();
+        }
+        return '0' !== to;
+      }//callback
+    },
+    'tc_slider_default_height' : {
+      controls: [
+        'tc_slider_default_height_apply_all',
         'tc_slider_change_default_img_size'
       ],
+      callback: function (to, targetSetId) {
+        //slider height options must be hidden is height = default height (500px), unchanged by user
+        var _defaultHeight = TCControlParams.defaultSliderHeight || 500;
+        return _defaultHeight != to;
+      }
+    },
+    'tc_posts_slider_link' : {
+      controls: [
+        'tc_posts_slider_button_text'
+      ],
       callback: function (to) {
-        return '0' !== to;
+        return to.indexOf('cta') > -1;
+      },
+      //display dependant if master setting value == value
+      cross: {
+        tc_posts_slider_button_text : { master : 'tc_front_slider' , callback : function (to) { return 'tc_posts_slider' == to; } },
       }
     },
     'tc_post_list_grid' : {
@@ -349,8 +514,12 @@
         ],
         //the menu style must be aside for secondary menu controls
         callback: function (to, targetSetId, changedSetId) {
+          //second menu speicifics
           if ( _.contains( ['nav_menu_locations[secondary]', 'tc_second_menu_resp_setting'], targetSetId ) )
             return '1' == to && 'aside' == api( _build_setId( 'tc_menu_style' )).get();
+          //effects common to regular menu and second horizontal menu
+          if ( _.contains( ['tc_menu_submenu_fade_effect', 'tc_menu_submenu_item_move_effect'], targetSetId ) )
+            return ( '1' == to && 'aside' == api( _build_setId( 'tc_menu_style' )).get() ) || ('1' != to && 'aside' != api( _build_setId( 'tc_menu_style' )).get() );
           return '1' == to;
         }
       }
@@ -480,7 +649,9 @@
         //1) return true if we must show, false if not.
         _bool = _check_cross_dependant( _params.setId, depSetId ) && _bool;
         control.container.toggle( _bool );
-      };
+      };//_visibility()
+
+
 
       _visibility( _params.setting.get() );
       _params.setting.bind( _visibility );
@@ -531,7 +702,7 @@
   //change the 'nav' section controls opacity based on the booleand value of a setting (tc_theme_options[tc_hide_all_menus])
   var _hideAllmenusActions = function(to, from, setId) {
     setId = setId ||'tc_theme_options[tc_hide_all_menus]';
-    var $_controls = api.section('nav').container.find('li.customize-control').not( api.control(setId).container );
+    var $_controls = $_nav_section_container.find('li.customize-control').not( api.control(setId).container );
     $_controls.each( function() {
       if ( $(this).is(':visible') )
         $(this).fadeTo( 500 , true === to ? 0.5 : 1); //.fadeTo() duration, opacity, callback
@@ -539,30 +710,43 @@
   };
 
 
-  //bind all actions to wp.customize ready event
-  //map each setting with its dependencies
-  api.bind( 'ready' , function() {
-    _.map( _controlDependencies , function( opts , setId ) {
-        _prepare_visibilities( setId, opts );
-    });
-    //additional dependencies
-    _handle_grid_dependencies();
-    _header_layout_dependency();
+  /**
+  * Fired on api ready
+  * May change the site_icon description on load
+  * May add a callback to site_icon
+  * @return void()
+  */
+  var _handleFaviconNote = function() {
+    //do nothing if (||)
+    //1) WP version < 4.3 where site icon has been introduced
+    //2) User had not defined a Customizr favicon
+    //3) User has already set WP site icon
+    if ( ! api.has('site_icon') || 0 === + api( _build_setId('tc_fav_upload') ).get() || + api('site_icon').get() > 0 )
+      return;
 
-    //on nav section open
-    api.section('nav').container.on( 'click keydown', '.accordion-section-title', function(e) {
-      //special treatment for click events
-      if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
-        return;
+    var _oldDes     = api.control('site_icon').params.description;
+        _newDes     = ['<strong>' , translatedStrings.faviconNote || '' , '</strong><br/><br/>' ].join('') + _oldDes;
+
+    //on api ready
+    _printFaviconNote(_newDes );
+
+    //on site icon change
+    api('site_icon').callbacks.add( function(to) {
+      if ( +to > 0 ) {
+        //reset the description to default
+        api.control('site_icon').container.find('.description').text(_oldDes);
+        //reset the previous customizr favicon setting
+        api( _build_setId('tc_fav_upload') ).set("");
       }
-      event.preventDefault(); // Keep this AFTER the key filter above)
+      else {
+        _printFaviconNote(_newDes );
+      }
+    });
+  };
 
-      _hideAllmenusActions( api('tc_theme_options[tc_hide_all_menus]').get() );
-    });//on()
-
-    //specific callback when for the tc_hide_all_menus setting
-    api('tc_theme_options[tc_hide_all_menus]').callbacks.add( _hideAllmenusActions );
-
-  } );
+  //Add a note to the WP control description if user has already defined a favicon with Customizr
+  var _printFaviconNote = function( _newDes ) {
+    api.control('site_icon').container.find('.description').html(_newDes);
+  };
 
 })( wp, jQuery, _);

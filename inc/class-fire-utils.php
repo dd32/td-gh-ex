@@ -21,6 +21,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
       public $db_options;
       public $options;//not used in customizer context only
       public $is_customizing;
+      public $tc_options_prefixes;
 
       function __construct () {
         self::$inst =& $this;
@@ -65,6 +66,8 @@ if ( ! class_exists( 'TC_utils' ) ) :
       * @since Customizr 3.2.3
       */
       function tc_init_properties() {
+        //all customizr theme options start by "tc_" by convention
+        $this -> tc_options_prefixes = apply_filters('tc_options_prefixes', array('tc_') );
         $this -> is_customizing   = TC___::$instance -> tc_is_customizing();
         $this -> db_options       = false === get_option( TC___::$tc_option_group ) ? array() : (array)get_option( TC___::$tc_option_group );
         $this -> default_options  = $this -> tc_get_default_options();
@@ -177,6 +180,22 @@ if ( ! class_exists( 'TC_utils' ) ) :
 
 
 
+      /**
+      * Helper
+      * Returns wheter or not the option is a theme/addon option
+      *
+      * @return bool
+      *
+      * @package Customizr
+      * @since Customizr 3.4.9
+      */
+      function tc_is_customizr_option( $option_key ) {
+        $_is_tc_option = in_array( substr( $option_key, 0, 3 ), $this -> tc_options_prefixes ); 
+        return apply_filters( 'tc_is_customizr_option', $_is_tc_option , $option_key );       
+      }
+
+
+
      /**
       * Returns the default options array
       *
@@ -228,8 +247,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
 
         foreach ($map['add_setting_control'] as $key => $options) {
           //check it is a customizr option
-          //all customizr theme options start by "tc_" by convention
-          if(  'tc_' !== substr( $key, 0, 3 ) )
+          if(  ! $this -> tc_is_customizr_option( $key ) )
             continue;
 
           $option_name = $key;
@@ -719,6 +737,20 @@ if ( ! class_exists( 'TC_utils' ) ) :
       return compact( 'ext', 'type' );
     }
 
+    /**
+    * Check whether a category exists.
+    * (wp category_exists isn't available in pre_get_posts)
+    * @since 3.4.10
+    *
+    * @see term_exists()
+    *
+    * @param int $cat_id.
+    * @return bool
+    */
+    public function tc_category_id_exists( $cat_id ) {
+      return term_exists( (int) $cat_id, 'category');
+    }
+
 
 
     /**
@@ -920,6 +952,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
         array(
           'defaults',
           'tc_sliders',
+          'tc_blog_restrict_by_cat',
           'last_update_notice',
           'last_update_notice_pro'
         )

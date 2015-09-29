@@ -9,8 +9,8 @@ Most important : enjoy it!
 
 ######## Demo, Documentation, FAQs and Support #########
 * DEMO : http://demo.presscustomizr.com/
-* DOCUMENTATION : http://doc.presscustomizr.com/customizr
-* FAQs : http://doc.presscustomizr.com/customizr/faq
+* DOCUMENTATION : http://docs.presscustomizr.com/collection/76-customizr-theme
+* FAQs : http://docs.presscustomizr.com/category/90-faq-and-common-issues
 * SUPPORT : https://wordpress.org/support/theme/customizr
 * SNIPPETS : http://presscustomizr.com/code-snippets/
 * HOOKS API : http://presscustomizr.com/customizr/hooks-api/
@@ -40,6 +40,54 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.4.10 September 29th 2015 =
+* added: new option, filter home/blog posts by categories
+* added : info box at the bottom of the slides table on how to add another slide
+* added : in customizer > Front Page > Slider, make some "sub" slider height options dependant on the actual user define slider height
+* updated: translation he_IL.po
+* fix: let sticky-footer detect the golden-ratio is applied to the grid
+* fix: exclude links wrapped in an underlined span from the eligible externals
+* fix: sticky-header: logo re-size on scrolling when needed fixes #314
+* fix: avoid navbar-wrapper overlapping title/logo in mobiles when no site-description is shown for ww<767px
+
+= 3.4.9 September 20th 2015 =
+* added: New feature - display a slider of recent posts on home
+* fix: RTL initial position of the small arrow in the accordion(JTS)
+* fix: broken update notice in edit attachment page fixes issue #248
+* fix: display slider notice only on the demo slider fixes issue #251
+* fix: Add back the Google Font img in the Customizer fixes issue #285
+* fix: Woocommerce's product tabs not showing if Smooth scroll on click enabled Fixes issue #258 
+* fix: Allow the expanded grid title to be translated with qtranslate 
+* fix: include pages in search results when including cpt in post lists Fixes issue #280
+* fix: expand last published sticky post in the grid
+* fix: disable link smoothscroll in woocommerce contexts See issue #258
+
+= 3.4.8 August 24th 2015 =
+* fix : issue #242 https://github.com/Nikeo/customizr/issues/242 : Effects common to regular menu and second horizontal menu where not visible when the regular menu was selected
+* fix: qTranslate-X compat code improved (issue : https://wordpress.org/support/topic/featured-pages-and-qtranslate?replies=4 )
+
+= 3.4.7 August 23rd 2015 =
+* update : translations files
+* fix : replace Customizr favicon by the WP 4.3 site icon. Handle the transition on front end and in the customizer for users already using the Customizr favicon. Retro compat : not applied if WP version < 4.3 + Check if function_exists('has_site_icon')
+* fix : for control visibility bug since wp4.3
+* add : a boolean filter to control the colophon back to top link
+* fix : properly remove box around navbar when no menu is set Bug reported here: https://wordpress.org/support/topic/dispay-menu-in-a-box?replies=6
+* fix : do not update the post meta as soon as you enter the add post page
+
+= 3.4.6 August 4th 2015 =
+* fixed : polylang compat code according to the new customizer settings
+* fixed : use original sizes (full) for logo and favicon attachments
+
+= 3.4.5 July 31st 2015 =
+* fixed : various css issues for the vertical menu items
+
+= 3.4.3 July 31st 2015 =
+* fixed : minor css adjustements for the menus
+* added : a dismissable help notice under the main regular menu, on front-end, for logged-in admin users (edit options cap)
+
+= 3.4.2 July 30th 2015 =
+* fixed : expand on click not working for the secondary menu.
+
 = 3.4.1 July 30th 2015 =
 * fix : a missing text domain for a translation string
 

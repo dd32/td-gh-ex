@@ -16,7 +16,10 @@ var TCParams = TCParams || {
   centerSliderImg : 1,
 	SmoothScroll: { Enabled : 1 , Options : {} },
 	anchorSmoothScroll: "linear",
-  anchorSmoothScrollExclude : ['[class*=edd]', '.tc-carousel-control', '.carousel-control', '[data-toggle="modal"]', '[data-toggle="dropdown"]', '[data-toggle="tooltip"]', '[data-toggle="popover"]', '[data-toggle="collapse"]', '[data-toggle="tab"]', '[class*=upme]', '[class*=um-]'],
+  anchorSmoothScrollExclude : {
+      simple : ['[class*=edd]', '.tc-carousel-control', '.carousel-control', '[data-toggle="modal"]', '[data-toggle="dropdown"]', '[data-toggle="tooltip"]', '[data-toggle="popover"]', '[data-toggle="collapse"]', '[data-toggle="tab"]', '[class*=upme]', '[class*=um-]'],
+      deep : { classes : [], ids : [] }
+    },
 	stickyCustomOffset: { _initial : 0, _scrolling : 0, options : { _static : true, _element : "" } },
 	stickyHeader: 1,
 	dropdowntoViewport: 1,
@@ -24,7 +27,7 @@ var TCParams = TCParams || {
   extLinksStyle :1,
   extLinksTargetExt:1,
   extLinksSkipSelectors: {
-    classes : ['btn'],
+    classes : ['btn', 'button'],
     ids:[]
   },
   dropcapEnabled:1,
@@ -36,12 +39,15 @@ var TCParams = TCParams || {
     ids : []
   },
   imgSmartLoadEnabled:0,
-  imgSmartLoadOpts: {},
+  imgSmartLoadOpts: {
+    parentSelectors: ['.article-container', '.__before_main_wrapper', '.widget-front'],
+    opts : { excludeImg: ['.tc-holder-img'] }
+  },
   goldenRatio : 1.618,
   gridGoldenRatioLimit : 350,
   isSecondMenuEnabled : 0,
   secondMenuRespSet : 'in-sn-before'
-}
+};
 // addEventListener Polyfill ie9- http://stackoverflow.com/a/27790212
 window.addEventListener = window.addEventListener || function (e, f) { window.attachEvent('on' + e, f); };
 
@@ -2848,6 +2854,7 @@ var TCParams = TCParams || {};
       defaults = {
         load_all_images_on_first_scroll : false,
         attribute : 'data-src',
+        excludeImg : '',
         threshold : 200,
         fadeIn_options : { duration : 400 },
         delaySmartLoadEvent : 0
@@ -2866,7 +2873,8 @@ var TCParams = TCParams || {};
   //can access this.element and this.option
   Plugin.prototype.init = function () {
     var self        = this,
-        $_imgs   = $( 'img[' + this.options.attribute + ']' , this.element );
+        $_imgs   = $( 'img[' + this.options.attribute + ']:not('+ this.options.excludeImg.join() +')' , this.element );
+    
     this.increment  = 1;//used to wait a little bit after the first user scroll actions to trigger the timer
     this.timer      = 0;
 
@@ -2971,7 +2979,8 @@ var TCParams = TCParams || {};
         }
     });
   };
-})( jQuery, window, document );//Target the first letter of the first element found in the wrapper
+})( jQuery, window, document );
+//Target the first letter of the first element found in the wrapper
 ;(function ( $, window, document, undefined ) {
     //defaults
     var pluginName = 'extLinks',
@@ -3032,7 +3041,17 @@ var TCParams = TCParams || {};
       if ( 2 != ( ['ids', 'classes'].filter( function( sel_type) { return self._is_selector_allowed(sel_type); } ) ).length )
         return;
 
-      return true;
+      var _is_eligible = true;
+      // disallow elements whose parent has text-decoration: underline
+      // we want to exit as soon as we find a parent with the underlined text-decoration
+      $.each( this.$_el.parents(), function() {
+        if ( 'underline' == $(this).css('textDecoration') ){
+          _is_eligible = false;
+          return false;    
+        }
+      });
+      
+      return true && _is_eligible;
     };
 
 
@@ -3044,6 +3063,9 @@ var TCParams = TCParams || {};
     * @return boolean
     */
     Plugin.prototype._is_selector_allowed = function( requested_sel_type ) {
+      if ( czrapp )
+        return czrapp.isSelectorAllowed( this.$_el, this.options.skipSelectors, requested_sel_type);
+
       var sel_type = 'ids' == requested_sel_type ? 'id' : 'class',
           _selsToSkip   = this.options.skipSelectors[requested_sel_type];
 
@@ -3209,7 +3231,7 @@ var TCParams = TCParams || {};
     var new_height = Math.round( $(this.container).width() / this.options.goldenRatioVal );
     //check if the new height does not exceed the goldenRatioLimitHeightTo option
     new_height = new_height > this.options.goldenRatioLimitHeightTo ? this.options.goldenRatioLimitHeightTo : new_height;
-    $(this.container).css( {'line-height' : new_height + 'px' , 'height' : new_height + 'px' } );
+    $(this.container).css( {'line-height' : new_height + 'px' , 'height' : new_height + 'px' } ).trigger('golden-ratio-applied');
   };
 
 
@@ -4211,6 +4233,31 @@ var czrapp = czrapp || {};
     },
 
 
+    //@return bool
+    isSelectorAllowed : function( $_el, skip_selectors, requested_sel_type ) {
+      var sel_type = 'ids' == requested_sel_type ? 'id' : 'class',
+      _selsToSkip   = skip_selectors[requested_sel_type];
+
+      //check if option is well formed
+      if ( 'object' != typeof(skip_selectors) || ! skip_selectors[requested_sel_type] || ! $.isArray( skip_selectors[requested_sel_type] ) || 0 === skip_selectors[requested_sel_type].length )
+        return true;
+
+      //has a forbidden parent?
+      if ( $_el.parents( _selsToSkip.map( function( _sel ){ return 'id' == sel_type ? '#' + _sel : '.' + _sel; } ).join(',') ).length > 0 )
+        return false;
+
+      //has requested sel ?
+      if ( ! $_el.attr( sel_type ) )
+        return true;
+
+      var _elSels       = $_el.attr( sel_type ).split(' '),
+          _filtered     = _elSels.filter( function(classe) { return -1 != $.inArray( classe , _selsToSkip ) ;});
+
+      //check if the filtered selectors array with the non authorized selectors is empty or not
+      //if empty => all selectors are allowed
+      //if not, at least one is not allowed
+      return 0 === _filtered.length;
+    },
 
     /***************************************************************************
     * Event methods, offering the ability to bind to and trigger events.
@@ -4290,7 +4337,8 @@ var czrapp = czrapp || {};
       var self = this;
       _.map( cbs, function(cb) {
         if ( 'function' == typeof(self[cb]) ) {
-          self[cb].apply(self, 'undefined' == typeof( args ) ? Array() : args );
+          args = 'undefined' == typeof( args ) ? Array() : args ;  
+          self[cb].apply(self, args );
           czrapp.trigger( cb, _.object( _.keys(args), args ) );
         }
       });//_.map
@@ -4321,6 +4369,9 @@ var czrapp = czrapp || {};
     },
     isReponsive : function() {
       return czrapp.isReponsive();
+    },
+    isSelectorAllowed: function( $_el, skip_selectors, requested_sel_type ) {
+      return czrapp.isSelectorAllowed( $_el, skip_selectors, requested_sel_type );    
     }
 
   };//_methods{}
@@ -4368,13 +4419,23 @@ var czrapp = czrapp || {};
     //__before_main_wrapper covers the single post thumbnail case
     //.widget-front handles the featured pages
     imgSmartLoad : function() {
-      if ( 1 == TCParams.imgSmartLoadEnabled )
-        $( '.article-container, .__before_main_wrapper, .widget-front' ).imgSmartLoad( _.size( TCParams.imgSmartLoadOpts ) > 0 ? TCParams.imgSmartLoadOpts : {} );
-      else {
-        //if smart load not enabled => trigger the load event on img load
-        var $_to_center = $( '.article-container, .__before_main_wrapper, .widget-front' ).find('img');
-        this.triggerSimpleLoad($_to_center);
-      }//end else
+      var smartLoadEnabled = 1 == TCParams.imgSmartLoadEnabled,
+          //Default selectors for where are : $( '.article-container, .__before_main_wrapper, .widget-front' ).find('img');
+          _where           = TCParams.imgSmartLoadOpts.parentSelectors.join(),
+          $_to_center      = $( _where ).find('img');
+
+      if ( smartLoadEnabled ) {
+        $_to_center      = _.filter( $( _where ).find('img') , function ( img ) {
+          return $(img).is(TCParams.imgSmartLoadOpts.opts.excludeImg.join());
+        } );//filter
+      }//if
+
+      if (  smartLoadEnabled )
+        $( _where ).imgSmartLoad(
+          _.size( TCParams.imgSmartLoadOpts.opts ) > 0 ? TCParams.imgSmartLoadOpts.opts : {}
+        );
+
+      this.triggerSimpleLoad($_to_center);
     },
 
 
@@ -4667,8 +4728,23 @@ var czrapp = czrapp || {};
       if ( ! TCParams.anchorSmoothScroll || 'easeOutExpo' != TCParams.anchorSmoothScroll )
             return;
 
-      var _excl_sels = ( TCParams.anchorSmoothScrollExclude && _.isArray( TCParams.anchorSmoothScrollExclude ) ) ? TCParams.anchorSmoothScrollExclude.join(',') : '';
-      $('a[href^="#"]', '#content').not( _excl_sels ).click(function () {
+      var _excl_sels = ( TCParams.anchorSmoothScrollExclude && _.isArray( TCParams.anchorSmoothScrollExclude.simple ) ) ? TCParams.anchorSmoothScrollExclude.simple.join(',') : '',
+          self = this,
+          $_links = $('a[href^="#"]', '#content').not(_excl_sels);
+
+      //Deep exclusion
+      //are ids and classes selectors allowed ?
+      //all type of selectors (in the array) must pass the filter test
+      _deep_excl = _.isObject( TCParams.anchorSmoothScrollExclude.deep ) ? TCParams.anchorSmoothScrollExclude.deep : null ;
+      if ( _deep_excl )
+        _links = _.toArray($_links).filter( function ( _el ) {
+          return ( 2 == ( ['ids', 'classes'].filter( 
+                        function( sel_type) { 
+                            return self.isSelectorAllowed( $(_el), _deep_excl, sel_type); 
+                        } ) ).length 
+                );
+        });
+      $(_links).click( function () {
         var anchor_id = $(this).attr("href");
 
         //anchor el exists ?
@@ -5208,8 +5284,12 @@ var czrapp = czrapp || {};
       var self = this;
       //process scrolling actions
       if ( czrapp.$_window.scrollTop() > this.triggerHeight ) {
-        if ( ! this._is_scrolling() )
-            czrapp.$_body.addClass("sticky-enabled").removeClass("sticky-disabled");
+        if ( ! this._is_scrolling() ) {
+          czrapp.$_body.addClass("sticky-enabled").removeClass("sticky-disabled");
+          // set the logo height, makes sense just when the logo isn't shrinked
+          if ( ! czrapp.$_tcHeader.hasClass('tc-shrink-on') )
+            self._set_logo_height();
+        }
       }
       else if ( this._is_scrolling() ){
         czrapp.$_body.removeClass("sticky-enabled").addClass("sticky-disabled");
@@ -5255,6 +5335,12 @@ var czrapp = czrapp || {};
       czrapp.$_window.on( 'tc-resize', function() {
         self.stickyFooterEventHandler('resize');
       });
+
+      // maybe apply sticky footer on golden ratio applied
+      czrapp.$_window.on( 'golden-ratio-applied', function() {
+        self.stickyFooterEventHandler('refresh');
+      });
+
       /* can be useful without exposing methods make it react to this event which could be externally fired, used in the preview atm */
       czrapp.$_body.on( 'refresh-sticky-footer', function() {
         self.stickyFooterEventHandler('refresh');

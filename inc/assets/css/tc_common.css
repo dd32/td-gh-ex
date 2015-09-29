@@ -1,5 +1,5 @@
 /*!
- * Customizr v3.4.1
+ * Customizr v3.4.10
  *
  * Licensed under the GNU General Public License v2 or later
  * http://www.gnu.org/licenses/gpl-2.0.html
@@ -360,9 +360,11 @@ body {
   float: left;
   margin-left: 2.12765957%;
   *margin-left: 2.07446809%;
+  margin-right: 0;
 }
 .row-fluid [class*="span"]:first-child {
   margin-left: 0;
+  margin-right: 0;
 }
 .row-fluid .controls-row [class*="span"] + [class*="span"] {
   margin-left: 2.12765957%;
@@ -518,6 +520,10 @@ body {
 [class*="span"].pull-right,
 .row-fluid [class*="span"].pull-right {
   float: right;
+}
+[class*="span"].pull-left,
+.row-fluid [class*="span"].pull-left {
+  float: left;
 }
 .container {
   margin-right: auto;
@@ -5140,6 +5146,10 @@ h3#reply-title:before {
   padding-right: 5px;
   font-size: 2em;
 }
+h2.comments:before {
+  /* GY: added rule to fix icon position */
+  float: left;
+}
 h2.comments-title:before {
   font-family: 'genericons';
   content: "\f108";
@@ -5149,6 +5159,7 @@ h2.comments-title:before {
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
+  float: left;
   padding-right: 5px;
   font-size: 1em;
 }
@@ -5441,6 +5452,14 @@ h2.site-description {
 }
 /* REGULAR MENU
     -------------------------------------------------- */
+.navbar .tc-main-menu-notice {
+  clear: both;
+  padding: 13px 15px 3px;
+  font-size: 17px;
+}
+.sticky-enabled .tc-main-menu-notice {
+  display: none;
+}
 .dropdown-menu {
   border: 0px solid rgba(0, 0, 0, 0.2);
 }
@@ -5514,16 +5533,16 @@ li.dropdown.active > .dropdown-toggle,
 }
 /* ADJUST LEFT AND RIGHT MENU POSITIONS => align with socials (left) and tagline (right) */
 .logo-left .navbar div > ul.nav > .menu-item:last-child > a {
-  padding-right: 0;
+  padding-right: 0px;
 }
 .navbar .nav {
   margin-right: 0px;
 }
-.pull-menu-left .navbar div > ul.nav > .menu-item:first-child > a {
-  padding-left: 5px;
-}
 .tc-header .btn-toggle-nav.pull-left {
   clear: both;
+}
+.tc-header .btn-toggle-nav.pull-left,
+.pull-menu-left .navbar div > ul.nav > .menu-item:first-child > a {
   padding-left: 5px;
 }
 .tc-header .btn-toggle-nav.pull-right,
@@ -5677,6 +5696,7 @@ style when side nav visible is actually rendered inline TC_menu.tc_set_sidenav_s
 }
 #tc-sn .tc-sn-inner.nav-collapse .nav {
   display: block;
+  width: 98%;
 }
 .sn-nav-wrapper {
   clear: both;
@@ -5689,11 +5709,17 @@ style when side nav visible is actually rendered inline TC_menu.tc_set_sidenav_s
 #tc-sn .nav a {
   border-bottom: 1px solid #EEE;
 }
+#tc-sn .tc-sn-inner .nav > li > a {
+  padding: 5px 20px 5px 0px;
+}
 /* hide arrow */
 #tc-sn.navbar .nav .dropdown-submenu > a:after,
 #tc-sn.navbar .nav > li > .dropdown-menu:after,
 #tc-sn.navbar .nav > li > .dropdown-menu:before {
   content: none;
+}
+#tc-sn .tc-sn-inner .nav li.dropdown .caret {
+  display: none;
 }
 .tc-sn-inner .nav [class*=dropdown] {
   position: static;
@@ -5723,7 +5749,8 @@ style when side nav visible is actually rendered inline TC_menu.tc_set_sidenav_s
   white-space: normal;
 }
 #tc-sn.navbar .nav-collapse ul.nav > li li a {
-  padding-left: 30px;
+  font-size: 90%;
+  padding-left: 25px;
 }
 #tc-sn.navbar .nav-collapse ul.nav > li li li a {
   padding-left: 50px;
@@ -5754,8 +5781,8 @@ style when side nav visible is actually rendered inline TC_menu.tc_set_sidenav_s
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   /*padding: 8px 7px 2px;
   border: 1px solid #EEE;*/
@@ -5771,11 +5798,18 @@ style when side nav visible is actually rendered inline TC_menu.tc_set_sidenav_s
   display: block;
 }
 /* Adapt close button position according to the user setting */
-.sn-left .tc-sn .btn-toggle-nav {
+[class*=sn-left] .tc-sn .btn-toggle-nav {
   float: right;
 }
-.sn-right .tc-sn .btn-toggle-nav {
+[class*=sn-right] .tc-sn .btn-toggle-nav {
   float: left;
+}
+.tc-sn .btn-toggle-nav {
+  margin-bottom: 10px;
+}
+/* fix visibility bug on close */
+.sn-close .tc-sn .btn-toggle-nav {
+  visibility: hidden;
 }
 .menu-btn {
   padding: 0;
@@ -5861,6 +5895,9 @@ style when side nav visible is actually rendered inline TC_menu.tc_set_sidenav_s
   clear: left;
   padding: 9px 3% 0;
   font-size: 17px;
+}
+.sticky-enabled .tc-menu-placeholder {
+  display: none;
 }
 /* BREADCRUMB
   -------------------------------------------------- */
@@ -6150,6 +6187,14 @@ footer#footer .colophon .social-block a {
   position: absolute;
   bottom: 40px;
   right: 11%;
+}
+.tc_posts_slider .carousel-inner .edit-link {
+  right: auto;
+  left: 11%;
+}
+.tc_posts_slider .customizer-link.edit-kink {
+  bottom: 5px;
+  right: 5px;
 }
 /* If automatic centering is enabled */
 .carousel > .center-slides-enabled > .item > .carousel-image img {
@@ -7082,7 +7127,7 @@ PLACEHOLDERS / DISMISS NOTICES
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* WP CSS
+/* WP SPECIFICS
     -------------------------------------------------- */
 .wp-caption {
   max-width: 100%;
@@ -7097,6 +7142,34 @@ PLACEHOLDERS / DISMISS NOTICES
   font-size: 0.7rem;
   line-height: 1.3em;
   color: #757575;
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
 }
 .tc-gallery-style .gallery-item img {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -7199,8 +7272,8 @@ ul.children {
   display: block;
 }
 .comment .edit-link {
-  display: block;
   float: right;
+  display: block;
   margin-right: 10px;
 }
 .comment-avatar {
@@ -7713,9 +7786,11 @@ li#wp-admin-bar-tc-customizr a {
     float: left;
     margin-left: 2.56410256%;
     *margin-left: 2.51091107%;
+    margin-right: 0;
   }
   .row-fluid [class*="span"]:first-child {
     margin-left: 0;
+    margin-right: 0;
   }
   .row-fluid .controls-row [class*="span"] + [class*="span"] {
     margin-left: 2.56410256%;
@@ -8062,9 +8137,11 @@ li#wp-admin-bar-tc-customizr a {
     float: left;
     margin-left: 2.76243094%;
     *margin-left: 2.70923945%;
+    margin-right: 0;
   }
   .row-fluid [class*="span"]:first-child {
     margin-left: 0;
+    margin-right: 0;
   }
   .row-fluid .controls-row [class*="span"] + [class*="span"] {
     margin-left: 2.76243094%;
@@ -8830,6 +8907,7 @@ li#wp-admin-bar-tc-customizr a {
     float: none;
     text-align: center;
     width: 100%;
+    clear: both;
   }
   .container.navbar-wrapper {
     margin-bottom: 0;
@@ -8944,7 +9022,8 @@ li#wp-admin-bar-tc-customizr a {
     display: none;
   }
   /* second menu placeholder */
-  .navbar .tc-menu-placeholder {
+  .navbar .tc-menu-placeholder,
+  .navbar .tc-main-menu-notice {
     display: none;
   }
   /* social blocks */
@@ -9223,6 +9302,10 @@ li#wp-admin-bar-tc-customizr a {
   }
   #right.widget-area:before {
     border-left: 0px;
+  }
+  .tc-no-sticky-header .navbar-wrapper,
+  .sticky-disabled .navbar-wrapper {
+    clear: both;
   }
   .navbar-inner {
     margin: -20px;
