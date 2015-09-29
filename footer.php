@@ -15,7 +15,7 @@
                         <?php wp_nav_menu(array('theme_location' => 'footer')); ?>
                </div><!-- footer-menu -->
                 <div class="copyright">
-                    	<p><?php echo get_theme_mod('footer_copy',__('AwesomeOne 2015 | All Rights Reserved.','awesomeone')); ?> <?php echo awesomeone_credit_link(); ?></p>               
+                    	<p><?php echo awesomeone_credit_link(); ?></p>               
                 </div><!-- copyright --><div class="clear"></div>         
             </div><!-- inner -->
         </div>

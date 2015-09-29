@@ -289,17 +289,6 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
 		'priority'	=> null
 	));
 	
-	$wp_customize->add_setting('footer_copy',array(
-		'default'	=> __('Awesomeone Lite 2015 | All Rights Reserved.','awesomeone'),
-		'sanitize_callback'	=> 'sanitize_text_field',
-	));
-	
-	$wp_customize->add_control('footer_copy',array(
-		'label'	=> __('Copyright Text','awesomeone'),
-		'section'	=> 'footer_section',
-		'type'		=> 'text'
-	));
-	
 	$wp_customize->add_setting('Awesomeone_options[credit-info]', array(
 			'sanitize_callback' => 'sanitize_text_field',
             'type' => 'info_control',

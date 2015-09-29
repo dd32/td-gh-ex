@@ -6,3 +6,6 @@ i) Resolved issues as asked by reviewer.
 
 Version 1.2
 i) Resolved sublevel menu layout in tablet resolution.
+
+Version 1.2.1
+i) Change readme file from html to text file and resolve footer text issue.

@@ -238,5 +238,5 @@ function awesomeone_get_slug_by_id($id) {
 }
 
 function awesomeone_credit_link(){
-		return "AwesomeOne theme by <a href=".esc_url(site_url)." target='_blank'>Flythemes</a>";
+		return "Powered by WordPress. AwesomeOne theme by <a href=".esc_url(site_url)." target='_blank'>Flythemes</a>";
 	}
