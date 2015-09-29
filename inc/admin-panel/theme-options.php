@@ -1032,9 +1032,9 @@ function accesspresslite_theme_options_page() {
 						<p><?php _e('Live Preview, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=accesspress-lite'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 						<hr />
 
-						<h4><?php _e('New Child Theme of AccessPress Lite','accesspresslite'); ?></h4>
-						<p><?php _e('Check Demo Here - ','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=ap-lite'); ?>"><?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=ap-lite'); ?></a></p>
-						<p><?php _e('Download Here - ','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/ap-lite/'); ?>"><?php echo esc_url('https://accesspressthemes.com/wordpress-themes/ap-lite/'); ?></a></p>
+						<h4 class="accesspress-child-theme"><?php _e('New Child Theme of AccessPress Lite','accesspresslite'); ?></h4>
+						<p class="accesspress-child-theme"><?php _e('Check Demo Here - ','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=ap-lite'); ?>"><?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=ap-lite'); ?></a></p>
+						<p class="accesspress-child-theme"><?php _e('Download Here - ','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://wordpress.org/themes/aplite/'); ?>"><?php echo esc_url('https://wordpress.org/themes/aplite/'); ?></a></p>
 
 						<hr />
 

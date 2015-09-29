@@ -3,8 +3,8 @@ Theme Name: Accesspress Lite
 Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-lite/
 Author: AccessPress Themes
 Author URI: https://accesspressthemes.com
-Description: AccessPress Lite is responsive multipurpose WordPress business theme with clean, highly professional design and lots of useful features like a premium theme - and strong theme options panel to manage theme all! It is probably the most feature-rich free theme with lots of useful options events layout, portfolio layout, testimonial layout, blog layout, gallery layout, featured posts on home page, quick contact, social media integration, full width slider, team member layout, sidebar layout, multiple home page layout, call to action and many other page layouts. It is fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. Theme is completely translated in: French, Persian, Japanese, Danish now. AccessPress Lite is multi-purpose and is suitable for travel, corporate, portfolio, photography, nature, health, small biz, personal, creative, corporate, agencies, bloggers anyone and everyone. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ Video tutorials: http://bit.ly/aptytube View full demo here: http://accesspressthemes.com/theme-demos/?theme=accesspress-lite
-Version: 2.45.1
+Description: AccessPress Lite is responsive multipurpose WordPress business theme with clean, highly professional design and lots of useful features like a premium theme - and strong theme options panel to manage theme all! It is probably the most feature-rich free theme with lots of useful options events layout, portfolio layout, testimonial layout, blog layout, gallery layout, featured posts on home page, quick contact, social media integration, full width slider, team member layout, sidebar layout, multiple home page layout, call to action and many other page layouts. It is fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. Theme is completely translated in: French, Persian, Japanese, Danish now. AccessPress Lite is multi-purpose and is suitable for travel, corporate, portfolio, photography, nature, health, small biz, personal, creative, corporate, agencies, bloggers anyone and everyone. Great customer support via online chat, email, support forum. Official support forum: https://accesspressthemes.com/support/ Video tutorials: http://bit.ly/aptytube View full demo here: http://accesspressthemes.com/theme-demos/?theme=accesspress-lite
+Version: 2.45.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: accesspresslite
@@ -2263,6 +2263,67 @@ call To action
 
 #call-to-action .action-btn:hover{
 	background: #282F35;
+}
+
+/*---------------------------
+RTL CSS
+-----------------------------*/
+.rtl #masthead .site-branding{
+	float: right;
+}
+
+.rtl #masthead .right-header{
+	float: left;
+}
+
+.rtl .header-text{
+	text-align: left;
+}
+
+.rtl .socials{
+	margin-left: 0
+}
+
+.rtl #call-to-action h4{
+	float: right;
+}
+
+.rtl #call-to-action .action-btn{
+	float: left;
+}
+
+.rtl .featured-post h2.has-icon .fa{
+	float: right;
+	margin-left: 8px;
+	margin-right: 0
+}
+
+.rtl #bottom-section .text-box ul li{
+	padding-left: 0;
+	padding-right: 25px;
+}
+
+.rtl #bottom-section .text-box ul li:before{
+	left: auto;
+	right: 0;
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+.rtl .page-header{
+	border-left: 0;
+	border-right: 5px solid #666;
+	padding-left: 0;
+	padding-right: 15px;
+}
+
+.rtl .sidebar h3.widget-title{
+	border-left: 0;
+	border-right:5px solid #01AEFD;
+}
+
+.rtl .main-navigation ul ul li{
+	text-align: right;
 }
 
 /* Chrome, Safari, Opera */

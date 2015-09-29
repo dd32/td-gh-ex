@@ -60,6 +60,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.45.2
+* Made fully compatible with RTL
+* Minor fixes in Option Panel
+
 Version 2.45.1
 * String Count bug fixed for accesspresslite_excerpt function
 * Responsive bug for grid layout fixed
