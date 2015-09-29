@@ -48,6 +48,11 @@ Images
 
 == Changelog ==
 
+= 1.0.5 =
+** Fixed icon problem in icon text block Widget.
+** Fixed the boxed layout responsive problem.
+** Fixed the responsive issue in full width promo widget.
+
 = 1.0.4 =
 ** Product Single page title margin bug fixed.
 ** Slider captions bugs fixed.

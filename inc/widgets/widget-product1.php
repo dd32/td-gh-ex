@@ -200,7 +200,7 @@ public function widget($args, $instance){
           </div>
           <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
             <h3><?php the_title(); ?></h3>
-            <p class="short_desc"><?php echo(get_the_excerpt()); ?></p>
+            <p class="short_desc"><?php $home_exc = strip_shortcodes(substr(strip_tags(get_the_content()),0,32)); echo $home_exc.'...'; ?></p>
             <span class="price"><?php echo $product->get_price_html(); ?></span>
           </a>
           <?php 

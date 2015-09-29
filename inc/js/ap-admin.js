@@ -1,16 +1,26 @@
 jQuery(document).ready(function($) {
 
-  // $(document).on('click', '.ap-font-group li', function(){
-//	   	$('.ap-font-group li').removeClass();
-//	    $(this).addClass('selected');
-//	    var aa = $(this).parents('#ap-font-awesome-list').find('.ap-font-group li.selected').children('i').attr('class');
-//    	$(this).parents('#ap-font-awesome-list').siblings('p').find('.hidden-icon-input').val(aa);
-//    	$(this).parents('#ap-font-awesome-list').siblings('p').find('.icon-receiver').html('<i class="'+aa+'"></i>');
-//	    return false;
-//   });
-//    $('#upload-btn').click(function(){
-//		$('#optionsframework form').attr('action','');
-//	});
+  $(document).on('click', '.ap-font-group li', function(){
+	   	$('.ap-font-group li').removeClass();
+	    $(this).addClass('selected');
+	    var aa = $(this).parents('#ap-font-awesome-list').find('.ap-font-group li.selected').children('i').attr('class');
+   	$(this).parents('#ap-font-awesome-list').siblings('p').find('.hidden-icon-input').val(aa);
+   	$(this).parents('#ap-font-awesome-list').siblings('p').find('.icon-receiver').html('<i class="'+aa+'"></i>');
+	    return false;
+  });
+
+
+  /*Sticky user note*/    
+     $('#accordion-panel-general_setting').prepend(
+         '<div class="user_sticky_note">'+
+         '<h3 class="sticky_title">Need help?</h3>'+
+         '<span class="sticky_info_row"><label class="row-element">View demo: </label> <a href="http://demo.accesspressthemes.com/accesspress-store/" target="_blank">here</a>'+
+         '<span class="sticky_info_row"><label class="row-element">View documentation: </label><a href="http://doc.accesspressthemes.com/accespress-store-doc/" target="_blank">here</a></span>'+
+         '<span class="sticky_info_row"><label class="row-element">Support forum: </label><a href="https://accesspressthemes.com/support/forum/themes/free-themes/theme-accesspress-store/" target="_blnak">here</a></span>'+
+         '<span class="sticky_info_row"><label class="row-element">Email us: </label><a href="support@accesspressthemes.com">support@accesspressthemes.com<a/></span>'+
+         '<span class="sticky_info_row"><label class="row-element">More Details: </label><a href="https://accesspressthemes.com/wordpress-themes/" target="_blank">here</a></span>'+
+         '</div>'
+         );  
     
     $('.switch_options').each(function() {
         //This object

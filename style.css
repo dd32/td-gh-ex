@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -694,6 +694,7 @@ a {
     background: #E24545;
     width: 200px;
     display: block;
+    height: auto;
 }
 .sub-menu li a{
     padding-top:5px;
@@ -791,6 +792,13 @@ a {
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
+}
+.boxed #site-navigation > .store-menu > ul > li:last-child:hover ul {
+    left: -99px;
+}
+
+boxed .#site-navigation > .store-menu > ul > li:last-child:hover ul:after {
+    left: 136px;
 }
 /*--------------------------------------------------------------
 6.0 Accessibility

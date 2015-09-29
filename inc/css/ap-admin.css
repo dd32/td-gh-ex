@@ -179,3 +179,24 @@ input.small-text[type="number"]{
     border-color: #0082A3;
     color: #fff;
 }
+
+/*User stick note*/
+.user_sticky_note {
+   background-color: #fdffbd;
+   padding: 4px;
+}
+
+h3.sticky_title {
+   font-size: 22px !important;
+   margin-top: 12px;
+   margin-bottom: 11px;
+}
+
+span.sticky_info_row {
+   display: block;
+   line-height: 23px;
+}
+
+label.row-element {
+   font-weight: bold;
+}
