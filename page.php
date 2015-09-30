@@ -16,8 +16,7 @@
 		'next_or_number' => 'number'
 		)); 
 		?>
-	
-		<p><?php the_tags( __( 'Tags: ', 'quickpic' ), ', ', ''); ?></p> 
+ 
 		</div>
 		
 	<?php comments_template(); ?>

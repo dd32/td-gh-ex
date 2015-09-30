@@ -38,7 +38,7 @@ add_action( 'after_setup_theme', 'quickpic_setup' );
 // Register footer widgets
 function quickpic_widgets_init() {
 register_sidebar(array(
-        'name' => 'Footer 1',
+        'name' => __( 'Footer 1', 'quickpic' ),
         'id' => 'footer-1',
         'before_widget' => '',
         'after_widget' => '',
@@ -46,7 +46,7 @@ register_sidebar(array(
         'after_title' => '</h4>',
     ));
 register_sidebar(array(
-        'name' => 'Footer 2',
+        'name' => __( 'Footer 2', 'quickpic' ),
         'id' => 'footer-2',
         'before_widget' => '',
         'after_widget' => '',
@@ -71,7 +71,9 @@ function quickpic_excerpt_more( $more ) {
 // credits
 function quickpic_credits() {
     echo '<p class="text-center">
-	<a href="http://www.quickonlinethemes.com/wordpress/quickpic/" title="QuickPic Theme" rel="nofollow" >QuickPic Theme</a> powered by <a href="http://wordpress.org">WordPress</a>
+	<a href="http://www.quickonlinethemes.com/wordpress/quickpic/" title="QuickPic Theme" rel="nofollow" >QuickPic Theme</a>' 
+ 	. __(' powered by ', 'quickpic') . 
+	'<a href="http://wordpress.org">WordPress</a>
 	</p>';
 	}
 	add_action('wp_footer', 'quickpic_credits');
