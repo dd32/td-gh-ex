@@ -59,7 +59,9 @@ get_template_part('inc/dragfun/dragtheme', 'css');
 			<?php } ?>
 		</div><!-- .site-branding -->
                 <nav id="bottom-navigation" class="secondary-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-		<?php wp_nav_menu( array('container_class' => 'menu-footer', 'theme_location' => 'secondary') ); ?>
+<div class="menu-footer">
+		<?php wp_nav_menu( array('container' => false, 'theme_location' => 'secondary') ); ?>
+</div>
 		</nav>
 
 	</div>	

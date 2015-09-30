@@ -476,20 +476,49 @@ elseif($whichboxtoshow == 'mailchimp'){
 echo $args['after_widget'];
 }
 public function form( $instance ) {
+  if(isset($instance[ 'title' ])){
 $title = $instance[ 'title' ];
+}
+else{
+  $title = '';
+}
+  if(isset($instance[ 'text' ])){
 $text = $instance[ 'text' ];
-$nopts = $instance['nopts'];
+}
+else{
+  $text = '';
+}
+  if(isset($instance[ 'nopts' ])){
+$nopts =$instance['nopts'];
+ }
+ else{
+  $nopts = '';
+}
+  if(isset($instance[ 'mcbc' ])){
 $mcbc = $instance['mcbc'];
+  }
+  else{
+  $mcbc = '';
+}
+  if(isset($instance[ 'abbc' ])){
 $abbc = $instance['abbc'];
+  }
+  else{
+  $abbc = '';
+}
+  if(isset($instance[ 'feedbid' ])){
 $feedbid = $instance['feedbid'];
-
+}
+else{
+  $feedbid = '';
+}
 ?>
 <p>
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
 
 <script>
 $(document).ready(function(){ 
-  var emailserval = "<?php echo $nopts ?>";
+  var emailserval = "<?php echo isset($nopts) ?>";
   if(emailserval == 'mailchimp'){
   $('.mailchimphldr').show();
    $('.feedburnerhldr').hide();
@@ -534,9 +563,9 @@ $('.emailserchose').change(function(){
 <br/>
 <br/>
 <select name="<?php echo $this->get_field_name('nopts'); ?>" id="<?php echo $this->get_field_id('nopts'); ?>" class="emailserchose" type="text">
+<option value="aweber" <?php echo "aweber" == $nopts ? "selected" : ""; ?>>Aweber</option>
 <option value="mailchimp" <?php echo "mailchimp" == $nopts ? "selected" : ""; ?> >MailChimp</option>
 <option value="feedburner" <?php echo "feedburner" == $nopts ? "selected" : ""; ?>>Feedburner</option>
-<option value="aweber" <?php echo "aweber" == $nopts ? "selected" : ""; ?>>Aweber</option>
 </select>
 <div class="mailchimphldr">
 <label for="<?php echo $this->get_field_id( 'mcbc' ); ?>"><?php _e( 'MailChimp form action URL:', 'howl-themes'); ?></label> 
@@ -545,7 +574,7 @@ $('.emailserchose').change(function(){
 </div>
 <div class="feedburnerhldr">
 <label for="<?php echo $this->get_field_id( 'feedbid' ); ?>"><?php _e( 'Feedburner ID:', 'howl-themes'); ?></label> 
-<input class="widefat" id="<?php echo $this->get_field_id( 'feedbid' ); ?>" name="<?php echo $this->get_field_name( 'feedbid' ); ?>" type="text" value="<?php echo esc_attr( $feedbid ); ?>" />
+<input class="widefat" id="<?php echo $this->get_field_id( 'feedbid' ); ?>" name="<?php echo $this->get_field_name( 'feedbid' ); ?>" type="text" value="<?php echo esc_attr( $feedbid); ?>" />
 </div>
 <div class="aweberhldr">
 <label for="<?php echo $this->get_field_id( 'abbc' ); ?>"><?php _e( 'Aweber List ID:', 'howl-themes'); ?></label> 

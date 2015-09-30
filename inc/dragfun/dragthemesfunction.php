@@ -37,14 +37,14 @@ register_setting( 'theme_settings', 'theme_settings' );
 /**
  * add settings page to menu
  */
-function add_theme_page() {
-add_theme_page( __( 'Theme Panel' .'howl-themes' ), __( 'Theme' .'howl-themes' ), 'manage_options', 'settings', 'theme_settings_page');
+function add_theme_panel() {
+add_theme_page( __( 'Theme Panel' . 'howl-themes' ), __( 'Theme Panel' . '' ), 'manage_options', 'settings', 'theme_settings_page');
 }
 /**
  * add actions
  */
 add_action( 'admin_init', 'theme_settings_init' );
-add_action( 'admin_menu', 'add_theme_page' );
+add_action( 'admin_menu', 'add_theme_panel' );
 /**
  * Declare Option
  */
