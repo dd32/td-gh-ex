@@ -33,7 +33,7 @@ add_action( 'after_setup_theme', 'quickchic_setup' );
 // Register sidebar widgets
 function quickchic_widgets_init() {
 	register_sidebar(array(
-        'name' => 'Sidebar',
+        'name' => __( 'Sidebar', 'quickchic' ),
         'id' => 'sidebar',
         'before_widget' => '',
         'after_widget' => '',
@@ -58,7 +58,9 @@ function quickchic_excerpt_more( $more ) {
 // credits
 function quickchic_credits() {
     echo '<p class="text-center">
-	<a href="http://www.quickonlinethemes.com/wordpress/quickchic/" title="QuickChic Theme" rel="nofollow" >QuickChic Theme</a> powered by <a href="http://wordpress.org">WordPress</a>
+	<a href="http://www.quickonlinethemes.com/wordpress/quickchic/" title="QuickChic Theme" rel="nofollow" >QuickChic Theme</a>' 
+ 	. __(' powered by ', 'quickchic') . 
+	'<a href="http://wordpress.org">WordPress</a>
 	</p>';
 	}
 	add_action('wp_footer', 'quickchic_credits');
