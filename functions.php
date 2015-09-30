@@ -149,13 +149,14 @@ function alanding_lite_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'alanding_lite_wp_title', 10, 2 );
 function alanding_lite_menu() {
-	add_theme_page('ALanding Setup', 'Documentation', 'edit_theme_options', 'alanding-lite', 'alanding_lite_menu_page');
+	add_theme_page('ALanding Setup', 'Free vs PRO', 'edit_theme_options', 'alanding-lite', 'alanding_lite_menu_page');
 }
 add_action('admin_menu', 'alanding_lite_menu');
 function alanding_lite_menu_page() {
 echo '
 <br>
-<center><h1>' . __( '17 Sidebar for theme ALanding lite', 'alanding-lite' ) . '</h1>
+<center><h1 style="font-size:79px;">' . __( 'Theme ALanding lite', 'alanding-lite' ) . '</h1></ceter><br><br><br>
+<center><h1>' . __( '20 Sidebars for theme ALanding lite', 'alanding-lite' ) . '</h1>
 <br>
 <img src="' . get_template_directory_uri() . '/images/alanding-sidebar.png">
 <br><br><br>
@@ -165,6 +166,21 @@ echo '
 ' . __( 'Go to Settings -> Reading and assign a static page.', 'alanding-lite' ) . '<br><br>
 <img src="' . get_template_directory_uri() . '/images/help2.jpg">
 <br><br><br>
+<img src="' . get_template_directory_uri() . '/images/help3.jpg">
+<br><br><br>
+<img src="' . get_template_directory_uri() . '/images/pro-free.png"><br><br>
+<h1><center>' . __( 'Buy theme', 'alanding-lite' ) . '  <a href="http://justpx.com/product/alanding-pro/">' . __( 'Theme ALanding PRO', 'alanding-lite' ) . '</a></center></h1><br><br>
+<br><br><br><br>
+<center><h1 style="font-size:79px;">' . __( 'Theme ALanding PRO', 'alanding-lite' ) . '</h1></ceter><br><br><br>
+<img src="' . get_template_directory_uri() . '/images/alanding-pro-sidebar.jpg"><br><br><br>
+<img src="' . get_template_directory_uri() . '/images/alanding-admin1.png"><br><br><br>
+<img src="' . get_template_directory_uri() . '/images/alanding-admin2.png"><br><br><br>
+<img src="' . get_template_directory_uri() . '/images/alanding-admin3.png"><br><br><br>
+<img src="' . get_template_directory_uri() . '/images/alanding-admin4.png"><br><br><br>
+<img src="' . get_template_directory_uri() . '/images/alanding-admin5.png"><br><br><br>
+<img src="' . get_template_directory_uri() . '/images/alanding-admin6.png"><br><br><br>
+<img src="' . get_template_directory_uri() . '/images/alanding-admin7.png"><br><br><br>
+<h1><center>' . __( 'Buy theme', 'alanding-lite' ) . '  <a href="http://justpx.com/product/alanding-pro/">' . __( 'Theme ALanding PRO', 'alanding-lite' ) . '</a></center></h1><br><br>
 ';
 }
 ?>

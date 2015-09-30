@@ -14,8 +14,8 @@ Template Name: 6 block
 	            <div class="sidebar-user3 span2">
 	                <?php dynamic_sidebar( 'sidebar-block1-user2' ); ?>
 	            </div>
-	           <div class="sidebar-user4 span2">
-	                 <?php dynamic_sidebar( 'sidebar-block1-user3' ); ?>
+	            <div class="sidebar-user4 span2">
+	                <?php dynamic_sidebar( 'sidebar-block1-user3' ); ?>
 	            </div>
 			</div>
 		</div>
