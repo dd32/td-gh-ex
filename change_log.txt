@@ -9,3 +9,6 @@ i) Resolved sublevel menu layout in tablet resolution.
 
 Version 1.2.1
 i) Change readme file from html to text file and resolve footer text issue.
+
+Version 1.2.2
+i) Removed unused translation function from template-tag.php file.

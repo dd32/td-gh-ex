@@ -80,7 +80,7 @@ function awesomeone_comment( $comment, $args, $depth ) {
 				</div><!-- .comment-author -->
 
 				<div class="comment-metadata">
-					<?php printf( __('<cite class="fn">%s</cite> on', get_comment_author_link(),'awesomeone'  ) ); ?>
+					<?php printf( '<cite class="fn">%s</cite> on', get_comment_author_link()   ); ?>
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
 							<?php printf( _x( '%1$s', '1: date', 'awesomeone' ), get_comment_date(), get_comment_time() ); ?>
