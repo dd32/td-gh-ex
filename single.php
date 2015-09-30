@@ -1,34 +1,33 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying all single posts.
  *
- * @package base
+ * @package Base WP
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area twelve columns">
-		<main id="main" class="site-main" role="main">
-    
-	<?php BaseBreadcrumb(); ?>
-    
-		<?php while ( have_posts() ) : the_post(); ?>
+    <div id="primary" class="content-area col9">
+        <main id="main" class="site-main" role="main">
 
-			<?php get_template_part( 'content/content', 'single' ); ?>
+            <?php igthemes_before_single(); ?>
 
-			<?php base_post_nav(); ?>
+            <?php while ( have_posts() ) : the_post(); ?>
+                <?php get_template_part( 'template-parts/content', 'single' ); ?>
+            <?php igthemes_post_nav(); ?>
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+            <?php igthemes_after_single(); ?>
 
-		<?php endwhile; // end of the loop. ?>
+            <?php
+                // If comments are open or we have at least one comment, load up the comment template
+                if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif;
+            ?>
+        <?php endwhile; // end of the loop. ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </main><!-- #main -->
+    </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
