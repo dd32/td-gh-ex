@@ -1,334 +1,516 @@
 <?php
-/**
- * A unique identifier is defined to store the options in the database and reference them from the theme.
- */
+//the id of the options
+$igthemes_option='base-wp';
 
-function optionsframework_option_name() {
+//start class
+class IGthemes_Customizer {
 
-	// Change this to use your theme slug
-	return 'base';
+// add some settings
+public static function igthemes_customize($wp_customize) {
+
+/** The short name gives a unique element to each options id. */
+global $igthemes_option;
+//upgrade message
+$upgrade_message = '<a class="upgrade-tag" href="http://www.iograficathemes.com/downloads/base-wp-premium/" target="_blank">' . esc_html__(' - only premium', 'base-wp') . '</a>';
+
+// slect categories
+$categories = get_categories();
+    $cats = array();
+    $i = 0;
+    foreach($categories as $category){
+        if($i==0){
+            $default = $category->slug;
+            $i++;
+        }
+        $cats[$category->slug] = $category->name;
+    }
+
+//01 PREMIUM
+$wp_customize->add_section('upgrade-premium', array(
+        'title' => esc_html__('UPGRADE TO PREMIUM', 'base-wp'),
+        'priority' => 1,
+    ) );
+
+//03 GENERAL
+    $wp_customize->get_section('title_tagline')->title = esc_html__('General Settings', 'base-wp');
+    $wp_customize->get_section('title_tagline')->priority = 3;
+
+//04 LAYOUT
+    $wp_customize->add_section('layout-settings', array(
+        'title' => esc_html__('Layout settings', 'base-wp'),
+        'priority' => 4,
+    ));
+
+// 05 STYLE
+    $wp_customize->get_section('colors')->title = esc_html__('Style Settings', 'base-wp');
+    $wp_customize->get_section('colors')->priority = 5;
+
+// 06 FOOTER
+    $wp_customize->add_section('footer-settings', array(
+        'title' => esc_html__('Footer Settings', 'base-wp'),
+        'priority' => 6,
+    ));
+
+// 06 SOCIAL
+    $wp_customize->add_section('social-settings', array(
+        'title' => esc_html__('Social Settings', 'base-wp'),
+        'priority' => 7,
+    ));
+
+// 07 ADVANCED
+    $wp_customize->add_section('advanced-settings', array(
+        'title' => esc_html__('Advanced Settings', 'base-wp'),
+        'priority' => 7,
+    ));
+
+/*****************************************************************
+* PREMIUM
+******************************************************************/
+$wp_customize->add_setting($igthemes_option . '[upgrade_box]', array(
+    'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ) );
+
+$wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box', array(
+    'label' => esc_html__('', 'base-wp'),
+    'description' => '<p style="font-style: normal;">' . esc_html__('If you like this theme, considering supporting development by purchasing the premium version.', 'base-wp'). '</p>'
+    . '<ul class="premium" style="font-style: normal;"> '. '<li><strong>'. esc_html__('Main premium features:', 'base-wp'). '</strong></li>'
+    . '<li>' . esc_html__('- All options enabled', 'base-wp') . '</li>'
+    . '<li>' .  esc_html__('- Premium shortcodes included', 'base-wp') . '</li>'
+    . '<li>' . esc_html__('- Priority support', 'base-wp'). '</li>'
+    . '<li>' .  esc_html__('- Money back guarantee', 'base-wp') . '</li>'
+    . '<li>' . '<a class="upgrade-button" href="http://www.iograficathemes.com/downloads/base-wp-premium/" rel="nofollow">' . esc_html__('upgrade to premium', 'base-wp') . '</a></li>'
+    . '</ul>',    'type' => 'custom',
+    'section' => 'upgrade-premium',
+    'settings' => $igthemes_option . '[upgrade_box]',
+    )));
+
+/*****************************************************************
+* GENERAL SETTINGS
+******************************************************************/
+//blog name
+    $wp_customize->add_setting('blogname', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_text',
+        'transport'=>'postMessage'
+    ));
+    $wp_customize->add_control('blogname', array(
+        'label' => esc_html__('Site Title', 'base-wp'),
+        'section' => 'title_tagline',
+        'settings' => 'blogname',
+        'priority' => 1,
+    ));
+//blog description
+    $wp_customize->add_setting('blogdescription', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_text',
+        'transport'=>'postMessage'
+    ));
+    $wp_customize->add_control('blogdescription', array(
+        'label' => esc_html__('Tagline', 'base-wp'),
+        'section' => 'title_tagline',
+        'settings' => 'blogdescription',
+        'priority' => 2,
+    ));
+//logo
+    $wp_customize->add_setting($igthemes_option . '[logo]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_upload',
+    ));
+    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'logo', array(
+        'label' => esc_html__('Site Logo', 'base-wp'),
+        'section' => 'title_tagline',
+        'settings' => $igthemes_option . '[logo]',
+        'priority' => 3,
+    )));
+//lightbox
+    $wp_customize->add_setting($igthemes_option . '[lightbox]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
+    ));
+    $wp_customize->add_control('lightbox', array(
+        'label' => esc_html__('Lightbox', 'base-wp'),
+        'description' => esc_html__('Enable image lightbox', 'base-wp'),
+        'type' => 'checkbox',
+        'section' => 'title_tagline',
+        'settings' => $igthemes_option . '[lightbox]',
+        'priority' => 99,
+    ));
+//breadcrumb
+    $wp_customize->add_setting($igthemes_option . '[breadcrumb]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
+    ));
+    $wp_customize->add_control('breadcrumb', array(
+        'label' => esc_html__('Breadcrumb', 'base-wp'),
+        'description' => esc_html__('Enable breadcrumb (it will use WordPress SEO breadcrumb if available)', 'base-wp'),
+        'type' => 'checkbox',
+        'section' => 'title_tagline',
+        'settings' => $igthemes_option . '[breadcrumb]',
+        'priority' => 99,
+    ));
+//shortcodes
+    $wp_customize->add_setting($igthemes_option . '[shortcodes]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,$igthemes_option . '[shortcodes', array(
+        'label' => esc_html__('Shortcodes', 'base-wp'),
+        'description' => esc_html__('Enable theme shortcodes', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'title_tagline',
+        'settings' => $igthemes_option . '[shortcodes]',
+        'priority' => 99,
+    )));
+/*****************************************************************
+* LAYOUT SETTINGS
+******************************************************************/
+//sidebar main
+    $wp_customize->add_setting($igthemes_option . '[sidebar_main]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'sidebar_main', array(
+        'label' => esc_html__('Main Layout', 'base-wp'),
+        'description' =>  esc_html__('Select the index page layout', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'layout-settings',
+        'settings' => $igthemes_option . '[sidebar_main]',
+    )));
+//post slide
+    $wp_customize->add_setting($igthemes_option . '[post_slide]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_carousel',
+    ));
+    $wp_customize->add_control('post_slide', array(
+        'label' => esc_html__('Carousel', 'base-wp'),
+        'description' => esc_html__('To display projects and testimonials install ', 'base-wp').'<a href="https://wordpress.org/plugins/ml-slider/" target="_blank">IG Portolio</a>'.  esc_html__(' and ', 'base-wp') .'<a href="https://wordpress.org/plugins/ml-slider/" target="_blank">IG Testimonials</a>',
+        'type'       => 'radio',
+        'choices'    => array(
+            'none' => 'None',
+            'post' => 'Posts',
+            'project' => 'Projects',
+            'testimonial' => 'Testimonials',
+        ),
+        'section' => 'layout-settings',
+        'settings' => $igthemes_option . '[post_slide]',
+    ));
+//main featured images
+    $wp_customize->add_setting($igthemes_option . '[main_featured_images]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
+    ));
+    $wp_customize->add_control('main_featured_images', array(
+        'label' => esc_html__('Index featured image', 'base-wp'),
+        'description' => esc_html__('Show featured images in index page', 'base-wp'),
+        'type' => 'checkbox',
+        'section' => 'layout-settings',
+        'settings' => $igthemes_option . '[main_featured_images]',
+    ));
+//main numeric pagination
+    $wp_customize->add_setting($igthemes_option . '[main_numeric_pagination]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
+    ));
+    $wp_customize->add_control('main_numeric_pagination', array(
+        'label' => esc_html__('Numeric pagination', 'base-wp'),
+        'description' => esc_html__('Use numeric pagination in index page', 'base-wp'),
+        'type' => 'checkbox',
+        'section' => 'layout-settings',
+        'settings' => $igthemes_option . '[main_numeric_pagination]',
+    ));
+//sidebar single
+    $wp_customize->add_setting($igthemes_option . '[sidebar_single]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'sidebar_single', array(
+        'label' => esc_html__('Single Layout', 'base-wp'),
+        'description' => esc_html__('Select the single post layout', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'layout-settings',
+        'settings' => $igthemes_option . '[sidebar_single]',
+    )));
+//post featured image
+    $wp_customize->add_setting($igthemes_option . '[post_featured_image]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
+    ));
+    $wp_customize->add_control('post_featured_image', array(
+        'label' => esc_html__('Post featured image', 'base-wp'),
+        'description' => esc_html__('Show featured image in post page', 'base-wp'),
+        'type' => 'checkbox',
+        'section' => 'layout-settings',
+        'settings' => $igthemes_option . '[post_featured_image]',
+    ));
+//post meta
+    $wp_customize->add_setting($igthemes_option . '[post_meta]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'post_meta', array(
+        'label' => esc_html__('Meta Data', 'base-wp'),
+        'description' => esc_html__('Hide post meta data', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'layout-settings',
+        'settings' => $igthemes_option . '[post_meta]',
+    )));
+//sidebar shop
+    $wp_customize->add_setting($igthemes_option . '[sidebar_shop]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'sidebar_shop', array(
+        'label' => esc_html__('Shop Layout', 'base-wp'),
+        'description' => esc_html__('Select the shop page layout', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'layout-settings',
+        'settings' => $igthemes_option . '[sidebar_shop]',
+    )));
+//shop product slider
+    $wp_customize->add_setting($igthemes_option . '[shop_slide]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
+    ));
+    $wp_customize->add_control('shop_slide', array(
+        'label' => esc_html__('Products Slide', 'base-wp'),
+        'description' => esc_html__('', 'base-wp'),
+        'type' => 'checkbox',
+        'section' => 'layout-settings',
+        'settings' => $igthemes_option . '[shop_slide]',
+    ));
+/*****************************************************************
+* STYLE SETTINGS
+******************************************************************/
+//header style
+    $wp_customize->add_setting($igthemes_option . '[header_style]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'header_style', array(
+        'label' => esc_html__('Header Style', 'base-wp'),
+        'description' => esc_html__('Header custom colors', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'colors',
+        'settings' => $igthemes_option . '[header_style]',
+    )));
+//menu style
+    $wp_customize->add_setting($igthemes_option . '[menu_style]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'menu_style', array(
+        'label' => esc_html__('Menu Style', 'base-wp'),
+        'description' => esc_html__('Menu custom colors', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'colors',
+        'settings' => $igthemes_option . '[menu_style]',
+    )));
+//link style
+    $wp_customize->add_setting($igthemes_option . '[link_style]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'link_style', array(
+        'label' => esc_html__('Links Style', 'base-wp'),
+        'description' => esc_html__('Links custom colors', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'colors',
+        'settings' => $igthemes_option . '[link_style]',
+    )));
+//button style
+    $wp_customize->add_setting($igthemes_option . '[button_style]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'button_style', array(
+        'label' => esc_html__('Buttons Style', 'base-wp'),
+        'description' => esc_html__('Buttons custom colors', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'colors',
+        'settings' => $igthemes_option . '[button_style]',
+    )));
+//footer style
+    $wp_customize->add_setting($igthemes_option . '[footer_style]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'footer_style', array(
+        'label' => esc_html__('Footer Style', 'base-wp'),
+        'description' => esc_html__('Footer custom colors', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'colors',
+        'settings' => $igthemes_option . '[footer_style]',
+    )));
+/*****************************************************************
+* FOOTER SETTINGS
+******************************************************************/
+//footer text
+    $wp_customize->add_setting($igthemes_option . '[footer_text]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'footer_text', array(
+        'label' => esc_html__('Footer Text', 'base-wp'),
+        'description' => '<span class="description customize-control-description">' . esc_html__('Footer custom text', 'base-wp') . $upgrade_message . '</div>',
+        'type' => 'custom',
+        'section' => 'footer-settings',
+        'settings' => $igthemes_option . '[footer_text]',
+    )));
+//footer credits
+    $wp_customize->add_setting($igthemes_option . '[footer_credits]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'footer_credits', array(
+        'label' => esc_html__('Credits Link', 'base-wp'),
+        'description' => esc_html__('Remove author credits', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'footer-settings',
+        'settings' => $igthemes_option . '[footer_credits]',
+    )));
+
+/*****************************************************************
+* SOCIAL SETTINGS
+******************************************************************/
+//facebook
+    $wp_customize->add_setting($igthemes_option . '[facebook_url]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_url',
+
+    ));
+    $wp_customize->add_control('facebook_url', array(
+        'label' => esc_html__('Facebook url', 'base-wp'),
+        'type' => 'url',
+        'section' => 'social-settings',
+        'settings' => $igthemes_option . '[facebook_url]',
+    ));
+//twitter
+    $wp_customize->add_setting($igthemes_option . '[twitter_url]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_url',
+    ));
+    $wp_customize->add_control('twitter_url', array(
+        'label' => esc_html__('Twitter url', 'base-wp'),
+        'type' => 'url',
+        'section' => 'social-settings',
+        'settings' => $igthemes_option . '[twitter_url]',
+    ));
+//google
+    $wp_customize->add_setting($igthemes_option . '[google_url]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_url',
+    ));
+    $wp_customize->add_control('google_url', array(
+        'label' => esc_html__('Google plus url', 'base-wp'),
+        'type' => 'url',
+        'section' => 'social-settings',
+        'settings' => $igthemes_option . '[google_url]',
+    ));
+//pinterest
+    $wp_customize->add_setting($igthemes_option . '[pinterest_url]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_url',
+    ));
+    $wp_customize->add_control('pinterest_url', array(
+        'label' => esc_html__('Pinterest url', 'base-wp'),
+        'type' => 'url',
+        'section' => 'social-settings',
+        'settings' => $igthemes_option . '[pinterest_url]',
+    ));
+//tumblr
+    $wp_customize->add_setting($igthemes_option . '[tumblr_url]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_url',
+    ));
+    $wp_customize->add_control('tumblr_url', array(
+        'label' => esc_html__('Tumblr url', 'base-wp'),
+        'type' => 'url',
+        'section' => 'social-settings',
+        'settings' => $igthemes_option . '[tumblr_url]',
+    ));
+//instagram
+    $wp_customize->add_setting($igthemes_option . '[instagram_url]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_url',
+    ));
+    $wp_customize->add_control('instagram_url', array(
+        'label' => esc_html__('Instagram url', 'base-wp'),
+        'type' => 'url',
+        'section' => 'social-settings',
+        'settings' => $igthemes_option . '[instagram_url]',
+    ));
+//linkedin
+    $wp_customize->add_setting($igthemes_option . '[linkedin_url]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_url',
+    ));
+    $wp_customize->add_control('linkedin_url', array(
+        'label' => esc_html__('Linkedin url', 'base-wp'),
+        'type' => 'url',
+        'section' => 'social-settings',
+        'settings' => $igthemes_option . '[linkedin_url]',
+    ));
+//dribbble
+    $wp_customize->add_setting($igthemes_option . '[dribbble_url]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_url',
+    ));
+    $wp_customize->add_control('dribbble_url', array(
+        'label' => esc_html__('Dribble url', 'base-wp'),
+        'type' => 'url',
+        'section' => 'social-settings',
+        'settings' => $igthemes_option . '[dribbble_url]',
+    ));
+//vimeo
+    $wp_customize->add_setting($igthemes_option . '[vimeo_url]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_url',
+    ));
+    $wp_customize->add_control('vimeo_url', array(
+        'label' => esc_html__('Vimeo url', 'base-wp'),
+        'type' => 'url',
+        'section' => 'social-settings',
+        'settings' => $igthemes_option . '[vimeo_url]',
+    ));
+//youtube
+    $wp_customize->add_setting($igthemes_option . '[youtube_url]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_url',
+    ));
+    $wp_customize->add_control('youtube_url', array(
+        'label' => esc_html__('Youtube url', 'base-wp'),
+        'type' => 'url',
+        'section' => 'social-settings',
+        'settings' => $igthemes_option . '[youtube_url]',
+    ));
+//rss
+    $wp_customize->add_setting($igthemes_option . '[rss_url]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_url',
+    ));
+    $wp_customize->add_control('rss_url', array(
+        'label' => esc_html__('RSS url', 'base-wp'),
+        'type' => 'url',
+        'section' => 'social-settings',
+        'settings' => $igthemes_option . '[rss_url]',
+    ));
+
+/*****************************************************************
+* ADVANCED SETTINGS
+******************************************************************/
+//custom css
+    $wp_customize->add_setting($igthemes_option . '[custom_css]', array(
+        'sanitize_callback' => 'igthemes_allowed_tag',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'custom_css', array(
+        'label' => esc_html__('Custom CSS', 'base-wp'),
+        'description' => esc_html__('Add your custom css code', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'advanced-settings',
+        'settings' => $igthemes_option . '[custom_css]',
+    )));
+//custom js
+    $wp_customize->add_setting($igthemes_option . '[custom_js]', array(
+        'sanitize_callback' => 'igthemes_allowed_tag',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'custom_js', array(
+        'label' => esc_html__('Custom Javascript', 'base-wp'),
+        'description' => esc_html__('Add your custom js code', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'advanced-settings',
+        'settings' => $igthemes_option . '[custom_js]',
+    )));
+    //END
+    }
 }
-
-function optionsframework_options() {
-	
-	// Background Defaults
-	$upgrade_message = __('Only available in premium version', 'base');
-	
-
-	$options[] = array( "name" => __('General', 'base'),
-		"type" => "heading" );
-		
-	$options['favicon_uploader'] = array(
-		"name" => __('Add favicon', 'base'),
-		"desc" => __('Upload your favicon', 'base'),
-		"id" => "favicon_uploader",
-		"type" => "upload" );	
-	
-	$options['logo_uploader'] = array(
-		"name" => __('Logo Upload', 'base'),
-		"desc" =>  __('Upload your logo', 'base'),
-		"id" => "logo_uploader",
-		"type" => "upload" );
-	
-	$options['icon_iphone'] = array(
-		"name" => __('iPhone icon', 'base'),
-		"desc" =>  __('Apple touch icon iphone (57x57 px)', 'base'),
-		"id" => "icon_iphone",
-		"type" => "upload" );
-	
-	$options['icon_ipad'] = array(
-		"name" => __('iPad icon', 'base'),
-		"desc" =>  __('Apple touch icon ipad (76x76 px)', 'base'),
-		"id" => "icon_ipad",
-		"type" => "upload" );
-	
-	$options['icon_iphone_retina'] = array(
-		"name" => __('iPhone retina icon', 'base'),
-		"desc" =>  __('Apple touch icon iphone retina (120x120 px)', 'base'),
-		"id" => "icon_iphone_retina",
-		"type" => "upload" );
-	
-	$options['icon_ipad_retina'] = array(
-		"name" => __('iPad retina icon', 'base'),
-		"desc" =>  __('Apple touch icon ipad retina (152x152 px)', 'base'),
-		"id" => "icon_ipad_retina",
-		"type" => "upload" );
-	
-	$options['win_tile_image'] = array(
-		"name" => __('Windows 8 pinned image', 'base'),
-		"desc" =>  __('Pinned site Windows 8 (144x144 px)', 'base'),
-		"id" => "win_tile_image",
-		"type" => "upload" );
-	
-	$options['win_tile_color'] = array(
-		"name" => __('Windows 8 pinned image color', 'base'),
-		"desc" =>  __('Pinned site Windows 8 color', 'base'),
-		"id" => "win_tile_color",
-		"type" => "color" );
-	
-	$options[] = array(
-		'name' => __('Meta Slider', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array( "name" => __('Style', 'base'),
-		"type" => "heading" );
-	
-	$options[] = array(
-		'name' => __('Header background', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array(
-		'name' => __('Menu background color', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');;
-			
-	$options[] = array(
-		'name' => __('Link color', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array(
-		'name' => __('Link color on hover', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array(
-		'name' => __('Footer background', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array( "name" => __('Blog &amp; Pages', 'base'),
-		"type" => "heading" );
-	
-	$options[] = array(
-		'name' => __('Pages comments', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array(
-		'name' => __('Show blog and archive featured image', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array(
-		'name' => __('Show post featured image', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array(
-		'name' => __('Display post meta', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-		
-	$options[] = array(
-		'name' => __('Index sidebar', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array(
-		'name' => __('Post sidebar', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array( "name" => __('Footer', 'base'),
-		"type" => "heading" );
-		
-	$options[] = array(
-		'name' => __('Footer text', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array(
-		'name' => __('Display credits link', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-	
-	$options[] = array( "name" => __('Social', 'base'),
-		"type" => "heading" );
-			
-	$options[] = array(
-		'name' => __('Facebook url', 'base'),
-		'desc' => __('Add the url of your Facebook page', 'base'),
-		'id' => 'facebook_url',
-		'std' => '',
-		'type' => 'text');
-	
-	$options[] = array(
-		'name' => __('Twitter url', 'base'),
-		'desc' => __('Add the url of your Twitter page', 'base'),
-		'id' => 'twitter_url',
-		'std' => '',
-		'type' => 'text');
-	
-	$options[] = array(
-		'name' => __('Google plus url', 'base'),
-		'desc' => __('Add the url of your Google Plus page', 'base'),
-		'id' => 'google_url',
-		'std' => '',
-		'type' => 'text');
-	
-	$options[] = array(
-		'name' => __('Pinterest url', 'base'),
-		'desc' => __('Add the url of your Pinterest page', 'base'),
-		'id' => 'pinterest_url',
-		'std' => '',
-		'type' => 'text');
-	
-	$options[] = array(
-		'name' => __('Tumblr url', 'base'),
-		'desc' => __('Add the url of your Tumblr page', 'base'),
-		'id' => 'tumblr_url',
-		'std' => '',
-		'type' => 'text');
-	
-	$options[] = array(
-		'name' => __('Instagram url', 'base'),
-		'desc' => __('Add the url of your Instagram page', 'base'),
-		'id' => 'instagram_url',
-		'std' => '',
-		'type' => 'text');
-	
-	$options[] = array(
-		'name' => __('Linkedin url', 'base'),
-		'desc' => __('Add the url of your Linkedin page', 'base'),
-		'id' => 'linkedin_url',
-		'std' => '',
-		'type' => 'text');
-		
-	$options[] = array(
-		'name' => __('Dribbble url', 'base'),
-		'desc' => __('Add the url of your Dribbble page', 'base'),
-		'id' => 'dribbble_url',
-		'std' => '',
-		'type' => 'text');
-	
-	$options[] = array(
-		'name' => __('Vimeo url', 'base'),
-		'desc' => __('Add the url of your Vimeo page', 'base'),
-		'id' => 'vimeo_url',
-		'std' => '',
-		'type' => 'text');
-	
-	$options[] = array(
-		'name' => __('Youtube url', 'base'),
-		'desc' => __('Add the url of your Youtube page', 'base'),
-		'id' => 'youtube_url',
-		'std' => '',
-		'type' => 'text');
-	
-	$options[] = array(
-		'name' => __('RSS url', 'base'),
-		'desc' => __('Add the url of your RSS', 'base'),
-		'id' => 'rss_url',
-		'std' => '',
-		'type' => 'text');
-		
-	$options[] = array( "name" => __('Advanced', 'base'),
-		"type" => "heading" );	
-	
-	$options[] = array(
-		'name' => __('Custom css', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-
-	$options[] = array(
-		'name' => __('Footer code', 'base'),
-		'desc' => $upgrade_message,
-		'type' => 'info');
-		
-return $options;
-}
-
-/**
- * Front End Customizer
- *
- * WordPress 3.4 Required
- */
-
-add_action( 'customize_register', 'options_theme_customizer_register' );
-
-function options_theme_customizer_register($wp_customize) {
-
-	/**
-	 * This is optional, but if you want to reuse some of the defaults
-	 * or values you already have built in the options panel, you
-	 * can load them into $options for easy reference
-	 */
-	 
-	$options = optionsframework_options();
-	
-	/* Logo upload */
-
-	$wp_customize->add_section( 'options_theme_customizer_logo', array(
-		'title' => __( 'Logo Upload', 'base' ),
-		'priority' => 110
-	) );
-	
-	$wp_customize->add_setting( 'options_theme_customizer[logo_uploader]', array(
-		'type' => 'option',
-        'sanitize_callback' => 'esc_url_raw',
-	) );
-	
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo_uploader', array(
-		'label' => $options['logo_uploader']['name'],
-		'section' => 'options_theme_customizer_logo',
-		'settings' => 'options_theme_customizer[logo_uploader]',
-	) ) );	
-	
-	
-	/* Add favicon */
-
-	$wp_customize->add_section( 'options_theme_customizer_favicon', array(
-		'title' => __( 'Favicon', 'base' ),
-		'priority' => 110
-	) );
-	
-	$wp_customize->add_setting( 'options_theme_customizer[favicon_uploader]', array(
-		'type' => 'option',
-        'sanitize_callback' => 'esc_url_raw',
-	) );
-	
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'favicon_uploader', array(
-		'label' => $options['favicon_uploader']['name'],
-		'section' => 'options_theme_customizer_favicon',
-		'settings' => 'options_theme_customizer[favicon_uploader]',
-	) ) );
-}
-
-
-add_action('optionsframework_after','optionscheck_display_sidebar', 100);
-
-function optionscheck_display_sidebar() { ?>
-    <div class="metabox-holder upgrade">
-        <div class="postbox">
-            <h3><?php echo __('Upgrade to premium', "base"); ?></h3>
-                <div class="inside">
-                    <p><?php echo __('Upgrade to the premium version to get access to advanced options and priority support.', "base"); ?></p>
-                    <a title="Upgrade to premium version" href="http://www.iograficathemes.com/downloads/base-wp-premium/" target="_blank">
-                    <span class="upgrade-button">Upgrade to premium</span>
-                    </a>
-					<p><?php echo __('We offer a 7 day full refund if you are not happy with your purchase.',  "base"); ?></p>
-                </div>
-        </div>
-         <div class="inside">
-                    <h3><?php echo __('Iografica Themes', "base"); ?></h3>
-                    <a title="Facebook" href="https://www.facebook.com/iograficathemes" target="_blank">
-                    <span class="facebook"><?php echo __('Facebook', "base"); ?></span>
-                    </a>
-                    <?php echo __(' | ', "base"); ?>
-					<a title="Twitter" href="https://twitter.com/iograficathemes" target="_blank">
-                    <span class="twitter"><?php echo __('Twitter', "base"); ?></span>
-                    </a>
-                    <?php echo __(' | ', "base"); ?>
-					<a title="Google Plus" href="http://plus.google.com/111064256285067685536" target="_blank">
-                    <span class="website"><?php echo __('Google Plus', "base"); ?></span>
-                    </a>
-                    <?php echo __(' | ', "base"); ?>
-					<a title="Iografica Themes" href="http://www.iograficathemes.com" target="_blank">
-                    <span class="website"><?php echo __('Website', "base"); ?></span>
-                    </a>
-                </div>
-    </div>
-<?php }
+// Setup the Theme Customizer settings and controls...
+add_action('customize_register' , array('IGthemes_Customizer' , 'igthemes_customize') );
+//END OF CLASS
