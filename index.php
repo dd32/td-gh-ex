@@ -1,14 +1,14 @@
 <?php get_header(); ?>
-<div id="content" class="narrowcolumn">
+	<div id="content" class="narrowcolumn">
 
-    <main>
-        <section>
+<main>
+<section>
 
-            <?php get_template_part('loop'); ?>
-            <?php get_template_part('pagination'); ?>
+<?php get_template_part('loop'); ?>
+<?php get_template_part('pagination'); ?>
 
-        </section>
-    </main>
+</section>
+</main>
 
 </div>
 <?php get_sidebar(); ?>

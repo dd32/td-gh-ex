@@ -1,17 +1,16 @@
 <?php get_header(); ?>
-<div id="content" class="narrowcolumn">
+	<div id="content" class="narrowcolumn">
 
-    <main>
-        <section>
-            <article id="post-404">
-               
-                <h1><?php _e( 'Page Not Found', 'quickpress' ); ?></h1>
+<main>
+<section>
+		<article id="post-404">
+			<h1><?php _e( 'Page Not Found', 'quickpress' ); ?></h1>
 
-                <?php get_search_form(); ?>
+<?php get_search_form(); ?>
 
-            </article>
-        </section>
-    </main>
+		</article>
+</section>
+</main>
 
 </div>
 <?php get_sidebar(); ?>

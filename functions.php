@@ -78,28 +78,19 @@ function quickpress_excerpt_more( $more ) {
 
 // credits
 function quickpress_credits() {
-    echo '<div class="center">
-	<a href="https://wordpress.org/themes/quickpress/" target="_blank" rel="nofollow noopener noreferrer">QuickPress Theme</a> &bull; Powered by WordPress
-	</div>';
+    echo '<p class="text-center">
+	<a href="http://www.quickonlinethemes.com/wordpress/quickpress/" title="QuickPress Theme" rel="nofollow" >QuickPress Theme</a>' 
+ 	. __(' powered by ', 'quickpress') . 
+	'<a href="http://wordpress.org">WordPress</a>
+	</p>';
 	}
 	add_action('wp_footer', 'quickpress_credits');
 
 
 // load javascript
 	function quickpress_scripts() {
-		
-		wp_enqueue_style( 'quickpress-normalize', 
-			get_template_directory_uri() . '/css/normalize.css', 
-			array(), 
-			'8.0.1'
-			);
-		
-	wp_enqueue_style( 'quickpress', 
-					 get_stylesheet_uri(),
-					 array(), 
-			         '1.8.12'
-					);
-		
+	wp_enqueue_style( 'quickpress', get_stylesheet_uri() );
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){
         wp_enqueue_script( 'comment-reply' );
     	}
