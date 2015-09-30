@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Awesomeone\n"
-"POT-Creation-Date: 2015-09-22 18:33+0530\n"
-"PO-Revision-Date: 2015-09-22 18:33+0530\n"
+"POT-Creation-Date: 2015-10-01 00:15+0530\n"
+"PO-Revision-Date: 2015-10-01 00:15+0530\n"
 "Last-Translator: \n"
 "Language-Team: Flythemes Team <support@flythemes.net>\n"
 "Language: English\n"
@@ -143,10 +143,6 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: footer.php:18
-msgid "AwesomeOne 2015 | All Rights Reserved."
-msgstr ""
-
 #: functions.php:32
 msgid "Primary Menu"
 msgstr ""
@@ -181,6 +177,20 @@ msgstr ""
 
 #: header.php:33
 msgid "Menu"
+msgstr ""
+
+#: header.php:84
+msgid "Slide Title "
+msgstr ""
+
+#: header.php:87
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae est at "
+"dolor auctor faucibus. Aenean hendrerit lorem eget nisi vulputate, vitae "
+"fringilla ligula dignissim. Phasellus feugiat quam efficitur Lorem ipsum "
+"dolor sit amet, consectetur adipiscing elit. Fusce vitae est at dolor auctor "
+"faucibus. Aenean hendrerit lorem eget nisi vulputate, vitae fringilla ligula "
+"dignissim. Phasellus feugiat quam efficitur"
 msgstr ""
 
 #: header.php:90
@@ -333,39 +343,31 @@ msgstr ""
 msgid "Add some text for footer like copyright etc."
 msgstr ""
 
-#: inc/customizer.php:293
-msgid "Awesomeone Lite 2015 | All Rights Reserved."
-msgstr ""
-
-#: inc/customizer.php:298
-msgid "Copyright Text"
-msgstr ""
-
-#: inc/customizer.php:311
+#: inc/customizer.php:300
 msgid "To remove credit link upgrade to pro"
 msgstr ""
 
-#: inc/customizer.php:319
+#: inc/customizer.php:308
 msgid "Layout Settings (PRO Version)"
 msgstr ""
 
-#: inc/customizer.php:321
+#: inc/customizer.php:310
 msgid "<strong>Layout Settings available in</strong>"
 msgstr ""
 
-#: inc/customizer.php:340
+#: inc/customizer.php:329
 msgid "Fonts Settings (PRO Version)"
 msgstr ""
 
-#: inc/customizer.php:342
+#: inc/customizer.php:331
 msgid "<strong>Font Settings available in</strong>"
 msgstr ""
 
-#: inc/customizer.php:361
+#: inc/customizer.php:350
 msgid "Documentation &amp; Support"
 msgstr ""
 
-#: inc/customizer.php:363
+#: inc/customizer.php:352
 msgid "For documentation and support check this link :"
 msgstr ""
 
@@ -383,11 +385,6 @@ msgstr ""
 
 #: inc/template-tags.php:70
 msgid "Pingback:"
-msgstr ""
-
-#: inc/template-tags.php:83
-#, php-format
-msgid "<cite class=\"fn\">%s</cite> on"
 msgstr ""
 
 #: inc/template-tags.php:93

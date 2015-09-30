@@ -12,3 +12,6 @@ i) Change readme file from html to text file and resolve footer text issue.
 
 Version 1.2.2
 i) Removed unused translation function from template-tag.php file.
+
+Version 1.2.3
+i) Resolved slider images issue and added theme instructions file.

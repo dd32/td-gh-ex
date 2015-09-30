@@ -40,8 +40,8 @@
 <?php if ( is_home() || is_front_page() ) { ?>
     <div class="slider-main">
        <?php
-	   
-	   		$slideimage = '';
+	   		
+			$slideimage = '';
 			$slideimage = array(
 					'1'	=>	get_template_directory_uri().'/images/slides/slider1.jpg',
 					'2'	=>  get_template_directory_uri().'/images/slides/slider2.jpg',
@@ -51,16 +51,16 @@
 			$slAr = array();
 			$m = 0;
 			for ($i=1; $i<4; $i++) {
-				if ( get_theme_mod('slide'.$i, true) != "" ) {
-					$imgSrc 	= get_theme_mod('slide'.$i, $slideimage[$i]);
-					$imgTitle	= get_theme_mod('slide_title'.$i, true);
-					$imgDesc	= get_theme_mod('slide_desc'.$i, true);
-					$imglink	= get_theme_mod('slide_link'.$i, true);
+				if ( get_theme_mod('slide_image'.$i, true) != "" ) {
+					$imgSrc 	= esc_url(get_theme_mod('slide_image'.$i, $slideimage[$i]));
+					$imgTitle	= esc_attr(get_theme_mod('slide_title'.$i, true));
+					$imgDesc	= esc_attr(get_theme_mod('slide_desc'.$i, true));
+					$imglink	= esc_url(get_theme_mod('slide_link'.$i, true));
 					if ( strlen($imgSrc) > 10 ) {
-						$slAr[$m]['image_src'] = get_theme_mod('slide'.$i, $slideimage[$i]);
-						$slAr[$m]['image_title'] = get_theme_mod('slide_title'.$i, true);
-						$slAr[$m]['image_desc'] = get_theme_mod('slide_desc'.$i, true);
-						$slAr[$m]['image_url'] = get_theme_mod('slide_link'.$i, true);
+						$slAr[$m]['image_src'] = esc_url(get_theme_mod('slide_image'.$i, $slideimage[$i]));
+						$slAr[$m]['image_title'] = esc_attr(get_theme_mod('slide_title'.$i, true));
+						$slAr[$m]['image_desc'] = esc_attr(get_theme_mod('slide_desc'.$i, true));
+						$slAr[$m]['image_url'] = esc_url(get_theme_mod('slide_link'.$i, true));
 						$m++;
 					}
 				}
@@ -81,15 +81,15 @@
                     <div id="slidecaption<?php echo $sln; ?>" class="nivo-html-caption">
                     <div class="top-bar">
                         <?php if( get_theme_mod('slide_title'.$sln, true) != '' ){ ?>
-                            <h2><?php echo get_theme_mod('slide_title'.$sln, 'Slide Title '.$sln); ?></h2>
+                            <h2><?php echo esc_attr(get_theme_mod('slide_title'.$sln, __('Slide Title ','awesomeone').$sln)); ?></h2>
                         <?php } ?>
                         <?php if( get_theme_mod('slide_desc'.$sln, true) != '' ){ ?>
-                            <p><?php echo get_theme_mod('slide_desc'.$sln, 'Phasellus eget erat nisi. Cras sed nibh iaculis, scelerisque justo volutpat, venenatis ante. Integer sit amet ligula sed felis gravida dictum non eu purus.'); ?></p>
+                            <p><?php echo esc_attr(get_theme_mod('slide_desc'.$sln, __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae est at dolor auctor faucibus. Aenean hendrerit lorem eget nisi vulputate, vitae fringilla ligula dignissim. Phasellus feugiat quam efficitur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae est at dolor auctor faucibus. Aenean hendrerit lorem eget nisi vulputate, vitae fringilla ligula dignissim. Phasellus feugiat quam efficitur','awesomeone'))); ?></p>
                         <?php } ?>
 						<?php if( get_theme_mod('slide_link'.$sln, true) != ''){ ?>
-                        	<a class="read-more" href="<?php echo get_theme_mod('slide_link'.$sln,'#'); ?>"><?php _e('Learn More','awesomeone'); ?></a>
+                        	<a class="read-more" href="<?php echo esc_url(get_theme_mod('slide_link'.$sln,'#')); ?>"><?php _e('Learn More','awesomeone'); ?></a>
                         <?php } ?>
-						<?php if( get_theme_mod('purchaselink', true) != ''){ ?>
+                        <?php if( get_theme_mod('purchaselink', true) != ''){ ?>
                         	<a class="common_btn" href="<?php echo get_theme_mod('purchaselink',true); ?>"><?php _e('Purchase Now','awesomeone'); ?></a>
                         <?php } ?>
                     </div>
