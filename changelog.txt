@@ -1,4 +1,9 @@
 == Change Log ==
+= 3.0.2 =
+* Fix - esc_html changed to wp_kses_stripslashes for validation
+* Fix - Unwanted php close tag removed
+* Fix - Empty page title tag fixed for better SEO
+
 = 3.0.1 =
 * Fix - Undefined offset issue fixed
 

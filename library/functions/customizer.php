@@ -55,7 +55,6 @@ function attitude_textarea_register($wp_customize){
 					foreach ( $categories as $category) :?>
 						<option value="<?php echo $category->cat_ID; ?>" <?php if ( in_array( $category->cat_ID, $categories) ) { selected();}?>><?php echo $category->cat_name; ?></option>
 					<?php endforeach; ?>
-				?>
 				</select>
 			</label>
 		<?php 
@@ -624,7 +623,7 @@ function attitude_customize_register($wp_customize){
 		'default'				=> '',
 		'type' 					=> 'option',
 		'capability' 			=> 'manage_options',
-		'sanitize_callback'	=> 'esc_html'
+		'sanitize_callback'	=> 'wp_kses_stripslashes'
 	));
 	$wp_customize->add_control( 'analytic_header', array(
 		'label'					=> __('Code to display on Header','attitude'),
@@ -637,7 +636,7 @@ function attitude_customize_register($wp_customize){
 		'default'				=> '',
 		'type' 					=> 'option',
 		'capability' 			=> 'manage_options',
-		'sanitize_callback'	=> 'esc_html'
+		'sanitize_callback'	=> 'wp_kses_stripslashes'
 	));
 	$wp_customize->add_control( 'analytic_footer', array(
 		'label'					=> __('Code to display on Footer','attitude'),

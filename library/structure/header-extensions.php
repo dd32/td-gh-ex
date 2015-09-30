@@ -232,8 +232,9 @@ function attitude_headerdetails() {
 	    			<?php
 		    		if( function_exists( 'attitude_breadcrumb' ) )
 						attitude_breadcrumb();
-					?>
+					if( '' != attitude_header_title() ) {?>
 				   <h1 class="page-title"><?php echo attitude_header_title(); ?></h1><!-- .page-title -->
+				   <?php } ?>
 				</div>
 	    	</div>
 	   <?php
