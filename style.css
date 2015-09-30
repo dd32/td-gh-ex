@@ -7,7 +7,7 @@
 	Author URI: http://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.1.4
+	Version: 1.2
 	Text Domain: swell-lite
 	Domain Path: /languages/
 	Tags: light, gray, white, green, silver, one-column, two-columns, right-sidebar, responsive-layout, fluid-layout, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options, photoblogging
@@ -25,24 +25,25 @@
 	 3.	Header
 	 4.	Navigation
 	 5.	Content
-	 6. Social Media
-	 7. Pagination
-	 8.	Images
-	 9.	Wordpress Gallery
-	10.	Sidebar
-	11.	Widgets
-	12.	RSS Widget
-	13.	Calendar Widget
-	14.	Custom Menu Widget
-	15.	Search Form
-	16.	Footer
-	17.	Comments
-	18.	Buttons
-	19. Tables
-	20. Forms
-	21. CSS3 Styles
-	22. Jetpack
-	23. WordPress Core
+	 6. Page Templates
+	 7. Social Media
+	 8. Pagination
+	 9.	Images
+	10.	Wordpress Gallery
+	11.	Sidebar
+	12.	Widgets
+	13.	RSS Widget
+	14.	Calendar Widget
+	15.	Custom Menu Widget
+	16.	Search Form
+	17.	Footer
+	18.	Comments
+	19.	Buttons
+	20. Tables
+	21. Forms
+	22. CSS3 Styles
+	23. Jetpack
+	24. WordPress Core
 	  
 *******************************************************************************************************************/
 
@@ -413,11 +414,11 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	display: block;
 	color: #333333;
 	max-width: 1180px;
-	font-size: 4em;
+	font-size: 3em;
 	font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
 	font-weight: 800;
 	text-transform: uppercase;
-	letter-spacing: 0px;
+	letter-spacing: -1px;
 	line-height: 1.2;
 	margin: 0px auto 0px;
 	padding: 0px 48px;
@@ -427,22 +428,21 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	color: #999999;
 	color: rgba(0, 0, 0, .6);
 	max-width: 1180px;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
 	font-weight: 500;
 	text-transform: uppercase;
-	text-indent: 2px;
 	letter-spacing: 1px;
 	line-height: 1.4;
-	margin: 0px auto 0px;
+	margin: 18px auto 0px;
 	padding: 0px 48px;
 	overflow: hidden;
 	}
 #masthead .site-title a {
-	color: rgba(255, 255, 255, 1);
-	}
-#masthead .site-title a:hover {
-	color: rgba(255, 255, 255, .8);
+	display: inline-block;
+	color: #ffffff;
+	padding: 12px 24px;
+	border: 4px solid #ffffff;
 	}
 #masthead .site-description {
 	color: rgba(255, 255, 255, .6);
@@ -693,16 +693,16 @@ div.menu ul li li li:hover ul {
 	border-top-color: rgba(0, 0, 0, .4); /* IE8 fallback colour */
 	}
 /* styling for right-facing arrows */
-.sf-arrows ul .sf-with-ul:after {
+.sf-arrows li li .sf-with-ul:after {
 	margin-top: -3px;
 	margin-right: -3px;
 	border-color: transparent;
 	border-left-color: #DDDDDD; /* edit this to suit design (no rgba in IE8) */
 	border-left-color: rgba(0, 0, 0, .24);
 	}
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows ul .sfHover > .sf-with-ul:after {
+.sf-arrows li li > .sf-with-ul:focus:after,
+.sf-arrows li li:hover > .sf-with-ul:after,
+.sf-arrows li li.sfHover > .sf-with-ul:after {
 	border-left-color: rgba(0, 0, 0, .4);
 	}
 
@@ -829,6 +829,11 @@ div.menu ul li li li:hover ul {
 	padding: 6px 0px;
 	border-bottom: 1px solid rgba(0,0,0, 0.08);
 	}
+	
+/************************************************
+*	6. Page Templates  							*
+************************************************/
+
 .archive-column {
 	float: left;
 	width: 30%;
@@ -841,7 +846,7 @@ div.menu ul li li li:hover ul {
 	}
 		
 /************************************************
-*	6. Social Media   							*
+*	7. Social Media   							*
 ************************************************/
 
 .social-icons {
@@ -900,7 +905,7 @@ div.menu ul li li li:hover ul {
 .social-icons li a[href$="/feed/"]::before				{ content: '\f09e'; }
 	
 /************************************************
-*	7.	Pagination 	  		      		     	* 
+*	8.	Pagination 	  		      		     	* 
 ************************************************/
 
 .pagination {
@@ -975,7 +980,7 @@ div.menu ul li li li:hover ul {
 	}
 
 /************************************************
-*	8.	Images  				     		    * 
+*	9.	Images  				     		    * 
 ************************************************/
 
 .feature-img {
@@ -1086,7 +1091,7 @@ img.alignleft {
 	}
 	
 /************************************************
-*	9.	WordPress Gallery					    *
+*	10.	WordPress Gallery					    *
 ************************************************/
 
 .gallery-caption {
@@ -1129,7 +1134,7 @@ img.alignleft {
 	}
 
 /************************************************
-*	10.	Sidebar 	        		    	    * 
+*	11.	Sidebar 	        		    	    * 
 ************************************************/
 
 .sidebar {
@@ -1149,7 +1154,7 @@ img.alignleft {
 	}
 
 /************************************************
-*	11.	Widgets									*
+*	12.	Widgets									*
 ************************************************/
 
 .widget {
@@ -1194,7 +1199,7 @@ img.alignleft {
 	}
 	
 /************************************************
-*	12.	RSS Widget								*
+*	13.	RSS Widget								*
 ************************************************/
 
 .widget h6 a.rsswidget {
@@ -1210,7 +1215,7 @@ img.alignleft {
 	}
 
 /************************************************
-*	13.	Calendar Widget							*
+*	14.	Calendar Widget							*
 ************************************************/
 
 #calendar_wrap {
@@ -1248,7 +1253,7 @@ img.alignleft {
 	}
 	
 /************************************************
-*	14.	Custom Menu Widget						*
+*	15.	Custom Menu Widget						*
 ************************************************/
 
 .widget ul.menu {
@@ -1317,7 +1322,7 @@ img.alignleft {
 	}
 	
 /************************************************
-*	15.	Search Form								*
+*	16.	Search Form								*
 ************************************************/
 
 #searchform {
@@ -1359,7 +1364,7 @@ img.alignleft {
 	}
 
 /************************************************
-*	16.	Footer  								*
+*	17.	Footer  								*
 ************************************************/
 
 .footer {
@@ -1367,7 +1372,6 @@ img.alignleft {
 	margin: 0px auto 0px;
 	padding: 0px;
 	overflow: hidden;
-	border-top: 1px solid rgba(0, 0, 0, .08);
 	}
 .footer p {
 	margin: 0px;
@@ -1405,7 +1409,7 @@ img.alignleft {
 .footer-information {
 	background: #495150;
 	color: rgba(255, 255, 255, .4);
-	padding: 48px 0px;
+	padding: 12px 0px;
 	overflow: hidden;
 	}
 .footer-information a {
@@ -1413,7 +1417,7 @@ img.alignleft {
 	}
 
 /************************************************
-*	17.	Comments								*
+*	18.	Comments								*
 ************************************************/
 
 #author, #email, #url {
@@ -1573,7 +1577,7 @@ p.logged-in-as {
 	}
 	
 /************************************************
-*	18.	Buttons  								*
+*	19.	Buttons  								*
 ************************************************/
 
 a.button, .reply a, #searchsubmit, #prevLink a, #nextLink a, .more-link, #submit, 
@@ -1609,7 +1613,7 @@ a.button:hover, .reply a:hover, #searchsubmit:hover, #prevLink a:hover, #nextLin
 	}
 	
 /************************************************
-*	19. Tables		 							*
+*	20. Tables		 							*
 ************************************************/
 
 table {
@@ -1646,7 +1650,7 @@ table td {
 	}
 	
 /************************************************
-*	20. Forms									*
+*	21. Forms									*
 ************************************************/
 	
 /* General Form Styles */
@@ -1744,7 +1748,7 @@ select {
 	}
 	
 /************************************************
-*	21.	CSS3 Styles								*
+*	22.	CSS3 Styles								*
 ************************************************/
 
 a, a:link {
@@ -1790,7 +1794,7 @@ a, a:link {
 	}
 
 /************************************************
-*	22.	Jetpack	 					     	    * 
+*	23.	Jetpack	 					     	    * 
 ************************************************/
 
 #infinite-handle,
@@ -1830,7 +1834,7 @@ a, a:link {
 	}
 	
 /************************************************
-*	23.	WordPress Core	 			     	    *
+*	24.	WordPress Core	 			     	    *
 ************************************************/
 
 /* Text meant only for screen readers. */
