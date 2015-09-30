@@ -192,6 +192,36 @@ function accesspress_bxslidercb(){
 					<?php endwhile; ?>
 					</div>
 					<?php endif; ?>
+			<?php else: ?>
+
+            <div class="bx-slider">
+				<div class="slides">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider1.jpg" alt="slider1">
+					<div class="slider-caption">
+						<div class="mid-content">
+							<h1 class="caption-title"><?php _e('Welcome to AccessPress Parallax!','accesspress_parallax'); ?></h1>
+							<h2 class="caption-description">
+							<p><?php _e('A full featured parallax theme - and its absolutely free!','accesspress_parallax'); ?></p>
+							<p><a href="#"><?php _e('Read More','accesspress_parallax'); ?></a></p>
+							</h2>
+						</div>
+					</div>
+				</div>
+						
+				<div class="slides">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider2.jpg" alt="slider2">
+					<div class="slider-caption">
+						<div class="ak-container">
+							<h1 class="caption-title"><?php _e('Amazing multi-purpose parallax theme','accesspress_parallax'); ?></h1>
+							<h2 class="caption-description">
+							<p><?php _e('Travel, corporate, small biz, portfolio, agencies, photography, health, creative - useful for anyone and everyone','accesspress_parallax'); ?></p>
+							<p><a href="#"><?php _e('Read More','accesspress_parallax'); ?></a></p>
+							</h2>
+							</div>
+					</div>
+				</div>
+			</div>
+
 			<?php  endif; ?>
 		</section>
 		<?php endif; ?>
@@ -358,7 +388,7 @@ function accesspress_letter_count($content, $limit) {
 	$striped_content = strip_shortcodes($striped_content);
 	$limit_content = mb_substr($striped_content, 0 , $limit );
 
-	if($limit_content < $content){
+	if( strlen($limit_content) < strlen($content) ){
 		$limit_content .= "..."; 
 	}
 	return $limit_content;

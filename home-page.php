@@ -29,14 +29,13 @@ get_header();
 		<?php if($layout != "googlemap_template") :?>
 			<div class="mid-content">
 		<?php endif; ?>
-
 			<?php  
 	            $query = new WP_Query( 'page_id='.$section['page'] );
 	            while ( $query->have_posts() ) : $query->the_post();
 	        ?>
 				<?php 
 				if($layout != "action_template" && $layout != "blank_template" && $layout != "googlemap_template"): ?>
-					<h1><span><?php echo $page->post_title; ?></span></h1>
+					<h1><span><?php the_title(); ?></span></h1>
 
 					<div class="parallax-content">
 					<?php if(get_the_content() != "") : ?>
@@ -104,7 +103,6 @@ get_header();
 	endif; 
 	endforeach;
 	endif;
-
 ?>
 
 <?php get_footer(); ?>

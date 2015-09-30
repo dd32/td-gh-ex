@@ -65,9 +65,7 @@
 			else: 
 				wp_nav_menu( array( 
 				'theme_location' => 'primary' , 
-				'container'      => '',
-				'menu_class'      => 'nav',
-				//'fallback_cb'     => '',
+				'container'      => ''
 				) );
 			endif; ?>
 		

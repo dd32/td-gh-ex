@@ -89,6 +89,11 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.24.5
+* Main navigation bug fixed
+* Missing Translation ready fixed
+* Minor bug in accesspress_letter_count function fixed
+
 Version 1.24.4
 * FontAwesome updated to latest version
 * Translation pot file updated 
