@@ -1,5 +1,8 @@
 == Change log ==
 
+= 1.3 = 
+* Added: French translation fr_FR.po and fr_FR.mo
+
 = 1.2 = 
 * Added: Single Post navigation
 * Bug Fixed: Changed esc_attr_e to echo esc_attr in searchform.php
