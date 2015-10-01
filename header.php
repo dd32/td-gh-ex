@@ -41,9 +41,11 @@
 				<?php
 					 if($header_setting['enable_header_logo_text'] == 1) 
 					{ echo "<div class=appointment_title_head>" . get_bloginfo( ). "</div>"; }
-					else 
+					elseif($header_setting['upload_image_logo']!='') 
 					{ ?>
 					<img class="img-responsive" src="<?php echo $header_setting['upload_image_logo']; ?>" style="height:<?php echo $header_setting['height']; ?>px; width:<?php echo $header_setting['width']; ?>px;"/>
+					<?php } else { ?>
+					<img src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/logo.png">
 					<?php } ?>
 				</a></h1>
 				<?php } ?>	

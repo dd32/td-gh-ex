@@ -83,7 +83,6 @@ function appointment_title( $title, $sep )
 add_filter( 'wp_title', 'appointment_title', 10,2 );
 
 add_filter('get_avatar','appointment_add_gravatar_class');
-add_theme_support( "title-tag" );
 
 function appointment_add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='img-responsive img-circle", $class);
@@ -106,25 +105,19 @@ add_filter( 'user_contactmethods', 'appointment_add_to_author_profile', 10, 1);
 	        add_filter('get_the_excerpt','appointment_post_slider_excerpt');
 	        add_filter('excerpt_more','__return_false');
         function appointment_post_slider_excerpt($output){
-		
-		     if(empty($output))
-			 {
-			 }
-			 else
-			 {
-			      if(str_word_count($output) < 25)
-				{
-					return '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>';
-				}
-				else
-				{
-					return '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>'.
+		$output = strip_tags(preg_replace(" (\[.*?\])",'',$output));
+		$output = strip_shortcodes($output);		
+		$original_len = strlen($output);
+		$output = substr($output, 0, 155);		
+		$len=strlen($output);	 
+		if($original_len>155) {
+		$output = $output;
+		return  '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>'.
 	                       '<div class="blog-btn-area-sm"><a href="' . get_permalink() . '" class="blog-btn-sm">'.__("
 						   Read more","appointment").'</a></div>';
-				}
-			 }
-				
-                
+		}
+		else
+		{ return '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>'; }   
         }
 						
 	function get_home_blog_excerpt()

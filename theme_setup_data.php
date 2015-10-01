@@ -86,6 +86,5 @@ function theme_setup_data()
 	'footer_social_media_skype_link' => '#',
 	'footer_skype_media_enabled' => 1,
 	);
-	
   	}
   ?>

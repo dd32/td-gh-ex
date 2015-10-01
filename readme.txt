@@ -86,7 +86,7 @@ URL: http://pixabay.com/en/office-meeting-business-partners-336368/
 Source:http://pixabay.com
 License: CC0 Public Domain
 
-Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.4.0 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 
@@ -94,6 +94,9 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.4.3
+1. Update Font awesome 4.4.0.
+2. Update Slider excerpt function.
 @version 2.4.2
 1. Resolved Text domain error.
 2. Add setting sanatize error resoved.
