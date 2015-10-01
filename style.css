@@ -4,11 +4,10 @@ Theme URI: http://www.nilambar.net/2014/03/blue-planet-wordpress-theme-free.html
 Author: Nilambar Sharma
 Author URI: http://www.nilambar.net
 Description: Blue Planet is a beautiful and sleek responsive theme for your awesome WordPress website. Features - Cross browser compatible, Two columns or One column layout, Responsive Design, Custom menus, Featured slider, Social Icons, Theme options, Custom CSS, Translation ready
-Version: 2.0
-License: GNU General Public License
-License URI: license.txt
+Version: 2.0.1
+License: GNU General Public License Version 3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: blue-planet
-Domain Path: /languages/
 Tags: light, blue, green, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, responsive-layout, threaded-comments
 
 This theme, like WordPress, is licensed under the GPL.
@@ -925,11 +924,12 @@ footer div.site-info a{
   color: #FFFFFF!important;
 }
 footer#colophon {
-    text-align: center;
-    min-height: 50px;
-    margin: 10px 0px 15px 0px;
-    background-color: #32698B;
-    color: #FFFFFF;
+  text-align: center;
+  margin: 10px 0px 15px 0px;
+  background-color: #32698B;
+  color: #FFFFFF;
+  height: auto;
+  overflow: hidden;
 }
 footer#colophon a{
     color:#FFFFFF;
@@ -1478,17 +1478,21 @@ a.readmore:hover{
   background-color: #234961;
 }
 
-/*Goto top*/
+/* Goto top */
 .scrollup{
-    width:40px;
-    height:40px;
-    opacity:0.6;
-    position:fixed;
-    bottom:50px;
-    right:30px;
-    display:none;
-    outline: none;
-    border:none;
-    text-indent:-9999px;
-    background: url('images/icon_top.png') no-repeat;
+  width:40px;
+  height:40px;
+  opacity:0.6;
+  position:fixed;
+  bottom:50px;
+  right:30px;
+  display:none;
+  outline: none;
+  border:none;
+  text-indent:-9999px;
+  background: url('images/icon_top.png') no-repeat;
+}
+a.scrollup:active,
+a.scrollup:focus{
+  outline: none;
 }

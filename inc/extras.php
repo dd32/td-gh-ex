@@ -1,10 +1,8 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates
+ * Custom functions that act independently of the theme templates.
  *
- * Eventually, some of the functionality here could be replaced by core features
- *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 /**
@@ -23,7 +21,7 @@ add_filter( 'wp_page_menu_args', 'blue_planet_page_menu_args' );
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
- * @return array
+ * @return array Body classes
  */
 function blue_planet_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
@@ -35,89 +33,25 @@ function blue_planet_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'blue_planet_body_classes' );
 
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
+if ( ! function_exists( 'blue_planet_featured_image_instruction' ) ) :
 	/**
-	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
+	 * Message to show in the Featured Image Meta box.
 	 *
-	 * @param string $title Default title text for current view.
-	 * @param string $sep Optional separator.
-	 * @return string The filtered title.
-	 */
-	function blue_planet_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-
-		global $page, $paged;
-
-		// Add the blog name
-		$title .= get_bloginfo( 'name', 'display' );
-
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-
-		// Add a page number if necessary:
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
-		}
-
-		return $title;
-	}
-	add_filter( 'wp_title', 'blue_planet_wp_title', 10, 2 );
-
-	/**
-	 * Title shim for sites older than WordPress 4.1.
+	 * @since 1.0.0
 	 *
-	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	 * @todo Remove this function when WordPress 4.3 is released.
+	 * @param string $content Admin post thumbnail HTML markup.
+	 * @param int    $post_id Post ID.
+	 * @return string HTML.
 	 */
-	function blue_planet_render_title() {
-		?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php
+	function blue_planet_featured_image_instruction( $content, $post_id ) {
+
+		if ( 'post' === get_post_type( $post_id ) ) {
+			$content .= '<strong>'.__( 'Recommended image sizes', 'blue-planet' ).'</strong><br/>';
+			$content .= '<br/>'.__( 'Secondary Slider : 720px X 350px', 'blue-planet' );
+		}
+
+		return $content;
 	}
-	add_action( 'wp_head', 'blue_planet_render_title' );
 endif;
 
-//custom
-
-//Remove Generator in header
-remove_action('wp_head', 'wp_generator');
-
-if ( ! function_exists( 'blue_planet_featured_image_instruction' ) ) :
-//Messgae to show in the Featured Image Meta box
-function blue_planet_featured_image_instruction( $content ) {
-    $content .= '<strong>'.__( 'Recommended image sizes', 'blue-planet' ).'</strong><br/>';
-    $content .= '<br/>'.__( 'Secondary Slider : 720px X 350px', 'blue-planet' );
-    return $content;
-}
-endif; // blue_planet_featured_image_instruction
-add_filter( 'admin_post_thumbnail_html', 'blue_planet_featured_image_instruction');
-//////////////
-
-if ( ! function_exists( 'blue_planet_sanitize_hex_color' ) ) :
-	function blue_planet_sanitize_hex_color( $color ) {
-		if ( '' === $color )
-			return '';
-
-		// 3 or 6 hex digits, or the empty string.
-		if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) )
-			return $color;
-
-		return null;
-	}
-endif; // blue_planet_sanitize_hex_color
-
-
-if ( ! function_exists( 'blue_planet_dumb_css_sanitize' ) ) :
-	function blue_planet_dumb_css_sanitize( $css ) {
-		$css = str_replace( '<=', '<=', $css );
-		$css = wp_kses_split( $css, array(), array() );
-		$css = str_replace( '>', '>', $css );
-		$css = strip_tags( $css );
-		return $css;
-	}
-endif; // blue_planet_dumb_css_sanitize
+add_filter( 'admin_post_thumbnail_html', 'blue_planet_featured_image_instruction', 10, 2 );

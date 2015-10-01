@@ -2,8 +2,9 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -12,9 +13,11 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php if ( has_post_thumbnail() ) {
+		<?php
+		if ( has_post_thumbnail() ) {
 			the_post_thumbnail();
-		} ?>
+		}
+		?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
