@@ -5,7 +5,6 @@
 // Load default style.css and Javascripts
 add_action('wp_enqueue_scripts', 'anderson_enqueue_scripts');
 
-if ( ! function_exists( 'anderson_enqueue_scripts' ) ):
 function anderson_enqueue_scripts() {
 
 	// Register and Enqueue Stylesheet
@@ -35,20 +34,16 @@ function anderson_enqueue_scripts() {
 
 	endif;
 	
+	// Register Comment Reply Script for Threaded Comments
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
 	// Register and Enqueue Font
 	wp_enqueue_style('anderson-lite-default-fonts', anderson_fonts_url(), array(), null );
 
 }
-endif;
 
-// Load comment-reply.js if comment form is loaded and threaded comments activated
-add_action( 'comment_form_before', 'anderson_enqueue_comment_reply' );
-
-function anderson_enqueue_comment_reply() {
-	if( get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
 
 /*
 * Retrieve Font URL to register default Google Fonts
@@ -85,7 +80,6 @@ function anderson_fonts_url() {
 // Setup Function: Registers support for various WordPress features
 add_action( 'after_setup_theme', 'anderson_setup' );
 
-if ( ! function_exists( 'anderson_setup' ) ):
 function anderson_setup() {
 
 	// Set Content Width
@@ -114,9 +108,6 @@ function anderson_setup() {
 		'width'	=> 1200,
 		'height' => 350,
 		'flex-height' => true));
-	
-	// Add Theme Support for Anderson Pro Plugin
-	add_theme_support( 'anderson-pro' );
 
 	// Register Navigation Menus
 	register_nav_menu( 'primary', __('Main Navigation', 'anderson-lite') );
@@ -127,13 +118,11 @@ function anderson_setup() {
 	register_nav_menu( 'social', __('Social Icons', 'anderson-lite') );
 
 }
-endif;
 
 
 // Add custom Image Sizes
 add_action( 'after_setup_theme', 'anderson_add_image_sizes' );
 
-if ( ! function_exists( 'anderson_add_image_sizes' ) ):
 function anderson_add_image_sizes() {
 
 	// Add Custom Header Image Size
@@ -147,13 +136,11 @@ function anderson_add_image_sizes() {
 	add_image_size( 'anderson-slider-image', 880, 440, true);
 
 }
-endif;
 
 
 // Register Sidebars
 add_action( 'widgets_init', 'anderson_register_sidebars' );
 
-if ( ! function_exists( 'anderson_register_sidebars' ) ):
 function anderson_register_sidebars() {
 
 	// Register Sidebar
@@ -179,123 +166,6 @@ function anderson_register_sidebars() {
 	));
 	
 }
-endif;
-
-
-// Add title tag for older WordPress versions
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-
-	add_action( 'wp_head', 'anderson_wp_title' );
-	function anderson_wp_title() { ?>
-		
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-
-<?php
-    }
-    
-endif;
-
-
-// Add Default Menu Fallback Function
-function anderson_default_menu() {
-	echo '<ul id="mainnav-menu" class="menu">'. wp_list_pages('title_li=&echo=0') .'</ul>';
-}
-
-
-// Get Featured Posts
-function anderson_get_featured_content() {
-	return apply_filters( 'anderson_get_featured_content', false );
-}
-
-
-// Check if featured posts exists
-function anderson_has_featured_content() {
-	return ! is_paged() && (bool) anderson_get_featured_content();
-}
-
-
-// Change Excerpt Length
-add_filter('excerpt_length', 'anderson_excerpt_length');
-function anderson_excerpt_length($length) {
-    return 30;
-}
-
-
-// Change Excerpt More
-add_filter('excerpt_more', 'anderson_excerpt_more');
-function anderson_excerpt_more($more) {
-    
-	// Get Theme Options from Database
-	$theme_options = anderson_theme_options();
-
-	// Return Excerpt Text
-	if ( isset($theme_options['excerpt_text']) and $theme_options['excerpt_text'] == true ) :
-		return ' [...]';
-	else :
-		return '';
-	endif;
-}
-
-
-// Change Excerpt Length for Featured Content
-add_filter('excerpt_length', 'anderson_excerpt_length');
-function anderson_slideshow_excerpt_length($length) {
-    return 20;
-}
-
-
-// Change Excerpt Length for Featured Content
-add_filter('excerpt_length', 'anderson_excerpt_length');
-function anderson_category_posts_widgets_excerpt_length($length) {
-    return 20;
-}
-
-
-// Custom Template for comments and pingbacks.
-if ( ! function_exists( 'anderson_list_comments' ) ):
-function anderson_list_comments($comment, $args, $depth) {
-
-	$GLOBALS['comment'] = $comment;
-
-	if( $comment->comment_type == 'pingback' or $comment->comment_type == 'trackback' ) : ?>
-
-		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-			<p><?php _e( 'Pingback:', 'anderson-lite' ); ?> <?php comment_author_link(); ?>
-			<?php edit_comment_link( __( '(Edit)', 'anderson-lite' ), '<span class="edit-link">', '</span>' ); ?>
-			</p>
-
-	<?php else : ?>
-
-		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-
-			<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-
-				<div class="comment-author vcard">
-					<?php echo get_avatar( $comment, 56 ); ?>
-					<?php printf( '<span class="fn">%s</span>', get_comment_author_link() ); ?>
-				</div>
-
-		<?php if ($comment->comment_approved == '0') : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'anderson-lite' ); ?></p>
-		<?php endif; ?>
-
-				<div class="comment-meta commentmetadata">
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf(__('%1$s at %2$s', 'anderson-lite'), get_comment_date(),  get_comment_time()) ?></a>
-					<?php edit_comment_link(__('(Edit)', 'anderson-lite'),'  ','') ?>
-				</div>
-
-				<div class="comment-content"><?php comment_text(); ?></div>
-
-				<div class="reply">
-					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-				</div>
-
-			</div>
-<?php
-	endif;
-
-}
-endif;
 
 
 /*==================================== INCLUDE FILES ====================================*/
@@ -311,8 +181,14 @@ require( get_template_directory() . '/inc/customizer/default-options.php' );
 require( get_template_directory() . '/inc/customizer/frontend/custom-layout.php' );
 require( get_template_directory() . '/inc/customizer/frontend/custom-slider.php' );
 
+// Include Extra Functions
+require get_template_directory() . '/inc/extras.php';
+
 // include Template Functions
 require( get_template_directory() . '/inc/template-tags.php' );
+
+// Include support functions for Theme Addons
+require get_template_directory() . '/inc/addons.php';
 
 // include Widget Files
 require( get_template_directory() . '/inc/widgets/widget-category-posts-boxed.php' );
@@ -320,8 +196,5 @@ require( get_template_directory() . '/inc/widgets/widget-category-posts-columns.
 require( get_template_directory() . '/inc/widgets/widget-category-posts-grid.php' );
 require( get_template_directory() . '/inc/widgets/widget-category-posts-horizontal.php' );
 
-// Include Featured Content class in case it does not exist yet (e.g. user has not Jetpack installed)
+// Include Featured Content class
 require get_template_directory() . '/inc/featured-content.php';
-
-
-?>
