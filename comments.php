@@ -3,7 +3,7 @@
 <?php return;endif;?>
 <?php if ( have_comments() ) : ?>		
 <div class="row-fluid comment_mn">
-  <h3><?php _e('Comment','bus_prof');?> <span>(<?php echo get_comments_number();?>)</span></h3>
+  <h3><?php _e('Comment','busi_prof');?> <span>(<?php echo get_comments_number();?>)</span></h3>
   <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>		
   <nav id="comment-nav-above">
     <h1 class="assistive-text"><?php _e( 'Comment navigation', 'busi_prof' ); ?></h1>

@@ -57,6 +57,11 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.6.1
+1. Add Screen reader css.
+2. Update Font-awesome Folder
+3. Remove Theme Check Error.
+4. Update Port File.
 @version 1.6
 1. Add font-awesome icons in service section.
 2. Add Goolge font.

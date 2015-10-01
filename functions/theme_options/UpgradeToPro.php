@@ -205,11 +205,15 @@ p.txt-cont-large {
 	<ul>
 		<li>
 			<h3>About us Template</h3>
-			<p>Create an effective profile/about page by using this template. You can also add your team members in the same page. Watch the <a href="http://webriti.com/demo/wp/busiprof/about-us/" target="_blank">demo</a> of theme specific about us page.   </p>
+			<p>Create an effective profile/about page by using this template. You can also add your team members in the same page. Watch the 
+			<a href="<?php echo esc_url( __('http://webriti.com/demo/wp/busiprof/about-us/', 'busi_prof'));?>" target="_blank" ><?php _e("demo.","busi_prof"); ?></a>
+
+			of theme specific about us page.   </p>
 		</li>
 		<li>
 			<h3>Portfolio Templates</h3>
-			<p>Share you work in the form of 2/3/4 columns layout. Create an effective portfolio with these templates. If you want 2 column layout of the portfolio than assign a template Portfolio 2 Column, similarly you can use other templates. Watch the <a href="http://webriti.com/demo/wp/busiprof/our-work/portfolio-2-column/" target="_blank">demo</a> of theme specific portfolio page.   </p>
+			<p>Share you work in the form of 2/3/4 columns layout. Create an effective portfolio with these templates. If you want 2 column layout of the portfolio than assign a template Portfolio 2 Column, similarly you can use other templates. Watch the
+			<a href="<?php echo esc_url( __('http://webriti.com/demo/wp/busiprof/our-work/portfolio-2-column/', 'busi_prof'));?>" target="_blank" ><?php _e("demo.","busi_prof"); ?></a> of theme specific portfolio page.   </p>
 		</li>
 		<li>
 			<h3>Contact Us Templates</h3>

@@ -3,7 +3,7 @@
   function busi_admin_menu_pannel()
    {
   	
-  	$page=add_theme_page( __('theme','busiprof'), __('Option Panel','busiprof'), 'edit_theme_options', 'busi_prof', 'busiprof_option_panal_function' ); 
+  	$page=add_theme_page( __('theme','busi_prof'), __('Option Panel','busi_prof'), 'edit_theme_options', 'busi_prof', 'busiprof_option_panal_function' ); 
   	add_action('admin_print_styles-'.$page, 'busi_admin_enqueue_script');
   }
   function busi_admin_enqueue_script($hook) {

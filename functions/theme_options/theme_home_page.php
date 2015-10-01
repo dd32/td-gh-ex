@@ -121,19 +121,19 @@
   <?php wp_nonce_field('busiprof_customization_nonce_gernalsetting','busiprof_gernalsetting_nonce_customization'); ?>
   <div class="postbox" id="Basic_setting_1">
     <div title="Click to toggle" class="handlediv"><br></div>
-    <h3 class="hndle"><span><?php _e('Custom Static Front Page','sis_spa');?><span class="postbox-title-action">
+    <h3 class="hndle"><span><?php _e('Custom Static Front Page','busi_prof');?><span class="postbox-title-action">
     </h3>
     <div class="inside">
       <p>
-      <h4 class="heading"><?php _e('Do you want display Static Front Page: ','sis_spa');?></h4>
+      <h4 class="heading"><?php _e('Do you want display Static Front Page: ','busi_prof');?></h4>
       <?php $front_page = $current_options['front_page']; ?>
-      <?php _e('Yes','sis_spa');?> 
+      <?php _e('Yes','busi_prof');?> 
       <input type="radio" name="front_page" value="yes" <?php if($front_page == 'yes') echo "checked"; ?> >
-      <a href="<?php echo admin_url('/options-reading.php'); ?>"><?php _e('front page option','sis_spa'); ?></a>
+      <a href="<?php echo admin_url('/options-reading.php'); ?>"><?php _e('front page option','busi_prof'); ?></a>
       &nbsp;&nbsp;
-      <input type="radio" name="front_page" value="no" <?php if($front_page == 'no') echo "checked";  ?> >  <?php _e('No','sis_spa');?>  &nbsp;&nbsp;
+      <input type="radio" name="front_page" value="no" <?php if($front_page == 'no') echo "checked";  ?> >  <?php _e('No','busi_prof');?>  &nbsp;&nbsp;
       <span class="icon help">
-      <span class="tooltip"><?php  _e('Shows Custom Static Front Page','sis_spa');?></span>
+      <span class="tooltip"><?php  _e('Shows Custom Static Front Page','busi_prof');?></span>
       </span>
       </p>
     </div>
@@ -256,7 +256,7 @@
   <div class="inside">
   <p><h4 class="heading"><?php _e('Service One Icon','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_icon_one']!='') { echo esc_attr($current_options['service_icon_one']); } ?>" id="service_icon_one" name="service_icon_one" size="36" />
-  <h4 class="heading"><?php _e('Use font awesome icons as service icon, like: fa-group .','busi_prof');?><a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
+  <h4 class="heading"><?php _e('Use font awesome icons as service icon, like: fa-group .','busi_prof');?><a href="<?php echo esc_url( __('https://fortawesome.github.io/Font-Awesome/', 'busi_prof'));?>" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
   </p>
   <p><h4 class="heading"><?php _e('Service one Custom Icon/Image','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_image_one']!='') { echo esc_attr($current_options['service_image_one']); } ?>" id="service_image_one" name="service_image_one" size="36" />
@@ -286,7 +286,7 @@
   <div class="inside">
   <p><h4 class="heading"><?php _e('Service two Icon','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_icon_two']!='') { echo esc_attr($current_options['service_icon_two']); } ?>" id="service_icon_two" name="service_icon_two" size="36" />
-  <h4 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-group .','busi_prof');?><a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
+  <h4 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-group .','busi_prof');?><a href="<?php echo esc_url( __('https://fortawesome.github.io/Font-Awesome/', 'busi_prof'));?>" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
   </p>
   <p><h4 class="heading"><?php _e('Service two Custom Icon/Image','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_image_two']!='') { echo esc_attr($current_options['service_image_two']); } ?>" id="service_image_two" name="service_image_two" size="36" />
@@ -317,7 +317,7 @@
   <div class="inside">
   <p><h4 class="heading"><?php _e('Service Three Icon','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_icon_three']!='') { echo esc_attr($current_options['service_icon_three']); } ?>" id="service_icon_three" name="service_icon_three" size="36" />
-  <h4 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-group .','busi_prof');?><a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
+  <h4 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-group .','busi_prof');?><a href="<?php echo esc_url( __('https://fortawesome.github.io/Font-Awesome/', 'busi_prof'));?>" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
   </p>
   <p><h4 class="heading"><?php _e('Service Three Custom Icon/Image','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_image_three']!='') { echo esc_attr($current_options['service_image_three']); } ?>" id="service_image_three" name="service_image_three" size="36" />
@@ -347,7 +347,7 @@
   <div class="inside">
   <p><h4 class="heading"><?php _e('Service four Icon','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_icon_four']!='') { echo esc_attr($current_options['service_icon_four']); } ?>" id="service_icon_four" name="service_icon_four" size="36" />
-  <h4 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-group .','busi_prof');?><a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
+  <h4 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-group .','busi_prof');?><a href="<?php echo esc_url( __('https://fortawesome.github.io/Font-Awesome/', 'busi_prof'));?>" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
   </p>
   <p><h4 class="heading"><?php _e('Service fourth Custom Icon/Image','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_image_four']!='') { echo esc_attr($current_options['service_image_four']); } ?>" id="service_image_four" name="service_image_four" size="36" />
