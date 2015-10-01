@@ -40,7 +40,7 @@ class AvisFeaturedBox extends WP_Widget {
                     <div class="iconbox-icon avis_start_animation small-to-large avis-viewport">
                         <div class="featured_inner">
                             <div class="featured_icon">   
-                                    <i class="<?php echo $fb_icon_class ;?>"></i>
+                                    <i class="fa <?php echo $fb_icon_class ;?>"></i>
                             </div>
                             <h4><a href="<?php echo $fb_link; ?>"><?php if($title) { echo $title; } ?></a></h4>
                         </div>
@@ -93,7 +93,7 @@ class AvisFeaturedBox extends WP_Widget {
         ?>
          <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','avis-lite'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php if(isset($title)){echo $title;} else { echo '';}  ?>" /></label></p>
 
-         <p><label for="<?php echo $this->get_field_id('fb_icon_class'); ?>"><?php _e('Featured Box Icon Class:','avis-lite'); ?> <input class="widefat" id="<?php echo $this->get_field_id('fb_icon_class'); ?>" name="<?php echo $this->get_field_name('fb_icon_class'); ?>" type="text" value="<?php if(isset($fb_icon_class)){echo $fb_icon_class;} else { echo '';} ?>" /></label></p>
+         <p><label for="<?php echo $this->get_field_id('fb_icon_class'); ?>"><?php _e('Featured Box Icon Class:','avis-lite'); ?> <p><?php _e('example : ', 'avis-lite') ?>fa-arrows</p><input class="widefat" id="<?php echo $this->get_field_id('fb_icon_class'); ?>" name="<?php echo $this->get_field_name('fb_icon_class'); ?>" type="text" value="<?php if(isset($fb_icon_class)){echo $fb_icon_class;} else { echo '';} ?>" /></label></p>
 
          <p><label for="<?php echo $this->get_field_id('fb_content'); ?>"><?php _e('Featured Box Content:','avis-lite'); ?> <textarea rows="4" cols="50" class="widefat" id="<?php echo $this->get_field_id('fb_content'); ?>" name="<?php echo $this->get_field_name('fb_content'); ?>"><?php if(isset($fb_content)){echo $fb_content;} else { echo '';} ?></textarea></label></p>
 

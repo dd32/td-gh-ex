@@ -825,29 +825,9 @@ width: 5.982905982905983%;
 		width: 26.624%;
 	}
 	
-	/* product slider hover */
-	#avis-re-product .item:hover .overlay a.add_to_cart_button { right: 32%;}
-	#avis-re-product .item:hover .overlay a.prolink { left: 32%;}
-	
 	/* newslatter */
-	#full-subscription-box .sub-txt {font-size: 35px;}
-	.avis-front-subs-widget input[type="text"] { width: 400px;}
 	
-	/* shop page */
-	.woocommerce.woocommerce-page .shop-template a.add_to_cart_button{margin-top: -18px;}
-	.woocommerce.woocommerce-page .shop-template .products li:hover .shop-pitem-overlay .prolink {left: 32%;}
-	.woocommerce.woocommerce-page .shop-template .product.type-product:hover .button.add_to_cart_button.product_type_simple { right: 32%;}
-	.woocommerce .products ul, .woocommerce ul.products, .woocommerce-page .products ul, .woocommerce-page ul.products {padding-top:0px;}
-	.woocommerce a.added_to_cart, .woocommerce-page a.added_to_cart { left: 68%; top: 42%;}
-	.woocommerce ul.products li.product .onsale, .woocommerce-page ul.products li.product .onsale, .woocommerce span.onsale, .woocommerce-page span.onsale {margin: -18px -7px 0 0;}
 	
-	#avis-stream-sktmultisocialfeed-2 img ,
-	.avis-container.sktmultisocialstream li, 
-	#main .avis-container.sktmultisocialstream li{
-		width:68px;
-		height:68px;
-	}
-
 	.flexslider {min-height:464px;}
 	.flex-caption {bottom: 60px;padding: 30px 50px 70px;}
 	.flex-caption .slider-title { font-size:28px;line-height:30px;padding-bottom: 15px;}
@@ -862,21 +842,11 @@ width: 5.982905982905983%;
 	#content .avis_tab_v .avis_tab_container {width:75.7%;}
 
 
-	/* Portfolio */
-	#content .portfolio.three-col .isotope-item {width: 33.36%;height: auto;}
-	#content .portfolio.four-col .isotope-item {width: 25%;height: auto;}
-
-	/* Team Member */
-	#team-division-box .teammember_img {height: auto;}
-	.team-box-mid .team_overlay_content {margin: 10px;width: 94%;height: 93%;}
-	.team-box-mid .team_overlay_content .team_overlay_inner_content {height: 95%;margin-top: 280px;width: 100%;}
-	.team-box-mid:hover .team_overlay_content {height: 98%;}	
-	.team-box-mid:hover .team_overlay_inner_content {padding: 10px;width: 94%;margin-top: 0;}
 
 	/* Full Box Call to action */
 	#full-division-box .container {padding: 55px 0;}
 
-	#full-testimonial-box .container{width: 100%;}
+
 }
 
 
@@ -931,20 +901,6 @@ width: 5.982905982905983%;
 		width: 248px;
 	}
 	
-	/* product slider hover */
-	#avis-re-product .item:hover .overlay a.add_to_cart_button { right: 39%;}
-	#avis-re-product .item:hover .overlay a.prolink { left: 39%;}
-	
-	#full-subscription-box .sub-txt { font-size: 25px;}
-
-	/* woocommerce footer widget */
-	.woocommerce ul.cart_list li img, .woocommerce ul.product_list_widget li img, .woocommerce-page ul.cart_list li img, .woocommerce-page ul.product_list_widget li img {
-		box-shadow: none;
-		width: 45px;
-	}
-
-	#full-testimonial-box .container{width: 100%;}
-
 	/* Full Box Call to action */
 	#full-division-box .container {padding: 55px 0;}
 
@@ -952,28 +908,6 @@ width: 5.982905982905983%;
 	.mid-box-mid.row-fluid .mid-box.span4:first-child {margin-top: 0; }
 	.mid-box-mid.row-fluid .mid-box.span4 {margin: 20px auto 0;width: 50%;float: none;}
 
-	/* Portfolio */
-	.page-template-template-3col-project-page-php .row-fluid .project-temp3 .span9 {width: 100%;}
-	.page-template-template-4col-project-page-php .row-fluid .project-temp4 .span9 {width: 100%;}
-	#content .portfolio.three-col .isotope-item {width: 33.36%;height: auto;}
-	#content .portfolio.four-col .isotope-item {width: 24.96%;height: auto;}
-
-	#content .portfolio.four-col .port_overlay_content .title {font-size: 16px;}
-	#content .portfolio.four-col .port_single_link a {height: 50px; line-height: 50px; width: 50px;}
-
-	/* Team Member */
-	.team-box.row-fluid .team-box-mid.span4:first-child {margin-top: 0; }
-	.team-box.row-fluid .team-box-mid.span4 {float: none;margin: 15px auto 0;width: 50%;}
-	.team-box-mid .teammember {border-bottom-color: transparent;}
-
-	/* Twitter Section */
-	#full-twitter-box #bot-twitter .tw-date:before, #full-twitter-box #bot-twitter .tw-date:after {right: 25%;}
-	#full-twitter-box #bot-twitter .tw-date:after {left: 25%;}
-
-	/* Services Page */
-	.row-fluid #services-box .span4:first-child {margin-top: 0; }
-	.row-fluid #services-box .span4 {float: none; margin: 20px auto 0; width: 50%;}
-	#services-box-inner-second {margin-top: 20px;}
 
 	.skepost-meta {font-size: 12px;}
 	.quote_post .avis-quote {padding: 35px 45px;}
@@ -1036,21 +970,9 @@ width: 5.982905982905983%;
 	#respond .comment-notes {font-size: 11px;}
 	#respond label,#respond .form-submit input{font-size:13px;}
 	#avis-paginate .avis-next,#avis-paginate .avis-prev {float:none;margin:0 3px 6px;position:relative;}
-	.avis-statistics-wrap{padding:30px 0px;}
+
 	.avis-counter-number {font-size: 50px;line-height: 52px;}
 	.avis-counter h6.avis-counter-title {  font-size: 14px;padding: 5px 0; }
-	
-	/* shop */
-	.woocommerce #content ul.products li.product, .woocommerce-page #content ul.products li.product {
-		width: 48%;
-	}
-	.woocommerce .products ul, .woocommerce ul.products, .woocommerce-page .products ul, .woocommerce-page ul.products {padding-top:0px;}
-	.woocommerce.woocommerce-page .shop-template a.add_to_cart_button{margin-top: -18px;}
-	.woocommerce.woocommerce-page .shop-template .products li:hover .shop-pitem-overlay .prolink {left: 34%;}
-	.woocommerce.woocommerce-page .shop-template .product.type-product:hover .button.add_to_cart_button.product_type_simple { right: 34%;}
-	.woocommerce.woocommerce-page .woo-full.shop-template .products li:hover .shop-pitem-overlay .prolink {left: 39%;}
-	.woocommerce.woocommerce-page .woo-full.shop-template .product.type-product:hover .button.add_to_cart_button.product_type_simple { right: 39%;}
-	.woocommerce ul.products li.product .onsale, .woocommerce-page ul.products li.product .onsale, .woocommerce span.onsale, .woocommerce-page span.onsale {margin: -18px -7px 0 0;}
 	
 	/* Flex Slider */	
 
@@ -1124,30 +1046,6 @@ width: 5.982905982905983%;
 	#full-division-box .call_to_action .span1 {display: none;}
 	#full-division-box{margin-top:30px;}
 
-	/* Portfolio */
-	.section_description > br {display: none;}
-	#portfolio-division-box .readmore{width:218px;}
-	.portfolio_inner_content .skepost-meta.span4{margin-top: 40px;}
-
-	/* Testimonial */
-	.sketch_testimonial_slider_text_block_wrap .testimonial_content {line-height: 35px;margin-top: 20px;}
-	.testimonial_quote_icon {margin-top: 20px;}
-	.sketch_testimonial_slider_text_block_wrap .testimonial_title:before, .testimonial_title:after {right: 25%;}
-	.sketch_testimonial_slider_text_block_wrap .testimonial_title:after {left: 24%;}
-
-	.team-box.row-fluid .team-box-mid.span4{margin-top:35px;}
-
-	/* Skill Section */
-	.avis-chart-wrap.span4 {margin-top: 20px;}
-	.avis-chart-wrap.span4:first-child {margin-top: 0;}
-
-
-	/* Twitter */
-	#full-twitter-box.avis-section {margin-top: 100px;}
-	#full-twitter-box {padding: 0 0 29px;}
-	#full-twitter-box #bot-twitter .tw-date:before, #full-twitter-box #bot-twitter .tw-date:after {right: 19%;}
-	#full-twitter-box #bot-twitter .tw-date:after {left: 19%;}
-
 	/* Brands */
 	.clients-items .item a {border: 0;}
 
@@ -1156,20 +1054,9 @@ width: 5.982905982905983%;
 
 	.navigation.blog-navigation {margin-top: 50px;}
 
-	/* Contact Page */
-	.map_overlay_text h2 {font-size: 16px; letter-spacing: 1px; line-height: 25px;}
-	#contact-page .contact-left {margin-top: 40px;}
-	.contact-page-content {padding: 30px 0 32px;}
-	.row-fluid .contact-right.span4 {width: 80%;}
-
 	.blog #content .post, .archive #content .post, .page-template-template-blog-page-php #content .post, .page-template-template-blog-fullwidth-php #content .post, .page-template-template-blog-left-sidebar-page-php #content .post, .single_post_wrap{margin-top: 50px;}
 	.blog-template #content, .blog #content, .archive #content {padding-right: 0;margin-bottom:40px;}
 	.tag #content, .category #content, .archive #content, .search #content {margin-bottom: 40px;}	
-
-	/* Services Page */
-	.row-fluid #services-box .span4:first-child {margin-top: 0; }
-	.row-fluid #services-box .span4 {float: none; margin: 20px auto 0; width: 75%;}
-	#services-box-inner-second {margin-top: 20px;}
 
 	#container-isotop .project_box .feature_image img {width: 100%;}
 	.bread-title-holder .cont_nav {margin-top: 2px;}
@@ -1183,42 +1070,10 @@ width: 5.982905982905983%;
 
 	.fullwidth-temp .container.post-wrap {margin-top: 50px;}
 
-	.avis-counter{
-		margin-bottom:20px;
-	}
-	.avis-counter-number{
-		font-size: 40px;
-		line-height: 45px;
-	}
-	.avis-counter h6.avis-counter-title{
-		font-size: 14px;
-		 padding: 5px 0 8px;
-	}
 	#footer .avis-footer-container {
 		margin-bottom: 0px;
 		padding-top: 30px;
 	}
-	.avis-awesome-section{
-		padding: 10px 0 22px;
-	}
-	.avis-awesome-section .avis-awesome-title {
-		font-size: 35px;
-		line-height: 40px;
-	}
-	.avis-awesome-section .avis-awesome-desp{
-		font-size: 15px;
-		line-height: 23px;
-		margin-top: 10px;
-	}
-	.avis-awesome-section .para_btn{
-		margin-top:25px;
-	}
-	.avis-statistics-wrap{
-		padding:20px 0 0;
-	}
-	.avis-statistics-wrap .avis-counter{
-		 margin-bottom: 10px;
-	}	
 	#featured-box .mid-box {
 		float: none;
 		margin: 40px auto 0;
@@ -1353,23 +1208,11 @@ width: 5.982905982905983%;
 	.alignnone.size-full {float:none;}
 	#respond .comment-notes {font-size: 11px;}
 	#respond label,#respond .form-submit input{font-size:13px;}
-	.serviceimg a {
-	display: block;
-	margin: 0 auto;
-	width: 80%;
-	}
-	.service-con {
-	float: none;
-	margin: 0 auto;
-	width: 80%;
-	}
-	.servicetitle{ text-align: center;}
-	.serviceimg {float: none;margin: 0 auto;width: 360px;height: 300px;}
-	.service-con {float: none;margin: 0 auto;width: 69.97%;}
+
 	#avis-paginate .avis-next,#avis-paginate .avis-prev {float:none;margin:0 3px 6px;position:relative;}
 	#contact-page .contact-left {margin-top:40px;}
 	.error404 #searchform input[type="text"], .search #searchform input[type="text"], #sidebar #searchform input[type="text"], #footer #searchform input[type="text"] {width:196px;}
-	.ouroffice-page .one_fourth {margin: 0 auto !important;width: 53%;}
+
 	.avis-service-page .one_third {margin-bottom: 35px;}
 	.flexslider .flex-caption{display:none !important;}
 }
@@ -1476,62 +1319,12 @@ width: 5.982905982905983%;
 
 	.port_overlay_content .title {font-size: 15px;}
 
-	/* Testimonial */
-	#full-testimonial-box {padding: 45px 0 0;}
-	.sketch_testimonial_slider_text_block_wrap .testimonial_content {line-height: 30px;margin-top: 20px;}
-	.testimonial_quote_icon {margin-top: 20px;}
-	.sketch_testimonial_slider_text_block_wrap .testimonial_title:before, .testimonial_title:after {right: 15%;width: 15%;}
-	.sketch_testimonial_slider_text_block_wrap .testimonial_title:after {left: 15%;}
-
-	/* Team Member */
-	#team-division-box .teammember_img {height: auto;}
-	.team-box-mid .team_overlay_content {height: 290px; margin: 0 5%; width: 90%;}
-	.team-box-mid .team_overlay_content .team_overlay_inner_content {height: 303px; margin-top: 216px; width: 100%; }
-	.team-box-mid .team_overlay_content .title {font-size: 16px;}
-	.team-box-mid .team_overlay_content .team_prof {font-size: 14px;}
-	.team-box-mid:hover .team_overlay_content {height: 303px; margin: 0; width: 100%; }
-	.team-box-mid:hover .team_overlay_inner_content {margin-top: 0; padding: 0 5%; width: 90%; }
-	.team-box-mid .team_overlay_content .team_inner_text {margin-top: 10px;}
-	.team-box-mid .team_overlay_content .teamsocial {margin: 25px 0 0;}
-	.team-box-mid .team_overlay_content .teamsocial li {height: 35px; line-height: 35px; margin: 0 0 0 10px; width: 35px; }
-
-	/* Skill Section */
-	.avis-chart-wrap.span4 {margin-top: 20px;}
-	.avis-chart-wrap.span4:first-child {margin-top: 0;}
-
-	/* Twitter */
-	.twitter_box.slides {width: 100%;}
-	#full-twitter-box.avis-section {margin-top: 100px;}
-	#full-twitter-box {padding: 0 0 29px;}
-	#full-twitter-box #bot-twitter .tw-date:before, #full-twitter-box #bot-twitter .tw-date:after {right: 6%;}
-	#full-twitter-box #bot-twitter .tw-date:after {left: 6%;}
-	#full-twitter-box #bot-twitter {max-height: 436px;}
-	#full-twitter-box #bot-twitter .tw-text {margin-top: 30px;line-height: 30px;}
-	#full-twitter-box #bot-twitter .foot-tw-control-paging {margin-top: 20px;}
-	#full-twitter-box #bot-twitter .fa.fa-twitter {font-size: 40px; height: 90px; line-height: 100px; width: 90px; }
-
+	
 	/* Brands */
 	.clients-items .item a {border: 0;}
 	.clients-items li img, .project-item img {width:auto;}
 
-	/* Services Page */
-	#services-box .mid-box .iconbox-content a {padding: 0 20px;}
-	.services-main-content .botton_style .leftsquare:before, .services-main-content .botton_style .rightsquare:after {right: 13%;}
-	.services-main-content .botton_style .rightsquare:after {left: 13%;}
-	.services-main-content .leftsquare:after {left: 43%;}
-	.services-main-content .rightsquare:before {right: 43%;}
-
-	/* Contact Page */
-	.map_overlay_text h2 br {display: none;}
-	.map_overlay_text h2 {font-size: 14px;}
-	.map_overlay_text h2 {font-size: 16px; letter-spacing: 1px; line-height: 25px;}
-	#contact-page .contact-left {margin-top: 0px;}
-	#contact-page .contact-right {margin-top: 40px;}
-	.contact-page-content {padding: 30px 0 32px;}
-	.row-fluid .contact-right.span4 {width: 95%;}
-	.map_overlay_text .fa {font-size: 35px; height: 60px; line-height: 60px; width: 60px; }
-	.contact-add span {margin-left: 25px;}
-
+	
 	.blog-template .container.post-wrap, .blog .container.post-wrap {margin-top: 50px;}
 	.navigation.blog-navigation {margin-top: 50px;}
 	.blog #content .post, .archive #content .post, .page-template-template-blog-page-php #content .post, .page-template-template-blog-fullwidth-php #content .post, .page-template-template-blog-left-sidebar-page-php #content .post, .single_post_wrap{margin-top: 50px;}
@@ -1729,34 +1522,7 @@ width: 5.982905982905983%;
 		margin-bottom: 0px;
 		padding-top: 30px;
 	}
-	.avis-awesome-section{
-		padding: 10px 0 22px;
-	}
-	.avis-awesome-section .avis-awesome-title {
-		font-size: 35px;
-		line-height: 40px;
-	}
-	.avis-awesome-section .avis-awesome-desp{
-		font-size: 15px;
-		line-height: 23px;
-		margin-top: 10px;
-	}
-	.avis-awesome-section .para_btn{
-		margin-top:25px;
-	}
-	.avis-statistics-wrap{
-		padding:20px 0 0;
-	}
-	.avis-statistics-wrap .avis-counter{
-		 margin-bottom: 10px;
-	}	
-	.ouroffice-page .one_fourth {
-		margin: 0 auto !important;
-		width: 85%;
-	}
-	.serviceimg {float: none;margin: 0 auto;height: 250px;}
-	.service-con {float: none;margin: 0 auto;width:91.4%;}
-	.avis-service-page .one_third {margin-bottom: 35px;}
+
 }
 
 @media screen and (min-device-width: 320px) and (max-device-width: 1024px) {

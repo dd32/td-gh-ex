@@ -1,18 +1,16 @@
 <?php
-
 /**
  * The default template for displaying content. Used for both single and index/archive/search.
  */
-
 ?>
 <div <?php post_class('post'); ?> id="post-<?php the_ID(); ?>">
         <div class="featured-image-shadow-box quote_featured_img">
 			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it. ?>
 				<?php
-					$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'avis_standard_img');
+					$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'avis-lite-standardimg');
 				?>
 				<a href="<?php the_permalink(); ?>" class="image">
-					<img src="<?php echo $thumbnail[0];?>" alt="<?php the_title(); ?>" class="featured-image alignnon"/>
+					<img src="<?php echo esc_url($thumbnail[0]);?>" alt="<?php the_title(); ?>" class="featured-image alignnon"/>
 				</a>
 				
 			<?php } ?>

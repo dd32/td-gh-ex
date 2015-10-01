@@ -15,36 +15,36 @@ get_header(); ?>
 		<div class="page-content default-pagetemp">
 		<div class="container post-wrap">
 			<div class="row-fluid">
+				<!-- content -->
 				<div id="content" class="span9" role="main">
 					<div class="post" id="post-<?php the_ID(); ?>">
+						<!-- skepost -->
 						<div class="skepost">
 							<?php the_content(); ?>
-							<?php wp_link_pages(__('<p><strong>Pages:</strong> ','avis-lite'), '</p>', __('number','avis-lite')); ?>
+							<?php wp_link_pages( array('before' => '<p><strong>'.__('Pages :','avis-lite').'</strong>','after' => '</p>', __('number','avis-lite') ) ); ?>
 						</div>
-					<!-- skepost --> 
 					</div>
-					<!-- post -->
+
 					<div class="clearfix"></div>
 						<div class="comments-template">
 							<?php comments_template( '', true ); ?>
 						</div>
 					<?php endwhile; ?>
+
 					<?php else :  ?>
 						<div class="post">
 							<h2><?php _e('Page Does Not Exist','avis-lite'); ?></h2>
 						</div>
 					<?php endif; ?>
 						<div class="clearfix"></div>
-						<?php edit_post_link('Edit', '', ''); ?>	
+						<?php edit_post_link( __('Edit','avis-lite'), '', ''); ?>
 				</div>
-				<!-- content -->
 
 				<!-- Sidebar -->
 				<div id="sidebar" class="span3" role="complementary">
 					<?php get_sidebar('page'); ?>
 				</div>
 				<div class="clearfix"></div>
-				<!-- Sidebar --> 
 			</div>
 		</div>
 	</div>

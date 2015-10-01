@@ -1,9 +1,8 @@
-/*-- AVIS STYLE FOR IE BROWSER
+/*-- AVIS LITE STYLE FOR IE BROWSER
 -----------------------------------*/
 
 /*-- Flex Slider
 ------------------------*/
-
 .flexslider .slides {zoom: 1;}
 .flex-direction-nav .disabled {filter:alpha(opacity=30);}
 .flex-control-nav li {zoom: 1; display: inline;}
@@ -28,23 +27,15 @@
 html .group { zoom: 1; }
 :first-child+html .group { zoom: 1; }
 
-
-/*-- bootstrap.css 
-------------------------*/
-
-
-
-/*-- Revolution slider
+/*-- 
 ------------------------*/
 .noFilterClass {
 	filter:none !important;
 }
 
 
-
 /*-- Fontawesome css
 ------------------------*/
-
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
@@ -64,6 +55,3 @@ html .group { zoom: 1; }
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
 }
-
-
-

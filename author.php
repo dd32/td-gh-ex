@@ -20,12 +20,12 @@ get_header(); ?>
 				</div>
 				<!-- content --> 
 			</div>
-			<!-- container --> 
+
 			<!-- Sidebar -->
 			<div id="sidebar" class="span3" role="complementary">
 				<?php get_sidebar(); ?>
 			</div>
-			<!-- Sidebar -->
+
 		</div>
 	</div>
 </div>

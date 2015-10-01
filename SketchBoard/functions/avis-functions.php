@@ -77,15 +77,6 @@ function avis_lite_title($title)
 	return $avis_lite_title;
 }
 
-//CHECK AND FOUND OUT THE THEME VERSION AND ITS BASE NAME
-
-if(function_exists('wp_get_theme')){
-    $avis_theme_data = wp_get_theme(get_option('template'));
-    $avis_theme_version = $avis_theme_data->Version;  
-}
-
-define( 'AVIS_THEME_VERSION',$avis_theme_version);	
-
 /*********************************************
 *   LIMIT WORDS
 *********************************************/

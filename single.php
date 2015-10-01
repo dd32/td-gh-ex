@@ -16,7 +16,7 @@ get_header(); ?>
 					  <div class="single_post_wrap">
 						<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it. ?>
 							<div class="featured-image-shadow-box quote_featured_img">
-								<?php the_post_thumbnail('avis_standard_img'); ?>
+								<?php the_post_thumbnail('avis-lite-standardimg'); ?>
 							</div>
 						<?php } ?>
 

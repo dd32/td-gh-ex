@@ -42,12 +42,12 @@ add_filter( 'body_class','avis_lite_add_class' );
  */
 function avis_lite_widgets_init() {
 	register_sidebar(array(
-		'name'          => __( 'Home Featured Sidebar', 'avis-lite' ),
-		'id'            => 'home-featured-sidebar',
-		'before_widget' => '<li id="%1$s" class="avis-containerr %2$s">',
+		'name'          => __( 'Blog Sidebar', 'avis-lite' ),
+		'id'            => 'blog-sidebar',
+		'before_widget' => '<li id="%1$s" class="avis-container %2$s">',
 		'after_widget' => '</li>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h3 class="avis-title">',
+		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
 		'name'          => __( 'Page Sidebar', 'avis-lite' ),
@@ -58,12 +58,12 @@ function avis_lite_widgets_init() {
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name'          => __( 'Blog Sidebar', 'avis-lite' ),
-		'id'            => 'blog-sidebar',
-		'before_widget' => '<li id="%1$s" class="avis-container %2$s">',
+		'name'          => __( 'Home Featured Sidebar', 'avis-lite' ),
+		'id'            => 'home-featured-sidebar',
+		'before_widget' => '<li id="%1$s" class="avis-containerr %2$s">',
 		'after_widget' => '</li>',
-		'before_title' => '<h3 class="avis-title">',
-		'after_title' => '</h3>',
+		'before_title' => '',
+		'after_title' => '',
 	));
 	register_sidebar(array(
 		'name'          => __( 'Footer Sidebar', 'avis-lite' ),
@@ -131,8 +131,7 @@ function avis_lite_theme_setup() {
 	 */
 	add_theme_support( 'post-formats', array('video', 'gallery', 'quote') );
 	set_post_thumbnail_size( 850, 400, true );
-	add_image_size( 'avis_standard_img', 850, 400, true);  //standard size
-	add_image_size( 'avis_fullblog_img', 1170, 400, true); //Full Blog size
+	add_image_size( 'avis-lite-standardimg', 850, 400, true);  //Standard size
 	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

@@ -1,10 +1,10 @@
 <?php
 
-class avis_breadcrumb_class {
+class avis_lite_breadcrumb_class {
 
     var $opts;
 
-    function custom_breadcrumb() {
+    function avis_lite_custom_breadcrumb() {
 
         $this->opts = array(
 
@@ -43,7 +43,7 @@ class avis_breadcrumb_class {
 
         }
 
-        $output = $this->simple_breadcrumb_case($post);
+        $output = $this->avis_lite_simple_breadcrumb_case($post);
 
         if (is_page() || is_single()) {
 
@@ -61,7 +61,7 @@ class avis_breadcrumb_class {
 
 
 
-    function simple_breadcrumb_case($der_post) {
+    function avis_lite_simple_breadcrumb_case($der_post) {
 
         $markup = $this->opts['before'] . $this->opts['delimiter'] . $this->opts['after'];
 
@@ -71,17 +71,17 @@ class avis_breadcrumb_class {
 
                 $my_query = get_post($der_post->post_parent);
 
-                $this->simple_breadcrumb_case($my_query);
+                $this->avis_lite_simple_breadcrumb_case($my_query);
 
                 
 
                 $link = '<a href="';
 
-                $link .= get_permalink($my_query->ID);
+                $link .= esc_url( get_permalink($my_query->ID) );
 
                 $link .= '">';
 
-                $link .= '' . get_the_title($my_query->ID) . '</a>' . $markup;
+                $link .= '' . esc_attr( get_the_title($my_query->ID) ) . '</a>' . $markup;
 
                 
 
@@ -223,6 +223,6 @@ class avis_breadcrumb_class {
 
 }
 
-$avis_breadcumb = new avis_breadcrumb_class();
+$avis_lite_breadcumb = new avis_lite_breadcrumb_class();
 
 ?>

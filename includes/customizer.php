@@ -2,9 +2,6 @@
 
 function avis_lite_customize_register( $wp_customize ) {
 
-	// define image directory path
-	$imagepath =  get_template_directory_uri() . '/images/';
-
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
@@ -13,12 +10,12 @@ function avis_lite_customize_register( $wp_customize ) {
 	// ====================================
 	// = Background Image Size for custom-background
 	// ====================================
-	$wp_customize->add_setting( 'background_size', array(
+	$wp_customize->add_setting( 'avis_background_size', array(
 		'default'       	=> 'cover',
 		'theme_supports'	=> 'custom-background',
 		'sanitize_callback' => 'avis_lite_sanitize_textarea',
 	));
-	$wp_customize->add_control('background_size', array(
+	$wp_customize->add_control('avis_background_size', array(
 		'section'		=> 'background_image',
 		'label' 		=> __('Background Image Size','avis-lite'),
 	));
@@ -91,7 +88,7 @@ function avis_lite_customize_register( $wp_customize ) {
 	$wp_customize->add_control(  new WP_Customize_Image_Control( $wp_customize, 'avis_logo_img', array(
 		'section' 		=> 'header_section',
 		'label' 		=> __( 'Logo Image', 'avis-lite' ),
-		'description' 	=> __('Uplaod your beautiful logo image from here. Recomended size 220x40 px.', 'avis-lite' ),
+		'description' 	=> __('Uplaod your beautiful logo image from here. Maximum Recomended size 370x68 px.', 'avis-lite' ),
 	) ) );
 	
 	$wp_customize->add_setting( 'avis_logo_width', array(

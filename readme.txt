@@ -1,9 +1,9 @@
 === Avis Lite ===
 Contributors: SketchThemes, tikendramaitry
-Tags: two-columns, custom-menu, sticky-post, translation-ready,  featured-image-header, featured-images, theme-options, threaded-comments
+Tags: custom-background, custom-colors, custom-header, custom-menu, editor-style, one-column, two-columns, right-sidebar, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready , full-width-template
 Requires at least: 3.8
 Tested up to: 4.3.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -92,7 +92,12 @@ Read the following blog for more https://sketchthemes.com/blog/effective-steps-t
 
 
 == Changelog ==
-= 1.0.1 =
+
+= 1.0.3 =
+* Fixed remaining review issue.
+* Updated Font Awesome Icons.
+
+= 1.0.2 =
 * Fixed text-domain amd theme slug issue.
 * Fixed sanitization issue.
 * WordPress 4.3.1 compatible.

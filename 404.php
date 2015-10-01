@@ -16,7 +16,7 @@ get_header(); ?>
 						<p><?php _e('We seem to have lost this page, try one of instead this.','avis-lite') ?></p>
 						<?php get_search_form(); ?>
 					</div>
-					<!-- post --> 
+					<!-- skepost --> 
 				</div>
 				<!-- post -->
 			</div>

@@ -6,11 +6,11 @@
 * #main and #page div elements.
 *
 */
-$avis_facebook  = esc_url( get_theme_mod('avis_fb_url', '#') );
-$avis_flickr    = esc_url( get_theme_mod('avis_fl_url', '#') );
-$avis_linkedin  = esc_url( get_theme_mod('avis_lin_url', '#') );
-$avis_gpluseone = esc_url( get_theme_mod('avis_gplus_url', '#') );
-$avis_twitter   = esc_url( get_theme_mod('avis_tw_url', '#') );
+$avis_lite_facebook  = esc_url( get_theme_mod('avis_fb_url', '#') );
+$avis_lite_flickr    = esc_url( get_theme_mod('avis_fl_url', '#') );
+$avis_lite_linkedin  = esc_url( get_theme_mod('avis_lin_url', '#') );
+$avis_lite_gpluseone = esc_url( get_theme_mod('avis_gplus_url', '#') );
+$avis_lite_twitter   = esc_url( get_theme_mod('avis_tw_url', '#') );
 
 ?>
 	<div class="clearfix"></div>
@@ -87,11 +87,11 @@ $avis_twitter   = esc_url( get_theme_mod('avis_tw_url', '#') );
 				<div class="owner span6 alpha omega">
 					<!-- Footer Follow Us Section Start -->
 						<div class="social-icons">
-							<?php if($avis_facebook){?><li class="fb-icon"><a href="<?php echo esc_url($avis_facebook); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li><?php } ?>
-							<?php if($avis_flickr){?><li class="flickr-icon"><a href="<?php echo esc_url($avis_flickr); ?>" target="_blank"><i class="fa fa-flickr"></i></a></li><?php } ?>							
-							<?php if($avis_linkedin){?><li class="linkedin-icon"><a href="<?php echo esc_url($avis_linkedin); ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li><?php } ?>
-							<?php if($avis_gpluseone){?><li class="gplus-icon"><a href="<?php echo esc_url($avis_gpluseone); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li><?php } ?>
-							<?php if($avis_twitter){?><li class="tw-icon"><a href="<?php echo esc_url($avis_twitter); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li><?php } ?>
+							<?php if($avis_lite_facebook){?><li class="fb-icon"><a href="<?php echo esc_url($avis_lite_facebook); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li><?php } ?>
+							<?php if($avis_lite_flickr){?><li class="flickr-icon"><a href="<?php echo esc_url($avis_lite_flickr); ?>" target="_blank"><i class="fa fa-flickr"></i></a></li><?php } ?>							
+							<?php if($avis_lite_linkedin){?><li class="linkedin-icon"><a href="<?php echo esc_url($avis_lite_linkedin); ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li><?php } ?>
+							<?php if($avis_lite_gpluseone){?><li class="gplus-icon"><a href="<?php echo esc_url($avis_lite_gpluseone); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li><?php } ?>
+							<?php if($avis_lite_twitter){?><li class="tw-icon"><a href="<?php echo esc_url($avis_lite_twitter); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li><?php } ?>
 						</div>
 					<!-- Footer Follow Us Section End -->
 				</div>

@@ -2,13 +2,13 @@
 Theme Name: Avis Lite
 Theme URI: https://sketchthemes.com/premium-themes/business-wordpress-theme-for-consulting-agency/
 Description: Avis Lite is an all new clean and brilliant Consulting Business WordPress Theme specially meant for advocate, business consultant, attorney, corporate lawyer, legal consultant and professionals running consultation company or legal office. With the advanced features like Portfolio, Skills, Multi Language Support and Advanced Contact Map Template, Avis Lite is for sure one of the finest themes by SketchThemes for all consultants.Take your consulting business to new high with Avis Lite. Get it now.
-Version: 1.0.2
+Version: 1.0.3
 Author: SketchThemes
 Author URI: http://www.Sketchthemes.com/
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: two-columns, custom-menu, sticky-post, translation-ready,  featured-image-header, featured-images, theme-options, threaded-comments
-Text Domain: avis
+Tags: custom-background, custom-colors, custom-header, custom-menu, editor-style, one-column, two-columns, right-sidebar, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready , full-width-template
+Text Domain: avis-lite
 
 Avis Lite WordPress Theme, Copyright 2015 SketchThemes.
 Avis Lite WordPress theme is distributed under the terms of the GNU GPL.
@@ -51,11 +51,11 @@ body.page-template-template-front-page-php #main{margin-top:0 !important;}
 #header { background-color: transparent;padding:0 0 10px;max-height: 100px;}
 #header.skehead-headernav.skehead-headernav-shrink{position: fixed;}
 .skehead-headernav{ left: 0;top: 0;width: 100%;z-index: 999;  }
-#logo {transition: height 0.3s ease 0s, line-height 0.3s ease 0s;position: relative;display: table;height: 60px;}
-#logo .logo_inner{display:table-cell;vertical-align:middle;}
+#logo {transition: height 0.3s ease 0s, line-height 0.3s ease 0s; position: relative; word-wrap: break-word; }
+#logo .logo_inner{ vertical-align:middle; }
 
 #logo #site-title {  margin: 0px;  font-size: 18px;}
-#logo #site-title a { color: #FFFFFF;font-size: 35px;font-weight:500; margin-top: 17px; text-decoration: none;  text-transform: uppercase; line-height: normal; display: inline-block;  }
+#logo #site-title a { color: #FFFFFF;font-size: 35px;font-weight:500; margin-top: 29px; text-decoration: none;  text-transform: uppercase; line-height: normal; display: block; word-wrap: break-word; }
 #logo #site-description {color: #FFFFFF;  font-size: 14px; line-height: 15px;font-weight: 400;}
 #skehead .sub-menu{display:none;}
 .bottom-shadow { background: url("images/header_shadow.png") no-repeat scroll 0 0 transparent;  display: block;  height: 25px;  margin-bottom: 15px;  margin-top: -10px;  position: relative;  width: 869px;  }
@@ -120,8 +120,8 @@ body.page-template-template-front-page-php #main{margin-top:0 !important;}
 /* Header Style */
 #header.skehead-headernav.skehead-headernav-shrink,#header.skehead-headernav.skehead-headernav-shrink #logo{background-color: #03386f;}
 #header.skehead-headernav.skehead-headernav-shrink ul.menu {margin: 15px 0 0;}
-#header.skehead-headernav.skehead-headernav-shrink #logo #site-title a {margin-top: 0px;}
-#header.skehead-headernav.skehead-headernav-shrink .logo_inner > a {margin-top: 1px;}
+#header.skehead-headernav.skehead-headernav-shrink #logo #site-title a {margin-top: 15px;}
+#header.skehead-headernav.skehead-headernav-shrink .logo_inner > a {margin-top: 15px;}
 .logo_inner > a {margin-top: 25px;}
 
 #header.skehead-headernav.skehead-headernav-shrink #skenav  a {line-height:normal;}
@@ -274,7 +274,7 @@ form input[type="submit"]:hover { background: none; color: #FFFFFF; transition: 
 .bread-title-holder h1.title {color: #FFFFFF; font-size: 35px; font-weight: 700;display: inline-block;line-height: normal; margin: 0; text-transform: uppercase;letter-spacing: 0.3px;} 	
 .bread-title-holder .cont_nav_inner a,.bread-title-holder .cont_nav_inner p{color: #FFFFFF;font-size:14px; font-weight: 700;text-transform: uppercase;letter-spacing: 0.3px;}
 .bread-title-holder .avis-breadcrumbs-separator {color:#FFFFFF; font-weight: bold;}
-.title-seperator {background-color: #FFFFFF; height: 1px; position: relative;margin: 15px 0 auto; }
+.title-seperator { background-color: #FFFFFF; height: 1px; position: relative; margin: 15px 0 auto; font-weight: 300; line-height: 25px; display: block; }
 .title-seperator > span {background: none repeat scroll 0 0 #000;border-radius: 20px;bottom: 0;height: 3px;left: 0;margin: 0 auto;position: absolute;right: 0;top: -1px; width: 40px;}
 
 /* = front css
@@ -304,7 +304,7 @@ h1.home-section-title{font-weight: 400;text-align: center; display:inline-block;
 #avis-product-cat{text-ali}
 .iconboxhover {  background-color: rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s; -webkit-transition: all 0.5s ease 0s; -moz-transition: all 0.5s ease 0s; -o-transition: all 0.5s ease 0s; bottom: 20px; left: 20px; position: absolute; right: 20px; top: 20px; z-index: 99;opacity:1; }
 .avis-iconbox.iconbox-top:hover .iconboxhover { background: none repeat scroll 0 0 #1abc9c; margin: 0 auto; opacity: 0.7; }
-#front-content-box.avis-section{margin-top:20px;}
+#front-content-box.avis-section{ margin-top: 70px; }
 .container_inner {text-align: center;margin-top: 55px; padding-bottom: 25px;}
 
 /* =Front Heading Section
@@ -368,7 +368,7 @@ h3#comments-title {padding: 24px 0;  }
 .comment-meta {  font-size: 12px;  margin: 0 0 18px 0;  }
 .comment-meta a{  text-decoration: none;  }
 .commentlist .bypostauthor {}
-.reply {  font-size: 12px;  padding: 0;  position: absolute;  right: 0;  bottom: 25px;  }
+.reply {  font-size: 12px;  padding: 0;  position: absolute;  right: 0;  top: 25px;  }
 .reply a, a.comment-edit-link {  color: #222;  }
 .reply a:hover, a.comment-edit-link:hover {  color: #ff4b33;  }
 .commentlist .children {  list-style: none;  margin: 0;  }
@@ -406,7 +406,7 @@ h3#reply-title {  margin: 18px 0;  }
 #respond .required {  color: #ff4b33;font-size: 16px;}
 #respond label {  float: left;font-size: 15px; margin-top: 5px;color:#666;}
 #respond input[type="submit"] {background: none repeat scroll 0 0 rgba(0, 0, 0, 0);color: #FFFFFF;border: 0;cursor: pointer;display: inline-block;height: auto;font-size: 14px;margin-bottom: 0;padding: 9px 20px;position: relative;transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;}
-#respond input[type="submit"]:hover {background: none repeat scroll 0 0 #F54336;color: #FFFFFF;transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;  }
+#respond input[type="submit"]:hover {background: none repeat scroll 0 0 #F54336;color: #FFFFFF; transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;  }
 #respond input, #respond textarea {background: none repeat scroll 0 0 #f9f9f9; border: 1px solid #e1e1e1; float: right; font-family: 'Raleway', sans-serif;font-size: 14px; font-weight: 300; height: 44px; margin: 0 0 22px; padding: 5px 10px; width: 78%; }
 #respond .comment-form-comment {height: 102px;}
 #commentform .submit {float: right;width: 175px;}
@@ -449,6 +449,7 @@ h3#reply-title {  margin: 18px 0;  }
 .search #searchform input[type="text"]:focus, 
 #sidebar #searchform input[type="text"]:focus,#footer #searchform input[type="text"]:focus{border:1px solid #e1e1e1;}
 #searchform input[type="submit"],#sidebar #searchform input[type="submit"]{position: relative;opacity: 0;z-index: 1;height: 40px;box-sizing:border-box;border: none; color: #FFFFFF; display: block;font-family: 'Raleway', sans-serif;font-size: 14px; overflow: hidden;text-decoration: none; width: auto;cursor:pointer;font-size: 14px;font-weight: 300;margin:0;-webkit-padding-before:5px;-webkit-padding-after:5px;-webkit-padding-start:14px;-webkit-padding-end:14px; padding: 4px 22px;}
+#searchform .searchright,a#backtop{transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;}
 #searchform .searchright .fa{color: #FFFFFF;left: 18px; position: absolute; top: 33%; z-index: 0;}
 #footer #searchform input[type="text"]{border:0;}
 .avis-container {  margin:0 0 50px;  } 
