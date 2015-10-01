@@ -3,8 +3,18 @@
 	<?php if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() && ! is_search() ) { // Attachments ?>
 		
 		<figure class="effect-bubba" data-src="<?php echo agama_return_image_src('agama-blog-large'); ?>">
-			<img src="<?php echo agama_return_image_src('agama-blog-large'); ?>" class="img-responsive">
-			<figcaption></figcaption>
+		
+			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
+				<a href="<?php the_permalink(); ?>">
+			<?php endif; ?>
+			
+				<img src="<?php echo agama_return_image_src('agama-blog-large'); ?>" class="img-responsive">
+				<figcaption></figcaption>
+			
+			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
+				</a>
+			<?php endif; ?>
+			
 		</figure>
 		
 	<?php } ?>

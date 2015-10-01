@@ -275,7 +275,6 @@ function agama_customize_register( $wp_customize ) {
 		new WP_Customize_Control( 
 			$wp_customize, 'agama_top_navigation', array(
 				'label' 		=> __('Enable Top Navigation', 'agama'),
-				'description'	=> __('Works with default header only.', 'agama'),
 				'section'		=> 'agama_header_section',
 				'settings'		=> 'agama_top_navigation',
 				'type'			=> 'checkbox',
@@ -709,7 +708,24 @@ function agama_customize_register( $wp_customize ) {
 		'title'		=> __('Blog', 'agama'),
 		'priority' 	=> 50,
 		'panel'		=> 'agama_theme_options'
-	)); // About Author
+	)); // Blog Thumbnails Permalink
+	$wp_customize->add_setting( 'agama_blog_thumbnails_permalink', array(
+		'default'			=> true,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_blog_thumbnails_permalink', array(
+				'label'			=> __( 'Blog Thumbnails Permalink', 'agama' ),
+				'description'	=> __( 'If enabled the post thumbnail image will become clickable image link.', 'agama' ),
+				'section'		=> 'agama_blog_section',
+				'settings'		=> 'agama_blog_thumbnails_permalink',
+				'type'			=> 'checkbox'
+			)
+		)
+	); // About Author
 	$wp_customize->add_setting( 'agama_blog_about_author', array(
 		'default'			=> true,
 		'capability'		=> 'edit_theme_options',
@@ -1531,12 +1547,37 @@ function agama_customize_css() { ?>
 	#main-wrapper {
 		margin-top: <?php echo esc_attr( get_theme_mod( 'agama_header_top_margin', '0px' ) ); ?>;
 	}
-	.sticky-header,
+	
+	<?php if( get_theme_mod( 'agama_header_style', 'sticky' ) == 'sticky' && get_theme_mod( 'agama_top_navigation', true ) ): ?>
+	
+	#top-bar,
+	.top-bar-out .sticky-header {
+		border-top-width: <?php echo esc_attr( get_theme_mod( 'agama_header_top_border_size', '3px' ) ); ?>; 
+		border-top-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
+		border-top-style: solid;
+	}
+	<?php elseif( get_theme_mod( 'agama_header_style', 'sticky' ) == 'sticky' && ! get_theme_mod( 'agama_top_navigation', true ) ): ?>
+	.sticky-header {
+		border-top-width: <?php echo esc_attr( get_theme_mod( 'agama_header_top_border_size', '3px' ) ); ?>; 
+		border-top-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
+		border-top-style: solid;
+	}
+	<?php endif; ?>
+	
+	<?php if( get_theme_mod( 'agama_header_style', 'sticky' ) == 'default' && get_theme_mod( 'agama_top_navigation', true ) ): ?>
 	.top-nav-wrapper { 
 		border-top-width: <?php echo esc_attr( get_theme_mod( 'agama_header_top_border_size', '3px' ) ); ?>; 
 		border-top-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 		border-top-style: solid;
 	}
+	<?php elseif( get_theme_mod( 'agama_header_style', 'sticky' ) == 'default' && ! get_theme_mod( 'agama_top_navigation', true ) ): ?>
+	#masthead { 
+		border-top-width: <?php echo esc_attr( get_theme_mod( 'agama_header_top_border_size', '3px' ) ); ?>; 
+		border-top-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
+		border-top-style: solid;
+	}
+	<?php endif; ?>
+	
 	.sticky-nav > li > ul {
 		border-top: 2px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}

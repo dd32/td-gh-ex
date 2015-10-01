@@ -19,15 +19,6 @@
 
 			<!-- Entry Content -->
 			<div class="entry-content notopmargin">
-				
-				<?php if( has_post_thumbnail() ): ?>
-				<!-- Entry Image -->
-				<div class="entry-image alignleft">
-					<a href="<?php echo agama_return_image_src('post-thumbnail'); ?>">
-						<img class="image_fade img-responsive image-grow" src="<?php echo agama_return_image_src('agama-blog-small'); ?>" alt="<?php the_title(); ?>">
-					</a>
-				</div><!--.entry-image-->
-				<?php endif; ?>
 
 				<?php the_content(); ?>
 

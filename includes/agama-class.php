@@ -172,8 +172,9 @@ if( ! class_exists( 'Agama' ) ) {
 		 * Render Social Icons
 		 *
 		 * @since 1.1.1
+		 * @updated @since 1.1.2
 		 */
-		public static function sociali( $tip_position = false ) {
+		public static function sociali( $tip_position = false, $style = false ) {
 			
 			// Url target
 			$_target = esc_attr( get_theme_mod('agama_social_url_target', '_self') );
@@ -206,17 +207,29 @@ if( ! class_exists( 'Agama' ) ) {
 				'Email'		=> esc_url( get_theme_mod('social_email', '') ),
 				'RSS'		=> esc_url( get_theme_mod('social_rss', get_bloginfo('rss2_url')) )
 			);
-			
-			// Render Icons
-			foreach( $social as $name => $url ) {
-				if( ! empty( $url ) ) {
-					echo sprintf
-					(
-						'<a class="social-icons %s" href="%s" target="%s" data-toggle="tooltip" data-placement="%s" title="%s"></a>', 
-						esc_attr( strtolower($name) ), $url, $_target, esc_attr( $tip_position ), esc_attr( $name )
-					);
+			if( $style == 'animated' ):
+				echo '<ul>';
+				foreach( $social as $name => $url ) {
+					if( ! empty( $url ) ) {
+						echo sprintf
+						(
+							'<li><a class="tv-%s" href="%s" target="%s"><span class="tv-icon"><i class="fa fa-%s"></i></span><span class="tv-text">%s</span></a></li>', 
+							esc_attr( strtolower($name) ), $url, $_target, esc_attr( strtolower( $name ) ), esc_attr( $name )
+						);
+					}
 				}
-			}
+				echo '</ul>';
+			else:
+				foreach( $social as $name => $url ) {
+					if( ! empty( $url ) ) {
+						echo sprintf
+						(
+							'<a class="social-icons %s" href="%s" target="%s" data-toggle="tooltip" data-placement="%s" title="%s"></a>', 
+							esc_attr( strtolower($name) ), $url, $_target, esc_attr( $tip_position ), esc_attr( $name )
+						);
+					}
+				}
+			endif;
 		}
 		
 		/**

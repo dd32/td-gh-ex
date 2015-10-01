@@ -34,7 +34,7 @@
 <!-- Main Wrappe -->
 <div id="main-wrapper">
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header clearfix" role="banner">
 		
 		<?php get_template_part( 'framework/headers' ); // Get headers ?>
 		

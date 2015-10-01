@@ -6,9 +6,17 @@
 		<?php if( has_post_thumbnail() ): ?>
 		<!-- Entry Image -->
 		<div class="entry-image">
-			<a href="<?php echo agama_return_image_src('post-thumbnail'); ?>">
+		
+			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
+				<a href="<?php the_permalink(); ?>">
+			<?php endif; ?>
+			
 				<img class="image_fade img-responsive image-grow" src="<?php echo agama_return_image_src('agama-blog-small'); ?>" alt="<?php the_title(); ?>">
-			</a>
+			
+			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
+				</a>
+			<?php endif; ?>
+			
 		</div><!--.entry-image-->
 		<?php endif; ?>
 		

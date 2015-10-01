@@ -70,32 +70,28 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</h2>';
 				
 				echo '<div class="changelog point-releases">';
-					echo '<h3>'.__( 'Changelog Agama v1.1.1', 'agama' ).'</h3>';
-					echo '<p><strong>Version 1.1.1</strong> added Frontpage boxes feature.</p>';
-					echo '<p><strong>Version 1.1.1</strong> added About author enable / disable feature.</p>';
-					echo '<p><strong>Version 1.1.1</strong> added 1 new blog layout (small thumbs) feature.</p>';
-					echo '<p><strong>Version 1.1.1</strong> added sidebar align (left / right) feature.</p>';
-					echo '<p><strong>Version 1.1.1</strong> added Enable / Disable "Read More" blog url feature.</p>';
-					echo '<p><strong>Version 1.1.1</strong> cleaned Unused files & code.</p>';
-					echo '<p><strong>Version 1.1.1</strong> fixed Blog grid style, comments overlap with posts.</p>';
-					echo '<p><strong>Version 1.1.1</strong> fixed Few issues in mobile navigation.</p>';
-					echo '<p><strong>Version 1.1.1</strong> fixed Duplicated post categories bug.</p>';
-					echo '<p><strong>Version 1.1.1</strong> improved Editor stylesheet.</p>';
-					echo '<p><strong>Version 1.1.1</strong> improved Infinite scroll, added trigger feature (auto / button).</p>';
-					echo '<p><strong>Version 1.1.1</strong> improved Blog posts styling.</p>';
-					echo '<p><strong>Version 1.1.1</strong> improved Comments layout restyled.</p>';
-					echo '<p><strong>Version 1.1.1</strong> improved overall styling.</p>';
+					echo '<h3>Changelog Agama v1.1.2</h3>';
+						echo '<p><strong>Version 1.1.2</strong> FIXED: issues with menu assign checkbox visibility.</p>';
+						echo '<p><strong>Version 1.1.2</strong> ADDED: Blog thumbnails url enable / disable feature.</p>';
+						echo '<p><strong>Version 1.1.2</strong> ADDED: Top menu feature on sticky header.</p>';
+						echo '<p><strong>Version 1.1.2</strong> ADDED: New social icons style.</p>';
+						echo '<p><strong>Version 1.1.2</strong> IMPROVED: Menu hover in, hover out animations.</p>';
 					
-					echo '<h3>'.__( 'Changelog Agama v1.1.0', 'agama' ).'</h3>';
-					echo '<p><strong>Version 1.1.0</strong> fixed textdomain issue in customizer.</p>';
-					
-					echo '<h3>'.__( 'Changelog Agama v1.0.9', 'agama' ).'</h3>';
-					echo '<p><strong>Version 1.0.9</strong> added Layout style options (Boxed / Fullwidth).</p>';
-					echo '<p><strong>Version 1.0.9</strong> fixed Blog list feature thumbnail size issue.</p>';
-					echo '<p><strong>Version 1.0.9</strong> improved right to left (RTL) stylesheet issues.</p>';
-					echo '<p><strong>Version 1.0.9</strong> improved header style select options.</p>';
-					echo '<p><strong>Version 1.0.9</strong> improved sticky header navigation.</p>';
-					echo '<p><strong>Version 1.0.9</strong> improved WooCommerce shop page.</p>';
+					echo '<h3>Changelog Agama v1.1.1</h3>';
+						echo '<p><strong>Version 1.1.1</strong> added Frontpage boxes feature.</p>';
+						echo '<p><strong>Version 1.1.1</strong> added About author enable / disable feature.</p>';
+						echo '<p><strong>Version 1.1.1</strong> added 1 new blog layout (small thumbs) feature.</p>';
+						echo '<p><strong>Version 1.1.1</strong> added sidebar align (left / right) feature.</p>';
+						echo '<p><strong>Version 1.1.1</strong> added Enable / Disable "Read More" blog url feature.</p>';
+						echo '<p><strong>Version 1.1.1</strong> cleaned Unused files & code.</p>';
+						echo '<p><strong>Version 1.1.1</strong> fixed Blog grid style, comments overlap with posts.</p>';
+						echo '<p><strong>Version 1.1.1</strong> fixed Few issues in mobile navigation.</p>';
+						echo '<p><strong>Version 1.1.1</strong> fixed Duplicated post categories bug.</p>';
+						echo '<p><strong>Version 1.1.1</strong> improved Editor stylesheet.</p>';
+						echo '<p><strong>Version 1.1.1</strong> improved Infinite scroll, added trigger feature (auto / button).</p>';
+						echo '<p><strong>Version 1.1.1</strong> improved Blog posts styling.</p>';
+						echo '<p><strong>Version 1.1.1</strong> improved Comments layout restyled.</p>';
+						echo '<p><strong>Version 1.1.1</strong> improved overall styling.</p>';
 				echo '</div>';
 				
 			echo '</div>';

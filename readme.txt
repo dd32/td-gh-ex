@@ -2,6 +2,13 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.1.2 Sep 30 =
+* FIXED: issues with menu assign checkbox visibility.
+* ADDED: Blog thumbnails url enable / disable feature.
+* ADDED: Top menu feature on sticky header.
+* ADDED: New social icons style.
+* IMPROVED: Menu hover in, hover out animation.
+
 = 1.1.1 Sep 10 =
 * ADDED: Frontpage boxes feature.
 * ADDED: About author enable / disable feature.
@@ -90,6 +97,7 @@ Agama is distributed under the terms of the GNU GPL2
  * Infinite Scroll - https://github.com/paulirish/infinite-scroll - MIT License
  * imagesLoaded - http://imagesloaded.desandro.com/ - MIT License
  * scrollToTop - https://plugins.jquery.com/scrollToTop/ - MIT License
+ * jRespond - https://github.com/ten1seven/jRespond - MIT License
  
  Images used in Screenshot are licensed under Creative Commons Zero License:
 

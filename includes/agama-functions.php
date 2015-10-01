@@ -38,13 +38,8 @@ function agama_setup() {
 	// This theme supports a variety of post formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
-	// If sticky header enabled name menu as 'Sticky Header Menu' otherwise 'Top Menu'
-	if( get_theme_mod( 'agama_header_style', 'default' ) == 'sticky' ) {
-		register_nav_menu( 'top', __( 'Sticky Header Menu', 'agama' ) );
-	}else{
-		register_nav_menu( 'top', __( 'Top Menu', 'agama' ) );
-		register_nav_menu( 'primary', __( 'Primary Menu', 'agama' ) );
-	}
+	register_nav_menu( 'top', __( 'Top Menu', 'agama' ) );
+	register_nav_menu( 'primary', __( 'Primary Menu', 'agama' ) );
 
 	/*
 	 * This theme supports custom background color and image,
