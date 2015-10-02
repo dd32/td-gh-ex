@@ -73,21 +73,100 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 
 == Changelog ==
 
-= 1.0.5 - August 3, 2015 =
-* Remove unneeded call to WordPress.com specific file that caused a fatal error.
+= 2 October 2015 =
+* Enqueue Genericons and add them to fix a self-hosted bug with the Menu icon.
 
-= 1.0.4 - July 23 2015 =
-* Add missing styling for <b> and <strong> elements.
+= 21 September 2015 =
+* Ensure that site title still looks good when spanning two lines.
 
-= 1.0.3 - July 20 2015 =
-* Fix array indices error in for older versions of PHP.
+= 9 September 2015 =
+* Add the site-title border directly to the link so it's not displayed in the customizer when site-title is hidden.
 
-= 1.0.2 - July 13 2015 =
-* Added missing license and copyright info for Slick script.
+= 10 August 2015 =
+* Make sure to target only size-full images when adding the extra large image class.
 
-= 1.0.1 - June 30 2015 =
-* Removed include for updater.php script from functions.php.
-* Fixed minor textdomain issues.
+= 31 July 2015 =
+* Remove `.screen-reader-text:hover` and `.screen-reader-text:active` style rules.
 
-= 1.0 - May 28 2015 =
-* Initial release.
+= 23 July 2015 =
+* Udating readme.txt with recent changes to keep up to date with .org version;
+* Adding missing styling to <b> and <strong> elements; Fixes #3279;
+
+= 20 July 2015 =
+* Refactor array for single content portfolio galleries to avoid errors for older versions of PHP. Props to @mendezcode for the fix.
+
+= 14 July 2015 =
+* Always use https when loading Google Fonts. See #3221;
+
+= 13 July 2015 =
+* Adding credit and license info for Slick script to readme.txt, as requested by .org reviewer; bumping up the version number;
+
+= 30 June 2015 =
+* Fixed minor textdomain issues; Added missing escaping; Bumped up version number to remain in sync with .org version;
+
+= 19 June 2015 =
+* Adding .pot file;
+
+= 17 June 2015 =
+* Adding escaping for commment author output;
+* Fixing a bug where projects loaded with IS where breaking the grid;
+* Setting 'wrapper' param for Jetapck to false, to help with jumpy scrolling;
+
+= 16 June 2015 =
+* Adding theme description to style.css and readme.txt;
+* Further tweaks to editor-style.css to match recent changes in style.css; Increasing navigation width to match content width in portfolio;
+* Link color adjustemnts in editor-style.css (to match recent changes in style.css); Adjustments to images - removing border below linked images and adding margin bottom;
+* Adjustemtns around overhanging images;
+
+= 15 June 2015 =
+* Tying loose ends - removing overzealous esaping in comment form; Adding support for overhanging images and blocquotes to portfolio projects;
+* Changing links color for better contrast; Minor tweaks to facilitate color annotations;
+
+= 5 June 2015 =
+* Adding missing escaping, in line with recent updates to _s; Changed Jetpack url to https;
+* Adding post title to Read more link;
+* Fixing visual issues: uneven spacing around last menu item, hover style for links in footer; , no comments message styling, edit button position in pingbacks and finally setting the height of inputs to match buttons;
+* More spacing/indentation fixes;
+* Minor spacing/indentation fixes;
+* Minor spacing fixes in the code;
+* Mixed uppercase/lowercase package names on @package declarations;
+* Removing old .pot file;
+
+= 29 May 2015 =
+* CSS tweaks for color annotations;
+
+= 28 May 2015 =
+* Overdue font family change; Removing numeration from threaded comments;
+* Addiing support for editor style in functions.php; Adjusting spcing after various elements;
+* Adding edtor-style.css;
+* Updating theme screenshot;
+* Adding readme.txt file; Adding tags and updating version numver in style.css; Updating  to match recent changes in stylesheet;
+* Small tweaks to RTL styles;
+
+= 27 May 2015 =
+* CSS adjustements to front page template for mobile devices;
+* Custom Header Image height adjustment;
+* Adding custom front page template and front page settings; Remove padding around footer widgets;
+* Update slider navigation - Add next/prev navigation on hover over right/left portion of the slider;
+* Adding .03em letter spacing to uppercase text;
+
+= 26 May 2015 =
+* Removing outline from buttons; increasing line-height for project titles;
+* Changed body font to Cabin and adjusted font-size; Added hover state styling; Chaged focus on form elements; Various minor CSS adjustments;
+* Add class to large images to outdent them visually; Update navigation links anchors;
+
+= 22 May 2015 =
+* Varius CSS tweaks to spacing;
+* Adding RTL styles;
+* Goodreads widget styling adjustments;
+* Added styling for calendar widget; Fixed site title color bug;
+* More adjustments for wpcom widgets;
+* Updated custom fonts function; Added sytles to various wpcom widgets;
+* Adding 'footer_widgets' argument to Jetpack setup to prevent infinite mode when footer widgets are present;
+* Added pagination to single post via the_content filter to move it above Jetapck sharing and related posts; Slightly modified page links markup to fine tune the styling;
+* Forgot to include wpcom.php in functions.php, fixing now;
+* Replaced single footer widget area with thre separate for finer control over widget display order;
+* Adding wpcom.php and style-wpcom.css files; Style adjustmetns to input fileds and widgets;
+
+= 21 May 2015 =
+* Export from dev to pub;

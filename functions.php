@@ -189,6 +189,8 @@ function argent_scripts() {
 	wp_enqueue_style( 'argent-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'argent-fonts', argent_fonts_url(), array(), null );
+	
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 
 	wp_enqueue_script( 'argent-js', get_template_directory_uri() . '/js/argent.js', array( 'jquery' ), '20150326', true );
 
@@ -240,7 +242,11 @@ require get_template_directory() . '/inc/extras.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+
 /**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+

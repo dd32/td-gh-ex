@@ -63,7 +63,7 @@
 	 * Add extra class to large images on pages and in single project view. Props to Intergalactic theme
 	 */
 	function outdentImages() {
-		$( '.page-content img, .jetpack-portfolio.hentry .entry-content img' ).each( function() {
+		$( '.page-content img.size-full, .jetpack-portfolio.hentry .entry-content img.size-full' ).each( function() {
 			var img = $( this ),
 			    caption = $( this ).closest( 'figure' ),
 				new_img = new Image();

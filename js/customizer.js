@@ -30,9 +30,6 @@
 					'color': to,
 					'position': 'relative'
 				} );
-				$( '.site-title' ).css( {
-					'border-color' : to,
-				} );
 			}
 		} );
 	} );
