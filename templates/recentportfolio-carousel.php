@@ -1,5 +1,5 @@
 <div id="portfolio_carousel_container" class="carousel_outerrim">
-    <?php global $post; 
+    <?php global $post, $virtue; 
     $text = get_post_meta( $post->ID, '_kad_portfolio_carousel_title', true );
     if(!empty($text)) { 
     	echo '<h3 class="title">'.$text.'</h3>'; 
@@ -13,7 +13,12 @@
             $md = 4;
             $sm = 3;
             $xs = 2;
-            $ss = 1; ?>
+            $ss = 1; 
+            if(isset($virtue['portfolio_type_under_title']) && $virtue['portfolio_type_under_title'] == '0') {
+					$portfolio_item_types = false;
+				} else {
+					$portfolio_item_types = true;
+				}?>
 				<div id="carouselcontainer-portfolio" class="rowtight">
             	<div id="portfolio-carousel" class="caroufedselclass initcaroufedsel clearfix" data-carousel-container="#carouselcontainer-portfolio" data-carousel-transition="300" data-carousel-scroll="1" data-carousel-auto="true" data-carousel-speed="9000" data-carousel-id="portfolio" data-carousel-md="<?php echo esc_attr($md);?>" data-carousel-sm="<?php echo esc_attr($sm);?>" data-carousel-xs="<?php echo esc_attr($xs);?>" data-carousel-ss="<?php echo esc_attr($ss);?>">
                 <?php $temp = $wp_query; 
@@ -37,7 +42,7 @@
 										if(empty($image)) {$image = $thumbnailURL;}?>
 										<div class="imghoverclass">
 		                                       <a href="<?php the_permalink();  ?>" title="<?php the_title(); ?>">
-		                                       <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" class="lightboxhover" style="display: block;">
+		                                       <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" width="<?php echo esc_attr($slidewidth);?>" height="<?php echo esc_attr($slideheight);?>" class="lightboxhover" style="display: block;">
 		                                       </a> 
 		                                </div>
 	                           				<?php $image = null; $thumbnailURL = null;?>
@@ -45,6 +50,12 @@
               				<a href="<?php the_permalink() ?>" class="portfoliolink">
               					<div class="piteminfo">   
                           			<h5><?php the_title();?></h5>
+                          			<?php if($portfolio_item_types == true) {
+				                        	$terms = get_the_terms( $post->ID, 'portfolio-type' );
+				                        	if ($terms) {?>
+				                        		<p class="cportfoliotag"><?php $output = array(); foreach($terms as $term){ $output[] = $term->name;} echo implode(', ', $output); ?></p>
+				                        	<?php } 
+				                        } ?>
 			                    </div>
 			                </a>
 			          	</div>

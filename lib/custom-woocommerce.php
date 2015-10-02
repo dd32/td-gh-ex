@@ -32,7 +32,7 @@ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wra
 add_action('kt_afterheader', 'kt_wc_print_notices');
 function kt_wc_print_notices() {
   if (class_exists('woocommerce')) {
-    if(!is_shop() || !is_woocommerce() || !is_cart() || !is_checkout() || !is_account_page() ) {
+    if(!is_shop() and !is_woocommerce() and !is_cart() and !is_checkout() and !is_account_page() ) {
       echo '<div class="container">';
       echo do_shortcode( '[woocommerce_messages]' );
       echo '</div>';

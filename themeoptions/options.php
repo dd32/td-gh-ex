@@ -37,7 +37,7 @@ if ( ! class_exists( 'Redux' ) ) {
         'dev_mode'             => false,
         'forced_dev_mode_off'  => true,
         'update_notice'        => false,
-        'customizer'           => false,
+        'customizer'           => true,
         'page_priority'        => 50,
         'page_permissions'     => 'manage_options',
         'menu_icon'            => '',
@@ -1647,8 +1647,16 @@ Redux::setSection( $opt_name, array(
     'icon_class' => 'icon-large',
     'id' => 'pagepost_settings',
     'title' => __('Page/Post Settings', 'virtue'),
-    'desc' => "<div class='redux-info-field'><h3>".__('Page and Post Settings', 'virtue')."</h3></div>",
+    'desc' => "<div class='redux-info-field'><h3>".__('Page and Post Comment Settings', 'virtue')."</h3></div>",
     'fields' => array(
+        array(
+            'id'=>'close_comments',
+            'type' => 'switch',
+            'customizer' => true, 
+            'title' => __('Show Comments Closed Text?', 'virtue'),
+            'subtitle' => __('Choose to show or hide comments closed alert below posts.', 'virtue'),
+            "default" => 0,
+            ),
         array(
             'id'=>'page_comments',
             'type' => 'switch',
@@ -1656,6 +1664,20 @@ Redux::setSection( $opt_name, array(
             'title' => __('Allow Comments on Pages', 'virtue'),
             'subtitle' => __('Turn on to allow comments on pages', 'virtue'),
             "default" => 0,
+            ),
+        array(
+            'id'=>'portfolio_comments',
+            'type' => 'switch',
+            'customizer' => true,
+            'title' => __('Allow Comments on Portfolio Posts', 'virtue'),
+            'subtitle' => __('Turn on to allow comments on Portfolio posts', 'virtue'),
+            "default" => 0,
+            ),
+        array(
+            'id'=>'info_portfolio_post_defaults',
+            'type' => 'info',
+            'customizer' => true,
+            'desc' => __('Portfolio Post', 'virtue'),
             ),
         array(
             'id'=>'portfolio_link',
@@ -1667,20 +1689,28 @@ Redux::setSection( $opt_name, array(
             'subtitle' => __('This sets the link in every single portfolio page. *note: You still have to set the page template to portfolio.', 'virtue'),
             ),
         array(
-            'id'=>'portfolio_comments',
-            'type' => 'switch',
+            'id'=>'info_portfolio_typepage_defaults',
+            'type' => 'info',
             'customizer' => true,
-            'title' => __('Allow Comments on Portfolio Posts', 'virtue'),
-            'subtitle' => __('Turn on to allow comments on Portfolio posts', 'virtue'),
-            "default" => 0,
+            'desc' => __('Portfolio Type Page Defaults', 'virtue'),
             ),
         array(
-            'id'=>'close_comments',
+            'id'=>'portfolio_type_columns',
+            'type' => 'select',
+            'customizer' => true,
+            'title' => __('Portfolio Type - Post Columns', 'virtue'), 
+            'subtitle' => __("Choose how many columns for portfolio type pages", 'virtue'),
+            'options' => array('3' => 'Three Columns','4' => 'Four Column', '5' => 'Five Column'),
+            'default' => '3',
+            'width' => 'width:60%',
+            ),
+        array(
+            'id'=>'portfolio_type_under_title',
             'type' => 'switch',
-            'customizer' => true, 
-            'title' => __('Show Comments Closed Text?', 'virtue'),
-            'subtitle' => __('Choose to show or hide comments closed alert below posts.', 'virtue'),
-            "default" => 0,
+            'customizer' => true,
+            'title' => __('Show Types under Title', 'virtue'),
+            'subtitle' => __('Choose to show or hide portfolio type under title.', 'virtue'),
+            "default" => 1,
             ),
         array(
             'id'=>'info_blog_defaults',
@@ -1893,7 +1923,7 @@ Redux::setSection( $opt_name, array(
 
 function virtue_override_panel() {
     wp_dequeue_style( 'redux-admin-css' );
-    wp_register_style('virtue-redux-custom-css', get_template_directory_uri() . '/themeoptions/options/css/style.css', false, 250);    
+    wp_register_style('virtue-redux-custom-css', get_template_directory_uri() . '/themeoptions/options/css/style.css', false, 257);    
     wp_enqueue_style( 'virtue-redux-custom-css' );
     wp_dequeue_style( 'select2-css' );
     wp_dequeue_script( 'select2-js' );

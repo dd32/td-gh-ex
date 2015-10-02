@@ -30,6 +30,13 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.5.7 | 1st October 2015 =
+* Update: Structure Code.
+* Update: options.
+* Update: header/footer to remove annoying "error" from plugins.
+* Update: Woo Message Output
+* Update: Portfolio Type options.
+
 = Version 2.5.6 | 8th September 2015 =
 * Bug Fix: woocommerce rating.
 

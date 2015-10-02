@@ -103,7 +103,7 @@ Template Name: Portfolio Grid
 									if(empty($image)) {$image = $thumbnailURL; } ?>
 									<div class="imghoverclass">
 	                                    <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-	                                       	<img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" class="lightboxhover" style="display: block;">
+	                                       	<img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" width="<?php echo esc_attr($slidewidth);?>" height="<?php echo esc_attr($slideheight);?>" class="lightboxhover" style="display: block;">
 	                                    </a> 
 	                                </div>
 	                                <?php if($plb) {?>

@@ -41,7 +41,7 @@
                                 $attachment_url = wp_get_attachment_url($attachment , 'full');
                                 $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
                                   if(empty($image)) {$image = $attachment_url;}
-                                echo '<li><img src="'.esc_url($image).'"/></li>';
+                                echo '<li><img src="'.esc_url($image).'" itemprop="image"/></li>';
                               }
                             }
                           } else {
@@ -52,7 +52,7 @@
                                   $attachment_url = wp_get_attachment_url($attachment->ID , 'full');
                                   $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
                                     if(empty($image)) {$image = $attachment_url;}
-                                  echo '<li><img src="'.esc_url($image).'"/></li>';
+                                  echo '<li><img src="'.esc_url($image).'" itemprop="image"/></li>';
                                 }
                               } 
                           } ?>                            
@@ -73,7 +73,7 @@
                     if($image) : ?>
                       <div class="imghoverclass postfeat post-single-img" itemprop="image">
                         <a href="<?php echo esc_url($img_url); ?>" data-rel="lightbox" class="lightboxhover">
-                          <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" />
+                          <img src="<?php echo esc_url($image); ?>" itemprop="image" alt="<?php the_title(); ?>" />
                         </a>
                       </div>
                     <?php endif; ?>

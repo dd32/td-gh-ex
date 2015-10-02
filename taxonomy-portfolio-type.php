@@ -14,9 +14,25 @@
 				  </div>
 				  <?php get_search_form();
 				endif;
-				$itemsize 		= 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12';
-				$slidewidth 	= 366; 
-				$slideheight 	= 366; 
+				global $virtue;
+				if(isset($virtue['portfolio_type_columns']) && $virtue['portfolio_type_columns'] == '4') {
+					$itemsize = 'tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12';
+					$slidewidth = 269;
+					$slideheight = 269;
+				} elseif(isset($virtue['portfolio_type_columns']) && $virtue['portfolio_type_columns'] == '5') {
+					$itemsize 		= 'tcol-md-25 tcol-sm-3 tcol-xs-4 tcol-ss-6';
+					$slidewidth 	= 240;
+					$slideheight 	= 240; 
+				} else {
+					$itemsize 		= 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12';
+					$slidewidth 	= 366; 
+					$slideheight 	= 366; 
+				}
+				if(isset($virtue['portfolio_type_under_title']) && $virtue['portfolio_type_under_title'] == '0') {
+					$portfolio_item_types = false;
+				} else {
+					$portfolio_item_types = true;
+				}
 				?>
 				<div id="portfoliowrapper" class="rowtight">
 				<?php while (have_posts()) : the_post(); ?>
@@ -30,7 +46,7 @@
 									if(empty($image)) {$image = $thumbnailURL;} ?>
 										<div class="imghoverclass">
 			                                <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-			                                   	<img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" class="lightboxhover" style="display: block;">
+			                                   	<img src="<?php echo esc_url($image); ?>" width="<?php echo esc_attr($slidewidth);?>" height="<?php echo esc_attr($slideheight);?>" alt="<?php the_title(); ?>" class="lightboxhover" style="display: block;">
 			                                </a> 
 			                            </div>
 		                           				<?php $image = null; $thumbnailURL = null;?>
@@ -38,6 +54,12 @@
 					              	<a href="<?php the_permalink() ?>" class="portfoliolink">
 					              		<div class="piteminfo">   
 					                          <h5><?php the_title();?></h5>
+					                          	<?php if($portfolio_item_types == true) {
+				                        			$terms = get_the_terms( $post->ID, 'portfolio-type' );
+				                        			if ($terms) {?>
+				                        				<p class="cportfoliotag"><?php $output = array(); foreach($terms as $term){ $output[] = $term->name;} echo implode(', ', $output); ?></p>
+				                        			<?php } 
+				                        		} ?>
 					                    </div>
 					                </a>
 		                </div>
