@@ -5,7 +5,6 @@
 // Load default style.css and Javascripts
 add_action('wp_enqueue_scripts', 'dynamicnews_enqueue_scripts');
 
-if ( ! function_exists( 'dynamicnews_enqueue_scripts' ) ):
 function dynamicnews_enqueue_scripts() {
 
 	// Get Theme Options from Database
@@ -38,20 +37,16 @@ function dynamicnews_enqueue_scripts() {
 	// Passing Parameters to Navigation.js Javascript
 	wp_localize_script( 'dynamicnewslite-jquery-navigation', 'dynamicnews_menu_title', __('Menu', 'dynamic-news-lite') );
 	
+	// Register Comment Reply Script for Threaded Comments
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
 	// Register and Enqueue Font
 	wp_enqueue_style('dynamicnewslite-default-fonts', dynamicnews_fonts_url(), array(), null );
 
 }
-endif;
 
-// Load comment-reply.js if comment form is loaded and threaded comments activated
-add_action( 'comment_form_before', 'dynamicnews_enqueue_comment_reply' );
-
-function dynamicnews_enqueue_comment_reply() {
-	if( get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
 
 // HTML5shiv for old IE
 add_action('wp_head', 'dynamicnews_enqueue_html5shiv');
@@ -101,7 +96,6 @@ function dynamicnews_fonts_url() {
 // Setup Function: Registers support for various WordPress features
 add_action( 'after_setup_theme', 'dynamicnews_setup' );
 
-if ( ! function_exists( 'dynamicnews_setup' ) ):
 function dynamicnews_setup() {
 
 	// Set Content Width
@@ -127,9 +121,6 @@ function dynamicnews_setup() {
 		'width'	=> 1340,
 		'height' => 200,
 		'flex-height' => true));
-		
-	// Add Theme Support for Dynamic News Pro Plugin
-	add_theme_support( 'dynamicnews-pro' );
 
 	// Register Navigation Menus
 	register_nav_menu( 'primary', __('Main Navigation', 'dynamic-news-lite') );
@@ -139,13 +130,11 @@ function dynamicnews_setup() {
 	register_nav_menu( 'social', __('Social Icons', 'dynamic-news-lite') );
 
 }
-endif;
 
 
 // Add custom Image Sizes
 add_action( 'after_setup_theme', 'dynamicnews_add_image_sizes' );
 
-if ( ! function_exists( 'dynamicnews_add_image_sizes' ) ):
 function dynamicnews_add_image_sizes() {
 
 	// Add Custom Header Image Size
@@ -165,13 +154,11 @@ function dynamicnews_add_image_sizes() {
 	add_image_size( 'widget_post_thumb', 75, 75, true);
 
 }
-endif;
 
 
 // Register Sidebars
 add_action( 'widgets_init', 'dynamicnews_register_sidebars' );
 
-if ( ! function_exists( 'dynamicnews_register_sidebars' ) ):
 function dynamicnews_register_sidebars() {
 
 	// Register Sidebar
@@ -197,133 +184,6 @@ function dynamicnews_register_sidebars() {
 	));
 	
 }
-endif;
-
-
-// Add title tag for older WordPress versions
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-
-	add_action( 'wp_head', 'dynamicnews_wp_title' );
-	function dynamicnews_wp_title() { ?>
-		
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-
-<?php
-    }
-    
-endif;
-
-
-// Add Default Menu Fallback Function
-function dynamicnews_default_menu() {
-	echo '<ul id="mainnav-menu" class="menu">'. wp_list_pages('title_li=&echo=0') .'</ul>';
-}
-
-
-// Get Featured Posts
-function dynamicnews_get_featured_content() {
-	return apply_filters( 'dynamicnews_get_featured_content', false );
-}
-
-
-// Change Excerpt Length
-add_filter('excerpt_length', 'dynamicnews_excerpt_length');
-function dynamicnews_excerpt_length($length) {
-
-	// Get Theme Options from Database
-	$theme_options = dynamicnews_theme_options();
-
-	// Return Excerpt Length
-	if ( isset($theme_options['excerpt_length']) and $theme_options['excerpt_length'] >= 0 ) :
-		return absint( $theme_options['excerpt_length'] );
-	else :
-		return 60; // number of words
-	endif;
-
-}
-
-
-// Slideshow Excerpt Length
-function dynamicnews_slideshow_excerpt_length($length) {
-    return 30;
-}
-
-// Frontpage Category Excerpt Length
-function dynamicnews_frontpage_category_excerpt_length($length) {
-    return 25;
-}
-
-
-// Change Excerpt More
-add_filter('excerpt_more', 'dynamicnews_excerpt_more');
-function dynamicnews_excerpt_more($more) {
-    
-	// Get Theme Options from Database
-	$theme_options = dynamicnews_theme_options();
-
-	// Return Excerpt Text
-	if ( isset($theme_options['excerpt_text']) and $theme_options['excerpt_text'] == true ) :
-		return ' [...]';
-	else :
-		return '';
-	endif;
-}
-
-
-// Custom Template for comments and pingbacks.
-if ( ! function_exists( 'dynamicnews_list_comments' ) ):
-function dynamicnews_list_comments($comment, $args, $depth) {
-
-	$GLOBALS['comment'] = $comment;
-
-	if( $comment->comment_type == 'pingback' or $comment->comment_type == 'trackback' ) : ?>
-
-		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-			<p><?php _e( 'Pingback:', 'dynamic-news-lite' ); ?> <?php comment_author_link(); ?>
-			<?php edit_comment_link( __( '(Edit)', 'dynamic-news-lite' ), '<span class="edit-link">', '</span>' ); ?>
-			</p>
-
-	<?php else : ?>
-
-		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-
-			<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-
-				<div class="comment-author vcard clearfix">
-					<span class="fn"><?php echo get_comment_author_link(); ?></span>
-					<div class="comment-meta commentmetadata">
-						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-							<?php echo get_comment_date(); ?>
-							<?php echo get_comment_time(); ?>
-						</a>
-						<?php edit_comment_link(__('(Edit)', 'dynamic-news-lite'),'  ','') ?>
-					</div>
-
-				</div>
-
-				<div class="comment-content clearfix">
-
-					<?php echo get_avatar( $comment, 72 ); ?>
-
-					<?php if ($comment->comment_approved == '0') : ?>
-						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'dynamic-news-lite' ); ?></p>
-					<?php endif; ?>
-
-					<?php comment_text(); ?>
-
-				</div>
-
-				<div class="reply">
-					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-				</div>
-
-			</div>
-
-<?php
-	endif;
-
-}
-endif;
 
 
 /*==================================== INCLUDE FILES ====================================*/
@@ -339,8 +199,14 @@ require( get_template_directory() . '/inc/customizer/default-options.php' );
 require( get_template_directory() . '/inc/customizer/frontend/custom-layout.php' );
 require( get_template_directory() . '/inc/customizer/frontend/custom-slider.php' );
 
+// Include Extra Functions
+require get_template_directory() . '/inc/extras.php';
+
 // include Template Functions
 require( get_template_directory() . '/inc/template-tags.php' );
+
+// Include support functions for Theme Addons
+require get_template_directory() . '/inc/addons.php';
 
 // include Widget Files
 require( get_template_directory() . '/inc/widgets/widget-category-posts-boxed.php' );
@@ -350,6 +216,3 @@ require( get_template_directory() . '/inc/widgets/widget-category-posts-single.p
 
 // Include Featured Content class
 require( get_template_directory() . '/inc/featured-content.php' );
-
-
-?>
