@@ -109,7 +109,13 @@ function catchevolution_theme_options_do_page() {
                         <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/catch-evolution/','catch-evolution')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'catch-evolution'); ?>" target="_blank"><?php printf(__('5 Star Rating','catch-evolution')); ?></a></li>
                    	</ul>
                 </div><!-- #theme-support --> 
-                 
+                
+                <div id="theme-option-header-notice">
+                    <p class="notice">
+                        <?php printf( _x( 'Theme Options Panel will be retired on future versions. Please use %1$s Customizer %2$s instead.','1: Customizer Link Start, 2: Customizer Link End' , 'catch-evolution' ) , '<a href="' . esc_url ( admin_url( 'customize.php' ) ) . '">', '</a>' ); ?>
+                    </p>
+                </div>
+
           	</div><!-- #theme-option-header -->                  
                             
             
@@ -1187,26 +1193,3 @@ function catchevolution_assets(){
     $catchevolution_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-evolution' ) . ' &copy; '. catchevolution_the_year() . ' ' . catchevolution_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catch-evolution' ) . '.</div><div class="powered">'. catchevolution_theme_name() . catchevolution_theme_author() . '</div>';
     return $catchevolution_content;
 }
-
-
-/**
- * Custom scripts and styles on Customizer for Catch Evolution
- *
- * @since Catch Evolution 2.3
- */
-function catchevolution_customize_scripts() {
-    wp_register_script( 'catchevolution_customizer_custom', get_template_directory_uri() . '/inc/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
-
-    $catchevolution_misc_links = array(
-                            'upgrade_link'              => esc_url( admin_url( 'themes.php?page=theme_options' ) ),
-                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'catch-evolution' ),
-                            );
-
-    //Add More Theme Options Button
-    wp_localize_script( 'catchevolution_customizer_custom', 'catchevolution_misc_links', $catchevolution_misc_links );
-
-    wp_enqueue_script( 'catchevolution_customizer_custom' );
-
-    wp_enqueue_style( 'catchevolution_customizer_custom', get_template_directory_uri() . '/inc/panel/catchevolution-customizer.css');
-}
-add_action( 'customize_controls_print_footer_scripts', 'catchevolution_customize_scripts');

@@ -76,3 +76,90 @@ function catchevolution_options_set_defaults( $catchevolution_options_defaults )
 	$catchevolution_options_settings = array_merge( $catchevolution_options_defaults, (array) get_option( 'catchevolution_options', array() ) );
 	return $catchevolution_options_settings;
 }
+
+
+/**
+ * Returns an array of color schemes registered for adventurous.
+ *
+ * @since Catch Evolution 2.6
+ */
+function catchevolution_color_schemes() {
+	$options = array(
+		'light' 		=> __( 'Light', 'catch-evolution' ),
+		'dark'			=> __( 'Dark', 'catch-evolution' ),
+	);
+
+	return apply_filters( 'catchevolution_color_schemes', $options );
+}
+
+
+/**
+ * Returns an array of sidebar layout options
+ *
+ * @since Catch Evolution 2.6
+ */
+function catchevolution_sidebar_layout_options() {
+	$options = array(
+		'right-sidebar' => __( 'Right Sidebar', 'catch-evolution' ),
+		'left-sidebar' 	=> __( 'Left Sidebar', 'catch-evolution' ),
+		'no-sidebar'	=> __( 'No Sidebar', 'catch-evolution' ),
+		'three-columns'	=> __( 'Three Columns', 'catch-evolution' ),
+	);
+
+	return apply_filters( 'catchevolution_sidebar_layout_options', $options );
+}
+
+
+/**
+ * Returns an array of content layout options
+ *
+ * @since Catch Evolution 2.6
+ */
+function catchevolution_content_layout_options() {
+	$options = array(
+		'full' 		=> __( 'Full Content Display', 'catch-evolution' ),
+		'excerpt' 	=> __( 'Excerpt/Blog Display', 'catch-evolution' ),
+	);
+
+	return apply_filters( 'catchevolution_content_layout_options', $options );
+}
+
+/**
+ * Returns an array of slider enable options
+ *
+ * @since Catch Evolution 2.6
+ */
+function catchevolution_enable_slider_options() {
+	$options = array(
+		'enable-slider-homepage'=> __( 'Homepage', 'catch-evolution' ),
+		'enable-slider-allpage' => __( 'Entire Site', 'catch-evolution' ),
+		'disable-slider' 		=> __( 'Disable', 'catch-evolution' ),
+	);
+
+	return apply_filters( 'catchevolution_enable_slider_options', $options );
+}
+
+
+/**
+ * Returns an array of slider transition effects
+ *
+ * @since Catch Evolution 2.6
+ */
+function catchevolution_transition_effects() {
+	$options = array(
+		'fade'			=> __( 'fade', 'catch-evolution' ),
+		'wipe' 			=> __( 'wipe', 'catch-evolution' ),
+		'scrollUp' 		=> __( 'scrollUp', 'catch-evolution' ),
+		'scrollDown'	=> __( 'scrollDown', 'catch-evolution' ),
+		'scrollUp' 		=> __( 'scrollUp', 'catch-evolution' ),
+		'scrollLeft'	=> __( 'scrollLeft', 'catch-evolution' ),
+		'scrollRight'	=> __( 'scrollRight', 'catch-evolution' ),
+		'blindX' 		=> __( 'blindX', 'catch-evolution' ),
+		'blindY' 		=> __( 'blindY', 'catch-evolution' ),
+		'blindZ' 		=> __( 'blindZ', 'catch-evolution' ),
+		'cover' 		=> __( 'cover', 'catch-evolution' ),
+		'shuffle' 		=> __( 'shuffle', 'catch-evolution' ),
+	);
+
+	return apply_filters( 'catchevolution_transition_effects', $options );
+}

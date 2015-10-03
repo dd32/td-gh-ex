@@ -239,3 +239,8 @@ function catchevolution_html_validate( $text ) {
 }
 add_filter( 'the_category', 'catchevolution_html_validate' );
 add_filter( 'wp_list_categories', 'catchevolution_html_validate' );
+
+/**
+ * Customizer Options
+ */
+require( get_template_directory() . '/inc/panel/customizer/customizer.php' );

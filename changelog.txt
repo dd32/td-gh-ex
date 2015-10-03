@@ -1,5 +1,8 @@
 == Changelog ==
 
+2.6
+* Added all theme options to customizer
+
 2.5
 * Compatible with WordPress 4.3
 * Removed support for WordPress version less than 4.1
