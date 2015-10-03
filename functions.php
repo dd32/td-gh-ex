@@ -308,3 +308,5 @@ function simplecatch_custom_header_image() {
 }
 endif; // simplecatch_custom_header_image
 
+// Load Customizer
+require( get_template_directory() . '/functions/panel/customizer/customizer.php' );

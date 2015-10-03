@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 3.0
+* Added all theme options to customizer
+
 Version 2.9
 * Added title tag via add theme support
 * Compatible with WordPress 4.3

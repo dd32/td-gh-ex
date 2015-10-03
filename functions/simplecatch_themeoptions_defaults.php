@@ -93,3 +93,59 @@ function simplecatch_options_set_defaults( $simplecatch_options_defaults ) {
 	$simplecatch_options_settings = array_merge( $simplecatch_options_defaults, (array) get_option( 'simplecatch_options', array() ) );
 	return $simplecatch_options_settings;
 }
+
+
+/**
+ * Returns an array of color schemes registered
+ *
+ * @since Simple Catch 3.0
+ */
+function simplecatch_color_schemes() {
+	$options = array(
+		'default' 		=> __( 'Default (Light)', 'simple-catch' ),
+		'dark'			=> __( 'Dark', 'simple-catch' ),
+		'brown'			=> __( 'Brown', 'simple-catch' ),
+	);
+
+	return apply_filters( 'simplecatch_color_schemes', $options );
+}
+
+/**
+ * Returns an array of sidebar layout options
+ *
+ * @since Simple Catch 3.0
+ */
+function simplecatch_sidebar_layout_options() {
+	$options = array(
+		'right-sidebar' 		=> __( 'Content on Left ', 'simple-catch' ),
+		'left-sidebar' 			=> __( 'Content on Right', 'simple-catch' ),
+		'no-sidebar'			=> __( 'No Sidebar', 'simple-catch' ),
+		'no-sidebar-full-width' => __( 'No Sidebar, Full Width', 'simple-catch' )
+	);
+
+	return apply_filters( 'simplecatch_sidebar_layout_options', $options );
+}
+
+/**
+ * Returns an array of slider transition effects
+ *
+ * @since Simple Catch 3.0
+ */
+function simplecatch_transition_effects() {
+	$options = array(
+		'fade'			=> __( 'fade', 'simple-catch' ),
+		'wipe' 			=> __( 'wipe', 'simple-catch' ),
+		'scrollUp' 		=> __( 'scrollUp', 'simple-catch' ),
+		'scrollDown'	=> __( 'scrollDown', 'simple-catch' ),
+		'scrollUp' 		=> __( 'scrollUp', 'simple-catch' ),
+		'scrollLeft'	=> __( 'scrollLeft', 'simple-catch' ),
+		'scrollRight'	=> __( 'scrollRight', 'simple-catch' ),
+		'blindX' 		=> __( 'blindX', 'simple-catch' ),
+		'blindY' 		=> __( 'blindY', 'simple-catch' ),
+		'blindZ' 		=> __( 'blindZ', 'simple-catch' ),
+		'cover' 		=> __( 'cover', 'simple-catch' ),
+		'shuffle' 		=> __( 'shuffle', 'simple-catch' ),
+	);
+
+	return apply_filters( 'simplecatch_transition_effects', $options );
+}

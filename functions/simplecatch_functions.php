@@ -1108,7 +1108,7 @@ if ( ! function_exists( 'simplecatch_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
  *
- * @since Catch Everest 1.0
+ * @since Simple Catch 1.0
  */
 function simplecatch_content_nav( $nav_id ) {
 	global $wp_query, $post;
