@@ -37,7 +37,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_checkbox'
 	) );
 
-	$wp_customize->add_control( 'fullframe_breadcumb_options', array(
+	$wp_customize->add_control( 'fullframe_theme_options[breadcumb_option]', array(
 		'label'    => __( 'Check to enable Breadcrumb', 'full-frame' ),
 		'section'  => 'fullframe_breadcumb_options',
 		'settings' => 'fullframe_theme_options[breadcumb_option]',
@@ -50,7 +50,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_checkbox'
 	) );
 
-	$wp_customize->add_control( 'fullframe_breadcumb_onhomepage', array(
+	$wp_customize->add_control( 'fullframe_theme_options[breadcumb_onhomepage]', array(
 		'label'    => __( 'Check to enable Breadcrumb on Homepage', 'full-frame' ),
 		'section'  => 'fullframe_breadcumb_options',
 		'settings' => 'fullframe_theme_options[breadcumb_onhomepage]',
@@ -63,7 +63,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_control( 'fullframe_breadcumb_seperator', array(
+	$wp_customize->add_control( 'fullframe_theme_options[breadcumb_seperator]', array(
 			'input_attrs' => array(
 	            'style' => 'width: 40px;'
             	),
@@ -89,13 +89,13 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_custom_css',
 	) );
 
-	$wp_customize->add_control( new Fullframe_Customize_Textarea_Control ( $wp_customize, 'fullframe_theme_options[custom_css]', array(
+	$wp_customize->add_control( 'fullframe_theme_options[custom_css]', array(
 			'label'		=> __( 'Enter Custom CSS', 'full-frame' ),
 	        'priority'	=> 1,
 			'section'   => 'fullframe_custom_css',
 	        'settings'  => 'fullframe_theme_options[custom_css]',
 			'type'		=> 'textarea',
-	) ) );
+	) );
    	// Custom CSS End
 
    	// Excerpt Options
@@ -111,7 +111,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'absint',
 	) );
 
-	$wp_customize->add_control( 'fullframe_excerpt_length', array(
+	$wp_customize->add_control( 'fullframe_theme_options[excerpt_length]', array(
 		'description' => __('Excerpt length. Default is 40 words', 'full-frame'),
 		'input_attrs' => array(
             'min'   => 10,
@@ -132,7 +132,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_control( 'fullframe_excerpt_more_text', array(
+	$wp_customize->add_control( 'fullframe_theme_options[excerpt_more_text]', array(
 		'label'    => __( 'Read More Text', 'full-frame' ),
 		'section'  => 'fullframe_excerpt_options',
 		'settings' => 'fullframe_theme_options[excerpt_more_text]',
@@ -219,7 +219,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[theme_layout]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['theme_layout'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
 	$layouts = fullframe_layouts();
@@ -239,7 +239,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[content_layout]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['content_layout'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
 	$layouts = fullframe_get_archive_content_layout();
@@ -259,7 +259,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[single_post_image_layout]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['single_post_image_layout'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
 	
@@ -316,7 +316,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[pagination_type]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['pagination_type'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
 	$pagination_types = fullframe_get_pagination_types();
@@ -325,7 +325,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		$choices[$pagination_type['value']] = $pagination_type['label'];
 	}
 
-	$wp_customize->add_control( 'fullframe_pagination_options', array(
+	$wp_customize->add_control( 'fullframe_theme_options[pagination_type]', array(
 		'choices'  => $choices,
 		'label'    => __( 'Pagination type', 'full-frame' ),
 		'section'  => 'fullframe_pagination_options',
@@ -345,7 +345,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[promotion_headline_option]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['promotion_headline_option'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
 	$fullframe_featured_slider_content_options = fullframe_featured_slider_content_options();
@@ -369,13 +369,13 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'wp_kses_post'
 	) );
 
-	$wp_customize->add_control( new Fullframe_Customize_Textarea_Control( $wp_customize, 'fullframe_theme_options[promotion_headline]', array(
+	$wp_customize->add_control( 'fullframe_theme_options[promotion_headline]', array(
 		'description'	=> __( 'Appropriate Words: 10', 'full-frame' ),
 		'label'    	=> __( 'Promotion Headline Text', 'full-frame' ),
 		'priority'	=> '1',
 		'section' 	=> 'fullframe_promotion_headline_options',
 		'settings'	=> 'fullframe_theme_options[promotion_headline]',
-	) ) );
+	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[promotion_subheadline]', array(
 		'capability'		=> 'edit_theme_options',
@@ -383,13 +383,13 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'wp_kses_post'
 	) );
 
-	$wp_customize->add_control( new Fullframe_Customize_Textarea_Control( $wp_customize, 'fullframe_theme_options[promotion_subheadline]', array(
+	$wp_customize->add_control( 'fullframe_theme_options[promotion_subheadline]', array(
 		'description'	=> __( 'Appropriate Words: 15', 'full-frame' ),
 		'label'    	=> __( 'Promotion Subheadline Text', 'full-frame' ),
 		'priority'	=> '2',
 		'section' 	=> 'fullframe_promotion_headline_options',
 		'settings'	=> 'fullframe_theme_options[promotion_subheadline]',
-	) ) );
+	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[promotion_headline_button]', array(
 		'capability'		=> 'edit_theme_options',

@@ -13,23 +13,31 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	exit();
 }
 	// Featured Slider
-	$wp_customize->add_panel( 'fullframe_featured_slider', array(
-	    'capability'     => 'edit_theme_options',
-	    'description'    => __( 'Featured Slider Options', 'full-frame' ),
-	    'priority'       => 500,
-		'title'    		 => __( 'Featured Slider', 'full-frame' ),
-	) );
+	if ( 4.3 > get_bloginfo( 'version' ) ) {
+		$wp_customize->add_panel( 'fullframe_featured_slider', array(
+		    'capability'     => 'edit_theme_options',
+		    'description'    => __( 'Featured Slider Options', 'full-frame' ),
+		    'priority'       => 500,
+			'title'    		 => __( 'Featured Slider', 'full-frame' ),
+		) );
 
-	$wp_customize->add_section( 'fullframe_featured_slider', array(
-		'panel'			=> 'fullframe_featured_slider',
-		'priority'		=> 1,
-		'title'			=> __( 'Featured Slider Options', 'full-frame' ),
-	) );
+		$wp_customize->add_section( 'fullframe_featured_slider', array(
+			'panel'			=> 'fullframe_featured_slider',
+			'priority'		=> 1,
+			'title'			=> __( 'Featured Slider Options', 'full-frame' ),
+		) );
+	}
+	else {
+		$wp_customize->add_section( 'fullframe_featured_slider', array(
+			'priority'		=> 400,
+			'title'			=> __( 'Featured Slider', 'full-frame' ),
+		) );
+	}
 
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_slider_option]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_slider_option'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
 	$featured_slider_content_options = fullframe_featured_slider_content_options();
@@ -38,7 +46,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		$choices[$featured_slider_content_option['value']] = $featured_slider_content_option['label'];
 	}
 
-	$wp_customize->add_control( 'fullframe_featured_slider_option', array(
+	$wp_customize->add_control( 'fullframe_theme_options[featured_slider_option]', array(
 		'choices'   => $choices,
 		'label'    	=> __( 'Enable Slider on', 'full-frame' ),
 		'priority'	=> '1.1',
@@ -50,7 +58,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_slide_transition_effect]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_slide_transition_effect'],
-		'sanitize_callback'	=> 'fullframe_sanitize_featured_slide_transition_effects',
+		'sanitize_callback'	=> 'fullframe_sanitize_select',
 	) );
 
 	$fullframe_featured_slide_transition_effects = fullframe_featured_slide_transition_effects();
@@ -60,6 +68,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	}
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_slide_transition_effect]' , array(
+		'active_callback'	=> 'fullframe_is_slider_active',
 		'choices'  	=> $choices,
 		'label'		=> __( 'Transition Effect', 'full-frame' ),
 		'priority'	=> '2',
@@ -72,10 +81,11 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_slide_transition_delay]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_slide_transition_delay'],
-		'sanitize_callback'	=> 'absint',
+		'sanitize_callback'	=> 'fullframe_sanitize_number_range',
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_slide_transition_delay]' , array(
+		'active_callback'	=> 'fullframe_is_slider_active',
 		'description'	=> __( 'seconds(s)', 'full-frame' ),
 		'input_attrs' => array(
             'style' => 'width: 40px;'
@@ -90,10 +100,11 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_slide_transition_length]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_slide_transition_length'],
-		'sanitize_callback'	=> 'absint',
+		'sanitize_callback'	=> 'fullframe_sanitize_number_range',
 	) );
 
-	$wp_customize->add_control( 'fullframe_theme_options[featured_slide_transition_length]' , array(
+	$wp_customize->add_control( 'fullframe_theme_options[featured_slide_transition_length]' , array(		
+		'active_callback'	=> 'fullframe_is_slider_active',
 		'description'	=> __( 'seconds(s)', 'full-frame' ),
 		'input_attrs' => array(
 	            'style' => 'width: 40px;'
@@ -108,7 +119,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_slider_image_loader]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_slider_image_loader'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
 	$featured_slider_image_loader_options = fullframe_featured_slider_image_loader();
@@ -117,7 +128,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		$choices[$featured_slider_image_loader_option['value']] = $featured_slider_image_loader_option['label'];
 	}
 
-	$wp_customize->add_control( 'fullframe_featured_slider_image_loader', array(
+	$wp_customize->add_control( 'fullframe_theme_options[featured_slider_image_loader]', array(
+		'active_callback'	=> 'fullframe_is_slider_active',
 		'description'	=> __( 'True: Fixes the height overlap issue. Slideshow will start as soon as two slider are available. Slide may display in random, as image is fetch.<br>Wait: Fixes the height overlap issue.<br> Slideshow will start only after all images are available.', 'full-frame' ),
 		'choices'   => $choices,
 		'label'    	=> __( 'Image Loader', 'full-frame' ),
@@ -130,7 +142,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_slider_type]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_slider_type'],
-		'sanitize_callback'	=> 'sanitize_key',
+		'sanitize_callback'	=> 'fullframe_sanitize_select',
 	) );
 
 	$featured_slider_types = fullframe_featured_slider_types();
@@ -139,7 +151,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		$choices[$featured_slider_type['value']] = $featured_slider_type['label'];
 	}
 
-	$wp_customize->add_control( 'fullframe_featured_slider_type', array(
+	$wp_customize->add_control( 'fullframe_theme_options[featured_slider_type]', array(
+		'active_callback'	=> 'fullframe_is_slider_active',
 		'choices'  	=> $choices,
 		'label'    	=> __( 'Select Slider Type', 'full-frame' ),
 		'priority'	=> '2.1.3',
@@ -151,10 +164,11 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_slide_number]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_slide_number'],
-		'sanitize_callback'	=> 'fullframe_sanitize_no_of_slider',
+		'sanitize_callback'	=> 'fullframe_sanitize_number_range',
 	) );
 
-	$wp_customize->add_control( 'fullframe_featured_slide_number' , array(
+	$wp_customize->add_control( 'fullframe_theme_options[featured_slide_number]' , array(
+		'active_callback'	=> 'fullframe_is_demo_slider_inactive',
 		'description'	=> __( 'Save and refresh the page if No. of Slides is changed (Max no of slides is 20)', 'full-frame' ),
 		'input_attrs' 	=> array(
             'style' => 'width: 45px;',
@@ -178,6 +192,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		) );
 
 		$wp_customize->add_control( 'fullframe_featured_slider_page_'. $i .'', array(
+			'active_callback'	=> 'fullframe_is_demo_slider_inactive',
 			'label'    	=> __( 'Featured Page', 'full-frame' ) . ' # ' . $i ,
 			'priority'	=> '4' . $i,
 			'section'  	=> 'fullframe_featured_slider',

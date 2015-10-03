@@ -13,24 +13,31 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	exit();
 }
 	// Featured Content Options
-	$wp_customize->add_panel( 'fullframe_featured_content_options', array(
-	    'capability'     => 'edit_theme_options',
-		'description'    => __( 'Options for Featured Content', 'full-frame' ),
-	    'priority'       => 400,
-	    'title'    		 => __( 'Featured Content', 'full-frame' ),
-	) );
+	if ( 4.3 > get_bloginfo( 'version' ) ) {
+		$wp_customize->add_panel( 'fullframe_featured_content_options', array(
+		    'capability'     => 'edit_theme_options',
+			'description'    => __( 'Options for Featured Content', 'full-frame' ),
+		    'priority'       => 400,
+		    'title'    		 => __( 'Featured Content', 'full-frame' ),
+		) );
 
-
-	$wp_customize->add_section( 'fullframe_featured_content_settings', array(
-		'panel'			=> 'fullframe_featured_content_options',
-		'priority'		=> 1,
-		'title'			=> __( 'Featured Content Options', 'full-frame' ),
-	) );
+		$wp_customize->add_section( 'fullframe_featured_content_settings', array(
+			'panel'			=> 'fullframe_featured_content_options',
+			'priority'		=> 1,
+			'title'			=> __( 'Featured Content Options', 'full-frame' ),
+		) );
+	}
+	else {
+		$wp_customize->add_section( 'fullframe_featured_content_settings', array(
+			'priority'		=> 400,
+			'title'			=> __( 'Featured Content', 'full-frame' ),
+		) );
+	}	
 
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_option]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_option'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
 	$fullframe_featured_slider_content_options = fullframe_featured_slider_content_options();
@@ -51,7 +58,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_layout]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_layout'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
 	$fullframe_featured_content_layout_options = fullframe_featured_content_layout_options();
@@ -61,6 +68,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	}
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_layout]', array(
+		'active_callback'	=> 'fullframe_is_featured_content_active',
 		'choices'  	=> $choices,
 		'label'    	=> __( 'Select Featured Content Layout', 'full-frame' ),
 		'priority'	=> '2',
@@ -76,6 +84,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_position]', array(
+		'active_callback'	=> 'fullframe_is_featured_content_active',
 		'label'		=> __( 'Check to Move above Footer', 'full-frame' ),
 		'priority'	=> '3',
 		'section'  	=> 'fullframe_featured_content_settings',
@@ -90,6 +99,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_slider]', array(
+		'active_callback'	=> 'fullframe_is_featured_content_active',
 		'label'		=> __( 'Check to Enable Sliding Effect', 'full-frame' ),
 		'priority'	=> '4',
 		'section'  	=> 'fullframe_featured_content_settings',
@@ -100,7 +110,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_type]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_type'],
-		'sanitize_callback'	=> 'sanitize_key',
+		'sanitize_callback'	=> 'fullframe_sanitize_select',
 	) );
 
 	$fullframe_featured_content_types = fullframe_featured_content_types();
@@ -110,6 +120,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	}
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_type]', array(
+		'active_callback'	=> 'fullframe_is_featured_content_active',
 		'choices'  	=> $choices,
 		'label'    	=> __( 'Select Content Type', 'full-frame' ),
 		'priority'	=> '3',
@@ -125,6 +136,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_headline]' , array(
+		'active_callback'	=> 'fullframe_is_featured_content_active',
 		'description'	=> __( 'Leave field empty if you want to remove Headline', 'full-frame' ),
 		'label'    		=> __( 'Headline for Featured Content', 'full-frame' ),
 		'priority'		=> '4',
@@ -141,6 +153,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_subheadline]' , array(
+		'active_callback'	=> 'fullframe_is_featured_content_active',
 		'description'	=> __( 'Leave field empty if you want to remove Sub-headline', 'full-frame' ),
 		'label'    		=> __( 'Sub-headline for Featured Content', 'full-frame' ),
 		'priority'		=> '5',
@@ -153,10 +166,11 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_number]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_number'],
-		'sanitize_callback'	=> 'fullframe_sanitize_no_of_slider',
+		'sanitize_callback'	=> 'fullframe_sanitize_number_range',
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_number]' , array(
+		'active_callback'	=> 'fullframe_is_demo_featured_content_inactive',
 		'description'	=> __( 'Save and refresh the page if No. of Featured Content is changed (Max no of Featured Content is 20)', 'full-frame' ),
 		'input_attrs' 	=> array(
             'style' => 'width: 45px;',
@@ -178,6 +192,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		) );
 
 	$wp_customize->add_control(  'fullframe_theme_options[featured_content_enable_title]', array(
+		'active_callback'	=> 'fullframe_is_demo_featured_content_inactive',
 		'label'		=> __( 'Check to Enable Title', 'full-frame' ),
         'priority'	=> '7',
 		'section'   => 'fullframe_featured_content_settings',
@@ -188,7 +203,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_enable_excerpt_content]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_enable_excerpt_content'],
-		'sanitize_callback'	=> 'sanitize_key',
+		'sanitize_callback'	=> 'fullframe_sanitize_select',
 	) ); 
 
 	$fullframe_featured_content_show = fullframe_featured_content_show();
@@ -198,6 +213,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	}
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_enable_excerpt_content]', array(
+		'active_callback'	=> 'fullframe_is_demo_featured_content_inactive',
 		'choices'  	=> $choices,
 		'label'    	=> __( 'Display Content', 'full-frame' ),
 		'priority'	=> '8',
@@ -214,6 +230,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		) );
 
 		$wp_customize->add_control( 'fullframe_featured_content_page_'. $i .'', array(
+			'active_callback'	=> 'fullframe_is_demo_featured_content_inactive',
 			'label'    	=> __( 'Featured Page', 'full-frame' ) . ' ' . $i ,
 			'priority'	=> '7' . $i,
 			'section'  	=> 'fullframe_featured_content_settings',
@@ -235,6 +252,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[featured_content_background_image]', array(
+		'active_callback'	=> 'fullframe_is_featured_content_active',
 		'label'		=> __( 'Select/Add Background Image', 'full-frame' ),
 		'priority'	=> '1',
 		'section'   => 'fullframe_featured_content_background_settings',

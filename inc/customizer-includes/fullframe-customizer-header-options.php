@@ -17,7 +17,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[enable_featured_header_image]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['enable_featured_header_image'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
 	$fullframe_enable_featured_header_image_options = fullframe_enable_featured_header_image_options();
@@ -38,7 +38,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_image_size]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_image_size'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
 	$fullframe_featured_image_size_options = fullframe_featured_image_size_options();

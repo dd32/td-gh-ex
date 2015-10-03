@@ -74,5 +74,5 @@ function fullframe_get_social_icons(){
 		set_transient( 'fullframe_social_icons', $fullframe_social_icons, 86940 );	
 	}
 	return $fullframe_social_icons;
-} // catchbase_get_social_icons
+} // fullframe_get_social_icons
 endif;

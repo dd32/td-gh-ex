@@ -101,7 +101,7 @@ function fullframe_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[color_scheme]', array(
 		'capability' 		=> 'edit_theme_options',
 		'default'    		=> $defaults['color_scheme'],
-		'sanitize_callback'	=> 'sanitize_key',
+		'sanitize_callback'	=> 'fullframe_sanitize_select',
 		'transport'         => 'postMessage',
 	) );
 
@@ -185,230 +185,6 @@ add_action( 'customize_register', 'fullframe_customize_register' );
 
 
 /**
- * Sanitizes Checkboxes
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Fullframe 1.0
- */
-function fullframe_sanitize_checkbox( $input ) {
-    if ( $input == 1 ) {
-        return 1;
-    } 
-    else {
-        return '';
-    }
-}
-
-
-/**
- * Sanitizes Custom CSS 
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Fullframe 1.0
- */
-function fullframe_sanitize_custom_css( $input ) {
-	if ( $input != '' ) { 
-        $input = str_replace( '<=', '&lt;=', $input ); 
-        
-        $input = wp_kses_split( $input, array(), array() ); 
-        
-        $input = str_replace( '&gt;', '>', $input ); 
-        
-        $input = strip_tags( $input ); 
-
-        return $input;
- 	}
-    else {
-    	return '';
-    }
-}
-
-/**
- * Sanitizes images uploaded
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Fullframe 1.0
- */
-function fullframe_sanitize_image( $input ) {
-	return esc_url_raw( $input );
-}
-
-/**
- * Sanitizes post_id in slider
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Fullframe 1.0
- */
-function fullframe_sanitize_post_id( $input ) {
-    //check if post exists
-	if( get_post_status( $input ) ) {
-		return $input;
-    }
-    else {
-    	return '';
-    }
-}
-
-
-/**
- * Sanitizes page in slider
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Fullframe 1.0
- */
-function fullframe_sanitize_page( $input ) {
-	if(  get_post( $input ) ){
-		return $input;
-	}
-    else {
-    	return '';
-    }
-}
-
-
-/**
- * Sanitizes category list in slider
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Fullframe 1.0
- */
-function fullframe_sanitize_category_list( $input ) {
-	if ( $input != '' ) { 
-		$args = array(
-						'type'			=> 'post',
-						'child_of'      => 0,
-						'parent'        => '',
-						'orderby'       => 'name',
-						'order'         => 'ASC',
-						'hide_empty'    => 0,
-						'hierarchical'  => 0,
-						'taxonomy'      => 'category',
-					); 
-		
-		$categories = ( get_categories( $args ) );
-
-		$category_list 	=	array();
-		
-		foreach ( $categories as $category )
-			$category_list 	=	array_merge( $category_list, array( $category->term_id ) );
-
-		if ( count( array_intersect( $input, $category_list ) ) == count( $input ) ) {
-	    	return $input;
-	    } 
-	    else {
-    		return '';
-   		}
-    }
-    else {
-    	return '';
-    }
-}
-
-
-/**
- * Sanitizes slider number
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Fullframe 1.0
- */
-function fullframe_sanitize_no_of_slider( $input ) {
-	if ( absint( $input ) > 20 ) {
-    	return 20;
-    } 
-    else {
-    	return absint( $input );
-    }
-}
-
-/**
- * Sanitizes custom social icons number
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Fullframe 1.0
- */
-function fullframe_sanitize_no_of_social_icons( $input ) {
-	if ( absint( $input ) > 10 ) {
-    	return 10;
-    } 
-    else {
-    	return absint( $input );
-    }
-}
-
-
-/**
- * Sanitizes footer code
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Fullframe 1.0
- */
-function fullframe_sanitize_footer_code( $input ) {
-	return ( stripslashes( wp_filter_post_kses( addslashes ( $input ) ) ) );
-}
-
-
-/**
- * Sanitizes feature slider transition effects
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Fullframe 1.0
- */
-function fullframe_sanitize_featured_slide_transition_effects( $input ) {
-	$fullframe_featured_slide_transition_effects = array_keys( fullframe_featured_slide_transition_effects() );
-	
-	if ( in_array( $input, $fullframe_featured_slide_transition_effects ) ) {
-		return $input;
-	}
-	else {
-		$defaults = fullframe_get_default_theme_options();
-
-		return $defaults['featured_slide_transition_effect'];
-	}
-}
-
-
-/**
- * Reset all settings to default
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Fullframe 1.0
- */
-function fullframe_reset_all_settings( $input ) {
-	if ( $input == 1 ) {
-        // Set default values
-        set_theme_mod( 'fullframe_theme_options', fullframe_get_default_theme_options() );
-       
-        // Flush out all transients	on reset
-        fullframe_flush_transients();
-    } 
-    else {
-        return '';
-    }
-}
-
-
-/**
- * Dummy Sanitizaition function as it contains no value to be sanitized
- *
- * @since  Fullframe 1.2
- */
-function create_sanitize_important_link() {
-	return false;
-} 
-
-
-/**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously for fullframe.
  * And flushes out all transient data on preview
  *
@@ -429,20 +205,23 @@ add_action( 'customize_preview_init', 'fullframe_customize_preview' );
  * @since Fullframe 1.0
  */
 function fullframe_customize_scripts() {
-	wp_register_script( 'fullframe_customizer_custom', get_template_directory_uri() . '/js/fullframe-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
+	wp_enqueue_script( 'fullframe_customizer_custom', get_template_directory_uri() . '/js/fullframe-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
 
 	$fullframe_misc_links = array(
 							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/full-frame-pro/' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'full-frame' ),
-							'WP_version'				=> get_bloginfo( 'version' ),
-							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'full-frame' )
 		);
 
 	//Add Upgrade Button and old WordPress message via localized script
 	wp_localize_script( 'fullframe_customizer_custom', 'fullframe_misc_links', $fullframe_misc_links );
 
-	wp_enqueue_script( 'fullframe_customizer_custom' );
-
 	wp_enqueue_style( 'fullframe_customizer_custom', get_template_directory_uri() . '/css/fullframe-customizer.css');
 }
 add_action( 'customize_controls_enqueue_scripts', 'fullframe_customize_scripts');
+
+
+//Active callbacks for customizer
+require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-active-callbacks.php';
+
+//Sanitize functions for customizer
+require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-sanitize-functions.php';

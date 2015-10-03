@@ -1,5 +1,14 @@
 == Change log ==
 
+= 1.9 =
+* Bug Fixed: Form overflow issue
+* Bug Fixed: Breadcrumb css issue in IE 11
+* Updated: French translation fr_FR.po and fr_FR.mo
+* Removed panel for featured content and featured slider for WordPress version greater than 4.2
+* Removed Custom Textarea control for customizer
+* Updated Customizer active callback scripts (previously handled by jQuery)
+* Updated Customizer sanitization functions
+
 = 1.8 =
 * Added German translation de_DE.po and de_DE.mo
 

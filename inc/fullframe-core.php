@@ -311,7 +311,9 @@ require get_template_directory() . '/inc/fullframe-metabox.php';
  * @since Fullframe 1.0
  */
 function fullframe_get_theme_options() {
-	return get_theme_mod( 'fullframe_theme_options', fullframe_get_default_theme_options() );
+	$fullframe_default_options = fullframe_get_default_theme_options();
+				
+	return array_merge( $fullframe_default_options , get_theme_mod( 'fullframe_theme_options', $fullframe_default_options ) ) ;
 }
 
 
