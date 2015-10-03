@@ -117,9 +117,14 @@ function catchflames_theme_options_do_page() {
                         <li><a class="button" href="<?php echo esc_url( __( 'https://plus.google.com/+Catchthemes','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Follow Catch Themes on Google+', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Google+','catch-flames' ) ); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url( __( 'http://wordpress.org/support/view/theme-reviews/catch-flames/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Rate us 5 Star on WordPress', 'catch-flames' ); ?>" target="_blank"><?php printf( __( '5 Star Rating','catch-flames' ) ); ?></a></li>
                    	</ul>
-                </div><!-- #theme-support --> 
-                 
-          	</div><!-- #theme-option-header -->                  
+                </div><!-- #theme-support -->
+          	</div><!-- #theme-option-header -->    
+            
+            <div id="theme-option-header-notice">
+                <p class="notice">
+                    <?php printf( _x( 'Theme Options Panel will be retired on future versions. Please use %1$s Customizer %2$s instead.','1: Customizer Link Start, 2: Customizer Link End' , 'catch-flames' ) , '<a href="' . esc_url ( admin_url( 'customize.php' ) ) . '">', '</a>' ); ?>
+                </p>
+            </div>              
                             
             
             <div id="catchflames_ad_tabs">
@@ -1457,26 +1462,3 @@ function catchflames_assets(){
     $catchflames_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-flames' ) . ' &copy; '. catchflames_the_year() . ' ' . catchflames_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catch-flames' ) . '.</div><div class="powered">'. catchflames_theme_name() . catchflames_theme_author() . '</div>';
     return $catchflames_content;
 }
-
-
-/**
- * Custom scripts and styles on Customizer for Catch Everest
- *
- * @since Catch Flames 2.1.1
- */
-function catchflames_customize_scripts() {
-    wp_register_script( 'catchflames_customizer_custom', get_template_directory_uri() . '/inc/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
-
-    $catchflames_misc_links = array(
-                            'upgrade_link'              => esc_url( admin_url( 'themes.php?page=theme_options' ) ),
-                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'catch-flames' ),
-                            );
-
-    //Add More Theme Options Button
-    wp_localize_script( 'catchflames_customizer_custom', 'catchflames_misc_links', $catchflames_misc_links );
-
-    wp_enqueue_script( 'catchflames_customizer_custom' );
-
-    wp_enqueue_style( 'catchflames_customizer_custom', get_template_directory_uri() . '/inc/panel/catchflames-customizer.css');
-}
-add_action( 'customize_controls_print_footer_scripts', 'catchflames_customize_scripts');

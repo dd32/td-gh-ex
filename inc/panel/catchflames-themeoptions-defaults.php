@@ -132,3 +132,121 @@ function catchflames_options_set_defaults( $catchflames_options_defaults ) {
 	$catchflames_options_settings = array_merge( $catchflames_options_defaults, (array) get_option( 'catchflames_options', array() ) );
 	return $catchflames_options_settings;
 }
+
+/**
+ * Returns an array of color schemes registered for catch-flames.
+ *
+ * @since Catch Flames 2.7
+ */
+function catchflames_color_schemes() {
+	$options = array(
+		'light' 		=> __( 'Light', 'catch-flames' ),
+		'dark'			=> __( 'Dark', 'catch-flames' ),
+	);
+
+	return apply_filters( 'catchflames_color_schemes', $options );
+}
+
+/**
+ * Returns an array of enable header image options
+ *
+ * @since Catch Flames 2.7
+ */
+function catchflames_enable_header_featured_image_options() {
+	$options = array(
+		'homepage' 		=> __( 'Homepage', 'catch-flames' ),
+		'excludehome' 	=> __( 'Excluding Homepage', 'catch-flames' ),
+		'allpage' 		=> __( 'Entire Site', 'catch-flames' ),
+		'postpage' 		=> __( 'Entire Site, Page/Post Featured Image', 'catch-flames' ),
+		'pagespostes'	=> __( 'Pages & Posts', 'catch-flames' ),
+		'disable'		=> __( 'Disable', 'catch-flames' ),
+	);
+
+	return apply_filters( 'catchflames_enable_header_featured_image_options', $options );
+}
+
+/**
+ * Returns an array of sidebar layout options
+ *
+ * @since Catch Flames 2.7
+ */
+function catchflames_sidebar_layout_options() {
+	$options = array(
+		'right-sidebar' => __( 'Right Sidebar', 'catch-flames' ),
+		'left-sidebar' 	=> __( 'Left Sidebar', 'catch-flames' ),
+		'no-sidebar'	=> __( 'No Sidebar', 'catch-flames' ),
+		'three-columns'	=> __( 'Three Columns', 'catch-flames' ),
+	);
+
+	return apply_filters( 'catchflames_sidebar_layout_options', $options );
+}
+
+
+/**
+ * Returns an array of content layout options
+ *
+ * @since Catch Flames 2.7
+ */
+function catchflames_content_layout_options() {
+	$options = array(
+		'full' 			=> __( 'Full Content Display', 'catch-flames' ),
+		'excerpt-border'=> __( 'Excerpt/Blog Display', 'catch-flames' ),
+	);
+
+	return apply_filters( 'catchflames_content_layout_options', $options );
+}
+
+/**
+ * Returns an array of slider enable options
+ *
+ * @since Catch Flames 2.7
+ */
+function catchflames_enable_slider_options() {
+	$options = array(
+		'enable-slider-homepage'=> __( 'Homepage', 'catch-flames' ),
+		'enable-slider-allpage' => __( 'Entire Site', 'catch-flames' ),
+		'disable-slider' 		=> __( 'Disable', 'catch-flames' ),
+	);
+
+	return apply_filters( 'catchflames_enable_slider_options', $options );
+}
+
+
+/**
+ * Returns an array of slider transition effects
+ *
+ * @since Catch Flames 2.7
+ */
+function catchflames_transition_effects() {
+	$options = array(
+		'fade'			=> __( 'fade', 'catch-flames' ),
+		'wipe' 			=> __( 'wipe', 'catch-flames' ),
+		'scrollUp' 		=> __( 'scrollUp', 'catch-flames' ),
+		'scrollDown'	=> __( 'scrollDown', 'catch-flames' ),
+		'scrollUp' 		=> __( 'scrollUp', 'catch-flames' ),
+		'scrollLeft'	=> __( 'scrollLeft', 'catch-flames' ),
+		'scrollRight'	=> __( 'scrollRight', 'catch-flames' ),
+		'blindX' 		=> __( 'blindX', 'catch-flames' ),
+		'blindY' 		=> __( 'blindY', 'catch-flames' ),
+		'blindZ' 		=> __( 'blindZ', 'catch-flames' ),
+		'cover' 		=> __( 'cover', 'catch-flames' ),
+		'shuffle' 		=> __( 'shuffle', 'catch-flames' ),
+	);
+
+	return apply_filters( 'catchflames_transition_effects', $options );
+}
+
+
+/**
+ * Returns an array of slider types
+ *
+ * @since Catch Flames 2.7
+ */
+function catchflames_slider_types() {
+	$options = array(
+		'demo-slider' 		=> __( 'Demo Slider', 'catch-flames' ),
+		'page-slider' 		=> __( 'Featured Page Slider', 'catch-flames' ),
+	);
+
+	return apply_filters( 'catchflames_slider_types', $options );
+}

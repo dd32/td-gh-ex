@@ -231,6 +231,9 @@
 #catchthemes .option-content .wp-editor-area {
 	min-height: 130px;
 }
+#theme-option-header-notice {
+	text-align: center;
+}
 @media screen and (max-width: 780px) {
 	#catchthemes .option-content .col {
 		width: 100%;

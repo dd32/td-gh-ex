@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 2.7
+* Added all theme options to customizer
+
 Version 2.6
 * Bug Fixed: Print CSS
 * Compatible with WordPress 4.3

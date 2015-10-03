@@ -270,3 +270,7 @@ function catchflames_html_validate( $text ) {
 }
 add_filter( 'the_category', 'catchflames_html_validate' );
 add_filter( 'wp_list_categories', 'catchflames_html_validate' );
+
+
+//Include customizer options
+require get_template_directory() . '/inc/panel/customizer/customizer.php';
