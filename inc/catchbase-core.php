@@ -367,7 +367,9 @@ require get_template_directory() . '/inc/catchbase-metabox.php';
  * @since Catch Base 1.0
  */
 function catchbase_get_theme_options() {
-	return get_theme_mod( 'catchbase_theme_options', catchbase_get_default_theme_options() );
+	$catchbase_default_options = catchbase_get_default_theme_options();
+				
+	return array_merge( $catchbase_default_options , get_theme_mod( 'catchbase_theme_options', $catchbase_default_options ) ) ;
 }
 
 

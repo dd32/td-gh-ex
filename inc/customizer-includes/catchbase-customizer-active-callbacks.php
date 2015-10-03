@@ -103,27 +103,3 @@ if( ! function_exists( 'catchbase_is_demo_featured_content_inactive' ) ) :
 		return ( ( $enable == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enable == 'homepage' ) ) && !( 'demo-featured-content' == $type ) );
 	}
 endif;
-
-
-// if( ! function_exists( 'catchbase_is_page_slider_active' ) ) :
-// 	/**
-// 	* Return true if page slider is active
-// 	*
-// 	* @since  Catch Base 2.1
-// 	*/
-// 	function catchbase_is_page_slider_active( $control ) {
-// 		global $wp_query;
-		
-// 		$page_id = $wp_query->get_queried_object_id();
-
-// 		// Front page display in Reading Settings
-// 		$page_for_posts = get_option('page_for_posts'); 
-
-// 		$slider_option 	= $control->manager->get_setting( 'catchbase_theme_options[featured_slider_option]' )->value();
-
-// 		$slider_type 	= $control->manager->get_setting( 'catchbase_theme_options[featured_slider_type]' )->value();
-
-// 		//return true only if previwed page on customizer matches the type of slider option selected and page slider
-// 		return ( ( $slider_option == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $slider_option == 'homepage' ) ) && ( 'featured-page-slider' == $slider_type ) );
-// 	}
-// endif;

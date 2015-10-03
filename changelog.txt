@@ -1,5 +1,9 @@
 == Change log ==
 
+= 2.4.1 =
+* Bug Fixed: Breadcrumb css issue in IE 11 ( Reported by Mark )
+* Removed panel for featured content and featured slider for WordPress version greater than 4.2
+
 = 2.4 =
 * Bug Fixed: German language translation issue in de_DE.po and de_DE.mo file (Reported by mydreamin )
 * Bug Fixed: Changed esc_attr_e to echo esc_attr in searchform.php

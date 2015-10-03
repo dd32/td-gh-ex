@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2015-08-20 17:26+0545\n"
-"PO-Revision-Date: 2015-08-20 17:26+0545\n"
+"POT-Creation-Date: 2015-10-03 20:32+0545\n"
+"PO-Revision-Date: 2015-10-03 20:32+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: hu_HU\n"
@@ -154,8 +154,8 @@ msgstr "Úgy tűnik, nem található a kért anyag. Talán a kereső segíthet."
 msgid "Pages:"
 msgstr "Oldalak:"
 
-#: ../content-page.php:35 ../inc/catchbase-core.php:639
-#: ../inc/catchbase-core.php:658 ../inc/catchbase-core.php:784
+#: ../content-page.php:35 ../inc/catchbase-core.php:641
+#: ../inc/catchbase-core.php:660 ../inc/catchbase-core.php:786
 msgid "Edit"
 msgstr "Szerkesztés"
 
@@ -200,104 +200,104 @@ msgstr "Elsődleges menü"
 msgid "Secondary Menu"
 msgstr "Másodlagos menü"
 
-#: ../inc/catchbase-core.php:605
+#: ../inc/catchbase-core.php:607
 msgid "Post navigation"
 msgstr "Bejegyzés navigáció"
 
-#: ../inc/catchbase-core.php:614
+#: ../inc/catchbase-core.php:616
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Régebbi cikkek"
 
-#: ../inc/catchbase-core.php:615
+#: ../inc/catchbase-core.php:617
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Újabb cikkek <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/catchbase-core.php:639
+#: ../inc/catchbase-core.php:641
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/catchbase-core.php:649
+#: ../inc/catchbase-core.php:651
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">szerint:</span>"
 
-#: ../inc/catchbase-core.php:655
+#: ../inc/catchbase-core.php:657
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s a %2$s-ből"
 
-#: ../inc/catchbase-core.php:662
+#: ../inc/catchbase-core.php:664
 msgid "Your comment is awaiting moderation."
 msgstr "A hozzászólása moderálásra vár."
 
-#: ../inc/catchbase-core.php:765
+#: ../inc/catchbase-core.php:767
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Közzétéve</span>"
 
-#: ../inc/catchbase-core.php:772
+#: ../inc/catchbase-core.php:774
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Szerző</span>"
 
-#: ../inc/catchbase-core.php:780
+#: ../inc/catchbase-core.php:782
 msgid "Leave a comment"
 msgstr "Szóljon hozzá!"
 
-#: ../inc/catchbase-core.php:780
+#: ../inc/catchbase-core.php:782
 msgid "1 Comment"
 msgstr "1 hozzászólás"
 
-#: ../inc/catchbase-core.php:780
+#: ../inc/catchbase-core.php:782
 msgid "% Comments"
 msgstr "% hozzászólás"
 
-#: ../inc/catchbase-core.php:801 ../inc/catchbase-core.php:809
+#: ../inc/catchbase-core.php:803 ../inc/catchbase-core.php:811
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ","
 
-#: ../inc/catchbase-core.php:804
+#: ../inc/catchbase-core.php:806
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategóriák</span>"
 
-#: ../inc/catchbase-core.php:812
+#: ../inc/catchbase-core.php:814
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Címkék</span>"
 
-#: ../inc/catchbase-core.php:955
+#: ../inc/catchbase-core.php:957
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catchbase-core.php:1453
+#: ../inc/catchbase-core.php:1455
 msgid "Scroll Up"
 msgstr "Felfelé görgetés"
 
-#: ../inc/catchbase-core.php:1470
+#: ../inc/catchbase-core.php:1472
 msgid "Posted on"
 msgstr "Közzétéve"
 
-#: ../inc/catchbase-core.php:1471
+#: ../inc/catchbase-core.php:1473
 msgid "By"
 msgstr "Írta:"
 
-#: ../inc/catchbase-core.php:1512
+#: ../inc/catchbase-core.php:1514
 msgid "Next &rarr;"
 msgstr "Következő &rarr;"
 
-#: ../inc/catchbase-core.php:1513
+#: ../inc/catchbase-core.php:1515
 msgid "Next post:"
 msgstr "Következő bejegyzés"
 
-#: ../inc/catchbase-core.php:1515
+#: ../inc/catchbase-core.php:1517
 msgid "&larr; Previous"
 msgstr "&larr; Előző"
 
-#: ../inc/catchbase-core.php:1516
+#: ../inc/catchbase-core.php:1518
 msgid "Previous post:"
 msgstr "Előző bejegyzés"
 
@@ -525,12 +525,12 @@ msgid "Slider Image Size"
 msgstr "Slider képméret"
 
 #: ../inc/catchbase-default-options.php:498
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:75
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:74
 msgid "Facebook"
 msgstr "Facebook"
 
 #: ../inc/catchbase-default-options.php:499
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:79
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:78
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -559,7 +559,7 @@ msgid "LinkedIn"
 msgstr "LinkedIn"
 
 #: ../inc/catchbase-default-options.php:506
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:87
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:86
 msgid "Pinterest"
 msgstr "Pinterest"
 
@@ -668,7 +668,8 @@ msgid "by"
 msgstr "írta:"
 
 #: ../inc/catchbase-featured-content.php:56
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:20
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:21
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:34
 msgid "Featured Content"
 msgstr "Kiemelt tartalom"
 
@@ -765,77 +766,77 @@ msgstr ""
 msgid "Title (optional):"
 msgstr "Cím (opcionális):"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:42
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:41
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple options."
 msgstr ""
 "A Ctrl (Windows) / Command (Mac) gomb lenyomva tartásával több is kiválasztható."
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:55
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:54
 msgid "Theme Instructions"
 msgstr "Téma utasítások"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:59
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:58
 msgid "Support"
 msgstr "Támogatás"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:63
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:62
 msgid "Changelog"
 msgstr "Változások"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:67
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:66
 msgid "Donate Now"
 msgstr "Támogatás"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:71
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:70
 msgid "Review"
 msgstr "Értékelések"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:83
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:82
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:18
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:19
 msgid "Options for Featured Content"
 msgstr "Kiemelt tartalom tulajdonságai"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:26
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:28
 msgid "Featured Content Options"
 msgstr "Kiemelt tartalom beállításai"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:43
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:52
 msgid "Enable Featured Content on"
 msgstr "Kiemelt tartalom engedélyezése"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:65
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:74
 msgid "Select Featured Content Layout"
 msgstr "Kiemelt tartalom elrendezésésének választása"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:80
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:89
 msgid "Check to Move above Footer"
 msgstr "Áthelyezés a lábléc felé"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:102
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:111
 msgid "Select Content Type"
 msgstr "Tartalomtípus kiválasztása"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:117
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:126
 msgid "Leave field empty if you want to remove Headline"
 msgstr "Hagyja üresen a Főcím eltávolításához"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:118
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:127
 msgid "Headline for Featured Content"
 msgstr "Főcím a kiemelt tartalomhoz"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:134
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:143
 msgid "Leave field empty if you want to remove Sub-headline"
 msgstr "Hagyja üresen az Alcím eltávolításához"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:135
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:144
 msgid "Sub-headline for Featured Content"
 msgstr "Alcím a kiemelt tartalomhoz"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:151
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:160
 msgid ""
 "Save and refresh the page if No. of Featured Content is changed (Max no of "
 "Featured Content is 20)"
@@ -843,50 +844,51 @@ msgstr ""
 "Mentse és frissítse az oldalt, ha a kiemelt tartalmak száma változott (maximum "
 "20 lehet)"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:158
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:167
 msgid "No of Featured Content"
 msgstr "Kiemelt tartalmak száma"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:181
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:190
 msgid "Display Content"
 msgstr "Tartalom megjelenítése"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:197
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:188
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:206
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:196
 msgid "Featured Page"
 msgstr "Kiemelt oldal"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:18
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:26
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:19
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:27
 msgid "Featured Slider Options"
 msgstr "Kiemelt Slider opciók"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:20
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:21
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:33
 msgid "Featured Slider"
 msgstr "Kiemelt Slider"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:43
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:51
 msgid "Enable Slider on"
 msgstr "Engedélyezze a Slidert "
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:65
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:73
 msgid "Transition Effect"
 msgstr "Áttünési effektus"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:81
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:100
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:89
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:108
 msgid "seconds(s)"
 msgstr "másodperc"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:85
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:93
 msgid "Transition Delay"
 msgstr "Áttünés késleltetése"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:104
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:112
 msgid "Transition Length"
 msgstr "Áttünés hossza"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:125
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:133
 msgid ""
 "True: Fixes the height overlap issue. Slideshow will start as soon as two slider "
 "are available. Slide may display in random, as image is fetch.<br>Wait: Fixes "
@@ -899,22 +901,22 @@ msgstr ""
 "problémákat. <br> A diavetítés csak akkor veszi kezdetét, ha az összes kép a "
 "rendelkezésre áll."
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:127
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:135
 msgid "Image Loader"
 msgstr "Kép betöltő"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:149
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:157
 msgid "Select Slider Type"
 msgstr "Válasszon Slider típust"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:164
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:172
 msgid ""
 "Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
 msgstr ""
 "Mentse és frissítse az oldalt, ha a Slider képek száma változott (maximum 20 "
 "lehet)"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:171
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:179
 msgid "No of Slides"
 msgstr "Képek száma"
 

@@ -13,18 +13,27 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	exit();
 }
 	// Featured Content Options
-	$wp_customize->add_panel( 'catchbase_featured_content_options', array(
-	    'capability'     => 'edit_theme_options',
-		'description'    => __( 'Options for Featured Content', 'catch-base' ),
-	    'priority'       => 400,
-	    'title'    		 => __( 'Featured Content', 'catch-base' ),
-	) );
+	if ( 4.3 > get_bloginfo( 'version' ) ) {
+		$wp_customize->add_panel( 'catchbase_featured_content_options', array(
+		    'capability'     => 'edit_theme_options',
+			'description'    => __( 'Options for Featured Content', 'catch-base' ),
+		    'priority'       => 400,
+		    'title'    		 => __( 'Featured Content', 'catch-base' ),
+		) );
 
-	$wp_customize->add_section( 'catchbase_featured_content_settings', array(
-		'panel'			=> 'catchbase_featured_content_options',
-		'priority'		=> 1,
-		'title'			=> __( 'Featured Content Options', 'catch-base' ),
-	) );
+
+		$wp_customize->add_section( 'catchbase_featured_content_settings', array(
+			'panel'			=> 'catchbase_featured_content_options',
+			'priority'		=> 1,
+			'title'			=> __( 'Featured Content Options', 'catch-base' ),
+		) );
+	}
+	else {
+		$wp_customize->add_section( 'catchbase_featured_content_settings', array(
+			'priority'      => 400,
+			'title'			=> __( 'Featured Content', 'catch-base' ),
+		) );
+	}
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_option]', array(
 		'capability'		=> 'edit_theme_options',

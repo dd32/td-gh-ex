@@ -13,18 +13,26 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	exit();
 }
 	// Featured Slider
-	$wp_customize->add_panel( 'catchbase_featured_slider', array(
-	    'capability'     => 'edit_theme_options',
-	    'description'    => __( 'Featured Slider Options', 'catch-base' ),
-	    'priority'       => 500,
-		'title'    		 => __( 'Featured Slider', 'catch-base' ),
-	) );
+	if ( 4.3 > get_bloginfo( 'version' ) ) {
+		$wp_customize->add_panel( 'catchbase_featured_slider', array(
+		    'capability'     => 'edit_theme_options',
+		    'description'    => __( 'Featured Slider Options', 'catch-base' ),
+		    'priority'       => 500,
+			'title'    		 => __( 'Featured Slider', 'catch-base' ),
+		) );
 
-	$wp_customize->add_section( 'catchbase_featured_slider', array(
-		'panel'			=> 'catchbase_featured_slider',
-		'priority'		=> 1,
-		'title'			=> __( 'Featured Slider Options', 'catch-base' ),
-	) );
+		$wp_customize->add_section( 'catchbase_featured_slider', array(
+			'panel'			=> 'catchbase_featured_slider',
+			'priority'		=> 1,
+			'title'			=> __( 'Featured Slider Options', 'catch-base' ),
+		) );
+	}
+	else {
+		$wp_customize->add_section( 'catchbase_featured_slider', array(
+			'priority'      => 500,
+			'title'			=> __( 'Featured Slider', 'catch-base' ),
+		) );
+	}
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_slider_option]', array(
 		'capability'		=> 'edit_theme_options',
