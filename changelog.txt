@@ -2,6 +2,13 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.1.6
+-----------------------------------
+[moved] additional functions from functions.php to extras.php and template-tags.php
+[added] theme support for Widget Bundle Addon Plugin
+[removed] fallback solution for new title tag feature of WordPress
+[changed] implementation of threaded comments javascript
+
 Version 1.1.5
 -----------------------------------
 [improved] code of 404.php and search.php templates

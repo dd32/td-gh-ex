@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rubine Lite\n"
 "Report-Msgid-Bugs-To: http://themezee.com/\n"
-"POT-Creation-Date: 2015-08-29 14:31+0100\n"
-"PO-Revision-Date: 2015-08-29 14:31+0100\n"
+"POT-Creation-Date: 2015-08-31 20:03+0100\n"
+"PO-Revision-Date: 2015-08-31 20:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -244,6 +244,10 @@ msgstr ""
 
 #: inc/theme-info.php:118
 msgid "rate it"
+msgstr ""
+
+#: inc/customizer/customizer.php:38
+msgid "Background"
 msgstr ""
 
 #: inc/customizer/customizer.php:49

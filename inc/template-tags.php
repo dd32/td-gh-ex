@@ -243,4 +243,60 @@ function rubine_display_social_icons() {
 }
 
 
-?>
+// Custom Template for comments and pingbacks.
+if ( ! function_exists( 'rubine_list_comments' ) ) :
+	
+function rubine_list_comments($comment, $args, $depth) {
+
+	$GLOBALS['comment'] = $comment;
+
+	if( $comment->comment_type == 'pingback' or $comment->comment_type == 'trackback' ) : ?>
+
+		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+			<div class="comment-body">
+				<?php _e( 'Pingback:', 'rubine-lite' ); ?> <?php comment_author_link(); ?>
+				<?php edit_comment_link( __( '(Edit)', 'rubine-lite' ), '<span class="edit-link">', '</span>' ); ?>
+			</div>
+
+	<?php else : ?>
+
+		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+
+			<div class="comment-body clearfix">
+			
+				<div class="comment-meta clearfix">
+
+					<div class="comment-author vcard">
+						<?php echo get_avatar( $comment, 75 ); ?>
+						<?php printf('<span class="fn">%s</span>', get_comment_author_link()) ?>
+					</div>
+					
+					<div class="commentmetadata">
+						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php echo get_comment_date(); ?></a>
+						<p><?php echo get_comment_time(); ?></p>
+						<?php edit_comment_link(__('(Edit)', 'rubine-lite'),'  ','') ?>
+					</div>
+				
+				</div>
+			
+				<div class="comment-content">
+
+					<div class="comment-entry clearfix">
+						<?php comment_text(); ?>
+						
+						<?php if ($comment->comment_approved == '0') : ?>
+							<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'rubine-lite' ); ?></p>
+						<?php endif; ?>
+						
+						<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+					</div>
+
+				</div>
+
+			</div>
+<?php
+	endif;
+
+}
+	
+endif;

@@ -19,19 +19,16 @@ function rubine_enqueue_scripts() {
 	// Passing Parameters to Navigation.js Javascript
 	wp_localize_script( 'rubine-lite-jquery-navigation', 'rubine_navigation_params', array('menuTitle' => __('Menu', 'rubine-lite')) );
 	
+	// Register Comment Reply Script for Threaded Comments
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
 	// Register and Enqueue Font
 	wp_enqueue_style('rubine-lite-default-fonts', rubine_fonts_url(), array(), null );
 
 }
 
-// Load comment-reply.js if comment form is loaded and threaded comments activated
-add_action( 'comment_form_before', 'rubine_enqueue_comment_reply' );
-
-function rubine_enqueue_comment_reply() {
-	if( get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
 
 /*
 * Retrieve Font URL to register default Google Fonts
@@ -94,9 +91,6 @@ function rubine_setup() {
 		'height' => 240,
 		'flex-height' => true));
 	
-	// Add Theme Support for Rubine Pro Plugin
-	add_theme_support( 'rubine-pro' );
-	
 	// Register Navigation Menus
 	register_nav_menus( array(
 		'primary'   => __('Main Navigation', 'rubine-lite'),
@@ -144,126 +138,6 @@ function rubine_register_sidebars() {
 }
 
 
-// Add title tag for older WordPress versions
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-
-	add_action( 'wp_head', 'rubine_wp_title' );
-	function rubine_wp_title() { ?>
-		
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-
-<?php
-    }
-    
-endif;
-
-
-// Add Default Menu Fallback Function
-function rubine_default_menu() {
-	echo '<ul id="mainnav-menu" class="menu">'. wp_list_pages('title_li=&echo=0') .'</ul>';
-}
-
-
-// Get Featured Posts
-function rubine_get_featured_content() {
-	return apply_filters( 'rubine_get_featured_content', false );
-}
-
-
-// Check if featured posts exists
-function rubine_has_featured_content() {
-	return ! is_paged() && (bool) rubine_get_featured_content();
-}
-
-
-// Change Excerpt Length
-add_filter('excerpt_length', 'rubine_excerpt_length');
-function rubine_excerpt_length($length) {
-    return 80;
-}
-
-
-// Slideshow Excerpt Length
-function rubine_featured_content_excerpt_length($length) {
-    return 15;
-}
-
-
-// Change Excerpt More
-add_filter('excerpt_more', 'rubine_excerpt_more');
-function rubine_excerpt_more($more) {
-    
-	// Get Theme Options from Database
-	$theme_options = rubine_theme_options();
-
-	// Return Excerpt Text
-	if ( isset($theme_options['excerpt_text']) and $theme_options['excerpt_text'] == true ) :
-		return ' [...]';
-	else :
-		return '';
-	endif;
-}
-
-
-// Custom Template for comments and pingbacks.
-if ( ! function_exists( 'rubine_list_comments' ) ) :
-	
-	function rubine_list_comments($comment, $args, $depth) {
-
-		$GLOBALS['comment'] = $comment;
-
-		if( $comment->comment_type == 'pingback' or $comment->comment_type == 'trackback' ) : ?>
-
-			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-				<div class="comment-body">
-					<?php _e( 'Pingback:', 'rubine-lite' ); ?> <?php comment_author_link(); ?>
-					<?php edit_comment_link( __( '(Edit)', 'rubine-lite' ), '<span class="edit-link">', '</span>' ); ?>
-				</div>
-
-		<?php else : ?>
-
-			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-
-				<div class="comment-body clearfix">
-				
-					<div class="comment-meta clearfix">
-
-						<div class="comment-author vcard">
-							<?php echo get_avatar( $comment, 75 ); ?>
-							<?php printf('<span class="fn">%s</span>', get_comment_author_link()) ?>
-						</div>
-						
-						<div class="commentmetadata">
-							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php echo get_comment_date(); ?></a>
-							<p><?php echo get_comment_time(); ?></p>
-							<?php edit_comment_link(__('(Edit)', 'rubine-lite'),'  ','') ?>
-						</div>
-					
-					</div>
-				
-					<div class="comment-content">
-
-						<div class="comment-entry clearfix">
-							<?php comment_text(); ?>
-							
-							<?php if ($comment->comment_approved == '0') : ?>
-								<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'rubine-lite' ); ?></p>
-							<?php endif; ?>
-							
-							<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-						</div>
-
-					</div>
-
-				</div>
-	<?php
-		endif;
-
-	}
-	
-endif;
-
-
 /*==================================== INCLUDE FILES ====================================*/
 
 // include Theme Info page
@@ -276,11 +150,14 @@ require( get_template_directory() . '/inc/customizer/default-options.php' );
 // include Customization Files
 require( get_template_directory() . '/inc/customizer/frontend/custom-layout.php' );
 
+// Include Extra Functions
+require get_template_directory() . '/inc/extras.php';
+
 // include Template Functions
 require( get_template_directory() . '/inc/template-tags.php' );
 
+// Include support functions for Theme Addons
+require get_template_directory() . '/inc/addons.php';
+
 // Include Featured Content class in case it does not exist yet (e.g. user has not Jetpack installed)
 require get_template_directory() . '/inc/featured-content.php';
-
-
-?>
