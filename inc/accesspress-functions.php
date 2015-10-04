@@ -356,8 +356,8 @@ function accesspress_mag_sidebar_layout_class($classes){
  	    $global_sidebar= esc_attr( of_get_option( 'global_post_sidebar' ) );
     	$post_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_sidebar_layout', true );        
         $page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout', true );
-        if('post'==get_post_type()){
-            if($post_sidebar=='global-sidebar'){
+        if( 'post'==get_post_type() ){
+             if( $post_sidebar == 'global-sidebar' || empty( $post_sidebar ) ){
                 $post_class = $global_sidebar;
             } else {
                 $post_class = $post_sidebar;
@@ -392,7 +392,7 @@ function accesspress_mag_template_layout_class($classes){
  	    $global_template= esc_attr( of_get_option( 'global_post_template' ) );
     	$post_template = get_post_meta( $post -> ID, 'accesspress_mag_post_template_layout', true );
         if('post'==get_post_type()){
-            if($post_template=='global-template'){
+            if( $post_template=='global-template' || empty( $post_template ) ){
                 $post_template_class = $global_template;
             } else {
                 $post_template_class = $post_template;

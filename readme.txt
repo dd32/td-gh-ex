@@ -69,6 +69,10 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.1.6
+ * Fixed design bugs in slider
+ * Fixed bugs in post sidebar for exsiting posts.
+ 
 Version 2.1.5
  * Added lightbox option for galleries images.
 

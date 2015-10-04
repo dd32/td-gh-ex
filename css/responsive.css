@@ -18,7 +18,7 @@
         width: 65%;
     }
     .big_slide {
-        width: 58%;
+        width: 100%;
     }
     .big_slide:after,
     .small_slide:after {
