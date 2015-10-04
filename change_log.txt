@@ -15,3 +15,7 @@ i) Removed unused translation function from template-tag.php file.
 
 Version 1.2.3
 i) Resolved slider images issue and added theme instructions file.
+
+
+Version 1.2.4
+i) Added option for hide purchase button and documentation changed.

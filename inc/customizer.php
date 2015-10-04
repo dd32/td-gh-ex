@@ -25,6 +25,14 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
     }
 }
 
+function awesomeone_sanitize_checkbox( $input ) {
+    if ( $input == 1 ) {
+        return 1;
+    } else {
+        return '';
+    }
+}
+
 //Add a class for titles
     class Awesomeone_Info extends WP_Customize_Control {
         public $type = 'info';
@@ -110,6 +118,17 @@ class WP_Customize_Textarea_Control extends WP_Customize_Control {
 		'title'	=> __('Slider Settings','awesomeone'),
 		'description'	=> __('Add slider images here. <br><strong>More slider settings available in</strong>','awesomeone'). '<a href="'.esc_url(pro_theme_url).'" target="_blank">PRO version</a>.',
 		'priority'		=> null
+	));
+	
+	$wp_customize->add_setting('button_hide',array(
+		'sanitize_callback'	=> 'awesomeone_sanitize_checkbox'
+	));
+	
+	$wp_customize->add_control('button_hide',array(
+			'label'	=> __('Check this to hide purchase button','awesomeone'),
+			'setting'	=> 'button_hide',
+			'section'	=> 'slider_section',
+			'type'	=> 'checkbox'
 	));
 	
 	// Slide Image 1

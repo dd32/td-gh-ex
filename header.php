@@ -89,9 +89,10 @@
 						<?php if( get_theme_mod('slide_link'.$sln, true) != ''){ ?>
                         	<a class="read-more" href="<?php echo esc_url(get_theme_mod('slide_link'.$sln,'#')); ?>"><?php _e('Learn More','awesomeone'); ?></a>
                         <?php } ?>
+                        <?php if( get_theme_mod('button_hide',true) == '') { ?>
                         <?php if( get_theme_mod('purchaselink', true) != ''){ ?>
                         	<a class="common_btn" href="<?php echo get_theme_mod('purchaselink',true); ?>"><?php _e('Purchase Now','awesomeone'); ?></a>
-                        <?php } ?>
+                        <?php } } ?>
                     </div>
                     </div><?php 
                 } ?>
