@@ -100,13 +100,12 @@ function accelerate_featured_image_slider() {
 			<div class="slider-cycle inner-wrap">
 				<div class="slider-rotate">
 				<?php
-				$num_of_slides = of_get_option( 'accelerate_slider_number', '5' );
-				for( $i = 1; $i <= $num_of_slides; $i++ ) {
-					$accelerate_slider_title = of_get_option( 'accelerate_slider_title'.$i , '' );
-					$accelerate_slider_text = of_get_option( 'accelerate_slider_text'.$i , '' );
-					$accelerate_slider_image = of_get_option( 'accelerate_slider_image'.$i , '' );
-					$accelerate_slide_text_position = of_get_option( 'accelerate_slide_text_position'.$i , 'right' );
-					$accelerate_slider_link = of_get_option( 'accelerate_slider_link'.$i , '#' );
+				for( $i = 1; $i <= 4; $i++ ) {
+					$accelerate_slider_title = accelerate_options( 'accelerate_slider_title'.$i , '' );
+					$accelerate_slider_text = accelerate_options( 'accelerate_slider_text'.$i , '' );
+					$accelerate_slider_image = accelerate_options( 'accelerate_slider_image'.$i , '' );
+					$accelerate_slide_text_position = accelerate_options( 'accelerate_slide_text_position'.$i , 'right' );
+					$accelerate_slider_link = accelerate_options( 'accelerate_slider_link'.$i , '#' );
 					if( !empty( $accelerate_header_title ) || !empty( $accelerate_slider_text ) || !empty( $accelerate_slider_image ) ) {
 						if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
 

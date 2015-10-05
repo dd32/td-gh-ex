@@ -12,6 +12,23 @@
 
 /****************************************************************************************/
 
+// Accelerate theme options
+function accelerate_options( $id, $default = false ) {
+   // assigning theme name
+   $themename = get_option( 'stylesheet' );
+   $themename = preg_replace("/\W/", "_", strtolower( $themename ) );
+
+   // getting options value
+   $accelerate_options = get_option( $themename );
+   if ( isset( $accelerate_options[ $id ] ) ) {
+      return $accelerate_options[ $id ];
+   } else {
+      return $default;
+   }
+}
+
+/****************************************************************************************/
+
 add_action( 'wp_enqueue_scripts', 'accelerate_scripts_styles_method' );
 /**
  * Register jquery scripts
@@ -40,7 +57,7 @@ function accelerate_scripts_styles_method() {
 	/**
 	 * Enqueue Slider setup js file.
 	 */
-	if ( is_front_page() && of_get_option( 'accelerate_activate_slider', '0' ) == '1' ) {
+	if ( is_front_page() && accelerate_options( 'accelerate_activate_slider', '0' ) == '1' ) {
 		wp_enqueue_script( 'accelerate_slider', ACCELERATE_JS_URL . '/accelerate-slider-setting.js', array( 'jquery_cycle' ), false, true );
 	}
 	wp_enqueue_script( 'accelerate-navigation', ACCELERATE_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
@@ -127,10 +144,10 @@ function accelerate_body_class( $classes ) {
 		$layout_meta = get_post_meta( $queried_id, 'accelerate_page_layout', true );
 	}
 	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
-	$accelerate_default_layout = of_get_option( 'accelerate_default_layout', 'right_sidebar' );
+	$accelerate_default_layout = accelerate_options( 'accelerate_default_layout', 'right_sidebar' );
 
-	$accelerate_default_page_layout = of_get_option( 'accelerate_pages_default_layout', 'right_sidebar' );
-	$accelerate_default_post_layout = of_get_option( 'accelerate_single_posts_default_layout', 'right_sidebar' );
+	$accelerate_default_page_layout = accelerate_options( 'accelerate_pages_default_layout', 'right_sidebar' );
+	$accelerate_default_post_layout = accelerate_options( 'accelerate_single_posts_default_layout', 'right_sidebar' );
 
 	if( $layout_meta == 'default_layout' ) {
 		if( is_page() ) {
@@ -156,17 +173,17 @@ function accelerate_body_class( $classes ) {
 	elseif( $layout_meta == 'no_sidebar_content_centered' ) { $classes[] = 'no-sidebar'; }
 
 
-	if ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image' ) {
+	if ( accelerate_options( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image' ) {
 		$classes[] = 'blog-small';
 	}
-	if ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image_alternate' ) {
+	if ( accelerate_options( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image_alternate' ) {
 		$classes[] = 'blog-alternate-small';
 	}
 
-	if( of_get_option( 'accelerate_site_layout', 'wide' ) == 'wide' ) {
+	if( accelerate_options( 'accelerate_site_layout', 'wide' ) == 'wide' ) {
 		$classes[] = 'wide';
 	}
-	elseif( of_get_option( 'accelerate_site_layout', 'wide' ) == 'box' ) {
+	elseif( accelerate_options( 'accelerate_site_layout', 'wide' ) == 'box' ) {
 		$classes[] = '';
 	}
 
@@ -190,10 +207,10 @@ function accelerate_sidebar_select() {
 	}
 
 	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
-	$accelerate_default_layout = of_get_option( 'accelerate_default_layout', 'right_sidebar' );
+	$accelerate_default_layout = accelerate_options( 'accelerate_default_layout', 'right_sidebar' );
 
-	$accelerate_default_page_layout = of_get_option( 'accelerate_pages_default_layout', 'right_sidebar' );
-	$accelerate_default_post_layout = of_get_option( 'accelerate_single_posts_default_layout', 'right_sidebar' );
+	$accelerate_default_page_layout = accelerate_options( 'accelerate_pages_default_layout', 'right_sidebar' );
+	$accelerate_default_post_layout = accelerate_options( 'accelerate_single_posts_default_layout', 'right_sidebar' );
 
 	if( $layout_meta == 'default_layout' ) {
 		if( is_page() ) {
@@ -219,13 +236,13 @@ if ( ! function_exists( 'accelerate_posts_listing_display_type_select' ) ) :
  * Function to select the posts listing display type
  */
 function accelerate_posts_listing_display_type_select() {
-	if ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'large_image' ) {
+	if ( accelerate_options( 'accelerate_posts_page_display_type', 'large_image' ) == 'large_image' ) {
 		$format = 'blog-large-image';
 	}
-	elseif ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image' ) {
+	elseif ( accelerate_options( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image' ) {
 		$format = 'blog-small-image';
 	}
-	elseif ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image_alternate' ) {
+	elseif ( accelerate_options( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image_alternate' ) {
 		$format = 'blog-small-image';
 	}
 	else {
@@ -312,8 +329,8 @@ add_action( 'wp_head', 'accelerate_favicon' );
  * Fav icon for the site
  */
 function accelerate_favicon() {
-	if ( of_get_option( 'accelerate_activate_favicon', '0' ) == '1' ) {
-		$accelerate_favicon = of_get_option( 'accelerate_favicon', '' );
+	if ( accelerate_options( 'accelerate_activate_favicon', '0' ) == '1' ) {
+		$accelerate_favicon = accelerate_options( 'accelerate_favicon', '' );
 		$accelerate_favicon_output = '';
 		if ( !empty( $accelerate_favicon ) ) {
 			$accelerate_favicon_output .= '<link rel="shortcut icon" href="'.esc_url( $accelerate_favicon ).'" type="image/x-icon" />';
@@ -331,7 +348,7 @@ add_action('wp_head', 'accelerate_custom_css');
 function accelerate_custom_css() {
 	$accelerate_internal_css = '';
 
-	$primary_color = of_get_option( 'accelerate_primary_color', '#77CC6D' );
+	$primary_color = accelerate_options( 'accelerate_primary_color', '#77CC6D' );
 	if( $primary_color != '#77CC6D' ) {
 		$accelerate_internal_css .= ' .accelerate-button,blockquote,button,input[type=button],input[type=reset],input[type=submit]{background-color:'.$primary_color.'}a{color:'.$primary_color.'}#page{border-top:3px solid '.$primary_color.'}#site-title a:hover{color:'.$primary_color.'}#search-form span,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.current-menu-ancestor a,.main-navigation ul li.current-menu-item a,.main-navigation ul li.current-menu-item ul li a:hover,.main-navigation ul li.current_page_ancestor a,.main-navigation ul li.current_page_item a,.main-navigation ul li:hover>a{background-color:'.$primary_color.'}.site-header .menu-toggle:before{color:'.$primary_color.'}.main-small-navigation li:hover{background-color:'.$primary_color.'}.main-small-navigation ul>.current-menu-item,.main-small-navigation ul>.current_page_item{background:'.$primary_color.'}.footer-menu a:hover,.footer-menu ul li.current-menu-ancestor a,.footer-menu ul li.current-menu-item a,.footer-menu ul li.current_page_ancestor a,.footer-menu ul li.current_page_item a,.footer-menu ul li:hover>a{color:'.$primary_color.'}#featured-slider .slider-read-more-button,.slider-title-head .entry-title a{background-color:'.$primary_color.'}a.slide-prev,a.slide-next,.slider-title-head .entry-title a{background-color:'.$primary_color.'}#controllers a.active,#controllers a:hover{background-color:'.$primary_color.';color:'.$primary_color.'}.format-link .entry-content a{background-color:'.$primary_color.'}#secondary .widget_featured_single_post h3.widget-title a:hover,.widget_image_service_block .entry-title a:hover{color:'.$primary_color.'}.pagination span{background-color:'.$primary_color.'}.pagination a span:hover{color:'.$primary_color.';border-color:'.$primary_color.'}#content .comments-area a.comment-edit-link:hover,#content .comments-area a.comment-permalink:hover,#content .comments-area article header cite a:hover,.comments-area .comment-author-link a:hover{color:'.$primary_color.'}.comments-area .comment-author-link span{background-color:'.$primary_color.'}#wp-calendar #today,.comment .comment-reply-link:hover,.nav-next a,.nav-previous a{color:'.$primary_color.'}.widget-title span{border-bottom:2px solid '.$primary_color.'}#secondary h3 span:before,.footer-widgets-area h3 span:before{color:'.$primary_color.'}#secondary .accelerate_tagcloud_widget a:hover,.footer-widgets-area .accelerate_tagcloud_widget a:hover{background-color:'.$primary_color.'}.footer-widgets-area a:hover{color:'.$primary_color.'}.footer-socket-wrapper{border-top:3px solid '.$primary_color.'}.footer-socket-wrapper .copyright a:hover{color:'.$primary_color.'}a#scroll-up{background-color:'.$primary_color.'}.entry-meta .byline i,.entry-meta .cat-links i,.entry-meta a,.post .entry-title a:hover{color:'.$primary_color.'}.entry-meta .post-format i{background-color:'.$primary_color.'}.entry-meta .comments-link a:hover,.entry-meta .edit-link a:hover,.entry-meta .posted-on a:hover,.entry-meta .tag-links a:hover{color:'.$primary_color.'}.more-link span,.read-more{background-color:'.$primary_color.'}';
 	}
@@ -342,7 +359,7 @@ function accelerate_custom_css() {
 		<?php
 	}
 
-	$accelerate_custom_css = of_get_option( 'accelerate_custom_css', '' );
+	$accelerate_custom_css = accelerate_options( 'accelerate_custom_css', '' );
 	if( !empty( $accelerate_custom_css ) ) {
 		?>
 		<style type="text/css"><?php echo $accelerate_custom_css; ?></style>

@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= 1.2.1 =
+* Theme Options migrated to customizer as per new WordPress theme review guidelines.
+
 = Version 1.2 =
 * WordPress default gallery alignment issue fixed. Also, responsiveness adjustment done for WordPress default gallery.
 

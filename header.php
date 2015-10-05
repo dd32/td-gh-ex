@@ -32,22 +32,22 @@ wp_head();
 
 		<div id="header-text-nav-container" class="clearfix">
 
-			<?php if( of_get_option( 'accelerate_header_image_position', 'position_two' ) == 'position_one' ) { accelerate_render_header_image(); } ?>
+			<?php if( accelerate_options( 'accelerate_header_image_position', 'position_two' ) == 'position_one' ) { accelerate_render_header_image(); } ?>
 
 			<div class="inner-wrap">
 
 				<div id="header-text-nav-wrap" class="clearfix">
 					<div id="header-left-section">
 						<?php
-						if( ( of_get_option( 'accelerate_show_header_logo_text', 'text_only' ) == 'both' || of_get_option( 'accelerate_show_header_logo_text', 'text_only' ) == 'logo_only' ) && of_get_option( 'accelerate_header_logo_image', '' ) != '' ) {
+						if( ( accelerate_options( 'accelerate_show_header_logo_text', 'text_only' ) == 'both' || accelerate_options( 'accelerate_show_header_logo_text', 'text_only' ) == 'logo_only' ) && accelerate_options( 'accelerate_header_logo_image', '' ) != '' ) {
 						?>
 							<div id="header-logo-image">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo of_get_option( 'accelerate_header_logo_image', '' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo accelerate_options( 'accelerate_header_logo_image', '' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
 							</div><!-- #header-logo-image -->
 						<?php
 						}
 
-						if( of_get_option( 'accelerate_show_header_logo_text', 'text_only' ) == 'both' || of_get_option( 'accelerate_show_header_logo_text', 'text_only' ) == 'text_only' ) {
+						if( accelerate_options( 'accelerate_show_header_logo_text', 'text_only' ) == 'both' || accelerate_options( 'accelerate_show_header_logo_text', 'text_only' ) == 'text_only' ) {
 						?>
 						<div id="header-text">
 							<h1 id="site-title">
@@ -79,7 +79,7 @@ wp_head();
 
 			</div><!-- .inner-wrap -->
 
-			<?php if( of_get_option( 'accelerate_header_image_position', 'position_two' ) == 'position_two' ) { accelerate_render_header_image(); } ?>
+			<?php if( accelerate_options( 'accelerate_header_image_position', 'position_two' ) == 'position_two' ) { accelerate_render_header_image(); } ?>
 
 			<nav id="site-navigation" class="main-navigation inner-wrap clearfix" role="navigation">
 				<h3 class="menu-toggle"><?php _e( 'Menu', 'accelerate' ); ?></h3>
@@ -94,10 +94,10 @@ wp_head();
 			</nav>
 		</div><!-- #header-text-nav-container -->
 
-		<?php if( of_get_option( 'accelerate_header_image_position', 'position_two' ) == 'position_three' ) { accelerate_render_header_image(); } ?>
+		<?php if( accelerate_options( 'accelerate_header_image_position', 'position_two' ) == 'position_three' ) { accelerate_render_header_image(); } ?>
 
 		<?php
-   	if( of_get_option( 'accelerate_activate_slider', '0' ) == '1' ) {
+   	if( accelerate_options( 'accelerate_activate_slider', '0' ) == '1' ) {
 			if ( is_front_page() ) {
    			accelerate_featured_image_slider();
 			}

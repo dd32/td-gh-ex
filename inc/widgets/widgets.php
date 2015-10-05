@@ -210,7 +210,7 @@ function accelerate_widgets_init() {
 	 			endif;
 		 	}
 			$output .= '<p>'.get_the_excerpt().'...'.'</p>';
-			$output .= '<a class="read-more" href="'. get_permalink() .'">'. esc_html( of_get_option( 'accelerate_read_more_text', __( 'Read more', 'accelerate' ) ) ) .'</a>';
+			$output .= '<a class="read-more" href="'. get_permalink() .'">'. __( 'Read more', 'accelerate' ) .'</a>';
 	 		$output .= $after_widget;
 	 		endwhile;
 	 		// Reset Post Data
