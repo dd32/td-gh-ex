@@ -13,9 +13,10 @@
 	</header><!-- .entry-header -->
     
     <?php if(has_post_thumbnail()){
+        $aglee_lite_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'aglee-lite-home-slider', false );
         ?>
     <div class="page_img">
-        <?php the_post_thumbnail('aglee-lite-home-slider');?>
+        <img src="<?php echo esc_url($aglee_lite_image[0]); ?>" />
     </div>
     <?php } ?>
     

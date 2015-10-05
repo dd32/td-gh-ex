@@ -8,8 +8,8 @@
 /**
  * Adds aglee_lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'aglee_lite_register_cta_widget' );
-function aglee_lite_register_cta_widget() {
+add_action( 'widgets_init', 'register_cta_widget' );
+function register_cta_widget() {
     register_widget( 'aglee_lite_cta_widget' );
 }
 class Aglee_Lite_Cta_Widget extends WP_Widget {
@@ -84,8 +84,8 @@ class Aglee_Lite_Cta_Widget extends WP_Widget {
         
         echo $before_widget;
             ?>
-            <div class="cta-wrap">
-                <div class="ap-container clearfix">
+            <div class="cta-wrap clearfix">
+                <div class="ap-container">
                 	<div class="cta-desc-wrap">
                     <h2 class="cta_title">
                         <?php echo esc_attr($cta_title); ?>

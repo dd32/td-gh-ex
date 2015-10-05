@@ -8,8 +8,8 @@
 /**
  * Adds Aglee_Lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'aglee_lite_register_contact_widget' );
-function aglee_lite_register_contact_widget() {
+add_action( 'widgets_init', 'register_contact_widget' );
+function register_contact_widget() {
     register_widget( 'aglee_lite_contact_widget' );
 }
 class Aglee_Lite_Contact_Widget extends WP_Widget {

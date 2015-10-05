@@ -8,8 +8,8 @@
 /**
  * Adds aglee_lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'aglee_lite_register_toggle_widget' );
-function aglee_lite_register_toggle_widget() {
+add_action( 'widgets_init', 'register_toggle_widget' );
+function register_toggle_widget() {
     register_widget( 'aglee_lite_toggle_widget' );
 }
 class Aglee_Lite_Toggle_Widget extends WP_Widget {

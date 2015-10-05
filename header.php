@@ -35,6 +35,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php
+$aglee_lite_favicon = get_theme_mod('aglee_lite_favicon');
+ if(!empty($aglee_lite_favicon)) : ?>
+    <?php
+    $aglee_lite_activate_favicon = get_theme_mod('favicon_setting');
+     if($aglee_lite_activate_favicon == 1) : ?>
+        <link rel="icon" type="image/png" href="<?php echo esc_url($aglee_lite_favicon); ?>">
+    <?php endif; ?>
+<?php endif; ?>
 <?php wp_head(); ?>
 </head>
 
@@ -51,7 +60,7 @@
         $aglee_lite_show_top_header = '';
     }
     ?>
-	<header id="masthead" class="site-header <?php echo esc_attr($aglee_lite_header_class).' '.esc_attr($aglee_lite_show_top_header); ?>" role="banner">
+	<header id="masthead" class="site-header <?php echo $aglee_lite_header_class.' '.$aglee_lite_show_top_header; ?>" role="banner">
         	<div class="ap-container">
             <div class="top-header clearfix">
                 

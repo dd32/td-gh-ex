@@ -5,7 +5,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
 /**
  * Class to create a custom post control
  */
-class Aglee_lite_Post_Dropdown extends WP_Customize_Control
+class Post_Dropdown extends WP_Customize_Control
 {
     private $posts = false;
 

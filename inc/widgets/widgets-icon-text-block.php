@@ -8,8 +8,8 @@
 /**
  * Adds aglee_lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'aglee_lite_register_icon_text_widget' );
-function aglee_lite_register_icon_text_widget() {
+add_action( 'widgets_init', 'register_icon_text_widget' );
+function register_icon_text_widget() {
     register_widget( 'aglee_lite_icon_text_widget' );
 }
 class Aglee_Lite_Icon_Text_Widget extends WP_Widget {

@@ -45,7 +45,8 @@ function aglee_lite_header_style() {
 	$aglee_lite_header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
-	if ( empty($aglee_lite_header_text_color )) {
+	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value.
+	if ( HEADER_TEXTCOLOR == $aglee_lite_header_text_color ) {
 		return;
 	}
 

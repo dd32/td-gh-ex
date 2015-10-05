@@ -66,7 +66,7 @@ $aglee_lite_blog_display_type = get_theme_mod('blog_post_layout','blog_image_lar
  }  
 ?>
 <?php while ( have_posts() ) : the_post(); ?>
-	<main id="main" class="site-main <?php echo esc_attr($aglee_lite_content_class).' '.esc_attr($aglee_lite_blog_display_class); ?>" role="main">
+	<main id="main" class="site-main <?php echo $aglee_lite_content_class.' '.$aglee_lite_blog_display_class; ?>" role="main">
         <div class="ag-container">
         <?php if($aglee_lite_default_page_layout == 'both_sidebar') : ?>
             <div id="primary-wrap" class="clearfix">

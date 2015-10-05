@@ -49,7 +49,7 @@
     }
  
 get_header(); ?>
-	<main id="main" class="site-main <?php echo esc_attr($aglee_lite_content_class).' '.esc_attr($aglee_lite_blog_display_class); ?>" role="main">
+	<main id="main" class="site-main <?php echo $aglee_lite_content_class.' '.$aglee_lite_blog_display_class; ?>" role="main">
         <div class="ap-container">
         <?php if($aglee_lite_default_layout == 'both_sidebar') : ?>
             <div id="primary-wrap" class="clearfix">
