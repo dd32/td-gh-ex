@@ -46,35 +46,36 @@
                                         <?php wp_link_pages(array('before' => '<div class="page-link"><span>' . __('Pages:', 'appointway') . '</span>', 'after' => '</div>')); ?>
                                         <?php if (has_tag()) { ?>
                                             <div class="tag">
-                                                <?php the_tags(__('Post Tagged with ', ', ', 'appointway')); ?>
+                                                <?php the_tags(__('Post Tagged with ', 'appointway'), ', '); ?>
                                             </div>
                                         <?php } ?>
                                     </div>
                                 </div>
-                            <?php endwhile;
+                                <?php
+                            endwhile;
                         else:
                             ?>
                             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                 <p>
-    <?php _e('Sorry, no posts matched your criteria.', 'appointway'); ?>
+                                    <?php _e('Sorry, no posts matched your criteria.', 'appointway'); ?>
                                 </p>
                             </div>
-<?php endif; ?>
+                        <?php endif; ?>
                         <div class="clear"></div>
                         <!--End post-->
                         <nav id="nav-single"> <span class="nav-previous">
                                 <?php previous_post_link('%link', __('<span class="meta-nav">&larr;</span> Previous Post ', 'appointway')); ?>
                             </span> <span class="nav-next">
-<?php next_post_link('%link', __('Next Post <span class="meta-nav">&rarr;</span>', 'appointway')); ?>
+                                <?php next_post_link('%link', __('Next Post <span class="meta-nav">&rarr;</span>', 'appointway')); ?>
                             </span> </nav>
                         <!--Start Comment box-->
-<?php comments_template(); ?>
+                        <?php comments_template(); ?>
                         <!--End Comment box-->
                     </div>
                 </div>
                 <div class="grid_7 omega">
                     <!--Start Sidebar-->
-<?php get_sidebar(); ?>
+                    <?php get_sidebar(); ?>
                     <!--End Sidebar-->
                 </div>
             </div>

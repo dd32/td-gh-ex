@@ -77,7 +77,7 @@
                                         <?php } else { ?>
                                             <p>All spas offer spa services like massage, </p>
                                         <?php } ?>  
-                                        <a class="readmore" href="<?php echo appointway_get_option('appointway_feature_link1'); ?>"><?php _e('Read More', 'Appointway'); ?></a></div>
+                                        <a class="readmore" href="<?php echo appointway_get_option('appointway_feature_link1'); ?>"><?php _e('Read More', 'appointway'); ?></a></div>
                                     <?php //Second Feature Area ?>
                                     <div class="featurebox_desc second">
                                         <?php if (appointway_get_option('appointway_secondhead') != '') { ?>
@@ -95,7 +95,7 @@
                                         <?php } else { ?>
                                             <p>Body treatments deal with your body's skin.</p>
                                         <?php } ?>  
-                                        <a class="readmore" href="<?php echo appointway_get_option('appointway_feature_link2'); ?>"><?php _e('Read More', 'Appointway'); ?></a>
+                                        <a class="readmore" href="<?php echo appointway_get_option('appointway_feature_link2'); ?>"><?php _e('Read More', 'appointway'); ?></a>
                                     </div>
                                     <?php //Third Feature Area ?>
                                     <div class="featurebox_desc third">
@@ -114,7 +114,7 @@
                                         <?php } else { ?>
                                             <p>Massage feels good and has lots of health benefits.</p>
                                         <?php } ?>  
-                                        <a class="readmore" href="<?php echo appointway_get_option('appointway_feature_link3'); ?>"><?php _e('Read More', 'Appointway'); ?></a></div>
+                                        <a class="readmore" href="<?php echo appointway_get_option('appointway_feature_link3'); ?>"><?php _e('Read More', 'appointway'); ?></a></div>
                                 </div></div>
                             <div class="clear"></div>
                         </div>

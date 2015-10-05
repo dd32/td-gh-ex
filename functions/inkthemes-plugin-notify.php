@@ -41,8 +41,7 @@ function inkthemes_plugins_notify() {
     $config = array(
         'domain' => 'appointway', // Text domain - likely want to be the same as your theme.
         'default_path' => '', // Default absolute path to pre-packaged plugins
-        'parent_menu_slug' => 'themes.php', // Default parent menu slug
-        'parent_url_slug' => 'themes.php', // Default parent URL slug
+        'parent_slug' => 'themes.php', // Default parent menu slug
         'menu' => 'install-required-plugins', // Menu slug
         'has_notices' => true, // Show admin notices or not
         'is_automatic' => true, // Automatically activate plugins after installation or not

@@ -19,7 +19,7 @@
             <div class="bottom_footer_content">
                 <div class="grid_16 alpha">
                     <div class="copyrightinfo">  
-                        <p class="copyright"><a href="http://www.inkthemes.com">Appointway Theme</a> Powered By <a href="http://www.wordpress.org">WordPress</a></p><span class="blog-desc"> - 
+                        <p class="copyright"><a href="<?php echo esc_url('http://www.inkthemes.com'); ?>" rel="nofollow">Appointway Theme</a> Powered By <a href="http://www.wordpress.org">WordPress</a></p><span class="blog-desc"> - 
                             <?php echo get_bloginfo('title'); ?>
                             <?php echo get_bloginfo('description'); ?>
                         </span>

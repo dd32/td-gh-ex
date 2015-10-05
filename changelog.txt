@@ -1,6 +1,9 @@
 == Changelog ==
 
-= Theme Name: Appointway Theme Pro=
+= Theme Name: Appointway Theme=
+
+= Version: 1.0.8 =
+* Theme option to WordPress customizer API migration.
 
 = Version: 1.0.7 =
 1. POT file uploaded.

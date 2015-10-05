@@ -24,7 +24,7 @@
             <?php dynamic_sidebar('third-footer-widget-area'); ?>
         <?php else : ?>
             <h4>Search Anything</h4>
-            <p> Qarius dui, quis posuere nibh ollis quis. Mauris omma rhoncus rttitor. <a href="http://www.domain.com">http://domain.com</a> </p>
+            <p> Qarius dui, quis posuere nibh ollis quis. Mauris omma rhoncus rttitor. <a href="<?php echo esc_url('http://www.domain.com') ?>">http://domain.com</a> </p>
             <form class="searchform" action="#" method="get">
                 <input onfocus="if (this.value == 'Search') {
                             this.value = '';
@@ -40,9 +40,9 @@
     <div class="footer_widget last">
         <?php if (is_active_sidebar('fourth-footer-widget-area')) : ?>
             <?php dynamic_sidebar('fourth-footer-widget-area'); ?>
-<?php else : ?>
+        <?php else : ?>
             <h4>Footer Widgets</h4>
             <p>Footer is widgetized. To setup the footer, drag the required Widgets in Appearance -> Widgets Tab in the First, Second, Third and Fourth Footer Widget Areas.</p>
-<?php endif; ?>
+        <?php endif; ?>
     </div>
 </div>
