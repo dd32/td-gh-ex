@@ -100,11 +100,11 @@ function spacious_featured_image_slider() {
 			<div class="slider-cycle">
 				<?php
 				for( $i = 1; $i <= 5; $i++ ) {
-					$spacious_slider_title = of_get_option( 'spacious_slider_title'.$i , '' );
-					$spacious_slider_text = of_get_option( 'spacious_slider_text'.$i , '' );
-					$spacious_slider_image = of_get_option( 'spacious_slider_image'.$i , '' );
-					$spacious_slider_button_text = of_get_option( 'spacious_slider_button_text'.$i , __( 'Read more', 'spacious' ) );
-					$spacious_slider_link = of_get_option( 'spacious_slider_link'.$i , '#' );
+					$spacious_slider_title = spacious_options( 'spacious_slider_title'.$i , '' );
+					$spacious_slider_text = spacious_options( 'spacious_slider_text'.$i , '' );
+					$spacious_slider_image = spacious_options( 'spacious_slider_image'.$i , '' );
+					$spacious_slider_button_text = spacious_options( 'spacious_slider_button_text'.$i , __( 'Read more', 'spacious' ) );
+					$spacious_slider_link = spacious_options( 'spacious_slider_link'.$i , '#' );
 					if( !empty( $spacious_header_title ) || !empty( $spacious_slider_text ) || !empty( $spacious_slider_image ) ) {
 						if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
 						?>

@@ -110,6 +110,7 @@ define( 'SPACIOUS_ADMIN_CSS_URL', SPACIOUS_ADMIN_URL . '/css' );
 /** Load functions */
 require_once( SPACIOUS_INCLUDES_DIR . '/custom-header.php' );
 require_once( SPACIOUS_INCLUDES_DIR . '/functions.php' );
+require_once( SPACIOUS_INCLUDES_DIR . '/customizer.php' );
 require_once( SPACIOUS_INCLUDES_DIR . '/header-functions.php' );
 
 require_once( SPACIOUS_ADMIN_DIR . '/meta-boxes.php' );
@@ -117,15 +118,23 @@ require_once( SPACIOUS_ADMIN_DIR . '/meta-boxes.php' );
 /** Load Widgets and Widgetized Area */
 require_once( SPACIOUS_WIDGETS_DIR . '/widgets.php' );
 
-/**
- * Adds support for a theme option.
+/*
+ * Adding Admin Menu for theme options
  */
-if ( !function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/admin/options/' );
-	require_once( SPACIOUS_ADMIN_DIR . '/options/options-framework.php' );
-	// Loads options.php from child or parent theme
-   $optionsfile = locate_template( 'options.php' );
-   load_template( $optionsfile );
+add_action( 'admin_menu', 'spacious_theme_options_menu' );
+function spacious_theme_options_menu() {
+   add_theme_page( 'Theme Options', 'Theme Options', 'manage_options', 'spacious-theme-options', 'spacious_theme_options' );
 }
 
+function spacious_theme_options() {
+   if ( !current_user_can( 'manage_options' ) )  {
+      wp_die( __( 'You do not have sufficient permissions to access this page.', 'spacious' ) );
+   } ?>
+   <h1 class="spacious-theme-options"><?php _e( 'Theme Options', 'spacious' ); ?></h1>
+   <?php
+   printf( __('<p style="font-size: 16px; max-width: 800px";>As our themes are hosted on WordPress repository, we need to follow the WordPress theme guidelines and as per the new guiedlines we have migrated all our Theme Options to Customizer.</p><p style="font-size: 16px; max-width: 800px";>We too think this is a better move in the long run. All the options are unchanged, it is just that they are moved to customizer. So, please use this <a href="%1$s">link</a> to customize your site. If you have any issues then do let us know via our <a href="%2$s">Contact form</a></p>', 'spacious'),
+      esc_url(admin_url( 'customize.php' ) ),
+      esc_url('http://themegrill.com/contact/')
+   );
+}
 ?>
