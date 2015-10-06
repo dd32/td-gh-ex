@@ -4,6 +4,8 @@
      * Following functions are for utilizing the postMessage transport setting
      */
 
+    var body = $('body');
+
     // Site title
     wp.customize( 'blogname', function( value ) {
         value.bind( function( to ) {
@@ -22,6 +24,43 @@
             }
             tagline.text( to );
         } );
+    } );
+    // Layout
+    wp.customize( 'ct_ignite_layout_settings', function( value ) {
+        value.bind( function( to ) {
+
+            // remove left-sidebar class to avoid adding both
+            body.removeClass('sidebar-left');
+
+            // add left-sidebar class (right doesn't have/need one)
+            if ( to == 'left' ) {
+                body.addClass( 'sidebar-left' );
+            }
+        } );
+    } );
+    // Background Color
+    wp.customize( 'ct_ignite_background_color_setting', function( value ) {
+        value.bind( function( to ) {
+
+            // all elements get default background
+            if ( to == '#eeede8' ) {
+                $('.overflow-container, .main, .sidebar-primary-container, .breadcrumb-trail').css('background', to);
+            }  // or all elements get no background except overflow-container
+            else {
+                $('.overflow-container').css('background', to);
+                $('.main, .sidebar-primary-container, .breadcrumb-trail').css('background', 'none');
+            }
+        });
+    } );
+    // Footer Text
+    wp.customize( 'ct_ignite_footer_text_setting', function( value ) {
+        value.bind( function( to ) {
+
+            if ( to == '' ) {
+                to = '<a target="_blank" href="https://www.competethemes.com/ignite/">Ignite WordPress Theme</a> by Compete Themes.'
+            }
+            $('.design-credit').children('span').html(to);
+        });
     } );
 
 } )( jQuery );

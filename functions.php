@@ -1,8 +1,9 @@
 <?php
 
-/* Load the core theme framework. */
-require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
-new Hybrid();
+// set the content width
+if ( ! isset( $content_width ) ) {
+    $content_width = 840;
+}
 
 /* Do theme setup on the 'after_setup_theme' hook. */
 add_action( 'after_setup_theme', 'ct_ignite_theme_setup', 10 );
@@ -16,14 +17,6 @@ add_action( 'after_setup_theme', 'ct_ignite_theme_setup', 10 );
 if( ! function_exists( 'ct_ignite_theme_setup' ) ) {
     function ct_ignite_theme_setup() {
 
-        /* Get action/filter hook prefix. */
-        $prefix = hybrid_get_prefix();
-
-        /* Theme-supported features go here. */
-        add_theme_support( 'hybrid-core-template-hierarchy' );
-        add_theme_support( 'loop-pagination' );
-        add_theme_support( 'breadcrumb-trail' );
-
         // from WordPress core not theme hybrid
         add_theme_support( 'automatic-feed-links' );
         add_theme_support( 'post-thumbnails' );
@@ -35,6 +28,12 @@ if( ! function_exists( 'ct_ignite_theme_setup' ) ) {
 		 */
         add_theme_support( 'html5', array(
             'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+        ) );
+
+        // adds support for Jetpack infinite scroll feature
+        add_theme_support( 'infinite-scroll', array(
+            'container' => 'main',
+            'footer'    => 'overflow-container'
         ) );
 
         // add inc folder files
@@ -52,24 +51,19 @@ if( ! function_exists( 'ct_ignite_theme_setup' ) ) {
 
         // load text domain
         load_theme_textdomain( 'ignite', get_template_directory() . '/languages' );
-
-        // remove Hybrid Core filters adding partial microdata
-        remove_filter( 'the_author_posts_link', 'hybrid_the_author_posts_link', 5 );
-        remove_filter( 'get_comment_author_link', 'hybrid_get_comment_author_link', 5 );
-        remove_filter( 'get_comment_author_url_link', 'hybrid_get_comment_author_url_link', 5 );
-        remove_filter( 'comment_reply_link', 'hybrid_comment_reply_link_filter', 5 );
-        remove_filter( 'get_avatar', 'hybrid_get_avatar', 5 );
-        remove_filter( 'post_thumbnail_html', 'hybrid_post_thumbnail_html', 5 );
-        remove_filter( 'comments_popup_link_attributes', 'hybrid_comments_popup_link_attributes', 5 );
     }
 }
 
 /* register primary sidebar */
 function ct_ignite_register_sidebar(){
-    hybrid_register_sidebar( array(
+    register_sidebar( array(
         'name'         => __( 'Primary Sidebar', 'ignite' ),
         'id'           => 'primary',
         'description'  => __( 'The main sidebar', 'ignite' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>'
     ) );
 }
 add_action('widgets_init','ct_ignite_register_sidebar');
@@ -278,13 +272,6 @@ if( ! function_exists( 'ct_ignite_remove_more_link_scroll' ) ) {
 
 add_filter( 'the_content_more_link', 'ct_ignite_remove_more_link_scroll' );
 
-// Adds navigation through pages in the loop
-function ct_ignite_post_navigation() { ?>
-    <div class="loop-pagination-container">
-        <?php if ( current_theme_supports( 'loop-pagination' ) ) loop_pagination(); ?>
-    </div><?php
-}
-
 // for displaying featured images including mobile versions and default versions
 if( ! function_exists( 'ct_ignite_featured_image' ) ) {
     function ct_ignite_featured_image() {
@@ -333,9 +320,7 @@ function ct_ignite_wp_page_menu() {
 
 function ct_ignite_body_class( $classes ) {
 
-    if ( ! is_front_page() ) {
-        $classes[] = 'not-front';
-    }
+    global $post;
 
     /* get layout chosen by user */
     $layout = get_theme_mod('ct_ignite_layout_settings');
@@ -349,23 +334,34 @@ function ct_ignite_body_class( $classes ) {
 		$classes[] = 'parent-icons';
 	}
 
+    // add all historic singular classes
+    if ( is_singular() ) {
+        $classes[] = 'singular';
+        if ( is_singular('page') ) {
+            $classes[] = 'singular-page';
+            $classes[] = 'singular-page-' . $post->ID;
+        } elseif ( is_singular('post') ) {
+            $classes[] = 'singular-post';
+            $classes[] = 'singular-post-' . $post->ID;
+        } elseif ( is_singular('attachment') ) {
+            $classes[] = 'singular-attachment';
+            $classes[] = 'singular-attachment-' . $post->ID;
+        }
+    }
+
     return $classes;
 }
 add_filter( 'body_class', 'ct_ignite_body_class' );
 
 function ct_ignite_post_class_update($classes){
 
-    $remove = array();
-    $remove[] = 'entry';
-
+    // add 'excerpt' class to posts when on archive pages
     if ( ! is_singular() ) {
         foreach ( $classes as $key => $class ) {
-
-            if ( in_array( $class, $remove ) ){
-                unset( $classes[ $key ] );
-                $classes[] = 'excerpt';
-            }
+            $classes[] = 'excerpt';
         }
+    } else {
+        $classes[] = 'entry';
     }
 	// if 3.8 or lower
 	if( version_compare( get_bloginfo('version'), '3.9', '<') ) {
@@ -399,7 +395,7 @@ function ct_ignite_logo_positioning_css(){
         wp_add_inline_style('style', $css);
     }
 }
-add_action('wp_enqueue_scripts','ct_ignite_logo_positioning_css');
+add_action('wp_enqueue_scripts','ct_ignite_logo_positioning_css', 20);
 
 /* outputs the inline css to position the logo */
 function ct_ignite_logo_size_css(){
@@ -420,7 +416,7 @@ function ct_ignite_logo_size_css(){
         wp_add_inline_style('style', $css);
     }
 }
-add_action('wp_enqueue_scripts','ct_ignite_logo_size_css');
+add_action('wp_enqueue_scripts','ct_ignite_logo_size_css', 20);
 
 function ct_ignite_custom_css_output(){
 
@@ -432,13 +428,7 @@ function ct_ignite_custom_css_output(){
         wp_add_inline_style('style', $custom_css);
     }
 }
-add_action('wp_enqueue_scripts','ct_ignite_custom_css_output');
-
-// fix for bug with Disqus saying comments are closed
-if ( function_exists( 'dsq_options' ) ) {
-    remove_filter( 'comments_template', 'dsq_comments_template' );
-    add_filter( 'comments_template', 'dsq_comments_template', 99 ); // You can use any priority higher than '10'
-}
+add_action('wp_enqueue_scripts','ct_ignite_custom_css_output', 20);
 
 // add class if no avatars are being shown in the comments
 function ct_ignite_show_avatars_check($classes){
@@ -507,7 +497,7 @@ function ct_ignite_change_font(){
         }
     }
 }
-add_action('wp_enqueue_scripts', 'ct_ignite_change_font');
+add_action('wp_enqueue_scripts', 'ct_ignite_change_font', 20);
 
 function ct_ignite_background_css(){
 
@@ -527,16 +517,7 @@ function ct_ignite_background_css(){
     }
 
 }
-add_action('wp_enqueue_scripts','ct_ignite_background_css');
-
-function ct_ignite_wp_backwards_compatibility() {
-
-	// not using this function, simply remove it so use of "has_image_size" doesn't break < 3.9
-	if( version_compare( get_bloginfo('version'), '3.9', '<') ) {
-		remove_filter( 'image_size_names_choose', 'hybrid_image_size_names_choose' );
-	}
-}
-add_action('init', 'ct_ignite_wp_backwards_compatibility');
+add_action('wp_enqueue_scripts','ct_ignite_background_css', 20);
 
 if ( ! function_exists( '_wp_render_title_tag' ) ) :
     function ct_ignite_add_title_tag() {
@@ -576,8 +557,17 @@ if ( !function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
             'delicious',
             'stumbleupon',
             'deviantart',
+            '500px',
+            'foursquare',
+            'slack',
+            'slideshare',
+            'qq',
+            'whatsapp',
+            'skype',
+            'wechat',
+            'xing',
             'digg',
-            'git',
+            'github',
             'hacker-news',
             'steam',
             'vk',
@@ -590,3 +580,70 @@ if ( !function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
         return apply_filters( 'ct_ignite_customizer_social_media_array_filter', $social_sites );
     }
 }
+
+// git icon was supposed to be for github, this is to transfer users saved data to github
+function ct_ignite_switch_git_icon() {
+
+    $git = get_theme_mod( 'git' );
+    $github = get_theme_mod( 'github' );
+
+    // if there is an icon saved for git, but not github
+    if ( !empty( $git ) && empty( $github ) ) {
+        // give the github option the same value as the git option
+        set_theme_mod( 'github', get_theme_mod( 'git' ) );
+        // erase git option
+        remove_theme_mod( 'git' );
+    }
+}
+add_action('admin_init', 'ct_ignite_switch_git_icon');
+
+function ct_ignite_loop_pagination(){
+
+    // don't output if Jetpack infinite scroll is being used
+    if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) )
+        return;
+
+    global $wp_query;
+
+    // If there's not more than one page, return nothing.
+    if ( 1 >= $wp_query->max_num_pages ) {
+        return;
+    }
+
+    /* Set up some default arguments for the paginate_links() function. */
+    $defaults = array(
+        'base'         => add_query_arg( 'paged', '%#%' ),
+        'format'       => '',
+        'mid_size'     => 1
+    );
+
+    $loop_pagination = '<div class="loop-pagination-container"><nav class="pagination loop-pagination">';
+    $loop_pagination .= paginate_links( $defaults );
+    $loop_pagination .= '</nav></div>';
+
+    return $loop_pagination;
+}
+
+// Adds useful meta tags
+function ct_ignite_add_meta_elements() {
+
+    $meta_elements = '';
+
+    /* Charset */
+    $meta_elements .= sprintf( '<meta charset="%s" />' . "\n", get_bloginfo( 'charset' ) );
+
+    /* Viewport */
+    $meta_elements .= '<meta name="viewport" content="width=device-width, initial-scale=1" />' . "\n";
+
+    /* Theme name and current version */
+    $theme    = wp_get_theme( get_template() );
+    $template = sprintf( '<meta name="template" content="%s %s" />' . "\n", esc_attr( $theme->get( 'Name' ) ), esc_attr( $theme->get( 'Version' ) ) );
+    $meta_elements .= $template;
+
+    echo $meta_elements;
+}
+add_action( 'wp_head', 'ct_ignite_add_meta_elements', 1 );
+
+/* Move the WordPress generator to a better priority. */
+remove_action( 'wp_head', 'wp_generator' );
+add_action( 'wp_head', 'wp_generator', 1 );

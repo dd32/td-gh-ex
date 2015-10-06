@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container">
+<div class="search-container">
 
     <div class="entry-header search-end top">
         <h1 class="entry-title">
@@ -27,7 +27,7 @@
     endif;
     ?>
 
-    <?php if ( current_theme_supports( 'loop-pagination' ) ) loop_pagination(); ?>
+    <?php echo ct_ignite_loop_pagination(); ?>
 
     <?php
     // only display bottom search bar if there are search results
