@@ -44,27 +44,38 @@ function enrichmg_enhanced_image_navigation( $url, $id ) {
 }
 add_filter( 'attachment_link', 'enrichmg_enhanced_image_navigation', 10, 2 );
 
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- */
 function enrichmg_wp_title( $title, $sep ) {
-	global $page, $paged;
-
-	if ( is_feed() )
+	global $paged, $page;
+	if ( is_feed() ) {
 		return $title;
-
-	// Add the blog name
-	$title .= get_bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title .= " $sep $site_description";
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $sep " . sprintf( __( 'Page %s', 'enrichmg' ), max( $paged, $page ) );
-
+	} // end if
+    
+	// Create all variables.
+	$title = get_bloginfo( 'name', 'display' );
+    $site_description = get_bloginfo( 'description', 'display' );
+    $page_name = get_the_title();
+    $blog_constant = "Blog";
+    
+     // create the title tag
+	
+	if ( $site_description && is_front_page() ) { // front_page
+		$title = "$title $sep $site_description";
+	} elseif(is_home()) { // if blog index if not front_page
+        $title = "$blog_constant $sep $title";
+        if ($site_description) {
+            $title .= " $sep $site_description ";
+        }
+    } elseif(is_page() || is_single()) { //if regular page or post
+        $title = " $page_name $sep $title "; 
+        if ($site_description) {
+            $title .= "$sep $site_description ";
+        }
+    }
+	
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 ) {
+		$title = sprintf( __( 'Page %s', 'enrichmg' ), max( $paged, $page ) ) . " $sep $title";
+	} // end if
 	return $title;
-}
+} // end enichmg_wp_title
 add_filter( 'wp_title', 'enrichmg_wp_title', 10, 2 );

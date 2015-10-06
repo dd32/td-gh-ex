@@ -176,7 +176,7 @@ require get_template_directory() . '/inc/jetpack.php';
 function enrichmg_display_credits() {
 	$text = '<a href="http://wordpress.org/" rel="generator">' . sprintf( __( 'Proudly powered by %s', 'enrichmg' ), 'WordPress' ) . '</a>';
 	$text .= '<span class="sep"> | </span>';
-	$text .= sprintf( __( 'Theme: %1$s by %2$s', 'enrichmg' ), 'enrichmg', '<a href="http://www.designs2site.com" rel="designer">enricchi</a>' );
+	$text .= sprintf( __( 'Theme: %1$s by %2$s', 'enrichmg' ), 'enrichmg', '<a href="http://www.enricchi.me" rel="designer">enricchi</a>' );
 	echo apply_filters( 'enrichmg_credits_text', $text );
 }
 add_action( 'enrichmg_credits', 'enrichmg_display_credits' );

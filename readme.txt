@@ -15,8 +15,14 @@ For more information about the Underscores (_s) starter theme visit: http://unde
 
 	i) skip-link-focus-fix.js, navigation.js, customizer.js & keyboard-image-navigation.js are part of the Underscores Framework used by the theme, and hence under GPL v2.
 	ii) The Images screenshot.png and red-ham-icon.jpg have been created by me and are under GPL v2. 
-	iii) images within screenshot.png are my original artwork and are under GPL v2.  
-  iv) all theme fonts are websafe fonts contained within the end-users browser software.
+	iii) images within screenshot.png 
+            golden gate bridge -- public domain
+            north beach -- By Team at Carnaval.com Studios (Flickr: North Beach San Francisco 1) 
+                            [CC BY 2.0 (http://creativecommons.org/licenses/by/2.0)].  
+            chinatown -- By www.bluewaikiki.com (Flickr: chinatown San Francisco 1) 
+                            [CC BY 2.0 (http://creativecommons.org/licenses/by/2.0)]. 
+            Blog text excerpt by Zoë Corbyn for for 2/23/2014 San Francisco The Observer
+  v) all theme fonts are websafe fonts contained within the end-users browser software.
 	
 Everything else used in this theme has been created by me, especially for enrichmg theme and is distributed under GPLv2 or later license.
 
