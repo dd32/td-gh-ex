@@ -1,5 +1,8 @@
 == Change log ==
 
+= 2.5 =
+* Added Lithuanian translation lt_LT.po and lt_LT.mo
+
 = 2.4.1 =
 * Bug Fixed: Breadcrumb css issue in IE 11 ( Reported by Mark )
 * Removed panel for featured content and featured slider for WordPress version greater than 4.2

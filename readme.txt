@@ -1,6 +1,6 @@
 === Catch Base ===
 
-If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Catch Base is where your search ends. Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Catch Base is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German and Hungarian. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-base/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-base/
+If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Catch Base is where your search ends. Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Catch Base is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German, Hungarian and Lithuanian languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-base/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-base/
 
 == Support ==
 
@@ -16,6 +16,7 @@ Added Translation for French by Jérôme Joseph ( Email: jerome.joseph28@hotmail
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@gmail.com )
 Added Translation for German by Jürgen Zapp ( Email: j_m_z@hotmail.com ) and Micky261 ( Email: karlo261@hotmail.de )
 Added Translation for Hungarian by Kürti Gábor ( Email: gabor.kurti@gmail.com )
+Added Translation for Lithuanian by Jurgis Šatas ( Email: ssattass@gmail.com )
 
 
 == License ==

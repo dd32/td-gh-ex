@@ -1,19 +1,20 @@
-# Copyright (C) 2015 Catch Themes
+# Copyright (C) 2014 Catch Themes
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
-"Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-"
-"free/\n"
-"POT-Creation-Date: 2015-10-06 23:40+0545\n"
-"PO-Revision-Date: 2015-10-06 23:40+0545\n"
+"Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-"
+"responsive-free/\n"
+"POT-Creation-Date: 2015-10-06 23:42+0545\n"
+"PO-Revision-Date: 2015-10-06 23:42+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
-"Language: en\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.7.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
@@ -23,83 +24,85 @@ msgstr ""
 
 #: ../404.php:18
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "Apgailestaujame, šio puslapio nepavyko rasti!"
 
 #: ../404.php:22
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"Atrodo, nieko nerasta šioje vietoje. Gal pabandykite vieną iš žemiau esančių "
+"nuorodų arba paiešką?"
 
 #: ../archive.php:30
 #, php-format
 msgid "Author: %s"
-msgstr ""
+msgstr "Autorius: %s"
 
 #: ../archive.php:33
 #, php-format
 msgid "Day: %s"
-msgstr ""
+msgstr "Diena: %s"
 
 #: ../archive.php:36
 #, php-format
 msgid "Month: %s"
-msgstr ""
+msgstr "Mėnuo: %s"
 
 #: ../archive.php:36
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
 #: ../archive.php:39
 #, php-format
 msgid "Year: %s"
-msgstr ""
+msgstr "Metai: %s"
 
 #: ../archive.php:39
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "m."
 
 #: ../archive.php:42
 msgid "Asides"
-msgstr ""
+msgstr "Atidėjimo"
 
 #: ../archive.php:45
 msgid "Galleries"
-msgstr ""
+msgstr "Galerijos"
 
 #: ../archive.php:48
 msgid "Images"
-msgstr ""
+msgstr "Paveikslėliai"
 
 #: ../archive.php:51
 msgid "Videos"
-msgstr ""
+msgstr "Video"
 
 #: ../archive.php:54
 msgid "Quotes"
-msgstr ""
+msgstr "Citatos"
 
 #: ../archive.php:57
 msgid "Links"
-msgstr ""
+msgstr "Nuorodos"
 
 #: ../archive.php:60
 msgid "Statuses"
-msgstr ""
+msgstr "Būsenos"
 
 #: ../archive.php:63
 msgid "Audios"
-msgstr ""
+msgstr "Audio"
 
 #: ../archive.php:66
 msgid "Chats"
-msgstr ""
+msgstr "Pokalbiai"
 
 #: ../archive.php:69 ../sidebar-secondary.php:45 ../sidebar.php:92
 msgid "Archives"
-msgstr ""
+msgstr "Archyvai"
 
 #: ../comments.php:27
 #, php-format
@@ -107,57 +110,62 @@ msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
-msgstr[1] ""
+msgstr[1] "%1$s mintys apie &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s minčių apie &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:34 ../comments.php:59
 msgid "Comment navigation"
-msgstr ""
+msgstr "Komentarų valdymas"
 
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "&larr; senesni komentarai"
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "Naujausi komentarai &rarr;"
 
 #: ../comments.php:71
 msgid "Comments are closed."
-msgstr ""
+msgstr "Komentarai negalimi."
 
 #: ../content-none.php:15
 msgid "Nothing Found"
-msgstr ""
+msgstr "Pagal šią užklausą nieko nerasta"
 
 #: ../content-none.php:21 ../no-results.php:20
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Pasiruošę publikuoti savo pirmąjį įrašą? <a href=\"%1$s\">Pradėkite čia</a> ."
 
 #: ../content-none.php:25 ../no-results.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"Atsiprašome, bet nieks neatitiko Jūsų paieškos terminų. Bandykite dar kartą su "
+"kitais raktažodžiais."
 
 #: ../content-none.php:30 ../no-results.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching "
 "can help."
 msgstr ""
+"Atrodo mes negalime rasti to, ko jūs ieškote. Galbūt ieškojimas gali padėti."
 
 #: ../content-page.php:28 ../content-single.php:31 ../content.php:46
 msgid "Pages:"
-msgstr ""
+msgstr "Puslapiai:"
 
 #: ../content-page.php:35 ../inc/catchbase-core.php:641
 #: ../inc/catchbase-core.php:660 ../inc/catchbase-core.php:786
 msgid "Edit"
-msgstr ""
+msgstr "Redaguoti"
 
 #: ../inc/catchbase-breadcrumb.php:57
 msgid "Home"
-msgstr ""
+msgstr "Pradžia"
 
 #: ../inc/catchbase-breadcrumb.php:58
 #, php-format
@@ -181,105 +189,105 @@ msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:62
 msgid "Error 404"
-msgstr ""
+msgstr "Klaida 404"
 
 #: ../inc/catchbase-breadcrumb.php:223
 #, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "Puslapis %s"
 
 #: ../inc/catchbase-core.php:127 ../inc/catchbase-menus.php:27
 msgid "Primary Menu"
-msgstr ""
+msgstr "Pagrindinis meniu"
 
 #: ../inc/catchbase-core.php:128 ../inc/catchbase-menus.php:69
 msgid "Secondary Menu"
-msgstr ""
+msgstr "Antrinis meniu"
 
 #: ../inc/catchbase-core.php:607
 msgid "Post navigation"
-msgstr ""
+msgstr "Įrašo meniu"
 
 #: ../inc/catchbase-core.php:616
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span> Senesni pranešimai"
 
 #: ../inc/catchbase-core.php:617
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Naujausi pranešimai <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/catchbase-core.php:641
 msgid "Pingback:"
-msgstr ""
+msgstr "Žingsniu atgal:"
 
 #: ../inc/catchbase-core.php:651
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
-msgstr ""
+msgstr "%s <span class=\"says\">sako:</span>"
 
 #: ../inc/catchbase-core.php:657
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s %2$s"
 
 #: ../inc/catchbase-core.php:664
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Jūsų komentaras laukia patvirtinimo."
 
 #: ../inc/catchbase-core.php:767
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
-msgstr ""
+msgstr "<span class=\"screen-reader-text\">Paskelbta</span>"
 
 #: ../inc/catchbase-core.php:774
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
-msgstr ""
+msgstr "<span class=\"screen-reader-text\">Autorius</span>"
 
 #: ../inc/catchbase-core.php:782
 msgid "Leave a comment"
-msgstr ""
+msgstr "Parašykite komentarą"
 
 #: ../inc/catchbase-core.php:782
 msgid "1 Comment"
-msgstr ""
+msgstr "1 komentaras"
 
 #: ../inc/catchbase-core.php:782
 msgid "% Comments"
-msgstr ""
+msgstr "% komentarai"
 
 #: ../inc/catchbase-core.php:803 ../inc/catchbase-core.php:811
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: ../inc/catchbase-core.php:806
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
-msgstr ""
+msgstr "<span class=\"screen-reader-text\">Kategorijos</span>"
 
 #: ../inc/catchbase-core.php:814
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
-msgstr ""
+msgstr "<span class=\"screen-reader-text\">Žymės</span>"
 
 #: ../inc/catchbase-core.php:957
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../inc/catchbase-core.php:1455
 msgid "Scroll Up"
-msgstr ""
+msgstr "Slinkti aukštyn"
 
 #: ../inc/catchbase-core.php:1472
 msgid "Posted on"
-msgstr ""
+msgstr "Paskelbta"
 
 #: ../inc/catchbase-core.php:1473
 msgid "By"
-msgstr ""
+msgstr "pagal"
 
 #: ../inc/catchbase-core.php:1514
 msgid "Next &rarr;"
@@ -299,7 +307,7 @@ msgstr ""
 
 #: ../inc/catchbase-default-options.php:53
 msgid "Read More ..."
-msgstr ""
+msgstr "Skaityti toliau ..."
 
 #: ../inc/catchbase-default-options.php:63
 msgid "Catch Base is a Premium Responsive WordPress Theme"
@@ -310,14 +318,16 @@ msgid ""
 "This is promotion headline. You can edit this from Appearance -> Customize -> "
 "Theme Options -> Promotion Headline Options"
 msgstr ""
+"Tai yra skatinamoji antraštė. Galite redaguoti ją per Išvaizda -> Tinkinti -> "
+"Temos parinktys -> Reklaminės antraštės parinktys"
 
 #: ../inc/catchbase-default-options.php:65
 msgid "Reviews"
-msgstr ""
+msgstr "Apžvalgos"
 
 #: ../inc/catchbase-default-options.php:70
 msgid "Search..."
-msgstr ""
+msgstr "Ieškoti..."
 
 #: ../inc/catchbase-default-options.php:115
 msgid "True"
@@ -333,21 +343,21 @@ msgstr ""
 
 #: ../inc/catchbase-default-options.php:139
 msgid "Light"
-msgstr ""
+msgstr "Šviesi"
 
 #: ../inc/catchbase-default-options.php:143
 msgid "Dark"
-msgstr ""
+msgstr "Tamsi"
 
 #: ../inc/catchbase-default-options.php:160
 #: ../inc/catchbase-default-options.php:546
 msgid "Primary Sidebar, Content"
-msgstr ""
+msgstr "Pagrindinė šoninė juosta, turinys"
 
 #: ../inc/catchbase-default-options.php:164
 #: ../inc/catchbase-default-options.php:551
 msgid "Content, Primary Sidebar"
-msgstr ""
+msgstr "Turinys, pagrindinė šoninė juosta"
 
 #: ../inc/catchbase-default-options.php:168
 #: ../inc/catchbase-default-options.php:556
@@ -357,78 +367,78 @@ msgstr ""
 #: ../inc/catchbase-default-options.php:172
 #: ../inc/catchbase-default-options.php:561
 msgid "No Sidebar ( Content Width )"
-msgstr ""
+msgstr "Be šoninės juostos (turinio plotis)"
 
 #: ../inc/catchbase-default-options.php:188
 #: ../inc/catchbase-default-options.php:341
 msgid "Show Excerpt"
-msgstr ""
+msgstr "Rodyti Ištrauką"
 
 #: ../inc/catchbase-default-options.php:192
 msgid "Show Full Content (No Featured Image)"
-msgstr ""
+msgstr "Rodyti visą turinį (be reklaminio paveikslėlio)"
 
 #: ../inc/catchbase-default-options.php:209
 #: ../inc/catchbase-default-options.php:275
 msgid "Homepage / Frontpage"
-msgstr ""
+msgstr "Pradžia / titulinis"
 
 #: ../inc/catchbase-default-options.php:213
 msgid "Excluding Homepage"
-msgstr ""
+msgstr "Išskyrus pradžią"
 
 #: ../inc/catchbase-default-options.php:217
 msgid "Excluding Homepage, Page/Post Featured Image"
-msgstr ""
+msgstr "Išskyrus pradžią, puslapio/įrašo reklaminis paveiksliukas"
 
 #: ../inc/catchbase-default-options.php:221
 #: ../inc/catchbase-default-options.php:279
 msgid "Entire Site"
-msgstr ""
+msgstr "Visas tinklapis"
 
 #: ../inc/catchbase-default-options.php:225
 msgid "Entire Site, Page/Post Featured Image"
-msgstr ""
+msgstr "Visas tinklapis, puslapio/įrašo reklaminis paveiksliukas"
 
 #: ../inc/catchbase-default-options.php:229
 msgid "Pages and Posts"
-msgstr ""
+msgstr "Puslapiai ir įrašai"
 
 #: ../inc/catchbase-default-options.php:233
 #: ../inc/catchbase-default-options.php:283
 #: ../inc/catchbase-default-options.php:484
 msgid "Disabled"
-msgstr ""
+msgstr "Išjungta"
 
 #: ../inc/catchbase-default-options.php:250
 #: ../inc/catchbase-default-options.php:614
 msgid "Full Image"
-msgstr ""
+msgstr "Visas paveiksliukas"
 
 #: ../inc/catchbase-default-options.php:254
 msgid "Large Image"
-msgstr ""
+msgstr "Didelis paveiksliukas"
 
 #: ../inc/catchbase-default-options.php:258
 #: ../inc/catchbase-default-options.php:619
 msgid "Slider Image"
-msgstr ""
+msgstr "Slankiklio paveiksliukas"
 
 #: ../inc/catchbase-default-options.php:300
 msgid "Demo Featured Content"
-msgstr ""
+msgstr "Demo reklaminis turinys"
 
 #: ../inc/catchbase-default-options.php:304
 msgid "Featured Page Content"
-msgstr ""
+msgstr "reklaminis puslapio turinys"
 
 #: ../inc/catchbase-default-options.php:321
 msgid "3 columns"
-msgstr ""
+msgstr "3 stulpeliai"
 
 #: ../inc/catchbase-default-options.php:325
 msgid "4 columns"
-msgstr ""
+msgstr "4 stulpeliai"
 
 #: ../inc/catchbase-default-options.php:345
 msgid "Show Full Content"
@@ -440,67 +450,67 @@ msgstr ""
 
 #: ../inc/catchbase-default-options.php:365
 msgid "Demo Featured Slider"
-msgstr ""
+msgstr "Demo reklaminis slankiklis"
 
 #: ../inc/catchbase-default-options.php:369
 msgid "Featured Page Slider"
-msgstr ""
+msgstr "Reklaminis puslapio slankiklis"
 
 #: ../inc/catchbase-default-options.php:386
 msgid "Fade"
-msgstr ""
+msgstr "Nuvysti"
 
 #: ../inc/catchbase-default-options.php:390
 msgid "Fade Out"
-msgstr ""
+msgstr "Išnykti"
 
 #: ../inc/catchbase-default-options.php:394
 msgid "None"
-msgstr ""
+msgstr "Nėra"
 
 #: ../inc/catchbase-default-options.php:398
 msgid "Scroll Horizontal"
-msgstr ""
+msgstr "Slinkti horizontaliai"
 
 #: ../inc/catchbase-default-options.php:402
 msgid "Scroll Vertical"
-msgstr ""
+msgstr "Slinkti vertikaliai"
 
 #: ../inc/catchbase-default-options.php:406
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "Apsukti horizontaliai"
 
 #: ../inc/catchbase-default-options.php:410
 msgid "Flip Vertical"
-msgstr ""
+msgstr "Apsukti vertikaliai"
 
 #: ../inc/catchbase-default-options.php:414
 msgid "Tile Slide"
-msgstr ""
+msgstr "Plytelių slinkimas"
 
 #: ../inc/catchbase-default-options.php:418
 msgid "Tile Blind"
-msgstr ""
+msgstr "Plytelių užuolaida"
 
 #: ../inc/catchbase-default-options.php:422
 msgid "Suffle"
-msgstr ""
+msgstr "Suffle"
 
 #: ../inc/catchbase-default-options.php:439
 msgid "Default(Older Posts/Newer Posts)"
-msgstr ""
+msgstr "Įprastas (senesni pranešimai/naujesni pranešimai)"
 
 #: ../inc/catchbase-default-options.php:443
 msgid "Numeric"
-msgstr ""
+msgstr "skaitmeninis"
 
 #: ../inc/catchbase-default-options.php:447
 msgid "Infinite Scroll (Click)"
-msgstr ""
+msgstr "Begalinis slinkimas (paspaudimas)"
 
 #: ../inc/catchbase-default-options.php:451
 msgid "Infinite Scroll (Scroll)"
-msgstr ""
+msgstr "Begalinis slinkimas (slinkimas)"
 
 #: ../inc/catchbase-default-options.php:468
 msgid "Large"
@@ -521,151 +531,151 @@ msgstr ""
 #: ../inc/catchbase-default-options.php:498
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:74
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../inc/catchbase-default-options.php:499
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:78
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../inc/catchbase-default-options.php:500
 msgid "Googleplus"
-msgstr ""
+msgstr "Googleplus"
 
 #: ../inc/catchbase-default-options.php:501 ../inc/catchbase-social-icons.php:62
 msgid "Email"
-msgstr ""
+msgstr "E-paštas"
 
 #: ../inc/catchbase-default-options.php:502
 msgid "Feed"
-msgstr ""
+msgstr "Feed"
 
 #: ../inc/catchbase-default-options.php:503
 msgid "WordPress"
-msgstr ""
+msgstr "WordPress"
 
 #: ../inc/catchbase-default-options.php:504
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: ../inc/catchbase-default-options.php:505
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #: ../inc/catchbase-default-options.php:506
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:86
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
 #: ../inc/catchbase-default-options.php:507
 msgid "Flickr"
-msgstr ""
+msgstr "Flickr"
 
 #: ../inc/catchbase-default-options.php:508
 msgid "Vimeo"
-msgstr ""
+msgstr "Vimeo"
 
 #: ../inc/catchbase-default-options.php:509
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
 #: ../inc/catchbase-default-options.php:510
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../inc/catchbase-default-options.php:511
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #: ../inc/catchbase-default-options.php:512
 msgid "PollDaddy"
-msgstr ""
+msgstr "PollDaddy"
 
 #: ../inc/catchbase-default-options.php:513
 msgid "CodePen"
-msgstr ""
+msgstr "CodePen"
 
 #: ../inc/catchbase-default-options.php:514
 msgid "Path"
-msgstr ""
+msgstr "Path"
 
 #: ../inc/catchbase-default-options.php:515
 msgid "Dribbble"
-msgstr ""
+msgstr "Dribbble"
 
 #: ../inc/catchbase-default-options.php:516
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 #: ../inc/catchbase-default-options.php:517
 msgid "Digg"
-msgstr ""
+msgstr "Digg"
 
 #: ../inc/catchbase-default-options.php:518
 msgid "Reddit"
-msgstr ""
+msgstr "Reddit"
 
 #: ../inc/catchbase-default-options.php:519
 msgid "StumbleUpon"
-msgstr ""
+msgstr "StumbleUpon"
 
 #: ../inc/catchbase-default-options.php:520
 msgid "Pocket"
-msgstr ""
+msgstr "Pocket"
 
 #: ../inc/catchbase-default-options.php:521
 msgid "DropBox"
-msgstr ""
+msgstr "DropBox"
 
 #: ../inc/catchbase-default-options.php:522
 msgid "Foursquare"
-msgstr ""
+msgstr "Foursquare"
 
 #: ../inc/catchbase-default-options.php:523
 msgid "Spotify"
-msgstr ""
+msgstr "Spotify"
 
 #: ../inc/catchbase-default-options.php:524
 msgid "Twitch"
-msgstr ""
+msgstr "Twitch"
 
 #: ../inc/catchbase-default-options.php:541
 #: ../inc/catchbase-default-options.php:577
 #: ../inc/catchbase-default-options.php:604
 msgid "Default"
-msgstr ""
+msgstr "Numatytasis"
 
 #: ../inc/catchbase-default-options.php:582
 msgid "Enable"
-msgstr ""
+msgstr "Įjungti"
 
 #: ../inc/catchbase-default-options.php:587
 msgid "Disable"
-msgstr ""
+msgstr "Išjungti"
 
 #: ../inc/catchbase-default-options.php:609
 msgid "Featured Image"
-msgstr ""
+msgstr "Reklaminis paveikslėlis"
 
 #: ../inc/catchbase-default-options.php:624
 msgid "Disable Image"
-msgstr ""
+msgstr "Išjungti paveikslėlį"
 
 #: ../inc/catchbase-default-options.php:639
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
-msgstr ""
+msgstr "Autorinės teisės &copy; %1$s %2$s. Visos Teisės Saugomos."
 
 #: ../inc/catchbase-default-options.php:641
 msgid "by"
-msgstr ""
+msgstr "pagal"
 
 #: ../inc/catchbase-featured-content.php:56
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:21
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:34
 msgid "Featured Content"
-msgstr ""
+msgstr "Reklaminis turinys"
 
 #: ../inc/catchbase-featured-content.php:57
 msgid ""
@@ -673,6 +683,9 @@ msgid ""
 "Headline, Subheadline and Feaured Content from \"Appearance -> Customize -> "
 "Featured Content Options\"."
 msgstr ""
+"Čia Jūs galite demonstruoti x skaičių reklaminio turinio. Jūs galite redaguoti "
+"šią antraštę, Paantraštę ir reklaminį turinį iš \"Išvaizda -> Tinkinti -> "
+"Reklaminio turinio parinktys\"."
 
 #: ../inc/catchbase-featured-content.php:269
 #: ../inc/catchbase-featured-content.php:278
@@ -682,33 +695,33 @@ msgstr ""
 #: ../inc/catchbase-featured-slider.php:206
 #: ../inc/catchbase-featured-slider.php:216
 msgid "Permalink to:"
-msgstr ""
+msgstr "Pastovi nuoroda į:"
 
 #: ../inc/catchbase-menus.php:28 ../inc/catchbase-menus.php:70
 msgid "Skip to content"
-msgstr ""
+msgstr "Pereiti prie turinio"
 
 #: ../inc/catchbase-menus.php:44
 msgid "Search"
-msgstr ""
+msgstr "Ieškoti..."
 
 #: ../inc/catchbase-menus.php:146 ../inc/catchbase-menus.php:165
 msgid "Menu"
-msgstr ""
+msgstr "Meniu"
 
 #: ../inc/catchbase-metabox.php:92
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:204
 msgid "Layout Options"
-msgstr ""
+msgstr "Maketo parinktys"
 
 #: ../inc/catchbase-metabox.php:93
 msgid "Header Featured Image Options"
-msgstr ""
+msgstr "Antraštės reklaminio paveikslėlio parinktys"
 
 #: ../inc/catchbase-metabox.php:94
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:261
 msgid "Single Page/Post Image Layout "
-msgstr ""
+msgstr "Atskiro puslapio/įrašo paveikslėlio padėtis"
 
 #: ../inc/catchbase-metabox.php:220
 msgid "Catchbase Options"
@@ -716,13 +729,15 @@ msgstr ""
 
 #: ../inc/catchbase-widgets.php:30
 msgid "Primary Sidebar"
-msgstr ""
+msgstr "Pagrindinė šoninė juosta"
 
 #: ../inc/catchbase-widgets.php:36
 msgid ""
 "This is the primary sidebar if you are using a two or three column site layout "
 "option."
 msgstr ""
+"Tai yra pagrindinė šoninė juosta, jei Jūs naudojate dviejų ar trijų stulpelių "
+"svetainės išdėstymo variantą."
 
 #: ../inc/catchbase-widgets.php:41
 msgid "Secondary Sidebar"
@@ -736,12 +751,12 @@ msgstr ""
 #: ../inc/catchbase-widgets.php:54
 #, php-format
 msgid "Footer Area %d"
-msgstr ""
+msgstr "Apačios sritis %d"
 
 #: ../inc/catchbase-widgets.php:60
 #, php-format
 msgid "Footer %d widget area."
-msgstr ""
+msgstr "Apačia %d valdiklio sritis."
 
 #: ../inc/catchbase-widgets.php:80
 msgid "CT: Social Icons"
@@ -750,89 +765,94 @@ msgstr ""
 #: ../inc/catchbase-widgets.php:81
 msgid "Use this widget to add Social Icons as a widget. "
 msgstr ""
+"Naudokite šį valdiklį tam, kad pridėti socialines piktogramas kaip valdiklius."
 
 #: ../inc/catchbase-widgets.php:122
 msgid "Title (optional):"
-msgstr ""
+msgstr "Pavadinimas (nebūtina):"
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:41
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple options."
 msgstr ""
+"Laikykite nuspaudę Ctrl (Windows) / Command (Mac) mygtuką, norėdami pasirinkti "
+"kelis variantus."
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:54
 msgid "Theme Instructions"
-msgstr ""
+msgstr "Temos instrukcijos"
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:58
 msgid "Support"
-msgstr ""
+msgstr "Pagalba"
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:62
 msgid "Changelog"
-msgstr ""
+msgstr "Keitimų žurnalas"
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:66
 msgid "Donate Now"
-msgstr ""
+msgstr "Paaukok dabar"
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:70
 msgid "Review"
-msgstr ""
+msgstr "Peržiūra"
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:82
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:19
 msgid "Options for Featured Content"
-msgstr ""
+msgstr "Parinktys reklaminiam turiniui"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:28
 msgid "Featured Content Options"
-msgstr ""
+msgstr "Reklaminio turinio parinktys "
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:52
 msgid "Enable Featured Content on"
-msgstr ""
+msgstr "Įjungti reklaminį turinį"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:74
 msgid "Select Featured Content Layout"
-msgstr ""
+msgstr "Pasirinkti reklaminio turinio išdėstymą"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:89
 msgid "Check to Move above Footer"
-msgstr ""
+msgstr "Pažymėkite norėdami perkelti aukščiau apačios"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:111
 msgid "Select Content Type"
-msgstr ""
+msgstr "Pasirinkite Turinio tipą"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:126
 msgid "Leave field empty if you want to remove Headline"
-msgstr ""
+msgstr "Palikite lauką tuščią, jei norite pašalinti antraštę"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:127
 msgid "Headline for Featured Content"
-msgstr ""
+msgstr "Antraštė reklaminiam turiniui"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:143
 msgid "Leave field empty if you want to remove Sub-headline"
-msgstr ""
+msgstr "Palikite lauką tuščią, jei norite pašalinti poantraštę"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:144
 msgid "Sub-headline for Featured Content"
-msgstr ""
+msgstr "Poantraštė reklaminiam turiniui"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:160
 msgid ""
 "Save and refresh the page if No. of Featured Content is changed (Max no of "
 "Featured Content is 20)"
 msgstr ""
+"Išsaugokite ir atnaujinkite puslapį, jei reklaminio turinio skaičius pasikeitė "
+"(Max skaičius reklaminio turinio yra 20)"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:167
 msgid "No of Featured Content"
-msgstr ""
+msgstr "Reklaminio turinio skaičius"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:190
 msgid "Display Content"
@@ -841,12 +861,12 @@ msgstr ""
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:206
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:196
 msgid "Featured Page"
-msgstr ""
+msgstr "Reklaminis puslapis"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:19
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:27
 msgid "Featured Slider Options"
-msgstr ""
+msgstr "Reklaminio slinkiklio parinktys"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:21
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:33
@@ -855,24 +875,24 @@ msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:51
 msgid "Enable Slider on"
-msgstr ""
+msgstr "Įjungti slinkiklį"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:73
 msgid "Transition Effect"
-msgstr ""
+msgstr "Pereinamasis efektas"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:89
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:108
 msgid "seconds(s)"
-msgstr ""
+msgstr "sekundės(-džių)"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:93
 msgid "Transition Delay"
-msgstr ""
+msgstr "Perėjimo delsimas"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:112
 msgid "Transition Length"
-msgstr ""
+msgstr "Perėjimo ilgis"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:133
 msgid ""
@@ -888,60 +908,64 @@ msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:157
 msgid "Select Slider Type"
-msgstr ""
+msgstr "Pasirinkite slankiklio tipą"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:172
 msgid ""
 "Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
 msgstr ""
+"Išsaugokite ir atnaujinkite puslapį, jei skaidrių skaičius yra pasikeitęs (maks. "
+"skaičius skaidrių yra 20)"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:179
 msgid "No of Slides"
-msgstr ""
+msgstr "Skaidrių skaičius"
 
 #: ../inc/customizer-includes/catchbase-customizer-header-options.php:31
 msgid "Enable Featured Header Image on "
-msgstr ""
+msgstr "Įjungti reklaminės antraštės paveiksliuką"
 
 #: ../inc/customizer-includes/catchbase-customizer-header-options.php:52
 msgid "Page/Post Featured Header Image Size"
-msgstr ""
+msgstr "Puslapio/įrašo reklaminės antraštės paveiksliuko dydis"
 
 #: ../inc/customizer-includes/catchbase-customizer-header-options.php:65
 msgid "Featured Header Image Alt/Title Tag "
-msgstr ""
+msgstr "Reklaminės antraštės paveiksliuko alternatyvus tekstas"
 
 #: ../inc/customizer-includes/catchbase-customizer-header-options.php:78
 msgid "Featured Header Image Link URL"
-msgstr ""
+msgstr "Reklaminės antraštės paveiksliuko nuorodos URL"
 
 #: ../inc/customizer-includes/catchbase-customizer-header-options.php:91
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:420
 msgid "Check to Open Link in New Window/Tab"
-msgstr ""
+msgstr "Pažymėkite, kad atidaryti nuorodą naujame lange/kortelėje"
 
 #: ../inc/customizer-includes/catchbase-customizer-social-icons.php:19
 msgid "Note: Enter the url for correponding social networking website"
-msgstr ""
+msgstr "Pastaba: įveskite URL atitinkamai socialinio tinklo svetainei"
 
 #: ../inc/customizer-includes/catchbase-customizer-social-icons.php:21
 #: ../inc/customizer-includes/catchbase-customizer-social-icons.php:27
 msgid "Social Links"
-msgstr ""
+msgstr "Socialinės nuorodos"
 
 #: ../inc/customizer-includes/catchbase-customizer-social-icons.php:44
 msgid ""
 "Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
 "{action}. More Information in readme file"
 msgstr ""
+"Skype nuoroda gali būti formatais:<br>callto://+{number}<br> skype:{username}?"
+"{action}. Daugiau informacijos readme faile."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:20
 msgid "Basic theme Options"
-msgstr ""
+msgstr "Pagrindinės temos parinktys"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:23
 msgid "Theme Options"
-msgstr ""
+msgstr "Temos parinktys"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:28
 msgid ""
@@ -949,94 +973,102 @@ msgid ""
 "your site with just a glance. You can enable/disable them on homepage and entire "
 "site."
 msgstr ""
+"Viršutinis slankusis laukas yra puikus būdas leisti savo lankytojams sužinoti, "
+"kur jie yra jūsų svetainėje vos tik žvilgterėjus. Jūs galite įjungti/išjungti "
+"juos puslapyje ir visoje svetainėje."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:30
 msgid "Breadcrumb Options"
-msgstr ""
+msgstr "Viršutinio slankaus lauko parinktys"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:41
 msgid "Check to enable Breadcrumb"
-msgstr ""
+msgstr "Pažymėkite norėdami įjungti viršutinį slankųjį lauką."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:54
 msgid "Check to enable Breadcrumb on Homepage"
-msgstr ""
+msgstr "Pažymėkite norėdami įjungti viršutinį slankųjį lauką pradžios puslapyje."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:70
 msgid "Separator between Breadcrumbs"
-msgstr ""
+msgstr "Viršutiniojo slankaus lauko skirtukas"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:80
 msgid "Custom/Inline CSS"
-msgstr ""
+msgstr "Individualus/Inline CSS"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:83
 msgid "Custom CSS Options"
-msgstr ""
+msgstr "Individualaus CSS parinktys"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:93
 msgid "Enter Custom CSS"
-msgstr ""
+msgstr "Įveskite individualų CSS"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:105
 msgid "Excerpt Options"
-msgstr ""
+msgstr "Ištraukos parinktys"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:115
 msgid "Excerpt length. Default is 40 words"
-msgstr ""
+msgstr "Numatytasis nustatymas yra 40 žodžiai."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:122
 msgid "Excerpt Length (words)"
-msgstr ""
+msgstr "Ištraukos Ilgis (žodžiais)"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:136
 msgid "Read More Text"
-msgstr ""
+msgstr "Skaityti daugiau teksto"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:145
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on the "
 "front page"
 msgstr ""
+"Tik pranešimai, kurie priklauso vienai iš pažymėtų kategorijų, bus rodomi "
+"tituliniame puslapyje."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:148
 msgid "Homepage / Frontpage Options"
-msgstr ""
+msgstr "Pradžios/titulinio puslapio parinktys"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:158
 msgid "Select Categories"
-msgstr ""
+msgstr "Pasirinkite kategorijas"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:169
 msgid "Remove Icon images to disable."
-msgstr ""
+msgstr "Pašalinkite favicon paveiksliukus tam, kad išjungti."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:172
 msgid "Icon Options"
-msgstr ""
+msgstr "Ikonos parinktys"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:181
 msgid "Select/Add Favicon"
-msgstr ""
+msgstr "Pasirinkti/įdėti Favicon"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:192
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
 "height, which will support High Resolution Devices like iPad Retina."
 msgstr ""
+"Web Clip ikona Apple įrenginiams. Rekomenduojamas dydis - plotis 144px ir "
+"aukštis 144px, kuris palaikys didelės raiškos įrenginius, pavyzdžiui, iPad "
+"Retina."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:193
 msgid "Select/Add Web Clip Icon"
-msgstr ""
+msgstr "Pasirinkti/pridėti Web Clip ikoną"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:221
 msgid "Default Layout"
-msgstr ""
+msgstr "Įprastas išdėstymas"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:241
 msgid "Archive Content Layout"
-msgstr ""
+msgstr "Archyvo turinio išdėstymas"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:272
 #, php-format
@@ -1045,6 +1077,9 @@ msgid ""
 "<br/>Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
 "Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
+"Skaičių variantas reikalauja <a target=\"_blank\" href=\"%s\">WP-PageNavi "
+"įskiepio</a> . <br/> Begalinio slinkimo parinktys reikalauja <a target=\"_blank"
+"\" href=\"%s\">Jetpack įskiepio</a> su įjungtu begalinio slinkimo moduliu."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:279
 #, php-format
@@ -1052,140 +1087,150 @@ msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
 "Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
+"Begalinio slinkimo parinktys reikalauja <a target=\"_blank\" href=\"%s\">Jetpack "
+"įskiepio</a> su įjungtu begalinio slinkimo moduliu."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:290
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
 msgstr ""
+"Skaičių variantas reikalauja <a target=\"_blank\" href=\"%s\">WP-PageNavi "
+"įskiepio</a> ."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:301
 msgid "Pagination Options"
-msgstr ""
+msgstr "Numeracijos parinktys"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:318
 msgid "Pagination type"
-msgstr ""
+msgstr "Numeracijos tipas"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:327
 msgid "To disable the fields, simply leave them empty."
-msgstr ""
+msgstr "Norėdami išjungti laukus, tiesiog palikite juos tuščius."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:330
 msgid "Promotion Headline Options"
-msgstr ""
+msgstr "Reklaminės antraštės parinktys"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:347
 msgid "Enable Promotion Headline on"
-msgstr ""
+msgstr "Įjungti reklaminę antraštę"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:361
 msgid "Appropriate Words: 10"
-msgstr ""
+msgstr "Tinka žodžių: 10"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:362
 msgid "Promotion Headline Text"
-msgstr ""
+msgstr "Reklaminės antraštės tekstas"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:376
 msgid "Appropriate Words: 15"
-msgstr ""
+msgstr "Tinka žodžių: 15"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:377
 msgid "Promotion Subheadline Text"
-msgstr ""
+msgstr "Reklaminės poantraštės tekstas"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:391
 msgid "Appropriate Words: 3"
-msgstr ""
+msgstr "Tinka žodžių: 3"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:392
 msgid "Promotion Headline Button Text "
-msgstr ""
+msgstr "Reklaminės antraštės mygtuko tekstas"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:406
 msgid "Promotion Headline Link"
-msgstr ""
+msgstr "Reklaminės antraštės nuoroda"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:430
 msgid "Change default placeholder text in Search."
-msgstr ""
+msgstr "Keisti numatytąjį tekstą paieškoje."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:433
 msgid "Search Options"
-msgstr ""
+msgstr "Paieškos parinktys"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:443
 msgid "Default Display Text in Search"
-msgstr ""
+msgstr "Įprastas ekrano tekstas paieškoje"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:51
 msgid "Logo"
-msgstr ""
+msgstr "Logotipas"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:64
 msgid "Check to disable logo"
-msgstr ""
+msgstr "Pažymėkite langelį, jei norite išjungti logotipą."
 
 #: ../inc/customizer-includes/catchbase-customizer.php:78
 msgid "Logo Alt Text"
-msgstr ""
+msgstr "Logotipo alternatyvus tekstas"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:92
 msgid "Check to move Site Title and Tagline before logo"
 msgstr ""
+"Pažymėkite norėdami padėti tinklapio pavadinimą ir apibūdinimą prieš logotipą"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:118
 msgid "Color Scheme"
-msgstr ""
+msgstr "Spalvų schema"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:143
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view full "
 "effects."
 msgstr ""
+"Atsargiai: Atstatykite visus nustatymus į numatytuosius. Po išsaugojimo "
+"atnaujinkite puslapį, kad galėtumėte peržiūrėti pilną efektą."
 
 #: ../inc/customizer-includes/catchbase-customizer.php:145
 msgid "Reset all settings"
-msgstr ""
+msgstr "Atstatyti visus nustatymus"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:156
 msgid "Check to reset all settings to default"
-msgstr ""
+msgstr "Pažymėkite norėdami atstatyti visus nustatymus į numatytuosius"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:166
 #: ../inc/customizer-includes/catchbase-customizer.php:177
 msgid "Important Links"
-msgstr ""
+msgstr "Svarbios nuorodos"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:212
 msgid "Upgrade To Pro &raquo;"
-msgstr ""
+msgstr "Atnaujinkite į Pro &raquo;"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:214
 msgid ""
 "Some settings might be missing or disorganized in this version of WordPress. So "
 "we suggest you to upgrade to version 4.0 or better."
 msgstr ""
+"Kai kurių nustatymų gali trūkti arba būti neorganizuoti šioje WordPress "
+"versijoje. Taigi, mes rekomenduojame jums atnaujinti iki versijos 4.0 ar "
+"geresnės."
 
 #: ../no-results.php:14
 msgid "Error 404-Page NOT Found"
-msgstr ""
+msgstr "Klaida 404 puslapis nerastas"
 
 #: ../search.php:19
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Paieškos rezultatai: %s"
 
 #: ../searchform.php:14 ../searchform.php:15
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "Ieškoti:"
 
 #: ../searchform.php:17
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Ieškoti"
 
 #: ../sidebar-secondary.php:28
 msgid "Secondary Sidebar Widget Area"
@@ -1204,13 +1249,71 @@ msgid ""
 "widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> which will "
 "replace default widgets."
 msgstr ""
+"Pagal nutylėjimą jis užkraus paieškos ir archyvų valdiklius, kaip parodyta "
+"žemiau. Jūs galite pridėti valdiklį į šią sritį apsilankę savo <a href=\"%s"
+"\">valdiklių skyde</a> , kuris pakeis numatytuosius valdiklius."
 
 #: ../sidebar.php:75
 msgid "Primary Sidebar Widget Area"
-msgstr ""
+msgstr "Pagrindinės šoninės juostos valdiklių sritis"
 
 #: ../sidebar.php:78
 msgid ""
 "This is the Primary Sidebar Widget Area if you are using a two or three column "
 "site layout option."
 msgstr ""
+"Tai yra pagrindinės šoninės juostos valdiklių sritis, jei naudojate dviejų ar "
+"trijų stulpelių svetainės išdėstymo variantą."
+
+#~ msgctxt "Open Sans font: on or off"
+#~ msgid "on"
+#~ msgstr "Įjungti"
+
+#~ msgctxt "Droid Sans font: on or off"
+#~ msgid "on"
+#~ msgstr "Įjungti"
+
+#~ msgid "Catch Responsive is a Premium Responsive WordPress Theme"
+#~ msgstr "Catch Responsive yra aukščiausios kokybės reaguojanti WordPress tema"
+
+#~ msgid "Here you can showcase the x number of Featured Content."
+#~ msgstr "Čia Jūs galite demonstruoti x skaičių reklaminio turinio."
+
+#~ msgid "Featured"
+#~ msgstr "Reklaminis"
+
+#~ msgid "Full Size"
+#~ msgstr "Visas dydis"
+
+#~ msgid "Permalink to: "
+#~ msgstr "Pastovi nuoroda į:"
+
+#~ msgid "Catchresponsive Options"
+#~ msgstr "Catchresponsive parinktys"
+
+#~ msgid "Excerpt length. Default is 55 words"
+#~ msgstr "Numatytasis nustatymas yra 55 žodžiai."
+
+#~ msgid "Featured Content Settings"
+#~ msgstr "Populiariausio turinio nustatymai "
+
+#~ msgid "Featured Content Type"
+#~ msgstr "Reklaminio turinio tipas"
+
+#~ msgid "Featured Slider Settings"
+#~ msgstr "Reklaminio slinkiklio nustatymai"
+
+#~ msgid "Featured Slider Type"
+#~ msgstr "Reklaminio slankiklio tipas"
+
+#~ msgid "Archive for %s"
+#~ msgstr "Archyvas %s"
+
+#~ msgid "Search results for: %s"
+#~ msgstr "Paieškos rezultatai: %s"
+
+#~ msgid "Posts tagged %s"
+#~ msgstr "Įrašai pažymėti %s"
+
+#~ msgid "View all posts by %s"
+#~ msgstr "Peržiūrėti visus įrašus %s"
