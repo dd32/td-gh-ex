@@ -1,8 +1,12 @@
 == Changelog ==
 
+Version 1.8
+* Added Danish translation da_DK.po and da_DK.mo files
+* Bug Fixed: Footer overflow issue in Safari and mobile devices
+
 Version 1.7.1
-* Bug Fixed: Renamed Flickr to Instagram
-* Big Fixed: Warning fixed on saving Featured Content
+* Bug Fixed: Predefined social icon in theme customizer
+* Bug Fixed: Warning fixed on saving Featured Content ( Reported by animaladvocacy )
 
 Version 1.7
 * Added all theme options to customizer

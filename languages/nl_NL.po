@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
-"POT-Creation-Date: 2015-09-07 17:05+0545\n"
+"POT-Creation-Date: 2015-10-06 15:16+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: \n"
@@ -1001,7 +1001,7 @@ msgid "Donate to Adventurous"
 msgstr "Doneer aan Adventurous"
 
 #: ../inc/panel/adventurous-theme-options.php:105
-#: ../inc/panel/customizer/customizer-custom-controls.php:73
+#: ../inc/panel/customizer/customizer-custom-controls.php:72
 msgid "Donate Now"
 msgstr "Doneer nu"
 
@@ -1010,7 +1010,7 @@ msgid "http://catchthemes.com/support/"
 msgstr "http://catchthemes.com/support/"
 
 #: ../inc/panel/adventurous-theme-options.php:106
-#: ../inc/panel/customizer/customizer-custom-controls.php:65
+#: ../inc/panel/customizer/customizer-custom-controls.php:64
 msgid "Support"
 msgstr "Support"
 
@@ -1679,21 +1679,21 @@ msgstr "Goodreads"
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:48
+#: ../inc/panel/customizer/customizer-custom-controls.php:47
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:61
+#: ../inc/panel/customizer/customizer-custom-controls.php:60
 msgid "Theme Instructions"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:69
+#: ../inc/panel/customizer/customizer-custom-controls.php:68
 msgid "Changelog"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:77
+#: ../inc/panel/customizer/customizer-custom-controls.php:76
 msgid "Review"
 msgstr ""
 
