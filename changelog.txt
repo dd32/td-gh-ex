@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 3.5
+* Added Danish translation da_DK.po and da_DK.mo files
+
 Version 3.4.1
 * Bug Fixed: Default index on social icons on customizer
 * Big Fixed: Warning fixed on saving Featured Content

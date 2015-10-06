@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-20 18:11+0545\n"
-"PO-Revision-Date: 2015-08-20 18:11+0545\n"
+"POT-Creation-Date: 2015-10-06 15:04+0545\n"
+"PO-Revision-Date: 2015-10-06 15:04+0545\n"
 "Last-Translator: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language-Team: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language: ca_ES\n"
@@ -796,31 +796,31 @@ msgstr "cover"
 msgid "shuffle"
 msgstr "shuffle"
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:48
+#: ../inc/panel/customizer/customizer-custom-controls.php:47
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:61
+#: ../inc/panel/customizer/customizer-custom-controls.php:60
 msgid "Theme Instructions"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:65
+#: ../inc/panel/customizer/customizer-custom-controls.php:64
 #: ../inc/panel/theme-options.php:106
 msgid "Support"
 msgstr "Suport tècnic"
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:69
+#: ../inc/panel/customizer/customizer-custom-controls.php:68
 msgid "Changelog"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:73
+#: ../inc/panel/customizer/customizer-custom-controls.php:72
 #: ../inc/panel/theme-options.php:105
 msgid "Donate Now"
 msgstr "Dóna ara"
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:77
+#: ../inc/panel/customizer/customizer-custom-controls.php:76
 msgid "Review"
 msgstr ""
 

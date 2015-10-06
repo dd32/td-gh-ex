@@ -31,7 +31,6 @@ class Catchkathmandu_Customize_Dropdown_Categories_Control extends WP_Customize_
 				'hide_empty'       => false,
 				'show_option_none' => false,
 				'hide_if_empty'    => false,
-				'selected'         => $this->value(),
 			)
 		);
 
