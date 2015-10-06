@@ -1,16 +1,21 @@
+# Copyright (C) 2014 Catch Themes
+# This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Catch Responsive\n"
+"Project-Id-Version: Full Frame\n"
+"Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-"
+"responsive-free/\n"
 "POT-Creation-Date: 2015-10-06 23:28+0545\n"
-"PO-Revision-Date: \n"
-"Last-Translator: PA Angelini <nosencheres@free.fr>\n"
+"PO-Revision-Date: 2015-10-06 23:28+0545\n"
+"Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
-"Language: fr\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.7.1\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_attr_x:1,2c\n"
@@ -19,285 +24,285 @@ msgstr ""
 
 #: ../404.php:18
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oops cette page n'a pas été trouvée. "
+msgstr "Apgailestaujame, šio puslapio nepavyko rasti!"
 
 #: ../404.php:22
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Rien n'a été trouvé à cet endroit.  Essayez peut-être un des liens ci-dessous ou "
-"une recherche?"
+"Atrodo, nieko nerasta šioje vietoje. Gal pabandykite vieną iš žemiau esančių "
+"nuorodų arba paiešką?"
 
 #: ../archive.php:30
 #, php-format
 msgid "Author: %s"
-msgstr "Auteur: %s"
+msgstr "Autorius: %s"
 
 #: ../archive.php:33
 #, php-format
 msgid "Day: %s"
-msgstr "Jour: %s"
+msgstr "Diena: %s"
 
 #: ../archive.php:36
 #, php-format
 msgid "Month: %s"
-msgstr "Mois: %s"
+msgstr "Mėnuo: %s"
 
 #: ../archive.php:36
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr "M A"
+msgstr "F Y"
 
 #: ../archive.php:39
 #, php-format
 msgid "Year: %s"
-msgstr "Année: %s"
+msgstr "Metai: %s"
 
 #: ../archive.php:39
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr "A"
+msgstr "m."
 
 #: ../archive.php:42
 msgid "Asides"
-msgstr "De coté"
+msgstr "Atidėjimo"
 
 #: ../archive.php:45
 msgid "Galleries"
-msgstr "Galeries"
+msgstr "Galerijos"
 
 #: ../archive.php:48
 msgid "Images"
-msgstr "Images"
+msgstr "Paveikslėliai"
 
 #: ../archive.php:51
 msgid "Videos"
-msgstr "Vidéos"
+msgstr "Video"
 
 #: ../archive.php:54
 msgid "Quotes"
-msgstr "Citations"
+msgstr "Citatos"
 
 #: ../archive.php:57
 msgid "Links"
-msgstr "Liens"
+msgstr "Nuorodos"
 
 #: ../archive.php:60
 msgid "Statuses"
-msgstr "Etats"
+msgstr "Būsenos"
 
 #: ../archive.php:63
 msgid "Audios"
-msgstr "Audios"
+msgstr "Audio"
 
 #: ../archive.php:66
 msgid "Chats"
-msgstr "Discutions"
+msgstr "Pokalbiai"
 
 #: ../archive.php:69 ../sidebar.php:91
 msgid "Archives"
-msgstr "Archives"
+msgstr "Archyvai"
 
 #: ../comments.php:27
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Un commentaire à propos de &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s commentaires à propos de &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] "%1$s mintys apie &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s minčių apie &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:34 ../comments.php:59
 msgid "Comment navigation"
-msgstr "Navigation dans le commentaires"
+msgstr "Komentarų valdymas"
 
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
-msgstr "& Larr; Commentaires plus anciens"
+msgstr "&larr; senesni komentarai"
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
-msgstr "Commentaires récents &rarr;"
+msgstr "Naujausi komentarai &rarr;"
 
 #: ../comments.php:71
 msgid "Comments are closed."
-msgstr "Les commentaires sont fermés"
+msgstr "Komentarai negalimi."
 
 #: ../content-none.php:15
 msgid "Nothing Found"
-msgstr "Rien n'a été trouvé "
+msgstr "Pagal šią užklausą nieko nerasta"
 
 #: ../content-none.php:21 ../no-results.php:20
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Prêt à publier votre premier article ? <a href=\"%1$s\">Commencez ici</a>. "
+"Pasiruošę publikuoti savo pirmąjį įrašą? <a href=\"%1$s\">Pradėkite čia</a> ."
 
 #: ../content-none.php:25 ../no-results.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Désolé, mais votre recherche n'a pas abouti. Merci d’essayer avec d' autres "
-"termes "
+"Atsiprašome, bet nieks neatitiko Jūsų paieškos terminų. Bandykite dar kartą su "
+"kitais raktažodžiais."
 
 #: ../content-none.php:30 ../no-results.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching "
 "can help."
 msgstr ""
-"Il me semble que nous ne trouvons pas ce que vous cherchez. Peut être qu'une "
-"recherche pourra vous aider."
+"Atrodo mes negalime rasti to, ko jūs ieškote. Galbūt ieškojimas gali padėti."
 
 #: ../content-page.php:28 ../content-single.php:31 ../content.php:46
 msgid "Pages:"
-msgstr "Pages:"
+msgstr "Puslapiai:"
 
 #: ../content-page.php:35 ../inc/fullframe-core.php:592
 #: ../inc/fullframe-core.php:611 ../inc/fullframe-core.php:737
 msgid "Edit"
-msgstr "Editer"
+msgstr "Redaguoti"
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:41
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple options."
 msgstr ""
-"Maintenez le bouton / Commande (Mac) Ctrl (windows) pour sélectionner plusieurs "
-"options. "
+"Laikykite nuspaudę Ctrl (Windows) / Command (Mac) mygtuką, norėdami pasirinkti "
+"kelis variantus."
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:54
 msgid "Theme Instructions"
-msgstr " Instructions du thème"
+msgstr "Temos instrukcijos"
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:58
 msgid "Support"
-msgstr "Support"
+msgstr "Pagalba"
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:62
 msgid "Changelog"
-msgstr "Enregistrement des changements"
+msgstr "Keitimų žurnalas"
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:66
 msgid "Donate Now"
-msgstr "Faire un don maintenant "
+msgstr "Paaukok dabar"
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:70
 msgid "Review"
-msgstr "Réviser"
+msgstr "Peržiūra"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:19
 msgid "Options for Featured Content"
-msgstr "Options de Contenu à la Une"
+msgstr "Parinktys reklaminiam turiniui"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:21
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:33
 #: ../inc/fullframe-featured-content.php:57
 msgid "Featured Content"
-msgstr "Contenu à la Une"
+msgstr "Reklaminis turinys"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:27
 msgid "Featured Content Options"
-msgstr "Options de Contenu à la Une"
+msgstr "Reklaminio turinio parinktys "
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:51
 msgid "Enable Featured Content on"
-msgstr "Activer Contenu à la Une"
+msgstr "Įjungti reklaminį turinį"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:73
 msgid "Select Featured Content Layout"
-msgstr "Sélectionnez la mise en page du Contenu à la Une"
+msgstr "Pasirinkti reklaminio turinio išdėstymą"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:88
 msgid "Check to Move above Footer"
-msgstr "Selectionner pour déplacer au dessus du pied de page"
+msgstr "Pažymėkite norėdami perkelti aukščiau apačios"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:103
 msgid "Check to Enable Sliding Effect"
-msgstr "Sélectionner pour activer le mode \"défilement\""
+msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:125
 msgid "Select Content Type"
-msgstr "Sélectionner le type de contenu "
+msgstr "Pasirinkite Turinio tipą"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:140
 msgid "Leave field empty if you want to remove Headline"
-msgstr "Laissez le champ vide si vous souhaitez supprimer le titre"
+msgstr "Palikite lauką tuščią, jei norite pašalinti antraštę"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:141
 msgid "Headline for Featured Content"
-msgstr "Titre du Contenu à la Une"
+msgstr "Antraštė reklaminiam turiniui"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:157
 msgid "Leave field empty if you want to remove Sub-headline"
-msgstr "Laissez le champ vide si vous souhaitez supprimer le sous-titre "
+msgstr "Palikite lauką tuščią, jei norite pašalinti poantraštę"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:158
 msgid "Sub-headline for Featured Content"
-msgstr "Sous-titre du Contenu à la Une"
+msgstr "Poantraštė reklaminiam turiniui"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:174
 msgid ""
 "Save and refresh the page if No. of Featured Content is changed (Max no of "
 "Featured Content is 20)"
 msgstr ""
-"Enregistrer et actualiser la page si le nombre de Contenus à la Une est modifié "
-"(Valeur max : 20)"
+"Išsaugokite ir atnaujinkite puslapį, jei reklaminio turinio skaičius pasikeitė "
+"(Max skaičius reklaminio turinio yra 20)"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:181
 msgid "No of Featured Content"
-msgstr "Numéro du Contenu à la Une"
+msgstr "Reklaminio turinio skaičius"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:196
 msgid "Check to Enable Title"
-msgstr "Sélectionner pour activer le titre"
+msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:218
 msgid "Display Content"
-msgstr "Affiche le contenu"
+msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:234
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:196
 msgid "Featured Page"
-msgstr "Page à la Une"
+msgstr "Reklaminis puslapis"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:245
 msgid "Featured Content Background Settings"
-msgstr "Paramètres de fond d'écran pour Contenu à la une "
+msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:256
 msgid "Select/Add Background Image"
-msgstr "Sélectionner / Ajouter Image de fond"
+msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:19
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:27
 msgid "Featured Slider Options"
-msgstr "Options du Bandeau défilant "
+msgstr "Reklaminio slinkiklio parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:21
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:33
 msgid "Featured Slider"
-msgstr "Bandeau défilant"
+msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:51
 msgid "Enable Slider on"
-msgstr "Activer Bandeau défilant"
+msgstr "Įjungti slinkiklį"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:73
 msgid "Transition Effect"
-msgstr "Effet de transition "
+msgstr "Pereinamasis efektas"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:89
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:108
 msgid "seconds(s)"
-msgstr "seconde (s) "
+msgstr "sekundės(-džių)"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:93
 msgid "Transition Delay"
-msgstr "Délai entre transitions "
+msgstr "Perėjimo delsimas"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:112
 msgid "Transition Length"
-msgstr "Longueur de la transition "
+msgstr "Perėjimo ilgis"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:133
 msgid ""
@@ -306,76 +311,71 @@ msgid ""
 "the height overlap issue.<br> Slideshow will start only after all images are "
 "available."
 msgstr ""
-"Vrai : Corrige les problèmes de superposition sur la hauteur. Le diaporama "
-"démarre dès que deux diapos sont disponibles. Peut être aléatoire, à chaque "
-"acquisition d'image<br> Attendre : Corrige les problèmes de superposition sur la "
-"hauteur.<br>Le diaporama démarre seulement quand toutes les images sont "
-"disponibles."
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:135
 msgid "Image Loader"
-msgstr "Chargeur d'image"
+msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:157
 msgid "Select Slider Type"
-msgstr "Sélectionnez le type de défilement"
+msgstr "Pasirinkite slankiklio tipą"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:172
 msgid ""
 "Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
 msgstr ""
-"Enregistrer et actualiser la page si le nombre de diapositives est modifié (Nbre "
-"max de diapositives: 20) "
+"Išsaugokite ir atnaujinkite puslapį, jei skaidrių skaičius yra pasikeitęs (maks. "
+"skaičius skaidrių yra 20)"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:179
 msgid "No of Slides"
-msgstr "Numéro de diapositives "
+msgstr "Skaidrių skaičius"
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:31
 msgid "Enable Featured Header Image on "
-msgstr "Activer la fonction Image d'en-tête"
+msgstr "Įjungti reklaminės antraštės paveiksliuką"
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:52
 msgid "Page/Post Featured Header Image Size"
-msgstr "Taille d'image d'en tête pour une page/article"
+msgstr "Puslapio/įrašo reklaminės antraštės paveiksliuko dydis"
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:65
 msgid "Featured Header Image Alt/Title Tag "
-msgstr " Image d'en tête : Titre et balise alternatif␣ "
+msgstr "Reklaminės antraštės paveiksliuko alternatyvus tekstas"
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:78
 msgid "Featured Header Image Link URL"
-msgstr "URL de l' Image d'en tête"
+msgstr "Reklaminės antraštės paveiksliuko nuorodos URL"
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:91
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:430
 msgid "Check to Open Link in New Window/Tab"
-msgstr "Sélectionner pour que le lien s'ouvre dans une nouvelle fenêtre / onglet "
+msgstr "Pažymėkite, kad atidaryti nuorodą naujame lange/kortelėje"
 
 #: ../inc/customizer-includes/fullframe-customizer-social-icons.php:19
 msgid "Note: Enter the url for correponding social networking website"
-msgstr "Remarque: entrez l'URL du réseau social correspondant"
+msgstr "Pastaba: įveskite URL atitinkamai socialinio tinklo svetainei"
 
 #: ../inc/customizer-includes/fullframe-customizer-social-icons.php:21
 #: ../inc/customizer-includes/fullframe-customizer-social-icons.php:27
 msgid "Social Links"
-msgstr "Liens vers réseaux sociaux "
+msgstr "Socialinės nuorodos"
 
 #: ../inc/customizer-includes/fullframe-customizer-social-icons.php:44
 msgid ""
 "Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
 "{action}. More Information in readme file"
 msgstr ""
-"Les liens vers Skype peuvent être du format :<br>callto://+{number}<br> skype:"
-"{username}?{action}. Plus d'informations dans le fichier readme."
+"Skype nuoroda gali būti formatais:<br>callto://+{number}<br> skype:{username}?"
+"{action}. Daugiau informacijos readme faile."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:20
 msgid "Basic theme Options"
-msgstr "Options de base du  thème "
+msgstr "Pagrindinės temos parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:23
 msgid "Theme Options"
-msgstr "Options du thème "
+msgstr "Temos parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:28
 msgid ""
@@ -383,120 +383,120 @@ msgid ""
 "your site with just a glance. You can enable/disable them on homepage and entire "
 "site."
 msgstr ""
-"les fils d'Ariane permettent à vos visiteurs de trouver où ils sont sur votre "
-"site d'un simple coup d'œil. Vous pouvez  les activer/désactiver sur la page "
-"d'accueil et sur tout le site."
+"Viršutinis slankusis laukas yra puikus būdas leisti savo lankytojams sužinoti, "
+"kur jie yra jūsų svetainėje vos tik žvilgterėjus. Jūs galite įjungti/išjungti "
+"juos puslapyje ir visoje svetainėje."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:30
 msgid "Breadcrumb Options"
-msgstr "Options du fil d'Ariane"
+msgstr "Viršutinio slankaus lauko parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:41
 msgid "Check to enable Breadcrumb"
-msgstr "Sélectionner pour activer fil d'Ariane "
+msgstr "Pažymėkite norėdami įjungti viršutinį slankųjį lauką."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:54
 msgid "Check to enable Breadcrumb on Homepage"
-msgstr "Sélectionner pour activer le fil d'ariane sur la page d'accueil "
+msgstr "Pažymėkite norėdami įjungti viršutinį slankųjį lauką pradžios puslapyje."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:70
 msgid "Separator between Breadcrumbs"
-msgstr "Séparateur entre les champs du fil d'Ariane"
+msgstr "Viršutiniojo slankaus lauko skirtukas"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:80
 msgid "Custom/Inline CSS"
-msgstr "CCS Personnalisée"
+msgstr "Individualus/Inline CSS"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:83
 msgid "Custom CSS Options"
-msgstr "Options CSS personnalisées "
+msgstr "Individualaus CSS parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:93
 msgid "Enter Custom CSS"
-msgstr "Entrez CSS personnalisé "
+msgstr "Įveskite individualų CSS"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:105
 msgid "Excerpt Options"
-msgstr "Option des extraits "
+msgstr "Ištraukos parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:115
 msgid "Excerpt length. Default is 40 words"
-msgstr "Longueur des extraits. Par défaut  : 40 mots"
+msgstr "Numatytasis nustatymas yra 40 žodžiai."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:122
 msgid "Excerpt Length (words)"
-msgstr "Longueur de l'extrait  (mots) "
+msgstr "Ištraukos Ilgis (žodžiais)"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:136
 msgid "Read More Text"
-msgstr "En lire plus"
+msgstr "Skaityti daugiau teksto"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:145
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on the "
 "front page"
 msgstr ""
-"Seuls les articles qui appartiennent aux catégories sélectionnées ici seront "
-"affichés sur la page d'accueil "
+"Tik pranešimai, kurie priklauso vienai iš pažymėtų kategorijų, bus rodomi "
+"tituliniame puslapyje."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:148
 msgid "Homepage / Frontpage Options"
-msgstr "Options de Page d'accueil / Première page"
+msgstr "Pradžios/titulinio puslapio parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:158
 msgid "Select Categories"
-msgstr "Sélectionner Catégories "
+msgstr "Pasirinkite kategorijas"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:169
 msgid "Remove Icon images to disable."
-msgstr "Supprimer les icônes d'image pour désactiver la fonction."
+msgstr "Pašalinkite favicon paveiksliukus tam, kad išjungti."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:172
 msgid "Icon Options"
-msgstr " Options de l'icône"
+msgstr "Ikonos parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:181
 msgid "Select/Add Favicon"
-msgstr "Sélectionner / Ajouter Favicon "
+msgstr "Pasirinkti/įdėti Favicon"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:192
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
 "height, which will support High Resolution Devices like iPad Retina."
 msgstr ""
-"Web clip pour les appareils Apple. Taille recommandée - Largeur et Hauteur 144px "
-"144px de hauteur, pour s'adapter aux dispositifs à haute résolution comme iPad "
+"Web Clip ikona Apple įrenginiams. Rekomenduojamas dydis - plotis 144px ir "
+"aukštis 144px, kuris palaikys didelės raiškos įrenginius, pavyzdžiui, iPad "
 "Retina."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:193
 msgid "Select/Add Web Clip Icon"
-msgstr "Sélectionner / Ajouter Web clip "
+msgstr "Pasirinkti/pridėti Web Clip ikoną"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:204
 msgid "Logo Icon is displayed in Primary Menu"
-msgstr "L'îcone du Logo est affichée dans le Menu Primaire"
+msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:205
 msgid "Select/Add Logo Icon"
-msgstr "Sélectionner / Ajouter une îcone du Logo"
+msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:216
 #: ../inc/fullframe-metabox.php:92
 msgid "Layout Options"
-msgstr "Options de mise en page"
+msgstr "Maketo parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:233
 msgid "Default Layout"
-msgstr "Mise en page par défaut "
+msgstr "Įprastas išdėstymas"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:253
 msgid "Archive Content Layout"
-msgstr "Mise en page du contenu des archives"
+msgstr "Archyvo turinio išdėstymas"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:273
 #: ../inc/fullframe-metabox.php:94
 msgid "Single Page/Post Image Layout "
-msgstr "Mise en page des images dans un article/page"
+msgstr "Atskiro puslapio/įrašo paveikslėlio padėtis"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:284
 #, php-format
@@ -505,9 +505,9 @@ msgid ""
 "<br/>Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
 "Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
-"L'option Numérique nécessite le plugin <a target=\"_blank\" href=\"%s\"> WP-"
-"PageNavi Plugin </a>. <br/>  L'option de défilement infini nécessite <a target="
-"\"_blank\" href=\"%s\"> JetPack Plugin </a> avec module Infinite Scroll activé."
+"Skaičių variantas reikalauja <a target=\"_blank\" href=\"%s\">WP-PageNavi "
+"įskiepio</a> . <br/> Begalinio slinkimo parinktys reikalauja <a target=\"_blank"
+"\" href=\"%s\">Jetpack įskiepio</a> su įjungtu begalinio slinkimo moduliu."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:291
 #, php-format
@@ -515,226 +515,227 @@ msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
 "Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
-"L'option de défilement infini nécessite <a target=\"_blank\" href=\"%s\"> "
-"JetPack Plugin </a> avec module Infini Scroll activé. "
+"Begalinio slinkimo parinktys reikalauja <a target=\"_blank\" href=\"%s\">Jetpack "
+"įskiepio</a> su įjungtu begalinio slinkimo moduliu."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:302
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
 msgstr ""
-"L'option Numérique nécessite <a target=\"_blank\" href=\"%s\"> WP-PageNavi "
-"Plugin </a>. "
+"Skaičių variantas reikalauja <a target=\"_blank\" href=\"%s\">WP-PageNavi "
+"įskiepio</a> ."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:313
 msgid "Pagination Options"
-msgstr "Options de pagination "
+msgstr "Numeracijos parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:330
 msgid "Pagination type"
-msgstr "Type de pagination "
+msgstr "Numeracijos tipas"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:339
 msgid "To disable the fields, simply leave them empty."
-msgstr "Pour désactiver les champs, laissez les simplement vide. "
+msgstr "Norėdami išjungti laukus, tiesiog palikite juos tuščius."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:342
 msgid "Promotion Headline Options"
-msgstr "Options pour le titre de promotion"
+msgstr "Reklaminės antraštės parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:359
 msgid "Enable Promotion Headline on"
-msgstr "Activer le titre de promotion"
+msgstr "Įjungti reklaminę antraštę"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:373
 msgid "Appropriate Words: 10"
-msgstr "Nombre de mots recommandé : 10 "
+msgstr "Tinka žodžių: 10"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:374
 msgid "Promotion Headline Text"
-msgstr "Texte du titre de promotion"
+msgstr "Reklaminės antraštės tekstas"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:387
 msgid "Appropriate Words: 15"
-msgstr "Nombre de mots recommandés: 15 "
+msgstr "Tinka žodžių: 15"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:388
 msgid "Promotion Subheadline Text"
-msgstr "Texte du sous-titre de promotion"
+msgstr "Reklaminės poantraštės tekstas"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:401
 msgid "Appropriate Words: 3"
-msgstr "Nombre de mots recommandés: 3 "
+msgstr "Tinka žodžių: 3"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:402
 msgid "Promotion Headline Button Text "
-msgstr "Texte du bouton \"Titre de Promotion\""
+msgstr "Reklaminės antraštės mygtuko tekstas"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:416
 msgid "Promotion Headline Link"
-msgstr "Lien du titre de promotion"
+msgstr "Reklaminės antraštės nuoroda"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:440
 msgid "Change default placeholder text in Search."
-msgstr "Changer le texte affiché par défaut dans Recherche"
+msgstr "Keisti numatytąjį tekstą paieškoje."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:443
 msgid "Search Options"
-msgstr "Options de recherche "
+msgstr "Paieškos parinktys"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:453
 msgid "Default Display Text in Search"
-msgstr "Texte affiché par défaut dans Rechercher "
+msgstr "Įprastas ekrano tekstas paieškoje"
 
 #: ../inc/customizer-includes/fullframe-customizer.php:51
 msgid "Logo"
-msgstr "Logo"
+msgstr "Logotipas"
 
 #: ../inc/customizer-includes/fullframe-customizer.php:64
 msgid "Check to disable logo"
-msgstr "Sélectionner pour désactiver le logo "
+msgstr "Pažymėkite langelį, jei norite išjungti logotipą."
 
 #: ../inc/customizer-includes/fullframe-customizer.php:78
 msgid "Logo Alt Text"
-msgstr "Texte alternatif du Logo"
+msgstr "Logotipo alternatyvus tekstas"
 
 #: ../inc/customizer-includes/fullframe-customizer.php:92
 msgid "Check to move Site Title and Tagline before logo"
-msgstr "Sélectionner pour déplacer le titre du site et le le slogan avant le logo "
+msgstr ""
+"Pažymėkite norėdami padėti tinklapio pavadinimą ir apibūdinimą prieš logotipą"
 
 #: ../inc/customizer-includes/fullframe-customizer.php:118
 msgid "Color Scheme"
-msgstr "Choix des couleurs"
+msgstr "Spalvų schema"
 
 #: ../inc/customizer-includes/fullframe-customizer.php:143
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view full "
 "effects."
 msgstr ""
-"Attention: Réinitialise tous les réglages par défaut. Rafraîchissez la page "
-"après enregistrement pour visualiser l'effet."
+"Atsargiai: Atstatykite visus nustatymus į numatytuosius. Po išsaugojimo "
+"atnaujinkite puslapį, kad galėtumėte peržiūrėti pilną efektą."
 
 #: ../inc/customizer-includes/fullframe-customizer.php:145
 msgid "Reset all settings"
-msgstr "Réinitialiser tous les réglages "
+msgstr "Atstatyti visus nustatymus"
 
 #: ../inc/customizer-includes/fullframe-customizer.php:156
 msgid "Check to reset all settings to default"
-msgstr "Sélectionner pour réinitialiser tous les paramètres par défaut "
+msgstr "Pažymėkite norėdami atstatyti visus nustatymus į numatytuosius"
 
 #: ../inc/customizer-includes/fullframe-customizer.php:166
 #: ../inc/customizer-includes/fullframe-customizer.php:177
 msgid "Important Links"
-msgstr "Liens importants "
+msgstr "Svarbios nuorodos"
 
 #: ../inc/customizer-includes/fullframe-customizer.php:212
 msgid "Upgrade To Pro &raquo;"
-msgstr "Upgrader vers version Pro &raquo;"
+msgstr "Atnaujinkite į Pro &raquo;"
 
 #: ../inc/fullframe-breadcrumb.php:57
 msgid "Home"
-msgstr "Accueil"
+msgstr "Pradžia"
 
 #: ../inc/fullframe-breadcrumb.php:58
 #, php-format
 msgid "%1$s Archive for %2$s"
-msgstr "%1$s Archive de %2$s"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:59
 #, php-format
 msgid "%1$sSearch results for: %2$s"
-msgstr "%1$sRésultats de recherche pour: %2$s"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:60
 #, php-format
 msgid "%1$sPosts tagged %2$s"
-msgstr "%1$sArticles étiquettés %2$s"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:61
 #, php-format
 msgid "%1$sView all posts by %2$s"
-msgstr "%1$sVoir tous les articles par %2$s"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:62
 msgid "Error 404"
-msgstr "Erreur 404"
+msgstr "Klaida 404"
 
 #: ../inc/fullframe-breadcrumb.php:222
 #, php-format
 msgid "Page %s"
-msgstr "Page %s"
+msgstr "Puslapis %s"
 
 #: ../inc/fullframe-core.php:77 ../inc/fullframe-menus.php:26
 msgid "Primary Menu"
-msgstr "Menu primaire"
+msgstr "Pagrindinis meniu"
 
 #: ../inc/fullframe-core.php:558
 msgid "Post navigation"
-msgstr "Navigation dans les articles"
+msgstr "Įrašo meniu"
 
 #: ../inc/fullframe-core.php:567
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Anciens articles"
+msgstr "<span class=\"meta-nav\">&larr;</span> Senesni pranešimai"
 
 #: ../inc/fullframe-core.php:568
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Articles récents<span class=\"meta-nav\">&rarr;</span> "
+msgstr "Naujausi pranešimai <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/fullframe-core.php:592
 msgid "Pingback:"
-msgstr "Pingback: "
+msgstr "Žingsniu atgal:"
 
 #: ../inc/fullframe-core.php:602
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
-msgstr "%s <span class=\"dit\">dit:</span>"
+msgstr "%s <span class=\"says\">sako:</span>"
 
 #: ../inc/fullframe-core.php:608
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
-msgstr "%1$s à %2$s "
+msgstr "%1$s %2$s"
 
 #: ../inc/fullframe-core.php:615
 msgid "Your comment is awaiting moderation."
-msgstr "Votre commentaire est en attente de modération. "
+msgstr "Jūsų komentaras laukia patvirtinimo."
 
 #: ../inc/fullframe-core.php:718
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
-msgstr "<span class = \"screen-reader-text\"> Posté le </ span>"
+msgstr "<span class=\"screen-reader-text\">Paskelbta</span>"
 
 #: ../inc/fullframe-core.php:725
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
-msgstr "<span class = \"screen-reader-text\"> Auteur </ span>"
+msgstr "<span class=\"screen-reader-text\">Autorius</span>"
 
 #: ../inc/fullframe-core.php:733
 msgid "Leave a comment"
-msgstr "Laisser un commentaire"
+msgstr "Parašykite komentarą"
 
 #: ../inc/fullframe-core.php:733
 msgid "1 Comment"
-msgstr "1 commentaire"
+msgstr "1 komentaras"
 
 #: ../inc/fullframe-core.php:733
 msgid "% Comments"
-msgstr "% Commentaires"
+msgstr "% komentarai"
 
 #: ../inc/fullframe-core.php:754 ../inc/fullframe-core.php:762
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
-msgstr ", ␣"
+msgstr ", "
 
 #: ../inc/fullframe-core.php:757
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
-msgstr "<span class = \"screen-reader-text\"> Catégories </ span>"
+msgstr "<span class=\"screen-reader-text\">Kategorijos</span>"
 
 #: ../inc/fullframe-core.php:765
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
-msgstr "<span class = \"screen-reader-text\"> Etiquettes </ span>"
+msgstr "<span class=\"screen-reader-text\">Žymės</span>"
 
 #: ../inc/fullframe-core.php:908
 #, php-format
@@ -743,240 +744,240 @@ msgstr "%s"
 
 #: ../inc/fullframe-core.php:1350
 msgid "Scroll Up"
-msgstr "Remonter"
+msgstr "Slinkti aukštyn"
 
 #: ../inc/fullframe-core.php:1367
 msgid "Posted on"
-msgstr "Posté le"
+msgstr "Paskelbta"
 
 #: ../inc/fullframe-core.php:1368
 msgid "By"
-msgstr "par"
+msgstr "pagal"
 
 #: ../inc/fullframe-core.php:1409
 msgid "Next &rarr;"
-msgstr "Suivant &rarr;"
+msgstr ""
 
 #: ../inc/fullframe-core.php:1410
 msgid "Next post:"
-msgstr "Article suivant:"
+msgstr ""
 
 #: ../inc/fullframe-core.php:1412
 msgid "&larr; Previous"
-msgstr "&larr; Précédant"
+msgstr ""
 
 #: ../inc/fullframe-core.php:1413
 msgid "Previous post:"
-msgstr "Article précédent:"
+msgstr ""
 
 #: ../inc/fullframe-default-options.php:53
 msgid "Read More ..."
-msgstr "En lire plus ..."
+msgstr "Skaityti toliau ..."
 
 #: ../inc/fullframe-default-options.php:63
 msgid "Full Frame is a Premium Responsive WordPress Theme"
-msgstr "Full Frame est un thème Wordpress Premium et Responsive "
+msgstr ""
 
 #: ../inc/fullframe-default-options.php:64
 msgid ""
 "This is promotion headline. You can edit this from Appearance -> Customize -> "
 "Theme Options -> Promotion Headline Options"
 msgstr ""
-"Ceci est le titre de promotion. Vous pouvez l'éditer à partir Apparence -> "
-"Personnaliser -> Options de thème -> Options du titre de promotion"
+"Tai yra skatinamoji antraštė. Galite redaguoti ją per Išvaizda -> Tinkinti -> "
+"Temos parinktys -> Reklaminės antraštės parinktys"
 
 #: ../inc/fullframe-default-options.php:65
 msgid "Reviews"
-msgstr "Avis"
+msgstr "Apžvalgos"
 
 #: ../inc/fullframe-default-options.php:70
 msgid "Search..."
-msgstr "Recherche"
+msgstr "Ieškoti..."
 
 #: ../inc/fullframe-default-options.php:115
 msgid "Light"
-msgstr "Clair"
+msgstr "Šviesi"
 
 #: ../inc/fullframe-default-options.php:119
 msgid "Dark"
-msgstr "Sombre"
+msgstr "Tamsi"
 
 #: ../inc/fullframe-default-options.php:136
 #: ../inc/fullframe-default-options.php:536
 msgid "Primary Sidebar, Content"
-msgstr "Première colonne latérale, contenu"
+msgstr "Pagrindinė šoninė juosta, turinys"
 
 #: ../inc/fullframe-default-options.php:140
 #: ../inc/fullframe-default-options.php:541
 msgid "Content, Primary Sidebar"
-msgstr "Contenu, première colonne latérale"
+msgstr "Turinys, pagrindinė šoninė juosta"
 
 #: ../inc/fullframe-default-options.php:144
 #: ../inc/fullframe-default-options.php:546
 msgid "No Sidebar ( Content Width )"
-msgstr "Aucune colonne latérale (Largeur du contenu)"
+msgstr "Be šoninės juostos (turinio plotis)"
 
 #: ../inc/fullframe-default-options.php:160
 #: ../inc/fullframe-default-options.php:313
 msgid "Show Excerpt"
-msgstr "Montrer l'extrait"
+msgstr "Rodyti Ištrauką"
 
 #: ../inc/fullframe-default-options.php:164
 msgid "Show Full Content (No Featured Image)"
-msgstr "Afficher le contenu complet (pas d'image à la Une)"
+msgstr "Rodyti visą turinį (be reklaminio paveikslėlio)"
 
 #: ../inc/fullframe-default-options.php:181
 #: ../inc/fullframe-default-options.php:247
 msgid "Homepage / Frontpage"
-msgstr " Page d'accueil / Première page"
+msgstr "Pradžia / titulinis"
 
 #: ../inc/fullframe-default-options.php:185
 msgid "Excluding Homepage"
-msgstr "Hormis la page d'accueil"
+msgstr "Išskyrus pradžią"
 
 #: ../inc/fullframe-default-options.php:189
 msgid "Excluding Homepage, Page/Post Featured Image"
-msgstr "Hormis page d'accueil et Pages/Articles avec image à la Une"
+msgstr "Išskyrus pradžią, puslapio/įrašo reklaminis paveiksliukas"
 
 #: ../inc/fullframe-default-options.php:193
 #: ../inc/fullframe-default-options.php:251
 msgid "Entire Site"
-msgstr "Tout le site"
+msgstr "Visas tinklapis"
 
 #: ../inc/fullframe-default-options.php:197
 msgid "Entire Site, Page/Post Featured Image"
-msgstr "Tout le site, Pages/articles avec Images à la Une"
+msgstr "Visas tinklapis, puslapio/įrašo reklaminis paveiksliukas"
 
 #: ../inc/fullframe-default-options.php:201
 msgid "Pages and Posts"
-msgstr "Pages et articles"
+msgstr "Puslapiai ir įrašai"
 
 #: ../inc/fullframe-default-options.php:205
 #: ../inc/fullframe-default-options.php:255
 #: ../inc/fullframe-default-options.php:474
 msgid "Disabled"
-msgstr "Désactivé"
+msgstr "Išjungta"
 
 #: ../inc/fullframe-default-options.php:222
 msgid "Full Image"
-msgstr "Image taille réelle"
+msgstr "Visas paveiksliukas"
 
 #: ../inc/fullframe-default-options.php:226
 msgid "Large Image"
-msgstr "Grande image"
+msgstr "Didelis paveiksliukas"
 
 #: ../inc/fullframe-default-options.php:230
 msgid "Slider Image"
-msgstr "Image du bandeau défilant"
+msgstr "Slankiklio paveiksliukas"
 
 #: ../inc/fullframe-default-options.php:272
 msgid "Demo Featured Content"
-msgstr "Démo du Contenu à la Une"
+msgstr "Demo reklaminis turinys"
 
 #: ../inc/fullframe-default-options.php:276
 msgid "Featured Page Content"
-msgstr "Votre Contenu à la Une"
+msgstr "reklaminis puslapio turinys"
 
 #: ../inc/fullframe-default-options.php:293
 msgid "3 columns"
-msgstr "3 colonnes"
+msgstr "3 stulpeliai"
 
 #: ../inc/fullframe-default-options.php:297
 msgid "4 columns"
-msgstr "4 colonnes "
+msgstr "4 stulpeliai"
 
 #: ../inc/fullframe-default-options.php:317
 msgid "Show Full Content"
-msgstr "Montrer tout le contenu"
+msgstr ""
 
 #: ../inc/fullframe-default-options.php:321
 msgid "Hide Content"
-msgstr "Cacher le contenu"
+msgstr ""
 
 #: ../inc/fullframe-default-options.php:338
 msgid "Demo Featured Slider"
-msgstr "Bandeau défilant de démonstration "
+msgstr "Demo reklaminis slankiklis"
 
 #: ../inc/fullframe-default-options.php:342
 msgid "Featured Page Slider"
-msgstr "Vos pages de Bandeau défilant"
+msgstr "Reklaminis puslapio slankiklis"
 
 #: ../inc/fullframe-default-options.php:359
 msgid "Fade"
-msgstr "Fondu enchainé"
+msgstr "Nuvysti"
 
 #: ../inc/fullframe-default-options.php:363
 msgid "Fade Out"
-msgstr "Disparaître "
+msgstr "Išnykti"
 
 #: ../inc/fullframe-default-options.php:367
 msgid "None"
-msgstr "Aucun "
+msgstr "Nėra"
 
 #: ../inc/fullframe-default-options.php:371
 msgid "Scroll Horizontal"
-msgstr "Défilement horizontal "
+msgstr "Slinkti horizontaliai"
 
 #: ../inc/fullframe-default-options.php:375
 msgid "Scroll Vertical"
-msgstr "Défilement Vertical "
+msgstr "Slinkti vertikaliai"
 
 #: ../inc/fullframe-default-options.php:379
 msgid "Flip Horizontal"
-msgstr "Retourner horizontalement "
+msgstr "Apsukti horizontaliai"
 
 #: ../inc/fullframe-default-options.php:383
 msgid "Flip Vertical"
-msgstr "Symétrie axe vertical "
+msgstr "Apsukti vertikaliai"
 
 #: ../inc/fullframe-default-options.php:387
 msgid "Tile Slide"
-msgstr "Défilement tuilé"
+msgstr "Plytelių slinkimas"
 
 #: ../inc/fullframe-default-options.php:391
 msgid "Tile Blind"
-msgstr "Défilement aveugle"
+msgstr "Plytelių užuolaida"
 
 #: ../inc/fullframe-default-options.php:395
 msgid "Suffle"
-msgstr "Aléatoire"
+msgstr "Suffle"
 
 #: ../inc/fullframe-default-options.php:412
 msgid "True"
-msgstr "Vrai"
+msgstr ""
 
 #: ../inc/fullframe-default-options.php:416
 msgid "Wait"
-msgstr "Attendre"
+msgstr ""
 
 #: ../inc/fullframe-default-options.php:420
 msgid "False"
-msgstr "Faux"
+msgstr ""
 
 #: ../inc/fullframe-default-options.php:437
 msgid "Default(Older Posts/Newer Posts)"
-msgstr "Par défaut (anciens articles / articles récents) "
+msgstr "Įprastas (senesni pranešimai/naujesni pranešimai)"
 
 #: ../inc/fullframe-default-options.php:441
 msgid "Numeric"
-msgstr "Numérique"
+msgstr "skaitmeninis"
 
 #: ../inc/fullframe-default-options.php:445
 msgid "Infinite Scroll (Click)"
-msgstr "Infini Scroll (avec clic) "
+msgstr "Begalinis slinkimas (paspaudimas)"
 
 #: ../inc/fullframe-default-options.php:449
 msgid "Infinite Scroll (Scroll)"
-msgstr "Infini Scroll (avec défilement) "
+msgstr "Begalinis slinkimas (slinkimas)"
 
 #: ../inc/fullframe-default-options.php:466
 msgid "Featured"
-msgstr "Sélectionné"
+msgstr "Reklaminis"
 
 #: ../inc/fullframe-default-options.php:470
 #: ../inc/fullframe-default-options.php:599
 msgid "Full Size"
-msgstr "Pleine taille"
+msgstr "Visas dydis"
 
 #: ../inc/fullframe-default-options.php:488
 msgid "Facebook"
@@ -992,7 +993,7 @@ msgstr "Googleplus"
 
 #: ../inc/fullframe-default-options.php:491 ../inc/fullframe-social-icons.php:61
 msgid "Email"
-msgstr "Email"
+msgstr "E-paštas"
 
 #: ../inc/fullframe-default-options.php:492
 msgid "Feed"
@@ -1000,7 +1001,7 @@ msgstr "Feed"
 
 #: ../inc/fullframe-default-options.php:493
 msgid "WordPress"
-msgstr "Wordpress"
+msgstr "WordPress"
 
 #: ../inc/fullframe-default-options.php:494
 msgid "GitHub"
@@ -1008,7 +1009,7 @@ msgstr "GitHub"
 
 #: ../inc/fullframe-default-options.php:495
 msgid "LinkedIn"
-msgstr "Linkedln"
+msgstr "LinkedIn"
 
 #: ../inc/fullframe-default-options.php:496
 msgid "Pinterest"
@@ -1024,7 +1025,7 @@ msgstr "Vimeo"
 
 #: ../inc/fullframe-default-options.php:499
 msgid "YouTube"
-msgstr "Youtube"
+msgstr "YouTube"
 
 #: ../inc/fullframe-default-options.php:500
 msgid "Tumblr"
@@ -1036,87 +1037,87 @@ msgstr "Instagram"
 
 #: ../inc/fullframe-default-options.php:502
 msgid "PollDaddy"
-msgstr "PollDaddy "
+msgstr "PollDaddy"
 
 #: ../inc/fullframe-default-options.php:503
 msgid "CodePen"
-msgstr "CodePen "
+msgstr "CodePen"
 
 #: ../inc/fullframe-default-options.php:504
 msgid "Path"
-msgstr "Path "
+msgstr "Path"
 
 #: ../inc/fullframe-default-options.php:505
 msgid "Dribbble"
-msgstr "Dribbble "
+msgstr "Dribbble"
 
 #: ../inc/fullframe-default-options.php:506
 msgid "Skype"
-msgstr "Skype "
+msgstr "Skype"
 
 #: ../inc/fullframe-default-options.php:507
 msgid "Digg"
-msgstr "Digg "
+msgstr "Digg"
 
 #: ../inc/fullframe-default-options.php:508
 msgid "Reddit"
-msgstr "Reddit "
+msgstr "Reddit"
 
 #: ../inc/fullframe-default-options.php:509
 msgid "StumbleUpon"
-msgstr "StumbleUpon "
+msgstr "StumbleUpon"
 
 #: ../inc/fullframe-default-options.php:510
 msgid "Pocket"
-msgstr "Pocket "
+msgstr "Pocket"
 
 #: ../inc/fullframe-default-options.php:511
 msgid "DropBox"
-msgstr "DropBox "
+msgstr "DropBox"
 
 #: ../inc/fullframe-default-options.php:512
 msgid "Foursquare"
-msgstr "Foursquare "
+msgstr "Foursquare"
 
 #: ../inc/fullframe-default-options.php:513
 msgid "Spotify"
-msgstr "Spotify "
+msgstr "Spotify"
 
 #: ../inc/fullframe-default-options.php:514
 msgid "Twitch"
-msgstr "Twitch "
+msgstr "Twitch"
 
 #: ../inc/fullframe-default-options.php:531
 #: ../inc/fullframe-default-options.php:562
 #: ../inc/fullframe-default-options.php:589
 msgid "Default"
-msgstr "Par défaut"
+msgstr "Numatytasis"
 
 #: ../inc/fullframe-default-options.php:567
 msgid "Enable"
-msgstr "Permettre"
+msgstr "Įjungti"
 
 #: ../inc/fullframe-default-options.php:572
 msgid "Disable"
-msgstr "Désactiver"
+msgstr "Išjungti"
 
 #: ../inc/fullframe-default-options.php:594
 msgid "Featured Image"
-msgstr "Image à la Une"
+msgstr "Reklaminis paveikslėlis"
 
 #: ../inc/fullframe-default-options.php:604
 msgid "Disable Image"
-msgstr "Désactiver l'image"
+msgstr "Išjungti paveikslėlį"
 
 #: ../inc/fullframe-default-options.php:619
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
-msgstr "Copyright &copy; %1$s %2$s. Tous Droits Réservés."
+msgstr "Autorinės teisės &copy; %1$s %2$s. Visos Teisės Saugomos."
 
 #: ../inc/fullframe-default-options.php:621
 msgid "by"
-msgstr "par"
+msgstr "pagal"
 
 #: ../inc/fullframe-featured-content.php:58
 msgid ""
@@ -1124,9 +1125,9 @@ msgid ""
 "Headline, Subheadline and Feaured Content from \"Appearance -> Customize -> "
 "Featured Content Options\"."
 msgstr ""
-"Ici vous pouvez mettre améliorer l'apparence de vos X Contenu à la Une. Vous "
-"pouvez modifier titre, sous titre et contenu dans «Apparence -> Personnaliser -> "
-"Options de Contenu à la Une\"."
+"Čia Jūs galite demonstruoti x skaičių reklaminio turinio. Jūs galite redaguoti "
+"šią antraštę, Paantraštę ir reklaminį turinį iš \"Išvaizda -> Tinkinti -> "
+"Reklaminio turinio parinktys\"."
 
 #: ../inc/fullframe-featured-content.php:315
 #: ../inc/fullframe-featured-content.php:332
@@ -1134,87 +1135,83 @@ msgstr ""
 #: ../inc/fullframe-featured-slider.php:201
 #: ../inc/fullframe-featured-slider.php:211
 msgid "Permalink to:"
-msgstr "Permalien vers:"
+msgstr "Pastovi nuoroda į:"
 
 #: ../inc/fullframe-menus.php:27
 msgid "Skip to content"
-msgstr "Aller au contenu"
+msgstr "Pereiti prie turinio"
 
 #: ../inc/fullframe-menus.php:39
 msgid "Menu"
-msgstr "Menu"
+msgstr "Meniu"
 
 #: ../inc/fullframe-menus.php:67
 msgid "Header Toggle"
-msgstr "Intervertir le titre"
+msgstr ""
 
 #: ../inc/fullframe-metabox.php:93
 msgid "Header Featured Image Options"
-msgstr "Options d'image à la Une"
+msgstr "Antraštės reklaminio paveikslėlio parinktys"
 
 #: ../inc/fullframe-metabox.php:220
 msgid "Fullframe Options"
-msgstr "Options de Full Frame"
+msgstr ""
 
 #: ../inc/fullframe-widgets.php:25
 msgid "Primary Sidebar"
-msgstr "Première colonne"
+msgstr "Pagrindinė šoninė juosta"
 
 #: ../inc/fullframe-widgets.php:31
 msgid "This is the primary sidebar if you are using two column site layout option."
 msgstr ""
-"Ceci est la colonne latérale primaire si vous utilisez la mise en page \"deux "
-"colonnes\" pour le site."
 
 #: ../inc/fullframe-widgets.php:38
 #, php-format
 msgid "Footer Area %d"
-msgstr "Zone de Pied de page% d "
+msgstr "Apačios sritis %d"
 
 #: ../inc/fullframe-widgets.php:44
 #, php-format
 msgid "Footer %d widget area."
-msgstr "Zone de widget %d pour Pied de page "
+msgstr "Apačia %d valdiklio sritis."
 
 #: ../inc/fullframe-widgets.php:65
 msgid "Use this widget to add Social Icons as a widget. "
 msgstr ""
-"Utilisez ce widget pour ajouter les îcones des réseaux sociaux comme widget.␣ "
+"Naudokite šį valdiklį tam, kad pridėti socialines piktogramas kaip valdiklius."
 
 #: ../inc/fullframe-widgets.php:106
 msgid "Title (optional):"
-msgstr "Titre (optionnel):"
+msgstr "Pavadinimas (nebūtina):"
 
 #: ../no-results.php:14
 msgid "Error 404-Page NOT Found"
-msgstr "Erreur 404-Page non trouvée"
+msgstr "Klaida 404 puslapis nerastas"
 
 #: ../search.php:19
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Résultat de recherche pour: %s"
+msgstr "Paieškos rezultatai: %s"
 
 #: ../searchform.php:14 ../searchform.php:15
 msgctxt "label"
 msgid "Search for:"
-msgstr "Recherche de:"
+msgstr "Ieškoti:"
 
 #: ../searchform.php:17
 msgctxt "submit button"
 msgid "Search"
-msgstr "Recherche"
+msgstr "Ieškoti"
 
 #: ../sidebar.php:74
 msgid "Primary Sidebar Widget Area"
-msgstr "Zone de widget pour la première colonne latérale "
+msgstr "Pagrindinės šoninės juostos valdiklių sritis"
 
 #: ../sidebar.php:77
 msgid ""
 "This is the Primary Sidebar Widget Area if you are using a two column site "
 "layout option."
 msgstr ""
-"Ceci est la zone de widget de la première colonne latérale si vous utilisez la "
-"mise en page \"deux colonnes\" pour ce site."
 
 #: ../sidebar.php:78
 #, php-format
@@ -1223,41 +1220,84 @@ msgid ""
 "widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> which will "
 "replace default widgets."
 msgstr ""
-"Par défaut,  les widgets  Recherche et Archives sont chargés, comme indiqué ci-"
-"dessous. Vous pouvez ajouter un widget à cette zone en visitant votre <a href="
-"\"%s\"> Panneau Widgets </a> . Il remplacera alors les widgets par défaut."
+"Pagal nutylėjimą jis užkraus paieškos ir archyvų valdiklius, kaip parodyta "
+"žemiau. Jūs galite pridėti valdiklį į šią sritį apsilankę savo <a href=\"%s"
+"\">valdiklių skyde</a> , kuris pakeis numatytuosius valdiklius."
+
+#~ msgid "Secondary Menu"
+#~ msgstr "Antrinis meniu"
+
+#~ msgctxt "Open Sans font: on or off"
+#~ msgid "on"
+#~ msgstr "Įjungti"
+
+#~ msgctxt "Droid Sans font: on or off"
+#~ msgid "on"
+#~ msgstr "Įjungti"
+
+#~ msgid "Catch Responsive is a Premium Responsive WordPress Theme"
+#~ msgstr "Catch Responsive yra aukščiausios kokybės reaguojanti WordPress tema"
+
+#~ msgid "Here you can showcase the x number of Featured Content."
+#~ msgstr "Čia Jūs galite demonstruoti x skaičių reklaminio turinio."
+
+#~ msgid "Permalink to: "
+#~ msgstr "Pastovi nuoroda į:"
+
+#~ msgid "Search"
+#~ msgstr "Ieškoti..."
+
+#~ msgid "Catchresponsive Options"
+#~ msgstr "Catchresponsive parinktys"
+
+#~ msgid ""
+#~ "This is the primary sidebar if you are using a two or three column site "
+#~ "layout option."
+#~ msgstr ""
+#~ "Tai yra pagrindinė šoninė juosta, jei Jūs naudojate dviejų ar trijų stulpelių "
+#~ "svetainės išdėstymo variantą."
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+#~ msgid "Excerpt length. Default is 55 words"
+#~ msgstr "Numatytasis nustatymas yra 55 žodžiai."
 
 #~ msgid ""
 #~ "Some settings might be missing or disorganized in this version of WordPress. "
 #~ "So we suggest you to upgrade to version 4.0 or better."
 #~ msgstr ""
-#~ "Certains paramètres peuvent être manquants ou incohérents dans cette version "
-#~ "de WordPress. Nous vous suggérons de mettre à jour vers la version 4.0 ou "
-#~ "plus."
+#~ "Kai kurių nustatymų gali trūkti arba būti neorganizuoti šioje WordPress "
+#~ "versijoje. Taigi, mes rekomenduojame jums atnaujinti iki versijos 4.0 ar "
+#~ "geresnės."
 
-#~ msgid "Google+"
-#~ msgstr "Google+ "
+#~ msgid ""
+#~ "This is the Primary Sidebar Widget Area if you are using a two or three "
+#~ "column site layout option."
+#~ msgstr ""
+#~ "Tai yra pagrindinės šoninės juostos valdiklių sritis, jei naudojate dviejų ar "
+#~ "trijų stulpelių svetainės išdėstymo variantą."
 
 #~ msgid "Featured Content Settings"
-#~ msgstr " Paramètres de contenu vedette"
+#~ msgstr "Populiariausio turinio nustatymai "
 
 #~ msgid "Featured Content Type"
-#~ msgstr "Type de contenu vedette"
+#~ msgstr "Reklaminio turinio tipas"
 
 #~ msgid "Featured Slider Settings"
-#~ msgstr "Réglages du curseur seléctionné"
+#~ msgstr "Reklaminio slinkiklio nustatymai"
 
 #~ msgid "Featured Slider Type"
-#~ msgstr "Sélection  type de curseur"
+#~ msgstr "Reklaminio slankiklio tipas"
 
 #~ msgid "Archive for %s"
-#~ msgstr "Archives pour %s"
+#~ msgstr "Archyvas %s"
 
 #~ msgid "Search results for: %s"
-#~ msgstr "Résultat pour votre recherche: %s"
+#~ msgstr "Paieškos rezultatai: %s"
 
 #~ msgid "Posts tagged %s"
-#~ msgstr "Articles étiquetés %s"
+#~ msgstr "Įrašai pažymėti %s"
 
 #~ msgid "View all posts by %s"
-#~ msgstr "Voir tout les articles de %s"
+#~ msgstr "Peržiūrėti visus įrašus %s"

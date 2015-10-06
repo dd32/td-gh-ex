@@ -1,5 +1,8 @@
 == Change log ==
 
+= 2.0 =
+* Added Lithuanian translation lt_LT.po and lt_LT.mo
+
 = 1.9 =
 * Bug Fixed: Form overflow issue
 * Bug Fixed: Breadcrumb css issue in IE 11

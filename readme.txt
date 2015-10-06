@@ -1,6 +1,6 @@
 === Full Frame ===
 
-Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for photography, portfolio and blogging sites. This theme is translation ready and also currently translated in Swedish, French and Brazilian Portuguese. Check out Theme Instructions at http://catchthemes.com/theme-instructions/full-frame/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/full-frame/
+Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for photography, portfolio and blogging sites. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German and Lithuanian languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/full-frame/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/full-frame/
 
 
 == Support ==
@@ -15,6 +15,8 @@ Full Frame theme is translation ready.
 Added Translation for Swedish by Anders Paulcén ( Email: anderspaulcen@gmail.com )
 Added Translation for French by Jérôme Joseph ( Email: jerome.joseph28@hotmail.com )
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@gmail.com )
+Added Translation for German by Micky261 ( Email: karlo261@hotmail.de )
+Added Translation for Lithuanian by Jurgis Šatas ( Email: ssattass@gmail.com )
 
 
 == License ==
