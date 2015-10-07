@@ -19,17 +19,24 @@ if (empty($single_page_layout)) {
 if (is_page('cart') || is_page('checkout')) {
     $single_page_layout = "no-sidebar";
 }
+$breadcrumb = get_theme_mod('breadcrumb_options_page','1');
+$archive_bread = get_theme_mod('breadcrumb_page_image');
+if($archive_bread){
+    $bread_archive = $archive_bread;
+}else{
+  $bread_archive = get_template_directory_uri().'/images/about-us-bg.jpg';
+}
+if($breadcrumb == '1') :
 ?>
-
-<div class="page_header_wrap clearfix">
+<div class="page_header_wrap clearfix" style="background:url('<?php echo $bread_archive; ?>') no-repeat center; background-size: cover;">
     <div class="ak-container">
         <header class="entry-header">
             <?php the_title('<h2 class="entry-title">', '</h2>'); ?>
         </header><!-- .entry-header -->
-
         <?php accesspress_breadcrumbs() ?>
     </div>
 </div>
+<?php endif; ?>
 <div class="inner">
     <main id="main" class="site-main clearfix <?php echo $single_page_layout; ?>">
         <?php if ($single_page_layout == 'both-sidebar'): ?>

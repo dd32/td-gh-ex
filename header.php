@@ -18,17 +18,12 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-<a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'accesspress-store'); ?></a>
 <header id="mastheads" class="site-header" role="banner">
     <?php if (as_before_top_header_enabled()): ?>
         <div class="before-top-header">
             <div class="ak-container clearfix">
-                <div class="login-woocommerce">
-                    <?php if (is_active_sidebar('header-callto-action')): ?>
-                        <div class="header-callto">
-                            <?php dynamic_sidebar('header-callto-action') ?>
-                        </div>
-                    <?php endif; ?>
+                    <?php accesspress_ticker_header_customizer(); ?>
+                    
                     <?php
                     if (is_user_logged_in()) {
                         global $current_user;
@@ -47,8 +42,13 @@
                     <?php }
                     ?>
 
-                </div>
-                <?php accesspress_ticker_header_customizer(); ?>
+                    <?php if (is_active_sidebar('header-callto-action')): ?>
+                        <div class="header-callto">
+                            <?php dynamic_sidebar('header-callto-action') ?>
+                        </div>
+                    <?php endif; ?>
+                    
+                
             </div>
         </div>
     <?php endif; ?>

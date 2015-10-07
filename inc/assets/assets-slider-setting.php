@@ -56,7 +56,7 @@ function accesspress_slider_setting($wp_customize){
     $wp_customize->add_setting(
                                 'show_controls',
                                 array(
-                                        'default'       =>      '1',
+                                        'default'       =>      '0',
                                         'sanitize_callback' => 'accesspress_store_integer_sanitize'
                                       )
                                );
@@ -73,7 +73,7 @@ function accesspress_slider_setting($wp_customize){
     $wp_customize->add_setting(
                                 'auto_transition',
                                 array(
-                                        'default'       =>      '1',
+                                        'default'       =>      '0',
                                         'sanitize_callback' => 'accesspress_store_integer_sanitize'
                                       )
                                );
@@ -139,7 +139,7 @@ function accesspress_slider_setting($wp_customize){
     $wp_customize->add_setting(
                                 'show_caption',
                                 array(
-                                        'default'       =>      '1',
+                                        'default'       =>      '0',
                                         'sanitize_callback' => 'accesspress_store_integer_sanitize'
                                       )
                                );
@@ -428,6 +428,161 @@ function accesspress_slider_setting($wp_customize){
                                         'type'          =>      'text',
                                         )
                                 );
+
+    $wp_customize->add_panel('breadcrumb_setting',
+                              array('priority'   =>      '30',
+                                'capability' => 'edit_theme_options',
+                                'theme_supports' => '',
+                                'title' => __( 'Breadcrumb Setting', 'accesspress-store' ),
+                                'description' => __( 'This allows to upload breadcrumb background image', 'accesspress-store' ),
+                            ));
+        
+        $wp_customize->add_section('woo_archive_page',
+                              array(
+                                'title'   => __('WooCommerce Archive Page', 'accesspress-store'),
+                                'priority'=> '2',
+                                'panel'   => 'breadcrumb_setting', 
+                            ));
+                                    
+        $wp_customize->add_setting('breadcrumb_options',
+                            array(
+                                'default'           =>      '1',
+                                'sanitize_callback' => 'accesspress_store_integer_sanitize'
+                            ));
+        $wp_customize->add_control(new WP_Customize_Switch_Control(
+                            $wp_customize,'breadcrumb_options',
+                            array(
+                                'section' =>      'woo_archive_page',
+                                'label'   =>      __('Enable/Disable Breadcrumb', 'accesspress-store'),
+                                'type'    =>      'switch',
+                                'output'  =>      array('Enable','Disable')
+                            )));
+
+        $wp_customize->add_setting('breadcrumb_archive_image',
+                            array(
+                                'default' =>      '',
+                                'sanitize_callback' => 'esc_url_raw',
+                                'transport' => 'postMessage'
+                            ));
+        $wp_customize->add_control( new WP_Customize_Image_Control(
+                            $wp_customize,'breadcrumb_archive_image',
+                            array(
+                                'section'  => 'woo_archive_page',
+                                'label'    => __('Upload Background Image', 'accesspress-store'),
+                                'type'     => 'image',
+                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 × 156 Pixels.','accesspress-store')
+                            )));
+
+
+        $wp_customize->add_section('woo_single_page',
+                              array(
+                                'title'   => __('WooCommerce Single Product Page', 'accesspress-store'),
+                                'priority'=> '4',
+                                'panel'   => 'breadcrumb_setting', 
+                            ));
+                                    
+        $wp_customize->add_setting('breadcrumb_options_single',
+                            array(
+                                'default'           =>      '1',
+                                'sanitize_callback' => 'accesspress_store_integer_sanitize'
+                            ));
+        $wp_customize->add_control(new WP_Customize_Switch_Control(
+                            $wp_customize,'breadcrumb_options_single',
+                            array(
+                                'section' =>      'woo_single_page',
+                                'label'   =>      __('Enable/Disable Breadcrumb', 'accesspress-store'),
+                                'type'    =>      'switch',
+                                'output'  =>      array('Enable','Disable')
+                            )));
+
+        $wp_customize->add_setting('breadcrumb_single_image',
+                            array(
+                                'default' =>      '',
+                                'sanitize_callback' => 'esc_url_raw',
+                                'transport' => 'postMessage'
+                            ));
+        $wp_customize->add_control( new WP_Customize_Image_Control(
+                            $wp_customize,'breadcrumb_single_image',
+                            array(
+                                'section'  => 'woo_single_page',
+                                'label'    => __('Upload Background Image', 'accesspress-store'),
+                                'type'     => 'image',
+                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 × 156 Pixels.','accesspress-store')
+                            )));
+
+
+        $wp_customize->add_section('breadcrumb_page_options',
+                              array(
+                                'title'   => __('Breadcrumb Page Options', 'accesspress-store'),
+                                'priority'=> '6',
+                                'panel'   => 'breadcrumb_setting', 
+                            ));
+                                    
+        $wp_customize->add_setting('breadcrumb_options_page',
+                            array(
+                                'default'           =>      '1',
+                                'sanitize_callback' => 'accesspress_store_integer_sanitize'
+                            ));
+        $wp_customize->add_control(new WP_Customize_Switch_Control(
+                            $wp_customize,'breadcrumb_options_page',
+                            array(
+                                'section' =>      'breadcrumb_page_options',
+                                'label'   =>      __('Enable/Disable Breadcrumb', 'accesspress-store'),
+                                'type'    =>      'switch',
+                                'output'  =>      array('Enable','Disable')
+                            )));
+
+        $wp_customize->add_setting('breadcrumb_page_image',
+                            array(
+                                'default' =>      '',
+                                'sanitize_callback' => 'esc_url_raw',
+                                'transport' => 'postMessage'
+                            ));
+        $wp_customize->add_control( new WP_Customize_Image_Control(
+                            $wp_customize,'breadcrumb_page_image',
+                            array(
+                                'section'  => 'breadcrumb_page_options',
+                                'label'    => __('Upload Background Image', 'accesspress-store'),
+                                'type'     => 'image',
+                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 × 156 Pixels.','accesspress-store')
+                            )));
+
+
+        $wp_customize->add_section('breadcrumb_post_options',
+                              array(
+                                'title'   => __('Breadcrumb Post Options', 'accesspress-store'),
+                                'priority'=> '6',
+                                'panel'   => 'breadcrumb_setting', 
+                            ));
+                                    
+        $wp_customize->add_setting('breadcrumb_options_post',
+                            array(
+                                'default'           =>      '1',
+                                'sanitize_callback' => 'accesspress_store_integer_sanitize'
+                            ));
+        $wp_customize->add_control(new WP_Customize_Switch_Control(
+                            $wp_customize,'breadcrumb_options_post',
+                            array(
+                                'section' =>      'breadcrumb_post_options',
+                                'label'   =>      __('Enable/Disable Breadcrumb', 'accesspress-store'),
+                                'type'    =>      'switch',
+                                'output'  =>      array('Enable','Disable')
+                            )));
+
+        $wp_customize->add_setting('breadcrumb_post_image',
+                            array(
+                                'default' =>      '',
+                                'sanitize_callback' => 'esc_url_raw',
+                                'transport' => 'postMessage'
+                            ));
+        $wp_customize->add_control( new WP_Customize_Image_Control(
+                            $wp_customize,'breadcrumb_post_image',
+                            array(
+                                'section'  => 'breadcrumb_post_options',
+                                'label'    => __('Upload Background Image', 'accesspress-store'),
+                                'type'     => 'image',
+                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 × 156 Pixels.','accesspress-store')
+                            )));
                                 
                                 
 }

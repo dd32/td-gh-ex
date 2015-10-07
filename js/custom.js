@@ -5,10 +5,13 @@ jQuery(function ($) {
         $(this).toggleClass("on");
         $("#menu").slideToggle();
     });
+    
+    /*
     $(window).load(function () {
         iheader = $('.right-header-main').outerHeight();
         $(".inner_home .ak-container").css({"min-height": iheader});
     });
+*/
     
 
     $('.search-icon a').click(function () {

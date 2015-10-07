@@ -10,9 +10,16 @@ $single_post_layout = get_post_meta($post->ID, 'accesspress_store_sidebar_layout
 if (empty($single_post_layout)) {
     $single_post_layout = esc_attr(get_theme_mod('single_post_layout','right-sidebar'));
 }
+$breadcrumb = get_theme_mod('breadcrumb_options_post','1');
+$archive_bread = get_theme_mod('breadcrumb_post_image');
+if($archive_bread){
+    $bread_archive = $archive_bread;
+}else{
+  $bread_archive = get_template_directory_uri().'/images/about-us-bg.jpg';
+}
+if($breadcrumb == '1') :
 ?>
-
-<div class="page_header_wrap clearfix">
+<div class="page_header_wrap clearfix" style="background:url('<?php echo $bread_archive; ?>') no-repeat center; background-size: cover;">
     <div class="ak-container">
         <header class="entry-header">
             <?php the_title('<h2 class="entry-title">', '</h2>'); ?>
@@ -20,7 +27,7 @@ if (empty($single_post_layout)) {
         <?php accesspress_breadcrumbs() ?>
     </div>
 </div>
-
+<?php endif; ?>
 <div class="inner">
     <main id="main" class="site-main clearfix <?php echo $single_post_layout; ?>">
         <?php if ($single_post_layout == 'both-sidebar'): ?>

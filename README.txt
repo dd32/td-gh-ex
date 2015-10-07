@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 1.0.6 =
+** Add the new feature in customizer options for change breadcrumb background image.
+** Fixed the menu problem both layout boxed and full width problem.
+
 = 1.0.5 =
 ** Fixed icon problem in icon text block Widget.
 ** Fixed the boxed layout responsive problem.

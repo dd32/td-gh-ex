@@ -203,7 +203,7 @@ add_action( 'wp_enqueue_scripts', 'accesspress_store_scripts' );
 
 function accesspress_ticker_header_customizer(){
 	//Check if ticker is enabled
-	if(get_theme_mod('accesspress_ticker_checkbox')===1)
+	if(get_theme_mod('accesspress_ticker_checkbox','1') == 1)
 	{
 		$ticker_title = get_theme_mod('accesspress_ticker_title');
 		if(empty($ticker_title)){$ticker_title="Latest";}
@@ -252,10 +252,10 @@ function accesspress_ticker_header_customizer(){
 }
 
 function accesspress_slickliderscript(){
-	$accesspress_show_slider = get_theme_mod('show_slider','1') ;
-	$accesspress_show_pager = (get_theme_mod('show_pager','1') == "0") ? "false" : "true";
-	$accesspress_show_controls = (get_theme_mod('show_controls','1') == "0") ? "false" : "true";
-	$accesspress_auto_transition = (get_theme_mod('auto_transition','1') == "0") ? "false" : "true";
+	$accesspress_show_slider = get_theme_mod('show_slider','0') ;
+	$accesspress_show_pager = (get_theme_mod('show_pager','0') == "0") ? "false" : "true";
+	$accesspress_show_controls = (get_theme_mod('show_controls','0') == "0") ? "false" : "true";
+	$accesspress_auto_transition = (get_theme_mod('auto_transition','0') == "0") ? "false" : "true";
 	$accesspress_slider_transition = (get_theme_mod('slider_transition','true')) ? "true" : "false";
 	$accesspress_slider_speed = (!get_theme_mod('slider_speed')) ? "5000" : get_theme_mod('slider_speed');
 	$accesspress_slider_pause = (!get_theme_mod('slider_pause')) ? "5000" : get_theme_mod('slider_pause');
@@ -283,8 +283,8 @@ function accesspress_slickliderscript(){
 add_action('wp_head', 'accesspress_slickliderscript');
 
 function accesspress_slidercb(){
-	$accesspress_show_slider = get_theme_mod('show_slider','1') ;
-	$accesspress_show_caption = get_theme_mod('show_caption','1') ;
+	$accesspress_show_slider = get_theme_mod('show_slider','0') ;
+	$accesspress_show_caption = get_theme_mod('show_caption','0') ;
 	if( $accesspress_show_slider == 1) :
 		?>
 	<section id="main-slider">
@@ -391,7 +391,7 @@ if(is_woocommerce_activated()):
 		ob_start();
 		$cart_url = $woocommerce->cart->get_cart_url();  
 		?>
-		<div class="view-cart"><a title="View your shopping cart" href="<?php echo $cart_url; ?>" class="wcmenucart-contents"><?php echo __('CART', 'accesspress-store'); ?> [ <?php echo $woocommerce->cart->cart_contents_count; ?> / <span class="amount"><?php echo $woocommerce->cart->get_cart_total(); ?></span> ]</a>
+		<div class="view-cart"><a title="View your shopping cart" href="<?php echo $cart_url; ?>" class="wcmenucart-contents"><i class="fa fa-shopping-cart"></i> [ <?php echo $woocommerce->cart->cart_contents_count; ?> / <span class="amount"><?php echo $woocommerce->cart->get_cart_total(); ?></span> ]</a>
 		
 		</div>
 		<?php

@@ -33,4 +33,30 @@
 			}
 		} );
 	} );
+	    //Breadcrumbs us background image
+	    wp.customize( 'breadcrumb_archive_image', function( value ) {
+		    value.bind( function( to ) {
+		    	$('.entry-header').css('background-image', 'url(' + to + ')' );
+		    } );
+	    } );
+
+	    wp.customize( 'breadcrumb_single_image', function( value ) {
+		    value.bind( function( to ) {
+		    	$('.entry-header').css('background-image', 'url(' + to + ')' );
+		    } );
+	    } );
+
+	    wp.customize( 'breadcrumb_page_image', function( value ) {
+		    value.bind( function( to ) {
+		    	$('.page_header_wrap').css('background-image', 'url(' + to + ')' );
+		    } );
+	    } );
+
+	    wp.customize( 'breadcrumb_post_image', function( value ) {
+		    value.bind( function( to ) {
+		    	$('.page_header_wrap').css('background-image', 'url(' + to + ')' );
+		    } );
+	    } );
+
+	
 } )( jQuery );

@@ -9,9 +9,17 @@
 get_header();
 $archive_page_layout = get_theme_mod('archive_page_layout','right-sidebar');
 ?>
-<?php if (have_posts()) : ?>
-
-    <div class="page_header_wrap clearfix">
+<?php if (have_posts()) : 
+$breadcrumb = get_theme_mod('breadcrumb_options_post','1');
+$archive_bread = get_theme_mod('breadcrumb_post_image');
+if($archive_bread){
+    $bread_archive = $archive_bread;
+}else{
+  $bread_archive = get_template_directory_uri().'/images/about-us-bg.jpg';
+}
+if($breadcrumb == '1') :
+?>
+    <div class="page_header_wrap clearfix" style="background:url('<?php echo $bread_archive; ?>') no-repeat center; background-size: cover;">
         <div class="ak-container">
             <header class="page-header">
                 <?php
@@ -19,11 +27,10 @@ $archive_page_layout = get_theme_mod('archive_page_layout','right-sidebar');
                 the_archive_description('<div class="taxonomy-description">', '</div>');
                 ?>
             </header><!-- .page-header -->
-
             <?php accesspress_breadcrumbs() ?>
         </div>
     </div>
-<?php endif; ?>
+<?php endif; endif; ?>
 <div class="inner">
     <main id="main" class="site-main clearfix <?php echo $archive_page_layout; ?>">
 
