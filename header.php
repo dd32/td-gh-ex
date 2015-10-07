@@ -15,7 +15,6 @@
     <link rel="shortcut icon" href="<?php  echo $spa_current_options['upload_image_favicon']; ?>" />
     <?php }?>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>

@@ -8,6 +8,7 @@
   get_template_part('index', 'slider') ;
   get_template_part('index', 'services'); 
   get_template_part('index','product'); 
+  get_template_part('index','news');
   get_footer();
   }
   ?>

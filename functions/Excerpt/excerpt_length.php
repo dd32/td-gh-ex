@@ -94,4 +94,26 @@
       return 40;
   }
   add_filter('excerpt_length', 'spa_new_excerpt_length');
+  
+  
+ function get_blog_page_excerpt()
+{
+		global $post;
+		$excerpt = get_the_content();
+		$excerpt = strip_tags(preg_replace(" (\[.*?\])",'',$excerpt));
+		$excerpt = strip_shortcodes($excerpt);
+		$original_len = strlen($excerpt);
+		$excerpt = substr($excerpt, 0, 185);
+		$len=strlen($excerpt);
+		if($original_len>185) {
+		$excerpt = $excerpt;
+		return $excerpt . '<div class="home-blog-btn"><a href="' . get_permalink() . '">'.__('Read More','sis_spa') .'</a></div>';
+		}
+		else
+		{ 
+			return $excerpt; 
+		}
+}
+	
+	
   ?>

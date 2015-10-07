@@ -132,6 +132,11 @@
   														
   								'product_title'=>__('Spasalon Our product rang','sis_spa'),
   								'product_contents'=>__('A SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit. ','sis_spa'), 
+								'enable_news' => 'no',
+								'news_title'=>__('Our Latest News & Events','sis_spa'),
+  								'news_contents'=>__('A SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit. ','sis_spa'),
+								
+								
   								'spa_home_Title'=>array('home_title_px' => '42',
   														'home_font_family' => 'MarketingScript',
   														'home_font_style' => 'Normal' ),

@@ -12,7 +12,7 @@
         <div class="span12">
             <?php the_post();?>
             <h2 class="blog_detail_head"><?php the_title(); ?></h2>
-            <?php $defalt_arg =array('class' => "full-width-img" )?>
+            <?php $defalt_arg =array('class' => "img-responsive" )?>
             <?php if(has_post_thumbnail()):?>
             <div class="media" >
                 <a href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?></a>

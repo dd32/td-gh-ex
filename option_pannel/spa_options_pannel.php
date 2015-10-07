@@ -10,7 +10,7 @@
     <div id="busiprof-themepromo" style="width:97%;color:#FFFFFF;margin-right:10px;">
       <div id="company-logo" style="float:right;margin-top:2px; font-size:18px;color:#000000;text-shadow:#fff 0px 1px 0, #000 0 -1px 0;">
         <center><strong>SpaSalon Lite By</strong></center>
-        &nbsp;<a href="http://www.webriti.com/" target="_blank"><img src="<?php echo get_template_directory_uri('template_directory').'/option_pannel/images/png.png' ?> " /></a>
+        &nbsp;<a href="<?php echo esc_url( __('http://webriti.com/', 'sis_spa'));?>" target="_blank"><img src="<?php echo get_template_directory_uri('template_directory').'/option_pannel/images/png.png' ?> " /></a>
       </div>
       <h2 style="margin-bottom:10px;"><?php _e("Upgrade to Spasalon Pro!",'sis_spa') ; ?></h2>
       <div id="pro-connect" style="margin-bottom:5px;padding:5px;">

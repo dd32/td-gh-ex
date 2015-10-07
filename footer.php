@@ -1,3 +1,14 @@
+<?php if ( is_active_sidebar( 'footer-widget-area' ) ) { ?>
+<!-- Footer Section -->
+<div class="footer-section">		
+	<div class="container">	
+		<div class="row footer-widget-section">
+		<?php  dynamic_sidebar( 'footer-widget-area' );	} ?>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- /Footer Section -->
 <?php $current_options=get_option('spa_theme_options',spa_the_theme_setup()); 
   if($current_options['spa_custom_css']!='')
   { echo "<style type='text/css'>".$current_options['spa_custom_css']."</style>"; }

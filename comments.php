@@ -24,7 +24,7 @@
 </nav>
 <?php endif;  ?>
 <?php elseif ( ! comments_open()  && post_type_supports( get_post_type(), 'comments' ) ) :
-  _e('<p id="comment">'.__('comments are closed','sis_sps'),'</p>','sis_spa');?>
+  _e('<p id="comment">'.__('comments are closed','sis_spa'),'</p>','sis_spa');?>
 <?php endif; ?>
 <?php if ('open' == $post->comment_status) : ?>
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>

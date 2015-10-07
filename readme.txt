@@ -99,6 +99,13 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.5.5
+1. Add News Section.
+2. Add Footer Widget Section.
+3. Resize all Image.
+4. Remove Theme Check Error. 
+@version 1.5.4
+1. Remove unused files.
 @version 1.5.3
 1. Remove the feature of saving the option panel data into database during the time Install
 @version 1.5.2

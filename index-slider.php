@@ -3,7 +3,6 @@
   <div class="main" role="main">
     <div class="slider">
       <div id="slider" class="flexslider">
-        <ul class="slides">
           <li class="slide_content">
             <?php 	if($current_options['home_feature']!='')  ?>
             <img src="<?php echo $current_options['home_feature']; ?>"  alt="Spa Featture" class="main-sliderimg" />
@@ -34,7 +33,6 @@
               </div>
             </div>
           </li>
-        </ul>
         <div class="slider-thumb-container container">
           <div class="thumb-img-container">
             <?php 	if($current_options['first_thumb_image']!='')  ?>

@@ -11,7 +11,7 @@
       <?php    while(have_posts()): the_post();?>
       <div class="media" id="blog-media">
         <div class="blog-icon-media">
-          <?php $defalt_arg =array('class' => "blog-img" )?>
+          <?php $defalt_arg =array('class' => "img-responsive" )?>
           <?php if(has_post_thumbnail()):?>
           <a class="pull-left" href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?></a>
           <?php endif;?>
