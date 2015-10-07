@@ -629,11 +629,6 @@ function accesspresslite_register_required_plugins() {
 
     $plugins = array(
         array(
-            'name'      => 'AccessPress Custom CSS',
-            'slug'      => 'accesspress-custom-css',
-            'required'  => false,
-        ),
-        array(
             'name'      => 'AccessPress Twitter Feed',
             'slug'      => 'accesspress-twitter-feed',
             'required'  => false,
@@ -646,6 +641,11 @@ function accesspresslite_register_required_plugins() {
         array(
             'name'      => 'AccessPress Social Counter',
             'slug'      => 'accesspress-social-counter',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Ultimate Form Builder Lite',
+            'slug'      => 'ultimate-form-builder-lite',
             'required'  => false,
         )
     );

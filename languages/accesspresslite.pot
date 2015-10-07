@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: AccessPress Lite 2.42\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-19 13:01+0545\n"
-"POT-Revision-Date: Tue Sep 01 2015 18:06:37 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Wed Oct 07 2015 21:20:17 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: Prabin Dangol <info@accesspressthemes.com>\n"
@@ -112,6 +112,7 @@ msgstr ""
 
 #: ../comments.php:28
 #, php-format
+msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
@@ -1524,4 +1525,41 @@ msgstr ""
 #: ../inc/admin-panel/theme-options.php:1085
 #, php-format
 msgid "Any question!! Click <a href=\"%s\" target=\"_blank\">here</a> for Live Chat."
+msgstr ""
+
+#. Name of the theme
+msgid "Accesspress Lite"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://accesspressthemes.com/wordpress-themes/accesspress-lite/"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"AccessPress Lite is responsive multipurpose WordPress business theme with "
+"clean, highly professional design and lots of useful features like a premium "
+"theme - and strong theme options panel to manage theme all! It is probably "
+"the most feature-rich free theme with lots of useful options events layout, "
+"portfolio layout, testimonial layout, blog layout, gallery layout, featured "
+"posts on home page, quick contact, social media integration, full width "
+"slider, team member layout, sidebar layout, multiple home page layout, call "
+"to action and many other page layouts. It is fully responsive, WooCommerce "
+"compatible, bbPress compatible, translation ready, cross-browser compatible, "
+"SEO friendly, RTL support. Theme is completely translated in: French, "
+"Persian, Japanese, Danish now. AccessPress Lite is multi-purpose and is "
+"suitable for travel, corporate, portfolio, photography, nature, health, "
+"small biz, personal, creative, corporate, agencies, bloggers anyone and "
+"everyone. Great customer support via online chat, email, support forum. "
+"Official support forum: https://accesspressthemes.com/support/ Video "
+"tutorials: http://bit.ly/aptytube View full demo here: http:"
+"//accesspressthemes.com/theme-demos/?theme=accesspress-lite"
+msgstr ""
+
+#. Author of the theme
+msgid "AccessPress Themes"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://accesspressthemes.com"
 msgstr ""

@@ -60,6 +60,11 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.45.3
+* FontAwesome Updated to latest version for New icons Compatibility
+* Pot file updated with latest change
+* New Plugin Suggested via TGM-Plugin-Activation 
+
 Version 2.45.2
 * Made fully compatible with RTL
 * Minor fixes in Option Panel
