@@ -181,7 +181,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load Widgets fields 
  */
-require get_template_directory() . '/inc/agleelite_widgets.php';
+require get_template_directory() . '/inc/agleelite-widgets.php';
 
 
 /**
@@ -204,7 +204,7 @@ require get_template_directory() . '/inc/aglee-customizer.php';
 /**
  * Load aglee lite function
  */
- require get_template_directory() . '/inc/agleelite_functions.php';
+ require get_template_directory() . '/inc/agleelite-functions.php';
  
  /**
  * Load Aglee Lite Metabox

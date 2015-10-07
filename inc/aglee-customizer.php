@@ -84,59 +84,7 @@ function aglee_lite_customizer( $wp_customize ) {
                             'disable' => __('Hide Both', 'aglee-lite')
                         )
         )
-    );
-    
-    //Favicon selection
-    $wp_customize->add_section( 
-        'favicon' , 
-        array(
-            'title'       => __('Upload Favicon','aglee-lite'),
-            'priority'    => 60,
-            'description' => __('Upload favicon(.png) with size of 16px X 16px','aglee-lite'),
-            'panel' => 'header_setting',
-        ) 
-    );
-    
-    $wp_customize->add_setting(
-        'aglee_lite_favicon',
-        array(
-            'sanitize_callback' => 'esc_url_raw',   
-        )
-    );
-    
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aglee_lite_favicon', array(
-        'label'    => __('Upload Image', 'aglee-lite'),
-        'section'  => 'favicon',
-        'settings' => 'aglee_lite_favicon',
-        ) 
-    ));
-    
-    // to display or hide favicon
-    $wp_customize->add_section(
-      'favicon_setting_section',
-      array(
-        'title'=>__('Favicon Display Option', 'aglee-lite'),
-        'priority'=>60,
-        'panel'=>'header_setting'
-      )  
-    );
-    
-    $wp_customize->add_setting(
-      'favicon_setting',
-      array(
-        'default'=>'',
-        'sanitize_callback' => 'sanitize_checkbox'
-      )  
-    );
-    
-    $wp_customize->add_control(
-        'favicon_setting',
-        array(
-            'label'=>__('Activate the favicon to display it in your site','aglee-lite'),
-            'section'=>'favicon_setting_section',
-            'type'=>'checkbox'
-        )
-    );   
+    ); 
     
 // Top header text
     $wp_customize->add_section(

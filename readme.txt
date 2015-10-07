@@ -52,7 +52,7 @@ Fonts
    http://www.google.com/fonts/specimen/Roboto+Slab
    
 === Images =====
-https: https://pixabay.com/en/cafe-restaurant-coffee-bar-768771/
+https://pixabay.com/en/cafe-restaurant-coffee-bar-768771/
 https://pixabay.com/en/computer-laptop-technology-keyboard-768608/
 https://pixabay.com/en/man-reading-touchscreen-blog-791049/
 https://pixabay.com/en/workshop-shield-keep-list-man-745017/
@@ -60,6 +60,9 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+
+= 1.0.4 - Oct 7 2015 =
+* Fixed issues Provided by reviewer.
 
 = 1.0.3 - Oct 5 2015 =
 * Fixed issues Provided by reviewer.
