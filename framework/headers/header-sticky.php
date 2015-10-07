@@ -1,30 +1,30 @@
 <?php if( get_theme_mod( 'agama_top_navigation', true ) ): ?>
 <div id="top-bar">
+	<div id="top-bar-wrap">
+		<div class="container-fullwidth clearfix">
 
-	<div class="container-fullwidth clearfix">
-
-		<div class="pull-left nobottommargin">
-			
-			<!-- Top Links -->
-			<div class="top-links">
-			
-				<?php echo Agama::menu( 'top' ); ?>
+			<div class="pull-left nobottommargin">
 				
-			</div><!-- / Top Links -->
+				<!-- Top Links -->
+				<div class="top-links">
+				
+					<?php echo Agama::menu( 'top' ); ?>
+					
+				</div><!-- / Top Links -->
+
+			</div>
+
+			<div class="pull-right nobottommargin">
+
+				<!-- Top Social -->
+				<div id="top-social">
+					<?php Agama::sociali( false, 'animated' ); ?>
+				</div><!-- / Top Social -->
+
+			</div>
 
 		</div>
-
-		<div class="pull-right nobottommargin">
-
-			<!-- Top Social -->
-			<div id="top-social">
-				<?php Agama::sociali( false, 'animated' ); ?>
-			</div><!-- / Top Social -->
-
-		</div>
-
 	</div>
-
 </div><!-- #top-bar end -->
 <?php endif; ?>
 

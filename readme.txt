@@ -2,6 +2,12 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.1.3 Oct 11 =
+* FIXED: Sticky top menu max-width issue.
+* ADDED: Image support feature on frontpage boxes.
+* ADDED: Contact Form 7 style support.
+* IMPROVED: bbPress styling.
+
 = 1.1.2 Sep 30 =
 * FIXED: issues with menu assign checkbox visibility.
 * ADDED: Blog thumbnails url enable / disable feature.

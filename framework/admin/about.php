@@ -70,6 +70,12 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</h2>';
 				
 				echo '<div class="changelog point-releases">';
+					echo '<h3>Changelog Agama v1.1.3</h3>';
+						echo '<p><strong>Version 1.1.3</strong> FIXED: Sticky top menu max-width issue.</p>';
+						echo '<p><strong>Version 1.1.3</strong> ADDED: Image support feature on frontpage boxes.</p>';
+						echo '<p><strong>Version 1.1.3</strong> ADDED: Contact Form 7 style support.</p>';
+						echo '<p><strong>Version 1.1.3</strong> IMPROVED: bbPress styling.</p>';
+					
 					echo '<h3>Changelog Agama v1.1.2</h3>';
 						echo '<p><strong>Version 1.1.2</strong> FIXED: issues with menu assign checkbox visibility.</p>';
 						echo '<p><strong>Version 1.1.2</strong> ADDED: Blog thumbnails url enable / disable feature.</p>';

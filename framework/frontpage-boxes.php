@@ -7,7 +7,7 @@
 	$box_4_enable = get_theme_mod('agama_frontpage_box_4_enable', true);
 	
 	// If Enabled - Render Boxes
-	if( $box_1_enable || $box_2_enable || $box_3_enable || $box_4_enable ) {
+	if( $box_1_enable || $box_2_enable || $box_3_enable || $box_4_enable ):
 		
 		$count = 0;
 		
@@ -55,6 +55,12 @@
 		$box_3_icon = get_theme_mod('agama_frontpage_box_3_icon', 'fa-laptop');
 		$box_4_icon = get_theme_mod('agama_frontpage_box_4_icon', 'fa-magic');
 		
+		// Boxes Image (instead of FA icon)
+		$box_1_img = get_theme_mod('agama_frontpage_1_img', '');
+		$box_2_img = get_theme_mod('agama_frontpage_2_img', '');
+		$box_3_img = get_theme_mod('agama_frontpage_3_img', '');
+		$box_4_img = get_theme_mod('agama_frontpage_4_img', '');
+		
 		// Boxes FA Icon Color
 		$box_1_icon_color = get_theme_mod('agama_frontpage_box_1_icon_color', '#f7a805');
 		$box_2_icon_color = get_theme_mod('agama_frontpage_box_2_icon_color', '#f7a805');
@@ -71,8 +77,13 @@
 			
 			<?php if( $box_1_enable ): ?>
 			<div class="<?php echo esc_attr( $bs_class ); ?>">
-			
-				<i class="fa <?php echo esc_attr( $box_1_icon ); ?>" style="color:<?php echo esc_attr( $box_1_icon_color ); ?>;"></i>
+				
+				<?php if( $box_1_img ): ?>
+					<img src="<?php echo esc_url( $box_1_img ); ?>">
+				<?php else: ?>
+					<i class="fa <?php echo esc_attr( $box_1_icon ); ?>" style="color:<?php echo esc_attr( $box_1_icon_color ); ?>;"></i>
+				<?php endif; ?>
+				
 				<h2><?php echo $box_1_title; ?></h2>
 				<p><?php echo $box_1_text; ?></p>
 			
@@ -81,8 +92,13 @@
 			
 			<?php if( $box_2_enable ): ?>
 			<div class="<?php echo esc_attr( $bs_class ); ?>">
-			
-				<i class="fa <?php echo esc_attr( $box_2_icon ); ?>" style="color:<?php echo esc_attr( $box_2_icon_color ); ?>;"></i>
+				
+				<?php if( $box_2_img ): ?>
+					<img src="<?php echo esc_url( $box_2_img ); ?>">
+				<?php else: ?>
+					<i class="fa <?php echo esc_attr( $box_2_icon ); ?>" style="color:<?php echo esc_attr( $box_2_icon_color ); ?>;"></i>
+				<?php endif; ?>
+				
 				<h2><?php echo $box_2_title; ?></h2>
 				<p><?php echo $box_2_text; ?></p>
 			
@@ -91,8 +107,13 @@
 			
 			<?php if( $box_3_enable ): ?>
 			<div class="<?php echo esc_attr( $bs_class ); ?>">
-			
-				<i class="fa <?php echo esc_attr( $box_3_icon ); ?>" style="color:<?php echo esc_attr( $box_3_icon_color ); ?>;"></i>
+				
+				<?php if( $box_3_img ): ?>
+					<img src="<?php echo esc_url( $box_3_img ); ?>">
+				<?php else: ?>
+					<i class="fa <?php echo esc_attr( $box_3_icon ); ?>" style="color:<?php echo esc_attr( $box_3_icon_color ); ?>;"></i>
+				<?php endif; ?>
+				
 				<h2><?php echo $box_3_title; ?></h2>
 				<p><?php echo $box_3_text; ?></p>
 			
@@ -101,8 +122,13 @@
 			
 			<?php if( $box_4_enable ): ?>
 			<div class="<?php echo esc_attr( $bs_class ); ?>">
-			
-				<i class="fa <?php echo esc_attr( $box_4_icon ); ?>" style="color:<?php echo esc_attr( $box_4_icon_color ); ?>;"></i>
+				
+				<?php if( $box_4_img ): ?>
+					<img src="<?php echo esc_url( $box_4_img ); ?>">
+				<?php else: ?>
+					<i class="fa <?php echo esc_attr( $box_4_icon ); ?>" style="color:<?php echo esc_attr( $box_4_icon_color ); ?>;"></i>
+				<?php endif; ?>
+				
 				<h2><?php echo $box_4_title; ?></h2>
 				<p><?php echo $box_4_text; ?></p>
 			
@@ -111,4 +137,4 @@
 			
 		</div>
 	
-	<?php } ?>
+	<?php endif; ?>

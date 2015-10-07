@@ -26,7 +26,7 @@ function agama_textarea_register($wp_customize){
 			<a href="<?php echo esc_url( 'http://theme-vision.com/forums/' ); ?>" title="<?php esc_attr_e( 'Support Forum', 'agama' ); ?>" target="_blank">
 			<?php _e( 'Support Forum', 'agama' ); ?>
 			</a>
-			<a href="<?php echo esc_url( 'http://docs.theme-vision.com/Agama/' ); ?>" title="<?php esc_attr_e( 'Theme Documentation', 'agama' ); ?>" target="_blank">
+			<a href="<?php echo esc_url( 'http://wiki.theme-vision.com/' ); ?>" title="<?php esc_attr_e( 'Theme Documentation', 'agama' ); ?>" target="_blank">
 			<?php _e( 'Theme Documentation', 'agama' ); ?>
 			</a>
 			<a href="<?php echo esc_url( 'http://demo.theme-vision.com' ); ?>" title="<?php esc_attr_e( 'Agama PRO Demo', 'agama' ); ?>" target="_blank">
@@ -445,7 +445,23 @@ function agama_customize_register( $wp_customize ) {
 				'settings'	=> 'agama_frontpage_box_1_icon_color'
 			)
 		)
-	); // Frontpage Box 1 Text
+	); // Frontpage Box 1 Image
+	$wp_customize->add_setting( 'agama_frontpage_1_img', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize, 'agama_frontpage_1_img', array(
+				'label'			=> __('Box 1 Image', 'agama'),
+				'description'	=> __('You can use image instead of FontAwesome icon, just upload it here.', 'agama'),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_1_img'
+			)
+		)
+	);// Frontpage Box 1 Text
 	$wp_customize->add_setting( 'agama_frontpage_box_1_text', array(
 		'default'			=> 'Powerful Layout with Responsive functionality that can be adapted to any screen size.',
 		'capability'		=> 'edit_theme_options',
@@ -523,6 +539,22 @@ function agama_customize_register( $wp_customize ) {
 				'label'		=> __('Box 2 Icon Color', 'agama'),
 				'section'	=> 'agama_frontpage_boxes_section',
 				'settings'	=> 'agama_frontpage_box_2_icon_color'
+			)
+		)
+	); // Frontpage Box 2 Image
+	$wp_customize->add_setting( 'agama_frontpage_2_img', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize, 'agama_frontpage_2_img', array(
+				'label'			=> __('Box 2 Image', 'agama'),
+				'description'	=> __('You can use image instead of FontAwesome icon, just upload it here.', 'agama'),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_2_img'
 			)
 		)
 	); // Frontpage Box 2 Text
@@ -605,7 +637,23 @@ function agama_customize_register( $wp_customize ) {
 				'settings'	=> 'agama_frontpage_box_3_icon_color'
 			)
 		)
-	);	// Frontpage Box 3 Text
+	); // Frontpage Box 3 Image
+	$wp_customize->add_setting( 'agama_frontpage_3_img', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize, 'agama_frontpage_3_img', array(
+				'label'			=> __('Box 3 Image', 'agama'),
+				'description'	=> __('You can use image instead of FontAwesome icon, just upload it here.', 'agama'),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_3_img'
+			)
+		)
+	); // Frontpage Box 3 Text
 	$wp_customize->add_setting( 'agama_frontpage_box_3_text', array(
 		'default'			=> 'Stretch your Website to the Full Width or make it boxed to surprise your visitors.',
 		'capability'		=> 'edit_theme_options',
@@ -685,8 +733,23 @@ function agama_customize_register( $wp_customize ) {
 				'settings'	=> 'agama_frontpage_box_4_icon_color'
 			)
 		)
-	);
-	// Frontpage Box 4 Text
+	); // Frontpage Box 4 Image
+	$wp_customize->add_setting( 'agama_frontpage_4_img', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize, 'agama_frontpage_4_img', array(
+				'label'			=> __('Box 4 Image', 'agama'),
+				'description'	=> __('You can use image instead of FontAwesome icon, just upload it here.', 'agama'),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_4_img'
+			)
+		)
+	); // Frontpage Box 4 Text
 	$wp_customize->add_setting( 'agama_frontpage_box_4_text', array(
 		'default'			=> 'Optimized code that are completely customizable and deliver unmatched fast performance.',
 		'capability'		=> 'edit_theme_options',
@@ -1592,7 +1655,9 @@ function agama_customize_css() { ?>
 	}
 	<?php endif; ?>
 	
+	button,
 	.button,
+	input[type="submit"],
 	.entry-date .date-box {
 		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
@@ -1622,14 +1687,17 @@ add_action( 'wp_head', 'agama_customize_css' );
  */
 function customize_styles_agama_support( $input ) { ?>
 	<style type="text/css">
-		#customize-theme-controls #accordion-section-agama_support_section .accordion-section-title:after {
+		#customize-theme-controls #accordion-section-agama_support_section .accordion-section-title:after,
+		#customize-theme-controls #accordion-panel-agama_theme_options > .accordion-section-title:after {
 			color: #fff;
 		}
-		#customize-theme-controls #accordion-section-agama_support_section .accordion-section-title {
+		#customize-theme-controls #accordion-section-agama_support_section .accordion-section-title,
+		#customize-theme-controls #accordion-panel-agama_theme_options > .accordion-section-title {
 			background-color: rgba(247, 168, 5, 0.9);
 			color: #fff;
 		}
-		#customize-theme-controls #accordion-section-agama_support_section .accordion-section-title:hover {
+		#customize-theme-controls #accordion-section-agama_support_section .accordion-section-title:hover,
+		#customize-theme-controls #accordion-panel-agama_theme_options > .accodrion-sectiion-title:hover {
 			background-color: rgba(247, 168, 5, 1);
 		}
 		#customize-theme-controls #accordion-section-agama_support_section .theme-info a {

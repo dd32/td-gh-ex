@@ -148,22 +148,14 @@ if( ! class_exists( 'Agama' ) ) {
 			if( ! $location )
 				return;
 			
-			if( has_nav_menu( $location ) ) {
-				$args = array(
-					'theme_location' => $location,
-					'menu_class' => $class,
-					'container' => false,
-					'echo' => '0'
-				);
-				
-				$menu = wp_nav_menu( $args );
-			} else {
-				$menu = sprintf
-				( 
-					'<ul class="%s"><li><a href="#"><strong>NO MENU ASSIGNED</strong> Go To Appearance > Menus and create a Menu</a></li></ul>', 
-					esc_attr( $class ) 
-				);
-			}
+			$args = array(
+				'theme_location' => $location,
+				'menu_class' => $class,
+				'container' => false,
+				'echo' => '0'
+			);
+			
+			$menu = wp_nav_menu( $args );
 			
 			return $menu;
 		}

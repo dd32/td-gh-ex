@@ -179,6 +179,8 @@ var THEMEVISION = THEMEVISION || {};
 			
 			THEMEVISION.extras.tipsntabs();
 			THEMEVISION.extras.customclasses();
+			THEMEVISION.extras.bbPress();
+			THEMEVISION.extras.contact7form();
 			
 		},
 		
@@ -198,6 +200,21 @@ var THEMEVISION = THEMEVISION || {};
 		customclasses: function(){
 			
 			$('a.comment-reply-link').append('<i class="fa fa-reply"></i>');
+			
+		},
+		
+		bbPress: function(){
+			
+			$('#bbp_search').addClass('sm-form-control');
+			$('#bbp_topic_title').addClass('sm-form-control');
+			
+		},
+		
+		contact7form: function() {
+			
+			$('.wpcf7-form-control').css('width', 'auto');
+			$('.wpcf7-form-control').addClass('sm-form-control');
+			$('.wpcf7-submit').removeClass('sm-form-control');
 			
 		}
 		

@@ -5,7 +5,7 @@
 */
 get_header(); ?>
 
-	<div id="primary" class="site-content col-md-9">
+	<div id="primary" class="site-content col-md-8">
 		<div id="content" role="main">
 		
 			<?php if(have_posts()): the_post(); ?>
