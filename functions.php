@@ -22,6 +22,9 @@
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-home.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-client.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-testimonial.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-template.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
 	//wp title tag starts here
   	function quality_head( $title, $sep )
@@ -48,7 +51,6 @@
 		if ( ! isset( $content_width ) ) $content_width = 700;//In PX
 		// Load text domain for translation-ready
   		load_theme_textdomain( 'quality', QUALITY_THEME_FUNCTIONS_PATH . '/lang' );
-  		add_theme_support( "title-tag" ); //Support title tag
   		add_theme_support( 'post-thumbnails' ); //supports featured image
   		// This theme uses wp_nav_menu() in one location.
   		register_nav_menu( 'primary', __( 'Primary Menu', 'quality' ) ); //Navigation

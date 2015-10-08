@@ -6,10 +6,9 @@
         'copyright_section_one',
         array(
             'title' => __('Footer Copyright Settings','quality'),
-            'priority' => 800,
+            'priority' => 720,
         )
     );
-	
 	
 	$wp_customize->add_setting(
     'quality_pro_options[footer_copyright_text]',
