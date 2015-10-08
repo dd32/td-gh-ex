@@ -18,6 +18,27 @@ Go to https://wordpress.org/support/theme/afford
 
 == Changelog ==
 
+= 1.0.1.1 - 10/10/2015 =
+* (functions.php) Modified thumbnail name
+* (functions.php) Escaped function afford_custom_background_cb()
+* (functions.php) Removed commented code from afford_sidebars()
+* (functions.php) Escaped output in function afford_get_social_section_individual_icon()
+* (functions.php) Added i18n string in afford_social_section_show()
+* (functions.php) Removed commented code from afford_comment_callback()
+* (functions.php) Removed function afford_blog_template_heading_text()
+* (functions.php) Added i18n string in afford_wp_readmore_link()
+* (functions.php) Added i18n string in afford_setup()
+* (loop.php) Modified thumbnail call
+* (global/js/respond.min.js) Added JS file
+* (includes/customizer_extended.php) Removed commented code
+* (includes/customizer.php) Removed commented code
+* (includes/customizer.php) Added PHPDoc for corpus_sanitize_none()
+* (includes/customizer.php) Now js/css files are enqueued for customizer only
+* (includes/customizer.php | admin.js) Now using wp_localize_script()
+* (header.php | loop.php | single.php) Added i18n string
+* (style.css) Modified description
+* (afford.pot) Regenerated
+
 = 1.0.1 - 28/09/2015 =
 * (core) Added title-tag theme support
 * (functions.php) - Added wp_filter_nohtml_kses() to options CSS

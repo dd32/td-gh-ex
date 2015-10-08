@@ -401,7 +401,6 @@ function afford_customizer_setup($wp_customize) {
                 $wp_customize, 'afford_theme_lite[' . $option['id'] . ']', array(
                 'label' => $option['label'],
                 'description' => $option['description'],
-                //'type' => $option['type'],
                 'section' => afford_get_sections($option['section']),
                 'setting' => $option['id'],
                 )
@@ -437,9 +436,13 @@ add_action('customize_preview_init','afford_live_preview_scripts');
  *
  * @since 1.0
  */
-function afford_admin_panel_style() {
-    wp_enqueue_style('afford-admin-panel-css', AFFORD_ADMIN_CSS_URL . 'admin.css');
-    wp_enqueue_script('afford-admin-panel-js', AFFORD_ADMIN_JS_URL . 'admin.js', array('jquery'), '1.0.0', TRUE);
+function afford_admin_panel_style($hook) {
+    
+    if($hook == 'widgets.php'){
+        wp_enqueue_style('afford-admin-panel-css', AFFORD_ADMIN_CSS_URL . 'admin.css');
+        wp_enqueue_script('afford-admin-panel-js', AFFORD_ADMIN_JS_URL . 'admin.js', array('jquery'), '1.0.0', TRUE);
+        wp_localize_script('afford-admin-panel-js', 'affordCustomizerUpgradeVars', array('upgrade_text' => __('Upgrade to Premium', 'afford')));
+    }
 }
 add_action( 'admin_enqueue_scripts', 'afford_admin_panel_style' );
 
@@ -458,7 +461,6 @@ function afford_get_option($id = NULL) {
     
     // Global array exists. Get value from memory
     if($afford_options && array_key_exists($id, $afford_options)) {
-        //echo 'Afford Options exists';
         return $afford_options[$id];
     } else {
         
@@ -467,14 +469,12 @@ function afford_get_option($id = NULL) {
         
         if($saved_options && array_key_exists($id, $saved_options)){
             
-            //echo 'Afford Options got from DB';
             $afford_options = $saved_options;
             return $afford_options[$id];
             
         } else {
             
             // No value in Memory or DB. Get it from default options.
-            //echo 'Afford Options got from SANE';
             $sane_options = afford_customizer_options('options');
             $afford_options = array();
             
@@ -619,7 +619,13 @@ function afford_sanitize_media_upload( $image, $setting ) {
 
 
 /**
- * Sanitizes nothing (Used for Theme Upgrade Text)
+ * Sanitizes nothing
+ * 
+ * This function is not used to sanitize customizer options.
+ * 
+ * It is used for displaying `About Afford Theme` section at the bottom of Customizer.
+ * 
+ * @see Afford_Customize_Important_Links_Control
  */
 function afford_sanitize_none(){
     return;

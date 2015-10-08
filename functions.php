@@ -66,17 +66,17 @@ function afford_setup() {
      * Adds supports for Theme menu.
      * Afford uses wp_nav_menu() in a single location to diaplay one single menu.
      */
-    register_nav_menu('primary', 'Primary Menu');
+    register_nav_menu('primary', __('Primary Menu','afford'));
 
     /**
      * Add support for Post Thumbnails.
      * Defines a custom name and size for Thumbnails to be used in the theme.
      *
      * Note: In order to use the default theme thumbnail, add_image_size() must be removed
-     * and 'affordThumb' value must be removed from the_post_thumbnail in the loop file.
+     * and 'afford-thumb' value must be removed from the_post_thumbnail in the loop file.
      */
     add_theme_support('post-thumbnails');
-    add_image_size('affordThumb', 190, 130, true);
+    add_image_size('afford-thumb', 190, 130, true);
 }
 add_action( 'after_setup_theme', 'afford_setup' );
 
@@ -127,7 +127,7 @@ function afford_custom_background_cb() {
     }
 ?>
 <style type="text/css" id="custom-background-css">
-#wrapper { <?php echo trim( $style ); ?> }
+#wrapper { <?php echo  wp_filter_nohtml_kses(trim( $style )) ?> }
 </style>
 <?php
 }
@@ -222,19 +222,6 @@ function afford_sidebars() {
         'before_title' => '<h4 class="widget-title">',
         'after_title' => '</h4>',
     ));
-    
-    // Top Sidebar
-    /*
-    register_sidebar(array(
-        'name' => __('Top Sidebar', 'afford'),
-        'id' => 'top_sidebar',
-        'description' => __('Top Sidebar', 'afford'),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
-    ));
-     */
     
 }
 add_action( 'widgets_init', 'afford_sidebars' );
@@ -374,7 +361,7 @@ function afford_get_social_section_individual_icon($option, $title, $icon) {
     $output = '';
 
     if(afford_get_option($option)){
-        $output .= '<a href="'.esc_url(afford_get_option($option)).'" title="'.$title.'" target="_blank"><i class="mdf mdf-'.$icon.'"></i></a>';
+        $output .= '<a href="'.esc_url(afford_get_option($option)).'" title="'.esc_attr($title).'" target="_blank"><i class="mdf mdf-'.esc_attr($icon).'"></i></a>';
     }
     return $output;
     
@@ -393,9 +380,9 @@ function afford_social_section_show() {
 
     $output = false;
     
-    $output .= afford_get_social_section_individual_icon('facebook', 'Facebook', 'facebook');
-    $output .= afford_get_social_section_individual_icon('twitter', 'Twitter', 'twitter');
-    $output .= afford_get_social_section_individual_icon('rss', 'RSS feed', 'rss');
+    $output .= afford_get_social_section_individual_icon('facebook', __('Facebook', 'afford'), 'facebook');
+    $output .= afford_get_social_section_individual_icon('twitter', __('Twitter', 'afford'), 'twitter');
+    $output .= afford_get_social_section_individual_icon('rss', __('RSS feed', 'afford'), 'rss');
     
     ?>            
                 
@@ -550,7 +537,7 @@ function afford_comment_callback( $comment, $args, $depth ) {
         <?php $afford_get_comment_ID = get_comment_ID() ?>
         <?php $afford_is_comment_reply = get_comment($afford_get_comment_ID)->comment_parent ?>
         <?php $afford_the_comment_author = get_comment_author(get_comment($afford_get_comment_ID)->comment_parent) ?>
-        <?php // if($afford_is_comment_reply != 0 ) printf('<div class="comment-parent-author"><span>Replied to %s</span></div>', $afford_the_comment_author ) ?>
+
       <div id="comment-<?php comment_ID(); ?>" class="comment-block-container grid-float-left grid-col-16">
           
           
@@ -592,20 +579,6 @@ function afford_comment_callback( $comment, $args, $depth ) {
 
 
 /**
- * Adds text to afford_blog_template_heading_filter used on home.php
- * 
- * @todo Remove this function
- * @return string
- * @since 1.0
- */
-function afford_blog_template_heading_text() {
-    return '<h1>' . get_bloginfo('name') . ' ' . __('Blog', 'afford') . '</h1>';
-}
-add_filter('afford_blog_template_heading_filter', 'afford_blog_template_heading_text', 10);
-
-
-
-/**
  * Filters and add class to 'loop-section-col' section.
  * 
  * @param NULL $default '' Nothing by default
@@ -634,7 +607,7 @@ add_filter('afford_loop_section_col_class_filter', 'afford_loop_section_col_clas
 function afford_wp_readmore_link($button, $text) {
 	$post = get_post();
 
-	return '<div class="read-more"><a href="' . get_permalink() . "#more-{$post->ID}\">Read more</a></div>";
+	return '<div class="read-more"><a href="' . get_permalink() . "#more-{$post->ID}\">".__('Read more', 'afford')."</a></div>";
 }
 add_filter('the_content_more_link', 'afford_wp_readmore_link', 100, 2);
 

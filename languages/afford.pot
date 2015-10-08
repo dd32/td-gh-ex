@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, v2 (or newer).
 msgid ""
 msgstr ""
-"Project-Id-Version: Afford 1.0.0\n"
+"Project-Id-Version: Afford 1.0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/afford\n"
-"POT-Creation-Date: 2015-09-28 07:25:06+00:00\n"
+"POT-Creation-Date: 2015-10-08 10:14:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,6 +91,10 @@ msgstr ""
 msgid "Afford theme by"
 msgstr ""
 
+#: functions.php:69
+msgid "Primary Menu"
+msgstr ""
+
 #: functions.php:184 functions.php:186
 msgid "Right Sidebar"
 msgstr ""
@@ -107,62 +111,78 @@ msgstr ""
 msgid "Footerbox Sidebar #3"
 msgstr ""
 
-#: functions.php:431
+#: functions.php:383 includes/customizer.php:278
+msgid "Facebook"
+msgstr ""
+
+#: functions.php:384 includes/customizer.php:290
+msgid "Twitter"
+msgstr ""
+
+#: functions.php:385
+msgid "RSS feed"
+msgstr ""
+
+#: functions.php:418
 msgid "Ooops! Nothing Found"
 msgstr ""
 
-#: functions.php:433 functions.php:435
+#: functions.php:420 functions.php:422
 msgid "Nothing found for:"
 msgstr ""
 
-#: functions.php:442
+#: functions.php:429
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
 
-#: functions.php:459
+#: functions.php:446
 msgid "Day"
 msgstr ""
 
-#: functions.php:461
+#: functions.php:448
 msgid "Month"
 msgstr ""
 
-#: functions.php:463
+#: functions.php:450
 msgid "Year"
 msgstr ""
 
-#: functions.php:465
+#: functions.php:452
 msgid "Period"
 msgstr ""
 
-#: functions.php:488
+#: functions.php:475
 msgid "Newer posts"
 msgstr ""
 
-#: functions.php:489
+#: functions.php:476
 msgid "Older posts"
 msgstr ""
 
-#: functions.php:549
+#: functions.php:536
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:562
+#: functions.php:549
 msgid "ago"
 msgstr ""
 
-#: functions.php:570 functions.php:584
+#: functions.php:557 functions.php:571
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:584
+#: functions.php:571
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:602 includes/customizer.php:216
-msgid "Blog"
+#: functions.php:610 loop.php:33 loop.php:38
+msgid "Read more"
+msgstr ""
+
+#: header.php:39
+msgid "Menu"
 msgstr ""
 
 #: home.php:15
@@ -234,6 +254,10 @@ msgstr ""
 msgid "Post Content Color (Page/Posts)"
 msgstr ""
 
+#: includes/customizer.php:216
+msgid "Blog"
+msgstr ""
+
 #: includes/customizer.php:226
 msgid "Post Title Color (Blog)"
 msgstr ""
@@ -250,14 +274,6 @@ msgstr ""
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/customizer.php:278
-msgid "Facebook"
-msgstr ""
-
-#: includes/customizer.php:290
-msgid "Twitter"
-msgstr ""
-
 #: includes/customizer.php:302
 msgid "RSS"
 msgstr ""
@@ -266,11 +282,15 @@ msgstr ""
 msgid "About Afford Theme"
 msgstr ""
 
+#: includes/customizer.php:444
+msgid "Upgrade to Premium"
+msgstr ""
+
 #: includes/customizer_extended.php:19
 msgid "Theme Documentation"
 msgstr ""
 
-#: includes/customizer_extended.php:21
+#: includes/customizer_extended.php:20
 msgid "Contact us"
 msgstr ""
 
@@ -286,8 +306,20 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#: loop.php:33 loop.php:38
-msgid "Read more"
+#: loop.php:23
+msgid "No comments yet"
+msgstr ""
+
+#: loop.php:23
+msgid "1 comment"
+msgstr ""
+
+#: loop.php:23
+msgid "comments"
+msgstr ""
+
+#: loop.php:23
+msgid "No Comments"
 msgstr ""
 
 #: loop.php:41 page.php:25 single.php:46
@@ -320,6 +352,10 @@ msgstr ""
 
 #: sidebar.php:19
 msgid "Search"
+msgstr ""
+
+#: single.php:25
+msgid "By"
 msgstr ""
 
 #: single.php:31 single.php:33
@@ -357,8 +393,8 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Afford is a responsive and multipurpose theme for magazine and personal "
-"blogs. This theme can be customized using Theme Customizer options. It is "
-"fully Translation ready and comes with online documentation."
+"blogs. It has full online documentation and is easily customizable using "
+"Theme Customizer."
 msgstr ""
 
 #. Author of the plugin/theme

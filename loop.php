@@ -20,7 +20,7 @@ global $afford_loop_count;
                 <div class="loop-post-meta">
                      <span><?php _e('Written on', 'afford') ?> </span><span class="loop-meta-date"><?php echo get_the_time('M, d, Y') ?></span>
                      <span><?php _e('by', 'afford') ?> </span><span class="loop-meta-author"><?php the_author_posts_link() ?></span>
-                     <span class="loop-meta-comments"> | <?php comments_popup_link( 'No comments yet', '1 comment', '% comments', 'comments-link', 'No Comments'); ?></span>
+                     <span class="loop-meta-comments"> | <?php comments_popup_link( __('No comments yet', 'afford'), __('1 comment', 'afford'), '% '.__('comments', 'afford'), 'comments-link', __('No Comments','afford')); ?></span>
                 </div>
 
              </div>
@@ -28,7 +28,7 @@ global $afford_loop_count;
              <div class="loop-post-excerpt clearfix">
                   <?php if ( has_post_thumbnail() ) { ?>
                     <div class="loop-post-text grid-col-16">
-                        <div class="loop-thumbnail"><?php the_post_thumbnail( 'affordThumb' ) ?></div>
+                        <div class="loop-thumbnail"><?php the_post_thumbnail( 'afford-thumb' ) ?></div>
                         <?php the_excerpt() ?>
                         <div class="read-more"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><?php _e('Read more', 'afford') ?></a></div>
                     </div>

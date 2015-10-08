@@ -36,7 +36,7 @@
                 <div id="header-section" class="header-section grid-col-16 clearfix">
                     <div id="logo-section" class="logo-section grid-col-6 grid-float-left"><?php afford_logo() ?></div>
                     <div id="nav-section" class="nav-section grid-col-10 grid-float-right">
-                        <div id="primarymenu-resp" class="primarymenu-resp"><i class="mdf mdf-bars"></i><span>Menu</span></div>
+                        <div id="primarymenu-resp" class="primarymenu-resp"><i class="mdf mdf-bars"></i><span><?php _e('Menu', 'afford') ?></span></div>
                         <div id="primarymenu-section" class="primarymenu-section nav"><?php afford_nav() ?></div>
                     </div>
 

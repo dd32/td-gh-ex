@@ -22,7 +22,7 @@
                         <div class="post-meta">
                             <?php 
 							echo '<span class="entry-date">'.get_the_date().'</span>';
-							echo '<span class="meta-author-url">, By <span class="author vcard">';
+							echo '<span class="meta-author-url">, '.__('By','afford').' <span class="author vcard">';
 								the_author_posts_link();
 							echo '</span> </span>';
 
