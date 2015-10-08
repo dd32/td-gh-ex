@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<div class="sixteen columns">
 		<div class="breadcrumb">
-			<?php if ( $greenr['breadcrumb'] && function_exists( 'greenr_breadcrumbs' ) ) : ?>
+			<?php if ( get_theme_mod('breadcrumb') && function_exists( 'greenr_breadcrumbs' ) ) : ?>
 				<div id="breadcrumb" role="navigation">
 					<?php greenr_breadcrumbs(); ?>
 				</div>

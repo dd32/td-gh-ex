@@ -20,7 +20,7 @@
 if ( ! function_exists( 'greenr_breadcrumbs' ) ) {
 
 	function greenr_breadcrumbs() {
-		global $greenr;
+		
 		/* === OPTIONS === */
 		$text['home']     = '<i class="fa fa-home"></i>'; // text for the 'Home' link
 		$text['category'] = 'Archive by Category "%s"'; // text for a category page
@@ -32,19 +32,20 @@ if ( ! function_exists( 'greenr_breadcrumbs' ) ) {
 		$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 		$showOnHome  = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
 		//$delimiter   = ( isset( $greenr['breadcrumb-char'] ) && $greenr['breadcrumb-char'] != '' ) ? $greenr['breadcrumb-char'] : ' &raquo; '; // delimiter between crumbs
-		if ( isset( $greenr['breadcrumb-char'] ) && $greenr['breadcrumb-char'] != '' ) {
-			switch ( $greenr['breadcrumb-char'] ) {
-			case '2' :
-				$delimiter = ' / ';
-				break;
-			case '3':
-				$delimiter = ' > ';
-				break;
-			case '1':
-			default:
-				$delimiter = ' &raquo; ';
-				break;
-			}
+		$breadcrumb_char = get_theme_mod( 'breadcrumb-char','1' );
+		if ( $breadcrumb_char ) {
+		 switch ( $breadcrumb_char ) {
+		 	case '2' :
+		 		$delimiter = ' / ';
+		 		break;
+		 	case '3':
+		 		$delimiter = ' > ';
+		 		break;
+		 	case '1':
+		 	default:
+		 		$delimiter = ' &raquo; ';
+		 		break;
+		 }
 		}
 
 		$before      = '<span class="current">'; // tag before the current crumb
@@ -467,3 +468,4 @@ function greenr_category_transient_flusher() {
 }
 add_action( 'edit_category', 'greenr_category_transient_flusher' );
 add_action( 'save_post',     'greenr_category_transient_flusher' );
+

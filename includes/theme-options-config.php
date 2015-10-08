@@ -13,8 +13,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
         public $theme;
         public $ReduxFramework;
 
-        public function __construct() {
-            // This is needed. Bah WordPress bugs.  ;)
+        public function __construct() {    
+            // This is needed. Bah WordPress bugs.  ;)      
             if ( strpos( Redux_Helpers::cleanFilePath( __FILE__ ), Redux_Helpers::cleanFilePath( get_template_directory() ) ) !== false) {
                 $this->initSettings();
             } else {
@@ -186,10 +186,10 @@ if (!class_exists("Redux_Framework_sample_config")) {
             <?php if ($screenshot) : ?>
                 <?php if (current_user_can('edit_theme_options')) : ?>
                         <a href="<?php echo wp_customize_url(); ?>" class="load-customize hide-if-no-customize" title="<?php echo esc_attr($customize_title); ?>">
-                            <img src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview'); ?>" />
+                            <img src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview', 'greenr'); ?>" />
                         </a>
                 <?php endif; ?>
-                    <img class="hide-if-customize" src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview'); ?>" />
+                    <img class="hide-if-customize" src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview', 'greenr'); ?>" />
             <?php endif; ?>
 
                 <h4>
@@ -205,7 +205,7 @@ if (!class_exists("Redux_Framework_sample_config")) {
                     <p class="theme-description"><?php echo $this->theme->display('Description'); ?></p>
                 <?php
                 if ($this->theme->parent()) {
-                    printf(' <p class="howto">' . __('This <a href="%1$s">child theme</a> requires its parent theme, %2$s.') . '</p>', __('http://codex.wordpress.org/Child_Themes', 'redux-framework-demo'), $this->theme->parent()->display('Name'));
+                    printf(' <p class="howto">' . __('This <a href="%1$s">child theme</a> requires its parent theme, %2$s.', 'greenr') . '</p>', __('http://codex.wordpress.org/Child_Themes', 'redux-framework-demo'), $this->theme->parent()->display('Name'));
                 }
                 ?>
 
@@ -447,7 +447,7 @@ FEATURES;
                         'id'=>'custom-logo',
                         'type' => 'media', 
                         'url'=> true,
-                        'title' => __('Custom Logo', 'greenr'),
+                        'title' => __('Custom Logo', 'greenr'),    
                         'compiler' => 'true',
                         //'mode' => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                         'desc'=> __('Upload logo to use as site title', 'greenr'),
@@ -466,7 +466,7 @@ FEATURES;
                         ),
 
                     array(
-                        'id'=>'contact',
+                        'id'=>'contact',    
                         'type' => 'text', 
                         'title' => __('Conact Us', 'greenr'),
                         'subtitle'=> __('Enter Contact Info Phone/Email.', 'greenr'),
@@ -599,13 +599,13 @@ FEATURES;
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                 'fields' => array(
                     array(
-                        'id'=>'slides',
+                        'id'=>'slides',     
                         'type' => 'slides',
                         'title' => __('Flex Slider Options', 'greenr' ),
                         'subtitle'=> __('Unlimited slides with drag and drop sortings.', 'greenr' )
                     ),
 
-
+     
                     array(
                         'id'=>'info',
                         'type' => 'textarea',
@@ -761,7 +761,7 @@ FEATURES;
                         ),
 
                     array(
-                        'id' => 'home-flexslider',
+                        'id' => 'home-flexslider',  
                         'type' => 'text',
                         'title' => __( 'Enter FlexSlider shortcode', 'greenr' ),
                         'subtitle' => __( 'FlexSlider for Home Page', 'greenr' ),
@@ -790,7 +790,7 @@ FEATURES;
                         ),
 
                     array(
-                        'id'=>'single-featured-image',
+                        'id'=>'single-featured-image',    
                         'type' => 'switch', 
                         'title' => __('Single Post Featured Image', 'greenr'),
                         'subtitle'=> __('Check to show featured image on single post', 'greenr'),
@@ -948,7 +948,7 @@ FEATURES;
                     ),
 
                     array( 
-                        'id' => 'ss_box_googleplus',
+                        'id' => 'ss_box_googleplus',    
                         'type' => 'switch',
                         'title' => 'Google Plus',
                         'subtitle' => 'Show googleplus sharing option in single posts.',
@@ -983,10 +983,10 @@ FEATURES;
                     ),
 
                     array( 
-                        'id' => 'social-dribble',
+                        'id' => 'social-dribbble',
                         'type' => 'text',
                         'title' => 'Dribble',
-                        'subtitle' => 'Your Dribble link',
+                        'subtitle' => 'Your Dribbble link',
                     ),
 
                     array( 

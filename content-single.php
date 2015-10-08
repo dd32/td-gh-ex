@@ -2,7 +2,7 @@
 /**
  * @package Greenr
  */
-global $greenr;
+   
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,8 +14,8 @@ global $greenr;
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php if( isset( $greenr['single-featured-image'] ) && $greenr['single-featured-image'] ) : ?>
+	<div class="entry-content">          
+		<?php if( get_theme_mod( 'single-featured-image' ) ) : ?>
 			<?php if( has_post_thumbnail() ) : ?>
 				<div class="post-thumb">
 					<?php the_post_thumbnail(); ?>

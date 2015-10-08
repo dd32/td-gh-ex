@@ -13,8 +13,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 	<?php
-		global $greenr;
-		if( $greenr['footer-widgets'] ) : ?>
+		if( get_theme_mod( 'footer-widgets' ) ) : ?>
 		<div class="footer-top footer-widgets">
 			<div class="container">
 				<div class="row">

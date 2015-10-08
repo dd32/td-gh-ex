@@ -5,7 +5,7 @@
 function greenr_fontawesome() {
     wp_deregister_style( 'redux-elusive-icon' );
     wp_deregister_style( 'redux-elusive-icon-ie7' );
-	wp_enqueue_style( 'greenr-fontawesome', GREENR_PARENT_URL . '/css/font-awesome.min.css' );
+    wp_enqueue_style( 'greenr-fontawesome', GREENR_PARENT_URL . '/css/font-awesome.min.css' );	
 }
 add_action( 'wp_enqueue_scripts', 'greenr_fontawesome' );
 add_action( 'redux/page/greenr/enqueue', 'greenr_fontawesome' );
@@ -41,7 +41,7 @@ function greenr_scripts() {
 			default:
 				wp_enqueue_style( 'greenr-style', get_stylesheet_uri() );
 				break;
-		}		
+		}		  
 	} else {
 		wp_enqueue_style( 'greenr-style', get_stylesheet_uri() );
 	}
@@ -50,6 +50,8 @@ function greenr_scripts() {
 add_action( 'wp_enqueue_scripts', 'greenr_scripts' );
 
 function greenr_admin_style() {
+	wp_enqueue_style( 'greenr-fontawesome', GREENR_PARENT_URL . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'greenr-admin', GREENR_PARENT_URL . '/css/admin.css' );
+	wp_enqueue_style( 'greenr-admin-css', get_template_directory_uri() . '/admin/css/admin.css');
 }
 add_action( 'admin_enqueue_scripts', 'greenr_admin_style' );
