@@ -1,12 +1,5 @@
 jQuery(function($){
 
-    $('.entry-content, .excerpt-content').fitVids({
-        customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="wordpress.tv"]'
-    });
-    $('.featured-video').fitVids({
-        customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="vine.co"], iframe[src*="wordpress.tv"], iframe[src*="soundcloud.com"]'
-    });
-
     // set variables
     var siteHeader = $('#site-header');
     var menuPrimary = $('#menu-primary');
@@ -19,6 +12,25 @@ jQuery(function($){
     var body = $('body');
     var overflowContainer = $('#overflow-container');
     var titleInfo = $('#title-info');
+
+    $('.entry-content, .excerpt-content').fitVids({
+        customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="wordpress.tv"]'
+    });
+    $('.featured-video').fitVids({
+        customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="vine.co"], iframe[src*="wordpress.tv"], iframe[src*="soundcloud.com"]'
+    });
+
+    // Jetpack infinite scroll event that reloads posts. Reapply fitvids to new featured videos
+    $( document.body ).on( 'post-load', function () {
+
+        // reapply fitvids to new posts being loaded in
+        $('.featured-video').fitVids({
+            customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="vine.co"], iframe[src*="wordpress.tv"], iframe[src*="soundcloud.com"]'
+        });
+
+        var pagination = $('.infinite-wrap').length;
+        removeLayoutGaps( pagination );
+    } );
 
     // bind the tap event on the menu icon
     $('#toggle-navigation').bind('click', onTap);
@@ -232,6 +244,7 @@ jQuery(function($){
     $(window).on('resize', function(){
         separatePostImage();
         videoHeightAdjust();
+        removeLayoutGaps();
 
         if( $(window).width() > 799 && $('#site-header').hasClass('toggled') ) {
             onTap();
@@ -395,48 +408,71 @@ jQuery(function($){
     }
     adjustSiteHeight();
 
-});
+    removeLayoutGaps();
 
-jQuery(window).load(function(){
+    function removeLayoutGaps(view){
 
-    var $ = jQuery;
+        if( $(window).width() > 899 ) {
 
-    // ===== Two-Column Layout ==== //
+            if( body.hasClass('two-column') || body.hasClass('two-column-images')) {
 
-    function removeLayoutGaps(){
+                if ( view > 0 ) {
+                    var container = $('#infinite-view-' + view);
+                } else {
+                    var container = $('#main');
+                }
 
-        // if wide enough for two-column layout
-        if($(window).width() > 899){
+                // prevent sections from being re-sorted
+                if ( container.hasClass('sorted') ) {
+                    return;
+                } else {
+                    container.addClass('sorted');
+                }
 
-            if( $('body').hasClass('two-column') || $('body').hasClass('two-column-images')){
+                var entry = container.find('.excerpt');
 
-                $('.excerpt').each(function(){
+                // set counter
+                var counter = 1;
 
-                    // 40% of the screen over to be safe
-                    var windowWidth = $(window).width() * 0.4;
+                // for each post...
+                entry.each(function () {
 
-                    // if it ends of over on the right, float it right
-                    if($(this).offset().left > windowWidth){
-                        $(this).css('float','right');
-                    } else {
-                        // to remove old float: right; on window resize
-                        $(this).css('float','left');
+                    if (counter == 2) {
+                        $(this).addClass('right');
                     }
+
+                    if (counter > 2) {
+
+                        // get prev entry
+                        var prev = $(this).prev();
+
+                        // 2 entries ago
+                        var prevPrev = $(this).prev().prev();
+
+                        var prevBottom = Math.ceil(prev.offset().top + prev.outerHeight());
+                        var prevPrevBottom = Math.ceil(prevPrev.offset().top + prevPrev.outerHeight());
+
+                        if (prev.hasClass('right')) {
+                            var prevFloat = 'right';
+                            var prevPrevFloat = 'left';
+                        } else {
+                            var prevFloat = 'left';
+                            var prevPrevFloat = 'right';
+                        }
+                        // float towards previous
+                        if (prevBottom < prevPrevBottom) {
+                            $(this).addClass(prevFloat);
+                        }
+                        // float towards 2 entries ago
+                        else {
+                            $(this).addClass(prevPrevFloat);
+                        }
+                    }
+                    counter++;
                 });
             }
         }
-        // otherwise, remove inline styles in case screen shrunk from >900 to <900
-        else {
-            $('.excerpt').removeAttr('style');
-        }
     }
-    removeLayoutGaps();
-
-    // ===== Window Resize ===== //
-
-    $(window).on('resize', function(){
-        removeLayoutGaps();
-    });
 
 });
 
