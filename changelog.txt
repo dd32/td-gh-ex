@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 3.9
+* Added Lithuanian translation lt_LT.po and lt_LT.mo
+
 Version 3.8
 * Added all theme options to customizer
 * Bug Fixed: Escaped Social Icons
