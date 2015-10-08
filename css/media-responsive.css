@@ -1,0 +1,42 @@
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}	
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+/*----Menu------*/
+.navbar-default .navbar-nav > li > a {
+	line-height:36px;
+}
+
+} 
+
+@media only screen and (min-width: 200px) and (max-width: 480px) {
+
+/*----Top social----*/
+ul.top-social {
+	float:left !important;
+}
+/*----Menu------*/
+.navbar-default .navbar-nav > li > a {
+	line-height:36px;
+}
+
+.navbar-brand img {
+	    margin: -25px 0px 17px -33px;
+}
+/*--Home Blog----*/
+.home-blog img {
+	float:none ;
+}
+.home-blog-content {
+	padding:10px 0 !important;
+	
+}
+/*--Home Single-Post----*/
+#comments .comments-list li ul {
+	padding-left:0px;
+}
+
+
+}

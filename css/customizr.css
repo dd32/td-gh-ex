@@ -1,0 +1,42 @@
+/*Cutomizer CSS*/
+#accordion-section-becorp_pro h3.accordion-section-title{
+	background: #f24f18 !important;
+	color:#fff !important;
+	
+}
+#accordion-section-becorp_pro h3:hover.accordion-section-title:hover{
+	background: #eee !important;
+	color:#555 !important;
+	
+}
+.becorp-content{
+float:none;
+margin-left: 20px;
+}
+.pro-btn-success {
+  color: #fff;
+  background-color: #f24f18;
+  border-color: #4cae4c;
+}
+.pro-btn-success:hover { color: #fff;
+  background-color: #5cb85c; }
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.becorp-content a:hover {color:#fff;}
