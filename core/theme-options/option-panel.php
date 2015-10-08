@@ -56,7 +56,7 @@ $purchase = "http://weblizar.com/themes/enigma-premium/" ;?>
 				</div>
 				<div class="col-md-3 col-sm-6">					
 					<ul style="padding-top:47px">
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Image Background','weblizar'); ?>  </li>
+						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Enigma Parallax Design Included','weblizar'); ?>  </li>
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Image Background','weblizar'); ?>  </li>	
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Ultimate Portfolio layout with Isotope effect','weblizar'); ?> </li>
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Rich Short codes','weblizar'); ?> </li>

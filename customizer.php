@@ -1065,7 +1065,8 @@ class More_Enigma_Control extends WP_Customize_Control {
 			<div class="col-md-3 col-sm-6">
 				<h3 style="margin-top:10px;margin-left: 20px;text-decoration:underline;color:#333;"><?php echo _e( 'Enigma Premium - Features','weblizar'); ?></h3>
 					<ul style="padding-top:20px">
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Responsive Design','weblizar'); ?> </li>						
+						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Responsive Design','weblizar'); ?> </li>
+						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Enigma Parallax Design Included','weblizar'); ?> </li>						
 						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('More than 13 Templates','weblizar'); ?> </li>
 						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('8 Different Types of Blog Templates','weblizar'); ?> </li>
 						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('6 Types of Portfolio Templates','weblizar'); ?></li>
