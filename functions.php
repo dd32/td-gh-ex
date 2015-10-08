@@ -24,7 +24,7 @@
  * Registers widget areas.
  *
  */
-function advertica_widgets_init() {
+function advertica_lite_widgets_init() {
 	register_sidebar(array(
 		'name' => 'Page Sidebar',
 		'id' => 'page-sidebar',
@@ -50,7 +50,7 @@ function advertica_widgets_init() {
 		'after_title' => '</h3>',
 	));
 }
-add_action( 'widgets_init', 'advertica_widgets_init' );
+add_action( 'widgets_init', 'advertica_lite_widgets_init' );
 
 /**
  * Sets up theme defaults and registers the various WordPress features that
@@ -64,7 +64,7 @@ add_action( 'widgets_init', 'advertica_widgets_init' );
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
 */
-function advertica_theme_setup() {
+function advertica_lite_theme_setup() {
 	/*
 	 * Makes Advertica available for translation.
 	 *
@@ -73,12 +73,25 @@ function advertica_theme_setup() {
 	 * replace to change 'advertica-lite' to the name of your theme in all
 	 * template files.
 	 */
-	 load_theme_textdomain( 'advertica-lite', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'advertica-lite', get_template_directory() . '/languages' );
 	 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
-	 add_editor_style();
+	add_editor_style();
 
-	 // Adds RSS feed links to <head> for posts and comments.
+	add_theme_support( 'title-tag' );
+
+	if ( get_option('advertica_lite') != '' ) {
+		$advertica_lite_pre_options = get_option('advertica_lite');
+		$header_image =	$advertica_lite_pre_options['advertica_frontslider_stype'];
+	} else {
+		$header_image = get_template_directory_uri() . '/images/advertica-header.jpg';
+	}
+	add_theme_support( 'custom-header', array( 'flex-width' => true, 'width' => 1600, 'flex-height' => true, 'height' => 500, 'default-image' => $header_image ) );
+
+	// This theme allows users to set a custom background.
+	add_theme_support( 'custom-background', apply_filters( 'advertica_lite_custom_background_args', array('default-color' => 'ffffff') ) );
+
+	// Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
@@ -93,17 +106,26 @@ function advertica_theme_setup() {
 	set_post_thumbnail_size( 600, 220, true );
 	add_image_size( 'advertica_standard_img',770,365,true); //standard size
 	
+
+	/**
+	* SETS UP THE CONTENT WIDTH VALUE BASED ON THE THEME'S DESIGN.
+	*/
+	global $content_width;
+	if ( ! isset( $content_width ) ){
+	      $content_width = 900;
+	}
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'Header' => __( 'Main Navigation', 'advertica-lite' ),
 	));
 }
-add_action( 'after_setup_theme', 'advertica_theme_setup' ); 
+add_action( 'after_setup_theme', 'advertica_lite_theme_setup' ); 
 
 /**
 * Funtion to add CSS class to body
 */
-function advertica_add_class( $classes ) {
+function advertica_lite_add_class( $classes ) {
 
 	if ( 'page' == get_option( 'show_on_front' ) && ( '' != get_option( 'page_for_posts' ) ) && is_front_page() ) {
 		$classes[] = 'front-page';
@@ -111,15 +133,15 @@ function advertica_add_class( $classes ) {
 	
 	return $classes;
 }
-add_filter( 'body_class','advertica_add_class' );
+add_filter( 'body_class','advertica_lite_add_class' );
 
 /**
  * Filter content with empty post title
  *
  */
 
-add_filter('the_title', 'advertica_untitled');
-function advertica_untitled($title) {
+add_filter('the_title', 'advertica_lite_untitled');
+function advertica_lite_untitled($title) {
 	if ($title == '') {
 		return __('Untitled','advertica-lite');
 	} else {
@@ -127,29 +149,26 @@ function advertica_untitled($title) {
 	}
 }
 
-/*---------------------------------------------------------------------------*/
-/* ADMIN SCRIPT: Enqueue scripts in back-end
-/*---------------------------------------------------------------------------*/
+/**
+ * Add Customizer 
+ */
+require get_template_directory() . '/includes/customizer.php';
+/**
+ * Add Required Files
+ */
+require_once(get_template_directory() . '/SketchBoard/functions/admin-init.php');
+/**
+ * Add Sketchthemes page
+ */
+require_once(get_template_directory() . '/includes/sketchtheme-upsell.php');
+/**
+ * Add Options Migration page
+ */
+$advertica_lite_pre_options = ( get_option('advertica_lite') != '' ) ? get_option( 'advertica_lite' ) : false ;
 
-if( !function_exists('advertica_page_admin_enqueue_scripts') ){
-    add_action('admin_print_scripts-appearance_page_options-framework','advertica_page_admin_enqueue_scripts');
-    /**
-     * Register scripts for admin panel
-     * @return void
-     */
-    function advertica_page_admin_enqueue_scripts(){	
-		wp_enqueue_script('my-upload', get_template_directory_uri() .'/SketchBoard/js/admin-jqery.js', array('jquery','media-upload','thickbox'));
-		wp_enqueue_style( 'advertica-admin-stylesheet', get_template_directory_uri().'/SketchBoard/css/sketch-admin.css', false);
-    }
-}
+if ( $advertica_lite_pre_options) {
 
-/* Loads the Options Panel * * If you're loading from a child theme use stylesheet_directory * instead of template_directory */ 
-if ( !function_exists( 'optionsframework_init' ) ) {	
-	//Theme Shortname
-	$advertica_shortname = 'advertica';	
-	$advertica_themename='Advertica Theme';	
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/SketchBoard/includes/' );
-	require_once get_template_directory() . '/SketchBoard/includes/options-framework.php';
-	require_once get_template_directory() . '/SketchBoard/includes/sketchtheme-upsell.php';
-	require_once get_template_directory() . '/SketchBoard/functions/admin-init.php';
+	require_once(get_template_directory() . '/includes/advertica-options-migrate.php');
+
 }
+?>

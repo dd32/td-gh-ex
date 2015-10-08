@@ -2,12 +2,12 @@
 Theme Name: Advertica Lite
 Theme URI: http://www.sketchthemes.com/themes/advertica-the-uber-clean-multipurpose-wordpress-theme/
 Description: Advertica Lite is responsive and multipurpose wordpress theme effectively used for business, corporate or portfolio purpose. It works good for creative professionals, advertising agency or even construction business, engineering industry or contractor. Advertica Lite comes with a highly responsive bootstrap framework and a parallax section to mesmerize your visitors with maximum effect. This trendy theme clubs rtl support and impressive landing page and also ideal for marketing or digital marketing of your products and services. The startups can have appealing presentation of their site through this theme while those in the business can decently put up their portfolio.
-Version: 1.0.7
+Version: 1.0.8
 Author: SketchThemes
 Author URI: https://sketchthemes.com/
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: blue, gray, orange, pink, purple, dark, light, two-columns, right-sidebar, left-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-colors, custom-menu, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: blue, gray, orange, pink, purple, dark, light, custom-background, custom-colors, custom-header, custom-menu, editor-style, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready , full-width-template
 Text Domain: advertica-lite
 
 Advertica Lite WordPress Theme, Copyright 2015 SketchThemes
@@ -78,9 +78,9 @@ body.page-template-template-front-page-php #main{margin-top:0 !important;}
 #header { padding: 0;  position: relative;   z-index: 9999; box-shadow: 3px 0 2px rgba(0, 0, 0, 0.5);background: #fff;}
 .skehead-headernav{ left: 0;top: 0;width: 100%;z-index: 200;}
 #header.skehead-headernav.skehead-headernav-shrink{position:fixed;-moz-box-sizing: border-box;box-sizing: border-box;}
-#logo {transition: height 0.3s ease 0s, line-height 0.3s ease 0s; margin-top: 5px;  margin-bottom: 5px;position: relative;max-height: 62px;}
+#logo {transition: height 0.3s ease 0s, line-height 0.3s ease 0s; margin-top: 5px;  margin-bottom: 5px;position: relative; max-height: 62px;}
 #logo #site-title { display: block;font-size: 18px;margin: 8px 0 11px;}
-.skehead-headernav .logo{margin-top:18px;}
+.skehead-headernav .logo{margin-top:18px; max-width: 100%; max-height: 62px; }
 .skehead-headernav.skehead-headernav-shrink .logo {  height: 34px;margin-top: 3px;position: relative;top: 3px;width: auto;}
 .skehead-headernav.skehead-headernav-shrink #logo #site-title {margin: 0 0 2px;}
 #logo #site-title a { color: #333333;display: inline-block;font-size: 18px;font-weight: 700;line-height: 23px; margin-top: 5px; text-decoration: none; text-transform: uppercase;} 
@@ -118,7 +118,7 @@ body.page-template-template-front-page-php #main{margin-top:0 !important;}
 /* =Content
 -------------------------------------------------------------- */
 #container {}
-#main {  padding: 0 0 0px;  background: none repeat scroll 0 0 #FEFEFE; }
+#main {  padding: 0 0 0px; }
 #content {  word-wrap: break-word;  -ms-word-wrap: break-word; }
 .left-sidebar #content{margin-top:0px;}
 .container.post-wrap { margin-top: 60px;  }

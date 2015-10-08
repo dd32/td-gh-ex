@@ -5,7 +5,6 @@
  */
 
 get_header(); ?>
-<?php global $advertica_shortname; ?>
 
 <div class="page-content">
 	<div class="container" id="error-404">

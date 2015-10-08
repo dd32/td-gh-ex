@@ -15,7 +15,6 @@
 
 get_header(); ?>
 
-<?php global $advertica_shortname; ?>
 <div class="main-wrapper-item">
 	<div class="bread-title-holder">
 		<div class="bread-title-bg-image full-bg-breadimage-fixed"></div>
@@ -35,8 +34,8 @@ get_header(); ?>
 						endif;
 						?>
 					</h1>
-					<?php  if(sketch_get_option($advertica_shortname."_hide_bread") == 'true') {
-						if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();}
+					<?php  if( get_theme_mod('breadcrumb_sec', 'on') == 'on' ) {
+						if ((class_exists('advertica_lite_breadcrumb_class'))) {$advertica_breadcumb->advertica_lite_custom_breadcrumb();}
 					}
 					?>
 				</div>

@@ -6,11 +6,7 @@
 ?>
 <div id="sidebar_2" class="ske_widget">
 	<ul class="skeside">
-		<?php dynamic_sidebar( 'Blog Sidebar' ); ?>
+		<?php dynamic_sidebar( 'blog-sidebar' ); ?>
 	</ul>
 </div>
 <!-- #sidebar_2 .ske_widget -->
- 
-
-
-

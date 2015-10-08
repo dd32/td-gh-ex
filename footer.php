@@ -6,20 +6,7 @@
 * #main and #page div elements.
 *
 */
-global $tweetfeedmeta,$advertica_shortname;
 ?>
-
-<?php  
-if($tweetfeedmeta == '1'){ ?>
-<!-- full-twitter-box -->
-<div id="full-twitter-box">
-	<div class="container">
-		<div class="row-fluid">
-			<?php  get_template_part('section','twitter-panel'); ?>
-		</div>
-	</div>
-</div>
-<?php } ?>
 	<div class="clearfix"></div>
 </div>
 <!-- #main --> 
@@ -38,10 +25,8 @@ if($tweetfeedmeta == '1'){ ?>
 	<div class="third_wrapper">
 		<div class="container">
 			<div class="row-fluid">
-				<?php $sktURL = 'https://www.sketchthemes.com/'; ?>
-				<?php $footer_copyright = wp_kses_post(sketch_get_option($advertica_shortname."_copyright")); ?>
-				<div class="copyright span6 alpha omega"> <?php echo $footer_copyright; ?></div>
-				<div class="owner span6 alpha omega"><?php _e('Advertica Theme by','advertica-lite'); ?> <a href="<?php echo esc_url($sktURL); ?>" ><?php _e('SketchThemes','advertica-lite'); ?></a></div>
+				<div id="copyright" class="copyright span6 alpha omega"> <?php echo wp_kses_post( get_theme_mod('copyright', __('Proudly Powered by WordPress', 'advertica-lite') ) ); ?></div>
+				<div class="owner span6 alpha omega"><?php _e('Advertica Theme by','advertica-lite'); ?> <a href="<?php echo esc_url('https://sketchthemes.com/'); ?>" ><?php _e('SketchThemes','advertica-lite'); ?></a></div>
 				<div class="clearfix"></div>
 			</div>
 		</div>

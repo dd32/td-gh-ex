@@ -5,7 +5,7 @@ Template Name: Full Width Template
 ?>
 
 <?php get_header(); ?>
-<?php global $advertica_shortname; ?>
+
 <?php if(have_posts()) : ?>
 <?php while(have_posts()) : the_post(); ?>
 
@@ -15,8 +15,8 @@ Template Name: Full Width Template
 		<div class="row-fluid">
 		  <div class="container_inner clearfix">
 			<h1 class="title"><?php the_title(); ?></h1>
-				<?php  if(sketch_get_option($advertica_shortname."_hide_bread") == 'true') {
-						if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();}
+				<?php  if( get_theme_mod('breadcrumb_sec', 'on') == 'on' ) {
+						if ((class_exists('advertica_lite_breadcrumb_class'))) {$advertica_breadcumb->advertica_lite_custom_breadcrumb();}
 				}
 				?>
 		   </div>
@@ -32,7 +32,7 @@ Template Name: Full Width Template
 					<div class="skepost">
 						<?php the_content(); ?>
 						<?php wp_link_pages(array('before' => '<p><strong>'.__('Pages :','advertica-lite').'</strong>','after' => '</p>', __('number','advertica-lite'),));	?>
-						<?php edit_post_link('Edit', '', ''); ?>	
+						<?php edit_post_link( __('Edit', 'advertica-lite') , '', ''); ?>
 					</div>
 					<!-- skepost -->
 				</div>

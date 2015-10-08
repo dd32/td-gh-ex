@@ -1,17 +1,12 @@
-<?php global $advertica_shortname, $advertica_themename, $post; ?>
 <?php
  
-	if(sketch_get_option($advertica_shortname.'_colorpicker')){ $bg_color = esc_attr(sketch_get_option($advertica_shortname.'_colorpicker')); } 
-	if(sketch_get_option($advertica_shortname.'_fullparallax_image')){ $fullparallax_image = esc_url(sketch_get_option($advertica_shortname.'_fullparallax_image')); }   	
-	if(sketch_get_option($advertica_shortname.'_bread_title_color')){ $skt_bread_title_color = esc_attr(sketch_get_option($advertica_shortname.'_bread_title_color')); } 
-	if(sketch_get_option($advertica_shortname.'_bread_color')){ $breadcolor = esc_attr(sketch_get_option($advertica_shortname.'_bread_color')); } 
-	if(sketch_get_option($advertica_shortname.'_bread_image')){ $breadimage = esc_attr(sketch_get_option($advertica_shortname.'_bread_image')); } 
+	$bg_color = esc_attr( get_theme_mod('advertica_lite_pri_color', '#FFA500') );
+	$fullparallax_image = esc_url( get_theme_mod('parallax_image', get_template_directory_uri().'/images/Parallax_Section_Image.jpg') );
 	
-	$pagetitlebg = get_template_directory_uri().'/images/page-title-bg.jpg';
-
-	if( empty($bg_color) || $bg_color == '' || !isset($bg_color)  ) {
-		$bg_color = '#FFA500';
-	}
+	$skt_bread_title_color = esc_attr( get_theme_mod('breadcrumbtxt_color', '#222222') );
+	$breadbgcolor = esc_attr( get_theme_mod('breadcrumbbg_color', '#F2F2F2') );
+	$breadimage = esc_url( get_theme_mod('breadcrumbbg_image', get_template_directory_uri().'/images/page-title-bg.jpg') );
+	
 ?>
 <style type="text/css">
 
@@ -80,19 +75,11 @@
 	.full-bg-breadimage-fixed {}
 	#full-division-box { background-image: url("<?php if(isset($fullparallax_image)){ echo $fullparallax_image; } else { echo get_template_directory_uri().'/images/Parallax_Section_Image.jpg'; } ?>"); }
 	
-	<?php if(sketch_get_option($advertica_shortname.'_bread_stype')){ $bread_type = sketch_get_option($advertica_shortname.'_bread_stype'); } 
-	
-	if(isset($bread_type)) {
-		if ($bread_type == "brcolor" ) { ?>
-			.full-bg-breadimage-fixed { background-color: <?php echo $breadcolor; ?>; }
-		<?php  } else { ?>
-			.full-bg-breadimage-fixed { background-image: url("<?php echo $pagetitlebg; ?>"); }
-		<?php }
-
-		if($bread_type == "brimage") { ?>
-			.full-bg-breadimage-fixed { background-image: url("<?php echo $breadimage; ?>"); }
-		<?php }
-	} ?>
+	<?php if ( $breadimage != '' ) { ?>
+		.full-bg-breadimage-fixed { background-image: url("<?php echo $breadimage; ?>"); }
+	<?php } else { ?>
+		.full-bg-breadimage-fixed { background-color: <?php echo $breadbgcolor; ?>; }
+	<?php } ?>
 	
 	.bread-title-holder .skt-breadcrumbs-separator,.bread-title-holder h1.title,.cont_nav_inner span,.bread-title-holder .cont_nav_inner p,.bread-title-holder .cont_nav_inner a{
 		color: <?php if(isset($skt_bread_title_color)){ echo $skt_bread_title_color; } ?>;

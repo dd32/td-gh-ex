@@ -1,4 +1,4 @@
-<form method="get" id="searchform" action="<?php echo home_url('/'); ?>">
+<form method="get" id="searchform" action="<?php echo esc_url( home_url('/') ); ?>">
 	<div class="searchleft">
 		<input type="text" value="" placeholder="<?php _e('Search','advertica-lite');?>" name="s" id="searchbox" class="searchinput"/>
 	</div>

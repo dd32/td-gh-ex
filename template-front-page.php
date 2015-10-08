@@ -1,13 +1,12 @@
 <?php get_header(); ?>
 
-<?php global $advertica_shortname; ?>
-
 <!-- FEATURED BOXES SECTION -->
 <?php include("includes/front-featured-boxes-section.php"); ?>
 
 <!-- AWESOME PARALLAX SECTION -->
 <?php include("includes/front-parallax-section.php"); ?>
 
+<?php if ( 'page' == get_option( 'show_on_front' ) ) {  ?>
 <!-- PAGE EDITER CONTENT -->
 <?php if(have_posts()) : ?>
 	<?php while(have_posts()) : the_post(); ?>
@@ -18,20 +17,17 @@
 		</div>
 	<?php endwhile; ?>
 <?php endif; ?>
+<?php } ?>
 
-<?php  if(sketch_get_option($advertica_shortname."_hide_home_blog") != 'false') { ?>
+<?php  if( get_theme_mod('home_blog_sec', 'on') == 'on' ) { ?>
 <div id="front-content-box" class="skt-section">
 	<div class="container">
 		<div class="row-fluid">
-			<?php if(sketch_get_option($advertica_shortname."_blogsec_title")) { ?>
-				<h3 class="inline-border"><?php echo wp_kses_post(sketch_get_option($advertica_shortname."_blogsec_title")); ?></h3>
-			<?php } else { ?>
-				<h3 class="inline-border"><?php _e('Latest News', 'advertica-lite'); ?></h3>
-			<?php } ?>
-				<span class="border_left"></span></br>
+			<h3 class="inline-border"><?php echo wp_kses_post( get_theme_mod('home_blog_title', __('Latest News', 'advertica-lite') ) ); ?></h3>
+			<span class="border_left"></span></br>
 		</div>
 		<div id="front-blog-wrap" class="row-fluid">
-		<?php $advertica_blogno = sketch_get_option($advertica_shortname."_blog_no");
+		<?php $advertica_blogno = esc_attr( get_theme_mod('home_blog_num', '6') );
 		if( !empty($advertica_blogno) && ($advertica_blogno > 0) ) {
 				$advertica_lite_latest_loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => $advertica_blogno,'ignore_sticky_posts' => true ) );
 		}else{

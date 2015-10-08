@@ -7,7 +7,7 @@
 
 <div id="sidebar_2" class="ske_widget">
 	<ul class="skeside">
-		<?php dynamic_sidebar( 'Page Sidebar' ); ?>
+		<?php dynamic_sidebar( 'page-sidebar' ); ?>
 	</ul>
 </div>
 <!-- #sidebar_2 .ske_widget -->
