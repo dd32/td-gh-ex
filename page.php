@@ -40,11 +40,13 @@ get_header(); ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-<?php
-$page_sidebar = 'right-sidebar'; 
-$page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout', true );
+<?php 
+$page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout', true );
+if( empty( $page_sidebar ) ) {
+    $page_sidebar = 'right-sidebar';
+}
     if( $page_sidebar != 'no-sidebar' ){
-        $option_value = explode('-',$page_sidebar ); 
+        $option_value = explode( '-', $page_sidebar ); 
         get_sidebar( $option_value[0] );
     } 
 ?>

@@ -213,7 +213,38 @@ class Options_Framework_Interface {
                 $output .= '</div>';
                 break;
 
-			// Multicheck
+			// SliderUI
+                case "sliderui":
+                    $s_min = $s_max = $s_step = $s_edit = '';
+                    $s_edit = ' readonly="readonly"';
+
+                    if (!isset($value['min'])) {
+                        $s_min = '0';
+                    } else {
+                        $s_min = $value['min'];
+                    }
+                    if (!isset($value['max'])) {
+                        $s_max = $s_min + 1;
+                    } else {
+                        $s_max = $value['max'];
+                    }
+                    if (!isset($value['step'])) {
+                        $s_step = '1';
+                    } else {
+                        $s_step = $value['step'];
+                    }
+
+
+                    //values
+                    $s_data = 'data-id="' . $value['id'] . '" data-val="' . esc_attr($val) . '" data-min="' . $s_min . '" data-max="' . $s_max . '" data-step="' . $s_step . '"';
+
+                    //html output
+                    $output .= '<input type="text" name="' . esc_attr($option_name . '[' . $value['id'] . ']') . '" id="' . esc_attr($value['id']) . '" value="' . esc_attr($val) . '" ' . $s_edit . ' />';
+                    $output .= '<div id="' . $value['id'] . '-slider" class="ap_sliderui" ' . $s_data . '></div>';
+
+                    break;
+            
+            // Multicheck
 			case "multicheck":
 				foreach ($value['options'] as $key => $option) {
 					$checked = '';

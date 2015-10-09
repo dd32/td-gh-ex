@@ -54,12 +54,11 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php 
- $sidebar_option = 'right-sidebar';
- $sidebar_option = of_get_option('global_archive_sidebar');
- if($sidebar_option!='no-sidebar'){
-        $option_value = explode('-',$sidebar_option); 
-        get_sidebar($option_value[0]);
+<?php
+ $sidebar_option = of_get_option( 'global_archive_sidebar', 'right-sidebar' );
+ if( $sidebar_option != 'no-sidebar' ){
+        $option_value = explode( '-', $sidebar_option ); 
+        get_sidebar( $option_value[0] );
     }
 ?>
 </div>

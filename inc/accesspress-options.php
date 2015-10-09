@@ -423,6 +423,15 @@ function optionsframework_options() {
             'type' => 'switch'
             );
     $options[] = array(
+    		'name' => __('Slider Pause Duration', 'accesspress-mag' ),
+    		'id' => 'slider_pause',
+    		'std' => '6000',
+    		"min" 	=> "1000",
+    		"step"	=> "100",
+    		"max" 	=> "8000",
+    		"type" 	=> "sliderui"
+            );
+    $options[] = array(
             'name' => __( 'Show Title', 'accesspress-mag' ),                
             'desc' => __( 'Show or hide slider`s Title/info', 'accesspress-mag' ),
             'id' => 'slider_info',

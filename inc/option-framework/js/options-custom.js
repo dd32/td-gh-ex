@@ -99,6 +99,29 @@ jQuery(document).ready(function($) {
 
 		});
 	}
+    
+    jQuery('.ap_sliderui').each(function() {
+
+        var obj = jQuery(this);
+        var sId = "#" + obj.data('id');
+        var val = obj.data('val');
+        var min = obj.data('min');
+        var max = obj.data('max');
+        var step = obj.data('step');
+
+        //slider init
+        obj.slider({
+            value: val,
+            min: min,
+            max: max,
+            step: step,
+            range: "min",
+            slide: function(event, ui) {
+                jQuery(sId).val(ui.value);
+            }
+        });
+
+    });
 	
 
 });

@@ -22,7 +22,7 @@ get_header(); ?>
 						</div>
 					</div><!-- .page-content -->
 				</div>
-		</section>
+            </section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

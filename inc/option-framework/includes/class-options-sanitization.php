@@ -61,6 +61,14 @@ function of_sanitize_textarea( $input ) {
 add_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
 
 /**
+ * Sanitization for SliderUI
+ *  
+ * @param $input string
+ * @return $output sanitized string * 
+ */
+ add_filter('of_sanitize_sliderui', 'sanitize_text_field');
+ 
+/**
  * Sanitization for number field
  *
  * @param $input string

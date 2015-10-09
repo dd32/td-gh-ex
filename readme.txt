@@ -69,6 +69,11 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.1.7
+ * Added slider pause option
+ * Removed unused function codes
+ * Suggested New plugins via TGM Activation
+     
 Version 2.1.6
  * Fixed design bugs in slider
  * Fixed bugs in post sidebar for exsiting posts.

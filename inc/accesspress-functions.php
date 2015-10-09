@@ -242,7 +242,8 @@ function accesspress_mag_function_script(){
     $slider_controls = ( of_get_option( 'slider_controls' ) == "1" ) ? "true" : "false";
     $slider_auto_transaction = ( of_get_option( 'slider_auto_transition' ) == "1" ) ? "true" : "false";
     $slider_pager = ( of_get_option( 'slider_pager' ) == "1" ) ? "true" : "false";
-    $ticker_caption = esc_attr( of_get_option( 'ticker_caption', 'Latest' ) ); 
+    $slider_pause = of_get_option( 'slider_pause', '6000' );
+    $ticker_caption = esc_attr( of_get_option( 'ticker_caption', __( 'Latest', 'accesspress-mag' ) ) ); 
     ?>
     <script type="text/javascript">
         jQuery(function($){
@@ -250,20 +251,20 @@ function accesspress_mag_function_script(){
         /*--------------For Home page slider-------------------*/
         
             $("#homeslider").bxSlider({
-                controls:<?php echo esc_attr($slider_controls); ?>,
-                pager:<?php echo esc_attr($slider_pager);?>,
-                pause: 6000,
+                controls: <?php echo esc_attr( $slider_controls ); ?>,
+                pager: <?php echo esc_attr( $slider_pager ); ?>,
+                pause: <?php echo intval( $slider_pause ); ?>,
                 speed: 1000,
-                auto:<?php echo esc_attr($slider_auto_transaction);?>
+                auto: <?php echo esc_attr( $slider_auto_transaction ); ?>
                                         
             });
             
             $("#homeslider-mobile").bxSlider({
-                controls:<?php echo esc_attr($slider_controls); ?>,
-                pager:<?php echo esc_attr($slider_pager);?>,
-                pause: 6000,
+                controls: <?php echo esc_attr( $slider_controls ); ?>,
+                pager: <?php echo esc_attr( $slider_pager ); ?>,
+                pause: <?php echo intval( $slider_pause ); ?>,
                 speed: 1000,
-                auto:<?php echo esc_attr($slider_auto_transaction);?>
+                auto: <?php echo esc_attr( $slider_auto_transaction ); ?>
                                         
             });
 
@@ -307,42 +308,6 @@ add_action( 'wp_head', 'accesspress_mag_function_script' );
     echo $cat_sec ;
  }
 endif;
-
-/*---------------------------------------------------------------------------------------------------------------------------------------*/
-/**
- * Get and set Post Views
- */
-
-/*
-
-function accesspress_mag_getPostViews($postID){
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-        return "0";
-    }
-    return $count;
-}
-
-function accesspress_mag_setPostViews($postID) {
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-    }else{
-        $count++;
-        update_post_meta($postID, $count_key, $count);
-    }
-}
-
-// Remove issues with prefetching adding extra views
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0); 
-
-*/
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
 /**
@@ -442,11 +407,6 @@ function accesspress_mag_post_meta_cb(){
         $post_comment_count = get_comments_number( $post->ID );
         echo '<span class="comment_count"><i class="fa fa-comments"></i>'.esc_attr( $post_comment_count ).'</span>';
     }
-    /*
-    if($show_post_views==1){
-        echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.esc_html( accesspress_mag_getPostViews(get_the_ID()) ).'</span>';
-    }
-    */
 }
 endif ;
 add_action( 'accesspress_mag_post_meta', 'accesspress_mag_post_meta_cb', 10 );
@@ -459,7 +419,7 @@ add_action( 'accesspress_mag_post_meta', 'accesspress_mag_post_meta_cb', 10 );
 if( ! function_exists( 'accesspress_mag_home_posted_on_cb' ) ):  
 function accesspress_mag_home_posted_on_cb(){
     global $post;
-    //$show_post_views = of_get_option( 'show_post_views' );
+    
     $show_comment_count = of_get_option( 'show_comment_count' );
     $show_post_date = of_get_option( 'post_show_date' );
     
@@ -488,11 +448,6 @@ function accesspress_mag_home_posted_on_cb(){
         $post_comment_count = get_comments_number( $post->ID );
         echo '<span class="comment_count"><i class="fa fa-comments"></i>'.esc_attr( $post_comment_count ).'</span>';
     }
-    /*
-    if($show_post_views==1){
-        echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.esc_html( accesspress_mag_getPostViews(get_the_ID()) ).'</span>';
-    }
-    */
 }
 endif;
 add_action( 'accesspress_mag_home_posted_on', 'accesspress_mag_home_posted_on_cb', 10 );
@@ -755,33 +710,3 @@ function accesspress_mag_random_post() {
    wp_reset_query();
 }
 endif;
-
-/*---------------------------------------------------------------------------------------------------------------------------------------*/
-/**
- * Change value of post template layout
- */
-/* 
-add_action( 'admin_init', 'change_post_style_meta' );
-
-function change_post_style_meta() {
-    $get_theme_option = get_option( 'accesspress-mag-theme' );
-    if( !empty( $get_theme_option ) ) {
-        if( !array_key_exists( 'post_meta_flag', $get_theme_option ) ){
-                $all_posts = get_posts( array( 'posts_per_page' => -1 ) );
-                foreach( $all_posts as $single_post ) {
-                    $post_meta_value = get_post_meta( $single_post->ID, 'accesspress_mag_post_template_layout', true );
-                    if( $post_meta_value == 'default-template' ) {
-                        $post_meta_value = 'single';
-                    } elseif( $post_meta_value == 'style1-template' ) {
-                        $post_meta_value = 'single-style1';
-                    } else {
-                        $post_meta_value = 'global-template';
-                    }
-                    update_post_meta( $single_post->ID, 'accesspress_mag_post_template_layout', $post_meta_value );
-                }
-                $get_theme_option['post_meta_flag'] = 1;
-                update_option( 'accesspress-mag-theme', $get_theme_option );
-        }
-    }
-}
-*/

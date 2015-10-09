@@ -21,8 +21,7 @@
 <?php do_action( 'accesspress_mag_before' ); ?>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'accesspress-mag' ); ?></a>
-    <?php 
-        $accesspress_mag_logo = get_theme_mod( 'header_image' );
+    <?php
         $accesspress_mag_logo_alt = of_get_option( 'logo_alt' );
         $accesspress_mag_logo_title = of_get_option( 'logo_title' );
         $accesspress_mag_ticker_option = of_get_option( 'news_ticker_option', '1' );
@@ -73,7 +72,11 @@
             <div class="apmag-container">
         		<div class="site-branding">
                     <div class="sitelogo-wrap">  
-                        <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $accesspress_mag_logo ) ;?>" alt="<?php echo esc_attr( $accesspress_mag_logo_alt ); ?>" title="<?php echo esc_attr( $accesspress_mag_logo_title ); ?>" /></a>
+                        <?php if ( get_header_image() ) { ?>
+                        <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                            <img src="<?php header_image(); ?>" alt="<?php echo esc_attr( $accesspress_mag_logo_alt ); ?>" title="<?php echo esc_attr( $accesspress_mag_logo_title ); ?>" />
+                        </a>
+                        <?php } ?>
                         <meta itemprop="name" content="<?php bloginfo( 'name' )?>" />
                     </div>
                     <div class="sitetext-wrap">  

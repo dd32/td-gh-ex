@@ -54,7 +54,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar('right'); ?>
+<?php get_sidebar( 'right' ); ?>
 </div>
 
 <?php do_action( 'accesspress_mag_after_body_content' ); ?>
