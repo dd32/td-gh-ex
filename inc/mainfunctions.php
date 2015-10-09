@@ -175,7 +175,7 @@ function avien_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'themeofwp' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'avien-light' ), max( $paged, $page ) );
 	}
 
 	return $title;

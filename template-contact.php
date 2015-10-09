@@ -51,7 +51,7 @@
 					
                     <header class="entry-header">
                         <h4 class="entry-title">
-                            <?php the_title(); ?> <?php edit_post_link( __( ' - <i class="fa fa-pencil"></i> Edit - ', 'themeofwp' ), '<small class="edit-link">', '</small><div class="clearfix"></div>' ); ?>
+                            <?php the_title(); ?> <?php edit_post_link( __( ' - <i class="fa fa-pencil"></i> Edit - ', 'avien-light' ), '<small class="edit-link">', '</small><div class="clearfix"></div>' ); ?>
                         </h4>
                     </header>
 

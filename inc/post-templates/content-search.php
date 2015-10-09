@@ -16,7 +16,7 @@
 		<?php theme_excerpt(); ?>
 		
 		<!-- read more start -->
-		<p><a href="<?php the_permalink(); ?>" class="read-more"><i class="fa fa-link"></i> <?php _e( 'read more', 'themeofwp' ); ?></a></p>
+		<p><a href="<?php the_permalink(); ?>" class="read-more"><i class="fa fa-link"></i> <?php _e( 'read more', 'avien-light' ); ?></a></p>
 		<!-- read more end -->
 	</div>
 	

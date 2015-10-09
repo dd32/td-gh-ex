@@ -14,7 +14,7 @@ class ThemeofWP_Recent_Posts_Widget extends WP_Widget {
         parent::__construct(
             'themeofwp_recent_posts', // Base ID
             'TWP Recent Posts (Sidebar)', // Name
-            array( 'description' => __( 'Recent Posts Widget for the sidebar.', 'themeofwp' ), ) // Args
+            array( 'description' => __( 'Recent Posts Widget for the sidebar.', 'avien-light' ), ) // Args
             );
     }
 
@@ -45,11 +45,11 @@ class ThemeofWP_Recent_Posts_Widget extends WP_Widget {
             $count  = isset($instance[ 'count' ]) ? $instance[ 'count' ] : 3;
             ?>
             <p>
-                <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:', 'themeofwp' ); ?></label> 
+                <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:', 'avien-light' ); ?></label> 
                 <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
             </p>
             <p>
-                <label for="<?php echo $this->get_field_name( 'count' ); ?>"><?php _e( 'Number of posts:', 'themeofwp' ); ?></label> 
+                <label for="<?php echo $this->get_field_name( 'count' ); ?>"><?php _e( 'Number of posts:', 'avien-light' ); ?></label> 
                 <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>" />
             </p>
             <?php 
@@ -88,7 +88,7 @@ class ThemeofWP_AD_Widget extends WP_Widget {
         parent::__construct(
             'themeofwp_adverts',
             'TWP 125x125 Ads (Sidebar)',
-            array( 'description' => __( 'Displays 125x125 ads with link for the sidebar.', 'themeofwp' ), ) // Args
+            array( 'description' => __( 'Displays 125x125 ads with link for the sidebar.', 'avien-light' ), ) // Args
             );
     }
 
@@ -190,7 +190,7 @@ class ThemeofWP_AD_Widget extends WP_Widget {
                 <img class="custom_media_image" src="<?php echo $instance['img_src'];?>" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" />
                 <?php } ?>
                 <input type="text" class="widefat custom_media_url" name="<?php echo $this->get_field_name('img_src'); ?>" id="<?php echo $this->get_field_id('img_src'); ?>" value="<?php if(!empty($instance['img_src'])){echo $instance['img_src'];} ?>">
-                <a href="#" class="button custom_media_upload"><?php _e('Upload', 'themeofwp'); ?></a>            
+                <a href="#" class="button custom_media_upload"><?php _e('Upload', 'avien-light'); ?></a>            
 
                 <p>
                     <label for="<?php echo $this->get_field_id('url2');?>">URL:</label><br/>
@@ -202,7 +202,7 @@ class ThemeofWP_AD_Widget extends WP_Widget {
                 <img class="custom_media_image2" src="<?php if(!empty($instance['img_src2'])){echo $instance['img_src2'];} else{ echo "No Image";}?>" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" />
                 <?php } ?>
                 <input type="text" class="widefat custom_media_url2" name="<?php echo $this->get_field_name('img_src2'); ?>" id="<?php echo $this->get_field_id('img_src2'); ?>" value="<?php if(!empty($instance['img_src2'])){echo $instance['img_src2'];} ?>">
-                <a href="#" class="button custom_media_upload2"><?php _e('Upload', 'themeofwp'); ?></a>
+                <a href="#" class="button custom_media_upload2"><?php _e('Upload', 'avien-light'); ?></a>
 				
 				<p>
                     <label for="<?php echo $this->get_field_id('url3');?>">URL:</label><br/>
@@ -214,7 +214,7 @@ class ThemeofWP_AD_Widget extends WP_Widget {
                 <img class="custom_media_image3" src="<?php if(!empty($instance['img_src3'])){echo $instance['img_src3'];} else{ echo "No Image";}?>" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" />
                 <?php } ?>
                 <input type="text" class="widefat custom_media_url3" name="<?php echo $this->get_field_name('img_src3'); ?>" id="<?php echo $this->get_field_id('img_src3'); ?>" value="<?php if(!empty($instance['img_src3'])){echo $instance['img_src3'];} ?>">
-                <a href="#" class="button custom_media_upload3"><?php _e('Upload', 'themeofwp'); ?></a>
+                <a href="#" class="button custom_media_upload3"><?php _e('Upload', 'avien-light'); ?></a>
 				
 				
 				<p>
@@ -227,7 +227,7 @@ class ThemeofWP_AD_Widget extends WP_Widget {
                 <img class="custom_media_image4" src="<?php if(!empty($instance['img_src4'])){echo $instance['img_src4'];} else{ echo "No Image";}?>" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" />
                 <?php } ?>
                 <input type="text" class="widefat custom_media_url4" name="<?php echo $this->get_field_name('img_src4'); ?>" id="<?php echo $this->get_field_id('img_src4'); ?>" value="<?php if(!empty($instance['img_src4'])){echo $instance['img_src4'];} ?>">
-                <a href="#" class="button custom_media_upload4"><?php _e('Upload', 'themeofwp'); ?></a>
+                <a href="#" class="button custom_media_upload4"><?php _e('Upload', 'avien-light'); ?></a>
 				
 				
             </div>
@@ -269,11 +269,11 @@ class Contact_Us_Widget extends WP_Widget {
 	
 	function Contact_Us_Widget()
 	{
-		$widget_ops = array('classname' => 'contact_us', 'description' => __('Add your contact info with map.', 'themeofwp'));
+		$widget_ops = array('classname' => 'contact_us', 'description' => __('Add your contact info with map.', 'avien-light'));
 
 		$control_ops = array('id_base' => 'contact_us-widget');
 
-		$this->WP_Widget('contact_us-widget', __('TWP Contact Us', 'themeofwp'), $widget_ops, $control_ops);
+		parent::__construct('contact_us-widget', __('TWP Contact Us', 'avien-light'), $widget_ops, $control_ops);
 	}
 	
 	function widget($args, $instance)
@@ -308,7 +308,7 @@ class Contact_Us_Widget extends WP_Widget {
         
                 <?php if($instance['phone']): ?>
                 <span class="phone">
-					<i class="fa fa-phone"></i> <?php _e('Phone:', 'themeofwp'); ?><?php echo $instance['phone']; ?>
+					<i class="fa fa-phone"></i> <?php _e('Phone:', 'avien-light'); ?><?php echo $instance['phone']; ?>
 				</span>
 				<?php endif; ?>
 				
@@ -316,7 +316,7 @@ class Contact_Us_Widget extends WP_Widget {
 				<?php if($instance['fax']): ?> 
 				<p>
 					<span class="fax">		
-						<i class="fa fa-phone"></i> <?php _e('Fax:', 'themeofwp'); ?><?php echo $instance['fax']; ?>
+						<i class="fa fa-phone"></i> <?php _e('Fax:', 'avien-light'); ?><?php echo $instance['fax']; ?>
 					</span>
 				</p>
 				<?php endif; ?>
@@ -324,14 +324,14 @@ class Contact_Us_Widget extends WP_Widget {
         
                 <?php if($instance['email']): ?>
                 <span class="email">
-					<i class="fa fa-envelope"> </i> <?php _e('Email:', 'themeofwp'); ?> <a href="mailto:<?php echo $instance['email']; ?>"><?php echo $instance['email']; ?></a>
+					<i class="fa fa-envelope"> </i> <?php _e('Email:', 'avien-light'); ?> <a href="mailto:<?php echo $instance['email']; ?>"><?php echo $instance['email']; ?></a>
 				</span>
 				<?php endif; ?>	 
 				
 				<?php if($instance['web']): ?>
 				<p>
 					<span class="web">	
-						<i class="fa fa-link"></i> <?php _e('Web:', 'themeofwp'); ?> <a href="<?php echo $instance['web']; ?>"><?php echo $instance['web']; ?></a>
+						<i class="fa fa-link"></i> <?php _e('Web:', 'avien-light'); ?> <a href="<?php echo $instance['web']; ?>"><?php echo $instance['web']; ?></a>
 					</span>
 				</p>
 				<?php endif; ?>
@@ -364,11 +364,11 @@ class Contact_Us_Widget extends WP_Widget {
 		$defaults = array('title' => 'OUR LOCATION');
 		$instance = wp_parse_args((array) $instance, $defaults); ?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $instance['title']; ?>" />
 		</p>
 
-		<label for="<?php echo $this->get_field_id('map_img'); ?>"><?php _e('Map Image:', 'themeofwp');?></label><br />
+		<label for="<?php echo $this->get_field_id('map_img'); ?>"><?php _e('Map Image:', 'avien-light');?></label><br />
 		
 		<?php if(!empty($instance['map_img'])){ ?>
 		
@@ -378,30 +378,30 @@ class Contact_Us_Widget extends WP_Widget {
 		
 		<input type="text" class="widefat map_img_url" name="<?php echo $this->get_field_name('map_img'); ?>" id="<?php echo $this->get_field_id('map_img'); ?>" value="<?php if(!empty($instance['map_img'])){echo $instance['map_img'];} ?>">
 		
-		<a href="#" class="button map_img_upload"><?php _e('Upload', 'themeofwp'); ?></a>
+		<a href="#" class="button map_img_upload"><?php _e('Upload', 'avien-light'); ?></a>
 				
 		<p>
-			<label for="<?php echo $this->get_field_id('map_url'); ?>"><?php _e('Map Image URL:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('map_url'); ?>"><?php _e('Map Image URL:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('map_url'); ?>" name="<?php echo $this->get_field_name('map_url'); ?>" value="<?php echo $instance['map_url']; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('address'); ?>"><?php _e('Address:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('address'); ?>"><?php _e('Address:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('address'); ?>" name="<?php echo $this->get_field_name('address'); ?>" value="<?php echo $instance['address']; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('phone'); ?>"><?php _e('Phone:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('phone'); ?>"><?php _e('Phone:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('phone'); ?>" name="<?php echo $this->get_field_name('phone'); ?>" value="<?php echo $instance['phone']; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('fax'); ?>"><?php _e('Fax:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('fax'); ?>"><?php _e('Fax:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('fax'); ?>" name="<?php echo $this->get_field_name('fax'); ?>" value="<?php echo $instance['fax']; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('email'); ?>"><?php _e('Email:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('email'); ?>"><?php _e('Email:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('email'); ?>" name="<?php echo $this->get_field_name('email'); ?>" value="<?php echo $instance['email']; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('web'); ?>"><?php _e('Website URL:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('web'); ?>"><?php _e('Website URL:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('web'); ?>" name="<?php echo $this->get_field_name('web'); ?>" value="<?php echo $instance['web']; ?>" />
 		</p>
 	<?php
@@ -423,11 +423,11 @@ class Header_Contact extends WP_Widget {
 	
 	function Header_Contact()
 	{
-		$widget_ops = array('classname' => 'header_contact_us', 'description' => __('Add your contact info to the header area.', 'themeofwp'));
+		$widget_ops = array('classname' => 'header_contact_us', 'description' => __('Add your contact info to the header area.', 'avien-light'));
 
 		$control_ops = array('id_base' => 'header_contact_us-widget');
 
-		$this->WP_Widget('header_contact_us-widget', __('TWP Header Contact', 'themeofwp'), $widget_ops, $control_ops);
+		parent::__construct('header_contact_us-widget', __('TWP Header Contact', 'avien-light'), $widget_ops, $control_ops);
 	}
 	
 	function widget($args, $instance)
@@ -476,12 +476,12 @@ class Header_Contact extends WP_Widget {
 		$instance = wp_parse_args((array) $instance, $defaults); ?>
 	
 		<p>
-			<label for="<?php echo $this->get_field_id('phone'); ?>"><?php _e('Phone:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('phone'); ?>"><?php _e('Phone:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('phone'); ?>" name="<?php echo $this->get_field_name('phone'); ?>" value="<?php echo $instance['phone']; ?>" />
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('email'); ?>"><?php _e('Email:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('email'); ?>"><?php _e('Email:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('email'); ?>" name="<?php echo $this->get_field_name('email'); ?>" value="<?php echo $instance['email']; ?>" />
 		</p>
 		
@@ -504,11 +504,11 @@ class Header_Social extends WP_Widget {
 	
 	function Header_Social()
 	{
-		$widget_ops = array('classname' => 'header_social_us', 'description' => __('Add your social info to the header area.', 'themeofwp'));
+		$widget_ops = array('classname' => 'header_social_us', 'description' => __('Add your social info to the header area.', 'avien-light'));
 
 		$control_ops = array('id_base' => 'header_social_us-widget');
 
-		$this->WP_Widget('header_social_us-widget', __('TWP Header Social', 'themeofwp'), $widget_ops, $control_ops);
+		parent::__construct('header_social_us-widget', __('TWP Header Social', 'avien-light'), $widget_ops, $control_ops);
 	}
 	
 	function widget($args, $instance)
@@ -568,27 +568,27 @@ class Header_Social extends WP_Widget {
 		$instance = wp_parse_args((array) $instance, $defaults); ?>
 	
 		<p>
-			<label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter URL:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter URL:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" value="<?php echo $instance['twitter']; ?>" />
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook URL:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook URL:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" value="<?php echo $instance['facebook']; ?>" />
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('linkedin'); ?>"><?php _e('LinkedIn URL:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('linkedin'); ?>"><?php _e('LinkedIn URL:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('linkedin'); ?>" name="<?php echo $this->get_field_name('linkedin'); ?>" value="<?php echo $instance['linkedin']; ?>" />
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('google'); ?>"><?php _e('Google+ URL:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('google'); ?>"><?php _e('Google+ URL:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('google'); ?>" name="<?php echo $this->get_field_name('google'); ?>" value="<?php echo $instance['google']; ?>" />
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e('Instagram URL:', 'themeofwp');?></label><br />
+			<label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e('Instagram URL:', 'avien-light');?></label><br />
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('instagram'); ?>" name="<?php echo $this->get_field_name('instagram'); ?>" value="<?php echo $instance['instagram']; ?>" />
 		</p>
 		

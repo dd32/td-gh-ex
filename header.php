@@ -128,7 +128,7 @@
 									<div class="navbar-header">
 										
 										<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-										  <span class="sr-only"><?php _e('Toggle navigation', 'themeofwp'); ?></span>
+										  <span class="sr-only"><?php _e('Toggle navigation', 'avien-light'); ?></span>
 										  <span class="icon-bar"></span>
 										  <span class="icon-bar"></span>
 										  <span class="icon-bar"></span>

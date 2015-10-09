@@ -17,14 +17,14 @@ if ( ! function_exists( 'avien_setup' ) ) :
 	function avien_setup() {
 	
 	//Defined Textdomain
-	define('themeofwp', wp_get_theme()->get( 'TextDomain' ));
+	define('avien-light', wp_get_theme()->get( 'TextDomain' ));
 
 	define('THEMEOFWPTHEMENAME', wp_get_theme()->get( 'Name' ));
 
 	// Registering Wp Nav Menus
 	register_nav_menus( array(
-		'primary'   => __('Primary', 'themeofwp'),
-		'footer'    => __('Footer', 'themeofwp')
+		'primary'   => __('Primary', 'avien-light'),
+		'footer'    => __('Footer', 'avien-light')
 	));
 	
 	// Add Editor Style
@@ -45,7 +45,7 @@ if ( ! function_exists( 'avien_setup' ) ) :
 	
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'themeofwp', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'avien-light', get_template_directory() . '/languages' );
 
 	$locale = get_locale();
 	$locale_file = get_template_directory() . "/languages/$locale.php";
@@ -220,7 +220,7 @@ function themeofwp_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'themeofwp' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'avien-light' ), max( $paged, $page ) );
 	}
 
 	return $title;
@@ -367,12 +367,12 @@ function themeofwp_post_nav() {
         <div class="pager">
             <?php if ( $previous ) { ?>
             <li class="previous">
-                <?php previous_post_link( '%link', _x( '<i class="fa fa-long-arrow-left"></i> %title', 'Previous post link', 'themeofwp' ) ); ?>
+                <?php previous_post_link( '%link', _x( '<i class="fa fa-long-arrow-left"></i> %title', 'Previous post link', 'avien-light' ) ); ?>
             </li>
             <?php } ?>
 
             <?php if ( $next ) { ?>
-            <li class="next"><?php next_post_link( '%link', _x( '%title <i class="fa fa-long-arrow-right"></i>', 'Next post link', 'themeofwp' ) ); ?></li>
+            <li class="next"><?php next_post_link( '%link', _x( '%title <i class="fa fa-long-arrow-right"></i>', 'Next post link', 'avien-light' ) ); ?></li>
             <?php } ?>
 
         </div><!-- .nav-links -->
@@ -391,8 +391,8 @@ if( ! function_exists('themeofwp_link_pages') ){
             'link_before' => '', 
             'link_after' => '',
             'next_or_number' => 'number', 
-            'nextpagelink' => __('Next page', 'themeofwp'),
-            'previouspagelink' => __('Previous page', 'themeofwp'), 
+            'nextpagelink' => __('Next page', 'avien-light'),
+            'previouspagelink' => __('Previous page', 'avien-light'), 
             'pagelink' => '%',
             'echo' => 1
             );
@@ -488,7 +488,7 @@ function themeofwp_comments_list($comment, $args, $depth) {
         // Display trackbacks differently than normal comments.
         ?>
         <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-            <p><?php _e( 'Pingback:', 'themeofwp' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'themeofwp' ), '<span class="edit-link">', '</span>' ); ?></p>
+            <p><?php _e( 'Pingback:', 'avien-light' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'avien-light' ), '<span class="edit-link">', '</span>' ); ?></p>
             <?php
             break;
             default :
@@ -512,21 +512,21 @@ function themeofwp_comments_list($comment, $args, $depth) {
 
                             <div class="comment-meta media-heading">
                                 <span class="author-name">
-                                    <?php _e('By', 'themeofwp'); ?> <strong><?php echo get_comment_author(); ?></strong>
+                                    <?php _e('By', 'avien-light'); ?> <strong><?php echo get_comment_author(); ?></strong>
                                 </span>
                                 -
                                 <time datetime="<?php echo get_comment_date(); ?>">
                                     <?php echo get_comment_date(); ?> <?php echo get_comment_time(); ?>
-                                    <?php edit_comment_link( __( 'Edit', 'themeofwp' ), '<small class="edit-link">', '</small>' ); //edit link ?>
+                                    <?php edit_comment_link( __( 'Edit', 'avien-light' ), '<small class="edit-link">', '</small>' ); //edit link ?>
                                 </time>
 
                                 <span class="reply pull-right">
-                                    <?php comment_reply_link( array_merge( $args, array( 'reply_text' =>  sprintf( __( '%s Reply', 'themeofwp' ), '<i class="icon-repeat"></i> ' ) , 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+                                    <?php comment_reply_link( array_merge( $args, array( 'reply_text' =>  sprintf( __( '%s Reply', 'avien-light' ), '<i class="icon-repeat"></i> ' ) , 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
                                 </span><!-- .reply -->
                             </div>
 
                             <?php if ( '0' == $comment->comment_approved ) {  //Comment moderation ?>
-                            <div class="alert alert-info"><?php _e( 'Your comment is awaiting moderation.', 'themeofwp' ); ?></div>
+                            <div class="alert alert-info"><?php _e( 'Your comment is awaiting moderation.', 'avien-light' ); ?></div>
                             <?php } ?>
 
                             <div class="comment-content comment">
@@ -548,9 +548,9 @@ function themeofwp_comments_list($comment, $args, $depth) {
 
 // Registering sidebars
 register_sidebar(array(
-  'name' => __( 'Blog', 'themeofwp' ),
+  'name' => __( 'Blog', 'avien-light' ),
   'id' => 'sidebar',
-  'description' => __( 'Widgets in this area will be shown blogs on right side.', 'themeofwp' ),
+  'description' => __( 'Widgets in this area will be shown blogs on right side.', 'avien-light' ),
   'before_title' => '<h3>',
   'after_title' => '</h3>',
   'before_widget' => '<div class="widget">',
@@ -559,9 +559,9 @@ register_sidebar(array(
 );
 
 register_sidebar(array(
-  'name' => __( 'Footer', 'themeofwp' ),
+  'name' => __( 'Footer', 'avien-light' ),
   'id' => 'bottom',
-  'description' => __( 'Widgets in this area will be shown before footer area.' , 'themeofwp'),
+  'description' => __( 'Widgets in this area will be shown before footer area.' , 'avien-light'),
   'before_title' => '<h3>',
   'after_title' => '</h3>',
   'before_widget' => '<div class="col-lg-3 footer_widgets">',
@@ -570,9 +570,9 @@ register_sidebar(array(
 );
 
 register_sidebar(array(
-  'name' => __( 'Header Social', 'themeofwp' ),
+  'name' => __( 'Header Social', 'avien-light' ),
   'id' => 'header-social',
-  'description' => __( 'Widgets in this area will be shown on hader social area.' , 'themeofwp'),
+  'description' => __( 'Widgets in this area will be shown on hader social area.' , 'avien-light'),
   'before_title' => '',
   'after_title' => '',
   'before_widget' => '',
@@ -581,9 +581,9 @@ register_sidebar(array(
 );
 
 register_sidebar(array(
-  'name' => __( 'Header Contact', 'themeofwp' ),
+  'name' => __( 'Header Contact', 'avien-light' ),
   'id' => 'header-contact',
-  'description' => __( 'Widgets in this area will be shown on hader contact area.' , 'themeofwp'),
+  'description' => __( 'Widgets in this area will be shown on hader contact area.' , 'avien-light'),
   'before_title' => '',
   'after_title' => '',
   'before_widget' => '',
@@ -592,9 +592,9 @@ register_sidebar(array(
 );
 
 register_sidebar(array(
-  'name' => __( 'Works', 'themeofwp' ),
+  'name' => __( 'Works', 'avien-light' ),
   'id' => 'works',
-  'description' => __( 'Widgets in this area will be shown on portfolio / works page' , 'themeofwp'),
+  'description' => __( 'Widgets in this area will be shown on portfolio / works page' , 'avien-light'),
   'before_title' => '<h3>',
   'after_title' => '</h3>',
   'before_widget' => '<div class="widget">',
@@ -603,9 +603,9 @@ register_sidebar(array(
 );
 
 register_sidebar(array(
-  'name' => __( 'Pages', 'themeofwp' ),
+  'name' => __( 'Pages', 'avien-light' ),
   'id' => 'page',
-  'description' => __( 'Widgets in this area will be shown on pages' , 'themeofwp'),
+  'description' => __( 'Widgets in this area will be shown on pages' , 'avien-light'),
   'before_title' => '<h3>',
   'after_title' => '</h3>',
   'before_widget' => '<div class="widget">',
@@ -614,9 +614,9 @@ register_sidebar(array(
 );
 
 register_sidebar(array(
-  'name' => __( 'Contact', 'themeofwp' ),
+  'name' => __( 'Contact', 'avien-light' ),
   'id' => 'contact',
-  'description' => __( 'Widgets in this area will be shown on contact page' , 'themeofwp'),
+  'description' => __( 'Widgets in this area will be shown on contact page' , 'avien-light'),
   'before_title' => '<h3>',
   'after_title' => '</h3>',
   'before_widget' => '<div class="widget">',
@@ -697,14 +697,14 @@ function themeofwp_comment_form($args = array(), $post_id = null ){
         <div class="form-group">
         <div class="col-sm-6 comment-form-author">
         <input   class="form-control"  id="author" 
-        placeholder="' . __( 'Name', 'themeofwp' ) . '" name="author" type="text" 
+        placeholder="' . __( 'Name', 'avien-light' ) . '" name="author" type="text" 
         value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' />
         </div>',
 
 
         'email'  => '<div class="col-sm-6 comment-form-email">
         <input id="email" class="form-control" name="email" 
-        placeholder="' . __( 'Email', 'themeofwp' ) . '" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' 
+        placeholder="' . __( 'Email', 'avien-light' ) . '" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' 
         value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' />
         </div>
         </div>',
@@ -712,12 +712,12 @@ function themeofwp_comment_form($args = array(), $post_id = null ){
 
         'url'    => '<div class="form-group">
         <div class=" col-sm-12 comment-form-url">' .
-        '<input  class="form-control" placeholder="'. __( 'Website', 'themeofwp' ) .'"  id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '"  />
+        '<input  class="form-control" placeholder="'. __( 'Website', 'avien-light' ) .'"  id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '"  />
         </div></div>',
 
         );
 
-$required_text = sprintf( ' ' . __('Required fields are marked %s', 'themeofwp'), '<span class="required">*</span>' );
+$required_text = sprintf( ' ' . __('Required fields are marked %s', 'avien-light'), '<span class="required">*</span>' );
 
 $defaults = array(
     'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
@@ -725,7 +725,7 @@ $defaults = array(
     'comment_field'        => '
     <div class="form-group comment-form-comment">
     <div class="col-sm-12">
-    <textarea class="form-control" id="comment" name="comment" placeholder="' . _x( 'Comment', 'noun', 'themeofwp' ) . '" rows="8" aria-required="true"></textarea>
+    <textarea class="form-control" id="comment" name="comment" placeholder="' . _x( 'Comment', 'noun', 'avien-light' ) . '" rows="8" aria-required="true"></textarea>
     </div>
     </div>
     ',
@@ -734,26 +734,26 @@ $defaults = array(
 
 
     <div class="alert alert-danger must-log-in">' 
-    . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'themeofwp' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) 
+    . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'avien-light' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) 
     . '</div>',
 
-    'logged_in_as'         => '<div class="alert alert-info logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'themeofwp' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</div>',
+    'logged_in_as'         => '<div class="alert alert-info logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'avien-light' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</div>',
 
-    'comment_notes_before' => '<div class="alert alert-info comment-notes">' . __( 'Your email address will not be published.', 'themeofwp' ) . ( $req ? $required_text : '' ) . '</div>',
+    'comment_notes_before' => '<div class="alert alert-info comment-notes">' . __( 'Your email address will not be published.', 'avien-light' ) . ( $req ? $required_text : '' ) . '</div>',
 
-    'comment_notes_after'  => '<div class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'themeofwp' ), ' <code>' . allowed_tags() . '</code>' ) . '</div>',
+    'comment_notes_after'  => '<div class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'avien-light' ), ' <code>' . allowed_tags() . '</code>' ) . '</div>',
 
     'id_form'              => 'commentform',
 
     'id_submit'            => 'submit',
 
-    'title_reply'          => __( '<i class="fa fa-comments-o"></i> Leave a Reply', 'themeofwp' ),
+    'title_reply'          => __( '<i class="fa fa-comments-o"></i> Leave a Reply', 'avien-light' ),
 
-    'title_reply_to'       => __( '<i class="fa fa-comments-o"></i> Leave a Reply to %s', 'themeofwp' ),
+    'title_reply_to'       => __( '<i class="fa fa-comments-o"></i> Leave a Reply to %s', 'avien-light' ),
 
-    'cancel_reply_link'    => __( 'Cancel reply', 'themeofwp' ),
+    'cancel_reply_link'    => __( 'Cancel reply', 'avien-light' ),
 
-    'label_submit'         => __( 'Post Comment', 'themeofwp' ),
+    'label_submit'         => __( 'Post Comment', 'avien-light' ),
 
     'format'               => 'xhtml',
     );
@@ -848,9 +848,9 @@ function themeofwp_post_password_form() {
     <div class="row">
     <form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
     <div class="col-lg-6">
-    ' . __( "To view this protected post, enter the password below:", 'themeofwp' ) . '
+    ' . __( "To view this protected post, enter the password below:", 'avien-light' ) . '
     <div class="input-group">
-    <input class="form-control" name="post_password" placeholder="' . __( "Password:", 'themeofwp' ) . '" id="' . $label . '" type="password" /><span class="input-group-btn"><button class="btn btn-info" type="submit" name="Submit">' . esc_attr__( "Submit", 'themeofwp' ) . '</button></span>
+    <input class="form-control" name="post_password" placeholder="' . __( "Password:", 'avien-light' ) . '" id="' . $label . '" type="password" /><span class="input-group-btn"><button class="btn btn-info" type="submit" name="Submit">' . esc_attr__( "Submit", 'avien-light' ) . '</button></span>
     </div><!-- /input-group -->
     </div><!-- /.col-lg-12 -->
     </form>

@@ -40,7 +40,7 @@
 					<?php while ( have_posts() ) { the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit - ', 'themeofwp' ), '<small class="edit-link">', '</small><div class="clearfix"></div>' ); ?>
+						<?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit - ', 'avien-light' ), '<small class="edit-link">', '</small><div class="clearfix"></div>' ); ?>
 						<?php if ( has_post_thumbnail() && ! post_password_required() ) { ?>
 						<div class="entry-thumbnail">
 							<?php the_post_thumbnail(); ?>
