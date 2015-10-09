@@ -21,7 +21,7 @@
     <div class="clearfix"></div>
     <div class="margin-bottom-separator"></div> 
 	<div id="primary" class="content-area col-md-9" >      
-        <main id="main" class="site-main row" role="main">
+        <main id="main" class="site-main row">
             <div id="manson">
             <?php if ( have_posts() ) : ?>
     

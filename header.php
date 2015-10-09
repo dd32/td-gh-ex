@@ -21,7 +21,7 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'wp-fanzone' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header">
     	<div id="top-bar" class="top-bar">
         	<div class="container">            	
             	<div class="row">
@@ -109,14 +109,14 @@
 
 		<div class="nav_container">
             <div class="container">
-                <nav id="site-navigation" class="main-navigation container-fluid" role="navigation">
+                <nav id="site-navigation" class="main-navigation container-fluid">
                   <button class="menu-toggle navbar-toggle" aria-controls="menu" aria-expanded="false">
                   	<span class="sr-only"><?php _e( 'Toggle navigation', 'wp-fanzone' ); ?></span>            
                     <span class="icon-bar"></span>            
                     <span class="icon-bar"></span>            
                     <span class="icon-bar"></span>
                   </button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'wp_fanzone_menu' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'wp_fanzone_menu', 'menu_id' => 'menu' ) ); ?>
 
                 </nav>
 
