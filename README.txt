@@ -1,4 +1,4 @@
-90s Retro v1.2
+90s Retro v1.2.1
 http://organicthemes.com
 
 A WordPress theme designed in the style of an old Geocities site, because we thought it would be funny.
@@ -8,6 +8,7 @@ Image Credits
 - logo.png: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
 - logo.psd: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
 - screenshot.png: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
+	- Image in screenshot: Screenshot from Back To The Future scene. Source and license unknown.
 - background.png: Downloaded from Subtle Patters, http://subtlepatterns.com/small-steps/. Licensed under CC BY-SA 3.0.
 
 Audio Credits
@@ -19,9 +20,14 @@ Font Awesome
 - Font License: SIL OFL 1.1 http://scripts.sil.org/OFL
 - Code License: MIT License http://opensource.org/licenses/mit-license.html
 
-Navigation.js
+Script Credits
 
-- Licensed under the GPLv2 license.
+- navigation.js: Licensed under the GPLv2 license.
+- hoverIntent.js: Created by Brian Cherne. Licensed under the MIT license.
+- fitvids.js: Created by Chris Coyier. Released under the WTFPL license.
+- html5shiv.js: MIT/GPL2 Licensed.
+- superfish.js: Created by Joel Birch. Dual licensed under the MIT and GPL licenses.
+
  
 INSTALL: 
 1. Upload the theme by navigating to Appearance > Themes > Install Themes within the WordPress admin. Select the theme zip file to upload.
@@ -55,3 +61,7 @@ CHANGELOG v1.2:
 - Added more image credits
 - Added screen reader text class
 - Other misc fixes for WP.org
+
+CHANGELOG v1.2.1:
+- Added licensing to README.txt
+- Minor tweaks

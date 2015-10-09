@@ -9,7 +9,7 @@
 */
 ?><!DOCTYPE html>
 
-<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
+<html class="no-js" <?php language_attributes(); ?>>
 
 <head>
 
