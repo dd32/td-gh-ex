@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
     <header class="entry-header">
-		<?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit - ', themeofwp ), '<small class="edit-link">', '</small>' ); ?>
+		<?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit - ', 'themeofwp' ), '<small class="edit-link">', '</small>' ); ?>
         <?php if ( is_single() ) { ?>
         <h1 class="entry-title"><span class="post-format"><i class="fa fa-music"></i></span> <?php the_title(); ?></h1>
         <?php } else { ?>
@@ -20,7 +20,7 @@
 
     <div class="entry-content">
         <div class="audio-content">
-            <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', themeofwp ) ); ?>
+            <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'themeofwp' ) ); ?>
         </div><!--/.audio-content -->
 		
 		<?php if ( is_single() ) { ?>

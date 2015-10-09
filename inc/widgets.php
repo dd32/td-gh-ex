@@ -378,7 +378,7 @@ class Contact_Us_Widget extends WP_Widget {
 		
 		<input type="text" class="widefat map_img_url" name="<?php echo $this->get_field_name('map_img'); ?>" id="<?php echo $this->get_field_id('map_img'); ?>" value="<?php if(!empty($instance['map_img'])){echo $instance['map_img'];} ?>">
 		
-		<a href="#" class="button map_img_upload"><?php _e('Upload', themeofwp); ?></a>
+		<a href="#" class="button map_img_upload"><?php _e('Upload', 'themeofwp'); ?></a>
 				
 		<p>
 			<label for="<?php echo $this->get_field_id('map_url'); ?>"><?php _e('Map Image URL:', 'themeofwp');?></label><br />

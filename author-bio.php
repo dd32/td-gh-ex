@@ -9,7 +9,7 @@ if(themeofwp_option(''.$shortname.'_single_post_author')) { ?>
 		<!-- .author-description -->
 		<div class="author-description">
 			
-			<h2 class="author-title"><?php printf( __( 'About the %s', themeofwp ), get_the_author() ); ?></h2>
+			<h2 class="author-title"><?php printf( __( 'About the %s', 'themeofwp' ), get_the_author() ); ?></h2>
 				
 				<p class="author-bio">
 			
@@ -22,7 +22,7 @@ if(themeofwp_option(''.$shortname.'_single_post_author')) { ?>
 					<div>
 						<?php the_author_meta( 'description' ); ?>
 						<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-							<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', themeofwp ), get_the_author() ); ?>
+							<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'themeofwp' ), get_the_author() ); ?>
 						</a>
 					</div>
 					

@@ -734,10 +734,10 @@ $defaults = array(
 
 
     <div class="alert alert-danger must-log-in">' 
-    . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) 
+    . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'themeofwp' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) 
     . '</div>',
 
-    'logged_in_as'         => '<div class="alert alert-info logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', themeofwp ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</div>',
+    'logged_in_as'         => '<div class="alert alert-info logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'themeofwp' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</div>',
 
     'comment_notes_before' => '<div class="alert alert-info comment-notes">' . __( 'Your email address will not be published.', 'themeofwp' ) . ( $req ? $required_text : '' ) . '</div>',
 

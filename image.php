@@ -27,7 +27,7 @@
 			<!-- #content -->
 			<div id="content" class="site-content <?php echo $col; ?>" role="main">
 			
-				<?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit - ', themeofwp ), '<small class="edit-link">', '</small>' ); ?>
+				<?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit - ', 'themeofwp' ), '<small class="edit-link">', '</small>' ); ?>
 				
 				<!-- .post -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
@@ -39,7 +39,7 @@
 
 						<!-- query posts -->
 						<?php
-							$published_text = __( '<span class="attachment-meta">on <time class="entry-date" datetime="%1$s">%2$s</time> in <a href="%3$s" title="Return to %4$s" rel="gallery">%5$s</a></span>', themeofwp );
+							$published_text = __( '<span class="attachment-meta">on <time class="entry-date" datetime="%1$s">%2$s</time> in <a href="%3$s" title="Return to %4$s" rel="gallery">%5$s</a></span>', 'themeofwp' );
 							$post_title = get_the_title( $post->post_parent );
 							if ( empty( $post_title ) || 0 == $post->post_parent ) {
 								$published_text = '<span class="attachment-meta"><time class="entry-date" datetime="%1$s">%2$s</time></span>';                  
@@ -57,8 +57,8 @@
 
 							$size_link = sprintf( '<span class="attachment-meta full-size-link"><a href="%1$s" title="%2$s" rel="lightbox">%3$s (%4$s &times; %5$s)</a></span>',
 								esc_url( wp_get_attachment_url() ),
-								esc_attr__( 'Link to full-size image', themeofwp ),
-								__( 'Full resolution', themeofwp ),
+								esc_attr__( 'Link to full-size image', 'themeofwp' ),
+								__( 'Full resolution', 'themeofwp' ),
 								$metadata['width'],
 								$metadata['height']
 								);
@@ -117,8 +117,8 @@
 
 				<!--/#image-navigation -->
 				<ul class="navigation image-navigation pager" role="navigation">
-					<li class="previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', themeofwp ) ); ?></li>
-					<li class="next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', themeofwp ) ); ?></li>
+					<li class="previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'themeofwp' ) ); ?></li>
+					<li class="next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'themeofwp' ) ); ?></li>
 				</ul>
 				<!--/#image-navigation -->
 

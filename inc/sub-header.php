@@ -20,7 +20,7 @@ if( is_singular('post') ) {
 		$sub_title = themeofwp_option(''.$shortname.'_forum_subtitle');
 
 } elseif ( is_category() ) {
-		$title = __("Category", themeofwp) . " : " . single_cat_title("", false);
+		$title = __("Category", "themeofwp") . " : " . single_cat_title("", false);
 		$sub_title = category_description();
 
 
@@ -31,15 +31,15 @@ if( is_singular('post') ) {
 } elseif ( is_archive() ) {
 
 	if (is_day()) {
-        $title = __("Daily Archives", themeofwp) . " : " . get_the_date();
+        $title = __("Daily Archives", "themeofwp") . " : " . get_the_date();
 		$sub_title = themeofwp_option(''.$shortname.'_blog_subtitle');
 
     } elseif (is_month()) {
-        $title = __("Monthly Archives", themeofwp) . " : " . get_the_date("F Y");
+        $title = __("Monthly Archives", "themeofwp") . " : " . get_the_date("F Y");
 		$sub_title = themeofwp_option(''.$shortname.'_blog_subtitle');
 
     } elseif (is_year()) {
-        $title = __("Yearly Archives", themeofwp) . " : " . get_the_date("Y");
+        $title = __("Yearly Archives", "themeofwp") . " : " . get_the_date("Y");
 		$sub_title = themeofwp_option(''.$shortname.'_blog_subtitle');
 		
 	} elseif ( is_post_type_archive('product') ) {
@@ -55,7 +55,7 @@ if( is_singular('post') ) {
 		$sub_title = single_cat_title( 'Product Category / ', false );
 	
     } else {
-        $title = __("Blog Archives", themeofwp);
+        $title = __("Blog Archives", "themeofwp");
 		$sub_title = themeofwp_option(''.$shortname.'_blog_subtitle');
 
     }
@@ -89,13 +89,13 @@ elseif ( class_exists('bbPress') && is_singular( 'reply' ) || is_singular( 'repl
 	$sub_title = tag_description();
 	
 } elseif ( is_author() ) {
-    $title = __("Author: ", themeofwp);
+    $title = __("Author: ", "themeofwp");
 	
 } elseif ( is_search() ) {
-    $title = __("Search results for", themeofwp) . " : " . get_search_query();
+    $title = __("Search results for", "themeofwp") . " : " . get_search_query();
 	
 } elseif ( is_tax( 'portfolios' ) ) {
-    $title = __("Portfolio", themeofwp);
+    $title = __("Portfolio", "themeofwp");
 	
 } elseif ( is_home() and !is_front_page() ) {
 

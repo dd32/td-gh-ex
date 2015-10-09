@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-		<?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit - ', themeofwp ), '<small class="edit-link">', '</small>' ); ?>
+		<?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit - ', 'themeofwp' ), '<small class="edit-link">', '</small>' ); ?>
         <?php if ( is_single() ) { ?>
         <h1 class="entry-title"><span class="post-format"><i class="fa fa-picture-o"></i></span> <?php the_title(); ?></h1>
         <?php } else { ?>
@@ -20,7 +20,7 @@
     <div class="entry-content">
         <?php 
         if ( is_single() || ! get_post_gallery() ) {
-            the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', themeofwp ) );
+            the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'themeofwp' ) );
         } else {
             echo get_post_gallery();
         } 
