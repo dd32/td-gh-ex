@@ -122,10 +122,8 @@ if ( !class_exists ( 'ReduxFramework_thinkup_slider_free' ) ) {
                     $hide = '';
 
 					// ThinkUpThemes Customization. Allows image to show in customizer
-					if ( ! is_customize_preview() ) {
-						if ( empty ( $slide[ 'slide_image_url' ] ) ) {
-							$hide = ' hide';
-						}
+					if ( empty ( $slide[ 'slide_image_url' ] ) ) {
+//						$hide = ' hide';
 					}
 
                     echo '<div class="screenshot' . $hide . '">';
@@ -195,9 +193,7 @@ if ( !class_exists ( 'ReduxFramework_thinkup_slider_free' ) ) {
                 echo '<div class="redux-thinkup_slider_free-accordion-group"><fieldset class="redux-field" data-id="' . $this->field[ 'id' ] . '"><h3><span class="redux-thinkup_slider_free-header">' . esc_attr ( sprintf ( __ ( 'New %s', 'redux-framework' ), $this->field[ 'content_title' ] ) ) . '</span></h3><div>';
 
 				 // ThinkUpThemes Customization. Allows image to show in customizer
-				if ( ! is_customize_preview() ) {
-					$hide = ' hide';
-				}
+//				$hide = ' hide';
 
                 echo '<div class="screenshot' . $hide . '">';
                 echo '<a class="of-uploaded-image" href="">';

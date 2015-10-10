@@ -172,7 +172,7 @@ global $thinkup_homepage_section4_link;
 	$thinkup_homepage_section2_desc = 'Renden is 100% responsive. It looks great on all devices, from mobiles to desktops!';
 
 	if ( empty( $thinkup_homepage_section3_desc ) ) 
-	$thinkup_homepage_section3_desc = 'Get a taste of our awesome ThinkUpThemes Framework. Make changes without touching code!';
+	$thinkup_homepage_section3_desc = 'Go to Appearance -> Customizer and get a taste of our awesome ThinkUpThemes Framework.';
 
 	if ( empty( $thinkup_homepage_section4_desc ) ) 
 	$thinkup_homepage_section4_desc = 'Designed with beauty in mind. Renden is truly stunning you won&#39;t believe it&#39;s free!';
@@ -183,12 +183,33 @@ global $thinkup_homepage_section4_link;
 	if ( !empty( $thinkup_homepage_section3_link ) ) $thinkup_homepage_section3_link = get_permalink( $thinkup_homepage_section3_link );
 	if ( !empty( $thinkup_homepage_section4_link ) ) $thinkup_homepage_section4_link = get_permalink( $thinkup_homepage_section4_link );
 
+	// Determine whether 3 column or 4 column layout should be used
+	if ( empty( $thinkup_homepage_section4_image ) ) {
+		$class_three_col1 = ' one_third';
+		$class_three_col2 = ' one_third';
+		$class_three_col3 = ' one_third last';
+
+		$class_four_col1 = NULL;
+		$class_four_col2 = NULL;
+		$class_four_col3 = NULL;
+		$class_four_col4 = NULL;
+	} else {
+		$class_three_col1 = NULL;
+		$class_three_col2 = NULL;
+		$class_three_col3 = NULL;
+
+		$class_four_col1 = ' one_fourth';
+		$class_four_col2 = ' one_fourth';
+		$class_four_col3 = ' one_fourth';
+		$class_four_col4 = ' one_fourth last';
+	}
+
 	if ( is_front_page() or thinkup_check_ishome() ) {
 		if ( empty( $thinkup_homepage_sectionswitch ) or $thinkup_homepage_sectionswitch == '1' ) {
 
 		echo '<div id="section-home"><div id="section-home-inner">';
 
-			echo '<article class="section1 one_fourth">',
+			echo '<article class="section1' . $class_three_col1 . $class_four_col1 . '">',
 					'<div class="section">',
 					'<div class="entry-header">';
 					if ( empty( $thinkup_homepage_section1_image ) ) {
@@ -204,7 +225,7 @@ global $thinkup_homepage_section4_link;
 					'</div>',
 				'</article>';
 
-			echo '<article class="section2 one_fourth">',
+			echo '<article class="section2' . $class_three_col2 . $class_four_col2 . '">',
 					'<div class="section">',
 					'<div class="entry-header">';
 					if ( empty( $thinkup_homepage_section2_image ) ) {
@@ -220,7 +241,7 @@ global $thinkup_homepage_section4_link;
 					'</div>',
 				'</article>';
 
-			echo '<article class="section3 one_fourth">',
+			echo '<article class="section3' . $class_three_col3 . $class_four_col3 . '">',
 					'<div class="section">',
 					'<div class="entry-header">';
 					if ( empty( $thinkup_homepage_section3_image ) ) {
@@ -236,21 +257,23 @@ global $thinkup_homepage_section4_link;
 					'</div>',
 				'</article>';
 
-			echo '<article class="section4 one_fourth last">',
-					'<div class="section">',
-					'<div class="entry-header">';
-					if ( empty( $thinkup_homepage_section4_image ) ) {
-						echo '<img src="' . get_template_directory_uri() . '/images/slideshow/featured4.png' . '"  alt="" />';
-					} else {
-						echo '<img src="' . $thinkup_homepage_section4_image[0] . '"  alt="" />';
-					}
-			echo	'</div>',
-					'<div class="entry-content">',
-					'<h3>' . esc_html( $thinkup_homepage_section4_title ) . '</h3>' . wpautop( do_shortcode ( esc_html( $thinkup_homepage_section4_desc ) ) ),
-					'<p><a href="' . esc_url( $thinkup_homepage_section4_link ) . '" class="more-link">' . __( 'Read More', 'renden' ) . '</a></p>',
-					'</div>',
-					'</div>',
-				'</article>';
+			if ( ! empty( $class_four_col4 ) ) {
+				echo '<article class="section4' . $class_four_col4 . '">',
+						'<div class="section">',
+						'<div class="entry-header">';
+						if ( empty( $thinkup_homepage_section4_image ) ) {
+							echo '<img src="' . get_template_directory_uri() . '/images/slideshow/featured4.png' . '"  alt="" />';
+						} else {
+							echo '<img src="' . $thinkup_homepage_section4_image[0] . '"  alt="" />';
+						}
+				echo	'</div>',
+						'<div class="entry-content">',
+						'<h3>' . esc_html( $thinkup_homepage_section4_title ) . '</h3>' . wpautop( do_shortcode ( esc_html( $thinkup_homepage_section4_desc ) ) ),
+						'<p><a href="' . esc_url( $thinkup_homepage_section4_link ) . '" class="more-link">' . __( 'Read More', 'renden' ) . '</a></p>',
+						'</div>',
+						'</div>',
+					'</article>';
+			}
 
 		echo '<div class="clearboth"></div></div></div>';
 		}

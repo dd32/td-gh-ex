@@ -93,6 +93,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.1
+- New:     Homepage featured content now allows for both a 3 column and 4 column layout to be used.
+- Fixed:   Slider images now always dispaly when image is selected. Small number of users didn't see thumbnail on backend.
+- Updated: Padding adding to content area ThinkUpSlider to improve layout on smaller screens.
+
 Version 1.2.0
 - New:     Customizer support added. All Theme options settings now controlled from within Customizer.
 - New:     Dummy "Theme Options" section added under Appearance to guide users to location of new theme options and relevant information - Remove in upcoming update.
