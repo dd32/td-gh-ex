@@ -24,17 +24,17 @@
 					/*
 					 * Include the post format-specific template for the content.
 					 */
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'template-parts/content', get_post_format() );
 
 				endwhile;
 	?>
 				<div class="navigation">
-					<?php fgymm_show_pagenavi(); ?>
+					<?php echo paginate_links( array( 'prev_next' => '', ) ); ?>
 				</div>  
 	<?php else :
 
 				// if no content is loaded, show the 'no found' template
-				get_template_part( 'content', 'none' );
+				get_template_part( 'template-parts/content', 'none' );
 			
 		  endif; ?>
 	</div>

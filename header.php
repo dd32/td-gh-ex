@@ -9,15 +9,15 @@
 			<header id="header-main-fixed">
 				<div id="header-content-wrapper">
 					<div id="header-top">
-						<?php fgymm_show_header_top(); ?>
+						<?php fgymm_show_social_sites(); ?>
 					</div>
 					<div id="header-logo">
 						<?php fgymm_show_website_logo_image_or_title(); ?>
 					</div>
 					<nav id="navmain">
 						<?php wp_nav_menu( array(
-												  'container_class' => 'menu-all-pages-container',
-												  'menu_class'      => 'menu',
+												  
+												  
 												  'theme_location'  => 'primary',
 											  ) ); ?>
 					</nav>

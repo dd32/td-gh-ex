@@ -22,7 +22,7 @@
 				the_post();
 
 				// includes the single page content templata here
-				get_template_part( 'content', 'page' );
+				get_template_part( 'template-parts/content', 'page' );
 
 				// if comments are open or there's at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) {
@@ -39,7 +39,7 @@
 		  else : 
 		  
 			// if no content is loaded, show the 'no found' template
-			get_template_part( 'content', 'none' );
+			get_template_part( 'template-parts/content', 'none' );
 	 
 		  endif; ?>
 	</div>

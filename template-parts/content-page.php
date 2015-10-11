@@ -10,9 +10,7 @@
 		<?php fgymm_the_content_single(); ?>
 	</div>
 	<div class="page-after-content">
-		<span class="author-icon">
-			<?php the_author_posts_link(); ?>
-		</span>
+		
 		<?php if ( ! post_password_required() ) : ?>
 
 	<?php if ('open' == $post->comment_status) : ?>

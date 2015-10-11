@@ -11,7 +11,7 @@
 
 	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<h1><?php __e( 'Oh no! Article not found! 404 error!', 'fgymm' ); ?></h1>
+			<h1><?php _e( 'Oh no! Article not found! 404 error!', 'fgymm' ); ?></h1>
 	
 	<?php elseif ( is_search() ) : ?>
 

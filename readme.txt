@@ -1,9 +1,8 @@
 === fGymm ===
 Contributors: tishonator
-Tags: black, white, green, light, two-columns, right-sidebar, fixed-layout,
+Tags: black, white, green, light, two-columns, right-sidebar,
 responsive-layout, custom-background, custom-header, custom-menu,
-featured-images, post-formats, sticky-post, theme-options,
-threaded-comments, translation-ready
+featured-images, post-formats, sticky-post, threaded-comments, translation-ready
 Requires at least: 3.8
 Tested up to: 4.0.0
 
@@ -17,16 +16,16 @@ Manual installation:
 
 1. Upload the fGymm folder to the /wp-content/themes/ directory
 
-Installation using “Add New Theme”
+Installation using 'Add New Theme'
 
 1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
-2. Search for ‘fGymm’
-3. Click the ‘Install’ button to open the theme’s repository listing
-4. Click the ‘Install’ button
+2. Search for 'fGymm'
+3. Click the 'Install' button to open the theme's repository listing
+4. Click the 'Install' button
 
 Activiation and Use
 
-1. Activate the Theme through the ‘Themes’ menu in WordPress
+1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Theme Options to change theme specific options
 
 == License ==
@@ -60,9 +59,7 @@ The exceptions to this license are as follows:
 
 == Contacts ==
 
-Author Website: http://tishonator.com
+Author Website: https://tishonator.com
 
-General Tishonator WP Themes Documentation: http://tishonator.com/general-tishonator-wp-themes-documentation
 
-Support Forum: http://tishonator.com/forums
 

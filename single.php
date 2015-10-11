@@ -13,7 +13,7 @@
 				/*
 				 * includes a post format-specific template for single content
 				 */
-				get_template_part( 'content', get_post_format() );
+				get_template_part( 'template-parts/content', get_post_format() );
 				
 				// if comments are open or there's at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) {
@@ -44,7 +44,7 @@
 	<?php else :
 
 				// if no content is loaded, show the 'no found' template
-				get_template_part( 'content', 'none' );
+				get_template_part( 'template-parts/content', 'none' );
 
 		  endif; ?>
 	</div>

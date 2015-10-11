@@ -3,11 +3,11 @@ jQuery( document ).ready(function() {
 	// add submenu icons class in main menu (only for large resolution)
 	if (fgymm_IsLargeResolution()) {
 	
-		jQuery('.menu > li:has(".sub-menu")').addClass('level-one-sub-menu');
-		jQuery('.menu li ul li:has(".sub-menu")').addClass('level-two-sub-menu');										
+		jQuery('#navmain > div > ul > li:has("ul")').addClass('level-one-sub-menu');
+		jQuery('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');										
 	}
 
-	jQuery('.menu-all-pages-container', jQuery('#navmain')).on('click', function(e) {
+	jQuery('#navmain > div').on('click', function(e) {
 
 		e.stopPropagation();
 
@@ -25,17 +25,19 @@ jQuery( document ).ready(function() {
 		}
 	});
 
-	jQuery("#navmain .menu li").mouseleave( function() {
+	jQuery("#navmain > div > ul li").mouseleave( function() {
 		if (fgymm_IsLargeResolution()) {
 			jQuery(this).children("ul").stop(true, true).css('display', 'block').slideUp(300);
 		}
 	});
 	
-	jQuery("#navmain .menu li").mouseenter( function() {
+	jQuery("#navmain > div > ul li").mouseenter( function() {
 		if (fgymm_IsLargeResolution()) {
 
 			var curMenuLi = jQuery(this);
-			jQuery("#navmain .menu > ul:not(:contains('#" + curMenuLi.attr('id') + "')) ul").hide();
+			if ( curMenuLi.attr('id') ) {
+         jQuery("#navmain .menu > ul:not(:contains('#" + curMenuLi.attr('id') + "')) ul").hide();
+      }
 		
 			jQuery(this).children("ul").stop(true, true).css('display','none').slideDown(400);
 		}
@@ -48,6 +50,16 @@ jQuery( document ).ready(function() {
 		jQuery('#header-main-fixed').css('top', jQuery('#wpadminbar').height() + 'px');
 		jQuery('#wpadminbar').css('position', 'fixed');
 	}
+
+	jQuery(function(){
+		jQuery('#camera_wrap').camera({
+			height: '300px',
+			loader: 'bar',
+			pagination: true,
+			thumbnails: false,
+			time: 4500
+		});
+	});
 });
 
 function fgymm_IsSmallResolution() {
