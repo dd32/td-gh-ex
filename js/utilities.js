@@ -35,10 +35,22 @@ jQuery( document ).ready(function() {
 		if (fkidd_IsLargeResolution()) {
 
 			var curMenuLi = jQuery(this);
-			jQuery("#navmain .menu > ul:not(:contains('#" + curMenuLi.attr('id') + "')) ul").hide();
+			if ( curMenuLi.attr('id') ) {
+         jQuery("#navmain .menu > ul:not(:contains('#" + curMenuLi.attr('id') + "')) ul").hide();
+      }
 		
 			jQuery(this).children("ul").stop(true, true).css('display','none').slideDown(400);
 		}
+	});
+
+	jQuery(function(){
+		jQuery('#camera_wrap').camera({
+			height: '320px',
+			loader: 'bar',
+			pagination: true,
+			thumbnails: false,
+			time: 4500
+		});
 	});
 });
 

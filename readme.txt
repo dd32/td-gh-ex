@@ -59,9 +59,7 @@ The exceptions to this license are as follows:
 
 == Contacts ==
 
-Author Website: http://tishonator.com
+Author Website: https://tishonator.com
 
-General Tishonator WP Themes Documentation: http://tishonator.com/general-tishonator-wp-themes-documentation
 
-Support Forum: http://tishonator.com/forums
 

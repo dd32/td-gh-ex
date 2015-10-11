@@ -10,9 +10,7 @@
 		<?php fkidd_the_content_single(); ?>
 	</div>
 	<div class="page-after-content">
-		<span class="author-icon">
-			<?php the_author_posts_link(); ?>
-		</span>
+		
 			<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 
 				<span class="comments-icon">
