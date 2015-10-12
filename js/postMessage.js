@@ -1,5 +1,10 @@
 ( function( $ ) {
 
+    // establish variables for common site elements
+    var panel = $('html', window.parent.document);
+    var body = $('body');
+    var socialMediaIcons = $('.social-media-icons');
+
     /*
      * Following functions are for utilizing the postMessage transport setting
      */
@@ -43,7 +48,7 @@
         } );
     } );
 
-    var socialSites = ['twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam', 'vk', 'weibo', 'tencent-weibo', 'email' ];
+    var socialSites = ['twitter', 'facebook', 'google-plus', 'pinterest', 'linkedin', 'youtube', 'vimeo', 'tumblr', 'instagram', 'flickr', 'dribbble', 'rss', 'reddit', 'soundcloud', 'spotify', 'vine', 'yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'github', 'hacker-news', 'foursquare', 'slack', 'slideshare', 'skype', 'whatsapp', 'qq', 'wechat', 'xing', '500px', 'steam', 'vk', 'paypal', 'weibo', 'tencent-weibo', 'email' ];
 
     // for each social site setting
     for ( var site in socialSites ) {
@@ -51,9 +56,9 @@
         wp.customize( socialSites[site], function (value) {
             value.bind(function (to) {
 
-                if( $('.social-media-icons').length === 0 ) {
+                if( socialMediaIcons.length === 0 ) {
 
-                    if( $('#site-header').find('.search-form-container').length ) {
+                    if( socialMediaIcons.find('.search-form-container').length ) {
                         $('#site-header').find('.search-form-container').before('<ul class="social-media-icons"></ul>');
                     } else {
                         $('#title-container').before('<ul class="social-media-icons"></ul>');
@@ -61,7 +66,10 @@
                 }
 
                 // empty the social icons list
-                $('.social-media-icons').empty();
+                socialMediaIcons.empty();
+
+                // icons that should use a special square icon
+                var squareIcons = ['linkedin', 'twitter', 'vimeo', 'youtube', 'pinterest', 'reddit', 'tumblr', 'steam', 'xing', 'github', 'google-plus', 'behance', 'facebook'];
 
                 // for each social icon input in customizer
                 $('html', window.parent.document).find('#accordion-section-unlimited_social_media_icons').find('input').each(function() {
@@ -70,13 +78,17 @@
 
                         var siteName = $(this).attr('data-customize-setting-link');
 
-                        if( siteName == 'email' ) {
-                            $('.social-media-icons').append( '<li><a target="_blank" href="mailto:' + $(this).val() + '"><i class="fa fa-envelope"></i></a></li>' );
-                        }
-                        if( siteName == "flickr" || siteName == "dribbble" || siteName == "instagram" || siteName == "soundcloud" || siteName == "spotify" || siteName == "vine" || siteName == "yahoo" || siteName == "codepen" || siteName == "delicious" || siteName == "stumbleupon" || siteName == "deviantart" || siteName == "digg" || siteName == "hacker-news" || siteName == "vk" || siteName == 'weibo' || siteName == 'tencent-weibo' ) {
-                            $('.social-media-icons').append('<li><a class="' + siteName + '" target="_blank" href="' + $(this).val() + '"><i class="fa fa-' + siteName + '"></i></a></li>');
+                        if ( $.inArray( siteName, squareIcons ) > -1 ) {
+                            var siteClass = 'fa fa-' + siteName + '-square';
                         } else {
-                            $('.social-media-icons').append('<li><a class="' + siteName + '" target="_blank" href="' + $(this).val() + '"><i class="fa fa-' + siteName + '-square"></i></a></li>');
+                            var siteClass = 'fa fa-' + siteName;
+                        }
+
+                        if( siteName == 'email' ) {
+                            socialMediaIcons.append( '<li><a target="_blank" href="mailto:' + $(this).val() + '"><i class="fa fa-envelope"></i></a></li>' );
+                        }
+                        else {
+                            socialMediaIcons.append('<li><a class="' + siteName + '" target="_blank" href="' + $(this).val() + '"><i class="' + siteClass + '"></i></a></li>');
                         }
                     }
                 });
@@ -117,6 +129,31 @@
                         $('#title-container').before(response);
                     }
                 });
+            }
+        } );
+    } );
+
+    // move any existing CSS into separate style element to avoid affecting other CSS
+    // not from the Custom CSS box
+
+    // get the Custom CSS
+    var customCSS = panel.find('#customize-control-custom_css').find('textarea').val();
+    // get all the CSS in the inline element
+    var allCSS = $('#style-inline-css').text();
+    // remove the Custom CSS from the other CSS
+    allCSS = allCSS.replace(customCSS, '');
+    // update the CSS in the inline element w/o the custom css
+    $('#style-inline-css').text(allCSS);
+    // put custom CSS in its own style element
+    body.append('<style id="style-inline-custom-css" type="text/css">' + customCSS + '</style>');
+
+    // Custom CSS
+    wp.customize( 'custom_css', function( value ) {
+        value.bind( function( to ) {
+            $('#style-inline-custom-css').remove();
+            if ( to != '' ) {
+                to = '<style id="style-inline-custom-css" type="text/css">' + to + '</style>';
+                body.append( to );
             }
         } );
     } );

@@ -22,6 +22,13 @@ if( ! function_exists( 'unlimited_theme_setup' ) ) {
 			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 		) );
 
+		// adds support for Jetpack infinite scroll feature
+		add_theme_support( 'infinite-scroll', array(
+			'container' => 'main',
+			'footer'    => 'overflow-container',
+			'render'    => 'ct_unlimited_infinite_scroll_render'
+		) );
+
 		// load theme options page
 		require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
 
@@ -344,8 +351,18 @@ if ( !function_exists( 'unlimited_social_array' ) ) {
 			'digg'          => 'unlimited_digg_profile',
 			'github'        => 'unlimited_github_profile',
 			'hacker-news'   => 'unlimited_hacker-news_profile',
+			'foursquare'    => 'unlimited_foursquare_profile',
+			'slack'         => 'unlimited_slack_profile',
+			'slideshare'    => 'unlimited_slideshare_profile',
+			'skype'         => 'unlimited_skype_profile',
+			'whatsapp'      => 'unlimited_whatsapp_profile',
+			'qq'            => 'unlimited_qq_profile',
+			'wechat'        => 'unlimited_wechat_profile',
+			'xing'          => 'unlimited_xing_profile',
+			'500px'         => 'unlimited_500px_profile',
 			'steam'         => 'unlimited_steam_profile',
 			'vk'            => 'unlimited_vk_profile',
+			'paypal'        => 'unlimited_paypal_profile',
 			'weibo'         => 'unlimited_weibo_profile',
 			'tencent-weibo' => 'unlimited_tencent_weibo_profile',
 			'email'         => 'unlimited_email_profile'
@@ -372,6 +389,9 @@ if( ! function_exists('unlimited_social_icons_output') ) {
 		// get social sites array
 		$social_sites = unlimited_social_array();
 
+		// icons that should use a special square icon
+		$square_icons = array('linkedin', 'twitter', 'vimeo', 'youtube', 'pinterest', 'reddit', 'tumblr', 'steam', 'xing', 'github', 'google-plus', 'behance', 'facebook');
+
 		// store the site name and url
 		foreach ( $social_sites as $social_site => $profile ) {
 
@@ -396,6 +416,13 @@ if( ! function_exists('unlimited_social_icons_output') ) {
 
 			foreach ( $active_sites as $key => $active_site ) {
 
+				// get the square or plain class
+				if ( in_array( $active_site, $square_icons ) ) {
+					$class = 'fa fa-' . $active_site . '-square';
+				} else {
+					$class = 'fa fa-' . $active_site;
+				}
+
 				if ( $active_site == 'email' ) {
 					?>
 					<li>
@@ -403,16 +430,10 @@ if( ! function_exists('unlimited_social_icons_output') ) {
 							<i class="fa fa-envelope" title="<?php _e('email icon', 'unlimited'); ?>"></i>
 						</a>
 					</li>
-				<?php } elseif ( $active_site == "flickr" || $active_site == "dribbble" || $active_site == "instagram" || $active_site == "soundcloud" || $active_site == "spotify" || $active_site == "vine" || $active_site == "yahoo" || $active_site == "codepen" || $active_site == "delicious" || $active_site == "stumbleupon" || $active_site == "deviantart" || $active_site == "digg" || $active_site == "hacker-news" || $active_site == "vk" || $active_site == 'weibo' || $active_site == 'tencent-weibo' ) { ?>
-					<li>
-						<a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( unlimited_get_social_url( $source, $key ) ); ?>">
-							<i class="fa fa-<?php echo esc_attr( $active_site ); ?>" title="<?php printf( __('%s icon', 'unlimited'), $active_site ); ?>"></i>
-						</a>
-					</li>
 				<?php } else { ?>
 					<li>
-						<a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( unlimited_get_social_url( $source, $key ) ); ?>">
-							<i class="fa fa-<?php echo esc_attr( $active_site ); ?>-square" title="<?php printf( __('%s icon', 'unlimited'), $active_site ); ?>"></i>
+						<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank" href="<?php echo esc_url( unlimited_get_social_url( $source, $key ) ); ?>">
+							<i class="<?php echo esc_attr( $class ); ?>" title="<?php printf( __('%s icon', 'unlimited'), esc_attr( $active_site ) ); ?>"></i>
 						</a>
 					</li>
 				<?php
@@ -548,6 +569,10 @@ endif;
 
 function unlimited_loop_pagination(){
 
+	// don't output if Jetpack infinite scroll is being used
+	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) )
+		return;
+
 	global $wp_query;
 
 	// If there's not more than one page, return nothing.
@@ -592,3 +617,10 @@ add_action( 'wp_head', 'unlimited_add_meta_elements', 1 );
 /* Move the WordPress generator to a better priority. */
 remove_action( 'wp_head', 'wp_generator' );
 add_action( 'wp_head', 'wp_generator', 1 );
+
+function ct_unlimited_infinite_scroll_render(){
+	while( have_posts() ) {
+		the_post();
+		get_template_part( 'content', 'archive' );
+	}
+}
