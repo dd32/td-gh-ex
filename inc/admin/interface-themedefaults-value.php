@@ -10,10 +10,11 @@
  * @since Interface 1.0
  */
 
-global $interface_default;
-$interface_default = array(
-	'hide_header_searchform'				=> '0',
- 	'disable_slogan' 							=> '0',
+function interface_get_option_defaults() {
+	global $array_of_default_settings;
+	$array_of_default_settings = array(
+	'hide_header_searchform'				=> 0,
+ 	'disable_slogan' 							=> 0,
  	'home_slogan1'								=> '',
  	'home_slogan2'								=> '',
  	'slogan_position'							=> 'above-slider',
@@ -23,16 +24,16 @@ $interface_default = array(
  	'home_promobox2'							=> '',
  	'promobox_position'						=> 'below-services',
  	'disable_status'							=> '',
- 	'disable_slider'							=> '0',
- 	'exclude_slider_post'					=> '0',
+ 	'disable_slider'							=> 0,
+ 	'exclude_slider_post'					=> 0,
  	'default_layout'							=> 'right-sidebar',
  	'reset_layout'								=> '0',
  	'custom_css'								=> '',
- 	'disable_favicon'							=> '1',
- 	'disable_top'								=> '0',
- 	'disable_bottom'							=> '0',
+ 	'disable_favicon'							=> 1,
+ 	'disable_top'								=> 0,
+ 	'disable_bottom'							=> 0,
  	'favicon'									=> '',
- 	'disable_webpageicon'					=> '1',
+ 	'disable_webpageicon'					=> 1,
  	'webpageicon'								=> '',
  	'slider_quantity' 						=> '4',
 	'slider_type'								=> 'image-slider',
@@ -68,4 +69,6 @@ $interface_default = array(
 	'site_design'								=> 'on',
 	'slider_content'							=> 'on',
  );
+return apply_filters( 'interface_get_option_defaults', $array_of_default_settings);
+}
 ?>

@@ -40,7 +40,6 @@ function interface_constants() {
 	define( 'INTERFACE_ADMIN_DIR', INTERFACE_INC_DIR . '/admin' );
 	define( 'INTERFACE_ADMIN_IMAGES_DIR', INTERFACE_ADMIN_DIR . '/images' );
 	define( 'INTERFACE_ADMIN_JS_DIR', INTERFACE_ADMIN_DIR . '/js' );
-	define( 'INTERFACE_ADMIN_CSS_DIR', INTERFACE_ADMIN_DIR . '/css' );
 	define( 'INTERFACE_JS_DIR', INTERFACE_PARENT_DIR . '/js' );
 	define( 'INTERFACE_CSS_DIR', INTERFACE_PARENT_DIR . '/css' );	
 	define( 'INTERFACE_FUNCTIONS_DIR', INTERFACE_INC_DIR . '/functions' );
@@ -56,7 +55,6 @@ function interface_constants() {
 	define( 'INTERFACE_IMAGES_URL', INTERFACE_PARENT_URL . '/images' );
 	define( 'INTERFACE_INC_URL', INTERFACE_PARENT_URL . '/inc' );
 	define( 'INTERFACE_ADMIN_URL', INTERFACE_INC_URL . '/admin' );
-	define( 'INTERFACE_ADMIN_IMAGES_URL', INTERFACE_ADMIN_URL . '/images' );
 	define( 'INTERFACE_ADMIN_JS_URL', INTERFACE_ADMIN_URL . '/js' );
 	define( 'INTERFACE_ADMIN_CSS_URL', INTERFACE_ADMIN_URL . '/css' );
 	define( 'INTERFACE_JS_URL', INTERFACE_PARENT_URL . '/js' );
@@ -90,7 +88,7 @@ function interface_load_files() {
 	require_once( INTERFACE_FUNCTIONS_DIR . '/functions.php' );
 	require_once( INTERFACE_FUNCTIONS_DIR . '/custom-style.php' );
 	require_once( INTERFACE_ADMIN_DIR . '/interface-themedefaults-value.php' );
-	require_once( INTERFACE_ADMIN_DIR . '/theme-option.php' );
+	require_once( INTERFACE_FUNCTIONS_DIR . '/customizer.php' );
 	require_once( INTERFACE_ADMIN_DIR . '/interface-metaboxes.php' );
 	
 

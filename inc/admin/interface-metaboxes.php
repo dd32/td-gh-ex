@@ -35,33 +35,33 @@ $sidebar_layout = array(
 							'default-sidebar' 		=> array(
 															'id'			=> 'interface_sidebarlayout',
 															'value' 		=> 'default',
-															'label' 		=> __( 'Default Layout Set in', 'interface' ).' '.'<a href="'.esc_url( home_url() ).'/wp-admin/themes.php?page=theme_options" target="_blank">'.__( 'Theme Settings', 'interface' ).'</a>',
+															'label' 		=> __( 'Default Layout Set in', 'interface' ).' '.'<a href="'.wp_customize_url() .'?autofocus[section]=interface_default_layout" target="_blank">'.__( 'Customizer', 'interface' ).'</a>',
 															'thumbnail' => ' '
 															),
 							'no-sidebar' 				=> array(
 															'id'			=> 'interface_sidebarlayout',
 															'value' 		=> 'no-sidebar',
 															'label' 		=> __( 'No sidebar', 'interface' ),
-															'thumbnail' => INTERFACE_ADMIN_IMAGES_URL . '/no-sidebar.png'
+															'thumbnail' => ''
 															), 
 							'no-sidebar-full-width' => array(
 															'id'			=> 'interface_sidebarlayout',
 															'value' 		=> 'no-sidebar-full-width',
 															'label' 		=> __( 'No sidebar, Full Width', 'interface' ),
-															'thumbnail' => INTERFACE_ADMIN_IMAGES_URL . '/no-sidebar-fullwidth.png'
+															'thumbnail' => ''
 															),
 							
 							'left-sidebar' => array(
 															'id'			=> 'interface_sidebarlayout',
 															'value' 		=> 'left-sidebar',
 															'label' 		=> __( 'Left sidebar', 'interface' ),
-															'thumbnail' => INTERFACE_ADMIN_IMAGES_URL . '/left-sidebar.png'
+															'thumbnail' => ''
 															),
 							'right-sidebar' => array(
 															'id' 			=> 'interface_sidebarlayout',
 															'value' 		=> 'right-sidebar',
 															'label' 		=> __( 'Right sidebar', 'interface' ),
-															'thumbnail' => INTERFACE_ADMIN_IMAGES_URL . '/right-sidebar.png'
+															'thumbnail' => ''
 															)
 						);
 	
@@ -91,7 +91,7 @@ function interface_sidebar_layout() {
         <input type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $meta ); ?>/>
         &nbsp;&nbsp;<?php echo $field['label']; ?> </label>
       <?php else: ?>
-      <td><label class="description"> <span><img src="<?php echo esc_url( $field['thumbnail'] ); ?>" width="136" height="122" alt="" /></span></br>
+      <td><label class="description">
           <input type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $meta ); ?>/>
           &nbsp;&nbsp;<?php echo $field['label']; ?> </label></td>
       <?php endif;

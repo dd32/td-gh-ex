@@ -44,14 +44,6 @@ Licensed: Public Domain Images
 
 The script html5.js is licensed under MIT
 The script jquery.cycle.all.js is dual licensed under GPL & MIT
-The script jquery.cookie.min.js is dual licensed under GPL & MIT
 All other custom js, resources and theme elements are themehorse.com own creation and it is licensed under GNU General Public License v2
-
-- Some of the code is derivatived from below themes which is under GNU General Public License v2 or later -
-
-https://wordpress.org/themes/news
-https://wordpress.org/themes/graphene
-https://wordpress.org/themes/responsive
-https://wordpress.org/themes/simple-catch
 
 =================================================================================

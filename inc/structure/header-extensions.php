@@ -19,8 +19,8 @@ function interface_add_meta_name() {
 ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <?php  
- 	global $interface_theme_setting_value;
-      $options = $interface_theme_setting_value;
+ global $options, $array_of_default_settings;
+ $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 	   if ('on' == $options['site_design']) { ?>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <?php   } else{ ?>
@@ -53,17 +53,16 @@ add_action( 'interface_links', 'interface_favicon', 15 );
 // Load Favicon in Admin Section
 add_action( 'admin_head', 'interface_favicon' );
 /**
- * Get the favicon Image from theme options
+ * Get the favicon Image from Customizer
  * display favicon
  * 
  */
 function interface_favicon() {	
 	
 	$interface_favicon = '';
-		global $interface_theme_setting_value;
-      $options = $interface_theme_setting_value;
-
-		if ( "0" == $options[ 'disable_favicon' ] ) {
+		global $options, $array_of_default_settings;
+      $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
+		if ( 1 != $options[ 'disable_favicon' ] ) {
 			if ( !empty( $options[ 'favicon' ] ) ) {
 				$interface_favicon .= '<link rel="shortcut icon" href="'.esc_url( $options[ 'favicon' ] ).'" type="image/x-icon" />';
 			}
@@ -77,17 +76,17 @@ function interface_favicon() {
 // Load webpageicon in Header Section
 add_action( 'interface_links', 'interface_webpage_icon', 20 );
 /**
- * Get the webpageicon Image from theme options
+ * Get the webpageicon Image from Customizer
  * display webpageicon
  *
  */
 function interface_webpage_icon() {	
 	
 	$interface_webpage_icon = '';
-		global $interface_theme_setting_value;
-      $options = $interface_theme_setting_value;
+		global $options, $array_of_default_settings;
+      $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 
-		if ( "0" == $options[ 'disable_webpageicon' ] ) {
+		if ( 1 != $options[ 'disable_webpageicon' ] ) {
 			if ( !empty( $options[ 'webpageicon' ] ) ) {
 				$interface_webpage_icon .= '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'webpageicon' ] ).'" />';
 			}
@@ -108,8 +107,8 @@ add_action( 'interface_header', 'interface_headercontent_details', 10 );
 function interface_headercontent_details() {	
 ?>
 <?php
-		global $interface_theme_setting_value;
-   	$options = $interface_theme_setting_value;
+		global $options, $array_of_default_settings;
+      $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 
    	$elements = array();
 		$elements = array( 	$options[ 'social_facebook' ], 
@@ -148,8 +147,8 @@ function interface_headercontent_details() {
 
  function interface_footer_infoblog( $set_flags, $place ='') {
 	
-	global $interface_theme_setting_value;
-   	$options = $interface_theme_setting_value;
+	global $options, $array_of_default_settings;
+   $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 	$interface_footer_infoblog = '';
 	$place = '';
 	if($set_flags || (!empty($options['social_phone'] ) || !empty($options['social_email'] ) || !empty($options['social_location']))){
@@ -207,8 +206,8 @@ if ( ! function_exists( 'interface_socialnetworks' ) ) :
  
 function interface_socialnetworks( $set_flags ) {
 	
-		global $interface_theme_setting_value;
-		$options = $interface_theme_setting_value;
+		global $options, $array_of_default_settings;
+      $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 		$interface_socialnetworks = '';
 	if ( ( 1 != $set_flags ) || ( 1 == $set_flags ) )  {
 				$social_links = array(); 
@@ -349,7 +348,9 @@ if (1 != $options['disable_top']) {
 </div>
 <!-- .hgroup-wrap -->
 
-<?php	
+<?php	global $options, $array_of_default_settings;
+      $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
+
 		if( 'above-slider' == $options[ 'slogan_position' ] &&  ( is_home() || is_front_page() ) ) 
 			if( function_exists( 'interface_home_slogan' ) )
 
@@ -387,6 +388,8 @@ if (1 != $options['disable_top']) {
 <?php
 	   	}
 		} 
+		global $options, $array_of_default_settings;
+      $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 		if( 'below-slider' == $options[ 'slogan_position' ] && ( is_home() || is_front_page() ) ) 
 			if( function_exists( 'interface_home_slogan' ) )
 				interface_home_slogan(); 
@@ -400,13 +403,12 @@ if ( ! function_exists( 'interface_home_slogan' ) ) :
  * Function that enable/disable the home slogan1 and home slogan2.
  */
 function interface_home_slogan() {	
-	global $interface_theme_setting_value;
-   $options = $interface_theme_setting_value;
-	
+	global $options, $array_of_default_settings;
+   $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 	$interface_home_slogan = '';
 	if( !empty( $options[ 'home_slogan1' ] ) || !empty( $options[ 'home_slogan2' ] ) ) {
       
-		if ( "0" == $options[ 'disable_slogan' ] ) {
+		if ( 0 == $options[ 'disable_slogan' ] ) {
 			$interface_home_slogan .= '<section class="slogan-wrap"><div class="container"><div class="slogan">';
 			if ( !empty( $options[ 'home_slogan1' ] ) ) {
 				$interface_home_slogan .= esc_html( $options[ 'home_slogan1' ] );
@@ -432,8 +434,8 @@ if ( ! function_exists( 'interface_featured_sliders' ) ) :
  */
 function interface_featured_sliders() {	
 	global $post;
-	global $interface_theme_setting_value;
-   $options = $interface_theme_setting_value;
+	global $options, $array_of_default_settings;
+   $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 	
 	$interface_featured_sliders = '';
 		if( !$interface_featured_sliders != empty( $options[ 'featured_post_slider' ] ) ) {

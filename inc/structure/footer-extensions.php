@@ -10,8 +10,8 @@
  */
 
 /****************************************************************************************/
-global $interface_theme_setting_value;
-		$options = $interface_theme_setting_value;
+global $options, $array_of_default_settings;
+$options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 add_action( 'interface_footer', 'interface_footer_widget_area', 5 );
 /** 
  * Displays the footer widgets

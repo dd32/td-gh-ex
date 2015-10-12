@@ -18,8 +18,8 @@ add_action( 'wp_enqueue_scripts', 'interface_scripts_styles_method' );
  */
 function interface_scripts_styles_method() {
 
-	global $interface_theme_default;
-   $options = $interface_theme_default;
+	global $options, $array_of_default_settings;
+   $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 
    /**
 	 * Loads our main stylesheet.
@@ -55,7 +55,7 @@ function interface_scripts_styles_method() {
 	 * Enqueue Slider setup js file.
 	 * Enqueue Fancy Box setup js and css file.	 
 	 */	
-	if( ( is_home() || is_front_page() ) && "0" == $options[ 'disable_slider' ] ) {
+	if( ( is_home() || is_front_page() ) && 1 != $options[ 'disable_slider' ] ) {
 		wp_enqueue_script( 'interface_slider', INTERFACE_JS_URL . '/interface-slider-setting.js', array( 'jquery_cycle' ), false, true );
 	}
   
@@ -85,7 +85,7 @@ add_action( 'admin_print_scripts', 'interface_media_js',10 );
 function interface_media_js() {
 	
     wp_enqueue_script( 'interface_meta_upload_widget', INTERFACE_ADMIN_JS_URL . '/add-image-script-widget.js', array( 'jquery','media-upload','thickbox' ) );
-	
+	wp_enqueue_style('thickbox');
 	
 }
 
@@ -114,8 +114,8 @@ if ( ! function_exists( 'interface_pass_slider_effect_cycle_parameters' ) ) :
  */
 function interface_pass_slider_effect_cycle_parameters() {
     
-    global $interface_theme_default;
-    $options = $interface_theme_default;
+    global $options, $array_of_default_settings;
+    $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 
     $transition_effect = $options[ 'transition_effect' ];
     $transition_delay = $options[ 'transition_delay' ] * 1000;
@@ -164,8 +164,8 @@ add_filter( 'body_class', 'interface_body_class' );
  */
 function interface_body_class( $classes ) {
 	global $post;	
-	global $interface_theme_default;
-	$options = $interface_theme_default;
+	global $options, $array_of_default_settings;
+   $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 
 	if( $post ) {
 		$layout = get_post_meta( $post->ID,'interface_sidebarlayout', true ); 
@@ -234,8 +234,8 @@ add_action('wp_head', 'interface_internal_css');
 function interface_internal_css() { 
 
 
-		global $interface_theme_setting_value;
-		$options = $interface_theme_setting_value;
+		global $options, $array_of_default_settings;
+      $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 
 		if( !empty( $options[ 'custom_css' ] ) ) {
 			$interface_internal_css = '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
@@ -255,11 +255,11 @@ add_action( 'pre_get_posts','interface_alter_home' );
  * @uses pre_get_posts hook
  */
 function interface_alter_home( $query ){
-	global $interface_theme_default;
-	$options = $interface_theme_default;
+	global $options, $array_of_default_settings;
+	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ), interface_get_option_defaults());
 	$cats = $options[ 'front_page_category' ];
 
-	if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_post_slider' ] ) ) {
+	if ( $options[ 'exclude_slider_post'] != 0 && !empty( $options[ 'featured_post_slider' ] ) ) {
 		if( $query->is_main_query() && $query->is_home() ) {
 			$query->query_vars['post__not_in'] = $options[ 'featured_post_slider' ];
 		}
@@ -288,31 +288,6 @@ if ( !function_exists('interface_wp_page_menu_filter') ) {
 	  return $text;
 	}
 }
-
-/**************************************************************************************/
-
-require( get_template_directory() . '/inc/admin/interface-themedefaults-value.php' );
-
-global $interface_theme_default;
-$interface_theme_default = interface_theme_default_set( $interface_default );
-
-function interface_theme_default_set( $interface_default) {
-	$interface_theme_default = array_merge( $interface_default, (array) get_option( 'interface_theme_options', array() ) );
-	return apply_filters( 'interface_theme_default', $interface_theme_default );
-}
-
-
-
-/**************************************************************************************/
-require_once( INTERFACE_ADMIN_DIR . '/interface-themedefaults-value.php' );
-$interface_theme_setting_value = interface_theme_options_set_defaults( $interface_default );
-function interface_theme_options_set_defaults( $interface_default) {
-	global $interface_theme_setting_value;
-	$interface_theme_setting_value = array_merge( $interface_default, (array) get_option( 'interface_theme_options', array() ) );
-	return apply_filters( 'interface_theme_setting_value', $interface_theme_setting_value );
-}
-
-
 /**************************************************************************************/
 
 function interface_font_url() {

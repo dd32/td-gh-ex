@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-29 12:55+0530\n"
-"PO-Revision-Date: 2014-12-29 12:55+0530\n"
+"POT-Creation-Date: 2015-09-30 13:39+0530\n"
+"PO-Revision-Date: 2015-09-30 13:39+0530\n"
 "Last-Translator: \n"
 "Language-Team: Themehorse <support@themehorse.com>\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:140
+#: functions.php:138
 msgid "Primary Menu"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgid "Default Layout Set in"
 msgstr ""
 
 #: inc/admin/interface-metaboxes.php:38
-msgid "Theme Settings"
+msgid "Customizer"
 msgstr ""
 
 #: inc/admin/interface-metaboxes.php:44
@@ -79,537 +79,446 @@ msgstr ""
 msgid "Right sidebar"
 msgstr ""
 
-#: inc/admin/theme-option.php:100
-#: inc/admin/theme-option.php:101
-msgid "Theme Options"
-msgstr ""
-
-#: inc/admin/theme-option.php:135
-msgid "Theme Options by"
-msgstr ""
-
-#: inc/admin/theme-option.php:138
-msgid "http://themehorse.com/"
-msgstr ""
-
-#: inc/admin/theme-option.php:138
-#: inc/footer_info/interface-footer_info.php:41
-msgid "Theme Horse"
-msgstr ""
-
-#: inc/admin/theme-option.php:144
-msgid "Want to add bunch of additional features? Upgrade to Pro version!"
-msgstr ""
-
-#: inc/admin/theme-option.php:146
-#: inc/admin/theme-option.php:147
-msgid "Upgrade to Pro"
-msgstr ""
-
-#: inc/admin/theme-option.php:149
-#: inc/admin/theme-option.php:150
-msgid "Donate"
-msgstr ""
-
-#: inc/admin/theme-option.php:151
-msgid "Review Interface"
-msgstr ""
-
-#: inc/admin/theme-option.php:152
-msgid "Rate Interface"
-msgstr ""
-
-#: inc/admin/theme-option.php:154
-msgid "Interface Theme Instructions"
-msgstr ""
-
-#: inc/admin/theme-option.php:155
-msgid "Theme Instructions"
-msgstr ""
-
-#: inc/admin/theme-option.php:157
-#: inc/admin/theme-option.php:158
-msgid "Support Forum"
-msgstr ""
-
-#: inc/admin/theme-option.php:160
-msgid "Interface Demo"
-msgstr ""
-
-#: inc/admin/theme-option.php:161
-msgid "View Demo"
-msgstr ""
-
-#: inc/admin/theme-option.php:181
-msgid "Settings saved."
-msgstr ""
-
-#: inc/admin/theme-option.php:188
-msgid "Layout Options"
-msgstr ""
-
-#: inc/admin/theme-option.php:191
-msgid "Design Options"
-msgstr ""
-
-#: inc/admin/theme-option.php:194
-msgid "Advance Options"
-msgstr ""
-
-#: inc/admin/theme-option.php:197
-msgid "Featured Post/Page Slider"
-msgstr ""
-
-#: inc/admin/theme-option.php:200
-msgid "Contact / Social Links"
-msgstr ""
-
-#: inc/admin/theme-option.php:208
-#: inc/admin/theme-option.php:215
-msgid "Site Layout"
-msgstr ""
-
-#: inc/admin/theme-option.php:218
-msgid "This change is reflected in whole website"
-msgstr ""
-
-#: inc/admin/theme-option.php:223
-msgid "Narrow Layout"
-msgstr ""
-
-#: inc/admin/theme-option.php:227
-msgid "Wide Layout"
-msgstr ""
-
-#: inc/admin/theme-option.php:233
-#: inc/admin/theme-option.php:279
-#: inc/admin/theme-option.php:308
-#: inc/admin/theme-option.php:366
-#: inc/admin/theme-option.php:404
-#: inc/admin/theme-option.php:442
-#: inc/admin/theme-option.php:497
-#: inc/admin/theme-option.php:560
-#: inc/admin/theme-option.php:602
-#: inc/admin/theme-option.php:687
-#: inc/admin/theme-option.php:727
-#: inc/admin/theme-option.php:783
-#: inc/admin/theme-option.php:838
-msgid "Save All Changes"
-msgstr ""
-
-#: inc/admin/theme-option.php:241
-msgid "Content Layout"
-msgstr ""
-
-#: inc/admin/theme-option.php:248
-msgid "Layouts"
-msgstr ""
-
-#: inc/admin/theme-option.php:252
-msgid "No Sidebar"
-msgstr ""
-
-#: inc/admin/theme-option.php:256
-msgid "No Sidebar, Full Width"
-msgstr ""
-
-#: inc/admin/theme-option.php:260
-#: inc/widgets/interface_widgets.php:20
-msgid "Left Sidebar"
-msgstr ""
-
-#: inc/admin/theme-option.php:264
-#: inc/widgets/interface_widgets.php:31
-msgid "Right Sidebar"
-msgstr ""
-
-#: inc/admin/theme-option.php:270
-msgid "Reset Layout"
-msgstr ""
-
-#: inc/admin/theme-option.php:274
-msgid "Check to reset"
-msgstr ""
-
-#: inc/admin/theme-option.php:287
-#: inc/admin/theme-option.php:294
-msgid "Responsive Layout"
-msgstr ""
-
-#: inc/admin/theme-option.php:298
-msgid "ON <span class=\"description\">(Responsive view will be displayed in small devices )</span>"
-msgstr ""
-
-#: inc/admin/theme-option.php:302
-msgid "OFF   <span class=\"description\">(Full site will display as desktop view)</span>"
-msgstr ""
-
-#: inc/admin/theme-option.php:319
-msgid "Custom Header"
-msgstr ""
-
-#: inc/admin/theme-option.php:326
-#: inc/admin/theme-option.php:334
-msgid "Header Logo"
-msgstr ""
-
-#: inc/admin/theme-option.php:329
-msgid "Change Header Logo"
-msgstr ""
-
-#: inc/admin/theme-option.php:332
-#: inc/admin/theme-option.php:396
-#: inc/admin/theme-option.php:434
-msgid "Preview"
-msgstr ""
-
-#: inc/admin/theme-option.php:339
-msgid "Show"
-msgstr ""
-
-#: inc/admin/theme-option.php:343
-msgid "Header Logo Only"
-msgstr ""
-
-#: inc/admin/theme-option.php:346
-msgid "Header Text Only"
-msgstr ""
-
-#: inc/admin/theme-option.php:349
-msgid "Disable"
-msgstr ""
-
-#: inc/admin/theme-option.php:353
-msgid "Need to replace Header Image?"
-msgstr ""
-
-#: inc/admin/theme-option.php:355
-#: inc/admin/theme-option.php:459
-#, php-format
-msgid "<a class=\"button\" href=\"%s\">Click here</a>"
-msgstr ""
-
-#: inc/admin/theme-option.php:358
-msgid "Hide Searchform from Header"
-msgstr ""
-
-#: inc/admin/theme-option.php:361
-msgid "Check to hide"
-msgstr ""
-
-#: inc/admin/theme-option.php:375
-msgid "Fav Icon Options"
-msgstr ""
-
-#: inc/admin/theme-option.php:382
-msgid "Disable Favicon"
-msgstr ""
-
-#: inc/admin/theme-option.php:386
-#: inc/admin/theme-option.php:424
-#: inc/admin/theme-option.php:522
-#: inc/admin/theme-option.php:624
-#: inc/admin/theme-option.php:750
-#: inc/admin/theme-option.php:758
-msgid "Check to disable"
-msgstr ""
-
-#: inc/admin/theme-option.php:390
-msgid "Fav Icon URL"
-msgstr ""
-
-#: inc/admin/theme-option.php:393
-msgid "Change Fav Icon"
-msgstr ""
-
-#: inc/admin/theme-option.php:398
-msgid "favicon"
-msgstr ""
-
-#: inc/admin/theme-option.php:413
-msgid "Web Clip Icon Options"
-msgstr ""
-
-#: inc/admin/theme-option.php:420
-msgid "Disable Web Clip Icon"
-msgstr ""
-
-#: inc/admin/theme-option.php:428
-msgid "Web Clip Icon URL"
-msgstr ""
-
-#: inc/admin/theme-option.php:431
-msgid "Change Web Clip Icon"
-msgstr ""
-
-#: inc/admin/theme-option.php:436
-msgid "webpage icon"
-msgstr ""
-
-#: inc/admin/theme-option.php:451
-msgid "Custom Background"
-msgstr ""
-
-#: inc/admin/theme-option.php:457
-msgid "Need to replace default background?"
-msgstr ""
-
-#: inc/admin/theme-option.php:461
-msgid "Note: The custom background change will be reflected in the background if the site layout is set to be narrow layout instead of the wide layout."
-msgstr ""
-
-#: inc/admin/theme-option.php:473
-msgid "Custom CSS"
-msgstr ""
-
-#: inc/admin/theme-option.php:480
-msgid "Enter your custom CSS styles."
-msgstr ""
-
-#: inc/admin/theme-option.php:483
-msgid "This CSS will overwrite the CSS of style.css file."
-msgstr ""
-
-#: inc/admin/theme-option.php:489
-msgid "CSS Tutorial from W3Schools."
-msgstr ""
-
-#: inc/admin/theme-option.php:490
-msgid "http://www.w3schools.com/css/default.asp"
-msgstr ""
-
-#: inc/admin/theme-option.php:490
-msgid "CSS Tutorial"
-msgstr ""
-
-#: inc/admin/theme-option.php:491
-msgid "Click Here to Read"
-msgstr ""
-
-#: inc/admin/theme-option.php:510
-msgid "Home Slogan Options"
-msgstr ""
-
-#: inc/admin/theme-option.php:517
-msgid "Disable Slogan Part"
-msgstr ""
-
-#: inc/admin/theme-option.php:526
-msgid "Slogan Position"
-msgstr ""
-
-#: inc/admin/theme-option.php:530
-msgid "Above Slider"
-msgstr ""
-
-#: inc/admin/theme-option.php:534
-msgid "Below Slider"
-msgstr ""
-
-#: inc/admin/theme-option.php:539
-msgid "Home Page Primary Slogan"
-msgstr ""
-
-#: inc/admin/theme-option.php:542
-#: inc/admin/theme-option.php:552
-msgid "The appropriate length of the slogan is around 10 words."
-msgstr ""
-
-#: inc/admin/theme-option.php:549
-msgid "Home Page Secondary Slogan"
-msgstr ""
-
-#: inc/admin/theme-option.php:568
-msgid "Homepage Blog Category Setting"
-msgstr ""
-
-#: inc/admin/theme-option.php:575
-msgid "Front page posts categories:"
-msgstr ""
-
-#: inc/admin/theme-option.php:578
-msgid "Only posts that belong to the categories selected here will be displayed on the front page."
-msgstr ""
-
-#: inc/admin/theme-option.php:583
-msgid "--Disabled--"
-msgstr ""
-
-#: inc/admin/theme-option.php:596
-msgid "You may select multiple categories by holding down the CTRL key."
-msgstr ""
-
-#: inc/admin/theme-option.php:616
-msgid "Slider Options"
-msgstr ""
-
-#: inc/admin/theme-option.php:621
-msgid "Disable Slider"
-msgstr ""
-
-#: inc/admin/theme-option.php:628
-msgid "Slider Content"
-msgstr ""
-
-#: inc/admin/theme-option.php:632
-msgid "ON <span class=\"description\">(Slider Content will be displayed)</span>"
-msgstr ""
-
-#: inc/admin/theme-option.php:636
-msgid "OFF   <span class=\"description\">(Slider Content will not be displayed)</span>"
-msgstr ""
-
-#: inc/admin/theme-option.php:640
-msgid "Number of Slides"
-msgstr ""
-
-#: inc/admin/theme-option.php:645
-msgid "Transition Effect:"
-msgstr ""
-
-#: inc/admin/theme-option.php:665
-#: inc/admin/theme-option.php:828
-#, php-format
-msgid "%s"
-msgstr ""
-
-#: inc/admin/theme-option.php:672
-msgid "Transition Delay"
-msgstr ""
-
-#: inc/admin/theme-option.php:675
-#: inc/admin/theme-option.php:682
-msgid "second(s)"
-msgstr ""
-
-#: inc/admin/theme-option.php:679
-msgid "Transition Length"
-msgstr ""
-
-#: inc/admin/theme-option.php:696
-msgid "Featured Post/Page Slider Options"
-msgstr ""
-
-#: inc/admin/theme-option.php:701
-msgid "Exclude Slider post from Homepage posts?"
-msgstr ""
-
-#: inc/admin/theme-option.php:704
-msgid "Check to exclude"
-msgstr ""
-
-#: inc/admin/theme-option.php:710
-msgid "Featured Slider Post/Page #"
-msgstr ""
-
-#: inc/admin/theme-option.php:713
-#: inc/admin/theme-option.php:714
-msgid "Click Here To Edit"
-msgstr ""
-
-#: inc/admin/theme-option.php:721
-msgid "<strong>Following are the steps on how to use the featured slider.</strong><br />* Create Post, Add featured image to the Post.<br />* Add all the Post ID that you want to use in the featured slider. <br /> &nbsp;(You can now see the Posts' respective ID in the All Posts' table in last column.)<br />* Featured Slider will show featured images, Title and excerpt of the respected added post's IDs."
-msgstr ""
-
-#: inc/admin/theme-option.php:724
-msgid "<strong>Note:</strong> You can now add Pages ID too. (You can now see the Pages' respective ID in the All Pages' table in last column.) ."
-msgstr ""
-
-#: inc/admin/theme-option.php:740
-msgid "Contact Info Bar"
-msgstr ""
-
-#: inc/admin/theme-option.php:746
-msgid "Disable Top Info Bar"
-msgstr ""
-
-#: inc/admin/theme-option.php:754
-msgid "Disable Bottom Info Bar"
-msgstr ""
-
-#: inc/admin/theme-option.php:762
-msgid "Phone Number"
-msgstr ""
-
-#: inc/admin/theme-option.php:765
-msgid "Enter your Phone number only"
-msgstr ""
-
-#: inc/admin/theme-option.php:769
-msgid "Email ID Only"
-msgstr ""
-
-#: inc/admin/theme-option.php:772
-msgid "Enter your Email ID"
-msgstr ""
-
-#: inc/admin/theme-option.php:776
-msgid "Location Only"
-msgstr ""
-
-#: inc/admin/theme-option.php:779
-msgid "Enter your Address"
-msgstr ""
-
-#: inc/admin/theme-option.php:793
-#: inc/structure/header-extensions.php:216
-msgid "Facebook"
-msgstr ""
-
-#: inc/admin/theme-option.php:794
-#: inc/structure/header-extensions.php:217
-msgid "Twitter"
-msgstr ""
-
-#: inc/admin/theme-option.php:795
-#: inc/structure/header-extensions.php:218
-msgid "Google Plus"
-msgstr ""
-
-#: inc/admin/theme-option.php:796
-#: inc/structure/header-extensions.php:219
-msgid "Pinterest"
-msgstr ""
-
-#: inc/admin/theme-option.php:797
-#: inc/structure/header-extensions.php:220
-msgid "Youtube"
-msgstr ""
-
-#: inc/admin/theme-option.php:798
-#: inc/structure/header-extensions.php:221
-msgid "Vimeo"
-msgstr ""
-
-#: inc/admin/theme-option.php:799
-#: inc/structure/header-extensions.php:222
-msgid "LinkedIn"
-msgstr ""
-
-#: inc/admin/theme-option.php:800
-#: inc/structure/header-extensions.php:223
-msgid "Flickr"
-msgstr ""
-
-#: inc/admin/theme-option.php:801
-#: inc/structure/header-extensions.php:224
-msgid "Tumblr"
-msgstr ""
-
-#: inc/admin/theme-option.php:802
-#: inc/structure/header-extensions.php:225
-msgid "RSS"
-msgstr ""
-
-#: inc/admin/theme-option.php:818
-msgid "Social Links"
-msgstr ""
-
 #: inc/footer_info/interface-footer_info.php:33
 msgid "WordPress"
 msgstr ""
 
-#: inc/functions/functions.php:324
+#: inc/footer_info/interface-footer_info.php:41
+msgid "Theme Horse"
+msgstr ""
+
+#: inc/functions/customizer.php:11
+#: inc/functions/customizer.php:12
+msgid "Donate"
+msgstr ""
+
+#: inc/functions/customizer.php:14
+msgid "Review Interface"
+msgstr ""
+
+#: inc/functions/customizer.php:15
+msgid "Rate Interface"
+msgstr ""
+
+#: inc/functions/customizer.php:17
+msgid "Interface Theme Instructions"
+msgstr ""
+
+#: inc/functions/customizer.php:18
+msgid "Theme Instructions"
+msgstr ""
+
+#: inc/functions/customizer.php:20
+#: inc/functions/customizer.php:21
+msgid "Support Forum"
+msgstr ""
+
+#: inc/functions/customizer.php:23
+msgid "Interface Demo"
+msgstr ""
+
+#: inc/functions/customizer.php:24
+msgid "View Demo"
+msgstr ""
+
+#: inc/functions/customizer.php:32
+#: inc/functions/customizer.php:33
+#: inc/functions/customizer.php:762
+msgid "Upgrade to Interface Pro"
+msgstr ""
+
+#: inc/functions/customizer.php:34
+msgid "to get more aditional features like (Advanced Slider, Color Options, Typography Options and many more.)"
+msgstr ""
+
+#: inc/functions/customizer.php:53
+msgid "--Disabled--"
+msgstr ""
+
+#: inc/functions/customizer.php:69
+msgid "Layout Options"
+msgstr ""
+
+#: inc/functions/customizer.php:74
+msgid "Design Options"
+msgstr ""
+
+#: inc/functions/customizer.php:80
+msgid "Advance Options"
+msgstr ""
+
+#: inc/functions/customizer.php:86
+msgid "Featured Post/Page Slider"
+msgstr ""
+
+#: inc/functions/customizer.php:92
+msgid "Contact / Social Links"
+msgstr ""
+
+#: inc/functions/customizer.php:99
+msgid "What is new on Interface Pro?"
+msgstr ""
+
+#: inc/functions/customizer.php:112
+#: inc/functions/customizer.php:133
+msgid "Interface Upgrade"
+msgstr ""
+
+#: inc/functions/customizer.php:119
+msgid "Interface Support"
+msgstr ""
+
+#: inc/functions/customizer.php:120
+msgid "Hey! Buy us a beer and we shall come with new features and update."
+msgstr ""
+
+#: inc/functions/customizer.php:142
+#: inc/functions/customizer.php:153
+msgid "Site Layout"
+msgstr ""
+
+#: inc/functions/customizer.php:154
+msgid "This change is reflected in whole website"
+msgstr ""
+
+#: inc/functions/customizer.php:160
+msgid "Narrow Layout"
+msgstr ""
+
+#: inc/functions/customizer.php:161
+msgid "Wide Layout"
+msgstr ""
+
+#: inc/functions/customizer.php:166
+msgid "Content Layout"
+msgstr ""
+
+#: inc/functions/customizer.php:177
+msgid "Layouts"
+msgstr ""
+
+#: inc/functions/customizer.php:183
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/functions/customizer.php:184
+msgid "No Sidebar, Full Width"
+msgstr ""
+
+#: inc/functions/customizer.php:185
+#: inc/widgets/interface_widgets.php:20
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/functions/customizer.php:186
+#: inc/widgets/interface_widgets.php:31
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/functions/customizer.php:191
+#: inc/functions/customizer.php:202
+msgid "Responsive Layout"
+msgstr ""
+
+#: inc/functions/customizer.php:208
+msgid "ON(Responsive view will be displayed in small devices )"
+msgstr ""
+
+#: inc/functions/customizer.php:209
+msgid "OFF(Full site will display as desktop view)"
+msgstr ""
+
+#: inc/functions/customizer.php:216
+msgid "Custom Header"
+msgstr ""
+
+#: inc/functions/customizer.php:227
+msgid "Hide Searchform from Header"
+msgstr ""
+
+#: inc/functions/customizer.php:242
+msgid "Header Logo"
+msgstr ""
+
+#: inc/functions/customizer.php:255
+msgid "Show"
+msgstr ""
+
+#: inc/functions/customizer.php:261
+msgid "Header Logo Only"
+msgstr ""
+
+#: inc/functions/customizer.php:262
+msgid "Header Text Only"
+msgstr ""
+
+#: inc/functions/customizer.php:263
+msgid "Disable"
+msgstr ""
+
+#: inc/functions/customizer.php:268
+msgid "Fav Icon Options"
+msgstr ""
+
+#: inc/functions/customizer.php:279
+msgid "Disable Favicon"
+msgstr ""
+
+#: inc/functions/customizer.php:301
+msgid "Web Clip Icon Options"
+msgstr ""
+
+#: inc/functions/customizer.php:312
+msgid "Disable Web Clip Icon"
+msgstr ""
+
+#: inc/functions/customizer.php:334
+msgid "Custom CSS"
+msgstr ""
+
+#: inc/functions/customizer.php:345
+msgid "Enter your custom CSS styles."
+msgstr ""
+
+#: inc/functions/customizer.php:346
+msgid "This CSS will overwrite the CSS of style.css file."
+msgstr ""
+
+#: inc/functions/customizer.php:355
+msgid "Home Slogan Options"
+msgstr ""
+
+#: inc/functions/customizer.php:366
+msgid "Disable Slogan Part"
+msgstr ""
+
+#: inc/functions/customizer.php:378
+msgid "Slogan Position"
+msgstr ""
+
+#: inc/functions/customizer.php:384
+msgid "Above Slider"
+msgstr ""
+
+#: inc/functions/customizer.php:385
+msgid "Below Slider"
+msgstr ""
+
+#: inc/functions/customizer.php:395
+msgid "Home Page Primary Slogan"
+msgstr ""
+
+#: inc/functions/customizer.php:396
+msgid "TThe appropriate length of the slogan is around 10 words."
+msgstr ""
+
+#: inc/functions/customizer.php:408
+msgid "Home Page Secondary Slogan"
+msgstr ""
+
+#: inc/functions/customizer.php:409
+msgid "The appropriate length of the slogan is around 10 words."
+msgstr ""
+
+#: inc/functions/customizer.php:417
+msgid "Homepage Blog Category Setting"
+msgstr ""
+
+#: inc/functions/customizer.php:418
+msgid "Only posts that belong to the categories selected here will be displayed on the front page. ( You may select multiple categories by holding down the CTRL key. ) "
+msgstr ""
+
+#: inc/functions/customizer.php:433
+msgid "Front page posts categories"
+msgstr ""
+
+#: inc/functions/customizer.php:444
+msgid "Slider Options"
+msgstr ""
+
+#: inc/functions/customizer.php:456
+msgid "Disable Slider"
+msgstr ""
+
+#: inc/functions/customizer.php:469
+msgid "Slider Content"
+msgstr ""
+
+#: inc/functions/customizer.php:475
+msgid "ON (Slider Content will be displayed)"
+msgstr ""
+
+#: inc/functions/customizer.php:476
+msgid "OFF (Slider Content will not be displayed)"
+msgstr ""
+
+#: inc/functions/customizer.php:487
+msgid "Number of Slides"
+msgstr ""
+
+#: inc/functions/customizer.php:500
+msgid "Transition Effect"
+msgstr ""
+
+#: inc/functions/customizer.php:505
+msgid "Fade"
+msgstr ""
+
+#: inc/functions/customizer.php:506
+msgid "Wipe"
+msgstr ""
+
+#: inc/functions/customizer.php:507
+msgid "Scroll Up"
+msgstr ""
+
+#: inc/functions/customizer.php:508
+msgid "Scroll Down"
+msgstr ""
+
+#: inc/functions/customizer.php:509
+msgid "Scroll Left"
+msgstr ""
+
+#: inc/functions/customizer.php:510
+msgid "Scroll Right"
+msgstr ""
+
+#: inc/functions/customizer.php:511
+msgid "Blind X"
+msgstr ""
+
+#: inc/functions/customizer.php:512
+msgid "Blind Y"
+msgstr ""
+
+#: inc/functions/customizer.php:513
+msgid "Blind Z"
+msgstr ""
+
+#: inc/functions/customizer.php:514
+msgid "Cover"
+msgstr ""
+
+#: inc/functions/customizer.php:515
+msgid "Shuffle"
+msgstr ""
+
+#: inc/functions/customizer.php:526
+msgid "Transition Delay"
+msgstr ""
+
+#: inc/functions/customizer.php:539
+msgid "Transition Length"
+msgstr ""
+
+#: inc/functions/customizer.php:546
+msgid "Featured Post/ Page Slider Options"
+msgstr ""
+
+#: inc/functions/customizer.php:558
+msgid "Check to exclude"
+msgstr ""
+
+#: inc/functions/customizer.php:559
+msgid "Exclude Slider post from Homepage posts?"
+msgstr ""
+
+#: inc/functions/customizer.php:574
+msgid " Featured Slider Post/Page #"
+msgstr ""
+
+#: inc/functions/customizer.php:583
+msgid "Contact Info Bar"
+msgstr ""
+
+#: inc/functions/customizer.php:595
+msgid "Disable Top Info Bar"
+msgstr ""
+
+#: inc/functions/customizer.php:608
+msgid "Disable Bottom Info Bar"
+msgstr ""
+
+#: inc/functions/customizer.php:621
+msgid "Phone Number"
+msgstr ""
+
+#: inc/functions/customizer.php:622
+msgid "Enter your Phone number only"
+msgstr ""
+
+#: inc/functions/customizer.php:635
+msgid "Email ID Only"
+msgstr ""
+
+#: inc/functions/customizer.php:636
+msgid "Enter your Email ID"
+msgstr ""
+
+#: inc/functions/customizer.php:649
+msgid "Location Only"
+msgstr ""
+
+#: inc/functions/customizer.php:650
+msgid "Enter your Address"
+msgstr ""
+
+#: inc/functions/customizer.php:658
+msgid "Social Links"
+msgstr ""
+
+#: inc/functions/customizer.php:664
+#: inc/structure/header-extensions.php:215
+msgid "Facebook"
+msgstr ""
+
+#: inc/functions/customizer.php:665
+#: inc/structure/header-extensions.php:216
+msgid "Twitter"
+msgstr ""
+
+#: inc/functions/customizer.php:666
+#: inc/structure/header-extensions.php:217
+msgid "Google Plus"
+msgstr ""
+
+#: inc/functions/customizer.php:667
+#: inc/structure/header-extensions.php:218
+msgid "Pinterest"
+msgstr ""
+
+#: inc/functions/customizer.php:668
+#: inc/structure/header-extensions.php:219
+msgid "Youtube"
+msgstr ""
+
+#: inc/functions/customizer.php:669
+#: inc/structure/header-extensions.php:220
+msgid "Vimeo"
+msgstr ""
+
+#: inc/functions/customizer.php:670
+#: inc/structure/header-extensions.php:221
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/functions/customizer.php:671
+#: inc/structure/header-extensions.php:222
+msgid "Flickr"
+msgstr ""
+
+#: inc/functions/customizer.php:672
+#: inc/structure/header-extensions.php:223
+msgid "Tumblr"
+msgstr ""
+
+#: inc/functions/customizer.php:673
+#: inc/structure/header-extensions.php:224
+msgid "RSS"
+msgstr ""
+
+#: inc/functions/functions.php:299
 msgid "on"
 msgstr ""
 
@@ -775,24 +684,24 @@ msgstr ""
 msgid "Powered by:"
 msgstr ""
 
-#: inc/structure/header-extensions.php:163
+#: inc/structure/header-extensions.php:162
 msgid "\" Call Us \""
 msgstr ""
 
-#: inc/structure/header-extensions.php:173
+#: inc/structure/header-extensions.php:172
 msgid "\" Mail Us \""
 msgstr ""
 
-#: inc/structure/header-extensions.php:247
+#: inc/structure/header-extensions.php:246
 #, php-format
 msgid "%1$s on %2$s"
 msgstr ""
 
-#: inc/structure/header-extensions.php:519
+#: inc/structure/header-extensions.php:534
 msgid "Page NOT Found"
 msgstr ""
 
-#: inc/structure/header-extensions.php:522
+#: inc/structure/header-extensions.php:537
 msgid "Search Results"
 msgstr ""
 

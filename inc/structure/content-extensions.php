@@ -17,8 +17,8 @@ add_action( 'interface_main_container', 'interface_content', 10 );
  */
 function interface_content() {
 	global $post;	
-	global $interface_theme_default;
-	$options = $interface_theme_default;
+	global $options, $array_of_default_settings;
+  $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 	if( $post ) {
 		$layout = get_post_meta( $post->ID, 'interface_sidebarlayout', true );
 	}
