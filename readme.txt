@@ -75,17 +75,6 @@ License:  Creative Commons Attribution-ShareAlike Unported 3.0 license
 Resource link: - https://www.iconfinder.com/icons/186409/arrow_right_right%2Cnext_icon#size=128
 License:  Free for commercial use
 
-5. Image Name: fb.png
-Resource link: - https://www.iconfinder.com/icons/104458/facebook_fb_social_social_media_icon#size=128
-License:  Free for commercial use
-
-6. Image Name: tw.png
-Resource link: - https://www.iconfinder.com/icons/104461/twitter_icon#size=128
-License:  Free for commercial use
-
-7. Image Name: ico-delete.png
-Resource link: - https://www.iconfinder.com/icons/330399/bad_cancel_clear_close_decline_delete_empty_exit_not_refuse_remove_stop_icon#size=16
-License:  Free for commercial use
  
 other images made by us .
 
