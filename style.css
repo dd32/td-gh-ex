@@ -4,7 +4,7 @@ Theme URI: http://www.nilambar.net/2015/03/simple-life-free-wordpress-theme.html
 Author: Nilambar Sharma
 Author URI: http://www.nilambar.net/
 Description: Simple Life is a simple and minimal theme for your awesome WordPress website. It comes with a whole set of interesting, rich features and flexible theme customization. This theme is easily customizable with the Customizer feature of WordPress. It is also translation ready.
-Version: 1.1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: simple-life
@@ -719,6 +719,7 @@ h2 a:hover, h3 a:hover {
   font-size: 20px;
 }
 .site-main .paging-navigation,
+.site-main .post-navigation,
 nav.pagination {
     background-color: #ffffff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
