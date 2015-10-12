@@ -217,7 +217,7 @@ function attitude_headerdetails() {
 				attitude_home_slogan(); 
 
 		if( is_home() || is_front_page() ) {
-			if( "0" == $options[ 'disable_slider' ] ) {
+			if( 0 == $options[ 'disable_slider' ] ) {
 				if( function_exists( 'attitude_pass_cycle_parameters' ) ) 
    				attitude_pass_cycle_parameters();
    			if( function_exists( 'attitude_featured_post_slider' ) ) 
@@ -325,7 +325,7 @@ function attitude_home_slogan() {
 	$attitude_home_slogan = '';
 	if(( !empty( $options[ 'home_slogan1' ] ) || !empty( $options[ 'home_slogan2' ] ) ) ) {
       
-		if ( "0" == $options[ 'disable_slogan' ] ) {
+		if ( 1 != $options[ 'disable_slogan' ] ) {
 			$attitude_home_slogan .= '<section class="slogan-wrap clearfix"><div class="container"><div class="slogan">';
 			if ( !empty( $options[ 'home_slogan1' ] ) ) {
 				$attitude_home_slogan .= esc_html( $options[ 'home_slogan1' ] );

@@ -132,7 +132,7 @@ function attitude_customize_register($wp_customize){
 		'panel'					=>'attitude_design_options_panel'
 	));
 	$wp_customize->add_setting( 'attitude_theme_options[hide_header_searchform]', array(
-		'default'				=> '0',
+		'default'				=> 0,
 		'sanitize_callback'	=> 'prefix_sanitize_integer',
 		'type' 					=> 'option',
 		'capability' 			=> 'manage_options'
@@ -160,7 +160,7 @@ function attitude_customize_register($wp_customize){
 		)
 	);
 	$wp_customize->add_setting('attitude_theme_options[header_show]', array(
-		'default'				=> 'header_text',
+		'default'				=> 'header-text',
 		'sanitize_callback'	=> 'prefix_sanitize_integer',
 		'type' 					=> 'option',
 		'capability' 			=> 'manage_options'
@@ -184,7 +184,7 @@ function attitude_customize_register($wp_customize){
 		'panel'					=>'attitude_design_options_panel',
 	));
 	$wp_customize->add_setting( 'attitude_theme_options[disable_favicon]', array(
-		'default'				=> '1',
+		'default'				=> 1,
 		'sanitize_callback'	=> 'prefix_sanitize_integer',
 		'type' 					=> 'option',
 		'capability' 			=> 'manage_options'
@@ -217,7 +217,7 @@ function attitude_customize_register($wp_customize){
 		'panel'					=>'attitude_design_options_panel'
 	));
 	$wp_customize->add_setting( 'attitude_theme_options[disable_webpageicon]', array(
-		'default'				=> '1',
+		'default'				=> 1,
 		'sanitize_callback'	=> 'prefix_sanitize_integer',
 		'type' 					=> 'option',
 		'capability' 			=> 'manage_options'

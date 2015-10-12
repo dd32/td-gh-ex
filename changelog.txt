@@ -1,4 +1,7 @@
 == Change Log ==
+= 3.0.3 =
+* Fix - Default value issue fixed for checkbox options
+
 = 3.0.2 =
 * Fix - esc_html changed to wp_kses_stripslashes for validation
 * Fix - Unwanted php close tag removed

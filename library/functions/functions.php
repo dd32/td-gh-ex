@@ -45,7 +45,7 @@ function attitude_scripts_styles_method() {
 	 * Enqueue Slider setup js file.
 	 * Enqueue Fancy Box setup js and css file.	 
 	 */	
-	if( ( is_home() || is_front_page() ) && "0" == $options[ 'disable_slider' ] ) {
+	if( ( is_home() || is_front_page() ) && 0 == $options[ 'disable_slider' ] ) {
 		wp_enqueue_script( 'attitude_slider', ATTITUDE_JS_URL . '/attitude-slider-setting.js', array( 'jquery_cycle' ), false, true );
 	}
    wp_enqueue_script( 'tinynav', ATTITUDE_JS_URL . '/tinynav.js', array( 'jquery' ) );
@@ -296,7 +296,7 @@ function attitude_alter_home( $query ){
 	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ), attitude_get_option_defaults());
 	$cats = $options[ 'front_page_category' ];
 
-	if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_post_slider' ] ) ) {
+	if ( $options[ 'exclude_slider_post'] != 0 && !empty( $options[ 'featured_post_slider' ] ) ) {
 		if( $query->is_main_query() && $query->is_home() ) {
 			$query->query_vars['post__not_in'] = $options[ 'featured_post_slider' ];
 		}
