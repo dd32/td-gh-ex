@@ -2,8 +2,6 @@
 /**
  * Jetpack Compatibility File
  * See: http://jetpack.me/
-*
- * @package Base WP
  */
 
 /**

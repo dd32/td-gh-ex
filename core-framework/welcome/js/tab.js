@@ -2,7 +2,7 @@ jQuery( document ).ready( function() {
     jQuery( 'div.panel' ).hide();
     jQuery( 'div#getting_started' ).show();
 
-    jQuery( '.nav-tab-wrapper a' ).click( function() {
+    jQuery( '.ig-nav-tab-wrapper a' ).click( function() {
 
         var tab = jQuery( this );
         var	tabs_wrapper = tab.closest( '.about-wrap' );

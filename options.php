@@ -32,34 +32,46 @@ $wp_customize->add_section('upgrade-premium', array(
     ) );
 
 //03 GENERAL
-    $wp_customize->get_section('title_tagline')->title = esc_html__('General Settings', 'base-wp');
+    $wp_customize->get_section('title_tagline')->title = esc_html__('General', 'base-wp');
     $wp_customize->get_section('title_tagline')->priority = 3;
 
 //04 LAYOUT
-    $wp_customize->add_section('layout-settings', array(
-        'title' => esc_html__('Layout settings', 'base-wp'),
+    $wp_customize->add_panel('layout-settings', array(
+        'title' => esc_html__('Layout', 'base-wp'),
         'priority' => 4,
+    ));
+    $wp_customize->add_section('main-layout', array(
+        'title' => esc_html__('Main Layout', 'base-wp'),
+        'panel'  => 'layout-settings',
+    ));
+    $wp_customize->add_section('single-layout', array(
+        'title' => esc_html__('Single Layout', 'base-wp'),
+        'panel'  => 'layout-settings',
+    ));
+    $wp_customize->add_section('shop-layout', array(
+        'title' => esc_html__('Shop Layout', 'base-wp'),
+        'panel'  => 'layout-settings',
     ));
 
 // 05 STYLE
-    $wp_customize->get_section('colors')->title = esc_html__('Style Settings', 'base-wp');
+    $wp_customize->get_section('colors')->title = esc_html__('Style', 'base-wp');
     $wp_customize->get_section('colors')->priority = 5;
 
 // 06 FOOTER
     $wp_customize->add_section('footer-settings', array(
-        'title' => esc_html__('Footer Settings', 'base-wp'),
+        'title' => esc_html__('Footer', 'base-wp'),
         'priority' => 6,
     ));
 
 // 06 SOCIAL
     $wp_customize->add_section('social-settings', array(
-        'title' => esc_html__('Social Settings', 'base-wp'),
+        'title' => esc_html__('Social', 'base-wp'),
         'priority' => 7,
     ));
 
 // 07 ADVANCED
     $wp_customize->add_section('advanced-settings', array(
-        'title' => esc_html__('Advanced Settings', 'base-wp'),
+        'title' => esc_html__('Advanced', 'base-wp'),
         'priority' => 7,
     ));
 
@@ -171,7 +183,7 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'label' => esc_html__('Main Layout', 'base-wp'),
         'description' =>  esc_html__('Select the index page layout', 'base-wp') . $upgrade_message,
         'type' => 'custom',
-        'section' => 'layout-settings',
+        'section' => 'main-layout',
         'settings' => $igthemes_option . '[sidebar_main]',
     )));
 //post slide
@@ -189,8 +201,20 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
             'project' => 'Projects',
             'testimonial' => 'Testimonials',
         ),
-        'section' => 'layout-settings',
+        'section' => 'main-layout',
         'settings' => $igthemes_option . '[post_slide]',
+    ));
+//main post content
+    $wp_customize->add_setting($igthemes_option . '[main_post_content]', array(
+        'type' => 'option',
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
+    ));
+    $wp_customize->add_control('main_post_content', array(
+        'label' => esc_html__('Show excerpt', 'base-wp'),
+        'description' => esc_html__('Show posts content as excerpt', 'base-wp'),
+        'type' => 'checkbox',
+        'section' => 'main-layout',
+        'settings' => $igthemes_option . '[main_post_content]',
     ));
 //main featured images
     $wp_customize->add_setting($igthemes_option . '[main_featured_images]', array(
@@ -198,10 +222,10 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'sanitize_callback' => 'igthemes_sanitize_checkbox',
     ));
     $wp_customize->add_control('main_featured_images', array(
-        'label' => esc_html__('Index featured image', 'base-wp'),
+        'label' => esc_html__('Featured images', 'base-wp'),
         'description' => esc_html__('Show featured images in index page', 'base-wp'),
         'type' => 'checkbox',
-        'section' => 'layout-settings',
+        'section' => 'main-layout',
         'settings' => $igthemes_option . '[main_featured_images]',
     ));
 //main numeric pagination
@@ -213,7 +237,7 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'label' => esc_html__('Numeric pagination', 'base-wp'),
         'description' => esc_html__('Use numeric pagination in index page', 'base-wp'),
         'type' => 'checkbox',
-        'section' => 'layout-settings',
+        'section' => 'main-layout',
         'settings' => $igthemes_option . '[main_numeric_pagination]',
     ));
 //sidebar single
@@ -224,7 +248,7 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'label' => esc_html__('Single Layout', 'base-wp'),
         'description' => esc_html__('Select the single post layout', 'base-wp') . $upgrade_message,
         'type' => 'custom',
-        'section' => 'layout-settings',
+        'section' => 'single-layout',
         'settings' => $igthemes_option . '[sidebar_single]',
     )));
 //post featured image
@@ -236,7 +260,7 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'label' => esc_html__('Post featured image', 'base-wp'),
         'description' => esc_html__('Show featured image in post page', 'base-wp'),
         'type' => 'checkbox',
-        'section' => 'layout-settings',
+        'section' => 'single-layout',
         'settings' => $igthemes_option . '[post_featured_image]',
     ));
 //post meta
@@ -247,7 +271,7 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'label' => esc_html__('Meta Data', 'base-wp'),
         'description' => esc_html__('Hide post meta data', 'base-wp') . $upgrade_message,
         'type' => 'custom',
-        'section' => 'layout-settings',
+        'section' => 'single-layout',
         'settings' => $igthemes_option . '[post_meta]',
     )));
 //sidebar shop
@@ -258,8 +282,19 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'label' => esc_html__('Shop Layout', 'base-wp'),
         'description' => esc_html__('Select the shop page layout', 'base-wp') . $upgrade_message,
         'type' => 'custom',
-        'section' => 'layout-settings',
+        'section' => 'shop-layout',
         'settings' => $igthemes_option . '[sidebar_shop]',
+    )));
+//Number of products displayed
+    $wp_customize->add_setting($igthemes_option . '[shop_products_number]', array(
+        'sanitize_callback' => 'igthemes_allowed_tag',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'shop_products_number', array(
+        'label' => esc_html__('Products number', 'base-wp'),
+        'description' => esc_html__('Change the number of products displayed per page', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'shop-layout',
+        'settings' => $igthemes_option . '[shop_products_number]',
     )));
 //shop product slider
     $wp_customize->add_setting($igthemes_option . '[shop_slide]', array(
@@ -270,7 +305,7 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'label' => esc_html__('Products Slide', 'base-wp'),
         'description' => esc_html__('', 'base-wp'),
         'type' => 'checkbox',
-        'section' => 'layout-settings',
+        'section' => 'shop-layout',
         'settings' => $igthemes_option . '[shop_slide]',
     ));
 /*****************************************************************

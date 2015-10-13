@@ -5,89 +5,6 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  */
-
-if ( ! function_exists( 'igthemes_paging_nav' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- */
-function igthemes_paging_nav() {
-    // Don't print empty markup if there's only one page.
-    if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-        return;
-    }
-    ?>
-    <nav class="navigation paging-navigation" role="navigation">
-        <h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'base-wp' ); ?></h1>
-        <div class="nav-links">
-
-            <?php if ( get_next_posts_link() ) : ?>
-            <div class="nav-previous"><?php next_posts_link( esc_html__( '&larr; Older posts', 'base-wp' ) ); ?></div>
-            <?php endif; ?>
-
-            <?php if ( get_previous_posts_link() ) : ?>
-            <div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts &rarr;', 'base-wp' ) ); ?></div>
-            <?php endif; ?>
-
-        </div><!-- .nav-links -->
-    </nav><!-- .navigation -->
-    <?php
-}
-endif;
-
-if ( ! function_exists( 'igthemes_numeric_paging' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- */
-function igthemes_numeric_paging() {
-    // Don't print empty markup if there's only one page.
-    if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-        return;
-    }
-    ?>
-            <?php global $wp_query; // pagination
-            $big = 999999999; // need an unlikely integer
-
-        echo paginate_links( array(
-            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-            'format' => '?paged=%#%',
-            'current' => max( 1, get_query_var('paged') ),
-            'type'    => 'list',
-            'prev_next'    => True,
-            'prev_text'    => esc_html__('&laquo; Previous', 'base-wp'),
-            'next_text'    => esc_html__('Next &raquo;', 'base-wp'),
-            'total' => $wp_query->max_num_pages
-        ) ); ?>
-
-    <?php
-}
-endif;
-
-if ( ! function_exists( 'igthemes_post_nav' ) ) :
-/**
- * Display navigation to next/previous post when applicable.
- */
-function igthemes_post_nav() {
-    // Don't print empty markup if there's nowhere to navigate.
-    $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-    $next     = get_adjacent_post( false, '', false );
-
-    if ( ! $next && ! $previous ) {
-        return;
-    }
-    ?>
-    <nav class="navigation post-navigation" role="navigation">
-        <h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'base-wp' ); ?></h1>
-        <div class="nav-links">
-            <?php
-                previous_post_link( '<div class="nav-previous">%link</div>', esc_html_x( '&larr;&nbsp;%title', 'Previous post link', 'base-wp' ) );
-                next_post_link( '<div class="nav-next">%link</div>', esc_html_x( '%title&nbsp;&rarr;', 'Next post link', 'base-wp' ) );
-            ?>
-        </div><!-- .nav-links -->
-    </nav><!-- .navigation -->
-    <?php
-}
-endif;
-
 if ( ! function_exists( 'igthemes_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -146,108 +63,49 @@ function igthemes_entry_footer() {
         echo '</span>';
     }
 
-    edit_post_link( esc_html__( 'Edit', 'base-wp' ), '<span class="edit-link">', '</span>' );
+    edit_post_link(
+        sprintf(
+            /* translators: %s: Name of current post */
+            esc_html__( 'Edit %s', 'base-wp' ),
+            the_title( '<span class="screen-reader-text">"', '"</span>', false )
+        ),
+        '<span class="edit-link">',
+        '</span>'
+    );
 }
 endif;
 
-if ( ! function_exists( 'igthemes_archive_title' ) ) :
+
+if ( ! function_exists( 'igthemes_numeric_paging' ) ) :
 /**
- * Shim for `the_archive_title()`.
- *
- * Display the archive title based on the queried object.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- *
- * @param string $before Optional. Content to prepend to the title. Default empty.
- * @param string $after  Optional. Content to append to the title. Default empty.
+ * Display numeric pagination.
  */
-function igthemes_archive_title( $before = '', $after = '' ) {
-    if ( is_category() ) {
-        $title = sprintf( esc_html__( 'Category: %s', 'base-wp' ), single_cat_title( '', false ) );
-    } elseif ( is_tag() ) {
-        $title = sprintf( esc_html__( 'Tag: %s', 'base-wp' ), single_tag_title( '', false ) );
-    } elseif ( is_author() ) {
-        $title = sprintf( esc_html__( 'Author: %s', 'base-wp' ), '<span class="vcard">' . get_the_author() . '</span>' );
-    } elseif ( is_year() ) {
-        $title = sprintf( esc_html__( 'Year: %s', 'base-wp' ), get_the_date( esc_html_x( 'Y', 'yearly archives date format', 'base-wp' ) ) );
-    } elseif ( is_month() ) {
-        $title = sprintf( esc_html__( 'Month: %s', 'base-wp' ), get_the_date( esc_html_x( 'F Y', 'monthly archives date format', 'base-wp' ) ) );
-    } elseif ( is_day() ) {
-        $title = sprintf( esc_html__( 'Day: %s', 'base-wp' ), get_the_date( esc_html_x( 'F j, Y', 'daily archives date format', 'base-wp' ) ) );
-    } elseif ( is_tax( 'post_format' ) ) {
-        if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-            $title = esc_html_x( 'Asides', 'post format archive title', 'base-wp' );
-        } elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-            $title = esc_html_x( 'Galleries', 'post format archive title', 'base-wp' );
-        } elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-            $title = esc_html_x( 'Images', 'post format archive title', 'base-wp' );
-        } elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-            $title = esc_html_x( 'Videos', 'post format archive title', 'base-wp' );
-        } elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-            $title = esc_html_x( 'Quotes', 'post format archive title', 'base-wp' );
-        } elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-            $title = esc_html_x( 'Links', 'post format archive title', 'base-wp' );
-        } elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-            $title = esc_html_x( 'Statuses', 'post format archive title', 'base-wp' );
-        } elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-            $title = esc_html_x( 'Audio', 'post format archive title', 'base-wp' );
-        } elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-            $title = esc_html_x( 'Chats', 'post format archive title', 'base-wp' );
-        }
-    } elseif ( is_post_type_archive() ) {
-        $title = sprintf( esc_html__( 'Archives: %s', 'base-wp' ), post_type_archive_title( '', false ) );
-    } elseif ( is_tax() ) {
-        $tax = get_taxonomy( get_queried_object()->taxonomy );
-        /* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-        $title = sprintf( esc_html__( '%1$s: %2$s', 'base-wp' ), $tax->labels->singular_name, single_term_title( '', false ) );
-    } else {
-        $title = esc_html__( '', 'base-wp' );
+function igthemes_numeric_paging() {
+    // Don't print empty markup if there's only one page.
+    if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+        return;
     }
+    ?>
+            <?php global $wp_query; // pagination
+            $big = 999999999; // need an unlikely integer
 
-    /**
-     * Filter the archive title.
-     *
-     * @param string $title Archive title to be displayed.
-     */
-    $title = apply_filters( 'get_the_archive_title', $title );
+        echo paginate_links( array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current' => max( 1, get_query_var('paged') ),
+            'type'    => 'list',
+            'prev_next'    => True,
+            'prev_text'    => esc_html__('&#8592;', 'base-wp'),
+            'next_text'    => esc_html__('&#8594;', 'base-wp'),
+            'total' => $wp_query->max_num_pages
+        ) ); ?>
 
-    if ( ! empty( $title ) ) {
-        echo $before . $title . $after;
-    }
-}
-endif;
-
-if ( ! function_exists( 'igthemes_archive_description' ) ) :
-/**
- * Shim for `the_archive_description()`.
- *
- * Display category, tag, or term description.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- *
- * @param string $before Optional. Content to prepend to the description. Default empty.
- * @param string $after  Optional. Content to append to the description. Default empty.
- */
-function igthemes_archive_description( $before = '', $after = '' ) {
-    $description = apply_filters( 'get_the_archive_description', term_description() );
-
-    if ( ! empty( $description ) ) {
-        /**
-         * Filter the archive description.
-         *
-         * @see term_description()
-         *
-         * @param string $description Archive description to be displayed.
-         */
-        echo $before . $description . $after;
-    }
+    <?php
 }
 endif;
 
 /**
  * Returns true if a blog has more than 1 category.
- *
- * @return bool
  */
 function igthemes_categorized_blog() {
     if ( false === ( $all_the_cool_cats = get_transient( 'igthemes_categories' ) ) ) {

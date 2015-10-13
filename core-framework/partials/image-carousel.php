@@ -16,7 +16,7 @@
     <div class="item">
         <a href="<?php echo esc_url( get_permalink() );?>">
             <?php if (has_post_thumbnail()) {
-                echo  the_post_thumbnail( 'large', array( 'class' => 'carousel-img' ) );
+                echo  the_post_thumbnail( 'slider-thumb', array( 'class' => 'carousel-img' ) );
                 } ?>
         </a>
     </div>
@@ -51,7 +51,7 @@
 </div><!-- /.slider-nav -->
 <?php } ;?>
 
-<?php if (class_exists( 'WooCommerce' ) && is_shop()) { ?>
+<?php if (class_exists( 'WooCommerce' ) && is_shop() && igthemes_option('shop_slide')) { ?>
 <div id="product-carousel" class="slick">
     <?php
     $args = array(
