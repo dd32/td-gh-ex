@@ -4,6 +4,9 @@
 .grid-1000, .grid-1200 {
     margin: 0 auto;
     padding: 0 0 0 1%; /* THAT'S THE NAME ;) */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .grid-1200 {
@@ -17,43 +20,43 @@
 .row {
     clear: both;
     padding: 0 10px;
+    height: 100%;
 }
-.features {
-    clear: both;
-    padding: 0;
-    display: inline-block;
-    width: 100%;
+.push-right  {
+    float: right!important;
+}
+.push-left  {
+    float: left!important;
 }
 
-/**********************************************************************************************************************
- * RESPONSIVE
- ********************************************************************************************************************/
-
-.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12, .feature {
+/*--------------------------------------------------------------
+ * Common columns definitions
+ --------------------------------------------------------------*/
+.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12 {
     float: left;
     margin: 0 3% 0 0;
 }
 
-.col1.last, .col2.last, .col3.last, .col4.last, .col5.last, .col6.last, .col7.last, .col8.last, .col9.last, .col10.last, .col11.last, .col12, .feature.last {
+.col1.last, .col2.last, .col3.last, .col4.last, .col5.last, .col6.last, .col7.last, .col8.last, .col9.last, .col10.last, .col11.last, .col12 {
     margin: 0;
 }
 
 .col1 { width: 5.5%; }
 .col2 { width: 14%; }
-.col3, .columns-4 .feature { width: 22.5%; }
-.col4, .columns-3 .feature { width: 31%; }
+.col3 { width: 22.5%; }
+.col4 { width: 31%; }
 .col5 { width: 39.5%; }
-.col6, .columns-2 .feature  { width: 48%; }
+.col6 { width: 48%; }
 .col7 { width: 56.5%; }
 .col8 { width: 65%; }
 .col9 { width: 73.5%; }
 .col10 { width: 82%; }
 .col11 { width: 90.5%; }
-.col12, .columns-1 .feature  { width: 99%; margin: 0; }
+.col12 { width: 99%; margin: 0; }
 
-
-/* Disable padding left/right 10px if I'm 1024 or gibber - correct percentage math*/
-
+/*--------------------------------------------------------------
+ * Disable padding left/right 10px
+--------------------------------------------------------------*/
 @media all and (min-width: 1024px) {
     .grid-1000 {
         max-width: 1000px;
@@ -63,77 +66,62 @@
         padding: 0;
     }
 }
-/**********************************************************************************************************************
- * RESPONSIVE
- **********************************************************************************************************************/
-@media all and (max-width: 769px) {
+/*--------------------------------------------------------------
+ * Small devices
+ --------------------------------------------------------------*/
+@media all and (max-width: 768px) {
     .row {
     }
-
-    .col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .columns-4 .feature, .columns-3 .feature, .columns-2 .feature {
+    .col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11 {
         float: none;
         width: 99%;
     }
-}
-@media all and (max-width: 768px) {
-    /* Small menu */
-    .main-navigation,
-    .header-menu ul,
-    .nav-site-description {
-        text-align: center;
-        padding: 2px;
+    .push-right,
+    .push-left {
+        float: none!important;
     }
+}
+@media all and (max-width: 769px) {
     .menu-toggle {
         background: none;
-        color: #555;
-        cursor: pointer;
-        display: inline-block;
-        font-weight: 400;
-        margin: 0;
-        border-radius: 0;
-        -moz-border-radius: 0;
-        -webkit-border-radius: 0;
-        padding: .8em 1em;
         border:none;
+        color:#444;
+	    border-radius: 0;
+        padding: .8em;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
     }
     .menu-toggle:hover,
     .menu-toggle:focus {
         background: none;
-        color: #555;
-        cursor: pointer;
-        display: inline-block;
-        font-weight: 400;
-        margin: 0;
-        border-radius: 0;
-        -moz-border-radius: 0;
-        -webkit-border-radius: 0;
-        padding: .8em 1em;
+        border:none;
+        color:#444;
     }
     .main-navigation li {
         width: 100%;
         text-align: center;
+        background: rgba(204, 204, 204, 0.15);
+        margin: 1px;
     }
     .main-navigation ul ul {
+        background: #fff;
         border-bottom: 0;
         border-left: 0;
         border-right:0;
-        background: #f6f6f6;
         float:none;
         position: static;
+        -webkit-box-shadow: none;
+        -webkit-box-shadow: none;
+	    box-shadow: none;
     }
     .main-navigation ul ul a {
-        background: #f6f6f6;
         width:100%;
-        font-size: .9em;
+        background: url(../../images/dark-bg.png);
     }
    .main-navigation ul ul ul {
-       border-top: 5px solid #fff;
-       border-bottom: 5px solid #fff;
         position: static;
     }
-
 }
-
 /**********************************************************************************************************************
  * COMPONENT
  **********************************************************************************************************************/
@@ -146,11 +134,12 @@
     z-index: 1000;
     width: 100%;
     max-width: 100%;
-    border-bottom: 1px solid #ccc;
-    -moz-box-shadow: 0 1px 3px #ddd;
-    -webkit-box-shadow: 0 1px 3px #ddd;
-    box-shadow: 0 1px 3px #ddd;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+    -moz-box-shadow: 0 1px 3px rgba(204, 204, 204, 0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(204, 204, 204, 0.5);
+    box-shadow: 0 1px 3px rgba(204, 204, 204, 0.5);
     background:#fff;
+    z-index: 99999;
 }
 nav#site-navigation.main-navigation.fix{
     margin:0px !important;
@@ -189,7 +178,7 @@ nav#site-navigation.main-navigation.fix{
 /* calendar */
 #wp-calendar caption {
     text-align:center;
-    padding: .25em;
+    padding: .5em;
 }
 table#wp-calendar {
     border:none;
@@ -201,14 +190,12 @@ table#wp-calendar {
     padding: 0;
 }
 #wp-calendar td#prev {
-    padding: .5em;
+    padding-top: .5em;
     text-align: left;
-    background:#f6f6f6;
 }
 #wp-calendar td#next {
-    padding: .5em;
+    padding-top: .5em;
     text-align: right;
-     background:#f6f6f6;
 }
 /* rss */
 .widget_rss ul {
@@ -243,6 +230,9 @@ table#wp-calendar {
     display: none;
 }
 /* widget title */
+.site-footer h3.widget-title:before {
+    display: none;
+}
 .widget_archive h3.widget-title:before,
 .widget_recent_entries h3.widget-title:before,
 .widget_categories h3.widget-title:before,
@@ -250,7 +240,9 @@ table#wp-calendar {
 .widget_calendar h3.widget-title:before,
 .widget_tag_cloud h3.widget-title:before,
 .widget_nav_menu h3.widget-title:before,
-.widget_search h3.widget-title:before ,
+.widget_search h3.widget-title:before,
+.widget_text h3.widget-title:before,
+.widget_meta h3.widget-title:before,
 .widget_igthemes_recent_posts_widget h3.widget-title:before  {
     font-family: 'ThemeIcons';
     margin-right:5px;
@@ -259,6 +251,7 @@ table#wp-calendar {
     font-variant: normal;
     text-transform: none;
     line-height: 1;
+    font-size: 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -289,12 +282,17 @@ table#wp-calendar {
 .widget_search h3.widget-title:before {
     content:"\55";
 }
+.widget_meta h3.widget-title:before {
+    content:"\e011";
+}
+.widget_text h3.widget-title:before {
+    content:"\6c";
+}
 /* Post format */
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
     display: none;
 }
-/* Post format */
 .format-chat .entry-content {
     padding:1.5em;
     background: #f6f6f6;
@@ -355,8 +353,6 @@ table#wp-calendar {
     text-align:center;
     width:100%;
     display:block;
-    padding-top:0.5em;
-    padding-bottom:0.5em;
 }
 .social-url a {
     text-align:center;
@@ -536,47 +532,45 @@ ul.ig-recent-posts-widget li {
  }
 
 /* Slider */
+.carousel-title {
+    font-size: 20px;
+    margin: 5px 0;
+    padding: 0;
+ }
 #post-slider {
     margin-top: 1em;
  }
 #post-slider .item {
-    margin:  1em;
+    margin:  5px;
+    height: 100%;
  }
 
 #post-nav {
     margin-bottom: 1em 0;
-    border:1px solid #e5e5e5;
-    background: #fff;
  }
 #post-nav .item {
     padding:  1em;
-    background: #fff;
+    background: #f9f9f9;
     cursor: pointer;
-    -webkit-box-shadow: inset 1px 0px 1px 0px #e5e5e5;
-    -moz-box-shadow: inset 1px 0px 1px 0px #e5e5e5;
-    box-shadow: inset 1px 0px 1px 0px #e5e5e5;
+    margin:  5px;
+    border: 1px solid #e5e5e5;
  }
 #post-nav .slick-current {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+    background: #fff;
  }
 
 #product-carousel {
     margin-top: 1em;
-    border: 1px solid #e5e5e5;
+
  }
 #product-carousel .item {
     background: #fff;
     padding:  1em;
-    -webkit-box-shadow: inset 1px 0px 1px 0px #e5e5e5;
-    -moz-box-shadow: inset 1px 0px 1px 0px #e5e5e5;
-    box-shadow: inset 1px 0px 1px 0px #e5e5e5;
+    margin:  5px;
+    border: 1px solid #e5e5e5;
     cursor: pointer;
  }
 
 #product-carousel .slick-current {
-    -webkit-box-shadow: none;
-    -moz-box-shadow:none;
-    box-shadow: none;;
+
  }

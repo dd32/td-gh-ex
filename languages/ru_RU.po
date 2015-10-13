@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Base WP\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-06-03 13:45+0100\n"
-"PO-Revision-Date: Mon Sep 28 2015 13:38:28 GMT+0200 (CEST)\n"
+"PO-Revision-Date: Tue Oct 13 2015 18:28:42 GMT+0200 (CEST)\n"
 "Last-Translator: iografica <grafico.roberto@gmail.com>\n"
 "Language-Team: \n"
 "Language: Russian\n"
@@ -23,9 +23,146 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 "X-Loco-Target-Locale: ru_RU"
 
+#: ../comments.php:31
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../comments.php:43 ../comments.php:64
+msgid "Older Comments"
+msgstr ""
+
+#: ../comments.php:44 ../comments.php:65
+msgid "Newer Comments"
+msgstr ""
+
+#: ../options.php:35
+msgid "General"
+msgstr ""
+
+#: ../options.php:40
+msgid "Layout"
+msgstr ""
+
+#: ../options.php:57
+msgid "Style"
+msgstr ""
+
+#: ../options.php:62
+msgid "Footer"
+msgstr ""
+
+#: ../options.php:68
+msgid "Social"
+msgstr ""
+
+#: ../options.php:74
+msgid "Advanced"
+msgstr ""
+
+#: ../options.php:195
+msgid "Carousel"
+msgstr ""
+
+#: ../options.php:196
+msgid "To display projects and testimonials install "
+msgstr ""
+
+#: ../options.php:196
+msgid " and "
+msgstr ""
+
+#: ../options.php:213
+msgid "Show excerpt"
+msgstr ""
+
+#: ../options.php:214
+msgid "Show posts content as excerpt"
+msgstr ""
+
+#: ../options.php:225
+msgid "Featured images"
+msgstr ""
+
+#: ../options.php:293
+msgid "Products number"
+msgstr ""
+
+#: ../options.php:294
+msgid "Change the number of products displayed per page"
+msgstr ""
+
+#: ../options.php:305
+msgid "Products Slide"
+msgstr ""
+
+#. Name of the template
+msgid "Full Width"
+msgstr ""
+
+#. Name of the template
+msgid "Sidebar Left"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#. translators: used between list items, there is a space after the comma
+#: ../core-framework/template-tags.php:48 ../core-framework/template-tags.php:54
+msgid ", "
+msgstr ""
+
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
+#: ../core-framework/template-tags.php:69 ../template-parts/content-page.php:36
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: ../core-framework/template-tags.php:98
+msgid "&#8592;"
+msgstr ""
+
+#: ../core-framework/template-tags.php:99
+msgid "&#8594;"
+msgstr ""
+
+#: ../core-framework/func/function-widget.php:9
+msgid "The main widget area"
+msgstr ""
+
+#: ../core-framework/welcome/sections/intro.php:15
+msgid "Thank you to use "
+msgstr ""
+
+#: ../core-framework/welcome/sections/intro.php:15
+msgid " for your website."
+msgstr ""
+
 #. Base ID
 #: ../core-framework/widgets/adsense-widget.php:13
 msgid "IG Google Adsense"
+msgstr ""
+
+#: ../core-framework/widgets/adsense-widget.php:14
+msgid "Displays Adsense Ads."
+msgstr ""
+
+#: ../core-framework/widgets/adsense-widget.php:39 ../core-
+#: framework/widgets/recent-posts-widget.php:83 ../core-framework/widgets/social-
+#: widget.php:112
+msgid "Title:"
+msgstr ""
+
+#: ../core-framework/widgets/adsense-widget.php:44
+msgid "Code:"
+msgstr ""
+
+#: ../core-framework/widgets/adsense-widget.php:47
+msgid ""
+"You can use this widget to add your Google Adsense js code but also for "
+"other service or custom js code."
 msgstr ""
 
 #. Base ID
@@ -33,9 +170,41 @@ msgstr ""
 msgid "IG Recent Posts"
 msgstr ""
 
+#: ../core-framework/widgets/recent-posts-widget.php:13
+msgid "An extended version of the recent posts widget."
+msgstr ""
+
+#: ../core-framework/widgets/recent-posts-widget.php:87
+msgid "Post type:"
+msgstr ""
+
+#: ../core-framework/widgets/recent-posts-widget.php:88
+msgid "Display a custom post type - only premium"
+msgstr ""
+
+#: ../core-framework/widgets/recent-posts-widget.php:91
+msgid "Number of posts to show:"
+msgstr ""
+
+#: ../core-framework/widgets/recent-posts-widget.php:97
+msgid "Display post date?"
+msgstr ""
+
+#: ../core-framework/widgets/recent-posts-widget.php:102
+msgid "Display post image?"
+msgstr ""
+
+#: ../core-framework/widgets/recent-posts-widget.php:107
+msgid "Display post excerpt?"
+msgstr ""
+
 #. Base ID
 #: ../core-framework/widgets/social-widget.php:13
 msgid "IG Social"
+msgstr ""
+
+#: ../core-framework/widgets/social-widget.php:14
+msgid "Show your social profiles pages."
 msgstr ""
 
 #: ../core-framework/widgets/social-widget.php:55
@@ -114,144 +283,28 @@ msgstr ""
 msgid "RSS url:"
 msgstr ""
 
-#: ../options.php:121
-msgid "Display Header Text"
+#. Name of the theme
+msgid "Base WP"
 msgstr ""
 
-#: ../options.php:138
-msgid "Site Icon"
+#. Theme URI of the theme
+msgid "http://www.iograficathemes.com/downloads/base-wp/"
 msgstr ""
 
-#: ../options.php:139
+#. Description of the theme
 msgid ""
-"The Site Icon is used as a browser and app icon for your site. Icons must be "
-"square, and at least 512px wide and tall."
+"Base WP is a basic blog or business, responsive and clean coded, WordPress "
+"theme. Base WP is WooCommerce compatible, multilingual ready, RTL-Language "
+"support, retina-ready, SEO friendly and cross-browser compatible."
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#. translators: used between list items, there is a space after the comma
-#: ../core-framework/template-tags.php:131 ../core-framework/template-tags.php:137
-msgid ", "
+#. Author of the theme
+msgid "iografica"
 msgstr ""
 
-#: ../core-framework/welcome/sections/intro.php:14
-msgid "Thank you to use "
+#. Author URI of the theme
+msgid "http://www.iograficathemes.com/"
 msgstr ""
-
-#: ../core-framework/welcome/sections/intro.php:14
-msgid " for your website."
-msgstr ""
-
-#: ../core-framework/widgets/adsense-widget.php:14
-msgid "Displays Adsense Ads."
-msgstr ""
-
-#: ../core-framework/widgets/adsense-widget.php:39 ../core-
-#: framework/widgets/recent-posts-widget.php:83 ../core-framework/widgets/social-
-#: widget.php:112
-msgid "Title:"
-msgstr ""
-
-#: ../core-framework/widgets/adsense-widget.php:44
-msgid "Code:"
-msgstr ""
-
-#: ../core-framework/widgets/adsense-widget.php:47
-msgid ""
-"You can use this widget to add your Google Adsense js code but also for "
-"other service or custom js code."
-msgstr ""
-
-#: ../core-framework/widgets/recent-posts-widget.php:13
-msgid "An extended version of the recent posts widget."
-msgstr ""
-
-#: ../core-framework/widgets/recent-posts-widget.php:87
-msgid "Post type:"
-msgstr ""
-
-#: ../core-framework/widgets/recent-posts-widget.php:88
-msgid "Display a custom post type - only premium"
-msgstr ""
-
-#: ../core-framework/widgets/recent-posts-widget.php:91
-msgid "Number of posts to show:"
-msgstr ""
-
-#: ../core-framework/widgets/recent-posts-widget.php:97
-msgid "Display post date?"
-msgstr ""
-
-#: ../core-framework/widgets/recent-posts-widget.php:102
-msgid "Display post image?"
-msgstr ""
-
-#: ../core-framework/widgets/recent-posts-widget.php:107
-msgid "Display post excerpt?"
-msgstr ""
-
-#: ../core-framework/widgets/social-widget.php:14
-msgid "Show your social profiles pages."
-msgstr ""
-
-#: ../core-framework/template-tags.php:179
-msgctxt "post format archive title"
-msgid "Asides"
-msgstr "Резервы"
-
-#: ../core-framework/template-tags.php:181
-msgctxt "post format archive title"
-msgid "Galleries"
-msgstr "Галереи"
-
-#: ../core-framework/template-tags.php:183
-msgctxt "post format archive title"
-msgid "Images"
-msgstr "Изображения"
-
-#: ../core-framework/template-tags.php:185
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr "Видео"
-
-#: ../core-framework/template-tags.php:187
-msgctxt "post format archive title"
-msgid "Quotes"
-msgstr "Квоты"
-
-#: ../core-framework/template-tags.php:189
-msgctxt "post format archive title"
-msgid "Links"
-msgstr "Ссылки"
-
-#: ../core-framework/template-tags.php:191
-msgctxt "post format archive title"
-msgid "Statuses"
-msgstr "Статусы"
-
-#: ../core-framework/template-tags.php:193
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr "Аудио"
-
-#: ../core-framework/template-tags.php:195
-msgctxt "post format archive title"
-msgid "Chats"
-msgstr "Чаты"
-
-#. Translators: If there are characters in your language that are not supported
-#. by Open Sans, translate this to 'off'. Do not translate into your own language.
-#: ../core-framework/func/function-script.php:16
-msgctxt "Open Sans font: on or off"
-msgid "on"
-msgstr "Включено"
-
-#. Translators: To add an additional character subset specific to your language,
-#. translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-#: ../core-framework/func/function-script.php:24
-msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
-msgid "no-subset"
-msgstr "нет подмножеств"
 
 #: ../404.php:15
 msgid "Oops! That page can&rsquo;t be found."
@@ -261,94 +314,51 @@ msgstr "Страница не найдена!"
 msgid "It looks like nothing was found at this location."
 msgstr "Похоже, ничего не найдено в этом месте."
 
-#: ../comments.php:29
-#, php-format
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Одна мысль &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s мыслей &ldquo;%2$s&rdquo;"
-
-#: ../comments.php:38 ../comments.php:55
+#: ../comments.php:40 ../comments.php:61
 msgid "Comment navigation"
 msgstr "Навигация по комеентарию"
 
-#: ../comments.php:39 ../comments.php:56
-msgid "&larr; Older Comments"
-msgstr "&larr; Более ранние комментарии"
-
-#: ../comments.php:40 ../comments.php:57
-msgid "Newer Comments &rarr;"
-msgstr "Недавние комментарии"
-
-#: ../comments.php:67
+#: ../comments.php:77
 msgid "Comments are closed."
 msgstr "Комментарии закрыты."
 
-#: ../functions.php:42
+#: ../functions.php:36
 msgid "Primary Menu"
 msgstr "Первичное меню"
 
-#: ../functions.php:43
+#: ../functions.php:37
 msgid "Header Menu"
 msgstr "Верхнее меню"
 
-#: ../functions.php:111
-msgid "Account"
-msgstr "Аккаунт"
-
-#: ../functions.php:112
-msgid "Cart"
-msgstr "Корзина"
-
-#: ../functions.php:113
-msgid "Log out"
-msgstr "Выйти"
-
-#: ../functions.php:117
-msgid "Log in"
-msgstr "Войти"
-
-#: ../header.php:22
+#: ../header.php:23
 msgid "Skip to content"
 msgstr "Перейти к содержанию"
 
-#: ../header.php:44
+#: ../header.php:34
 msgid "Menu"
 msgstr "Меню"
 
-#: ../options.php:13
+#: ../options.php:14
 msgid " - only premium"
 msgstr "-только для \"Премиум\""
 
-#: ../options.php:29 ../core-framework/welcome/sections/intro.php:21
+#: ../options.php:30 ../core-framework/welcome/sections/intro.php:22
 msgid "UPGRADE TO PREMIUM"
 msgstr "Обновиться до версии \"Премиум\""
 
-#: ../options.php:34
-msgid "General Settings"
-msgstr "Общие настройки"
+#: ../options.php:44 ../options.php:183
+msgid "Main Layout"
+msgstr "Главный макет"
 
-#: ../options.php:39
-msgid "Layout settings"
-msgstr "Настройки макета"
+#: ../options.php:48 ../options.php:248
+msgid "Single Layout"
+msgstr "Одиночный макет"
 
-#: ../options.php:44
-msgid "Style Settings"
-msgstr "Настройки стиля"
+#: ../options.php:52 ../options.php:282
+msgid "Shop Layout"
+msgstr "Магазин макетов"
 
-#: ../options.php:49
-msgid "Footer Settings"
-msgstr "Настройки футера"
-
-#: ../options.php:55
-msgid "Social Settings"
-msgstr "Социальные настройки"
-
-#: ../options.php:61
-msgid "Advanced Settings"
-msgstr "Дополнительные настройки"
-
-#: ../options.php:74 ../core-framework/welcome/sections/intro.php:24
+#: ../options.php:87 ../core-framework/welcome/sections/intro.php:25
 msgid ""
 "If you like this theme, considering supporting development by purchasing the "
 "premium version."
@@ -356,35 +366,35 @@ msgstr ""
 "Если вам понравилась эта тема, поддержите, пожалуйста, разработчиков "
 "покупкой версии \"Премиум\"."
 
-#: ../options.php:75
+#: ../options.php:88
 msgid "Main premium features:"
 msgstr "Главные достоинства \"Премиум\":"
 
-#: ../options.php:76
+#: ../options.php:89
 msgid "- All options enabled"
 msgstr "-все опции включены"
 
-#: ../options.php:77
+#: ../options.php:90
 msgid "- Premium shortcodes included"
 msgstr "-премиум-шорткоды включены"
 
-#: ../options.php:78
+#: ../options.php:91
 msgid "- Priority support"
 msgstr "-приоритетная поддержка"
 
-#: ../options.php:79
+#: ../options.php:92
 msgid "- Money back guarantee"
 msgstr "-гарантированный возврат денег"
 
-#: ../options.php:80
+#: ../options.php:93
 msgid "upgrade to premium"
 msgstr "Обновление до версии \"Премиум\""
 
-#: ../options.php:96
+#: ../options.php:109
 msgid "Site Title"
 msgstr "Название сайта"
 
-#: ../options.php:108
+#: ../options.php:121
 msgid "Tagline"
 msgstr "Слоган"
 
@@ -392,375 +402,258 @@ msgstr "Слоган"
 msgid "Site Logo"
 msgstr "Лого сайта"
 
-#: ../options.php:151
+#: ../options.php:143
 msgid "Lightbox"
 msgstr "Лайтбокс"
 
-#: ../options.php:152
+#: ../options.php:144
 msgid "Enable image lightbox"
 msgstr "Включить лайтбокс"
 
-#: ../options.php:163
+#: ../options.php:156
 msgid "Breadcrumb"
 msgstr "Хлебные крошки"
 
-#: ../options.php:164
+#: ../options.php:157
 msgid "Enable breadcrumb (it will use WordPress SEO breadcrumb if available)"
 msgstr ""
 "Включить хлебные крошки  (если возможно, будут использованые SEO-хлебные "
 "крошки)"
 
-#: ../options.php:174
+#: ../options.php:168
 msgid "Shortcodes"
 msgstr "Шорткоды"
 
-#: ../options.php:175
+#: ../options.php:169
 msgid "Enable theme shortcodes"
 msgstr "Включить шорткоды темы"
 
-#: ../options.php:188
-msgid "Main Layout"
-msgstr "Главный макет"
-
-#: ../options.php:189
+#: ../options.php:184
 msgid "Select the index page layout"
 msgstr "Выберите индексную страницу макета"
 
-#: ../options.php:200
-msgid "Index featured image"
-msgstr "Свойства индексного изображения"
-
-#: ../options.php:201
+#: ../options.php:226
 msgid "Show featured images in index page"
 msgstr "Показать свойства изображений индексной страницы"
 
-#: ../options.php:212
+#: ../options.php:237
 msgid "Numeric pagination"
 msgstr "Цифровая нумерация страниц"
 
-#: ../options.php:213
+#: ../options.php:238
 msgid "Use numeric pagination in index page"
 msgstr "Использовать цифровую нумерацию на индексной странице"
 
-#: ../options.php:223
-msgid "Single Layout"
-msgstr "Одиночный макет"
-
-#: ../options.php:224
+#: ../options.php:249
 msgid "Select the single post layout"
 msgstr "Выберите одну публикацию макета"
 
-#: ../options.php:235
+#: ../options.php:260
 msgid "Post featured image"
 msgstr "Свойства изображения публикации"
 
-#: ../options.php:236
+#: ../options.php:261
 msgid "Show featured image in post page"
 msgstr "Показать свойства изображения страницы публикации"
 
-#: ../options.php:246
+#: ../options.php:271
 msgid "Meta Data"
 msgstr "Мета данные"
 
-#: ../options.php:247
+#: ../options.php:272
 msgid "Hide post meta data"
 msgstr "Скрыть мета-данные публикации"
 
-#: ../options.php:257
-msgid "Shop Layout"
-msgstr "Магазин макетов"
-
-#: ../options.php:258
+#: ../options.php:283
 msgid "Select the shop page layout"
 msgstr "Выберите макет страницы покупки"
 
-#: ../options.php:269
-msgid "Shop Slide"
-msgstr "Магазин слайдов"
-
-#: ../options.php:270
-msgid "Show product slides in the shop page"
-msgstr "Показать слайды товаров на странице покупки"
-
-#: ../options.php:283
+#: ../options.php:319
 msgid "Header Style"
 msgstr "Стиль хедера"
 
-#: ../options.php:284
+#: ../options.php:320
 msgid "Header custom colors"
 msgstr "Собственные цвета хедера"
 
-#: ../options.php:294
+#: ../options.php:330
 msgid "Menu Style"
 msgstr "Стиль меню"
 
-#: ../options.php:295
+#: ../options.php:331
 msgid "Menu custom colors"
 msgstr "Меню собственных цветов"
 
-#: ../options.php:305
+#: ../options.php:341
 msgid "Links Style"
 msgstr "Стиль ссылок"
 
-#: ../options.php:306
+#: ../options.php:342
 msgid "Links custom colors"
 msgstr "Ссылки собственных цветов"
 
-#: ../options.php:316
+#: ../options.php:352
 msgid "Buttons Style"
 msgstr "Стиль кнопок"
 
-#: ../options.php:317
+#: ../options.php:353
 msgid "Buttons custom colors"
 msgstr "Собственные цвета кнопок"
 
-#: ../options.php:327
+#: ../options.php:363
 msgid "Footer Style"
 msgstr "Стиль футера"
 
-#: ../options.php:328
+#: ../options.php:364
 msgid "Footer custom colors"
 msgstr "Собственные цвета футера"
 
-#: ../options.php:341
+#: ../options.php:377
 msgid "Footer Text"
 msgstr "Текст футера"
 
-#: ../options.php:342
+#: ../options.php:378
 msgid "Footer custom text"
 msgstr "Собственный текст футера"
 
-#: ../options.php:352
+#: ../options.php:388
 msgid "Credits Link"
 msgstr "Ссылка \"Кредиты\""
 
-#: ../options.php:353
+#: ../options.php:389
 msgid "Remove author credits"
 msgstr "Удалить автора кредитов"
 
-#: ../options.php:369
+#: ../options.php:405
 msgid "Facebook url"
 msgstr "Ссылка на Фейсбук"
 
-#: ../options.php:380
+#: ../options.php:416
 msgid "Twitter url"
 msgstr "Ссылка на Твиттер"
 
-#: ../options.php:391
+#: ../options.php:427
 msgid "Google plus url"
 msgstr "Ссылка на Google+"
 
-#: ../options.php:402
+#: ../options.php:438
 msgid "Pinterest url"
 msgstr "Ссылка на Pinterest"
 
-#: ../options.php:413
+#: ../options.php:449
 msgid "Tumblr url"
 msgstr "Ссылка на Tumblr"
 
-#: ../options.php:424
+#: ../options.php:460
 msgid "Instagram url"
 msgstr "Ссылка на Инстаграм"
 
-#: ../options.php:435
+#: ../options.php:471
 msgid "Linkedin url"
 msgstr "Ссылка на Linkedin"
 
-#: ../options.php:446
+#: ../options.php:482
 msgid "Dribble url"
 msgstr "Ссылка на Dribble"
 
-#: ../options.php:457
+#: ../options.php:493
 msgid "Vimeo url"
 msgstr "Ссылка на Vimeo"
 
-#: ../options.php:468
+#: ../options.php:504
 msgid "Youtube url"
 msgstr "Ссылка на Youtube"
 
-#: ../options.php:479
+#: ../options.php:515
 msgid "RSS url"
 msgstr "Ссылка на RSS"
 
-#: ../options.php:493
+#: ../options.php:529
 msgid "Custom CSS"
 msgstr "Собственный CSS"
 
-#: ../options.php:494
+#: ../options.php:530
 msgid "Add your custom css code"
 msgstr "Добавить собственный CSS-код"
 
-#: ../options.php:504
+#: ../options.php:540
 msgid "Custom Javascript"
 msgstr "Собственный Javascript"
 
-#: ../options.php:505
+#: ../options.php:541
 msgid "Add your custom js code"
 msgstr "Добавить собственный js-код"
 
-#: ../search.php:16
+#: ../search.php:18
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Результаты поиска по: %s"
 
-#: ../core-framework/extras.php:51
-#, php-format
-msgid "Page %s"
-msgstr "Страница %s"
-
-#: ../core-framework/template-tags.php:20
-msgid "Posts navigation"
-msgstr "Навигация по публикациям"
-
-#: ../core-framework/template-tags.php:24
-msgid "&larr; Older posts"
-msgstr "&rarr; Давние публикации "
-
-#: ../core-framework/template-tags.php:28
-msgid "Newer posts &rarr;"
-msgstr "Недавние публикации &rarr;"
-
-#: ../core-framework/template-tags.php:56
-msgid "&laquo; Previous"
-msgstr "&laquo; Предыдущая"
-
-#: ../core-framework/template-tags.php:57
-msgid "Next &raquo;"
-msgstr "Следующая &raquo;"
-
-#: ../core-framework/template-tags.php:79
-msgid "Post navigation"
-msgstr "Навигация публикации"
-
-#: ../core-framework/template-tags.php:82
-msgctxt "Previous post link"
-msgid "&larr;&nbsp;%title"
-msgstr "&larr;&nbsp;%заголовок"
-
-#: ../core-framework/template-tags.php:83
-msgctxt "Next post link"
-msgid "%title&nbsp;&rarr;"
-msgstr "%заголовок&nbsp;&rarr;"
-
-#: ../core-framework/template-tags.php:109
+#: ../core-framework/template-tags.php:26
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr "Опубликовано %s"
 
-#: ../core-framework/template-tags.php:114
+#: ../core-framework/template-tags.php:31
 #, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr "by %s"
 
-#: ../core-framework/template-tags.php:133 ../core-framework/template-tags.php:139
+#: ../core-framework/template-tags.php:50 ../core-framework/template-tags.php:56
 #, php-format
 msgid "%1$s"
 msgstr "%1$s"
 
-#: ../core-framework/template-tags.php:145
+#: ../core-framework/template-tags.php:62
 msgid "Leave a comment"
 msgstr "Комментировать"
 
-#: ../core-framework/template-tags.php:145
+#: ../core-framework/template-tags.php:62
 msgid "1 Comment"
 msgstr "1 комментарий"
 
-#: ../core-framework/template-tags.php:145
+#: ../core-framework/template-tags.php:62
 #, php-format
 msgid "% Comments"
 msgstr "% комментариев"
 
-#: ../core-framework/template-tags.php:149 ../template-parts/content-page.php:27
-msgid "Edit"
-msgstr "Редактировать"
-
-#: ../core-framework/template-tags.php:166
-#, php-format
-msgid "Category: %s"
-msgstr "Категория: %s"
-
-#: ../core-framework/template-tags.php:168
-#, php-format
-msgid "Tag: %s"
-msgstr "Тэг: %s"
-
-#: ../core-framework/template-tags.php:170
-#, php-format
-msgid "Author: %s"
-msgstr "Автор: %s"
-
-#: ../core-framework/template-tags.php:172
-#, php-format
-msgid "Year: %s"
-msgstr "Год: %s"
-
-#: ../core-framework/template-tags.php:172
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr "Г"
-
-#: ../core-framework/template-tags.php:174
-#, php-format
-msgid "Month: %s"
-msgstr "Месяц: %s"
-
-#: ../core-framework/template-tags.php:174
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr "Г"
-
-#: ../core-framework/template-tags.php:176
-#, php-format
-msgid "Day: %s"
-msgstr "День: %s"
-
-#: ../core-framework/template-tags.php:176
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr "F j, Y"
-
-#: ../core-framework/template-tags.php:198
-#, php-format
-msgid "Archives: %s"
-msgstr "Архивы: %s"
-
-#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-#: ../core-framework/template-tags.php:202
-#, php-format
-msgid "%1$s: %2$s"
-msgstr "%1$s: %2$s"
-
-#: ../core-framework/func/function-action.php:82
-msgid "Back to top"
-msgstr "Подняться вверх"
-
-#: ../core-framework/func/function-action.php:82
-msgid "TOP"
-msgstr "Верх"
-
-#: ../core-framework/func/function-action.php:89
+#: ../core-framework/func/function-action.php:125
 msgid "Proudly powered by "
 msgstr "Сайт работает на"
 
-#: ../core-framework/func/function-action.php:89
+#: ../core-framework/func/function-action.php:125
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../core-framework/func/function-action.php:89
+#: ../core-framework/func/function-action.php:125
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../core-framework/func/function-action.php:91
+#: ../core-framework/func/function-action.php:127
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr "Тема:%1$s %2$s."
 
-#: ../core-framework/func/function-action.php:117
+#: ../core-framework/func/function-action.php:188
 msgid "Home"
 msgstr "Домой"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Open Sans, translate this to 'off'. Do not translate into your own language.
+#: ../core-framework/func/function-script.php:14
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "Включено"
+
+#. Translators: To add an additional character subset specific to your language,
+#. translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
+#: ../core-framework/func/function-script.php:21
+msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
+msgid "no-subset"
+msgstr "нет подмножеств"
 
 #: ../core-framework/func/function-widget.php:7
 msgid "Sidebar"
@@ -889,7 +782,7 @@ msgstr "Добавить и использовать Ваши собственн
 msgid "Configure menus"
 msgstr "Концигурация меню"
 
-#: ../core-framework/welcome/sections/intro.php:17
+#: ../core-framework/welcome/sections/intro.php:18
 msgid ""
 "Here you can read the documentation and you can know how to get the most out "
 "of your new theme."
@@ -897,7 +790,7 @@ msgstr ""
 "Здесь Вы можете прочитать, как получить максимальную отдачу от вашей новой "
 "темы."
 
-#: ../core-framework/welcome/sections/intro.php:28
+#: ../core-framework/welcome/sections/intro.php:29
 msgid "More Info"
 msgstr "Еще..."
 
@@ -1019,16 +912,16 @@ msgstr ""
 "Почему бы не оставить отзыв о% sWordPress.org% s? Мы бы были бы Вам очень "
 "признательны! :-)"
 
-#: ../template-parts/content-none.php:13
+#: ../template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr "Ничего не найдено"
 
-#: ../template-parts/content-none.php:19
+#: ../template-parts/content-none.php:20
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "Готовы к публикации вашей первой записи? <a href=\"%1$s\">Начните здесь</a>."
 
-#: ../template-parts/content-none.php:23
+#: ../template-parts/content-none.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -1036,19 +929,19 @@ msgstr ""
 "Извините, но нет соответствий условия поиска. Пожалуйста, попытайтесь снова "
 "с другими ключевыми словами!"
 
-#: ../template-parts/content-none.php:28
+#: ../template-parts/content-none.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr "Похоже, мы не можем найти то, что вы запрашивали. Воспользуйтесь поиском."
 
-#: ../template-parts/content-page.php:20 ../template-parts/content-single.php:24 .
-#: ./template-parts/content.php:32
+#: ../template-parts/content-page.php:25 ../template-parts/content-single.php:35 .
+#: ./template-parts/content.php:43
 msgid "Pages:"
 msgstr "Страницы:"
 
 #. translators: %s: Name of current post
-#: ../template-parts/content.php:25
+#: ../template-parts/content.php:35
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Продолжить чтение %s <span class=\"meta-nav\">&rarr;</span>"

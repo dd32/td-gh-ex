@@ -2,11 +2,11 @@
 /*-----------------------------------------------
  * Footer widgets
  -----------------------------------------------*/
-function base_wp_widgets_init() {
+function boxed_wp_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Sidebar', 'base-wp' ),
-        'id'            => 'sidebar-1',
-        'description'   => '',
+        'id'            => 'sidebar-main',
+        'description'   => __( 'The main widget area', 'base-wp' ),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
         'before_title'  => '<h3 class="widget-title">',
@@ -67,4 +67,4 @@ function base_wp_widgets_init() {
         'after_title'   => '</h3>',
     ) );
 }
-add_action( 'widgets_init', 'base_wp_widgets_init');
+add_action( 'widgets_init', 'boxed_wp_widgets_init');

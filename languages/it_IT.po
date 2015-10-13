@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Base WP\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-06-03 13:45+0100\n"
-"PO-Revision-Date: Mon Sep 28 2015 13:35:58 GMT+0200 (CEST)\n"
+"PO-Revision-Date: Tue Oct 13 2015 18:33:55 GMT+0200 (CEST)\n"
 "Last-Translator: iografica <grafico.roberto@gmail.com>\n"
 "Language-Team: \n"
 "Language: Italian\n"
@@ -22,64 +22,122 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Loco-Target-Locale: it_IT"
 
-#: ../core-framework/template-tags.php:179
-msgctxt "post format archive title"
-msgid "Asides"
+#: ../comments.php:31
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un commento a &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s commenti a &ldquo;%2$s&rdquo;"
+
+#: ../comments.php:43 ../comments.php:64
+msgid "Older Comments"
 msgstr ""
 
-#: ../core-framework/template-tags.php:181
-msgctxt "post format archive title"
-msgid "Galleries"
+#: ../comments.php:44 ../comments.php:65
+msgid "Newer Comments"
+msgstr "Commenti Successivi"
+
+#: ../options.php:35
+msgid "General"
+msgstr "Generale"
+
+#: ../options.php:40
+msgid "Layout"
+msgstr "Layout"
+
+#: ../options.php:57
+msgid "Style"
+msgstr "Stile"
+
+#: ../options.php:62
+msgid "Footer"
 msgstr ""
 
-#: ../core-framework/template-tags.php:183
-msgctxt "post format archive title"
-msgid "Images"
+#: ../options.php:68
+msgid "Social"
 msgstr ""
 
-#: ../core-framework/template-tags.php:185
-msgctxt "post format archive title"
-msgid "Videos"
+#: ../options.php:74
+msgid "Advanced"
+msgstr "Avanzate"
+
+#: ../options.php:195
+msgid "Carousel"
+msgstr "Carosello"
+
+#: ../options.php:196
+msgid "To display projects and testimonials install "
+msgstr "Per visualizzare i progetti e le testimonianze installare"
+
+#: ../options.php:196
+msgid " and "
+msgstr "e"
+
+#: ../options.php:213
+msgid "Show excerpt"
+msgstr "Mostra riassunti"
+
+#: ../options.php:214
+msgid "Show posts content as excerpt"
+msgstr "Mostra contenuto articoli come riassunto"
+
+#: ../options.php:225
+msgid "Featured images"
+msgstr "Immagini in evidenza"
+
+#: ../options.php:293
+msgid "Products number"
+msgstr "Numero prodotti"
+
+#: ../options.php:294
+msgid "Change the number of products displayed per page"
+msgstr "Cambia il numero di prodotti visualizzati per pagina"
+
+#: ../options.php:305
+msgid "Products Slide"
+msgstr "Slide prodotti"
+
+#. Name of the template
+msgid "Full Width"
+msgstr "Tutta pagina"
+
+#. Name of the template
+msgid "Sidebar Left"
+msgstr "Sidebar a sinistra"
+
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
+#: ../core-framework/template-tags.php:69 ../template-parts/content-page.php:36
+#, php-format
+msgid "Edit %s"
+msgstr "Modifica %s"
+
+#: ../core-framework/template-tags.php:98
+msgid "&#8592;"
 msgstr ""
 
-#: ../core-framework/template-tags.php:187
-msgctxt "post format archive title"
-msgid "Quotes"
-msgstr ""
-
-#: ../core-framework/template-tags.php:189
-msgctxt "post format archive title"
-msgid "Links"
-msgstr ""
-
-#: ../core-framework/template-tags.php:191
-msgctxt "post format archive title"
-msgid "Statuses"
-msgstr ""
-
-#: ../core-framework/template-tags.php:193
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr ""
-
-#: ../core-framework/template-tags.php:195
-msgctxt "post format archive title"
-msgid "Chats"
+#: ../core-framework/template-tags.php:99
+msgid "&#8594;"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not supported
 #. by Open Sans, translate this to 'off'. Do not translate into your own language.
-#: ../core-framework/func/function-script.php:16
+#: ../core-framework/func/function-script.php:14
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
 #. Translators: To add an additional character subset specific to your language,
 #. translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-#: ../core-framework/func/function-script.php:24
+#: ../core-framework/func/function-script.php:21
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
+
+#: ../core-framework/func/function-widget.php:9
+msgid "The main widget area"
+msgstr "Area widget principale"
 
 #. Base ID
 #: ../core-framework/widgets/adsense-widget.php:13
@@ -172,6 +230,29 @@ msgstr ""
 msgid "RSS url:"
 msgstr ""
 
+#. Name of the theme
+msgid "Base WP"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "http://www.iograficathemes.com/downloads/base-wp/"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Base WP is a basic blog or business, responsive and clean coded, WordPress "
+"theme. Base WP is WooCommerce compatible, multilingual ready, RTL-Language "
+"support, retina-ready, SEO friendly and cross-browser compatible."
+msgstr ""
+
+#. Author of the theme
+msgid "iografica"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://www.iograficathemes.com/"
+msgstr ""
+
 #: ../404.php:15
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oops! La pagina non è stata trovata."
@@ -180,96 +261,51 @@ msgstr "Oops! La pagina non è stata trovata."
 msgid "It looks like nothing was found at this location."
 msgstr "Sembra che nulla è stato trovato in questa posizione."
 
-#: ../comments.php:29
-#, php-format
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-"Un commento \n"
-"a &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s commenti a &ldquo;%2$s&rdquo;"
-
-#: ../comments.php:38 ../comments.php:55
+#: ../comments.php:40 ../comments.php:61
 msgid "Comment navigation"
 msgstr "Navigazione commento"
 
-#: ../comments.php:39 ../comments.php:56
-msgid "&larr; Older Comments"
-msgstr "&larr; Commenti precedenti"
-
-#: ../comments.php:40 ../comments.php:57
-msgid "Newer Comments &rarr;"
-msgstr "Commenti successivi &rarr;"
-
-#: ../comments.php:67
+#: ../comments.php:77
 msgid "Comments are closed."
 msgstr "I commenti sono chiusi."
 
-#: ../functions.php:42
+#: ../functions.php:36
 msgid "Primary Menu"
 msgstr "Menu primario"
 
-#: ../functions.php:43
+#: ../functions.php:37
 msgid "Header Menu"
 msgstr "Menu Header"
 
-#: ../functions.php:111
-msgid "Account"
-msgstr "Profilo"
-
-#: ../functions.php:112
-msgid "Cart"
-msgstr "Carrello"
-
-#: ../functions.php:113
-msgid "Log out"
-msgstr "Scollegati"
-
-#: ../functions.php:117
-msgid "Log in"
-msgstr "Collegati"
-
-#: ../header.php:22
+#: ../header.php:23
 msgid "Skip to content"
 msgstr "Vai al contenuto"
 
-#: ../header.php:44
+#: ../header.php:34
 msgid "Menu"
 msgstr "Menu"
 
-#: ../options.php:13
+#: ../options.php:14
 msgid " - only premium"
 msgstr " - solo premium"
 
-#: ../options.php:29 ../core-framework/welcome/sections/intro.php:21
+#: ../options.php:30 ../core-framework/welcome/sections/intro.php:22
 msgid "UPGRADE TO PREMIUM"
 msgstr "UPGRADE TO PREMIUM"
 
-#: ../options.php:34
-msgid "General Settings"
-msgstr "Impostazioni Generali"
+#: ../options.php:44 ../options.php:183
+msgid "Main Layout"
+msgstr "Layout Principale"
 
-#: ../options.php:39
-msgid "Layout settings"
-msgstr "Impostazioni Layout"
+#: ../options.php:48 ../options.php:248
+msgid "Single Layout"
+msgstr "Layout Pagina Singola"
 
-#: ../options.php:44
-msgid "Style Settings"
-msgstr "Impostazioni Stile"
+#: ../options.php:52 ../options.php:282
+msgid "Shop Layout"
+msgstr "Layout negozio"
 
-#: ../options.php:49
-msgid "Footer Settings"
-msgstr "Impostazioni Footer"
-
-#: ../options.php:55
-msgid "Social Settings"
-msgstr "Impostazioni Social"
-
-#: ../options.php:61
-msgid "Advanced Settings"
-msgstr "Impostazioni Avanzate"
-
-#: ../options.php:74 ../core-framework/welcome/sections/intro.php:24
+#: ../options.php:87 ../core-framework/welcome/sections/intro.php:25
 msgid ""
 "If you like this theme, considering supporting development by purchasing the "
 "premium version."
@@ -277,72 +313,55 @@ msgstr ""
 "Se ti piace il tema, considera di supportare il suo sviluppo comprando la "
 "versione premium."
 
-#: ../options.php:75
+#: ../options.php:88
 msgid "Main premium features:"
 msgstr "Caratteristiche premium principali:"
 
-#: ../options.php:76
+#: ../options.php:89
 msgid "- All options enabled"
 msgstr "- Tutte le opzioni abilitate"
 
-#: ../options.php:77
+#: ../options.php:90
 msgid "- Premium shortcodes included"
 msgstr "- Premium shortcodes inclusi"
 
-#: ../options.php:78
+#: ../options.php:91
 msgid "- Priority support"
 msgstr "- Supporto prioritario"
 
-#: ../options.php:79
+#: ../options.php:92
 msgid "- Money back guarantee"
 msgstr "- Garanzia soddisfatti e rimborsati"
 
-#: ../options.php:80
+#: ../options.php:93
 msgid "upgrade to premium"
 msgstr "aggiorna alla versione premium"
 
-#: ../options.php:96
+#: ../options.php:109
 msgid "Site Title"
 msgstr "Titolo"
 
-#: ../options.php:108
+#: ../options.php:121
 msgid "Tagline"
 msgstr "Slogan"
-
-#: ../options.php:121
-msgid "Display Header Text"
-msgstr "Mostra Testo Header"
 
 #: ../options.php:132
 msgid "Site Logo"
 msgstr "Logo Sito"
 
-#: ../options.php:138
-msgid "Site Icon"
-msgstr "Icona Sito"
-
-#: ../options.php:139
-msgid ""
-"The Site Icon is used as a browser and app icon for your site. Icons must be "
-"square, and at least 512px wide and tall."
-msgstr ""
-"L’icona del sito è usata dal browser o da una app come icona del tuo sito "
-"web. Le icone devono essere quadrate e di almeno 512px di altezza e "
-"larghezza."
-
-#: ../options.php:151
+#: ../options.php:143
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: ../options.php:152
+#: ../options.php:144
 msgid "Enable image lightbox"
 msgstr "Abilita il lightbox per le immagini"
 
-#: ../options.php:163
+#: ../options.php:156
 msgid "Breadcrumb"
 msgstr "Breadcrumb"
 
-#: ../options.php:164
+#: ../options.php:157
 msgid "Enable breadcrumb (it will use WordPress SEO breadcrumb if available)"
 msgstr ""
 "Abilita la \n"
@@ -350,360 +369,230 @@ msgstr ""
 "breadcrumb di\n"
 " WordPress SEO)"
 
-#: ../options.php:174
+#: ../options.php:168
 msgid "Shortcodes"
 msgstr "Shortcodes"
 
-#: ../options.php:175
+#: ../options.php:169
 msgid "Enable theme shortcodes"
 msgstr ""
 "Abilita gli \n"
 "shortcodes del tema"
 
-#: ../options.php:188
-msgid "Main Layout"
-msgstr "Layout Principale"
-
-#: ../options.php:189
+#: ../options.php:184
 msgid "Select the index page layout"
 msgstr "Seleziona il layout delle pagine index"
 
-#: ../options.php:200
-msgid "Index featured image"
-msgstr "Immagini in evidenza index"
-
-#: ../options.php:201
+#: ../options.php:226
 msgid "Show featured images in index page"
 msgstr "Mostra le immagini in evidenza nelle pagine index"
 
-#: ../options.php:212
+#: ../options.php:237
 msgid "Numeric pagination"
 msgstr "Paginazione numerica"
 
-#: ../options.php:213
+#: ../options.php:238
 msgid "Use numeric pagination in index page"
 msgstr "Paginazione numerica per le pagine index"
 
-#: ../options.php:223
-msgid "Single Layout"
-msgstr "Layout Pagina Singola"
-
-#: ../options.php:224
+#: ../options.php:249
 msgid "Select the single post layout"
 msgstr "Seleziona il layout dei singoli articoli"
 
-#: ../options.php:235
+#: ../options.php:260
 msgid "Post featured image"
 msgstr "Immagine in evidenza articolo"
 
-#: ../options.php:236
+#: ../options.php:261
 msgid "Show featured image in post page"
 msgstr "Mostra l'immagine in evidenza nella pagina articolo"
 
-#: ../options.php:246
+#: ../options.php:271
 msgid "Meta Data"
 msgstr "Meta Data"
 
-#: ../options.php:247
+#: ../options.php:272
 msgid "Hide post meta data"
 msgstr "Nascondi i meta dati dell'articolo"
 
-#: ../options.php:257
-msgid "Shop Layout"
-msgstr "Layout negozio"
-
-#: ../options.php:258
+#: ../options.php:283
 msgid "Select the shop page layout"
 msgstr "Seleziona il layout della pagina negozio"
 
-#: ../options.php:269
-msgid "Shop Slide"
-msgstr "Slide negozio"
-
-#: ../options.php:270
-msgid "Show product slides in the shop page"
-msgstr "Mostra la slide dei prodotti nella pagina shop"
-
-#: ../options.php:283
+#: ../options.php:319
 msgid "Header Style"
 msgstr "Stile Header"
 
-#: ../options.php:284
+#: ../options.php:320
 msgid "Header custom colors"
 msgstr "Colori personalizzati header"
 
-#: ../options.php:294
+#: ../options.php:330
 msgid "Menu Style"
 msgstr "Stile Menu"
 
-#: ../options.php:295
+#: ../options.php:331
 msgid "Menu custom colors"
 msgstr "Colori personalizzati menu"
 
-#: ../options.php:305
+#: ../options.php:341
 msgid "Links Style"
 msgstr "Stile Link"
 
-#: ../options.php:306
+#: ../options.php:342
 msgid "Links custom colors"
 msgstr "Colori personalizzati link"
 
-#: ../options.php:316
+#: ../options.php:352
 msgid "Buttons Style"
 msgstr "Stile Pulsanti"
 
-#: ../options.php:317
+#: ../options.php:353
 msgid "Buttons custom colors"
 msgstr "Colori personalizzati pulsanti"
 
-#: ../options.php:327
+#: ../options.php:363
 msgid "Footer Style"
 msgstr "Stile Footer"
 
-#: ../options.php:328
+#: ../options.php:364
 msgid "Footer custom colors"
 msgstr "Colori personalizzati footer"
 
-#: ../options.php:341
+#: ../options.php:377
 msgid "Footer Text"
 msgstr "Testo Footer"
 
-#: ../options.php:342
+#: ../options.php:378
 msgid "Footer custom text"
 msgstr "Testo personalizzato per il footer"
 
-#: ../options.php:352
+#: ../options.php:388
 msgid "Credits Link"
 msgstr "Credits Link"
 
-#: ../options.php:353
+#: ../options.php:389
 msgid "Remove author credits"
 msgstr "Rimuovi i ringraziamenti all'autore"
 
-#: ../options.php:369
+#: ../options.php:405
 msgid "Facebook url"
 msgstr "Facebook url"
 
-#: ../options.php:380
+#: ../options.php:416
 msgid "Twitter url"
 msgstr "Twitter url"
 
-#: ../options.php:391
+#: ../options.php:427
 msgid "Google plus url"
 msgstr "Google plus url"
 
-#: ../options.php:402
+#: ../options.php:438
 msgid "Pinterest url"
 msgstr "Pinterest url"
 
-#: ../options.php:413
+#: ../options.php:449
 msgid "Tumblr url"
 msgstr "Tumblr url"
 
-#: ../options.php:424
+#: ../options.php:460
 msgid "Instagram url"
 msgstr "Instagram url"
 
-#: ../options.php:435
+#: ../options.php:471
 msgid "Linkedin url"
 msgstr "Linkedin url"
 
-#: ../options.php:446
+#: ../options.php:482
 msgid "Dribble url"
 msgstr "Dribble url"
 
-#: ../options.php:457
+#: ../options.php:493
 msgid "Vimeo url"
 msgstr "Vimeo url"
 
-#: ../options.php:468
+#: ../options.php:504
 msgid "Youtube url"
 msgstr "Youtube url"
 
-#: ../options.php:479
+#: ../options.php:515
 msgid "RSS url"
 msgstr "RSS url"
 
-#: ../options.php:493
+#: ../options.php:529
 msgid "Custom CSS"
 msgstr "CSS Personalizzato"
 
-#: ../options.php:494
+#: ../options.php:530
 msgid "Add your custom css code"
 msgstr "Aggiungi il tuo codice CSS personalizzato"
 
-#: ../options.php:504
+#: ../options.php:540
 msgid "Custom Javascript"
 msgstr "Javascript Personalizzato"
 
-#: ../options.php:505
+#: ../options.php:541
 msgid "Add your custom js code"
 msgstr "Aggiungi codice js personalizzato"
 
-#: ../search.php:16
+#: ../search.php:18
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Risultati di ricerca per: %s"
 
-#: ../core-framework/extras.php:51
-#, php-format
-msgid "Page %s"
-msgstr "Pagina %s"
-
-#: ../core-framework/template-tags.php:20
-msgid "Posts navigation"
-msgstr "Navigazione articoli"
-
-#: ../core-framework/template-tags.php:24
-msgid "&larr; Older posts"
-msgstr "&larr; Articoli precedenti"
-
-#: ../core-framework/template-tags.php:28
-msgid "Newer posts &rarr;"
-msgstr "Articoli successivi &rarr;"
-
-#: ../core-framework/template-tags.php:56
-msgid "&laquo; Previous"
-msgstr "&laquo; Precedente"
-
-#: ../core-framework/template-tags.php:57
-msgid "Next &raquo;"
-msgstr "Successivo &raquo;"
-
-#: ../core-framework/template-tags.php:79
-msgid "Post navigation"
-msgstr "Navigazione articolo"
-
-#: ../core-framework/template-tags.php:82
-msgctxt "Previous post link"
-msgid "&larr;&nbsp;%title"
-msgstr "&larr;&nbsp;%title"
-
-#: ../core-framework/template-tags.php:83
-msgctxt "Next post link"
-msgid "%title&nbsp;&rarr;"
-msgstr "%title&nbsp;&rarr;"
-
-#: ../core-framework/template-tags.php:109
+#: ../core-framework/template-tags.php:26
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr "Pubblicato il %s"
 
-#: ../core-framework/template-tags.php:114
+#: ../core-framework/template-tags.php:31
 #, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr "da %s"
 
-#: ../core-framework/template-tags.php:131 ../core-framework/template-tags.php:137
+#: ../core-framework/template-tags.php:48 ../core-framework/template-tags.php:54
 msgid ", "
 msgstr ", "
 
-#: ../core-framework/template-tags.php:133 ../core-framework/template-tags.php:139
+#: ../core-framework/template-tags.php:50 ../core-framework/template-tags.php:56
 #, php-format
 msgid "%1$s"
 msgstr "%1$s"
 
-#: ../core-framework/template-tags.php:145
+#: ../core-framework/template-tags.php:62
 msgid "Leave a comment"
 msgstr "Lascia un commento"
 
-#: ../core-framework/template-tags.php:145
+#: ../core-framework/template-tags.php:62
 msgid "1 Comment"
 msgstr "1 Commento"
 
-#: ../core-framework/template-tags.php:145
+#: ../core-framework/template-tags.php:62
 #, php-format
 msgid "% Comments"
 msgstr "% Commenti"
 
-#: ../core-framework/template-tags.php:149 ../template-parts/content-page.php:27
-msgid "Edit"
-msgstr "Modifica"
-
-#: ../core-framework/template-tags.php:166
-#, php-format
-msgid "Category: %s"
-msgstr "Categoria: %s"
-
-#: ../core-framework/template-tags.php:168
-#, php-format
-msgid "Tag: %s"
-msgstr "Tag: %s"
-
-#: ../core-framework/template-tags.php:170
-#, php-format
-msgid "Author: %s"
-msgstr "Autore: %s"
-
-#: ../core-framework/template-tags.php:172
-#, php-format
-msgid "Year: %s"
-msgstr "Anno: %s"
-
-#: ../core-framework/template-tags.php:172
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr "Y"
-
-#: ../core-framework/template-tags.php:174
-#, php-format
-msgid "Month: %s"
-msgstr "Mese: %s"
-
-#: ../core-framework/template-tags.php:174
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr "F Y"
-
-#: ../core-framework/template-tags.php:176
-#, php-format
-msgid "Day: %s"
-msgstr "Giorno: %s"
-
-#: ../core-framework/template-tags.php:176
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr "F j, Y"
-
-#: ../core-framework/template-tags.php:198
-#, php-format
-msgid "Archives: %s"
-msgstr "Archivi: %s"
-
-#: ../core-framework/template-tags.php:202
-#, php-format
-msgid "%1$s: %2$s"
-msgstr "%1$s: %2$s"
-
-#: ../core-framework/func/function-action.php:82
-msgid "Back to top"
-msgstr "Torna su"
-
-#: ../core-framework/func/function-action.php:82
-msgid "TOP"
-msgstr "TOP"
-
-#: ../core-framework/func/function-action.php:89
+#: ../core-framework/func/function-action.php:125
 msgid "Proudly powered by "
 msgstr "Proudly powered by "
 
-#: ../core-framework/func/function-action.php:89
+#: ../core-framework/func/function-action.php:125
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../core-framework/func/function-action.php:89
+#: ../core-framework/func/function-action.php:125
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../core-framework/func/function-action.php:91
+#: ../core-framework/func/function-action.php:127
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr "Tema: %1$s realizzato da %2$s."
 
-#: ../core-framework/func/function-action.php:117
+#: ../core-framework/func/function-action.php:188
 msgid "Home"
 msgstr "Home"
 
@@ -844,15 +733,15 @@ msgstr "Aggiungi ed utilizza i tuoi menu personalizzati."
 msgid "Configure menus"
 msgstr "Configura i menu"
 
-#: ../core-framework/welcome/sections/intro.php:14
+#: ../core-framework/welcome/sections/intro.php:15
 msgid "Thank you to use "
 msgstr "Grazie per utilizzare "
 
-#: ../core-framework/welcome/sections/intro.php:14
+#: ../core-framework/welcome/sections/intro.php:15
 msgid " for your website."
 msgstr " per il tuo sito web."
 
-#: ../core-framework/welcome/sections/intro.php:17
+#: ../core-framework/welcome/sections/intro.php:18
 msgid ""
 "Here you can read the documentation and you can know how to get the most out "
 "of your new theme."
@@ -860,7 +749,7 @@ msgstr ""
 "Qui potete leggere la documentazione e sapere come ottenere il massimo dal "
 "vostro nuovo tema."
 
-#: ../core-framework/welcome/sections/intro.php:28
+#: ../core-framework/welcome/sections/intro.php:29
 msgid "More Info"
 msgstr "Maggiori Informazioni"
 
@@ -1036,16 +925,16 @@ msgstr "Mostrare il riassunto dell’articolo?"
 msgid "Show your social profiles pages."
 msgstr "Mostra le pagine dei tuoi profili sociali."
 
-#: ../template-parts/content-none.php:13
+#: ../template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr "Nessun risultato"
 
-#: ../template-parts/content-none.php:19
+#: ../template-parts/content-none.php:20
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "Pronto a pubblicare il tuo primo articolo? <a href=\"%1$s\">Inizia da qui</a>."
 
-#: ../template-parts/content-none.php:23
+#: ../template-parts/content-none.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -1053,7 +942,7 @@ msgstr ""
 "Ci dispiace, ma nulla corrisponde ai termini della tua ricerca. Prova a "
 "cerca di nuovo con parole chiave differenti."
 
-#: ../template-parts/content-none.php:28
+#: ../template-parts/content-none.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -1061,12 +950,12 @@ msgstr ""
 "Sembra che la pagina che stai cercando non esista. Forse la ricerca potrebbe "
 "aiutare."
 
-#: ../template-parts/content-page.php:20 ../template-parts/content-single.php:24 .
-#: ./template-parts/content.php:32
+#: ../template-parts/content-page.php:25 ../template-parts/content-single.php:35 .
+#: ./template-parts/content.php:43
 msgid "Pages:"
 msgstr "Pagine:"
 
-#: ../template-parts/content.php:25
+#: ../template-parts/content.php:35
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continua a leggere %s <span class=\"meta-nav\">&rarr;</span>"

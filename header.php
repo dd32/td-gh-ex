@@ -2,10 +2,11 @@
 /**
  * The header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="content">
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @package Base WP Premium
+ * @package Base WP
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -23,23 +24,26 @@
 
 <header id="masthead" class="site-header" role="banner">
 
-            <?php igthemes_header(); ?>
+<?php igthemes_header(); ?>
 
-    <div class="main-menu">
-        <nav id="site-navigation" class="main-navigation" role="navigation">
-       <div class="grid-1200">
-           <div class="col12">
-                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="icon_menu-square_alt2"></span> <?php esc_html_e( 'Menu', 'base-wp' ); ?></button>
-              <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-                </div><!-- .col12 -->
-            </div><!-- .grid-1200 -->
-        </nav><!-- #site-navigation -->
-    </div><!-- .main-menu -->
+<div class="main-menu">
+        <div class="grid-1200">
+            <div class="row">
+                    <nav id="site-navigation" class="main-navigation col12" role="navigation">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <span class="icon_menu-square_alt2"></span> <?php esc_html_e( 'Menu', 'base-wp' ); ?>
+                </button>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+                    </nav><!-- #site-navigation .col12 -->
+            </div><!-- .row -->
+        </div><!-- .grid-1200 -->
+</div><!-- .main-menu -->
+
 </header><!-- #masthead -->
 
-    <?php igthemes_before_site_content();?>
+<?php igthemes_after_header();?>
 
-    <div id="content" class="site-content grid-1200">
+<div id="content" class="site-content grid-1200">
 <div class="row">
 
-<?php igthemes_before_content();?>
+<?php igthemes_before_site_content();?>

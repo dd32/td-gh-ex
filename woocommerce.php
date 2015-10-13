@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Base WP
+ * @package Store WP
  */
 
 get_header(); ?>
