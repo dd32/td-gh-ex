@@ -48,6 +48,11 @@ Images
 
 == Changelog ==
 
+= 1.0.7 =
+** Fixed the style of logo and blog text section
+** Fixed the variations select box
+** check the existing function
+
 = 1.0.6 =
 ** Add the new feature in customizer options for change breadcrumb background image.
 ** Fixed the menu problem both layout boxed and full width problem.

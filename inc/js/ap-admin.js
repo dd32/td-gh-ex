@@ -10,15 +10,13 @@ jQuery(document).ready(function($) {
   });
 
 
-  /*Sticky user note*/    
+  /*Sticky user note  */
      $('#accordion-panel-general_setting').prepend(
          '<div class="user_sticky_note">'+
-         '<h3 class="sticky_title">Need help?</h3>'+
-         '<span class="sticky_info_row"><label class="row-element">View demo: </label> <a href="http://demo.accesspressthemes.com/accesspress-store/" target="_blank">here</a>'+
-         '<span class="sticky_info_row"><label class="row-element">View documentation: </label><a href="http://doc.accesspressthemes.com/accespress-store-doc/" target="_blank">here</a></span>'+
-         '<span class="sticky_info_row"><label class="row-element">Support forum: </label><a href="https://accesspressthemes.com/support/forum/themes/free-themes/theme-accesspress-store/" target="_blnak">here</a></span>'+
-         '<span class="sticky_info_row"><label class="row-element">Email us: </label><a href="support@accesspressthemes.com">support@accesspressthemes.com<a/></span>'+
-         '<span class="sticky_info_row"><label class="row-element">More Details: </label><a href="https://accesspressthemes.com/wordpress-themes/" target="_blank">here</a></span>'+
+         '<span class="sticky_info_row"><a class="button" href="http://demo.accesspressthemes.com/accesspress-store/" target="_blank">Live Demo</a>'+
+         '<span class="sticky_info_row"><a class="button" href="http://doc.accesspressthemes.com/accespress-store-doc/" target="_blank">Documentation</a></span>'+
+         '<span class="sticky_info_row"><a class="button" href="https://accesspressthemes.com/support/forum/themes/free-themes/theme-accesspress-store/" target="_blnak">Support Forum</a></span>'+
+         '<span class="sticky_info_row"><a class="button" href="support@accesspressthemes.com">support@accesspressthemes.com<a/></span>'+
          '</div>'
          );  
     

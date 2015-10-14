@@ -14,6 +14,7 @@ function register_promo_widget() {
     register_widget('accesspress_storemo');
 }
 
+if( !class_exists( 'accesspress_storemo' ) ) :
 class accesspress_storemo extends WP_Widget {
 
     /**
@@ -169,5 +170,5 @@ return $fields;
             accesspress_store_widgets_show_widget_field($this, $widget_field, $accesspress_store_widgets_field_value);
         }
     }
-
 }
+endif;

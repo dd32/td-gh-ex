@@ -467,7 +467,6 @@ if(is_woocommerce_activated()):
 		endif;
 		echo "</style>";
 
-
 	}
 	add_action('wp_head', 'accesspress_header_scripts');
 
@@ -475,9 +474,7 @@ if(is_woocommerce_activated()):
 		$classes[]= get_theme_mod('accesspress_webpage_layout');
 		return $classes;
 	}
-
 	add_filter( 'body_class', 'accesspress_bodyclass' );
-
 
 	/**
 	 * Output the WooCommerce Breadcrumb
@@ -507,11 +504,8 @@ if(is_woocommerce_activated()):
 	function accesspress_breadcrumbs() {
 		global $post;
     $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-
-    $delimiter = '';
-    
+    $delimiter = '';    
     $home = __('Home', 'accesspress-store'); // text for the 'Home' link
-
     $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
     $before = '<span class="current">'; // tag before the current crumb
     $after = '</span>'; // tag after the current crumb
@@ -692,9 +686,6 @@ function special_nav_class($classes, $item){
 	return $classes;
 }
 
-// register_nav_menus( array(
-// 	'custom_header_menu' => 'Custom Header Menu'
-// 	) );
 
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
 
@@ -729,7 +720,6 @@ function custom_fallback_menu(){
 require get_template_directory() . '/inc/accesspress-plugin-activation.php';
 
 function accesspress_store_register_required_plugins() {
-
     $plugins = array(
         array(
             'name' => 'AccessPress Instagram Feed',
@@ -749,12 +739,12 @@ function accesspress_store_register_required_plugins() {
         array(
             'name' => 'WooCommerce',
             'slug' => 'woocommerce',
-            'required' => false,
+            'required' => true,
         ),        
         array(
             'name' => 'WooCommerce Grid / List toggle',
             'slug' => 'woocommerce-grid-list-toggle',
-            'required' => false,
+            'required' => true,
         ),
         array(
             'name' => 'YITH WooCommerce Wishlist',

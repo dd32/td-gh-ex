@@ -12,6 +12,7 @@ function register_product_widget(){
   register_widget('accesspress_store_product');
 }
 
+if( !class_exists( 'accesspress_store_product' ) ) :
 class accesspress_store_product extends WP_Widget {
     /**
      * Register Widget with Wordpress
@@ -207,7 +208,7 @@ public function widget($args, $instance){
           if( function_exists( 'YITH_WCWL' ) ){
             $url = add_query_arg( 'add_to_wishlist', $product->id );
             ?>
-            <a class="item-wishlist" href="<?php echo $url ?>">Whishlist</a>
+            <a class="item-wishlist" href="<?php echo $url ?>"><?php _e('Wishlist','accesspress-store'); ?></a>
             <?php
           }
           ?>
@@ -274,3 +275,4 @@ public function update($new_instance, $old_instance) {
       }
     }
   }
+endif;

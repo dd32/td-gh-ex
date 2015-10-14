@@ -470,7 +470,7 @@ function accesspress_slider_setting($wp_customize){
                                 'section'  => 'woo_archive_page',
                                 'label'    => __('Upload Background Image', 'accesspress-store'),
                                 'type'     => 'image',
-                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 × 156 Pixels.','accesspress-store')
+                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 &times; 156 Pixels.','accesspress-store')
                             )));
 
 
@@ -507,7 +507,7 @@ function accesspress_slider_setting($wp_customize){
                                 'section'  => 'woo_single_page',
                                 'label'    => __('Upload Background Image', 'accesspress-store'),
                                 'type'     => 'image',
-                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 × 156 Pixels.','accesspress-store')
+                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 &times; 156 Pixels.','accesspress-store')
                             )));
 
 
@@ -544,7 +544,7 @@ function accesspress_slider_setting($wp_customize){
                                 'section'  => 'breadcrumb_page_options',
                                 'label'    => __('Upload Background Image', 'accesspress-store'),
                                 'type'     => 'image',
-                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 × 156 Pixels.','accesspress-store')
+                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 &times; 156 Pixels.','accesspress-store')
                             )));
 
 
@@ -581,7 +581,7 @@ function accesspress_slider_setting($wp_customize){
                                 'section'  => 'breadcrumb_post_options',
                                 'label'    => __('Upload Background Image', 'accesspress-store'),
                                 'type'     => 'image',
-                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 × 156 Pixels.','accesspress-store')
+                                'description' => __('Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 &times; 156 Pixels.','accesspress-store')
                             )));
                                 
                                 

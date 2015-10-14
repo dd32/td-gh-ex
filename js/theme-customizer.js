@@ -2,7 +2,11 @@
 var cstmzr_multicat_js_run = true;
  
 jQuery(window).load(function() {
- 
+
+    var upgrade_notice = '<a class="upgrade-pro" target="_blank" href="https://accesspressthemes.com/wordpress-themes/accesspress-store-pro/">UPGRADE TO ACCESSPRESS STORE PRO</a>';
+    upgrade_notice += '<a class="upgrade-pro" target="_blank" href="http://accesspressthemes.com/theme-demos/?theme=accesspress-store-pro">ACCESSPRESS STORE PRO DEMO</a>';
+    jQuery('#customize-info .preview-notice').append(upgrade_notice);
+
     // Prevents code from running twice due to live preview window.load firing in addition to the main customizer window.
     if( true == cstmzr_multicat_js_run ) {
         cstmzr_multicat_js_run = false;

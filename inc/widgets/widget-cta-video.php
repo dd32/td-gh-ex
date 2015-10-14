@@ -14,6 +14,7 @@ function register_cta_video_widget() {
     register_widget('accesspress_cta_video');
 }
 
+if( !class_exists( 'accesspress_cta_video' ) ) :
 class accesspress_cta_video extends WP_Widget {
 
     /**
@@ -153,5 +154,5 @@ class accesspress_cta_video extends WP_Widget {
             accesspress_store_widgets_show_widget_field($this, $widget_field, $accesspress_store_widgets_field_value);
         }
     }
-
 }
+endif;

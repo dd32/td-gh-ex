@@ -182,8 +182,9 @@ input.small-text[type="number"]{
 
 /*User stick note*/
 .user_sticky_note {
-   background-color: #fdffbd;
-   padding: 4px;
+   padding: 0px 10px 15px;
+   background: #EEE;
+   border-bottom: 1px solid #EEE;
 }
 
 h3.sticky_title {
@@ -199,4 +200,21 @@ span.sticky_info_row {
 
 label.row-element {
    font-weight: bold;
+}
+
+.upgrade-pro{
+    background-color: #e24545;
+    color: #FFF !important;
+    font-size: 12px;
+    padding: 5px;
+    line-height: 1;
+    display: block;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.sticky_info_row .button{
+    width: 100%;
+    margin: 2px 0;
+    text-align: center;
 }

@@ -5,14 +5,7 @@ jQuery(function ($) {
         $(this).toggleClass("on");
         $("#menu").slideToggle();
     });
-    
-    /*
-    $(window).load(function () {
-        iheader = $('.right-header-main').outerHeight();
-        $(".inner_home .ak-container").css({"min-height": iheader});
-    });
-*/
-    
+         
 
     $('.search-icon a').click(function () {
         $('.search-box').addClass('active');
@@ -57,9 +50,7 @@ jQuery(function ($) {
                     slidesToScroll: 1
                 }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
+
         ]
     });
 
@@ -99,9 +90,6 @@ jQuery(function ($) {
                     slidesToScroll: 1
                 }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
     });
 
@@ -139,9 +127,6 @@ jQuery(function ($) {
                     slidesToScroll: 1
                 }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
     });
 

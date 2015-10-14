@@ -50,17 +50,21 @@
         display: inline-block;
         text-align: center;
         padding-bottom:5px;
+        max-width: 320px;
+        width: 100%;
     }
     #site-branding .site-logo{
-        float:left;
+        float:none;
         margin:0px;
         padding:0px;
         padding-right:5px;
         display:inline-block;
+        vertical-align: middle;
     }
     #site-branding .site-text{
         float:none;
         display: inline-block;
+        vertical-align: middle;
     }
     .home_navigation{
         text-align:center;

@@ -14,6 +14,7 @@ function register_full_promo_widget() {
     register_widget('accesspress_store_full_promo');
 }
 
+if( !class_exists( 'accesspress_store_full_promo' ) ) :
 class accesspress_store_full_promo extends WP_Widget {
 
     /**
@@ -186,5 +187,5 @@ return $fields;
             accesspress_store_widgets_show_widget_field($this, $widget_field, $accesspress_store_widgets_field_value);
         }
     }
-
 }
+endif;

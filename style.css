@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -1006,6 +1006,7 @@ body {
 #site-branding {
     width: 20%;
     padding-bottom: 5px;
+    min-height: 60px;
 }
 #site-branding .site-logo {
     float: left;
@@ -4235,9 +4236,9 @@ div.view-cart .sub-menu {
 .ticker-content {
     color: #666 !important;
     font-weight: 400 !important;
-    left: 90px !important;
     line-height: 19px !important;
     padding: 0 !important;
+    position: static;
 }
 .ticker-content, 
 .ticker-swipe{
@@ -4305,6 +4306,7 @@ a.quick-wishlist {
     padding-left: 10px;
     line-height: 16px;
     margin: 8px 10px;
+    margin-right: 0;
 }
 .view-cart a.wcmenucart-contents {
     color: #919191;
@@ -5314,7 +5316,6 @@ ul.children li:last-child {
 .woocommerce .entry-header .woocommerce-breadcrumb a:after {
     content: "/";
     margin: 0px 2px;
-    color: #ffffff;
 }
 #content .page_header_wrap #accesspress-breadcrumb span,
 .woocommerce .entry-header .woocommerce-breadcrumb span {
@@ -5553,6 +5554,10 @@ li.cat-parent {
     font-size: 14px;
     line-height: 30px;
     overflow: hidden;
+}
+.single .woocommerce .content-area select { margin: 0px !important; }
+.single .woocommerce.single.single-product .woocommerce-tabs ul.tabs li a{
+padding-right: 55px;
 }
 .woocommerce .content-area select#pa_color {
     margin: 0px;

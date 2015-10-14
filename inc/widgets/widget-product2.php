@@ -12,6 +12,7 @@ function register_product_widget2(){
     register_widget('accesspress_store_product2');
 }
 
+if( !class_exists( 'accesspress_store_product2' ) ) :
 class accesspress_store_product2 extends WP_Widget {
     /**
      * Register Widget with Wordpress
@@ -151,32 +152,7 @@ class accesspress_store_product2 extends WP_Widget {
                                 endwhile;
                             endif;
                         ?>
-                    </div>
-                    
-                    <?php /*($product_alignment == 'right_align'): ?>
-                    <div class="feature-cat-image">
-                        <?php 
-                        $thumbnail_id = get_woocommerce_term_meta($product_category, 'thumbnail_id', true);
-                        if (!empty($thumbnail_id)) {
-                            $image = wp_get_attachment_image_src($thumbnail_id, 'prod-cat-size');
-                            echo '<img src="' . esc_url($image[0]) . '" alt="asfds"  />';
-                        }
-                        else{ ?>
-                        <img src="<?php echo get_template_directory_uri().'../images/dummy-cat.jpg'?>"/><?php } ?>
-                        <div class="product-cat-desc">
-                            <?php 
-                            
-                            $taxonomy = 'product_cat';
-                            $terms = term_description( $product_category, $taxonomy ); 
-                             $terms_name = get_term( $product_category, $taxonomy );
-                            ?>
-                            <h3><?php echo $terms_name->name ?></h3>
-                            <div class="cat_desc">  
-                            <?php echo $terms; ?>   
-                            </div>     
-                        </div>
-                    </div>
-                <?php endif; */?>
+                    </div>                    
                     
                 </div>
                 
@@ -241,3 +217,4 @@ class accesspress_store_product2 extends WP_Widget {
         }
     }
 }
+endif;

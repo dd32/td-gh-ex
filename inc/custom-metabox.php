@@ -66,7 +66,7 @@ function accesspress_store_sidebar_layout_callback()
             </td>
         </tr>
         <tr>
-            <td><em class="f13">You can set up the sidebar content <a href="<?php echo admin_url('/themes.php?page=theme_options'); ?>">here</a></em></td>
+            <td><em class="f13"><?php _e('You can set up the sidebar content','accesspress-store'); ?> <a href="<?php echo admin_url('/customize.php'); ?>"><?php _e('here','accesspress-store'); ?></a></em></td>
         </tr>
     </table>
 

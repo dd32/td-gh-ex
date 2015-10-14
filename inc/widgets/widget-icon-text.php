@@ -14,6 +14,7 @@ function register_icon_text_widget() {
     register_widget('accesspress_store_icon_text');
 }
 
+if( !class_exists( 'accesspress_store_Icon_Text' ) ) :
 class accesspress_store_Icon_Text extends WP_Widget {
 
     /**
@@ -191,5 +192,5 @@ class accesspress_store_Icon_Text extends WP_Widget {
             accesspress_store_widgets_show_widget_field($this, $widget_field, $accesspress_store_widgets_field_value);
         }
     }
-
 }
+endif;
