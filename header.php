@@ -19,7 +19,7 @@
 						<?php
 						$avatar_method = get_theme_mod('avatar_method');
 						if( $avatar_method == 'gravatar' || $avatar_method == 'upload' ) { ?>
-							<div id="site-avatar" class="site-avatar" style="background-image: url('<?php echo ct_author_output_avatar(); ?>')" title="<?php echo get_bloginfo('title') . ' avatar'; ?>"></div>
+							<div id="site-avatar" class="site-avatar" style="background-image: url('<?php echo esc_url( ct_author_output_avatar() ); ?>')" title="<?php echo get_bloginfo('title') . ' avatar'; ?>"></div>
 						<?php } ?>
 						<div class="container">
 							<?php get_template_part('logo')  ?>
@@ -33,7 +33,7 @@
 						<span class="screen-reader-text"><?php _e('open primary menu', 'author'); ?></span>
 						<i class="fa fa-bars"></i>
 					</button>
-					<?php ct_author_social_icons_output('header'); ?>
+					<?php ct_author_social_icons_output(); ?>
 					<?php get_template_part( 'menu', 'primary' ); ?>
 				</header>
 				<?php do_action( 'after_header' ); ?>

@@ -26,6 +26,13 @@ if( !function_exists('ct_author_theme_setup' ) ) {
 			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 		) );
 
+		// adds support for Jetpack infinite scroll feature
+		add_theme_support( 'infinite-scroll', array(
+			'container' => 'main',
+			'footer'    => 'overflow-container',
+			'render'    => 'ct_author_infinite_scroll_render'
+		) );
+
 		// load theme options page
 		require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
 
@@ -75,7 +82,7 @@ if( !function_exists('ct_author_customize_comments' ) ) {
 				if ( $comment_type !== 'pingback' ) {
 					// if site admin and avatar uploaded
 					if ( $comment->comment_author_email === get_option( 'admin_email' ) && get_theme_mod( 'avatar_method' ) == 'upload' ) {
-						echo '<img alt="' . get_comment_author() . '" class="avatar avatar-48 photo" src="' . ct_author_output_avatar() . '" height="48" width="48" />';
+						echo '<img alt="' . get_comment_author() . '" class="avatar avatar-48 photo" src="' . esc_url( ct_author_output_avatar() ) . '" height="48" width="48" />';
 					} else {
 						echo get_avatar( get_comment_author_email(), 48, '', get_comment_author() );
 					}
@@ -354,8 +361,18 @@ if( !function_exists( 'ct_author_social_array' ) ) {
 			'stumbleupon'   => 'author_stumbleupon_profile',
 			'deviantart'    => 'author_deviantart_profile',
 			'digg'          => 'author_digg_profile',
-			'git'           => 'author_git_profile',
+			'github'        => 'author_github_profile',
 			'hacker-news'   => 'author_hacker-news_profile',
+			'foursquare'    => 'author_foursquare_profile',
+			'slack'         => 'author_slack_profile',
+			'slideshare'    => 'author_slideshare_profile',
+			'skype'         => 'author_skype_profile',
+			'whatsapp'      => 'author_whatsapp_profile',
+			'qq'            => 'author_qq_profile',
+			'wechat'        => 'author_wechat_profile',
+			'xing'          => 'author_xing_profile',
+			'500px'         => 'author_500px_profile',
+			'paypal'        => 'author_paypal_profile',
 			'steam'         => 'author_steam_profile',
 			'vk'            => 'author_vk_profile',
 			'weibo'         => 'author_weibo_profile',
@@ -367,37 +384,37 @@ if( !function_exists( 'ct_author_social_array' ) ) {
 	}
 }
 
-// used in ct_author_social_icons_output to return urls
-function ct_author_get_social_url($source, $site){
+// git icon was supposed to be for github, this is to transfer users saved data to github
+function ct_author_switch_git_icon() {
 
-    if( $source == 'header' ) {
-        return get_theme_mod($site);
-    } elseif( $source == 'author' ) {
-        return get_the_author_meta($site);
-    }
+	$git = get_theme_mod( 'git' );
+	$github = get_theme_mod( 'github' );
+
+	// if there is an icon saved for git, but not github
+	if ( !empty( $git ) && empty( $github ) ) {
+		// give the github option the same value as the git option
+		set_theme_mod( 'github', get_theme_mod( 'git' ) );
+		// erase git option
+		remove_theme_mod( 'git' );
+	}
 }
+add_action('admin_init', 'ct_author_switch_git_icon');
 
 // output social icons
 if( ! function_exists('ct_author_social_icons_output') ) {
-    function ct_author_social_icons_output($source) {
+    function ct_author_social_icons_output() {
 
         // get social sites array
         $social_sites = ct_author_social_array();
 
+	    // icons that should use a special square icon
+	    $square_icons = array('linkedin', 'twitter', 'vimeo', 'youtube', 'pinterest', 'reddit', 'tumblr', 'steam', 'xing', 'github', 'google-plus', 'behance', 'facebook');
+
         // store the site name and url
         foreach ( $social_sites as $social_site => $profile ) {
 
-            if( $source == 'header') {
-
-                if ( strlen( get_theme_mod( $social_site ) ) > 0 ) {
-                    $active_sites[$social_site] = $social_site;
-                }
-            }
-            elseif( $source == 'author' ) {
-
-                if ( strlen( get_the_author_meta( $profile ) ) > 0 ) {
-                    $active_sites[$profile] = $social_site;
-                }
+            if ( strlen( get_theme_mod( $social_site ) ) > 0 ) {
+                $active_sites[$social_site] = $social_site;
             }
         }
 
@@ -408,29 +425,30 @@ if( ! function_exists('ct_author_social_icons_output') ) {
 
             foreach ( $active_sites as $key => $active_site ) {
 
+	            // get the square or plain class
+	            if ( in_array( $active_site, $square_icons ) ) {
+		            $class = 'fa fa-' . $active_site . '-square';
+	            } else {
+		            $class = 'fa fa-' . $active_site;
+	            }
+
                 if ( $active_site == 'email' ) {
                     ?>
                     <li>
-                        <a class="email" target="_blank" href="mailto:<?php echo antispambot( is_email( ct_author_get_social_url( $source, $key ) ) ); ?>">
+                        <a class="email" target="_blank" href="mailto:<?php echo antispambot( is_email( get_theme_mod( $active_site ) ) ); ?>">
                             <i class="fa fa-envelope" title="<?php _e('email icon', 'author'); ?>"></i>
-                        </a>
-                    </li>
-                <?php } elseif ( $active_site == "flickr" || $active_site == "dribbble" || $active_site == "instagram" || $active_site == "soundcloud" || $active_site == "spotify" || $active_site == "vine" || $active_site == "yahoo" || $active_site == "codepen" || $active_site == "delicious" || $active_site == "stumbleupon" || $active_site == "deviantart" || $active_site == "digg" || $active_site == "hacker-news" || $active_site == "vk" || $active_site == 'weibo' || $active_site == 'tencent-weibo' ) { ?>
-                    <li>
-                        <a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( ct_author_get_social_url( $source, $key ) ); ?>">
-                            <i class="fa fa-<?php echo esc_attr( $active_site ); ?>" title="<?php printf( __('%s icon', 'author'), $active_site ); ?>"></i>
                         </a>
                     </li>
                 <?php } else { ?>
                     <li>
-                        <a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( ct_author_get_social_url( $source, $key ) ); ?>">
-                            <i class="fa fa-<?php echo esc_attr( $active_site ); ?>-square" title="<?php printf( __('%s icon', 'author'), $active_site ); ?>"></i>
+                        <a class="<?php echo esc_attr( $active_site ); ?>" target="_blank" href="<?php echo esc_url( get_theme_mod( $active_site ) ); ?>">
+                            <i class="<?php echo esc_attr( $class ); ?>" title="<?php printf( __('%s icon', 'author'), esc_attr( $active_site ) ); ?>"></i>
                         </a>
                     </li>
                 <?php
                 }
             }
-            echo "</div></ul>";
+            echo "</ul></div>";
         }
     }
 }
@@ -472,7 +490,12 @@ function ct_author_output_avatar() {
 }
 
 function ct_author_get_avatar_url($get_avatar){
-    preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+	// WP User Avatar switches the use of quotes
+	if ( class_exists( 'WP_User_Avatar' ) ) {
+		preg_match('/src="([^"]*)"/i', $get_avatar, $matches);
+	} else {
+		preg_match("/src='([^']*)'/i", $get_avatar, $matches);
+	}
     return $matches[1];
 }
 
@@ -597,6 +620,10 @@ add_action( 'archive_post_before', 'ct_author_sticky_post_marker' );
 
 function ct_author_loop_pagination(){
 
+	// don't output if Jetpack infinite scroll is being used
+	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) )
+		return;
+
 	global $wp_query;
 
 	// If there's not more than one page, return nothing.
@@ -641,3 +668,10 @@ add_action( 'wp_head', 'ct_author_add_meta_elements', 1 );
 /* Move the WordPress generator to a better priority. */
 remove_action( 'wp_head', 'wp_generator' );
 add_action( 'wp_head', 'wp_generator', 1 );
+
+function ct_author_infinite_scroll_render(){
+	while( have_posts() ) {
+		the_post();
+		get_template_part( 'content', 'archive' );
+	}
+}

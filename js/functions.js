@@ -92,7 +92,7 @@ jQuery(document).ready(function($){
             $(this).children('span').text(objectL10n.closePrimaryMenu);
             $(this).attr('aria-expanded', 'true');
 
-            var windowWidth = $(window).width();
+            var windowWidth = window.innerWidth;
 
             // if at width when menu is absolutely positioned
             if( windowWidth > 549 && windowWidth < 950 ) {
@@ -140,7 +140,7 @@ jQuery(document).ready(function($){
     // absolutely position the sidebar
     function positionSidebar() {
 
-        var windowWidth = $(window).width();
+        var windowWidth = window.innerWidth;
 
         // if at width when menu is absolutely positioned
         if( windowWidth > 549 && windowWidth < 950 ) {
@@ -168,7 +168,7 @@ jQuery(document).ready(function($){
     function adjustSidebarHeight() {
 
         // get the current window width
-        var windowWidth = $(window).width();
+        var windowWidth = window.innerWidth;
 
         // if at width when menu is absolutely positioned
         if( windowWidth > 549 && windowWidth < 950 ) {
@@ -215,7 +215,7 @@ jQuery(document).ready(function($){
     function closeMainSidebar() {
 
         // if no longer at width when menu is absolutely positioned
-        if( $(window).width() > 949 && sidebar.hasClass('open') ) {
+        if( window.innerWidth > 949 && sidebar.hasClass('open') ) {
             // run function to close sidebar and all menus
             openPrimaryMenu();
         }
@@ -240,7 +240,7 @@ jQuery(document).ready(function($){
     // Sidebar scrolling.
     function resize() {
 
-        if ( 950 > $(window).width() ) {
+        if ( window.innerWidth < 950 ) {
             var top, bottom = false;
             sidebar.removeAttr( 'style' );
         }
@@ -248,7 +248,7 @@ jQuery(document).ready(function($){
 
     function scroll() {
         var body = $('#overflow-container');
-        var windowWidth   = $(window).width();
+        var windowWidth   = window.innerWidth;
         var windowHeight  = $(window).height();
         var bodyHeight    = body.height();
         var sidebarHeight = sidebar.outerHeight();
@@ -292,7 +292,9 @@ jQuery(document).ready(function($){
             else {
                 top = bottom = false;
             }
-        } else if ( ! top ) {
+        }
+        // sidebar is shorter than window
+        else {
             top = true;
             short = true;
             sidebar.attr( 'style', 'position: fixed;' );
@@ -315,10 +317,6 @@ jQuery(document).ready(function($){
     }
     resizeAndScroll();
 
-    for ( var i = 1; i < 6; i++ ) {
-        setTimeout( resizeAndScroll, 100 * i );
-    }
-
     function autoCloseMenu() {
 
         // get position of the bottom of the sidebar
@@ -331,11 +329,6 @@ jQuery(document).ready(function($){
         if (topDistance > sidebarPrimaryBottom + 50) {
             openPrimaryMenu();
         }
-    }
-
-    // if sidebar height is less than window height, needs help to keep from flickering
-    function sidebarMinHeight() {
-
     }
 });
 
