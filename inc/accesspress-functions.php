@@ -27,6 +27,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<?php
 	}
+    
 	add_action( 'wp_head', 'accesspress_mag_render_title' );
 endif;
 
@@ -36,18 +37,29 @@ endif;
  */
  
 function accesspress_mag_admin_scripts(){
-    wp_enqueue_script('accesspress-mag-custom-admin', get_template_directory_uri(). '/inc/option-framework/js/custom-admin.js', array( 'jquery'));    
+    wp_enqueue_script( 'accesspress-mag-custom-admin', get_template_directory_uri(). '/inc/option-framework/js/custom-admin.js', array( 'jquery' ) );    
  }
-add_action('admin_enqueue_scripts','accesspress_mag_admin_scripts');
+add_action( 'admin_enqueue_scripts', 'accesspress_mag_admin_scripts' );
 
 /**
  * Enqueue admin css
  */
  
 function accesspress_mag_admin_css(){
-    wp_enqueue_style('accesspress-mag-admin', get_template_directory_uri(). '/inc/option-framework/css/accesspress-mag-admin.css');    
+    wp_enqueue_style( 'accesspress-mag-admin', get_template_directory_uri(). '/inc/option-framework/css/accesspress-mag-admin.css' );    
 }
-add_action('admin_head','accesspress_mag_admin_css');
+add_action( 'admin_head', 'accesspress_mag_admin_css' );
+
+/**
+ * Enqueue custom css
+ */
+
+function accesspress_mag_custom_styles() {
+    
+    $accesspress_mag_custom_css = of_get_option( 'custom_css', '' );
+    wp_add_inline_style( 'accesspress-mag-style', $accesspress_mag_custom_css );
+}
+add_action( 'wp_enqueue_scripts', 'accesspress_mag_custom_styles' );
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
 /**
@@ -243,7 +255,7 @@ function accesspress_mag_function_script(){
     $slider_auto_transaction = ( of_get_option( 'slider_auto_transition' ) == "1" ) ? "true" : "false";
     $slider_pager = ( of_get_option( 'slider_pager' ) == "1" ) ? "true" : "false";
     $slider_pause = of_get_option( 'slider_pause', '6000' );
-    $ticker_caption = esc_attr( of_get_option( 'ticker_caption', __( 'Latest', 'accesspress-mag' ) ) ); 
+    $ticker_caption = esc_attr( of_get_option( 'ticker_caption', __( 'Latest', 'accesspress-mag' ) ) );
     ?>
     <script type="text/javascript">
         jQuery(function($){

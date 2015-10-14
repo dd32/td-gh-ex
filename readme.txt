@@ -69,6 +69,11 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.1.8
+ * Added custom css field in theme option panel
+ * Used get_template_part function palce of require
+ * Updated pot file
+ * Changed theme uri
 Version 2.1.7
  * Added slider pause option
  * Removed unused function codes

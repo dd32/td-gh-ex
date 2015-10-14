@@ -10,27 +10,25 @@
  *
  * @since Accesspress Widget Pack 1.0
  */
-require get_template_directory() . '/inc/widgets/widget-fields.php';
+get_template_part( 'inc/widgets/widget', 'fields' );
 
 /**
  * Random posts
  *
  * @since accesspress Widget Pack 1.0
  */
-require get_template_directory() . '/inc/widgets/widget-random-posts.php';
+get_template_part( 'inc/widgets/widget', 'random-posts' );
 
 /**
  * Latest posts
  *
  * @since accesspress Widget Pack 1.0
  */
-require get_template_directory() . '/inc/widgets/widget-latest-posts.php';
+get_template_part( 'inc/widgets/widget', 'latest-posts' );
 
 /**
  * Article Contributors
  *
  * @since accesspress Widget Pack 1.0
  */
-require get_template_directory() . '/inc/widgets/widget-contributors.php';
-
-
+get_template_part( 'inc/widgets/widget', 'contributors' );

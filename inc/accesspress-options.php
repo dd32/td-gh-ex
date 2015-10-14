@@ -124,6 +124,22 @@ function optionsframework_options() {
     $options[] = array(
             'type' => 'groupend'
             );
+    /*------------------------Custom css------------------------*/ 
+     $options[] = array(
+            'name' => __( 'Custom Css', 'accesspress-mag' ),
+            'id'   => 'custom_css_header',
+            'type' => 'groupstart'
+            );
+     $options[] = array(
+            'name' => __( 'Custom Css', 'accesspress-mag' ),
+            'desc' => __( 'Add your required css', 'accesspress-mag' ),
+            'id' => 'custom_css',
+            'std' => __( '', 'accesspress-mag' ),
+            'type' => 'textarea' 
+            );
+     $options[] = array(
+            'type' => 'groupend'
+            );
     
     
 /*-----------------------Header Setting------------------------*/

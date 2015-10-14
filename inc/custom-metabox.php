@@ -152,7 +152,7 @@ function accesspress_mag_post_settings_callback()
             </td>
             </tr>
             <tr>
-                <td><em class="f13"><?php _e( 'You can set up the sidebar content ', 'accesspress-mag' );?> <a href="<?php echo admin_url('/themes.php?page=options-framework'); ?>"><?php _e( 'here', 'accesspress-mag' )?></a></em></td>
+                <td><em class="f13"><?php _e( 'You can set up the sidebar content ', 'accesspress-mag' );?> <a href="<?php echo admin_url('/themes.php?page=ap-theme-options'); ?>"><?php _e( 'here', 'accesspress-mag' )?></a></em></td>
             </tr>
         </table>
 </div>
@@ -190,7 +190,7 @@ function accesspress_mag_page_settings_callback()
             </td>
             </tr>
             <tr>
-                <td><em class="f13"><?php _e( 'You can set up the sidebar content', 'accesspress-mag' );?> <a href="<?php echo esc_url( admin_url('/themes.php?page=options-framework') ); ?>"><?php _e( 'here', 'accesspress-mag' );?></a></em></td>
+                <td><em class="f13"><?php _e( 'You can set up the sidebar content', 'accesspress-mag' );?> <a href="<?php echo esc_url( admin_url('/themes.php?page=ap-theme-options') ); ?>"><?php _e( 'here', 'accesspress-mag' );?></a></em></td>
             </tr>
         </table>
 
