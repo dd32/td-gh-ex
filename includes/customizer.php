@@ -320,7 +320,7 @@ function afford_customizer_options($type){
     $options[] = array(
         'id' => 'important_links',
         'default' => '',
-        'label' => __('','afford'),
+        'label' => '',
         'description' => '',
         'type' => 'important_links',
         'sanitize_type' => 'none',

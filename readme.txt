@@ -18,6 +18,15 @@ Go to https://wordpress.org/support/theme/afford
 
 == Changelog ==
 
+= 1.0.1.2 - 14/10/2015 =
+* (assets/global/respond.js) Added unminified code
+* (functions.php) Now respond.min.js enqueued instead of respond.js
+* (searchform.php) Escaped output
+* (functions.php) Escaped output in afford_enqueue_ie_script()
+* (includes/customizer.php) Removed i18n bug
+* (style.css) Modified responsive bug
+* (afford.pot) Regenerated
+
 = 1.0.1.1 - 10/10/2015 =
 * (functions.php) Modified thumbnail name
 * (functions.php) Escaped function afford_custom_background_cb()

@@ -259,7 +259,7 @@ add_action( 'wp_enqueue_scripts', 'afford_enqueue');
  */
 function afford_enqueue_ie_script() {
     echo "\n";
-    ?><!--[if lt IE 9]><script type='text/javascript' src='<?php echo AFFORD_GLOBAL_JS_URL ?>respond.js?ver=1.4.2'></script><![endif]--><?php
+    ?><!--[if lt IE 9]><script type='text/javascript' src='<?php echo esc_url(AFFORD_GLOBAL_JS_URL . 'respond.min.js?ver=1.4.2') ?>'></script><![endif]--><?php
     echo "\n";
 }
 add_action('wp_head', 'afford_enqueue_ie_script');

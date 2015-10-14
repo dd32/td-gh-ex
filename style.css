@@ -2,7 +2,7 @@
 Theme Name: Afford
 Theme URI: http://www.mudthemes.com/afford
 Description: Afford is a responsive and multipurpose theme for magazine and personal blogs. It has full online documentation and is easily customizable using Theme Customizer.
-Version: 1.0.1.1
+Version: 1.0.1.2
 Author: mudThemes
 Author URI: http://www.mudthemes.com
 Tags: white, orange, light, responsive-layout, fluid-layout, one-column, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
@@ -2355,8 +2355,11 @@ body #scrollUp:hover {
 }
 @media only screen and (max-width: 1240px) {
   .parent-wrapper {
-    width: 98%;
+    width: 97% !important;
     margin-top: 5px !important;
+  }
+  .logo-section {
+    padding-left: 10px;
   }
 }
 @media only screen and (max-width: 1000px) {
