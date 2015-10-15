@@ -1,5 +1,9 @@
 == Changelog ==
 
+Version 1.8.1
+* Bug Bixed: broken link for upgrade to pro button
+* Improved fixed header js and css
+
 Version 1.8
 * Added Danish translation da_DK.po and da_DK.mo files
 * Bug Fixed: Footer overflow issue in Safari and mobile devices

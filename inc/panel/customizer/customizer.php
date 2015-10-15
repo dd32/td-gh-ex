@@ -1354,7 +1354,7 @@ function adventurous_customize_scripts() {
 	wp_register_script( 'adventurous_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
     $adventurous_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/catch-adventurous-pro/' ),
+							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/adventurous-pro/' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'adventurous' ),
 		);
 

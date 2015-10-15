@@ -48,17 +48,24 @@ jQuery(document).ready(function() {
 		
 	
 	// Fixed Header 
-	jQuery(function () {
-		var masthead = jQuery( '#masthead' );
-		jQuery(window).scroll(function () {
-			if (jQuery(this).scrollTop() > 100) {
-				jQuery('#masthead').addClass( 'fixed-header' );
-			} else {
-				jQuery('#masthead').removeClass( 'fixed-header' );
-			}
-		} );
-	} );
+	
+	var stickyNavTop = jQuery('#masthead').offset().top;
+	 
+	var stickyNav = function(){
+		var scrollTop = jQuery(window).scrollTop();
+	      
+		if (scrollTop > stickyNavTop) { 
+		    jQuery('#masthead').addClass('fixed-header');
+		} else {
+		    jQuery('#masthead').removeClass('fixed-header'); 
+		}
+	};
 
+	stickyNav();
+
+	jQuery(window).scroll(function() {
+	    stickyNav();
+	});
 
 	// Scroll Up
 	jQuery("#scrollup").hide();	
