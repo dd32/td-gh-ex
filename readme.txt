@@ -2,7 +2,7 @@
 
 Contributors: Matthew Haeck
 Tags: bootstrap, responsive, wordpress theme
-Stable tag: 1.18
+Stable tag: 1.19
 License: GPLv3
 
 Avedon Theme - http://haeckdesign.com/freebies/themes/avedon-wordpress-bootstrap-theme
@@ -64,7 +64,7 @@ Upgraded to Bootstrap v3.1.0
 
 Search.php bug fix
 
-== Version 1.18 ==
+== Version 1.19 ==
 
 Add Internationalization 
 
