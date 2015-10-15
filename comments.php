@@ -3,13 +3,13 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
 die ('Please do not load this page directly. Thanks!');
 
 if ( post_password_required() ) { ?>
-<span class="nocomments well col-md-12">This post is password protected. Enter the password to view comments.</span>
+<span class="nocomments well col-md-12"><?php _e( 'This post is password protected. Enter the password to view comments.', 'avedon' ); ?></span>
 <?php return; } ?>
 
 <?php if ( have_comments() ) : ?>
 <div id="commentsbox" class="panel panel-default">
 <div class="panel-heading">
-<h3 id="comments" class="panel-title"><?php comments_number('No Responses', 'One Response', '% Responses' );?> so far...</h3>
+<h3 id="comments" class="panel-title"><?php comments_number('No Responses', 'One Response', '% Responses' );?> <?php _e( 'so far', 'avedon' ); ?>...</h3>
 </div>
 
 <div class="panel-body"><ol class="commentlist">
@@ -24,7 +24,7 @@ if ( post_password_required() ) { ?>
 
 <?php if ( comments_open() ) : ?>
 
-<i class="cattag glyphicon glyphicon-comment"><span class="visuallyhidden">Comments</span></i>
+<i class="cattag glyphicon glyphicon-comment"><span class="visuallyhidden"><?php _e( 'Comments', 'avedon' ); ?></span></i>
 <?php comment_form(); ?>
 
 <?php endif; ?>

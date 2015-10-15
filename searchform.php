@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.17
+ * @since Avedon 1.18
  */
 ?>
 
@@ -11,7 +11,7 @@
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search" value="" name="s" id="s">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="submit" id="searchsubmit">Search</button>
+        <button class="btn btn-default" type="submit" id="searchsubmit"><?php _e( 'Search', 'avedon' ); ?></button>
       </span>
     </div>
   </div>

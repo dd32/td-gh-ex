@@ -40,8 +40,8 @@ function avedontheme_load_sanitization() {
 function avedontheme_init() {
 
 	// Include the required files
-	require_once dirname( __FILE__ ) . '/options-interface.php';
-	require_once dirname( __FILE__ ) . '/options-media-uploader.php';
+	get_template_part( 'inc/options-interface' );
+	get_template_part( 'inc/options-media-uploader' );
 
 	// Optionally Loads the options file from the theme
 	$location = apply_filters( 'options_framework_location', array( 'options.php' ) );

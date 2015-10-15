@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.17
+ * @since Avedon 1.18
  */
 
 get_header(); ?>
@@ -17,8 +17,8 @@ get_header(); ?>
 <h1 class="panel-title"><?php the_title(); ?></h1>
 
 <div class="post-meta"><div class="post-date">
-<span class="post-date">Posted: </span><span class="post-date-link"><?php the_time('M jS, Y') ?> <?php edit_post_link('(Edit)', '', ''); ?> | </span>
-<span class="post-author">Author: </span><span class="post-author-link"><?php the_author_posts_link(); ?></span>
+<span class="post-date"><?php _e( 'Posted', 'avedon' ); ?>: </span><span class="post-date-link"><?php the_time('M jS, Y') ?> <?php edit_post_link('(Edit)', '', ''); ?> | </span>
+<span class="post-author"><?php _e( 'Author', 'avedon' ); ?>: </span><span class="post-author-link"><?php the_author_posts_link(); ?></span>
 </div></div></div>
 
 <div class="panel-body">
@@ -30,7 +30,9 @@ get_header(); ?>
 
 <?php endwhile; else : ?>
 
-<div class="single-entry group"><h2>Nothing Found</h2><p>Oh Snap!  It looks like you're trying to reach a page that's gone. Please check the link and try again.</p></div>
+<div class="single-entry group"><h2><?php _e( 'Nothing Found', 'avedon' ); ?></h2>
+<p><?php _e( 'Oh Snap!  It looks like you are trying to reach a page that is gone. Please check the link and try again.', 'avedon' ); ?></p>
+</div>
 
 <?php endif; ?>
 <?php avedon_content_nav('nav-below');?>

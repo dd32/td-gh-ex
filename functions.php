@@ -10,9 +10,11 @@ require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 function avedon_setup() {
 if ( ! isset( $content_width ) )
 $content_width = 770;
-add_theme_support('post-thumbnails');
+load_theme_textdomain( 'avedon', get_template_directory() . '/languages' );
+add_theme_support( 'title-tag' );
+add_theme_support( 'post-thumbnails' );
 add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'link', 'quote', 'status', 'video', 'audio', 'chat' ) );
-add_theme_support('automatic-feed-links');
+add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'custom-header' );
 add_theme_support( 'custom-background' );
 add_editor_style();
@@ -33,7 +35,6 @@ add_filter( 'wp_page_menu_args', 'avedon_page_menu_args' );
 
 
 /* Include Walker Menu */
-
 include 'helper/walker-menu.php';
 
 
@@ -42,7 +43,7 @@ include 'helper/walker-menu.php';
 if ( ! function_exists( 'avedon_posted_on' ) ) :
 
 function avedon_posted_on() {
-printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'avedon' ),
+printf( __( '<span class="sep">' . __( 'Posted on', 'avedon' ) . '</span> <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -71,11 +72,11 @@ global $wp_query;
 <?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : ?>
 <ul class="btn-group btn-group-justified">
 <?php if ( get_next_posts_link() ) : ?>
-<li class="btn btn-default next col-md-6"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'avedon' ) ); ?></li>
+<li class="btn btn-default next col-md-6"><?php next_posts_link( __( 'Older posts', 'avedon' ) ); ?></li>
 <?php endif; ?>
 
 <?php if ( get_previous_posts_link() ) : ?>
-<li class="btn btn-default previous col-md-6"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'avedon' ) ); ?></li>
+<li class="btn btn-default previous col-md-6"><?php previous_posts_link( __( 'Newer posts', 'avedon' ) ); ?></li>
 <?php endif; ?>
 </ul>
 <?php endif; ?>
@@ -98,9 +99,9 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 function avedon_widgets_init() {
 
     register_sidebar(array(
-    'name' => 'Home Sidebar',
+    'name' => __('Home Sidebar', 'avedon'),
     'id'   => 'home-right',
-    'description'   => 'Right sidebar on homepage',
+    'description'   => __('Right sidebar on homepage', 'avedon'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3>',
@@ -108,7 +109,7 @@ function avedon_widgets_init() {
   ));
 
   register_sidebar( array(
-    'name' => 'Page Sidebar',
+    'name' => __('Page Sidebar', 'avedon'),
     'id' => 'sidebar-page',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
@@ -117,7 +118,7 @@ function avedon_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name' => 'Posts Sidebar',
+    'name' => __('Posts Sidebar', 'avedon'),
     'id' => 'sidebar-posts',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
@@ -126,9 +127,9 @@ function avedon_widgets_init() {
   ) );
 
     register_sidebar(array(
-    'name' => 'Call to Action',
+    'name' => __('Call to Action', 'avedon'),
     'id'   => 'pitch-content',
-    'description'   => 'Under content, over middle - Best used for call to action.',
+    'description'   => __('Under content, over middle - Best used for call to action.', 'avedon'),
     'before_widget' => '<div class="pitch container"><div id="%1$s" class="container-fluid widget %2$s">',
     'after_widget'  => '</div></div>',
     'before_title'  => '<h4>',
@@ -136,9 +137,9 @@ function avedon_widgets_init() {
   ));
 
     register_sidebar(array(
-    'name' => 'Middle Content',
+    'name' => __('Middle Content', 'avedon'),
     'id'   => 'middle-content',
-    'description'   => 'Below content, above the footer.',
+    'description'   => __('Below content, above the footer.', 'avedon'),
     'before_widget' => '<div class="middle"><div id="%1$s" class="container"><div class="container-fluid col-xs-12 widget %2$s">',
     'after_widget'  => '</div></div></div>',
     'before_title'  => '<h4>',
@@ -146,9 +147,9 @@ function avedon_widgets_init() {
   ));
 
     register_sidebar(array(
-    'name' => 'Bottom Left',
+    'name' => __('Bottom Left', 'avedon'),
     'id'   => 'bottom-left',
-    'description'   => 'Bottom left widget box.',
+    'description'   => __('Bottom left widget box.', 'avedon'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4>',
@@ -156,9 +157,9 @@ function avedon_widgets_init() {
   ));
 
     register_sidebar(array(
-    'name' => 'Bottom Middle',
+    'name' => __('Bottom Middle', 'avedon'),
     'id'   => 'bottom-middle',
-    'description'   => 'Bottom middle widget box.',
+    'description'   => __('Bottom middle widget box.', 'avedon'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4>',
@@ -166,9 +167,9 @@ function avedon_widgets_init() {
   ));
 
     register_sidebar(array(
-    'name' => 'Bottom Right',
+    'name' => __('Bottom Right', 'avedon'),
     'id'   => 'bottom-right',
-    'description'   => 'Bottom right widget box.',
+    'description'   => __('Bottom right widget box.', 'avedon'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4>',
@@ -176,9 +177,9 @@ function avedon_widgets_init() {
   ));
 
     register_sidebar(array(
-    'name' => 'Footer Content',
+    'name' => __('Footer Content', 'avedon'),
     'id'   => 'footer-content',
-    'description'   => 'Footer text or acknowledgements',
+    'description'   => __('Footer text or acknowledgements', 'avedon'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4>',
@@ -203,8 +204,8 @@ function avedon_content_nav( $html_id ) {
 	if ( $wp_query->max_num_pages > 1 ) : ?>
 		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
 			<h3 class="assistive-text"><?php _e( 'Post navigation', 'avedon' ); ?></h3>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'avedon' ) ); ?></div>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'avedon' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'avedon' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'avedon' ) ); ?></div>
 		</nav><!-- #<?php echo $html_id; ?> .navigation -->
 	<?php endif;
 }
@@ -215,7 +216,7 @@ endif;
 
 function avedon_excerpt($more) {
        global $post;
-  return '&#8230;<a href="'. get_permalink($post->ID) . '" class="btn btn-default btn-sm pull-right">Continue Reading</a>';
+       return '&#8230;<a href="'. get_permalink($post->ID) . '" class="btn btn-default btn-sm pull-right">'. __( 'Continue Reading', 'avedon' ) . '</a>';
 }
 add_filter('excerpt_more', 'avedon_excerpt');
 
@@ -261,8 +262,8 @@ function avedon_categorized_blog() {
 /* Flush Transients - via http://bootstrapwp.rachelbaker.me */
 
 function avedon_category_transient_flusher() {
-  // Like, beat it. Dig?
-  delete_transient( 'all_the_cool_cats' );
+// Like, beat it. Dig?
+delete_transient( 'all_the_cool_cats' );
 }
 add_action( 'edit_category', 'avedon_category_transient_flusher' );
 add_action( 'save_post', 'avedon_category_transient_flusher' );
@@ -290,7 +291,7 @@ function avedon_post_thumbnail_check() {
 
 function avedon_breadcrumbs() {
 
-  $home = 'Home'; // text for the 'Home' link
+  $home =  __( 'Home', 'avedon' ); // text for the 'Home' link
   $before = '<li class="active">'; // tag before the current crumb
   $after = '</li>'; // tag after the current crumb
 

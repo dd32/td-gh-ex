@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.17
+ * @since Avedon 1.18
  */
 ?>
 
@@ -31,19 +31,22 @@
 <div class="container">
 <div class="navbar-header">
 
-<a class="navbar-brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-<?php if ( of_get_option('primary_logo') ) { echo '<img src=' . of_get_option('primary_logo') . ' alt="home" />'; } else { echo bloginfo( 'name' ); } ?></a>
-
-<button type="button" class="navbar-toggle text-right" data-toggle="collapse" data-target=".navbar-collapse">
-<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-</button>
+	<a class="navbar-brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+	<?php if ( of_get_option('primary_logo') ) { echo '<img src=' . of_get_option('primary_logo') . ' alt="' . __( 'Home', 'avedon' ) . '" />'; } else { echo bloginfo( 'name' ); } ?></a>
+	
+	<button type="button" class="navbar-toggle text-right" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only"><?php _e( 'Email', 'avedon' ); ?></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+	</button>
 
 <?php if ( of_get_option('emailicon') ) { ?>
-<a href='mailto:<?php echo of_get_option('emailicon'); ?>' class="visible-xs navbar-toggle navbar-btn glyphicon glyphicon-envelope" title="Email"><span class="visuallyhidden">Email</span></a><?php } ?>
+	<a href='mailto:<?php echo of_get_option('emailicon'); ?>' class="visible-xs navbar-toggle navbar-btn glyphicon glyphicon-envelope" title="<?php _e( 'Email', 'avedon' ); ?>">
+	<span class="visuallyhidden"><?php _e( 'Email', 'avedon' ); ?></span></a><?php } ?>
 <?php if ( of_get_option('mapicon') ) { ?>
-<a href='<?php echo of_get_option('mapicon'); ?>' class="visible-xs navbar-toggle navbar-btn glyphicon glyphicon-map-marker" title="Map"><span class="visuallyhidden">Map</span></a><?php } ?>
+	<a href='<?php echo of_get_option('mapicon'); ?>' class="visible-xs navbar-toggle navbar-btn glyphicon glyphicon-map-marker" title="<?php _e( 'Map', 'avedon' ); ?>">
+	<span class="visuallyhidden"><?php _e( 'Map', 'avedon' ); ?></span></a><?php } ?>
 <?php if ( of_get_option('phoneicon') ) { ?>
-<a href='tel:<?php echo of_get_option('phoneicon'); ?>' class="visible-xs navbar-toggle navbar-btn glyphicon glyphicon-phone-alt" title="Call Now."><span class="visuallyhidden">Phone</span></a><?php } ?>
+	<a href='tel:<?php echo of_get_option('phoneicon'); ?>' class="visible-xs navbar-toggle navbar-btn glyphicon glyphicon-phone-alt" title="<?php _e( 'Phone', 'avedon' ); ?>">
+	<span class="visuallyhidden"><?php _e( 'Phone', 'avedon' ); ?></span></a><?php } ?>
 
 </div>
 

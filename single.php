@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.17
+ * @since Avedon 1.18
  */
 
 get_header(); ?>
@@ -29,21 +29,21 @@ if ( has_post_format( 'gallery' )) { echo '<i class="cattag glyphicon glyphicon-
 <div class="post-meta">
 <div class="post-date">
 
-<span class="post-date">Posted: </span><span class="post-date-link"><?php the_time('M jS, Y') ?> <?php edit_post_link('(Edit)', '', ''); ?> | </span>
-<span class="post-author">Author: </span><span class="post-author-link"><?php the_author_posts_link(); ?></span>
+<span class="post-date"><?php _e( 'Posted', 'avedon' ); ?>: </span><span class="post-date-link"><?php the_time('M jS, Y') ?> <?php edit_post_link('(Edit)', '', ''); ?> | </span>
+<span class="post-author"><?php _e( 'Author', 'avedon' ); ?>: </span><span class="post-author-link"><?php the_author_posts_link(); ?></span>
 <span class="post-comment"><?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></span>
 </div></div></div>
 
 <div class="panel-body">
 <?php the_content(); ?>
-<?php wp_link_pages(array('before' => '<p class="paginate-post"><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+<?php wp_link_pages(array('before' => '<p class="paginate-post"><strong>' . __( 'Pages', 'avedon' ) . ':</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 </div>
 
 <?php if (has_tag()) { ?>
 
 <div class="panel-footer">
-<span><b>Category:</b> <?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'avedon' ) ); ?></span>&nbsp;&nbsp;
-<span><b>Tag:</b> <?php the_tags('') ?></span>
+<span><b><?php _e( 'Category', 'avedon' ); ?>:</b> <?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'avedon' ) ); ?></span>&nbsp;&nbsp;
+<span><b><?php _e( 'Tag', 'avedon' ); ?>:</b> <?php the_tags('') ?></span>
 </div>
 
 <?php } ?>
@@ -54,7 +54,9 @@ if ( has_post_format( 'gallery' )) { echo '<i class="cattag glyphicon glyphicon-
 
 <?php endwhile; else : ?>
 
-<div class="single-entry group"><h2>Nothing Found</h2><p>Oh Snap!  It looks like you're trying to reach a page that's gone. Please check the link and try again.</p></div>
+<div class="single-entry group"><h2><?php _e( 'Nothing Found', 'avedon' ); ?></h2>
+<p><?php _e( 'Oh Snap!  It looks like you are trying to reach a page that is gone. Please check the link and try again.', 'avedon' ); ?></p>
+</div>
 
 <?php endif; ?>
 <?php avedon_content_nav('nav-below');?>

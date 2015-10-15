@@ -4,10 +4,11 @@ Theme URI: http://haeckdesign.com/freebies/themes/avedon-wordpress-bootstrap-the
 Description: Avedon's framework is built using Twitter Bootstrap. It features a 100% responsive grid, retina ready font based icons, a clean layout, and much more. Avedon has been minimally coded (to improve speed), but also features several easy to use options including a full page rotating background image.
 Author: Matthew Haeck
 Author URI: http://haeckdesign.com/
-Version: 1.17
+Version: 1.18
 License: GPL3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: black, blue, gray, white, dark, light, two-columns, right-sidebar, flexible-width, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, photoblogging
+Tags: black, blue, gray, white, dark, light, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, photoblogging
+Text Domain: avedon
 
 Avedon is copyright 2013 by Haeck Design
 Avedon is licensed under the GPL 3.
@@ -639,7 +640,32 @@ ol.commentlist {
 .sticky { }
 .gallery-caption { }
 .bypostauthor { }
-
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
 
 /* Video Handling */
 

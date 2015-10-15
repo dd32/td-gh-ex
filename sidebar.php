@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.17
+ * @since Avedon 1.18
  */
 ?>
 

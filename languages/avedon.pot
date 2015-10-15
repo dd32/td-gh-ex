@@ -1,0 +1,295 @@
+# Copyright (C) 2015 the WordPress team
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Avedon WordPress Theme 1.8\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/avedon\n"
+"POT-Creation-Date: 2015-10-14 11:24:22+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 404.php:14
+msgid "Oops! So sorry That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:22
+msgid "Lets head back home and we will get you right back on track."
+msgstr ""
+
+#: 404.php:25
+msgid "Continue"
+msgstr ""
+
+#: archive.php:15
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:17
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:19
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:21
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: archive.php:28
+msgid "Category Archives: %s"
+msgstr ""
+
+#: archive.php:37
+msgid "Blog Archives"
+msgstr ""
+
+#: comments.php:6
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:12
+msgid "so far"
+msgstr ""
+
+#: comments.php:27
+msgid "Comments"
+msgstr ""
+
+#: footer.php:15
+msgid "About Us"
+msgstr ""
+
+#: footer.php:21
+msgid "Our Address"
+msgstr ""
+
+#: footer.php:27
+msgid "Subscribe"
+msgstr ""
+
+#: footer.php:32
+msgid "Signup"
+msgstr ""
+
+#: functions.php:22
+msgid "Navigation Menu"
+msgstr ""
+
+#: functions.php:46
+msgid "Posted on"
+msgstr ""
+
+#: functions.php:52
+msgid "View all posts by %s"
+msgstr ""
+
+#: functions.php:75
+msgid "Older posts"
+msgstr ""
+
+#: functions.php:79
+msgid "Newer posts"
+msgstr ""
+
+#: functions.php:102
+msgid "Home Sidebar"
+msgstr ""
+
+#: functions.php:104
+msgid "Right sidebar on homepage"
+msgstr ""
+
+#: functions.php:112
+msgid "Page Sidebar"
+msgstr ""
+
+#: functions.php:121
+msgid "Posts Sidebar"
+msgstr ""
+
+#: functions.php:132
+msgid "Under content, over middle - Best used for call to action."
+msgstr ""
+
+#: functions.php:140
+msgid "Middle Content"
+msgstr ""
+
+#: functions.php:142
+msgid "Below content, above the footer."
+msgstr ""
+
+#: functions.php:150
+msgid "Bottom Left"
+msgstr ""
+
+#: functions.php:152
+msgid "Bottom left widget box."
+msgstr ""
+
+#: functions.php:160
+msgid "Bottom Middle"
+msgstr ""
+
+#: functions.php:162
+msgid "Bottom middle widget box."
+msgstr ""
+
+#: functions.php:170
+msgid "Bottom Right"
+msgstr ""
+
+#: functions.php:172
+msgid "Bottom right widget box."
+msgstr ""
+
+#: functions.php:180
+msgid "Footer Content"
+msgstr ""
+
+#: functions.php:182
+msgid "Footer text or acknowledgements"
+msgstr ""
+
+#: functions.php:206
+msgid "Post navigation"
+msgstr ""
+
+#: functions.php:207
+msgid "Older posts"
+msgstr ""
+
+#: functions.php:208
+msgid "Newer posts"
+msgstr ""
+
+#: functions.php:219
+msgid "Continue Reading"
+msgstr ""
+
+#: functions.php:294
+msgid "Home"
+msgstr ""
+
+#: functions.php:382
+msgid "Page"
+msgstr ""
+
+#: functions.php:426
+msgid "Page %s"
+msgstr ""
+
+#: header.php:35
+msgid "Home"
+msgstr ""
+
+#: header.php:38
+msgid "Email"
+msgstr ""
+
+#: header.php:42
+msgid "Email"
+msgstr ""
+
+#: header.php:43
+msgid "Email"
+msgstr ""
+
+#: header.php:45
+msgid "Map"
+msgstr ""
+
+#: header.php:46
+msgid "Map"
+msgstr ""
+
+#: header.php:48
+msgid "Phone"
+msgstr ""
+
+#: header.php:49
+msgid "Phone"
+msgstr ""
+
+#: page.php:20
+msgid "Posted"
+msgstr ""
+
+#: page.php:21
+msgid "Author"
+msgstr ""
+
+#: page.php:33
+msgid "Nothing Found"
+msgstr ""
+
+#: page.php:34
+msgid "Oh Snap!  It looks like you are trying to reach a page that is gone. Please check the link and try again."
+msgstr ""
+
+#: search.php:13
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:35
+msgid "No Results Found"
+msgstr ""
+
+#: search.php:36
+msgid "It seems we cannot find what you are looking for. Perhaps you should try again with a different search term."
+msgstr ""
+
+#: searchform.php:14
+msgid "Search"
+msgstr ""
+
+#: single.php:32
+msgid "Posted"
+msgstr ""
+
+#: single.php:33
+msgid "Author"
+msgstr ""
+
+#: single.php:39
+msgid "Pages"
+msgstr ""
+
+#: single.php:45
+msgid "Category"
+msgstr ""
+
+#: single.php:46
+msgid "Tag"
+msgstr ""
+
+#: single.php:57
+msgid "Nothing Found"
+msgstr ""
+
+#: single.php:58
+msgid "Oh Snap!  It looks like you are trying to reach a page that is gone. Please check the link and try again."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Avedon"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://wordpress.org/themes/avedon/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Avedon's framework is built using Twitter Bootstrap. "
+"It features a 100% responsive grid, retina ready font based icons, a clean layout, and much more. "
+"Avedon has been minimally coded (to improve speed), "
+"but also features several easy to use options including a full page "
+"rotating background image."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Haeck Design"
+msgstr ""
