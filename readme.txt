@@ -36,7 +36,10 @@ Underscores Theme is distributed under the terms of the GNU GPL.
 
 == Changelog ==
 
-= 1.0.7 - Sep 19 2015 =
+= 1.2.0 - Oct 17 2015 =
+* Fixed php code on category.php and modify some css code line table , comment section and menu section
+
+= 1.0.9 - Oct 8 2015 =
 * Initial release.
 
 == Credits ==
