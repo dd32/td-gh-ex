@@ -212,10 +212,10 @@ function accesspress_bxslidercb(){
 					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider2.jpg" alt="slider2">
 					<div class="slider-caption">
 						<div class="ak-container">
-							<h1 class="caption-title"><?php _e('Amazing multi-purpose parallax theme','accesspress_parallax'); ?></h1>
+							<h1 class="caption-title"><?php _e('Amazing multi-purpose parallax theme','accesspress-parallax'); ?></h1>
 							<h2 class="caption-description">
-							<p><?php _e('Travel, corporate, small biz, portfolio, agencies, photography, health, creative - useful for anyone and everyone','accesspress_parallax'); ?></p>
-							<p><a href="#"><?php _e('Read More','accesspress_parallax'); ?></a></p>
+							<p><?php _e('Travel, corporate, small biz, portfolio, agencies, photography, health, creative - useful for anyone and everyone','accesspress-parallax'); ?></p>
+							<p><a href="#"><?php _e('Read More','accesspress-parallax'); ?></a></p>
 							</h2>
 							</div>
 					</div>
@@ -422,8 +422,8 @@ function accesspress_required_plugins() {
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),   
         array(
-            'name'      => 'AccessPress Custom CSS',
-            'slug'      => 'accesspress-custom-css',
+            'name'      => 'Ultimate Form Builder Lite',
+            'slug'      => 'ultimate-form-builder-lite',
             'required'  => false,
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.

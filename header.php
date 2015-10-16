@@ -65,7 +65,7 @@
 			else: 
 				wp_nav_menu( array( 
 				'theme_location' => 'primary' , 
-				'container'      => ''
+				'container'      => false
 				) );
 			endif; ?>
 		

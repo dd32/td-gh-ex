@@ -262,4 +262,7 @@ Responsive CSS
 	.main-navigation > ul{
 		display: block !important;
 	}
+	.logo-top .main-navigation > ul{
+		display: inline-block !important;
+	}
 }
