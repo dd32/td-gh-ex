@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sparkling Theme\n"
-"POT-Creation-Date: 2015-10-16 20:21+0300\n"
-"PO-Revision-Date: 2015-10-16 20:21+0300\n"
+"POT-Creation-Date: 2015-10-16 20:22+0300\n"
+"PO-Revision-Date: 2015-10-16 20:22+0300\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: colorlib <info@colorlib.com>\n"
-"Language: cs_CZ\n"
+"Language: et_EE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,234 +14,235 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: _e;__;esc_attr__;esc_html__;esc_html_e;"
 "esc_attr_x:1,2c;_nx:4c,1,2;_n:1,2\n"
-"_nx: 4c,1,2;_n:1,2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
 #: ../404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Jejda! Stránka nenalezena!"
+msgstr "Lehte ei leitud"
 
 #: ../404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
-msgstr "Nenalezeno! Zkuste odkazy dole nebo vyhledávání."
+msgstr "Tundub, et midagi ei leitud. Võibolla proovid otsida?"
 
 #: ../404.php:25
 msgid "Recent Posts"
-msgstr "Poslední příspěvky"
+msgstr "Viimased postitused"
 
 #: ../404.php:31
 msgid "Most Used Categories"
-msgstr "Nejčastěji používané kategorie"
+msgstr "Enamik kasutatud Kategooriad"
 
 #: ../404.php:52
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Zkuste se podívat v měsíčním archivu: %1$s"
+msgstr "Proovi otsida arhiivist. %1$s"
 
 #: ../404.php:53 ../archive.php:66 ../sidebar.php:19
 msgid "Archives"
-msgstr "Archiv"
+msgstr "Arhiiv"
 
 #: ../404.php:58
 msgid "Tags"
-msgstr "Štítky"
+msgstr "Märksõnad"
 
 #: ../archive.php:27
 #, php-format
 msgid "Author: %s"
-msgstr "Autor: %s"
+msgstr "Autor:%s"
 
 #: ../archive.php:30
 #, php-format
 msgid "Day: %s"
-msgstr "Dnů: %s"
+msgstr "Päev:%s"
 
 #: ../archive.php:33
 #, php-format
 msgid "Month: %s"
-msgstr "Měsíc: %s"
+msgstr "Kuu:%s"
 
 #: ../archive.php:36
 #, php-format
 msgid "Year: %s"
-msgstr "Rok: %s"
+msgstr "Aasta: %s"
 
 #: ../archive.php:39
 msgid "Asides"
-msgstr ""
+msgstr "Asides"
 
 #: ../archive.php:42
 msgid "Galleries"
-msgstr "Galerie"
+msgstr "Galeriid"
 
 #: ../archive.php:45
 msgid "Images"
-msgstr "Obrázky"
+msgstr "Pildid"
 
 #: ../archive.php:48
 msgid "Videos"
-msgstr "Videa"
+msgstr "Videod"
 
 #: ../archive.php:51
 msgid "Quotes"
-msgstr "Citace"
+msgstr "Ütlused"
 
 #: ../archive.php:54
 msgid "Links"
-msgstr "Odkazy"
+msgstr "Lingid"
 
 #: ../archive.php:57
 msgid "Statuses"
-msgstr "Statusy"
+msgstr "Staatused"
 
 #: ../archive.php:60
 msgid "Audios"
-msgstr "Audio"
+msgstr "Audiod"
 
 #: ../archive.php:63
 msgid "Chats"
-msgstr "Chat"
+msgstr "Chatid"
 
 #: ../comments.php:28
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "1 komentář"
-msgstr[1] "Komentářů: %1$s"
+msgstr[0] "Üks müte &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s mõtteid &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:35 ../comments.php:53
 msgid "Comment navigation"
-msgstr "Komentáře"
+msgstr "Komentaari navigatsioon"
 
 #: ../comments.php:36 ../comments.php:54
 msgid "&larr; Older Comments"
-msgstr "Starší komentáře"
+msgstr "%larr; Vanemad komentaarid"
 
 #: ../comments.php:37 ../comments.php:55
 msgid "Newer Comments &rarr;"
-msgstr "Novější komentáře"
+msgstr "Uuemad kommentaarid &rarr;"
 
 #: ../comments.php:65
 msgid "Comments are closed."
-msgstr "Komentáře jsou uzavřeny."
+msgstr "Kommentaarid on suletud."
 
 #: ../content-none.php:13
 msgid "Nothing Found"
-msgstr "Nenalezeno"
+msgstr "Mitte midagi ei leitud"
 
 #: ../content-none.php:19
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-"Chcete publikovat svůj první příspěvek? <a href=\"%1$s\">Začněte zde</a>."
+msgstr "Valmis oma postistust avalikustama? <a href=\"%1$s\">Alusta siit</a>."
 
 #: ../content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr "Omlouváme se, ale nic jsme nenalezli. Zkuste změnit klíčová slova."
+msgstr ""
+"Vabandame, mitte miski ei klappinud teie otsingu terminitega. Palun proovige "
+"uuesti erinevate teminitega."
 
 #: ../content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "Zdá se, že to nelze najít. Zkuste vyhledávání."
+msgstr "Tundub et me ei suuda leida seda mida te otsite. Äkki aitab otsimine."
 
 #: ../content-page.php:21 ../content-single.php:35 ../content.php:49
 #: ../image.php:79
 msgid "Pages:"
-msgstr "Stránky:"
+msgstr "Lehed:"
 
 #: ../content-page.php:32 ../content-single.php:26 ../content.php:23
 msgid "Edit"
-msgstr "Upravit"
+msgstr "Muuda"
 
 #: ../content-single.php:19
 msgid ", "
-msgstr ", "
+msgstr ","
 
 #: ../content-single.php:23
 #, php-format
 msgid " %1$s"
-msgstr " %1$s"
+msgstr "%1$s"
 
 #: ../content.php:20
 msgid "Leave a comment"
-msgstr "Napište komentář"
+msgstr "Jäta komentaar"
 
 #: ../content.php:20
 msgid "1 Comment"
-msgstr "1 komentář"
+msgstr "1 komentaar"
 
 #: ../content.php:20
 msgid "% Comments"
-msgstr "Komentářů: %"
+msgstr "% komentaari"
 
 #: ../content.php:32 ../content.php:45
 msgid "Read More"
-msgstr "Celý článek"
+msgstr "Loe edasi"
 
 #: ../functions.php:69
 msgid "Primary Menu"
-msgstr "Hlavní menu"
+msgstr "Põhi menüü"
 
 #: ../functions.php:70 ../inc/extras.php:198
 msgid "Footer Links"
-msgstr "Menu v zápatí"
+msgstr "Jaluse lingid"
 
 #: ../functions.php:108
 msgid "Sidebar"
-msgstr "Postranní menu"
+msgstr "Kõrvalriba"
 
 #: ../functions.php:118
 msgid "Homepage Widget 1"
-msgstr "Úvodní stránka widget 1"
+msgstr "Kodulehe vidin 1"
 
 #: ../functions.php:119 ../functions.php:129 ../functions.php:139
 msgid "Displays on the Home Page"
-msgstr "Zobrazí se na úvodní stránce"
+msgstr "On nähtav kodu lehel"
 
 #: ../functions.php:128
 msgid "Homepage Widget 2"
-msgstr "Úvodní stránka widget 2"
+msgstr "Kodulehe vidin 2"
 
 #: ../functions.php:138
 msgid "Homepage Widget 3"
-msgstr "Úvodní stránka widget 3"
+msgstr "Kodulehe vidin 3"
 
 #: ../functions.php:148
 msgid "Footer Widget 1"
-msgstr "Zápatí widget 1"
+msgstr "Jaluse vidin 1"
 
 #: ../functions.php:149 ../functions.php:159 ../functions.php:169
 msgid "Used for footer widget area"
-msgstr "Zobrazí se v zápatí"
+msgstr "Kasutatud jaluse vidina ala jaoks"
 
 #: ../functions.php:158
 msgid "Footer Widget 2"
-msgstr "Zápatí widget 2"
+msgstr "Jaluse vidin 2"
 
 #: ../functions.php:168
 msgid "Footer Widget 3"
-msgstr "Zápatí widget 3"
+msgstr "Jaluse vidin 3"
 
 #: ../functions.php:304 ../options.php:23
 msgid "Right Sidebar"
-msgstr "Pravé postranní menu"
+msgstr "Parem külgriba"
 
 #: ../functions.php:304 ../options.php:23
 msgid "Left Sidebar"
-msgstr "Levé postranní menu"
+msgstr "Vasak külgriba"
 
 #: ../functions.php:304
 #, fuzzy
 msgid "No Sidebar"
-msgstr "Postranní menu"
+msgstr "Kõrvalriba"
 
 #: ../functions.php:304
 msgid "Full Width"
@@ -249,78 +250,77 @@ msgstr ""
 
 #: ../image.php:22
 msgid "<i class=\"fa fa-chevron-left\"></i> Previous"
-msgstr "<i class=\"fa fa-chevron-left\"></i> Předchozí"
+msgstr "<i class=\"fa fa-chevron-left\"></i> Eelmine"
 
 #: ../image.php:23
 msgid "Next <i class=\"fa fa-chevron-right\"></i>"
-msgstr "Další <i class=\"fa fa-chevron-right\"></i>"
+msgstr "Järgmine <i class=\"fa fa-chevron-right\"></i>"
 
 #: ../inc/customizer.php:29
 #, fuzzy
 msgid "Sparkling Options"
-msgstr "Rubriky šablony"
+msgstr "Sparklingi kategooriad"
 
 #: ../inc/customizer.php:30
 msgid "Panel to update sparkling theme options"
 msgstr ""
 
 #: ../inc/customizer.php:36
-#, fuzzy
 msgid "Content Options"
-msgstr "Možnosti šablony"
+msgstr "Sisu valikud"
 
 #: ../inc/customizer.php:47
 msgid "Show post excerpts?"
-msgstr ""
+msgstr "Näita postituse lühitutvustusi?"
 
 #: ../inc/customizer.php:58
-#, fuzzy
 msgid "Display Comments on Static Pages?"
-msgstr "Zobrazí se na úvodní stránce"
+msgstr "Näita komentaare staatilistel lehtedel?"
 
 #: ../inc/customizer.php:66
 #, fuzzy
 msgid "Slider options"
-msgstr "Rubrika ve slideru"
+msgstr "Slideri kategooria"
 
 #: ../inc/customizer.php:76 ../options.php:116
 msgid "Check if you want to enable slider"
-msgstr "Zaškrtněte, pokud chcete aktivovat slider"
+msgstr "Pane linnuke kui tahate slaiderit lubada"
 
 #: ../inc/customizer.php:91 ../options.php:123
 msgid "Slider Category"
-msgstr "Rubrika ve slideru"
+msgstr "Slideri kategooria"
 
 #: ../inc/customizer.php:94 ../options.php:124
 msgid "Select a category for the featured post slider"
-msgstr "vyberte rubriku, která se zobrazí ve slideru"
+msgstr "Vali kategooria esiletoodud postituste slaideri jaoks"
 
 #: ../inc/customizer.php:104 ../options.php:132
 msgid "Number of slide items"
-msgstr "Počet položek ve slideru"
+msgstr "Slaidide arv"
 
 #: ../inc/customizer.php:106 ../options.php:133
 msgid "Enter the number of slide items"
-msgstr "Napište počet"
+msgstr "Sisestage slaidide arv"
 
 #: ../inc/customizer.php:111
 #, fuzzy
 msgid "Layout options"
-msgstr "Vzhled stránky"
+msgstr "Veebilehe paigutuse sätted"
 
 #: ../inc/customizer.php:123 ../options.php:141
 msgid "Website Layout Options"
-msgstr "Vzhled stránky"
+msgstr "Veebilehe paigutuse sätted"
 
 #: ../inc/customizer.php:126
 #, fuzzy
 msgid "Choose between different layout options to be used as default"
-msgstr "Zvolte, kde chcete mít postranní menu"
+msgstr ""
+"Valige vasaku ja parema külgriba settingute vahel et kasutada eelsättena"
 
 #: ../inc/customizer.php:136
 #, fuzzy
 msgid "Element Color"
-msgstr "Barva tlačítek"
+msgstr "Elemendi värv"
 
 #: ../inc/customizer.php:137 ../inc/customizer.php:149
 #: ../inc/customizer.php:203 ../inc/customizer.php:213
@@ -332,259 +332,259 @@ msgstr "Barva tlačítek"
 #: ../options.php:259 ../options.php:267 ../options.php:280 ../options.php:390
 #: ../options.php:398
 msgid "Default used if no color is selected"
-msgstr "Pokud není nic vybráno, zobrazí se defaultní barva"
+msgstr "Eelsäte kui värvi ei ole valitud"
 
 #: ../inc/customizer.php:148 ../options.php:159
 msgid "Element color on hover"
-msgstr "Barva tlačítka po najetí myši"
+msgstr "Elemendi värv hiirega üle minemise puhul"
 
 #: ../inc/customizer.php:156 ../options.php:175
 msgid "Action Button"
-msgstr "Akční tlačítko"
+msgstr "Tegevuse nupp"
 
 #: ../inc/customizer.php:166 ../options.php:180
 msgid "Call For Action Text"
-msgstr "Text pro akční tlačítko"
+msgstr "Tegevusele kutsumise tekst"
 
 #: ../inc/customizer.php:167 ../options.php:181
 msgid "Enter the text for call for action section"
-msgstr "Napište text, který se zobrazí v akční sekci"
+msgstr "Sisesta tekst tegevusele kutsumine sektsiooni jaoks"
 
 #: ../inc/customizer.php:178 ../options.php:188
 msgid "Call For Action Button Title"
-msgstr "Název akčního tlačítka"
+msgstr "Tegevusele kutsumise nupu tiitel"
 
 #: ../inc/customizer.php:180 ../options.php:189
 msgid "Enter the title for Call For Action button"
-msgstr "Vložte název akčního tlačítka"
+msgstr "Sisesta tiitel tegevusele kutsumise nupu jaoks"
 
 #: ../inc/customizer.php:190 ../options.php:196
 msgid "CFA button link"
-msgstr "Odkaz akčního tlačítka"
+msgstr "CFA nupu link"
 
 #: ../inc/customizer.php:192 ../options.php:197
 msgid "Enter the link for Call For Action button"
-msgstr "Vložte odkaz pro akční tlačítko"
+msgstr "Sisesta link tegevusele kutsumise nupu jaoks"
 
 #: ../inc/customizer.php:202 ../options.php:204
 msgid "Call For Action Text Color"
-msgstr "Barva akčního textu"
+msgstr "Tegevusele kutsumise teksti värv"
 
 #: ../inc/customizer.php:212 ../options.php:212
 msgid "Call For Action Background Color"
-msgstr "Barva pozadí akčního textu"
+msgstr "Tegevusele kutsumise tausta värv"
 
 #: ../inc/customizer.php:222 ../options.php:220
 msgid "Call For Action Button Border Color"
-msgstr "Barva ohraničení akčního tlačítka"
+msgstr "Tegevusele kutsumise serva värv"
 
 #: ../inc/customizer.php:232 ../options.php:228
 msgid "Call For Action Button Text Color"
-msgstr "Barva písma akčního tlačítka"
+msgstr "Tegevusele kutsumise nupu teksti värv"
 
 #: ../inc/customizer.php:239 ../options.php:236
 msgid "Typography"
-msgstr "Typografie"
+msgstr "Trükikunst"
 
 #: ../inc/customizer.php:259 ../options.php:241
 msgid "Main Body Text"
-msgstr "Hlavní text webu"
+msgstr "Põhi osa tekst"
 
 #: ../inc/customizer.php:260
 #, fuzzy
 msgid "Used in p tags"
-msgstr "Text v P tagu"
+msgstr "Kaustatud P tagides"
 
 #: ../inc/customizer.php:300 ../options.php:250
 msgid "Heading Color"
-msgstr "Barva nadpisů"
+msgstr "Pealkirja värv"
 
 #: ../inc/customizer.php:301 ../options.php:251
 msgid "Color for all headings (h1-h6)"
-msgstr "Pro všechny nadpisy (h1-h6)"
+msgstr "Kõikide (h1-h6) pealkirjade värv"
 
 #: ../inc/customizer.php:310 ../options.php:258
 msgid "Link Color"
-msgstr "Barva odkazu"
+msgstr "Lingi värv"
 
 #: ../inc/customizer.php:320 ../options.php:266
 msgid "Link:hover Color"
-msgstr "Barva aktivního odkazu"
+msgstr "Elemendi värv hiirega üle minemise puhul"
 
 #: ../inc/customizer.php:327 ../options.php:274
 msgid "Header"
-msgstr "Záhlaví"
+msgstr "Pealis"
 
 #: ../inc/customizer.php:337 ../options.php:279
 msgid "Top nav background color"
-msgstr "Barva pozadí horního menu"
+msgstr "Üla navigatsiooni tausta värv"
 
 #: ../inc/customizer.php:347 ../options.php:287
 msgid "Top nav item color"
-msgstr "Barva textu v horním menu"
+msgstr "Üle navigatsiooni osa värv"
 
 #: ../inc/customizer.php:348 ../options.php:288
 msgid "Link color"
-msgstr "Barva odkazu"
+msgstr "Lingi värv"
 
 #: ../inc/customizer.php:358 ../options.php:295
 msgid "Top nav item hover color"
-msgstr "Barva aktivní položky v horním menu"
+msgstr "Üla navigatsiooni värv hiirega üle minemise puhul"
 
 #: ../inc/customizer.php:359 ../options.php:296
 msgid "Link:hover color"
-msgstr "Barva aktivního odkazu"
+msgstr "Lingi värv hiirega üle minemise puhul"
 
 #: ../inc/customizer.php:369 ../options.php:303
 msgid "Top nav dropdown background color"
-msgstr "Barva pozadí submenu"
+msgstr "Üla navigatsiooni rippmenüü tausta värv"
 
 #: ../inc/customizer.php:370 ../inc/customizer.php:403 ../options.php:304
 #: ../options.php:328
 msgid "Background of dropdown item hover color"
-msgstr "Barva v pozadí aktivního textu v submenu"
+msgstr "Ripp menüü valiku tausta värv hiirega üle minemise puhul"
 
 #: ../inc/customizer.php:380 ../options.php:311
 msgid "Top nav dropdown item color"
-msgstr "Barva textu v submenu horního menu"
+msgstr "Üla navigatsiooni rippmenüü valiku värv"
 
 #: ../inc/customizer.php:381 ../options.php:312
 msgid "Dropdown item color"
-msgstr "Barva textu v submenu"
+msgstr "Rippmenüü valiku värv"
 
 #: ../inc/customizer.php:391 ../options.php:319
 msgid "Top nav dropdown item hover color"
-msgstr "Barva aktivního textu v submenu horního menu"
+msgstr "Üla navigatsiooni rippmenüü valiku värv hiirega üle minemise puhul"
 
 #: ../inc/customizer.php:392 ../options.php:320
 msgid "Dropdown item hover color"
-msgstr "Barva aktivního textu v submenu"
+msgstr "Rippmenüü valiku värv hiirega üle minemise puhul"
 
 #: ../inc/customizer.php:402 ../options.php:327
 msgid "Top nav dropdown item background hover color"
-msgstr "Barva aktivního pozadí submenu v horním menu"
+msgstr ""
+"Üla navigatsiooni rippmenüü valiku tausta värv hiirega üle minemise puhul"
 
 #: ../inc/customizer.php:409 ../options.php:335
 msgid "Footer"
-msgstr "Zápatí"
+msgstr "Jalus"
 
 #: ../inc/customizer.php:419 ../options.php:340
 msgid "Footer widget area background color"
-msgstr "Barva pozadí widgetů v zápatí"
+msgstr "Jaluse vidinate ala tausta värv"
 
 #: ../inc/customizer.php:429 ../options.php:347
 msgid "Footer background color"
-msgstr "Barva pozadí v zápatí"
+msgstr "Jaluse tausta värv"
 
 #: ../inc/customizer.php:439 ../options.php:354
 msgid "Footer text color"
-msgstr "Barva textu v zápatí"
+msgstr "Jaluse teksti värv"
 
 #: ../inc/customizer.php:449 ../options.php:361
 msgid "Footer link color"
-msgstr "Barva odkazu v zápatí"
+msgstr "Jaluse lingi värv"
 
 #: ../inc/customizer.php:459 ../options.php:368
 msgid "Footer information"
-msgstr "Text v zápatí"
+msgstr "Jaluse informatsioon"
 
 #: ../inc/customizer.php:460 ../options.php:369
 msgid "Copyright text in footer"
-msgstr "Text autorských práv v zápatí webu"
+msgstr "Autorõiguste tekst jaluses"
 
 #: ../inc/customizer.php:467 ../options.php:384
 msgid "Social"
-msgstr "Sociální sítě"
+msgstr "Sotsiaal"
 
 #: ../inc/customizer.php:477 ../options.php:389
 msgid "Social icon color"
-msgstr "Barva ikonky sociální sítě"
+msgstr "Sotsiaal ikooni värv"
 
 #: ../inc/customizer.php:488 ../options.php:397
 msgid "Footer social icon color"
-msgstr "Barva ikonky sociální sítě v zápatí"
+msgstr "Jaluse sotsiaal ikooni värv"
 
 #: ../inc/customizer.php:499 ../options.php:376
-#, fuzzy
 msgid "Footer Social Icons"
-msgstr "Barva ikonky sociální sítě v zápatí"
+msgstr "Jaluse sotsiaal ikoonid"
 
 #: ../inc/customizer.php:500
 #, fuzzy
 msgid "Check to show social icons in footer"
-msgstr "Barva ikonky sociální sítě v zápatí"
+msgstr "Näita/Peida sotsiaal ikoonid jaluses"
 
 #: ../inc/customizer.php:507 ../options.php:542
 msgid "Other"
-msgstr "Ostatní"
+msgstr "Muu"
 
 #: ../inc/customizer.php:517 ../options.php:547
 msgid "Custom CSS"
-msgstr "Vlastní CSS"
+msgstr "Eri CSS"
 
 #: ../inc/customizer.php:518 ../options.php:548
 msgid "Additional CSS"
-msgstr "Doplňkové CSS"
+msgstr "Lisa CSS"
 
 #: ../inc/customizer.php:525 ../inc/extras.php:383
 msgid "Support and Documentation"
-msgstr "Podpora a dokumentace"
+msgstr "Tugi ja dokumentatsioon"
 
 #: ../inc/customizer.php:701 ../inc/extras.php:389
 msgid "Sparkling Documentation"
-msgstr "Dokumentace k šabloně"
+msgstr "Sparklingi dokumentatsioon"
 
 #: ../inc/customizer.php:702 ../inc/extras.php:390
 msgid ""
 "The best way to contact us with <b>support questions</b> and <b>bug reports</"
 "b> is via"
 msgstr ""
-"Nejlepší způsob, jak nás kontaktovat s <b>dotazy</b> nebo <b>nahlásit chybu</"
-"b> je přes"
+"Parim viis meiega kontakti võtta <b>toe küsimuste</b> ja <b>vea raporitega</"
+"b> on kasutades"
 
 #: ../inc/customizer.php:702 ../inc/extras.php:390
 msgid "Colorlib support forum"
-msgstr "Colorlib forum podpory"
+msgstr "Cololibi toe foorum"
 
 #: ../inc/customizer.php:703 ../inc/extras.php:391
 msgid "If you like this theme, I'd appreciate any of the following:"
-msgstr "Pokud se vám šablona líbí, využijte prosím tyto možnosti:"
+msgstr ""
+"Kui teile see teema meeldib, Siis see oleks tore kui teeksite järgmisi:"
 
 #: ../inc/customizer.php:705 ../inc/extras.php:393
 msgid "Rate this Theme"
-msgstr "Ohodnotit šablonu"
+msgstr "Hinnake seda teemat"
 
 #: ../inc/customizer.php:706 ../inc/extras.php:394
 msgid "Like on Facebook"
-msgstr "Sledovat nás na Facebooku"
+msgstr "Likige Facebookis"
 
 #: ../inc/customizer.php:707 ../inc/extras.php:395
 msgid "Follow on Twitter"
-msgstr "Sledovat nás na Twitteru"
+msgstr "Jälgige Twitteris"
 
 #: ../inc/extras.php:61
 #, php-format
 msgid "Page %s"
-msgstr "Stránka %s"
+msgstr "%s leht"
 
 #: ../inc/extras.php:125
-#, fuzzy
 msgid ""
 "This post is password protected. To view it please enter your password below:"
-msgstr "<p>Tento příspěvek je chráněn heslem. Napište prosím heslo:</p>"
+msgstr "See postitus on salasõnaga kaitstud. Et seda näha sisestage salasõna:"
 
 #: ../inc/extras.php:126
 msgid "Password:"
-msgstr "Heslo:"
+msgstr "Salasõna:"
 
 #: ../inc/extras.php:129
 msgid "Submit"
-msgstr "Odeslat"
+msgstr "Saada"
 
 #: ../inc/extras.php:272
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
-msgstr "Šablonu %1$s pohání %2$s"
+msgstr "Teema %1$s poolt. Töötab %2$s abil"
 
 #: ../inc/metaboxes.php:16
 msgid ""
@@ -598,145 +598,146 @@ msgstr ""
 
 #: ../inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr "Příspěvky"
+msgstr "Postituste navigatsioon"
 
 #: ../inc/template-tags.php:27
 msgid "<i class=\"fa fa-chevron-left\"></i> Older posts"
-msgstr "<i class=\"fa fa-chevron-left\"></i> Starší příspěvky"
+msgstr "<i class=\"fa fa-chevron-left\"></i> Vanemad postitused"
 
 #: ../inc/template-tags.php:31
 msgid "Newer posts <i class=\"fa fa-chevron-right\"></i>"
-msgstr "Novější příspěvky <i class=\"fa fa-chevron-right\"></i>"
+msgstr "Uuemad postitused <i class=\"fa fa-chevron-right\"></i>"
 
 #: ../inc/template-tags.php:56
 msgid "Post navigation"
-msgstr "Příspěvky"
+msgstr "Postituste navigatsioon"
 
 #: ../inc/widgets/widget-categories.php:11
 #: ../inc/widgets/widget-categories.php:12
 msgid "Sparkling Categories"
-msgstr "Rubriky šablony"
+msgstr "Sparklingi kategooriad"
 
 #: ../inc/widgets/widget-categories.php:17
 #: ../inc/widgets/widget-categories.php:76
 msgid "Categories"
-msgstr "Rubriky"
+msgstr "Kategooriad"
 
 #: ../inc/widgets/widget-categories.php:83 ../inc/widgets/widget-social.php:42
 msgid "Title "
-msgstr "Název"
+msgstr "Tiitel"
 
 #: ../inc/widgets/widget-categories.php:91
 msgid "Limit Categories "
-msgstr "Maximální počet rubrik"
+msgstr "Limiteeri kategooriaid"
 
 #: ../inc/widgets/widget-categories.php:104
 msgid "Enable Posts Count"
-msgstr "Zobrazit počet příspěvků"
+msgstr "Luba postituste arv"
 
 #: ../inc/widgets/widget-popular-posts.php:11
 #: ../inc/widgets/widget-popular-posts.php:12
 msgid "Sparkling Popular Posts Widget"
-msgstr "Oblíbené příspěvky - widget šablony"
+msgstr "Sparklingi populaarsete postituste vidin"
 
 #: ../inc/widgets/widget-popular-posts.php:17
 #: ../inc/widgets/widget-popular-posts.php:94
 msgid "Popular Posts"
-msgstr "Oblíbené příspěvky"
+msgstr "Populaarsed postitused"
 
 #: ../inc/widgets/widget-popular-posts.php:99
 msgid "Title"
-msgstr "Název"
+msgstr "Tiitel"
 
 #: ../inc/widgets/widget-popular-posts.php:107
 msgid "Limit Posts Number"
-msgstr "Maximální počet příspěvků"
+msgstr "Limiteeri postituste arv"
 
 #: ../inc/widgets/widget-social.php:11 ../inc/widgets/widget-social.php:12
 msgid "Sparkling Social Widget"
-msgstr "Sociální widget šablony"
+msgstr "Sparklingi sotsiaalne vidin"
 
 #: ../inc/widgets/widget-social.php:18 ../inc/widgets/widget-social.php:40
 msgid "Follow us"
-msgstr "Sledujte nás na"
+msgstr "Jälgi meid"
 
 #: ../options.php:27
 msgid "One"
-msgstr "Jedna"
+msgstr "Üks"
 
 #: ../options.php:28
 msgid "Two"
-msgstr "Dvě"
+msgstr "Kaks"
 
 #: ../options.php:29
 msgid "Three"
-msgstr "Tři"
+msgstr "Kolm"
 
 #: ../options.php:30
 msgid "Four"
-msgstr "Čtyři"
+msgstr "Neli"
 
 #: ../options.php:31
 msgid "Five"
-msgstr "Pět"
+msgstr "Viis"
 
 #: ../options.php:36
 msgid "French Toast"
-msgstr "Francouzský toust"
+msgstr "Prantsuse Röstsai"
 
 #: ../options.php:37
 msgid "Pancake"
-msgstr "Lívanec"
+msgstr "Pannkook"
 
 #: ../options.php:38
 msgid "Omelette"
-msgstr "Omeleta"
+msgstr "Omlett"
 
 #: ../options.php:39
 msgid "Crepe"
-msgstr "Palačinka"
+msgstr "Kreep"
 
 #: ../options.php:40
 msgid "Waffle"
-msgstr "Vafle"
+msgstr "Vaffel"
 
 #: ../options.php:110
 msgid "Main"
-msgstr "Hlavní"
+msgstr "Põhi"
 
 #: ../options.php:115
 msgid "Do You want to display image slider on the Home Page?"
-msgstr "Chcete zobrazit slider na úvodní stránce?"
+msgstr "Kas te tahate näidata pildi slaiderit kodu lehel?"
 
 #: ../options.php:142
 msgid "Choose between Left and Right sidebar options to be used as default"
-msgstr "Zvolte, kde chcete mít postranní menu"
+msgstr ""
+"Valige vasaku ja parema külgriba settingute vahel et kasutada eelsättena"
 
 #: ../options.php:151
 msgid "Element color"
-msgstr "Barva tlačítek"
+msgstr "Elemendi värv"
 
 #: ../options.php:167
 msgid "Custom Favicon"
-msgstr "Vlastní favicon"
+msgstr "Eri favicon"
 
 #: ../options.php:168
 msgid ""
 "Upload a 32px x 32px PNG/GIF image that will represent your websites favicon"
-msgstr "Nahrajte obrázek PNG/GIF velikosti 32 x 32 px"
+msgstr ""
+"Lae üles 32px x 32px PNG/GIF pilt mis iseloomustab teie veebilehe faviconi"
 
 #: ../options.php:242
 msgid "Used in P tags"
-msgstr "Text v P tagu"
+msgstr "Kaustatud P tagides"
 
 #: ../options.php:377
-#, fuzzy
 msgid "Show/Hide social icons in footer"
-msgstr "Barva ikonky sociální sítě v zápatí"
+msgstr "Näita/Peida sotsiaal ikoonid jaluses"
 
 #: ../options.php:405
 msgid "Add full URL for your social network profiles"
-msgstr "Přidejte celý odkaz profilu na vaši sociální síť"
+msgstr "Lisa täis URL oma sotsiaal võrgustiku profiilide jaoks"
 
 #: ../options.php:406
 msgid "Facebook"
@@ -752,7 +753,7 @@ msgstr "Google+"
 
 #: ../options.php:431
 msgid "Youtube"
-msgstr "YouTube"
+msgstr "Youtube"
 
 #: ../options.php:439
 msgid "Vimeo"
@@ -768,7 +769,7 @@ msgstr "Pinterest"
 
 #: ../options.php:463
 msgid "RSS Feed"
-msgstr "RSS čtečka"
+msgstr "RSS voog"
 
 #: ../options.php:471
 msgid "Tumblr"
@@ -784,7 +785,7 @@ msgstr "Instagram"
 
 #: ../options.php:495
 msgid "Dribbble"
-msgstr "Dribble"
+msgstr "Dribbble"
 
 #: ../options.php:503
 msgid "Skype"
@@ -796,7 +797,7 @@ msgstr "Foursquare"
 
 #: ../options.php:519
 msgid "SoundCloud"
-msgstr "SoundClound"
+msgstr "SoundCloud"
 
 #: ../options.php:527
 msgid "GitHub"
@@ -804,126 +805,127 @@ msgstr "GitHub"
 
 #: ../options.php:535
 msgid "Spotify"
-msgstr ""
+msgstr "Spotify"
 
 #: ../search.php:16
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Výsledky hledání: %s"
+msgstr "Otsingu tulemused %s jaoks"
 
 #: ../searchform.php:11
-#, fuzzy
 msgid "Search for:"
-msgstr "Hledat..."
+msgstr "Otsi seda:"
 
 #: ../searchform.php:12
-#, fuzzy
 msgctxt "placeholder"
 msgid "Search&hellip;"
-msgstr "Hledat..."
+msgstr "Otsi&hellip;"
 
 #: ../searchform.php:12
-#, fuzzy
 msgctxt "label"
 msgid "Search for:"
-msgstr "Hledat..."
+msgstr "Otsi seda&hellip;"
 
 #: ../searchform.php:14
-#, fuzzy
 msgctxt "submit button"
 msgid "Search"
-msgstr "Hledat..."
+msgstr "Otsi"
 
 #: ../sidebar.php:26
 msgid "Meta"
 msgstr "Meta"
 
 #~ msgid "Theme Options"
-#~ msgstr "Možnosti šablony"
+#~ msgstr "Teema valikud"
 
 #~ msgid "Click OK to reset. Any theme settings will be lost!"
-#~ msgstr "Pokud kliknete na OK, přijdete o všechny změny!"
+#~ msgstr "Vajuta OK et resettida. Kõik teema settingud kaovad!"
 
 #~ msgid "Default options restored."
-#~ msgstr "Původní nastavení obnoveno."
+#~ msgstr "Vaike sätted taastatud."
 
 #~ msgid "Options saved."
-#~ msgstr "Změny uloženy."
+#~ msgstr "Sättes salvestatud."
 
 #~ msgid "No file chosen"
-#~ msgstr "Soubor není vybrán"
+#~ msgstr "Faili ei ole valitud"
 
 #~ msgid "Upload"
-#~ msgstr "Nahrát"
+#~ msgstr "Lae üles"
 
 #~ msgid "Remove"
-#~ msgstr "Odstranit"
+#~ msgstr "Eemalda"
 
 #~ msgid "Upgrade your version of WordPress for full media support."
-#~ msgstr "Aktualizujte svůj WordPress. Získáte tak plnou podporu."
+#~ msgstr "Uuenda oma WordPressi täieliku meedia toe jaoks."
 
 #~ msgid "View File"
-#~ msgstr "Prohlédnout soubor"
+#~ msgstr "Vaata faili"
 
 #~ msgid "No Repeat"
-#~ msgstr "Neopakovat"
+#~ msgstr "Ära Korda"
 
 #~ msgid "Repeat Horizontally"
-#~ msgstr "Opakovat vodorovně"
+#~ msgstr "Korda horisontaalselt"
 
 #~ msgid "Repeat Vertically"
-#~ msgstr "Opakovat svisle"
+#~ msgstr "Korda vertikaalselt"
 
 #~ msgid "Repeat All"
-#~ msgstr "Opakovat vše"
+#~ msgstr "Korda kõik"
 
 #~ msgid "Top Left"
-#~ msgstr "Zarovnat doleva"
+#~ msgstr "Ülemine vasak"
 
 #~ msgid "Top Center"
-#~ msgstr "Zarovnat na střed"
+#~ msgstr "Ülemine keskmine"
 
 #~ msgid "Top Right"
-#~ msgstr "Zarovnat doprava"
+#~ msgstr "Ülemine parem"
 
 #~ msgid "Middle Left"
-#~ msgstr "Uprostřed vlevo"
+#~ msgstr "Keskmine vasak"
 
 #~ msgid "Middle Center"
-#~ msgstr "Uprostřed"
+#~ msgstr "Keskmine keskmine"
 
 #~ msgid "Middle Right"
-#~ msgstr "Uprostřed napravo"
+#~ msgstr "Keskmine parem"
 
 #~ msgid "Bottom Left"
-#~ msgstr "Dole vlevo"
+#~ msgstr "Alumine vasak"
 
 #~ msgid "Bottom Center"
-#~ msgstr "Dole uprostřed"
+#~ msgstr "Alumine keskmine"
 
 #~ msgid "Bottom Right"
-#~ msgstr "Dole vpravo"
+#~ msgstr "Alumine parem"
 
 #~ msgid "Scroll Normally"
-#~ msgstr "Skrolovací"
+#~ msgstr "Skrolli tavaliselt"
 
 #~ msgid "Fixed in Place"
-#~ msgstr "Nehybný"
+#~ msgstr "Ühe kohas kinni"
 
 #~ msgid "Normal"
-#~ msgstr "Normální"
+#~ msgstr "Normaalne"
 
 #~ msgid "Italic"
-#~ msgstr "Kurzíva"
+#~ msgstr "Kalduskiri"
 
 #~ msgid "Bold"
-#~ msgstr "Tučně"
+#~ msgstr "Rasvane kiri"
 
 #~ msgid "Bold Italic"
-#~ msgstr "Tučná kurzíva"
+#~ msgstr "Rasvane kaldkiri"
 
 #~ msgid "Follow us on "
-#~ msgstr "Sledujte nás na"
+#~ msgstr "Jälgi meid"
 
-#~ msgid "Search..."
-#~ msgstr "Hledat..."
+#~ msgctxt "label"
+#~ msgid ""
+#~ "Search \n"
+#~ "for:"
+#~ msgstr ""
+#~ "Otsi \n"
+#~ "seda:"
