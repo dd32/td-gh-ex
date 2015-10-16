@@ -218,3 +218,37 @@ label.row-element {
     margin: 2px 0;
     text-align: center;
 }
+
+#customize-control-theme_info_more_theme span,
+#customize-control-theme_info_pro_theme span,
+#customize-control-theme_info_useful_plugins span
+{width: 100%; display: block;
+    text-align: center;}
+
+.admin-pro-feature-list li{
+ 
+    border-bottom: 1px solid #DBDBDB;
+    margin: 0;
+    padding: 10px 0px;
+    line-height: 1;
+}
+.admin-pro-feature-list li:before{
+     content: "\f345";
+    font: 400 20px/1 dashicons;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 5px;
+ 
+ }
+.admin-pro-feature-list span{
+     display: inline-block;
+    width: 90%;
+    vertical-align: top;}
+.admin-pro-feature-list{
+    margin: 0 5px;
+}
+.buynow{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;}
+

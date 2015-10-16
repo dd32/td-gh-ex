@@ -17,7 +17,7 @@ jQuery(function ($) {
 
     // Woocommerce single page thumbinal image slide
     $('.single-img .img-wrap .images > .thumbnails').slick({
-        infinite: false,
+        infinite: true,
         centerMode: false,
         useCss: false,
         easing: 'linear',
@@ -57,7 +57,7 @@ jQuery(function ($) {
 // end
 
     $('.new-prod-slide').slick({
-        infinite: false,
+        infinite: true,
         centerMode: false,
         useCss: false,
         easing: 'linear',
@@ -94,7 +94,7 @@ jQuery(function ($) {
     });
 
     $('.feature-cat-product').slick({
-        infinite: false,
+        infinite: true,
         centerMode: false,
         useCss: false,
         easing: 'linear',

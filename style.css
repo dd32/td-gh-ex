@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -3308,9 +3308,9 @@ Responsive grid for pages
     background: url("images/mini-prev-arrow.png") no-repeat scroll center center;
     background-size: 100%;
 }
-.slick-disabled {
+/*.slick-disabled {
     cursor: not-allowed !important;
-}
+}*/
 .new-prod-slide .slick-next:hover,
 .new-prod-slide .slick-next.slick-disabled {
     background: url("images/mini-next-arrow.png") no-repeat scroll center center;
@@ -4871,9 +4871,35 @@ span.onsale:after,
     background: #e24545;
     color: #ffffff;
 }
-ul.children li:last-child {
+.widget_product_categories ul.children li:last-child {
     border: none;
 }
+.widget_product_categories ul.children{
+    margin: 0px;
+    border-top: 2px solid #eee;}
+.widget_product_categories ul.children li{
+     line-height: 30px !important;
+    margin-left: 10px !important;
+    border-bottom: 1px solid #eee;
+}
+.widget_product_categories ul.children li a{ 
+    font-size: 13px; 
+    padding-left: 10px !important; 
+    line-height:30px !important;    
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+
+.widget_product_categories ul.children li a:after{    
+       content: "\f0da";
+    position: relative;
+    display: inline-block;
+    float: left;
+    line-height: 2.1; }
+    
+ 
 #ap-cta-video {
     background: #3d3d3d;
     margin: 40px 0px;

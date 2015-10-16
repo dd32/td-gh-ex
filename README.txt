@@ -1,6 +1,6 @@
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-AccessPress Store WordPress Theme, Copyright 2015 8degree Themes
+AccessPress Store WordPress Theme, Copyright 2015 AccessPress Themes
 AccessPress Store is distributed under the terms of the GNU GPL v3
 
 
@@ -47,6 +47,10 @@ Images
 
 
 == Changelog ==
+
+= 1.0.8 =
+** Fixed hierarchy of parent category and child category in WooCommerce Product Category.
+** Fixed the header css bug. 
 
 = 1.0.7 =
 ** Fixed the style of logo and blog text section
