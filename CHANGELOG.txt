@@ -1,0 +1,31 @@
+Changelog
+=========
+
+v1.0.9 (https://github.com/9Pixels/Accountant-Theme/releases/tag/v1.0.8) (2015-07-25)
+-------------------------------------------------------------------------------------
+
+Full changelog: https://github.com/9Pixels/Accountant-Theme/compare/v1.0.8...v1.0.9
+
+Bug(s):
+ - Accessibility ready.
+
+
+v1.0.8 (https://github.com/9Pixels/Accountant-Theme/releases/tag/v1.0.8) (2015-07-20)
+-------------------------------------------------------------------------------------
+
+Full changelog: https://github.com/9Pixels/Accountant-Theme/compare/v1.0.7...v1.0.8
+
+Bug(s):
+ - In customizer.php the text domain has been changed from "lawyeria_lite" to "accountantlaw".
+ - The languages files has been renamed from "accountant-en" to "accountantlaw".
+ - The constant "GET_CHILDTHEME_DIRECTORY_URI" has been removed and replaced with "get_stylesheet_directory_uri()" function.
+ - Has been added the latest version of WordPress Theme in "wp_register_style" and "wp_enqueue_script".
+ - Has been deleted "http-equiv" from header.php.
+ - In header.php, line no. 45, the text domain "layeria_lite" has been deleted and replaced with "accountantlaw".
+ - README.md file has been deleted.
+
+
+v1.0.7 (https://github.com/9Pixels/Accountant-Theme/releases/tag/v1.0.7) (2015-07-19)
+-------------------------------------------------------------------------------------
+
+Release.
