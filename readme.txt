@@ -5,6 +5,10 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 2.2 [17/10/2015]
+1. Mobils Menus Fix.
+
+
 @Version: 2.1 [08/10/2015]
 1. Parallax Layout in *Premium Theme added..
 

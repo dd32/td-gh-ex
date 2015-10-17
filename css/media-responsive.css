@@ -81,6 +81,7 @@
 	padding-bottom:2px;
 	padding-left:0;
 }
+
 	.social{
 	display: block;
 	text-align: center;
@@ -228,7 +229,11 @@
 
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-
+.dropdown-menu{
+width:100%;
+float:none;
+position:static !important;
+}
 .logo{
 	text-align:center;
 	padding-top:15px;
@@ -368,7 +373,11 @@
 } 
 
 @media only screen and (min-width: 200px) and (max-width: 600px) {
-
+.dropdown-menu{
+width:100%;
+float:none;
+position:static !important;
+}
 	/*.carousel-list li {	display:none; } */	
 .carousel-text h1 {
 margin: 0 0 0px 0;
@@ -494,6 +503,11 @@ display: block;
 
 }
 @media only screen and (min-width: 200px) and (max-width: 480px) {
+  .head-contact-info li {
+  float: left;
+  padding-bottom: 5px;
+  width: 100%;
+}
 
 .logo{
 	text-align:center;
