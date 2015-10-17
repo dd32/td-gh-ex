@@ -131,6 +131,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@Version 1.4
+1. Add Google Font.
+2. Css Minified
 @Version 1.3.2
 1. Add Pro Feature For Demo
 2. Remove Title Tag.
