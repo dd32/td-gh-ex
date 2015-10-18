@@ -113,3 +113,8 @@ require get_template_directory() . '/inc/custom-metabox.php';
  * Implement the TGM PLugin Activation Class
  */
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+/**
+ * Implement the More Theme Page
+ */
+require get_template_directory() . '/inc/more-themes.php';
