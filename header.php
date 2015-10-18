@@ -45,7 +45,11 @@
 
 			<nav id="top-navigation" class="left show-for-large-up">
 				<a class="harmonux-wai-info harmonux-skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'harmonux' ); ?>"><?php _e( 'Skip to content', 'harmonux' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'top_pages', 'menu_class' => 'harmonux-menu harmonux-top-menu' ) ); ?>
+				<?php
+				if ( has_nav_menu( 'top_pages' ) ) {
+					wp_nav_menu(array('theme_location' => 'top_pages', 'menu_class' => 'harmonux-menu harmonux-top-menu'));
+				}
+				?>
 			</nav>
 		</div>
 	</div>
