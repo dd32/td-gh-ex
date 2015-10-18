@@ -102,7 +102,7 @@ $options[] = array(
             <li>' . esc_attr__( 'Responsive Website Design.', 'promax' ) . '</li>
             <li>' . esc_attr__( 'Different Website Layout to Select.', 'promax' ) . '</li>
             <li>' . esc_attr__( 'Many of Other customize feature for your blog or website.', 'promax' ) . '</li>
-            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/promax','promax')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'promax' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://forum.insertcart.com/','promax')) . '" target="_blank">' . esc_attr__( 'Support Forum !', 'promax' ) . '</a></span></p>',
+            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/promax','promax')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'promax' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://www.insertcart.com/contact-us/','promax')) . '" target="_blank">' . esc_attr__( 'Need Support !', 'promax' ) . '</a></span></p>',
             'class' => 'tesingh',
             'type' => 'info');
 	$options[] = array(
@@ -236,7 +236,7 @@ $options[] = array(
 		'class' => 'mini',
 		'type' => 'text');
 		$options[] = array(
-		'name' => __('Numbers of Latest and Populat posts to display)', 'promax'),
+		'name' => __('Numbers of Latest and Popular posts to display)', 'promax'),
 		'desc' => __('<b>For Latest Posts</b>', 'promax'),
 		'id' => 'promax_latestpostnumber',
 		'std' => '5',
@@ -386,7 +386,7 @@ $options[] = array(
 		'type' => 'color' );
 		$options[] = array(
 		'name' => __('Other customize color & design', 'promax'),
-		'desc' => __('Sidebar Widget hading background Color change', 'promax'),
+		'desc' => __('Sidebar Widget heading background Color change', 'promax'),
 		'id' => 'promax_sidebarbg',
 		'std' => '#7EA8D3',
 		'type' => 'color' );
@@ -451,7 +451,7 @@ $options[] = array(
 		'std' => '',
 		'type' => 'text');
 		$options[] = array(
-		'name' => __('Google Site varification', 'promax'),
+		'name' => __('Google Site verification', 'promax'),
 		'desc' => __('Enter your ID only.', 'promax'),
 		'id' => 'promax_googlevari',
 		'std' => '',
@@ -512,7 +512,7 @@ $options[] = array(
 		$options[] = array(
             'desc' => __('Footer Copyright Text change.','promax'),
             'id' => 'promax_ftarea',
-            'std' => esc_attr__( 'Copyright  &#169; 2013 Theme by: ', 'promax' ) . '<a href="' . esc_url(__('http://www.insertcart.com/promax','promax')) . '" title="' . esc_attr__( 'wRock.Org', 'promax' ) . '">' . esc_attr__( 'wRock.Org', 'promax' ) . '</a>',
+            'std' => esc_attr__( 'Copyright  &#169; 2015 Theme by: ', 'promax' ) . '<a href="' . esc_url(__('http://www.insertcart.com/product/promax-wordpress-theme/','promax')) . '" title="' . esc_attr__( 'InsertCart.com', 'promax' ) . '">' . esc_attr__( 'InsertCart.com', 'promax' ) . '</a>',
              'type' => 'editor',
 			'settings' => $wp_editor_settings);
 

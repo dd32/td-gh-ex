@@ -1,47 +1,48 @@
 <?php
 
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-	include_once('baztro.php');
-	include_once('includes/installs.php');
-	include_once('includes/core/core.php');
+define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+require_once dirname( __FILE__ ) . '/inc/options-framework.php';
+include_once('baztro.php');
+include_once('includes/installs.php');
+include_once('includes/core/core.php');
+
+// Implement the Custom Header feature.
+require get_template_directory() . '/includes/custom-header.php';
+require get_template_directory() . '/includes/customizer.php';
+
+function promax_scripts() {
+	wp_enqueue_style( 'promax-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'promax-font-awesome', get_stylesheet_directory_uri() . '/font-awesome/css/font-awesome.min.css' );
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
 	
-	function promax_scripts() {
-		wp_enqueue_style( 'promax-style', get_stylesheet_uri() );
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-			wp_enqueue_script( 'comment-reply' );
-		}
-	add_action( 'wp_enqueue_scripts', 'promax_scripts' );
-
-
-
-function promax_hdmenu() {	
-		echo '<ul>';
-		if ('page' != get_option('show_on_front')) {
-		if (is_front_page())
-			$class = 'class="current_page_item home-icon"';
-			else
-			$class = 'class="home-icon"';
-			echo '<li ' . $class . ' ><a href="'.esc_url(home_url()) . '/"><img src="'. get_template_directory_uri() . '/images/home.jpg" width="26" height="24" alt="Home"/></a></li>';
-		}
-		wp_list_pages('title_li=');
-		echo '</ul>';
+		if (of_get_option('promax_favicon') != '') {
+			echo '<link rel="shortcut icon" href="' . esc_url(of_get_option('promax_favicon')) . '"/>' . "\n";
 	}
+	
+	//Custom css output	
+	$custom_css = html_entity_decode(of_get_option('promax_customcss'));
+	
+		wp_add_inline_style( 'promax-style', $custom_css );	  
+}
+add_action( 'wp_enqueue_scripts', 'promax_scripts' );
+
+
 
 add_filter( 'wp_nav_menu_items', 'promax_home_link', 10, 2 );
 
-function promax_home_link($items, $args) {
-	if (is_front_page() && $args->theme_location == 'primary')
+function promax_home_link($items, $promax_args) {
+	if (is_front_page() && $promax_args->theme_location == 'primary')
 	$class = 'class="current_page_item home-icon"';
 	else
 	$class = 'class="home-icon"';
 	$homeMenuItem =
 	'<li ' . $class . '>' .
-	$args->before .
+	$promax_args->before .
 	'<a href="' .esc_url(home_url( '/' )) . '" title="Home">' .
-	$args->link_before . '<img src="'. get_template_directory_uri() . '/images/home.jpg" width="26" height="24" alt="Home"/>' . $args->link_after .
+	$promax_args->link_before . '<i class="fa fa-home"></i>' . $promax_args->link_after .
 	'</a>' .
-	$args->after .
+	$promax_args->after .
 	'</li>';
 	$items = $homeMenuItem . $items;
 	return $items;
@@ -90,7 +91,8 @@ function promax_theme_setup() {
 		add_image_size( 'defaultthumb', 262, 200, true);
 		add_image_size( 'popularpost', 340, 135, true);
 		add_image_size( 'latestpostthumb', 75, 75, true);
-
+		//woocommerce plugin support
+		add_theme_support( 'woocommerce' );
 global $content_width;
 		if ( ! isset( $content_width ) ) {
 		$content_width = 670;
@@ -123,7 +125,7 @@ global $content_width;
 	$form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
 	<div><label class="screen-reader-text" for="s">' . __( 'Search for:','promax' ) . '</label>
 	<input type="text" value="' . get_search_query() . '" name="s" id="s" />
-	<input type="submit" id="searchsubmit" value="'. esc_attr__( 'Go' ) .'" />
+	<input type="submit" id="searchsubmit" value="'. esc_attr__( 'Go','promax' ) .'" />
 	</div>
 	</form>';
 
@@ -233,82 +235,71 @@ function promax_pagenavi() {
  * Include the TGM_Plugin_Activation class.
  */
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
-
 add_action( 'tgmpa_register', 'promax_register_required_plugins' );
-/**
- * Register the required plugins for this theme.
- *
- * In this example, we register two plugins - one included with the TGMPA library
- * and one from the .org repo.
- *
- * The variable passed to tgmpa_register_plugins() should be an array of plugin
- * arrays.
- *
- * This function is hooked into tgmpa_init, which is fired within the
- * TGM_Plugin_Activation class constructor.
- */
+
 function promax_register_required_plugins() {
 
-    /**
-     * Array of plugin arrays. Required keys are name and slug.
-     * If the source is NOT from the .org repo, then source is also required.
-     */
-    $plugins = array(
+   $plugins = array(
 
-        // This is an example of how to include a plugin pre-packaged with a theme.
-        array(
-             'name'      => 'Regenerate Thumbnails',
-            'slug'      => 'regenerate-thumbnails',
-           'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-            'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-            'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-        ),
+	
+		
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
+			'name'      => 'Regenerate Thumbnails',
+			'slug'      => 'regenerate-thumbnails',
+			'required'  => false,
+		),
 
-      
+	);
 
+
+	$config = array(
+		'id'           => 'tgmpa',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                      // Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins', // Menu slug.
+		'parent_slug'  => 'themes.php',            // Parent menu slug.
+		'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+		'has_notices'  => true,                    // Show admin notices or not.
+		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+		'message'      => '',                      // Message to output right before the plugins table.
+
+
+);	tgmpa( $plugins, $config );
+
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* Customize Comment Form
+  /*----------------------------------------------------------------------------------- */
+add_filter( 'comment_form_default_fields', 'promax_comment_form_fields' );
+function promax_comment_form_fields( $fields ) {
+    $commenter = wp_get_current_commenter();
+    
+    $req      = get_option( 'require_name_email' );
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+    $html5    = current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
+    
+    $fields   =  array(
+        'author' => '<div class="large-6 columns"><div class="row collapse prefix-radius"><div class="small-3 columns">' . '<span class="prefix"><i class="fa fa-user"></i>' . __( 'Name','promax' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</span> </div>' .
+                    '<div class="small-9 columns"><input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="20"' . $aria_req . ' /></div></div></div>',
+        'email'  => '<div class="large-6 columns"><div class="row collapse prefix-radius"><div class="small-3 columns">' . '<span class="prefix"><i class="fa fa-envelope-o"></i>' . __( 'Email','promax' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</span></div> ' .
+                    '<div class="small-9 columns"><input class="form-control" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="20"' . $aria_req . ' /></div></div></div>',
+        'url'    => '<div class="large-6 columns"><div class="row collapse prefix-radius"><div class="small-3 columns">' . '<span class="prefix"><i class="fa fa-external-link"></i>' . __( 'Website','promax' ) . '</span> </div>' .
+                    '<div class="small-9 columns"><input class="form-control" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div></div></div>'        
     );
+    
+    return $fields;
+    
+    
+}
 
-    /**
-     * Array of configuration settings. Amend each line as needed.
-     * If you want the default strings to be available under your own theme domain,
-     * leave the strings uncommented.
-     * Some of the strings are added into a sprintf, so see the comments at the
-     * end of each line for what each argument will be.
-     */
-    $config = array(
-        'default_path' => '',                      // Default absolute path to pre-packaged plugins.
-        'menu'         => 'tgmpa-install-plugins', // Menu slug.
-        'has_notices'  => true,                    // Show admin notices or not.
-        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-        'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-        'message'      => '',                      // Message to output right before the plugins table.
-        'strings'      => array(
-            'page_title'                      => __( 'Install Required Plugins', 'promax' ),
-            'menu_title'                      => __( 'Install Plugins', 'promax' ),
-            'installing'                      => __( 'Installing Plugin: %s', 'promax' ), // %s = plugin name.
-            'oops'                            => __( 'Something went wrong with the plugin API.', 'promax' ),
-            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ), // %1$s = plugin name(s).
-            'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ), // %1$s = plugin name(s).
-            'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s).
-            'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s).
-            'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s).
-            'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ), // %1$s = plugin name(s).
-            'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ), // %1$s = plugin name(s).
-            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), // %1$s = plugin name(s).
-            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
-            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins' ),
-            'return'                          => __( 'Return to Required Plugins Installer', 'promax' ),
-            'plugin_activated'                => __( 'Plugin activated successfully.', 'promax' ),
-            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'promax' ), // %s = dashboard link.
-            'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
-        )
-    );
-
-    tgmpa( $plugins, $config );
-
+add_filter( 'comment_form_defaults', 'promax_comment_form' );
+function promax_comment_form( $argsbutton ) {
+        $argsbutton['class_submit'] = 'button'; 
+    
+    return $argsbutton;
 }
 
 

@@ -2,7 +2,7 @@
 Thanks for Downloading ProMax theme
 --------------------------------------------------------
 I made this for free to use if you find any bug or error please
-You can directly contact us: http://www.insertcart.com/promax
+You can directly contact us: http://www.insertcart.com/product/promax-wordpress-theme/
 also suggestion are welcome 
 
 
@@ -35,6 +35,15 @@ Custom Css:
 
 
 == Change log ==
+
+= 1.5.3 =
+* Added Font Awesome support
+* Updated comment form
+* Added support for custom header
+* Removed images use icons instead 
+* Fixed some issue
+* Fix some traslation issue
+* WooCommerce support added
 
 = 1.5.2 =
 * Body font change fix
@@ -105,5 +114,5 @@ Custom Css:
 *Social Icons: are provided by "Konstantin Kovshenin" URL: http://kovshenin.com/2011/freebies-a-simple-social-icon-set-gpl/ Which in under GPL v2
 *Images into /images/ folder that's are created by me abno.png, cat.png home.jpg, info.png, logo.png metaimg.png, quote.png, thumb.png are publish Under gpl v2
 *Fonts Open Sans: Designed by Steve Matteson Director of Ascender Corp. Styled by: https://profiles.google.com/107777320916704234605/about License: Apache License, version 2.0 with GPL
-
+* Font Awesome License: SIL OFL 1.1 URL: http://scripts.sil.org/OFL
 **This theme and file are created by me & publish under GPLv3

@@ -1,36 +1,6 @@
 <?php
 ob_start();
 
-/* ----------------------------------------------------------------------------------- */
-    /* Custom CSS Styles */
-    /* ----------------------------------------------------------------------------------- */
-
-    function promax_of_head_css() {
-        $output = '';
-        $custom_css = of_get_option('promax_customcss');
-        if ($custom_css <> '') {
-            $output .= $custom_css . "\n";
-        }
-// Output styles
-        if ($output <> '') {
-            $output = "<!-- Custom Styling -->\n<style type=\"text/css\">/*<![CDATA[*/\n" . $output . "/*]]>*/</style>\n";
-            echo $output;
-        }
-    }
-	
-	 add_action('wp_head', 'promax_of_head_css');
-
-	  /* ----------------------------------------------------------------------------------- */
-    /* Add Favicon
-      /*----------------------------------------------------------------------------------- */
-    function promax_childtheme_favicon() {
-        if (of_get_option('promax_favicon') != '') {
-            echo '<link rel="shortcut icon" href="' . of_get_option('promax_favicon') . '"/>' . "\n";
-        }
-    }
-
-    add_action('wp_head', 'promax_childtheme_favicon');
-	
 
 /* ----------------------------------------------------------------------------------- */
 /* Breadcrumbs Plugin
