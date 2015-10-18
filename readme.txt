@@ -69,6 +69,9 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.1.9
+ * Added dropdown option in latest and reandom post widget to show post count.
+ 
 Version 2.1.8
  * Added custom css field in theme option panel
  * Used get_template_part function palce of require

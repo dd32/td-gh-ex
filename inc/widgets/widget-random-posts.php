@@ -37,7 +37,13 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
                 'accesspress_mag_widgets_name' => 'random_posts_title',
                 'accesspress_mag_widgets_title' => __( 'Title', 'accesspress-mag' ),
                 'accesspress_mag_widgets_field_type' => 'title',
-            ),            
+            ),
+            'random_posts_count' => array(
+                'accesspress_mag_widgets_name' => 'random_posts_count',
+                'accesspress_mag_widgets_title' => __( 'Number of Posts', 'accesspress-mag' ),
+                'accesspress_mag_widgets_field_type' => 'select',
+                'accesspress_mag_widgets_field_options' => array( '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9',)
+            ),
         );
 
         return $fields;
@@ -54,12 +60,13 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
     public function widget( $args, $instance ) {
         extract( $args );
         $random_posts_title = $instance['random_posts_title'];
+        $random_posts_count = $instance['random_posts_count'];
         echo $before_widget; ?>
         <div class="random-posts clearfix">
            <h1 class="widget-title"><span><?php if( !empty( $random_posts_title ) ){ echo esc_attr( $random_posts_title ); } ?></span></h1>     
            <div class="random-posts-wrapper">
                 <?php
-                    $rand_posts_args = array( 'post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'orderby'=>'rand' );
+                    $rand_posts_args = array( 'post_type'=>'post','post_status'=>'publish','posts_per_page'=>$random_posts_count,'orderby'=>'rand' );
                     $rand_posts_query = new WP_Query($rand_posts_args);
                     if($rand_posts_query->have_posts()){
                         while($rand_posts_query->have_posts()){

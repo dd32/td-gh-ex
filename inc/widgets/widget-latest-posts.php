@@ -37,7 +37,13 @@ class Accesspress_mag_register_latest_posts extends WP_Widget {
                 'accesspress_mag_widgets_name' => 'latest_posts_title',
                 'accesspress_mag_widgets_title' => __('Title', 'accesspress-mag'),
                 'accesspress_mag_widgets_field_type' => 'title',
-            ),            
+            ),
+            'latest_posts_count' => array(
+                'accesspress_mag_widgets_name' => 'latest_posts_count',
+                'accesspress_mag_widgets_title' => __( 'Number of Posts', 'accesspress-mag' ),
+                'accesspress_mag_widgets_field_type' => 'select',
+                'accesspress_mag_widgets_field_options' => array( '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9',)
+            ),
         );
 
         return $fields;
@@ -54,12 +60,13 @@ class Accesspress_mag_register_latest_posts extends WP_Widget {
     public function widget( $args, $instance ) {
         extract( $args );
         $latest_posts_title = $instance[ 'latest_posts_title' ];
+        $latest_posts_count = $instance[ 'latest_posts_count' ];
         echo $before_widget; ?>
         <div class="latest-posts clearfix">
            <h1 class="widget-title"><span><?php if( !empty( $latest_posts_title ) ){ echo esc_attr( $latest_posts_title ); } ?></span></h1>     
            <div class="latest-posts-wrapper">
                 <?php
-                    $latest_posts_args = array( 'post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>3, 'order'=>'DESC' );
+                    $latest_posts_args = array( 'post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>$latest_posts_count, 'order'=>'DESC' );
                     $latest_posts_query = new WP_Query( $latest_posts_args );
                     if($latest_posts_query->have_posts()){
                         while($latest_posts_query->have_posts()){
