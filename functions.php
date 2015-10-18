@@ -189,31 +189,20 @@ require get_template_directory() . '/inc/class/class-custom-switch.php';
  */
 require get_template_directory() . '/inc/class/class-custom-categories.php';
 
+
 /**
  * AccessPress More Themes
  */
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
-
-// Add stylesheet and JS for upsell page.
-function accesspress_store_upsell_style() {
-	wp_enqueue_style( 'upsell-style', get_template_directory_uri() . '/css/upsell.css');
-}
-
 // Add upsell page to the menu.
 function accesspress_store_add_upsell() {
-	$page = add_theme_page(
+	add_theme_page(
 		__( 'More Themes', 'accesspress-store' ),
 		__( 'More Themes', 'accesspress-store' ),
 		'administrator',
-		'accesspress-store-themes',
+		'accesspressstore-themes',
 		'accesspress_store_display_upsell'
 	);
-
-	add_action( 'admin_print_styles-' . $page, 'accesspress_store_upsell_style' );
 }
 add_action( 'admin_menu', 'accesspress_store_add_upsell', 11 );
 
@@ -223,127 +212,105 @@ function accesspress_store_display_upsell() {
 	$directory_uri = get_template_directory_uri();
 	?>
 	<div class="wrap">
-		<div class="container-fluid">
-			<div id="upsell_container">  
-				<div class="row">
-					<div id="upsell_header" class="col-md-12">
-						<h2>
-							<a href="https://accesspressthemes.com/" target="_blank">
-								<img src="<?php echo get_template_directory_uri(); ?>/inc/images/logo.png"/>
-							</a>
-						</h2>
-						<h3><?php _e( 'Product of AccessPress Themes', 'accesspress-store' ); ?></h3>
+	<h1 style="margin-bottom:20px;">
+	<img src="<?php echo get_template_directory_uri(); ?>/inc/images/accesspressthemes.png"/>
+	<?php echo sprintf(__( 'More Themes from <a href="%s" target="_blank">AccessPress Themes</a>', 'accesspress-store' ) , esc_url('https://accesspressthemes.com/'))?>
+	</h1>
+
+	<div class="theme-browser rendered">
+		<div class="themes">
+		<?php
+		// Set the argument array with author name.
+		$args = array(
+			'author' => 'access-keys',
+		);
+		// Set the $request array.
+		$request = array(
+			'body' => array(
+				'action'  => 'query_themes',
+				'request' => serialize( (object)$args )
+			)
+		);
+		$themes = accesspresslite_get_themes( $request );
+		$active_theme = wp_get_theme()->get( 'Name' );
+		$counter = 1;
+		// For currently active theme.
+		foreach ( $themes->themes as $theme ) {
+			if( $active_theme == $theme->name ) {?>
+
+				<div id="<?php echo $theme->slug; ?>" class="theme active">
+					<div class="theme-screenshot">
+						<img src="<?php echo $theme->screenshot_url ?>"/>
+					</div>
+					<h3 class="theme-name" id="accesspress-parallax-name"><strong><?php _e('Active','accesspress-store'); ?></strong>: <?php echo $theme->name; ?></h3>
+					<div class="theme-actions">
+						<a class="button button-secondary activate" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>"><?php _e('Customize','accesspress-store'); ?></a>
 					</div>
 				</div>
-				<div id="upsell_themes" class="row">
-					<?php
-					// Set the argument array with author name.
-					$args = array(
-						'author' => 'access-keys',
-					);
-					// Set the $request array.
-					$request = array(
-						'body' => array(
-							'action'  => 'query_themes',
-							'request' => serialize( (object)$args )
-						)
-					);
-					$themes = accesspress_store_get_themes( $request );
-					$active_theme = wp_get_theme()->get( 'Name' );
-					$counter = 1;
-					// For currently active theme.
-					foreach ( $themes->themes as $theme ) {
-						if( $active_theme == $theme->name ) {?>
+			<?php
+			$counter++;
+			break;
+			}
+		}
 
-							<div id="<?php echo $theme->slug; ?>" class="theme-container col-md-6 col-lg-4">
-								<div class="image-container">
-									<img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
-									<div class="theme-description">
-										<p><?php echo $theme->description; ?></p>
-									</div>
-								</div>
-								<div class="theme-details active">
-									<span class="theme-name"><?php echo $theme->name; ?></span>
-									
+		// For all other themes.
+		foreach ( $themes->themes as $theme ) {
+			if( $active_theme != $theme->name ) {
+				// Set the argument array with author name.
+				$args = array(
+					'slug' => $theme->slug,
+				);
+				// Set the $request array.
+				$request = array(
+					'body' => array(
+						'action'  => 'theme_information',
+						'request' => serialize( (object)$args )
+					)
+				);
+				$theme_details = accesspresslite_get_themes( $request );
+			?>
+				<div id="<?php echo $theme->slug; ?>" class="theme">
+					<div class="theme-screenshot">
+						<img src="<?php echo $theme->screenshot_url ?>"/>
+					</div>
 
-									<a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>">Customize</a>
-									<a class="button button-secondary customize right activate" target="_blank" href="javascript:void(0)">Activate</a>
-								</div>
-							</div>
-						<?php
-						$counter++;
-						break;
-						}
-					}
-					// For all other themes.
-					foreach ( $themes->themes as $theme ) {
-						if( $active_theme != $theme->name ) {
-							// Set the argument array with author name.
-							$args = array(
-								'slug' => $theme->slug,
-							);
-							// Set the $request array.
-							$request = array(
-								'body' => array(
-									'action'  => 'theme_information',
-									'request' => serialize( (object)$args )
-								)
-							);
-							$theme_details = accesspress_store_get_themes( $request );
+					<h3 class="theme-name"><?php echo $theme->name; ?></h3>
+
+					<div class="theme-actions">
+						<?php if( wp_get_theme( $theme->slug )->exists() ) { ?>
+							<!-- Show the tick image notifying the theme is already installed. -->
+							<img data-toggle="tooltip" title="<?php _e( 'Already installed', 'accesspress-store' ); ?>" data-placement="bottom" class="theme-exists" src="<?php echo $directory_uri ?>/inc/images/right.png"/>
+							<!-- Activate Button -->
+							<a  class="button button-secondary activate"
+								href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" ><?php _e('Activate','accesspress-store') ?></a>
+						<?php }else {
+							// Set the install url for the theme.
+							$install_url = add_query_arg( array(
+									'action' => 'install-theme',
+									'theme'  => $theme->slug,
+								), self_admin_url( 'update.php' ) );
 						?>
-							<div id="<?php echo $theme->slug; ?>" class="theme-container col-md-6 col-lg-4 <?php echo $counter % 3 == 1 ? 'no-left-megin' : ""; ?>">
-								<div class="image-container">
-									<img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
-									<!-- <div class="theme-description">
-										<p><?php //echo $theme->description; ?></p>
-									</div> -->
-								</div>
-								<div class="theme-details">
-									<span class="theme-name"><?php echo $theme->name; ?></span>
-									<!-- Check if the theme is installed -->
-									<?php if( wp_get_theme( $theme->slug )->exists() ) { ?>
-										<!-- Show the tick image notifying the theme is already installed. -->
-										<img data-toggle="tooltip" title="<?php _e( 'Already installed', 'accesspress-store' ); ?>" data-placement="bottom" class="theme-exists" src="<?php echo $directory_uri ?>/core/images/tick.png"/>
-										<!-- Activate Button -->
-										<a  class="button button-primary activate right"
-											href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" >Activate</a>
-									<?php }
-									else {
-										// Set the install url for the theme.
-										$install_url = add_query_arg( array(
-												'action' => 'install-theme',
-												'theme'  => $theme->slug,
-											), self_admin_url( 'update.php' ) );
-									?>
-										<!-- Install Button -->
-										<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-primary install right" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>" ><?php _e( 'Install Now', 'accesspress-store' ); ?></a>
-									<?php } ?>
-									<!-- Preview button -->
-									<a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>"><?php _e( 'Live Preview', 'accesspress-store' ); ?></a>
-								</div>
-							</div>
-							<?php
-							$counter++;
-						}
-					}?>
+							<!-- Install Button -->
+							<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-secondary activate" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>" ><?php _e( 'Install Now', 'accesspress-store' ); ?></a>
+						<?php } ?>
+
+						<a class="button button-primary load-customize hide-if-no-customize" target="_blank" href="<?php echo $theme->preview_url; ?>"><?php _e( 'Live Preview', 'accesspress-store' ); ?></a>
+					</div>
 				</div>
-			</div>
+				<?php
+			}
+		}?>
 		</div>
 	</div>
-<script>
-	jQuery(function () {
-		jQuery('.download').tooltip();
-		jQuery('.theme-exists').tooltip();
-	});
-</script>
+	</div>
 <?php
 }
 
 // Get all themeisle themes by using API.
-function accesspress_store_get_themes( $request ) {
+function accesspresslite_get_themes( $request ) {
 
 	// Generate a cache key that would hold the response for this request:
-	$key = 'accesspress-store_' . md5( serialize( $request ) );
+	$key = 'accesspresslite_' . md5( serialize( $request ) );
 
 	// Check transient. If it's there - use that, if not re fetch the theme
 	if ( false === ( $themes = get_transient( $key ) ) ) {

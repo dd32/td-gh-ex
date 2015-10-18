@@ -45,6 +45,11 @@ class accesspress_cta_video extends WP_Widget {
                 'accesspress_store_widgets_field_type' => 'textarea',
                 'accesspress_store_widgets_row' => '4'
             ),
+            'bg_image' => array(
+               'accesspress_store_widgets_name' => 'access_store_image',
+               'accesspress_store_widgets_title' => __('Background Upload Image', 'accesspress-store'),
+               'accesspress_store_widgets_field_type' => 'upload',
+            ),
             'cta_video_email' => array(
                 'accesspress_store_widgets_name' => 'cta_video_iframe',
                 'accesspress_store_widgets_title' => __('Video Iframe', 'accesspress-store'),
@@ -89,7 +94,16 @@ class accesspress_cta_video extends WP_Widget {
         $cta_video_iframe = wp_kses($instance['cta_video_iframe'], $allow_tag);
         $cta_video_btn_text = $instance['cta_video_btn_text'];
         $cta_video_btn_url = $instance['cta_video_btn_url'];
-        echo $before_widget; ?>
+        $youtube_bg = get_template_directory_uri() . '/images/youtube.jpg';
+        $bgfull_image = isset($instance['access_store_image'])? $instance['access_store_image'] : $youtube_bg;
+        if(empty($bgfull_image)){
+            $bgfull_image = $youtube_bg;
+        }
+        echo $before_widget;
+?>
+    <style type="text/css">
+        #ap-cta-video { background-image: url(<?php echo $bgfull_image; ?>); }
+    </style>
         <div class="cta-video clearfix">
             <div class="cta-wrap-left wow fadeInBounce" data-wow-delay="1s" data-wow-duration="2s">
                 <?php echo $cta_video_iframe ; ?>

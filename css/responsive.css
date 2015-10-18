@@ -725,18 +725,20 @@
     .header-callto {
         float:none;
         display:block;
-        text-align:left;
+        text-align:center;
     }
     .view-cart,    
     .login-woocommerce{
-        float:left;
+        float:none;
         margin:0px;
         padding:0px 5px; 
+        display: inline-block;
     }
     a.quick-wishlist{
-        float:left;
+        float:none;
         padding:0px 5px; 
         margin: 0 !important;
+        display: inline-block;
     }
     .search-form{
         float:right;
@@ -1902,12 +1904,16 @@
     .view-cart, .login-woocommerce,
     a.quick-wishlist
     {
-        display: none;
+     
     }
     .search-form{
-        width:auto;
-        margin:0 auto;
-        float:none; 
+         margin: 10px auto 0;
+    width: 100%;
+        float:right; 
+    }
+
+    .searchform{
+        position: relative;
     }
     .style_two .caption .promo-desc-title, .style_two .caption .promo-desc{
         font-size: 19px;

@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 1.0.9 =
+** Add the options for upload background image for youtube video section.
+** fixed the header style for login,wishlist and cart. 
+
 = 1.0.8 =
 ** Fixed hierarchy of parent category and child category in WooCommerce Product Category.
 ** Fixed the header css bug. 

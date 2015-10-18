@@ -164,7 +164,7 @@ function accesspress_paymentlogo_setting($wp_customize){
         'sanitize_callback' => 'accesspress_store_sanitize_text',
         ));
 
-    $our_product = '<a class="8dt-view-more-themes" target="_blank" href="'.admin_url().'themes.php?page=accesspress-store-themes">'.__('More Free Themes','accesspress-store').'</a> <br />';
+    $our_product = '<a target="_blank" href="'.admin_url().'themes.php?page=accesspressstore-themes">'.__('More Free Themes','accesspress-store').'</a> <br />';
 
     $wp_customize->add_control( new Theme_Info_Product_Custom_Control( $wp_customize ,'theme_info_more_theme',array(
         'label' => __( 'More Free Themes' , 'accesspress-store' ),
@@ -177,7 +177,7 @@ function accesspress_paymentlogo_setting($wp_customize){
         'sanitize_callback' => 'accesspress_store_sanitize_text',
         ));
 
-    $our_product = '<a target="_blank" href="https://accesspressthemes.com/wordpress-themes/">'.__('AccessPRess PRO Themes','accesspress-store').'</a> <br />';
+    $our_product = '<a target="_blank" href="https://accesspressthemes.com/wordpress-themes/">'.__('AccessPress PRO Themes','accesspress-store').'</a> <br />';
 
     $wp_customize->add_control( new Theme_Info_Product_Custom_Control( $wp_customize ,'theme_info_pro_theme',array(
         'label' => __( 'AccessPress PRO Themes' , 'accesspress-store' ),
@@ -256,7 +256,7 @@ if(class_exists( 'WP_Customize_control')){
                 <span class="customize-text_editor_desc">
                     <?php //echo wp_kses_post( $this->description ); ?>
                   
-                          <img src="<?php echo get_template_directory_uri() ?>/inc/images/feature-list-pro.png"/>
+                          <img src="<?php echo get_template_directory_uri() ?>/inc/images/feature-list-pro.jpg"/>
                               <ul class="admin-pro-feature-list">   
                         <li><span><?php _e('Fully built on customizer!','accesspress-store'); ?> </span></li>
                         <li><span><?php _e('Next generation WooCommerce theme','accesspress-store'); ?> </span></li>
