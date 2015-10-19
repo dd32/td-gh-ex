@@ -50,6 +50,7 @@ function attitude_constants() {
 	define( 'ATTITUDE_IMAGES_URL', ATTITUDE_PARENT_URL . '/images' );
 	define( 'ATTITUDE_LIBRARY_URL', ATTITUDE_PARENT_URL . '/library' );
 	define( 'ATTITUDE_ADMIN_URL', ATTITUDE_LIBRARY_URL . '/admin' );
+	define( 'ATTITUDE_ADMIN_JS_URL', ATTITUDE_ADMIN_URL . '/js' );
 	define( 'ATTITUDE_JS_URL', ATTITUDE_LIBRARY_URL . '/js' );
 	define( 'ATTITUDE_CSS_URL', ATTITUDE_LIBRARY_URL . '/css' );
 	define( 'ATTITUDE_FUNCTIONS_URL', ATTITUDE_LIBRARY_URL . '/functions' );

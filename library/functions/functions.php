@@ -378,4 +378,17 @@ if ( !function_exists('attitude_wp_page_menu_filter') ) {
 
 /**************************************************************************************/
 
+add_action( 'admin_print_scripts', 'attitude_media_js' );
+/**
+ * Register scripts for image upload
+ *
+ * @uses wp_register_script
+ * Hooked to admin_print_scripts action hook
+ */
+function attitude_media_js() {
+    wp_enqueue_script( 'attitude_meta_upload_widget', ATTITUDE_ADMIN_JS_URL . '/add-image-script-widget.js', array( 'jquery','media-upload','thickbox' ) );
+ 	 wp_enqueue_style('thickbox');
+    wp_enqueue_script('thickbox');
+}
+
 ?>

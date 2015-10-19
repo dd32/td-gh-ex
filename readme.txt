@@ -19,7 +19,7 @@ are licensed under GNU General Public License version 2, see file license.txt.
 The exceptions to this license are as follows:
 * The script html5.js is licensed under MIT
 * The script jquery.cycle.all.js is dual licensed under GPL & MIT
-* The script attitude_customizer.js is themehorse own creation which is licensed under GPL & MIT
+* The script attitude_customizer.js and add-image-script-widget.js is themehorse own creation which is licensed under GPL & MIT
 * The social media icons are the theme's designer personal creations and are free for personal and commercial use.
 
 == Theme Notes ==

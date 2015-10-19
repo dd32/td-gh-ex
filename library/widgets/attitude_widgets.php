@@ -73,6 +73,7 @@ function attitude_widgets_init() {
 	register_widget( "attitude_service_widget" );
 	register_widget( "attitude_recent_work_widget" );
 	register_widget( "attitude_Widget_Testimonial" );
+	register_widget( "attitude_promobox_widget" );
 	
 }
 
@@ -426,6 +427,86 @@ class attitude_Widget_Testimonial extends WP_Widget {
 		<input class="widefat" id="<?php echo $this->get_field_id('byline'); ?>" name="<?php echo $this->get_field_name('byline'); ?>" type="text" value="<?php echo esc_attr($byline); ?>" /></p>
 
 <?php
+	}
+}
+/**************************************************************************************/
+/**
+ * Widget for business layout to shows Promo Box.
+ * Construct the widget.
+ * i.e. Primay Promotional Box, Secondary Promotional Box, Redirect Button Text and Redirect Button Link
+ */
+class attitude_promobox_widget extends WP_Widget {
+	function attitude_promobox_widget() {
+		$widget_ops  = array('classname' => 'widget_promotional_bar', 'description' => __('Display PromoBox ( Business Layout )', 'attitude'));
+		$control_ops = array('width'     => 200, 'height'     => 250);
+		parent::__construct(false, $name = __('Theme Horse: PromoBox', 'attitude'), $widget_ops, $control_ops);
+	}
+	function widget($args, $instance) {
+		extract($args);
+		$promotional_img_background = apply_filters( 'promotional_img_background', empty( $instance['promotional_img_background'] ) ? '' : $instance['promotional_img_background'], $instance,  $this->id_base );
+		$widget_primary   = apply_filters('widget_primary', empty($instance['widget_primary'])?'':$instance['widget_primary'], $instance, $this->id_base);
+		$widget_secondary = apply_filters('widget_secondary', empty($instance['widget_secondary'])?'':$instance['widget_secondary'], $instance, $this->id_base);
+		$redirect_text    = apply_filters('redirect_text', empty($instance['redirect_text'])?'':$instance['redirect_text'], $instance);
+		$widget_redirecturl = apply_filters('widget_redirecturl', empty($instance['widget_redirecturl'])?'':$instance['widget_redirecturl'], $instance, $this->id_base);
+		echo $before_widget; ?>
+		<div class="promotional_bar_content" <?php if(!empty($promotional_img_background)){ ?> style="background-image:url('<?php echo esc_url($promotional_img_background);?>');" <?php } ?> >
+		<?php
+			if (!empty($widget_primary)) {echo '<div class="promotional-text">'.esc_html($widget_primary);}?> <span> <?php echo esc_html($widget_secondary);
+			?> </span> <?php echo '</div><!-- .promotional-text -->';
+			?> <a class="call-to-action" href="<?php echo esc_html($widget_redirecturl);?>" title="<?php echo $redirect_text;?>"><?php echo esc_html($redirect_text);
+			?></a>
+		</div><!-- .promotional_bar_content -->
+		<?php
+		echo $after_widget;
+	}
+	function update($new_instance, $old_instance) {
+		$instance                       = $old_instance;
+		$instance['promotional_img_background']     = strip_tags($new_instance['promotional_img_background']);
+		$instance['widget_primary']     = esc_textarea($new_instance['widget_primary']);
+		$instance['widget_secondary']   = esc_textarea($new_instance['widget_secondary']);
+		$instance['widget_redirecturl'] = esc_url($new_instance['widget_redirecturl']);
+		$instance['redirect_text']      = strip_tags($new_instance['redirect_text']);
+		$instance['filter'] = isset($new_instance['filter']);
+		return $instance;
+	}
+	function form($instance) {
+		$instance           = wp_parse_args((array) $instance, array('promotional_img_background' => '','widget_primary' => '', 'widget_secondary' => '', 'redirect_text' => '', 'widget_redirecturl' => ''));
+		$promotional_img_background      = strip_tags($instance['promotional_img_background']);
+		$widget_primary     = esc_textarea($instance['widget_primary']);
+		$widget_secondary   = esc_textarea($instance['widget_secondary']);
+		$redirect_text      = strip_tags($instance['redirect_text']);
+		$widget_redirecturl = esc_url($instance['widget_redirecturl']);
+		?>
+			<p>
+				<label for="<?php echo $this->get_field_id('promotional_img_background');?>">
+						<?php _e('Background Image:', 'attitude');?>
+				</label>
+					<input class="upload1" type="text"  name="<?php echo $this->get_field_name('promotional_img_background'); ?>" value="<?php echo esc_url($promotional_img_background); ?>" />
+					<input class="upload-button1" name="<?php echo $this->get_field_name('promotional_img_background'); ?>" type="button" value="<?php esc_attr_e( 'Upload', 'attitude' ); ?>" />
+			</p>
+			<p>
+				<label for="<?php echo $this->get_field_id('widget_primary');?>">
+					<?php _e('Primary Promotional:', 'attitude');?>
+				</label>
+				<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('widget_primary');?>" name="<?php echo $this->get_field_name('widget_primary');?>"><?php echo $widget_primary;
+		?></textarea>
+			</p>
+					<?php _e('Secondary Promotional', 'attitude');?>
+				<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('widget_secondary');?>" name="<?php echo $this->get_field_name('widget_secondary');?>"><?php echo $widget_secondary;
+		?></textarea>
+			<p>
+				<label for="<?php echo $this->get_field_id('redirect_text');?>">
+					<?php _e('Redirect Text:', 'attitude');?>
+				</label>
+				<input class="widefat" id="<?php echo $this->get_field_id('redirect_text');?>" name="<?php echo $this->get_field_name('redirect_text');?>" type="text" value="<?php echo esc_attr($redirect_text);?>" />
+			</p>
+			<p>
+				<label for="<?php echo $this->get_field_id('widget_redirecturl');?>">
+					<?php _e('Redirect Url:', 'attitude');?>
+				</label>
+				<input class="widefat" id="<?php echo $this->get_field_id('widget_redirecturl');?>" name="<?php echo $this->get_field_name('widget_redirecturl');?>" type="text" value="<?php echo $widget_redirecturl;?>" />
+			</p>
+		<?php
 	}
 }
  ?>

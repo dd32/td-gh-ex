@@ -4,7 +4,7 @@ Theme URI: http://themehorse.com/themes/attitude
 Author: Theme Horse
 Author URI: http://themehorse.com
 Description: Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Theme is easily customizable with numerous theme options via Customize. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Available Translation: Traditional Chinese (Taiwan), Spanish, Norwegian (Nynorsk), German, Russian, Dutch, Italian and Danish. Get free support on http://themehorse.com/support-forum/
-Version: 3.0.3
+Version: 3.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, blue, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fluid-layout, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
@@ -1791,6 +1791,63 @@ div.bbp-search-form button {
 /* Recent Work Widget*/
 .widget_recent_work {
 	margin-bottom: 10px;
+}
+
+/* Promotional Bar Widget */
+.widget_promotional_bar {
+	font-family: 'Philosopher', sans-serif;
+}
+.widget_promotional_bar .promotional_bar_content {
+	background-color: #05a9c5;
+	padding: 30px 15px;
+	text-align: center;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+}
+.widget_promotional_bar .promotional-text {
+	font-size: 24px;
+	line-height: 30px;
+	color: #fff;
+}
+.widget_promotional_bar .promotional-text span {
+	font-size: 13px;
+	line-height: 20px;
+	display: block;
+	padding-top: 5px;
+	font-family: "PT Sans",sans-serif;
+}
+.widget_promotional_bar .call-to-action {
+	padding: 8px 15px 0;
+	margin-top: 20px;
+	color: #494949;
+	font-size: 18px;
+	display: inline-block;
+	border: 2px solid #fff;
+	text-align: center;
+	height: 28px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;	
+	background: #b5e6ee;
+	background: -webkit-linear-gradient(#d0eef4, #b5e6ee);
+	background: -moz-linear-gradient(#d0eef4, #b5e6ee);
+	background: -ms-linear-gradient(#d0eef4, #b5e6ee);
+	background: -o-linear-gradient(#d0eef4, #b5e6ee);
+	background: -webkit-gradient(#d0eef4, #b5e6ee);
+	background: linear-gradient(#d0eef4, #b5e6ee);
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);	
+	text-shadow:0 1px 0 rgba(251, 251, 251, 0.7)
+}
+.widget_promotional_bar .call-to-action:hover {
+	background: -webkit-linear-gradient(#E3F5F9, #b5e6ee);
+	background: -moz-linear-gradient(#E3F5F9, #b5e6ee);
+	background: -ms-linear-gradient(#E3F5F9, #b5e6ee);
+	background: -o-linear-gradient(#E3F5F9, #b5e6ee);
+	background: -webkit-gradient(#E3F5F9, #b5e6ee);
+	background: linear-gradient(#E3F5F9, #b5e6ee);
 }
 
 /* WP Caption */

@@ -1,4 +1,7 @@
 == Change Log ==
+= 3.0.4 =
+* Feature - New Widget Theme Horse: PromoBox added 
+
 = 3.0.3 =
 * Fix - Default value issue fixed for checkbox options
 
