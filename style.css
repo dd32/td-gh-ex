@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.329
+Version: 1.331
 Tags: black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout, rtl-language-support, microformats
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -206,7 +206,30 @@ b{
 em,
 i{
     font-style: italic;
+    padding:0 .3em;
 }
+/* for google fonts material-icons */
+i.material-icons{
+    vertical-align:middle;
+    font-size:138.5%;
+   font-style: normal;
+}
+u{
+    text-decoration:none;
+    border-color:#888;
+    border-bottom:3px double rgba(127,127,127,.5);
+}
+
+details summary{
+    margin-bottom:1em;
+    display:inline-block;
+    cursor: pointer;
+}
+details[open] summary+div{
+    padding:1em;
+    box-sizing:border-box;
+}
+
 td{
     line-height:1.35;
 }
@@ -581,6 +604,11 @@ select,
 option,
 select{
     margin:auto;
+}
+kbd{
+   display:inline-block;
+   margin:0 .1em;
+   padding:.1em .6em;
 }
 input[type="text"],
 input[type="submit"],
@@ -2749,16 +2777,16 @@ div.raindrops-tab-page h3{
  * preset padding dlass
  */
 .pad-s{
-    margin:14px;
     padding:7px;
+    box-sizing:border-box;
 }
 .pad-m{
-    margin:14px;
     padding:14px;
+    box-sizing:border-box;
 }
 .pad-l{
-    margin:14px;
     padding:21px;
+    box-sizing:border-box;
 }
 .entry-title.pad-s:not(.sticky),
 .entry-title.pad-m:not(.sticky),
@@ -4235,7 +4263,7 @@ blockquote .cite-url{
 }
 
 /* @1.329 ol.sectioned class render sectioned number lists */
-.entry-content .sectioned ul,
+/*.entry-content .sectioned ul,*/
 .entry-content .sectioned ol,
 .entry-content .sectioned{
     counter-reset: sectioned;
@@ -4246,4 +4274,27 @@ blockquote .cite-url{
 .entry-content .sectioned li:before {
     content : counters(sectioned, '.') '.\00a0 \00a0 \00a0';
     counter-increment : sectioned;
+}
+
+.entry-content .sectioned li li li ul li{
+    list-style:lower-alpha inside;
+}
+.entry-content .sectioned li li li ol li{
+    list-style:lower-roman inside;
+}
+.entry-content .sectioned li li li li:before {
+    content:'';
+}
+/* for status */
+.page .rd-alert,
+.post .rd-alert{
+    color:#e14d43;
+}
+.page .rd-info,
+.post .rd-info{
+    color:#56b274;
+}
+.page .rd-notice,
+.post .rd-notice{
+   color: #a38c08;
 }

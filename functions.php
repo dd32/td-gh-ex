@@ -10550,6 +10550,27 @@ if ( !function_exists( 'raindrops_content_shareing' ) ) {
 		return 'data:text/plain;charset=utf-8,' . sprintf( $html, $style, $site_icon, $permalink, $title, $excerpt, $additional_filter );
 	}
 }
+
+if ( !function_exists( 'raindrops_localize_style_add' ) ) {
+	/**
+	 * 
+	 * @param type $style
+	 * @return array
+	 * @1.330
+	 */	
+	function raindrops_localize_style_add( $style ) {
+
+		 $locale = get_locale();
+		 
+		if ( false !== ( $url = raindrops_locate_url( 'fonts.css' ) ) ) {
+			$style[] = $url;
+		}
+		if ( false !== ( $url = raindrops_locate_url( 'languages/css/'. $locale. '.css' ) ) ) {
+			$style[] = $url;
+		}
+		return $style;
+	}
+}
 /**
  *
  *
