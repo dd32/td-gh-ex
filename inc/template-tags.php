@@ -68,56 +68,91 @@ if ( ! function_exists( 'rubine_display_postmeta' ) ) :
 		$theme_options = rubine_theme_options();
 
 		// Display Date unless user has deactivated it via settings
-		if ( isset($theme_options['meta_date']) and $theme_options['meta_date'] == true ) : ?>
+		if ( true == $theme_options['meta_date'] ) :
 		
-			<span class="meta-date">
-			<?php printf('<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>', 
-					esc_url( get_permalink() ),
-					esc_attr( get_the_time() ),
-					esc_attr( get_the_date( 'c' ) ),
-					esc_html( get_the_date() )
-				);
-			?>
-			</span>
-		
-		<?php endif; 
+			rubine_meta_date();
+					
+		endif; 
 		
 		// Display Author unless user has deactivated it via settings
-		if ( isset($theme_options['meta_author']) and $theme_options['meta_author'] == true ) : ?>		
-			
-			<span class="meta-author author vcard">
-			<?php printf('<a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a>', 
-					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-					esc_attr( sprintf( __( 'View all posts by %s', 'rubine-lite' ), get_the_author() ) ),
-					get_the_author()
-				);
-			?>
-			</span>
-			
-		<?php endif; 
+		if ( true == $theme_options['meta_author'] ) :	
+		
+			rubine_meta_author();
+		
+		endif; 
 		
 		// Display Author unless user has deactivated it via settings
-		if ( isset($theme_options['meta_category']) and $theme_options['meta_category'] == true ) : ?>
+		if ( true == $theme_options['meta_category'] ) :
 		
-			<span class="meta-category">
-				<?php echo get_the_category_list(', '); ?>
-			</span>
+			rubine_meta_categories();
 		
-		<?php endif;
+		endif;
 		
 		// Display Comments
-		if ( comments_open() ) : ?>
+		if ( comments_open() ) :
 			
-			<span class="meta-comments">
-				<?php comments_popup_link( __('Leave a comment', 'rubine-lite'),__('One comment','rubine-lite'),__('% comments','rubine-lite') ); ?>
-			</span>
+			rubine_meta_comments();
 			
-		<?php endif;
+		endif;
 
 	}
 
 endif;
 
+
+// Display Post Date
+function rubine_meta_date() { ?>		
+		
+	<span class="meta-date">
+	<?php printf('<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>', 
+			esc_url( get_permalink() ),
+			esc_attr( get_the_time() ),
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() )
+		);
+	?>
+	</span>
+	
+<?php
+}
+
+
+// Display Post Author
+function rubine_meta_author() { ?>		
+		
+	<span class="meta-author author vcard">
+	<?php printf('<a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a>', 
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_attr( sprintf( __( 'View all posts by %s', 'rubine-lite' ), get_the_author() ) ),
+			get_the_author()
+		);
+	?>
+	</span>
+			
+<?php
+}
+
+
+// Display Post Categories
+function rubine_meta_categories() { ?>		
+			
+	<span class="meta-category">
+		<?php echo get_the_category_list(', '); ?>
+	</span>
+			
+<?php
+}
+
+
+// Display Post Meta Comments
+function rubine_meta_comments() { ?>		
+		
+	<span class="meta-comments">
+		<?php comments_popup_link( __('Leave a comment', 'rubine-lite'),__('One comment','rubine-lite'),__('% comments','rubine-lite') ); ?>
+	</span>
+			
+<?php
+}
 
 // Display Post Thumbnail on single posts
 function rubine_display_thumbnail_single() {
