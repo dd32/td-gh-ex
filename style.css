@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/apex/
 Author: Compete Themes
 Author URI: https://www.competethemes.com/
 Description: Apex is a sophisticated, minimalist theme. It looks great and performs wonderfully on phones, tablets, laptops, and everything in between. As a fast, responsive, accessibility-ready, and translation-ready theme, Apex is a theme you can trust to present your content to the world. See our fully setup demo here: https://www.competethemes.com/apex-live-demo/
-Version: 1.10.2
+Version: 1.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, silver, white, light, fluid-layout, responsive-layout, two-columns, right-sidebar, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -67,10 +67,6 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   word-wrap: break-word;
   -ms-word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
 }
 
 .overflow-container {
@@ -350,6 +346,9 @@ a img {
 .archive-header span {
   font-weight: 700;
   color: #333333;
+}
+.archive-header p {
+  font-style: italic;
 }
 
 @media all and (min-width: 56.25em) {
@@ -1008,6 +1007,7 @@ li.pingback {
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 .featured-image > a {
   position: absolute;
@@ -1016,6 +1016,30 @@ li.pingback {
   bottom: 0;
   left: 0;
   font-size: 0;
+}
+.featured-image > a:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
+}
+.featured-image > a:focus:after {
+  opacity: 0.2;
+}
+.featured-image > img,
+.featured-image > a > img {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  min-height: 100%;
 }
 
 .post-container {
@@ -1031,6 +1055,14 @@ li.pingback {
 }
 .post-content iframe {
   max-width: 100%;
+}
+.post-content:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .singular .post-content a {
@@ -1296,5 +1328,3 @@ If you want to make CSS edits to your site, use the "Custom CSS" section in the 
 If you want more information about customizing Apex with CSS, check out this guide: https://www.competethemes.com/help/custom-css-apex/
 
 */
-
-/*# sourceMappingURL=style.css.map */

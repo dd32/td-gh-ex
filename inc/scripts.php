@@ -38,11 +38,15 @@ function ct_apex_load_scripts_styles() {
 
 	// HTML5 shiv
 	wp_enqueue_script('ct-apex-html5-shiv', get_template_directory_uri() . '/js/build/html5shiv.min.js');
-	wp_script_add_data( 'ct-apex-html5-shiv', 'conditional', 'IE 8' );
 
 	// respond.js - media query support
 	wp_enqueue_script('ct-apex-respond', get_template_directory_uri() . '/js/build/respond.min.js', '', '', true);
-	wp_script_add_data( 'ct-apex-respond', 'conditional', 'IE 8' );
+
+	// prevent fatal error on < WP 4.2 (load files unconditionally instead)
+	if ( function_exists( 'wp_script_add_data' ) ) {
+		wp_script_add_data( 'ct-apex-html5-shiv', 'conditional', 'IE 8' );
+		wp_script_add_data( 'ct-apex-respond', 'conditional', 'IE 8' );
+	}
 }
 add_action('wp_enqueue_scripts', 'ct_apex_load_scripts_styles' );
 
@@ -51,15 +55,6 @@ add_action('wp_enqueue_scripts', 'ct_apex_load_scripts_styles' );
  */
 function ct_apex_enqueue_admin_styles($hook){
 
-	// if is user profile page
-	if('profile.php' == $hook || 'user-edit.php' == $hook ){
-
-		// Enqueues all scripts, styles, settings, and templates necessary to use all media JavaScript APIs.
-		wp_enqueue_media();
-
-		// enqueue the JS needed to utilize media uploader on profile image upload
-		wp_enqueue_script('ct-apex-profile-image-uploader', get_template_directory_uri() . '/js/build/profile-image-uploader.min.js');
-	}
 	// if theme options page
 	if( 'appearance_page_apex-options' == $hook ) {
 

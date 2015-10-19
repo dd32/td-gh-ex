@@ -84,6 +84,7 @@
 jQuery(document).ready(function($){
 
     var body = $('body');
+    var main = $('#main');
     var siteHeader = $('#site-header');
     var titleContainer = $('#title-container');
     var toggleNavigation = $('#toggle-navigation');
@@ -94,15 +95,28 @@ jQuery(document).ready(function($){
     var socialMediaIcons = siteHeader.find('.social-media-icons');
     var menuLink = $('.menu-item').children('a');
 
+    removeToggleDropdownKeyboard();
+
     $(window).resize(function(){
         removeToggleDropdownKeyboard();
     });
+
+    toggleNavigation.on('click', openPrimaryMenu);
+    toggleDropdown.on('click', openDropdownMenu);
 
     $('.post-content').fitVids({
         customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="wordpress.tv"]'
     });
 
-    toggleNavigation.on('click', openPrimaryMenu);
+    // Jetpack infinite scroll event that reloads posts.
+    $( document.body ).on( 'post-load', function () {
+
+        // on search results page, move search bar to bottom of main when new posts loaded
+        if ( body.hasClass('search-results') ) {
+            $('.search-bottom').detach().appendTo( main );
+        }
+
+    } );
 
     function openPrimaryMenu() {
 
@@ -138,11 +152,9 @@ jQuery(document).ready(function($){
     }
 
     // display the dropdown menus
-    toggleDropdown.on('click', openDropdownMenu);
-
     function openDropdownMenu() {
 
-        if( $(window).width() < 800 ) {
+        if( window.innerWidth < 800 ) {
 
             // get the buttons parent (li)
             var menuItem = $(this).parent();
@@ -188,14 +200,12 @@ jQuery(document).ready(function($){
 
     function removeToggleDropdownKeyboard() {
 
-        if( $(window).width() > 799 ) {
-
+        if( window.innerWidth > 799 ) {
             toggleDropdown.attr('tabindex', -1);
         } else {
             toggleDropdown.attr('tabindex', '');
         }
     }
-    removeToggleDropdownKeyboard();
 
     /* allow keyboard access/visibility for dropdown menu items */
     menuLink.focus(function(){
