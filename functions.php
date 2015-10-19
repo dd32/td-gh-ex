@@ -167,3 +167,8 @@ require get_template_directory() . '/inc/apbasic-widgets.php';
  * Load TGM_Plugin_Activation class.
  */
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+/**
+ * Load TGM_Plugin_Activation class.
+ */
+require get_template_directory() . '/inc/apbasic-more.php';
