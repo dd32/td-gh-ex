@@ -95,6 +95,9 @@ Pattern Images
 
 
 ---------------------------------------------
+== Changelog ==
+Version 1.19
+* More Theme Page added
 
 == Changelog ==
 Version 1.18

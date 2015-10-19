@@ -205,4 +205,9 @@ require get_template_directory() . '/inc/panel/options-framework.php';
  */
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
+/**
+ * Load More Theme Page
+ */
+require get_template_directory() . '/inc/more-themes.php';
+
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/panel/' );
