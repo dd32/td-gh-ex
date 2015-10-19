@@ -89,6 +89,9 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.24.7
+* More Theme Page added
+
 Version 1.24.6
 * Menu Center alignment Bug fixed for the header 2 layout
 * New Plugin Suggested Via TGM Plugin Activation

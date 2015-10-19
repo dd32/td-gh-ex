@@ -221,6 +221,11 @@ require get_template_directory() . '/inc/accesspress-plugin-activation.php';
  */
 require get_template_directory() . '/inc/options-framework/options-framework.php';
 
+/**
+ * Load More Theme Page
+ */
+require get_template_directory() . '/inc/more-themes.php';
+
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/options-framework/' );
 
 function accesspress_ajax_script()
