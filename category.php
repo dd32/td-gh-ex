@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area eight columns">
+	<div id="primary" class="content-area col-sm-8">
 		<div id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>

@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-menu, featured-images, flexible-header, sticky-post
 
 == Description ==
-Responsive WordPress Theme.This theme made with Responsive Framework Skeleton v2.0.4. Used some css3 effects. You can use this theme for blog,portfolio etc.
+Bhost is a nice , clean , beautifull, Responsive and modern design free WordPress Theme. This theme made with Latest Bootstrap v3.3.5. You can use it for your corporate , personal , blog sites etc.
 
 == Installation ==
 
@@ -36,6 +36,9 @@ Underscores Theme is distributed under the terms of the GNU GPL.
 
 == Changelog ==
 
+= 1.2.1 - Oct 20 2015 =
+* Upgrade designs use twitter bootstrap and modify some functions
+
 = 1.2.0 - Oct 17 2015 =
 * Fixed php code on category.php and modify some css code line table , comment section and menu section
 
@@ -44,8 +47,7 @@ Underscores Theme is distributed under the terms of the GNU GPL.
 
 == Credits ==
 
-* Screenshot Image source from here https://www.pexels.com/photo/macbook-mockup-ping-pong-office-7082/ 
+* Twitter Bootstrap http://getbootstrap.com Copyright 2011-2015 Twitter, Inc.Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+* Screenshot Image source from here https://www.pexels.com/photo/city-sunny-people-street-2752/
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-* Skeleton www.getskeleton.com, (C) 2014, Dave Gamache, Free to use under the MIT license: http://www.opensource.org/licenses/mit-license.php
-* Hover.css, (C) 2014, Ian Lunn , Made available under a MIT License: http://www.opensource.org/licenses/mit-license.php
+* MeanMenu http://www.meanthemes.com/plugins/meanmenu/ . Licensed under GPL
