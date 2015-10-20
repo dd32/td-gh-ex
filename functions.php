@@ -13,7 +13,7 @@
 
 //define theme version
 if ( !defined( 'FULLFRAME_THEME_VERSION' ) ) {
-	define ( 'FULLFRAME_THEME_VERSION', '1.9' );
+	define ( 'FULLFRAME_THEME_VERSION', '2.1' );
 }
 
 /**

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-10-06 23:28+0545\n"
-"PO-Revision-Date: 2015-10-06 23:28+0545\n"
+"POT-Creation-Date: 2015-10-20 13:38+0545\n"
+"PO-Revision-Date: 2015-10-20 13:38+0545\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -183,57 +183,56 @@ msgstr "Ge ett bidrag nu"
 msgid "Review"
 msgstr "Review"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:19
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:18
 msgid "Options for Featured Content"
 msgstr "Alternativ för utvalt innehåll"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:21
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:33
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:20
 #: ../inc/fullframe-featured-content.php:57
 msgid "Featured Content"
 msgstr "Utvalt innehåll"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:27
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:26
 msgid "Featured Content Options"
 msgstr "Utvalt innehåll innehållsalternativ"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:51
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:43
 msgid "Enable Featured Content on"
 msgstr "Aktivera utvalt innehåll på"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:73
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:65
 msgid "Select Featured Content Layout"
 msgstr "Visa utvalt Innehåll"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:88
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:80
 msgid "Check to Move above Footer"
 msgstr "Kontrollera att flytta över sidfot"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:103
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:95
 msgid "Check to Enable Sliding Effect"
 msgstr "Check to Enable Sliding Effect"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:125
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:117
 msgid "Select Content Type"
 msgstr "Välj innehållstyp"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:140
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:132
 msgid "Leave field empty if you want to remove Headline"
 msgstr "Lämna fältet tomt om du vill ta bort rubriken"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:141
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:133
 msgid "Headline for Featured Content"
 msgstr "Rubriken för utvalt innehåll"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:157
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:149
 msgid "Leave field empty if you want to remove Sub-headline"
 msgstr "Lämna fältet tomt om du vill ta bort sub rubrik"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:158
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:150
 msgid "Sub-headline for Featured Content"
 msgstr "Under rubriken för utvalt innehåll"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:174
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:166
 msgid ""
 "Save and refresh the page if No. of Featured Content is changed (Max no of "
 "Featured Content is 20)"
@@ -241,28 +240,28 @@ msgstr ""
 "Spara och uppdatera sidan om nej. av dagens innehåll ändras (Max inte av dagens "
 "innehåll är 20)"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:181
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:173
 msgid "No of Featured Content"
 msgstr "Antal av utvalt innehåll"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:196
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:188
 msgid "Check to Enable Title"
 msgstr "Check to Enable Title"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:218
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:210
 msgid "Display Content"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:234
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:226
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:196
 msgid "Featured Page"
 msgstr "Utvald sida"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:245
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:237
 msgid "Featured Content Background Settings"
 msgstr "Featured Content Background Settings"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:256
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:248
 msgid "Select/Add Background Image"
 msgstr "Select/Add Background Image"
 

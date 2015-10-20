@@ -1,5 +1,9 @@
 == Change log ==
 
+= 2.1 =
+* Bug Fixed: Featured Content Background Settings missing after version update( Reported By davidlspencer )
+* Updated responsive menu sidr js
+
 = 2.0 =
 * Added Lithuanian translation lt_LT.po and lt_LT.mo
 

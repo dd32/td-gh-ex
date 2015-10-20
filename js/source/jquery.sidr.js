@@ -1,5 +1,5 @@
  /*
- * Sidr - v1.2.1
+ * Sidr - v1.2.1.1 [17 Oct 2015 ]
  * https://github.com/artberri/sidr
  *
  * Copyright (c) 2013 Alberto Varela
@@ -102,14 +102,15 @@
         // Prepare page if container is body
         if($body.is('body')){
           scrollTop = $html.scrollTop();
-          $html.css('overflow-x', 'hidden').scrollTop(scrollTop);
+          //$html.css('overflow-x', 'hidden').scrollTop(scrollTop);
+          $html.css({'overflow-x':'hidden', 'position':'fixed'}).scrollTop(scrollTop);
         }
 
         // Open menu
         if(displace){
           $body.addClass('sidr-animating').css({
             width: $body.width(),
-            position: 'absolute'
+            position: 'fixed'
           }).animate(bodyAnimation, speed, function() {
             $(this).addClass(bodyClass);
           });
@@ -286,7 +287,12 @@
       if ( ! data ) {
 
         $this.data('sidr', name);
-        if('ontouchstart' in document.documentElement) {
+        //if('ontouchstart' in document.documentElement) {
+        
+        var hasTouchEvent, isMobileUserAgent;
+        isMobileUserAgent = navigator.userAgent.match(/(Android|Backerry|iPhone|iPod|ios|iOS|iPad|WebOS|Symbian|Windows Phone|Phone)/i) != null;
+        hasTouchEvent = isMobileUserAgent ? ("ontouchstart" in document.documentElement) : false;
+        if(hasTouchEvent) {
           $this.bind('touchstart', function(e) {
             var theEvent = e.originalEvent.touches[0];
             this.touched = e.timeStamp;
@@ -299,12 +305,10 @@
             }
           });
         }
-        else {
-          $this.click(function(e) {
-            e.preventDefault();
-            methods.toggle(name);
-          });
-        }
+        $this.click(function(e) {
+          e.preventDefault();
+          methods.toggle(name);
+        });
       }
     });
   };

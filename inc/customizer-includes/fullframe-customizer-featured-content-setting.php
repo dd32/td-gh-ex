@@ -13,26 +13,18 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	exit();
 }
 	// Featured Content Options
-	if ( 4.3 > get_bloginfo( 'version' ) ) {
-		$wp_customize->add_panel( 'fullframe_featured_content_options', array(
-		    'capability'     => 'edit_theme_options',
-			'description'    => __( 'Options for Featured Content', 'full-frame' ),
-		    'priority'       => 400,
-		    'title'    		 => __( 'Featured Content', 'full-frame' ),
-		) );
+	$wp_customize->add_panel( 'fullframe_featured_content_options', array(
+	    'capability'     => 'edit_theme_options',
+		'description'    => __( 'Options for Featured Content', 'full-frame' ),
+	    'priority'       => 400,
+	    'title'    		 => __( 'Featured Content', 'full-frame' ),
+	) );
 
-		$wp_customize->add_section( 'fullframe_featured_content_settings', array(
-			'panel'			=> 'fullframe_featured_content_options',
-			'priority'		=> 1,
-			'title'			=> __( 'Featured Content Options', 'full-frame' ),
-		) );
-	}
-	else {
-		$wp_customize->add_section( 'fullframe_featured_content_settings', array(
-			'priority'		=> 400,
-			'title'			=> __( 'Featured Content', 'full-frame' ),
-		) );
-	}	
+	$wp_customize->add_section( 'fullframe_featured_content_settings', array(
+		'panel'			=> 'fullframe_featured_content_options',
+		'priority'		=> 1,
+		'title'			=> __( 'Featured Content Options', 'full-frame' ),
+	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_option]', array(
 		'capability'		=> 'edit_theme_options',

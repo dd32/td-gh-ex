@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Responsive\n"
-"POT-Creation-Date: 2015-10-06 23:28+0545\n"
+"POT-Creation-Date: 2015-10-20 13:38+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: PA Angelini <nosencheres@free.fr>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -185,57 +185,56 @@ msgstr "Faire un don maintenant "
 msgid "Review"
 msgstr "Réviser"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:19
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:18
 msgid "Options for Featured Content"
 msgstr "Options de Contenu à la Une"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:21
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:33
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:20
 #: ../inc/fullframe-featured-content.php:57
 msgid "Featured Content"
 msgstr "Contenu à la Une"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:27
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:26
 msgid "Featured Content Options"
 msgstr "Options de Contenu à la Une"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:51
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:43
 msgid "Enable Featured Content on"
 msgstr "Activer Contenu à la Une"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:73
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:65
 msgid "Select Featured Content Layout"
 msgstr "Sélectionnez la mise en page du Contenu à la Une"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:88
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:80
 msgid "Check to Move above Footer"
 msgstr "Selectionner pour déplacer au dessus du pied de page"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:103
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:95
 msgid "Check to Enable Sliding Effect"
 msgstr "Sélectionner pour activer le mode \"défilement\""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:125
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:117
 msgid "Select Content Type"
 msgstr "Sélectionner le type de contenu "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:140
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:132
 msgid "Leave field empty if you want to remove Headline"
 msgstr "Laissez le champ vide si vous souhaitez supprimer le titre"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:141
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:133
 msgid "Headline for Featured Content"
 msgstr "Titre du Contenu à la Une"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:157
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:149
 msgid "Leave field empty if you want to remove Sub-headline"
 msgstr "Laissez le champ vide si vous souhaitez supprimer le sous-titre "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:158
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:150
 msgid "Sub-headline for Featured Content"
 msgstr "Sous-titre du Contenu à la Une"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:174
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:166
 msgid ""
 "Save and refresh the page if No. of Featured Content is changed (Max no of "
 "Featured Content is 20)"
@@ -243,28 +242,28 @@ msgstr ""
 "Enregistrer et actualiser la page si le nombre de Contenus à la Une est modifié "
 "(Valeur max : 20)"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:181
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:173
 msgid "No of Featured Content"
 msgstr "Numéro du Contenu à la Une"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:196
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:188
 msgid "Check to Enable Title"
 msgstr "Sélectionner pour activer le titre"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:218
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:210
 msgid "Display Content"
 msgstr "Affiche le contenu"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:234
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:226
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:196
 msgid "Featured Page"
 msgstr "Page à la Une"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:245
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:237
 msgid "Featured Content Background Settings"
 msgstr "Paramètres de fond d'écran pour Contenu à la une "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:256
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:248
 msgid "Select/Add Background Image"
 msgstr "Sélectionner / Ajouter Image de fond"
 
