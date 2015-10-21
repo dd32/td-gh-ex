@@ -79,6 +79,12 @@ Credits
 
 /* VARIOUS */
 
+- ScrollTo:
+
+-- By Ariel Flesler - http://flesler.blogspot.com
+
+--- Dual licensed under MIT and GPL
+
 - Tipsy:
 
 -- By Jason Frame - http://onehackoranother.com/projects/jquery/tipsy/

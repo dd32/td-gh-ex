@@ -50,8 +50,15 @@
         </div>
         
     </footer>
-
+    
 </div>
+
+    <?php if ( (!suevafree_setting('suevafree_view_back_to_top') ) || ( suevafree_setting('suevafree_view_back_to_top') == "on" ) ): ?>
+    
+        <div id="back-to-top"> <i class="icon icon-chevron-up"></i> </div>
+	
+    <?php endif; ?>
+    
 
 <?php wp_footer() ?>   
 

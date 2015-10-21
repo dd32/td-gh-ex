@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 1.3.8 - Released: 21.10.2015
+
+-- Added : Back to top button.
+
 - Version 1.3.7 - Released: 11.09.2015
 
 -- Important : Issue with “Read More” button, is now fixed.

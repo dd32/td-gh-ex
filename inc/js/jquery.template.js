@@ -56,5 +56,27 @@ jQuery.noConflict()(function($){
 				overlay_gallery: false,
 				social_tools: false
 	});
+	
+/* ===============================================
+   Scroll to Top Plugin
+   =============================================== */
+
+	$(window).scroll(function() {
+		
+		if( $(window).scrollTop() > 400 ) {
+			
+			$('#back-to-top').fadeIn(500);
+			
+			} else {
+			
+			$('#back-to-top').fadeOut(500);
+		}
+		
+	});
+
+	$('#back-to-top').click(function(){
+		$.scrollTo(0,'slow');
+		return false;
+	});
 
 });          

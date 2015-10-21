@@ -139,6 +139,22 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"std" => "off",
 			
 			),
+			
+			array(
+				
+				"label" => __( "Back to top button.","suevafree"),
+				"description" => __( "Do you want to display a button to back on the top of the site?","suevafree"),
+				"id" => "suevafree_view_back_to_top",
+				"type" => "select",
+				"section" => "settings_section",
+				"options" => array (
+				   "off" => __( "No","suevafree"),
+				   "on" => __( "Yes","suevafree"),
+				),
+				
+				"std" => "on",
+			
+			),
 
 			array( 
 

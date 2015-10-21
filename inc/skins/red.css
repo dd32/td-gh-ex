@@ -63,8 +63,14 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
 #footer .tagcloud a:hover,
 .theme-default .nivo-directionNav a:hover,
 .flexslider:hover .flex-next:hover,
-.flexslider:hover .flex-prev:hover {
+.flexslider:hover .flex-prev:hover,
+#back-to-top i.open,
+#back-to-top i:hover {
     background-color: #872424;
+}
+#back-to-top i.open,
+#back-to-top i:hover {
+    border-color: #872424;
 }
 a:hover,
 #footer a:hover,
