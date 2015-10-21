@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/ignite/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: Ignite is a responsive blog theme. It includes logo tools, social media icons, a left- or right-sidebar layout, five fonts, custom background colors, and many additional display options. There is also a premium upgrade for Ignite called Ignite Plus. See our fully-setup live demo at https://www.competethemes.com/ignite-live-demo/
-Version: 1.53
+Version: 1.54
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, orange, silver, tan, white, light, two-columns, right-sidebar, left-sidebar, responsive-layout, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -37,10 +37,6 @@ body {
   -webkit-font-smoothing: antialiased;
   word-wrap: break-word;
   -ms-word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
 }
 
 .overflow-container {
@@ -816,15 +812,13 @@ a img {
 }
 
 .featured-image {
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-position: 50%;
   position: relative;
   height: 0;
   padding-bottom: 56.5%;
   left: -9.5%;
   width: 119%;
   margin-bottom: 1.5em;
+  overflow: hidden;
 }
 .featured-image > a {
   position: absolute;
@@ -832,7 +826,17 @@ a img {
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0;
+  font-size: 0;
+}
+.featured-image > img,
+.featured-image > a > img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  min-height: 100%;
 }
 
 .excerpt-meta-top, .entry-meta-top {
@@ -1308,9 +1312,21 @@ a img {
     vertical-align: top;
     padding-right: 4%;
   }
+  .further-reading .prev {
+    float: left;
+  }
   .further-reading .next {
     text-align: right;
     padding: 0 0 0 4%;
+    float: right;
+  }
+  .further-reading:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
   }
 }
 /* 1100px */
@@ -1626,25 +1642,13 @@ li.pingback {
   margin-top: 1.5em;
 }
 
-.search .search-container {
-  background: white;
-  margin-top: 1.5em;
-}
 .search .search-end {
   padding: 1.5em 8% 2.25em;
+  background: white;
+  margin-bottom: 1.5em;
 }
 .search .search-end.top {
   padding-bottom: 3em;
-}
-.search .search-end.bottom {
-  padding-top: 0;
-}
-.search .excerpt, .search .entry {
-  margin-top: 0;
-  padding-top: 0;
-}
-.search .excerpt-content {
-  padding-bottom: 1.5em;
 }
 
 .search-no-results .search-end.top .search-form-container {
@@ -1676,6 +1680,7 @@ li.pingback {
   }
   .search .search-end {
     padding: 1.5em 12.5% 2.25em;
+    margin-bottom: 3em;
   }
 }
 /* Password-protected post */

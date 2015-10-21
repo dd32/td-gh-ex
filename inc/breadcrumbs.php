@@ -181,13 +181,16 @@ if ( !function_exists( 'ct_ignite_breadcrumbs' ) ) {
 		elseif ( is_404() ) {
 
 			// Add 404 markup
-			$html .= '<span>' . 'Error 404' . '</span>';
+			$html .= '<span>' . __('Error 404', 'ignite') . '</span>';
+		} // blog when not on homepage
+		elseif ( is_home() ) {
+			$html .= '<span>' . get_the_title( get_option('page_for_posts' ) ) . '</span>';
 		}
 
 		// Close breadcrumb container
 		$html .= '</div>';
 
-		apply_filters( 'ct_ignite_breadcrumbs_filter', $html );
+		$html = apply_filters( 'ct_ignite_breadcrumbs_filter', $html );
 
 		echo wp_kses_post( $html );
 	}

@@ -1,5 +1,8 @@
 jQuery(document).ready(function($){
 
+    var body = $('body');
+    var main = $('#main');
+
     $(".entry-content").fitVids({
         customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="wordpress.tv"]'
     });
@@ -7,11 +10,19 @@ jQuery(document).ready(function($){
         customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="wordpress.tv"]'
     });
 
+    // Jetpack infinite scroll event that reloads posts.
+    $( document.body ).on( 'post-load', function () {
+
+        // on search results page, move search bar to bottom of main when new posts loaded
+        if ( body.hasClass('search-results') ) {
+            $('.search-end.bottom').detach().appendTo( main );
+        }
+    } );
 
     // in case user has logo increasing the height of the site-header
     function menuPositioning() {
 
-        if( $(window).width() < 800 ) {
+        if( window.innerWidth < 800 ) {
             var headerHeight = $('#site-header').outerHeight();
 
             // reposition menu slider and remove weird gap
@@ -69,7 +80,7 @@ jQuery(document).ready(function($){
     /* see if social media icons can fit and display if they can */
     function showSocialIcons() {
 
-        if( $(window).width() > 899 ) {
+        if( window.innerWidth > 899 ) {
 
             // set menu variable to primary or unset
             if ($('#menu-primary-items').length) {
@@ -124,7 +135,7 @@ jQuery(document).ready(function($){
         showSocialIcons();
         menuPositioning();
 
-        if( $(window).width() > 799 && $('#site-header').hasClass('toggled') ) {
+        if( window.innerWidth > 799 && $('#site-header').hasClass('toggled') ) {
             onTap();
         }
 

@@ -276,25 +276,22 @@ add_filter( 'the_content_more_link', 'ct_ignite_remove_more_link_scroll' );
 if( ! function_exists( 'ct_ignite_featured_image' ) ) {
     function ct_ignite_featured_image() {
 
+        // get post object
         global $post;
-        $has_image = false;
+
+        // instantiate featured image var
+        $featured_image = '';
 
         if ( has_post_thumbnail( $post->ID ) ) {
-            $image     = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-            $image     = $image[0];
-            $has_image = true;
-        }
-        if ( $has_image == true ) {
 
             if ( is_singular() ) {
-                echo "<div class='featured-image' style=\"background-image: url('" . esc_url( $image ) . "')\"></div>";
+                $featured_image = '<div class="featured-image">' . get_the_post_thumbnail() . '</div>';
             } else {
-                echo "
-                <div class='featured-image' style=\"background-image: url('" . esc_url( $image ) . "')\">
-                    <a href='" . get_permalink() . "'>" . get_the_title() . "</a>
-                </div>
-                ";
+                $featured_image = '<div class="featured-image"><a href="' . get_permalink() . '">' . get_the_title() . get_the_post_thumbnail() . '</a></div>';
             }
+        }
+        if( $featured_image ) {
+            echo $featured_image;
         }
     }
 }
@@ -445,41 +442,34 @@ add_action('comment_class', 'ct_ignite_show_avatars_check');
 // implement fonts based on customizer selection
 function ct_ignite_change_font(){
 
-    // get the current font
     $font = get_theme_mod('ct_ignite_font_family_settings');
+    $font_weight = get_theme_mod('ct_ignite_font_weight_settings');
+    $font_style = 'normal';
 
-    // if it's the default do nothing, otherwise...
-    if($font != "Lusitana" && !empty($font)){
+    // if it's not the default or empty
+    if ( $font != 'Lusitana' && !empty( $font ) ) {
 
-        // get the current font weight
-        $font_weight = get_theme_mod('ct_ignite_font_weight_settings');
-
-        // check if font style is italic (needs double '==' b/c position may be '0')
-        if(strpos($font_weight, 'italic') !== false){
-
-            // if weight is simply italic, set weight to 400
-            if($font_weight == 'italic'){
-                $font_weight_css = 400;
-            }
-            // otherwise, remove 'italic' from weight and use integer (ex. 600italic -> 600)
-            else {
-                $font_weight_css = str_replace($font_weight, 'italic', '');
-            }
-            // save style as 'italic'
+        // if weight is italic, set it to 400
+        if( $font_weight == 'italic' ){
+            $font_weight = 400;
             $font_style = 'italic';
         }
-        // if not italic, just use weight integer and set style as 'normal'
-        else {
-            $font_weight_css = $font_weight;
-            $font_style = 'normal';
+        // if weight is a different weight and italic, remove "italic"
+        elseif ( strpos( $font_weight, 'italic' ) !== false ) {
+            $font_weight = str_replace($font_weight, 'italic', '');
+            $font_style = 'italic';
+        }
+        // if weight is regular, change to 400
+        elseif ( $font_weight == 'regular' ) {
+            $font_weight = 400;
         }
 
         // css to be output
         $css = "
             body, h1, h2, h3, h4, h5, h6, input:not([type='checkbox']):not([type='radio']):not([type='submit']):not([type='file']), input[type='submit'], textarea {
                 font-family: $font;
-                font-weight: $font_weight_css;
                 font-style: $font_style;
+                font-weight: $font_weight;
             }
         ";
         // output the css
@@ -488,16 +478,71 @@ function ct_ignite_change_font(){
         // deregister the default call to Google Fonts
         wp_deregister_style('ct-ignite-google-fonts');
 
+        $fonts_url = ct_ignite_format_font_request( $font );
+
         // register the new font
-        wp_register_style( 'ct-ignite-google-fonts', '//fonts.googleapis.com/css?family=' . $font . ':' . $font_weight . '');
+        wp_register_style( 'ct-ignite-google-fonts', $fonts_url );
 
         // enqueue the new GF stylesheet on the front-end
-        if( !is_admin()){
-            wp_enqueue_style('ct-ignite-google-fonts');
-        }
+        wp_enqueue_style('ct-ignite-google-fonts');
     }
 }
 add_action('wp_enqueue_scripts', 'ct_ignite_change_font', 20);
+
+// used to format GF request (ajax and non-ajax)
+function ct_ignite_format_font_request( $font ) {
+
+    // by default not an ajax call
+    $ajax = false;
+
+    // if is ajax request
+    if ( isset( $_POST['font'] ) ) {
+        $font = $_POST['font'];
+        $ajax = true;
+    }
+
+    // get array of fonts and their weights
+    $weights = ct_ignite_get_available_font_weights( $font );
+
+    $fonts_url = '';
+
+    if ( is_array( $weights ) && !empty( $weights ) ) {
+
+        // convert to comma-delimited list
+        $weights = implode( ',', $weights );
+
+        // turn 'regular' into '400'
+        $weights = str_replace( 'regular', '400', $weights );
+
+        // replace any spaces with '+'
+        $font = str_replace( ' ', '+', $font );
+
+        // format the font/weight for the request
+        $font_request = $font . ':' . $weights;
+
+        // prepare query args
+        $font_args = array(
+            'family' => $font_request,
+            'subset' => urlencode( 'latin,latin-ext' )
+        );
+
+        // build request url
+        $fonts_url = add_query_arg( $font_args, '//fonts.googleapis.com/css' );
+
+        $fonts_url = apply_filters( 'ignite-font-filter', $fonts_url );
+
+        $fonts_url = esc_url_raw( $fonts_url );
+    }
+
+    if ( $ajax ) {
+        echo $fonts_url;
+        die();
+    } else {
+        return $fonts_url;
+    }
+}
+add_action( 'wp_ajax_format_font_request', 'ct_ignite_format_font_request' );
+add_action( 'wp_ajax_nopriv_format_font_request', 'ct_ignite_format_font_request' );
 
 function ct_ignite_background_css(){
 
@@ -574,28 +619,13 @@ if ( !function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
             'academia',
             'weibo',
             'tencent-weibo',
+            'paypal',
             'email'
         );
 
         return apply_filters( 'ct_ignite_customizer_social_media_array_filter', $social_sites );
     }
 }
-
-// git icon was supposed to be for github, this is to transfer users saved data to github
-function ct_ignite_switch_git_icon() {
-
-    $git = get_theme_mod( 'git' );
-    $github = get_theme_mod( 'github' );
-
-    // if there is an icon saved for git, but not github
-    if ( !empty( $git ) && empty( $github ) ) {
-        // give the github option the same value as the git option
-        set_theme_mod( 'github', get_theme_mod( 'git' ) );
-        // erase git option
-        remove_theme_mod( 'git' );
-    }
-}
-add_action('admin_init', 'ct_ignite_switch_git_icon');
 
 function ct_ignite_loop_pagination(){
 
