@@ -8,6 +8,7 @@
 				<h2><?php the_title(); ?></h2>
 			</div><!-- .entry-title end -->
 			
+			<?php if( get_theme_mod('agama_blog_post_meta', true) ): ?>
 			<!-- Entry Meta -->
 			<ul class="entry-meta clearfix">
 				<li><i class="fa fa-calendar"></i> <?php the_time('m, Y'); ?></li>
@@ -16,6 +17,7 @@
 				<li><a href="<?php the_permalink(); ?>#comments"><i class="fa fa-comments"></i> <?php echo Agama::comments_count(); ?></a></li>
 				<li><a href="<?php the_permalink(); ?>"><?php echo Agama::post_format(); ?></a></li>
 			</ul><!--.entry-meta-->
+			<?php endif; ?>
 
 			<!-- Entry Content -->
 			<div class="entry-content notopmargin">
@@ -24,16 +26,8 @@
 
 				<!-- Tag Cloud -->
 				<div class="tagcloud clearfix bottommargin">
-					<?php the_tags(); ?>
-					<!--
-					<a href="#">general</a>
-					<a href="#">information</a>
-					<a href="#">media</a>
-					<a href="#">press</a>
-					<a href="#">gallery</a>
-					<a href="#">illustration</a>
-					-->
-				</div><!-- .tagcloud end -->
+					<?php the_tags(false, false, false); ?>
+				</div>
 
 				<div class="clear"></div>
 

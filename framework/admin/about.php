@@ -70,6 +70,12 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</h2>';
 				
 				echo '<div class="changelog point-releases">';
+					echo '<h3>Changelog Agama v1.1.4</h3>';
+						echo '<p><strong>Version 1.1.4</strong> ADDED: Tag cloud support (widget, posts).</p>';
+						echo '<p><strong>Version 1.1.4</strong> ADDED: Enable / Disable featured thumbnails on single post.</p>';
+						echo '<p><strong>Version 1.1.4</strong> ADDED: Enable / Disable Post Meta Details (date, category, author, comments count).</p>';
+						echo '<p><strong>Version 1.1.4</strong> FIXED: Footer links color issue.</p>';
+					
 					echo '<h3>Changelog Agama v1.1.3</h3>';
 						echo '<p><strong>Version 1.1.3</strong> FIXED: Sticky top menu max-width issue.</p>';
 						echo '<p><strong>Version 1.1.3</strong> ADDED: Image support feature on frontpage boxes.</p>';

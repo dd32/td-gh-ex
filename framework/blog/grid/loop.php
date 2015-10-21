@@ -2,14 +2,13 @@
 
 	<?php if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() && ! is_search() ) { // Attachments ?>
 	
-		<figure class="effect-bubba" data-src="<?php echo agama_return_image_src('post-thumbnail'); ?>">
+		<figure class="hover1">
 			
 			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
 				<a href="<?php the_permalink(); ?>">
 			<?php endif; ?>
 			
 				<img src="<?php echo agama_return_image_src('post-thumbnail'); ?>" class="img-responsive">
-				<figcaption></figcaption>
 			
 			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
 				</a>
@@ -29,9 +28,11 @@
 	 *
 	 * @hooked agama_render_blog_post_meta - 10  (output HTML post meta details)
 	 */
-	echo '<p class="single-line-meta">';
-	do_action( 'agama_blog_post_meta' );
-	echo '</p>';
+	if( get_theme_mod('agama_blog_post_meta', true) ):
+		echo '<p class="single-line-meta">';
+		do_action( 'agama_blog_post_meta' );
+		echo '</p>';
+	endif;
 	?>
 
 </header>

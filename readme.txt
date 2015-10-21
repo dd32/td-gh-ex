@@ -2,6 +2,12 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.1.4 Oct 22 =
+* ADDED: Tag cloud support (widget, posts).
+* ADDED: Enable / Disable featured thumbnails on single post.
+* ADDED: Enable / Disable Post Meta Details (date, category, author, comments count).
+* FIXED: Footer links color issue.
+
 = 1.1.3 Oct 11 =
 * FIXED: Sticky top menu max-width issue.
 * ADDED: Image support feature on frontpage boxes.
