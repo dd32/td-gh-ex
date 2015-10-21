@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 2.7.1
+* Updated responsive menu js to fixed touch issue
+
 Version 2.7
 * Added all theme options to customizer
 
