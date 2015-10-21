@@ -4,7 +4,7 @@ Theme URI:
 Author: Masum Billah
 Author URI: http://getmasum.net/
 Description: Bhost is a nice , clean , beautifull, Responsive and modern design free WordPress Theme. This theme made with Latest Bootstrap v3.3.5. You can use it for your corporate , personal , blog sites etc.
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
@@ -271,7 +271,6 @@ th {
 }
 img{
 	display: inline-block;
-	width: 100%;
 	
 }
 
@@ -639,7 +638,7 @@ a:active {
 }
 .site-branding{
 	padding: 6em 0;
-	background: #444;
+	background: #fff;
 }
 .site-branding h1.site-title{
 	margin-bottom: 5px;
@@ -648,7 +647,7 @@ a:active {
 .site-branding h1.site-title a{
 	font-size: 2.2em;
 	text-decoration: none;
-	color: #fff;
+	color: #444;
 	-webkit-transition: all .25s linear;
     -moz-transition: all .25s linear;
     -o-transition: all .25s linear;
@@ -659,13 +658,14 @@ a:active {
 	font-weight: 700;	
 }
 .site-branding h1.site-title a:hover{
-	color: #2bcdc1;
+	color: #2bcdc1!important;
 	 -webkit-transform: none;
 	transform: none;
 }
 
 .site-branding .site-description{
 	font-size: 1.5em;
+	color: #444;
 }
 .site-description{
 	margin-bottom: 0;
@@ -702,7 +702,9 @@ a:active {
 	text-transform: uppercase;
 }
 .mainmenu ul#nav> li> a{position:relative}
-
+.mainmenu ul#nav> li> a i.fa{
+	padding-right: 5px;
+}
 .mainmenu ul#nav> li:hover>a:before{
 	opacity: 1;
 	
@@ -840,6 +842,7 @@ article.single-post{
 h1.entry-title{
 	font-size: 23px;
 	margin-bottom: 20px;
+	margin-top: 0px;
 }
 h1.entry-title a{
 	text-decoration: none;
@@ -861,6 +864,23 @@ h1.entry-title a:hover{
 .entry-meta,.entry-footer{
 	font-size: 13px;
 	text-transform: uppercase;
+	margin-top: 20px;
+}
+.entry-meta,.entry-footer .readmore{
+	margin-top: 20px;
+}
+.entry-meta,.entry-footer .readmore a.btn{
+	border-color: #444;
+	border-radius: inherit;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	padding: 12px 25px;
+}
+.entry-meta,.entry-footer .readmore a.btn:hover, .entry-meta,.entry-footer .readmore a.btn:focus{
+	background: #2bcdc1;
+	color: #fff!important;
+	border-color: #2bcdc1;
 }
 .entry-meta .entry-date{margin-top: -3px; display: block;}
 .entry-meta a{	
@@ -880,9 +900,10 @@ h1.entry-title a:hover{
 .page-header, .page-header h1{
 	border: inherit;
 	font-size: 25px;
+	margin-bottom: 40px;
 }
 .post-thumb-image{
-	margin-bottom: 35px;
+	margin-bottom: 0;
 }
 .entry-footer a{
 	text-decoration: none;
@@ -1050,7 +1071,7 @@ li.cat-item{
 	background: #212121 none repeat scroll 0 0;
 	color: #ffffff;
 	font-size: 13px;
-	padding: 2.5em;
+	padding: 3em 2em;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -1060,6 +1081,24 @@ li.cat-item{
 }
 #footer a:hover{
 	color: #2bcdc1;
+}
+.list-inline{
+	margin-left: 0;
+}
+#footer .social_links{
+	margin-bottom: 25px;
+}
+
+#footer .social_links li a{
+	display: block;
+	font-size: 15px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border: 2px solid #fff;
+}
+#footer .social_links li a:hover{
+	border-color: #2bcdc1;
 }
 
 /*--------------------------------------------------------------
@@ -1098,6 +1137,7 @@ li.cat-item{
 }
 .post-thumb-image{
 	overflow: hidden;
+	margin-bottom: 40px;
 }
 .post-thumb-image a{
 	display: block;
@@ -1131,12 +1171,14 @@ li.cat-item{
 	
 }
 .navigation.pagination .page-numbers{
-	background: #444;
+	background: #444 none repeat scroll 0 0;
 	color: #fff;
-	padding: 11px 20px;
+	display: inline-block;
 	font-size: 14px;
 	line-height: 25px;
-	display: inline-block;
+	margin-right: 10px;
+	padding: 11px 25px;
+	margin-bottom: 10px;
 }
 .navigation.pagination .page-numbers:hover, .page-numbers.current{
 	background: #2bcdc1!important;
