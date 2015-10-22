@@ -22,8 +22,8 @@ get_template_part('index','banner'); ?>
 			<?php get_template_part('content',''); ?>
 				<?php } ?>
 				<div class="blog-pagination-square">
-					<?php previous_posts_link( __('Previous','appointment') ); ?>
-					<?php next_posts_link( __('Next','appointment'), $post_type_data->max_num_pages ); ?> 
+					<?php previous_posts_link( __('Previous','appointment-red') ); ?>
+					<?php next_posts_link( __('Next','appointment-red'), $post_type_data->max_num_pages ); ?> 
 				</div>
 			</div>
 			<!-- /Blog Area -->			
