@@ -83,7 +83,7 @@ add_action( 'after_setup_theme', 'bhost_setup' );
 
 //default menu
 function bhost_default_menu(){
-	echo '<ul class="nav">';
+	echo '<ul id="nav">';
 	echo '<li class="current-menu-item"><a href="'.esc_url(home_url()).'">'.__('Home' , 'bhost').'</a></li>';
 	echo '</ul>';
 }
