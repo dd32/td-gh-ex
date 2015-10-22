@@ -22,7 +22,7 @@ if( ! function_exists( 'ct_tracks_theme_setup' ) ) {
 
         // adds support for Jetpack infinite scroll feature
         add_theme_support( 'infinite-scroll', array(
-            'container' => 'main',
+            'container' => 'loop-container',
             'footer'    => 'overflow-container',
             'render'    => 'ct_tracks_infinite_scroll_render'
         ) );
@@ -384,17 +384,15 @@ function ct_tracks_body_class( $classes ) {
     }
     elseif( $premium_layout_setting == 'full-width-images'){
 
-	    // maintain standard layout on search pages
-	    if( !is_search() ) {
-		    $classes[] = 'full-width-images';
-	    }
-        if( ( is_home() || is_archive() ) && get_theme_mod('premium_layouts_full_width_image_height') == '2:1-ratio'){
+        $classes[] = 'full-width-images';
+
+        if( ( is_home() || is_archive() || is_search() ) && get_theme_mod('premium_layouts_full_width_image_height') == '2:1-ratio'){
             $classes[] = 'ratio';
         }
         if( is_singular() && get_theme_mod('premium_layouts_full_width_image_height_post') == '2:1-ratio'){
             $classes[] = 'ratio';
         }
-	    if(get_theme_mod('premium_layouts_full_width_image_style') == 'title'){
+	    if( get_theme_mod('premium_layouts_full_width_image_style') == 'title' ){
 		    $classes[] = 'title-below';
 	    }
     }
@@ -402,11 +400,7 @@ function ct_tracks_body_class( $classes ) {
         $classes[] = 'two-column';
     }
     elseif( $premium_layout_setting == 'two-column-images'){
-
-	    // maintain standard layout on search pages
-	    if( !is_search() ) {
-		    $classes[] = 'two-column-images';
-	    }
+        $classes[] = 'two-column-images';
     }
     if(get_theme_mod( 'ct_tracks_background_image_setting')){
         $classes[] = 'background-image-active';
@@ -562,22 +556,6 @@ if ( !function_exists( 'ct_tracks_social_site_list' ) ) {
         return apply_filters( 'ct_tracks_social_site_list_filter', $social_sites );
     }
 }
-
-// git icon was supposed to be for github, this is to transfer users saved data to github
-function ct_tracks_switch_git_icon() {
-
-    $git = get_theme_mod( 'git' );
-    $github = get_theme_mod( 'github' );
-
-    // if there is an icon saved for git, but not github
-    if ( !empty( $git ) && empty( $github ) ) {
-        // give the github option the same value as the git option
-        set_theme_mod( 'github', get_theme_mod( 'git' ) );
-        // erase git option
-        remove_theme_mod( 'git' );
-    }
-}
-add_action('admin_init', 'ct_tracks_switch_git_icon');
 
 // for above the post titles
 if( ! function_exists( 'ct_tracks_category_link' ) ) {
@@ -778,6 +756,17 @@ add_action( 'wp_head', 'wp_generator', 1 );
 function ct_tracks_infinite_scroll_render(){
     while( have_posts() ) {
         the_post();
-        get_template_part( 'content', 'archive' );
+        /* Two-column Images Layout */
+        if(get_theme_mod('premium_layouts_setting') == 'two-column-images'){
+            get_template_part('licenses/content/content-two-column-images');
+        }
+        /* Full-width Images Layout */
+        elseif(get_theme_mod('premium_layouts_setting') == 'full-width-images'){
+            get_template_part('licenses/content/content-full-width-images');
+        }
+        /* Blog - No Premium Layout */
+        else {
+            get_template_part('content', 'archive');
+        }
     }
 }

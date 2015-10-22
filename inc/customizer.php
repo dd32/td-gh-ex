@@ -5,6 +5,12 @@ add_action( 'customize_register', 'ct_tracks_add_customizer_content' );
 
 function ct_tracks_add_customizer_content( $wp_customize ) {
 
+    /***** Add PostMessage Support *****/
+
+    // Add postMessage support for site title and description.
+    $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+    $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+
     /***** Add Custom Controls *****/
 
     // create url input control
@@ -159,8 +165,9 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 
     // section
     $wp_customize->add_section( 'ct_tracks_social_icons', array(
-        'title'          => __('Social Media Icons', 'tracks'),
-        'priority'       => 35,
+        'title'       => __( 'Social Media Icons', 'tracks' ),
+        'priority'    => 35,
+        'description' => __( 'Add the URL for each of your social profiles.', 'ignite' )
     ) );
     // setting - display
     $wp_customize->add_setting( 'social_icons_display_setting', array(
@@ -197,17 +204,49 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
             ) );
             // control
             $wp_customize->add_control( $social_site, array(
-                'label'   => $social_site, // brand name so i18n not required
-                'section' => 'ct_tracks_social_icons',
-                'priority'=> $priority,
+                'label'    => __('Email Address', 'tracks'), // brand name so i18n not required
+                'section'  => 'ct_tracks_social_icons',
+                'priority' => $priority,
             ) );
 
             // increment priority to retain order
             $priority = $priority + 5;
         } else {
 
+            $label = ucfirst( $social_site );
+
+            if ( $social_site == 'google-plus' ) {
+                $label = 'Google Plus';
+            } elseif ( $social_site == 'rss' ) {
+                $label = 'RSS';
+            } elseif ( $social_site == 'soundcloud' ) {
+                $label = 'SoundCloud';
+            } elseif ( $social_site == 'slideshare' ) {
+                $label = 'SlideShare';
+            } elseif ( $social_site == 'codepen' ) {
+                $label = 'CodePen';
+            } elseif ( $social_site == 'stumbleupon' ) {
+                $label = 'StumbleUpon';
+            } elseif ( $social_site == 'deviantart' ) {
+                $label = 'DeviantArt';
+            } elseif ( $social_site == 'hacker-news' ) {
+                $label = 'Hacker News';
+            } elseif ( $social_site == 'whatsapp' ) {
+                $label = 'WhatsApp';
+            } elseif ( $social_site == 'qq' ) {
+                $label = 'QQ';
+            } elseif ( $social_site == 'vk' ) {
+                $label = 'VK';
+            } elseif ( $social_site == 'wechat' ) {
+                $label = 'WeChat';
+            } elseif ( $social_site == 'tencent-weibo' ) {
+                $label = 'Tencent Weibo';
+            } elseif ( $social_site == 'paypal' ) {
+                $label = 'PayPal';
+            }
+
             // setting
-            $wp_customize->add_setting( "$social_site", array(
+            $wp_customize->add_setting( $social_site, array(
                 'type'              => 'theme_mod',
                 'capability'        => 'edit_theme_options',
                 'sanitize_callback' => 'esc_url_raw'
@@ -215,7 +254,7 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
             // control
             $wp_customize->add_control( new ct_tracks_url_input_control(
                 $wp_customize, $social_site, array(
-                    'label'   => $social_site, // brand name so i18n not required
+                    'label'   => $label, // brand name so i18n not required
                     'section' => 'ct_tracks_social_icons',
                     'priority'=> $priority,
                 )

@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/tracks/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, social media icons, search bar, comment display controls, premium layouts and features, and more.  See our fully-setup live demo here: https://www.competethemes.com/tracks-live-demo/
-Version: 1.41
+Version: 1.42
 Tags: black, gray, silver, white, dark, one-column, fluid-layout, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: tracks
 License: GNU General Public License v2 or later
@@ -220,26 +220,6 @@ th {
 }
 
 /* Images */
-.alignleft {
-  float: left;
-  margin: 0 1.5em 1.5em 0;
-}
-
-.alignright {
-  float: right;
-  margin: 0 0 1.5em 1.5em;
-}
-
-.aligncenter {
-  text-align: center;
-  margin: 1.5em auto;
-  display: block;
-}
-
-.alignnone {
-  margin: 1.5em;
-}
-
 .alignright,
 .alignleft,
 .aligncenter,
@@ -264,6 +244,27 @@ th {
 .size-medium img,
 .size-thumbnail img {
   max-width: 100%;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 1.5em 1.5em 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 1.5em 1.5em;
+}
+
+.aligncenter {
+  text-align: center;
+  margin: 1.5em auto;
+  display: block;
+  max-width: 100%;
+}
+
+.alignnone {
+  margin: 1.5em;
 }
 
 img {
@@ -1091,9 +1092,21 @@ a img {
     vertical-align: top;
     padding-right: 3em;
   }
+  .further-reading .prev {
+    float: left;
+  }
   .further-reading .next {
+    float: right;
     text-align: right;
     padding: 0 0 0 3em;
+  }
+  .further-reading:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
   }
 
   .author-meta .author {
