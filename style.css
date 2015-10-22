@@ -4,7 +4,7 @@ Theme URI:
 Author: Masum Billah
 Author URI: http://getmasum.net/
 Description: Bhost is a nice , clean , beautifull, Responsive and modern design free WordPress Theme. This theme made with Latest Bootstrap v3.3.5. You can use it for your corporate , personal , blog sites etc.
-Version: 1.2.3
+Version: 1.2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
@@ -1240,8 +1240,10 @@ input, select{
 .about-author{
 	background: #f7f7f7 none repeat scroll 0 0;
 	border: 2px dotted #2bcdc1;
+	display: inline-block;
 	margin: 30px 0;
 	padding: 30px;
+	width: 100%;
 }
 .about-author .author_image{
 	float: left;
