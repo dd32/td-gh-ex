@@ -8,8 +8,8 @@
 						</h2>
 						<div class="entry">
 							<p><?php _e('Sorry, but the page you are trying to reach is unavailable or does not exist.', 'digital'); ?></p>
-							<h3><?php _e('You may interested with this', 'digital'); ?></h3>
-							<?php load_template (get_template_directory() . '/includes/random-posts.php'); ?>
+							<h3><?php _e('You may interested with this', 'digital'); ?></h3></br>
+							<?php get_template_part('/includes/random-posts'); ?>
 						</div>
 					</div><!-- end div .post -->
 				</div><!-- end div #content -->

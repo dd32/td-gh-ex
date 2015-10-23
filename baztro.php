@@ -1,61 +1,30 @@
 <?php
+ 	   
+	
+function digital_tiltechange() {
+if (of_get_option('digital_latestchange') != '') {
+		echo '' . esc_attr(of_get_option('digital_latestchange')) . '' . "\n";
+	}
+else {echo __('Categorie 1','digital') . "\n";
+}	
+}
+function digital_tiltechange2() {
+if (of_get_option('digital_latestchange2') != '') {
+		echo '' . esc_attr(of_get_option('digital_latestchange2')) . '' . "\n";
+	}
+else {echo __('Categorie 2','digital') . "\n";
+}	
+}
+	
+
 
 /* ----------------------------------------------------------------------------------- */
-    /* Custom CSS Styles */
-    /* ----------------------------------------------------------------------------------- */
-
-    function digital_of_head_css() {
-        $output = '';
-        $custom_css = of_get_option('digital_customcss');
-        if ($custom_css <> '') {
-            $output .= $custom_css . "\n";
-        }
-// Output styles
-        if ($output <> '') {
-            $output = "<!-- Custom Styling -->\n<style type=\"text/css\">/*<![CDATA[*/\n" . $output . "/*]]>*/</style>\n";
-            echo $output;
-        }
-    }
-	
-	 add_action('wp_head', 'digital_of_head_css');
-
-	 	   
-	
-	function digital_tiltechange() {
-	if (of_get_option('digital_latestchange') != '') {
-            echo '' . of_get_option('digital_latestchange') . '' . "\n";
-        }
-	else {echo 'Categorie 1' . "\n";
-	}	
-	}
-	function digital_tiltechange2() {
-	if (of_get_option('digital_latestchange2') != '') {
-            echo '' . of_get_option('digital_latestchange2') . '' . "\n";
-        }
-	else {echo 'Categorie 2' . "\n";
-	}	
-	}
-	
-
-	
-	  /* ----------------------------------------------------------------------------------- */
-    /* Add Favicon
-      /*----------------------------------------------------------------------------------- */
-    function digital_childtheme_favicon() {
-        if (of_get_option('digital_favicon') != '') {
-            echo '<link rel="shortcut icon" href="' . of_get_option('digital_favicon') . '"/>' . "\n";
-        }
-    }
-    add_action('wp_head', 'digital_childtheme_favicon');
-		
-
-/* ----------------------------------------------------------------------------------- */
-/* Breadcrumbs Plugin
+/* Breadcrumbs
   /*----------------------------------------------------------------------------------- */
 
 function digital_breadcrumbs() {
     $delimiter = '&raquo;';
-    $home = 'Home'; // text for the 'Home' link
+    $home = __('Home','digital'); // text for the 'Home' link
     $before = '<span class="current">'; // tag before the current crumb
     $after = '</span>'; // tag after the current crumb
     echo '<div id="crumbs">';
@@ -97,7 +66,7 @@ function digital_breadcrumbs() {
         $parent = get_post($post->post_parent);
         //$cat = get_the_category($parent->ID); $cat = $cat[0];
         //echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
+        echo '<a href="' . esc_url(get_permalink($parent)) . '">' . esc_attr($parent->post_title) . '</a> ' . $delimiter . ' ';
         echo $before . get_the_title() . $after;
     } elseif (is_page() && !$post->post_parent) {
         echo $before . get_the_title() . $after;
@@ -106,29 +75,29 @@ function digital_breadcrumbs() {
         $breadcrumbs = array();
         while ($parent_id) {
             $page = get_page($parent_id);
-            $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+            $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . esc_html(get_the_title($page->ID)) . '</a>';
             $parent_id = $page->post_parent;
         }
         $breadcrumbs = array_reverse($breadcrumbs);
         foreach ($breadcrumbs as $crumb)
             echo $crumb . ' ' . $delimiter . ' ';
-        echo $before . get_the_title() . $after;
+        echo $before . esc_html(get_the_title()) . $after;
     } elseif (is_search()) {
-        echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+        echo $before . __('Search results for "' . get_search_query() . '"','digital')  . $after;
     } elseif (is_tag()) {
-        echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+        echo $before . __('Posts tagged "' . single_tag_title('', false) . '"','digital') . $after;
     } elseif (is_author()) {
         global $author;
         $userdata = get_userdata($author);
-        echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+        echo $before . __('Articles posted by ','digital') . esc_attr($userdata->display_name) . $after;
     } elseif (is_404()) {
-        echo $before . 'Error 404' . $after;
+        echo $before . __('Error 404','digital') . $after;
     }
 
     if (get_query_var('paged')) {
         if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
             echo ' (';
-        echo 'Page' . ' ' . get_query_var('paged');
+        echo __('Page','digital') . ' ' . get_query_var('paged','digital');
         if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
             echo ')';
     }

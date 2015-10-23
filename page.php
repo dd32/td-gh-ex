@@ -4,7 +4,7 @@
     <div id="page-inner" class="clearfix">
 		<div id="pagecont">
 			<?php if(have_posts()) : ?><?php while(have_posts())  : the_post(); ?>
-					<div id="pagepost-<?php the_ID(); ?>" class="pagepost clearfix">					
+					<div id="pagepost-<?php the_ID(); ?>" class="clearfix">					
 						<h1><?php the_title(); ?></h1>
 						<div id="metad"><span class="postmeta_box">
 		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
@@ -14,7 +14,7 @@
 								<?php the_content(); ?>
 								<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'digital' ), 'after' => '</div>' ) ); ?>
 							</div> <!-- end div .entry -->
-							<?php if (of_get_option('digital_flowshare' ) =='1' ) {load_template(get_template_directory() . '/includes/share.php'); } ?>
+							
 			<div class="gap"></div><?php if (of_get_option('digital_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
 
 									<div class="comments">

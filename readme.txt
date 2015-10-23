@@ -36,6 +36,14 @@ Custom Css:
 
 == Change log ==
 
+= 1.2.2 =
+* Color scheme change to orange
+* Index page categories style changes
+* Comment form updated
+* 404 page updated - added random posts
+* Sanitize function output 
+
+
 = 1.2.1 =
 * Updated Option Framework 
 * Added Support for title tag
@@ -62,12 +70,12 @@ Custom Css:
 
 *Option Framework : Author is "Devin Price" provided at http://www.wptheming.com under License GPLv2 (All file Included in "inc" folder)
 *Social Icons: are provided by "Konstantin Kovshenin" URL: http://kovshenin.com/2011/freebies-a-simple-social-icon-set-gpl/ Which in under GPL v2
-*Images into /images/ folder that's are created by me abno.png, cat.png home.jpg, info.png, logo.png metaimg.png, quote.png, thumb.png are publish Under gpl v2
+*Images into /images/ folder that's are created by me abno.png, info.png, logo.png quote.png, thumb.png are publish Under gpl v2
 *Fonts Open Sans: Designed by Steve Matteson Director of Ascender Corp. Styled by: https://profiles.google.com/107777320916704234605/about License: Apache License, version 2.0 with GPL
 *This theme uses Nivo Slider, which is under the MIT License. More details: http://dev7studios.com/nivo-slider/
 *Image used in screenshot picture are from Pixabay.com read license terms http://pixabay.com/en/service/terms/
 -http://pixabay.com/en/gathering-mushroom-rac-448866/
 -http://pixabay.com/en/lake-taupo-new-zealand-north-island-50919/
 -http://pixabay.com/en/flower-child-hippie-flower-people-336658/
-
+* Font Awesome License: SIL OFL 1.1 URL: http://scripts.sil.org/OFL
 **This theme and file are created by me & publish under GPL

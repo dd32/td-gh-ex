@@ -1,3 +1,7 @@
+#options-group-6{
+    cursor: not-allowed;
+    opacity: 0.7;}
+
 /* Options Framework Admin Styles */
 .basicsettings-tab, .basicsettings-tab :hover{
 background-image: url("../images/home.png");

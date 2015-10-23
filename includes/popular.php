@@ -12,13 +12,13 @@ while ( $the_query->have_posts() ) : $the_query->the_post();
 			 
 			 							<?php if ( has_post_thumbnail() ) {the_post_thumbnail('popularpost'); } 
 		elseif (of_get_option( 'digital_defaulthumb')) { 
-		echo'<img src="' . of_get_option( 'digital_defaulthumb').'" />' ; }
+		echo'<img src="' . esc_url(of_get_option( 'digital_defaulthumb')).'" />' ; }
 		else { 
-		echo '<img src="'.get_template_directory_uri().'/images/thumb.jpg" />'. "\n"; }
+		echo '<img src="'.esc_url(get_template_directory_uri().'/images/thumb.jpg" />'). "\n"; }
 	  ?>
 	  
-	<a title="<?php the_title(); ?>" href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a><br />
-<div class="desc"><?php digital_excerpt('digital_excerptlength_index', 'digital_excerptmore'); ?></div>
+	<a title="<?php esc_attr(the_title()); ?>" href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php esc_attr(the_title()); ?></a><br />
+<div class="desc"><?php esc_attr(digital_excerpt('digital_excerptlength_index', 'digital_excerptmore')); ?></div>
 									 <div class="clear"></div>
 								</div>			
 <?php endwhile; ?>	<?php endif; ?>	<?php wp_reset_postdata(); ?>
