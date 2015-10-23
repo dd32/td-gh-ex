@@ -157,6 +157,10 @@ class Options_Framework_Admin {
                     <p><b><a href="<?php esc_attr_e( 'http://templatesnext.org/itrans/', 'textdomain' ); ?>" target="_blank">i-transform Demo</a></b></p>
                     <p>The best way to contact me with <b>support questions</b> and <b>bug reports</b> is via our <a href="<?php esc_attr_e( 'http://facebook.com/templatesnext/', 'textdomain' ); ?>" target="_blank">facebook page</a>.</p>
                     <p>If you like i-transform please rate us at <a href="<?php esc_attr_e( 'http://wordpress.org/support/view/theme-reviews/i-transform', 'textdomain' ); ?>" target="_blank">WordPress.org</a> and like our <a href="<?php esc_attr_e( 'http://facebook.com/templatesnext/', 'textdomain' ); ?>" target="_blank">facebook page</a>. </p>
+                    <div class="xnotice" style="font-weight: 700; background-color: #FFC; margin: 16px 0px; padding: 16px;">
+                    	Important : All the Theme Options in upcoming version (i-transform 2.1.2 and above) will be moved to Customizer as per WordPress.org recommendation. 
+                        Make sure you have PHP version 5.3 or above and WordPress Version 4.0 or above before you upgarde.
+                    </div>                    
                 </div>
             </div>
         </div>

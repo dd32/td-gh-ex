@@ -759,4 +759,27 @@ function my_theme_register_required_plugins() {
     tgmpa( $plugins, $config );
 
 }
+
+
+add_action('admin_notices', 'icraft_admin_notice');
+function icraft_admin_notice() {
+    global $current_user ;
+        $user_id = $current_user->ID;
+        /* Check that the user hasn't already clicked to ignore the message */
+    if ( ! get_user_meta($user_id, 'icraft_ignore_notice') ) {
+        echo '<div class="updated"><p><div style="line-height: 20px;">'; 
+        printf(__('Important : All the Theme Options in upcoming version (i-transform 2.1.2 and above) will be moved<br> to Customizer as per WordPress.org recommendation. Make sure you have PHP version 5.3 <br>or above and WordPress Version 4.0 or above before you upgarde. <br> <a href="%1$s">Dismiss this notice</a>', 'i-craft'), '?icraft_notice_ignore=0');
+        echo "</div></p></div>";
+    }
+}
+
+add_action('admin_init', 'icraft_notice_ignore');
+function icraft_notice_ignore() {
+    global $current_user;
+	$user_id = $current_user->ID;
+    /* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset($_GET['icraft_notice_ignore']) && '0' == $_GET['icraft_notice_ignore'] ) {
+    	add_user_meta($user_id, 'icraft_ignore_notice', 'true', true);
+    }
+}
 ?>
