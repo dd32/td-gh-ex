@@ -36,11 +36,17 @@ Underscores Theme is distributed under the terms of the GNU GPL.
 
 == Changelog ==
 
+= 1.2.5 - Oct 24 2015 =
+* Fixed Search page, 404 page , update tag
+
 = 1.2.4 - Oct 23 2015 =
 * Fixed default menu, Author section css
 
+= 1.2.3 - Oct 21 2015 =
+* Search.php pages 
+
 = 1.2.2 - Oct 21 2015 =
-* Updated 404.php and search.php pages
+* Updated 404.php
 
 = 1.2.1 - Oct 20 2015 =
 * Upgrade designs use twitter bootstrap and modify some functions
