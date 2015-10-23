@@ -11,7 +11,7 @@ function rubine_customize_register_upgrade_settings( $wp_customize ) {
 
 	// Add Sections for Post Settings
 	$wp_customize->add_section( 'rubine_section_upgrade', array(
-        'title'    => __( 'Pro Version', 'rubine-lite' ),
+        'title'    => esc_html__( 'Pro Version', 'rubine-lite' ),
         'priority' => 50,
 		'panel' => 'rubine_options_panel' 
 		)
@@ -27,7 +27,7 @@ function rubine_customize_register_upgrade_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
         $wp_customize, 'rubine_control_pro_version_label', array(
-            'label' => __( 'You need more features?', 'rubine-lite' ),
+            'label' => esc_html__( 'You need more features?', 'rubine-lite' ),
             'section' => 'rubine_section_upgrade',
             'settings' => 'rubine_theme_options[pro_version_label]',
             'priority' => 1
@@ -43,7 +43,7 @@ function rubine_customize_register_upgrade_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Rubine_Customize_Text_Control(
         $wp_customize, 'rubine_control_pro_version', array(
-            'label' =>  __( 'Purchase the Pro Version to get additional features and advanced customization options.', 'rubine-lite' ),
+            'label' =>  esc_html__( 'Purchase the Pro Version to get additional features and advanced customization options.', 'rubine-lite' ),
             'section' => 'rubine_section_upgrade',
             'settings' => 'rubine_theme_options[pro_version]',
             'priority' => 2
@@ -59,7 +59,7 @@ function rubine_customize_register_upgrade_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Rubine_Customize_Button_Control(
         $wp_customize, 'rubine_control_pro_version_button', array(
-            'label' => sprintf( __( 'Learn more about %s Pro', 'rubine-lite' ), 'Rubine'),
+            'label' => sprintf( esc_html__( 'Learn more about %s Pro', 'rubine-lite' ), 'Rubine'),
 			'section' => 'rubine_section_upgrade',
             'settings' => 'rubine_theme_options[pro_version_button]',
             'priority' => 3

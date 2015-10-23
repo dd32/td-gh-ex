@@ -10,7 +10,7 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
 	die ('Please do not load this page directly. Thanks!');
 
 if ( post_password_required()) : ?>
-	<p><?php _e('Enter password to view comments.', 'rubine-lite'); ?></p>
+	<p><?php esc_html_e( 'Enter password to view comments.', 'rubine-lite' ); ?></p>
 <?php return; endif; ?>
 
 
@@ -20,7 +20,7 @@ if ( post_password_required()) : ?>
 	
 		<?php if ( have_comments() ) : ?>
 
-			<h3 class="comments-title"><span><?php comments_number( '', __('One comment','rubine-lite'), __('% comments','rubine-lite') );?></span></h3>
+			<h3 class="comments-title"><span><?php comments_number( '', esc_html__( 'One comment', 'rubine-lite' ), esc_html__( '% comments', 'rubine-lite' ) );?></span></h3>
 			
 			<ul class="commentlist">
 				<?php wp_list_comments( array('callback' => 'rubine_list_comments')); ?>

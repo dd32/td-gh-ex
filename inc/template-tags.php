@@ -101,35 +101,30 @@ endif;
 
 
 // Display Post Date
-function rubine_meta_date() { ?>		
-		
-	<span class="meta-date">
-	<?php printf('<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>', 
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() )
-		);
-	?>
-	</span>
+function rubine_meta_date() { 
 	
-<?php
+	$time_string = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>',
+		esc_url( get_permalink() ),
+		esc_attr( get_the_time() ),
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
+
+	echo '<span class="meta-date">' . $time_string . '</span>';
 }
 
 
 // Display Post Author
-function rubine_meta_author() { ?>		
-		
-	<span class="meta-author author vcard">
-	<?php printf('<a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a>', 
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'rubine-lite' ), get_the_author() ) ),
-			get_the_author()
-		);
-	?>
-	</span>
-			
-<?php
+function rubine_meta_author() {  
+	
+	$author_string = sprintf( '<a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a>', 
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_attr( sprintf( esc_html__( 'View all posts by %s', 'rubine-lite' ), get_the_author() ) ),
+		esc_html( get_the_author() )
+	);
+	
+	echo '<span class="meta-author author vcard"> ' . $author_string . '</span>';
+
 }
 
 
@@ -148,7 +143,7 @@ function rubine_meta_categories() { ?>
 function rubine_meta_comments() { ?>		
 		
 	<span class="meta-comments">
-		<?php comments_popup_link( __('Leave a comment', 'rubine-lite'),__('One comment','rubine-lite'),__('% comments','rubine-lite') ); ?>
+		<?php comments_popup_link( esc_html__( 'Leave a comment', 'rubine-lite' ), esc_html__( 'One comment', 'rubine-lite' ), esc_html__( '% comments', 'rubine-lite' ) ); ?>
 	</span>
 			
 <?php
@@ -236,7 +231,7 @@ add_action( 'rubine_footer_text', 'rubine_display_footer_text' );
 function rubine_display_footer_text() { ?>
 
 	<span class="credit-link">
-		<?php printf( __( 'Powered by %1$s and %2$s.', 'rubine-lite' ), 
+		<?php printf( esc_html__( 'Powered by %1$s and %2$s.', 'rubine-lite' ), 
 			'<a href="http://wordpress.org" title="WordPress">WordPress</a>',
 			'<a href="http://themezee.com/themes/rubine/" title="Rubine WordPress Theme">Rubine</a>'
 		); ?>
@@ -270,7 +265,7 @@ function rubine_display_social_icons() {
 	else: // Display Hint how to configure Social Icons ?>
 
 		<p class="social-icons-hint">
-			<?php _e('Please go to Appearance &#8594; Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" location.', 'rubine-lite'); ?>
+			<?php esc_html_e( 'Please go to Appearance &#8594; Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" location.', 'rubine-lite' ); ?>
 		</p>
 <?php
 	endif;
@@ -289,8 +284,8 @@ function rubine_list_comments($comment, $args, $depth) {
 
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 			<div class="comment-body">
-				<?php _e( 'Pingback:', 'rubine-lite' ); ?> <?php comment_author_link(); ?>
-				<?php edit_comment_link( __( '(Edit)', 'rubine-lite' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php esc_html_e( 'Pingback:', 'rubine-lite' ); ?> <?php comment_author_link(); ?>
+				<?php edit_comment_link( esc_html__( '(Edit)', 'rubine-lite' ), '<span class="edit-link">', '</span>' ); ?>
 			</div>
 
 	<?php else : ?>
@@ -309,7 +304,7 @@ function rubine_list_comments($comment, $args, $depth) {
 					<div class="commentmetadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php echo get_comment_date(); ?></a>
 						<p><?php echo get_comment_time(); ?></p>
-						<?php edit_comment_link(__('(Edit)', 'rubine-lite'),'  ','') ?>
+						<?php edit_comment_link( esc_html__( '(Edit)', 'rubine-lite' ),'  ','') ?>
 					</div>
 				
 				</div>
@@ -320,7 +315,7 @@ function rubine_list_comments($comment, $args, $depth) {
 						<?php comment_text(); ?>
 						
 						<?php if ($comment->comment_approved == '0') : ?>
-							<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'rubine-lite' ); ?></p>
+							<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'rubine-lite' ); ?></p>
 						<?php endif; ?>
 						
 						<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>

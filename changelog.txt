@@ -2,6 +2,10 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.1.8
+-----------------------------------
+[added] escaping for translation strings for improved security
+
 Version 1.1.7
 -----------------------------------
 [improved] structure of post meta functions for better re-usability

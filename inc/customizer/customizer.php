@@ -25,7 +25,7 @@ function rubine_customize_register_options( $wp_customize ) {
 		'priority'       => 180,
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
-		'title'          => __( 'Theme Options', 'rubine-lite' ),
+		'title'          => esc_html__( 'Theme Options', 'rubine-lite' ),
 		'description'    => '',
 	) );
 	
@@ -35,7 +35,7 @@ function rubine_customize_register_options( $wp_customize ) {
 	
 	// Change default background section
 	$wp_customize->get_control( 'background_color'  )->section   = 'background_image';
-	$wp_customize->get_section( 'background_image'  )->title     = __( 'Background', 'rubine-lite' );
+	$wp_customize->get_section( 'background_image'  )->title     = esc_html__( 'Background', 'rubine-lite' );
 	
 	// Add Header Tagline option
 	$wp_customize->add_setting( 'rubine_theme_options[header_tagline]', array(
@@ -46,7 +46,7 @@ function rubine_customize_register_options( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_header_tagline', array(
-        'label'    => __( 'Display Tagline below site title.', 'rubine-lite' ),
+        'label'    => esc_html__( 'Display Tagline below site title.', 'rubine-lite' ),
         'section'  => 'title_tagline',
         'settings' => 'rubine_theme_options[header_tagline]',
         'type'     => 'checkbox',

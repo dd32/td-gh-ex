@@ -11,7 +11,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
 
 	// Add Sections for Post Settings
 	$wp_customize->add_section( 'rubine_section_post', array(
-        'title'    => __( 'Post Settings', 'rubine-lite' ),
+        'title'    => esc_html__( 'Post Settings', 'rubine-lite' ),
         'priority' => 30,
 		'panel' => 'rubine_options_panel' 
 		)
@@ -27,7 +27,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
         $wp_customize, 'rubine_control_post_images', array(
-            'label' => __( 'Post Images', 'rubine-lite' ),
+            'label' => esc_html__( 'Post Images', 'rubine-lite' ),
             'section' => 'rubine_section_post',
             'settings' => 'rubine_theme_options[post_images]',
             'priority' => 1
@@ -42,7 +42,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_posts_thumbnails_single', array(
-        'label'    => __( 'Display featured images on single posts', 'rubine-lite' ),
+        'label'    => esc_html__( 'Display featured images on single posts', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[post_thumbnails_single]',
         'type'     => 'checkbox',
@@ -60,7 +60,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
         $wp_customize, 'rubine_control_excerpt_text_headline', array(
-            'label' => __( 'Text after Excerpts', 'rubine-lite' ),
+            'label' => esc_html__( 'Text after Excerpts', 'rubine-lite' ),
             'section' => 'rubine_section_post',
             'settings' => 'rubine_theme_options[excerpt_text_headline]',
             'priority' => 3
@@ -75,7 +75,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_excerpt_text', array(
-        'label'    => __( 'Display [...] after excerpts', 'rubine-lite' ),
+        'label'    => esc_html__( 'Display [...] after excerpts', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[excerpt_text]',
         'type'     => 'checkbox',
@@ -93,7 +93,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
         $wp_customize, 'rubine_control_postmeta_headline', array(
-            'label' => __( 'Post Meta', 'rubine-lite' ),
+            'label' => esc_html__( 'Post Meta', 'rubine-lite' ),
             'section' => 'rubine_section_post',
             'settings' => 'rubine_theme_options[postmeta_headline]',
             'priority' => 5
@@ -108,7 +108,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_meta_date', array(
-        'label'    => __( 'Display post date', 'rubine-lite' ),
+        'label'    => esc_html__( 'Display post date', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[meta_date]',
         'type'     => 'checkbox',
@@ -123,7 +123,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_meta_author', array(
-        'label'    => __( 'Display post author', 'rubine-lite' ),
+        'label'    => esc_html__( 'Display post author', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[meta_author]',
         'type'     => 'checkbox',
@@ -138,7 +138,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_meta_category', array(
-        'label'    => __( 'Display post categories', 'rubine-lite' ),
+        'label'    => esc_html__( 'Display post categories', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[meta_category]',
         'type'     => 'checkbox',
@@ -153,7 +153,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_meta_tags', array(
-        'label'    => __( 'Display post tags', 'rubine-lite' ),
+        'label'    => esc_html__( 'Display post tags', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[meta_tags]',
         'type'     => 'checkbox',

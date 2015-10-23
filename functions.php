@@ -17,7 +17,7 @@ function rubine_enqueue_scripts() {
 	wp_enqueue_script('rubine-lite-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery'));
 	
 	// Passing Parameters to Navigation.js Javascript
-	wp_localize_script( 'rubine-lite-jquery-navigation', 'rubine_navigation_params', array('menuTitle' => __('Menu', 'rubine-lite')) );
+	wp_localize_script( 'rubine-lite-jquery-navigation', 'rubine_navigation_params', array( 'menuTitle' => esc_html__( 'Menu', 'rubine-lite' ) ) );
 	
 	// Register Comment Reply Script for Threaded Comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -93,9 +93,9 @@ function rubine_setup() {
 	
 	// Register Navigation Menus
 	register_nav_menus( array(
-		'primary'   => __('Main Navigation', 'rubine-lite'),
-		'secondary' => __('Top Navigation', 'rubine-lite'),
-		'social' => __('Social Icons', 'rubine-lite'),
+		'primary'   => esc_html__( 'Main Navigation', 'rubine-lite' ),
+		'secondary' => esc_html__( 'Top Navigation', 'rubine-lite' ),
+		'social' => esc_html__( 'Social Icons', 'rubine-lite' ),
 		) 
 	);
 
@@ -126,9 +126,9 @@ function rubine_register_sidebars() {
 
 	// Register Sidebars
 	register_sidebar( array(
-		'name' => __( 'Sidebar', 'rubine-lite' ),
+		'name' => esc_html__( 'Sidebar', 'rubine-lite' ),
 		'id' => 'sidebar',
-		'description' => __( 'Appears on posts and pages except Magazine Homepage and Fullwidth template.', 'rubine-lite' ),
+		'description' => esc_html__( 'Appears on posts and pages except Magazine Homepage and Fullwidth template.', 'rubine-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widgettitle"><span>',

@@ -11,7 +11,7 @@ function rubine_customize_register_general_settings( $wp_customize ) {
 
 	// Add Section for Theme Options
 	$wp_customize->add_section( 'rubine_section_general', array(
-        'title'    => __( 'General Settings', 'rubine-lite' ),
+        'title'    => esc_html__( 'General Settings', 'rubine-lite' ),
         'priority' => 10,
 		'panel' => 'rubine_options_panel' 
 		)
@@ -26,14 +26,14 @@ function rubine_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_layout', array(
-        'label'    => __( 'Theme Layout', 'rubine-lite' ),
+        'label'    => esc_html__( 'Theme Layout', 'rubine-lite' ),
         'section'  => 'rubine_section_general',
         'settings' => 'rubine_theme_options[layout]',
         'type'     => 'radio',
 		'priority' => 1,
         'choices'  => array(
-            'left-sidebar' => __( 'Left Sidebar', 'rubine-lite' ),
-            'right-sidebar' => __( 'Right Sidebar', 'rubine-lite' ),
+            'left-sidebar' => esc_html__( 'Left Sidebar', 'rubine-lite' ),
+            'right-sidebar' => esc_html__( 'Right Sidebar', 'rubine-lite' ),
 			)
 		)
 	);
@@ -48,7 +48,7 @@ function rubine_customize_register_general_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
         $wp_customize, 'rubine_control_footer_content', array(
-            'label' => __( 'Footer Icons', 'rubine-lite' ),
+            'label' => esc_html__( 'Footer Icons', 'rubine-lite' ),
             'section' => 'rubine_section_general',
             'settings' => 'rubine_theme_options[footer_content]',
             'priority' => 4
@@ -65,7 +65,7 @@ function rubine_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_footer_icons', array(
-        'label'    => __( 'Display Social Icons in footer', 'rubine-lite' ),
+        'label'    => esc_html__( 'Display Social Icons in footer', 'rubine-lite' ),
         'section'  => 'rubine_section_general',
         'settings' => 'rubine_theme_options[footer_icons]',
         'type'     => 'checkbox',
@@ -83,7 +83,7 @@ function rubine_customize_register_general_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
         $wp_customize, 'rubine_control_default_fonts', array(
-            'label' => __( 'Default Fonts', 'rubine-lite' ),
+            'label' => esc_html__( 'Default Fonts', 'rubine-lite' ),
             'section' => 'rubine_section_general',
             'settings' => 'rubine_theme_options[default_fonts]',
             'priority' => 6
@@ -100,7 +100,7 @@ function rubine_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_deactivate_google_fonts', array(
-        'label'    => __( 'Deactivate Google Fonts in case your language is not compatible.', 'rubine-lite' ),
+        'label'    => esc_html__( 'Deactivate Google Fonts in case your language is not compatible.', 'rubine-lite' ),
         'section'  => 'rubine_section_general',
         'settings' => 'rubine_theme_options[deactivate_google_fonts]',
         'type'     => 'checkbox',

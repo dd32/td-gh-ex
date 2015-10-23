@@ -11,7 +11,7 @@ function rubine_customize_register_header_settings( $wp_customize ) {
 
 	// Add Sections for Header Content
 	$wp_customize->add_section( 'rubine_section_header', array(
-        'title'    => __( 'Header Area', 'rubine-lite' ),
+        'title'    => esc_html__( 'Header Area', 'rubine-lite' ),
         'priority' => 20,
 		'panel' => 'rubine_options_panel' 
 		)
@@ -27,7 +27,7 @@ function rubine_customize_register_header_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
         $wp_customize, 'rubine_control_header_content', array(
-            'label' => __( 'Header Content', 'rubine-lite' ),
+            'label' => esc_html__( 'Header Content', 'rubine-lite' ),
             'section' => 'rubine_section_header',
             'settings' => 'rubine_theme_options[header_content]',
             'priority' => 2
@@ -44,7 +44,7 @@ function rubine_customize_register_header_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_header_search', array(
-        'label'    => __( 'Display search field on header area', 'rubine-lite' ),
+        'label'    => esc_html__( 'Display search field on header area', 'rubine-lite' ),
         'section'  => 'rubine_section_header',
         'settings' => 'rubine_theme_options[header_search]',
         'type'     => 'checkbox',
@@ -60,7 +60,7 @@ function rubine_customize_register_header_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_header_icons', array(
-        'label'    => __( 'Display Social Icons on header area', 'rubine-lite' ),
+        'label'    => esc_html__( 'Display Social Icons on header area', 'rubine-lite' ),
         'section'  => 'rubine_section_header',
         'settings' => 'rubine_theme_options[header_icons]',
         'type'     => 'checkbox',
