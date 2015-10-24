@@ -39,6 +39,9 @@ function suits_setup() {
 	 */
 	add_editor_style( array( suits_fonts_url() ) );
 
+	// Enables plugins and themes to manage the document title tag.
+	add_theme_support( 'title-tag' );
+
 	// Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -124,38 +127,6 @@ function suits_scripts_styles() {
 	wp_enqueue_style( 'suits-style', get_stylesheet_uri(), array(), '2013-10-20' );
 }
 add_action( 'wp_enqueue_scripts', 'suits_scripts_styles' );
-
-/**
- * Creates a nicely formatted and more specific title element text for output
- * in head of document, based on current view.
- *
- * @since Suits 1.0
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
-function suits_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'suits' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'suits_wp_title', 10, 2 );
 
 /**
  * Registers widget areas.

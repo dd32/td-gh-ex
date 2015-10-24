@@ -47,3 +47,11 @@ Please visit http://wordpress.org/support/ if you have any questions about the t
 #### 1.1.0
 
 - changes to custom header
+
+#### 1.2.0
+
+- added title-tag support
+- removed filter hook suits_wp_title()
+- changed theme tags (removed flexible-width, added responsive-layout)
+- changed screenshot.png to 1200 x 900 px
+- changed blockquote styles
