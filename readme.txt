@@ -29,11 +29,12 @@ Araiz includes support for Infinite Scroll in Jetpack.
 
 == Change log ==
 
-= 1.1.2 - October 3 2015 =
-* Search Page Alignment Fixed
-* Width of Search Field Reduced
+= 1.1.3 - October 23 2015 =
+* Level Three Drop Down Menu Position Fixed
 
-== Change log ==
+= 1.1.2 - October 11 2015 =
+* Search Page Alignment Fixed
+* Width of Search Field Reduced 
 
 = 1.1.1 - September 26 2015 =
 * Post Submit Button Enlarged
