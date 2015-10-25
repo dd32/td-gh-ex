@@ -17,7 +17,7 @@ get_header(); ?>
 					</header><!-- .page-header -->
 
 					<div class="page-content">
-						<p><?php _e( 'It looks like nothing was found at this location. Try Again Thanks', 'bhost' ); ?></p>
+						<p><?php _e( 'It looks like nothing was found at this location. Try again Thanks.', 'bhost' ); ?></p>
 					</div><!-- .page-content -->
 				</section><!-- .error-404 -->
 
