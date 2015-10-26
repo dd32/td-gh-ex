@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 1.0.9
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -4694,7 +4694,6 @@ span.onsale:after,
     font-size: 14px !important;
     line-height: 28px !important;
     overflow: hidden !important;
-    padding: 0px 20px !important;
     border-radius: 0px;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
@@ -4732,8 +4731,7 @@ span.onsale:after,
 */
 
 .woocommerce.single.single-product div.product form.cart {
-    float: left;
-    min-width: 60%;
+    margin-bottom: 10px;
 }
 .woocommerce.single.single-product .woocommerce-tabs {
     margin: 10px 0px !important;
@@ -4764,12 +4762,11 @@ span.onsale:after,
     border-bottom: 1px solid #d3ced2;
     margin-bottom: -6px;
     padding-right: 35px;
-    padding-left: 5px;
+    padding-left: 20px;
     background: transparent;
     border-radius: 0px;
     background: url("images/tab1.png") no-repeat right;
     overflow: hidden;
-    background-size: 38%;
 }
 .woocommerce.single.single-product .woocommerce-tabs ul.tabs li a {
     display: inline-block;
@@ -4778,14 +4775,13 @@ span.onsale:after,
     color: #515151;
     text-decoration: none;
     text-transform: uppercase;
-    padding-right: 35px;
+    padding-right: 0;
 }
 .woocommerce.single.single-product .woocommerce-tabs ul.tabs li.active {
     border: none;
     border-bottom: 1px solid #e24545;
     background: url(images/tab.png) no-repeat right;
     position: relative;
-    background-size: 38%;
 }
 .woocommerce.single.single-product .woocommerce-tabs ul.tabs li.active:after {
     display: none;
@@ -4794,8 +4790,6 @@ span.onsale:after,
     display: none;
 }
 .woocommerce.single.single-product .woocommerce-tabs ul.tabs li.active a {
-    font-weight: 700;
-    font-size: 16px;
     line-height: 20px;
     color: #e24545;
 }
@@ -5559,9 +5553,6 @@ li.cat-parent {
     padding: 0px;
     padding-right: 30px;
 }
-.woocommerce .content-area select:hover {
-    background: url(images/drop1.png) 100% / 15% no-repeat #efefef;
-}
 .woocommerce .content-area select {
     margin: 50px;
     border: 1px solid #111;
@@ -5585,8 +5576,12 @@ li.cat-parent {
 .single .woocommerce.single.single-product .woocommerce-tabs ul.tabs li a{
 padding-right: 55px;
 }
-.woocommerce .content-area select#pa_color {
-    margin: 0px;
+
+.woocommerce .variations .label{
+    width: 32%;
+}
+.woocommerce .variations select {
+    margin: 0 0 10px;
 }
 .woocommerce .content-area .gridlist-toggle {
     display: block;

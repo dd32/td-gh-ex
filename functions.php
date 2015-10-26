@@ -231,7 +231,7 @@ function accesspress_store_display_upsell() {
 				'request' => serialize( (object)$args )
 			)
 		);
-		$themes = accesspresslite_get_themes( $request );
+		$themes = accesspressstore_get_themes( $request );
 		$active_theme = wp_get_theme()->get( 'Name' );
 		$counter = 1;
 		// For currently active theme.
@@ -267,7 +267,7 @@ function accesspress_store_display_upsell() {
 						'request' => serialize( (object)$args )
 					)
 				);
-				$theme_details = accesspresslite_get_themes( $request );
+				$theme_details = accesspressstore_get_themes( $request );
 			?>
 				<div id="<?php echo $theme->slug; ?>" class="theme">
 					<div class="theme-screenshot">
@@ -307,10 +307,10 @@ function accesspress_store_display_upsell() {
 }
 
 // Get all themeisle themes by using API.
-function accesspresslite_get_themes( $request ) {
+function accesspressstore_get_themes( $request ) {
 
 	// Generate a cache key that would hold the response for this request:
-	$key = 'accesspresslite_' . md5( serialize( $request ) );
+	$key = 'accesspressstore_' . md5( serialize( $request ) );
 
 	// Check transient. If it's there - use that, if not re fetch the theme
 	if ( false === ( $themes = get_transient( $key ) ) ) {

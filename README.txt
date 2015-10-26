@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 1.1.0 =
+** Fixed the footer widget responsive problme
+** Fixed the product details variations select box aligment
+
 = 1.0.9 =
 ** Add the options for upload background image for youtube video section.
 ** fixed the header style for login,wishlist and cart. 
