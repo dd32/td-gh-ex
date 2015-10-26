@@ -229,29 +229,29 @@
 	.main-small-navigation ul.mobile-menu.toggled-on {
 		display: block;
 		}
-	.navigation-main .menu,
-	.sf-arrows .sf-with-ul::after {
+	.navigation-main ul.menu,
+	.sf-sub-indicator {
 		display: none;
 		}
-	button.menu-toggle {
+	.menu {
+		display: block;
+		}
+	.menu-toggle {
 		color: #666666;
 		color: rgba(0, 0, 0, .4);
-		background: none;
 		font-size: 24px;
 		text-align: left;
 		line-height: 1.2;
 		margin: 0;
 		padding: 12px 18px;
-		border: none;
 		}
-	button.menu-toggle:hover {
+	.menu-toggle:hover {
 		color: rgba(0, 0, 0, .8);
 		}
 	.mobile-menu ul.sub-menu,
 	.mobile-menu ul.children {
 		display: block !important;
 		visibility: visible !important;
-		opacity: 1 !important;
 		left: auto;
 		margin: 0;
 		padding: 0;
@@ -289,9 +289,6 @@
 		background: rgba(0, 0, 0, .04);
 		color: rgba(0, 0, 0, .8) !important;
 		text-decoration: none;
-		}
-	.sf-arrows .sf-with-ul {
-		padding-right: 0px;
 		}
 	.slideshow.gallery-slideshow .flexslider {
 		padding: 12px;

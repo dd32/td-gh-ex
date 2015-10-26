@@ -4,9 +4,9 @@
 /*	Theme Setup
 /*-----------------------------------------------------------------------------------------------------*/
 
-if ( ! function_exists( 'swell_lite_setup' ) ) :
+if ( ! function_exists( 'swelllite_setup' ) ) :
 
-function swell_lite_setup() {
+function swelllite_setup() {
 
 	// Make theme available for translation
 	load_theme_textdomain( 'swell-lite', get_template_directory() . '/languages' );
@@ -57,25 +57,25 @@ function swell_lite_setup() {
 	);
 	add_theme_support( 'custom-background', $defaults );
 }
-endif; // swell_lite_setup
-add_action( 'after_setup_theme', 'swell_lite_setup' );
+endif; // swelllite_setup
+add_action( 'after_setup_theme', 'swelllite_setup' );
 
 /*-----------------------------------------------------------------------------------------------------//	
 	Admin Notice		       	     	 
 -------------------------------------------------------------------------------------------------------*/
 
-function swell_lite_admin_notice(){
+function swelllite_admin_notice(){
     echo '<div class="updated"><p>'; 
-    printf( __('Still using the <strong>Lite</strong> version!? <a href="%1$s" target="_blank">Upgrade to the premium Swell Theme</a> for more options, page templates, shortcodes, support and additional features.', 'swell-lite'), 'http://organicthemes.com/theme/swell-theme/');
+    printf( __('Enjoying Swell Lite? <a href="%1$s" target="_blank">Upgrade to the premium Swell Theme</a> for more options, page templates, shortcodes, support and additional features.', 'swelllite'), 'http://organicthemes.com/theme/swell-theme/');
     echo "</p></div>";
 }
-add_action('admin_notices', 'swell_lite_admin_notice');
+add_action('admin_notices', 'swelllite_admin_notice');
 
 /*-----------------------------------------------------------------------------------------------------//	
 	Category ID to Name		       	     	 
 -------------------------------------------------------------------------------------------------------*/
 
-function swell_lite_cat_id_to_name( $id ) {
+function swelllite_cat_id_to_name( $id ) {
 	$cat = get_category( $id );
 	if ( is_wp_error( $cat ) )
 		return false;
@@ -86,8 +86,8 @@ function swell_lite_cat_id_to_name( $id ) {
 	Register Scripts		       	     	 
 -------------------------------------------------------------------------------------------------------*/
 
-if( !function_exists('swell_lite_enqueue_scripts') ) {
-	function swell_lite_enqueue_scripts() {
+if( !function_exists('swelllite_enqueue_scripts') ) {
+	function swelllite_enqueue_scripts() {
 	
 		// Enqueue Styles
 		wp_enqueue_style( 'swell-style', get_stylesheet_uri() );
@@ -112,13 +112,13 @@ if( !function_exists('swell_lite_enqueue_scripts') ) {
 	    }
 	}
 }
-add_action('wp_enqueue_scripts', 'swell_lite_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'swelllite_enqueue_scripts');
 
 /*-----------------------------------------------------------------------------------------------------//	
 	Register Sidebars		       	     	 
 -------------------------------------------------------------------------------------------------------*/
 
-function swell_lite_widgets_init() {
+function swelllite_widgets_init() {
 	register_sidebar(array(
 		'name'=> esc_html__( "Default Sidebar", 'swell-lite' ),
 		'id' => 'default-sidebar',
@@ -144,20 +144,20 @@ function swell_lite_widgets_init() {
 		'after_title'=>'</h6>'
 	));
 }
-add_action( 'widgets_init', 'swell_lite_widgets_init' );
+add_action( 'widgets_init', 'swelllite_widgets_init' );
 
 /*-----------------------------------------------------------------------------------------------------//
 	Add Stylesheet To Visual Editor
 -------------------------------------------------------------------------------------------------------*/
 	
-add_action( 'widgets_init', 'swell_lite_add_editor_styles' );
+add_action( 'widgets_init', 'swelllite_add_editor_styles' );
 /**
 * Apply theme's stylesheet to the visual editor.
 *
 * @uses add_editor_style() Links a stylesheet to visual editor
 * @uses get_stylesheet_uri() Returns URI of theme stylesheet
 */
-function swell_lite_add_editor_styles() {
+function swelllite_add_editor_styles() {
 	add_editor_style( 'css/style-editor.css' );
 }
 	
@@ -167,17 +167,17 @@ function swell_lite_add_editor_styles() {
 
 if ( ! isset( $content_width ) ) $content_width = 760;
 
-function swell_lite_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'swell_lite_content_width', 760 );
+function swelllite_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'swelllite_content_width', 760 );
 }
-add_action( 'after_setup_theme', 'swell_lite_content_width', 0 );
+add_action( 'after_setup_theme', 'swelllite_content_width', 0 );
 	
 /*-----------------------------------------------------------------------------------------------------//	
 	Comments Function		       	     	 
 -------------------------------------------------------------------------------------------------------*/
 
-if ( ! function_exists( 'swell_lite_comment' ) ) :
-function swell_lite_comment( $comment, $args, $depth ) {
+if ( ! function_exists( 'swelllite_comment' ) ) :
+function swelllite_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
@@ -233,27 +233,44 @@ function swell_lite_comment( $comment, $args, $depth ) {
 	break;
 	endswitch;
 }
-endif; // ends check for swell_lite_comment()
+endif; // ends check for swelllite_comment()
 
 /*-----------------------------------------------------------------------------------------------------//	
 	Custom Excerpt Length		       	     	 
 -------------------------------------------------------------------------------------------------------*/
 
-function swell_lite_excerpt_length( $length ) {
+function swelllite_excerpt_length( $length ) {
 	return 38;
 }
-add_filter( 'excerpt_length', 'swell_lite_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'swelllite_excerpt_length', 999 );
 
-function swell_lite_excerpt_more( $more ) {
+function swelllite_excerpt_more( $more ) {
 	return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'. esc_html__('Read More', 'swell-lite') .'</a>';
 }
-add_filter('excerpt_more', 'swell_lite_excerpt_more');
+add_filter('excerpt_more', 'swelllite_excerpt_more');
+
+/*-----------------------------------------------------------------------------------------------------//
+/*	Pagination Function
+/*-----------------------------------------------------------------------------------------------------*/
+
+function swelllite_get_pagination_links() {
+	global $wp_query;
+	$big = 999999999;
+	echo paginate_links( array(
+		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format' => '?paged=%#%',
+		'current' => max( 1, get_query_var('paged') ),
+		'prev_text' => esc_html__('&laquo;', 'swell-lite'),
+		'next_text' => esc_html__('&raquo;', 'swell-lite'),
+		'total' => $wp_query->max_num_pages
+	) );
+}
 
 /*-----------------------------------------------------------------------------------------------------//
 /*	Custom Page Links
 /*-----------------------------------------------------------------------------------------------------*/
 
-function swell_lite_wp_link_pages_args_prevnext_add($args) {
+function swelllite_wp_link_pages_args_prevnext_add($args) {
     global $page, $numpages, $more, $pagenow;
 
     if (!$args['next_or_number'] == 'next_and_number') 
@@ -275,13 +292,13 @@ function swell_lite_wp_link_pages_args_prevnext_add($args) {
     return $args;
 }
 
-add_filter('wp_link_pages_args', 'swell_lite_wp_link_pages_args_prevnext_add');
+add_filter('wp_link_pages_args', 'swelllite_wp_link_pages_args_prevnext_add');
 
 /*-----------------------------------------------------------------------------------------------------//
 	Body Class
 -------------------------------------------------------------------------------------------------------*/
 
-function swell_lite_body_class( $classes ) {
+function swelllite_body_class( $classes ) {
 	if ( is_singular() )
 		$classes[] = 'swell-singular';
 
@@ -301,7 +318,7 @@ function swell_lite_body_class( $classes ) {
 
 	return $classes;
 }
-add_action( 'body_class', 'swell_lite_body_class' );
+add_action( 'body_class', 'swelllite_body_class' );
 
 /*-----------------------------------------------------------------------------------------------------//
 	Includes

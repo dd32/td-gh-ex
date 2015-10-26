@@ -36,7 +36,7 @@
 <!-- BEGIN #nav-top -->
 <nav id="nav-top" class="navigation-main clearfix" role="navigation">
 
-	<button class="menu-toggle"><i class="fa fa-bars"></i></button>
+	<span class="menu-toggle"><i class="fa fa-bars"></i></span>
 
 	<?php
 		wp_nav_menu( array(
@@ -59,7 +59,7 @@
 
 	<?php $header_image = get_header_image(); if ( ! empty( $header_image ) ) { ?>
 	
-		<div id="custom-header" <?php if ( has_nav_menu( 'fixed-menu' ) ) { ?>class="fixed-menu"<?php } ?> style="background-image: url(<?php header_image(); ?>);">
+		<div id="custom-header" <?php if ( has_nav_menu( 'fixed-menu' ) ) { ?>class="fixed-menu"<?php } ?> style="background-image: url(<?php header_image(); ?>);" data-type="background" data-speed="10">
 			
 			<?php get_template_part( 'content/logo', 'title' ); ?>
 		
@@ -80,12 +80,10 @@
 <!-- END #header -->
 </div>
 
-<?php if ( ! has_nav_menu( 'fixed-menu' ) ) { ?>
-
 <!-- BEGIN #navigation -->
 <nav id="navigation" class="navigation-main clearfix" role="navigation">
 
-	<button class="menu-toggle"><i class="fa fa-bars"></i></button>
+	<span class="menu-toggle"><i class="fa fa-bars"></i></span>
 
 	<?php
 		wp_nav_menu( array(
@@ -101,5 +99,3 @@
 
 <!-- END #navigation -->
 </nav>
-
-<?php } ?>

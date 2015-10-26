@@ -35,10 +35,9 @@
 				<?php endwhile; ?>
 			</ul>
 			
-			<?php the_posts_pagination( array(
-			    'prev_text' => esc_attr__( '&laquo;', 'swell-lite' ),
-			    'next_text' => esc_attr__( '&raquo;', 'swell-lite' ),
-			) ); ?>
+			<div class="pagination">
+				<?php echo swelllite_get_pagination_links(); ?>
+			</div><!-- END .pagination -->
 		
 			<?php else: ?>
 				<p><?php esc_html_e("No posts by this author.", 'swell-lite'); ?></p>

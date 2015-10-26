@@ -55,10 +55,11 @@
 
 <?php endwhile; ?>
 
-<?php the_posts_pagination( array(
-    'prev_text' => esc_attr__( '&laquo;', 'swell-lite' ),
-    'next_text' => esc_attr__( '&raquo;', 'swell-lite' ),
-) ); ?>
+<!-- BEGIN .pagination -->
+<div class="pagination">
+	<?php echo swelllite_get_pagination_links(); ?>
+<!-- END .pagination -->
+</div>
 
 <?php else: ?>
 
