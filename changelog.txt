@@ -1,4 +1,7 @@
 == Change Log ==
+= 3.0.5 =
+* Update - Russian Language Updated. Thanks to Kirill Belotserkovskiy <k.belotserkovskiy@gmail.com> for updating the translation files.
+
 = 3.0.4 =
 * Feature - New Widget Theme Horse: PromoBox added 
 
