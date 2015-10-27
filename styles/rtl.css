@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/author/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: Author is designed for publishers who want readers. That's why Author is fast, responsive, accessibility-ready, and optimally designed for reading. All scripts and stylesheets are minified, concatenated, and conditionally loaded to maximize performance. The layout adapts fluidly to all screen sizes to enhance usability. As one of few accessibility-ready themes, it performs well for users with wide ranges of disabilities. Lastly, based on the ancient Van de Graaf canon, Author is optimally designed for reading. Author is the theme your content deserves. See our fully setup live demo here: https://www.competethemes.com/author-live-demo/
-Version: 1.12
+Version: 1.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, silver, tan, white, dark, light, one-column, two-columns, left-sidebar, fluid-layout, responsive-layout, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -105,8 +105,28 @@ body {
   margin: 0 auto;
   background: #F0F1F2;
   padding: 1.5em 0;
+  min-height: 100vh;
+  min-height: calc(100vh - 120px);
 }
 
+.admin-bar .main {
+  min-height: calc(100vh - 166px);
+}
+
+@media all and (min-width: 782px) {
+  .admin-bar .main {
+    min-height: calc(100vh - 152px);
+  }
+}
+@media all and (min-width: 59.375em) {
+  .main {
+    min-height: calc(100vh - 36px);
+  }
+
+  .admin-bar .main {
+    min-height: calc(100vh - 68px);
+  }
+}
 p {
   margin: 1.5em 0;
 }
@@ -837,8 +857,7 @@ a img {
   position: relative;
   height: 0;
   padding-bottom: 50%;
-  background-size: cover;
-  background-position: 50%;
+  overflow: hidden;
 }
 .featured-image > a {
   position: absolute;
@@ -847,6 +866,29 @@ a img {
   bottom: 0;
   right: 0;
   font-size: 0;
+}
+.featured-image > img,
+.featured-image > a > img {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.featured-image > img.no-object-fit,
+.featured-image > a > img.no-object-fit {
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  -webkit-transform: translateX(50%) translateY(-50%);
+  -ms-transform: translateX(50%) translateY(-50%);
+  transform: translateX(50%) translateY(-50%);
 }
 
 .post-header {
@@ -1512,6 +1554,9 @@ a img {
 }
 .search .search-bottom {
   padding-bottom: 3em;
+}
+.search .search-bottom p {
+  margin-bottom: 1.5em;
 }
 
 .singular-attachment .entry .attachment {

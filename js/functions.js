@@ -22,6 +22,7 @@ jQuery(document).ready(function($){
     /* Call functions */
 
     positionSidebar();
+    objectFitAdjustment();
 
     // delay until everything loaded to avoid inaccuracy due to other JS changing element heights
     $(window).bind("load", function() {
@@ -32,12 +33,18 @@ jQuery(document).ready(function($){
         positionSidebar();
         closeMainSidebar();
         setMainMinHeight();
+        objectFitAdjustment();
     });
 
     // add fitVids to videos in posts
     $('.post-content').fitVids({
         customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="wordpress.tv"]'
     });
+
+    // Jetpack infinite scroll event that reloads posts.
+    $( document.body ).on( 'post-load', function () {
+        objectFitAdjustment();
+    } );
 
     // display the primary menu at mobile widths
     $('#toggle-navigation').on('click', openPrimaryMenu);
@@ -109,7 +116,11 @@ jQuery(document).ready(function($){
 
                 var sidebarPrimaryHeight = sidebarPrimary.height();
 
-                main.css('min-height', sidebarPrimaryHeight + headerHeight + socialIconsHeight + menuHeight + 'px' );
+                var minHeight = sidebarPrimaryHeight + headerHeight + socialIconsHeight + menuHeight;
+
+                if ( minHeight > window.innerHeight ) {
+                    main.css('min-height', minHeight + 'px' );
+                }
 
                 // close menu automatically if scrolled past
                 $(window).scroll(autoCloseMenu);
@@ -221,7 +232,7 @@ jQuery(document).ready(function($){
         }
     }
 
-    // keep light gray background all the way to footer
+    // increase main height when needed so fixed sidebar can be scrollable
     function setMainMinHeight() {
         // refresh
         main.css('min-height', '');
@@ -234,7 +245,9 @@ jQuery(document).ready(function($){
             height = height - headerImage.children('a').height();
         }
         // add the new minimum height
-        main.css('min-height', height + 'px');
+        if ( height > window.innerHeight ) {
+            main.css('min-height', height + 'px');
+        }
     }
 
     // Sidebar scrolling.
@@ -328,6 +341,48 @@ jQuery(document).ready(function($){
         // if visitor scrolled 50px past bottom of sidebar, close menu
         if (topDistance > sidebarPrimaryBottom + 50) {
             openPrimaryMenu();
+        }
+    }
+
+    // mimic cover positioning without using cover
+    function objectFitAdjustment() {
+
+        // if the object-fit property is not supported
+        if( !('object-fit' in document.body.style) ) {
+
+            $('.featured-image').each(function () {
+
+                var image = $(this).children('img').add( $(this).children('a').children('img') );
+
+                image.addClass('no-object-fit');
+
+                // if the image is not tall enough to fill the space
+                if ( image.outerHeight() < $(this).outerHeight()) {
+
+                    // is it also not wide enough?
+                    if ( image.outerWidth() < $(this).outerWidth()) {
+                        image.css({
+                            'min-width': '100%',
+                            'min-height': '100%',
+                            'max-width': 'none',
+                            'max-height': 'none'
+                        });
+                    } else {
+                        image.css({
+                            'height': '100%',
+                            'max-width': 'none'
+                        });
+                    }
+                }
+                // if the image is not wide enough to fill the space
+                else if ( image.outerWidth() < $(this).outerWidth()) {
+
+                    image.css({
+                        'width': '100%',
+                        'max-height': 'none'
+                    });
+                }
+            });
         }
     }
 });

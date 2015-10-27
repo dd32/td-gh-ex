@@ -28,7 +28,7 @@ if( !function_exists('ct_author_theme_setup' ) ) {
 
 		// adds support for Jetpack infinite scroll feature
 		add_theme_support( 'infinite-scroll', array(
-			'container' => 'main',
+			'container' => 'loop-container',
 			'footer'    => 'overflow-container',
 			'render'    => 'ct_author_infinite_scroll_render'
 		) );
@@ -137,21 +137,21 @@ if( ! function_exists( 'ct_author_update_fields' ) ) {
 
         $fields['author'] =
             '<p class="comment-form-author">
-	            <label>' . __( "Name", "author" ) . $label . '</label>
+	            <label for="author">' . __( "Name", "author" ) . $label . '</label>
 	            <input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
             '" size="30" ' . $aria_req . ' />
 	        </p>';
 
         $fields['email'] =
             '<p class="comment-form-email">
-	            <label>' . __( "Email", "author" ) . $label . '</label>
+	            <label for="email">' . __( "Email", "author" ) . $label . '</label>
 	            <input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
             '" size="30" ' . $aria_req . ' />
 	        </p>';
 
         $fields['url'] =
             '<p class="comment-form-url">
-	            <label>' . __( "Website", "author" ) . '</label>
+	            <label for="url">' . __( "Website", "author" ) . '</label>
 	            <input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
             '" size="30" />
 	            </p>';
@@ -166,7 +166,7 @@ if( ! function_exists( 'ct_author_update_comment_field' ) ) {
 
         $comment_field =
             '<p class="comment-form-comment">
-	            <label>' . __( "Comment", "author" ) . '</label>
+	            <label for="comment">' . __( "Comment", "author" ) . '</label>
 	            <textarea required id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 	        </p>';
 
@@ -282,45 +282,16 @@ if( !function_exists('ct_author_featured_image' ) ) {
 		// get post object
 		global $post;
 
-		// default to no featured image
-		$has_image = false;
-
 		// establish featured image var
 		$featured_image = '';
 
 		// if post has an image
 		if ( has_post_thumbnail( $post->ID ) ) {
 
-			// get the featured image ID
-			$image_id = get_post_thumbnail_id( $post->ID );
-
-			// get the image's alt text
-			$image_alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-
-			// get the full-size version of the image
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-
-			// set $image = the url
-			$image = $image[0];
-
-			// if alt text is empty, nothing else equal to title string
-			$title = empty($image_alt_text) ? '' : "title='" . esc_attr( $image_alt_text ) . "'";
-
-			// set to true
-			$has_image = true;
-		}
-		if ( $has_image == true ) {
-
-			// on posts/pages display the featured image
 			if ( is_singular() ) {
-				$featured_image = "<div class='featured-image' style=\"background-image: url('" . esc_url( $image ) . "')\" $title></div>";
-			} // on blog/archives display with a link
-			else {
-				$featured_image = "
-                <div class='featured-image' style=\"background-image: url('" . esc_url( $image ) . "')\" $title>
-                    <a href='" . get_permalink() . "'>" . get_the_title() . "</a>
-                </div>
-                ";
+				$featured_image = '<div class="featured-image">' . get_the_post_thumbnail( $post->ID, 'full' ) . '</div>';
+			} else {
+				$featured_image = '<div class="featured-image"><a href="' . get_permalink() . '">' . get_the_title() . get_the_post_thumbnail( $post->ID, 'full' ) . '</a></div>';
 			}
 		}
 
@@ -384,22 +355,6 @@ if( !function_exists( 'ct_author_social_array' ) ) {
 	}
 }
 
-// git icon was supposed to be for github, this is to transfer users saved data to github
-function ct_author_switch_git_icon() {
-
-	$git = get_theme_mod( 'git' );
-	$github = get_theme_mod( 'github' );
-
-	// if there is an icon saved for git, but not github
-	if ( !empty( $git ) && empty( $github ) ) {
-		// give the github option the same value as the git option
-		set_theme_mod( 'github', get_theme_mod( 'git' ) );
-		// erase git option
-		remove_theme_mod( 'git' );
-	}
-}
-add_action('admin_init', 'ct_author_switch_git_icon');
-
 // output social icons
 if( ! function_exists('ct_author_social_icons_output') ) {
     function ct_author_social_icons_output() {
@@ -408,7 +363,7 @@ if( ! function_exists('ct_author_social_icons_output') ) {
         $social_sites = ct_author_social_array();
 
 	    // icons that should use a special square icon
-	    $square_icons = array('linkedin', 'twitter', 'vimeo', 'youtube', 'pinterest', 'reddit', 'tumblr', 'steam', 'xing', 'github', 'google-plus', 'behance', 'facebook');
+	    $square_icons = array('linkedin', 'twitter', 'vimeo', 'youtube', 'pinterest', 'rss', 'reddit', 'tumblr', 'steam', 'xing', 'github', 'google-plus', 'behance', 'facebook');
 
         // store the site name and url
         foreach ( $social_sites as $social_site => $profile ) {
