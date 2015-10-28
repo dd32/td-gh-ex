@@ -1,5 +1,5 @@
 APERTURE
-Theme Version: 1.1.1
+Theme Version: 1.1.2
 Author: Michael Van Den Berg 
 Author URL: http://michaelvandenberg.com/
 
@@ -32,6 +32,19 @@ Identity is based on Underscores http://underscores.me/, (C) 2012-2015 Automatti
 6. Click Add New, then click Upload, then click Choose File.
 7. After WordPress installs the theme, click Activate.
 8. You've successfully installed your new theme!
+
+-- Slider setup.
+
+This theme uses the featured content module of the Jetpack plugin to setup the fullscreen
+slider. Visit this page: http://jetpack.me/ to read more about Jetpack and how to install it.
+
+After installing and activating the Jetpack plugin follow these steps:
+
+1. Sign into your WordPress dashboard and add a new page or modify an existing one.
+2. Under Page Attributes select the Fullscreen Slider template and save.
+3. (Optional) Go to Settings > Appearances, and select this page as static page.
+4. Add a new post and give this page a 'featured' tag and add a featured image.
+5. Repeat step 4 for any additional slides (maximum = 5). Good luck! ;)
 
 
 --------------------
@@ -67,6 +80,15 @@ Identity is based on Underscores http://underscores.me/, (C) 2012-2015 Automatti
 --------------------
 === Changelog ===
 --------------------
+
+*
+* 1.1.2 / 28.10.2015
+* Minor improvements.
+* - Removed unused javascript and sass files.
+* - Added documentation for slider setup.
+* - Updated the .pot file for translation.
+* - Fixed JavaScript error: apertureSlider is not defined.
+*
 
 *
 * 1.1.1 / 30.07.2015

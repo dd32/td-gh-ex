@@ -1,3 +1,4 @@
+/* global apertureSlider */
 /**
  * Aperture.js
  *

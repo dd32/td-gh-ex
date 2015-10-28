@@ -1,10 +1,10 @@
 /*!
 Theme Name: Aperture
-Theme URI: http://michaelvandenberg.com/portfolio/themes/aperture/
+Theme URI: http://michaelvandenberg.com/portfolio/aperture/
 Author: Michael Van Den Berg
 Author URI: http://michaelvandenberg.com/
 Description: Aperture is a simple, responsive theme with a fullscreen slider.
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aperture
@@ -39,7 +39,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Slider
 # Accessibility
 # Alignments
-# Clearings
 # Widgets
 # Content
     ## Posts and pages
@@ -98,11 +97,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Alignments
 --------------------------------------------------------------*/
 @import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-@import "modules/clearings";
 
 /*--------------------------------------------------------------
 # Widgets

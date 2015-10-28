@@ -1,1 +1,0 @@
-!function($){$(window).load(function(){var o=$(".portfolio-container");o.isotope({filter:"*",layoutMode:"fitRows",resizable:!0}),$(".portfolio-filter li").click(function(){var t=$(this).attr("data-filter");return o.isotope({filter:t}),!1})})}(jQuery);
