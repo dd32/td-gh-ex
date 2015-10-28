@@ -60,9 +60,12 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.45.5
+* Fixes in CSS for Full RTL support
+
 Version 2.45.4
 * Fixes in CSS for Full RTL support
-+ More Themes page added
+* More Themes page added
 
 Version 2.45.3
 * FontAwesome Updated to latest version for New icons Compatibility

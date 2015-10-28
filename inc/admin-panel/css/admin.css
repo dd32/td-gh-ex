@@ -339,3 +339,23 @@
 .accesspress-child-theme{
 	color:#FF0000;
 }
+
+/*RTL CSS*/
+.rtl #optionsframework,
+.rtl .layout-img{
+	float: right;
+}
+.rtl .layout-img{
+	margin-left:30px;
+	margin-right: 0; 
+}
+.rtl .checkbox{
+	float: right;
+	margin-left: 20px;
+}
+
+.rtl .update-banner{
+	float: right;
+	margin-left: 0;
+	margin-right: 10px;
+}
