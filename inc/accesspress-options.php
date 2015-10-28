@@ -393,6 +393,15 @@ function optionsframework_options() {
             'type' => 'groupstart'
             );
     $options[] = array(
+            'name' => __( 'Slider section Option', 'accesspress-mag' ),                
+            'desc' => __( 'Enable or disable slider section at homepage', 'accesspress-mag' ),
+            'id' => 'slider_option',
+            'on' => __( 'Enable', 'accesspress-mag' ),
+            'off' => __( 'Disable', 'accesspress-mag' ),
+            'std' => '1',
+            'type' => 'switch'
+            );
+    $options[] = array(
             'name' => __( 'Select Slide`s Posts', 'accesspress-mag' ),
             'desc' => __( 'Choose option to slide posts in slider', 'accesspress-mag' ),
             'id' => 'slider_post_option',            
@@ -455,7 +464,16 @@ function optionsframework_options() {
             'off' => __( 'No', 'accesspress-mag'),
             'std' => '1',
             'type' => 'switch'
-            );
+            );/*
+    $options[] = array(
+            'name' => __( 'Show Category Box', 'accesspress-mag' ),                
+            'desc' => __( 'Show or hide category box in slider post', 'accesspress-mag' ),
+            'id' => 'slider_cat_box_option',
+            'on' => __( 'Yes', 'accesspress-mag'),
+            'off' => __( 'No', 'accesspress-mag'),
+            'std' => '1',
+            'type' => 'switch'
+            ); */
     $options[] = array(
             'name' => __( 'Number of slides', 'accesspress-mag' ),
             'desc' => __( 'Choose number of slides', 'accesspress-mag' ),

@@ -13,17 +13,25 @@
 get_header();
 ?>
 
-    <section class="slider-wrapper">
-        <div class="apmag-container"> 
-            <?php 
-                if( wp_is_mobile() ) {
-                    do_action('accesspress_mag_slider_mobile');
-                } else {
-                    do_action('accesspress_mag_slider');
-                }
-            ?>
-        </div>                  
-    </section>
+    <?php
+        $accesspress_mag_theme_option = get_option( 'accesspress-mag-theme' );
+        $slider_option = of_get_option( 'slider_option', '1' );
+        if( $slider_option == '1' && $accesspress_mag_theme_option !='' ){
+    ?>
+        <section class="slider-wrapper">
+            <div class="apmag-container"> 
+                <?php
+                    if( wp_is_mobile() ) {
+                        do_action('accesspress_mag_slider_mobile');
+                    } else {
+                        do_action('accesspress_mag_slider');
+                    }
+                ?>
+            </div>                  
+        </section>
+    <?php 
+        } 
+    ?>
     <div class="apmag-container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

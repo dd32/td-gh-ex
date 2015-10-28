@@ -69,6 +69,9 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.2
+ * Added option to show/hide homepage slider
+ 
 Version 2.1.9
  * Added dropdown option in latest and reandom post widget to show post count.
  
