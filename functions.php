@@ -29,7 +29,7 @@ if( ! function_exists( ( 'ct_apex_theme_setup' ) ) ) {
 
 		// adds support for Jetpack infinite scroll feature
 		add_theme_support( 'infinite-scroll', array(
-			'container' => 'main',
+			'container' => 'loop-container',
 			'footer'    => 'overflow-container',
 			'render'    => 'ct_apex_infinite_scroll_render'
 		) );
@@ -126,21 +126,21 @@ if( ! function_exists( 'apex_update_fields' ) ) {
 
         $fields['author'] =
             '<p class="comment-form-author">
-	            <label>' . __( "Name", "apex" ) . $label . '</label>
+	            <label for="author">' . __( "Name", "apex" ) . $label . '</label>
 	            <input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
             '" size="30" ' . $aria_req . ' />
 	        </p>';
 
         $fields['email'] =
             '<p class="comment-form-email">
-	            <label>' . __( "Email", "apex" ) . $label . '</label>
+	            <label for="email">' . __( "Email", "apex" ) . $label . '</label>
 	            <input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
             '" size="30" ' . $aria_req . ' />
 	        </p>';
 
         $fields['url'] =
             '<p class="comment-form-url">
-	            <label>' . __( "Website", "apex" ) . '</label>
+	            <label for="url">' . __( "Website", "apex" ) . '</label>
 	            <input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
             '" size="30" />
 	            </p>';
@@ -155,7 +155,7 @@ if( ! function_exists( 'apex_update_comment_field' ) ) {
 
         $comment_field =
             '<p class="comment-form-comment">
-	            <label>' . __( "Comment", "apex" ) . '</label>
+	            <label for="comment">' . __( "Comment", "apex" ) . '</label>
 	            <textarea required id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 	        </p>';
 
@@ -281,9 +281,9 @@ if( ! function_exists( 'ct_apex_featured_image' ) ) {
 		if ( has_post_thumbnail( $post->ID ) ) {
 
 			if ( is_singular() ) {
-				$featured_image = '<div class="featured-image">' . get_the_post_thumbnail() . '</div>';
+				$featured_image = '<div class="featured-image">' . get_the_post_thumbnail( $post->ID, 'full' ) . '</div>';
 			} else {
-				$featured_image = '<div class="featured-image"><a href="' . get_permalink() . '">' . get_the_title() . get_the_post_thumbnail() . '</a></div>';
+				$featured_image = '<div class="featured-image"><a href="' . get_permalink() . '">' . get_the_title() . get_the_post_thumbnail( $post->ID, 'full' ) . '</a></div>';
 			}
 		}
 
@@ -346,22 +346,6 @@ if ( !function_exists( 'ct_apex_social_array' ) ) {
 		return apply_filters( 'ct_apex_social_array_filter', $social_sites );
 	}
 }
-
-// git icon was supposed to be for github, this is to transfer users saved data to github
-function ct_apex_switch_git_icon() {
-
-	$git = get_theme_mod( 'git' );
-	$github = get_theme_mod( 'github' );
-
-	// if there is an icon saved for git, but not github
-	if ( !empty( $git ) && empty( $github ) ) {
-		// give the github option the same value as the git option
-		set_theme_mod( 'github', get_theme_mod( 'git' ) );
-		// erase git option
-		remove_theme_mod( 'git' );
-	}
-}
-add_action('admin_init', 'ct_apex_switch_git_icon');
 
 // output social icons
 if( ! function_exists('ct_apex_social_icons_output') ) {
