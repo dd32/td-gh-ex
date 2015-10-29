@@ -256,7 +256,7 @@ add_action( 'pre_get_posts','interface_alter_home' );
  */
 function interface_alter_home( $query ){
 	global $options, $array_of_default_settings;
-	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ), interface_get_option_defaults());
+	$options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 	$cats = $options[ 'front_page_category' ];
 
 	if ( $options[ 'exclude_slider_post'] != 0 && !empty( $options[ 'featured_post_slider' ] ) ) {

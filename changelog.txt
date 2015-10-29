@@ -1,4 +1,6 @@
 == CHANGE LOG ==
+= 3.0.1 =
+ - Fix - Alter the query for the main loop in home page issue fixed
 
 = 3.0 =
  - Update - Theme Option settings moved to Customizer as of WordPress guidelines
