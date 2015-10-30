@@ -24,7 +24,7 @@ if( ! function_exists( 'unlimited_theme_setup' ) ) {
 
 		// adds support for Jetpack infinite scroll feature
 		add_theme_support( 'infinite-scroll', array(
-			'container' => 'main',
+			'container' => 'loop-container',
 			'footer'    => 'overflow-container',
 			'render'    => 'ct_unlimited_infinite_scroll_render'
 		) );
@@ -122,21 +122,21 @@ if( ! function_exists( 'unlimited_update_fields' ) ) {
 
 		$fields['author'] =
 			'<p class="comment-form-author">
-	            <label>' . __( "Name", "unlimited" ) . $label . '</label>
+	            <label for="author">' . __( "Name", "unlimited" ) . $label . '</label>
 	            <input placeholder="' . __( "John Doe", "unlimited" ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 
 		$fields['email'] =
 			'<p class="comment-form-email">
-	            <label>' . __( "Email", "unlimited" ) . $label . '</label>
+	            <label for="email">' . __( "Email", "unlimited" ) . $label . '</label>
 	            <input placeholder="' . __( "name@email.com", "unlimited" ) . '" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 
 		$fields['url'] =
 			'<p class="comment-form-url">
-	            <label>' . __( "Website", "unlimited" ) . '</label>
+	            <label for="url">' . __( "Website", "unlimited" ) . '</label>
 	            <input placeholder="' . __( "http://example.com", "unlimited" ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			'" size="30" />
 	            </p>';
@@ -151,7 +151,7 @@ if( ! function_exists( 'unlimited_update_comment_field' ) ) {
 
 		$comment_field =
 			'<p class="comment-form-comment">
-	            <label>' . __( "Comment", "unlimited" ) . '</label>
+	            <label for="comment">' . __( "Comment", "unlimited" ) . '</label>
 	            <textarea required placeholder="' . __( "Enter Your Comment", "unlimited" ) . '&#8230;" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 	        </p>';
 
@@ -270,45 +270,15 @@ if( ! function_exists( 'unlimited_featured_image' ) ) {
 		// get post object
 		global $post;
 
-		// default to no featured image
-		$has_image = false;
-
 		// establish featured image var
 		$featured_image = '';
 
-		// if post has an image
 		if ( has_post_thumbnail( $post->ID ) ) {
 
-			// get the featured image ID
-			$image_id = get_post_thumbnail_id( $post->ID );
-
-			// get the image's alt text
-			$image_alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-
-			// get the full-size version of the image
-			$image = wp_get_attachment_image_src( $image_id, 'single-post-thumbnail' );
-
-			// set $image = the url
-			$image = $image[0];
-
-			// if alt text is empty, nothing else equal to title string
-			$title = empty($image_alt_text) ? '' : "title='" . esc_attr( $image_alt_text ) . "'";
-
-			// set to true
-			$has_image = true;
-		}
-		if ( $has_image == true ) {
-
-			// on posts/pages display the featured image
 			if ( is_singular() ) {
-				$featured_image = "<div class='featured-image' style=\"background-image: url('" . esc_url( $image ) . "')\" $title></div>";
-			} // on blog/archives display with a link
-			else {
-				$featured_image = "
-	                <div class='featured-image' style=\"background-image: url('" . esc_url( $image ) . "')\" $title>
-	                    <a href='" . get_permalink() . "'>" . get_the_title() . "</a>
-	                </div>
-	                ";
+				$featured_image = '<div class="featured-image">' . get_the_post_thumbnail( $post->ID, 'full' ) . '</div>';
+			} else {
+				$featured_image = '<div class="featured-image"><a href="' . get_permalink() . '">' . get_the_title() . get_the_post_thumbnail( $post->ID, 'full' ) . '</a></div>';
 			}
 		}
 
@@ -390,7 +360,7 @@ if( ! function_exists('unlimited_social_icons_output') ) {
 		$social_sites = unlimited_social_array();
 
 		// icons that should use a special square icon
-		$square_icons = array('linkedin', 'twitter', 'vimeo', 'youtube', 'pinterest', 'reddit', 'tumblr', 'steam', 'xing', 'github', 'google-plus', 'behance', 'facebook');
+		$square_icons = array('linkedin', 'twitter', 'vimeo', 'youtube', 'pinterest', 'rss', 'reddit', 'tumblr', 'steam', 'xing', 'github', 'google-plus', 'behance', 'facebook');
 
 		// store the site name and url
 		foreach ( $social_sites as $social_site => $profile ) {

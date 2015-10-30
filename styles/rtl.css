@@ -5,7 +5,7 @@ Theme URI: https://www.competethemes.com/unlimited/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: Fast, responsive, beautiful, and accessible. With Unlimited, your content will reach more people, on more devices, around the world. Unlimited’s simple design puts the focus on your content, and supports it with clean, reliable code. See the fully setup live demo here: https://www.competethemes.com/unlimited-live-demo/
-Version: 1.12.1
+Version: 1.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, silver, tan, white, dark, light, two-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, accessibility-ready, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -103,10 +103,6 @@ body {
   color: #666666;
   word-wrap: break-word;
   -ms-word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -133,6 +129,15 @@ body {
 .main {
   margin: 0 auto;
   padding: 0 3.125%;
+}
+
+.loop-container:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 p {
@@ -401,6 +406,11 @@ a img {
 
 .admin-bar .skip-content:focus {
   top: 32px;
+}
+
+.infinite-loader,
+#infinite-handle {
+  clear: both;
 }
 
 /* 800px */
@@ -759,8 +769,7 @@ a img {
   position: relative;
   height: 0;
   padding-bottom: 50%;
-  background-size: cover;
-  background-position: 50%;
+  overflow: hidden;
 }
 .featured-image > a {
   position: absolute;
@@ -768,15 +777,48 @@ a img {
   left: 0;
   bottom: 0;
   right: 0;
-  opacity: 0;
   font-size: 0;
-  -webkit-transition: background 0.1s ease-in-out;
-  transition: background 0.1s ease-in-out;
+}
+.featured-image > a:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: white;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
 }
 .featured-image > a:focus {
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.2);
   outline: none;
+}
+.featured-image > a:focus:after {
+  opacity: 0.2;
+}
+.featured-image > img,
+.featured-image > a > img {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.featured-image > img.no-object-fit,
+.featured-image > a > img.no-object-fit {
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  -webkit-transform: translateX(50%) translateY(-50%);
+  -ms-transform: translateX(50%) translateY(-50%);
+  transform: translateX(50%) translateY(-50%);
 }
 
 .entry {
