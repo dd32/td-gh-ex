@@ -8,7 +8,7 @@ if ($prev_post || $next_post):
         <?php if ($prev_post): ?>
             <div class="prev-article pull-left clearfix">
                 <a href="<?php echo esc_url(get_the_permalink($prev_post)); ?>" class="prev-icon fa fa-chevron-left"></a>
-                <a href="<?php echo esc_url(get_the_permalink($prev_post)); ?>" class="prev-post"><?php _e('Previous', 'beatmix_lite'); ?></a>
+                <a href="<?php echo esc_url(get_the_permalink($prev_post)); ?>" class="prev-post"><?php esc_attr_e('Previous', 'beatmix_lite'); ?></a>
                 <h4><a href="<?php echo esc_url(get_the_permalink($prev_post)); ?>"><?php echo esc_attr(get_the_title($prev_post)); ?></a></h4>                
             </div>        
         <?php endif; ?>
@@ -16,7 +16,7 @@ if ($prev_post || $next_post):
         <?php if ($next_post): ?>
         <div class="next-article pull-left clearfix">
             <a href="<?php echo esc_url(get_the_permalink($prev_post)); ?>" class="next-icon fa fa-chevron-right"></a>
-            <a href="<?php echo esc_url(get_the_permalink($prev_post)); ?>" class="next-post"><?php _e('Next', 'beatmix_lite'); ?></a>
+            <a href="<?php echo esc_url(get_the_permalink($prev_post)); ?>" class="next-post"><?php esc_attr_e('Next', 'beatmix_lite'); ?></a>
             <h4><a href="<?php echo esc_url(get_the_permalink($next_post)); ?>"><?php echo esc_attr(get_the_title($next_post)); ?></a></h4>
         </div>
         <?php endif; ?>            

@@ -22,23 +22,23 @@ class Seramag_Lite_Widget_Master extends WP_Widget {
         $instance = wp_parse_args((array) $instance, $this->get_default());        
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'beatmix_lite'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_attr_e('Title:', 'beatmix_lite'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr(strip_tags($instance['title'])); ?>" />
         </p>  
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('posts_per_page')); ?>"><?php _e('Number of posts:', 'beatmix_lite'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('posts_per_page')); ?>"><?php esc_attr_e('Number of posts:', 'beatmix_lite'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('posts_per_page')); ?>" name="<?php echo esc_attr($this->get_field_name('posts_per_page')); ?>" type="text" value="<?php echo esc_attr((int) $instance['posts_per_page']); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('orderby')); ?>"><?php _e('Order by:', 'beatmix_lite'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('orderby')); ?>"><?php esc_attr_e('Order by:', 'beatmix_lite'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('orderby')); ?>" name="<?php echo esc_attr($this->get_field_name('orderby')); ?>">                
                 <?php
                 $orderbys = array(
-                    'date'          => __('Latest news', 'beatmix_lite'),                    
-                    'comment_count' => __('Most comments', 'beatmix_lite'),
-                    'rand'          => __('Random', 'beatmix_lite')
+                    'date'          => esc_attr__('Latest news', 'beatmix_lite'),                    
+                    'comment_count' => esc_attr__('Most comments', 'beatmix_lite'),
+                    'rand'          => esc_attr__('Random', 'beatmix_lite')
                 );
                 foreach ($orderbys as $value => $title) {
                     ?>
@@ -50,9 +50,9 @@ class Seramag_Lite_Widget_Master extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('category')); ?>"><?php _e('Categories:', 'beatmix_lite'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('category')); ?>"><?php esc_attr_e('Categories:', 'beatmix_lite'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('category')); ?>" name="<?php echo esc_attr($this->get_field_name('category')); ?>[]" multiple="multiple" size="5">
-                <option value="">&horbar; <?php _e('All', 'beatmix_lite'); ?> &horbar;</option>
+                <option value="">&horbar; <?php esc_attr_e('All', 'beatmix_lite'); ?> &horbar;</option>
                 <?php
                 $terms = get_terms('category');
                 if ($terms) {
@@ -68,9 +68,9 @@ class Seramag_Lite_Widget_Master extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('post_tag')); ?>"><?php _e('Tags:', 'beatmix_lite'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('post_tag')); ?>"><?php esc_attr_e('Tags:', 'beatmix_lite'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('post_tag')); ?>" name="<?php echo esc_attr($this->get_field_name('post_tag')); ?>[]" multiple="multiple" size="5">
-                <option value="">&horbar; <?php _e('All', 'beatmix_lite'); ?> &horbar;</option>
+                <option value="">&horbar; <?php esc_attr_e('All', 'beatmix_lite'); ?> &horbar;</option>
                 <?php
                 $terms = get_terms('post_tag');
                 if ($terms) {
@@ -86,9 +86,9 @@ class Seramag_Lite_Widget_Master extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('post_format')); ?>"><?php _e('Format:', 'beatmix_lite'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('post_format')); ?>"><?php esc_attr_e('Format:', 'beatmix_lite'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('post_format')); ?>" name="<?php echo esc_attr($this->get_field_name('post_format')); ?>[]" multiple="multiple" size="5">
-                <option value=""><?php _e('-- All --', 'beatmix_lite'); ?></option>
+                <option value=""><?php esc_attr_e('-- All --', 'beatmix_lite'); ?></option>
                 <?php
                 $terms = get_terms('post_format');
                 if ($terms) {
@@ -104,12 +104,12 @@ class Seramag_Lite_Widget_Master extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('relation')); ?>"><?php _e('Combine condition by <i>Tags</i>, <i>Categories</i>, <i>Format</i>', 'beatmix_lite'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('relation')); ?>"><?php esc_attr_e('Combine condition by <i>Tags</i>, <i>Categories</i>, <i>Format</i>', 'beatmix_lite'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('relation')); ?>" name="<?php echo esc_attr($this->get_field_name('relation')); ?>">                
                 <?php
                 $relations = array(
-                    'AND' => __('And', 'beatmix_lite'),
-                    'OR'  => __('Or', 'beatmix_lite'),
+                    'AND' => esc_attr__('And', 'beatmix_lite'),
+                    'OR'  => esc_attr__('Or', 'beatmix_lite'),
                 );
                 foreach ($relations as $value => $title) {
                     ?>
@@ -121,30 +121,30 @@ class Seramag_Lite_Widget_Master extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('in')); ?>"><?php printf('%s <i>%s</i>', __('In:', 'beatmix_lite'), __('(require Wordpress 3.7+)', 'beatmix_lite')); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('in')); ?>"><?php printf('%s <i>%s</i>', esc_attr__('In:', 'beatmix_lite'), esc_attr__('(require Wordpress 3.7+)', 'beatmix_lite')); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('in')); ?>" name="<?php echo esc_attr($this->get_field_name('in')); ?>">                
                 <?php
                 $times = array(
-                    ''          => __('-- All --', 'beatmix_lite'),
-                    '-1 week'   => __('1 week', 'beatmix_lite'),
-                    '-2 week'   => __('2 weeks', 'beatmix_lite'),
-                    '-3 week'   => __('3 weeks', 'beatmix_lite'),
-                    '-1 month'  => __('1 months', 'beatmix_lite'),
-                    '-2 month'  => __('2 months', 'beatmix_lite'),
-                    '-3 month'  => __('3 months', 'beatmix_lite'),
-                    '-4 month'  => __('4 months', 'beatmix_lite'),
-                    '-5 month'  => __('5 months', 'beatmix_lite'),
-                    '-6 month'  => __('6 months', 'beatmix_lite'),
-                    '-7 month'  => __('7 months', 'beatmix_lite'),
-                    '-8 month'  => __('8 months', 'beatmix_lite'),
-                    '-9 month'  => __('9 months', 'beatmix_lite'),
-                    '-10 month' => __('10 months', 'beatmix_lite'),
-                    '-11 month' => __('11 months', 'beatmix_lite'),
-                    '-1 year'   => __('1 year', 'beatmix_lite'),
-                    '-2 year'   => __('2 years', 'beatmix_lite'),
-                    '-3 year'   => __('3 years', 'beatmix_lite'),
-                    '-4 year'   => __('4 years', 'beatmix_lite'),
-                    '-5 year'   => __('5 years', 'beatmix_lite')
+                    ''          => esc_attr__('-- All --', 'beatmix_lite'),
+                    '-1 week'   => esc_attr__('1 week', 'beatmix_lite'),
+                    '-2 week'   => esc_attr__('2 weeks', 'beatmix_lite'),
+                    '-3 week'   => esc_attr__('3 weeks', 'beatmix_lite'),
+                    '-1 month'  => esc_attr__('1 months', 'beatmix_lite'),
+                    '-2 month'  => esc_attr__('2 months', 'beatmix_lite'),
+                    '-3 month'  => esc_attr__('3 months', 'beatmix_lite'),
+                    '-4 month'  => esc_attr__('4 months', 'beatmix_lite'),
+                    '-5 month'  => esc_attr__('5 months', 'beatmix_lite'),
+                    '-6 month'  => esc_attr__('6 months', 'beatmix_lite'),
+                    '-7 month'  => esc_attr__('7 months', 'beatmix_lite'),
+                    '-8 month'  => esc_attr__('8 months', 'beatmix_lite'),
+                    '-9 month'  => esc_attr__('9 months', 'beatmix_lite'),
+                    '-10 month' => esc_attr__('10 months', 'beatmix_lite'),
+                    '-11 month' => esc_attr__('11 months', 'beatmix_lite'),
+                    '-1 year'   => esc_attr__('1 year', 'beatmix_lite'),
+                    '-2 year'   => esc_attr__('2 years', 'beatmix_lite'),
+                    '-3 year'   => esc_attr__('3 years', 'beatmix_lite'),
+                    '-4 year'   => esc_attr__('4 years', 'beatmix_lite'),
+                    '-5 year'   => esc_attr__('5 years', 'beatmix_lite')
                 );
                 foreach ($times as $value => $title) {
                     ?>

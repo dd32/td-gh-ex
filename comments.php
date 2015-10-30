@@ -5,7 +5,7 @@
     if (have_comments()) :        
         ?>     
         <h3 class="text-center">
-            <?php printf(_n('%1$s Comment', '%1$s Comments', get_comments_number(), 'seramag_lite'), get_comments_number());?>
+            <?php printf(  esc_attr__('%1$s Comments', 'beatmix_lite'), get_comments_number());?>
         </h3> 
         
         <ol class="comments-list clearfix">
@@ -13,7 +13,7 @@
             wp_list_comments(array(                
                 'style'      => 'ol',
                 'short_ping' => true,
-                'callback'   => 'seramag_lite_list_comments',
+                'callback'   => 'beatmix_lite_list_comments',
                 'type'       => 'all'
             ));
             ?>
@@ -23,25 +23,25 @@
             <div class="pagination kopa-comment-pagination">  
                 <?php
                 paginate_comments_links(array(
-                    'prev_text' => __('<span>&laquo;</span> Previous', 'seramag_lite'),
-                    'next_text' => __('Next <span>&raquo;</span>', 'seramag_lite')
+                    'prev_text' => esc_attr__('<span>&laquo;</span> Previous', 'beatmix_lite'),
+                    'next_text' => esc_attr__('Next <span>&raquo;</span>', 'beatmix_lite')
                 ));
                 ?>
             </div>
         <?php endif; ?>
         <?php if (!comments_open() && get_comments_number()) : ?>
-            <blockquote><?php _e('Comments are closed.', 'seramag_lite'); ?></blockquote>
+            <blockquote><?php esc_attr_e('Comments are closed.', 'beatmix_lite'); ?></blockquote>
         <?php endif; ?>    
         <?php
     endif;    
     ?>
 </div>
 
-<?php seramag_lite_comment_form(); ?>
+<?php beatmix_lite_comment_form(); ?>
 
 <?php
 
-function seramag_lite_comment_form($args = array(), $post_id = null) {
+function beatmix_lite_comment_form($args = array(), $post_id = null) {
     if (null === $post_id)
         $post_id = get_the_ID();
 
@@ -59,19 +59,19 @@ function seramag_lite_comment_form($args = array(), $post_id = null) {
     $fields['author'] = '<div class="row">';  
     $fields['author'] .= '<div class="col-md-4 col-sm-4 col-xs-4">';    
     $fields['author'] .= '<p class="input-block">';    
-    $fields['author'] .= sprintf('<input type="text" value="%1$s" id="comment_name" name="author" size="30" onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>', __('Name *', 'beatmix_lite'), $aria_req);
+    $fields['author'] .= sprintf('<input type="text" value="%1$s" id="comment_name" name="author" size="30" onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>', esc_attr__('Name *', 'beatmix_lite'), $aria_req);
     $fields['author'] .= '</p>';  
     $fields['author'] .= '</div>'; 
     
     $fields['email']  = '<div class="col-md-4 col-sm-4 col-xs-4">';  
     $fields['email']  .= '<p class="input-block">';    
-    $fields['email']  .= sprintf('<input type="text" value="%1$s" id="comment_email" name="email" size="30"  onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>',  __('Email *', 'beatmix_lite'), $aria_req);
+    $fields['email']  .= sprintf('<input type="text" value="%1$s" id="comment_email" name="email" size="30"  onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>',  esc_attr__('Email *', 'beatmix_lite'), $aria_req);
     $fields['email']  .= '</p>';  
     $fields['email']  .= '</div>';     
     
     $fields['url']    = '<div class="col-md-4 col-sm-4 col-xs-4">';  
     $fields['url']    .= '<p class="input-block">';    
-    $fields['url']    .= sprintf('<input type="text" value="%1$s" id="comment_url" name="url" size="30"  onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>', __('Website', 'beatmix_lite'), $aria_req);
+    $fields['url']    .= sprintf('<input type="text" value="%1$s" id="comment_url" name="url" size="30"  onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>', esc_attr__('Website', 'beatmix_lite'), $aria_req);
     $fields['url']    .= '</p>';  
     $fields['url']    .= '</div>';  
     $fields['url']    .= '</div>'; 
@@ -84,7 +84,7 @@ function seramag_lite_comment_form($args = array(), $post_id = null) {
         placeholder="%s" %s></textarea></p>
         </div>
         </div>', 
-        __('Your comment (*)', 'seramag_lite'), 
+        esc_attr__('Your comment (*)', 'beatmix_lite'), 
         $aria_req);            
     
 
@@ -93,16 +93,16 @@ function seramag_lite_comment_form($args = array(), $post_id = null) {
     $defaults = array(
         'fields'               => $fields,
         'comment_field'        => $comment_field,
-        'must_log_in'          => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', 'seramag_lite'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
-        'logged_in_as'         => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'seramag_lite'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+        'must_log_in'          => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', 'beatmix_lite'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+        'logged_in_as'         => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'beatmix_lite'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
         'comment_notes_before' => '',
         'comment_notes_after'  => '',
         'id_form'              => 'comments-form',
         'id_submit'            => 'submit-comment',
-        'title_reply'          => __('Leave a Reply', 'seramag_lite'),
-        'title_reply_to'       => __('Leave a Reply to %s', 'seramag_lite'),
-        'cancel_reply_link'    => __('(cancel)', 'seramag_lite'),
-        'label_submit'         => __('Post Comment', 'seramag_lite'),
+        'title_reply'          => esc_attr__('Leave a Reply', 'beatmix_lite'),
+        'title_reply_to'       => esc_attr__('Leave a Reply to %s', 'beatmix_lite'),
+        'cancel_reply_link'    => esc_attr__('(cancel)', 'beatmix_lite'),
+        'label_submit'         => esc_attr__('Post Comment', 'beatmix_lite'),
         'format'               => 'xhtml',        
     );
     $args = wp_parse_args($args, apply_filters('comment_form_defaults', $defaults));
@@ -173,7 +173,7 @@ function seramag_lite_comment_form($args = array(), $post_id = null) {
     endif;
 }
 
-function seramag_lite_list_comments($comment, $args, $depth) {
+function beatmix_lite_list_comments($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
     ?>
     <li <?php comment_class('clearfix'); ?> id="comment-<?php comment_ID(); ?>">
@@ -191,7 +191,7 @@ function seramag_lite_list_comments($comment, $args, $depth) {
                     </div>                                                                
 
                     <span class="comment-reply-link pull-right">
-                        <?php comment_reply_link(array_merge($args, array('reply_text' => '<i class="fa fa-mail-reply"></i><span>'. __('Reply', 'beatmix_lite') .'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>                        
+                        <?php comment_reply_link(array_merge($args, array('reply_text' => '<i class="fa fa-mail-reply"></i><span>'. esc_attr__('Reply', 'beatmix_lite') .'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>                        
                     </span>
 
                     <div class="clear"></div>
@@ -201,7 +201,7 @@ function seramag_lite_list_comments($comment, $args, $depth) {
                 </div>                                
                 <footer class="text-right text-uppercase">
                     <span class="entry-date"><?php comment_time(get_option('date_format') . ' - ' . get_option('time_format')); ?></span>                    
-                    <?php edit_comment_link(__('<span>&nbsp;/&nbsp;</span> Edit', 'seramag_lite'), ' ', ''); ?>                    
+                    <?php edit_comment_link(__('<span>&nbsp;/&nbsp;</span> Edit', 'beatmix_lite'), ' ', ''); ?>                    
                 </footer>
             </div><!--comment-body -->            
      

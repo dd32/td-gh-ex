@@ -3,14 +3,14 @@ Theme Name: Beat Mix Lite
 Theme URI: http://kopatheme.com/freebies/beatmix-another-free-wordpress-blog-theme
 Author: Kopatheme
 Author URI: http://kopatheme.com/
-Version: 1.0.0
+Version: 1.0.1
 Description: BeatMix is a clean, trendy and fully responsive WordPress theme suited for concerts, events or any kind of music websites or blogs. This super flexible and easy-to-use theme coming along with many powerful options and features is guaranteed to give your site an amazing look beyond your expectations.
 Tags: light, one-column, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beatmix_lite
 Requires at least: 3.8
-Tested up to: 4.2.2
+Tested up to: 4.3.1
 */
 /**
  * Table of Contents:
@@ -10020,4 +10020,7 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+.screen-reader-text {
+  
 }

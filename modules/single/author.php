@@ -21,7 +21,7 @@ if (!empty($description)):
     </div>
     <div class="author-content">
         <h5>
-            <?php _e('About', 'beatmix_lite'); ?>
+            <?php esc_attr_e('About', 'beatmix_lite'); ?>
             <a href="<?php echo esc_url($link); ?>" title="<?php echo esc_attr($name); ?>">
                 <?php echo esc_attr($name); ?>
             </a>

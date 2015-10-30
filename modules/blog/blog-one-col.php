@@ -26,7 +26,7 @@
 	                      <span class="entry-date"><?php echo esc_attr(get_the_date()); ?></span>
 	                      <span class="entry-meta"> / </span>
 	                      <span class="entry-author">
-	                      	<span><?php _e('by', 'beatmix_lite'); ?></span>
+	                      	<span><?php esc_attr_e('by', 'beatmix_lite'); ?></span>
 	                      	<?php the_author_link(); ?>
 	                      </span>
 	                  </header>
@@ -43,7 +43,7 @@
 	                  
 	                  <footer>
 	                      <a href="<?php the_permalink(); ?>" class="more-link">
-	                          <span class="pull-left"><?php _e('Continue reading', 'beatmix_lite'); ?></span>
+	                          <span class="pull-left"><?php esc_attr_e('Continue reading', 'beatmix_lite'); ?></span>
 	                          <i class="fa fa-long-arrow-right pull-left"></i>
 	                      </a>
 	                  </footer>

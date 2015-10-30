@@ -11,6 +11,11 @@ Fully responsive
 3 Footer Sidebar
 Support Firefox, Chrome, Safary, Opera, IE9+
 
+--------------------
+Changelog
+--------------------
+* 1.0.1 (10/30/2015)
+- firtst version
 
 --------------------
 Sources and Credits
@@ -60,12 +65,29 @@ Javascript Licenses
     custom.js
         Copyright (c) 2014 Kopatheme - kopatheme.com
         Licensed under the GPL license:
-        *  http://www.gnu.org/licenses/gpl.html    
+        *  http://www.gnu.org/licenses/gpl.html   
+    fitvids.js
+        Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+        Released under the WTFPL license - http://sam.zoy.org/wtfpl/
+    imagesloaded.js
+        imagesLoaded PACKAGED v3.1.4
+        MIT License
+    jquery.caroufredsel.js
+        Copyright (c) 2013 Fred Heusschen
+        Dual licensed under the MIT and GPL licenses.
+        http://en.wikipedia.org/wiki/MIT_License
+        http://en.wikipedia.org/wiki/GNU_General_Public_License
+    jquery.matchheight.js
+        jquery.matchHeight-min.js v0.5.2 - http://brm.io/jquery-match-height/
+        License: MIT
     jquery.navgoco.js
         jQuery Navgoco Menus Plugin v0.1.5 (2013-09-07)
          * https://github.com/tefra/navgoco
          * Copyright (c) 2013 Chris T (@tefra)
          * BSD - https://github.com/tefra/navgoco/blob/master/LICENSE-BSD
+    masonry.js
+        Cascading grid layout library - http://masonry.desandro.com
+        License: MIT
     modernizr.js
         Modernizr 2.7.1 (Custom Build) | MIT & BSD
          * Build: http://modernizr.com/download/#-fontface-backgroundsize-borderradius-boxshadow-flexbox-flexboxlegacy-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-audio-video-shiv-mq-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load
@@ -80,7 +102,8 @@ Javascript Licenses
          * Dual licensed under the MIT and GPL licenses:
          *	http://www.opensource.org/licenses/mit-license.php
          *	http://www.gnu.org/licenses/gpl.html
-
+    visible.js
+         Visible, Sam Sehnert, samatdf, TeamDF, https://github.com/teamdf/jquery-visible/
 --------------------
 Limitation
 --------------------

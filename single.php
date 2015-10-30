@@ -29,7 +29,7 @@ get_header();
                 	</a>
                 </div>
                 <div class="author-content">
-                    <h5><?php _e('By', 'beatmix_lite'); ?> <?php the_author_link(); ?></h5>                                                
+                    <h5><?php esc_attr_e('By', 'beatmix_lite'); ?> <?php the_author_link(); ?></h5>                                                
                 </div>
             </div>
         </div>

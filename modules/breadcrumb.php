@@ -4,7 +4,7 @@ $current_class     = 'current-page';
 $prefix            = '  /  ';
 $breadcrumb_before = '<div class="breadcrumb clearfix"> ';
 $breadcrumb_after  = '</div>';
-$breadcrumb_home   = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . home_url() . '" itemprop="url"><span itemprop="title">' . __('Home', 'beatmix_lite') . '</span></a></span>';
+$breadcrumb_home   = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . home_url() . '" itemprop="url"><span itemprop="title">' . esc_attr__('Home', 'beatmix_lite') . '</span></a></span>';
 $breadcrumb        = $breadcrumb_home;
 $page_title        = '';
 
@@ -59,7 +59,7 @@ if (is_archive()) {
     $s = get_search_query();
     $c = $wp_query->found_posts;
     $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, sprintf(__('Searched for "%s" return %s results', 'beatmix_lite'), $s, $c));
-    $page_title = __('Search', 'beatmix_lite');
+    $page_title = esc_attr__('Search', 'beatmix_lite');
 } else if (is_singular()) {
     if (is_page()) {
         if (is_front_page()) {
@@ -86,11 +86,11 @@ if (is_archive()) {
         $page_title = get_the_title(get_queried_object_id());
     }
 } else if (is_404()) {
-    $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, __('Page not found', 'beatmix_lite'));
-    $page_title = __('404', 'beatmix_lite');
+    $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, esc_attr__('Page not found', 'beatmix_lite'));
+    $page_title = esc_attr__('404', 'beatmix_lite');
 } else {
-    $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, __('Latest News', 'beatmix_lite'));
-    $page_title = __('Home', 'beatmix_lite');
+    $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, esc_attr__('Latest News', 'beatmix_lite'));
+    $page_title = esc_attr__('Home', 'beatmix_lite');
 }
 
 echo empty($page_title) ? '' : sprintf('<h1 class="page-title">%s</h1>', $page_title);

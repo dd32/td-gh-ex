@@ -1,15 +1,15 @@
 <?php
 
-add_action('after_setup_theme', array('Seramag_Lite_Customization', 'get_instance'));	
+add_action('after_setup_theme', array('Beatmix_Lite_Customization', 'get_instance'));	
 
-class Seramag_Lite_Customization{
+class Beatmix_Lite_Customization{
 
 	public function __construct(){
 		add_action('customize_register', array($this, 'customize_register'));
 	}
 
 	public static function get_instance(){
-		new Seramag_Lite_Customization();		
+		new Beatmix_Lite_Customization();		
 	}
 
 	public function customize_register($wp_customize){
