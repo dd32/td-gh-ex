@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2015-10-18 16:55-0700\n"
-"PO-Revision-Date: 2015-10-18 16:55-0700\n"
+"POT-Creation-Date: 2015-10-28 14:47-0700\n"
+"PO-Revision-Date: 2015-10-28 14:47-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: bg_BG\n"
@@ -138,11 +138,11 @@ msgstr "Откажи отговора"
 msgid "Post Comment"
 msgstr "Публикувай коментар"
 
-#: content-link.php:29 content-page.php:20 content-single.php:22 content.php:28
+#: content-link.php:29 content-page.php:24 content-single.php:25 content.php:28
 msgid "Pages:"
 msgstr "Страници:"
 
-#: content-page.php:26 content-single.php:32 inc/template-tags.php:117
+#: content-page.php:30 content-single.php:35 inc/template-tags.php:117
 #: inc/template-tags.php:137
 msgid "Edit"
 msgstr "Редактирай"
@@ -232,7 +232,7 @@ msgstr "Лява страничната лента"
 msgid "Header"
 msgstr "Хедър"
 
-#: functions.php:389 inc/options.php:184
+#: functions.php:389 inc/options.php:177
 msgid "Copyright"
 msgstr "Авторско право"
 
@@ -248,7 +248,7 @@ msgstr "Сайтът е изграден с Уърдпрес"
 msgid "WordPress"
 msgstr "Уърдпрес"
 
-#: header.php:24
+#: header.php:21
 msgid "Skip to content"
 msgstr "Напред към съдържанието"
 
@@ -264,7 +264,19 @@ msgstr "Google шрифтове"
 msgid "Font family"
 msgstr "Шрифт семейство"
 
-#: inc/add-ons/typography.php:322 inc/options.php:156
+#: inc/add-ons/disable-elements.php:59 inc/options.php:184
+msgid "Disable Elements"
+msgstr "Забраняване на елементи"
+
+#: inc/add-ons/disable-elements.php:81 inc/add-ons/disable-elements.php:83
+msgid "Content Title"
+msgstr ""
+
+#: inc/add-ons/disable-elements.php:87 inc/customizer.php:763
+msgid "Add-on available"
+msgstr "Възможна добавка"
+
+#: inc/add-ons/typography.php:322 inc/options.php:149
 msgid "Typography"
 msgstr "ТИПОГРАФИЯ"
 
@@ -333,7 +345,7 @@ msgstr "Сайт описание (Лозунгът)"
 msgid "Logo"
 msgstr "Лого"
 
-#: inc/customizer.php:103 inc/options.php:140
+#: inc/customizer.php:103 inc/options.php:133
 msgid "Colors"
 msgstr "Цветове"
 
@@ -514,7 +526,7 @@ msgstr "Оформление на футера"
 msgid "Footer Widgets"
 msgstr "Уиджети във футера"
 
-#: inc/customizer.php:641 inc/options.php:198
+#: inc/customizer.php:641 inc/options.php:191
 msgid "Blog"
 msgstr "Блог"
 
@@ -542,10 +554,6 @@ msgstr "Проверете \"Генерира Блог\""
 #: inc/customizer.php:727
 msgid "Default"
 msgstr "По подразбиране"
-
-#: inc/customizer.php:763
-msgid "Add-on available"
-msgstr "Възможна добавка"
 
 #: inc/customizer.php:821
 msgid "Add-ons Available! Take a look"
@@ -613,13 +621,13 @@ msgstr "5 джаджи"
 msgid "Menu"
 msgstr "Меню"
 
-#: inc/navigation.php:130 inc/template-tags.php:353 inc/template-tags.php:379
+#: inc/navigation.php:131 inc/template-tags.php:366 inc/template-tags.php:392
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
 msgstr "Търсене"
 
-#: inc/options.php:64 inc/options.php:77 inc/options.php:130
+#: inc/options.php:64 inc/options.php:77 inc/options.php:123
 msgid "Customize"
 msgstr "Промяна"
 
@@ -631,13 +639,13 @@ msgstr "Версия"
 msgid "Author"
 msgstr "Автор"
 
-#: inc/options.php:79 inc/options.php:133
+#: inc/options.php:79 inc/options.php:126
 msgid "Add-ons"
 msgstr "Добавки"
 
 #: inc/options.php:81
 msgid ""
-"Please help support ongoing development of the GeneratePress by buying me a "
+"Please help support the ongoing development of GeneratePress by buying me a "
 "coffee :)"
 msgstr ""
 
@@ -649,22 +657,18 @@ msgstr "Купи ми едно кафе :)"
 msgid "Add-on Updates"
 msgstr "Обновления на добавките"
 
-#: inc/options.php:94
-msgid "No add-ons to keep up to date!"
-msgstr "Няма добавки за ъпдейт!"
-
-#: inc/options.php:108
+#: inc/options.php:101
 msgid "Delete Customizer Settings"
 msgstr "Изтриване на настройките за персонализация"
 
-#: inc/options.php:110
+#: inc/options.php:103
 #, php-format
 msgid ""
 "<strong>Warning:</strong> Deleting your <a href=\"%1$s\">Customizer</a> "
 "settings can not be undone."
 msgstr ""
 
-#: inc/options.php:111
+#: inc/options.php:104
 msgid ""
 "Consider using our Import/Export add-on to export your settings before "
 "deleting them."
@@ -672,67 +676,63 @@ msgstr ""
 "Можете да използвате нашата добавка за импортиране/експортиране за да "
 "експортирате вашите настройки преди да ги изтриете."
 
-#: inc/options.php:116
+#: inc/options.php:109
 msgid "Warning: This will delete your settings."
 msgstr "Внимание: Това ще изтрие вашите настройки!"
 
-#: inc/options.php:118
+#: inc/options.php:111
 msgid "Delete Default Customizer Settings"
 msgstr "Изтриване на настройките за персонализация"
 
-#: inc/options.php:148
+#: inc/options.php:141
 msgid "Sections"
 msgstr "Секции"
 
-#: inc/options.php:163
+#: inc/options.php:156
 msgid "Menu Plus"
 msgstr ""
 
-#: inc/options.php:170
+#: inc/options.php:163
 msgid "Page Header"
 msgstr "Хедър на страница"
 
-#: inc/options.php:177
+#: inc/options.php:170
 msgid "Import / Export"
 msgstr "Импортиране/Експортиране"
 
-#: inc/options.php:191
-msgid "Disable Elements"
-msgstr "Забраняване на елементи"
-
-#: inc/options.php:205
+#: inc/options.php:198
 msgid "Hooks"
 msgstr "Куки"
 
-#: inc/options.php:212
+#: inc/options.php:205
 msgid "Spacing"
 msgstr "Отстояние"
 
-#: inc/options.php:219
+#: inc/options.php:212
 msgid "Backgrounds"
 msgstr "Фонове"
 
-#: inc/options.php:226
+#: inc/options.php:219
 msgid "Secondary Nav"
 msgstr "Допълнителна навигация"
 
-#: inc/options.php:238 inc/options.php:245
+#: inc/options.php:231 inc/options.php:238
 msgid "Not activated."
 msgstr "Не е активирано."
 
-#: inc/options.php:240 inc/options.php:247
+#: inc/options.php:233 inc/options.php:240
 msgid "Activated."
 msgstr "Активиран"
 
-#: inc/options.php:296
+#: inc/options.php:289
 msgid "Settings saved."
 msgstr "Настройките са запазени."
 
-#: inc/options.php:300
+#: inc/options.php:293
 msgid "Import successful."
 msgstr "Импорта бе успешен."
 
-#: inc/options.php:304
+#: inc/options.php:297
 msgid "Settings removed."
 msgstr "Настройките бяха премахнати."
 
@@ -783,48 +783,48 @@ msgstr "%1$s в %2$s"
 msgid "Your comment is awaiting moderation."
 msgstr "Коментарът ви очаква одобрение."
 
-#: inc/template-tags.php:194
+#: inc/template-tags.php:205
 msgid "by"
 msgstr "от"
 
-#: inc/template-tags.php:196
+#: inc/template-tags.php:207
 #, php-format
 msgid "View all posts by %s"
 msgstr "Вижте всички публикации по % s"
 
-#: inc/template-tags.php:209 inc/template-tags.php:220
+#: inc/template-tags.php:222 inc/template-tags.php:233
 msgid "Read more"
 msgstr "Прочетете повече"
 
-#: inc/template-tags.php:327
+#: inc/template-tags.php:340
 msgctxt "label"
 msgid "Search"
 msgstr "Търсене"
 
-#: inc/template-tags.php:393 inc/template-tags.php:401
+#: inc/template-tags.php:410 inc/template-tags.php:418
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ","
 
-#: inc/template-tags.php:396
+#: inc/template-tags.php:413
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr "Категории"
 
-#: inc/template-tags.php:404
+#: inc/template-tags.php:421
 msgctxt "Used before tag names."
 msgid "Tags"
 msgstr "Етикети"
 
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "Leave a comment"
 msgstr "Оставете коментар"
 
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "1 Comment"
 msgstr "1 коментар"
 
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "% Comments"
 msgstr "%s Коментара"
 
@@ -874,6 +874,9 @@ msgstr "Търсене &hellip;"
 #: sidebar-left.php:46 sidebar.php:45
 msgid "Meta"
 msgstr "Meta"
+
+#~ msgid "No add-ons to keep up to date!"
+#~ msgstr "Няма добавки за ъпдейт!"
 
 #~ msgid ""
 #~ "It looks like nothing was found at this location. Maybe try one of the "

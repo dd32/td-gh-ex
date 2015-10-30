@@ -172,6 +172,9 @@ function generate_posted_on() {
 
 	if ( 'post' !== get_post_type() ) 
 		return;
+	
+	$date = apply_filters( 'generate_post_date', true );
+	$author = apply_filters( 'generate_post_author', true );
 		
 	$time_string = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
@@ -183,20 +186,30 @@ function generate_posted_on() {
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
-
-	printf( '<span class="posted-on">%1$s</span> <span class="byline">%2$s</span>',
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
-			$time_string
-		),
-		sprintf( '<span class="author vcard" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author">%1$s <a class="url fn n" href="%2$s" title="%3$s" rel="author" itemprop="url"><span class="author-name" itemprop="name">%4$s</span></a></span>',
-			__( 'by','generate'),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'generate' ), get_the_author() ) ),
-			esc_html( get_the_author() )
-		)
-	);
+	
+	// If our date is enabled, show it
+	if ( $date ) :
+		printf( '<span class="posted-on">%1$s</span>',
+			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
+				esc_url( get_permalink() ),
+				esc_attr( get_the_time() ),
+				$time_string
+			)
+		);
+	endif;
+	
+	// If our author is enabled, show it
+	if ( $author ) :
+		printf( ' <span class="byline">%1$s</span>',
+			sprintf( '<span class="author vcard" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author">%1$s <a class="url fn n" href="%2$s" title="%3$s" rel="author" itemprop="url"><span class="author-name" itemprop="name">%4$s</span></a></span>',
+				__( 'by','generate'),
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				esc_attr( sprintf( __( 'View all posts by %s', 'generate' ), get_the_author() ) ),
+				esc_html( get_the_author() )
+			)
+		);
+	endif;
+	
 }
 endif;
 
@@ -217,7 +230,7 @@ if ( ! function_exists( 'generate_content_more' ) ) :
 	add_filter( 'the_content_more_link', 'generate_content_more' );
 	function generate_content_more( $more ) {
 		$more_jump = apply_filters( 'generate_more_jump','#more-' . get_the_ID() );
-		return '<p><a class="read-more content-read-more" href="'. get_permalink( get_the_ID() ) . $more_jump . '">' . __('Read more', 'generate') . '</a></p>';
+		return '<p class="read-more-container"><a class="read-more content-read-more" href="'. get_permalink( get_the_ID() ) . $more_jump . '">' . __('Read more', 'generate') . '</a></p>';
 	}
 endif;
 
@@ -323,7 +336,7 @@ function generate_navigation_search()
 		return;
 			
 	?>
-	<form role="search" method="get" class="search-form navigation-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<form method="get" class="search-form navigation-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<input type="search" class="search-field" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" title="<?php _ex( 'Search', 'label', 'generate' ); ?>">
 	</form>
 	<?php
@@ -364,7 +377,7 @@ if ( ! function_exists( 'generate_mobile_menu_search_icon' ) ) :
  *
  * @since 1.3.12
  */
-add_action( 'generate_inside_mobile_menu','generate_mobile_menu_search_icon' );
+add_action( 'generate_inside_navigation','generate_mobile_menu_search_icon' );
 function generate_mobile_menu_search_icon() 
 {
 	$generate_settings = wp_parse_args( 
@@ -376,7 +389,7 @@ function generate_mobile_menu_search_icon()
 	if ( 'enable' !== $generate_settings['nav_search'] )
 		return;
 	
-	echo '<li class="search-item" title="' . _x( 'Search', 'submit button', 'generate' ) . '"><a href="#"><i class="fa fa-search"></i></a></li>';
+	echo '<div class="mobile-search-item"><span class="search-item" title="' . _x( 'Search', 'submit button', 'generate' ) . '"><a href="#"><i class="fa fa-search"></i></a></span></div>';
 }
 endif;
 
@@ -388,10 +401,14 @@ if ( ! function_exists( 'generate_entry_meta' ) ) :
  */
 function generate_entry_meta() 
 {
+	$categories = apply_filters( 'generate_show_categories', true );
+	$tags = apply_filters( 'generate_show_tags', true );
+	$comments = apply_filters( 'generate_show_comments', true );
+	
 	if ( 'post' == get_post_type() ) {
 
 		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'generate' ) );
-		if ( $categories_list ) {
+		if ( $categories_list && $categories ) {
 			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
 				_x( 'Categories', 'Used before category names.', 'generate' ),
 				$categories_list
@@ -399,7 +416,7 @@ function generate_entry_meta()
 		}
 
 		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'generate' ) );
-		if ( $tags_list ) {
+		if ( $tags_list && $tags ) {
 			printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
 				_x( 'Tags', 'Used before tag names.', 'generate' ),
 				$tags_list
@@ -407,7 +424,7 @@ function generate_entry_meta()
 		}
 	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) && $comments ) {
 		echo '<span class="comments-link">';
 		comments_popup_link( __( 'Leave a comment', 'generate' ), __( '1 Comment', 'generate' ), __( '% Comments', 'generate' ) );
 		echo '</span>';

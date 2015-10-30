@@ -1,5 +1,23 @@
 === changelog ===
 
+= (10/29/2015) - 1.3.18 =
+* Fix donate text
+* Update all translations
+* Added to Russian translation
+* Adjust IE10 specific CSS for responsive features
+* Move mobile search button out of <button> to comply with HTML5
+* Fix bug where mobile search button wasn't working in Firefox
+* Add new filter: generate_post_date - allows for post date to be removed
+* Add new filter: generate_post_author - allows for post author to be removed
+* Add new filter: generate_show_categories - allows for post categories to be removed
+* Add new filter: generate_show_tags - allows for post tags to be removed
+* Add new filter: generate_show_comments - allows for the comments link to be removed
+* Remove wp_title() function to avoid warning in WP 4.4 - please make sure you're updated
+* Add primary-menu ID to the primary menu for accessibility reasons
+* Add new function/filter: generate_show_title - allows you to fully remove the title
+* Add metabox to disable the content title on specific pages
+* Add class to read more link container
+
 = (10/18/2015) - 1.3.17 =
 * Adjust grid CSS for Windows mobile phones
 * Fix WooCommerce specific styling to mobile

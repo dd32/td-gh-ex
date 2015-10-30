@@ -18,7 +18,7 @@ Activate add-on updates and reset your settings.
 GeneratePress has up to 8 widget area. 1 in your header, 1 for each sidebar and up to 5 in your footer.
 
 == Appearance > Customize ==
-	- Header Content: Hide your site title or tagline, and upload your own header.
+	- Site Identity: Hide your site title or tagline, and upload your own header.
 	- Layout: Change things like your container width, header layout, navigation layout, sidebar layout and much more.
 	- Typography: Choose your default body font.
 	- Base Colors: Easily change your background color, text color and link color.

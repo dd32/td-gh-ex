@@ -78,28 +78,21 @@ function generate_settings_page()
 										<?php if ( generate_addons_available() ) : ?>
 											<a id="generate_addon_button" class="button button-primary" href="<?php echo esc_url('http://generatepress.com/add-ons');?>" target="_blank"><?php _e('Add-ons','generate');?></a> 
 										<?php endif; ?>
-										<a title="<?php _e('Please help support ongoing development of the GeneratePress by buying me a coffee :)','generate');?>" class="button button-secondary" target="_blank" href="<?php echo esc_url('https://generatepress.com/ongoing-development');?>"><?php _e('Buy me a coffee :)','generate');?></a>
+										<a title="<?php _e('Please help support the ongoing development of GeneratePress by buying me a coffee :)','generate');?>" class="button button-secondary" target="_blank" href="<?php echo esc_url('https://generatepress.com/ongoing-development');?>"><?php _e('Buy me a coffee :)','generate');?></a>
 									</p>
 								</div>
 							</div>
 
 							<?php do_action('generate_inside_options_form'); ?>
-								
-							<div class="postbox generate-metabox" id="gen-license-keys">
-								<h3 class="hndle"><?php _e('Add-on Updates','generate');?></h3>
-								<div class="inside">
-									
-									<?php
-									if ( generate_no_addons() == true ) :
-										echo '<div class="no-addons">' . __('No add-ons to keep up to date!','generate') . '</div>';
-									endif;
-										
-									do_action('generate_license_key_items'); 
-									?>
-
+							<?php if ( ! generate_no_addons() ) : ?>
+								<div class="postbox generate-metabox" id="gen-license-keys">
+									<h3 class="hndle"><?php _e('Add-on Updates','generate');?></h3>
+									<div class="inside">
+										<?php do_action('generate_license_key_items'); ?>
+									</div>
 								</div>
-							</div>
-
+							<?php endif; ?>
+							
 						</form>
 										
 						<?php do_action('generate_options_items'); ?>

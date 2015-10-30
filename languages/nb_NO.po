@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress v1.2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-18 16:56-0700\n"
-"PO-Revision-Date: 2015-10-18 16:56-0700\n"
+"POT-Creation-Date: 2015-10-28 14:48-0700\n"
+"PO-Revision-Date: 2015-10-28 14:48-0700\n"
 "Last-Translator: krice <kri_ce@hotmail.com>\n"
 "Language-Team: \n"
 "Language: nb_NO\n"
@@ -164,12 +164,12 @@ msgid "Post Comment"
 msgstr "Legg til kommentar"
 
 # @ generate
-#: content-link.php:29 content-page.php:20 content-single.php:22 content.php:28
+#: content-link.php:29 content-page.php:24 content-single.php:25 content.php:28
 msgid "Pages:"
 msgstr "Sider:"
 
 # @ generate
-#: content-page.php:26 content-single.php:32 inc/template-tags.php:117
+#: content-page.php:30 content-single.php:35 inc/template-tags.php:117
 #: inc/template-tags.php:137
 msgid "Edit"
 msgstr "Rediger"
@@ -269,7 +269,7 @@ msgid "Header"
 msgstr "Toppfelt"
 
 # @ generate
-#: functions.php:389 inc/options.php:184
+#: functions.php:389 inc/options.php:177
 msgid "Copyright"
 msgstr "Opphavsrett"
 
@@ -289,7 +289,7 @@ msgid "WordPress"
 msgstr "Wordpress"
 
 # @ generate
-#: header.php:24
+#: header.php:21
 msgid "Skip to content"
 msgstr "Hopp til innhold"
 
@@ -309,7 +309,20 @@ msgid "Font family"
 msgstr "Skrifttype"
 
 # @ generate
-#: inc/add-ons/typography.php:322 inc/options.php:156
+#: inc/add-ons/disable-elements.php:59 inc/options.php:184
+msgid "Disable Elements"
+msgstr "Deaktiver elementer"
+
+#: inc/add-ons/disable-elements.php:81 inc/add-ons/disable-elements.php:83
+msgid "Content Title"
+msgstr ""
+
+#: inc/add-ons/disable-elements.php:87 inc/customizer.php:763
+msgid "Add-on available"
+msgstr ""
+
+# @ generate
+#: inc/add-ons/typography.php:322 inc/options.php:149
 msgid "Typography"
 msgstr "Typografi"
 
@@ -394,7 +407,7 @@ msgid "Logo"
 msgstr "Logo"
 
 # @ generate
-#: inc/customizer.php:103 inc/options.php:140
+#: inc/customizer.php:103 inc/options.php:133
 msgid "Colors"
 msgstr "Farger"
 
@@ -618,7 +631,7 @@ msgid "Footer Widgets"
 msgstr "Bunnfeltwidgeter"
 
 # @ generate
-#: inc/customizer.php:641 inc/options.php:198
+#: inc/customizer.php:641 inc/options.php:191
 msgid "Blog"
 msgstr "Blogg"
 
@@ -652,10 +665,6 @@ msgstr "Sjekk Generate Blog"
 #: inc/customizer.php:727
 msgid "Default"
 msgstr "Standard"
-
-#: inc/customizer.php:763
-msgid "Add-on available"
-msgstr ""
 
 #: inc/customizer.php:821
 msgid "Add-ons Available! Take a look"
@@ -739,13 +748,13 @@ msgid "Menu"
 msgstr "Meny"
 
 # @ generate
-#: inc/navigation.php:130 inc/template-tags.php:353 inc/template-tags.php:379
+#: inc/navigation.php:131 inc/template-tags.php:366 inc/template-tags.php:392
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
 msgstr "Søk"
 
-#: inc/options.php:64 inc/options.php:77 inc/options.php:130
+#: inc/options.php:64 inc/options.php:77 inc/options.php:123
 msgid "Customize"
 msgstr ""
 
@@ -760,13 +769,13 @@ msgid "Author"
 msgstr "Forfatter"
 
 # @ generate
-#: inc/options.php:79 inc/options.php:133
+#: inc/options.php:79 inc/options.php:126
 msgid "Add-ons"
 msgstr "Tillegg"
 
 #: inc/options.php:81
 msgid ""
-"Please help support ongoing development of the GeneratePress by buying me a "
+"Please help support the ongoing development of GeneratePress by buying me a "
 "coffee :)"
 msgstr ""
 
@@ -779,101 +788,92 @@ msgstr "Kjøp en kaffe til meg :-)"
 msgid "Add-on Updates"
 msgstr ""
 
-#: inc/options.php:94
-msgid "No add-ons to keep up to date!"
-msgstr ""
-
 # @ generate
-#: inc/options.php:108
+#: inc/options.php:101
 msgid "Delete Customizer Settings"
 msgstr "Slett tilpasserinnstillinger"
 
-#: inc/options.php:110
+#: inc/options.php:103
 #, php-format
 msgid ""
 "<strong>Warning:</strong> Deleting your <a href=\"%1$s\">Customizer</a> "
 "settings can not be undone."
 msgstr ""
 
-#: inc/options.php:111
+#: inc/options.php:104
 msgid ""
 "Consider using our Import/Export add-on to export your settings before "
 "deleting them."
 msgstr ""
 
-#: inc/options.php:116
+#: inc/options.php:109
 msgid "Warning: This will delete your settings."
 msgstr ""
 
 # @ generate
-#: inc/options.php:118
+#: inc/options.php:111
 msgid "Delete Default Customizer Settings"
 msgstr "Slett standard tilpasserinnstillinger"
 
-#: inc/options.php:148
+#: inc/options.php:141
 msgid "Sections"
 msgstr ""
 
-#: inc/options.php:163
+#: inc/options.php:156
 msgid "Menu Plus"
 msgstr ""
 
 # @ generate
-#: inc/options.php:170
+#: inc/options.php:163
 msgid "Page Header"
 msgstr "Sidetoppfelt"
 
 # @ generate
-#: inc/options.php:177
+#: inc/options.php:170
 msgid "Import / Export"
 msgstr "Import/eksport"
 
 # @ generate
-#: inc/options.php:191
-msgid "Disable Elements"
-msgstr "Deaktiver elementer"
-
-# @ generate
-#: inc/options.php:205
+#: inc/options.php:198
 msgid "Hooks"
 msgstr "Knagger"
 
 # @ generate
-#: inc/options.php:212
+#: inc/options.php:205
 msgid "Spacing"
 msgstr "Avstand"
 
 # @ generate
-#: inc/options.php:219
+#: inc/options.php:212
 msgid "Backgrounds"
 msgstr "Bakgrunner"
 
 # @ generate
-#: inc/options.php:226
+#: inc/options.php:219
 msgid "Secondary Nav"
 msgstr "Sekundærnavigasjon"
 
 # @ generate
-#: inc/options.php:238 inc/options.php:245
+#: inc/options.php:231 inc/options.php:238
 msgid "Not activated."
 msgstr "Ikke aktivert."
 
-#: inc/options.php:240 inc/options.php:247
+#: inc/options.php:233 inc/options.php:240
 msgid "Activated."
 msgstr ""
 
 # @ generate
-#: inc/options.php:296
+#: inc/options.php:289
 msgid "Settings saved."
 msgstr "Innstillinger lagret."
 
 # @ generate
-#: inc/options.php:300
+#: inc/options.php:293
 msgid "Import successful."
 msgstr "Import vellykket."
 
 # @ generate
-#: inc/options.php:304
+#: inc/options.php:297
 msgid "Settings removed."
 msgstr "Innstillinger fjernet."
 
@@ -936,57 +936,57 @@ msgid "Your comment is awaiting moderation."
 msgstr "Kommentaren din venter på moderering."
 
 # @ generate
-#: inc/template-tags.php:194
+#: inc/template-tags.php:205
 msgid "by"
 msgstr "av"
 
 # @ generate
-#: inc/template-tags.php:196
+#: inc/template-tags.php:207
 #, php-format
 msgid "View all posts by %s"
 msgstr "Vis alle innlegg av %s"
 
 # @ generate
-#: inc/template-tags.php:209 inc/template-tags.php:220
+#: inc/template-tags.php:222 inc/template-tags.php:233
 msgid "Read more"
 msgstr "Les mer"
 
 # @ generate
-#: inc/template-tags.php:327
+#: inc/template-tags.php:340
 msgctxt "label"
 msgid "Search"
 msgstr "Søk"
 
 # @ generate
-#: inc/template-tags.php:393 inc/template-tags.php:401
+#: inc/template-tags.php:410 inc/template-tags.php:418
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ","
 
 # @ generate
-#: inc/template-tags.php:396
+#: inc/template-tags.php:413
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr "Kategorier"
 
 # @ generate
-#: inc/template-tags.php:404
+#: inc/template-tags.php:421
 msgctxt "Used before tag names."
 msgid "Tags"
 msgstr "Merkelapper"
 
 # @ generate
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "Leave a comment"
 msgstr "Legg igjen en kommentar"
 
 # @ generate
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "1 Comment"
 msgstr "1 kommentar"
 
 # @ generate
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "% Comments"
 msgstr "% kommentarer"
 

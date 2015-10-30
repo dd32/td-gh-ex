@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2015-10-18 16:55-0700\n"
-"PO-Revision-Date: 2015-10-18 16:56-0700\n"
+"POT-Creation-Date: 2015-10-28 14:48-0700\n"
+"PO-Revision-Date: 2015-10-28 14:48-0700\n"
 "Last-Translator: Manolis Tzanidakis <mtzanidakis@gmail.com>\n"
 "Language-Team: \n"
 "Language: el\n"
@@ -137,11 +137,11 @@ msgstr "Ακύρωση απάντησης"
 msgid "Post Comment"
 msgstr "Δημοσίευση Σχολίου"
 
-#: content-link.php:29 content-page.php:20 content-single.php:22 content.php:28
+#: content-link.php:29 content-page.php:24 content-single.php:25 content.php:28
 msgid "Pages:"
 msgstr "Σελίδες:"
 
-#: content-page.php:26 content-single.php:32 inc/template-tags.php:117
+#: content-page.php:30 content-single.php:35 inc/template-tags.php:117
 #: inc/template-tags.php:137
 msgid "Edit"
 msgstr "Επεξεργασία"
@@ -231,7 +231,7 @@ msgstr "Αριστερή Sidebar"
 msgid "Header"
 msgstr "Κεφαλίδα"
 
-#: functions.php:389 inc/options.php:184
+#: functions.php:389 inc/options.php:177
 msgid "Copyright"
 msgstr "Copyright"
 
@@ -247,7 +247,7 @@ msgstr "Υπερήφανα βασισμένο στο WordPress"
 msgid "WordPress"
 msgstr "WordPress"
 
-#: header.php:24
+#: header.php:21
 msgid "Skip to content"
 msgstr "Μετάβαση στο περιεχόμενο"
 
@@ -263,7 +263,19 @@ msgstr "Γραμματοσειρές Google"
 msgid "Font family"
 msgstr "Οικογένεια γραμματοσειράς"
 
-#: inc/add-ons/typography.php:322 inc/options.php:156
+#: inc/add-ons/disable-elements.php:59 inc/options.php:184
+msgid "Disable Elements"
+msgstr "Απενεργοποίηση Στοιχείων"
+
+#: inc/add-ons/disable-elements.php:81 inc/add-ons/disable-elements.php:83
+msgid "Content Title"
+msgstr ""
+
+#: inc/add-ons/disable-elements.php:87 inc/customizer.php:763
+msgid "Add-on available"
+msgstr ""
+
+#: inc/add-ons/typography.php:322 inc/options.php:149
 msgid "Typography"
 msgstr "Τυπογραφία"
 
@@ -333,7 +345,7 @@ msgstr "Απόκρυψη σλόγκαν ιστοτόπου"
 msgid "Logo"
 msgstr "Λογότυπο"
 
-#: inc/customizer.php:103 inc/options.php:140
+#: inc/customizer.php:103 inc/options.php:133
 msgid "Colors"
 msgstr "Χρώματα"
 
@@ -514,7 +526,7 @@ msgstr "Διάταξη Υποσέλιδου"
 msgid "Footer Widgets"
 msgstr "Μονάδες Υποσέλιδου"
 
-#: inc/customizer.php:641 inc/options.php:198
+#: inc/customizer.php:641 inc/options.php:191
 msgid "Blog"
 msgstr "Ιστολόγιο"
 
@@ -542,10 +554,6 @@ msgstr "Δείτε το Generate Blog"
 #: inc/customizer.php:727
 msgid "Default"
 msgstr "Προεπιλογή"
-
-#: inc/customizer.php:763
-msgid "Add-on available"
-msgstr ""
 
 #: inc/customizer.php:821
 msgid "Add-ons Available! Take a look"
@@ -613,13 +621,13 @@ msgstr "5 Μονάδες"
 msgid "Menu"
 msgstr "Μενού"
 
-#: inc/navigation.php:130 inc/template-tags.php:353 inc/template-tags.php:379
+#: inc/navigation.php:131 inc/template-tags.php:366 inc/template-tags.php:392
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: inc/options.php:64 inc/options.php:77 inc/options.php:130
+#: inc/options.php:64 inc/options.php:77 inc/options.php:123
 msgid "Customize"
 msgstr "Προσαρμογή"
 
@@ -631,13 +639,13 @@ msgstr "Έκδοση"
 msgid "Author"
 msgstr "Συγγραφέας"
 
-#: inc/options.php:79 inc/options.php:133
+#: inc/options.php:79 inc/options.php:126
 msgid "Add-ons"
 msgstr "Πρόσθετα"
 
 #: inc/options.php:81
 msgid ""
-"Please help support ongoing development of the GeneratePress by buying me a "
+"Please help support the ongoing development of GeneratePress by buying me a "
 "coffee :)"
 msgstr ""
 
@@ -649,88 +657,80 @@ msgstr "Αγοράστε μου έναν καφέ :)"
 msgid "Add-on Updates"
 msgstr "Αναβαθμίσεις Προσθέτων"
 
-#: inc/options.php:94
-msgid "No add-ons to keep up to date!"
-msgstr ""
-
-#: inc/options.php:108
+#: inc/options.php:101
 msgid "Delete Customizer Settings"
 msgstr "Διαγραφή Ρυθμίσεων Προσαρμογέα"
 
-#: inc/options.php:110
+#: inc/options.php:103
 #, php-format
 msgid ""
 "<strong>Warning:</strong> Deleting your <a href=\"%1$s\">Customizer</a> "
 "settings can not be undone."
 msgstr ""
 
-#: inc/options.php:111
+#: inc/options.php:104
 msgid ""
 "Consider using our Import/Export add-on to export your settings before "
 "deleting them."
 msgstr ""
 
-#: inc/options.php:116
+#: inc/options.php:109
 msgid "Warning: This will delete your settings."
 msgstr ""
 
-#: inc/options.php:118
+#: inc/options.php:111
 msgid "Delete Default Customizer Settings"
 msgstr "Διαγραφή Προεπιλεγμένων Ρυθμίσεων Προσαρμογέα"
 
-#: inc/options.php:148
+#: inc/options.php:141
 msgid "Sections"
 msgstr ""
 
-#: inc/options.php:163
+#: inc/options.php:156
 msgid "Menu Plus"
 msgstr ""
 
-#: inc/options.php:170
+#: inc/options.php:163
 msgid "Page Header"
 msgstr "Κεφαλίδα Σελίδας"
 
-#: inc/options.php:177
+#: inc/options.php:170
 msgid "Import / Export"
 msgstr "Εισαγωγή / Εξαγωγή"
 
-#: inc/options.php:191
-msgid "Disable Elements"
-msgstr "Απενεργοποίηση Στοιχείων"
-
-#: inc/options.php:205
+#: inc/options.php:198
 msgid "Hooks"
 msgstr "Άγκιστρα"
 
-#: inc/options.php:212
+#: inc/options.php:205
 msgid "Spacing"
 msgstr "Απόσταση"
 
-#: inc/options.php:219
+#: inc/options.php:212
 msgid "Backgrounds"
 msgstr "Φόντα"
 
-#: inc/options.php:226
+#: inc/options.php:219
 msgid "Secondary Nav"
 msgstr "Δευτερεύουσα Πλοήγηση"
 
-#: inc/options.php:238 inc/options.php:245
+#: inc/options.php:231 inc/options.php:238
 msgid "Not activated."
 msgstr "Απενεργοποιημένο."
 
-#: inc/options.php:240 inc/options.php:247
+#: inc/options.php:233 inc/options.php:240
 msgid "Activated."
 msgstr "Ενεργοποιημένο."
 
-#: inc/options.php:296
+#: inc/options.php:289
 msgid "Settings saved."
 msgstr "Οι ρυθμίσεις αποθηκεύθηκαν."
 
-#: inc/options.php:300
+#: inc/options.php:293
 msgid "Import successful."
 msgstr "Εισαγωγή επιτυχής."
 
-#: inc/options.php:304
+#: inc/options.php:297
 msgid "Settings removed."
 msgstr "Οι ρυθμίσεις αφαιρέθηκαν."
 
@@ -781,48 +781,48 @@ msgstr "%1$s στο %2$s"
 msgid "Your comment is awaiting moderation."
 msgstr "Το σχόλιό σας αναμένει έγκριση."
 
-#: inc/template-tags.php:194
+#: inc/template-tags.php:205
 msgid "by"
 msgstr "από την/τον"
 
-#: inc/template-tags.php:196
+#: inc/template-tags.php:207
 #, php-format
 msgid "View all posts by %s"
 msgstr "Προβολή όλων των δημοσιεύσεων από την/τον %s"
 
-#: inc/template-tags.php:209 inc/template-tags.php:220
+#: inc/template-tags.php:222 inc/template-tags.php:233
 msgid "Read more"
 msgstr "Διαβάστε περισσότερα"
 
-#: inc/template-tags.php:327
+#: inc/template-tags.php:340
 msgctxt "label"
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: inc/template-tags.php:393 inc/template-tags.php:401
+#: inc/template-tags.php:410 inc/template-tags.php:418
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ","
 
-#: inc/template-tags.php:396
+#: inc/template-tags.php:413
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr "Κατηγορίες"
 
-#: inc/template-tags.php:404
+#: inc/template-tags.php:421
 msgctxt "Used before tag names."
 msgid "Tags"
 msgstr "Ετικέτες"
 
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "Leave a comment"
 msgstr "Γράψτε ένα Σχόλιο"
 
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "1 Comment"
 msgstr "1 Σχόλιο"
 
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "% Comments"
 msgstr "% Σχόλια"
 

@@ -85,8 +85,8 @@
 		top: 0;
 	}
 	
-	.menu-toggle li.search-item,
-	.menu-toggle li.search-item-disabled {
+	.mobile-search-item {
+		display: block;
 		position: absolute;
 		right: 0;
 		top: 0;
@@ -94,15 +94,8 @@
 		list-style-type: none;
 	}
 	
-	.menu-toggle li.search-item a,
-	.menu-toggle li.search-item-disabled a{
-		line-height: inherit;
-		color: inherit;
-		background-color: inherit;
-	}
-	
 	.main-navigation .menu li.search-item {
-		display: none;
+		display: none !important;
 	}
 	
 	li.search-item a {

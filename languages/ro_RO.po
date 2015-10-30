@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2015-10-18 16:55-0700\n"
-"PO-Revision-Date: 2015-10-18 16:55-0700\n"
+"POT-Creation-Date: 2015-10-28 14:48-0700\n"
+"PO-Revision-Date: 2015-10-28 14:48-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -140,11 +140,11 @@ msgstr "Anuleaza raspuns"
 msgid "Post Comment"
 msgstr "Posteaza un comentariu"
 
-#: content-link.php:29 content-page.php:20 content-single.php:22 content.php:28
+#: content-link.php:29 content-page.php:24 content-single.php:25 content.php:28
 msgid "Pages:"
 msgstr "Pagini:"
 
-#: content-page.php:26 content-single.php:32 inc/template-tags.php:117
+#: content-page.php:30 content-single.php:35 inc/template-tags.php:117
 #: inc/template-tags.php:137
 msgid "Edit"
 msgstr "Editeaza"
@@ -234,7 +234,7 @@ msgstr "Sidebar Stanga"
 msgid "Header"
 msgstr "Header"
 
-#: functions.php:389 inc/options.php:184
+#: functions.php:389 inc/options.php:177
 msgid "Copyright"
 msgstr "Copyright"
 
@@ -250,7 +250,7 @@ msgstr "Acest website ruleaza pe platforma WordPress"
 msgid "WordPress"
 msgstr "WordPress"
 
-#: header.php:24
+#: header.php:21
 msgid "Skip to content"
 msgstr "Sari la continut"
 
@@ -266,7 +266,19 @@ msgstr "Fonturi Google"
 msgid "Font family"
 msgstr "Familie Font"
 
-#: inc/add-ons/typography.php:322 inc/options.php:156
+#: inc/add-ons/disable-elements.php:59 inc/options.php:184
+msgid "Disable Elements"
+msgstr "Dezactivare Elemente"
+
+#: inc/add-ons/disable-elements.php:81 inc/add-ons/disable-elements.php:83
+msgid "Content Title"
+msgstr ""
+
+#: inc/add-ons/disable-elements.php:87 inc/customizer.php:763
+msgid "Add-on available"
+msgstr ""
+
+#: inc/add-ons/typography.php:322 inc/options.php:149
 msgid "Typography"
 msgstr "Tipografie"
 
@@ -335,7 +347,7 @@ msgstr "Ascunde subtitlu"
 msgid "Logo"
 msgstr "Logo"
 
-#: inc/customizer.php:103 inc/options.php:140
+#: inc/customizer.php:103 inc/options.php:133
 msgid "Colors"
 msgstr "Culori"
 
@@ -517,7 +529,7 @@ msgstr "Asezare Subsol"
 msgid "Footer Widgets"
 msgstr "Widgeturi Subsol"
 
-#: inc/customizer.php:641 inc/options.php:198
+#: inc/customizer.php:641 inc/options.php:191
 msgid "Blog"
 msgstr "Blog"
 
@@ -545,10 +557,6 @@ msgstr "Incearca Generate Blog"
 #: inc/customizer.php:727
 msgid "Default"
 msgstr "Prestabilit"
-
-#: inc/customizer.php:763
-msgid "Add-on available"
-msgstr ""
 
 #: inc/customizer.php:821
 msgid "Add-ons Available! Take a look"
@@ -616,13 +624,13 @@ msgstr "5 Widget-uri"
 msgid "Menu"
 msgstr "Meniu"
 
-#: inc/navigation.php:130 inc/template-tags.php:353 inc/template-tags.php:379
+#: inc/navigation.php:131 inc/template-tags.php:366 inc/template-tags.php:392
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
 msgstr "Cautare"
 
-#: inc/options.php:64 inc/options.php:77 inc/options.php:130
+#: inc/options.php:64 inc/options.php:77 inc/options.php:123
 msgid "Customize"
 msgstr "Personalizeaza"
 
@@ -634,13 +642,13 @@ msgstr "Versiune"
 msgid "Author"
 msgstr "Autor"
 
-#: inc/options.php:79 inc/options.php:133
+#: inc/options.php:79 inc/options.php:126
 msgid "Add-ons"
 msgstr "Optiuni Extra"
 
 #: inc/options.php:81
 msgid ""
-"Please help support ongoing development of the GeneratePress by buying me a "
+"Please help support the ongoing development of GeneratePress by buying me a "
 "coffee :)"
 msgstr ""
 
@@ -652,88 +660,80 @@ msgstr "Cumpara-mi o cafea :)"
 msgid "Add-on Updates"
 msgstr "Actualizari Optiuni Extra"
 
-#: inc/options.php:94
-msgid "No add-ons to keep up to date!"
-msgstr ""
-
-#: inc/options.php:108
+#: inc/options.php:101
 msgid "Delete Customizer Settings"
 msgstr "Sterge setarile de personalizare"
 
-#: inc/options.php:110
+#: inc/options.php:103
 #, php-format
 msgid ""
 "<strong>Warning:</strong> Deleting your <a href=\"%1$s\">Customizer</a> "
 "settings can not be undone."
 msgstr ""
 
-#: inc/options.php:111
+#: inc/options.php:104
 msgid ""
 "Consider using our Import/Export add-on to export your settings before "
 "deleting them."
 msgstr ""
 
-#: inc/options.php:116
+#: inc/options.php:109
 msgid "Warning: This will delete your settings."
 msgstr ""
 
-#: inc/options.php:118
+#: inc/options.php:111
 msgid "Delete Default Customizer Settings"
 msgstr "Sterge setarile prestabilite de personalizare"
 
-#: inc/options.php:148
+#: inc/options.php:141
 msgid "Sections"
 msgstr ""
 
-#: inc/options.php:163
+#: inc/options.php:156
 msgid "Menu Plus"
 msgstr ""
 
-#: inc/options.php:170
+#: inc/options.php:163
 msgid "Page Header"
 msgstr "Header Pagina"
 
-#: inc/options.php:177
+#: inc/options.php:170
 msgid "Import / Export"
 msgstr "Importare / Exportare"
 
-#: inc/options.php:191
-msgid "Disable Elements"
-msgstr "Dezactivare Elemente"
-
-#: inc/options.php:205
+#: inc/options.php:198
 msgid "Hooks"
 msgstr "Hooks (carlige)"
 
-#: inc/options.php:212
+#: inc/options.php:205
 msgid "Spacing"
 msgstr "Spatiere"
 
-#: inc/options.php:219
+#: inc/options.php:212
 msgid "Backgrounds"
 msgstr "Fundaluri"
 
-#: inc/options.php:226
+#: inc/options.php:219
 msgid "Secondary Nav"
 msgstr "Navigare Secundara"
 
-#: inc/options.php:238 inc/options.php:245
+#: inc/options.php:231 inc/options.php:238
 msgid "Not activated."
 msgstr "Dezactivat."
 
-#: inc/options.php:240 inc/options.php:247
+#: inc/options.php:233 inc/options.php:240
 msgid "Activated."
 msgstr "Activat."
 
-#: inc/options.php:296
+#: inc/options.php:289
 msgid "Settings saved."
 msgstr "Setari salvate."
 
-#: inc/options.php:300
+#: inc/options.php:293
 msgid "Import successful."
 msgstr "Importarea a fost facuta cu succes."
 
-#: inc/options.php:304
+#: inc/options.php:297
 msgid "Settings removed."
 msgstr "Setari inlaturate."
 
@@ -784,48 +784,48 @@ msgstr "%1$s at %2$s"
 msgid "Your comment is awaiting moderation."
 msgstr "Comentariul tau asteapta aprobare."
 
-#: inc/template-tags.php:194
+#: inc/template-tags.php:205
 msgid "by"
 msgstr "de"
 
-#: inc/template-tags.php:196
+#: inc/template-tags.php:207
 #, php-format
 msgid "View all posts by %s"
 msgstr "Vezi toate postarile facute de %s"
 
-#: inc/template-tags.php:209 inc/template-tags.php:220
+#: inc/template-tags.php:222 inc/template-tags.php:233
 msgid "Read more"
 msgstr "Citeste mai mult"
 
-#: inc/template-tags.php:327
+#: inc/template-tags.php:340
 msgctxt "label"
 msgid "Search"
 msgstr "Cautare"
 
-#: inc/template-tags.php:393 inc/template-tags.php:401
+#: inc/template-tags.php:410 inc/template-tags.php:418
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: inc/template-tags.php:396
+#: inc/template-tags.php:413
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr "Categorii"
 
-#: inc/template-tags.php:404
+#: inc/template-tags.php:421
 msgctxt "Used before tag names."
 msgid "Tags"
 msgstr "Tag-uri"
 
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "Leave a comment"
 msgstr "Lasa un comentariu"
 
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "1 Comment"
 msgstr "1 Comentariu"
 
-#: inc/template-tags.php:412
+#: inc/template-tags.php:429
 msgid "% Comments"
 msgstr "% Comentarii"
 
