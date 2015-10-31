@@ -1817,7 +1817,7 @@ Redux::setSection( $opt_name, array(
             'type' => 'media', 
             'customizer' => true,
             'preview'=> true,
-            'title' => __('Custom Favicon', 'virtue'),
+            'title' => __('Custom Favicon, *Note depreciated. Use WordPress site icon in customizer.', 'virtue'),
             'subtitle' => __('Upload a 16px x 16px png/gif/ico image that will represent your website favicon.', 'virtue'),
             ),
         array(
@@ -1910,7 +1910,7 @@ Redux::setSection( $opt_name, array(
                             'title'      => '',
                             'customizer' => false,
                             'subtitle'   => '',
-                            'full_width' => false,
+                            'full_width' => true,
                         ),
                     ),
                 ) );
@@ -1923,7 +1923,7 @@ Redux::setSection( $opt_name, array(
 
 function virtue_override_panel() {
     wp_dequeue_style( 'redux-admin-css' );
-    wp_register_style('virtue-redux-custom-css', get_template_directory_uri() . '/themeoptions/options/css/style.css', false, 257);    
+    wp_register_style('virtue-redux-custom-css', get_template_directory_uri() . '/themeoptions/options/css/style.css', false, 258);    
     wp_enqueue_style( 'virtue-redux-custom-css' );
     wp_dequeue_style( 'select2-css' );
     wp_dequeue_script( 'select2-js' );

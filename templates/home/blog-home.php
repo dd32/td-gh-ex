@@ -96,8 +96,8 @@
 		                        	} 
 		                    }?>
 	                       		<div class="<?php echo esc_attr($textsize);?> postcontent">
-	                       			<div class="postmeta color_gray">
-				                        	<div class="postdate bg-lightgray headerfont">
+	                       			<div class="postmeta updated color_gray">
+				                        	<div class="postdate bg-lightgray headerfont" itemprop="datePublished">
 				                        		<span class="postday"><?php echo get_the_date('j'); ?></span>
 				                        		<?php echo get_the_date('M Y');?>
 				                        	</div>
@@ -110,6 +110,7 @@
 
 			                          		<div class="subhead color_gray">
 			                          			<span class="postauthortop" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo get_the_author() ?>">
+			                          				<span itemprop="author" class="kt_hidden"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="fn" rel="author"><?php echo get_the_author() ?></a></span>
 			                          				<i class="icon-user"></i>
 			                          			</span>
 			                          			<span class="kad-hidepostauthortop"> | </span>

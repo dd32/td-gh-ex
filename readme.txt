@@ -30,7 +30,14 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
-= Version 2.5.7 | 1st October 2015 =
+= Version 2.5.8 | 31st October 2015 =
+* Update: Woocommerce templates.
+* Update: Head wp-title call.
+* Update: Structure Code.
+* Update: Few CSS fixes.
+* Update: Redux.
+
+= Version 2.5.7 | 2nd October 2015 =
 * Update: Structure Code.
 * Update: options.
 * Update: header/footer to remove annoying "error" from plugins.

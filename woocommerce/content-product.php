@@ -55,18 +55,15 @@ if(isset($virtue['product_img_resize']) && $virtue['product_img_resize'] == 0) {
 			 * @hooked woocommerce_show_product_loop_sale_flash - 10
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
 			 */
-			//do_action( 'woocommerce_before_shop_loop_item_title' );
-		?>
-			<?php echo woocommerce_show_product_loop_sale_flash($post, $product); ?>
-
-			<?php // echo woocommerce_template_loop_product_thumbnail($post, $product, $size); ?>
-			<?php if($resizeimage == 1) { 
+			do_action( 'woocommerce_before_shop_loop_item_title' );
+		 	
+		 	if($resizeimage == 1) { 
 					if ( has_post_thumbnail() ) {
 					$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
 					$product_image_url = $product_image[0]; 
 					$image_product = aq_resize($product_image_url, $productimgwidth, $productimgwidth, true);
 	            	if(empty($image_product)) {$image_product = $product_image_url;} ?> 
-	            	 <img width="<?php echo $productimgwidth;?>" height="<?php echo $productimgwidth;?>" src="<?php echo $image_product;?>" class="attachment-shop_catalog wp-post-image" alt="<?php the_title();?>">
+	            	 <img width="<?php echo $productimgwidth;?>" height="<?php echo esc_attr($productimgwidth);?>" src="<?php echo esc_attr($image_product);?>" class="attachment-shop_catalog wp-post-image" alt="<?php the_title();?>">
 	            	 <?php } elseif ( woocommerce_placeholder_img_src() ) {
 		             echo woocommerce_placeholder_img( 'shop_catalog' );
 		             }  
