@@ -131,14 +131,14 @@ function accelerate_customize_register($wp_customize) {
       'panel' => 'accelerate_header_options'
    ));
 
-   $wp_customize->add_setting($accelerate_themename.'accelerate_header_image_position', array(
+   $wp_customize->add_setting($accelerate_themename.'[accelerate_header_image_position]', array(
       'default' => 'position_two',
       'type' => 'option',
       'capability' => 'edit_theme_options',
       'sanitize_callback' => 'accelerate_radio_select_sanitize'
    ));
 
-   $wp_customize->add_control($accelerate_themename.'accelerate_header_image_position', array(
+   $wp_customize->add_control($accelerate_themename.'[accelerate_header_image_position]', array(
       'type' => 'radio',
       'label' => __('Choose top header image display position.','accelerate'),
       'section' => 'accelerate_header_image_position_section',
