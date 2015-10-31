@@ -16,7 +16,7 @@ function thinkup_input_footerw1() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'renden') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 1.', 'renden') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
 			'</div>';
 	};
 	echo	'</div>';
@@ -29,7 +29,7 @@ function thinkup_input_footerw2() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'renden') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 2.', 'renden') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
 			'</div>';
 	};
 	echo	'</div>';
@@ -42,7 +42,7 @@ function thinkup_input_footerw3() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'renden') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 3.', 'renden') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
 			'</div>';
 	};	
 	echo	'</div>';
@@ -55,7 +55,7 @@ function thinkup_input_footerw4() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'renden') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 4.', 'renden') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
 			'</div>';
 	};	
 	echo	'</div>';
@@ -68,7 +68,7 @@ function thinkup_input_footerw5() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'renden') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 5.', 'renden') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
 			'</div>';
 	};	
 	echo	'</div>';
@@ -81,7 +81,7 @@ function thinkup_input_footerw6() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'renden') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 6.', 'renden') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
 			'</div>';
 	};	
 	echo	'</div>';
@@ -224,7 +224,7 @@ function thinkup_input_subfooterw1() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'renden') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 1.', 'renden') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
 			'</div>';
 	};
 	echo	'</div>';
@@ -237,7 +237,7 @@ function thinkup_input_subfooterw2() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'renden') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 2.', 'renden') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="' . __( 'No Widgets Selected', 'renden' ) . '">' . __( 'Click here to go to Widget area.', 'renden') . '</a>',
 			'</div>';
 	};
 	echo	'</div>';

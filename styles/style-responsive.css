@@ -172,17 +172,6 @@
 	/* Widgets */
 
 	/* Shortcodes */
-	.customtitle h1,
-	.customtitle h2,
-	.customtitle h3,
-	.customtitle h4,
-	.customtitle h5,
-	.customtitle h6 {
-		white-space: initial;
-	}
-	.customtitle .title-div {
-		display: none;
-	}
 }
 
 

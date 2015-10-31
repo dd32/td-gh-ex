@@ -61,9 +61,6 @@
 	<?php endif; ?>
 
 	<?php 
-		$req      = get_option( 'require_name_email' );
-		$aria_req = ( $req ? " aria-required='true'" : '' );
-
 		$comments_args = array(
 			'label_submit' => __( 'Submit Now', 'renden' ),
 			'title_reply'  => __( 'Leave a comment', 'renden'  ),

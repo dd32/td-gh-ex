@@ -4,10 +4,10 @@ Theme URI: http://www.thinkupthemes.com/free/renden-free/
 Author: ThinkUpThemes
 Author URI: http://www.ThinkUpThemes.com
 Description: Renden is the free version of the multi-purpose professional theme (Renden Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.2.17
+Version: 1.2.2
 License: GNU General Public License
 License URI: /licenses/license.txt
-Tags: black, dark, red, one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background, grid-layout, footer-widgets, blog, e-commerce, education, entertainment, news, photography, portfolio
+Tags: black, dark, red, one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background
 Text Domain: renden
 */
 
@@ -185,7 +185,6 @@ body {
 body.layout-fixed,
 body.layout-fixed #body-core,
 body.layout-fixed #site-header,
-body.layout-fixed #header-sticky,
 body.layout-fixed #notification { 
 	min-width: 960px;
 }
@@ -397,14 +396,10 @@ a:visited {
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 20px;
-	margin-bottom: 10px;
 }
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 20px;
-	margin-bottom: 10px;
 }
 .aligncenter {
 	clear: both;
@@ -624,7 +619,6 @@ li.pag-next {
 	transition: all 0.3s ease;
 }
 #logo img {
-	width: auto;
 	max-height: 60px;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -759,7 +753,7 @@ li.pag-next {
 	font-size: larger;
 }
 
-/* Pre-header - Social Media */
+/* Pre-header - Social Media*/
 #pre-header-social ul {
 	display: table;
 	float: right;
@@ -872,9 +866,6 @@ li.pag-next {
 }
 #header .header-links .menu-hover > .sub-menu {
 	margin-left: -16px;
-}
-#header .header-links .sub-menu li {
-	float: none;
 }
 #header .header-links .sub-menu a {
 	color: #232323;
@@ -1040,7 +1031,7 @@ li.pag-next {
 	display: table;
 }
 #header-links-inner > .menu,
-#header-search {
+#header-search  {
 	display: table-cell;
 	vertical-align: middle;
 }
@@ -1477,7 +1468,7 @@ li.pag-next {
 	vertical-align: middle;
 }
 #intro #breadcrumbs .delimiter {
-	padding: 0px 5px;
+	padding: 0px 2px;
 }
 #intro #breadcrumbs a {
 	color: #e0484c;
@@ -1486,7 +1477,6 @@ li.pag-next {
 	color: inherit;
 }
 #intro #breadcrumbs-core {
-	display: inline-block;
 	text-align: right;
 }
 #intro #breadcrumbs-home {
@@ -2209,7 +2199,6 @@ ul.pricing-table:after,
 	padding: 2px 0;
 }
 #footer .widget li a { 
-	display: inline-block;
 	padding: 1px 0px 1px 0px;
 }
 
@@ -2840,6 +2829,9 @@ ul.pricing-table:after,
 	background: #232323;
 }
 
+#footer .thinkup_widget_tagscloud a:nth-child(3n) {
+	margin-right: 0;
+}
 #footer .thinkup_widget_tagscloud a {
 	color: #FFF;
 	text-align: center;
@@ -3622,12 +3614,9 @@ li.pingback a {
 	color: #880000;
 }
 
+
 /* =Contact Us
 --------------------------------------------------------------------------------------- */
-.page-template-template-contact iframe {
-	width: 100% !important;
-	max-height: 350px !important;
-}
 .page-template-template-contact-php #main .google-map-placeholder {
 	width: 100% !important;
 	height: 400px !important;
@@ -5147,6 +5136,20 @@ ul.iconfont i {
 /* PROGRESS BARS
 ------------------------------------------------------------------ */
 
+.sc-progress {
+display: table;
+width: 100%;
+margin-bottom: 15px
+}
+
+.sc-progress .bar-title,
+.sc-progress .progress {
+display: table-cell;
+vertical-align: middle;
+}
+.sc-progress .bar-title {
+width: 150px;
+}
 span.bar-title,
 span.bar-per {
 	font-size: 14px;
@@ -5558,10 +5561,4 @@ span.bar-per {
 
 .hidden {
     display: none;
-}
-
-/* Correct line height of Font Awesome size */
-body .fa-lg {
-	line-height: 1;
-	vertical-align: -10%;
 }

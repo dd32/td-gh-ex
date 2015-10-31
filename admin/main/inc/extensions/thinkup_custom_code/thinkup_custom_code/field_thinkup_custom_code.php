@@ -50,7 +50,7 @@ if ( !class_exists ( 'ReduxFramework_thinkup_custom_code' ) ) {
 
                 if ( empty( $this->_extension_dir ) ) {
                     $this->_extension_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
-                    $this->_extension_url = site_url( str_replace( trailingslashit( str_replace( '\\', '/', ABSPATH ) ), '/', $this->_extension_dir ) );
+                    $this->_extension_url = site_url( str_replace( trailingslashit( str_replace( '\\', '/', ABSPATH ) ), '', $this->_extension_dir ) );
                 }
         }
 
