@@ -64,6 +64,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.0 =
+* Updated Genericons to the latest version 3.4.1
+* Updated HTML5Shiv script to the latest version 3.7.3
+
 = Version 1.1.9 =
 * Danish language file added. Thanks to Mr. Steffan Christensen for providing the language files.
 
