@@ -21,7 +21,6 @@ Resources packed within the theme.
 	http://pixabay.com/en/photographer-dslr-camera-410326/
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * The script jquery.cycle.all.js is dual licensed under GPL & MIT
-* Options Framework by WP Theming licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * Other custom js files are our own creation and is licensed under the same license as this theme.
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
@@ -51,6 +50,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.7 =
+* Updated HTML5Shiv script to the latest version 3.7.3
+* Updated FontAwesome icons to the latest version 4.4.0
+
 = Version 1.0.6 =
 * Theme Options migrated to Customizer as per new WordPress theme review guidelines.
 

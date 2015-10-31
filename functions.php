@@ -79,6 +79,7 @@ if ( !function_exists( 'freedom_options_migrate' ) ) :
        */
       if ( get_option( 'freedom_customizer_transfer' ) )
          return;
+      // Set transfer as complete
       update_option( 'freedom_customizer_transfer', 1 );
 
       if ( false === ( $mods = get_option( "freedom" ) ) )
@@ -100,7 +101,6 @@ if ( !function_exists( 'freedom_options_migrate' ) ) :
          update_option( 'theme_mods_'.$theme_mods_themename, $theme_mods_freedom );
       }
       update_option( 'theme_mods_freedom', $theme_mods_freedom );
-      // Set transfer as complete
 
    }
 endif;
