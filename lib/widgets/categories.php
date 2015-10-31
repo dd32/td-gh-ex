@@ -15,7 +15,7 @@ class thinkup_widget_categories extends WP_Widget {
 	// Register widget description.
 	function thinkup_widget_categories() {
 		$widget_ops = array('classname' => 'thinkup_widget_categories', 'description' => 'List your blog categories.' );
-		$this->WP_Widget('thinkup_widget_categories', 'ThinkUpThemes: Categories', $widget_ops);
+		parent::__construct('thinkup_widget_categories', 'ThinkUpThemes: Categories', $widget_ops);
 	}
 
 	// Add widget structure to Admin area.

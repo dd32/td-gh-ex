@@ -15,7 +15,7 @@ class thinkup_widget_flickr extends WP_Widget {
 	// Register widget description.
 	function thinkup_widget_flickr() {
 		$widget_ops = array('classname' => 'thinkup_widget_flickr', 'description' => 'Import your Flickr photos for all to see!' );
-		$this->WP_Widget('thinkup_widget_flickr', 'ThinkUpThemes: Flickr', $widget_ops);
+		parent::__construct('thinkup_widget_flickr', 'ThinkUpThemes: Flickr', $widget_ops);
 	}
 
 	// Add widget structure to Admin area.

@@ -15,7 +15,7 @@ class thinkup_widget_popularposts extends WP_Widget {
 	// Register widget description.
 	function thinkup_widget_popularposts() {
 		$widget_ops = array('classname' => 'thinkup_widget_popularposts', 'description' => 'Display your posts by comment count.' );
-		$this->WP_Widget('thinkup_widget_popularposts', 'ThinkUpThemes: Popular Posts', $widget_ops);
+		parent::__construct('thinkup_widget_popularposts', 'ThinkUpThemes: Popular Posts', $widget_ops);
 	}
 
 	// Add widget structure to Admin area.

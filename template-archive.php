@@ -36,6 +36,6 @@ get_header(); ?>
 				<ul class="archive-authors">
 					<?php wp_list_authors( 'optioncount=1' ); ?>
 				</ul>
-			</div>
+			</div><div class="clearboth"></div>
 
 <?php get_footer(); ?>  

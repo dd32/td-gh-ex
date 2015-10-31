@@ -15,7 +15,7 @@ class thinkup_widget_search extends WP_Widget {
 	// Register widget description.
 	function thinkup_widget_search() {
 		$widget_ops = array('classname' => 'thinkup_widget_search', 'description' => 'Display a simple search field.' );
-		$this->WP_Widget('thinkup_widget_search', 'ThinkUpThemes: Search', $widget_ops);
+		parent::__construct('thinkup_widget_search', 'ThinkUpThemes: Search', $widget_ops);
 	}
 
 	// Add widget structure to Admin area.

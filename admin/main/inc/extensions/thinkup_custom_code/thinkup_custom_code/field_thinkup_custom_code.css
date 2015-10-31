@@ -476,7 +476,7 @@
 /* Portfolio */
 .redux-container #section-thinkup_redux_variables-thinkup_portfolio_layout .redux-image-select,
 #customize-controls li#thinkup_redux_variables-thinkup_portfolio_layout .redux-image-select {
-	max-width: 300px;
+	max-width: 250px;
 }
 
 /* Notification Bar */

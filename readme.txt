@@ -98,6 +98,19 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.7.1
+- Fixed:   Floating elements now cleared within template-archive.php using class "clearboth".
+- Fixed:   Floating elements now cleared within template-sitemap.php using class "clearboth".
+- Updated: Redux notices prevented from displaying.
+- Updated: Padding added to ThinkUpSlider content area.
+- Updated: Validation for links changed from "url" to "html" to allow for links to inner pages.
+- Updated: input specific type styling extended to include input[type=search] and  input[type=tel].
+- Updated: Widgets now use "parent::__construct" instead of "parent::__construct" to register widget.
+- Updated: border-box sizing added to comments section in posts to ensure width doesn't overflow container.
+- Updated: Class ".portfolio-wrapper" added to all instances of ID "#container" where a masonry layout is used.
+- Removed: References to "filters.svg#grayscale" removed from style-shortcodes.css.
+- Removed: Custom JS option in customizer removed. Can potentially cause issues with customizer if user specified JS is incorrect.
+
 Version 1.7.0
 - New:     Customizer support added. All Theme options settings now controlled from within Customizer.
 - Fixed:   thinkup_check_ishome() now works correctly on all sites.

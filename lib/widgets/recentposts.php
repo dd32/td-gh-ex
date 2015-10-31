@@ -15,7 +15,7 @@ class thinkup_widget_recentposts extends WP_Widget {
 	// Register widget description.
 	function thinkup_widget_recentposts() {
 		$widget_ops = array('classname' => 'thinkup_widget_recentposts', 'description' => 'Display your recent posts.' );
-		$this->WP_Widget('thinkup_widget_recentposts', 'ThinkUpThemes: Recent Posts', $widget_ops);
+		parent::__construct('thinkup_widget_recentposts', 'ThinkUpThemes: Recent Posts', $widget_ops);
 	}
 
 	// Add widget structure to Admin area.

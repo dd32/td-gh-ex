@@ -547,7 +547,6 @@ float: left;
 	-ms-border-radius: 500px;
 	-o-border-radius: 500px;
 	border-radius: 500px;
-	filter: url(filters.svg#grayscale);
     filter: gray;
     -webkit-filter: grayscale(0.5);
 	-webkit-transition: all 0.3s ease;

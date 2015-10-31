@@ -52,6 +52,6 @@ get_header(); ?>
 				<ul class="sitemap-archives">
 					<?php wp_get_archives('type=monthly&show_post_count=true'); ?>
 				</ul>
-			</div>
+			</div><div class="clearboth"></div>
 
 <?php get_footer(); ?>

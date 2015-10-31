@@ -15,7 +15,7 @@ class thinkup_widget_recentcomments extends WP_Widget {
 	// Register widget description.
 	function thinkup_widget_recentcomments() {
 		$widget_ops = array('classname' => 'thinkup_widget_recentcomments', 'description' => 'Display your recent comments.' );
-		$this->WP_Widget('thinkup_widget_recentcomments', 'ThinkUpThemes: Recent Comments', $widget_ops);
+		parent::__construct('thinkup_widget_recentcomments', 'ThinkUpThemes: Recent Comments', $widget_ops);
 	}
 
 	// Add widget structure to Admin area.

@@ -1117,8 +1117,8 @@ endif;
 					}
 					}//if
 					else if ($type == "excerpt") {
-						foreach ( range(10,150) as $k => $v ) {
-							$data[$k] = $v;
+						foreach ( range(10,150) as $k ) {
+							$data[$k] = $k;
 						}
 					}//if
 					else if ($type == "fontsize") {

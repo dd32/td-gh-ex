@@ -4,7 +4,7 @@ Theme URI: http://www.thinkupthemes.com/free/engrave-lite/
 Author: ThinkUpThemes
 Author URI: http://www.ThinkUpThemes.com
 Description: Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.7.0
+Version: 1.7.1
 License: GNU General Public License
 License URI: /licenses/license.txt
 Tags: black, dark, red, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background
@@ -274,7 +274,10 @@ input::-moz-focus-inner {
 }
 input[type=text],
 input[type=email],
-input[type="password"],
+input[type=password],
+input[type=search],
+input[type=tel],
+select,
 textarea {
 	background: white;
 	border: 1px solid #ccc;
@@ -282,7 +285,10 @@ textarea {
 }
 input[type=text]:focus,
 input[type=email]:focus,
-input[type="password"]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+select:focus,
 textarea:focus {
 	background: #fff;
 }
@@ -967,7 +973,12 @@ li.pag-next {
 	width: 100%;
 	position: absolute;
 	top: 0;
-	padding: 0 10px;
+	padding: 0 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
 }
 #slider .rslides-content-inner {
 	display: table;
@@ -2488,6 +2499,11 @@ padding: 0;
 	width: 100%;
 	padding: 5px 15px 15px 0;
 	border-bottom: 1px solid #EEE;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
 }
 .commentlist article  footer {
 	margin: 0px 0 0 82px;

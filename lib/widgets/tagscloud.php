@@ -15,7 +15,7 @@ class thinkup_widget_tagscloud extends WP_Widget {
 	// Register widget description.
 	function thinkup_widget_tagscloud() {
 		$widget_ops = array('classname' => 'thinkup_widget_tagscloud', 'description' => 'A cool tag cloud.' );
-		$this->WP_Widget('thinkup_widget_tagscloud', 'ThinkUpThemes: Tags Cloud', $widget_ops);
+		parent::__construct('thinkup_widget_tagscloud', 'ThinkUpThemes: Tags Cloud', $widget_ops);
 	}
 
 	// Add widget structure to Admin area.

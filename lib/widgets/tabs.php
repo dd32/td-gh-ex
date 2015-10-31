@@ -15,7 +15,7 @@ class thinkup_widget_tabs extends WP_Widget {
 	// Register widget description.
 	function thinkup_widget_tabs() {
 		$widget_ops = array('classname' => 'thinkup_widget_tabs', 'description' => 'Show recent, popular and commented posts in tabs.' );
-		$this->WP_Widget('thinkup_widget_tabs', 'ThinkUpThemes: Tabs', $widget_ops);
+		parent::__construct('thinkup_widget_tabs', 'ThinkUpThemes: Tabs', $widget_ops);
 	}
 
 	// Add widget structure to Admin area.
