@@ -127,6 +127,25 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.0
+- New:     Dashicons now enqueued directly from WordPress core.
+- New:     Customizer support added. All Theme options settings now controlled from within Customizer.
+- New:     Dummy "Theme Options" section added under Appearance to guide users to location of new theme options and relevant information - Remove in upcoming update.
+- Fixed:   Pagination clears correctly when inner paginated pages are being viewed.
+- Fixed:   css issue one line 245 in style-shortcodes.css fixed. Line did not end with ";".
+- Fixed:   Floating elements now cleared within template-archive.php using class "clearboth".
+- Fixed:   Floating elements now cleared within template-sitemap.php using class "clearboth".
+- Fixed:   Migration script updated to prevent loss of data. If data doesn't migrate to customizer. Support can still retrieve from database.
+- Updated: Redux notices prevented from displaying.
+- Updated: Padding added to ThinkUpSlider content area.
+- Updated: input specific type styling extended to include input[type=search] and  input[type=tel].
+- Updated: border-box sizing added to comments section in posts to ensure width doesn't overflow container.
+- Removed: Redundant Redux css code from style-backend.css.
+- Removed: Redundant Redux jQuery code from main-backend.js.
+- Removed: Theme options panel removed - replaced with customizer to comply with new WordPress guidelines.
+- Removed: Custom widgets files removed. These were disabled in v1.1.0 so will not impact users as they can't be used anyway.
+- Removed: Custom JS option in customizer removed. Can potentially cause issues with customizer if user specified JS is incorrect.
+
 Version 1.2.2
 - Updated: Prep for Customizer integration. Redux global variable changed from $redux -> $thinkup_redux_variables. Migration function thinkup_migrate_redux_option().
 

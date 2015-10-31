@@ -13,8 +13,12 @@ if ( ! isset( $content_width ) )
 //	Add Theme Options Panel & Assign Variable Values
 // ----------------------------------------------------------------------------------
 
-	// Add Redux Framework - Credits attributable to http://reduxframework.com/
-	require_once (get_template_directory() . '/admin/main/framework.php');
+	// Add Redux Framework
+	require_once( get_template_directory() . '/admin/main/framework.php' );
+	require_once( get_template_directory() . '/admin/main/options.php' );
+
+	// Add Notice Informing Users Theme Options Have Moved To Customizer
+	require_once( get_template_directory() . '/admin/main/customizer_migration_notice/customizer_migration_notice.php' );
 
 	// Add Theme Options Features.
 	require_once( get_template_directory() . '/admin/main/options/00.theme-setup.php' ); 
@@ -81,7 +85,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_script('jquery');
 
 	// Register theme stylesheets.
-	wp_register_style( 'style', get_stylesheet_uri(), '', '1.2.2' );
+	wp_register_style( 'style', get_stylesheet_uri(), '', '1.3.0' );
 	wp_register_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 	wp_register_style( 'responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', '1.1' );
 	wp_register_style( 'sidebarleft', get_template_directory_uri() . '/styles/layouts/thinkup-left-sidebar.css', '', '1.1' );
@@ -92,8 +96,7 @@ function thinkup_frontscripts() {
 	// Register Font Packages.
 	wp_register_style( 'font-awesome-min', get_template_directory_uri() . '/lib/extentions/font-awesome/css/font-awesome.min.css', '', '3.2.1' );
 	wp_register_style( 'font-awesome-cdn', get_template_directory_uri() . '/lib/extentions/font-awesome-4.2.0/css/font-awesome.min.css', '', '4.2.0' );
-	wp_register_style( 'dashicons-css', get_template_directory_uri() . '/lib/extentions/dashicons/css/dashicons.css', '', '2.0' );
-	
+
 	// Register theme scripts.
 	wp_register_script( 'frontend', get_template_directory_uri() . '/lib/scripts/main-frontend.js', array( 'jquery' ), '1.1', true );
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/lib/scripts/modernizr.js', array( 'jquery' ), '', true );
@@ -104,7 +107,7 @@ function thinkup_frontscripts() {
 		// Add Font Packages
 		wp_enqueue_style( 'font-awesome-min' );
 		wp_enqueue_style( 'font-awesome-cdn' );
-		wp_enqueue_style( 'dashicons-css' );
+		wp_enqueue_style( 'dashicons' );
 
 		// Add theme stylesheets
 		wp_enqueue_style( 'bootstrap' );

@@ -511,16 +511,16 @@ $_thinkup_meta_customjava = get_post_meta( $post->ID, '_thinkup_meta_customjava'
 
 	if ( ! empty( $thinkup_general_customjavafront ) ) {
 	echo 	'<script type="text/javascript">',
-			"\n" . esc_js( $thinkup_general_customjavafront ) . "\n",
+			"\n" . wp_kses_post( $thinkup_general_customjavafront ) . "\n",
 			'</script>' . "\n";
 	}
 	if ( ! empty( $_thinkup_meta_customjava ) ) {
 	echo 	'<script type="text/javascript">',
-			"\n" . $_thinkup_meta_customjava . "\n",
+			"\n" . wp_kses_post( $_thinkup_meta_customjava ) . "\n",
 			'</script>' . "\n";
 	}
 }
-add_action( 'wp_footer', 'thinkup_custom_javafront' );
+//add_action( 'wp_footer', 'thinkup_custom_javafront' );
 
 
 ?>
