@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.332
+Version: 1.333
 Tags: black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout, rtl-language-support, microformats
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -2312,6 +2312,10 @@ li.comment {
     overflow:hidden;
     padding-right:1em;
 }
+.comment-edit-link{
+    display:inline-block;
+    margin-left:.8em;
+}
 .ie7 .commentmetadata{
     width:100%;
 }
@@ -2320,6 +2324,7 @@ li.comment {
     text-align:center;
     margin:2em 0;
 }
+
 #header-image{
     position:relative;
     overflow:hidden;
@@ -2749,7 +2754,13 @@ div[class^="horizon"]{
     visibility:visible;
 }
 .raindrops-tab-list{
-    margin:0;padding:0;
+    display:none;
+    margin:0;
+    padding:0;
+}
+
+.raindrops-tab-content{
+    display:none;
 }
 .raindrops-tab-content,
 .raindrops-tab-list li{
@@ -2837,6 +2848,7 @@ a.raindrops-comment-link {
 .raindrops-comment-link em {
     padding: 0 0.4em;
     position: relative;
+    margin-left:1em;
 }
 .raindrops-comment-link .point {
     width: 0;
@@ -3870,6 +3882,7 @@ html body.ja .lsidebar .lang-not-ja,
 html body.ja .rsidebar .lang-not-ja{
     display:none;
 }
+
 html body.ja #access .lang-ja,
 html body.ja .widget-wrapper .lang-ja,
 html body.ja .lsidebar .lang-ja,
