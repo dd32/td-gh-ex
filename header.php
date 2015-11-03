@@ -97,7 +97,7 @@
 				<?php endif; ?>
 				
 				<?php if (!empty($emailURL)) : ?>
-					<a href="mailto:<?php echo sanitize_email($emailURL); ?>" title="<?php esc_attr_e( 'Email', 'annina' ); ?>"><i class="fa fa-envelope spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr', 'annina' ); ?></span></i></a>
+					<a href="mailto:<?php echo sanitize_email($emailURL); ?>" title="<?php esc_attr_e( 'Email', 'annina' ); ?>"><i class="fa fa-envelope spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Email', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $hideSearch == 1 ) : ?>

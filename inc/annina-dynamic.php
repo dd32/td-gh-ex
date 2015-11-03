@@ -137,11 +137,6 @@ function annina_color_primary_register( $wp_customize ) {
 	'default' => '#',
 	'label' => __('VK URL', 'annina')
 	);
-	$socialmedia[] = array(
-	'slug'=>'emailurl', 
-	'default' => '#',
-	'label' => __('You Email', 'annina')
-	);
 	
 	foreach( $socialmedia as $annina_theme_options ) {
 		// SETTINGS
@@ -162,6 +157,23 @@ function annina_color_primary_register( $wp_customize ) {
 			)
 		);
 	}
+	
+	/*
+	Email Button
+	=====================================================
+	*/
+	$wp_customize->add_setting('annina_theme_options_emailurl', array(
+        'default'    => '#',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'is_email'
+    ) );
+	
+	$wp_customize->add_control('annina_theme_options_emailurl', array(
+        'label'      => __( 'Your Email', 'annina' ),
+        'section'    => 'cresta_annina_options',
+        'settings'   => 'annina_theme_options_emailurl',
+    ) );
 	
 	/*
 	Search Button

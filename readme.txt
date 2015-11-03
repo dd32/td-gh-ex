@@ -48,6 +48,10 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+Version 1.3.2
+* Fixed Email Button
+* Minor bug fixes
+
 Version 1.3.1
 * Fixed box width with Google Chrome
 * Move the "Theme Options" in "WP Customizer"
