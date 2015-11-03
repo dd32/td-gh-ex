@@ -26,26 +26,21 @@ function greenr_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	global $greenr;
-	if( isset( $greenr['color'] ) ) {
-		switch ($greenr['color']) {
-			case '1':
-				wp_enqueue_style( 'greenr-default', GREENR_PARENT_URL . '/css/green_default.css');
-				break;			
-			case '2':
-				wp_enqueue_style( 'greenr-blue', GREENR_PARENT_URL . '/css/green_pattern.css');
-				break;
-			case '3':
-				wp_enqueue_style( 'greenr-flat', GREENR_PARENT_URL . '/css/green_flat.css');
-				break;
-			default:
-				wp_enqueue_style( 'greenr-style', get_stylesheet_uri() );
-				break;
-		}		  
-	} else {
-		wp_enqueue_style( 'greenr-style', get_stylesheet_uri() );
-	}
-
+	$color_scheme = get_theme_mod('color', 1);
+	switch ($color_scheme) {
+		case '1':
+			wp_enqueue_style( 'greenr-default', GREENR_PARENT_URL . '/css/green_default.css');
+			break;			
+		case '2':
+			wp_enqueue_style( 'greenr-blue', GREENR_PARENT_URL . '/css/green_pattern.css');
+			break;
+		case '3':
+			wp_enqueue_style( 'greenr-flat', GREENR_PARENT_URL . '/css/green_flat.css');
+			break;
+		default:
+			wp_enqueue_style( 'greenr-style', get_stylesheet_uri() );
+			break;
+	}		  
 }
 add_action( 'wp_enqueue_scripts', 'greenr_scripts' );
 

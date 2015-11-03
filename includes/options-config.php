@@ -37,7 +37,7 @@ $greenr_why_upgrade = <<< FEATURES
 <p class="wrap-header">
     <a class="view-demo" href="http://demo.webulous.in/greenr/">
         <i class="fa fa-eye"></i> $view_demo</a> 
-    <a class="upgrade" href="http://www.webulousthemes.com/?add-to-cart">
+    <a class="upgrade" href="http://www.webulousthemes.com/?add-to-cart=27">
         <i class="fa fa-upload"></i> $upgrade_to_pro</a>
 </p>
 <div class="one-third column clear">
@@ -316,7 +316,7 @@ $options = array(
                             'type' => 'text',
                             'label' => __('Enter Text (Flexcaption)- Slider 1', 'greenr'),
                             'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
                         ),
                         'image_upload-2' => array(
                             'type' => 'image',

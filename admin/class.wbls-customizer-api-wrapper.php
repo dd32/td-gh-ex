@@ -81,7 +81,7 @@
 				$this->_version,
 				true
 			);
-			wp_localize_script( 'customizer-js', 'colorist_upgrade', array( 'message' => __( 'Get Pro for just $39', 'colorist' ), 'docs' => __( 'Documentation', 'colorist' ), 'demo' => __( 'Demo', 'colorist' ), 'support' => __( 'Ask a Question', 'colorist' ) ) );
+			wp_localize_script( 'customizer-js', 'greenr_upgrade', array( 'message' => __( 'Get Pro for just $39', 'greenr' ), 'docs' => __( 'Documentation', 'greenr' ), 'demo' => __( 'Demo', 'greenr' ), 'support' => __( 'Ask a Question', 'greenr' ) ) );
 		}
 
 		/**

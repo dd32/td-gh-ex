@@ -75,8 +75,9 @@ add_action( 'after_setup_theme', 'greenr_customizer_setup',11 );
 if( ! function_exists( 'greenr_customizer_setup' ) ) {
 		//echo '<pre>', print_r($greenr), '</pre>';
 	function greenr_customizer_setup() {
-		if(  empty( get_theme_mods() ) ) {
-			global $greenr, $options;
+		if(  count( get_theme_mods() ) <= 1 ) {
+			global $options;
+			$greenr = get_option('greenr');
 			foreach($options['panels']['theme_options']['sections'] as $section) {
 				foreach( $section['fields'] as $name => $settings ) {
 					//echo 'Name: ' . $name . '<br>' . 'Value: ' . $greenr[$name] . '<br>';

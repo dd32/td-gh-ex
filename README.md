@@ -46,6 +46,9 @@ http://www.gratisography.com/pictures/46_1.jpg
 
 == Change Log ==
 
+Version 1.1.0
+	* Redux files removed.
+
 Version 1.0.9
 	* Redux to Customizer Conversion
 	

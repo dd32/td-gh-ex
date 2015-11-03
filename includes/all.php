@@ -30,16 +30,6 @@ require GREENR_INCLUDES_DIR . '/extras.php';
 require_once GREENR_PARENT_DIR . '/admin/admin-init.php';
 
 /**
- * Load Theme Options
- */
-require_once GREENR_INCLUDES_DIR . '/theme-options-config.php';
-
-/**
- * Load Sane Defaults
- */
-require_once GREENR_INCLUDES_DIR . '/home-info.php';
-
-/**
  * Load Sidebars
  */
 require_once GREENR_INCLUDES_DIR . '/sidebars.php';
