@@ -803,7 +803,6 @@ function optionsframework_media_scriptss($hook) {
 
     wp_enqueue_style( 'accesspress-store-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
     wp_enqueue_style( 'ap-admin-css', get_template_directory_uri() . '/inc/css/ap-admin.css' );
-    wp_enqueue_script('ap-admin-js', get_template_directory_uri() . '/inc/js/ap-admin.js', array('jquery'));
     
 }
 

@@ -119,6 +119,7 @@ function accesspress_ticker_setting($wp_customize){
 //moving default sections to custom panel
   $wp_customize->get_section('title_tagline')->panel = 'general_setting';
   $wp_customize->get_section('header_image')->panel = 'general_setting';
+  $wp_customize->get_section('header_image')->title = __( 'Header Logo' );
   $wp_customize->remove_section('nav');
   $wp_customize->get_section( 'colors')->panel = 'general_setting';
   $wp_customize->get_section( 'static_front_page')->panel = 'general_setting';   

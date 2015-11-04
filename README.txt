@@ -48,9 +48,13 @@ Images
 
 == Changelog ==
 
+= 1.1.1 =
+** Change the header image name to header logo.
+** Fixed the style of price tag and home page category alignment section section.
+
 = 1.1.0 =
-** Fixed the footer widget responsive problme
-** Fixed the product details variations select box aligment
+** Fixed the footer widget responsive problem.
+** Fixed the product details variations select box alignment.
 
 = 1.0.9 =
 ** Add the options for upload background image for youtube video section.

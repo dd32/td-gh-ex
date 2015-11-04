@@ -31,7 +31,7 @@
                         ?>
                         <div class="welcome-user">
                             <span class="line">|</span>
-                            <?php _e('Welcome ', 'accesspress-store'); ?>
+                            <?php _e('Welcome', 'accesspress-store'); ?>
                             <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="my-account">
                                 <span class="user-name">
                                     <?php echo $current_user->display_name; ?>

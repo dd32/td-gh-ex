@@ -2,13 +2,13 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: AccessPress Store 1.0.0\n"
-"Report-Msgid-Bugs-To: info@accesspressthemes.com\n"
-"POT-Creation-Date: 2015-01-06 02:24:02+00:00\n"
-"POT-Revision-Date: Fri Aug 14 2015 13:37:18 GMT+0545 (Nepal Standard Time)\n"
+"Project-Id-Version: AccessPress Store\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Wed Nov 04 2015 12:08:12 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Wed Nov 04 2015 12:08:44 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: AccessPress Themes <info@accesspressthemes.com>\n"
-"Language-Team: AccessPress Themes Team <info@accesspressthemes.com>\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
 "MIME-Version: 1.0\n"
@@ -34,34 +34,9 @@ msgid ""
 "below or a search?"
 msgstr ""
 
-#: ../bloglayoutfour.php:97 ../bloglayoutone.php:98 ../bloglayoutthree.php:97 ..
-#: /bloglayouttwo.php:99 ../content-blog.php:69 ../content.php:24
-msgid "Posted On"
-msgstr ""
-
-#: ../bloglayoutfour.php:99 ../bloglayoutone.php:100 ../bloglayoutthree.php:99 ..
-#: /bloglayouttwo.php:101 ../content-blog.php:71 ../content.php:26
-msgid "at"
-msgstr ""
-
-#: ../bloglayoutfour.php:101 ../bloglayoutone.php:102 ../bloglayoutthree.php:101 .
-#: ./bloglayouttwo.php:103 ../content-blog.php:73 ../content.php:28
-msgid "by"
-msgstr ""
-
-#: ../bloglayoutfour.php:119 ../bloglayoutone.php:120 ../bloglayoutthree.php:119 .
-#: ./bloglayouttwo.php:121 ../content-blog.php:91 ../content.php:41
-msgid "Read More"
-msgstr ""
-
-#: ../bloglayoutfour.php:124 ../bloglayoutone.php:125 ../bloglayoutthree.php:124 .
-#: ./bloglayouttwo.php:126 ../content-blog.php:96 ../content-page.php:25 ..
-#: /content-single.php:23
-msgid "Pages:"
-msgstr ""
-
 #: ../comments.php:28
 #, php-format
+msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
@@ -81,6 +56,26 @@ msgstr ""
 
 #: ../comments.php:72
 msgid "Comments are closed."
+msgstr ""
+
+#: ../content-blog.php:69 ../content.php:20
+msgid "Posted On"
+msgstr ""
+
+#: ../content-blog.php:71 ../content.php:22
+msgid "at"
+msgstr ""
+
+#: ../content-blog.php:73 ../content.php:24
+msgid "by"
+msgstr ""
+
+#: ../content-blog.php:91 ../content.php:38
+msgid "Read More"
+msgstr ""
+
+#: ../content-blog.php:96 ../content-page.php:25 ../content-single.php:23
+msgid "Pages:"
 msgstr ""
 
 #: ../content-none.php:13
@@ -108,65 +103,86 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ../footer.php:59
+#: ../footer.php:58
 msgid "Partner Logo 1"
 msgstr ""
 
-#: ../footer.php:63
+#: ../footer.php:62
 msgid "Partner Logo 2"
 msgstr ""
 
-#: ../footer.php:67
+#: ../footer.php:66
 msgid "Partner Logo 3"
 msgstr ""
 
-#: ../footer.php:71
+#: ../footer.php:70
 msgid "Partner Logo 4"
 msgstr ""
 
-#: ../footer.php:75
+#: ../footer.php:74
 msgid "SSL Seal"
 msgstr ""
 
-#: ../footer.php:79
+#: ../footer.php:78
 msgid "Other Seal 1"
 msgstr ""
 
-#: ../footer.php:83
+#: ../footer.php:82
 msgid "Other Seal 2"
 msgstr ""
 
-#: ../footer.php:88
+#: ../footer.php:93
 #, php-format
-msgid "Copyright &copy; 2015 %1$s"
+msgid "&copy; %1$s %2$s"
 msgstr ""
 
-#: ../footer.php:88
-msgid "https://accesspressthemes.com"
-msgstr ""
-
-#: ../footer.php:90
+#: ../footer.php:96
 #, php-format
-msgid "Theme: %1$s"
+msgid "WordPress Theme : %1$s by %2$s"
 msgstr ""
 
-#: ../footer.php:90
-msgid "https://wordpress.org"
-msgstr ""
-
-#: ../functions.php:62
+#: ../functions.php:64
 msgid "Primary Menu"
 msgstr ""
 
-#: ../header.php:21
-msgid "Skip to content"
+#: ../functions.php:200 ../functions.php:201
+msgid "More Themes"
 msgstr ""
 
-#: ../header.php:39
-msgid "Welcome "
+#: ../functions.php:217
+#, php-format
+msgid "More Themes from <a href=\"%s\" target=\"_blank\">AccessPress Themes</a>"
 msgstr ""
 
-#: ../header.php:45
+#: ../functions.php:245 ../inc/accesspress-plugin-activation.php:2215
+msgid "Active"
+msgstr ""
+
+#: ../functions.php:247
+msgid "Customize"
+msgstr ""
+
+#: ../functions.php:282
+msgid "Already installed"
+msgstr ""
+
+#: ../functions.php:285 ../inc/accesspress-plugin-activation.php:2612
+msgid "Activate"
+msgstr ""
+
+#: ../functions.php:294
+msgid "Install Now"
+msgstr ""
+
+#: ../functions.php:297
+msgid "Live Preview"
+msgstr ""
+
+#: ../header.php:34
+msgid "Welcome"
+msgstr ""
+
+#: ../header.php:40
 msgid "!"
 msgstr ""
 
@@ -191,119 +207,566 @@ msgstr ""
 msgid "Search products"
 msgstr ""
 
+#. Name of the template
+msgid "HomePage"
+msgstr ""
+
 #: ../inc/accesspress-function.php:10
-msgid "Shop Sidebar"
-msgstr ""
-
-#: ../inc/accesspress-function.php:19
-msgid "Header Call To Box"
-msgstr ""
-
-#: ../inc/accesspress-function.php:29
-msgid "AP: Promo Widget 1"
-msgstr ""
-
-#: ../inc/accesspress-function.php:39
-msgid "AP: Product Listing Widget 1"
-msgstr ""
-
-#: ../inc/accesspress-function.php:49
-msgid "AP: Promo Widget 2"
-msgstr ""
-
-#: ../inc/accesspress-function.php:59
-msgid "AP: Product Listing Widget 2"
-msgstr ""
-
-#: ../inc/accesspress-function.php:69
-msgid "AP: Video Call to Action"
-msgstr ""
-
-#: ../inc/accesspress-function.php:79
-msgid "AP: Product Listing Widget 3"
-msgstr ""
-
-#: ../inc/accesspress-function.php:89
-msgid "AP: Left Sidebar"
-msgstr ""
-
-#: ../inc/accesspress-function.php:99
 msgid "AP: Right Sidebar"
 msgstr ""
 
-#: ../inc/accesspress-function.php:111
+#: ../inc/accesspress-function.php:20
+msgid "AP: Left Sidebar"
+msgstr ""
+
+#: ../inc/accesspress-function.php:30
+msgid "Shop Sidebar"
+msgstr ""
+
+#: ../inc/accesspress-function.php:39
+msgid "Header Call To Box"
+msgstr ""
+
+#: ../inc/accesspress-function.php:49
+msgid "AP: Promo Widget 1"
+msgstr ""
+
+#: ../inc/accesspress-function.php:59
+msgid "AP: Product Listing Widget 1"
+msgstr ""
+
+#: ../inc/accesspress-function.php:69
+msgid "AP: Promo Widget 2"
+msgstr ""
+
+#: ../inc/accesspress-function.php:79
+msgid "AP: Product Listing Widget 2"
+msgstr ""
+
+#: ../inc/accesspress-function.php:89
+msgid "AP: Video Call to Action"
+msgstr ""
+
+#: ../inc/accesspress-function.php:99
+msgid "AP: Product Listing Widget 3"
+msgstr ""
+
+#: ../inc/accesspress-function.php:109
 msgid "AP: Promo Widget 3"
 msgstr ""
 
-#: ../inc/accesspress-function.php:121
+#: ../inc/accesspress-function.php:119
 msgid "Footer Area 1"
 msgstr ""
 
-#: ../inc/accesspress-function.php:131
+#: ../inc/accesspress-function.php:129
 msgid "Footer Area 2"
 msgstr ""
 
-#: ../inc/accesspress-function.php:141
+#: ../inc/accesspress-function.php:139
 msgid "Footer Area 3"
 msgstr ""
 
-#: ../inc/accesspress-function.php:151
+#: ../inc/accesspress-function.php:149
 msgid "Footer Area 4"
 msgstr ""
 
-#: ../inc/accesspress-function.php:360
+#: ../inc/accesspress-function.php:358
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../inc/accesspress-function.php:361
+#: ../inc/accesspress-function.php:359
 msgid "Start shopping"
 msgstr ""
 
-#: ../inc/accesspress-function.php:365
+#: ../inc/accesspress-function.php:363
 #, php-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:396
-msgid "CART"
-msgstr ""
-
-#: ../inc/accesspress-function.php:532
+#: ../inc/accesspress-function.php:489
 msgctxt "breadcrumb"
 msgid "Home"
 msgstr ""
 
-#: ../inc/accesspress-function.php:553
+#: ../inc/accesspress-function.php:508
 msgid "Home"
 msgstr ""
 
-#: ../inc/accesspress-function.php:573
+#: ../inc/accesspress-function.php:527
 msgid "Archive by category"
 msgstr ""
 
-#: ../inc/accesspress-function.php:575
+#: ../inc/accesspress-function.php:529
 msgid "Search results for"
 msgstr ""
 
-#: ../inc/accesspress-function.php:633
+#: ../inc/accesspress-function.php:587
 msgid "Posts tagged"
 msgstr ""
 
-#: ../inc/accesspress-function.php:637
+#: ../inc/accesspress-function.php:591
 msgid "Articles posted by "
 msgstr ""
 
-#: ../inc/accesspress-function.php:645
+#: ../inc/accesspress-function.php:599
 msgid "Page"
+msgstr ""
+
+#: ../inc/accesspress-function.php:773 ../inc/accesspress-plugin-activation.php:333
+msgid "Install Required Plugins"
+msgstr ""
+
+#: ../inc/accesspress-function.php:774 ../inc/accesspress-plugin-activation.php:334
+msgid "Install Plugins"
+msgstr ""
+
+#: ../inc/accesspress-function.php:775 ../inc/accesspress-plugin-activation.php:335
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: ../inc/accesspress-function.php:776 ../inc/accesspress-plugin-activation.php:336
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: ../inc/accesspress-function.php:777 ../inc/accesspress-plugin-activation.php:337
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:780 ../inc/accesspress-plugin-activation.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:783 ../inc/accesspress-plugin-activation.php:347
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:786 ../inc/accesspress-plugin-activation.php:352
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:789 ../inc/accesspress-plugin-activation.php:357
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:792 ../inc/accesspress-plugin-activation.php:362
+#, php-format
+msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:795 ../inc/accesspress-plugin-activation.php:367
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:798 ../inc/accesspress-plugin-activation.php:372
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:801 ../inc/accesspress-plugin-activation.php:377
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:804 ../inc/accesspress-plugin-activation.php:382
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:807 ../inc/accesspress-plugin-activation.php:387
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:810 ../inc/accesspress-plugin-activation.php:392
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:813 ../inc/accesspress-plugin-activation.php:397
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../inc/accesspress-function.php:814 ../inc/accesspress-plugin-activation.php:
+#: 399 ../inc/accesspress-plugin-activation.php:3029
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: ../inc/accesspress-function.php:815 ../inc/accesspress-plugin-activation.php:
+#: 400 ../inc/accesspress-plugin-activation.php:2832
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-function.php:816 ../inc/accesspress-plugin-activation.php:401
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: ../inc/accesspress-function.php:817 ../inc/accesspress-plugin-activation.php:402
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: ../inc/accesspress-function.php:818 ../inc/accesspress-plugin-activation.php:403
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: ../inc/accesspress-function.php:819 ../inc/accesspress-plugin-activation.php:405
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:398
+msgid "Return to the dashboard"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:404
+msgid "Dismiss this notice"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:520
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:521
+msgid "Update Required"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:635
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:828 ../inc/accesspress-plugin-
+#: activation.php:3438
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:935
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:935 ../inc/accesspress-plugin-
+#: activation.php:938
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:938
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:1116 ../inc/accesspress-plugin-
+#: activation.php:2828
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:1881
+#, php-format
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2167
+msgid "Required"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2170
+msgid "Recommended"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2186
+msgid "WordPress Repository"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2189
+msgid "External Source"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2192
+msgid "Pre-Packaged"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2209
+msgid "Not Installed"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2213
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2221
+msgid "Required Update not Available"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2224
+msgid "Requires Update"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2227
+msgid "Update recommended"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2235
+#, php-format
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2280
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-plugin-activation.php:2283
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-plugin-activation.php:2286
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-plugin-activation.php:2289
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/accesspress-plugin-activation.php:2371
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2379
+msgid "Installed version:"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2387
+msgid "Minimum required version:"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2399
+msgid "Available version:"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2422
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2436
+msgid "Plugin"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2437
+msgid "Source"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2438
+msgid "Type"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2442
+msgid "Version"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2443
+msgid "Status"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2491
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2495
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2500
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2570
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2603
+msgid "Install"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2609
+msgid "Update"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2643
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2645
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2681
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2683
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2788
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:2814
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3028
+msgid "Plugin activation failed."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3362
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3364
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3365
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3369
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3370
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3370 ../inc/accesspress-plugin-
+#: activation.php:3376
+msgid "Show Details"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3370 ../inc/accesspress-plugin-
+#: activation.php:3376
+msgid "Hide Details"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3371
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3372
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3375
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3376
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3377
+msgid "All installations have been completed."
+msgstr ""
+
+#: ../inc/accesspress-plugin-activation.php:3378
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: ../inc/accesspress-sanitizer.php:7
 msgid "Boxed"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:8 ../inc/assets/assets-general-setting.php:236
+#: ../inc/accesspress-sanitizer.php:8 ../inc/assets/assets-general-setting.php:237
 msgid "Full Width"
 msgstr ""
 
@@ -333,15 +796,15 @@ msgstr ""
 msgid "Blog Full Content"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:42 ../inc/assets/assets-general-setting.php:148
+#: ../inc/accesspress-sanitizer.php:42 ../inc/assets/assets-general-setting.php:149
 msgid "Color"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:43 ../inc/assets/assets-general-setting.php:149
+#: ../inc/accesspress-sanitizer.php:43 ../inc/assets/assets-general-setting.php:150
 msgid "Image"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:44 ../inc/assets/assets-general-setting.php:150
+#: ../inc/accesspress-sanitizer.php:44 ../inc/assets/assets-general-setting.php:151
 msgid "Pattern"
 msgstr ""
 
@@ -385,6 +848,14 @@ msgstr ""
 msgid "No sidebar"
 msgstr ""
 
+#: ../inc/custom-metabox.php:69
+msgid "You can set up the sidebar content"
+msgstr ""
+
+#: ../inc/custom-metabox.php:69
+msgid "here"
+msgstr ""
+
 #: ../inc/extras.php:52
 #, php-format
 msgid "Page %s"
@@ -418,6 +889,7 @@ msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
+#. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
 #: ../inc/template-tags.php:108 ../inc/template-tags.php:114
 msgid ", "
@@ -595,56 +1067,76 @@ msgstr ""
 msgid "Ticker Text4"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:128
+#: ../inc/assets/assets-general-setting.php:122
+msgid "Header Logo"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:129
 msgid "Background"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:143
+#: ../inc/assets/assets-general-setting.php:144
 msgid "Select the Background type"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:144
+#: ../inc/assets/assets-general-setting.php:145
 msgid "Select the Background type for your website"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:170
+#: ../inc/assets/assets-general-setting.php:171
 msgid "Background Pattern"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:186
+#: ../inc/assets/assets-general-setting.php:187
 msgid "Favicon Image"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:204
+#: ../inc/assets/assets-general-setting.php:205
 msgid "Upload Favicon"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:205
+#: ../inc/assets/assets-general-setting.php:206
 msgid "Standard Size of Favicon is 40x40px"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:212
+#: ../inc/assets/assets-general-setting.php:213
 msgid "Layout Setting"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:230
+#: ../inc/assets/assets-general-setting.php:231
 msgid "Website Layout"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:231
+#: ../inc/assets/assets-general-setting.php:232
 msgid "Make your website either box layout or full width from click away"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:235
+#: ../inc/assets/assets-general-setting.php:236
 msgid "Boxed Layout"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:243
+#: ../inc/assets/assets-general-setting.php:244
 msgid "Responsive Setting"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:262
+#: ../inc/assets/assets-general-setting.php:263
 msgid "Enable or Disable Responsive Design"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:271
+msgid "Custom CSS Section"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:283
+msgid "Custom CSS"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:292
+msgid "Footer Copyright"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:304
+msgid "Copyright Text"
 msgstr ""
 
 #: ../inc/assets/assets-pagepost-setting.php:7
@@ -710,6 +1202,177 @@ msgstr ""
 #: ../inc/assets/assets-paymentlogo-setting.php:123 ../inc/assets/assets-
 #: paymentlogo-setting.php:138
 msgid "Upload Other Seal 2 Image"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:150
+msgid "Theme Info"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:157
+msgid "Our Products"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:167 ../inc/assets/assets-
+#: paymentlogo-setting.php:170
+msgid "More Free Themes"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:180 ../inc/assets/assets-
+#: paymentlogo-setting.php:183
+msgid "AccessPress PRO Themes"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:194 ../inc/assets/assets-
+#: paymentlogo-setting.php:197
+msgid "AccessPress Plugins"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:209
+msgid "AccessPress Store Pro Features"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:220
+msgid "Store Pro Features"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:261
+msgid "Fully built on customizer!"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:262
+msgid "Next generation WooCommerce theme"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:263
+msgid "Deep WooCommerce Integration!"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:264
+msgid "Mega menu"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:265
+msgid "Advanced product search"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:266
+msgid "Boxed and full layout"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:267
+msgid "Unlimited slider options"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:268
+msgid "Background configuration"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:269
+msgid "Color configuration"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:270
+msgid "Highly configurable home page"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:271
+msgid "Youtube video integration"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:272
+msgid "Multiple Category display layout"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:273
+msgid "Product and content search"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:274
+msgid "Promo Ticker"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:275
+msgid "Unlimited SSL Badge and credit card icons upload"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:276
+msgid "WooCommerce settings"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:277
+msgid "4 WooCommerce Archive layout"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:278
+msgid "4 Page layout"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:279
+msgid "4 Post layout"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:280
+msgid "Grid / list Archive view"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:281
+msgid "4 Blog layout"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:282
+msgid "14 Widgets"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:283
+msgid "Page banner"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:284
+msgid "Beautiful product page"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:285
+msgid "Beautiful checkout pages"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:286
+msgid "Widget for latest product with accordance"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:287
+msgid "Tab section to show category"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:288
+msgid "Tab section to show products"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:289
+msgid "Team section"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:290
+msgid "Testimonial section"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:291
+msgid "Client Logo Section"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:292
+msgid "Fully SEO optimized"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:293
+msgid "Fast loading"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:294
+msgid "A perfect theme to start your online shop of any kind!"
+msgstr ""
+
+#: ../inc/assets/assets-paymentlogo-setting.php:297
+msgid "Buy Now"
 msgstr ""
 
 #: ../inc/assets/assets-slider-setting.php:9
@@ -838,6 +1501,50 @@ msgstr ""
 
 #: ../inc/assets/assets-slider-setting.php:427
 msgid "Slider 5 Button Text"
+msgstr ""
+
+#: ../inc/assets/assets-slider-setting.php:436
+msgid "Breadcrumb Setting"
+msgstr ""
+
+#: ../inc/assets/assets-slider-setting.php:437
+msgid "This allows to upload breadcrumb background image"
+msgstr ""
+
+#: ../inc/assets/assets-slider-setting.php:442
+msgid "WooCommerce Archive Page"
+msgstr ""
+
+#: ../inc/assets/assets-slider-setting.php:456 ../inc/assets/assets-slider-
+#: setting.php:493 ../inc/assets/assets-slider-setting.php:530 ..
+#: /inc/assets/assets-slider-setting.php:567
+msgid "Enable/Disable Breadcrumb"
+msgstr ""
+
+#: ../inc/assets/assets-slider-setting.php:471 ../inc/assets/assets-slider-
+#: setting.php:508 ../inc/assets/assets-slider-setting.php:545 ..
+#: /inc/assets/assets-slider-setting.php:582
+msgid "Upload Background Image"
+msgstr ""
+
+#: ../inc/assets/assets-slider-setting.php:473 ../inc/assets/assets-slider-
+#: setting.php:510 ../inc/assets/assets-slider-setting.php:547 ..
+#: /inc/assets/assets-slider-setting.php:584
+msgid ""
+"Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 "
+"&times; 156 Pixels."
+msgstr ""
+
+#: ../inc/assets/assets-slider-setting.php:479
+msgid "WooCommerce Single Product Page"
+msgstr ""
+
+#: ../inc/assets/assets-slider-setting.php:516
+msgid "Breadcrumb Page Options"
+msgstr ""
+
+#: ../inc/assets/assets-slider-setting.php:553
+msgid "Breadcrumb Post Options"
 msgstr ""
 
 #: ../inc/assets/assets-social-setting.php:6
@@ -1005,144 +1712,165 @@ msgstr ""
 msgid "Bold Italic"
 msgstr ""
 
-#: ../inc/widgets/widget-cta-simple.php:25
+#: ../inc/widgets/widget-cta-simple.php:26
 msgid "A widget that shows Simple Call to Action"
 msgstr ""
 
-#: ../inc/widgets/widget-cta-simple.php:38 ../inc/widgets/widget-cta-video.php:38 
-#: ../inc/widgets/widget-icon-text.php:46 ../inc/widgets/widget-product1.php:69 ..
-#: /inc/widgets/widget-promo.php:38
+#: ../inc/widgets/widget-cta-simple.php:39 ../inc/widgets/widget-cta-video.php:39 
+#: ../inc/widgets/widget-full-promo.php:39 ../inc/widgets/widget-icon-text.php:47 
+#: ../inc/widgets/widget-product1.php:70 ../inc/widgets/widget-promo.php:39
 msgid "Title"
 msgstr ""
 
-#: ../inc/widgets/widget-cta-simple.php:43 ../inc/widgets/widget-cta-video.php:43
+#: ../inc/widgets/widget-cta-simple.php:44 ../inc/widgets/widget-cta-video.php:44
 msgid "Description"
 msgstr ""
 
-#: ../inc/widgets/widget-cta-simple.php:49 ../inc/widgets/widget-cta-video.php:55
+#: ../inc/widgets/widget-cta-simple.php:50 ../inc/widgets/widget-cta-video.php:61
 msgid "Button Text"
 msgstr ""
 
-#: ../inc/widgets/widget-cta-simple.php:54
+#: ../inc/widgets/widget-cta-simple.php:55
 msgid "Enter Fontawesome Class to show in button"
 msgstr ""
 
-#: ../inc/widgets/widget-cta-simple.php:59 ../inc/widgets/widget-cta-video.php:60
+#: ../inc/widgets/widget-cta-simple.php:60 ../inc/widgets/widget-cta-video.php:66
 msgid "Button Url"
 msgstr ""
 
-#: ../inc/widgets/widget-cta-video.php:25
+#: ../inc/widgets/widget-cta-video.php:26
 msgid "A widget that shows Call to Action with Video"
 msgstr ""
 
-#: ../inc/widgets/widget-cta-video.php:49
+#: ../inc/widgets/widget-cta-video.php:50
+msgid "Background Upload Image"
+msgstr ""
+
+#: ../inc/widgets/widget-cta-video.php:55
 msgid "Video Iframe"
 msgstr ""
 
-#: ../inc/widgets/widget-icon-text.php:25
+#: ../inc/widgets/widget-full-promo.php:26
+msgid "A widget that Gives Full Width Promo of the object"
+msgstr ""
+
+#: ../inc/widgets/widget-full-promo.php:45 ../inc/widgets/widget-promo.php:45
+msgid "Upload Image"
+msgstr ""
+
+#: ../inc/widgets/widget-full-promo.php:51
+msgid "Select FullWidth Style"
+msgstr ""
+
+#: ../inc/widgets/widget-full-promo.php:58
+msgid "Sub Title"
+msgstr ""
+
+#: ../inc/widgets/widget-full-promo.php:64 ../inc/widgets/widget-promo.php:51
+msgid "Enter Promo Desc"
+msgstr ""
+
+#: ../inc/widgets/widget-full-promo.php:71 ../inc/widgets/widget-promo.php:58
+msgid "Enter Promo Button Text"
+msgstr ""
+
+#: ../inc/widgets/widget-full-promo.php:77 ../inc/widgets/widget-promo.php:64
+msgid "Enter Promo Link"
+msgstr ""
+
+#: ../inc/widgets/widget-icon-text.php:26
 msgid "A widget that shows Text with Icon"
 msgstr ""
 
-#: ../inc/widgets/widget-icon-text.php:51
+#: ../inc/widgets/widget-icon-text.php:52
 msgid "Content"
 msgstr ""
 
-#: ../inc/widgets/widget-icon-text.php:57
+#: ../inc/widgets/widget-icon-text.php:58
 msgid "Icon"
 msgstr ""
 
-#: ../inc/widgets/widget-icon-text.php:62
+#: ../inc/widgets/widget-icon-text.php:63
 msgid "Read More Text"
 msgstr ""
 
-#: ../inc/widgets/widget-icon-text.php:63
+#: ../inc/widgets/widget-icon-text.php:64
 msgid "Leave Empty not to show"
 msgstr ""
 
-#: ../inc/widgets/widget-icon-text.php:68
+#: ../inc/widgets/widget-icon-text.php:69
 msgid "Read More Link"
 msgstr ""
 
-#: ../inc/widgets/widget-icon-text.php:73
+#: ../inc/widgets/widget-icon-text.php:74
 msgid "Style"
 msgstr ""
 
-#: ../inc/widgets/widget-product1.php:23
+#: ../inc/widgets/widget-product1.php:24
 msgid "The Product Slide Choose your type"
 msgstr ""
 
-#: ../inc/widgets/widget-product1.php:35
+#: ../inc/widgets/widget-product1.php:36
 msgid "Category"
 msgstr ""
 
-#: ../inc/widgets/widget-product1.php:36
+#: ../inc/widgets/widget-product1.php:37
 msgid "Latest Product"
 msgstr ""
 
-#: ../inc/widgets/widget-product1.php:37
+#: ../inc/widgets/widget-product1.php:38
 msgid "UpSell Product"
 msgstr ""
 
-#: ../inc/widgets/widget-product1.php:38
+#: ../inc/widgets/widget-product1.php:39
 msgid "Feature Product"
 msgstr ""
 
-#: ../inc/widgets/widget-product1.php:39
+#: ../inc/widgets/widget-product1.php:40
 msgid "On Sale Product"
 msgstr ""
 
-#: ../inc/widgets/widget-product1.php:75
+#: ../inc/widgets/widget-product1.php:76
 msgid "Select Product Type"
 msgstr ""
 
-#: ../inc/widgets/widget-product1.php:82 ../inc/widgets/widget-product2.php:73
+#: ../inc/widgets/widget-product1.php:83 ../inc/widgets/widget-product2.php:74
 msgid "Select Product Category"
 msgstr ""
 
-#: ../inc/widgets/widget-product1.php:90
+#: ../inc/widgets/widget-product1.php:91
 msgid "Select the number of Product to show"
 msgstr ""
 
-#: ../inc/widgets/widget-product1.php:119
+#: ../inc/widgets/widget-product1.php:120
 msgid "New!"
 msgstr ""
 
-#: ../inc/widgets/widget-product2.php:23
+#: ../inc/widgets/widget-product1.php:211 ../woocommerce/content-feat-product.php:
+#: 83 ../woocommerce/content-product.php:61
+msgid "Wishlist"
+msgstr ""
+
+#: ../inc/widgets/widget-product2.php:24
 msgid ""
 "This widgets show the Category Image its Description and Product of that "
 "Category"
 msgstr ""
 
-#: ../inc/widgets/widget-product2.php:35
+#: ../inc/widgets/widget-product2.php:36
 msgid "Right Align With Category Image"
 msgstr ""
 
-#: ../inc/widgets/widget-product2.php:36
+#: ../inc/widgets/widget-product2.php:37
 msgid "Left Align With Category Image"
 msgstr ""
 
-#: ../inc/widgets/widget-product2.php:66
+#: ../inc/widgets/widget-product2.php:67
 msgid "Select the Display Style (Image Alignment)"
 msgstr ""
 
-#: ../inc/widgets/widget-promo.php:25
+#: ../inc/widgets/widget-promo.php:26
 msgid "A widget that Gives Promo of the object"
-msgstr ""
-
-#: ../inc/widgets/widget-promo.php:44
-msgid "Upload Image"
-msgstr ""
-
-#: ../inc/widgets/widget-promo.php:50
-msgid "Enter Promo Desc"
-msgstr ""
-
-#: ../inc/widgets/widget-promo.php:57
-msgid "Enter Promo Button Text"
-msgstr ""
-
-#: ../inc/widgets/widget-promo.php:63
-msgid "Enter Promo Link"
 msgstr ""
 
 #: ../woocommerce/cart/cart.php:27
@@ -1247,4 +1975,28 @@ msgstr ""
 
 #: ../woocommerce/single-product/up-sells.php:44
 msgid "You may also like&hellip;"
+msgstr ""
+
+#. Name of the theme
+msgid "AccessPress Store"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://accesspressthemes.com/wordpress-themes/accesspress-store/"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"AccessPress Store is free WordPress theme that work beautifully with "
+"WooCommerce. The theme is packed with lots of exciting feature that enhances "
+"the ecommerce experience. It features Product slider, advanced whistlist, "
+"Featured product show list, call to action and many more. With its advanced "
+"customizer options, setting up the ecommerce website has become much more "
+"easy. Great customer support via online chat, email, support forum. Official "
+"support forum: http://accesspressthemes.com/support/ View full demo here: "
+"http://demo.accesspressthemes.com/accesspress-store/"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://accesspressthemes.com/"
 msgstr ""

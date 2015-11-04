@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 1.1.0
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -247,7 +247,7 @@ acronym {
 }
 mark,
 ins {
-    background: #fff9c0;
+    
     text-decoration: none;
 }
 sup,
@@ -2951,13 +2951,23 @@ Responsive grid for pages
     display: none !important;
 }
 .star-rating {
-    background: #333;
-    display: none;
+    background: #fff;
+    display: block;
 }
 .star-rating span {
-    background: #CCC;
+    background: #fff;
     display: block;
-    text-indent: -9999px;
+}
+.woocommerce .star-rating span::before, .woocommerce .star-rating::before {
+    color: #BB2120;
+}
+.star-rating span {
+    overflow: hidden;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: 1.5em;
 }
 .feature-prod-wrap {
     margin-bottom: 20px;
@@ -3625,7 +3635,7 @@ Responsive grid for pages
 }
 .woocommerce .star-rating span::before,
 .woocommerce .star-rating::before {
-    color: #c97178;
+    color: #BB2120;
 }
 .woocommerce .price-cart {} .woocommerce .wc-products {
     overflow: hidden
@@ -4035,6 +4045,16 @@ ul.products.list li.product .gridlist-buttonwrap {
 .widget_accesspress_store_product2 .feature-cat-product .slick-next.slick-disabled {
     background: url("images/mini-next-arrow1.png") no-repeat scroll center center;
     background-size: 100% 100%;
+}
+/*style for product right align nav*/
+.widget_accesspress_store_product2 .feature-cat-product.right_align .slick-next,
+.widget_accesspress_store_product2 .feature-cat-product.right_align .slick-prev{
+	position:absolute;
+	left:0;	
+	
+}
+.widget_accesspress_store_product2 .feature-cat-product.right_align .slick-next{
+	margin-left:29px;	
 }
 .columns-widget-count-2 aside {
     width: 48%;
@@ -4625,12 +4645,8 @@ span.onsale:after,
 .woocommerce.single.single-product ul.product-categories {
     margin-bottom: 30px !important;
 }
-.woocommerce.single.single-product ul.product-categories ul.children li:first-child {
-    border-top: 1px solid #eee !important;
-}
-.woocommerce.single.single-product ul.product-categories li:last-child {
-    border: none !important;
-}
+
+
 .woocommerce.single.single-product .img-wrap {
     display: block;
     float: left;
@@ -4870,7 +4886,7 @@ span.onsale:after,
 }
 .widget_product_categories ul.children{
     margin: 0px;
-    border-top: 2px solid #eee;}
+    border-top: 1px solid #eee;}
 .widget_product_categories ul.children li{
      line-height: 30px !important;
     margin-left: 10px !important;
@@ -4905,6 +4921,9 @@ span.onsale:after,
 .cta-overlay {
     padding: 70px 0px;
     background: rgba(0, 0, 0, 0.8);
+}
+.boxed .cta-vid-wrap{
+	padding:0 20px;	
 }
 #ap-cta-video .widget_accesspress_cta_simple {
     background: url(images/you.png) no-repeat right;
@@ -5400,6 +5419,10 @@ span.onsale:after,
 }
 #secondary.sidebar ul {
     margin: 0px;
+	
+}
+#secondary.sidebar .product_list_widget{
+	padding-top:20px;
 }
 #secondary.sidebar ul ul li {
     margin-left: 0px;
@@ -5511,6 +5534,14 @@ li.cat-parent {
 
 .amount {
     margin-right: 5px;
+	
+}
+#secondary.sidebar ul li ins span.amount,
+#secondary.sidebar ul li span.amount{
+	color:#77a464;
+}
+#secondary.sidebar ul li del span.amount{
+	    color: #e24545;	
 }
 .woocommerce ul.cart_list li img,
 .woocommerce ul.product_list_widget li img {
@@ -6420,3 +6451,5 @@ ul.products.list li.product hr {
 #site-navigation > .store-menu > ul li:last-child:hover li:after {
     display: none;
 }
+
+/*boxed body style*/

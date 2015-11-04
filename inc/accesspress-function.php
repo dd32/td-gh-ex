@@ -185,7 +185,7 @@ function accesspress_store_scripts() {
 
 	wp_enqueue_script( 'accesspress-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	
-	wp_enqueue_script( 'accesspress-store--slick', get_template_directory_uri() . '/js/slick.js', array('jquery'), '1.5.0', true );
+	wp_enqueue_script( 'accesspress-store-slick', get_template_directory_uri() . '/js/slick.js', array('jquery'), '1.5.0', true );
 
 	wp_enqueue_script( 'accesspress-store-wow', get_template_directory_uri() . '/js/wow.min.js',array(),'1.1.2',true);
 
