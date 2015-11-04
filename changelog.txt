@@ -2,6 +2,12 @@
 Anderson Lite Changelog
 ===================================
 
+Version 1.2.8
+-----------------------------------
+[added] escaping for translation strings for improved security
+[improved] structure of post meta functions for better re-usability
+[fixed] postmeta styling for widget bundle
+
 Version 1.2.7
 -----------------------------------
 [added] postmeta setting to Category Posts Boxed widget
