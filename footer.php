@@ -20,17 +20,17 @@
 
 /* You are free to modify or replace this by anything you like as per the terms of the GPL license */
 
-	printf( __('Copyright &copy; %s %s.', 'wortex'), date('Y'), get_bloginfo('name') ); 
+	printf( __('Copyright &copy; %s %s.', 'wortex-lite'), date('Y'), get_bloginfo('name') ); 
 	echo ' '; 
-	printf( __('Proudly powered by <a href="%s" title="%s">%s</a>.', 'wortex'), 
-		esc_url( __('http://wordpress.org/', 'wortex') ), 
-		esc_attr__( 'Semantic Personal Publishing Platform', 'wortex' ), 
-		__('WordPress', 'wortex') 
+	printf( __('Proudly powered by <a href="%s" title="%s">%s</a>.', 'wortex-lite'), 
+		esc_url( __('http://wordpress.org/', 'wortex-lite') ), 
+		esc_attr__( 'Semantic Personal Publishing Platform', 'wortex-lite' ), 
+		__('WordPress', 'wortex-lite') 
 	); 
 	echo ' '; 
-	printf( __('Wortex design by <a href="%s" title="%s">Iceable Themes</a>.', 'wortex'), 
+	printf( __('Wortex design by <a href="%s" title="%s">Iceable Themes</a>.', 'wortex-lite'), 
 		esc_url( 'http://www.iceablethemes.com' ), 
-		esc_attr( 'Iceablethemes', 'wortex' ) 
+		esc_attr( 'Iceablethemes', 'wortex-lite' ) 
 	);
 
 /* Stop editing here */

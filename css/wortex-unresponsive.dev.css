@@ -206,6 +206,24 @@ figure figcaption,
 
 .gallery-item img { padding: 0 5px; box-sizing: border-box; -moz-box-sizing: border-box; }
 
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    clip: auto !important;
+    display: block;
+    height: auto;
+    left: 5px;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+
 /* #Responsive Menu */
 
 #navbar select {
@@ -509,7 +527,7 @@ or wrap each row of columns in a <div class="row"> */
 	padding-bottom: 35px;
 	background:#f3f5f5;
 	border-top:1px solid #dbe4e5;
-	border-bottom:1px solid #dbe4e5; 
+	border-bottom:1px solid #dbe4e5;
 }
 
 #page-title h2 {
@@ -551,7 +569,10 @@ or wrap each row of columns in a <div class="row"> */
 
 .post-contents { max-width: 100%; }
 
-.postmetadata { margin-bottom: 20px; }
+.postmetadata {
+	margin-bottom: 20px;
+	line-height: 100%;
+}
 
 .postmetadata span,
 .postmetadata span a { color: #a9b0b1; }
@@ -1378,7 +1399,7 @@ textarea {
 	width: 100%;
 	padding: 5px;
 	box-sizing: border-box;
-	-moz-box-sizing:border-box; 
+	-moz-box-sizing:border-box;
 }
 
 /* Buttons */

@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: gray, green, white, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 4.2.2
-Stable tag: 1.2.0
+Tested up to: 4.3.1
+Stable tag: 1.2.1
 
 == ABOUT WORTEX LITE ==
 
@@ -55,6 +55,14 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.2.1 =
+November 4th, 2015
+* Disabled the "favicon" theme setting for WordPress 4.3+ (no longer useful since WP 4.3+ includes wp_site_icon)
+* Added screen-reader-text CSS support
+* Fixed a small glitch in metadata alignment
+* Changed textdomain to theme slug: 'wortex-lite'
+* Tested with WordPress 4.3
 
 = 1.2.0 =
 July 22th, 2015
@@ -109,8 +117,8 @@ June 23rd, 2014
 * Added missing .pot file
 * Added French (fr_FR) translation
 
-= 1.0.1 = 
-June 16th, 2014 
+= 1.0.1 =
+June 16th, 2014
 * Added ellipsis (...) to the end of truncated excerpts when displaying the "read more" button (based on user feedback).
 
 = 1.0.0 =

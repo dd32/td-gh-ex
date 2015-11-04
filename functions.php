@@ -17,7 +17,7 @@ function wortex_setup(){
 	 * Translations can be added to the /languages directory.
 	 * A .pot template file is included to get you started
 	 */
-	load_theme_textdomain('wortex', get_template_directory() . '/languages');
+	load_theme_textdomain('wortex-lite', get_template_directory() . '/languages');
 
 	/* Feed links support */
 	add_theme_support( 'automatic-feed-links' );
@@ -100,10 +100,10 @@ function wortex_add_menu_parent_class( $items ) {
 	}
 	foreach ( $items as $item ) {
 		if ( in_array( $item->ID, $parents ) ) {
-			$item->classes[] = 'menu-parent-item'; 
+			$item->classes[] = 'menu-parent-item';
 		}
 	}
-	return $items;    
+	return $items;
 }
 add_filter( 'wp_nav_menu_objects', 'wortex_add_menu_parent_class' );
 
@@ -112,7 +112,7 @@ add_filter( 'wp_nav_menu_objects', 'wortex_add_menu_parent_class' );
  */
 function wortex_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Default Sidebar', 'wortex' ),
+		'name'          => __( 'Default Sidebar', 'wortex-lite' ),
 		'id'            => 'sidebar',
 		'description'   => '',
 	    'class'         => '',
@@ -122,9 +122,9 @@ function wortex_widgets_init() {
 		'after_title'   => '</h3>',
 		)
 	);
-	
+
 	register_sidebar( array(
-		'name'          => __( 'Footer', 'wortex' ),
+		'name'          => __( 'Footer', 'wortex-lite' ),
 		'id'            => 'footer-sidebar',
 		'description'   => '',
 	    'class'         => '',
@@ -161,7 +161,7 @@ function wortex_styles() {
 	if ( @file_exists( $stylesheet_directory . $stylesheet ) )
 		wp_register_style( 'wortex', $stylesheet_directory_uri . $stylesheet );
 	else
-		wp_register_style( 'wortex', $template_directory_uri . $stylesheet );	
+		wp_register_style( 'wortex', $template_directory_uri . $stylesheet );
 
 	// Always enqueue style.css from the current theme
 	wp_register_style( 'wortex-style', $stylesheet_directory_uri . '/style.css');
@@ -213,14 +213,14 @@ function wortex_remove_rel_cat( $text ) {
 	$text = str_replace(' rel="category tag"', "", $text);
 	return $text;
 }
-add_filter( 'the_category', 'wortex_remove_rel_cat' ); 
+add_filter( 'the_category', 'wortex_remove_rel_cat' );
 
 /*
  * Customize "read more" links on index view
  */
 function wortex_excerpt_more( $more ) {
 	global $post;
-	return '... <div class="read-more navbutton"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'wortex') .'<i class="fa fa-angle-right"></i></a></div><br class="clear" />';
+	return '... <div class="read-more navbutton"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'wortex-lite') .'<i class="fa fa-angle-right"></i></a></div><br class="clear" />';
 }
 add_filter( 'excerpt_more', 'wortex_excerpt_more' );
 
@@ -248,7 +248,7 @@ function wortex_trim_excerpt($text = '') {
 		if ( ( preg_match('/<!--more(.*?)?-->/', $post->post_content ) || preg_match('/<!--nextpage-->/', $post->post_content ) ) && strpos($text,$excerpt_more) === false ) {
 		 $text .= $excerpt_more;
 		}
-		
+
 	}
 	return apply_filters('wortex_trim_excerpt', $text, $raw_excerpt);
 }
@@ -273,9 +273,9 @@ function wortex_dropdown_nav_menu () {
 		}
 		$menu_list .= '</select>';
    		// $menu_list now ready to output
-   		echo $menu_list;    
+   		echo $menu_list;
 		}
-    } 
+    }
 }
 
 /*
@@ -289,12 +289,12 @@ function wortex_page_has_comments_nav() {
 function wortex_page_has_next_comments_link() {
 	global $wp_query;
 	$max_cpage = $wp_query->max_num_comment_pages;
-	$cpage = get_query_var( 'cpage' );	
+	$cpage = get_query_var( 'cpage' );
 	return ( $max_cpage > $cpage );
 }
 
 function wortex_page_has_previous_comments_link() {
-	$cpage = get_query_var( 'cpage' );	
+	$cpage = get_query_var( 'cpage' );
 	return ($cpage > 1);
 }
 

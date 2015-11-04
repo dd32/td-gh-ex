@@ -15,31 +15,38 @@ class Wortex_Customizer {
 		// Move default settings "background_color" in the same section as background image settings
 		// and rename the section just "Background"
 		$wp_customize->get_control( 'background_color' )->section = 'background_image';
-		$wp_customize->get_section( 'background_image' )->title = __('Background', 'wortex');
+		$wp_customize->get_section( 'background_image' )->title = __('Background', 'wortex-lite');
 
 		// Add new sections
 		$wp_customize->add_section( 'wortex_layout' , array(
-			'title'      => __( 'Main Layout', 'wortex' ),
+			'title'      => __( 'Main Layout', 'wortex-lite' ),
 			'priority'   => 10,
 		) );
 
+		if ( ! function_exists('wp_site_icon') ) :
 		$wp_customize->add_section( 'wortex_logo_favicon' , array(
-			'title'      => __( 'Logo & Favicon', 'wortex' ),
+			'title'      => __( 'Logo & Favicon', 'wortex-lite' ),
 			'priority'   => 20,
 		) );
+		else:
+		$wp_customize->add_section( 'wortex_logo_favicon' , array(
+			'title'      => __( 'Logo', 'wortex-lite' ),
+			'priority'   => 20,
+		) );
+		endif;
 
 		$wp_customize->add_section( 'wortex_blog_settings' , array(
-			'title'      => __( 'Blog Settings', 'wortex' ),
+			'title'      => __( 'Blog Settings', 'wortex-lite' ),
 			'priority'   => 80,
 		) );
 
 		$wp_customize->add_section( 'wortex_misc_settings' , array(
-			'title'      => __( 'Misc', 'wortex' ),
+			'title'      => __( 'Misc', 'wortex-lite' ),
 			'priority'   => 100,
 		) );
 
 		$wp_customize->add_section( 'wortex_more' , array(
-			'title'      => __( 'More', 'wortex' ),
+			'title'      => __( 'More', 'wortex-lite' ),
 			'priority'   => 130,
 		) );
 
@@ -52,13 +59,13 @@ class Wortex_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'wortex_layout',
 				array(
-					'label'		=> __( 'Blog Index Content', 'wortex' ),
+					'label'		=> __( 'Blog Index Content', 'wortex-lite' ),
 					'section'	=> 'wortex_layout',
 					'settings'	=> 'wortex_layout',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'wide'	=> __( 'Wide', 'wortex' ),
-						'boxed'	=> __( 'Boxed', 'wortex' )
+						'wide'	=> __( 'Wide', 'wortex-lite' ),
+						'boxed'	=> __( 'Boxed', 'wortex-lite' )
 					)
 				)
 			)
@@ -72,8 +79,8 @@ class Wortex_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control( $wp_customize, 'wortex_logo',
 				array(
-					'label'      => __( 'Upload your logo', 'wortex' ),
-					'description' => __('If no logo is uploaded, the site title will be displayed instead.', 'wortex'),
+					'label'      => __( 'Upload your logo', 'wortex-lite' ),
+					'description' => __('If no logo is uploaded, the site title will be displayed instead.', 'wortex-lite'),
 					'section'    => 'wortex_logo_favicon',
 					'settings'   => 'wortex_logo',
 				)
@@ -81,20 +88,22 @@ class Wortex_Customizer {
 		);
 
 		// Setting and control for favicon
-		$wp_customize->add_setting( 'wortex_favicon' , array(
-			'default'     => '',
-			'sanitize_callback' => 'esc_url_raw',
-		) );
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control( $wp_customize, 'wortex_favicon',
-				array(
-					'label'			=> __( 'Upload a custom favicon', 'wortex' ),
-					'description'	=> __('Set your favicon. 16x16 or 32x32 pixels is recommended. PNG (recommended), GIF, or ICO.', 'wortex'),
-					'section'		=> 'wortex_logo_favicon',
-					'settings'		=> 'wortex_favicon',
+		if ( ! function_exists('wp_site_icon') ) :
+			$wp_customize->add_setting( 'wortex_favicon' , array(
+				'default'     => '',
+				'sanitize_callback' => 'esc_url_raw',
+			) );
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control( $wp_customize, 'wortex_favicon',
+					array(
+						'label'			=> __( 'Upload a custom favicon', 'wortex-lite' ),
+						'description'	=> __('Set your favicon. 16x16 or 32x32 pixels is recommended. PNG (recommended), GIF, or ICO.', 'wortex-lite'),
+						'section'		=> 'wortex_logo_favicon',
+						'settings'		=> 'wortex_favicon',
+					)
 				)
-			)
-		);
+			);
+		endif;
 
 		// Setting and control for blog index content switch
 		$wp_customize->add_setting( 'wortex_blog_index_content' , array(
@@ -104,13 +113,13 @@ class Wortex_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'wortex_blog_index_content',
 				array(
-					'label'		=> __( 'Blog Index Content', 'wortex' ),
+					'label'		=> __( 'Blog Index Content', 'wortex-lite' ),
 					'section'	=> 'wortex_blog_settings',
 					'settings'	=> 'wortex_blog_index_content',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'excerpt'	=> __( 'Excerpt', 'wortex' ),
-						'content'	=> __( 'Full content', 'wortex' )
+						'excerpt'	=> __( 'Excerpt', 'wortex-lite' ),
+						'content'	=> __( 'Full content', 'wortex-lite' )
 					)
 				)
 			)
@@ -124,13 +133,13 @@ class Wortex_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'wortex_responsive_mode',
 				array(
-					'label'		=> __( 'Responsive Mode', 'wortex' ),
+					'label'		=> __( 'Responsive Mode', 'wortex-lite' ),
 					'section'	=> 'wortex_misc_settings',
 					'settings'	=> 'wortex_responsive_mode',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'wortex' ),
-						'off'	=> __( 'Off', 'wortex' )
+						'on'	=> __( 'On', 'wortex-lite' ),
+						'off'	=> __( 'Off', 'wortex-lite' )
 					)
 				)
 			)
@@ -144,13 +153,13 @@ class Wortex_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'home_header_image',
 				array(
-					'label'		=> __( 'Display header on Homepage', 'wortex' ),
+					'label'		=> __( 'Display header on Homepage', 'wortex-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'home_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'wortex' ),
-						'off'	=> __( 'Off', 'wortex' )
+						'on'	=> __( 'On', 'wortex-lite' ),
+						'off'	=> __( 'Off', 'wortex-lite' )
 					)
 				)
 			)
@@ -163,13 +172,13 @@ class Wortex_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'blog_header_image',
 				array(
-					'label'		=> __( 'Display header on Blog Index', 'wortex' ),
+					'label'		=> __( 'Display header on Blog Index', 'wortex-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'blog_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'wortex' ),
-						'off'	=> __( 'Off', 'wortex' )
+						'on'	=> __( 'On', 'wortex-lite' ),
+						'off'	=> __( 'Off', 'wortex-lite' )
 					)
 				)
 			)
@@ -182,13 +191,13 @@ class Wortex_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'single_header_image',
 				array(
-					'label'		=> __( 'Display header on Single Posts', 'wortex' ),
+					'label'		=> __( 'Display header on Single Posts', 'wortex-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'single_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'wortex' ),
-						'off'	=> __( 'Off', 'wortex' )
+						'on'	=> __( 'On', 'wortex-lite' ),
+						'off'	=> __( 'Off', 'wortex-lite' )
 					)
 				)
 			)
@@ -201,13 +210,13 @@ class Wortex_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'pages_header_image',
 				array(
-					'label'		=> __( 'Display header on Pages', 'wortex' ),
+					'label'		=> __( 'Display header on Pages', 'wortex-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'pages_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'wortex' ),
-						'off'	=> __( 'Off', 'wortex' )
+						'on'	=> __( 'On', 'wortex-lite' ),
+						'off'	=> __( 'Off', 'wortex-lite' )
 					)
 				)
 			)
@@ -221,8 +230,8 @@ class Wortex_Customizer {
 		$wp_customize->add_control(
 			new Wortex_Button_Customize_Control( $wp_customize, 'wortex_upgrade',
 				array(
-					'label'			=> __( 'Get Wortex Pro', 'wortex' ),
-					'description'	=> __( 'Unleash the full potential of Wortex with tons of additional settings, advanced features and premium support.', 'wortex'),
+					'label'			=> __( 'Get Wortex Pro', 'wortex-lite' ),
+					'description'	=> __( 'Unleash the full potential of Wortex with tons of additional settings, advanced features and premium support.', 'wortex-lite'),
 					'section'		=> 'wortex_more',
 					'settings'		=> 'wortex_upgrade',
 					'type'			=> 'button',
@@ -238,8 +247,8 @@ class Wortex_Customizer {
 		$wp_customize->add_control(
 			new Wortex_Button_Customize_Control( $wp_customize, 'wortex_support',
 				array(
-					'label'			=> __( 'Wortex Lite support forums', 'wortex' ),
-					'description'	=> __( 'Have a question? Need help?', 'wortex'),
+					'label'			=> __( 'Wortex Lite support forums', 'wortex-lite' ),
+					'description'	=> __( 'Have a question? Need help?', 'wortex-lite'),
 					'section'		=> 'wortex_more',
 					'settings'		=> 'wortex_support',
 					'type'			=> 'button',
@@ -255,8 +264,8 @@ class Wortex_Customizer {
 		$wp_customize->add_control(
 			new Wortex_Button_Customize_Control( $wp_customize, 'wortex_feedback',
 				array(
-					'label'			=> __( 'Rate Wortex Lite', 'wortex' ),
-					'description'	=> __( 'Like this theme? We\'d love to hear your feedback!', 'wortex'),
+					'label'			=> __( 'Rate Wortex Lite', 'wortex-lite' ),
+					'description'	=> __( 'Like this theme? We\'d love to hear your feedback!', 'wortex-lite'),
 					'section'		=> 'wortex_more',
 					'settings'		=> 'wortex_feedback',
 					'type'			=> 'button',
@@ -273,7 +282,7 @@ class Wortex_Customizer {
 			array( 'customize-controls' )
 		);
 
-		wp_register_script( 
+		wp_register_script(
 			  'wortex-customizer-section',
 			  get_template_directory_uri() . '/inc/customizer/js/wortex-customizer-section.js',
 			  array( 'jquery','jquery-ui-core','jquery-ui-button','customize-controls' ),
@@ -281,7 +290,7 @@ class Wortex_Customizer {
 			  true
 		);
 		$wortex_customizer_section_l10n = array(
-			'upgrade_pro' => __( 'Upgrade to Wortex Pro!', 'wortex' ),
+			'upgrade_pro' => __( 'Upgrade to Wortex Pro!', 'wortex-lite' ),
 		);
 		wp_localize_script( 'wortex-customizer-section', 'wortex_customizer_section_l10n', $wortex_customizer_section_l10n );
 		wp_enqueue_script( 'wortex-customizer-section' );
@@ -334,7 +343,7 @@ function wortex_sanitize_on_off( $input ){
 }
 
 function wortex_sanitize_button( $input ){
-	return '';	
+	return '';
 }
 
 ?>

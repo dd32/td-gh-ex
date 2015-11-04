@@ -34,14 +34,14 @@ while(have_posts()) : the_post();
 			'link_before'      => '<span>',
 			'link_after'       => '</span>',
 			'next_or_number'   => 'number',
-			'nextpagelink'     => __('Next page', 'wortex'),
-			'previouspagelink' => __('Previous page', 'wortex'),
+			'nextpagelink'     => __('Next page', 'wortex-lite'),
+			'previouspagelink' => __('Previous page', 'wortex-lite'),
 			'pagelink'         => '%',
 			'echo'             => 1
 		);
 		wp_link_pages( $wortex_link_pages_args );
 	?><br class="clear" /><?php
-		edit_post_link( '<i class="fa fa-pencil"></i>' . __('Edit', 'wortex'), '<div class="navbutton editlink">', '</div><br class="clear" />');
+		edit_post_link( '<i class="fa fa-pencil"></i>' . __('Edit', 'wortex-lite'), '<div class="navbutton editlink">', '</div><br class="clear" />');
 
 	// Display comments section only if comments are open or if there are comments already.
 	if ( comments_open() || get_comments_number()!=0 ):
@@ -55,8 +55,8 @@ endwhile;
 	
 else: // Empty loop (this should never happen!)
 
-	?><h2><?php _e('Not Found', 'wortex'); ?></h2>
-	<p><?php _e('What you are looking for isn\'t here...', 'wortex'); ?></p><?php
+	?><h2><?php _e('Not Found', 'wortex-lite'); ?></h2>
+	<p><?php _e('What you are looking for isn\'t here...', 'wortex-lite'); ?></p><?php
 
 endif;
 	
