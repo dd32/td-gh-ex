@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
+ * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2014-2020 Iceable Themes - https://www.iceablethemes.com
+ * Copyright 2014-2015 Mathieu Sarrasin - Iceable Media
  *
  * Main Index
  *
@@ -11,217 +11,156 @@
 
 get_header();
 
-$wortex_page_title = '';
+	/* SEARCH CONDITIONAL TITLE */
+	if ( is_search() ):
+	?><div id="page-title"><div class="container"><h2><?php
+		echo sprintf( __('Search Results for "%s"', 'wortex-lite'), get_search_query() );
+	?></h2></div></div><?php
+	endif;
 
-/* SEARCH CONDITIONAL TITLE */
-if ( is_search() ) :
-	$wortex_page_title = sprintf(
-		// Translators: %s is the search term.
-		esc_html__( 'Search Results for "%s"', 'wortex-lite' ),
-		get_search_query()
-	);
-endif;
+	/* TAG CONDITIONAL TITLE */
+	if ( is_tag() ):
+	?><div id="page-title"><div class="container"><h2><?php
+		echo sprintf( __('Tag: %s', 'wortex-lite'), single_tag_title('', false) );
+	?></h2></div></div><?php
+	endif;
 
-/* ARCHIVE CONDITIONAL TITLE */
-if ( is_archive() ) :
-	$wortex_page_title = get_the_archive_title();
-endif;
+	/* CATEGORY CONDITIONAL TITLE */
+	if ( is_category() ):
+	?><div id="page-title"><div class="container"><h2><?php
+		echo sprintf( __('Category: %s', 'wortex-lite'), single_cat_title('', false) );
+	?></h2></div></div><?php
+	endif;
 
-/* DEFAULT CONDITIONAL TITLE */
-if ( is_home() && ! is_front_page() ) :
-	$wortex_page_title = get_the_title( get_option( 'page_for_posts' ) );
-endif;
+	/* ARCHIVES CONDITIONAL TITLE */
+	if ( is_day() ):
+	?><div id="page-title"><div class="container"><h2><?php
+		echo sprintf( __('Daily archives: %s', 'wortex-lite'), get_the_time('F jS, Y') );
+	?></h2></div></div><?php
+	endif;
 
-if ( '' !== $wortex_page_title ) :
-	?>
-	<div id="page-title">
-		<div class="container">
-			<h2>
-				<?php
-				echo wp_kses( $wortex_page_title, 'post' );
-				?>
-			</h2>
-		</div>
-	</div>
-	<?php
-endif;
+	if ( is_month() ):
+	?><div id="page-title"><div class="container"><h2><?php
+		echo sprintf( __('Monthly archives: %s', 'wortex-lite'), get_the_time('F, Y') );
+	?></h2></div></div><?php
+	endif;
+	if ( is_year() ):
+	?><div id="page-title"><div class="container"><h2><?php
+		echo sprintf( __('Yearly archives: %s', 'wortex-lite'), get_the_time('Y') );
+	?></h2></div></div><?php
+	endif;
 
-?>
-<div id="main-content" class="container">
-	<div id="page-container" class="with-sidebar">
-		<?php
+	/* AUTHOR ARCHIVE CONDITIONAL TITLE */
+	if ( is_author() ):
+	?><div id="page-title"><div class="container"><h2><?php
+		echo sprintf( __('Author archives: %s', 'wortex-lite'), get_the_author() );
+	?></h2></div></div><?php
+	endif;
 
-		if ( have_posts() ) :
-			while ( have_posts() ) :
-				the_post();
+	/* DEFAULT CONDITIONAL TITLE */
+	if (!is_front_page() && !is_search() && !is_tag() && !is_category() && !is_year() && !is_month() && !is_day() && !is_author() ):
+	?><div id="page-title"><div class="container"><h2><?php echo get_the_title(get_option('page_for_posts')); ?></h2></div></div><?php
+	endif;
 
-				?>
-				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php
+?><div id="main-content" class="container"><?php
 
-					if ( '' !== get_the_post_thumbnail() ) : // As recommended by the WP codex, has_post_thumbnail() is not reliable
-						?>
-						<div class="thumbnail">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-								<?php
-								the_post_thumbnail(
-									'post-thumbnail',
-									array(
-										'class' => 'scale-with-grid',
-									)
-								);
-								?>
-							</a>
-						</div>
-						<?php
-					endif;
+?><div id="page-container" class="with-sidebar"><?php
 
-					?>
-					<div class="post-contents">
-						<h3 class="entry-title">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
-								<?php the_title(); ?>
-							</a>
-						</h3>
+		if(have_posts()):
+		while(have_posts()) : the_post();
 
-						<div class="postmetadata">
-							<?php
+?><div id="post-<?php the_ID(); ?>" <?php post_class(); ?>><?php
 
-							if ( 'post' === get_post_type() ) :
+	if ( '' != get_the_post_thumbnail() ) : // As recommended by the WP codex, has_post_thumbnail() is not reliable
+		?><div class="thumbnail">
+		<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php
+		the_post_thumbnail('post-thumbnail', array('class' => 'scale-with-grid')); ?></a></div><?php
+	endif;
 
-								?>
-								<span class="meta-date published"><i class="fa fa-calendar"></i><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_time( get_option( 'date_format' ) ); ?></a></span>
-								<?php
-								// Echo updated date for hatom-feed - not to be displayed on front end
-								?>
-								<span class="updated"><?php the_modified_date( get_option( 'date_format' ) ); ?></span>
-								<?php
-								$author = sprintf(
-									'<a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a>',
-									esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-									// Translators: %s is the author's name
-									esc_attr( sprintf( __( 'View all posts by %s', 'wortex-lite' ), get_the_author() ) ),
-									get_the_author()
-								);
-								?>
-								<span class="meta-author author vcard"><i class="fa fa-user"></i><span><?php esc_html_e( 'by', 'wortex-lite' ); ?></span><?php echo wp_kses_post( $author ); ?></span>
-								<span class="meta-category"><i class="fa fa-tag"></i><?php the_category( ', ' ); ?></span>
-								<?php
+?><div class="post-contents"><?php
 
-							endif;
+?><h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
-							if ( comments_open() || '0' !== get_comments_number() ) :
-								?>
-								<span class="meta-comments"><i class="fa fa-comment"></i>
-									<?php
-									comments_popup_link(
-										__( '0 Comment', 'wortex-lite' ),
-										__( '1 Comment', 'wortex-lite' ),
-										__( '% Comments', 'wortex-lite' ),
-										'',
-										__( 'Comments Off', 'wortex-lite' )
-									);
-									?>
-								</span>
-								<?php
-							endif;
+<div class="postmetadata"><?php
 
-							edit_post_link( __( 'Edit', 'wortex-lite' ), '<span class="editlink"><i class="fa fa-pencil"></i>', '</span>' );
+	if ( get_post_type() == 'post' ):
 
-							?>
-						</div>
+		?><span class="meta-date published"><i class="fa fa-calendar"></i><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_time( get_option('date_format') ); ?></a></span><?php
+		// Echo updated date for hatom-feed - not to be displayed on front end
+		?><span class="updated"><?php the_modified_date(get_option('date_format')); ?></span><?php
+		$author = sprintf( ' <a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a>',
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_attr( sprintf( __( 'View all posts by %s', 'wortex-lite' ), get_the_author() ) ),
+			get_the_author()
+		);
+		?><span class="meta-author author vcard"><i class="fa fa-user"></i><span><?php _e('by', 'wortex-lite'); ?></span><?php echo $author; ?></span><?php
+		?><span class="meta-category"><i class="fa fa-tag"></i><?php the_category(', '); ?></span><?php
 
-						<div class="post-content">
-							<?php
-							if (
-								get_post_format()
-								|| post_password_required() ||
-								'content' === get_theme_mod( 'wortex_blog_index_content' )
-							) :
-								the_content();
-							else :
-								the_excerpt();
-							endif;
-							?>
-						</div>
-						<?php
+	endif;
 
-						if ( has_tag() ) :
-							the_tags( '<div class="tags"><i class="fa fa-tags"></i>', '', '</div>' );
-						endif;
+	if (comments_open() || get_comments_number()!=0 ):
+		?><span class="meta-comments"><i class="fa fa-comment"></i><?php
+		comments_popup_link( __( '0 Comment', 'wortex-lite' ), __( '1 Comment', 'wortex-lite' ), __( '% Comments', 'wortex-lite' ), '', __('Comments Off', 'wortex-lite') );
+		?></span><?php
+	endif;
 
-						?>
-					</div>
-				</div>
-				<hr />
-				<?php
+	edit_post_link(__('Edit', 'wortex-lite'), '<span class="editlink"><i class="fa fa-pencil"></i>', '</span>');
 
-			endwhile;
+	?></div><?php
 
-		else : // If there is no post in the loop
+		?><div class="post-content"><?php
+				if ( get_post_format() || post_password_required() || "content" == get_theme_mod('wortex_blog_index_content') )
+						the_content();
+					else the_excerpt();
+		?></div><?php
 
-			if ( is_search() ) : // Empty search results
+		if ( has_tag() ):
+			the_tags('<div class="tags"><i class="fa fa-tags"></i>', '', '</div>');
+		endif;
 
-				?>
-				<h2><?php esc_html_e( 'Not Found', 'wortex-lite' ); ?></h2>
-				<p>
-					<?php
-					printf(
-						// Translators: %s is the search term
-						esc_html__( 'Your search for "%s" did not return any result.', 'wortex-lite' ),
-						get_search_query()
-					);
-					?>
-					<br />
-					<?php
-					esc_html_e( 'Would you like to try another search ?', 'wortex-lite' );
-					?>
-				</p>
-				<?php
-				get_search_form();
+		?></div></div><?php // end div post
 
-			else : // Empty loop (this should never happen!)
+		?><hr /><?php // Post separator
 
-			?>
-			<h2><?php esc_html_e( 'Not Found', 'wortex-lite' ); ?></h2>
-			<p><?php esc_html_e( 'What you are looking for isn\'t here...', 'wortex-lite' ); ?></p>
-			<?php
+		endwhile;
+
+		else: // If there is no post in the loop
+
+			if ( is_search() ): // Empty search results
+
+			?><h2><?php _e('Not Found', 'wortex-lite'); ?></h2>
+			<p><?php echo sprintf( __('Your search for "%s" did not return any result.', 'wortex-lite'), get_search_query() ); ?><br />
+			<?php _e('Would you like to try another search ?', 'wortex-lite'); ?></p>
+			<?php get_search_form();
+
+			else: // Empty loop (this should never happen!)
+
+			?><h2><?php _e('Not Found', 'wortex-lite'); ?></h2>
+			<p><?php _e('What you are looking for isn\'t here...', 'wortex-lite'); ?></p><?php
 
 			endif;
 
 		endif;
 
-		if ( null !== get_next_posts_link() || null !== get_previous_posts_link() ) :
-			?>
-			<div class="page_nav">
-				<?php
+		if ( null != get_next_posts_link() || null != get_previous_posts_link() ):
+		?><div class="page_nav"><?php
+			if ( null != get_next_posts_link() ):
+			?><div class="previous navbutton"><?php next_posts_link( '<i class="fa fa-angle-left"></i> ' . __('Previous Posts', 'wortex-lite') ); ?></div><?php
+			endif;
+			if ( null != get_previous_posts_link() ):
+			?><div class="next navbutton"><?php previous_posts_link( __('Next Posts', 'wortex-lite') . ' <i class="fa fa-angle-right"></i>' ); ?></div><?php
+			endif;
 
-				if ( null !== get_next_posts_link() ) :
-					?>
-					<div class="previous navbutton"><?php next_posts_link( '<i class="fa fa-angle-left"></i> ' . __( 'Previous Posts', 'wortex-lite' ) ); ?></div>
-					<?php
-				endif;
-
-				if ( null !== get_previous_posts_link() ) :
-					?>
-					<div class="next navbutton"><?php previous_posts_link( __( 'Next Posts', 'wortex-lite' ) . ' <i class="fa fa-angle-right"></i>' ); ?></div>
-					<?php
-				endif;
-
-				?>
-				<br class="clear" />
-			</div>
-			<?php
+			?><br class="clear" /><?php
+		?></div><?php
 		endif;
 
-		?>
-	</div>
+		?></div><?php // End page container
 
-	<div id="sidebar-container">
-		<?php get_sidebar(); ?>
-	</div>
+		?><div id="sidebar-container"><?php
+			get_sidebar();
+		?></div><?php
 
-</div>
-<?php
+	?></div><?php //  End main content
 
-get_footer();
+get_footer(); ?>

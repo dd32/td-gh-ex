@@ -1,82 +1,49 @@
 <?php
 /**
  *
- * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
+ * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2014-2020 Iceable Themes - https://www.iceablethemes.com
+ * Copyright 2014-2015 Mathieu Sarrasin - Iceable Media
  *
  * Footer Template
  *
- */
+ */ 
 
-if ( is_active_sidebar( 'footer-sidebar' ) ) :
-	?>
-	<div id="footer">
-		<div class="container">
-			<ul>
-				<?php dynamic_sidebar( 'footer-sidebar' ); ?>
-			</ul>
-		</div>
-	</div>
-	<?php
-endif;
+	if (is_active_sidebar( 'footer-sidebar' ) ):
+		?><div id="footer"><div class="container"><ul><?php
+			dynamic_sidebar( 'footer-sidebar' );
+		?></ul></div></div><?php
+	endif;
 
-?>
-<div id="sub-footer">
-	<div class="container">
-		<div class="sub-footer-left">
-			<p>
+?><div id="sub-footer"><div class="container"><?php
+?><div class="sub-footer-left"><p><?php
 
-				<?php
-				/* You are free to modify or replace this by anything you like as per the terms of the GPL license */
-				?>
+/* You are free to modify or replace this by anything you like as per the terms of the GPL license */
 
-				<?php
-				printf(
-					// Translators: %1$s is the copyright date, %2$s is the site name (e.g. Copyright © 2018, My Website)
-					esc_html__( 'Copyright &copy; %1$s, %2$s.', 'wortex-lite' ),
-					esc_html( date( 'Y' ) ),
-					esc_html( get_bloginfo( 'name' ) )
-				);
-				echo ' ';
-				printf(
-					// Translators: "Powered by" link to WordPress.org. %1$s is the localized wordpress.org url (e.g. https://en.wordpress.org), %2$s is title attribute for the link ("Semantic Personal Publishing Platform"), %3$s is the anchor ("WordPress")
-					wp_kses_post( __( 'Proudly powered by <a href="%1$s" title="%2$s">%3$s</a>.', 'wortex-lite' ) ),
-					esc_url( __( 'https://wordpress.org/', 'wortex-lite' ) ),
-					esc_attr__( 'Semantic Personal Publishing Platform', 'wortex-lite' ),
-					esc_html__( 'WordPress', 'wortex-lite' )
-				);
-				echo ' ';
-				printf(
-					// Translators: %s is a link to the author's website with the name "Iceable Themes" as anchor
-					wp_kses_post( __( 'Wortex design by %s.', 'wortex-lite' ) ),
-					'<a href="https://www.iceablethemes.com" title="Free and Premium WordPress Themes">Iceable Themes</a>'
-				);
-				?>
+	printf( __('Copyright &copy; %s %s.', 'wortex-lite'), date('Y'), get_bloginfo('name') ); 
+	echo ' '; 
+	printf( __('Proudly powered by <a href="%s" title="%s">%s</a>.', 'wortex-lite'), 
+		esc_url( __('http://wordpress.org/', 'wortex-lite') ), 
+		esc_attr__( 'Semantic Personal Publishing Platform', 'wortex-lite' ), 
+		__('WordPress', 'wortex-lite') 
+	); 
+	echo ' '; 
+	printf( __('Wortex design by <a href="%s" title="%s">Iceable Themes</a>.', 'wortex-lite'), 
+		esc_url( 'http://www.iceablethemes.com' ), 
+		esc_attr( 'Iceablethemes', 'wortex-lite' ) 
+	);
 
-				<?php
-				/* Stop editing here */
-				?>
+/* Stop editing here */
 
-			</p>
-		</div>
+?></p></div><?php
 
-		<div class="sub-footer-right">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'footer-menu',
-					'depth' => 1,
-				)
-			);
-			?>
-		</div>
-	</div>
-</div>
+?><div class="sub-footer-right"><?php
+	$footer_menu = array( 'theme_location' => 'footer-menu', 'depth' => 1);
+	wp_nav_menu( $footer_menu );
+?></div></div></div><?php // End footer
 
-</div>
+?></div><?php  // End main wrap
 
-<?php wp_footer(); ?>
+wp_footer();
 
-</body>
-</html>
+?></body></html>
