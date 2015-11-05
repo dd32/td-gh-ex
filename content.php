@@ -13,12 +13,12 @@
 		
 		<div class="post-content">
 
-			<h2 class="post-title entry-title">
+			<h1 class="entry-title post-title">
 				<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark">
 					<?php rubine_display_subtitle(); ?>
 					<?php the_title('<span>', '</span>'); ?>
 				</a>
-			</h2>
+			</h1>
 
 			<div class="entry clearfix">
 				<?php the_excerpt(); ?>

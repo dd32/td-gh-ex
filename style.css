@@ -2,7 +2,7 @@
 Theme Name: Rubine Lite
 Theme URI: http://themezee.com/themes/rubine/
 Description: Rubine Lite is a clean and retina-ready magazine theme created with usability and simplicity in mind. The theme offers a gorgeous featured content area on the home page to highlight your most important posts. Of course the design is fully responsive and makes your content readable on every device.
-Version: 1.1.8
+Version: 1.1.9
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, red, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, four-columns, black, blue, silver, white, green, gray
@@ -433,7 +433,7 @@ input, textarea, select {
 
 
 /* Titles */
-.page-title, .post-title {
+.page-title, .entry-title {
 	font-family: 'Francois One', Tahoma, Verdana, Arial;
 	color: #cc1111;
 	line-height: 1.4em;
@@ -444,17 +444,17 @@ input, textarea, select {
 .page-title {
     font-size: 2.4em;
 }
-.post-title {
+.entry-title {
     font-size: 2.2em;
 }
-.post-title a:link, .post-title a:visited {
+.entry-title a:link, .entry-title a:visited {
 	color: #cc1111;
 	text-decoration: none;
 }
-.post-title a:hover span, .post-title a:active span {
+.entry-title a:hover span, .entry-title a:active span {
 	text-decoration: underline;
 }
-.post-title .subtitle {
+.entry-title .subtitle {
 	color: #777;
 	font-family: 'Carme', Tahoma, Verdana, Arial;
 	font-weight: normal;
@@ -462,7 +462,7 @@ input, textarea, select {
 	line-height: 1.3em;
 	margin-bottom: 0.3em;
 }
-.post-title a:hover .subtitle, .post-title a:active .subtitle {
+.entry-title a:hover .subtitle, .entry-title a:active .subtitle {
 	text-decoration: underline;
 }
 .sticky {
@@ -1325,10 +1325,10 @@ embed, iframe, object, video {
 	padding: 0.8em 1em;
 	background: #fff;
 }
-#featured-content .featured-post .post-title {
+#featured-content .featured-post .entry-title {
 	font-size: 1.05em;
 }
-#featured-content .featured-post .post-title a:hover {
+#featured-content .featured-post .entry-title a:hover {
 	text-decoration: underline;
 }
 
@@ -1719,7 +1719,7 @@ embed, iframe, object, video {
 	.page-title {
 		font-size: 2.2em;
 	}
-	.post-title {
+	.entry-title {
 		font-size: 2.0em;
 	}
 	.entry h1, .comment h1 {
@@ -1761,10 +1761,10 @@ embed, iframe, object, video {
 	.page-title {
 		font-size: 2.0em;
 	}
-	.post-title {
+	.entry-title {
 		font-size: 1.8em;
 	}
-	.post-title .subtitle {
+	.entry-title .subtitle {
 		font-size: 0.6em;
 	}
 	#footer-social-icons {
@@ -1792,7 +1792,7 @@ embed, iframe, object, video {
 	#featured-content .featured-post .featured-post-content {
 		padding: 0.4em 0.6em;
 	}
-	#featured-content .featured-post .post-title {
+	#featured-content .featured-post .entry-title {
 		font-size: 1.0em;
 	}
 	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
@@ -1825,10 +1825,10 @@ embed, iframe, object, video {
 	.page-title {
 		font-size: 1.8em;
 	}
-	.post-title {
+	.entry-title {
 		font-size: 1.6em;
 	}
-	.post-title .subtitle {
+	.entry-title .subtitle {
 		font-size: 0.65em;
 	}
 	#logo .site-title {
@@ -1871,7 +1871,7 @@ embed, iframe, object, video {
 		padding: 0.4em 0.1em;
 		border: none;
 	}
-	#featured-content .featured-post .post-title {
+	#featured-content .featured-post .entry-title {
 		font-size: 0.95em;
 	}
 }

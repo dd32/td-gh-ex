@@ -9,10 +9,10 @@
 		
 		<div class="post-content">
 
-			<h2 class="post-title entry-title">
+			<h1 class="entry-title post-title">
 				<?php rubine_display_subtitle(); ?>
 				<?php the_title('<span>', '</span>'); ?>
-			</h2>
+			</h1>
 
 			<div class="entry clearfix">
 				<?php rubine_display_thumbnail_single(); ?>
