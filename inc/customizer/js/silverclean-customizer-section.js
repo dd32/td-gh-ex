@@ -1,8 +1,8 @@
 /**
  *
- * Silverclean Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
+ * Silverclean Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2020 Iceable Themes - https://www.iceablethemes.com
+ * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
  *
  * Theme Customizer sections functions
  *
@@ -12,7 +12,7 @@
 
 	// Add Silverclean Pro upgrade message
 	upgrade = $('<a class="silverclean-customize-pro"></a>')
-	.attr('href', "https://www.iceablethemes.com/shop/silverclean-pro/")
+	.attr('href', "http://www.iceablethemes.com/shop/silverclean-pro/")
 	.attr('target', '_blank')
 	.text(silverclean_customizer_section_l10n.upgrade_pro)
 	;

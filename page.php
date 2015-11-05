@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * Silverclean WordPress Theme by Iceable Themes | https://www.iceablethemes.com
+ * Silverclean WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2020 Iceable Themes - https://www.iceablethemes.com
+ * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
  *
  * Page Template
  *
@@ -11,73 +11,56 @@
 
 get_header();
 
-?><div class="container" id="main-content">
-	<div id="page-container" <?php post_class( 'left with-sidebar' ); ?>>
-		<?php
+if(have_posts()) :
+while(have_posts()) : the_post();
 
-		if ( have_posts() ) :
-			while ( have_posts() ) :
+?><div class="container" id="main-content"><?php
 
-				the_post();
+		?><div id="page-container" <?php post_class("left with-sidebar"); ?>><?php
 
-				?>
-				<h1 class="page-title"><?php the_title(); ?></h1>
-				<?php
+				?><h1 class="page-title"><?php the_title(); ?></h1><?php
 
 				the_content();
-
-				wp_link_pages(
-					array(
-						'before'           => '<br class="clear" /><div class="paged_nav">' . __( 'Pages:', 'silverclean-lite' ),
-						'after'            => '</div>',
-						'link_before'      => '<span>',
-						'link_after'       => '</span>',
-						'next_or_number'   => 'number',
-						'nextpagelink'     => __( 'Next page', 'silverclean-lite' ),
-						'previouspagelink' => __( 'Previous page', 'silverclean-lite' ),
-						'pagelink'         => '%',
-						'echo'             => 1,
-					)
+				$silverclean_link_pages_args = array(
+					'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'silverclean-lite'),
+					'after'            => '</div>',
+					'link_before'      => '<span>',
+					'link_after'       => '</span>',
+					'next_or_number'   => 'number',
+					'nextpagelink'     => __('Next page', 'silverclean-lite'),
+					'previouspagelink' => __('Previous page', 'silverclean-lite'),
+					'pagelink'         => '%',
+					'echo'             => 1
 				);
+				wp_link_pages( $silverclean_link_pages_args );
+				?><br class="clear" /><?php
 
-				?>
-				<br class="clear" />
-
-				<p class="editlink">
-					<?php edit_post_link( __( 'Edit', 'silverclean-lite' ), '', '' ); ?>
-				</p>
-				<?php
+				?><p class="editlink"><?php
+					edit_post_link(__('Edit', 'silverclean-lite'), '', '');
+				?></p><?php
 
 				// Display comments section only if comments are open or if there are comments already.
-				if ( comments_open() || '0' !== get_comments_number() ) :
-				?>
-				<div class="comments">
-					<?php
+				if ( comments_open() || get_comments_number()!=0 ):
+				?><div class="comments"><?php
 					comments_template( '', true );
-					next_comments_link();
-					previous_comments_link();
-					?>
-				</div>
-				<?php
+					next_comments_link(); previous_comments_link();
+				?></div><?php
 				endif;
 
-			endwhile;
+endwhile;
 
-		else :
+else:
+	?><h2><?php _e('Not Found', 'silverclean-lite'); ?></h2><?php
+	?><p><?php _e('What you are looking for isn\'t here...', 'silverclean-lite'); ?></p><?php
 
-			?>
-			<h2><?php esc_html_e( 'Not Found', 'silverclean-lite' ); ?></h2>
-			<p><?php esc_html_e( 'What you are looking for isn\'t here...', 'silverclean-lite' ); ?></p>
-			<?php
+endif;
 
-		endif;
+?></div><?php // End page container
 
-		?>
-	</div>
+?><div id="sidebar-container" class="right"><?php
+	get_sidebar();
+?></div><?php // End sidebar
 
-	<div id="sidebar-container" class="right">
-		<?php get_sidebar(); ?></div>
-	</div>
-<?php
+?></div><?php // End main content
 
-get_footer();
+get_footer(); ?>
