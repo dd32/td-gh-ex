@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adamos Pro\n"
-"POT-Creation-Date: 2015-09-23 10:14-0000\n"
-"PO-Revision-Date: 2015-09-23 10:14-0000\n"
+"POT-Creation-Date: 2015-11-05 10:32-0000\n"
+"PO-Revision-Date: 2015-11-05 10:32-0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.6\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Poedit-KeywordsList: _;__;_e;__e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -445,7 +445,7 @@ msgid "Title"
 msgstr ""
 
 #: ../functions/customizer_settings.php:528
-#: ../functions/customizer_settings.php:608
+#: ../functions/customizer_settings.php:609
 msgid "Link text"
 msgstr ""
 
@@ -453,60 +453,60 @@ msgstr ""
 msgid "Featured Button url"
 msgstr ""
 
-#: ../functions/customizer_settings.php:547
+#: ../functions/customizer_settings.php:548
 msgid "Hide Services Section"
 msgstr ""
 
-#: ../functions/customizer_settings.php:557
-#: ../functions/customizer_settings.php:631
+#: ../functions/customizer_settings.php:558
+#: ../functions/customizer_settings.php:632
 msgid "Change Title"
 msgstr ""
 
-#: ../functions/customizer_settings.php:569
+#: ../functions/customizer_settings.php:570
 msgid "Hide Title"
 msgstr ""
 
-#: ../functions/customizer_settings.php:586
+#: ../functions/customizer_settings.php:587
 msgid "Header Image File Upload"
 msgstr ""
 
-#: ../functions/customizer_settings.php:594
+#: ../functions/customizer_settings.php:595
 msgid "Header Text"
 msgstr ""
 
-#: ../functions/customizer_settings.php:601
+#: ../functions/customizer_settings.php:602
 msgid "Link URL"
 msgstr ""
 
-#: ../functions/customizer_settings.php:621
+#: ../functions/customizer_settings.php:622
 msgid "Hide Recent Posts Section"
 msgstr ""
 
-#: ../functions/customizer_settings.php:644
+#: ../functions/customizer_settings.php:645
 msgid "Select category to display posts from"
 msgstr ""
 
-#: ../functions/customizer_settings.php:653
+#: ../functions/customizer_settings.php:654
 msgid "Change Copyright Text"
 msgstr ""
 
-#: ../functions/customizer_settings.php:665
+#: ../functions/customizer_settings.php:666
 msgid "Hide Copyright Bar"
 msgstr ""
 
-#: ../functions/customizer_settings.php:679
+#: ../functions/customizer_settings.php:680
 msgid "Hide Footer Widgets"
 msgstr ""
 
-#: ../functions/customizer_settings.php:689
+#: ../functions/customizer_settings.php:690
 msgid "Add User Id's"
 msgstr ""
 
-#: ../functions/customizer_settings.php:701
+#: ../functions/customizer_settings.php:702
 msgid "Hide Page Content"
 msgstr ""
 
-#: ../functions/customizer_settings.php:715
+#: ../functions/customizer_settings.php:716
 msgid "Display Content below User Profiles"
 msgstr ""
 

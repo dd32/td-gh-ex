@@ -12,12 +12,12 @@ add_action('customize_controls_print_styles', 'adamos_customizer_style');
  * Customizer - Live Preview
  */
 function adamos_customizer_live_preview() {
-	wp_enqueue_script( 
-		'adamos-theme-customizer', 
-		get_template_directory_uri() . '/js/theme-customizer.js', 
-		array( 'customize-preview' ), 
-		rand(),  
-		true 
+	wp_enqueue_script(
+		'adamos-theme-customizer',
+		get_template_directory_uri() . '/js/theme-customizer.js',
+		array( 'customize-preview' ),
+		rand(),
+		true
 	);
 }
 add_action( 'customize_preview_init', 'adamos_customizer_live_preview' );
@@ -30,7 +30,7 @@ if ( ! function_exists( 'adamos_customizer_scripts' ) ) :
 	function adamos_customizer_scripts() {
 
 		wp_register_script( 'adamos-customizer-pro', get_template_directory_uri() . '/js/customizer-pro.js', '2.0', 'jquery', true);
-		
+
 		// Localize the script with new data
 		$translation_array = array(
 			'pro_message' 	=> __( 'Check out Pro Version', 'adamos' ),
@@ -79,7 +79,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 	$priority = 10;
 
 	if(method_exists('WP_Customize_Manager', 'add_panel')){
-		
+
 		$wp_customize->add_panel('adamos_header_panel', array(
 			'title'		=> __('Site Settings', 'adamos'),
 			'priority'	=> $priority++,
@@ -91,7 +91,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 		));
 
 	}
-		
+
 
 	/*
 	* //////////////////// Sections ////////////////////////////
@@ -169,7 +169,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 			    'panel'				=> 'adamos_homepage_panel',
 			    'priority' 			=> $priority++,
 	        )
-	    );	
+	    );
 	}
 
 	$wp_customize->add_section( 'recent_posts_section_settings', array(
@@ -230,7 +230,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting( 'adamos_color_scheme', array(
 			'default'        	=> 'Default',
 			'sanitize_callback' => 'adamos_sanitize_text',
-		) 
+		)
 	);
 
 	$wp_customize->add_setting( 'homepage_slider_hide', array(
@@ -238,7 +238,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 			'sanitize_callback' => 'adamos_sanitize_checkbox',
 		)
 	);
-	
+
 	$wp_customize->add_setting( 'homepage_slider_cat', array(
 			'default'			=> 'featured',
 			'sanitize_callback'	=> 'adamos_sanitize_text',
@@ -249,7 +249,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 	        'default'     		=> '3',
 			'sanitize_callback'	=> 'adamos_sanitize_integer',
     	)
-	); 
+	);
 
 	$wp_customize->add_setting( 'homepage_promotional_bool', array(
 			'default' 			=> false,
@@ -271,7 +271,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting( 'header_one_url', array(
+	$wp_customize->add_setting( 'featured_button_url', array(
 			'sanitize_callback' => 'adamos_sanitize_url',
 		)
 	);
@@ -314,7 +314,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 		$wp_customize->add_setting( 'header_' . $list_featured_text_boxes[$row][0] . '_url', array(
 	        	'default' 			=> __( 'http://', 'adamos' ),
 				'sanitize_callback' => 'adamos_sanitize_url',
-	    	) 
+	    	)
 		);
 
 		$wp_customize->add_setting( 'featured_textbox_text_' . $list_featured_text_boxes[$row][0], array(
@@ -340,7 +340,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting( 'homepage_recent_cat', array(
 			'sanitize_callback' => 'adamos_sanitize_text',
 	));
-	
+
 	$wp_customize->add_setting( 'copyright_text', array(
 			'transport'			=> 'postMessage',
 			'sanitize_callback' => 'adamos_sanitize_text',
@@ -371,8 +371,8 @@ function adamos_register_theme_customizer( $wp_customize ) {
 			'default' 			=> false,
 			'sanitize_callback'	=> 'adamos_sanitize_checkbox',
 	));
- 
-	/* 
+
+	/*
 	* //////////////////// Controls ////////////////////////////
 	*/
 
@@ -428,7 +428,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 	}
 
 	foreach ($list_social_channels as $key => $value) {
-		
+
 		$wp_customize->add_control( $key, array(
 			'label'   => $value,
 			'section' => 'adamos_social_section',
@@ -437,13 +437,13 @@ function adamos_register_theme_customizer( $wp_customize ) {
 
 	}
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( 
+	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize, 'adamos_logo', array(
 				'label'    => __( 'Logo', 'adamos' ),
 				'section'  => 'adamos_logo_section',
 				'settings' => 'adamos_logo',
-			) 
-		) 
+			)
+		)
 	);
 
 	$wp_customize->add_control( 'adamos_color_scheme', array(
@@ -484,7 +484,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 				'priority'	 	=> $priority++,
 			)
 		)
-	);	
+	);
 
 	$wp_customize->add_control(
 		new Customize_Number_Control(
@@ -532,8 +532,9 @@ function adamos_register_theme_customizer( $wp_customize ) {
 	    )
 	);
 
-	$wp_customize->add_control( 'featured_button_url', array(
+	$wp_customize->add_control( 'featured_button_url_control', array(
 			'label'    	=> __( 'Featured Button url', 'adamos' ),
+			'settings'  => 'featured_button_url',
 			'section' 	=> 'featured_section_top',
 			'priority'	 	=> $priority++,
 		)
@@ -578,7 +579,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 	$arraycount = count($list_featured_text_boxes);
 	for ($row = 0; $row <  $arraycount; $row++) {
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			new WP_Customize_Upload_Control(
 		        $wp_customize,
 		        'header-' . $list_featured_text_boxes[$row][0] . '-file-upload',
@@ -603,7 +604,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 				'settings'	=> 'header_' . $list_featured_text_boxes[$row][0] . '_url',
 			)
 		);
-		
+
 		$wp_customize->add_control( 'featured_textbox_text_' . $list_featured_text_boxes[$row][0], array(
 				'label' 	=> __( 'Link text', 'adamos' ),
 				'section' 	=> 'featured_section_' . $list_featured_text_boxes[$row][0],
@@ -647,7 +648,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 				'priority'	 	=> $priority++,
 			)
 		)
-	);	
+	);
 
 	$wp_customize->add_control( 'copyright_text_control', array(
         'label'   		=> __( "Change Copyright Text", 'adamos'),
@@ -722,7 +723,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 	);
 
 
-	/* 
+	/*
 	* //////////////////// Overrides ////////////////////////////
 	*/
 
@@ -780,7 +781,7 @@ function adamos_sanitize_float( $input ) {
 
 // Sanitize Uploads
 function adamos_sanitize_url($input){
-	return esc_url_raw($input);	
+	return esc_url_raw($input);
 }
 
 // Sanitize Colors

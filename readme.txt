@@ -4,6 +4,8 @@ Theme instructions can be found at http://templateexpress.com/adam/documentation
 
 Changelog
 --------------------------------------------
+Version: 2.7
+* Fixed issue with featured promo bar link being duplicated in Featured box one url.
 
 Version: 2.6
 * Fixed promo bar and featured box one having same url
@@ -34,7 +36,7 @@ Version: 2.2
 Font
 -------------------------------------------
 FontAwesome
-vector icons embedded in a webfont designed to be clean and simple 
+vector icons embedded in a webfont designed to be clean and simple
 keeping with a generic aesthetic.
 More info at http://fortawesome.github.io/Font-Awesome/
 
