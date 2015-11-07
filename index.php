@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
 
- <!--Slider-->
- <?php if ( is_home() ) { ?>
+<!--Slider-->
+ <?php if (  is_front_page() || is_home() ) { ?>
 
-
+<?php if( get_option( 'hathor' )){ ?>
 <div class="row"> 
 
 <div id="slider">
@@ -12,18 +12,18 @@
 <?php get_template_part(''.$slides = of_get_option('slider_select', 'nivo').''); ?>
 
           
- 	
+ 	<?php }else{ ?>
  
-   	
+ <?php get_template_part('dummy','nivo2'); ?>
+        <?php } ?>  	
             
 </div> <?php }?> 
 
 
 
 </div>
-</div></div>
-<!--Slider end-->
 
+<!--Slider end-->
 <!-- Start Callout section -->
 
 <?php if ( is_home() ) { ?>
