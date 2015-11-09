@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: AccessPress Lite 2.42\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-19 13:01+0545\n"
-"POT-Revision-Date: Wed Oct 07 2015 21:20:17 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Mon Nov 09 2015 16:44:43 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: Prabin Dangol <info@accesspressthemes.com>\n"
@@ -573,7 +573,7 @@ msgstr ""
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: ../inc/class-tgm-plugin-activation.php:2219
+#: ../inc/class-tgm-plugin-activation.php:2219 ../inc/more-themes.php:59
 msgid "Active"
 msgstr ""
 
@@ -698,7 +698,7 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: ../inc/class-tgm-plugin-activation.php:2616
+#: ../inc/class-tgm-plugin-activation.php:2616 ../inc/more-themes.php:99
 msgid "Activate"
 msgstr ""
 
@@ -914,6 +914,31 @@ msgstr ""
 #: ../inc/extras.php:620
 #, php-format
 msgid "Go to <a href=\"%s\">Theme Options Panel</a> to set up the website."
+msgstr ""
+
+#: ../inc/more-themes.php:14 ../inc/more-themes.php:15
+msgid "More Themes"
+msgstr ""
+
+#: ../inc/more-themes.php:31
+#, php-format
+msgid "More Themes from <a href=\"%s\" target=\"_blank\">AccessPress Themes</a>"
+msgstr ""
+
+#: ../inc/more-themes.php:61
+msgid "Customize"
+msgstr ""
+
+#: ../inc/more-themes.php:96
+msgid "Already installed"
+msgstr ""
+
+#: ../inc/more-themes.php:108
+msgid "Install Now"
+msgstr ""
+
+#: ../inc/more-themes.php:111
+msgid "Live Preview"
 msgstr ""
 
 #: ../inc/template-tags.php:23
