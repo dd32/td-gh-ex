@@ -69,6 +69,10 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+
+Version 2.2.1
+ * Added additional css for RTL ready
+  
 Version 2.2
  * Added option to show/hide homepage slider
  

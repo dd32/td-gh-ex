@@ -259,6 +259,11 @@ function accesspress_mag_function_script(){
     ?>
     <script type="text/javascript">
         jQuery(function($){
+            if( $('body').hasClass('rtl') ){
+                var directionClass = 'rtl';
+            } else {
+                var directionClass = 'ltr';
+            }
         
         /*--------------For Home page slider-------------------*/
         
@@ -292,7 +297,7 @@ function accesspress_mag_function_script(){
                 fadeInSpeed: 600,
                 //displayType: 'fade',
                 pauseOnItems: 4000,
-                direction: 'ltr',
+                direction: directionClass,
                 titleText: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo esc_attr( $ticker_caption ); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
             });
             <?php } ?>

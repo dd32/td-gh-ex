@@ -14,9 +14,6 @@
     .site-branding {
         width: 30%;
     }
-    .accesspress-mag-header-ad {
-        width: 65%;
-    }
     .big_slide {
         width: 100%;
     }
@@ -58,11 +55,9 @@
     .newsletter-widget .newsletter-email{
         width: 130px;
     }
-
     .header-ad{
         width: 69%;
     }
-
     .sidebar-top-ad,
     .homepage-middle-ad, .article-ad-section{
         width: 100%;
@@ -148,12 +143,7 @@
     }
     #top-navigation {
         text-align: center;
-    }
-    .accesspress-mag-header-ad {
-        width: 100%;
-        float: none;
-    }
-    
+    }    
     .nav-wrapper .menu {
         display: none;
     }
@@ -284,11 +274,10 @@
     .error404 .error-num .num {
         margin: 20px auto;
     }
-
     .header-ad,.homepage-middle-ad, .article-ad-section{
         width: 100%;
+        float: none;
     }
-
     .sidebar-top-ad .ad_content{
         width: 300px;
     }
