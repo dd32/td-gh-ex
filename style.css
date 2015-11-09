@@ -4,7 +4,7 @@ Theme URI: http://themehorse.com/themes/interface
 Author: Theme Horse
 Author URI: http://themehorse.com
 Description: Interface is a Simple, Clean and Flat Responsive Retina Ready WordPress Theme. It is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 4 layouts for every post/page, 5 Page Templates, 8 widget areas, 6 custom widgets, featured slider to highlight your post/page, 10 social icons, top and bottom info bar to hightlight your contact/email/location and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Available Translation: Russian. Get free support at http://themehorse.com/support-forum/ and View beautiful demo site at http://themehorse.com/preview/interface
-Version: 3.0.1
+Version: 3.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, green, two-columns, left-sidebar, right-sidebar, fluid-layout, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
@@ -100,11 +100,11 @@ object {
 	font-family: 'Genericons';
 	font-weight: normal;
 	font-style: normal;
-	src: url('font/genericons-regular-webfont.eot');
-	src: url('font/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('font/genericons-regular-webfont.woff') format('woff'),
-		  url('font/genericons-regular-webfont.ttf') format('truetype'),
-		  url('font/genericons-regular-webfont.svg#genericonsregular') format('svg');
+	src: url('font/Genericons.eot');
+	src: url('font/Genericons.eot?') format('embedded-opentype'),
+		  url('font/Genericons.woff') format('woff'),
+		  url('font/Genericons.ttf') format('truetype'),
+		  url('font/Genericons.svg#Genericons') format('svg');
 }
 
 /* =Global
@@ -701,6 +701,7 @@ a.more-link:hover {
 .hgroup-right {
 	float: right;
 	position: relative;
+	min-width: 250px;
 	padding-right: 35px;
 }
 
@@ -884,7 +885,7 @@ a.more-link:hover {
 /* =Menu
 -------------------------------------------------------------- */
 #access {
-	float: left;
+	float: right;
 }
 #access li {
 	float: left;

@@ -60,8 +60,7 @@
 		/** 
 		 * interface_before hook
 		 */
-		do_action( 'interface_before
-			' );
+		do_action( 'interface_before' );
 	?>
 <div class="wrapper">
 <?php
