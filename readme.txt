@@ -1,5 +1,5 @@
 APERTURE
-Theme Version: 1.1.3
+Theme Version: 1.1.4
 Author: Michael Van Den Berg 
 Author URL: http://michaelvandenberg.com/
 
@@ -80,6 +80,12 @@ After installing and activating the Jetpack plugin follow these steps:
 --------------------
 === Changelog ===
 --------------------
+
+*
+* 1.1.4 / 09.11.2015
+* Minor improvements.
+* - Vendor prefixes added to solve flexbox issues in Safari.
+*
 
 *
 * 1.1.3 / 28.10.2015
