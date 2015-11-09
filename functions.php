@@ -20,8 +20,7 @@ function courage_enqueue_scripts() {
 	wp_enqueue_script('courage-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery'));
 		
 	// Register and Enqueue FlexSlider JS and CSS if necessary
-	if ( ( isset($theme_options['slider_active_blog']) and $theme_options['slider_active_blog'] == true )
-		|| ( isset($theme_options['slider_active_magazine']) and $theme_options['slider_active_magazine'] == true ) ) :
+	if ( true == $theme_options['slider_active_blog'] or true == $theme_options['slider_active_magazine'] or is_page_template('template-slider.php') ) :
 
 		// FlexSlider CSS
 		wp_enqueue_style('courage-flexslider', get_template_directory_uri() . '/css/flexslider.css');
@@ -156,8 +155,8 @@ function courage_register_sidebars() {
 		'description' => esc_html__( 'Appears on Magazine Homepage template only. You can use the Category Posts widgets here.', 'courage' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
-		'after_title' => '</h3>',
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2>',
 	));
 
 }
