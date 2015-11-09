@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2015-10-28 14:48-0700\n"
-"PO-Revision-Date: 2015-10-28 14:48-0700\n"
+"POT-Creation-Date: 2015-11-09 10:46-0800\n"
+"PO-Revision-Date: 2015-11-09 10:46-0800\n"
 "Last-Translator: Manolis Tzanidakis <mtzanidakis@gmail.com>\n"
 "Language-Team: \n"
 "Language: el\n"
@@ -102,7 +102,7 @@ msgstr "Όνομα"
 msgid "Email"
 msgstr "Email"
 
-#: comments.php:77 inc/options.php:72
+#: comments.php:77 inc/options.php:71
 msgid "Website"
 msgstr "Ιστότοπος"
 
@@ -231,7 +231,7 @@ msgstr "Αριστερή Sidebar"
 msgid "Header"
 msgstr "Κεφαλίδα"
 
-#: functions.php:389 inc/options.php:177
+#: functions.php:389 inc/options.php:175
 msgid "Copyright"
 msgstr "Copyright"
 
@@ -263,7 +263,7 @@ msgstr "Γραμματοσειρές Google"
 msgid "Font family"
 msgstr "Οικογένεια γραμματοσειράς"
 
-#: inc/add-ons/disable-elements.php:59 inc/options.php:184
+#: inc/add-ons/disable-elements.php:59 inc/options.php:182
 msgid "Disable Elements"
 msgstr "Απενεργοποίηση Στοιχείων"
 
@@ -275,7 +275,7 @@ msgstr ""
 msgid "Add-on available"
 msgstr ""
 
-#: inc/add-ons/typography.php:322 inc/options.php:149
+#: inc/add-ons/typography.php:322 inc/options.php:147
 msgid "Typography"
 msgstr "Τυπογραφία"
 
@@ -345,7 +345,7 @@ msgstr "Απόκρυψη σλόγκαν ιστοτόπου"
 msgid "Logo"
 msgstr "Λογότυπο"
 
-#: inc/customizer.php:103 inc/options.php:133
+#: inc/customizer.php:103 inc/options.php:131
 msgid "Colors"
 msgstr "Χρώματα"
 
@@ -526,7 +526,7 @@ msgstr "Διάταξη Υποσέλιδου"
 msgid "Footer Widgets"
 msgstr "Μονάδες Υποσέλιδου"
 
-#: inc/customizer.php:641 inc/options.php:191
+#: inc/customizer.php:641 inc/options.php:189
 msgid "Blog"
 msgstr "Ιστολόγιο"
 
@@ -627,110 +627,114 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: inc/options.php:64 inc/options.php:77 inc/options.php:123
+#: inc/options.php:64 inc/options.php:121
 msgid "Customize"
 msgstr "Προσαρμογή"
 
 #: inc/options.php:70
-msgid "Version"
-msgstr "Έκδοση"
-
-#: inc/options.php:71
 msgid "Author"
 msgstr "Συγγραφέας"
 
-#: inc/options.php:79 inc/options.php:126
+#: inc/options.php:75 inc/options.php:124
 msgid "Add-ons"
 msgstr "Πρόσθετα"
 
-#: inc/options.php:81
+#: inc/options.php:77
+msgid "Support"
+msgstr ""
+
+#: inc/options.php:78
+msgid "Knowledgebase"
+msgstr ""
+
+#: inc/options.php:79
 msgid ""
 "Please help support the ongoing development of GeneratePress by buying me a "
 "coffee :)"
 msgstr ""
 
-#: inc/options.php:81
+#: inc/options.php:79
 msgid "Buy me a coffee :)"
 msgstr "Αγοράστε μου έναν καφέ :)"
 
-#: inc/options.php:89
+#: inc/options.php:87
 msgid "Add-on Updates"
 msgstr "Αναβαθμίσεις Προσθέτων"
 
-#: inc/options.php:101
+#: inc/options.php:99
 msgid "Delete Customizer Settings"
 msgstr "Διαγραφή Ρυθμίσεων Προσαρμογέα"
 
-#: inc/options.php:103
+#: inc/options.php:101
 #, php-format
 msgid ""
 "<strong>Warning:</strong> Deleting your <a href=\"%1$s\">Customizer</a> "
 "settings can not be undone."
 msgstr ""
 
-#: inc/options.php:104
+#: inc/options.php:102
 msgid ""
 "Consider using our Import/Export add-on to export your settings before "
 "deleting them."
 msgstr ""
 
-#: inc/options.php:109
+#: inc/options.php:107
 msgid "Warning: This will delete your settings."
 msgstr ""
 
-#: inc/options.php:111
+#: inc/options.php:109
 msgid "Delete Default Customizer Settings"
 msgstr "Διαγραφή Προεπιλεγμένων Ρυθμίσεων Προσαρμογέα"
 
-#: inc/options.php:141
+#: inc/options.php:139
 msgid "Sections"
 msgstr ""
 
-#: inc/options.php:156
+#: inc/options.php:154
 msgid "Menu Plus"
 msgstr ""
 
-#: inc/options.php:163
+#: inc/options.php:161
 msgid "Page Header"
 msgstr "Κεφαλίδα Σελίδας"
 
-#: inc/options.php:170
+#: inc/options.php:168
 msgid "Import / Export"
 msgstr "Εισαγωγή / Εξαγωγή"
 
-#: inc/options.php:198
+#: inc/options.php:196
 msgid "Hooks"
 msgstr "Άγκιστρα"
 
-#: inc/options.php:205
+#: inc/options.php:203
 msgid "Spacing"
 msgstr "Απόσταση"
 
-#: inc/options.php:212
+#: inc/options.php:210
 msgid "Backgrounds"
 msgstr "Φόντα"
 
-#: inc/options.php:219
+#: inc/options.php:217
 msgid "Secondary Nav"
 msgstr "Δευτερεύουσα Πλοήγηση"
 
-#: inc/options.php:231 inc/options.php:238
+#: inc/options.php:229 inc/options.php:236
 msgid "Not activated."
 msgstr "Απενεργοποιημένο."
 
-#: inc/options.php:233 inc/options.php:240
+#: inc/options.php:231 inc/options.php:238
 msgid "Activated."
 msgstr "Ενεργοποιημένο."
 
-#: inc/options.php:289
+#: inc/options.php:287
 msgid "Settings saved."
 msgstr "Οι ρυθμίσεις αποθηκεύθηκαν."
 
-#: inc/options.php:293
+#: inc/options.php:291
 msgid "Import successful."
 msgstr "Εισαγωγή επιτυχής."
 
-#: inc/options.php:297
+#: inc/options.php:295
 msgid "Settings removed."
 msgstr "Οι ρυθμίσεις αφαιρέθηκαν."
 
@@ -765,11 +769,6 @@ msgstr "Νεότερα άρθρα"
 #: inc/template-tags.php:117
 msgid "Pingback:"
 msgstr "Pingback:"
-
-#: inc/template-tags.php:128
-#, php-format
-msgid "%s"
-msgstr "%s"
 
 #: inc/template-tags.php:134
 #, php-format
@@ -872,6 +871,12 @@ msgstr "Αναζήτηση &hellip;"
 #: sidebar-left.php:46 sidebar.php:45
 msgid "Meta"
 msgstr "Meta"
+
+#~ msgid "Version"
+#~ msgstr "Έκδοση"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid ""
 #~ "It looks like nothing was found at this location. Maybe try one of the "

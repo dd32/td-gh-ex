@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2015-10-28 14:48-0700\n"
-"PO-Revision-Date: 2015-10-28 14:48-0700\n"
+"POT-Creation-Date: 2015-11-09 10:46-0800\n"
+"PO-Revision-Date: 2015-11-09 10:46-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -104,7 +104,7 @@ msgstr "Nume"
 msgid "Email"
 msgstr "Email"
 
-#: comments.php:77 inc/options.php:72
+#: comments.php:77 inc/options.php:71
 msgid "Website"
 msgstr "Website"
 
@@ -234,7 +234,7 @@ msgstr "Sidebar Stanga"
 msgid "Header"
 msgstr "Header"
 
-#: functions.php:389 inc/options.php:177
+#: functions.php:389 inc/options.php:175
 msgid "Copyright"
 msgstr "Copyright"
 
@@ -266,7 +266,7 @@ msgstr "Fonturi Google"
 msgid "Font family"
 msgstr "Familie Font"
 
-#: inc/add-ons/disable-elements.php:59 inc/options.php:184
+#: inc/add-ons/disable-elements.php:59 inc/options.php:182
 msgid "Disable Elements"
 msgstr "Dezactivare Elemente"
 
@@ -278,7 +278,7 @@ msgstr ""
 msgid "Add-on available"
 msgstr ""
 
-#: inc/add-ons/typography.php:322 inc/options.php:149
+#: inc/add-ons/typography.php:322 inc/options.php:147
 msgid "Typography"
 msgstr "Tipografie"
 
@@ -347,7 +347,7 @@ msgstr "Ascunde subtitlu"
 msgid "Logo"
 msgstr "Logo"
 
-#: inc/customizer.php:103 inc/options.php:133
+#: inc/customizer.php:103 inc/options.php:131
 msgid "Colors"
 msgstr "Culori"
 
@@ -529,7 +529,7 @@ msgstr "Asezare Subsol"
 msgid "Footer Widgets"
 msgstr "Widgeturi Subsol"
 
-#: inc/customizer.php:641 inc/options.php:191
+#: inc/customizer.php:641 inc/options.php:189
 msgid "Blog"
 msgstr "Blog"
 
@@ -630,110 +630,114 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Cautare"
 
-#: inc/options.php:64 inc/options.php:77 inc/options.php:123
+#: inc/options.php:64 inc/options.php:121
 msgid "Customize"
 msgstr "Personalizeaza"
 
 #: inc/options.php:70
-msgid "Version"
-msgstr "Versiune"
-
-#: inc/options.php:71
 msgid "Author"
 msgstr "Autor"
 
-#: inc/options.php:79 inc/options.php:126
+#: inc/options.php:75 inc/options.php:124
 msgid "Add-ons"
 msgstr "Optiuni Extra"
 
-#: inc/options.php:81
+#: inc/options.php:77
+msgid "Support"
+msgstr ""
+
+#: inc/options.php:78
+msgid "Knowledgebase"
+msgstr ""
+
+#: inc/options.php:79
 msgid ""
 "Please help support the ongoing development of GeneratePress by buying me a "
 "coffee :)"
 msgstr ""
 
-#: inc/options.php:81
+#: inc/options.php:79
 msgid "Buy me a coffee :)"
 msgstr "Cumpara-mi o cafea :)"
 
-#: inc/options.php:89
+#: inc/options.php:87
 msgid "Add-on Updates"
 msgstr "Actualizari Optiuni Extra"
 
-#: inc/options.php:101
+#: inc/options.php:99
 msgid "Delete Customizer Settings"
 msgstr "Sterge setarile de personalizare"
 
-#: inc/options.php:103
+#: inc/options.php:101
 #, php-format
 msgid ""
 "<strong>Warning:</strong> Deleting your <a href=\"%1$s\">Customizer</a> "
 "settings can not be undone."
 msgstr ""
 
-#: inc/options.php:104
+#: inc/options.php:102
 msgid ""
 "Consider using our Import/Export add-on to export your settings before "
 "deleting them."
 msgstr ""
 
-#: inc/options.php:109
+#: inc/options.php:107
 msgid "Warning: This will delete your settings."
 msgstr ""
 
-#: inc/options.php:111
+#: inc/options.php:109
 msgid "Delete Default Customizer Settings"
 msgstr "Sterge setarile prestabilite de personalizare"
 
-#: inc/options.php:141
+#: inc/options.php:139
 msgid "Sections"
 msgstr ""
 
-#: inc/options.php:156
+#: inc/options.php:154
 msgid "Menu Plus"
 msgstr ""
 
-#: inc/options.php:163
+#: inc/options.php:161
 msgid "Page Header"
 msgstr "Header Pagina"
 
-#: inc/options.php:170
+#: inc/options.php:168
 msgid "Import / Export"
 msgstr "Importare / Exportare"
 
-#: inc/options.php:198
+#: inc/options.php:196
 msgid "Hooks"
 msgstr "Hooks (carlige)"
 
-#: inc/options.php:205
+#: inc/options.php:203
 msgid "Spacing"
 msgstr "Spatiere"
 
-#: inc/options.php:212
+#: inc/options.php:210
 msgid "Backgrounds"
 msgstr "Fundaluri"
 
-#: inc/options.php:219
+#: inc/options.php:217
 msgid "Secondary Nav"
 msgstr "Navigare Secundara"
 
-#: inc/options.php:231 inc/options.php:238
+#: inc/options.php:229 inc/options.php:236
 msgid "Not activated."
 msgstr "Dezactivat."
 
-#: inc/options.php:233 inc/options.php:240
+#: inc/options.php:231 inc/options.php:238
 msgid "Activated."
 msgstr "Activat."
 
-#: inc/options.php:289
+#: inc/options.php:287
 msgid "Settings saved."
 msgstr "Setari salvate."
 
-#: inc/options.php:293
+#: inc/options.php:291
 msgid "Import successful."
 msgstr "Importarea a fost facuta cu succes."
 
-#: inc/options.php:297
+#: inc/options.php:295
 msgid "Settings removed."
 msgstr "Setari inlaturate."
 
@@ -768,11 +772,6 @@ msgstr "Postari mai noi"
 #: inc/template-tags.php:117
 msgid "Pingback:"
 msgstr "Pingback:"
-
-#: inc/template-tags.php:128
-#, php-format
-msgid "%s"
-msgstr "%s"
 
 #: inc/template-tags.php:134
 #, php-format
@@ -873,6 +872,12 @@ msgstr "Cautare &hellip;"
 #: sidebar-left.php:46 sidebar.php:45
 msgid "Meta"
 msgstr "Meta"
+
+#~ msgid "Version"
+#~ msgstr "Versiune"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid ""
 #~ "It looks like nothing was found at this location. Maybe try one of the "

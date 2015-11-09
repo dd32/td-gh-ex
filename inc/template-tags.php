@@ -125,7 +125,7 @@ function generate_comment( $comment, $args, $depth ) {
 				<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
 				<div class="comment-author-info">
 					<div class="comment-author vcard">
-						<?php printf( __( '%s', 'generate' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+						<?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?>
 					</div><!-- .comment-author -->
 
 					<div class="entry-meta comment-metadata">
@@ -536,7 +536,7 @@ function generate_header_items()
 	if ( false == $disable_title || false == $disable_tagline ) : ?>
 		<div class="site-branding">
 			<?php if ( false == $disable_title ) : ?>
-				<p class="main-title" itemprop="headline"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="main-title" itemprop="headline"><a href="<?php echo apply_filters( 'generate_site_title_href', esc_url( home_url( '/' ) ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 			<?php endif;
 				
 			if ( false == $disable_tagline ) : ?>

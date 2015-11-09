@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2015-10-28 14:47-0700\n"
-"PO-Revision-Date: 2015-10-28 14:47-0700\n"
+"POT-Creation-Date: 2015-11-09 10:47-0800\n"
+"PO-Revision-Date: 2015-11-09 10:47-0800\n"
 "Last-Translator: Alexey Chumakov <alex@chumakov.ru>\n"
 "Language-Team: http://chumakov.ru\n"
 "Language: ru_RU\n"
@@ -109,7 +109,7 @@ msgstr "Имя"
 msgid "Email"
 msgstr "Email"
 
-#: comments.php:77 inc/options.php:72
+#: comments.php:77 inc/options.php:71
 msgid "Website"
 msgstr "Вебсайт"
 
@@ -233,7 +233,7 @@ msgstr "Левый боковик"
 msgid "Header"
 msgstr "Шапка"
 
-#: functions.php:389 inc/options.php:177
+#: functions.php:389 inc/options.php:175
 msgid "Copyright"
 msgstr "Copyright"
 
@@ -265,7 +265,7 @@ msgstr "Шрифты Google"
 msgid "Font family"
 msgstr "Гарнитура"
 
-#: inc/add-ons/disable-elements.php:59 inc/options.php:184
+#: inc/add-ons/disable-elements.php:59 inc/options.php:182
 msgid "Disable Elements"
 msgstr "Отключить элементы"
 
@@ -277,7 +277,7 @@ msgstr ""
 msgid "Add-on available"
 msgstr "Есть дополнение"
 
-#: inc/add-ons/typography.php:322 inc/options.php:149
+#: inc/add-ons/typography.php:322 inc/options.php:147
 msgid "Typography"
 msgstr "Типографика"
 
@@ -346,7 +346,7 @@ msgstr "Спрятать слоган"
 msgid "Logo"
 msgstr "Логотип"
 
-#: inc/customizer.php:103 inc/options.php:133
+#: inc/customizer.php:103 inc/options.php:131
 msgid "Colors"
 msgstr "Цвета"
 
@@ -527,7 +527,7 @@ msgstr "Компоновка футера"
 msgid "Footer Widgets"
 msgstr "Виджеты футера"
 
-#: inc/customizer.php:641 inc/options.php:191
+#: inc/customizer.php:641 inc/options.php:189
 msgid "Blog"
 msgstr "Блог"
 
@@ -628,111 +628,115 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Поиск"
 
-#: inc/options.php:64 inc/options.php:77 inc/options.php:123
+#: inc/options.php:64 inc/options.php:121
 msgid "Customize"
 msgstr "Настроить"
 
 #: inc/options.php:70
-msgid "Version"
-msgstr "Версия"
-
-#: inc/options.php:71
 msgid "Author"
 msgstr "Автор"
 
-#: inc/options.php:79 inc/options.php:126
+#: inc/options.php:75 inc/options.php:124
 msgid "Add-ons"
 msgstr "Дополнения"
 
-#: inc/options.php:81
+#: inc/options.php:77
+msgid "Support"
+msgstr ""
+
+#: inc/options.php:78
+msgid "Knowledgebase"
+msgstr ""
+
+#: inc/options.php:79
 msgid ""
 "Please help support the ongoing development of GeneratePress by buying me a "
 "coffee :)"
 msgstr ""
 
-#: inc/options.php:81
+#: inc/options.php:79
 msgid "Buy me a coffee :)"
 msgstr "Купить мне кофе :)"
 
-#: inc/options.php:89
+#: inc/options.php:87
 msgid "Add-on Updates"
 msgstr "Обновления дополнений"
 
-#: inc/options.php:101
+#: inc/options.php:99
 msgid "Delete Customizer Settings"
 msgstr "Удалить настройки"
 
-#: inc/options.php:103
+#: inc/options.php:101
 #, php-format
 msgid ""
 "<strong>Warning:</strong> Deleting your <a href=\"%1$s\">Customizer</a> "
 "settings can not be undone."
 msgstr ""
 
-#: inc/options.php:104
+#: inc/options.php:102
 msgid ""
 "Consider using our Import/Export add-on to export your settings before deleting "
 "them."
 msgstr ""
 
-#: inc/options.php:109
+#: inc/options.php:107
 msgid "Warning: This will delete your settings."
 msgstr ""
 
-#: inc/options.php:111
+#: inc/options.php:109
 msgid "Delete Default Customizer Settings"
 msgstr "Удалить настройки по умолчанию"
 
 # (**) проверить, так ли это
-#: inc/options.php:141
+#: inc/options.php:139
 msgid "Sections"
 msgstr "Секции"
 
-#: inc/options.php:156
+#: inc/options.php:154
 msgid "Menu Plus"
 msgstr ""
 
-#: inc/options.php:163
+#: inc/options.php:161
 msgid "Page Header"
 msgstr "Шапка страницы"
 
-#: inc/options.php:170
+#: inc/options.php:168
 msgid "Import / Export"
 msgstr "Импорт / экспорт"
 
-#: inc/options.php:198
+#: inc/options.php:196
 msgid "Hooks"
 msgstr "Хуки"
 
-#: inc/options.php:205
+#: inc/options.php:203
 msgid "Spacing"
 msgstr "Отступы"
 
-#: inc/options.php:212
+#: inc/options.php:210
 msgid "Backgrounds"
 msgstr "Фоны"
 
-#: inc/options.php:219
+#: inc/options.php:217
 msgid "Secondary Nav"
 msgstr "Дополнительное меню"
 
-#: inc/options.php:231 inc/options.php:238
+#: inc/options.php:229 inc/options.php:236
 msgid "Not activated."
 msgstr "Не активировано."
 
-#: inc/options.php:233 inc/options.php:240
+#: inc/options.php:231 inc/options.php:238
 msgid "Activated."
 msgstr "Активировано."
 
-#: inc/options.php:289
+#: inc/options.php:287
 msgid "Settings saved."
 msgstr "Настройки сохранены"
 
-#: inc/options.php:293
+#: inc/options.php:291
 msgid "Import successful."
 msgstr "Импорт выполнен успешно"
 
-#: inc/options.php:297
+#: inc/options.php:295
 msgid "Settings removed."
 msgstr "Настройки удалены"
 
@@ -767,11 +771,6 @@ msgstr "Новые статьи"
 #: inc/template-tags.php:117
 msgid "Pingback:"
 msgstr "Pingback:"
-
-#: inc/template-tags.php:128
-#, php-format
-msgid "%s"
-msgstr "%s"
 
 #: inc/template-tags.php:134
 #, php-format
@@ -871,6 +870,12 @@ msgstr "Поиск &hellip;"
 #: sidebar-left.php:46 sidebar.php:45
 msgid "Meta"
 msgstr "Мета"
+
+#~ msgid "Version"
+#~ msgstr "Версия"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "No add-ons to keep up to date!"
 #~ msgstr "Отсутствуют обновляемые дополнения."

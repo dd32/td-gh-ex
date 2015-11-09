@@ -1,5 +1,14 @@
 === changelog ===
 
+= (11/9/2015) - 1.3.19 =
+* Czech translation updated (thank you Ondrej!)
+* Remove padding and border from fieldset
+* Update readme.txt
+* Add filter to site title URL: generate_site_title_href
+* Add support button to admin page
+* Add knowledgebase button to admin page
+* Update all translations
+
 = (10/29/2015) - 1.3.18 =
 * Fix donate text
 * Update all translations

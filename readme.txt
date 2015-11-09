@@ -35,6 +35,9 @@ Once activated, add the widget to the "Header" widget area in "Appearance > Widg
 == Content Columns == 
 To add content columns, use this free plugin: https://wordpress.org/plugins/lightweight-grid-columns
 
+== Replicating the Screenshot ==
+If you want to replicate the screenshot you see on WordPress.org, please refer to this article: https://generatepress.com/knowledgebase/replicating-the-screenshot/
+
 -------------------------------------------------------
 GeneratePress License
 -------------------------------------------------------

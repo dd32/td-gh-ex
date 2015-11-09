@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2015-10-28 14:49-0700\n"
-"PO-Revision-Date: 2015-10-28 14:49-0700\n"
+"POT-Creation-Date: 2015-11-09 10:44-0800\n"
+"PO-Revision-Date: 2015-11-09 10:44-0800\n"
 "Last-Translator: Foxtrot <foxtrot@foxtrot.me>\n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -24,7 +24,7 @@ msgstr "Jejda! Tuto stránku nelze nalézt."
 
 #: 404.php:22
 msgid "It looks like nothing was found at this location. Maybe try searching?"
-msgstr ""
+msgstr "Vypadá to, že zde nebylo nic nalezeno. Zkuste vyhledávání."
 
 #: archive.php:33
 #, php-format
@@ -75,9 +75,9 @@ msgstr "Archivy"
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Jedna zmínka &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s zmínky &ldquo;%2$s&rdquo;"
-msgstr[2] "%1$s zmínek &ldquo;%2$s&rdquo;"
+msgstr[0] "1 komentář u &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s komentáře u &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s komentářů u &ldquo;%2$s&rdquo;"
 
 #: comments.php:36 comments.php:58
 msgid "Comment navigation"
@@ -101,9 +101,9 @@ msgstr "Jméno"
 
 #: comments.php:76
 msgid "Email"
-msgstr "Email"
+msgstr "E-mail"
 
-#: comments.php:77 inc/options.php:72
+#: comments.php:77 inc/options.php:71
 msgid "Website"
 msgstr "Web"
 
@@ -119,8 +119,8 @@ msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
-"Jste přihlášeni jako <a href=\"%1$s\">%2$s</a>. Chcete se <a href=\"%3$s\" "
-"title=\"Odhlásit se z tohoto účtu\">odhlásit</a>?"
+"Jste přihlášeni jako <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title="
+"\"Odhlásit se z tohoto účtu\">Odhlásit se?</a>"
 
 #: comments.php:88
 msgid "Leave a Comment"
@@ -129,7 +129,7 @@ msgstr "Napsat komentář"
 #: comments.php:89
 #, php-format
 msgid "Leave a Reply to %s"
-msgstr "Napsat odpověď k %s"
+msgstr "Napsat odpověď: %s"
 
 #: comments.php:90
 msgid "Cancel reply"
@@ -250,7 +250,7 @@ msgstr "Levý postranní panel"
 msgid "Header"
 msgstr "Hlavička"
 
-#: functions.php:389 inc/options.php:177
+#: functions.php:389 inc/options.php:175
 msgid "Copyright"
 msgstr "Copyright"
 
@@ -280,21 +280,21 @@ msgstr "Google písma"
 
 #: inc/add-ons/controls.php:62
 msgid "Font family"
-msgstr "Rodina písem"
+msgstr "Rodina písma"
 
-#: inc/add-ons/disable-elements.php:59 inc/options.php:184
+#: inc/add-ons/disable-elements.php:59 inc/options.php:182
 msgid "Disable Elements"
-msgstr "Zákaz prvků"
+msgstr "Zakázat prvky"
 
 #: inc/add-ons/disable-elements.php:81 inc/add-ons/disable-elements.php:83
 msgid "Content Title"
-msgstr ""
+msgstr "Název obsahu"
 
 #: inc/add-ons/disable-elements.php:87 inc/customizer.php:763
 msgid "Add-on available"
 msgstr "Dostupný doplněk"
 
-#: inc/add-ons/typography.php:322 inc/options.php:149
+#: inc/add-ons/typography.php:322 inc/options.php:147
 msgid "Typography"
 msgstr "Typografie"
 
@@ -345,7 +345,7 @@ msgstr "Odstranit"
 
 #: inc/customizer.php:22
 msgid "Site Identity"
-msgstr "Identita stránky"
+msgstr "Základní informace"
 
 #: inc/customizer.php:30
 msgid "Set Front Page"
@@ -363,7 +363,7 @@ msgstr "Skrýt popis webu"
 msgid "Logo"
 msgstr "Logo"
 
-#: inc/customizer.php:103 inc/options.php:133
+#: inc/customizer.php:103 inc/options.php:131
 msgid "Colors"
 msgstr "Barvy"
 
@@ -472,7 +472,7 @@ msgstr "Zarovnání navigace"
 
 #: inc/customizer.php:421
 msgid "Navigation Search"
-msgstr "Vyhledávání v navigaci"
+msgstr "Navigační vyhledávání"
 
 #: inc/customizer.php:424 inc/sanitize.php:173
 msgid "Enabled"
@@ -544,7 +544,7 @@ msgstr "Rozvržení patičky"
 msgid "Footer Widgets"
 msgstr "Widgety patičky"
 
-#: inc/customizer.php:641 inc/options.php:191
+#: inc/customizer.php:641 inc/options.php:189
 msgid "Blog"
 msgstr "Blog"
 
@@ -558,7 +558,7 @@ msgstr "Ukázat celý příspěvek"
 
 #: inc/customizer.php:671 inc/sanitize.php:288
 msgid "Show excerpt"
-msgstr "Ukázat úryvek"
+msgstr "Ukázat výpis"
 
 #: inc/customizer.php:691
 #, php-format
@@ -645,41 +645,47 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Hledat"
 
-#: inc/options.php:64 inc/options.php:77 inc/options.php:123
+#: inc/options.php:64 inc/options.php:121
 msgid "Customize"
 msgstr "Přizpůsobit"
 
 #: inc/options.php:70
-msgid "Version"
-msgstr "Verze"
-
-#: inc/options.php:71
 msgid "Author"
 msgstr "Autor"
 
-#: inc/options.php:79 inc/options.php:126
+#: inc/options.php:75 inc/options.php:124
 msgid "Add-ons"
 msgstr "Doplňky"
 
-#: inc/options.php:81
+#: inc/options.php:77
+msgid "Support"
+msgstr ""
+
+#: inc/options.php:78
+msgid "Knowledgebase"
+msgstr ""
+
+#: inc/options.php:79
 msgid ""
 "Please help support the ongoing development of GeneratePress by buying me a "
 "coffee :)"
 msgstr ""
+"Prosím, pomozte podpořit probíhající vývoj GeneratePressu tím, že mi koupíte "
+"kafe :)"
 
-#: inc/options.php:81
+#: inc/options.php:79
 msgid "Buy me a coffee :)"
 msgstr "Kupte mi kafe :)"
 
-#: inc/options.php:89
+#: inc/options.php:87
 msgid "Add-on Updates"
 msgstr "Aktualizace doplňků"
 
-#: inc/options.php:101
+#: inc/options.php:99
 msgid "Delete Customizer Settings"
 msgstr "Smazat nastavení Přizpůsobení"
 
-#: inc/options.php:103
+#: inc/options.php:101
 #, php-format
 msgid ""
 "<strong>Warning:</strong> Deleting your <a href=\"%1$s\">Customizer</a> "
@@ -688,7 +694,7 @@ msgstr ""
 "<strong>Varování:</strong> Smazání vašeho nastavení <a href=\"%1$s"
 "\">Přizpůsobení</a> nemůže být vráceno zpět."
 
-#: inc/options.php:104
+#: inc/options.php:102
 msgid ""
 "Consider using our Import/Export add-on to export your settings before "
 "deleting them."
@@ -696,63 +702,63 @@ msgstr ""
 "Zvažte použití našeho Import/Export doplňku pro export vašeho nastavení, než "
 "jej smažete."
 
-#: inc/options.php:109
+#: inc/options.php:107
 msgid "Warning: This will delete your settings."
 msgstr "Varování: Toto smaže vaše nastavení."
 
-#: inc/options.php:111
+#: inc/options.php:109
 msgid "Delete Default Customizer Settings"
 msgstr "Smazat výchozí nastavení Přizpůsobení"
 
-#: inc/options.php:141
+#: inc/options.php:139
 msgid "Sections"
 msgstr "Sekce"
 
-#: inc/options.php:156
+#: inc/options.php:154
 msgid "Menu Plus"
 msgstr "Menu plus"
 
-#: inc/options.php:163
+#: inc/options.php:161
 msgid "Page Header"
 msgstr "Hlavička stránky"
 
-#: inc/options.php:170
+#: inc/options.php:168
 msgid "Import / Export"
 msgstr "Import / Export"
 
-#: inc/options.php:198
+#: inc/options.php:196
 msgid "Hooks"
 msgstr "Háky"
 
-#: inc/options.php:205
+#: inc/options.php:203
 msgid "Spacing"
 msgstr "Rozestupy"
 
-#: inc/options.php:212
+#: inc/options.php:210
 msgid "Backgrounds"
 msgstr "Pozadí"
 
-#: inc/options.php:219
+#: inc/options.php:217
 msgid "Secondary Nav"
 msgstr "Sekundární navigace"
 
-#: inc/options.php:231 inc/options.php:238
+#: inc/options.php:229 inc/options.php:236
 msgid "Not activated."
 msgstr "Není aktivováno."
 
-#: inc/options.php:233 inc/options.php:240
+#: inc/options.php:231 inc/options.php:238
 msgid "Activated."
 msgstr "Aktivováno."
 
-#: inc/options.php:289
+#: inc/options.php:287
 msgid "Settings saved."
 msgstr "Nastavení uloženo."
 
-#: inc/options.php:293
+#: inc/options.php:291
 msgid "Import successful."
 msgstr "Import úspěšný."
 
-#: inc/options.php:297
+#: inc/options.php:295
 msgid "Settings removed."
 msgstr "Nastavení odstraněno."
 
@@ -787,11 +793,6 @@ msgstr "Novější příspěvky"
 #: inc/template-tags.php:117
 msgid "Pingback:"
 msgstr "Pingback:"
-
-#: inc/template-tags.php:128
-#, php-format
-msgid "%s"
-msgstr "%s"
 
 #: inc/template-tags.php:134
 #, php-format
@@ -892,6 +893,12 @@ msgstr "Hledat &hellip;"
 #: sidebar-left.php:46 sidebar.php:45
 msgid "Meta"
 msgstr "Základní informace"
+
+#~ msgid "Version"
+#~ msgstr "Verze"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "No add-ons to keep up to date!"
 #~ msgstr "Bez doplňků k aktualizaci!"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress v1.2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-28 14:48-0700\n"
-"PO-Revision-Date: 2015-10-28 14:48-0700\n"
+"POT-Creation-Date: 2015-11-09 10:46-0800\n"
+"PO-Revision-Date: 2015-11-09 10:46-0800\n"
 "Last-Translator: krice <kri_ce@hotmail.com>\n"
 "Language-Team: \n"
 "Language: nb_NO\n"
@@ -122,7 +122,7 @@ msgid "Email"
 msgstr "E-post"
 
 # @ generate
-#: comments.php:77 inc/options.php:72
+#: comments.php:77 inc/options.php:71
 msgid "Website"
 msgstr "Nettsted"
 
@@ -269,7 +269,7 @@ msgid "Header"
 msgstr "Toppfelt"
 
 # @ generate
-#: functions.php:389 inc/options.php:177
+#: functions.php:389 inc/options.php:175
 msgid "Copyright"
 msgstr "Opphavsrett"
 
@@ -309,7 +309,7 @@ msgid "Font family"
 msgstr "Skrifttype"
 
 # @ generate
-#: inc/add-ons/disable-elements.php:59 inc/options.php:184
+#: inc/add-ons/disable-elements.php:59 inc/options.php:182
 msgid "Disable Elements"
 msgstr "Deaktiver elementer"
 
@@ -322,7 +322,7 @@ msgid "Add-on available"
 msgstr ""
 
 # @ generate
-#: inc/add-ons/typography.php:322 inc/options.php:149
+#: inc/add-ons/typography.php:322 inc/options.php:147
 msgid "Typography"
 msgstr "Typografi"
 
@@ -407,7 +407,7 @@ msgid "Logo"
 msgstr "Logo"
 
 # @ generate
-#: inc/customizer.php:103 inc/options.php:133
+#: inc/customizer.php:103 inc/options.php:131
 msgid "Colors"
 msgstr "Farger"
 
@@ -631,7 +631,7 @@ msgid "Footer Widgets"
 msgstr "Bunnfeltwidgeter"
 
 # @ generate
-#: inc/customizer.php:641 inc/options.php:191
+#: inc/customizer.php:641 inc/options.php:189
 msgid "Blog"
 msgstr "Blogg"
 
@@ -754,126 +754,129 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Søk"
 
-#: inc/options.php:64 inc/options.php:77 inc/options.php:123
+#: inc/options.php:64 inc/options.php:121
 msgid "Customize"
 msgstr ""
 
 # @ generate
 #: inc/options.php:70
-msgid "Version"
-msgstr "Versjon"
-
-# @ generate
-#: inc/options.php:71
 msgid "Author"
 msgstr "Forfatter"
 
 # @ generate
-#: inc/options.php:79 inc/options.php:126
+#: inc/options.php:75 inc/options.php:124
 msgid "Add-ons"
 msgstr "Tillegg"
 
-#: inc/options.php:81
+#: inc/options.php:77
+msgid "Support"
+msgstr ""
+
+#: inc/options.php:78
+msgid "Knowledgebase"
+msgstr ""
+
+#: inc/options.php:79
 msgid ""
 "Please help support the ongoing development of GeneratePress by buying me a "
 "coffee :)"
 msgstr ""
 
 # @ generate
-#: inc/options.php:81
+#: inc/options.php:79
 msgid "Buy me a coffee :)"
 msgstr "Kjøp en kaffe til meg :-)"
 
-#: inc/options.php:89
+#: inc/options.php:87
 msgid "Add-on Updates"
 msgstr ""
 
 # @ generate
-#: inc/options.php:101
+#: inc/options.php:99
 msgid "Delete Customizer Settings"
 msgstr "Slett tilpasserinnstillinger"
 
-#: inc/options.php:103
+#: inc/options.php:101
 #, php-format
 msgid ""
 "<strong>Warning:</strong> Deleting your <a href=\"%1$s\">Customizer</a> "
 "settings can not be undone."
 msgstr ""
 
-#: inc/options.php:104
+#: inc/options.php:102
 msgid ""
 "Consider using our Import/Export add-on to export your settings before "
 "deleting them."
 msgstr ""
 
-#: inc/options.php:109
+#: inc/options.php:107
 msgid "Warning: This will delete your settings."
 msgstr ""
 
 # @ generate
-#: inc/options.php:111
+#: inc/options.php:109
 msgid "Delete Default Customizer Settings"
 msgstr "Slett standard tilpasserinnstillinger"
 
-#: inc/options.php:141
+#: inc/options.php:139
 msgid "Sections"
 msgstr ""
 
-#: inc/options.php:156
+#: inc/options.php:154
 msgid "Menu Plus"
 msgstr ""
 
 # @ generate
-#: inc/options.php:163
+#: inc/options.php:161
 msgid "Page Header"
 msgstr "Sidetoppfelt"
 
 # @ generate
-#: inc/options.php:170
+#: inc/options.php:168
 msgid "Import / Export"
 msgstr "Import/eksport"
 
 # @ generate
-#: inc/options.php:198
+#: inc/options.php:196
 msgid "Hooks"
 msgstr "Knagger"
 
 # @ generate
-#: inc/options.php:205
+#: inc/options.php:203
 msgid "Spacing"
 msgstr "Avstand"
 
 # @ generate
-#: inc/options.php:212
+#: inc/options.php:210
 msgid "Backgrounds"
 msgstr "Bakgrunner"
 
 # @ generate
-#: inc/options.php:219
+#: inc/options.php:217
 msgid "Secondary Nav"
 msgstr "Sekundærnavigasjon"
 
 # @ generate
-#: inc/options.php:231 inc/options.php:238
+#: inc/options.php:229 inc/options.php:236
 msgid "Not activated."
 msgstr "Ikke aktivert."
 
-#: inc/options.php:233 inc/options.php:240
+#: inc/options.php:231 inc/options.php:238
 msgid "Activated."
 msgstr ""
 
 # @ generate
-#: inc/options.php:289
+#: inc/options.php:287
 msgid "Settings saved."
 msgstr "Innstillinger lagret."
 
 # @ generate
-#: inc/options.php:293
+#: inc/options.php:291
 msgid "Import successful."
 msgstr "Import vellykket."
 
 # @ generate
-#: inc/options.php:297
+#: inc/options.php:295
 msgid "Settings removed."
 msgstr "Innstillinger fjernet."
 
@@ -916,12 +919,6 @@ msgstr "Nyere innlegg"
 #: inc/template-tags.php:117
 msgid "Pingback:"
 msgstr "Tilbakeping:"
-
-# @ generate
-#: inc/template-tags.php:128
-#, php-format
-msgid "%s"
-msgstr "%s"
 
 # @ generate
 #: inc/template-tags.php:134
@@ -1041,6 +1038,14 @@ msgstr "Søk &hellip;"
 #: sidebar-left.php:46 sidebar.php:45
 msgid "Meta"
 msgstr "Meta"
+
+# @ generate
+#~ msgid "Version"
+#~ msgstr "Versjon"
+
+# @ generate
+#~ msgid "%s"
+#~ msgstr "%s"
 
 # @ generate
 #~ msgid ""
