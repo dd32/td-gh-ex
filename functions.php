@@ -4,9 +4,9 @@ require_once(dirname(__FILE__).'/include/class-tgm-plugin-activation.php');
 
 add_action( 'tgmpa_register', 'azabujuban_register_required_plugins' );
 function azabujuban_register_required_plugins() {
- 
+
     $plugins = array(
- 
+
         array(
             'name'                  => 'GMO Font Agent', // The plugin name
             'slug'                  => 'gmo-font-agent', // The plugin slug (typically the folder name)
@@ -17,17 +17,17 @@ function azabujuban_register_required_plugins() {
  //           'force_deactivation'    => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
  //           'external_url'          => '', // If set, overrides default API URL and points to an external URL
         ),
- 
+
         array(
             'name'      => 'GMO Showtime',
             'slug'      => 'gmo-showtime',
             'required'  => false,
         ),
- 
+
     );
- 
+
     $theme_text_domain = 'azabujuban';
- 
+
     $config = array(
         'domain'            => $theme_text_domain,           // Text domain - likely want to be the same as your theme.
         'default_path'      => '',                           // Default absolute path to pre-packaged plugins
@@ -57,15 +57,15 @@ function azabujuban_register_required_plugins() {
             'complete'                                  => __( 'All plugins installed and activated successfully. %s', $theme_text_domain ) // %1$s = dashboard link
         )
     );
- 
+
     tgmpa( $plugins, $config );
- 
+
 }
 
 
 
 
-	
+
 function azabujuban_custom_header_setup(){
 	$args = array(
 		'default-text-color'     => '220e10',
@@ -86,7 +86,7 @@ add_action('after_setup_theme', 'azabujuban_custom_header_setup');
 function azabujuban_header_image_setup(){
 	global $_wp_default_headers;
 	unregister_default_headers(array_keys($_wp_default_headers));
-	
+
 	register_default_headers( array(
 		'koboreume' => array(
 			'url'           => '%2$s/images/headers/koboreume.png',
@@ -143,12 +143,12 @@ function azabujuban_header_image_setup(){
 add_action('after_setup_theme', 'azabujuban_header_image_setup', 12);
 
 function azabujuban_original_customize( $wp_customize ) {
-	
+
 	$wp_customize->add_section( 'original_section', array(
 		'title'          => 'Azabu Juban',
 		'priority'       => 10000,
 	));
-	
+
 	$wp_customize->add_setting('navbar_color', array(
 		'default'           => '#f7f5e7',
 		'sanitize_callback' => 'sanitize_hex_color',
@@ -172,7 +172,7 @@ function azabujuban_original_customize( $wp_customize ) {
 		'settings' => 'Header_Navigation_Opacity',
 		'type'           => 'text',
 	));
-	
+
 	$wp_customize->add_setting('paging_navigation_color', array(
 		'default'           => '#e8e5ce',
 		'sanitize_callback' => 'sanitize_hex_color',
@@ -184,7 +184,7 @@ function azabujuban_original_customize( $wp_customize ) {
 		'section'  => 'original_section',
 		'settings' => 'paging_navigation_color',
 	)));
-	
+
 	$wp_customize->add_setting('Navigation_Selected_Link_Color', array(
 		'default'           => '#e8e5ce',
 		'sanitize_callback' => 'sanitize_hex_color',
@@ -196,7 +196,7 @@ function azabujuban_original_customize( $wp_customize ) {
 		'section'  => 'original_section',
 		'settings' => 'Navigation_Selected_Link_Color',
 	)));
-	
+
 	$wp_customize->add_setting('footer_widget_area_color', array(
 		'default'           => '#220e10',
 		'sanitize_callback' => 'sanitize_hex_color',
@@ -208,7 +208,7 @@ function azabujuban_original_customize( $wp_customize ) {
 		'section'  => 'original_section',
 		'settings' => 'footer_widget_area_color',
 	)));
-	
+
 	$wp_customize->add_setting('site_info_color', array(
 		'default'           => '#e8e5ce',
 		'sanitize_callback' => 'sanitize_hex_color',
@@ -231,7 +231,7 @@ function azabujuban_original_customize( $wp_customize ) {
 		'section'  => 'original_section',
 		'settings' => 'Header_Text_Color',
 	)));
-	
+
 
 
 
@@ -544,16 +544,16 @@ function azabujuban_original_customize( $wp_customize ) {
             'settings'  => 'Logo_Image',
         )
     ));
-	
+
 	$wp_customize->remove_section('colors');
 }
 add_action('customize_register', 'azabujuban_original_customize');
 
 function azabujuban_customize_css(){
-	
+
 	$Header_Navigation_Opacity = get_option('Header_Navigation_Opacity');
 	$Header_Navigation_Opacity = $Header_Navigation_Opacity / 100;
-	
+
 	$navi_color = get_option('navbar_color');
 	$navi_color = preg_replace("/^#/", '', $navi_color);
 
@@ -562,7 +562,7 @@ function azabujuban_customize_css(){
 	$hex = substr($navi_color, $i, 2);
 	$out[] = hexdec($hex);
 	}
-	
+
 	echo "<style type=\"text/css\">\n<!--\n";
 	echo ".navbar { background-color:rgba(".$out[0].",".$out[1].",".$out[2].",".$Header_Navigation_Opacity."); }";
 	echo ".paging-navigation { background-color:".get_option('paging_navigation_color')."; }";
@@ -572,12 +572,12 @@ function azabujuban_customize_css(){
 	echo ".nav-menu li:hover > a, .nav-menu li a:hover, .nav-menu li:focus > a, .nav-menu li a:focus,.nav-menu li:hover > a, .nav-menu li a:hover, .nav-menu li:focus > a, .nav-menu li a:focus,.nav-menu li a:hover { color:".get_option('Navigation_Link_Hover_Color')."; }";
 	echo ".nav-menu li a { color:".get_option('Navigation_Text_Color')."; }";
 	echo ".entry-title a,.entry-content,.entry-content a,.entry-meta a { color:".get_option('Main_Text_Color')."; }";
-	
+
 	echo ".entry-title, .entry-meta { color:".get_option('Accent_Color')."; }";
 
 	echo ".entry-meta a:hover { color:".get_option('Main_Link_Hover_Color')."; }";
 	echo ".widget { background-color:".get_option('Sidebar_Background_Color')."; }";
-	echo ".sidebar-inner .widget .widget-title,.sidebar-inner .widget_calendar table, .sidebar-inner .widget_calendar td,.sidebar-inner .widget a { color:".get_option('Sidebar_Text_Color')."; }";	
+	echo ".sidebar-inner .widget .widget-title,.sidebar-inner .widget_calendar table, .sidebar-inner .widget_calendar td,.sidebar-inner .widget a { color:".get_option('Sidebar_Text_Color')."; }";
 	echo ".widget a:hover { color:".get_option('Sidebar_Link_Hover_Color')."; }";
 	echo ".paging-navigation .meta-nav { background-color:".get_option('Paging_Navigation_Text_Color')."; }";
 	echo ".paging-navigation .meta-nav { color:".get_option('Paging_Navigation_Link_Color')."; }";
@@ -586,8 +586,8 @@ function azabujuban_customize_css(){
 	echo ".nav-menu .current_page_item > a, .nav-menu .current_page_ancestor > a, .nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a { color:".get_option('Navigation_Selected_Link_Color')."; }";
 	echo ".paging-navigation a:hover .meta-nav { background-color:".get_option('Paging_Navigation_Link_Color')."; }";
 	echo ".paging-navigation a:hover .meta-nav { color:".get_option('Paging_Navigation_Text_Color')."; }";
-	echo "#secondary .widget .widget-title, #secondary .widget_calendar table, #secondary .widget_calendar td, #secondary .widget a,.site-footer .widget { color:".get_option('Footer_Text_Color')."; }";	
-	echo "#secondary .widget a:hover { color:".get_option('Footer_Link_Hover_Color')."; }";	
+	echo "#secondary .widget .widget-title, #secondary .widget_calendar table, #secondary .widget_calendar td, #secondary .widget a,.site-footer .widget { color:".get_option('Footer_Text_Color')."; }";
+	echo "#secondary .widget a:hover { color:".get_option('Footer_Link_Hover_Color')."; }";
 	echo ".paging-navigation a:hover .meta-nav { color:".get_option('Site_Info_Text_Color')."; }";
 	echo ".site-info a { color:".get_option('Site_Info_Text_Color')."; }";
 	echo ".site-info a:hover { color:".get_option('Site_Info_Link_Hover_Color')."; }";
@@ -606,8 +606,8 @@ function azabujuban_customize_css(){
 	echo ".format-audio { background-color:".get_option('Audio_Background_Color')."; }";
 	echo ".format-aside { background-color:".get_option('Aside_Background_Color')."; }";
 	echo ".format-standard { background-color:".get_option('Standard_Background_Color')."; }";
-	
-	
+
+
 	echo "-->\n</style>\n";
 }
 add_action('wp_head', 'azabujuban_customize_css');
@@ -622,8 +622,8 @@ add_action( 'wp_enqueue_scripts', 'azabujuban_scripts' );
 
 
 function azabujuban_scriptsMore(){
-	wp_enqueue_script('jquery');
-	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/more.js' );
+	// wp_enqueue_script('jquery');
+	// wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/more.js' );
 }
 add_action( 'admin_enqueue_scripts', 'azabujuban_scriptsMore' );
 
@@ -638,244 +638,295 @@ function azabu_juban_menu_more() {
     $siteurl = get_option( 'siteurl' );
 ?>
 <div class="moreWrap">
-    <h2><img src="<?php echo get_stylesheet_directory_uri() .'/images/more/head_title.png' ?>" alt="WordPress Dedicated Ultraspeed Server GMO WP Clowd" ></h2>
-    
-    <div class="more_navigation">
-    <ul>
-    <li><a href="#hosting">WordPress Hosting</a></li>
-    <li><a href="#themes">Themes</a></li>
-    <li><a href="#plugins">Plugins</a></li>
-    </ul>
-    </div>
-    
-    
-    <a id="hosting" name="hosting"></a>
-    <div class="more_contents">
-    
-    <h3>GMO WP Cloud</h3>
-    <div class="hosting">
-    <a href="https://www.wpcloud.jp/en/?banner_id=themes" target="_blank"><p class="title">GMO WP Cloud</p>
-    <p>GMO WP Cloud - The optimized WordPress cloud hosting service. <br>
-    WordPress made it possible for you to build powerful websites without requiring coding skills. <br>  
-    GMO WP Cloud features safe yet seamless WordPress site building experience to let you focus on site your content creation process.</p>
-    <p class="more">View More</p></a>
-    </div>
-    
-    
-    <a id="themes" name="themes"></a>
-    <h3>WordPress Themes</h3>
-    
-    <div class="themes">
-    
-    <div class="lead">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/themes_tidy.jpg' ?>" alt="tidy">
-    <ul>
-    <li><a href="https://wordpress.org/themes/tidy " class="download" target="_blank">Free Download</a></li>
-    <li><a href="http://tidy.wpcloud.net/" class="demo" target="_blank">View Demo</a></li>
-    </ul>
-    <h4>Tidy</h4>
-    <p>Tidy is a multi-purpose WordPress theme with ultimate simplicity. It is fully customizable, responsive and flexible.  Contents can be turned on and off as desired, and a wide variety of layout options to help you build a satisfactory website. The theme supports original slider, social media integration, Google advertisement & stats plugins along with the web font support with full color customization for enhanced flexibility.</p>
-    </div>
-    
-	<div class="lead">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/themes_madeini.jpg' ?>" alt="Madeini">
-    <ul>
-    <li><a href="http://wordpress.org/themes/madeini" class="download" target="_blank">Free Download</a></li>
-    <li><a href="http://madeini.wpcloud.net/" class="demo" target="_blank">View Demo</a></li>
-    </ul>
-    <h4>Madeini</h4>
-    <p>Madeini is an upgraded version of Twenty Fourteen WordPress default theme with enhanced custom color and custom background image feature.  Enlarged homepage image makes it suitable for photography websites.</p>
-    </div>
+	<h2>
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/head_title.png" alt="Internet For Everyone Z.com by GMO" >
+	</h2>
 
-    <div>
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/themes_kimono.jpg' ?>" alt="Kimono">
-    <ul>
-    <li><a href="http://wordpress.org/themes/kimono" class="download" target="_blank">Free Download</a></li>
-    <li><a href="http://kimono.wpcloud.net/" class="demo" target="_blank">View Demo</a></li>
-    </ul>
-    <h4>Kimono</h4>
-    <p>Kimono is a simple, and user friendly WordPress theme that is focused on design. Its beautiful design inspiration comes from Japanese traditional garment called Kimono.  Slider is standard in this theme therefore no plugin or complicated setup is required.</p>
-    </div>
+	<div class="more_navigation">
+		<ul>
+			<li><a href="#hosting">WordPress Hosting</a></li>
+			<li><a href="#themes">Themes</a></li>
+			<li><a href="#plugins">Plugins</a></li>
+		</ul>
+	</div>
 
-    <div>
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/themes_kotenhanagara.jpg' ?>" alt="Kotenhanagara">
-    <ul>
-    <li><a href="http://wordpress.org/themes/kotenhanagara" class="download" target="_blank">Free Download</a></li>
-    <li><a href="http://kotenhanagara.wpcloud.net/" class="demo" target="_blank">View Demo</a></li>
-    </ul>
-    <h4>Kotenhanagara</h4>
-    <p>Kotenhanagara is a simple, easy-to-use and highly customizable WordPress theme. Beautiful design inspiration came from Japanese Urushi lacqerware, varnished with the traditional manners.  Background color can be customized as well as swappable flower patterned default background.</p>
-    </div>
+	<a id="hosting" name="hosting"></a>
+	<div class="more_contents">
 
-    <div>
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/themes_de_naani.jpg' ?>" alt="de naani.">
-    <ul>
-    <li><a href="https://wordpress.org/themes/de-naani" class="download" target="_blank">Free Download</a></li>
-    <li><a href="http://denaani.wpcloud.net/" class="demo" target="_blank">View Demo</a></li>
-    </ul>
-    <h4>de naani.</h4>
-    <p>'de naani.' is an upgraded version of Twenty-Twelve default theme which is designed to work perfectly with 'GMO Show Time' slider plugin and 'GMO Font agent'web font plugin. This theme also allow you to insert logo, and change site title/tagline positions.</p>
-    </div>
+		<h3>Z.com WordPress Hosting</h3>
+		<div class="hosting">
+			<a href="https://cloud.z.com/jp/en/wp/?utm_source=themes&utm_medium=aboutz&utm_campaign=themes_aboutz" target="_blank">
+				<p class="title">Reason for smooth WordPress Experience</p>
+				<p>
+					You don’t have to care about Speeding up, security and updates, because “Z.com WordPress Hosting” is optimized for WordPress.<br>
+					The structure designing for exclusive use of WordPress with high-speed SSD supports WordPress specific mechanism that depends on the database. You can enjoy seamless operation which cannot be provided with the regular HDD.<br>
+					Z.com WordPress Hosting features safe and seamless WordPress site building experience to let you focus on site contents and updating.
+				</p>
+				<p class="btn">View More</p>
+			</a>
+		</div>
 
-    <div>
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/themes_azabu_juban.jpg' ?>" alt="Azabu Juban">
-    <ul>
-    <li><a href="http://wordpress.org/themes/azabu-juban" class="download" target="_blank">Free Download</a></li>
-    <li><a href="http://azabujuban.wpcloud.net/" class="demo" target="_blank">View Demo</a></li>
-    </ul>
-    <h4>Azabu Juban</h4>
-    <p>Azabu Juban is an upgraded version of Twenty Fourteen WordPress default theme, which is simple, easy-to-use and highly customizable. This theme features numbers of beautiful design templates with traditional Japanese taste which gives your website a unique look.</p>
-    </div>
+		<a id="themes" name="themes"></a>
+		<h3>Z.com WordPress Themes</h3>
+		<div class="block-themes">
+			<ul class="list-themes">
+				<li class="items list1">
+					<div class="box-inner">
+						<h4 class="titles">waffle</h4>
+						<div class="box-links">
+							<p class="thumbs"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/themes_waffle.jpg" alt=""></p>
+							<ul class="list-themes-links" tabindex="0">
+								<li class="link-demo"><a href="http://waffle.webstarterz.com/" target="_blank" class="btn">Demo</a></li>
+								<li class="link-download"><a href="https://wordpress.org/themes/waffle" target="_blank" class="btn">Download</a></li>
+							</ul><!-- .list-themes-links -->
+						</div><!-- .box-links -->
+						<div class="contents">
+							waffle is child theme of twenty fifteen base functionality is took over parent has and additional features are installed especially background color and text color on sidebar.
+						</div><!-- .contents -->
+					</div><!-- .box-inner -->
+				</li><!-- .items -->
+				<li class="items list2">
+					<div class="box-inner">
+						<h4 class="titles">Tidy</h4>
+						<div class="box-links">
+							<p class="thumbs"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/themes_tidy.jpg" alt=""></p>
+							<ul class="list-themes-links" tabindex="0">
+								<li class="link-demo"><a href="http://tidy.webstarterz.com/" target="_blank" class="btn">Demo</a></li>
+								<li class="link-download"><a href="https://wordpress.org/themes/tidy" target="_blank" class="btn">Download</a></li>
+							</ul><!-- .list-themes-links -->
+						</div><!-- .box-links -->
+						<div class="contents">
+							Tidy - The multi-purpose WordPress theme with ultimate simplicity. The theme is fully customizable, responsive and flexible with full of revolutionary functions. Contents can turned on and off as desired, and a wide variety of layout options to help you build a satisfactory website.<br>
+							The theme comes standard with the original slider, social media integration, Google advertisement & stats plugins along with the web font support with full color customization for enhanced flexibility.
+						</div><!-- .contents -->
+					</div><!-- .box-inner -->
+				</li><!-- .items -->
+				<li class="items list3">
+					<div class="box-inner">
+						<h4 class="titles">Madeini</h4>
+						<div class="box-links">
+							<p class="thumbs"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/themes_madeini.jpg" alt=""></p>
+							<ul class="list-themes-links" tabindex="0">
+								<li class="link-demo"><a href="http://madeini.webstarterz.com/" target="_blank" class="btn">Demo</a></li>
+								<li class="link-download"><a href="http://wordpress.org/themes/madeini" target="_blank" class="btn">Download</a></li>
+							</ul><!-- .list-themes-links -->
+						</div><!-- .box-links -->
+						<div class="contents">
+							Madeini is an upgraded version of Twenty-Fourteen WordPress default theme with enhanced custom color and custom background image feature.
+						</div><!-- .contents -->
+					</div><!-- .box-inner -->
+				</li><!-- .items -->
+				<li class="items list4">
+					<div class="box-inner">
+						<h4 class="titles">Kimono</h4>
+						<div class="box-links">
+							<p class="thumbs"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/themes_kimono.jpg" alt=""></p>
+							<ul class="list-themes-links" tabindex="0">
+								<li class="link-demo"><a href="http://kimono.webstarterz.com/" target="_blank" class="btn">Demo</a></li>
+								<li class="link-download"><a href="http://wordpress.org/themes/kimono" target="_blank" class="btn">Download</a></li>
+							</ul><!-- .list-themes-links -->
+						</div><!-- .box-links -->
+						<div class="contents">
+							Kimono is a simple, and user friendly WordPress theme. Beautiful design inspiration comes from Japanese traditional garment called Kimono.
+						</div><!-- .contents -->
+					</div><!-- .box-inner -->
+				</li><!-- .items -->
+				<li class="items list5">
+					<div class="box-inner">
+						<h4 class="titles">Kotenhanagara</h4>
+						<div class="box-links">
+							<p class="thumbs"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/themes_kotenhanagara.jpg" alt=""></p>
+							<ul class="list-themes-links" tabindex="0">
+								<li class="link-demo"><a href="http://kotenhanagara.webstarterz.com/" target="_blank" class="btn">Demo</a></li>
+								<li class="link-download"><a href="http://wordpress.org/themes/kotenhanagara" target="_blank" class="btn">Download</a></li>
+							</ul><!-- .list-themes-links -->
+						</div><!-- .box-links -->
+						<div class="contents">
+							Kotenhanagara is a simple, easy-to-use, and highly customizable WordPress theme. Beautiful Japanese design inspiration comes from Urushi coating which is lacquerware decorated and varnished in the Japanese manner.
+						</div><!-- .contents -->
+					</div><!-- .box-inner -->
+				</li><!-- .items -->
+				<li class="items list6">
+					<div class="box-inner">
+						<h4 class="titles">de naani.</h4>
+						<div class="box-links">
+							<p class="thumbs"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/themes_denaani.jpg" alt=""></p>
+							<ul class="list-themes-links" tabindex="0">
+								<li class="link-demo"><a href="http://denaani.webstarterz.com/" target="_blank" class="btn">Demo</a></li>
+								<li class="link-download"><a href="https://wordpress.org/themes/de-naani" target="_blank" class="btn">Download</a></li>
+							</ul><!-- .list-themes-links -->
+						</div><!-- .box-links -->
+						<div class="contents">
+							'de naani' is an upgraded version of Twenty-Twelve default theme which is designed to work perfectly with 'GMO Show Time' slider plugin and 'GMO Font agent'web font plugin. This theme also allow you to insert logo, and change site title/tagline positions.
+						</div><!-- .contents -->
+					</div><!-- .box-inner -->
+				</li><!-- .items -->
+				<li class="items list7">
+					<div class="box-inner">
+						<h4 class="titles">Azabu Juban</h4>
+						<div class="box-links">
+							<p class="thumbs"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/themes_azabujuban.jpg" alt=""></p>
+							<ul class="list-themes-links" tabindex="0">
+								<li class="link-demo"><a href="http://azabujuban.webstarterz.com/" target="_blank" class="btn">Demo</a></li>
+								<li class="link-download"><a href="http://wordpress.org/themes/azabu-juban" target="_blank" class="btn">Download</a></li>
+							</ul><!-- .list-themes-links -->
+						</div><!-- .box-links -->
+						<div class="contents">
+							Azabu-Juban is a simple, easy-to-use, and highly customizable WordPress theme. Beautiful Japanese design inspiration comes from Urushi coating which is lacquerware decorated and varnished in the Japanese manner.
+						</div><!-- .contents -->
+					</div><!-- .box-inner -->
+				</li><!-- .items -->
+			</ul><!-- .list-themes -->
+		</div><!-- .block-themes -->
 
-    
-    </div>
-    
-    
-    <a id="plugins" name="plugins"></a>
-    <h3>Plugins</h3>
-    
-    <div class="plugins">
-    
-    <div class="plugins_detail">
-    <div class="plugins_detail_l">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/ico_plugin_showtime.gif' ?>">
-    <p class="link"><a href="https://wordpress.org/plugins/gmo-showtime/" target="_blank">Free Download</a></p>
-    </div>
-    <div class="plugins_detail_r">
-    <h4>GMO Showtime</h4>
-    <p>GMO Showtime slider plugin gives cool effects to the slider in a snap. The control screen is simple, for anyone to easily use. Express user's originality with fully customizable link and color as well as 16 slider effects in 6 different layouts.</p>
-    </div>
-    </div>
-    
-    <div class="plugins_detail">
-    <div class="plugins_detail_l">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/ico_plugin_font_agent.gif' ?>">
-    <p class="link"><a href="https://wordpress.org/plugins/gmo-font-agent/" target="_blank">Free Download</a></p>
-    </div>
-    <div class="plugins_detail_r">
-    <h4>GMO Font Agent</h4>
-    <p>GMO Font Agent plugin works with Google fonts, gives you a choice to use variety of stylish web fonts. The plugin is genericon and IcoMoon compatible, to enhance its usability. Icons can be inserted from the post editor.</p>
-    </div>
-    </div>
 
-    <div class="plugins_detail">
-    <div class="plugins_detail_l">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/ico_plugin_sahre_connection.gif' ?>">
-    <p class="link"><a href="https://wordpress.org/plugins/gmo-share-connection/" target="_blank">Free Download</a></p>
-    </div>
-    <div class="plugins_detail_r">
-    <h4>GMO Share Connection</h4>
-    <p>GMO Share Connection plugin is designed for easy social sharing by letting user choose place/pages to use icons. 9 social network services are supported in this plugin including Facebook and Twitter.</p>
-    </div>
-    </div>
 
-    <div class="plugins_detail">
-    <div class="plugins_detail_l">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/ico_plugin_ads_master.gif' ?>">
-    <p class="link"><a href="https://wordpress.org/plugins/gmo-ads-master/" target="_blank">Free Download</a></p>
-    </div>
-    <div class="plugins_detail_r">
-    <h4>GMO Ads Master</h4>
-    <p>GMO Ads Master is the ad banner plugin which enables you to place ad contents to the desired locations such as inside article, sidebar and footer. In addition to that, using this plugin let you setup Google Analytics tracking code and sitemap tool settings, and sitemap can be easily generated without playing with PHP files.</p>
-    </div>
-    </div>
+		<a id="plugins" name="plugins"></a>
+		<h3>Z.com WordPress Plugins</h3>
 
-    <div class="plugins_detail">
-    <div class="plugins_detail_l">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/ico_plugin_go_to_top.gif' ?>">
-    <p class="link"><a href="https://wordpress.org/plugins/gmo-go-to-top/" target="_blank">Free Download</a></p>
-    </div>
-    <div class="plugins_detail_r">
-    <h4>GMO Go to Top</h4>
-    <p>GMO Go to Top is a simple plugin adds a simple button which allows users to scroll all the way up to the top by 1-click.  Button color, style, position can be modified or you can also upload your own button image.</p>
-    </div>
-    </div>
+		<div class="plugins">
 
-    <div class="plugins_detail">
-    <div class="plugins_detail_l">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/ico_plugin_page_trasitions.gif' ?>">
-    <p class="link"><a href="https://wordpress.org/plugins/gmo-page-transitions/" target="_blank">Free Download</a></p>
-    </div>
-    <div class="plugins_detail_r">
-    <h4>GMO Page Transitions</h4>
-    <p>GMO Page Transitions adds Page Transitions actions to your site. Click on the link, and page will slide over to left or right. This effect will not apply when "target=_brank" is used.</p>
-    </div>
-    </div>
+			<div class="plugins_detail">
+				<div class="plugins_detail_l">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/ico_plugin_showtime.gif">
+					<p class="link"><a href="https://wordpress.org/plugins/gmo-showtime/" class="btn" target="_blank">Download</a></p>
+				</div>
+				<div class="plugins_detail_r">
+					<h4>GMO Showtime</h4>
+					<p>GMO Showtime slider plugin gives cool effects to the slider in a snap. The control screen is simple, for anyone to easily use. Express user's originality with fully customizable link and color as well as 16 slider effects in 6 different layouts.</p>
+				</div>
+			</div>
 
-    <div class="plugins_detail">
-    <div class="plugins_detail_l">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/ico_plugin_tinymce_smiley.gif' ?>">
-    <p class="link"><a href="https://wordpress.org/plugins/gmo-tinymce-smiley/" target="_blank">Free Download</a></p>
-    </div>
-    <div class="plugins_detail_r">
-    <h4>GMO TinyMCE Smiley</h4>
-    <p>GMO TinyMCE Smiley is a plugin to let you instantly add smilies into your site from the toolbar..</p>
-    </div>
-    </div>
+			<div class="plugins_detail">
+				<div class="plugins_detail_l">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/ico_plugin_font_agent.gif">
+					<p class="link"><a href="https://wordpress.org/plugins/gmo-font-agent/" class="btn" target="_blank">Download</a></p>
+				</div>
+				<div class="plugins_detail_r">
+					<h4>GMO Font Agent</h4>
+					<p>GMO Font Agent plugin works with Google fonts, gives you a choice to use variety of stylish web fonts. The plugin is genericon and IcoMoon compatible, to enhance its usability. Icons can be inserted from the post editor.</p>
+				</div>
+			</div>
 
-    <div class="plugins_detail">
-    <div class="plugins_detail_l">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/ico_plugin_google_map.gif' ?>">
-    <p class="link"><a href="https://wordpress.org/plugins/gmo-google-map/" target="_blank">Free Download</a></p>
-    </div>
-    <div class="plugins_detail_r">
-    <h4>GMO Google Map</h4>
-    <p>With "GMO Google Map" plugin, you can use Google Maps on your website by simply embedding a shortcode in anywhere you desire. No special coding skill is required. Simply enter information (eg. address) to create a shortcode and paste it to complete.</p>
-    </div>
-    </div>
-    
-    <div class="plugins_detail">
-    <div class="plugins_detail_l">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/ico_plugin_showtime.gif' ?>">
-    <p class="link"><a href="https://wordpress.org/plugins/gmo-widget-custom/" target="_blank">Free Download</a></p>
-    </div>
-    <div class="plugins_detail_r">
-    <h4>GMO Widget Custom</h4>
-    <p>This is a useful widget customizer plugin which enables you to insert images, ad and recommendation banners.</p>
-    </div>
-    </div>
+			<div class="plugins_detail">
+				<div class="plugins_detail_l">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/ico_plugin_sahre_connection.gif">
+					<p class="link"><a href="https://wordpress.org/plugins/gmo-share-connection/" class="btn" target="_blank">Download</a></p>
+				</div>
+				<div class="plugins_detail_r">
+					<h4>GMO Share Connection</h4>
+					<p>GMO Share Connection plugin is designed for easy social sharing by letting user choose place/pages to use icons. 9 social network services are supported in this plugin including Facebook and Twitter.</p>
+				</div>
+			</div>
 
-    <div class="plugins_detail">
-    <div class="plugins_detail_l">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/ico_plugin_slider.gif' ?>">
-    <p class="link"><a href="https://wordpress.org/plugins/gmo-slider/" target="_blank">Free Download</a></p>
-    </div>
-    <div class="plugins_detail_r">
-    <h4>GMO Slider</h4>
-    <p>GMO Slider plugin let you insert sliders in posts and pages. The control screen is simple, for anyone to easily use. GMO Slider supports images as well as text and video.  </p>
-    </div>
-    </div>
+			<div class="plugins_detail">
+				<div class="plugins_detail_l">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/ico_plugin_ads_master.gif">
+					<p class="link"><a href="https://wordpress.org/plugins/gmo-ads-master/" class="btn" target="_blank">Download</a></p>
+				</div>
+				<div class="plugins_detail_r">
+					<h4>GMO Ads Master</h4>
+					<p>GMO Ads Master is the ad banner plugin which enables you to place ad contents to the desired locations such as inside article, sidebar and footer. In addition to that, using this plugin let you setup Google Analytics tracking code and sitemap tool settings, and sitemap can be easily generated without playing with PHP files.</p>
+				</div>
+			</div>
 
-    <div class="plugins_detail">
-    <div class="plugins_detail_l">
-    <img src="<?php echo get_stylesheet_directory_uri() .'/images/more/ico_plugin_social_connection.gif' ?>">
-    <p class="link"><a href="https://wordpress.org/plugins/gmo-social-connection/" target="_blank">Free Download</a></p>
-    </div>
-    <div class="plugins_detail_r">
-    <h4>GMO Social Connection</h4>
-    <p>GMO Social Connection let you easily place SNS share buttons on the articles. It also allows you to choose button position from top or bottom. Supported SNS are Facebook, Twitter and Google+.</p>
-    </div>
-    </div>
-    
-    
-    </div>
-    
-    </div>
-    
-    
-    <div class="quality">
-    <h3>Quality Service</h3>
-    <p class="lead">“Brought to you by Japan's leading one-stop provider of Internet services”</p>
-    <p><img src="<?php echo get_stylesheet_directory_uri() .'/images/more/footer_logo_gmo.png' ?>" alt="GMO INTERNET GROUP" ></p>
-    <p>GMO WP Cloud is operated by GMO Internet group, the number one provider of domain registration, web hosting, security, ecommerce and payment processing solutions in Japan.Under the corporate slogan "Internet for Everyone", GMO Internet Group's trusted service brand represents industry expertise, a proven track record and quality service.</p>
-    <p><a href="http://www.gmo.jp/en/" target="_blank">> Visit GMO Internet Group</a></p>
-    </div>
-    
+			<div class="plugins_detail">
+				<div class="plugins_detail_l">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/ico_plugin_go_to_top.gif">
+					<p class="link"><a href="https://wordpress.org/plugins/gmo-go-to-top/" class="btn" target="_blank">Download</a></p>
+				</div>
+				<div class="plugins_detail_r">
+					<h4>GMO Go to Top</h4>
+					<p>GMO Go to Top is a simple plugin adds a simple button which allows users to scroll all the way up to the top by 1-click. Button color, style, position can be modified or you can also upload your own button image.</p>
+				</div>
+			</div>
+
+			<div class="plugins_detail">
+				<div class="plugins_detail_l">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/ico_plugin_page_trasitions.gif">
+					<p class="link"><a href="https://wordpress.org/plugins/gmo-page-transitions/" class="btn" target="_blank">Download</a></p>
+				</div>
+				<div class="plugins_detail_r">
+					<h4>GMO Page Transitions</h4>
+					<p>GMO Page Transitions adds Page Transitions actions to your site. Click on the link, and page will slide over to left or right. This effect will not apply when "target=_brank" is used.</p>
+				</div>
+			</div>
+
+			<div class="plugins_detail">
+				<div class="plugins_detail_l">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/ico_plugin_tinymce_smiley.gif">
+					<p class="link"><a href="https://wordpress.org/plugins/gmo-tinymce-smiley/" class="btn" target="_blank">Download</a></p>
+				</div>
+				<div class="plugins_detail_r">
+					<h4>GMO TinyMCE Smiley</h4>
+					<p>GMO TinyMCE Smiley is a plugin to let you instantly add smilies into your site from the toolbar..</p>
+				</div>
+			</div>
+
+			<div class="plugins_detail">
+				<div class="plugins_detail_l">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/ico_plugin_google_map.gif">
+					<p class="link"><a href="https://wordpress.org/plugins/gmo-google-map/" class="btn" target="_blank">Download</a></p>
+				</div>
+				<div class="plugins_detail_r">
+					<h4>GMO Google Map</h4>
+					<p>With "GMO Google Map" plugin, you can use Google Maps on your website by simply embedding a shortcode in anywhere you desire. No special coding skill is required. Simply enter information (eg. address) to create a shortcode and paste it to complete.</p>
+				</div>
+			</div>
+
+			<div class="plugins_detail">
+				<div class="plugins_detail_l">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/ico_plugin_showtime.gif">
+					<p class="link"><a href="https://wordpress.org/plugins/gmo-widget-custom/" class="btn" target="_blank">Download</a></p>
+				</div>
+				<div class="plugins_detail_r">
+					<h4>GMO Widget Custom</h4>
+					<p>This is a useful widget customizer plugin which enables you to insert images, ad and recommendation banners.</p>
+				</div>
+			</div>
+
+			<div class="plugins_detail">
+				<div class="plugins_detail_l">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/ico_plugin_slider.gif">
+					<p class="link"><a href="https://wordpress.org/plugins/gmo-slider/" class="btn" target="_blank">Download</a></p>
+				</div>
+				<div class="plugins_detail_r">
+					<h4>GMO Slider</h4>
+					<p>GMO Slider plugin let you insert sliders in posts and pages. The control screen is simple, for anyone to easily use. GMO Slider supports images as well as text and video. </p>
+				</div>
+			</div>
+
+			<div class="plugins_detail">
+				<div class="plugins_detail_l">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/ico_plugin_social_connection.gif">
+					<p class="link"><a href="https://wordpress.org/plugins/gmo-social-connection/" class="btn" target="_blank">Download</a></p>
+				</div>
+				<div class="plugins_detail_r">
+					<h4>GMO Social Connection</h4>
+					<p>GMO Social Connection let you easily place SNS share buttons on the articles. It also allows you to choose button position from top or bottom. Supported SNS are Facebook, Twitter and Google+.</p>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+	<div class="quality">
+		<h3>Quality Service</h3>
+		<p class="lead">“Brought to you by Japan's leading one-stop provider of Internet services”</p>
+		<p><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/more/footer_logo_gmo.png" alt="GMO INTERNET GROUP" ></p>
+		<p>Z.com WordPress Hosting is operated by GMO Internet group, the number one provider of domain registration, web hosting, security, ecommerce and payment processing solutions in Japan.Under the corporate slogan "Internet for Everyone", GMO Internet Group's trusted service brand represents industry expertise, a proven track record and quality service.</p>
+		<p><a href="http://www.gmo.jp/en/" target="_blank">> Visit GMO Internet Group</a></p>
+	</div>
+
 </div>
+
 <?php
 }
 function azabu_juban_admin_menu() {
-    add_theme_page( 'GMO WP Clowd', 'More', 'read','more', 'azabu_juban_menu_more' );
+    add_theme_page( 'Z.com WordPress Hosting', 'More', 'read','more', 'azabu_juban_menu_more' );
 }
 
 add_action( 'admin_menu', 'azabu_juban_admin_menu' );
@@ -883,11 +934,11 @@ add_action( 'admin_menu', 'azabu_juban_admin_menu' );
 //Dashboard
 function azabu_juban_dashboard_widget_function() {
 ?>
-<a href="https://www.wpcloud.jp/en/?banner_id=themes" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() .'/images/300250_wpcloud_0001.gif' ?>" style="width:100%"></a>
+<a href="https://cloud.z.com/jp/en/wp/?utm_source=themes&utm_medium=dashboard&utm_campaign=themes_dashboard" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() .'/images/zcom_wordpress_hosting.gif' ?>" style="width:100%"></a>
 <?php
 }
 function azabu_juban_add_dashboard_widgets() {
-wp_add_dashboard_widget('azabu_juban_dashboard_widget', 'GMO WP Cloud', 'azabu_juban_dashboard_widget_function');
+wp_add_dashboard_widget('azabu_juban_dashboard_widget', 'Z.com WordPress Hosting', 'azabu_juban_dashboard_widget_function');
 global $wp_meta_boxes;
 $normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
 $example_widget_backup = array('azabu_juban_dashboard_widget' => $normal_dashboard['azabu_juban_dashboard_widget']);
