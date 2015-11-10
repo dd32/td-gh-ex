@@ -99,6 +99,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.5.7
+1. Resolved Menu Drop down issue in mobile view.
 @version 1.5.5
 1. Add News Section.
 2. Add Footer Widget Section.

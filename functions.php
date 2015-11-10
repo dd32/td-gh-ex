@@ -52,9 +52,7 @@
   }
   add_filter( 'wp_title', 'spa_wp_title', 10, 2 );
   // including theme setup file
-  include('theme_setup.php'); 
-  add_theme_support( "title-tag" );
-  
+  include('theme_setup.php');  
   //option-panel Scripts and CSS	
   require_once('option_pannel/option_pannel.php' );
   require_once ( WEBRITI_THEME_FUNCTIONS_PATH . '/Excerpt/excerpt_length.php' );// code for limit the length of excerpt
@@ -104,11 +102,10 @@ register_sidebar( array(
   	wp_enqueue_style('sis_spa_flexsliderdemo', get_template_directory_uri().'/css/flexslider-demo.css');  
   	wp_enqueue_style('sis_spa_font', get_template_directory_uri().'/css/font/font.css'); //enqueue color css
   	wp_enqueue_style('sis_spa_color',get_template_directory_uri().'/css/skins/default.css');
-  
-  	// wp_enqueue_script('jquery');
-  	if ( is_singular() )  { wp_enqueue_script( "comment-reply" ); 	// them e check plugin 	
-  	wp_enqueue_script('sis_spa_menu', get_template_directory_uri().'/js/menu/menu.js',array('jquery'));
-  	wp_enqueue_script('sis_spa-boot-menus', get_template_directory_uri().'/js/menu/bootstrap.min.js');
-	}	
+	wp_enqueue_script('sis_spa_menu', get_template_directory_uri().'/js/menu/menu.js',array('jquery'));
+  	wp_enqueue_script('sis_spa-boot-menus', get_template_directory_uri().'/js/menu/bootstrap.min.js');	
+	
+	//Migrating Plugins and Themes to 2.7/Enhanced Comment Display
+	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
   }
   ?>
