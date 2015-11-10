@@ -210,3 +210,7 @@ require get_template_directory() . '/inc/aglee-customizer.php';
  * Load Aglee Lite Metabox
  */
 require get_template_directory() . '/inc/aglee-custom-metabox.php';
+ /**
+ * Load Aglee Lite Theme Information
+ */
+require get_template_directory() . '/inc/theme-info.php';
