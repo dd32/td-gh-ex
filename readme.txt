@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.6.0 | 10th November 2015 =
+* Update: Clean up WordPress Title.
+
 = Version 2.5.9 | 9th November 2015 =
 * Update: CSS for mobile nav.
 * Update: Woocommerce file.
