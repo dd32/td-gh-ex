@@ -1,0 +1,45 @@
+
+ /* scroll to top */
+ jQuery(document).ready(function(){
+
+	// hide #back-top first
+	jQuery("#back-top").hide();
+	
+	// fade in #back-top
+	jQuery(function () {
+		jQuery(window).scroll(function () {
+			if (jQuery(this).scrollTop() > 500) {
+				jQuery('#back-top').fadeIn();
+			} else {
+				jQuery('#back-top').fadeOut();
+			}
+		});
+
+		// scroll body to 0px on click
+		jQuery('#topp a').click(function () {
+			jQuery('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	});
+
+});
+
+
+ 
+
+ 
+
+
+
+//slider
+
+jQuery(document).ready(function() {
+	jQuery('#myCarousel').carousel({
+	  interval: 7000
+	});
+	
+	});
+
+
