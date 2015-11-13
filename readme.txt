@@ -32,6 +32,12 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.3.2 | 13th October 2015 = 
+* Add: Page title filter.
+* Update: CSS for menu.
+* Update: Theme options.
+* Update: Meta Title.
+
 = 1.3.1 | 14th September 2015 = 
 * Bug Fix: Varitaions on certain servers.
 * Add: Tag output option on blog posts.

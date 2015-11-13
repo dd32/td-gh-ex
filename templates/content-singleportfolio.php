@@ -78,7 +78,12 @@
                 								    } ?>                            
                 						  </ul>
                           </div> <!--Flex Slides-->
-				              <?php } else if ($ppost_type == 'video') { ?>
+				              <?php } else if ($ppost_type == 'imagegrid') {
+                            $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
+                            $columns = get_post_meta( $post->ID, '_kad_portfolio_img_grid_columns', true );
+                                if(empty($columns)) {$columns = '3';}
+                            echo do_shortcode('[gallery ids="'.$image_gallery.'" columns="'.$columns.'"]');
+                        } else if ($ppost_type == 'video') { ?>
 					                <div class="videofit">
                   		      <?php  echo get_post_meta( $post->ID, '_kad_post_video', true );?>
                   	      </div>

@@ -20,11 +20,12 @@ function kadence_setup() {
 add_action('after_setup_theme', 'kadence_setup');
 
 if (!defined('__DIR__')) { define('__DIR__', dirname(__FILE__)); }
-/**
- * Define helper constants
- */
-$get_theme_name = explode('/themes/', get_template_directory());
 
-define('RELATIVE_CONTENT_PATH', str_replace(home_url() . '/', '', content_url()));
-define('THEME_NAME',            next($get_theme_name));
-define('THEME_PATH',            RELATIVE_CONTENT_PATH . '/themes/' . THEME_NAME);
+function pinnacle_fav_output(){
+  // Keep for fallback
+  global $pinnacle;
+  if(isset($pinnacle['pinnacle_custom_favicon']['url']) && !empty($pinnacle['pinnacle_custom_favicon']['url']) ) {
+    echo '<link rel="shortcut icon" type="image/x-icon" href="'. esc_url($pinnacle['pinnacle_custom_favicon']['url']).'" />';
+  }
+}
+add_action('wp_head', 'pinnacle_fav_output', 5);
