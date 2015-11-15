@@ -60,6 +60,10 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.6 - 15th November, 2015 =
+* Fixed Image display issue.
+* Fixed Some errors when child theme is created to customize theme.
+
 = 1.0.5 - 9th November, 2015 =
 * Added theme informations
 

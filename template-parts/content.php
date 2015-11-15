@@ -41,9 +41,11 @@ $aglee_lite_blog_display_type = get_theme_mod('blog_post_layout','blog_image_lar
                         }
             		?>
                     <div class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+                    <?php if(has_post_thumbnail()){ ?>
                     <a href="<?php the_permalink(); ?>" class="blog_listing_img">
                         <img src="<?php echo esc_url($aglee_lite_img_src[0]); ?>" />
                     </a>
+                    <?php } ?>
                     <div class="blog-excerpt"><?php the_excerpt(); ?></div>
                     <div class="blog-bottom-content">
                         <span class="blog_author"><?php echo get_the_author();?></span>
