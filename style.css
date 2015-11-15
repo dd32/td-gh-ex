@@ -1,10 +1,10 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: http://www.guidovanderleest.nl/myknowledgebase
-Version: 2.4
+Version: 2.5
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: MyKnowledgeBase is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or link Portal. It uses the default WP categories and posts. Please check readme file how to set up such a website. Default theme language is English but Dutch, German, Spanish, French and Swedish are supported too. Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile friendly WordPress theme for a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or link Portal. It uses the default WP categories and posts. Please check readme file how to set up such a website. Features: primary sidebar, homepage sidebar, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, blue, light, gray, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -216,6 +216,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 /* PAGE */
 .page-title {padding:0 0 10px;}
+.archive-description {display:block; font-style:italic;}
 .pagelink {clear:both; margin:20px 0 10px;}
 
 
