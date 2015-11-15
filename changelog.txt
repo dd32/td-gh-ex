@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 3.6 - november 2015
+- updated archive.php (added the_archive_title and the_archive_description)
+- updated pot file
+- removed translations (to support language packs from wordpress.org)
+- several small adjustments
+
 PrivateBusiness version 3.5 - september 2015
 - changed name of mobile menubar from 'Menu top' into 'Menu' and changed background color
 - updated file comments
