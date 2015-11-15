@@ -8,14 +8,14 @@
 	<div class="inside-article">
 		<?php do_action( 'generate_before_content'); ?>
 		
-		<?php if ( generate_show_title() ) : ?>
-			<header class="entry-header">
+		<header class="entry-header">
+			<?php if ( generate_show_title() ) : ?>
 				<?php the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' ); ?>
-				<div class="entry-meta">
-					<?php generate_posted_on(); ?>
-				</div><!-- .entry-meta -->
-			</header><!-- .entry-header -->
-		<?php endif; ?>
+			<?php endif; ?>
+			<div class="entry-meta">
+				<?php generate_posted_on(); ?>
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
 		
 		<?php do_action( 'generate_after_entry_header'); ?>
 		<div class="entry-content" itemprop="text">

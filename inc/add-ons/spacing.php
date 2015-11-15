@@ -92,7 +92,7 @@ if ( !function_exists('generate_spacing_css') ) :
 			
 			'.main-navigation .main-nav ul li a,
 			.menu-toggle,
-			.main-navigation .mobile-search-item a' => array(
+			.main-navigation .mobile-bar-items a' => array(
 				'padding-left' => ( isset( $spacing_settings['menu_item'] ) ) ? $spacing_settings['menu_item'] . 'px' : null,
 				'padding-right' => ( isset( $spacing_settings['menu_item'] ) ) ? $spacing_settings['menu_item'] . 'px' : null,
 				'line-height' => ( isset( $spacing_settings['menu_item_height'] ) ) ? $spacing_settings['menu_item_height'] . 'px' : null,
@@ -279,7 +279,7 @@ function generate_mobile_search_spacing_fallback()
 	// Start the magic
 	$spacing_css = array (
 		
-		'.main-navigation .mobile-search-item a' => array(
+		'.main-navigation .mobile-bar-items a' => array(
 			'padding-left' => ( isset( $spacing_settings['menu_item'] ) ) ? $spacing_settings['menu_item'] . 'px' : null,
 			'padding-right' => ( isset( $spacing_settings['menu_item'] ) ) ? $spacing_settings['menu_item'] . 'px' : null,
 			'line-height' => ( isset( $spacing_settings['menu_item_height'] ) ) ? $spacing_settings['menu_item_height'] . 'px' : null,

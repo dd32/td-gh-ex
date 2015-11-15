@@ -22,7 +22,7 @@ function generate_disable_elements_css()
 	$return = '';
 	
 	// If our option is set, get the CSS
-	if ( !empty( $disable_headline ) && false !== $disable_headline ) :
+	if ( ( !empty( $disable_headline ) && false !== $disable_headline ) && ! is_single() ) :
 		$return .= '.entry-header {display:none} .page-content, .entry-content, .entry-summary {margin-top:0}';
 	endif;
 	

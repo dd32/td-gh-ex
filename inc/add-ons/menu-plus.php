@@ -15,9 +15,9 @@ function generate_menu_plus_fallback_inline_css()
 	
 	if ( '' !== $generate_menu_plus_settings['sticky_menu_logo'] ) :
 		if ( 'sticky-menu' == $generate_menu_plus_settings['sticky_menu_logo_position'] ) :
-			$return .= '.navigation-clone .mobile-search-item {position: relative;float: right;}';
+			$return .= '.navigation-clone .mobile-bar-items {position: relative;float: right;}';
 		else :
-			$return .= '@media (max-width: 768px) {.main-navigation .mobile-search-item {position: relative;float: right;}}';
+			$return .= '@media (max-width: 768px) {.main-navigation .mobile-bar-items {position: relative;float: right;}}';
 		endif;
 	endif;
 	

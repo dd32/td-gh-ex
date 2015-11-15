@@ -160,9 +160,9 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			'button.menu-toggle:hover,
 			button.menu-toggle:active,
 			button.menu-toggle:focus,
-			.main-navigation .mobile-search-item a,
-			.main-navigation .mobile-search-item a:hover,
-			.main-navigation .mobile-search-item a:focus' => array(
+			.main-navigation .mobile-bar-items a,
+			.main-navigation .mobile-bar-items a:hover,
+			.main-navigation .mobile-bar-items a:focus' => array(
 				'color' => $generate_settings['navigation_text_color']
 			),
 			
@@ -499,9 +499,9 @@ function generate_mobile_search_color_fallback()
 	// Start the magic
 	$visual_css = array (
 		
-		'.main-navigation .mobile-search-item a,
-		.main-navigation .mobile-search-item a:hover,
-		.main-navigation .mobile-search-item a:focus' => array(
+		'.main-navigation .mobile-bar-items a,
+		.main-navigation .mobile-bar-items a:hover,
+		.main-navigation .mobile-bar-items a:focus' => array(
 			'color' => $generate_settings['navigation_text_color']
 		)
 		

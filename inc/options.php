@@ -67,8 +67,7 @@ function generate_settings_page()
 								<h3 class="hndle"><?php _e('GeneratePress','generate');?> <?php echo GENERATE_VERSION; ?></h3>
 								<div class="inside">
 									<p>
-										<strong style="display:inline-block;width:60px;"><?php _e('Author','generate');?>:</strong> <a href="<?php echo esc_url('http://edge22.com');?>" target="_blank">Tom Usborne</a><br />
-										<strong style="display:inline-block;width:60px;"><?php _e('Website','generate');?>:</strong> <a href="<?php echo esc_url('http://generatepress.com');?>" target="_blank">GeneratePress</a>
+										<span><?php printf( _x( 'Made with %s by Tom Usborne', 'made with love', 'generate' ), '<span style="color:#D04848" class="dashicons dashicons-heart"></span>' ); ?></span>
 									</p>		
 									<p>
 										<?php if ( generate_addons_available() ) : ?>

@@ -37,7 +37,7 @@ function generate_add_navigation_float_right()
 		generate_get_defaults() 
 	);
 	
-	if ( 'nav-float-right' == $generate_settings['nav_position_setting'] ) :
+	if ( 'nav-float-right' == $generate_settings['nav_position_setting'] || 'nav-float-left' == $generate_settings[ 'nav_position_setting' ] ) :
 		generate_navigation_position();
 	endif;
 	
