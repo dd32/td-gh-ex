@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+Shipyard version 3.3 - november 2015
+- updated archive.php (added the_archive_title and the_archive_description)
+- updated pot file
+- removed translations (to support language packs from wordpress.org)
+- several small adjustments
+
 Shipyard version 3.2 - september 2015
 - updated file comments
 - updated pagelink
