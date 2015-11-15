@@ -35,8 +35,7 @@ You can add your own background(image) via  WordPress Dashboard > Appearance > B
 
 TRANSLATION
 ===========
-This theme is translation-ready (Dutch, German, Spanish, French and Swedish translation included). 
-More translations are very welcome! Please contact me via my website.
+This theme is translation-ready and supports language packs from wordpress.org
 
 
 FONTS

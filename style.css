@@ -1,10 +1,10 @@
 /*
 Theme Name: OneColumn
 Theme URI: http://www.guidovanderleest.nl/onecolumn
-Version: 3.3
+Version: 3.4
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: OneColumn is a free, basic, clean, responsive, mobile friendly, one-column WordPress theme. Default theme language is English but Dutch, German, Spanish, French and Swedish are supported too. 2 widget-areas underneath header-image, 2 widget-areas in footer, custom header-image, custom background, display logo or blogname and description and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: OneColumn is a free, clean, minimalistic, responsive, mobile friendly one column WordPress theme. Features: widget areas underneath header image, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, dropdown navigation. That's it. Enjoy. 
 Tags: one-column, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, gray, orange, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -171,6 +171,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 /* PAGE */
 .page-title {padding:0 0 10px;}
+.archive-description {display:block; font-style:italic;}
 .pagelink {clear:both; margin:20px 0 10px;}
 
 
