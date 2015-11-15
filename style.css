@@ -1,10 +1,10 @@
 /*
 Theme Name: LeftSide
 Theme URI: http://www.guidovanderleest.nl/leftside
-Version: 2.3
+Version: 2.4
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: LeftSide is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Default theme language is English but Dutch, German, Spanish, French and Swedish are supported too. Sidebar on left side, navigation on left side (with horizontal submenu), 3 widget-area's in footer, custom header-image, custom background and display logo or blogname and description are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: LeftSide is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: sidebar on left side, navigation on left side, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description. That's it. Enjoy. 
 Tags: two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-images, white, red, light, gray, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -164,6 +164,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 /* PAGE */
 .page-title {padding:0 0 10px;}
+.archive-description {display:block; font-style:italic;}
 .pagelink {clear:both; margin:20px 0 10px;}
 
 

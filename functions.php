@@ -140,24 +140,24 @@
 	function leftside_post_next() { 
 		return 'class="nav-next"'; 
 	}
-	add_filter('next_posts_link_attributes', 'leftside_post_next'); 
+	add_filter('next_posts_link_attributes', 'leftside_post_next', 999); 
 
 	function leftside_post_prev() { 
 		return 'class="nav-prev"'; 
 	}
-	add_filter('previous_posts_link_attributes', 'leftside_post_prev'); 
+	add_filter('previous_posts_link_attributes', 'leftside_post_prev', 999); 
 
 
 // Add class to comment nav 
 	function leftside_comment_next() { 
 		return 'class="comment-next"'; 
 	}
-	add_filter('next_comments_link_attributes', 'leftside_comment_next'); 
+	add_filter('next_comments_link_attributes', 'leftside_comment_next', 999); 
 
 	function leftside_comment_prev() { 
 		return 'class="comment-prev"'; 
 	}
-	add_filter('previous_comments_link_attributes', 'leftside_comment_prev'); 
+	add_filter('previous_comments_link_attributes', 'leftside_comment_prev', 999); 
 
 
 // Custom excerpt lenght (default length is 55 words)
