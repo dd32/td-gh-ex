@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultiColors\n"
-"POT-Creation-Date: 2015-09-11 20:26+0200\n"
-"PO-Revision-Date: 2015-09-10 10:08+0200\n"
+"POT-Creation-Date: 2015-11-15 20:33+0100\n"
+"PO-Revision-Date: 2015-11-15 20:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,74 +19,50 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:11 search.php:40
+#: 404.php:11 archive.php:48 index.php:53 search.php:40
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:12 archive.php:59 index.php:53 search.php:41
+#: 404.php:12 archive.php:49 index.php:54 search.php:41
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: archive.php:14
-msgid "Archive"
-msgstr ""
-
-#: archive.php:16
-msgid "Daily Archives"
-msgstr ""
-
-#: archive.php:18
-msgid "Monthly Archives"
-msgstr ""
-
-#: archive.php:20
-msgid "Yearly Archives"
-msgstr ""
-
-#: archive.php:22
-msgid "Author Archives"
-msgstr ""
-
-#: archive.php:24
-msgid "Tag Archives"
-msgstr ""
-
-#: archive.php:31 index.php:23 search.php:18
+#: archive.php:20 index.php:23 search.php:18
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: archive.php:35 index.php:27 search.php:22 single.php:18
+#: archive.php:24 index.php:27 search.php:22 single.php:18
 #, php-format
 msgid "Posted on %s"
 msgstr ""
 
-#: archive.php:36 index.php:28 search.php:23 single.php:19
+#: archive.php:25 index.php:28 search.php:23 single.php:19
 #, php-format
 msgid "By %s"
 msgstr ""
 
-#: archive.php:38 index.php:30 search.php:25 single.php:21
+#: archive.php:27 index.php:30 search.php:25 single.php:21
 msgid "Leave a response"
 msgstr ""
 
-#: archive.php:38 index.php:30 search.php:25 single.php:21
+#: archive.php:27 index.php:30 search.php:25 single.php:21
 msgid "1 response"
 msgstr ""
 
-#: archive.php:38 index.php:30 search.php:25 single.php:21
+#: archive.php:27 index.php:30 search.php:25 single.php:21
 msgid "% responses"
 msgstr ""
 
-#: archive.php:48 index.php:40 search.php:35
+#: archive.php:37 index.php:40 search.php:35
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:54 index.php:48 search.php:48
+#: archive.php:43 index.php:48 search.php:48
 msgid "&laquo; Older posts"
 msgstr ""
 
-#: archive.php:55 index.php:49 search.php:49
+#: archive.php:44 index.php:49 search.php:49
 msgid "Newer posts &raquo;"
 msgstr ""
 
@@ -124,48 +100,48 @@ msgstr ""
 msgid "Boats"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:91
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:98 functions.php:108 functions.php:118 functions.php:128
-#: functions.php:138 functions.php:148 functions.php:158 functions.php:168
+#: functions.php:93 functions.php:103 functions.php:113 functions.php:123
+#: functions.php:133 functions.php:143 functions.php:153 functions.php:163
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:106
+#: functions.php:101
 msgid "Header Sidebar"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:111
 msgid "Homepage Sidebar Right"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:121
 msgid "Homepage Sidebar Middle"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:131
 msgid "Homepage Sidebar Left"
 msgstr ""
 
-#: functions.php:146
+#: functions.php:141
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:156
+#: functions.php:151
 msgid "Footer Sidebar Middle"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:161
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:212 functions.php:221
+#: functions.php:207 functions.php:216
 msgid "Logo"
 msgstr ""
 
-#: functions.php:214
+#: functions.php:209
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
@@ -206,14 +182,11 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"MultiColors is a colorful free, basic, clean, minimalistic, responsive, "
-"mobile friendly WordPress theme. Default theme language is English but "
-"Dutch, German, Spanish, French and Swedish are supported too. Primary "
-"sidebar, homepage sidebar, 3 widget-areas underneath header-image, 3 widget-"
-"area's in footer, custom header-image, display logo or blogname and "
-"description, full width page-template and dropdown navigation are included. "
-"Besides this no theme settingspage, no fancy options, no slideshow, this one "
-"only has the basic options. Enjoy."
+"MultiColors is a free, clean, minimalistic, responsive, mobile friendly "
+"WordPress theme. Features: primary sidebar, homepage sidebar, widget areas "
+"underneath header image, widget areas in footer, custom header image, custom "
+"logo to replace blogname and description, full width page template, dropdown "
+"navigation. That's it. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme

@@ -1,10 +1,10 @@
 /*
 Theme Name: MultiColors
 Theme URI: http://www.guidovanderleest.nl/multicolors
-Version: 2.6
+Version: 2.7
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: MultiColors is a colorful free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Default theme language is English but Dutch, German, Spanish, French and Swedish are supported too. Primary sidebar, homepage sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, custom header-image, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: MultiColors is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: primary sidebar, homepage sidebar, widget areas underneath header image, widget areas in footer, custom header image, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-header, custom-menu, featured-images, red, orange, yellow, green, blue, purple, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -67,7 +67,7 @@ table {
 
 
 /* BODY AND CONTAINER */
-body {background:#333; font-family:'Open Sans', sans-serif; font-size:1em; color:#eee; line-height:1.5em;}
+body {background:#800080; font-family:'Open Sans', sans-serif; font-size:1em; color:#eee; line-height:1.5em;}
 #container {width:100%; margin:0 auto 0; padding:0; word-wrap:break-word;}
 
 
@@ -201,6 +201,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* PAGE */
 .page-title {padding:0 0 20px;}
 .archive-title {margin:0 0 20px; padding:0 0 10px; border-bottom:2px solid #eee;}
+.archive-description {display:block; font-style:italic;}
 .pagelink {clear:both; margin:20px 0 10px;}
 
 

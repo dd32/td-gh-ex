@@ -59,11 +59,6 @@
 	// Switches default core markup for search form, comment form, and comments to output valid HTML5
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
-	// Background color
-		$args = array( 'default-color' => '333333', 
-		); 
-		add_theme_support( 'custom-background', $args ); 
-
 	}
 	add_action( 'after_setup_theme', 'multicolors_setup' ); 
 
@@ -180,24 +175,24 @@
 	function multicolors_post_next() { 
 		return 'class="nav-next"'; 
 	}
-	add_filter('next_posts_link_attributes', 'multicolors_post_next'); 
+	add_filter('next_posts_link_attributes', 'multicolors_post_next', 999); 
 
 	function multicolors_post_prev() { 
 		return 'class="nav-prev"'; 
 	}
-	add_filter('previous_posts_link_attributes', 'multicolors_post_prev'); 
+	add_filter('previous_posts_link_attributes', 'multicolors_post_prev', 999); 
 
 
 // Add class to comment nav 
 	function multicolors_comment_next() { 
 		return 'class="comment-next"'; 
 	}
-	add_filter('next_comments_link_attributes', 'multicolors_comment_next'); 
+	add_filter('next_comments_link_attributes', 'multicolors_comment_next', 999); 
 
 	function multicolors_comment_prev() { 
 		return 'class="comment-prev"'; 
 	}
-	add_filter('previous_comments_link_attributes', 'multicolors_comment_prev'); 
+	add_filter('previous_comments_link_attributes', 'multicolors_comment_prev', 999); 
 
 
 // Custom excerpt lenght (default length is 55 words)

@@ -24,8 +24,7 @@ You can add your own logo in stead of blogname and description via WordPress Das
 
 HOW TO CHANGE BACKGROUND
 ========================
-You can add your own background(image) via  WordPress Dashboard > Appearance > Background.
-Note: because theme is fullwidth, this has no visible effect. But it might after your modifications, so that's why it's still included.
+Not relevant for this theme.
 
 
 HOW TO SET MENU
@@ -36,8 +35,7 @@ You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 TRANSLATION
 ===========
-This theme is translation-ready (Dutch, German, Spanish, French and Swedish translation included). 
-More translations are very welcome! Please contact me via my website.
+This theme is translation-ready and supports language packs from wordpress.org
 
 
 FONTS
