@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkElements\n"
-"POT-Creation-Date: 2015-09-11 18:54+0200\n"
-"PO-Revision-Date: 2015-09-10 09:55+0200\n"
+"POT-Creation-Date: 2015-11-15 17:04+0100\n"
+"PO-Revision-Date: 2015-11-15 17:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,74 +19,50 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 search.php:39
+#: 404.php:9 archive.php:45 index.php:47 search.php:39
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:10 archive.php:56 index.php:47 search.php:40
+#: 404.php:10 archive.php:46 index.php:48 search.php:40
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: archive.php:12
-msgid "Archive"
-msgstr ""
-
-#: archive.php:14
-msgid "Daily Archives"
-msgstr ""
-
-#: archive.php:16
-msgid "Monthly Archives"
-msgstr ""
-
-#: archive.php:18
-msgid "Yearly Archives"
-msgstr ""
-
-#: archive.php:20
-msgid "Author Archives"
-msgstr ""
-
-#: archive.php:22
-msgid "Tag Archives"
-msgstr ""
-
-#: archive.php:28 index.php:19 search.php:17
+#: archive.php:17 index.php:19 search.php:17
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: archive.php:32 index.php:23 search.php:21 single.php:16
+#: archive.php:21 index.php:23 search.php:21 single.php:16
 #, php-format
 msgid "Posted on %s"
 msgstr ""
 
-#: archive.php:33 index.php:24 search.php:22 single.php:17
+#: archive.php:22 index.php:24 search.php:22 single.php:17
 #, php-format
 msgid "By %s"
 msgstr ""
 
-#: archive.php:35 index.php:26 search.php:24 single.php:19
+#: archive.php:24 index.php:26 search.php:24 single.php:19
 msgid "Leave a response"
 msgstr ""
 
-#: archive.php:35 index.php:26 search.php:24 single.php:19
+#: archive.php:24 index.php:26 search.php:24 single.php:19
 msgid "1 response"
 msgstr ""
 
-#: archive.php:35 index.php:26 search.php:24 single.php:19
+#: archive.php:24 index.php:26 search.php:24 single.php:19
 msgid "% responses"
 msgstr ""
 
-#: archive.php:45 index.php:36 search.php:34
+#: archive.php:34 index.php:36 search.php:34
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:51 index.php:42 search.php:47
+#: archive.php:40 index.php:42 search.php:47
 msgid "&laquo; Older posts"
 msgstr ""
 
-#: archive.php:52 index.php:43 search.php:48
+#: archive.php:41 index.php:43 search.php:48
 msgid "Newer posts &raquo;"
 msgstr ""
 
@@ -193,13 +169,11 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"DarkElements is a free, basic, clean, minimalistic, responsive, mobile "
-"friendly WordPress theme. Default theme language is English but Dutch, "
-"German, Spanish, French and Swedish are supported too. Sidebar on left side, "
-"navigation on left side, 3 widget-area's in footer, custom header-image, "
-"custom background and display logo or blogname and description are included. "
-"Besides this no theme settingspage, no fancy options, no slideshow, this one "
-"only has the basic options. Enjoy."
+"DarkElements is a free, clean, minimalistic, responsive, mobile friendly "
+"WordPress theme. Features: sidebar on left side, navigation on left side, "
+"widget areas in footer, custom header image, custom background, custom logo "
+"to replace blogname and description, full width page template, dropdown "
+"navigation. That's it. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme

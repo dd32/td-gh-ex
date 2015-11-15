@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+Changelog:
+DarkElements version 2.8 - november 2015
+- updated archive.php (added the_archive_title and the_archive_description)
+- updated pot file
+- removed translations (to support language packs from wordpress.org)
+- several small adjustments
+
 DarkElements version 2.7 - september 2015
 - updated file comments
 - updated pagelink

@@ -3,7 +3,7 @@ Used to style the post and page TinyMCE editor.
 */
 
 @import url(//fonts.googleapis.com/css?family=Open+Sans);
-body {font-family:'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
+body {background:none; font-family:'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
 
 
 /* RESET STYLESHEET */
