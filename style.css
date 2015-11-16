@@ -4,7 +4,7 @@ Theme URI: http://kairaweb.com/theme/topshop/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: TopShop is the perfect theme for all users from the beginner to the developer. With all our settings built neatly into the customizer you can easily edit the website live before publishing. We've packed a lot of settings into TopShop from 2 header layouts, full-width or boxed website, different blog layouts, adding social links, unlimited color selection and being able to change the colors of lots of elements from fonts to naviagtion and lots lots more. We've integrated with some of the best plugins such as SiteOrigin's Page Builder to easily build any page layouts you want, WooCommerce to simply turn your website into an online store, Meta Slider for slick responsive sliders and lots more. For the developers we've added hooks all around the theme to easily add on custom elements or extra functionality. There's also the option of upgrading to premium for a cheap price. Go on... give it a try!
-Version: 1.2.4
+Version: 1.2.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: topshop
@@ -1679,7 +1679,7 @@ object {
         text-align: center;
     }
     .main-navigation ul ul ul {
-        display: none;
+        display: block;
         left: 0 !important;
     }
     
@@ -1847,7 +1847,7 @@ input[type="submit"],
 
 a:hover,
 .widget-area .widget a:hover,
-.site-footer-widgets .widget a:hover,
+.site-footer-widgets .widget ul li a:hover,
 .search-btn:hover,
 .search-button .fa-search:hover,
 .woocommerce #content div.product p.price,
@@ -1857,7 +1857,6 @@ a:hover,
 .woocommerce div.product span.price,
 .woocommerce-page #content div.product span.price,
 .woocommerce-page div.product span.price,
-
 .woocommerce #content div.product .woocommerce-tabs ul.tabs li.active,
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active,
 .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active,

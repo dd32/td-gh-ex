@@ -71,6 +71,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.5
+* Styling tweaks
+* Fixed selected color adding to footer links
+
 #### 1.2.4
 * Changed header cart layout / removed text - fixes translation issues
 * Fixed iPad touch navigation bug

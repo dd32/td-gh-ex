@@ -134,7 +134,7 @@ function customizer_library_topshop_build_styles() {
             'selectors' => array(
                 'a:hover,
                 .widget-area .widget a:hover,
-                .site-footer-widgets a:hover,
+                .site-footer-widgets .widget ul li a:hover,
                 .search-btn:hover,
                 .search-button .fa-search:hover,
                 .woocommerce #content div.product p.price,
@@ -144,7 +144,6 @@ function customizer_library_topshop_build_styles() {
                 .woocommerce div.product span.price,
                 .woocommerce-page #content div.product span.price,
                 .woocommerce-page div.product span.price,
-
                 .woocommerce #content div.product .woocommerce-tabs ul.tabs li.active,
                 .woocommerce div.product .woocommerce-tabs ul.tabs li.active,
                 .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active,
