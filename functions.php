@@ -20,7 +20,7 @@ if ( ! function_exists( 'greenr_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function greenr_setup() {   
+function greenr_setup() {          
 
 	// Makes theme translation ready
 	load_theme_textdomain( 'greenr', GREENR_LANGUAGES_DIR );
@@ -140,7 +140,7 @@ function greenr_slide_exists() {
 	
 	for ( $slide = 1; $slide < 6; $slide++) {
 		$url = get_theme_mod( 'image_upload-' .$slide );
-		if ( $url !== ''  ) {
+		if ( $url ) {
 			return true;
 		} 
 	}

@@ -1,6 +1,6 @@
 <?php
 $page_builder = __( 'Page Builder', 'greenr' );
-$page_builder_details = __( 'greenr Pro supports Page Builder. All our shortcodes can be used as widgets too. You can drag and drop our widgets with page builder visual editor.', 'greenr' );
+$page_builder_details = __( 'Greenr Pro supports Page Builder. All our shortcodes can be used as widgets too. You can drag and drop our widgets with page builder visual editor.', 'greenr' );
 $page_layout = __( 'Page Layout', 'greenr' );
 $page_layout_details = __( 'Greenr Pro offers many different page layouts so you can quickly and easily create your pages with various layout without any hassle!', 'greenr' );
 $unlimited_sidebar = __( 'Unlimited Sidebar', 'greenr' );
@@ -32,7 +32,7 @@ $google_map_details = __( 'Greenr Pro includes Goole Map as shortcode and widget
 $view_demo = __( 'View Demo', 'greenr');
 $upgrade_to_pro = __( 'Upgrade To Pro', 'greenr' );   
       
-          
+                 
 $greenr_why_upgrade = <<< FEATURES
 <p class="wrap-header">
     <a class="view-demo" href="http://demo.webulous.in/greenr/">
@@ -116,7 +116,7 @@ $greenr_why_upgrade = <<< FEATURES
     <p>$google_map_details</p>
 </div>
 FEATURES;
-
+      
 function greenr_theme_page() {
     add_theme_page( 
         __( 'Upgrade To greenr Pro','greenr'),
@@ -147,7 +147,6 @@ $options = array(
         'theme_options' => array(
             'priority'       => 9,
             'title'          => __('Theme Options', 'greenr'),
-            'description'    => __('', 'greenr'),
             'sections' => array(    
                 'general_settings' => array(
                     'title' => __('General Settings', 'greenr'),                
@@ -156,7 +155,6 @@ $options = array(
                         'color' => array(   
                             'type' => 'select',
                             'label' => __('Select your Color Scheme.', 'greenr'),
-                            'description' => __(' ', 'greenr'),
                             'choices' => array(       
                                 '1' => __('Green_default', 'greenr'),
                                 '2' => __('Green_pattern', 'greenr'),
@@ -207,14 +205,12 @@ $options = array(
                         'site-description' => array(
                             'type' => 'checkbox',
                             'label' => __('Enable to show site description in header.', 'greenr'),
-                            'description' => __('','greenr'),
                             'default' => 1,  
                             'sanitize_callback' => 'greenr_boolean',  
                         ), 
                         'contact' => array(
                             'type' => 'text',
                             'label' => __('Contact Us: Enter Contact Info Phone/Email.', 'greenr'),
-                            'description' => __('','greenr'),
                             'sanitize' => 'sanitize_text_field'
                         ),        
                     ),
@@ -304,199 +300,183 @@ $options = array(
             'sections' => array(
                 'slider_section' => array(
                     'title' => __('Flexslider Settings', 'greenr'),
-                    'description' => __('','greenr'),
                     'fields' => array(
                         'image_upload-1' => array(              
                             'type' => 'image',
                             'label' => __('Upload Image - Slider 1', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize_callback' => 'esc_url_raw',
+                            'sanitize_callback' => 'esc_url_raw',      
+                            'default' => GREENR_PARENT_URL .'/images/slide1.png',
                         ),
                         'flexcaption-1' => array(
                             'type' => 'text',
                             'label' => __('Enter Text (Flexcaption)- Slider 1', 'greenr'),
-                            'description' => __('','greenr'),
                             'sanitize' => 'sanitize_text_field',
+                            'default' =>  sprintf( __( '<h1>The Most Modern WordPress Theme</h1><h3> Slider Setting </h3><p>You haven\'t created any slider yet. Go to Customizer and click Home => FlexSlider Settings, edit or add  your images and Caption.<p><a href="%1$s"target="_blank"> Customizer </a></p>', 'greenr' ), admin_url('customize.php') ),
                         ),
                         'image_upload-2' => array(
                             'type' => 'image',
                             'label' => __('Upload Image- Slider 2', 'greenr'),
-                            'description' => __('','greenr'),
                             'sanitize_callback' => 'esc_url_raw',
                         ),
                         'flexcaption-2' => array(
                             'type' => 'text',
                             'label' => __('Enter Text (Flexcaption)- Slider 2', 'greenr'),
-                            'description' => __('','greenr'),
                             'sanitize' => 'sanitize_text_field'
                         ),
                         'image_upload-3' => array(
                             'type' => 'image',
                             'label' => __('Upload Image- Slider 3', 'greenr'),
-                            'description' => __('','greenr'),
                             'sanitize_callback' => 'esc_url_raw',
                         ),
                         'flexcaption-3' => array(
                             'type' => 'text',
                             'label' => __('Enter Text (Flexcaption)- Slider 3', 'greenr'),
-                            'description' => __('','greenr'),
                             'sanitize' => 'sanitize_text_field'
                         ),
                         'image_upload-4' => array(
                             'type' => 'image',
                             'label' => __('Upload Image- Slider 4', 'greenr'),
-                            'description' => __('','greenr'),
                             'sanitize_callback' => 'esc_url_raw',
                         ),
                         'flexcaption-4' => array(
                             'type' => 'text',
                             'label' => __('Enter Text (Flexcaption)- Slider 4', 'greenr'),
-                            'description' => __('','greenr'),
                             'sanitize' => 'sanitize_text_field'
                         ),
                         'image_upload-5' => array(
                             'type' => 'image',
                             'label' => __('Upload Image- Slider 5', 'greenr'),
-                            'description' => __('','greenr'),
                             'sanitize_callback' => 'esc_url_raw',
                         ),
                         'flexcaption-5' => array(
                             'type' => 'text',
                             'label' => __('Enter Text (Flexcaption)- Slider 5', 'greenr'),
-                            'description' => __('','greenr'),
                             'sanitize' => 'sanitize_text_field'
                         ),                  
                     ),
                 ),
                 'info_section' => array(
                     'title' => __('Info Section','greenr'),
-                    'description' => __('','greenr'),
                     'fields' => array (
                          'info' => array(
-                            'type' => 'text',
+                            'type' => 'text',    
                             'label' => __('Info', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => sprintf( __( '<div class="one-third column"><img src="%1$s"></div><div class="two-thirds column"><h2>Info text : Set your own custom text. Click  <a href="%2$s" target="_blank"> Customizer </a> and Goto Home => Info Section.</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "Content here, content here", making it look like readable English.</p><div class="row"><div class="eight columns"><h2>Branding Design</h2><p>Duis blandit eget leo eu interdum. Mauris accumsan euismod aliquet. Phasellus quis mi vitae orci tempor tempus vel sit amet nulla. Fusce gravida ligula et felis ultricies, lobortis interdum est ultrices. Praesent commodo justo eget sapien ornare hendrerit. Cras consequat lobortis velit, et hendrerit sapien. Sed commodo vel sem a convallis.</p><a href="#">Keep Reading</a></div><div class="eight columns"><h2>Web Development</h2><p>Duis blandit eget leo eu interdum. Mauris accumsan euismod aliquet. Phasellus quis mi vitae orci tempor tempus vel sit amet nulla. Fusce gravida ligula et felis ultricies, lobortis interdum est ultrices. Praesent commodo justo eget sapien ornare hendrerit. Cras consequat lobortis velit, et hendrerit sapien. Sed commodo vel sem a convallis.</p><a href="#">Keep Reading</a></div></div></div>', 'greenr'), get_template_directory_uri() . '/images/info.png', admin_url('customize.php') ),
                         ),
                     ),
                 ),
                 'testimonial_section' => array(
                     'title' => __('Testimonial Section','greenr'),
-                    'description' => __('','greenr'),
                     'fields' => array (
                          'testimonial' => array(
                             'type' => 'text',
                             'label' => __('Enter Testimonial Text', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' =>  sprintf( __( '<div class="container gap"><div class="testimonials"><ul class="slides"><li><div class="testimony"><img src="%1$s"><p>Testimonial text : Set your own custom text. Click  <a href="%2$s"target="_blank"> Customizer </a> and Goto Home => Testimonial Section .</p><p class="client"><strong>Lord Varys</strong>, Spy Master, Iron Throne</p></div></li></ul><br class="clear"/></div></div>', 'greenr' ), get_template_directory_uri() . '/images/client.png', admin_url('customize.php') ),
                         ),
                     ),
                 ),
                 'service_section-1' => array(
                     'title' => __('Service Section - 1','greenr'),
-                    'description' => __('','greenr'),
                     'fields' => array (
                         'service-icon-1' => array(    
                             'type' => 'text',
                             'label' => __('Service Icon: Enter Font Awesome Icon name. e.g. fa fa-bullhorn', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => 'fa fa-magic',
                         ),
                         'service-title-1' => array(
                             'type' => 'text',
                             'label' => __('Service Title: Enter title of this service', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => __( 'Featured Page', 'greenr' ),
                         ),
                         'service-description-1' => array(
                             'type' => 'text',
                             'label' => __('Service Description', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => sprintf( __( '<p>Featured page description text : use the page excerpt or set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Service Section -2 .</p>', 'greenr' ), admin_url('customize.php') ),
                         ),
                     ),
                 ),
                 'service_section-2' => array(
                     'title' => __('Service Section - 2','greenr'),
-                    'description' => __('','greenr'),
                     'fields' => array (
                         'service-icon-2' => array(
                             'type' => 'text',
                             'label' => __('Service Icon: Enter Font Awesome Icon name. e.g. fa fa-bullhorn', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => 'fa fa-magic',
                         ),
                         'service-title-2' => array(
                             'type' => 'text',
                             'label' => __('Service Title: Enter title of this service', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => __( 'Featured Page', 'greenr' ),
                         ),
                         'service-description-2' => array(
                             'type' => 'text',
                             'label' => __('Service Description', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => sprintf( __( '<p>Featured page description text : use the page excerpt or set your own custom text. Click  <a href="%1$s" target="_blank"> Customizer </a> and Goto Home => Service Section -2 .</p>', 'greenr' ), admin_url('customize.php') ),
                         ),
                     ),
                 ),
                 'service_section-3' => array(
                     'title' => __('Service Section - 3','greenr'),
-                    'description' => __('','greenr'),
                     'fields' => array (
                         'service-icon-3' => array(
                             'type' => 'text',
                             'label' => __('Service Icon: Enter Font Awesome Icon name. e.g. fa fa-bullhorn', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => 'fa fa-magic',
                         ),
                         'service-title-3' => array(
                             'type' => 'text',
                             'label' => __('Service Title: Enter title of this service', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => __( 'Featured Page', 'greenr' ),
                         ),
                         'service-description-3' => array(
                             'type' => 'text',
                             'label' => __('Service Description', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => sprintf( __( '<p>Featured page description text : use the page excerpt or set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Service Section -2 .</p>', 'greenr' ), admin_url('customize.php') ),
                         ),
                     ),
                 ),
                 'service_section-4' => array(
                     'title' => __('Service Section - 4','greenr'),
-                    'description' => __('','greenr'),
                     'fields' => array (
                         'service-icon-4' => array(
                             'type' => 'text',
                             'label' => __('Service Icon: Enter Font Awesome Icon name. e.g. fa fa-bullhorn', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => 'fa fa-magic',
                         ),
                         'service-title-4' => array(
                             'type' => 'text',
                             'label' => __('Service Title: Enter title of this service', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => __( 'Featured Page', 'greenr' ),
                         ),
                         'service-description-4' => array(
                             'type' => 'text',
                             'label' => __('Service Description', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => sprintf( __( '<p>Featured page description text : use the page excerpt or set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Service Section -2 .</p>', 'greenr' ), admin_url('customize.php') ),
                         ),
                     ),
                 ),
                 'additional_info_section' => array(
                     'title' => __('Additional Info Section','greenr'),
-                    'description' => __('','greenr'),
                     'fields' => array (
                          'cta' => array(
                             'type' => 'text',
                             'label' => __('Additional Info', 'greenr'),
-                            'description' => __('','greenr'),
-                            'sanitize' => 'sanitize_text_field'
+                            'sanitize' => 'sanitize_text_field',
+                            'default' => sprintf( __( '<div class="callout-widget"><div class="call-content"><p>CTA text : Set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Additional Info Section .</p></div><div class="callout-btn"><a href="#">Take Action</a></div><br class="clear"></div>', 'greenr'), admin_url('customize.php') ),
                         ),
                     ),
                 ),
