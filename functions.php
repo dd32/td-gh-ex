@@ -682,12 +682,15 @@ function virality_latest_thumb_widget() {
 
 class virality_latest_thumb extends WP_Widget {
 
-	//Name the widget
-	
-	function virality_latest_thumb () {
-	
-		$this->WP_Widget( 'virality_latest_thumb', 'Recent Posts w/ Thumbnails' );        
-	
+	/**
+	 * Sets up the widgets name etc
+	 */
+	public function __construct() {
+		parent::__construct(
+			'virality_latest_thumb', // Base ID
+			__( 'Recent Posts w/ Thumbnails', 'text_domain' ), // Name
+			array( 'description' => __( 'Recent Posts w/ Thumbnails', 'text_domain' ), ) // Args
+		);		
 	}
 	
 	//Designing the form widget, which will be displayed in the admin dashboard widget location.

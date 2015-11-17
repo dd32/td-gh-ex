@@ -73,6 +73,10 @@ This theme is bundled with TGM-Plugin-Activation
 =================================
 CHANGELOG
 =================================
+Version 1.0.7
+ * Fixed WP_Widget deprecated functionality
+ 
+
 Version 1.0.6
  * updated the TGM PLugin Activation version(v2.5.2)
  
