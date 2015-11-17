@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+GridBulletin version 2.7 - november 2015
+- file archive.php and single.php: relocated postmetadata
+
 GridBulletin version 2.6 - november 2015
 - updated archive.php (added the_archive_title and the_archive_description)
 - updated pot file
