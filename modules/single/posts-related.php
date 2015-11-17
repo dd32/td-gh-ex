@@ -30,7 +30,7 @@ if (is_single()) {
         if ($related_posts->have_posts()):
             ?>            
             <div id="related-post">
-                <h3 class="text-center"><?php esc_attr_e('Related articles', 'beatmix_lite'); ?></h3>
+                <h3 class="text-center"><?php esc_attr_e('Related articles', 'beat-mix-lite'); ?></h3>
                 <div class="row">
                     <?php
                     while ($related_posts->have_posts()):

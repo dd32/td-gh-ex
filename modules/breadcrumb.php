@@ -4,7 +4,7 @@ $current_class     = 'current-page';
 $prefix            = '  /  ';
 $breadcrumb_before = '<div class="breadcrumb clearfix"> ';
 $breadcrumb_after  = '</div>';
-$breadcrumb_home   = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . home_url() . '" itemprop="url"><span itemprop="title">' . esc_attr__('Home', 'beatmix_lite') . '</span></a></span>';
+$breadcrumb_home   = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . home_url() . '" itemprop="url"><span itemprop="title">' . esc_attr__('Home', 'beat-mix-lite') . '</span></a></span>';
 $breadcrumb        = $breadcrumb_home;
 $page_title        = '';
 
@@ -52,14 +52,14 @@ if (is_archive()) {
                 $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', get_day_link($date['y'], $date['m'], $date['d']), $date['d']);
     }else if (is_author()) {
         $author_id = get_queried_object_id();
-        $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, sprintf(__('Posts created by %1$s', 'beatmix_lite'), get_the_author_meta('display_name', $author_id)));
+        $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, sprintf(__('Posts created by %1$s', 'beat-mix-lite'), get_the_author_meta('display_name', $author_id)));
         $page_title = get_the_author_meta('display_name', $author_id);
     }
 } else if (is_search()) {
     $s = get_search_query();
     $c = $wp_query->found_posts;
-    $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, sprintf(__('Searched for "%s" return %s results', 'beatmix_lite'), $s, $c));
-    $page_title = esc_attr__('Search', 'beatmix_lite');
+    $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, sprintf(__('Searched for "%s" return %s results', 'beat-mix-lite'), $s, $c));
+    $page_title = esc_attr__('Search', 'beat-mix-lite');
 } else if (is_singular()) {
     if (is_page()) {
         if (is_front_page()) {
@@ -86,14 +86,14 @@ if (is_archive()) {
         $page_title = get_the_title(get_queried_object_id());
     }
 } else if (is_404()) {
-    $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, esc_attr__('Page not found', 'beatmix_lite'));
-    $page_title = esc_attr__('404', 'beatmix_lite');
+    $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, esc_attr__('Page not found', 'beat-mix-lite'));
+    $page_title = esc_attr__('404', 'beat-mix-lite');
 } else {
-    $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, esc_attr__('Latest News', 'beatmix_lite'));
-    $page_title = esc_attr__('Home', 'beatmix_lite');
+    $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, esc_attr__('Latest News', 'beat-mix-lite'));
+    $page_title = esc_attr__('Home', 'beat-mix-lite');
 }
 
-echo empty($page_title) ? '' : sprintf('<h1 class="page-title">%s</h1>', $page_title);
-echo $breadcrumb_before;
-echo apply_filters('beatmix_lite_get_breadcrumb', $breadcrumb, $current_class, $prefix);
-echo $breadcrumb_after;
+echo empty($page_title) ? '' : sprintf('<h1 class="page-title">%s</h1>', wp_kses_post( $page_title ));
+echo wp_kses_post( $breadcrumb_before );
+echo apply_filters('beatmix_lite_get_breadcrumb', wp_kses_post( $breadcrumb ), wp_kses_post( $current_class ), wp_kses_post( $prefix ));
+echo wp_kses_post( $breadcrumb_after );

@@ -8,13 +8,6 @@ require_once 'lib/customizer.php';
 require_once 'lib/widget-master.php';
 
 /*
-WIDGET
-----------
-Load custom widgets for theme.
-----------*/
-get_template_part('modules/widgets/posts', 'slider');
-
-/*
 INIT
 ----------
 init action hook & filter hook for "after_setup_theme"
@@ -24,15 +17,12 @@ add_action('after_setup_theme', 'beatmix_lite_after_setup_theme');
 
 function beatmix_lite_after_setup_theme() {
 
-    load_theme_textdomain('beatmix_lite', get_template_directory() . '/languages');
+    load_theme_textdomain('beat-mix-lite', get_template_directory() . '/languages');
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('html5');
     add_theme_support('loop-pagination');
     add_theme_support('automatic-feed-links');
-    add_theme_support('editor-style');
-
-    add_editor_style( 'custom-editor-style.css' );
 
     beatmix_lite_register_new_image_sizes();
 
@@ -41,9 +31,9 @@ function beatmix_lite_after_setup_theme() {
         $content_width = 870;
 
     register_nav_menus(array(
-        'primary-nav'   => esc_attr__('Primary Menu', 'beatmix_lite'),
-        'secondary-nav' => esc_attr__('Secondary Menu', 'beatmix_lite'),
-        'footer-nav'    => esc_attr__('Footer Menu', 'beatmix_lite'),
+        'primary-nav'   => esc_attr__('Primary Menu', 'beat-mix-lite'),
+        'secondary-nav' => esc_attr__('Secondary Menu', 'beat-mix-lite'),
+        'footer-nav'    => esc_attr__('Footer Menu', 'beat-mix-lite'),
     ));
 
     add_filter('beatmix_lite_customization_init_options', 'beatmix_lite_init_options');
@@ -134,7 +124,7 @@ function beatmix_lite_fonts_url() {
      * Translators: If there are characters in your language that are not supported
      * by Source Sans Pro, translate this to 'off'. Do not translate into your own language.
      */
-    if ( 'off' !== _x( 'on', 'Source Sans Pro', 'beatmix_lite' ) ) {
+    if ( 'off' !== _x( 'on', 'Source Sans Pro', 'beat-mix-lite' ) ) {
         $fonts[] = 'Source Sans Pro:400,200,300,600,700,400italic,300italic';
     }
 
@@ -142,7 +132,7 @@ function beatmix_lite_fonts_url() {
      * Translators: If there are characters in your language that are not supported
      * by Lato, translate this to 'off'. Do not translate into your own language.
      */
-    if ( 'off' !== _x( 'on', 'Lato', 'beatmix_lite' ) ) {
+    if ( 'off' !== _x( 'on', 'Lato', 'beat-mix-lite' ) ) {
         $fonts[] = 'Lato:400,700,300';
     }
 
@@ -150,7 +140,7 @@ function beatmix_lite_fonts_url() {
      * Translators: To add an additional character subset specific to your language,
      * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
      */
-    $subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'beatmix_lite' );
+    $subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'beat-mix-lite' );
 
     if ( 'cyrillic' == $subset ) {
         $subsets .= ',cyrillic,cyrillic-ext';
@@ -175,23 +165,23 @@ function beatmix_lite_fonts_url() {
 function beatmix_lite_init_options($options){
     $options['sections'][] = array(
         'id'    => 'beatmix_lite_opt_header',
-        'title' => esc_attr__('Header', 'beatmix_lite'));
+        'title' => esc_attr__('Header', 'beat-mix-lite'));
 
     $options['sections'][] = array(
         'id'    => 'beatmix_lite_opt_footer',
-        'title' => esc_attr__('Footer', 'beatmix_lite'));
+        'title' => esc_attr__('Footer', 'beat-mix-lite'));
 
     $options['sections'][] = array(
         'id'    => 'beatmix_lite_opt_socials',
-        'title' => esc_attr__('Social links', 'beatmix_lite'));
+        'title' => esc_attr__('Social links', 'beat-mix-lite'));
     
     $options['sections'][] = array(
         'id'    => 'beatmix_lite_opt_blog',
-        'title' => esc_attr__('Blog posts', 'beatmix_lite'));
+        'title' => esc_attr__('Blog posts', 'beat-mix-lite'));
 
     $options['settings'][] = array(
         'settings'  => 'is_show_signup_links',
-        'label'     => esc_attr__('Is show signup links (header)', 'beatmix_lite'),
+        'label'     => esc_attr__('Is show signup links (header)', 'beat-mix-lite'),
         'default'   => 1,
         'type'      => 'checkbox',        
         'section'   => 'beatmix_lite_opt_header',
@@ -199,7 +189,7 @@ function beatmix_lite_init_options($options){
 
     $options['settings'][] = array(
         'settings'  => 'is_show_headlines',
-        'label'     => esc_attr__('Is show headlines', 'beatmix_lite'),
+        'label'     => esc_attr__('Is show headlines', 'beat-mix-lite'),
         'default'   => 1,
         'type'      => 'checkbox',        
         'section'   => 'beatmix_lite_opt_header',
@@ -207,8 +197,8 @@ function beatmix_lite_init_options($options){
 
     $options['settings'][] = array(
         'settings'    => 'logo',
-        'label'       => esc_attr__('Logo', 'beatmix_lite'),
-        'description' => esc_attr__('Upload your logo image.', 'beatmix_lite'),
+        'label'       => esc_attr__('Logo', 'beat-mix-lite'),
+        'description' => esc_attr__('Upload your logo image.', 'beat-mix-lite'),
         'default'     => '',
         'type'        => 'image',
         'section'     => 'beatmix_lite_opt_header',
@@ -216,8 +206,8 @@ function beatmix_lite_init_options($options){
 
     $options['settings'][] = array(
         'settings'    => 'header-background',
-        'label'       => esc_attr__('Header background', 'beatmix_lite'),
-        'description' => esc_attr__('Upload your header background image.', 'beatmix_lite'),
+        'label'       => esc_attr__('Header background', 'beat-mix-lite'),
+        'description' => esc_attr__('Upload your header background image.', 'beat-mix-lite'),
         'default'     => '',
         'type'        => 'image',
         'section'     => 'beatmix_lite_opt_header',
@@ -225,8 +215,8 @@ function beatmix_lite_init_options($options){
 
     $options['settings'][] = array(
         'settings'    => 'copyright',
-        'label'       => esc_attr__('Copyright', 'beatmix_lite'),
-        'description' => esc_attr__('Your copyright information on footer.', 'beatmix_lite'),
+        'label'       => esc_attr__('Copyright', 'beat-mix-lite'),
+        'description' => esc_attr__('Your copyright information on footer.', 'beat-mix-lite'),
         'default'     => '',
         'type'        => 'textarea',
         'section'     => 'beatmix_lite_opt_footer',
@@ -234,12 +224,12 @@ function beatmix_lite_init_options($options){
 
     $options['settings'][] = array(
         'settings' => 'blog-layout',
-        'label'    => esc_attr__('Blog layout', 'beatmix_lite'),
+        'label'    => esc_attr__('Blog layout', 'beat-mix-lite'),
         'default'  => 'one-col',
         'type'     => 'select',
         'choices'  => array(
-            'one-col' => esc_attr__('One col', 'beatmix_lite'),
-            'masonry' => esc_attr__('Masonry', 'beatmix_lite')
+            'one-col' => esc_attr__('One col', 'beat-mix-lite'),
+            'masonry' => esc_attr__('Masonry', 'beat-mix-lite')
         ),
         'section'     => 'beatmix_lite_opt_blog',
         'transport'   => 'refresh');
@@ -268,13 +258,13 @@ function beatmix_lite_register_sidebar(){
 
     $sidebars = array(
         array(
-            'name' => esc_attr__('Footer 1st', 'beatmix_lite'),
+            'name' => esc_attr__('Footer 1st', 'beat-mix-lite'),
             'id'   => 'footer-1-sidebar'),
         array(
-            'name' => esc_attr__('Footer 2nd', 'beatmix_lite'),
+            'name' => esc_attr__('Footer 2nd', 'beat-mix-lite'),
             'id'   => 'footer-2-sidebar'),
         array(
-            'name' => esc_attr__('Footer 3rd', 'beatmix_lite'),
+            'name' => esc_attr__('Footer 3rd', 'beat-mix-lite'),
             'id'   => 'footer-3-sidebar')      
     );
 
@@ -286,14 +276,14 @@ function beatmix_lite_register_sidebar(){
 
 function beatmix_get_socials(){
     return apply_filters('beatmix_get_socials', array(
-        'facebook'    => array(__('Facebook', 'beatmix_lite'), 'fa fa-facebook'),
-        'twitter'     => array(__('Twitter', 'beatmix_lite'), 'fa fa-twitter'),
-        'pinterest'   => array(__('Pinterest', 'beatmix_lite'), 'fa fa-pinterest'),
-        'google-plus' => array(__('Google plus', 'beatmix_lite'), 'fa fa-google-plus'),
-        'youtube'     => array(__('Youtube', 'beatmix_lite'), 'fa fa-youtube'),
-        'vimeo'       => array(__('Vimeo', 'beatmix_lite'), 'fa fa-vimeo'),
-        'flickr'      => array(__('Flickr', 'beatmix_lite'), 'fa fa-flickr'),
-        'instagram'   => array(__('Instagram', 'beatmix_lite'), 'fa fa-instagram'),
+        'facebook'    => array(__('Facebook', 'beat-mix-lite'), 'fa fa-facebook'),
+        'twitter'     => array(__('Twitter', 'beat-mix-lite'), 'fa fa-twitter'),
+        'pinterest'   => array(__('Pinterest', 'beat-mix-lite'), 'fa fa-pinterest'),
+        'google-plus' => array(__('Google plus', 'beat-mix-lite'), 'fa fa-google-plus'),
+        'youtube'     => array(__('Youtube', 'beat-mix-lite'), 'fa fa-youtube'),
+        'vimeo'       => array(__('Vimeo', 'beat-mix-lite'), 'fa fa-vimeo'),
+        'flickr'      => array(__('Flickr', 'beat-mix-lite'), 'fa fa-flickr'),
+        'instagram'   => array(__('Instagram', 'beat-mix-lite'), 'fa fa-instagram'),
     ));
 }
 

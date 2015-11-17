@@ -5,7 +5,7 @@
     if (have_comments()) :        
         ?>     
         <h3 class="text-center">
-            <?php printf(  esc_attr__('%1$s Comments', 'beatmix_lite'), get_comments_number());?>
+            <?php printf(  esc_attr__('%1$s Comments', 'beat-mix-lite'), get_comments_number());?>
         </h3> 
         
         <ol class="comments-list clearfix">
@@ -23,14 +23,14 @@
             <div class="pagination kopa-comment-pagination">  
                 <?php
                 paginate_comments_links(array(
-                    'prev_text' => esc_attr__('<span>&laquo;</span> Previous', 'beatmix_lite'),
-                    'next_text' => esc_attr__('Next <span>&raquo;</span>', 'beatmix_lite')
+                    'prev_text' => esc_attr__('<span>&laquo;</span> Previous', 'beat-mix-lite'),
+                    'next_text' => esc_attr__('Next <span>&raquo;</span>', 'beat-mix-lite')
                 ));
                 ?>
             </div>
         <?php endif; ?>
         <?php if (!comments_open() && get_comments_number()) : ?>
-            <blockquote><?php esc_attr_e('Comments are closed.', 'beatmix_lite'); ?></blockquote>
+            <blockquote><?php esc_attr_e('Comments are closed.', 'beat-mix-lite'); ?></blockquote>
         <?php endif; ?>    
         <?php
     endif;    
@@ -59,19 +59,19 @@ function beatmix_lite_comment_form($args = array(), $post_id = null) {
     $fields['author'] = '<div class="row">';  
     $fields['author'] .= '<div class="col-md-4 col-sm-4 col-xs-4">';    
     $fields['author'] .= '<p class="input-block">';    
-    $fields['author'] .= sprintf('<input type="text" value="%1$s" id="comment_name" name="author" size="30" onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>', esc_attr__('Name *', 'beatmix_lite'), $aria_req);
+    $fields['author'] .= sprintf('<input type="text" value="%1$s" id="comment_name" name="author" size="30" onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>', esc_attr__('Name *', 'beat-mix-lite'), $aria_req);
     $fields['author'] .= '</p>';  
     $fields['author'] .= '</div>'; 
     
     $fields['email']  = '<div class="col-md-4 col-sm-4 col-xs-4">';  
     $fields['email']  .= '<p class="input-block">';    
-    $fields['email']  .= sprintf('<input type="text" value="%1$s" id="comment_email" name="email" size="30"  onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>',  esc_attr__('Email *', 'beatmix_lite'), $aria_req);
+    $fields['email']  .= sprintf('<input type="text" value="%1$s" id="comment_email" name="email" size="30"  onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>',  esc_attr__('Email *', 'beat-mix-lite'), $aria_req);
     $fields['email']  .= '</p>';  
     $fields['email']  .= '</div>';     
     
     $fields['url']    = '<div class="col-md-4 col-sm-4 col-xs-4">';  
     $fields['url']    .= '<p class="input-block">';    
-    $fields['url']    .= sprintf('<input type="text" value="%1$s" id="comment_url" name="url" size="30"  onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>', esc_attr__('Website', 'beatmix_lite'), $aria_req);
+    $fields['url']    .= sprintf('<input type="text" value="%1$s" id="comment_url" name="url" size="30"  onblur="if(this.value==\'\')this.value=\'%1$s\';" onfocus="if(this.value==\'%1$s\')this.value=\'\';" %2$s>', esc_attr__('Website', 'beat-mix-lite'), $aria_req);
     $fields['url']    .= '</p>';  
     $fields['url']    .= '</div>';  
     $fields['url']    .= '</div>'; 
@@ -84,7 +84,7 @@ function beatmix_lite_comment_form($args = array(), $post_id = null) {
         placeholder="%s" %s></textarea></p>
         </div>
         </div>', 
-        esc_attr__('Your comment (*)', 'beatmix_lite'), 
+        esc_attr__('Your comment (*)', 'beat-mix-lite'), 
         $aria_req);            
     
 
@@ -93,16 +93,16 @@ function beatmix_lite_comment_form($args = array(), $post_id = null) {
     $defaults = array(
         'fields'               => $fields,
         'comment_field'        => $comment_field,
-        'must_log_in'          => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', 'beatmix_lite'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
-        'logged_in_as'         => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'beatmix_lite'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+        'must_log_in'          => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', 'beat-mix-lite'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+        'logged_in_as'         => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'beat-mix-lite'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
         'comment_notes_before' => '',
         'comment_notes_after'  => '',
         'id_form'              => 'comments-form',
         'id_submit'            => 'submit-comment',
-        'title_reply'          => esc_attr__('Leave a Reply', 'beatmix_lite'),
-        'title_reply_to'       => esc_attr__('Leave a Reply to %s', 'beatmix_lite'),
-        'cancel_reply_link'    => esc_attr__('(cancel)', 'beatmix_lite'),
-        'label_submit'         => esc_attr__('Post Comment', 'beatmix_lite'),
+        'title_reply'          => esc_attr__('Leave a Reply', 'beat-mix-lite'),
+        'title_reply_to'       => esc_attr__('Leave a Reply to %s', 'beat-mix-lite'),
+        'cancel_reply_link'    => esc_attr__('(cancel)', 'beat-mix-lite'),
+        'label_submit'         => esc_attr__('Post Comment', 'beat-mix-lite'),
         'format'               => 'xhtml',        
     );
     $args = wp_parse_args($args, apply_filters('comment_form_defaults', $defaults));
@@ -117,21 +117,21 @@ function beatmix_lite_comment_form($args = array(), $post_id = null) {
             </h3>
 
             <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
-                <?php echo $args['must_log_in']; ?>
+                <?php echo wp_kses_post( $args['must_log_in'] ); ?>
                 <?php
                 do_action('comment_form_must_log_in_after');
                 ?>
             <?php else : ?> 
 
                 <form action="<?php echo esc_url(site_url('/wp-comments-post.php')); ?>" method="post" id="<?php echo esc_attr($args['id_form']); ?>" class="comment-form clearfix" <?php echo $html5 ? ' novalidate' : ''; ?>>
-                    <p class="comment-notes"><?php echo $args['comment_notes_before']; ?></p>
+                    <p class="comment-notes"><?php echo wp_kses_post( $args['comment_notes_before'] ); ?></p>
                    
                     <?php
                     do_action('comment_form_top');
                     ?>
                     <?php if (is_user_logged_in()) : ?>
                         <?php
-                        echo apply_filters('comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity);
+                        echo apply_filters('comment_form_logged_in', $args['logged_in_as'], wp_kses_post( $commenter ), wp_kses_post( $user_identity ) );
                         ?>
                         <?php
                         do_action('comment_form_logged_in_after', $commenter, $user_identity);
@@ -140,15 +140,15 @@ function beatmix_lite_comment_form($args = array(), $post_id = null) {
                         <?php
                         do_action('comment_form_before_fields');
                         foreach ((array) $args['fields'] as $name => $field) {
-                            echo apply_filters("comment_form_field_{$name}", $field) . "\n";
+                            echo apply_filters("comment_form_field_{$name}", sprintf('%s', $field ) ) . "\n";
                         }
                         do_action('comment_form_after_fields');
                         ?>
                     <?php endif; ?>
                     <?php
-                    echo apply_filters('comment_form_field_comment', $args['comment_field']);
+                    echo apply_filters('comment_form_field_comment', sprintf( '%s', $args['comment_field']) );
                     ?>
-                    <?php echo $args['comment_notes_after']; ?>
+                    <?php echo wp_kses_post( $args['comment_notes_after'] ); ?>
                                         
                     <div class="row">
                         <div class="col-md-12">
@@ -191,7 +191,7 @@ function beatmix_lite_list_comments($comment, $args, $depth) {
                     </div>                                                                
 
                     <span class="comment-reply-link pull-right">
-                        <?php comment_reply_link(array_merge($args, array('reply_text' => '<i class="fa fa-mail-reply"></i><span>'. esc_attr__('Reply', 'beatmix_lite') .'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>                        
+                        <?php comment_reply_link(array_merge($args, array('reply_text' => '<i class="fa fa-mail-reply"></i><span>'. esc_attr__('Reply', 'beat-mix-lite') .'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>                        
                     </span>
 
                     <div class="clear"></div>
@@ -201,7 +201,7 @@ function beatmix_lite_list_comments($comment, $args, $depth) {
                 </div>                                
                 <footer class="text-right text-uppercase">
                     <span class="entry-date"><?php comment_time(get_option('date_format') . ' - ' . get_option('time_format')); ?></span>                    
-                    <?php edit_comment_link(__('<span>&nbsp;/&nbsp;</span> Edit', 'beatmix_lite'), ' ', ''); ?>                    
+                    <?php edit_comment_link(__('<span>&nbsp;/&nbsp;</span> Edit', 'beat-mix-lite'), ' ', ''); ?>                    
                 </footer>
             </div><!--comment-body -->            
      
