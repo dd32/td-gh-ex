@@ -76,6 +76,7 @@
  * catchbox_after hook
  *
  * @hooked catchbox_scrollup - 10 
+ * @hooked catchbox_mobile_menus - 20
  */
 do_action( 'catchbox_after' );
 ?>
