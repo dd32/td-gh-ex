@@ -68,6 +68,11 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.6.8
+* Styling tweaks
+* Fixed broken help link
+* Fixed email link bug
+
 #### 1.6.7
 ** Added/improved nested mobile navigation.
 ** Remove slider category from sidebar widget.

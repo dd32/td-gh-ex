@@ -4,7 +4,7 @@ Theme URI: http://kairaweb.com/theme/albar/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: Albar is a responsive multipurpose Wordpress theme. You can use Albar to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like SiteOrigin's Page Builder, WooCommerce, Contact Form 7 and more.
-Version: 1.6.7
+Version: 1.6.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
@@ -411,17 +411,16 @@ a:active {
 	padding-right: 0px !important;
 }
 .navigation-main ul ul {
-	background-color: rgba(255, 255, 255, 0.96);
-    border-radius: 0 0 2px 2px;
-    border-top: 1px solid rgba(0,0,0,0.02);
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-    display: none;
-    float: left;
-    left: 0;
-    position: absolute;
-    
+	background-color: rgba(255, 255, 255, 0.98);
+	border-radius: 0 0 2px 2px;
+	border-top: 1px solid rgba(0,0,0,0.02);
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	display: none;
+	float: left;
+	left: 0;
+	position: absolute;
 	top: 59px;
-    z-index: 99999;
+	z-index: 99999;
 }
 .navigation-main ul ul ul {
 	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.12);
@@ -1998,6 +1997,7 @@ body.admin-bar .stuck {
 #alba-home-slider-next {
     position: absolute;
     top: 50%;
+    background-image: none !important;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 200px;
     color: #FFFFFF;

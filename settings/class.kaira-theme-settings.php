@@ -248,7 +248,7 @@ class Kaira_theme_settings {
                 
             case 'upsell':
                 echo '<a href="' . esc_url( $desc ) . '" class="kaira-upsell-btn" target="_blank">Upgrade to Albar Premium</a>';
-                echo '<br /><span class="description">' . __( 'Upgrade to premium for only <b>$16</b>', 'albar' ) . '</span></label>';
+                echo '<br /><span class="description">' . __( 'Upgrade to premium', 'albar' ) . '</span></label>';
                 break;
 						
 			case 'text':
@@ -324,7 +324,7 @@ class Kaira_theme_settings {
         $this->settings['kra-enable-home-slider'] = array(
             'section' => 'slider',
             'title'   => __( 'Enable Slider', 'albar' ),
-            'desc'    => __( 'Click to enable the default homepage slider<br /><br />See <a href="http://demo.kairaweb.com/albar/installing-premium/albar-default-slider/" target="_blank">instructions here</a> on setting up the default slider', 'albar' ),
+            'desc'    => __( 'Click to enable the default homepage slider<br /><br />See <a href="http://kairaweb.com/support/topic/setting-up-the-default-slider/" target="_blank">instructions here</a> on setting up the default slider', 'albar' ),
             'type'    => 'checkbox',
             'std'     => 1 // Set to 1 to be checked by default
         );
@@ -506,7 +506,7 @@ class Kaira_theme_settings {
             'section' => 'social',
             'title'   => __( 'Email Address', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'url',
+            'type'    => 'text',
             'std'     => ''
         );
         $this->settings['kra-social-skype'] = array(
