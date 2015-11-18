@@ -19,3 +19,6 @@ i) Resolved slider images issue and added theme instructions file.
 
 Version 1.2.4
 i) Added option for hide purchase button and documentation changed.
+
+Version 1.2.5
+i) Theme screenshot changed.
