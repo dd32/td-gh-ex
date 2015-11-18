@@ -20,8 +20,7 @@ function anderson_enqueue_scripts() {
 	$theme_options = anderson_theme_options();
 	
 	// Register and Enqueue FlexSlider JS and CSS if necessary
-	if ( ( isset($theme_options['slider_active']) and $theme_options['slider_active'] == true )
-		|| ( isset($theme_options['slider_active_magazine']) and $theme_options['slider_active_magazine'] == true ) ) :
+	if ( true == $theme_options['slider_active'] or true == $theme_options['slider_active_magazine'] or is_page_template('template-slider.php') ) :
 
 		// FlexSlider CSS
 		wp_enqueue_style('anderson-lite-flexslider', get_template_directory_uri() . '/css/flexslider.css');
@@ -161,8 +160,8 @@ function anderson_register_sidebars() {
 		'description' => esc_html__( 'Appears on Magazine Homepage template only. You can use the Category Posts widgets here.', 'anderson-lite' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle"><span>',
-		'after_title' => '</span></h3>',
+		'before_title' => '<h2 class="widgettitle"><span>',
+		'after_title' => '</span></h2>',
 	));
 	
 }
