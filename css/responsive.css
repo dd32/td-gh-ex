@@ -132,24 +132,12 @@ Responsive Style
 .sidr ul li {
 	display:block;
 	margin: 0;
-	line-height: 48px;
+	line-height: 1.8;
 	border-top: 1px solid #4d4d4d;
 	border-bottom: 1px solid #1a1a1a;
 }
 
-.sidr ul li:hover, 
-.sidr ul li.active, 
-.sidr ul li.sidr-class-active {
-	border-top: none;
-	line-height: 49px;
-}
-
-.sidr ul li:hover>a, 
-.sidr ul li:hover>span, 
-.sidr ul li.active>a, 
-.sidr ul li.active>span, 
-.sidr ul li.sidr-class-active>a, 
-.sidr ul li.sidr-class-active>span {
+.sidr ul li a:hover {
 	-webkit-box-shadow: inset 0 0 15px 3px #222;
 	-moz-box-shadow: inset 0 0 15px 3px #222;
 	box-shadow: inset 0 0 15px 3px #222;
@@ -157,7 +145,7 @@ Responsive Style
 
 .sidr ul li a, 
 .sidr ul li span {
-	padding: 0 15px;
+	padding: 10px 15px;
 	display: block;
 	text-decoration: none;
 	color: #fff;
@@ -169,30 +157,12 @@ Responsive Style
 }
 
 .sidr ul li ul li {
-	line-height: 40px;
+	line-height: 1.6;
 	font-size: 13px;
 }
 
 .sidr ul li ul li:last-child {
 	border-bottom: none;
-}
-
-.sidr ul li ul li:hover, 
-.sidr ul li ul li.active, 
-.sidr ul li ul li.sidr-class-active {
-	border-top: none;
-	line-height: 41px;
-}
-
-.sidr ul li ul li:hover>a, 
-.sidr ul li ul li:hover>span, 
-.sidr ul li ul li.active>a, 
-.sidr ul li ul li.active>span, 
-.sidr ul li ul li.sidr-class-active>a, 
-.sidr ul li ul li.sidr-class-active>span {
-	-webkit-box-shadow: inset 0 0 15px 3px #222;
-	-moz-box-shadow: inset 0 0 15px 3px #222;
-	box-shadow: inset 0 0 15px 3px #222;
 }
 
 .sidr ul li ul li a, 
@@ -1197,13 +1167,13 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-11. x <= 479px (iPhone Portrait)
+11. x <= 480px (iPhone Portrait)
 --------------------------------------------------------------*/
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 480px) {
 	.site,
 	.no-sidebar.one-column .site {
 		margin: 0 auto;
-		width: 320px;
+		width: 380px;
 	}
 
 	#site-branding {
@@ -1215,11 +1185,11 @@ Responsive Style
 	}
 
 	.mobile-menu-one #site-branding {
-	    width: 270px;
+	    width: 330px;
 	}
 
 	.mobile-menu-two #site-branding {
-	    width: 240px;
+	    width: 300px;
 	}
 
 	#promotion-message .section,	
@@ -1273,7 +1243,26 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-12. x <= 319px
+12. x <= 400px
+--------------------------------------------------------------*/
+
+@media screen and (max-width: 400px) {
+	.site {
+		width: 320px;
+		margin: 0 auto;
+	}	
+	.mobile-menu-one #site-branding {
+	    width: 270px;
+	}	
+
+	.mobile-menu-two #site-branding,
+	.mobile-menu-three #site-branding {
+	    width: 240px;
+	}	
+}
+
+/*--------------------------------------------------------------
+13. x <= 319px
 --------------------------------------------------------------*/
 @media screen and (max-width: 319px) {
 	.site,
@@ -1364,7 +1353,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-13. Form Zoom Fix
+14. Form Zoom Fix
 --------------------------------------------------------------*/
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
 	select:focus, 

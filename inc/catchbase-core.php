@@ -226,7 +226,7 @@ function catchbase_scripts() {
 	wp_enqueue_style( 'catchbase-responsive', get_template_directory_uri() . '/css/responsive.css' );
 
 	//Responsive Menu		
-	wp_enqueue_script( 'sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1', false );	
+	wp_enqueue_script( 'sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1.1', false );	
 
 	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.1', true );
 	

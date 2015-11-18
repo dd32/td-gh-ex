@@ -24,7 +24,7 @@ if( !function_exists( 'catchbase_featured_slider' ) ) :
  */
 function catchbase_featured_slider() {
 	global $post, $wp_query;
-	//catchbase_flush_transients();
+	catchbase_flush_transients();
 	// get data value from options
 	$options 		= catchbase_get_theme_options();
 	$enableslider 	= $options['featured_slider_option'];
@@ -50,6 +50,7 @@ function catchbase_featured_slider() {
 						    data-cycle-pause-on-hover="true"
 						    data-cycle-swipe="true"
 						    data-cycle-auto-height=container
+						    data-cycle-loop=1
 						    data-cycle-fx="'. esc_attr( $options['featured_slide_transition_effect'] ) .'"
 							data-cycle-speed="'. esc_attr( $options['featured_slide_transition_length'] ) * 1000 .'"
 							data-cycle-timeout="'. esc_attr( $options['featured_slide_transition_delay'] ) * 1000 .'"

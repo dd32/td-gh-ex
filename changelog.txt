@@ -1,7 +1,14 @@
 == Change log ==
 
+= 2.6 =
+* Added: Danish translation da_DK.po and da_DK.mo
+* Bug Fixed: Featured Slider Transition Effect Not Updating
+* Updated: Text Domain in style.css updated to catch-base
+* Updated: responsive menu script
+* Updated: responsive css to fix iphone6 issue
+
 = 2.5 =
-* Added Lithuanian translation lt_LT.po and lt_LT.mo
+* Added: Lithuanian translation lt_LT.po and lt_LT.mo
 
 = 2.4.1 =
 * Bug Fixed: Breadcrumb css issue in IE 11 ( Reported by Mark )

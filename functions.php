@@ -12,8 +12,11 @@
  */
 
 //define theme version
-if ( !defined( 'CATCHBASE_THEME_VERSION' ) )
-define ( 'CATCHBASE_THEME_VERSION', '2.5' );
+if ( !defined( 'CATCHBASE_THEME_VERSION' ) ) {
+	$theme_data = wp_get_theme();
+	
+	define ( 'CATCHBASE_THEME_VERSION', $theme_data->get( 'Version' ) );
+}
 
 /**
  * Implement the core functions

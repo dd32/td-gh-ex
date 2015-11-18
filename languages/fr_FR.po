@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
-"POT-Creation-Date: 2015-10-03 20:32+0545\n"
+"POT-Creation-Date: 2015-11-18 23:02+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -684,10 +684,10 @@ msgstr ""
 #: ../inc/catchbase-featured-content.php:269
 #: ../inc/catchbase-featured-content.php:278
 #: ../inc/catchbase-featured-content.php:289
-#: ../inc/catchbase-featured-slider.php:181
-#: ../inc/catchbase-featured-slider.php:190
-#: ../inc/catchbase-featured-slider.php:206
-#: ../inc/catchbase-featured-slider.php:216
+#: ../inc/catchbase-featured-slider.php:182
+#: ../inc/catchbase-featured-slider.php:191
+#: ../inc/catchbase-featured-slider.php:207
+#: ../inc/catchbase-featured-slider.php:217
 msgid "Permalink to:"
 msgstr "Permalien à:"
 

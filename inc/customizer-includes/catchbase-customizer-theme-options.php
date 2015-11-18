@@ -37,7 +37,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_checkbox'
 	) );
 
-	$wp_customize->add_control( 'catchbase_breadcumb_options', array(
+	$wp_customize->add_control( 'catchbase_theme_options[breadcumb_option]', array(
 		'label'    => __( 'Check to enable Breadcrumb', 'catch-base' ),
 		'section'  => 'catchbase_breadcumb_options',
 		'settings' => 'catchbase_theme_options[breadcumb_option]',
@@ -50,7 +50,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_checkbox'
 	) );
 
-	$wp_customize->add_control( 'catchbase_breadcumb_onhomepage', array(
+	$wp_customize->add_control( 'catchbase_theme_options[breadcumb_onhomepage]', array(
 		'label'    => __( 'Check to enable Breadcrumb on Homepage', 'catch-base' ),
 		'section'  => 'catchbase_breadcumb_options',
 		'settings' => 'catchbase_theme_options[breadcumb_onhomepage]',
@@ -63,7 +63,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_control( 'catchbase_breadcumb_seperator', array(
+	$wp_customize->add_control( 'catchbase_theme_options[breadcumb_seperator]', array(
 			'input_attrs' => array(
 	            'style' => 'width: 40px;'
             	),
@@ -111,7 +111,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'absint',
 	) );
 
-	$wp_customize->add_control( 'catchbase_excerpt_length', array(
+	$wp_customize->add_control( 'catchbase_theme_options[excerpt_length]', array(
 		'description' => __('Excerpt length. Default is 40 words', 'catch-base'),
 		'input_attrs' => array(
             'min'   => 10,
@@ -132,7 +132,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_control( 'catchbase_excerpt_more_text', array(
+	$wp_customize->add_control( 'catchbase_theme_options[excerpt_more_text]', array(
 		'label'    => __( 'Read More Text', 'catch-base' ),
 		'section'  => 'catchbase_excerpt_options',
 		'settings' => 'catchbase_theme_options[excerpt_more_text]',
@@ -313,7 +313,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		$choices[$pagination_type['value']] = $pagination_type['label'];
 	}
 
-	$wp_customize->add_control( 'catchbase_pagination_options', array(
+	$wp_customize->add_control( 'catchbase_theme_options[pagination_type]', array(
 		'choices'  => $choices,
 		'label'    => __( 'Pagination type', 'catch-base' ),
 		'section'  => 'catchbase_pagination_options',
