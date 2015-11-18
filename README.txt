@@ -61,6 +61,9 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.5
+* Add given fix normalize path
+
 #### 1.2.4
 * Bug fixes
 * Fix translation textdomain error
