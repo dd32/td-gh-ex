@@ -1,17 +1,24 @@
 /*
 Theme Name: Avien Light
-Theme URI: http://themeofwp.com/avien/
-Author: <a href="http://themeofwp.com" title="Visit author homepage">themeofwp.com</a> - <a href="http://themeofwp.com/downloads/avien-ultra-responsive-wordpress-theme/" title="Buy Pro Version">Buy Pro Version</a>
+Theme URI: http://themeofwp.com/avienlite/
+Author: ThemeofWP.com
 Author URI: http://themeofwp.com/
 Description: Avien Ultra Responsive WordPress Theme
-Version: 1.5
+Version: 1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: avien-light
-Domain Path: /languages/
-Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar
-*/
+Text Domain: themeofwp
+Tags: white, one-column, two-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-header, flexible-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
 
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Avien Light is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
 
 /*		Main Styles
 --------------------------------------------------------------------------------------------------*/
@@ -126,9 +133,12 @@ body {
 }
 
 .nopadding {
-	padding: 0;
+	padding: 0 !important;
 }
 
+.site-header { 
+	background: #ffffff ;
+}
 
 /*		Images
 --------------------------------------------------------------------------------------------------*/
@@ -1055,7 +1065,6 @@ nav#filter a {
 	z-index: 9999;
 }
 .boxes {
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0px, rgba(255, 255, 255, 0) 50%) repeat scroll 0 0 rgba(255, 255, 255, 0.95);
 	border-top: 3px solid #a9d360;
 	margin: 0 auto;
 	width: 100%;
@@ -1212,8 +1221,8 @@ a.navbar-brand img{
 }
 
 .navbar-toggle .icon-bar {
-	background-color: #ffffff;
-	border-color: #ffffff;
+	background-color: #666;
+	border-color: #666;
 }
 
 .navbar-toggle {
@@ -1409,7 +1418,7 @@ a.navbar-brand img{
 
 /*		404
 --------------------------------------------------------------------------------------------------*/
-#error {
+#error, .error404 {
   text-align: center;
   margin-bottom: 50px;
 }
@@ -2545,6 +2554,7 @@ ul.breadcrumb > li{
 --------------------------------------------------------------------------------------------------*/
 #main-slider {
   overflow: hidden;
+  margin-top: -5px;
 }
 #main-slider .item {
   height: 558px;
@@ -2996,10 +3006,6 @@ img::-moz-selection {
 }
 
 
-/* Main Content Style */
-#boxed, #fullwidth{ 
-background: #ffffff}
-
 #boxed{ 
 max-width: 90%;
 
@@ -3033,7 +3039,7 @@ color: #ffffff;}
 
 /* Top Header Link Hover Color */
 .topheader a:hover {
-color: #B6D79E;} 
+color: #000000;} 
 
 /* Text Logo */
 .text-logo {

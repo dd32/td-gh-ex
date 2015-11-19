@@ -1,43 +1,24 @@
-<!DOCTYPE html>
+<?php
+/**
+ * The header for our theme.
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Avien_Light
+ */
+
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-
-<!-- start meta -->
+<head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<!-- end meta -->
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<!--[if IE]>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<![endif]-->
-
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri() ?>/js/html5shiv.js"></script>
-<script src="<?php echo get_template_directory_uri() ?>/js/respond.min.js"></script>
-<![endif]-->
-	
 <?php wp_head(); ?>
-
-<!--/ custom header option per page basis-->
-	<style style="text/css">
-		body {
-			padding-top: 99px;	
-		}
-		
-		@media(max-width:767px) {
-					
-			body {
-				padding-top: 129px;
-			}
-		}
-	</style>
-<!--/ custom header option per page basis-->
-
-</head><!--/head-->
+</head>
 
 <body <?php body_class() ?>>
   
@@ -45,7 +26,7 @@
 	<div id="fullwidth" class="container-fluid nopadding">
  	
 		<!--/ header options-->	
-		<header id="mainheader" class="navbar navbar-wrapper navbar-fixed-top" role="banner">
+		<header id="header" class="navbar navbar-wrapper navbar-fixed-top site-header" role="banner">
 			
 				<!--/.boxes -->
 				<div class="boxes">
@@ -59,7 +40,7 @@
 							<!--/.row -->
 							<div class="row">
 							
-								<?php echo themeofwp_layout() ;?>
+								<div class="col-md-12 colwrapper">
 							
 									<!--/.contact-->
 									<div class="col-sm-6 text-left contact">
@@ -125,10 +106,10 @@
 								<div class="col-md-12 colwrapper">
 					
 									<!--/.navbar-header -->
-									<div class="navbar-header">
+									<div class="navbar-header site-title">
 										
 										<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-										  <span class="sr-only"><?php _e('Toggle navigation', 'avien-light'); ?></span>
+										  <span class="sr-only"><?php _e('Toggle navigation', 'themeofwp'); ?></span>
 										  <span class="icon-bar"></span>
 										  <span class="icon-bar"></span>
 										  <span class="icon-bar"></span>
@@ -136,7 +117,7 @@
 										
 										 <a class="navbar-brand text-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 										<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>
-										<span><?php bloginfo('description'); ?></span>
+										<span class="site-description"><?php bloginfo('description'); ?></span>
 										</a>
 										
 									</div>
@@ -221,15 +202,4 @@
 				<!--/.boxes -->
 				
 			</header><!--/#header-->
-	<!--/ header options-->
-
-	<?php if ( !is_home() ) { ?>
-	<!--/ mainsubtitle-->
-	<div id="subtitle">
-		<div class="container">
-			<?php get_template_part( 'inc/sub', 'header' );?>
-		</div>
-	</div>
-	<!--/ mainsubtitle-->
-	<?php } ?>
-	
+			<!--/ header options-->

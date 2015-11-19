@@ -1,3 +1,19 @@
+<?php
+/**
+ * The template for displaying the footer.
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Avien_Light
+ */
+
+?>
+
+</div>
+<!--/.boxed / fullwidth-->
+
 		<!--/.footermain-->
 		<section id="bottom" class="footermain">
 
@@ -8,7 +24,7 @@
 				<div class="row">
 					
 					<!--/.themeofwp_layout-->
-					<?php echo themeofwp_layout() ;?>
+					<div class="col-md-12 colwrapper">
 						<?php dynamic_sidebar('bottom'); ?>
 					</div>
 					<!--/.themeofwp_layout-->
@@ -58,9 +74,6 @@
 
 		</footer>
 		<!--/footerbottom-->
-
-</div>
-<!--/.boxed / fullwidth-->
 
 <!--/ back to top-->
 <a href="#" id='toTop'><i class="fa fa-angle-up"></i></a>

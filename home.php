@@ -14,6 +14,49 @@
 
 get_header(); ?>
 
+	<section id="main-slider">
+		
+		<!--/.owl-carousel-->
+		<div class="owl-carousel">
+
+			<?php
+				// Query Out Database
+				$wpbp = new WP_Query(array( 'post_type' => 'post', 'showposts'=>'4' ) );
+				
+				// Begin The Loop
+				if ($wpbp->have_posts()) : while ($wpbp->have_posts()) : $wpbp->the_post();
+				
+				global $post;
+				$ID = $post->ID;
+			?>
+			
+			<!--/.item-->
+			<div class="item parallax" style="background-image: url(<?php if ( has_post_thumbnail() ) { $feat_image_url = wp_get_attachment_url( get_post_thumbnail_id() ); echo $feat_image_url ; }; ?>) ; no-repeat center center fixed !important; -webkit-background-size: cover; -moz-background-size: cover !important; background-size: cover !important; -o-background-size: cover !important;" data-speed="2">
+				<span style="background-color: rgb(51, 51, 51); opacity: 0.20;" class="slider-overlay"></span>
+				<div class="slider-inner">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="carousel-content">
+									<h2><?php echo get_the_title() ?></h2>
+									<p><?php the_excerpt(); ?></p>
+									<a class="btn btn-default btn-lg" href="<?php the_permalink(); ?>">Read More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/.item-->
+			
+		<?php endwhile; endif; wp_reset_query();// END the Wordpress Loop ?>	
+			
+		</div>
+		<!--/.owl-carousel-->
+			
+	</section>
+	<!--/#main-slider-->
+
 	<!--/.container -->
 	<div class="container">
 	
@@ -51,11 +94,11 @@ get_header(); ?>
 
 			<?php the_posts_navigation(); ?>
 
-			<?php else : ?>
+		<?php else : ?>
 
-				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-			<?php endif; ?>
+		<?php endif; ?>
 
 			</div>
 			<!-- #content -->
