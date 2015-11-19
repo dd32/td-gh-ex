@@ -102,7 +102,7 @@ $options[] = array(
             <li>' . esc_attr__( 'Responsive Website Design.', 'promax' ) . '</li>
             <li>' . esc_attr__( 'Different Website Layout to Select.', 'promax' ) . '</li>
             <li>' . esc_attr__( 'Many of Other customize feature for your blog or website.', 'promax' ) . '</li>
-            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/promax','promax')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'promax' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://www.insertcart.com/contact-us/','promax')) . '" target="_blank">' . esc_attr__( 'Need Support !', 'promax' ) . '</a></span></p>',
+            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/product/promax-wordpress-theme/','promax')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'promax' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://www.insertcart.com/contact-us/','promax')) . '" target="_blank">' . esc_attr__( 'Need Support !', 'promax' ) . '</a></span></p>',
             'class' => 'tesingh',
             'type' => 'info');
 	$options[] = array(

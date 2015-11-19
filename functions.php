@@ -20,9 +20,8 @@ function promax_scripts() {
 			echo '<link rel="shortcut icon" href="' . esc_url(of_get_option('promax_favicon')) . '"/>' . "\n";
 	}
 	
-	//Custom css output	
-	$custom_css = html_entity_decode(of_get_option('promax_customcss'));
-	
+		//Custom css output	
+		$custom_css = html_entity_decode(of_get_option('promax_customcss'));
 		wp_add_inline_style( 'promax-style', $custom_css );	  
 }
 add_action( 'wp_enqueue_scripts', 'promax_scripts' );
@@ -272,7 +271,7 @@ function promax_register_required_plugins() {
 
 /* ----------------------------------------------------------------------------------- */
 /* Customize Comment Form
-  /*----------------------------------------------------------------------------------- */
+/*----------------------------------------------------------------------------------- */
 add_filter( 'comment_form_default_fields', 'promax_comment_form_fields' );
 function promax_comment_form_fields( $fields ) {
     $commenter = wp_get_current_commenter();

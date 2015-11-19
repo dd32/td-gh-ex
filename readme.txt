@@ -37,6 +37,10 @@ Custom Css:
 == Change log ==
 
 = 1.5.3 =
+* Navigation code update
+* Fixed minor issue
+
+= 1.5.3 =
 * Added Font Awesome support
 * Updated comment form
 * Added support for custom header

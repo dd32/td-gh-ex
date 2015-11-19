@@ -31,14 +31,8 @@
 	<!-- BEGIN TOP NAVIGATION -->		
 <div id="navigation" class="nav"> <?php get_template_part('/includes/social'); ?>
     <div id="navigation-inner" class="clearfix">
-		<div class="secondary">		<?php
-			if (('wp_nav_menu')) {
-				wp_nav_menu(array('container' => '', 'theme_location' => 'promax-navigation', 'fallback_cb' => 'promax_hdmenu'));
-			}
-			else {
-				promax_hdmenu();
-			}
-			?>
+		<div class="secondary">
+		<?php wp_nav_menu( array( 'theme_location' => 'promax-navigation', 'fallback_cb' => 'promax_hdmenu','menu_class' => 'nav-menu') );	?>
 		</div><!-- end div #nav secondry -->
 	    </div> <!-- end div #navigation-inner -->
 	</div> <!-- end div #navigation -->

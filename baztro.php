@@ -1,14 +1,26 @@
 <?php
 ob_start();
+function promax_backg() {
+		global $background ?>
+       <style type="text/css">
+<?php if ( get_header_image() ) : ?>	
+		#header{background-image:url("<?php esc_url(header_image());?>"); display: flex;background-repeat: round;}
+		<?php endif; ?>
+	
+		
+	</style>
+    
+<?php };
 
 
+    add_action('wp_head', 'promax_backg');	
 /* ----------------------------------------------------------------------------------- */
 /* Breadcrumbs Plugin
   /*----------------------------------------------------------------------------------- */
 
 function promax_breadcrumbs() {
     $delimiter = '&raquo;';
-    $home = 'Home'; // text for the 'Home' link
+    $home = __('Home','promax'); // text for the 'Home' link
     $before = '<span class="current">'; // tag before the current crumb
     $after = '</span>'; // tag after the current crumb
     echo '<div id="crumbs">';
@@ -50,7 +62,7 @@ function promax_breadcrumbs() {
         $parent = get_post($post->post_parent);
         //$cat = get_the_category($parent->ID); $cat = $cat[0];
         //echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
+        echo '<a href="' . esc_url(get_permalink($parent)) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
         echo $before . get_the_title() . $after;
     } elseif (is_page() && !$post->post_parent) {
         echo $before . get_the_title() . $after;
@@ -59,21 +71,21 @@ function promax_breadcrumbs() {
         $breadcrumbs = array();
         while ($parent_id) {
             $page = get_page($parent_id);
-            $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+            $breadcrumbs[] = '<a href="' . esc_url(get_permalink($page->ID)) . '">' . esc_html(get_the_title($page->ID)) . '</a>';
             $parent_id = $page->post_parent;
         }
         $breadcrumbs = array_reverse($breadcrumbs);
         foreach ($breadcrumbs as $crumb)
             echo $crumb . ' ' . $delimiter . ' ';
-        echo $before . get_the_title() . $after;
+        echo $before . esc_html(get_the_title()) . $after;
     } elseif (is_search()) {
-        echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+        echo $before . __('Search results for "' . get_search_query() . '"','promax')  . '"' . $after;
     } elseif (is_tag()) {
-        echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+        echo $before . __('Posts tagged "' . single_tag_title('', false) . '"','promax') . $after;
     } elseif (is_author()) {
         global $author;
         $userdata = get_userdata($author);
-        echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+        echo $before . __('Articles posted by ','promax'). $userdata->display_name . $after;
     } elseif (is_404()) {
         echo $before . 'Error 404' . $after;
     }
@@ -81,7 +93,7 @@ function promax_breadcrumbs() {
     if (get_query_var('paged')) {
         if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
             echo ' (';
-        echo 'Page' . ' ' . get_query_var('paged');
+        echo __('Page','promax') . ' ' . get_query_var('paged','promax');
         if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
             echo ')';
     }

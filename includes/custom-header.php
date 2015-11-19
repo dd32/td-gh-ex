@@ -26,9 +26,8 @@ function promax_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'promax_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1284,
-		'height'                 => 250,
-            
+		'width'                  => 1350,
+		'height'                 => 140,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'promax_header_style',
 		'admin-head-callback'    => 'promax_admin_header_style',

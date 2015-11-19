@@ -7,8 +7,11 @@ padding-left: 25px !important;
 }
 .advanceproonly-tab{
 background: #FFC5C5;}
-#options-group-5 h4.heading{
-color:#d1d1d1 !important;}
+#options-group-5{
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
 .slidersettings-tab, .slidersettings-tab :hover{
 background-image: url("../images/wrock.ico");
 background-repeat: no-repeat;
