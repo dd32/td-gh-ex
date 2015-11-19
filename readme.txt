@@ -5,7 +5,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, post-for
 
 Requires at least: 4.0
 Tested up to: 4.2.2
-Stable tag: 1.7
+Stable tag: 1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,7 @@ Avien Light includes support for Infinite Scroll in Jetpack also tested with all
 
 == Changelog ==
 
-= 1.7 - November 19 2015 =
+= 1.8 - November 19 2015 =
 * Initial release
 
 == Credits ==
