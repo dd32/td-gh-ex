@@ -156,7 +156,7 @@
 }
 .woocommerce ul.products li.product .price del,
 .woocommerce-page ul.products li.product .price del {
-}
+display: inline-block;font-size: 13px;}
 .woocommerce .products .star-rating,
 .woocommerce-page .products .star-rating {
     position: absolute;
@@ -530,6 +530,10 @@
     text-shadow: none;
     font-weight: 400;
     font-size: 14px;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout {
+    float: right;
 }
 
 /* -------- Table Styling -------- */

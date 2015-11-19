@@ -71,6 +71,9 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.6
+* WooCommerce style layout fixes
+
 #### 1.2.5
 * Styling tweaks
 * Fixed selected color adding to footer links
