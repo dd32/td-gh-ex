@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rubine Lite\n"
 "Report-Msgid-Bugs-To: http://themezee.com/\n"
-"POT-Creation-Date: 2015-08-31 20:03+0100\n"
-"PO-Revision-Date: 2015-08-31 20:03+0100\n"
+"POT-Creation-Date: 2015-11-12 10:01+0100\n"
+"PO-Revision-Date: 2015-11-12 10:01+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -34,11 +34,11 @@ msgstr ""
 msgid "Enter password to view comments."
 msgstr ""
 
-#: comments.php:23 inc/template-tags.php:112
+#: comments.php:23 inc/template-tags.php:146
 msgid "One comment"
 msgstr ""
 
-#: comments.php:23 inc/template-tags.php:112
+#: comments.php:23 inc/template-tags.php:146
 #, php-format
 msgid "% comments"
 msgstr ""
@@ -51,37 +51,25 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: functions.php:102
+#: functions.php:96
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:97
 msgid "Top Navigation"
 msgstr ""
 
-#: functions.php:104
+#: functions.php:98
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:135 sidebar.php:14
+#: functions.php:129 sidebar.php:14
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:131
 msgid ""
 "Appears on posts and pages except Magazine Homepage and Fullwidth template."
-msgstr ""
-
-#: functions.php:219
-msgid "Pingback:"
-msgstr ""
-
-#: functions.php:220 functions.php:239
-msgid "(Edit)"
-msgstr ""
-
-#: functions.php:250
-msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: search.php:8
@@ -137,25 +125,37 @@ msgstr ""
 msgid "Display featured posts in latest blog post listing."
 msgstr ""
 
-#: inc/template-tags.php:91
+#: inc/template-tags.php:122
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-tags.php:112
+#: inc/template-tags.php:146
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:204
+#: inc/template-tags.php:234
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr ""
 
-#: inc/template-tags.php:238
+#: inc/template-tags.php:268
 msgid ""
 "Please go to Appearance &#8594; Menus and create a new custom menu with "
 "custom links to all your social networks. Then click on \"Manage Locations\" "
 "tab and assign your created menu to the \"Social Icons\" location."
+msgstr ""
+
+#: inc/template-tags.php:287
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:288 inc/template-tags.php:307
+msgid "(Edit)"
+msgstr ""
+
+#: inc/template-tags.php:318
+msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: inc/theme-info.php:18 inc/theme-info.php:38

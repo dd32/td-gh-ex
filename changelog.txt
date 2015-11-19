@@ -2,6 +2,12 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.2.0
+-----------------------------------
+[removed] empty spaces at the end of template files
+[fixed] styling of 404 template
+[fixed] styling of tabbed content widget
+
 Version 1.1.9
 -----------------------------------
 [changed] all h2 post and page titles to h1 for better SEO

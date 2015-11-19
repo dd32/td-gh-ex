@@ -106,5 +106,4 @@
 	</div>
 	
 	<?php // Display Custom Header Image
-		rubine_display_custom_header(); ?>
-		
+		rubine_display_custom_header(); ?>	
