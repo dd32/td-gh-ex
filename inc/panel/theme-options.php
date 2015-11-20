@@ -1116,7 +1116,7 @@ function catcheverest_theme_options_validate( $options ) {
     }
     
     if( isset( $input[ 'more_tag_text' ] ) ) {
-        $input_validated[ 'more_tag_text' ] = htmlentities( sanitize_text_field ( $input[ 'more_tag_text' ] ), ENT_QUOTES, 'UTF-8' );
+        $input_validated[ 'more_tag_text' ] = sanitize_text_field ( $input[ 'more_tag_text' ] );
     }   
 
     if( isset( $input[ 'search_display_text' ] ) ) {

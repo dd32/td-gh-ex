@@ -416,7 +416,7 @@ function catcheverest_customize_register( $wp_customize ) {
 		//Homepage/Frontpage Settings
 		'enable_posts_home' => array(
 			'id' 			=> 'enable_posts_home',
-			'title' 		=> __( 'Check to Disable Latest Posts', 'catch-everest' ),
+			'title' 		=> __( 'Check to Enable Latest Posts', 'catch-everest' ),
 			'description'	=> '',
 			'field_type' 	=> 'checkbox',
 			'sanitize' 		=> 'catcheverest_sanitize_checkbox',

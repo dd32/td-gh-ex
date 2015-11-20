@@ -1,5 +1,11 @@
 == Changelog ==
 
+version 2.5.1
+* Bug Fixed: Customizer Dropdown type saving issue
+* Bug Fixed: Check to Disable Latest posts changed to Check to Disable latest posts( Reported by mr-nocommentmsn-com )
+* Bug Fixed: Excerpt More Tag sanitization issue
+* Update: Text Domain in style.css updated to catch-everest
+
 version 2.5
 * Added all theme options to customizer
 * Updated German language file

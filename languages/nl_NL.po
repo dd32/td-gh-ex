@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
-"POT-Creation-Date: 2015-09-07 17:16+0545\n"
+"POT-Creation-Date: 2015-11-20 22:18+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -600,31 +600,31 @@ msgstr "bedekken"
 msgid "shuffle"
 msgstr "willekeurig"
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:48
+#: ../inc/panel/customizer/customizer-custom-controls.php:47
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:61
+#: ../inc/panel/customizer/customizer-custom-controls.php:60
 msgid "Theme Instructions"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:65
+#: ../inc/panel/customizer/customizer-custom-controls.php:64
 #: ../inc/panel/theme-options.php:104
 msgid "Support"
 msgstr "Support"
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:69
+#: ../inc/panel/customizer/customizer-custom-controls.php:68
 msgid "Changelog"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:73
+#: ../inc/panel/customizer/customizer-custom-controls.php:72
 #: ../inc/panel/theme-options.php:103
 msgid "Donate Now"
 msgstr "Doneer nu"
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:77
+#: ../inc/panel/customizer/customizer-custom-controls.php:76
 msgid "Review"
 msgstr ""
 
@@ -860,7 +860,7 @@ msgid "Check to Disable Homepage Subheadline"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:419
-msgid "Check to Disable Latest Posts"
+msgid "Check to Enable Latest Posts"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:429

@@ -192,10 +192,6 @@ function catcheverest_sanitize_number_range( $number, $setting ) {
  * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
  */
 function catcheverest_sanitize_select( $input, $setting ) {
-	
-	// Ensure input is a slug.
-	$input = sanitize_key( $input );
-	
 	// Get list of choices from the control associated with the setting.
 	$choices = $setting->manager->get_control( $setting->id )->choices;
 	
@@ -218,9 +214,11 @@ function catcheverest_reset_all_settings( $input ) {
        
         // Flush out all transients	on reset
         catcheverest_themeoption_invalidate_caches();
+
+        return "0";
     } 
     else {
-        return '';
+        return "0";
     }
 }
 
@@ -259,6 +257,8 @@ function catcheverest_sanitize_reset_featured_image( $input ) {
 		$options[ 'featured_header_image_base' ] 	= $defaults[ 'featured_header_image_base' ];
 
 		update_option( 'catcheverest_options', $options );
+
+		return "0";
 	}
 }
 
@@ -284,6 +284,8 @@ function catcheverest_sanitize_reset_layout( $input ) {
 		$options[ 'featured_image' ] = $defaults[ 'featured_image' ];
 
 		update_option( 'catcheverest_options', $options );
+
+		return "0";
 	}
 }
 
@@ -308,5 +310,7 @@ function catcheverest_sanitize_reset_moretag( $input ) {
 		$options[ 'excerpt_length' ]= $defaults[ 'excerpt_length' ];
 
 		update_option( 'catcheverest_options', $options );
+
+		return "0";
 	}
 }
