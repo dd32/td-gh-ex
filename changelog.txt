@@ -1,7 +1,11 @@
 == Changelog ==
 
+Version 1.8.2
+* Bug Fixed: Customizer Dropdown type sanitization issue
+* Bug Fixed: Excerpt More Tag sanitization issue
+
 Version 1.8.1
-* Bug Bixed: broken link for upgrade to pro button
+* Bug Fixed: broken link for upgrade to pro button
 * Improved fixed header js and css
 
 Version 1.8
