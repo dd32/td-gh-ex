@@ -4,7 +4,7 @@ Theme URI:
 Author: Masum Billah
 Author URI: http://getmasum.net/
 Description: Bhost is a nice , clean , beautifull, Responsive and modern design free WordPress Theme. This theme made with Latest Bootstrap v3.3.5. You can use it for your corporate , personal , blog sites etc.
-Version: 1.2.6
+Version: 1.2.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
@@ -454,13 +454,14 @@ input[type="submit"] {
 	border-color: #404040;
 	border-radius: 3px;
 	background: #404040;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
+	font-size: 15px;
 	font-size: 0.75rem;
 	line-height: 1;
 	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	display: inline-block;
+	width: auto;
+	font-weight: 400;
 }
 .form-control{
 	height: 50px;
@@ -801,6 +802,11 @@ a:active {
 	.mean-container .mean-nav li a{
 		font-size: 13px;
 	}
+	.site-branding {
+  background: #fff none repeat scroll 0 0;
+  padding: 6em 0 6px;
+}
+
 }
 
 .site-main .comment-navigation,
@@ -908,7 +914,7 @@ h1.entry-title a:hover{
 .page-header, .page-header h1{
 	border: inherit;
 	font-size: 25px;
-	margin-bottom: 40px;
+	margin-bottom: 0px;
 }
 .post-thumb-image{
 	margin-bottom: 0;
@@ -1286,78 +1292,55 @@ input, select{
 10.4 Comments
 --------------------------------------------------------------*/
 
-#comments{
-	border-top: 1px solid #dfdfdf;
-	margin-top: 4em;
-	padding-top: 1.5em;
+.comments-title {
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
-article.comment-body {
-  border-bottom: 1px solid #dfdfdf;
-  display: inline-block;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  width: 100%;
+ol.comment-list {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
 }
-.comments-title{
-	font-size: 2em;
+.comment-content h3 {
+    font-size: 16px;
+    font-weight: 400;
 }
-
-.comment-list{
-	list-style-type: none;
-	margin: 25px 0 0;
-	padding: 0;
+.comment-content span {
+    font-size: 13px;
+    margin-left: 10px;
 }
-.comment-list li{
-	display: table;
-	background: #fff;
-	padding: 0;
-	margin-bottom: 20px;
+ol.comment-list li { margin-bottom: 40px }
+.comment-reply-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
 }
-.comment-list li:last-child{
-	margin-bottom: 0px;
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+    background: none repeat scroll 0 0 #fff;
+    padding: 15px;
 }
-.comment-author .avatar{
-	height: 70px;
-	width: 70px;
-	margin-bottom: 10px;
-	float: left;
-	margin-right: 20px;
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea { width: 100% }
+input[type="submit"] {
+    border: medium none;
+    color: #fff;
+    padding: 10px 20px;
 }
-.children {
-  margin-top: 20px;
-  display: inline-block;
-  max-width: 100%;
+.comment-body { position: relative }
+.comment-author-img {
+    left: 0;
+    position: absolute;
+    top: 0;
 }
-
-.says{
-	display: none;
-}
-.comment-author .fn{
-	display: inline-block;
-	float: left;
-	font-size: 1.5em;
-	margin-left: 0.3em;
-	margin-top: 20px;
-	font-weight: 500;
-}
-.comment-author .fn a{
-	color: #509bae;
-	text-decoration: none;
-	font-weight: 500
-}
-.comment-metadata{
-	display: inline-block;
-	font-size: 1.5em;
-	font-weight: 500;
-	margin-left: 10px;
-	margin-top: 20px;
-}
-.comment-meta{
-	padding-bottom: .5em;
-	margin-bottom: .5em;
-	display: inline-block;
-	width: 100%;	
-}
+.comment-content,
+.comment-body .reply { padding-left: 100px }
+ul.children { margin-top: 40px }
 .reply a{
 	color: #2bcdc1;
 	float: left;
@@ -1391,7 +1374,13 @@ article.comment-body {
 	margin-top: 30px;	
 }
 .form-submit .submit{font-size: 1.0em;}
-#respond input, input{
+#respond input{
+	display: inline-block;
+	width: auto;
+}
+#respond input[type="text"],
+#respond input[type="email"],
+#respond input[type="url"]{
 	width: 100%;
 }
 #respond label{

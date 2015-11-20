@@ -36,6 +36,9 @@ Underscores Theme is distributed under the terms of the GNU GPL.
 
 == Changelog ==
 
+= 1.2.7 - Nov 21 2015 =
+* Updated styles of Comment section ,another sections and , font awesome icons and updated Screenshot.
+
 = 1.2.6 - Oct 25 2015 =
 * Updated 404.php,  search.php, content-single.php pages and updated some css codes
 
@@ -54,6 +57,7 @@ Underscores Theme is distributed under the terms of the GNU GPL.
 == Credits ==
 
 * Twitter Bootstrap http://getbootstrap.com Copyright 2011-2015 Twitter, Inc.Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* Screenshot Image source from here https://www.pexels.com/photo/city-sunny-people-street-2752/
+* font awesome icons - https://fortawesome.github.io/Font-Awesome/
+* Screenshot Image source from here https://www.pexels.com/
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * MeanMenu http://www.meanthemes.com/plugins/meanmenu/ . Licensed under GPL

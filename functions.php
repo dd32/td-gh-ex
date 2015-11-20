@@ -147,6 +147,7 @@ function bhost_scripts() {
 	wp_enqueue_style( 'bhost-Raleway', bhost_font_url(), array(), null );
 	wp_enqueue_style( 'bhost-bootstrap-css', get_template_directory_uri() .'/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bhost-meanmenu', get_template_directory_uri() .'/css/meanmenu.css' );
+	wp_enqueue_style( 'bhost-font-awesome.min', get_template_directory_uri() .'/css/font-awesome.min.css' );
 	wp_enqueue_style( 'bhost-style', get_stylesheet_uri() );
 		
 	wp_enqueue_script( 'bhost-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '20120205', true );
@@ -176,3 +177,28 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+// comment list modify
+function bhost_comments($comment, $args, $depth) {
+   $GLOBALS['comment'] = $comment; ?>
+<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
+
+	<article class="comment-body">
+		<div class="comment-author-img">
+			 <?php echo get_avatar( $comment, 83 ); ?>
+		</div>
+		
+		<div class="comment-content">
+			<h3><?php comment_author_link(); ?> <span><i class="fa fa-clock-o"></i> <?php comment_date('F j, Y'); ?></span></h3>
+				<?php if ($comment->comment_approved == '0') : ?>
+				<p><em><?php _e('Your comment is awaiting moderation.','bhost'); ?></em></p>
+				<?php endif; ?>
+			<?php comment_text(); ?>
+		</div>
+
+		<div class="reply"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?></div>
+	</article>	
+</li>
+
+
+<?php }
