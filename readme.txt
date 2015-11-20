@@ -99,3 +99,7 @@ Version 1.3.3
 * Updated FontAwesome to 4.4.0 Version
 * Move the "Theme Options" in "WP Customizer"
 * Minor bug fixes
+
+Version 1.3.4
+* Updated Email Button
+* Minor bug fixes

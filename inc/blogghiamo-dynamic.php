@@ -128,11 +128,6 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 	'default' => '#',
 	'label' => __('VK URL', 'blogghiamo')
 	);
-	$socialmedia[] = array(
-	'slug'=>'emailurl', 
-	'default' => '#',
-	'label' => __('You Email', 'blogghiamo')
-	);
 	
 	foreach( $socialmedia as $blogghiamo_theme_options ) {
 		// SETTINGS
@@ -153,6 +148,23 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 			)
 		);
 	}
+	
+	/*
+	Email Button
+	=====================================================
+	*/
+	$wp_customize->add_setting('blogghiamo_theme_options_emailurl', array(
+        'default'    => '#',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'is_email'
+    ) );
+	
+	$wp_customize->add_control('blogghiamo_theme_options_emailurl', array(
+        'label'      => __( 'Your Email', 'blogghiamo' ),
+        'section'    => 'cresta_blogghiamo_options',
+        'settings'   => 'blogghiamo_theme_options_emailurl',
+    ) );
 	
 	/*
 	Search Button

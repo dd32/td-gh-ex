@@ -11,7 +11,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <!--[if lt IE 9]>
@@ -73,13 +72,13 @@
 				<?php if (!empty($pinterestURL)) : ?>
 					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'blogghiamo' ); ?>"><i class="fa fa-pinterest spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
-						
-				<?php if (!empty($vkURL)) : ?>
-					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'blogghiamo' ); ?>"><i class="fa fa-vk spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'VK', 'blogghiamo' ); ?></span></i></a>
-				<?php endif; ?>
 				
 				<?php if (!empty($tumblrURL)) : ?>
 					<a href="<?php echo esc_url($tumblrURL); ?>" title="<?php esc_attr_e( 'Tumblr', 'blogghiamo' ); ?>"><i class="fa fa-tumblr spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+						
+				<?php if (!empty($vkURL)) : ?>
+					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'blogghiamo' ); ?>"><i class="fa fa-vk spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'VK', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if (!empty($emailURL)) : ?>
