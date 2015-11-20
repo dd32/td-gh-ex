@@ -10,9 +10,7 @@
     <div class="kaira-page-description">
         <p><?php _e( '<a href="http://www.kairaweb.com/" target="_blank">Visit our website</a> to view our other Themes and Plugins', 'topshop' ); ?></p>
         
-        <p><?php _e( '<a href="http://app.sellwire.net/p/TV" target="_blank"><big>Upgrade to Premium</big></a> for only <big><b>$15</b></big>', 'topshop' ); ?></p>
-        
-        <p><?php _e( 'TopShop Premium now has a <a href="http://support.kairaweb.com/knowledgebase/topshop-hooks-for-developers/" target="_blank">list of hooks</a> added for developers to hook on to.', 'topshop' ); ?>
+        <p><?php _e( 'TopShop Premium now has a <a href="http://kairaweb.com/support/topic/topshop-hooks-for-developers/" target="_blank">list of hooks</a> added for developers to hook on to.', 'topshop' ); ?>
     </div>
     
     <table class="form-table">
