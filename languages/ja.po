@@ -20,15 +20,15 @@ msgstr "フロントページ"
 msgid "https://wordpress.com/themes/"
 msgstr "https://wordpress.com/themes/"
 
-#. Description of the plugin/theme
-#: wp-content/themes/pub/argent/style.css
-msgid "Argent is a clean and modern portfolio theme, geared towards creative professionals like designers, artists, and photographers. With its simple homepage template featuring portfolio projects, Argent aims to draw viewers right at what matters most: your wonderful work."
-msgstr "Argent は、デザイナー・アーティスト・写真家などクリエイティブなプロフェッショナルの方向けの清潔でモダンなポートフォリオテーマ。ポートフォリオプロジェクト機能を備えたシンプルなホームページテンプレートで、あなたの素晴らしい作品という最も大事なものに読者の注目を向けるようにしています。"
-
 #. Author of the plugin/theme
 #: wp-content/themes/pub/argent/style.css
 msgid "Automattic"
 msgstr "Automattic"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/argent/style.css
+msgid "Argent is a clean and modern portfolio theme, geared towards creative professionals like designers, artists, and photographers. With its simple homepage template featuring portfolio projects, Argent aims to draw viewers right at what matters most: your wonderful work."
+msgstr "Argent は、デザイナー・アーティスト・写真家などクリエイティブなプロフェッショナルの方向けの清潔でモダンなポートフォリオテーマ。ポートフォリオプロジェクト機能を備えたシンプルなホームページテンプレートで、あなたの素晴らしい作品という最も大事なものに読者の注目を向けるようにしています。"
 
 #: search.php:16
 msgid "Search Results for: %s"

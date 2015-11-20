@@ -73,6 +73,12 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 
 == Changelog ==
 
+= 10 November 2015 =
+* Fix bug to ensure sub-menu items work on touch devices
+
+= 29 October 2015 =
+* fix SVN properties.
+
 = 2 October 2015 =
 * Enqueue Genericons and add them to fix a self-hosted bug with the Menu icon.
 
