@@ -68,6 +68,10 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.6.9
+* Styling tweaks
+* Allow flex header image width/height
+
 #### 1.6.8
 * Styling tweaks
 * Fixed broken help link

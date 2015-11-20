@@ -5,7 +5,7 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.6.8' );
+define( 'KAIRA_THEME_VERSION' , '1.6.9' );
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
@@ -61,8 +61,8 @@ function kaira_setup_theme() {
         'default-image' => '',
 		'width'         => 290,
 		'height'        => 110,
-		'flex-width' => false,
-		'flex-height' => false,
+		'flex-width' => true,
+		'flex-height' => true,
 		'header-text' => false,
 	));
 	
