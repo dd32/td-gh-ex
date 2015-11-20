@@ -210,10 +210,6 @@ function fullframe_sanitize_footer_code( $input ) {
  * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
  */
 function fullframe_sanitize_select( $input, $setting ) {
-	
-	// Ensure input is a slug.
-	$input = sanitize_key( $input );
-	
 	// Get list of choices from the control associated with the setting.
 	$choices = $setting->manager->get_control( $setting->id )->choices;
 	

@@ -1,5 +1,9 @@
 == Change log ==
 
+= 2.1.1 =
+* Bug Fixed: Featured Slider Transition Effect Not Updating
+* Update: Text Domain in style.css updated to full-frame
+
 = 2.1 =
 * Bug Fixed: Featured Content Background Settings missing after version update( Reported By davidlspencer )
 * Updated responsive menu sidr js

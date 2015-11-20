@@ -13,7 +13,9 @@
 
 //define theme version
 if ( !defined( 'FULLFRAME_THEME_VERSION' ) ) {
-	define ( 'FULLFRAME_THEME_VERSION', '2.1' );
+	$theme_data = wp_get_theme();
+	
+	define ( 'FULLFRAME_THEME_VERSION', $theme_data->get( 'Version' ) );
 }
 
 /**

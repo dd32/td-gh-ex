@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Responsive\n"
-"POT-Creation-Date: 2015-10-20 13:38+0545\n"
+"POT-Creation-Date: 2015-11-20 22:28+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: PA Angelini <nosencheres@free.fr>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
