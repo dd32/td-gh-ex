@@ -118,6 +118,8 @@ JavaScripts
 		1. Static Home Feature Image => https://unsplash.com/photos/X1g8f20v97I/download
 		2. Image in the screenshot are provided by Caroline Gutman(https://unsplash.com/carolinegutman) taken from the link(https://unsplash.com/photos/X1g8f20v97I/download)
 		   unsplash.com images are licensed under GPL.
+
+Static Home Feature Image => http://dummyimage.com/1600x600/deb6de/1f2136
 		   
 CSS Tooltips by Adam Whitcroft
 https://github.com/AdamWhitcroft/CSS.Tooltips
@@ -131,6 +133,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@Version 1.5
+1. Styling issue fixed.
+2. Remove Copyright text file.
 @Version 1.4
 1. Add Google Font.
 2. Css Minified
