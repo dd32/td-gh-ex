@@ -1,5 +1,10 @@
 == Changelog ==
 
+2.6.1
+* Added Text Domain to style.css
+* Bug Fixed: Customizer Dropdown type saving issue
+* Bug Fixed: Responsive image issue in excerpt articles
+
 2.6
 * Added all theme options to customizer
 
