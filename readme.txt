@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.1
+- Fixed:   "$this->_extension_url" used for redux extensions fixed to ensure custom extensions are loaded correctly on all sites.
+
 Version 1.3.0
 - New:     Dashicons now enqueued directly from WordPress core.
 - New:     Customizer support added. All Theme options settings now controlled from within Customizer.

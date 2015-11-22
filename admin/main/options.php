@@ -505,8 +505,8 @@
 
 			// Ensures ThinkUpThemes custom code is output
 			array(
-				'title'    => __('', 'redux-framework'), 
-				'subtitle' => __('', 'redux-framework'),
+				'title'    => __('Custom Code', 'redux-framework'), 
+				'subtitle' => __('Custom Code', 'redux-framework'),
 				'id'       => 'thinkup_customization',
 				'type'     => 'thinkup_custom_code',
 			),
