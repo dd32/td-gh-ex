@@ -270,37 +270,37 @@ global $thinkup_header_rsslink;
 
 			// Facebook settings
 			if ( $thinkup_header_facebookswitch == '1' ) {
-				echo '<li class="social facebook"><a href="' . $thinkup_header_facebooklink . '" data-tip="bottom" data-original-title="Facebook" target="_blank"></a></li>';
+				echo '<li class="social facebook"><a href="' . $thinkup_header_facebooklink . '" data-tip="bottom" data-original-title="Facebook"></a></li>';
 			}
 
 			// Twitter settings
 			if ( $thinkup_header_twitterswitch == '1' ) {
-				echo '<li class="social twitter"><a href="' . $thinkup_header_twitterlink . '" data-tip="bottom" data-original-title="Twitter" target="_blank"></a></li>';
+				echo '<li class="social twitter"><a href="' . $thinkup_header_twitterlink . '" data-tip="bottom" data-original-title="Twitter"></a></li>';
 			}
 
 			// Google+ settings
 			if ( $thinkup_header_googleswitch == '1' ) {
-				echo '<li class="social google"><a href="' . $thinkup_header_googlelink . '" data-tip="bottom" data-original-title="Google+" target="_blank"></a></li>';
+				echo '<li class="social google"><a href="' . $thinkup_header_googlelink . '" data-tip="bottom" data-original-title="Google+"></a></li>';
 			}
 
 			// LinkedIn settings
 			if ( $thinkup_header_linkedinswitch == '1' ) {
-				echo '<li class="social linkedin"><a href="' . $thinkup_header_linkedinlink . '" data-tip="bottom" data-original-title="LinkedIn" target="_blank"></a></li>';
+				echo '<li class="social linkedin"><a href="' . $thinkup_header_linkedinlink . '" data-tip="bottom" data-original-title="LinkedIn"></a></li>';
 			}
 
 			// Flickr settings
 			if ( $thinkup_header_flickrswitch == '1' ) {
-				echo '<li class="social flickr"><a href="' . $thinkup_header_flickrlink . '" data-tip="bottom" data-original-title="Flickr" target="_blank"></a></li>';
+				echo '<li class="social flickr"><a href="' . $thinkup_header_flickrlink . '" data-tip="bottom" data-original-title="Flickr"></a></li>';
 			}
 
 			// Last FM settings
 			if ( $thinkup_header_lastfmswitch == '1' ) {
-				echo '<li class="social lastfm"><a href="' . $thinkup_header_lastfmlink . '" data-tip="bottom" data-original-title="Last FM" target="_blank"></a></li>';
+				echo '<li class="social lastfm"><a href="' . $thinkup_header_lastfmlink . '" data-tip="bottom" data-original-title="Last FM"></a></li>';
 			}
 
 			// RSS settings
 			if ( $thinkup_header_rssswitch == '1' ) {
-				echo '<li class="social rss"><a href="' . $thinkup_header_rsslink . '" data-tip="bottom" data-original-title="RSS" target="_blank"></a></li>';
+				echo '<li class="social rss"><a href="' . $thinkup_header_rsslink . '" data-tip="bottom" data-original-title="RSS"></a></li>';
 			}
 
 		echo	'</ul></div>';

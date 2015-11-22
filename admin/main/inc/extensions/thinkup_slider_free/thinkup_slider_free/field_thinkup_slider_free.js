@@ -108,59 +108,43 @@
                     }
                 );
 
-				// Disable sortable slides in Customizer
-                if ( $( 'body' ).hasClass( 'wp-customizer' ) ) {
-                    el.find( ".redux-thinkup_slider_free-accordion" )
-                        .accordion(
-                        {
-                            header: "> div > fieldset > h3",
-                            collapsible: true,
-                            active: false,
-                            heightStyle: "content",
-                            icons: {
-                                "header": "ui-icon-plus",
-                                "activeHeader": "ui-icon-minus"
-                            }
+
+                el.find( ".redux-thinkup_slider_free-accordion" )
+                    .accordion(
+                    {
+                        header: "> div > fieldset > h3",
+                        collapsible: true,
+                        active: false,
+                        heightStyle: "content",
+                        icons: {
+                            "header": "ui-icon-plus",
+                            "activeHeader": "ui-icon-minus"
                         }
-                    );
-                } else {
-                    el.find( ".redux-thinkup_slider_free-accordion" )
-                        .accordion(
-                        {
-                            header: "> div > fieldset > h3",
-                            collapsible: true,
-                            active: false,
-                            heightStyle: "content",
-                            icons: {
-                                "header": "ui-icon-plus",
-                                "activeHeader": "ui-icon-minus"
-                            }
+                    }
+                )
+                    .sortable(
+                    {
+                        axis: "y",
+                        handle: "h3",
+                        connectWith: ".redux-thinkup_slider_free-accordion",
+                        start: function( e, ui ) {
+                            ui.placeholder.height( ui.item.height() );
+                            ui.placeholder.width( ui.item.width() );
+                        },
+                        placeholder: "ui-state-highlight",
+                        stop: function( event, ui ) {
+                            // IE doesn't register the blur when sorting
+                            // so trigger focusout handlers to remove .ui-state-focus
+                            ui.item.children( "h3" ).triggerHandler( "focusout" );
+                            var inputs = $( 'input.slide-sort' );
+                            inputs.each(
+                                function( idx ) {
+                                    $( this ).val( idx );
+                                }
+                            );
                         }
-                    )
-                        .sortable(
-                        {
-                            axis: "y",
-                            handle: "h3",
-                            connectWith: ".redux-thinkup_slider_free-accordion",
-                            start: function( e, ui ) {
-                                ui.placeholder.height( ui.item.height() );
-                                ui.placeholder.width( ui.item.width() );
-                            },
-                            placeholder: "ui-state-highlight",
-                            stop: function( event, ui ) {
-                                // IE doesn't register the blur when sorting
-                                // so trigger focusout handlers to remove .ui-state-focus
-                                ui.item.children( "h3" ).triggerHandler( "focusout" );
-                                var inputs = $( 'input.slide-sort' );
-                                inputs.each(
-                                    function( idx ) {
-                                        $( this ).val( idx );
-                                    }
-                                );
-                            }
-                        }
-                    );
-                }
+                    }
+                );
             }
         );
     };

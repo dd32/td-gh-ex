@@ -4,11 +4,10 @@ Theme URI: http://www.thinkupthemes.com/free/engrave-lite/
 Author: ThinkUpThemes
 Author URI: http://www.ThinkUpThemes.com
 Description: Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.7.16
+Version: 1.7.2
 License: GNU General Public License
 License URI: /licenses/license.txt
-Tags: black, dark, red, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background, grid-layout, footer-widgets, blog, e-commerce, education, entertainment, news, photography, portfolio
-Text Domain: lan-thinkupthemes
+Tags: black, dark, red, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background
 */
 
 /*  TABLE OF CONTENTS
@@ -478,14 +477,8 @@ iframe.twitter-tweet {
 .nav-next a .meta-icon {
 	display: table;
 	background: #FFF;
-	height: 20px;
 	padding: 1px 6px 2px;
 	border: 1px solid #DDD;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	box-sizing: border-box;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
@@ -500,7 +493,6 @@ iframe.twitter-tweet {
 }
 .nav-previous a i,
 .nav-next a i {
-	line-height: 1;
     vertical-align: top;
     display: table-cell;
 }
@@ -563,7 +555,6 @@ li.pag-next {
 	margin-top: 15px;
 }
 #logo img {
-	width: auto;
 	max-height: 45px;
 }
 #logo h1 {
@@ -675,7 +666,7 @@ li.pag-next {
 #pre-header-search ::-moz-placeholder { color: #616161; }
 #pre-header-search :-ms-input-placeholder { color: #616161; }
 
-/* Pre-header - Social Media */
+/* Pre-header - Social Media*/
 #pre-header-social ul {
 	float: right;
 }
@@ -764,8 +755,7 @@ li.pag-next {
 	float: none;
 	position: relative;
 }
-#header .header-links .sub-menu li {
-	float: none;
+#header .sub-menu li {
 	padding: 2px 15px;
 	border-bottom: 1px solid #222;
 }
@@ -1199,9 +1189,6 @@ input[type="submit"]:hover {
 #breadcrumbs a {
 	color: inherit;
 }
-#breadcrumbs-core {
-	display: inline-block;
-}
 
 /* =Pre-Designed Homepage
 ----------------------------------------------------------------------------- */
@@ -1600,7 +1587,6 @@ ul.pricing-table:after,
 	padding: 2px 0;
 }
 #footer .widget li a { 
-	display: inline-block;
 	padding: 1px 0px 1px 0px;
 }
 
@@ -2261,18 +2247,10 @@ padding: 0;
 }
 .blog-icon i {
 	color: white;
-    width: 37px;
-    height: 37px;
-    line-height: 1;
 	padding: 10px;
 	float: left;
 	display: inline-block;
 	background: #EC4C4C;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	box-sizing: border-box;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
@@ -2443,6 +2421,7 @@ padding: 0;
 #shareicons i {
 	color: #46494A;
 	text-shadow: 1px 1px 0px #FFF;
+	margin-top: 5px;
 	overflow: visible;
 	font-size: 20px;
 	-webkit-transition: all 0.15s linear;
@@ -2621,10 +2600,6 @@ li.pingback a {
 
 /* =Contact Us
 --------------------------------------------------------------------------------------- */
-.page-template-template-contact iframe {
-	width: 100% !important;
-	max-height: 350px !important;
-}
 .page-template-template-contact-php #main .google-map-placeholder {
 	width: 100% !important;
 	height: 260px !important;
@@ -2891,10 +2866,4 @@ h4.project-title {
 
 .hidden {
     display: none;
-}
-
-/* Correct line height of Font Awesome size */
-body .fa-lg {
-	line-height: 1;
-	vertical-align: -10%;
 }

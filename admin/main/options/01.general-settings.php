@@ -17,22 +17,22 @@ global $thinkup_general_sitedescription;
 
 	if ( $thinkup_general_logoswitch == "option1" ) {
 		if ( ! empty( $thinkup_general_logolink ) ) {
-			echo '<img src="' . esc_url( $thinkup_general_logolink ) . '" alt="' . __( 'Logo', 'lan-thinkupthemes' ) . '">';
+			echo '<img src="' . $thinkup_general_logolink . '" alt="Logo">';
 		} 
 	} else if ( $thinkup_general_logoswitch == "option2" or empty( $thinkup_general_logoswitch ) ) {
 		if ( empty( $thinkup_general_sitetitle ) ) {
 			echo '<h1 rel="home" class="site-title" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">' . get_bloginfo( 'name' ) . '</h1>';
 		} else {
-			echo '<h1 rel="home" class="site-title" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">' . esc_html( $thinkup_general_sitetitle ) . '</h1>';
+			echo '<h1 rel="home" class="site-title" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">' . $thinkup_general_sitetitle . '</h1>';
 		}
 		if ( ! empty( $thinkup_general_sitedescription ) ) {
-			echo '<h2 class="site-description">' . esc_html( $thinkup_general_sitedescription ) . '</h2>';
+			echo '<h2 class="site-description">' . $thinkup_general_sitedescription . '</h2>';
 		}
 	}
 }
 
 // Output retina js script if retina logo is set
-function thinkup_input_logoretina() {
+function thinkup_input_logoretinaja() {
 global $thinkup_general_logoswitch;
 global $thinkup_general_logolinkretina;
 
@@ -42,7 +42,7 @@ global $thinkup_general_logolinkretina;
 		} 
 	}
 }	
-add_action( 'wp_enqueue_scripts', 'thinkup_input_logoretina', 11 );
+add_action( 'wp_enqueue_scripts', 'thinkup_input_logoretinaja', 11 );
 
 
 //----------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ function thinkup_custom_favicon() {
 global $thinkup_general_faviconlink;
 
 	if ( ! empty( $thinkup_general_faviconlink ) ) {
-		echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . esc_url( $thinkup_general_faviconlink ) . '" />';
+		echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . $thinkup_general_faviconlink . '" />';
 	}	
 }
 add_action('wp_head', 'thinkup_custom_favicon');
@@ -99,7 +99,7 @@ $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true )
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			wp_enqueue_style ( 'sidebarright' );
 		}
-	} else if ( thinkup_check_isblog() and ! is_post_type_archive( 'portfolio' ) ) {
+	} else if ( is_blog() and ! is_post_type_archive( 'portfolio' ) ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
@@ -211,7 +211,7 @@ do_action('thinkup_sidebar_html');
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			echo get_sidebar(); 
 		}
-	} else if ( thinkup_check_isblog() and ! is_post_type_archive( 'portfolio' ) ) {
+	} else if ( is_blog() and ! is_post_type_archive( 'portfolio' ) ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
@@ -316,7 +316,7 @@ $_thinkup_meta_sidebars = get_post_meta( $post->ID, '_thinkup_meta_sidebars', tr
 		} else {
 			$output = $_thinkup_meta_sidebars;
 		}	
-	} else if ( thinkup_check_isblog() and ! is_single() and ! is_post_type_archive( 'portfolio' ) ) {
+	} else if ( is_blog() and ! is_single() and ! is_post_type_archive( 'portfolio' ) ) {
 		$output = $thinkup_blog_sidebars;
 	} else if ( is_post_type_archive( 'portfolio' ) ) {	
 		$output = $thinkup_portfolio_sidebars;
@@ -380,7 +380,7 @@ global $post;
 		printf( __( 'Yearly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'Y' ) );
 	} elseif ( is_post_type_archive( 'portfolio' ) ) {
 		printf( __( 'Portfolio', 'lan-thinkupthemes' ) );
-	} elseif ( thinkup_check_isblog() ) {
+	} elseif ( is_blog() ) {
 		printf( __( 'Blog', 'lan-thinkupthemes' ) );
 	} else {
 		printf( __( '%s', 'lan-thinkupthemes' ), get_the_title() );
@@ -408,7 +408,7 @@ function thinkup_custom_intro() {
 //----------------------------------------------------------------------------------
 
 // http://wordpress.stackexchange.com/questions/27497/how-to-use-wp-nav-menu-to-create-a-select-menu-dropdown
-class thinkup_nav_menu_responsive extends Walker_Nav_Menu {
+class Walker_Nav_Menu_Responsive extends Walker_Nav_Menu {
 
     // don't output children opening tag (`<ul>`)
     public function start_lvl(&$output, $depth=0, $args=array()){}
@@ -458,7 +458,7 @@ global $thinkup_general_fixedlayoutswitch;
 			'items_wrap'     => '<select onchange="location = this.options[this.selectedIndex].value;"><option value="#">' . __( 'Navigation', 'lan-thinkupthemes') . '</option>%3$s</select>',
 			'container'      => false,
 			'echo'           => false,
-			'walker'         => new thinkup_nav_menu_responsive(),
+			'walker'         => new Walker_Nav_Menu_Responsive(),
 			'depth'          => 0,
 			'fallback_cb'     => 'thinkup_input_responsivefall',
 		);
@@ -493,6 +493,11 @@ add_action( 'body_class', 'thinkup_input_responsiveclass');
 
 
 //----------------------------------------------------------------------------------
+//	Enable Boxed Layout - PREMIUM FEATURE
+//----------------------------------------------------------------------------------
+
+
+//----------------------------------------------------------------------------------
 //	Enable Breadcrumbs
 //----------------------------------------------------------------------------------
 
@@ -518,6 +523,18 @@ $_thinkup_meta_breadcrumbs = get_post_meta( $post->ID, '_thinkup_meta_breadcrumb
 
 
 //----------------------------------------------------------------------------------
+//	Enable Comments on Pages
+//----------------------------------------------------------------------------------
+
+// Code can be found in blog.php under heading ALLOW USER COMMENTS
+
+
+//----------------------------------------------------------------------------------
+//	Google Analytics Code - PREMIUM FEATURE
+//----------------------------------------------------------------------------------
+
+
+//----------------------------------------------------------------------------------
 //	Custom CSS
 //----------------------------------------------------------------------------------
 
@@ -525,9 +542,11 @@ $_thinkup_meta_breadcrumbs = get_post_meta( $post->ID, '_thinkup_meta_breadcrumb
 function thinkup_custom_css() {
 global $thinkup_general_customcss;
 
+global $post;
+
 	if ( ! empty( $thinkup_general_customcss ) ) {
 		echo 	"\n" .'<style type="text/css">' . "\n",
-				wp_kses_post( $thinkup_general_customcss ) . "\n",
+				$thinkup_general_customcss . "\n",
 				'</style>' . "\n";
 	}
 }

@@ -724,11 +724,11 @@
 
 
 	// -----------------------------------------------------------------------------------
-	//	2.2.	Homepage (Featured)
+	//	2.2.	Home Content				
 	// -----------------------------------------------------------------------------------
 
 	Redux::setSection( $opt_name, array(
-		'title'      => __('Homepage (Featured)', 'redux-framework'),
+		'title'      => __('Homepage (Content)', 'redux-framework'),
 		'desc'       => __('<span class="redux-title">Display Pre-Designed Homepage Layout</span>', 'redux-framework'),
 		'icon_class' => '',
 		'icon'       => 'el el-pencil',
@@ -909,21 +909,19 @@
 		'fields'     => array(
 				
 			array(
-				'title'                      => __('Enable Search', 'redux-framework'), 
-				$thinkup_subtitle_panel      => __('Switch on to enable header search.', 'redux-framework'),
-				$thinkup_subtitle_customizer => __('Switch on to enable header search.', 'redux-framework'),
-				'id'                         => 'thinkup_header_searchswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
+				'title'   => __('Enable Search', 'redux-framework'), 
+				'desc'    => __('Switch on to enable header search.', 'redux-framework'),
+				'id'      => 'thinkup_header_searchswitch',
+				'type'    => 'switch',
+				'default' => '0',
 			),
 
 			array(
-				'title'                      => __('Enable Social Media Links', 'redux-framework'), 
-				$thinkup_subtitle_panel      => __('Switch on to enable links to social media pages.', 'redux-framework'),
-				$thinkup_subtitle_customizer => __('Switch on to enable links to social media pages.', 'redux-framework'),
-				'id'                         => 'thinkup_header_socialswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
+				'title'   => __('Enable Social Media Links', 'redux-framework'), 
+				'desc'    => __('Switch on to enable links to social media pages.', 'redux-framework'),
+				'id'      => 'thinkup_header_socialswitch',
+				'type'    => 'switch',
+				'default' => '0',
 			),
 
             array(
@@ -1290,24 +1288,24 @@
 				'compiler'                   => true,
 				'default'                    => '0',
 				'options'                    => array(
-					'option1'  => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option01.png',
-					'option2'  => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option02.png',
-					'option3'  => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option03.png',
-					'option4'  => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option04.png',
-					'option5'  => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option05.png',
-					'option6'  => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option06.png',
-					'option7'  => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option07.png',
-					'option8'  => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option08.png',
-					'option9'  => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option09.png',
-					'option10' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option10.png',
-					'option11' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option11.png',
-					'option12' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option12.png',
-					'option13' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option13.png',
-					'option14' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option14.png',
-					'option15' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option15.png',
-					'option16' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option16.png',
-					'option17' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option17.png',
-					'option18' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option18.png',
+					'option1'  => ReduxFramework::$_url . 'assets/img/layout/footer/option01.png',
+					'option2'  => ReduxFramework::$_url . 'assets/img/layout/footer/option02.png',
+					'option3'  => ReduxFramework::$_url . 'assets/img/layout/footer/option03.png',
+					'option4'  => ReduxFramework::$_url . 'assets/img/layout/footer/option04.png',
+					'option5'  => ReduxFramework::$_url . 'assets/img/layout/footer/option05.png',
+					'option6'  => ReduxFramework::$_url . 'assets/img/layout/footer/option06.png',
+					'option7'  => ReduxFramework::$_url . 'assets/img/layout/footer/option07.png',
+					'option8'  => ReduxFramework::$_url . 'assets/img/layout/footer/option08.png',
+					'option9'  => ReduxFramework::$_url . 'assets/img/layout/footer/option09.png',
+					'option10' => ReduxFramework::$_url . 'assets/img/layout/footer/option10.png',
+					'option11' => ReduxFramework::$_url . 'assets/img/layout/footer/option11.png',
+					'option12' => ReduxFramework::$_url . 'assets/img/layout/footer/option12.png',
+					'option13' => ReduxFramework::$_url . 'assets/img/layout/footer/option13.png',
+					'option14' => ReduxFramework::$_url . 'assets/img/layout/footer/option14.png',
+					'option15' => ReduxFramework::$_url . 'assets/img/layout/footer/option15.png',
+					'option16' => ReduxFramework::$_url . 'assets/img/layout/footer/option16.png',
+					'option17' => ReduxFramework::$_url . 'assets/img/layout/footer/option17.png',
+					'option18' => ReduxFramework::$_url . 'assets/img/layout/footer/option18.png',
 					),
 				),
 
@@ -1343,9 +1341,9 @@
 				'type'                       => 'image_select',
 				'compiler'                   => true,
 				'options'                    => array(
-					'option1' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/blog/option01.png',
-					'option2' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/blog/option02.png',
-					'option3' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/blog/option03.png',
+					'option1' => ReduxFramework::$_url . 'assets/img/layout/blog/option01.png',
+					'option2' => ReduxFramework::$_url . 'assets/img/layout/blog/option02.png',
+					'option3' => ReduxFramework::$_url . 'assets/img/layout/blog/option03.png',
 				),
 			),
 

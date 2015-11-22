@@ -10,12 +10,12 @@
 //	ADD CUSTOM HOOKS
 //----------------------------------------------------------------------------------
 
-// Used at top of header.php
+// Used at top if header.php
 function thinkup_hook_header() { 
 	do_action('thinkup_hook_header');
 }
 
-// Used at top of header.php within the body tag
+// Used at top if header.php within the body tag
 function thinkup_bodystyle() { 
 	do_action('thinkup_bodystyle');
 }
@@ -56,11 +56,11 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 		$delimiter = '<span class="delimiter">/</span>';
 	}
 	else if ( ! empty( $thinkup_general_breadcrumbdelimeter ) ) {
-		$delimiter = '<span class="delimiter"> ' . esc_html( $thinkup_general_breadcrumbdelimeter ) . ' </span>';
+		$delimiter = '<span class="delimiter"> ' . $thinkup_general_breadcrumbdelimeter . ' </span>';
 	}
 
 	$delimiter_inner   =   '<span class="delimiter_core"> &bull; </span>';
-	$main              =   __( 'Home', 'lan-thinkupthemes' );
+	$main              =   'Home';
 	$maxLength         =   30;
 
 	// Archive variables
@@ -78,7 +78,7 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 		echo '<div id="breadcrumbs"><div id="breadcrumbs-core">';
 		global $post, $cat;
 		$homeLink = home_url( '/' );
-		echo '<a href="' . esc_url( $homeLink ) . '">' . esc_html( $main ) . '</a>' . $delimiter;    
+		echo '<a href="' . $homeLink . '">' . $main . '</a>' . $delimiter;    
 
 		// Display breadcrumbs for single post
 		if ( is_single() ) {
@@ -99,14 +99,14 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 		} elseif ( is_tag() ) {
 			_e( 'Posts Tagged: ', 'lan-thinkupthemes' ) . single_tag_title("", false) . '"';
 		} elseif ( is_day()) {
-			echo '<a href="' . esc_url( $url_year ) . '">' . $arc_year . '</a> ' . $delimiter . ' ';
-			echo '<a href="' . esc_url( $url_month ) . '">' . $arc_month . '</a> ' . $delimiter . $arc_day . ' (' . $arc_day_full . ')';
+			echo '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . ' ';
+			echo '<a href="' . $url_month . '">' . $arc_month . '</a> ' . $delimiter . $arc_day . ' (' . $arc_day_full . ')';
 		} elseif ( is_month() ) {
-			echo '<a href="' . esc_url( $url_year ) . '">' . $arc_year . '</a> ' . $delimiter . $arc_month;
+			echo '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . $arc_month;
 		} elseif ( is_year() ) {
 			echo $arc_year;
 		} elseif ( is_search() ) {
-			_e( 'Search Results for: ', 'lan-thinkupthemes' ) . esc_html( get_search_query() ) . '"';
+			_e( 'Search Results for: ', 'lan-thinkupthemes' ) . get_search_query() . '"';
 		} elseif ( is_page() && !$post->post_parent ) {
 			echo get_the_title();
 		} elseif ( is_page() && $post->post_parent ) {
@@ -115,13 +115,13 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 			foreach( $post_array as $key=>$postid ){
 				$post_ids = get_post( $postid );
 				$title = $post_ids->post_title;
-				echo '<a href="' . esc_url( get_permalink( $post_ids ) ) . '">' . esc_html( $title ) . '</a>' . $delimiter;
+				echo '<a href="' . get_permalink($post_ids) . '">' . $title . '</a>' . $delimiter;
 			}
 			the_title();
 		} elseif ( is_author() ) {
 			global $author;
 			$user_info = get_userdata($author);
-			_e( 'Archived Article(s) by Author: ', 'lan-thinkupthemes' ) . esc_html( $user_info->display_name );
+			_e( 'Archived Article(s) by Author: ', 'lan-thinkupthemes' ) . $user_info->display_name ;
 		} elseif ( is_404() ) {
 			_e( 'Error 404 - Not Found.', 'lan-thinkupthemes' );
 		} elseif ( is_post_type_archive( $portfolio )	) {
@@ -155,19 +155,19 @@ global $wp_query;
 		echo '<ul class="pag">';
 		
 			if($paged > 2 && $paged > $range+1 && $showitems < $pages) 
-				echo '<li class="pag-first"><a href="' . esc_url( get_pagenum_link(1) ) . '">&laquo;</a></li>';
+				echo '<li class="pag-first"><a href="' . get_pagenum_link(1). '">&laquo;</a></li>';
 			if($paged > 1 && $showitems < $pages) 
-				echo '<li class="pag-previous"><a href="' . esc_url( get_pagenum_link($paged - 1) ) . '">&lsaquo; ' . __( 'Prev', 'lan-thinkupthemes' ) . '</a></li>';
+				echo '<li class="pag-previous"><a href="' . get_pagenum_link($paged - 1). '">&lsaquo; ' . __( 'Prev', 'lan-thinkupthemes' ) . '</a></li>';
 			for ($i=1; $i <= $pages; $i++) {
 				if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
-					echo ($paged == $i)? '<li class="current"><span>' . $i . '</span></li>':'<li><a href="' . esc_url( get_pagenum_link($i) ) . '">'. $i . '</a></li>';
+					echo ($paged == $i)? '<li class="current"><span>' . $i . '</span></li>':'<li><a href="' . get_pagenum_link($i) . '">'. $i . '</a></li>';
 				}
 			}
 
 			if ($paged < $pages && $showitems < $pages) 
-				echo '<li class="pag-next"><a href="' . esc_url( get_pagenum_link($paged + 1) ) . '">' . __( 'Next', 'lan-thinkupthemes' ) . ' &rsaquo;</a></li>';
+				echo '<li class="pag-next"><a href="' . get_pagenum_link($paged + 1) . '">' . __( 'Next', 'lan-thinkupthemes' ) . ' &rsaquo;</a></li>';
 			if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) 
-				echo '<li class="pag-last" ><a href="' . esc_url( get_pagenum_link($pages) ) . '">&raquo;</a></li>';
+				echo '<li class="pag-last" ><a href="' . get_pagenum_link($pages) . '">&raquo;</a></li>';
 		echo '</ul>';
      }
 }
@@ -241,19 +241,19 @@ if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {
 //	ADD HOME: HOME TO CUSTOM MENU PAGE LIST
 //----------------------------------------------------------------------------------
 
-function thinkup_menu_homelink( $args ) {
+function home_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'thinkup_menu_homelink' );
+add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
 
 
 //----------------------------------------------------------------------------------
-//	ADD CUSTOM COMMENTS POP UP LINK FUNCTION - Credit to http://www.thescubageek.com/code/wordpress-code/add-get_comments_popup_link-to-wordpress/
+//	ADD CUSTOM 'get_comments_popup_link' FUNCTION - Credit to http://www.thescubageek.com/code/wordpress-code/add-get_comments_popup_link-to-wordpress/
 //----------------------------------------------------------------------------------
 
 // Modifies WordPress's built-in comments_popup_link() function to return a string instead of echo comment results
-function thinkup_input_commentspopuplink( $zero = false, $one = false, $more = false, $css_class = '', $none = false ) {
+function get_comments_popup_link( $zero = false, $one = false, $more = false, $css_class = '', $none = false ) {
     global $wpcommentspopupfile, $wpcommentsjavascript;
  
     $id = get_the_ID();
@@ -301,14 +301,14 @@ function thinkup_input_commentspopuplink( $zero = false, $one = false, $more = f
     $str .= apply_filters( 'comments_popup_link_attributes', '' );
  
     $str .= ' title="' . esc_attr( sprintf( __('Comment on %s','lan-thinkupthemes'), $title ) ) . '">';
-    $str .= thinkup_comments_returnstring( $zero, $one, $more );
+    $str .= get_comments_number_str( $zero, $one, $more );
     $str .= '</a>';
      
     return $str;
 }
  
 // Modifies WordPress's built-in comments_number() function to return string instead of echo
-function thinkup_comments_returnstring( $zero = false, $one = false, $more = false, $deprecated = '' ) {
+function get_comments_number_str( $zero = false, $one = false, $more = false, $deprecated = '' ) {
     if ( !empty( $deprecated ) )
         _deprecated_argument( __FUNCTION__, '1.3' );
  
@@ -329,14 +329,14 @@ function thinkup_comments_returnstring( $zero = false, $one = false, $more = fal
 //	CHANGE FALLBACK WP_PAGE_MENU CLASSES TO MATCH WP_NAV_MENU CLASSES
 //----------------------------------------------------------------------------------
 
-function thinkup_input_menuclass( $ulclass ) {
+function add_menuclass( $ulclass ) {
 
 	$ulclass = preg_replace( '/<ul>/', '<ul class="menu">', $ulclass, 1 );
 	$ulclass = str_replace( 'children', 'sub-menu', $ulclass );
 
 	return preg_replace('/<div (.*)>(.*)<\/div>/iU', '$2', $ulclass );
 }
-add_filter( 'wp_page_menu', 'thinkup_input_menuclass' );
+add_filter( 'wp_page_menu', 'add_menuclass' );
 
 
 //----------------------------------------------------------------------------------
@@ -344,7 +344,7 @@ add_filter( 'wp_page_menu', 'thinkup_input_menuclass' );
 //----------------------------------------------------------------------------------
 
 // Credit to: http://www.poseidonwebstudios.com/web-development/wordpress-is_blog-function/
-function thinkup_check_isblog() {
+function is_blog() {
  
     global $post;
  
@@ -362,14 +362,39 @@ function thinkup_check_isblog() {
 
 
 //----------------------------------------------------------------------------------
-//	FIX JETPACK PHOTON IMAGE LOAD ISSUE - DISABLE CACHING FOR SPECIFIC IMAGES 
+//	MIGRATION OF REDUX GLOBAL VARIABLE IN PREPARATION FOR CUSTOMIZER SUPPORT - $redux -> $thinkup_redux_variables 
 //----------------------------------------------------------------------------------
 
-function thinkup_photon_exception( $val, $src, $tag ) {
-        if ( $src == get_template_directory_uri() . '/images/transparent.png' ) {
-                return true;
-        }
-        return $val;
-}
-add_filter( 'jetpack_photon_skip_image', 'thinkup_photon_exception', 10, 3 );
+function thinkup_migrate_redux_option() {
 
+	// try to get the new option
+	$thinkup_redux_migrate   = get_option('thinkup_redux_migrate');
+	$thinkup_redux_variables = get_option('thinkup_redux_variables');
+
+	if ($thinkup_redux_variables && isset($thinkup_redux_variables['migrated']) && $thinkup_redux_variables['migrated'] == 1) {
+		return;
+	}
+
+	// else add the new option
+	else {
+
+		$redux_option = get_option('redux');
+
+		// Only migrate if not already migrated
+		if ( $thinkup_redux_migrate != 1 ) {
+
+
+			// Check if migration was already performed with old migration script
+			if ( $redux_option['migrated'] !== 1 ) {
+
+				// set the migrated	flag
+				update_option('thinkup_redux_migrate', 1);
+				update_option('thinkup_redux_variables',$redux_option);
+			}
+		}
+	}	
+}
+add_action('init','thinkup_migrate_redux_option');
+
+
+?>

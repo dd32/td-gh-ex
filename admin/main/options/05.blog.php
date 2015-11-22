@@ -32,17 +32,27 @@ global $post;
 
 // Input post excerpt / content to blog page
 function thinkup_input_blogtext() {
+global $more;
 global $post;
 global $thinkup_blog_postswitch;
 
-	// Output post content
+	// Output post thumbnail / featured media
 	if ( is_search() ) {
 		the_excerpt();
 	} else if ( ! is_search() ) {
-		if ( ( empty( $thinkup_blog_postswitch ) or $thinkup_blog_postswitch == 'option1' ) and ! is_numeric( strpos( $post->post_content, '<!--more-->' ) ) ) {
+		if ( $thinkup_blog_postswitch == 'option1' or empty( $thinkup_blog_postswitch ) ) {
 			the_excerpt();
 		} else if ( $thinkup_blog_postswitch == 'option2' ) {
-			the_content();
+
+			// Allow user to user <!--more--> HTML tag
+			$more = 0;
+
+			// Remove all HMTL from the_content - Only allow specified tags
+			ob_start();
+			the_content('');
+			$old_content = ob_get_clean();
+			$new_content = strip_tags($old_content, '<p><a><b><br/><br /><input><form><textarea><li><ol><ul><table><h1><h2><h3><h4><h5><h6>');
+			echo $new_content;
 		}
 	}
 }
@@ -56,27 +66,27 @@ global $thinkup_blog_postswitch;
 function thinkup_input_blogformat() {
 
 	if ( get_post_format() == 'gallery' ) {
-		echo '<div class="blog-icon gallery"><a href="' . get_permalink() . '"><i class="fa fa-image fa-lg"></i></a></div>';
+		echo '<div class="blog-icon gallery"><a href="' . get_permalink() . '"><i class="icon-picture icon-large"></i></a></div>';
 	} else if ( get_post_format() == 'image' ) {
-		echo '<div class="blog-icon image"><a href="' . get_permalink() . '"><i class="fa fa-image fa-lg"></i></a></div>';
+		echo '<div class="blog-icon image"><a href="' . get_permalink() . '"><i class="icon-picture icon-large"></i></a></div>';
 	} else if ( get_post_format() == 'video' ) {
-		echo '<div class="blog-icon video"><a href="' . get_permalink() . '"><i class="fa fa-film fa-lg"></i></a></div>';
+		echo '<div class="blog-icon video"><a href="' . get_permalink() . '"><i class="icon-film icon-large"></i></a></div>';
 	} else if ( get_post_format() == 'audio' ) {
-		echo '<div class="blog-icon audio"><a href="' . get_permalink() . '"><i class="fa fa-volume-up fa-lg"></i></a></div>';
+		echo '<div class="blog-icon audio"><a href="' . get_permalink() . '"><i class="icon-volume-up icon-large"></i></a></div>';
 	} else if ( get_post_format() == 'status' ) {
-		echo '<div class="blog-icon status"><a href="' . get_permalink() . '"><i class="fa fa-rss fa-lg"></i></a></div>';
+		echo '<div class="blog-icon status"><a href="' . get_permalink() . '"><i class="icon-rss icon-large"></i></a></div>';
 	} else if ( get_post_format() == 'quote' ) {
-		echo '<div class="blog-icon quote"><a href="' . get_permalink() . '"><i class="fa fa-quote-left fa-lg"></i></a></div>';
+		echo '<div class="blog-icon quote"><a href="' . get_permalink() . '"><i class="icon-quote-left icon-large"></i></a></div>';
 	} else if ( get_post_format() == 'link' ) {
-		echo '<div class="blog-icon link"><a href="' . get_permalink() . '"><i class="fa fa-link fa-lg"></i></a></div>';
+		echo '<div class="blog-icon link"><a href="' . get_permalink() . '"><i class="icon-link icon-large"></i></a></div>';
 	} else if ( get_post_format() == 'chat' ) {
-		echo '<div class="blog-icon chat"><a href="' . get_permalink() . '"><i class="fa fa-comment-o fa-lg"></i></a></div>';
+		echo '<div class="blog-icon chat"><a href="' . get_permalink() . '"><i class="icon-comment-alt icon-large"></i></a></div>';
 	}
 }
 
 // Input sticky post
 function thinkup_input_sticky() {
-	printf( '<span class="sticky"><i class="fa fa-thumb-tack"></i><a href="%1$s" title="%2$s">' . __( 'Sticky', 'lan-thinkupthemes' ) . '</a></span>',
+	printf( '<span class="sticky"><i class="icon-pushpin"></i><a href="%1$s" title="%2$s">' . __( 'Sticky', 'lan-thinkupthemes' ) . '</a></span>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_title() )
 	);
@@ -84,7 +94,7 @@ function thinkup_input_sticky() {
 
 // Input blog date
 function thinkup_input_blogdate() {
-	printf( '<span class="date"><i class="fa fa-calendar-o"></i><a href="%1$s" title="%2$s"><time datetime="%3$s">%4$s</time></a></span>',
+	printf( '<span class="date"><i class="icon-calendar-empty"></i><a href="%1$s" title="%2$s"><time datetime="%3$s">%4$s</time></a></span>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_title() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -96,7 +106,7 @@ function thinkup_input_blogdate() {
 function thinkup_input_blogcomment() {
 
 	if ( '0' != get_comments_number() ) {
-		echo	'<span class="comment"><i class="fa fa-comments"></i>';
+		echo	'<span class="comment"><i class="icon-comments"></i>';
 			if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {;
 				comments_popup_link( __( '0 Comments', 'lan-thinkupthemes' ), __( '1 Comment', 'lan-thinkupthemes' ), __( '% Comments', 'lan-thinkupthemes' ) );
 			};
@@ -109,7 +119,7 @@ function thinkup_input_blogcategory() {
 $categories_list = get_the_category_list( __( ', ', 'lan-thinkupthemes' ) );
 
 	if ( $categories_list && thinkup_input_categorizedblog() ) {
-		echo	'<span class="category"><i class="fa fa-folder-open-o"></i>';
+		echo	'<span class="category"><i class="icon-folder-open-alt"></i>';
 		printf( __( '%1$s', 'lan-thinkupthemes' ), $categories_list );
 		echo	'</span>';
 	};
@@ -120,7 +130,7 @@ function thinkup_input_blogtag() {
 $tags_list = get_the_tag_list( '', __( ', ', 'lan-thinkupthemes' ) );
 
 	if ( $tags_list ) {
-		echo	'<span class="tags"><i class="fa fa-tags"></i>';
+		echo	'<span class="tags"><i class="icon-tags"></i>';
 		printf( __( '%1$s', 'lan-thinkupthemes' ), $tags_list );
 		echo	'</span>';
 	};
@@ -128,7 +138,7 @@ $tags_list = get_the_tag_list( '', __( ', ', 'lan-thinkupthemes' ) );
 
 // Input blog author
 function thinkup_input_blogauthor() {
-	printf( __( '<span class="author"><i class="fa fa-pencil"></i><a href="%1$s" title="%2$s" rel="author">%3$s</a></span>', 'lan-thinkupthemes' ),
+	printf( __( '<span class="author"><i class="icon-pencil"></i><a href="%1$s" title="%2$s" rel="author">%3$s</a></span>', 'lan-thinkupthemes' ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'lan-thinkupthemes' ), get_the_author() ) ),
 		get_the_author()

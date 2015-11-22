@@ -17,20 +17,8 @@ global $thinkup_homepage_sliderpreset;
 global $thinkup_homepage_sliderpresetwidth;
 
 $thinkup_class_fullwidth = NULL;
-$slider_toggle           = NULL;
 
 	if ( is_front_page() ) {
-
-		// Check if any slides have been assigned to ThinkUpSlider
-		if ( isset( $thinkup_homepage_sliderpreset ) and is_array( $thinkup_homepage_sliderpreset ) ) {
-			foreach( $thinkup_homepage_sliderpreset as $slide ) {
-				$slide_image_url = $slide['slide_image_url'];
-				if( ! empty( $slide_image_url ) ) {
-					$slider_toggle = '1';	
-				}
-			}
-		}
-
 		if ( empty( $thinkup_homepage_sliderswitch ) or $thinkup_homepage_sliderswitch == 'option1' ) {
 
 			if ( empty( $thinkup_homepage_sliderpresetwidth ) or $thinkup_homepage_sliderpresetwidth == '1' ) {
@@ -38,10 +26,10 @@ $slider_toggle           = NULL;
 			}
 			echo '<div id="slider"><div id="slider-core">',
 			     '<div class="rslides-container' . $thinkup_class_fullwidth . '"><div class="rslides-inner"><ul class="slides">';
-				if ( empty( $slider_toggle ) ) {				 
-					echo '<li><img src="' . esc_url( get_template_directory_uri() ) . '/images/transparent.png" style="background: url(' . esc_url( get_template_directory_uri() ) . '/images/slideshow/slide_demo1.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
-					echo '<li><img src="' . esc_url( get_template_directory_uri() ) . '/images/transparent.png" style="background: url(' . esc_url( get_template_directory_uri() ) . '/images/slideshow/slide_demo2.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
-					echo '<li><img src="' . esc_url( get_template_directory_uri() ) . '/images/transparent.png" style="background: url(' . esc_url( get_template_directory_uri() ) . '/images/slideshow/slide_demo3.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
+				if ( ! isset( $thinkup_homepage_sliderpreset[0] ) or empty( $thinkup_homepage_sliderpreset[0]['slide_image_url'] ) ) {				 
+					echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . get_template_directory_uri() . '/images/slideshow/slide_demo1.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
+					echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . get_template_directory_uri() . '/images/slideshow/slide_demo2.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
+					echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . get_template_directory_uri() . '/images/slideshow/slide_demo3.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
 				} else if (isset($thinkup_homepage_sliderpreset) && is_array($thinkup_homepage_sliderpreset)) {
 					foreach ($thinkup_homepage_sliderpreset as $slide) {
 						echo '<li>',

@@ -87,7 +87,7 @@ class thinkup_widget_popularposts extends WP_Widget {
 
 			// Insert comments if needed.
 			if ( $instance['comments'] == 'on' ) {
-				$comment_input = thinkup_input_commentspopuplink( __( 'No Comments', 'lan-thinkupthemes' ), __( '1 Comment', 'lan-thinkupthemes' ), __( '% Comments', 'lan-thinkupthemes' ), 'comment' );
+				$comment_input = get_comments_popup_link( __( 'No Comments', 'lan-thinkupthemes' ), __( '1 Comment', 'lan-thinkupthemes' ), __( '% Comments', 'lan-thinkupthemes' ), 'comment' );
 			}
 
 			// HTML output

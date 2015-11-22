@@ -210,7 +210,9 @@
                 
                 // JWp6 plugin giving us problems.  They need to update.
                 if (  wp_script_is ( 'jquerySelect2' )) {
-					// TUT customization - deregistered scripts removed for compliance with .org requirements
+                    wp_deregister_script( 'jquerySelect2' );
+                    wp_dequeue_script('jquerySelect2');
+                    wp_dequeue_style('jquerySelect2Style');
                 }
                 
                 

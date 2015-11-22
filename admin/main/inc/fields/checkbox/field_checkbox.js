@@ -41,7 +41,7 @@
                 }
                 el.find( '.checkbox' ).on(
                     'click', function( e ) {
-                        var val = 'off'; // TUT Customization - Sets value to "off" when checkbox is unticked.
+                        var val = 0;
                         if ( $( this ).is( ':checked' ) ) {
                             val = $( this ).parent().find( '.checkbox-check' ).attr( 'data-val' );
                         }
