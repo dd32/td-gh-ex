@@ -29,3 +29,48 @@ Font Awesome CSS, LESS, and SASS files are licensed under the MIT License - http
 
 Images:
 Screenshot image licensed : Public Domain => CCO http://pixabay.com/en/life-guard-lifeguard-beach-tower-351484/
+
+/*-----------------------------
+		Changelog 
+-----------------------------*/
+
+### 1.0.9 * 22-11-2015
+* Add changelog
+* Add image pro
+* Small CSS adjustments 
+
+### 1.0.8 * 01-07-2015
+* Optimization of CSS
+* Add Info Theme
+
+### 1.0.7 * 18-05-2015
+* Add new color scheme
+* Add new style header
+* Add option Show/Hide icon search
+* Add option Show/Hide icons social
+* Add new social link
+* Add new options sidebar position
+
+### 1.0.6 * 25-01-2015
+* Optimization of CSS
+
+### 1.0.5 * 21-01-2015
+* Complemented translation
+
+### 1.0.4 * 21-01-2015
+* Add esc_url do links
+
+### 1.0.3 * 22-12-2014
+* Edit data in content-video.php
+* Optimization of CSS
+
+### 1.0.2 * 26-11-2014
+* Add get_option( 'date_format' )
+* Minor bug fixes
+
+### 1.0.1 * 17-11-2014
+* Remove Post Metabox's (Video URL, Audio URL)
+* Add title tag
+
+### 1.0.0 * 19-09-2014
+* Initial release

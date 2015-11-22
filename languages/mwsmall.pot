@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: mwsmall1.0.4\n"
-"POT-Creation-Date: 2015-07-01 18:58+0100\n"
-"PO-Revision-Date: 2015-07-01 18:58+0100\n"
+"Project-Id-Version: mwsmall1.0.9\n"
+"POT-Creation-Date: 2015-11-22 15:49+0100\n"
+"PO-Revision-Date: 2015-11-22 15:50+0100\n"
 "Last-Translator: MW Themes <info@mwthemes.net>\n"
 "Language-Team: MW Themes <info@mwthemes.net>\n"
 "Language: en\n"
@@ -25,9 +25,9 @@ msgid "It looks like nothing was found at this location. Maybe try our search?"
 msgstr ""
 
 #: ../archive.php:22
-#, php-format
+#, fuzzy, php-format
 msgid "Author: %s"
-msgstr ""
+msgstr "Autor:"
 
 #: ../archive.php:25
 #, php-format
@@ -190,9 +190,9 @@ msgid "Your comment is awaiting approval"
 msgstr ""
 
 #: ../functions.php:235
-#, php-format
+#, fuzzy, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "Strona"
 
 #: ../inc/customizer.php:19
 msgid "Logo"
@@ -235,72 +235,77 @@ msgid "Text Box Home"
 msgstr ""
 
 #: ../inc/customizer.php:132
-msgid "Featured Posts Area"
+msgid "Blog Options"
 msgstr ""
 
-#: ../inc/customizer.php:133
+#: ../inc/customizer.php:133 ../inc/customizer.php:150
 msgid ""
 "Option available in the <a target=\"_blank\" href=\"http://mwthemes.net/"
 "portfolio/mw-small-pro\">PRO version.</a>"
 msgstr ""
 
 #: ../inc/customizer.php:149
-msgid "Social Media Links"
+msgid "Featured Posts Area"
 msgstr ""
 
-#: ../inc/customizer.php:159
+#: ../inc/customizer.php:166
+#, fuzzy
+msgid "Social Media Links"
+msgstr "Poleć ten post !"
+
+#: ../inc/customizer.php:176
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/customizer.php:170
+#: ../inc/customizer.php:187
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/customizer.php:181
+#: ../inc/customizer.php:198
 msgid "Google+"
 msgstr ""
 
-#: ../inc/customizer.php:192
+#: ../inc/customizer.php:209
 msgid "LinkedIn"
 msgstr ""
 
-#: ../inc/customizer.php:203
+#: ../inc/customizer.php:220
 msgid "Instagram"
 msgstr ""
 
-#: ../inc/customizer.php:214
+#: ../inc/customizer.php:231
 msgid "Flickr"
 msgstr ""
 
-#: ../inc/customizer.php:225
+#: ../inc/customizer.php:242
 msgid "Pinterest"
 msgstr ""
 
-#: ../inc/customizer.php:236
+#: ../inc/customizer.php:253
 msgid "Vimeo"
 msgstr ""
 
-#: ../inc/customizer.php:247
+#: ../inc/customizer.php:264
 msgid "Tumblr"
 msgstr ""
 
-#: ../inc/customizer.php:258
+#: ../inc/customizer.php:275
 msgid "Dribbble"
 msgstr ""
 
-#: ../inc/customizer.php:269
+#: ../inc/customizer.php:286
 msgid "RSS"
 msgstr ""
 
-#: ../inc/customizer.php:282
+#: ../inc/customizer.php:299
 msgid "Header Background Color"
 msgstr ""
 
-#: ../inc/customizer.php:289
+#: ../inc/customizer.php:306
 msgid "Info Theme"
 msgstr ""
 
-#: ../inc/customizer.php:290
+#: ../inc/customizer.php:307
 #, php-format
 msgid ""
 "<a target=\"_blank\" href=\"%1$s\">%2$s</a><br/><a target=\"_blank\" href="
@@ -312,61 +317,38 @@ msgid ""
 "href=\"%6$s\" class=\"button-pro\">DEMO PRO</a>"
 msgstr ""
 
-#: ../inc/customizer.php:291
-msgid "http://mwthemes.net"
-msgstr ""
-
-#: ../inc/customizer.php:292
+#: ../inc/customizer.php:309
 msgid "If you need assistance, please do not hesitate to contact us."
 msgstr ""
 
-#: ../inc/customizer.php:293
-msgid "http://facebook.com/mwthemes"
-msgstr ""
-
-#: ../inc/customizer.php:294
-msgid "https://twitter.com/mwthemes"
-msgstr ""
-
-#: ../inc/customizer.php:295
-msgid ""
-"https://www.paypal.com/cgi-bin/webscr?cmd=_s-"
-"xclick&hosted_button_id=UEV9GM57HQUHA"
-msgstr ""
-
-#: ../inc/customizer.php:296
-msgid "http://demo.mwthemes.net/mw-small-pro"
-msgstr ""
-
-#: ../inc/customizer.php:297 ../inc/customizer.php:318
-msgid "http://mwthemes.net/portfolio/mw-small-pro"
-msgstr ""
-
-#: ../inc/customizer.php:298 ../inc/customizer.php:319
+#: ../inc/customizer.php:315 ../inc/customizer.php:336
 msgid "If you need more useful options, see the MW Small PRO version."
 msgstr ""
 
-#: ../inc/customizer.php:316
+#: ../inc/customizer.php:333
 msgid "Upgrade MW Small "
 msgstr ""
 
-#: ../inc/customizer.php:317
+#: ../inc/customizer.php:334
 #, php-format
-msgid "<a target=\"_blank\" href=\"%1$s\">%2$s</a>"
+msgid ""
+"<a target=\"_blank\" href=\"%1$s\">%2$s</a><br><img class=\"img_promo\" src="
+"\"%3$s\">"
 msgstr ""
 
-#: ../inc/customizer.php:337
+#: ../inc/customizer.php:355
 msgid "Footer"
 msgstr ""
 
-#: ../inc/customizer.php:346
+#: ../inc/customizer.php:364
+#, fuzzy
 msgid "Your text in footer."
-msgstr ""
+msgstr "Poleć ten post !"
 
 #: ../search.php:13
-#, php-format
+#, fuzzy, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Szukaj"
 
 #: ../searchform.php:11
 msgid "<i class=\"fa fa-search\"></i>"

@@ -127,6 +127,23 @@ function mwsmall_customize_register($wp_customize){
 		'type' => 'textarea',		
 	));
 	
+	// Blog Options
+	$wp_customize->add_section( 'mwsmall_blog_settings', array(
+		'title' => __( 'Blog Options', 'mwsmall' ),
+		'description' => '<span>' . __( 'Option available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mwsmall' ) . '</span>',
+		'priority' => 42,
+		)	
+	);
+	
+	$wp_customize->add_setting( 'mwsmall_blog_settings_options', array(
+		'sanitize_callback' => 'esc_attr',
+	));
+	
+	$wp_customize->add_control( 'mwsmall_blog_settings_options', array(
+		'section' => 'mwsmall_blog_settings',
+		'settings' => 'mwsmall_blog_settings_options'
+	));
+	
 	// Featured Posts Area
 	$wp_customize->add_section( 'mwsmall_featured', array(
 		'title' => __( 'Featured Posts Area', 'mwsmall' ),
@@ -288,13 +305,13 @@ function mwsmall_customize_register($wp_customize){
 	$wp_customize->add_section('mwsmall_info', array(
         'title'    => __('Info Theme', 'mwsmall'),
 		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a><br/><a target="_blank" href="%3$s" class="button-pro mwfb">Facebook</a><br/><a target="_blank" href="%4$s" class="button-pro mwtwitter">Twitter</a><br/><a target="_blank" href="%5$s" class="button-pro paypal">Donate</a><br/><a target="_blank" href="%7$s">%8$s</a><br/><a target="_blank" href="%7$s" class="button-pro mwfb">Upgrade to PRO</a><br/><a target="_blank" href="%6$s" class="button-pro">DEMO PRO</a>', 'mwsmall' ), 
-		__( 'http://mwthemes.net', 'mwsmall' ), 
+		esc_url( 'http://mwthemes.net' ), 
 		__('If you need assistance, please do not hesitate to contact us.', 'mwsmall'), 
-		__('http://facebook.com/mwthemes', 'mwsmall'), 
-		__('https://twitter.com/mwthemes', 'mwsmall'), 
-		__('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UEV9GM57HQUHA', 'mwsmall'), 
-		__('http://demo.mwthemes.net/mw-small-pro', 'mwsmall'),
-		__('http://mwthemes.net/portfolio/mw-small-pro', 'mwsmall'),
+		esc_url( 'http://facebook.com/mwthemes' ), 
+		esc_url( 'https://twitter.com/mwthemes' ), 
+		esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UEV9GM57HQUHA' ), 
+		esc_url( 'http://demo.mwthemes.net/mw-small-pro' ),
+		esc_url( 'http://mwthemes.net/portfolio/mw-small-pro' ),
 		__('If you need more useful options, see the MW Small PRO version.', 'mwsmall')
 		),
         'priority' => 110,		
@@ -314,9 +331,10 @@ function mwsmall_customize_register($wp_customize){
 	// Theme PRO 
 	$wp_customize->add_section('mwsmall_info_up', array(
         'title'    => __('Upgrade MW Small ', 'mwsmall'),
-		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a>', 'mwsmall' ), 
-		__('http://mwthemes.net/portfolio/mw-small-pro', 'mwsmall'),
-		__('If you need more useful options, see the MW Small PRO version.', 'mwsmall')
+		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a><br><img class="img_promo" src="%3$s">', 'mwsmall' ), 
+		esc_url( 'http://mwthemes.net/portfolio/mw-small-pro' ),
+		__('If you need more useful options, see the MW Small PRO version.', 'mwsmall'),
+		esc_url( get_template_directory_uri() .'/inc/images/mw-small-pro.jpg' )
 		),
         'priority' => 10,		
     ));
@@ -428,6 +446,7 @@ add_action( 'wp_head', 'mwsmall_css');
 function promo_info_none(){
 	?>
 	<style type="text/css">
+		#customize-control-mwsmall_blog_settings_options input,
 		#customize-control-show_post_top_info input,
 		#customize-control-up_mwsmall input,
 		#customize-control-more_info_mwthemes input{
@@ -463,6 +482,9 @@ function promo_info_none(){
 		}
 		a.button-pro:hover {
 			color: #222;
+		}
+		.img_promo {
+			margin-top: 10px;
 		}
 	</style>
 	<?php
