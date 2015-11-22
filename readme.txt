@@ -93,6 +93,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.3
+- Fixed:   "$this->_extension_url" used for redux extensions fixed to ensure custom extensions are loaded correctly on all sites.
+
 Version 1.2.2
 - Fixed:   Floating elements now cleared within template-archive.php using class "clearboth".
 - Fixed:   Floating elements now cleared within template-sitemap.php using class "clearboth".
