@@ -14,7 +14,8 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 	<?php
 global $boxy;
-if ( $boxy['footer-widgets'] ) : ?>
+
+		if( get_theme_mod( 'footer-widgets' ) ) : ?>
 		<div class="footer-top">
 			<div class="container">
 				<div class="row">

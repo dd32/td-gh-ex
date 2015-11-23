@@ -13,7 +13,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 870; /* pixels */
 }
 
-if ( ! function_exists( 'boxy_setup' ) ) :
+if ( ! function_exists( 'boxy_setup' ) ) :   
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -21,7 +21,7 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function boxy_setup() {
+	function boxy_setup() {    
 
 		// Makes theme translation ready
 		load_theme_textdomain( 'boxy', BOXY_LANGUAGES_DIR );
@@ -60,6 +60,65 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 	}
 endif; // boxy_setup
 add_action( 'after_setup_theme', 'boxy_setup' );
+add_action( 'after_setup_theme', 'boxy_customizer_setup',11 );
+
+if( ! function_exists( 'boxy_customizer_setup' ) ) {
+		//echo '<pre>', print_r($boxy), '</pre>';
+	function boxy_customizer_setup() {
+		if(  count( get_theme_mods() ) <= 1 ) {
+			global $options;
+			$boxy = get_option('boxy');
+			foreach($options['panels']['theme_options']['sections'] as $section) {
+				foreach( $section['fields'] as $name => $settings ) {
+					//echo 'Name: ' . $name . '<br>' . 'Value: ' . $boxy[$name] . '<br>';
+					if( ! get_theme_mod( $name ) && isset( $boxy[$name] ) ) {
+						if( is_array( $boxy[$name] ) ) {
+							set_theme_mod( $name, $boxy[$name]['url'] );
+						} else {
+							set_theme_mod( $name, $boxy[$name] );
+						}
+					}
+				}		
+			}
+
+		 	foreach($options['panels']['home']['sections'] as $section) {
+				foreach( $section['fields'] as $name => $settings ) {
+					if( ! get_theme_mod( $name ) && isset( $boxy[$name] ) ) {
+								if( is_array($boxy[$name]) ) {
+									set_theme_mod( $name, $boxy[$name]['url'] );
+								} 
+								else {
+									set_theme_mod( $name, $boxy[$name] );
+								}
+					}
+			
+					if ( isset ( $boxy['slides'] ) ) {		
+						$slide_count = 1;
+						foreach($boxy['slides'] as $slide) {
+							if( ! get_theme_mod( 'image_upload-' . $slide_count ) && isset( $slide['image'] ) ) {
+								set_theme_mod( 'image_upload-' . $slide_count, $slide['image']);
+							}
+							if( ! get_theme_mod( 'flexcaption-' . $slide_count ) && isset( $slide['description'] ) ) {
+								set_theme_mod( 'flexcaption-' . $slide_count, $slide['description']);
+							}
+							$slide_count++;
+						}
+					}
+					if ( isset ( $boxy['clients'] ) ) {
+						$slide_count = 1;
+						foreach($boxy['clients'] as $slide) {
+							if( ! get_theme_mod( 'client_image-' . $slide_count ) && isset( $slide['image'] ) ) {
+								set_theme_mod( 'client_image-' . $slide_count, $slide['image']);  
+							}
+							$slide_count++;
+						}
+					}
+				}
+			}	
+		}
+	}
+}
+
 
 
 /**
@@ -68,9 +127,35 @@ add_action( 'after_setup_theme', 'boxy_setup' );
 require_once get_template_directory() . '/includes/constants.php';
 
 /**
+ * Load Theme Options Panel
+ */
+require get_template_directory() . '/includes/theme-options.php';
+
+/**
  * Include all includes. Genius
  */
 require_once BOXY_INCLUDES_DIR. '/all.php';
 
-/* JigoShop Support */
-require_once( BOXY_INCLUDES_DIR . '/jigoshop.php' );
+function boxy_slide_exists() {
+	
+	for ( $slide = 1; $slide < 6; $slide++) {
+		$url = get_theme_mod( 'image_upload-' .$slide );
+		if ( $url ) {
+			return true;
+		} 
+	}    
+	
+	return false;	
+}
+
+function boxy_client_exists() {
+	
+	for ( $slide = 1; $slide < 7; $slide++) {
+		$url = get_theme_mod( 'client_image-' .$slide );
+		if ( $url ) {
+			return true;
+		} 
+	}    
+	
+	return false;	
+}

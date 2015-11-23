@@ -25,26 +25,19 @@ require BOXY_INCLUDES_DIR . '/template-tags.php';
 require BOXY_INCLUDES_DIR . '/extras.php';
 
 /**
- * Load Theme Options Page
- * This uses Redux Framework Plugin
+ * Load Redux Framework
  */
-require_once BOXY_INCLUDES_DIR . '/load-plugins.php';
+require_once BOXY_PARENT_DIR . '/admin/admin-init.php';
 
-/**
- * Load Theme Options
- */
-if( class_exists('ReduxFrameworkPlugin')) {
-	require_once BOXY_INCLUDES_DIR . '/theme-options-config.php';
-} else {
-	$boxy = get_option('boxy');
-}
 
-/**
- * Load Sane Defaults
- */
-require_once BOXY_INCLUDES_DIR . '/home-info.php';
 
 /**
  * Load Sidebars
  */
 require_once BOXY_INCLUDES_DIR . '/sidebars.php';
+
+/**
+ * Load Jigoshop Support
+ */
+
+require_once BOXY_INCLUDES_DIR . '/jigoshop.php';

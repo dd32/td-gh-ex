@@ -26,9 +26,10 @@ function boxy_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	global $boxy;
-	if( isset( $boxy['color'] ) ) {
-		switch ($boxy['color']) {
+	switch ( get_theme_mod('color' ) ) {
+			case '1':
+				wp_enqueue_style( 'boxy-style', BOXY_PARENT_URL . '/style.css' );
+				break;
 			case '2':
 				wp_enqueue_style( 'boxy-red', BOXY_PARENT_URL . '/css/red.css' );
 				break;
@@ -36,13 +37,11 @@ function boxy_scripts() {
 				wp_enqueue_style( 'boxy-blue', BOXY_PARENT_URL . '/blue.css');
 				break;
 			default:
-				wp_enqueue_style( 'boxy-style', get_stylesheet_uri() );
+				wp_enqueue_style( 'boxy-style', get_stylesheet_uri() . '/style.css' );
 				break;
 		}		
-	} else {
-		wp_enqueue_style( 'boxy-style', get_stylesheet_uri() );
-	}	
-}
+	} 
+
 add_action( 'wp_enqueue_scripts', 'boxy_scripts' );
 
 /**
@@ -60,10 +59,13 @@ function boxy_theme_font_url($font) {
 		$font_url = esc_url( add_query_arg( 'family', urlencode($font), "//fonts.googleapis.com/css" ) );
 	}
 
-	return $font_url;
+	return $font_url;   
 }
 
 function boxy_admin_style() {
+	wp_enqueue_style( 'boxy-fontawesome', BOXY_PARENT_URL . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'boxy-admin', BOXY_PARENT_URL . '/css/admin.css' );
+	wp_enqueue_style( 'boxy-admin-css', get_template_directory_uri() . '/admin/css/admin.css');
+
 }
 add_action( 'admin_enqueue_scripts', 'boxy_admin_style' );

@@ -17,11 +17,7 @@ get_header(); ?>
 	<div id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( $boxy['breadcrumb'] && function_exists( 'boxy_breadcrumbs' ) ) : ?>			
-			<div id="breadcrumb" role="navigation">
-				<?php boxy_breadcrumbs(); ?>
-			</div>
-		<?php endif; ?>
+	
 				
 		<?php if ( have_posts() ) : ?>
 
@@ -39,11 +35,8 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			<?php 
-				if( $boxy['pagenavi'] && function_exists( 'boxy_pagination' ) ) : 
-					boxy_pagination();
-				else :
 					boxy_posts_nav();
-				endif; 
+				
 			?>
 
 		<?php else : ?>

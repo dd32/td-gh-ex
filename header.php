@@ -38,13 +38,16 @@ endif;
 	<div class="logo-wrapper">
 		<div class="container">
 			<div class="sixteen columns">
+					<?php $logo_title = get_theme_mod( 'site-title' );
+					$logo = get_theme_mod( 'custom-logo', '' );
+					$tagline = get_theme_mod( 'site-description' ); ?>
 					<div class="logo site-branding">
-						<?php if( isset( $boxy['site-title'] ) && isset( $boxy['custom-logo'] ) && $boxy['site-title'] ) : ?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url( $boxy['custom-logo']['url'] ); ?>" alt="logo" ></a>
+						<?php if( $logo_title &&  $logo != '' ) : ?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url($logo); ?>" alt="logo" ></a>
 						<?php else : ?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php endif; ?>
-						<?php if( isset( $boxy['site-description'] ) && $boxy['site-description'] != false ) : ?>
+							<?php if( $tagline ) : ?>
 							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 						<?php endif; ?>
 					</div>

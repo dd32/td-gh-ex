@@ -14,7 +14,7 @@ get_header(); ?>
 
 	<div class="sixteen columns">
 		<div class="breadcrumb">
-			<?php if ( $boxy['breadcrumb'] && function_exists( 'boxy_breadcrumbs' ) ) : ?>
+					<?php if ( get_theme_mod('breadcrumb' ) && function_exists( 'boxy_breadcrumbs' ) ) : ?>
 				<div id="breadcrumb" role="navigation">
 					<?php boxy_breadcrumbs(); ?>
 				</div>

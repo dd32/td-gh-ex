@@ -91,11 +91,8 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			<?php
-				if ( $boxy['pagenavi'] && function_exists( 'boxy_pagination' ) ) :
-					boxy_pagination();
-				else :
-					boxy_posts_nav();
-				endif;
+				boxy_posts_nav();
+				
 			?>
 
 		<?php else : ?>

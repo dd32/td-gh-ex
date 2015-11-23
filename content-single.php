@@ -14,8 +14,8 @@ global $boxy;
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-	<?php if( isset( $boxy['single-featured-image'] ) && $boxy['single-featured-image'] ) : ?>
+	<div class="entry-content">      
+		<?php if( get_theme_mod( 'single-featured-image' ) ) : ?>
 		<?php if( has_post_thumbnail() && ! post_password_required() ) : ?>
 			<div class="post-thumb">
 				<?php the_post_thumbnail(); ?>

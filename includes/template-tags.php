@@ -32,6 +32,7 @@ if ( ! function_exists( 'boxy_breadcrumbs' ) ) {
 		$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 		$showOnHome  = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
 		//$delimiter   = ( isset( $boxy['breadcrumb-char'] ) && $boxy['breadcrumb-char'] != '' ) ? $boxy['breadcrumb-char'] : ' &raquo; '; // delimiter between crumbs
+		$delimiter = ' &raquo; ';
 		if ( isset( $boxy['breadcrumb-char'] ) && $boxy['breadcrumb-char'] != '' ) {
 			switch ( $boxy['breadcrumb-char'] ) {
 			case '2' :
@@ -46,7 +47,7 @@ if ( ! function_exists( 'boxy_breadcrumbs' ) ) {
 				break;
 			}
 		}
-
+		
 		$before      = '<span class="current">'; // tag before the current crumb
 		$after       = '</span>'; // tag after the current crumb
 		/* === END OF OPTIONS === */

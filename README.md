@@ -42,7 +42,9 @@ http://pixabay.com/static/uploads/photo/2010/12/20/16/02/child-3853_640.jpg
 16. Other theme options are self explanatory.
 
 == Change Log ==
-
+v. 1.1.5
+	* Redux Theme Options to Customizer conversion
+	
 v. 1.1.4
 	* Added Support and Documentation Links
 	* Removed embeded Redux framework
