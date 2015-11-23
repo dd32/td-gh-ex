@@ -10,12 +10,12 @@
  */
 
 ?><ul id="sidebar"><?php
-if ( ! dynamic_sidebar( 'Sidebar' ) ):
+if ( ! dynamic_sidebar( 'sidebar' ) ):
 	?><li id="recent" class="widget-container"><?php
 		?><h3 class="widget-title"><?php _e( 'Recent Posts', 'wortex-lite' ); ?></h3><?php
 		?><ul><?php wp_get_archives( 'type=postbypost&limit=5' ); ?></ul><?php
 	?></li><?php
-	
+
 	?><li id="archives" class="widget-container"><?php
 		?><h3 class="widget-title"><?php _e( 'Archives', 'wortex-lite' ); ?></h3><?php
 		?><ul><?php wp_get_archives( 'type=monthly' ); ?></ul><?php
