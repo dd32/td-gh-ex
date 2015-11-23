@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * Chooko Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
+ * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2020 Iceable Themes - https://www.iceablethemes.com
+ * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
  *
  * Template Name: Full-width Page Template, No Sidebar
  *
@@ -12,73 +12,53 @@
 get_header();
 global $header_image;
 
-?>
-<div id="main-content" class="container<?php echo ( ! $header_image ) ? ' no-header-image' : ''; ?>">
-	<h1 class="page-title"><?php the_title(); ?></h1>
-	<div id="page-container" <?php post_class(); ?>>
-		<?php
+if(have_posts()) :
+while(have_posts()) : the_post();
 
-		if ( have_posts() ) :
-			while ( have_posts() ) :
+?><div id="main-content" class="container<?php if ( !$header_image ) echo " no-header-image"; ?>"><?php
 
-				the_post();
+		?><h1 class="page-title"><?php the_title(); ?></h1><?php
+
+		?><div id="page-container" <?php post_class(); ?>><?php
 
 				the_content();
-
-				wp_link_pages(
-					array(
-						'before'           => '<br class="clear" /><div class="paged_nav">' . __( 'Pages:', 'chooko-lite' ),
-						'after'            => '</div>',
-						'link_before'      => '<span>',
-						'link_after'       => '</span>',
-						'next_or_number'   => 'number',
-						'nextpagelink'     => __( 'Next page', 'chooko-lite' ),
-						'previouspagelink' => __( 'Previous page', 'chooko-lite' ),
-						'pagelink'         => '%',
-						'echo'             => 1,
-					)
+				$chooko_link_pages_args = array(
+					'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'chooko-lite'),
+					'after'            => '</div>',
+					'link_before'      => '<span>',
+					'link_after'       => '</span>',
+					'next_or_number'   => 'number',
+					'nextpagelink'     => __('Next page', 'chooko-lite'),
+					'previouspagelink' => __('Previous page', 'chooko-lite'),
+					'pagelink'         => '%',
+					'echo'             => 1
 				);
+				wp_link_pages( $chooko_link_pages_args );
+				?><br class="clear" /><?php
 
-				?>
-				<br class="clear" />
-				<?php
-
-				edit_post_link(
-					__( 'Edit', 'chooko-lite' ),
-					'<div class="postmetadata"><span class="editlink"><span class="icon"></span>',
-					'</span></div><br class="clear" />'
-				);
+				edit_post_link(__('Edit', 'chooko-lite'), '<div class="postmetadata"><span class="editlink"><span class="icon"></span>', '</span></div><br class="clear" />');
 
 				// Display comments section only if comments are open or if there are comments already.
-				if ( comments_open() || '0' !== get_comments_number() ) :
+				if ( comments_open() || get_comments_number()!=0 ):
 
-					?>
-					<div class="comments">
-						<?php
-						comments_template( '', true );
-						next_comments_link();
-						previous_comments_link();
-						?>
-					</div>
-					<?php
+					?><div class="comments"><?php
+					comments_template( '', true );
+					next_comments_link(); previous_comments_link();
+					?></div><?php
 
 				endif;
 
-			endwhile;
+	endwhile;
 
-		else :
+	else:
 
-		?>
-		<h2><?php esc_html_e( 'Not Found', 'chooko-lite' ); ?></h2>
-		<p><?php esc_html_e( 'What you are looking for isn\'t here...', 'chooko-lite' ); ?></p>
-		<?php
+	?><h2><?php _e('Not Found', 'chooko-lite'); ?></h2><?php
+	?><p><?php _e('What you are looking for isn\'t here...', 'chooko-lite'); ?></p><?php
 
-		endif;
+	endif;
 
-	?>
-	</div>
+	?></div><?php // End page container
 
-</div>
-<?php
+?></div><?php // End main content
 
-get_footer();
+get_footer(); ?>

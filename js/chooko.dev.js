@@ -1,15 +1,21 @@
 /**
- * Chooko Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
- * Copyright 2013-2020 Iceable Themes - https://www.iceablethemes.com
+ * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
  * Javascripts
- *
- * Dependencies:
- * - Superfish
  */
+
+/* Index *
+==================================================
+ * 1. Chooko's own scripts + plugins init
+ * 2. Superfish 
+ */
+
+/* 1. Chooko's own scripts + plugins init
+================================================== */
 
 /* --- (document).ready function wrap --- */
 
-jQuery(document).ready(function($){
+jQuery(document).ready(function($){ 
 
 	/*--- Responsive Dropdown Menu ---*/
 
@@ -20,7 +26,7 @@ jQuery(document).ready(function($){
 
 	/*--- Hookup Superfish ---*/
 
-	$('ul.sf-menu').superfish({
+	$('ul.sf-menu').superfish({ 
 		delay:	700,	// the delay in milliseconds that the mouse can remain outside a submenu without it closing
 		animation:	{opacity:'show',height:'show'},	// an object equivalent to first parameter of jQuery’s .animate() method
 		speed:	'normal',	// speed of the animation. Equivalent to second parameter of jQuery’s .animate() method
@@ -29,14 +35,14 @@ jQuery(document).ready(function($){
 	});
 
 	/* Remove empty comment reply link wrappers */
-	$('div.reply').filter( function() {
-		return $.trim($(this).text()) === '';
-	}).remove();
+	$('div.reply').filter(function() {return $.trim($(this).text()) === ''}).remove()
 
 	/*--- End of $(document).ready(function() ---*/
 
 });
 
+/* 2. Superfish 
+================================================== */
 
 /*
  * Superfish v1.4.8 - jQuery menu widget
@@ -67,7 +73,7 @@ jQuery(document).ready(function($){
 					o.retainPath=($.inArray($$[0],o.$path)>-1);
 					$$.hideSuperfishUl();
 					if (o.$path.length && $$.parents(['li.',o.hoverClass].join('')).length<1){over.call(o.$path);}
-				},o.delay);
+				},o.delay);	
 			},
 			getMenu = function($menu){
 				var menu = $menu.parents(['ul.',c.menuClass,':first'].join(''))[0];
@@ -75,7 +81,7 @@ jQuery(document).ready(function($){
 				return menu;
 			},
 			addArrow = function($a){ $a.addClass(c.anchorClass).append($arrow.clone()); };
-
+			
 		return this.each(function() {
 			var s = this.serial = sf.o.length;
 			var o = $.extend({},sf.defaults,op);
@@ -84,20 +90,20 @@ jQuery(document).ready(function($){
 					.filter('li:has(ul)').removeClass(o.pathClass);
 			});
 			sf.o[s] = sf.op = o;
-
+			
 			$('li:has(ul)',this)[($.fn.hoverIntent && !o.disableHI) ? 'hoverIntent' : 'hover'](over,out).each(function() {
 				if (o.autoArrows) addArrow( $('>a:first-child',this) );
 			})
 			.not('.'+c.bcClass)
 				.hideSuperfishUl();
-
+			
 			var $a = $('a',this);
 			$a.each(function(i){
 				var $li = $a.eq(i).parents('li');
 				$a.eq(i).focus(function(){over.call($li);}).blur(function(){out.call($li);});
 			});
 			o.onInit.call(this);
-
+			
 		}).each(function() {
 			var menuClasses = [c.menuClass];
 			if (sf.op.dropShadows  && !($.browser.msie && $.browser.version < 7)) menuClasses.push(c.shadowClass);
