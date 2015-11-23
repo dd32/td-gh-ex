@@ -1,4 +1,7 @@
 <?php
+// Prevent direct access to the file
+if( ! defined( 'ABSPATH' ) ) exit; 
+
 /**
  * About Agama Page under Appearances
  *
@@ -39,7 +42,7 @@ if( ! class_exists( 'Agama_About' ) ) {
 		 */
 		public function render_page() {
 			echo '<div class="wrap about-wrap">';
-				echo '<h1>'.sprintf( __( 'Welcome to Agama v%s', 'agama' ), AGAMA_VER ).'</h1>';
+				echo '<h1>'.sprintf( __( 'Welcome to Agama v%s', 'agama' ), Agama_Core::version() ).'</h1>';
 				
 				echo '<div class="about-text">';
 					echo __( 'Thank you for using Agama theme!', 'agama' ).'<br>';
@@ -70,40 +73,14 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</h2>';
 				
 				echo '<div class="changelog point-releases">';
-					echo '<h3>Changelog Agama v1.1.4</h3>';
-						echo '<p><strong>Version 1.1.4</strong> ADDED: Tag cloud support (widget, posts).</p>';
-						echo '<p><strong>Version 1.1.4</strong> ADDED: Enable / Disable featured thumbnails on single post.</p>';
-						echo '<p><strong>Version 1.1.4</strong> ADDED: Enable / Disable Post Meta Details (date, category, author, comments count).</p>';
-						echo '<p><strong>Version 1.1.4</strong> FIXED: Footer links color issue.</p>';
-					
-					echo '<h3>Changelog Agama v1.1.3</h3>';
-						echo '<p><strong>Version 1.1.3</strong> FIXED: Sticky top menu max-width issue.</p>';
-						echo '<p><strong>Version 1.1.3</strong> ADDED: Image support feature on frontpage boxes.</p>';
-						echo '<p><strong>Version 1.1.3</strong> ADDED: Contact Form 7 style support.</p>';
-						echo '<p><strong>Version 1.1.3</strong> IMPROVED: bbPress styling.</p>';
-					
-					echo '<h3>Changelog Agama v1.1.2</h3>';
-						echo '<p><strong>Version 1.1.2</strong> FIXED: issues with menu assign checkbox visibility.</p>';
-						echo '<p><strong>Version 1.1.2</strong> ADDED: Blog thumbnails url enable / disable feature.</p>';
-						echo '<p><strong>Version 1.1.2</strong> ADDED: Top menu feature on sticky header.</p>';
-						echo '<p><strong>Version 1.1.2</strong> ADDED: New social icons style.</p>';
-						echo '<p><strong>Version 1.1.2</strong> IMPROVED: Menu hover in, hover out animations.</p>';
-					
-					echo '<h3>Changelog Agama v1.1.1</h3>';
-						echo '<p><strong>Version 1.1.1</strong> added Frontpage boxes feature.</p>';
-						echo '<p><strong>Version 1.1.1</strong> added About author enable / disable feature.</p>';
-						echo '<p><strong>Version 1.1.1</strong> added 1 new blog layout (small thumbs) feature.</p>';
-						echo '<p><strong>Version 1.1.1</strong> added sidebar align (left / right) feature.</p>';
-						echo '<p><strong>Version 1.1.1</strong> added Enable / Disable "Read More" blog url feature.</p>';
-						echo '<p><strong>Version 1.1.1</strong> cleaned Unused files & code.</p>';
-						echo '<p><strong>Version 1.1.1</strong> fixed Blog grid style, comments overlap with posts.</p>';
-						echo '<p><strong>Version 1.1.1</strong> fixed Few issues in mobile navigation.</p>';
-						echo '<p><strong>Version 1.1.1</strong> fixed Duplicated post categories bug.</p>';
-						echo '<p><strong>Version 1.1.1</strong> improved Editor stylesheet.</p>';
-						echo '<p><strong>Version 1.1.1</strong> improved Infinite scroll, added trigger feature (auto / button).</p>';
-						echo '<p><strong>Version 1.1.1</strong> improved Blog posts styling.</p>';
-						echo '<p><strong>Version 1.1.1</strong> improved Comments layout restyled.</p>';
-						echo '<p><strong>Version 1.1.1</strong> improved overall styling.</p>';
+					echo '<h3>Changelog Agama v1.1.5</h3>';
+						echo '<p><strong>Version 1.1.5</strong> ADDED: Upload favicon feature.</p>';
+						echo '<p><strong>Version 1.1.5</strong> ADDED: Breadcrumb feature ( enable / disable ).</p>';
+						echo '<p><strong>Version 1.1.5</strong> ADDED: Breadcrum style feature ( mini / normal ).</p>';
+						echo '<p><strong>Version 1.1.5</strong> ADDED: Disable breacrumb on homepage / frontpage feature.</p>';
+						echo '<p><strong>Version 1.1.5</strong> ADDED: Enable / disable post author feature.</p>';
+						echo '<p><strong>Version 1.1.5</strong> UPDATED: Dark skin stylesheet.</p>';
+						echo '<p><strong>Version 1.1.5</strong> ADDED: Custom CSS feature.</p>';
 				echo '</div>';
 				
 			echo '</div>';

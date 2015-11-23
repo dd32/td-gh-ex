@@ -2,6 +2,15 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.1.5 Nov 24 =
+* ADDED: Upload favicon feature.
+* ADDED: Breadcrumb feature ( enable / disable ).
+* ADDED: Breadcrum style feature ( mini / normal ).
+* ADDED: Disable breacrumb on homepage / frontpage feature.
+* ADDED: Enable / disable post author feature.
+* UPDATED: Dark skin stylesheet.
+* ADDED: Custom CSS feature.
+
 = 1.1.4 Oct 22 =
 * ADDED: Tag cloud support (widget, posts).
 * ADDED: Enable / Disable featured thumbnails on single post.

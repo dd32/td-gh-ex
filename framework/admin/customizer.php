@@ -95,6 +95,23 @@ function agama_customize_premium_feature($wp_customize) {
 	}
 }
 add_action('customize_register', 'agama_customize_premium_feature');
+
+/**
+ * Register Customizer Agama Heading
+ *
+ * @since 1.1.5
+ */
+function agama_customize_heading($wp_customize) {
+	class Agama_Customize_Agama_Heading extends WP_Customize_Control {
+		public function render_content() { ?>
+			<div class="agama-customize-heading">
+				<h3><?php echo esc_html( $this->label ); ?></h3>
+			</div>
+		<?php 
+		}
+	}
+}
+add_action('customize_register', 'agama_customize_heading');
  
 /**
  * Define Customizer Settings, Controls etc...
@@ -133,24 +150,40 @@ function agama_customize_register( $wp_customize ) {
 		'capability'     => 'edit_theme_options',
 		'title'          => __('Agama Theme Options', 'agama')
 	));
-/******************** Agama Body Background Animated Settings ******************************************/
-	$wp_customize->add_section('agama_body_background_animated_section', array(
-		'title'		=> __( 'Body Background Animated', 'agama' ),
+/******************** Agama General Settings ******************************************/
+	$wp_customize->add_section('agama_general_section', array(
+		'title'		=> __( 'General', 'agama' ),
 		'priority'	=> 5,
 		'panel'		=> 'agama_theme_options'
-	));
-	$wp_customize->add_setting('agama_body_background_animated', array(
+	)); // Frontpage Box 2 Heading
+	$wp_customize->add_setting( 'agama_favicon_heading', array(
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control(
-		new Agama_Customize_Agama_Pro(
-			$wp_customize, 'agama_body_background_animated', array(
-				'label'		=> __( 'Animated Background', 'agama' ),
-				'section'	=> 'agama_body_background_animated_section',
-				'settings'	=> 'agama_body_background_animated'
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_favicon_heading', array(
+				'label'		=> __( 'Favicon', 'agama' ),
+				'section'	=> 'agama_general_section',
+				'settings'	=> 'agama_favicon_heading'
+			)
+		)
+	); // Agama Favicon
+	$wp_customize->add_setting('agama_favicon', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize, 'agama_favicon', array(
+				'label'			=> __( 'Favicon', 'agama' ),
+				'description'	=> __( 'Upload a 16x16px png/gif image that will be your favicon.', 'agama' ),
+				'section'		=> 'agama_general_section',
+				'settings'		=> 'agama_favicon'
 			)
 		)
 	);
@@ -360,10 +393,68 @@ function agama_customize_register( $wp_customize ) {
 			) 
 		) 
 	);
+/******************** Agama Breadcrumb Settings ******************************************/
+	$wp_customize->add_section( 'agama_breadcrumb_section', array(
+		'title'			=> __( 'Breadcrumb', 'agama' ),
+		'priority'		=> 40,
+		'panel'			=> 'agama_theme_options'
+	)); // Enable Breadcrumb
+	$wp_customize->add_setting( 'agama_breadcrumb', array(
+		'default'			=> true,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_breadcrumb', array(
+				'label'		=> __( 'Enable Breadcrumb ?', 'agama' ),
+				'section'	=> 'agama_breadcrumb_section',
+				'settings'	=> 'agama_breadcrumb',
+				'type'		=> 'checkbox'
+			)
+		)
+	); // Disable Breadcrumb on Homepage
+	$wp_customize->add_setting( 'agama_breadcrumb_homepage', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_breadcrumb_homepage', array(
+				'label'		=> __( 'Disable Breadcrumb on Homepage ?', 'agama' ),
+				'section'	=> 'agama_breadcrumb_section',
+				'settings'	=> 'agama_breadcrumb_homepage',
+				'type'		=> 'checkbox'
+			)
+		)
+	); // Breadcrumb Style
+	$wp_customize->add_setting( 'agama_breadcrumb_style', array(
+		'default'			=> 'mini',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_breadcrumb_style', array(
+				'label'		=> __( 'Breadcrumb Style', 'agama' ),
+				'section'	=> 'agama_breadcrumb_section',
+				'settings'	=> 'agama_breadcrumb_style',
+				'type'		=> 'select',
+				'choices'	=> array(
+					'mini'		=> __( 'Mini', 'agama' ),
+					'normal'	=> __( 'Normal', 'agama' )
+				)
+			)
+		)
+	);
 /******************** Agama Frontpage Boxes Settings ******************************************/
 	$wp_customize->add_section( 'agama_frontpage_boxes_section', array(
 		'title'		=> __('Frontpage Boxes', 'agama'),
-		'priority'	=> 40,
+		'priority'	=> 50,
 		'panel'		=> 'agama_theme_options'
 	)); // Enable Frontpage Boxes Everywhere
 	$wp_customize->add_setting( 'agama_frontpage_boxes_everywhere', array(
@@ -380,6 +471,21 @@ function agama_customize_register( $wp_customize ) {
 				'section'	=> 'agama_frontpage_boxes_section',
 				'settings'	=> 'agama_frontpage_boxes_everywhere',
 				'type'		=> 'checkbox'
+			)
+		)
+	); // Frontpage Box 2 Heading
+	$wp_customize->add_setting( 'agama_frontpage_box_1_heading', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_frontpage_box_1_heading', array(
+				'label'		=> __( 'Frontpage Box 1', 'agama' ),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_1_heading'
 			)
 		)
 	); // Frontpage Box 1 Enable
@@ -478,6 +584,21 @@ function agama_customize_register( $wp_customize ) {
 				'type'		=> 'textarea'
 			)
 		)
+	); // Frontpage Box 2 Heading
+	$wp_customize->add_setting( 'agama_frontpage_box_2_heading', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_frontpage_box_2_heading', array(
+				'label'		=> __( 'Frontpage Box 2', 'agama' ),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_2_heading'
+			)
+		)
 	); // Frontpage Box 2 Enable
 	$wp_customize->add_setting( 'agama_frontpage_box_2_enable', array(
 		'default'			=> true,
@@ -574,6 +695,21 @@ function agama_customize_register( $wp_customize ) {
 				'type'		=> 'textarea'
 			)
 		)
+	); // Frontpage Box 3 Heading
+	$wp_customize->add_setting( 'agama_frontpage_box_3_heading', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_frontpage_box_3_heading', array(
+				'label'		=> __( 'Frontpage Box 3', 'agama' ),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_3_heading'
+			)
+		)
 	); // Frontpage Box 3 Enable
 	$wp_customize->add_setting( 'agama_frontpage_box_3_enable', array(
 		'default'			=> true,
@@ -668,6 +804,21 @@ function agama_customize_register( $wp_customize ) {
 				'section'	=> 'agama_frontpage_boxes_section',
 				'settings'	=> 'agama_frontpage_box_3_text',
 				'type'		=> 'textarea'
+			)
+		)
+	); // Frontpage Box 4 Heading
+	$wp_customize->add_setting( 'agama_frontpage_box_4_heading', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_frontpage_box_4_heading', array(
+				'label'		=> __( 'Frontpage Box 4', 'agama' ),
+				'section'	=> 'agama_frontpage_boxes_section',
+				'settings'	=> 'agama_frontpage_box_4_heading'
 			)
 		)
 	); // Frontpage Box 4 Enable
@@ -767,33 +918,64 @@ function agama_customize_register( $wp_customize ) {
 			)
 		)
 	);
-/******************** Agama Breadcrumb Settings ******************************************/
-	$wp_customize->add_section( 'agama_breadcrumb_section', array(
-		'title'			=> __( 'Breadcrumbs', 'agama' ),
-		'priority'		=> 50,
-		'panel'			=> 'agama_theme_options'
-	));
-	$wp_customize->add_setting( 'agama_breadcrumb', array(
+/******************** Agama Blog Settings ******************************************/
+	$wp_customize->add_section( 'agama_blog_section', array(
+		'title'		=> __('Blog', 'agama'),
+		'priority' 	=> 60,
+		'panel'		=> 'agama_theme_options'
+	)); // Blog Layout Heading
+	$wp_customize->add_setting( 'agama_blog_layout_heading', array(
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control(
-		new Agama_Customize_Agama_Pro(
-			$wp_customize, 'agama_breadcrumb', array(
-				'label'		=> __( 'Breadcrumbs', 'agama' ),
-				'section'	=> 'agama_breadcrumb_section',
-				'settings'	=> 'agama_breadcrumb'
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_blog_layout_heading', array(
+				'label'		=> __( 'Blog Layout', 'agama' ),
+				'section'	=> 'agama_blog_section',
+				'settings'	=> 'agama_blog_layout_heading'
 			)
 		)
-	);
-/******************** Agama Blog Settings ******************************************/
-	$wp_customize->add_section( 'agama_blog_section', array(
-		'title'		=> __('Blog', 'agama'),
-		'priority' 	=> 60,
-		'panel'		=> 'agama_theme_options'
-	)); // Blog Single Post Thumbnail
+	); // Blog Layout
+	$wp_customize->add_setting( 'agama_blog_layout', array(
+		'default'			=> 'list',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control( 
+		new WP_Customize_Control( 
+			$wp_customize, 'agama_blog_layout', array(
+				'label'		=> __( 'Blog Layout', 'agama' ),
+				'section'	=> 'agama_blog_section',
+				'settings'	=> 'agama_blog_layout',
+				'type'		=> 'select',
+				'choices'	=> array
+				(
+					'list'			=> __( 'List Style', 'agama' ),
+					'grid'			=> __( 'Grid Style', 'agama' ),
+					'small_thumbs'	=> __( 'Small Thumbs Style', 'agama' )
+				)
+			) 
+		) 
+	); // Blog Thumbnails Heading
+	$wp_customize->add_setting( 'agama_blog_post_thumbnails_heading', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_blog_post_thumbnails_heading', array(
+				'label'		=> __( 'Featured Thumbnails', 'agama' ),
+				'section'	=> 'agama_blog_section',
+				'settings'	=> 'agama_blog_post_thumbnails_heading'
+			)
+		)
+	); // Blog Single Post Thumbnail
 	$wp_customize->add_setting( 'agama_blog_single_post_thumbnail', array(
 		'default'			=> true,
 		'capability'		=> 'edit_theme_options',
@@ -827,6 +1009,21 @@ function agama_customize_register( $wp_customize ) {
 				'type'			=> 'checkbox'
 			)
 		)
+	); // Blog Post Meta Heading 
+	$wp_customize->add_setting( 'agama_blog_post_meta_heading', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_blog_post_meta_heading', array(
+				'label'		=> __( 'Post Meta', 'agama' ),
+				'section'	=> 'agama_blog_section',
+				'settings'	=> 'agama_blog_post_meta_heading'
+			)
+		)
 	); // Blog Post Meta Details
 	$wp_customize->add_setting( 'agama_blog_post_meta', array(
 		'default'			=> true,
@@ -844,83 +1041,38 @@ function agama_customize_register( $wp_customize ) {
 				'type'			=> 'checkbox'
 			)
 		)
-	); // About Author
-	$wp_customize->add_setting( 'agama_blog_about_author', array(
+	); // Post Author 
+	$wp_customize->add_setting( 'agama_blog_post_author', array(
 		'default'			=> true,
 		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
-		'sanitize_callback' => 'sanitize_text_field'
+		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'agama_blog_about_author', array(
-				'label'			=> __('Enable About Author ?', 'agama'),
-				'description'	=> __('Display about author block below post.', 'agama'),
+			$wp_customize, 'agama_blog_post_author', array(
+				'label'			=> __('Enable Post Author ?', 'agama'),
+				'description'	=> __( 'If enabled, post author name will be visible in post meta.', 'agama'),
 				'section'		=> 'agama_blog_section',
-				'settings'		=> 'agama_blog_about_author',
+				'settings'		=> 'agama_blog_post_author',
 				'type'			=> 'checkbox'
 			)
 		)
-	); // Blog Infinite Scroll
-	$wp_customize->add_setting( 'agama_blog_infinite_scroll', array(
-		'default'			=> false,
-		'capability'		=> 'edit_theme_options',
-		'transport'			=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	$wp_customize->add_control( 
-		new WP_Customize_Control( 
-			$wp_customize, 'agama_blog_infinite_scroll', array(
-				'label'		=> __('Enable Infinite Scroll ?', 'agama'),
-				'section'	=> 'agama_blog_section',
-				'settings'	=> 'agama_blog_infinite_scroll',
-				'type'		=> 'checkbox'
-			) 
-		) 
-	); // Infinite Scroll Trigger
-	$wp_customize->add_setting( 'agama_blog_infinite_trigger', array(
-		'default'			=> 'button',
+	); // Blog Excerpt Heading
+	$wp_customize->add_setting( 'agama_blog_excerpt_heading', array(
+		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize, 'agama_blog_infinite_trigger', array(
-				'label'		=> __( 'Infinite Scroll Trigger', 'agama' ),
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_blog_excerpt_heading', array(
+				'label'		=> __( 'Excerpt', 'agama' ),
 				'section'	=> 'agama_blog_section',
-				'settings'	=> 'agama_blog_infinite_trigger',
-				'type'		=> 'select',
-				'choices'	=> array
-				(
-					'auto'	 => __( 'Automatic Trigger', 'agama' ),
-					'button' => __( 'Button Trigger', 'agama' )
-				)
+				'settings'	=> 'agama_blog_excerpt_heading'
 			)
 		)
-	);
-	// Blog Layout
-	$wp_customize->add_setting( 'agama_blog_layout', array(
-		'default'			=> 'list',
-		'capability'		=> 'edit_theme_options',
-		'transport'			=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	$wp_customize->add_control( 
-		new WP_Customize_Control( 
-			$wp_customize, 'agama_blog_layout', array(
-				'label'		=> __( 'Blog Layout', 'agama' ),
-				'section'	=> 'agama_blog_section',
-				'settings'	=> 'agama_blog_layout',
-				'type'		=> 'select',
-				'choices'	=> array
-				(
-					'list'			=> __( 'List Style', 'agama' ),
-					'grid'			=> __( 'Grid Style', 'agama' ),
-					'small_thumbs'	=> __( 'Small Thumbs Style', 'agama' )
-				)
-			) 
-		) 
 	); // Blog Excerpt Lenght
 	$wp_customize->add_setting( 'agama_blog_excerpt', array(
 		'default'			=> 70,
@@ -966,49 +1118,91 @@ function agama_customize_register( $wp_customize ) {
 				'type'		=> 'checkbox'
 			)
 		)
-	);
-/******************** Agama Slider Settings ******************************************/
-	$wp_customize->add_section( 'agama_slider_section', array(
-		'title'		=> __( 'Sliders', 'agama' ),
-		'priority'	=> 80,
-		'panel'		=> 'agama_theme_options'
-	)); // Agama Pro Feature
-	$wp_customize->add_setting( 'agama_sliders', array(
-		'default'			=> false,
+	); // About Author Heading
+	$wp_customize->add_setting( 'agama_blog_post_about_author_heading', array(
+		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
-		'sanitize_callback' => 'sanitize_text_field'
+		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	$wp_customize->add_control( 
-		new Agama_Customize_Agama_Pro( 
-			$wp_customize, 'agama_sliders', array(
-				'label'			=> __( 'Sliders', 'agama' ),
-				'section'		=> 'agama_slider_section',
-				'settings'		=> 'agama_sliders',
-			) 
-		) 
-	);
-/******************** Agama Typography Settings ******************************************/
-	$wp_customize->add_section( 'agama_typography_section', array(
-		'title'		=> __( 'Typography', 'agama' ),
-		'priority'	=> 90,
-		'panel'		=> 'agama_theme_options'
-	)); // Agama Pro Feature
-	$wp_customize->add_setting( 'agama_typography', array(
-		'default'			=> false,
-		'capability'		=> 'edit_theme_options',
-		'transport'			=> 'refresh',
-		'sanitize_callback' => 'sanitize_text_field'
-	));
-	$wp_customize->add_control( 
-		new Agama_Customize_Agama_Pro( 
-			$wp_customize, 'agama_typography', array(
-				'label'			=> __( 'Typography', 'agama' ),
-				'section'		=> 'agama_typography_section',
-				'settings'		=> 'agama_typography',
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_blog_post_about_author_heading', array(
+				'label'		=> __( 'About Author', 'agama' ),
+				'section'	=> 'agama_blog_section',
+				'settings'	=> 'agama_blog_post_about_author_heading'
 			)
 		)
-	);
+	); // About Author
+	$wp_customize->add_setting( 'agama_blog_about_author', array(
+		'default'			=> true,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_blog_about_author', array(
+				'label'			=> __('Enable About Author ?', 'agama'),
+				'description'	=> __('Display about author block below post.', 'agama'),
+				'section'		=> 'agama_blog_section',
+				'settings'		=> 'agama_blog_about_author',
+				'type'			=> 'checkbox'
+			)
+		)
+	); // Infinite Scroll Heading
+	$wp_customize->add_setting( 'agama_blog_post_infinite_scroll_heading', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_blog_post_infinite_scroll_heading', array(
+				'label'		=> __( 'Infinite Scroll', 'agama' ),
+				'section'	=> 'agama_blog_section',
+				'settings'	=> 'agama_blog_post_infinite_scroll_heading'
+			)
+		)
+	); // Blog Infinite Scroll
+	$wp_customize->add_setting( 'agama_blog_infinite_scroll', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control( 
+		new WP_Customize_Control( 
+			$wp_customize, 'agama_blog_infinite_scroll', array(
+				'label'		=> __('Enable Infinite Scroll ?', 'agama'),
+				'section'	=> 'agama_blog_section',
+				'settings'	=> 'agama_blog_infinite_scroll',
+				'type'		=> 'checkbox'
+			) 
+		) 
+	); // Infinite Scroll Trigger
+	$wp_customize->add_setting( 'agama_blog_infinite_trigger', array(
+		'default'			=> 'button',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_blog_infinite_trigger', array(
+				'label'		=> __( 'Infinite Scroll Trigger', 'agama' ),
+				'section'	=> 'agama_blog_section',
+				'settings'	=> 'agama_blog_infinite_trigger',
+				'type'		=> 'select',
+				'choices'	=> array
+				(
+					'auto'	 => __( 'Automatic Trigger', 'agama' ),
+					'button' => __( 'Button Trigger', 'agama' )
+				)
+			)
+		)
+	); 
 /******************** Agama Colours Settings ******************************************/
 	$wp_customize->add_section( 'colors', array(
 		'title'		=> __('Colours', 'agama'),
@@ -1029,6 +1223,21 @@ function agama_customize_register( $wp_customize ) {
 				'settings'	=> 'agama_primary_color'
 			) 
 		) 
+	); // Agama Skin Heading
+	$wp_customize->add_setting( 'agama_skin_heading', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_skin_heading', array(
+				'label'		=> __( 'Agama Skin', 'agama' ),
+				'section'	=> 'colors',
+				'settings'	=> 'agama_skin_heading'
+			)
+		)
 	); // Agama Skin
 	$wp_customize->add_setting( 'agama_skin', array(
 		'default'			=> 'light',
@@ -1504,70 +1713,6 @@ function agama_customize_register( $wp_customize ) {
 			) 
 		) 
 	);
-/******************** Agama Share Icons Settings ******************************************/
-	$wp_customize->add_section( 'agama_share_icons_section', array(
-		'title'		=> __( 'Share Box', 'agama' ),
-		'priority'	=> 120,
-		'panel'		=> 'agama_theme_options'
-	));
-	$wp_customize->add_setting( 'agama_share_icons', array(
-		'default'			=> '',
-		'capability'		=> 'edit_theme_options',
-		'transport'			=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	$wp_customize->add_control(
-		new Agama_Customize_Agama_Pro(
-			$wp_customize, 'agama_share_icons', array(
-				'label'		=> __( 'Share Box', 'agama' ),
-				'section'	=> 'agama_share_icons_section',
-				'settings'	=> 'agama_share_icons'
-			)
-		)
-	);
-/******************** Agama WooCommerce Settings ******************************************/
-	$wp_customize->add_section( 'agama_woocommerce_section', array(
-		'title'		=> __( 'WooCommerce', 'agama' ),
-		'priority'	=> 130,
-		'panel'		=> 'agama_theme_options'
-	)); // Products per Page
-	$wp_customize->add_setting( 'agama_woocommerce', array(
-		'default'			=> '12',
-		'capability'		=> 'edit_theme_options',
-		'transport'			=> 'refresh',
-		'sanitize_callback'	=> 'esc_attr'
-	));
-	$wp_customize->add_control( 
-		new Agama_Customize_Agama_Pro( 
-			$wp_customize, 'agama_woocommerce', array(
-				'label'		=> __('Products per Page', 'agama'),
-				'section'	=> 'agama_woocommerce_section',
-				'settings'	=> 'agama_woocommerce',
-			)
-		)
-	);
-/******************** Agama Lightbox Settings ******************************************/
-	$wp_customize->add_section( 'agama_lightbox_section', array(
-		'title'		=> __( 'Lightbox', 'agama' ),
-		'priority'	=> 140,
-		'panel'		=> 'agama_theme_options'
-	));
-	$wp_customize->add_setting( 'agama_lightbox', array(
-		'default'			=> '',
-		'capability'		=> 'edit_theme_options',
-		'transport'			=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	$wp_customize->add_control(
-		new Agama_Customize_Agama_Pro(
-			$wp_customize, 'agama_lightbox', array(
-				'label'			=> __( 'Lightbox', 'agama' ),
-				'description'	=> __( 'Lightbox', 'agama' ),
-				'section'		=> 'agama_lightbox_section',
-				'setting'		=> 'agama_lightbox'
-			)
-		)
-	);
 /******************** Agama Custom CSS ******************************************/
 	$wp_customize->add_section( 'agama_custom_css_section', array(
 		'title'		=> __('Custom CSS', 'agama'),
@@ -1581,40 +1726,19 @@ function agama_customize_register( $wp_customize ) {
 		'sanitize_callback'	=> 'esc_textarea'
 	));
 	$wp_customize->add_control(
-		new Agama_Customize_Agama_Pro(
+		new WP_Customize_Control(
 			$wp_customize, 'agama_custom_css', array(
 				'label'		=> __( 'Custom CSS', 'agama' ),
 				'section'	=> 'agama_custom_css_section',
-				'settings'	=> 'agama_custom_css'
-			)
-		)
-	);
-/******************** Agama Contact Settings ******************************************/
-	$wp_customize->add_section( 'agama_contact_section', array(
-		'title'		=> __( 'Contact Page', 'agama' ),
-		'priority'	=> 160,
-		'panel'		=> 'agama_theme_options'
-	));
-	$wp_customize->add_setting( 'agama_contact', array(
-		'default'			=> '',
-		'capability'		=> 'edit_theme_options',
-		'transport'			=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	$wp_customize->add_control(
-		new Agama_Customize_Agama_Pro(
-			$wp_customize, 'agama_contact', array(
-				'label'			=> __( 'Contact', 'agama' ),
-				'description'	=> __( 'Contact', 'agama' ),
-				'section'		=> 'agama_contact_section',
-				'setting'		=> 'agama_contact'
+				'settings'	=> 'agama_custom_css',
+				'type'		=> 'textarea'
 			)
 		)
 	);
 /******************** Agama Footer Settings ******************************************/
 	$wp_customize->add_section( 'agama_footer_section', array(
 		'title'		=> __('Footer', 'agama'),
-		'priority'	=> 170,
+		'priority'	=> 160,
 		'panel'		=> 'agama_theme_options'
 	)); // Copyright
 	$wp_customize->add_setting( 'agama_footer_copyright', array(
@@ -1633,6 +1757,155 @@ function agama_customize_register( $wp_customize ) {
 				'type'			=> 'textarea',
 			) 
 		) 
+	);
+/******************** Agama Body Background Animated Settings ******************************************/
+	$wp_customize->add_section('agama_body_background_animated_section', array(
+		'title'		=> __( 'Body Background Animated', 'agama' ),
+		'priority'	=> 170,
+		'panel'		=> 'agama_theme_options'
+	));
+	$wp_customize->add_setting('agama_body_background_animated', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize, 'agama_body_background_animated', array(
+				'label'		=> __( 'Animated Background', 'agama' ),
+				'section'	=> 'agama_body_background_animated_section',
+				'settings'	=> 'agama_body_background_animated'
+			)
+		)
+	);
+/******************** Agama Slider Settings ******************************************/
+	$wp_customize->add_section( 'agama_slider_section', array(
+		'title'		=> __( 'Sliders', 'agama' ),
+		'priority'	=> 180,
+		'panel'		=> 'agama_theme_options'
+	)); // Agama Pro Feature
+	$wp_customize->add_setting( 'agama_sliders', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control( 
+		new Agama_Customize_Agama_Pro( 
+			$wp_customize, 'agama_sliders', array(
+				'label'			=> __( 'Sliders', 'agama' ),
+				'section'		=> 'agama_slider_section',
+				'settings'		=> 'agama_sliders',
+			) 
+		) 
+	);
+/******************** Agama Share Icons Settings ******************************************/
+	$wp_customize->add_section( 'agama_share_icons_section', array(
+		'title'		=> __( 'Share Box', 'agama' ),
+		'priority'	=> 190,
+		'panel'		=> 'agama_theme_options'
+	));
+	$wp_customize->add_setting( 'agama_share_icons', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize, 'agama_share_icons', array(
+				'label'		=> __( 'Share Box', 'agama' ),
+				'section'	=> 'agama_share_icons_section',
+				'settings'	=> 'agama_share_icons'
+			)
+		)
+	);
+/******************** Agama Typography Settings ******************************************/
+	$wp_customize->add_section( 'agama_typography_section', array(
+		'title'		=> __( 'Typography', 'agama' ),
+		'priority'	=> 200,
+		'panel'		=> 'agama_theme_options'
+	)); // Agama Pro Feature
+	$wp_customize->add_setting( 'agama_typography', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control( 
+		new Agama_Customize_Agama_Pro( 
+			$wp_customize, 'agama_typography', array(
+				'label'			=> __( 'Typography', 'agama' ),
+				'section'		=> 'agama_typography_section',
+				'settings'		=> 'agama_typography',
+			)
+		)
+	);
+/******************** Agama Lightbox Settings ******************************************/
+	$wp_customize->add_section( 'agama_lightbox_section', array(
+		'title'		=> __( 'Lightbox', 'agama' ),
+		'priority'	=> 210,
+		'panel'		=> 'agama_theme_options'
+	));
+	$wp_customize->add_setting( 'agama_lightbox', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize, 'agama_lightbox', array(
+				'label'			=> __( 'Lightbox', 'agama' ),
+				'description'	=> __( 'Lightbox', 'agama' ),
+				'section'		=> 'agama_lightbox_section',
+				'setting'		=> 'agama_lightbox'
+			)
+		)
+	);
+/******************** Agama Contact Settings ******************************************/
+	$wp_customize->add_section( 'agama_contact_section', array(
+		'title'		=> __( 'Contact Page', 'agama' ),
+		'priority'	=> 220,
+		'panel'		=> 'agama_theme_options'
+	));
+	$wp_customize->add_setting( 'agama_contact', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize, 'agama_contact', array(
+				'label'			=> __( 'Contact', 'agama' ),
+				'description'	=> __( 'Contact', 'agama' ),
+				'section'		=> 'agama_contact_section',
+				'setting'		=> 'agama_contact'
+			)
+		)
+	);
+/******************** Agama WooCommerce Settings ******************************************/
+	$wp_customize->add_section( 'agama_woocommerce_section', array(
+		'title'		=> __( 'WooCommerce', 'agama' ),
+		'priority'	=> 230,
+		'panel'		=> 'agama_theme_options'
+	)); // Products per Page
+	$wp_customize->add_setting( 'agama_woocommerce', array(
+		'default'			=> '12',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'esc_attr'
+	));
+	$wp_customize->add_control( 
+		new Agama_Customize_Agama_Pro( 
+			$wp_customize, 'agama_woocommerce', array(
+				'label'		=> __('Products per Page', 'agama'),
+				'section'	=> 'agama_woocommerce_section',
+				'settings'	=> 'agama_woocommerce',
+			)
+		)
 	);
 }
 add_action( 'customize_register', 'agama_customize_register' );
@@ -1661,7 +1934,12 @@ add_action( 'customize_preview_init', 'agama_customize_preview_js' );
  * @since Agama 1.0
  */
 function agama_customize_css() { ?>
-	<style type="text/css" id="agama-customize-css"> 
+	<style type="text/css" id="agama-customize-css">
+	
+	<?php if( get_theme_mod( 'agama_custom_css',  '' ) ): ?>
+		<?php echo esc_html( get_theme_mod( 'agama_custom_css', '' ) ); ?>
+	<?php endif; ?>
+	
 	a:hover,
 	.site-header h1 a:hover, 
 	.site-header h2 a:hover,
@@ -1772,6 +2050,9 @@ function agama_customize_css() { ?>
 	.sticky-nav > li > ul > li > ul {
 		border-right: 2px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
+	
+	.breadcrumb a:hover { color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>; }
+	
 	<?php if( get_theme_mod('agama_blog_infinite_scroll', false) && get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
 	#infscr-loading {
 		position: absolute;
@@ -1850,53 +2131,51 @@ function customize_styles_agama_support( $input ) { ?>
 		.theme-headers label > input[type="radio"]:checked + img{
 		  border:2px solid #f00;
 		}
-		#accordion-section-agama_breadcrumb_section .accordion-section-content,
 		#accordion-section-agama_slider_section .accordion-section-content,
 		#accordion-section-agama_typography_section .accordion-section-content,
 		#accordion-section-agama_share_icons_section .accordion-section-content,
 		#accordion-section-agama_woocommerce_section .accordion-section-content,
 		#accordion-section-agama_lightbox_section .accordion-section-content,
-		#accordion-section-agama_custom_css_section .accordion-section-content,
 		#accordion-section-agama_body_background_animated_section .accordion-section-content,
 		#accordion-section-agama_contact_section .accordion-section-content {
 			background-color: #f7a805;
 			color: #fff;
 		}
-		#accordion-section-agama_breadcrumb_section .accordion-section-content a,
 		#accordion-section-agama_slider_section .accordion-section-content a,
 		#accordion-section-agama_typography_section .accordion-section-content a,
 		#accordion-section-agama_share_icons_section .accordion-section-content a,
 		#accordion-section-agama_woocommerce_section .accordion-section-content a,
 		#accordion-section-agama_lightbox_section .accordion-section-content a,
-		#accordion-section-agama_custom_css_section .accordion-section-content a,
 		#accordion-section-agama_body_background_animated_section .accordion-section-content a,
 		#accordion-section-agama_contact_section .accordion-section-content a {
 			color: #000;
 		}
-		#accordion-section-agama_breadcrumb_section .accordion-section-content a:hover,
 		#accordion-section-agama_slider_section .accordion-section-content a:hover,
 		#accordion-section-agama_typography_section .accordion-section-content a:hover,
 		#accordion-section-agama_share_icons_section .accordion-section-content a:hover,
 		#accordion-section-agama_woocommerce_section .accordion-section-content a:hover,
 		#accordion-section-agama_lightbox_section .accordion-section-content a:hover,
-		#accordion-section-agama_custom_css_section .accordion-section-content a:hover,
 		#accordion-section-agama_body_background_animated_section .accordion-section-content a:hover,
 		#accordion-section-agama_contact_section .accordion-section-content a:hover {
 			color: #fff;
 		}
-		#accordion-section-agama_breadcrumb_section h3:before,
 		#accordion-section-agama_body_background_animated_section h3:before,
 		#accordion-section-agama_slider_section h3:before,
 		#accordion-section-agama_typography_section h3:before,
 		#accordion-section-agama_share_icons_section h3:before,
 		#accordion-section-agama_woocommerce_section h3:before,
 		#accordion-section-agama_lightbox_section h3:before,
-		#accordion-section-agama_custom_css_section h3:before,
 		#accordion-section-agama_contact_section h3:before {
 			font-size: 11px;
 			content: "premium";
 			float: right;
 			color: #f7a805;
+		}
+		.agama-customize-heading h3 {
+			border: 1px dashed #4A73AA;
+			font-weight: 600;
+			text-align: center;
+			color: #4A73AA;
 		}
 	</style>
 <?php }

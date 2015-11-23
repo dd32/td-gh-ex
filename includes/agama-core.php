@@ -1,18 +1,55 @@
 <?php
+// Prevent direct access to the file
+if( ! defined( 'ABSPATH' ) ) exit; 
+
 /**
  * Agama Core Class
  *
  * @since Agama v1.0.1
  */
 if( ! class_exists( 'Agama_Core' ) ) {
-	class Agama_Core
-	{
-		// Class constructor (@since 1.0.1)
+	class Agama_Core {
+		
+		/**
+		 * Refers to a single instance of this class.
+		 * 
+		 * @since 1.1.5
+		 */
+		private static $instance = null;
+		
+		/**
+		 * Theme Version
+		 *
+		 * @rewritten
+		 * @since 1.1.5
+		 */
+		static private $version = '1.1.5';
+		
+		/**
+		 * Class Constructor
+		 *
+		 * @since 1.0.1
+		 */
 		function __construct() {
+			
 			$this->defines();
+			
 			add_action( 'wp_head', array( $this, 'IE_Scripts' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts_styles' ) );
 			add_action( 'wp_footer', array( $this, 'footer_scripts' ) );
+		}
+		
+		/**
+		 * Creates or returns an instance of this class.
+		 *
+		 * @since 1.1.5
+		 */
+		public static function get_instance() {
+			if( null == self::$instance ) {
+				self::$instance = new self;
+			}
+			
+			return self::$instance;
 		}
 		
 		/**
@@ -24,11 +61,6 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			// Set up Agama text domain
 			if( ! defined( 'AGAMA_DOMAIN' ) ) {
 				define( 'AGAMA_DOMAIN', 'agama' );
-			}
-
-			// Set up Agama version
-			if( !defined( 'AGAMA_VER' ) ) {
-				define( 'AGAMA_VER', '1.1.4' );
 			}
 			
 			// Defina Agama URI
@@ -99,36 +131,36 @@ if( ! class_exists( 'Agama_Core' ) ) {
 				wp_enqueue_script( 'comment-reply' );
 			
 			// FontAwesome
-			wp_register_style( 'fontawesome', AGAMA_CSS.'font-awesome.min.css' );
+			wp_register_style( 'fontawesome', AGAMA_CSS . 'font-awesome.min.css', array(), self::$version );
 			wp_enqueue_style( 'fontawesome' );
 			
 			// Enqueue Agama Woocommerce stylesheet
 			if( class_exists('Woocommerce') ) {
-				wp_register_style( 'agama-woocommerce', AGAMA_CSS.'woocommerce.css' );
+				wp_register_style( 'agama-woocommerce', AGAMA_CSS . 'woocommerce.css', array(), self::$version );
 				wp_enqueue_style( 'agama-woocommerce' );
 			}
 			
 			// Agama main stylesheet
-			wp_register_style( 'agama-style', get_stylesheet_uri() );
+			wp_register_style( 'agama-style', get_stylesheet_uri(), array(), self::$version );
 			 wp_enqueue_style( 'agama-style' );
 			 
 			// If dark skin selected, enqueue it's stylesheet
 			if( get_theme_mod('agama_skin', 'light') == 'dark' ) {
-				wp_register_style( 'agama-dark', AGAMA_CSS.'skins/dark.css', array(), AGAMA_VER );
+				wp_register_style( 'agama-dark', AGAMA_CSS.'skins/dark.css', array(), self::$version );
 				wp_enqueue_style( 'agama-dark' );
 			}
 			
 			// Loads the Internet Explorer specific stylesheet.
-			wp_register_style( 'agama-ie', AGAMA_CSS.'ie.min.css', array( 'agama-style' ), AGAMA_VER );
+			wp_register_style( 'agama-ie', AGAMA_CSS.'ie.min.css', array( 'agama-style' ), self::$version );
 			wp_enqueue_style( 'agama-ie' );
 			$wp_styles->add_data( 'agama-ie', 'conditional', 'lt IE 9' );
 			
 			// Load all jquery plugins
-			wp_register_script( 'agama-plugins', AGAMA_JS . 'plugins.js', array('jquery') );
+			wp_register_script( 'agama-plugins', AGAMA_JS . 'plugins.js', array('jquery'), self::$version );
 			wp_enqueue_script( 'agama-plugins' );
 			
 			// Load Agama jQuery Functions
-			wp_register_script( 'agama-functions', AGAMA_JS . 'functions.js', array(), AGAMA_VER, true );
+			wp_register_script( 'agama-functions', AGAMA_JS . 'functions.js', array(), self::$version, true );
 			$translation_array = array(
 				'sticky_header'		=> esc_attr( get_theme_mod( 'agama_header_style', 'sticky' ) ),
 				'top_navigation'	=> esc_attr( get_theme_mod( 'agama_top_navigation', true ) ),
@@ -170,6 +202,15 @@ if( ! class_exists( 'Agama_Core' ) ) {
 				';
 			}
 		}
+		
+		/**
+		 * Return Theme Version
+		 *
+		 * @since 1.1.5
+		 */
+		public static function version() {
+			return self::$version;
+		}
 	}
-	new Agama_Core;
+	Agama_Core::get_instance();
 }

@@ -334,12 +334,14 @@ add_action( 'agama_blog_post_date_and_format', 'agama_render_blog_post_date', 10
 if( ! function_exists( 'agama_render_blog_post_meta' ) ) {
 	function agama_render_blog_post_meta() {
 		
-		echo sprintf( 
-			'%s <span class="vcard"><span class="fn">%s</span></span>', 
-			'<i class="fa fa-user"></i>', get_the_author_link() 
-		);
-		
-		echo '<span class="inline-sep">/</span>';
+		if( get_theme_mod( 'agama_blog_post_author', true ) ) {
+			echo sprintf( 
+				'%s <span class="vcard"><span class="fn">%s</span></span>', 
+				'<i class="fa fa-user"></i>', get_the_author_link() 
+			);
+			
+			echo sprintf( '<span class="inline-sep">%s</span>', '/' );
+		}
 		
 		echo sprintf( '%s <span>%s</span>', '<i class="fa fa-calendar"></i>', get_the_time('F j, Y') );
 		

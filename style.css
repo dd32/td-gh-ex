@@ -4,7 +4,7 @@
  Author: Jaroslav Svetlik
  Author URI: http://theme-vision.com/
  Description: Agama is a free Multi-Purpose WordPress theme. It’s perfect for web agency business, corporate business, personal and parallax business portfolio, photography sites and freelancer. Is built on BootStrap with parallax support, is responsive, clean, modern, flat and minimal. Agama is e-commerce (WooCommerce) Compatible, WPML, RTL, Retina-Ready, SEO Friendly and with parallax. 3 Superb header variations. Check demo: http://demo.theme-vision.com
- Version: 1.1.4
+ Version: 1.1.5
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Tags: light,dark, white, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -251,7 +251,62 @@ input[type="color"] {
 	width: 100%;
 }
 
-/* Frontpage Boxes */
+/* Breadcrumb
+-----------------------------------------------------------------*/
+#page-title {
+	position: relative;
+	padding: 50px 0;
+	background-color: #F5F5F5;
+	border-bottom: 1px solid #EEE;
+}
+#page-title .container { position: relative; }
+#page-title h1 {
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: #333;
+	font-family: 'Raleway', sans-serif;
+	font-size: 28px;
+	text-transform: uppercase;
+}
+#page-title span {
+	display: block;
+	margin-top: 10px;
+	font-weight: 300;
+	color: #777;
+	font-size: 18px;
+}
+.breadcrumb {
+	position: absolute !important;
+	width: auto !important;
+	top: 50% !important;
+	left: auto !important;
+	right: 15px !important;
+	margin: -10px 0 0 0 !important;
+	background-color: transparent !important;
+	padding: 0 !important;
+	font-size: 12px;
+}
+body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
+#header.transparent-header + #page-title.page-title-parallax .breadcrumb { margin-top: 35px !important; }
+.breadcrumb a { color: #555; }
+.breadcrumb a:hover { color: #f7a805; }
+.breadcrumb i { width: auto !important; }
+
+/* Breadcrumb - Mini
+-----------------------------------------------------------------*/
+#page-title.page-title-mini { padding: 20px 0; }
+#page-title.page-title-mini h1 {
+	font-weight: 600;
+	font-size: 18px;
+	color: #444;
+}
+#page-title.page-title-mini span { display: none; }
+
+/* Frontpage Boxes
+-----------------------------------------------------------------*/
 #frontpage-boxes {
 	margin-bottom: 50px;
 }
@@ -2822,6 +2877,26 @@ img#wpstats {
 	}
 }
 
+/* Maximum width of 767px. */
+@media (max-width: 767px) {
+	#page-title {
+		padding: 20px 0 25px;
+		text-align: center;
+	}
+	#page-title h1 {
+		line-height: 1.5;
+		font-size: 24px;
+	}
+	#page-title span { display: none; }
+	#page-title .breadcrumb {
+		position: relative !important;
+		top: 0 !important;
+		left: 0 !important;
+		right: 0 !important;
+		margin: 15px 0 0 !important;
+	}
+}
+
 /* Maximum width of 800px. */
 @media screen and (max-width: 800px) {
 	/* Mobile Nav */
@@ -4146,6 +4221,27 @@ img#wpstats {
   border-width: 0 5px 5px;
   border-bottom-color: #000;
 }
+
+/* Bootstrap Breadcrumb */
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.breadcrumb > li {
+  display: inline-block;
+}
+.breadcrumb > li + li:before {
+  content: "/\00a0";
+  padding: 0 5px;
+  color: #cccccc;
+}
+.breadcrumb > .active {
+  color: #777777;
+}
+
 /* Vision Tabs */
 a[role=tab]:before,
 .vision-tabs-widget ul li a:before {

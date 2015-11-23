@@ -46,6 +46,18 @@
 		<?php endif; ?><!-- / Header Image -->
 		
 	</header><!-- #masthead -->
+	
+	<?php if( get_theme_mod( 'agama_breadcrumb', true ) ): ?>
+		
+		<?php // If breadcrumb is disabled on homepage do not show anything
+		if( get_theme_mod( 'agama_breadcrumb_homepage', '' ) && is_home() || 
+		    get_theme_mod( 'agama_breadcrumb_homepage', '' ) && is_front_page() ): else: ?>
+			
+			<?php Agama::breadcrumb(); ?>
+			
+		<?php endif; ?>
+		
+	<?php endif; ?>
 
 	<div id="page" class="hfeed site">
 		<div id="main" class="wrapper">
