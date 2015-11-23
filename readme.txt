@@ -86,3 +86,7 @@ Version 1.5.7
 * Update FontAwesome to 4.4.0v
 * Move the "Theme Options" in "WP Customizer"
 * Minor bug fixes
+
+Version 1.5.8
+* Update FontAwesome to 4.5.0v
+* Minor bug fixes
