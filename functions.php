@@ -178,7 +178,7 @@ function aperture_scripts() {
 	wp_enqueue_style( 'aperture-style', get_stylesheet_uri() );
 
 	// Load the theme custom script file.
-	wp_enqueue_script( 'aperture-script', get_stylesheet_directory_uri() . '/js/aperture.js', array( 'jquery' ), '20150720', true );
+	wp_enqueue_script( 'aperture-script', get_template_directory_uri() . '/js/aperture.js', array( 'jquery' ), '20150720', true );
 
 	wp_enqueue_script( 'aperture-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

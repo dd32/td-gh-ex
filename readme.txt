@@ -1,5 +1,5 @@
 APERTURE
-Theme Version: 1.1.4
+Theme Version: 1.1.5
 Author: Michael Van Den Berg 
 Author URL: http://michaelvandenberg.com/
 
@@ -17,7 +17,7 @@ Aperture is a simple, responsive theme with a fullscreen slider.
 Aperture WordPress Theme, Copyright 2015 Michael Van Den Berg.
 Aperture is distributed under the terms of the GNU GPL license 2.0 or later.
 
-Identity is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Aperture is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 
 --------------------
@@ -82,20 +82,26 @@ After installing and activating the Jetpack plugin follow these steps:
 --------------------
 
 *
+* 1.1.5 / 24.11.2015
+* - Moved footer of the fullscreen slider to a position below the content on small screen sizes. 
+* - Fixed issue of mobile menu closing on scroll in mobile (Android) browsers.
+* - Improved colors of the desktop menu and the desktop search submit icon.
+* - Added custom color options in the customizer.
+* - And fixed/improved a few other minor CSS issues.
+*
+
+*
 * 1.1.4 / 09.11.2015
-* Minor improvements.
 * - Vendor prefixes added to solve flexbox issues in Safari.
 *
 
 *
 * 1.1.3 / 28.10.2015
-* Minor improvements.
 * - Removed hidden cache files. Sorry for that.
 *
 
 *
 * 1.1.2 / 28.10.2015
-* Minor improvements.
 * - Removed unused javascript and sass files.
 * - Added documentation for slider setup.
 * - Updated the .pot file for translation.
@@ -104,7 +110,6 @@ After installing and activating the Jetpack plugin follow these steps:
 
 *
 * 1.1.1 / 30.07.2015
-* Minor improvements.
 * - Bug fix: Author bio not appearing on posts without comments and comments disabled.
 * - Bug fix: Content width wasn't adjusted for full width page templates.
 * - Bug fix: Adjust height of the fullscreen slider if admin bar is present.

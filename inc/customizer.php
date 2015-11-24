@@ -16,7 +16,43 @@ function aperture_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	/* Remove existing not used sections. */
-	$wp_customize->remove_section('colors');
+	//$wp_customize->remove_section('colors');
+
+	/* Font color. */
+	$wp_customize->add_setting('aperture_text_color', array(
+		'default'			=> '#ffffff',
+		'sanitize_callback'	=> 'sanitize_hex_color',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'text_color', array(
+		'label'				=> __('Text Color', 'aperture'),
+		'section'			=> 'colors',
+		'priority'			=> 20,
+		'settings'			=> 'aperture_text_color',
+	)));
+
+	/* Link color. */
+	$wp_customize->add_setting('aperture_link_color', array(
+		'default'			=> '#ff8b27',
+		'sanitize_callback'	=> 'sanitize_hex_color',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'link_color', array(
+		'label'				=> __('Link Color', 'aperture'),
+		'section'			=> 'colors',
+		'priority'			=> 30,
+		'settings'			=> 'aperture_link_color',
+	)));
+
+	/* Content background color. */
+	$wp_customize->add_setting('aperture_content_background_color', array(
+		'default'			=> '#000000',
+		'sanitize_callback'	=> 'aperture_hex2rgba',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'content_background_color', array(
+		'label'				=> __('Content Background Color', 'aperture'),
+		'section'			=> 'colors',
+		'priority'			=> 40,
+		'settings'			=> 'aperture_content_background_color',
+	)));
 
 	/* Theme options panel */
 	$wp_customize->add_panel( 'aperture_theme_options', array(
@@ -149,6 +185,37 @@ function aperture_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'aperture_customize_register' );
 
 /**
+ * Sanitize and convert hex to rgba..
+ *
+ * @param string $color.
+ * @return string.
+ */
+function aperture_hex2rgba( $color ) {
+	if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
+		
+		$hex = str_replace("#", "", $color);
+
+		if (strlen( $hex ) == 3) {
+			$r = hexdec(substr($hex,0,1).substr($hex,0,1));
+			$g = hexdec(substr($hex,1,1).substr($hex,1,1));
+			$b = hexdec(substr($hex,2,1).substr($hex,2,1));
+		} else {
+			$r = hexdec(substr($hex,0,2));
+			$g = hexdec(substr($hex,2,2));
+			$b = hexdec(substr($hex,4,2));
+		}
+
+		$color = "rgba({$r}, {$g}, {$b}, 0.75)";
+
+		return $color;
+	}
+
+	else {
+		return '';
+	}
+}
+
+/**
  * Sanitize slider animation.
  *
  * @param string $input.
@@ -227,6 +294,76 @@ function aperture_sanitize_footer_text( $text ) {
 
 	return $text;
 }
+
+/**
+ * Add inline styles for the custom colors.
+ *
+ * @see wp_add_inline_style()
+ */
+function aperture_custom_colors() {
+	$css      = '';
+
+	if ( ! empty( get_theme_mod( 'aperture_text_color' ) ) && '#ffffff' !== get_theme_mod( 'aperture_text_color' ) ) {
+
+		$text_color = get_theme_mod( 'aperture_text_color', '#ffffff' );
+
+		$css .= '
+			body, button, input, select, textarea { color: ' . $text_color . '; }
+			a, a:visited, .main-navigation a { color: ' . $text_color . '; }
+			h1.site-title a, h1.site-title a:hover { color: ' . $text_color . '; }
+			.widget, .widget .widget-title { color: ' . $text_color . '; }
+			.social-menu-container ul.menu li.menu-item a::before { color: ' . $text_color . '; }
+			.search-toggle, .back-to-top span { color: ' . $text_color . '; }
+			button, input[type="button"], input[type="reset"], input[type="submit"] { color: ' . $text_color . '; border-color: ' . $text_color . '; }
+			#primary-navigation li.menu-item a:hover, #primary-navigation li.menu-item a:focus, #secondary-navigation li.menu-item a:hover, #secondary-navigation li.menu-item a:focus { color: ' . $text_color . '; }
+		';
+	}
+
+	if ( ! empty( get_theme_mod( 'aperture_link_color' ) ) && '#ff8b27' !== get_theme_mod( 'aperture_link_color' ) ) {
+
+		$link_color = get_theme_mod( 'aperture_link_color', '#ff8b27' );
+
+		$css .= '
+			#primary-navigation li.menu-item a:hover,
+			#primary-navigation li.menu-item a:focus,
+			#secondary-navigation li.menu-item a:hover,
+			#secondary-navigation li.menu-item a:focus,
+			#primary-navigation ul.sub-menu li.menu-item a:hover,
+			#primary-navigation ul.sub-menu li.menu-item a:focus,
+			#secondary-navigation ul.sub-menu li.menu-item a:hover,
+			#secondary-navigation ul.sub-menu li.menu-item a:focus { border-bottom-color: ' . $link_color . '; }
+			.widget li::before,
+			a:hover, a:focus, a:active,
+			.search-form .search-submit:hover,
+			#desktop-search .search-form .search-submit:hover,
+			.social-menu-container ul.menu li.menu-item a:hover::before { color: ' . $link_color . '; }
+			button:hover,
+			input[type="button"]:hover,
+			input[type="reset"]:hover,
+			input[type="submit"]:hover,
+			button:active, button:focus,
+			input[type="button"]:active,
+			input[type="button"]:focus,
+			input[type="reset"]:active,
+			input[type="reset"]:focus,
+			input[type="submit"]:active,
+			input[type="submit"]:focus { color: ' . $link_color . '; border-color: ' . $link_color . '; }
+			blockquote { border-left-color: ' . $link_color . '; }
+		';
+	}
+
+	if ( ! empty( get_theme_mod( 'aperture_content_background_color' ) ) && 'rgba(0, 0, 0, 0.75)' !== get_theme_mod( 'aperture_content_background_color' ) ) {
+
+		$background_color = get_theme_mod( 'aperture_content_background_color', '#000000' );
+
+		$css .= '
+			#masthead, #colophon, #main, #secondary .widget, .back-to-top { background: ' . $background_color . '; }
+		';
+	}
+
+	wp_add_inline_style( 'aperture-style', $css );
+}
+add_action( 'wp_enqueue_scripts', 'aperture_custom_colors' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

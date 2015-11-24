@@ -42,8 +42,14 @@
 
 	// Close hidden header on window resize.
 	$( window ).on( 'resize',function() {
-		$( "#hidden-header" ).hide();
-		$( '#page' ).removeClass( 'menu-toggled' );
+
+		var windowWidth = window.innerWidth;
+
+		if ( windowWidth >= 800 ) {
+			$( "#hidden-header" ).hide();
+			$( '#page' ).removeClass( 'menu-toggled' );
+		}
+
 	}).trigger( 'resize' );
 	
 
