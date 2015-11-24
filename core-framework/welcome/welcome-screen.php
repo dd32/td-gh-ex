@@ -14,13 +14,11 @@ class IGthemes_Welcome {
         add_action( 'load-themes.php', array( $this, 'igthemes_activation_admin_notice' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'igthemes_welcome_style' ) );
 
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_intro' ), 				10 );
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_tabs' ), 				20 );
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_getting_started' ), 	30 );
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_addons' ), 				40 );
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_child_themes' ), 		50 );
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_who' ), 				60 );
-
+        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_intro' ), 10 );
+        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_tabs' ), 20 );
+        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_getting_started' ), 30 );
+        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_free_resources' ), 	40 );
+        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_footer' ),50 );
     } // end constructor
 
     /**
@@ -56,10 +54,11 @@ class IGthemes_Welcome {
     /**
      * Load welcome screen css
      */
-    public function igthemes_welcome_style() {
-        global $igthemes_version;
-        wp_enqueue_style( 'igthemes-welcome-screen', get_template_directory_uri() . '/core-framework/welcome/css/welcome.css', $igthemes_version );
-        wp_enqueue_script( 'igthemes-welcome-tab-script',  get_template_directory_uri() . '/core-framework/welcome/js/tab.js' , $igthemes_version );
+    public function igthemes_welcome_style( $hook_suffix ) {
+if ( 'appearance_page_igthemes-welcome' == $hook_suffix ) {
+        wp_enqueue_style( 'igthemes-welcome-screen', get_template_directory_uri() . '/core-framework/welcome/css/welcome.css', '1.0' );
+        wp_enqueue_script( 'igthemes-welcome-tab-script',  get_template_directory_uri() . '/core-framework/welcome/js/tab.js' , '1.0' );
+        }
     }
 
     /**
@@ -91,41 +90,31 @@ class IGthemes_Welcome {
     public function igthemes_welcome_intro() {
         require_once( get_template_directory() . '/core-framework/welcome/sections/intro.php' );
     }
-
     /**
-     * Welcome screen intro
+     * Welcome screen tabs
      */
     public function igthemes_welcome_tabs() {
         require_once( get_template_directory() . '/core-framework/welcome/sections/tabs.php' );
     }
-
     /**
-     * Welcome screen about section
-     */
-    public function igthemes_welcome_who() {
-        require_once( get_template_directory() . '/core-framework/welcome/sections/welcome-footer.php' );
-    }
-
-    /**
-     * Welcome screen getting started section
+     * Welcome screen getting-started
      */
     public function igthemes_welcome_getting_started() {
         require_once( get_template_directory() . '/core-framework/welcome/sections/getting-started.php' );
     }
-
     /**
-     * Welcome screen add ons
+     * Welcome screen free resource
      */
-    public function igthemes_welcome_addons() {
-        require_once( get_template_directory() . '/core-framework/welcome/sections/more-themes.php' );
+    public function igthemes_welcome_free_resources() {
+        require_once( get_template_directory() . '/core-framework/welcome/sections/free-resources.php' );
+    }
+    /**
+     * Welcome screen welcome footer
+     */
+    public function igthemes_welcome_footer() {
+        require_once( get_template_directory() . '/core-framework/welcome/sections/welcome-footer.php' );
     }
 
-    /**
-     * Welcome screen child themes
-     */
-    public function igthemes_welcome_child_themes() {
-        require_once( get_template_directory() . '/core-framework/welcome/sections/more-plugins.php' );
-    }
 }
 
 $GLOBALS['IGthemes_Welcome'] = new IGthemes_Welcome();

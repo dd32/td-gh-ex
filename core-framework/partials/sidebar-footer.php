@@ -5,8 +5,7 @@
 
 // count the active widgets to determine column sizes
 $footerwidgets = is_active_sidebar('first-footer-widget-area') + is_active_sidebar('second-footer-widget-area') + is_active_sidebar('third-footer-widget-area') + is_active_sidebar('fourth-footer-widget-area');
-// default
-$footergrid = "row";
+
 // if only one
 if ($footerwidgets == "1") {
 $footergrid = "col12";

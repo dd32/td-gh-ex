@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <?php igthemes_before_single_title(); ?>
-            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+            <?php if (get_post_meta( get_the_ID(), 'igthemes-page-title', TRUE ) !='yes') { the_title( '<h1 class="entry-title">', '</h1>'); } ?>
         <?php igthemes_after_single_title(); ?>
     </header><!-- .entry-header -->
 

@@ -3,18 +3,22 @@ Theme Name: Base WP
 Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
 Author URI: http://www.iograficathemes.com/
-Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is WooCommerce compatible, multilingual ready, RTL-Language support, retina-ready, SEO friendly and cross-browser compatible.
-Version: 1.31
+Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is WooCommerce compatible, multilingual ready, SEO friendly and cross-browser compatible. You can customize the theme via Customizer adding a home page recent posts slider, a products slider, your social profiles icons, changing background color and more. The theme also have built in some custom widgets to extend the standard WordPress functionalities.
+Version: 1.32
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: base
+Text Domain: base-wp
 Domain Path: /languages/
 Tags: white, orange, one-column, two-columns, right-sidebar, responsive-layout, full-width-template, post-formats, sticky-post, theme-options, translation-ready, custom-background, featured-images, custom-menu, custom-header
 
-Base WP WordPress Theme, Copyright (C) 2014 iografica.it
-Base WP WordPress theme is licensed under the GPL.
+This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-This theme was built using _s.(http://underscores.me)
+
+Boxed WP is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 /*--------------------------------------------------------------
@@ -41,7 +45,6 @@ This theme was built using _s.(http://underscores.me)
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-
 
 /*--------------------------------------------------------------
 # Normalize
@@ -398,7 +401,7 @@ html {
 }
 
 body {
-    background: #fff; /* Fallback for when there is no custom background color defined. */
+    background:#f9f9f9; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote:before,
@@ -459,14 +462,17 @@ figure {
 table {
     margin: 0 0 1.5em;
     width: 100%;
+    border: 1px solid #eee;
 }
 
 td, th {
     text-align: left;
     padding: .2em .8em;
+    border-bottom: 1px solid #eee;
 }
 thead {
     font-weight: bold;
+    background: #fafafa;
 }
 
 /*--------------------------------------------------------------
@@ -589,6 +595,9 @@ label {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+.site-header {
+    background: #fff;
+}
 .site-branding {
     text-align: center;
 }
@@ -644,8 +653,9 @@ a:active {
     display: inline-block;
     width: 100%;
     float: left;
-    border-top: 1px solid rgba(0,0,0,.09);
-    border-bottom: 1px solid rgba(0,0,0,.09);
+    border-top: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+
 }
 .main-navigation {
     clear: both;
@@ -685,7 +695,7 @@ a:active {
     background: #444;
 	float: left;
 	position: absolute;
-	top: 3.2em;
+	top: 3.4em;
 	left: -999em;
 	z-index: 99999;
     text-align: left;
@@ -759,7 +769,9 @@ a:active {
     display: block;
     width: 100%;
     background:#f9f9f9;
-    border-bottom: 1px solid rgba(0,0,0,.05);
+    -webkit-box-shadow: inset 0px -1px 1px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0px -1px 1px 0px rgba(0,0,0,0.1);
+    box-shadow: inset 0px -1px 1px 0px rgba(0,0,0,0.1);
     overflow: hidden;
 }
 .header-menu a {
@@ -832,7 +844,8 @@ ul.page-numbers {
     clear: both;
     border:1px solid #dedede;
     border-right: none;
-        -moz-box-shadow: 0px 2px 0px #eee;
+    background: #fff;
+    -moz-box-shadow: 0px 2px 0px #eee;
     -webkit-box-shadow: 0px 2px 0px #eee;
     box-shadow: 0px 2px 0px #eee;
 }
@@ -840,6 +853,7 @@ ul.page-numbers li {
     float: left;
     display: inline-block;
 }
+ul.page-numbers .dots,
 ul.page-numbers li a,
 ul.page-numbers  .current{
     display: block;
@@ -854,6 +868,10 @@ ul.page-numbers li a:focus {
 ul.page-numbers  .current{
     background: #ebe9eb;
     color: #8a7e88;
+}
+ul.page-numbers .next,
+ul.page-numbers .prev {
+font-family: Verdana, Geneva, sans-serif;
 }
 /*--------------------------------------------------------------
 # Accessibility
@@ -979,7 +997,6 @@ ul.page-numbers  .current{
 
 .widget h3.widget-title {
     text-shadow: 1px 1px 0 #fff;
-    color:#666;
     background-color: #f9f9f9;
     margin: -7px -12px 10px;
     padding: 10px;
@@ -995,7 +1012,6 @@ ul.page-numbers  .current{
     padding-top:2em !important;
     padding-bottom:2em !important;
     background: url(images/shadow.png) top center no-repeat;
-
 }
 
 /*--------------------------------------------------------------
@@ -1035,13 +1051,12 @@ article {
     -webkit-box-shadow: 0px 2px 0px #eee;
     box-shadow: 0px 2px 0px #eee;
 }
-.error-404 .page-header, .error-404 .message-404 {
-    text-align:center;
-    }
-.error-404 .message-404 input.search-field {
+
+.error-404 .search-field {
     width:50%;
-    padding:0.6em;
+    padding:0.65em;
     margin-bottom:1em;
+    vertical-align: top;
     }
 /*entry meta*/
 .entry-meta,
@@ -1099,7 +1114,9 @@ b.fn{
 }
 .bypostauthor {
 }
-
+.comment-reply-title {
+   font-weight: 400;
+}
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -1214,8 +1231,8 @@ object {
 --------------------------------------------------------------*/
 .site-footer {
     background: url(images/shadow.png) top center no-repeat #fff;
-    padding:1em 0em;
-    border-top: 1px solid rgba(0,0,0,.05);
+    padding:2em 0 1em 0;
+    border-top: 1px solid rgba(0,0,0,.1);
 }
 .credits {
      text-align: center;

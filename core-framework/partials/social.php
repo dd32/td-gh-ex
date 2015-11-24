@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="social-url">
+<div class="social-url col12">
         <?php if ( igthemes_option('facebook_url') ) {
               $facebook_url = esc_url(igthemes_option('facebook_url', ''));
               echo "<a href='$facebook_url' title='Facebook' target='_blank' class='facebook-icon'><span class='social_facebook'></span></a>";

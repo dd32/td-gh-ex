@@ -12,20 +12,13 @@
 ?>
 
 <?php igthemes_after_site_content(); ?>
-
-</div><!-- .row -->
     </div><!-- #content -->
-
+        </div><!-- .row -->
+            </div><!-- .grid -->
 <?php igthemes_before_footer(); ?>
 
     <footer id="colophon" class="site-footer" role="contentinfo">
-          <div class="site-info grid-1200">
-            <div class="row">
-            <?php get_template_part('core-framework/partials/sidebar-footer') ?>
-            <?php get_template_part('core-framework/partials/social') ?>
-            </div><!-- .row -->
-        </div><!-- .site-info -->
-            <?php igthemes_footer(); ?>
+        <?php igthemes_footer(); ?>
     </footer><!-- #colophon -->
 </div><!-- #page -->
 

@@ -40,23 +40,6 @@ function igthemes_sanitize_checkbox( $input ) {
 }
 
 /**
- * Sanitizing slider choices
- */
-function igthemes_sanitize_carousel( $input ) {
-    $valid = array(
-        'none' => 'None',
-        'post' => 'Posts',
-        'project' => 'Projects',
-        'testimonial' => 'Testimonials',
-    );
-
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
-    } else {
-        return '';
-    }
-  }
-/**
  * File upload sanitization.
  *
  * Returns a sanitized filepath if it has a valid extension.

@@ -26,24 +26,11 @@
 
 <?php igthemes_header(); ?>
 
-<div class="main-menu">
-        <div class="grid-1200">
-            <div class="row">
-                    <nav id="site-navigation" class="main-navigation col12" role="navigation">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                    <span class="icon_menu-square_alt2"></span> <?php esc_html_e( 'Menu', 'base-wp' ); ?>
-                </button>
-                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-                    </nav><!-- #site-navigation .col12 -->
-            </div><!-- .row -->
-        </div><!-- .grid-1200 -->
-</div><!-- .main-menu -->
-
 </header><!-- #masthead -->
 
 <?php igthemes_after_header();?>
 
-<div id="content" class="site-content grid-1200">
+<div class="grid">
 <div class="row">
-
+<div id="content" class="site-content">
 <?php igthemes_before_site_content();?>

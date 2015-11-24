@@ -46,28 +46,22 @@ Woocommerce
 .woocommerce input.button,
 .woocommerce #review_form #submit,
 .woocommerce a.button.add_to_cart_button {
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important; 
-  -webkit-appearance: none!important;
-  -moz-appearance: none!important;
-  border-radius: 2px!important;
-  -webkit-border-radius:  2px!important;
-  -moz-border-radius: 2px!important;
-  border: none!important;
-  cursor: pointer!important;
-  font-weight: normal!important;
-  line-height: normal!important;
-  margin: 0 0 5px!important;
-  position: relative!important;
-  text-align: center!important;
-  text-decoration: none!important;
-  display: inline-block!important;
-  padding: 8px 16px!important;
-  font-size: 14px!important;
-  background: #444!important;
-  color: #FFFFFF!important;
-  transition: all 0.5s ease!important;
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1)!important;
+    font-size: 14px!important;
+    font-size: 1.3rem!important;
+    line-height: 1.4em!important;
+    font-weight: normal!important;
+    display: inline-block!important;
+    border:none!important;
+    font-size: 1em!important;
+    padding:5px 20px!important;
+    text-decoration: none!important;
+    cursor:pointer!important;
+    border-radius:2px!important;
+    -moz-border-radius:2px!important;
+    -webkit-border-radius:2px!important;
+    transition: all 0.5s ease!important;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1)!important;
+    box-shadow: none!important;
 }
 /* Related products */
 .woocommerce .related ul li, .woocommerce .upsells ul li{
@@ -126,6 +120,12 @@ ul.tabs { border-top:1px solid #ddd; border-right:1px solid #ddd; border-left:1p
     width:50%!important;
     font-weight: bold;
     }
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+    width: 180px!important;
+    font-size: 1em!important;
+    line-height: 1em!important;
+    padding: .4em .5em .1em .5em!important;
+}
 
 /* widget */
 .woocommerce ul.product_list_widget li,
@@ -172,7 +172,12 @@ ul.tabs { border-top:1px solid #ddd; border-right:1px solid #ddd; border-left:1p
 .woocommerce .widget_layered_nav select {
     margin: 1em .8em!important;
     }
-
+.woocommerce .widget_shopping_cart .cart_list li, .woocommerce.widget_shopping_cart .cart_list li {
+    margin-top: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #eee;
+}
 /* Notice */
 .shipping-calculator-button {
    font-size:0.8em;

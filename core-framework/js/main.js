@@ -134,3 +134,13 @@ jQuery(document).ready(function($) {
         });
     }
 } );
+/*********************************************************************************
+ * Smooth up
+********************************************************************************/
+jQuery(document).ready(function($) {
+//smoothup
+$('#smoothup').on('click', function(){
+        $('html, body').animate({scrollTop:0}, 'slow');
+        return false;
+    });
+});

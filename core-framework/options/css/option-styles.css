@@ -36,3 +36,4 @@
 .customize-control .img-buttonset input[type=radio]:checked + label img {
    border:4px solid #bbb;
 }
+.customize-control input[type=number] { width: 60px; }
