@@ -25,56 +25,84 @@ $categories = get_categories();
         $cats[$category->slug] = $category->name;
     }
 
-//01 PREMIUM
+// PREMIUM
 $wp_customize->add_section('upgrade-premium', array(
         'title' => esc_html__('UPGRADE TO PREMIUM', 'base-wp'),
         'priority' => 1,
     ) );
 
-//03 GENERAL
+// GENERAL
     $wp_customize->get_section('title_tagline')->title = esc_html__('General', 'base-wp');
     $wp_customize->get_section('title_tagline')->priority = 3;
 
-//04 LAYOUT
+// LAYOUT
     $wp_customize->add_panel('layout-settings', array(
         'title' => esc_html__('Layout', 'base-wp'),
         'priority' => 4,
     ));
     $wp_customize->add_section('main-layout', array(
         'title' => esc_html__('Main Layout', 'base-wp'),
-        'panel'  => 'layout-settings',
+        'panel' => 'layout-settings',
     ));
     $wp_customize->add_section('single-layout', array(
         'title' => esc_html__('Single Layout', 'base-wp'),
-        'panel'  => 'layout-settings',
+        'panel' => 'layout-settings',
     ));
     $wp_customize->add_section('shop-layout', array(
         'title' => esc_html__('Shop Layout', 'base-wp'),
-        'panel'  => 'layout-settings',
+        'panel' => 'layout-settings',
     ));
 
-// 05 STYLE
-    $wp_customize->get_section('colors')->title = esc_html__('Style', 'base-wp');
-    $wp_customize->get_section('colors')->priority = 5;
-
-// 06 FOOTER
+// STYLE
+    $wp_customize->add_panel( 'style-settings', array(
+        'title' => __('Style', 'base-wp'),
+        'priority' => 5,
+    ));    
+    $wp_customize->get_section('colors')->priority = 4;
+    $wp_customize->get_section('colors')->title =  __('Body', 'base-wp');
+    $wp_customize->get_section('colors')->panel = 'style-settings';
+    
+    $wp_customize->add_section('style-header', array(
+        'title' => esc_html__('Header', 'base-wp'),
+        'panel' => 'style-settings',
+        'priority' => 1,
+    ));
+    $wp_customize->add_section('style-header-menu', array(
+        'title' => esc_html__('Header Menu', 'base-wp'),
+        'panel' => 'style-settings',
+        'priority' => 2,
+    ));
+    $wp_customize->add_section('style-main-menu', array(
+        'title' => esc_html__('Main Menu', 'base-wp'),
+        'panel' => 'style-settings',
+        'priority' => 2,
+    ));
+    $wp_customize->add_section('style-buttons', array(
+        'title' => esc_html__('Buttons', 'base-wp'),
+        'panel' => 'style-settings',
+    ));
+    $wp_customize->add_section('style-footer', array(
+        'title' => esc_html__('Footer', 'base-wp'),
+        'panel' => 'style-settings',
+    ));
+    
+// FOOTER
     $wp_customize->add_section('footer-settings', array(
         'title' => esc_html__('Footer', 'base-wp'),
         'priority' => 6,
     ));
 
-// 06 SOCIAL
+// SOCIAL
     $wp_customize->add_section('social-settings', array(
         'title' => esc_html__('Social', 'base-wp'),
         'priority' => 7,
     ));
 
-// 07 ADVANCED
+// ADVANCED
     $wp_customize->add_section('advanced-settings', array(
         'title' => esc_html__('Advanced', 'base-wp'),
-        'priority' => 7,
+        'priority' => 8,
     ));
-
 /*****************************************************************
 * PREMIUM
 ******************************************************************/
@@ -189,18 +217,12 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
 //post slide
     $wp_customize->add_setting($igthemes_option . '[post_slide]', array(
         'type' => 'option',
-        'sanitize_callback' => 'igthemes_sanitize_carousel',
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
     ));
     $wp_customize->add_control('post_slide', array(
-        'label' => esc_html__('Carousel', 'base-wp'),
-        'description' => esc_html__('To display projects and testimonials install ', 'base-wp').'<a href="https://wordpress.org/plugins/ml-slider/" target="_blank">IG Portolio</a>'.  esc_html__(' and ', 'base-wp') .'<a href="https://wordpress.org/plugins/ml-slider/" target="_blank">IG Testimonials</a>',
-        'type'       => 'radio',
-        'choices'    => array(
-            'none' => 'None',
-            'post' => 'Posts',
-            'project' => 'Projects',
-            'testimonial' => 'Testimonials',
-        ),
+        'label' => esc_html__('Posts Slide', 'base-wp'),
+        'description' => esc_html__('Show a carousel of the latest posts', 'base-wp'),
+        'type' => 'checkbox',
         'section' => 'main-layout',
         'settings' => $igthemes_option . '[post_slide]',
     ));
@@ -219,10 +241,11 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
 //main featured images
     $wp_customize->add_setting($igthemes_option . '[main_featured_images]', array(
         'type' => 'option',
+        'default' => 'checked',
         'sanitize_callback' => 'igthemes_sanitize_checkbox',
     ));
     $wp_customize->add_control('main_featured_images', array(
-        'label' => esc_html__('Featured images', 'base-wp'),
+        'label' => esc_html__('Index featured image', 'base-wp'),
         'description' => esc_html__('Show featured images in index page', 'base-wp'),
         'type' => 'checkbox',
         'section' => 'main-layout',
@@ -254,6 +277,7 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
 //post featured image
     $wp_customize->add_setting($igthemes_option . '[post_featured_image]', array(
         'type' => 'option',
+        'default' => 'checked',
         'sanitize_callback' => 'igthemes_sanitize_checkbox',
     ));
     $wp_customize->add_control('post_featured_image', array(
@@ -287,11 +311,11 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
     )));
 //Number of products displayed
     $wp_customize->add_setting($igthemes_option . '[shop_products_number]', array(
-        'sanitize_callback' => 'igthemes_allowed_tag',
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
     ));
     $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'shop_products_number', array(
         'label' => esc_html__('Products number', 'base-wp'),
-        'description' => esc_html__('Change the number of products displayed per page', 'base-wp') . $upgrade_message,
+        'description' => esc_html__('The number of products displayed per page', 'base-wp') . $upgrade_message,
         'type' => 'custom',
         'section' => 'shop-layout',
         'settings' => $igthemes_option . '[shop_products_number]',
@@ -303,7 +327,7 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
     ));
     $wp_customize->add_control('shop_slide', array(
         'label' => esc_html__('Products Slide', 'base-wp'),
-        'description' => esc_html__('', 'base-wp'),
+        'description' => esc_html__('Show a carousel of the latest products', 'base-wp'),
         'type' => 'checkbox',
         'section' => 'shop-layout',
         'settings' => $igthemes_option . '[shop_slide]',
@@ -319,19 +343,36 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'label' => esc_html__('Header Style', 'base-wp'),
         'description' => esc_html__('Header custom colors', 'base-wp') . $upgrade_message,
         'type' => 'custom',
-        'section' => 'colors',
+        'section' => 'style-header',
         'settings' => $igthemes_option . '[header_style]',
     )));
-//menu style
-    $wp_customize->add_setting($igthemes_option . '[menu_style]', array(
+//header text color
+    $wp_customize->add_control(new WP_Customize_color_Control(
+        $wp_customize, 'header_textcolor', array(
+        'label' => esc_html__('Text color', 'base-wp'),
+        'section' => 'style-header',
+    )));
+//header menu style
+    $wp_customize->add_setting($igthemes_option . '[header_menu_style]', array(
         'sanitize_callback' => 'igthemes_sanitize_allowedtags',
     ));
-    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'menu_style', array(
-        'label' => esc_html__('Menu Style', 'base-wp'),
-        'description' => esc_html__('Menu custom colors', 'base-wp') . $upgrade_message,
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'header_menu_style', array(
+        'label' => esc_html__('Header Menu Style', 'base-wp'),
+        'description' => esc_html__('Header menu custom colors', 'base-wp') . $upgrade_message,
         'type' => 'custom',
-        'section' => 'colors',
-        'settings' => $igthemes_option . '[menu_style]',
+        'section' => 'style-header-menu',
+        'settings' => $igthemes_option . '[header_menu_style]',
+    )));
+//menu style
+    $wp_customize->add_setting($igthemes_option . '[main_menu_style]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'main_menu_style', array(
+        'label' => esc_html__('Main Menu Style', 'base-wp'),
+        'description' => esc_html__('Main menu custom colors', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'style-main-menu',
+        'settings' => $igthemes_option . '[main_menu_style]',
     )));
 //link style
     $wp_customize->add_setting($igthemes_option . '[link_style]', array(
@@ -352,7 +393,7 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'label' => esc_html__('Buttons Style', 'base-wp'),
         'description' => esc_html__('Buttons custom colors', 'base-wp') . $upgrade_message,
         'type' => 'custom',
-        'section' => 'colors',
+        'section' => 'style-buttons',
         'settings' => $igthemes_option . '[button_style]',
     )));
 //footer style
@@ -363,7 +404,7 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'label' => esc_html__('Footer Style', 'base-wp'),
         'description' => esc_html__('Footer custom colors', 'base-wp') . $upgrade_message,
         'type' => 'custom',
-        'section' => 'colors',
+        'section' => 'style-footer',
         'settings' => $igthemes_option . '[footer_style]',
     )));
 /*****************************************************************
@@ -375,7 +416,7 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
     ));
     $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'footer_text', array(
         'label' => esc_html__('Footer Text', 'base-wp'),
-        'description' => '<span class="description customize-control-description">' . esc_html__('Footer custom text', 'base-wp') . $upgrade_message . '</div>',
+        'description' => esc_html__('Footer custom text', 'base-wp') . $upgrade_message,
         'type' => 'custom',
         'section' => 'footer-settings',
         'settings' => $igthemes_option . '[footer_text]',

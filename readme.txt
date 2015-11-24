@@ -1,24 +1,36 @@
-=== Base WP ===
+base-wp
+===
+* Contributors: iografica
+* Requires at least: 3.5
+* Tested up to: 4.2
+* License: GPLv2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is WooCommerce compatible, multilingual ready, RTL-Language support, retina-ready, SEO friendly and cross-browser compatible. For other themes and plugins or for support and documentation visit our website (http://iograficathemes.com).
+Description
+-
+Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is WooCommerce compatible, multilingual ready, SEO friendly and cross-browser compatible. You can customize the theme via Customizer adding a home page recent posts slider, a products slider, your social profiles icons, changing background color and more. The theme also have built in some custom widgets to extend the standard WordPress functionalities.
 
+Installation
+-
+1. Download the theme.
+2. Unzip the folder into the /wp-content/themes/ directory.
+3. Activate the thees through the Themes menu in WordPress.
 
-=== License ===
-
+License
+-
 * This theme, like WordPress, is licensed under the GPL 2.0.
 * This theme was built using _s.(http://underscores.me) that is licensed under GPL license.
-* ThemeIcon icon font are based on ElegantIcon (http://www.elegantthemes.com/blog/resources/elegant-icon-font) licensed under the MIT/GPL2 license.
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * Nivo Lightbox, copyright 2013 Dev7studios, licensed under MIT license, source: http://dev7studios.com/nivo-lightbox
 * Slick, copyright 2014 Ken Wheeler, licensed under MIT license, source: https://github.com/kenwheeler/slick/
 * HTML5 Shiv, copyright 2014 Alexander Farkas licensed under the MIT/GPL2 License, source: https://github.com/aFarkas/html5shiv/
 * Respond.js, copyright 2014 Scott Jehl licensed under the MIT license, source: http://j.mp/respondjs
-* css3 mediaqueries js, copyright 2014 Wouter van der Graaf licensed under the MIT license, source: https://code.google.com/p/css3-mediaqueries-js/
 * Screenshot images are licensed under Creative Commons Deed CC0.
-* All Javascript is located in /js/ with license headers where appropriate.
 
+All Javascript is located in /js/ with license headers where appropriate.
 
-=== Changelog ===
-
+Changelog
+-
 == 1.00 ==
 * Initial release.
 
@@ -144,3 +156,5 @@ Base WP is a basic blog or business, responsive and clean coded, WordPress theme
 * Fixed js possible conflict.
 * Updated framework.
 * Header menu will be hidden if empty.
+
+== 1.32 ==

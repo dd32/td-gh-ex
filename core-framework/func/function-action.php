@@ -2,65 +2,73 @@
 /*-----------------------------------------------
  * Custom action
  -----------------------------------------------*/
-// 1.0 igthemes_header
+// igthemes_header
 function igthemes_header() {
     do_action('igthemes_header');
 }
-// 2.0 igthemes_footer
+// igthemes_footer
 function igthemes_footer() {
     do_action('igthemes_footer');
 }
-// 3.0 igthemes_after_header
+// igthemes_after_header
 function igthemes_after_header() {
     do_action('igthemes_after_header');
 }
-// 4.0 igthemes_before_footer
+// igthemes_before_footer
 function igthemes_before_footer() {
     do_action('igthemes_before_footer');
 }
-// 5.0 igthemes_before_site_content
+// igthemes_before_site_content
 function igthemes_before_site_content() {
     do_action('igthemes_before_site_content');
 }
-// 6.0 igthemes_after_site_content
+// igthemes_after_site_content
 function igthemes_after_site_content() {
     do_action('igthemes_after_site_content');
 }
-// 7.0 igthemes_before_single
+// igthemes_before_single
 function igthemes_before_single() {
     do_action('igthemes_before_single');
 }
-// 8.0 igthemes_after_single_content
+// igthemes_after_single_content
 function igthemes_after_single() {
     do_action('igthemes_after_single_content');
 }
-// 9.0 igthemes_before_single_title
+// igthemes_before_single_title
 function igthemes_before_single_title() {
     do_action('igthemes_before_single_title');
 }
-// 10.0 igthemes_after_single_title
+// igthemes_after_single_title
 function igthemes_after_single_title() {
     do_action('igthemes_after_single_title');
 }
-// 11.0 igthemes_before_single_content
+// igthemes_before_single_content
 function igthemes_before_single_content() {
     do_action('igthemes_before_single_content');
 }
-// 12.0 igthemes_after_single_content
+// igthemes_after_single_content
 function igthemes_after_single_content() {
     do_action('igthemes_after_single_content');
 }
-// 13.0 igthemes_before_sidebar_content
+// igthemes_before_sidebar_content
 function igthemes_before_sidebar_content() {
     do_action('igthemes_before_sidebar_content');
 }
-// 14.0 igthemes_after_sidebar_content
+// igthemes_after_sidebar_content
 function igthemes_after_sidebar_content() {
     do_action('igthemes_after_sidebar_content');
 }
+// igthemes_before_sidebar
+function igthemes_before_sidebar() {
+    do_action('igthemes_before_sidebar');
+}
+// igthemes_after_sidebar_content
+function igthemes_after_sidebar() {
+    do_action('igthemes_after_sidebar');
+}
 
 /*-----------------------------------------------
- * 1.0 igthemes_header
+# HEADER
  -----------------------------------------------*/
 // header nav text filter
 function igthemes_header_nav_content() {
@@ -77,106 +85,120 @@ add_filter( 'igthemes_header_nav_content', 'igthemes_header_nav_text' );
 // top menu
 function igthemes_header_top_menu() { ?>
     <div class="header-menu">
-        <div class="grid-1200">
-            <div class="row">
+            <div class="grid">
+                <div class="row">
                 <nav class="header-navigation col12" role="navigation">
                     <?php echo igthemes_header_nav_content(); ?>
                     <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'depth' => 1,  'fallback_cb' => '__return_false') ); ?>
                 </nav>
-            </div><!-- row -->
-        </div><!-- .grid1200 -->
-    </div><!-- .header-navigation -->
+             </div><!-- .row -->
+        </div><!-- .grid -->
+    </div><!-- .header-menu  -->
 <?php }
-add_action( 'igthemes_header' , 'igthemes_header_top_menu' );
 
-// logo
+// branding
 function igthemes_header_branding() { ?>
-    <div class="grid-1200">
+                <?php igthemes_header_top_menu(); ?>
+    <div class="grid">
         <div class="row">
             <div class="site-branding col12">
-    <?php if ( get_header_image() ) : ?>
-            <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" class="header-image">
-    <?php endif; // End header image check. ?>
-    <?php if ( igthemes_option('logo') ) : ?>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="site-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-            <img src="<?php echo esc_url(igthemes_option('logo')); ?>" alt="<?php echo esc_attr( bloginfo( 'name' )); ?>"></a>
-    <?php else : ?>
-        <a class="site-title-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-            <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-        </a>
-        <h2 class="site-description">
-            <?php bloginfo( 'description' ); ?>
-        </h2>
-        <?php endif; ?>
-            </div><!-- .site-branding -->
-        </div><!-- row -->
-    </div><!-- .grid1200 -->
+                <?php if ( get_header_image() ) : ?>
+                    <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" class="header-image">
+                <?php endif; // End header image check. ?>
+                <?php if ( igthemes_option('logo') ) : ?>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="site-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                            <img src="<?php echo esc_url(igthemes_option('logo')); ?>" alt="<?php echo esc_attr( bloginfo( 'name' )); ?>">
+                        </a>
+                <?php else : ?>
+                        <a class="site-title-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                            <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+                        </a>
+                        <h2 class="site-description">
+                            <?php bloginfo( 'description' ); ?>
+                        </h2>
+                <?php endif; ?>
+            </div><!-- .site-branding  -->
+        </div><!-- .row -->
+    </div><!-- .grid -->
 <?php }
 add_action( 'igthemes_header' , 'igthemes_header_branding' );
 
+//main menu
+function igthemes_header_main_menu() { ?>
+<div class="main-menu">
+        <div class="grid">
+            <div class="row">
+                <div class="col12">
+                    <nav id="site-navigation" class="main-navigation" role="navigation">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <span class="icon_menu-square_alt2"></span> <?php esc_html_e( 'Menu', 'base-wp' ); ?>
+                </button>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+                    </nav><!-- #site-navigation .col12 -->
+               </div><!-- .col12 -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+</div><!-- .main-menu -->
+<?php }
+add_action( 'igthemes_header' , 'igthemes_header_main_menu' );
 
 /*-----------------------------------------------
- * 2.0 igthemes_footer
+# FOOTER
  -----------------------------------------------*/
+function igthemes_footer_content() { ?>
+<div class="grid">
+        <div class="row">
+            <div class="site-info">
+                <?php get_template_part('core-framework/partials/sidebar-footer') ?>
+                <?php get_template_part('core-framework/partials/social') ?>
+            </div><!-- .site-info -->
+    </div><!-- .row -->
+</div><!-- .grid -->
+<?php }
+add_action( 'igthemes_footer' , 'igthemes_footer_content' );
+//go top
+function igthemes_footer_gotop() { ?>
+                    <div class="gotop">
+                        <a href="#masthead" id="smoothup"  title="<?php esc_attr_e('Back to top', 'base-wp' ); ?>">
+                            <span class="arrow_carrot-up_alt2"></span>
+                        </a>
+                    </div><!-- .gotop -->
+<?php }
 //credits
 function igthemes_footer_credits() { ?>
     <div class="credits">
-            <div class="grid-1200">
-        <?php printf( esc_html__( 'Proudly powered by ', 'base-wp' )); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'base-wp' ) ); ?>"><?php printf( __( '%s', 'base-wp' ), 'WordPress' ); ?></a>
-        <span class="sep"> | </span>
-        <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'base-wp' ), 'Base WP', '<a href="http://iograficathemes.com/" rel="designer">Iografica Themes</a>' ); ?>
-            </div>
-    </div>
+        <div class="grid">
+            <div class="row">
+                <div class="col12">
+                 <?php igthemes_footer_gotop();?>
+                        <?php printf( esc_html__( 'Proudly powered by ', 'base-wp' )); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'base-wp' ) ); ?>"><?php printf( __( '%s', 'base-wp' ), 'WordPress' ); ?></a>
+                        <span class="sep"> | </span>
+                        <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'base-wp' ), 'Base WP', '<a href="http://iograficathemes.com/" rel="designer">Iografica Themes</a>' ); ?>
+                </div><!-- .col12 -->
+            </div><!-- .row -->
+        </div><!-- .grid -->
+    </div><!-- .credits -->
 <?php }
 add_action( 'igthemes_footer' , 'igthemes_footer_credits' );
 
 /*-----------------------------------------------
- * 5.0 igthemes_before_site_content
+ # SLIDER
  -----------------------------------------------*/
-//slider
 function igthemes_header_slider() {
 ?>
+    <div class="grid">
+            <div class="row">
+                <div class="col12">
     <?php get_template_part('core-framework/partials/image-carousel') ?>
+                </div><!-- .col12 -->
+            </div><!-- .row -->
+    </div><!-- .grid -->
 <?php }
-add_action( 'igthemes_before_site_content' , 'igthemes_header_slider' );
-
-//sidebar
-function igthemes_before_content_sidebar() {
-?>
-    <?php
-        if ( is_page_template( 'page-sidebar-left.php' ) ) {
-            get_sidebar();
-        }
-    ?>
-<?php }
-add_action( 'igthemes_before_site_content' , 'igthemes_before_content_sidebar' );
+add_action( 'igthemes_after_header' , 'igthemes_header_slider' );
 
 /*-----------------------------------------------
- * 6.0 igthemes_after_site_content
+# BREADCRUMB
  -----------------------------------------------*/
-//sidebar
-function igthemes_after_content_sidebar() {
-?>
-    <?php
-        if ( !is_page_template( 'page-sidebar-left.php' ) && !is_page_template( 'page-fullwidth.php' )  ) {
-            if ( class_exists( 'WooCommerce' ) && is_woocommerce() || 
-                class_exists( 'WooCommerce' ) && is_cart() || 
-                class_exists( 'WooCommerce' ) && is_checkout() || 
-                class_exists( 'WooCommerce' ) && is_account_page() || 
-                class_exists( 'WooCommerce' ) && is_wc_endpoint_url() ) {
-                get_sidebar('shop');
-            } else {
-                get_sidebar();
-            }
-        }
-    ?>
-<?php }
-add_action( 'igthemes_after_site_content' , 'igthemes_after_content_sidebar' );
-
-/*-----------------------------------------------
- * 7.0 igthemes_before_single
- -----------------------------------------------*/
-//Breadcrumb
 function igthemes_breadcrumb() {
 if ( igthemes_option('breadcrumb') == '1' && function_exists('yoast_breadcrumb') && !is_page() ) {
     yoast_breadcrumb('<div class="breadcrumb">','</div>');
@@ -214,14 +236,13 @@ elseif (igthemes_option('breadcrumb') == '1'  && !is_page()) {
 add_action( 'igthemes_before_single' , 'igthemes_breadcrumb' );
 
 /*-----------------------------------------------
- * 9.0 igthemes_before_single_title
+# IMAGES
  -----------------------------------------------*/
-
 //page featured image
 function igthemes_page_featured_image() { ?>
 <?php if ( is_page() && has_post_thumbnail() ) {
     echo "<div class='image'>";
-        the_post_thumbnail( 'large', array( 'class' => 'featured-img' ) );
+        the_post_thumbnail( 'full', array( 'class' => 'featured-img' ) );
     echo "</div>";
 } ?>
 <?php }
@@ -229,9 +250,9 @@ add_action( 'igthemes_before_single_title' , 'igthemes_page_featured_image' );
 
 //post featured image
 function igthemes_post_featured_image() { ?>
-<?php if ( !is_archive() && !is_home() && has_post_thumbnail() && igthemes_option('post_featured_image')) {
+<?php if (is_singular() && !is_page() && has_post_thumbnail() && igthemes_option('post_featured_image', 'checked')) {
     echo "<div class='image'>";
-        the_post_thumbnail( 'large', array( 'class' => 'featured-img' ) );
+        the_post_thumbnail( 'full', array( 'class' => 'featured-img' ) );
     echo "</div>";
 } ?>
 <?php }
@@ -239,10 +260,105 @@ add_action( 'igthemes_before_single_title' , 'igthemes_post_featured_image' );
 
 //featured image index and archive
 function igthemes_main_featured_images() { ?>
-<?php if ( !is_single() && has_post_thumbnail() && igthemes_option('main_featured_images')) {
-     echo "<div class='image'>";
+<?php if ( !is_singular() && has_post_thumbnail() && igthemes_option('main_featured_images', 'checked')) {
+     echo "<div class='image'><a href='" . get_permalink() . "' >";
         the_post_thumbnail( 'large', array( 'class' => 'featured-img' ) );
-     echo "</div>";
+     echo "</a></div>";
 } ?>
 <?php }
 add_action( 'igthemes_before_single_title' , 'igthemes_main_featured_images' );
+
+
+/*-----------------------------------------------
+# CONTENT GRID
+ -----------------------------------------------*/
+//main grid
+function igthemes_grid_before() {
+    
+   if (!is_singular() || 
+       is_singular() && !is_page()) { 
+       $col="col8"; 
+   }
+   if (is_page_template('page-fullwidth.php')) { 
+       $col="col12"; 
+   }
+   if (is_page_template('page-sidebar-left.php')) { 
+       $col="col8 pull-right";
+   }   
+   if (is_page() && !is_page_template()) { 
+       $col="col8";
+   }//end normal layout
+   if (class_exists( 'WooCommerce')) { 
+        if (is_woocommerce()) { 
+            $colshop="col8"; 
+        }
+   }//end ecommerce layout
+   if (class_exists( 'WooCommerce') && is_woocommerce()) { 
+        echo "<div class='".$colshop."'>";
+   } else { 
+        echo "<div class='".$col."'>";
+   }//end div
+}
+add_action( 'igthemes_before_site_content' , 'igthemes_grid_before' );
+
+function igthemes_grid_after() {
+        echo "</div>";
+}
+add_action( 'igthemes_after_site_content' , 'igthemes_grid_after' );
+
+//sidebar grid
+function igthemes_sidebar_grid_before() { 
+   if (!is_singular() || 
+       is_singular() && !is_page()) { 
+       $col="col4"; 
+   }
+   if (is_page_template('page-sidebar-left.php')) { 
+       $col="col4 pull-left";
+   }   
+   if (is_page() && !is_page_template('')) { 
+       $col="col4";
+   }//end normal layout
+   if (class_exists( 'WooCommerce')) { 
+        if (is_woocommerce()) { 
+            $colshop="col4"; 
+        }
+   }//end ecommerce layout
+   if (class_exists( 'WooCommerce') && is_woocommerce()) { 
+        echo "<div class='".$colshop."'>";
+   } else { 
+        echo "<div class='".$col."'>";
+   }//end div
+}
+add_action( 'igthemes_before_sidebar' , 'igthemes_sidebar_grid_before' );
+
+function igthemes_sidebar_grid_after() { 
+     echo "</div>";
+ }
+add_action( 'igthemes_after_sidebar' , 'igthemes_sidebar_grid_after' );
+
+/*-----------------------------------------------
+# SIDEBAR
+ -----------------------------------------------*/
+function igthemes_get_sidebar() {
+?>
+    <?php 
+    if (class_exists( 'WooCommerce') && is_woocommerce() ||
+        class_exists( 'WooCommerce') && is_cart() && !is_page_template('page-fullwidth.php') ||
+        class_exists( 'WooCommerce') && is_checkout() && !is_page_template('page-fullwidth.php')) { 
+            get_sidebar('shop'); 
+    } elseif ( is_page() && !is_page_template('page-fullwidth.php') ||
+            is_singular() && !is_singular( 'product' ) && !is_page())  {
+            get_sidebar();
+    } 
+ 
+    if  (!is_singular()) {
+        if (class_exists( 'WooCommerce') && !is_woocommerce()) {
+            get_sidebar(); 
+        }  elseif (!class_exists( 'WooCommerce')) {
+            get_sidebar(); 
+        }
+    }
+
+?>
+<?php }
+add_action( 'igthemes_after_site_content' , 'igthemes_get_sidebar' );

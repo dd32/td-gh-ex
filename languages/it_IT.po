@@ -2,116 +2,76 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Base WP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-03 13:45+0100\n"
-"PO-Revision-Date: Tue Oct 13 2015 18:33:55 GMT+0200 (CEST)\n"
+"POT-Creation-Date: 2015-07-30 16:27+0200\n"
+"PO-Revision-Date: 2015-11-24 11:59+0100\n"
 "Last-Translator: iografica <grafico.roberto@gmail.com>\n"
-"Language-Team: \n"
-"Language: Italian\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
+"Language-Team: Iografica Themes <info@iograficathemes.com>\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Loco - https://localise.biz/\n"
-"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
-"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
-"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
-"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
-"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;__:1;_e:1;"
+"_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;_x:1,2c;_ex:1,2c;"
+"_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;esc_attr__:1;esc_html__:1;"
+"esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;esc_html_x:1,2c;comments_number_link:2,3;"
+"t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
-"X-Loco-Target-Locale: it_IT"
-
-#: ../comments.php:31
-#, php-format
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Un commento a &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s commenti a &ldquo;%2$s&rdquo;"
+"X-Loco-Target-Locale: it_IT\n"
+"X-Poedit-SearchPath-0: /Users/Roberto/Library/Containers/com.bitnami.wordpress/Data/"
+"app-3_8_1/apps/wordpress/htdocs/wp-content/themes/onepage\n"
 
 #: ../comments.php:43 ../comments.php:64
 msgid "Older Comments"
-msgstr ""
-
-#: ../comments.php:44 ../comments.php:65
-msgid "Newer Comments"
-msgstr "Commenti Successivi"
+msgstr "Commenti Precedenti"
 
 #: ../options.php:35
-msgid "General"
-msgstr "Generale"
-
-#: ../options.php:40
 msgid "Layout"
-msgstr "Layout"
+msgstr ""
 
 #: ../options.php:57
-msgid "Style"
-msgstr "Stile"
+msgid "Body"
+msgstr ""
 
-#: ../options.php:62
+#: ../options.php:80 ../options.php:86
 msgid "Footer"
 msgstr ""
 
-#: ../options.php:68
+#: ../options.php:92
 msgid "Social"
 msgstr ""
 
-#: ../options.php:74
-msgid "Advanced"
-msgstr "Avanzate"
+#: ../options.php:358 ../options.php:378 ../options.php:414 ../options.php:486 ..
+#: options.php:535
+msgid "Background Color"
+msgstr "Colore Sfondo"
 
-#: ../options.php:195
-msgid "Carousel"
-msgstr "Carosello"
+#: ../options.php:368 ../options.php:510 ../options.php:559
+msgid "Text Color"
+msgstr "Colore Testo"
 
-#: ../options.php:196
-msgid "To display projects and testimonials install "
-msgstr "Per visualizzare i progetti e le testimonianze installare"
+#: ../options.php:390 ../options.php:438 ../options.php:462 ../options.php:571
+msgid "Link Color"
+msgstr "Colore Link"
 
-#: ../options.php:196
-msgid " and "
-msgstr "e"
+#: ../options.php:402 ../options.php:450 ../options.php:474 ../options.php:583
+msgid "Link Hover Color"
+msgstr "Colore Link Hover"
 
-#: ../options.php:213
-msgid "Show excerpt"
-msgstr "Mostra riassunti"
+#: ../options.php:426 ../options.php:498
+msgid "Background Hover Color"
+msgstr "Colore Sfondo Hover"
 
-#: ../options.php:214
-msgid "Show posts content as excerpt"
-msgstr "Mostra contenuto articoli come riassunto"
+#: ../options.php:522
+msgid "Text Hover Color"
+msgstr "Colore Testo Hover"
 
-#: ../options.php:225
-msgid "Featured images"
-msgstr "Immagini in evidenza"
-
-#: ../options.php:293
-msgid "Products number"
-msgstr "Numero prodotti"
-
-#: ../options.php:294
-msgid "Change the number of products displayed per page"
-msgstr "Cambia il numero di prodotti visualizzati per pagina"
-
-#: ../options.php:305
-msgid "Products Slide"
-msgstr "Slide prodotti"
-
-#. Name of the template
-msgid "Full Width"
-msgstr "Tutta pagina"
-
-#. Name of the template
-msgid "Sidebar Left"
-msgstr "Sidebar a sinistra"
-
-#. translators: %s: Name of current post
-#. translators: %s: Name of current post
-#: ../core-framework/template-tags.php:69 ../template-parts/content-page.php:36
-#, php-format
-msgid "Edit %s"
-msgstr "Modifica %s"
+#: ../options.php:547
+msgid "Headings Color"
+msgstr "Colore Titoli"
 
 #: ../core-framework/template-tags.php:98
 msgid "&#8592;"
@@ -121,23 +81,45 @@ msgstr ""
 msgid "&#8594;"
 msgstr ""
 
-#. Translators: If there are characters in your language that are not supported
-#. by Open Sans, translate this to 'off'. Do not translate into your own language.
 #: ../core-framework/func/function-script.php:14
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
 #. Translators: To add an additional character subset specific to your language,
-#. translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
+#. translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language.
 #: ../core-framework/func/function-script.php:21
-msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
+msgctxt "Add new subset (greek, cyrillic, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:9
-msgid "The main widget area"
-msgstr "Area widget principale"
+#: ../core-framework/shortcodes/ig-shortcodes-extra.php:17
+msgid "Username"
+msgstr "Nome Utente"
+
+#: ../core-framework/shortcodes/ig-shortcodes-extra.php:18
+msgid "Password"
+msgstr ""
+
+#: ../core-framework/shortcodes/ig-shortcodes-extra.php:20
+msgid "Log In"
+msgstr "Collegati"
+
+#: ../core-framework/shortcodes/ig-shortcodes.php:256
+msgid "Tags"
+msgstr ""
+
+#: ../core-framework/welcome/sections/welcome-footer.php:26
+msgid "IOGRAFICA THEMES"
+msgstr ""
+
+#: ../core-framework/welcome/sections/welcome-footer.php:27
+msgid "Best Free and Premium WordPress Themes and Plugins"
+msgstr "I migliori temi e plugin gratuiti e a pagamento per WordPress"
+
+#: ../core-framework/welcome/sections/welcome-footer.php:28
+msgid "Website"
+msgstr ""
 
 #. Base ID
 #: ../core-framework/widgets/adsense-widget.php:13
@@ -230,8 +212,100 @@ msgstr ""
 msgid "RSS url:"
 msgstr ""
 
+#: ../updater/theme-updater.php:27
+msgid "Theme License"
+msgstr "Licenza Tema"
+
+#: ../updater/theme-updater.php:28
+msgid "Enter your theme license key."
+msgstr "Inserisci la chiave di licenza del tema."
+
+#: ../updater/theme-updater.php:29
+msgid "License Key"
+msgstr "Chiave di licenza"
+
+#: ../updater/theme-updater.php:30
+msgid "License Action"
+msgstr ""
+
+#: ../updater/theme-updater.php:31
+msgid "Deactivate License"
+msgstr "Disattivazione Licenza"
+
+#: ../updater/theme-updater.php:32
+msgid "Activate License"
+msgstr "Attivazione Licenza"
+
+#: ../updater/theme-updater.php:33 ../updater/theme-updater.php:45
+msgid "License status is unknown."
+msgstr "Stato della licenza sconosciuto."
+
+#: ../updater/theme-updater.php:34
+msgid "Renew?"
+msgstr "Rinnovare?"
+
+#: ../updater/theme-updater.php:35
+msgid "unlimited"
+msgstr "illimitata"
+
+#: ../updater/theme-updater.php:36
+msgid "License key is active."
+msgstr "Chiave di licenza attiva."
+
+#: ../updater/theme-updater.php:37
+#, php-format
+msgid "Expires %s."
+msgstr "Scade %s."
+
+#: ../updater/theme-updater.php:38
+#, php-format
+msgid "You have %1$s / %2$s sites activated."
+msgstr "Hai %1$s / %2$s siti attivati."
+
+#: ../updater/theme-updater.php:39
+#, php-format
+msgid "License key expired %s."
+msgstr "La chiave di licenza scade il %s."
+
+#: ../updater/theme-updater.php:40
+msgid "License key has expired."
+msgstr "Chiave di licenza scaduta."
+
+#: ../updater/theme-updater.php:41
+msgid "License keys do not match."
+msgstr "La chiave di licenza non corrsiponde."
+
+#: ../updater/theme-updater.php:42
+msgid "License is inactive."
+msgstr "Licenza inattiva."
+
+#: ../updater/theme-updater.php:43
+msgid "License key is disabled."
+msgstr "Chiave di licenza disabilitata."
+
+#: ../updater/theme-updater.php:44
+msgid "Site is inactive."
+msgstr "Il sito è inattivo."
+
+#: ../updater/theme-updater.php:46
+msgid ""
+"Updating this theme will lose any customizations you have made. 'Cancel' to stop, "
+"'OK' to update."
+msgstr ""
+"Aggiornando il tema perderai ogni personalizzazione effettuata. 'Annulla' per "
+"annullare, 'OK' per aggiornare"
+
+#: ../updater/theme-updater.php:47
+#, php-format
+msgid ""
+"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" title="
+"\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</a>."
+msgstr ""
+"<strong>%1$s %2$s</strong> è disponibile. <a href=\"%3$s\" class=\"thickbox\" title="
+"\"%4s\">Scopri cosa c'è di nuovo</a> oppure <a href=\"%5$s\"%6$s>aggiorna ora</a>."
+
 #. Name of the theme
-msgid "Base WP"
+msgid "Base WP Premium"
 msgstr ""
 
 #. Theme URI of the theme
@@ -240,9 +314,11 @@ msgstr ""
 
 #. Description of the theme
 msgid ""
-"Base WP is a basic blog or business, responsive and clean coded, WordPress "
-"theme. Base WP is WooCommerce compatible, multilingual ready, RTL-Language "
-"support, retina-ready, SEO friendly and cross-browser compatible."
+"Base WP Premium is basic blog or business WordPress theme with a clean and "
+"responsive interface. Base WP Premium is fully compatible with WooCommerce, have "
+"built in a complete sets of premium shortcodes and custom widgets. With this premium "
+"version you have access to all customization’s options, like layout options, custom "
+"colors, etc."
 msgstr ""
 
 #. Author of the theme
@@ -261,107 +337,112 @@ msgstr "Oops! La pagina non è stata trovata."
 msgid "It looks like nothing was found at this location."
 msgstr "Sembra che nulla è stato trovato in questa posizione."
 
+#: ../comments.php:31
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un commento a &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s commenti a &ldquo;%2$s&rdquo;"
+
 #: ../comments.php:40 ../comments.php:61
 msgid "Comment navigation"
 msgstr "Navigazione commento"
+
+#: ../comments.php:44 ../comments.php:65
+msgid "Newer Comments"
+msgstr "Commenti Successivi"
 
 #: ../comments.php:77
 msgid "Comments are closed."
 msgstr "I commenti sono chiusi."
 
-#: ../functions.php:36
+#: ../functions.php:35
 msgid "Primary Menu"
 msgstr "Menu primario"
 
-#: ../functions.php:37
+#: ../functions.php:36 ../options.php:66
 msgid "Header Menu"
-msgstr "Menu Header"
+msgstr "Menu Testata"
+
+#: ../functions.php:115
+msgid ""
+"Please disable or remove the IG Shortcodes pluign to use the premium version "
+"included int the theme! Don&#39;t worry, all shortcodes used will work."
+msgstr ""
+"Si prega di disabilitare o rimuovere il plugin IG Shortcodes per utilizzare la "
+"versione premium inclusa nel tema! Non preoccuparti, tutti gli shortcodes utilizzati "
+"continueranno a funzionare."
+
+#: ../functions.php:117
+msgid "Go to plugin page."
+msgstr "Vai alla pagina dei plugin."
 
 #: ../header.php:23
 msgid "Skip to content"
 msgstr "Vai al contenuto"
 
-#: ../header.php:34
-msgid "Menu"
-msgstr "Menu"
+#: ../options.php:30
+msgid "General"
+msgstr "Generale"
 
-#: ../options.php:14
-msgid " - only premium"
-msgstr " - solo premium"
-
-#: ../options.php:30 ../core-framework/welcome/sections/intro.php:22
-msgid "UPGRADE TO PREMIUM"
-msgstr "UPGRADE TO PREMIUM"
-
-#: ../options.php:44 ../options.php:183
+#: ../options.php:39 ../options.php:189
 msgid "Main Layout"
 msgstr "Layout Principale"
 
-#: ../options.php:48 ../options.php:248
+#: ../options.php:43 ../options.php:269
 msgid "Single Layout"
 msgstr "Layout Pagina Singola"
 
-#: ../options.php:52 ../options.php:282
+#: ../options.php:47 ../options.php:312
 msgid "Shop Layout"
 msgstr "Layout negozio"
 
-#: ../options.php:87 ../core-framework/welcome/sections/intro.php:25
-msgid ""
-"If you like this theme, considering supporting development by purchasing the "
-"premium version."
-msgstr ""
-"Se ti piace il tema, considera di supportare il suo sviluppo comprando la "
-"versione premium."
+#: ../options.php:53
+msgid "Style"
+msgstr "Stile"
 
-#: ../options.php:88
-msgid "Main premium features:"
-msgstr "Caratteristiche premium principali:"
+#: ../options.php:61
+msgid "Header"
+msgstr "Testata"
 
-#: ../options.php:89
-msgid "- All options enabled"
-msgstr "- Tutte le opzioni abilitate"
+#: ../options.php:71
+msgid "Main Menu"
+msgstr "Menu Principale"
 
-#: ../options.php:90
-msgid "- Premium shortcodes included"
-msgstr "- Premium shortcodes inclusi"
+#: ../options.php:76
+msgid "Buttons"
+msgstr "Pulsanti"
 
-#: ../options.php:91
-msgid "- Priority support"
-msgstr "- Supporto prioritario"
+#: ../options.php:98
+msgid "Advanced"
+msgstr "Avanzate"
 
-#: ../options.php:92
-msgid "- Money back guarantee"
-msgstr "- Garanzia soddisfatti e rimborsati"
-
-#: ../options.php:93
-msgid "upgrade to premium"
-msgstr "aggiorna alla versione premium"
-
-#: ../options.php:109
+#: ../options.php:112
 msgid "Site Title"
 msgstr "Titolo"
 
-#: ../options.php:121
+#: ../options.php:124
 msgid "Tagline"
 msgstr "Slogan"
 
-#: ../options.php:132
+#: ../options.php:135
 msgid "Site Logo"
 msgstr "Logo Sito"
 
-#: ../options.php:143
+#: ../options.php:146
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: ../options.php:144
+#: ../options.php:147
 msgid "Enable image lightbox"
 msgstr "Abilita il lightbox per le immagini"
 
-#: ../options.php:156
+#: ../options.php:159
 msgid "Breadcrumb"
 msgstr "Breadcrumb"
 
-#: ../options.php:157
+#: ../options.php:160
 msgid "Enable breadcrumb (it will use WordPress SEO breadcrumb if available)"
 msgstr ""
 "Abilita la \n"
@@ -369,171 +450,171 @@ msgstr ""
 "breadcrumb di\n"
 " WordPress SEO)"
 
-#: ../options.php:168
+#: ../options.php:172
 msgid "Shortcodes"
 msgstr "Shortcodes"
 
-#: ../options.php:169
+#: ../options.php:173
 msgid "Enable theme shortcodes"
 msgstr ""
 "Abilita gli \n"
 "shortcodes del tema"
 
-#: ../options.php:184
+#: ../options.php:190
 msgid "Select the index page layout"
 msgstr "Seleziona il layout delle pagine index"
 
-#: ../options.php:226
+#: ../options.php:206
+msgid "Posts Slide"
+msgstr "Slide Articoli"
+
+#: ../options.php:207
+msgid "Show a carousel of the latest posts"
+msgstr "Mostra un carosello degli articoli recenti."
+
+#: ../options.php:219 ../options.php:231
+msgid "Show excerpt"
+msgstr "Mostra riassunto"
+
+#: ../options.php:220 ../options.php:232
+msgid "Show posts content as excerpt"
+msgstr "Mostra uno stralcio del contenuto dell'articolo"
+
+#: ../options.php:244
+msgid "Featured images"
+msgstr "Immagini in evidenza"
+
+#: ../options.php:245
 msgid "Show featured images in index page"
 msgstr "Mostra le immagini in evidenza nelle pagine index"
 
-#: ../options.php:237
+#: ../options.php:256
 msgid "Numeric pagination"
 msgstr "Paginazione numerica"
 
-#: ../options.php:238
+#: ../options.php:257
 msgid "Use numeric pagination in index page"
 msgstr "Paginazione numerica per le pagine index"
 
-#: ../options.php:249
-msgid "Select the single post layout"
-msgstr "Seleziona il layout dei singoli articoli"
+#: ../options.php:270
+msgid "Select the post page layout"
+msgstr "Seleziona il layout della pagina articolo"
 
-#: ../options.php:260
+#: ../options.php:287
 msgid "Post featured image"
 msgstr "Immagine in evidenza articolo"
 
-#: ../options.php:261
+#: ../options.php:288
 msgid "Show featured image in post page"
 msgstr "Mostra l'immagine in evidenza nella pagina articolo"
 
-#: ../options.php:271
+#: ../options.php:299
 msgid "Meta Data"
 msgstr "Meta Data"
 
-#: ../options.php:272
+#: ../options.php:300
 msgid "Hide post meta data"
 msgstr "Nascondi i meta dati dell'articolo"
 
-#: ../options.php:283
-msgid "Select the shop page layout"
-msgstr "Seleziona il layout della pagina negozio"
+#: ../options.php:313
+msgid "Select the shop layout"
+msgstr "Seleziona il layout del negozio"
 
-#: ../options.php:319
-msgid "Header Style"
-msgstr "Stile Header"
-
-#: ../options.php:320
-msgid "Header custom colors"
-msgstr "Colori personalizzati header"
+#: ../options.php:329
+msgid "Products number"
+msgstr "Numero prodotti"
 
 #: ../options.php:330
-msgid "Menu Style"
-msgstr "Stile Menu"
-
-#: ../options.php:331
-msgid "Menu custom colors"
-msgstr "Colori personalizzati menu"
+msgid "The number of products displayed per page"
+msgstr "Il numero di prodotti visualizzati per pagina"
 
 #: ../options.php:341
-msgid "Links Style"
-msgstr "Stile Link"
+msgid "Products Slide"
+msgstr "Slide Prodotti"
 
 #: ../options.php:342
-msgid "Links custom colors"
-msgstr "Colori personalizzati link"
+msgid "Show a carousel of the latest products"
+msgstr "Mostra un carosello dei prodotti recenti"
 
-#: ../options.php:352
-msgid "Buttons Style"
-msgstr "Stile Pulsanti"
-
-#: ../options.php:353
-msgid "Buttons custom colors"
-msgstr "Colori personalizzati pulsanti"
-
-#: ../options.php:363
-msgid "Footer Style"
-msgstr "Stile Footer"
-
-#: ../options.php:364
-msgid "Footer custom colors"
-msgstr "Colori personalizzati footer"
-
-#: ../options.php:377
+#: ../options.php:598
 msgid "Footer Text"
 msgstr "Testo Footer"
 
-#: ../options.php:378
-msgid "Footer custom text"
-msgstr "Testo personalizzato per il footer"
-
-#: ../options.php:388
+#: ../options.php:610
 msgid "Credits Link"
 msgstr "Credits Link"
 
-#: ../options.php:389
+#: ../options.php:611
 msgid "Remove author credits"
 msgstr "Rimuovi i ringraziamenti all'autore"
 
-#: ../options.php:405
+#: ../options.php:626
 msgid "Facebook url"
 msgstr "Facebook url"
 
-#: ../options.php:416
+#: ../options.php:637
 msgid "Twitter url"
 msgstr "Twitter url"
 
-#: ../options.php:427
+#: ../options.php:648
 msgid "Google plus url"
 msgstr "Google plus url"
 
-#: ../options.php:438
+#: ../options.php:659
 msgid "Pinterest url"
 msgstr "Pinterest url"
 
-#: ../options.php:449
+#: ../options.php:670
 msgid "Tumblr url"
 msgstr "Tumblr url"
 
-#: ../options.php:460
+#: ../options.php:681
 msgid "Instagram url"
 msgstr "Instagram url"
 
-#: ../options.php:471
+#: ../options.php:692
 msgid "Linkedin url"
 msgstr "Linkedin url"
 
-#: ../options.php:482
+#: ../options.php:703
 msgid "Dribble url"
 msgstr "Dribble url"
 
-#: ../options.php:493
+#: ../options.php:714
 msgid "Vimeo url"
 msgstr "Vimeo url"
 
-#: ../options.php:504
+#: ../options.php:725
 msgid "Youtube url"
 msgstr "Youtube url"
 
-#: ../options.php:515
+#: ../options.php:736
 msgid "RSS url"
 msgstr "RSS url"
 
-#: ../options.php:529
+#: ../options.php:753
 msgid "Custom CSS"
 msgstr "CSS Personalizzato"
 
-#: ../options.php:530
+#: ../options.php:754
 msgid "Add your custom css code"
 msgstr "Aggiungi il tuo codice CSS personalizzato"
 
-#: ../options.php:540
+#: ../options.php:767
 msgid "Custom Javascript"
 msgstr "Javascript Personalizzato"
 
-#: ../options.php:541
+#: ../options.php:768
 msgid "Add your custom js code"
 msgstr "Aggiungi codice js personalizzato"
+
+#. Name of the template
+msgid "Full Width"
+msgstr "Tutta Pagina"
+
+#. Name of the template
+msgid "Sidebar Left"
+msgstr "Sidebar Sinistra"
 
 #: ../search.php:18
 #, php-format
@@ -574,31 +655,50 @@ msgstr "1 Commento"
 msgid "% Comments"
 msgstr "% Commenti"
 
-#: ../core-framework/func/function-action.php:125
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
+#: ../core-framework/template-tags.php:69 ../template-parts/content-page.php:36
+#, php-format
+msgid "Edit %s"
+msgstr "Modifica %s"
+
+#: ../core-framework/func/function-action.php:134
+msgid "Menu"
+msgstr "Menu"
+
+#: ../core-framework/func/function-action.php:162
+msgid "Back to top"
+msgstr "Torna su"
+
+#: ../core-framework/func/function-action.php:178
 msgid "Proudly powered by "
 msgstr "Proudly powered by "
 
-#: ../core-framework/func/function-action.php:125
+#: ../core-framework/func/function-action.php:178
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../core-framework/func/function-action.php:125
+#: ../core-framework/func/function-action.php:178
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../core-framework/func/function-action.php:127
+#: ../core-framework/func/function-action.php:180
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr "Tema: %1$s realizzato da %2$s."
 
-#: ../core-framework/func/function-action.php:188
+#: ../core-framework/func/function-action.php:215
 msgid "Home"
 msgstr "Home"
 
 #: ../core-framework/func/function-widget.php:7
 msgid "Sidebar"
 msgstr "Sidebar"
+
+#: ../core-framework/func/function-widget.php:9
+msgid "The main widget area"
+msgstr "L'area widget principale"
 
 #: ../core-framework/func/function-widget.php:18
 msgid "First Footer Widget Area"
@@ -642,8 +742,8 @@ msgstr "Resetta"
 
 #: ../core-framework/options/includes/customizer-reset.php:32
 msgid ""
-"Attention! This will remove all customizations ever made via customizer to "
-"this theme!\n"
+"Attention! This will remove all customizations ever made via customizer to this "
+"theme!\n"
 "\n"
 "This action is irreversible!"
 msgstr ""
@@ -665,221 +765,224 @@ msgstr "Titolo pagina"
 msgid "Hide page title"
 msgstr "Nascondi il titolo di pagina"
 
-#: ../core-framework/welcome/welcome-screen.php:44
+#: ../core-framework/shortcodes/ig-shortcodes-extra.php:19
+msgid "Remember Me"
+msgstr "Ricordami"
+
+#: ../core-framework/shortcodes/ig-shortcodes-extra.php:57
+msgid "You need to log in to view this content"
+msgstr "Devi effettuare l’accesso per vedere questo contenuto"
+
+#: ../core-framework/shortcodes/ig-shortcodes-extra.php:74
+msgid "More about "
+msgstr "Più informazioni su "
+
+#: ../core-framework/shortcodes/ig-shortcodes-extra.php:202
+msgid "Related posts"
+msgstr "Articoli correlati"
+
+#: ../core-framework/shortcodes/ig-shortcodes.php:243
+msgid "Pages"
+msgstr "Pagine"
+
+#: ../core-framework/shortcodes/ig-shortcodes.php:248
+msgid "Posts"
+msgstr "Articoli"
+
+#: ../core-framework/shortcodes/ig-shortcodes.php:253
+msgid "Authors"
+msgstr "Autori"
+
+#: ../core-framework/shortcodes/ig-shortcodes.php:269
+msgid "Categories"
+msgstr "Categorie"
+
+#: ../core-framework/welcome/welcome-screen.php:42
 msgid "Thanks for choosing "
 msgstr "Grazie per aver scelto "
 
-#: ../core-framework/welcome/welcome-screen.php:45
+#: ../core-framework/welcome/welcome-screen.php:43
 #, php-format
 msgid ""
-"! You can read documentation to how get the most out of your new theme on "
-"the %swelcome screen%s."
+"! You can read documentation to how get the most out of your new theme on the "
+"%swelcome screen%s."
 msgstr ""
-"! Puoi leggere la documentazione su come ricavare il massimo dal tuo nuovo "
-"tema nella \n"
-"%spagina di benvenuto%s."
+"! Puoi leggere la documentazione su come ottenere il massimo dal tuo nuovo tema "
+"nella %spagina di benvenuto%s."
 
-#: ../core-framework/welcome/welcome-screen.php:49
+#: ../core-framework/welcome/welcome-screen.php:47
 msgid "Get started"
 msgstr "Come iniziare"
 
-#: ../core-framework/welcome/sections/getting-started.php:12
-msgid "Using"
-msgstr "Stai utilizzando"
+#: ../core-framework/welcome/sections/free-resources.php:7
+msgid "Free resources"
+msgstr "Risorse gratuite"
 
-#: ../core-framework/welcome/sections/getting-started.php:13
-msgid ""
-"Thank you for use our theme. You can read detailed information on theme "
-"features and how to develop on top of it in the documentation."
-msgstr ""
-"Grazie per utilizzare il nostro tema. \n"
-"Nella documentazione \n"
-"È possibile avere informazioni dettagliate sulle caratteristiche del tema e "
-"su come svilupparlo."
+#: ../core-framework/welcome/sections/free-resources.php:8
+msgid "Take a look to our free resources of themes and plugins."
+msgstr "Dai uno sguardo alla nostra collezione gratuita di temi e plugin."
 
-#: ../core-framework/welcome/sections/getting-started.php:14
-msgid "View Documentation"
-msgstr "Vedi Documentazione"
+#: ../core-framework/welcome/sections/free-resources.php:12
+msgid "Free themes"
+msgstr "Temi gratuiti"
 
-#: ../core-framework/welcome/sections/getting-started.php:15
-msgid "Here are some common theme-setup tasks: "
-msgstr "Qui ci sono alcuni consigli di configurazione:"
-
-#: ../core-framework/welcome/sections/getting-started.php:18
-msgid "Customize your theme"
-msgstr "Personalizza il tuo tema"
-
-#: ../core-framework/welcome/sections/getting-started.php:19
-msgid "Customize your website with the WordPress Customizer."
-msgstr ""
-"Personalizza il tuo sito web con \n"
-"WordPress Customizer."
-
-#: ../core-framework/welcome/sections/getting-started.php:20
-msgid "Open the Customizer"
-msgstr ""
-"Apri il \n"
-"Customizer"
-
-#: ../core-framework/welcome/sections/getting-started.php:24
-msgid "Configure menu locations"
-msgstr "Configura la posizione dei menu"
-
-#: ../core-framework/welcome/sections/getting-started.php:25
-msgid "Add and use your custom navigation menus."
-msgstr "Aggiungi ed utilizza i tuoi menu personalizzati."
-
-#: ../core-framework/welcome/sections/getting-started.php:26
-msgid "Configure menus"
-msgstr "Configura i menu"
-
-#: ../core-framework/welcome/sections/intro.php:15
-msgid "Thank you to use "
-msgstr "Grazie per utilizzare "
-
-#: ../core-framework/welcome/sections/intro.php:15
-msgid " for your website."
-msgstr " per il tuo sito web."
-
-#: ../core-framework/welcome/sections/intro.php:18
-msgid ""
-"Here you can read the documentation and you can know how to get the most out "
-"of your new theme."
-msgstr ""
-"Qui potete leggere la documentazione e sapere come ottenere il massimo dal "
-"vostro nuovo tema."
-
-#: ../core-framework/welcome/sections/intro.php:29
-msgid "More Info"
-msgstr "Maggiori Informazioni"
-
-#: ../core-framework/welcome/sections/more-plugins.php:7 ../core-
-#: framework/welcome/sections/tabs.php:4
-msgid "More plugins"
-msgstr "Altri plugin"
-
-#: ../core-framework/welcome/sections/more-plugins.php:8
-msgid "Try one of our free plugins."
-msgstr "Prova uno dei nostri plugin gratuiti."
-
-#: ../core-framework/welcome/sections/more-plugins.php:34 ../core-
-#: framework/welcome/sections/more-plugins.php:62 ../core-
-#: framework/welcome/sections/more-themes.php:31 ../core-
-#: framework/welcome/sections/more-themes.php:74
+#: ../core-framework/welcome/sections/free-resources.php:34 ../core-
+#: framework/welcome/sections/free-resources.php:72
+#: framework/welcome/sections/free-resources.php:105
+#: framework/welcome/sections/free-resources.php:132
 msgid "An error has occurred"
 msgstr "Si è verificato un errore"
 
-#: ../core-framework/welcome/sections/more-plugins.php:48
-msgid "Download Now"
-msgstr "Scarica Ora"
-
-#: ../core-framework/welcome/sections/more-plugins.php:53 ../core-
-#: framework/welcome/sections/more-themes.php:42
-msgid "&#8230;"
-msgstr "&#8230;"
-
-#: ../core-framework/welcome/sections/more-themes.php:7 ../core-
-#: framework/welcome/sections/tabs.php:3
-msgid "More themes"
-msgstr "Altri temi"
-
-#: ../core-framework/welcome/sections/more-themes.php:8
-msgid "Try one of our free themes."
-msgstr "Prova uno dei nostri temi gratuiti."
-
-#: ../core-framework/welcome/sections/more-themes.php:50
+#: ../core-framework/welcome/sections/free-resources.php:49
 msgid "installed"
 msgstr "Installato"
 
-#: ../core-framework/welcome/sections/more-themes.php:61
+#: ../core-framework/welcome/sections/free-resources.php:60
 msgid "Install Now"
 msgstr "Installa Ora"
+
+#: ../core-framework/welcome/sections/free-resources.php:81
+msgid "Free plugins"
+msgstr "Plugin gratuiti"
+
+#: ../core-framework/welcome/sections/free-resources.php:117
+msgid "&#8230;"
+msgstr "&#8230;"
+
+#: ../core-framework/welcome/sections/free-resources.php:121
+msgid "Download Now"
+msgstr "Scarica Ora"
+
+#: ../core-framework/welcome/sections/getting-started.php:11
+msgid "Getting started"
+msgstr "Come iniziare"
+
+#: ../core-framework/welcome/sections/getting-started.php:12
+msgid "Start to customize and read more about the theme."
+msgstr "Inizia a personalizzare e scopri maggiori informazioni riguardo il tema."
+
+#: ../core-framework/welcome/sections/getting-started.php:15
+msgid "Using"
+msgstr "Stai utilizzando"
+
+#: ../core-framework/welcome/sections/getting-started.php:16
+msgid ""
+"You can read detailed information on theme features and how to develop on top of it "
+"in the documentation."
+msgstr ""
+"Puoi leggere informazioni dettagliate sulle caratteristiche del tema e su come "
+"personalizzare nella deocuementazione."
+
+#: ../core-framework/welcome/sections/getting-started.php:17
+msgid "View Documentation"
+msgstr "Vedi Documentazione"
+
+#: ../core-framework/welcome/sections/getting-started.php:22
+msgid "Customize your theme"
+msgstr "Personalizza il tuo tema"
+
+#: ../core-framework/welcome/sections/getting-started.php:23
+msgid ""
+"Start to customize the theme layout, colors, menu and more with the WordPress "
+"Customizer."
+msgstr ""
+"Inizia a personalizzare il layout, i colori, i menu e molto altro con WordPress "
+"Customizer."
+
+#: ../core-framework/welcome/sections/getting-started.php:24
+msgid "Open the Customizer"
+msgstr ""
+"Apri il \n"
+"Customizer."
+
+#: ../core-framework/welcome/sections/intro.php:11
+msgid "Thank you to use "
+msgstr "Grazie per utilizzare "
+
+#: ../core-framework/welcome/sections/intro.php:12
+msgid ""
+"Here you can read the documentation and you can know how to get the most out of your "
+"new theme."
+msgstr ""
+"Qui potete leggere la documentazione e sapere come ottenere il massimo dal vostro "
+"nuovo tema."
+
+#: ../core-framework/welcome/sections/intro.php:15
+msgid "ACTIVATE YOUR LICENSE KEY"
+msgstr "ATTIVA LA TUA CHIAVE DI LICENZA"
+
+#: ../core-framework/welcome/sections/intro.php:16
+msgid ""
+"Remember to activate your license key to get automatic updates and have access to "
+"priority support."
+msgstr ""
+"Ricordati di attivare la tua chiave di licenza per avere accesso al supporto "
+"prioritario e ottenere gli aggiornamenti automatici."
+
+#: ../core-framework/welcome/sections/intro.php:17
+msgid "Theme license"
+msgstr "Licenza tema"
 
 #: ../core-framework/welcome/sections/tabs.php:2
 msgid "Getting Started"
 msgstr "Come Iniziare"
 
-#: ../core-framework/welcome/sections/welcome-footer.php:9
-msgid "Iografica Themes"
-msgstr "Iografica Themes"
+#: ../core-framework/welcome/sections/tabs.php:3
+msgid "Free Resources"
+msgstr "Risorse gratuite"
+
+#: ../core-framework/welcome/sections/welcome-footer.php:8
+msgid "Can i contribute?"
+msgstr "Posso contribuire?"
+
+#: ../core-framework/welcome/sections/welcome-footer.php:10
+msgid ""
+"Send us your language file and it will be included in the next theme release. Read "
+"how to "
+msgstr ""
+"Inviaci la traduzione del tema da te realizzata e sarà inserita nel prossimo "
+"aggiornamento. Leggi come "
 
 #: ../core-framework/welcome/sections/welcome-footer.php:12
-msgid "Our goal is make the best free and premium WordPress themes and plugins."
-msgstr ""
-"Il nostro obbiettivo è quello di realizzare i migliori temi e plugin per "
-"WordPress."
+msgid "make a translation"
+msgstr "fare una traduzione"
 
-#: ../core-framework/welcome/sections/welcome-footer.php:15
-msgid "Follow us on:"
-msgstr "Seguici su:"
+#: ../core-framework/welcome/sections/welcome-footer.php:17
+msgid "Can't find a feature?"
+msgstr "Non trovi una caratteristica?"
 
-#: ../core-framework/welcome/sections/welcome-footer.php:16 ../core-
+#: ../core-framework/welcome/sections/welcome-footer.php:19
+msgid "Please suggest and vote on ideas / feature requests at the "
+msgstr "Suggerisci e e vota un'idea o una caratteristica aggiuntiva nel "
+
+#: ../core-framework/welcome/sections/welcome-footer.php:21
+msgid "feedback forum"
+msgstr "feedback forum"
+
+#: ../core-framework/welcome/sections/welcome-footer.php:29 ../core-
 #: framework/widgets/social-widget.php:40
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../core-framework/welcome/sections/welcome-footer.php:17 ../core-
+#: ../core-framework/welcome/sections/welcome-footer.php:30 ../core-
 #: framework/widgets/social-widget.php:45
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../core-framework/welcome/sections/welcome-footer.php:18 ../core-
+#: ../core-framework/welcome/sections/welcome-footer.php:31 ../core-
 #: framework/widgets/social-widget.php:50
 msgid "Google Plus"
 msgstr "Google Plus"
 
-#: ../core-framework/welcome/sections/welcome-footer.php:22
-msgid "Visit the website"
-msgstr "Visita il sito"
-
-#: ../core-framework/welcome/sections/welcome-footer.php:29
-msgid "Can i contribute?"
-msgstr "Posso contribuire?"
-
-#: ../core-framework/welcome/sections/welcome-footer.php:32
-msgid ""
-"Would you like to translate the theme into your language? Send us your "
-"language file and it will be included in the next theme release."
-msgstr ""
-"Vorresti tradurre il tema nella tua lingua? Mandaci la tua traduzione e sarà "
-"inclusa nel prossimo aggiornamento del tema."
-
-#: ../core-framework/welcome/sections/welcome-footer.php:36
-msgid "Read how to make a translation"
-msgstr "Leggi come realizzare una traduzione"
-
-#: ../core-framework/welcome/sections/welcome-footer.php:43
-msgid "Can't find a feature?"
-msgstr "Non trovi una caratteristica?"
-
-#: ../core-framework/welcome/sections/welcome-footer.php:46
-msgid "Please suggest and vote on ideas / feature requests at the "
-msgstr "Suggerisci o vota un' idea / caratteristica nel "
-
-#: ../core-framework/welcome/sections/welcome-footer.php:48
-msgid "feedback forum"
-msgstr "feedback forum"
-
-#: ../core-framework/welcome/sections/welcome-footer.php:53
-msgid "Do you like the theme?"
-msgstr "Ti piace il tema?"
-
-#: ../core-framework/welcome/sections/welcome-footer.php:56
-#, php-format
-msgid "Why not leave a review on %sWordPress.org%s? We'd really appreciate it! :-)"
-msgstr ""
-"Perché non scrivi una recensione su \n"
-"%sWordPress.org%s? Lo apprezzeremo molto! :-)"
-
 #: ../core-framework/widgets/adsense-widget.php:14
 msgid "Displays Adsense Ads."
-msgstr "Mostra le Ads di Adsense"
+msgstr "Mostra Adsense Ads."
 
 #: ../core-framework/widgets/adsense-widget.php:39 ../core-
-#: framework/widgets/recent-posts-widget.php:83 ../core-framework/widgets/social-
+#: framework/widgets/recent-posts-widget.php:86 ../core-framework/widgets/social-
 #: widget.php:112
 msgid "Title:"
-msgstr "Titolo:"
+msgstr "Totolo:"
 
 #: ../core-framework/widgets/adsense-widget.php:44
 msgid "Code:"
@@ -887,43 +990,39 @@ msgstr "Codice:"
 
 #: ../core-framework/widgets/adsense-widget.php:47
 msgid ""
-"You can use this widget to add your Google Adsense js code but also for "
-"other service or custom js code."
+"You can use this widget to add your Google Adsense js code but also for other "
+"service or custom js code."
 msgstr ""
-"Puoi utilizzare questo widget per aggiungere il codice js di Google Adsense "
-"ma anche per del codice js personalizzato o di un’altro servizio."
+"Puoi utilizzare questo widget per il codice js generato da Google Adsense o da un "
+"altro servizio, oppure per del codice js personalizzato."
 
 #: ../core-framework/widgets/recent-posts-widget.php:13
 msgid "An extended version of the recent posts widget."
-msgstr "Una versione estesa del widget degli articoli recenti."
+msgstr "Una versione estesa del widget di articoli recenti."
 
-#: ../core-framework/widgets/recent-posts-widget.php:87
+#: ../core-framework/widgets/recent-posts-widget.php:90
 msgid "Post type:"
 msgstr "Tipo di articolo:"
 
-#: ../core-framework/widgets/recent-posts-widget.php:88
-msgid "Display a custom post type - only premium"
-msgstr "Mostra un tipo di articolo personalizzato - solo premium"
-
-#: ../core-framework/widgets/recent-posts-widget.php:91
+#: ../core-framework/widgets/recent-posts-widget.php:94
 msgid "Number of posts to show:"
 msgstr "Numero di articoli da mostrare:"
 
-#: ../core-framework/widgets/recent-posts-widget.php:97
+#: ../core-framework/widgets/recent-posts-widget.php:100
 msgid "Display post date?"
-msgstr "Mostrare la data dell’articolo?"
+msgstr "Visualizzare la data?"
 
-#: ../core-framework/widgets/recent-posts-widget.php:102
+#: ../core-framework/widgets/recent-posts-widget.php:105
 msgid "Display post image?"
-msgstr "Mostrare l’immagine dell’articolo?"
+msgstr "Visualizzare l'immagine?"
 
-#: ../core-framework/widgets/recent-posts-widget.php:107
+#: ../core-framework/widgets/recent-posts-widget.php:110
 msgid "Display post excerpt?"
-msgstr "Mostrare il riassunto dell’articolo?"
+msgstr "Mostrare il riassunto?"
 
 #: ../core-framework/widgets/social-widget.php:14
 msgid "Show your social profiles pages."
-msgstr "Mostra le pagine dei tuoi profili sociali."
+msgstr "Mostra le pagine dei tuoi profili social"
 
 #: ../template-parts/content-none.php:14
 msgid "Nothing Found"
@@ -936,22 +1035,21 @@ msgstr "Pronto a pubblicare il tuo primo articolo? <a href=\"%1$s\">Inizia da qu
 
 #: ../template-parts/content-none.php:24
 msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
+"Sorry, but nothing matched your search terms. Please try again with some different "
+"keywords."
 msgstr ""
-"Ci dispiace, ma nulla corrisponde ai termini della tua ricerca. Prova a "
-"cerca di nuovo con parole chiave differenti."
+"Ci dispiace, ma nulla corrisponde ai termini della tua ricerca. Prova a cerca di "
+"nuovo con parole chiave differenti."
 
 #: ../template-parts/content-none.php:29
 msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can "
+"help."
 msgstr ""
-"Sembra che la pagina che stai cercando non esista. Forse la ricerca potrebbe "
-"aiutare."
+"Sembra che la pagina che stai cercando non esista. Forse la ricerca potrebbe aiutare."
 
 #: ../template-parts/content-page.php:25 ../template-parts/content-single.php:35 .
-#: ./template-parts/content.php:43
+#: template-parts/content.php:43
 msgid "Pages:"
 msgstr "Pagine:"
 

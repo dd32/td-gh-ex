@@ -2647,69 +2647,39 @@
 ********************************************************************************/
 jQuery(document).ready(function($) {
   $('#post-slider').slick({
-      //accessibility: ,
-      adaptiveHeight: true,
-      autoplay: true,
-      //autoplaySpeed: ,
-      arrows: true ,
-      asNavFor: '#post-nav' ,
-      //appendArrows: ,
-      //prevArrow:,
-      //nextArrow: ,
-      //centerMode: ,
-      //customPaging: ,
-      //dots: false ,
-      //draggable: ,
-      //fade: ,
-      focusOnSelect: false,
-      //easing: ,
-      //edgeFriction: ,
-      //infinite: ,
-      //initialSlide: ,
-      //lazyLoad: ,
-      //mobileFirst: ,
-      //pauseOnHover: ,
-      //pauseOnDotsHover: ,
-      //respondTo: ,
-      //responsive:,
-      //rows: ,
-      //slide: ,
-      //slidesPerRow: ,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      //speed: ,
-      //swipe: ,
-      //swipeToSlide: ,
-      //touchMove: ,
-      //variableWidth: ,
-      //vertical: ,
-      //verticalSwiping: ,
-      //rtl: ,
-  });
- $('#post-nav').slick({
+    adaptiveHeight: true,
+    autoplay: true,
     arrows: false ,
     dots: false,
-    centerMode: false,
-    focusOnSelect: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: '#post-slider',
-
-    responsive: [
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ],
-
-});
-$('#product-carousel').slick({
-    arrows: false ,
-    dots: false,
+    focusOnSelect: false,
     slidesToShow: 3,
     slidesToScroll: 3,
+    responsive: [
+        {
+        breakpoint: 480,
+            settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+            }
+        }
+        ],
+  });
+$('#product-carousel').slick({
+    adaptiveHeight: true,
+    autoplay: true,
+    arrows: false ,
+    dots: false,
+    focusOnSelect: false,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+        {
+        breakpoint: 480,
+            settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+            }
+        }
+        ],
+    });
 });
-} );
