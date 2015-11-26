@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: arise 1.0\n"
-"POT-Creation-Date: 2015-09-26 14:20+0545\n"
+"POT-Creation-Date: 2015-10-05 19:17+0545\n"
 "PO-Revision-Date: 2015-08-07 08:34+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeFreesia <themefreesia@gmail.com>\n"
@@ -42,39 +42,39 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: front-page.php:69 inc/settings/arise-functions.php:212
+#: front-page.php:69 inc/settings/arise-functions.php:207
 msgid "Read More"
 msgstr ""
 
-#: functions.php:59
+#: functions.php:54
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:60
+#: functions.php:55
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:56
 msgid "Add Social Icons Only"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:127
 msgid "Review Arise"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:130
 msgid "Theme Instructions"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:133
 msgid "Forum"
 msgstr ""
 
-#: functions.php:132
+#: functions.php:136
 msgid "View Demo"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:143
 msgid "About Arise"
 msgstr ""
 
@@ -142,6 +142,23 @@ msgstr ""
 
 #: inc/customizer/functions/design-options.php:98
 msgid "Display Entry Meta"
+msgstr ""
+
+#: inc/customizer/functions/design-options.php:109
+msgid "Design Layout"
+msgstr ""
+
+#: inc/customizer/functions/design-options.php:115
+#: inc/settings/arise-common-functions.php:59
+msgid "Full Width Layout"
+msgstr ""
+
+#: inc/customizer/functions/design-options.php:116
+msgid "Boxed Layout"
+msgstr ""
+
+#: inc/customizer/functions/design-options.php:117
+msgid "Small Boxed Layout"
 msgstr ""
 
 #: inc/customizer/functions/featured-content-customizer.php:12
@@ -375,10 +392,6 @@ msgstr ""
 msgid "No sidebar Layout"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:59
-msgid "Full Width Layout"
-msgstr ""
-
 #: inc/settings/arise-common-functions.php:64
 msgid "Left sidebar Layout"
 msgstr ""
@@ -472,10 +485,6 @@ msgstr ""
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: inc/settings/arise-functions.php:121
-msgid "Donate"
-msgstr ""
-
 #: inc/widgets/widgets-functions/contactus-widgets.php:11
 msgid "Display Contact Us Information"
 msgstr ""
@@ -556,6 +565,14 @@ msgstr ""
 msgid "Shows widgets at Footer Column "
 msgstr ""
 
+#: inc/widgets/widgets-functions/register-widgets.php:76
+msgid "WooCommerce Sidebar"
+msgstr ""
+
+#: inc/widgets/widgets-functions/register-widgets.php:78
+msgid "Add WooCommerce Widgets Only"
+msgstr ""
+
 #: inc/widgets/widgets-functions/testimonials-widgets.php:11
 msgid "Display Testimonial on FrontPage"
 msgstr ""
@@ -580,7 +597,7 @@ msgstr ""
 msgid "Next Page &raquo;"
 msgstr ""
 
-#: page.php:40 single.php:75
+#: page-templates/gallery-template.php:40 page.php:40 single.php:75
 msgid "Pages:"
 msgstr ""
 

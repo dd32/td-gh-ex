@@ -1,4 +1,10 @@
 == CHANGE LOG ==
+= 1.0.2 =
+	- Gallery template added to fix gallery issue
+	- Minor text issue fixed
+	- Sidebar added for wooCommerce
+	- Description text modified at style.css file
+
 = 1.0.1 =
 	- JavaScript source added according to WordPress guidelines
 	- Boxed Layout and Small Boxed Layout Options added

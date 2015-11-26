@@ -22,12 +22,7 @@ function arise_setup() {
 	 */
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
-		$arise_settings = arise_get_theme_options();
-		if($arise_settings['arise_sidebar_layout_options'] == 'fullwidth'){
-			$content_width = 1170;
-		}else{
 			$content_width=790;
-		}
 	}
 
 	/*
@@ -87,6 +82,15 @@ function arise_setup() {
 }
 endif; // arise_setup
 add_action( 'after_setup_theme', 'arise_setup' );
+
+/***************************************************************************************/
+function arise_content_width() {
+	if ( is_page_template( 'page-templates/gallery-template.php' ) || is_attachment() ) {
+		global $content_width;
+		$content_width = 1170;
+	}
+}
+add_action( 'template_redirect', 'arise_content_width' );
 
 /***************************************************************************************/
 function arise_get_theme_options() {

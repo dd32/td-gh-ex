@@ -23,7 +23,7 @@
 		?>
 				<p>
 			<input id="<?php echo $this->get_field_id('checkbox'); ?>" name="<?php echo $this->get_field_name('checkbox'); ?>" type="checkbox" value="1" <?php checked( '1', $checkbox ); ?>/>
-			<label for="<?php echo $this->get_field_id('checkbox'); ?>"><?php _e('Check to display entry format','arise'); ?></label>
+			<label for="<?php echo $this->get_field_id('checkbox'); ?>"><?php _e('Check to hide entry format','arise'); ?></label>
 		</p>
 				<p>
 				<label for="<?php echo $this->get_field_id('title');?>">

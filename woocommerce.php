@@ -38,9 +38,9 @@ if( 'default' == $layout ) { //Settings from customizer
 <div id="secondary">
 	<?php }
 } 
-dynamic_sidebar( 'arise_main_sidebar' );
 	if( 'default' == $layout ) { //Settings from customizer
 		if(($arise_settings['arise_sidebar_layout_options'] != 'nosidebar') && ($arise_settings['arise_sidebar_layout_options'] != 'fullwidth')): ?>
+		<?php dynamic_sidebar( 'arise_woocommerce_sidebar' ); ?>
 </div> <!-- #secondary -->
 <?php endif;
 	}

@@ -72,5 +72,14 @@ function arise_widgets_init() {
 			'after_title' => '</h3>',
 		));
 	}
+	register_sidebar(array(
+			'name' => __('WooCommerce Sidebar', 'arise'),
+			'id' => 'arise_woocommerce_sidebar',
+			'description' => __('Add WooCommerce Widgets Only', 'arise'),
+			'before_widget' => '<div id="A%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
+		));
 }
 ?>

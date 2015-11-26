@@ -24,7 +24,7 @@ class arise_parallax_video_widget extends WP_Widget {
 		?>	
 			<p>
 				<label for="<?php _e('Description','arise')?>">
-					<?php _e('Add all iframe code to display youtube/ Vimeo video', 'arise');?>
+					<?php _e('Add all iframe code to display youtube/ Vimeo video in page Only', 'arise');?>
 				:</label>
 			</p>
 			<p>
