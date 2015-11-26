@@ -9,7 +9,11 @@
 			<h1><?php echo $current_options['home_blog_heading']; ?></h1>
 		<?php } ?>
 		<?php if($current_options['home_blog_description']) { ?>
-			<div class="pagetitle-separator"></div>
+			<div class="pagetitle-separator">
+				<div class="pagetitle-separator-border">
+					<div class="pagetitle-separator-box"></div>
+				</div>
+			</div>
 			<p><?php echo $current_options['home_blog_description']; ?></p>
 		<?php } ?>
 		</div>

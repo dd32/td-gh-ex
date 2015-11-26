@@ -8,7 +8,11 @@
 		<div class="section_heading_title">
 		<?php if($current_options['service_title']) { ?>
 			<h1><?php echo esc_html($current_options['service_title']); ?></h1>
-			<div class="pagetitle-separator"></div>
+			<div class="pagetitle-separator">
+				<div class="pagetitle-separator-border">
+					<div class="pagetitle-separator-box"></div>
+				</div>
+			</div>
 		<?php } ?>
 		<?php if($current_options['service_description']) { ?>
 			<p><?php echo esc_html($current_options['service_description']); ?></p>

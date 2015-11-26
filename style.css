@@ -4,7 +4,7 @@ Theme URI: http://webriti.com/wallstreet-lite-version-details-page/
 Author: Webriti
 Author URI: http://webriti.com/
 Description:A Business theme which is ideal for creating a corporate / business website. It boasts of 3 beautifully designed page templates , Home, Blog and full width Page.Theme compatible with woocommerce.
-Version:  1.6.2
+Version:  1.6.3
 Tags: green,black,gray,dark, full-width-template,translation-ready, threaded-comments,custom-menu,two-columns,theme-options, sticky-post,responsive-layout,right-sidebar,featured-images
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -245,14 +245,30 @@ a.url{ color:#00C2A9; }
     text-align: center;
     
 }
-/*Edit by Harish For About Us Page Line Spacer*/
-.pagetitle-separator {
-	background: url("./images/pagetitle-seperator.png") no-repeat;
-	height: 13px;
-    margin: 23px auto 45px;
-    width: 250px;
+.pagetitle-separator{
+		background: #cccccc !important;
+		height: 1px;
+		margin: 23px auto 45px;
+		width: 250px;
 }
-
+.pagetitle-separator-border{
+		width: 101px;
+		height: 3px;
+		margin: 0 auto;
+		position: relative;
+		top: -2px;
+		 background: #00c2a9 !important;
+}
+.pagetitle-separator-box{
+		height: 10px;
+	    margin: 23px auto 45px;
+	    position: relative;
+	    top: -4px;
+	    transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		width: 10px;
+		background: #00c2a9 none repeat scroll 0 0 !important;
+}
 .service-section {
 	padding: 70px 0 20px;
 }

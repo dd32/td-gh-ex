@@ -52,6 +52,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.3
+1. Change Pagetitle-separator styling image to css.
 @Version 1.6.2
 1. Recommanded Install Facebood Feed Plugin.
 2. Remove Add theme Support title Tag.

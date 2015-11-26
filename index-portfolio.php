@@ -9,7 +9,11 @@ $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array()
 			<div class="section_heading_title">
 				<?php if($current_options['portfolio_title']) { ?>
 				<h1><?php echo esc_html($current_options['portfolio_title']); ?></h1>
-				<div class="pagetitle-separator"></div>
+				<div class="pagetitle-separator">
+					<div class="pagetitle-separator-border">
+						<div class="pagetitle-separator-box"></div>
+					</div>
+				</div>
 			<?php } ?>
 			<?php if($current_options['portfolio_description']) { ?>
 				<p><?php echo esc_html($current_options['portfolio_description']); ?></p>
