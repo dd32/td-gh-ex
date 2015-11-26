@@ -467,8 +467,7 @@ if( !function_exists( 'cyberchimps_posted_on' ) ) {
 
 		// If post byline date toggle is on then print HTML for date link.
 		if( $show_date ) {
-			apply_filters( 'cyberchimps_posted_on', $posted_on );
-			echo $posted_on;
+			echo apply_filters( 'cyberchimps_posted_on', $posted_on );
 		}
 	}
 }
@@ -505,8 +504,7 @@ if( !function_exists( 'cyberchimps_posted_by' ) ) {
 
 		// If post byline author toggle is on then print HTML for author link.
 		if( $show_author ) {
-			apply_filters( 'cyberchimps_posted_by', $posted_by );
-			echo $posted_by;
+			echo apply_filters( 'cyberchimps_posted_by', $posted_by );			
 		}
 	}
 }
@@ -1459,6 +1457,10 @@ if ( 'mp6' === get_user_option( 'admin_color' ) || version_compare( $GLOBALS['wp
 
 // FOR IE compatiblilty mode.
 add_action( 'send_headers', 'cyberchimps_add_header_xua' );
-function cyberchimps_add_header_xua() {
-	header( 'X-UA-Compatible: IE=edge,chrome=1' );
+function cyberchimps_add_header_xua() 
+{
+	if (!headers_sent()) 	
+	{
+		header( 'X-UA-Compatible: IE=edge,chrome=1' );
+	}
 }

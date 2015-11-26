@@ -41,6 +41,8 @@
 	opacity: 0.3;
 }
 
+#lbImage{ max-width:1000px; max-height: 600px;}
+
 /**** Style for lightbox starts ****/
 #lbOverlay {
 	position: fixed;

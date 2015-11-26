@@ -28,7 +28,13 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 			<?php if ( !empty( $body_styles ) ) : ?>
 			body {
 			<?php foreach ( $body_styles as $key => $body_style ): ?>
-                                     <?php if ( $key == 'font-family' ) {echo $key;?> : '<?php echo $body_style; ?>'<?php } else {echo $key; ?> : <?php echo $body_style;}?>;
+                             <?php if ( $key == 'font-family' ) 
+				{
+					echo $key;?> : '<?php echo $body_style; ?>'<?php 
+				} 
+				else {
+					echo $key; ?> : <?php echo $body_style;
+				}?>;
                         <?php endforeach; ?>
 			}
 
@@ -124,9 +130,7 @@ function cyberchimps_headings_styles() {
 // creates body_styles array from options
 function cyberchimps_body_styles() {
 	$body_styles = array();
-	if( cyberchimps_get_option( 'text_colorpicker' ) ) {
-		$body_styles['color'] = cyberchimps_get_option( 'text_colorpicker' );
-	}
+	
 	if( cyberchimps_get_option( 'typography_options' ) ) {
 		$typography_options = cyberchimps_get_option( 'typography_options' );
 		// changes terminology for typography to css elements
@@ -158,7 +162,9 @@ function cyberchimps_body_styles() {
 		wp_register_style( 'google-font', $protocol . '://fonts.googleapis.com/css?family=' . $google_font );
 		wp_enqueue_style( 'google-font' );
 	}
-
+	if( cyberchimps_get_option( 'text_colorpicker' ) ) {
+		$body_styles['color'] = cyberchimps_get_option( 'text_colorpicker' );
+	}
 	return $body_styles;
 }
 

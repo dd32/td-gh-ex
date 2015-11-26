@@ -83,6 +83,8 @@ function cyberchimps_customize( $wp_customize ) {
                     cursor: pointer;
                     border: 5px solid #5DA7F2;
                 }
+                #accordion-section-cyberchimps_header_section .customize-control-image img{ width: auto;}
+                #accordion-section-cyberchimps_social_media .images-skin-subcontainer img{ height: auto;}
             </style>
             <script>
 				jQuery(function ($) {
@@ -151,6 +153,8 @@ function cyberchimps_customize( $wp_customize ) {
                     cursor: pointer;
                     border: 5px solid #5DA7F2;
                 }
+                #accordion-section-cyberchimps_header_section .customize-control-image img{ width: auto;}
+                #accordion-section-cyberchimps_social_media .images-skin-subcontainer img{ height: auto;}
             </style>
             <script>
 				jQuery(function ($) {
@@ -218,11 +222,7 @@ function cyberchimps_customize( $wp_customize ) {
             endforeach;
         }
     }
-    ?>
-    <style type="text/css">
-        #accordion-section-cyberchimps_header_section .customize-control-image img{ width: auto;}
-        #accordion-section-cyberchimps_social_media .images-skin-subcontainer img{ height: auto;}
-    </style>    
+    ?>   
     <?php
     /*     * ******** Class for skin color selection option ends ************ */
     $imagepath = get_template_directory_uri() . '/cyberchimps/lib/images/';
@@ -1672,7 +1672,7 @@ function cyberchimps_customize( $wp_customize ) {
         'sanitize_callback' => 'cyberchimps_sanitize_checkbox'
     ) );
     $wp_customize->add_control( 'responsive_design', array(
-        'label' => __( 'Disable Responsive Design?', 'cyberchimps_core' ),
+        'label' => __( 'Responsive Design', 'cyberchimps_core' ),
         'section' => 'cyberchimps_layout_section',
         'settings' => 'cyberchimps_options[responsive_design]',
         'type' => 'checkbox'
@@ -1683,7 +1683,7 @@ function cyberchimps_customize( $wp_customize ) {
         'sanitize_callback' => 'cyberchimps_sanitize_checkbox'
     ) );
     $wp_customize->add_control( 'responsive_videos', array(
-        'label' => __( 'Disable Responsive Videos?', 'cyberchimps_core' ),
+        'label' => __( 'Responsive Videos', 'cyberchimps_core' ),
         'section' => 'cyberchimps_layout_section',
         'settings' => 'cyberchimps_options[responsive_videos]',
         'type' => 'checkbox'
@@ -1694,7 +1694,7 @@ function cyberchimps_customize( $wp_customize ) {
         'sanitize_callback' => 'cyberchimps_sanitize_checkbox'
     ) );
     $wp_customize->add_control( 'gallery_lightbox', array(
-        'label' => __( 'Disable Gallery Lightbox?', 'cyberchimps_core' ),
+        'label' => __( 'Gallery Lightbox', 'cyberchimps_core' ),
         'section' => 'cyberchimps_layout_section',
         'settings' => 'cyberchimps_options[gallery_lightbox]',
         'type' => 'checkbox'
@@ -1714,7 +1714,7 @@ function cyberchimps_customize( $wp_customize ) {
 
 // website width
     $wp_customize->add_setting( 'cyberchimps_options[max_width]', array(
-        'default' => 1020,
+        'default' => apply_filters( 'max_width_default', '1020' ),
         'type' => 'option',
         'sanitize_callback' => 'absint'
     ) );
