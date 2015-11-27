@@ -95,5 +95,6 @@ if (is_archive()) {
 
 echo empty($page_title) ? '' : sprintf('<h1 class="page-title">%s</h1>', wp_kses_post( $page_title ));
 echo wp_kses_post( $breadcrumb_before );
-echo apply_filters('beatmix_lite_get_breadcrumb', wp_kses_post( $breadcrumb ), wp_kses_post( $current_class ), wp_kses_post( $prefix ));
+$data = apply_filters('beatmix_lite_get_breadcrumb', wp_kses_post( $breadcrumb ), wp_kses_post( $current_class ), wp_kses_post( $prefix ));
+echo htmlspecialchars_decode(esc_html( $data ) );
 echo wp_kses_post( $breadcrumb_after );

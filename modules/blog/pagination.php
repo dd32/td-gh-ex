@@ -26,7 +26,7 @@ if (!is_singular() && current_theme_supports('loop-pagination')) {
         if (!empty($wp_query->query_vars['s']))
             $pagination_args['add_args'] = array('s' => urlencode(get_query_var('s')));
 
-
-        echo '<div class="pagination clearfix">'.paginate_links($pagination_args).'</div>';
+        $data = paginate_links($pagination_args);
+        echo '<div class="pagination clearfix">'.htmlspecialchars_decode(esc_html($data)).'</div>';
     }
 }

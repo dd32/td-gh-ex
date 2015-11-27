@@ -14,7 +14,7 @@ Support Firefox, Chrome, Safary, Opera, IE9+
 --------------------
 Changelog
 --------------------
-* 1.0.2 (11/17/2015)
+* 1.0.3 (11/26/2015)
 - firtst version
 
 --------------------

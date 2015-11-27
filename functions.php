@@ -63,7 +63,7 @@ function beatmix_lite_enqueue_scripts(){
      * --------------------------------------------------
      */
     
-    wp_enqueue_style( 'twentyfifteen-fonts', beatmix_lite_fonts_url(), array(), null );
+    wp_enqueue_style('beatmix_lite-fonts', beatmix_lite_fonts_url(), array(), null );
     wp_enqueue_style('beatmix_lite-bootstrap', "{$dir}/css/bootstrap.css", array(), NULL);
     wp_enqueue_style('beatmix_lite-font-awesome', "{$dir}/css/font-awesome.css", array(), NULL);
     wp_enqueue_style('beatmix_lite-navgoco', "{$dir}/css/jquery.navgoco.css", array(), NULL);

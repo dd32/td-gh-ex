@@ -5,7 +5,10 @@
     if (have_comments()) :        
         ?>     
         <h3 class="text-center">
-            <?php printf(  esc_attr__('%1$s Comments', 'beat-mix-lite'), get_comments_number());?>
+            <?php 
+                $data = sprintf(  esc_attr__('%1$s Comments', 'beat-mix-lite'), get_comments_number());
+                echo htmlspecialchars_decode(esc_html($data));
+            ?>
         </h3> 
         
         <ol class="comments-list clearfix">
@@ -131,7 +134,8 @@ function beatmix_lite_comment_form($args = array(), $post_id = null) {
                     ?>
                     <?php if (is_user_logged_in()) : ?>
                         <?php
-                        echo apply_filters('comment_form_logged_in', $args['logged_in_as'], wp_kses_post( $commenter ), wp_kses_post( $user_identity ) );
+                            $data = apply_filters('comment_form_logged_in', $args['logged_in_as'], wp_kses_post( $commenter ), wp_kses_post( $user_identity ) );
+                            echo htmlspecialchars_decode(esc_html($data));
                         ?>
                         <?php
                         do_action('comment_form_logged_in_after', $commenter, $user_identity);
@@ -140,13 +144,15 @@ function beatmix_lite_comment_form($args = array(), $post_id = null) {
                         <?php
                         do_action('comment_form_before_fields');
                         foreach ((array) $args['fields'] as $name => $field) {
-                            echo apply_filters("comment_form_field_{$name}", sprintf('%s', $field ) ) . "\n";
+                            $data = apply_filters("comment_form_field_{$name}", sprintf('%s', $field ) ) . "\n";
+                            echo htmlspecialchars_decode(esc_html($data));
                         }
                         do_action('comment_form_after_fields');
                         ?>
                     <?php endif; ?>
                     <?php
-                    echo apply_filters('comment_form_field_comment', sprintf( '%s', $args['comment_field']) );
+                    $data = apply_filters('comment_form_field_comment', sprintf( '%s', $args['comment_field']) );
+                        echo htmlspecialchars_decode(esc_html($data));
                     ?>
                     <?php echo wp_kses_post( $args['comment_notes_after'] ); ?>
                                         
