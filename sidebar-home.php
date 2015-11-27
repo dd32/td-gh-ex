@@ -36,7 +36,7 @@ $page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout',
 
         
         <?php if ( is_active_sidebar( 'accesspress-mag-home-middle-sidebar' )) : ?>
-        <div id="home-top-sidebar" class="widget-area wow fadeInRight" data-wow-delay="0.5s" role="complementary">
+        <div id="home-middle-sidebar" class="widget-area wow fadeInRight" data-wow-delay="0.5s" role="complementary">
         	<?php dynamic_sidebar( 'accesspress-mag-home-middle-sidebar' ); ?>
         </div><!-- #secondary -->
         <?php endif ; ?>
@@ -102,7 +102,7 @@ $page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout',
         <?php endif; ?>
         
         <?php if ( is_active_sidebar( 'accesspress-mag-home-bottom-sidebar' )) : ?>
-        <div id="home-top-sidebar" class="widget-area wow fadeInUp" data-wow-delay="0.5s" role="complementary">
+        <div id="home-bottom-sidebar" class="widget-area wow fadeInUp" data-wow-delay="0.5s" role="complementary">
         	<?php dynamic_sidebar( 'accesspress-mag-home-bottom-sidebar' ); ?>
         </div><!-- #secondary -->
         <?php endif ; ?> 

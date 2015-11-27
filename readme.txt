@@ -70,6 +70,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.2.2
+ * RTL ready bugs are fixed
+ 
 Version 2.2.1
  * Added additional css for RTL ready
   

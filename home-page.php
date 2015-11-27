@@ -34,16 +34,23 @@ get_header();
     ?>
     <div class="apmag-container">
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
               <section class="first-block wow fadeInUp clearfix" data-wow-delay="0.5s">
                     <?php 
                         $block1_cat = of_get_option( 'featured_block_1' );
                         if( !empty( $block1_cat ) ):
                                 $posts_for_block1 = of_get_option( 'posts_for_block1' );                                
                                 $category_info = get_category_by_slug( $block1_cat );
-                                echo '<div class="first-block-wrapper">';
-                                echo '<h3 class="block-cat-name"> <span> '.esc_attr( $category_info->name ).'</span></h3>';                            
-                                echo '<div class="block-post-wrapper clearfix">';
+                    ?>
+                            <div class="first-block-wrapper">
+                                <h3 class="block-cat-name"> 
+                                    <span><?php echo esc_attr( $category_info->name ) ; ?></span>
+                                </h3>
+                            <div class="block-post-wrapper clearfix">
+                    <?php
+                                //echo '<div class="first-block-wrapper">';
+                                //echo '<h3 class="block-cat-name"> <span> '.esc_attr( $category_info->name ).'</span></h3>';                            
+                                //echo '<div class="block-post-wrapper clearfix">';
                                 $block1_args = array(
                                                     'category_name' => $block1_cat,
                                                     'post_status' => 'publish',
@@ -83,8 +90,12 @@ get_header();
                     <?php
                                 }
                             }
-                            echo '</div>';
-                            echo '</div>';
+                    ?>
+                            </div>
+                            </div>
+                    <?php
+                            //echo '</div>';
+                            //echo '</div>';
                         endif;
                         wp_reset_query();
                     ?>
@@ -96,9 +107,16 @@ get_header();
                         if(!empty($block2_cat)):
                             $posts_for_block2 = of_get_option('posts_for_block2');
                             $category_info_2 = get_category_by_slug($block2_cat);
-                            echo '<div class="second-block-wrapper">';
+                    ?>
+                            <div class="second-block-wrapper">
+                                <h3 class="block-cat-name"> 
+                                    <span><?php echo esc_attr($category_info_2->name); ?></span>
+                                </h3>
+                            <div class="block-post-wrapper clearfix">
+                    <?php
+                            /*echo '<div class="second-block-wrapper">';
                             echo '<h3 class="block-cat-name"> <span>'.esc_attr($category_info_2->name).' </span></h3>'; 
-                            echo '<div class="block-post-wrapper clearfix">';                           
+                            echo '<div class="block-post-wrapper clearfix">';*/                           
                             $block2_args = array(
                                                 'category_name'=>$block2_cat,
                                                 'post_status'=>'publish',
@@ -135,8 +153,12 @@ get_header();
                     <?php                    
                                 }
                             }
-                            echo '</div>';
-                            echo '</div>';
+                    ?>
+                                </div>
+                                </div>
+                    <?php
+                            /*echo '</div>';
+                            echo '</div>';*/
                             endif ;
                     ?>
               </section>
@@ -154,9 +176,16 @@ get_header();
                         if(!empty($block3_cat)):
                                 $posts_for_block3 = of_get_option('posts_for_block3');
                                 $category_info_3 = get_category_by_slug($block3_cat);
-                                echo '<div class="first-block-wrapper">';
-                                echo '<h3 class="block-cat-name"><span>'.esc_attr($category_info_3->name).'</span></h3>';                            
-                                echo '<div class="block-post-wrapper clearfix">';
+                    ?>
+                                <div class="first-block-wrapper">
+                                    <h3 class="block-cat-name">
+                                        <span><?php echo esc_attr($category_info_3->name); ?></span>
+                                    </h3>
+                                <div class="block-post-wrapper clearfix">
+                    <?php
+                                /*echo '<div class="first-block-wrapper">';
+                                echo '<h3 class="block-cat-name"><span>'.esc_attr($category_info_3->name).'</span></h3>';
+                                echo '<div class="block-post-wrapper clearfix">';*/
                                 $block3_args = array(
                                                     'category_name'=>$block3_cat,
                                                     'post_status'=>'publish',
@@ -196,8 +225,12 @@ get_header();
                     <?php
                                 }
                             }
-                            echo '</div>';
-                            echo '</div>';
+                    ?>
+                                </div>
+                                </div>
+                    <?php
+                            /*echo '</div>';
+                            echo '</div>';*/
                         endif;
                     ?>
               </section>
@@ -208,9 +241,16 @@ get_header();
                         if(!empty($block4_cat)):
                             $posts_for_block4 = of_get_option('posts_for_block4');
                             $category_info_4 = get_category_by_slug($block4_cat);
-                            echo '<div class="second-block-wrapper">';
+                    ?>
+                            <div class="second-block-wrapper">
+                                <h3 class="block-cat-name">
+                                    <span><?php echo esc_attr($category_info_4->name);?></span>
+                                </h3>
+                            <div class="block-post-wrapper clearfix">
+                    <?php
+                            /*echo '<div class="second-block-wrapper">';
                             echo '<h3 class="block-cat-name"><span>'.esc_attr($category_info_4->name).'</span></h3>';                            
-                            echo '<div class="block-post-wrapper clearfix">';
+                            echo '<div class="block-post-wrapper clearfix">';*/
                             $block4_args = array(
                                                 'category_name'=>$block4_cat,
                                                 'post_status'=>'publish',
@@ -242,8 +282,12 @@ get_header();
                     <?php                    
                                 }
                             }
-                            echo '</div>';
-                            echo '</div>';
+                    ?>
+                                </div>
+                                </div>
+                    <?php
+                            /*echo '</div>';
+                            echo '</div>';*/
                             endif ;
                     ?>
               </section>      			

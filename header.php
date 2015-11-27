@@ -28,7 +28,7 @@
         $accesspress_mag_random_icon = of_get_option( 'random_icon_option', '1' );
     ?>  
 	
-    <header id="masthead" class="site-header" role="banner">    
+    <header id="masthead" class="site-header">    
     
         <?php
             /**
@@ -49,14 +49,14 @@
             <div class="current-date"><?php echo date('l, F j, Y'); ?></div>
             <?php } ?>
             <?php if ( has_nav_menu( 'top_menu' ) ) { ?>   
-                <nav id="top-navigation" class="top-main-navigation" role="navigation">
+                <nav id="top-navigation" class="top-main-navigation">
                             <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu', 'accesspress-mag' ); ?></button>
                             <?php wp_nav_menu( array( 'theme_location' => 'top_menu', 'container_class' => 'top_menu_left' ) ); ?>
                 </nav><!-- #site-navigation -->
             <?php } ?>
             <?php if ( has_nav_menu( 'top_menu_right' ) ) { ?>        
-                <nav id="top-right-navigation" class="top-right-main-navigation" role="navigation">
-                            <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu Right', 'accesspress-mag' ); ?></button>
+                <nav id="top-right-navigation" class="top-right-main-navigation">
+                            <button class="menu-toggle hide" aria-controls="top-right-menu" aria-expanded="false"><?php _e( 'Top Menu Right', 'accesspress-mag' ); ?></button>
                             <?php wp_nav_menu( array( 'theme_location' => 'top_menu_right', 'container_class' => 'top_menu_right' ) ); ?>
                 </nav><!-- #site-navigation -->
             <?php } ?>
@@ -73,7 +73,7 @@
         		<div class="site-branding">
                     <div class="sitelogo-wrap">  
                         <?php if ( get_header_image() ) { ?>
-                        <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                             <img src="<?php header_image(); ?>" alt="<?php echo esc_attr( $accesspress_mag_logo_alt ); ?>" title="<?php echo esc_attr( $accesspress_mag_logo_title ); ?>" />
                         </a>
                         <?php } ?>
@@ -98,7 +98,7 @@
         </div><!-- .logo-ad-wrapper -->
    
     	
-        <nav id="site-navigation" class="main-navigation" role="navigation">
+        <nav id="site-navigation" class="main-navigation">
 			<div class="apmag-container">
                 <div class="nav-wrapper">
                     <div class="nav-toggle hide">
