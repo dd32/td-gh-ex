@@ -4,14 +4,9 @@
  */
 ?>
 <?php
-$category = get_the_category();
-$current_catId = $category[0]->cat_ID;
-$exclude_cat = get_theme_mod('blog_exclude_categories');
-$cat_arr = explode(',', $exclude_cat);
+
 $blog_post_layout = get_theme_mod('blog_post_layout');
-if (in_array($current_catId, $cat_arr)) {
-    $blog_post_layout = "";
-}
+
 if (has_post_thumbnail()):
     switch ($blog_post_layout) {
         case 'blog_layout1':

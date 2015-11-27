@@ -48,6 +48,14 @@ Images
 
 == Changelog ==
 
+= 1.1.2 =
+
+** Add the blog page template and manage layout through customizer.
+** Add the Options to exclude category post in blog page.
+** Fixed the cart widget section style.
+** Manage the header email and phone display without enable or disable the ticker. 
+** Fixed the style of wishlist background color in left and right category section.
+
 = 1.1.1 =
 ** Change the header image name to header logo.
 ** Fixed the style of price tag and home page category alignment section section.

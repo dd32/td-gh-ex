@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -3956,7 +3956,7 @@ ul.products.list li.product .gridlist-buttonwrap {
 .mini_cart_item .quantity {
     display: block;
     -ms-transform: rotate(7deg);
-    background: rgb(226, 69, 69);
+    
     width: 100%;
     color: #fff;
     text-align: center;
@@ -3965,6 +3965,8 @@ ul.products.list li.product .gridlist-buttonwrap {
 .mini_cart_item {
     background: #EEE;
 }
+
+
 .main-navigation ul ul::before {
     border-bottom: 10px solid #e24545;
 }
@@ -4877,6 +4879,15 @@ span.onsale:after,
     font-weight: 700;
     margin-top: 7px;
 }
+
+.item-wishlist:hover{
+        background: #e24545;
+    color: #ffffff;
+}
+
+.feature-prod-wrap a:hover{
+    color: #fff
+}
 .new-prod-slide .slick-slide .item-wishlist:hover {
     background: #e24545;
     color: #ffffff;
@@ -5422,7 +5433,7 @@ span.onsale:after,
 	
 }
 #secondary.sidebar .product_list_widget{
-	padding-top:20px;
+	padding-top:10px;
 }
 #secondary.sidebar ul ul li {
     margin-left: 0px;
@@ -5458,6 +5469,7 @@ li.cat-parent {
     padding: 0px;
     line-height: 1.3 !important;
     white-space: normal;
+ 
 }
 #secondary.sidebar .widget_shopping_cart {
     margin-bottom: 0;
@@ -5566,7 +5578,7 @@ li.cat-parent {
 }
 .woocommerce .widget_products ul li:first-child {
     padding: 0px !important;
-    padding-bottom: 20px !important;
+    padding-bottom: 10px !important;
 }
 /*-Right side bar Product Section --*/
 
@@ -6441,15 +6453,15 @@ ul.products.list li.product hr {
     color: #ce4444;
     border: 1px solid #ce4444;
 }
-
+#secondary.sidebar .widget_shopping_cart_content ul li.mini_cart_item a.remove{
+    line-height: 1 !important;
+}
 /*last menu item style*/
 
 #site-navigation > .store-menu > ul li:last-child:hover ul ul{
     left: auto;
     right: 100%
 }
-#site-navigation > .store-menu > ul li:last-child:hover li:after {
-    display: none;
-}
+ 
 
 /*boxed body style*/

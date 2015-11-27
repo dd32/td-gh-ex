@@ -19,11 +19,13 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 <header id="mastheads" class="site-header" role="banner">
-    <?php if (as_before_top_header_enabled()): ?>
+    
         <div class="before-top-header">
             <div class="ak-container clearfix">
+                <?php if (as_before_top_header_enabled()): ?>
                     <?php accesspress_ticker_header_customizer(); ?>
-                    
+            
+                <?php endif; ?>
                     <?php
                     if (is_user_logged_in()) {
                         global $current_user;
@@ -51,7 +53,6 @@
                 
             </div>
         </div>
-    <?php endif; ?>
     <div class="top-header clearfix">
         <div class="ak-container clearfix">
 

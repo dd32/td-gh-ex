@@ -9,7 +9,7 @@
 get_header();
 $archive_page_layout = get_theme_mod('archive_page_layout','right-sidebar');
 ?>
-<?php if (have_posts()) : 
+<?php 
 $breadcrumb = get_theme_mod('breadcrumb_options_post','1');
 $archive_bread = get_theme_mod('breadcrumb_post_image');
 if($archive_bread){
@@ -30,7 +30,7 @@ if($breadcrumb == '1') :
             <?php accesspress_breadcrumbs() ?>
         </div>
     </div>
-<?php endif; endif; ?>
+<?php endif; ?>
 <div class="inner">
     <main id="main" class="site-main clearfix <?php echo $archive_page_layout; ?>">
 

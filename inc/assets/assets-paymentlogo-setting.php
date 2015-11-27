@@ -294,7 +294,7 @@ if(class_exists( 'WP_Customize_control')){
                         <li><span><?php _e('A perfect theme to start your online shop of any kind!','accesspress-store'); ?> </span></li>
                     </ul>
 
-                    <a href="https://accesspressthemes.com/wordpress-themes/accesspress-store-pro/" class="button button-primary buynow" target="_blank"><?php _e('Buy Now','accesspress-store'); ?></a>
+                    <a href="https://accesspressthemes.com/wordpress-themes/accesspress-store-pro" class="button button-primary buynow" target="_blank"><?php _e('Buy Now','accesspress-store'); ?></a>
                 </span>
             </label>
             <?php

@@ -32,11 +32,18 @@ function accesspress_blog_setting($wp_customize){
         )
       )
     );
+
+$categories = array();
+$categories_obj = get_categories();
+foreach ($categories_obj as $category) {
+  $categories[$category->term_id] = $category->name;
+}
+
   $wp_customize->add_setting(
     'blog_exclude_categories',
     array(
-      'default'       =>      '-1',
-      'sanitize_callback'     =>'accesspress_store_sanitize_text'
+      'default'       =>      '',
+      'sanitize_callback'     =>'sanitize_text_field'
       )
     );
   
@@ -47,7 +54,31 @@ function accesspress_blog_setting($wp_customize){
       'label' => 'Exclude From Blog',
       'type' => 'category-checkboxes',
       'section' => 'blog_setting',
+      'choices' => $categories
       )
     ));
+
+
+
+ /* $wp_customize->add_setting(
+        'favorite_fruit',
+        array(
+            'default'           => '',
+            'sanitize_callback' => 'jt_sanitize_favorite_fruit'
+        )
+    );
+
+    $wp_customize->add_control(
+        new JT_Customize_Control_Checkbox_Multiple(
+            $wp_customize,
+            'favorite_fruit',
+            array(
+                'section' => 'blog_setting',
+                'label'   => __( 'Favorite Fruit', 'jt' ),
+                'choices' => $categories
+            )
+        )
+    );*/
+
 }
 add_action('customize_register', 'accesspress_blog_setting');
