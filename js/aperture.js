@@ -65,6 +65,14 @@
 	// Make focus search-toggle more intuitif.
 	$('.search-toggle').click(function(){
 
+		// Add class .toggled on toggle.
+		$( this ).toggleClass( "toggled" );
+
+		// Only move focus when opened.
+		if ( $( this ).hasClass( "toggled" ) ) { 
+			$( "#desktop-search input" ).focus();
+		}
+
 		// Move focus to search-input.
 		$( ".search-toggle" ).on( 'blur', function() {
 			$( "#desktop-search input" ).focus();

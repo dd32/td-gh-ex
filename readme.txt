@@ -1,5 +1,5 @@
 APERTURE
-Theme Version: 1.1.5
+Theme Version: 1.1.6
 Author: Michael Van Den Berg 
 Author URL: http://michaelvandenberg.com/
 
@@ -80,6 +80,14 @@ After installing and activating the Jetpack plugin follow these steps:
 --------------------
 === Changelog ===
 --------------------
+
+*
+* 1.1.6 / 27.11.2015
+* - Added aria-hidden on span.lines.
+* - Removed complementary role for footer widgets.
+* - Moved focus to search field when search button is toggled.
+* - Improved hierarchy by changing widget titles from h1 to h2.
+*
 
 *
 * 1.1.5 / 24.11.2015

@@ -53,7 +53,7 @@
 		<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'secondary' ) ) : ?>
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'aperture' ); ?></span>
-				<span class="lines"></span>
+				<span class="lines" aria-hidden="true"></span>
 			</button>
 		<?php endif; ?>
 
