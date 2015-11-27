@@ -8,14 +8,16 @@ if ( !function_exists( 'awaken_featured_posts' ) ) :
 
     function awaken_featured_posts() {
 
-        global $awaken_options;
-        $category = (isset($awaken_options['slider-category'])) ? $awaken_options['slider-category'] : '';
+        $category = get_theme_mod( 'slider_category', '' );
 
         $slider_posts = new WP_Query( array(
                 'posts_per_page' => 5,
                 'cat'	=>	$category
             )
-        ); ?>
+        ); 
+        
+        ?>
+
         <div class="awaken-featured-container">
             <div class="awaken-featured-slider">
                 <section class="slider">
@@ -45,7 +47,7 @@ if ( !function_exists( 'awaken_featured_posts' ) ) :
             <div class="awaken-featured-posts">
                 <?php
 
-                $fposts_category = (isset($awaken_options['fposts-category'])) ? $awaken_options['fposts-category'] : '';
+                $fposts_category = get_theme_mod( 'featured_posts_category', '' );
 
                 $fposts = new WP_Query( array(
                     'posts_per_page' => 2,
@@ -60,7 +62,7 @@ if ( !function_exists( 'awaken_featured_posts' ) ) :
                             <?php if ( has_post_thumbnail() ) { ?>
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'featured', array('title' => get_the_title()) ); ?></a>
                             <?php } else { ?>
-                                <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
+                                <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/featured.jpg" alt="<?php the_title(); ?>" /></a>
                             <?php } ?>
                         </figure>
                         <div class="afp-title">

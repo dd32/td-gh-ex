@@ -5,17 +5,13 @@
  * @package Awaken
  */
 
-
-/**
- * Load the TGM init if it exists
- */
-if ( file_exists( get_template_directory() . '/inc/options/tgm/tgm-init.php') ) {
-    require_once( get_template_directory() . '/inc/options/tgm/tgm-init.php' );
-}   
 /**
  * Tweak the redux framework.
  * Register all the theme options.
  * Registers the wpex_option function.
+ * 
+ * Note: Awaken Options panel will be removed from the very next theme update. 
+ * This is here just to copy customizations from Awaken Options panel to Customizer.
  */
 if ( file_exists( get_template_directory() . '/inc/options/admin-config.php') ) {
 	require_once( get_template_directory() . '/inc/options/admin-config.php' );
@@ -42,6 +38,14 @@ function awaken_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -98,17 +102,15 @@ add_action( 'after_setup_theme', 'awaken_setup' );
  */
 function awaken_initialize_header() {
 	
-	global $awaken_options; //Global theme options variable
-	
 	//Place all Javascript Here
-	echo '<script>';
+	/*echo '<script>';
 		echo $awaken_options['awaken-header-code'];
-	echo '</script>';
+	echo '</script>';*/
 	//Java Script Ends
 	
 	//CSS Begins
 	echo "<style>";
-		echo $awaken_options['awaken-ace-editor-css'];	
+		echo get_theme_mod( 'custom_css' );	
 	echo "</style>";
 	//CSS Ends
 	
@@ -127,8 +129,7 @@ add_filter('excerpt_more', 'awaken_excerpt_more');
  * Adds a custom excerpt with a user defined link text.
  */
 function awaken_custom_excerpt($text) {
-   	global $awaken_options;
-    $excerpt = '' . strip_tags($text) . '<a class="moretag" href="'. get_permalink() . '"> ' . $awaken_options['excerpt-more'] . '</a>';
+    $excerpt = '' . strip_tags($text) . '<a class="moretag" href="'. get_permalink() . '"> ' . wp_kses_post( get_theme_mod( 'read_more_text', '[...]' ) ) . '</a>';
    	return $excerpt;
 }
 add_filter('the_excerpt', 'awaken_custom_excerpt');
@@ -213,7 +214,7 @@ add_action( 'widgets_init', 'awaken_widgets_init' );
  */
 function awaken_scripts() {
 	
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.1.0' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.4.0' );
 
 	wp_enqueue_style( 'bootstrap.css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'all' );
 	
@@ -301,7 +302,7 @@ add_action( 'wp_enqueue_scripts', 'awaken_font_styles' );
 * Enqueue awaken options panel custom css.
 */
 function awaken_option_panel_style() {
-	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/inc/options/admin.css', false );
+	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/css/admin.css', false );
 }
 add_action( 'admin_enqueue_scripts', 'awaken_option_panel_style' );
 
@@ -310,10 +311,9 @@ add_action( 'admin_enqueue_scripts', 'awaken_option_panel_style' );
  * Activate a favicon for the website.
  */
 function awaken_favicon() {
-	global $awaken_options;
 
-	if ( $awaken_options['favicon-display-checkbox'] == '1' ) {
-		$favicon = $awaken_options['favicon-uploader']['url'];
+	if ( get_theme_mod( 'display_site_favicon', false ) ) {
+		$favicon = get_theme_mod( 'site_favicon', '' );
 		$awaken_favicon_output = '';
 		if ( !empty( $favicon ) ) {
 			$awaken_favicon_output .= '<link rel="shortcut icon" href="'.esc_url( $favicon ).'" type="image/x-icon" />';
@@ -351,6 +351,11 @@ add_action( 'after_setup_theme', 'awaken_add_editor_styles' );
 //require get_template_directory() . '/inc/custom-header.php';
 
 /**
+ * Theme info page.
+ */
+require get_template_directory() . '/inc/theme-info.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -363,7 +368,7 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer.php';
 
 /**
  * Load Jetpack compatibility file.

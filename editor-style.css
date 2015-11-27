@@ -43,6 +43,7 @@ html {
 body {
   background: white;
   /* Fallback for when there is no custom background color defined. */
+  margin: 0 20px;
 }
 
 article,

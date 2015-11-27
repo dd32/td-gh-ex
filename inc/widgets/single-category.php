@@ -102,7 +102,6 @@ class Awaken_Single_Category_Posts extends WP_Widget {
 		<div class="awaken-one-category">
 			<div class="row">
 				<?php $i = 1 ?>
-                <?php global $awaken_options; ?>
 				<?php 
 					if ( $latest_posts -> have_posts() ) :
 					while ( $latest_posts -> have_posts() ) : $latest_posts -> the_post(); ?>
@@ -120,17 +119,13 @@ class Awaken_Single_Category_Posts extends WP_Widget {
 						<?php if ( 'post' == get_post_type() ) : ?>
 							<div class="genpost-entry-meta">
 								<?php awaken_posted_on(); ?>
-			                	<?php if( $awaken_options ) {
-			                		if ( $awaken_options['awaken-post-comments'] == '1' ) {
+			                	<?php 
+			                		if ( get_theme_mod( 'display_post_comments', 1 ) ) {
 				                		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 				                    		<span class="comments-link"><?php comments_popup_link( __( 'Comment', 'awaken' ), '1', '%' ); ?></span>
 				            			<?php endif; 
 			            			} 
-			            		} else {
-			    					if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-			                    		<span class="comments-link"><?php comments_popup_link( __( 'Comment', 'awaken' ), '1', '%' ); ?></span>
-			            			<?php endif;
-			                	} ?>
+			            		?>
 							</div><!-- .entry-meta -->
 						<?php endif; ?>
 						<div class="genpost-entry-content mag-summary"><?php the_excerpt(); ?></div>

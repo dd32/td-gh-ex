@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 1.1.3
+Version    : 2.0.0
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -156,3 +156,10 @@ Fixed some small issues in html validation.
 - Version 1.1.3
 Fixed some translation issues. 
 Fixed some issues in comments activate deactivate methodology.
+
+- Version 2.0.0
+Removed the Awaken Options Panel.
+Added options and settings to the theme customizer.
+Added a theme info page.
+Updated the default.po file.
+Added title tag support.

@@ -142,12 +142,12 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 		$title1 = ( ! empty( $instance['title1'] ) ) ? $instance['title1'] : '';
 		$number_posts1 = ( ! empty( $instance['number_posts1'] ) ) ? absint( $instance['number_posts1'] )  : 5; 
 		$sticky_posts1 = ( isset( $instance['sticky_posts1'] ) ) ? $instance['sticky_posts1'] : false;
-		$category1 = $instance['category1'];
+		$category1 = ( isset( $instance['category1'] ) ) ? $instance['category1'] : '';
 		$offset1 = ( ! empty( $instance['offset1'] ) ) ? absint( $instance['offset1'] ) : 0;
 		$title2 = ( ! empty( $instance['title2'] ) ) ? $instance['title2'] : '';
 		$number_posts2 = ( ! empty( $instance['number_posts2'] ) ) ? absint( $instance['number_posts2'] )  : 5; 
 		$sticky_posts2 = ( isset( $instance['sticky_posts2'] ) ) ? $instance['sticky_posts2'] : false;
-		$category2 = $instance['category2'];
+		$category2 = ( isset( $instance['category2'] ) ) ? $instance['category2'] : '';
 		$offset2 = ( ! empty( $instance['offset2'] ) ) ? absint( $instance['offset2'] ) : 0;
 
 		// Latest Posts 1
@@ -185,7 +185,6 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 				}
 			?>
 				<?php $j = 1; ?>
-                <?php global $awaken_options; ?>
 				<?php 
 					if ( $latest_posts1 -> have_posts() ) :
 					while ( $latest_posts1 -> have_posts() ) : $latest_posts1 -> the_post(); ?>
@@ -201,17 +200,13 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 						<?php if ( 'post' == get_post_type() ) : ?>
 							<div class="genpost-entry-meta">
 								<?php awaken_posted_on(); ?>
-			                	<?php if( $awaken_options ) {
-			                		if ( $awaken_options['awaken-post-comments'] == '1' ) {
+			                	<?php 
+			                		if ( get_theme_mod( 'display_post_comments', 1 ) ) {
 				                		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 				                    		<span class="comments-link"><?php comments_popup_link( __( 'Comment', 'awaken' ), '1', '%' ); ?></span>
 				            			<?php endif; 
 			            			} 
-			            		} else {
-			    					if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-			                    		<span class="comments-link"><?php comments_popup_link( __( 'Comment', 'awaken' ), '1', '%' ); ?></span>
-			            			<?php endif;
-			                	} ?>
+			            		?>
 							</div><!-- .entry-meta -->
 						<?php endif; ?>
 						<div class="genpost-entry-content dmag-summary"><?php the_excerpt(); ?></div>
@@ -249,7 +244,6 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 				}
 			?>
 			<?php $j = 1 ?>
-            <?php global $awaken_options; ?>
 				
 				<?php 
 				if ( $latest_posts2 -> have_posts() ) :				
@@ -266,17 +260,13 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 						<?php if ( 'post' == get_post_type() ) : ?>
 							<div class="genpost-entry-meta">
 								<?php awaken_posted_on(); ?>
-			                	<?php if( $awaken_options ) {
-			                		if ( $awaken_options['awaken-post-comments'] == '1' ) {
+			                	<?php 
+			                		if ( get_theme_mod( 'display_post_comments', 1 ) ) {
 				                		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 				                    		<span class="comments-link"><?php comments_popup_link( __( 'Comment', 'awaken' ), '1', '%' ); ?></span>
 				            			<?php endif; 
 			            			} 
-			            		} else {
-			    					if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-			                    		<span class="comments-link"><?php comments_popup_link( __( 'Comment', 'awaken' ), '1', '%' ); ?></span>
-			            			<?php endif;
-			                	} ?>
+			            		?>
 							</div><!-- .entry-meta -->
 						<?php endif; ?>
 						<div class="genpost-entry-content dmag-summary"><?php the_excerpt(); ?></div>

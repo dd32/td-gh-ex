@@ -11,7 +11,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
@@ -21,41 +20,46 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'awaken' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
+		
+	<?php if ( has_nav_menu( 'top_navigation' ) || get_theme_mod( 'display_social_icons', false ) ) : ?>	
 		<div class="top-nav">
 			<div class="container">
-		<div class="row">
-			<?php is_rtl() ? $rtl = 'awaken-rtl' : $rtl = ''; ?>
-			<div class="col-xs-12 col-sm-6 col-md-8 <?php echo $rtl; ?>">
-				<nav id="top-navigation" class="top-navigation" role="navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'top_navigation' ) ); ?>
-				</nav><!-- #site-navigation -->	
-				<a href="#" class="navbutton" id="top-nav-button"><?php _e( 'Top Menu', 'awaken' ); ?></a>
-				<div class="responsive-topnav"></div>			
-			</div><!-- col-xs-12 col-sm-6 col-md-8 -->
-			<div class="col-xs-12 col-sm-6 col-md-4">
-				<?php awaken_socialmedia(); ?>
-			</div><!-- col-xs-12 col-sm-6 col-md-4 -->
-		</div><!-- row -->
-	</div>
-</div>
+				<div class="row">
+					<?php is_rtl() ? $rtl = 'awaken-rtl' : $rtl = ''; ?>
+					<div class="col-xs-12 col-sm-6 col-md-8 <?php echo $rtl; ?>">
+						<?php if ( has_nav_menu( 'top_navigation' ) ) : ?>
+							<nav id="top-navigation" class="top-navigation" role="navigation">
+								<?php wp_nav_menu( array( 'theme_location' => 'top_navigation' ) ); ?>
+							</nav><!-- #site-navigation -->	
+							<a href="#" class="navbutton" id="top-nav-button"><?php _e( 'Top Menu', 'awaken' ); ?></a>
+							<div class="responsive-topnav"></div>
+						<?php endif; ?>			
+					</div><!-- col-xs-12 col-sm-6 col-md-8 -->
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<?php awaken_socialmedia(); ?>
+					</div><!-- col-xs-12 col-sm-6 col-md-4 -->
+				</div><!-- row -->
+			</div><!-- .container -->
+		</div>
+	<?php endif; ?>
 
 	<div class="site-branding">
 		<div class="container">
 			<div class="site-brand-container">
 				<?php  
-					global $awaken_options;
-					$logo = $awaken_options['logo-uploader']['url'];
-					$title_option = $awaken_options['site-title-option'];
+					
+					$logo = get_theme_mod( 'site_logo', '' );
+					$title_option = get_theme_mod( 'site_title_option', 'text-only' );
 
-					if ( $title_option == 'logo-only' && isset($logo) ) { ?>
+					if ( $title_option == 'logo-only' && ! empty($logo) ) { ?>
 						<div class="site-logo">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url( $logo ); ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 						</div>
 					<?php } 
 
-					if ( $title_option == 'text-logo' && isset($logo) ) { ?>
+					if ( $title_option == 'text-logo' && ! empty($logo) ) { ?>
 						<div class="site-logo">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url( $logo ); ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 						</div>
 						<div class="site-title-text">
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -63,7 +67,7 @@
 						</div>
 					<?php } 
 
-					if ( !isset($title_option) || $title_option == 'text-only' ) { ?>
+					if ( $title_option == 'text-only' ) { ?>
 						<div class="site-title-text">
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
@@ -99,11 +103,7 @@
 
 	<?php 
 		if ( is_front_page() ) {
-			if ( $awaken_options ) {
-				if ( $awaken_options['home-slider-activate'] == '1' ) {
-					awaken_featured_posts();
-				}
-			} else {
+			if ( get_theme_mod( 'display_slider', 1 ) == '1' ) {
 				awaken_featured_posts();
 			}
 		}

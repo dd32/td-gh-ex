@@ -49,10 +49,9 @@
 		<div class="footer-site-info">	
 			<div class="container">
 				<div class="row">
-				<?php
-					global $awaken_options; 
-					if( !empty($awaken_options['awaken-footer-text']) ) {
-						echo $awaken_options['awaken-footer-text']; 
+				<?php 
+					if( !empty( get_theme_mod( 'footer_copyright_text', '' ) ) ) {
+						echo wp_kses_post( get_theme_mod( 'footer_copyright_text', '' ) ); 
 					} else { ?>
 						<div class="col-xs-12 col-md-6 col-sm-6">				
 							<?php printf( __( 'Theme: %1$s by %2$s.', 'awaken' ), 'Awaken', '<a href="http://www.themezhut.com" rel="designer">ThemezHut</a>' ); ?>

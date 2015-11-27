@@ -19,16 +19,12 @@ get_header(); ?>
 			<?php awaken_post_nav(); ?>
 
 			<?php
-                if ( $awaken_options && $awaken_options['awaken-post-comments'] == '1' ) {
+                if ( get_theme_mod( 'display_post_comments', 1 ) ) {
                     // If comments are open or we have at least one comment, load up the comment template
                     if ( comments_open() || '0' != get_comments_number() ) :
                         comments_template();
                     endif;
 
-                } else {
-                    if ( comments_open() || '0' != get_comments_number() ) :
-                        comments_template();
-                    endif;                 	
                 }
 			?>
 

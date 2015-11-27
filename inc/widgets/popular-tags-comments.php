@@ -13,7 +13,7 @@ class Awaken_Tabbed_Widget extends WP_Widget {
 		parent::__construct(
 			'awaken_tabbed_widget', // Base ID
 			__( 'Awaken: Popular Posts, Tags, Comments', 'awaken' ), // Name
-			array( 'description' => __( 'Displays popular posts, comments, tags in a tabbed pane.', 'text_domain' ), ) // Args
+			array( 'description' => __( 'Displays popular posts, comments, tags in a tabbed pane.', 'awaken' ), ) // Args
 		);
 	}
 
