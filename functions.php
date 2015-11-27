@@ -38,7 +38,6 @@ function awaken_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-
 	/*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
@@ -46,6 +45,7 @@ function awaken_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -95,7 +95,7 @@ function awaken_setup() {
 
 }
 endif; // awaken_setup
-add_action( 'after_setup_theme', 'awaken_setup' );
+add_action( 'after_setup_theme', 'awaken_setup' ); 
 
 /**
  * This function Contains All The scripts that Will be Loaded in the Theme Header including Custom Javascript, Custom CSS, etc.

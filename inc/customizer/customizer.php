@@ -567,7 +567,7 @@ function awaken_customize_register( $wp_customize ) {
 				'section' 		=> 'awaken_pro_details',
 				'priority' 		=> 20,
 				'label' 		=> __( 'Do you want more features?', 'awaken' ),
-				'content' 		=> __( 'Then consider buying <a href="http://themezhut.com/themes/awaken-pro/" target="_blank">Awaken Pro.</a><h4>Awaken Pro Features.</h4><ol><li>Ajaxified Post Widgets.</li><li>Google Fonts.</li><li>Unlimited Colors.</li><li>Boxed and Wide Layouts.</li><li>More Customizer Options.</li><li>Custom slider.</li><li>Different sidebars for articles and pages.</li></ol>etc.<p><a class="button" href="http://themezhut.com/demo/awaken-pro/" target="_blank">Awaken Pro Demo</a><a class="button button-primary" href="http://themezhut.com/themes/awaken-pro/" target="_blank">Awaken Pro Details</a></p>', 'awaken' ) . '</p>',
+				'content' 		=> __( 'Then consider buying <a href="http://themezhut.com/themes/awaken-pro/" target="_blank">Awaken Pro.</a><h4>Awaken Pro Features.</h4><ol><li>Ajaxified Post Widgets.</li><li>Google Fonts.</li><li>Unlimited Colors.</li><li>Boxed and Wide Layouts.</li><li>More Customizer Options.</li><li>Custom slider.</li><li>Different sidebars for articles and pages.</li><li>Released under GPL.</li></ol>And more..<p><a class="button" href="http://themezhut.com/demo/awaken-pro/" target="_blank">Awaken Pro Demo</a><a class="button button-primary" href="http://themezhut.com/themes/awaken-pro/" target="_blank">Awaken Pro Details</a></p>', 'awaken' ) . '</p>',
 				//'description' 	=> __( 'Optional: Example Description.', 'awaken' ),
 			) 
 		) 

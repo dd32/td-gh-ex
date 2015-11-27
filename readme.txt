@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.0.0
+Version    : 2.0.1
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -68,10 +68,9 @@ Or you can manually download that plugin by visiting the https://wordpress.org/p
 
 Adding a custom logo is very easy. Please use the following steps.
 
-Go to "Awaken Options" from the WordPress Dashboard or from the wordpress admin bar.
-In the General Settings Tab Click on the “Upload” button which is under the Heading “Logo”
-Upload Your Logo and Click Select in the upload screen.
-Click "Save Changes" button.
+Go to Customizer. ( Appearence > Customize )
+Use the Site Identity Section to change site title, description or upload a logo.
+Click "Save and Publish" button.
 
 2. Custom Main Menu
 
@@ -163,3 +162,6 @@ Added options and settings to the theme customizer.
 Added a theme info page.
 Updated the default.po file.
 Added title tag support.
+
+- Version 2.0.1
+Added backward compatibility for title tag.
