@@ -165,3 +165,6 @@ Added title tag support.
 
 - Version 2.0.1
 Added backward compatibility for title tag.
+
+- Version 2.0.2
+Fixed a issue in get_theme_mod in footer.php
