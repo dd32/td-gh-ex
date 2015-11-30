@@ -20,7 +20,7 @@ function dynamicnews_sanitize_checkbox( $value ) {
 // Sanitize the layout width value.
 function dynamicnews_sanitize_layout( $value ) {
 
-	if ( ! in_array( $value, array( 'boxed', 'wide' ), true ) ) :
+	if ( ! in_array( $value, array( 'boxed', 'wide', 'flat' ), true ) ) :
         $value = 'boxed';
 	endif;
 
@@ -33,6 +33,17 @@ function dynamicnews_sanitize_sidebar( $value ) {
 
 	if ( ! in_array( $value, array( 'left-sidebar', 'right-sidebar', 'fullwidth' ), true ) ) :
         $value = 'right-sidebar';
+	endif;
+
+    return $value;
+}
+
+
+// Sanitize the mobile header value.
+function dynamicnews_sanitize_mobile_header( $value ) {
+
+	if ( ! in_array( $value, array( 'none', 'social', 'search', 'text', 'widgets' ), true ) ) :
+        $value = 'boxed';
 	endif;
 
     return $value;
