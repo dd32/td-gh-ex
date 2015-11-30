@@ -450,6 +450,51 @@ function agama_customize_register( $wp_customize ) {
 				)
 			)
 		)
+	); // Breadcrumb Background Color
+	$wp_customize->add_setting( 'agama_breadcrumb_bg_color', array(
+		'default'			=> '#F5F5F5',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'agama_breadcrumb_bg_color', array(
+				'label'		=> __( 'Breadcrumb Background Color', 'agama' ),
+				'section'	=> 'agama_breadcrumb_section',
+				'settings'	=> 'agama_breadcrumb_bg_color'
+			)
+		)
+	); // Breadcrumb Links Color
+	$wp_customize->add_setting( 'agama_breadcrumb_links_color', array(
+		'default'			=> '#444',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'agama_breadcrumb_links_color', array(
+				'label'		=> __( 'Breadcrumb Links Color', 'agama' ),
+				'section'	=> 'agama_breadcrumb_section',
+				'settings'	=> 'agama_breadcrumb_links_color'
+			)
+		)
+	); // Breadcrumb Text Color
+	$wp_customize->add_setting( 'agama_breadcrumb_text_color', array(
+		'default'			=> '#444',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'agama_breadcrumb_text_color', array(
+				'label'		=> __( 'Breadcrumb Text Color', 'agama' ),
+				'section'	=> 'agama_breadcrumb_section',
+				'settings'	=> 'agama_breadcrumb_text_color'
+			)
+		)
 	);
 /******************** Agama Frontpage Boxes Settings ******************************************/
 	$wp_customize->add_section( 'agama_frontpage_boxes_section', array(
@@ -1259,6 +1304,53 @@ function agama_customize_register( $wp_customize ) {
 				)
 			) 
 		) 
+	); // Footer Area Colors Heading
+	$wp_customize->add_setting( 'agama_footer_area_colors_heading', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Heading(
+			$wp_customize, 'agama_footer_area_colors_heading', array(
+				'label'		=> __( 'Footer Area Colors', 'agama' ),
+				'section'	=> 'colors',
+				'settings'	=> 'agama_skin_heading'
+			)
+		)
+	); // Footer Widget BG Color
+	$wp_customize->add_setting( 'agama_footer_widget_bg_color', array(
+		'default'			=> '#314150',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'agama_footer_widget_bg_color', array(
+				'label'			=> __( 'Footer Widget Area BG Color', 'agama' ),
+				'description'	=> __( 'Set footer widget area background color.', 'agama' ),
+				'section'		=> 'colors',
+				'settings'		=> 'agama_footer_widget_bg_color'
+			)
+		)
+	); // Footer Bottom Area BG Color
+	$wp_customize->add_setting( 'agama_footer_bottom_bg_color', array(
+		'default'			=> '#293744',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'agama_footer_bottom_bg_color', array(
+				'label'			=> __( 'Footer Bottom Area BG Color', 'agama' ),
+				'description'	=> __( 'Set footer bottom area background color.', 'agama' ),
+				'section'		=> 'colors',
+				'settings'		=> 'agama_footer_bottom_bg_color'
+			)
+		)
 	);
 /******************** Agama Social Icons Settings ******************************************/
 	$wp_customize->add_section( 'agama_social_icons_section', array(
@@ -2051,6 +2143,11 @@ function agama_customize_css() { ?>
 		border-right: 2px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
 	
+	#page-title { background-color: <?php echo esc_attr( get_theme_mod( 'agama_breadcrumb_bg_color', '#F5F5F5' ) ); ?>; }
+	#page-title h1, .breadcrumb > .active { color: <?php echo esc_attr( get_theme_mod( 'agama_breadcrumb_text_color', '#444' ) ); ?>; }
+	#page-title a { color: <?php echo esc_attr( get_theme_mod( 'agama_breadcrumb_links_color', '#444' ) ); ?>; }
+	#page-title a:hover { color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>; }
+	
 	.breadcrumb a:hover { color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>; }
 	
 	<?php if( get_theme_mod('agama_blog_infinite_scroll', false) && get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
@@ -2080,11 +2177,25 @@ function agama_customize_css() { ?>
 	.entry-date .format-box i {
 		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
+	
 	.vision_tabs #tabs li.active a {
 		border-top: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
+	
 	#toTop:hover {
 		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
+	}
+	
+	.footer-widgets {
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_footer_widget_bg_color', '#314150' ) ); ?>;
+	}
+	
+	.footer-widgets .widget-title:after {
+		background: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
+	}
+	
+	footer[role="contentinfo"] {
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_footer_bottom_bg_color', '#293744' ) ); ?>;
 	}
 	</style>
 	<?php

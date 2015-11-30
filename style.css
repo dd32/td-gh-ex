@@ -4,7 +4,7 @@
  Author: Jaroslav Svetlik
  Author URI: http://theme-vision.com/
  Description: Agama is a free Multi-Purpose WordPress theme. It’s perfect for web agency business, corporate business, personal and parallax business portfolio, photography sites and freelancer. Is built on BootStrap with parallax support, is responsive, clean, modern, flat and minimal. Agama is e-commerce (WooCommerce) Compatible, WPML, RTL, Retina-Ready, SEO Friendly and with parallax. 3 Superb header variations. Check demo: http://demo.theme-vision.com
- Version: 1.1.5
+ Version: 1.1.6
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Tags: light,dark, white, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -301,7 +301,6 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 #page-title.page-title-mini h1 {
 	font-weight: 600;
 	font-size: 18px;
-	color: #444;
 }
 #page-title.page-title-mini span { display: none; }
 
@@ -1210,8 +1209,10 @@ a[rel="prev"] {
 	margin: 0 -4px 0 0;
 }
 .sticky-nav > li:last-child { border-right: 0; }
-.sticky-nav > li.current_page_item,
-.sticky-nav > li.current-menu-item { background-color: #EEE; }
+.sticky-nav > ul > li.current_page_item,
+.sticky-nav > ul > li.current-menu-item { background-color: #EEE; }
+.sticky-nav > ul > li.current_page_item a,
+.sticky-nav > ul > li.current-menu-item a { color: #666; }
 .sticky-nav > li.current_page_item a { color: #6D6D6D; }
 .sticky-nav > li > a,
 .sticky-nav > ul > li > a {
@@ -1697,21 +1698,35 @@ body.blog_grid.sidebar_left #infinite-loadmore {
 .footer-widgets {
 	font-size: 13px;
 	padding: 30px 0;
-	color: #8c8989;
+	color: rgba(205,222,238,0.7);
 	line-height: 22px;
-	background-color: #363839;
+	background-color: #314150;
 	border-top: 5px solid rgba(255, 255, 255, 0.3);
-	border-bottom: 1px solid #4b4c4d;
 }
 .footer-widgets .widget-title {
+	position: relative;
+	line-height: 1.4em;
+	padding: 0px 0px 18px;
+	margin-bottom: 25px;
 	font-size: 15px;
-	color: #bfbfbf;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #fff;
+}
+.footer-widgets .widget-title:after {
+	content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 70px;
+    height: 3px;
+    background: #f7a805;
 }
 .footer-widgets .widget a {
-	color: #8C8989;
+	color: #cddeee;
 }
 .footer-widgets .widget a:hover {
-	color: #999;
+	color: #fff;
 }
 .footer-widgets .widget li {
 	padding: 10px 10px 10px 12px;
@@ -1731,6 +1746,9 @@ body.blog_grid.sidebar_left #infinite-loadmore {
 }
 .footer-widgets .widget li ul li {
 	border-bottom: 0;
+}
+.footer-widgets .widget_tag_cloud a {
+	border: 1px solid #cdeee !important;
 }
 
 /* Back to Top */
@@ -1778,16 +1796,17 @@ body.blog_grid.sidebar_left #infinite-loadmore {
 
 /* Footer */
 footer[role="contentinfo"] {
-	background-color: #262626;
+	background-color: #293744;
 	clear: both;
 	font-size: 12px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 24px 30px;
+	padding: 15px 30px;
 	width: 100%;
+	color: #fff;
 }
 footer[role="contentinfo"] a {
-	color: #8c8989;
+	color: #cddeee;
 }
 footer[role="contentinfo"] a:hover {
 	color: #fff;

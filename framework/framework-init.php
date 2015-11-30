@@ -4,6 +4,8 @@
  *
  * @since Agama v1.0.1
  */
+get_template_part('framework/breadcrumbs');
+get_template_part('framework/frontpage-boxes');
 get_template_part('framework/widgets/widgets');
 get_template_part('framework/admin/customizer');
 get_template_part('framework/admin/about');

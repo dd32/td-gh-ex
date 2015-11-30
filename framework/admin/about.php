@@ -73,14 +73,17 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</h2>';
 				
 				echo '<div class="changelog point-releases">';
-					echo '<h3>Changelog Agama v1.1.5</h3>';
-						echo '<p><strong>Version 1.1.5</strong> ADDED: Upload favicon feature.</p>';
-						echo '<p><strong>Version 1.1.5</strong> ADDED: Breadcrumb feature ( enable / disable ).</p>';
-						echo '<p><strong>Version 1.1.5</strong> ADDED: Breadcrum style feature ( mini / normal ).</p>';
-						echo '<p><strong>Version 1.1.5</strong> ADDED: Disable breacrumb on homepage / frontpage feature.</p>';
-						echo '<p><strong>Version 1.1.5</strong> ADDED: Enable / disable post author feature.</p>';
-						echo '<p><strong>Version 1.1.5</strong> UPDATED: Dark skin stylesheet.</p>';
-						echo '<p><strong>Version 1.1.5</strong> ADDED: Custom CSS feature.</p>';
+					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
+						echo '<p>ADDED: Breadcrumb background color feature.</p>';
+						echo '<p>ADDED: Breadcrumb links color feature.</p>';
+						echo '<p>ADDED: Breadcrumb text color feature.</p>';
+						echo '<p>ADDED: Footer widget area background color feature.</p>';
+						echo '<p>ADDED: Footer bottom area background color feature.</p>';
+						echo '<p>FIXED: Current menu item background color on navigation.</p>';
+						echo '<p>UPDATED: ReStyled footer area.</p>';
+						echo '<p>UPDATED: Language translation files.</p>';
+						echo '<p>IMPLEMENTED: Action hook for breadcrumbs. (agama_breadcrumbs_action)</p>';
+						echo '<p>IMPLEMENTED: Action hook for frontpage boxes. (agama_frontpage_boxes_action)</p>';
 				echo '</div>';
 				
 			echo '</div>';
