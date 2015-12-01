@@ -205,7 +205,7 @@
 	.menu-toggle:hover {
 		background: #24639e; 
 	}
-	.menu-menu-1-container{
+	.menu{
 	    display: none;
 	    float: left;
 	    width: 100%;
@@ -597,7 +597,7 @@
 	    font-family: fontawesome;
 	}
 
-	.menu-menu-1-container {
+	.menu {
 	    display: none;
 	    border-top:none;
 	}

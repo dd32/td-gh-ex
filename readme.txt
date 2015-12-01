@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Aglee Lite is a simple, basic & clean.  It is beautifully designed responsive free WordPress business theme. It has useful features to setup your website fast and make your website operate smoothly. It doesn't have much features which you probably won't use at all! Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. Aglee Lite is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email. View full demo here: http://8degreethemes.com/demo/aglee-lite/ Support: support@8degreethemes.com
 
 == Installation ==
-	
+  
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
@@ -60,6 +60,10 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.7 - 1st December, 2015 =
+* Minor Design fixes.
+* Responsive menu fixes
+
 = 1.0.6 - 15th November, 2015 =
 * Fixed Image display issue.
 * Fixed Some errors when child theme is created to customize theme.

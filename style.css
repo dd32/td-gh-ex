@@ -4,7 +4,7 @@ Theme URI: http://8degreethemes.com/wordpress-themes/aglee-lite/
 Author: 8Degree Themes
 Author URI: http://8degreethemes.com/
 Description: Aglee Lite is a simple, basic & clean.  It is beautifully designed responsive free WordPress business theme. It has useful features to setup your website fast and make your website operate smoothly. It doesn't have much features which you probably won't use at all! Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. Aglee Lite is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email. View full demo here: http://8degreethemes.com/demo/aglee-lite/ support: support@8degreethemes.com
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: aglee-lite
@@ -28,20 +28,20 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Elements
 # Forms
 # Navigation
-	## Links
-	## Menus
+    ## Links
+    ## Menus
 # Accessibility
 # Alignments
 # Clearings
 # Widgets
 # Content
     ## Posts and pages
-	## Asides
-	## Comments
+    ## Asides
+    ## Comments
 # Infinite scroll
 # Media
-	## Captions
-	## Galleries
+    ## Captions
+    ## Galleries
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -643,7 +643,8 @@ Clearings
 /* Search widget */
 
 .widget_search .search-submit {
-    display: none;
+    /*display: none;*/
+    line-height: 32px;
 }
 
 .sticky {}
@@ -1196,6 +1197,10 @@ body.boxed-layout {
     margin: 0 auto;
 }
 
+.home.blog #main .ap-container {
+    margin-top: 20px;
+}
+
 .hide {
     display: none;
 }
@@ -1531,7 +1536,7 @@ header.site-header {
 .header-text-logo .header-text-container h2.site-description {
     font-size: 14px;
     margin-bottom: 0;
-    text-transform: lowercase;
+    /*text-transform: lowercase;*/
     color: #a7a7a7;
 }
 

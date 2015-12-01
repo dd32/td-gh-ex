@@ -86,6 +86,6 @@ jQuery(document).ready(function($){
 /*MENU TOGGLE*/
 
   $('.menu-toggle').click(function(){
-    $('.menu-menu-1-container').slideToggle(800);
+    $('.menu').slideToggle(800);
   });
 });
