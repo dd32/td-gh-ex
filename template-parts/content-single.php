@@ -10,14 +10,14 @@
 	<?php azeria_post_thumbnail( false ); ?>
 	<header class="entry-header">
 
-		<?php 
+		<?php
 			$format = get_post_format();
-			
+
 			if ( ! $format ) {
 				$format = 'standard';
 			}
 
-			azeria_format_icon( $format ); 
+			azeria_format_icon( $format );
 		?>
 		<div class="entry-header-data">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -40,7 +40,7 @@
 
 	<footer class="entry-footer">
 		<?php azeria_post_meta( 'single', 'footer' ); ?>
-		<?php 
+		<?php
 			the_post_navigation(
 				array(
 					'prev_text' => '<span class="post-nav-label button">' . __( 'Prev', 'azeria' ) . '</span><span class="post-nav-title">%title</span>',

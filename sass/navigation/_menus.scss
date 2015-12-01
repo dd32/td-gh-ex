@@ -6,6 +6,18 @@
 	border-bottom: 1px solid $color__background-hr;
 	background: #fff;
 	text-align: center;
+	&.stuckMenu {
+		z-index: 999;
+		&.has-bar {
+			margin-top: 32px;
+		}
+		@media (max-width: 600px) {
+			position: relative !important;
+			&.has-bar {
+				margin-top: 0;
+			}
+		}
+	}
 
 	ul {
 		display: none;

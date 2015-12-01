@@ -64,10 +64,10 @@ function azeria_header_style() {
 			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 	<?php endif; ?>
-	<?php 
+	<?php
 		if ( $header_image ) :
 	?>
-	.site-header {
+	.site-branding {
 		background-image: url('<?php echo esc_url( $header_image ); ?>');
 		background-repeat: no-repeat;
 		background-position: center top;

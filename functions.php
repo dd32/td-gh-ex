@@ -67,30 +67,30 @@ function azeria_setup() {
 		)
 	);
 
-	$image_sizes = wp_parse_args( 
-		apply_filters( 'azeria_image_sizes', $default_image_sizes ), 
+	$image_sizes = wp_parse_args(
+		apply_filters( 'azeria_image_sizes', $default_image_sizes ),
 		$default_image_sizes
 	);
 
 	// default post thumbnail size
-	set_post_thumbnail_size( 
-		$image_sizes['post-thumbnail']['width'], 
-		$image_sizes['post-thumbnail']['height'], 
-		$image_sizes['post-thumbnail']['crop'] 
+	set_post_thumbnail_size(
+		$image_sizes['post-thumbnail']['width'],
+		$image_sizes['post-thumbnail']['height'],
+		$image_sizes['post-thumbnail']['crop']
 	);
 
 	// single slide thumbnail
-	add_image_size( 'azeria-slider-thumbnail', 
-		$image_sizes['slider-thumbnail']['width'], 
-		$image_sizes['slider-thumbnail']['height'], 
-		$image_sizes['slider-thumbnail']['crop']  
+	add_image_size( 'azeria-slider-thumbnail',
+		$image_sizes['slider-thumbnail']['width'],
+		$image_sizes['slider-thumbnail']['height'],
+		$image_sizes['slider-thumbnail']['crop']
 	);
 
 	// related post thumbnail
-	add_image_size( 'azeria-related-thumbnail', 
-		$image_sizes['related-thumbnail']['width'], 
-		$image_sizes['related-thumbnail']['height'], 
-		$image_sizes['related-thumbnail']['crop']  
+	add_image_size( 'azeria-related-thumbnail',
+		$image_sizes['related-thumbnail']['width'],
+		$image_sizes['related-thumbnail']['height'],
+		$image_sizes['related-thumbnail']['crop']
 	);
 
 	// This theme uses wp_nav_menu() in one location.
@@ -180,21 +180,31 @@ add_action( 'widgets_init', 'azeria_widgets_init' );
  * Enqueue scripts and styles.
  */
 function azeria_assets() {
-	
+
+	$base_url = get_template_directory_uri();
+
 	// Styles
 	wp_enqueue_style( 'azeria-fonts', azeria_fonts_url() );
-	wp_enqueue_style( 'azeria-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', false, '4.3.0' );
-	wp_enqueue_style( 'azeria-style', get_stylesheet_uri(), false, '1.0.0' );
+	wp_enqueue_style( 'azeria-font-awesome', $base_url . '/css/font-awesome.min.css', false, '4.5.0' );
+	wp_enqueue_style( 'azeria-style', get_stylesheet_uri(), false, '1.1.0' );
 
 	// Scripts
-	wp_enqueue_script( 'azeria-slick-slider', get_template_directory_uri() . '/js/slick.js', array( 'jquery' ), '1.5.0', true );
-	wp_enqueue_script( 'azeria-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.js', array( 'jquery' ), '1.0.0', true );
-	wp_enqueue_script( 'azeria-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery', 'hoverIntent' ), '20120206', true );
-	wp_enqueue_script( 'azeria-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'azeria-slick-slider', $base_url . '/js/slick.js', array( 'jquery' ), '1.5.0', true );
+	wp_enqueue_script( 'azeria-magnific-popup', $base_url . '/js/jquery.magnific-popup.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'azeria-navigation', $base_url . '/js/navigation.js', array( 'jquery', 'hoverIntent' ), '20120206', true );
+	wp_enqueue_script( 'azeria-skip-link-focus-fix', $base_url . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	wp_enqueue_script( 'azeria-custom-script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.0', true );
+
+	$menu_type = azeria_get_option( 'sticky_menu', 'static' );
+
+	if ( 'sticky' === $menu_type ) {
+		wp_enqueue_script( 'azeria-stickup', $base_url . '/js/jquery.stickup.js', array( 'jquery' ), '1.1.0', true );
+	}
+
+	wp_enqueue_script( 'azeria-custom-script', $base_url . '/js/script.js', array( 'jquery' ), '1.1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'azeria_assets' );
 
@@ -254,13 +264,13 @@ function azeria_fonts_url() {
 	}
 
 	$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
-	
+
 	return $fonts_url;
 }
 
 /**
  * Get theme option by name
- * 
+ *
  * @param  string $name    option name
  * @param  mixed  $default default option value
  */

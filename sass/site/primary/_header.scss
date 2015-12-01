@@ -13,6 +13,7 @@
 	text-transform: uppercase;
 	position: relative;
 	display: inline-block;
+	max-width: 100%;
 	&-link {
 		text-decoration: none;
 		color: $color__text-headings;

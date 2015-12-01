@@ -5,7 +5,7 @@ Theme URI: http://www.tefox.net/products/azeria
 Author: teFox
 Author URI: http://www.tefox.net/
 Description: Azeria responsive WordPress theme is here for your reference. Clean minimalistic design is free to change up to your business needs and personal wishes. It could be a pertect starting point for creating your own "home" in the web.
-Version: 1.0.4
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: azeria
@@ -538,6 +538,15 @@ a {
   border-bottom: 1px solid #d9d9d9;
   background: #fff;
   text-align: center; }
+  .main-navigation.stuckMenu {
+    z-index: 999; }
+    .main-navigation.stuckMenu.has-bar {
+      margin-top: 32px; }
+    @media (max-width: 600px) {
+      .main-navigation.stuckMenu {
+        position: relative !important; }
+        .main-navigation.stuckMenu.has-bar {
+          margin-top: 0; } }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -1250,7 +1259,8 @@ button.menu-toggle {
   margin: 0;
   text-transform: uppercase;
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  max-width: 100%; }
   .site-logo-link {
     text-decoration: none;
     color: #000000; }

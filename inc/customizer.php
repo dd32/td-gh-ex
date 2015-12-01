@@ -36,7 +36,32 @@ if( ! function_exists( 'azeria_add_customizer' ) ) {
 
 	function azeria_add_customizer( $wp_customize ) {
 
-		/* Header Logo section 
+		/* General section
+		---------------------------------------------------------*/
+		$wp_customize->add_section( 'azeria_general' , array(
+			'title'      => __('General','azeria'),
+			'priority'   => 35,
+		) );
+
+		/* Sticky menu */
+		$wp_customize->add_setting( 'azeria[sticky_menu]', array(
+				'default'           => 'static',
+				'type'              => 'theme_mod',
+				'sanitize_callback' => 'azeria_sanitize_select'
+		) );
+		$wp_customize->add_control( 'azeria_sticky_menu', array(
+				'label'    => __( 'Menu type', 'azeria' ),
+				'section'  => 'azeria_general',
+				'settings' => 'azeria[sticky_menu]',
+				'type'     => 'select',
+				'priority' => 2,
+				'choices'  => array(
+						'static' => __( 'Static menu', 'azeria' ),
+						'sticky' => __( 'Sticky menu', 'azeria' )
+					)
+		) );
+
+		/* Header Logo section
 		---------------------------------------------------------*/
 		$wp_customize->add_section( 'azeria_header_logo' , array(
 			'title'      => __('Header Logo','azeria'),
@@ -59,7 +84,7 @@ if( ! function_exists( 'azeria_add_customizer' ) ) {
 
 
 
-		/* Slider section 
+		/* Slider section
 		----------------------------------------------------*/
 		$wp_customize->add_section( 'azeria_slider' , array(
 			'title'      => __('Slider','azeria'),
@@ -110,7 +135,7 @@ if( ! function_exists( 'azeria_add_customizer' ) ) {
 				'settings' => 'azeria[slides_from]',
 				'type'     => 'select',
 				'priority' => 2,
-				'choices'  => apply_filters( 
+				'choices'  => apply_filters(
 					'azeria_slides_from_choices',
 					array(
 						'recent_posts' => __( 'Recent Posts (Default)', 'azeria' ),
@@ -227,7 +252,7 @@ if( ! function_exists( 'azeria_add_customizer' ) ) {
 				)
 		) );
 
-		/* Blog section 
+		/* Blog section
 		----------------------------------------------------*/
 		$wp_customize->add_section( 'azeria_blog' , array(
 			'title'      => __('Blog','azeria'),
@@ -241,7 +266,7 @@ if( ! function_exists( 'azeria_add_customizer' ) ) {
 				'sanitize_callback' => 'azeria_sanitize_select'
 		) );
 		$wp_customize->add_control( 'azeria_blog_content', array(
-				'label'    => __( 'Slider visibility', 'azeria' ),
+				'label'    => __( 'Blog content shows:', 'azeria' ),
 				'section'  => 'azeria_blog',
 				'settings' => 'azeria[blog_content]',
 				'type'     => 'select',
@@ -326,7 +351,7 @@ if( ! function_exists( 'azeria_add_customizer' ) ) {
 				)
 		) );
 
-		/* Footer section 
+		/* Footer section
 		----------------------------------------------------*/
 		$wp_customize->add_section( 'azeria_footer' , array(
 			'title'      => __('Footer','azeria'),
@@ -339,7 +364,7 @@ if( ! function_exists( 'azeria_add_customizer' ) ) {
 				'type'              => 'theme_mod',
 				'sanitize_callback' => 'esc_textarea'
 		) );
-		$wp_customize->add_control( 'azeria_blog_more_text', array(
+		$wp_customize->add_control( 'azeria_footer_copyright', array(
 				'label'       => __( 'Set custom copyright text', 'azeria' ),
 				'section'     => 'azeria_footer',
 				'settings'    => 'azeria[footer_copyright]',
@@ -347,7 +372,7 @@ if( ! function_exists( 'azeria_add_customizer' ) ) {
 				'priority'    => 1
 		) );
 
-		/* About section 
+		/* About section
 		----------------------------------------------------*/
 		$wp_customize->add_section( 'azeria_about' , array(
 			'title'      => __('About box','azeria'),
@@ -410,7 +435,7 @@ if( ! function_exists( 'azeria_add_customizer' ) ) {
 				'priority'    => 4
 		) );
 
-		/* Follow section 
+		/* Follow section
 		----------------------------------------------------*/
 		$wp_customize->add_section( 'azeria_follow' , array(
 			'title'      => __('Follow box','azeria'),
@@ -454,7 +479,7 @@ if( ! function_exists( 'azeria_add_customizer' ) ) {
 			foreach ( $socials as $net => $data ) {
 
 				$data = wp_parse_args( $data, array( 'label' => '', 'icon' => '', 'default' => '' ) );
-				
+
 				$wp_customize->add_setting( 'azeria[follow_' . $net . ']', array(
 						'default'           => $data['default'],
 						'type'              => 'theme_mod',
@@ -466,7 +491,7 @@ if( ! function_exists( 'azeria_add_customizer' ) ) {
 						'settings'    => 'azeria[follow_' . $net . ']',
 						'type'        => 'text',
 						'priority'    => 3
-				) );	
+				) );
 
 			}
 		}
@@ -524,12 +549,12 @@ function azeria_sanitize_checkbox( $checked ) {
  * @copyright Copyright (c) 2015, WordPress Theme Review Team
  */
 function azeria_sanitize_select( $input, $setting ) {
-	
+
 	// Ensure input is a slug.
 	$input = sanitize_key( $input );
 
 	$control = str_replace( '[', '_', trim( $setting->id, ']' ) );
-	
+
 	// Get list of choices from the control associated with the setting.
 	$choices = $setting->manager->get_control( $control )->choices;
 
@@ -545,7 +570,7 @@ function azeria_sanitize_select( $input, $setting ) {
 function azeria_sanitize_num( $number ) {
 	// Ensure $number is an absolute integer (whole number, zero or greater).
 	$number = absint( $number );
-	
+
 	// If the input is an absolute integer, return it; otherwise, return the default
 	return ( $number ? $number : $setting->default );
 }
