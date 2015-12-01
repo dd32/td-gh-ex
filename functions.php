@@ -57,7 +57,7 @@ function arise_setup() {
 	) );
 	add_image_size('slider_image', 1920, 1080, true);
 	add_image_size('portfolio', 768, 480, true);
-	add_image_size('blog_image', 800, 500, true);
+	add_image_size('blog_image', 1170, 650, true);
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments

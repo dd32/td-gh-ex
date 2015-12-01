@@ -121,7 +121,7 @@
 								<header class="entry-header">
 									<h3 class="entry-title"><a rel="bookmark" href="<?php the_permalink();?>"><?php the_title(); ?> </a></h3>
 								</header>
-								<?php if ( $instance['checkbox'] != true ) { ?>
+								<?php if ( $checkbox != true ) { ?>
 								<div class="entry-meta clearfix">
 								<?php if ( current_theme_supports( 'post-formats', $format ) ) {
 									printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',

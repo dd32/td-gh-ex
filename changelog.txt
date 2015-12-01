@@ -1,4 +1,9 @@
 == CHANGE LOG ==
+= 1.0.3 =
+	- Checkbox un-defined index issue fixed
+	- Margin added for wooCommerce Ordering
+	- Image issue fixed for blog page
+
 = 1.0.2 =
 	- Gallery template added to fix gallery issue
 	- Minor text issue fixed
