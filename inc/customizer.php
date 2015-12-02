@@ -7,10 +7,14 @@ function ct_author_add_customizer_content( $wp_customize ) {
 
 	/***** Reorder default sections *****/
 
-	$wp_customize->get_section('title_tagline')->priority     = 1;
-	$wp_customize->get_section('static_front_page')->priority = 5;
-	$wp_customize->get_section('static_front_page')->title    = __('Front Page', 'author');
-	
+	$wp_customize->get_section('title_tagline')->priority = 1;
+
+	// check if exists in case user has no pages
+	if ( is_object( $wp_customize->get_section('static_front_page') ) ) {
+		$wp_customize->get_section('static_front_page')->priority = 5;
+		$wp_customize->get_section('static_front_page')->title    = __('Front Page', 'author');
+	}
+
 	/***** Add PostMessage Support *****/
 	
 	// Add postMessage support for site title and description.
@@ -293,7 +297,7 @@ function ct_author_add_customizer_content( $wp_customize ) {
 		'default'           => 'no',
 		'type'              => 'theme_mod',
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'ct_author_sanitize_yes_no_settings',
+		'sanitize_callback' => 'ct_author_sanitize_yes_no_settings'
 	) );
 	// control
 	$wp_customize->add_control( 'full_post', array(
@@ -303,7 +307,7 @@ function ct_author_add_customizer_content( $wp_customize ) {
 		'type'           => 'radio',
 		'choices'        => array(
 			'yes'   => __('Yes', 'author'),
-			'no'  => __('No', 'author'),
+			'no'  => __('No', 'author')
 		)
 	) );
 	// setting
@@ -311,16 +315,30 @@ function ct_author_add_customizer_content( $wp_customize ) {
 		'default'           => '25',
 		'type'              => 'theme_mod',
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'absint'
 	) );
 	// control
 	$wp_customize->add_control( new ct_author_number_input_control(
 		$wp_customize, 'excerpt_length', array(
-			'label'          => __( 'Excerpt length', 'author' ),
+			'label'          => __( 'Excerpt word count', 'author' ),
 			'section'        => 'author_blog',
 			'settings'       => 'excerpt_length',
-			'type'           => 'number',
+			'type'           => 'number'
 		)
+	) );
+	// Read More text - setting
+	$wp_customize->add_setting( 'read_more_text', array(
+		'default'           => __('Continue reading', 'author'),
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'ct_author_sanitize_text'
+	) );
+	// Read More text - control
+	$wp_customize->add_control( 'read_more_text', array(
+			'label'          => __( 'Read More link text', 'author' ),
+			'section'        => 'author_blog',
+			'settings'       => 'read_more_text',
+			'type'           => 'text'
 	) );
 
 	/***** Comment Display *****/
@@ -367,6 +385,7 @@ function ct_author_add_customizer_content( $wp_customize ) {
 		'type'              => 'theme_mod',
 		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'wp_filter_nohtml_kses',
+		'transport'         => 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( new ct_author_textarea_control(
@@ -588,7 +607,7 @@ function ct_author_sanitize_avatar_method($input) {
 function ct_author_sanitize_yes_no_settings($input){
 
 	$valid = array(
-		'yes'   => __('Yes', 'author'),
+		'yes' => __('Yes', 'author'),
 		'no'  => __('No', 'author'),
 	);
 
@@ -597,6 +616,10 @@ function ct_author_sanitize_yes_no_settings($input){
 	} else {
 		return '';
 	}
+}
+
+function ct_author_sanitize_text( $input ) {
+	return wp_kses_post( force_balance_tags( $input ) );
 }
 
 function ct_author_customize_preview_js() {

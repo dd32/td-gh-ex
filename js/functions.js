@@ -8,6 +8,7 @@ jQuery(document).ready(function($){
     var main = $('#main');
     var sidebarPrimary = $('#sidebar-primary');
     var overflowContainer = $('#overflow-container');
+    var loopContainer = $('#loop-container');
     var headerImage = $('#header-image');
 
     // get the selector for the primary menu
@@ -43,7 +44,10 @@ jQuery(document).ready(function($){
 
     // Jetpack infinite scroll event that reloads posts.
     $( document.body ).on( 'post-load', function () {
-        objectFitAdjustment();
+
+        $.when(moveInfinitePosts()).then(function(){
+            objectFitAdjustment();
+        });
     } );
 
     // display the primary menu at mobile widths
@@ -352,38 +356,48 @@ jQuery(document).ready(function($){
 
             $('.featured-image').each(function () {
 
-                var image = $(this).children('img').add( $(this).children('a').children('img') );
+                if ( !$(this).parent('.post').hasClass('ratio-natural') ) {
 
-                image.addClass('no-object-fit');
+                    var image = $(this).children('img').add($(this).children('a').children('img'));
 
-                // if the image is not tall enough to fill the space
-                if ( image.outerHeight() < $(this).outerHeight()) {
+                    // don't process images twice (relevant when using infinite scroll)
+                    if (image.hasClass('no-object-fit')) return;
 
-                    // is it also not wide enough?
-                    if ( image.outerWidth() < $(this).outerWidth()) {
+                    image.addClass('no-object-fit');
+
+                    // if the image is not wide enough to fill the space
+                    if (image.outerWidth() < $(this).outerWidth()) {
+
                         image.css({
+                            'width': '100%',
                             'min-width': '100%',
+                            'max-width': '100%',
+                            'height': 'auto',
                             'min-height': '100%',
-                            'max-width': 'none',
                             'max-height': 'none'
                         });
-                    } else {
+                    }
+                    // if the image is not tall enough to fill the space
+                    if (image.outerHeight() < $(this).outerHeight()) {
+
                         image.css({
                             'height': '100%',
+                            'min-height': '100%',
+                            'max-height': '100%',
+                            'width': 'auto',
+                            'min-width': '100%',
                             'max-width': 'none'
                         });
                     }
                 }
-                // if the image is not wide enough to fill the space
-                else if ( image.outerWidth() < $(this).outerWidth()) {
-
-                    image.css({
-                        'width': '100%',
-                        'max-height': 'none'
-                    });
-                }
             });
         }
+    }
+
+    function moveInfinitePosts(){
+        // move any posts in infinite wrap to loop-container
+        $('.infinite-wrap').children('.entry').detach().appendTo( loopContainer );
+        $('.infinite-wrap, .infinite-loader').remove();
     }
 });
 

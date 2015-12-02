@@ -199,19 +199,26 @@ if( ! function_exists( 'ct_author_excerpt' ) ) {
         // get the show full post setting
         $show_full_post = get_theme_mod( 'full_post' );
 
+	    // get user Read More link text
+	    $read_more_text = get_theme_mod( 'read_more_text' );
+
+	    // use i18n'ed text if empty
+	    if ( empty( $read_more_text ) )
+		    $read_more_text = __( 'Continue reading', 'author' );
+
 	    // if show full post is on and not on a search results page
         if ( ( $show_full_post == 'yes' ) && ! is_search() ) {
 
 	        // use the read more link if present
 	        if ( $ismore ) {
-		        the_content( __( 'Continue reading', 'author' ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
+		        the_content( wp_kses_post( $read_more_text ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
 	        } else {
 		        the_content();
 	        }
         }
         // use the read more link if present
         elseif ( $ismore ) {
-            the_content( __( 'Continue reading', 'author' ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
+            the_content( wp_kses_post( $read_more_text ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
         } // otherwise the excerpt is automatic, so output it
         else {
             the_excerpt();
@@ -222,9 +229,17 @@ if( ! function_exists( 'ct_author_excerpt' ) ) {
 // filter the link on excerpts
 if( !function_exists('ct_author_excerpt_read_more_link' ) ) {
 	function ct_author_excerpt_read_more_link( $output ) {
+
 		global $post;
 
-		return $output . "<p><a class='more-link' href='" . get_permalink() . "'>" . __( 'Continue reading', 'author' ) . " <span class='screen-reader-text'>" . get_the_title() . "</span></a></p>";
+		// get user Read More link text
+		$read_more_text = get_theme_mod( 'read_more_text' );
+
+		// use i18n'ed text if empty
+		if ( empty( $read_more_text ) )
+			$read_more_text = __( 'Continue reading', 'author' );
+
+		return $output . "<p><a class='more-link' href='" . get_permalink() . "'>" . wp_kses_post( $read_more_text ) . " <span class='screen-reader-text'>" . get_the_title() . "</span></a></p>";
 	}
 }
 add_filter('the_excerpt', 'ct_author_excerpt_read_more_link');
@@ -391,13 +406,13 @@ if( ! function_exists('ct_author_social_icons_output') ) {
                     ?>
                     <li>
                         <a class="email" target="_blank" href="mailto:<?php echo antispambot( is_email( get_theme_mod( $active_site ) ) ); ?>">
-                            <i class="fa fa-envelope" title="<?php _e('email icon', 'author'); ?>"></i>
+                            <i class="fa fa-envelope" title="<?php esc_attr( _e('email', 'author') ); ?>"></i>
                         </a>
                     </li>
                 <?php } else { ?>
                     <li>
                         <a class="<?php echo esc_attr( $active_site ); ?>" target="_blank" href="<?php echo esc_url( get_theme_mod( $active_site ) ); ?>">
-                            <i class="<?php echo esc_attr( $class ); ?>" title="<?php printf( __('%s icon', 'author'), esc_attr( $active_site ) ); ?>"></i>
+                            <i class="<?php echo esc_attr( $class ); ?>" title="<?php echo esc_attr( $active_site ); ?>"></i>
                         </a>
                     </li>
                 <?php

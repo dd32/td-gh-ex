@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/author/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: Author is designed for publishers who want readers. That's why Author is fast, responsive, accessibility-ready, and optimally designed for reading. All scripts and stylesheets are minified, concatenated, and conditionally loaded to maximize performance. The layout adapts fluidly to all screen sizes to enhance usability. As one of few accessibility-ready themes, it performs well for users with wide ranges of disabilities. Lastly, based on the ancient Van de Graaf canon, Author is optimally designed for reading. Author is the theme your content deserves. See our fully setup live demo here: https://www.competethemes.com/author-live-demo/
-Version: 1.13
+Version: 1.14
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, silver, tan, white, dark, light, one-column, two-columns, left-sidebar, fluid-layout, responsive-layout, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -740,7 +740,6 @@ a img {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
-  border-color: #999999;
 }
 .menu-primary-items .menu-item-has-children.open > ul,
 .menu-primary-items .page_item_has_children.open > ul,
@@ -761,7 +760,7 @@ a img {
   color: white;
   border: solid 1px #3E4145;
 }
-.toggle-dropdown:focus {
+.toggle-dropdown:hover, .toggle-dropdown:active, .toggle-dropdown:focus {
   outline: none;
   border-color: #999999;
 }
@@ -807,7 +806,6 @@ a img {
 
   .toggle-dropdown:hover {
     cursor: pointer;
-    border-color: #999999;
   }
 }
 @media all and (min-width: 34.375em) {
