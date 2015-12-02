@@ -59,17 +59,13 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 	}
 
 	if ( $do_excerpt ) {                    // -------------------- EXCERPT ------------------------
-?>
-		<div class="entry-summary clearfix"> <!-- EXCERPT -->
-<?php
+		weaverx_post_div('summary');
 		weaverx_the_post_excerpt();
 ?>
 		</div><!-- .entry-summary -->
 <?php
 	} else {                                // ------------------ FULL POST ------------------------
-?>
-		<div class="entry-content clearfix">
-<?php
+		weaverx_post_div('content');
 		weaverx_the_post_full();
 		weaverx_link_pages();
 ?>

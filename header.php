@@ -33,7 +33,24 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 <link rel="profile" href="//gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php esc_url(bloginfo( 'pingback_url' )); ?>" />
+<!-- Weaver Xtreme Standard Google Fonts -->
 <?php
+	$gf = WEAVERX_GOOGLE_FONTS;
+	if (weaverx_getopt('font_set_cryllic')) {
+		$gf = str_replace('&subset=','&subset=cyrillic-ext,', $gf);
+	}
+	if (weaverx_getopt('font_set_greek')) {
+		$gf = str_replace('&subset=','&subset=greek,greek-ext,', $gf);
+	}
+	if (weaverx_getopt('font_set_hebrew')) {
+		$gf = str_replace('&subset=','&subset=hebrew,', $gf);
+	}
+	if (weaverx_getopt('font_set_vietnamese')) {
+		$gf = str_replace('&subset=','&subset=vietnamese,', $gf);
+	}
+
+
+	echo $gf;
 
 	// Now we need to polyfill IE8. We need 2 scripts loaded AFTER the .css stylesheets. wp_enqueue_script
 	// does not work because it can't add the test for < IE9. And you can't just include the code directly
@@ -53,6 +70,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 	// Fix IE8 scripts need to go after the CSS is loaded (at least for the respond script)
 
 	wp_head();
+	//echo "<style id='live_custom_css'></style>";
 ?>
 </head>
 
@@ -62,6 +80,14 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 <noscript><p style="border:1px solid red;font-size:14px;background-color:pink;padding:5px;margin-left:auto;margin-right:auto;max-width:640px;text-align:center;">
 <?php _e('JAVASCRIPT IS DISABLED. Please enable JavaScript on your browser to best view this site.', 'weaver-xtreme' /*adm*/); ?></p></noscript><!-- displayed only if JavaScript disabled -->
 <?php
+
+
+
+	if ( false && WEAVERX_DEV_MODE ) {
+		if (is_customize_preview())
+			echo '<h2>DISPLAYED WHILE CUSTOMIZER UP</h2>';
+	}
+
 	weaverx_inject_area('prewrapper');
 
 	weaverx_area_div( 'wrapper' );
@@ -180,6 +206,12 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 				||  !weaverx_fi( $page_type, 'header-image' ) ) {
 				$hdr = get_header_image();
 				if ($hdr) {
+					// wp customizer preview hack for WP 4.4 beta, might go away for 4.4 release
+					$url = get_template_directory_uri();
+					$url = str_replace(array('http://', 'https://'),'', $url);
+					$hdr = str_replace('%s', $url, $hdr);		// 4.4 preview breaks this
+					$hdr = str_replace(array('http://', 'https://'),'//', $hdr);
+
 					if ( weaverx_getopt('link_site_image') ) { ?>
 <a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php } ?>
@@ -204,7 +236,10 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 	$extra = weaverx_getopt('header_html_text');
 
 	$hide = weaverx_getopt_default('header_html_hide', 'hide-none');
-	if ($extra != '' && $hide != 'hide' ) {
+
+	if ( $extra == '' && is_customize_preview() ) {
+		echo '<div id="header-html" style="display:inline;"></div>';		// need the area there for customizer live preview
+	} else if ( $extra != '' && $hide != 'hide' ) {
 		$c_class = weaverx_area_class('header_html', 'not-pad', '-none', 'margin-none' );
 		?>
 		<div id="header-html" class="<?php echo $c_class;?>">

@@ -493,9 +493,7 @@ function weaverxBrowserResizeEnd() {
 
 // Invoke scripts
 
-
-jQuery(document).ready(function () {
-
+function weaverx_js_update() {
 	// need to run weaverxResizeEnd and weaverxBrowserResizeEnd on doc ready for at least some browsers
 	// As of October, 2014, these included Safari, Desktop Opera, IE9, and IE8.
 	// For other browsers, it doesn't seem needed, but it is harmless to do it anyway.
@@ -537,6 +535,13 @@ jQuery(document).ready(function () {
 	// Target your #container, #wrapper etc
 	// if ( ! weaver_disable_fitvids )  // one possible solution to disabling FitVids via localize_script in functions.php
 	jQuery("#wrapper").fitVids();
+
+}
+
+
+jQuery(document).ready(function () {
+
+	weaverx_js_update();
 
 });
 

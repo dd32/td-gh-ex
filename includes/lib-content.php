@@ -176,7 +176,10 @@ function weaverx_continue_reading_link() {
 }
 //--
 
-
+add_filter('weaverx_more_message','weaverx_more_message_filter');
+function weaverx_more_message_filter($msg) {
+	return do_shortcode($msg);
+}
 
 if ( !function_exists( 'weaverx_edit_link')) {
 function weaverx_edit_link($echo = 'echo') {
@@ -628,8 +631,6 @@ function weaverx_fi( $who, $where ) {
 
 	$hide = weaverx_getopt( $who . '_fi_hide');
 
-	// weaverx_debug_comment('WEAVERX_FI(who=' . $who . ' where=' . $where . ' / page-id: ' . get_the_ID() . ' / post-id: ' . get_the_ID());
-
 	if (  $hide == 'hide' || weaverx_t_get( 'hide_featured_image' ) || ! has_post_thumbnail() ) // hide all or no FI
 		return false;
 
@@ -655,8 +656,6 @@ function weaverx_fi( $who, $where ) {
 			$show = weaverx_get_per_post_value( '_pp_fi_location');
 	}
 
-	// weaverx_debug_comment('Show PP: ' . $show );
-
 	if ( !$show )
 		$show = weaverx_getopt( $who . '_fi_location' );    // 'page' or 'post'
 	else if ( $show == 'hide' )
@@ -672,8 +671,6 @@ function weaverx_fi( $who, $where ) {
 		$before = '<div class="clear-post-before" style="clear:both;"></div>';
 	}
 
-	// weaverx_debug_comment( "weaverx_fi= show: $show align: $align" );
-
 	$fi_class = 'featured-image fi-' . $who . '-' . $where . ' ' . $hide . ' ' . $align; // construct fi class
 
 	$attr = array('class' => $fi_class );
@@ -681,7 +678,6 @@ function weaverx_fi( $who, $where ) {
 	// add width if defined
 
 	$w = weaverx_getopt( $who . '_fi_width' );
-	// weaverx_debug_comment('weaverx_fi width: ' . $w);
 	if ( $w )
 		$attr['style'] = 'width:' . $w . '%';
 
@@ -741,6 +737,16 @@ function weaverx_the_contnt(  ) {
 
 
 // ========================= special content =========================
+
+function weaverx_post_div($type = 'content') {
+	// echo the start <div> for posts
+	// include columns class if set
+	$class = '';
+	$cols = weaverx_getopt('post_cols');
+	if ($cols != '' && $cols != '1')
+		$class = ' cols-' . $cols;
+	echo '    <div class="entry-' . $type . ' clearfix' . $class . '">' . "\n";
+}
 
 function weaverx_the_post_full() {
 

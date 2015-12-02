@@ -59,7 +59,7 @@ function weaverx_page_menu( $args = array() ) {
 	$list_args['title_li'] = '';
 
 	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages( $list_args) );
-	
+
 
 	$left = weaverx_getopt('m_primary' . '_html_left');
 	$right = weaverx_getopt('m_primary' . '_html_right');
@@ -76,11 +76,18 @@ function weaverx_page_menu( $args = array() ) {
 		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";
 	}
 
+	if (!$left && is_customize_preview()) {
+		$hide = ' ' . weaverx_getopt('m_primary_hide_left');
+		$left = '<span class="wvrx-menu-html wvrx-menu-left' . $hide .'"></span>';
+	}
+
 	if ( $right ) {
 		$hide = weaverx_getopt('m_primary_hide_right');
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '">' . do_shortcode( $right ) . '</span>';
-	} else {
-		$right = '<span class="wvrx-menu-clear"></span>';
+	}
+	if (!$right && is_customize_preview()){
+		$hide = weaverx_getopt('m_primary_hide_right');
+		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '"></span>';
 	}
 
 	if ( $menu )
@@ -433,6 +440,7 @@ function weaverx_mce_css($default_style) {
 	if ( $val != 'default' ) {    	// found a font {
 
 		// these are not translatable - the values are used to define the actual font definition
+
 		$fonts = array(
 			'sans-serif' => 'Arial,sans-serif',
 			'arialBlack' => '"Arial Black",sans-serif',
@@ -440,16 +448,44 @@ function weaverx_mce_css($default_style) {
 			'lucidaSans' => '"Lucida Sans",sans-serif',
 			'trebuchetMS' => '"Trebuchet MS", "Lucida Grande",sans-serif',
 			'verdana' => 'Verdana, Geneva,sans-serif',
+			'alegreya-sans' => "'Alegreya Sans', sans-serif",
+			'roboto' => "'Roboto', sans-serif",
+			'roboto-condensed' => "'Roboto Condensed', sans-serif",
+			'source-sans-pro' => "'Source Sans Pro', sans-serif",
+
+
 			'serif' => 'TimesNewRoman, "Times New Roman",serif',
 			'cambria' => 'Cambria,serif',
 			'garamond' => 'Garamond,serif',
 			'georgia' => 'Georgia,serif',
 			'lucidaBright' => '"Lucida Bright",serif',
 			'palatino' => '"Palatino Linotype",Palatino,serif',
+			'alegreya' => "'Alegreya', serif",
+			'roboto-slab' => "'Roboto Slab', serif",
+			'source-serif-pro' => "'Source Serif Pro', serif",
+
 			'monospace' => '"Courier New",Courier,monospace',
 			'consolas' => 'Consolas,monospace',
+			'inconsolata' => "'Inconsolata', monospace",
+			'roboto-mono' => "'Roboto Mono', sans-serif",
+
 			'papyrus' => 'Papyrus,cursive,serif',
-			'comicSans' => '"Comic Sans MS",cursive,serif'
+			'comicSans' => '"Comic Sans MS",cursive,serif',
+			'handlee' => "'Handlee', cursive",
+
+			'open-sans' => "'Open Sans', sans-serif",
+			'open-sans-condensed' => "'Open Sans Condensed', sans-serif",
+			'droid-sans' => "'Droid Sans', sans-serif",
+			'droid-serif' => "'Droid Serif', serif",
+			'exo-2' => "'Exo 2', sans-serif",
+			'lato' => "'Lato', sans-serif",
+			'lora' => "'Lora', serif",
+			'arvo' => "'Arvo', serif",
+			'archivo-black' => "'Archivo Black', sans-serif",
+			'vollkorn' => "'Vollkorn', serif",
+			'ultra' => "'Ultra', serif",
+			'arimo' => "'Arimo', serif",
+			'tinos' => "'Tinos', serif"
 			);
 
 		if ( isset($fonts[$val]) ) {

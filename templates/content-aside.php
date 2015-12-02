@@ -28,17 +28,16 @@ $do_excerpt = weaverx_do_excerpt();
 		return;
 	}
 	}
-	if ( $do_excerpt && !weaverx_compact_post() ) { // Only display Excerpts for Search ?>
-	<div class="entry-summary clearfix">
-<?php
+	if ( $do_excerpt && !weaverx_compact_post() ) { // Only display Excerpts for Search
+		weaverx_post_div('summary');
 		weaverx_the_post_excerpt(); ?>
 		<br />
 	</div><!-- .entry-summary -->
 
 <?php
-	} else { ?>
-		<div class="entry-content clearfix">
-<?php 	weaverx_the_post_full();
+	} else {
+		weaverx_post_div('content');
+		weaverx_the_post_full();
 		weaverx_link_pages();
 ?>
 		</div><!-- .entry-content -->

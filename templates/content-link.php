@@ -20,19 +20,18 @@ weaverx_per_post_style();
 			return;
 		}
 	}
-		if ( weaverx_do_excerpt() && !weaverx_compact_post() ) : // Only display Excerpts for Search ?>
-		<div class="entry-summary clearfix">
-			<?php weaverx_the_post_excerpt(); ?>
+		if ( weaverx_do_excerpt() && !weaverx_compact_post() ) { // Only display Excerpts for Search
+			weaverx_post_div('summary');
+			weaverx_the_post_excerpt(); ?>
 			<br />
 		</div><!-- .entry-summary -->
-		<?php else : ?>
-		<div class="entry-content clearfix">
-<?php
+		<?php } else {
+			weaverx_post_div('content');
 			weaverx_the_post_full();
 			weaverx_link_pages();
 ?>
 		</div><!-- .entry-content -->
-		<?php endif;
+		<?php }
 	if (!weaverx_compact_post()) {
 		weaverx_format_posted_on_footer('link');
 		weaverx_compact_link('check');

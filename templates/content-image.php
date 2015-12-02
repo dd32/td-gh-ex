@@ -48,11 +48,9 @@ if (weaverx_compact_post()) {
 		if (weaverx_show_only_title()) {
 			return;
 		}
-?>
-		<div class="entry-content clearfix">
-<?php
-			echo weaverx_the_post_full();
-			weaverx_link_pages();
+		weaverx_post_div('content');
+		weaverx_the_post_full();
+		weaverx_link_pages();
 ?>
 		</div><!-- .entry-content -->
 <?php

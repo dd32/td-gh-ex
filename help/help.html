@@ -18,14 +18,14 @@ body {
 /* everything about each major block on the site - may be mods in some places */
 
 #container {
-	max-width:800px;
+	max-width:900px;
 	background-color: #00CC00;
 }
 #mainContent {
 	background-color: #ffc;
 }
 .oneColFixCtr #container {
-	max-width: 750px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	max-width: 900px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
 	background: #FFFFCD;
 	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
 	border: 1px solid #000000;
@@ -274,21 +274,20 @@ h1 {
 }
 </style> </head>
   <body class="oneColFixCtr">
-    <div id="container">
+  <div id="container">
       <div id="mainContent"> <a name="top" id="top"></a>
-        <h2><b>Weaver Xtreme Theme Documentation -- Version 1.0</b> </h2>
-        <h4><a href="#weaver-1-1-release">See the Release Notes</a></h4>
+        <h1><b>Weaver Xtreme Theme Documentation - Version 2.0</b></h1>
+        <h3>Customizer Option Interface</h3>
         <p>The Weaver WordPress theme has been one of the most popular themes
           available at WordPress.org since 2010. <em>Weaver Xtreme</em> is the
           latest generation of the Weaver theme family.</p>
-        <p><em>Weaver Xtreme</em> is a major re-write of earlier versions. While
-          keeping with the Weaver philosophy of giving you complete control of
-          your site's design, the underlying design of <em>Weaver Xtreme</em>
-          is significantly different than previous versions. If you are
-          switching from an older version of Weaver, please see <a href="#switch-wii">Switching
-            from Weaver II</a> for hints on how to move the the new ≠theme</p>
+        <p><em>Weaver Xtreme</em> Version 2.0 add a totally new option interface using the WordPress Customizer. This new interface is essentially WYSIWYG and will completely change how easy it is to create a totally custom theme.</p>
         <h3>Table of Contents</h3>
         <ul style="line-height:1.7em;">
+          <li>
+            <h3><a href="#get-started"><em>Getting Started with the Customizer</em></a><em> </em></h3>
+          </li>
+          <li><strong><a href="#theme-overview">Weaver Xtreme Theme Overview </a></strong></li>
           <li><a href="#get_started"><strong>How to get started</strong></a></li>
           <ul>
             <li><a href="#multisite">Using With WordPress Multisite</a></li>
@@ -296,7 +295,7 @@ h1 {
           <li><a href="#homepage"><strong>All About Your Site's Home Page</strong></a></li>
           <li><a href="#DesignHints"><strong>Design Hints</strong></a></li>
           <li><a href="#PredefinedThemes"><strong>Weaver Predefined Subthemes</strong></a></li>
-          <li><a href="#MainOptions"><strong>Weaver Main Options</strong></a>
+          <li><a href="#MainOptions"><strong>Weaver  Options Reference</strong></a>
             <ul>
               <li><a href="#GenApp">Wrapping Areas</a></li>
               <li><a href="#layout">Layout</a></li>
@@ -383,43 +382,56 @@ h1 {
           <li><a href="#switch-wii"><strong>Switching from Weaver II</strong></a></li>
           <li><strong><a href="#Version1_0">Release Notes</a></strong></li>
         </ul>
-        <p> </p>
-        <p>The <em>Weaver Xtreme </em>WordPress theme represents a totally
-          revised version of its predecessor, Weaver II. Almost all of the code
-          that directly outputs content was completely re-written. The layout
-          design is now 100% responsive, and various aspects of the design are
-          now heavily oriented to responsive design. The use of px sizes is
-          essentially completely gone - all size units are percent, em, or rem!
-          Among other things, this means that text sizes, padding, and margins
-          are now specified as a general size - small, medium, large, etc.,
-          instead of using specific values. This is a much better and easier
-          approach for a truly responsive site.</p>
-        <p>As with previous versions,<em> Weaver Xtreme </em>allows you to
-          change colors, fonts, sidebars, and other aspects of your site's look.
-          In addition, it allows you to easily add whatever special code you
-          might need (such as advertising tracking code), all from an easy to
-          use "check mark" based theme admin page. It also has many per page and
-          per post options, along with several page templates, that will allow
-          you to totally customize the look of your site.</p>
-        <p><em>Weaver Xtreme </em>allows you to build a custom site look by
-          tweaking many of the style rules for your WordPress blog. You can get
-          a customized look just by picking colors and layout options. While the
-          <span class="code1">Main and Advanced Options</span> control panels
-          may look overwhelming, they really aren't that hard to use once you
-          play with them a bit. The different option tabs have been organized by
-          the logical regions of your site. Thus, to change how the menu or info
-          bar appears, go to the <span class="code1">Main Options:Menus</span>
-          tab. If you want to change specifics of how posts are displayed, go to
-          the<span class="code1"> Main Options:Post Specifics</span> tab. Other
-          tabs are similarly organized.</p>
-        <p>One key to learning how to customize your site with <em>Weaver
-            Xtreme</em> is to understand how the various parts of the site are
-          organized. Not surprisingly, <em>Weaver Xtreme</em> relies heavily on
-          the basics of HTML &lt;div&gt;s and the "Cascading" part of CSS. Most
-          of the theme options are based on this cascading layout, and organized
-          accordingly. The following diagram illustrates the cascading nesting
-          of the <em>Weaver Xtreme</em> design.</p>
-        <p>  </p>
+        <h1><a name="get-started" id="get-started"></a>Getting Started with the Customizer </h1>
+        <p>Weaver Xtreme Version 2.0 has added WordPress Customizer support for all of its options. This new interface totally revolutionizes the way you work to create you own site. Weaver Xtreme is simply unique in the completeness of the options available, and how simple the Customizer makes finding and tweaking your options.</p>
+        <p> Most options are truly What You See is What You Get: change a color, border, font, or margin, and the change appears instantly on the preview window. You can literally see the changes in real time as you tweak the values. This is truly a magical experience. Other options work in refresh Customizer mode that requires the previewed page be refreshed - which usually takes just a second or two. Still amazing.</p>
+        <p>The previous option menus are still supported, but after using the Customizer interface, you probably won't want to go back to the Legacy Setting interface. It can be useful if you have a slow computer or site host as the new Customizer does require fast computers and browsers for an optimal experience.</p>
+        <h2>Customizer Option Organization</h2>
+        <p>The Customizer option menus for Weaver Xtreme are organized somewhat differently than the Legacy Settings. Even though there are over 600 options available, the new Customizer organization of the options can make it seem like there are only about 20 different option sets available.</p>
+        <h4>First Level Options: WHAT to Set - Option Categories</h4>
+        <p>The first level of Weaver Xtreme Customizer menus is organized around different categories of options that reflect different collections of related options. For example, all the Color settings are found on a single, top-level option panel called &quot;Colors&quot;. The other top level option panels represent similar groups of options:</p>
+        <ul>
+          <li><strong>Colors</strong> - Specify all colors used on site - both text and background colors. </li>
+          <li><strong>Spacing, Widths, Alignment</strong> - Set margins, padding, spacing, heights, and widths.</li>
+          <li><strong>Style</strong> -  Set borders, shadows, rounded corners, list bullet style, icons.</li>
+          <li><strong>Typography</strong> - Set font family, font size, bold, italic, default base font information.</li>
+          <li><strong>Visibility</strong> - Show or hide various elements - usually by device (phone, tablet, desktop).</li>
+          <li><strong>Layout</strong> - Specify element layout - sidebars, etc.</li>
+          <li><strong>Images</strong> -  Set borders, placement, Featured Images, Header Images, Background Images.</li>
+          <li><strong>Added Content</strong> - Define added content for extra HTML insertion areas.</li>
+          <li><strong>Custom CSS</strong> - Advanced users can specify custom CSS for the whole site or specific areas.</li>
+          <li><strong>Sidebars &amp; Widgets Content</strong> - the standard WordPress interface for widget areas and widgets.</li>
+          <li><strong>Custom Menu Content </strong>- the standard WordPress interface for defining custom menus.</li>
+        </ul>
+        <p>The top level Customizer menu also has two additional menus:</p>
+        <ul>
+          <li><strong>Weaver Xtreme: Start Here</strong> - access to getting started help and other documentation.</li>
+          <li><strong>General Options &amp; Admin</strong> - WordPress Site Identity and Static Front page options, and other theme admin options.</li>
+        </ul>
+<p>The basic logic behind this organization is that it is easy to remember the different kinds of things you want to customize, like color or spacing. The next level of menus specifies <em>where</em> you want to make those changes.</p>
+<h4>Second Level Options: WHERE to Set - Areas</h4>
+<p>Deciding <em>what</em> you want to customize is usually an obvious decision. Finding <em>where</em> to apply those settings take a bit more understanding just how a Weaver Xtreme WordPress site is organized. </p>
+<p>We've tried to make this second level step as easy and consistent as possible. Almost every one of the option categories can be applied to the same set of areas. The &quot;standard&quot; set of areas include:</p>
+<ul>
+  <li><strong>Wrapping Areas</strong> - the major outer areas that wrap the site's content. The main Wrapper Area wraps the entire site, while the Container Area wraps the page or post content and the main sidebars.</li>
+  <li><strong>Links</strong> - Not all categories apply to links, but links are treated as a single element to style.</li>
+  <li><strong>Header Area</strong> - the header area is displayed at the top of the site, and includes the site title and tagline, the primary and secondary menus, the site header image, a header widget area, and an extra area for arbitrary HTML.</li>
+  <li><strong>Menus</strong> - there are a Primary and Secondary menu available in the Header Area. Weaver Xtreme Plus also supports Extra menus that can be displayed in different locations.</li>
+  <li>Info Bar - the Info Bar is displayed immediately below the Header Area, and shows navigation information, as well as other custom content.</li>
+  <li><strong>Content</strong> - the content area displays page and post content.</li>
+  <li><strong>Post Specific</strong> - the Content styling will be applied to both page and post content, but this section allows you to have specific styling for posts and blog views.</li>
+  <li><strong>Sidebars &amp; Widget Areas</strong> - styling for the various Sidebars and Widget Areas.</li>
+  <li><strong>Individual Widgets</strong> - styling for individual widgets displayed in the Widget Areas.</li>
+  <li><strong>Footer Area</strong> - the footer area at the bottom of the site. This includes a widget area and an extra custom HTML insertion area.</li>
+  <li><strong>Global Options</strong> - some of the Option Categories can include other sections that can apply to global settings. Typography, for example, allows you to specify various global options such as base font size.</li>
+</ul>
+<h4>Site HTML Organization</h4>
+        <p>The above list of areas gave a general outline of how <em>Weaver Xtreme</em> organizes the HTML of a site. It can be useful to have a more specific and technical understanding of site layout.</p>
+<p>For more advanced customization of your site,  learning how how the various parts of the site are
+          organized can be essential. Not surprisingly, <em>Weaver Xtreme</em> relies heavily on
+          the basics of HTML &lt;div&gt;s and the "Cascading" part of CSS. The following diagram illustrates the cascading nesting
+        of the <em>Weaver Xtreme</em> design.</p>
+
         <div style="background:white;border:1px solid black;padding:10px;">body
           <div style="background:#F8F8F8;border:1px solid red;padding:10px;">#wrapper
             - wraps entire site - no content
@@ -452,27 +464,35 @@ h1 {
           </div>
         </div>
         <!-- body -->
-        <p>The main options for the #wrapper and #container areas are found on
-          the <span class="code1">Weaver Xtreme Main Options : Wrapping Areas</span>
-          tab. The options for the #header are on the <em>Header</em> tab, and
-          the options for the #colophon are on the <em>Footer</em> tab. Options
-          for the Menus are on the Menus tab. There are two tabs to cover Page
-          and Post Content: <span class="code1">Content Areas</span> and <span
-            class="code1">Post
-            Specifics</span>. Normally, Posts will inherit the settings from the
-          Page options, but various Post specific options are available on the
-          separate tab. The general layout and behavior of the content area and
-          the sidebar areas is controlled by the <span class="code1">Sidebars
-            &amp; Layout</span> tab. If you remember the main layout nesting
-          above, and the options found on these specific tabs, you will be well
-          on your way to effectively designing with <em>Weaver Xtreme</em>. </p>
+        <p>&nbsp;</p>
+        <h2>The Next Step</h2>
+        <p>This has been a fairly brief overview of the Customizer interface to Weaver Xtreme options. Because of the WYSIWYG and quick refresh feedback on all the options, you can easily experiment with different settings. Remember, nothing is permanently saved until you click the &quot;Save &amp; Publish&quot; button, so feel free to simply play around with the options.</p>
+        <p>The rest of this document contains more details about the various options, and explanations of features for more advanced WordPress site designers using Weaver Xtreme.</p>
+<h1><a name="theme-overview" id="theme-overview"></a>Weaver Xtreme Theme Overview</h1>
+        <p>The <em>Weaver Xtreme Version 2.0 </em>WordPress theme represents an almost revolutionary improvement over Version 1. The new WYSIWYG Customizer interface drastically changes the site designer's experience.</p>
+        <p>&nbsp;</p>
+        <p>Weaver Xtreme itself was a major re-write of its predecessor, Weave II. Almost all of the code
+          that directly outputs content was completely re-written. The layout
+          design is now 100% responsive, and various aspects of the design are
+          now heavily oriented to responsive design. The use of px sizes is
+          essentially completely gone - all size units are percent, em, or other responsive values.
+          Among other things, this means that text sizes, padding, and margins
+          are now specified as a general size - small, medium, large, etc.,
+          instead of using specific values. This is a much better and easier
+          approach for a truly responsive site.</p>
+        <p>As with previous versions,<em> Weaver Xtreme </em>allows you to
+          change colors, fonts, sidebars, and other aspects of your site's look.
+          In addition, it allows you to easily add whatever special code you
+          might need (such as advertising tracking code), all from either the new Customizer Interface, or the legacy "check mark" based theme admin page. It also has many per page and
+          per post options, along with several page templates, that will allow
+          you to totally customize the look of your site.</p>
         <p><em>Weaver Xtreme</em> includes its own translation files for over 20
           languages. There are about 100 visitor side messages, and it is fairly
           simple to create a <em>Weaver Xtreme</em> translation file for new
           languages. If you create your own new translation file, we would be
           happy to include it in the official <em>Weaver Xtreme</em>
-          distribution.</p>
-        <p>It is easy to design your own site look. You can start with one of
+      distribution.</p>
+<p>It is easy to design your own site look. You can start with one of
           many pre-defined subthemes, and change the settings to meet your
           needs. It is easy to get started: you just have to pick colors and
           click on check marks.</p>
@@ -483,13 +503,10 @@ h1 {
         <h3><a name="get_started" id="get_started"></a>How to get started:</h3>
         <ol>
           <li>Select one of the predefined subthemes. There are many to choose
-            from.</li>
-          <li>Go to the <span class="code1">Main Options</span> panel. You'll
-            see a list of tabs with options for the various parts of your theme
-            attributes you can change. Play around with them, and see how the
+            from. The predefined subthemes are found on the <em>Appearance &rarr; Weaver Xtreme Admin &rarr; Weaver Xtreme Subthemes</em> menu.</li>
+          <li>Open the <em>Appearance &rarr; Customize</em> menu. Play around with the various, and instantly see how the
             theme you selected changes. This may be enough to get a custom theme
-            you like. Remember that many of the major settings can be inherited
-            from areas that wrap inner areas.</li>
+            you like.</li>
           <li>Finally, read this help document. There are lots of tips here, as
             well as fairly detailed explanations of exactly which CSS rules
             Weaver supports, and hints on how to go beyond the basics and really
@@ -497,9 +514,7 @@ h1 {
         </ol>
         <h4>Previous Versions of Weaver</h4>
         <p>There have been three different versions of Weave: 2010 Weaver,
-          Weaver, and Weaver II. While support for Weaver II will continue for
-          some time, but ultimately <em>Weaver Xtreme</em> will completely
-          replace that version.</p>
+          Weaver, and Weaver II. </p>
         <p><em>Weaver Xtreme</em> is a completely new theme. Much of its design
           is fundamentally different than Weaver II, and previous settings
           cannot be converted automatically. However, it is fairly easy to
@@ -513,19 +528,17 @@ h1 {
           settings that help control which options are available to Multisite
           users.</p>
         <p>Note that all non-checkbox options for this theme are filtered based
-          on the 'unfiltered_html' capability which is determined by the account
+          on the 'edit_theme_optionsl' user capability which is determined by the account
           role. This mostly means that non-Admins cannot add &lt;scripts&gt; or
-          &lt;style&gt; directives anywhere. Regular Administrators are allowed
-          to enter &lt;style&gt;, but not &lt;script&gt; directives. And, of
-          course, Super-Administrators can enter anything.</p>
+          &lt;style&gt; directives anywhere. Regular Administrator and Super-Administrators can enter anything.</p>
         <p>Note that non-Administrator accounts are not able to see <em>Weaver
             Xtreme</em> options on their Dashboard. However, the Per Page and
           Per Post options will be displayed by default to users with creation
           roles. You may want to restrict this on a per site basis. Either the
           Super-Administrator, or an individual sub-site Administrator can
           restrict access to the Per Page and Per Post option based on user role
-          from the <span class="code1">Advanced Options : Admin Options</span>
-          tab. </p>
+          from the <span class="code1">General Options &amp; Admin <em>&rarr;</em> Admin </span>
+          panel. </p>
         <h3><a name="homepage" id="homepage"></a>All About Your Site's Home Page</h3>
         <p>Your Home Page is the one that is displayed when a visitor enters the
           address of your WordPress Site. Commonly, your blog will serve as the
@@ -542,8 +555,7 @@ h1 {
           of that page. The content of that page (as well as the page's
           template, such as Page with Post) is ignored: that static page serves
           <em>only</em> to set the title for the blog page.</p>
-        <p>Weaver gives you options on just what appears as your home page. The
-          <span class="code1">Main Options→Menu</span> Options section has an
+        <p><em>Weaver Xtreme</em> gives you options on just what appears as your home page. The <span class="code1">Visibility→Menu</span>s panel has an
           option called '<em>No Home Menu Item</em>'. If you check that, the
           automatically generated Home menu item goes away. That means if you
           have your blog set as the home page, there won't be a Home menu item
@@ -558,8 +570,7 @@ h1 {
             then use the <em>Page with Posts </em>template when you create the
             page, and check the 'Hide Page Title' in the Per Page Options
             section. Don't add any additional content.</li>
-          <li>Check the 'No Home Menu Item' option in the <span class="code1">Main
-              Options→Menus</span> Options section.</li>
+          <li>Check the 'No Home Menu Item' option in the Visibility<span class="code1">→Menu</span>s panel.</li>
           <li>On the <span class="code1">Settings→Reading</span> menu, check
             the '<em>A static page</em>' option, and specify the page you
             defined in step 1 as the Front page. Set the Posts page top to '<em>--
@@ -581,49 +592,30 @@ h1 {
         <h3><a name="DesignHints" id="DesignHints"></a>Design Hints</h3>
         <p>This section has a few hints on designing your own theme.</p>
         <h4>Choosing Colors</h4>
-        <p>Good themes use related colors. Many times (but not always), when you
-          look at the <span class="code1">Main Options</span> tab, you'll
-          notice that all the colors should "look good". They don't have to, but
-          having a nicely matching set of colors.</p>
-        <p>The color picker has an interesting feature. Once you pick a color
-          from the left section, the right bar shows different brightness levels
-          of that color. This is especially useful for making a color lighter or
-          darker.</p>
+        <p>Good themes use related colors. They don't have to, but
+          having a nicely matching set of colors is generally considered good design.</p>
+        <p>The color picker allows you to use the cursor to select a color. You can specify transparency on the bottom bar. You can also manually enter hex, rgb, rgba, or named colors in the value box. If the color option had an initial value, you can click the &quot;Default&quot; button to restore the original color if you don't like your new color.</p>
         <p>Some themes use the same colors for all links, some vary. But using
           the same link hover color for all the different kind of links lends
           consistency to your theme. The same is true for the other colors - try
           for a consistent look in your theme.</p>
         <h4>Testing</h4>
-        <p>There a a couple of tricks that can help make testing you theme
-          easier. However, you might find it easier to open a new tab in your
-          browser. Open the theme admin page on one tab, and the main site on
-          the other. After you make a change (and save them), you can toggle to
-          the second tab and refresh the page.</p>
-        <p>Another important thing is to <strong>change just one thing at a
-            time</strong>. This may seem to take longer, but you will really be
-          able to see the effect of your change this way and be sure it does
-          what you want.</p>
-        <p><span class="red-highlight">Important:</span> Most modern browsers
+        <p>The new Customizer interface makes testing your ideas easy. Many options support &quot;live&quot; preview. You changes show immediately in the preview window. Other options marked with the &#8635; refresh icon require a full page refresh of the preview window. This usually takes just a second or two.</p>
+        <p>Why aren't all the options live preview? There are various technical reasons for this. Some options (like the sidebar layouts) require that the actual generated HTML for the site be changed. This requires a refresh. Other options interact with the JavaScript used by <em>Weaver Xtreme </em>for some site layout. Others simply have a level of complexity that makes live preview too difficult. But we tried very hard to make as many options as possible display with live preview, and seeing that work is like magic.</p>
+        <p><span class="red-highlight">Important:</span> The changes you see in the preview window will almost always show up when you display your site in a different browser window. Depending on just how and when you display your site in a different browser window, there can be glitches. Most modern browsers
           will cache web pages it loads. Sometimes, this can make testing your
           site very difficult because the changes you make won't show up because
           the browser has cached your page. If you find this happening, you
           should clear the cache. Some browsers (e.g., Firefox and Chrome) have
-          plugins available that will let you disable the cache. If you are
-          using <em>Weaver Xtreme Plus</em>, you should develop your site with
-          the <em>Weaver Xtreme Plus</em>:Development Mode checked. This will
-          cause the CSS to be generated inline, which help with most cache
-          issues.</p>
+          plugins available that will let you disable the cache. </p>
+        <p>Also, you can have both the Customizer interface and the Legacy Settings Admin interface open at the same time in different browser windows. Please be aware that these two windows don't &quot;know&quot; about each other. If you make a change in one settings interface, it won't show up in the other automatically. In addition, the change will override whatever changes you might have made in the other window. If you are using both at the same time, you if you make changed in one option interface window, you MUST then manually do a full browser refresh page for the other option interface to keep both windows in sync.</p>
         <h4>Saving Option Settings</h4>
-        <p>After you make any changes to the values of the <span class="code1">Main</span>
-          or <span class="code1">Advanced Options</span>, you must save your
-          changes. If you navigate away from the design tabs without first
-          saving your values, <strong>everything will be lost</strong>. This is
-          typical behavior for most WordPress settings screens. </p>
+        <p>The changes you make to options from the Customizer interface are really &quot;trial&quot; changes. They show up in the preview window, but they are not permanent until you save your changed by clicking the &quot;Save &amp; Publish&quot; button in the top panel. If you navigate away from the Customizer without first
+          saving your values, <strong>everything will be lost</strong>. Note that you will receive a warning popup asking if you really want to leave the page or not.</p>
         <h4>Saving Your Own Theme</h4>
         <p>Once you have a design you like, you can save your work. You can then
           fiddle and fine tune more without losing your previous work. The
-          easiest way to save your work is to go to the <span class="code1">Save/Restore</span>
-          tab, and use the <em>Save/Restore Current Settings using WordPress
+          easiest way to save your work is to go to  the<em class="code1"> Appearance &rarr; Weaver Xtreme Admin &rarr; Save/Restore</em> tab, and use the <em>Save/Restore Current Settings using WordPress
             Database</em> option. This will save all your settings in the
           WordPress database. Any settings you make will be preserved until you
           save new ones. They will survive theme switches and upgrades. If you
@@ -641,71 +633,39 @@ h1 {
         <h3><a name="PredefinedThemes" id="PredefinedThemes"></a>Weaver Xtreme
           Predefined Subthemes</h3>
         <p><em>Weaver X</em> comes with many predefined subthemes displayed on
-          the <span class="code1">Weaver Xtreme Subthemes</span> tab. You can
+          the <em class="code1">Appearance &rarr; Weaver Xtreme Admin &rarr; Weaver Xtreme Subthemes</em> tab. You can
           use them as-is, or as a starting point for your own designs. When you
           select a new subtheme, <em><strong>all</strong></em> the options
-          values from the <span class="code1">Weaver Main Options</span> are
-          cleared and set to the new values of the subtheme. Most of the <span
-            class="code1">Advanced
-            Options</span> are not changed.</p>
+          values that aren't marked with a diamond (&diams;) are
+          cleared and set to the new values of the subtheme.</p>
         <p>To select a predefined theme, pick one from the "Select a theme"
           list, and click the "Set to Selected Subtheme" button. Now you can
-          open the <span class="code1">Main Options</span> Tab to start
+          open the Customizer to start
           customizing the theme in ways you like.</p>
         <h4>About Some of the Subthemes</h4>
         <ul>
           <li><strong>Plain</strong> - This is a minimal theme that represents a good starting point with minimal options set.</li>
-          <li><strong>Blank</strong> - This subtheme has no options set, and displays everthing using default values and styling from the base theme stylesheet. If you want total control of what you are building, this is the subtheme to start with.</li>
+          <li><strong>Blank</strong> - This subtheme has no options set, and displays everything using default values and styling from the base theme stylesheet. If you want total control of what you are building, this is the subtheme to start with.</li>
           <li><strong>Full Width Dark and Light</strong> (and demos) - The two subthemes are designed as good starting points for full width site designs. The Dark version is styled to effectively use a dark background. This can be simply a black background, or a dark image as found in the Demo version. The Light version is good for a light background. Using a plain white background results in a very simple, modern looking full width web site. The light demo has a light background image.<br />
-          Both of the full width subthemes default to no sidebars, but that is easily changed. There are a significan number of custom CSS+ rules associated with these subthemes, and will require a bit of understanding and careful tweaking to make them your own.</li>
+          Both of the full width subthemes default to no sidebars, but that is easily changed. There are a significant number of custom CSS+ rules associated with these subthemes, and will require a bit of understanding and careful tweaking to make them your own.</li>
           <li><strong>Transparent Light and Dark</strong> - these are designed with transparency designed for dark and light background colors or images.</li>
-          <li><strong>Ajax</strong> - this is a &quot;new&quot; subthems designed especially for Weaver Xtreme.</li>
         </ul>
-<h2><a name="MainOptions" id="MainOptions"></a>Weaver Main Options</h2>
-        <p>The <span class="code1">Main Options</span> tab provides you with
+<h2><a name="MainOptions" id="MainOptions"></a><a href="#MainOptions"><strong>Weaver  Options Reference</strong></a></h2>
+        <p>The <span class="code1">Customizer</span> provides you with
           hundreds of"check box" options for customizing your theme. This might
           seem overwhelming at first, but the options have been grouped
-          according to the part of the theme they affect. Not only that, but the
-          main options of the major "areas" are nearly identical, so you really
-          don't need to learn hundreds of options. Each option includes an
-          explanation as to what it does, often with extra information about
-          using the option. It will be worth your time to scroll over all the
-          options just to get an idea of all the things you can customize. Many
+          as explained in the introduction.  Many
           of the options have been added after multiple requests from users on
           the Weaver Forum, and may not be anything you care about. Remember,
           these are choices - it is unlikely that any one site design will use
-          all the available options.</p>
-        <p>The options have been organized according to the different parts and
-          functioning of your site's pages. The top of the <span class="code1">Main
-            Options</span> page has tabs that let you quickly jump to each
-          section.</p>
-        <p> Please note that you can provide values for the color boxes in a
-          couple of ways. The easiest way is to click on a color, and a color
-          selection palette will pop up. You can also provide values directly.
-          This includes hex values as well as text values. The text values can
-          include standard web colors such as <em>red</em>, <em>blue</em>,
-          etc.; <em>transparent</em>; or even <em>rgba()</em> values. This
-          gives you maximum flexibility for specifying colors.</p>
-        <p>Weaver defines default colors for many items. If the color value is
-          blank, then the default value will be used. The default will either be
-          the same as surrounding page elements, or be defined in the default
-          theme style sheet. </p>
-        <h5><a name="CSSOpts" id="CSSOpts"></a>CSS Options</h5>
-        <p>For more experienced users, it is easy to add extra CSS styling to
-          any of the elements included in the <span class="code1">Main Options</span>
-          tab that have a color setting. When you click on the <strong>+</strong>
-          button next to the CSS tag, a new input area will open. You can enter
-          CSS style rules, <em>enclosed in {}'s</em>. These rules will be
-          associated with the specific area that the color specifies. There are
-          essentially two kinds of color setting options - a background (BG)
-          color, and a text color. The CSS you add to the pop-open CSS box will
-          apply to the associated area. In practice, it doesn't matter if the
-          option is a BG or a text color - the rules will apply to the same
-          item.</p>
-        <p>Please see the CSS Help document to get more details on using this
-          feature.</p>
+          all the available options.        </p>
+        <h5><a name="CSSOpts" id="CSSOpts"></a>Custom CSS Options</h5>
+        <p>For more experienced users, it is easy to add extra CSS styling using the <em>Custom CSS</em> panel. You can enter
+          CSS style rules, <em>enclosed in {}'s</em>. The CSS you add to the pop-open CSS box will
+          apply to the associated area.</p>
+        <p>Please see the CSS Help document to get more details on adding Custom CSS.</p>
         <h3><a name="GenApp" id="GenApp"></a>Wrapping Areas</h3>
-        <p>The <span class="code1">Wrapping Areas</span> tab contains options
+        <p>The <span class="code1">Wrapping Areas</span> sections contain options
           that affect the overall look of your site, including both content and
           widget areas. These combine to give your site it overall look,
           including things such as width, outer margins, and more. The entire
@@ -714,7 +674,7 @@ h1 {
           (e.g., red, green, blue) just to get an idea of how they fit into the
           big picture. </p>
         <h3><a name="layout" id="layout"></a>Sidebars &amp; Layout</h3>
-        <p><em>Weaver Xtreme</em> supports these sidebar layout arrangements:</p>
+        <p><em>Weaver Xtreme</em> supports these sidebar layout arrangements from the <em>Layout</em> panel:</p>
         <div class="layoutbox">
           <div class="l_layout"> <span class="l_header">Header</span> <span class="l_content">Content</span>
             <div class="l_stdbar"> <span class="l_righttop">Pri</span> <span class="l_rightup">Sec</span>
@@ -735,7 +695,17 @@ h1 {
           <div class="l_layout"> <span class="l_header">Header</span> <span class="l_contentw">Content</span>
             <span class="l_footer">Footer</span> <small>No Sidebars</small></div>
         </div>
-        <p>The sidebars support two widget areas (Primary and Secondary). There
+        <p><br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          The sidebars support two widget areas (Primary and Secondary). There
           are other widget areas supported, and described in the next section.</p>
         <p><em>Weaver Xtreme</em> allows control over site page layout,
           including margins, sidebar layout, and sidebar sizes. There are two
@@ -775,13 +745,6 @@ h1 {
           widget areas. These are expressed as percentages. You can add more
           precision to the percentage if needed (e.g., 24.375%).</p>
         <h3><a name="WidgetAreas" id="WidgetAreas"></a>Widget Areas</h3>
-        <p>As just noted, <em>Weaver Xtreme</em> separates the sidebar wrapper
-          areas from the sidebar widget areas. The <span class="code1">Sidebars
-            &amp; Layout</span> tab also controls the background, margins, and
-          borders of both individual widgets, and the different widget areas,
-          including the sidebar widget areas, the top and bottom widget areas.
-          The Header and Footer widget areas are controlled by the <span class="code1">Header</span>
-          and <span class="code1">Footer</span> tabs.</p>
         <p>As part of the over all responsive design of <em>Weaver Xtreme</em>,
           the spacing between widgets, widget areas, and the content area are
           now specified using a general size option, and intelligently added by
@@ -789,8 +752,8 @@ h1 {
           of widgets, widget areas, and the main content area. Normally, you
           will only have to specify the size of the margin or padding you want.
           However, the <em>'Padding on Sides</em>' options allow you to specify
-          which sides have padding.</p>
-        <p><span class="style7">"Disappearing sidebars" - </span> If you find
+        which sides have padding.</p>
+<p><span class="style7">"Disappearing sidebars" - </span> If you find
           the sidebars are not displaying in the right place (they will usually
           end up below the content area), it means there is <strong>some
             incorrect HTML code in your page or post content</strong>. This is
@@ -799,7 +762,7 @@ h1 {
           not due to any issues with <em>Weaver Xtreme</em>, but is inherently
           a part of the way HTML code works. The cause will almost always be a
           missing &lt;/div&gt; tag (or an extra &lt;div&gt;). HTML uses
-          &lt;div&gt;...&lt;/div&gt; blocks to determine different parts of a
+      &lt;div&gt;...&lt;/div&gt; blocks to determine different parts of a
           web page. If your content has a missing &lt;/div&gt; tag, then the bad
           HTML will confuse your browser, resulting in the incorrect display of
           the sidebar. So, remember this. If your layout gets "confused", or
@@ -888,8 +851,7 @@ class="css">
           Front page displays setting, and the <em>No Home Menu Item</em>, you
           have complete control over menu content and blog display.</p>
         <p>You also have several options for controlling basic display of the
-          Site Title and Tagline (set in the dashboard <em>Settings-&gt;General
-          </em>panel). If these settings don't give exactly what you want, the
+          Site Title and Tagline. If these settings don't give exactly what you want, the
           very best way to get exactly what you want is to use a photo or image
           editor to add exactly the site logo or title you want - you can simply
           hide the default display of the site title and tagline in that case.</p>
@@ -905,7 +867,7 @@ class="css">
           before the content.</p>
         <p>For ultimate control of the Header, it is possible to completely
           replace it on a site wide or per page basis using the <em>Header HTML</em>
-          area on the <span class="code1">Header</span> tab or using the
+          area  or using the
           equivalent per page options.</p>
         <h3><a name="HeaderWidgetArea" id="HeaderWidgetArea"></a>Header &amp;
           Footer Horizontal Widget Areas</h3>
@@ -914,9 +876,9 @@ class="css">
           These areas support multiple widgets displayed horizontally in the
           header and footer areas. The Header Widget Area can be optionally
           placed in 4 different locations in the Header area using the "Header
-          Widget Area Position" option on the Header options tab. The Footer
+          Widget Area Position" option on the Layout options tab. The Footer
           Widget Area is placed at the top of the Footer.</p>
-        <p>The free <em>Weaver Xtreme</em> version supports even sized columns.
+        <p>The free <em>Weaver Xtreme</em> version supports equal sized columns.
           <em>Weaver Xtreme Plus</em> supports columns of arbitrary width.</p>
         <p>Consider this very simple example (the uneven column sizes require <em>Weaver
             Xtreme Plus</em>, but the ideas are the same for the free version).
@@ -951,7 +913,7 @@ class="css">
           options that allow you to specify exact widths for each widget, and
           for different mobile devices. You can show all or a subset of the
           widgets available for the widget area.</p>
-        <p> </p>
+        <p> </p>
         <h3><a name="MenuBar" id="MenuBar"></a>Menu Bar and Info Bar</h3>
         <p><em>Weaver Xtreme</em> allows you to control many aspects of the main
           menu bars, as well as the Info Bar. The Info Bar will normally be
@@ -990,7 +952,7 @@ class="css">
           a different hover color (which usually matches the standard link hover
           color) to indicate the title is a link.</p>
         <h3><a name="ContentAreas" id="ContentAreas"></a>Content Areas</h3>
-        <p>The <em>Content Areas </em>section covers options that affect both
+        <p>The <em>Content </em>section covers options that affect both
           your static page content, and blog post pages. These options all work
           as explained. The <em>Page Title Text</em> option is slightly
           different in that it applies only to static pages, and not to blog
@@ -999,7 +961,7 @@ class="css">
           the post title color. </p>
         <h4>Multiple Column Page Content</h4>
         <p><span style="font-style: italic;">Weaver Xtreme</span> has added an
-          option to automatically break your page content into multiple columns.
+          option to automatically break your page content into multiple columns (from the <em>Layout</em> panel).
           The option may be applied globally from the Main Options tab, or
           specified on a Per Page basis from the Per Page option box.</p>
         <p>This is done using the CSS column-count attribute coupled with
@@ -1048,7 +1010,7 @@ class="css">
             Post Specifics section to display a "Comments are closed"e message
             if you want .</li>
         </ol>
-        <h3><a name="PPSpecifics" id="PPSpecifics"></a>Post Specifics</h3>
+        <h3><a name="PPSpecifics" id="PPSpecifics"></a>Post Specific</h3>
         <p>Next to the Header, it seems that control of just how Posts (blog
           articles) are displayed is something many people want. This section
           discusses some of the things you can control.</p>
@@ -1092,7 +1054,7 @@ class="css">
           However, the most common practice is to display the Featured Image at
           the front of a page or post. <em>Weaver Xtreme</em>'s design has
           attempted to maximize their usefulness. </p>
-        <p>There are four sets of options for how to use the Featured Image
+        <p>There are four sets of options (from the <em>Images</em> panel) for how to use the Featured Image
           (FI): for Pages, for full and excerpted Posts, and for the single page
           post view. You can control when and where the FI is displayed for each
           of those cases, you can set the exact size (in a responsive % size!),
@@ -1177,8 +1139,8 @@ class="css">
             categories to filter out images from your regular blog.</li>
           <li>Enable the <em>Compact "Post Format" Posts</em> option. This will
             show your images in a good looking, image only format on your blog
-            pages. You can set this globally from the <em>Main Options -&gt;
-              Post Specifics</em> tab, or you can set it on a Per Page basis
+            pages. You can set this globally from the <em>Images -&gt;
+              Post Specific</em> section, or you can set it on a Per Page basis
             from the per page options box on a <em>Page with Posts</em> page.</li>
           <li>Each post can contain as much information as you like. As you add
             each image, you have the opportunity to fill in a caption, title,
@@ -1228,8 +1190,7 @@ class="css">
           includes a template function that gives you total control over the top
           and bottom info lines of posts displayed on a blog page, and posts
           displayed on the single page.</p>
-        <p>The custom info lines are set on the <span class="code1">Main
-            Options:Post Specifics:Custom Info Lines</span> tab. You can change
+        <p>The custom info lines are set on the <span class="code1">Content : Post Specific : Custom Info Lines</span> tab. You can change
           the top and bottom info lines on blog pages (including Page with Posts
           and [show_posts], and on the single page. You need to specify all
           options if you want the standard info lines replaced.</p>
@@ -1334,12 +1295,8 @@ class="css">
           <li><strong>%permalink:Permalink-text%</strong> - Used to set the text
             used for the permalink link.</li>
         </ul>
-        <p> </p>
-        <h3><a name="FooterOpt" id="FooterOpt"></a>Footer Options</h3>
-        <p>The <span class="code1">Footer</span> options tab controls basic
-          Footer appearance, including the standard area options. The options
-          for the Footer Widget area are also on the <span class="code1">Footer</span>
-          tab.</p>
+        <p> </p>
+        <h3><a name="FooterOpt" id="FooterOpt"></a>Footer Options        </h3>
         <p> <label><b>Site Copyright</b></label> <br />
           If you fill this in, the default copyright notice in the footer will
           be replaced with the text here. It will not automatically update from
@@ -1372,7 +1329,7 @@ class="css">
           Fonts will be automatically added to the Font Family selection options
           after they've been defined. </p>
         <h2><a name="Custom" id="Custom"></a>Custom Options</h2>
-        <p>The <em>Custom</em> tab allows you to set some custom options. These
+        <p>The <em>Typography -&gt; Global</em> panel allows you to set some custom options. These
           options tend to be more advanced, and many are supported only by <em>Weaver
             X</em>. </p>
         <h4>Site Base Font Size</h4>
@@ -1406,10 +1363,9 @@ class="css">
           the &lt;head&gt; section to load a font from your own or an external
           site. You would then specify the name of the font family provided by
           that font in one of the custom font family boxes. </p>
-        <h4><a name="CustomCSS" id="CustomCSS"></a>The Custom CSS Rules Section</h4>
-        <p>This section may be one of the most useful and used advanced option
-          sections. This option is found on the<span class="code1"> Main Options
-            : Custom</span> tab. This is where you can enter custom CSS to fine
+        <h4><a name="CustomCSS" id="CustomCSS"></a>The Global Custom CSS Option </h4>
+        <p>This panel may be one of the most useful and used advanced option
+          sections. This option is found on the<span class="code1"> Custom CSS </span>panel. This is where you can enter custom CSS to fine
           tune the styling of your site. The sources for these CSS rules can
           vary. </p>
         <p>You should enter just CSS rules in this box. Don't include a
@@ -1429,12 +1385,7 @@ class="css">
           page basis when you use the Edit Page editor. If you define a <em>Custom
             Field</em> named <em>page-head-code</em> for the page, then you can
           supply HTML for that page's &lt;HEAD&gt; section.</p>
-        <p>The <strong>CSS+</strong> boxes associated with every color and
-          background color selection box in the <em>Weaver Xtreme</em> Options
-          can also be used to enter Custom CSS Rules. If you add CSS to a CSS+
-          box, you need not enter any id or class name - the proper ids or
-          classes will be automatically provided to match the item associated
-          with the color selection box.</p>
+        <p>&nbsp;</p>
         <p><strong>Directory Macro Replacement for CSS images</strong></p>
         <p>Sometimes you might want to add a background image to a style (e.g.,
           using a url() value). Those images need to be stored someplace
@@ -1472,15 +1423,15 @@ class="css">
           WeaverTheme.com, and are loaded in the /uploads/weaver x-subthemes/add
           on-subthemes/ directory. This value is useful for providing images
           with Add-on Subthemes.</p>
-        <h2><a name="CSSPlus" id="CSSPlus"></a>CSS+</h2>
-        <p>You probably have noticed the <strong>CSS+</strong> button next to
-          many of the color options. This option allows you to add your own
+        <h2><a name="CSSPlus" id="CSSPlus"></a> Specific Custom CSS</h2>
+        <p>The other <strong>Custom CSS</strong> options found on the in the <em>Weaver Xtreme</em> <em>Custom CSS</em> panel
+          can also be used to enter Custom CSS Rules. If you add CSS to a one of these options, you need not enter any id or class name - the proper ids or
+          classes will be automatically provided to match the item associated
+        with the CSS options.</p>
+<p>These options allow you to add your own
           custom CSS for most elements of your site. Using this option does
           require a bit of CSS knowledge.</p>
-        <p>We will give an example of using this option. For example, say you've
-          set the<em> Header Area BG</em> option to <span class="css">#59AD44</span>,
-          but you'd like a custom border around it. CSS+ makes this easy. When
-          you click the CSS+ button, a dialog box is opened where you can enter
+        <p>We will give an example of using this option. For example, say you'd like a custom border around the Header area. Custom CSS makes this easy. Open the <em>Custom CSS -&gt; Header Area</em> panel where you can enter
           a CSS rule. The rule should include the <span class="css">{}</span>'s
           plus the css rules. So, to add a wide red border around the header
           area, you would put <span class="css">{border: 4px solid red;}</span>
@@ -1494,15 +1445,15 @@ class="css">
           options, the required selector can be much more complex, but you don't
           have to know the details. In some cases, there is even more than one
           selector</p>
-        <p>You can add more than one rule to the CSS+ box, but the selector is
-          applied only to the first rule. For example, if your CSS+ rules were:
+        <p>You can add more than one rule to the CSS box, but the selector is
+          applied only to the first rule. For example, if your CSS rules were:
           <span class="css">{font-style:italic;}
             .custom-font{font-family:serif;}</span> the output would be (using
           #header again) <span class="css">#header {font-style:italic;}
             .custom-font{font-family:serif;}</span>.</p>
         <p>If you would like the option's selector to be applied to additional
-          rules, CSS+ supports a "macro" called <span class="css">%selector%</span>.
-          Wherever you use <span class="css">%selector%</span> in your CSS+, it
+          rules, CSS supports a "macro" called <span class="css">%selector%</span>.
+          Wherever you use <span class="css">%selector%</span> in your CSS, it
           will be replaced by the selector associated with the option. Using the
           last example, <span class="css">{font-style:italic;} %selector%
             .custom-font{font-family:serif;}</span> would generate: <span class="css">#header
@@ -1514,17 +1465,10 @@ class="css">
           selector. You can use <span class="css">%selector%</span> as many
           times as you need. If you put it on the first rule, however, you'll
           get a doubled selector (<span class="css">#header #header</span>).</p>
-        <p>Some <em>Weaver Xtreme</em> users like to organize their custom CSS
-          rules by adding them to a related color option instead of putting them
-          in the main Custom CSS option. That is entirely acceptable. If you
+        <p> If you
           don't want to add any extra styling for the actual option, you can
           simply include a blank rule at the beginning: <span class="css">{}
-            .custom{rule}</span>.</p>
-        <p>And finally, you might have noticed there is not a CSS+ rule on all
-          the colors. More specifically, you'll see that most options include a
-          BG color with a CSS+ and a text color without it. In cases like this,
-          it means that the selector for the BG and text color are identical, so
-          just use the BG color CSS+.</p>
+            .custom{rule}</span>.        </p>
         <h3><a name="genericons" id="genericons"></a>Genericons - Add Icons to
           Your Content</h3>
         <p><em>Weaver Xtreme</em> uses an icon font set called "Genericons" for
@@ -1613,20 +1557,17 @@ class="css">
           appropriate @media blocks for the three different size devices.</p>
         <h2><a name="AdvancedOptions" id="AdvancedOptions"></a>Weaver Advanced
           Options</h2>
-        <p>The <span class="code1">Advanced Options</span> page allows you to
-          define many more advanced options. While the Basic version of <em>Weaver
+        <p>Weaver Xtreme supports several advanced options allowing extreme site customization. While the Basic version of <em>Weaver
             Xtreme</em> supports many Advanced Options, some are available only
           in the <em>Weaver Xtreme Plus</em> version.</p>
-        <p>The values you put here are saved in the WordPress database, and will
-          survive theme upgrades and other changes. </p>
         <p>PLEASE NOTE: Limited validation is made on the field values, so be
           careful not to paste invalid code. Invalid code is usually harmless,
           but it can make your site display incorrectly. If your site looks
           broken after you add settings in these sections, please double check
-          that what you entered uses valid HTML commands.</p>
-        <h3> <a name="HeadSection" id="HeadSection"></a>Site &lt;HEAD&gt;
-          Section </h3>
-        <p>The &lt;HEAD&gt; Section tab includes two major setting areas. These
+        that what you entered uses valid HTML commands.</p>
+<h3> <a name="HeadSection" id="HeadSection"></a>Site &lt;HEAD&gt;
+      Section </h3>
+        <p>The &lt;HEAD&gt; Section option (<em>Added Content -&gt; Site &lt;HEAD&gt; Section</em>) includes two major setting areas. These
           areas are used to provide advanced code to enhance the functionality
           and style of your site.</p>
         <h4>The &lt;HEAD&gt; Section</h4>
@@ -1640,9 +1581,9 @@ class="css">
           as might be needed. Note: adding JavaScript to the &lt;HEAD&gt;
           section requires that you have the Weave X Theme Support plugin
           installed. </p>
-        <h4> </h4>
+        <h4>&nbsp;</h4>
         <h3><a name="ActionsFilters" id="ActionsFilters"></a>Actions and Filters</h3>
-        <p>This block lets you add arbitrary PHP code to your site. This main
+        <p>This block on the <em class="code1">Added Content -&gt; Site &lt;HEAD&gt; Section</em> panel lets you add arbitrary PHP code to your site. This main
           purpose of this feature is to allow you to add WordPress Actions and
           Filters for plugins and many standard WordPress actions and filters.
           This is a very advanced option, and some understanding of PHP code and
@@ -1667,11 +1608,8 @@ class="css">
           within the code as needed.</p>
         <h3><a name="HTMLInsertion" id="HTMLInsertion"></a>HTML Code Insertion
           Areas </h3>
-        <p>The options in this section allow you to insert HTML code into
-          various regions of your pages. In addition to the HTML Insertion boxes
-          on the <em>Advanced Options : HTML Insertion</em> tab, there are also
-          specialized HTML Code Insertion area for the Header and Footer found
-          on those admin tabs. These areas must use HTML markup code, and all
+        <p>These options found on the various areas under the <em class="code1">Added Content -&gt; HTML Injection Areas</em> panel allow you to insert HTML code into
+          various regions of your pages. These areas must use HTML markup code, and all
           can include WP shortcodes. </p>
         <p>Important: You almost certainly will need to provide CSS styling
           rules for these code blocks, either as in-tag style="..." rules, or by
@@ -1685,14 +1623,14 @@ class="css">
           are most available only in the <em>Weaver Xtreme Plus</em> version.</p>
         <p>Each of the HTML insertion sections includes three additional options
           - Hide on the front page, and Hide on non-front pages, and a
-          background color with the CSS+ option. These settings can be used to
+          background color, and a Custom CSS option. These settings can be used to
           control where the areas are used.</p>
         <label><b><a name="HeaderInsCode" id="HeaderInsCode"></a>Header and
             Footer HTML</b></label>
         <p>You can add HTML to the <span class="code1">Header</span> and <span
             class="code1">Footer</span>
           HTML areas in the specialized Header and Footer HTML sections of the
-          Header and Footer tabs. This must be HTML markup code (including WP
+          Header and Footer sections under the <span class="code1">Content</span> panel. This must be HTML markup code (including WP
           shortcodes), and will be inserted into the header (#header) and footer
           (#colophon) areas. </p>
         <p>For the header, when used in combination with hiding the site title,
@@ -1752,12 +1690,9 @@ class="css">
         </ul>
         <h3><a name="BackgroundImages" id="BackgroundImages"></a>Background
           images</h3>
-        <p>This page is functional in <em>Weaver Xtreme Plus</em>, and allows
+        <p>These options on the <span class="code1">Images -&gt; Background</span> panel are functional in <em>Weaver Xtreme Plus</em>, and allow
           you to specify specific background images for different areas on any
-          page. You can also set the appropriate repeat options. The little
-          "image" icon on the right lets you open the media library browser to
-          upload or pick images. (Show an image, then click "Insert into Post"
-          to insert the image's address into the desired image box.) These
+          page. You can also set the appropriate repeat options. You can select images directly from the Media Library, including the ability to upload images.  These
           images are used on a site wide basis.</p>
         <h3><a name="SEO" id="SEO"></a>SEO</h3>
         <p><em>Weaver Xtreme</em> has been carefully designed to follow the
@@ -1773,7 +1708,7 @@ class="css">
         <p>If you need special SEO handling, you should use one of the several
           SEO plugins. We recommend <em>WordPress SEO</em> by Yoast.</p>
         <p> </p>
-        <h3><a name="AdvSiteOptions" id="SiteOptions"></a>Site Options</h3>
+        <h3><a name="AdvSiteOptions" id="SiteOptions"></a>Admin Options</h3>
         <p>This tab allows you to set additional site specific options, and it
           provides links and hints on setting other site options. These options
           may only be displayed for <em>Weaver Xtreme Plus</em> or if you have
@@ -1936,7 +1871,7 @@ If you need a joined class (e.g. #post-nnn.content-single), then put a vertical 
           Classes</h2>
         <p><em>Weaver Xtreme</em> provides quite a few helper classes that can
           be used to help style your content. You can used these in the any of
-          the PlusHere's a short summary.</p>
+          the Xtreme Plus options as well. Here's a short summary.</p>
         <ul>
           <li>.aligncenter, .alignleft, .alignright - used to align an element
             as described</li>
@@ -2093,8 +2028,7 @@ If you need a joined class (e.g. #post-nnn.content-single), then put a vertical 
           Options</h2>
         <p>This page controls some administrative options for the <em>Weaver
             Xtreme Plus</em> version.</p>
-        <h3><a name="AdminOpts" id="AdminOpts"></a>Xtreme Plus Administrative
-          Options</h3>
+        <h3><a name="AdminOpts" id="AdminOpts"></a>Xtreme Plus Admin Options</h3>
         <p>The main option in this section is the "Use Inline CSS" option. The <em>Weaver
             Xtreme</em> Basic version always emits the necessary custom CSS
           rules in each page's &lt;head&gt; block. There is some debate in the
@@ -2417,10 +2351,10 @@ If you need a joined class (e.g. #post-nnn.content-single), then put a vertical 
         <p>The Status Format is intended for a short status update from the
           author. It displays like an Aside, but also add the Author's avatar to
           the post. </p>
-        <h2><a name="CustomMenus" id="CustomMenus"></a></h2>
+        <h2><a name="CustomMenus" id="CustomMenus"></a> Custom Menus</h2>
         <p> </p>
         <p>WordPress allows you to define custom menus. By using the <span class="code1">Appearance-&gt;Menus</span>
-          panel, you can create a menu completely under your control. <em>Weaver
+          panel or the Customizer<span class="code1"> Custom Menus Content</span> panel (the two accomplish the same task, but have a different interface), you can create a menu completely under your control. <em>Weaver
             Xtreme</em> allows you to define two custom menus to be used with
           the main menu bars. If you have defined two custom menus, they will be
           placed above and below the site header image. (You can also define
@@ -2642,13 +2576,8 @@ If you need a joined class (e.g. #post-nnn.content-single), then put a vertical 
             <br />
             Replace <span class="css">.woocommerce-page</span> with <span class="css">.woocommerce-checkout</span></li>
         </ol>
-        <h3><a name="quickcache" id="quickcache"></a>Compatible Caching Plugins</h3>
-        <p>We highly recommend Quick Cache. We like how clean and easy to use
-          Quick Cache is. Its free version works for most people, and it also
-          has a Pro version with some features important to some advanced users.
-          Quick Cache will improve your site's speed as much as any other
-          caching plugin for a lot less hassle.</p>
-        <p>Since <em>Weaver Xtreme</em> is totally responsive, any other
+        <h3><a name="quickcache" id="quickcache"></a>Compatible Caching Plugins        </h3>
+        <p>Since <em>Weaver Xtreme</em> is totally responsive, any
           WordPress cache plugin, as well as external caching sites like
           CloudFlare, are totally compatible with <em>Weaver Xtreme</em>.</p>
         <p> </p>
@@ -2793,7 +2722,7 @@ If you need a joined class (e.g. #post-nnn.content-single), then put a vertical 
           work perfectly with Weaver. Versions previous to IE 9 have various
           incompatibilities that have been solved with a special script included
           with Weaver that works on almost all IE 8 sites.</p>
-        <p><em>Weaver Xtreme</em> will define special IE CSS classes's for IE 8
+        <p><em>Weaver Xtreme</em> will define special IE CSS classes for IE 8
           to IE 9: .ie8, and .ie9. Versions before IE 8 are not supported by
           WordPress, and thus not by Weaver. IE 10 and later no longer support
           "Conditional Comments", and thus there is <strong>no</strong> .ie10
@@ -2803,7 +2732,8 @@ If you need a joined class (e.g. #post-nnn.content-single), then put a vertical 
           IE8 does not support rounded corners or shadows. These are not
           supported for IE8 by <em>Weaver Xtreme</em>. But Weaver does provide
           appropriate "polyfills" for other required support - such as @media,
-          HTML5 elements, and rem.</p>
+          HTML5 element.</p>
+        <p>Please note that all Microsoft browsers, including IE11 and Edge are <em>significantly</em> slower (especially Edge as implemented in late 2015), and may not be suitable for using the Weaver Xtreme Customizer interface! Please consider using Chrome, Firefox, or Safari (on Macs only).</p>
         <h2><a name="TechNotes" id="TechNotes"></a>Technical Notes</h2>
         <p>The <em>Weaver X</em> theme was derived from our Aspen Theme, which
           was derived from Weaver II, which was derived from Weaver - originally
@@ -2812,7 +2742,7 @@ If you need a joined class (e.g. #post-nnn.content-single), then put a vertical 
           significantly, this includes the use of HTML5 and the architecture of
           the theme's php files. <em>Weaver Xtreme</em>, however, has has
           almost all the code that generates output essentially totally
-          re-written. Only the Admin interface code was reused in any
+          re-written. Only the Legacy Admin interface code was reused in any
           significant way.</p>
         <h3><a name="EUCookies" id="EUCookies"></a>EU/UK Cookie Compliance</h3>
         <p>Note for EU/UK users. <em>Weaver Xtreme</em> uses cookies on two
@@ -3104,7 +3034,7 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
           <dd>#site-tagline</dd>
           <dt>Header Image</dt>
           <dd>#header-image img</dd>
-          <dt>Header Title, Tagline, Search, Header, Mini-Menu</dt>
+          <dt>Header Title, Tagline, Search, Header, Mini Menu</dt>
           <dd>#branding</dd>
           <dt>Header Search</dt>
           <dd>#header-search</dd>
@@ -3156,7 +3086,7 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
           but one Weaver II shortcode in any WordPress theme, most importantly
           including Weaver Xtreme. The plugin will also allow you to use Weaver
           Xtreme shortcodes on other WP themes. </p>
-        <p>After conversion, you will likely want to take advantange of at least
+        <p>After conversion, you will likely want to take advantage of at least
           some of <em>Weaver Xtreme's</em> new features.</p>
         <p>The <em>Weaver Xtreme</em> design and option set is significantly
           more powerful than <em>Weaver II's.</em> Because the design is now
@@ -3177,6 +3107,10 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
         <h3><a name="Version1_0" id="Version1_0"></a>Weaver Xtreme Version 1.0</h3>
         <p><em>Weaver Xtreme</em> represents a massive re-write of the previous
           Weaver versions. </p>
+        <p>&nbsp;</p>
+        <h3><a name="Version1_0" id="Version1_"></a>Weaver Xtreme Version 2.0</h3>
+        <p><em>Weaver Xtreme</em> Version 2.0 most significantly added the totally new Customizer option interface. It's magic!</p>
+        <p>&nbsp;</p>
         <h2><br />
         </h2>
         <p><em>Weaver Xtreme</em> and this document are © 2010-2014, Bruce E.

@@ -230,6 +230,29 @@ function weaverx_output_style( $sout ) {
 		weaverx_f_write($sout, sprintf("html.ie8 #branding #header-image img{width:%.5f%%;}\n",$val ));
 	}
 
+	if ( ($align = weaverx_getopt_default( 'header_html_align', 'float-left') ) == 'center' ) {
+		//$hwidth = weaverx_getopt_default( 'header_html_width_int', '100');
+		//$lm = (100.0 - $hwidth ) / 2.0;
+		//weaverx_f_write($sout, sprintf("#header-html {margin-left:%.5f%%;}\n",$lm ));
+		weaverx_f_write($sout, "#header-html {display:block !important;}\n");
+	}
+
+	if ( ($align = weaverx_getopt_default( 'footer_html_align', 'float-left') ) == 'center' ) {
+		/* $hwidth = weaverx_getopt_default( 'footer_html_width_int', '100');
+		$lm = (100.0 - $hwidth ) / 2.0;
+		weaverx_f_write($sout, sprintf("#footer-html {margin-left:%.5f%%;}\n",$lm )); */
+		weaverx_f_write($sout, "#gootrt-html {display:block !important;}\n");
+	}
+
+	if ( weaverx_getopt_default( 'header_html_center_content' ))
+		weaverx_f_write($sout, "#header-html {text-align:center;}\n");
+
+
+	if ( weaverx_getopt_default( 'footer_html_center_content' ))
+		weaverx_f_write($sout, "#footer-html {text-align:center;}\n");
+
+
+
 
 // =========================== MENU OPTIONS ===============================
 /*
@@ -412,6 +435,16 @@ text_color = 0.213 * this.rgb[0] +
 		weaverx_f_write( $sout, sprintf('.widget-area{line-height:%.5f;}', ( $site_h * .85) ) );
 	}
 
+	$space = weaverx_getopt('font_letter_spacing_global_dec');
+	if ($space && $space != 0)
+		weaverx_f_write( $sout, sprintf("body{letter-spacing:%.5fem;}\n",$space) );
+
+	$space = weaverx_getopt('font_letter_spacing_global_dec');
+	if ($space && $space != 0)
+		weaverx_f_write( $sout, sprintf("body{word-spacing:%.5fem;}\n",$space) );
+
+
+
 
 
 // ============================== CUSTOM OPTIONS =================================
@@ -446,13 +479,13 @@ $menu_bars = array (
 	'm_extra_sub' => '.menu-extra .wvrx-menu ul li a,.menu-extra .wvrx-menu ul.mega-menu li'
 );
 
-$menu_links_bg = array (
+$menu_links_bg = array (	// xxx_link_bgcolor
 	'm_primary' => '.menu-primary .wvrx-menu > li > a',
 	'm_secondary' => '.menu-secondary .wvrx-menu > li > a',
 	'm_extra' => '.menu-extra .wvrx-menu > li > a',
 	);
 
-$menu_links = array (
+$menu_links = array ( // color, _hover_color, _hover_bg_color
 	'm_primary' => '.menu-primary .wvrx-menu > li > a',
 	'm_secondary' => '.menu-secondary .wvrx-menu > li > a',
 	'm_extra' => '.menu-extra .wvrx-menu > li > a',
@@ -476,13 +509,19 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 
 	foreach ($menu_links_bg as $id => $tag) {
 		weaverx_put_bgcolor( $sout, $id . '_link_bgcolor', $tag );
-		//weaverx_put_color( $sout, $id . '_color', $tag );                        //reuse color for link selector
 	}
 
 	foreach ($menu_links as $id => $tag) {
 		weaverx_put_color( $sout, $id . '_color', $tag );
-		weaverx_put_bgcolor( $sout, $id . '_hover_bgcolor', $tag . ':hover', true); // important to override current item bg
 		weaverx_put_color( $sout, $id . '_hover_color', $tag . ':hover', true );
+		if (weaverx_getopt('m_retain_hover') && strpos($id,'_sub') === false) {
+			$rule = str_replace('> li', 'li:hover',$tag);
+			weaverx_put_bgcolor( $sout, $id . '_hover_bgcolor', $rule, true);
+
+		} else {
+			weaverx_put_bgcolor( $sout, $id . '_hover_bgcolor', $tag . ':hover', true); // important to override current item bg
+
+		}
 	}
 
 	foreach ($menu_detail as $id => $tag) {
@@ -560,6 +599,14 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 			weaverx_f_write( $sout, "{$tag} .menu-arrows.menu-hover .toggle-submenu{margin-right:{$rpad}em;}\n" );
 		}
 
+		// menu margins
+		$mtop = weaverx_getopt($id . '_top_margin_dec');
+		$mbot = weaverx_getopt($id . '_bottom_margin_dec');
+		if ($mtop != '')
+			weaverx_f_write( $sout, "{$tag} .wvrx-menu-container{margin-top:{$mtop}px;}\n" );
+		if ($mbot != '')
+			weaverx_f_write( $sout, "{$tag} .wvrx-menu-container{margin-bottom:{$mbottom}px;}\n" );
+
 
 		// Menu Arrows
 
@@ -606,7 +653,7 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 // End of Menus
 
 // =Search ------------------------------------------------------------
-	if ( ($val = weaverx_getopt_default( 'search_icon' ,'dark' )) != 'dark') {
+	if ( ($val = weaverx_getopt_default( 'search_icon' ,'gray-bg' )) != 'gray-bg') {
 		$icon = weaverx_relative_url('assets/css/icons/search-' . $val . '.png');
 		weaverx_f_write($sout, '.search-field {background-image: url(' . $icon . ");}\n");
 	}
@@ -786,6 +833,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 	}
 
 	// adjust mini-menu top margin based on hide title/tagline. Goes here so user can override with mini-menu bg css+
+	/*
 	$hide_title = weaverx_getopt( 'hide_site_title' );
 	$hide_tag = weaverx_getopt( 'hide_site_tagline' );
 
@@ -793,7 +841,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 		|| strpos( $hide_tag, 'l-hide') !== false || strpos( $hide_title, 'l-hide') !== false) {
 		weaverx_f_write( $sout, '#nav-header-mini{margin-top:34px;}' );
 	}
-
+	*/
 
 // ================================ COLORS ===================================
 // Colors need to go last because they might have CSS +
@@ -836,7 +884,8 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 	weaverx_put_color($sout, 'post_title_hover_color','.wrapper .post-title a:hover');
 	weaverx_put_color($sout, 'm_header_mini_hover_color','#nav-header-mini a:hover');
-	if ( ( $val = weaverx_getopt('m_header_mini_top_margin_dec' ) ) )
+	$val = weaverx_getopt('m_header_mini_top_margin_dec' );
+	if ( $val != '' )
 			weaverx_f_write( $sout, sprintf("#nav-header-mini{margin-top:%.5fem}\n",$val ) );
 
 	weaverx_put_bgcolor($sout,'stickypost_bgcolor', '.blog .sticky');

@@ -28,10 +28,13 @@ $weaverx_sticky = false;
 
 // # OPTIONS ==============================================================
 
-
 function weaverx_getopt($opt) {
 	global $weaverx_opts_cache;
+
 	weaverx_opt_cache();
+	/*
+	if ($opt == 'wrapper_bgcolor')
+		echo "<h2>wrapper_bgcolor: {$weaverx_opts_cache['wrapper_bgcolor']}</h2>"; */
 
 	if (!isset($weaverx_opts_cache[$opt])) {	// handles changes to data structure
 		return false;
@@ -66,11 +69,26 @@ function weaverx_getopt_checked($opt) {
 	return true;
 }
 
+function weaverx_opt_cache() {
+	// load the options cache - only weaverx_settings in basic version
+	global $weaverx_opts_cache;
+
+	if (!$weaverx_opts_cache) {
+		$weaverx_opts_cache = apply_filters('weaverx_switch_theme',
+			get_option(apply_filters('weaverx_options','weaverx_settings') ,array()));	// start with the default
+		//weaverx_alert('Options Loaded');
+	}
+}
+
+function weaverx_clear_opt_cache($who = 'unknown') {
+	global $weaverx_opts_cache;
+	$weaverx_opts_cache = false;
+	//weaverx_alert('Cache cleared:' . $who);
+}
+
 function weaverx_setopt($opt, $val, $save = true) {
 	global $weaverx_opts_cache;
-	if (!$weaverx_opts_cache) {
-		$weaverx_opts_cache = get_option( apply_filters('weaverx_options','weaverx_settings') ,array());
-	}
+	weaverx_opt_cache();
 
 	$weaverx_opts_cache[$opt] = $val;
 	if ($save)
@@ -82,8 +100,8 @@ function weaverx_setopt_array($opt, $val, $save = true) {
 }
 
 function weaverx_delete_all_options() {
-	global $weaverx_opts_cache;
-	$weaverx_opts_cache = false;
+	weaverx_clear_opt_cache('weaverx_delete_all_options');
+
 	if (current_user_can( 'manage_options' ))
 		delete_option( apply_filters('weaverx_options','weaverx_settings') );
 }
@@ -119,6 +137,10 @@ function weaverx_save_opts($who='', $bump = true) {
 	// which saves to the database
 
 	//$vers = weaverx_getopt('style_version');
+	if ($who == 'customizer') {				// really need to refresh the cache
+		weaverx_clear_opt_cache($who);
+		$old = weaverx_getopt('style_date'); // and reload the cache
+	}
 
 	if ($bump) {
 		//$vers = $vers ? $vers + 1 : 1;	// bump or init
@@ -438,10 +460,14 @@ function weaverx_media_lib_button($fillin = '') {
 }
 
 
-function weaverx_site($sub='', $site = '//weavertheme.com', $title = '') {
+function weaverx_site($sub='', $site = '//weavertheme.com', $title = '', $echo = true) {
 	if ($site == '') $site = '//weavertheme.com';
 	if ($title == '') $title = $site;
-	echo '<a href="' . esc_url($site . $sub) . '" target="_blank" title="' . $title . '">';
+	$link = '<a href="' . esc_url($site . $sub) . '" target="_blank" title="' . $title . '" rel="nofollow">';
+	if ($echo)
+		echo $link;
+	else
+		return $link;
 }
 
 
@@ -544,7 +570,8 @@ function weaverx_post_class($hidecount = false) {
 
 function weaverx_use_inline_css($css_file) {
 	return weaverx_getopt_checked('_inline_style') || !weaverx_f_file_access_available()
-		|| !weaverx_f_exists($css_file);
+		|| !weaverx_f_exists($css_file) || isset($_REQUEST['wp_customize']);
+											// also force inline from customizer
 }
 
 
@@ -561,7 +588,7 @@ function weaverx_allow_multisite() {
 
 
 
-function weaverx_help_link($link, $info, $alt_label = '') {
+function weaverx_help_link($link, $info, $alt_label = '', $echo = true) {
 	/*. '<img class="entry-cat-img" src="' . esc_url($t_dir . 'assets/images/help-1.png') . '" style="position:relative; top:4px; padding-left:4px;" title="Click for help" alt="Click for help" /> */
 
 	$t_dir = weaverx_relative_url('') . 'help/' . $link;
@@ -583,8 +610,12 @@ function weaverx_help_link($link, $info, $alt_label = '') {
 	if ( !$alt_label )
 		$alt_label = '<span style="color:red; vertical-align: middle; margin-left:.25em;" class="dashicons dashicons-editor-help"></span>';
 
-	echo '<a style="text-decoration:none;" href="' . esc_url($t_dir) . '" target="_blank" title="' . $info . '">'
+	$out =  '<a style="text-decoration:none;" href="' . esc_url($t_dir) . '" target="_blank" title="' . $info . '">'
 		. $alt_label . '</a>';
+	if ($echo)
+		echo $out;
+	else
+		return $out;
 }
 
 
@@ -1165,19 +1196,6 @@ jQuery(window).resize(function(){jQuery('#blog-posts').masonry({itemSelector:'.b
 			break;
 	}	// end switch
 	return true;
-}
-
-// # PRO STUBS ==============================================================
-
-function weaverx_opt_cache() {
-	// load the options cache - only weaverx_settings in basic version
-
-	global $weaverx_opts_cache;
-
-	if (!$weaverx_opts_cache) {
-		$weaverx_opts_cache = apply_filters('weaverx_switch_theme',
-			get_option(apply_filters('weaverx_options','weaverx_settings') ,array()));	// start with the default
-	}
 }
 
 require_once( get_template_directory() . '/includes/fileio.php' );

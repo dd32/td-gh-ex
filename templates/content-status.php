@@ -31,13 +31,14 @@ weaverx_per_post_style();
 			return;
 		}
 	}
-		if ( weaverx_do_excerpt() && !weaverx_compact_post()) : // Only display Excerpts for Search ?>
-		<div class="entry-summary clearfix">
-			<?php weaverx_the_post_excerpt(); ?>
+		if ( weaverx_do_excerpt() && !weaverx_compact_post()) { // Only display Excerpts for Search
+			weaverx_post_div('summary');
+			weaverx_the_post_excerpt(); ?>
 			<br />
 		</div><!-- .entry-summary -->
-		<?php else : ?>
-		<div class="entry-content clearfix">
+		<?php } else {
+			weaverx_post_div('content');
+		?>
 			<span class="post-avatar-status">
 <?php 			echo(get_avatar( get_the_author_meta('user_email') ,32,null,'avatar')); ?>
 			</span><span class="weaver-ml-50">
@@ -46,7 +47,8 @@ weaverx_per_post_style();
 			weaverx_link_pages();
 ?>
 		</div><!-- .entry-content -->
-		<?php endif;
+<?php
+		}
 		if (!weaverx_compact_post()) {
 			weaverx_format_posted_on_footer('status');
 			weaverx_compact_link('check');

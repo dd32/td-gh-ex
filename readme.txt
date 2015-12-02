@@ -7,9 +7,9 @@ Tags: custom-header, custom-colors, custom-background, custom-menu, theme-option
 fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red, tan, dark, white, light,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1015 Bruce E Wampler
-Requires at least: 4.0
-Tested up to: 4.2
-Stable tag: 1.3
+Requires at least: 4.2
+Tested up to: 4.4
+Stable tag: 2.0
 
 == Description ==
 
@@ -30,12 +30,15 @@ below listed scripts and libraries. Those images are covered by their respective
 * Weaver Xtreme also includes several scripts and libraries that are covered under the terms
 of their own licenses in the listed files in the Weaver Xtreme theme distribution:
 ** Yetii - Yet (E)Another Tab Interface Implementation - license in /js/yetii/yetii.js (BSD)
+** Some Customizer code inspired by Make Theme - GNU General Public License v2 or later
+** Save, Restore code inspired by Customizer Export / Import plugin, GPL V2 or later
 ** Accordion, jQuery Plugin - license in /js/accordion/LICENSE (New BSD)
 ** jscolor, JavaScript Color Picker - license in /js/jscolor/jscolor.js (GLGPL)
 ** html5 IE lib - license in /js/htm5.js (MIT)
 ** FitVids - WTFPL
 ** javascript-detect-element-resize - MIT
 ** Genericons - GPL V2
+** Alpha Color Picker - GPL V2
 
 ** theme scripts - original to this theme, covered by GPL
 
@@ -84,7 +87,7 @@ with testing and feature suggestions.
 * New: set Mobile Menu trigger width for Primary/Secondary menu bars
 * New: support for JetPack's Infinite Scroll - supports blog page, including multiple columns
 * Tweak: Changed default top/bottom margin on Footer and Wrapper Areas to 0
-* Tweak: Changed Bold/Italic checkboxs to Inherit/On/Off selection
+* Tweak: Changed Bold/Italic checkboxes to Inherit/On/Off selection
 * Tweak: Improved how IE8 degrades for full-width bg colors
 * Tweak: Full width bg support
 * Tweak: Changed FI location wording from Before Title to With Title
@@ -184,3 +187,27 @@ with testing and feature suggestions.
 * Tweak: Page with Posts: sticky + author filter
 
 = *** Release Notes also found on Help Tab  *** =
+
+= Version 2.0 =
+* New: Added Customizer Option Interface - Setting options is now a WYSIWYG experience!
+* New: 20+ Google Fonts included and integrated to free theme version.
+* -- Other additions and changes ---
+* New: Columns for post content
+* New: Added Header/Footer Center Content within HTML area option
+* New: Retain Menu Bar Hover BG Color option when open submenus
+* New: Top/Bottom margins on Primary, Secondary, Extra Menu bars
+* New: Character and Word spacing (Xtreme Plus)
+* New: Support for Cryllic, Greek, Hebrew, and Vietnamese character sets with some fonts.
+* Change: Removed WP Appearance : "Theme Options" from core theme. (now included with theme support plugin)
+* Change: Appearance "Theme Options" label changed to "Weaver Xtreme Admin"
+* Change: No longer recommend WP Retina 2x plugin as that functionality is now in WP 4.4
+* Tweak: Default font changed to "Open Sans" from "Arial" to take advantage of Google Fonts.
+* Tweak: #header-html 100% width default
+* Tweak: Changed Footer Area, Container Area, and Info Bar to border-box.
+* Tweak: #content default margin bottom changed to 0. This works better with Customizer.
+* Tweak: Changed < hr > height to 2px for default.
+* Tweak: Mini Menu top margin default changed to 0em.
+* Tweak: Added .weaverx_inject_area class to all injection areas
+* Tweak: Added rel="nofollow" to WordPress and Weaver Theme credit links in the footer
+* Fix: Header/Footer HTML center alignment option
+* Fix: misc fixes/tweaks to Version 1.3

@@ -24,10 +24,10 @@ weaverx_per_post_style();
 			return;
 		}
 	}
-?>
-		<div class="entry-content clearfix">
-			<?php echo weaverx_the_post_full(); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) ); ?>
+
+	weaverx_post_div('content');
+	echo weaverx_the_post_full();
+	wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
 <?php
 	if (!weaverx_compact_post()

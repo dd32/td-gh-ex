@@ -19,7 +19,10 @@ function weaverx_inject_area( $name ) {
 		return;
 
 	$idinj = 'inject_' . $name;
-	$add_class = weaverx_getopt('inject_add_class_' . $name);
+	$add_class = 'weaverx_inject_area';		// give them all this wrapping class
+	$more_class = weaverx_getopt('inject_add_class_' . $name);
+	if ($more_class)
+		$add_class .= " {$more_class}";
 
 	$html = apply_filters('weaverx_inject_area', weaverx_getopt($area_name), $name);
 	$per_page_code = apply_filters('weaverx_inject_area', weaverx_get_per_page_value($name), $name);	/* per page values */
@@ -44,6 +47,21 @@ function weaverx_inject_area( $name ) {
 			echo do_shortcode($per_page_code) ;
 		}
 		echo("\t</div><!-- #{$idinj} -->\n");
+	} else if (is_customize_preview() ) {		// emit an empty class
+		if ( $name !='postpostcontent') {
+			if ($add_class != '')
+				echo("\t<div id=\"{$idinj}\" class=\"{$add_class}\">\n");
+			else
+				echo("\t<div id=\"{$idinj}\">\n");
+		}
+		else
+			echo("\t<div class=\"{$idinj} {$add_class}\">\n");
+		$add_css = weaverx_getopt("inject_{$name}_bgcolor_css");	// if the div has a border, it will show, so add message
+		if (stripos( $add_css, 'border') !== false)
+			echo __('This empty injection area with a border is displayed only in the Customizer preview.', 'weaver-xtreme');
+
+		echo("\t</div><!-- #{$idinj} -->\n");
+
 	}
 }
 //--
@@ -156,15 +174,21 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 
 // >>>>> weaverx_get_bold_italic <<<<<
 function weaverx_get_bold_italic($area, $which) {
-	$val = weaverx_getopt("{$area}_normal");
-	if ( $val == 'on') {
-		return " font-weight-normal";
+	if ( $which == 'bold') {
+		$val = weaverx_getopt("{$area}_normal");	// if have a normal, there won't be a 'bold'
+		if ( $val ) {
+			return " font-weight-normal";
+		}
+		$val = weaverx_getopt("{$area}_bold");
+		if ($val == 'on')
+			return " font-bold";
+		else
+			return '';
 	}
-	$val = weaverx_getopt("{$area}_{$which}");
+
+	$val = weaverx_getopt("{$area}_italic");
 	if ($val == 'on')
-		return " font-{$which}";
-	elseif ($val == 'off')
-		return " font-{$which}-off";
+		return " font-italic";
 	return '';
 }
 

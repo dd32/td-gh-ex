@@ -13,10 +13,10 @@ weaverx_fi( 'post', 'post-before' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('content-single post-content ' . weaverx_post_class(true)); ?>>
-	<?php weaverx_single_title( '' ); ?>
-	<div class="entry-content clearfix">
-		<?php weaverx_the_post_full_single(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) ); ?>
+	<?php weaverx_single_title( '' );
+	weaverx_post_div('content');
+	weaverx_the_post_full_single();
+	wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-utility entry-author-info">

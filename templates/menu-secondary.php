@@ -15,12 +15,18 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && has_nav_menu( $menu )  && !
 		$hide = ' ' . weaverx_getopt('m_secondary_hide_left');
 		$left = '<span class="wvrx-menu-html wvrx-menu-left' . $hide .'">' . do_shortcode( $left ) . '</span>';
 		$left = str_replace('%','%%',$left);	// wp_nav_menu uses sprintf! This will almost always fix the issue.
+	} elseif (is_customize_preview()) {
+		$hide = ' ' . weaverx_getopt('m_secondary_hide_left');
+		$left = '<span class="wvrx-menu-html wvrx-menu-left' . $hide .'"></span>';
 	}
 
 	if ( $right ) {
 		$hide = ' ' . weaverx_getopt('m_secondary_hide_right');
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '">' . do_shortcode( $right ) . '</span>';
 		$right = str_replace('%','%%',$right);	// wp_nav_menu uses sprintf!
+	} elseif (is_customize_preview()) {
+		$hide = ' ' . weaverx_getopt('m_secondary_hide_right');
+		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '"></span>';
 	}
 
 	$use_smart = weaverx_getopt('use_smartmenus') && function_exists('weaverxplus_plugin_installed');

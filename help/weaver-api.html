@@ -907,7 +907,7 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
 
 <b>&lt;</b><b>body</b> class<i>=</i><b>"search search-no-results weaverx-page-search weaverx-sb-right"</b><b>&gt;</b> <i>&lt;!-- failed search --&gt;</i>
     ...
-        
+
     </pre>
         <h3><a name="ClassReference" id="ClassReference"></a>Weaver Xtreme Class
           Reference</h3>
@@ -984,7 +984,7 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
           <dd>#site-tagline</dd>
           <dt>Header Image</dt>
           <dd>#header-image img</dd>
-          <dt>Header Title, Tagline, Search, Header, Mini-Menu</dt>
+          <dt>Header Title, Tagline, Search, Header, Mini Menu</dt>
           <dd>#branding</dd>
           <dt>Header Search</dt>
           <dd>#header-search</dd>
@@ -1006,7 +1006,7 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
           #comments-title &lt;div&gt; if no comments have been made yet. </p>
         <h2>Filters Used by Weave Xtreme Engine</h2>
         <p>Weaver Xtreme processes some content through filters. Short descriptions of the filters used by Weaver Xtreme follow. It will likely be most instructive to look at the actual source code to better understand some of these filters.</p>
-        
+
         <h4>weaverx_404_title</h4>
        	<ul>
        		  	<li><code>apply_filters('weaverx_404_title', __('Sorry, no such page.','weaver-xtreme'))</code></li>
@@ -1122,7 +1122,7 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
        		  	<li><code>apply_filters( 'edit_post_link', 'Edit', $post-&gt;ID )</code></li>
           		<li>Replace the &quot;Edit&quot; link button for $post-&gt;ID - need to include full &lt;a&gt; code and label.</li>
        		</ul>
-            
+
          <h4>weaverx_leave_reply_blog</h4>
         	<ul>
    		  	  <li><code>apply_filters('weaverx_leave_reply_blog', __( 'Leave a reply','weaver-xtreme'));<br />
@@ -1150,7 +1150,7 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
        		  	<li><code>apply_filters('weaverx_replace_widget_area',$area_name)</code></li>
           		<li>Replace a standard Weaver Xtreme widget area with a different one</li>
        		</ul>
-            
+
          <h4>weaverx_menu_name</h4>
         	<ul>
        		  	<li><code>apply_filters('weaverx_menu_name', $weaverx_menu)</code></li>
@@ -1168,78 +1168,78 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
        		  	<li><code>apply_filters</code></li>
           		<li>explain</li>
        		</ul>
-            
-            
-            
+
+
+
         	<h3>Advanced Filters</h3>
         	<p>The following filters require knowledge of the item format (usually an array), and are usually used for Xtreme Plus to add new options. These can be added to a new option interface, but will require an understand of the underlying code, and usually extra CSS style rules to support. Search the code for these filters to see what they do.</p>
        	<p>'weaverx_add_font_size', 'weaverx_add_font_family', 'weaverx_add_shadows', </p>
-        
-        
+
+
         	<h2>Actions Called by Weave Xtreme Engine</h2>
         <p>Weaver Xtreme calls some actions. Many of these are used to interface with Weaver Xtreme Plus, but these could also be defined by a child theme. Some are specific to a child theme. Short descriptions of the actions by Weaver Xtreme follow. It will likely be most instructive to look at the actual source code to better understand some of these calls.</p>
-            
+
         <h4>weaverx_child_siteoptions</h4>
         	<ul>
        		  	<li><code>do_action('weaverx_child_siteoptions')</code></li>
           		<li>A child theme can add new options to the botom of the Site Options tab. They can be processed via the 'weaverx_child_process_options' hook.</li>
        		</ul>
-            
+
         <h4>weaverx_child_process_options</h4>
         	<ul>
        		  	<li><code> do_action('weaverx_child_process_options')</code></li>
           		<li>Process options supported by a child theme - e.g., added via 'weaverx_child_siteoptions' or other.</li>
        		</ul>
-            
+
             <h4>weaverx_child_saverestore</h4>
         	<ul>
        		  	<li><code>do_action('weaverx_child_saverestore');</code></li>
           		<li>Allow additional save/restore in child </li>
        		</ul>
-            
+
             <h4>weaverx_child_update</h4>
         	<ul>
        		  	<li><code>do_action('weaverx_child_update')</code></li>
           		<li>Update option settings from child</li>
        		</ul>
-            
+
             <h4>weaverx_child_show_extrathemes</h4>
         	<ul>
        		  	<li><code> do_action('weaverx_child_show_extrathemes');</code></li>
           		<li>Allow child to display extra sub-themes.</li>
        		</ul>
-            
+
             <h4>weaverx_nav</h4>
         	<ul>
    		  	  <li><code>do_action('weaverx_nav', $location)</code></li>
           		<li>Display the top (secondary) and bottom (primary) menus</li>
    		</ul>
-            
+
             <h4>weaverx_post_header</h4>
         	<ul>
        		  	<li><code> do_action('weaverx_post_header')</code></li>
           		<li>Called after the &lt;/header&gt; and bottom (primary) menu emitted.</li>
        		</ul>
-            
+
             <h4>weaverx_per_page</h4>
         	<ul>
        		  	<li><code>do_action('weaverx_per_page')</code></li>
           		<li>Called right before content is generated for each page. Use to emit per page options.</li>
        		</ul>
-            
+
             <h4>weaverx_per_post</h4>
         	<ul>
        		  	<li><code> do_action('weaverx_per_post', $cur_post_ID)</code></li>
           		<li>Called before post content emitted. Used for per-post style.</li>
        		</ul>
-            
-            
+
+
             <h4>weaverx_breadcrumbs</h4>
         	<ul>
        		  	<li><code>do_action('weaverx_breadcrumbs')</code></li>
           		<li>Called to emit breadcrumbs in infobar.</li>
        		</ul>
-            
+
             <h4>weaverx_paginate</h4>
         	<ul>
        		  	<li><code>do_action('weaverx_paginate')</code></li>
@@ -1250,136 +1250,138 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
        		  	<li><code>do_action</code></li>
           		<li>explain</li>
        		</ul>
+
+		
        	<h2>Pluggable functions </h2>
        	<p>A &quot;pluggable&quot; function is one that can easily be overridden in a child theme.</p>
-        
+
         <h4>weaverx_setup()</h4>
         <ul>
           		<li>Sets up theme defaults and registers support for various WordPress features.</li>
        	</ul>
-        
+
         <h4>weaverx_init_opts($who='')</h4>
         <ul>
    		  <li>This sets either the current settings, or the default values.</li>
        	</ul>
-        
+
         <h4>weaverx_register_header_images()</h4>
         <ul>
    		  <li>Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.</li>
        	</ul>
-        
+
         <h4>weaverx_admin_header_style()</h4>
         <ul>
           		<li>Styles the header image displayed on the Appearance &gt; Header admin panel.</li>
        	</ul>
-        
+
         <h4>weaverx_register_sidebar($name, $id, $desc, $altclass='')</h4>
         <ul>
    		  <li>Register widgetized areas</li>
        	</ul>
-        
+
         <h4>weaverx_comment( $comment, $args, $depth )</h4>
         <ul>
           		<li>Template for comments and pingbacks.</li>
        	</ul>
-        
+
         <h4>weaverx_comments_popup_link()</h4>
         <ul>
           		<li>generate comment bubble for posts</li>
        	</ul>
-        
+
         <h4>weaverx_content_nav( $nav_id , $from_search=false)</h4>
         <ul>
    		  <li>Display navigation to next/previous pages when applicable</li>
        	</ul>
-        
+
         <h4>weaverx_continue_reading_link()</h4>
         <ul>
    		  <li>Returns a &quot;Continue Reading&quot; link for excerpts</li>
        	</ul>
-        
+
         <h4>weaverx_edit_link($echo = 'echo')</h4>
         <ul>
    		  <li>Generates the &quot;Edit&quot; page/post button</li>
        	</ul>
-        
+
         <h4>weaverx_entry_header( $format_title='', $do_excerpt = false )</h4>
         <ul>
           		<li>display entry header (title ) for posts</li>
        	</ul>
-        
+
         <h4>weaverx_post_title($before='', $after='')</h4>
         <ul>
    		  <li>display the post title</li>
        	</ul>
-        
+
         <h4>weaverx_link_pages()</h4>
         <ul>
    		  <li>Interface to wp_link_pages</li>
        	</ul>
-        
+
         <h4>weaverx_not_found_search($file_name)</h4>
         <ul>
    		  <li>Output when search not found</li>
        	</ul>
-        
+
         <h4>function</h4>
         <ul>
           		<li>explain</li>
        	</ul>
-        
+
         <h4>function</h4>
         <ul>
           		<li>explain</li>
        	</ul>
-        
+
         <h4>function</h4>
         <ul>
           		<li>explain</li>
        	</ul>
-        
+
         <h4>function</h4>
         <ul>
           		<li>explain</li>
        	</ul>
-        
+
         <h4>function</h4>
         <ul>
           		<li>explain</li>
        	</ul>
-        
+
         <h4>function</h4>
         <ul>
           		<li>explain</li>
        	</ul>
-        
+
         <h4>function</h4>
         <ul>
           		<li>explain</li>
        	</ul>
-        
+
         <h4>function</h4>
         <ul>
           		<li>explain</li>
        	</ul>
-        
+
         <h4>function</h4>
         <ul>
           		<li>explain</li>
        	</ul>
-        
+
         <h4>function</h4>
         <ul>
           		<li>explain</li>
        	</ul>
-        
+
         <h4>function</h4>
         <ul>
           		<li>explain</li>
        	</ul>
-        
-         
-         
+
+
+
          <h4>&nbsp;</h4>
 <p>&nbsp;</p>
        	<p>&nbsp;</p>

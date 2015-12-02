@@ -13,12 +13,16 @@ function weaverx_generate_wphead() {
 		$weaverx_cur_page_ID = get_the_ID();	// we're on a page now, so set the post id for the rest of the session
 
 	printf("\n<!-- This site is using %s %s (%s) subtheme: %s -->\n",WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt('style_version'), weaverx_getopt('themename'));
-	
+
 	do_action('weaverxplus_show_version');
 
 	if ( weaverx_use_inline_css( weaverx_get_css_filename() )) { // generate inline CSS
 		echo('<style type="text/css">'."\n");
-		$css = weaverx_getopt_default('wvrx_css_saved', '');
+		if (isset($_REQUEST['wp_customize']))	// don't use cached CSS from customizer
+			$css = '';
+		else
+			$css = weaverx_getopt_default('wvrx_css_saved', '');
+
 		if ( $css == '' || $css[0] != '/' ) {               // there isn't an entry in the DB, so do it on the fly
 			require_once(get_template_directory() . '/includes/generatecss.php'); 	// include only now at runtime.
 			$output = weaverx_f_open('php://output','w+');
