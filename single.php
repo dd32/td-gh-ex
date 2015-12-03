@@ -16,7 +16,7 @@ get_header();
     <h2 class="entry-title"><?php the_title(); ?></h2>
 
     <div class="entry-thumb">
-        <?php the_post_thumbnail('beatmix_lite_single'); ?>
+        <?php the_post_thumbnail('beat_mix_lite_single'); ?>
     </div>
 
     <div class="entry-content-wrap">

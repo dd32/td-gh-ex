@@ -303,10 +303,10 @@ jQuery(document).ready(function() {
 
 
     //LOAD MORE BUTTON
-    jQuery('#beatmix_lite_loadmore').on('click', '.beatmix_lite_loadmore_button', function(event){
+    jQuery('#beat_mix_lite_loadmore').on('click', '.beat_mix_lite_loadmore_button', function(event){
         event.preventDefault();
 
-        var button = jQuery("#beatmix_lite_loadmore");                        
+        var button = jQuery("#beat_mix_lite_loadmore");                        
         var href   = button.data('url');
         var paged  = button.data('paged');
 
@@ -320,10 +320,10 @@ jQuery(document).ready(function() {
                     button.addClass('in-process');                          
                 },
                 success: function(data) {                               
-                    var newItems = jQuery(data).find('#beatmix_lite_loadmore_placeholder > li');                                                   
+                    var newItems = jQuery(data).find('#beat_mix_lite_loadmore_placeholder > li');                                                   
                     if(newItems.length > 0){
                         imagesLoaded(newItems, function () {
-                            var container = jQuery('#beatmix_lite_loadmore_placeholder');
+                            var container = jQuery('#beat_mix_lite_loadmore_placeholder');
                             container.append(newItems).masonry('appended', newItems);
                         });    
                         button.data('paged', parseInt(paged) + 1);

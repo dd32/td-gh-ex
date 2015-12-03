@@ -5,10 +5,7 @@
     if (have_comments()) :        
         ?>     
         <h3 class="text-center">
-            <?php 
-                $data = sprintf(  esc_attr__('%1$s Comments', 'beat-mix-lite'), get_comments_number());
-                echo htmlspecialchars_decode(esc_html($data));
-            ?>
+            <?php echo esc_attr(sprintf( _n( '%d Comment', '%d Comments', get_comments_number(), 'beat-mix-lite' ), get_comments_number() )); ?>
         </h3> 
         
         <ol class="comments-list clearfix">
@@ -16,7 +13,7 @@
             wp_list_comments(array(                
                 'style'      => 'ol',
                 'short_ping' => true,
-                'callback'   => 'beatmix_lite_list_comments',
+                'callback'   => 'beat_mix_lite_list_comments',
                 'type'       => 'all'
             ));
             ?>
@@ -40,11 +37,11 @@
     ?>
 </div>
 
-<?php beatmix_lite_comment_form(); ?>
+<?php beat_mix_lite_comment_form(); ?>
 
 <?php
 
-function beatmix_lite_comment_form($args = array(), $post_id = null) {
+function beat_mix_lite_comment_form($args = array(), $post_id = null) {
     if (null === $post_id)
         $post_id = get_the_ID();
 
@@ -134,28 +131,24 @@ function beatmix_lite_comment_form($args = array(), $post_id = null) {
                     ?>
                     <?php if (is_user_logged_in()) : ?>
                         <?php
-                            $data = apply_filters('comment_form_logged_in', $args['logged_in_as'], wp_kses_post( $commenter ), wp_kses_post( $user_identity ) );
-                            echo htmlspecialchars_decode(esc_html($data));
-                        ?>
-                        <?php
+                        echo apply_filters('comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity);
                         do_action('comment_form_logged_in_after', $commenter, $user_identity);
-                        ?>
+                        ?>                        
                     <?php else : ?>                        
                         <?php
                         do_action('comment_form_before_fields');
                         foreach ((array) $args['fields'] as $name => $field) {
-                            $data = apply_filters("comment_form_field_{$name}", sprintf('%s', $field ) ) . "\n";
-                            echo htmlspecialchars_decode(esc_html($data));
+                            echo apply_filters("comment_form_field_{$name}", $field) . "\n";
                         }
                         do_action('comment_form_after_fields');
                         ?>
                     <?php endif; ?>
+
                     <?php
-                    $data = apply_filters('comment_form_field_comment', sprintf( '%s', $args['comment_field']) );
-                        echo htmlspecialchars_decode(esc_html($data));
-                    ?>
-                    <?php echo wp_kses_post( $args['comment_notes_after'] ); ?>
-                                        
+                    echo apply_filters('comment_form_field_comment', $args['comment_field']);
+                    echo htmlspecialchars_decode(esc_html($args['comment_notes_after'])); 
+                    ?>                    
+                    
                     <div class="row">
                         <div class="col-md-12">
                             <p class="comment-button clearfix">
@@ -179,7 +172,7 @@ function beatmix_lite_comment_form($args = array(), $post_id = null) {
     endif;
 }
 
-function beatmix_lite_list_comments($comment, $args, $depth) {
+function beat_mix_lite_list_comments($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
     ?>
     <li <?php comment_class('clearfix'); ?> id="comment-<?php comment_ID(); ?>">

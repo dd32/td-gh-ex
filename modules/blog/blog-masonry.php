@@ -1,6 +1,6 @@
 <div class="widget kopa-masonry-list-1-widget">
 	<div class="masonry-list-wrapper">
-		<ul id="beatmix_lite_loadmore_placeholder" class="clearfix">
+		<ul id="beat_mix_lite_loadmore_placeholder" class="clearfix">
 			<?php
 			while (have_posts()) : 
 				the_post();
@@ -29,7 +29,7 @@
 					  <?php if(has_post_thumbnail()): ?>
 						  <div class="entry-thumb">
 					      <a href="<?php the_permalink(); ?>">
-					      	<?php the_post_thumbnail('beatmix_lite_blog_masonry', array('class' => 'img-responsive')); ?>
+					      	<?php the_post_thumbnail('beat_mix_lite_blog_masonry', array('class' => 'img-responsive')); ?>
 					      </a>
 					      <div class="mask"><a href="#"><i class="fa fa-plus"></i></a></div>
 						  </div>

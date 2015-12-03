@@ -5,17 +5,16 @@ LIBRARY
 Load the required library for theme.
 ----------*/
 require_once 'lib/customizer.php';
-require_once 'lib/widget-master.php';
 
 /*
 INIT
 ----------
 init action hook & filter hook for "after_setup_theme"
 ----------*/
-add_action('after_setup_theme', 'beatmix_lite_after_setup_theme');
+add_action('after_setup_theme', 'beat_mix_lite_after_setup_theme');
 
 
-function beatmix_lite_after_setup_theme() {
+function beat_mix_lite_after_setup_theme() {
 
     load_theme_textdomain('beat-mix-lite', get_template_directory() . '/languages');
     add_theme_support('title-tag');
@@ -24,7 +23,7 @@ function beatmix_lite_after_setup_theme() {
     add_theme_support('loop-pagination');
     add_theme_support('automatic-feed-links');
 
-    beatmix_lite_register_new_image_sizes();
+    beat_mix_lite_register_new_image_sizes();
 
     global $content_width;
     if (!isset($content_width))
@@ -36,24 +35,24 @@ function beatmix_lite_after_setup_theme() {
         'footer-nav'    => esc_attr__('Footer Menu', 'beat-mix-lite'),
     ));
 
-    add_filter('beatmix_lite_customization_init_options', 'beatmix_lite_init_options');
-    add_action('widgets_init', 'beatmix_lite_register_sidebar');
+    add_filter('beat_mix_lite_customization_init_options', 'beat_mix_lite_init_options');
+    add_action('widgets_init', 'beat_mix_lite_register_sidebar');
 
     if (!is_admin()){
-        add_action('wp_enqueue_scripts', 'beatmix_lite_enqueue_scripts');
-        add_filter('body_class', 'beatmix_lite_body_class');
+        add_action('wp_enqueue_scripts', 'beat_mix_lite_enqueue_scripts');
+        add_filter('body_class', 'beat_mix_lite_body_class');
         add_filter('excerpt_more', '__return_false');
     }
 }
 
 
-function beatmix_lite_register_new_image_sizes(){
-    add_image_size('beatmix_lite_blog_once_col', 1050, 579, true); 
-    add_image_size('beatmix_lite_blog_masonry', 271, null, false);
-    add_image_size('beatmix_lite_single', 1050, 470, true);
+function beat_mix_lite_register_new_image_sizes(){
+    add_image_size('beat_mix_lite_blog_once_col', 1050, 579, true); 
+    add_image_size('beat_mix_lite_blog_masonry', 271, null, false);
+    add_image_size('beat_mix_lite_single', 1050, 470, true);
 }
 
-function beatmix_lite_enqueue_scripts(){
+function beat_mix_lite_enqueue_scripts(){
     global $post, $wp_styles, $is_IE;
     $dir = get_template_directory_uri();
 
@@ -63,20 +62,20 @@ function beatmix_lite_enqueue_scripts(){
      * --------------------------------------------------
      */
     
-    wp_enqueue_style('beatmix_lite-fonts', beatmix_lite_fonts_url(), array(), null );
-    wp_enqueue_style('beatmix_lite-bootstrap', "{$dir}/css/bootstrap.css", array(), NULL);
-    wp_enqueue_style('beatmix_lite-font-awesome', "{$dir}/css/font-awesome.css", array(), NULL);
-    wp_enqueue_style('beatmix_lite-navgoco', "{$dir}/css/jquery.navgoco.css", array(), NULL);
-    wp_enqueue_style('beatmix_lite-superfish', "{$dir}/css/superfish.css", array(), NULL);
-    wp_enqueue_style('beatmix_lite-owl-carousel', "{$dir}/css/owl.carousel.css", array(), NULL);
-    wp_enqueue_style('beatmix_lite-owl-theme', "{$dir}/css/owl.theme.css", array(), NULL);    
-    wp_enqueue_style('beatmix_lite-style', get_stylesheet_uri(), array(), NULL);
-    wp_enqueue_style('beatmix_lite-responsive', "{$dir}/css/responsive.css", array(), NULL);
+    wp_enqueue_style('beat_mix_lite-fonts', beat_mix_lite_fonts_url(), array(), null );
+    wp_enqueue_style('beat_mix_lite-bootstrap', "{$dir}/css/bootstrap.css", array(), NULL);
+    wp_enqueue_style('beat_mix_lite-font-awesome', "{$dir}/css/font-awesome.css", array(), NULL);
+    wp_enqueue_style('beat_mix_lite-navgoco', "{$dir}/css/jquery.navgoco.css", array(), NULL);
+    wp_enqueue_style('beat_mix_lite-superfish', "{$dir}/css/superfish.css", array(), NULL);
+    wp_enqueue_style('beat_mix_lite-owl-carousel', "{$dir}/css/owl.carousel.css", array(), NULL);
+    wp_enqueue_style('beat_mix_lite-owl-theme', "{$dir}/css/owl.theme.css", array(), NULL);    
+    wp_enqueue_style('beat_mix_lite-style', get_stylesheet_uri(), array(), NULL);
+    wp_enqueue_style('beat_mix_lite-responsive', "{$dir}/css/responsive.css", array(), NULL);
 
     $header_background = get_theme_mod('header-background', false);
     if($header_background){
         $custom_style = sprintf(".page-header-bg {background: url('%s') repeat fixed 0 top;}", $header_background);
-        wp_add_inline_style('beatmix_lite-style', $custom_style);
+        wp_add_inline_style('beat_mix_lite-style', $custom_style);
     }
 
     /*
@@ -89,21 +88,21 @@ function beatmix_lite_enqueue_scripts(){
 
     wp_enqueue_script('jquery');
     wp_enqueue_script('masonry');
-    wp_enqueue_script('beatmix_lite-modernizr', "{$dir}/js/modernizr.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beatmix_lite-bootstrap', "{$dir}/js/bootstrap.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beatmix_lite-fitvids', "{$dir}/js/fitvids.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beatmix_lite-imagesloaded', "{$dir}/js/imagesloaded.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beatmix_lite-caroufredsel', "{$dir}/js/jquery.caroufredsel.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beatmix_lite-matchheight', "{$dir}/js/jquery.matchheight.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beatmix_lite-navgoco', "{$dir}/js/jquery.navgoco.js", array('jquery'), NULL, TRUE);    
-    wp_enqueue_script('beatmix_lite-owl-carousel', "{$dir}/js/owl.carousel.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beatmix_lite-superfish', "{$dir}/js/superfish.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beatmix_lite-visible', "{$dir}/js/visible.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beatmix_lite-custom', "{$dir}/js/custom.js", array('jquery'), NULL, TRUE);
-    wp_localize_script('beatmix_lite-custom', 'beatmix_lite_vars', array());
+    wp_enqueue_script('beat_mix_lite-modernizr', "{$dir}/js/modernizr.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('beat_mix_lite-bootstrap', "{$dir}/js/bootstrap.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('beat_mix_lite-fitvids', "{$dir}/js/fitvids.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('beat_mix_lite-imagesloaded', "{$dir}/js/imagesloaded.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('beat_mix_lite-caroufredsel', "{$dir}/js/jquery.caroufredsel.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('beat_mix_lite-matchheight', "{$dir}/js/jquery.matchheight.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('beat_mix_lite-navgoco', "{$dir}/js/jquery.navgoco.js", array('jquery'), NULL, TRUE);    
+    wp_enqueue_script('beat_mix_lite-owl-carousel', "{$dir}/js/owl.carousel.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('beat_mix_lite-superfish', "{$dir}/js/superfish.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('beat_mix_lite-visible', "{$dir}/js/visible.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('beat_mix_lite-custom', "{$dir}/js/custom.js", array('jquery'), NULL, TRUE);
+    wp_localize_script('beat_mix_lite-custom', 'beat_mix_lite_vars', array());
 }
 
-function beatmix_lite_body_class($classes){
+function beat_mix_lite_body_class($classes){
     array_push($classes, 'kopa-sub-page');
 
     if(is_archive() || is_home()){
@@ -115,7 +114,7 @@ function beatmix_lite_body_class($classes){
 	return $classes;
 }
 
-function beatmix_lite_fonts_url() {
+function beat_mix_lite_fonts_url() {
     $fonts_url = '';
     $fonts     = array();
     $subsets   = 'latin,latin-ext';
@@ -162,21 +161,21 @@ function beatmix_lite_fonts_url() {
     return $fonts_url;
 }
 
-function beatmix_lite_init_options($options){
+function beat_mix_lite_init_options($options){
     $options['sections'][] = array(
-        'id'    => 'beatmix_lite_opt_header',
+        'id'    => 'beat_mix_lite_opt_header',
         'title' => esc_attr__('Header', 'beat-mix-lite'));
 
     $options['sections'][] = array(
-        'id'    => 'beatmix_lite_opt_footer',
+        'id'    => 'beat_mix_lite_opt_footer',
         'title' => esc_attr__('Footer', 'beat-mix-lite'));
 
     $options['sections'][] = array(
-        'id'    => 'beatmix_lite_opt_socials',
+        'id'    => 'beat_mix_lite_opt_socials',
         'title' => esc_attr__('Social links', 'beat-mix-lite'));
     
     $options['sections'][] = array(
-        'id'    => 'beatmix_lite_opt_blog',
+        'id'    => 'beat_mix_lite_opt_blog',
         'title' => esc_attr__('Blog posts', 'beat-mix-lite'));
 
     $options['settings'][] = array(
@@ -184,7 +183,7 @@ function beatmix_lite_init_options($options){
         'label'     => esc_attr__('Is show signup links (header)', 'beat-mix-lite'),
         'default'   => 1,
         'type'      => 'checkbox',        
-        'section'   => 'beatmix_lite_opt_header',
+        'section'   => 'beat_mix_lite_opt_header',
         'transport' => 'refresh');
 
     $options['settings'][] = array(
@@ -192,7 +191,7 @@ function beatmix_lite_init_options($options){
         'label'     => esc_attr__('Is show headlines', 'beat-mix-lite'),
         'default'   => 1,
         'type'      => 'checkbox',        
-        'section'   => 'beatmix_lite_opt_header',
+        'section'   => 'beat_mix_lite_opt_header',
         'transport' => 'refresh');
 
     $options['settings'][] = array(
@@ -201,7 +200,7 @@ function beatmix_lite_init_options($options){
         'description' => esc_attr__('Upload your logo image.', 'beat-mix-lite'),
         'default'     => '',
         'type'        => 'image',
-        'section'     => 'beatmix_lite_opt_header',
+        'section'     => 'beat_mix_lite_opt_header',
         'transport'   => 'refresh');
 
     $options['settings'][] = array(
@@ -210,7 +209,7 @@ function beatmix_lite_init_options($options){
         'description' => esc_attr__('Upload your header background image.', 'beat-mix-lite'),
         'default'     => '',
         'type'        => 'image',
-        'section'     => 'beatmix_lite_opt_header',
+        'section'     => 'beat_mix_lite_opt_header',
         'transport'   => 'refresh');
 
     $options['settings'][] = array(
@@ -219,7 +218,7 @@ function beatmix_lite_init_options($options){
         'description' => esc_attr__('Your copyright information on footer.', 'beat-mix-lite'),
         'default'     => '',
         'type'        => 'textarea',
-        'section'     => 'beatmix_lite_opt_footer',
+        'section'     => 'beat_mix_lite_opt_footer',
         'transport'   => 'refresh');
 
     $options['settings'][] = array(
@@ -231,24 +230,24 @@ function beatmix_lite_init_options($options){
             'one-col' => esc_attr__('One col', 'beat-mix-lite'),
             'masonry' => esc_attr__('Masonry', 'beat-mix-lite')
         ),
-        'section'     => 'beatmix_lite_opt_blog',
+        'section'     => 'beat_mix_lite_opt_blog',
         'transport'   => 'refresh');
 
-    $social_links = beatmix_get_socials();
+    $social_links = beat_mix_lite_get_socials();
     foreach($social_links as $social_slug => $social){
         $options['settings'][] = array(
             'settings'    => $social_slug,
             'label'       => $social[0],            
             'default'     => '',
             'type'        => 'text',
-            'section'     => 'beatmix_lite_opt_socials',
+            'section'     => 'beat_mix_lite_opt_socials',
             'transport'   => 'refresh');
     }
 
     return $options;
 }
 
-function beatmix_lite_register_sidebar(){
+function beat_mix_lite_register_sidebar(){
 
     $args = array(
         'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
@@ -274,8 +273,8 @@ function beatmix_lite_register_sidebar(){
     }
 }
 
-function beatmix_get_socials(){
-    return apply_filters('beatmix_get_socials', array(
+function beat_mix_lite_get_socials(){
+    return apply_filters('beat_mix_lite_get_socials', array(
         'facebook'    => array(__('Facebook', 'beat-mix-lite'), 'fa fa-facebook'),
         'twitter'     => array(__('Twitter', 'beat-mix-lite'), 'fa fa-twitter'),
         'pinterest'   => array(__('Pinterest', 'beat-mix-lite'), 'fa fa-pinterest'),
@@ -286,4 +285,8 @@ function beatmix_get_socials(){
         'instagram'   => array(__('Instagram', 'beat-mix-lite'), 'fa fa-instagram'),
     ));
 }
+
+
+
+
 

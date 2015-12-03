@@ -5,7 +5,7 @@ $is_show_headlines = (int)get_theme_mod('is_show_headlines', 1);
 if($is_show_headlines):
     $args = array(
         'post_type'           => array('post'),
-        'posts_per_page'      => (int)apply_filters('beatmix_lite_get_headlines_number_of_post', 10),
+        'posts_per_page'      => (int)apply_filters('beat_mix_lite_get_headlines_number_of_post', 10),
         'post_status'         => array('publish'),
         'ignore_sticky_posts' => true
     );

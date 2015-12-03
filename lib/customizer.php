@@ -1,15 +1,15 @@
 <?php
 
-add_action('after_setup_theme', array('Beatmix_Lite_Customization', 'get_instance'));	
+add_action('after_setup_theme', array('beat_mix_lite_Customization', 'get_instance'));	
 
-class Beatmix_Lite_Customization{
+class beat_mix_lite_Customization{
 
 	public function __construct(){
 		add_action('customize_register', array($this, 'customize_register'));
 	}
 
 	public static function get_instance(){
-		new Beatmix_Lite_Customization();		
+		new beat_mix_lite_Customization();		
 	}
 
 	public function customize_register($wp_customize){
@@ -17,7 +17,7 @@ class Beatmix_Lite_Customization{
 		$wp_customize->get_setting('blogdescription')->transport ='refresh';
 
 
-		$options = apply_filters('beatmix_lite_customization_init_options', array());
+		$options = apply_filters('beat_mix_lite_customization_init_options', array());
 		if($options){
 
 			#Add panels

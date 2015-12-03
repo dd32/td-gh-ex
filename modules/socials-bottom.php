@@ -1,5 +1,5 @@
 <?php
-$social_links = beatmix_get_socials();
+$social_links = beat_mix_lite_get_socials();
 if($social_links):
 	?>
 	<div class="footer-social-box">
