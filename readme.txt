@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.8 =
+* SEO Optimization
+
 = Version 1.0.7 =
 * Updated HTML5Shiv script to the latest version 3.7.3
 * Updated FontAwesome icons to the latest version 4.4.0

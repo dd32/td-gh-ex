@@ -41,18 +41,28 @@ wp_head();
 							</div><!-- #header-logo-image -->
 						<?php
 						}
-
-						if( get_theme_mod( 'freedom_show_header_logo_text', 'text_only' ) == 'both' || get_theme_mod( 'freedom_show_header_logo_text', 'text_only' ) == 'text_only' ) {
-						?>
-						<div id="header-text">
-							<h1 id="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-							</h1>
-							<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2><!-- #site-description -->
-						</div><!-- #header-text -->
-						<?php
+                  $screen_reader = '';
+						if( get_theme_mod( 'freedom_show_header_logo_text', 'text_only' ) == 'logo_only' || get_theme_mod( 'freedom_show_header_logo_text', 'text_only' ) == 'none' ) {
+								$screen_reader = 'screen-reader-text';
 						}
 						?>
+						<div id="header-text" class="<?php echo $screen_reader; ?>">
+						<?php
+							if ( is_front_page() || is_home() ) : ?>
+   							<h1 id="site-title">
+   								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+   							</h1>
+							<?php else : ?>
+   							<h3 id="site-title">
+   								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+   							</h3>
+							<?php endif;
+							$description = get_bloginfo( 'description', 'display' );
+							if ( $description || is_customize_preview() ) : ?>
+								<p id="site-description"><?php echo $description; ?></p>
+							<?php endif;
+						?>
+						</div><!-- #header-text -->
 					</div><!-- #header-left-section -->
 					<div id="header-right-section">
 						<?php
@@ -76,7 +86,7 @@ wp_head();
 
 			<nav id="site-navigation" class="main-navigation clearfix" role="navigation">
 				<div class="inner-wrap clearfix">
-					<h3 class="menu-toggle"><?php _e( 'Menu', 'freedom' ); ?></h3>
+					<p class="menu-toggle"><?php _e( 'Menu', 'freedom' ); ?></p>
 					<?php
 						if ( has_nav_menu( 'primary' ) ) {
 							wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-primary-container' ) );

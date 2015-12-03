@@ -26,16 +26,16 @@ if ( post_password_required() )
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h4 class="comments-title">
 			<?php
 				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'freedom' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
-		</h2>
+		</h4>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation clearfix" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'freedom' ); ?></h1>
+			<h4 class="screen-reader-text"><?php _e( 'Comment navigation', 'freedom' ); ?></h4>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'freedom' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'freedom' ) ); ?></div>
 		</nav><!-- #comment-nav-above -->
@@ -52,7 +52,7 @@ if ( post_password_required() )
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation clearfix" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'freedom' ); ?></h1>
+			<h4 class="screen-reader-text"><?php _e( 'Comment navigation', 'freedom' ); ?></h4>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'freedom' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'freedom' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->

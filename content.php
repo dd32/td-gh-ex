@@ -12,20 +12,20 @@
 	<?php do_action( 'freedom_before_post_content' ); ?>
 
 	<header class="entry-header">
-		<h1 class="entry-title">
+		<h2 class="entry-title">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-		</h1>
+		</h2>
 	</header>
 
-	<?php 
+	<?php
 		if ( 'post' == get_post_type() ) :
 			freedom_entry_meta();
-		endif; 
+		endif;
 	?>
 
 	<?php
 		if( has_post_thumbnail() ) {
-			$image = '';        			
+			$image = '';
      		$title_attribute = the_title_attribute( 'echo=0' );
      		$image .= '<figure class="post-featured-image">';
   			$image .= '<a href="' . get_permalink() . '" title="'.$title_attribute.'">';

@@ -57,17 +57,6 @@ function freedom_scripts_styles_method() {
 
 }
 
-add_action( 'admin_print_styles-appearance_page_options-framework', 'freedom_admin_styles' );
-/**
- * Enqueuing some styles.
- *
- * @uses wp_enqueue_style to register stylesheets.
- * @uses wp_enqueue_style to add styles.
- */
-function freedom_admin_styles() {
-	wp_enqueue_style( 'freedom_admin_style', FREEDOM_ADMIN_CSS_URL. '/admin.css' );
-}
-
 /****************************************************************************************/
 
 add_filter( 'excerpt_length', 'freedom_excerpt_length' );
@@ -354,7 +343,7 @@ function freedom_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'freedom' ); ?></h1>
+		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'freedom' ); ?></h3>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 

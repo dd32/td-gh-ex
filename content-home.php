@@ -10,10 +10,10 @@
 global $post_i;
 if( $post_i % 2 == 1 )
 	$article_class = 'tg-two-column-post-left';
-else 
+else
 	$article_class = 'tg-two-column-post-right';
 
-if( has_post_thumbnail() ) 
+if( has_post_thumbnail() )
 	$article_class .= ' yes-post-thumbnail';
 else
 	$article_class .= ' no-post-thumbnail';
@@ -25,7 +25,7 @@ $article_class .= ' post-box';
 	<?php do_action( 'freedom_before_post_content' ); ?>
 		<?php
 			if( has_post_thumbnail() ) {
-				$image = '';        			
+				$image = '';
 	     		$title_attribute = the_title_attribute( 'echo=0' );
 	     		$image .= '<figure class="post-featured-image">';
 	  			$image .= '<a href="' . get_permalink() . '" title="'.$title_attribute.'">';
@@ -41,14 +41,14 @@ $article_class .= ' post-box';
 
 		<div class="post-content-area">
 			<header class="entry-header">
-				<h1 class="entry-title">
+				<h2 class="entry-title">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-				</h1>
+				</h2>
 			</header>
 
 			<?php freedom_home_entry_meta(); ?>
 		</div>
-	
+
 	<?php do_action( 'freedom_after_post_content' ); ?>
 </article>
 
