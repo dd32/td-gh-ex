@@ -45,6 +45,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.3.6 =
+* SEO Optimization
+
 = Version 1.3.5 =
 * Updated HTML5Shiv script to the latest version 3.7.3
 * Updated Genericons to the latest version 3.4.1

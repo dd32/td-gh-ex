@@ -78,17 +78,6 @@ function spacious_scripts_styles_method() {
 
 }
 
-add_action( 'admin_print_styles-appearance_page_options-framework', 'spacious_admin_styles' );
-/**
- * Enqueuing some styles.
- *
- * @uses wp_enqueue_style to register stylesheets.
- * @uses wp_enqueue_style to add styles.
- */
-function spacious_admin_styles() {
-	wp_enqueue_style( 'spacious_admin_style', SPACIOUS_ADMIN_CSS_URL. '/admin.css' );
-}
-
 /****************************************************************************************/
 
 add_filter('the_content', 'spacious_add_mod_hatom_data');
@@ -370,7 +359,7 @@ function spacious_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'spacious' ); ?></h1>
+		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'spacious' ); ?></h3>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 

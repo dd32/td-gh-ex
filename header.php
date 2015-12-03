@@ -53,18 +53,27 @@ wp_head();
 							</div><!-- #header-logo-image -->
 						<?php
 						}
-
-						if( spacious_options( 'spacious_show_header_logo_text', 'text_only' ) == 'both' || spacious_options( 'spacious_show_header_logo_text', 'text_only' ) == 'text_only' ) {
+						$screen_reader = '';
+                  if ( ( spacious_options( 'spacious_show_header_logo_text', 'text_only' ) == 'logo_only' || spacious_options( 'spacious_show_header_logo_text', 'text_only' ) == 'none' ) ) {
+                     $screen_reader = 'screen-reader-text';
+                  }
 						?>
-						<div id="header-text">
+						<div id="header-text" class="<?php echo $screen_reader; ?>">
+                  <?php if ( is_front_page() || is_home() ) : ?>
 							<h1 id="site-title">
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 							</h1>
-							<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2><!-- #site-description -->
+                  <?php else : ?>
+                     <h3 id="site-title">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                     </h3>
+                  <?php endif; ?>
+                  <?php
+                  $description = get_bloginfo( 'description', 'display' );
+                  if ( $description || is_customize_preview() ) : ?>
+                     <p id="site-description"><?php echo $description; ?></p>
+                  <?php endif; ?><!-- #site-description -->
 						</div><!-- #header-text -->
-						<?php
-						}
-						?>
 					</div><!-- #header-left-section -->
 					<div id="header-right-section">
 						<?php
@@ -120,7 +129,11 @@ wp_head();
 							<?php
 							if( '' != spacious_header_title() ) {
 							?>
-						   	<h1 class="header-post-title-class"><?php echo spacious_header_title(); ?></h1>
+                        <?php if ( is_home() ) : ?>
+   						   	<h2 class="header-post-title-class"><?php echo spacious_header_title(); ?></h2>
+                        <?php else : ?>
+                           <h1 class="header-post-title-class"><?php echo spacious_header_title(); ?></h1>
+                        <?php endif; ?>
 						   <?php
 							}
 							?>
