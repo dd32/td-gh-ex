@@ -32,7 +32,7 @@ get_header(); ?>
 				<div class="<?php echo $page_class; ?>">
 					<div class="page_text_container">
 						<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
-						<h1 class="entry-title"><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+						<h2 class="entry-title"><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<?php the_excerpt(); ?><a class="more-link" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php _e( 'Read more','radiate' ); ?></a>
 					</div>
 				</div>

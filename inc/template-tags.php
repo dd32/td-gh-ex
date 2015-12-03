@@ -22,7 +22,7 @@ function radiate_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'radiate' ); ?></h1>
+		<h3 class="screen-reader-text"><?php _e( 'Posts navigation', 'radiate' ); ?></h3>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -55,7 +55,7 @@ function radiate_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'radiate' ); ?></h1>
+		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'radiate' ); ?></h3>
 		<div class="nav-links">
 
 			<div class="nav-previous"><?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'radiate' ) ); ?></div>
@@ -114,7 +114,7 @@ function radiate_comment( $comment, $args, $depth ) {
 				<?php comment_text(); ?>
 				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'radiate' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</section><!-- .comment-content -->
-			
+
 		</article><!-- #comment-## -->
 	<?php
 		break;
