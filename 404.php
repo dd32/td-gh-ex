@@ -4,9 +4,9 @@
 	
     <div class="row" id="blog" >
 		
-        <div class="pin-article span12">
+        <div class="post-container col-md-12">
 
-			<article class="article">
+			<div class="post-article">
             
                 <header class="title">
                 	<div class="line"><h1><?php _e( 'Not Found',"alhenalite" ) ?></h1></div>
@@ -14,7 +14,7 @@
                 
 				<p><?php _e( 'Sorry, no posts matched your criteria',"alhenalite"); ?> </p>
  
-			</article>
+			</div>
 
     	</div>
 		

@@ -1,7 +1,7 @@
 Alhena Lite WordPress Theme
 ---------------------
 
-Alhena Lite is a responsive clean and corporate WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
+Alhena offers a creative twist to a corporate WordPress theme. This theme gives you the ability to customize your site’s and now is compatible with WooCommerce plugin, to manage your e-commerce site, with a beautiful masonry layout. The theme is a responsive design, supporting all modern browsers (Firefox, Chrome, Safari, Opera and IE 8, 9, and 10) and is developed using HTML5 and CSS3.
 
 Created by ThemeinProgress, https://www.themeinprogress.com 
 Demo: http://demo.themeinprogress.com/?theme=Alhena

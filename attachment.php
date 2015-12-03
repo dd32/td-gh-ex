@@ -6,9 +6,9 @@
 
 	<div class="row" >
     
-        <div <?php post_class(array('pin-article', 'span12')); ?> >
+        <div <?php post_class(); ?> >
           
-            <article class="article attachment">
+           <div class="post-article attachment">
             
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -43,7 +43,7 @@
                 
 				</p>
                 
-                </article>
+                </div>
                 
             <div style="clear:both"></div>
             

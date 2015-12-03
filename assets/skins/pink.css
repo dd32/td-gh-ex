@@ -1,0 +1,246 @@
+body.custombody {
+    background: url(../images/background/patterns/pattern1.jpg);
+    background-repeat: repeat;
+    background-color: #f3f3f3;
+}
+
+header.header {
+    background-image: none;
+    background-color: #ffffff;
+}
+
+footer#footer {
+    background-image: none;
+    background-color: #ffffff;
+}
+
+p,
+dl,
+ul,
+ol {
+    color: #616161;
+}
+
+::-moz-selection {
+    background-color: #f97c8a;
+}
+
+::selection {
+    background-color: #f97c8a;
+}
+
+.button,
+.skills .views.active,
+.skills .views:hover,
+.filter li:hover,
+.filter li.active,
+#searchform input[type=submit],
+.contact-form input[type=submit],
+.comment-form input[type=submit],
+.button:hover,
+#header-box .tagcloud a,
+#bottom-box .tagcloud a,
+#top-box .tagcloud a,
+#footer-box .tagcloud a,
+#sidebar .tagcloud a,
+#slogan,
+.flex-control-paging li a.flex-active,
+.flex-control-paging li a:hover,
+.ei-slider-thumbs li.ei-slider-element,
+.slick-wrapper .slick-prev,
+.slick-wrapper .slick-next,
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce a.button,
+#footer .woocommerce a.button,
+.woocommerce #respond input#submit,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce .wc-proceed-to-checkout input,
+.woocommerce-product-search input[type=submit],
+.socials.share a,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+.header-cart-widget .widget_shopping_cart a.remove {
+    background-color: #f97c8a;
+}
+
+a,
+.works a.link:hover,
+.star-rating span {
+    color: #f97c8a;
+}
+
+nav#mainmenu ul li a,
+.header-cart a.cart-contents {
+    color: #333333;
+}
+
+nav#mainmenu ul ul li a,
+.header-cart-widget p,
+.header-cart-widget span,
+.header-cart-widget li,
+.header-cart-widget a {
+    color: #333333;
+}
+
+nav#mainmenu ul li a:hover,
+nav#mainmenu li:hover > a,
+nav#mainmenu ul li.current-menu-item > a,
+nav#mainmenu ul li.current_page_item > a,
+nav#mainmenu ul li.current-menu-parent > a,
+nav#mainmenu ul li.current_page_ancestor > a,
+nav#mainmenu ul li.current-menu-ancestor > a,
+nav#mainmenu ul ul li a:hover,
+nav#mainmenu ul ul li a:hover,
+nav#mainmenu ul ul li.current-menu-item > a,
+nav#mainmenu ul ul li.current_page_item > a,
+nav#mainmenu ul ul li.current_page_ancestor > a,
+nav#mainmenu ul ul li.current_page_ancestor > a,
+nav#mainmenu ul ul li.current-menu-ancestor > a,
+#logo a.logo,
+#logo a.logo:hover {
+    color: #f97c8a;
+}
+
+nav#mainmenu ul ul,
+.header-cart-widget {
+    background-color: #fafafa;
+}
+
+nav#mainmenu ul ul li ul {
+    border-top-color: #fafafa;
+}
+
+nav#mainmenu ul ul:before,
+.header-cart-widget:before {
+    border-bottom: 8px solid #fafafa;
+}
+
+a:hover,
+#footer a:hover,
+#footer .copyright a:hover,
+#footer ul.widget-category li:hover,
+#footer ul.widget-category li a:hover,
+.post-container .title h1 a:hover,
+.post-container .title h3 a:hover,
+blockquote h4.title a:hover,
+.logged-in-as a:hover,
+#comments a:hover,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+    color: #f07381;
+}
+
+.button:hover,
+.post-container .quote:hover,
+.post-container .link a:hover,
+#searchform input[type=submit]:hover,
+.contact-form input[type=submit]:hover,
+.comment-form input[type=submit]:hover,
+.slick-wrapper .circle,
+.slick-wrapper .post-container > .text .button:hover,
+.slick-wrapper .post-container:hover,
+#header-box .tagcloud a:hover,
+#top-box .tagcloud a:hover,
+#bottom-box .tagcloud a:hover,
+#footer-box .tagcloud a:hover,
+#sidebar .tagcloud a:hover,
+.wp-pagenavi a:hover,
+.wip-pagination a span:hover,
+.wip-pagination span,
+.wp-pagenavi span.current,
+.theme-default .nivo-directionNav a:hover,
+.flexslider .flex-next:hover,
+.flexslider .flex-prev:hover,
+.flex-caption .description,
+.slick-wrapper .slick-prev:hover,
+.slick-wrapper .slick-next:hover,
+.flex-caption .url:hover,
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover,
+.woocommerce a.button:hover,
+.woocommerce a.add_to_cart_button:hover,
+.woocommerce .woocommerce-message a.button:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce .wc-proceed-to-checkout input:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce-product-search input[type=submit]:hover,
+.socials.share a:hover,
+#top-box .slick-wrapper .post-container:hover,
+.header-cart-widget .widget_shopping_cart a.remove:hover {
+    background-color: #f07381;
+}
+
+.slick-wrapper .post-container:hover,
+.woocommerce-product-search input[type=submit],
+.woocommerce-product-search input[type=submit]:hover {
+    border-color: #f07381 !important;
+}
+
+#searchform input[type=submit],
+#searchform input[type=submit]:hover,
+.contact-form input[type=submit],
+.contact-form input[type=submit]:hover,
+.comment-form input[type=submit],
+.comment-form input[type=submit]:hover,
+.slick-wrapper .post-container > .text,
+.button,
+.button:hover,
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover,
+.woocommerce a.button:hover,
+.woocommerce a.add_to_cart_button:hover,
+.woocommerce .woocommerce-message a.button:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce .wc-proceed-to-checkout input:hover,
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce a.button,
+#footer .woocommerce a.button,
+.woocommerce #respond input#submit,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce .wc-proceed-to-checkout input,
+.woocommerce-product-search input[type=submit]:hover {
+    border-color: #f07381 !important;
+}
+
+#footer,
+#footer .widget,
+article blockquote {
+    border-color: #f07381;
+}
+
+#footer .title,
+#footer p,
+#footer li,
+#footer address,
+#footer dd,
+#footer blockquote,
+#footer td,
+#footer th,
+#footer .textwidget,
+#footer a,
+#footer ul,
+#footer p,
+#footer .copyright p,
+#footer .copyright a {
+    color: #333333;
+}

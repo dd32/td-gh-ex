@@ -81,25 +81,80 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 				"section" => "colorscheme_section",
 				"options" => array (
 
-				   "light_blue" => __( "Light & Blue","alhenalite"),
-				   "light_turquoise" => __( "Light & Turquoise","alhenalite"),
-				   "light_orange" => __( "Light & Orange","alhenalite"),
-				   "light_red" => __( "Light & Red","alhenalite"),
-				   "light_purple" => __( "Light & Purple","alhenalite"),
-				   "light_yellow" => __( "Light & Yellow","alhenalite"),
-				   "light_green" => __( "Light & Green","alhenalite"),
-				   "dark_blue" => __( "Dark & Blue","alhenalite"),
-				   "dark_turquoise" => __( "Dark & Turquoise","alhenalite"),
-				   "dark_orange" => __( "Dark & Orange","alhenalite"),
-				   "dark_red" => __( "Dark & Red","alhenalite"),
-				   "dark_purple" => __( "Dark & Purple","alhenalite"),
-				   "dark_yellow" => __( "Dark & Yellow","alhenalite"),
-				   "dark_green" => __( "Dark & Green","alhenalite")
+				   "light_orange" => __( "Light&Orange","alhenalite"),
+				   "light_turquoise" => __( "Light&Turquoise","alhenalite"),
+				   "light_blue" => __( "Light&Blue","alhenalite"),
+				   "light_red" => __( "Light&Red","alhenalite"),
+				   "light_pink" => __( "Light&Pink","alhenalite"),
+				   "light_purple" => __( "Light&Purple","alhenalite"),
+				   "light_yellow" => __( "Light&Yellow","alhenalite"),
+				   "light_green" => __( "Light&Green","alhenalite"),
+				   "orange" => __( "Orange","alhenalite"),
+				   "turquoise" => __( "Turquoise","alhenalite"),
+				   "blue" => __( "Blue","alhenalite"),
+				   "red" => __( "Red","alhenalite"),
+				   "pink" => __( "Pink","alhenalite"),
+				   "purple" => __( "Purple","alhenalite"),
+				   "yellow" => __( "Yellow","alhenalite"),
+				   "green" => __( "Green","alhenalite"),
+				   "dark_orange" => __( "Dark&Orange","alhenalite"),
+				   "dark_turquoise" => __( "Dark&Turquoise","alhenalite"),
+				   "dark_blue" => __( "Dark&Blue","alhenalite"),
+				   "dark_red" => __( "Dark&Red","alhenalite"),
+				   "dark_pink" => __( "Dark&Pink","alhenalite"),
+				   "dark_purple" => __( "Dark&Purple","alhenalite"),
+				   "dark_yellow" => __( "Dark&Yellow","alhenalite"),
+				   "dark_green" => __( "Dark&Green","alhenalite"),
 				
 				),
 				
-				"std" => "turquoise",
+				"std" => "light_blue",
 			
+			),
+
+			/* PAGE WIDTH */ 
+
+			array( 
+
+				"title" => __( "Page width",'alhenalite'),
+				"type" => "section",
+				"id" => "pagewidth_section",
+				"panel" => "general_panel",
+				"priority" => "12",
+
+			),
+
+			array( 
+
+				"label" => __( "Screen greater than 768px",'alhenalite'),
+				"description" => __( "Set a width, for a screen greater than 768 pixel (for example 750 and not 750px ) ",'alhenalite'),
+				"id" => "wip_screen1",
+				"type" => "text",
+				"section" => "pagewidth_section",
+				"std" => "750",
+
+			),
+
+			array( 
+
+				"label" => __( "Screen greater than 992px",'alhenalite'),
+				"description" => __( "Set a width, for a screen greater than 992 pixel (for example 940 and not 940px ) ",'alhenalite'),
+				"id" => "wip_screen2",
+				"type" => "text",
+				"section" => "pagewidth_section",
+				"std" => "940",
+
+			),
+
+			array( 
+
+				"label" => __( "Screen greater than 1200px",'alhenalite'),
+				"description" => __( "Set a width, in px, for a screen greater than 1200 pixel (for example 1170 and not 1170px ) ",'alhenalite'),
+				"id" => "wip_screen3",
+				"type" => "text",
+				"section" => "pagewidth_section",
+				"std" => "940",
+
 			),
 
 			/* SETTINGS SECTION */ 
@@ -174,6 +229,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 				   "full" => __( "Full Width","alhenalite"),
 				   "left-sidebar" => __( "Left Sidebar","alhenalite"),
 				   "right-sidebar" => __( "Right Sidebar","alhenalite"),
+				   "masonry" => __( "Masonry","alhenalite"),
 				),
 				
 				"std" => "right-sidebar",
@@ -192,10 +248,46 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 				   "full" => __( "Full Width","alhenalite"),
 				   "left-sidebar" => __( "Left Sidebar","alhenalite"),
 				   "right-sidebar" => __( "Right Sidebar","alhenalite"),
+				   "masonry" => __( "Masonry","alhenalite"),
 				),
 				
 				"std" => "right-sidebar",
 			
+			),
+			
+			/* LOGIN AREA SECTION */ 
+
+			array( 
+
+				"title" => __( "Login Area",'alhenalite'),
+				"type" => "section",
+				"id" => "login_area_section",
+				"panel" => "general_panel",
+				"priority" => "17",
+
+			),
+
+			array( 
+
+				"label" => __( "Custom Logo",'alhenalite'),
+				"description" => __( "Upload your custom logo, for the admin area.( Max 320px as width )",'alhenalite'),
+				"id" => "wip_login_logo",
+				"type" => "upload",
+				"section" => "login_area_section",
+				"std" => "",
+
+			),
+
+
+			array( 
+
+				"label" => __( "Height",'alhenalite'),
+				"description" => __( "Insert the height of your custom logo, without px (for example 550 and not 550px).",'alhenalite'),
+				"id" => "wip_login_logo_height",
+				"type" => "text",
+				"section" => "login_area_section",
+				"std" => "550",
+
 			),
 
 			/* HEADER AREA SECTION */ 

@@ -3,7 +3,7 @@
         <section id="slogan">
             <div class="container">
                 <div class="row">
-                    <div class="span12">
+                    <div class="col-md-12">
         
                         <h1><?php _e( '<span>Search </span> results for', "alhenalite" ) ?> <strong><?php echo $s; ?> </strong></h1>
                     
@@ -19,7 +19,7 @@
         <div class="container main-content blog">
             <div class="row" id="blog" >
 
-                <div class="pin-article span12">
+                <div class="post-container col-md-12">
         
                     <?php do_action('alhenalite_postformat'); ?>
             
@@ -35,8 +35,8 @@
         <div class="container main-content blog">
             <div class="row" id="blog" >
 
-                <div class="pin-article span12">
-        			<article class="article">
+                <div class="post-container col-md-12">
+        			<div class="post-article">
 
                     <header class="title">
                         <div class="line"><h1><?php _e( 'Not Found',"alhenalite" ) ?></h1></div>
@@ -54,7 +54,7 @@
                     <div class="clear"></div>  
                     </section>
                 
-                    </article>
+                    </div>
                     
                     <div style="clear:both"></div>
                 

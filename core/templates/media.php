@@ -9,12 +9,24 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-function alhenalite_thumbnail($id,$class) {
-	if ( has_post_thumbnail() ) :
-		echo '<div class="'.$class.'">';
-			the_post_thumbnail($id);
-		echo '</div>';
-	endif; 
+if (!function_exists('alhenalite_thumbnail_function')) {
+
+	function alhenalite_thumbnail_function ($id, $class = "" ) {
+	
+		if ( '' != get_the_post_thumbnail() ) :
+	
+			echo '<div class="'.$class.'">';
+	
+				the_post_thumbnail($id);
+	
+			echo '</div>';
+	
+		endif; 
+	
+	}
+
+	add_action( 'alhenalite_thumbnail', 'alhenalite_thumbnail_function', 10, 2 );
+
 }
 
 ?>

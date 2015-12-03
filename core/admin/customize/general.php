@@ -9,7 +9,7 @@ if (!function_exists('alhenalite_admin_init')) {
 		 wp_enqueue_style( "thickbox" );
 		 add_thickbox();
 	
-		$file_dir = get_template_directory_uri()."/core/admin/inc/";
+		$file_dir = get_template_directory_uri()."/core/admin/assets/";
 	
 		wp_enqueue_style ( 'jaxlite_style', $file_dir.'css/theme.css' ); 
 		wp_enqueue_script( 'jaxlite_script', $file_dir.'js/theme.js',array('jquery'),'',TRUE ); 

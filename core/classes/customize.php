@@ -17,14 +17,14 @@ class alhenalite_customize {
 
 		wp_enqueue_style ( 
 			'alhenalite_panel', 
-			get_template_directory_uri() . '/core/admin/inc/css/customize.css', 
+			get_template_directory_uri() . '/core/admin/assets/css/customize.css', 
 			array(), 
 			''
 		);
 
 		wp_enqueue_script( 
 			  'customizer-preview',
-			  get_template_directory_uri().'/core/admin/inc/js/customizer-preview.js',
+			  get_template_directory_uri().'/core/admin/assets/js/customizer-preview.js',
 			  array( 'jquery' ),
 			  '1.0.0', 
 			  true
@@ -32,7 +32,7 @@ class alhenalite_customize {
 
 		$alhenalite_details = array(
 			'label' => __( 'Upgrade to Alhena Premium', 'alhenalite' ),
-			'url' => esc_url('https://www.themeinprogress.com/alhena-free-responsive-corporate-wordpress-theme/?ref=panel')
+			'url' => esc_url('https://www.themeinprogress.com/alhena-free-responsive-corporate-wordpress-theme/?aff=panel')
 		);
 	
 		wp_localize_script( 'customizer-preview', 'alhenalite_details', $alhenalite_details );
