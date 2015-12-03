@@ -74,7 +74,6 @@ add_action('admin_print_styles', 'esteem_admin_styles');
  */
 function esteem_admin_styles() {
 	wp_enqueue_style( 'esteem-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '3.2.1' );
-	wp_enqueue_style( 'esteem_admin_style', ESTEEM_ADMIN_CSS_URL. '/admin.css' );
 }
 
 /****************************************************************************************/

@@ -36,17 +36,32 @@ wp_head();
 	</a>
 							</div><!-- .header-logo-image -->
 						<?php }
-						if( get_theme_mod( 'esteem_show_header_logo_text', 'text_only' ) == 'both' || get_theme_mod( 'esteem_show_header_logo_text', 'text_only' ) == 'text_only' ) {
+
+                  $screen_reader = '';
+						if( get_theme_mod( 'esteem_show_header_logo_text', 'text_only' ) == 'logo_only' || get_theme_mod( 'esteem_show_header_logo_text', 'text_only' ) == 'none' ) {
+                        $screen_reader = 'screen-reader-text';
+                  }
 						?>
-							<div class="header-text">
-								<h1 id="site-title">
-										<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-											<?php bloginfo( 'name' ); ?>
-										</a>
-									</h1>
-								<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+							<div class="header-text <?php echo $screen_reader; ?>">
+                        <?php if ( is_front_page() || is_home() ) : ?>
+   								<h1 id="site-title">
+   									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+   										<?php bloginfo( 'name' ); ?>
+   									</a>
+   								</h1>
+                        <?php else : ?>
+                           <h3 id="site-title">
+                              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                                 <?php bloginfo( 'name' ); ?>
+                              </a>
+                           </h3>
+                        <?php endif; ?>
+                        <?php
+                        $description = get_bloginfo( 'description', 'display' );
+                        if ( $description || is_customize_preview() ) : ?>
+   								<p class="site-description"><?php echo $description; ?></p>
+                        <?php endif; ?>
 							</div><!-- .header-text -->
-						<?php } ?>
 					</div><!-- .site-branding -->
 					<div class="hgroup-wrap-right">
 						<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -110,7 +125,11 @@ wp_head();
 				<section class="page-title-bar clearfix">
 					<div class="inner-wrap">
 						<?php if( '' != esteem_header_title() ) { ?>
-							<div class="page-title-wrap"><h1><?php echo esteem_header_title(); ?></h1></div>
+                  <?php if ( is_home() ) : ?>
+							<div class="page-title-wrap"><h2><?php echo esteem_header_title(); ?></h2></div>
+                  <?php else : ?>
+                     <div class="page-title-wrap"><h1><?php echo esteem_header_title(); ?></h1></div>
+                  <?php endif; ?>
 						<?php } ?>
 						<?php if( function_exists( 'esteem_breadcrumb' ) ) { esteem_breadcrumb(); } ?>
 					</div>
