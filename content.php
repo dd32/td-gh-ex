@@ -12,9 +12,9 @@
 	<?php do_action( 'accelerate_before_post_content' ); ?>
 
 	<header class="entry-header">
-		<h1 class="entry-title">
+		<h2 class="entry-title">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-		</h1>
+		</h2>
 	</header>
 
 	<?php

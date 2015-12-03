@@ -49,6 +49,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= 1.2.3 =
+* Some fixes for better SEO.
+* Changed Screenshot.
+
 = 1.2.2 =
 * Updated HTML5Shiv script to the latest version 3.7.3
 * Updated FontAwesome icons to the latest version 4.4.0

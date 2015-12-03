@@ -15,6 +15,11 @@
 	<div id="primary">
 		<div id="content" class="clearfix">
 			<?php if ( have_posts() ) : ?>
+				<header class="page-header">
+					<h1 class="page-title">
+						<?php _e( 'Search Results', 'accelerate' ); ?>
+					</h1>
+				</header><!-- .page-header -->
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -32,9 +37,9 @@
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
-	
+
 	<?php accelerate_sidebar_select(); ?>
-	
+
 	<?php do_action( 'accelerate_after_body_content' ); ?>
 
 <?php get_footer(); ?>

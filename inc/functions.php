@@ -71,17 +71,6 @@ function accelerate_scripts_styles_method() {
 	}
 }
 
-add_action( 'admin_print_styles-appearance_page_options-framework', 'accelerate_admin_styles' );
-/**
- * Enqueuing some styles.
- *
- * @uses wp_enqueue_style to register stylesheets.
- * @uses wp_enqueue_style to add styles.
- */
-function accelerate_admin_styles() {
-	wp_enqueue_style( 'accelerate_admin_style', ACCELERATE_ADMIN_CSS_URL. '/admin.css' );
-}
-
 /****************************************************************************************/
 
 add_filter( 'excerpt_length', 'accelerate_excerpt_length' );
@@ -410,7 +399,7 @@ function accelerate_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'accelerate' ); ?></h1>
+		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'accelerate' ); ?></h3>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
