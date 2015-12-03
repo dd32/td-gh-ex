@@ -18,11 +18,11 @@ if (!function_exists('bazaarlite_infinitescroll_masonry_script_function')) {
 	
 			jQuery.noConflict()(function($){
 
-				$('.masonry').infinitescroll({
+				$('.row.masonry').infinitescroll({
 					
 					navSelector  : ".wp-pagenavi",            
 					nextSelector : ".wp-pagenavi a", 
-					itemSelector : ".masonry .post-container",
+					itemSelector : ".row.masonry .post-container",
 					loading: {
 						img: "",
 						msgText: '<div class="load-more"><i class="fa fa-circle-o-notch fa-spin"></i></div>',
@@ -42,7 +42,7 @@ if (!function_exists('bazaarlite_infinitescroll_masonry_script_function')) {
 							opacity: 1
 						});
 
-						$('.masonry').masonry('appended', $newElems);
+						$('.row.masonry').masonry('appended', $newElems);
 
 					});
 					

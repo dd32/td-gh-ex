@@ -37,7 +37,7 @@ if ( ! function_exists( 'bazaarlite_header_cart' ) ) {
             <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','bazaar-lite' ); ?>">
                 
                 <i class="fa fa-shopping-cart"></i> 
-                <span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
+                <span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'bazaar-lite' ), WC()->cart->cart_contents_count ); ?></span>
     
             </a>
                         
@@ -65,7 +65,7 @@ if ( ! function_exists( 'bazaarlite_cart_link_fragment' ) ) {
 		<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','bazaar-lite' ); ?>">
             
 			<i class="fa fa-shopping-cart"></i> 
-			<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
+			<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'bazaar-lite' ), WC()->cart->cart_contents_count ); ?></span>
 
 		</a>
         

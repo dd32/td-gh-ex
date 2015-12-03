@@ -20,11 +20,11 @@ if (!function_exists('bazaarlite_masonry_script_function')) {
 						
 				function wip_masonry() {
 							
-					if ( $(window).width() > 992 ) {
+					if ( $(window).width() >= 992 ) {
 	
-						$('.masonry').imagesLoaded(function () {
+						$('.row.masonry').imagesLoaded(function () {
 	
-							$('.masonry').masonry({
+							$('.row.masonry').masonry({
 								itemSelector: '.masonry-element',
 								isAnimated: true
 							});
@@ -35,7 +35,7 @@ if (!function_exists('bazaarlite_masonry_script_function')) {
 								
 					else {
 								
-						$('.masonry').masonry( 'destroy' );
+						$('.row.masonry').masonry( 'destroy' );
 		
 					}
 		

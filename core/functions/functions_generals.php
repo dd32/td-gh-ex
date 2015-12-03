@@ -75,7 +75,7 @@ if (!function_exists('bazaarlite_get_archive_title')) {
 
 	function bazaarlite_get_archive_title() {
 		
-		if ( get_the_archive_title()  && ( get_the_archive_title() <> __( 'Archives' )) && (!bazaarlite_is_woocommerce_active('is_woocommerce')) ) :
+		if ( get_the_archive_title()  && ( get_the_archive_title() <> __( 'Archives', 'bazaar-lite' )) && (!bazaarlite_is_woocommerce_active('is_woocommerce')) ) :
 		
 			return get_the_archive_title();
 		

@@ -29,12 +29,12 @@
 .header-cart-widget { 
 	display:none;
 	position: absolute; 
-	top:70px; 
-	left:50%;
+	top:55px; 
+	right:0;
 	margin-left:-150px; 
-	background:#fff; 
 	width:300px;
 	z-index:1001;
+	padding-top:15px;
 }
 
 .header-cart-widget .widget_shopping_cart {
@@ -42,6 +42,7 @@
 	padding:15px;
 	text-align:center;
 	width:100%;
+	background:#fff; 
 }
 
 .header-cart-widget .widget_shopping_cart a {
