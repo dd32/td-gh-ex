@@ -12,9 +12,9 @@ register_nav_menu('header-menu', __('Header Menu', 'whitespektrum'));
 	
 function whitespektrum_widgets_init() {
 	register_sidebar( array (
-		'name'                  => __('Main Sidebar', 'whitespektrum'),
-		'id'			=> 'sidebar-1',	
-		'description' 		=>__('Appear Only on Posts'),
+		'name'              => __('Main Sidebar', 'whitespektrum'),
+        'id'			    => 'sidebar-1',	
+		'description' 		=>__('Appear Only on Posts', 'whitespektrum'),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' 		=> '</aside>',
 		'before_title' 		=> '<h2 class="widget-title">',
@@ -24,7 +24,7 @@ function whitespektrum_widgets_init() {
 	register_sidebar( array (
 		'name' 			=> __('Page Sidebar', 'whitespektrum'),
 		'id'			=> 'sidebar-2',	
-		'description' 		=>__('Appear Only on Pages'),
+		'description' 		=>__('Appear Only on Pages', 'whitespektrum'),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' 		=> '</aside>',
 		'before_title' 		=> '<h2 class="widget-title">',
@@ -34,7 +34,7 @@ function whitespektrum_widgets_init() {
 	register_sidebar( array (
 		'name' 			=> __('Custom Sidebar', 'whitespektrum'),
 		'id'			=> 'sidebar-3',	
-		'description' 		=>__('Appear Only on Custom Pages'),
+		'description' 		=>__('Appear Only on Custom Pages', 'whitespektrum'),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' 		=> '</aside>',
 		'before_title' 		=> '<h2 class="widget-title">',
@@ -44,7 +44,7 @@ function whitespektrum_widgets_init() {
 	register_sidebar( array (
 		'name' 			=> __('Profile Sidebar', 'whitespektrum'),
 		'id'			=> 'sidebar-4',	
-		'description' 		=>__('Appear Only on Profile Page'),
+		'description' 		=>__('Appear Only on Profile Page', 'whitespektrum'),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' 		=> '</aside>',
 		'before_title' 		=> '<h2 class="widget-title">',
@@ -54,7 +54,7 @@ function whitespektrum_widgets_init() {
 	register_sidebar( array (
 		'name' 			=> __('Contact Sidebar', 'whitespektrum'),
 		'id'			=> 'sidebar-5',	
-		'description' 		=>__('Appear Only on Contact Page'),
+		'description' 		=>__('Appear Only on Contact Page', 'whitespektrum'),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' 		=> '</aside>',
 		'before_title' 		=> '<h2 class="widget-title">',
