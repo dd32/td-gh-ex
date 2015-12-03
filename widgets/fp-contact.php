@@ -5,7 +5,7 @@ class Quill_Contact extends WP_Widget {
 // constructor
     function quill_contact() {
 		$widget_ops = array('classname' => 'quill_contact_widget', 'description' => __( 'Display the contact methods for your firm', 'quill') );
-        parent::WP_Widget(false, $name = __('Quill FP: Contact', 'quill'), $widget_ops);
+        parent::__construct(false, $name = __('Quill FP: Contact', 'quill'), $widget_ops);
 		$this->alt_option_name = 'quill_contact_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );

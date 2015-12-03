@@ -1,5 +1,10 @@
 Changelog
 
+Quill 1.09
+----------------------
+- Updated TGMPA;
+- Updated widget constructors.
+
 Quill 1.08
 ----------------------
 - Display Header Text checkbox removed from customizer (user should choose between logo or text);

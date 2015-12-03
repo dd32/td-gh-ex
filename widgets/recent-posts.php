@@ -5,7 +5,7 @@ class Quill_Recent_Posts extends WP_Widget {
 // constructor
     function quill_recent_posts() {
 		$widget_ops = array('classname' => 'quill_recent_posts_widget', 'description' => __( 'Display your site&#8217;s recent posts with thumbnails.', 'quill') );
-        parent::WP_Widget(false, $name = __('Quill: Recent Posts', 'quill'), $widget_ops);
+        parent::__construct(false, $name = __('Quill: Recent Posts', 'quill'), $widget_ops);
 		$this->alt_option_name = 'quill_Recent_Posts_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );

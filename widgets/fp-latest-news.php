@@ -5,7 +5,7 @@ class Quill_Latest_News extends WP_Widget {
 // constructor
     function quill_latest_news() {
 		$widget_ops = array('classname' => 'quill_latest_news_widget', 'description' => __( 'Show the latest news from your blog.', 'quill') );
-        parent::WP_Widget(false, $name = __('Quill FP: Latest News', 'quill'), $widget_ops);
+        parent::__construct(false, $name = __('Quill FP: Latest News', 'quill'), $widget_ops);
 		$this->alt_option_name = 'quill_latest_news_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );
