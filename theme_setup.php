@@ -51,28 +51,28 @@
   								'third_thumb_image'=>$template_uri.'/images/default/home_thumb2.jpg',
   								'enable_services' => 'yes', 
   								'service1_title'=>__('Spa Treatment','sis_spa'),
-  								'service1_image'=>$template_uri.'/images/default/home_service_thumb.jpg',
+  								'service1_image'=>$template_uri.'/images/default/home_service_thumb1.jpg',
   								'service1_content'=>__('Pellentesque habitant morbi tristique senectus 
                                                         et netus et malesuada fames ac turpis egestas 
                                                       In in massa urna, vitae vestibulum orci. yoursb
                                                        Maecenas quis est sed mauris...','sis_spa'),
   													 
   								'service2_title'=>__('Detox Treatment','sis_spa'),
-  								'service2_image'=>$template_uri.'/images/default/home_service_thumb.jpg',
+  								'service2_image'=>$template_uri.'/images/default/home_service_thumb2.jpg',
   								'service2_content'=>__('Pellentesque habitant morbi tristique senectus 
                                                         et netus et malesuada fames ac turpis egestas 
                                                       In in massa urna, vitae vestibulum orci. yoursb
                                                        Maecenas quis est sed mauris...','sis_spa'),
   													 
   								'service3_title'=>__('Facial Treatment','sis_spa'),
-  								'service3_image'=>$template_uri.'/images/default/home_service_thumb.jpg',
+  								'service3_image'=>$template_uri.'/images/default/home_service_thumb1.jpg',
   								'service3_content'=>__('Pellentesque habitant morbi tristique senectus 
                                                         et netus et malesuada fames ac turpis egestas 
                                                       In in massa urna, vitae vestibulum orci. yoursb
                                                        Maecenas quis est sed mauris...','sis_spa'),
   													 
   								'service4_title'=>__('Other Treatment','sis_spa'),
-  								'service4_image'=>$template_uri.'/images/default/home_service_thumb.jpg',
+  								'service4_image'=>$template_uri.'/images/default/home_service_thumb2.jpg',
   								'service4_content'=>__('Pellentesque habitant morbi tristique senectus 
                                                         et netus et malesuada fames ac turpis egestas 
                                                       In in massa urna, vitae vestibulum orci. yoursb
@@ -82,13 +82,13 @@
   								'product1_image'=>$template_uri.'/images/default/home_product_thumb.jpg',
   								  
   								'product2_title'=>__('Product 2','sis_spa'),
-  								'product2_image'=>$template_uri.'/images/default/home_product_thumb.jpg',
+  								'product2_image'=>$template_uri.'/images/default/home_product_thumb2.jpg',
   								  
   								'product3_title'=>__('Product 3','sis_spa'),
   								'product3_image'=>$template_uri.'/images/default/home_product_thumb.jpg',
   								  
   								'product4_title'=>__('Product 4','sis_spa'),
-  								'product4_image'=>$template_uri.'/images/default/home_product_thumb.jpg',
+  								'product4_image'=>$template_uri.'/images/default/home_product_thumb2.jpg',
   								  
   								'product5_title'=>__('Product 5','sis_spa'),
   								'product5_image'=>$template_uri.'/images/default/home_product_thumb.jpg',
