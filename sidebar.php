@@ -1,17 +1,17 @@
-<div id="sidebar">
-	<?php 	if ( ! dynamic_sidebar( 'top-sidebar-widgets' ) ) : ?>
-		<div class="section">
-			<h3><?php _e('Search', 'undedicated'); ?></h3>
-			<?php get_search_form(); ?>
-		</div>
-		
-		<div class="section widget_categories">
-			<h3><?php _e('Categories', 'undedicated'); ?></h3>
-			<ul>
-				<?php wp_list_categories('title_li=&hierarchical=0'); ?>
-			</ul>
-		</div>
-	<?php endif; ?>
-</div><!--#sidebar-->
+<?php
+/**
+ * The sidebar containing the main widget area.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package undedicated
+ */
 
-<hr />
+if ( ! is_active_sidebar( 'primary-sidebar' ) ) {
+	return;
+}
+?>
+
+<div id="secondary" class="widget-area" role="complementary">
+	<?php dynamic_sidebar( 'primary-sidebar' ); ?>
+</div><!-- #secondary -->

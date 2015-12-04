@@ -1,16 +1,35 @@
-<div id="footer">
-	<?php wp_nav_menu( array( 'menu' => 'Footer Navigation', 'container' => 'div','container_id' => 'footer-navi', 'depth' => '1', 'theme_location' => 'footer-menu',  'fallback_cb' => '' ) ); ?>
-	<p><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo ('name');?>"><?php bloginfo ('name');?></a> <?php _e('powered by','undedicated'); ?> <a href="http://www.wordpress.org"><?php _e('WordPress','undedicated'); ?></a> and <a href="http://www.speckygeek.com/undedicated-minimal-wordpress-theme/" title="Undedicated"><?php _e('Undedicated','undedicated'); ?></a>.</p>
-</div><!--#footer-->
+<?php
+/**
+ * The template for displaying the footer.
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package undedicated
+ */
 
-</div><!--#wrapper -->
+?>
 
-<?php if ( isset($options['analytics_code']) && ($options['analytics_code']!="") ){ ?>
-<?php echo(stripslashes ($options['analytics_code']));?>
-<?php } ?>
-		
+	</div><!-- #content -->
 
-<!-- Do not remove this, it's required for certain plugins which generally use this hook to reference JavaScript files. -->
-<?php wp_footer(); ?>	
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info wrap">
+			<?php _e( 'Powered by ', 'undedicated' ); ?><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'undedicated' ) ); ?>"><?php _e( 'WordPress', 'undedicated' ); ?></a>
+			<span class="sep"> & </span>
+			<?php
+				if ( is_front_page() ) {
+					printf( esc_html__( '%1$s theme by %2$s.', 'undedicated' ), 'Undedicated', '<a href="http://reduxthemes.com" rel="designer">ReduxThemes.com</a>' );
+				} else {
+					printf( esc_html__( '%1$s theme by %2$s.', 'undedicated' ), 'Undedicated', '<a href="http://reduxthemes.com" rel="nofollow">ReduxThemes.com</a>' );
+				
+				} 
+			?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<?php wp_footer(); ?>
+
 </body>
 </html>

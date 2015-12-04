@@ -1,32 +1,37 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all pages.
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package undedicated
+ */
 
-	<div id="content" class="narrow">
+get_header(); ?>
 
-	<?php if (have_posts()) : ?>
-		<?php while (have_posts()) : the_post(); ?>
-		
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<div class="post-header">
-				<h1 class="page-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-			</div>
-			
-			<?php the_content( __('<p>Read more &raquo;</p>', 'undedicated') ); ?>
-			<?php wp_link_pages( __('before=<div class="post-page-links">Pages:&after=</div>', 'undedicated')) ; ?>
-			
-		</div>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-		<?php endwhile; ?>
-		
-	<?php else : ?>
-		
-		<h2 class="page-title"><?php _e('Not Found', 'undedicated'); ?></h2>
-		<p><?php _e('Sorry, but you are looking for something that is not here.', 'undedicated'); ?></p>
-		
-	<?php endif; ?>
-	
-	<?php comments_template(); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-	</div><!--#content-->
-	
-	<?php get_sidebar(); ?>
-	<?php get_footer(); ?>
+				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+				?>
+
+			<?php endwhile; // End of the loop. ?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>

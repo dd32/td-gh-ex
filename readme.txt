@@ -1,63 +1,52 @@
-Undedicated WordPress Theme
-Version 1.0
-Released November 2010
-By Specky Geek
-www.speckygeek.com
--------------------
+=== Undedicated V2 ===
 
-Thanks for downloading!
+Undedicated V2
+Author: XtraPunch.com
+Author URI: http://xtrapunch.com
+Support Email: info@xtrapunch.com
 
-Undedicated is a minimal WordPress theme that has been featured on top design blogs. 
+Requires at least: 4.0
+Tested up to: 4.2.2
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Copyright with the author.
 
-It features following templates:
-  * Author Template
-  * Archives Template (For creating archives page. Pepped up with jQuery)
-  * Attachment Template (For better display of attchments such as images)
+Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
-Jenny allows you to stay in control of everything. 
-It supports Custom Header, Custom Background, Custom Menus and Widgets.
+== Description ==
 
-Jenny Theme Options page also allows you to easily make the following changes:
- * Add Twitter Link
- * Add Facebook Link
- * Add Custom Feed URL
- * Add Adsense/Ad Code
- * Add (Google) Analytics Code
- * Tweak Feed Options
- * Add Custom CSS Styles
- 
-Supports all major browsers. Works in IE6 and superior and all versions of Firefox/Safari/Opera/Chrome.
+Ultra-minimal design and typography based WordPress theme with support for single-column and two-column displays with sidebar. 
+It comes with HTML5 & responsive CSS design to fit all devices.
 
-This theme is released under a GNU General Public License (GPL), version 3 (http://www.gnu.org/licenses/gpl.html).
+* Well-commented, modern, HTML5 templates
+* Supports custom header & header text on/off
+* Supports featured image for posts and displays only the right size 
+(Use images with minimum width of 1200px; smaller images are ignored in single-column layout when the sidebar is not in use.)
+* Helpful 404 template for your lost readers
+* Automatically turns on two-column layout when sidebar is poulated, otherwise uses single-column layout
+* Toggle menu on small screens (like your phone)
+* Licensed under GPLv2 or later. :) Use it to make something cool.
 
-Change Log
-----------
-Version 1.0
-1. Upgraded to WordPress 3.0
-2. Major design overhaul.
+== Installation ==
+	
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
 
+== Frequently Asked Questions ==
 
-How to install
---------------
+= Does this theme support any plugins? =
 
-Go to Appearance > Themes and use the Installer tool, or copy the theme folder 'undedicated' in wp-content/themes/ and activate it.
+Undedicated includes support for Infinite Scroll in Jetpack.
 
+== Changelog ==
 
-How to use "Archives" page template
----------------------------------------------------
-Use this template when you want full width for your content. It can be used for creating special pages. 
-It can be used to create interesting layouts with the help of some basic HTML and CSS (use pre-configured styles).
+= 1.0 - November 20, 2015 =
+* Initial release
 
-Go to Pages > New. Create a blank page as you would do normally. Before saving, choose "Archives" from the template list in the right.
+== Credits ==
 
-
-Support Undedicated
--------------
-If this WordPress theme helped you or your organization, please consider sending me some money to using the PayPal button present in Theme Options page.
-You can also send me some money ($25 suggested) via PayPal directly at (pritam [AT] speckygeek.com)
-
-Please make sure to drop me a line! I'd love to know where and how you are using it. Thanks for downloading and enjoy!
-
---------------
-http://www.speckygeek.com
-http://www.speckygeek.com/wordpress-themes/
+* Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* Stargazer theme by Justin Tadlock https://wordpress.org/themes/stargazer/, (C) Author, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

@@ -1,207 +1,165 @@
-<?php //Retrieve Theme Options Data
-global $options;
-$options = get_option('p2h_theme_options'); 
+<?php
+/**
+ * undedicated functions and definitions.
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package undedicated
+ */
 
-$functions_path = TEMPLATEPATH . '/functions/';
-//Theme Options
-require_once ($functions_path . 'theme-options.php'); 
+if ( ! function_exists( 'undedicated_setup' ) ) :
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
+function undedicated_setup() {
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on undedicated, use a find and replace
+	 * to change 'undedicated' to the name of your theme in all the template files.
+	 */
+	load_theme_textdomain( 'undedicated', get_template_directory() . '/languages' );
 
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
 
-// Sets content and images width
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 
-if ( !isset($content_width) ) $content_width = 600;
-
-// Add default posts and comments RSS feed links to head
-
-if ( function_exists('add_theme_support') ) {
-	add_theme_support('automatic-feed-links');
-}
-
-//Header Customization -- Remove Auto Feed URL
-if ( isset ($options['feedurl']) &&  ($options['feedurl']!="") ) {
-	remove_action( 'wp_head', 'feed_links', 2);
-}
-
-// Remove the links to the extra feeds such as category feeds
-if ( isset ($options['cleanfeedurls']) &&  ($options['cleanfeedurls']!="") ) {
-	remove_action( 'wp_head', 'feed_links_extra', 3 ); 
-}
-
-// Enables the navigation menu ability
-
-if ( function_exists('register_nav_menus')) {
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
-
 	register_nav_menus( array(
-		'primary-menu' => __( 'Header Navigation', 'jenny' ),
-		'footer-menu' => __( 'Footer Navigation', 'jenny' ),
-
+		'primary' => esc_html__( 'Primary Menu', 'undedicated' ),
 	) );
-	}
 
-// Enables post-thumbnail support
-if ( function_exists('add_theme_support') ){
-add_theme_support('post-thumbnails');
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
+
+	/*
+	 * Enable support for Post Formats.
+	 * See https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link',
+	) );
+
+	// Set up the WordPress core custom background feature.
+	add_theme_support( 'custom-background', apply_filters( 'undedicated_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) ) );
 }
+endif; // undedicated_setup
+add_action( 'after_setup_theme', 'undedicated_setup' );
 
-// Adds callback for custom TinyMCE editor stylesheets 
-if ( function_exists('add_editor_style') ) add_editor_style();
-
-// This theme allows users to set a custom background
-add_custom_background();
-
-// Support for custom headers
-define('HEADER_TEXTCOLOR', '000000');
-define('HEADER_IMAGE', ''); 
-define('HEADER_IMAGE_WIDTH', 900);
-define('HEADER_IMAGE_HEIGHT', 100);
-
-function p2h_header_style() {
-    ?><style type="text/css">
-        #header {
-            background: url(<?php header_image(); ?>);
-        }
-		<?php if ( 'blank' == get_header_textcolor() ) { ?>
-		#header #site-title, #header #site-description{
-		    display: none;
-		}
-		<?php } else { ?>
-		#header #site-title a{
-		color: #<?php header_textcolor(); ?>;
-		}
-		<?php } ?>
-    </style><?php
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function undedicated_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'undedicated_content_width', 1024 );
 }
+add_action( 'after_setup_theme', 'undedicated_content_width', 0 );
 
-function p2h_admin_header_style() {
-    ?><style type="text/css">
-        #headimg {
-            width: 900px !important;
-            height: 85px !important;
-			margin: 0;
-			padding: 10px 0 5px 0;
-			border: 0 none !important;
-        }
-		#headimg h1 {
-			margin: 0;
-			font-family: "Trebuchet MS", Arial, Helvetica, san-serif;
-			font-size: 4.8em;
-			font-weight: normal;
-			line-height: normal;
-		}
-		#headimg a {
-			color: #000;
-			text-decoration: none;
-		}
-		#desc {
-		
-		}
-    </style><?php 
-}
-
-if ( function_exists('add_custom_image_header') ) add_custom_image_header('p2h_header_style', 'p2h_admin_header_style');
-
-// Registers a widgetized sidebar and replaces default WordPress HTML code with a better HTML
-if ( function_exists('register_sidebar') )
-    // Area 1, located at the top of the sidebar.
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function undedicated_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Top Sidebar Widgets', 'jenny' ),
-		'id' => 'top-sidebar-widgets',
-		'description' => __( 'The primary sidebar widget area. Leave blank to use default widgets. Use Secondary Sidebar Widgets.', 'jenny' ),
-		'before_widget' => '<div id="%1$s" class="section widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
+		'name'          => esc_html__( 'Sidebar', 'undedicated' ),
+		'id'            => 'primary-sidebar',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
-
-
-// Sets the post excerpt length to 55 characters.
-function p2h_excerpt_length( $length ) {
-	return 55;
 }
-add_filter( 'excerpt_length', 'p2h_excerpt_length' );
-
-
-// returns TRUE if more than one page exists. Useful for not echoing .post-navigation HTML when there aren't posts to page
-function show_posts_nav() {
-	global $wp_query;
-	return ($wp_query->max_num_pages > 1);
-}
+add_action( 'widgets_init', 'undedicated_widgets_init' );
 
 /**
- * Remove inline styles printed when the gallery shortcode is used.
- * Galleries are styled by the theme in style.css.
+ * Enqueue scripts and styles.
  */
-function p2h_remove_gallery_css( $css ) {
-	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
+function undedicated_scripts() {
+	wp_enqueue_style( 'undedicated-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'google-font', '//fonts.googleapis.com/css?family=Roboto:300,400,700', array() );
+
+	wp_enqueue_script( 'undedicated-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20120206', true );
+
+	wp_enqueue_script( 'undedicated-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), '20130115', true );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
-add_filter( 'gallery_style', 'p2h_remove_gallery_css' );
+add_action( 'wp_enqueue_scripts', 'undedicated_scripts' );
 
+//* Add new image sizes
+add_image_size( 'feature-wide', 1024, 612, TRUE );
+add_image_size( 'feature-narrow', 800, 400, TRUE );
 
-// Removes ugly inline CSS style for Recent Comments widget
-function p2h_remove_recent_comments_style() {
-	global $wp_widget_factory;
-	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
-}
-add_action( 'widgets_init', 'p2h_remove_recent_comments_style' );
-
-
-//Enque scripts in header
-function p2h_init_js() {
-
-if ( !is_admin() ) { // instruction to only load if it is not the admin area
-   // enqueue the script
-   wp_enqueue_script('jquery'); 
-}
-
-} 
-add_action('init', 'p2h_init_js');
-
-
-// Remove the links to feed
-//remove_action( 'wp_head', 'feed_links', 2);
-// Remove the links to the extra feeds such as category feeds
-//remove_action( 'wp_head', 'feed_links_extra', 3 ); 
-
-//Redirect to theme options page on activation
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" )
-	wp_redirect( 'admin.php?page=theme-options.php' );
+//* Add support for custom background
+add_theme_support( 'custom-background' );
 
 /**
- * Template for comments and pingbacks.
+ * Implement the Custom Header feature.
  */
-function p2h_comment($comment, $args, $depth) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-	case '' :
-	?>
-	<div <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-      <div class="comment-avatar">
-         <?php echo get_avatar($comment,$size='54'); ?>
-      </div>
+require get_template_directory() . '/inc/custom-header.php';
 
- 	  <div class="comment-body">
-			<p class="comment-meta"><span class="comment-author"><?php comment_author_link(); ?></span><?php _e(' on ','jenny'); ?><?php comment_date() ?><?php _e(' at ','jenny'); ?><?php comment_time() ?>.</p>			
-		 	<?php if ($comment->comment_approved == '0') : ?>
-			<p><strong><?php _e('Your comment is awaiting moderation.','jenny'); ?></strong></p>
-			<?php endif; ?>
-			
-			<?php comment_text(); ?>
-			
-			<p class="comment-reply-meta"><?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></p>
-	  </div>
-	  
-  
-	<?php
-		break;
-		case 'pingback'  :
-		case 'trackback' :
-	?>
-	  <div <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>" class="post pingback">
-		<p><?php _e( 'Pingback:', 'jenny' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'jenny'), ' ' ); ?></p>
-	<?php
-			break;
-	endswitch;
-}
-?>
+/**
+ * Implement the Get The Image feature.
+ */
+require get_template_directory() . '/inc/get-the-image.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
