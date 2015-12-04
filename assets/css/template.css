@@ -1612,7 +1612,7 @@ p.list-tags {
 	-moz-transition: -moz-transform 0.8s ease;
 	-o-transition: -o-transform 0.8s ease;
 	transition: transform 0.8s ease;
-	width:auto;
+	width:100%;
 	height:auto;
 }
 .wp-post-image:hover { 
@@ -1930,10 +1930,11 @@ tr:nth-child(2n+2) {
 
 @media screen and (min-width : 0px) and (max-width : 992px)  {	
 
-	.woocommerce .title {
+	.products-list .title {
 		text-align:center;
 	}
 	
+	#top-box,
 	#sidebar,
 	#top-box .widget-box,
 	#footer-box .post-article,
@@ -1947,6 +1948,10 @@ tr:nth-child(2n+2) {
 		margin-top:0;
 	}
 
+	.col-md-4.cart-total {
+		margin-top:25px;
+	}
+	
 	#slogan {
 		margin-top:-50px !important;
 		margin-bottom:50px !important;
@@ -1973,7 +1978,6 @@ tr:nth-child(2n+2) {
 		padding: 0 20px;
 	}
 	
-	.wp-pagenavi,
 	.main-content .post-container.col-md-8.left-sidebar,
 	.main-content .post-container.col-md-8.right-sidebar,
 	.post-article { 

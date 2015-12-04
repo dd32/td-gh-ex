@@ -320,7 +320,7 @@ if (!function_exists('alhenalite_custom_login_logo')) {
 					-webkit-background-size: inherit;
 					background-size: inherit ;
 					width:100%;
-					height:<?php echo alhenalite_setting('wip_login_logo_height'); ?>;
+					height:<?php echo alhenalite_setting('wip_login_logo_height'); ?>px;
 				}
 				
 			</style>
@@ -586,10 +586,10 @@ if (!function_exists('alhenalite_template')) {
 		$span = $template["right-sidebar"];
 		$sidebar =  "right-sidebar";
 
-		if ( alhenalite_is_woocommerce_active('is_woocommerce') && ( alhenalite_is_woocommerce_active('is_product_category') || alhenalite_is_woocommerce_active('is_product_tag') ) && alhenalite_setting('wip_category_layout') ) {
+		if ( alhenalite_is_woocommerce_active('is_woocommerce') && ( alhenalite_is_woocommerce_active('is_product_category') || alhenalite_is_woocommerce_active('is_product_tag') ) && alhenalite_setting('wip_woocommerce_category_layout') ) {
 		
-			$span = $template[alhenalite_setting('wip_category_layout')];
-			$sidebar =  alhenalite_setting('wip_category_layout');
+			$span = $template[alhenalite_setting('wip_woocommerce_category_layout')];
+			$sidebar =  alhenalite_setting('wip_woocommerce_category_layout');
 
 		} else if ( alhenalite_is_woocommerce_active('is_woocommerce') && is_search() && alhenalite_postmeta('wip_template') ) {
 					

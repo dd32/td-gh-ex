@@ -236,7 +236,6 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 			
 			),
 	
-
 			array(
 				
 				"label" => __("Category Layout","alhenalite"),
@@ -249,6 +248,23 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 				   "left-sidebar" => __( "Left Sidebar","alhenalite"),
 				   "right-sidebar" => __( "Right Sidebar","alhenalite"),
 				   "masonry" => __( "Masonry","alhenalite"),
+				),
+				
+				"std" => "right-sidebar",
+			
+			),
+
+			array(
+				
+				"label" => __("WooCommerce Category Layout","alhenalite"),
+				"description" => __("Select a layout for the woocommerce categories.","alhenalite"),
+				"id" => "wip_woocommerce_category_layout",
+				"type" => "select",
+				"section" => "layouts_section",
+				"options" => array (
+				   "full" => __( "Full Width","alhenalite"),
+				   "left-sidebar" => __( "Left Sidebar","alhenalite"),
+				   "right-sidebar" => __( "Right Sidebar","alhenalite"),
 				),
 				
 				"std" => "right-sidebar",

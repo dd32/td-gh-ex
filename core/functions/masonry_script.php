@@ -20,7 +20,7 @@ if (!function_exists('alhenalite_masonry_script_function')) {
 						
 				function wip_masonry() {
 							
-					if ( $(window).width() > 992 ) {
+					if ( $(window).width() >= 992 ) {
 	
 						$('.row.masonry').imagesLoaded(function () {
 	
