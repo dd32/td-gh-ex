@@ -32,7 +32,7 @@ class bazaarlite_customize {
 
 		$bazaarlite_details = array(
 			'label' => __( 'Upgrade to Bazaar Premium', 'bazaar-lite' ),
-			'url' => esc_url('https://www.themeinprogress.com/bazaar-free-ecommerce-wordpress-theme/?ref=panel')
+			'url' => esc_url('https://www.themeinprogress.com/bazaar-free-ecommerce-wordpress-theme/?aff=panel')
 		);
 	
 		wp_localize_script( 'customizer-preview', 'bazaarlite_details', $bazaarlite_details );

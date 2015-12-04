@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 $order = wc_get_order( $order_id );
 
 ?>
-<h2><?php _e( 'Order Details', 'woocommerce' ); ?></h2>
+<h2><?php _e( 'Order Details', 'bazaar-lite' ); ?></h2>
 <table class="shop_table order_details">
 	<thead>
 		<tr>
-			<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-			<th class="product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
+			<th class="product-name"><?php _e( 'Product', 'bazaar-lite' ); ?></th>
+			<th class="product-total"><?php _e( 'Total', 'bazaar-lite' ); ?></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -57,7 +57,7 @@ $order = wc_get_order( $order_id );
 									foreach ( $download_files as $download_id => $file ) {
 										$i++;
 
-										$links[] = '<small><a href="' . esc_url( $file['download_url'] ) . '">' . sprintf( __( 'Download file%s', 'woocommerce' ), ( count( $download_files ) > 1 ? ' ' . $i . ': ' : ': ' ) ) . esc_html( $file['name'] ) . '</a></small>';
+										$links[] = '<small><a href="' . esc_url( $file['download_url'] ) . '">' . sprintf( __( 'Download file%s', 'bazaar-lite' ), ( count( $download_files ) > 1 ? ' ' . $i . ': ' : ': ' ) ) . esc_html( $file['name'] ) . '</a></small>';
 									}
 
 									echo '<br/>' . implode( '<br/>', $links );
@@ -123,11 +123,11 @@ $order = wc_get_order( $order_id );
 						}
 
 						if ( ! empty( $tax_del_array ) ) {
-							$refunded_tax_del .= ' ' . sprintf( __( '(Includes %s)', 'woocommerce' ), implode( ', ', $tax_del_array ) );
+							$refunded_tax_del .= ' ' . sprintf( __( '(Includes %s)', 'bazaar-lite' ), implode( ', ', $tax_del_array ) );
 						}
 
 						if ( ! empty( $tax_ins_array ) ) {
-							$refunded_tax_ins .= ' ' . sprintf( __( '(Includes %s)', 'woocommerce' ), implode( ', ', $tax_ins_array ) );
+							$refunded_tax_ins .= ' ' . sprintf( __( '(Includes %s)', 'bazaar-lite' ), implode( ', ', $tax_ins_array ) );
 						}
 					}
 
@@ -145,7 +145,7 @@ $order = wc_get_order( $order_id );
 		// Check for refund
 		if ( $has_refund ) { ?>
 			<tr>
-				<th scope="row"><?php _e( 'Refunded:', 'woocommerce' ); ?></th>
+				<th scope="row"><?php _e( 'Refunded:', 'bazaar-lite' ); ?></th>
 				<td>-<?php echo wc_price( $total_refunded, array( 'currency' => $order->get_order_currency() ) ); ?></td>
 			</tr>
 		<?php
@@ -154,7 +154,7 @@ $order = wc_get_order( $order_id );
 		// Check for customer note
 		if ( '' != $order->customer_note ) { ?>
 			<tr>
-				<th scope="row"><?php _e( 'Note:', 'woocommerce' ); ?></th>
+				<th scope="row"><?php _e( 'Note:', 'bazaar-lite' ); ?></th>
 				<td><?php echo wptexturize( $order->customer_note ); ?></td>
 			</tr>
 		<?php } ?>
@@ -164,16 +164,16 @@ $order = wc_get_order( $order_id );
 <?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
 
 <header>
-	<h2><?php _e( 'Customer details', 'woocommerce' ); ?></h2>
+	<h2><?php _e( 'Customer details', 'bazaar-lite' ); ?></h2>
 </header>
 <table class="shop_table shop_table_responsive customer_details">
 <?php
 	if ( $order->billing_email ) {
-		echo '<tr><th>' . __( 'Email:', 'woocommerce' ) . '</th><td data-title="' . __( 'Email', 'woocommerce' ) . '">' . $order->billing_email . '</td></tr>';
+		echo '<tr><th>' . __( 'Email:', 'bazaar-lite' ) . '</th><td data-title="' . __( 'Email', 'bazaar-lite' ) . '">' . $order->billing_email . '</td></tr>';
 	}
 
 	if ( $order->billing_phone ) {
-		echo '<tr><th>' . __( 'Telephone:', 'woocommerce' ) . '</th><td data-title="' . __( 'Telephone', 'woocommerce' ) . '">' . $order->billing_phone . '</td></tr>';
+		echo '<tr><th>' . __( 'Telephone:', 'bazaar-lite' ) . '</th><td data-title="' . __( 'Telephone', 'bazaar-lite' ) . '">' . $order->billing_phone . '</td></tr>';
 	}
 
 	// Additional customer details hook
@@ -190,12 +190,12 @@ $order = wc_get_order( $order_id );
 <?php endif; ?>
 
 		<header class="title order-details">
-			<h3><?php _e( 'Billing Address', 'woocommerce' ); ?></h3>
+			<h3><?php _e( 'Billing Address', 'bazaar-lite' ); ?></h3>
 		</header>
 		<address>
 			<?php
 				if ( ! $order->get_formatted_billing_address() ) {
-					_e( 'N/A', 'woocommerce' );
+					_e( 'N/A', 'bazaar-lite' );
 				} else {
 					echo $order->get_formatted_billing_address();
 				}
@@ -209,12 +209,12 @@ $order = wc_get_order( $order_id );
 	<div class="col-2">
 
 		<header class="title">
-			<h3><?php _e( 'Shipping Address', 'woocommerce' ); ?></h3>
+			<h3><?php _e( 'Shipping Address', 'bazaar-lite' ); ?></h3>
 		</header>
 		<address>
 			<?php
 				if ( ! $order->get_formatted_shipping_address() ) {
-					_e( 'N/A', 'woocommerce' );
+					_e( 'N/A', 'bazaar-lite' );
 				} else {
 					echo $order->get_formatted_shipping_address();
 				}

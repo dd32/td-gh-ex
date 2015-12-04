@@ -25,7 +25,7 @@ do_action( 'woocommerce_before_cart' ); ?>
         
         	<div class="woocommerce_cart_details">
         
-                <h2> <?php _e('Cart','woocommerce');?> </h2>
+                <h2> <?php _e('Cart','bazaar-lite');?> </h2>
                 
                 
                 <?php do_action( 'woocommerce_before_cart_table' ); ?>
@@ -35,10 +35,10 @@ do_action( 'woocommerce_before_cart' ); ?>
                         <tr>
                             <th class="product-remove">&nbsp;</th>
                             <th class="product-thumbnail">&nbsp;</th>
-                            <th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-                            <th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th>
-                            <th class="product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
-                            <th class="product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></th>
+                            <th class="product-name"><?php _e( 'Product', 'bazaar-lite' ); ?></th>
+                            <th class="product-price"><?php _e( 'Price', 'bazaar-lite' ); ?></th>
+                            <th class="product-quantity"><?php _e( 'Quantity', 'bazaar-lite' ); ?></th>
+                            <th class="product-subtotal"><?php _e( 'Total', 'bazaar-lite' ); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,7 +55,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                 
                                     <td class="product-remove">
                                         <?php
-                                            echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s">&times;</a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
+                                            echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s">&times;</a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'bazaar-lite' ) ), $cart_item_key );
                                         ?>
                                     </td>
                 
@@ -84,7 +84,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                 
                                             // Backorder notification
                                             if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-                                                echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
+                                                echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'bazaar-lite' ) . '</p>';
                                             }
                                         ?>
                                     </td>
@@ -131,7 +131,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                                     
                                     <div class="coupon">
                 
-                                        <label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php _e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
+                                        <label for="coupon_code"><?php _e( 'Coupon', 'bazaar-lite' ); ?>:</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php _e( 'Coupon code', 'bazaar-lite' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'bazaar-lite' ); ?>" />
                 
                                         <?php do_action( 'woocommerce_cart_coupon' ); ?>
                                         

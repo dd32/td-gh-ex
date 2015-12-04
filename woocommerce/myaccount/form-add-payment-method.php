@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					}
 				} else {
 
-					echo '<p>' . __( 'Sorry, it seems that there are no payment methods which support adding a new payment method. Please contact us if you require assistance or wish to make alternate arrangements.', 'woocommerce' ) . '</p>';
+					echo '<p>' . __( 'Sorry, it seems that there are no payment methods which support adding a new payment method. Please contact us if you require assistance or wish to make alternate arrangements.', 'bazaar-lite' ) . '</p>';
 
 				}
 			?>
@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="form-row">
 			<?php wp_nonce_field( 'woocommerce-add-payment-method' ); ?>
-			<input type="submit" class="button alt" id="place_order" value="<?php _e( 'Add Payment Method', 'woocommerce' ); ?>" />
+			<input type="submit" class="button alt" id="place_order" value="<?php _e( 'Add Payment Method', 'bazaar-lite' ); ?>" />
 			<input type="hidden" name="woocommerce_add_payment_method" value="1" />
 		</div>
 

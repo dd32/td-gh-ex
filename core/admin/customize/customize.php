@@ -303,7 +303,23 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 			
 			),
 	
-
+			array(
+				
+				"label" => __("WooCommerce Category Layout",'bazaar-lite'),
+				"description" => __("Select a layout for the WooCommerce categories.",'bazaar-lite'),
+				"id" => "wip_woocommerce_category_layout",
+				"type" => "select",
+				"section" => "layouts_section",
+				"options" => array (
+				   "full" => __( "Full Width",'bazaar-lite'),
+				   "left-sidebar" => __( "Left Sidebar",'bazaar-lite'),
+				   "right-sidebar" => __( "Right Sidebar",'bazaar-lite'),
+				),
+				
+				"std" => "right-sidebar",
+			
+			),
+	
 			array(
 				
 				"label" => __("Search Layout",'bazaar-lite'),
@@ -372,7 +388,7 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Height",'bazaar-lite'),
-				"description" => __( "Insert the height of your custom logo, without “px” (for example 550 and not 550px).",'bazaar-lite'),
+				"description" => __( "Insert the height of your custom logo, without px (for example 550 and not 550px).",'bazaar-lite'),
 				"id" => "wip_login_logo_height",
 				"type" => "text",
 				"section" => "login_area_section",

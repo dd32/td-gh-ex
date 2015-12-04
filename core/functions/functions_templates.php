@@ -160,7 +160,7 @@ if (!function_exists('bazaarlite_custom_login_logo')) {
 					-webkit-background-size: inherit;
 					background-size: inherit ;
 					width:100%;
-					height:<?php echo bazaarlite_setting('wip_login_logo_height'); ?>;
+					height:<?php echo bazaarlite_setting('wip_login_logo_height'); ?>px;
 				}
 				
 			</style>
@@ -194,10 +194,10 @@ if (!function_exists('bazaarlite_template')) {
 		$span = $template["right-sidebar"];
 		$sidebar =  "right-sidebar";
 
-		if ( bazaarlite_is_woocommerce_active('is_woocommerce') && ( bazaarlite_is_woocommerce_active('is_product_category') || bazaarlite_is_woocommerce_active('is_product_tag') ) && bazaarlite_setting('wip_category_layout') ) {
+		if ( bazaarlite_is_woocommerce_active('is_woocommerce') && ( bazaarlite_is_woocommerce_active('is_product_category') || bazaarlite_is_woocommerce_active('is_product_tag') ) && bazaarlite_setting('wip_woocommerce_category_layout') ) {
 		
-			$span = $template[bazaarlite_setting('wip_category_layout')];
-			$sidebar =  bazaarlite_setting('wip_category_layout');
+			$span = $template[bazaarlite_setting('wip_woocommerce_category_layout')];
+			$sidebar =  bazaarlite_setting('wip_woocommerce_category_layout');
 
 		} else if ( bazaarlite_is_woocommerce_active('is_woocommerce') && is_search() && bazaarlite_postmeta('wip_template') ) {
 					
