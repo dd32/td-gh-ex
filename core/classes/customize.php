@@ -32,7 +32,7 @@ class suevafree_customize {
 
 		$jaxlite_details = array(
 			'label' => __( 'Upgrade to Sueva Premium', 'suevafree' ),
-			'url' => esc_url('https://www.themeinprogress.com/sueva/?ref=panel')
+			'url' => esc_url('https://www.themeinprogress.com/sueva/?aff=panel')
 		);
 	
 		wp_localize_script( 'customizer-preview', 'suevafree_details', $jaxlite_details );

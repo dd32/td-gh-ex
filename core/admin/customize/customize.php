@@ -224,6 +224,23 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			
 			),
 			
+			array(
+				
+				"label" => __("Search Layout","suevafree"),
+				"description" => __("Select a layout for the search section.","suevafree"),
+				"id" => "suevafree_search_layout",
+				"type" => "select",
+				"section" => "layouts_section",
+				"options" => array (
+				   "full" => __( "Full Width","suevafree"),
+				   "left-sidebar" => __( "Left Sidebar","suevafree"),
+				   "right-sidebar" => __( "Right Sidebar","suevafree"),
+				),
+				
+				"std" => "right-sidebar",
+			
+			),
+			
 			/* LOGIN AREA SECTION */ 
 
 			array( 

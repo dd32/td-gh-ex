@@ -306,22 +306,27 @@ add_filter('body_class', 'suevafree_body_class');
 
 function suevafree_template($id) {
 
-	$template = array ("full" => "span12" , "left-sidebar" => "span8" , "right-sidebar" => "span8" );
+	$template = array ( "full" => "span12" , "left-sidebar" => "span8" , "right-sidebar" => "span8" );
 
 	$span = $template["right-sidebar"];
 	$sidebar =  "right-sidebar";
 
-	if ( ( suevafree_setting('suevafree_home') )  && (  (is_home()) )  ){
+	if ( suevafree_setting('suevafree_home') && is_home() ){
 		
 		$span = $template[suevafree_setting('suevafree_home')];
 		$sidebar =  suevafree_setting('suevafree_home');
 
-	} else if ( ( suevafree_setting('suevafree_category_layout') )  && ( ( suevafree_get_archive_title() ) ) ) {
+	} else if ( suevafree_setting('suevafree_category_layout') && suevafree_get_archive_title() ) {
 		
 		$span = $template[suevafree_setting('suevafree_category_layout')];
 		$sidebar =  suevafree_setting('suevafree_category_layout');
 
-	} else if ( ( suevafree_postmeta('suevafree_template') )  && ( (is_page()) || (is_single()) ) ){
+	} else if ( suevafree_setting('suevafree_search_layout') && is_search() ) {
+		
+		$span = $template[suevafree_setting('suevafree_search_layout')];
+		$sidebar =  suevafree_setting('suevafree_search_layout');
+
+	} else if ( suevafree_postmeta('suevafree_template') && ( is_page() || is_single() ) ){
 
 		$span = $template[suevafree_postmeta('suevafree_template')];
 		$sidebar =  suevafree_postmeta('suevafree_template');
