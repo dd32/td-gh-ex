@@ -88,7 +88,7 @@ function promax_theme_setup() {
 		add_theme_support( 'post-thumbnails' );
 	}	
 		add_image_size( 'defaultthumb', 262, 200, true);
-		add_image_size( 'popularpost', 340, 135, true);
+		add_image_size( 'popularpost', 340, 154, true);
 		add_image_size( 'latestpostthumb', 75, 75, true);
 		//woocommerce plugin support
 		add_theme_support( 'woocommerce' );

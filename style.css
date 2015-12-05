@@ -2,7 +2,7 @@
 Theme Name: ProMax
 Theme URI: http://www.insertcart.com/product/promax-wordpress-theme/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo http://demo.baztro.com/promax 
-Version: 1.5.4
+Version: 1.5.5
 Author: InsertCart by Sandy
 Author URI: http://www.insertcart.com/
 Tags: black, blue, white, light, red, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, responsive-layout
@@ -94,23 +94,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
 	font-size: 28px;
-	line-height: 28px;
+	line-height: 40px;
 }
 h2 {
 	font-size: 22px;
-	line-height: 22px;
+	line-height: 30px;
 }
 h3 {
 	font-size: 18px;
-	line-height: 18px;
+	line-height: 22px;
 	}
 h4 {
 	font-size: 14px;
-	line-height: 14px;
+	line-height: 16px;
 	}
 h5 {
 	font-size: 12px;
-	line-height: 12px;
+	line-height: 14px;
 }
 h6 {
 	font-size: 12px;
@@ -866,9 +866,14 @@ height: 335px;
 box-shadow: 0 1px 3px 0 #B5B5B5; -moz-box-shadow: 0 1px 3px 0 #b5b5b5; -webkit-box-shadow: 0 1px 3px 0 #B5B5B5;
 
 }
+.imag .entry {
+padding: 4px 5px 0px 5px;
+    font-size: 14px;
+}
 .entry {
 padding: 18px 5px 0px 5px;
-font-size: 13px;
+font-size: 16px;
+    line-height: 24px;
 
 }
 .entry a {
@@ -947,7 +952,7 @@ box-shadow: 0 1px 3px 0 #B5B5B5;
 background: rgba(0, 0, 0, 0.6);
 width: 27.2%;
 padding: 5px;
-margin-top: 71px;
+margin-top: 90px;
 position: absolute;
 overflow: hidden;
 height: 55px;
@@ -995,7 +1000,7 @@ padding-left: 5%;
 /******************Popular Posts****************/
 #populars { list-style:none; }
 #populars { overflow:auto; margin:10px 0px;}
-#populars img { max-width: 100% !important;width: 100%;height: 135px;}
+#populars img { max-width: 100% !important;width: 100%;height: 154px;}
 #populars a { text-decoration:none;font-size: 14px;
 line-height: 30px;}
 
