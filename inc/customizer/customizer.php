@@ -51,7 +51,41 @@ function smartline_customize_register_options( $wp_customize ) {
         'section'  => 'title_tagline',
         'settings' => 'smartline_theme_options[header_tagline]',
         'type'     => 'checkbox',
-		'priority' => 99
+		'priority' => 10
+		)
+	);
+	
+	// Add Header Image Link
+	$wp_customize->add_setting( 'smartline_theme_options[custom_header_link]', array(
+        'default'           => '',
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url'
+		)
+	);
+    $wp_customize->add_control( 'smartline_control_custom_header_link', array(
+        'label'    => esc_html__( 'Header Image Link', 'smartline-lite' ),
+        'section'  => 'header_image',
+        'settings' => 'smartline_theme_options[custom_header_link]',
+        'type'     => 'url',
+		'priority' => 10
+		)
+	);
+	
+	// Add Custom Header Hide Checkbox
+	$wp_customize->add_setting( 'smartline_theme_options[custom_header_hide]', array(
+        'default'           => false,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'smartline_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'smartline_control_custom_header_hide', array(
+        'label'    => esc_html__( 'Hide header image on front page', 'smartline-lite' ),
+        'section'  => 'header_image',
+        'settings' => 'smartline_theme_options[custom_header_hide]',
+        'type'     => 'checkbox',
+		'priority' => 15
 		)
 	);
 	
@@ -62,7 +96,29 @@ function smartline_customize_register_options( $wp_customize ) {
 add_action( 'customize_preview_init', 'smartline_customize_preview_js' );
 
 function smartline_customize_preview_js() {
-	wp_enqueue_script( 'smartline-lite-customizer-js', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20140312', true );
+	wp_enqueue_script( 'smartline-lite-customizer-preview', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151202', true );
+}
+
+
+// Embed JS file for Customizer Controls
+add_action( 'customize_controls_enqueue_scripts', 'smartline_customize_controls_js' );
+
+function smartline_customize_controls_js() {
+	
+	wp_enqueue_script( 'smartline-lite-customizer-controls', get_template_directory_uri() . '/js/customizer-controls.js', array(), '20151202', true );
+	
+	// Localize the script
+	wp_localize_script( 'smartline-lite-customizer-controls', 'smartline_theme_links', array(
+		'title'	=> esc_html__( 'Theme Links', 'smartline-lite' ),
+		'themeURL'	=> esc_url( 'http://themezee.com/themes/smartline/?utm_source=customizer&utm_medium=textlink&utm_campaign=smartline&utm_content=theme-page' ),
+		'themeLabel'	=> esc_html__( 'Theme Page', 'smartline-lite' ),
+		'docuURL'	=> esc_url( 'http://themezee.com/docs/smartline-documentation/?utm_source=customizer&utm_medium=textlink&utm_campaign=smartline&utm_content=documentation' ),
+		'docuLabel'	=>  esc_html__( 'Theme Documentation', 'smartline-lite' ),
+		'rateURL'	=> esc_url( 'http://wordpress.org/support/view/theme-reviews/smartline-lite?filter=5' ),
+		'rateLabel'	=> esc_html__( 'Rate this theme', 'smartline-lite' ),
+		)
+	);
+
 }
 
 
@@ -70,10 +126,6 @@ function smartline_customize_preview_js() {
 add_action( 'customize_controls_print_styles', 'smartline_customize_preview_css' );
 
 function smartline_customize_preview_css() {
-	wp_enqueue_style( 'smartline-lite-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20140312' );
+	wp_enqueue_style( 'smartline-lite-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20151202' );
 
 }
-
-
-
-?>
