@@ -55,7 +55,7 @@ function green_customize_register($wp_customize){
 
 
 // Image Description
-    $wp_customize->add_setting('green[slide-image' . $opsinumber . '-description]', array(
+    $wp_customize->add_setting('green[slide-image' . $opsinumber . '-caption]', array(
         'default'        	=> __('This is a Test Slide for GREEN EYE Theme. If you feel any problem please contact with D5 Creation','green-eye'),
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
@@ -63,10 +63,10 @@ function green_customize_register($wp_customize){
 
     ));
 
-    $wp_customize->add_control('green_slide-image' . $opsinumber . '-description' , array(
+    $wp_customize->add_control('green_slide-image' . $opsinumber . '-caption' , array(
         'label'      => __('Image Description', 'green-eye') . '-' . $opsinumber,
         'section'    => 'green_options',
-        'settings'   => 'green[slide-image' . $opsinumber .'-description]',
+        'settings'   => 'green[slide-image' . $opsinumber .'-caption]',
 		'type' 		 => 'textarea'
     ));
 	

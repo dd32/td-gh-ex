@@ -1,7 +1,7 @@
 ----------------------------------
 GREEN EYE
 ----------------------------------
-Version: 	1.5.1
+Version: 	1.5.2
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -27,6 +27,10 @@ Instructions:
 
 Changelog
 ================
+
+Version 1.5.2
+=============================
+- Fix the Slide Title Changing Problem 
 
 Version 1.5
 =============================
