@@ -30,6 +30,13 @@ Custom Css:
 
 == Change log ==
 
+= 1.7 =
+* Comment form updated
+* Header Image Support added
+* Fontawesome icons support added
+* Fixed styling issue
+* WooCommerce Support added
+
 = 1.6.1 =
 * Missing Id issue fixed in widgets
 * Other minor issue fixed
@@ -96,4 +103,5 @@ Custom Css:
 *Images into /images/ folder that's are created by me cat.png home.jpg, info.png, logo.png metaimg.png, quote.png, thumb.png are publish Under gpl v2
 *Fonts Monda: Copyright (c) 2012, vernon adams (vern@newtypography.co.uk)  This Font Software is licensed under the SIL Open Font License, Version 1.1. http://scripts.sil.org/OFL
 * Bootstrap by Twitter and the Glyphicon set are licensed under the GPL-compatible [http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0]
+* Font Awesome License: SIL OFL 1.1 URL: http://scripts.sil.org/OFL
 **This theme and file are created by me & publish under GPL

@@ -6,8 +6,13 @@ include_once('baztro.php');
 include_once('includes/installs.php');
 include_once('includes/core/core.php');
 
+// Implement the Custom Header feature.
+require get_template_directory() . '/includes/custom-header.php';
+require get_template_directory() . '/includes/customizer.php';
+
 function optimize_scripts() {
 	wp_enqueue_style( 'optimize-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'optimize-font-awesome', get_stylesheet_directory_uri() . '/font-awesome/css/font-awesome.min.css' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
@@ -47,7 +52,8 @@ function optimize_theme_setup() {
 		set_post_thumbnail_size( 150, 150, true ); // Normal post thumbnails, 200 pixels wide by 200 pixels tall, hard crop mode
 	
 	    load_theme_textdomain('optimize', get_template_directory() . '/languages');
-			 
+			 //woocommerce plugin support
+		add_theme_support( 'woocommerce' );
         add_editor_style();
 		add_theme_support( 'title-tag' );
         add_theme_support('automatic-feed-links');
@@ -136,4 +142,36 @@ function optimize_pagenavi() {
 	 }
 }
 
+
+/* ----------------------------------------------------------------------------------- */
+/* Customize Comment Form
+/*----------------------------------------------------------------------------------- */
+add_filter( 'comment_form_default_fields', 'optimize_comment_form_fields' );
+function optimize_comment_form_fields( $fields ) {
+    $commenter = wp_get_current_commenter();
+    
+    $req      = get_option( 'require_name_email' );
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+    $html5    = current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
+    
+    $fields   =  array(
+        'author' => '<div class="large-6 columns"><div class="row collapse prefix-radius"><div class="small-3 columns">' . '<span class="prefix"><i class="fa fa-user"></i>' . __( 'Name','optimize' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</span> </div>' .
+                    '<div class="small-9 columns"><input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="20"' . $aria_req . ' /></div></div></div>',
+        'email'  => '<div class="large-6 columns"><div class="row collapse prefix-radius"><div class="small-3 columns">' . '<span class="prefix"><i class="fa fa-envelope-o"></i>' . __( 'Email','optimize' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</span></div> ' .
+                    '<div class="small-9 columns"><input class="form-control" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="20"' . $aria_req . ' /></div></div></div>',
+        'url'    => '<div class="large-6 columns"><div class="row collapse prefix-radius"><div class="small-3 columns">' . '<span class="prefix"><i class="fa fa-external-link"></i>' . __( 'Website','optimize' ) . '</span> </div>' .
+                    '<div class="small-9 columns"><input class="form-control" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div></div></div>'        
+    );
+    
+    return $fields;
+    
+    
+}
+
+add_filter( 'comment_form_defaults', 'optimize_comment_form' );
+function optimize_comment_form( $argsbutton ) {
+        $argsbutton['class_submit'] = 'button'; 
+    
+    return $argsbutton;
+}
 ?>

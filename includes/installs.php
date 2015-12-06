@@ -13,7 +13,7 @@ function optimize_notice() {
 		} else {
 			$return .= sprintf( __( '%s activated successfully.', 'optimize' ), $my_theme->get( 'Name' ) );
 		}
-		$return .= '</strong> <a href="' . home_url( '/' ) . '">' . __( 'Visit site', 'optimize' ) . '</a></p>';
+		$return .= '</strong> <a href="' . esc_url(home_url('/')) . '">' . __( 'Visit site', 'optimize' ) . '</a></p>';
 		$return .= '<p>';
 		$return .= ' <a class="button button-primary theme-options" href="' . admin_url( 'themes.php?page=options-framework' ) . '">' . __( 'Theme Options', 'optimize' ) . '</a>';
 		$return .= ' <a class="button button-primary help" href="http://forum.insertcart.com">' . __( 'Help Forum', 'optimize' ) . '</a>';

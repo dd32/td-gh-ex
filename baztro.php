@@ -14,7 +14,16 @@
         if ($output <> '') {
             $output = "<!-- Custom Styling -->\n<style type=\"text/css\">/*<![CDATA[*/\n" . $output . "/*]]>*/</style>\n";
             echo $output;
-        }
+        } ?>
+		 <style type="text/css">
+<?php if ( get_header_image() ) : ?>	
+		#header{background-image:url("<?php esc_url(header_image());?>"); display: flex;background-repeat: round;}
+		<?php endif; ?>
+	
+		
+	</style><?php
+		
+		
     }
 	
 	 add_action('wp_head', 'optimize_of_head_css');

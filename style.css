@@ -3,8 +3,8 @@ Theme Name: Optimize
 Author: InsertCart
 Author URI: http://www.insertcart.com
 Theme URI: http://www.wrock.org/optimize-wordpress-theme/
-Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully optimize style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link.
-Version: 1.6.1
+Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts WooCommerce Supported for eCommerce website. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully optimize style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link. Live working Demo http://demo.baztro.com/optimize/
+Version: 1.7
 Tags: black, white, light, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: optimize
 License: GNU General Public License v2
@@ -561,7 +561,6 @@ color:#333;
 	border-right: 1px solid #F5F5F5;
 }
 .pagepost {
-float: left;
 max-width: 99%;
 margin: 1%;
 }
@@ -776,42 +775,37 @@ border-bottom: 1px dotted;
 .postmeta li a:hover {
 	text-decoration: underline;
 }
-.comp {
-padding-left: 17px;
-background: url(images/metaimg.png) no-repeat;
-background-position: 0px -49px;
-}
-.post-edit-link{
-padding-left: 16px;
-background: url(images/metaimg.png) no-repeat;
-background-position: 0px -142px;
+.comp::before{
+	content: "\f27b";
+	font: normal normal normal 14px/1 FontAwesome;
+	padding: 6px;
 }
 
-.tags {
-padding-left: 14px;
-padding-right: 5px;
-background: url(images/metaimg.png) no-repeat;
-background-position: 0px -121px;
+.post-edit-link::before{
+	content: "\f044";
+	font: normal normal normal 14px/1 FontAwesome;
+	padding: 3px;
 }
-.auth {
-float: left;
-background: url(images/metaimg.png) no-repeat;
-padding-left: 18px;
-margin-right: 5px;
-background-position: 0px -73px;
+
+.tags a::before{
+content: "\f02b";
+    font: normal normal normal 14px/1 FontAwesome;
+    padding: 3px;}
+
+.postcateg::before{
+	content: "\f009";
+	font: normal normal normal 14px/1 FontAwesome;
+	padding: 6px;
 }
-.postcateg {
-float: left;
-padding-left: 18px;
-margin-right: 5px;
-background: url(images/metaimg.png) no-repeat;
-background-position: 0px -97px;
+span.author.vcard::before{
+	content: "\f007";
+	font: normal normal normal 14px/1 FontAwesome;
+	padding: 6px;
 }
-.author{
-padding-left: 18px;
-margin-right: 5px;
-background: url(images/metaimg.png) no-repeat;
-background-position: 0px -26px;
+span.timestamp.updated::before{
+	content: "\f017";
+	font: normal normal normal 14px/1 FontAwesome;
+	padding: 3px;
 }
 .postmeta_bottom li {
 	display: inline;
@@ -1033,32 +1027,7 @@ margin-bottom: -10px;
 	padding: 0;
 	background: #359BED;
 }
-ul.tabs {
-	margin: 0;
-	padding: 0;
-	float: left;
-	list-style: none;
-	width: 100%;
-}
-ul.tabs li {
-	background: #359BED;
-	width: 83px;
-	height: 22px;
-	float: left;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	position: relative;
-	background:#359BED;
-}
-ul.tabs li a {
-	background: #359BED;
-	text-decoration: none;
-	display: block;
-	padding: 0 0 1px;
-	outline: none;
-	text-align: center;
-}
+
 #sidebartabs h4, #sidebartabs h4 a {
 	margin: 0 0 10px;
 	padding: 0;
@@ -1066,29 +1035,7 @@ ul.tabs li a {
 	background: none;
 	border: none;
 }
-html ul.tabs li  {
-	background: #359BED;
-	border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-html ul.tabs li.active, html ul.tabs li.active a:hover  {  
-}
-.tab_container {
-	clear: both;
-	float: left;
-	width: 100%; background: #fff;
-}
-.tab_content {
-	padding: 0;
-	margin: 0;
-}
-.tab_container ul :hover{
-	margin: 0;
-	text-decoration: none;
-    font-weight: bold;
-	text-decoration: none;
-	background: #f5f5f5;
-}
+
 /* ===================== footer ===================== */
  #myban{
 margin-top: 1%;
@@ -1181,6 +1128,112 @@ box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
 #wp-calendar tbody td#today{background: none repeat scroll 0% 0% #2D89A7;color: #fff;}
 
 /* ===================== comments ===================== */
+.large-6{
+    width: 98%;}
+.row.collapse > .column, .row.collapse > .columns{
+    padding-left: 0;
+    padding-right: 0;
+	float: left;
+	position: relative;
+}
+.small-3{
+	    width: 25%;
+}
+.small-9{
+	    width: 75%;
+}
+.column + .column:last-child, .columns + .column:last-child, .column + .columns:last-child, .columns + .columns:last-child{
+float:right;
+}
+.prefix, .postfix{
+border-style: solid;
+    border-width: 1px;
+    display: block;
+    font-size: 0.875rem;
+    height: 2.3125rem;
+    line-height: 2.3125rem;
+    overflow: visible;
+    padding-bottom: 0;
+    padding-top: 0;
+    position: relative;
+    text-align: center;
+    width: 99%;
+    z-index: 2;
+	}
+span.prefix, label.prefix {
+    background: #f2f2f2;
+    border-right: none;
+    color: #333333;
+    border-color: #cccccc;
+}	
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="tel"], input[type="time"], input[type="url"], textarea{       border-radius: 0;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cccccc;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.75);
+    display: block;
+    font-family: inherit;
+    font-size: 0.875rem;
+    height: 2.4rem;
+    margin: 0 0 1rem 0;
+    padding: 0.5rem;
+    width: 100%; 
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: border-color 0.15s linear, background 0.15s linear;
+    -moz-transition: border-color 0.15s linear, background 0.15s linear;
+    -ms-transition: border-color 0.15s linear, background 0.15s linear;
+    -o-transition: border-color 0.15s linear, background 0.15s linear;
+    transition: border-color 0.15s linear, background 0.15s linear;
+	}
+.row{
+    margin: 0 auto;
+    max-width: 62.5rem;
+    width: 100%;
+	}
+#commentform i.fa {
+    padding: 5px;
+}	
+.column, .columns {
+    position: relative;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    float: left;
+}
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}	
+#commentform > p.comment-form-comment > label:before {
+ content: "\f0e5";
+	font: normal normal normal 14px/1 FontAwesome;
+	padding: 5px;
+	color: #9B9B9B;
+	font-size: 1rem;   
+}
+#commentform > p.comment-form-comment > label {
+    display: block;
+    margin-bottom: 0.88889rem;
+    padding: 0.33333rem 0.5rem 0.5rem;
+    position: relative;
+    bottom: -14px;
+    clear: both;
+    background: #f2f2f2;
+    border: 1px solid;
+    color: #333333;
+    border-color: #cccccc;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-bottom: 0;
+	}
+	
 .comments {
 	margin: 10px 0;
 }
@@ -1240,10 +1293,11 @@ ol.commentlist li div.reply {
 	cursor: pointer;
 	padding: .25em .5em;
 	margin: -3px 1.6em 7px;
-	background:#f1f1f1;
+	background:#418cd1;
 }
 ol.commentlist li div.reply a {
 	font-weight:bold;
+	color: #FFF;
 }
 ol.commentlist li ul.children {
 	list-style:none;
@@ -1269,12 +1323,7 @@ ol.commentlist li.pingback {
 	border-bottom:1px dotted #676767;
 	padding:1em;
 }
-#commentform #author, #commentform #email, #commentform #url, #commentform #comment {
-	background:#f5f5f5;
-	border: 1px solid #ccc;
-	margin-bottom: 1px;
-	padding: 5px;
-}
+
 
 ol.commentlist li ol {
 	list-style: decimal;
@@ -1283,32 +1332,14 @@ ol.commentlist li ol {
 #commentform #email:focus, #commentform #url:focus, #commentform #comment:focus {
 	border: 1px solid #aaa;
 }
-#commentform #author, #commentform #email, #commentform #url {
-	width: 200px;
-}
-#commentform #comment {
-	width:92%;
-	margin-left: 20px;
-}
-#commentform p {
-}
-#commentform #email {
-	width: 400px;
-	margin-left: 36px;
-}
-#commentform #author {
-	width: 400px;
-	margin-left: 36px;
-}
-#commentform #url {
-	width: 400px;
-	margin-left: 34px;
+textarea {
+     height: auto;
 }
 #commentform small {
 	line-height: 26px;
 }
 #commentform #submit{
-	background: #89D942;
+	background: #418cd1;
 	cursor: pointer;
 	font-weight: bold;
 	font-size: 14px;
@@ -1322,6 +1353,94 @@ ol.commentlist li ol {
 	text-decoration: none;
 	opacity: 0.4;
 	color:white;
+}
+#form-allowed-tags {
+display:none;
+}
+
+/*--------------------------------------------------------------
+# WooCommerce
+--------------------------------------------------------------*/
+.woocommerce .woocommerce-message{
+    
+      border-top-color: #20598A;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+div.related.products > h2::before{
+	content: "\f074";
+    padding: 8px;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+div.related.products > h2 {
+	background: #008CBA;
+    float: left;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 3%;
+    font-size: 1.2rem !important;
+    border-radius: 3px;
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+    
+   background-color: #ffffff;
+}
+a.added_to_cart.wc-forward{
+    display: none;
+}
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+    
+      background-color: #F54141;
+}
+ .woocommerce div.product form.cart .button:before {content: "\f07a";
+  font: normal normal normal 14px/1 FontAwesome;
+  padding: 1px 6px 0px 0px;
+  font-size: 1.1rem;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel{
+    background-color: #ffffff;
+  padding: 20px;
+  margin-top: 0px;
+ border-top:0px;   
+     overflow: overlay;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel h2{
+font-size: 1.3rem;
+  margin-bottom: 24px;
+}
+.woocommerce p.myaccount_user{
+    padding: 21px;
+    border-color: #DBDBDB;
+    color: #333333;
+    border: 1px solid #e9e9e9;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+div.summary.entry-summary > div.product_meta > span:before{
+    content: "\f115";
+	font: normal normal normal 14px/1 FontAwesome;
+	padding: 5px;
+}
+ .woocommerce div.product .woocommerce-tabs ul.tabs li a,   .woocommerce div.product .woocommerce-tabs ul.tabs li.active a{
+      margin-left: 6px;
+  padding: 8px 6px 8px 9px;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs .reviews_tab:before{
+    content: "\f0e5";
+    font: normal normal normal 14px/1 FontAwesome;
+    left: 8px;
+    top: 10px;
+    font-size: 1rem;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs .description_tab:before{
+    content: "\f0c9";
+	font: normal normal normal 14px/1 FontAwesome;
+	  left: 10px;
+  top: 13px;
 }
 /* ===================== css3/buttons ===================== */
 .entry-attachment .attachment {
@@ -1423,4 +1542,33 @@ border: 1px solid;
 	font-weight: 700;
 	margin: 10px 0;
 	float: left;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
 }
