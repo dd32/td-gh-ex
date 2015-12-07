@@ -2,10 +2,11 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive clean theme. More info at http://web-profile.com.ua/activetab/
-Version: 2.3
+Version: 2.4
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
-Tags: gray, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: gray, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, buddypress
+Text Domain: activetab
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 */
@@ -148,15 +149,7 @@ a img {
 }
 
 
-
-/* ========== selection colors ========== */
-::selection {background: #3297fd; color:#fff; text-shadow: none;}
-::-moz-selection {background: #3297fd; color:#fff; text-shadow: none;}
-img::selection {background: #3297fd;}
-img::-moz-selection	{background: #3297fd;}
-body {-webkit-tap-highlight-color: #3297fd;}
-
-
+/* ========== WordPress styles ========== */
 
 /* images */
 .alignleft {
@@ -282,6 +275,35 @@ img#wpstats {
 #content .gallery-columns-4 .gallery-item img {
 	width: 100%;
 	height: auto;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
 }
 
 /* ========== images ========== */
