@@ -133,6 +133,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@Version 1.5.1
+1. Comments Author Issue resolved.
 @Version 1.5
 1. Styling issue fixed.
 2. Remove Copyright text file.
