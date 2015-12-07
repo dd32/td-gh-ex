@@ -153,7 +153,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 				"id" => "wip_screen3",
 				"type" => "text",
 				"section" => "pagewidth_section",
-				"std" => "940",
+				"std" => "1170",
 
 			),
 
@@ -531,7 +531,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 				"id" => "wip_logo_font_size",
 				"type" => "text",
 				"section" => "logo_section",
-				"std" => "70px",
+				"std" => "45px",
 
 			),
 			

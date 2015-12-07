@@ -186,6 +186,9 @@ body.woocommerce-checkout .header-cart-widget:before {
     margin: 0;
     width: 100%;
     line-height: 20px;
+	border-width:1px;
+	border-style:solid;
+	border-color:#ddd;
 }
 
 .select2-container .select2-choice,
@@ -218,6 +221,11 @@ p.cart-empty {
 
 a.reset_variations {
 	display:none;
+}
+
+.woocommerce #payment .terms, 
+.woocommerce-page #payment .terms {
+    text-align: left;
 }
 
 /* ===============================================
@@ -408,6 +416,17 @@ span.sku_wrapper {
 	border:none;
 	line-height:40px;
     background-color: #fff;
+}
+
+.woocommerce form.checkout .woocommerce-error {
+	line-height:40px;
+    background-color: #fff;
+	margin:0 15px !important;
+	border:solid 1px #b81c23;
+}
+
+.woocommerce .woocommerce-error li {
+	color:#b81c23;
 }
 
 body.minimal-layout .woocommerce-error ,
