@@ -80,11 +80,12 @@
 						return false;
 					});
 				
-				
 			/*-----------------------------------------------------------------------------------*/
 			/*  Sticky Sidebar
 			/*-----------------------------------------------------------------------------------*/ 
-				$('.site-header').hcSticky();
+				$('.site-content, .site-header').theiaStickySidebar({
+					additionalMarginTop: 50
+				});
 			
 		} // End detect mobile browser
 	
