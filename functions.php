@@ -90,6 +90,9 @@ function rubine_setup() {
 		'width'	=> 1320,
 		'height' => 240,
 		'flex-height' => true));
+		
+	// Add Theme Support for wooCommerce
+	add_theme_support( 'woocommerce' );
 	
 	// Register Navigation Menus
 	register_nav_menus( array(

@@ -4,15 +4,11 @@
 		
 		<section id="content" class="primary" role="main">
 		
-		<?php if ( function_exists( 'themezee_breadcrumbs' ) ) themezee_breadcrumbs(); ?>
+			<div id="post-<?php the_ID(); ?>" <?php post_class('type-page clearfix'); ?>>
 			
-		<?php if (have_posts()) : while (have_posts()) : the_post();
-
-			get_template_part( 'content', 'page' );
-
-			endwhile;
-
-		endif; ?>
+				<?php woocommerce_content(); ?>
+				
+			</div>
 				
 		</section>
 		

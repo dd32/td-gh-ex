@@ -14,3 +14,10 @@
 #customize-control-rubine_control_post_images {
 	margin-bottom: 0;
 }
+
+#customize-control-rubine_control_upgrade div {
+	margin: 4px 0 32px;
+}
+#customize-control-rubine_control_upgrade div .customize-control-title {
+	margin-bottom: 4px;
+}
