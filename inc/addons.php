@@ -11,12 +11,13 @@ add_action( 'after_setup_theme', 'courage_theme_addons_setup' );
 
 function courage_theme_addons_setup() {
 
-	// Add Theme Support for Anderson Pro Plugin
+	// Add Theme Support for Courage Pro Plugin
 	add_theme_support( 'courage-pro' );
 	
 	// Add Theme Support for ThemeZee Addons
 	add_theme_support( 'themezee-widget-bundle' );
-
+	add_theme_support( 'themezee-breadcrumbs' );
+	
 }
 
 

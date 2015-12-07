@@ -103,9 +103,13 @@ function courage_setup() {
 		'width'	=> 1340,
 		'height' => 200,
 		'flex-height' => true));
+		
+	// Add Theme Support for wooCommerce
+	add_theme_support( 'woocommerce' );
 
 	// Register Navigation Menus
 	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'courage' ) );
+	register_nav_menu( 'secondary', esc_html__( 'Top Navigation', 'courage' ) );
 	register_nav_menu( 'footer', esc_html__( 'Footer Navigation', 'courage' ) );
 	
 	// Register Social Icons Menu
