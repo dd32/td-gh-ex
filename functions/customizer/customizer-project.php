@@ -239,7 +239,7 @@ function corpbiz_portfolio_customizer( $wp_customize ) {
 	
 	
 	//portfolio three image
-	$wp_customize->add_setting( 'corpbiz_options[portfolio_image_three]',array('default' => get_template_directory_uri().'/images/port2.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
+	$wp_customize->add_setting( 'corpbiz_options[portfolio_image_three]',array('default' => get_template_directory_uri().'/images/port3.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
  
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
@@ -318,7 +318,7 @@ function corpbiz_portfolio_customizer( $wp_customize ) {
 	
 	
 	//portfolio Four image
-	$wp_customize->add_setting( 'corpbiz_options[portfolio_image_four]',array('default' => get_template_directory_uri().'/images/port2.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
+	$wp_customize->add_setting( 'corpbiz_options[portfolio_image_four]',array('default' => get_template_directory_uri().'/images/port4.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
  
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(

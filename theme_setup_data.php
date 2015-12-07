@@ -3,6 +3,8 @@ function theme_data_setup()
 {	
 	$port_image1= WEBRITI_TEMPLATE_DIR_URI . "/images/port1.jpg";
 	$port_image2= WEBRITI_TEMPLATE_DIR_URI . "/images/port2.jpg";
+	$port_image3= WEBRITI_TEMPLATE_DIR_URI . "/images/port3.jpg";
+	$port_image4= WEBRITI_TEMPLATE_DIR_URI . "/images/port4.jpg";
 				
 	return $theme_options=array(
 			//Logo and Fevicon header			
@@ -75,12 +77,12 @@ function theme_data_setup()
 			'home_image_two_link_target'=>"on",
 			
 			'portfolio_title_three'=> __('Portfolio Three','corpbiz'),
-			'portfolio_image_three'=> $port_image1,
+			'portfolio_image_three'=> $port_image3,
 			'home_image_three_link'=>"#",
 			'home_image_three_link_target'=>"on",
 			
 			'portfolio_title_four'=> __('Portfolio Four','corpbiz'),
-			'portfolio_image_four'=> $port_image2,
+			'portfolio_image_four'=> $port_image4,
 			'home_image_four_link'=>"#",
 			'home_image_four_link_target'=>"on",
 			

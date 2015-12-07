@@ -53,6 +53,9 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.5
+1. Change Product Image
+2. Update Font-awesome Icon 4.4.0 to 4.5.0 
 @Version 1.4
 1. Addes Customizer
 2. Add Screen Reader Css
