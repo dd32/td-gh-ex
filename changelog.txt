@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 1.4.0 - Released: 07.12.2015
+
+-- Fixed : Comment section for pages.
+
 - Version 1.3.9 - Released: 05.12.2015
 
 -- Added : Left or right sidebar, for the search results.

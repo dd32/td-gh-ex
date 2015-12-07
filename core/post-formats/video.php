@@ -34,7 +34,7 @@
        
             <span class="entry-date"><i class="icon-time" ></i><?php echo get_the_date(); ?></span>
             
-			<?php if (suevafree_setting('suevafree_view_comments') == "on" ): ?>
+			<?php if (comments_open()): ?>
             
                 <span class="entry-comments">
                     
