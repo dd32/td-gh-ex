@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.6.2
+1. Change Banner,Product and Screenshot Images.
 @version 1.6.1
 1. Add Screen reader css.
 2. Update Font-awesome Folder

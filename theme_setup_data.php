@@ -55,17 +55,17 @@
   				
   				
   				'project_title_two' => __('Business Cards','busi_prof'), //project title two
-  				'project_thumb_two' =>$template_uri .'/rec_project.jpg', //project thumbnail two
+  				'project_thumb_two' =>$template_uri .'/rec_project2.jpg', //project thumbnail two
   				'project_text_two'  => __('Graphic Design & Web Design','busi_prof'), //project text-description two
   				'project_two_url' => '#',
   				
   				'project_title_three' => __('Business Cards','busi_prof'), //project title three
-  				'project_thumb_three' =>$template_uri .'/rec_project.jpg', //project thumbnail three
+  				'project_thumb_three' =>$template_uri .'/rec_project3.jpg', //project thumbnail three
   				'project_text_three'  => __('Graphic Design & Web Design','busi_prof'), //project text-description three
   				'project_three_url' => '#',
   				
   				'project_title_four' => __('Business Cards','busi_prof'), //project title three
-  				'project_thumb_four' =>$template_uri .'/rec_project.jpg', //project thumbnail three
+  				'project_thumb_four' =>$template_uri .'/rec_project4.jpg', //project thumbnail three
   				'project_text_four'  => __('Graphic Design & Web Design','busi_prof'), //project text-description three
   				'project_four_url' => '#',	
   				
@@ -77,7 +77,7 @@
   				'testimonials_name_one' => __('Hari maliya','busi_prof'), // Testimonials name
   				'testimonials_designation_one' => __('Web Developer','busi_prof'), // testmonials designation
   				
-  				'testimonials_image_two' => $template_uri.'/testimonial.jpg',  // Testimonials image 
+  				'testimonials_image_two' => $template_uri.'/testimonial2.jpg',  // Testimonials image 
   				'testimonials_text_two' => __('We are group of passionate designers and developers who really love to create awesome wordpress themes with amazing support & cooles video documentations...','busi_prof'), // Testimonials description
   				'testimonials_name_two' => __('Faraz Khan','busi_prof'), // Testimonials name
   				'testimonials_designation_two' => __('Web Developer','busi_prof'), // testmonials designation	
