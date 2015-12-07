@@ -20,6 +20,9 @@ Install
 
 Changelog
 ---------
+0.5.3 - 2015-12-8
+- update css
+
 0.5.2 - 2015-6-5
 - update css
 
