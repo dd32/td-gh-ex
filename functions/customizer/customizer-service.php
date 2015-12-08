@@ -104,7 +104,7 @@ $wp_customize->add_section( 'service_section_two' , array(
    	) );
 
 
-$wp_customize->add_setting( 'wallstreet_pro_options[service_image_two]',array('default' => get_template_directory_uri().'/images/service.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
+$wp_customize->add_setting( 'wallstreet_pro_options[service_image_two]',array('default' => get_template_directory_uri().'/images/service2.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
  
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
@@ -163,7 +163,7 @@ $wp_customize->add_section( 'service_section_three' , array(
    	) );
 
 
-$wp_customize->add_setting( 'wallstreet_pro_options[service_image_three]',array('default' => get_template_directory_uri().'/images/service.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
+$wp_customize->add_setting( 'wallstreet_pro_options[service_image_three]',array('default' => get_template_directory_uri().'/images/service3.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
  
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(

@@ -52,6 +52,9 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.4
+1. Change Service & Banner Image.
+2. Update Font awesome Icon 4.4.0 to 4.5.0
 @Version 1.6.3
 1. Change Pagetitle-separator styling image to css.
 @Version 1.6.2
@@ -165,12 +168,16 @@ Source: http://unsplash.com
 License: GPL
 
 Portfolio Image
-URL: http://pixabay.com/en/hunger-hungry-eating-cookie-413685/
+1. https://pixabay.com/en/person-human-girl-female-face-1041904/ 
+2. https://pixabay.com/en/rescue-helicopter-red-aircraft-922465/
+3. https://pixabay.com/en/norway-mountain-sky-blue-water-772991/
+4. https://pixabay.com/en/dress-girl-beautiful-woman-hands-864107/
 Source:http://pixabay.com
 LIcense: CC0 Public Domain
 
 Service Image
-URL: http://pixabay.com/en/adult-background-business-computer-15700/
+1. https://pixabay.com/en/cop-policewoman-colleagues-funny-1016218/
+2. https://pixabay.com/en/veterinarian-animals-funny-1050812/
 Source:pixabay.com
 License: CC0 Public Domain
 
@@ -184,7 +191,7 @@ Source:http://pixabay.com
 LIcense: CC0 Public Domain
 
 
-Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 

@@ -83,7 +83,7 @@ function wallstreet_project_customizer( $wp_customize ) {
     );
 	
 	//Project one image
-	$wp_customize->add_setting( 'wallstreet_pro_options[portfolio_image_one]',array('default' => get_template_directory_uri().'/images/portfolio.jpg',
+	$wp_customize->add_setting( 'wallstreet_pro_options[portfolio_image_one]',array('default' => get_template_directory_uri().'/images/portfolio1.jpg',
 	'type' => 'option','sanitize_callback' => 'esc_url_raw',));
  
 	$wp_customize->add_control(
@@ -142,7 +142,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 );
 	
 	//Project two image
-	$wp_customize->add_setting( 'wallstreet_pro_options[portfolio_image_two]',array('default' => get_template_directory_uri().'/images/portfolio.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));	
+	$wp_customize->add_setting( 'wallstreet_pro_options[portfolio_image_two]',array('default' => get_template_directory_uri().'/images/portfolio2.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));	
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize,
@@ -202,7 +202,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 );
 	
 	//Project three image
-	$wp_customize->add_setting( 'wallstreet_pro_options[portfolio_image_three]',array('default' => get_template_directory_uri().'/images/portfolio.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
+	$wp_customize->add_setting( 'wallstreet_pro_options[portfolio_image_three]',array('default' => get_template_directory_uri().'/images/portfolio3.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
  
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
@@ -262,7 +262,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 );
 	
 	//Project Four image
-	$wp_customize->add_setting( 'wallstreet_pro_options[portfolio_image_four]',array('default' => get_template_directory_uri().'/images/portfolio.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
+	$wp_customize->add_setting( 'wallstreet_pro_options[portfolio_image_four]',array('default' => get_template_directory_uri().'/images/portfolio4.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
  
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(

@@ -2,8 +2,13 @@
 function theme_data_setup()
 {
 	$slider_image = WEBRITI_TEMPLATE_DIR_URI . "/images/slider.jpg";
-	$service_image = WEBRITI_TEMPLATE_DIR_URI . "/images/service.jpg";
-	$portfolio_image = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio.jpg";
+	$service_image1 = WEBRITI_TEMPLATE_DIR_URI . "/images/service.jpg";
+	$service_image2 = WEBRITI_TEMPLATE_DIR_URI . "/images/service2.jpg";
+	$service_image3 = WEBRITI_TEMPLATE_DIR_URI . "/images/service3.jpg";
+	$portfolio_image1 = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio1.jpg";
+	$portfolio_image2 = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio2.jpg";
+	$portfolio_image3 = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio3.jpg";
+	$portfolio_image4 = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio4.jpg";
 	
 	return $theme_options=array(
 			//Logo and Fevicon header					
@@ -24,15 +29,15 @@ function theme_data_setup()
 			// service
 			'service_section_enabled' => true,
 			
-			'service_image_one' => $service_image, 
+			'service_image_one' => $service_image1, 
 			'service_title_one'=> __('Product Designing','wallstreet'),
 			'service_description_one' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
-			'service_image_two' => $service_image, 
+			'service_image_two' => $service_image2, 
 			'service_title_two'=> __('WordPress Themes','wallstreet'),
 			'service_description_two' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
-			'service_image_three' => $service_image, 
+			'service_image_three' => $service_image3, 
 			'service_title_three'=> __('Responsive Designs','wallstreet'),
 			'service_description_three' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
@@ -41,19 +46,19 @@ function theme_data_setup()
 			
 			'portfolio_title_one' => __('Wall Street Style','wallstreet'),
 			'portfolio_description_one' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
-			'portfolio_image_one' => $portfolio_image,
+			'portfolio_image_one' => $portfolio_image1,
 			
 			'portfolio_title_two' => __('Wall Street Style','wallstreet'),
 			'portfolio_description_two' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
-			'portfolio_image_two' => $portfolio_image,
+			'portfolio_image_two' => $portfolio_image2,
 			
 			'portfolio_title_three' => __('Wall Street Style','wallstreet'),
 			'portfolio_description_three' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
-			'portfolio_image_three' => $portfolio_image,
+			'portfolio_image_three' => $portfolio_image3,
 			
 			'portfolio_title_four' => __('Wall Street Style','wallstreet'),
 			'portfolio_description_four' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
-			'portfolio_image_four' => $portfolio_image,
+			'portfolio_image_four' => $portfolio_image4,
 			
 			//Home blog
 			'blog_section_enabled' => 'on',
