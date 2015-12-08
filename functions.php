@@ -19,7 +19,13 @@ function optimize_scripts() {
 	}
 add_action( 'wp_enqueue_scripts', 'optimize_scripts' );
 
-
+/**
+ * Enqueue script for custom customize control.
+ */
+function optimize_custom_customize_enqueue() {
+	wp_enqueue_style( 'customizer-css', get_stylesheet_directory_uri() . '/css/customizer-css.css' );
+}
+add_action( 'customize_controls_enqueue_scripts', 'optimize_custom_customize_enqueue' );
 	
  function optimize_googlemeta() {
        	if (of_get_option('optimize_headad') != '') {

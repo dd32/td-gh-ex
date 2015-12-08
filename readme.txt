@@ -30,6 +30,11 @@ Custom Css:
 
 == Change log ==
 
+= 1.7.1 =
+* Latest post widget fix
+* Customizer links fixed
+* styling issue fixed
+
 = 1.7 =
 * Comment form updated
 * Header Image Support added

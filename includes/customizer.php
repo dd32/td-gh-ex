@@ -1,8 +1,8 @@
 <?php
 /**
- * promax Theme Customizer
+ * optimize Theme Customizer
  *
- * @package promax
+ * @package optimize
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function promax_customize_register( $wp_customize ) {
+function optimize_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
@@ -20,23 +20,23 @@ function promax_customize_register( $wp_customize ) {
   
 }
 
-add_action("customize_register","promax_customize_register");
+add_action("customize_register","optimize_customize_register");
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function promax_customize_preview_js() {
-	wp_enqueue_script( 'promax_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+function optimize_customize_preview_js() {
+	wp_enqueue_script( 'optimize_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-add_action( 'customize_preview_init', 'promax_customize_preview_js' );
+add_action( 'customize_preview_init', 'optimize_customize_preview_js' );
 
-function promax_sanitize_checkbox( $checked ) {
+function optimize_sanitize_checkbox( $checked ) {
 	// Boolean check.
 	return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
-function promax_sanitize_nohtml( $nohtml ) {
+function optimize_sanitize_nohtml( $nohtml ) {
 	return wp_filter_nohtml_kses( $nohtml );
 }
-function promax_sanitize_select( $input, $setting ) {
+function optimize_sanitize_select( $input, $setting ) {
 	
 	// Ensure input is a slug.
 	$input = sanitize_key( $input );
@@ -49,23 +49,23 @@ function promax_sanitize_select( $input, $setting ) {
 }
 
 
-function promax_registers() {
-    wp_register_script( 'promax_jquery_ui', '//code.jquery.com/ui/1.10.4/jquery-ui.js', array("jquery"), '20120206', true  );
-	wp_enqueue_script( 'promax_jquery_ui' );
-	wp_register_script( 'promax_customizer_script', get_template_directory_uri() . '/js/promax_customizer.js', array("jquery","promax_jquery_ui"), '20120206', true  );
-	wp_enqueue_script( 'promax_customizer_script' );
+function optimize_registers() {
+    wp_register_script( 'optimize_jquery_ui', '//code.jquery.com/ui/1.10.4/jquery-ui.js', array("jquery"), '20120206', true  );
+	wp_enqueue_script( 'optimize_jquery_ui' );
+	wp_register_script( 'optimize_customizer_script', get_template_directory_uri() . '/js/optimize_customizer.js', array("jquery","optimize_jquery_ui"), '20120206', true  );
+	wp_enqueue_script( 'optimize_customizer_script' );
 	
-	wp_localize_script( 'promax_customizer_script', 'scatmanjhon', array(
-		'documentation' => __( 'Documentation', 'promax' ),
-		'pro' => __('Upgrade to Pro','promax'),
-		'support' => __('Support Forum','promax')
+	wp_localize_script( 'optimize_customizer_script', 'scatmanjhon', array(
+		'documentation' => __( 'Documentation', 'optimize' ),
+		'pro' => __('Upgrade to Pro','optimize'),
+		'support' => __('Support Forum','optimize')
 		
 	) );
 }
-add_action( 'customize_controls_enqueue_scripts', 'promax_registers' );
+add_action( 'customize_controls_enqueue_scripts', 'optimize_registers' );
 
 
-function promax_sanitize_image( $image, $setting ) {
+function optimize_sanitize_image( $image, $setting ) {
 	/*
 	 * Array of valid image file types.
 	 *
@@ -84,11 +84,11 @@ function promax_sanitize_image( $image, $setting ) {
 	// If $image has a valid mime_type, return it; otherwise, return the default.
     return ( $file['ext'] ? $image : $setting->default );
 }
-function promax_sanitize_css( $css ) {
+function optimize_sanitize_css( $css ) {
 	return wp_strip_all_tags( $css );
 }
 
-function promax_sanitize_html( $html ) {
+function optimize_sanitize_html( $html ) {
 	return stripslashes(wp_filter_post_kses( $html ));
         
 }
