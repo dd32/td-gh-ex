@@ -3,6 +3,7 @@
  *
  */
 
+#customize-control-dynamicnews_control_default_fonts,
 #customize-control-dynamicnews_control_topnavi_title,
 #customize-control-dynamicnews_control_excerpt_text_headline,
 #customize-control-dynamicnews_control_post_images,
@@ -17,6 +18,7 @@
 	padding-top: 14px;
 }
 
+#customize-control-dynamicnews_control_sliding_sidebar_title,
 #customize-control-dynamicnews_control_default_fonts,
 #customize-control-dynamicnews_control_header_content,
 #customize-control-dynamicnews_control_topnavi_title,
@@ -26,4 +28,11 @@
 #customize-control-dynamicnews_control_slider_activated,
 #customize-control-dynamicnews_control_featured_posts_header  {
 	margin-bottom: 0;
+}
+
+#customize-control-dynamicnews_control_upgrade div {
+	margin: 4px 0 32px;
+}
+#customize-control-dynamicnews_control_upgrade div .customize-control-title {
+	margin-bottom: 4px;
 }

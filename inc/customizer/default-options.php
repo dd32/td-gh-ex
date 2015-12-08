@@ -30,10 +30,13 @@ function dynamicnews_theme_options() {
 function dynamicnews_default_options() {
 
 	$default_options = array(
+		'header_tagline'					=> false,
+		'custom_header_link'				=> '',
+		'custom_header_hide'				=> false,
 		'layout' 							=> 'boxed',
 		'sidebar' 							=> 'right-sidebar',
+		'sliding_sidebar'					=> true,
 		'deactivate_google_fonts'			=> false,
-		'header_tagline' 					=> false,
 		'header_search' 					=> false,
 		'header_icons' 						=> false,
 		'header_text' 						=> '',
