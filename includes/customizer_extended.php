@@ -17,7 +17,6 @@ if (class_exists('WP_Customize_Control')):
 
         public function render_content() {
             echo '<p><a href="' . ACTUATE_DOCS_URL . '" target="_blank">' . __('Theme Documentation', 'actuate') . '</a></p>';
-            //echo '<p><a href="" target="_blank">'.__('Theme Support','actuate').'</a></p>';
             echo '<p><a href="' . ACTUATE_CONTACT_URL . '" target="_blank">' . __('Contact us', 'actuate') . '</a></p>';
         }
 

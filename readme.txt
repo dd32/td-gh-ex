@@ -1,0 +1,48 @@
+=== Actuate ===
+
+Contributors: mudThemes
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+== Installation ==
+
+1. To Install Actuate Theme, Put the "actuate" directory in your wp-content/themes directory.
+2. Activate the Theme from WordPress Admin Panel.
+3. The Theme installs with the basic layout in place although you can configure theme using options.
+
+== Frequently Asked Questions ==
+
+= Where can I find theme support? =
+
+Go to https://wordpress.org/support/theme/actuate
+
+== Changelog ==
+
+= Version 1.0.1 - 08/12/2015 =
+* (includes/customizer.php + assets/admin/js/admin.js) Fixed enqueue + JS localization
+* (loop.php) Added i18n strings
+* (includes/customizer_extended.php) Removed commented code
+* (includes/customizer_constants.php) Removed commented code
+* (includes/customizer.php) Removed commented code
+* (functions.php) Enqueued respond.min.js
+* (assets/global/js/respond.min.js) Added
+* (functions.php) Added/Modified i18n strings | Escaped output
+* (loop.php | functions.php) Removed function & call actuate_loop_section_col_class_modifier()
+* (loop.php) Removed style attribute
+* (core files) Code Indention
+* (actuate.pot) Regenerated
+
+= Version 0.0.1 - 21/09/2015 =
+* Initial Release
+
+== Resources ==
+
+* Screenshot image (https://pixabay.com/en/blueberries-pancake-breakfast-919029/): by https://pixabay.com/en/users/Unsplash-242387/, licensed under [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+* Screenshot image (https://pixabay.com/en/camera-vintage-retro-photography-918949/): by https://pixabay.com/en/users/Unsplash-242387/, licensed under [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+* Screenshot image (https://pixabay.com/en/statues-budhism-temple-asia-919023/): by https://pixabay.com/en/users/Unsplash-242387/, licensed under [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+* Screenshot image (https://pixabay.com/en/stranded-ships-wrecks-abandoned-918933/): by https://pixabay.com/en/users/Unsplash-242387/, licensed under [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+* Screenshot image (https://pixabay.com/en/ladder-swimming-jetty-lake-boards-918961/): by https://pixabay.com/en/users/Unsplash-242387/, licensed under [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+* Screenshot image (https://pixabay.com/en/logs-logging-timber-lumber-pile-918931/): by https://pixabay.com/en/users/Unsplash-242387/, licensed under [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+* Superfish jQuery menu: by Joel Birch (https://github.com/joeldbirch), dual licensed under[GPLv2](http://www.gnu.org/licenses/gpl.html) and [MIT](http://www.opensource.org/licenses/mit-license.php)
+* Respond.js: by Scott Jehl (https://github.com/scottjehl), licensed under [MIT](http://www.opensource.org/licenses/mit-license.php)
+* Font Awesome: by Dave gandy (http://fontawesome.io), dual licensed under [SIL OFL 1.1](http://scripts.sil.org/OFL) and [MIT](http://www.opensource.org/licenses/mit-license.php)

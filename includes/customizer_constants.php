@@ -13,14 +13,6 @@
 define('ACTUATE_ADMIN_JS_URL', get_template_directory_uri() . '/assets/admin/js/');
 
 /**
- * Admin Images Directory URL
- * 
- * @since 1.0.0
- * @todo (Currently empty) Incase any images are uploaded. Uncomment this definition.
- */
-//define('ACTUATE_ADMIN_IMAGES_URL', get_template_directory_uri() . '/assets/admin/images/');
-
-/**
  * Admin CSS Directory URL
  * 
  * @since 1.0.0

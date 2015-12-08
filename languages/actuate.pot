@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Actuate 0.0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/actuate\n"
-"POT-Creation-Date: 2015-09-21 07:31:00+00:00\n"
+"POT-Creation-Date: 2015-12-08 11:01:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,6 +91,10 @@ msgstr ""
 msgid "Actuate Theme by"
 msgstr ""
 
+#: functions.php:70
+msgid "Primary Menu"
+msgstr ""
+
 #: functions.php:131 functions.php:133
 msgid "Right Sidebar"
 msgstr ""
@@ -107,12 +111,24 @@ msgstr ""
 msgid "Footerbox Sidebar #3"
 msgstr ""
 
+#: functions.php:302 includes/customizer.php:410
+msgid "Facebook"
+msgstr ""
+
+#: functions.php:303 includes/customizer.php:422
+msgid "Twitter"
+msgstr ""
+
+#: functions.php:304
+msgid "RSS feed"
+msgstr ""
+
 #: functions.php:333
 msgid "Ooops! Nothing Found"
 msgstr ""
 
 #: functions.php:335 functions.php:337
-msgid "Nothing found for: %s"
+msgid "Nothing found for:"
 msgstr ""
 
 #: functions.php:344
@@ -138,11 +154,11 @@ msgid "Period"
 msgstr ""
 
 #: functions.php:390
-msgid "<span class=\"meta-nav\">&larr;</span> Newer posts"
+msgid "Newer posts"
 msgstr ""
 
 #: functions.php:391
-msgid "Older posts <span class=\"meta-nav\">&rarr;</span>"
+msgid "Older posts"
 msgstr ""
 
 #: functions.php:457
@@ -150,18 +166,14 @@ msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: functions.php:468
-msgid "%s <span class=\"says\"></span>"
+msgid "ago"
 msgstr ""
 
-#: functions.php:469
-msgid "%1$s ago"
-msgstr ""
-
-#: functions.php:477 functions.php:489
+#: functions.php:476 functions.php:488
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:489
+#: functions.php:488
 msgid "Pingback:"
 msgstr ""
 
@@ -294,14 +306,6 @@ msgstr ""
 msgid "Social Profiles"
 msgstr ""
 
-#: includes/customizer.php:410
-msgid "Facebook"
-msgstr ""
-
-#: includes/customizer.php:422
-msgid "Twitter"
-msgstr ""
-
 #: includes/customizer.php:434
 msgid "RSS"
 msgstr ""
@@ -310,31 +314,51 @@ msgstr ""
 msgid "About Actuate Theme"
 msgstr ""
 
+#: includes/customizer.php:576
+msgid "Upgrade to Premium"
+msgstr ""
+
 #: includes/customizer_extended.php:19
 msgid "Theme Documentation"
 msgstr ""
 
-#: includes/customizer_extended.php:21
+#: includes/customizer_extended.php:20
 msgid "Contact us"
 msgstr ""
 
-#: loop.php:51
+#: loop.php:48
 msgid "Permalink to"
 msgstr ""
 
-#: loop.php:55
+#: loop.php:51
 msgid "Written on"
 msgstr ""
 
-#: loop.php:56
+#: loop.php:52
 msgid "by"
 msgstr ""
 
-#: loop.php:68 page.php:25 single.php:49
+#: loop.php:54
+msgid "No comments yet"
+msgstr ""
+
+#: loop.php:54
+msgid "1 comment"
+msgstr ""
+
+#: loop.php:54
+msgid "comments"
+msgstr ""
+
+#: loop.php:54
+msgid "No Comments"
+msgstr ""
+
+#: loop.php:63 page.php:23 single.php:46
 msgid "Pages:"
 msgstr ""
 
-#: page.php:29 single.php:53
+#: page.php:26 single.php:50
 msgid "Edit"
 msgstr ""
 
@@ -362,23 +386,23 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: single.php:33 single.php:35
+#: single.php:31 single.php:33
 msgid "Comments (Closed)"
 msgstr ""
 
-#: single.php:39
+#: single.php:37
 msgid "Leave a reply"
 msgstr ""
 
-#: single.php:39
+#: single.php:37
 msgid "1 Comment"
 msgstr ""
 
-#: single.php:39
+#: single.php:37
 msgid "Comments"
 msgstr ""
 
-#: single.php:54
+#: single.php:51
 msgid "Tags: "
 msgstr ""
 

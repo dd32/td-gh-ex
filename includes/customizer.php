@@ -533,7 +533,6 @@ function actuate_customizer_setup($wp_customize) {
                 $wp_customize, 'actuate_theme_lite[' . $option['id'] . ']', array(
                 'label' => $option['label'],
                 'description' => $option['description'],
-                //'type' => $option['type'],
                 'section' => actuate_get_sections($option['section']),
                 'setting' => $option['id'],
                 )
@@ -569,9 +568,13 @@ add_action('customize_preview_init','actuate_live_preview_scripts');
  *
  * @since 1.0
  */
-function actuate_admin_panel_style() {
-    wp_enqueue_style('actuate-admin-panel-css', ACTUATE_ADMIN_CSS_URL . 'admin.css');
-    wp_enqueue_script('actuate-admin-panel-js', ACTUATE_ADMIN_JS_URL . 'admin.js', array('jquery'), '1.0.0', TRUE);
+function actuate_admin_panel_style($hook) {
+    
+    if($hook == 'widgets.php'){
+        wp_enqueue_style('actuate-admin-panel-css', ACTUATE_ADMIN_CSS_URL . 'admin.css');
+        wp_enqueue_script('actuate-admin-panel-js', ACTUATE_ADMIN_JS_URL . 'admin.js', array('jquery'), '1.0.0', TRUE);
+        wp_localize_script('actuate-admin-panel-js', 'actuateCustomizerUpgradeVars', array('upgrade_text' => __('Upgrade to Premium', 'actuate')));
+    }
 }
 add_action( 'admin_enqueue_scripts', 'actuate_admin_panel_style' );
 
@@ -590,7 +593,6 @@ function actuate_get_option($id = NULL) {
     
     // Global array exists. Get value from memory
     if($actuate_options && array_key_exists($id, $actuate_options)) {
-        //echo 'Actuate Options exists';
         return $actuate_options[$id];
     } else {
         
@@ -599,14 +601,12 @@ function actuate_get_option($id = NULL) {
         
         if($saved_options && array_key_exists($id, $saved_options)){
             
-            //echo 'Actuate Options got from DB';
             $actuate_options = $saved_options;
             return $actuate_options[$id];
             
         } else {
             
             // No value in Memory or DB. Get it from default options.
-            //echo 'Actuate Options got from SANE';
             $sane_options = actuate_customizer_options('options');
             $actuate_options = array();
             

@@ -67,7 +67,7 @@ function actuate_setup() {
      * Adds supports for Theme menu.
      * Actuate uses wp_nav_menu() in a single location to diaplay one single menu.
      */
-    register_nav_menu('primary', 'Primary Menu');
+    register_nav_menu('primary', __('Primary Menu', 'actuate'));
 
     /**
      * Add support for Post Thumbnails.
@@ -213,7 +213,7 @@ add_action( 'wp_enqueue_scripts', 'actuate_enqueue');
  */
 function actuate_enqueue_ie_script() {
     echo "\n";
-    ?><!--[if lt IE 9]><script type='text/javascript' src='<?php echo ACTUATE_GLOBAL_JS_URL ?>respond.js?ver=1.4.2'></script><![endif]--><?php
+    ?><!--[if lt IE 9]><script type='text/javascript' src='<?php echo ACTUATE_GLOBAL_JS_URL ?>respond.min.js?ver=1.4.2'></script><![endif]--><?php
     echo "\n";
 }
 add_action('wp_head', 'actuate_enqueue_ie_script');
@@ -299,9 +299,9 @@ function actuate_social_section_show() {
 
     $output = false;
     
-    $output .= actuate_get_social_section_individual_icon('facebook', 'Facebook', 'facebook');
-    $output .= actuate_get_social_section_individual_icon('twitter', 'Twitter', 'twitter');
-    $output .= actuate_get_social_section_individual_icon('rss', 'RSS feed', 'rss');
+    $output .= actuate_get_social_section_individual_icon('facebook', __('Facebook','actuate'), 'facebook');
+    $output .= actuate_get_social_section_individual_icon('twitter', __('Twitter','actuate'), 'twitter');
+    $output .= actuate_get_social_section_individual_icon('rss', __('RSS feed','actuate'), 'rss');
     
     if($output !== false): ?>
         <div id="social-section" class="social-section">
@@ -332,9 +332,9 @@ function actuate_404_show(){
             <?php if (is_404()) : ?>
                 <h1><?php _e('Ooops! Nothing Found', 'actuate'); ?></h1>
             <?php elseif (is_search()) : ?>
-                <h1><?php printf(__('Nothing found for: %s', 'actuate'), get_search_query()); ?></h1>
+                <h1><?php printf(__('Nothing found for:', 'actuate').' %s', get_search_query()); ?></h1>
             <?php else : ?>
-                <h1><?php printf(__('Nothing found for: %s', 'actuate'), single_term_title('', false)); ?></h1>
+                <h1><?php printf(__('Nothing found for:', 'actuate').' %s', single_term_title('', false)); ?></h1>
             <?php endif; ?>
         </div>
     </div><!-- Archive Meta Container ends -->
@@ -387,8 +387,8 @@ function actuate_archive_nav() {
     if ($wp_query->max_num_pages > 1): ?>
         
         <div class="archive-nav grid-col-16 clearfix">
-            <div class="nav-next"><?php previous_posts_link(__('<span class="meta-nav">&larr;</span> Newer posts', 'actuate')); ?></div>
-            <div class="nav-previous"><?php next_posts_link(__('Older posts <span class="meta-nav">&rarr;</span>', 'actuate')); ?></div>
+            <div class="nav-next"><?php previous_posts_link('<span class="meta-nav">&larr;</span> '.__('Newer posts', 'actuate')); ?></div>
+            <div class="nav-previous"><?php next_posts_link(__('Older posts', 'actuate').' <span class="meta-nav">&rarr;</span>'); ?></div>
         </div>
         
 <?php endif;
@@ -458,15 +458,14 @@ function actuate_comment_callback( $comment, $args, $depth ) {
                 <?php $actuate_get_comment_ID = get_comment_ID() ?>
                 <?php $actuate_is_comment_reply = get_comment($actuate_get_comment_ID)->comment_parent ?>
                 <?php $actuate_the_comment_author = get_comment_author(get_comment($actuate_get_comment_ID)->comment_parent) ?>
-                <?php // if($actuate_is_comment_reply != 0 ) printf('<div class="comment-parent-author"><span>Replied to %s</span></div>', $actuate_the_comment_author ) ?>
 
                 <div id="comment-<?php comment_ID(); ?>" class="comment-block-container grid-float-left grid-col-16">
                     <div class="comment-info-container grid-col-4 grid-float-left">
                         <div class="comment-author vcard">
                             <div class="comment-author-avatar-container"><?php echo get_avatar($comment, 125); ?></div>
                             <div class="comment-author-info-container">
-                                <div class="comment-author-name"><?php printf(__('%s <span class="says"></span>', 'actuate'), sprintf('<cite class="fn">%s</cite>', get_comment_author_link())) ?></div>
-                                <div class="comment-meta comment-date"><a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">(<?php printf(__('%1$s ago', 'actuate'), human_time_diff(get_comment_time( 'U' ), current_time( 'timestamp' ))); ?>)</a></div>
+                                <div class="comment-author-name"><?php printf('%s <span class="says"></span>', sprintf('<cite class="fn">%s</cite>', get_comment_author_link())) ?></div>
+                                <div class="comment-meta comment-date"><a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">(<?php printf('%1$s '.__('ago', 'actuate'), human_time_diff(get_comment_time( 'U' ), current_time( 'timestamp' ))); ?>)</a></div>
                             </div>
                         </div><!-- .comment-author .vcard -->
                     </div>
@@ -492,26 +491,6 @@ function actuate_comment_callback( $comment, $args, $depth ) {
 
     endswitch;
 }
-
-
-
-/**
- * Filters and add class to 'loop-section-col' section.
- * 
- * @param NULL $default '' Nothing by default
- * @param integer $loop_count An integer starting from 1,2,3,,,,
- * @return string Name of CSS class
- * @since 1.0
- */
-function actuate_loop_section_col_class_modifier($default, $loop_count) {
-
-    if ($loop_count % 2 == 1):
-        return 'grid-float-left';
-    else:
-        return 'grid-float-right';
-    endif;
-}
-add_filter('actuate_loop_section_col_class_filter', 'actuate_loop_section_col_class_modifier', 10, 2);
 
 
 
@@ -572,7 +551,7 @@ function actuate_attach_options_style(){
 
     foreach ($elements_color as $key => $value) {
         if(actuate_get_option($key)) {
-            $style .= $value . '{color:'.  actuate_get_option($key).';}';
+            $style .= $value . '{color:'.  wp_filter_nohtml_kses(actuate_get_option($key)).';}';
         }
     }
 

@@ -2,7 +2,7 @@
 Theme Name: Actuate
 Theme URI: http://www.mudthemes.com/actuate
 Description: Actuate is a clean, beautiful and responsive theme useful for personal blogging, corporate or magazine blogs. It has 3 columns homepage with big thumbnails which gives your site a stylish look. Actuate has a single menu with 4 sidebars which consist of a beautiful Footer box. Actuate is fully Translation ready and comes with GPL license and online documentation.
-Version: 0.0.1
+Version: 1.0.1
 Author: mudThemes
 Author URI: http://www.mudthemes.com
 Tags: white, orange, light, responsive-layout, fluid-layout, two-columns, three-columns, right-sidebar, custom-menu, threaded-comments, theme-options, translation-ready, custom-background
@@ -1409,6 +1409,11 @@ body {
   padding-left: 15px;
   padding-right: 15px;
 }
+.loop-container-section * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .loop-couple-section {
   width: 100%;
   float: left;
@@ -1432,7 +1437,6 @@ body {
 .loop-content-section {
   padding: 25px 14px 20px;
   border: 1px solid #e9e9e9;
-  border-top: 0;
   text-align: center;
 }
 .loop-post-title {
@@ -1474,6 +1478,17 @@ body {
 .thumbnail-right .loop-thumbnail {
   float: right;
   padding: 5px 5px 0 20px;
+}
+.loop-thumbnail-section {
+  width: 100%;
+  height: 260px;
+}
+.loop-thumbnail-overlay {
+  background-clip: border-box;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 .loop-thumbnail {
   -moz-box-sizing: border-box;
@@ -2607,14 +2622,6 @@ body #scrollUp:hover {
   body {
     font-size: 14px;
   }
-  .home .inner-content-section,
-  .blog .inner-content-section {
-    width: 75%;
-  }
-  .home .sidebar-right-section,
-  .blog .sidebar-right-section {
-    width: 25%;
-  }
   .blog-heading-section h2 {
     width: 75%;
     margin: 0 auto;
@@ -2626,26 +2633,56 @@ body #scrollUp:hover {
     font-size: 14px;
     line-height: 1.8;
   }
-  .loop-section-col:first-of-type .loop-section {
-    padding-top: 10px;
+  .loop-section-col {
+    width: 90%;
+    float: none;
+    clear: both;
+    margin-bottom: 50px;
+    zoom: 1;
   }
-  .loop-post-title h1 a {
-    font-size: 20px;
+  .loop-section-col:before,
+  .loop-section-col:after {
+    content: "";
+    display: table;
   }
-  .loop-post-excerpt .loop-post-text p {
-    font-size: 14px;
+  .loop-section-col:after {
+    clear: both;
   }
-  .loop-stylish-date {
-    margin-top: 10px;
-    margin-right: 15px;
+  .loop-section {
+    zoom: 1;
   }
-  .loop-stylish-date .loop-stylish-date-month {
-    font-size: 12px;
-    text-transform: lowercase;
-    padding: 3px 10px 4px;
+  .loop-section:before,
+  .loop-section:after {
+    content: "";
+    display: table;
   }
-  .loop-stylish-date .loop-stylish-date-num {
-    padding: 3px 10px;
+  .loop-section:after {
+    clear: both;
+  }
+  /*
+    .loop-thumbnail-section {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .loop-content-section {
+        width: 80%;
+        margin: 0 auto;
+        border: 0;
+    }
+    */
+  .loop-thumbnail-section {
+    height: 200px;
+    width: 40%;
+    float: left;
+    clear: none;
+    padding: 0;
+  }
+  .loop-content-section {
+    width: 60%;
+    float: left;
+    clear: none;
+    border: 0;
+    padding-top: 0;
   }
   .sidebar-right-section h4.widget-title,
   .footerbox-section h4.widget-title,
@@ -2699,18 +2736,7 @@ body #scrollUp:hover {
     text-align: center;
   }
 }
-@media only screen and (max-width: 756px) {
-  .logo-section,
-  .nav-section {
-    width: 50%;
-  }
-}
 @media only screen and (max-width: 600px) {
-  .logo-section,
-  .nav-section {
-    width: 100%;
-    float: left;
-  }
   .primarymenu-resp {
     float: left;
     margin-top: 20px;
@@ -2838,7 +2864,6 @@ body #scrollUp:hover {
 .loop-stylish-date {
   display: none;
 }
-
 .sticky{}
 .bypostauthor{}
 .screen-reader-text{}
