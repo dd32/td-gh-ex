@@ -1039,7 +1039,7 @@ function accesspresslite_theme_options_page() {
 						<hr />
 
 						<h4><?php _e('Our other Products','accesspresslite'); ?></h4>
-						<p><?php _e('Themes - ','accesspresslite'); ?><a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/themes'); ?>"><?php echo esc_url('https://accesspressthemes.com/themes'); ?></a></p>
+						<p><?php _e('Themes - ','accesspresslite'); ?><a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes'); ?>"><?php echo esc_url('https://accesspressthemes.com/wordpress-themes/'); ?></a></p>
 						<p><?php _e('Plugins - ','accesspresslite'); ?><a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/plugins'); ?>"><?php echo esc_url('https://accesspressthemes.com/plugins'); ?></a></p>
 						<hr />
 						<h4><?php _e('Get in touch','accesspresslite'); ?></h4>

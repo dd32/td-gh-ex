@@ -60,6 +60,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.45.7
+* Tested with WordPress 4.4 and minor bugs fixed
+
 Version 2.45.6
 * Minor CSS fixes
 * Translation .pot file updated
