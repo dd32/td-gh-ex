@@ -155,3 +155,43 @@ if ( ! function_exists( 'kt_woocommerce_single_variation' ) ) {
     echo '<div class="single_variation headerfont"></div>';
   }
 }
+
+// Shop Page Image
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+add_action( 'woocommerce_before_shop_loop_item_title', 'kt_woocommerce_template_loop_product_thumbnail', 10 );
+function kt_woocommerce_template_loop_product_thumbnail() {
+  global $virtue, $woocommerce_loop, $post;
+
+  // Store column count for displaying the grid
+if ( empty( $woocommerce_loop['columns'] ) )
+  $woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
+
+if ($woocommerce_loop['columns'] == '3'){ 
+  $productimgwidth = 365;
+} else {
+  $productimgwidth = 268;
+}
+
+
+  if(isset($virtue['product_img_resize']) && $virtue['product_img_resize'] == 0) {
+    $resizeimage = 0;
+  } else {
+    $resizeimage = 1;
+  }
+
+      if($resizeimage == 1) { 
+          if ( has_post_thumbnail() ) {
+          $product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
+          $product_image_url = $product_image[0]; 
+          $image_product = aq_resize($product_image_url, $productimgwidth, $productimgwidth, true);
+                if(empty($image_product)) {$image_product = $product_image_url;} ?> 
+                 <img width="<?php echo $productimgwidth;?>" height="<?php echo esc_attr($productimgwidth);?>" src="<?php echo esc_attr($image_product);?>" class="attachment-shop_catalog wp-post-image" alt="<?php the_title();?>">
+                 <?php } elseif ( woocommerce_placeholder_img_src() ) {
+                 echo woocommerce_placeholder_img( 'shop_catalog' );
+                 }  
+      } else { 
+        echo '<div class="kad-woo-image-size">';
+        echo woocommerce_template_loop_product_thumbnail();
+        echo '</div>';
+         }
+  }

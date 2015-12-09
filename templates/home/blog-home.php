@@ -109,7 +109,7 @@
 			                          	</a>
 
 			                          		<div class="subhead color_gray">
-			                          			<span class="postauthortop" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo get_the_author() ?>">
+			                          			<span class="postauthortop author vcard" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo get_the_author() ?>">
 			                          				<span itemprop="author" class="kt_hidden"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="fn" rel="author"><?php echo get_the_author() ?></a></span>
 			                          				<i class="icon-user"></i>
 			                          			</span>

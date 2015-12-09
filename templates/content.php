@@ -34,7 +34,7 @@
                                 <div class="col-md-12">
                                     <div class="imghoverclass img-margin-center">
                                       <a href="<?php the_permalink()  ?>" title="<?php echo esc_attr(get_the_title()); ?>">
-                                        <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="iconhover" style="display:block;">
+                                        <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" itemprop="image"  class="iconhover" style="display:block;">
                                       </a> 
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                     <div class="col-md-12">
                                     <div class="imghoverclass img-margin-center">
                                       <a href="<?php the_permalink()  ?>" title="<?php echo esc_attr(get_the_title()); ?>">
-                                              <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="iconhover" style="display:block;">
+                                              <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" itemprop="image"  class="iconhover" style="display:block;">
                                           </a> 
                                        </div>
                                    </div>
@@ -63,7 +63,7 @@
                                 <div class="col-md-5">
                                     <div class="imghoverclass img-margin-center">
                                         <a href="<?php the_permalink()  ?>" title="<?php echo esc_attr(get_the_title()); ?>">
-                                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="iconhover" style="display:block;">
+                                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" itemprop="image"  class="iconhover" style="display:block;">
                                         </a> 
                                      </div>
                                  </div>
@@ -75,7 +75,7 @@
                                   <div class="col-md-5">
                                     <div class="imghoverclass img-margin-center">
                                         <a href="<?php the_permalink()  ?>" title="<?php echo esc_attr(get_the_title()); ?>">
-                                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="iconhover" style="display:block;">
+                                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" itemprop="image"  class="iconhover" style="display:block;">
                                         </a> 
                                      </div>
                                  </div>
@@ -97,7 +97,7 @@
                                                     if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                                                        <img src="<?php echo esc_attr($image); ?>" class="" />
+                                                        <img src="<?php echo esc_attr($image); ?>" itemprop="image"  class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -113,7 +113,7 @@
                                                       if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                                                        <img src="<?php echo esc_url($image); ?>" class="" />
+                                                        <img src="<?php echo esc_url($image); ?>" itemprop="image"  class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -140,7 +140,7 @@
                                                     if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                                                        <img src="<?php echo esc_url($image); ?>" class="" />
+                                                        <img src="<?php echo esc_url($image); ?>" itemprop="image" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -156,7 +156,7 @@
                                                       if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                                                        <img src="<?php echo esc_url($image); ?>" class="" />
+                                                        <img src="<?php echo esc_url($image); ?>" itemprop="image" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 

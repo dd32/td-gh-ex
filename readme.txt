@@ -30,6 +30,11 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.6.1 | 10th November 2015 =
+* Update: Woocommerce hooks for better extension support.
+* Removed: Some woocommerce template files to limit update issues.
+* Update: Comment Output.
+
 = Version 2.6.0 | 10th November 2015 =
 * Update: Clean up WordPress Title.
 

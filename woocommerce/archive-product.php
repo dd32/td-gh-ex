@@ -36,7 +36,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			<?php
 				/**
 				 * woocommerce_before_shop_loop hook
-				 * and ($shop_filter == '1')
 				 * @hooked woocommerce_result_count - 20
 				 * @hooked woocommerce_catalog_ordering - 30
 				 */
