@@ -19,6 +19,9 @@ if (class_exists('woocommerce')) {
 }
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
 // Redefine woocommerce_output_related_products()
 add_filter( 'woocommerce_output_related_products_args', 'pinnacle_woo_related_products_limit' );
@@ -80,10 +83,18 @@ add_filter('loop_shop_columns', 'pinnacle_loop_columns');
 // Shop Pages
 remove_action( 'woocommerce_archive_description', 'woocommerce_product_archive_description', 10 );
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
-remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_show_product_loop_sale_flash', 5 );
 
 if ( isset( $pinnacle['default_showproducttitle_inpost'] ) && $pinnacle['default_showproducttitle_inpost'] == 0 ) {
   remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+  add_action( 'woocommerce_single_product_summary', 'kt_hidden_woocommerce_template_single_title', 5 );
+
+  function kt_hidden_woocommerce_template_single_title() {
+    echo '<span itemprop="name" class="product_title kt_title_hidden entry-title">';
+      the_title(); 
+     echo '</span>';
+
+  }
 }
 
 add_filter( 'add_to_cart_fragments', 'kt_get_refreshed_fragments' );
@@ -155,55 +166,47 @@ if ( ! function_exists( 'kt_woocommerce_single_variation' ) ) {
   }
 }
 
-if ( ! function_exists( 'kt_wc_dropdown_variation_attribute_options' ) ) {
-  /**
-   * Output a list of variation attributes for use in the cart forms.
-   *
-   * @param array $args
-   * @since 2.4.0
-   */
-  function kt_wc_dropdown_variation_attribute_options( $args = array() ) {
-    $args = wp_parse_args( $args, array(
-      'options'          => false,
-      'attribute'        => false,
-      'product'          => false,
-      'selected'         => false,
-      'name'             => '',
-      'id'               => '',
-      'show_option_none' => __( 'Choose an option', 'pinnacle' )
-    ) );
-    $options   = $args['options'];
-    $product   = $args['product'];
-    $attribute = $args['attribute'];
-    $name      = $args['name'] ? $args['name'] : 'attribute_' . sanitize_title( $attribute );
-    $id        = $args['id'] ? $args['id'] : sanitize_title( $attribute );
-    if ( empty( $options ) && ! empty( $product ) && ! empty( $attribute ) ) {
-      $attributes = $product->get_variation_attributes();
-      $options    = $attributes[ $attribute ];
-    }
-    echo '<select id="' . esc_attr( $id ) . '" name="' . esc_attr( $name ) . '" class="kad-select" data-attribute_name="attribute_' . esc_attr( sanitize_title( $attribute ) ) . '">';
-    if ( $args['show_option_none'] ) {
-      echo '<option value="">' . esc_html( $args['show_option_none'] ) . '</option>';
-    }
-    if ( ! empty( $options ) ) {
-      if ( $product && taxonomy_exists( $attribute ) ) {
-        // Get terms if this is a taxonomy - ordered. We need the names too.
-        $terms = wc_get_product_terms( $product->id, $attribute, array( 'fields' => 'all' ) );
-        foreach ( $terms as $term ) {
-          if ( in_array( $term->slug, $options ) ) {
-            echo '<option value="' . esc_attr( $term->slug ) . '" ' . selected( sanitize_title( $args['selected'] ), $term->slug, false ) . '>' . apply_filters( 'woocommerce_variation_option_name', $term->name ) . '</option>';
-          }
-        }
-      } else {
-        foreach ( $options as $option ) {
-          // This handles < 2.4.0 bw compatibility where text attributes were not sanitized.
-          $selected = sanitize_title( $args['selected'] ) === $args['selected'] ? selected( $args['selected'], sanitize_title( $option ), false ) : selected( $args['selected'], $option, false );
-          echo '<option value="' . esc_attr( $option ) . '" ' . $selected . '>' . esc_html( apply_filters( 'woocommerce_variation_option_name', $option ) ) . '</option>';
-        }
-      }
-    }
-    echo '</select>';
-  }
-}
 
+// Shop Page Image
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+add_action( 'woocommerce_before_shop_loop_item_title', 'kt_woocommerce_template_loop_product_thumbnail', 10 );
+function kt_woocommerce_template_loop_product_thumbnail() {
+  global $pinnacle, $woocommerce_loop, $post;
+
+  // Store column count for displaying the grid
+if ( empty( $woocommerce_loop['columns'] ) )
+  $woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
+
+$product_column = $woocommerce_loop['columns']; 
+  if ($product_column == '3'){
+    $productimgwidth = 400;
+  } else if ($product_column == '5'){
+    $productimgwidth = 240;
+  } else {
+    $productimgwidth = 300;
+  }
+
+  if(isset($pinnacle['product_img_resize']) && $pinnacle['product_img_resize'] == 0) {
+    $resizeimage = 0;
+  } else {
+    $resizeimage = 1;
+    $productimgheight = $productimgwidth;
+  }
+
+    if ( $resizeimage == 1 ) {
+        echo '<div class="kad-product-noflipper">';
+          if ( has_post_thumbnail() ) {
+            $product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
+            $product_image_url = $product_image[0]; 
+            $image_product = aq_resize($product_image_url, $productimgwidth, $productimgheight, true);
+                  if(empty($image_product)) {$image_product = $product_image_url;} ?> 
+                  <img width="<?php echo esc_attr($productimgwidth);?>" height="<?php echo esc_attr($productimgheight);?>" src="<?php echo esc_attr($image_product);?>" class="attachment-shop_catalog wp-post-image" alt="<?php the_title();?>">
+                <?php }
+              echo '</div>';
+      } else { 
+        echo '<div class="kad-woo-image-size">';
+        echo woocommerce_template_loop_product_thumbnail();
+        echo '</div>';
+          } 
+  }
 

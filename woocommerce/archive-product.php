@@ -21,6 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<div id="content" class="container">
    			<div class="row">
      			<div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
+     			<?php do_action( 'woocommerce_before_main_content' ); ?>
 
 			      	<div class="kad-shop-top">
 							<div class="row">
@@ -69,6 +70,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					<?php woocommerce_get_template( 'loop/no-products-found.php' ); ?>
 
 				<?php endif; ?>
+				<?php do_action( 'woocommerce_after_main_content' ); ?>
 				</div>
 				<?php get_sidebar(); ?>
 	      	</div><!-- /.row-->

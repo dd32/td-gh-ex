@@ -32,6 +32,10 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.3.3 | 8th December 2015 = 
+* Update: Woocommerce hooks for better extension support.
+* Update: Comment Output.
+
 = 1.3.2 | 13th October 2015 = 
 * Add: Page title filter.
 * Update: CSS for menu.

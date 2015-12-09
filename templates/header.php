@@ -65,7 +65,7 @@
               </a>
             </div>
         <?php  else : ?>
-            <nav id="nav-main" class="clearfix kad-primary-nav" role="navigation">
+            <nav id="nav-main" class="clearfix kad-primary-nav kt-nomenu-assigned" role="navigation">
               <ul class="sf-menu">
                 <li>
                   <a href="#">

@@ -1351,7 +1351,6 @@ Redux::setSection( $opt_name, array(
             'type' => 'switch',
             'customizer' => false, 
             'title' => __('Show the Title in post', 'pinnacle'),
-            'subtitle'=> __('This can be overridden on each page.', 'pinnacle'),
             "default" => 1,
             ),
         array(

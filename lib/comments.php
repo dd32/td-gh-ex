@@ -69,3 +69,12 @@ function kadence_get_avatar($avatar) {
   return $avatar;
 }
 add_filter('get_avatar', 'kadence_get_avatar');
+
+function kadence_custom_comments_before_feilds() {
+   echo '<div class="row">';
+}
+add_action ('comment_form_before_fields', 'Kadence_custom_comments_before_feilds', 5);
+function kadence_custom_comments_after_feilds() {
+   echo '</div>';
+}
+add_action ('comment_form_after_fields', 'kadence_custom_comments_after_feilds', 5);

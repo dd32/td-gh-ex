@@ -44,7 +44,7 @@ $attribute_keys = array_keys( $attributes );
 
 	<?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
-	<div class="single_variation_wrap_kad" style="display:block;">
+	<div class="single_variation_wrap_kad single_variation_wrap" style="display:block;">
 		<?php do_action( 'woocommerce_before_single_variation' ); 
 		/**
 		* woocommerce_single_variation hook. Used to output the cart button and placeholder for variation data.

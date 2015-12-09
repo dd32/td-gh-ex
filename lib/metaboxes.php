@@ -212,7 +212,7 @@ $meta_boxes[] = array(
 	$meta_boxes[] = array(
 				'id'         => 'post_metabox',
 				'title'      => __("Post Options", 'pinnacle'),
-				'pages'      => array( 'post',), // Post type
+				'pages'      => array( 'post'), // Post type
 				'context'    => 'normal',
 				'priority'   => 'high',
 				'show_names' => true, // Show field names on the left
@@ -270,7 +270,7 @@ $meta_boxes[] = array(
 				'id'         => 'bloglist_metabox',
 				'title'      => __('Blog List Options', 'pinnacle'),
 				'pages'      => array( 'page' ), // Post type
-				'show_on' => array('key' => 'page-template', 'value' => array( 'template-blog.php'), 'key' => 'id', 'value' => get_option( 'page_for_posts' ) ),
+				'show_on' => array('key' => 'page-template', 'value' => array( 'template-blog.php') ),
 				'context'    => 'normal',
 				'priority'   => 'high',
 				'show_names' => true, // Show field names on the left
