@@ -20,7 +20,7 @@
 <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<?php if (isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)) header('X-UA-Compatible: IE=edge,chrome=1'); ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -30,10 +30,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 <div id="page" class="hfeed site">
 
 	<header id="masthead" class="site-header" role="banner">
-		<nav class="navbar navbar-default" role="navigation">
+		<nav class="navbar navbar-default <?php if( of_get_option( 'sticky_header' ) ) echo 'navbar-fixed-top'; ?>" role="navigation">
 			<div class="container">
 				<div class="row">
 					<div class="site-navigation-inner col-sm-12">
@@ -56,7 +57,9 @@
 							<?php if( !get_header_image() ) : ?>
 
 							<div id="logo">
-								<span class="site-name"><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+								<?php echo is_home() ?  '<h1 class="site-name">' : '<p class="site-name">'; ?>
+									<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+								<?php echo is_home() ?  '</h1>' : '</p>'; ?>
 							</div><!-- end of #logo -->
 
 							<?php endif; // header image was removed (again) ?>
@@ -76,16 +79,7 @@
 			<?php sparkling_call_for_action(); ?>
 		</div>
 
-		<div class="container main-content-area"><?php
-			global $post;
-			if( get_post_meta($post->ID, 'site_layout', true) ){
-				$layout_class = get_post_meta($post->ID, 'site_layout', true);
-			}
-			else{
-				$layout_class = of_get_option( 'site_layout' );
-			}
-                        if( is_home() && is_sticky( $post->ID ) ){
-                                $layout_class = of_get_option( 'site_layout' );
-                        }?>
+		<div class="container main-content-area">
+            <?php $layout_class = get_layout_class(); ?>
 			<div class="row <?php echo $layout_class; ?>">
 				<div class="main-content-inner <?php echo sparkling_main_content_bootstrap_classes(); ?>">
