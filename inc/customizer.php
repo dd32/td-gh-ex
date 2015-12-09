@@ -301,11 +301,12 @@ function aperture_sanitize_footer_text( $text ) {
  * @see wp_add_inline_style()
  */
 function aperture_custom_colors() {
-	$css      = '';
+	$css 				= '';
+	$text_color 		= get_theme_mod( 'aperture_text_color', '#ffffff' );
+	$link_color 		= get_theme_mod( 'aperture_link_color', '#ff8b27' );
+	$background_color 	= get_theme_mod( 'aperture_content_background_color', '#000000' );
 
-	if ( ! empty( get_theme_mod( 'aperture_text_color' ) ) && '#ffffff' !== get_theme_mod( 'aperture_text_color' ) ) {
-
-		$text_color = get_theme_mod( 'aperture_text_color', '#ffffff' );
+	if ( ! empty( $text_color ) && '#ffffff' !== $text_color ) {
 
 		$css .= '
 			body, button, input, select, textarea { color: ' . $text_color . '; }
@@ -319,9 +320,7 @@ function aperture_custom_colors() {
 		';
 	}
 
-	if ( ! empty( get_theme_mod( 'aperture_link_color' ) ) && '#ff8b27' !== get_theme_mod( 'aperture_link_color' ) ) {
-
-		$link_color = get_theme_mod( 'aperture_link_color', '#ff8b27' );
+	if ( ! empty( $link_color ) && '#ff8b27' !== $link_color ) {
 
 		$css .= '
 			#primary-navigation li.menu-item a:hover,
@@ -352,9 +351,7 @@ function aperture_custom_colors() {
 		';
 	}
 
-	if ( ! empty( get_theme_mod( 'aperture_content_background_color' ) ) && 'rgba(0, 0, 0, 0.75)' !== get_theme_mod( 'aperture_content_background_color' ) ) {
-
-		$background_color = get_theme_mod( 'aperture_content_background_color', '#000000' );
+	if ( ! empty( $background_color ) && 'rgba(0, 0, 0, 0.75)' !== $background_color ) {
 
 		$css .= '
 			#masthead, #colophon, #main, #secondary .widget, .back-to-top { background: ' . $background_color . '; }

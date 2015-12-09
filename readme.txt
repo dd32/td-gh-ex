@@ -1,5 +1,5 @@
 APERTURE
-Theme Version: 1.1.6
+Theme Version: 1.1.7
 Author: Michael Van Den Berg 
 Author URL: http://michaelvandenberg.com/
 
@@ -63,7 +63,7 @@ After installing and activating the Jetpack plugin follow these steps:
 *
 *  Genericons / by Automattic
 *  URL: http://genericons.com/
-*  License: GNU GPL License 2.0 / https://www.gnu.org/licenses/gpl-2.0.html
+*  License: GNU GPL License 2.0 [or later] / https://www.gnu.org/licenses/gpl-2.0.html
 *
 
 -- Images.
@@ -77,9 +77,31 @@ After installing and activating the Jetpack plugin follow these steps:
 *  License: CC0 / http://creativecommons.org/publicdomain/zero/1.0/
 *
 
+-- Other.
+*
+*  Based on Underscores, Copyright (C) 2012-2015 Automattic, Inc.
+*  URL: http://underscores.me/
+*  License: GNU GPL License 2.0 [or later] / https://www.gnu.org/licenses/gpl-2.0.html
+*
+*  Normalize.css, Copyright (C) 2012-2015 Nicolas Gallagher and Jonathan Neal.
+*  URL: http://necolas.github.io/normalize.css/
+*  License: MIT License / http://opensource.org/licenses/MIT
+*
+*  FlexSlider, Copyright (C) 2012-2015 WooThemes.
+*  URL: http://www.woothemes.com/flexslider/
+*  License: GNU GPL License 2.0 [or later] / https://www.gnu.org/licenses/gpl-2.0.html
+*
+
+
 --------------------
 === Changelog ===
 --------------------
+
+*
+* 1.1.7 / 27.11.2015
+* - Prior to PHP 5.5 emtpy() only supported variables. Fixed a issue with this in inc/customizer.php.
+* - Added credits to Underscores, Normalize.css and FlexSlider.
+*
 
 *
 * 1.1.6 / 27.11.2015
