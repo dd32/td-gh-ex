@@ -82,7 +82,6 @@ if ( post_password_required() ) {
 		'cancel_reply_link' => __( 'Cancel reply'  , 'zenzero' ) . '<i class="fa fa-times spaceLeft"></i>',
 		'label_submit' => __( 'Post Comment'  , 'zenzero' ),
 		'comment_field' => '<div class="clear"></div><p class="comment-form-comment"><textarea id="comment" name="comment" rows="8" aria-required="true" placeholder="' . __( 'Comment *'  , 'zenzero' ) . '"></textarea></p>',
-		'comment_notes_after' => '<p class="form-allowed-tags smallPart">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' , 'zenzero'),' <code>' . allowed_tags() . '</code>') . '</p>',
 	)); 
 	?>
 
