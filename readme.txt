@@ -14,7 +14,13 @@ Support Firefox, Chrome, Safary, Opera, IE9+
 --------------------
 Changelog
 --------------------
-* 1.0.3 (11/26/2015)
+* 1.0.5
+- fix XSS error
+
+* 1.0.4
+- fix XSS error
+
+* 1.0.3
 - firtst version
 
 --------------------
