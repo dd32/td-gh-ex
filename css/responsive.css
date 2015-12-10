@@ -417,7 +417,7 @@
 	.widget_posts {
 		margin-bottom: 20px;
 	}
-	.widget_service,
+	.our_feature,
 	.widget_parallax,
 	.widget_about_us,
 	.widget_portfolio,
@@ -430,7 +430,7 @@
 	.widget_newsletterwidget {
 		margin-bottom: 0;
 	}
-	.widget_service {
+	.our_feature {
 		padding: 60px 0 30px;
 	}
 	.parallax_content {

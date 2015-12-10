@@ -114,7 +114,7 @@
 								$image = '';        			
 								$title_attribute = get_the_title( $post->ID );
 								$image .= '<a class="blog-img" href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
-								$image .= get_the_post_thumbnail( $post->ID, 'blog_image', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'<div class="blog-overlay"> &#187; </div>'.'</a>';
+								$image .= get_the_post_thumbnail( $post->ID, 'post-thumbnails', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'<div class="blog-overlay"> &#187; </div>'.'</a>';
 								echo $image;
 								}
 								?>

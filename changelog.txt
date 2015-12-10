@@ -1,4 +1,10 @@
 == CHANGE LOG ==
+= 1.0.4 =
+	- Text name Changed
+	- pot file updated
+	- add_image_size() removed
+	- CSS updated to fit the design
+
 = 1.0.3 =
 	- Checkbox un-defined index issue fixed
 	- Margin added for wooCommerce Ordering

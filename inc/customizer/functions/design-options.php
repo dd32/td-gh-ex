@@ -90,13 +90,13 @@
 	));
 	$wp_customize->add_control( 'arise_entry_meta_blog', array(
 		'priority'=>45,
-		'label' => __('Disable Entry Format from Blog Page', 'arise'),
+		'label' => __('Disable Entry Meta from Blog Page', 'arise'),
 		'section' => 'arise_layout_options',
 		'settings' => 'arise_theme_options[arise_entry_meta_blog]',
 		'type' => 'select',
 		'choices' => array(
 		'show-meta' => __('Display Entry Meta','arise'),
-		'hide-meta' => __('Hide Entry Format','arise'),
+		'hide-meta' => __('Hide Entry Meta','arise'),
 	),
 	));
 	$wp_customize->add_setting('arise_theme_options[arise_design_layout]', array(

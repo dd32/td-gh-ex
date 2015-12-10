@@ -56,8 +56,6 @@ function arise_setup() {
 		'social-link'  => __( 'Add Social Icons Only', 'arise' ),
 	) );
 	add_image_size('slider_image', 1920, 1080, true);
-	add_image_size('portfolio', 768, 480, true);
-	add_image_size('blog_image', 1170, 650, true);
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -161,7 +159,7 @@ if ( !is_plugin_active( 'arise-plus/arise-plus.php' ) ) {
 }
 	require get_template_directory() . '/inc/customizer/functions/design-options.php';
 	require get_template_directory() . '/inc/customizer/functions/theme-options.php';
-	require get_template_directory() . '/inc/customizer/functions/frontpage-services.php';
+	require get_template_directory() . '/inc/customizer/functions/frontpage-features.php';
 	require get_template_directory() . '/inc/customizer/functions/featured-content-customizer.php' ;
 }
 

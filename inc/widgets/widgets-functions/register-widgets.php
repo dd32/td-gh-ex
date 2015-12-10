@@ -35,7 +35,7 @@ function arise_widgets_init() {
 	register_sidebar(array(
 			'name' => __('Front Page Section', 'arise'),
 			'id' => 'arise_corporate_page_sidebar',
-			'description' => __('Shows widgets on Front Page. You may use some of this widgets: TF: Featured Recent Work, TF: Testimonial, TF: Services, TF: Slogan', 'arise'),
+			'description' => __('Shows widgets on Front Page. You may use some of this widgets: TF: Featured Recent Work, TF: Testimonial, TF: Slogan', 'arise'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget' => '</section>',
 			'before_title' => '<h2 class="widget-title">',
