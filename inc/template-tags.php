@@ -107,7 +107,7 @@ if ( ! function_exists( 'aaron_entry_footer' ) ) :
  */
 function aaron_entry_footer() {
 
-	if( get_theme_mod('aaron_hide_meta')=="" ){
+	if( get_theme_mod('aaron_hide_meta')==""){
 		echo '<footer class="entry-footer">';
 		// Hide category and tag text for pages.
 		if ( 'post' == get_post_type() ) {

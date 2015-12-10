@@ -29,7 +29,11 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_post_navigation(); ?>
+			<?php the_posts_navigation( array(
+				'prev_text'          => __( 'Previous page', 'aaron' ),
+				'next_text'          => __( 'Next page', 'aaron' ),
+			) ); 
+			?>
 
 			<?php
 			/* If the search is not visible in the menu, and there is only one page of search results, display a search form on the search page. */

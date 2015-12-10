@@ -14,6 +14,7 @@ function aaron_docs() {
 
 <b><?php printf( __('If you have any questions, accessibility issues or feature requests for this theme, please visit <a href="%s">http://wptema.se/Aaron</a>.', 'aaron'), esc_url('http://wptema.se/Aaron') ); ?></b><br>
 <?php _e('Thank you to everyone who has contributed with ideas and bug reports so far! Your feedback is essential for the future developement of the theme.', 'aaron'); ?>
+<?php _e('Note: Version 2.2 brought some changes to how the sidebars are displayed. If you are using a sidebar on your front page you will need to set it up again.','aaron' ); ?><br>
 </div>
 
 	<ul class="doc-menu">
@@ -22,6 +23,7 @@ function aaron_docs() {
 		<li><a href="#aaron-front"><?php _e('Front page','aaron' ); ?></a></li>
 		<li><a href="#aaron-advanced"><?php _e('Advanced settings','aaron' ); ?></a></li>
 		<li><a href="#aaron-access"><?php _e('Accessibility','aaron' ); ?></a></li>
+		<li><a href="#aaron-fonts"><?php _e('Fonts','aaron' ); ?></a></li>
 		<li><a href="#aaron-plugins"><?php _e('Plugins','aaron' ); ?></a></li>
 	</ul>
 
@@ -48,11 +50,11 @@ function aaron_docs() {
 
 	<div class="doc-box" id="aaron-widgets">
 		<h3><?php _e('Widget areas','aaron' ); ?></h3>
-		<?php _e('The theme has two widget areas that can hold <b>any number of widgets</b>. Both areas are empty unless they have widgets in them. The footer widget area is shown on all pages.','aaron' ); ?><br>
+		<?php _e('The theme now has two different sidebars: one for the front page and blog index, and one for other pages.','aaron' ); ?><br>
+		<?php _e('To show either sidebar, all you need to do is place your widgets inside them.','aaron' ); ?><br>
+		<?php _e('To hide either sidebar, remove the widgets. The content of the page will expand to full width when the sidebar is hidden.','aaron' ); ?><br><br>
+		<?php _e('Both the sidebars and the footer widget area can hold <b>any number of widgets</b>. The footer widget area is shown on all pages.','aaron' ); ?><br>
 		<?php _e('There is also one additional widget area in the footer below the social menu, where you can place a text widget and add your copyright text.','aaron' );?> <br><br>
-		<b><?php _e('Advanced','aaron' ); ?></b><br>
-		<?php _e('By default, the sidebar is shown on the right hand side in single post view, archives, the search page and the 404 page.<br>
-		If you open the customizer and go to the Advanced settings, you will find options for showing the sidebar on more pages.','aaron' ); ?>
 	</div>
 
 	<div class="doc-box" id="aaron-front">
@@ -66,7 +68,6 @@ function aaron_docs() {
 				<li><?php _e('Change colors','aaron' )?></li>
 				<li><?php _e('Hide the button','aaron' ); ?></li>		
 			</ul>
-
 			<?php _e('<b>Highlights:</b> This is a flexible way for you to feature different sections of your website. You can add upp to nine highlights.','aaron' );?> <br>
 			
 			<?php _e('In the customizer you can:','aaron' ); ?>
@@ -75,7 +76,7 @@ function aaron_docs() {
 				<li><?php _e('Add a link','aaron' )?></li>	
 				<li><?php _e('Add an icon or upload an image','aaron' )?></li>
 				<li><?php _e('Change colors','aaron' )?></li>	
-				<li><?php _e('Hide the highlights','aaron' )?></li>
+				<li><?php _e('Hide the individual highlights or all of them','aaron' )?></li>
 			</ul>
 			<?php _e('<b>Tagline:</b> You will find an option to hide your tagline in the customizer.','aaron' )?><br>
 			<?php _e('<b>Header Background:</b> You can change the background image or background color in the customizer.','aaron' )?> <br><br>
@@ -98,13 +99,9 @@ function aaron_docs() {
 		<ul>
 			<li><?php _e('Hide the meta information. -This will hide the category and tags.','aaron' )?></li>
 			<li><?php _e('Hide the author and post date information.','aaron' )?></li>
-			<li><?php _e('Show the sidebar on pages.','aaron' )?></li>
-			<li><?php _e('Show the sidebar on the front page.','aaron' )?></li>
 			<li><?php _e('Show the breadcrumb navigation. -Breadcrumbs are shown below the post title. ','aaron' )?></li>
 			<li><?php _e('Hide the search form in the header menu.','aaron' )?></li>
 			<li><?php _e('Hide the Site title in the header menu.','aaron' )?></li>
-			<li><?php _e('Add a descriptive screen reader text for the footer.','aaron' )?></li>
-			<li><?php _e('Add a descriptive screen reader text for the sidebar.','aaron' )?></li>
 		</ul>
 	</div>
 
@@ -113,6 +110,25 @@ function aaron_docs() {
 		<?php _e("Note: In version 2.0, the accessibility settings were moved from the Advanced Settings to it's own setting in the customizer.","aaron" ); ?>
 		<?php _e('Changing the colors of the theme can affect accessibility.','aaron'); ?>
 
+		<ul>
+			<li><?php _e('Skip link: the theme has one skip link at the very top that lets you skip past the main menu.','aaron' )?><br>
+				<?php _e('if Highligts are used, you skip to the first Highlight, otherwise you skip to the main content','aaron' )?>
+			</li>
+			<li><?php _e('In the customizer you can add personalized screen reader texts for your sidebar and footer.','aaron' )?></li>
+			<li><?php _e('There is also an option to change text displayed as UPPERCASE to Capitalized.','aaron' )?></li>
+			<li><?php _e('Known issues:','aaron' )?>
+				<ul>
+					<li><?php _e('Some widgets that uses forms (category dropdown) are missing form labels. This is a known issue with WordPress.','aaron' )?></li>
+					<li><?php _e('Menus have a visible focus and can be tabbed through, but you can not navigate them using the arrow keys.','aaron' )?></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+		<div class="doc-box" id="aaron-fonts">
+		<h3><?php _e('Fonts','aaron' ); ?></h3>
+		<?php _e("Aaron uses Open Sans for body, and defaults to Montserrat for headings, menus and footer texts.","aaron" ); ?>
+		<?php _e('You will find an option to change Montserrat to a different font in the customizer.','aaron'); ?><br><br>
 		<ul>
 			<li><?php _e('Skip link: the theme has one skip link at the very top that lets you skip past the main menu.','aaron' )?><br>
 				<?php _e('if Highligts are used, you skip to the first Highlight, otherwise you skip to the main content','aaron' )?>

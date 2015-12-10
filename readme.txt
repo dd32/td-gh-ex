@@ -20,6 +20,15 @@ If you have any questions, accessibility issues or feature requests for this the
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
+Version 2.2, 2015-12-10
+Added a second sidebar for the front page. Note: this replaces the options to show and hide the sidebar.
+Added an alt text option to the highlight images.
+Added the css class "highlight-img" to the highlight images (for those who wishes to make changes).
+Added an option to hide the meta information on search results.
+Added a font option.
+Updated the documentation and language file.
+
+
 Version 2.1, 2015-06-05
 Removed the example highlights. (They caused more issues than their worth =) )
 Added defaults to the header background image position.
@@ -27,7 +36,6 @@ Fixed contrast ussues when the header image is not loaded ( Updated default back
 Fixed a bug with the Call To Action background color.
 Added aria-hidden="true" to decorative icon fonts.
 Added a template that combines a static front page with featured posts (Requires Jetpack).
-
 
 
 Version 2.0, 2015-05-21

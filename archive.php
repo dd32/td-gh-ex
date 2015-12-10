@@ -59,7 +59,7 @@ if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jet
 
 			<?php endwhile; ?>
 
-			<?php the_post_navigation(); ?>
+			<?php the_posts_navigation(); ?>
 
 		<?php else : ?>
 

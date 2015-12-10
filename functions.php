@@ -125,6 +125,16 @@ function aaron_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => __( 'Front page sidebar', 'aaron' ),
+		'id'            => 'sidebar-front',
+		'description'   => __( 'This sidebar will only be visible on the front page and the blog index', 'aaron'),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
 		'name'          => __( 'Footer widget area', 'aaron' ),
 		'id'            => 'sidebar-2',
 		'description'   => '',
@@ -154,10 +164,7 @@ if ( ! function_exists( 'aaron_fonts_url' ) ) :
 		$fonts     = array();
 		$subsets   = 'latin,latin-ext';
 
-		/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-		if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'aaron' ) ) {
-			$fonts[] = 'Montserrat';
-		}
+		$fonts[] = get_theme_mod( 'aaron_font', 'Montserrat' );
 
 		/* translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language. */
 		$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'aaron' );
@@ -262,12 +269,17 @@ function aaron_post_title( $title ) {
 }
 
 function aaron_no_sidebars($classes) {
-	 /* 	Are sidebars hidden on the frontpage?
-	 *		Is the sidebar activated?
+	 /* 	
+	 *		Is the sidebar inactive?
 	 *		Add 'no-sidebar' to the $classes array
 	 */		
-	if ( is_front_page() && get_theme_mod('aaron_front_sidebar') =="" || is_home() && get_theme_mod('aaron_front_sidebar') =="" || is_page() && get_theme_mod('aaron_show_sidebar_on_pages')=="" || ! is_active_sidebar( 'sidebar-1' ) ) {
+
+	if ( is_front_page() && ! is_active_sidebar( 'sidebar-front' ) || is_home() && ! is_active_sidebar( 'sidebar-front' ) ) {
 		$classes[] = 'no-sidebar';
+	}else{
+		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+			$classes[] = 'no-sidebar';
+		}
 	}
 
 	if( get_theme_mod('aaron_hide_meta')){
@@ -302,8 +314,8 @@ function aaron_customize_css() {
 	if ( ! empty( $header_image ) ) {
 	?>
 		.site-header {
-		background: <?php esc_attr_e( get_theme_mod('aaron_header_bgcolor', '#4777a6') ) ?> url(<?php header_image(); ?>) <?php esc_attr_e( get_theme_mod('aaron_header_bgrepeat', 'no-repeat') ); ?> <?php esc_attr_e( get_theme_mod('aaron_header_bgpos', 'center top') ); ?>;
-		background-size: <?php esc_attr_e( get_theme_mod('aaron_header_bgsize', 'cover') ); ?>;
+		background: <?php echo esc_attr( get_theme_mod('aaron_header_bgcolor', '#4777a6') ) ?> url(<?php header_image(); ?>) <?php echo esc_attr( get_theme_mod('aaron_header_bgrepeat', 'no-repeat') ); ?> <?php echo esc_attr( get_theme_mod('aaron_header_bgpos', 'center top') ); ?>;
+		background-size: <?php echo esc_attr( get_theme_mod('aaron_header_bgsize', 'cover') ); ?>;
 		}
 
 	<?php
@@ -344,6 +356,25 @@ function aaron_customize_css() {
 			.testimonial-entry-title,
 			.featured-post h2{text-transform:capitalize;}';
 	}
+	//Font setting:
+		echo ".featured-post h2,
+			.featured-headline,
+			.comments-title,
+			.comment-reply-title,
+			.testimonial-entry-title,
+			.jetpack-testimonial .entry-title,
+			.page-title,
+			.entry-title, 
+			.entry-title a,
+			.main-navigation,
+			.widget-title,
+			.widgettitle,
+			.page-links,
+			.site-info,
+			.site-description,
+			.site-title{
+				font-family: '" . get_theme_mod( 'aaron_font', 'Montserrat' ) . "', sans-serif;	
+			}";
 
 	// If avatars are enabled, alter the css:
 	if ( get_option( 'show_avatars' ) ) {

@@ -21,5 +21,10 @@
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
-	<?php aaron_entry_footer(); ?>
+
+	<?php 
+	if (get_theme_mod('aaron_hide_meta_search')==""){
+		aaron_entry_footer();
+	}
+	?>
 </article><!-- #post-## -->

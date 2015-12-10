@@ -20,7 +20,6 @@ get_header();
 		if( get_theme_mod( 'aaron_featured_headline') <>"" ) {
 		?>
 			<h2 class="featured-headline"><?php echo esc_html( get_theme_mod( 'aaron_featured_headline', __( 'Featured', 'aaron' ) ) ); ?></h2>
-
 		<?php
 		}else{
 		?>

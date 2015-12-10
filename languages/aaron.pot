@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aaron\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2015-05-21 17:40+0100\n"
+"POT-Creation-Date: 2015-12-10 06:59+0100\n"
 "PO-Revision-Date: 2015-05-20 17:43+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: \n"
@@ -14,9 +14,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ..\\\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_nx;esc_attr_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: archive-jetpack-testimonial.php:32 documentation.php:155
+#: archive-jetpack-testimonial.php:32 documentation.php:169
 msgid "Testimonials"
 msgstr ""
 
@@ -131,38 +131,44 @@ msgstr ""
 msgid "Continue reading %s"
 msgstr ""
 
-#: documentation.php:3 documentation.php:11
+#: documentation.php:3 documentation.php:10
 msgid "Aaron Setup Help"
 msgstr ""
 
-#: documentation.php:13
+#: documentation.php:12
 msgid "Thank you for downloading and trying out Aaron!"
 msgstr ""
 
-#: documentation.php:14
+#: documentation.php:13
 #, php-format
 msgid ""
 "If you like the theme, please review it on <a href=\"%s\">WordPress.org</a>"
 msgstr ""
 
-#: documentation.php:16
+#: documentation.php:15
 #, php-format
 msgid ""
 "If you have any questions, accessibility issues or feature requests for this "
 "theme, please visit <a href=\"%s\">http://wptema.se/Aaron</a>."
 msgstr ""
 
-#: documentation.php:17
+#: documentation.php:16
 msgid ""
 "Thank you to everyone who has contributed with ideas and bug reports so far! "
 "Your feedback is essential for the future developement of the theme."
 msgstr ""
 
-#: documentation.php:21 documentation.php:30
+#: documentation.php:17
+msgid ""
+"Note: Version 2.2 brought some changes to how the sidebars are displayed. If "
+"you are using a sidebar on your front page you will need to set it up again."
+msgstr ""
+
+#: documentation.php:21 documentation.php:31
 msgid "Menus"
 msgstr ""
 
-#: documentation.php:22 documentation.php:51
+#: documentation.php:22 documentation.php:52
 msgid "Widget areas"
 msgstr ""
 
@@ -170,69 +176,73 @@ msgstr ""
 msgid "Front page"
 msgstr ""
 
-#: documentation.php:24 documentation.php:98 inc/customizer.php:139
+#: documentation.php:24 documentation.php:97 inc/customizer.php:139
 msgid "Advanced settings"
 msgstr ""
 
-#: documentation.php:25 documentation.php:114
+#: documentation.php:25 documentation.php:109
 msgid "Accessibility"
 msgstr ""
 
-#: documentation.php:26 documentation.php:134
+#: documentation.php:26 documentation.php:129 inc/customizer.php:623
+msgid "Fonts"
+msgstr ""
+
+#: documentation.php:27 documentation.php:148
 msgid "Plugins"
 msgstr ""
 
-#: documentation.php:31
+#: documentation.php:32
 msgid ""
 "This theme has two optional menu locations, the <b>Primary menu</b> and the "
 "<b>Social menu</b>."
 msgstr ""
 
-#: documentation.php:33
+#: documentation.php:34
 msgid "An image describing how a submenu drops down from the Primary menu"
 msgstr ""
 
-#: documentation.php:35
+#: documentation.php:36
 msgid "The Primary menu"
 msgstr ""
 
-#: documentation.php:35
+#: documentation.php:36
 msgid ""
 "is fixed at the top of the website and shows two menu levels. <br>\n"
 "\t\tThis menu will collapse on smaller screens, and can then be opened and "
 "closed by a menu button. It can also be closed with the Esc key."
 msgstr ""
 
-#: documentation.php:37
+#: documentation.php:38
 msgid ""
 "A one line menu is recommended, or the menu will overlap your content. Use "
 "submenus instead."
 msgstr ""
 
-#: documentation.php:39
+#: documentation.php:40
 msgid ""
 "An image describing how social icons are lined up next to each other in the "
 "Social menu"
 msgstr ""
 
-#: documentation.php:41
+#: documentation.php:42
 msgid ""
 "<b>The social menu</b> is at the bottom of the page and shows logos of the "
 "social networks of your choice. It does not display any text,<br>\n"
 "\t\tbut has additional information for screen readers."
 msgstr ""
 
-#: documentation.php:43
+#: documentation.php:44
 msgid ""
 "The icon will be added automatically, all you need to do is add a link to "
 "your menu."
 msgstr ""
 
-#: documentation.php:45 documentation.php:54
+#: documentation.php:46
 msgid "Advanced"
 msgstr ""
 
-#: documentation.php:46
+#: documentation.php:47
 msgid ""
 "By default, the primary meny also shows the site title and a search form. "
 "The search form is not visible on screens smaller than 800 pixels.<br>\n"
@@ -240,60 +250,68 @@ msgid ""
 "Customizer. "
 msgstr ""
 
-#: documentation.php:52
+#: documentation.php:53
 msgid ""
-"The theme has two widget areas that can hold <b>any number of widgets</b>. "
-"Both areas are empty unless they have widgets in them. The footer widget "
-"area is shown on all pages."
+"The theme now has two different sidebars: one for the front page and blog "
+"index, and one for other pages."
 msgstr ""
 
-#: documentation.php:53
+#: documentation.php:54
+msgid ""
+"To show either sidebar, all you need to do is place your widgets inside them."
+msgstr ""
+
+#: documentation.php:55
+msgid ""
+"To hide either sidebar, remove the widgets. The content of the page will "
+"expand to full width when the sidebar is hidden."
+msgstr ""
+
+#: documentation.php:56
+msgid ""
+"Both the sidebars and the footer widget area can hold <b>any number of "
+"widgets</b>. The footer widget area is shown on all pages."
+msgstr ""
+
+#: documentation.php:57
 msgid ""
 "There is also one additional widget area in the footer below the social "
 "menu, where you can place a text widget and add your copyright text."
 msgstr ""
 
-#: documentation.php:55
-msgid ""
-"By default, the sidebar is shown on the right hand side in single post view, "
-"archives, the search page and the 404 page.<br>\n"
-"\t\tIf you open the customizer and go to the Advanced settings, you will "
-"find options for showing the sidebar on more pages."
-msgstr ""
-
-#: documentation.php:60
+#: documentation.php:61
 msgid "Frontpage"
 msgstr ""
 
-#: documentation.php:61
+#: documentation.php:62
 msgid "The standard front page has the following features:"
 msgstr ""
 
-#: documentation.php:62
+#: documentation.php:63
 msgid ""
 "<b>Site title:</b> You will find an option to hide or change the color of "
 "your site title in the customizer."
 msgstr ""
 
-#: documentation.php:63
+#: documentation.php:64
 msgid ""
 "<b>Call to action:</b> The Call to Action is a great way to get your "
 "visitors attention. In the customizer you can:"
 msgstr ""
 
-#: documentation.php:65 documentation.php:75
+#: documentation.php:66 documentation.php:75
 msgid "Add your own text"
 msgstr ""
 
-#: documentation.php:66 documentation.php:76
+#: documentation.php:67 documentation.php:76
 msgid "Add a link"
 msgstr ""
 
-#: documentation.php:67 documentation.php:78
+#: documentation.php:68 documentation.php:78
 msgid "Change colors"
 msgstr ""
 
-#: documentation.php:68
+#: documentation.php:69
 msgid "Hide the button"
 msgstr ""
 
@@ -311,8 +329,8 @@ msgstr ""
 msgid "Add an icon or upload an image"
 msgstr ""
 
-#: documentation.php:79 inc/customizer.php:285 inc/customizer.php:401
-msgid "Hide the highlights"
+#: documentation.php:79
+msgid "Hide the individual highlights or all of them"
 msgstr ""
 
 #: documentation.php:81
@@ -376,131 +394,127 @@ msgid ""
 "static front page, using the <i>Sections</i> page template."
 msgstr ""
 
-#: documentation.php:99
+#: documentation.php:98
 msgid ""
 "Under the Advanced settings tab in the customizer you will find the "
 "following options:"
 msgstr ""
 
-#: documentation.php:101
+#: documentation.php:100
 msgid "Hide the meta information. -This will hide the category and tags."
 msgstr ""
 
-#: documentation.php:102
+#: documentation.php:101
 msgid "Hide the author and post date information."
 msgstr ""
 
-#: documentation.php:103
-msgid "Show the sidebar on pages."
-msgstr ""
-
-#: documentation.php:104
-msgid "Show the sidebar on the front page."
-msgstr ""
-
-#: documentation.php:105
+#: documentation.php:102
 msgid ""
 "Show the breadcrumb navigation. -Breadcrumbs are shown below the post title. "
 msgstr ""
 
-#: documentation.php:106
+#: documentation.php:103
 msgid "Hide the search form in the header menu."
 msgstr ""
 
-#: documentation.php:107
+#: documentation.php:104
 msgid "Hide the Site title in the header menu."
 msgstr ""
 
-#: documentation.php:108 inc/customizer.php:573
-msgid "Add a descriptive screen reader text for the footer."
-msgstr ""
-
-#: documentation.php:109 inc/customizer.php:584
-msgid "Add a descriptive screen reader text for the sidebar."
-msgstr ""
-
-#: documentation.php:115
+#: documentation.php:110
 msgid ""
 "Note: In version 2.0, the accessibility settings were moved from the "
 "Advanced Settings to it's own setting in the customizer."
 msgstr ""
 
-#: documentation.php:116
+#: documentation.php:111
 msgid "Changing the colors of the theme can affect accessibility."
 msgstr ""
 
-#: documentation.php:119
+#: documentation.php:114 documentation.php:133
 msgid ""
 "Skip link: the theme has one skip link at the very top that lets you skip "
 "past the main menu."
 msgstr ""
 
-#: documentation.php:120
+#: documentation.php:115 documentation.php:134
 msgid ""
 "if Highligts are used, you skip to the first Highlight, otherwise you skip "
 "to the main content"
 msgstr ""
 
-#: documentation.php:122
+#: documentation.php:117 documentation.php:136
 msgid ""
 "In the customizer you can add personalized screen reader texts for your "
 "sidebar and footer."
 msgstr ""
 
-#: documentation.php:123
+#: documentation.php:118 documentation.php:137
 msgid ""
 "There is also an option to change text displayed as UPPERCASE to Capitalized."
 msgstr ""
 
-#: documentation.php:124
+#: documentation.php:119 documentation.php:138
 msgid "Known issues:"
 msgstr ""
 
-#: documentation.php:126
+#: documentation.php:121 documentation.php:140
 msgid ""
 "Some widgets that uses forms (category dropdown) are missing form labels. "
 "This is a known issue with WordPress."
 msgstr ""
 
-#: documentation.php:127
+#: documentation.php:122 documentation.php:141
 msgid ""
 "Menus have a visible focus and can be tabbed through, but you can not "
 "navigate them using the arrow keys."
 msgstr ""
 
-#: documentation.php:135
+#: documentation.php:130
+msgid ""
+"Aaron uses Open Sans for body, and defaults to Montserrat for headings, "
+"menus and footer texts."
+msgstr ""
+
+#: documentation.php:131
+msgid ""
+"You will find an option to change Montserrat to a different font in the "
+"customizer."
+msgstr ""
+
+#: documentation.php:149
 msgid ""
 "Aaron has been tested with and style has been added for the following "
 "plugins:"
 msgstr ""
 
-#: documentation.php:137
+#: documentation.php:151
 msgid "Woocommerce"
 msgstr ""
 
-#: documentation.php:138
+#: documentation.php:152
 msgid "bbPress"
 msgstr ""
 
-#: documentation.php:139
+#: documentation.php:153
 msgid "Jetpack"
 msgstr ""
 
-#: documentation.php:139
+#: documentation.php:153
 msgid ""
 " Note: Not all of Jetpacks modules are accessibe, and some uses iframes. I "
 "have increased the contrast of some of the modules."
 msgstr ""
 
-#: documentation.php:140
+#: documentation.php:154
 msgid "Recommended modules:"
 msgstr ""
 
-#: documentation.php:142
+#: documentation.php:156
 msgid "Featured content"
 msgstr ""
 
-#: documentation.php:143
+#: documentation.php:157
 msgid ""
 "-Once Jetpack has been activated, you can select up to six posts or pages as "
 "a front page feature. Chose a tag and add it to your posts to seperate them "
@@ -510,73 +524,73 @@ msgid ""
 "pixels."
 msgstr ""
 
-#: documentation.php:145
+#: documentation.php:159
 msgid ""
 "An image describing three featured posts on the front page, two with "
 "featured images and one \n"
 "\t\t\t\t\t\tthat only displays the post title."
 msgstr ""
 
-#: documentation.php:148
+#: documentation.php:162
 msgid "Custom Content Type: Portfolio"
 msgstr ""
 
-#: documentation.php:149 documentation.php:155
+#: documentation.php:163 documentation.php:169
 msgid "Aaron also supports Jetpack"
 msgstr ""
 
-#: documentation.php:150
+#: documentation.php:164
 msgid "Portfolios"
 msgstr ""
 
-#: documentation.php:150
+#: documentation.php:164
 msgid "Read more about how to setup your Portfolio on Jetpacks support site."
 msgstr ""
 
-#: documentation.php:151
+#: documentation.php:165
 msgid "An image describing two portfolio items."
 msgstr ""
 
-#: documentation.php:154
+#: documentation.php:168
 msgid "Custom Content Type: Testimonials"
 msgstr ""
 
-#: documentation.php:156
+#: documentation.php:170
 msgid ""
 "<b>Tip:</b> I recommend creating a page and adding this shortcode, and then "
 "including the page as a front page section."
 msgstr ""
 
-#: documentation.php:158
+#: documentation.php:172
 msgid ""
 "Read more about how to setup your Testimonials on Jetpacks support site."
 msgstr ""
 
-#: documentation.php:161
+#: documentation.php:175
 msgid "Sharing"
 msgstr ""
 
-#: documentation.php:162
+#: documentation.php:176
 msgid ""
 "-If you activate Jetpack sharing, your buttons will be displayed below the "
 "meta information, to the right of your post content."
 msgstr ""
 
-#: documentation.php:163
+#: documentation.php:177
 msgid ""
 "An image describing how sharing buttons are added to the post footer below "
 "Tags and Categories."
 msgstr ""
 
-#: documentation.php:165
+#: documentation.php:179
 msgid "Contact Form"
 msgstr ""
 
-#: documentation.php:166
+#: documentation.php:180
 msgid "<b>Site icon</b> -Use this module to add a favicon to your site."
 msgstr ""
 
-#: documentation.php:167
+#: documentation.php:181
 msgid ""
 "<b>Site logo</b> -Once Jetpack has been activated, you can add a logo above "
 "your Site title on the front page. You will find this setting in the "
@@ -613,33 +627,36 @@ msgstr ""
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:118 sidebar.php:27
+#: functions.php:118
 msgid "Sidebar"
 msgstr ""
 
 #: functions.php:128
-msgid "Footer widget area"
+msgid "Front page sidebar"
+msgstr ""
+
+#: functions.php:130
+msgid "This sidebar will only be visible on the front page and the blog index"
 msgstr ""
 
 #: functions.php:138
+msgid "Footer widget area"
+msgstr ""
+
+#: functions.php:148
 msgid "Footer copyright area"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:150
 msgid "Place a text widget in this area and add your copyright text"
 msgstr ""
 
-#: functions.php:158
-msgctxt "Montserrat font: on or off"
-msgid "on"
-msgstr ""
-
-#: functions.php:163
+#: functions.php:170
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions.php:258
+#: functions.php:265
 msgid "(Untitled)"
 msgstr ""
 
@@ -663,7 +680,7 @@ msgstr ""
 msgid "Front page Highlights are displayed in the lower part of the header."
 msgstr ""
 
-#: inc/customizer.php:126 inc/customizer.php:419
+#: inc/customizer.php:126 inc/customizer.php:440
 msgid "Call to Action"
 msgstr ""
 
@@ -695,249 +712,263 @@ msgstr ""
 msgid "Header background color:"
 msgstr ""
 
-#: inc/customizer.php:176
+#: inc/customizer.php:177
 msgid "Header background image position:"
 msgstr ""
 
-#: inc/customizer.php:178 inc/customizer.php:663
+#: inc/customizer.php:179 inc/customizer.php:717
 msgid "left top"
 msgstr ""
 
-#: inc/customizer.php:179 inc/customizer.php:664
+#: inc/customizer.php:180 inc/customizer.php:718
 msgid "left center"
 msgstr ""
 
-#: inc/customizer.php:180 inc/customizer.php:665
+#: inc/customizer.php:181 inc/customizer.php:719
 msgid "left bottom"
 msgstr ""
 
-#: inc/customizer.php:181 inc/customizer.php:666
+#: inc/customizer.php:182 inc/customizer.php:720
 msgid "right top"
 msgstr ""
 
-#: inc/customizer.php:182 inc/customizer.php:667
+#: inc/customizer.php:183 inc/customizer.php:721
 msgid "right center"
 msgstr ""
 
-#: inc/customizer.php:183 inc/customizer.php:668
+#: inc/customizer.php:184 inc/customizer.php:722
 msgid "right bottom"
 msgstr ""
 
-#: inc/customizer.php:184 inc/customizer.php:669
+#: inc/customizer.php:185 inc/customizer.php:723
 msgid "center top"
 msgstr ""
 
-#: inc/customizer.php:185 inc/customizer.php:670
+#: inc/customizer.php:186 inc/customizer.php:724
 msgid "center center"
 msgstr ""
 
-#: inc/customizer.php:186 inc/customizer.php:671
+#: inc/customizer.php:187 inc/customizer.php:725
 msgid "center bottom"
 msgstr ""
 
-#: inc/customizer.php:197
+#: inc/customizer.php:199
 msgid "Header background image size:"
 msgstr ""
 
-#: inc/customizer.php:199 inc/customizer.php:684
+#: inc/customizer.php:201 inc/customizer.php:738
 msgid "cover"
 msgstr ""
 
-#: inc/customizer.php:200 inc/customizer.php:685
+#: inc/customizer.php:202 inc/customizer.php:739
 msgid "contain"
 msgstr ""
 
-#: inc/customizer.php:201 inc/customizer.php:686
+#: inc/customizer.php:203 inc/customizer.php:740
 msgid "auto"
 msgstr ""
 
-#: inc/customizer.php:212
+#: inc/customizer.php:215
 msgid "Header background image repeat:"
 msgstr ""
 
-#: inc/customizer.php:214 inc/customizer.php:699
+#: inc/customizer.php:217 inc/customizer.php:753
 msgid "repeat"
 msgstr ""
 
-#: inc/customizer.php:215 inc/customizer.php:700
+#: inc/customizer.php:218 inc/customizer.php:754
 msgid "repeated only horizontally"
 msgstr ""
 
-#: inc/customizer.php:216 inc/customizer.php:701
+#: inc/customizer.php:219 inc/customizer.php:755
 msgid "repeated only vertically"
 msgstr ""
 
-#: inc/customizer.php:217 inc/customizer.php:702
+#: inc/customizer.php:220 inc/customizer.php:756
 msgid " no repeat"
 msgstr ""
 
-#: inc/customizer.php:229
-msgid "Check this box to hide the meta information."
+#: inc/customizer.php:232
+msgid "Check this box to hide the meta information on the search result."
 msgstr ""
 
-#: inc/customizer.php:241
+#: inc/customizer.php:244
+msgid "Check this box to hide all the meta information."
+msgstr ""
+
+#: inc/customizer.php:256
 msgid "Check this box to hide the author and post date information."
 msgstr ""
 
-#: inc/customizer.php:252
-msgid "Check this box to show the sidebar on pages."
-msgstr ""
-
-#: inc/customizer.php:263
-msgid "Check this box to show the sidebar on the front page."
-msgstr ""
-
-#: inc/customizer.php:274
+#: inc/customizer.php:267
 msgid "Check this box to show the breadcrumb navigation."
 msgstr ""
 
-#: inc/customizer.php:295 inc/customizer.php:411
+#: inc/customizer.php:278
+msgid "Hide the highlights"
+msgstr ""
+
+#: inc/customizer.php:288
 msgid "Check this box to hide the highlights."
 msgstr ""
 
-#: inc/customizer.php:304
+#: inc/customizer.php:297
 msgid "Highlight number"
 msgstr ""
 
-#: inc/customizer.php:315
+#: inc/customizer.php:308
 msgid "Add this headline to your highlight:"
 msgstr ""
 
-#: inc/customizer.php:327
+#: inc/customizer.php:320
 msgid "Add this text to your highlight:"
 msgstr ""
 
-#: inc/customizer.php:339
+#: inc/customizer.php:332
 msgid "Chose an icon for your highlight:"
 msgstr ""
 
-#: inc/customizer.php:354
+#: inc/customizer.php:347
 msgid "Upload an image for your highlight:"
 msgstr ""
 
-#: inc/customizer.php:355
+#: inc/customizer.php:348
 msgid "Uploading an image will overwrite your icon settings."
 msgstr ""
 
-#: inc/customizer.php:367
+#: inc/customizer.php:362
+msgid "If you have chosen an image, please also add an alternative text:"
+msgstr ""
+
+#: inc/customizer.php:374
 msgid "Hightlight background color:"
 msgstr ""
 
-#: inc/customizer.php:379
+#: inc/customizer.php:386
 msgid "Hightlight text and icon color:"
 msgstr ""
 
-#: inc/customizer.php:392
+#: inc/customizer.php:399
 msgid "Add a link to your highlight:"
 msgstr ""
 
+#: inc/customizer.php:412
+msgid "Check this box to hide this individual highlight."
+msgstr ""
+
+#: inc/customizer.php:421
+msgid "Hide all the highlights"
+msgstr ""
+
 #: inc/customizer.php:432
+msgid "Check this box to hide all the highlights."
+msgstr ""
+
+#: inc/customizer.php:453
 msgid "Add this text to the Call to Action button on the front page:"
 msgstr ""
 
-#: inc/customizer.php:444
+#: inc/customizer.php:465
 msgid "Add a link to the Call to action button:"
 msgstr ""
 
-#: inc/customizer.php:455
+#: inc/customizer.php:476
 msgid "Check this box to hide the Call to Action button."
 msgstr ""
 
-#: inc/customizer.php:466
+#: inc/customizer.php:487
 msgid "Call to Action text color:"
 msgstr ""
 
-#: inc/customizer.php:478
+#: inc/customizer.php:499
 msgid "Call to Action background color:"
 msgstr ""
 
-#: inc/customizer.php:492
+#: inc/customizer.php:513
 msgid "Check this box to hide the search form in the header menu."
 msgstr ""
 
-#: inc/customizer.php:503
+#: inc/customizer.php:524
 msgid "Check this box to hide the clickable site title in the header menu."
 msgstr ""
 
-#: inc/customizer.php:511 index.php:22 index.php:27
+#: inc/customizer.php:532 index.php:22 index.php:26
+#: templates/static-and-featured.php:17 templates/static-and-featured.php:22
 msgid "Featured"
 msgstr ""
 
-#: inc/customizer.php:516
+#: inc/customizer.php:537
 msgid "Headline above your featured content:"
 msgstr ""
 
-#: inc/customizer.php:525
+#: inc/customizer.php:546
 msgid "Top Section"
 msgstr ""
 
-#: inc/customizer.php:527
+#: inc/customizer.php:548
 msgid "Choose upto 3 pages that will be displayed above your blog content."
 msgstr ""
 
-#: inc/customizer.php:539 inc/customizer.php:560
+#: inc/customizer.php:560 inc/customizer.php:581
 msgid "Choose a page:"
 msgstr ""
 
-#: inc/customizer.php:546
+#: inc/customizer.php:567
 msgid "Bottom Section"
 msgstr ""
 
-#: inc/customizer.php:548
+#: inc/customizer.php:569
 msgid ""
 "Choose upto 3 pages that will be displayed below your blog content, but "
 "above the footer."
 msgstr ""
 
-#: inc/customizer.php:595
+#: inc/customizer.php:594
+msgid "Add a descriptive screen reader text for the footer."
+msgstr ""
+
+#: inc/customizer.php:605
+msgid "Add a descriptive screen reader text for the sidebar."
+msgstr ""
+
+#: inc/customizer.php:616
 msgid ""
 "Check this box to change the text displayed as UPPERCASE to Capitalized."
 msgstr ""
 
-#: inc/customizer.php:610
+#: inc/customizer.php:624
+msgid "Changing the fonts can affect accessibility."
+msgstr ""
+
+#: inc/customizer.php:638
+msgid "Choose a font for headings, menus and footer texts."
+msgstr ""
+
+#: inc/customizer.php:643
+msgid "(Default)"
+msgstr ""
+
+#: inc/customizer.php:644
+msgid "(Same as body)"
+msgstr ""
+
+#: inc/customizer.php:664
 msgid ""
 "Are you sure that you want to reset your settings? Type YES in the box, save "
 "and refresh the page."
 msgstr ""
 
-#: inc/customizer.php:714
+#: inc/customizer.php:768
 msgid "Transparent (Default)"
 msgstr ""
 
-#: inc/customizer.php:715
+#: inc/customizer.php:769
 msgid "Pick a color"
 msgstr ""
 
 #: inc/extras.php:52
 #, php-format
 msgid "Page %s"
-msgstr ""
-
-#: inc/highlights.php:27
-msgid "Easy setup"
-msgstr ""
-
-#: inc/highlights.php:28
-msgid ""
-"You will find all your options in the <i>Customizer</i> and setup help under "
-"<i>Appearance</i>."
-msgstr ""
-
-#: inc/highlights.php:35
-msgid "Accessible and responsive"
-msgstr ""
-
-#: inc/highlights.php:36
-msgid "Keyboard friendly menus, aria roles and helpful screen reader texts"
-msgstr ""
-
-#: inc/highlights.php:43
-msgid "Jetpack compatible"
-msgstr ""
-
-#: inc/highlights.php:44
-msgid ""
-"Install Jetpack for additional featured content, portfolio, logo and more"
 msgstr ""
 
 #: inc/template-tags.php:21
@@ -1078,7 +1109,15 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: search.php:37
+#: search.php:33
+msgid "Previous page"
+msgstr ""
+
+#: search.php:34
+msgid "Next page"
+msgstr ""
+
+#: search.php:41
 msgid "Would you like to search again?"
 msgstr ""
 

@@ -5,7 +5,7 @@ Author: Carolina Nymark
 Author URI: http://wptema.se
 Description: Aaron is a responsive, accessibility-ready multi-purpose theme. Features include Call to action and frontpage Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. We recommend that you install the Jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with Woocommerce and bbPress.
 If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
-Version: 2.1
+Version: 2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2015
@@ -553,7 +553,6 @@ a:active {
 	padding:9px;
 	font-size:14px;
 	font-size:1.4rem;
-	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
 	letter-spacing: 2px; 
 	z-index:99; 
@@ -949,7 +948,6 @@ li a:before{
 	font-size:16px;
 	font-size:1.6rem;
 	border-bottom:3px solid #000000;
-	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
 }
 
@@ -1090,7 +1088,6 @@ table#wp-calendar,
 	font-size: 7rem; 
 	line-height:1; 
 	text-decoration:none;
-	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
 	color:#ffffff;
 }
@@ -1119,7 +1116,6 @@ table#wp-calendar,
 	font-size:12px;
 	font-size:1.2rem;
 	text-align: center; 
-	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
 	letter-spacing: 2px;
 }
@@ -1279,9 +1275,7 @@ table#wp-calendar,
 	padding:35px;
 
 	box-shadow: 0px 1px 6px rgba(0,0,0,0.12);
-	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
-
 	background: #fafafa;
 	opacity:0.9;
 
@@ -1376,7 +1370,6 @@ table#wp-calendar,
 	background:#fff;
 	font-size:14px;
 	font-size:1.4rem;
-	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
 	letter-spacing: 2px; 
 	border:1px solid #f2f2f2;
@@ -1391,13 +1384,11 @@ table#wp-calendar,
 	text-decoration:none;
 	margin:10px 0 15px 0;
 	padding-bottom:4px;
-	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
 	letter-spacing: 2px; 
 }
 
 .page-title{
-	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
 	letter-spacing: 2px;
 }
@@ -1577,7 +1568,6 @@ table#wp-calendar,
 .comment-reply-title{
 	font-size: 20px;
 	font-size: 2.0rem;
-	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
 	letter-spacing: 2px;
 	padding:10px 0 10px 0;
@@ -1707,7 +1697,6 @@ table#wp-calendar,
 
 /*Styling for JetPack featured posts.*/
 .featured-headline{
-	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
 	font-size:14px;
 	font-size:1.4rem;
@@ -1748,7 +1737,6 @@ table#wp-calendar,
 .featured-post h2{
 	margin:15px;
 	padding-bottom:4px;
-	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
 	font-size:14px;
 	font-size:1.4rem;
@@ -1832,8 +1820,7 @@ table#wp-calendar,
 	font-size:14px;
 	margin-top:15px;
 	text-decoration:none;
-	padding-bottom:4px;
-	font-family: 'Montserrat', sans-serif;	
+	padding-bottom:4px;	
 	text-transform:uppercase;
 	letter-spacing: 2px; 
 	display:block;

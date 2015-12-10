@@ -222,6 +222,18 @@ function aaron_customize_register( $wp_customize ) {
 	'section' => 'header_image',
 	) );
 
+	//Hide meta for search results
+	$wp_customize->add_setting( 'aaron_hide_meta_search',		array(
+			'sanitize_callback' => 'aaron_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('aaron_hide_meta_search',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to hide the meta information on the search result.', 'aaron' ),
+			'section' => 'aaron_section_advanced',
+		)
+	);
+
 	//Hide meta
 	$wp_customize->add_setting( 'aaron_hide_meta',		array(
 			'sanitize_callback' => 'aaron_sanitize_checkbox',
@@ -229,7 +241,7 @@ function aaron_customize_register( $wp_customize ) {
 	);
 	$wp_customize->add_control('aaron_hide_meta',		array(
 			'type' => 'checkbox',
-			'label' =>  __( 'Check this box to hide the meta information.', 'aaron' ),
+			'label' =>  __( 'Check this box to hide all the meta information.', 'aaron' ),
 			'section' => 'aaron_section_advanced',
 		)
 	);
@@ -246,28 +258,6 @@ function aaron_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting( 'aaron_show_sidebar_on_pages',		array(
-			'sanitize_callback' => 'aaron_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control('aaron_show_sidebar_on_pages',		array(
-			'type' => 'checkbox',
-			'label' =>  __( 'Check this box to show the sidebar on pages.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
-		)
-	);
-
-	$wp_customize->add_setting( 'aaron_front_sidebar',		array(
-			'sanitize_callback' => 'aaron_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control('aaron_front_sidebar',		array(
-			'type' => 'checkbox',
-			'label' =>  __( 'Check this box to show the sidebar on the front page.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
-		)
-	);
-	
 	$wp_customize->add_setting( 'aaron_breadcrumb',		array(
 			'sanitize_callback' => 'aaron_sanitize_checkbox',
 		)
@@ -360,6 +350,20 @@ function aaron_customize_register( $wp_customize ) {
 		 ) ) );
 
 
+		//New in 2.2
+		//Add alt="" text for uploaded images in the highlights.
+		$wp_customize->add_setting( 'aaron_highlight' . $i . '_alt',		array(
+				'sanitize_callback' => 'aaron_sanitize_text',
+			)
+		);
+
+		$wp_customize->add_control('aaron_highlight' . $i . '_alt',		array(
+				'type' => 'text',
+				'label' =>  __( 'If you have chosen an image, please also add an alternative text:', 'aaron' ),
+				'section' => 'aaron_section_'. $i,
+			)
+		);	
+
 
 			$wp_customize->add_setting( 'aaron_highlight' . $i . '_bgcolor', array(
 				'default'        => '#fafafa',
@@ -396,12 +400,25 @@ function aaron_customize_register( $wp_customize ) {
 				'section' => 'aaron_section_'. $i,
 			)
 		);
+
+		//Hide single, individual highlights:
+		$wp_customize->add_setting( 'aaron_highlight' . $i .'_hide',		array(
+			'sanitize_callback' => 'aaron_sanitize_checkbox',
+			)
+		);
+	
+		$wp_customize->add_control('aaron_highlight' . $i .'_hide',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to hide this individual highlight.', 'aaron' ),
+			'section' => 'aaron_section_'. $i,
+			)
+		);
 	
 	}//End loop
 	
 	
 	$wp_customize->add_section( 'aaron_section_hide', array(
-			 'title' => __( 'Hide the highlights', 'aaron' ),
+			 'title' => __( 'Hide all the highlights', 'aaron' ),
 			'panel'  => 'aaron_custom_high',
 	) );
 		
@@ -409,9 +426,10 @@ function aaron_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'aaron_sanitize_checkbox',
 		)
 	);
+
 	$wp_customize->add_control('aaron_hide_highlight',		array(
 			'type' => 'checkbox',
-			'label' =>  __( 'Check this box to hide the highlights.', 'aaron' ),
+			'label' =>  __( 'Check this box to hide all the highlights.', 'aaron' ),
 			'section' => 'aaron_section_hide',
 		)
 	);
@@ -600,6 +618,39 @@ function aaron_customize_register( $wp_customize ) {
 		)
 	);
 
+
+	$wp_customize->add_section( 'aaron_font' , array(
+	    'title'      => __( 'Fonts', 'aaron' ),
+		'Description' => __('Changing the fonts can affect accessibility.', 'aaron'),
+	    'priority'   => 100
+	) );
+
+	$wp_customize->add_setting( 'aaron_font' , array(
+		'default'        => 'sans-serif',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	
+	$wp_customize->add_control(
+    new WP_Customize_Control(
+	        $wp_customize,
+	        'aaron_font',
+	        array(
+	            'label'          => __( 'Choose a font for headings, menus and footer texts.', 'aaron' ),
+	            'section'        => 'aaron_font',
+	            'settings'       => 'aaron_font',
+	            'type'           => 'select',
+	            'choices'		 => array(
+					'Montserrat' => 'Montserrat ' . __( '(Default)', 'aaron' ),
+					'Open Sans' => 'Open Sans ' . __( '(Same as body)', 'aaron' ),
+	            	'Oswald'	=> 'Oswald',
+	            	'Rambla'	=> 'Rambla',
+					'Ubuntu Condensed' => 'Ubuntu Condensed',
+					'Fjalla One' => 'Fjalla One',
+					
+	            )
+	        )
+	    )
+	);
 
 /*********************************************************************************************************************************
  Reset 
