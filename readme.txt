@@ -14,6 +14,9 @@ Support Firefox, Chrome, Safary, Opera, IE9+
 --------------------
 Changelog
 --------------------
+* 1.0.6
+- update resources's information
+
 * 1.0.5
 - fix XSS error
 
@@ -65,51 +68,74 @@ https://pixabay.com/en/live-concert-dance-club-disco-388160/
 Javascript Licenses
 --------------------
     bootstrap.js
+        http://getbootstrap.com/javascript/
         Bootstrap.js by @fat & @mdo
         Copyright 2012 Twitter, Inc.
         http://www.apache.org/licenses/LICENSE-2.0.txt
+
     custom.js
-        Copyright (c) 2014 Kopatheme - kopatheme.com
+        kopatheme.com
+        Copyright (c) 2014 Kopatheme
         Licensed under the GPL license:
-        *  http://www.gnu.org/licenses/gpl.html   
+        http://www.gnu.org/licenses/gpl.html   
+
     fitvids.js
-        Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+        http://fitvidsjs.com/
+        Copyright 2013, 
+        Chris Coyier - http://css-tricks.com
+        Dave Rupert - http://daverupert.com
         Released under the WTFPL license - http://sam.zoy.org/wtfpl/
+
     imagesloaded.js
+        https://github.com/desandro/imagesloaded
         imagesLoaded PACKAGED v3.1.4
         MIT License
+
     jquery.caroufredsel.js
+        https://github.com/gilbitron/carouFredSel
         Copyright (c) 2013 Fred Heusschen
         Dual licensed under the MIT and GPL licenses.
         http://en.wikipedia.org/wiki/MIT_License
         http://en.wikipedia.org/wiki/GNU_General_Public_License
+
     jquery.matchheight.js
-        jquery.matchHeight-min.js v0.5.2 - http://brm.io/jquery-match-height/
+        jquery.matchHeight-min.js v0.5.2
+        http://brm.io/jquery-match-height/
         License: MIT
+
     jquery.navgoco.js
-        jQuery Navgoco Menus Plugin v0.1.5 (2013-09-07)
-         * https://github.com/tefra/navgoco
-         * Copyright (c) 2013 Chris T (@tefra)
-         * BSD - https://github.com/tefra/navgoco/blob/master/LICENSE-BSD
+        https://github.com/tefra/navgoco
+        jQuery Navgoco Menus Plugin v0.1.5 (2013-09-07)        
+        Copyright (c) 2013 Chris T (@tefra)
+        BSD - https://github.com/tefra/navgoco/blob/master/LICENSE-BSD
+
     masonry.js
-        Cascading grid layout library - http://masonry.desandro.com
+        http://masonry.desandro.com
+        Cascading grid layout library        
         License: MIT
-    modernizr.js
+
+    modernizr.js        
+        http://modernizr.com/download/#-fontface-backgroundsize-borderradius-boxshadow-flexbox-flexboxlegacy-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-audio-video-shiv-mq-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load
         Modernizr 2.7.1 (Custom Build) | MIT & BSD
-         * Build: http://modernizr.com/download/#-fontface-backgroundsize-borderradius-boxshadow-flexbox-flexboxlegacy-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-audio-video-shiv-mq-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load
+
     owl.carousel.js
-         jQuery OwlCarousel v1.3.2
-         *  Copyright (c) 2013 Bartosz Wojciechowski
-         *  http://www.owlgraphic.com/owlcarousel/
-         *  Licensed under MIT
+        http://www.owlgraphic.com/owlcarousel/
+        jQuery OwlCarousel v1.3.2
+        Copyright (c) 2013 Bartosz Wojciechowski         
+        Licensed under MIT
+
     superfish.js
-         jQuery Superfish Menu Plugin - v1.7.4
-         * Copyright (c) 2013 Joel Birch
-         * Dual licensed under the MIT and GPL licenses:
-         *	http://www.opensource.org/licenses/mit-license.php
-         *	http://www.gnu.org/licenses/gpl.html
+        https://github.com/joeldbirch/superfish
+        jQuery Superfish Menu Plugin - v1.7.4
+        Copyright (c) 2013 Joel Birch
+        Dual licensed under the MIT and GPL licenses:
+        http://www.opensource.org/licenses/mit-license.php
+        http://www.gnu.org/licenses/gpl.html
+
     visible.js
-         Visible, Sam Sehnert, samatdf, TeamDF, https://github.com/teamdf/jquery-visible/
+        https://github.com/customd/jquery-visible
+        Visible, Sam Sehnert, samatdf, TeamDF, 
+
 --------------------
 Limitation
 --------------------
