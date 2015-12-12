@@ -1,0 +1,4 @@
+== Changelog ==
+
+= Version 1.0 =
+  Ample Theme is created on 10-12-2014.
