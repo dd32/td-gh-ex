@@ -1,4 +1,7 @@
 == CHANGE LOG ==
+= 1.0.6 =
+- Removed corporate template which is not required
+
 = 1.0.5 =
 	- Fixed - 
 		- Theme URI and Author URI  style.css
