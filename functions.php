@@ -241,22 +241,22 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
 *	HEADER CONTACT WIDGET
 **/
-add_action('widgets_init', 'header_contact_us_load_widgets');
+add_action('widgets_init', 'themeofwp_header_contact_us_load_widgets');
 
-function header_contact_us_load_widgets()
+function themeofwp_header_contact_us_load_widgets()
 {
-	register_widget('Header_Contact');
+	register_widget('ThemeofWP_Header_Contact');
 }
 
-class Header_Contact extends WP_Widget {
+class ThemeofWP_Header_Contact extends WP_Widget {
 	
-	function Header_Contact()
+	function ThemeofWP_Header_Contact()
 	{
 		$widget_ops = array('classname' => 'header_contact_us', 'description' => __('Add your contact info to the header area.', 'themeofwp'));
 
-		$control_ops = array('id_base' => 'header_contact_us-widget');
+		$control_ops = array('id_base' => 'themeofwp-header_contact_us-widget');
 
-		parent::__construct('header_contact_us-widget', __('TWP Header Contact', 'themeofwp'), $widget_ops, $control_ops);
+		parent::__construct('themeofwp-header_contact_us-widget', __('TWP Header Contact', 'themeofwp'), $widget_ops, $control_ops);
 	}
 	
 	function widget($args, $instance)
@@ -306,7 +306,7 @@ class Header_Contact extends WP_Widget {
 	
 		<p>
 			<label for="<?php echo $this->get_field_id('phone'); ?>"><?php _e('Phone:', 'themeofwp');?></label><br />
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id('phone'); ?>" name="<?php echo $this->get_field_name('phone'); ?>" value="<?php echo $this->get_field_name('phone'); ?>" />
+			<input type="text" class="widefat" id="<?php echo $this->get_field_id('phone'); ?>" name="<?php echo $this->get_field_name('phone'); ?>" value="<?php echo $instance['phone']; ?>" />
 		</p>
 		
 		<p>
@@ -322,22 +322,22 @@ class Header_Contact extends WP_Widget {
 /**
 *	HEADER SOCIAL WIDGET
 **/
-add_action('widgets_init', 'header_social_us_load_widgets');
+add_action('widgets_init', 'themeofwp_header_social_us_load_widgets');
 
-function header_social_us_load_widgets()
+function themeofwp_header_social_us_load_widgets()
 {
-	register_widget('Header_Social');
+	register_widget('ThemeofWP_Header_Social');
 }
 
-class Header_Social extends WP_Widget {
+class ThemeofWP_Header_Social extends WP_Widget {
 	
-	function Header_Social()
+	function ThemeofWP_Header_Social()
 	{
-		$widget_ops = array('classname' => 'header_social_us', 'description' => __('Add your social info to the header area.', 'themeofwp'));
+		$widget_ops = array('classname' => 'themeofwp_header_social_us', 'description' => __('Add your social info to the header area.', 'themeofwp'));
 
-		$control_ops = array('id_base' => 'header_social_us-widget');
+		$control_ops = array('id_base' => 'themeofwp_header_social_us-widget');
 
-		parent::__construct('header_social_us-widget', __('TWP Header Social', 'themeofwp'), $widget_ops, $control_ops);
+		parent::__construct('themeofwp_header_social_us-widget', __('TWP Header Social', 'themeofwp'), $widget_ops, $control_ops);
 	}
 	
 	function widget($args, $instance)

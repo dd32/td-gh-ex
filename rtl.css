@@ -1,29 +1,51 @@
 /*
-Theme Name: Avien
-Theme URI: http://themeofwp.com/avien/
-Author: <a href="http://themeofwp.com" title="Visit author homepage">themeofwp.com</a>
-Author URI: http://themeofwp.com/
-Description: Avien WordPress Theme
-Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Theme Name: Avien Light
+Theme URI: http://themeofwp.com/avienlite/
+Author: ThemeofWP.com
+Author URI: http://themeofwp.com
+Description: Avien Ultra Responsive WordPress Theme
+Version: 1.9
+Tags: white, two-columns, right-sidebar, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, flexible-header, custom-menu, featured-image-header, featured-images, front-page-post-form, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: themeofwp
-Domain Path: /languages/
-Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar
-*/
 
-#boxed #header {
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Avien Light is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+/*		Main Styles
+--------------------------------------------------------------------------------------------------*/
+
+/*		Layouts
+--------------------------------------------------------------------------------------------------*/
+
+#boxed #header.navbar-fixed-top {
 	right: auto;
 	left: auto;
 }
 
-.topheader .contact a {
-	border-right: 1px dotted #ccc;
-	margin-right: 15px;
-	padding-right: 15px;
+/*		Top Header
+--------------------------------------------------------------------------------------------------*/
+
+.topheader .contact {
+	padding-right: 0;
 	padding-left: 0;
-	margin-left: auto;
-	border-left: none;
+}
+
+.topheader .contact a {
+	padding-left: 15px;
+	padding-right: 0;
+}
+
+.topheader .social {
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .topheader .social a, #footer .social a {
@@ -31,9 +53,14 @@ Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar
 	padding-right: 0;
 }
 
-/* Headings */
+/*		Images
+--------------------------------------------------------------------------------------------------*/
 
-/* .btn */
+/*		Headings
+--------------------------------------------------------------------------------------------------*/
+
+/*		Btn
+--------------------------------------------------------------------------------------------------*/
 
 .btn-xlg [class^="icon-"],
 .btn-xlg [class*=" icon-"] {
@@ -41,9 +68,11 @@ Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar
 	margin-right: auto;
 }
 
-/* Anchor Link */
+/*		Anchor Link
+--------------------------------------------------------------------------------------------------*/
 
-/* iFrame */
+/*		iFrame
+--------------------------------------------------------------------------------------------------*/
 
 .iframe-container iframe,
 .embed-container iframe,
@@ -53,33 +82,25 @@ Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar
 	left: auto;
 }
 
-/* Edit button */
+/*		Edit button
+--------------------------------------------------------------------------------------------------*/
 
+/*		Post Format
+--------------------------------------------------------------------------------------------------*/
 .post-format {
-	padding-left:20px;
 	float: right;
-	padding-right: 0;
 }
 
-/*.post-format {
-	border-right: 1px solid #EDEDED;
-	float: right;
-	margin-right: -55px;
-	margin-left: auto;
-	border-left: none;
-}
-
-/*--------------------------------------------------------------
-4.0 Inputs and buttons
---------------------------------------------------------------*/
+/*		Inputs and buttons
+--------------------------------------------------------------------------------------------------*/
 
 textarea {
 	padding-right: 3px;
 	padding-left: 0;
 }
 
-/* =WordPress Core
--------------------------------------------------------------- */
+/*		WordPress Core
+--------------------------------------------------------------------------------------------------*/
 
 .alignleft {
 	float: left;
@@ -89,11 +110,6 @@ textarea {
 .alignright {
 	float: right;
 	margin: 0px 0 20px 20px;
-}
-
-.gallery-item {
-	float: right;
-	margin: 0 0 4px 4px;
 }
 
 .gallery-columns-1 .gallery-item:nth-of-type(1n),
@@ -120,9 +136,29 @@ textarea {
 	left: auto;
 }
 
-/*===========================
-  Portfolio
-============================ */
+/*		Team
+--------------------------------------------------------------------------------------------------*/
+
+#team .btn-facebook, #team .btn-twitter, #team .btn-google-plus, #team .btn-linkedin {
+	margin-left: 3px;
+	margin-right: auto;
+}
+
+#team .media .pull-right {
+	padding-left: 25px;
+	padding-right: 0;
+}
+
+#team .team-img {
+	padding-left: 25px;
+	padding-right: 0;
+}
+
+/***********************************************************************************
+
+Portfolio Filter Styling
+
+************************************************************************************/
 
 /* ------- */
 
@@ -130,120 +166,60 @@ nav#filter li {
 	margin:0 5px 0 0;
 }
 
-/* Portfolio Item */
+/*		Portfolio Item
+--------------------------------------------------------------------------------------------------*/
 
 .portfolio-item .portfolio-desc {
 	right: 0;
 	left: auto;
 }
 
-/* Blog Grid Item */
+/*		Services
+--------------------------------------------------------------------------------------------------*/
+
+/*		Blog Grid Item
+--------------------------------------------------------------------------------------------------*/
 
 .blog-item .blog-desc {
 	right: 0;
 	left: auto;
 }
 
-/* Navigation */
+/*Homepage Blog Part*/
+
+#blog .blog-post.blog-large .post-format {
+	left: 20px;
+	right: auto;
+}
+
+#blog .blog-post.blog-media .entry-thumbnail {
+	margin: -15px -15px -15px 15px;
+}
+
+#blog .blog-post.blog-media .post-format {
+	left: -10px;
+	right: auto;
+}
+
+#blog .blog-post .entry-meta > span {
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+/*		Navigation
+--------------------------------------------------------------------------------------------------*/
+
+.navbar-header {
+	float: right;
+}
 
 .navbar > .container .navbar-brand {
 	margin-right: 0;
 	margin-left: auto;
 }
 
-/*==================================================
- * Shadow Effect 1
- * ===============================================*/
-
-/*==================================================
- * Shadow Effect 2
- * ===============================================*/
-
-.effect2:before, .effect2:after {
-	right: 10px;
-	left: auto;
-}
-
-.effect2:after {
-	left: 10px;
-	right: auto;
-}
-
-/*==================================================
- * Shadow Effect 3
- * ===============================================*/
-
-.effect3:before {
-	right: 10px;
-	left: auto;
-}
-
-/*==================================================
- * Shadow Effect 4
- * ===============================================*/
-
-.effect4:after {
-	left: 10px;
-	right: auto;
-}
-
-/*==================================================
- * Shadow Effect 5
- * ===============================================*/
-
-.effect5:before, .effect5:after {
-	right: 10px;
-	left: auto;
-}
-
-.effect5:after {
-	left: 10px;
-	right: auto;
-}
-
-/*==================================================
- * Shadow Effect 6
- * ===============================================*/
-
-.effect6:before, .effect6:after {
-	right:10px;
-	left:10px;
-}
-
-.effect6:after {
-	left:10px;
-	right:auto;
-}
-
-/*==================================================
- * Shadow Effect 7
- * ===============================================*/
-
-.effect7:before, .effect7:after {
-	right:10px;
-	left:10px;
-}
-
-.effect7:after {
-	left:10px;
-	right:auto;
-}
-
-/*==================================================
- * Shadow Effect 8
- * ===============================================*/
-
-.effect8:before, .effect8:after {
-	right:0;
-	left:0;
-}
-
-.effect8:after {
-	left:10px;
-	right:auto;
-}
-
-/*Logo*/
+/*		Logo
+--------------------------------------------------------------------------------------------------*/
 
 .navbar .brand-left {
 	float:left;
@@ -294,7 +270,8 @@ ul {
 	padding-left: 0;
 }
 
-/*Timeline*/
+/*		Timeline
+--------------------------------------------------------------------------------------------------*/
 
 .timeline:before {
 	right: 50%;
@@ -350,21 +327,29 @@ ul {
 	left: auto;
 }
 
-/*Footer*/
+/*		Toptop
+--------------------------------------------------------------------------------------------------*/
 #toTop {
 	left: 15px;
 	right: auto;
 }
 
-/*Footermain*/
+/*		404
+--------------------------------------------------------------------------------------------------*/
+
+/*		Footermain
+--------------------------------------------------------------------------------------------------*/
 
 #bottom li:before {
-	margin-left:5px;
-	margin-right: auto;
+	left: 0;
+	right: auto;
 }
 
-/* Portfolio */
+/*		Recent Portfolio
+--------------------------------------------------------------------------------------------------*/
 
+/*		Portfolio
+--------------------------------------------------------------------------------------------------*/
 .portfolio-items,
 .portfolio-filter {
 	margin: 0 0 20px -20px;
@@ -383,26 +368,37 @@ ul {
 	left: auto;
 }
 
-/* Start: Recommended Isotope styles */
-/**** Isotope Filtering ****/
+/*		Isotope Filtering
+--------------------------------------------------------------------------------------------------*/
 
-/**** Isotope CSS3 transitions ****/
+/*		Isotope CSS3 transitions
+--------------------------------------------------------------------------------------------------*/
 
-/**** disabling Isotope CSS3 transitions ****/
+/*		disabling Isotope CSS3 transitions
+--------------------------------------------------------------------------------------------------*/
 
-/* End: Recommended Isotope styles */
-/* disable CSS transitions for containers with infinite scrolling*/
+/*		disable CSS transitions for containers with infinite scrolling
+--------------------------------------------------------------------------------------------------*/
 
-/* Title */
+/*		Subitle
+--------------------------------------------------------------------------------------------------*/
 
-/* Media */
+/*		Media
+--------------------------------------------------------------------------------------------------*/
 
-/* Breadcrumb */
+/*		Breadcrumbs
+--------------------------------------------------------------------------------------------------*/
 
-.icon-md {
-	margin-left: 10px;
-	margin-right: auto;
+.raquo {
+	padding-right: 5px;
+	padding-left: 5px;
 }
+
+/*		Tag Clouds
+--------------------------------------------------------------------------------------------------*/
+
+/*		Modal
+--------------------------------------------------------------------------------------------------*/
 
 .modal#loginForm {
 	margin-right: -300px;
@@ -429,6 +425,9 @@ ul {
 	float:right;
 }
 
+/*		Comments
+--------------------------------------------------------------------------------------------------*/
+
 /*Unordered Lists*/
 
 ul.arrow li::before,
@@ -441,21 +440,80 @@ ul.rss li::before {
 	margin-right: auto;
 }
 
-/*Woocommerce*/
+/*		Posts
+--------------------------------------------------------------------------------------------------*/
+
+.pagination {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+/*		Woocommerce
+--------------------------------------------------------------------------------------------------*/
 
 .woocommerce form .form-row label.inline, .woocommerce-page form .form-row label.inline {
 	margin-right: 20px;
 	margin-left: auto;
 }
 
-/*Widgets*/
+.woocommerce #content div.product div.thumbnails a, .woocommerce div.product div.thumbnails a, .woocommerce-page #content div.product div.thumbnails a, .woocommerce-page div.product div.thumbnails a {
+	margin-left: 1.8%;
+	margin-right: auto;
+}
+
+.woocommerce #content div.product div.thumbnails a.last, .woocommerce div.product div.thumbnails a.last, .woocommerce-page #content div.product div.thumbnails a.last, .woocommerce-page div.product div.thumbnails a.last {
+	margin-left: 1.8%;
+	margin-right: auto;
+}
+
+.woocommerce ul.products li.last, .woocommerce-page ul.products li.last {
+	margin: 0 0 2.992em 3.8%;
+}
+
+/*		Custom Login for Top Header
+--------------------------------------------------------------------------------------------------*/
+form#login {
+	right: 50%;
+	margin-right: -200px;
+	left: auto;
+	margin-left: auto;
+}
+
+form#login input#username,
+form#login input#password {
+	padding: 10px 13px 10px 10px;
+}
+
+form#login input.submit_button {
+	float: left;
+}
+
+form#login a.close {
+	left: 15px;
+	right: auto;
+}
+
+form#login a.lost {
+	float: right;
+}
+
+/*		Widgets
+--------------------------------------------------------------------------------------------------*/
+
+.widget h3::before, .site-content .widgettitle::before {
+	right: 0;
+	margin-right: 0;
+	left: auto;
+	margin-left: auto;
+}
 
 li.rpwe-clearfix a {
 	margin-right: 0px !important;
 	margin-left: auto;
 }
 
-/*BBPress*/
+/*		bbPress
+--------------------------------------------------------------------------------------------------*/
 
 .bbp-author-avatar {
 	float:right;
@@ -468,43 +526,52 @@ li.rpwe-clearfix a {
 	margin-right: auto;
 }
 
-/*Footer*/
+/*		Footer
+--------------------------------------------------------------------------------------------------*/
 
 #footer ul > li {
-	margin-right: 15px;
-	margin-left: auto;
+	margin-left: 15px;
+	margin-right: auto;
 }
 
-#flickr_wrapper img {
+/*		Flickr Widget
+--------------------------------------------------------------------------------------------------*/
+#flickr_wrapper img, .widget-area .portfolio-img {
 	float: right;
 }
 
-/*shortcode*/
+.flickr_badge_image {
+	float:right;
+}
+
+/*		Share & Like Formatting
+--------------------------------------------------------------------------------------------------*/
+.twp-share {
+	float: right;
+}
+
+/*		More Link Links & Buttons
+--------------------------------------------------------------------------------------------------*/
+
+/*		Tabs
+--------------------------------------------------------------------------------------------------*/
+
+/*		Dropcaps
+--------------------------------------------------------------------------------------------------*/
 
 .dropcap:first-letter {
 	float: right;
 	padding: 4px 0 0 8px;
 }
 
-/*block*/
-
-/* Block number */
-.blocknumber {
-	padding:10px 60px 5px 0;
-}
-
-.blocknumber span {
-	right: 0;
-	left: auto;
-}
-
-/*core*/
+/*		WordPress Core
+--------------------------------------------------------------------------------------------------*/
 
 /*right side widget area*/
 
 /*search*/
 
-/*calender*/
+/*calendar*/
 
 .widget-area #calendar_wrap #prev {
 	text-align: right;
@@ -514,11 +581,15 @@ li.rpwe-clearfix a {
 	text-align: left;
 }
 
-/*Widgets*/
+/*		Blog Image
+--------------------------------------------------------------------------------------------------*/
 
-.widget-area ul li a {
-	margin-right: 10px;
-	margin-left: auto;
+/*		Widgets
+--------------------------------------------------------------------------------------------------*/
+
+.widget-area ul li:before {
+	left: 0;
+	right: auto;
 }
 
 .widget-area ul.children li {
@@ -526,7 +597,7 @@ li.rpwe-clearfix a {
 	margin-left: auto;
 }
 
-/* Blog */
+/* Table */
 
 /* Captions */
 
@@ -536,36 +607,70 @@ ul.breadcrumb {
 	text-align: left;
 }
 
-/*portfolio*/
+/*		Slider
+--------------------------------------------------------------------------------------------------*/
 
-/*Visual Composer*/
+#main-slider .slider-inner {
+	right: 0;
+	left: auto;
+}
+
+#main-slider .owl-prev {
+	right: -35px;
+	left: auto;
+}
+
+#main-slider .owl-next {
+	left: -35px;
+	right: auto;
+}
+
+.slider-overlay::before {
+	right: 50%;
+	margin-right: -12px;
+	left: auto;
+	margin-left: auto;
+}
+
+.slider-overlay, .slider-bg-overlay {
+	right: 0;
+	left: 0;
+}
+
+#main-slider .carousel-content {
+	right: 10%;
+	left: auto;
+}
+
+/*		Testimonial
+--------------------------------------------------------------------------------------------------*/
+
+/*		Call to Action
+--------------------------------------------------------------------------------------------------*/
+
+/*		Portfolio
+--------------------------------------------------------------------------------------------------*/
+
+/*		Visual Composer Fix
+--------------------------------------------------------------------------------------------------*/
 
 .upb_video-bg, .upb_video-bg utube {
 	right: 0 !important;
 	left: auto;
 }
 
-/*Divider*/
-
-/*faq*/
-li.faq span.number {
-	margin-left: 20px;
-	margin-right: auto;
-}
-
-/*logo*/
+/*		Dividers
+--------------------------------------------------------------------------------------------------*/
 
 /*download btn*/
 
-/*pinterest btn*/
+/* admin bar */
 
-/*admin bar*/
+/*		Responsive Menu
+--------------------------------------------------------------------------------------------------*/
 
-/*responsive menu*/
-
-/*testimonial*/
-
-/*responsive menu*/
+/*		Responsive Menu
+--------------------------------------------------------------------------------------------------*/
 
 .header-center .navbar-toggle {
 	margin-left:0px;
@@ -581,7 +686,8 @@ li.faq span.number {
 	margin-right: auto;
 }
 
-/*bottom*/
+/*		Bottom
+--------------------------------------------------------------------------------------------------*/
 ul#menu-company-menu {
 	padding-right: 0;
 	padding-left: 0;
@@ -592,10 +698,16 @@ ul#menu-company-menu li:before {
 	margin-right: auto;
 }
 
-@media(min-width:767px) {
+/*	Media Queries - For mobile devices and tablets */
+
+/*		Tablet Layout: 768px.
+--------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
 
 }
 
+/* Mobile Layout: 320px.
+--------------------------------------------------------------------------------------------------*/
 @media(max-width:767px) {
 
 .header-center .nav > li {
@@ -607,7 +719,8 @@ ul#menu-company-menu li:before {
 	margin-right: auto;
 }
 
-/*bottom*/
+/*		Bottom
+--------------------------------------------------------------------------------------------------*/
 ul#menu-company-menu {
 	padding-right: 0;
 	padding-left: 0;
@@ -618,8 +731,48 @@ ul#menu-company-menu li:before {
 	margin-right: auto;
 }
 
-@media(min-width:767px) 
+/*	Media Queries - For mobile devices and tablets */
+
+/*		Tablet Layout: 768px.
+--------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 1199px) 
 }
+
+/* Body Style */
+
+/* Heading Style */
+
+/*Link Color*/
+
+/*Link Hover Color*/
+
+/* Top Header Style */
+
+/* Top Header Link Color */
+
+/* Top Header Link Hover Color */
+
+/* Text Logo */
+
+/* Text Logo */
+
+/* Navbar Style */
+
+/* Current Menu Item */
+
+/* Child Menu Items */
+
+/* Child Menu Items Hover */
+
+/* Sub Header Style */
+
+/* Sub Header Link Style */
+
+/* Footer Main and Bottom Style */
+
+/* Footer Main Border */
+
+/* To Top Style */
 
 
 /* Generated by the RTLer - http://wordpress.org/extend/plugins/rtler/ */

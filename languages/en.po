@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Avien Light 1.6\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-11-19 12:40+0200\n"
-"PO-Revision-Date: 2015-11-19 12:40+0200\n"
+"POT-Creation-Date: 2015-12-13 22:29-0000\n"
+"PO-Revision-Date: 2015-12-13 22:29-0000\n"
 "Last-Translator: \n"
 "Language-Team: ThemeofWP.com <info@themeofwp.com>\n"
 "Language: en\n"
@@ -20,19 +20,242 @@ msgstr ""
 "esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
 "_e\n"
 "X-Poedit-Basepath: ..\\..\\\n"
-"X-Poedit-SearchPath-0: avien-lite\n"
-"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: avien-lite - Kopya/404.php:13 avien-lite/404.php:18
+#: avien-light/404.php:18 avien-lite - Kopya/404.php:13
 msgid "Page not found"
 msgstr ""
 
-#: avien-lite - Kopya/404.php:14 avien-lite/404.php:19
+#: avien-light/404.php:19 avien-lite - Kopya/404.php:14
 msgid "The Page you are looking for doesn't exist or an other error occurred!"
 msgstr ""
 
-#: avien-lite - Kopya/404.php:15 avien-lite/404.php:20
+#: avien-light/404.php:20 avien-lite - Kopya/404.php:15
 msgid "Go back to the homepage"
+msgstr ""
+
+# @ _s
+#: avien-light/comments.php:31 avien-lite - Kopya/comments.php:13
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ _s
+#: avien-light/comments.php:40 avien-light/comments.php:61 avien-lite -
+#: Kopya/comments.php:38
+msgid "Comment navigation"
+msgstr ""
+
+# @ _s
+#: avien-light/comments.php:43 avien-light/comments.php:64
+msgid "Older Comments"
+msgstr ""
+
+# @ _s
+#: avien-light/comments.php:44 avien-light/comments.php:65
+msgid "Newer Comments"
+msgstr ""
+
+# @ _s
+#: avien-light/comments.php:77 avien-lite - Kopya/comments.php:50
+msgid "Comments are closed."
+msgstr ""
+
+# @ _s
+#: avien-light/functions.php:59
+msgid "Primary Menu"
+msgstr ""
+
+#: avien-light/functions.php:60
+msgid "Footer Menu"
+msgstr ""
+
+# @ _s
+#: avien-light/functions.php:138
+msgid "Sidebar"
+msgstr ""
+
+#: avien-light/functions.php:148 avien-lite - Kopya/functions.php:27
+#: Kopya/functions.php:562
+msgid "Footer"
+msgstr ""
+
+#: avien-light/functions.php:150 avien-lite - Kopya/functions.php:564
+msgid "Widgets in this area will be shown before footer area."
+msgstr ""
+
+#: avien-light/functions.php:159 avien-lite - Kopya/functions.php:573
+msgid "Header Social"
+msgstr ""
+
+#: avien-light/functions.php:161 avien-lite - Kopya/functions.php:575
+msgid "Widgets in this area will be shown on hader social area."
+msgstr ""
+
+#: avien-light/functions.php:170 avien-lite - Kopya/functions.php:584
+msgid "Header Contact"
+msgstr ""
+
+#: avien-light/functions.php:172 avien-lite - Kopya/functions.php:586
+msgid "Widgets in this area will be shown on hader contact area."
+msgstr ""
+
+#: avien-light/functions.php:255 avien-lite - Kopya/inc/widgets.php:426
+msgid "Add your contact info to the header area."
+msgstr ""
+
+#: avien-light/functions.php:259 avien-lite - Kopya/inc/widgets.php:430
+msgid "TWP Header Contact"
+msgstr ""
+
+#: avien-light/functions.php:308 avien-lite - Kopya/inc/widgets.php:311
+#: Kopya/inc/widgets.php:392 Kopya/inc/widgets.php:479
+msgid "Phone:"
+msgstr ""
+
+#: avien-light/functions.php:313 avien-lite - Kopya/inc/widgets.php:327
+#: Kopya/inc/widgets.php:400 Kopya/inc/widgets.php:484
+msgid "Email:"
+msgstr ""
+
+#: avien-light/functions.php:336 avien-lite - Kopya/inc/widgets.php:507
+msgid "Add your social info to the header area."
+msgstr ""
+
+#: avien-light/functions.php:340 avien-lite - Kopya/inc/widgets.php:511
+msgid "TWP Header Social"
+msgstr ""
+
+#: avien-light/functions.php:401 avien-lite - Kopya/inc/widgets.php:571
+msgid "Twitter URL:"
+msgstr ""
+
+#: avien-light/functions.php:406 avien-lite - Kopya/inc/widgets.php:576
+msgid "Facebook URL:"
+msgstr ""
+
+#: avien-light/functions.php:411 avien-lite - Kopya/inc/widgets.php:581
+msgid "LinkedIn URL:"
+msgstr ""
+
+#: avien-light/functions.php:416 avien-lite - Kopya/inc/widgets.php:586
+msgid "Google+ URL:"
+msgstr ""
+
+#: avien-light/functions.php:421 avien-lite - Kopya/inc/widgets.php:591
+msgid "Instagram URL:"
+msgstr ""
+
+#: avien-light/header.php:100 avien-lite - Kopya/header.php:131
+msgid "Toggle navigation"
+msgstr ""
+
+# @ _s
+#: avien-light/inc/template-tags.php:28
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+# @ _s
+#: avien-light/inc/template-tags.php:33
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+# @ _s
+#: avien-light/inc/template-tags.php:50 avien-light/inc/template-tags.php:56
+#: avien-lite - Kopya/inc/post-templates/content-audio.php:29
+#: Kopya/inc/post-templates/content-image.php:34
+#: Kopya/inc/post-templates/content-video.php:28
+#: Kopya/inc/post-templates/content.php:71
+msgid ", "
+msgstr ""
+
+# @ _s
+#: avien-light/inc/template-tags.php:52
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+# @ _s
+#: avien-light/inc/template-tags.php:58
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+# @ _s
+#: avien-light/inc/template-tags.php:64
+msgid "Leave a comment"
+msgstr ""
+
+# @ _s
+#: avien-light/inc/template-tags.php:64
+msgid "1 Comment"
+msgstr ""
+
+# @ _s
+#: avien-light/inc/template-tags.php:64
+msgid "% Comments"
+msgstr ""
+
+# @ _s
+#: avien-light/inc/template-tags.php:71
+#: avien-light/template-parts/content-page.php:32
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+# @ _s
+#: avien-light/search.php:27
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+# @ _s
+#: avien-light/template-parts/content-none.php:14 avien-lite -
+#: Kopya/inc/post-templates/content-none.php:2
+msgid "Nothing Found"
+msgstr ""
+
+# @ _s
+#: avien-light/template-parts/content-none.php:20 avien-lite -
+#: Kopya/inc/post-templates/content-none.php:8
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+# @ _s
+#: avien-light/template-parts/content-none.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+# @ _s
+#: avien-light/template-parts/content-none.php:29 avien-lite -
+#: Kopya/inc/post-templates/content-none.php:17
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+# @ _s
+#: avien-light/template-parts/content-page.php:21
+#: avien-light/template-parts/content-single.php:25
+#: avien-light/template-parts/content.php:41
+msgid "Pages:"
+msgstr ""
+
+# @ _s
+#: avien-light/template-parts/content.php:34
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: avien-lite - Kopya/author-bio.php:12
@@ -50,21 +273,6 @@ msgstr ""
 msgid "All posts by %s"
 msgstr ""
 
-# @ _s
-#: avien-lite - Kopya/comments.php:13 avien-lite/comments.php:31
-#, php-format
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
-
-# @ _s
-#: avien-lite - Kopya/comments.php:38 avien-lite/comments.php:40
-#: avien-lite/comments.php:61
-msgid "Comment navigation"
-msgstr ""
-
 #: avien-lite - Kopya/comments.php:40
 msgid "&larr; Older Comments"
 msgstr ""
@@ -73,18 +281,8 @@ msgstr ""
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-# @ _s
-#: avien-lite - Kopya/comments.php:50 avien-lite/comments.php:77
-msgid "Comments are closed."
-msgstr ""
-
 #: avien-lite - Kopya/functions.php:26
 msgid "Primary"
-msgstr ""
-
-#: avien-lite - Kopya/functions.php:27 Kopya/functions.php:562
-#: avien-lite/functions.php:148
-msgid "Footer"
 msgstr ""
 
 #: avien-lite - Kopya/functions.php:223 Kopya/inc/mainfunctions.php:178
@@ -141,26 +339,6 @@ msgstr ""
 
 #: avien-lite - Kopya/functions.php:553
 msgid "Widgets in this area will be shown blogs on right side."
-msgstr ""
-
-#: avien-lite - Kopya/functions.php:564 avien-lite/functions.php:150
-msgid "Widgets in this area will be shown before footer area."
-msgstr ""
-
-#: avien-lite - Kopya/functions.php:573 avien-lite/functions.php:159
-msgid "Header Social"
-msgstr ""
-
-#: avien-lite - Kopya/functions.php:575 avien-lite/functions.php:161
-msgid "Widgets in this area will be shown on hader social area."
-msgstr ""
-
-#: avien-lite - Kopya/functions.php:584 avien-lite/functions.php:170
-msgid "Header Contact"
-msgstr ""
-
-#: avien-lite - Kopya/functions.php:586 avien-lite/functions.php:172
-msgid "Widgets in this area will be shown on hader contact area."
 msgstr ""
 
 #: avien-lite - Kopya/functions.php:595
@@ -261,10 +439,6 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: avien-lite - Kopya/header.php:131 avien-lite/header.php:112
-msgid "Toggle navigation"
-msgstr ""
-
 #: avien-lite - Kopya/image.php:30
 #: Kopya/inc/post-templates/content-audio.php:4
 #: Kopya/inc/post-templates/content-gallery.php:3
@@ -332,41 +506,10 @@ msgstr ""
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-# @ _s
-#: avien-lite - Kopya/inc/post-templates/content-audio.php:29
-#: Kopya/inc/post-templates/content-image.php:34
-#: Kopya/inc/post-templates/content-video.php:28
-#: Kopya/inc/post-templates/content.php:71 avien-lite/inc/template-tags.php:50
-#: avien-lite/inc/template-tags.php:56
-msgid ", "
-msgstr ""
-
-# @ _s
-#: avien-lite - Kopya/inc/post-templates/content-none.php:2
-#: avien-lite/template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-# @ _s
-#: avien-lite - Kopya/inc/post-templates/content-none.php:8
-#: avien-lite/template-parts/content-none.php:20
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
 #: avien-lite - Kopya/inc/post-templates/content-none.php:12
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with "
 "different keywords."
-msgstr ""
-
-# @ _s
-#: avien-lite - Kopya/inc/post-templates/content-none.php:17
-#: avien-lite/template-parts/content-none.php:29
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
 msgstr ""
 
 #: avien-lite - Kopya/inc/post-templates/content-search.php:19
@@ -440,18 +583,8 @@ msgstr ""
 msgid "TWP Contact Us"
 msgstr ""
 
-#: avien-lite - Kopya/inc/widgets.php:311 Kopya/inc/widgets.php:392
-#: Kopya/inc/widgets.php:479 avien-lite/functions.php:308
-msgid "Phone:"
-msgstr ""
-
 #: avien-lite - Kopya/inc/widgets.php:319 Kopya/inc/widgets.php:396
 msgid "Fax:"
-msgstr ""
-
-#: avien-lite - Kopya/inc/widgets.php:327 Kopya/inc/widgets.php:400
-#: Kopya/inc/widgets.php:484 avien-lite/functions.php:313
-msgid "Email:"
 msgstr ""
 
 #: avien-lite - Kopya/inc/widgets.php:334
@@ -474,140 +607,6 @@ msgstr ""
 msgid "Website URL:"
 msgstr ""
 
-#: avien-lite - Kopya/inc/widgets.php:426 avien-lite/functions.php:255
-msgid "Add your contact info to the header area."
-msgstr ""
-
-#: avien-lite - Kopya/inc/widgets.php:430 avien-lite/functions.php:259
-msgid "TWP Header Contact"
-msgstr ""
-
-#: avien-lite - Kopya/inc/widgets.php:507 avien-lite/functions.php:336
-msgid "Add your social info to the header area."
-msgstr ""
-
-#: avien-lite - Kopya/inc/widgets.php:511 avien-lite/functions.php:340
-msgid "TWP Header Social"
-msgstr ""
-
-#: avien-lite - Kopya/inc/widgets.php:571 avien-lite/functions.php:401
-msgid "Twitter URL:"
-msgstr ""
-
-#: avien-lite - Kopya/inc/widgets.php:576 avien-lite/functions.php:406
-msgid "Facebook URL:"
-msgstr ""
-
-#: avien-lite - Kopya/inc/widgets.php:581 avien-lite/functions.php:411
-msgid "LinkedIn URL:"
-msgstr ""
-
-#: avien-lite - Kopya/inc/widgets.php:586 avien-lite/functions.php:416
-msgid "Google+ URL:"
-msgstr ""
-
-#: avien-lite - Kopya/inc/widgets.php:591 avien-lite/functions.php:421
-msgid "Instagram URL:"
-msgstr ""
-
 #: avien-lite - Kopya/template-contact.php:54
 msgid " - <i class=\"fa fa-pencil\"></i> Edit - "
-msgstr ""
-
-# @ _s
-#: avien-lite/comments.php:43 avien-lite/comments.php:64
-msgid "Older Comments"
-msgstr ""
-
-# @ _s
-#: avien-lite/comments.php:44 avien-lite/comments.php:65
-msgid "Newer Comments"
-msgstr ""
-
-# @ _s
-#: avien-lite/functions.php:59
-msgid "Primary Menu"
-msgstr ""
-
-#: avien-lite/functions.php:60
-msgid "Footer Menu"
-msgstr ""
-
-# @ _s
-#: avien-lite/functions.php:138
-msgid "Sidebar"
-msgstr ""
-
-# @ _s
-#: avien-lite/inc/template-tags.php:28
-#, php-format
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
-
-# @ _s
-#: avien-lite/inc/template-tags.php:33
-#, php-format
-msgctxt "post author"
-msgid "by %s"
-msgstr ""
-
-# @ _s
-#: avien-lite/inc/template-tags.php:52
-#, php-format
-msgid "Posted in %1$s"
-msgstr ""
-
-# @ _s
-#: avien-lite/inc/template-tags.php:58
-#, php-format
-msgid "Tagged %1$s"
-msgstr ""
-
-# @ _s
-#: avien-lite/inc/template-tags.php:64
-msgid "Leave a comment"
-msgstr ""
-
-# @ _s
-#: avien-lite/inc/template-tags.php:64
-msgid "1 Comment"
-msgstr ""
-
-# @ _s
-#: avien-lite/inc/template-tags.php:64
-msgid "% Comments"
-msgstr ""
-
-# @ _s
-#: avien-lite/inc/template-tags.php:71
-#: avien-lite/template-parts/content-page.php:32
-#, php-format
-msgid "Edit %s"
-msgstr ""
-
-# @ _s
-#: avien-lite/search.php:27
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-# @ _s
-#: avien-lite/template-parts/content-none.php:24
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-# @ _s
-#: avien-lite/template-parts/content-page.php:21
-#: avien-lite/template-parts/content-single.php:25
-#: avien-lite/template-parts/content.php:41
-msgid "Pages:"
-msgstr ""
-
-# @ _s
-#: avien-lite/template-parts/content.php:34
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
