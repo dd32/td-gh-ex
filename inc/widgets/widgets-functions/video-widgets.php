@@ -115,6 +115,7 @@ class arise_parallax_video_widget extends WP_Widget {
 			<?php endif;
 			endwhile;
 		echo $after_widget .'<!-- end .widget_parallax_video -->';
+		wp_reset_postdata();
 	}
 }
 ?>

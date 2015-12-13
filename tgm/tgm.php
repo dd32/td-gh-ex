@@ -1,12 +1,35 @@
 <?php
+/**
+ * This file represents an example of the code that themes would use to register
+ * the required plugins.
+ *
+ * It is expected that theme authors would copy and paste this code into their
+ * functions.php file, and amend to suit.
+ *
+ * @see http://tgmpluginactivation.com/configuration/ for detailed documentation.
+ *
+ * @package    TGM-Plugin-Activation
+ * @subpackage Example
+ * @version    2.5.2
+ * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer
+ * @copyright  Copyright (c) 2011, Thomas Griffin
+ * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
+ * @link       https://github.com/TGMPA/TGM-Plugin-Activation
+ */
 
 /**
  * Include the TGM_Plugin_Activation class.
  */
+require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 
 add_action( 'arise_register', 'arise_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
+ *
+ * In this example, we register five plugins:
+ * - one included with the TGMPA library
+ * - two from an external source, one from an arbitrary source, one from a GitHub repository
+ * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
  *
  * The variable passed to arise_register_plugins() should be an array of plugin
  * arrays.
@@ -15,8 +38,14 @@ add_action( 'arise_register', 'arise_register_required_plugins' );
  * TGM_Plugin_Activation class constructor.
  */
 function arise_register_required_plugins() {
+	/*
+	 * Array of plugin arrays. Required keys are name and slug.
+	 * If the source is NOT from the .org repo, then source is also required.
+	 */
 	$plugins = array(
-		array(
+
+		// This is an example of how to include a plugin bundled with a theme.
+		$plugins = array(
 			'name'      => 'Breadcrumb NavXT',
 			'slug'      => 'breadcrumb-navxt',
 			'required'  => false,
@@ -63,4 +92,3 @@ function arise_register_required_plugins() {
 	);
 	arise( $plugins, $config );
 }
-?>

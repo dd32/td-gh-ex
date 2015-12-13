@@ -1,4 +1,17 @@
 == CHANGE LOG ==
+= 1.0.7 =
+	- Fixed -
+		- arise_sanitize_dropdown not defined fixed
+		- TGM to latest version 2.5.2.
+		- removed echo''
+		- Translation issue at footer.php fixed and also checked in other place
+		- wp_reset_postdata() missing for custom query added on corporate-arise.php and other page too
+		- Escaping missing $arise_excerpt_length variable fixed
+		- Licence for Google fonts added in readme.txt
+		- quote_slider prefixed with theme slug as arise-quote-slider
+		- custom_meta_box_nonce nonce name  prefixed with theme slug as arise_custom_meta_box_nonce
+		- wp_enqueue_media(); loaded for specific pages
+
 = 1.0.6 =
 - Removed corporate template which is not required
 

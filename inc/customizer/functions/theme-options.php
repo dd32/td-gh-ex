@@ -27,7 +27,7 @@
 	$wp_customize->add_setting('arise_theme_options[arise_header_display]', array(
 		'capability' => 'edit_theme_options',
 		'default' => 'header_text',
-		'sanitize_callback' => 'arise_sanitize_dropdown',
+		'sanitize_callback' => 'arise_sanitize_select',
 		'type' => 'option',
 	));
 	$wp_customize->add_control('arise_theme_options[arise_header_display]', array(
@@ -52,7 +52,7 @@
 	$wp_customize->add_setting('arise_theme_options[arise_display_header_image]', array(
 		'capability' => 'edit_theme_options',
 		'default' => 'below',
-		'sanitize_callback' => 'arise_sanitize_dropdown',
+		'sanitize_callback' => 'arise_sanitize_select',
 		'type' => 'option',
 	));
 	$wp_customize->add_control('arise_theme_options[arise_display_header_image]', array(
@@ -69,7 +69,7 @@
 	));
 	$wp_customize->add_setting('arise_theme_options[arise_custom_header_options]', array(
 		'default' => 'homepage',
-		'sanitize_callback' => 'arise_sanitize_dropdown',
+		'sanitize_callback' => 'arise_sanitize_select',
 		'type' => 'option',
 		'capability' => 'manage_options'
 	));
@@ -220,7 +220,7 @@
 	));
 	$wp_customize->add_setting( 'arise_theme_options[arise_scroll]', array(
 		'default' => 0,
-		'sanitize_callback' => 'arise_sanitize_dropdown',
+		'sanitize_callback' => 'arise_sanitize_select',
 		'type' => 'option',
 	));
 	$wp_customize->add_control( 'arise_theme_options[arise_scroll]', array(

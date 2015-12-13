@@ -87,6 +87,7 @@ class arise_parallax_widget extends WP_Widget {
 		<?php
 		endwhile;
 		echo $after_widget .'<!-- end .widget_parallax -->';
+		wp_reset_postdata();
 	}
 }
 ?>

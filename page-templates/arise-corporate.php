@@ -77,6 +77,7 @@ $arise_settings = arise_get_theme_options();
 				}
 		echo $arise_features;
 	}
+		wp_reset_postdata();
    if( is_active_sidebar( 'arise_corporate_page_sidebar' ) ) {
 			dynamic_sidebar( 'arise_corporate_page_sidebar' );
 	} ?>

@@ -159,7 +159,7 @@
 				<?php $i++;
 			endwhile;
 			// Reset Post Data
-			wp_reset_query(); 
+			wp_reset_postdata(); 
 			echo '</div> <!-- end .column -->';
 			echo '</div> <!-- end .container -->';?>
 		<?php echo $after_widget .'<!-- end .widget_latest_blog -->';

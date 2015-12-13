@@ -39,7 +39,7 @@ add_filter( 'wp_head', 'arise_resp_and_custom_css');
 function arise_arise_excerpt_length($length) {
 	$arise_settings = arise_get_theme_options();
 	$arise_excerpt_length = $arise_settings['arise_excerpt_length'];
-	return $arise_excerpt_length;// this will return 30 words in the excerpt
+	return absint($arise_excerpt_length);// this will return 30 words in the excerpt
 }
 add_filter('excerpt_length', 'arise_arise_excerpt_length');
 
@@ -165,7 +165,7 @@ function arise_page_sliders() {
 	for( $i = 1; $i <= $arise_settings['arise_slider_no']; $i++ ){
 		if( isset ( $arise_settings['arise_featured_page_slider_' . $i] ) && $arise_settings['arise_featured_page_slider_' . $i] > 0 ){
 			$arise_total_page_no++;
-			$arise_list_page	=	array_merge( $arise_list_page, array( $arise_settings['arise_featured_page_slider_' . $i] ) );
+			$arise_list_page	=	array_merge( $arise_list_page, array( esc_attr($arise_settings['arise_featured_page_slider_' . $i] )) );
 		}
 	}
 		if ( !empty( $arise_list_page ) && $arise_total_page_no > 0 ) {
@@ -218,7 +218,7 @@ function arise_page_sliders() {
 				}
 				$arise_page_sliders_display 	.='</div><!-- end .slides -->';
 			endwhile;
-			wp_reset_query();
+			wp_reset_postdata();
 			$arise_page_sliders_display .= '</div>	  <!-- end .layer-slider -->
 					<a class="slider-prev" id="prev2" href="#"></a> <a class="slider-next" id="next2" href="#"></a>
   <nav class="slider-button"> </nav>
@@ -245,7 +245,7 @@ function arise_scripts() {
 	if($arise_stick_menu != 1):
 	wp_enqueue_script('sticky-scroll', get_template_directory_uri().'/js/arise-sticky-scroll.js', array('jquery'));
 	endif;
-	wp_enqueue_script('quote_slider', get_template_directory_uri().'/js/quote_slider.js', array('jquery'),'4.2.2', true);
+	wp_enqueue_script('arise-quote-slider', get_template_directory_uri().'/js/arise-quote-slider.js', array('jquery'),'4.2.2', true);
 	wp_enqueue_style( 'arise_google_fonts' );
 	wp_style_add_data('arise-ie', 'conditional', 'lt IE 9');
 	if( $arise_settings['arise_responsive'] == 'on' ) {

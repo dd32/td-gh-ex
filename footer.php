@@ -9,7 +9,7 @@
 $arise_settings = arise_get_theme_options();
 if (!is_page_template('page-templates/arise-corporate.php') ){ 
   if(is_page_template('three-column-blog-template.php') || is_page_template('our-team-template.php') || is_page_template('about-us-template.php') || is_page_template('important-works-template.php') ){
-	echo '';
+
 	}else{?>
 </div>
 <!-- end .container -->
@@ -79,7 +79,7 @@ if (!is_page_template('page-templates/arise-corporate.php') ){
 	<?php
 		$disable_scroll = $arise_settings['arise_scroll'];
 		if($disable_scroll == 0):?>
-	<div class="go-to-top"><a title="Go to Top" href="#masthead"></a></div> <!-- end .go-to-top -->
+	<div class="go-to-top"><a title="<?php _e('Go to Top','arise');?>" href="#masthead"></a></div> <!-- end .go-to-top -->
 	<?php endif; ?>
 </footer> <!-- end #colophon -->
 </div> <!-- end #page -->

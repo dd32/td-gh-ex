@@ -86,7 +86,7 @@ add_action( 'add_meta_boxes', 'arise_add_custom_box' );
 function arise_layout_options() {
 	global $arise_layout_options, $post;
 	// Use nonce for verification  
-	wp_nonce_field( basename( __FILE__ ), 'custom_meta_box_nonce' ); // for security purpose ?>
+	wp_nonce_field( basename( __FILE__ ), 'arise_custom_meta_box_nonce' ); // for security purpose ?>
 	<?php
 				foreach ($arise_layout_options as $field) {  
 					$arise_layout_meta = get_post_meta( $post->ID, $field['id'], true );
@@ -103,7 +103,7 @@ add_action('save_post', 'arise_save_custom_meta');
 function arise_save_custom_meta( $post_id ) { 
 	global $arise_layout_options, $post; 
 	// Verify the nonce before proceeding.
-	if ( !isset( $_POST[ 'custom_meta_box_nonce' ] ) || !wp_verify_nonce( $_POST[ 'custom_meta_box_nonce' ], basename( __FILE__ ) ) )
+	if ( !isset( $_POST[ 'arise_custom_meta_box_nonce' ] ) || !wp_verify_nonce( $_POST[ 'arise_custom_meta_box_nonce' ], basename( __FILE__ ) ) )
 		return;
 	// Stop WP from clearing custom fields on autosave
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE)  
@@ -129,9 +129,9 @@ function arise_save_custom_meta( $post_id ) {
 /***************Pass slider effect  parameters from php files to jquery file ********************/
 function arise_slider_value() {
 	$arise_settings = arise_get_theme_options();
-	$arise_transition_effect   = $arise_settings['arise_transition_effect'];
-	$arise_transition_delay    = $arise_settings['arise_transition_delay']*1000;
-	$arise_transition_duration = $arise_settings['arise_transition_duration']*1000;
+	$arise_transition_effect   = esc_attr($arise_settings['arise_transition_effect']);
+	$arise_transition_delay    = absint($arise_settings['arise_transition_delay'])*1000;
+	$arise_transition_duration = absint($arise_settings['arise_transition_duration'])*1000;
 	wp_localize_script(
 		'arise_slider',
 		'arise_slider_value',
@@ -175,10 +175,10 @@ function arise_has_featured_posts() {
 
 /***************************** wp_enqueue_script ********* *******************/
 function arise_jquery_javascript_file($hook) {
-	wp_enqueue_media();
 	if( $hook != 'widgets.php' )
 	return;
 	wp_enqueue_script('arise-script', get_template_directory_uri() . '/inc/js/image-uploader.js', false, '1.0', true);
+	wp_enqueue_media();
 }
 add_action( 'admin_enqueue_scripts', 'arise_jquery_javascript_file' );
 

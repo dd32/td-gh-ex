@@ -48,6 +48,8 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 	-TGM-Plugin-Activation
 		https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md under GNU GPL license
 
+	- Google Fonts - Apache License, version 2.0
+
 
 
 All the theme files and other un-specified scripts are licensed under GNU General Public License Version 3 or later and can be used or modify for both commercial and personal use.
