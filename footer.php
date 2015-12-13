@@ -7,7 +7,7 @@
  * @since Arise 1.0
  */
 $arise_settings = arise_get_theme_options();
-if (!is_front_page() || 'posts' == get_option( 'show_on_front' ) ){ 
+if (!is_page_template('page-templates/arise-corporate.php') ){ 
   if(is_page_template('three-column-blog-template.php') || is_page_template('our-team-template.php') || is_page_template('about-us-template.php') || is_page_template('important-works-template.php') ){
 	echo '';
 	}else{?>

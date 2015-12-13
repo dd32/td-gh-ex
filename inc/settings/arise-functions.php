@@ -13,7 +13,7 @@ function arise_resp_and_custom_css() {
 	if( $arise_settings['arise_responsive'] == 'on' ) { ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<?php } else{ ?>
-	<meta name="viewport" content="width=1078" />
+	<meta name="viewport" content="width=1070" />
 	<?php  }
 	if (!empty($arise_settings['arise_custom_css']) || $arise_settings['arise_slider_header_line'] == 1){
 		$arise_internal_css = '<!-- Custom CSS -->'."\n";
@@ -51,20 +51,20 @@ add_filter('excerpt_more', 'arise_continue_reading');
 
 /***************** USED CLASS FOR BODY TAGS ******************************/
 function arise_body_class($classes) {
-	global $site_layout, $content_layout;
+	global $arise_site_layout, $arise_content_layout;
 	$arise_settings = arise_get_theme_options();
 	global $post;
 	if ($post) {
 		$layout = get_post_meta($post->ID, 'arise_sidebarlayout', true);
 	}
-	$site_layout = $arise_settings['arise_design_layout'];
+	$arise_site_layout = $arise_settings['arise_design_layout'];
 	$arise_blog_layout_temp = $arise_settings['arise_blog_layout_temp'];
-	$content_layout = $arise_settings['arise_sidebar_layout_options'];
+	$arise_content_layout = $arise_settings['arise_sidebar_layout_options'];
 	if (empty($layout) || is_archive() || is_search() || is_home()) {
 		$layout = 'default';
 	}
 	if ('default' == $layout) {
-		$themeoption_layout = $content_layout;
+		$themeoption_layout = $arise_content_layout;
 		if ('left' == $themeoption_layout) {
 			$classes[] = 'left-sidebar-layout';
 		} elseif ('right' == $themeoption_layout) {
@@ -88,19 +88,19 @@ function arise_body_class($classes) {
 	}elseif ($arise_blog_layout_temp == 'medium_image_display'){
 		$classes[] = "small_image_blog";
 	}
-	if (!is_front_page() || 'posts' == get_option( 'show_on_front' ) ){
+	if (!is_page_template('page-templates/arise-corporate.php') ){
 		$classes[] = '';
-	}elseif (is_front_page()) {
+	}elseif (is_page_template('page-templates/arise-corporate.php') ) {
 		$classes[] = 'tf-business-template';
 		$classes[] = 'page-template-default';
 	}
 	if (is_page_template('page-templates/page-template-contact.php')) {
 			$classes[] = 'contact';
 	}
-	if ($site_layout =='boxed-layout') {
+	if ($arise_site_layout =='boxed-layout') {
 		$classes[] = 'boxed-layout';
 	}
-	if ($site_layout =='small-boxed-layout') {
+	if ($arise_site_layout =='small-boxed-layout') {
 		$classes[] = 'boxed-layout-small';
 	}
 	return $classes;
@@ -143,7 +143,6 @@ function arise_social_links() {
 add_action ('social_links', 'arise_social_links');
 
 /******************* DISPLAY BREADCRUMBS ******************************/
-if (!function_exists('arise_breadcrumb')):
 function arise_breadcrumb() {
 	if (function_exists('bcn_display')) { ?>
 		<div class="breadcrumb home">
@@ -151,10 +150,8 @@ function arise_breadcrumb() {
 		</div> <!-- .breadcrumb -->
 	<?php }
 }
-endif;
 
 /*********************** arise PAGE SLIDERS ***********************************/
-if (!function_exists('arise_page_sliders')):
 function arise_page_sliders() {
 	$arise_settings = arise_get_theme_options();
 	$excerpt = get_the_excerpt();
@@ -177,7 +174,7 @@ function arise_page_sliders() {
 			$i = 0;
 			while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
 			$attachment_id = get_post_thumbnail_id();
-			$image_attributes = wp_get_attachment_image_src($attachment_id,'slider_image');
+			$image_attributes = wp_get_attachment_image_src($attachment_id,'arise_slider_image');
 						$i++;
 						$title_attribute       	 	 = apply_filters('the_title', get_the_title($post->ID));
 						$excerpt               	 	 = get_the_excerpt();
@@ -231,7 +228,6 @@ function arise_page_sliders() {
 		}
 				echo $arise_page_sliders_display;
 }
-endif;
 
 /*************************** ENQUEING STYLES AND SCRIPTS ****************************************/
 function arise_scripts() {
@@ -244,9 +240,7 @@ function arise_scripts() {
 
 	$enable_slider = $arise_settings['arise_enable_slider'];
 	$arise_stick_menu = $arise_settings['arise_stick_menu'];
-	if ($enable_slider=='frontpage' || $enable_slider=='enitresite' ) {
 		wp_enqueue_script('arise_slider', get_template_directory_uri().'/js/arise-slider-setting.js', array('jquery_cycle'), false, true);
-	}
 	wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', array('jquery'));
 	if($arise_stick_menu != 1):
 	wp_enqueue_script('sticky-scroll', get_template_directory_uri().'/js/arise-sticky-scroll.js', array('jquery'));

@@ -14,10 +14,10 @@
 	));
 		$wp_customize->add_setting('arise_theme_options[arise_responsive]', array(
 		'default' => 'on',
-		'sanitize_callback' => 'arise_sanitize_dropdown',
+		'sanitize_callback' => 'arise_sanitize_select',
 		'type' => 'option',
 	));
-	$wp_customize->add_control('arise_responsive', array(
+	$wp_customize->add_control('arise_theme_options[arise_responsive]', array(
 		'priority' =>10,
 		'label' => __('Responsive Layout', 'arise'),
 		'section' => 'arise_layout_options',
@@ -25,16 +25,16 @@
 		'type' => 'select',
 		'checked' => 'checked',
 		'choices' => array(
-			'on' => 'ON',
-			'off' => 'OFF',
+			'on' => __('ON ','arise'),
+			'off' => __('OFF','arise'),
 		),
 	));
 	$wp_customize->add_setting('arise_theme_options[arise_sidebar_layout_options]', array(
 		'default' => 'right',
-		'sanitize_callback' => 'arise_sanitize_dropdown',
+		'sanitize_callback' => 'arise_sanitize_select',
 		'type' => 'option',
 	));
-	$wp_customize->add_control('arise_sidebar_layout_options', array(
+	$wp_customize->add_control('arise_theme_options[arise_sidebar_layout_options]', array(
 		'priority' =>20,
 		'label' => __('Sidebar Layout Options', 'arise'),
 		'section' => 'arise_layout_options',
@@ -50,10 +50,10 @@
 	));
 	$wp_customize->add_setting('arise_theme_options[arise_blog_layout_temp]', array(
 		'default' => 'large_image_display',
-		'sanitize_callback' => 'arise_sanitize_dropdown',
+		'sanitize_callback' => 'arise_sanitize_select',
 		'type' => 'option',
 	));
-	$wp_customize->add_control('arise_blog_layout_temp', array(
+	$wp_customize->add_control('arise_theme_options[arise_blog_layout_temp]', array(
 		'priority' =>30,
 		'label' => __('Blog Image Display Layout', 'arise'),
 		'section'    => 'arise_layout_options',
@@ -67,10 +67,10 @@
 	));
 	$wp_customize->add_setting( 'arise_theme_options[arise_entry_format_blog]', array(
 		'default' => 'show',
-		'sanitize_callback' => 'arise_sanitize_dropdown',
+		'sanitize_callback' => 'arise_sanitize_select',
 		'type' => 'option',
 	));
-	$wp_customize->add_control( 'arise_entry_format_blog', array(
+	$wp_customize->add_control( 'arise_theme_options[arise_entry_format_blog]', array(
 		'priority'=>40,
 		'label' => __('Disable Entry Format from Blog Page', 'arise'),
 		'section' => 'arise_layout_options',
@@ -85,10 +85,10 @@
 	));
 	$wp_customize->add_setting( 'arise_theme_options[arise_entry_meta_blog]', array(
 		'default' => 'show-meta',
-		'sanitize_callback' => 'arise_sanitize_dropdown',
+		'sanitize_callback' => 'arise_sanitize_select',
 		'type' => 'option',
 	));
-	$wp_customize->add_control( 'arise_entry_meta_blog', array(
+	$wp_customize->add_control( 'arise_theme_options[arise_entry_meta_blog]', array(
 		'priority'=>45,
 		'label' => __('Disable Entry Meta from Blog Page', 'arise'),
 		'section' => 'arise_layout_options',
@@ -101,10 +101,10 @@
 	));
 	$wp_customize->add_setting('arise_theme_options[arise_design_layout]', array(
 		'default'        => 'on',
-		'sanitize_callback' => 'arise_sanitize_dropdown',
+		'sanitize_callback' => 'arise_sanitize_select',
 		'type'                  => 'option',
 	));
-	$wp_customize->add_control('arise_design_layout', array(
+	$wp_customize->add_control('arise_theme_options[arise_design_layout]', array(
 	'priority'  =>50,
 	'label'      => __('Design Layout', 'arise'),
 	'section'    => 'arise_layout_options',

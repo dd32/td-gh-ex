@@ -15,10 +15,10 @@ $wp_customize->add_section( 'featured_content', array(
 ));
 $wp_customize->add_setting( 'arise_theme_options[arise_enable_slider]', array(
 	'default' => 'frontpage',
-	'sanitize_callback' => 'arise_sanitize_dropdown',
+	'sanitize_callback' => 'arise_sanitize_select',
 	'type' => 'option',
 ));
-$wp_customize->add_control( 'arise_enable_slider', array(
+$wp_customize->add_control( 'arise_theme_options[arise_enable_slider]', array(
 	'priority'=>12,
 	'label' => __('Enable Slider', 'arise'),
 	'section' => 'featured_content',
@@ -37,7 +37,7 @@ $wp_customize->add_setting('arise_theme_options[arise_secondary_text]', array(
 	'type' => 'option',
 	'capability' => 'manage_options'
 ));
-$wp_customize->add_control('arise_secondary_text', array(
+$wp_customize->add_control('arise_theme_options[arise_secondary_text]', array(
 	'priority' =>15,
 	'label' => __('Secondary Button Text', 'arise'),
 	'section' => 'featured_content',
@@ -50,7 +50,7 @@ $wp_customize->add_setting('arise_theme_options[arise_secondary_url]', array(
 	'type' => 'option',
 	'capability' => 'manage_options'
 ));
-$wp_customize->add_control('arise_secondary_url', array(
+$wp_customize->add_control('arise_theme_options[arise_secondary_url]', array(
 	'priority' =>16,
 	'label' => __('Secondary Button Url', 'arise'),
 	'section' => 'featured_content',
@@ -69,7 +69,7 @@ for ( $i=1; $i <= $arise_settings['arise_slider_no'] ; $i++ ) {
 		'type' => 'option',
 		'capability' => 'manage_options'
 	));
-	$wp_customize->add_control( 'arise_featured_page_slider_'. $i .'', array(
+	$wp_customize->add_control( 'arise_theme_options[arise_featured_page_slider_'. $i .']', array(
 		'priority' => 220 . $i,
 		'label' => __(' Page Slider #', 'arise') . ' ' . $i ,
 		'section' => 'arise_page_post_options',

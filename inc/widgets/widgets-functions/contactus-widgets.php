@@ -10,7 +10,7 @@ class arise_contact_widgets extends WP_Widget {
 	function arise_contact_widgets() {
 		$widget_ops = array( 'classname' => 'widget_contact', 'description' => __( 'Display Contact Us Information', 'arise') );
 		$control_ops = array('width' => 200, 'height' => 250);
-		parent::__construct( false, $name='TF: Contact Us ', $widget_ops, $control_ops );
+		parent::__construct( false, $name=__('TF: Contact Us','arise'), $widget_ops, $control_ops );
 	}	
 	function form( $instance ) {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '','address1' => '','address_link1' => '','phone_no1' => '','phone_no2' => '', 'email_1' => '', 'skype_id1' => ''));
@@ -94,10 +94,10 @@ class arise_contact_widgets extends WP_Widget {
 			<li class="address"><a href="<?php if(!empty($address_link1)) echo esc_url($address_link1); ?>" title="<?php echo strip_tags($address1); ?>" target="_blank"><?php echo strip_tags($address1); ?></a></li>
 			<?php endif;
 			if(!empty($phone_no1)): ?>
-			<li class="phone-number"><a href="tel:<?php echo preg_replace("/[^0-9+]/",'',$phone_no1); ?>" title="<?php echo $phone_no1; ?>"><?php echo esc_attr($phone_no1); ?></a></li>
+			<li class="phone-number"><a href="tel:<?php echo preg_replace("/[^0-9+]/",'',$phone_no1); ?>" title="<?php echo esc_attr($phone_no1); ?>"><?php echo esc_attr($phone_no1); ?></a></li>
 			<?php endif;
 			if(!empty($phone_no2)): ?>
-			<li class="phone-number"><a href="tel:<?php echo preg_replace("/[^0-9+]/",'',$phone_no2); ?>" title="<?php echo $phone_no2; ?>"><?php echo esc_attr($phone_no2); ?></a></li>
+			<li class="phone-number"><a href="tel:<?php echo preg_replace("/[^0-9+]/",'',$phone_no2); ?>" title="<?php echo esc_attr($phone_no2); ?>"><?php echo esc_attr($phone_no2); ?></a></li>
 			<?php endif;
 			if(!empty($email_1)): ?>
 			<li class="email"><a href="mailto:<?php echo is_email($email_1); ?>" title="<?php is_email($email_1); ?>"><?php echo is_email($email_1); ?></a></li>

@@ -184,7 +184,7 @@ class arise_widget_testimonial extends WP_Widget {
 						<div class="quotes">
 							<blockquote class="quote">
 							<?php if(!empty($image_array[$i])){ ?> 
-								<img src="<?php if(!empty($image_array[$i])){ echo esc_url($image_array[$i]); } ?>" title="<?php if(!empty($name_array[$i])){ echo $name_array[$i]; } ?>" alt="<?php if(!empty($name_array[$i])){ echo $name_array[$i]; } ?>" />
+								<img src="<?php if(!empty($image_array[$i])){ echo esc_url($image_array[$i]); } ?>" title="<?php if(!empty($name_array[$i])){ echo esc_attr($name_array[$i]); } ?>" alt="<?php if(!empty($name_array[$i])){ echo esc_attr($name_array[$i]); } ?>" />
 							<?php }?>
 							<?php if(!empty($primary_text_array[$i])){ echo '<p>' . stripslashes( wp_filter_post_kses( addslashes ($primary_text_array[$i]))) . '</p>';  }
 							if(!empty($secondary_text_array[$i])){ echo '<p>' . stripslashes( wp_filter_post_kses( addslashes ($secondary_text_array[$i]))) . '</p>'; }?>

@@ -45,6 +45,9 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 		https://pixabay.com/en/drink-coffee-work-create-build-864958/
 		Licensed: Public Domain Images
 
+	-TGM-Plugin-Activation
+		https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md under GNU GPL license
+
 
 
 All the theme files and other un-specified scripts are licensed under GNU General Public License Version 3 or later and can be used or modify for both commercial and personal use.

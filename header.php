@@ -10,15 +10,9 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <?php
-$arise_settings = arise_get_theme_options();
-$responsive_design = $arise_settings['arise_responsive']; ?>
+$arise_settings = arise_get_theme_options(); ?>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<?php if($responsive_design == 'on'){ ?>
-<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-<?php } else{ ?>
-<meta name="viewport" content="width=1170" />
-<?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
@@ -101,29 +95,24 @@ $responsive_design = $arise_settings['arise_responsive']; ?>
 	<div class="header-line"></div>
 	<?php
 		$enable_slider = $arise_settings['arise_enable_slider'];
+		arise_slider_value();
 		if ($enable_slider=='frontpage'|| $enable_slider=='enitresite'){
 			if(is_front_page() && ($enable_slider=='frontpage') ) {
-				if (function_exists('arise_slider_value')) {
-					arise_slider_value();
-				}
-				if($arise_settings['arise_slider_type'] == 'default_slider' && function_exists( 'arise_page_sliders' ) ) {
+				if($arise_settings['arise_slider_type'] == 'default_slider') {
 						arise_page_sliders();
 				}else{
 						arise_image_sliders();
 				}
 			}
 			if($enable_slider=='enitresite'){
-				if (function_exists('arise_slider_value')) {
-					arise_slider_value();
-				}
-				if($arise_settings['arise_slider_type'] == 'default_slider' && function_exists( 'arise_page_sliders' ) ) {
+				if($arise_settings['arise_slider_type'] == 'default_slider') {
 						arise_page_sliders();
 				}else{
 						arise_image_sliders();
 				}
 			}
 		}
-		if(!is_front_page()) {
+		if(!is_page_template('page-templates/arise-corporate.php')) {
 			if (('' != arise_header_title()) || function_exists('bcn_display_list')) {
 				if(is_home()){ 
 					echo '';
@@ -131,10 +120,7 @@ $responsive_design = $arise_settings['arise_responsive']; ?>
 					<div class="container">
 						<div class="page-header clearfix">
 							<h1 class="page-title"><?php echo arise_header_title();?></h1> <!-- .page-title -->
-							<?php
-								if (function_exists('arise_breadcrumb')) {
-									arise_breadcrumb();
-								} ?>
+							<?php arise_breadcrumb(); ?>
 						</div> <!-- .page-header -->
 					</div> <!-- .container -->
 				<?php }
@@ -143,7 +129,7 @@ $responsive_design = $arise_settings['arise_responsive']; ?>
 </header> <!-- end #masthead -->
 <!-- Main Page Start ============================================= -->
 <div id="content">
-<?php if (!is_front_page() || 'posts' == get_option( 'show_on_front' ) ){ 
+<?php if (!is_page_template('page-templates/arise-corporate.php') ){ 
   if(is_page_template('three-column-blog-template.php') || is_page_template('our-team-template.php') || is_page_template('about-us-template.php') || is_page_template('important-works-template.php') ){
 	echo '';
 	}else{?>

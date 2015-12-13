@@ -599,84 +599,84 @@ class arise_display_team extends WP_Widget {
 				<div class="four-column">
 					<div class="our_team">
 					<?php if(!empty($image_array[$i])):?>
-					 <a href="<?php echo $ourteam_link_array[$i]; ?>" target ="_blank"><img class="team_member" src="<?php echo $image_array[$i]; ?>" title="<?php if(!empty($name_array[$i])){ echo $name_array[$i]; } ?>" alt="<?php if(!empty($image_array[$i])){ echo $name_array[$i]; }?>" /> </a>
+					 <a href="<?php echo esc_url($ourteam_link_array[$i]); ?>" target ="_blank"><img class="team_member" src="<?php echo esc_url($image_array[$i]); ?>" title="<?php if(!empty($name_array[$i])){ echo esc_attr($name_array[$i]); } ?>" alt="<?php if(!empty($image_array[$i])){ echo esc_attr($name_array[$i]); }?>" /> </a>
 					 <?php endif; 
 					 if(!empty($name_array[$i])){ ?>
-					<a href="<?php echo $ourteam_link_array[$i]; ?>"  target ="_blank"><h5><?php echo $name_array[$i];?></h5></a>
+					<a href="<?php echo esc_url($ourteam_link_array[$i]); ?>"  target ="_blank"><h5><?php echo esc_attr($name_array[$i]);?></h5></a>
 					<?php }
 					if(!empty($text_array[$i])){  ?>
-				<p  class="member-post"><?php echo $text_array[$i]; ?></p>
+				<p  class="member-post"><?php echo esc_attr($text_array[$i]); ?></p>
 					<?php }
 					if(!empty($description_array[$i])){  ?>
-				<p  class="about-member"><?php echo $description_array[$i]; ?></p>
+				<p  class="about-member"><?php echo esc_attr($description_array[$i]); ?></p>
 					<?php } 
 					if( !empty( $team_facebook_link_array[$i] )  || !empty( $team_twitter_link_array[$i] )  || !empty( $team_googleplus_link_array[$i] )  ||!empty( $team_pinintrest_link_array[$i] )  ||!empty( $team_linkedin_link_array[$i] )  ||!empty( $team_youtube_link_array[$i] )  ||!empty( $team_tumblr_link_array[$i] )  ||!empty( $team_vimeo_link_array[$i] )  ||!empty( $team_flickr_link_array[$i] )  ||!empty( $team_feed_link_array[$i] )  ||!empty( $team_dribbble_link_array[$i] )  ||!empty( $team_wordpress_link_array[$i] )  ||!empty( $team_github_link_array[$i] )  ||!empty( $team_instagram_link_array[$i] )  ||!empty( $team_codepen_link_array[$i] )  ||!empty( $team_polldaddy_link_array[$i] )  ||!empty( $team_path_link_array[$i] )  ||!empty( $team_digg_link_array[$i] )  ||!empty( $team_reddit_link_array[$i] )  ||!empty( $team_stumbleupon_link_array[$i] )  ||!empty( $team_dropbox_link_array[$i] )  ||!empty( $team_pocket_link_array[$i] ) ) :?>
 	 					<div class="social-links clearfix">
 							<ul><?php if( !empty( $team_facebook_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_facebook_link_array[$i]; ?>" title="<?php _e('Facebook', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_facebook_link_array[$i]); ?>" title="<?php _e('Facebook', 'arise'); ?>"></a></li>
 							<?php endif; 
 							if( !empty( $team_twitter_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_twitter_link_array[$i]; ?>" title="<?php _e('Twitter', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_twitter_link_array[$i]); ?>" title="<?php _e('Twitter', 'arise'); ?>"></a></li>
 							<?php endif;
 							if( !empty( $team_googleplus_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_googleplus_link_array[$i]; ?>" title="<?php _e('Google Plus', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_googleplus_link_array[$i]); ?>" title="<?php _e('Google Plus', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_pinintrest_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_pinintrest_link_array[$i]; ?>" title="<?php _e('Pinterest', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_pinintrest_link_array[$i]); ?>" title="<?php _e('Pinterest', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_linkedin_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_linkedin_link_array[$i]; ?>" title="<?php _e('Linkedin', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_linkedin_link_array[$i]); ?>" title="<?php _e('Linkedin', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_youtube_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_youtube_link_array[$i]; ?>" title="<?php _e('Youtube', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_youtube_link_array[$i]); ?>" title="<?php _e('Youtube', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_tumblr_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_tumblr_link_array[$i]; ?>" title="<?php _e('Tublr', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_tumblr_link_array[$i]); ?>" title="<?php _e('Tublr', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_vimeo_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_vimeo_link_array[$i]; ?>" title="<?php _e('Vimeo', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_vimeo_link_array[$i]); ?>" title="<?php _e('Vimeo', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_flickr_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_flickr_link_array[$i]; ?>" title="<?php _e('Flickr', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_flickr_link_array[$i]); ?>" title="<?php _e('Flickr', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_feed_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_feed_link_array[$i]; ?>" title="<?php _e('Feed', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_feed_link_array[$i]); ?>" title="<?php _e('Feed', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_dribbble_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_dribbble_link_array[$i]; ?>" title="<?php _e('Dribble', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_dribbble_link_array[$i]); ?>" title="<?php _e('Dribble', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_wordpress_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_wordpress_link_array[$i]; ?>" title="<?php _e('WordPress', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_wordpress_link_array[$i]); ?>" title="<?php _e('WordPress', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_github_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_github_link_array[$i]; ?>" title="<?php _e('GitHub', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_github_link_array[$i]); ?>" title="<?php _e('GitHub', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_instagram_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_instagram_link_array[$i]; ?>" title="<?php _e('instagram', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_instagram_link_array[$i]); ?>" title="<?php _e('instagram', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_codepen_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_codepen_link_array[$i]; ?>" title="<?php _e('Codepen', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_codepen_link_array[$i]); ?>" title="<?php _e('Codepen', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_polldaddy_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_polldaddy_link_array[$i]; ?>" title="<?php _e('Polldaddy', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_polldaddy_link_array[$i]); ?>" title="<?php _e('Polldaddy', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_path_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_path_link_array[$i]; ?>" title="<?php _e('Path', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_path_link_array[$i]); ?>" title="<?php _e('Path', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_digg_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_digg_link_array[$i]; ?>" title="<?php _e('Digg', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_digg_link_array[$i]); ?>" title="<?php _e('Digg', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_reddit_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_reddit_link_array[$i]; ?>" title="<?php _e('Reddit', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_reddit_link_array[$i]); ?>" title="<?php _e('Reddit', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_stumbleupon_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_stumbleupon_link_array[$i]; ?>" title="<?php _e('Stumbleupon', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_stumbleupon_link_array[$i]); ?>" title="<?php _e('Stumbleupon', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_dropbox_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_dropbox_link_array[$i]; ?>" title="<?php _e('Dropbox', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_dropbox_link_array[$i]); ?>" title="<?php _e('Dropbox', 'arise'); ?>"></a></li>
 								<?php endif;
 								if( !empty( $team_pocket_link_array[$i] )): ?>
-								<li><a href="<?php echo $team_pocket_link_array[$i]; ?>" title="<?php _e('pocket', 'arise'); ?>"></a></li>
+								<li><a href="<?php echo esc_url($team_pocket_link_array[$i]); ?>" title="<?php _e('pocket', 'arise'); ?>"></a></li>
 								<?php endif; ?>
 							</ul>
 						</div> <!-- end .social-links -->

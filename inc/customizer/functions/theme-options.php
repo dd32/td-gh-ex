@@ -17,7 +17,7 @@
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
 	));
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'arise-img-upload-header-logo', array(
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'arise_theme_options[arise-img-upload-header-logo]', array(
 		'label' => __('Site Logo','arise'),
 		'priority'	=> 101,
 		'section' => 'title_tagline',
@@ -30,7 +30,7 @@
 		'sanitize_callback' => 'arise_sanitize_dropdown',
 		'type' => 'option',
 	));
-	$wp_customize->add_control('arise_header_display', array(
+	$wp_customize->add_control('arise_theme_options[arise_header_display]', array(
 		'label' => __('Site Logo/ Text Options', 'arise'),
 		'priority' => 102,
 		'section' => 'title_tagline',
@@ -55,7 +55,7 @@
 		'sanitize_callback' => 'arise_sanitize_dropdown',
 		'type' => 'option',
 	));
-	$wp_customize->add_control('arise_display_header_image', array(
+	$wp_customize->add_control('arise_theme_options[arise_display_header_image]', array(
 		'label' => __('Display Header Image', 'arise'),
 		'priority' => 5,
 		'section' => 'header_image',
@@ -73,7 +73,7 @@
 		'type' => 'option',
 		'capability' => 'manage_options'
 	));
-	$wp_customize->add_control('arise_custom_header_options', array(
+	$wp_customize->add_control('arise_theme_options[arise_custom_header_options]', array(
 		'label' => __('Enable Custom Header Image', 'arise'),
 		'section' => 'header_image',
 		'type' => 'select',
@@ -82,7 +82,7 @@
 		'choices' => array(
 		'homepage' => __('Front Page','arise'),
 		'enitre_site' => __('Entire Site','arise'),
-		'disable' => __('Disable','arise'),
+		'header_disable' => __('Disable','arise'),
 	),
 	));
 	$wp_customize->add_setting('arise_theme_options[arise_header_primary_text]', array(
@@ -91,13 +91,20 @@
 		'type' => 'option',
 		'capability' => 'manage_options'
 	));
+	$wp_customize->add_control('arise_theme_options[arise_header_primary_text]', array(
+		'priority' =>25,
+		'description' => __('Primary Button Text', 'arise'),
+		'section' => 'header_image',
+		'settings' => 'arise_theme_options[arise_header_primary_text]',
+		'type' => 'text',
+	));
 	$wp_customize->add_setting('arise_theme_options[arise_disable_header_image_only]', array(
 		'default' => 0,
 		'sanitize_callback' => 'arise_checkbox_integer',
 		'type' => 'option',
 		'capability' => 'manage_options'
 	));
-	$wp_customize->add_control('arise_disable_header_image_only', array(
+	$wp_customize->add_control('arise_theme_options[arise_disable_header_image_only]', array(
 		'priority' => 14,
 		'label' => __('Disable Header Image Only', 'arise'),
 		'description' => __('Using below settings will not increase the size of header image','arise'),
@@ -111,27 +118,21 @@
 		'type' => 'option',
 		'capability' => 'manage_options'
 	));
-	$wp_customize->add_control('arise_Header_description', array(
+	$wp_customize->add_control('arise_theme_options[arise_Header_description]', array(
 		'priority'  =>20,
 		'description' => __('Header Description', 'arise'),
 		'section' => 'header_image',
 		'settings' => 'arise_theme_options[arise_Header_description]',
 		'type' => 'textarea',
 	));
-	$wp_customize->add_control('arise_header_primary_text', array(
-		'priority' =>25,
-		'description' => __('Primary Button Text', 'arise'),
-		'section' => 'header_image',
-		'settings' => 'arise_theme_options[arise_header_primary_text]',
-		'type' => 'text',
-	));
+	
 	$wp_customize->add_setting('arise_theme_options[arise_header_primary_url]', array(
 		'default' =>'',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
 		'capability' => 'manage_options'
 	));
-	$wp_customize->add_control('arise_header_primary_url', array(
+	$wp_customize->add_control('arise_theme_options[arise_header_primary_url]', array(
 		'priority' =>26,
 		'description' => __('Primary Button Link', 'arise'),
 		'section' => 'header_image',
@@ -144,7 +145,7 @@
 		'type' => 'option',
 		'capability' => 'manage_options'
 	));
-	$wp_customize->add_control('arise_header_secondary_text', array(
+	$wp_customize->add_control('arise_theme_options[arise_header_secondary_text]', array(
 		'priority' =>27,
 		'description' => __('Secondary Button Text', 'arise'),
 		'section' => 'header_image',
@@ -157,7 +158,7 @@
 		'type' => 'option',
 		'capability' => 'manage_options'
 	));
-	$wp_customize->add_control('arise_Header_secondary_url', array(
+	$wp_customize->add_control('arise_theme_options[arise_Header_secondary_url]', array(
 		'priority' =>28,
 		'description' => __('Secondary Button Link', 'arise'),
 		'section' => 'header_image',
@@ -174,7 +175,7 @@
 		'sanitize_callback' => 'arise_checkbox_integer',
 		'type' => 'option',
 	));
-	$wp_customize->add_control( 'arise_slider_header_line', array(
+	$wp_customize->add_control( 'arise_theme_options[arise_slider_header_line]', array(
 		'priority'=>20,
 		'label' => __('Disable headerline from Slider', 'arise'),
 		'section' => 'arise_custom_header',
@@ -186,7 +187,7 @@
 		'sanitize_callback'=>'arise_checkbox_integer',
 		'type' => 'option',
 	));
-	$wp_customize->add_control( 'arise_top_bar', array(
+	$wp_customize->add_control( 'arise_theme_options[arise_top_bar]', array(
 		'priority'=>10,
 		'label' => __('Disable Top Bar', 'arise'),
 		'section' => 'arise_custom_header',
@@ -198,7 +199,7 @@
 		'sanitize_callback' => 'arise_checkbox_integer',
 		'type' => 'option',
 	));
-	$wp_customize->add_control( 'arise_custom_header', array(
+	$wp_customize->add_control( 'arise_theme_options[arise_search_custom_header]', array(
 		'priority'=>20,
 		'label' => __('Disable Search Form', 'arise'),
 		'section' => 'arise_custom_header',
@@ -210,7 +211,7 @@
 		'sanitize_callback' => 'arise_checkbox_integer',
 		'type' => 'option',
 	));
-	$wp_customize->add_control( 'arise_stick_menu', array(
+	$wp_customize->add_control( 'arise_theme_options[arise_stick_menu]', array(
 		'priority'=>30,
 		'label' => __('Disable Stick Menu', 'arise'),
 		'section' => 'arise_custom_header',
@@ -222,7 +223,7 @@
 		'sanitize_callback' => 'arise_sanitize_dropdown',
 		'type' => 'option',
 	));
-	$wp_customize->add_control( 'arise_scroll', array(
+	$wp_customize->add_control( 'arise_theme_options[arise_scroll]', array(
 		'priority'=>40,
 		'label' => __('Disable Goto Top', 'arise'),
 		'section' => 'arise_custom_header',
@@ -235,7 +236,7 @@
 		'sanitize_callback' => 'arise_reset_alls',
 		'transport' => 'postMessage',
 	));
-	$wp_customize->add_control( 'arise_reset_all', array(
+	$wp_customize->add_control( 'arise_theme_options[arise_reset_all]', array(
 		'priority'=>50,
 		'label' => __('Reset all default settings. (Refresh it to view the effect)', 'arise'),
 		'section' => 'arise_custom_header',
@@ -253,7 +254,7 @@
 		'type' => 'option',
 		)
 	);
-	$wp_customize->add_control( 'arise_custom_css', array(
+	$wp_customize->add_control( 'arise_theme_options[arise_custom_css]', array(
 		'label' => __('Custom CSS','arise'),
 		'section' => 'arise_custom_css',
 		'settings' => 'arise_theme_options[arise_custom_css]',

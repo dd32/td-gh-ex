@@ -10,9 +10,9 @@
 <form id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
 	<?php
 		$arise_settings = arise_get_theme_options();
-		$search_form = $arise_settings['arise_search_text'];
-		if($search_form !='Search ...'): ?>
-	<input type="search" name="s" class="s" id="s" placeholder="<?php echo esc_attr($search_form); ?>" autocomplete="off">
+		$arise_search_form = $arise_settings['arise_search_text'];
+		if($arise_search_form !='Search ...'): ?>
+	<input type="search" name="s" class="s" id="s" placeholder="<?php echo esc_attr($arise_search_form); ?>" autocomplete="off">
 	<button type="submit" class="search-submit"><i class="search-icon"></i></button>
 	<?php else: ?>
 	<input type="search" name="s" class="s" id="s" placeholder="<?php esc_attr_e( 'Search ...', 'arise' ); ?>" autocomplete="off">

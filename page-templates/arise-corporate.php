@@ -1,17 +1,15 @@
 <?php
 /**
- * Template to show the front page.
+ * Template Name: Corporate Template
  *
+ * Displays Corporate template.
  *
  * @package Theme Freesia
  * @subpackage Arise
- * @since Arise 1.0
+ * @since Arise 1.0.5
  */
 get_header();
 $arise_settings = arise_get_theme_options();
-if ( 'posts' == get_option( 'show_on_front' ) ) {
-	do_action('arise_show_front_page');
-} else {
 	echo '<div id="main">';
 	if($arise_settings['arise_disable_features'] != 1){
 		echo '<!-- Service Widget ============================================= -->';
@@ -84,5 +82,4 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	} ?>
 </div>
 <!-- end #main -->
-<?php } ?>
 <?php get_footer(); ?>

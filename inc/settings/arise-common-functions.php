@@ -8,7 +8,6 @@
  */
 
 /****************** arise DISPLAY COMMENT NAVIGATION *******************************/
-if ( ! function_exists( 'arise_comment_nav' ) ) :
 function arise_comment_nav() {
 	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 	?>
@@ -28,7 +27,6 @@ function arise_comment_nav() {
 	<?php
 	endif;
 }
-endif;
 /******************** Remove div and replace with ul**************************************/
 add_filter('wp_page_menu', 'arise_wp_page_menu');
 function arise_wp_page_menu($page_markup) {
@@ -129,7 +127,6 @@ function arise_save_custom_meta( $post_id ) {
 	} // end foreach   
 }
 /***************Pass slider effect  parameters from php files to jquery file ********************/
-if (!function_exists('arise_slider_value')):
 function arise_slider_value() {
 	$arise_settings = arise_get_theme_options();
 	$arise_transition_effect   = $arise_settings['arise_transition_effect'];
@@ -145,9 +142,7 @@ function arise_slider_value() {
 		)
 	);
 }
-endif;
 /********************* Used wp_page_menu filter hook *********************************************/
-if (!function_exists('arise_wp_page_menu_filter')) {
 	function arise_wp_page_menu_filter($text) {
 		$replace = array(
 			'current_page_item' => 'current-menu-item',
@@ -155,7 +150,6 @@ if (!function_exists('arise_wp_page_menu_filter')) {
 		$text = str_replace(array_keys($replace), $replace, $text);
 		return $text;
 	}
-}
 add_filter('wp_page_menu', 'arise_wp_page_menu_filter');
 
 /***************************** Translators *********************************************************/
@@ -189,7 +183,6 @@ function arise_jquery_javascript_file($hook) {
 add_action( 'admin_enqueue_scripts', 'arise_jquery_javascript_file' );
 
 /**************************** Display Header Title ***********************************/
-if (!function_exists('arise_header_title')):
 function arise_header_title() {
 	$format = get_post_format();
 	if( is_archive() ) {
@@ -225,9 +218,9 @@ function arise_header_title() {
 			$arise_header_title = __( 'links', 'arise' );
 		elseif ( $format =='chat' ) :
 			$arise_header_title = __( 'Chats', 'arise' );
-		elseif ( is_plugin_active('woocommerce/woocommerce.php') && is_shop()) :
+		elseif ( class_exists('WooCommerce') && is_shop()) :
   			$arise_header_title = woocommerce_page_title( false );
-  		elseif ( is_plugin_active('bbpress/bbpress.php') && is_bbpress()) :
+  		elseif ( class_exists('bbPress') && is_bbpress()) :
   			$arise_header_title = get_the_title();
 		else :
 			$arise_header_title = __( 'Archives', 'arise' );
@@ -245,7 +238,6 @@ function arise_header_title() {
 	}
 	return $arise_header_title;
 }
-endif;
 
 /********************* Header Image ************************************/
 function arise_header_image_display(){

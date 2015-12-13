@@ -1,4 +1,21 @@
 == CHANGE LOG ==
+= 1.0.5 =
+	- Fixed - 
+		- Theme URI and Author URI  style.css
+		- Text Domain: arise moved above the license info along with other parameters
+		-  License attribution for TGM class added in readme.txt and license file of TGM inside tgm folder
+		-  All strings translated. Tested by Pig Latin plugin
+		-  Data Sanitization
+		- arise_sanitize_dropdown changed to arise_sanitize_select and saanitizing the input
+		- function_exists removed if defined inside theme functions
+		- Removed include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); and used class_exists loading extra files
+		- add_theme_support( 'woocommerce' );  kept in the function hooked to after_setup_theme
+		- Removed code from header as we have injected meta from hook in other file
+		-  JS error in single page fixed
+		- Removed front-page.phpfor correct handling of front page content. Created Corporate template instead
+		-  possibly prefixing with theme slug
+
+
 = 1.0.4 =
 	- Text name Changed
 	- pot file updated

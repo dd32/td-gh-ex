@@ -37,7 +37,7 @@ class arise_parallax_widget extends WP_Widget {
 				<label for="<?php echo $this->get_field_id('arise_widget_redirecturl');?>">
 					<?php _e('Redirect Url:', 'arise');?>
 				</label>
-				<input class="widefat" id="<?php echo $this->get_field_id('arise_widget_redirecturl');?>" name="<?php echo $this->get_field_name('arise_widget_redirecturl');?>" type="text" value="<?php echo $arise_widget_redirecturl;?>" />
+				<input class="widefat" id="<?php echo $this->get_field_id('arise_widget_redirecturl');?>" name="<?php echo $this->get_field_name('arise_widget_redirecturl');?>" type="text" value="<?php echo esc_url($arise_widget_redirecturl);?>" />
 			</p>
 		<?php
 	}
@@ -71,7 +71,7 @@ class arise_parallax_widget extends WP_Widget {
 					$parallax_content = get_the_content();
 					$attachment_id = get_post_thumbnail_id();
 			$image_attributes = wp_get_attachment_image_src($attachment_id,'slider'); ?>
-			<div class="parallax_content" <?php if (has_post_thumbnail()) { ?> style="background-image:url('<?php echo $image_attributes[0]; ?>');" <?php } ?> >
+			<div class="parallax_content" <?php if (has_post_thumbnail()) { ?> style="background-image:url('<?php echo esc_url($image_attributes[0]); ?>');" <?php } ?> >
 				<div class="container clearfix">
 					<?php if(!empty($arise_parallax_title)): ?>
 					<h3><?php echo esc_attr($arise_parallax_title); ?></h3>

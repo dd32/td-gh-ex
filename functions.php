@@ -55,7 +55,7 @@ function arise_setup() {
 		'topmenu' => __( 'Top Menu', 'arise' ),
 		'social-link'  => __( 'Add Social Icons Only', 'arise' ),
 	) );
-	add_image_size('slider_image', 1920, 1080, true);
+	add_image_size('arise_slider_image', 1920, 1080, true);
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -77,6 +77,12 @@ function arise_setup() {
 	) ) );
 
 	add_editor_style( array( 'css/editor-style.css', 'font/genericons.css', '//fonts.googleapis.com/css?family=Roboto:400,300,500,700' ) );
+
+	/**
+	* Making the theme Woocommrece compatible
+	*/
+
+	add_theme_support( 'woocommerce' );
 }
 endif; // arise_setup
 add_action( 'after_setup_theme', 'arise_setup' );
@@ -101,7 +107,6 @@ require( get_template_directory() . '/inc/settings/arise-functions.php' );
 require( get_template_directory() . '/inc/settings/arise-common-functions.php' );
 require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/footer-details.php';
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 require get_template_directory() . '/tgm/class-tgm-plugin-activation.php';
 require get_template_directory() . '/tgm/tgm.php';
@@ -119,7 +124,7 @@ require get_template_directory() . '/inc/widgets/widgets-functions/video-widgets
 require get_template_directory() . '/inc/customizer/functions/sanitize-functions.php';
 require get_template_directory() . '/inc/customizer/functions/register-panel.php';
 function arise_customize_register( $wp_customize ) {
-if ( !is_plugin_active( 'arise-plus/arise-plus.php' ) ) {
+if(!class_exists('Arise_Plus_Features')){
 	class Arise_Customize_Arise_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
 			<a title="<?php esc_attr_e( 'Review Arise', 'arise' ); ?>" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/arise/' ); ?>" target="_blank" id="about_arise">
@@ -167,18 +172,12 @@ add_action( 'customize_register', 'arise_customize_register' );
 add_action( 'customize_preview_init', 'arise_customize_preview_js' );
 /**************************************************************************************/
 
-/**
- * Making the theme Woocommrece compatible
- */
-
-add_theme_support( 'woocommerce' );
-
 // Add Post Class Clearfix
-function post_class_clearfix( $classes ) {
+function arise_post_class_clearfix( $classes ) {
 	$classes[] = 'clearfix';
 	return $classes;
 }
-add_filter( 'post_class', 'post_class_clearfix' );
+add_filter( 'post_class', 'arise_post_class_clearfix' );
 
 /******************* Front Page *************************/
 function arise_display_front_page(){
@@ -207,9 +206,9 @@ function arise_header_display(){
 		</div> <!-- end #site-branding -->
 		<?php
 	} elseif ($header_display == 'header_logo') { ?>
-		<div id="site-branding"> <a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_attr(get_bloginfo('name', 'display'));?>" rel="home"> <img src="<?php echo $header_logo;?>" id="site-logo" alt="<?php echo esc_attr(get_bloginfo('name', 'display'));?>"></a> </div> <!-- end #site-branding -->
+		<div id="site-branding"> <a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_attr(get_bloginfo('name', 'display'));?>" rel="home"> <img src="<?php echo esc_url($header_logo);?>" id="site-logo" alt="<?php echo esc_attr(get_bloginfo('name', 'display'));?>"></a> </div> <!-- end #site-branding -->
 		<?php } elseif ($header_display == 'show_both'){ ?>
-		<div id="site-branding"> <a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_attr(get_bloginfo('name', 'display'));?>" rel="home"> <img src="<?php echo $header_logo;?>" id="site-logo" alt="<?php echo esc_attr(get_bloginfo('name', 'display'));?>"></a>
+		<div id="site-branding"> <a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_attr(get_bloginfo('name', 'display'));?>" rel="home"> <img src="<?php echo esc_url($header_logo);?>" id="site-logo" alt="<?php echo esc_attr(get_bloginfo('name', 'display'));?>"></a>
 		<?php if(is_home() || is_front_page()){ ?>
 		<h1 id="site-title"> <?php }else{?> <h2 id="site-title"> <?php } ?>
 			<a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_attr(get_bloginfo('name', 'display'));?>" rel="home"> <?php bloginfo('name');?> </a>
