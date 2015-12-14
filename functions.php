@@ -10,8 +10,9 @@ get_template_part( 'includes/customizer' );
  */
  add_action( 'after_setup_theme', 'agama_blue_after_setup_theme' );
  function agama_blue_after_setup_theme() {
-	
-	// TODO - Here goes your custom functionality...
+
+	remove_action( 'agama_frontpage_boxes_action', 'agama_frontpage_boxes', 10 );
+	add_action( 'agama_frontpage_boxes_action', 'agama_blue_frontpage_features', 10 );
 	
  }
  
@@ -27,7 +28,7 @@ get_template_part( 'includes/customizer' );
 	// Agama Stylesheet
 	wp_enqueue_style( 'agama-style', get_template_directory_uri(). '/style.css' );
 	// Agama Blue Stylesheet
-	wp_enqueue_style( 'agama-blue-style', get_stylesheet_directory_uri() . '/style.css', array( 'agama-style' ) );
+	wp_enqueue_style( 'agama-blue-style', get_stylesheet_directory_uri() . '/style.css', array( 'agama-style' ), '1.0.1' );
  }
  
 /**
@@ -37,6 +38,8 @@ get_template_part( 'includes/customizer' );
  */
  add_action( 'after_switch_theme', 'agama_blue_after_switch_theme' );
  function agama_blue_after_switch_theme() {
+	// Set layout full-width
+	set_theme_mod( 'agama_layout_style', 'fullwidth' );
 	// Set primary color
 	set_theme_mod( 'agama_primary_color', '#00a4d0' );
 	// Set frontpage boxes icons colors
@@ -45,3 +48,24 @@ get_template_part( 'includes/customizer' );
 	set_theme_mod( 'agama_frontpage_box_3_icon_color', '#00a4d0' );
 	set_theme_mod( 'agama_frontpage_box_4_icon_color', '#00a4d0' );
  }
+ 
+/**
+ * Agama Blue Frontpage Features
+ *
+ * @since 1.0.1
+ */
+ function agama_blue_frontpage_features() { ?>
+	
+	<?php if( get_theme_mod('agama_frontpage_boxes_everywhere', false) || is_home() || is_front_page() ): ?>
+		<!-- Frontpage Boxes Section -->
+		<?php get_template_part( 'includes/frontpage-boxes'); ?>
+		<!-- / /Frontpage Boxes Section -->
+	<?php endif; ?>
+	
+	<?php if( get_theme_mod('agama_blue_blog', true) && is_home() ): ?>
+		<!-- Frontpage Blog Section -->
+		<?php get_template_part( 'includes/frontpage-blog' ); ?>
+		<!-- / Frontpage Blog Section -->
+	<?php endif; ?>
+	
+ <?php } ?>
