@@ -57,6 +57,8 @@ do_action( 'accesspress_mag_before_body_content' );
                 if( $show_post_navigation == '1' ) { 
                     accesspress_mag_post_navigation();
                 }
+
+                
                 
                 // If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || get_comments_number() ) :

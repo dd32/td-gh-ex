@@ -70,6 +70,11 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.2.3
+ * Fixed Theme Option layout accordint to updated WordPress version 4.4
+ * Fixed bugs in widget filed file
+ * Fixed layout comment box layout
+ 
 Version 2.2.2
  * RTL ready bugs are fixed
  

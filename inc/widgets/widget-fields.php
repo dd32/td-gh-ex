@@ -4,7 +4,7 @@
  */
 function accesspress_mag_widgets_show_widget_field($instance = '', $widget_field = '', $athm_field_value = '') {
     // Store Posts in array
-    $accesspress_mag_postlist[0] = array(
+    /*$accesspress_mag_postlist[0] = array(
         'value' => 0,
         'label' => '--choose--'
     );
@@ -15,7 +15,7 @@ function accesspress_mag_widgets_show_widget_field($instance = '', $widget_field
             'value' => $accesspress_mag_post->ID,
             'label' => $accesspress_mag_post->post_title
         );
-    endforeach;
+    endforeach;*/
 
     extract($widget_field);
 
@@ -158,7 +158,7 @@ function accesspress_mag_widgets_show_widget_field($instance = '', $widget_field
             break;
 
         // Select field
-        case 'selectpost' :
+        /*case 'selectpost' :
             ?>
             <p>
                 <label for="<?php echo $instance->get_field_id($accesspress_mag_widgets_name); ?>"><?php echo $accesspress_mag_widgets_title; ?>:</label>
@@ -174,7 +174,7 @@ function accesspress_mag_widgets_show_widget_field($instance = '', $widget_field
                 <?php } ?>
             </p>
             <?php
-            break;
+            break;*/
 
         case 'upload' :
 

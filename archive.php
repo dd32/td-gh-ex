@@ -43,7 +43,7 @@ get_header(); ?>
 
 			<?php endwhile; wp_reset_query(); ?>
 
-			<?php accesspress_mag_posts_navigation(); ?>
+			<?php accesspress_mag_posts_navigation(); wp_pagenavi(); ?>
 
 		<?php else : ?>
 

@@ -380,6 +380,7 @@
 	padding: 17px 23px;
 	text-decoration: none;
 	text-transform: uppercase;
+	float: none;
 }
 .apmag-themeoption .nav-tab-wrapper a:first-child{
 	

@@ -86,13 +86,13 @@ if ( post_password_required() ) {
 
 		'url'    => '<div class="control-group"><div class="controls">' .
 		'<input id="url" name="url" placeholder="'.__( 'Website', 'accesspress-mag' ).'" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> ' .
-		'</div></div></div>'
+		'</div></div></div><div class="clearfix"> </div>'
 		)
 		),
 
 		'comment_field' => '<div class="cmm-box-right"><div class="control-group"><div class="controls">' .
 		'<textarea id="comment" name="comment" placeholder="'.__( 'Comment *', 'accesspress-mag' ).'" cols="45" rows="8" aria-required="true"></textarea>' .
-		'</div></div></div> <div class="clearfix"> </div>',
+		'</div></div></div>',
 		'comment_notes_after' => '',
 		'comment_notes_before' => '',
 		);
