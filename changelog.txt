@@ -1,4 +1,12 @@
 == CHANGE LOG ==
+= 1.0.8 =
+	- Fixed -
+		- Removed  jquery.min.js file and also  jQuery loaded function
+		- Missing prefix fixed for main.js as arise-main.js 
+		- Code kept two time removed
+		- Missing - Removed include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); and used class_exists loading extra files
+		- JS conflict issue fixed
+
 = 1.0.7 =
 	- Fixed -
 		- arise_sanitize_dropdown not defined fixed

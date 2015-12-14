@@ -1,6 +1,6 @@
 //script to fade in and out the testimonials
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
     (function() {
         var infiniteLoop;
                 var InfiniteRotator = {
@@ -12,7 +12,7 @@ $(document).ready(function() {
                 //cross-fade time (in milliseconds)
                 var fadeTime = 2500;
                 //count number of items
-                var numberOfItems = $('.quotes').length;
+                var numberOfItems = jQuery('.quotes').length;
                 //set current item
                 var currentItem = slide;
 
@@ -22,20 +22,20 @@ $(document).ready(function() {
                 }
 
                 //hide all items and then show first item
-                $('.quotes').animate({
+                jQuery('.quotes').animate({
                     opacity: 0
                 }, 0).removeClass('showing');
-                $('.quotes').eq(currentItem).animate({
+                jQuery('.quotes').eq(currentItem).animate({
                     opacity: 1.0
                 }, 1000).addClass('showing');
-                $('.next-prev li').eq(currentItem).addClass('active');
+                jQuery('.next-prev li').eq(currentItem).addClass('active');
                 //loop through the items
                 infiniteLoop = setInterval(function() {
-                    if ($('.testimonials').hasClass('stop')) {
+                    if (jQuery('.testimonials').hasClass('stop')) {
                         return
                     } //pause
 
-                    $('.quotes').eq(currentItem).animate({
+                    jQuery('.quotes').eq(currentItem).animate({
                         opacity: 0.0
                     }, fadeTime).removeClass('showing');
                     if (currentItem == numberOfItems - 1) {
@@ -43,12 +43,12 @@ $(document).ready(function() {
                     } else {
                         currentItem++;
                     }
-                    $('.quotes').eq(currentItem).animate({
+                    jQuery('.quotes').eq(currentItem).animate({
                         opacity: 1.0
                     }, fadeTime).addClass('showing');
 
-                    $('.next-prev li').removeClass('active');
-                    $('.next-prev li').eq(currentItem).addClass('active');
+                    jQuery('.next-prev li').removeClass('active');
+                    jQuery('.next-prev li').eq(currentItem).addClass('active');
 
                 }, itemInterval);
 
@@ -56,17 +56,17 @@ $(document).ready(function() {
         };
         InfiniteRotator.init(-1);
         // when pagination clicked  
-        $(".testimonials").on("click", ".next-prev li", function() {
+        jQuery(".testimonials").on("click", ".next-prev li", function() {
             clearInterval(infiniteLoop);
-            $('.next-prev li').removeClass('active');
-            InfiniteRotator.init($(this).index());
+            jQuery('.next-prev li').removeClass('active');
+            InfiniteRotator.init(jQuery(this).index());
         });
         
-                 $(".quotes").on("mouseenter touchstart", function() {
-                        $('.testimonials').addClass('stop')
+                 jQuery(".quotes").on("mouseenter touchstart", function() {
+                        jQuery('.testimonials').addClass('stop')
             });
-                    $(".quotes").on("mouseleave touchend", function() {
-                        $('.testimonials').removeClass('stop')
+                    jQuery(".quotes").on("mouseleave touchend", function() {
+                        jQuery('.testimonials').removeClass('stop')
             });
                 
         function createPagination(numberOfItems) {
@@ -76,7 +76,7 @@ $(document).ready(function() {
                 lists = lists + ("<li title='next'>" + (i + 1) + "</li>")
             }
             pagination = "<ul class='next-prev'>" + lists + "</ul>";
-            $(".quote-wrapper").after(pagination);
+            jQuery(".quote-wrapper").after(pagination);
         }
     }());
 });

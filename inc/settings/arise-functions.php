@@ -109,7 +109,7 @@ add_filter('body_class', 'arise_body_class');
 
 /********************** SCRIPTS FOR DONATE/ UPGRADE BUTTON ******************************/
 function arise_customize_scripts() {
-	if ( !is_plugin_active( 'arise-plus/arise-plus.php' ) ) {
+	if(!class_exists('Arise_Plus_Features')){
 	wp_enqueue_script( 'arise_customizer_custom', get_template_directory_uri() . '/inc/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
 	$arise_upgrade_links = array(
@@ -233,15 +233,14 @@ function arise_page_sliders() {
 function arise_scripts() {
 	$arise_settings = arise_get_theme_options();
 	wp_enqueue_style( 'arise-style', get_stylesheet_uri() );
-	wp_enqueue_script('jquery_cycle', get_template_directory_uri().'/js/jquery.min.js', array('jquery'), '1.7.1', true);
 	wp_enqueue_script('jquery_cycle_all', get_template_directory_uri().'/js/jquery.cycle.all.js', array('jquery'), '2.9999.5', true);
 	
 	wp_register_style( 'arise_google_fonts', '//fonts.googleapis.com/css?family=Roboto:400,300,500,700' ); 
 
 	$enable_slider = $arise_settings['arise_enable_slider'];
 	$arise_stick_menu = $arise_settings['arise_stick_menu'];
-		wp_enqueue_script('arise_slider', get_template_directory_uri().'/js/arise-slider-setting.js', array('jquery_cycle'), false, true);
-	wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', array('jquery'));
+		wp_enqueue_script('arise_slider', get_template_directory_uri().'/js/arise-slider-setting.js', array('jquery_cycle_all'), false, true);
+	wp_enqueue_script('arise-main', get_template_directory_uri().'/js/arise-main.js', array('jquery'));
 	if($arise_stick_menu != 1):
 	wp_enqueue_script('sticky-scroll', get_template_directory_uri().'/js/arise-sticky-scroll.js', array('jquery'));
 	endif;
@@ -253,9 +252,6 @@ function arise_scripts() {
 	}
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-	}
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
 	}
 }
 add_action( 'wp_enqueue_scripts', 'arise_scripts' );

@@ -1,8 +1,8 @@
-$(window).load(function() {
+jQuery(window).load(function() {
 	var transition_effect = arise_slider_value.transition_effect;
 	var transition_delay = arise_slider_value.transition_delay;
 	var transition_duration = arise_slider_value.transition_duration;
-	$('.layer-slider').cycle({ 
+	jQuery('.layer-slider').cycle({ 
 		timeout: transition_delay,
 		fx: transition_effect,
 		activePagerClass: 'active',
@@ -16,7 +16,7 @@ $(window).load(function() {
 		prev: '#prev2' ,
 		speed: transition_duration,
 		after: function ()	{
-					$(this).parent().css("height", $(this).height());
+					jQuery(this).parent().css("height", jQuery(this).height());
 				},
 	   cleartypeNoBg: true,
 	});

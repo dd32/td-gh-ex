@@ -92,3 +92,4 @@ function arise_register_required_plugins() {
 	);
 	arise( $plugins, $config );
 }
+?>
