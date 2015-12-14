@@ -57,6 +57,36 @@ var wvrxCustFontMsg = 0;
 		return to;
 	}
 
+	// link colors must be refresh because of the order required in the DOM
+	//api('weaverx_settings[link_color]', function( value ) {
+	//	value.bind( function( to ) { $('a, .wrapper a').css( 'color', weaverxFixTo( to) ); } );} );
+	//api('weaverx_settings[link_hover_color]', function( value ) {
+	//	value.bind( function( to ) { $('a:hover, .wrapper a:hover').css( 'color', weaverxFixTo( to) ); } );} );
+
+	//api('weaverx_settings[ibarlink_color]', function( value ) {
+	//	value.bind( function( to ) { $('#infobar a').css( 'color', weaverxFixTo( to ) ); } );} );
+	//api('weaverx_settings[ibarlink_hover_color]', function( value ) {
+	//	value.bind( function( to ) { $('#infobar a:hover').css( 'color', weaverxFixTo( to ) ); } );} );
+
+	//api('weaverx_settings[ilink_color]', function( value ) {
+	//	value.bind( function( to ) { $('.wrapper .entry-meta a, .wrapper .entry-utility a').css( 'color', weaverxFixTo( to ) ); } );} );
+	//api('weaverx_settings[ilink_hover_color]', function( value ) {
+	//	value.bind( function( to ) { $('.wrapper .entry-meta a:hover,.wrapper .entry-utility a:hover',
+	//	'post_icons_color=.entry-meta-gicons .entry-date:before,.entry-meta-gicons .by-author:before,.entry-meta-gicons .cat-links:before,.entry-meta-gicons .tag-links:before,.entry-meta-gicons .comments-link:before,.entry-meta-gicons .permalink-icon:before').css( 'color', weaverxFixTo( to ) ); } );} );
+
+	//api('weaverx_settings[wlink_color]', function( value ) {
+	//	value.bind( function( to ) { $('.wrapper .widget a').css( 'color', weaverxFixTo( to ) ); } );} );
+	//api('weaverx_settings[wlink_hover_color]', function( value ) {
+	//	value.bind( function( to ) { $('.wrapper .widget a:hover').css( 'color', weaverxFixTo( to ) ); } );} );
+
+	//api('weaverx_settings[footerlink_color]', function( value ) {
+	//	value.bind( function( to ) { $('.colophon a').css( 'color', weaverxFixTo( to ) ); } );} );
+	//api('weaverx_settings[footerlink_hover_color]', function( value ) {
+	//	value.bind( function( to ) { $('.colophon a:hover').css( 'color', weaverxFixTo( to ) ); } );} );
+
+
+
+
 	api('weaverx_settings[body_bgcolor]', function( value ) {
 		value.bind( function( to ) { $('body').css( 'background-color', weaverxFixTo( to ) ); } );} );
 
@@ -65,15 +95,12 @@ var wvrxCustFontMsg = 0;
 	api('weaverx_settings[wrapper_bgcolor]', function( value ) {
 		value.bind( function( to ) { $('#wrapper').css( 'background-color', weaverxFixTo( to) ); } );} );
 
+
 	api('weaverx_settings[container_color]', function( value ) {
 		value.bind( function( to ) { $('#container').css( 'color', weaverxFixTo( to) ); } );} );
 	api('weaverx_settings[container_bgcolor]', function( value ) {
 		value.bind( function( to ) { $('#container').css( 'background-color', weaverxFixTo( to) ); } );} );
 
-	api('weaverx_settings[link_color]', function( value ) {
-		value.bind( function( to ) { $('a, .wrapper a').css( 'color', weaverxFixTo( to) ); } );} );
-	//api('weaverx_settings[link_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('a:hover, .wrapper a:hover').css( 'color', weaverxFixTo( to) ); } );} );
 
 	api('weaverx_settings[footer_color]', function( value ) {
 		value.bind( function( to ) { $('#header').css( 'color', weaverxFixTo( to) ); } );} );
@@ -270,12 +297,6 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 		value.bind( function( to ) { $('#infobar').css( 'color', weaverxFixTo( to ) ); } );} );
 	api('weaverx_settings[infobar_bgcolor]', function( value ) {
 		value.bind( function( to ) { $('#infobar').css( 'background-color', weaverxFixTo( to ) ); } );} );
-
-	api('weaverx_settings[ibarlink_color]', function( value ) {
-		value.bind( function( to ) { $('#infobar a').css( 'color', weaverxFixTo( to ) ); } );} );
-	//api('weaverx_settings[ibarlink_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('#infobar a:hover').css( 'color', weaverxFixTo( to ) ); } );} );
-
 	api('weaverx_settings[content_color]', function( value ) {
 		value.bind( function( to ) { $('#content').css( 'color', weaverxFixTo( to ) ); } );} );
 	api('weaverx_settings[content_bgcolor]', function( value ) {
@@ -339,12 +360,6 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api('weaverx_settings[post_info_bottom_bgcolor]', function( value ) {
 		value.bind( function( to ) { $('.entry-utility').css( 'background-color', weaverxFixTo( to ) ); } );} );
 
-	api('weaverx_settings[ilink_color]', function( value ) {
-		value.bind( function( to ) { $('.wrapper .entry-meta a, .wrapper .entry-utility a').css( 'color', weaverxFixTo( to ) ); } );} );
-	//api('weaverx_settings[ilink_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('.wrapper .entry-meta a:hover,.wrapper .entry-utility a:hover',
-	//	'post_icons_color=.entry-meta-gicons .entry-date:before,.entry-meta-gicons .by-author:before,.entry-meta-gicons .cat-links:before,.entry-meta-gicons .tag-links:before,.entry-meta-gicons .comments-link:before,.entry-meta-gicons .permalink-icon:before').css( 'color', weaverxFixTo( to ) ); } );} );
-
 
 	api('weaverx_settings[post_author_bgcolor]', function( value ) {
 		value.bind( function( to ) { $('#author-info').css( 'background-color', weaverxFixTo( to ) ); } );} );
@@ -380,20 +395,11 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api('weaverx_settings[widget_title_bgcolor]', function( value ) {
 		value.bind( function( to ) { $('.widget-title').css( 'background-color', weaverxFixTo( to ) ); } );} );
 
-	api('weaverx_settings[wlink_color]', function( value ) {
-		value.bind( function( to ) { $('.wrapper .widget a').css( 'color', weaverxFixTo( to ) ); } );} );
-	//api('weaverx_settings[wlink_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('.wrapper .widget a:hover').css( 'color', weaverxFixTo( to ) ); } );} );
-
-	api('weaverx_settings[footer_color]', function( value ) {
+		api('weaverx_settings[footer_color]', function( value ) {
 		value.bind( function( to ) { $('#colophon').css( 'color', weaverxFixTo( to ) ); } );} );
 	api('weaverx_settings[footer_bgcolor]', function( value ) {
 		value.bind( function( to ) { $('#colophon').css( 'background-color', weaverxFixTo( to ) ); } );} );
 
-	api('weaverx_settings[footerlink_color]', function( value ) {
-		value.bind( function( to ) { $('.colophon a').css( 'color', weaverxFixTo( to ) ); } );} );
-	//api('weaverx_settings[footerlink_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('.colophon a:hover').css( 'color', weaverxFixTo( to ) ); } );} );
 
 	api('weaverx_settings[footer_sb_color]', function( value ) {
 		value.bind( function( to ) { $('#footer-widget-area,.widget-area-footer').css( 'color', weaverxFixTo( to ) ); } );} );

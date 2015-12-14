@@ -97,7 +97,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 			'link_color' => weaverx_cz_coloropt('link_color',
 				__( 'Standard Links', 'weaver-xtreme' ),
-				__('Default color for links. To override for links in specific areas, set colors for individual links below.', 'weaver-xtreme') ),
+				__('Default color for links. To override for links in specific areas, set colors for individual links below.', 'weaver-xtreme'), 'refresh' ),
 
 
 			'link_hover_color' => weaverx_cz_coloropt('link_hover_color',
@@ -114,7 +114,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 			'ibarlink_color' => weaverx_cz_coloropt('ibarlink_color',
 				__('Info Bar Link Color', 'weaver-xtreme'),
-				'' ),
+				'', 'refresh' ),
 
 			'ibarlink_hover_color' => weaverx_cz_coloropt('ibarlink_hover_color',
 				__('Info Bar Link Hover Color', 'weaver-xtreme'),
@@ -131,7 +131,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 			'contentlink_color' => weaverx_cz_coloropt('contentlink_color',
 				 __('Content Links Color', 'weaver-xtreme'),
-				'' ),
+				'', 'refresh' ),
 			'contentlink_hover_color' => weaverx_cz_coloropt('contentlink_hover_color',
 				__('Content Links Hover Color', 'weaver-xtreme'),
 				'', 'refresh' ),
@@ -145,7 +145,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 			// post meta info bar
 			'ilink_color' => weaverx_cz_coloropt('ilink_color',
 				__('Post Meta Info Link Color', 'weaver-xtreme'),
-				'' ),
+				'', 'refresh' ),
 
 			'ilink_hover_color' => weaverx_cz_coloropt('ilink_hover_color',
 				__('Post Meta Info Link Hover Color', 'weaver-xtreme'),
@@ -161,7 +161,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 			'wlink_color' => weaverx_cz_coloropt('wlink_color',
 				__('Individual Widgets Link Color', 'weaver-xtreme'),
-				'' ),
+				'', 'refresh' ),
 
 			'wlink_hover_color' => weaverx_cz_coloropt('wlink_hover_color',
 				__('Individual Widgets Link Hover Color', 'weaver-xtreme'),
@@ -176,7 +176,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 			'footerlink_color' => weaverx_cz_coloropt('footerlink_color',
 				__('Footer Links Color', 'weaver-xtreme'),
-				'' ),
+				'', 'refresh' ),
 
 			'footerlink_hover_color' => weaverx_cz_coloropt('footerlink_hover_color',
 				__('Footer Links Hover Color', 'weaver-xtreme'),
