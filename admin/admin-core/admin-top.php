@@ -46,13 +46,17 @@ function weaverx_do_admin() {
 	weaverx_check_version();           // check version RSS
 
 	weaverx_clear_both();
-	$site_url = site_url();
+	$site_url = get_admin_url();
 	$site_url = str_replace('http://', '//', $site_url);
 	$site_url = str_replace('https://', '//', $site_url);
 	//$site_url = '';
-	$customizer_link = $site_url . '/wp-admin/customize.php?return=%2Fwp-admin%2Fthemes.php%3Fpage%3DWeaverX';
+	$ret_url = str_replace('/','%2F', $site_url);
+	$customizer_link = $site_url . '/customize.php?return=' . $ret_url .  'themes.php%3Fpage%3DWeaverX';
+
+	if (!weaverx_getopt('_disable_customizer')) {
 ?>
 <a href="<?php echo $customizer_link; ?>" title="Switch to Customizer" style="text-decoration:none;font-weight:bold; border:1px solid blue;padding-left:5px; padding-right:5px; background-color:yellow;">Switch to Customizer</a>
+<?php } ?>
 
 <div id="tabwrap">
   <div id="taba-admin" class='yetii'>
@@ -181,6 +185,10 @@ function weaverx_admin_admin() {
 </p>
 
 <br />
+
+<label><input type="checkbox" name="<?php weaverx_sapi_main_name('_disable_customizer'); ?>" id="disable_customizer" <?php checked(weaverx_getopt_checked( '_disable_customizer' )); ?> />
+	<?php _e('<strong>Disable Weaver Xtreme Customizer Interface</strong> - If you have a slow host or slow computer, checking this option will disable loading the Weaver Xtreme Customizer interface. &diams;', 'weaver-xtreme' /*adm*/); ?>
+	</label><br /><br />
 
 	<label><input type="checkbox" name="<?php weaverx_sapi_main_name('_hide_donate'); ?>" id="hide_donate" <?php checked(weaverx_getopt_checked( '_hide_donate' )); ?> />
 	<?php _e('I\'ve Donated - <small>Thank you for donating to the Weaver Xtreme theme.

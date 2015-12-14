@@ -43,7 +43,7 @@ The previous Save buttons do <em>not</em> include advanced <em>Weaver Xtreme Plu
 . '</p>';
 
 	echo '<p>';
-	_e('<strong>Save ALL Settings</strong> - Basic Weaver Xtreme, X-Plus, X-Plus Shortcodes, including &diams;, &star;, and &starf;.', 'weaver-xtreme-plus' /*adm*/)?>
+	_e('<strong>Save ALL Settings</strong> - Basic Weaver Xtreme, X-Plus, X-Plus Shortcodes, including &diams;, &star;, and &starf;.', 'weaver-xtreme' /*adm*/)?>
 </p><p><strong>File: weaverx-settings-(timestamp).wxall</strong></p>
 
 		<input type="button" class="button" name="wvrx_save_xplus" value="<?php esc_attr_e( 'Save ALL Settings, including Xtreme Plus', 'weaver-xtreme' ); ?>" />

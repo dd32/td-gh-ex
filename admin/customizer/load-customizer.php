@@ -6,13 +6,16 @@
  * Some custom Customizer control classes inspired by
  */
 
-add_action( 'customize_register', 'weaverx_add_customizer_content' );
-add_action( 'customize_controls_enqueue_scripts','weaverx_enqueue_customizer_scripts');
-add_action( 'customize_preview_init', 'weaverx_customizer_preview_script' );
+if (!weaverx_getopt('_disable_customizer')) {
 
-add_action( 'customize_register', 'WeaverX_Save_WX_Settings::process_save', 999999 );
-add_action( 'customize_register', 'WeaverX_Restore_WX_Settings::process_restore', 999999 );
-add_action( 'customize_register', 'WeaverX_Load_WX_Subtheme::process_load_theme', 999999 );
+	add_action( 'customize_register', 'weaverx_add_customizer_content' );
+	add_action( 'customize_controls_enqueue_scripts','weaverx_enqueue_customizer_scripts');
+	add_action( 'customize_preview_init', 'weaverx_customizer_preview_script' );
+
+	add_action( 'customize_register', 'WeaverX_Save_WX_Settings::process_save', 999999 );
+	add_action( 'customize_register', 'WeaverX_Restore_WX_Settings::process_restore', 999999 );
+	add_action( 'customize_register', 'WeaverX_Load_WX_Subtheme::process_load_theme', 999999 );
+
 
 
 
@@ -677,4 +680,5 @@ define('WEAVERX_PLUS_IMAGE_CONTROL', 'WeaverX_XPlus_Control');
 define('WEAVERX_PLUS_MISC_CONTROL', 'WeaverX_XPlus_Control');
 }
 
+} // disable customizer?
 ?>

@@ -80,6 +80,15 @@ function wvrxShrink() {
 	};
 };
 
+/* function wvrxRefresh() {
+	alert('refresh');
+	wp.customize.preview.send( 'refresh' );
+}
+<!-- Refresh button --> \
+<div id='wx-refresh'><span onclick=\"wvrxRefresh()\" class=\"dashicons dashicons-update\"></span></div> \
+
+*/
+
 //The section below adds the Menu HTML at the top of the body to place a Menu item on the Top bar
 
 jQuery("#customize-header-actions").prepend(" \

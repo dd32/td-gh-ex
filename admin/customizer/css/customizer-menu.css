@@ -49,6 +49,27 @@ body.rtl #wx-resize {
 	display:none;
 }
 
+/* Customizer refresh button */
+/*
+#wx-refresh {
+	display:inline-block;
+	color:#298cba;
+	border:1px solid grey;
+	border-radius:5px;
+	background-color:#dadada;
+	position: absolute;
+	top: 10px;
+	right:-30px;
+	font-weight:bold;
+	padding:3px 0;
+	line-height:.8;
+}
+
+
+body.rtl #wx-refresh {
+	right:110px;
+} */
+
 /*general styling*/
 #wx-jump ul, #wx-jump li {
 	list-style:	none;

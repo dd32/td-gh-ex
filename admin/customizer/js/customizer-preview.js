@@ -1873,7 +1873,7 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api('weaverx_settings[container_width_int]', function( value ) {
 		value.bind( function( to ) {
 			//$('#container').each(function(){this.style.setProperty('width', to +'%','important');});
-			$('#container').css( 'max-width', to + '%' );
+			$('#container').css( 'width', to + '%' );
 			weaverx_refresh_js();
 		} );} );
 
@@ -2333,32 +2333,51 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	//Custom CSS
 
 	function weaverxStyle(select, to, cssid) {
-		$('#' + cssid + '-live').remove();
-		if (!to) {
-			alert("Note: The styling for this Custom CSS as displayed in the Preview Window will now use the previous value instead of the new blank value. To see the correct styling, you will need to manually 'Save & Publish' and then refresh your browser page. The blank setting will be correctly saved for the actual site view.");
-			return;
+		// generate a CSS+ style rule in the DOM
+
+		var css_plus = $('#wvrx-css-plus'),	// the css+ <style> block ID - CSS+ rules are generated to this block for the Preview Window version
+			current = css_plus.html();	// the current content of the <style> block
+
+		// build a RegExp for / *-=:cssid:=-* /rule/ *-:cssid:-* /, which is the pattern output for the preview
+		// window by generatecss.php.
+
+		var regpat = new RegExp('\\/\\*-=:' + cssid + ':=-\\*\\/([\\s\\S]*?)\\/\\*-:' + cssid + ':-\\*\\/');
+		var srch = current.search(regpat);
+
+		if (srch < 0) {			// no previous rule generated for this cssid, so create an empty link in the DOM
+			css_plus.append('/*-=:' + cssid + ':=-*/ /*-:'+ cssid + ':-*/');
 		}
-		$("head").append("<style id='" + cssid + "-live'></style>");
-		// now need handle %selector% macros
-		var rule = select + ' ' + to;
-		var fixed = rule.replace('%selector%',select);
-		$('#' + cssid + '-live').html(fixed);
+
+		if (to) {				// if there is a rule, change any existing matching rule with the new one.
+			// replace all the %selector%'s with the main rule.
+			var rule = '/*-=:'+ cssid + ':=-*/' + select + ' ' + to.replace(/%selector%/g, select) + '/*-:' + cssid + ':-*/';
+			current = css_plus.html();
+			current =  current.replace(regpat, rule) ;
+			css_plus.html(current);
+		} else {				// the user has emptied the rule, so replace it with a blank for future matching
+			var rule = '/*-=:'+ cssid + ':=-*/ /*-:' + cssid + ':-*/';
+			current = css_plus.html();
+			current =  current.replace(regpat, rule) ;
+			css_plus.html(current);
+		}
+		if (select.search(/,/) >= 0 && to.search(/%selector%/) >= 0) {	// force a refresh for these special cases
+			wp.customize.preview.send( 'refresh' );
+		}
 	}
 
-	// Note: each of these must have a single selector per call - NO COMMAS! Use multiple calls.
+	// There can't be multiple calls for the same option because of the pattern match!
+	// Note: any rule requiring multiple selectors (with a ,) will force a refresh IF the user's rule has %selector%
 
 	api( 'weaverx_settings[body_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('body', to, "body_bgcolor_css"); } ); } );
 	api( 'weaverx_settings[wrapper_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('#wrapper', to, "wrapper_add_class"); } ); } );
+		value.bind( function( to ) { weaverxStyle('#wrapper', to, "wrapper_bgcolor_css"); } ); } );
 	api( 'weaverx_settings[container_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('#container', to, "container_bgcolor_css"); } ); } );
 	api( 'weaverx_settings[link_color_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('a', to, "link_color_css");
-									weaverxStyle('.wrapper a', to, "link_color_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('a,.wrapper a', to, "link_color_css"); } ); 	} );
 	api( 'weaverx_settings[link_hover_color_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('a:hover', to, "link_hover_color_css");
-									weaverxStyle('.wrapper a:hover', to, "link_hover_color_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('a:hover,.wrapper a:hover', to, "link_hover_color_css");} ); 	} );
 	api( 'weaverx_settings[m_header_mini_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('#nav-header-mini ', to, "m_header_mini_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[m_header_mini_hover_color_css]', function( value ) {
@@ -2366,21 +2385,19 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api( 'weaverx_settings[infobar_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('#infobar', to, "infobar_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[ibarlink_color_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('#infobar a', to, "ibarlink_color_css"); } ); 	} );
+		value.bind( function( to ) { weaverxStyle('#infobar a', to, "ibarlink_color_css"); } ); } );
 	api( 'weaverx_settings[ibarlink_hover_color_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('#infobar a:hover', to, "ibarlink_hover_color_css"); } ); 	} );
+		value.bind( function( to ) { weaverxStyle('#infobar a:hover', to, "ibarlink_hover_color_css"); } ); } );
 	api( 'weaverx_settings[contentlink_color_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.content a', to, "contentlink_color_css"); } ); 	} );
 	api( 'weaverx_settings[contentlink_hover_color_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.content a:hover', to, "contentlink_hover_color_css"); } ); 	} );
 	api( 'weaverx_settings[post_title_hover_color]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.wrapper .post-title a:hover', to, "post_title_hover_color"); } ); 	} );
+		value.bind( function( to ) { weaverxStyle('.wrapper .post-title a:hover', to, "post_title_hover_color"); } ); } );
 	api( 'weaverx_settings[ilink_color_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.wrapper .entry-meta a', to, "ilink_color_css");
-									weaverxStyle('.wrapper .entry-utility a', to, "ilink_color_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('.wrapper .entry-meta a,.wrapper .entry-utility a', to, "ilink_color_css");} ); } );
 	api( 'weaverx_settings[ilink_hover_color_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.wrapper .entry-meta a:hover', to, "ilink_hover_color_css");
-									weaverxStyle('.wrapper .entry-utility a:hover', to, "ilink_hover_color_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('.wrapper .entry-meta a:hover,.wrapper .entry-utility a:hover', to, "ilink_hover_color_css"); } ); } );
 	api( 'weaverx_settings[wlink_color_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.wrapper .widget a', to, "wlink_color_css"); } ); 	} );
 	api( 'weaverx_settings[wlink_hover_color_css]', function( value ) {
@@ -2392,15 +2409,13 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api( 'weaverx_settings[header_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('#header', to, "header_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[site_title_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.wrapper #site-title a', to, "site_title_bgcolor_css");
-									weaverxStyle('.site-title a', to, "site_title_bgcolor_css"); } ); 	} );
+		value.bind( function( to ) { weaverxStyle('.wrapper #site-title a,.site-title a', to, "site_title_bgcolor_css"); } ); } );
 	api( 'weaverx_settings[tagline_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('#site-tagline', to, "tagline_bgcolor_css");
-									weaverxStyle('.site-tagline', to, "tagline_bgcolor_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('#site-tagline,.site-tagline', to, "tagline_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[title_tagline_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('#title-tagline', to, "title_tagline_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[header_sb_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('#header-widget-area', to, "header_sb_bgcolor_css"); } ); 	} );
+		value.bind( function( to ) { weaverxStyle('#header-widget-area', to, "header_sb_bgcolor_css"); } ); } );
 	api( 'weaverx_settings[header_html_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('#header-html', to, "header_html_bgcolor_css"); } ); 	} );
 
@@ -2411,8 +2426,7 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api( 'weaverx_settings[m_primary_hover_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.menu-primary .wvrx-menu > li > a:hover', to, "m_primary_hover_bgcolor_css"); } ); } );
 	api( 'weaverx_settings[m_primary_sub_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.menu-primary .wvrx-menu ul li a', to, "m_primary_sub_bgcolor_css");
-									weaverxStyle('.menu-primary .wvrx-menu ul.mega-menu li', to, "m_primary_sub_bgcolor_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('.menu-primary .wvrx-menu ul li a,.menu-primary .wvrx-menu ul.mega-menu li', to, "m_primary_sub_bgcolor_css");} ); 	} );
 	api( 'weaverx_settings[m_primary_sub_hover_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.menu-primary .wvrx-menu ul li a:hover', to, "m_primary_sub_hover_bgcolor_css"); } ); } );
 
@@ -2423,8 +2437,7 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api( 'weaverx_settings[m_secondary_hover_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.menu-secondary .wvrx-menu > li > a:hover', to, "m_secondary_hover_bgcolor_css"); } ); } );
 	api( 'weaverx_settings[m_secondary_sub_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.menu-secondary .wvrx-menu ul li a', to, "m_secondary_sub_bgcolor_css");
-									weaverxStyle('.menu-secondary .wvrx-menu ul.mega-menu li', to, "m_secondary_sub_bgcolor_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('.menu-secondary .wvrx-menu ul li a,.menu-secondary .wvrx-menu ul.mega-menu li', to, "m_secondary_sub_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[m_secondary_sub_hover_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.menu-secondary .wvrx-menu ul li a:hover', to, "m_secondary_sub_hover_bgcolor_css"); } ); } );
 
@@ -2435,15 +2448,12 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api( 'weaverx_settings[m_extra_hover_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.menu-extra .wvrx-menu > li > a:hover', to, "m_extra_hover_bgcolor_css"); } ); } );
 	api( 'weaverx_settings[m_extra_sub_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.menu-extra .wvrx-menu ul li a', to, "m_extra_sub_bgcolor_css");
-									weaverxStyle('.menu-extra .wvrx-menu ul.mega-menu li', to, "m_extra_sub_bgcolor_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('.menu-extra .wvrx-menu ul li a,.menu-extra .wvrx-menu ul.mega-menu li', to, "m_extra_sub_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[m_extra_sub_hover_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.menu-extra .wvrx-menu ul li a:hover', to, "m_extra_sub_hover_bgcolor_css"); } ); } );
 
 	api( 'weaverx_settings[menubar_curpage_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.weaverx-theme-menu .current_page_item > a', to, "menubar_curpage_bgcolor_css");
-									weaverxStyle('.weaverx-theme-menu .current-menu-item > a', to, "menubar_curpage_bgcolor_css");
-									weaverxStyle('.weaverx-theme-menu .current-cat > a', to, "menubar_curpage_bgcolor_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('.weaverx-theme-menu .current_page_item > a,.weaverx-theme-menu .current-menu-item > a,.weaverx-theme-menu .current-cat > a', to, "menubar_curpage_bgcolor_css"); } ); 	} );
 
 	api( 'weaverx_settings[content_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('#content', to, "content_bgcolor_css"); } ); 	} );
@@ -2452,28 +2462,17 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api( 'weaverx_settings[archive_title_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.archive-title', to, "archive_title_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[content_h_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.entry-content h1', to, "content_h_bgcolor_css");
-									weaverxStyle('.entry-content h2', to, "content_h_bgcolor_css");
-									weaverxStyle('.entry-content h3', to, "content_h_bgcolor_css");
-									weaverxStyle('.entry-content h4', to, "content_h_bgcolor_css");
-									weaverxStyle('.entry-content h5', to, "content_h_bgcolor_css");
-									weaverxStyle('.entry-content h6', to, "content_h_bgcolor_css");
-									 } ); 	} );
+		value.bind( function( to ) { weaverxStyle('.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6', to, "content_h_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[search_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.search-field', to, "search_bgcolor_css");
-									weaverxStyle('#header-search .search-field:focus', to, "search_bgcolor_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('.search-field,#header-search .search-field:focus', to, "search_bgcolor_css"); } ); } );
 
 	api( 'weaverx_settings[hr_color_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('hr', to, "hr_color_css"); } ); 	} );
 
 	api( 'weaverx_settings[comment_headings_color_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('#comments-title h3', to, "comment_headings_color_css");
-									weaverxStyle('#comments-title h4', to, "comment_headings_color_css");
-									weaverxStyle('#respond h3', to, "comment_headings_color_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('#comments-title h3,#comments-title h4,#respond h3', to, "comment_headings_color_css"); } ); 	} );
 	api( 'weaverx_settings[comment_content_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.commentlist li.comment', to, "comment_content_bgcolor_css");
-									weaverxStyle('#respond', to, "comment_content_bgcolor_css");
-									} ); 	} );
+		value.bind( function( to ) { weaverxStyle('.commentlist li.comment,#respond', to, "comment_content_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[comment_submit_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('#respond input#submit', to, "comment_submit_bgcolor_css"); } ); 	} );
 
@@ -2485,8 +2484,7 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api( 'weaverx_settings[post_title_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.wrapper .post-title', to, "post_title_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[post_title_color_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('.wrapper .post-title a', to, "post_title_color_css");
-									weaverxStyle('.wrapper .post-title a:visited', to, "post_title_color_css"); } ); 	} );
+		value.bind( function( to ) { weaverxStyle('.wrapper .post-title a,.wrapper .post-title a:visited', to, "post_title_color_css"); } ); } );
 	api( 'weaverx_settings[post_info_top_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.entry-meta', to, "post_info_top_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[post_info_bottom_bgcolor_css]', function( value ) {
@@ -2499,11 +2497,9 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api( 'weaverx_settings[widget_title_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.widget-title', to, "widget_title_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[primary_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('#primary-widget-area', to, "primary_bgcolor_css");
-									weaverxStyle('.widget-area-primary', to, "primary_bgcolor_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('#primary-widget-area,.widget-area-primary', to, "primary_bgcolor_css"); } ); } );
 	api( 'weaverx_settings[secondary_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('#secondary-widget-area', to, "secondary_bgcolor_css");
-									weaverxStyle('.widget-area-secondary', to, "secondary_bgcolor_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('#secondary-widget-area,.widget-area-secondary', to, "secondary_bgcolor_css"); } ); } );
 	api( 'weaverx_settings[top_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('.widget-area-top', to, "top_bgcolor_css"); } ); 	} );
 	api( 'weaverx_settings[bottom_bgcolor_css]', function( value ) {
@@ -2513,8 +2509,7 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 		value.bind( function( to ) { weaverxStyle('#colophon', to, "footer_bgcolor_css"); } ); 	} );
 
 	api( 'weaverx_settings[footer_sb_bgcolor_css]', function( value ) {
-		value.bind( function( to ) { weaverxStyle('#footer-widget-area', to, "footer_sb_bgcolor_css");
-									weaverxStyle('.widget-area-footer', to, "footer_sb_bgcolor_css");} ); 	} );
+		value.bind( function( to ) { weaverxStyle('#footer-widget-area,.widget-area-footer', to, "footer_sb_bgcolor_css"); } ); } );
 
 	api( 'weaverx_settings[footer_html_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('#footer-html', to, "footer_html_bgcolor_css"); } ); 	} );
@@ -2575,10 +2570,8 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 
 	api( 'weaverx_settings[add_css]', function( value ) {			// main custom CSS box
 		value.bind( function( to ) {
-			$('#add_css-live').remove();
-			$("head").append("<style id='add_css-live'></style>");
-			$('#add_css-live').html(to);
-		} ); 	} );
+			$('#wvrx-global-css').html(to);				// replace entire content with new to
+		} ); } );
 
 
 	// extend BG color (Plus)

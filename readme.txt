@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1015 Bruce E Wampler
 Requires at least: 4.2
 Tested up to: 4.4
-Stable tag: 2.0
+Stable tag: 2.0.2
 
 == Description ==
 
@@ -211,3 +211,16 @@ with testing and feature suggestions.
 * Tweak: Added rel="nofollow" to WordPress and Weaver Theme credit links in the footer
 * Fix: Header/Footer HTML center alignment option
 * Fix: misc fixes/tweaks to Version 1.3
+
+= Version 2.0.1 =
+* New: Added Don't Use Customizer option for slow hosts/computers
+* Fix: Container Max Width live update issue
+* Fix: Switch to Customizer bad link on subdirectory installs
+* Tweak: auto preview refresh when clear custom css rules
+
+= Version 2.0.2 =
+* Fix: Bug in menu bottom margin
+* Fix: Header HTML would not hide if Centered
+* Fix: Spelling error in Romanian translation file
+* Tweak: new algorithm for Customizer Custom CSS live update
+* Tweak: modified weaverx_site_title and weaverx_tagline filters to allow HTML

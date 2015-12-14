@@ -42,7 +42,7 @@ function weaverx_f_open($fn, $how) {
 }
 
 function weaverx_f_write($fn,$data) {
-	if ($fn == 'php://output' || $fn == 'echo') {
+	if ($fn == 'echo' || $fn == 'php://output') {
 		echo $data;
 		return true;
 	} else if ($fn == 'wvrx_css_saved') {

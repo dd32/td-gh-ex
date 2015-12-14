@@ -93,6 +93,16 @@ function weaverx_admin_help() {
 * Tweak:  Added .weaverx_inject_area class to all injection areas
 * Fix:    Header/Footer HTML center alignment option
 * Fix:    misc fixes/tweaks to Version 1.3
+
+= Version 2.0.2 =
+* New: Added Don't Use Customizer option for slow hosts/computers
+* Fix: Container Max Width live update issue
+* Fix: Switch to Customizer bad link on subdirectory installs
+* Fix: Bug in menu bottom margin
+* Fix: Header HTML would not hide if Centered
+* Fix: Spelling error in Romanian translation file
+* Tweak: new algorithm for Customizer Custom CSS live update
+* Tweak: modified weaverx_site_title and weaverx_tagline filters to allow HTML
 </pre>
 </p>
 	</div>

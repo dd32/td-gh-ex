@@ -119,7 +119,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 	/* ======== HEADER WIDGET AREA ======== */
 	weaverx_header_widget_area( 'top' );           // show header widget area if set to this position
 
-	$title = esc_html( apply_filters('weaverx_site_title', get_bloginfo( 'name', 'display' ) ));
+	$title =  apply_filters('weaverx_site_title', esc_html(get_bloginfo( 'name', 'display' ) ) );
 ?>
 
 
@@ -146,7 +146,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 	$hide_logo = weaverx_getopt( '_hide_site_logo' );
 
 ?>
-		<h1 id="site-title"<?php echo weaverx_title_class( 'site_title', false, $h_class ); ?>><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+		<h1 id="site-title"<?php echo weaverx_title_class( 'site_title', false, $h_class ); ?>><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo $title; ?>" rel="home">
 		<?php echo $title; ?></a></h1>
 
 		<?php /* ======== SEARCH BOX ======== */
@@ -156,7 +156,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 		}
 		$hide_tag = weaverx_getopt( 'hide_site_tagline' );
 
-		$tagline = esc_html( apply_filters('weaverx_tagline', get_bloginfo( 'description' )) );
+		$tagline =  apply_filters('weaverx_tagline', esc_html(get_bloginfo( 'description' )) );
 
 		?>
 		<h2 id="site-tagline" class="<?php echo $hide_tag; ?>"><span<?php echo weaverx_title_class('tagline'); ?>><?php echo $tagline; ?></span></h2>

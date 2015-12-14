@@ -48,11 +48,15 @@ function weaverx_fwrite_current_css() {
 	return $save_url . '/' . $usename;
 }
 
+
+// ----------------------------------------------------------------------------------------------------------
 function weaverx_output_style( $sout ) {
 	/* This outputs the CSS overrides. It will output to a file pointer, so it can write to a .css file saved
 	   in the user's upload directory - just like the saved style .wvr files. It is included via a standard
 	   css include. It needs to be loaded only for the admin page.
 	*/
+	global $wvrx_css_plus;
+	$wvrx_css_plus = '';
 
 	weaverx_f_write($sout,sprintf("/* Weaver Xtreme styles - Version %s */\n", weaverx_getopt('style_version')));
 
@@ -942,17 +946,41 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 	do_action('weaverxplus_css', $sout);
 
+	if (true || is_customize_preview()) {	// wrap these guys in ids so can more easily manipulate the DOM
 
-	$add_css = weaverx_getopt('add_css');
+		// always generate the <style> block so will be there to manipulate
+		weaverx_f_write($sout, "\n</style>\n");
+		weaverx_f_write($sout, "\n<style id='wvrx-css-plus' type='text/css'>  /* CSS+ Rules */\n");
+		weaverx_f_write($sout, $wvrx_css_plus);
+		weaverx_f_write($sout, "\n</style>\n");
 
-	if (!empty($add_css))
+
+		$add_css = weaverx_getopt('add_css');
+
+		weaverx_f_write($sout, "\n<style id='wvrx-global-css' type='text/css'>  /* Global CSS Rules */\n");
 		weaverx_f_write($sout, apply_filters('weaverx_css',$add_css) );
+		//weaverx_f_write($sout, "\n</style>\n");
 
-	weaverx_f_write($sout, "\n/* end Weaver Xtreme CSS */\n");
+	} else {	// standard site - only output CSS if really there
+		if ($wvrx_css_plus != '') {
+			weaverx_f_write($sout, "\n/* CSS+ Rules */\n");
+			weaverx_f_write($sout, $wvrx_css_plus);
+		}
+
+		$add_css = weaverx_getopt('add_css');
+
+		if (!empty($add_css)) {
+			weaverx_f_write($sout, "\n/* Global Custom CSS Rules */\n");
+			weaverx_f_write($sout, apply_filters('weaverx_css',$add_css) );
+		}
+	}
+
+	weaverx_f_write($sout, "\n/* End Weaver Xtreme CSS */\n");
 
 
 } // end weaverx_output_style
-//--
+//-----------------------------------------------------------------------------------------
+
 
 
 // ************************************ SUPPORT FUNCTIONS **************************
@@ -1119,7 +1147,7 @@ function weaverx_put_bgcolor($sout, $opt, $tag, $important = false ) {
 
 	$imp = ($important) ? ' !important' : '';
 
-	if (($color = weaverx_getopt($opt))) {
+	if (($color = weaverx_getopt($opt)) && $color != 'inherit') {
 		if (strpos($color,'rgba') === false) {	// regular color
 			weaverx_f_write($sout, sprintf("$tag {background-color:{$color}{$imp};}\n"));
 		} else {	// rgba - so create IE8 compatible version as well
@@ -1184,7 +1212,7 @@ function weaverx_rgba2argb($rgba_in) {
 function weaverx_put_color($sout, $id, $tag, $important = false) {
 	// put color and CSS+
 
-	if (($color = weaverx_getopt( $id ))) {
+	if (($color = weaverx_getopt( $id )) && $color != 'inherit') {
 		if ($important)
 			weaverx_f_write($sout, sprintf("$tag {color:$color !important;}\n"));
 		else
@@ -1198,14 +1226,25 @@ function weaverx_put_color($sout, $id, $tag, $important = false) {
 function weaverx_put_css_plus( $sout, $id, $tag ) {
 
 	if ( ($style = weaverx_getopt($id . '_css')) ) {
+		global $wvrx_css_plus;
+		$prefix = '';
+		$suffix = '';
+
+		if (is_customize_preview()) {	// Generate a rule that can be easily modified in the DOM
+			$prefix = "/*-=:{$id}_css:=-*/";
+			$suffix = "/*-:{$id}_css:-*/";
+		}
+
 		if ( strpos( $style, '%selector') !== false ) {     // user is using $selectors
 			$tags = explode(',', $tag );
 			foreach ( $tags as $selector ) {
 				$replaced = str_replace( '%selector%', trim( $selector ), $style);
-				weaverx_f_write( $sout, apply_filters( 'weaverx_css', sprintf( "%s %s\n", $selector, $replaced ) ) );
+				$wvrx_css_plus .= apply_filters( 'weaverx_css', sprintf( "%s%s %s%s\n", $prefix, $selector, $replaced,$suffix ));
+				//weaverx_f_write( $sout, apply_filters( 'weaverx_css', sprintf( "%s%s %s%s\n", $selector, $replaced ) ) );
 			}
 		} else {
-			weaverx_f_write( $sout, apply_filters( 'weaverx_css', sprintf( "%s %s\n", $tag, $style ) ) );
+			$wvrx_css_plus .= apply_filters( 'weaverx_css', sprintf( "%s%s %s%s\n", $prefix,$tag, $style,$suffix ) );
+			// weaverx_f_write( $sout, apply_filters( 'weaverx_css', sprintf( "%s %s\n", $tag, $style ) ) );
 		}
 	}
 }
