@@ -8,6 +8,19 @@
 ?>
 
 <?php 
+/**
+ * Enqueue scripts and styles.
+ */
+function afia_enqueue_scripts() {
+	wp_enqueue_style('genericon',get_template_directory_uri() .'/assets/css/font-awesome.min.css');
+	wp_enqueue_style( 'style', get_stylesheet_uri() ,array (), false, 'all');
+    wp_enqueue_style('handheld',get_template_directory_uri() .'/assets/css/handheld.css',array (), false, 'all and (max-device-width:768px)');
+   wp_enqueue_script( 'ie_html5shiv',get_template_directory_uri().'/lib/js/html5.js');
+		wp_style_add_data( 'ie_html5shiv', 'conditional', 'lt IE 9' );
+	}
+add_action( 'wp_enqueue_scripts', 'afia_enqueue_scripts' );
+
+
 /*echos the short form of description of the site.
 *
 *@params N/A
@@ -17,29 +30,11 @@ if (!(function_exists('afia_short_description'))):
  function afia_short_description ()
  {
 	 $d = get_bloginfo( 'description' );
-		if((strlen($d)) >50)
-		$s = substr($d,0,44).'....';
+		if((strlen($d)) >250)
+		$s = substr($d,0,244).'....';
 		else
 		$s = $d;
 		echo $s;
- }
-endif;
-
-require('lib/some.php');
-/*returns the short form of provided text.
-*
-*@params required $text text to be worked on.
-*@since 1.0.0
-*/
-if (!(function_exists('afia_short_return'))):
- function afia_short_return ($text)
- {
-	 $d = $text;
-		if((strlen($d)) >30)
-		$s = substr($d,0,26).'....';
-		else
-		$s = $d;
-		return $s;
  }
 endif;
 
@@ -58,34 +53,13 @@ function afia_excerpt_more( $more ) {
 	$link = sprintf( '<a href="%1$s" class="more-link linkb">%2$s</a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 			/* translators: %s: Name of current post */
-			sprintf( __( 'Continue reading %s ', 'Afia' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
+			sprintf( __( 'Continue reading %s ', 'afia' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
 		);
 	return ' &hellip; ' . $link;
 }
 add_filter( 'excerpt_more', 'afia_excerpt_more' );
 endif;
 
-/*
-*Function to return the given text in lowercase.
-*
-*@since afia 1.0.0
-*
-*@param string text required the text to be converted.
-*@param boolean optional to determine if the text should be echoed or returned by default returns 'false'.
-*
-*/
-if(! function_exists('afia_lowercase')):
-function afia_lowercase($text,$bol = false)
-{
-	$txt = strtolower($text);
-	if($bol):
-	echo $txt;
-	else:
-	return $txt;
-	endif;
-}
-endif;
-//End of function afia_lowercase.
 
 /*
 *Function to write the top bar content.
@@ -94,7 +68,7 @@ if(! function_exists('afia_top_bar')):
 function afia_top_bar()
 {
 	if(!is_home()):
-	  $home = '<span class = "idle"><a href = "'.esc_url( home_url( '/' ) ).'" title = "'.__('HOME','Afia').'">'.__('HOME','Afia').'</a></span>  | ';
+	  $home = '<span class = "idle"><a href = "'.esc_url( home_url( '/' ) ).'" title = "'.__('HOME','afia').'">'.__('HOME','afia').'</a></span>  | ';
 	  $single = '<span class = "active">'. afia_title() .'</span>';
 	  $fin = $home.''.$single;
 	 echo $fin;
@@ -119,135 +93,31 @@ function afia_title()
     } elseif (is_post_type_archive()) {
       return apply_filters('the_title', get_queried_object()->labels->name);
     } elseif (is_day()) {
-      return sprintf(__('Daily Archives: %s', 'Afia'), get_the_date());
+      return sprintf(__('Daily Archives: %s', 'afia'), get_the_date());
     } elseif (is_month()) {
-      return sprintf(__('Monthly Archives: %s', 'Afia'), get_the_date('F Y'));
+      return sprintf(__('Monthly Archives: %s', 'afia'), get_the_date('F Y'));
     } elseif (is_year()) {
-      return sprintf(__('Yearly Archives: %s', 'Afia'), get_the_date('Y'));
+      return sprintf(__('Yearly Archives: %s', 'afia'), get_the_date('Y'));
     } elseif (is_author()) {
       $author = get_queried_object();
-      return sprintf(__('Author Archives: %s', 'Afia'), $author->display_name);
+      return sprintf(__('Author Archives: %s', 'afia'), $author->display_name);
     } else {      return single_cat_title('', false);
 
     }
   } elseif (is_search()) {
-    return sprintf(__('Search Results for %s', 'Afia'), get_search_query());
+    return sprintf(__('Search Results for %s', 'afia'), get_search_query());
   } elseif (is_404()) {
-    return __('Not Found', 'Afia');
+    return __('Not Found', 'afia');
   } else {
 	  $c = get_the_category();
 	  $cat_name = $c[0]->name;
 	  $cat_id = get_cat_ID($cat_name);
 	  $cat_link = get_category_link($cat_id);
-	  $lk = '<span class="idle"><a href = "'.$cat_link.'" title = "'.__('Category ','Afia').'->'.$cat_name.'">'.$cat_name.'</a></span>  |  '.get_the_title();
+	  $lk = '<span class="idle"><a href = "'.$cat_link.'" title = "'.__('Category ','afia').'->'.$cat_name.'">'.$cat_name.'</a></span>  |  '.get_the_title();
 	return $lk;
   }
 }
 endif;
-
-/*
-*Function to write recent comments.
-*
-*
-*@since v1.0.0
-*@params optional $bol to det if to echo or not. default (true) writes.
-*/
-if(! function_exists('afia_comments_aside')):
-function afia_comments_aside($bol = true)
-{
-	$defaults = array(
-	'author_email' => '',
-	'author__in' => '',
-	'author__not_in' => '',
-	'include_unapproved' => '',
-	'fields' => '',
-	'ID' => '',
-	'comment__in' => '',
-	'comment__not_in' => '',
-	'karma' => '',
-	'number' => 5,
-	'offset' => '',
-	'orderby' => '',
-	'order' => 'DESC',
-	'parent' => '',
-	'post_author__in' => '',
-	'post_author__not_in' => '',
-	'post_ID' => '', // ignored (use post_id instead)
-	'post_id' => 0,
-	'post__in' => '',
-	'post__not_in' => '',
-	'post_author' => '',
-	'post_name' => '',
-	'post_parent' => '',
-	'post_status' => '',
-	'post_type' => '',
-	'status' => 'approve',
-	'type' => '',
-        'type__in' => '',
-        'type__not_in' => '',
-	'user_id' => '',
-	'search' => '',
-	'count' => false,
-	'meta_key' => '',
-	'meta_value' => '',
-	'meta_query' => '',
-	'date_query' => null, // See WP_Date_Query
-);
-	$array = get_comments($defaults);
-	$det;
-	foreach ($array as $ar => $obj)
-	{
-		$name = $obj -> comment_author;
-		$date = $obj ->comment_date;
-		$post_id = $obj ->comment_post_ID;
-		$text = get_the_title($post_id);
-		$comment_ID = $obj ->comment_ID;
-		$author_link = get_comment_author_link( $comment_ID );
-		$post_link = get_permalink($post_id,false);
-		$len = strlen($name) + strlen ($text) + 15;
-		if($len>56)
-			$title =  afia_short_return ($text);
-		else
-			$title = $text;
-		$det .= '<span class = "commentAuthor">'.$name.'</span>'. __(' Commented on: ','Afia');
-		$det .='<span class = "commentpost"><a class = "recent-single-a" href = "'.$post_link.'"><span class = "recent-single">'.$title.'</span></a></span><hr />';
-	}
-	if($bol)
-	echo $det;
-	else
-	return $det;
-}
-endif;
-
-/*
-*Function to display the number of posts to be displayed.
-*
-*@since 1.0.0
-*/
-if(! function_exists('afia_limit_posts_per_archive_page') && !is_admin()):
-function afia_limit_posts_per_archive_page() {
-		//$limit = get_option('posts_per_page');
-		$limit = 5;
-	set_query_var('posts_per_archive_page', $limit);
-}
-add_filter('pre_get_posts', 'afia_limit_posts_per_archive_page');
-endif;
-
-function afia_my_post_queries( $query ) {
-  // do not alter the query on wp-admin pages and only alter it if it's the main query
-  if (!is_admin() && $query->is_main_query()){
-
-    // alter the query for the home and category pages 
-
-    if(is_home()){
-      $query->set('posts_per_page', 5);
-    }
-  }
-}
-add_action( 'pre_get_posts', 'afia_my_post_queries' );
-
-
-
 
 
 
@@ -264,12 +134,12 @@ function afia_logged_details()
 	{
 	    $current_user = wp_get_current_user();
 		$name = $current_user -> user_login;
-		$fin = '<span class = "lucida">'.__('Logged in as: ','Afia').'</span><span class = "logname"><i>'.$name.'</i><span>';
-		$fin .= '<span class = "log"> <a href = "'. wp_logout_url().'">'.__('Logout','Afia').'</a></span>';
+		$fin = '<span class = "lucida">'.__('Logged in as: ','afia').'</span><span class = "logname"><i>'.$name.'</i><span>';
+		$fin .= '<span class = "log"> <a href = "'. wp_logout_url().'">'.__('Logout','afia').'</a></span>';
 	}
 	else if(! is_user_logged_in())
 	{
-		$fin = '<span class = "log"><a href = "'. wp_login_url().'">'.__('Login','Afia').'</a></span>';
+		$fin = '<span class = "log"><a href = "'. wp_login_url().'">'.__('Login','afia').'</a>'.__(' or', 'afia').' <a href="'. wp_registration_url( get_permalink() ) .'">'.__('Register','afia').'</a></span>';
 	}
 	echo '<span class = "right">'.$fin.'</span>';
 }
@@ -277,15 +147,15 @@ endif;
 /*
 *function to echo the footer text.
 */
-if(!function_exists('afia_echo_year')):
-function afia_echo_year()
+if(!function_exists('afia_echo_footer')):
+function afia_echo_footer()
 {
-$txt = '&copy; 2015 ';
+$txt = '<a href="http://WordPress.org"> WordPress</a>: &copy; 2015 ';
 $date = date('Y');
 if($date > 2015):
 $txt .= '- '.$date;
 endif;
-$t = afia_footer_text(). $txt;
+$t = __('Theme powered by:','afia'). $txt . '<a href ="'.esc_url(home_url("/")).'">'. get_bloginfo( 'title' ) .'</a>';
 return $t;
 }
 endif;
@@ -294,13 +164,28 @@ endif;
 
 function afia_set_up()
 {
+	add_theme_support( 'post-thumbnails' ); 
+ /**
+ *Add support for background info.
+ */
 	$background_args = array(
 	'default-color'  => '#f2f2f2',
       'default-repeat' => 'fixed',
-      'default-image'  => get_template_directory_uri() . '/assets/img/pat.jpg',
+      'default-image'  => esc_url(get_template_directory_uri() . '/assets/img/pat.jpg'),
   );
   add_theme_support( 'custom-background', $background_args );
-  
+  /**
+*Register menus.
+*/
+	 register_nav_menus( array('primary' => 'Primary Navigation'));
+ /**
+ *Add support for menu.
+ */	 
+ add_theme_support('nav-menus');
+ 
+ /**
+ *Add support for header image.
+ */
   $defaults = array(
 	'default-image'          => '',
 	'width'                  => 850,
@@ -316,7 +201,15 @@ function afia_set_up()
 	'admin-preview-callback' => '',
 );
 add_theme_support( 'custom-header', $defaults );
+
+ /**
+ *Add support for feed.
+ */
 add_theme_support( 'automatic-feed-links' );
+
+ /**
+ *Add support for title to avoid hard coding.
+ */
 add_theme_support( 'title-tag' );
 // editor style
   add_editor_style('/assets/css/editor-style.css');
@@ -330,100 +223,311 @@ add_action('after_setup_theme', 'afia_set_up');
 function afia_setup_cus($wp_customize ) 
 {
    
+$wp_customize->add_panel( 'afia_logo_settings', array(
+        'priority'       =>   200,
+        'capability'     =>   'edit_theme_options',
+        'title'          =>   __( 'Logo Settings', 'afia' ), 
+        'description'    =>   __('customize Logo', 'afia'),
+    ));
 
+    $wp_customize->add_section( 'afia_logo_section', array(
+        'title'         =>    __( 'Logo Settings', 'afia' ), 
+        'priority'      =>    1, 
+        'capability'    =>    'edit_theme_options', 
+        'panel'         =>    'afia_logo_settings',
+    ));
 
-$wp_customize->add_section( 'background_image', array(
-            'title'          => __( 'Background Image','Afia' ),
-            'theme_supports' => 'custom-background',
-            'priority'       => 80,
-        ) );
+     $wp_customize->add_setting( 'afia_show_logo', 
+       array(
+          'default' => false, 
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', 
+          'transport' => 'refresh', 
+          'sanitize_callback' => 'afia_sanitize_checkbox',
+       ) 
+    );
 
-        $wp_customize->add_setting( 'background_image', array(
-            'default'        => get_theme_support( 'custom-background', 'default-image' ),
-            'theme_supports' => 'custom-background',
-			'sanitize_callback' => 'esc_url_raw',
-    
-        ) );
+    $wp_customize->add_control( 'afia_show_logo', array(
+        'type'     => 'checkbox',
+        'priority' => 1,
+        'section'  => 'afia_logo_section',
+        'label'    => __('Show Logo.', 'afia'),
+    ));	
 
-        $wp_customize->add_setting( new WP_Customize_Background_Image_Setting( $wp_customize, 'background_image_thumb', array(
-            'theme_supports' => 'custom-background',
-			'sanitize_callback' => 'esc_url_raw',
-        ) ) );
-
-        $wp_customize->add_control( new WP_Customize_Background_Image_Control( $wp_customize ) );
-
-        $wp_customize->add_setting( 'background_repeat', array(
-            'default'        => 'repeat',
-            'theme_supports' => 'custom-background',
-			'sanitize_callback' => 'sanitize_text_field',
-        ) );
-
-        $wp_customize->add_control( 'background_repeat', array(
-            'label'      => __( 'Background Repeat','Afia' ),
-            'section'    => 'background_image',
-            'type'       => 'radio',
-            'choices'    => array(
-                'no-repeat'  => __('No Repeat','Afia'),
-                'repeat'     => __('Tile','Afia'),
-                'repeat-x'   => __('Tile Horizontally','Afia'),
-                'repeat-y'   => __('Tile Vertically','Afia'),
-            ),
-        ) );
-
-        $wp_customize->add_setting( 'background_position_x', array(
-            'default'        => 'left',
-            'theme_supports' => 'custom-background',
-			'sanitize_callback' => 'sanitize_text_field',
-        ) );
-
-        $wp_customize->add_control( 'background_position_x', array(
-            'label'      => __( 'Background Position','Afia' ),
-            'section'    => 'background_image',
-            'type'       => 'radio',
-            'choices'    => array(
-                'left'       => __('Left','Afia'),
-                'center'     => __('Center','Afia'),
-                'right'      => __('Right','Afia'),
-            ),
-        ) );
-
-        $wp_customize->add_setting( 'background_attachment', array(
-            'default'        => 'fixed',
-            'theme_supports' => 'custom-background',
-			'sanitize_callback' => 'sanitize_text_field',
-        ) );
-
-        $wp_customize->add_control( 'background_attachment', array(
-            'label'      => __( 'Background Attachment','Afia'),
-            'section'    => 'background_image',
-            'type'       => 'radio',
-            'choices'    => array(
-                'fixed'      => __('Fixed','Afia'),
-                'scroll'     => __('Scroll','Afia'),
-            ),
-        ) );
-
+    $wp_customize->add_section( 'afia_logo_upload_section', array(
+        'title'         =>    __( 'Upload a Logo', 'afia' ), 
+        'priority'      =>    2, 
+        'capability'    =>    'edit_theme_options', 
+        'panel'         =>    'afia_logo_settings',
+    ));
+	
+	$wp_customize->add_setting( 'afia_upload_logo', array(
+	'default'          => '',
+	'sanitize_callback' => 'esc_url_raw',
+	));
+	
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'logo',array(
+               'label'      => __( 'Upload a logo.', 'afia' ),
+               'section'    => 'afia_logo_upload_section',
+               'settings'   => 'afia_upload_logo', 
+           )
+       )
+   );
+    $wp_customize->add_panel( 'afia_text_settings', array(
+        'priority'       =>   102,
+        'capability'     =>   'edit_theme_options',
+        'title'          =>   __( 'Text Color and Font Settings', 'afia' ), 
+        'description'    =>   __('customize your text', 'afia'),
+    ));
+    $wp_customize->add_section('afia_text_colors',array(
+        'title'         =>    __( 'Colors', 'afia' ), 
+        'priority'      =>    1, 
+        'capability'    =>    'edit_theme_options', 
+        'panel'         =>    'afia_text_settings',
+    ));
+	$wp_customize->add_section('afia_text_fonts',array(
+        'title'         =>    __( 'Fonts', 'afia' ), 
+        'priority'      =>    2, 
+        'capability'    =>    'edit_theme_options', 
+        'panel'         =>    'afia_text_settings',
+    ));
+	$wp_customize->add_setting( 'afia_heading_color', 
+       array(
+          'default' => '', 
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', 
+          'transport' => 'refresh', 
+          'sanitize_callback' => 'sanitize_hex_color',
+       ) 
+    );
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'afia_heading_color',array(
+  'section' => 'afia_text_colors',
+  'label' => __( 'Heading Text Color','afia' ),
+  'description' => __( 'Set the font color of the post, comment and widget headings.','afia' ),
+) ));
+ $wp_customize->add_setting( 'afia_heading_font', 
+       array(
+          'default' => '', 
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', 
+          'transport' => 'refresh', 
+          'sanitize_callback' => 'sanitize_text_field',
+       ) 
+    );
+    $wp_customize->add_control( 'afia_heading_font', array(
+        'type'     => 'text',
+        'priority' => 1,
+        'section'  => 'afia_text_fonts',
+        'label'    => __('Heading font.', 'afia'),
+		'description' => __( 'Set the font name of all post, comment and widget headings.','afia' ),
+    ));	
+	//Set for links
+	 //unvisited links.
+	$wp_customize->add_setting( 'afia_link_color', 
+       array(
+          'default' => '', 
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', 
+          'transport' => 'refresh', 
+          'sanitize_callback' => 'sanitize_hex_color',
+       ) 
+    );
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'afia_link_color',array(
+  'section' => 'afia_text_colors',
+  'label' => __( 'Unvisted Link Text Color','afia' ),
+  'description' => __( 'Set the color of all unvisited links.','afia' ),
+) ));
+ $wp_customize->add_setting( 'afia_link_font', 
+       array(
+          'default' => '', 
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', 
+          'transport' => 'refresh', 
+          'sanitize_callback' => 'sanitize_text_field',
+       ) 
+    );
+    $wp_customize->add_control( 'afia_link_font', array(
+        'type'     => 'text',
+        'priority' => 1,
+        'section'  => 'afia_text_fonts',
+        'label'    => __('Unvisited Link font.', 'afia'),
+		'description' => __( 'Set the font name of all links in your page','afia' ),
+    ));	
+	//Hovered links
+	$wp_customize->add_setting( 'afia_hover_color', 
+       array(
+          'default' => '', 
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', 
+          'transport' => 'refresh', 
+          'sanitize_callback' => 'sanitize_hex_color',
+       ) 
+    );
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'afia_hover_color',array(
+  'section' => 'afia_text_colors',
+  'label' => __( 'Hovered Link Text Color','afia' ),
+  'description' => __( 'Set the color of all hovered links.','afia' ),
+) ));
+ $wp_customize->add_setting( 'afia_hover_font', 
+       array(
+          'default' => '', 
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', 
+          'transport' => 'refresh', 
+          'sanitize_callback' => 'sanitize_text_field',
+       ) 
+    );
+    $wp_customize->add_control( 'afia_hover_font', array(
+        'type'     => 'text',
+        'priority' => 1,
+        'section'  => 'afia_text_fonts',
+        'label'    => __('Hovered Link font.', 'afia'),
+		'description' => __( 'Set the font name of hovered links in your page','afia' ),
+    ));	
+	//Main body content.
+	$wp_customize->add_setting( 'afia_main_color', 
+       array(
+          'default' => '#000000', 
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', 
+          'transport' => 'refresh', 
+          'sanitize_callback' => 'sanitize_hex_color',
+       ) 
+    );
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'afia_main_color',array(
+  'section' => 'afia_text_colors',
+  'label' => __( 'Main content Text Color','afia' ),
+  'description' => __( 'Set the color for main post content.','afia' ),
+) ));
+ $wp_customize->add_setting( 'afia_main_font', 
+       array(
+          'default' => 'Georgia', 
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', 
+          'transport' => 'refresh', 
+          'sanitize_callback' => 'sanitize_text_field',
+       ) 
+    );
+    $wp_customize->add_control( 'afia_main_font', array(
+        'type'     => 'text',
+        'priority' => 1,
+        'section'  => 'afia_text_fonts',
+        'label'    => __('Main Content font.', 'afia'),
+		'description' => __( 'Set the font name of Main content, ie post content.','afia' ),
+    ));	
+	$wp_customize->add_setting( 'afia_main_size', 
+       array(
+          'default' => '16px', 
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', 
+          'transport' => 'refresh', 
+          'sanitize_callback' => 'sanitize_text_field',
+       ) 
+    );
+    $wp_customize->add_control( 'afia_main_size', array(
+        'type'     => 'text',
+        'priority' => 1,
+        'section'  => 'afia_text_fonts',
+        'label'    => __('Main Content font size.', 'afia'),
+		'description' => __( 'Set the font size name of Main content, ie post content.','afia' ),
+    ));	
+	//Main background
+	$wp_customize->add_setting( 'afia_main_back', 
+       array(
+          'default' => '#ffffff', 
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', 
+          'transport' => 'refresh', 
+          'sanitize_callback' => 'sanitize_hex_color',
+       ) 
+    );
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'afia_main_back',array(
+  'section' => 'colors',
+  'label' => __( 'Main content Background Color','afia' ),
+  'description' => __( 'Set the Background color for main post content.','afia' ),
+) ));
 }
 add_action( 'customize_register', 'afia_setup_cus' );
 
-//generating css.
-function afia_customize_css()
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+
+function afia_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => __('right sidebar','afia'),
+		'id'            => 'sidebar-primary',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="rounded">',
+		'after_title'   => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'afia_widgets_init' );
+
+
+function afia_customze_css()
 {
-    
-     $txt =    '<style type="text/css">';
-     $txt .=        'body { background-color: '. get_theme_mod('afia_body_background', '#00ff00') .';';
-	 $txt .=   'background-image:url("'.get_theme_mod( 'background_image', get_stylesheet_directory_uri().'/assets/img/pat.jpg' ).'"); background-repeat:'.get_theme_mod( 'background_repeat', 'default' ).'; background-attachment:'.get_theme_mod( 'background_attachment', 'default' ).'; background-position:'.get_theme_mod( 'background_position_x', 'default' ).';}';
-     $txt .=    '</style>';
-	 echo $txt;
+?>
+
+<style>
+#content{background:<?php echo esc_html(get_theme_mod('afia_main_back','#ffffff'));?>;}
+<?php
+if(esc_html(get_theme_mod('afia_heading_color','')) != '' || esc_html(get_theme_mod('afia_heading_font','')) != '')
+{?>
+.widget-title, .rounded,.title,.round,#respond h3,.tt{
+	color:<?php if(esc_html(get_theme_mod('afia_heading_color','')) != ''): echo esc_html(get_theme_mod('afia_heading_color','')); endif;?>;
+	font-family:<?php if(esc_html(get_theme_mod('afia_heading_font','')) != ''):echo esc_html(get_theme_mod('afia_heading_font','')); endif;?>;}
+<?php }?>
+<?php
+if(esc_html(get_theme_mod('afia_link_color','')) != '' || esc_html(get_theme_mod('afia_link_font','')) != '')
+{?>
+body a{
+	color:<?php if(esc_html(get_theme_mod('afia_link_color','')) != ''): echo esc_html(get_theme_mod('afia_link_color','')); endif;?>;
+	font-family:<?php if(esc_html(get_theme_mod('afia_link_font','') != '')):echo esc_html(get_theme_mod('afia_link_font','')); endif;?>;}
+<?php }?><?php
+if(esc_html(get_theme_mod('afia_hover_color','')) != '' || esc_html(get_theme_mod('afia_hover_font','')) != '')
+{?>
+body a{
+	color:<?php if(esc_html(get_theme_mod('afia_hover_color','')) != ''): echo esc_html(get_theme_mod('afia_hover_color','')); endif;?>;
+	font-family:<?php if(esc_html(get_theme_mod('afia_hover_font','')) != ''):echo esc_html(get_theme_mod('afia_hover_font','')); endif;?>;}
+<?php }?>
+.content-post{
+	color:<?php echo esc_html(get_theme_mod('afia_main_color','#000000')); ?>;
+	font-family:<?php echo esc_html(get_theme_mod('afia_main_font','Georgia')); ?>;
+font-family:<?php echo esc_html(get_theme_mod('afia_main_size','16px')); ?>;}
+<?php 
+if(is_home() || is_front_page()):?>
+.top-bar{display:none;}
+	<?php
+endif;
+$z  = get_header_image();
+if(! $z):
+?>
+#header-img{display:none;}
+<?php
+endif; 
+?>
+	</style>
+	 
+<?php 
     
 }
-add_action( 'wp_head', 'afia_customize_css');
-add_theme_support( 'post-thumbnails' ); 
+add_action( 'wp_head', 'afia_customze_css');
+
+function afia_sanitize_checkbox( $checked ) {
+	// Boolean check.
+	return ( ( isset( $checked ) && true == $checked ) ? true : false );
+}
+
+
 function afia_password_form() {
     global $post;
     $label = 'password-'.( empty( $post->ID ) ? rand() : $post->ID );
     $password_form = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
-    '.__('This post is password protected. To view it please enter your password below: ', 'Afia').'
+    '.__('This post is password protected. To view it please enter your password below: ', 'afia').'
     <div class="protected-form input-group has-info col-md-6">
         <input class="form-control" value="' . get_search_query() . '" name="post_password" id="' . $label . '" type="password">
         <span class="input-group-btn"><button type="submit" class="btn btn-default" name="submit" id="searchsubmit" value="Submit"><span class="fa fa-lock"></span></button>

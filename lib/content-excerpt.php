@@ -7,8 +7,8 @@
 <header id = "ex-header">
 <a class = "linka lnk" href= "<?php the_permalink(); ?>"><h2 class = "title"><?php the_title();?></h2></a>
 <hr />
-<span class = "time"><img class = "time-pic" src = "<?php echo esc_url( get_stylesheet_directory_uri( '/' ) );?>/assets/img/time.png"><span class = 'linkab'><a class = "linka lnk" href= "<?php the_permalink(); ?>"><?php echo date("F j,Y",get_post_time());?></a></span></span> 
- | <span class = "author"><img class = "author-pic" src = "<?php echo esc_url( get_stylesheet_directory_uri( '/' ) );?>/assets/img/author.png"/> <span class = "linka"><?php the_author_posts_link();?></span></span>
+<span class = "time"><i class="fa fa-clock-o"></i> <span class = 'linkab'><a class = "linka lnk" href= "<?php the_permalink(); ?>"><?php echo date("F j,Y",get_post_time());?></a></span></span> 
+ | <span class = "author"><i class="fa fa-user"></i> <span class = "linka"><?php the_author_posts_link();?></span></span>
 <hr />
 </header>
 <div id = "pos-ex" class = "content-post">
@@ -23,7 +23,7 @@
 
 $gte = get_the_excerpt();
 if($gte == ''):
-_e('This post seems to contain nothing.','Afia');
+_e('This post seems to contain nothing.','afia');
 else:
 echo the_excerpt();
 endif;
@@ -33,7 +33,7 @@ endif;
 <footer>
 <hr />
 <span class = "categ">
-<img class = "cat-pic" src = "<?php echo esc_url( get_stylesheet_directory_uri( '/' ) );?>/assets/img/categories.jpg"/> <span class = "linka"><?php echo the_category(', ');?></span>
+<i class="fa fa-folder-o"></i> <span class = "linka"><?php echo the_category(', ');?></span>
 </span>
 <hr />
 </footer>

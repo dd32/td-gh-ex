@@ -1,14 +1,14 @@
 /*
 THEME NAME: Afia
-DESCRIPTION: This theme has a traditional blog layout and is simple, flexible and light-weight, with support for hand-held devices and optimum for screen width 1350px. This theme supports custom background both image and color also supports custom header.
-Theme URI:
+DESCRIPTION: This theme has a traditional blog layout and is simple, flexible and light-weight.
+Theme URI:https://github.com/dominic-n/afia
+Theme slug:afia
 Text Domain:  Afia
-TAGS: right-sidebar, custom-background, custom-menu, custom-header, editor-style, featured-images, light, threaded-comments, post-formats, sticky-post
-VERSION: 1.0.0
+TAGS: right-sidebar, custom-background, custom-menu, custom-header, editor-style, featured-images, light, threaded-comments, sticky-post
+VERSION: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 AUTHOR:DOMINIC_N
-Author URI: https://wordpress.org/support/profile/dominic_n
 */
 
 /*#content*/
@@ -17,11 +17,9 @@ Author URI: https://wordpress.org/support/profile/dominic_n
 {
 position:relative;
 top:30px;
-left:12%;
-background:rgb(254,254,254);
-max-width:1000px;
-min-width:1000px;
-min-height:1800px;
+left:10%;
+right:10%;
+width:80%;
 }
 .inline
 {
@@ -46,6 +44,11 @@ text-align:center;
 .error-aimg
 {
 left:170px;
+}
+.fa-exclamation-triangle
+{
+	color:rgba(160,45,20,.7);
+	font-size:50px;
 }
 .site-title
 {
@@ -75,9 +78,10 @@ width:20px;
 }
 #leftContent
 {
+
 position:relative;
-width:654px;
-left:55px;
+width:70%;
+padding-left:2%;
 }
 @media screen and(max-device-width: 1250px)
 {
@@ -85,25 +89,17 @@ left:55px;
 {
 position:relative;
 top:30px;
-left:16.67%;
-right:16.67%;
-background:rgb(254,254,254);
-width:67%;
-min-height:1500px;
+left:10%;
+right:10%;
+width:80%;
 }
 #leftContent
 {
 position:relative;
 width:70%;
-left:55px;
+padding-left:2%;
 }
-#sideba
-{
-position:relative;
-top:30px;
-left:74%;
-width:25%;
-}
+
 }
  .categ
 {
@@ -135,61 +131,22 @@ text-decoration:underline;
 {
 text-transform:uppercase;
 }
-.content-post
-{
-font-family:Georgia;
-font-size:16px;
-}
+
 .header
 {
 position:relative;
-left:30px;
+left:5%;
 top:20px;
-width:970px;
+width:90%;
 }
-#searchbox
-{
-height:25px;
-margin:0px;
-position:relative;
-border:0;
-top:-13px;
-text-indent:15px;
-}
-#search-submit
-{
-padding:0px;
-
-}
-#search-form
-{
-border:solid;
-border-width:2px;
-border-radius:5px;
-padding-top:0px;
-max-height:31px;
-max-width:185px;
-}
-#search-form input
-{
-max-width:140px;
-font-family:Calibri;
-color:green;
-}
-#search-img
-{
-top:2px;
-}
+.footertext a{text-decoration:none;color:green;}
 #sideba
 {
-position:absolute;
-top:30px;
-left:765px;
-width:220px;
-}
-#searchbox:focus
-{
-outline:0;
+position:relative;
+width:25%;
+top:10px;
+left:2%;
+line-height: 2;
 }
 .recent-single-a, .categories a
 {
@@ -219,17 +176,30 @@ top:70px;
 }
 .top-bar
 {
-min-width:654px;
+margin-top:10px;
+position:relative;
+width:70%;
 background:rgb(234,238,238);
 border-color:black;
 border-style:solid;
 border-width:1px;
+border-right:none;
+border-left:none;
 padding-top:5px;
 padding-bottom:5px;
+}
+#sideba ul{list-style:none;}
+#sideba h3{text-align:center;}
+#sideba>div{padding:2%; background:#eeeeee; border-radius:5px; margin-bottom:5px;}
+.dotot
+{
+	display:inline-block;
+	vertical-align: top;
 }
 .top-bar a 
 {
 text-decoration:none;
+color:green;
 }
 .idle
 {
@@ -342,7 +312,7 @@ color:green;
 .right
 {
 position:absolute;
-right:50px;
+right:0%;
 }
 .lucida
 {
@@ -355,6 +325,7 @@ text-decoration:bold;
 }
 .log a 
 {
+color:green;
 text-decoration:none;
 font-family:Lucida Calligraphy;
 }
@@ -369,10 +340,8 @@ text-transform:capitalize;
 }
 #footba
 {
-position:absolute;
 bottom:0px;
 min-height:30px;
-background:white;
 }
 .footertext
 {
@@ -482,13 +451,19 @@ list-style-type:none;
 {
 background: #f9f9f9;
 }
-#header-img
+.thumbnail>img
+{
+	position:relative;
+	width:90%;
+	height:auto;
+	left:2.5%;
+}
+#header-img> img
 {
 position:relative;
-min-width:90%;
-max-width:97%;
-height:371px;
-text-align:center;
+width:90%;
+height:auto;
+left:5%;
 }
 .sticky
 {
@@ -610,3 +585,22 @@ a img.aligncenter {
 .bypostauthor {
   background-color: #fcfcfc;
 }
+#menu {margin-bottom:20px;}
+.tes ul { display:block;padding:0px;
+    white-space:nowrap; margin:0px;}
+.tes * {list-style:none; margin:0px;}
+.tes>div>ul>li{float:left;}
+.tes>div>ul>li>.submenu{margin:0px;}
+.sub-menu {position:absolute;z-index:100;}
+.sub-menu .sub-menu{display:inline-block;}
+.sub-menu ul,.sub-menu li{display:block; margin:0px;}
+.menu-item-has-children > ul {visibility:hidden;}
+.menu-item-has-children:hover > .sub-menu {visibility:visible;}
+.tes a {margin-left:10px;margin-right:10px; color:green;
+text-transform:uppercase;
+    font:'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+    letter-spacing:0.15em;
+    text-decoration:none;
+    }
+.tes li{height:42px; margin:0px; background:rgba(220,220,220,.5);text-align:center; line-height:42px;}
+.tes li:hover{background:rgba(220,120,20,.6);}

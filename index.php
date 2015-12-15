@@ -13,9 +13,7 @@
 ?>
 <?php get_header();?>
 <?php
-$more_link_text = __('Continue reading ->','Afia');
-$strip_teaser = false;
-the_content( $more_link_text , $strip_teaser );
+
 while(have_posts()):
 
 the_post();

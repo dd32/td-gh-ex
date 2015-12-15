@@ -1,14 +1,13 @@
 <?php 
 /*
-*This pageis the only one to be directly gotten from the wordpress core files since it does not need much alteration*/
-_deprecated_file( sprintf( __( 'Theme without %1$s','Afia' ), basename(__FILE__) ), '3.0', null, sprintf( __('Please include a %1$s template in your theme.','Afia'), basename(__FILE__) ) );
+*This pageis the only one to be directly gotten from the WordPress core files since it does not need much alteration*/
 
 // Do not delete these lines
 	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 		die ('Please do not load this page directly. Thanks!');
 
 	if ( post_password_required() ) { ?>
-		<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.','Afia'); ?></p>
+		<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.','afia'); ?></p>
 	<?php
 		return;
 	}
@@ -21,10 +20,10 @@ _deprecated_file( sprintf( __( 'Theme without %1$s','Afia' ), basename(__FILE__)
 		<?php
 			if ( 1 == get_comments_number() ) {
 				/* translators: %s: post title */
-				printf( __( 'One response to %s' ,'Afia'),  '&#8220;' . get_the_title() . '&#8221;' );
+				printf( __( 'One response to %s' ,'afia'),  '&#8220;' . get_the_title() . '&#8221;' );
 			} else {
 				/* translators: 1: number of comments, 2: post title */
-				printf( _n( '%1$s response to %2$s', '%1$s responses to %2$s','Afia', get_comments_number() ),
+				printf( _n( '%1$s response to %2$s', '%1$s responses to %2$s','afia', get_comments_number() ),
 					number_format_i18n( get_comments_number() ),  '&#8220;' . get_the_title() . '&#8221;' );
 			}
 		?>
@@ -67,7 +66,7 @@ _deprecated_file( sprintf( __( 'Theme without %1$s','Afia' ), basename(__FILE__)
 
 	 <?php else : // comments are closed ?>
 		<!-- If comments are closed. -->
-		<p class="nocomments"><?php _e('Comments are closed.','Afia'); ?></p>
+		<p class="nocomments"><?php _e('Comments are closed.','afia'); ?></p>
 
 	<?php endif; ?>
 <?php endif; ?>

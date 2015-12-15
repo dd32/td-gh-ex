@@ -9,7 +9,7 @@
 <!--End of #leftContent-->
 </div>
 <!--Side bar inclusion-->
-<div id = "sideba">
+<div id = "sideba" class="dotot">
 	<?php get_sidebar();?>
 </div>
 <!--End of #content-->
@@ -20,7 +20,7 @@
 <div id = "footba">
 <span class = "footertext">
 <?php 
-echo afia_echo_year();
+echo afia_echo_footer();
 wp_footer();
 ?>
 </span>

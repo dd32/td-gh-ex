@@ -9,16 +9,16 @@
 <br /><br /><br />
 <span id = "errall">
 <span class = "error-img">
-<img class = "error-aimg" src = "<?php echo esc_url( get_stylesheet_directory_uri( '/' ) );?>/assets/img/404.png" title = "File cannot be found" />
+<i class="fa fa-exclamation-triangle"></i>
 </span>
 <div id = "error-msg">
 <p class = "content-error">
-<?php _e('Sorry! The content you are looking for is not  available.','Afia');?><br />
-<?php _e('Try searching to see if any posts match it.','Afia');?><br />
+<?php _e('Sorry! The content you are looking for is not  available.','afia');?><br />
+<?php _e('Try searching to see if any posts match it.','afia');?><br />
 <form method = "get" action='<?php echo esc_url( home_url( '/' ) ); ?>'  name = "search">
 
-<input type = "text" placeholder = "<?php _e('  Search','Afia'); ?>" name= "s">
-<input type = "submit" value = "<?php _e('Search','Afia');?>"/>
+<input type = "text" placeholder = "<?php _e('  Search','afia'); ?>" name= "s">
+<input type = "submit" value = "<?php _e('Search','afia');?>"/>
 </form>
 </p>
 </div>
