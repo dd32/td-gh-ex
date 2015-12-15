@@ -16,7 +16,7 @@
         if (!empty($actuate_tag_description)) {
             echo $actuate_tag_description;
         } else {
-            printf(__('Archive of posts published in the tag: %s', 'actuate'), single_term_title('', false));
+            printf(__('Archive of posts published in the tag:', 'actuate').' %s', single_term_title('', false));
         }
         ?>
     </div>

@@ -10,17 +10,17 @@
 <div class="archive-meta-container">
     <div class="archive-head">
         <h1><?php if (is_day()) : ?>
-                <?php printf(__('Daily Archives: %s', 'actuate'), '<span>' . get_the_date() . '</span>'); ?>
+                <?php printf(__('Daily Archives:', 'actuate').' %s', '<span>' . get_the_date() . '</span>'); ?>
             <?php elseif (is_month()) : ?>
-                <?php printf(__('Monthly Archives: %s', 'actuate'), '<span>' . get_the_date(_x('F Y', 'monthly archives date format', 'actuate')) . '</span>'); ?>
+                <?php printf(__('Monthly Archives:', 'actuate').' %s', '<span>' . get_the_date(_x('F Y', 'monthly archives date format', 'actuate')) . '</span>'); ?>
             <?php elseif (is_year()) : ?>
-                <?php printf(__('Yearly Archives: %s', 'actuate'), '<span>' . get_the_date(_x('Y', 'yearly archives date format', 'actuate')) . '</span>'); ?>
+                <?php printf(__('Yearly Archives:', 'actuate').' %s', '<span>' . get_the_date(_x('Y', 'yearly archives date format', 'actuate')) . '</span>'); ?>
             <?php else : ?>
                 <?php _e('Blog Archives', 'actuate'); ?>
             <?php endif; ?></h1>
     </div>
     <div class="archive-description">
-        <?php printf(__('<p>Archive of posts published in the specified %s </p>', 'actuate'), actuate_date_text()) ?>
+        <?php printf('<p>'.__('Archive of posts published in the specified', 'actuate').' %s </p>', actuate_date_text()) ?>
     </div>
 </div><!-- Archive Meta Container ends -->
 

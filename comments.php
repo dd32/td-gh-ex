@@ -18,7 +18,7 @@
       <?php if ( have_comments() ): ?>
 
             <div id="comments-title" class="comments-title"><?php
-                      printf( __( 'Comments (%1$s)', 'actuate' ), number_format_i18n( get_comments_number() ));
+                      printf( __( 'Comments', 'actuate' ).' (%1$s)', number_format_i18n( get_comments_number() ));
             ?></div>
 
             <div class="commentslist clearfix">
@@ -29,8 +29,8 @@
 
             <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
                   <div class="comment-navigation">
-                       <div class="nav-previous"><?php previous_comments_link( __( 'Older Comments <span class="meta-nav">&rarr;</span>', 'actuate' ) ); ?></div>
-                       <div class="nav-next"><?php next_comments_link( __( '<span class="meta-nav">&larr;</span> Newer Comments', 'actuate' ) ); ?></div>
+                       <div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'actuate' ).' <span class="meta-nav">&rarr;</span>' ); ?></div>
+                       <div class="nav-next"><?php next_comments_link( '<span class="meta-nav">&larr;</span> '.__( 'Newer Comments', 'actuate' ) ); ?></div>
                   </div> <!-- .navigation -->
             <?php endif; ?>
 

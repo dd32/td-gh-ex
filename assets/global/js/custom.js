@@ -33,20 +33,4 @@ jQuery(document).ready(function($) {
        }
     });
     
-    /* Service Section */
-    var serviceAnchorColor = $('.mudpack-service-text a').css('color');
-    $('.mudpack-service-text').hover(
-        function(){
-            $(this).children('a').stop().animate({
-                color: '#DDDDDD'
-            });
-            $(this).children('a').children('i').stop().fadeIn();
-        },
-        function(){
-            $(this).children('a').children('i').stop().fadeOut(100);
-            $(this).children('a').stop().animate({
-                color: serviceAnchorColor
-            }, 800);
-        });
-
 });

@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, v2 (or newer).
 msgid ""
 msgstr ""
-"Project-Id-Version: Actuate 0.0.1\n"
+"Project-Id-Version: Actuate 1.0.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/actuate\n"
-"POT-Creation-Date: 2015-12-08 11:01:05+00:00\n"
+"POT-Creation-Date: 2015-12-14 11:00:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: archive.php:13
-msgid "Daily Archives: %s"
+msgid "Daily Archives:"
 msgstr ""
 
 #: archive.php:15
-msgid "Monthly Archives: %s"
+msgid "Monthly Archives:"
 msgstr ""
 
 #: archive.php:15
@@ -26,7 +26,7 @@ msgid "F Y"
 msgstr ""
 
 #: archive.php:17
-msgid "Yearly Archives: %s"
+msgid "Yearly Archives:"
 msgstr ""
 
 #: archive.php:17
@@ -39,7 +39,7 @@ msgid "Blog Archives"
 msgstr ""
 
 #: archive.php:23
-msgid "<p>Archive of posts published in the specified %s </p>"
+msgid "Archive of posts published in the specified"
 msgstr ""
 
 #: author.php:11
@@ -47,7 +47,7 @@ msgid "Author Archives"
 msgstr ""
 
 #: author.php:18
-msgid "Archive of the posts written by author : %s."
+msgid "Archive of the posts written by author :"
 msgstr ""
 
 #: category.php:11
@@ -55,7 +55,7 @@ msgid "Category Archives"
 msgstr ""
 
 #: category.php:19
-msgid "Archive of posts published in the category: %s"
+msgid "Archive of posts published in the category:"
 msgstr ""
 
 #: comments.php:12
@@ -63,16 +63,16 @@ msgid ""
 "This post is password protected. Enter the password to view any comments"
 msgstr ""
 
-#: comments.php:21
-msgid "Comments (%1$s)"
+#: comments.php:21 single.php:37
+msgid "Comments"
 msgstr ""
 
 #: comments.php:32
-msgid "Older Comments <span class=\"meta-nav\">&rarr;</span>"
+msgid "Older Comments"
 msgstr ""
 
 #: comments.php:33
-msgid "<span class=\"meta-nav\">&larr;</span> Newer Comments"
+msgid "Newer Comments"
 msgstr ""
 
 #: comments.php:40
@@ -367,7 +367,7 @@ msgid "Search Results"
 msgstr ""
 
 #: search.php:15
-msgid "We have found following content based on your search query: %s."
+msgid "We have found following content based on your search query:"
 msgstr ""
 
 #: searchform.php:11
@@ -398,10 +398,6 @@ msgstr ""
 msgid "1 Comment"
 msgstr ""
 
-#: single.php:37
-msgid "Comments"
-msgstr ""
-
 #: single.php:51
 msgid "Tags: "
 msgstr ""
@@ -411,7 +407,7 @@ msgid "Tag Archives"
 msgstr ""
 
 #: tag.php:19
-msgid "Archive of posts published in the tag: %s"
+msgid "Archive of posts published in the tag:"
 msgstr ""
 
 #. Theme Name of the plugin/theme

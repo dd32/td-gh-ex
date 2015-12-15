@@ -15,7 +15,7 @@
         if (get_the_author_meta('description')) :
             printf('%s', "<p>" . get_the_author_meta('description') . "</p>");
         else :
-            printf(__('Archive of the posts written by author : %s.', 'actuate'), get_the_author());
+            printf(__('Archive of the posts written by author :', 'actuate').' %s.', get_the_author());
         endif;
         ?>
     </div>

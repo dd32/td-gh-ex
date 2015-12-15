@@ -16,7 +16,7 @@
         if (!empty($actuate_category_description)) {
             echo '<span>' . $actuate_category_description . '</span>';
         } else {
-            printf(__('Archive of posts published in the category: %s', 'actuate'), single_cat_title('', false));
+            printf(__('Archive of posts published in the category:', 'actuate').' %s', single_cat_title('', false));
         }
         ?>
     </div>

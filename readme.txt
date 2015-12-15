@@ -18,6 +18,14 @@ Go to https://wordpress.org/support/theme/actuate
 
 == Changelog ==
 
+= Version 1.0.1.1 - 15/12/2015 =
+* (assets/global/images) Folder removed
+* (assets/global/js/custom.js) Removed unused code
+* (assets/global/js/custom.min.js) Removed file
+* (assets/global/js/respond.js) Added un-minified code
+* (core files) Removed special characters from i18n strings
+* (actuate.pot) Regenerated
+
 = Version 1.0.1 - 08/12/2015 =
 * (includes/customizer.php + assets/admin/js/admin.js) Fixed enqueue + JS localization
 * (loop.php) Added i18n strings

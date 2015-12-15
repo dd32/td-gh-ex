@@ -12,7 +12,7 @@
         <h1><?php _e('Search Results', 'actuate') ?></h1>
     </div>
     <div class="archive-description">
-        <?php printf(__('We have found following content based on your search query: %s.', 'actuate'), get_search_query()) ?>
+        <?php printf(__('We have found following content based on your search query:', 'actuate').' %s.', get_search_query()) ?>
     </div>
 </div><!-- Archive Meta Container ends -->
 
