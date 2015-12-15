@@ -10,10 +10,8 @@ add_action('widgets_init', 'arise_widgets_init');
 function arise_widgets_init() {
 	register_widget( "arise_contact_widgets" );
 	register_widget("arise_parallax_widget");
-	register_widget("arise_display_team" );
 	register_widget("arise_post_widget");
 	register_widget("arise_parallax_video_widget");
-	register_widget("arise_widget_testimonial" );
 
 	register_sidebar(array(
 			'name' => __('Main Sidebar', 'arise'),

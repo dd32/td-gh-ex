@@ -113,11 +113,9 @@ require get_template_directory() . '/tgm/tgm.php';
 
 /************************ Arise Widgets  *****************************/
 require get_template_directory() . '/inc/widgets/widgets-functions/contactus-widgets.php';
-require get_template_directory() . '/inc/widgets/widgets-functions/ourteam-widgets.php';
 require get_template_directory() . '/inc/widgets/widgets-functions/parallax-widgets.php';
 require get_template_directory() . '/inc/widgets/widgets-functions/post-widgets.php';
 require get_template_directory() . '/inc/widgets/widgets-functions/register-widgets.php';
-require get_template_directory() . '/inc/widgets/widgets-functions/testimonials-widgets.php';
 require get_template_directory() . '/inc/widgets/widgets-functions/video-widgets.php';
 
 /************************ Arise Customizer  *****************************/

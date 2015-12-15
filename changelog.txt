@@ -1,4 +1,8 @@
 == CHANGE LOG ==
+= 1.1 =
+	- Fixed -
+		- Removed testimonial and our team widgets
+
 = 1.0.9 =
 	- Fixed -
 		- Unwanted button removed from testimonials-widgets.php and ourteam-widgets.php
