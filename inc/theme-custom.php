@@ -179,7 +179,7 @@ if ( ! function_exists( 'blue_planet_custom_css' ) ) :
 		echo '<style type="text/css">' . "\n";
 		echo 'header#masthead{background-color: ' . esc_attr( $banner_background_color ) . ';}';
 		if ( ! empty( $custom_css ) ) {
-			echo esc_textarea( $custom_css );
+			echo $custom_css;
 		}
 		echo "\n". '</style>' . "\n";
 	}
@@ -505,26 +505,6 @@ endif;
 
 add_action( 'blue_planet_after_masthead_open','blue_planet_header_content_stuff' );
 
-if ( ! function_exists( 'blue_planet_header_add_favicon' ) ) :
-
-	/**
-	 * Implement favicon.
-	 *
-	 * @since 1.0.0
-	 */
-	function blue_planet_header_add_favicon() {
-		if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) {
-			$custom_favicon = blueplanet_get_option( 'custom_favicon' );
-			if ( ! empty( $custom_favicon ) ) {
-				echo '<link rel="shortcut icon" href="' . esc_url( $custom_favicon ) . '" />';
-			}
-		}
-	}
-
-endif;
-
-add_action( 'wp_head','blue_planet_header_add_favicon' );
-
 if ( ! function_exists( 'blue_planet_add_editor_styles' ) ) :
 
 	/**
@@ -539,3 +519,25 @@ if ( ! function_exists( 'blue_planet_add_editor_styles' ) ) :
 endif;
 
 add_action( 'init', 'blue_planet_add_editor_styles' );
+
+if ( ! function_exists( 'blue_planet_custom_content_width' ) ) :
+
+	/**
+	 * Custom content width.
+	 *
+	 * @since 2.3
+	 */
+	function blue_planet_custom_content_width() {
+
+		global $post, $content_width;
+		if ( is_page() ) {
+			if ( is_page_template( 'templates/page-full-width.php' ) ) {
+				$content_width = 1110;
+			} elseif ( is_page_template( array( 'templates/page-content-sidebar.php', 'templates/page-sidebar-content.php', 'templates/page-one-column-disabled-sidebar.php' ) ) ) {
+				$content_width = 730;
+			}
+		}
+	}
+endif;
+
+add_filter( 'template_redirect', 'blue_planet_custom_content_width' );
