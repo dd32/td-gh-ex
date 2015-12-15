@@ -1,4 +1,10 @@
 == CHANGE LOG ==
+= 1.0.9 =
+	- Fixed -
+		- Unwanted button removed from testimonials-widgets.php and ourteam-widgets.php
+		- Text changed for video-widgets.php for user friendly
+		- missing pot file updated
+
 = 1.0.8 =
 	- Fixed -
 		- Removed  jquery.min.js file and also  jQuery loaded function

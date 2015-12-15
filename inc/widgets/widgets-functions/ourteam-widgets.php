@@ -83,14 +83,6 @@ class arise_display_team extends WP_Widget {
 			<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" />
 		</p>
 		<p>
-			<input type="submit" name="savewidget" id="widget-arise_ourteam_widget-2-savewidget" class="button button-primary widget-control-save right" value="Save"><span class="spinner" style="display: none;"></span>
-			<div class="alignleft">
-				<a class="widget-control-remove" href="#remove"><?php _e('Delete','arise');?></a> |
-				<a class="widget-control-close" href="#close"><?php _e('Close','arise');?></a>
-			</div>
-		</p>
-		<p> &nbsp; </p>
-		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>">
 				<?php _e( 'Title:', 'arise' ); ?>
 			</label>
@@ -326,11 +318,6 @@ class arise_display_team extends WP_Widget {
 				</label>
 				<input class="widefat" id="<?php echo $this->get_field_id($team_pocket_link); ?>" name="<?php echo $this->get_field_name($team_pocket_link); ?>" type="text" value="<?php if(isset ( $instance[$team_pocket_link] ) ) echo esc_attr( $instance[$team_pocket_link] ); ?>" />
 			</p>
-			<div class="alignleft">
-				<a class="widget-control-remove" href="#remove"><?php _e('Delete','arise');?></a> |
-				<a class="widget-control-close" href="#close"><?php _e('Close','arise');?></a>
-			</div>
-			<input type="submit" name="savewidget" id="widget-arise_ourteam_widget-2-savewidget" class="button button-primary widget-control-save right" value="Save"><span class="spinner" style="display: none;"></span> <br/><br/>
 			<hr><hr>
 			<p>&nbsp; </p>
 			<?php
