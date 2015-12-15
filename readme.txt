@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1015 Bruce E Wampler
 Requires at least: 4.2
 Tested up to: 4.4
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 
 == Description ==
 
@@ -225,3 +225,7 @@ with testing and feature suggestions.
 * Fix: Customizer link color preview
 * Tweak: new algorithm for Customizer Custom CSS live update
 * Tweak: modified weaverx_site_title and weaverx_tagline filters to allow HTML
+
+= Version 2.0.4 =
+* Fix: Customizer preview of bar under a title options
+* Fix: Generating invalid custom css file for Weaver Xtreme Plus.
