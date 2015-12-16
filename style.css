@@ -4,7 +4,7 @@ Theme URI: http://themefreesia.com/themes/arise
 Author: Theme Freesia
 Author URI: http://themefreesia.com
 Description: Arise is a Responsive Multi-Purpose Business WordPress Theme, Designed and Developed by Theme Freesia. This theme supports popular plugins like Breadcrumb NavXT, WP-PageNavi, Contact Form 7, Jetpack by WordPress.com, Polylang, Newsletter, bbPress and wooCommerce. It is also translation ready and easily customizable with lots of options using Customizer. It consists contact us template, gallery template and many widgets and sidebar.
-Version: 1.1
+Version: 1.1.1
 Text Domain: arise
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -425,7 +425,7 @@ a:hover {
 
 /* ----- Default Button ----- */
 .btn-default {
-	color: #666;
+	color: #484848;
 	font-weight: normal;
 	display: inline-block;
 	text-align: center;
@@ -440,7 +440,7 @@ a:hover {
 }
 .btn-default:hover {
 	background-color: #2b9b9b;
-	border-color: #2b9b9b; 
+	border: 1px solid #2b9b9b; 
 	color: #fff;
 }
 .light {
@@ -455,7 +455,7 @@ a:hover {
 .vivid:hover {
 	background-color: #fff;
 	border: 1px solid #fff;
-	color: #333;
+	color: #484848;
 }
 
 /* ----- Go To Top Button ----- */
@@ -2726,17 +2726,20 @@ input[type="checkbox"] {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    border-color: #2b9b9b transparent transparent;
+    border-top-color: #2b9b9b;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
     border-image: none;
     border-style: solid;
-    border-width: 16px;
+    border-width: 24px;
     content: "";
     height: 0;
     position: absolute;
     top: 100%;
     width: 0;
     left: 50%;
-    margin-left: -16px;
+    margin-left: -24px;
 }
 .widget_latest_blog .latest_blog_title {
 	background-color: #2b9b9b;
@@ -2788,7 +2791,7 @@ input[type="checkbox"] {
 	transform: scale(1.2);
 }
 .widget_latest_blog .blog-overlay {
- 	background: #2b9b9b;
+ 	background-color: #2b9b9b;
     color: #ffffff;
     font-size: 70px;
     font-weight: 200;
@@ -3088,8 +3091,7 @@ ul.next-prev li {
   	transition:background .5s ease;   
 }
 ul.next-prev li.active, ul.next-prev li:hover {
-	background: #2b9b9b;
-	color: #2b9b9b
+	background-color: #2b9b9b;
 }
 
 /* Client Widget
@@ -3301,7 +3303,7 @@ ul.next-prev li.active, ul.next-prev li:hover {
 }
 #colophon {
 	margin-top: -3px;
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 22px;
 }
 #colophon .widget-wrap {
@@ -3557,7 +3559,7 @@ a.slider-next:before {
 }
 nav.slider-button a.active, 
 nav.slider-button a:hover {
-	background:#2b9b9b;
+	background-color:#2b9b9b;
 }
 
 /* #bbpress

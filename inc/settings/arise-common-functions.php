@@ -173,15 +173,6 @@ function arise_has_featured_posts() {
 	return ! is_paged() && (bool) arise_get_featured_posts();
 }
 
-/***************************** wp_enqueue_script ********* *******************/
-function arise_jquery_javascript_file($hook) {
-	if( $hook != 'widgets.php' )
-	return;
-	wp_enqueue_script('arise-script', get_template_directory_uri() . '/inc/js/image-uploader.js', false, '1.0', true);
-	wp_enqueue_media();
-}
-add_action( 'admin_enqueue_scripts', 'arise_jquery_javascript_file' );
-
 /**************************** Display Header Title ***********************************/
 function arise_header_title() {
 	$format = get_post_format();

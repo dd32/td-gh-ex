@@ -1,4 +1,10 @@
 == CHANGE LOG ==
+= 1.1.1 =
+	- Fixed -
+		- image upload js removed
+		- style.css modified
+		- unwanted code removed from arise-common-functions.php
+
 = 1.1 =
 	- Fixed -
 		- Removed testimonial and our team widgets
