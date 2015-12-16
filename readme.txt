@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.4.4
+1. Update Font awesome 4.5.0
 @version 2.4.3
 1. Update Font awesome 4.4.0.
 2. Update Slider excerpt function.
