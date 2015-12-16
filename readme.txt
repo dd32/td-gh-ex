@@ -115,11 +115,14 @@ JavaScripts
                    Code and documentation copyright 2011-2014 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
 		
 	Images
-		1. Static Home Feature Image => https://unsplash.com/photos/X1g8f20v97I/download
-		2. Image in the screenshot are provided by Caroline Gutman(https://unsplash.com/carolinegutman) taken from the link(https://unsplash.com/photos/X1g8f20v97I/download)
-		   unsplash.com images are licensed under GPL.
+		1. Static Home Feature Image => https://pixabay.com/en/vw-camper-volkswagen-vw-car-336606/
+		2. Product Image
+		   https://pixabay.com/en/sofa-couch-surreal-eyes-dog-art-749629/
+		   https://pixabay.com/en/tablet-living-room-dog-woman-girl-843798/
+		   https://pixabay.com/en/tablet-ipad-read-screen-swipe-1075790/
+		   https://pixabay.com/en/business-hard-working-autonomous-1067978/
 
-Static Home Feature Image => http://dummyimage.com/1600x600/deb6de/1f2136
+		images are licensed under GPL.
 		   
 CSS Tooltips by Adam Whitcroft
 https://github.com/AdamWhitcroft/CSS.Tooltips
@@ -133,6 +136,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@Version 1.5.2
+1. Change Product Image
+2. Font awesome Icon Folder 4.4.0 to 4.5.0
 @Version 1.5.1
 1. Comments Author Issue resolved.
 @Version 1.5

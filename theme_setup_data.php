@@ -41,13 +41,13 @@ function theme_data_setup()
 			'project_one_thumb' => QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb.png',
 			'project_one_title' => 'Lorem Ipsum',
 			
-		    'project_two_thumb' => QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb.png',
+		    'project_two_thumb' => QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb1.png',
 			'project_two_title' => 'Postao je popularan',
 			
-			'project_three_thumb' => QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb.png',
+			'project_three_thumb' => QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb2.png',
 			'project_three_title' => 'kojekakve promjene s',
 			
-			'project_four_thumb' => QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb.png',
+			'project_four_thumb' => QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb3.png',
 			'project_four_title' => 'kojekakve promjene s',
 			
 			//BLOG

@@ -138,7 +138,7 @@ function quality_project_customizer( $wp_customize ) {
     ));
 	
 	//Project two image
-	$wp_customize->add_setting( 'quality_pro_options[project_two_thumb]',array('default' => get_template_directory_uri().'/images/project_thumb.png','type' => 'option','sanitize_callback' => 'esc_url_raw',));	
+	$wp_customize->add_setting( 'quality_pro_options[project_two_thumb]',array('default' => get_template_directory_uri().'/images/project_thumb1.png','type' => 'option','sanitize_callback' => 'esc_url_raw',));	
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize,
@@ -178,7 +178,7 @@ function quality_project_customizer( $wp_customize ) {
     ));
 	
 	//Project three image
-	$wp_customize->add_setting( 'quality_pro_options[project_three_thumb]',array('default' => get_template_directory_uri().'/images/project_thumb.png','type' => 'option','sanitize_callback' => 'esc_url_raw',));
+	$wp_customize->add_setting( 'quality_pro_options[project_three_thumb]',array('default' => get_template_directory_uri().'/images/project_thumb2.png','type' => 'option','sanitize_callback' => 'esc_url_raw',));
  
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
@@ -220,7 +220,7 @@ function quality_project_customizer( $wp_customize ) {
     ));
 	
 	//Project Four image
-	$wp_customize->add_setting( 'quality_pro_options[project_four_thumb]',array('default' => get_template_directory_uri().'/images/project_thumb.png','type' => 'option','sanitize_callback' => 'esc_url_raw',));
+	$wp_customize->add_setting( 'quality_pro_options[project_four_thumb]',array('default' => get_template_directory_uri().'/images/project_thumb3.png','type' => 'option','sanitize_callback' => 'esc_url_raw',));
  
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
