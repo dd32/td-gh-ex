@@ -15,11 +15,7 @@
 <p class = "content-error">
 <?php _e('Sorry! The content you are looking for is not  available.','afia');?><br />
 <?php _e('Try searching to see if any posts match it.','afia');?><br />
-<form method = "get" action='<?php echo esc_url( home_url( '/' ) ); ?>'  name = "search">
-
-<input type = "text" placeholder = "<?php _e('  Search','afia'); ?>" name= "s">
-<input type = "submit" value = "<?php _e('Search','afia');?>"/>
-</form>
+<?php get_search_form()?>
 </p>
 </div>
 </span>

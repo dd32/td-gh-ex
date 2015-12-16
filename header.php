@@ -23,7 +23,7 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 <!--We create a div container for the #content -->
 <div id = "content">
 <header class="header">
-<?php if(afia_sanitize_checkbox(get_theme_mod( 'afia_show_logo',false)) ):?>
+<?php if(esc_url( get_theme_mod( 'afia_upload_logo') ) ):?>
 <a href = "<?php echo esc_url( home_url( '/' ) );?>">
 <img src = "<?php echo esc_url( get_theme_mod( 'afia_upload_logo') ); ?>"/>
 </a>
@@ -46,7 +46,13 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 </div>
 <div id ="menu">
 <span class = 'tes'>
-<?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
+<?php
+$defaults = array(
+	'theme_location'  => 'primary',
+	'echo'            => true,
+	'fallback_cb'     => '',
+);
+ wp_nav_menu($defaults ); ?>
 </span>
 </div>
 <br />

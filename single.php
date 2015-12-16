@@ -9,6 +9,7 @@
 ?>
 <?php get_header();?>
 <?php 
+while ( have_posts() ) : 
 the_post();
 ?>
 <header id = "ex-header">
@@ -104,6 +105,7 @@ comments_template('/lib/content-comments.php');
 <?php 
 $cat = get_the_category();
 $title = get_the_title();
+endwhile;
 $cat_name = $cat[0]->name;
 $cat_id = get_cat_ID($cat_name);
 $afia_query = new WP_Query();
@@ -117,7 +119,7 @@ if($i<=2 && $i!=0)
 	echo '  |  ';
 }
 ?>
-<span id = "related_post_title"><a href= "<?php the_permalink(); ?>"><?php afia_lowercase(the_title(),true);?></a></span>      
+<span id = "related_post_title"><a href= "<?php the_permalink(); ?>"><?php the_title();?></a></span>      
 <?php
 $i++;
 endwhile;

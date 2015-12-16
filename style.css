@@ -2,10 +2,9 @@
 THEME NAME: Afia
 DESCRIPTION: This theme has a traditional blog layout and is simple, flexible and light-weight.
 Theme URI:https://github.com/dominic-n/afia
-Theme slug:afia
-Text Domain:  Afia
+Text Domain:  afia
 TAGS: right-sidebar, custom-background, custom-menu, custom-header, editor-style, featured-images, light, threaded-comments, sticky-post
-VERSION: 1.1.0
+VERSION: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 AUTHOR:DOMINIC_N
@@ -145,7 +144,7 @@ width:90%;
 position:relative;
 width:25%;
 top:10px;
-left:2%;
+left:1%;
 line-height: 2;
 }
 .recent-single-a, .categories a
@@ -168,6 +167,7 @@ color:green;
 {
 font-family:verdana;
 color:rgb(205,36,219);
+padding-left:5%;
 }
 #erral
 {
@@ -178,7 +178,7 @@ top:70px;
 {
 margin-top:10px;
 position:relative;
-width:70%;
+width:100%;
 background:rgb(234,238,238);
 border-color:black;
 border-style:solid;
@@ -188,6 +188,7 @@ border-left:none;
 padding-top:5px;
 padding-bottom:5px;
 }
+#errall{padding-left:10%;}
 #sideba ul{list-style:none;}
 #sideba h3{text-align:center;}
 #sideba>div{padding:2%; background:#eeeeee; border-radius:5px; margin-bottom:5px;}
@@ -602,5 +603,5 @@ text-transform:uppercase;
     letter-spacing:0.15em;
     text-decoration:none;
     }
-.tes li{height:42px; margin:0px; background:rgba(220,220,220,.5);text-align:center; line-height:42px;}
-.tes li:hover{background:rgba(220,120,20,.6);}
+.tes li{height:42px; margin:0px; background:rgba(220,220,220,.9);text-align:center; line-height:42px;}
+.tes li:hover{background:rgba(220,120,20,.9);}

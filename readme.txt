@@ -3,7 +3,7 @@
 /*-----------------------------------------------------------------------------------*/
 
 Theme Name      :   Afia
-Version         :   1.0.0
+Version         :   1.2.0
 Tested up to    :   WP 4.3
 Author          :   Dominic_N
 
@@ -36,7 +36,7 @@ Afia is a Light weight, simple, Responsive WordPress theme. It is professional, 
 For questions, comments, bug reports or request features contact dominicnjoroge2@gmail.com
 
 /*-----------------------------------------------------------------------------------*/
-/* Credits */
+/* License */
 /*-----------------------------------------------------------------------------------*/
 
 Afia WordPress Theme, Copyright 2015 Dominic_N
@@ -61,7 +61,7 @@ along with this program.  If not, see http://www.gnu.org/licenses/gpl-2.0.html.
 
 afia WordPress Theme bundles the following third-party resources:
 
-fortawesome icon font, Copyright 2014 Dave Gandy
+fontawesome icon font, Copyright 2014 Dave Gandy
 Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License
 Source: https://fortawesome.github.io/Font-Awesome/icons/
 
@@ -72,6 +72,10 @@ Source: http://postimg.org/image/grpjcek3z/
 screenshot.png image, Copyright 2015 Dominic_N
 screenshot.png licensed under the terms of the GNU GPL, Version 2 (or later)
 Source: http://postimg.org/image/jn3v0smu5/
+
+floating_house.png image, Copyright 2009 Pixar
+floating_house.png licensed under the terms of the GNU GPL, Version 3
+Source: http://www.balloonscape.com/images/up.jpg
 
 html5shiv  Copyright (c) 2014 Alexander Farkas (aFarkas).
 Dual licensed under the MIT or GPL Version 2 licenses

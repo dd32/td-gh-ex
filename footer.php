@@ -21,12 +21,13 @@
 <span class = "footertext">
 <?php 
 echo afia_echo_footer();
-wp_footer();
+
 ?>
 </span>
 </div>
 <!--End of content section-->
 </div>
 <!--End of the document body section-->
+<?php wp_footer();?>
 </body>
 </html>

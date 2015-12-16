@@ -11,5 +11,7 @@
 <?php if ( is_active_sidebar( 'sidebar-primary' ) ) {
 	dynamic_sidebar('sidebar-primary');
 } else { 
+if ( current_user_can( 'edit_theme_options' ) ):
 _e('This sidebar seems to contain no widgets. Go to customization > widgets and add widgets to primary sidebar.','afia');
+endif;
 } ?>
