@@ -3,26 +3,23 @@
  * Template Name: Full-width
  */
 
-// get user's comment display setting
-$comments_display = get_theme_mod('ct_ignite_comments_setting');
+$comments_display = get_theme_mod( 'ct_ignite_comments_setting' );
 
-get_header();
+get_header(); ?>
 
-// The loop
-if ( have_posts() ) :
-	while (have_posts() ) :
-		the_post();
-		get_template_part( 'content', 'page' );
-
-		// error prevention
-		if( is_array( $comments_display ) ) {
-
-			// check for pages as a selected option
-			if (in_array( 'pages', $comments_display ) ) {
-				comments_template();
+<div id="loop-container" class="loop-container">
+	<?php
+	if ( have_posts() ) :
+		while ( have_posts() ) :
+			the_post();
+			get_template_part( 'content', 'page' );
+			if ( is_array( $comments_display ) ) {
+				if ( in_array( 'pages', $comments_display ) ) {
+					comments_template();
+				}
 			}
-		}
-	endwhile;
-endif;
+		endwhile;
+	endif; ?>
+</div>
 
-get_footer();
+<?php get_footer();

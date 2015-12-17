@@ -1,19 +1,16 @@
 ( function( $ ) {
 
-    /*
-     * Following functions are for utilizing the postMessage transport setting
-     */
-
     var panel = $('html', window.parent.document);
     var body = $('body');
     var siteTitle = $('.site-title');
-    var inlineStyles = $('#style-inline-css');
+    var siteTitleLink = siteTitle.children('a');
+    var logo = $('#logo');
+    var inlineStyles = $('#ct-ignite-style-inline-css');
     var fontSelectors = "body, h1, h2, h3, h4, h5, h6, input:not([type='checkbox']):not([type='radio']):not([type='submit']):not([type='file']), input[type='submit'], textarea";
 
     // Site title
     wp.customize( 'blogname', function( value ) {
         value.bind( function( to ) {
-            // if there is a logo, don't replace it
             if( siteTitle.find('img').length == 0 ) {
                 siteTitle.children('a').text( to );
             }
@@ -34,14 +31,59 @@
             tagline.text( to );
         } );
     } );
+    wp.customize( 'logo_upload', function( value ) {
+        value.bind( function( to ) {
+            var siteTitleText = siteTitleLink.attr('title');
+            var logo          = siteTitleText;
+
+            if( to ) {
+                logo = "<span class='screen-reader-text'>" + siteTitleText + "</span><img id='logo' class='logo' src='" + to + "' alt='" + siteTitleText + "' />";
+            }
+
+            siteTitleLink.empty();
+            siteTitleLink.append(logo);
+        } );
+    } );
+    // Logo Position - up/down
+    wp.customize( 'logo_positioning_updown_setting', function( value ) {
+        value.bind( function( to ) {
+            logo.css({
+                'bottom': to + 'px',
+                'position': 'relative',
+                'right'   : 'auto',
+                'left'    : 'auto'
+            });
+        } );
+    } );
+    // Logo Position - left/right
+    wp.customize( 'logo_positioning_leftright_setting', function( value ) {
+        value.bind( function( to ) {
+            logo.css({
+                'left': to + 'px',
+                'position': 'relative',
+                'right'   : 'auto'
+            });
+        } );
+    } );
+    // Logo Size - width
+    wp.customize( 'logo_size_width_setting', function( value ) {
+        value.bind( function( to ) {
+            var newVal = parseInt(to) + 156;
+            logo.css('max-width', newVal + 'px');
+        } );
+    } );
+    // Logo Size - height
+    wp.customize( 'logo_size_height_setting', function( value ) {
+        value.bind( function( to ) {
+            var newVal = parseInt(to) + 59;
+            logo.css('max-height', newVal + 'px');
+        } );
+    } );
     // Layout
     wp.customize( 'ct_ignite_layout_settings', function( value ) {
         value.bind( function( to ) {
-
-            // remove left-sidebar class to avoid adding both
             body.removeClass('sidebar-left');
 
-            // add left-sidebar class (right doesn't have/need one)
             if ( to == 'left' ) {
                 body.addClass( 'sidebar-left' );
             }
@@ -51,11 +93,9 @@
     wp.customize( 'ct_ignite_background_color_setting', function( value ) {
         value.bind( function( to ) {
 
-            // all elements get default background
             if ( to == '#eeede8' ) {
                 $('.overflow-container, .main, .sidebar-primary-container, .breadcrumb-trail').css('background', to);
-            }  // or all elements get no background except overflow-container
-            else {
+            } else {
                 $('.overflow-container').css('background', to);
                 $('.main, .sidebar-primary-container, .breadcrumb-trail').css('background', 'none');
             }
@@ -64,7 +104,6 @@
     // Footer Text
     wp.customize( 'ct_ignite_footer_text_setting', function( value ) {
         value.bind( function( to ) {
-
             if ( to == '' ) {
                 to = '<a target="_blank" href="https://www.competethemes.com/ignite/">Ignite WordPress Theme</a> by Compete Themes.'
             }
@@ -138,8 +177,9 @@
             var fontStyle = 'normal';
 
             // change "regular" to 400
-            if ( to == 'regular' ) to = '400';
-
+            if ( to == 'regular' ) {
+                to = '400';
+            }
             // change "italic" to 400
             else if ( to == 'italic' ) {
                 to = '400';
