@@ -7,4 +7,6 @@ In this version you will get the theme blue color variant. Couple of templates a
 For any ideas, support and feedback you can access the theme forum.
 
 == Version ==
+= 1.0.1 =
+Corrected theme uri
 1.0 Released
