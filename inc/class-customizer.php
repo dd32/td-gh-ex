@@ -24,7 +24,8 @@ class Aesblo_Customizer {
 	 * @access private
 	 */
 	private function hooks() {
-		add_action( 'customize_register', array( $this, 'customize_register' ) );
+		add_action( 'customize_register', 				array( $this, 'customize_register' ) );
+		add_action( 'customize_preview_init' , 		array( $this , 'live_preview' ) );
 	}
 	
 	/**
@@ -74,14 +75,30 @@ class Aesblo_Customizer {
 		$wp_customize->add_setting( 'aesblo_customizer[copyright]', array(
 			'sanitize_callback' => 'wp_kses_post',
 			'capability'        => 'edit_theme_options',
+			'transport'					=> 'postMessage'
 		));
 		
 		$wp_customize->add_control( 'aesblo_copyright', array(
 			'section'			=> 'aesblo_copyright_section',
 			'settings' 			=> 'aesblo_customizer[copyright]',
 			'type'				=> 'textarea'
-		) );					
+		) );
+		
+		// Change some settings to 'postMessage'.
+		$wp_customize->get_setting( 'blogname' )->transport 					= 'postMessage';
+		$wp_customize->get_setting( 'blogdescription' )->transport 		= 'postMessage';					
 	}
+	
+	/**
+	 * This outputs the javascript needed to automate the live settings preview
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */	
+	public function live_preview() {
+		wp_enqueue_script( 'aesblo_customizer_preview', get_template_directory_uri() . '/assets/js/customize-preview.js', array( 'jquery', 'customize-preview' ), '', true );
+	}
+	
 }
 
 new Aesblo_Customizer;

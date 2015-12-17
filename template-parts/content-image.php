@@ -14,7 +14,7 @@
 	<div class="entry-content clearfix">
         <figure class="entry-attachment wp-caption">
             <?php
-                // Filter the default Twenty Fifteen image attachment size.
+                // Filter the default image attachment size.
                 $image_size = apply_filters( 'aesblo_attachment_size', 'large' );
                 echo wp_get_attachment_image( get_the_ID(), $image_size );
             ?>

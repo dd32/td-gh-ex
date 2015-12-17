@@ -58,12 +58,6 @@ class Aesblo_Custom_Style {
 		box-shadow: 0 5px rgba(<?php echo $secondary_color_rgb; ?>,1);
 	}
 	
-	button:hover,
-	input[type="button"]:hover,
-	input[type="submit"]:hover {
-		box-shadow: 0 4px rgba(<?php echo $secondary_color_rgb; ?>,1);
-	}
-	
 	.widget,
 	.widget a {
 		color: white;
@@ -73,10 +67,6 @@ class Aesblo_Custom_Style {
 	.primary-sidebar-content,
 	.secondary-sidebar {
 		background-color: <?php echo $primary_color; ?>;
-	}
-	
-	.widget_tag_cloud a:hover {
-		color: <?php echo $primary_color; ?>;
 	}
 	
 	.pagination .page-numbers,
@@ -90,17 +80,6 @@ class Aesblo_Custom_Style {
 	.page-links>span:after,
 	.page-links>a:after {
 		box-shadow: inset 0 0 0 4px <?php echo $primary_color; ?>;
-	}
-	
-	.pagination .page-numbers:hover,
-	.page-links>span:hover,
-	.page-links>a:hover {
-		background: <?php echo $primary_color; ?>;
-	}
-	
-	.pagination .next:hover,
-	.pagination .prev:hover {
-		color: <?php echo $primary_color; ?>;
 	}
 	
 	.pagination .next:before,
@@ -117,10 +96,6 @@ class Aesblo_Custom_Style {
 		background: <?php echo $primary_color; ?>;
 	}
 	
-	.post-navigation .nav-previous .meta-nav:hover {
-		color: <?php echo $primary_color; ?>;
-	}
-	
 	.entry-format .fa {
 		box-shadow: 
 			0 0 0 0.3em rgba(255, 255, 255, 0.6),
@@ -129,10 +104,6 @@ class Aesblo_Custom_Style {
 	
 	.entry-format .fa:after {
 		background: <?php echo $primary_color; ?>;
-	}	
-	
-	.entry-format .fa:hover {
-		color: <?php echo $primary_color; ?>;
 	}
 	
 	.entry-content .more-link {
@@ -149,10 +120,6 @@ class Aesblo_Custom_Style {
 	
 	.post-navigation .nav-next a {
 		background: <?php echo $secondary_color; ?>;	
-	}	
-	
-	.post-navigation .nav-next .meta-nav:hover {
-		color: <?php echo $secondary_color; ?>;
 	}
 	
 	.author-info {
@@ -180,10 +147,6 @@ class Aesblo_Custom_Style {
 		color: rgba(<?php echo $secondary_color_rgb; ?>, 0.5);
 	}
 	
-	.entry-footer a:hover {
-		color: rgba(<?php echo $secondary_color_rgb; ?>, 1);
-	}	
-	
 	/* Add header background image, also display at the sidebar. */
 	<?php 
 		$header_bg_image = $this->get_header_image();
@@ -199,7 +162,7 @@ class Aesblo_Custom_Style {
 			}
 			
 			.site-header {
-				background-position: center, top;
+				background-position: center;
 			}
 	<?php endif; ?>
 	
@@ -210,36 +173,20 @@ class Aesblo_Custom_Style {
 	?>
 			.post-navigation .nav-previous a {
 				background: rgba(<?php echo $primary_color_rgb; ?>, 0.3);
-			}
-			
-			.post-navigation .nav-previous a:hover {
-				background: rgba(<?php echo $primary_color_rgb; ?>, 0.8);
-			}						
+			}				
 			
 			.post-navigation .nav-previous:after {
 				background-image: url(<?php echo $post_nav_bg['prev']; ?>);
-			}
-			
-			.post-navigation .nav-previous:hover:after {
-				transform: scale( 1.1 );
 			}
 	<?php endif; ?>
 	
 	<?php if ( isset( $post_nav_bg['next'] ) && $post_nav_bg['next'] ): ?>
 			.post-navigation .nav-next a {
 				background: rgba(<?php echo $secondary_color_rgb; ?>, 0.3);
-			}
-			
-			.post-navigation .nav-next a:hover {
-				background: rgba(<?php echo $secondary_color_rgb; ?>, 0.8);
-			}						
+			}					
 			
 			.post-navigation .nav-next:after {
 				background-image: url(<?php echo $post_nav_bg['next']; ?>);
-			}
-			
-			.post-navigation .nav-next:hover:after {
-				transform: scale( 1.1 );
 			}			
 	<?php endif; ?>	
 	
@@ -272,6 +219,61 @@ class Aesblo_Custom_Style {
 					background-image: <?php echo $header_bg_image_mix; ?>;
 				}
 		<?php endif; ?>			
+	}
+	
+	@media screen and ( min-width: 1200px ) {
+		button:hover,
+		input[type="button"]:hover,
+		input[type="submit"]:hover {
+			box-shadow: 0 4px rgba(<?php echo $secondary_color_rgb; ?>,1);
+		}
+		.widget_tag_cloud a:hover {
+			color: <?php echo $primary_color; ?>;
+		}
+		.pagination .page-numbers:hover,
+		.page-links>span:hover,
+		.page-links>a:hover {
+			background: <?php echo $primary_color; ?>;
+		}
+		
+		.pagination .next:hover,
+		.pagination .prev:hover {
+			color: <?php echo $primary_color; ?>;
+		}
+		
+		.post-navigation .nav-previous .meta-nav:hover {
+			color: <?php echo $primary_color; ?>;
+		}
+		
+		.entry-format .fa:hover {
+			color: <?php echo $primary_color; ?>;
+		}
+		.post-navigation .nav-next .meta-nav:hover {
+			color: <?php echo $secondary_color; ?>;
+		}
+		.entry-footer a:hover {
+			color: rgba(<?php echo $secondary_color_rgb; ?>, 1);
+		}
+	<?php if ( isset( $post_nav_bg['prev'] ) && $post_nav_bg['prev'] ): ?>
+			
+			.post-navigation .nav-previous a:hover {
+				background: rgba(<?php echo $primary_color_rgb; ?>, 0.8);
+			}
+			
+			.post-navigation .nav-previous:hover:after {
+				transform: scale( 1.1 );
+			}
+	<?php endif; ?>
+	
+	<?php if ( isset( $post_nav_bg['next'] ) && $post_nav_bg['next'] ): ?>
+			.post-navigation .nav-next a:hover {
+				background: rgba(<?php echo $secondary_color_rgb; ?>, 0.8);
+			}
+			
+			.post-navigation .nav-next:hover:after {
+				transform: scale( 1.1 );
+			}			
+	<?php endif; ?>										
 	}
 </style>
 <?php

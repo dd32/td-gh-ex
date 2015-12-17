@@ -6,28 +6,31 @@
  * @since 1.0.0
  */
 ?>	
-	<footer id="colophon" class="colophon clearfix">		
+	<footer id="colophon" class="colophon clearfix" role="contentinfo">	
 		<?php 
 			$mod = get_theme_mod( 'aesblo_customizer' );
 			$copyright = isset( $mod[ 'copyright' ] ) ? $mod[ 'copyright' ] : '';
 			$footer_class = $copyright ? ' has-copyright' : '';
 		?>		
-        <div class="site-footer clearfix<?php echo esc_attr( $footer_class ); ?>">
+    <div class="site-footer clearfix<?php echo esc_attr( $footer_class ); ?>">
 			<?php
-                if ( $copyright ) {
-                    printf( '<div class="copyright">%1$s</div>', $copyright );
-                }
-            ?>			
-            <div class="theme-by">
-                <?php _e( 'Theme by', 'aesblo' ); ?> <a href="http://www.wpaesthetic.com">WPaesthetic</a>
-            </div>
+        if ( $copyright ) {
+            printf( '<div class="copyright">%1$s</div>', $copyright );
+        }
+      ?>			
+      <div class="theme-by">
+          <?php _e( 'Theme by', 'aesblo' ); ?> <a href="http://www.wpaesthetic.com">WPaesthetic</a>
+      </div>
 		</div>
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->
 
 <div id="popup-search" class="site-search">
-	<span class="fa fa-close"></span>
+	<button type="button" class="button-toggle close-search-form">
+  	<span class="screen-reader-text"><?php _e( 'Close the search form', 'aesblo' ); ?> </span>
+    <span class="fa fa-close"></span>
+  </button>
 	<?php get_search_form(); ?>
 </div>
 

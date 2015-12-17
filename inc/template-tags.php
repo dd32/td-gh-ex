@@ -60,22 +60,42 @@ function aesblo_quicklinks() {
 	$show_quick_links = $show_home_link || $show_primary_sidebar_link || $show_secondary_sidebar_link || $show_seach_link;
 	if ( $show_quick_links ) :
 ?>
-		<nav class="site-quicklinks clearfix">
-			<ul>
+		<nav class="site-quicklinks">
+			<ul class="clearfix">
 				<?php if ( $show_home_link ) : ?>
-					<li class="sq-home"><a href="<?php echo home_url( '/' ); ?>" rel="home"><span class="fa fa-home fa-2x"></span></a></li>
+					<li class="sq-home">
+            <a href="<?php echo home_url( '/' ); ?>" rel="home">
+            	<span class="screen-reader-text"><?php _ex( 'Home', 'Used before the home icon.', 'aesblo' ); ?> </span>
+              <span class="fa fa-home fa-2x"></span>
+            </a>
+           </li>
 				<?php endif; ?>
 				
 				<?php if ( $show_primary_sidebar_link ) : ?>
-					<li class="sq-primary-sidebar"><span class="fa fa-bars fa-2x q-bars"></span></li>
+					<li class="sq-primary-sidebar">
+          	<button type="button" class="button-toggle">
+            	<span class="screen-reader-text"><?php _e( 'Expand the primary sidebar', 'aesblo' ); ?> </span>
+              <span class="fa fa-bars fa-2x q-bars"></span>
+            </button>
+          </li>
 				<?php endif; ?>
 				
 				<?php if ( $show_secondary_sidebar_link ) : ?>
-					<li class="sq-secondary-sidebar"><span class="fa fa-ellipsis-h fa-2x q-ellipsis"></span></li>
+					<li class="sq-secondary-sidebar">
+          	<button type="button" class="button-toggle">
+            	<span class="screen-reader-text"><?php _e( 'Expand the secondary sidebar', 'aesblo' ); ?> </span>
+              <span class="fa fa-ellipsis-h fa-2x q-ellipsis"></span>
+            </button>
+          </li>
 				<?php endif; ?>
 				
 				<?php if ( $show_seach_link ) : ?>
-					<li class="sq-search"><span class="fa fa-search fa-2x q-search"></span></li>
+					<li class="sq-search">
+          	<button type="button" class="button-toggle">
+            	<span class="screen-reader-text"><?php _e( 'Poppup the search form', 'aesblo' ); ?> </span>
+              <span class="fa fa-search fa-2x q-search"></span>
+            </button>
+          </li>
 				<?php endif; ?>
 			</ul>
 		</nav>
@@ -105,8 +125,9 @@ function aesblo_entry_header() {
 	
 	// Time meta
 	if ( ! is_page() ) {
-		printf( '<time class="entry-date text-divider" datetime="%1$s"><a class="entry-date-link" href="%2$s">%3$s</a></time>',
+		printf( '<time class="entry-date text-divider" datetime="%1$s"><span class="screen-reader-text">%2$s </span><a class="entry-date-link" href="%3$s">%4$s</a></time>',
 			esc_attr( get_the_date( 'c' ) ),
+			_x( 'Posted on', 'Used before publish date.', 'aesblo' ),
 			esc_url( get_permalink() ),
 			get_the_time( get_option( 'date_format' ) )
 		);
@@ -134,7 +155,13 @@ function aesblo_entry_header_meta() {
 			
 			<?php if ( $is_format ) : ?>
 				<a href="<?php echo esc_url( get_post_format_link( $format ) ); ?>" class="entry-format">
-					<?php printf( '<span class="fa fa-%s"></span>', esc_attr( aesblo_get_format_icon( $format ) ) ); ?>
+					<?php 
+						printf( '<span class="screen-reader-text">%1$s: %2$s</span><span class="fa fa-%3$s"></span>', 
+							_x( 'Format', 'Used before post format.', 'aesblo' ),
+							get_post_format_string( $format ),
+							esc_attr( aesblo_get_format_icon( $format ) ) 
+						); 
+					?>
 				</a>
 			<?php endif; ?>
 		</div>
@@ -222,7 +249,13 @@ function aesblo_post_thumbnail() {
 	}	
 ?>
 	<figure class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
+		<?php if ( ! is_singular() ) : ?>
+    	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+    <?php 
+			else:
+				the_post_thumbnail();
+			endif; 
+		?>
 	</figure>
 <?php
 }
@@ -256,10 +289,11 @@ function aesblo_entry_footer() {
 ?>
 	<ol>
 		<?php if ( is_multi_author() ) : ?>
-                  <li class="byline">
-                      <span class="fa fa-user"></span>
-                      <?php the_author_posts_link(); ?>
-                  </li>
+            <li class="byline">
+                <span class="fa fa-user"></span>
+                <span class="screen-reader-text"><?php _ex( 'Author', 'Used before post author name.', 'aesblo' ); ?> </span>
+                <?php the_author_posts_link(); ?>
+            </li>
 		<?php endif; ?>
 		
 		<?php 
@@ -268,6 +302,7 @@ function aesblo_entry_footer() {
 		?>
 				<li class="cat-links">
 					<span class="fa fa-folder-open"></span>
+          <span class="screen-reader-text"><?php _ex( 'Categories', 'Used before category names.', 'aesblo' ); ?> </span>
 					<?php echo $categories_list; ?>
 				</li>
 		<?php endif; ?>
@@ -277,6 +312,7 @@ function aesblo_entry_footer() {
 			if ( $tags_list ) :
 		?>
 				<li class="tag-links">
+					<span class="screen-reader-text"><?php _ex( 'Tags', 'Used before tag names.', 'aesblo' ); ?> </span>
 					<?php echo $tags_list; ?>
 				</li>
 		<?php endif; ?>
@@ -286,34 +322,40 @@ function aesblo_entry_footer() {
 				// Retrieve attachment metadata.
 				$metadata = wp_get_attachment_metadata();
 				$parent_post_id = wp_get_post_parent_id( get_the_ID() );			
-        ?>
-               <?php 
-			   		if ( $parent_post_id ) :
-			   ?>
-                       <li class="parent-post">
-                            <a href="<?php echo esc_url( get_permalink( $parent_post_id ) ); ?>" title="<?php echo esc_attr( get_the_title( $parent_post_id ) ); ?>">
-                            	<span class="fa fa-level-up"></span>
-                                <span><?php _e( 'Published in', 'aesblo' ); ?></span>
-                            </a>
-                       </li>
-               <?php endif; ?>
+     ?>
+        <?php 
+			  	if ( $parent_post_id ) :
+			  ?>
+           	<li class="parent-post">
+                <a href="<?php echo esc_url( get_permalink( $parent_post_id ) ); ?>" title="<?php echo esc_attr( get_the_title( $parent_post_id ) ); ?>">
+                  <span class="fa fa-level-up"></span>
+                    <span><?php _e( 'Published in', 'aesblo' ); ?> </span>
+                    <span class="screen-reader-text"><?php echo get_the_title( $parent_post_id ); ?></span>
+                </a>
+           </li>
+         <?php endif; ?>
                 
-                <li class="image-data">
-                    <span class="fa fa-search-plus"></span>
-						<?php 
-                            printf( '<a href="%1$s">%2$s &times; %3$s</a>', 
-								esc_url( wp_get_attachment_url() ),
-								$metadata['width'], 
-								$metadata['height'] 
-							); 
-                        ?>
-                </li>
-        <?php endif; ?>            
+           <li class="image-data">
+              <span class="fa fa-search-plus"></span>
+              <span class="screen-reader-text"><?php _ex( 'Full size', 'Used before full size attachment link.', 'aesblo' ); ?> </span>
+							<?php 
+                printf( '<a href="%1$s">%2$s &times; %3$s</a>', 
+									esc_url( wp_get_attachment_url() ),
+									$metadata['width'], 
+									$metadata['height'] 
+								); 
+              ?>
+            </li>
+     <?php endif; ?>            
 		
-		<li class="comments-link">
-			<span class="fa fa-comment"></span>
-			<?php comments_popup_link( __( 'Leave a comment', 'aesblo' ), '1', '%' ); ?>
-		</li>
+    <?php if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+      <li class="comments-link">
+        <span class="fa fa-comment"></span>
+        <?php 
+          comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'aesblo' ), get_the_title() ) ); 
+        ?>
+      </li>
+    <?php endif; ?>
 		
 		<?php if ( get_edit_post_link() ) : ?>
                   <li class="edit-link">
@@ -442,11 +484,11 @@ function aesblo_post_navigation() {
 	
 	the_post_navigation( array(
 		'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'PREVIOUS', 'aesblo' ) . '</span> ' .
-			'<span class="screen-reader-text">' . __( 'Previous post:', 'aesblo' ) . '</span> ' .
-			'<span class="post-title">%title</span>',						
+										'<span class="screen-reader-text">' . __( 'Previous post:', 'aesblo' ) . '</span> ' .
+										'<span class="post-title">%title</span>',						
 		'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'NEXT', 'aesblo' ) . '</span> ' .
-			'<span class="screen-reader-text">' . __( 'Next post:', 'aesblo' ) . '</span> ' .
-			'<span class="post-title">%title</span>'
+										'<span class="screen-reader-text">' . __( 'Next post:', 'aesblo' ) . '</span> ' .
+										'<span class="post-title">%title</span>'
 	) );
 }
 
@@ -461,7 +503,8 @@ function aesblo_link_pages() {
 		'before'      => '<div class="page-links pagination"><span class="page-links-title">' . __( 'Pages:', 'aesblo' ) . '</span>',
 		'after'       => '</div>',
 		'link_before' => '<span>',
-		'link_after'  => '</span>',					
+		'link_after'  => '</span>',
+		'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'aesblo' ) . ' </span>%',					
 	) );
 }
 
@@ -475,7 +518,8 @@ function aesblo_link_pages() {
  */
 function aesblo_comments_paging() {
 ?>
-	<nav class="comments-navigation navigation pagination" role="navigation">
+	<nav class="comments-navigation navigation pagination" role="navigation" aria-label="<?php esc_attr_e( 'Comment navigation', 'aesblo' ); ?>">
+		<h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'aesblo' ); ?></h3>
 		<?php	
 			paginate_comments_links();
 		?>

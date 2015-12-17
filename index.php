@@ -10,9 +10,13 @@ get_header();
 ?>
 	
 <div id="content" class="site-content clearfix">
-	<main id="main" class="site-main">
+	<main id="main" class="site-main" role="main">
 		<?php
 			if ( have_posts() ) {
+				if ( is_home() && ! is_front_page() ) {
+					printf( '<header class="page-title screen-reader-text">%s</header>', single_post_title( '', false ) );
+				}
+				
 				// Loop
 				while ( have_posts() ) {
 					the_post();

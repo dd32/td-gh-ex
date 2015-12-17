@@ -1,0 +1,339 @@
+/*
+Theme Name: Aesblo
+Description: Adds support for languages written in a Right To Left (RTL) direction.
+It's easy, just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+See: https://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+
+/**
+ * Reset
+ */
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	margin-right: auto;
+	margin-left: 0.4375em;
+}
+
+
+/**
+ * Typography
+ */
+blockquote:before,
+q:before {
+  content: "\201D";
+	left: auto;
+	right: 0.1em;
+}
+
+blockquote {
+  padding: 1em 1.5em 1em 1em;
+}
+
+q {
+	padding: 0.2em 1.2em 0.2em 0.2em;
+}
+
+q:before {
+	margin-right: auto;
+	margin-left: 1em;
+}
+
+
+/**
+ * Elements
+ */
+
+ul,
+ol {
+	padding: 0 1.5em 0 0;
+}
+
+
+/**
+ * Header
+ */
+.site-quicklinks li {
+	float: right;
+	margin-right: 0;
+	margin-left: 30px;
+}
+
+.site-quicklinks li:last-child {
+	float: left;
+	margin-left: 0;
+}
+
+
+/**
+ * Menu
+ */
+.site-navigation  ul ul {
+   margin-left: 0;
+   margin-right: 1em;
+}
+
+.site-navigation .menu-item-has-children>a {
+    padding-right: 1em;
+    padding-left: 3.25em;
+}
+
+.site-navigation .submenu-switch {
+    right: auto;
+    left: 0;
+}
+
+.site-navigation .menu-item .fa {
+    margin-right: 0;
+    margin-left: 0.5em;
+}
+
+.site-navigation .menu-item .submenu-switch .fa {
+    margin-left: 0;
+}
+
+.site-navigation ul li a:after {
+    left: 100%;
+    right: 0;
+    transition: 0.5s left;   
+}
+
+
+/**
+ * Pagination
+ */
+.pagination .page-numbers,
+.page-links>span,
+.page-links>a {
+	margin: 0 0 0.5em 0.5em;
+}
+
+
+/**
+ * Content
+ */
+.sticky-post {
+	left: auto;
+	right: 5%;
+}
+
+.entry-format {
+	right: auto;
+	left: 10%;
+}
+
+.entry-footer li {
+	margin-right: 0;
+	margin-left: 1em;
+}
+
+.entry-content .more-link .fa {
+	margin-left: 0;
+	mrgint-right: 5px;
+}
+
+.post-password-required .post-password-form input[type="submit"] {
+	right: auto;
+	left: 0;
+}
+
+/**
+ * Author bio
+ */
+
+.author-info .author-avatar {
+	left: auto;
+	right: 0;
+	transform: translate(40%, -50%);
+}
+
+.author-info .author-bio {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.author-info:hover .author-avatar {
+	left: auto;
+	right: 1em;
+}
+
+/**
+ * Comments
+ */
+
+.comments-area .comments-title .fa,
+.comments-area .comment-reply-title .fa {
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+.comments-area .comment-list .children {
+	margin-left: 0;
+	margin-right: 1em;
+}
+
+.comments-area .avatar {
+	float: right;
+	margin-right: 0;
+	margin-left: 1em;
+}
+
+.bypostauthor .comment-body {
+	padding-left: 0;
+	padding-right: 20px;
+}
+
+.bypostauthor .comment-body:before {
+	left: auto;
+	right: 0;
+}
+
+.comments-area .reply {
+	float: left;
+}
+
+
+/**
+ * Archives
+ */
+
+.site-main .archive-icon {
+	float: right;
+}
+
+.site-main .archive-summary {
+	margin-left: 0;
+	margin-right: 4.5em;
+}
+
+
+/**
+ * Footer
+ */
+.site-search .close-search-form {
+	float: left;
+	margin: 2% 0 0 2%;
+}
+
+/**
+ * Sidebar
+ */
+.sidebar-buttons .active-secondary-sidebar,
+.sidebar-buttons .active-primary-sidebar {
+	float: right;
+}
+
+.sidebar-buttons .close-primary-sidebar,
+.sidebar-buttons .close-secondary-sidebar {
+	float: left;
+}
+ 
+.widget_categories .children,
+.widget_pages .children {
+	padding-left: 0;
+	padding-right: 1.5em;
+}
+
+.widget_recent_entries li .fa,
+.widget_categories li .fa,
+.widget_pages li .fa,
+.widget_recent_comments li .fa,
+.widget_meta li .fa,
+.widget_archive .fa,
+.widget_rss .fa {
+	margin-right: 0;
+	margin-left: 0.5em;
+}
+
+.widget_tag_cloud a {
+	margin: 0 0 10px 5px;
+}
+
+.widget_search .search-form:after {
+	right: auto;
+	left: 0;
+}
+
+.widget .post-date {
+	margin-left: auto;
+	margin-right: 0.5em;
+}
+
+/**
+ * Text divider
+ */
+.text-divider:before,
+.comment-reply-title:before {
+	right: auto;
+	left: 2%;
+}
+
+.text-divider:after,
+.comment-reply-title:after {
+	left: auto;
+	right: 2%;
+}
+
+
+/**
+ * Media Queries
+ */
+
+@media screen and ( min-width: 601px ) {
+	blockquote:before {
+		right: 0.2em;
+	}
+	
+	.has-copyright {
+		text-align: right;
+	}	
+
+	.has-copyright .copyright {
+		float: right;
+		padding-right: 0;
+		padding-left: 20px;
+		margin-right: 0;
+		margin-left: 20px;
+		border-right: none;
+		border-left: 1px solid #bbb;
+	}		
+}
+
+
+@media screen and ( min-width: 992px ) {
+	.primary-sidebar-expand,
+	.secondary-sidebar-expand {
+		left: auto;
+		right: 0;
+	}
+
+	.site-content:before,
+	.colophon:before {
+		float: right;
+	}
+
+	.site-main,
+	.site-footer {
+		float: right;
+	}
+
+	.error404 .site-main:before {
+		right: auto;
+		left: 20px;
+	}			
+}
+
+
+@media screen and ( min-width: 1200px ) {
+	.site-navigation ul li a:hover:after {
+		left: 0;
+	}
+}

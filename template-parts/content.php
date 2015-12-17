@@ -13,8 +13,10 @@
 	
 	<div class="entry-content clearfix">
 		<?php 
-			the_content(
-				__( 'Continue reading &raquo;', 'aesblo' )
+			the_content( sprintf(
+					__( 'Continue reading &raquo; %s', 'aesblo' ),
+					the_title( '<span class="screen-reader-text">', '</span>', false )
+				)				
 			);
 			
 			aesblo_link_pages();

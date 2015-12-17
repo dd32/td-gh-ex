@@ -9,24 +9,36 @@
 	 * Quick links at the header.
 	 */
 		(function() {
-			// Toggle the primary sidebar and secondary.
-			$( '.site-quicklinks .q-bars, .active-primary-sidebar' ).click(function() {
-				if ( ! isLgScreen() ) {
-					$( '#secondary-sidebar' ).removeClass( 'secondary-sidebar-expand' );
-					$( '#primary-sidebar-content' ).addClass( 'primary-sidebar-content-expand' );
-					$('body').addClass( 'covered-body' );			
+			// Toggle the primary sidebar and secondary sidebar.
+			$( '.sq-primary-sidebar .button-toggle, .active-primary-sidebar' ).on( 'click keypress', function(e) {
+				if ( e.which == 13 || e.type == 'click' ) {
+					if ( ! isLgScreen() ) {
+						$( '#secondary-sidebar' ).removeClass( 'secondary-sidebar-expand' );
+						$( '#primary-sidebar-content' ).addClass( 'primary-sidebar-content-expand' );
+						$('body').addClass( 'covered-body' );
+						
+						if ( e.which == 13 ) {
+							setTimeout( function(){ $('.close-primary-sidebar').focus(); }, 500 );
+						}						
+					}
 				}
 			});
 			
-			$( '.site-quicklinks .q-ellipsis, .active-secondary-sidebar' ).click(function() {
-				if ( isLgScreen() ) {
-					$( '#primary-sidebar' ).removeClass( 'primary-sidebar-expand' );
-					$( '#secondary-sidebar' ).addClass( 'secondary-sidebar-expand' );
-				} else {
-					$( '#secondary-sidebar' ).addClass( 'secondary-sidebar-expand' );
-					$( '#primary-sidebar-content' ).removeClass( 'primary-sidebar-content-expand' );
-					$('body').addClass( 'covered-body' );				
-				}			
+			$( '.sq-secondary-sidebar .button-toggle, .active-secondary-sidebar' ).on( 'click keypress', function(e) {
+				if ( e.which == 13 || e.type == 'click' ) {
+					if ( isLgScreen() ) {
+						$( '#primary-sidebar' ).removeClass( 'primary-sidebar-expand' );
+						$( '#secondary-sidebar' ).addClass( 'secondary-sidebar-expand' );
+					} else {
+						$( '#secondary-sidebar' ).addClass( 'secondary-sidebar-expand' );
+						$( '#primary-sidebar-content' ).removeClass( 'primary-sidebar-content-expand' );
+						$('body').addClass( 'covered-body' );				
+					}
+					
+					if ( e.which == 13 ) {
+						setTimeout( function(){ $('.close-secondary-sidebar').focus(); }, 500 );
+					}				
+				}
 			});
 			
 			$( '.close-primary-sidebar' ).click(function() {
@@ -34,6 +46,12 @@
 					$( '#primary-sidebar-content' ).removeClass( 'primary-sidebar-content-expand' );
 					$('body').removeClass( 'covered-body' );
 				}
+			});
+			
+			$( '.close-primary-sidebar' ).keypress(function(e) {
+				if ( e.which == 13 ) {
+					setTimeout( function(){ $( '.sq-primary-sidebar .button-toggle' ).focus(); }, 500 );
+				}			
 			});
 			
 			$( '.close-secondary-sidebar' ).click(function() {
@@ -45,6 +63,12 @@
 					$('body').removeClass( 'covered-body' );
 				}
 			});
+			
+			$( '.close-secondary-sidebar' ).keypress(function(e) {
+				if ( e.which == 13 ) {
+					setTimeout( function(){ $( '.sq-secondary-sidebar .button-toggle' ).focus(); }, 500 );
+				}			
+			});		
 			
 			$(window).resize(function() {
 				// Fix that the primary sidebar disappears sometimes.
@@ -62,16 +86,25 @@
 			});	
 			
 			// Toggle the search form
-			$( '.site-quicklinks .q-search' ).click(function() {
-				$( '#popup-search' ).addClass( 'site-search-open' ).find( '.search-field' ).focus();
+			$( '.sq-search .button-toggle' ).on( 'click keypress', function(e) {
+				if ( e.which == 13 || e.type == 'click' ) {
+					$( '#popup-search' ).addClass( 'site-search-open' ).find( '.search-field' ).focus();
+				}
 			});	
 			 
-			$( '#popup-search .fa-close' ).click(function() {
+			$( '.close-search-form' ).click(function() {
 				$( '#popup-search' ).removeClass( 'site-search-open' );
+			});
+			
+			$( '.close-search-form' ).keypress(function(e) {
+				if ( e.which == 13 ) {
+					setTimeout( function(){ $( '.sq-search .button-toggle' ).focus(); }, 500 );
+				}
 			});		
+					
 		})();
 	
-		
+	
 		/**
 		 * Primary nav menu.
 		 */
@@ -82,11 +115,23 @@
 			$( '#navigation .submenu-switch' ).click(function() {
 				var $switch = $(this);
 				$switch.next( '.sub-menu' ).toggle( 500, function() {
-					var expandIcon = $switch.data( 'expand_icon' );
-					var closeIcon = $switch.data( 'close_icon' );
-					$switch.find( '.fa' ).toggleClass( expandIcon + ' ' + closeIcon )
+					$switch.find( '.fa' ).toggleClass( 'fa-angle-down fa-angle-up' );
+					
+					if ( 'true' == $switch.attr( 'aria-expanded' ) ) {
+						$switch.attr( 'aria-expanded', 'false' );
+					} else {
+						$switch.attr( 'aria-expanded', 'true' );
+					}
+					
+					$screenReader = $switch.find( '.screen-reader-text' );
+					if ( aesblo.expandMenu == $screenReader.text() ) {
+						$screenReader.text( aesblo.collapseMenu );
+					} else {
+						$screenReader.text( aesblo.expandMenu );
+					}
 				});
 			});
+			
 		})();
 	
 		
@@ -99,9 +144,10 @@
 			$( '.widget_categories li' ).prepend( '<span class="fa fa-folder-o"></span>' );
 			$( '.widget_pages li' ).prepend( '<span class="fa fa-file-o"></span>' );
 			$( '.widget_recent_comments li' ).prepend( '<span class="fa fa-comment-o"></span>' );
-			$( '.widget_meta li' ).prepend( '<span class="fa fa-chain"></span>' );
+			$( '.widget_meta li' ).prepend( '<span class="fa fa-gear"></span>' );
 			$( '.widget_archive li' ).prepend( '<span class="fa fa-calendar"></span>' );
 			$( '.widget_rss li' ).prepend( '<span class="fa fa-rss"></span>' );
+			$( '.widget_nav_menu li' ).prepend( '<span class="fa fa-chain"></span>' );
 		})();
 	
 	
@@ -110,11 +156,13 @@
 		 */
 		(function() {
 			// Hide the featured label and the post format icon.
-			$( '.post-thumbnail img' ).hover(function() {
-				$( '.has-post-thumbnail .sticky-post, .has-post-thumbnail .entry-format' ).addClass( 'meta-hide' );
-			}, function() {
-				$( '.has-post-thumbnail .sticky-post, .has-post-thumbnail .entry-format' ).removeClass( 'meta-hide' );
-			});
+			if ( isLgScreen() ) {
+				$( '.post-thumbnail img' ).hover(function() {
+					$( '.has-post-thumbnail .sticky-post, .has-post-thumbnail .entry-format' ).addClass( 'meta-hide' );
+				}, function() {
+					$( '.has-post-thumbnail .sticky-post, .has-post-thumbnail .entry-format' ).removeClass( 'meta-hide' );
+				});
+			}
 		})();
 		
 		
