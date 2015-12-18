@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 1.4.1 - Released: 18.12.2015
+
+-- Optimized : Embed videos.
+
 - Version 1.4.0 - Released: 07.12.2015
 
 -- Fixed : Comment section for pages.

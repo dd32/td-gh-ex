@@ -499,13 +499,30 @@ if (!function_exists('suevafree_gallery_style')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*RESPONSIVE EMBED */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('suevafree_embed_html')) {
+	
+	function suevafree_embed_html( $html ) {
+		return '<div class="embed-container">' . $html . '</div>';
+	}
+	 
+	add_filter( 'embed_oembed_html', 'suevafree_embed_html', 10, 3 );
+	add_filter( 'video_embed_html', 'suevafree_embed_html' );
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* THEME SETUP */
 /*-----------------------------------------------------------------------------------*/   
 
 if (!function_exists('suevafree_setup')) {
 
 	function suevafree_setup() {
-
+		
+		global $content_width;
+		
 		if ( ! isset( $content_width ) )
 			$content_width = 940;
 
