@@ -1,46 +1,35 @@
 <?php
 
-// set the content width
 if ( ! isset( $content_width ) ) {
 	$content_width = 655;
 }
 
-// theme setup
-if( ! function_exists( 'unlimited_theme_setup' ) ) {
+if ( ! function_exists( 'unlimited_theme_setup' ) ) {
 	function unlimited_theme_setup() {
 
-		// add functionality from WordPress core
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
 		add_theme_support( 'html5', array(
-			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption'
 		) );
-
-		// adds support for Jetpack infinite scroll feature
 		add_theme_support( 'infinite-scroll', array(
 			'container' => 'loop-container',
 			'footer'    => 'overflow-container',
-			'render'    => 'ct_unlimited_infinite_scroll_render'
+			'render'    => 'unlimited_infinite_scroll_render'
 		) );
 
-		// load theme options page
 		require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
-
-		// add inc folder files
 		foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/*' ) as $filename ) {
 			include $filename;
 		}
 
-		// load text domain
 		load_theme_textdomain( 'unlimited', get_template_directory() . '/languages' );
 
-		// register Primary menu
 		register_nav_menus( array(
 			'primary' => __( 'Primary', 'unlimited' )
 		) );
@@ -48,24 +37,20 @@ if( ! function_exists( 'unlimited_theme_setup' ) ) {
 }
 add_action( 'after_setup_theme', 'unlimited_theme_setup', 10 );
 
-// register widget areas
-function unlimited_register_widget_areas(){
-
-    /* register primary sidebar widget area */
-    register_sidebar( array(
-        'name'         => __( 'Primary Sidebar', 'unlimited' ),
-        'id'           => 'primary',
-        'description'  => __( 'Widgets in this area will be shown in the sidebar next to the main post content', 'unlimited' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title' => '<h2 class="widget-title">',
-        'after_title' => '</h2>'
-    ) );
+function unlimited_register_widget_areas() {
+	register_sidebar( array(
+		'name'          => __( 'Primary Sidebar', 'unlimited' ),
+		'id'            => 'primary',
+		'description'   => __( 'Widgets in this area will be shown in the sidebar next to the main post content', 'unlimited' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>'
+	) );
 }
-add_action('widgets_init','unlimited_register_widget_areas');
+add_action( 'widgets_init', 'unlimited_register_widget_areas' );
 
-/* added to customize the comments. Same as default except -> added use of gravatar images for comment authors */
-if( ! function_exists( 'unlimited_customize_comments' ) ) {
+if ( ! function_exists( 'unlimited_customize_comments' ) ) {
 	function unlimited_customize_comments( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
 		global $post;
@@ -74,7 +59,7 @@ if( ! function_exists( 'unlimited_customize_comments' ) ) {
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
 			<div class="comment-author">
 				<?php
-					echo get_avatar( get_comment_author_email(), 48, '', get_comment_author() );
+				echo get_avatar( get_comment_author_email(), 48, '', get_comment_author() );
 				?>
 				<div class="author-name">
 					<span><?php comment_author_link(); ?></span> <?php _x( 'said:', 'the commenter said the following:', 'unlimited' ); ?>
@@ -96,29 +81,17 @@ if( ! function_exists( 'unlimited_customize_comments' ) ) {
 				<?php edit_comment_link( __( 'Edit', 'unlimited' ), '|' ); ?>
 			</div>
 		</article>
-	<?php
+		<?php
 	}
 }
 
-/* added HTML5 placeholders for each default field and aria-required to required */
-if( ! function_exists( 'unlimited_update_fields' ) ) {
+if ( ! function_exists( 'unlimited_update_fields' ) ) {
 	function unlimited_update_fields( $fields ) {
 
-		// get commenter object
 		$commenter = wp_get_current_commenter();
-
-		// are name and email required?
-		$req = get_option( 'require_name_email' );
-
-		// required or optional label to be added
-		if ( $req == 1 ) {
-			$label = '*';
-		} else {
-			$label = ' ' . __("optional", "unlimited");
-		}
-
-		// adds aria required tag if required
-		$aria_req = ( $req ? " aria-required='true'" : '' );
+		$req       = get_option( 'require_name_email' );
+		$label     = $req ? '*' : ' ' . __( '(optional)', 'unlimited' );
+		$aria_req  = $req ? "aria-required='true'" : '';
 
 		$fields['author'] =
 			'<p class="comment-form-author">
@@ -126,17 +99,15 @@ if( ! function_exists( 'unlimited_update_fields' ) ) {
 	            <input placeholder="' . __( "John Doe", "unlimited" ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
-
 		$fields['email'] =
 			'<p class="comment-form-email">
 	            <label for="email">' . __( "Email", "unlimited" ) . $label . '</label>
 	            <input placeholder="' . __( "name@email.com", "unlimited" ) . '" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
-
 		$fields['url'] =
 			'<p class="comment-form-url">
-	            <label for="url">' . __( "Website", "unlimited" ) . '</label>
+	            <label for="url">' . __( "Website", "unlimited" )  . '</label>
 	            <input placeholder="' . __( "http://example.com", "unlimited" ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			'" size="30" />
 	            </p>';
@@ -144,9 +115,9 @@ if( ! function_exists( 'unlimited_update_fields' ) ) {
 		return $fields;
 	}
 }
-add_filter('comment_form_default_fields','unlimited_update_fields');
+add_filter( 'comment_form_default_fields', 'unlimited_update_fields' );
 
-if( ! function_exists( 'unlimited_update_comment_field' ) ) {
+if ( ! function_exists( 'unlimited_update_comment_field' ) ) {
 	function unlimited_update_comment_field( $comment_field ) {
 
 		$comment_field =
@@ -158,45 +129,42 @@ if( ! function_exists( 'unlimited_update_comment_field' ) ) {
 		return $comment_field;
 	}
 }
-add_filter('comment_form_field_comment','unlimited_update_comment_field');
+add_filter( 'comment_form_field_comment', 'unlimited_update_comment_field' );
 
-// remove allowed tags text after comment form
-if( ! function_exists( 'unlimited_remove_comments_notes_after' ) ) {
+if ( ! function_exists( 'unlimited_remove_comments_notes_after' ) ) {
 	function unlimited_remove_comments_notes_after( $defaults ) {
-
 		$defaults['comment_notes_after'] = '';
-
 		return $defaults;
 	}
 }
+add_action( 'comment_form_defaults', 'unlimited_remove_comments_notes_after' );
 
-add_action('comment_form_defaults', 'unlimited_remove_comments_notes_after');
-
-// excerpt handling
-if( ! function_exists( 'unlimited_excerpt' ) ) {
+if ( ! function_exists( 'unlimited_excerpt' ) ) {
 	function unlimited_excerpt() {
 
-		// make post variable available
 		global $post;
-
-		// check for the more tag
-		$ismore = strpos( $post->post_content, '<!--more-->' );
-
-		// get the show full post setting
+		$ismore         = strpos( $post->post_content, '<!--more-->' );
 		$show_full_post = get_theme_mod( 'full_post' );
+		$read_more_text = get_theme_mod( 'read_more_text' );
 
-		// if show full post is on and not on a search results page
 		if ( ( $show_full_post == 'yes' ) && ! is_search() ) {
-
-			// use the read more link if present
 			if ( $ismore ) {
-				the_content( __( 'Read More', 'unlimited' ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
+				// Has to be written this way because i18n text CANNOT be stored in a variable
+				if ( ! empty( $read_more_text ) ) {
+					the_content( $read_more_text . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
+				} else {
+					the_content( __( 'Read More', 'unlimited' ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
+				}
 			} else {
 				the_content();
 			}
 		} // use the read more link if present
 		elseif ( $ismore ) {
-			the_content( __( 'Read More', 'unlimited' ) . "<span class='screen-reader-text'>" . get_the_title() . "</span>" );
+			if ( ! empty( $read_more_text ) ) {
+				the_content( $read_more_text . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
+			} else {
+				the_content( __( 'Read More', 'unlimited' ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
+			}
 		} // otherwise the excerpt is automatic, so output it
 		else {
 			the_excerpt();
@@ -204,38 +172,33 @@ if( ! function_exists( 'unlimited_excerpt' ) ) {
 	}
 }
 
-// filter the link on excerpts
-if( ! function_exists( 'unlimited_excerpt_read_more_link' ) ) {
+if ( ! function_exists( 'unlimited_excerpt_read_more_link' ) ) {
 	function unlimited_excerpt_read_more_link( $output ) {
-		global $post;
 
-		return $output . "<p><a class='more-link' href='" . get_permalink() . "'>" . __( 'Read More', 'unlimited' ) . "<span class='screen-reader-text'>" . get_the_title() . "</span></a></p>";
+		$read_more_text = get_theme_mod( 'read_more_text' );
+
+		if ( ! empty( $read_more_text ) ) {
+			return $output . "<p><a class='more-link' href='" . esc_url( get_permalink() ) . "'>" . $read_more_text . "<span class='screen-reader-text'>" . get_the_title() . "</span></a></p>";
+		} else {
+			return $output . "<p><a class='more-link' href='" . esc_url( get_permalink() ) . "'>" . __( 'Read More', 'unlimited' ) . "<span class='screen-reader-text'>" . get_the_title() . "</span></a></p>";
+		}
 	}
 }
-add_filter('the_excerpt', 'unlimited_excerpt_read_more_link');
+add_filter( 'the_excerpt', 'unlimited_excerpt_read_more_link' );
 
 // switch [...] to ellipsis on automatic excerpt
-if( ! function_exists( 'unlimited_new_excerpt_more' ) ) {
+if ( ! function_exists( 'unlimited_new_excerpt_more' ) ) {
 	function unlimited_new_excerpt_more( $more ) {
 
-		// get user set excerpt length
-		$new_excerpt_length = get_theme_mod('excerpt_length');
+		$new_excerpt_length = get_theme_mod( 'excerpt_length' );
+		$excerpt_more       = ( $new_excerpt_length === 0 ) ? '' : '&#8230';
 
-		// if set to 0, return nothing
-		if ( $new_excerpt_length === 0 ) {
-			return '';
-		}
-		// else add the ellipsis
-		else {
-			return '&#8230;';
-		}
-
+		return $excerpt_more;
 	}
 }
-add_filter('excerpt_more', 'unlimited_new_excerpt_more');
+add_filter( 'excerpt_more', 'unlimited_new_excerpt_more' );
 
-// turns of the automatic scrolling to the read more link 
-if( ! function_exists( 'unlimited_remove_more_link_scroll' ) ) {
+if ( ! function_exists( 'unlimited_remove_more_link_scroll' ) ) {
 	function unlimited_remove_more_link_scroll( $link ) {
 		$link = preg_replace( '|#more-[0-9]+|', '', $link );
 
@@ -244,33 +207,24 @@ if( ! function_exists( 'unlimited_remove_more_link_scroll' ) ) {
 }
 add_filter( 'the_content_more_link', 'unlimited_remove_more_link_scroll' );
 
-// change the length of the excerpts
 function unlimited_custom_excerpt_length( $length ) {
 
-	$new_excerpt_length = get_theme_mod('excerpt_length');
+	$new_excerpt_length = get_theme_mod( 'excerpt_length' );
 
-	// if there is a new length set and it's not 15, change it
-	if( ! empty( $new_excerpt_length ) && $new_excerpt_length != 25 ){
+	if ( ! empty( $new_excerpt_length ) && $new_excerpt_length != 25 ) {
 		return $new_excerpt_length;
-	}
-	// return 0 if user explicitly sets it to 0
-	elseif ( $new_excerpt_length === 0 ) {
+	} elseif ( $new_excerpt_length === 0 ) {
 		return 0;
-	}
-	else {
+	} else {
 		return 25;
 	}
 }
 add_filter( 'excerpt_length', 'unlimited_custom_excerpt_length', 99 );
 
-// for displaying featured images
-if( ! function_exists( 'unlimited_featured_image' ) ) {
+if ( ! function_exists( 'unlimited_featured_image' ) ) {
 	function unlimited_featured_image() {
 
-		// get post object
 		global $post;
-
-		// establish featured image var
 		$featured_image = '';
 
 		if ( has_post_thumbnail( $post->ID ) ) {
@@ -278,21 +232,19 @@ if( ! function_exists( 'unlimited_featured_image' ) ) {
 			if ( is_singular() ) {
 				$featured_image = '<div class="featured-image">' . get_the_post_thumbnail( $post->ID, 'full' ) . '</div>';
 			} else {
-				$featured_image = '<div class="featured-image"><a href="' . get_permalink() . '">' . get_the_title() . get_the_post_thumbnail( $post->ID, 'full' ) . '</a></div>';
+				$featured_image = '<div class="featured-image"><a href="' . esc_url( get_permalink() ) . '">' . get_the_title() . get_the_post_thumbnail( $post->ID, 'full' ) . '</a></div>';
 			}
 		}
 
-		// allow videos to be added
 		$featured_image = apply_filters( 'ct_unlimited_featured_image', $featured_image );
 
-		if( $featured_image ) {
+		if ( $featured_image ) {
 			echo $featured_image;
 		}
 	}
 }
 
-// associative array of social media sites
-if ( !function_exists( 'unlimited_social_array' ) ) {
+if ( ! function_exists( 'unlimited_social_array' ) ) {
 	function unlimited_social_array() {
 
 		$social_sites = array(
@@ -342,51 +294,55 @@ if ( !function_exists( 'unlimited_social_array' ) ) {
 	}
 }
 
-// used in unlimited_social_icons_output to return urls
-function unlimited_get_social_url($source, $site){
+if ( ! function_exists( 'unlimited_social_icons_output' ) ) {
+	function unlimited_social_icons_output( $source ) {
 
-	if( $source == 'header' ) {
-		return get_theme_mod($site);
-	} elseif( $source == 'author' ) {
-		return get_the_author_meta($site);
-	}
-}
-
-// output social icons
-if( ! function_exists('unlimited_social_icons_output') ) {
-	function unlimited_social_icons_output($source) {
-
-		// get social sites array
 		$social_sites = unlimited_social_array();
-
-		// icons that should use a special square icon
-		$square_icons = array('linkedin', 'twitter', 'vimeo', 'youtube', 'pinterest', 'rss', 'reddit', 'tumblr', 'steam', 'xing', 'github', 'google-plus', 'behance', 'facebook');
+		$square_icons = array(
+			'linkedin',
+			'twitter',
+			'vimeo',
+			'youtube',
+			'pinterest',
+			'rss',
+			'reddit',
+			'tumblr',
+			'steam',
+			'xing',
+			'github',
+			'google-plus',
+			'behance',
+			'facebook'
+		);
 
 		// store the site name and url
 		foreach ( $social_sites as $social_site => $profile ) {
 
-			if( $source == 'header') {
-
+			if ( $source == 'header' ) {
 				if ( strlen( get_theme_mod( $social_site ) ) > 0 ) {
-					$active_sites[$social_site] = $social_site;
+					$active_sites[ $social_site ] = $social_site;
 				}
-			}
-			elseif( $source == 'author' ) {
-
+			} elseif ( $source == 'author' ) {
 				if ( strlen( get_the_author_meta( $profile ) ) > 0 ) {
-					$active_sites[$profile] = $social_site;
+					$active_sites[ $profile ] = $social_site;
 				}
 			}
 		}
 
-		// for each active social site, add it as a list item
 		if ( ! empty( $active_sites ) ) {
 
 			echo "<ul class='social-media-icons'>";
 
 			foreach ( $active_sites as $key => $active_site ) {
 
-				// get the square or plain class
+				// get the URL
+				if ( $source == 'author' ) {
+					$url = get_the_author_meta( $active_site );
+				} elseif ( $source == 'header' ) {
+					$url = get_theme_mod( $active_site );
+				}
+
+				// get the class (square OR plain)
 				if ( in_array( $active_site, $square_icons ) ) {
 					$class = 'fa fa-' . $active_site . '-square';
 				} else {
@@ -396,17 +352,19 @@ if( ! function_exists('unlimited_social_icons_output') ) {
 				if ( $active_site == 'email' ) {
 					?>
 					<li>
-						<a class="email" target="_blank" href="mailto:<?php echo antispambot( is_email( unlimited_get_social_url( $source, $key ) ) ); ?>">
-							<i class="fa fa-envelope" title="<?php _e('email icon', 'unlimited'); ?>"></i>
+						<a class="email" target="_blank"
+						   href="mailto:<?php echo antispambot( is_email( $url ) ); ?>">
+							<i class="fa fa-envelope" title="<?php esc_attr_e( 'email', 'unlimited' ); ?>"></i>
 						</a>
 					</li>
 				<?php } else { ?>
 					<li>
-						<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank" href="<?php echo esc_url( unlimited_get_social_url( $source, $key ) ); ?>">
-							<i class="<?php echo esc_attr( $class ); ?>" title="<?php printf( __('%s icon', 'unlimited'), esc_attr( $active_site ) ); ?>"></i>
+						<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
+						   href="<?php echo esc_url( $url ); ?>">
+							<i class="<?php echo esc_attr( $class ); ?>" title="<?php esc_attr( $active_site ); ?>"></i>
 						</a>
 					</li>
-				<?php
+					<?php
 				}
 			}
 			echo "</ul>";
@@ -419,7 +377,7 @@ if( ! function_exists('unlimited_social_icons_output') ) {
  * making styling difficult and confusing. Using this wrapper to add a unique class to make styling easier.
  */
 function unlimited_wp_page_menu() {
-	wp_page_menu(array(
+	wp_page_menu( array(
 			"menu_class" => "menu-unset"
 		)
 	);
@@ -429,63 +387,55 @@ function unlimited_body_class( $classes ) {
 
 	global $post;
 
-	/* get layout chosen by user */
-	$layout = get_theme_mod('layout');
+	$layout    = get_theme_mod( 'layout' );
+	$full_post = get_theme_mod( 'full_post' );
 
-	/* get full post setting */
-	$full_post = get_theme_mod('full_post');
-
-	/* if sidebar left layout */
-	if($layout == 'left') {
+	if ( $layout == 'left' ) {
 		$classes[] = 'left-sidebar';
 	}
-	/* if full post setting on */
-	if( $full_post == 'yes' ) {
+	if ( $full_post == 'yes' ) {
 		$classes[] = 'full-post';
 	}
 
 	// add all historic singular classes
 	if ( is_singular() ) {
 		$classes[] = 'singular';
-		if ( is_singular('page') ) {
+		if ( is_singular( 'page' ) ) {
 			$classes[] = 'singular-page';
 			$classes[] = 'singular-page-' . $post->ID;
-		} elseif ( is_singular('post') ) {
+		} elseif ( is_singular( 'post' ) ) {
 			$classes[] = 'singular-post';
 			$classes[] = 'singular-post-' . $post->ID;
-		} elseif ( is_singular('attachment') ) {
+		} elseif ( is_singular( 'attachment' ) ) {
 			$classes[] = 'singular-attachment';
 			$classes[] = 'singular-attachment-' . $post->ID;
 		}
 	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'unlimited_body_class' );
 
 function unlimited_post_class( $classes ) {
-
 	$classes[] = 'entry';
-
 	return $classes;
 }
 add_filter( 'post_class', 'unlimited_post_class' );
 
-// custom css output
-function unlimited_custom_css_output(){
+function unlimited_custom_css_output() {
 
-	$custom_css = get_theme_mod('custom_css');
+	$custom_css = get_theme_mod( 'custom_css' );
 
-	/* output custom css */
-	if( $custom_css ) {
+	if ( $custom_css ) {
 		$custom_css = wp_filter_nohtml_kses( $custom_css );
 		wp_add_inline_style( 'style', $custom_css );
 	}
 }
-add_action('wp_enqueue_scripts', 'unlimited_custom_css_output', 20);
+add_action( 'wp_enqueue_scripts', 'unlimited_custom_css_output', 20 );
 
 function unlimited_sticky_post_marker() {
 
-	if( is_sticky() && !is_archive() ) {
+	if ( is_sticky() && ! is_archive() ) {
 		echo '<span class="sticky-status">Featured Post</span>';
 	}
 }
@@ -494,25 +444,47 @@ add_action( 'archive_post_before', 'unlimited_sticky_post_marker' );
 function unlimited_reset_customizer_options() {
 
 	// validate name and value
-	if( empty( $_POST['unlimited_reset_customizer'] ) || 'unlimited_reset_customizer_settings' !== $_POST['unlimited_reset_customizer'] )
+	if ( empty( $_POST['unlimited_reset_customizer'] ) || 'unlimited_reset_customizer_settings' !== $_POST['unlimited_reset_customizer'] ) {
 		return;
-
+	}
 	// validate nonce
-	if( ! wp_verify_nonce( $_POST['unlimited_reset_customizer_nonce'], 'unlimited_reset_customizer_nonce' ) )
+	if ( ! wp_verify_nonce( $_POST['unlimited_reset_customizer_nonce'], 'unlimited_reset_customizer_nonce' ) ) {
 		return;
-
+	}
 	// validate user permissions
-	if( ! current_user_can( 'manage_options' ) )
+	if ( ! current_user_can( 'edit_theme_options' ) ) {
 		return;
+	}
 
-	// delete customizer mods
-	remove_theme_mods();
+	$mods_array = array(
+		'logo_upload',
+		'search_bar',
+		'layout',
+		'full_post',
+		'excerpt_length',
+		'read_more_text',
+		'comments_display',
+		'custom_css'
+	);
+
+	$social_sites = unlimited_social_array();
+
+	// add social site settings to mods array
+	foreach ( $social_sites as $social_site => $value ) {
+		$mods_array[] = $social_site;
+	}
+
+	$mods_array = apply_filters( 'unlimited_mods_to_remove', $mods_array );
+
+	foreach ( $mods_array as $theme_mod ) {
+		remove_theme_mod( $theme_mod );
+	}
 
 	$redirect = admin_url( 'themes.php?page=unlimited-options' );
-	$redirect = add_query_arg( 'unlimited_status', 'deleted', $redirect);
+	$redirect = add_query_arg( 'unlimited_status', 'deleted', $redirect );
 
-	// safely redirect
-	wp_safe_redirect( $redirect ); exit;
+	wp_safe_redirect( $redirect );
+	exit;
 }
 add_action( 'admin_init', 'unlimited_reset_customizer_options' );
 
@@ -532,50 +504,19 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
 	function unlimited_add_title_tag() {
 		?>
 		<title><?php wp_title( ' | ' ); ?></title>
-	<?php
+		<?php
 	}
+
 	add_action( 'wp_head', 'unlimited_add_title_tag' );
 endif;
 
-function unlimited_loop_pagination(){
-
-	// don't output if Jetpack infinite scroll is being used
-	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) )
-		return;
-
-	global $wp_query;
-
-	// If there's not more than one page, return nothing.
-	if ( 1 >= $wp_query->max_num_pages ) {
-		return;
-	}
-
-	/* Set up some default arguments for the paginate_links() function. */
-	$defaults = array(
-		'base'         => add_query_arg( 'paged', '%#%' ),
-		'format'       => '',
-		'mid_size'     => 1
-	);
-
-	$loop_pagination = '<nav class="pagination loop-pagination">';
-	$loop_pagination .= paginate_links( $defaults );
-	$loop_pagination .= '</nav>';
-
-	return $loop_pagination;
-}
-
-// Adds useful meta tags
 function unlimited_add_meta_elements() {
 
 	$meta_elements = '';
 
-	/* Charset */
 	$meta_elements .= sprintf( '<meta charset="%s" />' . "\n", get_bloginfo( 'charset' ) );
-
-	/* Viewport */
 	$meta_elements .= '<meta name="viewport" content="width=device-width, initial-scale=1" />' . "\n";
 
-	/* Theme name and current version */
 	$theme    = wp_get_theme( get_template() );
 	$template = sprintf( '<meta name="template" content="%s %s" />' . "\n", esc_attr( $theme->get( 'Name' ) ), esc_attr( $theme->get( 'Version' ) ) );
 	$meta_elements .= $template;
@@ -588,9 +529,32 @@ add_action( 'wp_head', 'unlimited_add_meta_elements', 1 );
 remove_action( 'wp_head', 'wp_generator' );
 add_action( 'wp_head', 'wp_generator', 1 );
 
-function ct_unlimited_infinite_scroll_render(){
-	while( have_posts() ) {
+function unlimited_infinite_scroll_render() {
+	while ( have_posts() ) {
 		the_post();
 		get_template_part( 'content', 'archive' );
+	}
+}
+
+function unlimited_get_content_template() {
+
+	/* Blog */
+	if ( is_home() ) {
+		get_template_part( 'content', 'archive' );
+	} /* Post */
+	elseif ( is_singular( 'post' ) ) {
+		get_template_part( 'content' );
+	} /* Page */
+	elseif ( is_page() ) {
+		get_template_part( 'content', 'page' );
+	} /* Attachment */
+	elseif ( is_attachment() ) {
+		get_template_part( 'content', 'attachment' );
+	} /* Archive */
+	elseif ( is_archive() ) {
+		get_template_part( 'content', 'archive' );
+	} /* Custom Post Type */
+	else {
+		get_template_part( 'content' );
 	}
 }
