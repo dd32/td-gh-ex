@@ -38,7 +38,7 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
           <?php endif; ?>
 		</div>		
-<?php echo'<div id="myban">'; if ( of_get_option('optimize_ad1') <> "" ) { echo stripslashes(of_get_option('optimize_ad1')); } echo'</div>'; ?>
+<div id="myban"> <?php if ( of_get_option('optimize_ad1') <> "" ) { echo of_get_option('optimize_ad1'); } ?></div>
     </div> <!-- end div #header-inner -->
 	</header> <!-- end div #header -->
 

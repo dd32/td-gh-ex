@@ -56,6 +56,7 @@ function optimize_theme_setup() {
 
 		add_theme_support( 'post-thumbnails', array( 'post' ) ); // Add it for posts
 		set_post_thumbnail_size( 150, 150, true ); // Normal post thumbnails, 200 pixels wide by 200 pixels tall, hard crop mode
+		add_image_size( 'widgetthumb', 60, 60, true );
 	
 	    load_theme_textdomain('optimize', get_template_directory() . '/languages');
 			 //woocommerce plugin support

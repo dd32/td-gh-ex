@@ -133,7 +133,23 @@ $options[] = array(
 		'id' => 'optimize_activate_ltposts',
 		'std' => '1',
 		'type' => 'checkbox');
-
+	
+	$options[] = array(
+		'name' => __('Enable or Disable short length Excerpt for Post', 'optimize'),
+		'desc' => __('Check or uncheck this box to show post Content or Excerpt.', 'optimize'),
+		'id' => 'optimize_postexerpt',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Content',
+						'off' => 'Excerpt'
+						));
+		$options[] = array(		
+		'desc' => __('Excerpt Length Number of words display in every post description Default is 45.(Pro Only)', 'optimize'),
+		'id' => 'optimize_excerp',
+		'std' => '45',
+		'class' => 'mini',
+		'type' => 'text');
 
 				
 $options[] = array(
@@ -154,7 +170,7 @@ $options[] = array(
 		'desc' => __('Paste Ad Code for top banner.', 'optimize'),
             'id' => 'optimize_ad1',
             'std' => '',
-            'type' => 'textarea'
+            'type' => 'editor'
 			
 	);
 	$options[] = array(
@@ -162,13 +178,13 @@ $options[] = array(
 		'desc' => __('Activate Ads Space Below Navigation and put code in below test field.', 'optimize'),
 		'id' => 'optimize_banner_top',
 		'std' => '',
-		'type' => 'textarea');
+		'type' => 'editor');
 	$options[] = array(
 		 'name' => __( 'AD Code For Single Post', 'optimize' ),
             'desc' => __('Paste Ad code for single post it show ads below post title and before content.','optimize'),
             'id' => 'optimize_ad2',
             'std' => '',
-            'type' => 'textarea'
+            'type' => 'editor'
 			);
    	
 		
@@ -213,13 +229,7 @@ $options[] = array(
 		'id' => 'optimize_responsive',
 		'std' => '0',
 		'type' => 'checkbox');
-		$options[] = array(
-		'name' => __('Excerpt Length (Number of words display in post description)', 'optimize'),
-		'desc' => __('Number of words display in every post description Default is 45.', 'optimize'),
-		'id' => 'optimize_excerp',
-		'std' => '45',
-		'class' => 'mini',
-		'type' => 'text');
+		
 		$options[] = array(
 		'name' => __('Change Link Color', 'optimize'),
 		'desc' => __('Select Links Color.', 'optimize'),

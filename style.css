@@ -2,9 +2,9 @@
 Theme Name: Optimize
 Author: InsertCart
 Author URI: http://www.insertcart.com
-Theme URI: http://www.wrock.org/optimize-wordpress-theme/
+Theme URI: http://www.insertcart.com/product/optimize-wp-theme/
 Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts WooCommerce Supported for eCommerce website. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully optimize style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link. Live working Demo http://demo.baztro.com/optimize/
-Version: 1.7.1
+Version: 1.7.2
 Tags: black, white, light, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: optimize
 License: GNU General Public License v2
@@ -979,8 +979,8 @@ margin-bottom: -10px;
 	float: left;
 	padding: 2px;
 	border: 1px solid #dedbd1;
-	height: 45px;
-	width: 45px;
+	width: 60px;
+	height: 60px;
 	margin: 2px 12px 4px 0;
 }
 .latest-post .clear {
