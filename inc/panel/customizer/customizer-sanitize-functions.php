@@ -214,8 +214,6 @@ function adventurous_reset_all_settings( $input ) {
        
         // Flush out all transients	on reset
         adventurous_themeoption_invalidate_caches();
-
-        return '0';
     } 
     else {
         return '0';
@@ -257,8 +255,6 @@ function adventurous_sanitize_reset_featured_image( $input ) {
 		$options[ 'featured_header_image_base' ] 	= $defaults[ 'featured_header_image_base' ];
 
 		update_option( 'adventurous_options', $options );
-
-		return '0';
 	}
 }
 
@@ -284,8 +280,6 @@ function adventurous_sanitize_reset_layout( $input ) {
 		$options[ 'featured_image' ] = $defaults[ 'featured_image' ];
 
 		update_option( 'adventurous_options', $options );
-
-		return '0';
 	}
 }
 
@@ -310,7 +304,5 @@ function adventurous_sanitize_reset_moretag( $input ) {
 		$options[ 'excerpt_length' ]= $defaults[ 'excerpt_length' ];
 
 		update_option( 'adventurous_options', $options );
-
-		return '0';
 	}
 }

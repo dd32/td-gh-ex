@@ -299,7 +299,7 @@ function adventurous_customize_register( $wp_customize ) {
 		//Promotion Headline Options
 		'enable_promotion' => array(
 			'id' 			=> 'enable_promotion',
-			'title' 		=> __( 'Enable Promotion Headline on', 'adventurous' ),
+			'title' 		=> __( 'Enable Promotion', 'adventurous' ),
 			'description'	=> '',
 			'field_type' 	=> 'select',
 			'sanitize' 		=> 'adventurous_sanitize_select',
@@ -310,7 +310,7 @@ function adventurous_customize_register( $wp_customize ) {
 		),
 		'homepage_headline' => array(
 			'id' 			=> 'homepage_headline',
-			'title' 		=> __( 'Homepage Headline Text', 'adventurous' ),
+			'title' 		=> __( 'Headline Text', 'adventurous' ),
 			'description' 	=> __( 'Appropriate Words: 10', 'adventurous' ),
 			'field_type' 	=> 'textarea',
 			'sanitize' 		=> 'wp_kses_post',
@@ -320,7 +320,7 @@ function adventurous_customize_register( $wp_customize ) {
 		),
 		'homepage_subheadline' => array(
 			'id' 			=> 'homepage_subheadline',
-			'title' 		=> __( 'Homepage Subheadline Text', 'adventurous' ),
+			'title' 		=> __( 'Subheadline Text', 'adventurous' ),
 			'description' 	=> __( 'Appropriate Words: 15', 'adventurous' ),
 			'field_type' 	=> 'textarea',
 			'sanitize' 		=> 'wp_kses_post',
@@ -330,7 +330,7 @@ function adventurous_customize_register( $wp_customize ) {
 		),
 		'homepage_headline_button' => array(
 			'id' 			=> 'homepage_headline_button',
-			'title' 		=> __( 'Homepage Headline Button Text ', 'adventurous' ),
+			'title' 		=> __( 'Button Text ', 'adventurous' ),
 			'description'	=> __( 'Appropriate Words: 3', 'adventurous' ),
 			'field_type' 	=> 'text',
 			'sanitize' 		=> 'sanitize_text_field',
@@ -340,13 +340,23 @@ function adventurous_customize_register( $wp_customize ) {
 		),
 		'homepage_headline_url' => array(
 			'id' 			=> 'homepage_headline_url',
-			'title' 		=> __( 'Homepage Headline Link', 'adventurous' ),
+			'title' 		=> __( 'Button Link', 'adventurous' ),
 			'description'	=> __( 'Add link for your homepage headline button', 'adventurous' ),
 			'field_type' 	=> 'url',
 			'sanitize' 		=> 'esc_url_raw',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'promotion_headline_options',
 			'default' 		=> $defaults['homepage_headline_url']
+		),
+		'homepage_headline_target' => array(
+			'id' 			=> 'homepage_headline_target',
+			'title' 		=> __( 'Check to Open Link in New Window/Tab? ', 'adventurous' ),
+			'description'	=> '',
+			'field_type' 	=> 'checkbox',
+			'sanitize' 		=> 'adventurous_sanitize_checkbox',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'promotion_headline_options',
+			'default' 		=> $defaults['homepage_headline_target']
 		),
 		'disable_homepage_headline' => array(
 			'id' 			=> 'disable_homepage_headline',
