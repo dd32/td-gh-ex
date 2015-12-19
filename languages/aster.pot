@@ -1,0 +1,486 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Aster\n"
+"POT-Creation-Date: 2015-12-19 13:41+0600\n"
+"PO-Revision-Date: 2015-12-19 13:42+0600\n"
+"Last-Translator: \n"
+"Language-Team: Rubel Miah <abs.rubel1@gmail.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.7\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:7
+msgid "404"
+msgstr ""
+
+#: ../404.php:8
+msgid "Sorry, we could not found the page you are looking for!"
+msgstr ""
+
+#: ../comments.php:10
+msgid "No Comment"
+msgstr ""
+
+#: ../comments.php:10
+msgid "One Comments"
+msgstr ""
+
+#: ../comments.php:10
+msgid "% Comments"
+msgstr ""
+
+#: ../comments.php:31
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:32
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:33
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:38
+msgid "Comments are closed."
+msgstr ""
+
+#: ../comments.php:48
+msgid "Name *"
+msgstr ""
+
+#: ../comments.php:49
+msgid "Email *"
+msgstr ""
+
+#: ../comments.php:50
+msgid "Website"
+msgstr ""
+
+#: ../comments.php:59
+msgid "Write your comment..."
+msgstr ""
+
+#: ../comments.php:60
+msgid "Post Comment"
+msgstr ""
+
+#: ../content-none.php:4
+msgid "Nothing Found"
+msgstr ""
+
+#: ../content-none.php:10
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../content-none.php:15
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords\n"
+"\t\t\t."
+msgstr ""
+
+#: ../content-none.php:21
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../content-page.php:17 ../content-post.php:95
+msgid "Pages:"
+msgstr ""
+
+#: ../content-page.php:24 ../functions.php:209
+msgid "Edit"
+msgstr ""
+
+#: ../functions.php:33
+msgid "Primary Menu"
+msgstr ""
+
+#: ../functions.php:79
+msgid "Sidebar"
+msgstr ""
+
+#: ../functions.php:176
+msgid "Pingback:"
+msgstr ""
+
+#: ../functions.php:176
+msgid "(Edit)"
+msgstr ""
+
+#: ../functions.php:201
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../functions.php:211
+msgid "Reply"
+msgstr ""
+
+#: ../functions.php:234
+msgid "Facebook URL"
+msgstr ""
+
+#: ../functions.php:235
+msgid "Twitter URL"
+msgstr ""
+
+#: ../functions.php:236
+msgid "Google+ URL"
+msgstr ""
+
+#: ../functions.php:237
+msgid "Linkedin URL"
+msgstr ""
+
+#: ../functions.php:238
+msgid "Tumblr URL"
+msgstr ""
+
+#: ../functions.php:239
+msgid "Pinterest URL"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:10
+msgid "Footer Settings"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:14
+msgid "Page Settings"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:18
+msgid "Post Settings"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:22
+msgid "General Settings"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:164
+msgid "Homepage Layout"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:170
+msgid "Full Posts"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:171
+msgid "Right Sidebar"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:172
+msgid "Left Sidebar"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:183
+msgid "Blog Pagination or Navigation"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:189
+msgid "Pagination"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:190
+msgid "Navigation"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:201
+msgid "Disable Preloader"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:216
+msgid "Upload Logo"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:232
+msgid "Hide Author Name"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:245
+msgid "Hide Date"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:258
+msgid "Hide Category"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:272
+msgid "Hide Tags"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:285
+msgid "Hide Author Box"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:299
+msgid "Hide Next/Prev Post Navigation"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:314
+msgid "Hide Comments"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:330
+msgid "Disable Back to top"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:343
+msgid "Footer Copyright Text"
+msgstr ""
+
+#: ../inc/customizer/customizer_settings.php:360
+msgid "Theme Color"
+msgstr ""
+
+#: ../inc/template-tags.php:18
+msgid "<i class=\"fa fa-angle-left\"></i> Newer posts"
+msgstr ""
+
+#: ../inc/template-tags.php:28
+msgid "Older posts <i class=\"fa fa-angle-right\"></i>"
+msgstr ""
+
+#: ../inc/template-tags.php:79 ../inc/template-tags.php:118
+msgid ", "
+msgstr ""
+
+#: ../inc/template-tags.php:81
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: ../inc/template-tags.php:95
+msgid "By "
+msgstr ""
+
+#: ../inc/template-tags.php:152
+msgid "<i class=\"fa fa-angle-left\"></i> Previous Post"
+msgstr ""
+
+#: ../inc/template-tags.php:157
+msgid "Next Post <i class=\"fa fa-angle-right\"></i>"
+msgstr ""
+
+#: ../inc/template-tags.php:173
+#, php-format
+msgid "Browse Category: <span>%s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:175
+#, php-format
+msgid "Browse Tag: <span>%s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:177
+#, php-format
+msgid "Browse Author: <span>%s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:179
+#, php-format
+msgid "Browse Year: <span>%s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:179
+msgid "Y"
+msgstr ""
+
+#: ../inc/template-tags.php:181
+#, php-format
+msgid "Browse Month: <span>%s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:181
+msgid "F Y"
+msgstr ""
+
+#: ../inc/template-tags.php:183
+#, php-format
+msgid "Browse Day: <span>%s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:183
+msgid "F j, Y"
+msgstr ""
+
+#: ../inc/template-tags.php:186
+msgid "Asides"
+msgstr ""
+
+#: ../inc/template-tags.php:188
+msgid "Galleries"
+msgstr ""
+
+#: ../inc/template-tags.php:190
+msgid "Images"
+msgstr ""
+
+#: ../inc/template-tags.php:192
+msgid "Videos"
+msgstr ""
+
+#: ../inc/template-tags.php:194
+msgid "Quotes"
+msgstr ""
+
+#: ../inc/template-tags.php:196
+msgid "Links"
+msgstr ""
+
+#: ../inc/template-tags.php:198
+msgid "Statuses"
+msgstr ""
+
+#: ../inc/template-tags.php:200
+msgid "Audio"
+msgstr ""
+
+#: ../inc/template-tags.php:202
+msgid "Chats"
+msgstr ""
+
+#: ../inc/template-tags.php:205
+#, php-format
+msgid "Browse Archives: <span>%s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:209
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: ../inc/template-tags.php:212
+msgid "Archives"
+msgstr ""
+
+#: ../inc/widgets/about_widget.php:17
+msgid ""
+"A widget that displays an About\r\n"
+"\t\twidget"
+msgstr ""
+
+#: ../inc/widgets/about_widget.php:24
+msgid "Aster About Me"
+msgstr ""
+
+#: ../inc/widgets/about_widget.php:83
+msgid "About Me"
+msgstr ""
+
+#: ../inc/widgets/about_widget.php:88
+msgid "Title:"
+msgstr ""
+
+#: ../inc/widgets/about_widget.php:94
+msgid "Image URL:"
+msgstr ""
+
+#: ../inc/widgets/about_widget.php:96
+msgid ""
+"Insert your image URL. Your image should be at least 300px wide for best "
+"result."
+msgstr ""
+
+#: ../inc/widgets/about_widget.php:101
+msgid "About me text:"
+msgstr ""
+
+#: ../inc/widgets/blog-posts.php:14
+msgid "Aster Recent Posts"
+msgstr ""
+
+#: ../inc/widgets/blog-posts.php:14
+msgid "Aster Recent posts widget to display recent posts"
+msgstr ""
+
+#: ../inc/widgets/blog-posts.php:115
+msgid "Latest Posts"
+msgstr ""
+
+#: ../inc/widgets/blog-posts.php:122
+msgid "Widget Title"
+msgstr ""
+
+#: ../inc/widgets/blog-posts.php:127
+msgid "Ordered By"
+msgstr ""
+
+#: ../inc/widgets/blog-posts.php:130
+msgid "Popular"
+msgstr ""
+
+#: ../inc/widgets/blog-posts.php:131
+msgid "Latest"
+msgstr ""
+
+#: ../inc/widgets/blog-posts.php:132
+msgid "Most Commented"
+msgstr ""
+
+#: ../inc/widgets/blog-posts.php:153
+msgid "Count"
+msgstr ""
+
+#: ../inc/widgets/social-icons.php:14
+msgid "Aster Social Icons"
+msgstr ""
+
+#: ../inc/widgets/social-icons.php:15
+msgid "Displaying social icons"
+msgstr ""
+
+#: ../inc/widgets/social-icons.php:33
+msgid "Title :"
+msgstr ""
+
+#: ../inc/widgets/social-icons.php:38
+msgid "Enter facebook URL:"
+msgstr ""
+
+#: ../inc/widgets/social-icons.php:43
+msgid "Enter twitter URL:"
+msgstr ""
+
+#: ../inc/widgets/social-icons.php:47
+msgid "Enter google URL:"
+msgstr ""
+
+#: ../inc/widgets/social-icons.php:51
+msgid "Enter pinterest URL:"
+msgstr ""
+
+#: ../inc/widgets/social-icons.php:55
+msgid "Enter dribbble URL:"
+msgstr ""
+
+#: ../inc/widgets/social-icons.php:59
+msgid "Enter behance URL:"
+msgstr ""
+
+#: ../inc/widgets/social-icons.php:63
+msgid "Enter youtube URL:"
+msgstr ""
+
+#: ../inc/widgets/social-icons.php:87
+msgid "Social Icons"
+msgstr ""
+
+#: ../search.php:17
+#, php-format
+msgid "Search Results: <span>%s</span>"
+msgstr ""
+
+#: ../searchform.php:3
+msgid "Search and hit enter..."
+msgstr ""
