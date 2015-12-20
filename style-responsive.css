@@ -1,0 +1,60 @@
+/* Awesome Theme by D5 Creation, www.d5creation.com
+/* =Responsive Design 
+-------------------------------------------------------------- */
+
+/* Responsive Styles */
+
+@media screen and (max-width: 1279px) {
+	body { width: 100%; min-width: 0; }
+	.item-gallery { width: 33.33%; }
+	.fea-box { width: 67%; }
+}
+
+@media screen and (max-width: 1023px) {
+	img.site-logo, h1.site-title { display: block; float: none; margin: 0 auto; width: 40%; }
+	.awesome-top-menu-container { padding: 0 0 7px; }
+	#awesome-main-menu { position: relative; display: block; width: 100%; max-width: 100%; text-align: center; right: auto; }
+	#awesome-main-menu ul { display: inline-block; margin: 0; }
+	.mainslider .owl-pagination { display: none; }
+	.mainslider h2 { font-size: 25px; }
+	p.mslider-caption { font-size: 13px; }
+	.mainslider .slide-links .slide_btn { font-size: 15px; }
+	.item-gallery { width: 50%; }
+	.service-box, .fea-box { width: 100%; }
+	.fea-box-item { margin: 0 5% 30px 0; }
+	.fea-box .snf-heading { margin-left: 0; }
+	.view-staff, .bqpcontainer .featured-box { width: 45%; }
+	#content { width: 100%; }
+	#right-sidebar, #footer-sidebar { width: 100%; float: none; display: block; text-align: center; }
+	#right-sidebar .widget, #footer-sidebar .first-footer-widget, #footer-sidebar .footer-widgets { display: inline-block; margin: 2%; width: 45%; vertical-align: top; text-align: left; float: none; }
+	
+}
+
+@media screen and (max-width: 799px) {
+	p.mslider-caption { display: none; }
+	.featured-box, .bqpcontainer .featured-box, .contactcontainer .floatleft, .contactcontainer .floatright, #right-sidebar .widget, #footer-sidebar .first-footer-widget, #footer-sidebar .footer-widgets  { width: 85%; min-width: 250px; display: block; margin: 10px auto; float: none; }
+	.view-staff { width: 50%; min-width: 250px; }
+	.view-staff img { width: 100%; }
+	.bqpcontainer .fpthumb { max-height: 35vw; }
+	.fea-box-item { margin: 5% 0; width: 100%; }
+	h3.fea-item::before { font-size: 20px; }
+	.mobile-menu { display: block; }
+	#awesome-main-menu { display: none; position: absolute; top: 100%; left: 0; }
+	#awesome-main-menu a { margin: 0 auto; border-bottom: 1px solid #EEEEEE; padding: 10px; background: #F6F6F6; width: 100%;  }
+	#awesome-main-menu ul { margin: 0 auto; }
+	#awesome-main-menu li { float: none; width: 220px; margin: 0 auto; }
+	#awesome-main-menu ul ul a { margin: 0 auto; width: 100%; }
+	#awesome-main-menu ul ul, #awesome-main-menu ul ul ul { left: 5%; top: 90%; }
+	.view-staff, .bqpcontainer .featured-box { width: 65%; min-width: 250px; }
+	.item-gallery { width: 100%; margin-bottom: 0; }
+	.awesome-top-menu ul.menu { border: none; }
+	.awesome-top-menu .menu a { padding: 5px; }
+}
+
+@media screen and (max-width: 599px) {
+
+}
+
+@media screen and (max-width: 499px) {
+
+}
