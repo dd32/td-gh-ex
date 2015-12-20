@@ -9,7 +9,7 @@ get_header(); ?>
 <div class="container">
 			<section class="error-404 not-found">
 				<header class="page-header">
-<h3><div class="fourzerofour">4<i class="fa fa-meh-o"></i>4</div>Page not Found</h3>
+<h3><div class="fourzerofour">4<i class="fa fa-meh-o"></i>4</div><?php _e('Page not Found'); ?></h3>
 				</header><!-- .page-header -->
 
 				<div class="page-content">

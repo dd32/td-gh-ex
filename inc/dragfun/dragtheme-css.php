@@ -4,8 +4,8 @@
 5.1 Links
 --------------------------------------------------------------*/
 a {
-<?php if(get_option('dt_linkcolor')) { ?>
-color: <?php echo get_option('dt_linkcolor'); ?>;
+<?php if(get_theme_mod("linkcolor-setting")) { ?>
+color: <?php echo get_theme_mod("linkcolor-setting"); ?>;
 <?php } else{?>
 color:#333333;
 <?php } ?>
@@ -15,22 +15,16 @@ color:#333333;
 a:hover,
 a:focus,
 a:active{
-<?php if(get_option('dt_linkhovercolor')) { ?>
-color: <?php echo get_option('dt_linkhovercolor'); ?>;
+<?php if(get_theme_mod("linkcolorhover-setting")) { ?>
+color: <?php echo get_theme_mod("linkcolorhover-setting"); ?>;
 <?php } else{?>
 color:#d23f50;
 <?php } ?>
 }
-.sub-scribe-button{
-  <?php if(get_option('dt_themecolor')) { ?>
-  color: <?php echo get_option('dt_themecolor'); ?> !important;
-  <?php } else{?>
-      color:#d23f50 !important;
-<?php } ?>
-}
-<?php if(get_option('dt_fontname')){?>
+
+<?php if(get_theme_mod("typography-setting")){?>
 html{
-	font-family:<?php echo get_option('dt_fontname') ;?>;
+	font-family:<?php echo get_theme_mod("typography-setting") ;?>;
 }
 <?php } else{?>
 html{
@@ -40,8 +34,8 @@ html{
 
 .menu-footer ul ul li:hover > a,
 .menu-footer ul ul li a:hover, .hentry .entry-meta, .menu-footer > ul > li:hover > a, .drag-social-button a:hover, .three-column-footer h2{
-  <?php if(get_option('dt_themecolor')){ ?>
-color: <?php echo get_option('dt_themecolor'); ?>;
+  <?php if(get_theme_mod("color-setting")){ ?>
+color: <?php echo get_theme_mod("color-setting"); ?>;
 <?php } else{ ?>
 color: #d23f50;
 <?php } ?>
@@ -66,26 +60,26 @@ input[type="submit"],
 .main-navigation ul .current-menu-item,
 .tagcloud a:hover
 {
-<?php if(get_option('dt_themecolor')){ ?>
-background: <?php echo get_option('dt_themecolor'); ?>;
+<?php if(get_theme_mod("color-setting")){ ?>
+background: <?php echo get_theme_mod("color-setting"); ?>;
 <?php } else{ ?>
 background: #d23f50;
 <?php } ?>
 }
-<?php if(get_option('dt_bodycolor')){ ?>
+<?php if(get_theme_mod("fontcolor-setting")){ ?>
 .entry-content{
-color: <?php echo get_option('dt_bodycolor'); ?>;
+color: <?php echo get_theme_mod("fontcolor-setting"); ?>;
 }
 <?php } ?>
-<?php if(get_option('dt_bfontsize')){ ?>
+<?php if(get_theme_mod("fontsize")){ ?>
 .entry-content{
-font-size: <?php echo get_option('dt_bfontsize'); ?>;
+font-size: <?php echo get_theme_mod("fontsize"); ?>px;
 }
 <?php } ?>
 /*--------------------------------------------------------------
 5.1 Boxed Layout
 --------------------------------------------------------------*/
-<?php if(get_option('dt_homelayout') == 'boxedl'){ ?>
+<?php if(get_theme_mod("layout_placement") == 'boxed'){ ?>
 #page {
   width: 1140px;
   margin: 0px auto;
@@ -128,11 +122,8 @@ body{
   width: 300px;
 }
     }
-<?php if(get_option('dt_backcolor')) { ?>
-body {
-  background: <?php echo get_option('dt_backcolor'); ?>;
-}
-<?php } if(get_option('dt_backimg')) {?>
+
+<?php if(get_theme_mod( 'howl-themes_bgimg' )) {?>
 body {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -141,7 +132,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image:url('<?php echo get_option('dt_backimg'); ?>');
+  background-image:url('<?php echo esc_url( get_theme_mod( 'howl-themes_bgimg' ) ); ?>');
 }
 <?php } ?>
 
@@ -153,5 +144,4 @@ body {
 }
 
 <?php } ?>
-<?php echo get_option('dt_custom_css'); ?>
 </style>

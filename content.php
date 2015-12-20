@@ -11,7 +11,6 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<div class="postdcp"><?php drag_themes_posted_on(); ?></div>
-<?php showstarrating();?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -28,8 +27,8 @@
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-} elseif(catch_that_image()){
- $source_image_url = catch_that_image();
+} elseif(howlthemes_catch_that_image()){
+ $source_image_url = howlthemes_catch_that_image();
  $resizedImage = aq_resize($source_image_url, 250, 200, true);
  echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
  echo '<img src="';
@@ -53,6 +52,6 @@ else{
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<div class="read-more-button"><a href="<?php the_permalink(); ?>">Read More <i class="fa fa-long-arrow-right"></i></a></div>
+		<div class="read-more-button"><a href="<?php the_permalink(); ?>"><?php _e( 'Read More' ); ?> <i class="fa fa-long-arrow-right"></i></a></div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

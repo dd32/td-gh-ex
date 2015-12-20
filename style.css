@@ -4,10 +4,11 @@ Theme URI: http://www.howlthemes.com/aqueduct-free-magazine-wordpress-theme/
 Author: HowlThemes
 Author URI: http://www.howlthemes.com
 Description: Aqueduct is easy to use minimal magazine/blog theme for wordpress. It has advance theme builder which let you customize this theme without even touching a single line of code, This Theme is compatible with WooCommerce and BBPress.
-Version: 1.5.1
+Version: 1.5.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Text Domain: howl-themes
 */
 
 /*--------------------------------------------------------------
@@ -875,51 +876,6 @@ margin-top:10px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 20px;
   margin-bottom: 20px;
-}
-.howl-sharing-buttons p, .relatedposts p{
-  font-weight: 700;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-.howl-sharing-buttons a {
-  color: #fff;
-  padding: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
-  font-size: 16px;
-  margin-right: 4px;
-}
-.howl-sharing-buttons a:hover{
-color:#fff;
-background:#333 !important;
-}
-.howl-sharing-buttons {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 30px;
-    margin-bottom: 10px;
-
-}
-.related-posts {
-  width: 220px;
-  float: left;
-  margin-right: 39px;
-}
-.related-posts h2 {
-  margin-top: 0px;
-  font-size: 23px;
-  font-weight: 400;
-}
-.related-posts h2 a {
-  text-decoration: none;
-}
-.related-posts.rpost3 {
-  margin-right: 0px;
-}
-.relatedposts {
-  overflow: auto;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
 }
 
 .blog .format-aside .entry-title,

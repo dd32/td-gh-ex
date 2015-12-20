@@ -47,13 +47,13 @@ function drag_themes_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ' ', 'howl-themes' ) );
 		if ( $categories_list && drag_themes_categorized_blog() ) {
-			printf( '<div class="cat-links">' . __( '<i class="fa fa-folder-open"></i>Category %1$s', 'howl-themes' ) . '</div>', $categories_list );
+			printf( '<div class="cat-links"><i class="fa fa-folder-open"></i>' . __( ' Category %1$s', 'howl-themes' ) . '</div>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ' ', 'howl-themes' ) );
 		if ( $tags_list ) {
-			printf( '<div class="tags-links">' . __( '<i class="fa fa-tags"></i> Tagged %1$s', 'howl-themes' ) . '</div>', $tags_list );
+			printf( '<div class="tags-links"><i class="fa fa-tags"></i>' . __( ' Tagged %1$s', 'howl-themes' ) . '</div>', $tags_list );
 		}
 	}
 

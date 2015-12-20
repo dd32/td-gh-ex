@@ -9,10 +9,9 @@
 ?>
 
 	</div><!-- #content -->
-<?php howlfoot(); ?>
+<?php howlthemes_foot(); ?>
 	
 <?php wp_footer(); 
-echo get_option('dt_custom_foot'); 
 ?>
 
 </body>

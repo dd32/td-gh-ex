@@ -10,7 +10,7 @@
 $newnum = 1;
 while($featpost->have_posts()) : $featpost->the_post();
 ?>
-<article class="featured-post" id="featpost<?php echo $newnum?>" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"><?php showstarrating();?>
+<article class="featured-post" id="featpost<?php echo $newnum?>" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 <div class="thumbnail-container" itemprop="image">
 
 <?php 
@@ -26,8 +26,8 @@ if($newnum != 1){
    echo '" />';
     echo '</a>';
 }
-    elseif(catch_that_image()){
-   $source_image_url = catch_that_image();
+    elseif(howlthemes_catch_that_image()){
+   $source_image_url = howlthemes_catch_that_image();
    $resizedImage = aq_resize($source_image_url, 250, 200, true);
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
    echo '<img src="';
@@ -56,8 +56,8 @@ if($newnum != 1){
    echo '" />';
     echo '</a>';
 }
- elseif(catch_that_image()){
-   $source_image_url = catch_that_image();
+ elseif(howlthemes_catch_that_image()){
+   $source_image_url = howlthemes_catch_that_image();
    $resizedImage = aq_resize($source_image_url, 586, 420, true);
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
    echo '<img src="';
@@ -97,31 +97,7 @@ $newnum++;
 endwhile; ?>
 </div>
 
-<?php 
-$arasr = get_option('dt_howlimany');
-  $howliprint = get_option('dt_remembertli') ; 
-  for ($i=1;$i<=$howliprint;$i++) {
- $arrayforcat[$i] = substr($arasr,$i-1, 1);
-       }
-$catgorylin = get_option('dt_rembertcat');
-$catposi = explode(',', $catgorylin);
-for($xc=0;$xc<=count($catposi)-1;$xc++){
-$thiswhatweget = trim($catposi[$xc]);
-$category_count = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->term_taxonomy WHERE taxonomy = 'category'");
-$category_count = $category_count + 1 ;
-for ($x=1; $x<=$category_count; $x++) {
-$cat= $x;
-$catname = get_cat_name($cat); 
 
-if (strtolower($catname) == strtolower($thiswhatweget) ) {
- $Cat_ID[$xc] = $cat;
-}
-elseif (strtolower($thiswhatweget) == "select a category") {
-  $Cat_ID[$xc] = 'no';
-}
-}
-}
-?>
 <div id="primary" class="content-area">
 <main id="main" class="site-main" role="main">
 
@@ -130,15 +106,12 @@ elseif (strtolower($thiswhatweget) == "select a category") {
   
 
 
-<?php 
-if ($arrayforcat) { $dumbnumer =0;
-foreach ($arrayforcat as $kyaid => $value) { 
-  if($value == 1 && $Cat_ID[$dumbnumer] != 'no' && $Cat_ID[$dumbnumer] != null){?>
+<?php if(get_theme_mod("newsbox_one") != 0){?>
 
 <!--Slider--> 
-<div id="cat-slider"><div class="slider-title"><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($Cat_ID[$dumbnumer])->name) ?>'><?php echo get_category($Cat_ID[$dumbnumer])->name ?></a></div><ul class="bjqs">
-<?php $featpost = new WP_Query( 'cat='.$Cat_ID[$dumbnumer].'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>    
-<li>  <?php showstarrating();?>
+<div id="cat-slider"><div class="slider-title"><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category(get_theme_mod("newsbox_one"))->name) ?>'><?php echo get_category(get_theme_mod("newsbox_one"))->name ?></a></div><ul class="bjqs">
+<?php $featpost = new WP_Query( 'cat='.get_theme_mod("newsbox_one").'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>    
+<li> 
 
 <div class="slider-img-con" itemprop="image">
   <?php if ( get_the_post_thumbnail() != '' ) { 
@@ -151,8 +124,8 @@ foreach ($arrayforcat as $kyaid => $value) {
    echo '" />';
     echo '</a>';
     } 
-    elseif(catch_that_image()){
-   $source_image_url = catch_that_image();
+    elseif(howlthemes_catch_that_image()){
+   $source_image_url = howlthemes_catch_that_image();
    $resizedImage = aq_resize($source_image_url, 740, 400, true);
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
    echo '<img src="';
@@ -175,11 +148,11 @@ foreach ($arrayforcat as $kyaid => $value) {
 <?php endwhile; ?>
 </ul></div>
 
-<?php } if ($value == 2 && $Cat_ID[$dumbnumer] != 'no' && $Cat_ID[$dumbnumer] != null) {?>
+<?php  } if(get_theme_mod("newsbox_two") != 0){?>
 
 <!--Carousel-->
 <div id="carouselpost">
-<div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($Cat_ID[$dumbnumer])->name) ?>'><?php echo get_category($Cat_ID[$dumbnumer])->name ?></a></span>
+<div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category(get_theme_mod("newsbox_two"))->name) ?>'><?php echo get_category(get_theme_mod("newsbox_two"))->name ?></a></span>
 <div class="navigator-holder">
 <a class="buttons prev" href="#"><i class="fa fa-angle-left"></i></a>
 <a class="buttons next" href="#"><i class="fa fa-angle-right"></i></a></div>
@@ -187,8 +160,8 @@ foreach ($arrayforcat as $kyaid => $value) {
     <div class="viewport">
       <ul class="overview">
 
-<?php $featpost = new WP_Query( 'cat='.$Cat_ID[$dumbnumer].'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>    
-<li>  <?php showstarrating();?>
+<?php $featpost = new WP_Query( 'cat='.get_theme_mod("newsbox_two").'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>    
+<li>  
 <div class="imgcarholder" itemprop="image">
  <?php if ( get_the_post_thumbnail() != '' ) { 
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
@@ -200,8 +173,8 @@ foreach ($arrayforcat as $kyaid => $value) {
    echo '" />';
     echo '</a>';
     } 
-   elseif(catch_that_image()){
-   $source_image_url = catch_that_image();
+   elseif(howlthemes_catch_that_image()){
+   $source_image_url = howlthemes_catch_that_image();
    $resizedImage = aq_resize($source_image_url, 300, 180, true);
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
    echo '<img src="';
@@ -232,13 +205,14 @@ foreach ($arrayforcat as $kyaid => $value) {
     </div>
     
   </div>
-<?php } if($value == 3 && $Cat_ID[$dumbnumer] != 'no' && $Cat_ID[$dumbnumer] != null){ ?>
+<?php  } if(get_theme_mod("newsbox_three") != 0){?>
+
 <!--Grid Posts-->
 <div class="grid-posts-holder">
-<div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($Cat_ID[$dumbnumer])->name) ?>'><?php echo get_category($Cat_ID[$dumbnumer])->name ?></a></span></div>
-<?php $featpost = new WP_Query( 'cat='.$Cat_ID[$dumbnumer].'&posts_per_page=5' ); $rnewnum = 1;  while($featpost->have_posts()) : $featpost->the_post(); ?>    
+<div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category(get_theme_mod("newsbox_three"))->name) ?>'><?php echo get_category(get_theme_mod("newsbox_three"))->name ?></a></span></div>
+<?php $featpost = new WP_Query( 'cat='.get_theme_mod("newsbox_three").'&posts_per_page=5' ); $rnewnum = 1;  while($featpost->have_posts()) : $featpost->the_post(); ?>    
 <?php if($rnewnum == 1 or $rnewnum == 4){ ?>
-<div class="grid-posts-big" itemprop="image">  <?php showstarrating();?>
+<div class="grid-posts-big" itemprop="image">
  <?php 
  if ( get_the_post_thumbnail() != '' ) { 
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
@@ -250,8 +224,8 @@ foreach ($arrayforcat as $kyaid => $value) {
    echo '" />';
     echo '</a>';
     } 
-    elseif(catch_that_image()){
-   $source_image_url = catch_that_image();
+    elseif(howlthemes_catch_that_image()){
+   $source_image_url = howlthemes_catch_that_image();
    $resizedImage = aq_resize($source_image_url, 477, 247, true);
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
    echo '<img src="';
@@ -279,7 +253,7 @@ foreach ($arrayforcat as $kyaid => $value) {
 </div>
 <?php } else{?>
 
-<div class="grid-posts-small" itemprop="image">  <?php showstarrating();?>
+<div class="grid-posts-small" itemprop="image">  
  <?php if ( get_the_post_thumbnail() != '' ) { 
   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
   $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
@@ -290,8 +264,8 @@ foreach ($arrayforcat as $kyaid => $value) {
    echo '" />';
     echo '</a>';
     } 
-    elseif(catch_that_image()){
-   $source_image_url = catch_that_image();
+    elseif(howlthemes_catch_that_image()){
+   $source_image_url = howlthemes_catch_that_image();
    $resizedImage = aq_resize($source_image_url, 250, 160, true);
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
    echo '<img src="';
@@ -311,17 +285,16 @@ foreach ($arrayforcat as $kyaid => $value) {
   ?>
 <h2 itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 </div>
-<?php } ?>
+<?php  } ?>
 <?php $rnewnum++; endwhile; ?>
 </div>
-<?php } if ($value == 4 && $Cat_ID[$dumbnumer] != 'no' && $Cat_ID[$dumbnumer] != null) { ?>
+<?php } if(get_theme_mod("newsbox_four") != 0){?>
 
 <!--Blog Posts-->
 <div class="blog-cnt-holder">
-  <div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($Cat_ID[$dumbnumer])->name) ?>'><?php echo get_category($Cat_ID[$dumbnumer])->name ?></a></span></div>
-<?php $featpost = new WP_Query( 'cat='.$Cat_ID[$dumbnumer].'&posts_per_page=6' ); $randnewnum = 1;  while($featpost->have_posts()) : $featpost->the_post(); ?>
+  <div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category(get_theme_mod("newsbox_four"))->name) ?>'><?php echo get_category(get_theme_mod("newsbox_four"))->name ?></a></span></div>
+<?php $featpost = new WP_Query( 'cat='.get_theme_mod("newsbox_four").'&posts_per_page=6' ); $randnewnum = 1;  while($featpost->have_posts()) : $featpost->the_post(); ?>
 <div class="blogposts <?php if($randnewnum== 1 or $randnewnum== 3 or $randnewnum== 5){echo"left-posts";} else{ echo"right-post"; } ?>">
-  <?php showstarrating();?>
 <div class="hldrblog4" itemprop="image">
 <?php 
   if ( get_the_post_thumbnail() != '' ) { 
@@ -334,8 +307,8 @@ foreach ($arrayforcat as $kyaid => $value) {
    echo '" />';
     echo '</a>';
     } 
-    elseif(catch_that_image()){
-   $source_image_url = catch_that_image();
+    elseif(howlthemes_catch_that_image()){
+   $source_image_url = howlthemes_catch_that_image();
    $resizedImage = aq_resize($source_image_url, 365, 220, true);
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
    echo '<img src="';
@@ -368,11 +341,11 @@ foreach ($arrayforcat as $kyaid => $value) {
  <?php $randnewnum++; endwhile; ?>
 </div>
 
-<?php } if ($value == 5 && $Cat_ID[$dumbnumer] != 'no' && $Cat_ID[$dumbnumer] != null) { ?>
+<?php  } if(get_theme_mod("newsbox_five") != 0){?>
 <!--Simple Posts-->
 <div class="simple-posts">
-    <div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($Cat_ID[$dumbnumer])->name) ?>'><?php echo get_category($Cat_ID[$dumbnumer])->name ?></a></span></div>
-<?php $featpost = new WP_Query( 'cat='.$Cat_ID[$dumbnumer].'&posts_per_page=6' ); while($featpost->have_posts()) : $featpost->the_post(); ?>
+    <div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category(get_theme_mod("newsbox_five"))->name) ?>'><?php echo get_category(get_theme_mod("newsbox_five"))->name ?></a></span></div>
+<?php $featpost = new WP_Query( 'cat='.get_theme_mod("newsbox_five").'&posts_per_page=6' ); while($featpost->have_posts()) : $featpost->the_post(); ?>
 <article itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 <?php if ( get_the_post_thumbnail() != '' ) { 
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
@@ -384,8 +357,8 @@ foreach ($arrayforcat as $kyaid => $value) {
    echo '" />';
     echo '</a>';
     } 
-    elseif(catch_that_image()){
-   $source_image_url = catch_that_image();
+    elseif(howlthemes_catch_that_image()){
+   $source_image_url = howlthemes_catch_that_image();
    $resizedImage = aq_resize($source_image_url, 220, 170, true);
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
    echo '<img src="';
@@ -403,7 +376,6 @@ foreach ($arrayforcat as $kyaid => $value) {
     echo '</a>';
 }
   ?>
-  <?php showstarrating();?>
  <div class="blog-content-hldr">
     <h2 itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
   <div class="entry-metatag">
@@ -417,7 +389,7 @@ foreach ($arrayforcat as $kyaid => $value) {
 <?php endwhile; ?>
 </div>
 
-<?php } $dumbnumer++;} } ?>
+<?php }?>
 
 
 </main><!-- #main -->

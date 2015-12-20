@@ -12,7 +12,7 @@ get_header();
 <div class="container main-outer">
 
 				<?php
-				if(get_option('dt_homedisplay') == 'magazine'){
+				if(get_theme_mod("home_display") == 'magazine'){
 					get_template_part( 'magazine', get_post_format() );
 				}
 				else {

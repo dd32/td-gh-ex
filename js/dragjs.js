@@ -1,17 +1,17 @@
-     
 
-$(function(){
 
-    $(".main-navigation ul li a").hover(function(){
-        $('ul:first',this).css('visibility', 'visible');
-        $('.sub-menu .fa-angle-down').css('display', 'none');
+jQuery(function(){
+
+    jQuery(".main-navigation ul li a").hover(function(){
+        jQuery('ul:first',this).css('visibility', 'visible');
+        jQuery('.sub-menu .fa-angle-down').css('display', 'none');
     }, function(){
-        $('ul:first',this).css('visibility', 'hidden');
+        jQuery('ul:first',this).css('visibility', 'hidden');
     });
     
-    $(".main-navigation ul li ul li:has(ul)").find("a:first").append(" &raquo; ");
-$(".main-navigation ul li ul").prev().addClass('has-sub');
-$('.has-sub').append('<i class="fa fa-angle-down"></i>');
+    jQuery(".main-navigation ul li ul li:has(ul)").find("a:first").append(" &raquo; ");
+jQuery(".main-navigation ul li ul").prev().addClass('has-sub');
+jQuery('.has-sub').append('<i class="fa fa-angle-down"></i>');
 });
 (function($, window, document, undefined) {
         'use strict';
@@ -259,18 +259,18 @@ b.header||e.find(":eq("+a(f+" li").index(a(f+" li."+b.active))+")").attr("select
 /*
 Functions By DragThemes
 */
-$(document).ready(function(){
-$(".searchboxcontainer").hover(function(){
-        $(".srchcontainer").css("display", "block");
+jQuery(document).ready(function(){
+jQuery(".searchboxcontainer").hover(function(){
+        jQuery(".srchcontainer").css("display", "block");
         },function(){
-        $(".srchcontainer").css("display", "none");
+        jQuery(".srchcontainer").css("display", "none");
     });
-$(".srchcontainer").hover(function(){
-        $(".srchcontainer").css("display", "block");
+jQuery(".srchcontainer").hover(function(){
+        jQuery(".srchcontainer").css("display", "block");
         },function(){
-        $(".srchcontainer").css("display", "none");
+        jQuery(".srchcontainer").css("display", "none");
     });
-$('.newsticker').newsTicker({
+jQuery('.newsticker').newsTicker({
     row_height: 24,
     max_rows: 1,
     speed: 600,
@@ -279,7 +279,7 @@ $('.newsticker').newsTicker({
     autostart: 1,
     pauseOnHover: 0
 });
-    $('#cat-slider').bjqs({
+    jQuery('#cat-slider').bjqs({
         'height' : 400,
         'width' : 740,
         'responsive' : true,
@@ -289,31 +289,31 @@ $('.newsticker').newsTicker({
         prevtext : '<i class="fa fa-angle-left"></i>', 
 
 });
-$('#carouselpost').tinycarousel({interval: true });
-if ($('#back-to-top').length) {
+jQuery('#carouselpost').tinycarousel({interval: true });
+if (jQuery('#back-to-top').length) {
     var scrollTrigger = 100, // px
         backToTop = function () {
-            var scrollTop = $(window).scrollTop();
+            var scrollTop = jQuery(window).scrollTop();
         };
     backToTop();
-    $(window).on('scroll', function () {
+    jQuery(window).on('scroll', function () {
         backToTop();
     });
-    $('#back-to-top').on('click', function (e) {
+    jQuery('#back-to-top').on('click', function (e) {
         e.preventDefault();
-        $('html,body').animate({
+        jQuery('html,body').animate({
             scrollTop: 0
         }, 700);
     });
 }
 
-$(".main-navigation ul").tinyNav({
+jQuery(".main-navigation ul").tinyNav({
   header: '≡ Navigation',
 });
-$(".secondary-navigation ul").tinyNav({
+jQuery(".secondary-navigation ul").tinyNav({
   header: '≡ Navigation',
 });
-$(".globetoogle").click(function(){
-$(".drag-social-button").toggle();
+jQuery(".globetoogle").click(function(){
+jQuery(".drag-social-button").toggle();
 });
 });

@@ -36,7 +36,7 @@ get_header(); ?>
 
 <div class="paging">
 <ul>
-        <?php numberedhowlnav(); ?>
+        <?php howlthemes_numberedhowlnav(); ?>
 
     </ul>
 </div>
