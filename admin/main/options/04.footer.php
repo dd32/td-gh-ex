@@ -16,7 +16,7 @@ function thinkup_input_footerw1() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 1.', 'lan-thinkupthemes') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';
 	};
 	echo	'</div>';
@@ -29,7 +29,7 @@ function thinkup_input_footerw2() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 2.', 'lan-thinkupthemes') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';
 	};
 	echo	'</div>';
@@ -42,7 +42,7 @@ function thinkup_input_footerw3() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 3.', 'lan-thinkupthemes') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';
 	};	
 	echo	'</div>';
@@ -55,7 +55,7 @@ function thinkup_input_footerw4() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 4.', 'lan-thinkupthemes') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';
 	};	
 	echo	'</div>';
@@ -68,7 +68,7 @@ function thinkup_input_footerw5() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 5.', 'lan-thinkupthemes') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';
 	};	
 	echo	'</div>';
@@ -81,7 +81,7 @@ function thinkup_input_footerw6() {
 	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
 			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 6.', 'lan-thinkupthemes') . '</p>',
-			'<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
+			'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';
 	};	
 	echo	'</div>';

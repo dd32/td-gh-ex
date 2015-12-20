@@ -17,7 +17,7 @@ global $thinkup_general_sitedescription;
 
 	if ( $thinkup_general_logoswitch == "option1" ) {
 		if ( ! empty( $thinkup_general_logolink ) ) {
-			echo '<img src="' . $thinkup_general_logolink . '" alt="' . esc_attr__( 'Logo', 'lan-thinkupthemes' ) . '">';
+			echo '<img src="' . $thinkup_general_logolink . '" alt="Logo">';
 		} 
 	} else if ( $thinkup_general_logoswitch == "option2" or empty( $thinkup_general_logoswitch ) ) {
 		if ( empty( $thinkup_general_sitetitle ) ) {
@@ -32,7 +32,7 @@ global $thinkup_general_sitedescription;
 }
 
 // Output retina js script if retina logo is set
-function thinkup_input_logoretina() {
+function thinkup_input_logoretinaja() {
 global $thinkup_general_logoswitch;
 global $thinkup_general_logolinkretina;
 
@@ -42,7 +42,7 @@ global $thinkup_general_logolinkretina;
 		} 
 	}
 }	
-add_action( 'wp_enqueue_scripts', 'thinkup_input_logoretina', 11 );
+add_action( 'wp_enqueue_scripts', 'thinkup_input_logoretinaja', 11 );
 
 
 /* ----------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ function thinkup_custom_favicon() {
 global $thinkup_general_faviconlink;
 
 	if ( ! empty( $thinkup_general_faviconlink ) ) {
-		echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . esc_url( $thinkup_general_faviconlink ) . '" />';
+		echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . $thinkup_general_faviconlink . '" />';
 	}	
 }
 add_action('wp_head', 'thinkup_custom_favicon');
@@ -97,7 +97,7 @@ $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true )
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			wp_enqueue_style ( 'sidebarright' );
 		}
-	} else if ( thinkup_check_isblog() and ! is_single() ) {
+	} else if ( thinkup_is_blog() and ! is_single() ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
@@ -211,7 +211,7 @@ do_action('thinkup_sidebar_html');
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			echo get_sidebar(); 
 		}
-	} else if ( thinkup_check_isblog() and ! is_single() ) {
+	} else if ( thinkup_is_blog() and ! is_single() ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
@@ -286,7 +286,7 @@ $_thinkup_meta_sidebars = get_post_meta( $post->ID, '_thinkup_meta_sidebars', tr
 		} else {
 			$output = $_thinkup_meta_sidebars;
 		}	
-	} else if ( thinkup_check_isblog() and ! is_single() ) {
+	} else if ( thinkup_is_blog() and ! is_single() ) {
 		$output = $thinkup_blog_sidebars;
 	} else if ( is_search() ) {
 		$output = $thinkup_general_sidebars;
@@ -334,7 +334,7 @@ function thinkup_title_select() {
 		printf( __( 'Monthly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'F Y' ) );
 	} elseif ( is_year() ) {
 		printf( __( 'Yearly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'Y' ) );
-	} elseif ( thinkup_check_isblog() ) {
+	} elseif ( thinkup_is_blog() ) {
 		printf( __( 'Blog', 'lan-thinkupthemes' ) );
 	} else {
 		printf( __( '%s', 'lan-thinkupthemes' ), get_the_title() );
@@ -362,7 +362,7 @@ function thinkup_custom_intro() {
 ---------------------------------------------------------------------------------- */
 
 /* http://wordpress.stackexchange.com/questions/40753/add-parent-class-to-parent-menu-items */
-class thinkup_nav_menu_responsive extends Walker_Nav_Menu{
+class thinkup_Walker_Nav_Menu_Responsive extends Walker_Nav_Menu{
 
     public function start_el(&$output, $item, $depth = 0, $args=array(), $id = 0){
 
@@ -394,7 +394,7 @@ global $thinkup_general_fixedlayoutswitch;
 			'container_id'    => 'header-responsive-inner', 
 			'menu_class'      => '', 
 			'theme_location'  => 'header_menu', 
-			'walker'          => new thinkup_nav_menu_responsive(), 
+			'walker'          => new thinkup_Walker_Nav_Menu_Responsive(), 
 			'fallback_cb'     => 'thinkup_input_responsivefall',
 		);
 
@@ -433,6 +433,11 @@ add_action( 'body_class', 'thinkup_input_responsiveclass');
 
 
 /* ----------------------------------------------------------------------------------
+	Enable Boxed Layout - PREMIUM FEATURE
+---------------------------------------------------------------------------------- */
+
+
+/* ----------------------------------------------------------------------------------
 	Enable Breadcrumbs
 ---------------------------------------------------------------------------------- */
 
@@ -458,6 +463,17 @@ $_thinkup_meta_breadcrumbs = get_post_meta( $post->ID, '_thinkup_meta_breadcrumb
 
 
 /* ----------------------------------------------------------------------------------
+	Enable Comments on Pages
+---------------------------------------------------------------------------------- */
+
+/* Code can be found in blog.php under heading ALLOW USER COMMENTS */
+
+/* ----------------------------------------------------------------------------------
+	Google Analytics Code - PREMIUM FEATURE
+---------------------------------------------------------------------------------- */
+
+
+/* ----------------------------------------------------------------------------------
 	Custom CSS
 ---------------------------------------------------------------------------------- */
 
@@ -470,12 +486,12 @@ $_thinkup_meta_customcss = get_post_meta( $post->ID, '_thinkup_meta_customcss', 
 
 	if ( ! empty( $thinkup_general_customcss ) ) {
 		echo 	"\n" .'<style type="text/css">' . "\n",
-				wp_kses_post( $thinkup_general_customcss ) . "\n",
+				esc_html( $thinkup_general_customcss ) . "\n",
 				'</style>' . "\n";
 	}
 	if ( ! is_front_page() and ! empty( $_thinkup_meta_customcss ) ) {
 		echo 	"\n" .'<style type="text/css">' . "\n",
-				wp_kses_post( $_thinkup_meta_customcss ) . "\n",
+				$_thinkup_meta_customcss . "\n",
 				'</style>' . "\n";
 	}
 }

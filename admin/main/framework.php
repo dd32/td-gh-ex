@@ -598,7 +598,8 @@ endif;
             // Fix conflicts with Visual Composer.
             public function vc_fixes() {
                 if ( redux_helpers::isFieldInUse( $this, 'ace_editor' ) ) {
-					// TUT customization - deregistered scripts removed for compliance with .org requirements
+                    wp_dequeue_script( 'wpb_ace' );
+                    wp_deregister_script( 'wpb_ace' );
                 }
             }
 

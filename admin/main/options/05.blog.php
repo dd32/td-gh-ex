@@ -33,18 +33,13 @@ global $post;
 
 /* Input post excerpt / content to blog page */
 function thinkup_input_blogtext() {
-global $post;
 global $thinkup_blog_postswitch;
 
-	// Output post content
-	if ( is_search() ) {
+	/* Output post thumbnail / featured media */
+	if ( $thinkup_blog_postswitch == 'option1' or empty( $thinkup_blog_postswitch ) ) {
 		the_excerpt();
-	} else if ( ! is_search() ) {
-		if ( ( empty( $thinkup_blog_postswitch ) or $thinkup_blog_postswitch == 'option1' ) and ! is_numeric( strpos( $post->post_content, '<!--more-->' ) ) ) {
-			the_excerpt();
-		} else if ( $thinkup_blog_postswitch == 'option2' ) {
-			the_content();
-		}
+	} else if ( $thinkup_blog_postswitch == 'option2' ) {		
+		the_content();
 	}
 }
 
@@ -55,7 +50,7 @@ global $thinkup_blog_postswitch;
 
 // Input sticky post
 function thinkup_input_sticky() {
-	printf( '<span class="sticky"><i class="fa fa-thumb-tack"></i><a href="%1$s" title="%2$s">' . __( 'Sticky', 'lan-thinkupthemes' ) . '</a></span>',
+	printf( '<span class="sticky"><i class="icon-pushpin"></i><a href="%1$s" title="%2$s">' . __( 'Sticky', 'lan-thinkupthemes' ) . '</a></span>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_title() )
 	);
@@ -63,7 +58,7 @@ function thinkup_input_sticky() {
 
 /* Input blog date*/
 function thinkup_input_blogdate() {
-	printf( __( '<span class="date"><i class="fa fa-calendar-o"></i><a href="%1$s" title="%2$s"><time datetime="%3$s">%4$s</time></a></span>', 'lan-thinkupthemes' ),
+	printf( __( '<span class="date"><i class="icon-calendar-empty"></i><a href="%1$s" title="%2$s"><time datetime="%3$s">%4$s</time></a></span>', 'lan-thinkupthemes' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_title() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -75,7 +70,7 @@ function thinkup_input_blogdate() {
 function thinkup_input_blogcomment() {
 
 	if ( '0' != get_comments_number() ) {
-	echo	'<span class="comment"><i class="fa fa-comments"></i>';
+	echo	'<span class="comment"><i class="icon-comments"></i>';
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {;
 			comments_popup_link( __( '0 comments', 'lan-thinkupthemes' ), __( '1 comment', 'lan-thinkupthemes' ), __( '% comments', 'lan-thinkupthemes' ) );
 		};
@@ -88,7 +83,7 @@ function thinkup_input_blogcategory() {
 $categories_list = get_the_category_list( __( ', ', 'lan-thinkupthemes' ) );
 
 	if ( $categories_list && thinkup_input_categorizedblog() ) {
-		echo	'<span class="category"><i class="fa fa-folder-open"></i>';
+		echo	'<span class="category"><i class="icon-folder-open"></i>';
 		printf( __( '%1$s', 'lan-thinkupthemes' ), $categories_list );
 		echo	'</span>';
 	};
@@ -99,7 +94,7 @@ function thinkup_input_blogtag() {
 $tags_list = get_the_tag_list( '', __( ', ', 'lan-thinkupthemes' ) );
 
 	if ( $tags_list ) {
-		echo	'<span class="tags"><i class="fa fa-tags"></i>';
+		echo	'<span class="tags"><i class="icon-tags"></i>';
 		printf( __( '%1$s', 'lan-thinkupthemes' ), $tags_list );
 		echo	'</span>';
 	};
@@ -107,7 +102,7 @@ $tags_list = get_the_tag_list( '', __( ', ', 'lan-thinkupthemes' ) );
 
 /* Input blog author */
 function thinkup_input_blogauthor() {
-	printf( __( '<span class="author"><i class="fa fa-pencil"></i>By <a href="%1$s" title="%2$s" rel="author">%3$s</a></span>', 'lan-thinkupthemes' ),
+	printf( __( '<span class="author"><i class="icon-pencil"></i>By <a href="%1$s" title="%2$s" rel="author">%3$s</a></span>', 'lan-thinkupthemes' ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'lan-thinkupthemes' ), get_the_author() ) ),
 		get_the_author()
