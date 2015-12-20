@@ -29,10 +29,10 @@ function howlthemes_foot(){?>
    <div class="copyright">
    <div class="container">
    <div class="copyright-text">
-  <?php _e('Designed By' ); ?> <a href="http://www.howlthemes.com" target="blank" style="color:#efefef;text-decoration:none;">HowlThemes</a>
+  <?php _e('Designed By', 'howl-themes'); ?> <a href="http://www.howlthemes.com" target="blank" style="color:#efefef;text-decoration:none;">HowlThemes</a>
    </div>
    <div class="back-top">
-   <a href="#" id="back-to-top" title="Back to top"><?php _e('Back To Top' ); ?><i class="fa fa-arrow-circle-o-up"></i></a>
+   <a href="#" id="back-to-top" title="Back to top"><?php _e('Back To Top', 'howl-themes'); ?><i class="fa fa-arrow-circle-o-up"></i></a>
    </div>
    </div>
    </div>

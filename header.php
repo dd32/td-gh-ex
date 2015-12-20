@@ -64,7 +64,7 @@ get_template_part('inc/dragfun/dragtheme', 'css');
 <div class="break-social">
 <div class="container">
 <div class="newsticker-holder">
-<span><?php _e( 'Breaking' ); ?></span>
+<span><?php _e( 'Breaking', 'howl-themes'); ?></span>
 <ul class="newsticker">
 <?php
 	$argss = array( 'numberposts' => '7' );
