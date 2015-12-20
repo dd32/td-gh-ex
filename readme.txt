@@ -98,6 +98,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.7.3
+- Fixed:   Disables sortable slides in Customizer. This prevents issues where phantom slides still appear after deleting slides.
+- Updated: Various minor styling updates for theme options in customizer.
+
 Version 1.7.2
 - Fixed:   "$this->_extension_url" used for redux extensions fixed to ensure custom extensions are loaded correctly on all sites.
 
