@@ -283,7 +283,9 @@ require get_template_directory() . '/inc/gridalicious-metabox.php';
  * @since Gridalicious 0.1
  */
 function gridalicious_get_theme_options() {
-	return get_theme_mod( 'gridalicious_theme_options', gridalicious_get_default_theme_options() );
+	$gridalicious_default_options = gridalicious_get_default_theme_options();
+				
+	return array_merge( $gridalicious_default_options , get_theme_mod( 'gridalicious_theme_options', $gridalicious_default_options ) ) ;
 }
 
 

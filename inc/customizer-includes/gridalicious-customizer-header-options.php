@@ -17,7 +17,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[enable_featured_header_image]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['enable_featured_header_image'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
 	$gridalicious_enable_featured_header_image_options = gridalicious_enable_featured_header_image_options();
@@ -38,7 +38,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[featured_image_size]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_image_size'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
 	$gridalicious_featured_image_size_options = gridalicious_featured_image_size_options();

@@ -12,22 +12,6 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
 }
-	//Custom control for textarea
-	class Gridalicious_Customize_Textarea_Control extends WP_Customize_Control {
-	    public $type = 'textarea';
-	 
-	    public function render_content() {
-	        ?>
-	        <label>
-	        <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-	        <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-	        <textarea rows="6" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-	        </label>
-	        <?php
-	    }
-	}
-
-
 	//Custom control for dropdown category multiple select
 	class Gridalicious_Customize_Dropdown_Categories_Control extends WP_Customize_Control {
 		public $type = 'dropdown-categories';
@@ -42,7 +26,6 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 					'hide_empty'       => false,
 					'show_option_none' => false,
 					'hide_if_empty'    => false,
-					'selected'         => $this->value(),
 				)
 			);
 

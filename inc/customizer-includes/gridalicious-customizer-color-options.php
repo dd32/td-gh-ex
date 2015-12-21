@@ -30,7 +30,7 @@
 	$wp_customize->add_setting( 'gridalicious_theme_options[color_scheme]', array(
 		'capability' 		=> 'edit_theme_options',
 		'default'    		=> $defaults['color_scheme'],
-		'sanitize_callback'	=> 'sanitize_key'
+		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
 	$schemes = gridalicious_color_schemes();

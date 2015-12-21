@@ -37,7 +37,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'gridalicious_sanitize_checkbox'
 	) );
 
-	$wp_customize->add_control( 'gridalicious_breadcumb_options', array(
+	$wp_customize->add_control( 'gridalicious_theme_options[breadcumb_option]', array(
 		'label'    => __( 'Check to enable Breadcrumb', 'gridalicious' ),
 		'section'  => 'gridalicious_breadcumb_options',
 		'settings' => 'gridalicious_theme_options[breadcumb_option]',
@@ -50,7 +50,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'gridalicious_sanitize_checkbox'
 	) );
 
-	$wp_customize->add_control( 'gridalicious_breadcumb_onhomepage', array(
+	$wp_customize->add_control( 'gridalicious_theme_options[breadcumb_onhomepage]', array(
 		'label'    => __( 'Check to enable Breadcrumb on Homepage', 'gridalicious' ),
 		'section'  => 'gridalicious_breadcumb_options',
 		'settings' => 'gridalicious_theme_options[breadcumb_onhomepage]',
@@ -63,7 +63,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_control( 'gridalicious_breadcrumb_seperator', array(
+	$wp_customize->add_control( 'gridalicious_theme_options[breadcrumb_seperator]', array(
 			'input_attrs' => array(
 	            'style' => 'width: 40px;'
             	),
@@ -89,13 +89,13 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'gridalicious_sanitize_custom_css',
 	) );
 
-	$wp_customize->add_control( new Gridalicious_Customize_Textarea_Control ( $wp_customize, 'gridalicious_theme_options[custom_css]', array(
+	$wp_customize->add_control( 'gridalicious_theme_options[custom_css]', array(
 			'label'		=> __( 'Enter Custom CSS', 'gridalicious' ),
 	        'priority'	=> 1,
 			'section'   => 'gridalicious_custom_css',
 	        'settings'  => 'gridalicious_theme_options[custom_css]',
 			'type'		=> 'textarea',
-	) ) );
+	) );
    	// Custom CSS End
 
    	// Excerpt Options
@@ -108,10 +108,10 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[excerpt_length]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['excerpt_length'],
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'gridalicious_sanitize_number_range',
 	) );
 
-	$wp_customize->add_control( 'gridalicious_excerpt_length', array(
+	$wp_customize->add_control( 'gridalicious_theme_options[excerpt_length]', array(
 		'description' => __('Excerpt length. Default is 40 words', 'gridalicious'),
 		'input_attrs' => array(
             'min'   => 10,
@@ -132,7 +132,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_control( 'gridalicious_excerpt_more_text', array(
+	$wp_customize->add_control( 'gridalicious_theme_options[excerpt_more_text]', array(
 		'label'    => __( 'Read More Text', 'gridalicious' ),
 		'section'  => 'gridalicious_excerpt_options',
 		'settings' => 'gridalicious_theme_options[excerpt_more_text]',
@@ -207,7 +207,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[theme_layout]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['theme_layout'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
 	$layouts = gridalicious_layouts();
@@ -227,7 +227,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[content_layout]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['content_layout'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
 	$layouts = gridalicious_get_archive_content_layout();
@@ -247,7 +247,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[single_post_image_layout]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['single_post_image_layout'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
 	
@@ -304,7 +304,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[pagination_type]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['pagination_type'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
 	$pagination_types = gridalicious_get_pagination_types();
@@ -313,7 +313,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		$choices[$pagination_type['value']] = $pagination_type['label'];
 	}
 
-	$wp_customize->add_control( 'gridalicious_pagination_options', array(
+	$wp_customize->add_control( 'gridalicious_theme_options[pagination_type]', array(
 		'choices'  => $choices,
 		'label'    => __( 'Pagination type', 'gridalicious' ),
 		'section'  => 'gridalicious_pagination_options',
@@ -333,7 +333,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[promotion_headline_option]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['promotion_headline_option'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
 	$gridalicious_featured_grid_content_options = gridalicious_featured_grid_content_options();
@@ -357,13 +357,13 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'wp_kses_post'
 	) );
 
-	$wp_customize->add_control( new Gridalicious_Customize_Textarea_Control( $wp_customize, 'gridalicious_theme_options[promotion_headline]', array(
+	$wp_customize->add_control( 'gridalicious_theme_options[promotion_headline]', array(
 		'description'	=> __( 'Appropriate Words: 10', 'gridalicious' ),
 		'label'    	=> __( 'Promotion Headline Text', 'gridalicious' ),
 		'priority'	=> '1',
 		'section' 	=> 'gridalicious_promotion_headline_options',
 		'settings'	=> 'gridalicious_theme_options[promotion_headline]',
-	) ) );
+	) );
 
 	$wp_customize->add_setting( 'gridalicious_theme_options[promotion_subheadline]', array(
 		'capability'		=> 'edit_theme_options',
@@ -371,13 +371,13 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'wp_kses_post'
 	) );
 
-	$wp_customize->add_control( new Gridalicious_Customize_Textarea_Control( $wp_customize, 'gridalicious_theme_options[promotion_subheadline]', array(
+	$wp_customize->add_control( 'gridalicious_theme_options[promotion_subheadline]', array(
 		'description'	=> __( 'Appropriate Words: 15', 'gridalicious' ),
 		'label'    	=> __( 'Promotion Subheadline Text', 'gridalicious' ),
 		'priority'	=> '2',
 		'section' 	=> 'gridalicious_promotion_headline_options',
 		'settings'	=> 'gridalicious_theme_options[promotion_subheadline]',
-	) ) );
+	) );
 
 	$wp_customize->add_setting( 'gridalicious_theme_options[promotion_headline_button]', array(
 		'capability'		=> 'edit_theme_options',

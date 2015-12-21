@@ -101,7 +101,7 @@ function gridalicious_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[color_scheme]', array(
 		'capability' 		=> 'edit_theme_options',
 		'default'    		=> $defaults['color_scheme'],
-		'sanitize_callback'	=> 'sanitize_key'
+		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
 	$schemes = gridalicious_color_schemes();
@@ -184,215 +184,6 @@ add_action( 'customize_register', 'gridalicious_customize_register' );
 
 
 /**
- * Sanitizes Checkboxes
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Gridalicious 1.0
- */
-function gridalicious_sanitize_checkbox( $input ) {
-    if ( $input == 1 ) {
-        return 1;
-    } 
-    else {
-        return '';
-    }
-}
-
-
-/**
- * Sanitizes Custom CSS 
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Gridalicious 1.0
- */
-function gridalicious_sanitize_custom_css( $input ) {
-	if ( $input != '' ) { 
-        $input = str_replace( '<=', '&lt;=', $input ); 
-        
-        $input = wp_kses_split( $input, array(), array() ); 
-        
-        $input = str_replace( '&gt;', '>', $input ); 
-        
-        $input = strip_tags( $input ); 
-
-        return $input;
- 	}
-    else {
-    	return '';
-    }
-}
-
-/**
- * Sanitizes images uploaded
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Gridalicious 1.0
- */
-function gridalicious_sanitize_image( $input ) {
-	return esc_url_raw( $input );
-}
-
-
-/**
- * Sanitizes page in grid
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Gridalicious 1.0
- */
-function gridalicious_sanitize_page( $input ) {
-	if(  get_post( $input ) ){
-		return $input;
-	}
-    else {
-    	return '';
-    }
-}
-
-
-/**
- * Sanitizes featured content number
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Gridalicious 1.0
- */
-function gridalicious_sanitize_no_of_featured_content( $input ) {
-	if ( absint( $input ) > 20 ) {
-    	return 20;
-    } 
-    else {
-    	return absint( $input );
-    }
-}
-
-
-/**
- * Sanitizes grid number
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Gridalicious 1.0
- */
-function gridalicious_sanitize_no_of_grid_content( $input ) {
-	if ( absint( $input ) > 30 ) {
-    	return 30;
-    } 
-    else {
-    	$output 	= absint( $input );
-    	
-    	$remainder 	= $output % 3;
-
-    	$output 	= $output - $remainder;
-
-    	return $output;
-    }
-}
-
-/**
- * Sanitizes custom social icons number
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Gridalicious 1.0
- */
-function gridalicious_sanitize_no_of_social_icons( $input ) {
-	if ( absint( $input ) > 10 ) {
-    	return 10;
-    } 
-    else {
-    	return absint( $input );
-    }
-}
-
-
-/**
- * Sanitizes footer code
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Gridalicious 1.0
- */
-function gridalicious_sanitize_footer_code( $input ) {
-	return ( stripslashes( wp_filter_post_kses( addslashes ( $input ) ) ) );
-}
-
-
-/**
- * Reset all settings to default
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Gridalicious 1.0
- */
-function gridalicious_reset_all_settings( $input ) {
-	if ( $input == 1 ) {
-        // Set default values
-        set_theme_mod( 'gridalicious_theme_options', gridalicious_get_default_theme_options() );
-       
-        // Flush out all transients	on reset
-        gridalicious_flush_transients();
-    } 
-    else {
-        return '';
-    }
-}
-
-
-/**
- * Dummy Sanitizaition function as it contains no value to be sanitized
- *
- * @since  Gridalicious 1.2
- */
-function gridalicious_sanitize_important_link() {
-	return false;
-}
-
-
-/**
- * Sanitizes category list in slider
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Gridalicious 0.3
- */
-function gridalicious_sanitize_category_list( $input ) {
-	if ( $input != '' ) { 
-		$args = array(
-						'type'			=> 'post',
-						'child_of'      => 0,
-						'parent'        => '',
-						'orderby'       => 'name',
-						'order'         => 'ASC',
-						'hide_empty'    => 0,
-						'hierarchical'  => 0,
-						'taxonomy'      => 'category',
-					); 
-		
-		$categories = ( get_categories( $args ) );
-
-		$category_list 	=	array();
-		
-		foreach ( $categories as $category )
-			$category_list 	=	array_merge( $category_list, array( $category->term_id ) );
-
-		if ( count( array_intersect( $input, $category_list ) ) == count( $input ) ) {
-	    	return $input;
-	    } 
-	    else {
-    		return '';
-   		}
-    }
-    else {
-    	return '';
-    }
-}
-
-
-/**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously for gridalicious.
  * And flushes out all transient data on preview
  *
@@ -413,20 +204,23 @@ add_action( 'customize_preview_init', 'gridalicious_customize_preview' );
  * @since Gridalicious 0.1
  */
 function gridalicious_customize_scripts() {
-	wp_register_script( 'gridalicious_customizer_custom', get_template_directory_uri() . '/js/gridalicious-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
+	wp_enqueue_script( 'gridalicious_customizer_custom', get_template_directory_uri() . '/js/gridalicious-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
 
 	$gridalicious_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/gridalicious-pro/' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro', 'gridalicious' ),
-							'WP_version'				=> get_bloginfo( 'version' ),
-							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'gridalicious' )
-		);
+							'upgrade_link'	=> esc_url( 'http://catchthemes.com/themes/gridalicious-pro/' ),
+							'upgrade_text'	=> __( 'Upgrade To Pro &raquo;', 'gridalicious' ),
+						);
 
-	//Add Upgrade Button and old WordPress message via localized script
+	//Add Upgrade Button
 	wp_localize_script( 'gridalicious_customizer_custom', 'gridalicious_misc_links', $gridalicious_misc_links );
-
-	wp_enqueue_script( 'gridalicious_customizer_custom' );
 
 	wp_enqueue_style( 'gridalicious_customizer_custom', get_template_directory_uri() . '/css/gridalicious-customizer.css');
 }
-add_action( 'customize_controls_print_footer_scripts', 'gridalicious_customize_scripts');
+add_action( 'customize_controls_enqueue_scripts', 'gridalicious_customize_scripts');
+
+//Active callbacks for customizer
+require get_template_directory() . '/inc/customizer-includes/gridalicions-customizer-active-callbacks.php';
+
+
+//Sanitize functions for customizer
+require get_template_directory() . '/inc/customizer-includes/gridalicions-customizer-sanitize-functions.php';

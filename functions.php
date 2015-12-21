@@ -12,8 +12,11 @@
  */
 
 //define theme version
-if ( !defined( 'GRIDALICIOUS_THEME_VERSION' ) )
-define ( 'GRIDALICIOUS_THEME_VERSION', '1.3' );
+if ( !defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
+	$theme_data = wp_get_theme();
+	
+	define ( 'GRIDALICIOUS_THEME_VERSION', $theme_data->get( 'Version' ) );
+}
 
 /**
  * Implement the core functions
