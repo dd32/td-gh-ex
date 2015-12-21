@@ -4,16 +4,37 @@ jQuery(function($){
     var siteHeader = $('#site-header');
     var menuPrimary = $('#menu-primary');
     var menuPrimaryTracks = $('#menu-primary-tracks');
+    var primaryMenu = $('.menu-unset');
     if( $('#menu-primary-items').length){
-        var primaryMenu = $('#menu-primary-items');
-    } else {
-        var primaryMenu = $('.menu-unset');
+        primaryMenu = $('#menu-primary-items');
     }
     var body = $('body');
     var main = $('#main');
     var loop = $('#loop-container');
     var overflowContainer = $('#overflow-container');
     var titleInfo = $('#title-info');
+
+    positionPostMeta();
+    centerContentIE();
+    lazyLoadImages();
+    positionSiteDescription();
+    videoHeightAdjust();
+    adjustSiteHeight();
+
+    $(window).load(function(){
+        removeLayoutGaps();
+        separatePostImage();
+    });
+
+    $(window).on('resize', function(){
+        separatePostImage();
+        videoHeightAdjust();
+        removeLayoutGaps();
+
+        if( window.innerWidth > 799 && $('#site-header').hasClass('toggled') ) {
+            onTap();
+        }
+    });
 
     $('.entry-content, .excerpt-content').fitVids({
         customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="wordpress.tv"]'
@@ -25,11 +46,9 @@ jQuery(function($){
     // Jetpack infinite scroll event that reloads posts. Reapply fitvids to new featured videos
     $( document.body ).on( 'post-load', function () {
 
-        // reapply fitvids to new posts being loaded in
         $('.featured-video').fitVids({
             customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="vine.co"], iframe[src*="wordpress.tv"], iframe[src*="soundcloud.com"]'
         });
-
         removeLayoutGaps();
     } );
 
@@ -109,6 +128,7 @@ jQuery(function($){
             onTap();
         }
     }
+
     function positionPostMeta() {
         /* give space for vertical margins, 'categories', and 'tags' */
         var minHeight = 168;
@@ -123,7 +143,6 @@ jQuery(function($){
             $('.entry-tags').css('top', 72 + categoriesHeight);
         }
     }
-    positionPostMeta();
 
     /* allow keyboard access/visibility for dropdown menu items */
     $('.menu-item a, .page_item a').focus(function(){
@@ -190,42 +209,6 @@ jQuery(function($){
         }
     }
 
-    // ===== Show/Hide Customizer Options ==== //
-
-    function displayLayoutOptions(){
-
-        var imageHeightOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_image_height');
-        var imageHeightPostOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_image_height_post');
-        var imageStyleOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_image_style');
-        var fullPostOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_full_post');
-        var contentDisplayOption = $('html', window.parent.document).find('#customize-control-premium_layouts_two_column_images_content_display');
-
-        imageHeightOption.hide();
-        imageHeightPostOption.hide();
-        imageStyleOption.hide();
-        fullPostOption.hide();
-        contentDisplayOption.hide();
-
-        // if the layout is set to full-width images, display the image height option
-        $('html', window.parent.document).find('#customize-control-premium_layouts_setting option').each(function(){
-            if($(this).attr('selected') == 'selected' && $(this).val() == 'full-width-images'){
-                imageHeightOption.show();
-                imageStyleOption.show();
-                imageHeightPostOption.show();
-            }
-            if($(this).attr('selected') == 'selected' && $(this).val() == 'full-width'){
-                fullPostOption.show();
-            }
-            if($(this).attr('selected') == 'selected' && $(this).val() == 'two-column-images'){
-                contentDisplayOption.show();
-            }
-        });
-    }
-
-    $(window).bind("load", function() {
-        displayLayoutOptions();
-    });
-
     // ===== Full-width Images - create separation between image and post ===== //
 
     function separatePostImage(){
@@ -236,23 +219,6 @@ jQuery(function($){
             $('.featured-image-container').css('padding-bottom', 0);
         }
     }
-
-    // wait until image loaded
-    $(window).bind('load', function() {
-        separatePostImage();
-    });
-
-    // ===== Window Resize ===== //
-
-    $(window).on('resize', function(){
-        separatePostImage();
-        videoHeightAdjust();
-        removeLayoutGaps();
-
-        if( window.innerWidth > 799 && $('#site-header').hasClass('toggled') ) {
-            onTap();
-        }
-    });
 
     /* ===== IE9 full-width image text positioning ===== */
 
@@ -281,7 +247,6 @@ jQuery(function($){
             });
         }
     }
-    centerContentIE();
 
     /* lazy load images */
     function lazyLoadImages(){
@@ -304,7 +269,6 @@ jQuery(function($){
             }
         });
     }
-    lazyLoadImages();
 
     var scrollHandling = {
         allow: true,
@@ -322,47 +286,32 @@ jQuery(function($){
         }
     });
 
-    // reapply closed class for touch device usage
-    // doesn't have any impact unless 'touchstart' fired
-    function reApplyClosedClass(e) {
-
-        var container = $('.menu-item-has-children');
-
-        if (!container.is(e.target) // if the target of the click isn't the container...
-            && container.has(e.target).length === 0) // ... nor a descendant of the container
-        {
-            container.addClass('closed');
-        }
-    }
-    $(document).on('click', reApplyClosedClass);
-
     // reposition the description if a logo is present
     function positionSiteDescription(){
 
         var logo = siteHeader.find('.logo');
 
-            // if screen is 800px+ wide
-            if( window.innerWidth > 799 ) {
+        // if screen is 800px+ wide
+        if( window.innerWidth > 799 ) {
 
-                // if there is a logo
-                if( logo.length ) {
+            // if there is a logo
+            if( logo.length ) {
 
-                    // get the logo height
-                    var logoHeight = logo.height();
+                // get the logo height
+                var logoHeight = logo.height();
 
-                    // if logo hasn't loaded yet, wait 1000ms
-                    if( logoHeight == 0 ) {
-                        setTimeout( function(){
-                            $(".site-description").css('top', logoHeight - 25 );
-                        }, 1000 )
-                    } else {
-                        // adjust the description placement accordingly
+                // if logo hasn't loaded yet, wait 1000ms
+                if( logoHeight == 0 ) {
+                    setTimeout( function(){
                         $(".site-description").css('top', logoHeight - 25 );
-                    }
+                    }, 1000 )
+                } else {
+                    // adjust the description placement accordingly
+                    $(".site-description").css('top', logoHeight - 25 );
                 }
             }
+        }
     }
-    positionSiteDescription();
 
 
     // get videos on the blog to better fit with the standard layout
@@ -400,18 +349,12 @@ jQuery(function($){
             }
         }
     }
-    videoHeightAdjust();
 
     // adjust height to fit footer into viewport instead of keeping it just out of view
     function adjustSiteHeight() {
-
         var footerHeight = $('#site-footer').outerHeight();
-
         body.css('height', 'calc(100% - ' + footerHeight + 'px)');
     }
-    adjustSiteHeight();
-
-    removeLayoutGaps();
 
     function removeLayoutGaps(){
 

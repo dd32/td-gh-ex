@@ -6,7 +6,7 @@
     var tagline = $('.site-description');
     var menuPrimary = $('#menu-primary');
     var footer = $('#site-footer');
-    var inlineStyles = $('#style-inline-css');
+    var inlineStyles = $('#ct-tracks-style-inline-css');
 
     // Site title
     wp.customize( 'blogname', function( value ) {
@@ -15,6 +15,7 @@
             if( siteTitle.find('img').length == 0 ) {
                 siteTitle.children('a').text( to );
             }
+            footer.children('h3').children('a').text( to );
         } );
     } );
 
