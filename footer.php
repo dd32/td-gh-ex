@@ -6,8 +6,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package AcmeBlog
+ * @package AcmeThemes
+ * @subpackage AcmeBlog
  */
+
 
 /**
  * acmeblog_action_after_content hook

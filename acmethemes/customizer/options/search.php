@@ -1,14 +1,14 @@
 <?php
-/*adding sections for Search Placeholder theme options panel*/
+/*adding sections for Search Placeholder*/
 $wp_customize->add_section( 'acmeblog-search', array(
     'priority'       => 20,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
     'title'          => __( 'Search', 'acmeblog' ),
-    'panel'  => 'acmeblog-options',
+    'panel'          => 'acmeblog-options'
 ) );
 
-/*Search Placeholder Search Placeholder title*/
+/*Search Placeholder*/
 $wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-search-placholder]', array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults['acmeblog-search-placholder'],
@@ -19,5 +19,5 @@ $wp_customize->add_control( 'acmeblog_theme_options[acmeblog-search-placholder]'
     'section'   => 'acmeblog-search',
     'settings'  => 'acmeblog_theme_options[acmeblog-search-placholder]',
     'type'	  	=> 'text',
-    'priority'  => 10,
+    'priority'  => 10
 ) );

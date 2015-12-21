@@ -4,7 +4,8 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package AcmeBlog
+ * @package AcmeThemes
+ * @subpackage AcmeBlog
  */
 
 ?>
@@ -24,18 +25,23 @@
 			<?php
 			$sidebar_layout = acmeblog_sidebar_selection();
 			if( $sidebar_layout == "no-sidebar"){
-				$thumbnail = 'full';
+				$thumbnail = 'large';
+				$no_image = get_template_directory_uri().'/assets/img/no-image-840-480.jpg';
 			}
 			else{
 				$thumbnail = 'medium';
+				$no_image = get_template_directory_uri().'/assets/img/no-image-660-365.jpg';
+
 			}
 			if( has_post_thumbnail() ):
-				$img_url = wp_get_attachment_image_src( get_post_thumbnail_id(), $thumbnail );
+				the_post_thumbnail( $thumbnail );
 			else:
-				$img_url[0] = get_template_directory_uri().'/assets/img/no-image-660x362.jpg';
+				$img_url[0] = $no_image;
+				?>
+				<img src="<?php echo esc_url( $img_url[0] ); ?>" alt="<?php the_title_attribute(); ?>" title="<?php the_title_attribute(); ?>" />
+				<?php
 			endif;
 			?>
-			<img src="<?php echo $img_url[0]; ?>" alt="<?php the_title_attribute(); ?>" title="<?php the_title_attribute(); ?>" />
 		</figure>
 	</div><!-- .single-feat-->
 

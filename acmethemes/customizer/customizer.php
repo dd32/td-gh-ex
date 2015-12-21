@@ -2,15 +2,19 @@
 /**
  * AcmeBlog Theme Customizer.
  *
- * @package AcmeBlog
+ * @package AcmeThemes
+ * @subpackage AcmeBlog
  */
 
-
-/*core customizer function*/
+/*
+* file for customizer core functions
+*/
 $acmeblog_custom_controls_file_path = acmeblog_file_directory('acmethemes/customizer/customizer-core.php');
 require $acmeblog_custom_controls_file_path;
 
-/*sanitization customizer function*/
+/*
+* file for customizer sanitization functions
+*/
 $acmeblog_sanitize_functions_file_path = acmeblog_file_directory('acmethemes/customizer/sanitize-functions.php');
 require $acmeblog_sanitize_functions_file_path;
 
@@ -24,64 +28,59 @@ function acmeblog_customize_register( $wp_customize ) {
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
-    /*added features for acmeblog themes*/
+    /*saved options*/
     $options  = acmeblog_get_theme_options();
 
+    /*defaults options*/
     $defaults = acmeblog_get_default_theme_options();
 
-    /*Custom Controls*/
+    /*
+    * file for customizer custom controls classes
+    */
     $acmeblog_custom_controls_file_path = acmeblog_file_directory('acmethemes/customizer/custom-controls.php');
     require $acmeblog_custom_controls_file_path;
 
-    /*ading theme options panel*/
-    $wp_customize->add_panel( 'acmeblog-options', array(
-        'priority'       => 150,
-        'capability'     => 'edit_theme_options',
-        'theme_supports' => '',
-        'title'          => __( 'Theme options', 'acmeblog' ),
-        'description'    => __( 'Customize your awesome site with theme options ', 'acmeblog' )
-    ) );
     /*
-     * creating sections acmeblog-layout
+     * file for feature panel of home page
      */
-    $acmeblog_customizer_options_layout_file_path = acmeblog_file_directory('acmethemes/customizer/options/layout.php');
-    require $acmeblog_customizer_options_layout_file_path;
+    $acmeblog_customizer_feature_option_file_path = acmeblog_file_directory('acmethemes/customizer/feature-section/feature-panel.php');
+    require $acmeblog_customizer_feature_option_file_path;
 
     /*
-     * creating sections acmeblog-header
-     */
-    $acmeblog_customizer_options_header_file_path = acmeblog_file_directory('acmethemes/customizer/options/header.php');
-    require $acmeblog_customizer_options_header_file_path;
-
-    /*
-   * creating sections acmeblog-search
-   */
-    $acmeblog_customizer_options_search_file_path = acmeblog_file_directory('acmethemes/customizer/options/search.php');
-    require $acmeblog_customizer_options_search_file_path;
-
-    /*
-     * creating sections acmeblog-footer
-     */
-    $acmeblog_customizer_options_footer_file_path = acmeblog_file_directory('acmethemes/customizer/options/footer.php');
-    require $acmeblog_customizer_options_footer_file_path;
-
-    /*
-    * creating sections acmeblog-featured
+    * file for header panel
     */
-    $acmeblog_customizer_options_front_page_file_path = acmeblog_file_directory('acmethemes/customizer/options/front-page.php');
-    require $acmeblog_customizer_options_front_page_file_path;
+    $acmeblog_customizer_header_options_file_path = acmeblog_file_directory('acmethemes/customizer/header-options/header-panel.php');
+    require $acmeblog_customizer_header_options_file_path;
 
     /*
-     * creating sections acmeblog-custom-css
-     * */
-    $acmeblog_customizer_options_custom_css_file_path = acmeblog_file_directory('acmethemes/customizer/options/custom-css.php');
-    require $acmeblog_customizer_options_custom_css_file_path;
-
-    /*
-    * creating sections acmeblog-single
+    * file for customizer footer section
     */
-    $acmeblog_customizer_options_single = acmeblog_file_directory('acmethemes/customizer/options/single-post.php');
-    require $acmeblog_customizer_options_single;
+    $acmeblog_customizer_footer_options_file_path = acmeblog_file_directory('acmethemes/customizer/footer-section/footer-section.php');
+    require $acmeblog_customizer_footer_options_file_path;
+
+    /*
+    * file for design/layout panel
+    */
+    $acmeblog_customizer_design_options_file_path = acmeblog_file_directory('acmethemes/customizer/design-options/design-panel.php');
+    require $acmeblog_customizer_design_options_file_path;
+
+    /*
+    * file for single post sections
+    */
+    $acmeblog_customizer_single_post_section_file_path = acmeblog_file_directory('acmethemes/customizer/single-posts/single-post-section.php');
+    require $acmeblog_customizer_single_post_section_file_path;
+
+    /*
+     * file for options panel
+     */
+    $acmeblog_customizer_options_panel_file_path = acmeblog_file_directory('acmethemes/customizer/options/options-panel.php');
+    require $acmeblog_customizer_options_panel_file_path;
+
+    /*
+  * file for options reset
+  */
+    $acmeblog_customizer_options_reset_file_path = acmeblog_file_directory('acmethemes/customizer/options/options-reset.php');
+    require $acmeblog_customizer_options_reset_file_path;
 
     /*removing*/
     $wp_customize->remove_panel('header_image');
@@ -93,6 +92,6 @@ add_action( 'customize_register', 'acmeblog_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function acmeblog_customize_preview_js() {
-    wp_enqueue_script( 'acmeblog_customizer', get_template_directory_uri() . '/acemethemes/core/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+    wp_enqueue_script( 'acmeblog-customizer', get_template_directory_uri() . '/acmethemes/core/js/customizer.js', array( 'customize-preview' ), '1.1.0', true );
 }
 add_action( 'customize_preview_init', 'acmeblog_customize_preview_js' );

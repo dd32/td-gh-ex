@@ -6,7 +6,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package AcmeBlog
+ * @package AcmeThemes
+ * @subpackage AcmeBlog
  */
 
 /**
@@ -40,14 +41,7 @@ do_action( 'acmeblog_action_before_head' );?>
 		?>
 
 	</head>
-<body <?php body_class();
-/**
- * acmeblog_action_body_attr hook
- * @since acmeblog 1.0.0
- *
- * @hooked acmeblog_body_attr- 10
- */
-do_action( 'acmeblog_action_body_attr' );?>>
+<body <?php body_class();?>>
 
 <?php
 /**

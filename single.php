@@ -4,11 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package AcmeBlog
+ * @package AcmeThemes
+ * @subpackage AcmeBlog
  */
+global $acmeblog_customizer_all_values;
 
 get_header(); ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -23,7 +24,7 @@ get_header(); ?>
 			 *
 			 * @hooked acmeblog_related_posts_belo -  10
 			 */
-			do_action( 'acmeblog_related_posts' ,get_the_ID());
+			do_action( 'acmeblog_related_posts' ,get_the_ID() );
 			?>
 
 			<?php

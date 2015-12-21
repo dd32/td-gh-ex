@@ -1,0 +1,65 @@
+<?php
+/*adding sections for header social options */
+$wp_customize->add_section( 'acmeblog-header-social', array(
+    'priority'       => 20,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '',
+    'title'          => __( 'Social Options', 'acmeblog' ),
+    'panel'          => 'acmeblog-header-panel'
+) );
+
+/*facebook url*/
+$wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-facebook-url]', array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults['acmeblog-facebook-url'],
+    'sanitize_callback' => 'esc_url_raw',
+) );
+$wp_customize->add_control( 'acmeblog_theme_options[acmeblog-facebook-url]', array(
+    'label'		=> __( 'Facebook url', 'acmeblog' ),
+    'section'   => 'acmeblog-header-social',
+    'settings'  => 'acmeblog_theme_options[acmeblog-facebook-url]',
+    'type'	  	=> 'url',
+    'priority'  => 20
+) );
+
+/*twitter url*/
+$wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-twitter-url]', array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults['acmeblog-twitter-url'],
+    'sanitize_callback' => 'esc_url_raw',
+) );
+$wp_customize->add_control( 'acmeblog_theme_options[acmeblog-twitter-url]', array(
+    'label'		=> __( 'Twitter url', 'acmeblog' ),
+    'section'   => 'acmeblog-header-social',
+    'settings'  => 'acmeblog_theme_options[acmeblog-twitter-url]',
+    'type'	  	=> 'url',
+    'priority'  => 25
+) );
+
+/*youtube url*/
+$wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-youtube-url]', array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults['acmeblog-youtube-url'],
+    'sanitize_callback' => 'esc_url_raw',
+) );
+$wp_customize->add_control( 'acmeblog_theme_options[acmeblog-youtube-url]', array(
+    'label'		=> __( 'Youtube url', 'acmeblog' ),
+    'section'   => 'acmeblog-header-social',
+    'settings'  => 'acmeblog_theme_options[acmeblog-youtube-url]',
+    'type'	  	=> 'url',
+    'priority'  => 25
+) );
+
+/*enable social*/
+$wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-enable-social]', array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults['acmeblog-enable-social'],
+    'sanitize_callback' => 'acmeblog_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'acmeblog_theme_options[acmeblog-enable-social]', array(
+    'label'		=> __( 'Enable social', 'acmeblog' ),
+    'section'   => 'acmeblog-header-social',
+    'settings'  => 'acmeblog_theme_options[acmeblog-enable-social]',
+    'type'	  	=> 'checkbox',
+    'priority'  => 30
+) );

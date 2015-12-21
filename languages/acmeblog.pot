@@ -1,347 +1,579 @@
-# Copyright (C) 2015 Automattic
+# Copyright (C) 2015 AcmeThemes
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: AcmeBlog\n"
+"POT-Creation-Date: 2015-12-20 21:50+0545\n"
+"PO-Revision-Date: 2015-12-20 21:50+0545\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:15
-#@ _s
+#: 404.php:18
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:19
-#@ _s
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+#: 404.php:22
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
 msgstr ""
 
-#: 404.php:27
-#@ _s
-msgid "Most Used Categories"
+#: acmethemes/core.php:41
+msgid "Primary Menu"
 msgstr ""
 
-#. translators: %1$s: smiley
-#: 404.php:44
+#: acmethemes/core/template-tags.php:29
 #, php-format
-#@ _s
-msgid "Try looking in the monthly archives. %1$s"
+msgctxt "post date"
+msgid "%s"
 msgstr ""
 
-#: comments.php:29
+#: acmethemes/core/template-tags.php:34
 #, php-format
-#@ _s
+msgctxt "post author"
+msgid "%s"
+msgstr ""
+
+#: acmethemes/core/template-tags.php:51 acmethemes/core/template-tags.php:57
+msgid ", "
+msgstr ""
+
+#: acmethemes/core/template-tags.php:53 acmethemes/core/template-tags.php:59
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: acmethemes/core/template-tags.php:65
+msgid "Leave a comment"
+msgstr ""
+
+#: acmethemes/core/template-tags.php:65
+msgid "1 Comment"
+msgstr ""
+
+#: acmethemes/core/template-tags.php:65
+msgid "% Comments"
+msgstr ""
+
+#: acmethemes/core/template-tags.php:72 template-parts/content-page.php:33
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: acmethemes/customizer/custom-controls.php:37
+#: acmethemes/customizer/custom-controls.php:97
+msgid "Select"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:14
+msgid "Logo Only ( First Select Logo Above )"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:15
+msgid "Site Title Only"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:16
+msgid "Site Title and Tagline"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:17
+msgid "Disable"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:35
+msgid "Fullwidth"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:36
+msgid "Boxed"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:54
+msgid "Right Sidebar"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:55
+msgid "Left Sidebar"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:56
+msgid "No Sidebar"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:75
+msgid "Full Image"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:76
+msgid "No Image"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:94
+msgid "Do Not Reset"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:95
+msgid "Reset Colors Options"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:96
+msgid "Reset All"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:123
+#: acmethemes/customizer/header-options/header-logo.php:22
+msgid "Logo"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:133
+msgid "AcmeThemes &copy; 2015"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:146
+#: acmethemes/customizer/options/search.php:7
+msgid "Search"
+msgstr ""
+
+#: acmethemes/customizer/design-options/background-image.php:7
+msgid "Background Image"
+msgstr ""
+
+#: acmethemes/customizer/design-options/blog-layout.php:7
+#: acmethemes/customizer/design-options/blog-layout.php:20
+msgid "Default Blog Layout"
+msgstr ""
+
+#: acmethemes/customizer/design-options/colors-options.php:7
+msgid "Colors"
+msgstr ""
+
+#: acmethemes/customizer/design-options/colors-options.php:17
+msgid "Primary Color"
+msgstr ""
+
+#: acmethemes/customizer/design-options/custom-css.php:7
+#: acmethemes/customizer/design-options/custom-css.php:18
+msgid "Custom CSS"
+msgstr ""
+
+#: acmethemes/customizer/design-options/default-layout.php:7
+#: acmethemes/customizer/design-options/default-layout.php:21
+msgid "Default Layout"
+msgstr ""
+
+#: acmethemes/customizer/design-options/design-panel.php:7
+msgid "Layout/Design Option"
+msgstr ""
+
+#: acmethemes/customizer/design-options/sidebar-layout.php:7
+#: acmethemes/customizer/design-options/sidebar-layout.php:20
+msgid "Default Sidebar Layout"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-category.php:7
+msgid "Category Slider Selection"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-category.php:23
+msgid "Select Category For Slider"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-enable.php:7
+#: acmethemes/customizer/feature-section/feature-enable.php:19
+msgid "Enable Feature Section"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-enable.php:20
+msgid "Feature section will display on front/home page"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-panel.php:7
+msgid "Featured Section Options"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-panel.php:8
+msgid "Customize your awesome site feature section "
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-side.php:7
+msgid "Slider Right Section"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-side.php:9
+msgid ""
+"Note: If you select same post from both selection, then only one time post "
+"will display"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-side.php:23
+msgid "Select Post One"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-side.php:43
+msgid "Select Post Two"
+msgstr ""
+
+#: acmethemes/customizer/footer-section/footer-section.php:7
+msgid "Footer Option"
+msgstr ""
+
+#: acmethemes/customizer/footer-section/footer-section.php:17
+msgid "Copyright Text"
+msgstr ""
+
+#: acmethemes/customizer/header-options/header-date.php:7
+msgid "Enable Date"
+msgstr ""
+
+#: acmethemes/customizer/header-options/header-date.php:19
+msgid "Show Date"
+msgstr ""
+
+#: acmethemes/customizer/header-options/header-logo.php:7
+msgid "Logo Options"
+msgstr ""
+
+#: acmethemes/customizer/header-options/header-logo.php:38
+msgid "Logo Alt Text"
+msgstr ""
+
+#: acmethemes/customizer/header-options/header-logo.php:54
+msgid "Logo/Site Title-Tagline Display Options"
+msgstr ""
+
+#: acmethemes/customizer/header-options/header-panel.php:7
+msgid "Header Options"
+msgstr ""
+
+#: acmethemes/customizer/header-options/header-panel.php:8
+msgid "Customize your awesome site header "
+msgstr ""
+
+#: acmethemes/customizer/header-options/menu-option.php:7
+msgid "Search Options"
+msgstr ""
+
+#: acmethemes/customizer/header-options/menu-option.php:18
+msgid "Show Search"
+msgstr ""
+
+#: acmethemes/customizer/header-options/social-options.php:7
+msgid "Social Options"
+msgstr ""
+
+#: acmethemes/customizer/header-options/social-options.php:18
+msgid "Facebook url"
+msgstr ""
+
+#: acmethemes/customizer/header-options/social-options.php:32
+msgid "Twitter url"
+msgstr ""
+
+#: acmethemes/customizer/header-options/social-options.php:46
+msgid "Youtube url"
+msgstr ""
+
+#: acmethemes/customizer/header-options/social-options.php:60
+msgid "Enable social"
+msgstr ""
+
+#: acmethemes/customizer/options/breadcrumb.php:7
+msgid "Breadcrumb Options"
+msgstr ""
+
+#: acmethemes/customizer/options/breadcrumb.php:19
+msgid "Enable Breadcrumb"
+msgstr ""
+
+#: acmethemes/customizer/options/options-panel.php:7
+msgid "Theme Options"
+msgstr ""
+
+#: acmethemes/customizer/options/options-panel.php:8
+msgid "Customize your awesome site with theme options "
+msgstr ""
+
+#: acmethemes/customizer/options/options-reset.php:46
+#: acmethemes/customizer/options/options-reset.php:60
+msgid "Reset Options"
+msgstr ""
+
+#: acmethemes/customizer/options/options-reset.php:61
+msgid ""
+"Caution: Reset theme settings according to the given options. Refresh the "
+"page after saving to view the effects. "
+msgstr ""
+
+#: acmethemes/customizer/options/search.php:18
+msgid "Search Placeholder"
+msgstr ""
+
+#: acmethemes/customizer/single-posts/single-post-section.php:7
+msgid "Single Post Options"
+msgstr ""
+
+#: acmethemes/customizer/single-posts/single-post-section.php:17
+msgid "Show Related Posts In Single Post"
+msgstr ""
+
+#: acmethemes/functions.php:70
+#, php-format
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr ""
+
+#: acmethemes/functions.php:73
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: acmethemes/functions.php:81
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: acmethemes/functions.php:83
+msgid "(Edit)"
+msgstr ""
+
+#: acmethemes/functions.php:168
+msgid "You are here"
+msgstr ""
+
+#: acmethemes/functions.php:169
+msgid "Home"
+msgstr ""
+
+#: acmethemes/functions.php:170
+msgid "Search Results for "
+msgstr ""
+
+#: acmethemes/functions.php:273
+msgid "Page"
+msgstr ""
+
+#: acmethemes/hooks/comment-forms.php:17
+msgid "Name"
+msgstr ""
+
+#: acmethemes/hooks/comment-forms.php:18
+msgid "Email"
+msgstr ""
+
+#: acmethemes/hooks/comment-forms.php:19
+msgid "Website URL"
+msgstr ""
+
+#: acmethemes/hooks/comment-forms.php:20
+msgid "Comment"
+msgstr ""
+
+#: acmethemes/hooks/comment-forms.php:22
+msgid "Add Comment"
+msgstr ""
+
+#: acmethemes/hooks/comment-forms.php:23
+#, php-format
+msgid "%s Leave a Comment"
+msgstr ""
+
+#: acmethemes/hooks/footer.php:45
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: acmethemes/hooks/footer.php:45
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: acmethemes/hooks/footer.php:47
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: acmethemes/hooks/header.php:121
+msgid "Skip to content"
+msgstr ""
+
+#: acmethemes/hooks/header.php:217
+msgid "Goto Appearance > Menus -: for setting up menu "
+msgstr ""
+
+#: acmethemes/hooks/related-posts.php:27
+msgid "Related posts"
+msgstr ""
+
+#: acmethemes/hooks/slider-selection.php:22
+msgid "Welcome to AcmeBlog"
+msgstr ""
+
+#: acmethemes/hooks/slider-selection.php:27
+msgid "A Professional Blog Theme"
+msgstr ""
+
+#: acmethemes/hooks/slider-selection.php:39
+msgid "Slider Setting"
+msgstr ""
+
+#: acmethemes/hooks/slider-selection.php:44
+msgid ""
+"Goto Appearance > Customize > Featured Section Options, for setting up "
+"feature slider and featured options"
+msgstr ""
+
+#: acmethemes/hooks/slider-selection.php:113
+msgid "Read More"
+msgstr ""
+
+#: acmethemes/hooks/slider-side.php:81
+msgid "Select post"
+msgstr ""
+
+#: acmethemes/hooks/slider-side.php:84 acmethemes/hooks/slider-side.php:97
+msgid " Goto Appearance > Customize > Featured Section Options"
+msgstr ""
+
+#: acmethemes/hooks/slider-side.php:94
+msgid "Select another post"
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:30
+msgid "AT Author"
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:32
+msgid "Add author with different options."
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:48
+msgid "Note: Use square image. Recommended image size : 250 x 250"
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:52
+msgid "Title:"
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:55
+msgid "Author Image"
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:58
+#: acmethemes/sidebar-widget/acme-author.php:70
+msgid "Select Author Image"
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:67
+msgid "Image preview"
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:70
+msgid "Upload Image"
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:71
+msgid "Remove Image"
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:74
+msgid "Author Short Disc:"
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:78
+msgid "Link URL:"
+msgstr ""
+
+#: acmethemes/sidebar-widget/acme-author.php:83
+msgid "Open in new window"
+msgstr ""
+
+#: acmethemes/sidebar-widget/sidebar.php:9
+msgid "Main Sidebar Area"
+msgstr ""
+
+#: acmethemes/sidebar-widget/sidebar.php:11
+msgid "Displays items on sidebar"
+msgstr ""
+
+#: comments.php:32
+#, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:38
-#: comments.php:59
-#@ _s
+#: comments.php:41 comments.php:63
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:41
-#: comments.php:62
-#@ _s
+#: comments.php:44 comments.php:66
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:42
-#: comments.php:63
-#@ _s
+#: comments.php:45 comments.php:67
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:75
-#@ _s
+#: comments.php:79
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:16
-#@ _s
-msgid "http://wordpress.org/"
-msgstr ""
-
-#: footer.php:16
+#: search.php:19
 #, php-format
-#@ _s
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: footer.php:18
-#, php-format
-#@ _s
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-#: functions.php:45
-#: header.php:32
-#@ _s
-msgid "Primary Menu"
-msgstr ""
-
-#: functions.php:100
-#@ _s
-msgid "Sidebar"
-msgstr ""
-
-#: header.php:23
-#@ _s
-msgid "Skip to content"
-msgstr ""
-
-#: inc/extras.php:52
-#, php-format
-#@ _s
-msgid "Page %s"
-msgstr ""
-
-#: inc/template-tags.php:23
-#@ _s
-msgid "Posts navigation"
-msgstr ""
-
-#: inc/template-tags.php:27
-#@ _s
-msgid "Older posts"
-msgstr ""
-
-#: inc/template-tags.php:31
-#@ _s
-msgid "Newer posts"
-msgstr ""
-
-#: inc/template-tags.php:56
-#@ _s
-msgid "Post navigation"
-msgstr ""
-
-#: inc/template-tags.php:86
-#, php-format
-#@ _s
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
-
-#: inc/template-tags.php:91
-#, php-format
-#@ _s
-msgctxt "post author"
-msgid "by %s"
-msgstr ""
-
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:108
-#: inc/template-tags.php:114
-#@ _s
-msgid ", "
-msgstr ""
-
-#: inc/template-tags.php:110
-#, php-format
-#@ _s
-msgid "Posted in %1$s"
-msgstr ""
-
-#: inc/template-tags.php:116
-#, php-format
-#@ _s
-msgid "Tagged %1$s"
-msgstr ""
-
-#: inc/template-tags.php:122
-#@ _s
-msgid "Leave a comment"
-msgstr ""
-
-#: inc/template-tags.php:122
-#@ _s
-msgid "1 Comment"
-msgstr ""
-
-#: inc/template-tags.php:122
-#@ _s
-msgid "% Comments"
-msgstr ""
-
-#: inc/template-tags.php:126
-#: template-parts/content-page.php:26
-#@ _s
-msgid "Edit"
-msgstr ""
-
-#: inc/template-tags.php:143
-#, php-format
-#@ _s
-msgid "Category: %s"
-msgstr ""
-
-#: inc/template-tags.php:145
-#, php-format
-#@ _s
-msgid "Tag: %s"
-msgstr ""
-
-#: inc/template-tags.php:147
-#, php-format
-#@ _s
-msgid "Author: %s"
-msgstr ""
-
-#: inc/template-tags.php:149
-#, php-format
-#@ _s
-msgid "Year: %s"
-msgstr ""
-
-#: inc/template-tags.php:149
-#@ _s
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: inc/template-tags.php:151
-#, php-format
-#@ _s
-msgid "Month: %s"
-msgstr ""
-
-#: inc/template-tags.php:151
-#@ _s
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: inc/template-tags.php:153
-#, php-format
-#@ _s
-msgid "Day: %s"
-msgstr ""
-
-#: inc/template-tags.php:153
-#@ _s
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr ""
-
-#: inc/template-tags.php:156
-#@ _s
-msgctxt "post format archive title"
-msgid "Asides"
-msgstr ""
-
-#: inc/template-tags.php:158
-#@ _s
-msgctxt "post format archive title"
-msgid "Galleries"
-msgstr ""
-
-#: inc/template-tags.php:160
-#@ _s
-msgctxt "post format archive title"
-msgid "Images"
-msgstr ""
-
-#: inc/template-tags.php:162
-#@ _s
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr ""
-
-#: inc/template-tags.php:164
-#@ _s
-msgctxt "post format archive title"
-msgid "Quotes"
-msgstr ""
-
-#: inc/template-tags.php:166
-#@ _s
-msgctxt "post format archive title"
-msgid "Links"
-msgstr ""
-
-#: inc/template-tags.php:168
-#@ _s
-msgctxt "post format archive title"
-msgid "Statuses"
-msgstr ""
-
-#: inc/template-tags.php:170
-#@ _s
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr ""
-
-#: inc/template-tags.php:172
-#@ _s
-msgctxt "post format archive title"
-msgid "Chats"
-msgstr ""
-
-#: inc/template-tags.php:175
-#, php-format
-#@ _s
-msgid "Archives: %s"
-msgstr ""
-
-#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-#: inc/template-tags.php:179
-#, php-format
-#@ _s
-msgid "%1$s: %2$s"
-msgstr ""
-
-#: inc/template-tags.php:181
-#@ _s
-msgid "Archives"
-msgstr ""
-
-#: search.php:16
-#, php-format
-#@ _s
 msgid "Search Results for: %s"
 msgstr ""
 
-#: template-parts/content-none.php:14
-#@ _s
+#: template-parts/content-none.php:15
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:20
+#: template-parts/content-none.php:21
 #, php-format
-#@ _s
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:24
-#@ _s
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:29
-#@ _s
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+#: template-parts/content-none.php:30
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:19
-#: template-parts/content-single.php:23
-#: template-parts/content.php:32
-#@ _s
+#: template-parts/content-page.php:22 template-parts/content-single.php:52
+#: template-parts/content.php:48
 msgid "Pages:"
 msgstr ""
 
-#. translators: %s: Name of current post 
-#: template-parts/content.php:25
-#, php-format
-#@ _s
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+#. Theme Name of the plugin/theme
+msgid "AcmeBlog"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://www.acmethemes.com/themes/acmeblog/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "acmethemes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.acmethemes.com/"
 msgstr ""

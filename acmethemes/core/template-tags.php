@@ -4,7 +4,8 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package AcmeBlog
+ * @package AcmeThemes
+ * @subpackage AcmeBlog
  */
 
 if ( ! function_exists( 'acmeblog_posted_on' ) ) :
@@ -26,12 +27,12 @@ function acmeblog_posted_on() {
 
 	$posted_on = sprintf(
 		esc_html_x( '%s', 'post date', 'acmeblog' ),
-		'<i class="fa fa-calendar"></i><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><i class="fa fa-calendar"></i>' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
 		esc_html_x( '%s', 'post author', 'acmeblog' ),
-		'<i class="fa fa-user"></i><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><i class="fa fa-user"></i>' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -82,41 +83,48 @@ endif;
  *
  * @return bool
  */
-function acmeblog_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'acmeblog_categories' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
+if ( ! function_exists( 'acmeblog_categorized_blog' ) ) :
+	function acmeblog_categorized_blog() {
+		if ( false === ( $all_the_cool_cats = get_transient( 'acmeblog_categories' ) ) ) {
+			// Create an array of all the categories that are attached to posts.
+			$all_the_cool_cats = get_categories( array(
+				'fields'     => 'ids',
+				'hide_empty' => 1,
 
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
+				// We only need to know if there is more than one category.
+				'number'     => 2,
+			) );
 
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+			// Count the number of categories that are attached to the posts.
+			$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'acmeblog_categories', $all_the_cool_cats );
+			set_transient( 'acmeblog_categories', $all_the_cool_cats );
+		}
+
+		if ( $all_the_cool_cats > 1 ) {
+			// This blog has more than 1 category so acmeblog_categorized_blog should return true.
+			return true;
+		} else {
+			// This blog has only 1 category so acmeblog_categorized_blog should return false.
+			return false;
+		}
 	}
+endif;
 
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so acmeblog_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so acmeblog_categorized_blog should return false.
-		return false;
-	}
-}
 
 /**
  * Flush out the transients used in acmeblog_categorized_blog.
  */
-function acmeblog_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
+if ( ! function_exists( 'acmeblog_category_transient_flusher' ) ) :
+	function acmeblog_category_transient_flusher() {
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return;
+		}
+		// Like, beat it. Dig?
+		delete_transient( 'acmeblog_categories' );
 	}
-	// Like, beat it. Dig?
-	delete_transient( 'acmeblog_categories' );
-}
+endif;
+
+
 add_action( 'edit_category', 'acmeblog_category_transient_flusher' );
 add_action( 'save_post',     'acmeblog_category_transient_flusher' );

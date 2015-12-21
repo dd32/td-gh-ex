@@ -4,7 +4,8 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package AcmeBlog
+ * @package AcmeThemes
+ * @subpackage AcmeBlog
  */
 
 /**
@@ -13,12 +14,15 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function acmeblog_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
+if ( ! function_exists( 'acmeblog_body_classes' ) ) :
+	function acmeblog_body_classes( $classes ) {
+		// Adds a class of group-blog to blogs with more than 1 published author.
+		if ( is_multi_author() ) {
+			$classes[] = 'group-blog';
+		}
 
-	return $classes;
-}
+		return $classes;
+	}
+endif;
+
 add_filter( 'body_class', 'acmeblog_body_classes' );

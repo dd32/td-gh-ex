@@ -4,9 +4,10 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package AcmeBlog
+ * @package AcmeThemes
+ * @subpackage AcmeBlog
  */
-
+global $acmeblog_customizer_all_values;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -20,24 +21,28 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<!--post thumbnal options-->
-	<div class="post-thumb">
-		<?php
-		if( has_post_thumbnail() ):
-			$image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail' );
-		else:
-			$image_url[0] = get_template_directory_uri().'/assets/img/no-image-240x172.jpg';
-		endif;
+	<?php
+	if ( $acmeblog_customizer_all_values['acmeblog-blog-archive-layout'] == 'full-image') {
 		?>
-		<a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" title="<?php the_title_attribute(); ?>" /></a>
-	</div><!-- .post-thumb-->
+		<!--post thumbnal options-->
+		<div class="post-thumb">
+			<?php
+			if( has_post_thumbnail() ):
+				$image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+			else:
+				$image_url[0] = get_template_directory_uri().'/assets/img/no-image-840-480.jpg';
+			endif;
+			?>
+			<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( $image_url[0] ); ?>" alt="<?php the_title_attribute(); ?>" title="<?php the_title_attribute(); ?>" /></a>
+		</div><!-- .post-thumb-->
+	<?php
+	}
+	?>
 
 	<div class="entry-content">
 		<?php
 		the_excerpt();
 		?>
-		<a class="read-more" href="<?php the_permalink(); ?> "><?php _e('Read More', 'acmeblog'); ?></a>
-
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'acmeblog' ),

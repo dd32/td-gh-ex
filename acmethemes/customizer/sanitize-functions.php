@@ -28,10 +28,9 @@ endif;
  * @return Boolean
  *
  */
-
 if ( !function_exists('acmeblog_sanitize_checkbox') ) :
 	function acmeblog_sanitize_checkbox( $checked ) {
-		// Boolean check.
+		/*Boolean check.*/
 		return ( ( isset( $checked ) && true == $checked ) ? true : false );
 	}
 endif;
@@ -91,16 +90,16 @@ if ( !function_exists('acmeblog_sanitize_image') ) :
 			'tif|tiff'     => 'image/tiff',
 			'ico'          => 'image/x-icon'
 		);
-		// Return an array with file extension and mime_type.
+		/*Return an array with file extension and mime_type.*/
 		$file = wp_check_filetype( $image, $mimes );
-		// If $image has a valid mime_type, return it; otherwise, return the default.
+		/*If $image has a valid mime_type, return it; otherwise, return the default.*/
 		return ( $file['ext'] ? $image : $setting->default );
 	}
 endif;
 
 
 /**
- * Sanitizing the page/post in slider
+ * Sanitizing the page/post
  *
  * @since acmeblog 1.0.0
  *
@@ -110,9 +109,9 @@ endif;
  */
 if ( !function_exists('acmeblog_sanitize_page') ) :
 	function acmeblog_sanitize_page( $input ) {
-		// Ensure $input is an absolute integer.
+		/*Ensure $input is an absolute integer.*/
 		$page_id = absint( $input );
-		// If $page_id is an ID of a published page, return it; otherwise, return false
+		/*If $page_id is an ID of a published page, return it; otherwise, return false*/
 		return ( 'publish' == get_post_status( $page_id ) ? $page_id : false );
 	}
 endif;
@@ -133,14 +132,13 @@ endif;
 if ( !function_exists('acmeblog_sanitize_select') ) :
 	function acmeblog_sanitize_select( $input, $setting ) {
 
-		// Ensure input is a slug.
+		/*Ensure input is a slug.*/
 		$input = sanitize_key( $input );
 
-		// Get list of choices from the control associated with the setting.
+		/*Get list of choices from the control associated with the setting.*/
 		$choices = $setting->manager->get_control( $setting->id )->choices;
 
-		// If the input is a valid key, return it; otherwise, return the default.
+		/*If the input is a valid key, return it; otherwise, return the default.*/
 		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 	}
 endif;
-
