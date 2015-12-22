@@ -1,18 +1,16 @@
 <?php do_action( 'main_bottom' ); ?>
-</section> <!-- .main -->
-
+</section><!-- .main -->
 <footer class="site-footer" role="contentinfo">
-    <?php do_action( 'footer_top' ); ?>
-    <div class="design-credit">
+	<?php do_action( 'footer_top' ); ?>
+	<div class="design-credit">
         <span>
             <?php
-                $site_url = 'https://www.competethemes.com/author/';
-                $footer_text = sprintf( __( '<a href="%s">Author WordPress Theme</a> by Compete Themes', 'author' ), esc_url( $site_url ) );
-                $footer_text = apply_filters( 'ct_author_footer_text', $footer_text );
-                echo wp_kses_post( $footer_text );
+            $footer_text = sprintf( __( '<a href="%s">Author WordPress Theme</a> by Compete Themes', 'author' ), 'https://www.competethemes.com/author/' );
+            $footer_text = apply_filters( 'ct_author_footer_text', $footer_text );
+            echo wp_kses_post( $footer_text );
             ?>
         </span>
-    </div>
+	</div>
 </footer>
 </div><!-- .max-width -->
 <?php do_action( 'overflow_bottom' ); ?>

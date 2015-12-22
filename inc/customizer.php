@@ -1,79 +1,35 @@
 <?php
 
-/* Add customizer panels, sections, settings, and controls */
 add_action( 'customize_register', 'ct_author_add_customizer_content' );
 
 function ct_author_add_customizer_content( $wp_customize ) {
 
 	/***** Reorder default sections *****/
 
-	$wp_customize->get_section('title_tagline')->priority = 1;
+	$wp_customize->get_section( 'title_tagline' )->priority = 1;
 
 	// check if exists in case user has no pages
-	if ( is_object( $wp_customize->get_section('static_front_page') ) ) {
-		$wp_customize->get_section('static_front_page')->priority = 5;
-		$wp_customize->get_section('static_front_page')->title    = __('Front Page', 'author');
+	if ( is_object( $wp_customize->get_section( 'static_front_page' ) ) ) {
+		$wp_customize->get_section( 'static_front_page' )->priority = 5;
+		$wp_customize->get_section( 'static_front_page' )->title    = __( 'Front Page', 'author' );
 	}
 
 	/***** Add PostMessage Support *****/
-	
+
 	// Add postMessage support for site title and description.
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
 	/***** Add Custom Controls *****/
-
-	// create url input control
-	class ct_author_url_input_control extends WP_Customize_Control {
-		// create new type called 'url'
-		public $type = 'url';
-		// the content to be output in the Customizer
-		public function render_content() {
-			?>
-			<label>
-				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<input type="url" <?php $this->link(); ?> value="<?php echo esc_url_raw( $this->value() ); ?>" />
-			</label>
-		<?php
-		}
-	}
-
-	// number input control
-	class ct_author_number_input_control extends WP_Customize_Control {
-		public $type = 'number';
-
-		public function render_content() {
-			?>
-			<label>
-				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<input type="number" <?php $this->link(); ?> value="<?php echo $this->value(); ?>" />
-			</label>
-		<?php
-		}
-	}
-
-	// create textarea control
-	class ct_author_textarea_control extends WP_Customize_Control {
-		public $type = 'textarea';
-
-		public function render_content() {
-			?>
-			<label>
-				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<textarea rows="8" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-			</label>
-		<?php
-		}
-	}
-
 	// create multi-checkbox/select control
 	class ct_author_multi_checkbox_control extends WP_Customize_Control {
 		public $type = 'multi-checkbox';
 
 		public function render_content() {
 
-			if ( empty( $this->choices ) )
+			if ( empty( $this->choices ) ) {
 				return;
+			}
 			?>
 			<label>
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
@@ -90,46 +46,10 @@ function ct_author_add_customizer_content( $wp_customize ) {
 	}
 
 	// create ad controls
-	class author_description_color_control extends WP_Customize_Control {
+	class author_description_control extends WP_Customize_Control {
 
 		public function render_content() {
-			$link = 'https://www.competethemes.com/author-pro/';
-			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to change your colors.', 'author'), $link ) . "</p>";
-		}
-	}
-	class author_description_header_image_control extends WP_Customize_Control {
-
-		public function render_content() {
-			$link = 'https://www.competethemes.com/author-pro/';
-			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Author Pro Plugin</a> for advanced header image functionality.', 'author'), $link ) . "</p>";
-		}
-	}
-	class author_description_background_control extends WP_Customize_Control {
-
-		public function render_content() {
-			$link = 'https://www.competethemes.com/author-pro/';
-			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Author Pro Plugin</a> for advanced background image and texture functionality.', 'author'), $link ) . "</p>";
-		}
-	}
-	class author_description_font_control extends WP_Customize_Control {
-
-		public function render_content() {
-			$link = 'https://www.competethemes.com/author-pro/';
-			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to change your font.', 'author'), $link ) . "</p>";
-		}
-	}
-	class author_description_display_control_control extends WP_Customize_Control {
-
-		public function render_content() {
-			$link = 'https://www.competethemes.com/author-pro/';
-			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to get hide/show controls.', 'author'), $link ) . "</p>";
-		}
-	}
-	class author_description_footer_text_control extends WP_Customize_Control {
-
-		public function render_content() {
-			$link = 'https://www.competethemes.com/author-pro/';
-			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to customize the footer text.', 'author'), $link ) . "</p>";
+			echo $this->description;
 		}
 	}
 
@@ -137,15 +57,12 @@ function ct_author_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'ct_author_avatar', array(
-		'title'      => __( 'Avatar', 'author' ),
-		'priority'   => 15,
-		'capability' => 'edit_theme_options'
+		'title'    => __( 'Avatar', 'author' ),
+		'priority' => 15
 	) );
 	// setting
 	$wp_customize->add_setting( 'avatar_method', array(
 		'default'           => 'none',
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'ct_author_sanitize_avatar_method'
 	) );
 	// control
@@ -163,8 +80,6 @@ function ct_author_add_customizer_content( $wp_customize ) {
 	) );
 	// setting
 	$wp_customize->add_setting( 'avatar', array(
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'esc_url_raw'
 	) );
 	// control
@@ -172,7 +87,7 @@ function ct_author_add_customizer_content( $wp_customize ) {
 		$wp_customize, 'avatar', array(
 			'label'    => __( 'Upload your avatar', 'author' ),
 			'section'  => 'ct_author_avatar',
-			'settings' => 'avatar',
+			'settings' => 'avatar'
 		)
 	) );
 
@@ -182,13 +97,10 @@ function ct_author_add_customizer_content( $wp_customize ) {
 	$wp_customize->add_section( 'ct_author_logo_upload', array(
 		'title'       => __( 'Logo', 'author' ),
 		'priority'    => 25,
-		'capability'  => 'edit_theme_options',
-		'description' => __('Use this instead of the avatar if you want a non-rounded logo image.', 'author')
+		'description' => __( 'Use this instead of the avatar if you want a non-rounded logo image.', 'author' )
 	) );
 	// setting
 	$wp_customize->add_setting( 'logo_upload', array(
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'esc_url_raw'
 	) );
 	// control
@@ -196,7 +108,7 @@ function ct_author_add_customizer_content( $wp_customize ) {
 		$wp_customize, 'logo_image', array(
 			'label'    => __( 'Upload custom logo.', 'author' ),
 			'section'  => 'ct_author_logo_upload',
-			'settings' => 'logo_upload',
+			'settings' => 'logo_upload'
 		)
 	) );
 
@@ -216,18 +128,16 @@ function ct_author_add_customizer_content( $wp_customize ) {
 	) );
 
 	// create a setting and control for each social site
-	foreach( $social_sites as $social_site => $value ) {
+	foreach ( $social_sites as $social_site => $value ) {
 		// if email icon
-		if( $social_site == 'email' ) {
+		if ( $social_site == 'email' ) {
 			// setting
 			$wp_customize->add_setting( $social_site, array(
-				'type'              => 'theme_mod',
-				'capability'        => 'edit_theme_options',
 				'sanitize_callback' => 'ct_author_sanitize_email'
 			) );
 			// control
 			$wp_customize->add_control( $social_site, array(
-				'label'    => __('Email Address:', 'author' ),
+				'label'    => __( 'Email Address:', 'author' ),
 				'section'  => 'ct_author_social_media_icons',
 				'priority' => $priority,
 			) );
@@ -267,17 +177,14 @@ function ct_author_add_customizer_content( $wp_customize ) {
 
 			// setting
 			$wp_customize->add_setting( $social_site, array(
-				'type'              => 'theme_mod',
-				'capability'        => 'edit_theme_options',
 				'sanitize_callback' => 'esc_url_raw'
 			) );
 			// control
-			$wp_customize->add_control( new ct_author_url_input_control(
-				$wp_customize, $social_site, array(
-					'label'    => $label,
-					'section'  => 'ct_author_social_media_icons',
-					'priority' => $priority,
-				)
+			$wp_customize->add_control( $social_site, array(
+				'type'     => 'url',
+				'label'    => $label,
+				'section'  => 'ct_author_social_media_icons',
+				'priority' => $priority
 			) );
 		}
 		// increment the priority for next site
@@ -288,86 +195,74 @@ function ct_author_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'author_blog', array(
-		'title'      => __( 'Blog', 'author' ),
-		'priority'   => 45,
-		'capability' => 'edit_theme_options'
+		'title'    => __( 'Blog', 'author' ),
+		'priority' => 45
 	) );
 	// setting
 	$wp_customize->add_setting( 'full_post', array(
 		'default'           => 'no',
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'ct_author_sanitize_yes_no_settings'
 	) );
 	// control
 	$wp_customize->add_control( 'full_post', array(
-		'label'          => __( 'Show full posts on blog?', 'author' ),
-		'section'        => 'author_blog',
-		'settings'       => 'full_post',
-		'type'           => 'radio',
-		'choices'        => array(
-			'yes'   => __('Yes', 'author'),
-			'no'  => __('No', 'author')
+		'label'    => __( 'Show full posts on blog?', 'author' ),
+		'section'  => 'author_blog',
+		'settings' => 'full_post',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes', 'author' ),
+			'no'  => __( 'No', 'author' )
 		)
 	) );
 	// setting
 	$wp_customize->add_setting( 'excerpt_length', array(
 		'default'           => '25',
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'absint'
 	) );
 	// control
-	$wp_customize->add_control( new ct_author_number_input_control(
-		$wp_customize, 'excerpt_length', array(
-			'label'          => __( 'Excerpt word count', 'author' ),
-			'section'        => 'author_blog',
-			'settings'       => 'excerpt_length',
-			'type'           => 'number'
-		)
+	$wp_customize->add_control( 'excerpt_length', array(
+		'label'    => __( 'Excerpt word count', 'author' ),
+		'section'  => 'author_blog',
+		'settings' => 'excerpt_length',
+		'type'     => 'number'
 	) );
 	// Read More text - setting
 	$wp_customize->add_setting( 'read_more_text', array(
-		'default'           => __('Continue reading', 'author'),
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
+		'default'           => __( 'Continue reading', 'author' ),
 		'sanitize_callback' => 'ct_author_sanitize_text'
 	) );
 	// Read More text - control
 	$wp_customize->add_control( 'read_more_text', array(
-			'label'          => __( 'Read More link text', 'author' ),
-			'section'        => 'author_blog',
-			'settings'       => 'read_more_text',
-			'type'           => 'text'
+		'label'    => __( 'Read More link text', 'author' ),
+		'section'  => 'author_blog',
+		'settings' => 'read_more_text',
+		'type'     => 'text'
 	) );
 
 	/***** Comment Display *****/
 
 	// section
 	$wp_customize->add_section( 'ct_author_comments_display', array(
-		'title'      => __( 'Comment Display', 'author' ),
-		'priority'   => 55,
-		'capability' => 'edit_theme_options'
+		'title'    => __( 'Comment Display', 'author' ),
+		'priority' => 55
 	) );
 	// setting
 	$wp_customize->add_setting( 'comments_display', array(
-		'default'           => array('post','page','attachment','none'),
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'ct_author_sanitize_comments_setting',
+		'default'           => array( 'post', 'page', 'attachment', 'none' ),
+		'sanitize_callback' => 'ct_author_sanitize_comments_setting'
 	) );
 	// control
 	$wp_customize->add_control( new ct_author_multi_checkbox_control(
 		$wp_customize, 'comments_display', array(
-			'label'          => __( 'Show comments on:', 'author' ),
-			'section'        => 'ct_author_comments_display',
-			'settings'       => 'comments_display',
-			'type'           => 'multi-checkbox',
-			'choices'        => array(
-				'post'   => __('Posts', 'author'),
-				'page'  => __('Pages', 'author'),
-				'attachment'  => __('Attachments', 'author'),
-				'none'  => __('Do not show', 'author')
+			'label'    => __( 'Show comments on:', 'author' ),
+			'section'  => 'ct_author_comments_display',
+			'settings' => 'comments_display',
+			'type'     => 'multi-checkbox',
+			'choices'  => array(
+				'post'       => __( 'Posts', 'author' ),
+				'page'       => __( 'Pages', 'author' ),
+				'attachment' => __( 'Attachments', 'author' ),
+				'none'       => __( 'Do not show', 'author' )
 			)
 		)
 	) );
@@ -376,24 +271,20 @@ function ct_author_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'author_custom_css', array(
-		'title'      => __( 'Custom CSS', 'author' ),
-		'priority'   => 65,
-		'capability' => 'edit_theme_options'
+		'title'    => __( 'Custom CSS', 'author' ),
+		'priority' => 65
 	) );
 	// setting
 	$wp_customize->add_setting( 'custom_css', array(
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'wp_filter_nohtml_kses',
 		'transport'         => 'postMessage'
 	) );
 	// control
-	$wp_customize->add_control( new ct_author_textarea_control(
-		$wp_customize, 'custom_css', array(
-			'label'          => __( 'Add Custom CSS Here:', 'author' ),
-			'section'        => 'author_custom_css',
-			'settings'       => 'custom_css',
-		)
+	$wp_customize->add_control( 'custom_css', array(
+		'type'     => 'textarea',
+		'label'    => __( 'Add Custom CSS Here:', 'author' ),
+		'section'  => 'author_custom_css',
+		'settings' => 'custom_css'
 	) );
 
 
@@ -405,21 +296,19 @@ function ct_author_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'author_header_image', array(
-		'title'      => __( 'Header Image', 'author' ),
-		'priority'   => 35,
-		'capability' => 'edit_theme_options'
+		'title'    => __( 'Header Image', 'author' ),
+		'priority' => 35
 	) );
 	// setting
 	$wp_customize->add_setting( 'header_image_ad', array(
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'absint'
 	) );
 	// control
-	$wp_customize->add_control( new author_description_header_image_control(
+	$wp_customize->add_control( new author_description_control(
 		$wp_customize, 'header_image_ad', array(
-			'section'        => 'author_header_image',
-			'settings'       => 'header_image_ad'
+			'section'     => 'author_header_image',
+			'settings'    => 'header_image_ad',
+			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> for advanced header image functionality.', 'author' ), 'https://www.competethemes.com/author-pro/' )
 		)
 	) );
 
@@ -427,21 +316,19 @@ function ct_author_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'author_colors', array(
-		'title'      => __( 'Colors', 'author' ),
-		'priority'   => 50,
-		'capability' => 'edit_theme_options'
+		'title'    => __( 'Colors', 'author' ),
+		'priority' => 50
 	) );
 	// setting
 	$wp_customize->add_setting( 'colors_ad', array(
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'absint'
 	) );
 	// control
-	$wp_customize->add_control( new author_description_color_control(
+	$wp_customize->add_control( new author_description_control(
 		$wp_customize, 'colors_ad', array(
-			'section'        => 'author_colors',
-			'settings'       => 'colors_ad'
+			'section'     => 'author_colors',
+			'settings'    => 'colors_ad',
+			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to change your colors.', 'author' ), 'https://www.competethemes.com/author-pro/' )
 		)
 	) );
 
@@ -449,21 +336,19 @@ function ct_author_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'author_background', array(
-		'title'      => __( 'Background', 'author' ),
-		'priority'   => 55,
-		'capability' => 'edit_theme_options'
+		'title'    => __( 'Background', 'author' ),
+		'priority' => 55
 	) );
 	// setting
 	$wp_customize->add_setting( 'background_ad', array(
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'absint'
 	) );
 	// control
-	$wp_customize->add_control( new author_description_background_control(
+	$wp_customize->add_control( new author_description_control(
 		$wp_customize, 'background_ad', array(
-			'section'        => 'author_background',
-			'settings'       => 'background_ad'
+			'section'     => 'author_background',
+			'settings'    => 'background_ad',
+			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> for advanced background image and texture functionality.', 'author' ), 'https://www.competethemes.com/author-pro/' )
 		)
 	) );
 
@@ -471,21 +356,19 @@ function ct_author_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'author_font', array(
-		'title'      => __( 'Font', 'author' ),
-		'priority'   => 40,
-		'capability' => 'edit_theme_options'
+		'title'    => __( 'Font', 'author' ),
+		'priority' => 40
 	) );
 	// setting
 	$wp_customize->add_setting( 'font_ad', array(
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'absint'
 	) );
 	// control
-	$wp_customize->add_control( new author_description_font_control(
+	$wp_customize->add_control( new author_description_control(
 		$wp_customize, 'font_ad', array(
-			'section'        => 'author_font',
-			'settings'       => 'font_ad'
+			'section'     => 'author_font',
+			'settings'    => 'font_ad',
+			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to change your font.', 'author' ), 'https://www.competethemes.com/author-pro/' )
 		)
 	) );
 
@@ -493,21 +376,19 @@ function ct_author_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'author_display_control', array(
-		'title'      => __( 'Display Controls', 'author' ),
-		'priority'   => 70,
-		'capability' => 'edit_theme_options'
+		'title'    => __( 'Display Controls', 'author' ),
+		'priority' => 70
 	) );
 	// setting
 	$wp_customize->add_setting( 'display_control_ad', array(
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'absint'
 	) );
 	// control
-	$wp_customize->add_control( new author_description_display_control_control(
+	$wp_customize->add_control( new author_description_control(
 		$wp_customize, 'display_control_ad', array(
-			'section'        => 'author_display_control',
-			'settings'       => 'display_control_ad'
+			'section'     => 'author_display_control',
+			'settings'    => 'display_control_ad',
+			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to get hide/show controls.', 'author' ), 'https://www.competethemes.com/author-pro/' )
 		)
 	) );
 
@@ -515,21 +396,19 @@ function ct_author_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'author_footer_text', array(
-		'title'      => __( 'Footer Text', 'author' ),
-		'priority'   => 85,
-		'capability' => 'edit_theme_options'
+		'title'    => __( 'Footer Text', 'author' ),
+		'priority' => 85
 	) );
 	// setting
 	$wp_customize->add_setting( 'footer_text_ad', array(
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'absint'
 	) );
 	// control
-	$wp_customize->add_control( new author_description_footer_text_control(
+	$wp_customize->add_control( new author_description_control(
 		$wp_customize, 'footer_text_ad', array(
-			'section'        => 'author_footer_text',
-			'settings'       => 'footer_text_ad'
+			'section'     => 'author_footer_text',
+			'settings'    => 'footer_text_ad',
+			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to customize the footer text.', 'author' ), 'https://www.competethemes.com/author-pro/' )
 		)
 	) );
 }
@@ -540,18 +419,14 @@ function ct_author_add_customizer_content( $wp_customize ) {
  * Sanitize settings with show/hide as options
  * Used in: search bar
  */
-function ct_author_sanitize_all_show_hide_settings($input){
-	// create array of valid values
+function ct_author_sanitize_all_show_hide_settings( $input ) {
+
 	$valid = array(
-		'show' => __('Show', 'author'),
-		'hide' => __('Hide', 'author')
+		'show' => __( 'Show', 'author' ),
+		'hide' => __( 'Hide', 'author' )
 	);
-	// if returned data is in array use it, else return nothing
-	if ( array_key_exists( $input, $valid ) ) {
-		return $input;
-	} else {
-		return '';
-	}
+
+	return array_key_exists( $input, $valid ) ? $input : '';
 }
 
 /*
@@ -559,63 +434,42 @@ function ct_author_sanitize_all_show_hide_settings($input){
  * Used in: Social Media Icons
  */
 function ct_author_sanitize_email( $input ) {
-
 	return sanitize_email( $input );
 }
 
-// sanitize comment display multi-check
-function ct_author_sanitize_comments_setting($input){
+function ct_author_sanitize_comments_setting( $input ) {
 
-	// valid data
 	$valid = array(
-		'post'   => __('Posts', 'author'),
-		'page'  => __('Pages', 'author'),
-		'attachment'  => __('Attachments', 'author'),
-		'none'  => __('Do not show', 'author')
+		'post'       => __( 'Posts', 'author' ),
+		'page'       => __( 'Pages', 'author' ),
+		'attachment' => __( 'Attachments', 'author' ),
+		'none'       => __( 'Do not show', 'author' )
 	);
 
-	// loop through array
-	foreach( $input as $selection ) {
-
-		// if it's in the valid data, return it
-		if ( array_key_exists( $selection, $valid ) ) {
-			return $input;
-		} else {
-			return '';
-		}
+	foreach ( $input as $selection ) {
+		return array_key_exists( $selection, $valid ) ? $input : '';
 	}
 }
 
-function ct_author_sanitize_avatar_method($input) {
+function ct_author_sanitize_avatar_method( $input ) {
 
-	// valid data
 	$valid = array(
-		'gravatar'  => __('Gravatar', 'author'),
-		'upload'  => __('Upload an image', 'author'),
-		'none'  => __('Do not display avatar', 'author')
+		'gravatar' => __( 'Gravatar', 'author' ),
+		'upload'   => __( 'Upload an image', 'author' ),
+		'none'     => __( 'Do not display avatar', 'author' )
 	);
 
-	// if returned data is in array use it, else return nothing
-	if ( array_key_exists( $input, $valid ) ) {
-		return $input;
-	} else {
-		return '';
-	}
+	return array_key_exists( $input, $valid ) ? $input : '';
 }
 
-// sanitize yes/no settings
-function ct_author_sanitize_yes_no_settings($input){
+function ct_author_sanitize_yes_no_settings( $input ) {
 
 	$valid = array(
-		'yes' => __('Yes', 'author'),
-		'no'  => __('No', 'author'),
+		'yes' => __( 'Yes', 'author' ),
+		'no'  => __( 'No', 'author' ),
 	);
 
-	if ( array_key_exists( $input, $valid ) ) {
-		return $input;
-	} else {
-		return '';
-	}
+	return array_key_exists( $input, $valid ) ? $input : '';
 }
 
 function ct_author_sanitize_text( $input ) {
@@ -624,7 +478,7 @@ function ct_author_sanitize_text( $input ) {
 
 function ct_author_customize_preview_js() {
 
-	$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"https://www.competethemes.com/author-pro/\" target=\"_blank\">View the Author Pro Plugin <span>&rarr;</span></a></div>')</script>";
-	echo apply_filters('ct_author_customizer_ad', $content);
+	$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"https://www.competethemes.com/author-pro/\" target=\"_blank\">" . __( 'View the Author Pro Plugin', 'author' ) . " <span>&rarr;</span></a></div>')</script>";
+	echo apply_filters( 'ct_author_customizer_ad', $content );
 }
-add_action('customize_controls_print_footer_scripts', 'ct_author_customize_preview_js');
+add_action( 'customize_controls_print_footer_scripts', 'ct_author_customize_preview_js' );
