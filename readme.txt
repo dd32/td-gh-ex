@@ -60,6 +60,9 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.9 - 22nd December, 2015 =
+* Minor bug fixes.
+
 = 1.0.8 - 9th December, 2015 =
 * Minor Design fixes.
 * Responsive Css fixes

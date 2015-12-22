@@ -1275,3 +1275,45 @@ label.row-element.more-detail{
 .sticky_info_row a {
     color: #428bca;
 }
+
+.upgrade-pro{
+  background-color: #428bca;
+  color: #FFF !important;
+  font-size: 12px;
+  padding: 2px;
+  line-height: 1;
+  display: block;
+  margin-top: 6px;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.upgrade-pro-demo{
+  background-color: #428bca;
+  color: #FFF !important;
+  font-size: 20px;
+  line-height: 1;
+  display: block;
+  margin-top: 6px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 0 5px #fff inset;
+  border-radius: 12px;
+  font-weight: bolder;
+  /*width: 90%;*/
+  margin: 0 auto;
+}
+.upgrade-pro-demo:hover{
+  color: #428bca !important;
+  background: #fff;
+  box-shadow: 0 0 5px #428bca inset;  
+}
+.sticky_info_row .button{
+  width: 100%;
+  margin: 2px 0;
+  text-align: center;
+}
+.notice-up{
+  background: #fff;
+  padding: 10px;
+}
