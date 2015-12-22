@@ -230,7 +230,43 @@ if ( ! function_exists( 'dynamicnews_display_postinfo_single' ) ):
 endif;
 
 
+// Display Single Post Navigation
+if ( ! function_exists( 'dynamicnews_display_post_navigation' ) ):
 	
+	function dynamicnews_display_post_navigation() { 
+		
+		// Get Theme Options from Database
+		$theme_options = dynamicnews_theme_options();
+		
+		if ( true == $theme_options['post_navigation'] ) {
+
+			the_post_navigation( array( 'prev_text' => '&laquo; %title', 'next_text' => '%title &raquo;' ) );
+			
+		}
+	}
+	
+endif;
+
+
+// Display ThemeZee Related Posts plugin
+if ( ! function_exists( 'dynamicnews_display_related_posts' ) ):
+	
+	function dynamicnews_display_related_posts() { 
+		
+		if ( function_exists( 'themezee_related_posts' ) ) {
+
+			themezee_related_posts( array( 
+				'class' => 'related-posts type-page clearfix',
+				'before_title' => '<h2 class="entry-title">',
+				'after_title' => '</h2>'
+			) );
+			
+		}
+	}
+	
+endif;
+
+
 // Display Content Pagination
 if ( ! function_exists( 'dynamicnews_display_pagination' ) ):
 	
