@@ -2,7 +2,7 @@
 Theme Name: Courage
 Theme URI: http://themezee.com/themes/courage/
 Description: Courage is a great way to start your personal blog or magazine website today. The theme is very easy to use and looks awesome on every device. It includes a beautiful featured post slideshow and a clean and flexible Magazine Homepage template. Hope you enjoy it!
-Version: 1.2
+Version: 1.2.1
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, blue, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, red, silver, white, green, gray
@@ -115,6 +115,35 @@ input[type="submit"]:hover {
 /* Make Form Elements responsive */
 input, textarea, select {
 	max-width: 100%;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
 }
 
 /* Basic Structure 
@@ -610,7 +639,7 @@ input, textarea, select {
 }
 
 /* Postmeta */
-.postmeta, .postinfo {
+.entry-meta, .postinfo {
 	color: #222;
 	margin: 0.3em 0 0;
 	padding: 0;
@@ -626,32 +655,32 @@ input, textarea, select {
 	-moz-border-radius: 0.4em;
 	border-radius: 0.4em;
 }
-.postmeta span, .postinfo span{
+.entry-meta span, .postinfo span{
 	margin-right: 0.5em;
 }
-.postmeta a:link, .postmeta a:visited {
+.entry-meta a:link, .entry-meta a:visited {
 	color: #444;
 	text-decoration: underline;
 }
-.postmeta a:hover, .postmeta a:active{
+.entry-meta a:hover, .entry-meta a:active{
 	text-decoration: none;
 }
 
 /* Postmeta Icons */
-.postmeta span:before, .postinfo span:before {
+.entry-meta span:before, .postinfo span:before {
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
 	font: normal 22px/1 'Genericons';
 	vertical-align: middle;
 	color: #252525;
 }
-.postmeta .meta-date:before{
+.entry-meta .meta-date:before{
 	content: '\f307';
 }
-.postmeta .meta-author:before{
+.entry-meta .meta-author:before{
 	content: '\f304';
 }
-.postmeta .meta-comments:before{
+.entry-meta .meta-comments:before{
 	content: '\f300';
 }
 .postinfo .meta-category:before{
@@ -706,6 +735,21 @@ input, textarea, select {
 .archive-title span {
 	color: #555;
 }
+.archive-description {
+	margin: -1.5em 0 1.5em;
+	line-height: 1.5;
+	padding: 1em;
+	border: 1px solid #e2e2e2;
+	background: #fff;
+	-moz-border-radius-bottomleft: 0.4em;
+	-moz-border-radius-bottomright: 0.4em;
+	-webkit-border-bottom-left-radius: 0.4em;
+	-webkit-border-bottom-right-radius: 0.4em;
+	-khtml-border-bottom-left-radius: 0.4em;
+	-khtml-border-bottom-right-radius: 0.4em;
+	border-bottom-left-radius: 0.4em;
+	border-bottom-right-radius: 0.4em;
+}
 
 /* Theme Pagination */
 .post-pagination {
@@ -742,6 +786,32 @@ input, textarea, select {
 	-webkit-border-radius: 0.4em;
 	-moz-border-radius: 0.4em;
 	border-radius: 0.4em;
+}
+
+/* Post Navigation */
+.post-navigation {
+	margin: 0 0 1.5em 0;
+	color: #252525;
+	background: #fff;
+	border: 1px solid #e2e2e2;
+	padding: 0.8em 1em;
+	-webkit-border-radius: 0.4em;
+	-moz-border-radius: 0.4em;
+	border-radius: 0.4em;
+}
+.post-navigation .nav-links:before,
+.post-navigation .nav-links:after {
+	content: "";
+	display: table;
+}
+.post-navigation .nav-links:after {
+	clear: both;
+}
+.post-navigation .nav-links .nav-previous {
+	float: left;
+}
+.post-navigation .nav-links .nav-next {
+	float: right;
 }
 
 /* Breadcrumbs */
@@ -949,7 +1019,7 @@ blockquote cite {
 
 /* Images | Gallery | Videos
 -------------------------------------------------------------- */
-article .wp-post-image {
+.wp-post-image {
 	max-width: 100%;
 	margin: 0 0 1em 0;
 	height: auto;
@@ -1445,9 +1515,6 @@ embed, iframe, object, video {
 	border: none;
 	background: none;
 }
-.widget-category-posts .type-post .postmeta a:link, .widget-category-posts .type-post .postmeta a:visited {
-	color: #444;
-}
 .widget-category-posts .big-post .entry-title {
 	font-size: 1.2em;
 }
@@ -1480,7 +1547,7 @@ embed, iframe, object, video {
 	background: none;
 	font-size: 1.05em;
 }
-.widget-category-posts .small-post .postmeta {
+.widget-category-posts .small-post .entry-meta {
 	display: inline;
 	background: none;
 	font-size: 0.9em;
@@ -1670,7 +1737,7 @@ embed, iframe, object, video {
 	.widget-category-posts .small-post .small-post-content {
 		padding: 0.6em 0.4em;
 	}
-	.widget-category-posts .small-post .postmeta {
+	.widget-category-posts .small-post .entry-meta {
 		font-size: 0.8em;
 	}
 }
@@ -2052,7 +2119,7 @@ embed, iframe, object, video {
 	.widget-category-posts .small-post .small-post-content {
 		padding: 0.8em 0.4em;
 	}
-	.widget-category-posts .small-post .postmeta {
+	.widget-category-posts .small-post .entry-meta {
 		font-size: 0.9em;
 	}
 }
@@ -2163,7 +2230,7 @@ embed, iframe, object, video {
 	.widget-category-posts .small-post .small-post-content {
 		padding: 0.6em 0.4em;
 	}
-	.widget-category-posts .small-post .postmeta {
+	.widget-category-posts .small-post .entry-meta {
 		font-size: 0.8em;
 	}
 }
@@ -2213,7 +2280,7 @@ embed, iframe, object, video {
 	.widget-category-posts .small-post .small-post-content {
 		padding: 0.8em 0.4em;
 	}
-	.widget-category-posts .small-post .postmeta {
+	.widget-category-posts .small-post .entry-meta {
 		font-size: 0.9em;
 	}
 	
@@ -2281,7 +2348,7 @@ embed, iframe, object, video {
 	.widget-category-posts .small-post .small-post-content {
 		padding: 0.6em 0.4em;
 	}
-	.widget-category-posts .small-post .postmeta {
+	.widget-category-posts .small-post .entry-meta {
 		font-size: 0.8em;
 	}
 	
@@ -2293,7 +2360,7 @@ embed, iframe, object, video {
 	.widget-category-posts .small-post .entry-title {
 		font-size: 0.9em;
 	}
-	.widget-category-posts .small-post .postmeta {
+	.widget-category-posts .small-post .entry-meta {
 		font-size: 0.7em;
 	}
 }
@@ -2311,10 +2378,10 @@ embed, iframe, object, video {
 	.entry-title {
 		font-size: 1.1em;
 	}
-	.postmeta span, .postinfo span {
+	.entry-meta span, .postinfo span {
 		display: block;
 	}
-	.postmeta .sep, .postinfo .sep, .postmeta .post-edit-link {
+	.entry-meta .sep, .postinfo .sep, .entry-meta .post-edit-link {
 		border: none;
 		margin: 0;
 		padding: 0;
@@ -2348,11 +2415,11 @@ embed, iframe, object, video {
 .boxed-design input, .boxed-design textarea, .boxed-design input[type="submit"],
 .boxed-design #mainnav, .boxed-design #navi-wrap, .boxed-design #mainnav-toggle, 
 .boxed-design .type-post, .boxed-design .type-page, .boxed-design .type-attachment, .boxed-design .page-title, .boxed-design .entry-title,
-.boxed-design .postinfo, .boxed-design .more-link, .boxed-design .archive-title, .boxed-design .post-pagination a , .boxed-design .post-pagination .current,
-.boxed-design article .wp-post-image, .boxed-design #social-icons-menu li a, .boxed-design #footer-wrap, .boxed-design .widget, .boxed-design .widgettitle ,
+.boxed-design .postinfo, .boxed-design .more-link, .boxed-design .archive-title, .boxed-design .archive-description, .boxed-design .post-pagination a , .boxed-design .post-pagination .current,
+.boxed-design .wp-post-image, .boxed-design #social-icons-menu li a, .boxed-design #footer-wrap, .boxed-design .widget, .boxed-design .widgettitle ,
 .boxed-design #comments .comments-title, .boxed-design #respond #reply-title, .boxed-design .commentlist .comment, .boxed-design .comment-pagination a, 
 .boxed-design #commentform input[type="text"], .boxed-design #commentform textarea, .boxed-design #commentform #submit,
-.boxed-design #widget-category-posts-columns .category-posts-columns .category-posts-columns-content, .boxed-design .breadcrumbs {
+.boxed-design #widget-category-posts-columns .category-posts-columns .category-posts-columns-content, .boxed-design .breadcrumbs, .boxed-design .post-navigation {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
