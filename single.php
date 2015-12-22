@@ -14,6 +14,10 @@
 		
 		endif; ?>
 			
+		<?php smartline_display_post_navigation(); ?>
+			
+		<?php smartline_display_related_posts(); ?>
+		
 		<?php comments_template(); ?>
 		
 		</section>

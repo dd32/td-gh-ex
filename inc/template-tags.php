@@ -222,6 +222,43 @@ if ( ! function_exists( 'smartline_display_postinfo' ) ):
 	
 endif;
 
+
+// Display Single Post Navigation
+if ( ! function_exists( 'smartline_display_post_navigation' ) ):
+	
+	function smartline_display_post_navigation() { 
+		
+		// Get Theme Options from Database
+		$theme_options = smartline_theme_options();
+		
+		if ( true == $theme_options['post_navigation'] ) {
+
+			the_post_navigation( array( 'prev_text' => '&laquo; %title', 'next_text' => '%title &raquo;' ) );
+			
+		}
+	}
+	
+endif;
+
+
+// Display ThemeZee Related Posts plugin
+if ( ! function_exists( 'smartline_display_related_posts' ) ):
+	
+	function smartline_display_related_posts() { 
+		
+		if ( function_exists( 'themezee_related_posts' ) ) {
+
+			themezee_related_posts( array( 
+				'class' => 'related-posts type-page clearfix',
+				'before_title' => '<h2 class="archive-title related-posts-title">',
+				'after_title' => '</h2>'
+			) );
+			
+		}
+	}
+	
+endif;
+
 	
 // Display Content Pagination
 if ( ! function_exists( 'smartline_display_pagination' ) ):

@@ -2,7 +2,7 @@
 Theme Name: Smartline Lite
 Theme URI: http://themezee.com/themes/smartline/
 Description: Smartline Lite is a perfect theme for news and magazine websites as well as simple blogs. The responsive design with bold colors and smart lines looks great on any device. The main highlight of Smartline is the flexible and widgetized front page template which allows you to create a magazine-styled homepage with ease.
-Version: 1.3.1
+Version: 1.3.2
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, blue, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, silver, white, gray
@@ -107,6 +107,35 @@ input[type="submit"]:hover {
 /* Make Form Elements responsive */
 input, textarea, select {
 	max-width: 100%;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
 }
 
 /* Basic Structure 
@@ -491,7 +520,7 @@ input, textarea, select {
 }
 
 /* Postmeta */
-.postmeta, .postinfo {
+.entry-meta, .postinfo {
 	color: #333;
 	margin: 0;
 	padding: 0;
@@ -502,35 +531,35 @@ input, textarea, select {
 	clear: both;
 	margin: 1em 0 0;
 }
-.postmeta span, .postinfo span{
+.entry-meta span, .postinfo span{
 	margin-right: 0.5em;
 }
-.postmeta a:link, .postmeta a:visited {
+.entry-meta a:link, .entry-meta a:visited {
 	color: #555;
 	text-decoration: underline;
 }
-.postmeta a:hover, .postmeta a:active{
+.entry-meta a:hover, .entry-meta a:active{
 	text-decoration: none;
 }
 
 /* Postmeta Icons */
-.postmeta span:before, .postinfo span:before {
+.entry-meta span:before, .postinfo span:before {
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
 	font: normal 20px/1 'Genericons';
 	vertical-align: middle;
 	color: #777;
 }
-.postmeta .meta-date:before{
+.entry-meta .meta-date:before{
 	content: '\f307';
 }
-.postmeta .meta-author:before{
+.entry-meta .meta-author:before{
 	content: '\f304';
 }
-.postmeta .meta-category:before{
+.entry-meta .meta-category:before{
 	content: '\f301';
 }
-.postmeta .meta-comments:before, 
+.entry-meta .meta-comments:before, 
 .postinfo .meta-comments:before{
 	content: '\f300';
 }
@@ -568,6 +597,10 @@ input, textarea, select {
 .archive-title span{
 	color: #004488;
 }
+.archive-description {
+	margin: -1em 0 1.5em;
+	line-height: 1.6;
+}
 
 /* Content Pagination */
 .post-pagination {
@@ -593,6 +626,26 @@ input, textarea, select {
 	margin-right: 0.2em;
 	background: #004488;
 	color: #fff;
+}
+
+/* Post Navigation */
+.post-navigation {
+	margin: 0 0 2em 0;
+	line-height: 1.5;
+}
+.post-navigation .nav-links:before,
+.post-navigation .nav-links:after {
+	content: "";
+	display: table;
+}
+.post-navigation .nav-links:after {
+	clear: both;
+}
+.post-navigation .nav-links .nav-previous {
+	float: left;
+}
+.post-navigation .nav-links .nav-next {
+	float: right;
 }
 
 /* Breadcrumbs */
@@ -1279,7 +1332,7 @@ embed, iframe, object, video {
 	padding: 0;
 	font-size: 1.15em;
 }
-.widget-category-posts .small-post .postmeta {
+.widget-category-posts .small-post .entry-meta {
 	display: inline;
 }
 .widget-category-posts .widget-category-posts-content .small-posts .small-post:last-child,
@@ -1878,7 +1931,7 @@ embed, iframe, object, video {
 
 /* Smartphones | <320px */
 @media only screen and (max-width: 20em) {
-	.postmeta span, .postinfo span {
+	.entry-meta span, .postinfo span {
 		display: block;
 	}
 	.widget-category-posts .type-post .entry-title {
