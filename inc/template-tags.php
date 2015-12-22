@@ -246,6 +246,44 @@ function anderson_display_thumbnail_and_categories_single() {
 	endif;
 
 }
+
+
+// Display Single Post Navigation
+if ( ! function_exists( 'anderson_display_post_navigation' ) ):
+	
+	function anderson_display_post_navigation() { 
+		
+		// Get Theme Options from Database
+		$theme_options = anderson_theme_options();
+		
+		if ( true == $theme_options['post_navigation'] ) {
+
+			the_post_navigation( array( 'prev_text' => '&laquo; %title', 'next_text' => '%title &raquo;' ) );
+			
+		}
+	}
+	
+endif;
+
+
+// Display ThemeZee Related Posts plugin
+if ( ! function_exists( 'anderson_display_related_posts' ) ):
+	
+	function anderson_display_related_posts() { 
+		
+		if ( function_exists( 'themezee_related_posts' ) ) {
+
+			themezee_related_posts( array( 
+				'class' => 'related-posts type-page clearfix',
+				'before_title' => '<h2 class="related-posts-title">',
+				'after_title' => '</h2>'
+			) );
+			
+		}
+	}
+	
+endif;
+
 	
 // Display Content Pagination
 if ( ! function_exists( 'anderson_display_pagination' ) ):

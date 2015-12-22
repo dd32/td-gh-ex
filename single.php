@@ -13,7 +13,11 @@
 			endwhile;
 		
 		endif; ?>
+		
+		<?php anderson_display_post_navigation(); ?>
 			
+		<?php anderson_display_related_posts(); ?>
+		
 		<?php comments_template(); ?>
 		
 		</section>
