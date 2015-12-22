@@ -160,7 +160,38 @@ function rubine_customize_register_post_settings( $wp_customize ) {
 		'priority' => 9
 		)
 	);
+	
+	// Add Post Footer Settings
+	$wp_customize->add_setting( 'rubine_theme_options[post_footer_headline]', array(
+        'default'           => '',
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_attr'
+        )
+    );
+    $wp_customize->add_control( new Rubine_Customize_Header_Control(
+        $wp_customize, 'rubine_control_post_footer_headline', array(
+            'label' => esc_html__( 'Post Footer', 'rubine-lite' ),
+            'section' => 'rubine_section_post',
+            'settings' => 'rubine_theme_options[post_footer_headline]',
+            'priority' => 12
+            )
+        )
+    );
+	$wp_customize->add_setting( 'rubine_theme_options[post_navigation]', array(
+        'default'           => false,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'rubine_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'rubine_control_post_navigation', array(
+        'label'    => esc_html__( 'Display post navigation on single posts', 'rubine-lite' ),
+        'section'  => 'rubine_section_post',
+        'settings' => 'rubine_theme_options[post_navigation]',
+        'type'     => 'checkbox',
+		'priority' => 13
+		)
+	);
 
 }
-
-?>

@@ -1,13 +1,13 @@
 		
 	<article id="post-<?php the_ID(); ?>" <?php post_class('archive-post clearfix'); ?>>
 
-		<div class="postmeta-wrap clearfix">
+		<div class="entry-meta-wrap postmeta-wrap clearfix">
 			
 			<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark">
 				<?php the_post_thumbnail('post-thumbnail'); ?>
 			</a>
 			
-			<div class="postmeta"><?php rubine_display_postmeta(); ?></div>
+			<div class="entry-meta postmeta"><?php rubine_display_postmeta(); ?></div>
 			
 		</div>
 		

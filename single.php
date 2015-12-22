@@ -14,6 +14,10 @@
 		
 		endif; ?>
 			
+		<?php rubine_display_post_navigation(); ?>
+			
+		<?php rubine_display_related_posts(); ?>
+		
 		<?php comments_template(); ?>
 		
 		</section>

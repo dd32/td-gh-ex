@@ -11,7 +11,7 @@
 			<?php // Display breadcrumbs or archive title
 			if ( function_exists( 'themezee_breadcrumbs' ) ) :
 
-				themezee_breadcrumbs(); 
+				themezee_breadcrumbs();
 				
 			else : ?>
 			
@@ -21,6 +21,8 @@
 			
 			<?php
 			endif;
+			
+			the_archive_description( '<div class="archive-description">', '</div>' );
 		
 			if (have_posts()) : while (have_posts()) : the_post();
 		

@@ -2,7 +2,7 @@
 Theme Name: Rubine Lite
 Theme URI: http://themezee.com/themes/rubine/
 Description: Rubine Lite is a clean and retina-ready magazine theme created with usability and simplicity in mind. The theme offers a gorgeous featured content area on the home page to highlight your most important posts. Of course the design is fully responsive and makes your content readable on every device.
-Version: 1.2.1
+Version: 1.2.2
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, red, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, four-columns, black, blue, silver, white, green, gray
@@ -116,6 +116,35 @@ input[type="submit"]:hover {
 /* Make Form Elements responsive */
 input, textarea, select {
 	max-width: 100%;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
 }
 
 /* Basic Structure 
@@ -476,21 +505,21 @@ input, textarea, select {
 }
 
 /* Postmeta */
-.postmeta-wrap {
+.entry-meta-wrap {
 	padding: 1em 0.6em;
 }
-.postmeta {
+.entry-meta {
 	line-height: 1.5em;
 	font-size: 1.0em;
 }
-.postmeta span {
+.entry-meta span {
 	display: inline-block;
 	padding: 0 0.6em;
 }
-.postmeta a:link, .postmeta a:visited  {
+.entry-meta a:link, .entry-meta a:visited  {
 	color: #333;
 }
-.postmeta span:before {
+.entry-meta span:before {
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
 	font: normal 24px 'Genericons';
@@ -498,19 +527,19 @@ input, textarea, select {
 	color: #333;
 	margin: 0 0.2em -0.2em 0;
 }
-.postmeta .meta-date:before{
+.entry-meta .meta-date:before{
 	content: '\f307';
 }
-.postmeta .meta-author:before{
+.entry-meta .meta-author:before{
 	content: '\f304';
 }
-.postmeta .meta-comments:before{
+.entry-meta .meta-comments:before{
 	content: '\f300';
 }
-.postmeta .meta-category:before{
+.entry-meta .meta-category:before{
 	content: '\f301';
 }
-.postmeta .meta-tags:before{
+.entry-meta .meta-tags:before{
 	content: '\f302';
 }
 
@@ -524,7 +553,7 @@ input, textarea, select {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.archive-post.has-post-thumbnail .postmeta-wrap {
+.archive-post.has-post-thumbnail .entry-meta-wrap {
 	float: left;
 	width: 33%;
 	padding: 0.8em 0.8em 0;
@@ -532,10 +561,10 @@ input, textarea, select {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.archive-post.has-post-thumbnail .postmeta {
+.archive-post.has-post-thumbnail .entry-meta {
 	margin-top: 1em;
 }
-.archive-post.has-post-thumbnail .postmeta span {
+.archive-post.has-post-thumbnail .entry-meta span {
 	display: block;
 	padding: 0.3em 0;
 }
@@ -616,6 +645,13 @@ input, textarea, select {
 	background: #f8f8f8;
 	line-height: 1.5em;
 }
+.archive-description {
+	margin: -1rem 0 1rem;
+	padding: 1em;
+	line-height: 1.6;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+}
 
 /* Content Pagination */
 .post-pagination {
@@ -645,6 +681,30 @@ input, textarea, select {
 	margin-right: 0.3em;
 	background: #cc1111;
 	color: #fff;
+}
+
+/* Post Navigation */
+.post-navigation {
+	margin-bottom: 2em;
+	padding: 1em;
+	border: 1px solid #e5e5e5;
+	color: #222;
+	background: #fff;
+	line-height: 1.5;
+}
+.post-navigation .nav-links:before,
+.post-navigation .nav-links:after {
+	content: "";
+	display: table;
+}
+.post-navigation .nav-links:after {
+	clear: both;
+}
+.post-navigation .nav-links .nav-previous {
+	float: left;
+}
+.post-navigation .nav-links .nav-next {
+	float: right;
 }
 
 /* Breadcrumbs */
@@ -1414,17 +1474,17 @@ embed, iframe, object, video {
 		border-top: 1px solid #e5e5e5;
 		width: 100%;
 	}
-	.archive-post.has-post-thumbnail .postmeta-wrap, .commentlist .comment .comment-meta  {
+	.archive-post.has-post-thumbnail .entry-meta-wrap, .commentlist .comment .comment-meta  {
 		float: none;
 		width: 100%;
 		padding: 0.8em;
 	}
-	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
+	.archive-post.has-post-thumbnail .entry-meta-wrap .wp-post-image {
 		float: left;
 		margin-right: 2em;
 		max-width: 50%;
 	}
-	.archive-post.has-post-thumbnail .postmeta {
+	.archive-post.has-post-thumbnail .entry-meta {
 		margin-top: 0.5em;
 	}
 	.comment-meta .commentmetadata p {
@@ -1480,17 +1540,17 @@ embed, iframe, object, video {
 		border-top: none;
 		width: 67%;
 	}
-	.archive-post.has-post-thumbnail .postmeta-wrap, .commentlist .comment .comment-meta  {
+	.archive-post.has-post-thumbnail .entry-meta-wrap, .commentlist .comment .comment-meta  {
 		float: left;
 		width: 33%;
 		padding: 0.8em 0.8em 0;
 	}
-	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
+	.archive-post.has-post-thumbnail .entry-meta-wrap .wp-post-image {
 		float: none;
 		margin-right: 0;
 		max-width: 100%;
 	}
-	.archive-post.has-post-thumbnail .postmeta {
+	.archive-post.has-post-thumbnail .entry-meta {
 		margin-top: 1em;
 	}
 	.comment-meta .commentmetadata p {
@@ -1738,17 +1798,17 @@ embed, iframe, object, video {
 		border-top: 1px solid #e5e5e5;
 		width: 100%;
 	}
-	.archive-post.has-post-thumbnail .postmeta-wrap, .commentlist .comment .comment-meta  {
+	.archive-post.has-post-thumbnail .entry-meta-wrap, .commentlist .comment .comment-meta  {
 		float: none;
 		width: 100%;
 		padding: 0.8em;
 	}
-	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
+	.archive-post.has-post-thumbnail .entry-meta-wrap .wp-post-image {
 		float: left;
 		margin-right: 2em;
 		max-width: 50%;
 	}
-	.archive-post.has-post-thumbnail .postmeta {
+	.archive-post.has-post-thumbnail .entry-meta {
 		margin-top: 0.5em;
 	}
 	.comment-meta .commentmetadata p {
@@ -1834,11 +1894,11 @@ embed, iframe, object, video {
 	#featured-content .featured-post .entry-title {
 		font-size: 1.0em;
 	}
-	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
+	.archive-post.has-post-thumbnail .entry-meta-wrap .wp-post-image {
 		max-width: 45%;
 		margin-right: 1em;
 	}
-	.archive-post.has-post-thumbnail .postmeta {
+	.archive-post.has-post-thumbnail .entry-meta {
 		margin-top: 0;
 	}
 	.comment-meta .commentmetadata p {
@@ -1880,7 +1940,7 @@ embed, iframe, object, video {
 		float: none;
 		margin: 1em 0;
 	}
-	.postmeta span, .postinfo span {
+	.entry-meta span, .postinfo span {
 		display: block;
 	}
 	.postinfo .meta-comments {
@@ -1890,12 +1950,12 @@ embed, iframe, object, video {
 
 /* Smartphones | <480px */
 @media only screen and (max-width: 28em) {
-	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
+	.archive-post.has-post-thumbnail .entry-meta-wrap .wp-post-image {
 		float: none;
 		margin-right: 0;
 		max-width: 100%;
 	}
-	.archive-post.has-post-thumbnail .postmeta {
+	.archive-post.has-post-thumbnail .entry-meta {
 		margin-top: 1em;
 	}
 	#featured-content .featured-post .type-post {
