@@ -2,10 +2,10 @@
 	$.fn.GenerateDropdownMenu = function( options ) {
 		// Set the default settings
 		var settings = $.extend({
-			transition: 'fade',
+			transition: 'slide',
 			transition_speed: 150,
-			open_delay: 250,
-			close_delay: 500
+			open_delay: 300,
+			close_delay: 300
 		}, options );
 		
 		var $dropdowns, mobile;
