@@ -18,7 +18,7 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
 }
 $wp_customize->add_section( 'quality_pro_section' , array(
 		'title'      => __('UPGRADE  TO PRO VERSION', 'quality'),
-		'priority'   => 1000,
+		'priority'   => 1100,
    	) );
 
 $wp_customize->add_setting(
@@ -33,6 +33,69 @@ $wp_customize->add_control( new WP_Pro_Customize_Control( $wp_customize, 'upgrad
 		'label' => __('Discover quality Pro','quality'),
         'section' => 'quality_pro_section',
 		'setting' => 'upgrade_pro',
+    ))
+);
+
+
+//Mulitple Pages Link
+
+class WP_multi_page_Customize_Control extends WP_Customize_Control {
+    public $type = 'new_menu';
+    /**
+    * Render the control's content.
+    */
+    public function render_content() {
+    ?>
+	  <div class="pro-box">
+     <a href="<?php echo esc_url( __('http://webriti.com/demo/wp/quality/', 'quality'));?>" target="_blank" class="multiple" id="review_pro"><?php _e( 'View Multiple Pages Demo','quality' ); ?></a>
+	 </div>
+    <?php
+    }
+}
+
+$wp_customize->add_setting(
+    'quality_multiple',
+    array(
+        'default' => __('','quality'),
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+    )	
+);
+$wp_customize->add_control( new WP_multi_page_Customize_Control( $wp_customize, 'quality_multiple', array(	
+		'label' => __('Discover quality Pro','quality'),
+        'section' => 'quality_pro_section',
+		'setting' => 'quality_multiple',
+    ))
+);
+
+
+//Parallax Pages Demo
+class WP_paralax_page_Customize_Control extends WP_Customize_Control {
+    public $type = 'new_menu';
+    /**
+    * Render the control's content.
+    */
+    public function render_content() {
+    ?>
+	  <div class="pro-box">
+     <a href="<?php echo esc_url( __('http://webriti.com/demo/wp/quality-parallax/', 'quality'));?>" target="_blank" class="parallax" id="review_pro"><?php _e( 'View Parallax Demo','quality' ); ?></a>
+	 </div>
+    <?php
+    }
+}
+
+$wp_customize->add_setting(
+    'quality_parallax',
+    array(
+        'default' => __('','quality'),
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+    )	
+);
+$wp_customize->add_control( new WP_paralax_page_Customize_Control( $wp_customize, 'quality_parallax', array(	
+		'label' => __('Discover quality Pro','quality'),
+        'section' => 'quality_pro_section',
+		'setting' => 'quality_parallax',
     ))
 );
 
@@ -65,6 +128,10 @@ $wp_customize->add_control( new WP_Review_Customize_Control( $wp_customize, 'pro
 		'setting' => 'pro_Review',
     ))
 );
+
+
+
+
 
 class WP_document_Customize_Control extends WP_Customize_Control {
     public $type = 'new_menu';

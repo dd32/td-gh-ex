@@ -136,6 +136,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@Version 1.5.3
+1. Add Parallax Demo Link.
 @Version 1.5.2
 1. Change Product Image
 2. Font awesome Icon Folder 4.4.0 to 4.5.0

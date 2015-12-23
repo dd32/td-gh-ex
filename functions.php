@@ -26,6 +26,7 @@
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-testimonial.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-template.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-front-page-parallex.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/font/font.php');
 	
 	//wp title tag starts here
