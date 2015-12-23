@@ -36,7 +36,7 @@ if ( ! class_exists( 'Redux' ) ) {
         'dev_mode'             => false,
         'forced_dev_mode_off'  => true,
         'update_notice'        => false,
-        'customizer'           => false,
+        'customizer'           => true,
         'page_priority'        => 50,
         'page_permissions'     => 'manage_options',
         'menu_icon'            => '',
@@ -49,7 +49,7 @@ if ( ! class_exists( 'Redux' ) ) {
         'customizer_only'      => true,
         'save_defaults'        => false,
         'intro_text'           => 'Upgrade to <a href="http://www.kadencethemes.com/product/pinnacle-premium-wordpress-theme/" target="_blank" >Pinnacle Premium!</a> More great features! Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
-        'footer_credit'        => __('Thank you for using the Virtue Theme by <a href="http://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'virtue'),
+        'footer_credit'        => __('Thank you for using the Virtue Theme by <a href="http://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'pinnacle'),
         'hints'                => array(
             'icon'          => 'icon-question',
             'icon_position' => 'right',
@@ -2311,6 +2311,13 @@ Redux::setSection( $opt_name, array(
             'customizer' => false,
             'desc' => __('Mobile Menu Options', 'pinnacle'),
             ),
+     array(
+            'id'=>'mobile_submenu_collapse',
+            'type' => 'switch', 
+            'customizer' => false,
+            'title' => __('Submenu items collapse until opened', 'pinnacle'),
+            "default" => 0,
+            ),
     array(
             'id'=>'font_mobile_menu',
             'type' => 'typography', 
@@ -2329,7 +2336,7 @@ Redux::setSection( $opt_name, array(
             //'all_styles' => true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
-            'output' => array('.kad-nav-inner .kad-mnav, .kad-mobile-nav .kad-nav-inner li a'),
+            'output' => array('.kad-nav-inner .kad-mnav, .kad-mobile-nav .kad-nav-inner li a, .kad-mobile-nav .kad-nav-inner li .kad-submenu-accordion'),
             'subtitle'=> __("Choose Size and Style for Mobile Menu", 'pinnacle'),
             'default'=> array(
                 'font-family'=>'Raleway',
@@ -2460,8 +2467,8 @@ Redux::setSection( $opt_name, array(
 );
 Redux::setSection( $opt_name, array(
     'id' => 'inportexport_settings',
-                    'title'  => __( 'Import / Export', 'virtue' ),
-                    'desc'   => __( 'Import and Export your Theme Options from text or URL.', 'virtue' ),
+                    'title'  => __( 'Import / Export', 'pinnacle' ),
+                    'desc'   => __( 'Import and Export your Theme Options from text or URL.', 'pinnacle' ),
                     'icon'   => 'icon-large icon-hdd',
                     'fields' => array(
                         array(

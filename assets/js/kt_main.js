@@ -33,8 +33,28 @@ jQuery(document).ready(function ($) {
 		$(".embed-youtube").fitVids();
 		$('.kad-select').customSelect();
 		$('.woocommerce-ordering select').customSelect();
-
+    $('.collapse-next').click(function (e) {
+      //e.preventDefault();
+        var $target = $(this).siblings('.sf-dropdown-menu');
+         if($target.hasClass('in') ) {
+          $target.collapse('toggle');
+          $(this).removeClass('toggle-active');
+        } else {
+          $target.collapse('toggle');
+          $(this).addClass('toggle-active');
+        }
+    });
 	// Lightbox
+  function kt_check_images( index, element ) {
+      return /(png|jpg|jpeg|gif|tiff|bmp)$/.test(
+        $( element ).attr( 'href' ).toLowerCase().split( '?' )[0].split( '#' )[0]
+      );
+    }
+
+    function kt_find_images() {
+      $( 'a[href]' ).filter( kt_check_images ).attr( 'data-rel', 'lightbox' );
+    }
+    kt_find_images();
 		$.extend(true, $.magnificPopup.defaults, {
 			tClose: '',
 			tLoading: light_load, // Text that is displayed during loading. Can contain %curr% and %total% keys

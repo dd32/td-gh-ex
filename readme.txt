@@ -32,6 +32,10 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.3.4 | 17th December 2015 = 
+* Add: Mobile submenu collapse option.
+* Fix: Customizer options to run.
+
 = 1.3.3 | 8th December 2015 = 
 * Update: Woocommerce hooks for better extension support.
 * Update: Comment Output.

@@ -51,15 +51,20 @@
       } else { 
         $slidewidth = $slidewidth_d;
       } 
+       do_action( 'kadence_single_portfolio_after_header' ); 
 		 ?>
   <div id="content" class="container">
       <div class="row">
         <div class="main <?php echo esc_attr( pinnacle_main_class() ); ?> portfolio-single <?php echo esc_attr($layoutclass);?>" role="main">
           <?php while (have_posts()) : the_post(); ?>		
+
+            <?php do_action( 'kadence_single_portfolio_before' );  ?> 
+
             <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
                 <div class="portfolio-postclass">
       	            <div class="row">
                   		<div class="<?php echo esc_attr($imgclass); ?>">
+                         <?php do_action( 'kadence_single_portfolio_feature_before' );  ?> 
             				  <?php if ($ppost_type == 'flex') { ?>
                 					<div class="flexslider kt-flexslider loading kad-light-gallery" style="max-width:<?php echo esc_attr($slidewidth);?>px;" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
                               <ul class="slides">
@@ -131,6 +136,7 @@
                                     </div>
                             <?php endif; ?>
 				              <?php } ?>
+                      <?php do_action( 'kadence_single_portfolio_feature_after' );  ?> 
         	            </div><!--imgclass -->
                       <div class="p-container <?php echo esc_attr($layoutcontainclass);?>">
                 			    <div class="<?php echo esc_attr($textclass); ?>">
@@ -138,10 +144,13 @@
                                 <div class="entry-content <?php echo esc_attr($entryclass); ?> <?php echo esc_attr($portfolio_margin);?>">
                                   <?php if (isset($pinnacle['default_showportfoliotitle_inpost']) && $pinnacle['default_showportfoliotitle_inpost'] == 1) { ?>
                                     <h1 class="entry-title"><?php the_title(); ?></h1>
-                                  <?php }
-		      	                        the_content(); ?>
+                                  <?php } ?>
+                                   <?php do_action( 'kadence_single_portfolio_content_before' );  ?> 
+		      	                        <?php the_content(); ?>
+                                    <?php do_action( 'kadence_single_portfolio_content_after' );  ?> 
 		  		                      </div>
                         	    	<div class="<?php echo esc_attr($valueclass); ?>">
+                                <?php do_action( 'kadence_single_portfolio_value_before' );  ?> 
                         				    	<?php     $project_v1t = get_post_meta( $post->ID, '_kad_project_val01_title', true );
                         				    						$project_v1d = get_post_meta( $post->ID, '_kad_project_val01_description', true );
                         				    						$project_v2t = get_post_meta( $post->ID, '_kad_project_val02_title', true );
@@ -160,9 +169,11 @@
                           				    <?php if (!empty($project_v3t)) echo '<li class="pdetails"><span>'.esc_html($project_v3t).'</span> '.esc_html($project_v3d).'</li>'; ?>
                           				    <?php if (!empty($project_v4t)) echo '<li class="pdetails"><span>'.esc_html($project_v4t).'</span> '.esc_html($project_v4d).'</li>'; ?>
                           				    <?php if (!empty($project_v5t)) echo '<li class="pdetails"><span>'.esc_html($project_v5t).'</span> <a href="'.esc_url($project_v5d).'" target="_new">'.esc_html($project_v5d).'</a></li>'; ?>
-                        				    </ul><!--Portfolio-content-->
+                        				    <?php do_action( 'kadence_single_portfolio_list_li' );  ?> 
+                                    </ul><!--Portfolio-content-->
                       				    </div>
                                 <?php }?>
+                                <?php do_action( 'kadence_single_portfolio_value_after' );  ?> 
 				                        </div>
                               </div>
                           </div>
@@ -182,6 +193,7 @@
                 </footer>
                 <?php if(isset($pinnacle['portfolio_comments']) && $pinnacle['portfolio_comments'] == 1) { comments_template('/templates/comments.php'); } ?>
             </article>
+            <?php do_action( 'kadence_single_portfolio_after' );  ?> 
           <?php endwhile; ?>
   <?php } else { ?>
         <div id="content" class="container">

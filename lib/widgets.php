@@ -177,34 +177,13 @@ class kad_contact_widget extends WP_Widget {
     $widget_ops = array('classname' => 'widget_kadence_contact', 'description' => __('Use this widget to add a Vcard to your site', 'pinnacle'));
     $this->__construct('widget_kadence_contact', __('Pinnacle: Contact/Vcard', 'pinnacle'), $widget_ops);
     $this->alt_option_name = 'widget_kadence_contact';
-
-    add_action('save_post', array(&$this, 'flush_widget_cache'));
-    add_action('deleted_post', array(&$this, 'flush_widget_cache'));
-    add_action('switch_theme', array(&$this, 'flush_widget_cache'));
   }
 
   function widget($args, $instance) {
-    $cache = wp_cache_get('widget_kadence_contact', 'widget');
-
-    if (!is_array($cache)) {
-      $cache = array();
-    }
-
-    if (!isset($args['widget_id'])) {
-      $args['widget_id'] = null;
-    }
-
-    if (isset($cache[$args['widget_id']])) {
-      echo $cache[$args['widget_id']];
-      return;
-    }
-
-    ob_start();
-    extract($args, EXTR_SKIP);
 
     $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
-  if (!isset($instance['company'])) { $instance['company'] = ''; }
-  if (!isset($instance['name'])) { $instance['name'] = ''; }
+    if (!isset($instance['company'])) { $instance['company'] = ''; }
+    if (!isset($instance['name'])) { $instance['name'] = ''; }
     if (!isset($instance['street_address'])) { $instance['street_address'] = ''; }
     if (!isset($instance['locality'])) { $instance['locality'] = ''; }
     if (!isset($instance['region'])) { $instance['region'] = ''; }
@@ -213,11 +192,11 @@ class kad_contact_widget extends WP_Widget {
     if (!isset($instance['fixedtel'])) { $instance['fixedtel'] = ''; }
     if (!isset($instance['email'])) { $instance['email'] = ''; }
 
-    echo $before_widget;
+    echo $args['before_widget'];
     if ($title) {
-      echo $before_title;
+      echo $args['before_title'];
       echo $title;
-      echo $after_title;
+      echo $args['after_title'];
     }
   ?>
     <div class="vcard">
@@ -233,10 +212,8 @@ class kad_contact_widget extends WP_Widget {
       <?php if(!empty($instance['email'])):?><p><a class="email" href="mailto:<?php echo antispambot($instance['email']);?>"><i class="icon-envelope"></i> <?php echo antispambot($instance['email']); ?></a></p> <?php endif;?>
     </div>
       <?php
-    echo $after_widget;
+    echo $args['after_widget'];
 
-    $cache[$args['widget_id']] = ob_get_flush();
-    wp_cache_set('widget_kadence_contact', $cache, 'widget');
   }
 
   function update($new_instance, $old_instance) {
@@ -251,15 +228,7 @@ class kad_contact_widget extends WP_Widget {
     $instance['tel']            = strip_tags($new_instance['tel']);
     $instance['fixedtel']       = strip_tags($new_instance['fixedtel']);
     $instance['email']          = strip_tags($new_instance['email']);
-    $this->flush_widget_cache();
-    $alloptions = wp_cache_get('alloptions', 'options');
-      if (isset($alloptions['widget_kadence_contact'])) {
-          delete_option('widget_kadence_contact');
-      }
     return $instance;
-  }
-  function flush_widget_cache() {
-      wp_cache_delete('widget_kadence_contact', 'widget');
   }
 
   function form($instance) {
