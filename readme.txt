@@ -93,6 +93,13 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.5
+- Updated: This is same as v1.2.4. Theme is being updated and released again as v1.2.4 didn't upload successfully to wordpress.org.
+
+Version 1.2.4
+- Fixed:   Disables sortable slides in Customizer. This prevents issues where phantom slides still appear after deleting slides.
+- Updated: Various minor styling updates for theme options in customizer.
+
 Version 1.2.3
 - Fixed:   "$this->_extension_url" used for redux extensions fixed to ensure custom extensions are loaded correctly on all sites.
 
