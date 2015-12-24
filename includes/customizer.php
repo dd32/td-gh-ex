@@ -573,7 +573,7 @@ function actuate_admin_panel_style($hook) {
     if($hook == 'widgets.php'){
         wp_enqueue_style('actuate-admin-panel-css', ACTUATE_ADMIN_CSS_URL . 'admin.css');
         wp_enqueue_script('actuate-admin-panel-js', ACTUATE_ADMIN_JS_URL . 'admin.js', array('jquery'), '1.0.0', TRUE);
-        wp_localize_script('actuate-admin-panel-js', 'actuateCustomizerUpgradeVars', array('upgrade_text' => __('Upgrade to Premium', 'actuate')));
+        wp_localize_script('actuate-admin-panel-js', 'actuateCustomizerUpgradeVars', array('upgrade_text' => __('Learn about Premium', 'actuate')));
     }
 }
 add_action( 'admin_enqueue_scripts', 'actuate_admin_panel_style' );

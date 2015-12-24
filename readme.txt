@@ -18,6 +18,16 @@ Go to https://wordpress.org/support/theme/actuate
 
 == Changelog ==
 
+= Version 1.0.1.2 - 24/12/2015 =
+* (assets/global/jquery.sidr.js) Added sidr js file
+* (assets/global/jquery.sidr.min.js) Added sidr js minified file
+* (functions.php) Enqueued sidr js file
+* (assets/global/custom.js) Initialized sidr + fixed sidr viewport bug
+* (readme.txt) Added sidr resource license
+* (style.css) Added sidr skin
+* (includes/customizer.php) Changed upgrade text to "Learn about premium"
+* (actuate.pot) Regenerated POT file
+
 = Version 1.0.1.1 - 15/12/2015 =
 * (assets/global/images) Folder removed
 * (assets/global/js/custom.js) Removed unused code
@@ -52,5 +62,6 @@ Go to https://wordpress.org/support/theme/actuate
 * Screenshot image (https://pixabay.com/en/ladder-swimming-jetty-lake-boards-918961/): by https://pixabay.com/en/users/Unsplash-242387/, licensed under [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 * Screenshot image (https://pixabay.com/en/logs-logging-timber-lumber-pile-918931/): by https://pixabay.com/en/users/Unsplash-242387/, licensed under [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 * Superfish jQuery menu: by Joel Birch (https://github.com/joeldbirch), dual licensed under[GPLv2](http://www.gnu.org/licenses/gpl.html) and [MIT](http://www.opensource.org/licenses/mit-license.php)
+* Sidr: by Alberto Varela (https://github.com/artberri/sidr), licensed under [MIT](http://www.opensource.org/licenses/mit-license.php)
 * Respond.js: by Scott Jehl (https://github.com/scottjehl), licensed under [MIT](http://www.opensource.org/licenses/mit-license.php)
 * Font Awesome: by Dave gandy (http://fontawesome.io), dual licensed under [SIL OFL 1.1](http://scripts.sil.org/OFL) and [MIT](http://www.opensource.org/licenses/mit-license.php)

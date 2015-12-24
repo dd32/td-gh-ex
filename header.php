@@ -36,9 +36,10 @@
                 <div id="header-section" class="header-section grid-col-16 clearfix">
                     <div id="logo-section" class="logo-section grid-col-16"><?php actuate_logo() ?></div>
                         <?php if (!actuate_get_option('disable_menu')): ?>
+                            <div id="sidrmenu-section" class="sidrmenu-section"><?php actuate_nav('mobile') ?></div>
                             <div id="nav-section" class="nav-section grid-col-16">
                                 <div id="primarymenu-resp" class="primarymenu-resp"><i class="mdf mdf-bars"></i><span>Menu</span></div>
-                                <div id="primarymenu-section" class="primarymenu-section clearfix nav"><?php actuate_nav() ?></div>
+                                <div id="primarymenu-section" class="primarymenu-section clearfix nav"><?php actuate_nav('primary') ?></div>
                             </div>
                         <?php endif; ?>
 

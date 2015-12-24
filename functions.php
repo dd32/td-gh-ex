@@ -89,14 +89,27 @@ add_action( 'after_setup_theme', 'actuate_setup' );
  * 
  * @since 1.0
  */
-function actuate_nav() {
-    wp_nav_menu(array(
-        'theme_location' => 'primary',
-        'container_id' => 'menu',
-        'menu_class' => 'sf-menu actuate_menu clearfix',
-        'menu_id' => 'actuate_menu',
-        'fallback_cb' => 'actuate_nav_fallback' // Fallback function in case no menu item is defined.
-    ));
+function actuate_nav($location) {
+    switch ($location):
+        case 'primary':
+            wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'container_id' => 'menu',
+                'menu_class' => 'sf-menu actuate_menu clearfix',
+                'menu_id' => 'actuate_menu',
+                'fallback_cb' => 'actuate_nav_fallback' // Fallback function in case no menu item is defined.
+            ));
+            break;
+        case 'mobile':
+            wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'container_id' => 'sidr-menu',
+                'menu_class' => '',
+                'menu_id' => '',
+                'fallback_cb' => 'actuate_mobile_nav_fallback' // Fallback function in case no menu item is defined.
+            ));
+            break;
+    endswitch;
 }
 
 
@@ -111,6 +124,24 @@ function actuate_nav_fallback() {
 ?>
     <div id="menu">
     	<ul class="sf-menu" id="actuate_menu">
+            <?php wp_list_pages( 'title_li=&sort_column=menu_order&depth=3') ?>
+        </ul>
+    </div>
+<?php
+}
+
+
+
+/**
+ * Displays a custom menu in case either no menu is selected or
+ * menu does not contains any items or wp_nav_menu() is unavailable.
+ * 
+ * @since 1.0
+ */
+function actuate_mobile_nav_fallback() {
+?>
+    <div id="sidr-menu">
+    	<ul>
             <?php wp_list_pages( 'title_li=&sort_column=menu_order&depth=3') ?>
         </ul>
     </div>
@@ -199,6 +230,7 @@ function actuate_enqueue() {
     endif;
 
     wp_enqueue_script('actuate-superfish', ACTUATE_GLOBAL_JS_URL . 'superfish.min.js', array( 'jquery' ), '1.4.8', true);
+    wp_enqueue_script('actuate-sidr', ACTUATE_GLOBAL_JS_URL . 'jquery.sidr.js', array( 'jquery' ), '1.2.1', true);
     wp_enqueue_script('jquery-color');
     wp_enqueue_script('actuate-custom', ACTUATE_GLOBAL_JS_URL . 'custom.js', array( 'jquery' ), $theme_version, true);
 }
