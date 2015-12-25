@@ -10,8 +10,11 @@
  *-----------------------------------------------------------------------------------*/ 
 function theme_data_setup()
 {
-	$slide_image_uri =WEBRITI_TEMPLATE_DIR_URI .'/images/default/slide/slide.png';
-	$project_img = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb.png';
+	$slide_image_uri =WEBRITI_TEMPLATE_DIR_URI .'/images/default/slide/slide.jpg';
+	$project_img1 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb.png';
+	$project_img2 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb1.png';
+	$project_img3 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb2.png';
+	$project_img4 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb3.png';
 	return $rambo_theme_options=array(
 						
 			'front_page' => 'on',
@@ -66,19 +69,19 @@ function theme_data_setup()
 			'home_projects_enabled' => 'on',
 			'project_heading_one' => __('Featured Portfolio Projects','rambo'),
 			'project_tagline' => __('Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.','rambo'),
-			'project_one_thumb' => $project_img,
+			'project_one_thumb' => $project_img1,
 			'project_one_title' => __('Product one','rambo'),
 			'project_one_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 		
-		    'project_two_thumb' => $project_img,
+		    'project_two_thumb' => $project_img2,
 			'project_two_title' => __('Product two','rambo'),
 			'project_two_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 			
-			'project_three_thumb' => $project_img,
+			'project_three_thumb' => $project_img3,
 			'project_three_title' => __('Product Three','rambo'),
 			'project_three_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 			
-			'project_four_thumb' => $project_img,
+			'project_four_thumb' => $project_img4,
 			'project_four_title' => __('Product Four','rambo'),
 			'project_four_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 		);

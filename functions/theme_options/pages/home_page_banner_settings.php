@@ -26,7 +26,7 @@
 		}	
 		if($_POST['rambo_settings_save_2'] == 2) 
 		{
-			$slide_image_uri =WEBRITI_TEMPLATE_DIR_URI .'/images/default/slide/slide.png';
+			$slide_image_uri =WEBRITI_TEMPLATE_DIR_URI .'/images/default/slide/slide.jpg';
 			$current_options['home_banner_enabled']="on";
 			$current_options['home_custom_image']=$slide_image_uri;
 			$current_options['home_image_title']="Fully Responsive Theme !";

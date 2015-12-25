@@ -4,18 +4,12 @@
 	// call the post featured image / thumbnail
 	rambo_post_thumbnail('blog_section2_img'); 	  
 ?>
-	<?php if(!is_single() && !is_page()) { ?>
-	<h2><a href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_title(); ?></a>
-	</h2>
-	<?php }?>
+	<h2><a href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 	<!-- Call post meta Part -->
-	<?php if(!is_page()) rambo_post_meta_content(); ?>	
-	
+	<?php rambo_post_meta_content(); ?>	
 	<!-- Check Post Search -->
 	<?php if ( is_search() ) 
-	{
-	rambo_post_parmalink_excerpt();
-	}
+	{ rambo_post_parmalink_excerpt(); }
 	// Call post content part
 	else { ?>
 	<p><?php  the_content( __( 'Read More' , 'rambo' ) ); ?></p>

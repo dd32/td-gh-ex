@@ -43,6 +43,7 @@
 		}
 	}  ?>
 
+	<h3><?php _e('Note : - In the next version ie 1.4 we are moving all the theme options in the customizer, as per the latest guidelines.','rambo'); ?></h3>
 	<h2><?php _e('Quick Start Settings','rambo');?></h2><hr>	
 	<form method="post" id="rambo_theme_options_1">
 		<?php wp_nonce_field('rambo_customization_nonce_gernalsetting','rambo_gernalsetting_nonce_customization'); ?>

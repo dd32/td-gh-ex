@@ -16,7 +16,6 @@ function rambo_scripts()
 	wp_enqueue_style ('rambo-bootstrap',WEBRITI_TEMPLATE_DIR_URI.'/css/bootstrap.css');		//bootstrap css
 	wp_enqueue_style ('rambo-bootstrap-responsive',WEBRITI_TEMPLATE_DIR_URI .'/css/bootstrap-responsive.css'); //boot rsp css
 	wp_enqueue_style ('rambo-docs',WEBRITI_TEMPLATE_DIR_URI .'/css/docs.css'); //docs css
-	wp_enqueue_style ('rambo-font',WEBRITI_TEMPLATE_DIR_URI.'/css/font/font.css'); // font css
 	
 	/*Default CSS*/
 	wp_enqueue_style ('rambo-default-css',WEBRITI_TEMPLATE_DIR_URI .'/css/default.css');

@@ -69,7 +69,7 @@
 		<div class="section">
 			<h3><?php _e('Home Service One ','rambo'); ?></h3>
 			<hr>
-			<h3><?php _e('Fontawesome Icon','rambo'); ?>  <a href="http://fontawesome.io/" target="blank"> <?php _e('Click here to font awesome icon','rambo'); ?></a></h3>
+			<h3><?php _e('Fontawesome Icon','rambo'); ?>  <a href="<?php echo esc_url(__('http://fontawesome.io/','rambo')); ?>" target="blank"> <?php _e('Click here to font awesome icon','rambo'); ?></a></h3>
 			<input class="webriti_inpute" type="text" value="<?php if(isset($current_options['home_service_one_icon'])) { echo $current_options['home_service_one_icon']; } ?>" id="home_service_one_icon" name="home_service_one_icon" size="36" />
 			<span class="icons help"><span class="tooltip"><?php  _e('Enter service fontawesome icon','rambo');?></span></span>
 		

@@ -741,15 +741,15 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                 // Register the nag messages and prepare them to be processed.
                 $nag_class = version_compare( $this->wp_version, '3.8', '<' ) ? 'updated' : 'update-nag';
                 if ( ! empty( $this->strings['nag_type'] ) ) {
-                    add_settings_error( 'rambo', 'rambo', $rendered, sanitize_html_class( strtolower( $this->strings['nag_type'] ) ) );
+                    add_settings_error( 'tgmpa', 'tgmpa', $rendered, sanitize_html_class( strtolower( $this->strings['nag_type'] ) ) );
                 } else {
-                    add_settings_error( 'rambo', 'rambo', $rendered, $nag_class );
+                    add_settings_error( 'tgmpa', 'tgmpa', $rendered, $nag_class );
                 }
             }
 
             // Admin options pages already output settings_errors, so this is to avoid duplication.
             if ( 'options-general' !== $current_screen->parent_base ) {
-                settings_errors( 'rambo' );
+                settings_errors( 'tgmpa' );
             }
 
         }
@@ -1027,7 +1027,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 }
 
-if ( ! function_exists( 'rambo' ) ) {
+if ( ! function_exists( 'tgmpa' ) ) {
     /**
      * Helper function to register a collection of required plugins.
      *

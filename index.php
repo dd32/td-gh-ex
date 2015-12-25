@@ -12,7 +12,6 @@
 	$more = 0;
 	
 		// check the format of post
-		
 		get_template_part('content','');
 		
 	 endwhile; 

@@ -1,14 +1,15 @@
 <div class="wrap" id="framework_wrap">   		
     <div id="content_wrap">
 		<div class="webriti-header webriti-themepromo">
-			<h2><a href="http://www.webriti.com/"><img class="logo_webriti" src="<?php echo get_template_directory_uri(); ?>/functions/theme_options/images/png.png"></a></h2>
+			<h2><a href="<?php echo esc_url(__('http://www.webriti.com/','rambo')); ?>"><img class="logo_webriti" src="<?php echo get_template_directory_uri(); ?>/functions/theme_options/images/png.png"></a></h2>
 		</div>
 		<div class="webriti-submenu">		
 			<h2><?php _e('Rambo','rambo'); ?>			
 				<div class="webriti-submenu-links">
-					<a target="_blank" href="https://www.facebook.com/webriti" class="btn btn-primary"><?php _e('Support Webriti on  Facebook ','rambo'); ?></a>
-					<a target="_blank" href="http://wordpress.org/support/theme/rambo" class="btn btn-primary"><?php _e('Support Desk','rambo'); ?></a>
-					<a target="_blank" href="http://webriti.com/themes/documentation/rambo/" class="btn btn-info"> <?php _e('Pro Theme Documentation','rambo'); ?></a>
+					<a target="_blank" href="<?php echo esc_url( __('https://www.facebook.com/webriti', 'rambo'));?>" class="btn btn-primary"><?php _e('Support Webriti on  Facebook ','rambo'); ?></a>
+					<a target="_blank" href=" <?php echo esc_url(__('http://wordpress.org/support/theme/rambo','rambo'));?>" 
+					class="btn btn-primary"><?php _e('Support Desk','rambo'); ?></a>
+					<a target="_blank" href="<?php echo esc_url(__('http://webriti.com/themes/documentation/rambo/','rambo')); ?>" class="btn btn-info"> <?php _e('Pro Theme Documentation','rambo'); ?></a>
 				</div><!-- webriti-submenu-links -->
 			</h2>
           <div class="clear"></div>

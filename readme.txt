@@ -115,11 +115,16 @@ JavaScripts
 		1. Bootstrap.min.js => https://github.com/twbs/bootstrap/releases/download/v3.1.1/bootstrap-3.1.1-dist.zip
                    Code and documentation copyright 2011-2014 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
 		
-	Images
-		1. Static Home Feature Image => http://dummyimage.com/1600x600/deb6de/1f2136
-		2. Image in the screenshot are provided by Matthew Wiebe(https://unsplash.com/matthewwiebe) taken from the link(https://unsplash.com/photos/nOhUx3tiaQQ/download)
-		   unsplash.com images are licensed under GPL.
-		   
+		Images
+		1. Static Home Feature Image => https://pixabay.com/en/laptop-mobile-sunglasses-table-951954/
+		2. Product Image =>
+		   https://pixabay.com/en/secretary-office-phone-schedule-1050827/
+		   https://pixabay.com/en/wordpress-wordpress-logo-icon-word-973439/
+		   https://pixabay.com/en/student-typing-keyboard-text-woman-849825/
+		   https://pixabay.com/en/tablet-computer-woman-reading-690032/
+		
+		   images are licensed under GPL.
+
 CSS Tooltips by Adam Whitcroft
 https://github.com/AdamWhitcroft/CSS.Tooltips
 Licensed under ☺ License.
@@ -131,9 +136,18 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
-@version 1.3.1
+@version 1.3.3
+1. Change Banner Image & Product Image.
+2. Update Font-awesome Icon Folder.
+@version 1.3.2
+1. Add Google Font.
+2. Remove Title Tag Support.
+@version 1.3.1 
+1. Add Blog Left sidebar Template.
+2. Resolved Theme Check Error.
+3. Add Screen reader css 
+@version 1.3
 1. Update Font-awesome Icon Folder.
-2. Added Screen Reader Class
 @version 1.2.9
 1. Removed unwanted extra white spaces.
 2. Removed webriti themes tab.

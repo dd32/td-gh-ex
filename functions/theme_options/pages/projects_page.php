@@ -41,25 +41,29 @@
 		}	
 		if($_POST['rambo_settings_save_4'] == 2) 
 		{
-			$project_img = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb.png';
+			$project_img1 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb.png';
+			$project_img2 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb1.png';
+			$project_img3 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb2.png';
+			$project_img4 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb3.png';
+			
 			$current_options['home_projects_enabled']="on";			
 			
 			$current_options['project_heading_one']="Featured Portfolio Projects";
 			$current_options['project_tagline']="Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.";
 			
-			$current_options['project_one_thumb']=$project_img;			
+			$current_options['project_one_thumb']=$project_img1;			
 			$current_options['project_one_title']="Product One";
 			$current_options['project_one_text']="A set of pieces of creative work collected to be shown to potential customers or employers.the artist had put together a portfolio of his work";
 			
-			$current_options['project_two_thumb']=$project_img;			
+			$current_options['project_two_thumb']=$project_img2;			
 			$current_options['project_two_title']="Product Two";
 			$current_options['project_two_text']="A set of pieces of creative work collected to be shown to potential customers or employers.the artist had put together a portfolio of his work";
 			
-			$current_options['project_three_thumb']=$project_img;			
+			$current_options['project_three_thumb']=$project_img3;			
 			$current_options['project_three_title']="Product Three";
 			$current_options['project_three_text']="A set of pieces of creative work collected to be shown to potential customers or employers.the artist had put together a portfolio of his work";
 			
-			$current_options['project_four_thumb']=$project_img;			
+			$current_options['project_four_thumb']=$project_img4;			
 			$current_options['project_four_title']="Product Four";
 			$current_options['project_four_text']="A set of pieces of creative work collected to be shown to potential customers or employers.the artist had put together a portfolio of his work";
 			
