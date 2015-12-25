@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BlueGray\n"
-"POT-Creation-Date: 2015-11-15 16:25+0100\n"
+"POT-Creation-Date: 2015-12-25 13:52+0100\n"
 "PO-Revision-Date: 2015-11-15 16:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,16 +14,16 @@ msgstr ""
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 archive.php:45 index.php:47 search.php:39
+#: 404.php:9 archive.php:46 index.php:48 search.php:40
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:10 archive.php:46 index.php:48 search.php:40
+#: 404.php:10 archive.php:47 index.php:49 search.php:41
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
@@ -54,15 +54,15 @@ msgstr ""
 msgid "% responses"
 msgstr ""
 
-#: archive.php:34 index.php:36 search.php:34
+#: archive.php:35 index.php:37 search.php:35
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:40 index.php:42 search.php:47
+#: archive.php:41 index.php:43 search.php:48
 msgid "&laquo; Older posts"
 msgstr ""
 
-#: archive.php:41 index.php:43 search.php:48
+#: archive.php:42 index.php:44 search.php:49
 msgid "Newer posts &raquo;"
 msgstr ""
 
@@ -96,48 +96,44 @@ msgstr ""
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:43
-msgid "Boats"
-msgstr ""
-
-#: functions.php:97
+#: functions.php:88
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:99 functions.php:109 functions.php:119 functions.php:129
-#: functions.php:139 functions.php:149 functions.php:159
+#: functions.php:90 functions.php:100 functions.php:110 functions.php:120
+#: functions.php:130 functions.php:140 functions.php:150
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:107
+#: functions.php:98
 msgid "Homepage Sidebar Right"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:108
 msgid "Homepage Sidebar Middle"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:118
 msgid "Homepage Sidebar Left"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:128
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:147
+#: functions.php:138
 msgid "Footer Sidebar Middle"
 msgstr ""
 
-#: functions.php:157
+#: functions.php:148
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:203 functions.php:212
+#: functions.php:194 functions.php:203
 msgid "Logo"
 msgstr ""
 
-#: functions.php:205
+#: functions.php:196
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
@@ -145,7 +141,7 @@ msgstr ""
 msgid "Featured post"
 msgstr ""
 
-#: page-full.php:29 page.php:28 single.php:38
+#: page-full.php:29 page.php:28 single.php:41
 msgid "Edit"
 msgstr ""
 
@@ -154,16 +150,16 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: single.php:29
+#: single.php:30
 #, php-format
 msgid "Posted in %s"
 msgstr ""
 
-#: single.php:29 single.php:30
+#: single.php:30 single.php:32
 msgid ", "
 msgstr ""
 
-#: single.php:30
+#: single.php:32
 #, php-format
 msgid "Tags: %s"
 msgstr ""
@@ -179,10 +175,10 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "BlueGray is a free, clean, minimalistic, responsive, mobile friendly "
-"WordPress theme. Features: primary sidebar, widget areas underneath header "
-"image, widget areas in footer, custom header image, custom background, "
-"custom logo to replace blogname and description, full width page template, "
-"dropdown navigation. That's it. Enjoy."
+"WordPress theme. Features: primary sidebar, widget areas in header, widget "
+"areas in footer, custom header image, custom background, custom logo to "
+"replace blogname and description, full width page template, dropdown "
+"navigation. That's it. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme
