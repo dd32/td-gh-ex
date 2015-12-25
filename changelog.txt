@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+GridBulletin version 2.8 - december 2015
+- file functions: removed register_default_headers (default header already included in after_setup_theme)
+- several files: updated postmetadata
+- file style: several modifications
+- several small adjustments
+- updated pot file
+
 GridBulletin version 2.7 - november 2015
 - file archive.php and single.php: relocated postmetadata
 
