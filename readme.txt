@@ -19,7 +19,7 @@ I advice you to use a header-image of 960px wide and 350px high.
 
 HOW TO SET MENU
 ===============
-OneColumn offers a menu that can contain subpages (2 levels deep).
+Theme offers a menu that can contain subpages (2 levels deep).
 You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 
