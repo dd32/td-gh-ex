@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkOrange\n"
-"POT-Creation-Date: 2015-11-15 18:02+0100\n"
+"POT-Creation-Date: 2015-12-25 13:53+0100\n"
 "PO-Revision-Date: 2015-11-15 18:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,16 +14,16 @@ msgstr ""
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 archive.php:45 index.php:51 search.php:39
+#: 404.php:9 archive.php:46 index.php:52 search.php:40
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:10 archive.php:46 index.php:52 search.php:40
+#: 404.php:10 archive.php:47 index.php:53 search.php:41
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
@@ -32,37 +32,37 @@ msgstr ""
 msgid "Permalink to %s"
 msgstr ""
 
-#: archive.php:21 index.php:25 search.php:21 single.php:17
+#: archive.php:21 index.php:25 search.php:21 single.php:16
 #, php-format
 msgid "Posted on %s"
 msgstr ""
 
-#: archive.php:22 index.php:26 search.php:22 single.php:18
+#: archive.php:22 index.php:26 search.php:22 single.php:17
 #, php-format
 msgid "By %s"
 msgstr ""
 
-#: archive.php:24 index.php:28 search.php:24 single.php:20
+#: archive.php:24 index.php:28 search.php:24 single.php:19
 msgid "Leave a response"
 msgstr ""
 
-#: archive.php:24 index.php:28 search.php:24 single.php:20
+#: archive.php:24 index.php:28 search.php:24 single.php:19
 msgid "1 response"
 msgstr ""
 
-#: archive.php:24 index.php:28 search.php:24 single.php:20
+#: archive.php:24 index.php:28 search.php:24 single.php:19
 msgid "% responses"
 msgstr ""
 
-#: archive.php:34 index.php:38 search.php:34
+#: archive.php:35 index.php:39 search.php:35
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:40 index.php:46 search.php:47
+#: archive.php:41 index.php:47 search.php:48
 msgid "&laquo; Older posts"
 msgstr ""
 
-#: archive.php:41 index.php:47 search.php:48
+#: archive.php:42 index.php:48 search.php:49
 msgid "Newer posts &raquo;"
 msgstr ""
 
@@ -96,35 +96,31 @@ msgstr ""
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:43
-msgid "Boats"
-msgstr ""
-
-#: functions.php:99
+#: functions.php:90
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:101 functions.php:111 functions.php:121 functions.php:131
+#: functions.php:92 functions.php:102 functions.php:112 functions.php:122
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:109
+#: functions.php:100
 msgid "Homepage Sidebar"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:110
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:120
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:175 functions.php:184
+#: functions.php:166 functions.php:175
 msgid "Logo"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:168
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
@@ -132,7 +128,7 @@ msgstr ""
 msgid "Featured post"
 msgstr ""
 
-#: page-full.php:29 page.php:28 single.php:40
+#: page-full.php:29 page.php:28 single.php:42
 msgid "Edit"
 msgstr ""
 
@@ -141,16 +137,16 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: single.php:30
+#: single.php:31
 #, php-format
 msgid "Posted in %s"
 msgstr ""
 
-#: single.php:30 single.php:31
+#: single.php:31 single.php:33
 msgid ", "
 msgstr ""
 
-#: single.php:31
+#: single.php:33
 #, php-format
 msgid "Tags: %s"
 msgstr ""
