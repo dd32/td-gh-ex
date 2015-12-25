@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+LeftSide version 2.5 - december 2015
+- file functions: removed register_default_headers (default header already included in after_setup_theme)
+- several files: updated postmetadata
+- file style: several modifications
+- several small adjustments
+- updated pot file
+
 LeftSide version 2.4 - november 2015
 - updated archive.php (added the_archive_title and the_archive_description)
 - updated pot file
@@ -18,13 +25,13 @@ LeftSide version 2.3 - september 2015
 - updated language files
 - several small adjustments
 
-Leftside version 2.2 - june 2015
+LeftSide version 2.2 - june 2015
 - file single: removed if statement
 - file functions, comments and style: changed alignment of comment nav
 - reordered file style
 - updated file readme
 
-Leftside version 2.1 - april 2015
+LeftSide version 2.1 - april 2015
 - several small adjustment in stylesheet
 - removed support for document title in older WP versions 
 - files index and archive: pagination inside loop
