@@ -1,4 +1,7 @@
 == Changelog ==
 
-= Version 1.0 =
-  Ample Theme is created on 10-12-2014.
+= Version: 1.0.1 =
+* Minor Bug Fixes
+
+= Version 1.0.0 =
+  Bfront Theme is created on 20-12-2015.

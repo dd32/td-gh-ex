@@ -5,11 +5,11 @@ Author: Infotuts.com
 Author URI: http://infotuts.com/
 Description: Bfront is a beautiful theme, designed especially for business websites. This theme has many customizable features that will help you showcase your company's web presence.
 
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bfront
-Tags: Pink, three-columns, right-sidebar, left-sidebar, responsive-layout, custom-menu, featured-images, sticky-post, accessibility-ready 
+Tags: Pink, three-columns, right-sidebar, left-sidebar, responsive-layout, custom-menu, featured-images, sticky-post
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -647,7 +647,6 @@ padding-bottom: 2px;
 .post-content.clear p {
 color: #616161;
 font-size: 15px;
-line-height: initial;
 }
 
 .content-bar div.blog-post {

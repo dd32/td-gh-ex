@@ -1,18 +1,17 @@
-== Theme: Ample Theme ==
+== Theme: Bfront Theme ==
 
 * By bfront, http://www.bfront.com/
 
 == Theme License & Copyright ==
-Ample Theme is distributed under the terms of the GNU GPL
-Ample Theme - Copyright 2014 Ample Theme, bfront.com
+Bfront Theme is distributed under the terms of the GNU GPL
+Bfront Theme - Copyright 2014 Bfront Theme, bfront.com
 
 License and resources links for images:
 ---------------------------------------
-All images are created by Ample and 
+All images are created by Bfront and 
 all images licensed under GPL.
 
-1. Image Name: bg.jpg
-   This image is taken from my camera when I was in trip. I have included this image with GPL license. 
+Some images are taken from http://www.pexels.com and some images is taken from my camera when I was in trip. I have included this image with GPL license. 
 
 License and resources links for js bundled:
 -------------------------------------------
@@ -42,5 +41,5 @@ License and resources links for js bundled:
     Dual licensed under the MIT and GPL licenses.
 
 6. Google Fonts
-    Oxygen Font https://www.google.com/fonts/specimen/Arvo
+    Monda Font https://www.google.com/fonts/specimen/Monda
     License: Distributed under SIL Open Font License, 1.1 (Open font license) 

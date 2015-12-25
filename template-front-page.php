@@ -1,9 +1,12 @@
 <?php
-/**
+/*
+ * Template Name: Front Page
+ *
+ *
  * The template for displaying the front page
  *
  *
- * @package Ample
+ * @package Bfront
  */
 ?>
 <?php get_header(); ?>
@@ -42,7 +45,7 @@
                     <?php if ( isset($first_slider_des) && $first_slider_des != '') { ?>
                         <h3 class="wow fadeInLeft" data-wow-duration="2s"><?php echo $first_slider_des; ?></h3>
                     <?php } else { ?>
-                        <h3 class="wow fadeInLeft" data-wow-duration="2s">Ample Theme is based on Bootstrap and it is fully functional and Responsive for all screens.</h3>
+                        <h3 class="wow fadeInLeft" data-wow-duration="2s">Bfront Theme is based on Bootstrap and it is fully functional and Responsive for all screens.</h3>
                     <?php } ?> 
 
                     <p class="slider_buttons">
@@ -92,7 +95,7 @@
                         <?php if ( isset($second_slider_des) && $second_slider_des != '') { ?>
                             <h3 class="wow fadeInLeft" data-wow-duration="2s"><?php echo $second_slider_des; ?></h3>
                         <?php } else { ?>
-                            <h3 class="wow fadeInLeft" data-wow-duration="2s">Ample Theme is based on Bootstrap and it is fully functional and Responsive for all screens.</h3>
+                            <h3 class="wow fadeInLeft" data-wow-duration="2s">Bfront Theme is based on Bootstrap and it is fully functional and Responsive for all screens.</h3>
                         <?php } ?>
                         
                         <p class="slider_buttons">

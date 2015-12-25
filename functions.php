@@ -14,7 +14,7 @@ require get_template_directory() . '/inc/define_template.php';
 register_nav_menu('custom_menu', 'Main Menu');
 
 function yogesh_wp_enqueue_styles() {
-    wp_enqueue_style( 'bfront-font-droid-serif', '//fonts.googleapis.com/css?family=Monda:400,700');
+    wp_enqueue_style( 'bfront-font-Monda', '//fonts.googleapis.com/css?family=Monda:400,700');
     wp_enqueue_style('bfront-Reset-css', get_template_directory_uri() . '/css/reset.css');
 	wp_enqueue_style('bfront-flexslider-css', get_template_directory_uri() . '/css/flexslider.css');
     wp_enqueue_style('bfront-font-awesome-css', get_template_directory_uri() . '/css/font-awesome.css');

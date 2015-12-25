@@ -16,7 +16,7 @@
     </head>
     <body <?php body_class(); ?>>
 
-        <div class="header-wrapper-<?php if ( is_front_page() ) { echo 'home'; } else { echo 'not-home'; } ?>">
+        <div class="header-wrapper-<?php if ( is_page_template( 'template-front-page.php' ) ) { echo 'home'; } else { echo 'not-home'; } ?>">
             <div class="container">
                 <div class="row">
                     <div class="header">

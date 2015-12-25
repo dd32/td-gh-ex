@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package Ample
+ * @package Bfront
  */
 
 

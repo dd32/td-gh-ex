@@ -556,7 +556,7 @@ function bfront_customize_register( $wp_customize ) {
     //  =============================
     $wp_customize->add_section('social_section', array(
         'title'    => __('Scoial Media Options', 'bfront'),
-        'priority' => 45,
+        'priority' => 48,
     ));
 
     $wp_customize->add_setting('social_facebook', array(
@@ -637,7 +637,7 @@ function bfront_customize_register( $wp_customize ) {
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'bfront_sanitize_textarea'
     ));
-    $wp_customize->add_control('footer_credits', array(
+    $wp_customize->add_control('custom_css', array(
         'label'    => __('Custom CSS', 'bfront'),
         'section'  => 'colors',
         'settings' => 'custom_css',
