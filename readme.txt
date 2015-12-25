@@ -29,7 +29,7 @@ You can add your own background(image) via  WordPress Dashboard > Appearance > B
 
 HOW TO SET MENU
 ===============
-PrivateBusiness offers a menu that can contain subpages (2 levels deep) and a single level header menu.
+Theme offers a menu that can contain subpages (2 levels deep) and a single level header menu.
 You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 
