@@ -18,10 +18,11 @@
 		</h4>
 
 		<div class="postmetadata">
-			<?php printf( __( 'Posted on %s', 'medical' ), '<a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_date() ). '</a>' ); ?> | 
+			<?php printf( __( 'Posted on %s', 'medical' ), '<a href="'. esc_url( get_permalink() ) .'">' . esc_html( get_the_date() ). '</a>' ); ?> <?php echo '|'; ?> 
 			<?php printf( __( 'By %s', 'medical' ), sprintf( '<a href="%1$s">%2$s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() ) ) ); ?>
-			<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : echo '|'; ?>
-			<?php comments_popup_link( __( 'Leave a response', 'medical' ), __( '1 response', 'medical' ), __( '% responses', 'medical' ) ); ?><?php endif; ?>
+			<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+				<?php echo '|'; ?> <?php comments_popup_link( __( 'Leave a response', 'medical' ), __( '1 response', 'medical' ), __( '% responses', 'medical' ) ); ?>
+			<?php endif; ?>
 		</div>
 
 		<?php if ( has_post_thumbnail() ) { 
@@ -36,7 +37,7 @@
 
 		<?php endwhile; else: ?>
 					
-		<h3 class="page-title"><?php _e( 'Nothing Found', 'medical' ); ?></h3>
+		<h4 class="page-title"><?php _e( 'Nothing Found', 'medical' ); ?></h4>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'medical'); ?></p>
 
 		<?php get_search_form(); ?>
