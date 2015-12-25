@@ -35,15 +35,6 @@
 		);	
 		add_theme_support( 'custom-header', $args );
 
-	// Default header
-		register_default_headers( array(
-		'boats' => array(
-			'url' => '%s/images/boats.jpg',
-			'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
-			'description' => __( 'Boats', 'darkelements' )
-			)
-		) );
-
 	// Post thumbnails
 		add_theme_support( 'post-thumbnails' ); 
 

@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkElements
 Theme URI: http://www.guidovanderleest.nl/darkelements
-Version: 3.0
+Version: 3.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkElements is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: sidebar on left side, navigation on left side, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description. That's it. Enjoy. 
@@ -72,8 +72,7 @@ body {background:#333; font-family:'Open Sans', sans-serif; font-size:0.9em; col
 
 
 /* MAIN CONTENT AREA */
-#content {width:68%; float:right; padding:20px 2%; word-wrap:break-word; background:#333 url('images/back.png'); opacity:0.9; filter:alpha(opacity=90);}
-#content:after {content:''; display:block; clear:both;}
+#content {width:68%; float:right; padding:20px 2%; background:#333 url('images/back.png'); opacity:0.9; filter:alpha(opacity=90);}
 
 
 /* HEADINGS */
@@ -96,7 +95,7 @@ sub {vertical-align:sub; font-size:0.9em;}
 sup {vertical-align:super; font-size:0.9em;}
 ins, mark {font-weight:bold; background:none; color:#e77776;}
 cite, em, abbr, acronym {font-style:italic;}
-code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #444; word-wrap:break-word; border-radius:5px; -moz-border-radius:5px;}
+code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #444; border-radius:5px; -moz-border-radius:5px;}
 blockquote, q {margin:10px 0; padding:0 0 0 10px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:1px solid #ddd;}
 address {margin:10px 0; padding:0 0 0 10px; display:block; font-size:1.2em; line-height:1.5em; border-left:1px solid #ddd;}
 p {margin:0 0 10px; text-align:justify;}
@@ -126,7 +125,6 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 /* HEADER */
 #header {width:22%; float:left; padding:20px 2% 30px; background:#333 url('images/back.png'); border-bottom-left-radius:50px; -moz-border-bottom-left-radius:50px; border-bottom-right-radius:50px; -moz-border-bottom-right-radius:50px; opacity:0.9; filter:alpha(opacity=90);}
-#header:after {content:''; display:block; clear:both;}
 
 
 /* HEADER LOGO */
@@ -138,14 +136,15 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 /* HEADER IMAGE */
 #header-image {width:68%; float:right; margin:0 0 20px; padding:20px 2% 15px; background:#333 url('images/back.png'); opacity:0.9; filter:alpha(opacity=90);}
-#header-image:after {content:''; display:block; clear:both;}
 #header-image .header-img {width:100%; height:auto;}
 
+
+/* HEADER IMAGE MOBILE */
 #header-image-mobile {display:none;}
 
 
 /* HEADER MENU */
-.nav-head {background:none; clear:both; margin:0; padding:5px 0;}
+.nav-head {width:100%; clear:both; float:left; padding:5px 0;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin:0; z-index:999;}
 .nav-head ul li {list-style-type: none; position:relative; padding:0; margin:0;}
@@ -161,28 +160,25 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* PAGE */
 .page-title {padding:0 0 10px;}
 .archive-description {display:block; font-style:italic;}
-.pagelink {clear:both; margin:20px 0 10px;}
+.pagelink {clear:both; display:block; margin:20px 0 10px;}
 
 
 /* POST */
-.post-title {padding:0;}
-.sticky {text-align:center; clear:both; margin:0 0 10px; padding:5px; color:#e77776; border-top:1px solid #444; border-bottom:1px solid #444;}
-.postmetadata {clear:both; margin:20px 0; padding:2px 0; border-top:1px solid #444; border-bottom:1px solid #444;}
-.more {clear:both; margin:20px 0; padding:0 0 20px; border-bottom:1px solid #444;}
-.more:after {content:''; display:block; clear:both;}
+.sticky {clear:both; display:block; text-align:center; margin:0 0 10px; padding:5px; color:#e77776; border-top:1px solid #444; border-bottom:1px solid #444;}
+.postmetadata {clear:both; display:block; margin:20px 0; padding:2px 0; border-top:1px solid #444; border-bottom:1px solid #444;}
+.more {width:100%; clear:both; display:block; float:left; margin:20px 0; padding:0 0 20px; border-bottom:1px solid #444;}
 a.readmore {float:right; text-decoration:none; padding:2px 5px; background:#ddd; color:#333; border-radius:5px; -moz-border-radius:5px;}
 a.readmore:hover {background:#e77776; color:#ddd; text-decoration:none;}
 
 
 /* POST NAV */
-.post-nav {display:block; clear:both;}
-.post-nav:after {content:''; display:block; clear:both;}
+.post-nav {width:100%; clear:both; float:left; display:block;}
 .nav-prev {float:right; padding:5px 0;}
 .nav-next{float:left; padding:5px 0;}
 
 
 /* EDIT LINK */
-.edit-link {display:block; clear:both; text-align:center; margin:10px 0; padding:2px 5px; border:1px solid #444; border-radius:5px; -moz-border-radius:5px;}
+.edit-link {clear:both; display:block; text-align:center; margin:10px 0; padding:2px 5px; border:1px solid #444; border-radius:5px; -moz-border-radius:5px;}
 .edit-link a {color:#e77776;}
 .edit-link a:hover {color:#ddd;}
 
@@ -201,11 +197,11 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
 
 .wp-caption {background:none; max-width:100%;}
-.wp-caption-text {text-align:center; word-wrap:break-word;}
+.wp-caption-text {text-align:center;}
 
 .gallery dl, .gallery dt, .gallery dd {margin:0; padding:0;}
 .gallery-caption {background:none; max-width:100%;}
-.gallery-caption-text {text-align:center; word-wrap:break-word;}
+.gallery-caption-text {text-align:center;}
 
 
 /* SEARCHFORM */
@@ -215,7 +211,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* COMMENTS */
-#comments {clear:both; word-wrap:break-word;}
+#comments {width:100%; clear:both; float:left;}
 #comments .comment-list {background:none; border:1px solid #444; border-radius:5px; -moz-border-radius:5px; font-weight:normal; margin:20px 0; padding:0 20px 0 10px;}
 #comments .comment-list ol {list-style:none;}
 #comments .comment-list li {list-style:none; margin:0 0 0 10px;}
@@ -231,14 +227,13 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* COMMENT NAV */
-.comment-nav {display:block; clear:both;}
-.comment-nav:after {content:''; display:block; clear:both;}
+.comment-nav {width:100%; clear:both; float:left; display:block;}
 .comment-prev {float:left; padding:5px 0;}
 .comment-next {float:right; padding:5px 0;}
 
 
 /* SIDEBAR AND WIDGETS */
-#sidebar {width:100%; float:left; word-wrap:break-word;}
+#sidebar {width:100%; float:left;}
 .widget {padding:10px 0; margin:0 0 10px; background:none;}
 .widgettitle, .nav-widgettitle {color:#ddd; padding:0 0 5px; margin:0 0 10px; border-bottom:1px solid #444;}
 
@@ -253,19 +248,17 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 /* FOOTER */
 #footer {width:68%; float:right; padding:0 2%; margin:20px 0 0; background:#333 url('images/back.png'); color:#ddd; opacity:0.9; filter:alpha(opacity=90);}
-#footer:after {content:''; display:block; clear:both;}
 #footer .site-info {clear:both; text-align:center; font-size:0.75em; padding:10px 0;}
 
 
 /* FOOTER WIDGET AREA */
-#footer-widgets {width:100%; margin:0 auto 0;}
-#footer-widgets:after {content:''; display:block; clear:both;}
+#footer-widgets {width:100%; clear:both; float:right;}
 
 #footer .widget {padding:0; margin:10px 0 0;}
 
-.footer-left {float:left; width:31%; margin:10px 0 0 0; padding:0; word-wrap:break-word;}
-.footer-middle {float:left; width:31%; margin:10px 3.5%; padding:0; word-wrap:break-word;}
-.footer-right {float:right; width:31%; margin:10px 0 0 0; padding:0; word-wrap:break-word;}
+.footer-left {float:left; width:31%; margin:10px 0 0 0;}
+.footer-middle {float:left; width:31%; margin:10px 3.5%;}
+.footer-right {float:right; width:31%; margin:10px 0 0 0;}
 
 
 /* Tablet */
@@ -291,8 +284,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#header .logo h1 {font-size:2em;}
 	#header .logo h4 {padding:0; font-size:1.3em;}
 	#header-image {display:none;}
-	#header-image-mobile {display:block; width:100%; background:none;}
-	#header-image-mobile:after {content:''; display:block; clear:both;}
+	#header-image-mobile {display:block; width:100%; float:left; background:none;}
 	#header-image-mobile .header-img {width:100%; height:auto;}
 
 	/* MENU */

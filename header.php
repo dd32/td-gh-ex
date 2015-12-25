@@ -12,14 +12,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php
-	/* Always have wp_head() just before the closing </head>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to add elements to <head> such
-	 * as styles, scripts, and meta tags.
-	 */
-	wp_head();
-?>
+<?php wp_head(); ?>
 
 </head>
 <body <?php body_class(); ?> >
@@ -46,7 +39,7 @@
 	<?php if ( is_home() || is_front_page() ) {?> 
 	<?php if ( get_header_image() ) {?> 
 		<div id="header-image-mobile">
-			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" /> 
+			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 		</div>
 	<?php } ?> 
 	<?php } ?>
@@ -57,7 +50,7 @@
 <?php if ( is_home() || is_front_page() ) {?> 
 <?php if ( get_header_image() ) {?> 
 	<div id="header-image">
-		<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" /> 
+		<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 	</div>
 <?php } ?> 
 <?php } ?>
