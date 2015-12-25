@@ -11,7 +11,7 @@
 
 	<?php if ( have_posts() ) : ?>
 		<?php
-			the_archive_title( '<h4 class="archive-title">', '</h4>' );
+			the_archive_title( '<h4 class="page-title">', '</h4>' );
 			the_archive_description( '<div class="archive-description">', '</div>' );
 		?>
 
@@ -21,10 +21,11 @@
 			</h4>
 
 			<div class="postmetadata">
-				<?php printf( __( 'Posted on %s', 'multicolors' ), '<a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_date() ). '</a>' ); ?> | 
+				<?php printf( __( 'Posted on %s', 'multicolors' ), '<a href="'. esc_url( get_permalink() ) .'">' . esc_html( get_the_date() ). '</a>' ); ?> <?php echo '|'; ?> 
 				<?php printf( __( 'By %s', 'multicolors' ), sprintf( '<a href="%1$s">%2$s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() ) ) ); ?>
-				<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : echo '|'; ?>
-				<?php comments_popup_link( __( 'Leave a response', 'multicolors' ), __( '1 response', 'multicolors' ), __( '% responses', 'multicolors' ) ); ?><?php endif; ?>
+				<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+					<?php echo '|'; ?> <?php comments_popup_link( __( 'Leave a response', 'multicolors' ), __( '1 response', 'multicolors' ), __( '% responses', 'multicolors' ) ); ?>
+				<?php endif; ?>
 			</div>
 
 			<?php if ( has_post_thumbnail() ) { 

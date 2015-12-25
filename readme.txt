@@ -30,7 +30,7 @@ Note: because theme is fullwidth, this has no visible effect. But it might after
 
 HOW TO SET MENU
 ===============
-MultiColors offers a menu that can contain subpages (2 levels deep).
+Theme offers a menu that can contain subpages (2 levels deep).
 You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 
