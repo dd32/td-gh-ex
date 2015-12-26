@@ -13,7 +13,7 @@ To set a static homepage go to your WordPress Dashboard > Settings > Reading and
 
 HOW TO CHANGE HEADER IMAGE
 ==========================
-You can change the header-image via WordPress Dashboard > Appearance > Header.
+You can change the header-image via WordPress Dashboard > Appearance > Customize.
 I advice you to use a header-image of 800px wide and 450px high. 
 
 
@@ -24,7 +24,7 @@ You can add your own logo in stead of blogname and description via WordPress Das
 
 HOW TO CHANGE BACKGROUND
 ========================
-You can add your own background(image) via  WordPress Dashboard > Appearance > Background.
+You can add your own background(image) via  WordPress Dashboard > Appearance > Customize.
 
 
 HOW TO SET MENU
