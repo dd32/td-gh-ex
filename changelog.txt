@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+DarkOrange version 3.7 - december 2015
+- bugfix: included the register_default_headers again because it did not work without
+
 DarkOrange version 3.6 - december 2015
 - relocated mobile menu
 - file functions: removed register_default_headers (default header already included in after_setup_theme)

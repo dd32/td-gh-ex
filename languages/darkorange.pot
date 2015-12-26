@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkOrange\n"
-"POT-Creation-Date: 2015-12-25 13:53+0100\n"
+"POT-Creation-Date: 2015-12-26 13:38+0100\n"
 "PO-Revision-Date: 2015-11-15 18:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -96,31 +96,35 @@ msgstr ""
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:90
+#: functions.php:43
+msgid "Default header"
+msgstr ""
+
+#: functions.php:99
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:92 functions.php:102 functions.php:112 functions.php:122
+#: functions.php:101 functions.php:111 functions.php:121 functions.php:131
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:100
+#: functions.php:109
 msgid "Homepage Sidebar"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:119
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:129
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:166 functions.php:175
+#: functions.php:175 functions.php:184
 msgid "Logo"
 msgstr ""
 
-#: functions.php:168
+#: functions.php:177
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
