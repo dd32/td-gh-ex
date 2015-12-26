@@ -103,3 +103,7 @@ Version 1.3.3
 Version 1.3.4
 * Updated Email Button
 * Minor bug fixes
+
+Version 1.3.5
+* Updated FontAwesome to 4.5.0 Version
+* Minor bug fixes
