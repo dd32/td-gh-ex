@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+MultiColors version 3.0 - december 2015
+- bugfix: included the register_default_headers again because it did not work without
+
 MultiColors version 2.9 - december 2015
 - file functions: removed register_default_headers (default header already included in after_setup_theme)
 - several files: updated postmetadata
