@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PrivateBusiness\n"
-"POT-Creation-Date: 2015-12-25 13:54+0100\n"
+"POT-Creation-Date: 2015-12-26 13:40+0100\n"
 "PO-Revision-Date: 2015-11-15 22:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -100,36 +100,40 @@ msgstr ""
 msgid "Secondary Navigation"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:44
+msgid "Default header"
+msgstr ""
+
+#: functions.php:98
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:91 functions.php:101 functions.php:111 functions.php:121
-#: functions.php:131
+#: functions.php:100 functions.php:110 functions.php:120 functions.php:130
+#: functions.php:140
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:99
+#: functions.php:108
 msgid "Homepage Sidebar Right"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:118
 msgid "Homepage Sidebar Left"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:128
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:138
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:175 functions.php:184
+#: functions.php:184 functions.php:193
 msgid "Logo"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:186
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
