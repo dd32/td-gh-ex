@@ -15,19 +15,19 @@ HOW TO CREATE A KNOWLEDGE BASE
 ==============================
 The Knowledge Base uses the default WordPress categories and posts.
 Create a new page and select the Knowledge Base template on the right. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
-If you want this page to be homepage, Go to Settings > Reading and select this page as hompepage.
+If you want this page to be homepage go to Settings > Reading and select this page as hompepage.
 
 
 HOW TO CREATE A LINK PORTAL 
 ===========================
 If you only want to display a list of links you can install this plugin: https://wordpress.org/plugins/page-links-to
 While creating a post you can add the URL (website) of your choice.
-Clicking the post link in frontend will redirect you to this URL (so the post will not open).
+When you click the post link in frontend it will redirect you to this URL (so the post will not open).
 
 
 HOW TO CHANGE HEADER IMAGE
 ==========================
-You can change the header-image via WordPress Dashboard > Appearance > Header.
+You can change the header-image via WordPress Dashboard > Appearance > Customize.
 I advice you to use a header-image of 600px wide and 400px high. 
 
 
@@ -38,12 +38,12 @@ You can add your own logo in stead of blogname and description via WordPress Das
 
 HOW TO CHANGE BACKGROUND
 ========================
-You can add your own background(image) via WordPress Dashboard > Appearance > Background.
+You can add your own background(image) via WordPress Dashboard > Appearance > Customize.
 
 
 HOW TO SET MENU
 ===============
-MyKnowledgeBase offers a menu that can contain subpages (2 levels deep).
+Theme offers a menu that can contain subpages (2 levels deep).
 You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 

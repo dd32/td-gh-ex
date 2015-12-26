@@ -3,7 +3,7 @@ Used to style the post and page TinyMCE editor.
 */
 
 @import url(//fonts.googleapis.com/css?family=Open+Sans);
-body {font-family:'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
+body {font-family:'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em; word-wrap:break-word;}
 
 
 /* RESET STYLESHEET */
@@ -54,7 +54,7 @@ sub {vertical-align:sub; font-size:0.9em;}
 sup {vertical-align:super; font-size:0.9em;}
 ins, mark {font-weight:bold; background:none; color:#08a0ff;}
 cite, em, abbr, acronym {font-style:italic;}
-code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #eee; word-wrap:break-word;}
+code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #eee;}
 blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #08a0ff;}
 address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #333;}
 p {margin:0 0 10px; text-align:justify;}
@@ -84,4 +84,4 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 .wp-caption {background:none; max-width:100%;}
-.wp-caption-text {text-align:center; word-wrap:break-word;}
+.wp-caption-text {text-align:center;}

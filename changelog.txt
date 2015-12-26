@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 2.6 - december 2015
+- several files: updated postmetadata
+- file style: several modifications
+- several small adjustments
+- updated pot file
+
 MyKnowledgeBase version 2.5 - november 2015
 - updated archive.php (added the_archive_title and the_archive_description)
 - updated pot file

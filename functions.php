@@ -36,13 +36,13 @@
 		add_theme_support( 'custom-header', $args );
 
 	// Default header
-		register_default_headers( array(
+	register_default_headers( array(
 		'boats' => array(
-			'url' => '%s/images/boats.jpg',
-			'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
-			'description' => __( 'Boats', 'myknowledgebase' )
+			'url'           => get_template_directory_uri() . '/images/boats.jpg',
+			'thumbnail_url' => get_template_directory_uri() . '/images/boats.jpg',
+			'description'   => __( 'Default header', 'myknowledgebase' )
 		)
-		) );
+	) );
 
 	// Post thumbnails
 		add_theme_support( 'post-thumbnails' ); 

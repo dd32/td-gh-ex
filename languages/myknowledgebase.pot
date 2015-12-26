@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2015-11-15 22:05+0100\n"
-"PO-Revision-Date: 2015-11-15 22:05+0100\n"
+"POT-Creation-Date: 2015-12-26 13:39+0100\n"
+"PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 archive.php:45 index.php:47 search.php:39
+#: 404.php:9 archive.php:46 index.php:48 search.php:40
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:10 archive.php:46 index.php:48 search.php:40
+#: 404.php:10 archive.php:47 index.php:49 search.php:41
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
@@ -54,15 +54,15 @@ msgstr ""
 msgid "% responses"
 msgstr ""
 
-#: archive.php:34 index.php:36 search.php:34
+#: archive.php:35 index.php:37 search.php:35
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:40 index.php:42 search.php:47
+#: archive.php:41 index.php:43 search.php:48
 msgid "&laquo; Older posts"
 msgstr ""
 
-#: archive.php:41 index.php:43 search.php:48
+#: archive.php:42 index.php:44 search.php:49
 msgid "Newer posts &raquo;"
 msgstr ""
 
@@ -97,7 +97,7 @@ msgid "Primary Navigation"
 msgstr ""
 
 #: functions.php:43
-msgid "Boats"
+msgid "Default header"
 msgstr ""
 
 #: functions.php:96
@@ -133,15 +133,15 @@ msgstr ""
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
-#: header.php:65
-msgid "Search website"
+#: header.php:58
+msgid "Search for..."
 msgstr ""
 
 #: index.php:14
 msgid "Featured post"
 msgstr ""
 
-#: page-full.php:29 page.php:28 single.php:38
+#: page-full.php:29 page.php:28 single.php:41
 msgid "Edit"
 msgstr ""
 
@@ -150,16 +150,16 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: single.php:29
+#: single.php:30
 #, php-format
 msgid "Posted in %s"
 msgstr ""
 
-#: single.php:29 single.php:30
+#: single.php:30 single.php:32
 msgid ", "
 msgstr ""
 
-#: single.php:30
+#: single.php:32
 #, php-format
 msgid "Tags: %s"
 msgstr ""
@@ -175,12 +175,12 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile friendly "
-"WordPress theme for a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, "
-"Wiki or link Portal. It uses the default WP categories and posts. Please "
-"check readme file how to set up such a website. Features: primary sidebar, "
-"homepage sidebar, widget areas in footer, custom header image, custom "
-"background, custom logo to replace blogname and description, full width page "
-"template, dropdown navigation. That's it. Enjoy."
+"WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, "
+"Wiki or Link Portal with a custom page template and using the default "
+"categories and posts. Features: primary sidebar, homepage sidebar, widget "
+"areas in footer, custom header image, custom background, custom logo to "
+"replace blogname and description, full width page template, dropdown "
+"navigation. That's it. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme

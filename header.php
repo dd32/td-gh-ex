@@ -12,14 +12,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php
-	/* Always have wp_head() just before the closing </head>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to add elements to <head> such
-	 * as styles, scripts, and meta tags.
-	 */
-	wp_head();
-?>
+<?php wp_head(); ?>
 
 </head>
 <body <?php body_class(); ?> >
@@ -31,7 +24,7 @@
 			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
 			<img src='<?php echo esc_url( get_theme_mod( 'myknowledgebase_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
 		<?php else : ?> 
-			<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> </h1>
+			<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
 			<h5><?php bloginfo('description'); ?></h5> 
 		<?php endif; ?>
 	</div>
@@ -47,7 +40,7 @@
 
 	<div class="image-homepage"> 
 		<?php if ( get_header_image() ) {?> 
-				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" />
+			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 		<?php } ?>
 	</div>
 
@@ -62,6 +55,6 @@
 <?php } ?>
 
 <div id="header-third"> 
-	<h4 class="search-title"><?php _e( 'Search website', 'myknowledgebase' ); ?></h4>
+	<h4 class="search-title"><?php _e( 'Search for...', 'myknowledgebase' ); ?></h4>
 	<?php get_search_form(); ?>
 </div>

@@ -1,7 +1,7 @@
 <?php
 /*
  * Template Name: Knowledge Base Sidebar
- * Description: Template for displaying Posts from WP dashboard.
+ * Description: Template for displaying Categories and Posts.
  */
 ?>
 
@@ -18,7 +18,7 @@
 $myknowledgebase_cats = get_categories( $myknowledgebase_cat_args );
 
 foreach ( $myknowledgebase_cats as $cat ) :
-	echo '<ul class="cat-list-three"><li class="cat-name"><a href="' . get_category_link( $cat->cat_ID ) . '" title="' . $cat->name . '" >' . $cat->name . '</a></li>';
+	echo '<ul class="cat-list"><li class="cat-name"><a href="' . get_category_link( $cat->cat_ID ) . '" title="' . $cat->name . '" >' . $cat->name . '</a></li>';
 
 	$myknowledgebase_post_args = array(
 		'posts_per_page' => -1, // -1 means list all posts
@@ -33,14 +33,11 @@ foreach ( $myknowledgebase_cats as $cat ) :
 		echo '<li class="post-name"><a href="'. get_permalink( $single_post->ID ) .'" rel="bookmark" title="'. get_the_title( $single_post->ID ) .'">'. get_the_title( $single_post->ID ) .'</a></li>'; 
 	endforeach;
 	
-	wp_reset_postdata(); 
+	echo '</ul>';
 
-	?>
+endforeach; ?>
 
-	<?php echo '</ul>'; ?>
-<?php endforeach; ?>
-
-</div>	
-</div>	
+</div>
+</div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
