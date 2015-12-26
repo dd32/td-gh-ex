@@ -1,0 +1,219 @@
+/**
+ *
+ *	The main stylesheet for custom styling of the theme.
+ *
+ **/
+ 
+/*---- Stuff to be used throughout the theme ----*/
+
+.font {
+	font-family: "Lato", sans-serif;
+}
+
+@main-color: #6fb624;
+
+
+/*---- Body and Content Area ----*/
+
+body {
+	.font;
+}
+
+a, a:visited {
+	color: #aaa;
+	transition: all ease .1s;
+}
+
+a:hover {
+	color: desaturate(@main-color, 30%);
+	text-decoration: none;
+}
+
+/*---- Top Bar ----*/
+
+#top-bar {
+	height: 50px;
+	width: 100%;
+	position: relative;
+	background:linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+				linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+				linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+				linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+				linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+				linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	background-color: #131313;
+	background-size: 20px 20px;
+	border-bottom: solid 2px @main-color;
+}
+
+/*---- Masthead ----*/
+
+.blog #page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#masthead {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	overflow: hidden;
+	.site-branding {
+		position: absolute;
+		top: 40%;
+		z-index: 0;
+		display: block;
+		width: 100%;
+		.site-title a {
+			font-family: "Muli", sans-serif;
+
+			font-weight: 300;
+		}
+		.site-description {
+			font-size: 16px;
+		}
+	}
+	.header-image {
+		position: absolute;
+		width:100%;
+		height: 100%;
+		z-index: -1;
+	}
+}
+
+#content {
+	position: absolute;
+	top: 100%;
+	width: 100%;
+}
+
+/*---- Navigation ----*/
+
+#site-navigation {
+	z-index: 100;
+	text-align: left;
+	width: auto;
+	ul {
+		display: inline-block;
+		li {
+			float: none;
+			background: rgba(255,255,255,.3);
+			outline: solid 1px transparent;
+			margin-bottom: 1px;
+			a {
+				padding: 20px;
+				width: 200px;
+				color: #000;
+			}
+			&:nth-child(odd) > a {
+					color: @main-color;
+				}
+			&:hover ul {
+				left: 100%;
+				top: 0;
+				box-shadow: none;
+				margin-left: 1px;
+				ul {
+					display: none;
+				}
+				li:hover ul {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+/*---- Showcase ----*/
+
+#showcase-wrapper {
+	text-align: center;
+	margin: auto;
+	padding-bottom: 50px;
+}
+	section.widget_at_featured {
+		overflow: auto;
+		h2.widget-title {
+			text-align: center;
+			font-family: "Muli", sans-serif;
+			font-weight: 700;
+			margin: 40px auto;
+		}
+		.showcase-box {
+			padding: 1px;
+			.showcase-image {
+				position: relative;
+				&:before {
+					position: absolute;
+					content: "";
+					border: solid 10px rgba(255,255,255,.5);
+					top: 10px;
+					bottom: 10px;
+					right: 10px;
+					left: 10px;
+					background: transparent;
+					transition: border .2s ease-out, background .1s ease-in;
+				}
+				&:after {
+					position: absolute;
+					content: "";
+					width: 100%;
+					left: 0;
+					top: -5px;
+					height: 5px;
+					background: @main-color;
+				}
+			}
+			.showcase-title {
+				position: absolute;
+				top: 30%;
+				left: 0;
+				right: 0;
+				padding: 0px 30px;
+				font-size: 18px;
+				text-transform: uppercase;
+				font-family: "Muli", sans-serif;
+				font-weight: 700;
+				opacity: 0;
+				transition: opacity ease-in .2s;
+				&:after {
+					position: absolute;
+					content: "";
+					width: 60%;
+					left: 0;
+					right: 0;
+					background: white;
+					height: 1px;
+					bottom: -10px;
+					margin: auto;
+				}
+				a {
+					position: relative;
+					color: white;
+				}
+			}
+			&:hover {
+				.showcase-image {
+					&:before {
+						border: solid 2px rgba(255,255,255,.5);
+						background: rgba(0,0,0,.5);
+					}
+				}
+				.showcase-title {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+
+/*---- Slider ----*/
+
+#slider-wrapper {
+	margin: 80px auto;
+	ul {
+		margin: 0px;
+	}
+}

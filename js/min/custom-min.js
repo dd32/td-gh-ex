@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){jQuery(".bxslider").bxSlider({auto:!1,adaptiveHeight:!0,infiniteLoop:!0})});

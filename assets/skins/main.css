@@ -1,0 +1,188 @@
+/**
+ *
+ *	The main stylesheet for custom styling of the theme.
+ *
+ **/
+/*---- Stuff to be used throughout the theme ----*/
+.font {
+  font-family: "Lato", sans-serif;
+}
+/*---- Body and Content Area ----*/
+body {
+  font-family: "Lato", sans-serif;
+}
+a,
+a:visited {
+  color: #aaa;
+  transition: all ease .1s;
+}
+a:hover {
+  color: #6e9545;
+  text-decoration: none;
+}
+/*---- Top Bar ----*/
+#top-bar {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+  border-bottom: solid 2px #6fb624;
+}
+/*---- Masthead ----*/
+.blog #page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#masthead {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+#masthead .site-branding {
+  position: absolute;
+  top: 40%;
+  z-index: 0;
+  display: block;
+  width: 100%;
+}
+#masthead .site-branding .site-title a {
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+}
+#masthead .site-branding .site-description {
+  font-size: 16px;
+}
+#masthead .header-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+#content {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+/*---- Navigation ----*/
+#site-navigation {
+  z-index: 100;
+  text-align: left;
+  width: auto;
+}
+#site-navigation ul {
+  display: inline-block;
+}
+#site-navigation ul li {
+  float: none;
+  background: rgba(255, 255, 255, 0.3);
+  outline: solid 1px transparent;
+  margin-bottom: 1px;
+}
+#site-navigation ul li a {
+  padding: 20px;
+  width: 200px;
+  color: #000;
+}
+#site-navigation ul li:nth-child(odd) > a {
+  color: #6fb624;
+}
+#site-navigation ul li:hover ul {
+  left: 100%;
+  top: 0;
+  box-shadow: none;
+  margin-left: 1px;
+}
+#site-navigation ul li:hover ul ul {
+  display: none;
+}
+#site-navigation ul li:hover ul li:hover ul {
+  display: block;
+}
+/*---- Showcase ----*/
+#showcase-wrapper {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 50px;
+}
+section.widget_at_featured {
+  overflow: auto;
+}
+section.widget_at_featured h2.widget-title {
+  text-align: center;
+  font-family: "Muli", sans-serif;
+  font-weight: 700;
+  margin: 40px auto;
+}
+section.widget_at_featured .showcase-box {
+  padding: 1px;
+}
+section.widget_at_featured .showcase-box .showcase-image {
+  position: relative;
+}
+section.widget_at_featured .showcase-box .showcase-image:before {
+  position: absolute;
+  content: "";
+  border: solid 10px rgba(255, 255, 255, 0.5);
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  left: 10px;
+  background: transparent;
+  transition: border 0.2s ease-out, background 0.1s ease-in;
+}
+section.widget_at_featured .showcase-box .showcase-image:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 0;
+  top: -5px;
+  height: 5px;
+  background: #6fb624;
+}
+section.widget_at_featured .showcase-box .showcase-title {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  padding: 0px 30px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: "Muli", sans-serif;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity ease-in 0.2s;
+}
+section.widget_at_featured .showcase-box .showcase-title:after {
+  position: absolute;
+  content: "";
+  width: 60%;
+  left: 0;
+  right: 0;
+  background: white;
+  height: 1px;
+  bottom: -10px;
+  margin: auto;
+}
+section.widget_at_featured .showcase-box .showcase-title a {
+  position: relative;
+  color: white;
+}
+section.widget_at_featured .showcase-box:hover .showcase-image:before {
+  border: solid 2px rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+}
+section.widget_at_featured .showcase-box:hover .showcase-title {
+  opacity: 1;
+}
+/*---- Slider ----*/
+#slider-wrapper {
+  margin: 80px auto;
+}
+#slider-wrapper ul {
+  margin: 0px;
+}
