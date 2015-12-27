@@ -202,7 +202,7 @@
                                                 'value' => 'show_both'
                                             ),
                                             array(
-                                                'label' => __('Disable','accessress-basic'),
+                                                'label' => __('Disable','accesspress-basic'),
                                                 'value' => 'disable'
                                             ),
                                         );

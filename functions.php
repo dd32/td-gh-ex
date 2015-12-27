@@ -118,6 +118,14 @@ add_action( 'wp_enqueue_scripts', 'accesspress_basic_scripts' );
  add_image_size('accesspress-basic-blog-medium-thumbnail', 380, 252, true);
  add_image_size('accesspress-basic-blog-large-thumbnail', 840, 370, true);
 
+ /**
+ * Custom Editor Style
+ */
+	function accesspress_basic_add_editor_styles() {
+	    add_editor_style( 'custom-editor-style.css' );
+	}
+	add_action( 'admin_init', 'accesspress_basic_add_editor_styles' );
+
 /**
  * Implement the Custom Header feature.
  */

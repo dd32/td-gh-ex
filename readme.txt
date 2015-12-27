@@ -86,3 +86,6 @@ Version 2.0.6
 
 Version 2.0.7
 * Fixed the Responsive menu displaying in window resize issue.
+
+Verion 2.0.9
+* Added Editor Style for editing TinyMCE visual editor styles.

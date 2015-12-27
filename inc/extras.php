@@ -74,8 +74,8 @@ endif;
         global $apbasic_options;
         $apbasic_settings = get_option('apbasic_options', $apbasic_options);
         $mode = $apbasic_settings['slider_mode'];
-        $ositab = $apbasic_settings['open_slider_link_in_new_tab'];
-        //print_r($apbasic_settings);
+        $ositab = isset($apbasic_settings['open_slider_link_in_new_tab']) ? $apbasic_settings['open_slider_link_in_new_tab'] : '';
+
         for($i = 1; $i <= 4; $i++) :
             if(!empty($apbasic_settings['slide'.$i])) :
                 $slides[] = array(
