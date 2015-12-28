@@ -1,0 +1,602 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Acool\n"
+"POT-Creation-Date: 2015-12-27 20:47+0800\n"
+"PO-Revision-Date: 2015-12-20 13:17+0800\n"
+"Last-Translator: \n"
+"Language-Team: CooThemes.com <support@coothemes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: archive.php:23 category.php:23 content-home.php:17 index.php:23
+#: search.php:24 single.php:22
+msgid "Edit"
+msgstr ""
+
+#: comments.php:23
+#, php-format
+msgid "One Comment on \"%2$s\""
+msgid_plural "%1$s Comments on \"%2$s\""
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:30 comments.php:50
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:31 comments.php:51
+msgid "← Older Comments"
+msgstr ""
+
+#: comments.php:32 comments.php:52
+msgid "Newer Comments →"
+msgstr ""
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:36
+#, php-format
+msgid ""
+"Powered by <a href=\"%s\">WordPress</a>. Designed by <a href=\"%s"
+"\">CooThemes.com</a>."
+msgstr ""
+
+#: functions.php:111
+msgid "Header Background Color"
+msgstr ""
+
+#: functions.php:159
+msgid "Fonts"
+msgstr ""
+
+#: functions.php:171
+msgid "Header Font"
+msgstr ""
+
+#: functions.php:187
+msgid "Menu Font"
+msgstr ""
+
+#: functions.php:202
+msgid "Title Font"
+msgstr ""
+
+#: functions.php:215
+msgid "Body Font"
+msgstr ""
+
+#: functions.php:227
+msgid "Theme Settings"
+msgstr ""
+
+#: functions.php:237
+msgid "Show Search Icon"
+msgstr ""
+
+#: functions.php:254
+msgid "Custom CSS Section"
+msgstr ""
+
+#: functions.php:266 options.php:125
+msgid "Custom CSS"
+msgstr ""
+
+#: functions.php:661
+msgid "Page"
+msgstr ""
+
+#: includes/custom-functions.php:14
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\"> on </span>"
+msgstr ""
+
+#: includes/custom-functions.php:15
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: includes/custom-functions.php:15
+msgid "(Edit)"
+msgstr ""
+
+#: includes/custom-functions.php:21
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: includes/options-framework/includes/class-options-framework-admin.php:91
+#: includes/options-framework/includes/class-options-framework-admin.php:92
+msgid "Theme Options"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-framework-admin.php:204
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-framework-admin.php:235
+msgid "Default options restored."
+msgstr ""
+
+#: includes/options-framework/includes/class-options-framework-admin.php:289
+msgid "Options saved."
+msgstr ""
+
+#: includes/options-framework/includes/class-options-media-uploader.php:62
+msgid "No file chosen"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-media-uploader.php:65
+#: includes/options-framework/includes/class-options-media-uploader.php:118
+msgid "Upload"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-media-uploader.php:67
+#: includes/options-framework/includes/class-options-media-uploader.php:119
+msgid "Remove"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-media-uploader.php:70
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: includes/options-framework/includes/class-options-media-uploader.php:94
+msgid "View File"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:316
+msgid "No Repeat"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:317
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:318
+msgid "Repeat Vertically"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:319
+msgid "Repeat All"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:331
+msgid "Top Left"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:332
+msgid "Top Center"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:333
+msgid "Top Right"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:334
+msgid "Middle Left"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:335
+msgid "Middle Center"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:336
+msgid "Middle Right"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:337
+msgid "Bottom Left"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:338
+msgid "Bottom Center"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:339
+msgid "Bottom Right"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:351
+msgid "Scroll Normally"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:352
+msgid "Fixed in Place"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:424
+msgid "Normal"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:425
+msgid "Italic"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:426
+msgid "Bold"
+msgstr ""
+
+#: includes/options-framework/includes/class-options-sanitization.php:427
+msgid "Bold Italic"
+msgstr ""
+
+#: includes/shortcodes/shortcodes.php:24
+msgid "Click here to learn more"
+msgstr ""
+
+#: includes/theme-setup.php:27
+msgid "Primary Menu"
+msgstr ""
+
+#: includes/theme-setup.php:28
+msgid "Secondary Menu"
+msgstr ""
+
+#: includes/theme-setup.php:29
+msgid "footer Menu"
+msgstr ""
+
+#: options.php:81
+msgid "General Options"
+msgstr ""
+
+#: options.php:85
+msgid "Enable Query Loader"
+msgstr ""
+
+#: options.php:86
+msgid "Enable page query loader progress bar."
+msgstr ""
+
+#: options.php:92
+msgid "Upload Logo (recommended use 262px*52px ,png format )"
+msgstr ""
+
+#: options.php:98
+msgid "Favicon"
+msgstr ""
+
+#: options.php:99
+#, php-format
+msgid ""
+"An icon associated with a URL that is variously displayed, as in a browser's "
+"address bar or next to the site name in a bookmark list. Learn more about <a "
+"href=\"%s\" target=\"_blank\">Favicon</a>"
+msgstr ""
+
+#: options.php:104
+msgid "Default featured image for front page "
+msgstr ""
+
+#: options.php:105
+msgid "Recommended size: 475*313px;"
+msgstr ""
+
+#: options.php:110
+msgid "Link Color"
+msgstr ""
+
+#: options.php:111
+msgid "Link Mouseover Color"
+msgstr ""
+
+#: options.php:112
+msgid "Site Title Color"
+msgstr ""
+
+#: options.php:115
+msgid "404 Page Content"
+msgstr ""
+
+#: options.php:126
+msgid ""
+"The following css code will add to the header before the closing &lt;/"
+"head&gt; tag."
+msgstr ""
+
+#: options.php:135
+msgid "Home Page"
+msgstr ""
+
+#: options.php:139
+msgid "Enable Featured Homepage"
+msgstr ""
+
+#: options.php:140
+#, php-format
+msgid ""
+"Active featured homepage Layout.  The standardized way of creating Static "
+"Front Pages: <a href=\"%s\" target=\"_blank\">Creating a Static Front Page</"
+"a>"
+msgstr ""
+
+#: options.php:146
+msgid "Number of Sections"
+msgstr ""
+
+#: options.php:147
+msgid "Select number of sections"
+msgstr ""
+
+#: options.php:159
+msgid "Video Background Options"
+msgstr ""
+
+#: options.php:161
+msgid "Section Background Video"
+msgstr ""
+
+#: options.php:161
+msgid "YouTube Video ID"
+msgstr ""
+
+#: options.php:162
+msgid "Display Buttons"
+msgstr ""
+
+#: options.php:162
+msgid "Display video control buttons."
+msgstr ""
+
+#: options.php:163
+msgid "Video Loop"
+msgstr ""
+
+#: options.php:163
+msgid "Play video loop."
+msgstr ""
+
+#: options.php:165
+msgid "Default Volum"
+msgstr ""
+
+#: options.php:166
+msgid "Seeks To"
+msgstr ""
+
+#: options.php:166
+msgid "Seeks to a specified time in the video ( number of seconds )."
+msgstr ""
+
+#: options.php:168
+msgid "No video background"
+msgstr ""
+
+#: options.php:168
+msgid "Secion 1"
+msgstr ""
+
+#: options.php:176
+msgid "Video Background Section"
+msgstr ""
+
+#: options.php:180 options.php:401 options.php:469 options.php:477
+#: options.php:484 options.php:491 options.php:498
+msgid "</div>"
+msgstr ""
+
+#: options.php:183
+msgid "Section 1 Content"
+msgstr ""
+
+#: options.php:183
+msgid "Content"
+msgstr ""
+
+#: options.php:183
+msgid "Slider"
+msgstr ""
+
+#: options.php:376
+msgid "Delete"
+msgstr ""
+
+#: options.php:376
+msgid "Delete this section"
+msgstr ""
+
+#: options.php:382
+msgid "Section Title"
+msgstr ""
+
+#: options.php:383
+msgid "Title Color"
+msgstr ""
+
+#: options.php:385
+msgid "Content Color"
+msgstr ""
+
+#: options.php:386
+msgid "Section ID"
+msgstr ""
+
+#: options.php:386
+msgid ""
+"Add anchor tag to jump to specific section on one page without having any "
+"space or symbol. This section id will be related with the menu link, it "
+"should be call on wp appearance menu by using # after site url. It is "
+"usually all lowercase and contains only letters, numbers, and hyphens."
+msgstr ""
+
+#: options.php:391
+msgid "Blog List Link"
+msgstr ""
+
+#: options.php:394
+msgid "Section Background"
+msgstr ""
+
+#: options.php:396
+msgid "100% Width Background Image"
+msgstr ""
+
+#: options.php:398
+msgid "Full Width"
+msgstr ""
+
+#: options.php:399
+msgid "Section Css Class"
+msgstr ""
+
+#: options.php:400
+msgid "Section Content"
+msgstr ""
+
+#: options.php:409
+msgid "Header"
+msgstr ""
+
+#: options.php:411
+msgid "Header Opacity"
+msgstr ""
+
+#: options.php:413
+msgid "Fixed Header"
+msgstr ""
+
+#: options.php:416
+msgid "Breadcrumb"
+msgstr ""
+
+#: options.php:416
+msgid ""
+"Display the breadcrumb in posts lists :post page, blog page, archives, "
+"search results..."
+msgstr ""
+
+#: options.php:436
+msgid "Footer"
+msgstr ""
+
+#: options.php:438
+msgid "Display Footer Widget Area"
+msgstr ""
+
+#: options.php:440
+msgid "Footer Widget Area Background"
+msgstr ""
+
+#: options.php:442
+msgid "Social Icon Color"
+msgstr ""
+
+#: options.php:443
+msgid "Social Icon Background Color"
+msgstr ""
+
+#: options.php:445
+msgid "Home Page Footer Background"
+msgstr ""
+
+#: options.php:446
+msgid "Single Page Footer Background"
+msgstr ""
+
+#: options.php:450
+#, php-format
+msgid "Social Icon #%s"
+msgstr ""
+
+#: options.php:451
+#, php-format
+msgid "Social Title #%s"
+msgstr ""
+
+#: options.php:452
+#, php-format
+msgid "Social Link #%s"
+msgstr ""
+
+#: options.php:458
+msgid "Homepage Slider"
+msgstr ""
+
+#: options.php:461
+msgid "Slideshow"
+msgstr ""
+
+#: options.php:463
+msgid "Slide One"
+msgstr ""
+
+#: options.php:463 options.php:471 options.php:479 options.php:486
+#: options.php:493
+msgid "<div class=\"options-section\"><h3 class=\"groupTitle\">"
+msgstr ""
+
+#: options.php:465 options.php:473 options.php:480 options.php:487
+#: options.php:494
+msgid "Image"
+msgstr ""
+
+#: options.php:467 options.php:475 options.php:482 options.php:489
+#: options.php:496
+msgid "Text"
+msgstr ""
+
+#: options.php:471
+msgid "Slide Two"
+msgstr ""
+
+#: options.php:479
+msgid "Slide Three"
+msgstr ""
+
+#: options.php:486
+msgid "Slide Four"
+msgstr ""
+
+#: options.php:493
+msgid "Slide Five"
+msgstr ""
+
+#: options.php:501
+msgid "Slide Time"
+msgstr ""
+
+#: options.php:501
+msgid ""
+"Milliseconds between the end of the sliding effect and the start of the nex "
+"one."
+msgstr ""
+
+#: options.php:508
+msgid "Blog"
+msgstr ""
+
+#: options.php:509
+msgid "Hide Post Meta"
+msgstr ""
+
+#: options.php:509
+msgid "Hide date, author, category...below blog title."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Acool"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Acool is a responsive wordpress theme which is ideal for creating a "
+"corporate / business website. Great Design – Perfect for every business on "
+"any device. You can see the demo at http://www.coothemes.com"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Coothemes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.coothemes.com"
+msgstr ""
