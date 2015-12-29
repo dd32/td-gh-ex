@@ -1,6 +1,23 @@
 *** Hoffman Changelog ***
 
 
+Version 1.14 (2015-12-29)
+-------------------------
+- Added a sanitize checkbox callback
+
+
+Version 1.13 (2015-12-29)
+-------------------------
+- Increased the size of the nav-toggle clickable area
+- Fixed a bug with centered images not being centered
+- Fixed sticky icon link not working
+- Added missing accent color elements
+- Updated theme description
+- Cleaned up style.css a little
+- Removed superfluous <title> tag in the header (uses title_tag() from v1.10 onwards)
+- Added a customizer setting for whether the main menu should be hidden behind the toggle or not
+
+
 Version 1.12 (2015-08-25)
 -------------------------
 - Fixed an issue with overflowing images

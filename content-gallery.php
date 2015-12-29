@@ -8,7 +8,7 @@
 	
 	<?php 
 		if ( is_sticky() ) { 
-			echo '<a class="is-sticky" href="<?php the_permalink(); ?>" title="' . __('Sticky post','hoffman') . '"><span class="genericon genericon-pinned"></span></a>'; 
+			echo '<a class="is-sticky" href="' . get_permalink() . '" title="' . __('Sticky post','hoffman') . '"><span class="genericon genericon-pinned"></span></a>'; 
 		} 
 	?>
 	

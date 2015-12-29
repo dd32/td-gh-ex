@@ -6,9 +6,7 @@
 		
 		<meta http-equiv="Content-type" content="text/html;charset=<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-																		
-		<title><?php wp_title('|', true, 'right'); ?></title>
-		 
+																				 
 		<?php wp_head(); ?>
 	
 	</head>
@@ -39,7 +37,7 @@
 					
 				<?php endif; ?>
 				
-				<a class="nav-toggle" title="<?php _e('Click to view the navigation','hoffman') ?>" href="#">
+				<a class="nav-toggle<?php if ( get_theme_mod( 'show_menu' ) == true ) echo ' show-desktop'; ?>" title="<?php _e( 'Click to view the navigation', 'hoffman' ); ?>" href="#">
 				
 					<div class="bars">
 					
@@ -52,8 +50,8 @@
 					</div>
 					
 					<p>
-						<span class="menu"><?php _e('Menu','hoffman') ?></span>
-						<span class="close"><?php _e('Close','hoffman') ?></span>
+						<span class="menu"><?php _e( 'Menu', 'hoffman' ); ?></span>
+						<span class="close"><?php _e( 'Close', 'hoffman' ); ?></span>
 					</p>
 				
 				</a>
@@ -64,7 +62,7 @@
 								
 			</div> <!-- /header -->
 			
-			<div class="navigation hidden bg-dark">
+			<div class="navigation bg-dark<?php if ( get_theme_mod( 'show_menu' ) == true ) echo ' hidden'; ?>">
 		
 				<div class="section-inner">
 				
