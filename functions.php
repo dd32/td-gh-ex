@@ -20,20 +20,20 @@ function rams_setup() {
 	// Jetpack infinite scroll
 	add_theme_support( 'infinite-scroll', array(
 	    'container' => 'posts',
-	    'footer' => 'wrapper',
-	    'type' => 'click'
+	    'footer'    => 'wrapper',
+	    'type'      => 'click'
 	) );
 	
 	// Add nav menu
-	register_nav_menu( 'primary', __('Primary Menu','rams') );
+	register_nav_menu( 'primary', __( 'Primary Menu', 'rams' ) );
 	
 	// Make the theme translation ready
-	load_theme_textdomain('rams', get_template_directory() . '/languages');
+	load_theme_textdomain( 'rams', get_template_directory() . '/languages' );
 	
 	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable($locale_file) )
-	  require_once($locale_file);
+	$locale_file = get_template_directory() . '/languages/$locale.php';
+	if ( is_readable( $locale_file ) )
+	  require_once( $locale_file );
 	
 }
 
@@ -41,8 +41,8 @@ function rams_setup() {
 function rams_load_javascript_files() {
 
 	if ( !is_admin() ) {
-		wp_register_script( 'rams_global', get_template_directory_uri().'/js/global.js', array('jquery'), '', true );
-		wp_register_script( 'rams_flexslider', get_template_directory_uri().'/js/flexslider.min.js', array('jquery'), '', true );
+		wp_register_script( 'rams_global', get_template_directory_uri() . '/js/global.js', array( 'jquery' ), '', true );
+		wp_register_script( 'rams_flexslider', get_template_directory_uri() . '/js/flexslider.min.js', array( 'jquery' ), '', true );
 		
 		wp_enqueue_script( 'rams_flexslider' );
 		wp_enqueue_script( 'rams_global' );
@@ -58,15 +58,15 @@ add_action( 'wp_enqueue_scripts', 'rams_load_javascript_files' );
 // Register and enqueue styles
 function rams_load_style() {
 	if ( !is_admin() ) {
-	    wp_register_style('rams_googleFonts', '//fonts.googleapis.com/css?family=Montserrat:400,700|Crimson+Text:400,700,400italic,700italic' );
-		wp_register_style('rams_style', get_stylesheet_uri() );
+	    wp_register_style( 'rams_googleFonts', '//fonts.googleapis.com/css?family=Montserrat:400,700|Crimson+Text:400,700,400italic,700italic' );
+		wp_register_style( 'rams_style', get_stylesheet_uri() );
 		
 	    wp_enqueue_style( 'rams_googleFonts' );
 	    wp_enqueue_style( 'rams_style' );
 	}
 }
 
-add_action('wp_print_styles', 'rams_load_style');
+add_action( 'wp_print_styles', 'rams_load_style' );
 
 
 // Add editor styles
@@ -90,29 +90,25 @@ add_action( 'wp_head', 'rams_html_js_class', 1 );
 
 
 // Add classes to next_posts_link and previous_posts_link
-add_filter('next_posts_link_attributes', 'rams_posts_link_attributes_1');
-add_filter('previous_posts_link_attributes', 'rams_posts_link_attributes_2');
-
 function rams_posts_link_attributes_1() {
     return 'class="archive-nav-older"';
 }
+add_filter('next_posts_link_attributes', 'rams_posts_link_attributes_1');
+
 function rams_posts_link_attributes_2() {
     return 'class="archive-nav-newer"';
 }
+add_filter('previous_posts_link_attributes', 'rams_posts_link_attributes_2');
 
 
 // Custom more-link text
-add_filter( 'the_content_more_link', 'rams_custom_more_link', 10, 2 );
-
 function rams_custom_more_link( $more_link, $more_link_text ) {
 	return str_replace( $more_link_text, __('Read more', 'rams') . ' &rarr;', $more_link );
 }
+add_filter( 'the_content_more_link', 'rams_custom_more_link', 10, 2 );
 
 
 // Add class to the post and body elements if the post/page has a featured image
-add_filter('post_class','rams_if_featured_image_class');
-add_filter('body_class','rams_if_featured_image_class');
-
 function rams_if_featured_image_class($classes) {
 	global $post;
 	if ( has_post_thumbnail() ) {
@@ -122,12 +118,13 @@ function rams_if_featured_image_class($classes) {
 	}
 	return $classes;
 }
+add_filter('post_class','rams_if_featured_image_class');
+add_filter('body_class','rams_if_featured_image_class');
 
 
 // Style the admin area
 function rams_custom_colors() { 
-   echo '
-<style type="text/css">
+   echo '<style type="text/css">
 
 	#postimagediv #set-post-thumbnail img {
 		max-width: 100%;
@@ -136,7 +133,6 @@ function rams_custom_colors() {
 
 </style>';
 }
-
 add_action('admin_head', 'rams_custom_colors');
 
 

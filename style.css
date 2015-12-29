@@ -2,8 +2,8 @@
 
 	Theme Name: Rams
 	Theme URI: http://www.andersnoren.se/teman/rams-wordpress-theme/
-	Version: 1.13
-	Description: A clean, minimalist and responsive theme for bloggers. Features responsive and retina-ready design, support for the gallery, video and quote post formats, custom accent color support, Jetpack infinite scroll integration, editor styles and translation ready code. Included translation: Swedish/svenska.
+	Version: 1.14
+	Description: A clean, minimalist and responsive theme for bloggers. Features responsive and retina-ready design, support for the gallery and quote post formats, custom accent color support, Jetpack infinite scroll integration, editor styles and translation ready code. Included translation: Swedish/svenska. Demo: http://www.andersnoren.se/themes/rams/
 	Tags: gray, green, silver, white, light, one-column, two-columns, left-sidebar, fluid-layout, responsive-layout, custom-colors, custom-menu, editor-style, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
@@ -38,35 +38,35 @@
 html, body { margin:0; padding:0;}
 
 h1, h2, h3, h4, h5, h6, p, blockquote, address, big, cite, code, em, font, img, small, strike, sub, sup, li, ol, ul, fieldset, form, label, legend, button, table, caption, tr, th, td {
-	margin:0;
-	padding:0;
-	border:0;
-	font-weight:normal;
-	font-style:normal;
-	font-size:100%;
-	line-height:1;
-	font-family:inherit;
-	text-align:left;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 100%;
+	line-height: 1;
+	font-family: inherit;
+	text-align: left;
 }
 
 table {
-	border-collapse:collapse;
-	border-spacing:0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 ol, ul {
-	list-style:none;
+	list-style: none;
 }
 
 blockquote:before, blockquote:after {
-	content:"";
+	content: "";
 }
 
-a { outline:none; }
+a { outline: none; }
 
 input[type=search] {
-   -moz-appearance:none;
-   -webkit-appearance:none;
+   -moz-appearance: none;
+   -webkit-appearance: none;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -193,7 +193,7 @@ body a {
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 2px 2px rgba( 0, 0, 0, 0.6);
 	clip: auto !important;
 	color: #21759b;
 	display: block;
@@ -282,7 +282,7 @@ body a {
 	height: 2px;
 	margin: 30px 0;
 	background: #fff;
-	background: rgba(255,255,255,0.2);
+	background: rgba( 255, 255, 255, 0.2 );
 }
 
 .blog-title a { color: #fff; }
@@ -307,7 +307,7 @@ body a {
 	font-size: 0.9em;
 	font-weight: 700;
 	color: #fff;
-	color: rgba(255,255,255,0.6);
+	color: rgba( 255, 255, 255, 0.6 );
 }
 
 .main-menu a:hover,
@@ -321,7 +321,7 @@ body a {
 .credits {
 	font-size: 13px;
 	color: #fff;
-	color: rgba(255,255,255,0.25);
+	color: rgba( 255, 255, 255, 0.25 );
 	position: absolute;
 	bottom: 6%;
 	right: 40px;
@@ -329,7 +329,7 @@ body a {
 
 .credits a { 
 	color: #fff;
-	color: rgba(255,255,255,0.3); 
+	color: rgba( 255, 255, 255, 0.3 ); 
 }
 
 .credits a:hover { color: #fff; }
@@ -599,8 +599,6 @@ a.post-quote:hover {
 .post-meta-toggle.active .bar:nth-child(2) { 
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: alpha(opacity=0);
-	-webkit-opacity: 0;
-	-moz-opacity: 0;
 	opacity: 0; 
 }
 
@@ -741,7 +739,7 @@ a.post-quote:hover {
 .post-content blockquote {
 	padding: 30px 30px 30px 90px;
 	background: #F6F6F6;
-	background: rgba(0,0,0,0.05);
+	background: rgba( 0, 0, 0, 0.05 );
 	position: relative;
 }
 
@@ -828,7 +826,7 @@ abbr, acronym { cursor: help; }
 	width: 96px;
 	height: 3px;
 	background: #ddd;
-	background: rgba(0,0,0,0.1);
+	background: rgba( 0, 0, 0, 0.1 );
 	margin: 40px auto;
 	border: none;
 }
@@ -1576,8 +1574,6 @@ li.comment { position: relative; }
 	.nav-toggle.active .bar:nth-child(2) { 
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 		filter: alpha(opacity=0);
-		-webkit-opacity: 0;
-		-moz-opacity: 0;
 		opacity: 0; 
 	}
 	
