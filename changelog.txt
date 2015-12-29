@@ -1,4 +1,7 @@
 == CHANGE LOG ==
+= 1.1.3 =
+	- Update - CSS updated
+
 = 1.1.2 =
 	- New -
 		- Added testimonial widgets using a category to fetch posts and display as testimonial
