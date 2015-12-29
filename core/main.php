@@ -416,7 +416,7 @@ if (!function_exists('suevafree_scripts_styles')) {
 		
 		endif;
 
-		wp_enqueue_style( 'suevafree-google-fonts', '//fonts.googleapis.com/css?family=Abel|Allura&subset=latin,latin-ext' );
+		wp_enqueue_style( 'suevafree-google-fonts', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Raleway:400,800,900,700,600,500,300,200,100|Allura&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic' );
 
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	

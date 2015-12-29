@@ -4,7 +4,7 @@ Theme URI: https://themeinprogress.com/sueva/
 Description: Sueva is a free responsive clean and corporate Tumblelog  WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: ThemeinProgress.
 Author URI: https://themeinprogress.com
-Version: 1.4.1
+Version: 1.4.2
 Tags: gray, light, black, orange, blue, pink, purple, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options,responsive-layout, translation-ready, one-column, photoblogging
 Text Domain: suevafree
 Domain Path: /languages
@@ -41,7 +41,7 @@ th,
 .textwidget { 
 	font-size:14px; 
 	line-height:1.8em;
-	font-family:'Abel',Verdana, Geneva, sans-serif; 
+	font-family:'Raleway',Verdana, Geneva, sans-serif; 
 	font-weight: normal;
 }
 body,
@@ -70,7 +70,7 @@ h3.title,
 h4.title,
 h5.title,
 h6.title { 
-	font-family:'Abel',Verdana, Geneva, sans-serif; 
+	font-family:'Roboto',Verdana, Geneva, sans-serif; 
 	font-weight: normal;
 }
 
@@ -80,7 +80,7 @@ h3,
 h4,
 h5,
 h6 { 
-	font-family:'Abel',Verdana, Geneva, sans-serif; 
+	font-family:'Roboto',Verdana, Geneva, sans-serif; 
 }
 
 code {
@@ -106,7 +106,6 @@ a:hover {
 	border-bottom:dotted 1px;
 }
 a.post-edit-link {  
-	font-family:'Abel',Verdana, Geneva, sans-serif;
 	font-size:14px;
 }
 a.post-edit-link:hover {  
@@ -154,7 +153,6 @@ span.error {
 	background:#ff6644;
 	padding:10px;
 	color:#fff;
-	font-weight:bold;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -162,8 +160,8 @@ span.error {
 	-webkit-transition: all .3s ease;
 	-moz-transition: all .3s ease; 
 	-o-transition: all .3s ease;
-	font-family: 'Abel', sans-serif;
-	font-size:16px;
+	font-family: 'Raleway', sans-serif;
+	font-size:14px;
 	width:95px;
 	text-align:center;
 	float:none;
@@ -178,9 +176,7 @@ span.error {
 	text-decoration:none;
 	border-bottom:none;
 }
-.btn {
-	font-family:'Abel',Verdana, Geneva, sans-serif; 
-}
+
 .btn.right a {
 	color:#616161;
 }
@@ -266,7 +262,7 @@ video {
 #footer a { 
 	line-height:1.9em;
 	-webkit-transition: all .3s ease;
-	font-family:'Abel',Verdana, Geneva, sans-serif;
+	font-family:'Raleway',Verdana, Geneva, sans-serif;
 	font-size:14px;
 }
 #footer a:hover { 
@@ -354,7 +350,7 @@ video {
 #sidebar .textwidget { 
 	font-size:14px; 
 	line-height:1.9em;
-	font-family:'Abel',Verdana, Geneva, sans-serif; 
+	font-family:'Raleway',Verdana, Geneva, sans-serif; 
 	font-weight: normal;
 }
 
@@ -404,7 +400,7 @@ video {
 	border-bottom:none;
 }
 #logo a span{
-	font-family:'Abel',Verdana, Geneva, sans-serif; 
+	font-family:'Raleway',Verdana, Geneva, sans-serif; 
 	font-size:14px; 
 	display:block;
 	text-align:center;
@@ -442,16 +438,17 @@ nav#mainmenu ul li {
 nav#mainmenu ul li a   { 
 	text-decoration:none; 
 	display:block; 
-	font-family:'Abel',Verdana, Geneva, sans-serif;
+	font-family:'Roboto',Verdana, Geneva, sans-serif;
 	font-size:14px; 
 	z-index:1; 
 	margin:15px 15px 0 15px; 
 	color:#616161; 
-	font-size:19px; 
+	font-size:15px; 
 	-webkit-transition: all .3s linear; 
 	-moz-transition: all .3s linear; 
 	-o-transition: all .3s linear; 
 	text-transform:uppercase;
+	font-weight:500
 }
 nav#mainmenu ul li a:hover,
 nav#mainmenu li:hover > a,
@@ -530,7 +527,6 @@ nav#mainmenu ul ul li a{
 	border-bottom:none;
 	padding:18px 15px;
 	margin:0;
-	font-family:'Abel',Verdana, Geneva, sans-serif; 
 	text-transform:inherit; 
 	text-shadow:inherit; 
 	color:#333; 
@@ -691,7 +687,7 @@ nav#mainmenu ul ul li ul:before {
 }
 
 .article-header {
-	font-family: 'Abel', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	margin:0 0 20px 0; 
 	color:#000; 
 	font-size:13px; 
@@ -735,7 +731,7 @@ nav#mainmenu ul ul li ul:before {
 .comment-container { 
 	margin:0 0 45px 0; 
 	padding:25px 15px; 
-	font-family:'Abel',Verdana, Geneva, sans-serif; 
+	font-family:'Raleway',Verdana, Geneva, sans-serif; 
 	font-size:12px; 
 	position: relative; 
 	background:#fff;
@@ -765,7 +761,7 @@ nav#mainmenu ul ul li ul:before {
 }
 
 .comment-author .author { 
-	font-family: "Abel", Times, serif; 
+	font-family: "Raleway", Times, serif; 
 	font-size:18px; 
 	display:block; 
 	font-weight:bold;
@@ -779,8 +775,9 @@ nav#mainmenu ul ul li ul:before {
 	margin:-30px 0 25px 0;
 }
 
-h3#reply-title, h3.comments { 
-	font-family: 'Abel',Verdana, Geneva, sans-serif;
+h3#reply-title, 
+h3.comments { 
+	font-family: 'Roboto',Verdana, Geneva, sans-serif;
 	font-weight: normal;
 	font-size: 22px;
 	font-weight: bold;
@@ -791,8 +788,9 @@ h3#reply-title, h3.comments {
 	background:url('inc/images/icons/comment.png') no-repeat center left; 
 	margin:45px 0;
 }
-h3#reply-title small, .logged-in-as { 
-	font-family: 'Abel',Verdana, Geneva, sans-serif;
+h3#reply-title small, 
+.logged-in-as { 
+	font-family: 'Roboto',Verdana, Geneva, sans-serif;
 	font-weight: normal;
 	font-size: 14px !important;
 	font-weight: bold;
@@ -815,7 +813,8 @@ p.categories,
 	margin:0 !important;
 }
 
-.contact-form input[type=text], .contact-form textarea {
+.contact-form input[type=text], 
+.contact-form textarea {
 	padding: 15px 2%;
 	background:#fafafa;
 	width: 96%; 
@@ -824,7 +823,7 @@ p.categories,
 	-moz-border-radius: 0;
 	border-radius: 0;
 	border:none;
-	font-family: 'Abel',Verdana, Geneva, sans-serif;
+	font-family: 'Raleway',Verdana, Geneva, sans-serif;
 }
 
 .contact-form input[type=submit] {
@@ -839,7 +838,7 @@ p.categories,
 	-webkit-transition: all .3s ease;
 	-moz-transition: all .3s ease; 
 	-o-transition: all .3s ease;
-	font-family: 'Abel', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size:14px;
 	text-align:center;
 	float:none;
@@ -898,7 +897,7 @@ article blockquote {
 article blockquote p { 
 	text-align:left; 
 	line-height:1.6em; 	
-	font-family: "Abel", Times, serif; 
+	font-family: "Raleway", Times, serif; 
 	font-size:15px;
 }
 .entry-info ul { 
@@ -993,7 +992,7 @@ article blockquote p {
 
 
 .entry-tags { 
-	font-family: 'Abel',Verdana, Geneva, sans-serif;
+	font-family: 'Raleway',Verdana, Geneva, sans-serif;
 	font-size:14px; 
 	border-bottom:solid 1px #ddd; 
 	border-top:solid 1px #ddd; 
@@ -1026,7 +1025,7 @@ article blockquote p {
 
 .entry-info { 
 	padding:0 10px; 
-	font-family: 'Abel',Verdana, Geneva, sans-serif;
+	font-family: 'Raleway',Verdana, Geneva, sans-serif;
 	background:#fff;
 	display:inline;
 	position:relative;
@@ -1323,7 +1322,7 @@ article .overlay-image {
 	position:relative; 
 	cursor:pointer; 
 	color:#4d4d4d; 
-	font-family: 'Abel',Verdana, Geneva, sans-serif;
+	font-family: 'Raleway',Verdana, Geneva, sans-serif;
 }
 #footer ul.widget-category li a, ul.widget-category li.cat-item{ 
 	font-size:14px; 
@@ -1352,7 +1351,7 @@ article .overlay-image {
 #today a { 
 	background:#ccc; 
 	color:#434343;
-	font-family:'Abel',Verdana, Geneva, sans-serif; 
+	font-family:'Raleway',Verdana, Geneva, sans-serif; 
 }
 #wp-calendar a:hover { 
 	border:none;
@@ -1366,7 +1365,7 @@ article .overlay-image {
 	text-transform:uppercase; 
 	margin:0 0 10px 0;
 	text-align:left;
-	font-family:'Abel',Verdana, Geneva, sans-serif; 
+	font-family:'Raleway',Verdana, Geneva, sans-serif; 
 }
 #wp-calendar th, 
 #wp-calendar td { 
@@ -1395,19 +1394,6 @@ tr:nth-child(2n+2) {
 
 /* END CALENDAR */
 
-/* TWITTER WIDGET */
-
-ul#twitter_update_list  { 
-	list-style:none;
-}
-ul#twitter_update_list li { 
-	line-height:1.1em; 
-	font-size:9px; 
-	font-family:'Abel',Verdana, Geneva, sans-serif;
-}
-
-/* END TWITTER WIDGET */
-
 /* START TAG CLOUD */
 
 #sidebar .tagcloud a, 
@@ -1415,7 +1401,7 @@ ul#twitter_update_list li {
 	display: inline-block; 
 	padding: 4px 8px; 
 	text-align: center; 
-	font-family: 'Abel',Verdana, Geneva, sans-serif; 
+	font-family: 'Raleway',Verdana, Geneva, sans-serif; 
 	font-size:12px !important; 
 	color:#ddd; 
 	-webkit-transition: all .3s ease;
@@ -1460,7 +1446,7 @@ ul#twitter_update_list li {
 .tipsy { 
 	padding: 5px; 
 	font-size: 10px; 
-	font-family: 'Abel',Verdana, Geneva, sans-serif;
+	font-family: 'Raleway',Verdana, Geneva, sans-serif;
 	opacity: 0.8; 
 	filter: alpha(opacity=80); 
 	background-repeat: no-repeat;  
@@ -1544,7 +1530,9 @@ a.email  {
     margin-bottom: 50px;
 }
  
-.wp-pagenavi a, .wp-pagenavi a:link,.wp-pagenavi span.current { 
+.wp-pagenavi a, 
+.wp-pagenavi a:link,
+.wp-pagenavi span.current { 
 	display:inline-block;
 	padding:10px 12px;
 	margin-bottom:0;
@@ -1557,7 +1545,7 @@ a.email  {
 	-webkit-border-radius:4px;
 	-moz-border-radius:4px;
 	border-radius:4px;
-	font-family: 'Abel',Verdana, Geneva, sans-serif;
+	font-family: 'Raleway',Verdana, Geneva, sans-serif;
 	box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 	-moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
 	-webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
@@ -1592,7 +1580,7 @@ a.email  {
 		padding: 8px 10px;
 		background: #fafafa;
 		color: #333;
-		font-family: "Abel", Times, serif; 
+		font-family: "Raleway", Times, serif; 
 	}
 	
 	#sidebar, 

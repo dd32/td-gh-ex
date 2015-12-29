@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 1.4.2 - Released: 29.12.2015
+
+-- Replaced : Menu, Titles and Content font.
+
 - Version 1.4.1 - Released: 18.12.2015
 
 -- Optimized : Embed videos.
