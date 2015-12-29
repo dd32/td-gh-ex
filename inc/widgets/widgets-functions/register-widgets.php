@@ -12,6 +12,8 @@ function arise_widgets_init() {
 	register_widget("arise_parallax_widget");
 	register_widget("arise_post_widget");
 	register_widget("arise_parallax_video_widget");
+	register_widget("arise_widget_testimonial" );
+	register_widget("arise_portfolio_widget");
 
 	register_sidebar(array(
 			'name' => __('Main Sidebar', 'arise'),

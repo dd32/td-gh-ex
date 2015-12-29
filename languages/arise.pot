@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: arise 1.0\n"
-"POT-Creation-Date: 2015-12-15 19:34+0545\n"
+"POT-Creation-Date: 2015-12-21 08:21+0545\n"
 "PO-Revision-Date: 2015-08-07 08:34+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeFreesia <themefreesia@gmail.com>\n"
@@ -58,7 +58,8 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: content.php:81 inc/settings/arise-functions.php:204
+#: content.php:81 inc/settings/arise-functions.php:206
+#: inc/widgets/widgets-functions/portfolio-widgets.php:122
 #: inc/widgets/widgets-functions/post-widgets.php:148
 #: page-templates/arise-corporate.php:67
 msgid "Read More"
@@ -249,7 +250,7 @@ msgid "Title"
 msgstr ""
 
 #: inc/customizer/functions/frontpage-features.php:52
-#: inc/widgets/widgets-functions/ourteam-widgets.php:186
+#: inc/widgets/widgets-functions/portfolio-widgets.php:35
 #: inc/widgets/widgets-functions/video-widgets.php:26
 msgid "Description"
 msgstr ""
@@ -403,7 +404,6 @@ msgid "Static Front Page"
 msgstr ""
 
 #: inc/footer-details.php:15 inc/footer-details.php:29
-#: inc/widgets/widgets-functions/ourteam-widgets.php:636
 msgid "WordPress"
 msgstr ""
 
@@ -467,76 +467,76 @@ msgstr ""
 msgid "on"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:195
+#: inc/settings/arise-common-functions.php:186
 #, php-format
 msgid "Author: %s"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:198
+#: inc/settings/arise-common-functions.php:189
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:200
+#: inc/settings/arise-common-functions.php:191
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:202
+#: inc/settings/arise-common-functions.php:193
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:204
+#: inc/settings/arise-common-functions.php:195
 msgid "Audios"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:206
+#: inc/settings/arise-common-functions.php:197
 msgid "Asides"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:208
+#: inc/settings/arise-common-functions.php:199
 msgid "Images"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:210
+#: inc/settings/arise-common-functions.php:201
 msgid "Galleries"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:212
+#: inc/settings/arise-common-functions.php:203
 msgid "Videos"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:214
+#: inc/settings/arise-common-functions.php:205
 #: tgm/class-tgm-plugin-activation.php:2445
 msgid "Status"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:216
+#: inc/settings/arise-common-functions.php:207
 msgid "Quotes"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:218
+#: inc/settings/arise-common-functions.php:209
 msgid "links"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:220
+#: inc/settings/arise-common-functions.php:211
 msgid "Chats"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:226
+#: inc/settings/arise-common-functions.php:217
 msgid "Archives"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:231
+#: inc/settings/arise-common-functions.php:222
 msgid "Page NOT Found"
 msgstr ""
 
-#: inc/settings/arise-common-functions.php:233
+#: inc/settings/arise-common-functions.php:224
 msgid "Search Results"
 msgstr ""
 
-#: inc/settings/arise-functions.php:117
+#: inc/settings/arise-functions.php:119
 msgid "Upgrade to Pro"
 msgstr ""
 
@@ -576,222 +576,6 @@ msgstr ""
 msgid "Email ID:"
 msgstr ""
 
-#: inc/widgets/widgets-functions/ourteam-widgets.php:12
-msgid "Display Our Team Widgets on front Page"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:14
-msgid "TF: FP Our Team"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:81
-msgid "Number of OurTeam:"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:87
-#: inc/widgets/widgets-functions/post-widgets.php:30
-#: inc/widgets/widgets-functions/testimonials-widgets.php:36
-msgid "Title:"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:93
-msgid "Primary Text:"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:99
-msgid "Secondary Text:"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:161
-#: inc/widgets/widgets-functions/testimonials-widgets.php:71
-msgid "(Recommended Image Size (300x300))"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:170
-msgid "Our Team Link"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:176
-#: inc/widgets/widgets-functions/testimonials-widgets.php:79
-msgid "Name "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:182
-msgid "Text"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:191
-msgid "Facebook Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:197
-msgid "Twitter Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:203
-msgid "Google Plus Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:209
-msgid "Pinterest Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:215
-msgid "Linkendin Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:221
-msgid "Youtube Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:227
-msgid "Tumblr Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:233
-msgid "Vimeo Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:239
-msgid "Flickr Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:245
-msgid "Feed Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:251
-msgid "Dribble Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:257
-msgid "WordPress Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:263
-msgid "GitHub Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:269
-msgid "Instagram Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:275
-msgid "Codepen Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:281
-msgid "Pollydaddy Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:287
-msgid "Path Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:293
-msgid "Digg Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:299
-msgid "Reddit Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:305
-msgid "Stumbleupon Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:311
-msgid "Dropbox Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:317
-msgid "Pocket Link "
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:603
-msgid "Facebook"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:606
-msgid "Twitter"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:609
-msgid "Google Plus"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:612
-msgid "Pinterest"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:615
-msgid "Linkedin"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:618
-msgid "Youtube"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:621
-msgid "Tublr"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:624
-msgid "Vimeo"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:627
-msgid "Flickr"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:630
-msgid "Feed"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:633
-msgid "Dribble"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:639
-msgid "GitHub"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:642
-msgid "instagram"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:645
-msgid "Codepen"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:648
-msgid "Polldaddy"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:651
-msgid "Path"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:654
-msgid "Digg"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:657
-msgid "Reddit"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:660
-msgid "Stumbleupon"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:663
-msgid "Dropbox"
-msgstr ""
-
-#: inc/widgets/widgets-functions/ourteam-widgets.php:666
-msgid "pocket"
-msgstr ""
-
 #: inc/widgets/widgets-functions/parallax-widgets.php:11
 msgid "Display Parallax widgets for Front Page"
 msgstr ""
@@ -801,6 +585,7 @@ msgid "TF: FP Parallax"
 msgstr ""
 
 #: inc/widgets/widgets-functions/parallax-widgets.php:26
+#: inc/widgets/widgets-functions/portfolio-widgets.php:43
 #: inc/widgets/widgets-functions/video-widgets.php:32
 msgid "Page"
 msgstr ""
@@ -813,6 +598,23 @@ msgstr ""
 #: inc/widgets/widgets-functions/parallax-widgets.php:38
 #: inc/widgets/widgets-functions/video-widgets.php:50
 msgid "Redirect Url:"
+msgstr ""
+
+#: inc/widgets/widgets-functions/portfolio-widgets.php:5
+msgid "Portfolio Widget (Front Page)"
+msgstr ""
+
+#: inc/widgets/widgets-functions/portfolio-widgets.php:7
+msgid "TF: FP Portfolio Widget"
+msgstr ""
+
+#: inc/widgets/widgets-functions/portfolio-widgets.php:25
+msgid "Number of Works:"
+msgstr ""
+
+#: inc/widgets/widgets-functions/portfolio-widgets.php:31
+#: inc/widgets/widgets-functions/post-widgets.php:30
+msgid "Title:"
 msgstr ""
 
 #: inc/widgets/widgets-functions/post-widgets.php:11
@@ -844,6 +646,7 @@ msgid "Show posts from a category"
 msgstr ""
 
 #: inc/widgets/widgets-functions/post-widgets.php:50
+#: inc/widgets/widgets-functions/testimonials-widgets.php:22
 msgid "Select category"
 msgstr ""
 
@@ -915,24 +718,8 @@ msgstr ""
 msgid "TF: FP Testimonial"
 msgstr ""
 
-#: inc/widgets/widgets-functions/testimonials-widgets.php:42
-msgid "No of Testimonial:"
-msgstr ""
-
-#: inc/widgets/widgets-functions/testimonials-widgets.php:62
-msgid "Primary Text"
-msgstr ""
-
-#: inc/widgets/widgets-functions/testimonials-widgets.php:66
-msgid "Secondary Text"
-msgstr ""
-
-#: inc/widgets/widgets-functions/testimonials-widgets.php:85
-msgid "Comapany Name "
-msgstr ""
-
-#: inc/widgets/widgets-functions/testimonials-widgets.php:91
-msgid "Company Link "
+#: inc/widgets/widgets-functions/testimonials-widgets.php:27
+msgid "Number of Testimonial:"
 msgstr ""
 
 #: inc/widgets/widgets-functions/video-widgets.php:11

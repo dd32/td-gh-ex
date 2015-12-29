@@ -117,6 +117,8 @@ require get_template_directory() . '/inc/widgets/widgets-functions/parallax-widg
 require get_template_directory() . '/inc/widgets/widgets-functions/post-widgets.php';
 require get_template_directory() . '/inc/widgets/widgets-functions/register-widgets.php';
 require get_template_directory() . '/inc/widgets/widgets-functions/video-widgets.php';
+require get_template_directory() . '/inc/widgets/widgets-functions/testimonials-widgets.php';
+require get_template_directory() . '/inc/widgets/widgets-functions/portfolio-widgets.php';
 
 /************************ Arise Customizer  *****************************/
 require get_template_directory() . '/inc/customizer/functions/sanitize-functions.php';

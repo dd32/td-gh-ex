@@ -4,7 +4,7 @@ Theme URI: http://themefreesia.com/themes/arise
 Author: Theme Freesia
 Author URI: http://themefreesia.com
 Description: Arise is a Responsive Multi-Purpose Business WordPress Theme, Designed and Developed by Theme Freesia. This theme supports popular plugins like Breadcrumb NavXT, WP-PageNavi, Contact Form 7, Jetpack by WordPress.com, Polylang, Newsletter, bbPress and wooCommerce. It is also translation ready and easily customizable with lots of options using Customizer. It consists contact us template, gallery template and many widgets and sidebar.
-Version: 1.1.1
+Version: 1.1.2
 Text Domain: arise
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -14,52 +14,6 @@ Tags: black, gray, white, threaded-comments, left-sidebar, right-sidebar, fixed-
 All files, unless otherwise stated, are released under the GNU General Public License
 version 3.0 (http://www.gnu.org/licenses/gpl-3.0.html)
 Text Domain: arise
-==================================================
-*/
-
-
-/* TABLE OF CONTENTS:
-==================================================
-
-	#General
-	#Global
-	#Accessibility
-	#Alignments
-	#Blockquote
-	#Breadcrumb
-	#Buttons
-	#Clearings
-	#Forms
-	#Heading Tags
-	#Horizontal Line
-	#Images
-	#Links
-	#Margin-Padding-Border Override Classes
-	#Super/Sub Scripts
-	#Text Elements
-	#Body Structure
-	#Layouts
-	#Header
-	#Logo-Name-Slogan
-	#Search Form 
-	#Social Links
-	#Navigation
-	#Content
-	#Post Featured Image
-	#Entry Header
-	#Entry Title
-	#Entry Meta
-	#Entry Content
-	#Galleries
-	#Post-Image-Paging Navigation
-	#Attachments
-	#Comments
-	#Pages
-	#Sidebars
-	#Widgets
-	#Footer
-	#Featured Content
-
 ==================================================
 */
 
@@ -276,9 +230,11 @@ b, strong { font-weight: bold; }
 dfn, cite, em, i {
 	font-style: italic;
 }
+
 /* -----  #Blockquote shortcode start styles  ----- */
 blockquote {
 	background-color: #f2f2f2;
+	color: #666666;
 	position:relative;
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
@@ -373,6 +329,9 @@ a:hover {
 	padding: 0;
 	position: relative;
 }
+#primary .container {
+	max-width: 100%;
+}
 
 /* --------------------------------------------
 	Column
@@ -394,11 +353,15 @@ a:hover {
 }
 
 .one-column,
-.column-1 {
+.column-1,
+#primary .two-column {
 	width:100%;
 }
 .two-column,
-.column-2 {
+.column-2,
+#primary .three-column,
+#primary .three-column-full-width,
+#primary .four-column {
 	width: 50%;
 }
 .three-column,
@@ -411,6 +374,9 @@ a:hover {
 }
 .three-column-full-width {
 	width: 33.33%;
+}
+#primary .three-column:nth-child(3n+4) {
+ 	clear: none;
 }
 .three-column:nth-child(3n+4),
 .four-column:nth-child(4n+5),
@@ -719,9 +685,9 @@ input.s {
 	top: -6px;
 	width: 0px;
 	right: 8px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+  		-moz-box-sizing: border-box;
+  	box-sizing: border-box;
 	z-index: -1;
 }
 #search-box {
@@ -2088,8 +2054,9 @@ a.comment-reply-link:hover {
 }
 #respond form input[type="text"],
 #respond form textarea {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+  		-moz-box-sizing: border-box;
+  	box-sizing: border-box;
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 1.714285714;
@@ -2181,9 +2148,9 @@ input[type="checkbox"] {
 	color: #2b9b9b;
 }
 .widget-title {
-	font-size: 18px;
+	font-size: 28px;
 	font-weight: 400;
-	line-height: 25px;
+	line-height: 35px;
 	padding-bottom: 20px;
 }
 .widget-title,
@@ -2192,10 +2159,6 @@ input[type="checkbox"] {
 }
 .widget-title a:hover {
 	color: #2b9b9b;
-}
-.tf-business-template .widget-title {
-	font-size: 28px;
-	line-height: 35px;
 }
 .widget-highlighted-sub-title {
 	font-size: 20px;
@@ -2333,10 +2296,6 @@ input[type="checkbox"] {
 	margin-bottom: 60px;
 	padding: 0 20px;
 }
-.our_feature a {
-	display: inline-block;
-	color: #555555;
-}
 .our_feature .feature-icon,
 .our_feature .feature-icon img {
 	width: 36px;
@@ -2433,6 +2392,9 @@ input[type="checkbox"] {
 	text-align: center;
 	position: relative;
 	width: 100%;
+}
+#primary .parallax_content {
+	padding: 60px 40px 40px;
 }
 .widget_parallax .widget-title {
 	color: #fff;
@@ -2656,8 +2618,8 @@ input[type="checkbox"] {
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	padding-bottom: 10px;
 	background-color: #fafafa;
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+		-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+		-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 .team_member {
@@ -2665,7 +2627,9 @@ input[type="checkbox"] {
 	width: 140px;
 	height: 140px;
 	margin: -70px 0 20px;
-	box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+  		-moz-box-sizing: border-box;
+  	box-sizing: border-box;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	padding: 5px;
 }
@@ -2914,6 +2878,9 @@ input[type="checkbox"] {
 	position: relative;
 	width: 100%;
 }
+#primary .parallax_video_content {
+	padding: 60px 40px 20px;
+}
 .parallax_video_text {
 	padding: 8% 0 0;
 	position: relative;
@@ -3030,35 +2997,35 @@ input[type="checkbox"] {
   	line-height: 1.32;
   	
 }
-.testimonials blockquote {
+.testimonials .quote {
 	border: none;
 }
-.testimonials blockquote p, 
-.testimonials blockquote div, 
-.testimonials blockquote img {
+.testimonials .quote p, 
+.testimonials .quote cite, 
+.testimonials .quote img {
   	position: relative;
   	z-index: 2;
 }
-.testimonials blockquote img {
+.testimonials .quote img {
   	height: 100px;
   	width: 100px;
   	background-color: #fff;
   	border: 1px solid #ddd;
+  		-webkit-box-sizing: border-box;
+  		-moz-box-sizing: border-box;
   	box-sizing: border-box;
   	padding: 5px;
   	margin-bottom: 20px;
 }
-.testimonials blockquote p {
-  	margin: 0 0 20px;
+.testimonials .quote p {
   	line-height: 1.4;
   	text-transform: none;
 }
-.testimonials blockquote cite {
+.testimonials .quote cite {
   	display: block;
   	font-style: normal;
   	font-weight: bold;
-  	font-size: 14px;
-  	margin: 20px 0;
+  	margin: 0px 0px 20px;
   	text-align: center;
 }
 .testimonials .next-prev {
@@ -3130,6 +3097,9 @@ ul.next-prev li.active, ul.next-prev li:hover {
     overflow: hidden;
     color: #FFF;
     margin: 0 auto;
+}
+#primary .min_slider {
+	width: 660px;
 }
 .min_slider ul {
 	margin: 0;

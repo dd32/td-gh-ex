@@ -112,7 +112,7 @@ $arise_settings = arise_get_theme_options(); ?>
 				}
 			}
 		}
-		if(!is_page_template('page-templates/arise-corporate.php')) {
+		if(!is_page_template('page-templates/arise-corporate.php') && !is_page_template('alter-front-page-template.php')) {
 			if (('' != arise_header_title()) || function_exists('bcn_display_list')) {
 				if(is_home()){ 
 					echo '';

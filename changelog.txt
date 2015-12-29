@@ -1,4 +1,14 @@
 == CHANGE LOG ==
+= 1.1.2 =
+	- New -
+		- Added testimonial widgets using a category to fetch posts and display as testimonial
+		- Added portfolio widgets
+	- Fixed -
+		- Issues for layout while set to Corporate Template
+	-Update -
+		- pot file updated
+		- style.css updated
+
 = 1.1.1 =
 	- Fixed -
 		- image upload js removed

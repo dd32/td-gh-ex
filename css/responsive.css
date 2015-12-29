@@ -79,6 +79,7 @@
 	}
 	#primary,
 	#secondary {
+		margin-bottom: 50px;
 		padding: 0px;
 		float: none;
 		width: 100%;
@@ -109,7 +110,8 @@
 	.two-column,
 	.four-column,
 	.three-column,
-	.three-column-full-width {
+	.three-column-full-width,
+	.business-sidebar .three-column {
 		width: 50%;
 	}
 	.widget_about_us .two-column {
@@ -378,6 +380,12 @@
 		margin: 0;
 		width: 100%;
 	}
+	#primary .three-column, 
+	#primary .three-column-full-width, 
+	#primary .four-column {
+		margin: 0;
+		width: 100%;
+	}
 	.widget_team .column {
 		margin: 0 -10px;
 	}
@@ -472,7 +480,8 @@
 	.widget_testimonial {
 		padding: 60px 0;
 	}
-	.min_slider {
+	.min_slider,
+	#primary .min_slider {
     	width: 440px;
 	}
 	.newsletter-widget p {
@@ -568,7 +577,8 @@
 		font-size: 13px;
 		line-height: 20px;
 	}
-	.min_slider {
+	.min_slider,
+	#primary .min_slider {
     	width: 220px;
 	}
 }

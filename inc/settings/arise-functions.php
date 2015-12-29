@@ -63,34 +63,36 @@ function arise_body_class($classes) {
 	if (empty($layout) || is_archive() || is_search() || is_home()) {
 		$layout = 'default';
 	}
-	if ('default' == $layout) {
-		$themeoption_layout = $arise_content_layout;
-		if ('left' == $themeoption_layout) {
+	if(!is_page_template('page-templates/arise-corporate.php')) {
+		if ('default' == $layout) {
+			$themeoption_layout = $arise_content_layout;
+			if ('left' == $themeoption_layout) {
+				$classes[] = 'left-sidebar-layout';
+			} elseif ('right' == $themeoption_layout) {
+				$classes[] = '';
+			} elseif ('fullwidth' == $themeoption_layout) {
+				$classes[] = 'full-width-layout';
+			} elseif ('nosidebar' == $themeoption_layout) {
+				$classes[] = 'no-sidebar-layout';
+			}
+		} elseif ('left-sidebar' == $layout) {
 			$classes[] = 'left-sidebar-layout';
-		} elseif ('right' == $themeoption_layout) {
-			$classes[] = '';
-		} elseif ('fullwidth' == $themeoption_layout) {
+		} elseif ('right-sidebar' == $layout) {
+			$classes[] = '';//css blank
+		} elseif ('full-width' == $layout) {
 			$classes[] = 'full-width-layout';
-		} elseif ('nosidebar' == $themeoption_layout) {
+		} elseif ('no-sidebar' == $layout) {
 			$classes[] = 'no-sidebar-layout';
 		}
-	} elseif ('left-sidebar' == $layout) {
-		$classes[] = 'left-sidebar-layout';
-	} elseif ('right-sidebar' == $layout) {
-		$classes[] = '';//css blank
-	} elseif ('full-width' == $layout) {
-		$classes[] = 'full-width-layout';
-	} elseif ('no-sidebar' == $layout) {
-		$classes[] = 'no-sidebar-layout';
+		if($arise_blog_layout_temp == 'large_image_display'){
+			$classes[] = "blog-large";
+		}elseif ($arise_blog_layout_temp == 'medium_image_display'){
+			$classes[] = "small_image_blog";
+		}
 	}
-	if($arise_blog_layout_temp == 'large_image_display'){
-		$classes[] = "blog-large";
-	}elseif ($arise_blog_layout_temp == 'medium_image_display'){
-		$classes[] = "small_image_blog";
-	}
-	if (!is_page_template('page-templates/arise-corporate.php') ){
+	if (!is_page_template('page-templates/arise-corporate.php') && !is_page_template('alter-front-page-template.php') ){
 		$classes[] = '';
-	}elseif (is_page_template('page-templates/arise-corporate.php') ) {
+	}elseif (is_page_template('page-templates/arise-corporate.php')) {
 		$classes[] = 'tf-business-template';
 		$classes[] = 'page-template-default';
 	}
