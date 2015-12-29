@@ -73,9 +73,9 @@ screenshot.png image, Copyright 2015 Dominic_N
 screenshot.png licensed under the terms of the GNU GPL, Version 2 (or later)
 Source: http://postimg.org/image/jn3v0smu5/
 
-floating_house.png image, Copyright 2009 Pixar
-floating_house.png licensed under the terms of the GNU GPL, Version 3
-Source: http://www.balloonscape.com/images/up.jpg
+elegant.jpg image, Copyright Wikipedia
+elegant.jpg is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic license
+Source:https://commons.wikimedia.org/wiki/File:Elegant_landing_of_a_swan,_Skien.jpg
 
 html5shiv  Copyright (c) 2014 Alexander Farkas (aFarkas).
 Dual licensed under the MIT or GPL Version 2 licenses

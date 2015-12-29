@@ -16,7 +16,6 @@
 
 <?php 
 wp_head();
-if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 ?>
 </head>
 <body <?php body_class(); ?>>
@@ -45,7 +44,7 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 		?>
 </div>
 <div id ="menu">
-<span class = 'tes'>
+<div class = 'tes'>
 <?php
 $defaults = array(
 	'theme_location'  => 'primary',
@@ -53,7 +52,7 @@ $defaults = array(
 	'fallback_cb'     => '',
 );
  wp_nav_menu($defaults ); ?>
-</span>
+</div>
 </div>
 <br />
 <br />

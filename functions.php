@@ -18,6 +18,7 @@ function afia_enqueue_scripts()
     wp_enqueue_style('afia-handheld',get_template_directory_uri() .'/assets/css/handheld.css',array (), false, 'all and (max-device-width:768px)');
     wp_enqueue_script( 'html5',get_template_directory_uri().'/lib/js/html5.js');
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
   }
 add_action( 'wp_enqueue_scripts', 'afia_enqueue_scripts' );
 
@@ -499,19 +500,5 @@ endif;
 add_action( 'wp_head', 'afia_customze_css');
 
 
-function afia_password_form() {
-    global $post;
-    $label = 'password-'.( empty( $post->ID ) ? rand() : $post->ID );
-    $password_form = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
-    '.__('This post is password protected. To view it please enter your password below: ', 'afia').'
-    <div class="protected-form input-group has-info col-md-6">
-        <input class="form-control" value="' . get_search_query() . '" name="post_password" id="' . $label . '" type="password">
-        <span class="input-group-btn"><button type="submit" class="btn btn-default" name="submit" id="searchsubmit" value="Submit"><span class="fa fa-lock"></span></button>
-        </span>
-    </div>
-    </form>';
-    return $password_form;
-}
-apply_filters( 'the_password_form', 'afia_password_form' );
 
 ?>
