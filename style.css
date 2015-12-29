@@ -6,7 +6,7 @@ Author URI:http://asiathemes.com/
 Created by: Asiathemes
 Description: Becorp is a responsive and fully customizable template for Business and Multipurpose theme.The Theme has You can use it for your business, portfolio, blogging or any type of site.Custom menus to choose the menu in Primary Location that is in Header area of the site. which is ideal for creating a corporate / business website.
 Becorp is Retina ready.We focused on usability across various devices, starting with smartphones.Becorp is a Cross-Browser Compatible theme that works on All leading web browsers.In header area and footer of the theme offers Social Media Links to add your Social Links here.translation ready and many more.
-Version:  1.0
+Version:  1.1
 Tags: black,blue, purple,red,orange, white,green, yellow, two-columns, three-columns, four-columns, custom-menu, right-sidebar, fixed-layout, fluid-layout, custom-background,featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, responsive-layout
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -995,7 +995,7 @@ a.project-next:before {
 .copyright_info a {
 	margin-top: 10px;
 	font-size: 17px;
-	color: #727272;
+	color: #fff;
 	text-align: right;
 }
 /* .copyright_info a:hover {
@@ -2346,3 +2346,7 @@ margin: 0.8075em 0;
 }
 .sticky{}
 cite{ font-style: italic !important; }
+
+/* Default Moster Widget CSS */
+.textwidget img { max-width:100%; }
+.widget select { max-width:100% !important;margin-top:20px !important; }

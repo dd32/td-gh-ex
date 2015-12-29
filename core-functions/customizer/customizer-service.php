@@ -301,7 +301,7 @@ $wp_customize->add_section( 'service_section_pro' , array(
 $wp_customize->add_setting(
      'becorp_option[service_pro]',
     array(
-        'default' => __('','becorp'),
+        'default' =>'',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',

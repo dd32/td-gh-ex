@@ -702,7 +702,7 @@ $wp_customize->remove_control('header_textcolor');
 $wp_customize->add_setting(
      'becorp_option[slider_pro]',
     array(
-        'default' => __('','becorp'),
+        'default' =>'',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -1183,7 +1183,7 @@ $wp_customize->add_control( new WP_slider_Customize_Control( $wp_customize, 'bec
 $wp_customize->add_setting(
      'becorp_option[portfolio_pro]',
     array(
-        'default' => __('','becorp'),
+        'default' => '',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',

@@ -3,11 +3,12 @@
 * @Theme Name	:	Becorp
 * @file         :	index-slider.php
 * @package      :	Becorp
-* @author       :	sim
+* @author       :	Asiathemes
 * @license      :	license.txt
 * @filesource   :	wp-content/themes/becorp/index-slider.php
 */
 ?>
+
 <!-- Slider Section -->	
 <?php 
 $becorp_options=theme_default_data(); 

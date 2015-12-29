@@ -13,6 +13,9 @@ CHANGE-LOG FILE:
 @Version: 1.0
 released
 
+@Version: 1.1
+1.Changed theme screenshort JPG to PNG.
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL

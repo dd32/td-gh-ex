@@ -4,19 +4,19 @@ if ($current_options['front_page_enabled']=="1" && is_front_page()) {
 	
 		 get_header(); 
  /*==== end header ====*/
-  get_template_part('home','slider');
+  get_template_part('index','slider');
  
- get_template_part('home','collout');	  
+ get_template_part('index','collout');	  
 	  	  
 /*==== Services Section ====*/
- get_template_part('home','service'); 
+ get_template_part('index','service'); 
 
 /*==== Project & Portfolio Section ====*/
- get_template_part('home','portfolio');
+ get_template_part('index','portfolio');
 	 
 /*==== Blog ====*/		
  
-  get_template_part('home','blog');
+  get_template_part('index','blog');
     
 /*==== Client Section ====*/
   get_template_part('client','slide');

@@ -86,8 +86,8 @@
 					<img class="logo img-responsive" src="<?php  echo esc_url($header_setting['upload_image_logo']); ?>"  style="height:<?php if($header_setting['height']!='') { echo esc_html($header_setting['height']); } ?>px; width:<?php if($header_setting['width']!='') { echo esc_html($header_setting['width']); } ?>px;" />
 		  <?php } else
 					{ 
-						echo get_bloginfo('name');
-					} ?>
+							echo get_bloginfo('name');
+						} ?>
 					
 		  </a>
         </div>

@@ -5,11 +5,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-lg-5"><h6><a href="<?php echo esc_html(site_url());?>" style="color:#000;"><?php _e('Home','becorp');?></a><?php _e('/','becorp');?><span><?php the_title();?></span></h6></div>
-		 <?php if(have_posts()) :?>
-		<div class="col-lg-6">
-		 <h2><?php becorp_archive_title(); ?></h2>
-		</div>
-		<?php endif; ?>
+		 <div class="col-lg-6"><h2><?php printf( __( 'Tag Archives: %s', 'becorp' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h2></div>
 	 </div>
 	</div>
   </div>	

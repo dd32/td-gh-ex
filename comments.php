@@ -2,7 +2,7 @@
 /*	@Theme Name	:	becorp-Pro
 * 	@file         :	comments.php
 * 	@package      :	becorp-Pro
-* 	@author       :	Asiathemes
+* 	@author       :	VibhorPurandare
 * 	@license      :	license.txt
 * 	@filesource   :	wp-content/themes/becorp/comments.php
 */
@@ -36,7 +36,7 @@
 		</nav>
 		<?php endif;  ?>
 		<?php elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : 
-        //_e("Comments Are Closed!!!",'becorp');
+        
 		?>
 	<?php endif; ?>
 	<?php if ('open' == $post->comment_status) : ?>
@@ -56,7 +56,13 @@
 		'website' => '<div class="col-md-4">
                                         	<label for="url">'.__('Website','becorp').'<span class="required">*</span></label>
                                             <input id="url" name="url" type="text" value="" size="30" aria-required="true">
-                                        </div></div>', );
+                                        </div></div>',
+					
+                                    	
+                                        
+                                        
+                                    
+		);
 	function my_fields($fields) { 
 		return $fields;
 	}

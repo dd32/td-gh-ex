@@ -9,10 +9,13 @@
 	define('ASIATHEMES_THEME_FUNCTIONS_PATH',ASIATHEMES_TEMPLATE_DIR.'/core-functions');
 	define('ASIATHEMES_THEME_OPTIONS_PATH' , ASIATHEMES_TEMPLATE_DIR_URI.'/core-functions/option-panel');
 	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php' ); // for Default Menus
-	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/menu/asiathemes_nav_walker.php' ); // for Custom Menus		
+	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/menu/asiathemes_nav_walker.php' ); // for Custom Menus	
+	
+	
 	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' );
 	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/comment-section/comment-function.php' ); //for comments sections
 	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/widgets/register-sidebar.php' ); //for widget register
+	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/resize-image/image_resize.php' ); //image resize
 	
 	//Customizer
 	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/customizer/customizer-header.php');
@@ -62,5 +65,14 @@ add_action( 'after_setup_theme', 'asiathemes_setup' );
 			}
 			add_action( 'admin_init', 'asiathemes_add_editor_styles' );
 	
-			require('template-tags.php');
+	
+	
+	/*******************
+	* Add Class Gravtar
+	* ******************/
+	add_filter('get_avatar','asiathemes_gravatar_class');
+	function asiathemes_gravatar_class($class) {
+    $class = str_replace("class='avatar", "class='author-image", $class);
+    return $class;
+	}
 ?>

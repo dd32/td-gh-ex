@@ -9,7 +9,7 @@ register_sidebar( array(
 		'description' => __( 'The primary widget area', 'becorp' ),
 		'before_widget' => '<div class="widget" >',
 		'after_widget' => '</div>',
-		'before_title' => '<h3><ul>',
+		'before_title' => '<ul><h3>',
 		'after_title' => '</h3></ul>',
 	) );
 

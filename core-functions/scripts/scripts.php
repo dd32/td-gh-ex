@@ -7,8 +7,8 @@ function asiathemes_scripts()
 	 wp_enqueue_style('becorp-media-responsive', ASIATHEMES_TEMPLATE_DIR_URI . '/css/media-responsive.css');
 	 wp_enqueue_style('becorp-font',ASIATHEMES_TEMPLATE_DIR_URI . '/css/font/font.css');
 	 wp_enqueue_style('becorp-lightbox',ASIATHEMES_TEMPLATE_DIR_URI . '/css/lightbox/lightbox.css');
-	 wp_enqueue_style( 'great-google-fonts','//fonts.googleapis.com/css?family=Lato:400italic,700italic,100,200,300,400,500,600,700,900',array() );
-	 wp_enqueue_style( 'great-google-fonts','//fonts.googleapis.com/css?family=Roboto:400italic,700italic,100,200,300,400,500,600,700,900,
+	 wp_enqueue_style('becorp-google-fonts','//fonts.googleapis.com/css?family=Lato:400italic,700italic,100,200,300,400,500,600,700,900',array() );
+	 wp_enqueue_style('becorp-google-fonts','//fonts.googleapis.com/css?family=Roboto:400italic,700italic,100,200,300,400,500,600,700,900,
 	italic,Courgette',array() );
 	
 	/*-- Css Font Awesome------*/	
