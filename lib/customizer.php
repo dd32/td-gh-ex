@@ -1,15 +1,15 @@
 <?php
 
-add_action('after_setup_theme', array('beat_mix_lite_Customization', 'get_instance'));	
+add_action('after_setup_theme', array('Beat_Mix_Lite_Customization', 'get_instance'));	
 
-class beat_mix_lite_Customization{
+class Beat_Mix_Lite_Customization{
 
 	public function __construct(){
 		add_action('customize_register', array($this, 'customize_register'));
 	}
 
 	public static function get_instance(){
-		new beat_mix_lite_Customization();		
+		new Beat_Mix_Lite_Customization();		
 	}
 
 	public function customize_register($wp_customize){
@@ -71,7 +71,7 @@ class beat_mix_lite_Customization{
           
           #set default capability
           if(!isset($setting['capability']) || empty($setting['capability'])){
-          	$capability = 'manage_options';
+          	$capability = 'edit_theme_options';
           }else{
           	$capability = $setting['capability'];
           }

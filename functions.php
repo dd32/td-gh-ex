@@ -63,12 +63,12 @@ function beat_mix_lite_enqueue_scripts(){
      */
     
     wp_enqueue_style('beat_mix_lite-fonts', beat_mix_lite_fonts_url(), array(), null );
-    wp_enqueue_style('beat_mix_lite-bootstrap', "{$dir}/css/bootstrap.css", array(), NULL);
-    wp_enqueue_style('beat_mix_lite-font-awesome', "{$dir}/css/font-awesome.css", array(), NULL);
-    wp_enqueue_style('beat_mix_lite-navgoco', "{$dir}/css/jquery.navgoco.css", array(), NULL);
-    wp_enqueue_style('beat_mix_lite-superfish', "{$dir}/css/superfish.css", array(), NULL);
-    wp_enqueue_style('beat_mix_lite-owl-carousel', "{$dir}/css/owl.carousel.css", array(), NULL);
-    wp_enqueue_style('beat_mix_lite-owl-theme', "{$dir}/css/owl.theme.css", array(), NULL);    
+    wp_enqueue_style('bootstrap', "{$dir}/css/bootstrap.css", array(), NULL);
+    wp_enqueue_style('font-awesome', "{$dir}/css/font-awesome.css", array(), NULL);
+    wp_enqueue_style('navgoco', "{$dir}/css/jquery.navgoco.css", array(), NULL);
+    wp_enqueue_style('superfish', "{$dir}/css/superfish.css", array(), NULL);
+    wp_enqueue_style('owl-carousel', "{$dir}/css/owl.carousel.css", array(), NULL);
+    wp_enqueue_style('owl-theme', "{$dir}/css/owl.theme.css", array(), NULL);    
     wp_enqueue_style('beat_mix_lite-style', get_stylesheet_uri(), array(), NULL);
     wp_enqueue_style('beat_mix_lite-responsive', "{$dir}/css/responsive.css", array(), NULL);
 
@@ -88,16 +88,16 @@ function beat_mix_lite_enqueue_scripts(){
 
     wp_enqueue_script('jquery');
     wp_enqueue_script('masonry');
-    wp_enqueue_script('beat_mix_lite-modernizr', "{$dir}/js/modernizr.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beat_mix_lite-bootstrap', "{$dir}/js/bootstrap.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beat_mix_lite-fitvids', "{$dir}/js/fitvids.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beat_mix_lite-imagesloaded', "{$dir}/js/imagesloaded.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beat_mix_lite-caroufredsel', "{$dir}/js/jquery.caroufredsel.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beat_mix_lite-matchheight', "{$dir}/js/jquery.matchheight.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beat_mix_lite-navgoco', "{$dir}/js/jquery.navgoco.js", array('jquery'), NULL, TRUE);    
-    wp_enqueue_script('beat_mix_lite-owl-carousel', "{$dir}/js/owl.carousel.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beat_mix_lite-superfish', "{$dir}/js/superfish.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script('beat_mix_lite-visible', "{$dir}/js/visible.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('modernizr', "{$dir}/js/modernizr.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('bootstrap', "{$dir}/js/bootstrap.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('fitvids', "{$dir}/js/fitvids.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('imagesloaded', "{$dir}/js/imagesloaded.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('caroufredsel', "{$dir}/js/jquery.caroufredsel.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('matchheight', "{$dir}/js/jquery.matchheight.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('navgoco', "{$dir}/js/jquery.navgoco.js", array('jquery'), NULL, TRUE);    
+    wp_enqueue_script('owl-carousel', "{$dir}/js/owl.carousel.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('superfish', "{$dir}/js/superfish.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script('visible', "{$dir}/js/visible.js", array('jquery'), NULL, TRUE);
     wp_enqueue_script('beat_mix_lite-custom', "{$dir}/js/custom.js", array('jquery'), NULL, TRUE);
     wp_localize_script('beat_mix_lite-custom', 'beat_mix_lite_vars', array());
 }

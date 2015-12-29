@@ -14,6 +14,10 @@ Support Firefox, Chrome, Safary, Opera, IE9+
 --------------------
 Changelog
 --------------------
+* 1.0.7
+- change capability for customizer from 'manage_options' to 'edit_theme_options'.
+- remove prefix for third party scripts and styles.
+
 * 1.0.6
 - update resources's information
 
