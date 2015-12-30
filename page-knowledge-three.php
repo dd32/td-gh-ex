@@ -20,8 +20,14 @@ $myknowledgebase_cats = get_categories( $myknowledgebase_cat_args );
 foreach ( $myknowledgebase_cats as $cat ) :
 	echo '<ul class="cat-list"><li class="cat-name"><a href="' . get_category_link( $cat->cat_ID ) . '" title="' . $cat->name . '" >' . $cat->name . '</a></li>';
 
+	if ( get_theme_mod( 'myknowledgebase_posts' ) ) :
+		$posts_per_page = esc_attr( get_theme_mod( 'myknowledgebase_posts' ) ); // get number of posts set in customizer
+	else :
+		$posts_per_page = -1; // -1 means list all posts
+	endif;
+
 	$myknowledgebase_post_args = array(
-		'posts_per_page' => -1, // -1 means list all posts
+		'posts_per_page' => $posts_per_page, // posts per page
 		'orderby' => 'date', // sort posts by date
 		'order' => 'desc', // list posts in descending order
 		'category__in' => $cat->cat_ID // list posts from all categories and posts from sub category will be hidden from their parent category

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2015-12-26 13:39+0100\n"
+"POT-Creation-Date: 2015-12-30 23:56+0100\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -131,6 +131,22 @@ msgstr ""
 
 #: functions.php:184
 msgid "Upload a logo to replace blogname and description in header."
+msgstr ""
+
+#: functions.php:196
+msgid "Knowledgebase"
+msgstr ""
+
+#: functions.php:198
+msgid "Set amount of posts for each knowledgebase category."
+msgstr ""
+
+#: functions.php:205
+msgid "Posts per page"
+msgstr ""
+
+#: functions.php:206
+msgid "Only numeric characters allowed."
 msgstr ""
 
 #: header.php:58

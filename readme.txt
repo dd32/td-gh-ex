@@ -15,6 +15,7 @@ HOW TO CREATE A KNOWLEDGE BASE
 ==============================
 The Knowledge Base uses the default WordPress categories and posts.
 Create a new page and select the Knowledge Base template on the right. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
+Set amount of posts for each category via WordPress Dashboard > Appearance > Customize. 
 If you want this page to be homepage go to Settings > Reading and select this page as hompepage.
 
 

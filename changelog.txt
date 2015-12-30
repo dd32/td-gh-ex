@@ -1,7 +1,10 @@
 CHANGELOG
 =========
 
-MyKnowledgeBase version 2.6 - december 2015
+MyKnowledgeBase version 2.7 - december 2015
+- theme customizer: set amount of posts for each knowledgebase category
+- file functions: theme customizer
+- updated files page-knowledge-three and page-knowledge-four
 - several files: updated postmetadata
 - file style: several modifications
 - several small adjustments

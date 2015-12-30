@@ -176,7 +176,7 @@
 	add_filter( 'excerpt_length', 'myknowledgebase_excerpt_length', 999 ); 
 
 
-// Theme Customizer (option to add logo)
+// Theme Customizer
 	function myknowledgebase_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'myknowledgebase_logo_section' , array( 
 			'title' => __( 'Logo', 'myknowledgebase' ), 
@@ -191,6 +191,22 @@
 			'label' => __( 'Logo', 'myknowledgebase' ), 
 			'section' => 'myknowledgebase_logo_section', 
 			'settings' => 'myknowledgebase_logo', 
+		) ) );
+		$wp_customize->add_section( 'myknowledgebase_posts_section' , array( 	
+			'title' => __( 'Knowledgebase', 'myknowledgebase' ), 
+			'priority' => 31, 
+			'description' => __( 'Set amount of posts for each knowledgebase category.', 'myknowledgebase' ),
+		) );
+		$wp_customize->add_setting( 'myknowledgebase_posts', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_posts', array( 
+			'label' => __( 'Posts per page', 'myknowledgebase' ), 
+			'description' => __( 'Only numeric characters allowed.', 'myknowledgebase' ), 
+			'section' => 'myknowledgebase_posts_section', 
+			'type' => 'number', 
+			'settings' => 'myknowledgebase_posts', 
 		) ) );
 	} 
 	add_action('customize_register', 'myknowledgebase_theme_customizer');
