@@ -48,6 +48,13 @@ Images
 
 == Changelog ==
 
+= 1.1.3 =
+
+** Fixed the add to wishlist and browse wishlist button style in single page.
+** Fixed the variations dropdown select box style and wishlist button.
+** Add the external/affiliate product and simple product button style every where in site.
+** Fixed the add to cart style in wishlist view page.
+
 = 1.1.2 =
 
 ** Add the blog page template and manage layout through customizer.
