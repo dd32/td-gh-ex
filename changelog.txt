@@ -1,4 +1,7 @@
 == CHANGE LOG ==
+= 1.1.4 =
+	- Fix - Forum link fixed
+
 = 1.1.3 =
 	- Update - CSS updated
 
