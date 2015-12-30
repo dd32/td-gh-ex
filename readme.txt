@@ -4,7 +4,7 @@ Tags: light, white, threaded-comments, custom-menu, sticky-post, translation-rea
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright 2015 Carolina Nymark
+Copyright 2015-2016 Carolina Nymark
 
 = Description ==
 
@@ -20,6 +20,22 @@ If you have any questions, accessibility issues or feature requests for this the
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
+Version 2.3, 2015-12-25
+Fixed two issues with the header background:
+	-If no image is used, the default background color option should now work properly.
+	-Resetting to the default image should now work.
+Fixed an issue with displaying the default font in the customizer.
+Fixed an issue that caused the front page sidebar to display below the posts.
+Added a meta box option to display the header on individual posts or pages. 
+Added an option to show the search form in the header menu on all screen sizes.
+Added a rtl stylesheet.
+Changed the mobile menu so that sub menus are visible.
+Made some changes to the css to improve readability.
+Updated the comment navigation and reset the comment form to the default.
+Removed unnecessary code, reset the search form to the default, and improved escaping.
+Updated the documentation and language file.
+
+
 Version 2.2, 2015-12-10
 Added a second sidebar for the front page. Note: this replaces the options to show and hide the sidebar.
 Added an alt text option to the highlight images.

@@ -45,12 +45,13 @@ function aaron_setup() {
 	add_theme_support( 'post-thumbnails' );	
 
 	add_image_size( 'aaron-featured-posts-thumb', 360, 300);
+	add_image_size( 'aaron-featured-image-header', 1920, 1200);
 	
 	add_theme_support( 'title-tag' );
 	
 	register_nav_menus( array(
 		'header' => __( 'Primary Menu', 'aaron' ),
-		'social' => __( 'Social Menu', 'aaron' ),
+		'social' => __( 'Social Menu', 'aaron' )
 	) );
 
 	/*
@@ -63,13 +64,13 @@ function aaron_setup() {
 endif; // aaron_setup
 add_action( 'after_setup_theme', 'aaron_setup' );
 
+
 /**
 * aaron_hide_search
 *
 * Unless the option is hidden in the customizer, display a search form in the primary menu.
 */
-
-if ( get_theme_mod('aaron_hide_search') =="" ){
+if ( !get_theme_mod('aaron_hide_search') ){
 
 	function aaron_menu_search( $items, $args ) {
 	    if( $args->theme_location == 'header' ) {
@@ -87,8 +88,7 @@ if ( get_theme_mod('aaron_hide_search') =="" ){
 *
 * Unless the option is hidden in the customizer, display the site title (with link) in the primary menu.
 */
-
-if ( get_theme_mod( 'aaron_hide_title') =="" ){
+if ( !get_theme_mod( 'aaron_hide_title') ){
 
 	function aaron_menu_title( $items, $args ) {
 	    if( $args->theme_location == 'header' ){
@@ -190,7 +190,6 @@ if ( ! function_exists( 'aaron_fonts_url' ) ) :
 	}
 endif;
 
-
 /**
  * Enqueue scripts and styles.
  */
@@ -205,14 +204,17 @@ function aaron_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	 /* If using a child theme, auto-load the parent theme style. */
+    if ( is_child_theme() ) {
+        wp_enqueue_style( 'parent-style', trailingslashit( get_template_directory_uri() ) . 'style.css' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'aaron_scripts' );
-
 
 /*
  * Enqueue styles for the setup help page.
  */ 
-
 function aaron_admin_scripts($hook) {
 	if ( 'appearance_page_aaron-theme' !== $hook ){
 		return;
@@ -233,11 +235,6 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
@@ -251,6 +248,11 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Highlights
  */
 require get_template_directory() . '/inc/highlights.php';
+
+/**
+ * Meta boxes for the header settings.
+ */
+require get_template_directory() . '/inc/metabox.php';
 
 /**
  * Setup help
@@ -268,16 +270,18 @@ function aaron_post_title( $title ) {
 	}
 }
 
-function aaron_no_sidebars($classes) {
+
+add_filter( 'body_class', 'aaron_classes' );
+function aaron_classes($classes) {
 	 /* 	
-	 *		Is the sidebar inactive?
-	 *		Add 'no-sidebar' to the $classes array
+	 *		Is the sidebar inactive? Add 'no-sidebar' to the $classes array
+	 *		Is the meta turned off in the customizer?  Add 'no-meta' to the $classes array
 	 */		
 
 	if ( is_front_page() && ! is_active_sidebar( 'sidebar-front' ) || is_home() && ! is_active_sidebar( 'sidebar-front' ) ) {
 		$classes[] = 'no-sidebar';
 	}else{
-		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+		if ( ! is_active_sidebar( 'sidebar-1' ) && ! is_front_page() && ! is_home() ) {
 			$classes[] = 'no-sidebar';
 		}
 	}
@@ -286,10 +290,13 @@ function aaron_no_sidebars($classes) {
 		$classes[] = 'no-meta';
 	}
 
+	// Adds a class of group-blog to blogs with more than 1 published author.
+	if ( is_multi_author() ) {
+		$classes[] = 'group-blog';
+	}
+
 	return $classes;
 }
-add_filter( 'body_class', 'aaron_no_sidebars' );
-
 
 function aaron_customize_css() {
 	echo '<style type="text/css">';
@@ -308,34 +315,29 @@ function aaron_customize_css() {
 	<?php
 	 }
 	 
-	echo '.site-title{color:#' . get_header_textcolor() . ';} ';
+	echo ".site-title,
+		.site-title a {
+		  	color:#" . get_header_textcolor() . ";
+		  }\n";
 
-	$header_image = get_header_image();
-	if ( ! empty( $header_image ) ) {
-	?>
-		.site-header {
-		background: <?php echo esc_attr( get_theme_mod('aaron_header_bgcolor', '#4777a6') ) ?> url(<?php header_image(); ?>) <?php echo esc_attr( get_theme_mod('aaron_header_bgrepeat', 'no-repeat') ); ?> <?php echo esc_attr( get_theme_mod('aaron_header_bgpos', 'center top') ); ?>;
-		background-size: <?php echo esc_attr( get_theme_mod('aaron_header_bgsize', 'cover') ); ?>;
-		}
-
-	<?php
-	/* No header image has been chosen, check for background color: */
-	}else{
-		if( get_theme_mod('aaron_header_bgcolor') ){
-			echo '.site-header { background:' . esc_attr( get_theme_mod('aaron_header_bgcolor', '#4777a6') ) . ';}';
-			echo '#action:hover, #action:focus{text-shadow:none;}';
-		}
-
+	//If the site title text color is black, turn off the text shadow, or the text will be too blurry.
+	if( get_header_textcolor() == '000000') {
+		echo ".site-title, .site.title a{text-shadow:none;} \n";
 	}
 
 	//Call to Action text color
 	if( get_theme_mod( 'aaron_action_color' ) <> ' ') {
-		echo '#action, #action a{ color:' . esc_attr( get_theme_mod('aaron_action_color', '#ffffff') ) . ';}';
+		echo "#action, #action a { color:" . esc_attr( get_theme_mod('aaron_action_color', '#ffffff') ) . "; }\n";
+	}
+
+	//If the Call to action text color is black, turn off the text shadow, or the text will be too blurry.
+	if( get_theme_mod( 'aaron_action_color' ) == '#000000') {
+		echo "#action, #action a{text-shadow:none;} \n";
 	}
 
 	//Call to Action background color
 	if( get_theme_mod( 'aaron_action_bgcolor' ) <> '') {
-		echo '#action, #action a{background:#' . esc_attr( get_theme_mod('aaron_action_bgcolor', 'none') ) . ';}';
+		echo "#action, #action a { background:#" . esc_attr( get_theme_mod('aaron_action_bgcolor', 'none') ) . "; }\n";
 	}
 
 	//Change UPPERCASE to Capitalized Text Instead
@@ -346,6 +348,7 @@ function aaron_customize_css() {
 			.entry-title,
 			.entry-title a,
 			.site-title,
+			.site-title a,
 			.site-info,
 			.site-description,
 			.page-links,
@@ -354,8 +357,9 @@ function aaron_customize_css() {
 			.comment-reply-title,
 			.featured-headline,
 			.testimonial-entry-title,
-			.featured-post h2{text-transform:capitalize;}';
+			.featured-post h2 { text-transform:capitalize; }\n';
 	}
+
 	//Font setting:
 		echo ".featured-post h2,
 			.featured-headline,
@@ -372,19 +376,45 @@ function aaron_customize_css() {
 			.page-links,
 			.site-info,
 			.site-description,
-			.site-title{
-				font-family: '" . get_theme_mod( 'aaron_font', 'Montserrat' ) . "', sans-serif;	
-			}";
+			.site-title,
+			.site-title a {
+				font-family: '" .esc_attr( get_theme_mod( 'aaron_font', 'Montserrat' ) ) . "', sans-serif;	
+			}\n";
 
 	// If avatars are enabled, alter the css:
 	if ( get_option( 'show_avatars' ) ) {
-		echo '.comment-metadata{
+		echo ".comment-metadata{
 			margin-left:70px;
 			display:block;
 			margin-top:-25px;
-		}';
+		}\n";
 	}
 
-	echo '</style>' . "\n";
+	//Show the search on all screen sizes.
+	if( get_theme_mod( 'aaron_show_search' ) <> '') {
+	?>
+		@media screen and (max-width: 800px) {	
+			.topsearch { display:initial; } 
+		}
+	<?php
+	}
+
+	//prints CSS for the featured image header meta box option. See custom-header.php.
+	aaron_featured_image_header_css();
+
+	// No tagline or call to action is visible, lets add some padding inside the header
+	if( is_singular() && aaron_get_meta( 'aaron_show_header') && aaron_get_meta('aaron_hide_tagline') && aaron_get_meta('aaron_hide_action_meta')  
+		|| is_singular() && aaron_get_meta( 'aaron_show_header') && bloginfo( 'description' )=='' && aaron_get_meta('aaron_hide_action_meta') 
+		|| is_home() && aaron_get_meta( 'aaron_show_header') && aaron_get_meta('aaron_hide_tagline') && aaron_get_meta('aaron_hide_action_meta') && !is_front_page()
+		|| is_home() && aaron_get_meta( 'aaron_show_header') && bloginfo( 'description' )=='' && aaron_get_meta('aaron_hide_action_meta') && !is_front_page()	){
+		echo ".site-branding{ padding-bottom: 45px; }\n";
+	}
+
+	// When combining a post or page with a header, reduce the space between the header and the content.
+	if( is_singular() && aaron_get_meta( 'aaron_show_header') ){
+		echo ".page .site-content,\n
+			.single .site-content{margin-top:45px;}\n";
+	}
+
 }
 add_action( 'wp_head', 'aaron_customize_css');

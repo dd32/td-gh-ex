@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aaron\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2015-12-10 06:59+0100\n"
+"POT-Creation-Date: 2015-12-30 12:02+0100\n"
 "PO-Revision-Date: 2015-05-20 17:43+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: \n"
@@ -14,10 +14,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_x:1,2c;_nx;esc_attr_e\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_nx;esc_attr_e;_ex\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:15
@@ -31,72 +31,21 @@ msgid ""
 msgstr ""
 
 #: 404.php:27
-msgid "Most Used Categories"
-msgstr ""
-
-#: 404.php:44
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: archive-jetpack-testimonial.php:32 documentation.php:169
+#: archive-jetpack-testimonial.php:32 documentation.php:181
 msgid "Testimonials"
 msgstr ""
 
-#: archive.php:16 inc/template-tags.php:167
+#: archive.php:16 inc/template-tags.php:108
 msgid "Portfolio"
 msgstr ""
 
 #: comments.php:28
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr ""
-
-#: comments.php:35 comments.php:53
-msgid "Comment navigation"
-msgstr ""
-
-#: comments.php:36 comments.php:54
-msgid "Older Comments"
-msgstr ""
-
-#: comments.php:37 comments.php:55
-msgid "Newer Comments"
-msgstr ""
-
-#: comments.php:65
-msgid "Comments are closed."
-msgstr ""
-
-#: comments.php:74
-msgid "Name"
-msgstr ""
-
-#: comments.php:75 comments.php:83 comments.php:93
-msgid "required"
-msgstr ""
-
-#: comments.php:82
-msgid "Email"
-msgstr ""
-
-#: comments.php:89
-msgid "Website"
-msgstr ""
-
-#: comments.php:93
-msgid "Comment"
-msgstr ""
-
-#: comments.php:97
-#, php-format
-msgid ""
-"You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
-"and attributes: %s"
-msgstr ""
-
-#: comments.php:99
-msgid "Your email address will not be published."
 msgstr ""
 
 #: content-none.php:13
@@ -121,22 +70,8 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: content-page.php:23 content-portfolio-single.php:21 content-single.php:25
-#: content.php:28
-msgid "Pages:"
-msgstr ""
-
-#: content.php:25
-#, php-format
-msgid "Continue reading %s"
-msgstr ""
-
 #: documentation.php:3 documentation.php:10
 msgid "Aaron Setup Help"
-msgstr ""
-
-#: documentation.php:12
-msgid "Thank you for downloading and trying out Aaron!"
 msgstr ""
 
 #: documentation.php:13
@@ -145,456 +80,335 @@ msgid ""
 "If you like the theme, please review it on <a href=\"%s\">WordPress.org</a>"
 msgstr ""
 
-#: documentation.php:15
+#: documentation.php:14
 #, php-format
 msgid ""
 "If you have any questions, accessibility issues or feature requests for this "
 "theme, please visit <a href=\"%s\">http://wptema.se/Aaron</a>."
 msgstr ""
 
-#: documentation.php:16
+#: documentation.php:15
 msgid ""
-"Thank you to everyone who has contributed with ideas and bug reports so far! "
+"Thank you everyone who has contributed with ideas and bug reports so far! "
 "Your feedback is essential for the future developement of the theme."
 msgstr ""
 
-#: documentation.php:17
-msgid ""
-"Note: Version 2.2 brought some changes to how the sidebars are displayed. If "
-"you are using a sidebar on your front page you will need to set it up again."
-msgstr ""
-
-#: documentation.php:21 documentation.php:31
-msgid "Menus"
-msgstr ""
-
-#: documentation.php:22 documentation.php:52
-msgid "Widget areas"
-msgstr ""
-
-#: documentation.php:23
-msgid "Front page"
-msgstr ""
-
-#: documentation.php:24 documentation.php:97 inc/customizer.php:139
-msgid "Advanced settings"
-msgstr ""
-
-#: documentation.php:25 documentation.php:109
-msgid "Accessibility"
-msgstr ""
-
-#: documentation.php:26 documentation.php:129 inc/customizer.php:623
-msgid "Fonts"
-msgstr ""
-
-#: documentation.php:27 documentation.php:148
-msgid "Plugins"
-msgstr ""
-
-#: documentation.php:32
+#: documentation.php:29
 msgid ""
 "This theme has two optional menu locations, the <b>Primary menu</b> and the "
 "<b>Social menu</b>."
 msgstr ""
 
-#: documentation.php:34
+#: documentation.php:31
 msgid "An image describing how a submenu drops down from the Primary menu"
 msgstr ""
 
-#: documentation.php:36
-msgid "The Primary menu"
+#: documentation.php:33
+msgid "is fixed at the top of the website and shows two menu levels."
 msgstr ""
 
-#: documentation.php:36
+#: documentation.php:34
 msgid ""
-"is fixed at the top of the website and shows two menu levels. <br>\n"
-"\t\tThis menu will collapse on smaller screens, and can then be opened and "
+"This menu will collapse on smaller screens, and can then be opened and "
 "closed by a menu button. It can also be closed with the Esc key."
 msgstr ""
 
-#: documentation.php:38
+#: documentation.php:35
 msgid ""
 "A one line menu is recommended, or the menu will overlap your content. Use "
 "submenus instead."
 msgstr ""
 
-#: documentation.php:40
+#: documentation.php:37
 msgid ""
 "An image describing how social icons are lined up next to each other in the "
 "Social menu"
 msgstr ""
 
-#: documentation.php:42
+#: documentation.php:39
 msgid ""
-"<b>The social menu</b> is at the bottom of the page and shows logos of the "
-"social networks of your choice. It does not display any text,<br>\n"
-"\t\tbut has additional information for screen readers."
+"is at the bottom of the page and shows logos of the social networks of your "
+"choice. It does not display any text, but has additional information for "
+"screen readers."
 msgstr ""
 
-#: documentation.php:44
+#: documentation.php:40
 msgid ""
 "The icon will be added automatically, all you need to do is add a link to "
 "your menu."
 msgstr ""
 
-#: documentation.php:46
-msgid "Advanced"
+#: documentation.php:41
+msgid "Create a new menu, then click on Custom links and add your URL."
 msgstr ""
 
-#: documentation.php:47
+#: documentation.php:41
+msgid "The Link Text that you provide is used as screen reader text."
+msgstr ""
+
+#: documentation.php:42
+msgid "An image describing where to add URLS for the social menu."
+msgstr ""
+
+#: documentation.php:43
+msgid "Choose the theme location named Social Menu, and save."
+msgstr ""
+
+#: documentation.php:44
+msgid ""
+"An image describing what the social menu will look like when a theme "
+"location has been picked."
+msgstr ""
+
+#: documentation.php:45
+msgid ""
+"Troubleshooting: If your link or icon is not showing up, try using lower "
+"case letters."
+msgstr ""
+
+#: documentation.php:46
+msgid "Available icons:"
+msgstr ""
+
+#: documentation.php:51
 msgid ""
 "By default, the primary meny also shows the site title and a search form. "
 "The search form is not visible on screens smaller than 800 pixels.<br>\n"
-"\t\tYou can hide these features under the Advanced settings tab in the "
-"Customizer. "
+"\t\tYou can edit these features under the Advanced settings tab in the "
+"Customizer."
 msgstr ""
 
-#: documentation.php:53
+#: documentation.php:57
 msgid ""
 "The theme now has two different sidebars: one for the front page and blog "
 "index, and one for other pages."
 msgstr ""
 
-#: documentation.php:54
+#: documentation.php:58
 msgid ""
 "To show either sidebar, all you need to do is place your widgets inside them."
 msgstr ""
 
-#: documentation.php:55
+#: documentation.php:59
 msgid ""
 "To hide either sidebar, remove the widgets. The content of the page will "
 "expand to full width when the sidebar is hidden."
 msgstr ""
 
-#: documentation.php:56
+#: documentation.php:60
 msgid ""
 "Both the sidebars and the footer widget area can hold <b>any number of "
 "widgets</b>. The footer widget area is shown on all pages."
 msgstr ""
 
-#: documentation.php:57
+#: documentation.php:61
 msgid ""
 "There is also one additional widget area in the footer below the social "
 "menu, where you can place a text widget and add your copyright text."
 msgstr ""
 
-#: documentation.php:61
-msgid "Frontpage"
-msgstr ""
-
-#: documentation.php:62
+#: documentation.php:66
 msgid "The standard front page has the following features:"
 msgstr ""
 
-#: documentation.php:63
+#: documentation.php:68
 msgid ""
-"<b>Site title:</b> You will find an option to hide or change the color of "
-"your site title in the customizer."
-msgstr ""
-
-#: documentation.php:64
-msgid ""
-"<b>Call to action:</b> The Call to Action is a great way to get your "
-"visitors attention. In the customizer you can:"
-msgstr ""
-
-#: documentation.php:66 documentation.php:75
-msgid "Add your own text"
-msgstr ""
-
-#: documentation.php:67 documentation.php:76
-msgid "Add a link"
-msgstr ""
-
-#: documentation.php:68 documentation.php:78
-msgid "Change colors"
+"You will find an option to hide or change the color of your site title in "
+"the customizer."
 msgstr ""
 
 #: documentation.php:69
-msgid "Hide the button"
-msgstr ""
-
-#: documentation.php:71
 msgid ""
-"<b>Highlights:</b> This is a flexible way for you to feature different "
-"sections of your website. You can add upp to nine highlights."
+"The Call to Action is a great way to get your visitors attention. In the "
+"customizer you can:"
 msgstr ""
 
-#: documentation.php:73
+#: documentation.php:76
+msgid ""
+"This is a flexible way for you to feature different sections of your "
+"website. You can add upp to nine highlights."
+msgstr ""
+
+#: documentation.php:78
 msgid "In the customizer you can:"
 msgstr ""
 
-#: documentation.php:77
-msgid "Add an icon or upload an image"
-msgstr ""
-
-#: documentation.php:79
-msgid "Hide the individual highlights or all of them"
-msgstr ""
-
-#: documentation.php:81
-msgid ""
-"<b>Tagline:</b> You will find an option to hide your tagline in the "
-"customizer."
-msgstr ""
-
-#: documentation.php:82
-msgid ""
-"<b>Header Background:</b> You can change the background image or background "
-"color in the customizer."
-msgstr ""
-
-#: documentation.php:84
-msgid "Custom Frontpage"
-msgstr ""
-
-#: documentation.php:85
-msgid ""
-"<b>Custom Landing page:</b> To use the custom landing page template, create "
-"a new page and select the template under Page Attributes."
-msgstr ""
-
 #: documentation.php:86
-msgid "An image describing how to set a page template."
+msgid "You will find an option to hide your tagline in the customizer."
 msgstr ""
 
 #: documentation.php:87
+msgid ""
+"You can change the background image or background color in the customizer."
+msgstr ""
+
+#: documentation.php:90
+msgid ""
+"To use a custom page template for the front page, create a new page and "
+"select the template under Page Attributes."
+msgstr ""
+
+#: documentation.php:91
+msgid "An image describing how to set a page template."
+msgstr ""
+
+#: documentation.php:92
 msgid ""
 "Then set your new page as your static front page in the customizer or under "
 "Settings > Reading."
 msgstr ""
 
-#: documentation.php:88
+#: documentation.php:93
 msgid "An image describing how to set a static front page."
 msgstr ""
 
-#: documentation.php:89
+#: documentation.php:96
 msgid ""
-"<b>Please note:</b> The landing page template only shows your header, it "
-"does NOT display your featured content, post content or page content. "
+"The Landing page template only shows your header, it does not display your "
+"footer, your featured content, post content or page content."
 msgstr ""
 
-#: documentation.php:91
+#: documentation.php:97
 msgid ""
-"<b>Page sections:</b> Page sections are a great way to display your "
-"shortcodes, testimonials, pricing tables, contact information and similar."
+"The Header & Footer page template only shows your header and footer, it does "
+"not display your featured content, post content or page content."
 msgstr ""
 
-#: documentation.php:92
+#: documentation.php:98
+msgid "It will display the footer widget area, but not the sidebar."
+msgstr ""
+
+#: documentation.php:101
+msgid ""
+"Page sections are a great way to display your shortcodes, testimonials, "
+"pricing tables, contact information and similar."
+msgstr ""
+
+#: documentation.php:102
 msgid ""
 "The two page sections can display up to 3 pages each. Pages in the top "
 "section are displayed above the blog content, and pages in the bottom "
 "section are displayed below."
 msgstr ""
 
-#: documentation.php:93
+#: documentation.php:103
 msgid ""
 "You can also show your page sections without your blog content by setting a "
-"static front page, using the <i>Sections</i> page template."
+"static front page, using the Sections page template."
 msgstr ""
 
-#: documentation.php:98
+#: documentation.php:107 inc/customizer.php:139
+msgid "Advanced settings"
+msgstr ""
+
+#: documentation.php:108
 msgid ""
 "Under the Advanced settings tab in the customizer you will find the "
 "following options:"
 msgstr ""
 
-#: documentation.php:100
-msgid "Hide the meta information. -This will hide the category and tags."
-msgstr ""
-
-#: documentation.php:101
-msgid "Hide the author and post date information."
-msgstr ""
-
-#: documentation.php:102
-msgid ""
-"Show the breadcrumb navigation. -Breadcrumbs are shown below the post title. "
-msgstr ""
-
-#: documentation.php:103
-msgid "Hide the search form in the header menu."
-msgstr ""
-
-#: documentation.php:104
-msgid "Hide the Site title in the header menu."
-msgstr ""
-
 #: documentation.php:110
+msgid "Note: Search results show excerpts by default."
+msgstr ""
+
+#: documentation.php:120
+msgid ""
+"To display the header together with an individual post or page, go to Edit "
+"mode and activate the Header settings that are located below your post "
+"content."
+msgstr ""
+
+#: documentation.php:121
+msgid "Your post view will inherit the settings from the front page."
+msgstr ""
+
+#: documentation.php:122
+msgid "Options:"
+msgstr ""
+
+#: documentation.php:135
 msgid ""
 "Note: In version 2.0, the accessibility settings were moved from the "
 "Advanced Settings to it's own setting in the customizer."
 msgstr ""
 
-#: documentation.php:111
+#: documentation.php:136
 msgid "Changing the colors of the theme can affect accessibility."
 msgstr ""
 
-#: documentation.php:114 documentation.php:133
-msgid ""
-"Skip link: the theme has one skip link at the very top that lets you skip "
-"past the main menu."
-msgstr ""
-
-#: documentation.php:115 documentation.php:134
-msgid ""
-"if Highligts are used, you skip to the first Highlight, otherwise you skip "
-"to the main content"
-msgstr ""
-
-#: documentation.php:117 documentation.php:136
-msgid ""
-"In the customizer you can add personalized screen reader texts for your "
-"sidebar and footer."
-msgstr ""
-
-#: documentation.php:118 documentation.php:137
-msgid ""
-"There is also an option to change text displayed as UPPERCASE to Capitalized."
-msgstr ""
-
-#: documentation.php:119 documentation.php:138
-msgid "Known issues:"
-msgstr ""
-
-#: documentation.php:121 documentation.php:140
-msgid ""
-"Some widgets that uses forms (category dropdown) are missing form labels. "
-"This is a known issue with WordPress."
-msgstr ""
-
-#: documentation.php:122 documentation.php:141
-msgid ""
-"Menus have a visible focus and can be tabbed through, but you can not "
-"navigate them using the arrow keys."
-msgstr ""
-
-#: documentation.php:130
+#: documentation.php:155
 msgid ""
 "Aaron uses Open Sans for body, and defaults to Montserrat for headings, "
 "menus and footer texts."
 msgstr ""
 
-#: documentation.php:131
+#: documentation.php:156
 msgid ""
 "You will find an option to change Montserrat to a different font in the "
 "customizer."
 msgstr ""
 
-#: documentation.php:149
+#: documentation.php:161
 msgid ""
 "Aaron has been tested with and style has been added for the following "
 "plugins:"
 msgstr ""
 
-#: documentation.php:151
-msgid "Woocommerce"
-msgstr ""
-
-#: documentation.php:152
-msgid "bbPress"
-msgstr ""
-
-#: documentation.php:153
-msgid "Jetpack"
-msgstr ""
-
-#: documentation.php:153
-msgid ""
-" Note: Not all of Jetpacks modules are accessibe, and some uses iframes. I "
-"have increased the contrast of some of the modules."
-msgstr ""
-
-#: documentation.php:154
-msgid "Recommended modules:"
-msgstr ""
-
-#: documentation.php:156
-msgid "Featured content"
-msgstr ""
-
-#: documentation.php:157
+#: documentation.php:169
 msgid ""
 "-Once Jetpack has been activated, you can select up to six posts or pages as "
-"a front page feature. Chose a tag and add it to your posts to seperate them "
-"from the rest.<br>\n"
-"\t\t\t\t\t\tYou can also choose a headline for your featured section. "
-"Featured images are optional and the recommended image size is 360x300 "
-"pixels."
-msgstr ""
-
-#: documentation.php:159
-msgid ""
-"An image describing three featured posts on the front page, two with "
-"featured images and one \n"
-"\t\t\t\t\t\tthat only displays the post title."
-msgstr ""
-
-#: documentation.php:162
-msgid "Custom Content Type: Portfolio"
-msgstr ""
-
-#: documentation.php:163 documentation.php:169
-msgid "Aaron also supports Jetpack"
-msgstr ""
-
-#: documentation.php:164
-msgid "Portfolios"
-msgstr ""
-
-#: documentation.php:164
-msgid "Read more about how to setup your Portfolio on Jetpacks support site."
-msgstr ""
-
-#: documentation.php:165
-msgid "An image describing two portfolio items."
-msgstr ""
-
-#: documentation.php:168
-msgid "Custom Content Type: Testimonials"
+"a front page feature. Chose a tag and add it to your posts to separate them "
+"from the rest."
 msgstr ""
 
 #: documentation.php:170
 msgid ""
-"<b>Tip:</b> I recommend creating a page and adding this shortcode, and then "
-"including the page as a front page section."
+"You can also choose a headline for your featured section. Featured images "
+"are optional and the recommended image size is 360x300 pixels."
 msgstr ""
 
-#: documentation.php:172
+#: documentation.php:171
 msgid ""
-"Read more about how to setup your Testimonials on Jetpacks support site."
-msgstr ""
-
-#: documentation.php:175
-msgid "Sharing"
+"An image describing three featured posts on the front page, two with "
+"featured images and one that only displays the post title."
 msgstr ""
 
 #: documentation.php:176
+#, php-format
 msgid ""
-"-If you activate Jetpack sharing, your buttons will be displayed below the "
-"meta information, to the right of your post content."
+"<a href=\"%s\">Read more about how to setup your Portfolio on Jetpacks "
+"support site.</a>"
 msgstr ""
 
-#: documentation.php:177
-msgid ""
-"An image describing how sharing buttons are added to the post footer below "
-"Tags and Categories."
-msgstr ""
-
-#: documentation.php:179
-msgid "Contact Form"
-msgstr ""
-
-#: documentation.php:180
-msgid "<b>Site icon</b> -Use this module to add a favicon to your site."
+#: documentation.php:178
+msgid "An image describing two portfolio items."
 msgstr ""
 
 #: documentation.php:181
+msgid "Aaron also supports Jetpack"
+msgstr ""
+
+#: documentation.php:182
+msgid "Tip:"
+msgstr ""
+
+#: documentation.php:182
 msgid ""
-"<b>Site logo</b> -Once Jetpack has been activated, you can add a logo above "
-"your Site title on the front page. You will find this setting in the "
-"customizer."
+"I recommend creating a page and adding this shortcode, and then including "
+"the page as a front page section."
+msgstr ""
+
+#: documentation.php:183
+#, php-format
+msgid ""
+"<a href=\"%s\">Read more about how to setup your Testimonials on Jetpacks "
+"support site.</a>"
+msgstr ""
+
+#: documentation.php:188
+msgid ""
+"An image describing how sharing buttons are added to the post footer below "
+"Tags and Categories."
 msgstr ""
 
 #: footer.php:22
@@ -605,25 +419,25 @@ msgstr ""
 msgid "Social Media"
 msgstr ""
 
-#: footer.php:47
+#: footer.php:50
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: footer.php:47
+#: footer.php:50
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:49
+#: footer.php:52
 #, php-format
 msgid "Theme: %1$s by Carolina"
 msgstr ""
 
-#: functions.php:52
+#: functions.php:53
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:53
+#: functions.php:54
 msgid "Social Menu"
 msgstr ""
 
@@ -656,20 +470,20 @@ msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions.php:265
+#: functions.php:267
 msgid "(Untitled)"
 msgstr ""
 
-#: header.php:27 header.php:29
+#: header.php:26 header.php:28
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:36
+#: header.php:35
 msgid "Main Menu"
 msgstr ""
 
-#: header.php:67
-msgid "Click here to setup your Call to Action"
+#: inc/custom-header.php:32
+msgid "Mountain"
 msgstr ""
 
 #: inc/customizer.php:118
@@ -680,7 +494,7 @@ msgstr ""
 msgid "Front page Highlights are displayed in the lower part of the header."
 msgstr ""
 
-#: inc/customizer.php:126 inc/customizer.php:440
+#: inc/customizer.php:126 inc/customizer.php:455
 msgid "Call to Action"
 msgstr ""
 
@@ -708,405 +522,318 @@ msgstr ""
 msgid "Header background"
 msgstr ""
 
-#: inc/customizer.php:164
+#: inc/customizer.php:158
+msgid "Site Title Color"
+msgstr ""
+
+#: inc/customizer.php:166
 msgid "Header background color:"
 msgstr ""
 
-#: inc/customizer.php:177
+#: inc/customizer.php:179
 msgid "Header background image position:"
 msgstr ""
 
-#: inc/customizer.php:179 inc/customizer.php:717
+#: inc/customizer.php:181 inc/customizer.php:746
 msgid "left top"
 msgstr ""
 
-#: inc/customizer.php:180 inc/customizer.php:718
+#: inc/customizer.php:182 inc/customizer.php:747
 msgid "left center"
 msgstr ""
 
-#: inc/customizer.php:181 inc/customizer.php:719
+#: inc/customizer.php:183 inc/customizer.php:748
 msgid "left bottom"
 msgstr ""
 
-#: inc/customizer.php:182 inc/customizer.php:720
+#: inc/customizer.php:184 inc/customizer.php:749
 msgid "right top"
 msgstr ""
 
-#: inc/customizer.php:183 inc/customizer.php:721
+#: inc/customizer.php:185 inc/customizer.php:750
 msgid "right center"
 msgstr ""
 
-#: inc/customizer.php:184 inc/customizer.php:722
+#: inc/customizer.php:186 inc/customizer.php:751
 msgid "right bottom"
 msgstr ""
 
-#: inc/customizer.php:185 inc/customizer.php:723
+#: inc/customizer.php:187 inc/customizer.php:752
 msgid "center top"
 msgstr ""
 
-#: inc/customizer.php:186 inc/customizer.php:724
+#: inc/customizer.php:188 inc/customizer.php:753
 msgid "center center"
 msgstr ""
 
-#: inc/customizer.php:187 inc/customizer.php:725
+#: inc/customizer.php:189 inc/customizer.php:754
 msgid "center bottom"
 msgstr ""
 
-#: inc/customizer.php:199
+#: inc/customizer.php:201
 msgid "Header background image size:"
 msgstr ""
 
-#: inc/customizer.php:201 inc/customizer.php:738
+#: inc/customizer.php:203 inc/customizer.php:767
 msgid "cover"
 msgstr ""
 
-#: inc/customizer.php:202 inc/customizer.php:739
+#: inc/customizer.php:204 inc/customizer.php:768
 msgid "contain"
 msgstr ""
 
-#: inc/customizer.php:203 inc/customizer.php:740
+#: inc/customizer.php:205 inc/customizer.php:769
 msgid "auto"
 msgstr ""
 
-#: inc/customizer.php:215
+#: inc/customizer.php:217
 msgid "Header background image repeat:"
 msgstr ""
 
-#: inc/customizer.php:217 inc/customizer.php:753
+#: inc/customizer.php:219 inc/customizer.php:782
 msgid "repeat"
 msgstr ""
 
-#: inc/customizer.php:218 inc/customizer.php:754
+#: inc/customizer.php:220 inc/customizer.php:783
 msgid "repeated only horizontally"
 msgstr ""
 
-#: inc/customizer.php:219 inc/customizer.php:755
+#: inc/customizer.php:221 inc/customizer.php:784
 msgid "repeated only vertically"
 msgstr ""
 
-#: inc/customizer.php:220 inc/customizer.php:756
+#: inc/customizer.php:222 inc/customizer.php:785
 msgid " no repeat"
 msgstr ""
 
-#: inc/customizer.php:232
-msgid "Check this box to hide the meta information on the search result."
+#: inc/customizer.php:235
+msgid ""
+"Check this box to show the excerpt instead of the full content on the front "
+"page, blog listing and archives."
 msgstr ""
 
-#: inc/customizer.php:244
+#: inc/customizer.php:247
+msgid "Check this box to hide the meta information on the search results."
+msgstr ""
+
+#: inc/customizer.php:259
 msgid "Check this box to hide all the meta information."
 msgstr ""
 
-#: inc/customizer.php:256
+#: inc/customizer.php:271
 msgid "Check this box to hide the author and post date information."
 msgstr ""
 
-#: inc/customizer.php:267
+#: inc/customizer.php:282
 msgid "Check this box to show the breadcrumb navigation."
 msgstr ""
 
-#: inc/customizer.php:278
+#: inc/customizer.php:293
 msgid "Hide the highlights"
 msgstr ""
 
-#: inc/customizer.php:288
+#: inc/customizer.php:303
 msgid "Check this box to hide the highlights."
 msgstr ""
 
-#: inc/customizer.php:297
+#: inc/customizer.php:312
 msgid "Highlight number"
 msgstr ""
 
-#: inc/customizer.php:308
+#: inc/customizer.php:323
 msgid "Add this headline to your highlight:"
 msgstr ""
 
-#: inc/customizer.php:320
+#: inc/customizer.php:335
 msgid "Add this text to your highlight:"
 msgstr ""
 
-#: inc/customizer.php:332
+#: inc/customizer.php:347
 msgid "Chose an icon for your highlight:"
 msgstr ""
 
-#: inc/customizer.php:347
+#: inc/customizer.php:362
 msgid "Upload an image for your highlight:"
 msgstr ""
 
-#: inc/customizer.php:348
+#: inc/customizer.php:363
 msgid "Uploading an image will overwrite your icon settings."
 msgstr ""
 
-#: inc/customizer.php:362
+#: inc/customizer.php:377
 msgid "If you have chosen an image, please also add an alternative text:"
 msgstr ""
 
-#: inc/customizer.php:374
+#: inc/customizer.php:389
 msgid "Hightlight background color:"
 msgstr ""
 
-#: inc/customizer.php:386
+#: inc/customizer.php:401
 msgid "Hightlight text and icon color:"
 msgstr ""
 
-#: inc/customizer.php:399
+#: inc/customizer.php:414
 msgid "Add a link to your highlight:"
 msgstr ""
 
-#: inc/customizer.php:412
+#: inc/customizer.php:427
 msgid "Check this box to hide this individual highlight."
 msgstr ""
 
-#: inc/customizer.php:421
+#: inc/customizer.php:436
 msgid "Hide all the highlights"
 msgstr ""
 
-#: inc/customizer.php:432
+#: inc/customizer.php:447
 msgid "Check this box to hide all the highlights."
 msgstr ""
 
-#: inc/customizer.php:453
+#: inc/customizer.php:468
 msgid "Add this text to the Call to Action button on the front page:"
 msgstr ""
 
-#: inc/customizer.php:465
+#: inc/customizer.php:480
 msgid "Add a link to the Call to action button:"
 msgstr ""
 
-#: inc/customizer.php:476
+#: inc/customizer.php:491
 msgid "Check this box to hide the Call to Action button."
 msgstr ""
 
-#: inc/customizer.php:487
+#: inc/customizer.php:502
 msgid "Call to Action text color:"
 msgstr ""
 
-#: inc/customizer.php:499
+#: inc/customizer.php:514
 msgid "Call to Action background color:"
 msgstr ""
 
-#: inc/customizer.php:513
+#: inc/customizer.php:528
 msgid "Check this box to hide the search form in the header menu."
 msgstr ""
 
-#: inc/customizer.php:524
+#: inc/customizer.php:541
+msgid ""
+"The search form in the header menu is hidden on smaller screens by default. "
+"Check this box to show it on all screen sizes."
+msgstr ""
+
+#: inc/customizer.php:553
 msgid "Check this box to hide the clickable site title in the header menu."
 msgstr ""
 
-#: inc/customizer.php:532 index.php:22 index.php:26
+#: inc/customizer.php:561 index.php:22 index.php:26
 #: templates/static-and-featured.php:17 templates/static-and-featured.php:22
 msgid "Featured"
 msgstr ""
 
-#: inc/customizer.php:537
+#: inc/customizer.php:566
 msgid "Headline above your featured content:"
 msgstr ""
 
-#: inc/customizer.php:546
+#: inc/customizer.php:575
 msgid "Top Section"
 msgstr ""
 
-#: inc/customizer.php:548
-msgid "Choose upto 3 pages that will be displayed above your blog content."
+#: inc/customizer.php:577
+msgid "Select up to 3 pages that will be displayed above your blog content."
 msgstr ""
 
-#: inc/customizer.php:560 inc/customizer.php:581
-msgid "Choose a page:"
+#: inc/customizer.php:589 inc/customizer.php:610
+msgid "Select a page:"
 msgstr ""
 
-#: inc/customizer.php:567
+#: inc/customizer.php:596
 msgid "Bottom Section"
 msgstr ""
 
-#: inc/customizer.php:569
+#: inc/customizer.php:598
 msgid ""
-"Choose upto 3 pages that will be displayed below your blog content, but "
+"Select up to 3 pages that will be displayed below your blog content, but "
 "above the footer."
 msgstr ""
 
-#: inc/customizer.php:594
+#: inc/customizer.php:623
 msgid "Add a descriptive screen reader text for the footer."
 msgstr ""
 
-#: inc/customizer.php:605
+#: inc/customizer.php:634
 msgid "Add a descriptive screen reader text for the sidebar."
 msgstr ""
 
-#: inc/customizer.php:616
+#: inc/customizer.php:645
 msgid ""
 "Check this box to change the text displayed as UPPERCASE to Capitalized."
 msgstr ""
 
-#: inc/customizer.php:624
+#: inc/customizer.php:652
+msgid "Fonts"
+msgstr ""
+
+#: inc/customizer.php:653
 msgid "Changing the fonts can affect accessibility."
 msgstr ""
 
-#: inc/customizer.php:638
+#: inc/customizer.php:667
 msgid "Choose a font for headings, menus and footer texts."
 msgstr ""
 
-#: inc/customizer.php:643
+#: inc/customizer.php:672
 msgid "(Default)"
 msgstr ""
 
-#: inc/customizer.php:644
+#: inc/customizer.php:673
 msgid "(Same as body)"
 msgstr ""
 
-#: inc/customizer.php:664
+#: inc/customizer.php:693
 msgid ""
 "Are you sure that you want to reset your settings? Type YES in the box, save "
 "and refresh the page."
 msgstr ""
 
-#: inc/customizer.php:768
+#: inc/customizer.php:797
 msgid "Transparent (Default)"
 msgstr ""
 
-#: inc/customizer.php:769
+#: inc/customizer.php:798
 msgid "Pick a color"
 msgstr ""
 
-#: inc/extras.php:52
-#, php-format
-msgid "Page %s"
+#: inc/metabox.php:38
+msgid "Individual Header Settings"
 msgstr ""
 
-#: inc/template-tags.php:21
-msgid "Posts navigation"
-msgstr ""
-
-#: inc/template-tags.php:24
-msgid "Older posts"
-msgstr ""
-
-#: inc/template-tags.php:27
-msgid "Newer posts"
-msgstr ""
-
-#: inc/template-tags.php:52
-msgid "Post navigation"
-msgstr ""
-
-#: inc/template-tags.php:91
+#: inc/template-tags.php:33
 #, php-format
 msgctxt "post date"
 msgid "on %s"
 msgstr ""
 
-#: inc/template-tags.php:115 inc/template-tags.php:121
-msgid ", "
+#: inc/template-tags.php:111
+msgid "Project Type: "
 msgstr ""
 
-#: inc/template-tags.php:117
-#, php-format
-msgid "Categories: %1$s"
+#: inc/template-tags.php:113
+msgid "Project Tags: "
 msgstr ""
 
-#: inc/template-tags.php:123
-#, php-format
-msgid "Tags: %1$s"
-msgstr ""
-
-#: inc/template-tags.php:129
-msgid "Leave a comment"
-msgstr ""
-
-#: inc/template-tags.php:129
-msgid "1 Comment"
-msgstr ""
-
-#: inc/template-tags.php:129
-msgid "% Comments"
-msgstr ""
-
-#: inc/template-tags.php:134 inc/template-tags.php:175
+#: inc/template-tags.php:116
 #, php-format
 msgid "Edit %s"
 msgstr ""
 
-#: inc/template-tags.php:170
-msgid "Project Type: "
-msgstr ""
-
-#: inc/template-tags.php:172
-msgid "Project Tags: "
-msgstr ""
-
-#: inc/template-tags.php:219
+#: inc/template-tags.php:154
 #, php-format
 msgid "Continue Reading %s"
 msgstr ""
 
-#: inc/template-tags.php:239
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: inc/template-tags.php:241
-#, php-format
-msgid "Tag: %s"
-msgstr ""
-
-#: inc/template-tags.php:243
-#, php-format
-msgid "Author: %s"
-msgstr ""
-
-#: inc/template-tags.php:245
-#, php-format
-msgid "Year: %s"
-msgstr ""
-
-#: inc/template-tags.php:245
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: inc/template-tags.php:247
-#, php-format
-msgid "Month: %s"
-msgstr ""
-
-#: inc/template-tags.php:247
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: inc/template-tags.php:249
-#, php-format
-msgid "Day: %s"
-msgstr ""
-
-#: inc/template-tags.php:249
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr ""
-
-#: inc/template-tags.php:251
-#, php-format
-msgid "Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:255
-#, php-format
-msgid "%1$s: %2$s"
-msgstr ""
-
-#: inc/template-tags.php:257
-msgid "Archives"
-msgstr ""
-
-#: inc/template-tags.php:351
+#: inc/template-tags.php:165
 msgid "You are here: "
 msgstr ""
 
-#: inc/template-tags.php:353
+#: inc/template-tags.php:167
 msgid "Home"
-msgstr ""
-
-#: search.php:15
-#, php-format
-msgid "Search Results for: %s"
 msgstr ""
 
 #: search.php:33
@@ -1115,14 +842,6 @@ msgstr ""
 
 #: search.php:34
 msgid "Next page"
-msgstr ""
-
-#: search.php:41
-msgid "Would you like to search again?"
-msgstr ""
-
-#: searchform.php:3 searchform.php:6
-msgid "Search"
 msgstr ""
 
 #, fuzzy

@@ -6,8 +6,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('aaron-border');  ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
+		<?php 
+		if ( !aaron_get_meta( 'aaron_replace_title' ) ){
+			the_title( '<h1 class="entry-title">', '</h1>' ); 
+			}
+		?>
 		<div class="entry-meta">
 			<?php aaron_posted_on(); ?>
 		</div><!-- .entry-meta -->
@@ -15,14 +18,16 @@
 
 	<div class="entry-content">
 		<?php 
-		if ( has_post_thumbnail()){
-			the_post_thumbnail();
+		if( !aaron_get_meta( 'aaron_show_header' ) || !aaron_get_meta( 'aaron_featured_image_header' ) ){
+			if ( has_post_thumbnail()){
+				the_post_thumbnail();
+			}
 		}
-		
+			
 		the_content(); 
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'aaron' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aaron' ),
 			'after'  => '</div>',
 		) );
 		?>

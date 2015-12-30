@@ -37,11 +37,14 @@
 			</nav><!-- #social-menu -->
 		<?php }; ?>
 
-
 		<div class="site-info">
 			<?php
 			if ( is_active_sidebar( 'sidebar-copyright' ) ) {
-				 dynamic_sidebar( 'sidebar-copyright' ); 
+				?>
+				<div class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'sidebar-copyright' ); ?>
+			</div><!-- #secondary -->
+			<?php 
 			}
 			?>
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'aaron' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'aaron' ), 'WordPress' ); ?></a>

@@ -1,3 +1,7 @@
+/**
+The stylesheet for the documentation / Setup up help page.
+*/
+
 .doc-box{
 	width:75%;
 	border-radius:4px; 
@@ -17,15 +21,14 @@
 	font-size:20px;
 	font-size:2.0rem; 
 	text-decoration:none;
-	margin:50px 0 25px 0;
+	margin:50px 0 20px 0;
 	font-family: 'Montserrat', sans-serif;	
 	letter-spacing: 2px; 
 }
 
 .doc-thanks{
-	text-decoration:none;
-	margin:10px 0 5px 0;
-	line-height:1.3;
+	margin:0;
+	line-height:1.8;
 	font-size:16px;
 }
 
@@ -61,6 +64,8 @@
 	padding:4px;
 }
 
+.doc-box a:hover,
+.doc-thanks a:hover,
 .doc-menu a:hover{
 	text-decoration:none;
 	color:#000;

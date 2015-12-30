@@ -10,16 +10,15 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width" />
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-
 	<?php
 	/* If the highlights are visible on the frontpage, skip to the highlights and not to #content.*/
 	if( get_theme_mod( 'aaron_hide_highlight' ) =="" && is_front_page() ) {
@@ -38,47 +37,65 @@
 		</nav><!-- #site-navigation -->
 	<?php
 	}
-	
-	 if ( is_home() || is_front_page() ) {?>
+
+	if ( is_home() || is_front_page() || is_singular() && aaron_get_meta( 'aaron_show_header' )) {?>
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-branding">	
 				<?php 
-				aaron_the_site_logo(); ?>
-				<?php if (display_header_text() ) {	?>
-					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-				<?php }else{
-					/*If there is no visible site title, make sure there is still a h1 for screen reader*/
-					?>
-						<h1 class="screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
-					<?php } ?>
+				aaron_the_site_logo();
+			
+				//If we are viewing a post or page, and we want to combine it with the header section.
+				if ( is_singular() && aaron_get_meta( 'aaron_show_header' ) || is_home() && aaron_get_meta( 'aaron_show_header' ) && !is_front_page() ) {
+					//If it is a post or page, and we want to replace the site title, we want it to be a h1.
+					if ( aaron_get_meta( 'aaron_replace_title' ) ){
+						if( is_home() ){
+							echo '<h1 class="site-title">' . get_the_title( get_option('page_for_posts') ) .  '</h1>';
+						}else{
+							the_title( '<h1 class="site-title">', '</h1>' );
+						}
+					}else{
+						//But if it is a post or page, and we are keeping the site title, then we want it to be a paragraph. We also want a link back to the home page.
+						if (display_header_text() ) {?>
+							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+							<?php
+						}
+					}
 
-				<?php if( get_theme_mod( 'aaron_hide_action' ) == '') {?>
-							<div id="action">
-								<?php 
-								if( get_theme_mod( 'aaron_action_text' ) <> '') {
-									if( get_theme_mod( 'aaron_action_link' ) <> '') {
-										echo '<a href="' . esc_url( get_theme_mod( 'aaron_action_link' ) ) .'">';
-									}
-									echo esc_html( get_theme_mod( 'aaron_action_text' ) );
-									if( get_theme_mod( 'aaron_action_link' ) <> '') {
-										echo '</a>';
-									}
-								}else{			
-									echo '<a href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">' . __("Click here to setup your Call to Action", 'aaron') . '</a>';
-								}
-								?>
-						</div>
-					<?php
-					 } 
-					
+					if( !aaron_get_meta('aaron_hide_action_meta') ){
+						aaron_action();
+					}
+
+					if( !aaron_get_meta('aaron_hide_highlights_meta') ){
+						aaron_highlights();
+					}
+
+					if( !aaron_get_meta('aaron_hide_tagline') ){
+						if (display_header_text() && get_bloginfo('description') <> '') {
+						?>
+							<div class="site-description"><?php bloginfo( 'description' ); ?></div>
+						<?php
+						}
+					}
+
+				}else{
+					//If it's not a post or paged combined with a header, show the site title in a h1, without a link.
+					if (display_header_text() ) {	
+						echo '<h1 class="site-title">' . get_bloginfo( 'name' ) . '</h1>';
+					}else{
+						//If there is no visible site title, make sure there is still a h1 for screen reader
+						echo '<h1 class="screen-reader-text">' . get_bloginfo( 'name' ). '</h1>';
+					}
+
+					aaron_action();		
+						
 					aaron_highlights();
-					?>
-
-					<?php if (display_header_text() && get_bloginfo('description') <> '') {
+				
+					if (display_header_text() && get_bloginfo('description') <> '') {
 					?>
 						<div class="site-description"><?php bloginfo( 'description' ); ?></div>
 					<?php
 					}
+				}
 					?>
 					</div><!-- .site-branding -->
 			</header><!-- #masthead -->

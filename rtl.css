@@ -1,23 +1,13 @@
 /*
 Theme Name: Aaron
-Theme URI: http://wptema.se/Aaron
-Author: Carolina Nymark
-Author URI: http://wptema.se
-Description: Aaron is a responsive, accessibility-ready multi-purpose theme. Features include Call to action and frontpage Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. We recommend that you install the Jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with Woocommerce and bbPress.
-If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
-Version: 2.3
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Copyright: Carolina Nymark 2015-2016
-Text Domain: aaron
-Tags: light, white, threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, rtl-language-support, two-columns, one-column, right-sidebar, featured-images, featured-image-header, responsive-layout, accessibility-ready, custom-header
 
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right_to_Left_Language_Support
+
 */
-
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -83,6 +73,8 @@ html {
 
 body {
 	background: #fafafa; /* Fallback for when there is no custom background color defined. */
+	direction: rtl;
+  	unicode-bidi: embed;
 }
 
 article,
@@ -111,7 +103,7 @@ caption,
 th,
 td {
 	font-weight: normal;
-	text-align: left;
+	text-align: right;
 }
 blockquote:before,
 blockquote:after,
@@ -180,7 +172,7 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 0 0 1.5em;
 	font-style: italic;
 	font-size: 18px;
 	font-size: 1.8rem;
@@ -262,7 +254,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 3em 1.5em 0;
 }
 
 ul {
@@ -276,7 +268,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-right: 1.5em;
 }
 
 dt {
@@ -284,7 +276,7 @@ dt {
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 0 1.5em 1.5em;
 }
 
 img {
@@ -412,7 +404,7 @@ input[type="search"] {
 
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: 3px;
+	padding-right: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
 }
@@ -444,23 +436,6 @@ textarea {
 .nav-next a:hover {text-decoration:underline; background:url('images/border.png') repeat-x bottom;}
 
 .nav-previous:before {
-	content: "\f060";
-	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-size: 14px; 
-	line-height: 1; 
-	color: #717171;
-	margin-right:10px;
-	margin-top:4px;
-	vertical-align: middle;	
-	float:left;
-	text-decoration: none; 
-}
-
-.nav-next:after{
 	content: "\f061";
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
@@ -471,6 +446,23 @@ textarea {
 	line-height: 1; 
 	color: #717171;
 	margin-left:10px;
+	margin-top:4px;
+	vertical-align: middle;	
+	float:right;
+	text-decoration: none; 
+}
+
+.nav-next:after{
+	content: "\f060";
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 14px; 
+	line-height: 1; 
+	color: #717171;
+	margin-right:10px;
 	vertical-align: middle;	
 	text-decoration: none; 
 }
@@ -487,8 +479,8 @@ textarea {
 .post-navigation .nav-previous {
 	display: inline-block;
 	vertical-align: top;
-	float: left;
-	text-align: left;
+	float: right;
+	text-align: right;
 	width: 40%;
 	font-size:16px;
 	font-size:1.6rem;
@@ -504,8 +496,8 @@ textarea {
 .post-navigation .nav-next {
 	display: inline-block;
 	vertical-align: top;
-	float: right;
-	text-align: right;
+	float: left;
+	text-align: left;
 	width: 40%;
 	font-size:16px;
 	font-size:1.6rem;
@@ -520,7 +512,7 @@ textarea {
 	color:#666;
 }
 
-.crumbs ul{	margin-left:0;}
+.crumbs ul{	margin-right:0;}
 
 .crumbs li{
 	list-style:none;
@@ -563,7 +555,7 @@ a:active {
 	width:100%;
 	position:fixed;
 	top:0;
-	left:0;
+	right:0;
 	height:auto;
 }
 
@@ -576,7 +568,7 @@ a:active {
 }
 
 .main-navigation li {
-	float: left;
+	float: right;
 	position: relative;
 }
 
@@ -603,7 +595,7 @@ a:active {
 	clear:both;
 	width: 228px; /*8 wider than the link, to make room for the border image.*/
 	top: auto;
-	padding-right:1em;
+	padding-left:1em;
 	padding-top:8px;
 	clip: rect(1px, 1px, 1px, 1px);
 	z-index:999; 
@@ -616,7 +608,7 @@ a:active {
  .main-navigation ul ul:before{
  	content:'';
  	position:absolute;
-	left:-7px;
+	right:-7px;
 	z-index: 100;
 	top:-1px;
 	width:238px;
@@ -674,9 +666,9 @@ content:'';
 	font-size: 1.4rem;
 	font-weight: bold;
 	height: auto;
-	left: 5px;
+	right: 5px;
 	line-height: normal;
-	padding: 15px 23px 14px;
+	padding: 15px 23px 14px 23px;
 	text-decoration: none;
 	top: 35px;
 	width: auto;
@@ -684,7 +676,7 @@ content:'';
 }	
 
 .main-navigation li.topsearch{
-	float:right; 
+	float: left; 
 	margin-top:3px;
 	line-height: 1; 
 }
@@ -719,8 +711,7 @@ content:'';
 		display: none;
 	}
 
-	.menu-toggle{ 
-		margin:20px;
+	.menu-toggle{ margin:20px;
 	}
 	.menu-toggle:before {
 		content: "\f0c9";
@@ -738,10 +729,9 @@ content:'';
 	
 	.main-navigation ul li{
 		width:100%;
-		float: left;
+		float: right;
 		position: relative;
 	}
-
 	.main-navigation ul li ul{
 		border:none;
 		box-shadow:none;
@@ -749,9 +739,9 @@ content:'';
 
 	.main-navigation ul li ul.sub-menu{
 		width:100%;
-		float: left;
+		float: right;
 		position: relative;
-		padding-left:5px;
+		padding-right:18px;
 	}
 
 	.menu-item-has-children > a:after{
@@ -770,6 +760,7 @@ Social menu
   font-weight: normal;
   font-style: normal;
 }
+
 
 .social-menu li a:before{
 	display: inline-block;
@@ -792,7 +783,6 @@ Social menu
 	text-align:center; 
 	padding:0;
 }
-
 .social-menu ul {margin:0;}
 
 .social-menu ul li{
@@ -802,8 +792,8 @@ Social menu
 }
 
 .social-menu li a, 
-.social-menu li a:hover{text-decoration: none; background:none;	}
-.social-menu li a:hover:before{color:#333333; border:1px solid #999; }
+.social-menu li a:hover{text-decoration: none; background:none;}
+.social-menu li a:hover:before{color:#333333; border:1px solid #999;}
 
 
 .social-menu li a[href*="dribbble.com"]::before { content: '\f17d'; }
@@ -869,9 +859,9 @@ Social menu
 	font-size: 1.4rem;
 	font-weight: bold;
 	height: auto;
-	left: 5px;
+	right: 5px;
 	line-height: normal;
-	padding: 15px 23px 14px;
+	padding: 15px 23px 14px 23px;
 	text-decoration: none;
 	top: 5px;
 	width: auto;
@@ -883,14 +873,14 @@ Social menu
 --------------------------------------------------------------*/
 .alignleft {
 	display: inline;
-	float: left;
-	margin-right: 1.5em;
+	float: right;
+	margin-left: 1.5em;
 }
 
 .alignright {
 	display: inline;
-	float: right;
-	margin-left: 1.5em;
+	float: left;
+	margin-right: 1.5em;
 }
 
 .aligncenter {
@@ -971,16 +961,16 @@ Social menu
 .widget ul{
 	padding:0;
 	margin:0;
-	float:left;
+	float:right;
 	width:100%;
 }
 
 .widget ul li{
 	list-style: none;
 	font-weight:normal;
-	margin:9px 0 9px 9px;
-	padding:0 0 4px 8px;
-	text-align:left;
+	margin:9px 9px 9px 0;
+	padding:0 8px 4px 0;
+	text-align:right;
 	background:url('images/border.png') repeat-x bottom;
 }
 
@@ -1037,8 +1027,8 @@ table#wp-calendar,
 #wp-calendar #prev a:hover,
 #wp-calendar #next a:hover{border:1px solid #f2f2f2;}
 
-#wp-calendar #prev a{ text-align:left; margin-left:-4px;}
-#wp-calendar #next a{ text-align:right; margin-right:-4px;}
+#wp-calendar #prev a{ text-align:right; margin-right:-4px;}
+#wp-calendar #next a{ text-align:left; margin-left:-4px;}
 
 .widget ul li a,
 .tagcloud a {
@@ -1072,7 +1062,7 @@ table#wp-calendar,
 .rssSummary{width:90%;}
 .rss-date{
 	width:90%; 
-	float:left; 
+	float:right; 
 	clear:both;
 }
 
@@ -1087,7 +1077,7 @@ table#wp-calendar,
 	list-style: none;
 	position:relative;
 	padding:0 18px 0 18px;
-	margin:0 0.5em  45px 0.5em;
+	margin:0 0.5em 45px 0.5em;
 	width:22%;
 	box-shadow:none;
 	background:none;
@@ -1164,8 +1154,8 @@ table#wp-calendar,
 }
 
 .content-area {
-	float: left;
-	margin: 0 -25% 0 0%;
+	float: right;
+	margin: 0 0% 0 -25%;
 	padding: 5px 2% 0 2%;
 	width: 70%;
 }
@@ -1187,7 +1177,7 @@ table#wp-calendar,
 }
 
 .site-content .widget-area {
-	float: right;
+	float: left;
 	overflow: hidden;
 	width: 25%;
 	padding:5px 2% 0 2%;
@@ -1390,7 +1380,7 @@ table#wp-calendar,
 	color: #e6e6e6;
 	text-decoration: none; 
 	vertical-align: middle;
-	float:right;
+	float: left;
 }
 
 .hentry {}
@@ -1409,6 +1399,32 @@ table#wp-calendar,
 .entry-summary {
 	margin: 1em 0 0;
 }
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+	padding:12px;
+	position:relative;
+	background:#fff;
+	font-size:14px;
+	font-size:1.4rem;
+	text-transform:uppercase;
+	letter-spacing: 2px; 
+	border:1px solid #f2f2f2;
+	border-radius:4px;
+	display:inline-block;
+}
+
+.page-links a{
+	padding:5px;
+	border:1px solid transparent;
+	border-radius:4px;
+}
+
+.page-links a:hover{
+	border:1px solid #999;
+}
+
 
 .entry-title, 
 .entry-title a{
@@ -1442,7 +1458,7 @@ table#wp-calendar,
 
 .entry-content{
 	width:65%;
-	float:left;
+	float: right;
 	position:relative; 
 	display: block;
 }
@@ -1464,7 +1480,7 @@ table#wp-calendar,
 	border:4px solid #fff;
 	border-radius:4px;
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.12);
-	margin-right:6px;
+	margin-left:6px;
 	vertical-align:middle;
 }
 
@@ -1473,7 +1489,7 @@ table#wp-calendar,
 
 .entry-footer {
 	width:30%;
-	float:right;
+	float: left;
 	position:relative;
 	background:#fff;
 	padding:12px; 
@@ -1487,7 +1503,7 @@ table#wp-calendar,
 
 .single-jetpack-portfolio .entry-footer {
 	width:100%;
-	float:left;
+	float:right;
 }
 
 .type-page .entry-footer{display:none;}
@@ -1501,40 +1517,14 @@ table#wp-calendar,
 
 .entry-meta a:focus,
 .entry-footer a:focus,
+.page-links a:focus,
 .site-footer a:focus,
 .entry-meta a:hover,
 .entry-footer a:hover,
+.page-links a:hover,
 .site-footer a:hover {
 	text-decoration:underline;
 	background: url(images/border.png) repeat-x bottom;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-	padding:12px;
-	position:relative;
-	background:#fff;
-	font-size:14px;
-	font-size:1.4rem;
-	text-transform:uppercase;
-	letter-spacing: 2px; 
-	border:1px solid #f2f2f2;
-	border-radius:4px;
-	display:inline-block;
-}
-
-.page-links a{
-	padding:5px;
-	border:1px solid transparent;
-	border-radius:4px;
-
-}
-
-.page-links a:hover{
-	border:1px solid #999;
-	text-decoration: underline;
-	background-image:none;
 }
 
 .tags-links i::before, 
@@ -1545,8 +1535,8 @@ table#wp-calendar,
 	width:16px;
 	-webkit-font-smoothing: antialiased;
 	color: #666666;
-	margin-right:4px;
-	vertical-align: middle;
+	margin-left:4px;
+	vertical-align: middle;display: inline-block;
 }
 
 .tags-links i::before{
@@ -1569,7 +1559,7 @@ table#wp-calendar,
 	line-height: 1; 
 	color: #717171;
 	text-decoration: none; 
-	margin-right:4px;
+	margin-left:4px;
 	vertical-align: middle;
 }
 
@@ -1585,7 +1575,7 @@ table#wp-calendar,
 	line-height: 1; 
 	color: #717171;
 	text-decoration: none; 
-	margin-right:4px;
+	margin-left:4px;
 	vertical-align: middle;
 }
 
@@ -1607,7 +1597,7 @@ table#wp-calendar,
 	-moz-osx-font-smoothing: grayscale;
 	line-height: 1; 
 	text-decoration: none; 
-	margin:0px 10px 0px 5px;
+	margin:0px 5px 0px 10px;
 	padding:0;
 	color:#666;
 }
@@ -1672,7 +1662,7 @@ table#wp-calendar,
 	display:inline-block;
 }
 
-.comment-metadata .edit-link{margin-left:10px;}
+.comment-metadata .edit-link{margin-right:10px;}
 
 .logged-in-as a,
 .comment-metadata a{text-decoration:none; }
@@ -1702,7 +1692,7 @@ table#wp-calendar,
 
 .comment-meta .fn{
 	vertical-align:top;
-	margin-left:15px;
+	margin-right:15px;
 	font-size:18px;
 	font-size:1.8rem;
 }
@@ -1733,7 +1723,7 @@ table#wp-calendar,
 
 .required{
 	font-weight:normal;
-	margin-left:3px;
+	margin-right:3px;
 }
 
 .comment-form input[type='text'], 
@@ -1807,7 +1797,7 @@ table#wp-calendar,
 	background:#fcfcfc;
 }
 
-.featured-post p {text-align: left;}
+.featured-post p {text-align: right;}
 .featured-post a{text-decoration:none;}
 
 .featured-post h2{
@@ -1876,7 +1866,7 @@ table#wp-calendar,
 	line-height: 1; 
 	color: #717171;
 	text-decoration: none; 
-	margin-right:6px;
+	margin-left:6px;
 	margin-bottom:6px;
 	vertical-align: middle;
 }
@@ -1995,7 +1985,7 @@ table#wp-calendar,
 .post #jp-relatedposts h3.jp-relatedposts-headline {
     margin: 0 0 1em;
     display: inline-block;
-    float: left;
+    float: right;
     font-size: 14px;
     font-weight: 700;
     font-family: inherit;
@@ -2147,7 +2137,7 @@ div.bbp-template-notice p{
 }
 
 .subscription-toggle{
-	float:right;
+	float:left;
 	margin-bottom:25px;
 }
 
@@ -2199,8 +2189,8 @@ span.bbp-admin-links a,
 --------------------------------------------------------------*/
 /*This needs to correspond with .content-area to play well with sidebars.*/
 .woocommerce #container{
-	float: left;
-	margin: 0 -25% 0 0%;
+	float: right;
+	margin: 0 0% 0 -25%;
 	padding: 5px 2% 0 2%;
 	width: 70%;
 }
@@ -2307,8 +2297,8 @@ span.bbp-admin-links a,
 	.widget{
 		width:auto;
 		min-width:31%;
-		margin-left:0;
-		margin-right:20px;
+		margin-left:20px;
+		margin-right:0px;
 	}
 
 }
@@ -2392,7 +2382,7 @@ span.bbp-admin-links a,
 	.site-footer .widget,
 	.widget{
 		width:100%;	
-		margin-right:0;
+		margin-left:0;
 	}
 	
 	.site-title {font-size: 4rem;}

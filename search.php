@@ -12,7 +12,7 @@ get_header(); ?>
 		<?php if ( have_posts() && strlen( trim(get_search_query()) ) != 0 ) :?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'aaron' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'aaron' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
@@ -38,7 +38,7 @@ get_header(); ?>
 			<?php
 			/* If the search is not visible in the menu, and there is only one page of search results, display a search form on the search page. */
 			if ( $GLOBALS['wp_query']->max_num_pages < 2  && get_theme_mod('aaron_hide_search') <>"" ){
-				echo '<span class="screen-reader-text">' . __('Would you like to search again?', 'aaron'). '</span><br/>';
+				echo '<span class="screen-reader-text">' . esc_html__('Would you like to search again?', 'aaron'). '</span><br/>';
 				get_search_form();
 			}
 			?>

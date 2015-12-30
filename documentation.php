@@ -9,176 +9,186 @@ function aaron_docs() {
 
 <h1 class="doc-title"><?php _e('Aaron Setup Help', 'aaron'); ?></h1>
 <div class="doc-thanks">
-<b><?php _e('Thank you for downloading and trying out Aaron!', 'aaron'); ?></b><br><br>
-<?php printf( __('If you like the theme, please review it on <a href="%s">WordPress.org</a>', 'aaron'), esc_url('https://wordpress.org/support/view/theme-reviews/aaron') );?><br>
-
-<b><?php printf( __('If you have any questions, accessibility issues or feature requests for this theme, please visit <a href="%s">http://wptema.se/Aaron</a>.', 'aaron'), esc_url('http://wptema.se/Aaron') ); ?></b><br>
-<?php _e('Thank you to everyone who has contributed with ideas and bug reports so far! Your feedback is essential for the future developement of the theme.', 'aaron'); ?>
-<?php _e('Note: Version 2.2 brought some changes to how the sidebars are displayed. If you are using a sidebar on your front page you will need to set it up again.','aaron' ); ?><br>
+	<b><?php esc_html_e( 'Thank you for downloading and trying out Aaron!', 'aaron'); ?></b><br><br>
+	<?php printf( __( 'If you like the theme, please review it on <a href="%s">WordPress.org</a>', 'aaron'), esc_url( 'https://wordpress.org/support/view/theme-reviews/aaron' ) );?><br>
+	<b><?php printf( __( 'If you have any questions, accessibility issues or feature requests for this theme, please visit <a href="%s">http://wptema.se/Aaron</a>.', 'aaron'), esc_url( 'http://wptema.se/Aaron' ) ); ?></b><br>
+	<?php _e( 'Thank you everyone who has contributed with ideas and bug reports so far! Your feedback is essential for the future developement of the theme.', 'aaron'); ?>
 </div>
-
 	<ul class="doc-menu">
-		<li><a href="#aaron-menus"><?php _e('Menus','aaron' ); ?></a></li>
-		<li><a href="#aaron-widget"><?php _e('Widget areas','aaron' ); ?></a></li>
-		<li><a href="#aaron-front"><?php _e('Front page','aaron' ); ?></a></li>
-		<li><a href="#aaron-advanced"><?php _e('Advanced settings','aaron' ); ?></a></li>
-		<li><a href="#aaron-access"><?php _e('Accessibility','aaron' ); ?></a></li>
-		<li><a href="#aaron-fonts"><?php _e('Fonts','aaron' ); ?></a></li>
-		<li><a href="#aaron-plugins"><?php _e('Plugins','aaron' ); ?></a></li>
+		<li><a href="#aaron-menus"><?php esc_html_e( 'Menus','aaron' ); ?></a></li>
+		<li><a href="#aaron-widget"><?php esc_html_e( 'Widget areas','aaron' ); ?></a></li>
+		<li><a href="#aaron-front"><?php esc_html_e( 'Front page and page templates','aaron' ); ?></a></li>
+		<li><a href="#aaron-advanced"><?php esc_html_e( 'Advanced settings','aaron' ); ?></a></li>
+		<li><a href="#aaron-access"><?php esc_html_e( 'Accessibility','aaron' ); ?></a></li>
+		<li><a href="#aaron-fonts"><?php esc_html_e( 'Fonts','aaron' ); ?></a></li>
+		<li><a href="#aaron-plugins"><?php esc_html_e( 'Plugins','aaron' ); ?></a></li>
 	</ul>
 
 	<div class="doc-box" id="aaron-menus">
-		<h3><?php _e('Menus','aaron' ); ?></h3>
+		<h3><?php esc_html_e('Menus','aaron' ); ?></h3>
 		<?php _e('This theme has two optional menu locations, the <b>Primary menu</b> and the <b>Social menu</b>.','aaron' ); ?><br>
 
-		<img src="<?php echo get_template_directory_uri() . '/images/doc-menu.jpg';?>" alt="<?php _e('An image describing how a submenu drops down from the Primary menu','aaron' ); ?>"><br>
+		<img src="<?php echo get_template_directory_uri() . '/images/doc-menu.jpg';?>" alt="<?php esc_attr_e( 'An image describing how a submenu drops down from the Primary menu','aaron' ); ?>"><br>
 			
-		<b><?php _e('The Primary menu','aaron' ); ?></b> <?php _e('is fixed at the top of the website and shows two menu levels. <br>
-		This menu will collapse on smaller screens, and can then be opened and closed by a menu button. It can also be closed with the Esc key.','aaron' ); ?><br>
+		<b><?php esc_html_e( 'The Primary menu','aaron' ); ?></b> <?php _ex('is fixed at the top of the website and shows two menu levels.','The Primary menu', 'aaron')?>
+		<?php _e( 'This menu will collapse on smaller screens, and can then be opened and closed by a menu button. It can also be closed with the Esc key.','aaron' ); ?><br>
 		<?php _e( 'A one line menu is recommended, or the menu will overlap your content. Use submenus instead.','aaron' ); ?><br><br>
 
-		<img src="<?php echo get_template_directory_uri() . '/images/doc-social.jpg';?>" alt="<?php _e('An image describing how social icons are lined up next to each other in the Social menu','aaron' ); ?>"><br>
+		<img src="<?php echo get_template_directory_uri() . '/images/doc-social.jpg';?>" alt="<?php esc_attr_e( 'An image describing how social icons are lined up next to each other in the Social menu','aaron' ); ?>"><br>
 
-		<?php _e('<b>The social menu</b> is at the bottom of the page and shows logos of the social networks of your choice. It does not display any text,<br>
-		but has additional information for screen readers.','aaron' ); ?>
-		<?php _e('The icon will be added automatically, all you need to do is add a link to your menu.','aaron' ); ?><br><br>
-			
-		<b><?php _e('Advanced','aaron' ); ?></b><br>
+		<b><?php esc_html_e( 'The Social menu','aaron' );?></b> <?php _ex( 'is at the bottom of the page and shows logos of the social networks of your choice. It does not display any text, but has additional information for screen readers.','The Social menu', 'aaron' ); ?><br>
+		<?php _e( 'The icon will be added automatically, all you need to do is add a link to your menu.','aaron' ); ?><br><br>
+		<?php _e( 'Create a new menu, then click on Custom links and add your URL.','aaron' ); ?> <?php _e( 'The Link Text that you provide is used as screen reader text.','aaron' ); ?><br>
+		<img src="<?php echo get_template_directory_uri() . '/images/doc-social2.jpg';?>" alt="<?php esc_attr_e( 'An image describing where to add URLS for the social menu.','aaron' ); ?>"><br>
+		<?php _e( 'Choose the theme location named Social Menu, and save.','aaron' ); ?><br>
+		<img src="<?php echo get_template_directory_uri() . '/images/doc-social3.jpg';?>" alt="<?php esc_attr_e( 'An image describing what the social menu will look like when a theme location has been picked.','aaron' ); ?>"><br><br>
+		<?php _e( 'Troubleshooting: If your link or icon is not showing up, try using lower case letters.','aaron' ); ?><br>
+		<?php _e( 'Available icons:','aaron' ); ?><br>
+		<?php echo '<i> dribbble, facebook, flickr, foursquare, github, google plus, instagram, jsfiddle, linkedin, pinterest, reddit, soundcloud, stackoverflow,
+		tumblr, twitter, vimeo, vine<br> yelp, youtube, wordpress, paypal, lastfm, behance, deviantart, spotify, skype, slack, amazon, steam, xing, medium, qq, codepen.</i>';?>
+		<br><br>
+		<b><?php esc_html_e( 'Advanced','aaron' ); ?></b><br>
 		<?php _e('By default, the primary meny also shows the site title and a search form. The search form is not visible on screens smaller than 800 pixels.<br>
-		You can hide these features under the Advanced settings tab in the Customizer. ','aaron' ); ?>
+		You can edit these features under the Advanced settings tab in the Customizer.','aaron' ); ?>
 	</div>
 
 	<div class="doc-box" id="aaron-widgets">
-		<h3><?php _e('Widget areas','aaron' ); ?></h3>
-		<?php _e('The theme now has two different sidebars: one for the front page and blog index, and one for other pages.','aaron' ); ?><br>
-		<?php _e('To show either sidebar, all you need to do is place your widgets inside them.','aaron' ); ?><br>
-		<?php _e('To hide either sidebar, remove the widgets. The content of the page will expand to full width when the sidebar is hidden.','aaron' ); ?><br><br>
-		<?php _e('Both the sidebars and the footer widget area can hold <b>any number of widgets</b>. The footer widget area is shown on all pages.','aaron' ); ?><br>
-		<?php _e('There is also one additional widget area in the footer below the social menu, where you can place a text widget and add your copyright text.','aaron' );?> <br><br>
+		<h3><?php esc_html_e( 'Widget areas','aaron' ); ?></h3>
+		<?php _e( 'The theme now has two different sidebars: one for the front page and blog index, and one for other pages.','aaron' ); ?><br>
+		<?php _e( 'To show either sidebar, all you need to do is place your widgets inside them.','aaron' ); ?><br>
+		<?php _e( 'To hide either sidebar, remove the widgets. The content of the page will expand to full width when the sidebar is hidden.','aaron' ); ?><br><br>
+		<?php _e( 'Both the sidebars and the footer widget area can hold <b>any number of widgets</b>. The footer widget area is shown on all pages.','aaron' ); ?><br>
+		<?php _e( 'There is also one additional widget area in the footer below the social menu, where you can place a text widget and add your copyright text.','aaron' );?> <br>
 	</div>
 
 	<div class="doc-box" id="aaron-front">
-			<h3><?php _e('Frontpage','aaron' ); ?></h3>
-			<?php _e('The standard front page has the following features:','aaron' ); ?><br>
-			<?php _e('<b>Site title:</b> You will find an option to hide or change the color of your site title in the customizer.','aaron' ); ?><br>
-			<?php _e('<b>Call to action:</b> The Call to Action is a great way to get your visitors attention. In the customizer you can:','aaron' ); ?>
+			<h3><?php  esc_html_e('Front page','aaron' ); ?></h3>
+			<?php _e( 'The standard front page has the following features:','aaron' ); ?><br>
+
+			<b><?php esc_html_e( 'Site title:','aaron')?></b> <?php _e( 'You will find an option to hide or change the color of your site title in the customizer.','aaron' ); ?><br>
+			<b><?php esc_html_e( 'Call to action:','aaron');?></b> <?php _e( 'The Call to Action is a great way to get your visitors attention. In the customizer you can:','aaron' ); ?>
 			<ul>
-				<li><?php _e('Add your own text','aaron' ); ?></li>
-				<li><?php _e('Add a link','aaron' )?></li>		
-				<li><?php _e('Change colors','aaron' )?></li>
-				<li><?php _e('Hide the button','aaron' ); ?></li>		
+				<li><?php esc_html_e( 'Add your own text','aaron' ); ?></li>
+				<li><?php esc_html_e( 'Add a link','aaron' ); ?></li>		
+				<li><?php esc_html_e( 'Change colors','aaron' ); ?></li>
+				<li><?php esc_html_e( 'Hide the button','aaron' ); ?></li>		
 			</ul>
-			<?php _e('<b>Highlights:</b> This is a flexible way for you to feature different sections of your website. You can add upp to nine highlights.','aaron' );?> <br>
+			<b><?php esc_html_e( 'Highlights:','aaron');?></b>  <?php _e( 'This is a flexible way for you to feature different sections of your website. You can add upp to nine highlights.','aaron' );?><br>
 			
-			<?php _e('In the customizer you can:','aaron' ); ?>
+			<?php _e( 'In the customizer you can:','aaron' ); ?>
 			<ul>
-				<li><?php _e('Add your own text','aaron' )?></li>
-				<li><?php _e('Add a link','aaron' )?></li>	
-				<li><?php _e('Add an icon or upload an image','aaron' )?></li>
-				<li><?php _e('Change colors','aaron' )?></li>	
-				<li><?php _e('Hide the individual highlights or all of them','aaron' )?></li>
+				<li><?php esc_html_e( 'Add your own text','aaron' ); ?></li>
+				<li><?php esc_html_e( 'Add a link','aaron' ); ?></li>	
+				<li><?php esc_html_e( 'Add an icon or upload an image','aaron' ); ?></li>
+				<li><?php esc_html_e( 'Change colors','aaron' ); ?></li>	
+				<li><?php esc_html_e( 'Hide the individual highlights or all of them','aaron' ); ?></li>
 			</ul>
-			<?php _e('<b>Tagline:</b> You will find an option to hide your tagline in the customizer.','aaron' )?><br>
-			<?php _e('<b>Header Background:</b> You can change the background image or background color in the customizer.','aaron' )?> <br><br>
+			<b><?php esc_html_e( 'Tagline:','aaron');?></b>	<?php  _e( 'You will find an option to hide your tagline in the customizer.','aaron' ); ?><br>
+			<b><?php esc_html_e( 'Header Background:','aaron');?></b> <?php _e( 'You can change the background image or background color in the customizer.','aaron' ); ?><br><br>
 
-			<h3><?php _e('Custom Frontpage','aaron' )?></h3>
-			<?php _e('<b>Custom Landing page:</b> To use the custom landing page template, create a new page and select the template under Page Attributes.','aaron');?><br>
-			<img src="<?php echo get_template_directory_uri() . '/images/doc-page-template.jpg';?>" alt="<?php _e('An image describing how to set a page template.','aaron' )?>"><br>
-			<?php _e('Then set your new page as your static front page in the customizer or under Settings > Reading.','aaron' )?><br>
-			<img src="<?php echo get_template_directory_uri() . '/images/doc-static.jpg';?>" alt="<?php _e('An image describing how to set a static front page.','aaron' )?>"><br>
-			<?php _e('<b>Please note:</b> The landing page template only shows your header, it does NOT display your featured content, post content or page content. ','aaron' )?><br><br>
+			<h3><?php esc_html_e( 'Custom front page','aaron' ); ?></h3>
+			<?php _e( 'To use a custom page template for the front page, create a new page and select the template under Page Attributes.','aaron');?><br>
+			<img src="<?php echo get_template_directory_uri() . '/images/doc-page-template.jpg';?>" alt="<?php esc_attr_e( 'An image describing how to set a page template.','aaron' ); ?>"><br>
+			<?php _e( 'Then set your new page as your static front page in the customizer or under Settings > Reading.','aaron' ); ?><br>
+			<img src="<?php echo get_template_directory_uri() . '/images/doc-static.jpg';?>" alt="<?php esc_attr_e( 'An image describing how to set a static front page.','aaron' ); ?>"><br>
 
-			<?php _e('<b>Page sections:</b> Page sections are a great way to display your shortcodes, testimonials, pricing tables, contact information and similar.', 'aaron' ); ?><br>
-			<?php _e('The two page sections can display up to 3 pages each. Pages in the top section are displayed above the blog content, and pages in the bottom section are displayed below.','aaron' )?><br>
-			<?php _e('You can also show your page sections without your blog content by setting a static front page, using the <i>Sections</i> page template.','aaron' )?><br>
+			<h3><?php esc_html_e( 'Templates','aaron' ); ?></h3>
+			<?php _e( 'The Landing page template only shows your header, it does not display your footer, your featured content, post content or page content.','aaron' ); ?><br>
+			<?php _e( 'The Header & Footer page template only shows your header and footer, it does not display your featured content, post content or page content.','aaron' ); ?>  
+			<?php _e( 'It will display the footer widget area, but not the sidebar.','aaron' ); ?><br><br>
+
+			<b><?php esc_html_e( 'Page sections','aaron' ); ?></b><br>
+            <?php _e( 'Page sections are a great way to display your shortcodes, testimonials, pricing tables, contact information and similar.', 'aaron' ); ?><br>
+			<?php _e( 'The two page sections can display up to 3 pages each. Pages in the top section are displayed above the blog content, and pages in the bottom section are displayed below.','aaron' ); ?><br>
+			<?php _e( 'You can also show your page sections without your blog content by setting a static front page, using the Sections page template.','aaron' ); ?><br>
 	</div>
 
 	<div class="doc-box" id="aaron-advanced">
 		<h3><?php _e('Advanced settings','aaron' ); ?></h3>
-		<?php _e('Under the Advanced settings tab in the customizer you will find the following options:','aaron' )?><br>
+		<?php _e('Under the Advanced settings tab in the customizer you will find the following options:','aaron' ); ?><br>
 		<ul>
-			<li><?php _e('Hide the meta information. -This will hide the category and tags.','aaron' )?></li>
-			<li><?php _e('Hide the author and post date information.','aaron' )?></li>
-			<li><?php _e('Show the breadcrumb navigation. -Breadcrumbs are shown below the post title. ','aaron' )?></li>
-			<li><?php _e('Hide the search form in the header menu.','aaron' )?></li>
-			<li><?php _e('Hide the Site title in the header menu.','aaron' )?></li>
+			<li><?php esc_html_e( 'Show the excerpt instead of the full content on the front page, blog listing and archives','aaron' ); ?> <?php _e('Note: Search results show excerpts by default.','aaron' ); ?></li>
+			<li><?php esc_html_e( 'Hide the meta information. -This will hide the category and tags.','aaron' ); ?></li>
+			<li><?php esc_html_e( 'Hide the author and post date information.','aaron' ); ?></li>
+			<li><?php esc_html_e( 'Show the breadcrumb navigation. -Breadcrumbs are shown below the post title. ','aaron' ); ?></li>
+			<li><?php esc_html_e( 'Hide the search form in the header menu.','aaron' ); ?></li>
+			<li><?php esc_html_e( 'Show the search form in the header menu on all screen sizes.','aaron' ); ?></li>
+			<li><?php esc_html_e( 'Hide the Site title in the header menu.','aaron' ); ?></li>
+		</ul>
+		<br>
+			<b><?php esc_html_e( 'Header settings for individual posts and pages','aaron' ); ?></b><br>
+			<?php _e( 'To display the header together with an individual post or page, go to Edit mode and activate the Header settings that are located below your post content.','aaron' ); ?><br>
+			<?php _e( 'Your post view will inherit the settings from the front page.','aaron' ); ?><br>
+			<?php _e( 'Options:','aaron' ); ?><br>
+		<ul>
+			<li><?php esc_html_e( 'Show the header.', 'aaron' ); ?></li>
+			<li><?php esc_html_e( 'Use the featured image as header image. This requires the header to be active, and a featured image to be set. The image will inherit the background position from the default header.', 'aaron' ); ?></li>
+			<li><?php esc_html_e( 'Hide the Call to Action button.', 'aaron' ); ?></li>
+			<li><?php esc_html_e( 'Hide the Highlights.', 'aaron' ); ?></li>
+			<li><?php esc_html_e( 'Hide the site Tag line (Description).', 'aaron' ); ?></li>
+			<li><?php esc_html_e( 'Replace the site title in the header with your post or page title.', 'aaron' ); ?></li>
 		</ul>
 	</div>
 
 	<div class="doc-box" id="aaron-access">
-		<h3><?php _e('Accessibility','aaron' ); ?></h3>
-		<?php _e("Note: In version 2.0, the accessibility settings were moved from the Advanced Settings to it's own setting in the customizer.","aaron" ); ?>
-		<?php _e('Changing the colors of the theme can affect accessibility.','aaron'); ?>
+		<h3><?php esc_html_e( 'Accessibility','aaron' ); ?></h3>
+		<?php _e( "Note: In version 2.0, the accessibility settings were moved from the Advanced Settings to it's own setting in the customizer.","aaron" ); ?>
+		<?php _e( 'Changing the colors of the theme can affect accessibility.','aaron'); ?>
 
 		<ul>
-			<li><?php _e('Skip link: the theme has one skip link at the very top that lets you skip past the main menu.','aaron' )?><br>
-				<?php _e('if Highligts are used, you skip to the first Highlight, otherwise you skip to the main content','aaron' )?>
+			<li><?php esc_html_e( 'Skip link: the theme has one skip link at the very top that lets you skip past the main menu.','aaron' ); ?><br>
+				<?php esc_html_e( 'If Highligts are used, you skip to the first Highlight, otherwise you skip to the main content.','aaron' ); ?>
 			</li>
-			<li><?php _e('In the customizer you can add personalized screen reader texts for your sidebar and footer.','aaron' )?></li>
-			<li><?php _e('There is also an option to change text displayed as UPPERCASE to Capitalized.','aaron' )?></li>
-			<li><?php _e('Known issues:','aaron' )?>
+			<li><?php esc_html_e( 'In the customizer you can add personalized screen reader texts for your sidebar and footer.','aaron' ); ?></li>
+			<li><?php esc_html_e( 'There is also an option to change text displayed as UPPERCASE to Capitalized.','aaron' ); ?></li>
+			<li><?php esc_html_e( 'Known issues:','aaron' ); ?>
 				<ul>
-					<li><?php _e('Some widgets that uses forms (category dropdown) are missing form labels. This is a known issue with WordPress.','aaron' )?></li>
-					<li><?php _e('Menus have a visible focus and can be tabbed through, but you can not navigate them using the arrow keys.','aaron' )?></li>
+					<li><?php esc_html_e( 'Some widgets that uses forms (category dropdown) are missing form labels. This is a known issue with WordPress.','aaron' ); ?></li>
+					<li><?php esc_html_e( 'Menus have a visible focus and can be tabbed through, but you can not navigate them using the arrow keys.','aaron' ); ?></li>
 				</ul>
 			</li>
 		</ul>
 	</div>
 
 		<div class="doc-box" id="aaron-fonts">
-		<h3><?php _e('Fonts','aaron' ); ?></h3>
+		<h3><?php esc_html_e( 'Fonts','aaron' ); ?></h3>
 		<?php _e("Aaron uses Open Sans for body, and defaults to Montserrat for headings, menus and footer texts.","aaron" ); ?>
 		<?php _e('You will find an option to change Montserrat to a different font in the customizer.','aaron'); ?><br><br>
-		<ul>
-			<li><?php _e('Skip link: the theme has one skip link at the very top that lets you skip past the main menu.','aaron' )?><br>
-				<?php _e('if Highligts are used, you skip to the first Highlight, otherwise you skip to the main content','aaron' )?>
-			</li>
-			<li><?php _e('In the customizer you can add personalized screen reader texts for your sidebar and footer.','aaron' )?></li>
-			<li><?php _e('There is also an option to change text displayed as UPPERCASE to Capitalized.','aaron' )?></li>
-			<li><?php _e('Known issues:','aaron' )?>
-				<ul>
-					<li><?php _e('Some widgets that uses forms (category dropdown) are missing form labels. This is a known issue with WordPress.','aaron' )?></li>
-					<li><?php _e('Menus have a visible focus and can be tabbed through, but you can not navigate them using the arrow keys.','aaron' )?></li>
-				</ul>
-			</li>
-		</ul>
 	</div>
 
 	<div class="doc-box" id="aaron-plugins">
-		<h3><?php _e('Plugins','aaron' ); ?></h3>
+		<h3><?php esc_html_e( 'Plugins','aaron' ); ?></h3>
 		<?php _e('Aaron has been tested with and style has been added for the following plugins:', 'aaron' ); ?>
 		<ul>
-			<li><b><?php _e('Woocommerce','aaron' )?></b></li>
-			<li><b><?php _e('bbPress','aaron' )?></b></li>
-			<li><b><?php _e('Jetpack','aaron' )?></b><br><?php _e(' Note: Not all of Jetpacks modules are accessibe, and some uses iframes. I have increased the contrast of some of the modules.','aaron' )?></li>
-				<?php _e('Recommended modules:','aaron' )?><br>
+			<li><b><?php esc_html_e( 'Woocommerce','aaron' ); ?></b></li>
+			<li><b><?php esc_html_e( 'bbPress','aaron' ); ?></b></li>
+			<li><b><?php esc_html_e( 'Jetpack','aaron' ); ?></b><br><?php esc_html_e( 'Note: Not all of Jetpacks modules are accessibe, and some uses iframes. I have increased the contrast of some of the modules.','aaron' ); ?></li>
+				<?php esc_html_e( 'Recommended modules:','aaron' ); ?><br>
 				<ul>
-					<li><b><?php _e('Featured content','aaron' )?></b><br>
-						<?php _e('-Once Jetpack has been activated, you can select up to six posts or pages as a front page feature. Chose a tag and add it to your posts to seperate them from the rest.<br>
-						You can also choose a headline for your featured section. Featured images are optional and the recommended image size is 360x300 pixels.','aaron' )?><br>
-						<img src="<?php echo get_template_directory_uri() . '/images/doc-featured.jpg';?>" alt="<?php _e('An image describing three featured posts on the front page, two with featured images and one 
-						that only displays the post title.', 'aaron') ?>"><br>
+					<li><b><?php esc_html_e( 'Featured content','aaron' ); ?></b><br>
+						<?php _e( '-Once Jetpack has been activated, you can select up to six posts or pages as a front page feature. Chose a tag and add it to your posts to separate them from the rest.','aaron');?><br>
+						<?php _e( 'You can also choose a headline for your featured section. Featured images are optional and the recommended image size is 360x300 pixels.','aaron' ); ?><br>
+						<img src="<?php echo get_template_directory_uri() . '/images/doc-featured.jpg';?>" alt="<?php esc_attr_e( 'An image describing three featured posts on the front page, two with featured images and one that only displays the post title.', 'aaron') ?>"><br>
 					</li>
-					<li><b><?php _e('Custom Content Type: Portfolio','aaron' )?></b><br>
-						<?php _e('Aaron also supports Jetpack','aaron' )?> 
-						<b><?php _e('Portfolios','aaron' )?></b>. <a href="<?php echo 'http://en.support.wordpress.com/portfolios/'; ?>"><i><?php _e('Read more about how to setup your Portfolio on Jetpacks support site.','aaron' )?></i></a><br><br>
-						<img src="<?php echo get_template_directory_uri() . '/images/doc-portfolio.jpg';?>" alt="<?php _e('An image describing two portfolio items.','aaron' )?>"><br>
+					<li><b><?php esc_html_e( 'Custom Content Type: Portfolio','aaron' ); ?></b><br>
+						<?php esc_html_e( 'Aaron also supports Jetpack','aaron' ); ?> 
+						<b><?php esc_html_e( 'Portfolios','aaron' ); ?></b>.
+						<?php printf( __( '<a href="%s">Read more about how to setup your Portfolio on Jetpacks support site.</a>', 'aaron'), esc_url( 'http://en.support.wordpress.com/portfolios/' ) );?>
+						 <br><br>
+						<img src="<?php echo get_template_directory_uri() . '/images/doc-portfolio.jpg';?>" alt="<?php esc_attr_e( 'An image describing two portfolio items.','aaron' ); ?>"><br>
 					</li>
-
-					<li><b><?php _e('Custom Content Type: Testimonials','aaron' )?></b><br>
-						<?php _e('Aaron also supports Jetpack','aaron' )?> <b><?php _e('Testimonials','aaron' )?></b>. <br>
-						<?php _e('<b>Tip:</b> I recommend creating a page and adding this shortcode, and then including the page as a front page section.','aaron' )?> <br> &nbsp; [testimonials columns=3 showposts=3]<br>
-
-						<a href="<?php echo 'https://en.support.wordpress.com/testimonials-shortcode/'; ?>"><i><?php _e('Read more about how to setup your Testimonials on Jetpacks support site.','aaron' )?></i></a><br><br>		
+					<li><b><?php esc_html_e( 'Custom Content Type: Testimonials','aaron' ); ?></b><br>
+						<?php _e( 'Aaron also supports Jetpack','aaron' ); ?> <b><?php _e('Testimonials','aaron' ); ?></b>. <br>
+						<b><?php _e( 'Tip:','aaron'); ?></b> <?php _e( 'I recommend creating a page and adding this shortcode, and then including the page as a front page section.','aaron' ); ?> <br> &nbsp; [testimonials columns=3 showposts=3]<br>
+						<?php printf( __( '<a href="%s">Read more about how to setup your Testimonials on Jetpacks support site.</a>', 'aaron'), esc_url( 'https://en.support.wordpress.com/testimonials-shortcode/' ) );?>
+						<br><br>		
 					</li>
-
-					<li><b><?php _e('Sharing','aaron' )?></b><br>
-						<?php _e('-If you activate Jetpack sharing, your buttons will be displayed below the meta information, to the right of your post content.','aaron' )?><br>
-						<img src="<?php echo get_template_directory_uri() . '/images/doc-share.jpg';?>" alt="<?php _e('An image describing how sharing buttons are added to the post footer below Tags and Categories.','aaron' )?>"><br>
+					<li><b><?php esc_html_e( 'Sharing','aaron' ); ?></b><br>
+						<?php esc_html_e( '-If you activate Jetpack sharing, your buttons will be displayed below the meta information, to the right of your post content.','aaron' ); ?><br>
+						<img src="<?php echo get_template_directory_uri() . '/images/doc-share.jpg';?>" alt="<?php esc_attr_e( 'An image describing how sharing buttons are added to the post footer below Tags and Categories.','aaron' ); ?>"><br>
 					</li>
-					<li><b><?php _e('Contact Form','aaron' )?></b></li>
-					<li><?php _e('<b>Site icon</b> -Use this module to add a favicon to your site.','aaron' )?></li>
-					<li><?php _e('<b>Site logo</b> -Once Jetpack has been activated, you can add a logo above your Site title on the front page. You will find this setting in the customizer.','aaron' )?></li>
+					<li><b><?php esc_html_e( 'Contact Form','aaron' ); ?></b></li>
+					<li><b><?php esc_html_e( 'Site logo','aaron'); ?> </b> <?php esc_html_e( 'Once Jetpack has been activated, you can add a logo above your Site title on the front page. You will find this setting in the customizer.','aaron' ); ?></li>
 				</ul>
 		</ul>
 		</ul>

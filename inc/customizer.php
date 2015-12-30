@@ -155,6 +155,8 @@ function aaron_customize_register( $wp_customize ) {
 
 	$wp_customize->get_section('header_image')->title = __( 'Header background', 'aaron');
 
+	$wp_customize->get_control( 'header_textcolor' )->label = __( 'Site Title Color', 'aaron');
+
 	$wp_customize->add_setting( 'aaron_header_bgcolor', array(
 		'default'        => '#4777a6',
 		'sanitize_callback' => 'sanitize_hex_color',
@@ -169,7 +171,7 @@ function aaron_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aaron_header_bgpos',		 array(
 		'sanitize_callback' => 'aaron_sanitize_bgpos',
-		'default' => 'center top'
+		'default' => 'center center'
 	) );
 
 	$wp_customize->add_control( 'aaron_header_bgpos',		array(
@@ -222,6 +224,19 @@ function aaron_customize_register( $wp_customize ) {
 	'section' => 'header_image',
 	) );
 
+
+	/*Showexcerpt instead of full content*/
+	$wp_customize->add_setting( 'aaron_show_excerpt',		array(
+			'sanitize_callback' => 'aaron_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('aaron_show_excerpt',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to show the excerpt instead of the full content on the front page, blog listing and archives.', 'aaron' ),
+			'section' => 'aaron_section_advanced',
+		)
+	);
+
 	//Hide meta for search results
 	$wp_customize->add_setting( 'aaron_hide_meta_search',		array(
 			'sanitize_callback' => 'aaron_sanitize_checkbox',
@@ -229,7 +244,7 @@ function aaron_customize_register( $wp_customize ) {
 	);
 	$wp_customize->add_control('aaron_hide_meta_search',		array(
 			'type' => 'checkbox',
-			'label' =>  __( 'Check this box to hide the meta information on the search result.', 'aaron' ),
+			'label' =>  __( 'Check this box to hide the meta information on the search results.', 'aaron' ),
 			'section' => 'aaron_section_advanced',
 		)
 	);
@@ -515,6 +530,20 @@ function aaron_customize_register( $wp_customize ) {
 		)
 	);
 
+
+	$wp_customize->add_setting( 'aaron_show_search',		array(
+			'sanitize_callback' => 'aaron_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control('aaron_show_search',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'The search form in the header menu is hidden on smaller screens by default. Check this box to show it on all screen sizes.', 'aaron' ),
+			'section' => 'aaron_section_advanced',
+		)
+	);
+
+
 	$wp_customize->add_setting( 'aaron_hide_title',		array(
 			'sanitize_callback' => 'aaron_sanitize_checkbox',
 		)
@@ -545,7 +574,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'aaron_top_section', array(
 			'title' => __( 'Top Section', 'aaron' ),
 			'panel'  => 'aaron_sections_panel',
-			'description' => __('Choose upto 3 pages that will be displayed above your blog content.', 'aaron'),
+			'description' => __('Select up to 3 pages that will be displayed above your blog content.', 'aaron'),
 	) );
 
 	for ($i = 1; $i < 4; $i++) {
@@ -557,7 +586,7 @@ function aaron_customize_register( $wp_customize ) {
 			$wp_customize->add_control( 'aaron_top_section' . $i,		array(
 				'default' => 0,
 			    'type' => 'dropdown-pages',
-		        'label' => __( 'Choose a page:','aaron'),
+		        'label' => __( 'Select a page:','aaron'),
 				'section' => 'aaron_top_section',
 			) );
 	}
@@ -566,7 +595,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'aaron_bottom_section', array(
 			'title' => __( 'Bottom Section', 'aaron' ),
 			'panel'  => 'aaron_sections_panel',
-			'description' => __('Choose upto 3 pages that will be displayed below your blog content, but above the footer.', 'aaron'),
+			'description' => __('Select up to 3 pages that will be displayed below your blog content, but above the footer.', 'aaron'),
 	) );
 
 	for ($i = 1; $i < 4; $i++) {
@@ -578,7 +607,7 @@ function aaron_customize_register( $wp_customize ) {
 			$wp_customize->add_control( 'aaron_bottom_section' . $i,		array(
 				'default' => 0,
 			    'type' => 'dropdown-pages',
-		        'label' => __( 'Choose a page:','aaron'),
+		        'label' => __( 'Select a page:','aaron'),
 				'section' => 'aaron_bottom_section',
 			) );
 	}
@@ -626,7 +655,7 @@ function aaron_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'aaron_font' , array(
-		'default'        => 'sans-serif',
+		'default'        => 'Montserrat',
 		'sanitize_callback' => 'sanitize_text_field'
 	) );
 	
