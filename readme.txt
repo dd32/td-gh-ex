@@ -73,9 +73,9 @@ screenshot.png image, Copyright 2015 Dominic_N
 screenshot.png licensed under the terms of the GNU GPL, Version 2 (or later)
 Source: http://postimg.org/image/jn3v0smu5/
 
-elegant.jpg image, Copyright Wikipedia
-elegant.jpg is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic license
-Source:https://commons.wikimedia.org/wiki/File:Elegant_landing_of_a_swan,_Skien.jpg
+water-lake-mountains-sky.jpg image, Copyright pexels
+water-lake-mountains-sky.jpg is licensed under  Creative Commons Zero (CC0) license
+Source:https://www.pexels.com/photo/water-lake-mountains-sky-9458/
 
 html5shiv  Copyright (c) 2014 Alexander Farkas (aFarkas).
 Dual licensed under the MIT or GPL Version 2 licenses
