@@ -84,7 +84,7 @@ if($newnum != 1){
 <h2 itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2></header>
 <?php if($newnum == 1){ ?>
 <p class="entry-meta">
-<span class="entry-author"><i class="fa fa-user"></i> <a href="<?php echo get_site_url(); ?>/author/<?php echo get_the_author() ?>" rel="author"><span ><?php echo get_the_author() ?></span></a></span>
+<span class="entry-author"><i class="fa fa-user"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><span ><?php echo get_the_author() ?></span></a></span>
 
 <span class="time-drag"><i class="fa fa-calendar-o"></i><span class="dtime"><?php the_time('F j, Y'); ?></span></span>
 <span class="comment-count"><i class="fa fa-comments"></i> <a href="<?php the_permalink() ?>/#comment"><?php echo get_comments_number(); ?></a></span>
@@ -379,7 +379,7 @@ endwhile; ?>
  <div class="blog-content-hldr">
     <h2 itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
   <div class="entry-metatag">
-<span class="entry-author"><i class="fa fa-user"></i> <a href="<?php echo get_site_url(); ?>/author/<?php echo get_the_author() ?>" rel="author"><span><?php echo get_the_author() ?></span></a></span>
+<span class="entry-author"><i class="fa fa-user"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><span><?php echo get_the_author() ?></span></a></span>
 <span class="time-drag"><i class="fa fa-calendar-o"></i><span class="dtime"><?php the_time('F j, Y'); ?></span></span>
 <span class="comment-count"><i class="fa fa-comments"></i> <a href="<?php the_permalink() ?>/#comment"><?php echo get_comments_number(); ?></a></span>
  </div> 

@@ -28,7 +28,7 @@ function drag_themes_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( '<i class="fa fa-calendar-o"></i> %s', 'post date', 'howl-themes' ),
+		_x( '<i class="fa fa-calendar-o"></i> %s', 'post date', 'aqueduct' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
@@ -45,21 +45,21 @@ function drag_themes_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ' ', 'howl-themes' ) );
+		$categories_list = get_the_category_list( __( ' ', 'aqueduct' ) );
 		if ( $categories_list && drag_themes_categorized_blog() ) {
-			printf( '<div class="cat-links"><i class="fa fa-folder-open"></i>' . __( ' Category %1$s', 'howl-themes' ) . '</div>', $categories_list );
+			printf( '<div class="cat-links"><i class="fa fa-folder-open"></i>' . __( ' Category %1$s', 'aqueduct' ) . '</div>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ' ', 'howl-themes' ) );
+		$tags_list = get_the_tag_list( '', __( ' ', 'aqueduct' ) );
 		if ( $tags_list ) {
-			printf( '<div class="tags-links"><i class="fa fa-tags"></i>' . __( ' Tagged %1$s', 'howl-themes' ) . '</div>', $tags_list );
+			printf( '<div class="tags-links"><i class="fa fa-tags"></i>' . __( ' Tagged %1$s', 'aqueduct' ) . '</div>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'howl-themes' ), __( '1 Comment', 'howl-themes' ), __( '% Comments', 'howl-themes' ) );
+		comments_popup_link( __( 'Leave a comment', 'aqueduct' ), __( '1 Comment', 'aqueduct' ), __( '% Comments', 'aqueduct' ) );
 		echo '</span>';
 	}
 
@@ -79,45 +79,45 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', 'howl-themes' ), single_cat_title( '', false ) );
+		$title = sprintf( __( 'Category: %s', 'aqueduct' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag: %s', 'howl-themes' ), single_tag_title( '', false ) );
+		$title = sprintf( __( 'Tag: %s', 'aqueduct' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( __( 'Author: %s', 'howl-themes' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( __( 'Author: %s', 'aqueduct' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( __( 'Year: %s', 'howl-themes' ), get_the_date( _x( 'Y', 'yearly archives date format', 'howl-themes' ) ) );
+		$title = sprintf( __( 'Year: %s', 'aqueduct' ), get_the_date( _x( 'Y', 'yearly archives date format', 'aqueduct' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( __( 'Month: %s', 'howl-themes' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'howl-themes' ) ) );
+		$title = sprintf( __( 'Month: %s', 'aqueduct' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'aqueduct' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( __( 'Day: %s', 'howl-themes' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'howl-themes' ) ) );
+		$title = sprintf( __( 'Day: %s', 'aqueduct' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'aqueduct' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = _x( 'Asides', 'post format archive title', 'howl-themes' );
+			$title = _x( 'Asides', 'post format archive title', 'aqueduct' );
 		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = _x( 'Galleries', 'post format archive title', 'howl-themes' );
+			$title = _x( 'Galleries', 'post format archive title', 'aqueduct' );
 		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = _x( 'Images', 'post format archive title', 'howl-themes' );
+			$title = _x( 'Images', 'post format archive title', 'aqueduct' );
 		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = _x( 'Videos', 'post format archive title', 'howl-themes' );
+			$title = _x( 'Videos', 'post format archive title', 'aqueduct' );
 		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = _x( 'Quotes', 'post format archive title', 'howl-themes' );
+			$title = _x( 'Quotes', 'post format archive title', 'aqueduct' );
 		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = _x( 'Links', 'post format archive title', 'howl-themes' );
+			$title = _x( 'Links', 'post format archive title', 'aqueduct' );
 		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = _x( 'Statuses', 'post format archive title', 'howl-themes' );
+			$title = _x( 'Statuses', 'post format archive title', 'aqueduct' );
 		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = _x( 'Audio', 'post format archive title', 'howl-themes' );
+			$title = _x( 'Audio', 'post format archive title', 'aqueduct' );
 		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = _x( 'Chats', 'post format archive title', 'howl-themes' );
+			$title = _x( 'Chats', 'post format archive title', 'aqueduct' );
 		}
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( __( 'Archives: %s', 'howl-themes' ), post_type_archive_title( '', false ) );
+		$title = sprintf( __( 'Archives: %s', 'aqueduct' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( __( '%1$s: %2$s', 'howl-themes' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		$title = sprintf( __( '%1$s: %2$s', 'aqueduct' ), $tax->labels->singular_name, single_term_title( '', false ) );
 	} else {
-		$title = __( 'Archives', 'howl-themes' );
+		$title = __( 'Archives', 'aqueduct' );
 	}
 
 	/**

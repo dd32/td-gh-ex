@@ -16,7 +16,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'howl-themes' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'aqueduct' ),
 				'after'  => '</div>',
 			) );
 		?>

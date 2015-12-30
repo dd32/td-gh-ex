@@ -29,10 +29,10 @@ function howlthemes_foot(){?>
    <div class="copyright">
    <div class="container">
    <div class="copyright-text">
-  <?php _e('Designed By', 'howl-themes'); ?> <a href="http://www.howlthemes.com" target="blank" style="color:#efefef;text-decoration:none;">HowlThemes</a>
+  <?php _e('Designed By', 'aqueduct'); ?> <a href="http://www.howlthemes.com" target="blank" style="color:#efefef;text-decoration:none;">HowlThemes</a>
    </div>
    <div class="back-top">
-   <a href="#" id="back-to-top" title="Back to top"><?php _e('Back To Top', 'howl-themes'); ?><i class="fa fa-arrow-circle-o-up"></i></a>
+   <a href="#" id="back-to-top" title="Back to top"><?php _e('Back To Top', 'aqueduct'); ?><i class="fa fa-arrow-circle-o-up"></i></a>
    </div>
    </div>
    </div>
@@ -46,9 +46,9 @@ function howlthemes_foot(){?>
 function howlthemes_customizer( $wp_customize ) {
     
   $wp_customize->add_section( 'howl-themes_logo_section' , array(
-    'title'       => __( 'Logo', 'howl-themes' ),
+    'title'       => __( 'Logo', 'aqueduct' ),
     'priority'    => 30,
-    'description' => 'Upload a logo to replace the default site name and description in the header',
+    'description' => __('Upload a logo to replace the default site name and description in the header', 'aqueduct' ),
 ) );
 
   $wp_customize->add_setting( 'howl-themes_logo',
@@ -57,38 +57,22 @@ function howlthemes_customizer( $wp_customize ) {
     ));
 
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'howl-themes_logo', array(
-    'label'    => __( 'Logo', 'howl-themes' ),
+    'label'    => __( 'Logo', 'aqueduct' ),
     'section'  => 'howl-themes_logo_section',
     'settings' => 'howl-themes_logo',
 ) ) );
 
- $wp_customize->add_section( 'howl-themes_favicon_section' , array(
-    'title'       => __( 'Favicon', 'howl-themes' ),
-    'priority'    => 30,
-    'description' => 'Upload custom favicon.',
-) );
-
-  $wp_customize->add_setting( 'howl-themes_favicon',
-   array ( 'default' => '',
-    'sanitize_callback' => 'esc_url_raw'
-    ));
-
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'howl-themes_favicon', array(
-    'label'    => __( 'Favicon', 'howl-themes' ),
-    'section'  => 'howl-themes_favicon_section',
-    'settings' => 'howl-themes_favicon',
-) ) );
 
 // Styling Panel
 $wp_customize->add_panel( 'styling', array(
-  'title' => __( 'Styling', 'howl-themes'),
+  'title' => __( 'Styling', 'aqueduct'),
   'priority' => 60, // Mixed with top-level-section hierarchy.
 ) );
 
 //Theme Layout
 
 $wp_customize->add_section( 'howl-themes_layout_section' , array(
-    'title'       => __( 'Choose layout', 'howl-themes' ),
+    'title'       => __( 'Choose layout', 'aqueduct' ),
     'priority'    => 30,
     'panel' => 'styling',
 
@@ -106,7 +90,7 @@ $wp_customize->add_control(
     'layout_placement',
     array(
         'type' => 'radio',
-        'label' => 'Theme Layout',
+        'label' => __('Theme Layout', 'aqueduct' ),
         'section' => 'howl-themes_layout_section',
         'choices' => array(
             'full' => 'Full Width',
@@ -117,10 +101,10 @@ $wp_customize->add_control(
 
 //Background Image
   $wp_customize->add_section( 'howl-themes_bg_img' , array(
-    'title'       => __( 'Background Image', 'howl-themes' ),
+    'title'       => __( 'Background Image', 'aqueduct' ),
     'priority'    => 30,
-    'description' => 'It will work only if theme layout is Boxed.',
-    'panel' => 'styling',
+    'description' => __('It will work only if theme layout is Boxed', 'aqueduct' ),
+        'panel' => 'styling',
 ) );
 
   $wp_customize->add_setting( 'howl-themes_bgimg',
@@ -135,14 +119,14 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'howl
 
 // Home Panel
 $wp_customize->add_panel( 'frontpage', array(
-  'title' => __( 'Home Page Setting', 'howl-themes'),
+  'title' => __( 'Home Page Setting', 'aqueduct'),
   'priority' => 40, // Mixed with top-level-section hierarchy.
 ) );
 
 //Home Page Display
 
 $wp_customize->add_section( 'howl-themes_magazine' , array(
-    'title'       => __( 'Front Page', 'howl-themes' ),
+    'title'       => __( 'Front Page', 'aqueduct' ),
     'priority'    => 30,
     'panel' => 'frontpage',
 
@@ -160,7 +144,7 @@ $wp_customize->add_control(
     'home_display',
     array(
         'type' => 'radio',
-        'label' => 'Home Page Display',
+        'label' =>  __( 'Home Page Display', 'aqueduct' ),
         'section' => 'howl-themes_magazine',
         'choices' => array(
             'blog' => 'Latest posts - Blog Layout',
@@ -171,7 +155,7 @@ $wp_customize->add_control(
 
 //Slider
 $wp_customize->add_section( 'howl-themes_newsbox_one' , array(
-    'title'       => __( 'News Boxes', 'howl-themes' ),
+    'title'       => __( 'News Boxes', 'aqueduct' ),
     'priority'    => 30,
     'panel' => 'frontpage',
 ) );
@@ -195,7 +179,7 @@ $wp_customize->add_control(
     'newsbox_one',
     array(
         'type' => 'select',
-        'label' => 'Choose category for slider:',
+        'label' =>  __( 'Choose category for slider:', 'aqueduct' ),
         'section' => 'howl-themes_newsbox_one',
         'choices' => $all_cats,
     )
@@ -215,7 +199,7 @@ $wp_customize->add_control(
     'newsbox_two',
     array(
         'type' => 'select',
-        'label' => 'Choose category for carousel:',
+        'label' =>  __( 'Choose category for carousel:', 'aqueduct' ),
         'section' => 'howl-themes_newsbox_one',
         'choices' => $all_cats,
     )
@@ -233,7 +217,7 @@ $wp_customize->add_control(
     'newsbox_three',
     array(
         'type' => 'select',
-        'label' => 'Choose Category for Grid box 1:',
+        'label' => __('Choose Category for Grid box 1:', 'aqueduct' ),
         'section' => 'howl-themes_newsbox_one',
         'choices' => $all_cats,
     )
@@ -251,7 +235,7 @@ $wp_customize->add_control(
     'newsbox_four',
     array(
         'type' => 'select',
-        'label' => 'Choose Category for Grid box 2:',
+        'label' => __('Choose Category for Grid box 2:', 'aqueduct' ),
         'section' => 'howl-themes_newsbox_one',
         'choices' => $all_cats,
     )
@@ -269,7 +253,7 @@ $wp_customize->add_control(
     'newsbox_five',
     array(
         'type' => 'select',
-        'label' => 'Choose Category for blog box:',
+        'label' => __('Choose Category for blog box:', 'aqueduct' ),
         'section' => 'howl-themes_newsbox_one',
         'choices' => $all_cats,
     )
@@ -278,7 +262,7 @@ $wp_customize->add_control(
 
 //Theme color
 $wp_customize->add_section( 'howl-themes_theme_color' , array(
-    'title'       => __( 'Theme Color', 'howl-themes' ),
+    'title'       => __( 'Theme Color', 'aqueduct' ),
     'priority'    => 30,
     'panel' => 'styling',
 ) );
@@ -295,7 +279,7 @@ $wp_customize->add_control(
         $wp_customize,
         'color-setting',
         array(
-            'label' => 'Color Setting',
+            'label' => __('Choose Color', 'aqueduct' ),
             'section' => 'howl-themes_theme_color',
             'settings' => 'color-setting',
         )
@@ -303,7 +287,7 @@ $wp_customize->add_control(
 );
 //Link color
 $wp_customize->add_section( 'howl-themes_link_color' , array(
-    'title'       => __( 'Link Color', 'howl-themes' ),
+    'title'       => __( 'Link Color', 'aqueduct' ),
     'priority'    => 30,
     'panel' => 'styling',
 
@@ -321,7 +305,7 @@ $wp_customize->add_control(
         $wp_customize,
         'linkcolor-setting',
         array(
-            'label' => 'Link Color',
+            'label' => __( 'Link Color', 'aqueduct' ),
             'section' => 'howl-themes_link_color',
             'settings' => 'linkcolor-setting',
         )
@@ -339,7 +323,7 @@ $wp_customize->add_control(
         $wp_customize,
         'linkcolorhover-setting',
         array(
-            'label' => 'Link Hover Color',
+            'label' => __( 'Link Hover Color', 'aqueduct' ),
             'section' => 'howl-themes_link_color',
             'settings' => 'linkcolorhover-setting',
         )
@@ -349,11 +333,11 @@ $wp_customize->add_control(
 //Typography
 
 $wp_customize->add_panel( 'typo', array(
-  'title' => __( 'Typography', 'howl-themes'),
+  'title' => __( 'Typography', 'aqueduct'),
   'priority' => 80, // Mixed with top-level-section hierarchy.
 ) );
 $wp_customize->add_section( 'howl-themes_typography' , array(
-    'title'       => __( 'Choose Font', 'howl-themes' ),
+    'title'       => __( 'Choose Font', 'aqueduct' ),
     'priority'    => 30,
     'panel' => 'typo',
 ) );
@@ -411,7 +395,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_section( 'howl-themes_fontcolor' , array(
-    'title'       => __( 'Font color', 'howl-themes' ),
+    'title'       => __( 'Font color', 'aqueduct' ),
     'priority'    => 30,
     'panel' => 'typo',
 ) );
@@ -427,7 +411,7 @@ $wp_customize->add_control(
         $wp_customize,
         'fontcolor-setting',
         array(
-            'label' => 'Font Color',
+            'label' => __( 'Font Color', 'aqueduct' ),
             'section' => 'howl-themes_fontcolor',
             'settings' => 'fontcolor-setting',
         )
@@ -450,7 +434,7 @@ class Example_Customize_Textarea_Control extends WP_Customize_Control {
 }
 
 $wp_customize->add_section( 'howl-themes_fontsize' , array(
-    'title'       => __( 'Font size', 'howl-themes' ),
+    'title'       => __( 'Font size', 'aqueduct' ),
     'priority'    => 30,
     'panel' => 'typo',
 ) );
@@ -479,7 +463,7 @@ $wp_customize->add_control(
         'social_icons',
         array(
             'title' => 'Social',
-            'description' => 'Add URLs',
+            'description' => __( 'Add URLs', 'aqueduct' ),
             'priority' => 60,
         )
     );
@@ -492,7 +476,7 @@ $wp_customize->add_control(
     $wp_customize->add_control(
     'fsocial_url',
     array(
-        'label' => 'Facebook',
+        'label' => __( 'Facebook', 'aqueduct' ),
         'section' => 'social_icons',
         'type' => 'text',
     )
@@ -506,7 +490,7 @@ $wp_customize->add_control(
     $wp_customize->add_control(
     'tsocial_url',
     array(
-        'label' => 'Twitter',
+        'label' => __( 'Twitter', 'aqueduct' ),
         'section' => 'social_icons',
         'type' => 'text',
     )
@@ -519,7 +503,7 @@ $wp_customize->add_control(
     $wp_customize->add_control(
     'gsocial_url',
     array(
-        'label' => 'Google+',
+        'label' => __( 'Google+', 'aqueduct' ),
         'section' => 'social_icons',
         'type' => 'text',
     )
@@ -532,7 +516,7 @@ $wp_customize->add_control(
     $wp_customize->add_control(
     'psocial_url',
     array(
-        'label' => 'Pinterest',
+        'label' => __( 'Pinterest', 'aqueduct' ),
         'section' => 'social_icons',
         'type' => 'text',
     )
@@ -545,7 +529,7 @@ $wp_customize->add_control(
     $wp_customize->add_control(
     'isocial_url',
     array(
-        'label' => 'Instagram',
+        'label' => __( 'Instagram', 'aqueduct' ),
         'section' => 'social_icons',
         'type' => 'text',
     )
@@ -558,7 +542,7 @@ $wp_customize->add_control(
     $wp_customize->add_control(
     'lsocial_url',
     array(
-        'label' => 'Linkedin',
+        'label' => __( 'Linkedin', 'aqueduct' ),
         'section' => 'social_icons',
         'type' => 'text',
     )
@@ -571,7 +555,7 @@ $wp_customize->add_control(
     $wp_customize->add_control(
     'ysocial_url',
     array(
-        'label' => 'Youtube',
+        'label' =>  __( 'Youtube', 'aqueduct' ),
         'section' => 'social_icons',
         'type' => 'text',
     )
@@ -584,7 +568,7 @@ $wp_customize->add_control(
     $wp_customize->add_control(
     'rsocial_url',
     array(
-        'label' => 'RSS',
+        'label' =>  __( 'RSS', 'aqueduct' ),
         'section' => 'social_icons',
         'type' => 'text',
     )

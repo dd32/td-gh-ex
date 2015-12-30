@@ -13,9 +13,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<?php if(esc_url( get_theme_mod( 'howl-themes_favicon' ) )){ ?>
-<link rel="icon" href="<?php echo esc_url( get_theme_mod( 'howl-themes_favicon' ) ) ?>">
-<?php } ?>
 <?php wp_head(); 
 get_template_part('inc/dragfun/dragtheme', 'css');
 
@@ -64,7 +61,7 @@ get_template_part('inc/dragfun/dragtheme', 'css');
 <div class="break-social">
 <div class="container">
 <div class="newsticker-holder">
-<span><?php _e( 'Breaking', 'howl-themes'); ?></span>
+<span><?php _e( 'Breaking', 'aqueduct'); ?></span>
 <ul class="newsticker">
 <?php
 	$argss = array( 'numberposts' => '7' );

@@ -52,6 +52,6 @@ else{
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<div class="read-more-button"><a href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'howl-themes'); ?> <i class="fa fa-long-arrow-right"></i></a></div>
+		<div class="read-more-button"><a href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'aqueduct'); ?> <i class="fa fa-long-arrow-right"></i></a></div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

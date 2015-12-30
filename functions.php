@@ -22,7 +22,7 @@ if ( ! function_exists( 'drag_themes_setup' ) ) :
  */
 function howlthemes_setup() {
 
-  load_theme_textdomain( 'howl-themes', get_template_directory() . '/languages' );
+  load_theme_textdomain( 'aqueduct', get_template_directory() . '/languages' );
 
   // Add default posts and comments RSS feed links to head.
   add_theme_support( 'automatic-feed-links' );
@@ -44,8 +44,8 @@ function howlthemes_setup() {
 
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(
-    'primary' => __( 'Primary Menu', 'howl-themes' ),
-    'secondary' => __( 'Secondary Menu', 'howl-themes' ),
+    'primary' => __( 'Primary Menu', 'aqueduct' ),
+    'secondary' => __( 'Secondary Menu', 'aqueduct' ),
   ) );
 
   /*
@@ -76,7 +76,7 @@ add_action( 'after_setup_theme', 'howlthemes_setup' );
  */
 function howlthemes_widgets_init() {
   register_sidebar( array(
-    'name'          => __( 'Sidebar', 'howl-themes' ),
+    'name'          => __( 'Sidebar', 'aqueduct' ),
     'id'            => 'sidebar-1',
     'description'   => '',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -89,7 +89,7 @@ add_action( 'widgets_init', 'howlthemes_widgets_init' );
 
 function howlthemes_fwidgets_init() {
   register_sidebar( array(
-    'name'          => __( 'Footer', 'howl-themes' ),
+    'name'          => __( 'Footer', 'aqueduct' ),
     'id'            => 'footer-1',
     'description'   => '',
     'before_widget' => '<aside id="%1$s" class="fwidget %2$s">',
@@ -117,7 +117,7 @@ function howlthemes_scripts() {
 else{
     wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Josefin+Sans:400,600,700');
 }
-  wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/fontawesome.css');
+  wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css');
         wp_enqueue_script( 'myscript', get_template_directory_uri().'/js/dragjs.js', array( 'jquery' ), '', true);
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply', '', true);
@@ -166,8 +166,8 @@ function howlthemes_numberedhowlnav(){
             'end_size' => 3,
             'mid_size' => 2,
             'prev_next' => True,
-            'prev_text' => __('&laquo; Previous', 'howl-themes'),
-            'next_text' => __('Next &raquo;', 'howl-themes'),
+            'prev_text' => __('&laquo; Previous', 'aqueduct'),
+            'next_text' => __('Next &raquo;', 'aqueduct'),
             'type' => 'list',
             );
         echo paginate_links($args);

@@ -1,6 +1,4 @@
-
-
-jQuery(function(){
+ jQuery(function(){
 
     jQuery(".main-navigation ul li a").hover(function(){
         jQuery('ul:first',this).css('visibility', 'visible');
@@ -260,15 +258,8 @@ b.header||e.find(":eq("+a(f+" li").index(a(f+" li."+b.active))+")").attr("select
 Functions By DragThemes
 */
 jQuery(document).ready(function(){
-jQuery(".searchboxcontainer").hover(function(){
-        jQuery(".srchcontainer").css("display", "block");
-        },function(){
-        jQuery(".srchcontainer").css("display", "none");
-    });
-jQuery(".srchcontainer").hover(function(){
-        jQuery(".srchcontainer").css("display", "block");
-        },function(){
-        jQuery(".srchcontainer").css("display", "none");
+jQuery(".searchboxcontainer").click(function(){
+        jQuery(".srchcontainer").toggle();
     });
 jQuery('.newsticker').newsTicker({
     row_height: 24,
