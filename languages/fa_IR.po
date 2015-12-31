@@ -197,13 +197,13 @@ msgstr "گزینه‌های پوسته"
 msgid "Menu"
 msgstr "گزینگان"
 
-#: functions.php:221
-msgid "Read more <span class=\"screen-reader-text\">%1$s</span>"
-msgstr "بیشتر بخوانید <span class=\"screen-reader-text\">%1$s</span>"
-
 #: header.php:22
 msgid "Skip to content"
 msgstr "پرش به محتوا"
+
+#: functions.php:221
+msgid "Read more <span class=\"screen-reader-text\">%1$s</span>"
+msgstr "بیشتر بخوانید <span class=\"screen-reader-text\">%1$s</span>"
 
 #: functions.php:123
 msgid "Footer Three"
@@ -307,15 +307,15 @@ msgstr "&laquo; دیدگاه‌های پیشین"
 msgid "Comment navigation"
 msgstr "راهبری دیدگاه‌ها"
 
+#: 404.php:34
+msgid "Popular Categories"
+msgstr "دسته‌های پرطرفدار"
+
 #: comments.php:29
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "%1$s نظر برای &ldquo;%2$s&rdquo;"
-
-#: 404.php:34
-msgid "Popular Categories"
-msgstr "دسته‌های پرطرفدار"
 
 #: 404.php:19
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"

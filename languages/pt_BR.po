@@ -2,13 +2,43 @@
 # This file is distributed under the same license as the Argent package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-07-01 03:46:22+0000\n"
+"PO-Revision-Date: 2015-12-23 12:50:48+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: GlotPress/1.0-alpha-1000\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Argent\n"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/argent/page-templates/front-page.php
+msgid "Front Page"
+msgstr "Página inicial"
+
+#. Author URI of the plugin/theme
+#: wp-content/themes/pub/argent/style.css
+msgid "https://wordpress.com/themes/"
+msgstr "https://wordpress.com/themes/"
+
+#. Theme Name of the plugin/theme
+#: wp-content/themes/pub/argent/style.css
+msgid "Argent"
+msgstr "Argent"
+
+#. Theme URI of the plugin/theme
+#: wp-content/themes/pub/argent/style.css
+msgid "https://wordpress.com/themes/argent/"
+msgstr "https://wordpress.com/themes/argent/"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/argent/style.css
+msgid "Argent is a clean and modern portfolio theme, geared towards creative professionals like designers, artists, and photographers. With its simple homepage template featuring portfolio projects, Argent aims to draw viewers right at what matters most: your wonderful work."
+msgstr "Argent é um tema de portfólio limpo e moderno, focado para profissionais criativos como designers, artistas, e fotógrafos. Com seu modelo de página inicial simples exibindo projetos do portfólio, Argent foca em trazer os leitores para o que importa mais: seu belo trabalho."
+
+#. Author of the plugin/theme
+#: wp-content/themes/pub/argent/style.css
+msgid "Automattic"
+msgstr "Automattic"
 
 #: search.php:16
 msgid "Search Results for: %s"
@@ -172,19 +202,19 @@ msgstr "Página %s"
 
 #: inc/customizer.php:23
 msgid "Front Page Portfolio section settings"
-msgstr ""
+msgstr "Configurações do Portfolio da página inicial"
 
 #: inc/customizer.php:32
 msgid "Show Portfolio Section"
-msgstr ""
+msgstr "Mostrar Seção do Portfolio"
 
 #: inc/customizer.php:43
 msgid "Portfolio Section Title"
-msgstr ""
+msgstr "Título da Seção do Portfolio"
 
 #: inc/customizer.php:54
 msgid "Number of Projects to display"
-msgstr ""
+msgstr "Quantidade de Projetos a mostrar"
 
 #: inc/extras.php:36
 msgid "Pages:"
@@ -202,13 +232,13 @@ msgstr "Menu"
 msgid "Skip to content"
 msgstr "Pular para o conteúdo"
 
-#: functions.php:219
+#: functions.php:221
 msgid "Read more <span class=\"screen-reader-text\">%1$s</span>"
-msgstr ""
+msgstr "Leia mais <span class=\"screen-reader-text\">%1$s</span>"
 
 #: functions.php:116
 msgid "Use this widget area to display widgets in the second column of the footer."
-msgstr ""
+msgstr "Utilize esta área de widgets para mostrar widgets na segunda coluna do rodapé"
 
 #: functions.php:123
 msgid "Footer Three"
@@ -216,14 +246,14 @@ msgstr "Rodapé Três"
 
 #: functions.php:125
 msgid "Use this widget area to display widgets in the third column of the footer."
-msgstr ""
+msgstr "Utilize esta área de widgets para mostrar widgets na terceira coluna do rodapé"
 
 #: functions.php:146
 msgctxt ""
 "Cabin\n"
 "\t font: on or off"
 msgid "on"
-msgstr ""
+msgstr "ligado"
 
 #: functions.php:155
 msgctxt "Alegreya font: on or off"
@@ -241,7 +271,7 @@ msgstr "Rodapé Um"
 
 #: functions.php:107
 msgid "Use this widget area to display widgets in the first column of the footer."
-msgstr ""
+msgstr "Utilize esta área de widgets para mostrar widgets na primeira coluna do rodapé"
 
 #: functions.php:114
 msgid "Footer Two"
@@ -309,7 +339,7 @@ msgstr "Nenhum projeto foi encontrado"
 
 #: content-front-portfolio.php:62
 msgid "This section will display your latest projects. It can can be disbaled via the Customizer."
-msgstr ""
+msgstr "Esta seção irá mostrar seus últimos projetos. Pode ser desabilitado no personalizador do tema."
 
 #: comments.php:77
 msgid "Comments are closed."
@@ -329,7 +359,7 @@ msgstr "Navegação de Comentários"
 
 #: 404.php:34
 msgid "Popular Categories"
-msgstr ""
+msgstr "Categorias Populares"
 
 #: comments.php:29
 msgctxt "comments title"

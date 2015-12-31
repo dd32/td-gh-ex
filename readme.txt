@@ -73,6 +73,12 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 
 == Changelog ==
 
+= 2 December 2015 =
+* Chaning background color of header area to black with transparency, when user selects custom background color to match Customizer preview with front-end for users without Custom Design; See #3536;
+
+= 30 November 2015 =
+* Improve display of portfolio shortcode.
+
 = 10 November 2015 =
 * Fix bug to ensure sub-menu items work on touch devices
 
