@@ -6,7 +6,7 @@
  *
  * @package Awesomeone
  */
-
+error_reporting(0);
 if ( ! function_exists( 'awesomeone_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable

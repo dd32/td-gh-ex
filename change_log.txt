@@ -22,3 +22,6 @@ i) Added option for hide purchase button and documentation changed.
 
 Version 1.2.5
 i) Theme screenshot changed.
+
+Version 1.2.6
+i) Added author name function in blog and update translation file.

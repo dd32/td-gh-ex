@@ -176,7 +176,7 @@ function awesomeone_pagination() {
 }
 
 define('pro_theme_url','http://flythemes.net/wordpress-themes/awesomeone-corporate-wordpress-theme/');
-define('theme_doc','http://flythemes.net/documentation/awesomeone-doc/');
+define('theme_doc','http://flythemesdemo.net/documentation/awesomeone-doc/');
 define('site_url','http://flythemes.net/');
 
 /**

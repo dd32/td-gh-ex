@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Awesomeone\n"
-"POT-Creation-Date: 2015-10-01 00:15+0530\n"
-"PO-Revision-Date: 2015-10-01 00:15+0530\n"
+"Project-Id-Version: AwesomeOne\n"
+"POT-Creation-Date: 2015-12-31 12:09+0530\n"
+"PO-Revision-Date: 2015-12-31 12:09+0530\n"
 "Last-Translator: \n"
 "Language-Team: Flythemes Team <support@flythemes.net>\n"
 "Language: English\n"
@@ -13,6 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
 
 #: 404.php:14
 msgid "<strong>404</strong> Not Found"
@@ -90,15 +91,15 @@ msgid "Comments are closed."
 msgstr ""
 
 #: content-page.php:18
-#: content-single.php:28
-#: content.php:36
+#: content-single.php:29
+#: content.php:37
 #: image.php:59
 msgid "Pages:"
 msgstr ""
 
 #: content-page.php:23
-#: content-single.php:40
-#: content.php:70
+#: content-single.php:41
+#: content.php:71
 #: image.php:33
 #: image.php:65
 #: inc/template-tags.php:70
@@ -106,40 +107,45 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: content-single.php:33
-#: content.php:14
-#: content.php:47
-#: content.php:57
+#: content-single.php:14
+#: content.php:12
+msgid "By"
+msgstr ""
+
+#: content-single.php:34
+#: content.php:15
+#: content.php:48
+#: content.php:58
 msgid ", "
 msgstr ""
 
-#: content.php:29
+#: content.php:30
 msgid "Read More &raquo;"
 msgstr ""
 
-#: content.php:33
+#: content.php:34
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: content.php:51
+#: content.php:52
 #, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
-#: content.php:61
+#: content.php:62
 #, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
-#: content.php:67
+#: content.php:68
 msgid "Leave a comment"
 msgstr ""
 
-#: content.php:67
+#: content.php:68
 msgid "1 Comment"
 msgstr ""
 
-#: content.php:67
+#: content.php:68
 msgid "% Comments"
 msgstr ""
 
@@ -197,7 +203,7 @@ msgstr ""
 msgid "Learn More"
 msgstr ""
 
-#: header.php:93
+#: header.php:94
 msgid "Purchase Now"
 msgstr ""
 
@@ -249,125 +255,129 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: inc/customizer.php:47
+#: inc/customizer.php:55
 msgid "Logo (PRO Version)"
 msgstr ""
 
-#: inc/customizer.php:49
+#: inc/customizer.php:57
 msgid "<strong>Logo settings available in</strong>"
 msgstr ""
 
-#: inc/customizer.php:66
+#: inc/customizer.php:74
 msgid "Background Opacity (PRO Version)"
 msgstr ""
 
-#: inc/customizer.php:67
+#: inc/customizer.php:75
 msgid "<strong>Background opacity available in</strong>"
 msgstr ""
 
-#: inc/customizer.php:95
+#: inc/customizer.php:103
 msgid "Color Scheme"
 msgstr ""
 
-#: inc/customizer.php:96
+#: inc/customizer.php:104
 msgid "<strong>More color options in</strong>"
 msgstr ""
 
-#: inc/customizer.php:103
+#: inc/customizer.php:111
 msgid "Social Links"
 msgstr ""
 
-#: inc/customizer.php:110
+#: inc/customizer.php:118
 msgid "Slider Settings"
 msgstr ""
 
-#: inc/customizer.php:111
+#: inc/customizer.php:119
 msgid ""
 "Add slider images here. <br><strong>More slider settings available in</"
 "strong>"
 msgstr ""
 
-#: inc/customizer.php:126
+#: inc/customizer.php:128
+msgid "Check this to hide purchase button"
+msgstr ""
+
+#: inc/customizer.php:145
 msgid "Slide Image 1 (1440x700)"
 msgstr ""
 
-#: inc/customizer.php:139
+#: inc/customizer.php:158
 msgid "Slide Title 1"
 msgstr ""
 
-#: inc/customizer.php:154
+#: inc/customizer.php:173
 msgid "Slide Description 1"
 msgstr ""
 
-#: inc/customizer.php:167
+#: inc/customizer.php:186
 msgid "Slide Link 1"
 msgstr ""
 
-#: inc/customizer.php:183
+#: inc/customizer.php:202
 msgid "Slide Image 2 (1440x700)"
 msgstr ""
 
-#: inc/customizer.php:196
+#: inc/customizer.php:215
 msgid "Slide Title 2"
 msgstr ""
 
-#: inc/customizer.php:211
+#: inc/customizer.php:230
 msgid "Slide Description 2"
 msgstr ""
 
-#: inc/customizer.php:224
+#: inc/customizer.php:243
 msgid "Slide Link 2"
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:259
 msgid "Slide Image 3 (1440x700)"
 msgstr ""
 
-#: inc/customizer.php:253
+#: inc/customizer.php:272
 msgid "Slide Title 3"
 msgstr ""
 
-#: inc/customizer.php:268
+#: inc/customizer.php:287
 msgid "Slide Description 3"
 msgstr ""
 
-#: inc/customizer.php:281
+#: inc/customizer.php:300
 msgid "Slide Link 3"
 msgstr ""
 
-#: inc/customizer.php:287
+#: inc/customizer.php:306
 msgid "Footer Text"
 msgstr ""
 
-#: inc/customizer.php:288
+#: inc/customizer.php:307
 msgid "Add some text for footer like copyright etc."
 msgstr ""
 
-#: inc/customizer.php:300
+#: inc/customizer.php:319
 msgid "To remove credit link upgrade to pro"
 msgstr ""
 
-#: inc/customizer.php:308
+#: inc/customizer.php:327
 msgid "Layout Settings (PRO Version)"
 msgstr ""
 
-#: inc/customizer.php:310
+#: inc/customizer.php:329
 msgid "<strong>Layout Settings available in</strong>"
 msgstr ""
 
-#: inc/customizer.php:329
+#: inc/customizer.php:348
 msgid "Fonts Settings (PRO Version)"
 msgstr ""
 
-#: inc/customizer.php:331
+#: inc/customizer.php:350
 msgid "<strong>Font Settings available in</strong>"
 msgstr ""
 
-#: inc/customizer.php:350
+#: inc/customizer.php:369
 msgid "Documentation &amp; Support"
 msgstr ""
 
-#: inc/customizer.php:352
+#: inc/customizer.php:371
 msgid "For documentation and support check this link :"
 msgstr ""
 

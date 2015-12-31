@@ -9,6 +9,7 @@
             <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
             <?php if ( 'post' == get_post_type() ) : ?>
                 <div class="postmeta">
+                	<div class="post-date"><?php _e('By','awesomeone'); ?> <?php echo get_the_author(); ?></div><!-- post-date --> |
                     <div class="post-date"><?php echo get_the_date(); ?></div><!-- post-date -->
                     <div class="post-comment"> | <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></div>
                     <div class="post-categories"> | <?php the_category( __( ', ', 'awesomeone' ));?></div>

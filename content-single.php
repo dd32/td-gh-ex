@@ -11,6 +11,7 @@
 
     <div class="entry-content">
         <div class="postmeta">
+        	<div class="post-date"><?php _e('By','awesomeone'); ?> <?php echo get_the_author(); ?></div><!-- post-date --> |
             <div class="post-date"><?php echo get_the_date(); ?></div><!-- post-date -->
             <div class="post-comment"> | <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></div>
             <div class="clear"></div>
