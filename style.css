@@ -2,13 +2,13 @@
 Theme Name: Apostrophe
 Theme URI: https://wordpress.com/themes/apostrophe/
 Description: A clean, no-nonsense magazine theme
-Version: 1.0.6
+Version: 1.0.8
 Author: Automattic
 Author URI: https://wordpress.com/themes/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: apostrophe
-Tags: black, blue, gray, white, light, two-columns, one-column, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Tags: black, blue, gray, white, light, two-columns, one-column, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, light
 */
 
 /*--------------------------------------------------------------
@@ -1317,6 +1317,11 @@ a:active {
 
 .widget_search .search-submit {
 	display: none;
+}
+
+/* Facebook widget */
+.widget_facebook_likebox iframe {
+	margin: 0;
 }
 
 /*--------------------------------------------------------------

@@ -40,7 +40,6 @@ if ( post_password_required() ) {
 			<?php
 				wp_list_comments( array(
 					'avatar_size' => 120,
-					'max_depth'   => 4,
 				) );
 			?>
 		</ol><!-- .comment-list -->

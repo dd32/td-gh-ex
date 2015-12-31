@@ -21,11 +21,11 @@ function apostrophe_custom_header_setup() {
 add_action( 'after_setup_theme', 'apostrophe_custom_header_setup' );
 
 if ( ! function_exists( 'apostrophe_header_style' ) ) :
-	/**
+/**
  * Styles the header image and text displayed on the blog
  */
-	function apostrophe_header_style() {
-		$header_image = get_header_image();
+ 	function apostrophe_header_style() {
+	 	$header_image = get_header_image();
 		$text_color   = get_header_textcolor();
 
 		/* Output the CSS for our custom styles */
@@ -33,18 +33,18 @@ if ( ! function_exists( 'apostrophe_header_style' ) ) :
 		<style type="text/css" id="apostrophe-header-css">
 		<?php
 			/* Do we have a custom header image? */
-		if ( '' !== get_header_image() ) :
-	?>
-      .site-branding {
-        background: url('<?php echo esc_url( get_header_image() ); ?>') center center;
-        background-size: cover;
-        min-height: 200px;
-        padding: 3em;
-      }
+			if ( get_header_image() ) :
+		?>
+		.site-branding {
+			background: url('<?php echo esc_url( get_header_image() ); ?>') center center;
+			background-size: cover;
+			min-height: 200px;
+			padding: 3em;
+		}
 		<?php
 			endif;
 			/* Has the text been hidden? */
-		if ( ! display_header_text() ) :
+			if ( ! display_header_text() ) :
 		?>
 		.site-title,
 		.site-description {
@@ -62,7 +62,7 @@ if ( ! function_exists( 'apostrophe_header_style' ) ) :
 			margin-bottom: 3.5px;
 		}
 		<?php
-		/* If the user has set a custom color for the text, use that. */
+			/* If the user has set a custom color for the text, use that. */
 			elseif ( get_theme_support( 'custom-header', 'default-text-color' ) !== $text_color ) :
 		?>
 			.site-title a,

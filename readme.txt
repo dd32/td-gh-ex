@@ -133,6 +133,23 @@ https://pixabay.com/en/trousers-underwear-nostalgia-past-362781/
 
 == Changelog ==
 
+= 23 November 2015 =
+* Remove margin-bottom from the Facebook Page widget wrapper
+* Remove margin from iframe within the Facebook Page widget
+* Add margin-bottom to Facebook page widget.
+
+= 29 October 2015 =
+* fix SVN properties.
+
+= 2 October 2015 =
+* Remove max-depth parameter from comment lists args, since this was forcing nested comments even when not enabled in the settings.
+
+= 8 September 2015 =
+* Apply custom header styles only when we have a header image.
+
+= 20 August 2015 =
+* Add text domain and/or remove domain path.
+
 = 17 August 2015 =
 * Add context for comment title.
 
