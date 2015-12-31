@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: AccessPress Mag 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/accesspress-mag\n"
 "POT-Creation-Date: 2015-01-06 02:24:02+00:00\n"
-"POT-Revision-Date: Wed Oct 14 2015 16:20:46 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Thu Dec 31 2015 15:26:02 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: AccessPress Themes <info@accesspressthemes.com>\n"
 "Language-Team: AccessPress Themes <info@accesspressthemes.com>\n"
@@ -159,7 +159,7 @@ msgstr ""
 msgid "Home Page"
 msgstr ""
 
-#: ../search.php:20 ../inc/accesspress-functions.php:535
+#: ../search.php:20 ../inc/accesspress-functions.php:540
 msgid "Search Results for "
 msgstr ""
 
@@ -186,27 +186,27 @@ msgstr ""
 msgid "Latest"
 msgstr ""
 
-#: ../inc/accesspress-functions.php:452 ../inc/template-tags.php:130
+#: ../inc/accesspress-functions.php:457 ../inc/template-tags.php:130
 #, php-format
 msgctxt "post date"
 msgid "%s"
 msgstr ""
 
-#: ../inc/accesspress-functions.php:529 ../inc/accesspress-functions.php:663 ..
+#: ../inc/accesspress-functions.php:534 ../inc/accesspress-functions.php:668 ..
 #: /inc/accesspress-options.php:71 ../inc/accesspress-options.php:76
 msgid "You are here"
 msgstr ""
 
-#: ../inc/accesspress-functions.php:532 ../inc/accesspress-functions.php:659 ..
+#: ../inc/accesspress-functions.php:537 ../inc/accesspress-functions.php:664 ..
 #: /inc/accesspress-options.php:71 ../inc/accesspress-options.php:76
 msgid "Home"
 msgstr ""
 
-#: ../inc/accesspress-functions.php:640
+#: ../inc/accesspress-functions.php:645
 msgid "Page"
 msgstr ""
 
-#: ../inc/accesspress-functions.php:715
+#: ../inc/accesspress-functions.php:720
 msgid "View a random post"
 msgstr ""
 
@@ -325,27 +325,27 @@ msgstr ""
 
 #: ../inc/accesspress-options.php:161 ../inc/accesspress-options.php:254 ..
 #: /inc/accesspress-options.php:283 ../inc/accesspress-options.php:301 ..
-#: /inc/accesspress-options.php:418 ../inc/accesspress-options.php:427 ..
-#: /inc/accesspress-options.php:436 ../inc/accesspress-options.php:454 ..
-#: /inc/accesspress-options.php:578 ../inc/accesspress-options.php:587 ..
+#: /inc/accesspress-options.php:427 ../inc/accesspress-options.php:436 ..
+#: /inc/accesspress-options.php:445 ../inc/accesspress-options.php:463 ..
 #: /inc/accesspress-options.php:596 ../inc/accesspress-options.php:605 ..
 #: /inc/accesspress-options.php:614 ../inc/accesspress-options.php:623 ..
-#: /inc/accesspress-options.php:632 ../inc/accesspress-options.php:677 ..
-#: /inc/accesspress-options.php:686 ../inc/accesspress-options.php:695 ..
-#: /inc/accesspress-options.php:713
+#: /inc/accesspress-options.php:632 ../inc/accesspress-options.php:641 ..
+#: /inc/accesspress-options.php:650 ../inc/accesspress-options.php:695 ..
+#: /inc/accesspress-options.php:704 ../inc/accesspress-options.php:713 ..
+#: /inc/accesspress-options.php:731
 msgid "Yes"
 msgstr ""
 
 #: ../inc/accesspress-options.php:162 ../inc/accesspress-options.php:255 ..
 #: /inc/accesspress-options.php:284 ../inc/accesspress-options.php:302 ..
-#: /inc/accesspress-options.php:419 ../inc/accesspress-options.php:428 ..
-#: /inc/accesspress-options.php:437 ../inc/accesspress-options.php:455 ..
-#: /inc/accesspress-options.php:579 ../inc/accesspress-options.php:588 ..
+#: /inc/accesspress-options.php:428 ../inc/accesspress-options.php:437 ..
+#: /inc/accesspress-options.php:446 ../inc/accesspress-options.php:464 ..
 #: /inc/accesspress-options.php:597 ../inc/accesspress-options.php:606 ..
 #: /inc/accesspress-options.php:615 ../inc/accesspress-options.php:624 ..
-#: /inc/accesspress-options.php:633 ../inc/accesspress-options.php:678 ..
-#: /inc/accesspress-options.php:687 ../inc/accesspress-options.php:696 ..
-#: /inc/accesspress-options.php:714
+#: /inc/accesspress-options.php:633 ../inc/accesspress-options.php:642 ..
+#: /inc/accesspress-options.php:651 ../inc/accesspress-options.php:696 ..
+#: /inc/accesspress-options.php:705 ../inc/accesspress-options.php:714 ..
+#: /inc/accesspress-options.php:732
 msgid "No"
 msgstr ""
 
@@ -365,11 +365,13 @@ msgstr ""
 msgid "Enable or Disable sticky menu behaviour."
 msgstr ""
 
-#: ../inc/accesspress-options.php:177 ../inc/accesspress-options.php:186
+#: ../inc/accesspress-options.php:177 ../inc/accesspress-options.php:186 ..
+#: /inc/accesspress-options.php:399
 msgid "Enable"
 msgstr ""
 
-#: ../inc/accesspress-options.php:178 ../inc/accesspress-options.php:187
+#: ../inc/accesspress-options.php:178 ../inc/accesspress-options.php:187 ..
+#: /inc/accesspress-options.php:400
 msgid "Disable"
 msgstr ""
 
@@ -564,216 +566,224 @@ msgid "Slider Settings"
 msgstr ""
 
 #: ../inc/accesspress-options.php:396
-msgid "Select Slide`s Posts"
+msgid "Slider section Option"
 msgstr ""
 
 #: ../inc/accesspress-options.php:397
+msgid "Enable or disable slider section at homepage"
+msgstr ""
+
+#: ../inc/accesspress-options.php:405
+msgid "Select Slide`s Posts"
+msgstr ""
+
+#: ../inc/accesspress-options.php:406
 msgid "Choose option to slide posts in slider"
 msgstr ""
 
-#: ../inc/accesspress-options.php:400
+#: ../inc/accesspress-options.php:409
 msgid "Show Latest Posts"
 msgstr ""
 
-#: ../inc/accesspress-options.php:401
+#: ../inc/accesspress-options.php:410
 msgid "Show posts from a category"
 msgstr ""
 
-#: ../inc/accesspress-options.php:408 ../inc/accesspress-options.php:546
+#: ../inc/accesspress-options.php:417 ../inc/accesspress-options.php:564
 msgid "Select Category"
 msgstr ""
 
-#: ../inc/accesspress-options.php:409
+#: ../inc/accesspress-options.php:418
 msgid "Select a category for homepage slider"
 msgstr ""
 
-#: ../inc/accesspress-options.php:415
+#: ../inc/accesspress-options.php:424
 msgid "Show Pager"
 msgstr ""
 
-#: ../inc/accesspress-options.php:416
+#: ../inc/accesspress-options.php:425
 msgid "Show or hide the slider pager"
 msgstr ""
 
-#: ../inc/accesspress-options.php:424
+#: ../inc/accesspress-options.php:433
 msgid "Show Controls"
 msgstr ""
 
-#: ../inc/accesspress-options.php:425
+#: ../inc/accesspress-options.php:434
 msgid "Show or hide the slider controls"
 msgstr ""
 
-#: ../inc/accesspress-options.php:433
+#: ../inc/accesspress-options.php:442
 msgid "Auto Transition"
 msgstr ""
 
-#: ../inc/accesspress-options.php:434
+#: ../inc/accesspress-options.php:443
 msgid "On or off the slider auto transition"
 msgstr ""
 
-#: ../inc/accesspress-options.php:442
+#: ../inc/accesspress-options.php:451
 msgid "Slider Pause Duration"
 msgstr ""
 
-#: ../inc/accesspress-options.php:451
+#: ../inc/accesspress-options.php:460
 msgid "Show Title"
 msgstr ""
 
-#: ../inc/accesspress-options.php:452
+#: ../inc/accesspress-options.php:461
 msgid "Show or hide slider`s Title/info"
 msgstr ""
 
-#: ../inc/accesspress-options.php:460
+#: ../inc/accesspress-options.php:478
 msgid "Number of slides"
 msgstr ""
 
-#: ../inc/accesspress-options.php:461
+#: ../inc/accesspress-options.php:479
 msgid "Choose number of slides"
 msgstr ""
 
-#: ../inc/accesspress-options.php:472
+#: ../inc/accesspress-options.php:490
 msgid "Blocks settings"
 msgstr ""
 
-#: ../inc/accesspress-options.php:477
+#: ../inc/accesspress-options.php:495
 msgid "Featured Block (First)"
 msgstr ""
 
-#: ../inc/accesspress-options.php:478
+#: ../inc/accesspress-options.php:496
 msgid "Select a category for first block in homepage"
 msgstr ""
 
-#: ../inc/accesspress-options.php:484 ../inc/accesspress-options.php:499 ..
-#: /inc/accesspress-options.php:514 ../inc/accesspress-options.php:529 ..
-#: /inc/accesspress-options.php:553
+#: ../inc/accesspress-options.php:502 ../inc/accesspress-options.php:517 ..
+#: /inc/accesspress-options.php:532 ../inc/accesspress-options.php:547 ..
+#: /inc/accesspress-options.php:571
 msgid "Number of posts"
 msgstr ""
 
-#: ../inc/accesspress-options.php:485
+#: ../inc/accesspress-options.php:503
 msgid "Choose number of posts for block (first)"
 msgstr ""
 
-#: ../inc/accesspress-options.php:492
+#: ../inc/accesspress-options.php:510
 msgid "Featured Block (Second)"
 msgstr ""
 
-#: ../inc/accesspress-options.php:493
+#: ../inc/accesspress-options.php:511
 msgid "Select a category for second block in homepage"
 msgstr ""
 
-#: ../inc/accesspress-options.php:500
+#: ../inc/accesspress-options.php:518
 msgid "Choose number of posts for block (second)"
 msgstr ""
 
-#: ../inc/accesspress-options.php:507
+#: ../inc/accesspress-options.php:525
 msgid "Featured Block (Third)"
 msgstr ""
 
-#: ../inc/accesspress-options.php:508
+#: ../inc/accesspress-options.php:526
 msgid "Select a category for third block in homepage"
 msgstr ""
 
-#: ../inc/accesspress-options.php:515
+#: ../inc/accesspress-options.php:533
 msgid "Choose number of posts for block (third)"
 msgstr ""
 
-#: ../inc/accesspress-options.php:522
+#: ../inc/accesspress-options.php:540
 msgid "Featured Block (Fourth)"
 msgstr ""
 
-#: ../inc/accesspress-options.php:523
+#: ../inc/accesspress-options.php:541
 msgid "Select a category for fourth block in homepage"
 msgstr ""
 
-#: ../inc/accesspress-options.php:530
+#: ../inc/accesspress-options.php:548
 msgid "Choose number of posts for block (fourth)"
 msgstr ""
 
-#: ../inc/accesspress-options.php:541
+#: ../inc/accesspress-options.php:559
 msgid "Editor pick settings"
 msgstr ""
 
-#: ../inc/accesspress-options.php:547
+#: ../inc/accesspress-options.php:565
 msgid "Select a category for editor pick in homepage sidebar"
 msgstr ""
 
-#: ../inc/accesspress-options.php:554
+#: ../inc/accesspress-options.php:572
 msgid "Choose number of posts for editor pick section"
 msgstr ""
 
-#: ../inc/accesspress-options.php:565
+#: ../inc/accesspress-options.php:583
 msgid "Post Settings"
 msgstr ""
 
-#: ../inc/accesspress-options.php:570
+#: ../inc/accesspress-options.php:588
 msgid "Additional Settings"
 msgstr ""
 
-#: ../inc/accesspress-options.php:575
+#: ../inc/accesspress-options.php:593
 msgid "Show Date"
 msgstr ""
 
-#: ../inc/accesspress-options.php:576
+#: ../inc/accesspress-options.php:594
 msgid "Enable or disable the post date"
 msgstr ""
 
-#: ../inc/accesspress-options.php:584
+#: ../inc/accesspress-options.php:602
 msgid "Show Comment Count"
 msgstr ""
 
-#: ../inc/accesspress-options.php:585
+#: ../inc/accesspress-options.php:603
 msgid "Enable or disable comment number"
 msgstr ""
 
-#: ../inc/accesspress-options.php:593
+#: ../inc/accesspress-options.php:611
 msgid "Show Author Under Title"
 msgstr ""
 
-#: ../inc/accesspress-options.php:594
+#: ../inc/accesspress-options.php:612
 msgid "Shows or hide the author under the post title"
 msgstr ""
 
-#: ../inc/accesspress-options.php:602
+#: ../inc/accesspress-options.php:620
 msgid "Show Tags on Site"
 msgstr ""
 
-#: ../inc/accesspress-options.php:603
+#: ../inc/accesspress-options.php:621
 msgid "Enable or disable the post tags"
 msgstr ""
 
-#: ../inc/accesspress-options.php:611
+#: ../inc/accesspress-options.php:629
 msgid "Show Author Box"
 msgstr ""
 
-#: ../inc/accesspress-options.php:612
+#: ../inc/accesspress-options.php:630
 msgid "Enable or disable the author box"
 msgstr ""
 
-#: ../inc/accesspress-options.php:620
+#: ../inc/accesspress-options.php:638
 msgid "Show Navigation in Posts"
 msgstr ""
 
-#: ../inc/accesspress-options.php:621
+#: ../inc/accesspress-options.php:639
 msgid "Show or hide `next` and `previous` posts"
 msgstr ""
 
-#: ../inc/accesspress-options.php:629
+#: ../inc/accesspress-options.php:647
 msgid "Lightbox Effect"
 msgstr ""
 
-#: ../inc/accesspress-options.php:630
+#: ../inc/accesspress-options.php:648
 msgid "Enable or disable lightbox effect for galleries images."
 msgstr ""
 
-#: ../inc/accesspress-options.php:642
+#: ../inc/accesspress-options.php:660
 msgid "Post Layout"
 msgstr ""
 
-#: ../inc/accesspress-options.php:647
+#: ../inc/accesspress-options.php:665
 msgid "Default Post Template"
 msgstr ""
 
-#: ../inc/accesspress-options.php:648
+#: ../inc/accesspress-options.php:666
 msgid ""
 "Setting this option will make all post pages, that don't have a post "
 "template associated to them, to be displayed using this template. This "
@@ -781,11 +791,11 @@ msgid ""
 "add / edit page."
 msgstr ""
 
-#: ../inc/accesspress-options.php:656
+#: ../inc/accesspress-options.php:674
 msgid "Default Post Sidebar"
 msgstr ""
 
-#: ../inc/accesspress-options.php:657
+#: ../inc/accesspress-options.php:675
 msgid ""
 "Setting this option will make all post pages, that don't have a post sidebar "
 "associated to them, to be displayed using this sidebar. This option is "
@@ -793,121 +803,121 @@ msgid ""
 "page."
 msgstr ""
 
-#: ../inc/accesspress-options.php:669
+#: ../inc/accesspress-options.php:687
 msgid "Breadcrumbs"
 msgstr ""
 
-#: ../inc/accesspress-options.php:674
+#: ../inc/accesspress-options.php:692
 msgid "Show/Hide Breadcrumb"
 msgstr ""
 
-#: ../inc/accesspress-options.php:675
+#: ../inc/accesspress-options.php:693
 msgid "Show or hide breadcrumbs on site"
 msgstr ""
 
-#: ../inc/accesspress-options.php:683
+#: ../inc/accesspress-options.php:701
 msgid "Enable link on Home"
 msgstr ""
 
-#: ../inc/accesspress-options.php:684
+#: ../inc/accesspress-options.php:702
 msgid "Enable or disable homepage link at home in breadcrumbs"
 msgstr ""
 
-#: ../inc/accesspress-options.php:692
+#: ../inc/accesspress-options.php:710
 msgid "Enable Title on Single post"
 msgstr ""
 
-#: ../inc/accesspress-options.php:693
+#: ../inc/accesspress-options.php:711
 msgid "Show or hide article title on single post"
 msgstr ""
 
-#: ../inc/accesspress-options.php:705
+#: ../inc/accesspress-options.php:723
 msgid "Featured images"
 msgstr ""
 
-#: ../inc/accesspress-options.php:710
+#: ../inc/accesspress-options.php:728
 msgid "Show Featured Image"
 msgstr ""
 
-#: ../inc/accesspress-options.php:711
+#: ../inc/accesspress-options.php:729
 msgid "Show or hide featured image in post`s single page"
 msgstr ""
 
-#: ../inc/accesspress-options.php:724
+#: ../inc/accesspress-options.php:742
 msgid "Archive Settings"
 msgstr ""
 
-#: ../inc/accesspress-options.php:729
+#: ../inc/accesspress-options.php:747
 msgid "Archive Style"
 msgstr ""
 
-#: ../inc/accesspress-options.php:734
+#: ../inc/accesspress-options.php:752
 msgid "Archive page template"
 msgstr ""
 
-#: ../inc/accesspress-options.php:735
+#: ../inc/accesspress-options.php:753
 msgid "Define - Choose template for all archive pages"
 msgstr ""
 
-#: ../inc/accesspress-options.php:743
+#: ../inc/accesspress-options.php:761
 msgid "Archive page sidebar"
 msgstr ""
 
-#: ../inc/accesspress-options.php:744
+#: ../inc/accesspress-options.php:762
 msgid "Define - Choose sidebar for all archive pages"
 msgstr ""
 
-#: ../inc/accesspress-options.php:758
+#: ../inc/accesspress-options.php:776
 msgid "MISC"
 msgstr ""
 
-#: ../inc/accesspress-options.php:766 ../inc/accesspress-options.php:770
+#: ../inc/accesspress-options.php:784 ../inc/accesspress-options.php:788
 msgid "Excerpts"
 msgstr ""
 
-#: ../inc/accesspress-options.php:775
+#: ../inc/accesspress-options.php:793
 msgid "Notice:"
 msgstr ""
 
-#: ../inc/accesspress-options.php:776
+#: ../inc/accesspress-options.php:794
 msgid ""
 "Adding a text as excerpt on post edit page (Excerpt box), will overwrite the "
 "theme excerpts"
 msgstr ""
 
-#: ../inc/accesspress-options.php:781
+#: ../inc/accesspress-options.php:799
 msgid "Excerpts Type"
 msgstr ""
 
-#: ../inc/accesspress-options.php:782
+#: ../inc/accesspress-options.php:800
 msgid "Define - type of excerpt for archives pages"
 msgstr ""
 
-#: ../inc/accesspress-options.php:785
+#: ../inc/accesspress-options.php:803
 msgid "On Words"
 msgstr ""
 
-#: ../inc/accesspress-options.php:786
+#: ../inc/accesspress-options.php:804
 msgid "On Letters"
 msgstr ""
 
-#: ../inc/accesspress-options.php:793
+#: ../inc/accesspress-options.php:811
 msgid "Excerpt Length"
 msgstr ""
 
-#: ../inc/accesspress-options.php:794
+#: ../inc/accesspress-options.php:812
 msgid "Define - Excerpt length of words/letters for archive pages"
 msgstr ""
 
-#: ../inc/accesspress-options.php:805 ../inc/accesspress-options.php:809
+#: ../inc/accesspress-options.php:823 ../inc/accesspress-options.php:827
 msgid "Translations"
 msgstr ""
 
-#: ../inc/accesspress-options.php:814
+#: ../inc/accesspress-options.php:832
 msgid "Translate Your Theme"
 msgstr ""
 
-#: ../inc/accesspress-options.php:815
+#: ../inc/accesspress-options.php:833
 msgid ""
 "Translate your frontend easily without any external plugins. While you leave "
 "the box empty and the theme will load the default string"
@@ -1448,6 +1458,10 @@ msgstr[1] ""
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
+#: ../inc/custom-header.php:121
+msgid "Site Logo"
+msgstr ""
+
 #. $id
 #: ../inc/custom-metabox.php:15
 msgid "Post settings"
@@ -1712,29 +1726,29 @@ msgid "Install Demo"
 msgstr ""
 
 #: ../inc/option-framework/includes/class-options-media-uploader.php:62 ..
-#: /inc/widgets/widget-fields.php:194
+#: /inc/widgets/widget-fields.php:164
 msgid "No file chosen"
 msgstr ""
 
 #: ../inc/option-framework/includes/class-options-media-uploader.php:65 ..
 #: /inc/option-framework/includes/class-options-media-uploader.php:118 ..
-#: /inc/widgets/widget-fields.php:197 ../inc/widgets/widget-fields.php:789
+#: /inc/widgets/widget-fields.php:167 ../inc/widgets/widget-fields.php:306
 msgid "Upload"
 msgstr ""
 
 #: ../inc/option-framework/includes/class-options-media-uploader.php:67 ..
 #: /inc/option-framework/includes/class-options-media-uploader.php:119 ..
-#: /inc/widgets/widget-fields.php:199 ../inc/widgets/widget-fields.php:790
+#: /inc/widgets/widget-fields.php:169 ../inc/widgets/widget-fields.php:307
 msgid "Remove"
 msgstr ""
 
 #: ../inc/option-framework/includes/class-options-media-uploader.php:70 ..
-#: /inc/widgets/widget-fields.php:202
+#: /inc/widgets/widget-fields.php:172
 msgid "Upgrade your version of WordPress for full media support."
 msgstr ""
 
 #: ../inc/option-framework/includes/class-options-media-uploader.php:94 ..
-#: /inc/widgets/widget-fields.php:224
+#: /inc/widgets/widget-fields.php:194
 msgid "View File"
 msgstr ""
 
@@ -1827,8 +1841,13 @@ msgstr ""
 msgid "A widget that shows latest posts"
 msgstr ""
 
-#: ../inc/widgets/widget-latest-posts.php:76 ../inc/widgets/widget-random-posts.
-#: php:76
+#: ../inc/widgets/widget-latest-posts.php:43 ../inc/widgets/widget-random-posts.
+#: php:43
+msgid "Number of Posts"
+msgstr ""
+
+#: ../inc/widgets/widget-latest-posts.php:83 ../inc/widgets/widget-random-posts.
+#: php:83
 msgid "No image"
 msgstr ""
 
@@ -1897,7 +1916,7 @@ msgid "Homepage Sidebar Middle Ad"
 msgstr ""
 
 #. Theme URI of the theme
-msgid "http://accesspressthemes.com/accesspress-mag/"
+msgid "https://accesspressthemes.com/wordpress-themes/accesspress-mag/"
 msgstr ""
 
 #. Description of the theme

@@ -70,6 +70,12 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.2.4
+ * Fixed bugs at archive page
+ * Fixed multiple textdomain
+ * Removed unused code in widgets-fields page
+ * Updated language .pot file
+ 
 Version 2.2.3
  * Fixed Theme Option layout accordint to updated WordPress version 4.4
  * Fixed bugs in widget filed file
@@ -85,13 +91,14 @@ Version 2.2
  * Added option to show/hide homepage slider
  
 Version 2.1.9
- * Added dropdown option in latest and reandom post widget to show post count.
+ * Added dropdown option in latest and random post widget to show post count.
  
 Version 2.1.8
  * Added custom css field in theme option panel
  * Used get_template_part function palce of require
  * Updated pot file
  * Changed theme uri
+
 Version 2.1.7
  * Added slider pause option
  * Removed unused function codes

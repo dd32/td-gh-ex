@@ -68,13 +68,13 @@ function optionsframework_options() {
     
     //Traslations Array
     $translation_name = array(
-                        __( "You are here", "accesspess-mag" ),__( "Editor Pick's", "accesspess-mag" ),__( "Home", "accesspess-mag" ),__( "Search results for", "accesspess-mag" ),
-                        __( "Tagged", "accesspess-mag" ),__( "Next article", "accesspess-mag" ),__( "Previous article", "accesspess-mag" ),__( "Older Posts", "accesspess-mag" ),__( "Newer Posts", "accesspess-mag" ),
+                        __( "You are here", "accesspress-mag" ),__( "Editor Pick's", "accesspress-mag" ),__( "Home", "accesspress-mag" ),__( "Search results for", "accesspress-mag" ),
+                        __( "Tagged", "accesspress-mag" ),__( "Next article", "accesspress-mag" ),__( "Previous article", "accesspress-mag" ),__( "Older Posts", "accesspress-mag" ),__( "Newer Posts", "accesspress-mag" ),
                         __( "Advertisement", "accesspress-mag" ),__( "Search", "accesspress-mag" ),__( "Search Placeholder", "accesspress-mag" ),__( "Top arrow", "accesspress-mag" )
                         );
     $translation_std = array(
-            	        __( "You are here", "accesspess-mag" ),__( "Editor Pick's", "accesspess-mag" ),__( "Home", "accesspess-mag" ),__( "Search Results for", "accesspess-mag" ),
-            	        __( "Tagged", "accesspess-mag" ),__( "Next article", "accesspess-mag" ),__( "Previous article", "accesspess-mag" ),__( "Older Posts", "accesspess-mag" ),__( "Newer Posts", "accesspess-mag" ),
+            	        __( "You are here", "accesspress-mag" ),__( "Editor Pick's", "accesspress-mag" ),__( "Home", "accesspress-mag" ),__( "Search Results for", "accesspress-mag" ),
+            	        __( "Tagged", "accesspress-mag" ),__( "Next article", "accesspress-mag" ),__( "Previous article", "accesspress-mag" ),__( "Older Posts", "accesspress-mag" ),__( "Newer Posts", "accesspress-mag" ),
                         __( "Advertisement", "accesspress-mag" ),__( "Search", "accesspress-mag" ),__( "Search Content...", "accesspress-mag" ),__( "Top", "accesspress-mag" )
             	        );
     $translation_id = array(
