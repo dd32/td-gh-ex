@@ -62,8 +62,8 @@
 		<div class="page-header home-page-header" style="<?php echo esc_attr($tpadding).' '.esc_attr($bpadding).' '.esc_attr($talign);?>">
 			<div class="row">
 				<div class="col-md-12">
-				  	<h1 class="kad-page-title home-page-title"><?php echo esc_html($homepagetitle);?></h1>
-					  <?php if(!empty($bsub)) { echo '<p class="subtitle home-page-subtitle"> '. esc_html($bsub).' </p>'; } ?>
+				  	<h1 class="kad-page-title home-page-title"><?php echo do_shortcode($homepagetitle);?></h1>
+					  <?php if(!empty($bsub)) { echo '<span class="subtitle home-page-subtitle"> '. do_shortcode($bsub).' </span>'; } ?>
 				</div>
 			</div>
 		</div>

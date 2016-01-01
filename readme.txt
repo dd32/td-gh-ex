@@ -32,7 +32,11 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
-= 1.3.4 | 17th December 2015 = 
+= 1.3.5 | 30th December 2015 = 
+* Update: Subtitle support for shortcodes.
+* Update: Woocommerce dolphin support.
+
+= 1.3.4 | 23rd December 2015 = 
 * Add: Mobile submenu collapse option.
 * Fix: Customizer options to run.
 

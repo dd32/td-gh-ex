@@ -4,20 +4,23 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.4.0
+ * @version 2.5.0
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $product, $post, $pinnacle;
 
 $attribute_keys = array_keys( $attributes );
-?>
 
-<?php do_action('woocommerce_before_add_to_cart_form'); ?>
+do_action('woocommerce_before_add_to_cart_form'); ?>
 
 
-<form class="variations_form cart" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->id ); ?>" data-product_variations="<?php echo esc_attr( json_encode( $available_variations ) ) ?>">
+<form class="variations_form cart" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->id ); ?>" data-product_variations="<?php echo htmlspecialchars( json_encode( $available_variations ) ) ?>">
 	<?php do_action( 'woocommerce_before_variations_form' ); ?>
 
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
@@ -45,7 +48,9 @@ $attribute_keys = array_keys( $attributes );
 	<?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
 	<div class="single_variation_wrap_kad single_variation_wrap" style="display:block;">
-		<?php do_action( 'woocommerce_before_single_variation' ); 
+		<?php 
+
+		do_action( 'woocommerce_before_single_variation' ); 
 		/**
 		* woocommerce_single_variation hook. Used to output the cart button and placeholder for variation data.
 		* @since 2.4.0

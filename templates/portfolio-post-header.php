@@ -35,7 +35,7 @@
 			<div class="row">
 				<div class="col-md-12">
 				  	<h1 class="product_page_title entry-title"><?php echo esc_html($page_title_title); ?></h1>
-					  <?php if(!empty($bsub)) { echo '<p class="subtitle"> '.esc_html($bsub).' </p>'; } ?>
+					  <?php if(!empty($bsub)) { echo '<p class="subtitle"> '.do_shortcode($bsub).' </p>'; } ?>
 					  	<?php if(isset($pinnacle['portfolio_header_nav']) && $pinnacle['portfolio_header_nav'] == '1') { ?>
 					  		<div class="portfolionav">
 				   			<?php pinnacle_previous_post_link_plus( array('order_by' => 'menu_order', 'loop' => true, 'in_same_tax' => false, 'format' => '%link', 'link' => '<i class="icon-angle-left"></i>') );

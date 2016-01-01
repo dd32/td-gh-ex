@@ -294,26 +294,15 @@ class kad_social_widget extends WP_Widget {
     $widget_ops = array('classname' => 'widget_kadence_social', 'description' => __('Simple way to add Social Icons', 'pinnacle'));
     $this->__construct('widget_kadence_social', __('Pinnacle: Social Links', 'pinnacle'), $widget_ops);
     $this->alt_option_name = 'widget_kadence_social';
-    add_action('save_post', array(&$this, 'flush_widget_cache'));
-    add_action('deleted_post', array(&$this, 'flush_widget_cache'));
-    add_action('switch_theme', array(&$this, 'flush_widget_cache'));
   }
 
   function widget($args, $instance) {
-    $cache = wp_cache_get('widget_kadence_social', 'widget');
 
-    if (!is_array($cache)) {
-      $cache = array();
-    }
 
     if (!isset($args['widget_id'])) {
       $args['widget_id'] = null;
     }
 
-    if (isset($cache[$args['widget_id']])) {
-      echo $cache[$args['widget_id']];
-      return;
-    }
 
     ob_start();
     extract($args, EXTR_SKIP);
@@ -360,8 +349,6 @@ class kad_social_widget extends WP_Widget {
   <?php
     echo $after_widget;
 
-    $cache[$args['widget_id']] = ob_get_flush();
-    wp_cache_set('widget_kadence_social', $cache, 'widget');
   }
 
   function update($new_instance, $old_instance) {
@@ -380,18 +367,8 @@ class kad_social_widget extends WP_Widget {
     $instance['tumblr']     = strip_tags($new_instance['tumblr']);
     $instance['vk']         = strip_tags($new_instance['vk']);
     $instance['rss']        = strip_tags($new_instance['rss']);
-    $this->flush_widget_cache();
-
-    $alloptions = wp_cache_get('alloptions', 'options');
-    if (isset($alloptions['widget_kadence_social'])) {
-      delete_option('widget_kadence_social');
-    }
 
     return $instance;
-  }
-
-  function flush_widget_cache() {
-    wp_cache_delete('widget_kadence_social', 'widget');
   }
 
   function form($instance) {
@@ -481,24 +458,13 @@ class kad_recent_posts_widget extends WP_Widget {
       $this->__construct('kadence_recent_posts', __('Pinnacle: Recent Posts', 'pinnacle'), $widget_ops);
       $this->alt_option_name = 'kadence_recent_entries';
 
-    add_action( 'save_post', array(&$this, 'flush_widget_cache') );
-    add_action( 'deleted_post', array(&$this, 'flush_widget_cache') );
-    add_action( 'switch_theme', array(&$this, 'flush_widget_cache') );
   }
 
   function widget($args, $instance) {
-    $cache = wp_cache_get('kadence_recent_posts', 'widget');
-
-    if ( !is_array($cache) )
-      $cache = array();
 
     if ( ! isset( $args['widget_id'] ) )
       $args['widget_id'] = $this->id;
 
-    if ( isset( $cache[ $args['widget_id'] ] ) ) {
-      echo $cache[ $args['widget_id'] ];
-      return;
-    }
 
     ob_start();
     extract($args);
@@ -533,8 +499,6 @@ class kad_recent_posts_widget extends WP_Widget {
 
     endif;
 
-    $cache[$args['widget_id']] = ob_get_flush();
-    wp_cache_set('kadence_recent_posts', $cache, 'widget');
   }
 
   function update( $new_instance, $old_instance ) {
@@ -542,17 +506,8 @@ class kad_recent_posts_widget extends WP_Widget {
     $instance['title'] = strip_tags($new_instance['title']);
     $instance['number'] = (int) $new_instance['number'];
     $instance['thecate'] = $new_instance['thecate'];
-    $this->flush_widget_cache();
-
-    $alloptions = wp_cache_get( 'alloptions', 'options' );
-    if ( isset($alloptions['kadence_recent_entries']) )
-      delete_option('kadence_recent_entries');
 
     return $instance;
-  }
-
-  function flush_widget_cache() {
-    wp_cache_delete('kadence_recent_posts', 'widget');
   }
 
   function form( $instance ) {
@@ -593,24 +548,13 @@ class kad_post_grid_widget extends WP_Widget {
       $this->__construct('kadence_image_grid', __('Pinnacle: Post Grid', 'pinnacle'), $widget_ops);
       $this->alt_option_name = 'kadence_image_grid';
 
-    add_action( 'save_post', array(&$this, 'flush_widget_cache') );
-    add_action( 'deleted_post', array(&$this, 'flush_widget_cache') );
-    add_action( 'switch_theme', array(&$this, 'flush_widget_cache') );
   }
 
   function widget($args, $instance) {
-    $cache = wp_cache_get('kadence_image_grid', 'widget');
-
-    if ( !is_array($cache) )
-      $cache = array();
 
     if ( ! isset( $args['widget_id'] ) )
       $args['widget_id'] = $this->id;
 
-    if ( isset( $cache[ $args['widget_id'] ] ) ) {
-      echo $cache[ $args['widget_id'] ];
-      return;
-    }
 
     ob_start();
     extract($args);
@@ -636,7 +580,9 @@ class kad_post_grid_widget extends WP_Widget {
           ?>        
           <div class="imagegrid-widget">
           <?php  while ($r->have_posts()) : $r->the_post(); ?>
-          <?php global $post; if(has_post_thumbnail( $post->ID ) ) { ?> <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover"><?php the_post_thumbnail( 'pinnacle_widget-thumb' ); ?>
+          <?php global $post; if(has_post_thumbnail( $post->ID ) ) { ?> 
+          <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover">
+            <?php the_post_thumbnail( 'pinnacle_widget-thumb' ); ?>
           </a>
                     <?php } ?>
           <?php endwhile; ?>
@@ -660,8 +606,6 @@ class kad_post_grid_widget extends WP_Widget {
       <?php echo $after_widget; ?>
         
 <?php
-        $cache[$args['widget_id']] = ob_get_flush();
-        wp_cache_set('kadence_image_grid', $cache, 'widget');
   }
 
   function update( $new_instance, $old_instance ) {
@@ -671,17 +615,8 @@ class kad_post_grid_widget extends WP_Widget {
     $instance['thecat'] = $new_instance['thecat'];
     $instance['thetype'] = $new_instance['thetype'];
     $instance['gridchoice'] = $new_instance['gridchoice'];
-    $this->flush_widget_cache();
-
-    $alloptions = wp_cache_get( 'alloptions', 'options' );
-    if ( isset($alloptions['kadence_image_grid']) )
-      delete_option('kadence_image_grid');
-
+ 
     return $instance;
-  }
-
-  function flush_widget_cache() {
-    wp_cache_delete('kadence_image_grid', 'widget');
   }
 
   function form( $instance ) {
@@ -765,7 +700,7 @@ class kad_image_widget extends WP_Widget{
         if(isset($image_id) && $image_id != '0') {
           $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
         } else {
-          $alt_text == '';
+          $alt_text = '';
         }
     ?>
      <?php echo $before_widget; ?>
@@ -785,12 +720,9 @@ class kad_image_widget extends WP_Widget{
         $instance['image_uri'] = strip_tags( $new_instance['image_uri'] );
         $instance['image_link'] = $new_instance['image_link'];
         $instance['image_link_open'] = $new_instance['image_link_open'];
-        $this->flush_widget_cache();
+
         return $instance;
     }
-     function flush_widget_cache() {
-    wp_cache_delete('kadence_simple_image', 'widget');
-  }
 
   public function form($instance){ 
     $image_uri = isset($instance['image_uri']) ? esc_attr($instance['image_uri']) : '';

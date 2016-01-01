@@ -210,3 +210,39 @@ $product_column = $woocommerce_loop['columns'];
           } 
   }
 
+
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 5 );
+
+remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
+
+
+remove_action( 'woocommerce_shop_loop_subcategory_title', 'woocommerce_template_loop_category_title', 10 );
+add_action( 'woocommerce_shop_loop_subcategory_title', 'kt_woocommerce_template_loop_category_title', 10 );
+
+ function kt_woocommerce_template_loop_category_title( $category ) {
+        ?>
+        <h5>
+            <?php
+                echo $category->name;
+
+                if ( $category->count > 0 )
+                    echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . $category->count . ')</mark>', $category );
+            ?>
+        </h5>
+        <?php
+    }
+
+
+remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
+remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
+add_action( 'woocommerce_before_subcategory', 'kt_woocommerce_template_loop_category_link_open', 10 );
+add_action( 'woocommerce_after_subcategory', 'kt_woocommerce_template_loop_category_link_close', 10 );
+
+function kt_woocommerce_template_loop_category_link_open( $category ) {
+    echo '<a href="' . get_term_link( $category->slug, 'product_cat' ) . '">';
+}
+function kt_woocommerce_template_loop_category_link_close() {
+    echo '</a>';
+}
+

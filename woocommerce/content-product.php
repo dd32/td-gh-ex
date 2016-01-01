@@ -6,10 +6,13 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.4.0
+ * @version 2.5.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 
 global $product, $woocommerce_loop, $pinnacle, $post;
 
@@ -45,28 +48,31 @@ $product_column = $woocommerce_loop['columns'];
 <div class="<?php echo esc_attr($itemsize);?> kad_product">
 	<div <?php post_class( $classes ); ?>>
 
-	<?php /**
+	<?php 	/**
 			 * woocommerce_before_shop_loop_item hook
 			 *
 			 * @hooked woocommerce_show_product_loop_sale_flash - 5
+			 * @hooked woocommerce_template_loop_product_link_open - 10 (THEME UNHOOKS)
 			 */
-		do_action( 'woocommerce_before_shop_loop_item' ); ?>
+			do_action( 'woocommerce_before_shop_loop_item' ); 
 
+			?>
 			<a href="<?php the_permalink(); ?>" class="product_item_link product_img_link">
 
-		<?php /**
+			<?php 
+			/**
 			 * woocommerce_before_shop_loop_item_title hook
 			 *
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
 			 */
 			do_action( 'woocommerce_before_shop_loop_item_title' ); ?> 
 
-         	<div class="kad-action-case"></div>
-            </a>
+	         	<div class="kad-action-case"></div>
+	            </a>
 		    <div class="product_details_case clearfix">
 				<div class="product_details">
 					<a href="<?php the_permalink(); ?>" class="product_item_link product_title_link">
-						<?php 
+			<?php 
 				/**
 			 	* woocommerce_shop_loop_item_title hook
 			 	*
@@ -90,8 +96,9 @@ $product_column = $woocommerce_loop['columns'];
 			<?php
 				/**
 				 * woocommerce_after_shop_loop_item_title hook
-				 * @hooked woocommerce_template_loop_rating - 5
-				 * @hooked woocommerce_template_loop_price - 10
+				 *
+				 * @hooked woocommerce_template_loop_product_link_close - 5
+				 * @hooked woocommerce_template_loop_add_to_cart - 10
 				 */
 				do_action( 'woocommerce_after_shop_loop_item_title' );
 			?>
