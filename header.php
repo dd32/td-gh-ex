@@ -43,16 +43,18 @@
 </div>
 </div>
 
-<?php if ( is_home() || is_front_page() ) {?> 
-<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-left' ) ) { ?>
-<div id="header-widgets">
-	<div class="home-right"> 
-		<?php dynamic_sidebar( 'homepage-right' ); ?>
-	</div>
+<div id="main-content">
 
-	<div class="home-left"> 
-		<?php dynamic_sidebar( 'homepage-left' ); ?>
+	<?php if ( is_home() || is_front_page() ) {?> 
+	<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-left' ) ) { ?>
+	<div id="header-widgets">
+		<div class="home-right"> 
+			<?php dynamic_sidebar( 'homepage-right' ); ?>
+		</div>
+
+		<div class="home-left"> 
+			<?php dynamic_sidebar( 'homepage-left' ); ?>
+		</div>
 	</div>
-</div>
-<?php } ?>
-<?php } ?>
+	<?php } ?>
+	<?php } ?>

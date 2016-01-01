@@ -9,7 +9,7 @@
 	// Set max content width for img, video, and more
 		global $content_width; 
 		if ( ! isset( $content_width ) )
-		$content_width = 880;
+		$content_width = 920;
 
 	// Make theme available for translation
 		load_theme_textdomain('onecolumn', get_template_directory() . '/languages');  
@@ -36,13 +36,13 @@
 		add_theme_support( 'custom-header', $args );
 
 	// Default header
-	register_default_headers( array(
-		'boats' => array(
-			'url'           => get_template_directory_uri() . '/images/boats.jpg',
-			'thumbnail_url' => get_template_directory_uri() . '/images/boats.jpg',
-			'description'   => __( 'Default header', 'onecolumn' )
-		)
-	) );
+		register_default_headers( array(
+			'boats' => array(
+				'url'           => get_template_directory_uri() . '/images/boats.jpg',
+				'thumbnail_url' => get_template_directory_uri() . '/images/boats.jpg',
+				'description'   => __( 'Default header', 'onecolumn' )
+			)
+		) );
 
 	// Post thumbnails
 		add_theme_support( 'post-thumbnails' ); 

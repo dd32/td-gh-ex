@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+OneColumn version 3.7 - january 2016
+- file style bugfix: replaced overflow with :after for several floating elements
+- added div main-content to wrap content, sidebar and footer
+
 OneColumn version 3.6 - december 2015
 - bugfix: included the register_default_headers again because it did not work without
 
