@@ -25,7 +25,7 @@
 					
 					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'gump' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'gump' ), 'WordPress' ); ?></a>
 					<span class="sep"> | </span>
-					<a href="<?php echo esc_url( __( 'http://pankogut.com/', 'gump' ) ); ?>" rel="designer"><?php printf( __( 'Theme: %1$s by %2$s.', 'gump' ), 'gump', 'pankogut' ); ?></a>
+					<a href="<?php echo esc_url( __( 'http://pankogut.com/', 'gump' ) ); ?>" rel="designer"><?php printf( __( 'Theme: %1$s by %2$s.', 'gump' ), 'Gump', 'pankogut' ); ?></a>
 				
 				<?php endif; ?>
 

@@ -3,8 +3,8 @@ Theme Name: Gump
 Theme URI: http://pankogut.com/wordpress-themes/gump
 Author: PanKogut
 Author URI: http://pankogut.com
-Description: Responsive Wordpress Theme for Bloggers
-Version: 1.0
+Description: Responsive Wordpress Theme for Bloggers. Now you can change all colors via Customizer Panel. There is also the custom widget with social links.
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, one-column, two-columns, left-sidebar, right-sidebar, fluid-layout, custom-header, custom-menu, editor-style, featured-image-header, full-width-template, post-formats, theme-options, featured-images, translation-ready
@@ -518,7 +518,7 @@ textarea {
 6.0 Header
 --------------------------------------------------------------*/
 html {
-	border: 10px solid #e3dbcf;
+	border: 10px solid #f0f4f5;
 }
 
 .site-header {
@@ -752,7 +752,7 @@ a:active {
 10.0 Widgets
 --------------------------------------------------------------*/
 .widget-area {
-	background-color: #e3dbcf;
+	background-color: #f0f4f5;
 	padding: 30px 15px;
 	text-align: center;
 }
@@ -828,6 +828,19 @@ a:active {
 	color: #fff;
 }
 
+.social-fontello {
+	background-color: #ccc;
+	border-radius: 50%;
+	font-family: 'behance';
+	font-size: 21px;
+	overflow: hidden;
+	padding: 10px 8px 9px 8px;
+}
+
+.social-fontello:before {
+	color: #fff;
+}
+
 .social-feed:before { content: '\f413'; }
 .social-linkedin:before { content: '\f208'; }
 .social-twitter:before { content: '\f202'; }
@@ -839,7 +852,7 @@ a:active {
 .social-youtube:before { content: '\f213'; }
 .social-vimeo:before { content: '\f212'; }
 .social-dribbble:before { content: '\f201'; }
-.social-behance:before { content: '\f471'; }
+.social-behance:before { content: '\e800'; }
 .social-github:before { content: '\f200'; }
 .social-skype:before { content: '\f220'; }
 .social-tumblr:before { content: '\f214'; }
@@ -885,10 +898,6 @@ a:active {
 
 	.entry-title a {
 		text-decoration: none;
-	}
-
-	.entry-title a:hover {
-		color: #ccc !important;
 	}
 
 /* Entry Content */

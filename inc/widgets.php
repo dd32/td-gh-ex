@@ -24,7 +24,7 @@ class social_gump extends WP_Widget {
 		$control_ops = array( 'id_base' => 'social_gump' );
 
 		/* Create the widget. */
-		$this->WP_Widget( 'social_gump', 'Social Links (gump)', $widget_ops, $control_ops );
+		$this->__construct( 'social_gump', 'Social Links (gump)', $widget_ops, $control_ops );
 	}
 
 	/**
@@ -96,7 +96,7 @@ class social_gump extends WP_Widget {
 			echo '<span><a href="' . $dribbble . '" title="' . __( 'Dribbble', 'gump' ) . '" class="' . __( 'social social-dribbble', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
 
 		if ( $behance )
-			echo '<span><a href="' . $behance . '" title="' . __( 'Behance', 'gump' ) . '" class="' . __( 'social social-behance', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
+			echo '<span><a href="' . $behance . '" title="' . __( 'Behance', 'gump' ) . '" class="' . __( 'social-fontello social-behance', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
 
 		if ( $github )
 			echo '<span><a href="' . $github . '" title="' . __( 'Github', 'gump' ) . '" class="' . __( 'social social-github', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';

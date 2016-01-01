@@ -27,11 +27,94 @@ function gump_customize_preview_js() {
 add_action( 'customize_preview_init', 'gump_customize_preview_js' );
 
 /**
+ * Data Satinization
+ */
+// text input
+function pk_sanitize_text( $input ) {
+    return wp_kses_post( force_balance_tags( $input ) );
+}
+
+/**
  * Customizer
  *
  * @since gump 1.0
  */
 function gump_theme_customizer( $wp_customize ) {
+	/*--------------------------------------------------------------
+		Colors
+	--------------------------------------------------------------*/
+	/* Body Font Color */
+    $wp_customize->add_setting( 'gump_body_color', array(
+        'default' => '#666666',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gump_body_color', array(
+		'label' => __( 'Body Font Color', 'gump' ),
+		'section' => 'colors',
+		'settings' => 'gump_body_color',
+	) ) );
+
+	/* Link Color */
+    $wp_customize->add_setting( 'gump_link_color', array(
+        'default' => '#666666',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gump_link_color', array(
+		'label' => __( 'Link Color', 'gump' ),
+		'section' => 'colors',
+		'settings' => 'gump_link_color',
+	) ) );
+
+	/* Link Hover Color */
+    $wp_customize->add_setting( 'gump_hover_color', array(
+        'default' => '#cccccc',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gump_hover_color', array(
+		'label' => __( 'Link Hover Color', 'gump' ),
+		'section' => 'colors',
+		'settings' => 'gump_hover_color',
+	) ) );
+	
+	/* Border Color */
+    $wp_customize->add_setting( 'gump_border_color', array(
+        'default' => '#f0f4f5',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gump_border_color', array(
+		'label' => __( 'Border Color', 'gump' ),
+		'section' => 'colors',
+		'settings' => 'gump_border_color',
+	) ) );
+	
+	/* Sidebar Color */
+    $wp_customize->add_setting( 'gump_sidebar_color', array(
+        'default' => '#f0f4f5',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gump_sidebar_color', array(
+		'label' => __( 'Sidebar Color', 'gump' ),
+		'section' => 'colors',
+		'settings' => 'gump_sidebar_color',
+	) ) );
+	
+	/* Widget Title Color */
+    $wp_customize->add_setting( 'gump_widget_title_color', array(
+        'default' => '#999',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gump_widget_title_color', array(
+		'label' => __( 'Widget Title Color', 'gump' ),
+		'section' => 'colors',
+		'settings' => 'gump_widget_title_color',
+	) ) );
+	
 	/*--------------------------------------------------------------
 		Custom CSS
 	--------------------------------------------------------------*/
@@ -54,7 +137,9 @@ function gump_theme_customizer( $wp_customize ) {
 	    'description' => 'You can add your custom CSS',
 	) );
 
-	$wp_customize->add_setting( 'gump_css' );
+	$wp_customize->add_setting( 'gump_css', array(
+        'sanitize_callback' => 'pk_sanitize_text',
+    ) );
 	 
 	$wp_customize->add_control(
 	    new gump_Customize_Textarea_Control(
@@ -77,7 +162,9 @@ function gump_theme_customizer( $wp_customize ) {
 	    'description' => 'You can add your custom Scripts in the footer without the tag "script". For example: google analytics.',
 	) );
 
-	$wp_customize->add_setting( 'gump_scripts' );
+	$wp_customize->add_setting( 'gump_scripts', array(
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
 	 
 	$wp_customize->add_control(
 	    new gump_Customize_Textarea_Control(
@@ -101,11 +188,61 @@ add_action('customize_register', 'gump_theme_customizer');
 if ( ! function_exists( 'gump_apply_style' ) ) :
   	
   	function gump_apply_style() {	
-		if ( get_theme_mod('gump_css') ) { 
+		if ( get_theme_mod('gump_css') || 
+			 get_theme_mod('gump_body_color') || 
+			 get_theme_mod('gump_link_color') || 
+			 get_theme_mod('gump_hover_color') || 
+			 get_theme_mod('gump_border_color') || 
+			 get_theme_mod('gump_sidebar_color') || 
+			 get_theme_mod('gump_widget_title_color')	
+		) { 
 		?>
 			<style id="gump-custom-css">
 				<?php if ( get_theme_mod('gump_css') ) : ?>
 					<?php echo get_theme_mod('gump_css');  ?>;
+				<?php endif; ?>
+				
+				<?php if ( get_theme_mod('gump_body_color') || get_theme_mod('gump_body_font') || get_theme_mod('gump_body_font_size') ) : ?>
+					body,
+					button,
+					input,
+					select,
+					textarea {
+						color: <?php echo get_theme_mod('gump_body_color');  ?>;
+					}
+				<?php endif; ?>
+
+				<?php if ( get_theme_mod('gump_link_color') ) : ?>
+					a,
+					a:visited {
+						color: <?php echo get_theme_mod('gump_link_color');  ?>;
+					}
+				<?php endif; ?>
+			
+				<?php if ( get_theme_mod('gump_hover_color') ) : ?>
+					a:hover,
+					a:focus,
+					a:active {
+						color: <?php echo get_theme_mod('gump_hover_color');  ?>;
+					}
+				<?php endif; ?>
+				
+				<?php if ( get_theme_mod('gump_border_color') ) : ?>
+					html {
+						border: 10px solid <?php echo get_theme_mod('gump_border_color');  ?>;
+					}
+				<?php endif; ?>
+				
+				<?php if ( get_theme_mod('gump_sidebar_color') ) : ?>
+					.widget-area {
+						background-color: <?php echo get_theme_mod('gump_sidebar_color');  ?>;
+					}
+				<?php endif; ?>
+
+				<?php if ( get_theme_mod('gump_widget_title_color') ) : ?>
+					.widget-title {
+						color: <?php echo get_theme_mod('gump_widget_title_color');  ?>;
+					}
 				<?php endif; ?>
 			</style>
 		<?php

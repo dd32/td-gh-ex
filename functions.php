@@ -52,6 +52,9 @@ if ( ! function_exists( 'gump_setup' ) ) :
 		'gallery',
 		'caption',
 	) );
+	
+	// Support title tag
+	add_theme_support( 'title-tag' );
 }
 endif; // gump_setup
 add_action( 'after_setup_theme', 'gump_setup' );
