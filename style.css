@@ -1,7 +1,7 @@
 /*
 Theme Name: BlueGray
 Theme URI: http://www.guidovanderleest.nl/bluegray
-Version: 3.3
+Version: 3.4
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: BlueGray is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: primary sidebar, widget areas in header, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
@@ -69,10 +69,12 @@ table {
 /* BODY AND CONTAINER */
 body {background:#eee; font-family:'Open Sans', sans-serif; font-size:1em; color:#333; line-height:1.5em;}
 #container {width:100%; float:left; margin:0 auto 0; text-align:left; word-wrap:break-word;}
-#main-content {max-width:1160px; position:relative; overflow:hidden; margin:0 auto 0; padding:0 20px 0;}
 
 
 /* MAIN CONTENT AREA */
+#main-content {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px 0;}
+#main-content:after {content:''; display:block; height:0; clear:both;}
+
 #content {width:66%; float:left; padding:20px 2% 20px 0;}
 #content-full {width:100%; float:left; padding:20px 0;}
 
@@ -126,7 +128,8 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER FIRST */
-#header-first {max-width:1160px; position:relative; overflow:hidden; margin:0 auto 0; padding:0 20px; text-align:center;}
+#header-first {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px; text-align:center;}
+#header-first:after {content:''; display:block; height:0; clear:both;}
 
 
 /* HEADER FIRST LOGO */
@@ -144,9 +147,9 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER SECOND MENU */
-.nav-head {clear:both; background:#333;}
+.nav-head {width:100%; clear:both; background:#333;}
 .nav-head select {display:none;}
-.nav-head ul {max-width:1160px; margin:0 auto 0; padding:0 20px 0; z-index:999;}
+.nav-head ul {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px 0; z-index:999;}
 .nav-head ul li {list-style-type:none; display:inline-block; position:relative;}
 .nav-head ul li a {text-decoration:none; color:#ddd; background:none; padding:10px 10px 10px; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
@@ -252,11 +255,12 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* FOOTER */
 #footer {width:100%; float:left; background:#333; color:#ddd; margin:0 auto 0;}
 #footer a {color:#ddd;}
-#footer .site-info {clear:both; max-width:1160px; margin:0 auto 0; padding:15px 20px; text-align:center;}
+#footer .site-info {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:15px 20px; text-align:center;}
 
 
 /* FOOTER WIDGET AREA */
-#footer-widgets {max-width:1160px; clear:both; position:relative; overflow:hidden; margin:0 auto 0; padding:0 20px;}
+#footer-widgets {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px;}
+#footer-widgets:after {content:''; display:block; height:0; clear:both;}
 
 #footer .widget {padding:10px 0; margin:0 0 10px; background:none; border:none;}
 #footer .widgettitle {padding:0; color:#ddd; border:0;}
@@ -278,13 +282,13 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	body {line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
 	#container {width:98%; padding:0 1%;}
-	#main-content {width:100%; padding:0;}
+	#main-content {width:100%; float:left; padding:0;}
 
 	/* MAIN CONTENT AREA */
 	#content, #content-full {width:100%; padding:10px 0;}
 
 	/* HEADER */
-	#header-first {padding:0;}
+	#header-first {width:100%; float:left; padding:0;}
 	#header-first .logo h1 {font-size:2em;}
 	#header-first .logo h4 {padding:0; font-size:1.3em;}
 	#header-widgets {border:0; margin:10px 0 0;}
@@ -307,7 +311,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 	/* FOOTER */
 	#footer {width:94%; padding:10px 3%;}
-	#footer .site-info {padding:10px 0;}
-	#footer-widgets {padding:0;}
+	#footer .site-info {width:100%; padding:10px 0;}
+	#footer-widgets {width:100%; float:left; padding:0;}
 	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
 }

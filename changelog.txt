@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+BlueGray version 3.4 - january 2016
+- file style bugfix: replaced overflow with :after for several floating elements
+
 BlueGray version 3.3 - december 2015
 - bugfix: included the register_default_headers again because it did not work without
 
