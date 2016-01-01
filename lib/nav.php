@@ -136,6 +136,9 @@ class kadence_mobile_walker extends Walker_Nav_Menu {
     if( in_array( 'sf-dropdown-submenu' , $classes ) ) {
       $has_sub = true;
     }
+    if( in_array( 'sf-dropdown-submenu' , $classes ) ) {
+      $has_sub = true;
+    }
 
     $classes[] = 'menu-item-'. $item->ID;
 
@@ -176,6 +179,12 @@ class kadence_mobile_walker extends Walker_Nav_Menu {
         $element->classes[] = 'sf-dropdown';
         $element->classes[] = 'sf-dropdown-toggle';
       } elseif ($depth === 1) {
+        $element->classes[] = 'sf-dropdown-submenu';
+        $element->classes[] = 'sf-dropdown-toggle';
+      } elseif ($depth === 2) {
+        $element->classes[] = 'sf-dropdown-submenu';
+        $element->classes[] = 'sf-dropdown-toggle';
+      } elseif ($depth === 3) {
         $element->classes[] = 'sf-dropdown-submenu';
         $element->classes[] = 'sf-dropdown-toggle';
       }

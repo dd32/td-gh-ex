@@ -1,15 +1,17 @@
 <?php
 /**
- * The template for displaying product content within loops.
+ * The template for displaying product content within loops
  *
  * Override this template by copying it to yourtheme/woocommerce/content-product.php
  *
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     2.4.0
+ * @author 	WooThemes
+ * @package WooCommerce/Templates
+ * @version 2.5.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 global $product, $woocommerce_loop, $virtue, $post;
 
@@ -28,8 +30,9 @@ if ($woocommerce_loop['columns'] == '3'){
 }
 
 // Ensure visibility
-if ( ! $product || ! $product->is_visible() )
+if ( ! $product || ! $product->is_visible() ) {
 	return;
+}
 
 // Increase loop count
 $woocommerce_loop['loop']++;
@@ -43,7 +46,6 @@ $classes[] = 'clearfix';
 ?>
 <div class="<?php echo esc_attr($itemsize);?> kad_product">
 	<div <?php post_class( $classes ); ?>>
-
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 

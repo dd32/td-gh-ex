@@ -121,7 +121,6 @@ function kt_woocommerce_template_loop_product_title() {
   echo '<h5>'.get_the_title().'</h5>';
 }
 
-remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
 
 
 remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
@@ -195,3 +194,53 @@ if ($woocommerce_loop['columns'] == '3'){
         echo '</div>';
          }
   }
+
+  remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 5 );
+
+remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
+
+remove_action( 'woocommerce_shop_loop_subcategory_title', 'woocommerce_template_loop_category_title', 10 );
+add_action( 'woocommerce_shop_loop_subcategory_title', 'kt_woocommerce_template_loop_category_title', 10 );
+
+ function kt_woocommerce_template_loop_category_title( $category ) {
+        ?>
+        <h5>
+            <?php
+                echo $category->name;
+
+                if ( $category->count > 0 )
+                    echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . $category->count . ')</mark>', $category );
+            ?>
+        </h5>
+        <?php
+    }
+
+
+
+// define the woocommerce_loop_add_to_cart_link callback
+function kt_filter_woocommerce_loop_add_to_cart_link( $html, $product ) {
+    $html = sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button kad-btn headerfont kad_add_to_cart %s product_type_%s">%s</a>',
+      esc_url( $product->add_to_cart_url() ),
+      esc_attr( $product->id ),
+      esc_attr( $product->get_sku() ),
+      $product->is_purchasable() ? 'add_to_cart_button' : '',
+      esc_attr( $product->product_type ),
+      esc_html( $product->add_to_cart_text() )
+    );
+    return $html;
+}   
+// add the filter
+add_filter( 'woocommerce_loop_add_to_cart_link', 'kt_filter_woocommerce_loop_add_to_cart_link', 10, 2 );
+
+remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
+remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
+add_action( 'woocommerce_before_subcategory', 'kt_woocommerce_template_loop_category_link_open', 10 );
+add_action( 'woocommerce_after_subcategory', 'kt_woocommerce_template_loop_category_link_close', 10 );
+
+function kt_woocommerce_template_loop_category_link_open( $category ) {
+    echo '<a href="' . get_term_link( $category->slug, 'product_cat' ) . '">';
+}
+function kt_woocommerce_template_loop_category_link_close() {
+    echo '</a>';
+}

@@ -333,6 +333,11 @@ if(isset($virtue['logo_layout']) and ($virtue['logo_layout'] == 'logocenter')) {
   } else {
   $topbar_layout = '';
   } 
+  if (isset($virtue['product_quantity_input']) && $virtue['product_quantity_input'] == 1) {
+  $quantity_input = 'input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=number] {-moz-appearance: textfield;}.quantity input::-webkit-outer-spin-button,.quantity input::-webkit-inner-spin-button {display: none;}';
+} else {
+  $quantity_input = '';
+}
   if(isset($virtue['hide_image_border']) and ($virtue['hide_image_border'] == 1)) {
   $wp_image_border = '[class*="wp-image"] {-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;border:none;}[class*="wp-image"]:hover {-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;border:none;}';
   } else {
@@ -350,7 +355,7 @@ if (!empty($virtue['custom_css'])) {
   $custom_css = '';
 }
 
-$kad_custom_css = '<style type="text/css">'.$logo_padding_top.$logo_padding_bottom.$logo_padding_left.$logo_padding_right.$menu_margin_top.$menu_margin_bottom.$font_family.$color_primary.$color_primary30.$color_grayfont
+$kad_custom_css = '<style type="text/css">'.$logo_padding_top.$logo_padding_bottom.$logo_padding_left.$logo_padding_right.$menu_margin_top.$menu_margin_bottom.$font_family.$color_primary.$color_primary30.$color_grayfont.$quantity_input
 .$color_footerfont.$contentclass.$topbarclass.$headerclass.$menuclass.$mobileclass.$footerclass.$boxedclass.$show_author.$ptitle_uppercase.$menu_layout_center.$x2logo.$ptitle_minheight.$topbar_layout.$wp_image_border.$mobileslider.$custom_css.'</style>';
   echo $kad_custom_css;
 }

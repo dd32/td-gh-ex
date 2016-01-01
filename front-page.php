@@ -21,6 +21,8 @@
 					get_template_part('templates/home/flex', 'slider');
 			} else if ($slider == "thumbs") {
 					get_template_part('templates/home/thumb', 'slider');
+			} else if ($slider == "fullwidth") {
+					get_template_part('templates/home/flex', 'slider-fullwidth');
 			} else if ($slider == "latest") {
 					get_template_part('templates/home/latest', 'slider');
 			} else if ($slider == "carousel") {

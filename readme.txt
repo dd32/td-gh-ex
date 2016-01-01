@@ -30,7 +30,12 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
-= Version 2.6.1 | 10th November 2015 =
+= Version 2.6.2 | 31st December 2015 =
+* NEW FEATURE: Fullwidth Slider option.
+* Update: Woocommerce for Dolphin
+* Update: CSS.
+
+= Version 2.6.1 | 10th December 2015 =
 * Update: Woocommerce hooks for better extension support.
 * Removed: Some woocommerce template files to limit update issues.
 * Update: Comment Output.
