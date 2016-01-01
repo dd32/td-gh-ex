@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+MultiColors version 3.1 - january 2016
+- file style bugfix: replaced overflow with :after for several floating elements
+
 MultiColors version 3.0 - december 2015
 - bugfix: included the register_default_headers again because it did not work without
 

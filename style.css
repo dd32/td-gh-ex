@@ -1,7 +1,7 @@
 /*
 Theme Name: MultiColors
 Theme URI: http://www.guidovanderleest.nl/multicolors
-Version: 3.0
+Version: 3.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MultiColors is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: primary sidebar, homepage sidebar, widget areas in header, widget areas in footer, custom header image, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
@@ -73,7 +73,8 @@ body {background:#800080; font-family:'Open Sans', sans-serif; font-size:1em; co
 
 /* MAIN CONTENT AREA */
 #main-content-container {width:100%; float:left; background:#00aaff;}
-#main-content {max-width:1160px; position:relative; overflow:hidden; margin:0 auto 0; padding:0 20px;}
+#main-content {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px;}
+#main-content:after {content:''; display:block; height:0; clear:both;}
 
 #content {width:66%; float:left; padding:20px 2% 20px 0;}
 #content-full {width:100%; float:left; padding:20px 0 10px;}
@@ -132,7 +133,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER FIRST LOGO */
-#header-first-container .logo {max-width:1160px; clear:both; position:relative; overflow:hidden; margin:0 auto 0; padding:10px 20px;}
+#header-first-container .logo {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:10px 20px;}
 #header-first-container .logo h1 {text-align:left; line-height:1em;} 
 #header-first-container .logo h1 a {color:#eee; text-decoration:none;}
 #header-first-container .logo h1 a:hover {text-decoration:none; color:#333;}
@@ -144,7 +145,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER SECOND MENU */
-.nav-head {max-width:1160px; clear:both; position:relative; overflow:hidden; margin:0 auto 0; padding:0 20px;}
+.nav-head {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px;}
 .nav-head select {display:none;}
 .nav-head ul {max-width:100%; margin:0 auto 0; padding:0; z-index:999;}
 .nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0;}
@@ -163,7 +164,8 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 /* HEADER THIRD */
 #header-third-container {width:100%; float:left; background:#ffd700;}
-#header-third {max-width:1160px; clear:both; position:relative; overflow:hidden; margin:0 auto 0; padding:0 20px; background:none;}
+#header-third {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px;}
+#header-third:after {content:''; display:block; height:0; clear:both;}
 
 
 /* HEADER THIRD HOMEPAGE IMAGE */
@@ -177,7 +179,8 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 /* HEADER FOURTH */
 #header-fourth-container {width:100%; float:left; background:#00aa00;}
-#header-fourth {max-width:1160px; clear:both; position:relative; overflow:hidden; margin:0 auto 0; padding:0 20px; background:none;}
+#header-fourth {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px;}
+#header-fourth:after {content:''; display:block; height:0; clear:both;}
 
 
 /* HEADER FOURTH HOMEPAGE WIDGET AREA */
@@ -281,13 +284,13 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* FOOTER */
-#footer {width:100%; float:left; background:#800080; color:#eee;}
-#footer a {color:#eee;}
-#footer .site-info {max-width:1160px; clear:both; position:relative; overflow:hidden; margin:0 auto 0; padding:15px 20px; text-align:center;}
+#footer {width:100%; float:left; background:#800080;}
+#footer .site-info {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:15px 20px; text-align:center;}
 
 
 /* FOOTER WIDGET AREA */
-#footer-widgets {max-width:1160px; clear:both; position:relative; overflow:hidden; margin:0 auto 0; padding:0 20px;}
+#footer-widgets {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px;}
+#footer-widgets:after {content:''; display:block; height:0; clear:both;}
 
 #footer .widget {padding:10px 0; margin:0 0 10px; background:none; color:#eee; border:none;}
 #footer .widgettitle {padding:0; color:#ddd; border:0;}
@@ -310,21 +313,21 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	body.custom-background {background-image:none !important;}
 
 	/* MAIN CONTENT AREA */
-	#main-content {width:96%; padding:0 2%;}
+	#main-content {width:96%; float:left; padding:0 2%;}
 	#content, #content-full {width:100%; padding:10px 0;}
 
 	/* HEADER */
-	#header-first-container .logo {width:96%; padding:10px 0; text-align:center;}
+	#header-first-container .logo {width:96%; float:left; padding:10px 2%; text-align:center;}
 	#header-first-container .logo h1 {font-size:2em; text-align:center;}
 	#header-first-container .logo h4 {font-size:1.3em; text-align:center; margin:10px 0 0;}
-	#header-third {width:96%; padding:0;}
-	#header-third .image-header {width:100%; margin:0;}
+	#header-third {width:96%; float:left; padding:0 2%;}
+	#header-third .image-header {width:100%;}
 	#header-third .sidebar-header {width:100%; padding:0;}
-	#header-fourth {width:96%; padding:20px 0 10px;}
+	#header-fourth {width:96%; float:left; padding:20px 2% 10px;}
 	.home-right, .home-middle, .home-left {width:100%; margin:0; float:left;} 
 
 	/* MENU */
-	.nav-head {width:98%; padding:0;}
+	.nav-head {width:96%; float:left; padding:0 2%;}
 	.nav-head ul {display: none;} 
 	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#eee; background:#ff7700; border:0;}
 
@@ -343,8 +346,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 	/* FOOTER */
 	#footer {width:96%; margin:0 auto 0; padding:10px 2%;}
-	#footer .site-info {padding:10px 0;}
-	#footer-widgets {width:100%; padding:0;}
+	#footer .site-info {width:100%; padding:10px 0;}
+	#footer-widgets {width:100%; float:left; padding:0;}
 	#footer .widget {padding:5px 0;} 
 	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
 }
