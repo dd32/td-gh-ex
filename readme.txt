@@ -98,6 +98,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.7.4
+- Updated: Social media links in pre-header now open in new tab.
+- Updated: Translation .pot file added. Old files .mo and .po removed.
+
 Version 1.7.3
 - Fixed:   Disables sortable slides in Customizer. This prevents issues where phantom slides still appear after deleting slides.
 - Updated: Various minor styling updates for theme options in customizer.
