@@ -233,7 +233,7 @@ if( ! function_exists( 'acmeblog_breadcrumbs' ) ):
                 $parent = get_post($post->post_parent);
                 $cat = get_the_category($parent->ID); $cat = $cat[0];
                 echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-                echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
+                echo '<a href="' . esc_url( get_permalink( $parent ) ) . '">' . $parent->post_title . '</a>';
                 if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
 
             } elseif ( is_page() && !$post->post_parent ) {
@@ -244,7 +244,7 @@ if( ! function_exists( 'acmeblog_breadcrumbs' ) ):
                 $breadcrumbs = array();
                 while ($parent_id) {
                     $page = get_post($parent_id);
-                    $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+                    $breadcrumbs[] = '<a href="' . esc_url( get_permalink( $page->ID ) ) . '">' . get_the_title($page->ID) . '</a>';
                     $parent_id  = $page->post_parent;
                 }
                 $breadcrumbs = array_reverse($breadcrumbs);
@@ -255,15 +255,15 @@ if( ! function_exists( 'acmeblog_breadcrumbs' ) ):
                 if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
 
             } elseif ( is_tag() ) {
-                echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+                echo $before . __('Posts tagged : ','acmeblog' ) . single_tag_title('', false) . '"' . $after;
 
             } elseif ( is_author() ) {
                 global $author;
                 $userdata = get_userdata($author);
-                echo $before . 'Author: ' . $userdata->display_name . $after;
+                echo $before . __('Author: ', 'acmeblog' ) . $userdata->display_name . $after;
 
             } elseif ( is_404() ) {
-                echo $before . 'Error 404' . $after;
+                echo $before . __( 'Error 404', 'acmeblog' ) . $after;
             }
             else {
                 /*nothing to do*/

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: AcmeBlog\n"
-"POT-Creation-Date: 2015-12-20 21:50+0545\n"
-"PO-Revision-Date: 2015-12-20 21:50+0545\n"
+"POT-Creation-Date: 2016-01-03 21:15+0545\n"
+"PO-Revision-Date: 2016-01-03 21:15+0545\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -358,6 +358,18 @@ msgstr ""
 
 #: acmethemes/functions.php:170
 msgid "Search Results for "
+msgstr ""
+
+#: acmethemes/functions.php:258
+msgid "Posts tagged : "
+msgstr ""
+
+#: acmethemes/functions.php:263
+msgid "Author: "
+msgstr ""
+
+#: acmethemes/functions.php:266
+msgid "Error 404"
 msgstr ""
 
 #: acmethemes/functions.php:273

@@ -116,7 +116,7 @@ if ( !function_exists('acmeblog_get_default_theme_options') ) :
             'acmeblog-feature-cat'          => 0,
             'acmeblog-feature-post-one'     => -1,
             'acmeblog-feature-post-two'     => -1,
-            'acmeblog-enable-feature'       => 1,
+            'acmeblog-enable-feature'       => '',
 
             /*header options*/
             'acmeblog-header-logo'          => '',
@@ -126,7 +126,7 @@ if ( !function_exists('acmeblog_get_default_theme_options') ) :
             'acmeblog-facebook-url'         => '',
             'acmeblog-twitter-url'          => '',
             'acmeblog-youtube-url'          => '',
-            'acmeblog-enable-social'        => 0,
+            'acmeblog-enable-social'        => '',
             'acmeblog-menu-show-search'     => 1,
 
             /*footer options*/
@@ -144,7 +144,7 @@ if ( !function_exists('acmeblog_get_default_theme_options') ) :
 
             /*theme options*/
             'acmeblog-search-placholder'    => __( 'Search', 'acmeblog' ),
-            'acmeblog-show-breadcrumb'      => 0,
+            'acmeblog-show-breadcrumb'      => '',
 
             /*Reset*/
             'acmeblog-reset-options'        => '0'
@@ -170,7 +170,7 @@ if ( !function_exists('acmeblog_get_theme_options') ) :
     function acmeblog_get_theme_options() {
         $acmeblog_default_theme_options = acmeblog_get_default_theme_options();
         $acmeblog_get_theme_options = get_theme_mod( 'acmeblog_theme_options');
-        if( is_array($acmeblog_get_theme_options ) ){
+        if( is_array( $acmeblog_get_theme_options ) ){
             return array_merge( $acmeblog_default_theme_options ,$acmeblog_get_theme_options );
         }
         else{

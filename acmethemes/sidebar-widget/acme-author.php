@@ -138,7 +138,7 @@ if ( ! class_exists( 'acmeblog_author_widget' ) ) :
                 $link_close = '';
                 if ( ! empty( $acmeblog_author_link ) ) {
                     $target_text = ( 1 == $acmeblog_author_new_window ) ? ' target="_blank" ' : '';
-                    $link_open = '<a href="' . esc_url( $acmeblog_author_link ) . '" ' . $target_text . '>';
+                    $link_open = '<a href="' .  $acmeblog_author_link . '" ' . $target_text . '>';
                     $link_close = '</a>';
                 }
                 $ad_content_image = $link_open . $img_html .  $link_close.$acmeblog_author_short_disc;

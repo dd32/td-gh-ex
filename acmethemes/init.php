@@ -11,12 +11,11 @@
 if( !function_exists('acmeblog_file_directory') ){
 
     function acmeblog_file_directory( $file_path ){
-        if( file_exists( trailingslashit( get_stylesheet_directory() ) . $file_path) ) {
-            return trailingslashit( get_stylesheet_directory() ) . $file_path;
+        $located = locate_template( $file_path );
+        if( '' != $located ){
+            return $located;
         }
-        else{
-            return trailingslashit( get_template_directory() ) . $file_path;
-        }
+        return false;
     }
 
 }
@@ -36,9 +35,6 @@ require $acmeblog_date_display_file_path;
 /*
 * files for hooks
 */
-$acmeblog_front_page_file_path = acmeblog_file_directory('acmethemes/hooks/front-page.php');
-require $acmeblog_front_page_file_path;
-
 $acmeblog_slider_selection_file_path = acmeblog_file_directory('acmethemes/hooks/slider-selection.php');
 require $acmeblog_slider_selection_file_path;
 

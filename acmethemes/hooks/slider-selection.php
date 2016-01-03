@@ -13,7 +13,7 @@ if ( !function_exists('acmeblog_default_slider') ) :
         ?>
         <li>
             <a href="#">
-                <img src="<?php echo esc_url( get_template_directory_uri()."/assets/img/no-image-660-365.jpg" ); ?>"/>
+                <img src="<?php echo esc_url( get_template_directory_uri()."/assets/img/no-image-690-400.jpg" ); ?>"/>
             </a>
             <div class="slider-desc">
                 <div class="slider-details">
@@ -30,7 +30,7 @@ if ( !function_exists('acmeblog_default_slider') ) :
         </li>
         <li>
             <a href="#">
-                <img src="<?php echo esc_url( get_template_directory_uri()."/assets/img/no-image-660-365.jpg" ); ?>"/>
+                <img src="<?php echo esc_url( get_template_directory_uri()."/assets/img/no-image-690-400.jpg" ); ?>"/>
             </a>
             <div class="slider-desc">
                 <div class="slider-details">
@@ -78,7 +78,7 @@ if ( ! function_exists( 'acmeblog_display_feature_slider' ) ) :
                     if (has_post_thumbnail()) {
                         $image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
                     } else {
-                        $image_url[0] = get_template_directory_uri() . '/assets/img/no-image-660-365.jpg';
+                        $image_url[0] = get_template_directory_uri() . '/assets/img/no-image-690-400.jpg';
                     }
                     ?>
                     <li>

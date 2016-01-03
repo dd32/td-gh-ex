@@ -30,7 +30,7 @@
 			}
 			else{
 				$thumbnail = 'medium';
-				$no_image = get_template_directory_uri().'/assets/img/no-image-660-365.jpg';
+				$no_image = get_template_directory_uri().'/assets/img/no-image-690-400.jpg';
 
 			}
 			if( has_post_thumbnail() ):

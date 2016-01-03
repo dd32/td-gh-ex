@@ -3,8 +3,8 @@ Theme Name: AcmeBlog
 Theme URI: http://www.acmethemes.com/themes/acmeblog/
 Author: acmethemes
 Author URI: http://www.acmethemes.com/
-Description: AcmeBlog is professional blog theme, can be used for blog, news and magazine site. It is a modern responsive theme. It is SEO friendly theme. You can just focus on writing content and images. The theme has beautifully designed featured section and you have full control over it. AcmeBlog is very easy to use and customize. It has very light weight theme but have highly customizable theme customizer. With its advanced setting, you can control featured section, homepage, sidebar and inner pages. You have full control over header setting- logo, date, search and social. Further you can add your own copyright text in the footer. This theme come with advanced layout/design control. Default layout can be full or boxed, sidebar options are left, right and no sidebar. Image can be enable/disable in blog and archive pages. You can change whole site primary color. With the custom CSS and custom background image option, you can further customize your site. In the single post, you can show-hide related posts. Also with extra theme options, you can add breadcrumb and search placeholder. The theme comes with reset options too. Again Author widget, allow you to add author information... You can check our demo here http://www.acmethemes.com/demo/?theme=acmeblog
-Version: 1.1.0
+Description: AcmeBlog is professional blog theme, can be used for blog, news and magazine site. It is a modern responsive theme. It is SEO friendly theme. You can just focus on writing content and images. The theme has beautifully designed featured section and you have full control over it. AcmeBlog is very easy to use and customize. It has very light weight theme but have highly customizable theme customizer. With its advanced setting, you can control featured section, homepage, sidebar and inner pages. You have full control over header setting- logo, date, search and social. Further you can add your own copyright text in the footer. This theme come with advanced layout/design control. Default layout can be full or boxed, sidebar options are left, right and no sidebar. Image can be enable/disable in blog and archive pages. You can change whole site primary color. With the custom CSS and custom background image option, you can further customize your site. In the single post, you can show-hide related posts. Also with extra theme options, you can add breadcrumb and search placeholder. The theme comes with reset options too. Again Author widget, allow you to add author information. You can check our demo here http://www.acmethemes.com/demo/?theme=acmeblog
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: acmeblog
@@ -243,7 +243,8 @@ h6, h6 a,
 	text-transform: uppercase;
 	line-height: 30px;
 }
-.boxed-layout #page {
+#page{
+	width: 1230px;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color=#2D2D2D)";/*IE 8*/
 	-moz-box-shadow: 0px 0px 12px #2D2D2D;/*FF 3.5+*/
 	-webkit-box-shadow: 0px 0px 12px #2D2D2D;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
@@ -251,12 +252,13 @@ h6, h6 a,
 	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color=#2D2D2D); /*IE 5.5-7*/
 	background: #ffffff;
 	margin: 0 auto;
+}
+.boxed-layout #page {
 	width: 1050px;
 }
 .wrapper {
 	background: #ffffff;
 	margin:0 auto;
-	width: 1050px;
 }
 .text-center{
 	text-align: center;
@@ -320,7 +322,7 @@ i.fa{
 		font-style:inherit;
 		font-weight:inherit;
 	}
-	.boxed-layout #page{
+	#page,.boxed-layout #page{
 		width: 100%;
 	}
 	.wrapper{
@@ -359,6 +361,9 @@ i.fa{
 	font-size: 18px;
 	height: 42px;
 	position: relative;
+}
+.main-navigation li:first-child{
+	border-left: none;
 }
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -856,6 +861,9 @@ object {
 	padding: 0 15px;
 	position: relative;
 }
+.header-wrapper .menu li ul a{
+	line-height: 40px;
+}
 .acmethemes-nav ul li.menu-item-has-children::after {
 	-moz-border-bottom-colors: none;
 	-moz-border-left-colors: none;
@@ -1120,6 +1128,7 @@ object {
 	-webkit-transition:all 0.5s ease-in-out 0s;
 	-moz-transition:all 0.5s ease-in-out 0s;
 	width: 100%;
+	max-height: 394px;
 }
 .slider-section .bx-wrapper img:hover{
 	transform: scale(1.1);
@@ -1202,8 +1211,11 @@ object {
 	width: 31%;
 }
 .besides-slider .beside-post{
+	margin-bottom: 65px;
 	float: left;
 	position: relative;
+}
+.boxed-layout .besides-slider .beside-post{
 	margin-bottom: 17px;
 }
 .besides-slider .beside-thumb{
