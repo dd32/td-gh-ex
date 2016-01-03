@@ -7,7 +7,7 @@
  */
 /**************** ARISE PARALLAX WIDGETGS ***************************/
 class arise_parallax_widget extends WP_Widget {
-	function arise_parallax_widget() {
+	function __construct() {
 		$widget_ops  = array('classname' => 'widget_parallax', 'description' => __('Display Parallax widgets for Front Page', 'arise'));
 		$control_ops = array('width' => 200, 'height' => 250);
 		parent::__construct(false, $name = __('TF: FP Parallax', 'arise'), $widget_ops, $control_ops);

@@ -4,7 +4,7 @@ Theme URI: http://themefreesia.com/themes/arise
 Author: Theme Freesia
 Author URI: http://themefreesia.com
 Description: Arise is a Responsive Multi-Purpose Business WordPress Theme, Designed and Developed by Theme Freesia. This theme supports popular plugins like Breadcrumb NavXT, WP-PageNavi, Contact Form 7, Jetpack by WordPress.com, Polylang, Newsletter, bbPress and wooCommerce. It is also translation ready and easily customizable with lots of options using Customizer. It consists contact us template, gallery template and many widgets and sidebar.
-Version: 1.1.4
+Version: 1.1.5
 Text Domain: arise
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -375,14 +375,17 @@ a:hover {
 .three-column-full-width {
 	width: 33.33%;
 }
-#primary .three-column:nth-child(3n+4) {
+#primary .three-column:nth-child(3n+4),
+#primary .four-column:nth-child(4n+5) {
  	clear: none;
 }
 .three-column:nth-child(3n+4),
 .four-column:nth-child(4n+5),
 .column-2:nth-child(2n+3),
 .column-3:nth-child(3n+4),
-.column-4:nth-child(4n+5) {
+.column-4:nth-child(4n+5),
+#primary .three-column:nth-child(2n+3),
+#primary .four-column:nth-child(2n+3) {
  	clear: both;
 }
 

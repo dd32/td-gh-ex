@@ -7,7 +7,7 @@
  */
 /*********************** ARISE TESTIMONIALS WIDGETS ****************************/
 class arise_widget_testimonial extends WP_Widget {
-	function arise_widget_testimonial() {
+	function __construct() {
 		$widget_ops = array( 'classname' => 'widget_testimonial', 'description' => __( 'Display Testimonial on FrontPage', 'arise' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 ); 
 		parent::__construct( false, $name = __( 'TF: FP Testimonial', 'arise' ), $widget_ops, $control_ops);

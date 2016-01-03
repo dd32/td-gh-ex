@@ -1,4 +1,8 @@
 == CHANGE LOG ==
+= 1.1.5 =
+	- Update - CSS Updated
+	- Fix - __construct() added for widgets
+
 = 1.1.4 =
 	- Fix - Forum link fixed
 

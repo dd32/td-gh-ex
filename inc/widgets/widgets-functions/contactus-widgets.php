@@ -7,7 +7,7 @@
  */
 /******************** ARISE CONTACT US WIDGETS *****************************/
 class arise_contact_widgets extends WP_Widget {
-	function arise_contact_widgets() {
+	function __construct() {
 		$widget_ops = array( 'classname' => 'widget_contact', 'description' => __( 'Display Contact Us Information', 'arise') );
 		$control_ops = array('width' => 200, 'height' => 250);
 		parent::__construct( false, $name=__('TF: Contact Us','arise'), $widget_ops, $control_ops );

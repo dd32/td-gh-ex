@@ -7,7 +7,7 @@
  */
 /******************** ARISE PARALLAX VIDEO WIDGETS **********************************/
 class arise_parallax_video_widget extends WP_Widget {
-	function arise_parallax_video_widget() {
+	function __construct() {
 		$widget_ops  = array('classname' => 'widget_parallax_video', 'description' => __('Display Parallax Youtube/ Vimeo video for Front Page', 'arise'));
 		$control_ops = array('width'     => 200, 'height'     => 250);
 		parent::__construct(false, $name = __('TF: FP Video Widget', 'arise'), $widget_ops, $control_ops);

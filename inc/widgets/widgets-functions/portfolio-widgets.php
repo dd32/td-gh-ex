@@ -1,7 +1,7 @@
 <?php
 /***************************** Portfolio Widget ***********************************/
 class arise_portfolio_widget extends WP_Widget {
-	function arise_portfolio_widget() {
+	function __construct() {
 		$widget_ops  = array('classname' => 'widget_portfolio clearfix', 'description' => __('Portfolio Widget (Front Page)', 'arise'));
 		$control_ops = array('width'     => 200, 'height'     => 250);
 		parent::__construct(false, $name = __('TF: FP Portfolio Widget', 'arise'), $widget_ops, $control_ops);

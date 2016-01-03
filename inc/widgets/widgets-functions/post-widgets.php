@@ -7,7 +7,7 @@
  */
 /****************** ARISE POST WIDGETS **************************************/
   class arise_post_widget extends WP_Widget {
-	function arise_post_widget() {
+	function __construct() {
 		$widget_ops  = array('classname' => 'widget_latest_blog clearfix', 'description' => __('Displays Blog Widgets on FrontPage', 'arise'));
 		$control_ops = array('width'     => 200, 'height'     => 250);
 		parent::__construct(false, $name = __('TF: FP Blog Widget', 'arise'), $widget_ops, $control_ops);
