@@ -25,11 +25,12 @@
 							    <li><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><i class="fa fa-pencil-square-o"></i><?php echo get_the_author(); ?></a></li>
 								<li><a href="#"><i class="fa fa-comments"></i><?php comments_popup_link( '0', '1', '%', '', '-'); ?></a></li>
 								<?php if(get_the_category_list() != '') { ?>
-								<li><a href="#"><i class="fa fa-folder-open"></i><?php the_category(' '); ?></a></li>
+								<li><a href="#"><i class="fa fa-folder-open"></i><?php the_category(' , '); ?></a></li>
 								<?php } ?>
 							</ul>
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<p><?php the_content(); ?></p>
+						<?php wp_link_pages( array( 'before' => '<div class="row">'.'<div class="blog-pagination">' . __( 'Pages:', 'becorp' ), 'after' => '</div></div>' ) ); ?>
 					  <div class="post-bottom clearfix">
 							<div class="post-tags-list">			
 								<ul class="tag-cloud">
@@ -41,11 +42,12 @@
 						</div>
 						<div class="author-info clearfix">
 							<div class="author-image">
-								<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 70 ); ?></a>
+								<?php echo get_avatar( get_the_author_meta( 'user_email' ), 70 ); ?>
 							</div>
 							<div class="author-bio">
-								<h4><?php _e('About','becorp');?> <a href="<?php bloginfo(); ?>"><?php echo get_the_author(); ?></a></h4>
-								<p><?php echo get_the_author_meta( 'description' ); ?><a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><?php _e('View all posts by','becorp');?> <?php get_the_author(); ?> </a></p>
+								<h4><?php _e('About','becorp');?>&nbsp;<?php the_author_link(); ?></h4>
+								<p><?php echo get_the_author_meta( 'description' );if(!get_the_author_meta('description')) _e('No description.
+															Please update your profile.','becorp'); ?><a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">&nbsp;<?php _e('-','becorp'); _e('View all posts by','becorp'); get_the_author(); ?> </a></p>
 							</div>
 						</div>
 						<div class="post-content"></div>

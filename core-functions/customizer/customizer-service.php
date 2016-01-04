@@ -74,7 +74,7 @@ $wp_customize->add_panel( 'becorp_service_options', array(
 	$wp_customize->add_setting(
     'becorp_option[service_description]',
     array(
-        'default' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','becorp'),
+        'default' => __('Duis autem vel eum iriure dolor in hendrerit in vulputate.','becorp'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
     )	

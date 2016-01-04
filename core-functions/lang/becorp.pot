@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: becorp\n"
-"POT-Creation-Date: 2015-12-29 22:38+0530\n"
-"PO-Revision-Date: 2015-12-29 22:39+0530\n"
+"POT-Creation-Date: 2016-01-04 18:41+0530\n"
+"PO-Revision-Date: 2016-01-04 18:53+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -45,7 +45,7 @@ msgstr ""
 msgid "Return to the"
 msgstr ""
 
-#: 404.php:25
+#: 404.php:25 functions.php:58
 msgid "Previous"
 msgstr ""
 
@@ -78,8 +78,11 @@ msgid "Blog Archives: "
 msgstr ""
 
 #: author.php:8
-#, php-format
-msgid "Author Archives: %s"
+msgid "Author  Archives :"
+msgstr ""
+
+#: category.php:8
+msgid "Category  Archives:"
 msgstr ""
 
 #: comments.php:11
@@ -105,6 +108,10 @@ msgstr ""
 
 #: comments.php:35
 msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:39
+msgid "~~||~~Comments Are Closed~~||~~"
 msgstr ""
 
 #: comments.php:44
@@ -151,16 +158,12 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content-post.php:14
-msgid ", "
-msgstr ""
-
-#: content-post.php:19 search.php:41
-msgid "Read More"
-msgstr ""
-
-#: content-post.php:24
+#: content-post.php:22 single.php:33
 msgid "Pages:"
+msgstr ""
+
+#: content-post.php:23 search.php:41
+msgid "Read More"
 msgstr ""
 
 #: core-functions/breadcrumbs/breadcrumbs.php:102
@@ -310,10 +313,12 @@ msgstr ""
 
 #: core-functions/customizer/customizer-header.php:530
 #: core-functions/customizer/customizer-header.php:1267
+#: core-functions/customizer/customizer-service.php:77
 #: theme_default_data.php:41 theme_default_data.php:45
-#: theme_default_data.php:49 theme_default_data.php:83
-#: theme_default_data.php:86 theme_default_data.php:91
-#: theme_default_data.php:96 theme_default_data.php:104
+#: theme_default_data.php:49 theme_default_data.php:65
+#: theme_default_data.php:83 theme_default_data.php:86
+#: theme_default_data.php:91 theme_default_data.php:96
+#: theme_default_data.php:104
 msgid "Duis autem vel eum iriure dolor in hendrerit in vulputate."
 msgstr ""
 
@@ -722,14 +727,6 @@ msgstr ""
 msgid "Service Title Two"
 msgstr ""
 
-#: core-functions/customizer/customizer-service.php:77
-#: theme_default_data.php:65
-msgid ""
-"Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu "
-"fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in "
-"culpa qui officia deserunt mollit anim id est laborum."
-msgstr ""
-
 #: core-functions/customizer/customizer-service.php:85
 msgid "Service Description"
 msgstr ""
@@ -1042,7 +1039,7 @@ msgstr ""
 msgid "footer widget area"
 msgstr ""
 
-#: footer.php:16 page.php:47 single.php:47
+#: footer.php:16 page.php:47 single.php:48
 msgid "About"
 msgstr ""
 
@@ -1130,11 +1127,25 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: page.php:37 single.php:37
+#: functions.php:59
+msgid "Next"
+msgstr ""
+
+#: page.php:37 single.php:38
 msgid "Tags : "
 msgstr ""
 
-#: page.php:48 single.php:48
+#: page.php:48 single.php:49
+msgid ""
+"No description.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPlease update your profile."
+msgstr ""
+
+#: page.php:49 single.php:50
+msgid "-"
+msgstr ""
+
+#: page.php:49 single.php:50
 msgid "View all posts by"
 msgstr ""
 

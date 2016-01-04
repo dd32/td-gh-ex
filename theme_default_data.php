@@ -62,7 +62,7 @@ function theme_default_data()
 	'service_section_enabled' => 1,
 	'service_title_one' => get_theme_mod('service_title_one',__('Our','becorp')),
 	'service_title_two' => get_theme_mod('service_title_two',__('Services','becorp')),
-	'service_description' => get_theme_mod('service_description',__('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','becorp')),
+	'service_description' => get_theme_mod('service_description',__('Duis autem vel eum iriure dolor in hendrerit in vulputate.','becorp')),
 	
 	'service_one_icon' => 'fa-commenting-o',
 	'service_one_title'=> get_theme_mod('service_one_title',__('Qui Blandit Praesent','becorp')),

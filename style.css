@@ -6,7 +6,7 @@ Author URI:http://asiathemes.com/
 Created by: Asiathemes
 Description: Becorp is a responsive and fully customizable template for Business and Multipurpose theme.The Theme has You can use it for your business, portfolio, blogging or any type of site.Custom menus to choose the menu in Primary Location that is in Header area of the site. which is ideal for creating a corporate / business website.
 Becorp is Retina ready.We focused on usability across various devices, starting with smartphones.Becorp is a Cross-Browser Compatible theme that works on All leading web browsers.In header area and footer of the theme offers Social Media Links to add your Social Links here.translation ready and many more.
-Version:  1.2
+Version:  1.3
 Tags: black,blue, purple,red,orange, white,green, yellow, two-columns, three-columns, four-columns, custom-menu, right-sidebar, fixed-layout, fluid-layout, custom-background,featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, responsive-layout
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -1308,6 +1308,7 @@ ul.list-ok li:before {
 .featured-image {
   position: relative;
   margin-bottom: 40px;
+  overflow:hidden;
 }
 .featured-image img ,#carousel-blog{
    transition: all 0.2s ease-in-out;
@@ -1394,18 +1395,19 @@ ul.list-ok li:before {
 
 /*----Blog Pagination---*/
 .blog-pagination {
-    margin-bottom:20px;
+    margin-bottom: 20px;
     overflow: hidden;
-    padding: 0;
-	text-align: center;
+    padding: 0px 12px;
+    text-align: center;
+    float: left;
 }
 .blog-pagination a:hover, .blog-pagination a.active {
     background-color:#FB662F !important;
     color: #FFFFFF;
 }
 .blog-pagination a {
-    width:146px;
-	height:40px;
+    /* width:146px;
+	height:40px; */
     color: #FB662F;
     cursor: pointer;
 	border:2px solid #FB662F;
@@ -1580,8 +1582,9 @@ ul.list-ok li:before {
   background-color:#CCCCCC !important;
   border: 0 none;
   border-radius:2px;
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 16px;
+  font-family: Lato;
+  font-weight: 400;
   padding: 9px 19px;
   color:#fff;
 }
@@ -2120,9 +2123,6 @@ code { color: #f24f18 !important; }
     height: auto;
     max-width: 100%;
 }
-.blog-content,.featured-image .alignnone,.featured-image, .blog-content .alignright, .blog-content .alignleft {
-    /* padding-top: 20px; */
-}
 
 img.aligncenter, img.alignleft, img.alignnone, img.alignright, img.attachment-medium, img.attachment-large, img.attachment-thumbnail, img.size-full, img.size-medium, img.size-thumbnail {
     width: inherit;
@@ -2173,7 +2173,7 @@ blockquote { border-left :5px solid #f24f18 !important ;}
   background-color: #fff;
   color:#f24f18;
 }
-a:hover { color:#f24f18; }
+ a:hover { color:#f24f18; } 
 
 table {
     border-collapse: separate;
@@ -2187,9 +2187,11 @@ table {
 .blog-content   ol  li,.blog-content  ol  li{list-style:decimal outside none;list-style-position: inside;}
 
 .blog-content ol li, .blog-content ul li {
-    font-family: 'OpenSansRegular';
+    font-family: 'Lato';
     font-size: 15px;
+    font-weight: 400;
     word-wrap: break-word;
+    color: #818387;
 }
 
 .blog-content  ul li {

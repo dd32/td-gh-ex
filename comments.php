@@ -1,7 +1,7 @@
 <?php
-/*	@Theme Name	:	becorp-Pro
+/*	@Theme Name	:	becorp
 * 	@file         :	comments.php
-* 	@package      :	becorp-Pro
+* 	@package      :	becorp
 * 	@author       :	VibhorPurandare
 * 	@license      :	license.txt
 * 	@filesource   :	wp-content/themes/becorp/comments.php
@@ -36,7 +36,7 @@
 		</nav>
 		<?php endif;  ?>
 		<?php elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : 
-        
+        _e("~~||~~Comments Are Closed~~||~~",'becorp');
 		?>
 	<?php endif; ?>
 	<?php if ('open' == $post->comment_status) : ?>

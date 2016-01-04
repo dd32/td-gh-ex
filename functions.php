@@ -54,7 +54,9 @@ add_action( 'after_setup_theme', 'asiathemes_setup' );
 				function asiathemes_navigation() { ?>
 				<div class="row">
 				<div class="blog-pagination">
-				<?php posts_nav_link(); ?>
+				<?php //posts_nav_link(); 
+				previous_posts_link( __('Previous','becorp') ); 
+				next_posts_link( __('Next','becorp') ); ?>
 				</div>
 				</div>
 				<?php }

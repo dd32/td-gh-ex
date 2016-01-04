@@ -19,6 +19,12 @@ released
 @Version: 1.2
 1.Changed theme URL.
 
+@Version: 1.3
+1.Fix featured posts issue.
+2.Fix sticky post issue.
+3.Fix Author meta info issue.
+4.Fix Meta Date overlapped with other meta data issue.
+5.Fix Post pagination issue.
 
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes

@@ -34,7 +34,7 @@
 					<a href="http://asiathemes.com/Becorp" target="blank" class="btn btn-success btn-lg"><?php _e('View Becorp Pro Demo','becorp'); ?> </a>
 					<a href="http://asiathemes.com" target="_blank" class="btn btn-primary btn-lg" ><?php _e('Upgrade to Becorp Pro','becorp'); ?></a>
 			</div>
-		</div>
+	</div>
 <div class="clearfix"></div>
 
 
