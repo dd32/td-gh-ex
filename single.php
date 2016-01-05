@@ -1,76 +1,48 @@
 <?php get_header();
 
-if(!is_paged()) : while ( have_posts() ) : the_post(); ?>
+while ( have_posts() ) : the_post(); ?>
 
-<article id="title-image-content" itemscope itemtype="http://schema.org/NewsArticle" <?php post_class(); ?>>
-            
-            <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="<?php the_permalink() ?>"/>
-            
-            <header id="title-and-image">
-            
-            <?php if (is_customize_preview()) echo '<div class="customizer-tite-image"></div>'; ?>
+<div id="post-<?php the_ID(); ?>" <?php post_class('contents'); ?>>
 
-<?php if ( has_post_thumbnail() ) : ?>
-                <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <h3 class="post_title"><?php if (get_theme_mod('display_date_setting') != 'off' ) : ?><time datetime="<?php the_time('Y-m-d H:i') ?>"><?php the_time('M jS') ?><br/><?php the_time('Y') ?></time><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'localize_semperfi'); } ?></h3>
 
-                    <?php the_post_thumbnail('featured_image', array( 'class' => 'featured_image', 'itemprop' => 'url')); ?>
+    <?php the_post_thumbnail('large_featured', array( 'class' => "featured_image"));
 
+    the_content(); ?>
 
-                    <meta itemprop="url" content="<?php wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured_image' ); ?>">
+    <span class="tags">
 
-                    <meta itemprop="width" content="900">
+        <?php wp_link_pages( array('before' => 'Pages: ', 'after' => '</br>') ); ?>
 
-                    <meta itemprop="height" content="532">
-                    
-                </div>
-<?php else :?>
-            <img src="<?php echo get_theme_mod('default_header_img'); ?>" class="featured_image" />
+        Post Categories: <?php the_category(', '); the_tags('</br>Tags: ', ', ', ''); ?>
 
-<?php endif; ?>
-                <h2 itemprop="headline"><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?></h2>
-            
-            </header>
-            
-            <main id="the-article" itemprop="articleBody">
-                
-                <?php get_template_part( 'microdata' ); ?>
-                
-                <?php the_content(); ?>
+    </span>
 
-                <?php wp_link_pages( array('before' => 'Pages: ', 'after' => '</br>') ); ?>
-            
-            </main>
-            
-            <section id="categories-and-tags" style="background-image:url(<?php echo get_theme_mod('categories_and_tags_img'); ?>);">
-<?php if (get_the_category_list() != '') : ?>
-    
-                <ul class="post-categories" itemprop="about">
-
-                    <li><?php echo get_the_category_list( __( '</li>
-
-                    <li>', 'semper-fi-lite' ) ); ?></li>
-
-                </ul>
-    <?php endif; ?>
-
-                <?php if(get_the_tag_list()) { echo get_the_tag_list('<ul class="tag-list" itemprop="keywords">
-
-                    <li>',' </li>
-
-                    <li>','</li>
-
-                </ul>');} ?>
+</div>
 
 
-            </section>
-<?php if (!is_home() && (get_theme_mod('comments_setting') != 'none') && (get_theme_mod('comments_setting') != 'page')) : comments_template(); endif;  endwhile; ?>
 
-        </article>
+<?php if ((get_theme_mod('previousnext_setting') != 'page') && (get_theme_mod('previousnext_setting') != 'neither')) : ?>
 
-<?php else : get_template_part( 'the-slider' ); ?>
+    <div class="stars_and_bars">
+        <span class="left"><?php previous_post_link('%link', '&#8249; %title'); ?></span>
+        <span class="right"><?php next_post_link('%link', '%title &#8250;'); ?></span>
+    </div>
 
-<?php get_template_part( 'show-blog' ); endif; ?>
+<?php else : ?>
 
-<?php get_template_part( 'advertise' ); ?>
+    <div class="stars_and_bars"></div>
 
-<?php get_footer(); ?>
+<?php endif;
+
+if (!is_home() && (get_theme_mod('comments_setting') != 'none') && (get_theme_mod('comments_setting') != 'page')) :
+
+    comments_template();
+
+endif;
+
+endwhile;
+
+if (semperfi_is_sidebar_active('widget')) get_sidebar();
+
+get_footer(); ?>
