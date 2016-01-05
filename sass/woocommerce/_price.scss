@@ -1,0 +1,15 @@
+.price {    
+    margin-bottom: 21px;
+    display: block;
+    del {
+        margin-right: 12px;
+        color:#83868a;
+    }
+    &>.amount,
+    ins{
+        font-size: 24px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+}

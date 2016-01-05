@@ -1,0 +1,20 @@
+.search-form{
+    position:relative;
+    input[type="text"]{
+        border:1px solid $borderColor;
+        width:100%;  
+        padding: 20px 24px;
+        height: 67px;
+    }
+    button{
+        position: absolute;      
+        top:0;
+        right:0;
+        font-size: 30px;
+        color:$brandColor;
+        padding: 10px 18px;
+        &,&:hover,&:focus{
+            background: transparent;
+        }
+    }
+}

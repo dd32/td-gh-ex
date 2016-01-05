@@ -1,0 +1,111 @@
+.artwork{
+
+    .motopress-button-obj .motopress-btn{
+        margin: 0 0 24px;
+    }
+    .motopress-button-obj .mp-theme-button-brand,
+    .motopress-button-obj .mp-theme-button-white,
+    .motopress-download-button-obj .mp-theme-button-brand,
+    .motopress-download-button-obj .mp-theme-button-white,
+    .motopress-button-group-obj .mp-theme-button-white,
+    .motopress-button-group-obj .mp-theme-button-brand,
+    .motopress-service-box-obj .motopress-service-box-button-section .mp-theme-button-brand,
+    .motopress-cta-obj .mp-theme-button-white{
+        font-family: $fontFamilyRoboto;
+        line-height: $lineHieghtBase;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        border-radius: 0px;
+        border: 0px solid;
+        text-shadow:none;
+        display:inline-block;
+        &:hover,
+            &:focus{
+            text-decoration: none;
+        }        
+    }
+
+    .motopress-service-box-obj .motopress-service-box-button-section,
+    .motopress-button-group-obj ,
+    .motopress-button-obj, .motopress-download-button-obj, .motopress-modal-obj {
+        .motopress-btn-size-large {
+            padding: 15px 46px 13px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .motopress-btn-size-middle {
+            padding: 12px 28px 11px;
+            font-size: 16px;
+        }
+        .motopress-btn-size-small {
+            padding: 9px 24px 8px;
+            font-size: 14px;
+        }
+        .motopress-btn-size-mini {
+            padding: 9px 24px 7px;
+            font-size: 12px;
+        }
+    }
+    .motopress-service-box-obj .motopress-service-box-button-section  .mp-theme-button-brand,
+
+    .motopress-button-group-obj .mp-theme-button-white,
+    .motopress-button-obj .mp-theme-button-white{
+        &.motopress-btn-size-large {
+            padding: 12px 46px 10px;
+        }
+        &.motopress-btn-size-middle {
+            padding: 9px 28px 8px;
+        }
+        &.motopress-btn-size-small {
+            padding: 6px 24px 5px;
+        }
+        &.motopress-btn-size-mini {
+            padding: 6px 24px 4px;
+        }
+    }
+    .motopress-service-box-obj .motopress-service-box-button-section  .mp-theme-button-brand,
+    .motopress-button-group-obj .mp-theme-button-brand,
+    .motopress-button-obj .mp-theme-button-brand,
+    .motopress-modal-obj .mp-theme-button-brand,
+    .motopress-download-button-obj .mp-theme-button-brand {
+        background: $brandColorBlack;
+        color: #ffffff;
+        text-shadow:none;
+        &:hover,
+            &:focus{
+            background:$brandColor;
+            color: #ffffff;
+            text-decoration: none;          
+        }       
+    }
+    .motopress-button-obj .mp-theme-button-white,
+    .motopress-modal-obj .mp-theme-button-white,
+    .motopress-download-button-obj .mp-theme-button-white,
+    .motopress-button-group-obj .mp-theme-button-white {
+        background: #ffffff;
+        color:$brandColorBlack;;          
+        border: 3px solid $brandColorBlack;
+        text-shadow:none;
+        &:hover, &:focus{
+            background: #ffffff;
+            color: $brandColor;
+            border-color: $brandColor;
+        }     
+    }
+    .motopress-cta-obj .motopress-button-wrap .mp-theme-button-white {
+        background: none;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        text-shadow:none;
+        &:hover, &:focus{
+            background: #ffffff;
+            color: $brandColor;
+        } 
+    }
+    .motopress-button-obj .motopress-btn-rounded, .motopress-button-inner-obj .motopress-btn-rounded, .motopress-cta-obj .motopress-button-wrap .motopress-btn-rounded, .motopress-download-button-obj .motopress-btn-rounded {
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+}

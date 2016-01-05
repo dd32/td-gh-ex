@@ -1,0 +1,53 @@
+.motopress-accordion-obj.ui-accordion.mp-theme-accordion-brand{
+    .motopress-accordion-item {
+        border-bottom-width:0px;  
+    }
+    .motopress-accordion-item + .motopress-accordion-item {
+        margin:  8px 0 0;
+    }
+    .ui-accordion-content {
+        padding: 30px 34px 0;
+    }
+    .ui-accordion-header {
+        .ui-icon {
+            background: $brandColor;
+            border-radius:0px;
+            border:0px solid !important;
+            width: 58px;
+            height: 55px;        
+            @include transition-property(background-color);
+            @include transition-duration(0.1s);
+            @include transition-timing-function(ease-in-out);
+            &:before{
+                content: "\f067";               
+                font: normal normal normal 16px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                color:#ffffff;
+                display: block;
+                margin: 20px 22px 0;
+            }
+        }
+        &.ui-state-active {
+            .ui-icon:before{
+                content: "\f068";
+            }
+        }
+        .ui-accordion-header-icon {
+            top: 0;
+            margin-top: 0;
+        }
+    }
+    .ui-accordion-header {
+        padding: 19px 22px 14px  !important;
+        font-size: 16px;
+        text-transform: none;
+        font-weight: 400;
+        background: #f6f6f6; 
+    }
+    .ui-accordion-icons {
+        padding-left: 73px !important; 
+    }
+}

@@ -1,0 +1,1229 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2015-12-25 17:20+0200\n"
+"PO-Revision-Date: 2015-12-25 17:20+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_n;_e;esc_html;_x;esc_attr_el\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:15
+msgid "<span class='brand-color'>Oo0ps!</span> That page not found."
+msgstr ""
+
+#: 404.php:16
+msgid ""
+"The page you are looking for might have been removed, had its name changed, "
+"or is temporarily unavailable."
+msgstr ""
+
+#: 404.php:17
+msgid ""
+"Please try using our search box below to look for information on the website"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:333
+msgid "Install Required Plugins"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:334
+#: classes/theme/class-theme-install.php:157
+msgid "Install Plugins"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:335
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:336
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:397
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:398
+msgid "Return to the dashboard"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:399
+#: classes/theme/class-tgm-plugin-activation.php:3029
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:400
+#: classes/theme/class-tgm-plugin-activation.php:2832
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:401
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:402
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:403
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:404
+msgid "Dismiss this notice"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:405
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:1881
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2167
+msgid "Required"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2170
+msgid "Recommended"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2186
+msgid "WordPress Repository"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2189
+msgid "External Source"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2192
+msgid "Pre-Packaged"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2209
+msgid "Not Installed"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2213
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2215
+msgid "Active"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2221
+msgid "Required Update not Available"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2224
+msgid "Requires Update"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2227
+msgid "Update recommended"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2235
+#, php-format
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2283
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2286
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2289
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2371
+msgid "unknown"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2379
+msgid "Installed version:"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2387
+msgid "Minimum required version:"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2399
+msgid "Available version:"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2422
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2436
+msgid "Plugin"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2437
+msgid "Source"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2438
+msgid "Type"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2442
+msgid "Version"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2443
+#: classes/theme/theme-updater.php:50
+msgid "Status"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2491
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2495
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2500
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2603
+msgid "Install"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2609
+msgid "Update"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2612
+msgid "Activate"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2643
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2645
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2681
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2683
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3028
+msgid "Plugin activation failed."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3362
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3364
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3365
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3369
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3370
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3371
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3372
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3375
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3377
+msgid "All installations have been completed."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3378
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:34
+msgid ""
+"Wordpress upload dir permission denied. Please temporally set permissions "
+"\"777\" for \"wp-content/upload/\"."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:66
+msgid "Theme Wizard"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:87
+msgid "Works"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:102
+msgid ""
+"The \"slug\" is the URL-friendly version of the name. It is usually all "
+"lowercase and contains only letters, numbers, and hyphens."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:105
+#: classes/theme/class-theme-install.php:213
+#: classes/theme/class-theme-install.php:299
+#: classes/theme/class-theme-install.php:340
+#: classes/theme/class-theme-install.php:361
+#: classes/theme/class-theme-install.php:363
+#: classes/theme/class-theme-install.php:422
+#: classes/theme/class-theme-install.php:424
+#: classes/theme/class-theme-install.php:446
+#: classes/theme/class-theme-install.php:449
+#: classes/theme/class-theme-install.php:488
+#: classes/theme/class-theme-install.php:491
+#: classes/theme/class-theme-install.php:525
+#: classes/theme/class-theme-install.php:538
+#: classes/theme/class-theme-install.php:549
+msgid "Next"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:122
+msgid "Start"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:127
+#: classes/theme/class-theme-install.php:295
+msgid "Customizer"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:132
+#: classes/theme/class-theme-install.php:352
+msgid "Front Page"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:137
+msgid "Pages"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:142
+msgid "Install Pages"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:147
+msgid "Templates"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:152
+msgid "Plugins"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:162
+msgid "Sample Content"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:167
+msgid "Post Type"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:172
+msgid "Ready"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:215
+msgid "Post type"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:216
+msgid ""
+"Give your projects more suitable titles by renaming default &rdquo;"
+"Works&rdquo; (e.g. Portfolio, Photos). Please keep in mind that this change "
+"can be applied only once during the theme installation. If your &rdquo;"
+"Works&rdquo; are renamed for already existing posts, there is a risk to lose "
+"these posts&rsquo; data."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:217
+msgid "You can change post type name:"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:269
+msgid "Welcome to the Artwork Theme!"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:270
+msgid ""
+"Thank you for choosing Artwork theme. This Quick Guided Tour will show you "
+"how to:"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:272
+msgid "Customize this theme in a few steps"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:273
+msgid "Change colors, texts and images"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:274
+#: classes/theme/class-theme-install.php:532
+msgid "Import sample content"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:275
+msgid "Install plugins"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:277
+msgid "If you don&rsquo;t want to go through the wizard, you can"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:278
+msgid "skip and return to the WordPress dashboard."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:279
+msgid "This Wizard is always available under Appearance > Theme Wizard menu."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:282
+msgid "Let's Go!"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:305
+msgid ""
+"One of the main tools of this theme is the WordPress Customizer. Navigate to "
+"Appearance > Customize to change logo, website title, contact information, "
+"colors, menu items and so on. Once you are happy with your changes, click "
+"Save&Publish to reflect them on your live site."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:309
+msgid "1. Site Identity"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:315
+msgid ""
+"The Site Identity section in customizer allows you to change the site title, "
+"description, and control whether or not you want to display them in the "
+"header."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:319
+msgid "2. Theme Colors"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:325
+msgid ""
+"The Colors section in customizer allows you to choose predefined colors or "
+"select your own colors."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:329
+msgid "3. Footer Text"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:335
+msgid "This section in customizer allows change text in the footer."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:370
+msgid ""
+"Another great feature of this theme is completely customizable Front Page. "
+"Front Page is the main page of your website that includes your Works. How to "
+"build your Front Page:"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:373
+msgid "1. Configure your Front Page"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:379
+msgid ""
+"The Static Front Page section in customizer allows you to set the content of "
+"your front page. The options are:"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:381
+msgid "Customizable Front Page (default)"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:382
+msgid "Your latest posts "
+msgstr ""
+
+#: classes/theme/class-theme-install.php:383
+msgid "A static page"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:385
+msgid ""
+"Customizable Front Page is set by default in this theme. You may remove the "
+"checkbox if you want to show your latest posts."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:386
+msgid ""
+"The Front Page shows your projects set within Works menu. To change Works "
+"settings,  update and add tags and categories, go to Dashboard > Works."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:390
+msgid "2. About page"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:396
+msgid "Here you can change the content and image of the About page."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:400
+msgid "3. Works"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:406
+msgid "Start customizing your front page posts:"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:408
+msgid "Find them in Dashboard > Works"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:409
+msgid ""
+"All Works support Post Formats feature, so you are free to change a standard "
+"view of your posts to a gallery, video, image, etc."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:410
+msgid "You can switch default page template to Archive Works template"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:437
+msgid "Blog and Page Templates"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:454
+msgid "1. Blog"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:460
+msgid "How to create a Blog page:"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:462
+msgid "Create a New Page and name it Blog"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:467
+msgid "2. Page Templates"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:473
+msgid "This theme supports following page templates:"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:475
+msgid "Archive works"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:476
+msgid "Blog works"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:502
+msgid "You are Ready!"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:506
+msgid "Return to the WordPress Dashboard"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:507
+msgid "Customize your theme"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:527
+msgid "Sample content"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:533
+#: classes/theme/class-theme-install.php:543
+msgid ""
+"You can import sample content to make your site look similar to the demo. "
+"This is optional but provides a good starting point. Demo examples of the "
+"posts, works, and settings will be imported to your new website."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:534
+msgid "Loading. Wait few minutes..."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:544
+msgid ""
+"To import test content you need activate plugins \"WordPress Importer\" "
+"plugin and \"Work for Artwork\" theme plugin. "
+msgstr ""
+
+#: classes/theme/class-theme-install.php:546
+msgid "Activate plugin"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:585
+msgid "This theme recommends the following free plugins:"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:594
+msgid "Work for Artwork theme"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:595
+msgid "Adds Works section to this theme."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:602
+msgid "Work for Artwork theme!"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:603
+#: classes/theme/class-theme-install.php:645
+#: classes/theme/class-theme-install.php:667
+#: classes/theme/class-theme-install.php:688
+msgid "Activate this plugin."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:636
+#: classes/theme/class-theme-install.php:644
+#: classes/theme/class-theme-install.php:868
+#: classes/theme/class-theme-install.php:875
+msgid "MotoPress Content Editor"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:637
+msgid ""
+"Enhances the standard WordPress editor and enables to build websites "
+"visually. It's complete solution for building responsive pages without "
+"coding and simply by dragging and dropping content elements."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:658
+#: classes/theme/class-theme-install.php:666
+#: classes/theme/class-theme-install.php:889
+#: classes/theme/class-theme-install.php:896
+msgid "WordPress Importer"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:659
+msgid ""
+"Import posts, pages, comments, custom fields, categories, tags and more from "
+"a WordPress export file."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:678
+#: classes/theme/class-theme-install.php:687
+#: classes/theme/class-theme-install.php:909
+#: classes/theme/class-theme-install.php:916
+msgid "Regenerate Thumbnails"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:679
+msgid ""
+"Allows you to regenerate the thumbnails for your images if you've changed a "
+"theme. Available under Dashboard - Tools - Regenerate Thumbnails menu."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:697
+#: classes/theme/class-theme-install.php:778
+msgid "Skip step"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:732
+msgid "Installing the pages"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:738
+msgid "About page"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:748
+#: classes/theme/class-theme-install.php:927
+msgid "Continue"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:762
+msgid "This theme recommends to create the following pages:"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:769
+msgid "About page for Artwork theme"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:770
+msgid "Adds About page to this theme."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:813
+msgid "Installing the plugins (this may take awhile)"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:819
+msgid "<h5>Works for Artwork theme</h5>"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:826
+#: classes/theme/class-theme-install.php:833
+msgid "Works for Artwork theme"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:827
+#: classes/theme/class-theme-install.php:834
+#: classes/theme/class-theme-install.php:869
+#: classes/theme/class-theme-install.php:876
+#: classes/theme/class-theme-install.php:890
+#: classes/theme/class-theme-install.php:897
+#: classes/theme/class-theme-install.php:910
+#: classes/theme/class-theme-install.php:917
+#, php-format
+msgid "Activating %s plugin..."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:861
+msgid "<h5>MotoPress Content Editor</h5>"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:882
+msgid "<h5>WordPress Importer</h5>"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:902
+msgid "<h5>Regenerate Thumbnails</h5>"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:992
+msgid "plugin is not activated"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:994
+msgid "plugin is activated"
+msgstr ""
+
+#: classes/theme/class-theme-install.php:1000
+msgid "Creating About page..."
+msgstr ""
+
+#: classes/theme/class-theme-install.php:1023
+msgid "About page is created"
+msgstr ""
+
+#: classes/theme/theme-updater.php:34
+msgid "Theme License"
+msgstr ""
+
+#: classes/theme/theme-updater.php:35
+msgid "Enter your theme license key."
+msgstr ""
+
+#: classes/theme/theme-updater.php:36
+msgid "License Key"
+msgstr ""
+
+#: classes/theme/theme-updater.php:37
+msgid "License Action"
+msgstr ""
+
+#: classes/theme/theme-updater.php:38
+msgid "Deactivate License"
+msgstr ""
+
+#: classes/theme/theme-updater.php:39
+msgid "Errors"
+msgstr ""
+
+#: classes/theme/theme-updater.php:40
+msgid "License is inactive."
+msgstr ""
+
+#: classes/theme/theme-updater.php:41
+msgid "Site is inactive."
+msgstr ""
+
+#: classes/theme/theme-updater.php:42
+msgid "Valid until"
+msgstr ""
+
+#: classes/theme/theme-updater.php:43
+msgid "Valid (Lifetime)"
+msgstr ""
+
+#: classes/theme/theme-updater.php:44
+msgid "License key is disabled."
+msgstr ""
+
+#: classes/theme/theme-updater.php:45
+msgid "License key has expired."
+msgstr ""
+
+#: classes/theme/theme-updater.php:46
+msgid "License status is invalid."
+msgstr ""
+
+#: classes/theme/theme-updater.php:47
+msgid "Your License Key does not match the installed theme."
+msgstr ""
+
+#: classes/theme/theme-updater.php:48
+msgid "Action"
+msgstr ""
+
+#: classes/theme/theme-updater.php:49
+msgid "License  is unknown."
+msgstr ""
+
+#: classes/theme/theme-updater.php:51
+msgid "Activate License"
+msgstr ""
+
+#: classes/theme/theme-updater.php:52
+msgid ""
+"Updating this theme will lose any customizations you have made. 'Cancel' to "
+"stop, 'OK' to update."
+msgstr ""
+
+#: classes/theme/theme-updater.php:53
+#, php-format
+msgid ""
+"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" "
+"title=\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</"
+"a>."
+msgstr ""
+
+#: comments.php:38
+msgid "previous"
+msgstr ""
+
+#: comments.php:39
+msgid "next"
+msgstr ""
+
+#: comments.php:45
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:56
+msgid "Name*"
+msgstr ""
+
+#: comments.php:60
+msgid "Email*"
+msgstr ""
+
+#: comments.php:63
+msgid "Website"
+msgstr ""
+
+#: comments.php:66
+msgid "Comment*"
+msgstr ""
+
+#: content-home-gallery.php:25 content-home-link.php:31
+#: content-home-link.php:35 content-home-video.php:34 content-home.php:28
+#: custom-page.php:68 custom-page.php:83 custom-page.php:98 custom-page.php:113
+#: custom-page.php:128 custom-page.php:143
+msgid "View"
+msgstr ""
+
+#: content-none.php:14 search.php:23
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:16
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:18 search.php:24
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-none.php:20
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content-work-audio.php:34 content-work-audio.php:53
+#: content-work-gallery.php:34 content-work-gallery.php:50
+#: content-work-image.php:44 content-work-image.php:60 content-work-link.php:33
+#: content-work-quote.php:34 content-work-quote.php:53
+#: content-work-video.php:33 content-work-video.php:49 content-work.php:33
+#: content-work.php:52
+msgid "Posted on"
+msgstr ""
+
+#: content.php:23
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: custom-page.php:63
+msgid "Woman In Gallery"
+msgstr ""
+
+#: custom-page.php:67 custom-page.php:82 custom-page.php:97 custom-page.php:112
+#: custom-page.php:127 custom-page.php:142
+msgid ""
+"Aenean aliquam volutpat ipsum at cursus. Quisque porttitor lectus ac cursus "
+"imperdiet. Donec tempor ligula vel auctor venenatis. Vestibulum vehicula "
+"auctor dictum."
+msgstr ""
+
+#: custom-page.php:78
+msgid "The Mona Lisa"
+msgstr ""
+
+#: custom-page.php:93
+msgid "The Louvre Museum"
+msgstr ""
+
+#: custom-page.php:108 custom-page.php:123 custom-page.php:138
+msgid "Lorem ipsum dolor"
+msgstr ""
+
+#: footer.php:61 inc/admin/customize.php:376
+msgid "Address"
+msgstr ""
+
+#: footer.php:80 inc/admin/customize.php:354
+msgid "Opening hours"
+msgstr ""
+
+#: footer.php:103
+msgid "Follow us"
+msgstr ""
+
+#: footer.php:147
+msgid "&copy; Copyright"
+msgstr ""
+
+#: footer.php:164
+msgid "&#8226; Designed by"
+msgstr ""
+
+#: footer.php:164
+msgid "http://www.getmotopress.com/"
+msgstr ""
+
+#: footer.php:164
+msgid "MotoPress"
+msgstr ""
+
+#: footer.php:165
+msgid "&#8226; Proudly Powered by "
+msgstr ""
+
+#: footer.php:165
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer.php:165
+msgid "WordPress"
+msgstr ""
+
+#: inc/admin/customize.php:42
+msgid "Ultra Light"
+msgstr ""
+
+#: inc/admin/customize.php:43
+msgid "Ultra Light Italic"
+msgstr ""
+
+#: inc/admin/customize.php:44 inc/motopress/motopress-init.php:60
+msgid "Light"
+msgstr ""
+
+#: inc/admin/customize.php:45
+msgid "Light Italic"
+msgstr ""
+
+#: inc/admin/customize.php:46
+msgid "Book"
+msgstr ""
+
+#: inc/admin/customize.php:47
+msgid "Book Italic"
+msgstr ""
+
+#: inc/admin/customize.php:48
+msgid "Regular"
+msgstr ""
+
+#: inc/admin/customize.php:49
+msgid "Regular Italic"
+msgstr ""
+
+#: inc/admin/customize.php:50
+msgid "Medium"
+msgstr ""
+
+#: inc/admin/customize.php:51
+msgid "Medium Italic"
+msgstr ""
+
+#: inc/admin/customize.php:52
+msgid "Semi-Bold"
+msgstr ""
+
+#: inc/admin/customize.php:53
+msgid "Semi-Bold Italic"
+msgstr ""
+
+#: inc/admin/customize.php:54
+msgid "Bold"
+msgstr ""
+
+#: inc/admin/customize.php:55
+msgid "Bold Italic"
+msgstr ""
+
+#: inc/admin/customize.php:56
+msgid "Extra Bold"
+msgstr ""
+
+#: inc/admin/customize.php:57
+msgid "Extra Bold Italic"
+msgstr ""
+
+#: inc/admin/customize.php:58
+msgid "Ultra Bold"
+msgstr ""
+
+#: inc/admin/customize.php:59
+msgid "Ultra Bold Italic"
+msgstr ""
+
+#: inc/admin/customize.php:115
+msgid "Site Title Font Family"
+msgstr ""
+
+#: inc/admin/customize.php:127
+msgid "Site Title Font Weight"
+msgstr ""
+
+#: inc/admin/customize.php:139
+msgid "Site Title Font Size"
+msgstr ""
+
+#: inc/admin/customize.php:175
+msgid ""
+"&#8226; Designed by <a href=\"http://www.getmotopress.com/\" rel=\"nofollow"
+"\" title=\"Premium WordPress Plugins and Themes\">MotoPress</a> &#8226; "
+"Proudly Powered by <a href=\"http://wordpress.org/\" rel=\"nofollow\" title="
+"\"Semantic Personal Publishing Platform\">WordPress</a>"
+msgstr ""
+
+#: inc/admin/customize.php:180
+msgid "\"Designed and Powered...\" text in footer"
+msgstr ""
+
+#: inc/admin/customize.php:201
+msgid "Text Color"
+msgstr ""
+
+#: inc/admin/customize.php:213
+msgid "Accent Color"
+msgstr ""
+
+#: inc/admin/customize.php:226
+msgid "Second Accent Color"
+msgstr ""
+
+#: inc/admin/customize.php:239
+msgid "Third Accent Color"
+msgstr ""
+
+#: inc/admin/customize.php:251
+msgid "Fourth Accent Color"
+msgstr ""
+
+#: inc/admin/customize.php:360
+msgid "Title Contact Information 1"
+msgstr ""
+
+#: inc/admin/customize.php:371
+msgid "Contact Information 1"
+msgstr ""
+
+#: inc/admin/customize.php:382
+msgid "Title Contact Information 2"
+msgstr ""
+
+#: inc/admin/customize.php:393
+msgid "Contact Information 2"
+msgstr ""
+
+#: inc/admin/customize.php:420
+msgid "Description"
+msgstr ""
+
+#: inc/admin/customize.php:425 page-about.php:34
+msgid ""
+"<h1>Hello!</h1><p>Artistique is a fine art gallery located in 24 Hillside "
+"Gardens Northwood, Greater London UK. The gallery was established in 1993 "
+"and is dedicated to the exhibition, education and research of contemporary "
+"figurative art. Our aim is to contribute, initiate, develop and inspire "
+"viewers about the visual arts.</p><p>Artistique Artwork Gallery is always "
+"open for submissions from all creative artists. Get your opportunity to "
+"exhibit your works at a prestigious gallery and have them seen by thousands "
+"of visitors who appreciate the art.</p><h5>OPENING HOURS</h5> <p class="
+"\"color-black\">10.30am to 5.30pm, Tuesday to Sunday during exhibitions.<br/"
+">Closed on Mondays (except bank holidays) and during exhibition changeovers."
+"</p><p><h5  class=\"inline-class\">DIRECTIONS:</h5> via subway take 282/H11 "
+"train towards Harrow Bus Station (Stop D), walk about 2 min, head southeast "
+"on Green Ln/A4125, at the roundabout, take the 2nd exit onto Northwood Way, "
+"turn right to stay on Northwood Way, turn left onto Hillside Rise, Continue "
+"onto Hillside Gardens. Artistique Artwork Gallery will be on the left.</p>"
+msgstr ""
+
+#: inc/admin/customize.php:746
+msgid "Default"
+msgstr ""
+
+#: inc/motopress/motopress-init.php:25 inc/motopress/motopress-init.php:104
+#: inc/motopress/motopress-init.php:113 inc/motopress/motopress-init.php:125
+#: inc/motopress/motopress-init.php:172 inc/motopress/motopress-init.php:201
+msgid "Theme White"
+msgstr ""
+
+#: inc/motopress/motopress-init.php:29 inc/motopress/motopress-init.php:44
+#: inc/motopress/motopress-init.php:56 inc/motopress/motopress-init.php:93
+#: inc/motopress/motopress-init.php:103 inc/motopress/motopress-init.php:109
+#: inc/motopress/motopress-init.php:129 inc/motopress/motopress-init.php:148
+#: inc/motopress/motopress-init.php:150 inc/motopress/motopress-init.php:156
+#: inc/motopress/motopress-init.php:166 inc/motopress/motopress-init.php:168
+#: inc/motopress/motopress-init.php:183 inc/motopress/motopress-init.php:205
+#: inc/motopress/motopress-init.php:217
+msgid "Theme Brand"
+msgstr ""
+
+#: inc/theme/init.php:80
+msgid "Primary Menu"
+msgstr ""
+
+#: inc/theme/init.php:268
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: inc/theme/init.php:269
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/theme/init.php:287
+msgid "Main Widget Area"
+msgstr ""
+
+#: inc/theme/init.php:289
+msgid "Appears on posts and pages in the sidebar."
+msgstr ""
+
+#: inc/theme/init.php:327
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/theme/init.php:332
+#, php-format
+msgid "%1$s <span>at %2$s</span>"
+msgstr ""
+
+#: inc/theme/init.php:334
+msgid "(Edit)"
+msgstr ""
+
+#: inc/theme/init.php:390 inc/theme/init.php:401
+msgid "Posted in"
+msgstr ""
+
+#: inc/theme/init.php:418
+#, php-format
+msgid "View all posts in %s"
+msgstr ""
+
+#: inc/theme/init.php:430 inc/theme/init.php:438
+msgid "Tagged with"
+msgstr ""
+
+#: inc/theme/init.php:456
+msgid "Posted by"
+msgstr ""
+
+#: inc/theme/init.php:461
+msgid "Comments"
+msgstr ""
+
+#: inc/theme/init.php:466
+msgid "Edit"
+msgstr ""
+
+#: inc/theme/post-related.php:143
+msgid "Thanks for watching!"
+msgstr ""
+
+#: inc/theme/post-related.php:144
+msgid "Want more?"
+msgstr ""
+
+#: inc/woocommerce/woo-init.php:15
+msgid "Home"
+msgstr ""

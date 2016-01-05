@@ -1,0 +1,42 @@
+.artwork{ 
+    .motopress-tabs-obj.ui-tabs.motopress-tabs-basic .ui-tabs-nav li{
+        border: 0px solid !important;
+        padding-right: 7px !important;
+        background: transparent!important;
+    }
+    .motopress-tabs-obj.ui-tabs.motopress-tabs-basic .ui-tabs-nav li a{
+        border-bottom: 3px solid #717171!important;
+        color: $brandColorBlack!important;
+    }
+    .motopress-tabs-obj.ui-tabs.motopress-tabs-basic .ui-tabs-nav{
+        border: 0px solid !important;
+    }
+    .motopress-tabs-obj.ui-tabs.motopress-tabs-vertical .ui-tabs-nav li.ui-state-active a,
+    .motopress-tabs-obj.ui-tabs.motopress-tabs-no-vertical .ui-tabs-nav li.ui-state-active a {
+        @include box-shadow(none!important);
+        border-color: $brandColor!important;
+        color:$brandColor!important;
+    }
+    .motopress-tabs-obj.ui-tabs.motopress-tabs-basic .ui-tabs-panel.ui-widget-content{
+        border: 0px solid  !important;
+        background-color: #f6f6f6 !important;
+    }
+    .motopress-tabs-obj.ui-tabs.motopress-tabs-padding-20 .ui-tabs-panel.ui-widget-content {
+        padding: 30px !important;
+    }
+    .motopress-tabs-obj.ui-tabs.motopress-tabs-basic .ui-tabs-nav li a {
+        padding: 10px 48px !important;
+        font-size: 16px !important;
+    }
+    .motopress-tabs-obj.ui-tabs.motopress-tabs-vertical .ui-tabs-nav li{
+        padding-right: 0px !important;
+        padding-bottom: 7px !important;
+    }
+    .motopress-tabs-obj.ui-tabs.motopress-tabs-vertical .ui-tabs-nav li a{
+        border-bottom: 0px solid !important;
+        border-right: 3px solid #717171!important;
+    }
+    .motopress-tabs-obj.ui-tabs.motopress-tabs-vertical .ui-tabs-nav li:last-child {
+        border-bottom: 0px solid !important;
+    }
+}

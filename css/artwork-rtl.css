@@ -1,0 +1,27 @@
+/*
+* RTL theme support
+*/
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+  text-align: right;
+}
+
+.footer-widget {
+  margin: 67px 8.33333% 0 0;
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+.footer-widget .footer-title:before {
+  left: 0;
+  right: -60px;
+}
+
+.social-profile a {
+  margin: 0 0 22px 25px;
+}
+
+.sf-menu ul {
+  text-align: right;
+}

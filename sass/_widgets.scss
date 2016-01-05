@@ -1,0 +1,221 @@
+
+
+.widget{
+    margin-bottom:70px;
+    h3{            
+        margin-bottom: 27px;
+    }
+
+    ul{
+        text-transform: uppercase;
+        line-height: 1.9;
+        li{
+            margin: 0 0 10px;
+        }
+    }
+    table{
+        thead th,  
+        thead td,
+        tbody td ,
+        tfoot td {
+            text-align: center;
+            padding: 3px 2px;
+        }
+    }
+    table tbody tr td:first-child ,
+        table thead tr th:first-child {
+        text-align: center;
+    }
+    table tfoot td{
+        border:0px solid;
+        &#next{
+            text-align: right;
+        }
+        &#prev{
+            text-align: left;
+        }
+    }
+}
+.widget-area{
+    .widget:last-child{
+        margin-bottom: 0;
+    }
+}
+/*.widget{
+    margin: 0 0 59px;
+    h3{
+        margin: 5px 0 40px;
+        text-transform: uppercase;
+    }
+    .tagcloud a {
+        margin: 0 0px 4px 0;
+    }
+    &.widget_display_replies div,
+    &.widget_display_topics div,
+    .post-date,
+    .posts-count{
+        display: block;
+        margin: 5px 0 0;
+        color: $grey;
+        font-size: $fontSizeH6;
+    }
+    .post-date,
+    &.widget_display_topics div,
+    &.widget_display_replies div{ 
+        text-transform: uppercase;
+    }
+    &.widget_recent_entries{
+        margin: 0 0 59px;        
+    }
+    &.widget_tag_cloud {         
+        margin: 0 0 56px;
+    }
+    li{
+        margin: 0 0 15px;
+        ul{
+            margin: 15px 0 0  15px;
+        }
+    }
+    ul{
+        margin:0 0 24px
+    }
+    &.theme_widget_about{
+        h3 {
+            margin: 5px 0 20px;
+        } 
+        .site-logo{
+            margin: 0px 0 15px;
+        }
+        .site-description{
+            padding: 0;
+        }
+        .header-logo{
+            margin: 0 7px 0 0;
+        }
+        .info-list{
+            margin: 15px 0 0;
+            padding: 15px 0 0;
+            border-top: 1px solid $footerWigetsHr;
+            b{
+                margin: 0  0 0 7px;
+                font-weight: 400;
+                color:$grey;
+            }
+        }
+    }
+    
+    &.widget_search{
+        margin: 0 0 63px;
+        .search-field{
+            width: 276px;            
+        }
+        .search-form{
+            margin-top: 8px;
+        }
+        h3{
+            margin: 5px 0 45px;
+        }
+        .search-submit{
+            vertical-align: top;
+        }
+    }
+    .entry-thumbnail{   
+        display: block;
+        float: left;
+        margin: 0 28px 0 0;
+        border-radius: 5px;
+        overflow: hidden;
+        width:72px;
+        height:72px;
+        text-align: center;
+        overflow:hidden;
+        img{
+            min-width: 100%;
+            min-height: 100%;
+        }
+        .date-post {
+            padding: 12px 14px;
+            display: block;
+        }
+    }
+    .entry-content{
+        padding:7px 0 0;
+        overflow: hidden;
+    }
+    table{
+        thead th,  
+        thead td,
+        tbody td ,
+        tfoot td {
+            text-align: center;
+            padding: 3px 2px;
+        }
+    }
+    table tbody tr td:first-child ,
+        table thead tr th:first-child {
+        text-align: center;
+    }
+    table tfoot td{
+        border:0px solid;
+        &#next{
+            text-align: right;
+        }
+        &#prev{
+            text-align: left;
+        }
+    }
+    #today{
+        background: $brandColor;
+        color:#ffffff;
+    }
+    caption {
+        padding-top: 0;
+    }
+}
+.site-footer{
+    .widget{
+        margin:55px 0 0;
+        h4 {
+            margin: 25px 0 19px;
+            color:#ffffff;
+        }
+        &.theme_widget_about{
+            .site-title{
+                color:inherit!important;   
+            }
+            .info-list{
+                color:#ffffff;
+                b{
+                    color:$footerWidgetsColor;
+                }
+            }
+        }
+        table tbody{
+            a{
+                color:$brandColor;
+            }
+        }
+        .theme_widget_about{
+            h4{                
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1199px){ 
+    .widget.widget_search .search-field {
+        width: 209px;
+    }
+}
+@media (max-width: 991px){ 
+    .widget.widget_search {
+        .search-field {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+        .search-submit {
+            margin: 0 0 0;
+        }
+    }
+}*/

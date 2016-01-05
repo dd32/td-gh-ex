@@ -1,0 +1,43 @@
+.entry-meta{
+    font-weight: 300;
+    font-style:italic;
+    .seporator{
+        margin: 0 9px;
+    }
+}
+.entry-footer{     
+    margin: 35px 0 0;
+    padding: 22px 0 0; 
+    border-top: 1px solid $borderColor;  
+}
+.entry-thumbnail,.entry-media{
+    margin-bottom: 46px;
+    text-align: center;
+}
+.entry-content{
+    .entry-media{
+        margin: 0 0 $margin;
+    }
+}
+.post-in-blog{
+    margin-bottom: 80px;
+}
+.main-container{
+    padding-top: 226px;
+    padding-bottom: 80px;
+    .post-in-blog:last-child{
+        margin-bottom: 0;
+    }
+    &.landing-page-container{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+.entry-header h2{
+    margin-top: 0;
+}
+@media (max-width: 991px){ 
+    .main-container{
+        padding-top: 40px;                            
+    }
+}

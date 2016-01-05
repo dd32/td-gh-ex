@@ -1,0 +1,18 @@
+.nav-below{
+    margin:0;
+    font-size:20px;
+    font-weight:300;
+    font-style:italic;
+    .nav-previous{
+        float: left;
+    }
+    .nav-next{
+        float: right;
+    }
+}
+
+@media (max-width: 767px){
+    .nav-below{
+        margin-bottom: 70px;
+    }
+}
