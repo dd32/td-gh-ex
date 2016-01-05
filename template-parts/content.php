@@ -15,14 +15,15 @@ content. This content.php is the main content that will be displayed.
 */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="post-thumbnail">
-        <?php the_post_thumbnail('beyond-expectations-small-thumbnail'); ?> 
-    </div>
+    <?php if (has_post_thumbnail()) { ?>
+        <div class="post-thumbnail">
+            <?php the_post_thumbnail('beyond-expectations-small-thumbnail'); ?> 
+        </div>
+    <?php } ?>
     <header class="entry-header">
         <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo (get_the_title()) ? get_the_title() : __('(No Title)', 'beyond-expectations'); ?></a></h1>
     </header>
-    <small class="metadata-posted-on"><?php beyond_expectations_metadata_posted_on_setup(); ?>
-    </small>
+    <small class="metadata-posted-on"><?php beyond_expectations_metadata_posted_on_setup(); ?></small>
     <div class="entry-content">
         <?php the_content(); ?>
         <?php wp_link_pages(); ?>

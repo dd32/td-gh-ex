@@ -54,9 +54,6 @@ require(get_template_directory() . '/includes/custom-header.php');
 if (!function_exists('beyond_expectations_scripts_setup')) {
     function beyond_expectations_scripts_setup() {
         wp_enqueue_style('beyond-expectations-style', get_stylesheet_uri());
-        
-        wp_enqueue_style('beyond-expectations-ubuntu-font', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic');
-        
         wp_enqueue_style('beyond-expectations-font-awesome', get_template_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '01012016', true);
         wp_enqueue_script('beyond-expectations-hide-search', get_template_directory_uri() . '/js/hide-search.js', array('jquery'), '04062015', true);
         wp_enqueue_script('beyond-expectations-navigation-js', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '04062015', true);

@@ -56,10 +56,6 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
-Version: 0.0.2
-Replace Footer Site Info with correct url and info
-Replace Screenshot Author and URL
-
 Version: 0.0.1
 Initial Release
 
@@ -73,9 +69,9 @@ Resources
 ================================================================================================
 Screenshot
 Copyright and Licensed as CC0 
-By Greg Rakozy (https://unsplash.com/grakozy)
-https://unsplash.com/photos/oMpAz-DN-9I
+By Paula Borowska (https://unsplash.com/pborowska)
+https://download.unsplash.com/photo-1417722009592-65fa261f5632
 
 Font Awesome by Dave Gandy - http://fontawesome.io
-Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License
+Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License · Documentation licensed under CC BY 3.0
 Source: http://fortawesome.github.io/Font-Awesome/

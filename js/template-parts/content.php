@@ -15,20 +15,16 @@ content. This content.php is the main content that will be displayed.
 */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php if (has_post_thumbnail()) { ?>
-        <div class="post-thumbnail">
-            <?php the_post_thumbnail('beyond-expectations-large-thumbnail'); ?>
-        </div>
-    <?php } ?>
+    <div class="post-thumbnail">
+        <?php the_post_thumbnail('beyond-expectations-small-thumbnail'); ?> 
+    </div>
     <header class="entry-header">
-        <h1 class="entry-title"><?php echo (get_the_title()) ? get_the_title() : __('(No Title)', 'beyond-expectations'); ?></h1>
+        <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo (get_the_title()) ? get_the_title() : __('(No Title)', 'beyond-expectations'); ?></a></h1>
     </header>
-    <small class="metadata-posted-on"><?php beyond_expectations_metadata_posted_on_setup(); ?>
-    </small>
+    <small class="metadata-posted-on"><?php beyond_expectations_metadata_posted_on_setup(); ?></small>
     <div class="entry-content">
         <?php the_content(); ?>
         <?php wp_link_pages(); ?>
     </div>
     <small class="metadata-posted-in"><?php beyond_expectations_metadata_posted_in_setup(); ?></small>
-        <?php comments_template(); ?>
 </article>

@@ -1,11 +1,11 @@
 <?php
 /*
 ================================================================================================
-Beyond Expectations - sidebar.php
+Beyond Expectations - footer.php
 ================================================================================================
-This is the most generic template file in a WordPress theme and is one of the requirements to 
-display widgets on the right side of the page. This is the post content sidebar that is assigned
-in the widget area in the customizer and widget area.
+This is the most generic template file in a WordPress theme and is one of the two required files 
+for a theme (the other header.php). The footer.php template file only displays the footer
+section of this theme.
 
 @package        Beyond Expectations WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
@@ -15,6 +15,13 @@ in the widget area in the customizer and widget area.
 ================================================================================================
 */
 ?>
-<div id="main-sidebar" class="widget-area">
-    <?php dynamic_sidebar('secondary-sidebar'); ?>
-</div>
+        </div>
+    </div>
+    <div id="main-footer" class="site-footer">
+        <div class="site-info">
+            <?php _e('Theme By: Benjamin Lu', 'beyond-expectations'); ?>
+        </div>
+    </div>
+    <?php wp_footer(); ?>
+</body>
+</html>

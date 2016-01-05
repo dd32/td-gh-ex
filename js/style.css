@@ -7,7 +7,7 @@ Description: Beyond Expectations is a responsive WordPress theme with many featu
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, white, dark, one-column, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, sticky-post, threaded-comments, translation-ready
-Version: 0.0.2
+Version: 0.0.1
 Text Domain: beyond-expectations
 
 This theme, like WordPress, is licensed under the GPL.
@@ -520,7 +520,7 @@ th {
 ================================================================================================
 */
 body {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: calibri;
     font-size: 18px;
 }
 
@@ -633,8 +633,8 @@ a:hover {
 .primary-navigation .current-menu-item > a:hover,
 .primary-navigation .current_page_item > a:focus,
 .primary-navigation .current-menu-item > a:focus {
-    color: #000000;
-    background: #ffffff;
+    color: #ffffff;
+    background: #4d4d4d;
 }
 
 .primary-navigation .current_page_ancestor {
@@ -928,7 +928,7 @@ input[type = "search"] {
 13.0 - Basic Structure
 ================================================================================================
 */
-.site-container { 
+.site-container {
     margin: 10px auto;
     max-width: 1200px;
     padding: 0 10px;
@@ -993,8 +993,7 @@ input[type = "search"] {
 }
 
 .entry-content p {
-    font-weight: 300;
-    margin: 0 0 10px 0;
+    margin: 0;
     padding: 0;
 }
 
@@ -1193,13 +1192,6 @@ ol.children {
 18.0 - Content Area (404 and Search)
 ================================================================================================
 */
-.search-submit {
-    display: none;
-}
-
-.search-field {
-    padding: 5px 8px;
-}
 
 /*
 ================================================================================================
@@ -1346,7 +1338,7 @@ input[type = "search"] {
 }
 
 .wp-caption-text { 
-    margin-top: 4px;
+    margin-top: 2px;
     text-align: center; 
 }
 

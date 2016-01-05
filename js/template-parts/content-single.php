@@ -15,11 +15,7 @@ content. This content.php is the main content that will be displayed.
 */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php if (has_post_thumbnail()) { ?>
-        <div class="post-thumbnail">
-            <?php the_post_thumbnail('beyond-expectations-large-thumbnail'); ?>
-        </div>
-    <?php } ?>
+    <?php the_post_thumbnail('beyond-expectations-large-thumbnail'); ?>
     <header class="entry-header">
         <h1 class="entry-title"><?php echo (get_the_title()) ? get_the_title() : __('(No Title)', 'beyond-expectations'); ?></h1>
     </header>
@@ -30,5 +26,4 @@ content. This content.php is the main content that will be displayed.
         <?php wp_link_pages(); ?>
     </div>
     <small class="metadata-posted-in"><?php beyond_expectations_metadata_posted_in_setup(); ?></small>
-        <?php comments_template(); ?>
 </article>
