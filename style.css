@@ -4,8 +4,8 @@ Theme URI: http://themeofwp.com/avienlite/
 Author: ThemeofWP.com
 Author URI: http://themeofwp.com
 Description: Avien Ultra Responsive WordPress Theme
-Version: 1.9
-Tags: white, two-columns, right-sidebar, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, flexible-header, custom-menu, featured-image-header, featured-images, front-page-post-form, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Version: 2.0
+Tags: white, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, flexible-header, custom-menu, featured-image-header, featured-images, front-page-post-form, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: themeofwp
@@ -23,7 +23,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*		Main Styles
 --------------------------------------------------------------------------------------------------*/
 body {
-	padding-top: 101px;
+	padding-top: 81px;
 	color: #34495e;
 	background: #ffffff;
 	font-family: 'Arial', sans-serif;
@@ -1007,6 +1007,10 @@ nav#filter a {
 
 /*		Navigation
 --------------------------------------------------------------------------------------------------*/
+.navbar {
+    margin-bottom: 0;
+    min-height: 50px;
+}
 .navigation {
 	display: inline-table;
 	font-size: 14px;

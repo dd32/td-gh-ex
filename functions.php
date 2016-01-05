@@ -156,9 +156,9 @@ function themeofwp_widgets_init() {
 	);
 
 	register_sidebar(array(
-	  'name' => __( 'Header Social', 'themeofwp' ),
-	  'id' => 'header-social',
-	  'description' => __( 'Widgets in this area will be shown on hader social area.' , 'themeofwp'),
+	  'name' => __( 'Header Right', 'themeofwp' ),
+	  'id' => 'header-right',
+	  'description' => __( 'Widgets in this area will be shown on header right area.' , 'themeofwp'),
 	  'before_title' => '',
 	  'after_title' => '',
 	  'before_widget' => '',
@@ -167,9 +167,9 @@ function themeofwp_widgets_init() {
 	);
 
 	register_sidebar(array(
-	  'name' => __( 'Header Contact', 'themeofwp' ),
-	  'id' => 'header-contact',
-	  'description' => __( 'Widgets in this area will be shown on hader contact area.' , 'themeofwp'),
+	  'name' => __( 'Header Left', 'themeofwp' ),
+	  'id' => 'header-left',
+	  'description' => __( 'Widgets in this area will be shown on header left area.' , 'themeofwp'),
 	  'before_title' => '',
 	  'after_title' => '',
 	  'before_widget' => '',
@@ -203,10 +203,10 @@ add_action( 'wp_enqueue_scripts', 'themeofwp_scripts' );
 
 function themeofwp_slider_script() {
 	if ( is_home() ) {
-		wp_enqueue_style( 'avien-owl-carousel', get_template_directory_uri() . '/inc/css/owl.carousel.css');
-		wp_enqueue_style( 'avien-owl-transitions', get_template_directory_uri() . '/inc/css/owl.transitions.css');
-		wp_enqueue_script( 'avien-owl-carousel-js', get_template_directory_uri() . '/inc/js/owl.carousel.js', array(), '1.3.3', true );
-		wp_enqueue_script( 'avien-owl-slider-js', get_template_directory_uri() . '/inc/js/slider.js', array(), '1.3.3', true );
+		wp_enqueue_style( 'themeofwp-owl-carousel', get_template_directory_uri() . '/inc/css/owl.carousel.css');
+		wp_enqueue_style( 'themeofwp-owl-transitions', get_template_directory_uri() . '/inc/css/owl.transitions.css');
+		wp_enqueue_script( 'themeofwp-owl-carousel-js', get_template_directory_uri() . '/inc/js/owl.carousel.js', array(), '1.3.3', true );
+		wp_enqueue_script( 'themeofwp-owl-slider-js', get_template_directory_uri() . '/inc/js/slider.js', array(), '1.3.3', true );
 	}
 }
 
@@ -236,192 +236,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-
-/**
-*	HEADER CONTACT WIDGET
-**/
-add_action('widgets_init', 'themeofwp_header_contact_us_load_widgets');
-
-function themeofwp_header_contact_us_load_widgets()
-{
-	register_widget('ThemeofWP_Header_Contact');
-}
-
-class ThemeofWP_Header_Contact extends WP_Widget {
-	
-	function ThemeofWP_Header_Contact()
-	{
-		$widget_ops = array('classname' => 'header_contact_us', 'description' => __('Add your contact info to the header area.', 'themeofwp'));
-
-		$control_ops = array('id_base' => 'themeofwp-header_contact_us-widget');
-
-		parent::__construct('themeofwp-header_contact_us-widget', __('TWP Header Contact', 'themeofwp'), $widget_ops, $control_ops);
-	}
-	
-	function widget($args, $instance)
-	{
-		extract($args);
-		$title = apply_filters('widget_title', $instance['title']);
-
-		echo $before_widget;
-
-		if($title) {
-			echo $before_title.$title.$after_title;
-		}
-		?>
-        
-                <?php if($instance['phone']): ?>
-					<a href="tel:<?php echo $instance['phone']; ?>"><i class="fa fa-phone"></i>
-						<?php echo $instance['phone']; ?>
-					</a> 
-				<?php endif; ?>
-				
-        
-                <?php if($instance['email']): ?>
-					<a href="mailto:<?php echo $instance['email']; ?>"><i class="fa fa-envelope-o"></i> 
-						<?php echo $instance['email']; ?>
-					</a>
-				<?php endif; ?>	 
-
-		<?php
-		echo $after_widget;
-	}
-	
-	function update($new_instance, $old_instance)
-	{
-		$instance = $old_instance;
-
-
-		$instance['phone'] = $new_instance['phone'];
-		$instance['email'] = $new_instance['email'];
-
-		return $instance;
-	}
-
-	function form($instance)
-	{
-		$defaults = array('title' => '');
-		$instance = wp_parse_args((array) $instance, $defaults); ?>
-	
-		<p>
-			<label for="<?php echo $this->get_field_id('phone'); ?>"><?php _e('Phone:', 'themeofwp');?></label><br />
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id('phone'); ?>" name="<?php echo $this->get_field_name('phone'); ?>" value="<?php echo $instance['phone']; ?>" />
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('email'); ?>"><?php _e('Email:', 'themeofwp');?></label><br />
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id('email'); ?>" name="<?php echo $this->get_field_name('email'); ?>" value="<?php echo $instance['email']; ?>" />
-		</p>
-		
-	<?php
-	}
-}
-
-
-/**
-*	HEADER SOCIAL WIDGET
-**/
-add_action('widgets_init', 'themeofwp_header_social_us_load_widgets');
-
-function themeofwp_header_social_us_load_widgets()
-{
-	register_widget('ThemeofWP_Header_Social');
-}
-
-class ThemeofWP_Header_Social extends WP_Widget {
-	
-	function ThemeofWP_Header_Social()
-	{
-		$widget_ops = array('classname' => 'themeofwp_header_social_us', 'description' => __('Add your social info to the header area.', 'themeofwp'));
-
-		$control_ops = array('id_base' => 'themeofwp_header_social_us-widget');
-
-		parent::__construct('themeofwp_header_social_us-widget', __('TWP Header Social', 'themeofwp'), $widget_ops, $control_ops);
-	}
-	
-	function widget($args, $instance)
-	{
-		extract($args);
-		$instance['title']= '';
-		$title = apply_filters('widget_title', $instance['title']);
-
-		echo $before_widget;
-
-		if($title) {
-			echo $before_title.$title.$after_title;
-		}
-		?>
-        
-                <?php if($instance['twitter']): ?>
-					<a href="<?php echo $instance['twitter']; ?>" id="twitter" title="twitter"><i class="fa fa-twitter"> </i></a>
-				<?php endif; ?>
-				
-				<?php if($instance['facebook']): ?>
-					<a href="<?php echo $instance['facebook']; ?>" id="facebook" title="facebook"><i class="fa fa-facebook"> </i></a>
-				<?php endif; ?>
-				
-				<?php if($instance['linkedin']): ?>
-					<a href="<?php echo $instance['linkedin']; ?>" id="linkedin" title="linkedin"><i class="fa fa-linkedin"> </i></a>
-				<?php endif; ?>
-				
-				<?php if($instance['google']): ?>
-					<a href="<?php echo $instance['google']; ?>" id="google" title="google"><i class="fa fa-google-plus"> </i></a>
-				<?php endif; ?>
-				
-				<?php if($instance['instagram']): ?>
-					<a href="<?php echo $instance['instagram']; ?>" id="instagram" title="instagram"><i class="fa fa-instagram"> </i></a>
-				<?php endif; ?>
-				
-
-		<?php
-		echo $after_widget;
-	}
-	
-	function update($new_instance, $old_instance)
-	{
-		$instance = $old_instance;
-
-
-		$instance['twitter'] = $new_instance['twitter'];
-		$instance['facebook'] = $new_instance['facebook'];
-		$instance['linkedin'] = $new_instance['linkedin'];
-		$instance['google'] = $new_instance['google'];
-		$instance['instagram'] = $new_instance['instagram'];
-
-		return $instance;
-	}
-
-	function form($instance)
-	{
-		$defaults = array('title' => '');
-		$instance = wp_parse_args((array) $instance, $defaults); ?>
-	
-		<p>
-			<label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter URL:', 'themeofwp');?></label><br />
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" value="<?php echo $instance['twitter']; ?>" />
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook URL:', 'themeofwp');?></label><br />
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" value="<?php echo $instance['facebook']; ?>" />
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('linkedin'); ?>"><?php _e('LinkedIn URL:', 'themeofwp');?></label><br />
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id('linkedin'); ?>" name="<?php echo $this->get_field_name('linkedin'); ?>" value="<?php echo $instance['linkedin']; ?>" />
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('google'); ?>"><?php _e('Google+ URL:', 'themeofwp');?></label><br />
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id('google'); ?>" name="<?php echo $this->get_field_name('google'); ?>" value="<?php echo $instance['google']; ?>" />
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e('Instagram URL:', 'themeofwp');?></label><br />
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id('instagram'); ?>" name="<?php echo $this->get_field_name('instagram'); ?>" value="<?php echo $instance['instagram']; ?>" />
-		</p>
-		
-	<?php
-	}
-}

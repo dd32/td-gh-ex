@@ -42,31 +42,31 @@
 							
 								<div class="col-md-12 colwrapper">
 							
-									<!--/.contact-->
+									<!--/.header-left widget-->
 									<div class="col-sm-6 text-left contact">
 										
-										<?php if ( is_active_sidebar( 'header-contact' ) ) : ?>
+										<?php if ( is_active_sidebar( 'header-left' ) ) : ?>
 										
-										<?php dynamic_sidebar( 'header-contact' ); ?>
+										<?php dynamic_sidebar( 'header-left' ); ?>
 										
 										<?php else : ?>
 										
 										<?php endif; ?>
 					 
 									</div>
-									<!--/.contact-->
+									<!--/.header-left widget-->
 									
-									<!--/.social-->
+									<!--/.header-right widget-->
 									<div class="col-sm-6 text-right social">
-										<?php if ( is_active_sidebar( 'header-social' ) ) : ?>
+										<?php if ( is_active_sidebar( 'header-right' ) ) : ?>
 										
-										<?php dynamic_sidebar( 'header-social' ); ?>
+										<?php dynamic_sidebar( 'header-right' ); ?>
 										
 										<?php else : ?>
 										
 										<?php endif; ?>
 									</div>
-									<!--/.social-->
+									<!--/.header-right widget-->
 								
 								</div>
 								<!--/.themeofwp_layout -->
@@ -103,11 +103,14 @@
 										  <span class="icon-bar"></span>
 										</button>
 										
-										 <a class="navbar-brand text-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-										<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>
-										<span class="site-description"><?php bloginfo('description'); ?></span>
+										<?php if ( ( function_exists( 'jetpack_the_site_logo' ) && jetpack_has_site_logo() ) ) : 
+											jetpack_the_site_logo(); 
+										else : ?>
+										 <a class="navbar-brand text-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
+											<?php bloginfo( 'name' ); ?>
+											<span class="site-description"><?php bloginfo('description'); ?></span>
 										</a>
-										
+										<?php endif; ?>
 									</div>
 									<!--/.navbar-header -->
 							
