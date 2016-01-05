@@ -1,16 +1,22 @@
-# Copyright (C) 2014 Automattic
-# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0-wpcom\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2014-09-11 00:43:48+00:00\n"
+"Project-Id-Version: Annina\n"
+"POT-Creation-Date: 2016-01-05 17:38+0100\n"
+"PO-Revision-Date: 2016-01-05 17:38+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:16
 msgid "Oops! That page can&rsquo;t be found."
@@ -228,72 +234,68 @@ msgstr ""
 msgid "%1$s by %2$s."
 msgstr ""
 
-#: functions.php:56
+#: functions.php:55
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:90
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:43
+#: header.php:39
 msgid "Search for:"
 msgstr ""
 
-#: header.php:44
+#: header.php:40
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: header.php:47
+#: header.php:43
 msgid "Close"
 msgstr ""
 
-#: header.php:53
+#: header.php:49
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:62
+#: header.php:58
 msgid "Main Menu"
 msgstr ""
 
-#: header.php:68
+#: header.php:64
 msgid "Facebook"
 msgstr ""
 
-#: header.php:72
+#: header.php:68
 msgid "Twitter"
 msgstr ""
 
-#: header.php:76
+#: header.php:72
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:80
+#: header.php:76
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:84
+#: header.php:80
 msgid "Instagram"
 msgstr ""
 
-#: header.php:88
+#: header.php:84
 msgid "YouTube"
 msgstr ""
 
-#: header.php:92
+#: header.php:88
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:96
+#: header.php:92
 msgid "VK"
 msgstr ""
 
-#: header.php:100
+#: header.php:96
 msgid "Email"
-msgstr ""
-
-#: header.php:100
-msgid "Tumblr"
 msgstr ""
 
 #: inc/annina-dynamic.php:41
@@ -348,88 +350,96 @@ msgstr ""
 msgid "VK URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:143
-msgid "You Email"
+#: inc/annina-dynamic.php:173
+msgid "Your Email"
 msgstr ""
 
-#: inc/annina-dynamic.php:178
+#: inc/annina-dynamic.php:190
 msgid "Show Search Button in Main Menu"
 msgstr ""
 
-#: inc/annina-dynamic.php:196
+#: inc/annina-dynamic.php:208
 msgid "Last Post Box Big?"
 msgstr ""
 
-#: inc/annina-dynamic.php:210
+#: inc/annina-dynamic.php:222
 msgid "Get Annina PRO WP Theme for only"
 msgstr ""
 
-#: inc/annina-dynamic.php:215
+#: inc/annina-dynamic.php:227
 msgid "Watch the demo"
 msgstr ""
 
-#: inc/annina-dynamic.php:218
+#: inc/annina-dynamic.php:230
 msgid "Get Annina PRO Theme"
 msgstr ""
 
-#: inc/annina-dynamic.php:222
+#: inc/annina-dynamic.php:234
 msgid "Advanced Theme Options"
 msgstr ""
 
-#: inc/annina-dynamic.php:223
+#: inc/annina-dynamic.php:235
 msgid "Logo Upload"
 msgstr ""
 
-#: inc/annina-dynamic.php:224
+#: inc/annina-dynamic.php:236
 msgid "Choose sidebar position"
 msgstr ""
 
-#: inc/annina-dynamic.php:225
+#: inc/annina-dynamic.php:237
 msgid "Font switcher"
 msgstr ""
 
-#: inc/annina-dynamic.php:226
+#: inc/annina-dynamic.php:238
 msgid "Loading Page"
 msgstr ""
 
-#: inc/annina-dynamic.php:227
+#: inc/annina-dynamic.php:239
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
-#: inc/annina-dynamic.php:228
+#: inc/annina-dynamic.php:240
 msgid "Post views counter"
 msgstr ""
 
-#: inc/annina-dynamic.php:229
+#: inc/annina-dynamic.php:241
 msgid "Post format"
 msgstr ""
 
-#: inc/annina-dynamic.php:230
+#: inc/annina-dynamic.php:242
 msgid "7 Shortcodes"
 msgstr ""
 
-#: inc/annina-dynamic.php:231
+#: inc/annina-dynamic.php:243
 msgid "12 Exclusive Widgets"
 msgstr ""
 
-#: inc/annina-dynamic.php:232
+#: inc/annina-dynamic.php:244
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/annina-dynamic.php:233
+#: inc/annina-dynamic.php:245
 msgid "Information About Author Box"
 msgstr ""
 
-#: inc/annina-dynamic.php:234
+#: inc/annina-dynamic.php:246
 msgid "Sticky Sidebar"
 msgstr ""
 
-#: inc/annina-dynamic.php:235
+#: inc/annina-dynamic.php:247
 msgid "And much more..."
 msgstr ""
 
-#: inc/annina-dynamic.php:241
+#: inc/annina-dynamic.php:253
 msgid "More features? Upgrade to PRO"
+msgstr ""
+
+#: inc/customizer.php:38
+msgid "Demo PRO version"
+msgstr ""
+
+#: inc/customizer.php:39
+msgid "Get PRO Version"
 msgstr ""
 
 #: inc/extras.php:64

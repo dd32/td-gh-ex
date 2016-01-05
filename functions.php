@@ -4,6 +4,13 @@
  *
  * @package annina
  */
+ 
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 950; /* pixels */
+}
 
 if ( ! function_exists( 'annina_setup' ) ) :
 /**
@@ -14,14 +21,6 @@ if ( ! function_exists( 'annina_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function annina_setup() {
-
-	/**
-	 * Set the content width based on the theme's design and stylesheet.
-	 */
-	global $content_width;
-	if ( ! isset( $content_width ) ) {
-		$content_width = 950; /* pixels */
-	}
 
 	/*
 	 * Make theme available for translation.
@@ -116,6 +115,10 @@ function annina_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	
+	global $wp_scripts;
+	wp_enqueue_script( 'annina-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.2', false );
+	$wp_scripts->add_data( 'annina-html5shiv', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'annina_scripts' );
 

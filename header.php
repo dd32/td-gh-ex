@@ -13,9 +13,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.min.js" type="text/javascript"></script>
-<![endif]-->
 
 <?php wp_head(); ?>
 </head>
@@ -37,7 +34,7 @@
 <!-- Start: Search Form -->
 					<div id="search-full">
 						<div class="search-container">
-							<form role="search" method="get" id="search-form" action="<?php echo home_url( '/' ); ?>">
+							<form role="search" method="get" id="search-form" action="<?php echo esc_url(home_url( '/' )); ?>">
 								<label>
 									<span class="screen-reader-text"><?php _e( 'Search for:', 'annina' ); ?></span>
 									<input type="search" name="s" id="search-field" placeholder="<?php _e('Type here and hit enter...', 'annina'); ?>">
