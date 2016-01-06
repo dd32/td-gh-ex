@@ -96,6 +96,9 @@ Pattern Images
 
 ---------------------------------------------
 == Changelog ==
+Version 1.20
+* Hardcoded Title tag removed
+
 Version 1.19
 * More Theme Page added
 
