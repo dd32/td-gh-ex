@@ -70,7 +70,7 @@
 	<!-- Start: Search Form -->
 	<div id="search-full">
 		<div class="search-container">
-			<form id="search-form" method="get" action="<?php echo home_url( '/' ); ?>">
+			<form id="search-form" method="get" action="<?php echo esc_url(home_url( '/' )); ?>">
 				<input id="search-field" type="text" name="s" value="" placeholder="<?php _e('Type here and hit enter...', 'zenzero'); ?>" />
 			</form>
 			<span><a id="close-search"><i class="fa fa-close"></i> <?php _e('Close', 'zenzero'); ?></a></span>
