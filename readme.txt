@@ -90,3 +90,7 @@ Version 1.5.7
 Version 1.5.8
 * Update FontAwesome to 4.5.0v
 * Minor bug fixes
+
+Version 1.5.9
+* Fixed IE9 CSS condition
+* Minor Bug Fixes

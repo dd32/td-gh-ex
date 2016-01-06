@@ -232,30 +232,30 @@ function semplicemente_custom_css_styles() {
 	input,
 	select,
 	textarea {
-		color: <?php echo $color_primary; ?>;
+		color: <?php echo esc_attr($color_primary); ?>;
 	}
 	<?php endif; ?>
 	
 	<?php if (!empty($color_link)) : ?>
 	h1, h2, h3, h4, h5, h6, a {
-		color: <?php echo $color_link; ?>;
+		color: <?php echo esc_attr($color_link); ?>;
 	}
 	<?php endif; ?>
 	
 	<?php if (!empty($color_secondary)) : ?>
 	a:hover, a:focus, a:active, .entry-meta i, .top-search.active {
-		color: <?php echo $color_secondary; ?>;
+		color: <?php echo esc_attr($color_secondary); ?>;
 	}
 	.widget-title h3 {
-		border-bottom: 1px solid <?php echo $color_secondary; ?>;
+		border-bottom: 1px solid <?php echo esc_attr($color_secondary); ?>;
 	}
 	.sticky {
-		border: 3px solid <?php echo $color_secondary; ?>;
+		border: 3px solid <?php echo esc_attr($color_secondary); ?>;
 	}
 	
 	blockquote {
-		border-left: 5px solid <?php echo $color_secondary; ?>;
-		border-right: 2px solid <?php echo $color_secondary; ?>;
+		border-left: 5px solid <?php echo esc_attr($color_secondary); ?>;
+		border-right: 2px solid <?php echo esc_attr($color_secondary); ?>;
 	}
 	
 	button,
@@ -264,7 +264,7 @@ function semplicemente_custom_css_styles() {
 	input[type="submit"],
 	.dataBottom a, 
 	.readMoreLink {
-		border: 1px solid <?php echo $color_secondary; ?>;
+		border: 1px solid <?php echo esc_attr($color_secondary); ?>;
 	}
 	
 	button:hover,
@@ -285,7 +285,7 @@ function semplicemente_custom_css_styles() {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu,
 	.main-navigation.toggled .nav-menu ul	{
-		background: <?php echo $color_secondary; ?>;
+		background: <?php echo esc_attr($color_secondary); ?>;
 	}
 	<?php endif; ?>
 	
