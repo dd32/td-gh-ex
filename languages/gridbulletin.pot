@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GridBulletin\n"
-"POT-Creation-Date: 2015-12-26 13:38+0100\n"
+"POT-Creation-Date: 2016-01-07 14:57+0100\n"
 "PO-Revision-Date: 2015-11-15 20:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -116,11 +116,11 @@ msgstr ""
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:176 functions.php:185
+#: functions.php:177 functions.php:186
 msgid "Logo"
 msgstr ""
 
-#: functions.php:178
+#: functions.php:179
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
