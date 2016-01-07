@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Medical version 3.0 - january 2016
+- updated file style
+- updated file custom-editor-style
+- updated file functions
+
 Medical version 2.9 - december 2015
 - bugfix: included the register_default_headers again because it did not work without
 

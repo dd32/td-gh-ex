@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Medical\n"
-"POT-Creation-Date: 2015-12-26 13:39+0100\n"
+"POT-Creation-Date: 2016-01-07 14:58+0100\n"
 "PO-Revision-Date: 2015-11-15 20:05+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -100,36 +100,36 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:97
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:98 functions.php:108 functions.php:118 functions.php:128
-#: functions.php:138
+#: functions.php:99 functions.php:109 functions.php:119 functions.php:129
+#: functions.php:139
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:106
+#: functions.php:107
 msgid "Homepage Sidebar"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:117
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:127
 msgid "Footer Sidebar Middle"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:137
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:182 functions.php:191
+#: functions.php:184 functions.php:193
 msgid "Logo"
 msgstr ""
 
-#: functions.php:184
+#: functions.php:186
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
@@ -171,10 +171,10 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Medical is a free, clean, minimalistic, responsive, mobile friendly "
-"WordPress theme. Features: primary sidebar, homepage sidebar, widget areas "
-"in footer, custom header image, custom background, custom logo to replace "
-"blogname and description, full width page template, dropdown navigation. "
-"That's it. Enjoy."
+"WordPress theme. Features: primary sidebar, widget areas in header, widget "
+"areas in footer, custom header image, custom background, custom logo to "
+"replace blogname and description, full width page template, dropdown "
+"navigation. That's it. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme
