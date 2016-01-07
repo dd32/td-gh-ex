@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+OneColumn version 3.8 - january 2016
+- updated file style
+- updated file custom-editor-style
+- updated file functions
+
 OneColumn version 3.7 - january 2016
 - file style bugfix: replaced overflow with :after for several floating elements
 - added div main-content to wrap content, sidebar and footer

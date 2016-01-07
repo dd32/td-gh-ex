@@ -15,8 +15,8 @@
 		load_theme_textdomain('onecolumn', get_template_directory() . '/languages');  
 
 	// Register Menu
-		register_nav_menus( 
-		array( 'primary' => __( 'Primary Navigation', 'onecolumn' ), 
+		register_nav_menus( array( 
+			'primary' => __( 'Primary Navigation', 'onecolumn' ), 
 	 	) ); 
 
 	// Add document title
@@ -27,11 +27,11 @@
 
 	// Custom header	
 		$args = array(		
-		'width' => 960,
-		'height' => 350,
-		'default-image' => get_template_directory_uri() . '/images/boats.jpg',
-		'header-text' => false,
-		'uploads' => true,
+			'width' => 960,
+			'height' => 350,
+			'default-image' => get_template_directory_uri() . '/images/boats.jpg',
+			'header-text' => false,
+			'uploads' => true,
 		);	
 		add_theme_support( 'custom-header', $args );
 
@@ -54,7 +54,8 @@
 		add_image_size( 'single', 450, 450 ); 
 
 	// Background color
-		$args = array( 'default-color' => 'ffffff', 
+		$args = array( 
+			'default-color' => 'ffffff', 
 		); 
 		add_theme_support( 'custom-background', $args ); 
 
@@ -62,8 +63,7 @@
 		add_theme_support( 'automatic-feed-links' );
 
 	// Switches default core markup for search form, comment form, and comments to output valid HTML5
-		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
-
+		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'caption' ) );
 	}
 	add_action( 'after_setup_theme', 'onecolumn_setup' ); 
 
@@ -73,7 +73,7 @@
 		echo '<!--[if lt IE 9]>'. "\n"; 
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
 		echo '<![endif]-->'. "\n"; 
-		} 
+	} 
 	add_action( 'wp_head', 'onecolumn_html5' ); 
 
 
@@ -161,11 +161,12 @@
 
 // Custom excerpt lenght (default length is 55 words)
 	function onecolumn_excerpt_length( $length ) { 
-		return 75; } 
+		return 75; 
+	} 
 	add_filter( 'excerpt_length', 'onecolumn_excerpt_length', 999 ); 
 
 
-// Theme Customizer (option to add logo)
+// Theme Customizer (logo)
 	function onecolumn_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'onecolumn_logo_section' , array( 
 			'title' => __( 'Logo', 'onecolumn' ), 
