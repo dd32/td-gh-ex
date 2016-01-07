@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+BlueGray version 3.5 - january 2016
+- updated file style
+- updated file custom-editor-style
+- updated file functions
+
 BlueGray version 3.4 - january 2016
 - file style bugfix: replaced overflow with :after for several floating elements
 

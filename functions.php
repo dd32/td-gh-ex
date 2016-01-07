@@ -15,8 +15,8 @@
 		load_theme_textdomain('bluegray', get_template_directory() . '/languages');  
 
 	// Register Menu
-		register_nav_menus( 
-		array( 'primary' => __( 'Primary Navigation', 'bluegray' ), 
+		register_nav_menus( array( 
+			'primary' => __( 'Primary Navigation', 'bluegray' ), 
 	 	) ); 
 
 	// Add document title
@@ -27,11 +27,11 @@
 
 	// Custom header	
 		$args = array(		
-		'width' => 1700,
-		'height' => 400,
-		'default-image' => get_template_directory_uri() . '/images/boats.jpg',
-		'header-text' => false,
-		'uploads' => true,
+			'width' => 1700,
+			'height' => 400,
+			'default-image' => get_template_directory_uri() . '/images/boats.jpg',
+			'header-text' => false,
+			'uploads' => true,
 		);	
 		add_theme_support( 'custom-header', $args );
 
@@ -56,12 +56,12 @@
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );
 
-
 	// Switches default core markup for search form, comment form, and comments to output valid HTML5
-		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
+		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'caption' ) );
 
 	// Background color
-		$args = array( 'default-color' => 'eeeeee', 
+		$args = array( 
+			'default-color' => 'eeeeee', 
 		); 
 		add_theme_support( 'custom-background', $args ); 
 
@@ -74,7 +74,7 @@
 		echo '<!--[if lt IE 9]>'. "\n"; 
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
 		echo '<![endif]-->'. "\n"; 
-		} 
+	} 
 	add_action( 'wp_head', 'bluegray_html5' ); 
 
 
@@ -193,11 +193,12 @@
 
 // Custom excerpt lenght (default length is 55 words)
 	function bluegray_excerpt_length( $length ) { 
-		return 55; } 
+		return 55; 
+	} 
 	add_filter( 'excerpt_length', 'bluegray_excerpt_length', 999 ); 
 
 
-// Theme Customizer (option to add logo)
+// Theme Customizer (logo)
 	function bluegray_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'bluegray_logo_section' , array( 
 			'title' => __( 'Logo', 'bluegray' ), 
