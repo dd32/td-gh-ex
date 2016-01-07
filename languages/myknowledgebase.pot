@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2015-12-30 23:56+0100\n"
+"POT-Creation-Date: 2016-01-07 14:58+0100\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -100,52 +100,52 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:97
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:98 functions.php:108 functions.php:118 functions.php:128
-#: functions.php:138
+#: functions.php:99 functions.php:109 functions.php:119 functions.php:129
+#: functions.php:139
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:106
+#: functions.php:107
 msgid "Homepage Sidebar"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:117
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:127
 msgid "Footer Sidebar Middle"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:137
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:182 functions.php:191
+#: functions.php:184 functions.php:193
 msgid "Logo"
 msgstr ""
 
-#: functions.php:184
+#: functions.php:186
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
-#: functions.php:196
+#: functions.php:198
 msgid "Knowledgebase"
 msgstr ""
 
-#: functions.php:198
+#: functions.php:200
 msgid "Set amount of posts for each knowledgebase category."
 msgstr ""
 
-#: functions.php:205
+#: functions.php:207
 msgid "Posts per page"
 msgstr ""
 
-#: functions.php:206
+#: functions.php:208
 msgid "Only numeric characters allowed."
 msgstr ""
 
@@ -193,9 +193,9 @@ msgid ""
 "MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile friendly "
 "WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, "
 "Wiki or Link Portal with a custom page template and using the default "
-"categories and posts. Features: primary sidebar, homepage sidebar, widget "
-"areas in footer, custom header image, custom background, custom logo to "
-"replace blogname and description, full width page template, dropdown "
+"categories and posts. Features: primary sidebar, widget areas in header, "
+"widget areas in footer, custom header image, custom background, custom logo "
+"to replace blogname and description, full width page template, dropdown "
 "navigation. That's it. Enjoy."
 msgstr ""
 
