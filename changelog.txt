@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+LeftSide version 2.7 - january 2016
+- updated file style
+- updated file custom-editor-style
+- updated file functions
+
 LeftSide version 2.6 - december 2015
 - bugfix: included the register_default_headers again because it did not work without
 
