@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkOrange\n"
-"POT-Creation-Date: 2015-12-26 13:38+0100\n"
+"POT-Creation-Date: 2016-01-07 14:57+0100\n"
 "PO-Revision-Date: 2015-11-15 18:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -120,11 +120,11 @@ msgstr ""
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:175 functions.php:184
+#: functions.php:176 functions.php:185
 msgid "Logo"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:178
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
@@ -166,10 +166,10 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "DarkOrange is a free, clean, minimalistic, responsive, mobile friendly "
-"WordPress theme. Features: primary sidebar, homepage sidebar, widget areas "
-"in footer, custom header image, custom background, custom logo to replace "
-"blogname and description, full width page template, dropdown navigation. "
-"That's it. Enjoy."
+"WordPress theme. Features: primary sidebar, widget areas in header, widget "
+"areas in footer, custom header image, custom background, custom logo to "
+"replace blogname and description, full width page template, dropdown "
+"navigation. That's it. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme
