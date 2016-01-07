@@ -4,6 +4,13 @@
  *
  * @package storto
  */
+ 
+ /**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 800; /* pixels */
+}
 
 if ( ! function_exists( 'storto_setup' ) ) :
 /**
@@ -14,14 +21,6 @@ if ( ! function_exists( 'storto_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function storto_setup() {
-
-	/**
-	 * Set the content width based on the theme's design and stylesheet.
-	 */
-	global $content_width;
-	if ( ! isset( $content_width ) ) {
-		$content_width = 800; /* pixels */
-	}
 
 	/*
 	 * Make theme available for translation.
@@ -103,8 +102,8 @@ add_action( 'widgets_init', 'storto_widgets_init' );
  */
 function storto_scripts() {
 	wp_enqueue_style( 'storto-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'storto-googlefonts', '//fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700');
 	wp_enqueue_style( 'storto-fontAwesome', get_template_directory_uri() .'/css/font-awesome.min.css');
+	wp_enqueue_style( 'storto-googlefonts', '//fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700');
 
 	wp_enqueue_script( 'storto-custom', get_template_directory_uri() . '/js/jquery.storto.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'storto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -113,6 +112,10 @@ function storto_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	
+	global $wp_scripts;
+	wp_enqueue_script( 'storto-html5shiv', get_template_directory_uri() . '/js/html5.js', array(), '3.7.2', false );
+	$wp_scripts->add_data( 'storto-html5shiv', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'storto_scripts' );
 

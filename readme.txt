@@ -88,3 +88,7 @@ Version 1.3.6
 * Update FontAwesome to 4.5.0v
 * Change the sticky sidebar script with Theia Sticky Sidebar
 * Minor bug fixes
+
+Version 1.3.7
+* Fixed IE9 CSS condition
+* Minor Bug Fixes

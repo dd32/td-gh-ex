@@ -228,14 +228,14 @@ function storto_custom_css_styles() {
 	input[type="password"]:focus,
 	input[type="search"]:focus,
 	textarea:focus {
-		color: <?php echo $color_primary; ?>;
+		color: <?php echo esc_attr($color_primary); ?>;
 	}
 	<?php endif; ?>
 	
 	<?php if (!empty($color_link)) : ?>
 	blockquote {
-		border-left: 5px solid <?php echo $color_link; ?>;
-		border-right: 2px solid <?php echo $color_link; ?>;
+		border-left: 5px solid <?php echo esc_attr($color_link); ?>;
+		border-right: 2px solid <?php echo esc_attr($color_link); ?>;
 	}
 	button:hover,
 	input[type="button"]:hover,
@@ -251,10 +251,10 @@ function storto_custom_css_styles() {
 	.readMoreLink a:hover, 
 	.dataBottom a:hover,
 	#toTop:hover	{
-		border: 1px solid <?php echo $color_link; ?>;
+		border: 1px solid <?php echo esc_attr($color_link); ?>;
 	}
 	a, a:hover, a:focus, a:active, .main-navigation ul li .indicator, .content-area .sticky:before {
-		color: <?php echo $color_link; ?>;
+		color: <?php echo esc_attr($color_link); ?>;
 	}
 	<?php endif; ?>
 	
