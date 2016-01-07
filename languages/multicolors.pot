@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultiColors\n"
-"POT-Creation-Date: 2015-12-26 13:39+0100\n"
+"POT-Creation-Date: 2016-01-07 14:58+0100\n"
 "PO-Revision-Date: 2015-11-15 20:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -100,48 +100,48 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:97
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:98 functions.php:108 functions.php:118 functions.php:128
-#: functions.php:138 functions.php:148 functions.php:158 functions.php:168
+#: functions.php:99 functions.php:109 functions.php:119 functions.php:129
+#: functions.php:139 functions.php:149 functions.php:159 functions.php:169
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:106
+#: functions.php:107
 msgid "Header Sidebar"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:117
 msgid "Homepage Sidebar Right"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:127
 msgid "Homepage Sidebar Middle"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:137
 msgid "Homepage Sidebar Left"
 msgstr ""
 
-#: functions.php:146
+#: functions.php:147
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:156
+#: functions.php:157
 msgid "Footer Sidebar Middle"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:167
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:212 functions.php:221
+#: functions.php:214 functions.php:223
 msgid "Logo"
 msgstr ""
 
-#: functions.php:214
+#: functions.php:216
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
@@ -182,9 +182,9 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"MultiColors is a free, clean, minimalistic, responsive, mobile friendly "
-"WordPress theme. Features: primary sidebar, homepage sidebar, widget areas "
-"in header, widget areas in footer, custom header image, custom logo to "
+"MultiColors is a colorful, free, clean, minimalistic, responsive, mobile "
+"friendly WordPress theme. Features: primary sidebar, widget areas in "
+"header, widget areas in footer, custom header image, custom logo to "
 "replace blogname and description, full width page template, dropdown "
 "navigation. That's it. Enjoy."
 msgstr ""

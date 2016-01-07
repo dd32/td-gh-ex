@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+MultiColors version 3.2 - january 2016
+- updated file style
+- updated file custom-editor-style
+- updated file functions
+
 MultiColors version 3.1 - january 2016
 - file style bugfix: replaced overflow with :after for several floating elements
 
