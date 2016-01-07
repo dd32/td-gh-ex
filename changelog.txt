@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 3.9 - january 2016
+- updated file style
+- updated file custom-editor-style
+- updated file functions
+
 PrivateBusiness version 3.8 - december 2015
 - bugfix: included the register_default_headers again because it did not work without
 

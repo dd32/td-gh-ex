@@ -28,22 +28,22 @@
 
 	// Custom header	
 		$args = array(		
-		'width' => 1200,
-		'height' => 350,
-		'default-image' => get_template_directory_uri() . '/images/boats.jpg',
-		'header-text' => false,
-		'uploads' => true,
+			'width' => 1200,
+			'height' => 350,
+			'default-image' => get_template_directory_uri() . '/images/boats.jpg',
+			'header-text' => false,
+			'uploads' => true,
 		);	
 		add_theme_support( 'custom-header', $args );
 
 	// Default header
-	register_default_headers( array(
-		'boats' => array(
-			'url'           => get_template_directory_uri() . '/images/boats.jpg',
-			'thumbnail_url' => get_template_directory_uri() . '/images/boats.jpg',
-			'description'   => __( 'Default header', 'privatebusiness' )
-		)
-	) );
+		register_default_headers( array(
+			'boats' => array(
+				'url'           => get_template_directory_uri() . '/images/boats.jpg',
+				'thumbnail_url' => get_template_directory_uri() . '/images/boats.jpg',
+				'description'   => __( 'Default header', 'privatebusiness' )
+			)
+		) );
 
 	// Post thumbnails
 		add_theme_support( 'post-thumbnails' ); 
@@ -58,10 +58,11 @@
 		add_theme_support( 'automatic-feed-links' );
 
 	// Switches default core markup for search form, comment form, and comments to output valid HTML5
-		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
+		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'caption' ) );
 
 	// Background color
-		$args = array( 'default-color' => 'eeeeee', 
+		$args = array( 
+			'default-color' => 'eeeeee', 
 		); 
 		add_theme_support( 'custom-background', $args ); 
 
@@ -74,7 +75,7 @@
 		echo '<!--[if lt IE 9]>'. "\n"; 
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
 		echo '<![endif]-->'. "\n"; 
-		}
+	}
 	add_action( 'wp_head', 'privatebusiness_html5' ); 
 
 
@@ -174,11 +175,12 @@
 
 // Custom excerpt lenght (default length is 55 words)
 	function privatebusiness_excerpt_length( $length ) { 
-		return 75; } 
+		return 75; 
+	} 
 	add_filter( 'excerpt_length', 'privatebusiness_excerpt_length', 999 ); 
 
 
-// Theme Customizer (option to add logo)
+// Theme Customizer (logo)
 	function privatebusiness_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'privatebusiness_logo_section' , array( 
 			'title' => __( 'Logo', 'privatebusiness' ), 
