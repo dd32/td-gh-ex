@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkElements version 3.3 - january 2016
+- updated file style
+- updated file custom-editor-style
+- updated file functions
+
 DarkElements version 3.2 - december 2015
 - bugfix: included the register_default_headers again because it did not work without
 

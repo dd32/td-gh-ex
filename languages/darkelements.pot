@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkElements\n"
-"POT-Creation-Date: 2015-12-26 13:38+0100\n"
+"POT-Creation-Date: 2016-01-07 14:57+0100\n"
 "PO-Revision-Date: 2015-11-15 17:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -100,31 +100,31 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:97
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:98 functions.php:108 functions.php:118 functions.php:128
+#: functions.php:99 functions.php:109 functions.php:119 functions.php:129
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:106
+#: functions.php:107
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:117
 msgid "Footer Sidebar Middle"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:127
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:172 functions.php:181
+#: functions.php:174 functions.php:183
 msgid "Logo"
 msgstr ""
 
-#: functions.php:174
+#: functions.php:176
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
