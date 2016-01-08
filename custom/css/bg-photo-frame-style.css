@@ -42,11 +42,11 @@
 /* site-wrapper
 -----------------------------------------*/
 #site-wrapper {
-  margin: 2% auto 2%;
-  padding: 2%;
+  margin: 21px;
+  padding: 21px;
   z-index: 1;
   position: relative;
-  width: 96%; }
+  width: auto; }
 
 #site-wrapper-inner {
   position: relative;

@@ -5,7 +5,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, post-for
 
 Requires at least: 4.0
 Tested up to: 4.2.2
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,8 @@ BG Photo Frame includes support for Infinite Scroll in Jetpack.
 * Changed the screen shot image
 = 1.0.7 - Decemvar 31 2015 =
 * Add Japanese localization
+= 1.0.8 - January 08 2016 =
+* Add Fhotoframe function
 
 == Credits ==
 

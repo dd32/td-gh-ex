@@ -13,7 +13,9 @@ var bgGradationColor;
 	bgSlide.easySlideshowFade({
 		width : '100%',
 		gradationColor: bgGradationColor,
-		autoTimer:4000
+		autoTimer:4000,
+		photoFrame:true,
+		contents : '#site-wrapper'
 		
 	});
 

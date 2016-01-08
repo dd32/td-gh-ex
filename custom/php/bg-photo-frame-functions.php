@@ -13,6 +13,11 @@ function bg_photo_frame_custom_sctipt() {
 		get_template_directory_uri()   . '/custom/css/bg-photo-frame-style.css'
 	);
 	
+	wp_enqueue_style( 
+		'bg-photo-frame-custom-style-sp', 
+		get_template_directory_uri()   . '/custom/css/bg-photo-frame-style-sp.css'
+	);
+	
 	
 	
 	if($theme_color == 'dark'){
@@ -31,7 +36,10 @@ function bg_photo_frame_custom_sctipt() {
 	//jQuery
 	wp_enqueue_script('jquery');
 	//Slide
+  	wp_enqueue_style('easySlideshowFade', get_template_directory_uri()   . '/custom/css/jquery.easySlideshowFade.css');
 	wp_enqueue_script('easy-slideshow-fade', get_template_directory_uri() . '/custom/js/jquery.easySlideshowFade.js', array(), '1.0.0', true);
+	
+		
 	//Master
 	wp_enqueue_script('master', get_template_directory_uri() . '/custom/js/bg-photo-frame-master.js', array(), '1.0.0', true);
 	
