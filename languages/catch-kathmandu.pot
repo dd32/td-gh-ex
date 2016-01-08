@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-20 22:02+0545\n"
-"PO-Revision-Date: 2015-11-20 22:02+0545\n"
+"POT-Creation-Date: 2016-01-08 16:58+0545\n"
+"PO-Revision-Date: 2016-01-08 16:58+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en_US\n"
@@ -330,7 +330,6 @@ msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1600
 #: ../inc/panel/customizer/customizer.php:838
-#: ../inc/panel/customizer/customizer.php:928
 #: ../inc/panel/theme-options.php:1092
 msgid "Flickr"
 msgstr ""
@@ -384,6 +383,7 @@ msgid "Last.fm"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1645
+#: ../inc/panel/customizer/customizer.php:928
 #: ../inc/panel/theme-options.php:1164
 msgid "Instagram"
 msgstr ""

@@ -214,8 +214,6 @@ function catchkathmandu_reset_all_settings( $input ) {
        
         // Flush out all transients	on reset
         catchkathmandu_themeoption_invalidate_caches();
-
-        return "0";
     } 
     else {
         return "0";

@@ -925,7 +925,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 		),
 		'social_instagram' => array(
 			'id' 			=> 'social_instagram',
-			'title' 		=> __( 'Flickr', 'catch-kathmandu' ),
+			'title' 		=> __( 'Instagram', 'catch-kathmandu' ),
 			'description'	=> '',
 			'field_type' 	=> 'url',
 			'sanitize' 		=> 'esc_url_raw',

@@ -1,5 +1,9 @@
 == Changelog ==
 
+Version 3.5.2
+* Bug Fixed: Compatibility issue, customizer Reset option not working when returning any value in WordPress 4.4
+* Bug Fixed: Instagraph social icon title issue ( Reported by Andreas Grieb )
+
 Version 3.5.1
 * Bug Fixed: Customizer Dropdown type saving issue
 * Bug Fixed: Excerpt More Tag sanitization issue
