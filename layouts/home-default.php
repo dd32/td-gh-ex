@@ -73,7 +73,7 @@
                     } else { 
                         
                         the_widget( 'WP_Widget_Archives','',
-                        array(	'before_widget' => '<div id="%1$s" class="post-article widget-box %2$s">',
+                        array(	'before_widget' => '<div class="post-article widget-box">',
                                 'after_widget'  => '</div>',
                                 'before_title'  => '<header class="title"><div class="line"><h3>',
                                 'after_title'   => '</h3></div></header>'
@@ -81,14 +81,14 @@
         
                         the_widget( 'WP_Widget_Calendar',
                         array("title"=> __('Calendar',"alhenalite")),
-                        array(	'before_widget' => '<div id="%1$s" class="post-article widget-box %2$s">',
+                        array(	'before_widget' => '<div class="post-article widget-box">',
                                 'after_widget'  => '</div>',
                                 'before_title'  => '<header class="title"><div class="line"><h3>',
                                 'after_title'   => '</h3></div></header>'
                         ));
         
                         the_widget( 'WP_Widget_Categories','',
-                        array(	'before_widget' => '<div id="%1$s" class="post-article widget-box %2$s">',
+                        array(	'before_widget' => '<div class="post-article widget-box">',
                                 'after_widget'  => '</div>',
                                 'before_title'  => '<header class="title"><div class="line"><h3>',
                                 'after_title'   => '</h3></div></header>'
