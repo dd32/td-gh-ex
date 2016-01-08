@@ -102,17 +102,14 @@ class accesspress_store_product2 extends WP_Widget {
                 echo $before_widget;
                 ?>
                 <div class="feature-cat-product-wrap">
-                <?php //if($product_alignment == 'left_align'): ?>
-                    <div class="feature-cat-image <?php echo $product_alignment;?>">
+                      <div class="feature-cat-image <?php echo $product_alignment;?>">
                         <?php 
-                        $thumbnail_id = get_woocommerce_term_meta($product_category, 'thumbnail_id', true);
-                        if (!empty($thumbnail_id)) {
-                            $image = wp_get_attachment_image_src($thumbnail_id, 'prod-cat-size');
-                            echo '<img src="' . esc_url($image[0]) . '" alt="asfds"  />';
-                        }
-                        else{ ?>
-                        <img src="<?php echo get_template_directory_uri().'../images/dummy-cat.jpg'?>"/>
-                        <?php } ?>
+                          $thumbnail_id = get_woocommerce_term_meta($product_category, 'thumbnail_id', true);
+                          if (!empty($thumbnail_id)) {
+                              $image = wp_get_attachment_image_src($thumbnail_id, 'accesspress-prod-cat-size');
+                              echo '<img src="' . esc_url($image[0]) . '" />';
+                          }
+                        ?>
                         <div class="product-cat-desc">
                             <?php 
                             
@@ -126,7 +123,6 @@ class accesspress_store_product2 extends WP_Widget {
                             </div>  
                         </div>
                     </div>
-                <?php //endif; ?>
                     <div class="feature-cat-product <?php echo $product_alignment;?>">
                         <?php 
                             $prod_args = array(

@@ -48,6 +48,12 @@ Images
 
 == Changelog ==
 
+= 1.1.4 =
+
+** Change missiang text-domain
+** Add the homepage category image crop size in function & implement in category section.
+** Fixed the responsive problem.
+
 = 1.1.3 =
 
 ** Fixed the add to wishlist and browse wishlist button style in single page.

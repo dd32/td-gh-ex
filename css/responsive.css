@@ -1666,6 +1666,16 @@
 
 @media (max-width: 480px) {
 
+   .woocommerce.single.single-product .entry-summary .show a {      
+       font-size: 11px;   
+       height: 32px;
+       padding: 0px 2px;      
+   }
+   .woocommerce.single.single-product .entry-summary .add_to_wishlist{
+        font-size: 11px !important;
+        padding: 0px !important;
+   }
+
     .prod-title {
         display:block;  
     }

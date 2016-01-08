@@ -50,7 +50,7 @@ function accesspress_store_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
     
-    add_image_size('accesspress-prod-cat-size', 600, 300, true);
+    add_image_size('accesspress-prod-cat-size', 562, 492, true);
     
     add_image_size('accesspress-service-thumbnail', 380, 252, true);
     
