@@ -3,9 +3,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Avien Light 1.6\n"
+"Project-Id-Version: Avien Lite 2.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-12-13 22:29-0000\n"
+"POT-Creation-Date: 2016-01-08 09:40-0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -57,6 +57,20 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
+#: avien-light/footer.php:69
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: avien-light/footer.php:69
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: avien-light/footer.php:70
+#, php-format
+msgid "Theme: %1$s by %2$s"
+msgstr ""
+
 #: avien-light/functions.php:59
 msgid "Primary Menu"
 msgstr ""
@@ -78,66 +92,20 @@ msgstr ""
 msgid "Widgets in this area will be shown before footer area."
 msgstr ""
 
-#: avien-light/functions.php:159 avien-lite - Kopya/functions.php:573
-msgid "Header Social"
+#: avien-light/functions.php:159
+msgid "Header Right"
 msgstr ""
 
-#: avien-light/functions.php:161 avien-lite - Kopya/functions.php:575
-msgid "Widgets in this area will be shown on hader social area."
+#: avien-light/functions.php:161
+msgid "Widgets in this area will be shown on header right area."
 msgstr ""
 
-#: avien-light/functions.php:170 avien-lite - Kopya/functions.php:584
-msgid "Header Contact"
+#: avien-light/functions.php:170
+msgid "Header Left"
 msgstr ""
 
-#: avien-light/functions.php:172 avien-lite - Kopya/functions.php:586
-msgid "Widgets in this area will be shown on hader contact area."
-msgstr ""
-
-#: avien-light/functions.php:255 avien-lite - Kopya/inc/widgets.php:426
-msgid "Add your contact info to the header area."
-msgstr ""
-
-#: avien-light/functions.php:259 avien-lite - Kopya/inc/widgets.php:430
-msgid "TWP Header Contact"
-msgstr ""
-
-#: avien-light/functions.php:308 avien-lite - Kopya/inc/widgets.php:311
-#: Kopya/inc/widgets.php:392 Kopya/inc/widgets.php:479
-msgid "Phone:"
-msgstr ""
-
-#: avien-light/functions.php:313 avien-lite - Kopya/inc/widgets.php:327
-#: Kopya/inc/widgets.php:400 Kopya/inc/widgets.php:484
-msgid "Email:"
-msgstr ""
-
-#: avien-light/functions.php:336 avien-lite - Kopya/inc/widgets.php:507
-msgid "Add your social info to the header area."
-msgstr ""
-
-#: avien-light/functions.php:340 avien-lite - Kopya/inc/widgets.php:511
-msgid "TWP Header Social"
-msgstr ""
-
-#: avien-light/functions.php:401 avien-lite - Kopya/inc/widgets.php:571
-msgid "Twitter URL:"
-msgstr ""
-
-#: avien-light/functions.php:406 avien-lite - Kopya/inc/widgets.php:576
-msgid "Facebook URL:"
-msgstr ""
-
-#: avien-light/functions.php:411 avien-lite - Kopya/inc/widgets.php:581
-msgid "LinkedIn URL:"
-msgstr ""
-
-#: avien-light/functions.php:416 avien-lite - Kopya/inc/widgets.php:586
-msgid "Google+ URL:"
-msgstr ""
-
-#: avien-light/functions.php:421 avien-lite - Kopya/inc/widgets.php:591
-msgid "Instagram URL:"
+#: avien-light/functions.php:172
+msgid "Widgets in this area will be shown on header left area."
 msgstr ""
 
 #: avien-light/header.php:100 avien-lite - Kopya/header.php:131
@@ -147,13 +115,13 @@ msgstr ""
 #: avien-light/inc/template-tags.php:28
 #, php-format
 msgctxt "post date"
-msgid "Posted on %s"
+msgid "Posted on %s "
 msgstr ""
 
 #: avien-light/inc/template-tags.php:33
 #, php-format
 msgctxt "post author"
-msgid "by %s"
+msgid "by %s "
 msgstr ""
 
 #: avien-light/inc/template-tags.php:50 avien-light/inc/template-tags.php:56
@@ -166,12 +134,12 @@ msgstr ""
 
 #: avien-light/inc/template-tags.php:52
 #, php-format
-msgid "Posted in %1$s"
+msgid " Posted in %1$s "
 msgstr ""
 
 #: avien-light/inc/template-tags.php:58
 #, php-format
-msgid "Tagged %1$s"
+msgid " Tagged %1$s "
 msgstr ""
 
 #: avien-light/inc/template-tags.php:64
@@ -202,28 +170,28 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: avien-light/template-parts/content-none.php:20 avien-lite -
+#: avien-light/template-parts/content-none.php:21 avien-lite -
 #: Kopya/inc/post-templates/content-none.php:8
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: avien-light/template-parts/content-none.php:24
+#: avien-light/template-parts/content-none.php:25
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: avien-light/template-parts/content-none.php:29 avien-lite -
+#: avien-light/template-parts/content-none.php:31 avien-lite -
 #: Kopya/inc/post-templates/content-none.php:17
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #: avien-light/template-parts/content-page.php:21
 #: avien-light/template-parts/content-single.php:25
-#: avien-light/template-parts/content.php:41
+#: avien-light/template-parts/content.php:45
 msgid "Pages:"
 msgstr ""
 
-#: avien-light/template-parts/content.php:34
+#: avien-light/template-parts/content.php:40
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
@@ -309,6 +277,22 @@ msgstr ""
 
 #: avien-lite - Kopya/functions.php:553
 msgid "Widgets in this area will be shown blogs on right side."
+msgstr ""
+
+#: avien-lite - Kopya/functions.php:573
+msgid "Header Social"
+msgstr ""
+
+#: avien-lite - Kopya/functions.php:575
+msgid "Widgets in this area will be shown on hader social area."
+msgstr ""
+
+#: avien-lite - Kopya/functions.php:584
+msgid "Header Contact"
+msgstr ""
+
+#: avien-lite - Kopya/functions.php:586
+msgid "Widgets in this area will be shown on hader contact area."
 msgstr ""
 
 #: avien-lite - Kopya/functions.php:595
@@ -544,8 +528,18 @@ msgstr ""
 msgid "TWP Contact Us"
 msgstr ""
 
+#: avien-lite - Kopya/inc/widgets.php:311 Kopya/inc/widgets.php:392
+#: Kopya/inc/widgets.php:479
+msgid "Phone:"
+msgstr ""
+
 #: avien-lite - Kopya/inc/widgets.php:319 Kopya/inc/widgets.php:396
 msgid "Fax:"
+msgstr ""
+
+#: avien-lite - Kopya/inc/widgets.php:327 Kopya/inc/widgets.php:400
+#: Kopya/inc/widgets.php:484
+msgid "Email:"
 msgstr ""
 
 #: avien-lite - Kopya/inc/widgets.php:334
@@ -566,6 +560,42 @@ msgstr ""
 
 #: avien-lite - Kopya/inc/widgets.php:404
 msgid "Website URL:"
+msgstr ""
+
+#: avien-lite - Kopya/inc/widgets.php:426
+msgid "Add your contact info to the header area."
+msgstr ""
+
+#: avien-lite - Kopya/inc/widgets.php:430
+msgid "TWP Header Contact"
+msgstr ""
+
+#: avien-lite - Kopya/inc/widgets.php:507
+msgid "Add your social info to the header area."
+msgstr ""
+
+#: avien-lite - Kopya/inc/widgets.php:511
+msgid "TWP Header Social"
+msgstr ""
+
+#: avien-lite - Kopya/inc/widgets.php:571
+msgid "Twitter URL:"
+msgstr ""
+
+#: avien-lite - Kopya/inc/widgets.php:576
+msgid "Facebook URL:"
+msgstr ""
+
+#: avien-lite - Kopya/inc/widgets.php:581
+msgid "LinkedIn URL:"
+msgstr ""
+
+#: avien-lite - Kopya/inc/widgets.php:586
+msgid "Google+ URL:"
+msgstr ""
+
+#: avien-lite - Kopya/inc/widgets.php:591
+msgid "Instagram URL:"
 msgstr ""
 
 #: avien-lite - Kopya/template-contact.php:54
