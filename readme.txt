@@ -2,9 +2,9 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.2.5
+Version: 1.2.6
 Requires at least: 3.0.1
-Tested up to: 4.2.2
+Tested up to: 4.4.1
 Author: Miguel Angel Rico
 Author URI: http://www.ibermega.com
 License: GNU General Public License v3.0
@@ -61,6 +61,11 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.2.6 - 09.01.2016 =
+* Replaced require in theme options with get_template_part.
+* Responsive video function is eliminated because new version of wordpress already has by default.
+* Error is corrected in searchform.php file.
 
 = 1.2.5 - 13.05.2015 =
 * The colors are set in the subtitle of the templates.

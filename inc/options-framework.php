@@ -36,11 +36,11 @@ function optionsframework_init() {
 		return;
 
 	// Loads the required Options Framework classes.
-	require plugin_dir_path( __FILE__ ) . 'includes/class-options-framework.php';
-	require plugin_dir_path( __FILE__ ) . 'includes/class-options-framework-admin.php';
-	require plugin_dir_path( __FILE__ ) . 'includes/class-options-interface.php';
-	require plugin_dir_path( __FILE__ ) . 'includes/class-options-media-uploader.php';
-	require plugin_dir_path( __FILE__ ) . 'includes/class-options-sanitization.php';
+	get_template_part( 'inc/includes/class-options','framework' );
+	get_template_part( 'inc/includes/class-options-framework','admin' );
+	get_template_part( 'inc/includes/class-options','interface' );
+	get_template_part( 'inc/includes/class-options-media','uploader' );
+	get_template_part( 'inc/includes/class-options','sanitization' );
 
 	// Instantiate the main plugin class.
 	$options_framework = new Options_Framework;
