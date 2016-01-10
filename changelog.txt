@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+DarkElements version 3.4 - january 2016
+- file header: removed is_home so homepage content is not displayed when using a static blog page
+- several small adjustments
+
 DarkElements version 3.3 - january 2016
 - updated file style
 - updated file custom-editor-style

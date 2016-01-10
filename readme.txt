@@ -19,12 +19,12 @@ I advice you to use a header-image of 680px wide and 450px high.
 
 HOW TO SET LOGO
 ===============
-You can add your own logo in stead of blogname and description via  WordPress Dashboard > Appearance > Customize.
+You can add your own logo in stead of blogname and description via WordPress Dashboard > Appearance > Customize.
 
 
 HOW TO CHANGE BACKGROUND
 ========================
-You can add your own background(image) via  WordPress Dashboard > Appearance > Customize.
+You can add your own background(image) via WordPress Dashboard > Appearance > Customize.
 
 
 HOW TO SET MENU

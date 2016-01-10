@@ -9,7 +9,7 @@
 
 	<?php if ( have_posts() ) : ?>
 
-		<h4 class="page-title"><?php printf( __( 'Search Results for: %s', 'darkelements' ), '<span>' . get_search_query() . '</span>' ); ?></h4>
+		<h4 class="page-title"><?php printf( __( 'Search Results for: %s', 'darkelements' ), get_search_query() ); ?></h4>
 			
 		<?php while ( have_posts() ) : the_post(); ?>
 

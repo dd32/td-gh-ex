@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying menu and header-image.
+ * The header for displaying logo, menu, left sidebar and header-image.
  */
 ?>
 
@@ -36,7 +36,7 @@
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 	<?php endif; ?>
 
-	<?php if ( is_home() || is_front_page() ) {?> 
+	<?php if ( is_front_page() ) {?> 
 	<?php if ( get_header_image() ) {?> 
 		<div id="header-image-mobile">
 			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
@@ -47,7 +47,7 @@
 	<?php get_sidebar(); ?>
 </div>
 
-<?php if ( is_home() || is_front_page() ) {?> 
+<?php if ( is_front_page() ) {?> 
 <?php if ( get_header_image() ) {?> 
 	<div id="header-image">
 		<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
