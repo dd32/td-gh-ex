@@ -17,20 +17,20 @@ You can change the header-image via WordPress Dashboard > Appearance > Customize
 I advice you to use a header-image of 960px wide and 350px high. 
 
 
-HOW TO SET MENU
-===============
-Theme offers a menu that can contain subpages (2 levels deep).
-You can create and set menu via WordPress Dashboard > Appearance > Menus.
-
-
 HOW TO SET LOGO
 ===============
-You can add your own logo in stead of blogname and description via  WordPress Dashboard > Appearance > Customize.
+You can add your own logo in stead of blogname and description via WordPress Dashboard > Appearance > Customize.
 
 
 HOW TO CHANGE BACKGROUND
 ========================
-You can add your own background(image) via  WordPress Dashboard > Appearance > Customize.
+You can add your own background(image) via WordPress Dashboard > Appearance > Customize.
+
+
+HOW TO SET MENU
+===============
+Theme offers a menu that can contain subpages (2 levels deep).
+You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 
 TRANSLATION

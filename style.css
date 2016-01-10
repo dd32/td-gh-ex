@@ -1,7 +1,7 @@
 /*
 Theme Name: OneColumn
 Theme URI: http://www.guidovanderleest.nl/onecolumn
-Version: 3.8
+Version: 3.9
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: OneColumn is a free, clean, minimalistic, responsive, mobile friendly one column WordPress theme. Features: widget areas in header, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, dropdown navigation. That's it. Enjoy. 
@@ -148,7 +148,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 .nav-head {width:100%; float:left; clear:both; padding:10px 0;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin:0; z-index:999;}
-.nav-head ul li {list-style-type:none; display:inline-block; position:relative;}
+.nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0 5px;}
 .nav-head ul li a {text-decoration:none; color:#fff; background:none; padding:10px 10px; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
 .nav-head .current_page_item > a, .nav-head .current_page_parent > a {text-decoration:underline;}
