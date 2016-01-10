@@ -1,7 +1,7 @@
 /*
 Theme Name: PrivateBusiness
 Theme URI: http://www.guidovanderleest.nl/privatebusiness
-Version: 3.9
+Version: 4.0
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: PrivateBusiness is a free, clean, minimalistic, responsive, mobile friendly WordPress theme for Private or Business website. Features: primary sidebar, widget areas in header, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, header navigation, dropdown navigation. That's it. Enjoy. 
@@ -153,10 +153,10 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER SECOND PRIMARY MENU */
-.nav-head-primary {width:100%; clear:both; float:left; background:#0066ff;}
+.nav-head-primary {width:98%; clear:both; float:left; background:#0066ff; padding:0 1%;}
 .nav-head-primary select {display:none;}
 .nav-head-primary ul {padding:0; margin:0; z-index:999;}
-.nav-head-primary ul li {list-style-type:none; display:inline-block; position:relative;}
+.nav-head-primary ul li {list-style-type:none; display:inline-block; position:relative; margin:0 0 0 10px;}
 .nav-head-primary ul li a {text-decoration:none; color:#fff; background:none; padding:10px 10px; display:inline-block;}
 .nav-head-primary ul li a:hover {text-decoration:underline;}
 .nav-head-primary .current_page_item > a, .nav-head-primary .current_page_parent > a {text-decoration:underline;}
@@ -292,7 +292,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 	/* MENU */
 	.nav-head-primary ul {display:none;} 
-	.nav-head-primary {padding:0;}
+	.nav-head-primary {width:100%; padding:0;}
 	.nav-head-primary select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#0066ff; border:0;}
 	.nav-head-secondary ul {display:none;} 
 	.nav-head-secondary {width:100%; margin:0 0 10px;}

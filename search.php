@@ -8,7 +8,7 @@
 <div id="content">
 
 	<?php if ( have_posts() ) : ?>
-		<h3 class="page-title"><?php printf( __( 'Search Results for: %s', 'privatebusiness' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
+		<h3 class="page-title"><?php printf( __( 'Search Results for: %s', 'privatebusiness' ), get_search_query() ); ?></h3>
 			
 	<?php while ( have_posts() ) : the_post(); ?>
 

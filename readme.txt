@@ -19,12 +19,12 @@ I advice you to use a header-image of 1200px wide and 350px high.
 
 HOW TO SET LOGO
 ===============
-You can add your own logo in stead of blogname and description via  WordPress Dashboard > Appearance > Customize.
+You can add your own logo in stead of blogname and description via WordPress Dashboard > Appearance > Customize.
 
 
 HOW TO CHANGE BACKGROUND
 ========================
-You can add your own background(image) via  WordPress Dashboard > Appearance > Customize.
+You can add your own background(image) via WordPress Dashboard > Appearance > Customize.
 
 
 HOW TO SET MENU
@@ -49,7 +49,7 @@ License URI: http://www.apache.org/licenses/LICENSE-2.0.html
 
 Scripts
 =======
-Script: nav.js
+Script: nav-primary.js
 Script: nav-secondary.js
 Source: http://maxfoundry.com/articles/116/responsive-mobile-navigation-in-wordpress
 Copyright author: John Hartley
