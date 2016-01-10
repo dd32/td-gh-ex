@@ -26,7 +26,6 @@
 				<div class="pagelink"><?php wp_link_pages(); ?></div>
 			<?php } ?> 
 			
-
 			<div class="postmetadata">
 				<?php printf( __( 'Posted in %s', 'darkorange' ), get_the_category_list( __( ', ', 'darkorange' ) ) ); ?>
 				<?php if(has_tag() ) : ?>

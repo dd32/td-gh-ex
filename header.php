@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying menu and header-image.
+ * The header for displaying logo, menu, header-image and header-widgets.
  */
 ?>
 
@@ -38,7 +38,7 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 		<?php } ?> 
 
-		<?php if ( is_home() || is_front_page() ) {?> 
+		<?php if ( is_front_page() ) {?> 
 		<?php if ( get_header_image() ) {?> 
 			<div class="image-homepage"> 
 				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
@@ -46,7 +46,7 @@
 		<?php } ?>
 		<?php } ?> 
 	
-		<?php if ( is_home() || is_front_page() ) {?> 
+		<?php if ( is_front_page() ) {?> 
 		<?php if ( is_active_sidebar( 'homepage' ) ) {?> 
 			<div class="sidebar-homepage"> 
 				<?php dynamic_sidebar( 'homepage' ); ?>

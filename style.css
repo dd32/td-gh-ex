@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkOrange
 Theme URI: http://www.guidovanderleest.nl/darkorange
-Version: 3.8
+Version: 3.9
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkOrange is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: primary sidebar, widget areas in header, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
@@ -130,21 +130,21 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER FIRST MENU */
-.nav-head {width:96%; clear:both; background:#444; padding:0 2%;}
-.nav-head select {display:none;}
-.nav-head ul {padding:0; margin:0; z-index:999;}
-.nav-head ul li {list-style-type:none; display:inline-block; position:relative;}
-.nav-head ul li a {text-decoration:none; color:#ff6600; background:none; padding:15px 10px; display:inline-block;}
-.nav-head ul li a:hover {text-decoration:underline;}
-.nav-head .current_page_item > a, .nav-head .current_page_parent > a {text-decoration:underline;}
+#header-first .nav-head {width:92%; clear:both; background:#444; padding:0 4%;}
+#header-first .nav-head select {display:none;}
+#header-first .nav-head ul {padding:0; margin:0; z-index:999;}
+#header-first .nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0 5px 0 0;}
+#header-first .nav-head ul li a {text-decoration:none; color:#ff6600; background:none; padding:15px 20px 15px 0; display:inline-block;}
+#header-first .nav-head ul li a:hover {text-decoration:underline;}
+#header-first .nav-head .current_page_item > a, #header-first .nav-head .current_page_parent > a {text-decoration:underline;}
 
 
 /* HEADER FIRST SUBMENU */
-.nav-head ul ul {display:none; position:absolute; top:100%;}
-.nav-head ul ul ul {display:none; position:absolute; top:30%; left:100%;}
-.nav-head ul ul a {width:12em; padding:5px 10px; background:#333;}
-.nav-head ul li:hover > ul {display:block;}
-.nav-head ul li ul li {margin:0;}
+#header-first .nav-head ul ul {display:none; position:absolute; top:100%;}
+#header-first .nav-head ul ul ul {display:none; position:absolute; top:30%; left:100%;}
+#header-first .nav-head ul ul a {width:12em; padding:5px 10px; background:#333;}
+#header-first .nav-head ul li:hover > ul {display:block;}
+#header-first .nav-head ul li ul li {margin:0;}
 
 
 /* HEADER SECOND */
