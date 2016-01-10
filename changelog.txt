@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+MultiColors version 3.3 - january 2016
+- file header: removed is_home so homepage content is not displayed when using a static blog page
+- several small adjustments
+
 MultiColors version 3.2 - january 2016
 - updated file style
 - updated file custom-editor-style

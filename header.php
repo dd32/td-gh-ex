@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying menu, header-image and homepage-widgets.
+ * The header for displaying logo, menu, header-image and header-widgets.
  */
 ?>
 
@@ -35,7 +35,7 @@
 		<?php endif; ?>
 	</div>
 
-	<?php if ( is_home() || is_front_page() ) {?> 
+	<?php if ( is_front_page() ) {?> 
 	<div id="header-third-container">
 	<div id="header-third">
 		<?php if ( get_header_image() ) {?> 
@@ -53,7 +53,7 @@
 	</div>
 	<?php } ?> 
 
-	<?php if( is_home() || is_front_page() ) {?>
+	<?php if( is_front_page() ) {?>
 	<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-middle' ) || is_active_sidebar( 'homepage-left' ) ) {?> 
 	<div id="header-fourth-container">
 	<div id="header-fourth">
