@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying menu and header-image.
+ * The header for displaying logo, menu, header-image, header-widgets and search bar.
  */
 ?>
 
@@ -34,7 +34,7 @@
 	<?php endif; ?>
 </div>
 
-<?php if ( is_home() || is_front_page() ) {?> 
+<?php if ( is_front_page() ) {?> 
 <?php if ( get_header_image() ) {?> 
 <div id="header-second">
 
