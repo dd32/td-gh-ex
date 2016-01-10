@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+LeftSide version 2.8 - january 2016
+- file header: removed is_home so homepage content is not displayed when using a static blog page
+- several small adjustments
+
 LeftSide version 2.7 - january 2016
 - updated file style
 - updated file custom-editor-style
