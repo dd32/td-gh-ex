@@ -1,7 +1,7 @@
 /*
 Theme Name: Shipyard
 Theme URI: http://www.guidovanderleest.nl/shipyard
-Version: 3.6
+Version: 3.7
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: Shipyard is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: primary sidebar, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
@@ -140,10 +140,10 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER MENU */
-.nav-head {clear:both; margin:10px 0; border:1px solid #ccc; border-radius:5px; -moz-border-radius:5px;}
+.nav-head {clear:both; margin:0 0 10px; border:1px solid #ccc; border-radius:5px; -moz-border-radius:5px;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin:0; z-index:999;}
-.nav-head ul li {list-style-type:none; display:inline-block; position:relative;}
+.nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0 0 0 10px;}
 .nav-head ul li a {text-decoration:none; color:#f26535; background:none; padding:10px 10px; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
 .nav-head .current_page_item > a, .nav-head .current_page_parent > a {text-decoration:underline;}
