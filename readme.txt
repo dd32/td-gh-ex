@@ -24,7 +24,7 @@ You can add your own logo in stead of blogname and description via WordPress Das
 
 HOW TO CHANGE BACKGROUND
 ========================
-You can add your own background(image) via  WordPress Dashboard > Appearance > Customize.
+You can add your own background(image) via WordPress Dashboard > Appearance > Customize.
 
 
 HOW TO SET MENU
