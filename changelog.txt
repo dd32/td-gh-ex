@@ -1,4 +1,6 @@
 == CHANGE LOG ==
+= 1.1.6 =
+	- Fix - Blog entry title missing issue fixed
 = 1.1.5 =
 	- Update - CSS Updated
 	- Fix - __construct() added for widgets

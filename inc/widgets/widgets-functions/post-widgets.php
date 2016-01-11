@@ -68,7 +68,6 @@
 		extract($args);
 		extract($instance);
 		global $post;
-		$checkbox    = esc_attr('checkbox', empty($instance['checkbox'])?'':$instance['checkbox'], $instance);
 		$title = isset( $instance[ 'title' ] ) ? $instance[ 'title' ] : '';
 		$description = isset( $instance[ 'description' ] ) ? $instance[ 'description' ] : '';
 		$number = empty( $instance[ 'number' ] ) ? 3 : $instance[ 'number' ];
@@ -121,7 +120,7 @@
 								<header class="entry-header">
 									<h3 class="entry-title"><a rel="bookmark" href="<?php the_permalink();?>"><?php the_title(); ?> </a></h3>
 								</header>
-								<?php if ( $checkbox != true ) { ?>
+								<?php if ( $instance['checkbox'] != true ) { ?>
 								<div class="entry-meta clearfix">
 								<?php if ( current_theme_supports( 'post-formats', $format ) ) {
 									printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
