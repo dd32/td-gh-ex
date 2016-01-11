@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames Pro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-21 23:04+0545\n"
-"PO-Revision-Date: 2015-10-21 23:04+0545\n"
+"POT-Creation-Date: 2016-01-11 12:21+0545\n"
+"PO-Revision-Date: 2016-01-11 12:21+0545\n"
 "Last-Translator: Isabel G.R. (Ladypingu) <isasi.gr@gmail.com>\n"
 "Language-Team: Isabel González Reyes <isasi.gr@gmail.com>\n"
 "Language: es_ES\n"
@@ -728,7 +728,6 @@ msgid "Three Columns"
 msgstr "Tres columnas"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:192
-#: ../inc/panel/customizer/customizer.php:354
 #: ../inc/panel/theme-options.php:532
 msgid "Full Content Display"
 msgstr "Visualización del contenido completo"
@@ -1017,6 +1016,11 @@ msgstr ""
 #: ../inc/panel/theme-options.php:479
 msgid "Default Display Text in Search"
 msgstr "Texto por defecto en búsquedas"
+
+#: ../inc/panel/customizer/customizer.php:354
+#: ../inc/panel/theme-options.php:522
+msgid "Archive Content Layout"
+msgstr "Contenido de la disposición del contenido"
 
 #: ../inc/panel/customizer/customizer.php:365
 msgid "Check to Reset Layout"
@@ -1440,10 +1444,6 @@ msgstr "¿Deshabilitar el menú de la página predeterminada?"
 #: ../inc/panel/theme-options.php:496
 msgid "Default Layout Options"
 msgstr "Opciones de formato predeterminado"
-
-#: ../inc/panel/theme-options.php:522
-msgid "Archive Content Layout"
-msgstr "Contenido de la disposición del contenido"
 
 #: ../inc/panel/theme-options.php:539
 msgid "Reset Layout?"

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-21 23:04+0545\n"
-"PO-Revision-Date: 2015-10-21 23:04+0545\n"
+"POT-Creation-Date: 2016-01-11 12:21+0545\n"
+"PO-Revision-Date: 2016-01-11 12:21+0545\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: pt_BR\n"
@@ -734,7 +734,6 @@ msgid "Three Columns"
 msgstr "Três colunas"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:192
-#: ../inc/panel/customizer/customizer.php:354
 #: ../inc/panel/theme-options.php:532
 msgid "Full Content Display"
 msgstr "Mostrar o conteúdo completo no blog"
@@ -1027,6 +1026,11 @@ msgstr ""
 msgid "Default Display Text in Search"
 msgstr ""
 "Exibição do texto padrão no campo da caixa de texto Pesquisar do Website"
+
+#: ../inc/panel/customizer/customizer.php:354
+#: ../inc/panel/theme-options.php:522
+msgid "Archive Content Layout"
+msgstr "Layout do arquivo de conteúdo"
 
 #: ../inc/panel/customizer/customizer.php:365
 msgid "Check to Reset Layout"
@@ -1455,10 +1459,6 @@ msgstr "Você quer desativar o menu da pagina padrão?"
 #: ../inc/panel/theme-options.php:496
 msgid "Default Layout Options"
 msgstr "Opções do layout padrão"
-
-#: ../inc/panel/theme-options.php:522
-msgid "Archive Content Layout"
-msgstr "Layout do arquivo de conteúdo"
 
 #: ../inc/panel/theme-options.php:539
 msgid "Reset Layout?"

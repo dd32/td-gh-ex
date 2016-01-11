@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-21 23:04+0545\n"
-"PO-Revision-Date: 2015-10-21 23:04+0545\n"
+"POT-Creation-Date: 2016-01-11 12:21+0545\n"
+"PO-Revision-Date: 2016-01-11 12:21+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: en\n"
@@ -686,7 +686,6 @@ msgid "Three Columns"
 msgstr ""
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:192
-#: ../inc/panel/customizer/customizer.php:354
 #: ../inc/panel/theme-options.php:532
 msgid "Full Content Display"
 msgstr ""
@@ -974,6 +973,11 @@ msgstr ""
 #: ../inc/panel/customizer/customizer.php:331
 #: ../inc/panel/theme-options.php:479
 msgid "Default Display Text in Search"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:354
+#: ../inc/panel/theme-options.php:522
+msgid "Archive Content Layout"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:365
@@ -1385,10 +1389,6 @@ msgstr ""
 
 #: ../inc/panel/theme-options.php:496
 msgid "Default Layout Options"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:522
-msgid "Archive Content Layout"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:539

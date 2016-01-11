@@ -351,7 +351,7 @@ function catchflames_customize_register( $wp_customize ) {
 		),
 		'content_layout' => array(
 			'id' 			=> 'content_layout',
-			'title' 		=> __( 'Full Content Display', 'catch-flames' ),
+			'title' 		=> __( 'Archive Content Layout', 'catch-flames' ),
 			'description'	=> '',
 			'field_type' 	=> 'select',
 			'sanitize' 		=> 'catchflames_sanitize_select',
