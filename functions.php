@@ -174,64 +174,64 @@ $prfx_stored_meta = get_post_meta( $post->ID );
 $featured_background = get_post_meta( $post->ID , 'featured-background' , true ); ?>
 
 <p>
-	<label for="featured-background" style="text-align:justify;"><?php __( 'This allows you to change the background image when viewing this particular post or page. The ideal image size is smaller than 400kb and a resolution around 1920 by 1080 pixels.', 'localize_semperfi' )?><br><br></label>
+	<label for="featured-background" style="text-align:justify;"><?php _e( 'This allows you to change the background image when viewing this particular post or page. The ideal image size is smaller than 400kb and a resolution around 1920 by 1080 pixels.', 'localize_semperfi' )?><br><br></label>
 	<img id="theimage" src='<?php if (empty($featured_background)) { echo get_template_directory_uri() . '/images/nothing_found.jpg';} else {echo $featured_background;} ?>' style="box-shadow:0 0 .05em rgba(19,19,19,.5); height:auto; width:100%;"/> 
     <input type="text" name="featured-background" id="featured-background" value="<?php if ( isset ( $featured_background ) ) echo $featured_background; ?>" style="margin:0 0 .5em; width:100%;" />
-    <input type="button" id="featured-background-button" class="button" value="<?php __( 'Choose or Upload an Image', 'localize_semperfi' )?>" style="margin:0 0 .25em; width:100%;" />
+    <input type="button" id="featured-background-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'localize_semperfi' )?>" style="margin:0 0 .25em; width:100%;" />
 </p>
 <hr>
 <p>
-    <span class="prfx-row-title"><?php __( 'If this post or page has a featured image selected, along having this box check, and save the post will be displayed in the slider.', 'localize_semperfi' )?></span>
+    <span class="prfx-row-title"><?php _e( 'If this post or page has a featured image selected, along having this box check, and save the post will be displayed in the slider.', 'localize_semperfi' )?></span>
     <div class="prfx-row-content">
         <label for="meta-checkbox">
             <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" <?php if ( isset ( $prfx_stored_meta['meta-checkbox'] ) ) checked( $prfx_stored_meta['meta-checkbox'][0], 'yes' ); ?> />
-            <?php __( 'Add to Slider', 'localize_semperfi' )?>
+            <?php _e( 'Add to Slider', 'localize_semperfi' )?>
         </label>
     </div>
 </p>
 <hr>
 <p>
-    <label for="meta-select" class="prfx-row-title"><?php __( 'Higer numbers will display first in the slider. One is a netural number, 20 is the most important.', 'localize_semperfi' )?></label>
+    <label for="meta-select" class="prfx-row-title"><?php _e( 'Higer numbers will display first in the slider. One is a netural number, 20 is the most important.', 'localize_semperfi' )?></label>
     <select name="meta-select" id="meta-select">
-        <option value="1" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '1' ); ?>><?php __( '1', 'localize_semperfi' )?></option>';
-        <option value="2" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '2' ); ?>><?php __( '2', 'localize_semperfi' )?></option>';
-        <option value="3" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '3' ); ?>><?php __( '3', 'localize_semperfi' )?></option>';
-        <option value="4" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '4' ); ?>><?php __( '4', 'localize_semperfi' )?></option>';
-        <option value="5" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '5' ); ?>><?php __( '5', 'localize_semperfi' )?></option>';
-        <option value="6" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '6' ); ?>><?php __( '6', 'localize_semperfi' )?></option>';
-        <option value="7" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '7' ); ?>><?php __( '7', 'localize_semperfi' )?></option>';
-        <option value="8" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '8' ); ?>><?php __( '8', 'localize_semperfi' )?></option>';
-        <option value="9" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '9' ); ?>><?php __( '9', 'localize_semperfi' )?></option>';
-        <option value="10" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '10' ); ?>><?php __( '10', 'localize_semperfi' )?></option>';
-        <option value="11" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '11' ); ?>><?php __( '11', 'localize_semperfi' )?></option>';
-        <option value="12" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '12' ); ?>><?php __( '12', 'localize_semperfi' )?></option>';
-        <option value="13" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '13' ); ?>><?php __( '13', 'localize_semperfi' )?></option>';
-        <option value="14" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '14' ); ?>><?php __( '14', 'localize_semperfi' )?></option>';
-        <option value="15" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '15' ); ?>><?php __( '15', 'localize_semperfi' )?></option>';
-        <option value="16" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '16' ); ?>><?php __( '16', 'localize_semperfi' )?></option>';
-        <option value="17" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '17' ); ?>><?php __( '17', 'localize_semperfi' )?></option>';
-        <option value="18" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '18' ); ?>><?php __( '18', 'localize_semperfi' )?></option>';
-        <option value="19" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '19' ); ?>><?php __( '19', 'localize_semperfi' )?></option>';
-        <option value="20" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '20' ); ?>><?php __( '20', 'localize_semperfi' )?></option>';
+        <option value="1" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '1' ); ?>><?php _e( '1', 'localize_semperfi' )?></option>';
+        <option value="2" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '2' ); ?>><?php _e( '2', 'localize_semperfi' )?></option>';
+        <option value="3" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '3' ); ?>><?php _e( '3', 'localize_semperfi' )?></option>';
+        <option value="4" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '4' ); ?>><?php _e( '4', 'localize_semperfi' )?></option>';
+        <option value="5" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '5' ); ?>><?php _e( '5', 'localize_semperfi' )?></option>';
+        <option value="6" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '6' ); ?>><?php _e( '6', 'localize_semperfi' )?></option>';
+        <option value="7" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '7' ); ?>><?php _e( '7', 'localize_semperfi' )?></option>';
+        <option value="8" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '8' ); ?>><?php _e( '8', 'localize_semperfi' )?></option>';
+        <option value="9" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '9' ); ?>><?php _e( '9', 'localize_semperfi' )?></option>';
+        <option value="10" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '10' ); ?>><?php _e( '10', 'localize_semperfi' )?></option>';
+        <option value="11" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '11' ); ?>><?php _e( '11', 'localize_semperfi' )?></option>';
+        <option value="12" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '12' ); ?>><?php _e( '12', 'localize_semperfi' )?></option>';
+        <option value="13" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '13' ); ?>><?php _e( '13', 'localize_semperfi' )?></option>';
+        <option value="14" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '14' ); ?>><?php _e( '14', 'localize_semperfi' )?></option>';
+        <option value="15" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '15' ); ?>><?php _e( '15', 'localize_semperfi' )?></option>';
+        <option value="16" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '16' ); ?>><?php _e( '16', 'localize_semperfi' )?></option>';
+        <option value="17" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '17' ); ?>><?php _e( '17', 'localize_semperfi' )?></option>';
+        <option value="18" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '18' ); ?>><?php _e( '18', 'localize_semperfi' )?></option>';
+        <option value="19" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '19' ); ?>><?php _e( '19', 'localize_semperfi' )?></option>';
+        <option value="20" <?php if ( isset ( $prfx_stored_meta['meta-select'] ) ) selected( $prfx_stored_meta['meta-select'][0], '20' ); ?>><?php _e( '20', 'localize_semperfi' )?></option>';
     </select>
 </p>
 <hr>
 <p>
-    <span class="prfx-row-title"><?php __( 'Checking this will make the slide display the image only. Removing the title and the text from the slide.', 'localize_semperfi' )?></span>
+    <span class="prfx-row-title"><?php _e( 'Checking this will make the slide display the image only. Removing the title and the text from the slide.', 'localize_semperfi' )?></span>
     <div class="prfx-row-content">
         <label for="meta-checkbox-image">
             <input type="checkbox" name="meta-checkbox-image" id="meta-checkbox-image" value="yes" <?php if ( isset ( $prfx_stored_meta['meta-checkbox-image'] ) ) checked( $prfx_stored_meta['meta-checkbox-image'][0], 'yes' ); ?> />
-            <?php __( 'Display just image', 'localize_semperfi' )?>
+            <?php _e( 'Display just image', 'localize_semperfi' )?>
         </label>
     </div>
 </p>
 <hr>
 <p>
-    <span class="prfx-row-title"><?php __( 'Exclude this Post from being displayed in the Blog', 'localize_semperfi' )?></span>
+    <span class="prfx-row-title"><?php _e( 'Exclude this Post from being displayed in the Blog', 'localize_semperfi' )?></span>
     <div class="prfx-row-content">
         <label for="meta-checkbox2">
             <input type="checkbox" name="meta-checkbox2" id="meta-checkbox2" value="yes" <?php if ( isset ( $prfx_stored_meta['meta-checkbox2'] ) ) checked( $prfx_stored_meta['meta-checkbox2'][0], 'yes' ); ?> />
-            <?php __( 'Remove from Blog', 'localize_semperfi' )?>
+            <?php _e( 'Remove from Blog', 'localize_semperfi' )?>
         </label>
     </div>
 </p><?php }
@@ -239,7 +239,7 @@ $featured_background = get_post_meta( $post->ID , 'featured-background' , true )
 // Loads the image management javascript
 function prfx_image_enqueue() {
     global $typenow;
-    if( $typenow == 'post' ) {
+    if (($typenow == 'page') || ($typenow == 'post') || ($typenow == 'product')) {
         wp_enqueue_media();
  
         // Registers and enqueues the required javascript.
@@ -247,7 +247,7 @@ function prfx_image_enqueue() {
         wp_localize_script( 'featured-background', 'featured_background',
             array(
                 'title'     => 'Upload or choose an image for the Featured Background',
-                'button'    => 'Use as Featured Background'));
+                'button'    => 'Use as Featured Background',));
 
         wp_enqueue_script( 'featured-background' );}}
 
@@ -392,7 +392,8 @@ function exclude_category( $query ) {
         elseif ((get_option('posts_per_page ') < 18) && (get_option('posts_per_page ') >= 12))
                 $query->query_vars['posts_per_page'] = 12;
         
-        else $query->query_vars['posts_per_page'] = 6;}} 
+        else $query->query_vars['posts_per_page'] = 6;}}
+
 
 add_action( 'pre_get_posts', 'exclude_category' );
 
@@ -431,7 +432,7 @@ $semperfi_add_section_array = array(
         <a href="' . $my_theme->get( 'ThemeURI' ) . '" target="_blank">Upgrade</a>
     </h1>
     
-    <p style="text-align:justify;">All of the themes on <a href="https://wordpress.org/themes/" target="_blank">WordPress.org</a> are created, developed, and maintained free of charge by the author. The author of this theme, <i>' . $my_theme->get( 'Author' ) . '</i>, offers a <a href="' . $my_theme->get('ThemeURI') . '" target="_blank">premium version</a> that includes additional features to enhance your experience. This premium version of ' . $my_theme->get( 'Name' ) . ' supports the author by offsetting the many hours of work being put into the theme. For incentive, the premium version of ' . $my_theme->get( 'Name' ) . ' includes additional features to customize the theme with. Many of these options, list of these options are just below, are not available in the free version. Additionally, the author has offered to make minor custom changes to the ' . $my_theme->get( 'Name' ) . ' code for further customization. However, the author is still going to support the free versions when issues of bug or errors in the code are found.</p>
+    <p style="text-align:justify;">All of the themes on <a href="https://wordpress.org/themes/" target="_blank">WordPress.org</a> are created, developed, and maintained free of charge by the author. The author of this theme, <i>' . $my_theme->get( 'Author' ) . '</i>, offers a <a href="' . $my_theme->get('ThemeURI') . '" target="_blank">premium version</a> that includes additional features to enhance your experience. This premium version of ' . $my_theme->get( 'Name' ) . ' supports the author by offsetting the many hours of work being put into the theme. For incentive, the premium version of ' . $my_theme->get( 'Name' ) . ' includes additional features to customize the theme with. Many of these options, list of these options are just below, are not available in the free version. Additionally, the author has offered to make minor custom changes to the ' . $my_theme->get( 'Name' ) . ' code for further customization. However, the author is still going to support the free versions when issues of bugs or errors in the code are found.</p>
                 
                 <a href="' . $my_theme->get('ThemeURI') . '" class="button button-secondary"  style="margin-bottom:1.11em;padding:0 2em;" target="_blank">Upgrade</a>
     
@@ -475,7 +476,7 @@ foreach($semperfi_add_section_array as $section => $name) {
             'title'				=> $name['title'],
             'priority'			=> $name['priority'] ));}}
 
-// Create an Array with a ton of google fonts	
+// Create an Array with a ton of google fonts
 $google_font_array = array(
     'Default'				=> 'Default',
     'Abel'					=> 'Abel',
@@ -769,7 +770,10 @@ $google_font_array = array(
     'Yellowtail'			=> 'Yellowtail',
     'Yeseva+One'			=> 'Yeseva+One',
     'Zeyada'				=> 'Zeyada');
-
+    
+function list_semper_fi_google_fonts_array($google_font_array) {
+    return $google_font_array;}
+add_action( 'hook_semper_fi_google_fonts_array', 'list_semper_fi_google_fonts_array' );
 
 // List out all the controls and the options
 $semperfi_customizer_array_of_options = array(
@@ -991,14 +995,7 @@ $semperfi_customizer_array_of_options = array(
         'standard' => 'on',
         'choices' => array(
 			'2' => __('Two', 'localize_semperfi'),
-			'3' => __('Three', 'localize_semperfi'),
-			/*'4' => __('Four', 'localize_semperfi'),
-			'5' => __('Five', 'localize_semperfi'),
-			'6' => __('Six', 'localize_semperfi'),
-			'7' => __('Seven', 'localize_semperfi'),
-			'8' => __('Eight', 'localize_semperfi'),
-			'9' => __('Nine', 'localize_semperfi'),
-			'10' => __('Ten', 'localize_semperfi') */)),
+			'3' => __('Three', 'localize_semperfi'))),
 
     'slider_text' => array(
         'type' => 'select',
@@ -1155,23 +1152,22 @@ $semperfi_customizer_array_of_options = array(
         'label' => __('Tagline', 'localize_semperfi'),
 		'choices' => $google_font_array,
         'css' => '.header h2'),
-
-    /*'bodyfontstyle' => array(
-        'type' => 'font',
-        'label' => __('Body Google Webfonts', 'localize_semperfi'),
-		'choices' => $google_font_array,
-        'css' => 'body'),
-
-    'headerfontstyle' => array(
-        'type' => 'font',
-        'label' => __('h1-6 tags Google Webfonts', 'localize_semperfi'),
-		'choices' => $google_font_array,
-        'css' => '.content h1, .content h2, .content h3, .content h4, .content h5, .content h6'),*/
     
     'theme_information' => array(
         'type' => 'theme_docs',
         'priority' => '1',
         'section' => 'theme_info'));
+    
+if (function_exists('semper_fi_add_customizer_array')) {
+    
+    // Define to not get errors
+    $semper_fi_plugin_add_to_array = array();
+    
+    //add_action('admin_enqueue_scripts', 'semper_fi_add_customizer_array');
+    do_action( 'hook_semper_fi_plugin_customizer_options' );
+    
+    // Here I'm pushing more features into the array to add more features to the customizer
+    $semperfi_customizer_array_of_options = array_merge($semperfi_customizer_array_of_options, semper_fi_add_customizer_array( $semper_fi_plugin_add_to_array ));}
 
     
 /* Sanitize the Select Options
@@ -1232,7 +1228,13 @@ foreach($semperfi_customizer_array_of_options as $option => $values) {
         
         // Range is cool and all but the accuracy sucks if you have more than 5 options, so lets just build arrays for a select type
         
-        $stepping = range($values['low'], $values['high'], (2 * ($values['step'])));
+        if (function_exists('semper_fi_add_customizer_array')) {
+            
+             $stepping = range($values['low'], $values['high'], (1 * ($values['step'])));}
+        
+        else {
+        
+            $stepping = range($values['low'], $values['high'], (2 * ($values['step'])));}
 
         $array_choices = array_combine($stepping, $stepping);
 
@@ -1320,16 +1322,6 @@ foreach($semperfi_customizer_array_of_options as $option => $values) {
 function semperfi_add_customizer_css() {
     
     $semperfi_customizer_array_of_options_css = array(
-
-        'bodyfontstyle' => array(
-            'default' => 'Default',
-            'type' => 'font',
-            'css' => 'body'),
-
-        'headerfontstyle' => array(
-            'default' => 'Default',
-            'type' => 'font',
-            'css' => '.content h1, .content h2, .content h3, .content h4, .content h5, .content h6'),
 
         'titlefontstyle' => array(
             'default' => 'Default',
@@ -1467,12 +1459,25 @@ function semperfi_add_customizer_css() {
         /* Doesn't work at the moment
         'fontsizeadjust' => array(
             'default' => '100',
-            'css' => 'body {font:normal $% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif'),*/ );
+            'css' => 'body {font:normal $% ),*/ );
+    
+    
+    if (function_exists('semper_fi_add_customizer_css')) {
+    
+    // Define to not get errors
+    $semper_fi_plugin_add_to_css = array();
+    
+    //add_action('admin_enqueue_scripts', 'semper_fi_add_customizer_array');
+    do_action( 'hook_semper_fi_plugin_customizer_css' );
+    
+    // Here I'm pushing more features into the array to add more features to the customizer
+    $semperfi_customizer_array_of_options_css = array_merge($semperfi_customizer_array_of_options_css, semper_fi_add_customizer_css( $semper_fi_plugin_add_to_css ));}
+    
 
     // Link in the Google Fonts for the Custom CSS
     echo '<!-- Custom Font Styles -->' . "\n";
     
-    // Arry for Duplicate font checking
+    // Array for Duplicate font checking
     $check_for_duplicate_fonts = array('Default');
 
     foreach( $semperfi_customizer_array_of_options_css as $option => $values) {
@@ -1565,7 +1570,7 @@ function semperfi_theme_options_do_page() { ?>
                 
                 <h4>Upgrade:</h4>
                 
-                <p>All of the theme's on <a href="https://wordpress.org/themes/" target="_blank">WordPress.org</a> are created, developed, and maintained free of charge by the author. The author of this theme, <i><?php echo $my_theme->get( 'Author' ); ?></i>, offers a premium version that includes additional features to enhance your experience. This premium version of <?php echo $my_theme->get( 'Name' ); ?> supports the author by offsetting the many hours of work being put into the theme. For incentive, the premium version of <?php echo $my_theme->get( 'Name' ); ?> includes additional features to customize the theme with. Many of these options, list of these options are just below, are not available in the free version. Additionally, the author has offered to make minor custom changes to the <?php echo $my_theme->get( 'Name' ); ?> code for further customization. However, the author is still going to support the free versions when issues of bug or errors in the code are found.</p>
+                <p>All of the theme's on <a href="https://wordpress.org/themes/" target="_blank">WordPress.org</a> are created, developed, and maintained free of charge by the author. The author of this theme, <i><?php echo $my_theme->get( 'Author' ); ?></i>, offers a premium version that includes additional features to enhance your experience. This premium version of <?php echo $my_theme->get( 'Name' ); ?> supports the author by offsetting the many hours of work being put into the theme. For incentive, the premium version of <?php echo $my_theme->get( 'Name' ); ?> includes additional features to customize the theme with. Many of these options, list of these options are just below, are not available in the free version. Additionally, the author has offered to make minor custom changes to the <?php echo $my_theme->get( 'Name' ); ?> code for further customization. However, the author is still going to support the free versions when issues of bugs or errors in the code are found.</p>
                 
                 <a href="<?php echo $my_theme->get('ThemeURI'); ?>" class="button button-secondary alignright"  style="margin-bottom:1em;" target="_blank">Upgrade</a>
                 
