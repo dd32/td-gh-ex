@@ -9,7 +9,7 @@ function theme_setup_data()
 	'text_title' => 1 ,
 	'height' => '50',
 	'width' => '50',
-	'enable_header_logo_text' => 1,
+	'enable_header_logo_text' => '',
 	'upload_image_logo' => '',
 	'social_media_facebook_link' => '#',
 	'social_media_twitter_link' => '#',
@@ -29,7 +29,7 @@ function theme_setup_data()
 	'featured_slider_post' => '',
 	
 	//Service section settings
-	'service_section_enabled' => 0,
+	'service_section_enabled' => '',
 	'service_title' => __('Our Services','appointment'),
 	'service_description' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','appointment'),
 	'service_one_icon' => 'fa-mobile',

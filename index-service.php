@@ -1,7 +1,7 @@
 <?php 
 $appointment_options=theme_setup_data(); 
 $service_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
-if($service_setting['service_section_enabled'] == '' ) { ?>
+if($service_setting['service_section_enabled'] == 0 ) { ?>
 <div class="Service-section">
 	<div class="container">
 	

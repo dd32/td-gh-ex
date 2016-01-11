@@ -11,7 +11,7 @@
 				else
 				appointment_post_thumbnail('','img-responsive');
 							 appointment_post_meta_content(); 
-				if( !is_page_template('fullwidth.php') && get_the_title() && !is_page() ) { ?>
+				if( !is_page() ) { ?>
 				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 		          <?php   } ?>
 				<?php		

@@ -132,7 +132,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_setting(
 	'appointment_options[enable_header_logo_text]'
     ,array(
-	'default' => 1,
+	'default' => '',
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' =>'option',
 	

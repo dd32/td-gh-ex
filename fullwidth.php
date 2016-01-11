@@ -13,10 +13,7 @@ get_template_part('index','banner');
 			<?php if( have_posts()) :  the_post(); ?>		
 			<div class="blog-lg-area-left">
 					<div class="media">						
-						<aside class="blog-post-date-area">
-							<div class="date"><?php echo get_the_date('j'); ?> <div class="month-year"><?php echo get_the_date('M'); ?></div></div>
-							<div class="comment"><a href="<?php the_permalink(); ?>"><i class="fa fa-comments"></i><?php comments_number( '', 'o', '%' ); ?></a></div>
-						</aside>
+						<?php appointment_aside_meta_content(); ?>
 						<div class="media-body">
 							<?php if ( has_post_thumbnail()) : ?>
 							<div class="blog-lg-box">
@@ -25,14 +22,7 @@ get_template_part('index','banner');
 								</a>
 							</div>
 						<?php endif; ?> 
-							<div class="blog-post-lg">
-								<?php echo get_avatar( get_the_author_meta('user_email'), $size = '40'); ?><?php _e('By','appointment');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php the_author();?></a>
-							<?php 	$tag_list = get_the_tag_list();
-								if(!empty($tag_list)) { ?>
-								<div class="blog-tags-lg"><i class="fa fa-tags"></i><?php the_tags('', ', ', ''); ?></div>
-								<?php } ?>
-							</div>
-							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<?php appointment_post_meta_content(); ?>
 							<p> <?php the_content( __( 'Read More' , 'appointment' ) ); ?></p>
 							<?php wp_link_pages( ); ?>
 							<div class="blog-btn-area-lg"><a class=""></a></div>

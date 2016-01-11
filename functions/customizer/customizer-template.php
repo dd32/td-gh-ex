@@ -20,7 +20,7 @@ class appointment_Customize_service_upgrade extends WP_Customize_Control {
 //Blog Template
 class appointment_Customize_blog_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add Blog Setting Then','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','appointment'); ?> </a>  
+        <h3><?php _e('Want to use Blog Meta Setting Then','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','appointment'); ?> </a>  
 		<?php
 		}
 	}
@@ -118,6 +118,67 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 			)
 		)
 	);
+	
+	$wp_customize->add_setting(
+    'appointment_options[blog_meta_section_settings]',
+    array(
+        'default' => 0,
+		'capability'     => 'edit_theme_options',
+		'type' => 'option',
+		'sanitize_callback' => 'sanitize_text_field',
+		
+    )	
+	);
+	$wp_customize->add_control(
+    'appointment_options[blog_meta_section_settings]',
+    array(
+        'label' => __('Hide Post Meta From Blog Pages','appointment'),
+        'section' => 'blog_template',
+        'type' => 'checkbox',
+    )
+	);
+	
+	
+	$wp_customize->add_setting(
+    'appointment_options[page_meta_section_settings]',
+    array(
+        'default' => false,
+		'capability'     => 'edit_theme_options',
+		'type' => 'option',
+		'sanitize_callback' => 'sanitize_text_field',
+		
+    )	
+	);
+	$wp_customize->add_control(
+    'appointment_options[page_meta_section_settings]',
+    array(
+        'label' => __('Hide Post Meta Form Pages','appointment'),
+        'section' => 'blog_template',
+        'type' => 'checkbox',
+    )
+	);
+	
+	
+	
+	$wp_customize->add_setting(
+    'appointment_options[archive_page_meta_section_settings]',
+    array(
+        'default' => 0,
+		'capability'     => 'edit_theme_options',
+		'type' => 'option',
+		'sanitize_callback' => 'sanitize_text_field',
+		
+    )	
+	);
+	$wp_customize->add_control(
+    'appointment_options[archive_page_meta_section_settings]',
+    array(
+        'label' => __('Hide Post Meta From Archive Pages.','appointment'),
+        'section' => 'blog_template',
+        'type' => 'checkbox',
+    )
+	);
+	
 	
 	
 	// add section to manage Setting

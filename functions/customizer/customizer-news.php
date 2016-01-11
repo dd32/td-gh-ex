@@ -50,7 +50,7 @@ function appointment_news_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'appointment_options[home_meta_section_settings]',
     array(
-        'label' => __('Hide Blog Meta From News','appointment'),
+        'label' => __('Hide Blog Meta From Home Page News Section , Blog Pages, Archives Pages Etc.','appointment'),
         'section' => 'news_section_settings',
         'type' => 'checkbox',
     )

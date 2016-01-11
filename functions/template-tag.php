@@ -18,7 +18,7 @@ function appointment_post_meta_content()
 { 
 			$appointment_options=theme_setup_data();
 			$news_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
-			if($news_setting['home_meta_section_settings'] == '' ) { ?>
+			if($news_setting['home_meta_section_settings'] == 0 ) { ?>
 			<div class="blog-post-lg">
 				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_avatar( get_the_author_meta('user_email'), $size = '40'); ?></a><?php _e('By','appointment');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_the_author();?></a>
 				<?php 	$tag_list = get_the_tag_list();
