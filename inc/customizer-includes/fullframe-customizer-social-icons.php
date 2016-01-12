@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
@@ -20,59 +20,56 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	    'priority'       => 600,
 		'title'    		 => __( 'Social Links', 'full-frame' ),
 	) );
-	
+
 	$wp_customize->add_section( 'fullframe_social_links', array(
 		'panel'			=> 'fullframe_social_links',
 		'priority' 		=> 1,
 		'title'   	 	=> __( 'Social Links', 'full-frame' ),
 	) );
 
-	$fullframe_social_icons 	=	fullframe_get_social_icons_list();	
-	
-	$i 	=	1;
+	$fullframe_social_icons 	=	fullframe_get_social_icons_list();
 
-	foreach ( $fullframe_social_icons as $option ){
-		$lower_case_option	=	str_replace( ' ', '_', strtolower( $option ) );
-			
-		if( $option == 'Skype' ){
-			$wp_customize->add_setting( 'fullframe_theme_options['. $lower_case_option .'_link]', array(
+	foreach ( $fullframe_social_icons as $key => $value ){
+		if( 'skype_link' == $key ){
+			$wp_customize->add_setting( 'fullframe_theme_options['. $key .']', array(
 					'capability'		=> 'edit_theme_options',
 					'sanitize_callback' => 'esc_attr',
 				) );
 
-			$wp_customize->add_control( 'fullframe_'. $lower_case_option .'_link', array(
+			$wp_customize->add_control( 'fullframe_theme_options['. $key .']', array(
 				'description'	=> __( 'Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?{action}. More Information in readme file', 'full-frame' ),
-				'label'    		=> $option,
-				'priority' 		=> $i + '2',
+				'label'    		=> $value['label'],
 				'section'  		=> 'fullframe_social_links',
-				'settings' 		=> 'fullframe_theme_options['. $lower_case_option .'_link]',
+				'settings' 		=> 'fullframe_theme_options['. $key .']',
 				'type'	   		=> 'url',
 			) );
 		}
 		else {
-			if( $option == 'Email' ){
-				$wp_customize->add_setting( 'fullframe_theme_options['. $lower_case_option .'_link]', array(
+			if( 'email_link' == $key ){
+				$wp_customize->add_setting( 'fullframe_theme_options['. $key .']', array(
 						'capability'		=> 'edit_theme_options',
 						'sanitize_callback' => 'sanitize_email',
 					) );
 			}
-			
+			else if( 'handset_link' == $key || 'phone_link' == $key ){
+				$wp_customize->add_setting( 'fullframe_theme_options['. $key .']', array(
+						'capability'		=> 'edit_theme_options',
+						'sanitize_callback' => 'sanitize_text_field',
+					) );
+			}
 			else {
-				$wp_customize->add_setting( 'fullframe_theme_options['. $lower_case_option .'_link]', array(
+				$wp_customize->add_setting( 'fullframe_theme_options['. $key .']', array(
 						'capability'		=> 'edit_theme_options',
 						'sanitize_callback' => 'esc_url_raw',
 					) );
 			}
 
-			$wp_customize->add_control( 'fullframe_'. $lower_case_option .'_link', array(
-				'label'    => $option,
-				'priority' => $i + '2',
+			$wp_customize->add_control( 'fullframe_theme_options['. $key .']', array(
+				'label'    => $value['label'],
 				'section'  => 'fullframe_social_links',
-				'settings' => 'fullframe_theme_options['. $lower_case_option .'_link]',
+				'settings' => 'fullframe_theme_options['. $key .']',
 				'type'	   => 'url',
 			) );
 		}
-
-		$i++;	
 	}
 	// Social Icons End

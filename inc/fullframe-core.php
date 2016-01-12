@@ -11,7 +11,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
@@ -19,7 +19,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
 }
-	
+
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -39,7 +39,7 @@ if ( ! function_exists( 'fullframe_setup' ) ) :
 	function fullframe_setup() {
 		/**
 		 * Get Theme Options Values
-		 */		
+		 */
 		$options 	= fullframe_get_theme_options();
 
 		/**
@@ -101,7 +101,7 @@ if ( ! function_exists( 'fullframe_setup' ) ) :
 
 		/**
 		 * Setup title support for theme
-		 * Supported from WordPress version 4.1 onwards 
+		 * Supported from WordPress version 4.1 onwards
 		 * More Info: https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
 		 */
 		add_theme_support( 'title-tag' );
@@ -156,24 +156,24 @@ function fullframe_scripts() {
 	}
 
 	//For genericons
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.3' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.4.1' );
 
 	/**
 	 * Enqueue the styles for the current color scheme for fullframe.
 	 */
 	if ( $options['color_scheme'] != 'light' )
 		wp_enqueue_style( 'fullframe-dark', get_template_directory_uri() . '/css/colors/'. $options['color_scheme'] .'.css', array(), null );
-	
+
 	/**
 	 * Loads up Responsive stylesheet and Menu JS
 	 */
 	wp_enqueue_style( 'fullframe-responsive', get_template_directory_uri() . '/css/responsive.css' );
 
-	//Responsive Menu		
-	wp_enqueue_script('sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1', false );	
+	//Responsive Menu
+	wp_enqueue_script('sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1', false );
 
 	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.1', true );
-	
+
 
 	/**
 	 * Loads up Cycle JS
@@ -207,7 +207,7 @@ function fullframe_scripts() {
 
 	/**
 	 * Loads up Scroll Up script
-	 */	
+	 */
 	wp_enqueue_script( 'fullframe-scrollup', get_template_directory_uri() . '/js/fullframe-scrollup.min.js', array( 'jquery' ), '20072014', true  );
 
 	/**
@@ -229,7 +229,7 @@ add_action( 'wp_enqueue_scripts', 'fullframe_scripts' );
 function fullframe_enqueue_metabox_scripts() {
     //Scripts
 	wp_enqueue_script( 'fullframe-metabox', get_template_directory_uri() . '/js/fullframe-metabox.min.js', array( 'jquery', 'jquery-ui-tabs' ), '2013-10-05' );
-	
+
 	//CSS Styles
 	wp_enqueue_style( 'fullframe-metabox-tabs', get_template_directory_uri() . '/css/fullframe-metabox-tabs.css' );
 }
@@ -312,7 +312,7 @@ require get_template_directory() . '/inc/fullframe-metabox.php';
  */
 function fullframe_get_theme_options() {
 	$fullframe_default_options = fullframe_get_default_theme_options();
-				
+
 	return array_merge( $fullframe_default_options , get_theme_mod( 'fullframe_theme_options', $fullframe_default_options ) ) ;
 }
 
@@ -320,15 +320,15 @@ function fullframe_get_theme_options() {
 /**
  * Flush out all transients
  *
- * @uses delete_transient 
- * 
+ * @uses delete_transient
+ *
  * @action customize_save, fullframe_customize_preview (see fullframe_customizer function: fullframe_customize_preview)
- * 
+ *
  * @since  Fullframe 1.0
  */
 function fullframe_flush_transients(){
 	delete_transient( 'fullframe_featured_content' );
-	
+
 	delete_transient( 'fullframe_featured_slider' );
 
 	delete_transient( 'fullframe_favicon' );
@@ -337,13 +337,13 @@ function fullframe_flush_transients(){
 
 	delete_transient( 'fullframe_custom_css' );
 
-	delete_transient( 'fullframe_footer_content' );	
+	delete_transient( 'fullframe_footer_content' );
 
 	delete_transient( 'fullframe_promotion_headline' );
 
 	delete_transient( 'fullframe_featured_image' );
 
-	delete_transient( 'fullframe_social_icons' );	
+	delete_transient( 'fullframe_social_icons' );
 
 	delete_transient( 'fullframe_scrollup' );
 
@@ -359,10 +359,10 @@ add_action( 'customize_save', 'fullframe_flush_transients' );
 /**
  * Flush out category transients
  *
- * @uses delete_transient 
- * 
+ * @uses delete_transient
+ *
  * @action edit_category
- * 
+ *
  * @since  Fullframe 1.0
  */
 function fullframe_flush_category_transients(){
@@ -374,15 +374,15 @@ add_action( 'edit_category', 'fullframe_flush_category_transients' );
 /**
  * Flush out post related transients
  *
- * @uses delete_transient 
- * 
+ * @uses delete_transient
+ *
  * @action save_post
- * 
+ *
  * @since  Fullframe 1.0
  */
 function fullframe_flush_post_transients(){
 	delete_transient( 'fullframe_featured_content' );
-	
+
 	delete_transient( 'fullframe_featured_slider' );
 
 	delete_transient( 'fullframe_featured_image' );
@@ -396,7 +396,7 @@ if ( ! function_exists( 'fullframe_favicon' ) ) :
 	/**
 	 * Get the favicon Image options
 	 *
-	 * @uses favicon 
+	 * @uses favicon
 	 * @get the data value of image from options
 	 * @display favicon
 	 *
@@ -409,17 +409,17 @@ if ( ! function_exists( 'fullframe_favicon' ) ) :
 	function fullframe_favicon() {
 		if( ( !$fullframe_favicon = get_transient( 'fullframe_favicon' ) ) ) {
 			$options 	= fullframe_get_theme_options();
-			
+
 			echo '<!-- refreshing cache -->';
-			
+
 			if ( isset( $options[ 'favicon' ] ) &&  $options[ 'favicon' ] != '' &&  !empty( $options[ 'favicon' ] ) ) {
 				// if not empty fav_icon on options
-				$fullframe_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'favicon' ] ).'" type="image/x-icon" />'; 	
+				$fullframe_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'favicon' ] ).'" type="image/x-icon" />';
 			}
 
-			set_transient( 'fullframe_favicon', $fullframe_favicon, 86940 );	
+			set_transient( 'fullframe_favicon', $fullframe_favicon, 86940 );
 		}
-		echo $fullframe_favicon ;	
+		echo $fullframe_favicon ;
 	}
 endif; //fullframe_favicon
 //Load Favicon in Header Section
@@ -432,13 +432,13 @@ if ( ! function_exists( 'fullframe_web_clip' ) ) :
 	/**
 	 * Get the Web Clip Icon Image from options
 	 *
-	 * @uses web_clip and remove_web_clip 
+	 * @uses web_clip and remove_web_clip
 	 * @get the data value of image from theme options
 	 * @display web clip
 	 *
 	 * @uses default Web Click Icon if web_clip field on theme options is empty
 	 *
-	 * @uses set_transient and delete_transient 
+	 * @uses set_transient and delete_transient
 	 *
 	 * @action wp_head
 	 *
@@ -447,16 +447,16 @@ if ( ! function_exists( 'fullframe_web_clip' ) ) :
 	function fullframe_web_clip() {
 		if( ( !$fullframe_web_clip = get_transient( 'fullframe_web_clip' ) ) ) {
 			$options 	= fullframe_get_theme_options();
-			
+
 			echo '<!-- refreshing cache -->';
-			
+
 			if ( isset( $options[ 'web_clip' ] ) &&  $options[ 'web_clip' ] != '' &&  !empty( $options[ 'web_clip' ] ) ){
-				$fullframe_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />'; 	
+				$fullframe_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';
 			}
 
-			set_transient( 'fullframe_web_clip', $fullframe_web_clip, 86940 );	
-		}	
-		echo $fullframe_web_clip ;	
+			set_transient( 'fullframe_web_clip', $fullframe_web_clip, 86940 );
+		}
+		echo $fullframe_web_clip ;
 	} // fullframe_web_clips
 endif; //fullframe_web_clip
 //Load Fullframe Icon in Header Section
@@ -469,16 +469,16 @@ if ( ! function_exists( 'fullframe_custom_css' ) ) :
 	 * @uses  set_transient, wp_head, wp_enqueue_style
 	 *
 	 * @action wp_enqueue_scripts
-	 * 
+	 *
 	 * @since Fullframe 1.0
 	 */
 	function fullframe_custom_css() {
 		//fullframe_flush_transients();
 		$options 	= fullframe_get_theme_options();
-		
+
 		$defaults 	= fullframe_get_default_theme_options();
-		
-		if ( ( !$fullframe_custom_css = get_transient( 'fullframe_custom_css' ) ) ) {		
+
+		if ( ( !$fullframe_custom_css = get_transient( 'fullframe_custom_css' ) ) ) {
 			$fullframe_custom_css ='';
 
 			// Has the text been hidden?
@@ -493,23 +493,23 @@ if ( ! function_exists( 'fullframe_custom_css' ) ) :
 				$fullframe_custom_css .= "}";
 			}
 
-			//Custom CSS Option		
+			//Custom CSS Option
 			if( !empty( $options[ 'custom_css' ] ) ) {
 				$fullframe_custom_css	.=  $options['custom_css'] . "\n";
 			}
 
 			if ( '' != $fullframe_custom_css ){
 				echo '<!-- refreshing cache -->' . "\n";
-				
+
 				$fullframe_custom_css = '<!-- '.get_bloginfo('name').' inline CSS Styles -->' . "\n" . '<style type="text/css" media="screen">' . "\n" . $fullframe_custom_css;
-			
+
 				$fullframe_custom_css .= '</style>' . "\n";
-			
+
 			}
-			
+
 			set_transient( 'fullframe_custom_css', htmlspecialchars_decode( $fullframe_custom_css ), 86940 );
 		}
-		
+
 		echo $fullframe_custom_css;
 	}
 endif; //fullframe_custom_css
@@ -533,18 +533,18 @@ if ( ! function_exists( 'fullframe_content_nav' ) ) :
 			if ( ! $next && ! $previous )
 				return;
 		}
-		
+
 		// Don't print empty markup in archives if there's only one page.
 		if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) ) {
 			return;
 		}
 
 		$options			= fullframe_get_theme_options();
-		
+
 		$pagination_type	= $options['pagination_type'];
 
 		$nav_class = ( is_single() ) ? 'site-navigation post-navigation' : 'site-navigation paging-navigation';
-		
+
 		/**
 		 * Check if navigation type is Jetpack Infinite Scroll and if it is enabled, else goto default pagination
 		 * if it's active then disable pagination
@@ -563,12 +563,12 @@ if ( ! function_exists( 'fullframe_content_nav' ) ) :
 				if ( 'numeric' == $pagination_type && function_exists( 'wp_pagenavi' ) ) {
 					wp_pagenavi();
 	            }
-	            else { ?>	
+	            else { ?>
 	                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'full-frame' ) ); ?></div>
 	                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'full-frame' ) ); ?></div>
-	            <?php 
+	            <?php
 	            } ?>
-	        </nav><!-- #nav -->	
+	        </nav><!-- #nav -->
 		<?php
 	}
 endif; // fullframe_content_nav
@@ -734,7 +734,7 @@ if ( ! function_exists( 'fullframe_entry_meta' ) ) :
 			echo '</span>';
 		}
 
-		edit_post_link( esc_html__( 'Edit', 'full-frame' ), '<span class="edit-link">', '</span>' ); 
+		edit_post_link( esc_html__( 'Edit', 'full-frame' ), '<span class="edit-link">', '</span>' );
 
 		echo '</p><!-- .entry-meta -->';
 	}
@@ -918,7 +918,7 @@ if ( ! function_exists( 'fullframe_excerpt_more' ) ) :
 	 * @since Fullframe 1.0
 	 */
 	function fullframe_excerpt_more( $more ) {
-		return fullframe_continue_reading();	
+		return fullframe_continue_reading();
 	}
 endif; //fullframe_excerpt_more
 add_filter( 'excerpt_more', 'fullframe_excerpt_more' );
@@ -977,21 +977,21 @@ if ( ! function_exists( 'fullframe_body_classes' ) ) :
 		// Front page displays in Reading Settings
 	    $page_on_front 	= get_option('page_on_front') ;
 	    $page_for_posts = get_option('page_for_posts');
-	
+
 		// Get Page ID outside Loop
 	    $page_id = $wp_query->get_queried_object_id();
-		
+
 		// Blog Page or Front Page setting in Reading Settings
 		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
 	        $layout = get_post_meta( $page_id,'fullframe-layout-option', true );
 	    }
     	else if ( is_singular() ) {
-	 		if ( is_attachment() ) { 
-				$parent = $post->post_parent;				
+	 		if ( is_attachment() ) {
+				$parent = $post->post_parent;
 				$layout = get_post_meta( $parent,'fullframe-layout-option', true );
-			} 
+			}
 			else {
-				$layout = get_post_meta( $post->ID,'fullframe-layout-option', true ); 
+				$layout = get_post_meta( $post->ID,'fullframe-layout-option', true );
 			}
 		}
 		else {
@@ -1003,7 +1003,7 @@ if ( ! function_exists( 'fullframe_body_classes' ) ) :
 		}
 
 		$options 		= fullframe_get_theme_options();
-			
+
 		$current_layout = $options['theme_layout'];
 
 		if( 'default' == $layout ) {
@@ -1017,19 +1017,19 @@ if ( ! function_exists( 'fullframe_body_classes' ) ) :
 			case 'left-sidebar':
 				$classes[] = 'two-columns content-right';
 			break;
-			
+
 			case 'right-sidebar':
 				$classes[] = 'two-columns content-left';
 			break;
-			
+
 			case 'no-sidebar':
 				$classes[] = 'no-sidebar content-width';
 			break;
-			
+
 			case 'no-sidebar-one-column':
 				$classes[] = 'no-sidebar one-column';
 			break;
-			
+
 			case 'no-sidebar-full-width':
 				$classes[] = 'no-sidebar full-width';
 			break;
@@ -1062,7 +1062,7 @@ if ( ! function_exists( 'fullframe_responsive' ) ) :
 		$options 			= fullframe_get_theme_options();
 
 		$fullframe_responsive = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
-		
+
 		echo $fullframe_responsive;
 	}
 endif; //fullframe_responsive
@@ -1080,15 +1080,15 @@ if ( ! function_exists( 'fullframe_archive_content_image' ) ) :
 	 */
 	function fullframe_archive_content_image() {
 		$options = fullframe_get_theme_options();
-		
+
 		$featured_image = $options['content_layout'];
-			
+
 		if ( has_post_thumbnail() && 'excerpt-featured-image' == $featured_image ) {
 		?>
 			<figure class="featured-image">
 	            <a rel="bookmark" href="<?php the_permalink(); ?>">
-	                <?php 
-	                	the_post_thumbnail( 'fullframe-featured' );		                
+	                <?php
+	                	the_post_thumbnail( 'fullframe-featured' );
 					?>
 				</a>
 	        </figure>
@@ -1113,18 +1113,18 @@ if ( ! function_exists( 'fullframe_single_content_image' ) ) :
 
 		// Getting data from Theme Options
 	   	$options = fullframe_get_theme_options();
-		
+
 		$featured_image = $options['single_post_image_layout'];
-		
+
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();
-		
+
 		if( $post ) {
-	 		if ( is_attachment() ) { 
+	 		if ( is_attachment() ) {
 				$parent = $post->post_parent;
 				$individual_featured_image = get_post_meta( $parent,'fullframe-featured-image', true );
 			} else {
-				$individual_featured_image = get_post_meta( $page_id,'fullframe-featured-image', true ); 
+				$individual_featured_image = get_post_meta( $page_id,'fullframe-featured-image', true );
 			}
 		}
 
@@ -1136,7 +1136,7 @@ if ( ! function_exists( 'fullframe_single_content_image' ) ) :
 			echo '<!-- Page/Post Single Image Disabled or No Image set in Post Thumbnail -->';
 			return false;
 		}
-		else { 
+		else {
 			$class = '';
 
 			if ( 'default' == $individual_featured_image ) {
@@ -1148,7 +1148,7 @@ if ( ! function_exists( 'fullframe_single_content_image' ) ) :
 
 			?>
 			<figure class="featured-image <?php echo $class; ?>">
-                <?php 
+                <?php
 				if ( $individual_featured_image == 'featured' || ( $individual_featured_image=='default' && $featured_image == 'featured' ) ) {
                      the_post_thumbnail( 'fullframe-featured' );
                 }
@@ -1191,9 +1191,9 @@ if ( ! function_exists( 'fullframe_promotion_headline' ) ) :
 	 * @uses fullframe_before_main action to add it in the header
 	 * @since Fullframe 1.0
 	 */
-	function fullframe_promotion_headline() { 
+	function fullframe_promotion_headline() {
 		//delete_transient( 'fullframe_promotion_headline' );
-		
+
 		global $post, $wp_query;
 	   	$options 	= fullframe_get_theme_options();
 
@@ -1202,7 +1202,7 @@ if ( ! function_exists( 'fullframe_promotion_headline' ) ) :
 		$promotion_headline_button 	= $options['promotion_headline_button'];
 		$promotion_headline_target 	= $options['promotion_headline_target'];
 		$enablepromotion 			= $options['promotion_headline_option'];
-		
+
 		//support qTranslate plugin
 		if ( function_exists( 'qtrans_convertURL' ) ) {
 			$promotion_headline_url = qtrans_convertURL($options[ 'promotion_headline_url' ]);
@@ -1210,36 +1210,36 @@ if ( ! function_exists( 'fullframe_promotion_headline' ) ) :
 		else {
 			$promotion_headline_url = $options[ 'promotion_headline_url' ];
 		}
-		
+
 		// Front page displays in Reading Settings
 		$page_on_front = get_option( 'page_on_front' ) ;
-		$page_for_posts = get_option('page_for_posts'); 
+		$page_for_posts = get_option('page_for_posts');
 
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();
 
-		 if ( ( "" != $promotion_headline || "" != $promotion_subheadline || "" != $promotion_headline_url ) && ( $enablepromotion == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enablepromotion == 'homepage' ) ) ) { 	
-			
+		 if ( ( "" != $promotion_headline || "" != $promotion_subheadline || "" != $promotion_headline_url ) && ( $enablepromotion == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enablepromotion == 'homepage' ) ) ) {
+
 			if ( !$fullframe_promotion_headline = get_transient( 'fullframe_promotion_headline' ) ) {
-				
-				echo '<!-- refreshing cache -->';	
-				
+
+				echo '<!-- refreshing cache -->';
+
 				$fullframe_promotion_headline = '
 				<div id="promotion-message">
 					<div class="wrapper">
 						<div class="section left">';
-				
+
 						if ( "" != $promotion_headline ) {
 							$fullframe_promotion_headline .= '<h2>' . $promotion_headline . '</h2>';
 						}
 
 						if ( "" != $promotion_subheadline ) {
 							$fullframe_promotion_headline .= '<p>' . $promotion_subheadline . '</p>';
-						}			
-						
+						}
+
 						$fullframe_promotion_headline .= '
-						</div><!-- .section.left -->';  
-							
+						</div><!-- .section.left -->';
+
 						if ( "" != $promotion_headline_url ) {
 							if ( "1" == $promotion_headline_target ) {
 								$headlinetarget = '_blank';
@@ -1247,21 +1247,21 @@ if ( ! function_exists( 'fullframe_promotion_headline' ) ) :
 							else {
 								$headlinetarget = '_self';
 							}
-							
+
 							$fullframe_promotion_headline .= '
 							<div class="section right">
 								<a href="' . esc_url( $promotion_headline_url ) . '" target="' . $headlinetarget . '">' . esc_attr( $promotion_headline_button ) . '
 								</a>
 							</div><!-- .section.right -->';
 						}
-				
+
 				$fullframe_promotion_headline .= '
 					</div><!-- .wrapper -->
 				</div><!-- #promotion-message -->';
-				
+
 				set_transient( 'fullframe_promotion_headline', $fullframe_promotion_headline, 86940 );
 			}
-			echo $fullframe_promotion_headline;	
+			echo $fullframe_promotion_headline;
 		 }
 	}
 endif; // fullframe_promotion_featured_content
@@ -1281,10 +1281,10 @@ function fullframe_footer_content() {
 	//fullframe_flush_transients();
 	if ( ( !$fullframe_footer_content = get_transient( 'fullframe_footer_content' ) ) ) {
 		echo '<!-- refreshing cache -->';
-		
+
 		$fullframe_content = fullframe_get_content();
 
-		$fullframe_footer_content =  '    	
+		$fullframe_footer_content =  '
     	<div id="site-generator" class="two">
     		<div class="wrapper">
     			<div id="footer-left-content" class="copyright">' . $fullframe_content['left'] . '</div>
@@ -1292,7 +1292,7 @@ function fullframe_footer_content() {
     			<div id="footer-right-content" class="powered">' . $fullframe_content['right'] . '</div>
 			</div><!-- .wrapper -->
 		</div><!-- #site-generator -->';
-		
+
     	set_transient( 'fullframe_footer_content', $fullframe_footer_content, 86940 );
     }
 
@@ -1323,7 +1323,7 @@ function fullframe_get_first_image( $postID, $size, $attr ) {
 	if( isset( $matches [1] [0] ) ) {
 		//Get first image
 		$first_img = $matches [1] [0];
-		
+
 		return '<img class="pngfix wp-post-image" src="'. esc_url( $first_img ) .'">';
 	}
 	else {
@@ -1345,13 +1345,13 @@ if ( ! function_exists( 'fullframe_scrollup' ) ) {
 
 			// get the data value from theme options
 			$options = fullframe_get_theme_options();
-			echo '<!-- refreshing cache -->';	
-			
+			echo '<!-- refreshing cache -->';
+
 			$fullframe_scrollup =  '<a href="#masthead" id="scrollup" class="genericon"><span class="screen-reader-text">' . __( 'Scroll Up', 'full-frame' ) . '</span></a>' ;
-			
+
 			set_transient( 'fullframe_scrollup', $fullframe_scrollup, 86940 );
 		}
-		echo $fullframe_scrollup;	
+		echo $fullframe_scrollup;
 	}
 }
 add_action( 'fullframe_after', 'fullframe_scrollup', 10 );
@@ -1363,12 +1363,12 @@ if ( ! function_exists( 'fullframe_page_post_meta' ) ) :
 	 */
 	function fullframe_page_post_meta() {
 		$fullframe_author_url = esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) );
-		
+
 		$fullframe_page_post_meta = '<span class="post-time">' . __( 'Posted on', 'full-frame' ) . ' <time class="entry-date updated" datetime="' . esc_attr( get_the_date( 'c' ) ) . '" pubdate>' . esc_html( get_the_date() ) . '</time></span>';
 	    $fullframe_page_post_meta .= '<span class="post-author">' . __( 'By', 'full-frame' ) . ' <span class="author vcard"><a class="url fn n" href="' . $fullframe_author_url . '" title="View all posts by ' . get_the_author() . '" rel="author">' .get_the_author() . '</a></span>';
 
 		return $fullframe_page_post_meta;
-	} 
+	}
 endif; //fullframe_page_post_meta
 
 
@@ -1380,7 +1380,7 @@ if ( ! function_exists( 'fullframe_alter_home' ) ) :
 	 */
 	function fullframe_alter_home( $query ){
 		$options = fullframe_get_theme_options();
-			
+
 	    $cats = $options[ 'front_page_category' ];
 
 		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
@@ -1400,7 +1400,7 @@ if ( ! function_exists( 'fullframe_post_navigation' ) ) :
 	 * @uses  the_post_navigation
 	 *
 	 * @action fullframe_after_post
-	 * 
+	 *
 	 * @since Full Frame 1.7
 	 */
 	function fullframe_post_navigation() {

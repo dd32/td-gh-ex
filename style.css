@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/full-frame
 Author: Catch Themes
 Author URI: http://catchthemes.com/
 Description: Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for photography, portfolio and blogging sites. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German and Lithuanian languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/full-frame/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/full-frame/
-Version: 2.1.1
+Version: 2.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: full-frame
@@ -259,8 +259,8 @@ big {
 	font-size: 125%;
 }
 
-#feature-slider .cycle-pager span { 
-    font-size: 45px; 
+#feature-slider .cycle-pager span {
+    font-size: 45px;
 }
 
 .site-title {
@@ -287,7 +287,7 @@ big {
 }
 
 .entry-meta span a:before {
-    font-size: 16px;	
+    font-size: 16px;
 }
 
 #feature-slider .cycle-prev:before,
@@ -312,7 +312,7 @@ big {
 	font-size: 14px;
 }
 
-#nav-below .wp-pagenavi a, 
+#nav-below .wp-pagenavi a,
 #nav-below .wp-pagenavi span,
 .page-links span {
 	font-size: 14px;
@@ -334,7 +334,7 @@ big {
 3. Elements
 --------------------------------------------------------------*/
 .site {
-	width: 100%;	
+	width: 100%;
 }
 
 .wrapper {
@@ -432,7 +432,7 @@ blockquote:before {
 	top: -10px;
 }
 
-.entry-content ol, 
+.entry-content ol,
 .entry-content ul {
     margin-bottom: 20px;
     margin-left: 20px;
@@ -477,9 +477,9 @@ blockquote:before {
 /* Genericons */
 .genericon:before,
 #feature-slider .cycle-prev:before,
-#feature-slider .cycle-next:before, 
+#feature-slider .cycle-next:before,
 #content-prev:before,
-#content-next:before, 
+#content-next:before,
 .posted-on a:before,
 .byline a:before,
 .cat-links span + a:before,
@@ -496,7 +496,7 @@ blockquote:before {
 }
 
 #header-toggle:before {
-    content: "\f505";	
+    content: "\f505";
 }
 
 #scrollup:before {
@@ -510,19 +510,19 @@ blockquote:before {
 
 #feature-slider .cycle-next:before,
 #content-next:before {
-    content: "\f429";   
+    content: "\f429";
 }
 
 .entry-meta .posted-on a:before {
-	content: "\f307";   
+	content: "\f307";
 }
 
 .entry-meta .author a:before {
-	content: "\f304";   
+	content: "\f304";
 }
 
 .edit-link a:before {
-	content: "\f411";   
+	content: "\f411";
 }
 
 .cat-links span + a:before {
@@ -534,7 +534,7 @@ blockquote:before {
 }
 
 .entry-meta .comments-link a:before {
-	content: "\f300";   
+	content: "\f300";
 }
 
 
@@ -663,7 +663,7 @@ blockquote:before {
 }
 
 #header-toggle:before {
-    margin-top: 12px;	
+    margin-top: 12px;
 }
 
 #scrollup:before {
@@ -793,7 +793,7 @@ textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;	
+	-webkit-border-radius: 3px;
 	max-width: 100%;
 }
 
@@ -894,9 +894,9 @@ textarea {
 	color: #aaa;
 }
 
-.nav-primary .menu .current-menu-item > a, 
+.nav-primary .menu .current-menu-item > a,
 .nav-primary .menu .current-menu-ancestor > a,
-.nav-primary .menu .current_page_item > a, 
+.nav-primary .menu .current_page_item > a,
 .nav-primary .menu .current_page_ancestor > a {
 	color: #aaa;
 }
@@ -936,7 +936,7 @@ textarea {
 	color: #666;
 }
 
-#colophon .nav-footer .current-menu-item a, 
+#colophon .nav-footer .current-menu-item a,
 #colophon .nav-footer .current_page_item a {
     color: #ccc;
 }
@@ -971,11 +971,11 @@ textarea {
 .sidebar-header-right .widget_nav_menu li:hover > a {
 }
 
-.fullframe-nav-menu .current-menu-item > a, 
+.fullframe-nav-menu .current-menu-item > a,
 .fullframe-nav-menu .current-menu-ancestor > a,
-.fullframe-nav-menu .current_page_item > a, 
+.fullframe-nav-menu .current_page_item > a,
 .fullframe-nav-menu .current_page_ancestor > a,
-.sidebar-header-right .widget_nav_menu .current-menu-item > a, 
+.sidebar-header-right .widget_nav_menu .current-menu-item > a,
 .sidebar-header-right .widget_nav_menu .current-menu-ancestor > a {
 	color: #21759b;
 }
@@ -1080,7 +1080,7 @@ textarea {
 
 #header-toggle:hover {
 	background-color: transparent;
-    color: #aaa;	
+    color: #aaa;
 }
 
 #header-container {
@@ -1122,7 +1122,7 @@ textarea {
 	float: right;
 }
 
-#nav-below .wp-pagenavi a, 
+#nav-below .wp-pagenavi a,
 #nav-below .wp-pagenavi span,
 .page-links span {
 	border: none;
@@ -1157,15 +1157,15 @@ textarea {
 	padding: 0;
 }
 
-#nav-below .wp-pagenavi a, 
+#nav-below .wp-pagenavi a,
 #nav-below .wp-pagenavi span {
-	background-color: #f2f2f2;	
+	background-color: #f2f2f2;
 	margin: 0 0 0 10px;
 }
 
 #nav-below .wp-pagenavi span.pages {
 	color: #404040;
-	background-color: transparent; 
+	background-color: transparent;
 	padding: 2px 0 0 0;
 }
 
@@ -1186,10 +1186,10 @@ textarea {
     background-color: #666;
     border-radius: 3px;
 	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px; 
+	-webkit-border-radius: 3px;
     -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 	0 2px 6px rgba(0, 0, 0, 0.5);	
-	box-shadow: 		0 2px 6px rgba(0, 0, 0, 0.5);	
+	-moz-box-shadow: 	0 2px 6px rgba(0, 0, 0, 0.5);
+	box-shadow: 		0 2px 6px rgba(0, 0, 0, 0.5);
     color: #eee;
     cursor: pointer;
     display: block;
@@ -1200,7 +1200,7 @@ textarea {
 
 #infinite-handle span:hover {
 	background-color: #000;
-    color: #fff;	
+    color: #fff;
     text-decoration: none;
 }
 
@@ -1377,7 +1377,7 @@ textarea {
 	border: 2px solid #eee;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px; 
+	-webkit-border-radius: 5px;
 	color: #666;
 	display: inline-block;
 }
@@ -1395,7 +1395,7 @@ textarea {
     background-image: url("images/default-featured-bg.jpg");
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-attachment: fixed; 
+    background-attachment: fixed;
     background-size: cover;
     color: #ccc;
     height: 100%;
@@ -1463,7 +1463,7 @@ textarea {
     width: 100%;
 }
 
-#content-prev, 
+#content-prev,
 #content-next {
     background: #444;
     background: rgba(0,0,0,0.5);
@@ -1850,10 +1850,10 @@ caption {
     background-color: #666;
     border-radius: 3px;
 	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px; 
+	-webkit-border-radius: 3px;
     -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 	0 2px 6px rgba(0, 0, 0, 0.5);	
-	box-shadow: 		0 2px 6px rgba(0, 0, 0, 0.5);	
+	-moz-box-shadow: 	0 2px 6px rgba(0, 0, 0, 0.5);
+	box-shadow: 		0 2px 6px rgba(0, 0, 0, 0.5);
     color: #eee;
     cursor: pointer;
     display: none;
@@ -1862,14 +1862,14 @@ caption {
     bottom: 20px;
 	right: 20px;
     text-align: center;
-	text-decoration: none; 
+	text-decoration: none;
     width: 40px;
     z-index: 9999;
 }
 
 #scrollup:hover {
 	background-color: #000;
-    color: #fff;	
+    color: #fff;
     text-decoration: none;
 }
 
@@ -1886,7 +1886,7 @@ caption {
     color: #666;
 	display: block;
    	float: left;
-   	font-style: italic; 
+   	font-style: italic;
 }
 
 #breadcrumb-list span.sep {
@@ -1907,7 +1907,7 @@ caption {
 #breadcrumb-list a span {
 	color: #21759b;
 	display: inline-block;
-	padding: 5px 10px; 
+	padding: 5px 10px;
 }
 
 #breadcrumb-list a:hover,
@@ -1918,7 +1918,7 @@ caption {
 
 #breadcrumb-list .breadcrumb-current {
 	background-color: #f2f2f2;
-	padding: 5px 10px; 
+	padding: 5px 10px;
 }
 
 /* jQuery Cycle 2 Custom CSS */
@@ -1934,10 +1934,10 @@ caption {
 	width: 100%;
 }
 
-#feature-slider .cycle-slideshow { 
-    width: 100%; 
-    margin: 0 auto; 
-    padding: 0; 
+#feature-slider .cycle-slideshow {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
     position: relative;
 }
 
@@ -1946,31 +1946,31 @@ caption {
     margin: 0 auto;
 }
 
-#feature-slider .cycle-pager { 
-    text-align: center; 
-    width: 100%; 
-    z-index: 101; 
-    position: absolute; 
-    bottom: 0; 
+#feature-slider .cycle-pager {
+    text-align: center;
+    width: 100%;
+    z-index: 101;
+    position: absolute;
+    bottom: 0;
     overflow: hidden;
 }
 
-#feature-slider .cycle-pager span { 
-    font-family: arial; 
+#feature-slider .cycle-pager span {
+    font-family: arial;
     line-height: 20px;
-    width: 14px; 
-    height: 20px; 
-    display: inline-block; 
-    color: #f2f2f2; 
-    cursor: pointer; 
+    width: 14px;
+    height: 20px;
+    display: inline-block;
+    color: #f2f2f2;
+    cursor: pointer;
     margin: 0 2px;
 }
 
-#feature-slider .cycle-pager span.cycle-pager-active { 
+#feature-slider .cycle-pager span.cycle-pager-active {
     color: #000;
 }
 
-#feature-slider .cycle-pager > * { 
+#feature-slider .cycle-pager > * {
     cursor: pointer;
 }
 
@@ -1979,10 +1979,10 @@ caption {
     display: block;
     text-align: center;
     width: 50px;
-    height: 50px;   
+    height: 50px;
 }
 
-#feature-slider .cycle-prev, 
+#feature-slider .cycle-prev,
 #feature-slider .cycle-next {
     background: #444;
     background: rgba(0,0,0,0.6);
@@ -1993,14 +1993,14 @@ caption {
     cursor: pointer;
     display: block;
     opacity: 0;
-    filter: alpha(opacity=0); 
+    filter: alpha(opacity=0);
     position: absolute;
     top: 47%;
-    text-decoration: none; 
-    -moz-transition:    all 0.2s ease-in-out; 
-    -webkit-transition: all 0.2s ease-in-out; 
-    transition:         all 0.2s ease-in-out;  
-    z-index: 101;    
+    text-decoration: none;
+    -moz-transition:    all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition:         all 0.2s ease-in-out;
+    z-index: 101;
 }
 
 #feature-slider .cycle-prev {
@@ -2011,30 +2011,30 @@ caption {
     right: -20px;
 }
 
-#feature-slider:hover .cycle-prev { 
-    left: 40px; 
-    opacity: 1; 
+#feature-slider:hover .cycle-prev {
+    left: 40px;
+    opacity: 1;
     filter: alpha(opacity=100);
 }
 
-#feature-slider:hover .cycle-next { 
-    right: 40px; 
-    opacity: 1; 
+#feature-slider:hover .cycle-next {
+    right: 40px;
+    opacity: 1;
     filter: alpha(opacity=100);
 }
 
-#feature-slider .cycle-slideshow .hentry { 
-    position: absolute; 
-    top: 0; 
+#feature-slider .cycle-slideshow .hentry {
+    position: absolute;
+    top: 0;
     left: 0;
-    width: 100%; 
+    width: 100%;
     margin: 0;
-    padding: 0; 
+    padding: 0;
     display: block;
 }
 
 #feature-slider .cycle-slideshow article:first-child {
-    position: static; 
+    position: static;
     z-index: 100;
 }
 
@@ -2054,10 +2054,10 @@ caption {
     background: rgba(0,0,0,0.6);
     -moz-border-radius:     4px;
     -webkit-border-radius:  4px;
-    border-radius:          4px; 
-    -moz-transition:    all 0.2s ease-in-out; 
-    -webkit-transition: all 0.2s ease-in-out; 
-    transition:         all 0.2s ease-in-out;      
+    border-radius:          4px;
+    -moz-transition:    all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition:         all 0.2s ease-in-out;
 }
 
 #feature-slider .entry-title,
@@ -2073,9 +2073,9 @@ caption {
     margin-bottom: 0;
 }
 
-.disabled { 
-    opacity: .5; 
-    filter:alpha(opacity=50); 
+.disabled {
+    opacity: .5;
+    filter:alpha(opacity=50);
 }
 
 /* Social Icons */
@@ -2089,7 +2089,7 @@ caption {
 	border-radius: 3px;
 	-moz-border-radius:	3px;
 	box-sizing: content-box;
-	-webkit-border-radius:	3px; 
+	-webkit-border-radius:	3px;
     -webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
 	-moz-box-sizing:    content-box;
 	color: #404040;
@@ -2106,137 +2106,155 @@ caption {
 
 .site .widget_fullframe_social_icons a.genericon-facebook-alt:hover {
 	background-color: #3b5998;
-	border-color: #3b5998;	
+	border-color: #3b5998;
 }
 
 .site .widget_fullframe_social_icons a.genericon-twitter:hover {
 	background-color: #00aced;
-	border-color: #00aced;	
+	border-color: #00aced;
 }
 
 .site .widget_fullframe_social_icons a.genericon-googleplus-alt:hover {
 	background-color: #dd4b39;
-	border-color: #dd4b39;	
+	border-color: #dd4b39;
 }
 
 .site .widget_fullframe_social_icons a.genericon-mail:hover {
 	background-color: #1d62f0;
-	border-color: #1d62f0;	
+	border-color: #1d62f0;
 }
 
 .site .widget_fullframe_social_icons a.genericon-feed:hover {
 	background-color: #dc622c;
-	border-color: #dc622c;	
+	border-color: #dc622c;
 }
 
 .site .widget_fullframe_social_icons a.genericon-wordpress:hover {
 	background-color: #21759b;
-	border-color: #21759b;	
+	border-color: #21759b;
 }
 
 .site .widget_fullframe_social_icons a.genericon-github:hover {
 	background-color: #4183c4;
-	border-color: #4183c4;	
+	border-color: #4183c4;
 }
 
 .site .widget_fullframe_social_icons a.genericon-linkedin:hover {
 	background-color: #007bb6;
-	border-color: #007bb6;	
+	border-color: #007bb6;
 }
 
 .site .widget_fullframe_social_icons a.genericon-pinterest:hover {
 	background-color: #cb2027;
-	border-color: #cb2027;	
+	border-color: #cb2027;
 }
 
 .site .widget_fullframe_social_icons a.genericon-flickr:hover {
 	background-color: #ff0084;
-	border-color: #ff0084;	
+	border-color: #ff0084;
 }
 
 .site .widget_fullframe_social_icons a.genericon-vimeo:hover {
 	background-color: #aad450;
-	border-color: #aad450;	
+	border-color: #aad450;
 }
 
 .site .widget_fullframe_social_icons a.genericon-youtube:hover {
 	background-color: #bb0000;
-	border-color: #bb0000;	
+	border-color: #bb0000;
 }
 
 .site .widget_fullframe_social_icons a.genericon-tumblr:hover {
 	background-color: #32506d;
-	border-color: #32506d;	
+	border-color: #32506d;
 }
 
 .site .widget_fullframe_social_icons a.genericon-instagram:hover {
 	background-color: #517fa4;
-	border-color: #517fa4;	
+	border-color: #517fa4;
 }
 
 .site .widget_fullframe_social_icons a.genericon-codepen:hover {
 	background-color: #000;
-	border-color: #000;	
+	border-color: #000;
 }
 
 .site .widget_fullframe_social_icons a.genericon-path:hover {
 	background-color: #ff442c;
-	border-color: #ff442c;	
+	border-color: #ff442c;
 }
 
 .site .widget_fullframe_social_icons a.genericon-dribbble:hover {
 	background-color: #ea4c89;
-	border-color: #ea4c89;	
+	border-color: #ea4c89;
 }
 
 .site .widget_fullframe_social_icons a.genericon-skype:hover {
 	background-color: #12a5f4;
-	border-color: #12a5f4;	
+	border-color: #12a5f4;
 }
 
 .site .widget_fullframe_social_icons a.genericon-digg:hover {
 	background-color: #333;
-	border-color: #333;	
+	border-color: #333;
 }
 
 .site .widget_fullframe_social_icons a.genericon-reddit:hover {
 	background-color: #ff4500;
-	border-color: #ff4500;	
+	border-color: #ff4500;
 }
 
 .site .widget_fullframe_social_icons a.genericon-stumbleupon:hover {
 	background-color: #eb4924;
-	border-color: #eb4924;	
+	border-color: #eb4924;
 }
 
 .site .widget_fullframe_social_icons a.genericon-pocket:hover {
 	background-color: #f13753;
-	border-color: #f13753;	
+	border-color: #f13753;
 }
 
 .site .widget_fullframe_social_icons a.genericon-dropbox:hover {
 	background-color: #2281cf;
-	border-color: #2281cf;	
+	border-color: #2281cf;
 }
 
 .site .widget_fullframe_social_icons a.genericon-spotify:hover {
 	background-color: #81b900;
-	border-color: #73a500;	
+	border-color: #73a500;
 }
 
 .site .widget_fullframe_social_icons a.genericon-polldaddy:hover {
 	background-color: #bc0b0b;
-	border-color: #bc0b0b;	
+	border-color: #bc0b0b;
 }
 
 .site .widget_fullframe_social_icons a.genericon-foursquare:hover {
 	background-color: #f94877;
-	border-color: #f94877;	
+	border-color: #f94877;
 }
 
 .site .widget_fullframe_social_icons a.genericon-twitch:hover {
 	background-color: #6441a5;
-	border-color: #6441a5;	
+	border-color: #6441a5;
+}
+
+.site .widget_fullframe_social_icons a.genericon-cloud:hover {
+	background-color: #00aced;
+	border-color: #00aced;
+}
+
+.site .widget_fullframe_social_icons a.genericon-website:hover,
+.site .widget_fullframe_social_icons a.genericon-cart:hover,
+.site .widget_fullframe_social_icons a.genericon-phone:hover,
+.site .widget_fullframe_social_icons a.genericon-handset:hover {
+	background-color: #42b41e;
+	border-color: #42b41e;
+}
+
+.site .widget_fullframe_social_icons a.genericon-link:hover {
+	background-color: #2e6da4;
+	border-color: #2e6da4;
 }
 
 .site .widget_fullframe_social_icons a.custom-icon {

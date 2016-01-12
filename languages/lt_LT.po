@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-"
 "responsive-free/\n"
-"POT-Creation-Date: 2015-11-20 22:28+0545\n"
-"PO-Revision-Date: 2015-11-20 22:28+0545\n"
+"POT-Creation-Date: 2016-01-12 23:13+0545\n"
+"PO-Revision-Date: 2016-01-12 23:13+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: lt\n"
@@ -360,7 +360,7 @@ msgstr "Pastaba: įveskite URL atitinkamai socialinio tinklo svetainei"
 msgid "Social Links"
 msgstr "Socialinės nuorodos"
 
-#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:44
+#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:40
 msgid ""
 "Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
 "{action}. More Information in readme file"
@@ -802,17 +802,17 @@ msgid "Dark"
 msgstr "Tamsi"
 
 #: ../inc/fullframe-default-options.php:136
-#: ../inc/fullframe-default-options.php:536
+#: ../inc/fullframe-default-options.php:641
 msgid "Primary Sidebar, Content"
 msgstr "Pagrindinė šoninė juosta, turinys"
 
 #: ../inc/fullframe-default-options.php:140
-#: ../inc/fullframe-default-options.php:541
+#: ../inc/fullframe-default-options.php:646
 msgid "Content, Primary Sidebar"
 msgstr "Turinys, pagrindinė šoninė juosta"
 
 #: ../inc/fullframe-default-options.php:144
-#: ../inc/fullframe-default-options.php:546
+#: ../inc/fullframe-default-options.php:651
 msgid "No Sidebar ( Content Width )"
 msgstr "Be šoninės juostos (turinio plotis)"
 
@@ -974,147 +974,171 @@ msgid "Featured"
 msgstr "Reklaminis"
 
 #: ../inc/fullframe-default-options.php:470
-#: ../inc/fullframe-default-options.php:599
+#: ../inc/fullframe-default-options.php:704
 msgid "Full Size"
 msgstr "Visas dydis"
 
-#: ../inc/fullframe-default-options.php:488
+#: ../inc/fullframe-default-options.php:490
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/fullframe-default-options.php:489
+#: ../inc/fullframe-default-options.php:494
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/fullframe-default-options.php:490
+#: ../inc/fullframe-default-options.php:498
 msgid "Googleplus"
 msgstr "Googleplus"
 
-#: ../inc/fullframe-default-options.php:491 ../inc/fullframe-social-icons.php:61
+#: ../inc/fullframe-default-options.php:502 ../inc/fullframe-social-icons.php:37
 msgid "Email"
 msgstr "E-paštas"
 
-#: ../inc/fullframe-default-options.php:492
+#: ../inc/fullframe-default-options.php:506
 msgid "Feed"
 msgstr "Feed"
 
-#: ../inc/fullframe-default-options.php:493
+#: ../inc/fullframe-default-options.php:510
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/fullframe-default-options.php:494
+#: ../inc/fullframe-default-options.php:514
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/fullframe-default-options.php:495
+#: ../inc/fullframe-default-options.php:518
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/fullframe-default-options.php:496
+#: ../inc/fullframe-default-options.php:522
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/fullframe-default-options.php:497
+#: ../inc/fullframe-default-options.php:526
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/fullframe-default-options.php:498
+#: ../inc/fullframe-default-options.php:530
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/fullframe-default-options.php:499
+#: ../inc/fullframe-default-options.php:534
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/fullframe-default-options.php:500
+#: ../inc/fullframe-default-options.php:538
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/fullframe-default-options.php:501
+#: ../inc/fullframe-default-options.php:542
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/fullframe-default-options.php:502
+#: ../inc/fullframe-default-options.php:546
 msgid "PollDaddy"
 msgstr "PollDaddy"
 
-#: ../inc/fullframe-default-options.php:503
+#: ../inc/fullframe-default-options.php:550
 msgid "CodePen"
 msgstr "CodePen"
 
-#: ../inc/fullframe-default-options.php:504
+#: ../inc/fullframe-default-options.php:554
 msgid "Path"
 msgstr "Path"
 
-#: ../inc/fullframe-default-options.php:505
+#: ../inc/fullframe-default-options.php:558
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/fullframe-default-options.php:506
+#: ../inc/fullframe-default-options.php:562
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/fullframe-default-options.php:507
+#: ../inc/fullframe-default-options.php:566
 msgid "Digg"
 msgstr "Digg"
 
-#: ../inc/fullframe-default-options.php:508
+#: ../inc/fullframe-default-options.php:570
 msgid "Reddit"
 msgstr "Reddit"
 
-#: ../inc/fullframe-default-options.php:509
-msgid "StumbleUpon"
-msgstr "StumbleUpon"
+#: ../inc/fullframe-default-options.php:574
+msgid "Stumbleupon"
+msgstr ""
 
-#: ../inc/fullframe-default-options.php:510
+#: ../inc/fullframe-default-options.php:578
 msgid "Pocket"
 msgstr "Pocket"
 
-#: ../inc/fullframe-default-options.php:511
+#: ../inc/fullframe-default-options.php:582
 msgid "DropBox"
 msgstr "DropBox"
 
-#: ../inc/fullframe-default-options.php:512
-msgid "Foursquare"
-msgstr "Foursquare"
-
-#: ../inc/fullframe-default-options.php:513
+#: ../inc/fullframe-default-options.php:586
 msgid "Spotify"
 msgstr "Spotify"
 
-#: ../inc/fullframe-default-options.php:514
+#: ../inc/fullframe-default-options.php:590
+msgid "Foursquare"
+msgstr "Foursquare"
+
+#: ../inc/fullframe-default-options.php:594
 msgid "Twitch"
 msgstr "Twitch"
 
-#: ../inc/fullframe-default-options.php:531
-#: ../inc/fullframe-default-options.php:562
-#: ../inc/fullframe-default-options.php:589
+#: ../inc/fullframe-default-options.php:598
+msgid "Website"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:602
+msgid "Phone"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:606
+msgid "Handset"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:610
+msgid "Cart"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:614
+msgid "Cloud"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:618
+msgid "Link"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:636
+#: ../inc/fullframe-default-options.php:667
+#: ../inc/fullframe-default-options.php:694
 msgid "Default"
 msgstr "Numatytasis"
 
-#: ../inc/fullframe-default-options.php:567
+#: ../inc/fullframe-default-options.php:672
 msgid "Enable"
 msgstr "Įjungti"
 
-#: ../inc/fullframe-default-options.php:572
+#: ../inc/fullframe-default-options.php:677
 msgid "Disable"
 msgstr "Išjungti"
 
-#: ../inc/fullframe-default-options.php:594
+#: ../inc/fullframe-default-options.php:699
 msgid "Featured Image"
 msgstr "Reklaminis paveikslėlis"
 
-#: ../inc/fullframe-default-options.php:604
+#: ../inc/fullframe-default-options.php:709
 msgid "Disable Image"
 msgstr "Išjungti paveikslėlį"
 
-#: ../inc/fullframe-default-options.php:619
+#: ../inc/fullframe-default-options.php:724
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr "Autorinės teisės &copy; %1$s %2$s. Visos Teisės Saugomos."
 
-#: ../inc/fullframe-default-options.php:621
+#: ../inc/fullframe-default-options.php:726
 msgid "by"
 msgstr "pagal"
 
@@ -1222,6 +1246,9 @@ msgstr ""
 "Pagal nutylėjimą jis užkraus paieškos ir archyvų valdiklius, kaip parodyta "
 "žemiau. Jūs galite pridėti valdiklį į šią sritį apsilankę savo <a href=\"%s"
 "\">valdiklių skyde</a> , kuris pakeis numatytuosius valdiklius."
+
+#~ msgid "StumbleUpon"
+#~ msgstr "StumbleUpon"
 
 #~ msgid "Secondary Menu"
 #~ msgstr "Antrinis meniu"

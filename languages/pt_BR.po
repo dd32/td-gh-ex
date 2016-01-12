@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-"
 "responsive-free/\n"
-"POT-Creation-Date: 2015-11-20 22:28+0545\n"
-"PO-Revision-Date: 2015-11-20 22:28+0545\n"
+"POT-Creation-Date: 2016-01-12 23:13+0545\n"
+"PO-Revision-Date: 2016-01-12 23:13+0545\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -381,7 +381,7 @@ msgstr ""
 msgid "Social Links"
 msgstr "Links das Redes Sociais"
 
-#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:44
+#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:40
 msgid ""
 "Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
 "{action}. More Information in readme file"
@@ -841,17 +841,17 @@ msgid "Dark"
 msgstr "Escuro"
 
 #: ../inc/fullframe-default-options.php:136
-#: ../inc/fullframe-default-options.php:536
+#: ../inc/fullframe-default-options.php:641
 msgid "Primary Sidebar, Content"
 msgstr "Barra lateral principal, Conteúdo"
 
 #: ../inc/fullframe-default-options.php:140
-#: ../inc/fullframe-default-options.php:541
+#: ../inc/fullframe-default-options.php:646
 msgid "Content, Primary Sidebar"
 msgstr "Conteúdo, Barra lateral principal"
 
 #: ../inc/fullframe-default-options.php:144
-#: ../inc/fullframe-default-options.php:546
+#: ../inc/fullframe-default-options.php:651
 msgid "No Sidebar ( Content Width )"
 msgstr "Sem barra lateral (largura do conteúdo)"
 
@@ -1013,147 +1013,171 @@ msgid "Featured"
 msgstr "Destaque"
 
 #: ../inc/fullframe-default-options.php:470
-#: ../inc/fullframe-default-options.php:599
+#: ../inc/fullframe-default-options.php:704
 msgid "Full Size"
 msgstr "Tamanho completo"
 
-#: ../inc/fullframe-default-options.php:488
+#: ../inc/fullframe-default-options.php:490
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/fullframe-default-options.php:489
+#: ../inc/fullframe-default-options.php:494
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/fullframe-default-options.php:490
+#: ../inc/fullframe-default-options.php:498
 msgid "Googleplus"
 msgstr "Googleplus"
 
-#: ../inc/fullframe-default-options.php:491 ../inc/fullframe-social-icons.php:61
+#: ../inc/fullframe-default-options.php:502 ../inc/fullframe-social-icons.php:37
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/fullframe-default-options.php:492
+#: ../inc/fullframe-default-options.php:506
 msgid "Feed"
 msgstr "Feed RSS"
 
-#: ../inc/fullframe-default-options.php:493
+#: ../inc/fullframe-default-options.php:510
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/fullframe-default-options.php:494
+#: ../inc/fullframe-default-options.php:514
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/fullframe-default-options.php:495
+#: ../inc/fullframe-default-options.php:518
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/fullframe-default-options.php:496
+#: ../inc/fullframe-default-options.php:522
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/fullframe-default-options.php:497
+#: ../inc/fullframe-default-options.php:526
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/fullframe-default-options.php:498
+#: ../inc/fullframe-default-options.php:530
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/fullframe-default-options.php:499
+#: ../inc/fullframe-default-options.php:534
 msgid "YouTube"
 msgstr "Youtube"
 
-#: ../inc/fullframe-default-options.php:500
+#: ../inc/fullframe-default-options.php:538
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/fullframe-default-options.php:501
+#: ../inc/fullframe-default-options.php:542
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/fullframe-default-options.php:502
+#: ../inc/fullframe-default-options.php:546
 msgid "PollDaddy"
 msgstr "PollDaddy"
 
-#: ../inc/fullframe-default-options.php:503
+#: ../inc/fullframe-default-options.php:550
 msgid "CodePen"
 msgstr "CodePen"
 
-#: ../inc/fullframe-default-options.php:504
+#: ../inc/fullframe-default-options.php:554
 msgid "Path"
 msgstr "Path"
 
-#: ../inc/fullframe-default-options.php:505
+#: ../inc/fullframe-default-options.php:558
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/fullframe-default-options.php:506
+#: ../inc/fullframe-default-options.php:562
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/fullframe-default-options.php:507
+#: ../inc/fullframe-default-options.php:566
 msgid "Digg"
 msgstr "Digg"
 
-#: ../inc/fullframe-default-options.php:508
+#: ../inc/fullframe-default-options.php:570
 msgid "Reddit"
 msgstr "Reddit"
 
-#: ../inc/fullframe-default-options.php:509
-msgid "StumbleUpon"
+#: ../inc/fullframe-default-options.php:574
+msgid "Stumbleupon"
 msgstr "Stumbleupon"
 
-#: ../inc/fullframe-default-options.php:510
+#: ../inc/fullframe-default-options.php:578
 msgid "Pocket"
 msgstr "Pocket"
 
-#: ../inc/fullframe-default-options.php:511
+#: ../inc/fullframe-default-options.php:582
 msgid "DropBox"
 msgstr "DropBox"
 
-#: ../inc/fullframe-default-options.php:512
-msgid "Foursquare"
-msgstr "Foursquare"
-
-#: ../inc/fullframe-default-options.php:513
+#: ../inc/fullframe-default-options.php:586
 msgid "Spotify"
 msgstr "Spotify"
 
-#: ../inc/fullframe-default-options.php:514
+#: ../inc/fullframe-default-options.php:590
+msgid "Foursquare"
+msgstr "Foursquare"
+
+#: ../inc/fullframe-default-options.php:594
 msgid "Twitch"
 msgstr "Twitch"
 
-#: ../inc/fullframe-default-options.php:531
-#: ../inc/fullframe-default-options.php:562
-#: ../inc/fullframe-default-options.php:589
+#: ../inc/fullframe-default-options.php:598
+msgid "Website"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:602
+msgid "Phone"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:606
+msgid "Handset"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:610
+msgid "Cart"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:614
+msgid "Cloud"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:618
+msgid "Link"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:636
+#: ../inc/fullframe-default-options.php:667
+#: ../inc/fullframe-default-options.php:694
 msgid "Default"
 msgstr "Padrão"
 
-#: ../inc/fullframe-default-options.php:567
+#: ../inc/fullframe-default-options.php:672
 msgid "Enable"
 msgstr "Ativar"
 
-#: ../inc/fullframe-default-options.php:572
+#: ../inc/fullframe-default-options.php:677
 msgid "Disable"
 msgstr "Desativar"
 
-#: ../inc/fullframe-default-options.php:594
+#: ../inc/fullframe-default-options.php:699
 msgid "Featured Image"
 msgstr "Imagem em destaque"
 
-#: ../inc/fullframe-default-options.php:604
+#: ../inc/fullframe-default-options.php:709
 msgid "Disable Image"
 msgstr "Desativar imagem"
 
-#: ../inc/fullframe-default-options.php:619
+#: ../inc/fullframe-default-options.php:724
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr "Direitos Autorais &copy; %1$s - %2$s. Todos os direitos reservados &reg;."
 
-#: ../inc/fullframe-default-options.php:621
+#: ../inc/fullframe-default-options.php:726
 msgid "by"
 msgstr "por: "
 
@@ -1262,6 +1286,9 @@ msgstr ""
 "Por padrão ele irá carregar os widgets Pesquisar e Arquivos, conforme mostrado "
 "abaixo. Você pode adicionar widget para esta área, visitando o seu <a href=\"%s"
 "\">Painel Widgets</a> que irá substituir os widgets padrão."
+
+#~ msgid "StumbleUpon"
+#~ msgstr "Stumbleupon"
 
 #~ msgid ""
 #~ "Some settings might be missing or disorganized in this version of WordPress. "

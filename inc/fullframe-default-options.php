@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
@@ -20,19 +20,19 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
  * @since Fullframe 1.0
  */
 function fullframe_get_default_theme_options() {
-	
+
 	$default_theme_options = array(
 		//Site Title an Tagline
 		'logo'												=> get_template_directory_uri() . '/images/headers/logo.png',
 		'logo_alt_text' 									=> '',
 		'logo_disable'										=> 1,
 		'move_title_tagline'								=> 0,
-		
+
 		//Layout
 		'theme_layout' 										=> 'right-sidebar',
 		'content_layout'									=> 'excerpt-featured-image',
 		'single_post_image_layout'							=> 'disabled',
-		
+
 		//Header Image
 		'enable_featured_header_image'						=> 'exclude-home-page-post',
 		'featured_image_size'								=> 'slider',
@@ -51,10 +51,10 @@ function fullframe_get_default_theme_options() {
 		//Excerpt Options
 		'excerpt_length'									=> '40',
 		'excerpt_more_text'									=> __( 'Read More ...', 'full-frame' ),
-		
+
 		//Homepage / Frontpage Settings
 		'front_page_category'								=> array(),
-		
+
 		//Pagination Options
 		'pagination_type'									=> 'default',
 
@@ -70,8 +70,8 @@ function fullframe_get_default_theme_options() {
 		'search_text'										=> __( 'Search...', 'full-frame' ),
 
 		//Basic Color Options
-		'color_scheme' 										=> 'light',	
-		
+		'color_scheme' 										=> 'light',
+
 		//Featured Content Options
 		'featured_content_option'							=> 'homepage',
 		'featured_content_layout'							=> 'layout-three',
@@ -94,7 +94,7 @@ function fullframe_get_default_theme_options() {
 		'featured_slide_transition_length'					=> '1',
 		'featured_slider_type'								=> 'demo-featured-slider',
 		'featured_slide_number'								=> '4',
-		
+
 		//Reset all settings
 		'reset_all_settings'								=> 0,
 	);
@@ -158,7 +158,7 @@ function fullframe_get_archive_content_layout() {
 		'excerpt-featured-image' => array(
 			'value' => 'excerpt-featured-image',
 			'label' => __( 'Show Excerpt', 'full-frame' ),
-		),		
+		),
 		'full-content' => array(
 			'value' => 'full-content',
 			'label' => __( 'Show Full Content (No Featured Image)', 'full-frame' ),
@@ -418,7 +418,7 @@ function fullframe_featured_slider_image_loader() {
 		'false' => array(
 			'value' 				=> 'false',
 			'label' 				=> __( 'False', 'full-frame' ),
-		),		
+		),
 	);
 
 	return apply_filters( 'fullframe_color_schemes', $color_scheme_options );
@@ -484,35 +484,140 @@ function fullframe_single_post_image_layout_options() {
  * @since Fullframe 1.0
 */
 function fullframe_get_social_icons_list() {
-	$fullframe_social_icons_list =	array( 
-											__( 'Facebook', 'full-frame' ), 
-											__( 'Twitter', 'full-frame' ), 
-											__( 'Googleplus', 'full-frame' ),
-											__( 'Email', 'full-frame' ),
-											__( 'Feed', 'full-frame' ),	
-											__( 'WordPress', 'full-frame' ), 
-											__( 'GitHub', 'full-frame' ), 
-											__( 'LinkedIn', 'full-frame' ), 
-											__( 'Pinterest', 'full-frame' ), 
-											__( 'Flickr', 'full-frame' ), 
-											__( 'Vimeo', 'full-frame' ), 
-											__( 'YouTube', 'full-frame' ), 
-											__( 'Tumblr', 'full-frame' ), 
-											__( 'Instagram', 'full-frame' ), 
-											__( 'PollDaddy', 'full-frame' ),
-											__( 'CodePen', 'full-frame' ), 
-											__( 'Path', 'full-frame' ), 
-											__( 'Dribbble', 'full-frame' ), 
-											__( 'Skype', 'full-frame' ), 
-											__( 'Digg', 'full-frame' ), 
-											__( 'Reddit', 'full-frame' ), 
-											__( 'StumbleUpon', 'full-frame' ), 
-											__( 'Pocket', 'full-frame' ), 
-											__( 'DropBox', 'full-frame' ),
-											__( 'Foursquare', 'full-frame' ),											
-											__( 'Spotify', 'full-frame' ),
-											__( 'Twitch', 'full-frame' ),
-										);
+	$fullframe_social_icons_list = array(
+		'facebook_link'		=> array(
+			'genericon_class' 	=> 'facebook-alt',
+			'label' 			=> esc_html__( 'Facebook', 'full-frame' )
+			),
+		'twitter_link'		=> array(
+			'genericon_class' 	=> 'twitter',
+			'label' 			=> esc_html__( 'Twitter', 'full-frame' )
+			),
+		'googleplus_link'	=> array(
+			'genericon_class' 	=> 'googleplus-alt',
+			'label' 			=> esc_html__( 'Googleplus', 'full-frame' )
+			),
+		'email_link'		=> array(
+			'genericon_class' 	=> 'mail',
+			'label' 			=> esc_html__( 'Email', 'full-frame' )
+			),
+		'feed_link'			=> array(
+			'genericon_class' 	=> 'feed',
+			'label' 			=> esc_html__( 'Feed', 'full-frame' )
+			),
+		'wordpress_link'	=> array(
+			'genericon_class' 	=> 'wordpress',
+			'label' 			=> esc_html__( 'WordPress', 'full-frame' )
+			),
+		'github_link'		=> array(
+			'genericon_class' 	=> 'github',
+			'label' 			=> esc_html__( 'GitHub', 'full-frame' )
+			),
+		'linkedin_link'		=> array(
+			'genericon_class' 	=> 'linkedin',
+			'label' 			=> esc_html__( 'LinkedIn', 'full-frame' )
+			),
+		'pinterest_link'	=> array(
+			'genericon_class' 	=> 'pinterest',
+			'label' 			=> esc_html__( 'Pinterest', 'full-frame' )
+			),
+		'flickr_link'		=> array(
+			'genericon_class' 	=> 'flickr',
+			'label' 			=> esc_html__( 'Flickr', 'full-frame' )
+			),
+		'vimeo_link'		=> array(
+			'genericon_class' 	=> 'vimeo',
+			'label' 			=> esc_html__( 'Vimeo', 'full-frame' )
+			),
+		'youtube_link'		=> array(
+			'genericon_class' 	=> 'youtube',
+			'label' 			=> esc_html__( 'YouTube', 'full-frame' )
+			),
+		'tumblr_link'		=> array(
+			'genericon_class' 	=> 'tumblr',
+			'label' 			=> esc_html__( 'Tumblr', 'full-frame' )
+			),
+		'instagram_link'	=> array(
+			'genericon_class' 	=> 'instagram',
+			'label' 			=> esc_html__( 'Instagram', 'full-frame' )
+			),
+		'polldaddy_link'	=> array(
+			'genericon_class' 	=> 'polldaddy',
+			'label' 			=> esc_html__( 'PollDaddy', 'full-frame' )
+			),
+		'codepen_link'		=> array(
+			'genericon_class' 	=> 'codepen',
+			'label' 			=> esc_html__( 'CodePen', 'full-frame' )
+			),
+		'path_link'			=> array(
+			'genericon_class' 	=> 'path',
+			'label' 			=> esc_html__( 'Path', 'full-frame' )
+			),
+		'dribbble_link'		=> array(
+			'genericon_class' 	=> 'dribbble',
+			'label' 			=> esc_html__( 'Dribbble', 'full-frame' )
+			),
+		'skype_link'		=> array(
+			'genericon_class' 	=> 'skype',
+			'label' 			=> esc_html__( 'Skype', 'full-frame' )
+			),
+		'digg_link'			=> array(
+			'genericon_class' 	=> 'digg',
+			'label' 			=> esc_html__( 'Digg', 'full-frame' )
+			),
+		'reddit_link'		=> array(
+			'genericon_class' 	=> 'reddit',
+			'label' 			=> esc_html__( 'Reddit', 'full-frame' )
+			),
+		'stumbleupon_link'	=> array(
+			'genericon_class' 	=> 'stumbleupon',
+			'label' 			=> esc_html__( 'Stumbleupon', 'full-frame' )
+			),
+		'pocket_link'		=> array(
+			'genericon_class' 	=> 'pocket',
+			'label' 			=> esc_html__( 'Pocket', 'full-frame' ),
+			),
+		'dropbox_link'		=> array(
+			'genericon_class' 	=> 'dropbox',
+			'label' 			=> esc_html__( 'DropBox', 'full-frame' ),
+			),
+		'spotify_link'		=> array(
+			'genericon_class' 	=> 'spotify',
+			'label' 			=> esc_html__( 'Spotify', 'full-frame' ),
+			),
+		'foursquare_link'	=> array(
+			'genericon_class' 	=> 'foursquare',
+			'label' 			=> esc_html__( 'Foursquare', 'full-frame' ),
+			),
+		'twitch_link'		=> array(
+			'genericon_class' 	=> 'twitch',
+			'label' 			=> esc_html__( 'Twitch', 'full-frame' ),
+			),
+		'website_link'		=> array(
+			'genericon_class' 	=> 'website',
+			'label' 			=> esc_html__( 'Website', 'full-frame' ),
+			),
+		'phone_link'		=> array(
+			'genericon_class' 	=> 'phone',
+			'label' 			=> esc_html__( 'Phone', 'full-frame' ),
+			),
+		'handset_link'		=> array(
+			'genericon_class' 	=> 'handset',
+			'label' 			=> esc_html__( 'Handset', 'full-frame' ),
+			),
+		'cart_link'			=> array(
+			'genericon_class' 	=> 'cart',
+			'label' 			=> esc_html__( 'Cart', 'full-frame' ),
+			),
+		'cloud_link'		=> array(
+			'genericon_class' 	=> 'cloud',
+			'label' 			=> esc_html__( 'Cloud', 'full-frame' ),
+			),
+		'link_link'		=> array(
+			'genericon_class' 	=> 'link',
+			'label' 			=> esc_html__( 'Link', 'full-frame' ),
+			),
+	);
 
 	return apply_filters( 'fullframe_social_icons_list', $fullframe_social_icons_list );
 }
@@ -565,7 +670,7 @@ function fullframe_metabox_header_featured_image_options() {
 			'id'		=> 'fullframe-header-image',
 			'value' 	=> 'enable',
 			'label' 	=> __( 'Enable', 'full-frame' ),
-		),	
+		),
 		'disable' => array(
 			'id'		=> 'fullframe-header-image',
 			'value' 	=> 'disable',
@@ -587,7 +692,7 @@ function fullframe_metabox_featured_image_options() {
 			'id'		=> 'fullframe-featured-image',
 			'value' 	=> 'default',
 			'label' 	=> __( 'Default', 'full-frame' ),
-		),							   
+		),
 		'featured' => array(
 			'id'		=> 'fullframe-featured-image',
 			'value' 	=> 'featured',
