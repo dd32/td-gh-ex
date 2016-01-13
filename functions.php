@@ -3,7 +3,7 @@
  *
  * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2016 Mathieu Sarrasin - Iceable Media
  *
  * Theme's Function
  *
@@ -224,6 +224,12 @@ function boldr_excerpt_more( $more ) {
 	return '... <div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'boldr-lite') .'</a></div>';
 }
 add_filter( 'excerpt_more', 'boldr_excerpt_more' );
+
+function boldr_content_more( $more ) {
+	global $post;
+	return '<div class="read-more"><a href="'. get_permalink() . '#more-' . $post->ID . '">'. __("Read More", 'boldr-lite') .'</a></div>';
+}
+add_filter( 'the_content_more_link', 'boldr_content_more' );
 
 /*
  * Rewrite and replace wp_trim_excerpt() so it adds a relevant read more link

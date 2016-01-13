@@ -3,7 +3,7 @@
  *
  * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2016 Mathieu Sarrasin - Iceable Media
  *
  * Header Template
  *
@@ -36,7 +36,7 @@ wp_head();
 ?><div id="main-wrap"><?php
 	?><div id="header"><?php
 		?><div class="container"><?php
-		
+
 			?><div id="logo"><a href="<?php echo esc_url( home_url() ); ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php
 				if ( get_theme_mod( 'boldr_logo' ) ) :
 					?><h1 class="site-title" style="display:none"><?php bloginfo('name') ?></h1><?php
@@ -46,7 +46,7 @@ wp_head();
 				endif;
 
 			?></a></div><?php
-			
+
 			if ( get_bloginfo ( 'description' ) ):
 				?><div id="tagline"><?php bloginfo('description'); ?></div><?php
 			endif;
@@ -61,7 +61,7 @@ wp_head();
 		?></div><?php
 		?><div id="nav-search"><?php get_search_form(); ?></div><?php
 	?></div><?php // End navbar
-		
+
 		if ( get_custom_header()->url ) :
 			if ( ( is_front_page() && get_theme_mod('home_header_image') != 'off' )
 				|| ( is_page() && !is_front_page() && get_theme_mod('pages_header_image') != 'off' )
