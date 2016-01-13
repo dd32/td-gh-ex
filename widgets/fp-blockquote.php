@@ -7,10 +7,6 @@ class Moesia_Blockquote extends WP_Widget {
 		$widget_ops = array('classname' => 'moesia_blockquote_widget', 'description' => __( 'Add a short message to your visitors and an image', 'moesia') );
         parent::__construct(false, $name = __('Moesia FP: Blockquote', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_blockquote_widget';
-		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
     }
 	
 	// widget form creation
@@ -58,17 +54,12 @@ class Moesia_Blockquote extends WP_Widget {
 		$instance['blockquote'] = strip_tags($new_instance['blockquote']);
 	    $instance['image_uri'] = esc_url_raw( $new_instance['image_uri'] );	
 		$instance['cite'] = strip_tags($new_instance['cite']);	    		
-		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_blockquote']) )
 			delete_option('moesia_blockquote');		  
 		  
 		return $instance;
-	}
-	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_blockquote', 'widget');
 	}
 	
 	// display widget

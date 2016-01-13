@@ -7,10 +7,6 @@ class Moesia_Clients extends WP_Widget {
 		$widget_ops = array('classname' => 'moesia_clients_widget', 'description' => __( 'Show your visitors your impressive client list.', 'moesia') );
         parent::__construct(false, $name = __('Moesia FP: Clients', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_clients_widget';
-		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
     }
 	
 	// widget form creation
@@ -44,17 +40,12 @@ class Moesia_Clients extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 	    $instance['image_uri'] = esc_url_raw( $new_instance['image_uri'] );			
-		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_clients']) )
 			delete_option('moesia_clients');		  
 		  
 		return $instance;
-	}
-	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_clients', 'widget');
 	}
 	
 	// display widget

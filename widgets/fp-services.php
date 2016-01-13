@@ -6,11 +6,7 @@ class Moesia_Services extends WP_Widget {
     function moesia_services() {
 		$widget_ops = array('classname' => 'moesia_services_widget', 'description' => __( 'Show what services you are able to provide.', 'moesia') );
         parent::__construct(false, $name = __('Moesia FP: Services', 'moesia'), $widget_ops);
-		$this->alt_option_name = 'moesia_services_widget';
-		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
+		$this->alt_option_name = 'moesia_services_widget';	
     }
 	
 	// widget form creation
@@ -61,17 +57,11 @@ class Moesia_Services extends WP_Widget {
 		$instance['see_all_text'] 	= strip_tags($new_instance['see_all_text']);		
 		$instance['category'] 		= strip_tags($new_instance['category']);
 		    			
-		$this->flush_widget_cache();
-
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_services']) )
 			delete_option('moesia_services');		  
 		  
 		return $instance;
-	}
-	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_services', 'widget');
 	}
 	
 	// display widget

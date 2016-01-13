@@ -7,10 +7,6 @@ class Moesia_Video_Widget extends WP_Widget {
 		$widget_ops = array('classname' => 'moesia_video_widget_widget', 'description' => __( 'Display a video in your sidebar.', 'moesia') );
         parent::__construct(false, $name = __('Moesia: Video', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_video_widget';
-		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
     }
 	
 	// widget form creation
@@ -37,17 +33,12 @@ class Moesia_Video_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['url'] = esc_url_raw($new_instance['url']);
-		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_video_widget']) )
 			delete_option('moesia_video_widget');		  
 		  
 		return $instance;
-	}
-	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_video_widget', 'widget');
 	}
 	
 	// display widget

@@ -7,10 +7,7 @@ class Moesia_Action extends WP_Widget {
 		$widget_ops = array('classname' => 'moesia_action_widget', 'description' => __( 'Display a call to action block.', 'moesia') );
         parent::__construct(false, $name = __('Moesia FP: Call to action', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_action_widget';
-		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
+	
     }
 	
 	// widget form creation
@@ -64,7 +61,6 @@ class Moesia_Action extends WP_Widget {
 		$instance['action_btn_link'] = esc_url_raw($new_instance['action_btn_link']);
 		$instance['action_btn_text'] = strip_tags($new_instance['action_btn_text']);
 	    $instance['image_uri'] 		 = esc_url_raw( $new_instance['image_uri'] );			
-		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_action']) )
@@ -72,11 +68,7 @@ class Moesia_Action extends WP_Widget {
 		  
 		return $instance;
 	}
-	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_action', 'widget');
-	}
-	
+
 	// display widget
 	function widget($args, $instance) {
 		$cache = array();

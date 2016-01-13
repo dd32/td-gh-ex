@@ -7,10 +7,6 @@ class Moesia_Projects extends WP_Widget {
 		$widget_ops = array('classname' => 'moesia_projects_widget', 'description' => __( 'Show your most intresting projects.', 'moesia') );
         parent::__construct(false, $name = __('Moesia FP: Projects', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_projects_widget';
-		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
     }
 	
 	// widget form creation
@@ -60,7 +56,6 @@ class Moesia_Projects extends WP_Widget {
 		$instance['see_all'] 		= esc_url_raw( $new_instance['see_all'] );	
 		$instance['see_all_text'] 	= strip_tags($new_instance['see_all_text']);	    
 	    $instance['category'] 		= strip_tags($new_instance['category']);			
-		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_projects']) )
@@ -68,11 +63,7 @@ class Moesia_Projects extends WP_Widget {
 		  
 		return $instance;
 	}
-	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_projects', 'widget');
-	}
-	
+
 	// display widget
 	function widget($args, $instance) {
 		$cache = array();

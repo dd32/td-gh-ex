@@ -9,10 +9,6 @@ class Moesia_Recent_Comments extends WP_Widget {
 
 		if ( is_active_widget(false, false, $this->id_base) )
 			add_action( 'wp_head', array($this, 'recent_comments_style') );
-
-		add_action( 'comment_post', array($this, 'flush_widget_cache') );
-		add_action( 'edit_comment', array($this, 'flush_widget_cache') );
-		add_action( 'transition_comment_status', array($this, 'flush_widget_cache') );
 	}
 
 	function recent_comments_style() {
@@ -31,10 +27,6 @@ class Moesia_Recent_Comments extends WP_Widget {
 		?>
 	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
 <?php
-	}
-
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_recent_comments', 'widget');
 	}
 
 	function widget( $args, $instance ) {
@@ -113,7 +105,6 @@ class Moesia_Recent_Comments extends WP_Widget {
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['number'] = absint( $new_instance['number'] );
 		$instance['show_date'] = isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : false;
-		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_recent_comments']) )

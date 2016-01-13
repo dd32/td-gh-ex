@@ -6,11 +6,7 @@ class Moesia_Skills extends WP_Widget {
     function moesia_skills() {
 		$widget_ops = array('classname' => 'moesia_skills_widget', 'description' => __( 'Show your strongest five skills.', 'moesia') );
         parent::__construct(false, $name = __('Moesia FP: Skills', 'moesia'), $widget_ops);
-		$this->alt_option_name = 'moesia_skills_widget';
-		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
+		$this->alt_option_name = 'moesia_skills_widget';	
     }
 	
 	// widget form creation
@@ -125,17 +121,12 @@ class Moesia_Skills extends WP_Widget {
 		$instance['skill_five'] 	= strip_tags($new_instance['skill_five']);
 		$instance['skill_five_max'] = intval($new_instance['skill_five_max']);
 	    $instance['image_uri'] 		= esc_url_raw( $new_instance['image_uri'] );			
-		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_skills']) )
 			delete_option('moesia_skills');		  
 		  
 		return $instance;
-	}
-	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_skills', 'widget');
 	}
 	
 	// display widget

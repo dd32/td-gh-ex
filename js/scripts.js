@@ -19,8 +19,8 @@ jQuery(function($) {
 });
 
 //Page loader
-jQuery(document).ready(function($) {
-	$("#page").show();
+jQuery(function($) {
+	$('#page').css('visibility', 'visible');
 });
 
 //Menu dropdown animation

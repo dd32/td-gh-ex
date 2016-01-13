@@ -6,11 +6,7 @@ class Moesia_Employees extends WP_Widget {
     function moesia_employees() {
 		$widget_ops = array('classname' => 'moesia_employees_widget', 'description' => __( 'Display your team members in a stylish way.', 'moesia') );
         parent::__construct(false, $name = __('Moesia FP: Employees', 'moesia'), $widget_ops);
-		$this->alt_option_name = 'moesia_employees_widget';
-		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
+		$this->alt_option_name = 'moesia_employees_widget';	
     }
 	
 	// widget form creation
@@ -62,17 +58,11 @@ class Moesia_Employees extends WP_Widget {
 		$instance['see_all_text'] 	= strip_tags($new_instance['see_all_text']);	
 		$instance['category'] = strip_tags($new_instance['category']);
 
-		$this->flush_widget_cache();
-
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_employees']) )
 			delete_option('moesia_employees');		  
 		  
 		return $instance;
-	}
-	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_employees', 'widget');
 	}
 	
 	// display widget

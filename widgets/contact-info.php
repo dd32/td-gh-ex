@@ -7,10 +7,6 @@ class Moesia_Contact_Info extends WP_Widget {
 		$widget_ops = array('classname' => 'moesia_contact_info_widget', 'description' => __( 'Display your contact info', 'moesia') );
         parent::__construct(false, $name = __('Moesia: Contact info', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_contact_info';
-		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
     }
 	
 	// widget form creation
@@ -47,7 +43,6 @@ class Moesia_Contact_Info extends WP_Widget {
 		$instance['address'] = strip_tags($new_instance['address']);
 		$instance['phone'] = strip_tags($new_instance['phone']);
 		$instance['email'] = sanitize_email($new_instance['email']);
-		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_contact_info']) )
@@ -56,9 +51,6 @@ class Moesia_Contact_Info extends WP_Widget {
 		return $instance;
 	}
 	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_contact_info', 'widget');
-	}
 	
 	// display widget
 	function widget($args, $instance) {

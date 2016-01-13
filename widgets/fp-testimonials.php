@@ -6,11 +6,7 @@ class Moesia_Testimonials extends WP_Widget {
     function moesia_testimonials() {
 		$widget_ops = array('classname' => 'moesia_testimonials_widget', 'description' => __( 'Display testimonials from your clients.', 'moesia') );
         parent::__construct(false, $name = __('Moesia FP: Testimonials', 'moesia'), $widget_ops);
-		$this->alt_option_name = 'moesia_testimonials_widget';
-		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
+		$this->alt_option_name = 'moesia_testimonials_widget';		
     }
 	
 	// widget form creation
@@ -66,17 +62,11 @@ class Moesia_Testimonials extends WP_Widget {
 		$instance['category'] 		= strip_tags($new_instance['category']);
 		$instance['random'] 		= isset( $new_instance['random'] ) ? (bool) $new_instance['random'] : false;	
 
-		$this->flush_widget_cache();
-
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_testimonials']) )
 			delete_option('moesia_testimonials');		  
 		  
 		return $instance;
-	}
-	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_testimonials', 'widget');
 	}
 	
 	// display widget

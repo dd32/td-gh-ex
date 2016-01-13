@@ -8,9 +8,6 @@ class Moesia_Facts extends WP_Widget {
         parent::__construct(false, $name = __('Moesia FP: Facts', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_facts_widget';
 		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
     }
 	
 	// widget form creation
@@ -103,17 +100,12 @@ class Moesia_Facts extends WP_Widget {
 		$instance['fact_four'] 	= strip_tags($new_instance['fact_four']);
 		$instance['fact_four_max'] = intval($new_instance['fact_four_max']);
 	    $instance['image_uri'] 		= esc_url_raw( $new_instance['image_uri'] );			
-		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_facts']) )
 			delete_option('moesia_facts');		  
 		  
 		return $instance;
-	}
-	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_facts', 'widget');
 	}
 	
 	// display widget

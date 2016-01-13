@@ -7,10 +7,6 @@ class Moesia_Recent_Posts extends WP_Widget {
 		$widget_ops = array('classname' => 'moesia_recent_posts_widget', 'description' => __( 'Display your site&#8217;s recent posts with thumbnails.', 'moesia') );
         parent::__construct(false, $name = __('Moesia: Recent Posts', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_Recent_Posts_widget';
-		
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );		
     }
 	
 	// widget form creation
@@ -42,7 +38,6 @@ class Moesia_Recent_Posts extends WP_Widget {
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['number'] = strip_tags($new_instance['number']);
 		$instance['show_date'] = isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : false;
-		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['moesia_Recent_Posts']) )
@@ -50,11 +45,7 @@ class Moesia_Recent_Posts extends WP_Widget {
 		  
 		return $instance;
 	}
-	
-	function flush_widget_cache() {
-		wp_cache_delete('moesia_Recent_Posts', 'widget');
-	}
-	
+		
 	// display widget
 	function widget($args, $instance) {
 		$cache = array();
