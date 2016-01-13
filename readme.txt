@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: gray, green, white, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 4.3.1
-Stable tag: 1.2.3
+Tested up to: 4.4.1
+Stable tag: 1.2.4
 
 == ABOUT WORTEX LITE ==
 
@@ -40,7 +40,7 @@ This theme bundles some third party javascript/jQuery plugins and font, all open
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
 * Font Awesome: Copyright Dave Gandy. Font licensed under SIL OFL 1.1. CSS code licensed under MIT License. http://fortawesome.github.io/Font-Awesome/
 
-All other files are Copyright 2014-2015 Iceable Media.
+All other files are Copyright 2014-2016 Iceable Media.
 
 == TRANSLATIONS ==
 
@@ -55,6 +55,13 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.2.4 =
+November 23rd, 2015
+January 13th, 2016
+* Enhanced support for <!--more--> quicktag
+* Updated copyright to 2016
+* Tested with WordPress 4.4.1
 
 = 1.2.3 =
 November 23rd, 2015
