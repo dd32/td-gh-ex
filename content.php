@@ -8,18 +8,15 @@
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-            <?php 
-                if( is_author() || is_tag() || is_archive() || is_home() ){
-                    $post_categories = get_the_category_list();
-                    echo $post_categories;
-                }
-            ?>
-			<?php accesspress_mag_posted_on(); ?>
-            <?php do_action( 'accesspress_mag_post_meta' );?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
+		<?php if ( 'post' == get_post_type() ) { ?>
+    		<div class="entry-meta">
+                <?php
+                    do_action( 'accesspress_mag_post_categories' );
+                    accesspress_mag_posted_on();
+                    do_action( 'accesspress_mag_post_meta' )
+                ;?>
+    		</div><!-- .entry-meta -->
+		<?php } ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

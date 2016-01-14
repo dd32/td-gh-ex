@@ -43,7 +43,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php accesspress_mag_posts_navigation(); wp_pagenavi(); ?>
+			<?php accesspress_mag_posts_navigation(); ?>
 
 		<?php else : ?>
 
@@ -54,8 +54,14 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar( 'right' ); ?>
-</div>
+<?php 
+	$sidebar_option = of_get_option( 'global_archive_sidebar', 'right-sidebar' );
+	if( $sidebar_option != 'no-sidebar' ){
+	    $option_value = explode( '-', $sidebar_option ); 
+	    get_sidebar( $option_value[0] );
+	}
+?>
+</div><!-- .apmag-container -->
 
 <?php do_action( 'accesspress_mag_after_body_content' ); ?>
 

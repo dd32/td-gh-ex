@@ -15,7 +15,7 @@ function optionsframework_options() {
 	// Pull all the categories into an array
 	$options_categories = array();
 	$options_categories_obj = get_categories();
-        $options_categories[]= __( 'Select category', 'accesspress-mag' );
+    $options_categories[]= __( 'Select category', 'accesspress-mag' );
 	foreach ($options_categories_obj as $category) {
 		$options_categories[$category->slug] = $category->cat_name;
 	}
@@ -31,7 +31,7 @@ function optionsframework_options() {
     //No.of posts for homepage blocks
     $options_block_posts = array();
     $options_block_posts[-1]= __( 'All posts', 'accesspress-mag' );
-    for($i=4;$i<=10;$i++)
+    for( $i=4; $i<=15; $i++ )
     {
         $options_block_posts[$i] = $i ;
     }    
@@ -386,7 +386,7 @@ function optionsframework_options() {
             'name' => __( 'Homepage Settings', 'accesspress-mag' ),
 		    'type' => 'heading'
 	        );
-    
+    /*-----------------------Slider Settings------------------------*/
     $options[] = array(
             'name' => __( 'Slider Settings', 'accesspress-mag' ),
             'id'   => 'slider_settings',
@@ -464,16 +464,7 @@ function optionsframework_options() {
             'off' => __( 'No', 'accesspress-mag'),
             'std' => '1',
             'type' => 'switch'
-            );/*
-    $options[] = array(
-            'name' => __( 'Show Category Box', 'accesspress-mag' ),                
-            'desc' => __( 'Show or hide category box in slider post', 'accesspress-mag' ),
-            'id' => 'slider_cat_box_option',
-            'on' => __( 'Yes', 'accesspress-mag'),
-            'off' => __( 'No', 'accesspress-mag'),
-            'std' => '1',
-            'type' => 'switch'
-            ); */
+            );
     $options[] = array(
             'name' => __( 'Number of slides', 'accesspress-mag' ),
             'desc' => __( 'Choose number of slides', 'accesspress-mag' ),
@@ -485,7 +476,7 @@ function optionsframework_options() {
     $options[] = array(
             'type' => 'groupend'
             );
-            
+    /*-----------------------Block Settings------------------------*/        
     $options[] = array(
             'name' => __( 'Blocks settings', 'accesspress-mag' ),
             'id'   => 'blocks_settings',
@@ -572,6 +563,7 @@ function optionsframework_options() {
             'desc' => __( 'Choose number of posts for editor pick section', 'accesspress-mag' ),
             'id' => 'posts_for_editor_pick', 
             'type' => 'select',
+            'std' => '4',
             'options' => $options_block_posts
             );
     $options[] = array(
@@ -834,7 +826,7 @@ function optionsframework_options() {
             'id' => 'translate_notice',
             'type' => 'info', 
             );
-     for($i=0;$i<$trans_count;$i++)
+     for( $i=0; $i<$trans_count; $i++ )
      {
         $options[] = array(
             'name' => $translation_name[$i],

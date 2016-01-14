@@ -84,6 +84,11 @@ function accesspress_mag_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	/*
+	 * Enable woocommerce support
+	 */
+	add_theme_support( 'woocommerce' );
 }
 endif; // accesspress_mag_setup
 add_action( 'after_setup_theme', 'accesspress_mag_setup' );
@@ -109,7 +114,7 @@ function accesspress_mag_scripts() {
     
     wp_enqueue_style( 'fontawesome-font', get_template_directory_uri(). '/css/font-awesome.min.css' );
     	
-    wp_enqueue_style( 'accesspress-mag-style', get_stylesheet_uri(), array(), esc_attr($theme_version) );
+    wp_enqueue_style( 'accesspress-mag-style', get_stylesheet_uri(), array(), esc_attr( $theme_version ) );
 
     wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css', array(), esc_attr($theme_version) );
     

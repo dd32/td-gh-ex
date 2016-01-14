@@ -21,5 +21,5 @@
         <input type="submit" value="<?php echo esc_attr( $search_button ); ?>" class="search-submit" />
      </form>
      <div class="overlay-search"> </div> 
-    </div>
-</div> 
+    </div><!-- .ak-search -->
+</div><!-- .search-icon -->

@@ -8,8 +8,7 @@
 add_action( 'add_meta_boxes', 'accesspress_mag_add_sidebar_layout_box' ); 
  
 function accesspress_mag_add_sidebar_layout_box()
-{
-    
+{    
     add_meta_box(
                  'accesspress_mag_post_settings', // $id
                  __( 'Post settings', 'accesspress-mag' ), // $title
@@ -104,12 +103,8 @@ function accesspress_mag_post_settings_callback()
 
 <div class="my_post_settings">
         <table class="form-table">
-            <tr>
-            <td colspan="4"><em class="f13"><?php _e( 'Post template:', 'accesspress-mag' )?></em></td>
-            </tr>
-            
-            <tr>
-            <td>
+            <tr><td colspan="4"><em class="f13"><?php _e( 'Post template:', 'accesspress-mag' )?></em></td></tr>            
+            <tr><td>
             <?php  
                foreach ($accesspress_mag_post_template_layout as $field) {  
                             $accesspress_mag_post_template_metalayout = get_post_meta( $post->ID, 'accesspress_mag_post_template_layout', true );?>
@@ -124,18 +119,12 @@ function accesspress_mag_post_settings_callback()
                             ?>
                             <span class="pro-tmp-msg" style="display: none;"><?php _e( 'Template available in pro version', 'accesspress-mag' );?></span>
                             <div class="clear"></div>
-            </td>
-            </tr>
-            
+            </td></tr>
         </table>
         
         <table class="form-table">
-            <tr>
-            <td colspan="4"><em class="f13"><?php _e( 'Post Sidebar', 'accesspress-mag' ); ?></em></td>
-            </tr>
-            
-            <tr>
-            <td>
+            <tr><td colspan="4"><em class="f13"><?php _e( 'Post Sidebar', 'accesspress-mag' ); ?></em></td></tr>            
+            <tr><td>
             <?php  
                foreach ($accesspress_mag_sidebar_layout as $field) {  
                 $accesspress_mag_sidebar_metalayout = get_post_meta( $post->ID, 'accesspress_mag_sidebar_layout', true ); ?>
@@ -149,13 +138,12 @@ function accesspress_mag_post_settings_callback()
                 <?php } // end foreach 
                 ?>
                 <div class="clear"></div>
-            </td>
-            </tr>
+            </td></tr>
             <tr>
                 <td><em class="f13"><?php _e( 'You can set up the sidebar content ', 'accesspress-mag' );?> <a href="<?php echo admin_url('/themes.php?page=ap-theme-options'); ?>"><?php _e( 'here', 'accesspress-mag' )?></a></em></td>
             </tr>
         </table>
-</div>
+</div><!-- .my_post_settings -->
 
 <?php
 }
@@ -168,12 +156,8 @@ function accesspress_mag_page_settings_callback()
     wp_nonce_field( basename( __FILE__ ), 'accesspress_mag_page_settings_nonce' );
 ?>
         <table class="form-table">
-            <tr>
-            <td colspan="4"><em class="f13"><?php _e('Page Sidebar','accesspress-mag'); ?></em></td>
-            </tr>
-            
-            <tr>
-            <td>
+            <tr><td colspan="4"><em class="f13"><?php _e('Page Sidebar','accesspress-mag'); ?></em></td></tr>
+            <tr><td>
             <?php  
                foreach ($accesspress_mag_page_sidebar_layout as $field) {  
                             $accesspress_mag_page_sidebar_metalayout = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout', true ); ?>
@@ -187,13 +171,11 @@ function accesspress_mag_page_settings_callback()
                             <?php } // end foreach 
                             ?>
                             <div class="clear"></div>
-            </td>
-            </tr>
+            </td></tr>
             <tr>
                 <td><em class="f13"><?php _e( 'You can set up the sidebar content', 'accesspress-mag' );?> <a href="<?php echo esc_url( admin_url('/themes.php?page=ap-theme-options') ); ?>"><?php _e( 'here', 'accesspress-mag' );?></a></em></td>
             </tr>
         </table>
-
 <?php
 }
 

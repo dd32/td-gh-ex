@@ -286,8 +286,10 @@
     }
 }
 /* Landscape phones and down */
-
 @media (max-width: 579px) {
+    .apmag-news-ticker {
+        display: none;
+    }
     .big-cat-box {
         width: 115px;
         padding: 10px;
@@ -421,6 +423,10 @@
     }
     #top-right-navigation .menu li {
         display: inline-block;
+        float: none;
+    }
+    .header-ad,.homepage-middle-ad, .article-ad-section{
+        width: auto;
         float: none;
     }
 }

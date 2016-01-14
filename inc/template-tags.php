@@ -52,7 +52,6 @@ function accesspress_mag_posts_navigation() {
 	<nav class="navigation posts-navigation clearfix" role="navigation">
 		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'accesspress-mag' ); ?></h2>
 		<div class="nav-links">
-
 			<?php 
                 if ( get_next_posts_link() ) :
                 $older_text = of_get_option( 'trans_older_posts', 'Older Posts' );
@@ -66,7 +65,6 @@ function accesspress_mag_posts_navigation() {
             ?>
 			<div class="nav-next"><?php previous_posts_link( $newer_text ); ?></div>
 			<?php endif; ?>
-
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php

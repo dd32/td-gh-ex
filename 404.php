@@ -21,8 +21,8 @@ get_header(); ?>
 							</div>
 						</div>
 					</div><!-- .page-content -->
-				</div>
-            </section>
+				</div><!-- .apmag-container -->
+            </section><!-- .error-404 -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

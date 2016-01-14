@@ -61,42 +61,43 @@ class Accesspress_mag_register_latest_posts extends WP_Widget {
         extract( $args );
         $latest_posts_title = $instance[ 'latest_posts_title' ];
         $latest_posts_count = $instance[ 'latest_posts_count' ];
-        echo $before_widget; ?>
+        echo $before_widget; 
+    ?>
         <div class="latest-posts clearfix">
            <h1 class="widget-title"><span><?php if( !empty( $latest_posts_title ) ){ echo esc_attr( $latest_posts_title ); } ?></span></h1>     
            <div class="latest-posts-wrapper">
                 <?php
                     $latest_posts_args = array( 'post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>$latest_posts_count, 'order'=>'DESC' );
                     $latest_posts_query = new WP_Query( $latest_posts_args );
-                    if($latest_posts_query->have_posts()){
-                        while($latest_posts_query->have_posts()){
+                    if( $latest_posts_query->have_posts() ) {
+                        while( $latest_posts_query->have_posts() ) {
                             $latest_posts_query->the_post();
                             $image_id = get_post_thumbnail_id();
                             $image_path = wp_get_attachment_image_src( $image_id, 'accesspress-mag-block-small-thumb', true );
                             $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
                 ?>
                     <div class="latest-single-post clearfix">
-                        <div class="post-img"><a href="<?php the_permalink();?>">
-                            <?php if(has_post_thumbnail()): ?>
-                            <img src="<?php echo esc_url( $image_path[0] );?>" alt="<?php echo esc_attr( $image_alt );?>" />
-                            <?php else: ?>
-                            <img src="<?php echo esc_url( get_template_directory_uri(). '/images/no-image-small.jpg' );?>" alt="<?php _e( 'No image', 'accesspress-mag' );?>" />                            
-                            <?php endif ;?>
-                        </a></div>
+                        <div class="post-img">
+                            <a href="<?php the_permalink();?>">
+                            <?php if( has_post_thumbnail() ) { ?>
+                                <img src="<?php echo esc_url( $image_path[0] );?>" alt="<?php echo esc_attr( $image_alt );?>" />
+                            <?php } else { ?>
+                                <img src="<?php echo esc_url( get_template_directory_uri(). '/images/no-image-small.jpg' );?>" alt="<?php _e( 'No image', 'accesspress-mag' );?>" />                            
+                            <?php } ?>
+                            </a>
+                        </div><!-- .post-img -->
                         <div class="post-desc-wrapper">
-                            <h3 class="post-title">
-                                <a href="<?php the_permalink();?>"><?php the_title(); ?></a>
-                            </h3>
+                            <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
                             <div class="block-poston"><?php do_action( 'accesspress_mag_home_posted_on' );?></div>
-                        </div>                    
-                    </div>
+                        </div><!-- .post-desc-wrapper -->
+                    </div><!-- .latest-single-post -->
                 <?php
                         }                                               
-                    }
+                    }//endif wp_query
                 ?>
-           </div> 
-        </div>
-        <?php 
+           </div><!-- .latest-posts-wrapper -->
+        </div><!-- .latest-posts -->
+    <?php 
         echo $after_widget;
     }
 

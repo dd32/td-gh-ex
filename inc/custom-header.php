@@ -120,7 +120,7 @@ function accesspress_mag_admin_header_image() {
 		<?php if ( get_header_image() ) : ?>
 		<img src="<?php header_image(); ?>" alt="<?php _e( 'Site Logo', 'accesspress-mag' );?>">
 		<?php endif; ?>
-	</div>
+	</div><!-- #headimg -->
 <?php
 }
 endif; // accesspress_mag_admin_header_image

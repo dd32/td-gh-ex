@@ -57,7 +57,7 @@ Fonts
 
 ----------------------------------------------------
 
-ScreenShot Images
+ScreenShot Images under CC0 Public Domain
     https://pixabay.com/en/glamour-style-hat-woman-portrait-678834/
     http://pixabay.com/en/model-fashion-glamour-girl-female-600238/
     https://pixabay.com/en/girls-friends-friendship-young-685778/
@@ -70,6 +70,11 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.2.5
+ * Updated woocommerce template
+ * Refine and removed unused/comment codes
+ * Fixed css for header ad section
+ 
 Version 2.2.4
  * Fixed bugs at archive page
  * Fixed multiple textdomain

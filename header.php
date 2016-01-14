@@ -60,7 +60,7 @@
                             <?php wp_nav_menu( array( 'theme_location' => 'top_menu_right', 'container_class' => 'top_menu_right' ) ); ?>
                 </nav><!-- #site-navigation -->
             <?php } ?>
-            </div>
+            </div><!-- .apmag-container -->
         </div><!-- .top-menu-wrapper -->
         
         <?php 
@@ -78,15 +78,14 @@
                         </a>
                         <?php } ?>
                         <meta itemprop="name" content="<?php bloginfo( 'name' )?>" />
-                    </div>
+                    </div><!-- .sitelogo-wrap -->
                     <div class="sitetext-wrap">  
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                         <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
                         <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
                         </a>
-                    </div>                   
-                 </div><!-- .site-branding -->        		
-                
+                    </div><!-- .sitetext-wrap -->
+                 </div><!-- .site-branding -->                
                 
                 <?php if ( is_active_sidebar( 'accesspress-mag-header-ad' ) ) : ?>
                     <div class="header-ad">
@@ -96,7 +95,6 @@
                 
             </div><!-- .apmag-container -->
         </div><!-- .logo-ad-wrapper -->
-   
     	
         <nav id="site-navigation" class="main-navigation">
 			<div class="apmag-container">
@@ -113,12 +111,12 @@
                             wp_page_menu();
                         }
                     ?>
-                </div>                
-                <?php get_search_form(); ?>
-                <?php if ( $accesspress_mag_random_icon == 1 ) { ?>
-                  <?php accesspress_mag_random_post(); ?>
-               <?php } ?>
-            </div>
+                </div><!-- .nav-wrapper -->
+                <?php 
+                    get_search_form(); 
+                    if ( $accesspress_mag_random_icon == 1 ) { accesspress_mag_random_post(); } 
+                ?>
+            </div><!-- .apmag-container -->
 		</nav><!-- #site-navigation -->
         
 	</header><!-- #masthead -->

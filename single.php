@@ -6,8 +6,8 @@
  */
 
 get_header(); 
-global $post;
 wp_reset_postdata();
+global $post;
 $accesspress_mag_show_breadcrumbs = of_get_option( 'show_hide_breadcrumbs', '1' );
 $post_template_value = of_get_option( 'global_post_template', 'single' );
 $accesspress_mag_post_template = get_post_meta( $post->ID, 'accesspress_mag_post_template_layout', true );
@@ -30,10 +30,11 @@ do_action( 'accesspress_mag_before_body_content' );
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', $content_value ); ?>
-            <?php 
+			<?php
+                get_template_part( 'content', $content_value );
+
                 $accesspress_mag_show_author_box = of_get_option( 'show_author_box' );
-                if( $accesspress_mag_show_author_box == 1 ):
+                if( $accesspress_mag_show_author_box == 1 ) {
             ?>
             <div class="author-metabox">
                 <?php
@@ -43,22 +44,20 @@ do_action( 'accesspress_mag_before_body_content' );
                 ?>
                 <div class="author-avatar">
                     <a class="author-image" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );?>"><?php echo $author_avatar; ?></a>
-                </div>
+                </div><!-- .author-avatar -->
                 <div class="author-desc-wrapper">                
                     <a class="author-title" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );?>"><?php echo esc_attr( $author_nickname ); ?></a>
                     <div class="author-description"><?php echo get_the_author_meta('description');?></div>
                     <a href="<?php echo esc_url( get_the_author_meta( 'user_url' ) );?>" target="_blank"><?php echo esc_url( get_the_author_meta( 'user_url' ) );?></a>
-                </div>
+                </div><!-- .author-desc-wrapper-->
             </div><!--author-metabox-->
-            <?php endif ;?>
+            <?php } ?>
 
 			<?php 
                 $show_post_navigation = of_get_option( 'show_post_nextprev', '1' );
                 if( $show_post_navigation == '1' ) { 
                     accesspress_mag_post_navigation();
                 }
-
-                
                 
                 // If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || get_comments_number() ) :
@@ -86,7 +85,7 @@ do_action( 'accesspress_mag_before_body_content' );
         get_sidebar( $option_value[0] );
     }
  ?>
-</div>
+</div><!-- .apmag-container -->
 
 <?php do_action( 'accesspress_mag_after_body_content' ); ?>
 

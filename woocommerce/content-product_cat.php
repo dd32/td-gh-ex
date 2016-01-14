@@ -6,7 +6,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     2.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,12 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $woocommerce_loop;
 
 // Store loop count we're currently on
-if ( empty( $woocommerce_loop['loop'] ) )
+if ( empty( $woocommerce_loop['loop'] ) ) {
 	$woocommerce_loop['loop'] = 0;
+}
 
 // Store column count for displaying the grid
-if ( empty( $woocommerce_loop['columns'] ) )
+if ( empty( $woocommerce_loop['columns'] ) ) {
 	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 3 );
+}
 
 // Increase loop count
 $woocommerce_loop['loop']++;

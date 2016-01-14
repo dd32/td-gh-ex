@@ -54,29 +54,26 @@ class Accesspress_mag_article_contributors extends WP_Widget {
     public function widget($args, $instance) {
         extract($args);
         $contributors_title = $instance['contributors_title'];
-        echo $before_widget; ?>
+        echo $before_widget; 
+    ?>
         <div class="contributors-wrapper clearfix">
            <h1 class="widget-title"><span><?php if( !empty( $contributors_title )  ){ echo esc_attr($contributors_title); } ?></span></h1>     
            <div class="single-user-wrapper">
                  <?php
                     $roles = array( 'Administrator', 'Author', 'Editor' );
-                    foreach($roles as $role)
-                    {
+                    foreach( $roles as $role ) {
                         $user_args = array(
                                         'fields'=>'all_with_meta',
                                         'orderby'=>'user_nicename',
                                         'role'=>$role
                                         );
                         $user_query = new WP_User_Query( $user_args );
-                        //echo '<pre>';
-//                        	print_r($user_query);
-//                        echo '</pre>';
-                                if ( ! empty( $user_query->results ) ) {
-                                	foreach ( $user_query->results as $user ) {
-                                		$user_name = $user->display_name;
-                                        $user_nickname = $user->user_nicename;
-                                        $user_id = $user->ID;
-                                        $user_avatar = get_avatar($user_id, '82'); 
+                        if ( ! empty( $user_query->results ) ) {
+                        	foreach ( $user_query->results as $user ) {
+                        		$user_name = $user->display_name;
+                                $user_nickname = $user->user_nicename;
+                                $user_id = $user->ID;
+                                $user_avatar = get_avatar($user_id, '82'); 
                 ?>
                             <div class="single-user">
                                 <a href="<?php echo esc_url( get_author_posts_url( $user_id, $user_nickname ) ) ;?>">
@@ -85,13 +82,13 @@ class Accesspress_mag_article_contributors extends WP_Widget {
                                 </a>
                             </div>
                 <?php
-                                	}
-                                } 
-                    }
+                        	}//endforeach $user_query
+                        }//endif $user_query
+                    }//endforeach $roles
                 ?>
-           </div> 
-        </div>
-        <?php 
+           </div><!-- .single-user-wrapper -->
+        </div><!-- .contributors-wrapper-->
+    <?php 
         echo $after_widget;
     }
 
