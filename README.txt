@@ -1,4 +1,4 @@
-Swell Lite v1.2.7
+Swell Lite v1.2.8
 http://www.swelltheme.com
 http://organicthemes.com
 
@@ -139,3 +139,6 @@ CHANGELOG v1.2.6:
 CHANGELOG v1.2.7:
 - Fix for mobile menu javascript issues
 - Fix to allow HTML in site description
+
+CHANGELOG v1.2.8:
+- Fixed sidebar issue related to column style additions
