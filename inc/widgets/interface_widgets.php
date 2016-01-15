@@ -627,8 +627,8 @@ class interface_Widget_Testimonial extends WP_Widget {
 </p>
 <p>&nbsp; </p>
 <p>
-  <input class="upload1" type="text"  name="<?php echo $this->get_field_name('image1'); ?>" value="<?php echo esc_url($image1); ?>" />
-  <input class="upload-button1" name="<?php echo $this->get_field_name('image1'); ?>" type="button" value="<?php esc_attr_e( 'Upload Image 1', 'interface' ); ?>" />
+  <input class="upload1" type="text"  id="<?php echo $this->get_field_id( 'image1' ); ?>" name="<?php echo $this->get_field_name('image1'); ?>" value="<?php echo esc_url($image1); ?>" />
+  <input class="button custom_media_button" name="<?php echo $this->get_field_name('image1'); ?>" id="custom_media_button_services" type="button" value="<?php esc_attr_e( 'Upload Image 1', 'interface' ); ?>" onclick="mediaupload.uploader( '<?php echo $this->get_field_id( 'image1' ); ?>' ); return false;" />
 </p>
 <?php _e( 'Testimonial Description 1','interface'); ?>
 <textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('text1'); ?>" name="<?php echo $this->get_field_name('text1'); ?>"><?php echo $text1; ?></textarea>
@@ -658,8 +658,8 @@ class interface_Widget_Testimonial extends WP_Widget {
 </p>
 <p>&nbsp; </p>
 <p>
-  <input class="upload1" type="text"  name="<?php echo $this->get_field_name('image2'); ?>" value="<?php echo esc_url($image2); ?>" />
-  <input class="upload-button1" name="<?php echo $this->get_field_name('image2'); ?>" type="button" value="<?php esc_attr_e( 'Upload Image 2', 'interface' ); ?>" />
+  <input class="upload1" type="text"  id="<?php echo $this->get_field_id( 'image2' ); ?>" name="<?php echo $this->get_field_name('image2'); ?>" value="<?php echo esc_url($image2); ?>" />
+  <input class="button custom_media_button" name="<?php echo $this->get_field_name('image2'); ?>" id="custom_media_button_services" type="button" value="<?php esc_attr_e( 'Upload Image 2', 'interface' ); ?>" onclick="mediaupload.uploader( '<?php echo $this->get_field_id( 'image2' ); ?>' ); return false;" />
 </p>
 <?php _e( 'Testimonial Description 2','interface'); ?>
 <textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('text2'); ?>" name="<?php echo $this->get_field_name('text2'); ?>"><?php echo $text2; ?></textarea>
@@ -731,8 +731,8 @@ class interface_featured_image_widget extends WP_Widget {
  			$var1 = 'redirectlink'.$i;
 		?>
 <p>
-  <input type="text" class="upload1" name="<?php echo $this->get_field_name( $var ); ?>" value="<?php if(isset ( $instance[$var] ) ) echo esc_url( $instance[$var] ); ?>" />
-  <input class="upload-button1" name="image-add" type="button" value="<?php echo esc_attr( 'Add Image'); ?>" />
+  <input type="text" class="upload1" id="<?php echo $this->get_field_id( $var ); ?>" name="<?php echo $this->get_field_name( $var ); ?>" value="<?php if(isset ( $instance[$var] ) ) echo esc_url( $instance[$var] ); ?>" />
+  <input class="button custom_media_button" name="image-add" id="custom_media_button_services" type="button" value="<?php echo esc_attr( 'Add Image'); ?>" onclick="mediaupload.uploader( '<?php echo $this->get_field_id( $var ); ?>' ); return false;" />
   <br />
 </p>
 <p>

@@ -1,4 +1,9 @@
 == CHANGE LOG ==
+= 3.0.3 =
+ - Fix - Frontpage Category issue fixed
+ - Fix - Widgets Upload button issue fixed
+ - Update - Russian Language Updated. Thanks to Kirill Belotserkovskiy <k.belotserkovskiy@gmail.com> for updating the translation files
+
 = 3.0.2 =
  - Fix - interface_before whitespace removed
  - Fix -  Searchform display issue fixed
