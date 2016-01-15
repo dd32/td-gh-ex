@@ -1,115 +1,90 @@
 <?php
 /**
- * Sample implementation of the Custom Header feature
- * http://codex.wordpress.org/Custom_Headers
+ * Sample implementation of the Custom Header feature.
  *
- * 
+ * You can add an optional custom header image to header.php like so ...
+ *
+ * @link https://developer.wordpress.org/themes/functionality/custom-headers/
+ *
  * @package landscape
  */
 
 /**
- * Setup the WordPress core custom header feature.
+ * Set up the WordPress core custom header feature.
  *
- * Use add_theme_support to register support for WordPress 3.4+
- * as well as provide backward compatibility for previous versions.
- * Use feature detection of wp_get_theme() which was introduced
- * in WordPress 3.4.
- *
- *
- * @package landscape
+ * @uses landscape_header_style()
  */
-$args = array(
-	'width'         => 1440,
-	'height'        => 500,
-	'default-image' => get_template_directory_uri() . '/images/default-header.jpg',
-	'header-text'   => false,
-	'uploads'       => true,
-);
-add_theme_support( 'custom-header', $args );
+function landscape_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'landscape_custom_header_args', array(
+		'default-image'          => get_template_directory_uri() . '/images/default-header.jpg',
+		'default-text-color'     => 'ffffff',
+		'width'                  => 1600,
+		'height'                 => 650,
+		'flex-height'            => true,
+		'wp-head-callback'       => 'landscape_header_style',
+	) ) );
+}
+add_action( 'after_setup_theme', 'landscape_custom_header_setup' );
 
-
-
-if ( ! function_exists( 'landscape_admin_header_image' ) ) :
+if ( ! function_exists( 'landscape_header_style' ) ) :
 /**
- * Custom header image markup displayed on the Appearance > Header admin panel.
+ * Styles the header image and text displayed on the blog
  *
  * @see landscape_custom_header_setup().
- *
- * @since landscape 1.0
  */
-function landscape_admin_header_image() { ?>
-	<div id="headimg">
-		<?php
-		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
-			$style = ' style="display:none;"';
-		else
-			$style = ' style="color:#' . get_header_textcolor() . ';"';
-		?>
-		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-	</div>
-<?php }
-endif; // landscape_admin_header_image
-
-
-if ( ! function_exists( 'landscape_custom_header_image' ) ) :
-/**
- * Header image styles for custom header and featured images
- *
- * @since landscape 1.0
- */
-function landscape_custom_header_image() {
-
+function landscape_header_style() {
+	$header_text_color = get_header_textcolor();
+	$featured_image = landscape_check_featured_image();
 	$header_image = get_header_image();
-	global $content_width;
-?>
 
+	// If no custom options for text or images are set, let's bail
+	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
+	if ( HEADER_TEXTCOLOR == $header_text_color && empty( $header_image ) ) {
+		return;
+	}
+
+	// If we get this far, we have custom styles. Let's do this.
+	?>
 	<style type="text/css">
+	<?php
+		// Has the text been hidden?
+		if ( 'blank' == $header_text_color ) :
+	?>
+		.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+	<?php
+		// If the user has set a custom color for the text use that
+		else :
+	?>
+		.site-title a,
+		.site-description,
+		.has-header-image .site-branding .site-title a,
+		.has-header-image .site-branding .site-description,
+		.has-header-image .site-branding a {
+			color: #<?php echo esc_attr( $header_text_color ); ?>;
+		}
+	<?php endif; ?>
+	</style>
 
 	<?php
+		if ( ! empty( $header_image ) && $featured_image == false ) :
+			?>
+				<style type="text/css">
+					#masthead {
+						background-image: url(<?php header_image(); ?>);
+						background-position: center center;
+						-webkit-background-size: cover;
+						background-size: cover;
+					}
 
-	if ( ! empty( $header_image ) ) :
+					.has-header-image .site-branding a {
+						color: #000;
+					}
+				</style>
+			<?php endif; // endif $featured_image && $header_image
+} // landscape_header_style
 
-		$background = "rgba(0,0,0,.7)"; ?>
-
-		#masthead {
-			background: #111 url( <?php echo esc_url( $header_image ); ?> ) center 0 no-repeat;
-			margin-top: 0;
-			padding-bottom: 0;
-			max-width: 100%;
-			height: <?php echo get_custom_header()->height; ?>px;
-		}
-
-	<?php endif; // !empty header_image()
-
-	if ( is_single() || is_page() ) :
-
-		if ( '' != get_the_post_thumbnail() ) :
-
-			$featured_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'featured-thumbnail' );
-			$header_image = "background: #111 url(" . $featured_image_url[0] . ") center 0 no-repeat;";
-			$menubackground = "rgba(0,0,0,.7)";
-			$mastheadbackground = "#111";
-			$mastheadheight = "500px";
-			$paddingbottom = "0"; ?>
-
-
-			#masthead {
-				<?php echo $header_image; ?>
-				margin-top: 0;
-				padding-bottom: <?php echo $paddingbottom; ?>;
-				max-width: 100%;theadheight; ?>;
-				position: relative;
-				background-color: <?php echo $mastheadbackground; ?>;
-			}
-			#masthead hgroup{
-				display:none;
-			}
-		<?php endif; //'' != get_the_post_thumbnail() ?>
-	<?php endif; //is_single() && ! is_attachment() ?>
-	</style>
-<?php
-}
-endif; // landscape_custom_header_image
-
-add_action( 'wp_head', 'landscape_custom_header_image' );
+endif; // ! function_exists( 'landscape_header_style' )

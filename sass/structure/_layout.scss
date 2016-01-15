@@ -1,0 +1,24 @@
+//--------------------------------------------------------------
+// Base Layout
+//--------------------------------------------------------------
+
+// Structure
+
+.wrap {
+	max-width: rem(1000);
+	margin: 0 auto;
+	padding: 0 rem(40);
+	overflow: hidden;
+
+	@include wider-than(desktop) {
+		padding: 0;
+	}
+}
+
+.site-content {
+	margin: 4em auto 0;
+}
+
+.primary {
+	@include fill-parent;
+}

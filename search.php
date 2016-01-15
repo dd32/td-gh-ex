@@ -1,40 +1,51 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying search results pages.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @package landscape
  */
 
 get_header(); ?>
 
-		<section id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
+
+	<div class="wrap">
+
+		<section class="primary content-area">
+			<main id="main" class="site-main" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'landscape' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'landscape' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header><!-- .page-header -->
-
-				<?php landscape_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content', 'search' ); ?>
+					<?php
+					/**
+					 * Run the loop for the search to output the results.
+					 * If you want to overload this in a child theme then include a file
+					 * called content-search.php and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', 'search' );
+					?>
 
 				<?php endwhile; ?>
 
-				<?php landscape_content_nav( 'nav-below' ); ?>
+				<?php the_posts_navigation(); ?>
 
 			<?php else : ?>
 
-				<?php get_template_part( 'no-results', 'search' ); ?>
+				<?php get_template_part( 'pagebuilder/template-parts/content', 'none' ); ?>
 
 			<?php endif; ?>
 
-			</div><!-- #content .site-content -->
-		</section><!-- #primary .content-area -->
+			</main><!-- #main -->
+		</section><!-- .primary -->
 
-<?php get_sidebar(); ?>
+	</div><!-- .wrap -->
+
 <?php get_footer(); ?>

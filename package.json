@@ -1,0 +1,40 @@
+{
+  "name": "diversethemes.com",
+  "version": "1.0.0",
+  "description": "A theme boilerplate for diversethemes.com.",
+  "author": "diversethemes.com",
+  "homepage": "https://diversethemes.com/premium-themes/landscape/",
+  "bugs": "https://diversethemes.com/contact",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "css-mqpacker": "latest",
+    "glob": "latest",
+    "grunt": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-cssnano": "latest",
+    "grunt-githooks": "latest",
+    "grunt-newer": "latest",
+    "grunt-notify": "latest",
+    "grunt-phpcs": "latest",
+    "grunt-postcss": "latest",
+    "grunt-sass": "latest",
+    "grunt-shell": "latest",
+    "grunt-spritesmith": "latest",
+    "grunt-svgmin": "latest",
+    "grunt-svgstore": "latest",
+    "grunt-wp-i18n": "latest",
+    "load-grunt-tasks": "latest"
+  },
+  "license": "GPL-2.0+"
+}
