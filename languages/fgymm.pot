@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fGymm Theme\n"
-"POT-Creation-Date: 2015-10-11 21:57+0200\n"
-"PO-Revision-Date: 2015-10-11 21:57+0200\n"
+"POT-Creation-Date: 2016-01-16 21:05+0200\n"
+"PO-Revision-Date: 2016-01-16 21:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: Tishonator Team <info@tishonator.com>\n"
 "Language: English\n"
@@ -38,8 +38,8 @@ msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
 #: ../comments.php:22
-#: ../template-parts/content-page.php:18
-#: ../template-parts/content.php:64
+#: ../template-parts/content-page.php:19
+#: ../template-parts/content.php:53
 msgid "No Comments"
 msgstr ""
 
@@ -56,8 +56,8 @@ msgid "to"
 msgstr ""
 
 #: ../comments.php:37
-#: ../template-parts/content-page.php:18
-#: ../template-parts/content.php:64
+#: ../template-parts/content-page.php:19
+#: ../template-parts/content.php:53
 msgid "Comments are closed."
 msgstr ""
 
@@ -65,177 +65,91 @@ msgstr ""
 msgid "primary menu"
 msgstr ""
 
-#: ../functions.php:126
+#: ../functions.php:122
 msgid "Sidebar Widget Area"
 msgstr ""
 
-#: ../functions.php:128
+#: ../functions.php:124
 msgid "The sidebar widget area"
 msgstr ""
 
-#: ../functions.php:185
+#: ../functions.php:179
 msgid "Follow us on Facebook"
 msgstr ""
 
-#: ../functions.php:191
+#: ../functions.php:185
 msgid "Follow us on Google+"
 msgstr ""
 
-#: ../functions.php:197
+#: ../functions.php:191
 msgid "Follow our RSS Feeds"
 msgstr ""
 
-#: ../functions.php:203
+#: ../functions.php:197
 msgid "Follow us on Youtube"
 msgstr ""
 
-#: ../functions.php:263
+#: ../functions.php:255
 msgid ""
 "<h3>Lorem ipsum dolor</h3><p>Lorem ipsum dolor sit amet, consectetur "
 "adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "
 "aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
 msgstr ""
 
-#: ../functions.php:296
+#: ../functions.php:288
 msgid "Read More"
 msgstr ""
 
-#: ../functions.php:309
+#: ../functions.php:301
 msgid "Read More..."
 msgstr ""
 
-#: ../functions.php:323
-#, php-format
-msgid "%s - Page %s"
-msgstr ""
-
-#: ../functions.php:329
-msgid "Asides"
-msgstr ""
-
-#: ../functions.php:332
-msgid "Images"
-msgstr ""
-
-#: ../functions.php:335
-msgid "Videos"
-msgstr ""
-
-#: ../functions.php:338
-msgid "Audio"
-msgstr ""
-
-#: ../functions.php:341
-msgid "Quotes"
-msgstr ""
-
-#: ../functions.php:344
-msgid "Links"
-msgstr ""
-
-#: ../functions.php:347
-msgid "Galleries"
-msgstr ""
-
-#: ../functions.php:350
-#, php-format
-msgid "Tag Archives: %s"
-msgstr ""
-
-#: ../functions.php:353
-#, php-format
-msgid "Category Archives: %s"
-msgstr ""
-
-#: ../functions.php:356
-#, php-format
-msgid "Daily Archives: %s"
-msgstr ""
-
-#: ../functions.php:359
-#, php-format
-msgid "Monthly Archives: %s"
-msgstr ""
-
-#: ../functions.php:363
-#, php-format
-msgid "Yearly Archives: %s"
-msgstr ""
-
-#: ../functions.php:367
-msgid "Archives"
-msgstr ""
-
-#: ../functions.php:370
-msgid "Error 404: Not Found"
-msgstr ""
-
-#: ../functions.php:399
-#, php-format
-msgid ""
-"The fGymm theme is a free version of the professional WordPress theme tGymm. "
-"<a href=\"%s\" class=\"button-primary\" target=\"_blank\">Get tGymm Theme</"
-"a><br />"
-msgstr ""
-
-#: ../functions.php:409
-msgid "Header Image"
-msgstr ""
-
-#: ../functions.php:417
-msgid "Colors"
-msgstr ""
-
-#: ../functions.php:424
-msgid "Background Image"
-msgstr ""
-
-#: ../functions.php:435
+#: ../functions.php:315
 msgid "Slider"
 msgstr ""
 
-#: ../functions.php:451
+#: ../functions.php:330
 msgid ""
 "<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur "
 "adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "
 "aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
 msgstr ""
 
-#: ../functions.php:458
+#: ../functions.php:337
 #, php-format
 msgid "Slide #%s Content"
 msgstr ""
 
-#: ../functions.php:476
+#: ../functions.php:355
 #, php-format
 msgid "Slide #%s Image"
 msgstr ""
 
-#: ../functions.php:490
+#: ../functions.php:369
 msgid "Footer"
 msgstr ""
 
-#: ../functions.php:507
+#: ../functions.php:385
 msgid "Copyright Text"
 msgstr ""
 
-#: ../functions.php:521
+#: ../functions.php:399
 msgid "Social Sites"
 msgstr ""
 
-#: ../functions.php:538
+#: ../functions.php:415
 msgid "Facebook Page URL"
 msgstr ""
 
-#: ../functions.php:557
+#: ../functions.php:434
 msgid "Google+ Page URL"
 msgstr ""
 
-#: ../functions.php:576
+#: ../functions.php:453
 msgid "RSS Feeds URL"
 msgstr ""
 
-#: ../functions.php:595
+#: ../functions.php:472
 msgid "YouTube channel URL"
 msgstr ""
 
@@ -253,17 +167,17 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../template-parts/content-page.php:18
-#: ../template-parts/content.php:64
+#: ../template-parts/content-page.php:19
+#: ../template-parts/content.php:53
 msgid "1 Comment"
 msgstr ""
 
-#: ../template-parts/content-page.php:18
-#: ../template-parts/content.php:64
+#: ../template-parts/content-page.php:19
+#: ../template-parts/content.php:53
 msgid "% Comments"
 msgstr ""
 
-#: ../template-parts/content-page.php:21
-#: ../template-parts/content.php:82
+#: ../template-parts/content-page.php:22
+#: ../template-parts/content.php:67
 msgid "Edit"
 msgstr ""

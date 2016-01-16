@@ -9,7 +9,11 @@
 			<header id="header-main-fixed">
 				<div id="header-content-wrapper">
 					<div id="header-top">
-						<?php fgymm_show_social_sites(); ?>
+						<ul class="header-social-widget">
+							<?php fgymm_show_social_sites(); ?>
+						</ul>
+					</div>
+					<div class="clear">
 					</div>
 					<div id="header-logo">
 						<?php fgymm_show_website_logo_image_or_title(); ?>

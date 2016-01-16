@@ -31,10 +31,12 @@ Activiation and Use
 == License ==
 
 Unless otherwise specified, all the theme files, scripts and images
-are licensed under GNU General Public Licemse version 2.
+are licensed under GNU General Public License version 2.
 
 The exceptions to this license are as follows:
 
+* css/font-awesome.css - The MIT License (MIT), Reference: http://opensource.org/licenses/MIT
+* css/font-awesome.min.css - The MIT License (MIT), Reference: http://opensource.org/licenses/MIT
 * fonts/FontAwesome.otf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.eot SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.svg SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
@@ -47,15 +49,12 @@ The exceptions to this license are as follows:
 *
 * images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/active-activity-ball-exercise-18975/
 *
-* images/background.png CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/oak-ridge-tennessee-1940s-104060/
-*
 * js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 * js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 * js/jquery.easing.1.3.js BSD License Reference: http://www.linfo.org/bsdlicense.html
 * js/jquery.mobile.customized.js MIT license Reference: http://jquery.org/license
 * js/jquery.mobile.customized.min.js MIT license Reference: http://jquery.org/license
 *
-* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
 
 == Contacts ==
 

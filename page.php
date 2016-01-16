@@ -4,11 +4,7 @@
 
 		<?php fgymm_display_slider(); ?>
 	
-	<?php else : ?>
-	
-		<?php fgymm_show_page_header_section(); ?>
-	
-<?php endif; ?>
+	<?php endif; ?>
 
 <div class="clear">
 </div>

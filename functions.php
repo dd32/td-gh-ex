@@ -29,7 +29,7 @@ function fgymm_setup() {
 	) );
 
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 'full', 'full', true );
+	set_post_thumbnail_size( 1200, 0, true );
 
 	if ( ! isset( $content_width ) )
 		$content_width = 900;
@@ -38,9 +38,7 @@ function fgymm_setup() {
 
 	// add Custom background				 
 	$args = array(
-		'default-color' 	 => '#555555',
-		'default-image' 	 => '%1$s/images/background.jpg',
-		'default-attachment' => 'fixed',
+		'default-color' 	 => '#FFFFFF',
 	);
 	add_theme_support( 'custom-background', $args );
 
@@ -48,12 +46,12 @@ function fgymm_setup() {
 	add_theme_support( 'custom-header', array (
 					   'default-image'          => '',
 					   'random-default'         => false,
-					   'width'                  => 0,
-					   'height'                 => 0,
-					   'flex-height'            => false,
-					   'flex-width'             => false,
+					   'width'                  => 113,
+					   'height'                 => 40,
+					   'flex-height'            => true,
+					   'flex-width'             => true,
 					   'default-text-color'     => '',
-					   'header-text'            => true,
+					   'header-text'            => '',
 					   'uploads'                => true,
 					   'wp-head-callback'       => '',
 					   'admin-head-callback'    => '',
@@ -95,6 +93,7 @@ add_action( 'after_setup_theme', 'fgymm_setup' );
 function fgymm_load_scripts() {
 
 	// load main stylesheet.
+	wp_enqueue_style( 'fportfolio-fontawesome-style', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
 	wp_enqueue_style( 'fgymm-style', get_stylesheet_uri(), array( ) );
 	
 	wp_enqueue_style( 'fgymm-fonts', fgymm_fonts_url(), array(), null );
@@ -107,12 +106,9 @@ function fgymm_load_scripts() {
 	// Load Utilities JS Script
 	wp_enqueue_script( 'fgymm-utilities-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
 	
-	if ( is_front_page() ) {
-	
-		wp_enqueue_script( 'fgymm-jquery-mobile-js', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
-		wp_enqueue_script( 'fgymm-jquery-easing-js', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
-		wp_enqueue_script( 'fgymm-camera-js', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
-	}
+	wp_enqueue_script( 'fgymm-jquery-mobile-js', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'fgymm-jquery-easing-js', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
+	wp_enqueue_script( 'fgymm-camera-js', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 }
 add_action( 'wp_enqueue_scripts', 'fgymm_load_scripts' );
 
@@ -177,33 +173,29 @@ function fgymm_fonts_url() {
 
 function fgymm_show_social_sites() {
 
-	echo '<ul class="header-social-widget">';
-
 	$socialURL = get_theme_mod('fgymm_social_facebook', '#');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Facebook', 'fgymm') . '" class="facebook16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Facebook', 'fgymm') . '" class="facebook16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_google', '#');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Google+', 'fgymm') . '" class="google16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Google+', 'fgymm') . '" class="google16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_rss', get_bloginfo( 'rss2_url' ));
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow our RSS Feeds', 'fgymm') . '" class="rss16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow our RSS Feeds', 'fgymm') . '" class="rss16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_youtube', '#');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Youtube', 'fgymm') . '" class="youtube16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Youtube', 'fgymm') . '" class="youtube16"></a></li>';
 	}
-
-	echo '</ul>';
 }
 
 /**
@@ -310,121 +302,9 @@ function fgymm_the_content_single() {
 }
 
 /**
- * Displays the Page Header Section including Page Title and Breadcrumb
- */
-function fgymm_show_page_header_section() { 
-	global $paged, $page;
-
-	if ( is_single() || is_page() ) :
-        $title = single_post_title( '', false );
-
-	elseif ( is_home() ) :
-		if ( $paged >= 2 || $page >= 2 ) :
-			$title = sprintf( __( '%s - Page %s', 'fgymm' ), single_post_title( '', false ), max( $paged, $page ) );	
-		else :
-			$title = single_post_title( '', false );	
-		endif;
-
-	elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-		$title = __( 'Asides', 'fgymm' );
-
-	elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-		$title = __( 'Images', 'fgymm' );
-
-	elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-		$title = __( 'Videos', 'fgymm' );
-
-	elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-		$title = __( 'Audio', 'fgymm' );
-
-	elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-		$title = __( 'Quotes', 'fgymm' );
-
-	elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-		$title = __( 'Links', 'fgymm' );
-		
-	elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-		$title = __( 'Galleries', 'fgymm' );
-		
-	elseif ( is_tag() ) :
-		$title = sprintf( __( 'Tag Archives: %s', 'fgymm' ), single_tag_title( '', false ) );
-
-	elseif ( is_category() ) :
-		$title = sprintf( __( 'Category Archives: %s', 'fgymm' ), single_cat_title( '', false ) );
-		
-	elseif ( is_day() ) :
-		$title = sprintf( __( 'Daily Archives: %s', 'fgymm' ), get_the_date() );
-
-	elseif ( is_month() ) :
-		$title = sprintf( __( 'Monthly Archives: %s', 'fgymm' ),
-					get_the_date( _x( 'F Y', 'monthly archives date format', 'fgymm' ) ) );
-
-	elseif ( is_year() ) :
-		$title = sprintf( __( 'Yearly Archives: %s', 'fgymm' ),
-					get_the_date( _x( 'Y', 'yearly archives date format', 'fgymm' )  ) );
-
-	elseif ( is_archive() ) :
-		$title = __( 'Archives', 'fgymm' );
-		
-	elseif ( is_404() ) :
-		$title = __( 'Error 404: Not Found', 'fgymm' );
-
-	else :
-		$title = wp_title('', false);
-
-	endif;
-	
-	
-	?>
-
-	<section id="page-header">
-		<div id="page-header-content">
-
-			<h1><?php echo $title; ?></h1>
-
-			<div class="clear">
-			</div>
-		</div>
-    </section>
-<?php
-}
-
-/**
- * Gets additional theme settings description
- */
-function fgymm_get_customizer_sectoin_info() {
-
-	$premiumThemeUrl = 'https://tishonator.com/product/tgymm';
-
-	return sprintf( __( 'The fGymm theme is a free version of the professional WordPress theme tGymm. <a href="%s" class="button-primary" target="_blank">Get tGymm Theme</a><br />', 'fgymm' ), $premiumThemeUrl );
-}
-
-/**
  * Register theme settings in the customizer
  */
 function fgymm_customize_register( $wp_customize ) {
-
-	// Header Image Section
-	$wp_customize->add_section( 'header_image', array(
-		'title' => __( 'Header Image', 'fgymm' ),
-		'description' => fgymm_get_customizer_sectoin_info(),
-		'theme_supports' => 'custom-header',
-		'priority' => 60,
-	) );
-
-	// Colors Section
-	$wp_customize->add_section( 'colors', array(
-		'title' => __( 'Colors', 'fgymm' ),
-		'description' => fgymm_get_customizer_sectoin_info(),
-		'priority' => 50,
-	) );
-
-	// Background Image Section
-	$wp_customize->add_section( 'background_image', array(
-			'title' => __( 'Background Image', 'fgymm' ),
-			'description' => fgymm_get_customizer_sectoin_info(),
-			'priority' => 70,
-		) );
 
 	/**
 	 * Add Slider Section
@@ -434,7 +314,6 @@ function fgymm_customize_register( $wp_customize ) {
 		array(
 			'title'       => __( 'Slider', 'fgymm' ),
 			'capability'  => 'edit_theme_options',
-			'description' => fgymm_get_customizer_sectoin_info(),
 		)
 	);
 	
@@ -489,7 +368,6 @@ function fgymm_customize_register( $wp_customize ) {
 		array(
 			'title'       => __( 'Footer', 'fgymm' ),
 			'capability'  => 'edit_theme_options',
-			'description' => fgymm_get_customizer_sectoin_info(),
 		)
 	);
 	
@@ -520,7 +398,6 @@ function fgymm_customize_register( $wp_customize ) {
 		array(
 			'title'       => __( 'Social Sites', 'fgymm' ),
 			'capability'  => 'edit_theme_options',
-			'description' => fgymm_get_customizer_sectoin_info(),
 		)
 	);
 	
@@ -601,5 +478,41 @@ function fgymm_customize_register( $wp_customize ) {
 	);
 }
 add_action('customize_register', 'fgymm_customize_register');
+
+/*
+Enqueue Script for top buttons
+*/
+function fgymm_customizer_controls(){
+
+	wp_register_script( 'fgymm_customizer_top_buttons', get_template_directory_uri() . '/js/customizer-top-buttons.js', array( 'jquery' ), true  );
+	wp_enqueue_script( 'fgymm_customizer_top_buttons' );
+
+	wp_localize_script( 'fgymm_customizer_top_buttons', 'customBtns', array(
+		'prodemo' => esc_html__( 'Demo Premium version', 'fgymm' ),
+        'proget' => esc_html__( 'Get Premium version', 'fgymm' )
+	) );
+}
+add_action( 'customize_controls_enqueue_scripts', 'fgymm_customizer_controls' );
+
+/**
+ *	Displays date for blog posts
+ */
+function fgymm_show_post_date() { 
+
+	$postDate = strtotime( get_the_time( get_option( 'date_format' ) ) );
+?>
+	<div class="postdate">
+		<div class="day">
+			<?php echo date( 'd', $postDate ); ?>
+		</div>
+		<div class="month">
+			<?php echo date( 'M', $postDate); ?>
+		</div>
+		<div class="year">
+			<?php echo date( 'Y', $postDate); ?>
+		</div>
+	</div>
+<?php
+}
 
 ?>
