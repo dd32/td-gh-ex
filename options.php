@@ -142,6 +142,13 @@ function optionsframework_options() {
 		)
 	);
 
+	$options[] = array(
+		'name' => __('Custom Theme Color', 'ascent'),
+		'desc' => __('User can customize the theme color. <em>(Note: If you wants to use the above "Theme Color Scheme" option, you should be clear this "Custom Theme Color" option. Otherwise this "Custom Theme Color" option will override the "Theme Color Scheme" option.)</em>. ', 'ascent'),
+		'id' => 'custom_theme_color',
+		'std' => '',
+		'type' => 'color' );
+
 
 	/*  Tab 3: Social Media
 	============================================================================================*/
@@ -268,6 +275,14 @@ function optionsframework_options() {
 		'std' => '1',
 		'type' => 'checkbox');
 
+
+	$options[] = array(
+		'name' => __('Enable header static banner', 'ascent'),
+		'desc' => __('Do you want to display the static banner image ?', 'ascent'),
+		'id' => 'static_header_banner_image',
+		'std' => '1',
+		'type' => 'checkbox');
+
 	$options[] = array(
 		'name' => __('Enable Slider Dotted Overlay BG', 'ascent'),
 		'desc' => __('Do you want to enable slider overlay dotted bg ?', 'ascent'),
@@ -275,13 +290,39 @@ function optionsframework_options() {
 		'std' => '1',
 		'type' => 'checkbox');
 
+
+
+	$options[] = array(
+		'name' => __('Video Height', 'ascent'),
+		'desc' => __('Provide video height in pixel.', 'ascent'),
+		'id' => 'home_slider_video_height',
+		'std' => '400',
+		'type' => 'text');
+
+
 	/* Slider 1 */
+	$options[] = array(
+		'name' => "Homepage Slider Type",
+		'desc' => "Select the slider type(Video/Image).",
+		'id' => "home_page_slider_type_1",
+		'std' => "image_type",
+		'type' => "images",
+		'options' => array(
+			'image_type' => $imagepath . 'image-type.png',
+			'video_type' => $imagepath . 'video-type.png',
+		)
+	);
 	$options[] = array(
 		'name' => __('Slider Image 1', 'ascent'),
 		'desc' => __('Upload slider image 1.', 'ascent'),
 		'id' => 'slider_image_1',
 		'std' => get_template_directory_uri() . '/includes/images/banner.jpg',
 		'type' => 'upload');
+	$options[] = array(
+		'name' => __('Slider Video 1', 'ascent'),
+		'desc' => __('Enter the video URL.', 'ascent'),
+		'id' => 'slider_video_1',
+		'type' => 'text');
 	$options[] = array(
 		'name' => __('Slider Description 1', 'ascent'),
 		'desc' => __('slider description 1.', 'ascent'),
@@ -290,10 +331,26 @@ function optionsframework_options() {
 
 	/* Slider 2 */
 	$options[] = array(
+		'name' => "Homepage Slider Type",
+		'desc' => "Select the slider type(Video/Image).",
+		'id' => "home_page_slider_type_2",
+		'std' => "image_type",
+		'type' => "images",
+		'options' => array(
+			'image_type' => $imagepath . 'image-type.png',
+			'video_type' => $imagepath . 'video-type.png',
+		)
+	);
+	$options[] = array(
 		'name' => __('Slider Image 2', 'ascent'),
 		'desc' => __('Upload slider image 2.', 'ascent'),
 		'id' => 'slider_image_2',
 		'type' => 'upload');
+	$options[] = array(
+		'name' => __('Slider Video 2', 'ascent'),
+		'desc' => __('Enter the video URL.', 'ascent'),
+		'id' => 'slider_video_2',
+		'type' => 'text');
 	$options[] = array(
 		'name' => __('Slider Description 2', 'ascent'),
 		'desc' => __('slider description 2.', 'ascent'),
@@ -302,10 +359,26 @@ function optionsframework_options() {
 
 	/* Slider 3 */
 	$options[] = array(
+		'name' => "Homepage Slider Type",
+		'desc' => "Select the slider type(Video/Image).",
+		'id' => "home_page_slider_type_3",
+		'std' => "image_type",
+		'type' => "images",
+		'options' => array(
+			'image_type' => $imagepath . 'image-type.png',
+			'video_type' => $imagepath . 'video-type.png',
+		)
+	);
+	$options[] = array(
 		'name' => __('Slider Image 3', 'ascent'),
 		'desc' => __('Upload slider image 3.', 'ascent'),
 		'id' => 'slider_image_3',
 		'type' => 'upload');
+	$options[] = array(
+		'name' => __('Slider Video 3', 'ascent'),
+		'desc' => __('Enter the video URL.', 'ascent'),
+		'id' => 'slider_video_3',
+		'type' => 'text');
 	$options[] = array(
 		'name' => __('Slider Description 3', 'ascent'),
 		'desc' => __('slider description 3.', 'ascent'),
@@ -314,10 +387,26 @@ function optionsframework_options() {
 
 	/* Slider 4 */
 	$options[] = array(
+		'name' => "Homepage Slider Type",
+		'desc' => "Select the slider type(Video/Image).",
+		'id' => "home_page_slider_type_4",
+		'std' => "image_type",
+		'type' => "images",
+		'options' => array(
+			'image_type' => $imagepath . 'image-type.png',
+			'video_type' => $imagepath . 'video-type.png',
+		)
+	);
+	$options[] = array(
 		'name' => __('Slider Image 4', 'ascent'),
 		'desc' => __('Upload slider image 4.', 'ascent'),
 		'id' => 'slider_image_4',
 		'type' => 'upload');
+	$options[] = array(
+		'name' => __('Slider Video 4', 'ascent'),
+		'desc' => __('Enter the video URL.', 'ascent'),
+		'id' => 'slider_video_4',
+		'type' => 'text');
 	$options[] = array(
 		'name' => __('Slider Description 4', 'ascent'),
 		'desc' => __('slider description 4.', 'ascent'),
@@ -326,10 +415,26 @@ function optionsframework_options() {
 
 	/* Slider 5 */
 	$options[] = array(
+		'name' => "Homepage Slider Type",
+		'desc' => "Select the slider type(Video/Image).",
+		'id' => "home_page_slider_type_5",
+		'std' => "image_type",
+		'type' => "images",
+		'options' => array(
+			'image_type' => $imagepath . 'image-type.png',
+			'video_type' => $imagepath . 'video-type.png',
+		)
+	);
+	$options[] = array(
 		'name' => __('Slider Image 5', 'ascent'),
 		'desc' => __('Upload slider image 5.', 'ascent'),
 		'id' => 'slider_image_5',
 		'type' => 'upload');
+	$options[] = array(
+		'name' => __('Slider Video 5', 'ascent'),
+		'desc' => __('Enter the video URL.', 'ascent'),
+		'id' => 'slider_video_5',
+		'type' => 'text');
 	$options[] = array(
 		'name' => __('Slider Description 5', 'ascent'),
 		'desc' => __('slider description 5.', 'ascent'),

@@ -30,7 +30,6 @@ a,
 /* Background color style */
 .read-more,
 .read-more.black:hover,
-nav.main-menu ul > li ul li:hover a,
 .pager li > a:hover, .pager li > a:focus,
 #home-slider .slide-content .btn,
 table thead,
@@ -39,7 +38,8 @@ a#scroll-top,
 body input[type="submit"]:hover,
 body input[type="submit"]:focus,
 .mean-container .mean-bar,
-.mean-container .mean-bar .mean-nav ul li a.meanmenu-reveal {
+.mean-container .mean-bar .mean-nav ul li a.meanmenu-reveal,
+.mean-container .mean-bar .mean-nav ul li a.mean-expand:hover {
     background-color: #F09A12;
 }
 

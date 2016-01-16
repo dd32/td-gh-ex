@@ -32,18 +32,46 @@ require_once dirname( __FILE__ ) . '/options-framework/options-framework.php';
 add_action( 'optionsframework_custom_scripts', 'optionsframework_custom_scripts' );
 
 function optionsframework_custom_scripts() { ?>
-<script type="text/javascript">
-    jQuery(document).ready(function() {
-        var $slider_option_field = jQuery('#section-slider_image_1, #section-slider_description_1, #section-slider_image_2, #section-slider_description_2, #section-slider_image_3, #section-slider_description_3, #section-slider_image_4, #section-slider_description_4, #section-slider_image_5, #section-slider_description_5');
-        jQuery('#home_page_slider').click(function() {
-            $slider_option_field.fadeToggle(400);
-        });
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
 
-        if (jQuery('#home_page_slider:checked').val() !== undefined) {
-            $slider_option_field.show();
-        }
-    });
-</script>
+            var $slider_videos = jQuery('#section-slider_video_1, #section-slider_video_2, #section-slider_video_3, #section-slider_video_4, #section-slider_video_5');
+
+            var $slider_images = jQuery('#section-slider_image_1, #section-slider_image_2, #section-slider_image_3, #section-slider_image_4, #section-slider_image_5');
+
+            $slider_videos.hide();
+            $slider_images.hide();
+
+            var slider_type_obj = {
+                '#section-home_page_slider_type_1' : '1',
+                '#section-home_page_slider_type_2' : '2',
+                '#section-home_page_slider_type_3' : '3',
+                '#section-home_page_slider_type_4' : '4',
+                '#section-home_page_slider_type_5' : '5'
+            }
+            jQuery.each(slider_type_obj, function( obj_key, obj_value) {
+                jQuery('body').on('click', obj_key+' .of-radio-img-img', function() {
+                    if(jQuery(this).hasClass('of-radio-img-selected')) {
+                        if(jQuery(this).prev().prev('input[type="radio"]').val() == 'image_type') {
+                          jQuery('#section-slider_image_'+obj_value).fadeToggle(400);
+                          jQuery('#section-slider_video_'+obj_value).hide();
+                        } else {
+                          jQuery('#section-slider_video_'+obj_value).show();
+                          jQuery('#section-slider_image_'+obj_value).hide();
+                        }
+                    }
+                });
+
+                if (jQuery('#home_page_slider_type_'+obj_value+'_video_type:checked').val() == 'video_type') {
+                    jQuery('#section-slider_video_'+obj_value).show();
+                    jQuery('#section-slider_image_'+obj_value).hide();
+                } else {
+                    jQuery('#section-slider_video_'+obj_value).hide();
+                    jQuery('#section-slider_image_'+obj_value).show();
+                }
+            });
+        });
+    </script>
 <?php
 }
 
@@ -217,6 +245,12 @@ require get_template_directory() . '/includes/customizer.php';
  */
 require get_template_directory() . '/includes/jetpack.php';
 
+/**
+ * Dynamic CSS.
+ */
+require_once get_template_directory() . '/includes/css/theme-color-scheme/dynamic-css.php';
+
+
 
 /* Theme Social media icons  */
 if( !function_exists( 'ascent_socialmedia_navs' ) ){
@@ -247,28 +281,77 @@ if( !function_exists( 'ascent_home_slider' ) ){
         return array(
             'item_1' => array(
                 'image' => 'slider_image_1',
-                'description' => 'slider_description_1'
+                'video' => 'slider_video_1',
+                'description' => 'slider_description_1',
+                'slider_type' => 'home_page_slider_type_1'
             ),
             'item_2' => array(
                 'image' => 'slider_image_2',
-                'description' => 'slider_description_2'
+                'video' => 'slider_video_2',
+                'description' => 'slider_description_2',
+                'slider_type' => 'home_page_slider_type_2'
             ),
             'item_3' => array(
                 'image' => 'slider_image_3',
-                'description' => 'slider_description_3'
+                'video' => 'slider_video_3',
+                'description' => 'slider_description_3',
+                'slider_type' => 'home_page_slider_type_3'
             ),
             'item_4' => array(
                 'image' => 'slider_image_4',
-                'description' => 'slider_description_4'
+                'video' => 'slider_video_4',
+                'description' => 'slider_description_4',
+                'slider_type' => 'home_page_slider_type_4'
             ),
             'item_5' => array(
                 'image' => 'slider_image_5',
-                'description' => 'slider_description_5'
+                'video' => 'slider_video_5',
+                'description' => 'slider_description_5',
+                'slider_type' => 'home_page_slider_type_5'
             ),
         );
     }
 }
 
+if( !function_exists( 'ascent_generate_youtube_embed_url' ) ) {
+    function ascent_generate_youtube_embed_url($url) {
+        preg_match(
+    		'/[\\?\\&]v=([^\\?\\&]+)/',
+    		$url,
+    		$matches
+    	);
+        //the ID of the YouTube URL: x6qe_kVaBpg
+        $id = $matches[1];
+        return '//www.youtube.com/embed/'.$id;
+    }
+}
+
+if( !function_exists( 'ascent_generate_vimeo_embed_url' ) ) {
+    function ascent_generate_vimeo_embed_url($url) {
+        preg_match(
+    		'/\/\/(www\.)?vimeo.com\/(\d+)($|\/)/',
+    		$url,
+    		$matches
+    	);
+
+        //the ID of the Vimeo URL: 71673549
+        $id = $matches[2];
+
+        return 'http://player.vimeo.com/video/'.$id.'?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff';
+    }
+}
+
+if( !function_exists( 'ascent_check_video_type' ) ) {
+    function ascent_check_video_type($url) {
+        if (strpos($url, 'youtube') > 0) {
+            return 'youtube';
+        } elseif (strpos($url, 'vimeo') > 0) {
+            return 'vimeo';
+        } else {
+            return 'unknown';
+        }
+    }
+}
 
 if( !function_exists( 'ascent_theme_option_custom_style' ) ) {
     function ascent_theme_option_custom_style() {

@@ -87,8 +87,10 @@ Featured Images look best at 732 pixels wide or larger.
 Yes! You can choose your color scheme under Appearance -> Theme Options -> Styling(Tab).
 
 
-
 = Changelog =
+### Version 2.0.2
+- Added Custom Theme Color theme-option(User can customize the theme color)
+- Added video option for home page slider
 
 ### Version 2.0.1
 - Updated Swipebox
