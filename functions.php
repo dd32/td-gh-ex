@@ -1,6 +1,6 @@
 <?php
 /* 	COLORFUL Theme's Functions
-	Copyright: 2012-2014, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	
 	Since COLORFUL 1.0
 */
@@ -16,11 +16,12 @@
 
 	function colorful_setup() {
 //	Theme TextDomain for the Language File
-	load_theme_textdomain( 'colorful', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'd5-colorful', get_template_directory() . '/languages' );
 
 // 	Theme Menus
 	register_nav_menus( array( 'main-menu' => 'Main Menu' ) );
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( "title-tag" );
 
 //	Set the content width based on the theme's design and stylesheet.
 	global $content_width;
@@ -43,13 +44,12 @@
 		
 // 	Functions for adding script
 	function colorful_enqueue_scripts() {
-	wp_enqueue_style('colorful-style', get_stylesheet_uri(), false, '1.5.1');
+	wp_enqueue_style('colorful-style', get_stylesheet_uri(), false );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
 		wp_enqueue_script( 'comment-reply' ); 
 	}
 	
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'colorful-menu-style', get_template_directory_uri(). '/js/menu.js' );
+	wp_enqueue_script( 'colorful-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	wp_enqueue_style('colorful-gfonts', '//fonts.googleapis.com/css?family=Creepster', false );
 	
 	}
@@ -67,7 +67,7 @@
 	function colorful_widgets_init() {
 
 	register_sidebar( array(
-		'name' =>  'Primary Sidebar',
+		'name' =>  __('Primary Sidebar','d5-colorful'), 
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -76,7 +76,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' =>  'Secondary Sidebar',
+		'name' =>  __('Secondary Sidebar', 'd5-colorful'),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -85,9 +85,8 @@
 	) );
 
 	register_sidebar( array(
-		'name' =>  'Footer Area',
+		'name' =>  __('Footer Area', 'd5-colorful'),
 		'id' => 'sidebar-3',
-		'description' =>  'An optional widget area for your site footer',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -103,7 +102,7 @@
 	add_filter('the_title', 'colorful_title');
 	function colorful_title($title) {
         if ( '' == $title ) {
-            return '(Untitled)';
+            return __('(Untitled)', 'd5-colorful');
         } else {
             return $title;
         }
