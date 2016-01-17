@@ -41,12 +41,16 @@
 		if ( $attachments ) { $number_attachments = count($attachments);
         ?>
         <h6 class="center">List of <a href="<?php echo get_permalink($post->post_parent); ?>"><?php echo get_the_title($post->post_parent); ?></a>'s Attachments</h6>
-        <div class="gallery gallery-columns-<?php echo $number_attachments; if ($number_attachments > 6) { echo ' gallery-columns-lots'} ?>">     
+        <div class="gallery gallery-columns-<?php echo $number_attachments; if ($number_attachments > 6) { echo ' gallery-columns-lots';} ?>">     
         <?php
+            $count_foreach = 1;
 			foreach ( $attachments as $attachment ) {
 				$class = "post-attachment" . sanitize_title( $attachment->post_mime_type );
-				$thumbimg = wp_get_attachment_link( $attachment->ID, 'thumbnail_size', true );
+				$thumbimg = wp_get_attachment_link( $attachment->ID, 'small_featured', true );
 				echo '<dl class="gallery-item"><dt class="gallery-icon landscape">' . $thumbimg . '</dt></dl>';
+                $count_foreach = $count_foreach + 1;
+                if ($count_foreach >= 37) {
+                    break;}
 			}?>
              </div>
 		<?php	
