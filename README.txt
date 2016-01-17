@@ -42,15 +42,20 @@ Fonts
     
 ---------------------------------------------
 Images
-    All the images used are from http://pixabay.com, http://unsplash.com/ or self taken are fully GPL compatible.
-    
+ All the images used are from http://pixabay.com, http://unsplash.com/ or self taken are fully GPL compatible.
+
 
 
 == Changelog ==
 
+= 1.1.5 =
+
+** Change the fallback_menu function prefix.
+** Fixed the variation product button style in single page.
+
 = 1.1.4 =
 
-** Change missiang text-domain
+** Change missing text-domain
 ** Add the homepage category image crop size in function & implement in category section.
 ** Fixed the responsive problem.
 

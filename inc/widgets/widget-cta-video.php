@@ -83,22 +83,12 @@ class accesspress_cta_video extends WP_Widget {
      */
     public function widget($args, $instance) {
         extract($args);
-        $allow_tag = array(
-                            'iframe'=>array(
-                                'height'=>array(),
-                                'width'=>array(),
-                                'src'=>array(),
-                                'frameborder'=>array()));
         $cta_video_title = $instance['cta_video_title'];
         $cta_video_desc = $instance['cta_video_desc'];
-        $cta_video_iframe = wp_kses($instance['cta_video_iframe'], $allow_tag);
+        $cta_video_iframe = $instance['cta_video_iframe'];
         $cta_video_btn_text = $instance['cta_video_btn_text'];
         $cta_video_btn_url = $instance['cta_video_btn_url'];
-        $youtube_bg = get_template_directory_uri() . '/images/youtube.jpg';
-        $bgfull_image = isset($instance['access_store_image'])? $instance['access_store_image'] : $youtube_bg;
-        if(empty($bgfull_image)){
-            $bgfull_image = $youtube_bg;
-        }
+        $bgfull_image = isset($instance['access_store_image'])? $instance['access_store_image'] : '';
         echo $before_widget;
 ?>
     <style type="text/css">

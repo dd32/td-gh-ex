@@ -128,12 +128,11 @@
                                         <?php _e('Menu', 'accesspress-store'); ?>
                                     </a>
                                     <?php
-                                    wp_nav_menu(array(
-                                        'theme_location' => 'primary',
-                                        'container_class' => 'store-menu',
-                                        'fallback_cb' => 'custom_fallback_menu',
-                                            )
-                                    );
+                                        wp_nav_menu(array(
+                                            'theme_location' => 'primary',
+                                            'container_class' => 'store-menu',
+                                            'fallback_cb' => 'accesspress_store_fallback_menu',
+                                        ));
                                     ?>
                                 </nav><!-- #site-navigation -->
                             <?php } ?>

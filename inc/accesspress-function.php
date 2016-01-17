@@ -299,35 +299,35 @@ function accesspress_slidercb(){
 					?>
 				<div class="slides">
 					<?php
-						$args = array('post__in'=> array($slider_post));
-						$query1 = new WP_Query( $args );
-						while ( $query1->have_posts() ) {
-							$query1->the_post();
-							$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'accesspress-slider', true);
-					?>
+					$args = array('post__in'=> array($slider_post));
+					$query1 = new WP_Query( $args );
+					while ( $query1->have_posts() ) {
+						$query1->the_post();
+						$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'accesspress-slider', true);
+						?>
 						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(the_title()); ?>"/>
-					
-					<?php if($accesspress_show_caption == '1'): ?>
-						<div class="slider-caption">
-							<div class="ak-container">
-								
-								<div class="caption-content-wrapper">
-									<h2 class="caption-title"><?php echo esc_attr(the_title());?></h2>
-									<div class="caption-content">
-										<?php echo accesspress_letter_count(get_the_content(), '165'); ?>
+						
+						<?php if($accesspress_show_caption == '1'): ?>
+							<div class="slider-caption">
+								<div class="ak-container">
+									
+									<div class="caption-content-wrapper">
+										<h2 class="caption-title"><?php echo esc_attr(the_title());?></h2>
+										<div class="caption-content">
+											<?php echo accesspress_letter_count(get_the_content(), '165'); ?>
+										</div>
 									</div>
+
+									<?php if($slider_button_text): ?>
+										<a class="caption-read-more1" href="<?php echo esc_url($slider_button_link); ?>"><?php echo esc_attr($slider_button_text); ?></a>
+									<?php endif; ?>
+
 								</div>
-
-								<?php if($slider_button_text): ?>
-									<a class="caption-read-more1" href="<?php echo esc_url($slider_button_link); ?>"><?php echo esc_attr($slider_button_text); ?></a>
-								<?php endif; ?>
-
 							</div>
-						</div>
-					<?php endif; ?>
-					<?php
+						<?php endif; ?>
+						<?php
 					}
-						wp_reset_postdata();
+					wp_reset_postdata();
 					?>
 				</div>
 				<?php 
@@ -392,7 +392,7 @@ if(is_woocommerce_activated()):
 		$cart_url = $woocommerce->cart->get_cart_url();  
 		?>
 		<div class="view-cart"><a title="View your shopping cart" href="<?php echo $cart_url; ?>" class="wcmenucart-contents"><i class="fa fa-shopping-cart"></i> [ <?php echo $woocommerce->cart->cart_contents_count; ?> / <span class="amount"><?php echo $woocommerce->cart->get_cart_total(); ?></span> ]</a>
-		
+			
 		</div>
 		<?php
 		$fragments['div.view-cart'] = ob_get_clean();
@@ -673,7 +673,7 @@ if(is_woocommerce_activated()){
 
 	if ( ! function_exists( 'woocommerce_output_upsells' ) ) {
 		function woocommerce_output_upsells() {
-		    woocommerce_upsell_display( 2,1 ); 
+			woocommerce_upsell_display( 2,1 ); 
 		    // Display 3 products in rows of 3
 		}
 	}
@@ -707,12 +707,14 @@ function woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
 
-function custom_fallback_menu(){
-	$args = array(
-		'menu_class'  => 'store-menu',
-		'echo'        => true,);
-	wp_page_menu( $args );
-}
+if ( ! function_exists( 'accesspress_store_fallback_menu' ) ) :
+	function accesspress_store_fallback_menu(){
+		$args = array(
+			'menu_class'  => 'store-menu',
+			'echo'        => true,);
+		wp_page_menu( $args );
+	}
+	endif;
 
 /**
  * Load Options Plugin Activation
@@ -720,45 +722,45 @@ function custom_fallback_menu(){
 require get_template_directory() . '/inc/accesspress-plugin-activation.php';
 
 function accesspress_store_register_required_plugins() {
-    $plugins = array(
-        array(
-            'name' => 'AccessPress Instagram Feed',
-            'slug' => 'accesspress-instagram-feed',
-            'required' => false,
-        ),
-        array(
-            'name' => 'AccessPress Twitter Feed',
-            'slug' => 'accesspress-twitter-feed',
-            'required' => false,
-        ),
-        array(
-            'name' => 'AccessPress Social Icons',
-            'slug' => 'accesspress-social-icons',
-            'required' => false,
-        ),
-        array(
-            'name' => 'WooCommerce',
-            'slug' => 'woocommerce',
-            'required' => true,
-        ),        
-        array(
-            'name' => 'WooCommerce Grid / List toggle',
-            'slug' => 'woocommerce-grid-list-toggle',
-            'required' => true,
-        ),
-        array(
-            'name' => 'YITH WooCommerce Wishlist',
-            'slug' => 'yith-woocommerce-wishlist',
-            'required' => false,
-        ),
-        array(
-            'name' => 'Email Subscribers',
-            'slug' => 'email-subscribers',
-            'required' => false,
-        )
-    );
+	$plugins = array(
+		array(
+			'name' => 'AccessPress Instagram Feed',
+			'slug' => 'accesspress-instagram-feed',
+			'required' => false,
+			),
+		array(
+			'name' => 'AccessPress Twitter Feed',
+			'slug' => 'accesspress-twitter-feed',
+			'required' => false,
+			),
+		array(
+			'name' => 'AccessPress Social Icons',
+			'slug' => 'accesspress-social-icons',
+			'required' => false,
+			),
+		array(
+			'name' => 'WooCommerce',
+			'slug' => 'woocommerce',
+			'required' => false,
+			),        
+		array(
+			'name' => 'WooCommerce Grid / List toggle',
+			'slug' => 'woocommerce-grid-list-toggle',
+			'required' => false,
+			),
+		array(
+			'name' => 'YITH WooCommerce Wishlist',
+			'slug' => 'yith-woocommerce-wishlist',
+			'required' => false,
+			),
+		array(
+			'name' => 'Email Subscribers',
+			'slug' => 'email-subscribers',
+			'required' => false,
+			)
+		);
 
-    $config = array(
+	$config = array(
         'id' => 'tgmpa', // Unique ID for hashing notices for multiple instances of TGMPA.
         'default_path' => '', // Default absolute path to pre-packaged plugins.
         'menu' => 'tgmpa-install-plugins', // Menu slug.
@@ -770,46 +772,46 @@ function accesspress_store_register_required_plugins() {
         'is_automatic' => true, // Automatically activate plugins after installation or not.
         'message' => '', // Message to output right before the plugins table.
         'strings' => array(
-            'page_title' => __('Install Required Plugins', 'accesspress-store'),
-            'menu_title' => __('Install Plugins', 'accesspress-store'),
+        	'page_title' => __('Install Required Plugins', 'accesspress-store'),
+        	'menu_title' => __('Install Plugins', 'accesspress-store'),
             'installing' => __('Installing Plugin: %s', 'accesspress-store'), // %s = plugin name.
             'oops' => __('Something went wrong with the plugin API.', 'accesspress-store'),
             'notice_can_install_required' => _n_noop(
-                    'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'accesspress-store'
+            	'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'accesspress-store'
             ), // %1$s = plugin name(s).
             'notice_can_install_recommended' => _n_noop(
-                    'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'accesspress-store'
+            	'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'accesspress-store'
             ), // %1$s = plugin name(s).
             'notice_cannot_install' => _n_noop(
-                    'Sorry, but you do not have the correct permissions to install the %1$s plugin.', 'Sorry, but you do not have the correct permissions to install the %1$s plugins.', 'accesspress-store'
+            	'Sorry, but you do not have the correct permissions to install the %1$s plugin.', 'Sorry, but you do not have the correct permissions to install the %1$s plugins.', 'accesspress-store'
             ), // %1$s = plugin name(s).
             'notice_ask_to_update' => _n_noop(
-                    'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'accesspress-store'
+            	'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'accesspress-store'
             ), // %1$s = plugin name(s).
             'notice_ask_to_update_maybe' => _n_noop(
-                    'There is an update available for: %1$s.', 'There are updates available for the following plugins: %1$s.', 'accesspress-store'
+            	'There is an update available for: %1$s.', 'There are updates available for the following plugins: %1$s.', 'accesspress-store'
             ), // %1$s = plugin name(s).
             'notice_cannot_update' => _n_noop(
-                    'Sorry, but you do not have the correct permissions to update the %1$s plugin.', 'Sorry, but you do not have the correct permissions to update the %1$s plugins.', 'accesspress-store'
+            	'Sorry, but you do not have the correct permissions to update the %1$s plugin.', 'Sorry, but you do not have the correct permissions to update the %1$s plugins.', 'accesspress-store'
             ), // %1$s = plugin name(s).
             'notice_can_activate_required' => _n_noop(
-                    'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'accesspress-store'
+            	'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'accesspress-store'
             ), // %1$s = plugin name(s).
             'notice_can_activate_recommended' => _n_noop(
-                    'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'accesspress-store'
+            	'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'accesspress-store'
             ), // %1$s = plugin name(s).
             'notice_cannot_activate' => _n_noop(
-                    'Sorry, but you do not have the correct permissions to activate the %1$s plugin.', 'Sorry, but you do not have the correct permissions to activate the %1$s plugins.', 'accesspress-store'
+            	'Sorry, but you do not have the correct permissions to activate the %1$s plugin.', 'Sorry, but you do not have the correct permissions to activate the %1$s plugins.', 'accesspress-store'
             ), // %1$s = plugin name(s).
             'install_link' => _n_noop(
-                    'Begin installing plugin', 'Begin installing plugins', 'accesspress-store'
-            ),
+            	'Begin installing plugin', 'Begin installing plugins', 'accesspress-store'
+            	),
             'update_link' => _n_noop(
-                    'Begin updating plugin', 'Begin updating plugins', 'accesspress-store'
-            ),
+            	'Begin updating plugin', 'Begin updating plugins', 'accesspress-store'
+            	),
             'activate_link' => _n_noop(
-                    'Begin activating plugin', 'Begin activating plugins', 'accesspress-store'
-            ),
+            	'Begin activating plugin', 'Begin activating plugins', 'accesspress-store'
+            	),
             'return' => __('Return to Required Plugins Installer', 'accesspress-store'),
             'plugin_activated' => __('Plugin activated successfully.', 'accesspress-store'),
             'activated_successfully' => __('The following plugin was activated successfully:', 'accesspress-store'),
@@ -818,9 +820,9 @@ function accesspress_store_register_required_plugins() {
             'complete' => __('All plugins installed and activated successfully. %1$s', 'accesspress-store'), // %s = dashboard link.
             'contact_admin' => __('Please contact the administrator of this site for help.', 'accesspress-store'),
             'nag_type' => 'updated', // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
-        )
-    );
-    tgmpa($plugins, $config);
+            )
+);
+tgmpa($plugins, $config);
 }
 add_action('tgmpa_register', 'accesspress_store_register_required_plugins');
 
@@ -828,10 +830,10 @@ add_action('tgmpa_register', 'accesspress_store_register_required_plugins');
 function accesspress_store_custom_css()
 {
 	$accesspress_store_css = get_theme_mod('accesspress_store_css');
-?>
+	?>
 	<style type="text/css">
 		<?php echo wp_filter_nohtml_kses($accesspress_store_css); ?>
 	</style>
-<?php
+	<?php
 }
 add_action('wp_head','accesspress_store_custom_css');
