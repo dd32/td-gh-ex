@@ -20,43 +20,34 @@ get_header(); ?>
 				<h1 class="archive-page-title">
 					<?php
 						if ( is_category() ) :
-							echo '<span class="archive-title-span">';
-							_e( 'Category', 'awaken' ); 
-							echo '</span>';
 							single_cat_title();
 
 						elseif ( is_tag() ) :
-							echo '<span class="archive-title-span">';
-							_e( 'Tag', 'awaken' ); 
-							echo '</span>';
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							echo '<span class="archive-title-span">';
+							echo '<div class="archive-title-span">';
 							_e( 'Author', 'awaken' ); 
-							echo '</span>';
+							echo '</div>';
 							echo get_the_author();
 
 						elseif ( is_day() ) :
-							echo '<span class="archive-title-span">';
+							echo '<div class="archive-title-span">';
 							_e( 'Date', 'awaken' ); 
-							echo '</span>';
+							echo '</div>';
 							echo get_the_date();
-							//printf( __( 'Day: %s', 'awaken' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							echo '<span class="archive-title-span">';
+							echo '<div class="archive-title-span">';
 							_e( 'Month', 'awaken' ); 
-							echo '</span>';
+							echo '</div>';
 							echo get_the_date( _x( 'F Y', 'monthly archives date format', 'awaken' ) );
-							//printf( __( 'Month: %s', 'awaken' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'awaken' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							echo '<span class="archive-title-span">';
+							echo '<div class="archive-title-span">';
 							_e( 'Year', 'awaken' ); 
-							echo '</span>';
+							echo '</div>';
 							echo get_the_date( _x( 'Y', 'yearly archives date format', 'awaken' ) );
-							//printf( __( 'Year: %s', 'awaken' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'awaken' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
 							_e( 'Asides', 'awaken' );

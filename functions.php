@@ -110,7 +110,7 @@ function awaken_initialize_header() {
 	
 	//CSS Begins
 	echo "<style>";
-		echo get_theme_mod( 'custom_css' );	
+		echo get_theme_mod( 'custom_css', '' );	
 	echo "</style>";
 	//CSS Ends
 	

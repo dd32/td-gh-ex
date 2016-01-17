@@ -12,8 +12,8 @@ if ( get_theme_mod( 'display_social_icons', false ) ) : ?>
 	<?php if ( get_theme_mod( 'twitter_url', '' ) ) : ?>
 		<span class="asocial-icon twitter"><a href="<?php echo esc_url ( get_theme_mod( 'twitter_url', '' ) ) ?>" target="_blank"><i class="fa fa-twitter"></i></a></span>
 	<?php endif; ?>
-	<?php if ( get_theme_mod( 'googleplus_url', '' ) ) : ?>
-		<span class="asocial-icon googleplus"><a href="<?php echo esc_url ( get_theme_mod( 'googleplus_url', '' ) ) ?>" target="_blank"><i class="fa fa-google-plus"></i></a></span>
+	<?php if ( get_theme_mod( 'google_plus_url', '' ) ) : ?>
+		<span class="asocial-icon googleplus"><a href="<?php echo esc_url ( get_theme_mod( 'google_plus_url', '' ) ) ?>" target="_blank"><i class="fa fa-google-plus"></i></a></span>
 	<?php endif; ?>
 	<?php if ( get_theme_mod( 'linkedin_url', '' ) ) : ?>
 		<span class="asocial-icon linkedin"><a href="<?php echo esc_url ( get_theme_mod( 'linkedin_url', '' ) ) ?>" target="_blank"><i class="fa fa-linkedin"></i></a></span>

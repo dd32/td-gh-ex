@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.0.1
+Version    : 2.0.3
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -168,3 +168,7 @@ Added backward compatibility for title tag.
 
 - Version 2.0.2
 Fixed a issue in get_theme_mod in footer.php
+
+- Version 2.0.3
+Changed archive title for categories and tags.
+Fixed Google Plus icon not displaying issue.
