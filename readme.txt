@@ -39,6 +39,9 @@ Other icons and images are created by Themeora and licensed under GPL.
 Changelog
 --------------------------------------------------------------------------------
 
+v1.2.5
+- Bug fix: Removed test data being returned in footer copyright
+
 v1.2.4
 - Tweak: Removed default fixed position navbar
 - Tweak: Added option for fixed position navbar

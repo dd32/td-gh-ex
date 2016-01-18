@@ -24,7 +24,7 @@ class themeora_Video_Widget extends WP_Widget {
     function themeora_Video_Widget() {
         $widget_ops = array( 'classname' => 'themeora-video', 'description' => __('A simple video widget that makes it easy to add responsive videos ', THEMEORA_THEME_NAME) );  
         $control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'themeora-video-widget' );  
-        $this->WP_Widget( 'themeora-video-widget', __('themeora Video Widget', THEMEORA_THEME_NAME), $widget_ops, $control_ops );
+        parent::__construct( 'themeora-video-widget', __('themeora Video Widget', THEMEORA_THEME_NAME), $widget_ops, $control_ops );
     }
 
     function widget( $args, $instance ) {
