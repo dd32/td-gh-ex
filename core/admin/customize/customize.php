@@ -22,6 +22,18 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			
 			),
 
+			/* START SUPPORT SECTION */ 
+
+			array(
+			
+				"title" => __( "Get support","suevafree"),
+				"id" => "suevafree-customize-info",
+				"type" => "suevafree-customize-info",
+				"section" => "suevafree-customize-info",
+				"priority" => "09",
+
+			),
+
 			/* START GENERAL SECTION */ 
 
 			array( 

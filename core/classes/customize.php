@@ -16,7 +16,7 @@ class suevafree_customize {
 	public function customize_scripts() {
 
 		wp_enqueue_style ( 
-			'jaxlite_panel', 
+			'suevafree_panel', 
 			get_template_directory_uri() . '/core/admin/inc/css/customize.css', 
 			array(), 
 			''
@@ -227,7 +227,27 @@ class suevafree_customize {
 					) );
 							
 				break;
-	
+
+				case 'suevafree-customize-info' :
+
+					$wp_customize->add_section( $element['id'], array(
+					
+						'title' => $element['title'],
+						'priority' => $element['priority'],
+						'capability' => 'edit_theme_options',
+
+					) );
+
+					$wp_customize->add_setting(  $element['id'], array(
+						'sanitize_callback' => 'esc_url_raw'
+					) );
+					 
+					$wp_customize->add_control( new Suevafree_Customize_Info_Control( $wp_customize,  $element['id'] , array(
+						'section' => $element['section'],
+					) ) );		
+										
+				break;
+
 			}
 			
 		}
@@ -273,6 +293,48 @@ class suevafree_customize {
 
 		endif;
 
+	}
+
+}
+
+if ( class_exists( 'WP_Customize_Control' ) ) {
+
+	class Suevafree_Customize_Info_Control extends WP_Customize_Control {
+
+		public $type = "suevafree-customize-info";
+
+		public function render_content() { ?>
+
+			<h2><?php _e('Get support','suevafree');?></h2> 
+            
+            <div class="inside">
+    
+                <p><?php _e("If you've opened a new support ticket from <strong>WordPress.org</strong>, please send a reminder to <strong>support@wpinprogress.com</strong>, to get a faster reply.","suevafree");?></p>
+
+                <ul>
+                
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/theme/suevafree' ); ?>" title="<?php _e('Open a new ticket','suevafree');?>" target="_blank"><?php _e('Open a new ticket','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'mailto:support@wpinprogress.com' ); ?>" title="<?php _e('Send a reminder','suevafree');?>" target="_blank"><?php _e('Send a reminder','suevafree');?></a></li>
+                
+                </ul>
+    
+
+                <p><?php _e("If you like this theme and support, <strong>I'd appreciate</strong> any of the following:","suevafree");?></p>
+
+                <ul>
+                
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/suevafree#postform' ); ?>" title="<?php _e('Rate this Theme','suevafree');?>" target="_blank"><?php _e('Rate this Theme','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://www.facebook.com/WpInProgress' ); ?>" title="<?php _e('Like on Facebook','suevafree');?>" target="_blank"><?php _e('Like on Facebook','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'http://eepurl.com/SknoL' ); ?>" title="<?php _e('Subscribe our newsletter','suevafree');?>" target="_blank"><?php _e('Subscribe our newsletter','suevafree');?></a></li>
+                
+                </ul>
+    
+            </div>
+    
+		<?php
+
+		}
+	
 	}
 
 }
