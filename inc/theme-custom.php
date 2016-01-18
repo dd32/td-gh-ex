@@ -129,7 +129,7 @@ if ( ! function_exists( 'simple_life_footer_widgets_init' ) ) :
 
 		if ( $footer_widgets > 0 ) {
 			register_sidebars( $footer_widgets, array(
-				'name'          => 'Footer Column %d',
+				'name'          => esc_html__( 'Footer Column', 'simple-life' ) . '%d',
 				'id'            => 'footer-sidebar',
 				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</aside>',
@@ -158,26 +158,26 @@ function simple_life_custom_footer_widget_class( $input ) {
 	switch ( $footer_widgets ) {
 		case 1:
 			$input = 'col-sm-12';
-	  break;
+		  break;
 
 		case 2:
 			$input = 'col-sm-6';
-	  break;
+		  break;
 
 		case 3:
 			$input = 'col-sm-4';
-	  break;
+		  break;
 
 		case 4:
 			$input = 'col-sm-3';
-	  break;
+		  break;
 
 		case 6:
 			$input = 'col-sm-2';
-	  break;
+		  break;
 
 		default:
-	  break;
+		  break;
 	}
 
 	return $input;
@@ -264,3 +264,25 @@ if ( ! function_exists( 'simple_life_add_go_to_top' ) ) :
 	}
 endif;
 add_action( 'wp_footer', 'simple_life_add_go_to_top' );
+
+if ( ! function_exists( 'simple_life_custom_content_width' ) ) :
+
+	/**
+	 * Custom content width.
+	 *
+	 * @since 1.3
+	 */
+	function simple_life_custom_content_width() {
+
+		global $post, $content_width;
+		if ( is_page() ) {
+			if ( is_page_template( 'template/full-width.php' ) ) {
+				$content_width = 1128;
+			} elseif ( is_page_template( array( 'template/content-sidebar.php', 'template/sidebar-content.php' ) ) ) {
+				$content_width = 800;
+			}
+		}
+	}
+endif;
+
+add_filter( 'template_redirect', 'simple_life_custom_content_width' );

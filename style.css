@@ -4,9 +4,9 @@ Theme URI: http://www.nilambar.net/2015/03/simple-life-free-wordpress-theme.html
 Author: Nilambar Sharma
 Author URI: http://www.nilambar.net/
 Description: Simple Life is a simple and minimal theme for your awesome WordPress website. It comes with a whole set of interesting, rich features and flexible theme customization. This theme is easily customizable with the Customizer feature of WordPress. It is also translation ready.
-Version: 1.2.1
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.3
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: simple-life
 Tags: light, white, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, translation-ready, responsive-layout
 
@@ -250,7 +250,6 @@ input[type="search"],
 textarea {
 	color: #666;
 	border: 1px solid #ccc;
-	/*border-radius: 3px;*/
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -481,12 +480,14 @@ a:active {
 	overflow: hidden;
 }
 .comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
 	float: left;
 	width: 50%;
 }
 .comment-navigation .nav-next,
+.posts-navigation .nav-next,
 .paging-navigation .nav-next,
 .post-navigation .nav-next {
 	float: right;
@@ -719,6 +720,7 @@ h2 a:hover, h3 a:hover {
   font-size: 20px;
 }
 .site-main .paging-navigation,
+.site-main .posts-navigation,
 .site-main .post-navigation,
 nav.pagination {
     background-color: #ffffff;
@@ -1144,4 +1146,32 @@ a.scrollup, a.scrollup:active {
     position: fixed;
     right: 20px;
     z-index: 9999;
+}
+
+@media only screen and (max-width:767px) {
+
+  #secondary{
+    clear: both;
+  }
+
+}
+
+@media only screen and (max-width:640px) {
+
+  header#masthead{
+    padding-top:40px;
+  }
+  .site-branding{
+    margin:0 5px;
+  }
+
+}
+
+@media only screen and (max-width:360px) {
+
+  .entry-header h2 {
+      max-width: 80%;
+      width: 80%;
+  }
+
 }
