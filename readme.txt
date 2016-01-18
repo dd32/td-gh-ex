@@ -27,6 +27,12 @@ Athena
 
 Athena includes support for Infinite Scroll in Jetpack.
 
+= How many menu items does Athena support ?
+
+Athena supports an unlimited number of menu items, it has been optimized for top-level menus, sub menus and sub-sub menus.
+As a recommendation, try to maintain the number of top menu items under 8 or 9 items, because if you add more,
+the menu items will drop to a new line and will not look as good as intended.
+
 
 == Changelog ==
 
@@ -125,4 +131,10 @@ Modifications based on theme review feedback
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
     - Photographer          StartupStockPhotos
+
+18. Homepage Image  
+    - URL                   http://tgmpluginactivation.com/
+    - License               Licensed under GPLv2 or later
+    - License URL           http://www.gnu.org/licenses/gpl.html
+
 
