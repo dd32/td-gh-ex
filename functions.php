@@ -297,9 +297,9 @@ function digital_pagination() {
 //Require Plugins
 
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
-add_action( 'tgmpa_register', 'promax_register_required_plugins' );
+add_action( 'tgmpa_register', 'digital_register_required_plugins' );
 
-function promax_register_required_plugins() {
+function digital_register_required_plugins() {
 
    $plugins = array(
 
@@ -309,6 +309,11 @@ function promax_register_required_plugins() {
 		array(
 			'name'      => 'Regenerate Thumbnails',
 			'slug'      => 'regenerate-thumbnails',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Menu Icons',
+			'slug'      => 'menu-icons',
 			'required'  => false,
 		),
 

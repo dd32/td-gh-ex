@@ -27,14 +27,7 @@ function optionsframework_options() {
 		'10' => __('10', 'digital')
 	);
 
-	// Multicheck Array
-	$multicheck_array = array(
-		'one' => __('French Toast', 'digital'),
-		'two' => __('Pancake', 'digital'),
-		'three' => __('Omelette', 'digital'),
-		'four' => __('Crepe', 'digital'),
-		'five' => __('Waffle', 'digital')
-	);
+
 
 	// Multicheck Defaults
 	$multicheck_defaults = array(
@@ -108,7 +101,7 @@ $options[] = array(
             <li>' . esc_attr__( 'Responsive Website Design.', 'digital' ) . '</li>
             <li>' . esc_attr__( 'Different Website Layout to Select.', 'digital' ) . '</li>
             <li>' . esc_attr__( 'Many of Other customize feature for your blog or website.', 'digital' ) . '</li>
-            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/digital','digital')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'digital' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://forum.insertcart.com/','digital')) . '" target="_blank">' . esc_attr__( 'Support Forum !', 'digital' ) . '</a></span></p>',
+            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/product/digital-wp-theme/','digital')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'digital' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://forum.insertcart.com/','digital')) . '" target="_blank">' . esc_attr__( 'Support Forum !', 'digital' ) . '</a></span></p>',
             'class' => 'tesingh',
             'type' => 'info');
 	$options[] = array(
@@ -373,7 +366,7 @@ $options[] = array(
 		'type' => 'text');		
 	
 		$options[] = array(
-		'desc' => sprintf( __( '<b>Only Premium User Have More slider </b>  <a href="%1$s" target="_blank">Buy Premium version</a>', 'digital' ), 'http://www.insertcart.com/digital' ), 
+		'desc' => sprintf( __( '<b>Only Premium User Have More slider </b>  <a href="%1$s" target="_blank">Buy Premium version</a>', 'digital' ), 'http://www.insertcart.com/product/digital-wp-theme/' ), 
 		'type' => 'info');
 		
 		

@@ -2,7 +2,7 @@
 Thanks for Downloading digital theme
 --------------------------------------------------------
 I made this for free to use if you find any bug or error please
-You can directly contact us: http://www.insertcart.com/digital
+You can directly contact us: http://www.insertcart.com/product/digital-wp-theme/
 also suggestion are welcome
 
 
@@ -35,6 +35,14 @@ Custom Css:
 
 
 == Change log ==
+
+= 1.3 =
+* Updated theme codes
+* Fixed css issue
+* Added new features
+
+= 1.2.3 =
+* Fixed header image issue 
 
 = 1.2.2 =
 * Color scheme change to orange

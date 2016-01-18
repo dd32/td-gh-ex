@@ -1,6 +1,17 @@
 <?php
- 	   
-	
+
+function digital_backg() {
+	?>
+	<style type="text/css">
+	<?php if ( get_header_image() ) : ?>	
+		#header{background-image:url("<?php esc_url(header_image());?>"); display: flex;background-repeat: round;}
+		<?php endif; ?>
+		
+		    </style>
+<?php };
+add_action('wp_head', 'digital_backg');
+
+
 function digital_tiltechange() {
 if (of_get_option('digital_latestchange') != '') {
 		echo '' . esc_attr(of_get_option('digital_latestchange')) . '' . "\n";
@@ -83,9 +94,9 @@ function digital_breadcrumbs() {
             echo $crumb . ' ' . $delimiter . ' ';
         echo $before . esc_html(get_the_title()) . $after;
     } elseif (is_search()) {
-        echo $before . __('Search results for "' . get_search_query() . '"','digital')  . $after;
+        echo $before . __('Search results for','digital') . get_search_query() . $after;
     } elseif (is_tag()) {
-        echo $before . __('Posts tagged "' . single_tag_title('', false) . '"','digital') . $after;
+        echo $before . __('Posts tagged','digital') . single_tag_title('', false) . $after;
     } elseif (is_author()) {
         global $author;
         $userdata = get_userdata($author);

@@ -12,38 +12,38 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package promax
+ * @package digital
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses promax_header_style()
- * @uses promax_admin_header_style()
- * @uses promax_admin_header_image()
+ * @uses digital_header_style()
+ * @uses digital_admin_header_style()
+ * @uses digital_admin_header_image()
  */
-function promax_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'promax_custom_header_args', array(
+function digital_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'digital_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1284,
 		'height'                 => 250,
             
 		'flex-height'            => true,
-		'wp-head-callback'       => 'promax_header_style',
-		'admin-head-callback'    => 'promax_admin_header_style',
-		'admin-preview-callback' => 'promax_admin_header_image',
+		'wp-head-callback'       => 'digital_header_style',
+		'admin-head-callback'    => 'digital_admin_header_style',
+		'admin-preview-callback' => 'digital_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'promax_custom_header_setup' );
+add_action( 'after_setup_theme', 'digital_custom_header_setup' );
 
-if ( ! function_exists( 'promax_header_style' ) ) :
+if ( ! function_exists( 'digital_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see promax_custom_header_setup().
+ * @see digital_custom_header_setup().
  */
-function promax_header_style() {
+function digital_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -76,15 +76,15 @@ function promax_header_style() {
 	</style>
 	<?php
 }
-endif; // promax_header_style
+endif; // digital_header_style
 
-if ( ! function_exists( 'promax_admin_header_style' ) ) :
+if ( ! function_exists( 'digital_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see promax_custom_header_setup().
+ * @see digital_custom_header_setup().
  */
-function promax_admin_header_style() {
+function digital_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -104,15 +104,15 @@ function promax_admin_header_style() {
 	</style>
 <?php
 }
-endif; // promax_admin_header_style
+endif; // digital_admin_header_style
 
-if ( ! function_exists( 'promax_admin_header_image' ) ) :
+if ( ! function_exists( 'digital_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see promax_custom_header_setup().
+ * @see digital_custom_header_setup().
  */
-function promax_admin_header_image() {
+function digital_admin_header_image() {
 ?>
 	<div id="headimg">
 		<h1 class="displaying-header-text">
@@ -125,4 +125,4 @@ function promax_admin_header_image() {
 	</div>
 <?php
 }
-endif; // promax_admin_header_image
+endif; // digital_admin_header_image

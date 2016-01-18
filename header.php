@@ -14,7 +14,6 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 		</div>  </div>
 	<div id="header">
-    <div id="header-inner" class="clearfix">
 		<div id="logo">
 <?php if (of_get_option( 'digital_logo' )): ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'digital_logo' ); ?>" max-height="100px" max-width="450px" alt="<?php bloginfo( 'name' ); ?>"/></a>
@@ -25,7 +24,6 @@
           <?php endif; ?>		
 		</div>		
 		<div id="banner-top"><?php echo of_get_option( 'banner_top'); ?></div>		
-    </div> <!-- end div #header-inner -->
 	</div> <!-- end div #header -->
 
 	<!-- END HEADER -->

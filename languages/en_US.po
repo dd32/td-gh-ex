@@ -555,7 +555,7 @@ msgid "Copyright &#169; | "
 msgstr ""
 
 #: includes/adfun.php:20
-msgid "http://www.insertcart.com/digital/"
+msgid "http://www.insertcart.com/product/digital-wp-theme//"
 msgstr ""
 
 #: includes/adfun.php:20
@@ -698,7 +698,7 @@ msgid "Many of Other customize feature for your blog or website."
 msgstr ""
 
 #: options.php:120
-msgid "http://www.insertcart.com/digital"
+msgid "http://www.insertcart.com/product/digital-wp-theme/"
 msgstr ""
 
 #: options.php:120
