@@ -374,6 +374,17 @@ $wp_customize->add_control( new Html_Custom_Control( $wp_customize, 'upgrade_box
         'section' => 'style-main-menu',
         'settings' => $igthemes_option . '[main_menu_style]',
     )));
+//text style
+    $wp_customize->add_setting($igthemes_option . '[text_style]', array(
+        'sanitize_callback' => 'igthemes_sanitize_allowedtags',
+    ));
+    $wp_customize->add_control( new Html_Custom_Control( $wp_customize,'text_style', array(
+        'label' => esc_html__('Text Style', 'base-wp'),
+        'description' => esc_html__('Text custom colors', 'base-wp') . $upgrade_message,
+        'type' => 'custom',
+        'section' => 'colors',
+        'settings' => $igthemes_option . '[text_style]',
+    )));
 //link style
     $wp_customize->add_setting($igthemes_option . '[link_style]', array(
         'sanitize_callback' => 'igthemes_sanitize_allowedtags',

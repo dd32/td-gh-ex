@@ -114,7 +114,7 @@ public function form( $instance ) {
     </p>
     <p>
         <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php esc_html_e( 'Facebook url:' , 'base-wp' ); ?></label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text" value="<?php echo $facebook; ?>" placeholder="<?php echo esc_url(igthemes_option( 'facebookr_url', '' )); ?>" />
+        <input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text" value="<?php echo $facebook; ?>" placeholder="<?php echo esc_url(igthemes_option( 'facebook_url', '' )); ?>" />
     </p>
     <p>
         <label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php esc_html_e( 'Twitter url:' , 'base-wp' ); ?></label>

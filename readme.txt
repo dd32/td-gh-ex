@@ -158,3 +158,10 @@ Changelog
 * Header menu will be hidden if empty.
 
 == 1.32 ==
+* Updated framework.
+* Minor fix.
+
+== 1.33 ==
+* Moved css and js files.
+* Fixed facebook url in the IG Social Widget.
+* Fixed little bug in IG Recent Posts.

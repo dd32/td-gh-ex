@@ -173,7 +173,7 @@ function igthemes_footer_credits() { ?>
                  <?php igthemes_footer_gotop();?>
                         <?php printf( esc_html__( 'Proudly powered by ', 'base-wp' )); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'base-wp' ) ); ?>"><?php printf( __( '%s', 'base-wp' ), 'WordPress' ); ?></a>
                         <span class="sep"> | </span>
-                        <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'base-wp' ), 'Base WP', '<a href="http://iograficathemes.com/" rel="designer">Iografica Themes</a>' ); ?>
+                        <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'base-wp' ),wp_get_theme()->get( 'Name' ), '<a href="http://iograficathemes.com/" rel="designer">Iografica Themes</a>' ); ?>
                 </div><!-- .col12 -->
             </div><!-- .row -->
         </div><!-- .grid -->
