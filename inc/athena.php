@@ -283,50 +283,6 @@ function athena_custom_css() {
 
 add_action('wp_head', 'athena_custom_css');
 
-function athena_homepage_script() { ?>
-
-    <script>
-        jQuery(document).ready(function ($) {
-
-            function get_height() {
-
-                if (jQuery(window).width() < 601) {
-
-                    return jQuery(window).height();
-                } else {
-                    return jQuery(window).height();
-                }
-
-
-            }
-
-            athena_slider();
-
-            function athena_slider() {
-
-                var height = get_height();
-
-                jQuery('#athena-slider').camera({
-                    height: height + 'px',
-                    loader: 'bar',
-                    overlay: false,
-                    fx: 'simpleFade',
-                    pagination: false,
-                    thumbnails: false,
-                    transPeriod: 1000,
-                    overlayer: false,
-                    playPause: false,
-                    hover: false,
-                });
-            }
-        });
-
-    </script>
-
-<?php
-}
-
-add_action('wp_head', 'athena_homepage_script');
 
 function athena_render_homepage() { ?>
 
@@ -396,11 +352,11 @@ function athena_render_homepage() { ?>
         <div id="athena-overlay-trigger">
 
             <div class="overlay-widget">
-
-                <?php if (is_active_sidebar('sidebar-overlay')) : ?>
-                    <?php dynamic_sidebar('sidebar-overlay'); ?>
-                <?php endif; ?>
-
+                <div class="row">
+                    <?php if (is_active_sidebar('sidebar-overlay')) : ?>
+                        <?php dynamic_sidebar('sidebar-overlay'); ?>
+                    <?php endif; ?>
+                </div>
             </div>
 
             <span class="<?php echo esc_attr( get_theme_mod( 'overlay_icon', 'fa fa-plus' ) ); ?> animated rotateIn delay3"></span>
@@ -553,7 +509,7 @@ function athena_render_footer(){ ?>
                 ) ); ?>
             <br>
 
-            <a href="https://smartcatdesign.net" rel="designer" style="display: block !important">
+            <a href="https://smartcatdesign.net" rel="designer" style="display: block !important" class="rel">
                 <?php _e( 'Design by' , 'athena' ); echo ' Smart' . 'cat'; ?>
                 <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo_mini.png'?>"/>
             </a>

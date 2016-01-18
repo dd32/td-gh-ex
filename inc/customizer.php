@@ -51,7 +51,7 @@ function athena_customize_register( $wp_customize ) {
 
     $wp_customize->add_panel( 'slider', array (
         'title'                 => __( 'Slider', 'athena' ),
-        'description'           => __( 'Customize the slider', 'athena' ),
+        'description'           => __( 'Customize the slider. Athena includes 2 slides, and the pro version supports up to 5', 'athena' ),
         'priority'              => 10
     ) );
     

@@ -129,3 +129,5 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load the theme functions
  */
 require get_template_directory() . '/inc/athena.php';
+
+require get_template_directory() . '/inc/tgm.php';

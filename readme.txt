@@ -33,6 +33,9 @@ Athena includes support for Infinite Scroll in Jetpack.
 = 1.0 - October 24 2015 =
 First version of the theme released
 
+= 1.1 - January 17th, 2016
+Modifications based on theme review feedback
+
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

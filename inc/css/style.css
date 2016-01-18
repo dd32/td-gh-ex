@@ -713,6 +713,10 @@ input[type="submit"]{
     display: none;
 }
 
+.site-info a.rel{
+    display: block !important;
+}
+
 /*-- 6. Sidebar --*/
 
 #athena-sidebar{
