@@ -38,6 +38,8 @@
 			$pinterestURL = get_theme_mod('blogghiamo_theme_options_pinteresturl', '#');
 			$vkURL = get_theme_mod('blogghiamo_theme_options_vkurl', '#');
 			$tumblrURL = get_theme_mod('blogghiamo_theme_options_tumblrurl', '#');
+			$githubURL = get_theme_mod('blogghiamo_theme_options_githuburl', '');
+			$vineURL = get_theme_mod('blogghiamo_theme_options_vineurl', '');
 			$emailURL = get_theme_mod('blogghiamo_theme_options_emailurl', '#');
 		?>
 
@@ -76,6 +78,14 @@
 						
 				<?php if (!empty($vkURL)) : ?>
 					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'blogghiamo' ); ?>"><i class="fa fa-vk spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'VK', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+				
+				<?php if (!empty($githubURL)) : ?>
+					<a href="<?php echo esc_url($githubURL); ?>" title="<?php esc_attr_e( 'GitHub', 'blogghiamo' ); ?>"><i class="fa fa-github spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'GitHub', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+				
+				<?php if (!empty($vineURL)) : ?>
+					<a href="<?php echo esc_url($vineURL); ?>" title="<?php esc_attr_e( 'Vine', 'blogghiamo' ); ?>"><i class="fa fa-vine spaceRightDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Vine', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if (!empty($emailURL)) : ?>

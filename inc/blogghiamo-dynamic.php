@@ -128,6 +128,16 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 	'default' => '#',
 	'label' => __('VK URL', 'blogghiamo')
 	);
+	$socialmedia[] = array(
+	'slug'=>'githuburl', 
+	'default' => '',
+	'label' => __('GitHub URL', 'blogghiamo')
+	);
+	$socialmedia[] = array(
+	'slug'=>'vineurl', 
+	'default' => '',
+	'label' => __('Vine URL', 'blogghiamo')
+	);
 	
 	foreach( $socialmedia as $blogghiamo_theme_options ) {
 		// SETTINGS
@@ -388,6 +398,16 @@ function blogghiamo_custom_css_styles() {
 	input[type="url"]:focus,
 	input[type="password"]:focus,
 	input[type="search"]:focus,
+	input[type="number"]:focus,
+	input[type="tel"]:focus,
+	input[type="range"]:focus,
+	input[type="date"]:focus,
+	input[type="month"]:focus,
+	input[type="week"]:focus,
+	input[type="time"]:focus,
+	input[type="datetime"]:focus,
+	input[type="datetime-local"]:focus,
+	input[type="color"]:focus,
 	textarea:focus,
 	.post-navigation .meta-nav:hover,
 	#wp-calendar tbody td#today,

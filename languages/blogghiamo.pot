@@ -1,16 +1,22 @@
-# Copyright (C) 2014 Automattic
-# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0-wpcom\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2014-09-11 00:43:48+00:00\n"
+"Project-Id-Version: Blogghiamo\n"
+"POT-Creation-Date: 2016-01-18 09:40+0100\n"
+"PO-Revision-Date: 2016-01-18 09:40+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
@@ -213,7 +219,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:35 content.php:46 inc/template-tags.php:122
+#: content-page.php:35 content.php:45 inc/template-tags.php:122
 msgid "Edit"
 msgstr ""
 
@@ -231,27 +237,75 @@ msgstr ""
 msgid "%1$s by %2$s."
 msgstr ""
 
-#: functions.php:55
+#: functions.php:54
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:90
+#: functions.php:89
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:25
+#: header.php:21
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:91
-msgid "Search for:"
+#: header.php:48
+msgid "Facebook"
+msgstr ""
+
+#: header.php:52
+msgid "Twitter"
+msgstr ""
+
+#: header.php:56
+msgid "Google Plus"
+msgstr ""
+
+#: header.php:60
+msgid "Linkedin"
+msgstr ""
+
+#: header.php:64
+msgid "Instagram"
+msgstr ""
+
+#: header.php:68
+msgid "YouTube"
+msgstr ""
+
+#: header.php:72
+msgid "Pinterest"
+msgstr ""
+
+#: header.php:76 header.php:92
+msgid "Tumblr"
+msgstr ""
+
+#: header.php:80
+msgid "VK"
+msgstr ""
+
+#: header.php:84
+msgid "GitHub"
+msgstr ""
+
+#: header.php:88
+msgid "Vine"
 msgstr ""
 
 #: header.php:92
+msgid "Email"
+msgstr ""
+
+#: header.php:107
+msgid "Search for:"
+msgstr ""
+
+#: header.php:108
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: header.php:99
+#: header.php:115
 msgid "Menu"
 msgstr ""
 
@@ -265,6 +319,159 @@ msgstr ""
 
 #: inc/blogghiamo-dynamic.php:46
 msgid "Special Color"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:76
+msgid "Blogghiamo Theme Options"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:89
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:94
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:99
+msgid "Google Plus URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:104
+msgid "Linkedin URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:109
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:114
+msgid "YouTube URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:119
+msgid "Pinterest URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:124
+msgid "Tumblr URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:129
+msgid "VK URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:134
+msgid "GitHub URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:139
+msgid "Vine URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:174
+msgid "Your Email"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:191
+msgid "Show Search Button"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:209
+msgid "Show RSS Icon"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:227
+msgid ""
+"Check if you want to show excerpt, uncheck if you want to show full post"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:241
+msgid "Get Blogghiamo PRO WP Theme for only"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:246
+msgid "Watch the demo"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:249
+msgid "Get Blogghiamo PRO Theme"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:253
+msgid "Advanced Theme Options"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:254
+msgid "Logo Upload"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:255
+msgid "Font switcher"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:256
+msgid "Loading Page"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:257
+msgid "Unlimited Colors and Skin"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:258
+msgid "Beautiful Slider"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:259
+msgid "Breaking News"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:260
+msgid "Post views counter"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:261
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:262
+msgid "Post format"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:263
+msgid "7 Shortcodes"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:264
+msgid "12 Exclusive Widgets"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:265
+msgid "Related Posts Box"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:266
+msgid "Information About Author Box"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:267
+msgid "Advertising System"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:268
+msgid "And much more..."
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:274
+msgid "More features? Upgrade to PRO"
+msgstr ""
+
+#: inc/customizer.php:38
+msgid "Demo PRO version"
+msgstr ""
+
+#: inc/customizer.php:39
+msgid "Get PRO Version"
 msgstr ""
 
 #: inc/extras.php:64
@@ -326,234 +533,6 @@ msgstr ""
 
 #: inc/template-tags.php:102
 msgid "% Comments"
-msgstr ""
-
-#: inc/theme-options.php:26 inc/theme-options.php:50
-msgid "Blogghiamo Theme Options"
-msgstr ""
-
-#: inc/theme-options.php:63
-msgid " Free Theme Options"
-msgstr ""
-
-#: inc/theme-options.php:66
-msgid "Need more features and options? Upgrade to PRO!"
-msgstr ""
-
-#: inc/theme-options.php:67
-msgid "Get"
-msgstr ""
-
-#: inc/theme-options.php:67
-msgid "Blogghiamo PRO"
-msgstr ""
-
-#: inc/theme-options.php:67
-msgid "WordPress Theme for only"
-msgstr ""
-
-#: inc/theme-options.php:69
-msgid "Demo (Blogghiamo PRO)"
-msgstr ""
-
-#: inc/theme-options.php:71
-msgid "Get The Pro Version"
-msgstr ""
-
-#: inc/theme-options.php:75
-msgid "Advanced Theme Options"
-msgstr ""
-
-#: inc/theme-options.php:75
-msgid ""
-"(Choose Sidebar position, Manage Loading Page, Additional Custom Code, Font "
-"switcher and much more...)"
-msgstr ""
-
-#: inc/theme-options.php:76
-msgid "Logo and Favicon Upload"
-msgstr ""
-
-#: inc/theme-options.php:77
-msgid "Unlimited Colors and Skin"
-msgstr ""
-
-#: inc/theme-options.php:78
-msgid "Beautiful Slider"
-msgstr ""
-
-#: inc/theme-options.php:79
-msgid "Breaking News"
-msgstr ""
-
-#: inc/theme-options.php:80
-msgid "Post views counter"
-msgstr ""
-
-#: inc/theme-options.php:81
-msgid "Breadcrumb"
-msgstr ""
-
-#: inc/theme-options.php:82
-msgid "Post format"
-msgstr ""
-
-#: inc/theme-options.php:82
-msgid "(Standard, Gallery, Audio, Link, Video, Quote)"
-msgstr ""
-
-#: inc/theme-options.php:83
-msgid "7 Shortcodes"
-msgstr ""
-
-#: inc/theme-options.php:83
-msgid "(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)"
-msgstr ""
-
-#: inc/theme-options.php:84
-msgid "12 Exclusive Widgets"
-msgstr ""
-
-#: inc/theme-options.php:84
-msgid ""
-"(Latest Tweet, Instagram, Random Posts, Social Counter, Posts with "
-"Thumbnail, News in Pictures, and much more...)"
-msgstr ""
-
-#: inc/theme-options.php:85
-msgid "Related Posts Box"
-msgstr ""
-
-#: inc/theme-options.php:86
-msgid "Information About Author Box"
-msgstr ""
-
-#: inc/theme-options.php:87
-msgid "Advertising System"
-msgstr ""
-
-#: inc/theme-options.php:88
-msgid "And much more..."
-msgstr ""
-
-#: inc/theme-options.php:93
-msgid ""
-"These options will let you setup the social icons at the top of the theme. "
-"You can enter the URLs of your profiles to have the icons show up."
-msgstr ""
-
-#: inc/theme-options.php:95
-msgid "Options saved"
-msgstr ""
-
-#: inc/theme-options.php:110
-msgid "Hide RSS Icon?"
-msgstr ""
-
-#: inc/theme-options.php:113
-msgid "Hide the RSS feed icon?"
-msgstr ""
-
-#: inc/theme-options.php:122
-msgid "Hide Search Icon?"
-msgstr ""
-
-#: inc/theme-options.php:125
-msgid "Hide the Search icon?"
-msgstr ""
-
-#: inc/theme-options.php:134
-msgid "Content text"
-msgstr ""
-
-#: inc/theme-options.php:137
-msgid ""
-"Check if you want to show full content, uncheck if you want to show the "
-"excerpt"
-msgstr ""
-
-#: inc/theme-options.php:146
-msgid "Enter your Facebook URL"
-msgstr ""
-
-#: inc/theme-options.php:149
-msgid "Leave blank to hide Facebook Icon"
-msgstr ""
-
-#: inc/theme-options.php:158
-msgid "Enter your Twitter URL"
-msgstr ""
-
-#: inc/theme-options.php:161
-msgid "Leave blank to hide Twitter Icon"
-msgstr ""
-
-#: inc/theme-options.php:170
-msgid "Enter your Google + URL"
-msgstr ""
-
-#: inc/theme-options.php:173
-msgid "Leave blank to hide Google + Icon"
-msgstr ""
-
-#: inc/theme-options.php:182
-msgid "Enter your Linkedin URL"
-msgstr ""
-
-#: inc/theme-options.php:185
-msgid "Leave blank to hide Linkedin Icon"
-msgstr ""
-
-#: inc/theme-options.php:194
-msgid "Enter your Instagram URL"
-msgstr ""
-
-#: inc/theme-options.php:197
-msgid "Leave blank to hide Instagram Icon"
-msgstr ""
-
-#: inc/theme-options.php:206
-msgid "Enter your YouTube URL"
-msgstr ""
-
-#: inc/theme-options.php:209
-msgid "Leave blank to hide YouTube Icon"
-msgstr ""
-
-#: inc/theme-options.php:218
-msgid "Enter your Pinterest URL"
-msgstr ""
-
-#: inc/theme-options.php:221
-msgid "Leave blank to hide Pinterest Icon"
-msgstr ""
-
-#: inc/theme-options.php:230
-msgid "Enter your Tumblr URL"
-msgstr ""
-
-#: inc/theme-options.php:233
-msgid "Leave blank to hide Tumblr Icon"
-msgstr ""
-
-#: inc/theme-options.php:242
-msgid "Enter your VK URL"
-msgstr ""
-
-#: inc/theme-options.php:245
-msgid "Leave blank to hide VK Icon"
-msgstr ""
-
-#: inc/theme-options.php:254
-msgid "Enter your Email"
-msgstr ""
-
-#: inc/theme-options.php:257
-msgid "Leave blank to hide Email Icon"
-msgstr ""
-
-#: inc/theme-options.php:264
-msgid "Save Options"
 msgstr ""
 
 #: search.php:16

@@ -107,3 +107,7 @@ Version 1.3.4
 Version 1.3.5
 * Updated FontAwesome to 4.5.0 Version
 * Minor bug fixes
+
+Version 1.3.6
+* Added two new social buttons
+* Fixed input type color
