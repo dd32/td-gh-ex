@@ -83,9 +83,9 @@ function aaron_featured_image_header_css() {
 //Call to action
 function aaron_action() {
 	if( get_theme_mod( 'aaron_hide_action' ) == '' ) {?>
-		<div id="action">
 			<?php 
 			if( get_theme_mod( 'aaron_action_text' ) <> '') {
+				echo '<div id="action">';
 				if( get_theme_mod( 'aaron_action_link' ) <> '') {
 					echo '<a href="' . esc_url( get_theme_mod( 'aaron_action_link' ) ) .'">';
 				}
@@ -93,11 +93,15 @@ function aaron_action() {
 				if( get_theme_mod( 'aaron_action_link' ) <> '') {
 					echo '</a>';
 				}
-			}else{			
-				echo '<a href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">' . esc_html__("Click here to setup your Call to Action", 'aaron') . '</a>';
+				echo '</div>';
+			}else{
+				if ( is_user_logged_in() ) {
+					echo '<div id="action">';
+					echo '<a href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">' . __("Click here to setup your Call to Action", 'aaron') . '</a>';
+					echo '</div>';
+				}
 			}
 			?>
-		</div>
 	<?php
 	}
 }
