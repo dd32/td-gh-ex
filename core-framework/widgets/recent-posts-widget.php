@@ -54,7 +54,7 @@ function widget($args, $instance) {
             </div>
             <?php if ( $date ) : ?>
                 <span class="post-date">
-                    <?php echo $date . get_the_date(); ?>
+                    <?php echo get_the_date(); ?>
                 </span>
             <?php endif; ?>
             <?php if ( $excerpt ) : ?>

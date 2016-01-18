@@ -4,7 +4,7 @@ Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
 Author URI: http://www.iograficathemes.com/
 Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is WooCommerce compatible, multilingual ready, SEO friendly and cross-browser compatible. You can customize the theme via Customizer adding a home page recent posts slider, a products slider, your social profiles icons, changing background color and more. The theme also have built in some custom widgets to extend the standard WordPress functionalities.
-Version: 1.32
+Version: 1.33
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base-wp
@@ -273,7 +273,7 @@ input,
 select,
 textarea {
     color: #777;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-weight:300;
     font-size: 15px;
     font-size: 1rem;
@@ -453,6 +453,7 @@ dd {
 img {
     height: auto; /* Make sure images are scaled correctly. */
     max-width: 100%; /* Adhere to container width. */
+    vertical-align: middle;
 }
 
 figure {
@@ -514,7 +515,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-    background: #555;
+    background: #666;
     color:#fff;
 }
 
@@ -526,7 +527,7 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-    background: #555;
+    background: #666;
     color:#fff;
     }
 input[type="checkbox"],
@@ -1189,6 +1190,7 @@ object {
     text-align: center;
     vertical-align: top;
     width: 100%;
+    padding: 1px;
 }
 
 .gallery-columns-2 .gallery-item {

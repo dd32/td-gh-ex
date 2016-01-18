@@ -38,7 +38,7 @@ Woocommerce
 .woocommerce input.button:hover,
 .woocommerce #review_form #submit:hover,
 .woocommerce a.button.add_to_cart_button:hover{
-    background:#555 !important;
+    background:#666 !important;
     color:#fff !important;
 }
 .woocommerce a.button,

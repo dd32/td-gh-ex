@@ -3,7 +3,7 @@
  * Welcome screen add-ons template
  */
 ?>
-<div id="free_resources" class="ig-free-resources ig-row panel">
+<div id="free_resources" class="base-wp-resources ig-row panel">
 <h2><?php esc_html_e( 'Free resources', 'base-wp' ); ?></h2>
     <p><?php esc_html_e( 'Take a look to our free resources of themes and plugins.', 'base-wp' ); ?></p>
 <div class="ig-themes">
@@ -135,4 +135,4 @@ else {
         </div><!-- ig-boxed -->
     </div><!-- ig-col2 -->
 </div><!-- ig-plugins -->
-</div><!-- ig-free-resources -->
+</div><!-- base-wp-resources -->
