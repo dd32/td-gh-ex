@@ -20,10 +20,15 @@ If you have any questions, accessibility issues or feature requests for this the
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
+Version 2.5, 2016-01-19
+Fixed a critical css bug.
+Added support for Jetpack share on pages.
+Added a widget area to the header.
+Removed the highlight skip link. The remaining skip link now skips directly to the content.
+
 Version 2.4, 2016-01-18
 Made sure that the default Call to Action button is only shown if the user is logged in.
 Fixed a bug with the highlight icons.
-
 
 Version 2.3, 2015-12-25
 Fixed two issues with the header background:

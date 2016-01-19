@@ -16,7 +16,7 @@ function aaron_docs() {
 </div>
 	<ul class="doc-menu">
 		<li><a href="#aaron-menus"><?php esc_html_e( 'Menus','aaron' ); ?></a></li>
-		<li><a href="#aaron-widget"><?php esc_html_e( 'Widget areas','aaron' ); ?></a></li>
+		<li><a href="#aaron-widgets"><?php esc_html_e( 'Widget areas','aaron' ); ?></a></li>
 		<li><a href="#aaron-front"><?php esc_html_e( 'Front page and page templates','aaron' ); ?></a></li>
 		<li><a href="#aaron-advanced"><?php esc_html_e( 'Advanced settings','aaron' ); ?></a></li>
 		<li><a href="#aaron-access"><?php esc_html_e( 'Accessibility','aaron' ); ?></a></li>
@@ -57,7 +57,7 @@ function aaron_docs() {
 		<?php _e( 'The theme now has two different sidebars: one for the front page and blog index, and one for other pages.','aaron' ); ?><br>
 		<?php _e( 'To show either sidebar, all you need to do is place your widgets inside them.','aaron' ); ?><br>
 		<?php _e( 'To hide either sidebar, remove the widgets. The content of the page will expand to full width when the sidebar is hidden.','aaron' ); ?><br><br>
-		<?php _e( 'Both the sidebars and the footer widget area can hold <b>any number of widgets</b>. The footer widget area is shown on all pages.','aaron' ); ?><br>
+		<?php _e( 'Both sidebars and the header and footer widget areas can hold <b>any number of widgets</b>. The footer widget area is shown on all pages.','aaron' ); ?><br>
 		<?php _e( 'There is also one additional widget area in the footer below the social menu, where you can place a text widget and add your copyright text.','aaron' );?> <br>
 	</div>
 
@@ -136,9 +136,7 @@ function aaron_docs() {
 		<?php _e( 'Changing the colors of the theme can affect accessibility.','aaron'); ?>
 
 		<ul>
-			<li><?php esc_html_e( 'Skip link: the theme has one skip link at the very top that lets you skip past the main menu.','aaron' ); ?><br>
-				<?php esc_html_e( 'If Highligts are used, you skip to the first Highlight, otherwise you skip to the main content.','aaron' ); ?>
-			</li>
+			<li><?php esc_html_e( 'Skip link: the theme has one skip link at the very top that lets you skip to the content.','aaron' ); ?></li>
 			<li><?php esc_html_e( 'In the customizer you can add personalized screen reader texts for your sidebar and footer.','aaron' ); ?></li>
 			<li><?php esc_html_e( 'There is also an option to change text displayed as UPPERCASE to Capitalized.','aaron' ); ?></li>
 			<li><?php esc_html_e( 'Known issues:','aaron' ); ?>

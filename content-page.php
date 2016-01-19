@@ -30,4 +30,10 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
+		<?php
+		/* Display jetpack's share if it's active*/
+		if ( function_exists( 'sharing_display' ) ) {
+			echo sharing_display();
+		}
+		?>
 </article><!-- #post-## -->

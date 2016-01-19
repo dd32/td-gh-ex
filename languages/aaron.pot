@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aaron\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2015-12-30 12:02+0100\n"
+"POT-Creation-Date: 2016-01-19 18:39+0100\n"
 "PO-Revision-Date: 2015-05-20 17:43+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: \n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: archive-jetpack-testimonial.php:32 documentation.php:181
+#: archive-jetpack-testimonial.php:32 documentation.php:179
 msgid "Testimonials"
 msgstr ""
 
@@ -197,8 +197,8 @@ msgstr ""
 
 #: documentation.php:60
 msgid ""
-"Both the sidebars and the footer widget area can hold <b>any number of "
-"widgets</b>. The footer widget area is shown on all pages."
+"Both sidebars and the header and footer widget areas can hold <b>any number "
+"of widgets</b>. The footer widget area is shown on all pages."
 msgstr ""
 
 #: documentation.php:61
@@ -336,76 +336,76 @@ msgstr ""
 msgid "Changing the colors of the theme can affect accessibility."
 msgstr ""
 
-#: documentation.php:155
+#: documentation.php:153
 msgid ""
 "Aaron uses Open Sans for body, and defaults to Montserrat for headings, "
 "menus and footer texts."
 msgstr ""
 
-#: documentation.php:156
+#: documentation.php:154
 msgid ""
 "You will find an option to change Montserrat to a different font in the "
 "customizer."
 msgstr ""
 
-#: documentation.php:161
+#: documentation.php:159
 msgid ""
 "Aaron has been tested with and style has been added for the following "
 "plugins:"
 msgstr ""
 
-#: documentation.php:169
+#: documentation.php:167
 msgid ""
 "-Once Jetpack has been activated, you can select up to six posts or pages as "
 "a front page feature. Chose a tag and add it to your posts to separate them "
 "from the rest."
 msgstr ""
 
-#: documentation.php:170
+#: documentation.php:168
 msgid ""
 "You can also choose a headline for your featured section. Featured images "
 "are optional and the recommended image size is 360x300 pixels."
 msgstr ""
 
-#: documentation.php:171
+#: documentation.php:169
 msgid ""
 "An image describing three featured posts on the front page, two with "
 "featured images and one that only displays the post title."
 msgstr ""
 
-#: documentation.php:176
+#: documentation.php:174
 #, php-format
 msgid ""
 "<a href=\"%s\">Read more about how to setup your Portfolio on Jetpacks "
 "support site.</a>"
 msgstr ""
 
-#: documentation.php:178
+#: documentation.php:176
 msgid "An image describing two portfolio items."
 msgstr ""
 
-#: documentation.php:181
+#: documentation.php:179
 msgid "Aaron also supports Jetpack"
 msgstr ""
 
-#: documentation.php:182
+#: documentation.php:180
 msgid "Tip:"
 msgstr ""
 
-#: documentation.php:182
+#: documentation.php:180
 msgid ""
 "I recommend creating a page and adding this shortcode, and then including "
 "the page as a front page section."
 msgstr ""
 
-#: documentation.php:183
+#: documentation.php:181
 #, php-format
 msgid ""
 "<a href=\"%s\">Read more about how to setup your Testimonials on Jetpacks "
 "support site.</a>"
 msgstr ""
 
-#: documentation.php:188
+#: documentation.php:186
 msgid ""
 "An image describing how sharing buttons are added to the post footer below "
 "Tags and Categories."
@@ -458,32 +458,48 @@ msgid "Footer widget area"
 msgstr ""
 
 #: functions.php:148
-msgid "Footer copyright area"
+msgid "Header widget area"
 msgstr ""
 
 #: functions.php:150
+msgid "Widgets in this area are displayed in the header, below the highlights."
+msgstr ""
+
+#: functions.php:158
+msgid "Footer copyright area"
+msgstr ""
+
+#: functions.php:160
 msgid "Place a text widget in this area and add your copyright text"
 msgstr ""
 
-#: functions.php:170
+#: functions.php:180
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions.php:267
+#: functions.php:277
 msgid "(Untitled)"
 msgstr ""
 
-#: header.php:26 header.php:28
+#: header.php:22
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:35
+#: header.php:27
 msgid "Main Menu"
+msgstr ""
+
+#: header.php:67
+msgid "Complementary widget area"
 msgstr ""
 
 #: inc/custom-header.php:32
 msgid "Mountain"
+msgstr ""
+
+#: inc/custom-header.php:100
+msgid "Click here to setup your Call to Action"
 msgstr ""
 
 #: inc/customizer.php:118

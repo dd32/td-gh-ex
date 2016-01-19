@@ -145,6 +145,16 @@ function aaron_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => __( 'Header widget area', 'aaron' ),
+				'id'            => 'sidebar-header',
+		'description'   => __( 'Widgets in this area are displayed in the header, below the highlights.', 'aaron'),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+		register_sidebar( array(
 		'name'          => __( 'Footer copyright area', 'aaron' ),
 		'id'            => 'sidebar-copyright',
 		'description'   => __( 'Place a text widget in this area and add your copyright text', 'aaron'),
@@ -415,6 +425,8 @@ function aaron_customize_css() {
 		echo ".page .site-content,\n
 			.single .site-content{margin-top:45px;}\n";
 	}
+
+echo '</style>';
 
 }
 add_action( 'wp_head', 'aaron_customize_css');

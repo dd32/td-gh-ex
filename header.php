@@ -19,16 +19,8 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'aaron' ); ?></a>
 	<?php
-	/* If the highlights are visible on the frontpage, skip to the highlights and not to #content.*/
-	if( get_theme_mod( 'aaron_hide_highlight' ) =="" && is_front_page() ) {
-	?>
-		<a class="skip-link screen-reader-text" href="#highlight"><?php _e( 'Skip to content', 'aaron' ); ?></a>
-	<?php }else{ ?>
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'aaron' ); ?></a>
-	<?php
-	}
-
 	 if ( has_nav_menu( 'header' )  ) {
 	?>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -69,7 +61,18 @@
 						aaron_highlights();
 					}
 
-					if( !aaron_get_meta('aaron_hide_tagline') ){
+
+					if ( is_active_sidebar( 'sidebar-header' )  ) {
+					?>
+					<div class="widget-area" role="complementary" aria-label="<?php _e( 'Complementary widget area', 'aaron' );?>">
+						<?php
+						dynamic_sidebar( 'sidebar-header' ); 
+						?>
+					</div><!-- #header widget -->
+					<?php
+					}
+
+				if( !aaron_get_meta('aaron_hide_tagline') ){
 						if (display_header_text() && get_bloginfo('description') <> '') {
 						?>
 							<div class="site-description"><?php bloginfo( 'description' ); ?></div>
@@ -78,7 +81,7 @@
 					}
 
 				}else{
-					//If it's not a post or paged combined with a header, show the site title in a h1, without a link.
+					//If it's not a post or page combined with a header, show the site title in a h1, without a link.
 					if (display_header_text() ) {	
 						echo '<h1 class="site-title">' . get_bloginfo( 'name' ) . '</h1>';
 					}else{
@@ -89,6 +92,16 @@
 					aaron_action();		
 						
 					aaron_highlights();
+
+					if ( is_active_sidebar( 'sidebar-header' )  ) {
+					?>
+					<div class="widget-area" role="complementary">
+						<?php
+						dynamic_sidebar( 'sidebar-header' ); 
+						?>
+					</div><!-- #header widget -->
+					<?php
+					}
 				
 					if (display_header_text() && get_bloginfo('description') <> '') {
 					?>
