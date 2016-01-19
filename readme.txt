@@ -30,6 +30,8 @@ Font Icons
   	Genericons is Licensed under the GPL, version 2 or later 
 	http://genericons.com/
 
+Images used in screenshot are selfshot my CatchThemes team, licensed uner GPL3 license	
+
 == Translation ==
 Catch Box theme is translation ready. 
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@gmail.com )

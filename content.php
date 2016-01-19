@@ -52,7 +52,15 @@
             </div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'catch-box' ) ); ?>
+			<?php 
+			the_content( 
+				sprintf( 
+					__( 'Continue reading %s', 'textdomain' ), 
+					'<span class="screen-reader-text">  '.get_the_title().'</span>' 
+				). 
+				'<span class="meta-nav">&rarr;</span>' 
+			);
+			?>
 			<?php wp_link_pages( array( 
                 'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-box' ) . '</span>',
                 'after'			=> '</div>',

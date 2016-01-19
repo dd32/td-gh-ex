@@ -77,7 +77,7 @@ function catchbox_customize_register( $wp_customize ) {
 					'id' 			=> 'site_title_above',
 					'title' 		=> __( 'Move Site Title and Tagline?', 'catch-box' ),
 					'description' 	=> '',
-				),				
+				),
 				'search_display_text' => array(
 					'id' 			=> 'search_display_text',
 					'title' 		=> __( 'Default Display Text in Search', 'catch-box' ),
@@ -113,7 +113,7 @@ function catchbox_customize_register( $wp_customize ) {
 				),
 				'slider_effect_options' => array(
 					'id' 			=> 'slider_effect_options',
-					'title' 		=> __( 'Slider Effect 	Options', 'catch-box' ),
+					'title' 		=> __( 'Slider Effect Options', 'catch-box' ),
 					'description' 	=> '',
 				),
 			)
@@ -148,13 +148,13 @@ function catchbox_customize_register( $wp_customize ) {
 	//Add Panels and sections
 	foreach ( $settings_page_tabs as $panel ) {
 		$wp_customize->add_panel(
-			$theme_slug . $panel['id'], 
+			$theme_slug . $panel['id'],
 			array(
 				'priority' 		=> 200,
 				'capability' 	=> 'edit_theme_options',
 				'title' 		=> $panel['title'],
 				'description' 	=> $panel['description'],
-			) 
+			)
 		);
 
 		// Loop through tabs for sections
@@ -174,7 +174,7 @@ function catchbox_customize_register( $wp_customize ) {
 				$theme_slug . $section['id'],
 				// parameters
 				$params
-				
+
 			);
 		}
 	}
@@ -361,7 +361,7 @@ function catchbox_customize_register( $wp_customize ) {
 						            'max'   => 20,
 						            'step'  => 1,
 						        	)
-		),		
+		),
 		'transition_effect' => array(
 			'id' 				=> 'transition_effect',
 			'title' 			=> __( 'Transition Effect', 'catch-box' ),
@@ -518,7 +518,7 @@ function catchbox_customize_register( $wp_customize ) {
 			'panel' 		=> 'social_links',
 			'section' 		=> 'predefined_social_icons',
 			'default' 		=> ''
-		),		
+		),
 		'social_dribbble' => array(
 			'id' 			=> 'social_dribbble',
 			'title' 		=> __( 'Dribbble', 'catch-box' ),
@@ -658,16 +658,16 @@ function catchbox_customize_register( $wp_customize ) {
 				)
 			);
 
-			$wp_customize->add_control( 
-				new WP_Customize_Image_Control( 
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
 					array(
 						'label'				=> $option['title'],
 						'section'   		=> $theme_slug . $option['section'],
 						'settings'  		=> $theme_slug . 'options[' . $option['id'] . ']',
 						'active_callback'	=> $option['active_callback'],
-					) 
-				) 
+					)
+				)
 			);
 		}
 		else if ('checkbox' == $option['field_type'] ) {
@@ -687,16 +687,16 @@ function catchbox_customize_register( $wp_customize ) {
 						'name'  	=> $theme_slug . 'options[' . $option['id'] . ']',
 						'section'	=> $theme_slug . $option['section']
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
 
-			$wp_customize->add_control( 
-				new CatchBox_Customize_Checkbox( 
+			$wp_customize->add_control(
+				new CatchBox_Customize_Checkbox(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
-					$params	
-				) 
+					$params
+				)
 			);
 		}
 		else {
@@ -720,7 +720,7 @@ function catchbox_customize_register( $wp_customize ) {
 					'description'   => $option['description'],
 					'section'	=> $theme_slug . $option['section']
 				);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
@@ -740,7 +740,7 @@ function catchbox_customize_register( $wp_customize ) {
 			$wp_customize->add_control(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
-				$params			
+				$params
 			);
 		}
 	}
@@ -748,7 +748,7 @@ function catchbox_customize_register( $wp_customize ) {
 	if( !isset( $options['slider_qty'] ) || !is_numeric( $options['slider_qty'] ) ) {
 		$options[ 'slider_qty' ] = 4;
 	}
-    
+
     //Add featured post elements with respect to no of featured sliders
 	for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ) {
 		$wp_customize->add_setting(
@@ -761,7 +761,7 @@ function catchbox_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[featured_slider][' . $i . ']',
 			array(
 				'label'		=> sprintf( __( '#%s Featured Post ID', 'catch-box' ), $i ),
@@ -816,7 +816,7 @@ function catchbox_customize_register( $wp_customize ) {
         'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',
-    ) ) );  
+    ) ) );
     //Important Links End
 }
 add_action( 'customize_register', 'catchbox_customize_register' );

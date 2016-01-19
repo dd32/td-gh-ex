@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-17 21:39+0545\n"
-"PO-Revision-Date: 2015-11-17 21:39+0545\n"
+"POT-Creation-Date: 2016-01-20 00:10+0545\n"
+"PO-Revision-Date: 2016-01-20 00:10+0545\n"
 "Last-Translator: Johnny Eriksson <info@johnnysblogg.se>\n"
 "Language-Team: Johnny Eriksson <info@johnnysblogg.se>\n"
 "Language: sv\n"
@@ -142,7 +142,7 @@ msgstr "Kommentarer &auml;r avst&auml;ngda"
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-quote.php:14 ../content-status.php:15
-#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:789
+#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:807
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permal&auml;nk till %s"
@@ -168,42 +168,41 @@ msgctxt "comments number"
 msgid "%"
 msgstr "%"
 
-#: ../content-aside.php:33 ../content-gallery.php:32 ../content-image.php:27
-#: ../content-link.php:33 ../content-quote.php:35 ../content-status.php:34
-#: ../content.php:55 ../functions.php:347
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "L&auml;s hela inl&auml;gget <span class=\"meta-nav\">&rarr;</span>"
+#: ../content-aside.php:36 ../content.php:58 ../functions.php:362
+#, php-format
+msgid "Continue reading %s"
+msgstr "Läs hela inlägget  %s"
 
-#: ../content-aside.php:35 ../content-featured.php:24
+#: ../content-aside.php:43 ../content-featured.php:24
 #: ../content-gallery.php:55 ../content-image.php:29 ../content-link.php:35
 #: ../content-page.php:19 ../content-quote.php:37 ../content-single.php:31
-#: ../content-status.php:36 ../content.php:57 ../image.php:87
+#: ../content-status.php:36 ../content.php:65 ../image.php:87
 msgid "Pages:"
 msgstr "Sidor:"
 
-#: ../content-aside.php:48 ../content-gallery.php:93 ../content-image.php:70
+#: ../content-aside.php:56 ../content-gallery.php:93 ../content-image.php:70
 #: ../content-link.php:48 ../content-quote.php:75 ../content-status.php:49
-#: ../content.php:97
+#: ../content.php:105
 msgid "Leave a reply"
 msgstr "L&auml;mna en kommentar"
 
-#: ../content-aside.php:48 ../content-gallery.php:93 ../content-image.php:70
+#: ../content-aside.php:56 ../content-gallery.php:93 ../content-image.php:70
 #: ../content-link.php:48 ../content-quote.php:75 ../content-status.php:49
-#: ../content.php:97
+#: ../content.php:105
 msgid "<b>1</b> Reply"
 msgstr "<b>1</b> svar"
 
-#: ../content-aside.php:48 ../content-gallery.php:93 ../content-image.php:70
+#: ../content-aside.php:56 ../content-gallery.php:93 ../content-image.php:70
 #: ../content-link.php:48 ../content-quote.php:75 ../content-status.php:49
-#: ../content.php:97
+#: ../content.php:105
 msgid "<b>%</b> Replies"
 msgstr "<b>%</b> svar"
 
-#: ../content-aside.php:50 ../content-featured.php:51
+#: ../content-aside.php:58 ../content-featured.php:51
 #: ../content-gallery.php:96 ../content-image.php:74 ../content-link.php:50
 #: ../content-page.php:27 ../content-quote.php:78 ../content-single.php:64
-#: ../content-status.php:51 ../content.php:100 ../functions.php:569
-#: ../functions.php:597 ../image.php:97
+#: ../content-status.php:51 ../content.php:108 ../functions.php:587
+#: ../functions.php:615 ../image.php:97
 msgid "Edit"
 msgstr "Redigera"
 
@@ -211,8 +210,8 @@ msgstr "Redigera"
 #: ../content-featured.php:35 ../content-featured.php:44
 #: ../content-gallery.php:68 ../content-gallery.php:78 ../content-image.php:53
 #: ../content-image.php:62 ../content-quote.php:50 ../content-quote.php:60
-#: ../content-single.php:42 ../content-single.php:45 ../content.php:71
-#: ../content.php:81
+#: ../content-single.php:42 ../content-single.php:45 ../content.php:79
+#: ../content.php:89
 msgid ", "
 msgstr ", "
 
@@ -240,6 +239,11 @@ msgstr ""
 msgid "Gallery"
 msgstr "Album"
 
+#: ../content-gallery.php:32 ../content-image.php:27 ../content-link.php:33
+#: ../content-quote.php:35 ../content-status.php:34
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Läs hela inlägget <span class=\"meta-nav\">&rarr;</span>"
+
 #: ../content-gallery.php:47
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
@@ -248,13 +252,13 @@ msgstr[0] "Detta album inneh&aring;ller <a %1$s>%2$s bild</a>"
 msgstr[1] "Detta album inneh&aring;ller <a %1$s>%2$s bilder</a>"
 
 #: ../content-gallery.php:72 ../content-image.php:57 ../content-quote.php:54
-#: ../content.php:75
+#: ../content.php:83
 #, php-format
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
 msgstr "<span class=\"%1$s\">Postad i</span> %2$s"
 
 #: ../content-gallery.php:84 ../content-image.php:65 ../content-quote.php:66
-#: ../content.php:87
+#: ../content.php:95
 #, php-format
 msgid "<span class=\"%1$s\">Tagged</span> %2$s"
 msgstr "<span class=\"%1$s\">Etikett</span> %2$s"
@@ -276,7 +280,7 @@ msgstr ""
 "</span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" "
 "title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
-#: ../content-image.php:45 ../functions.php:635
+#: ../content-image.php:45 ../functions.php:653
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visa alla poster av %s"
@@ -345,90 +349,92 @@ msgstr "Status"
 msgid "Featured"
 msgstr "Presenterad"
 
-#: ../functions.php:111
-msgid "Primary Menu"
-msgstr "Huvudmeny"
-
-#: ../functions.php:112 ../inc/catchbox-menus.php:234
-msgid "Secondary Menu"
-msgstr "Sidomeny"
-
-#: ../functions.php:113 ../inc/catchbox-menus.php:261
-msgid "Footer Menu"
-msgstr "Sidfots meny"
-
 #. translators: header image description
-#: ../functions.php:181
+#: ../functions.php:150
 msgid "Garden"
 msgstr "Tr&auml;dg&aring;rd"
 
 #. translators: header image description
-#: ../functions.php:187
+#: ../functions.php:156
 msgid "Flower"
 msgstr "Blomma"
 
 #. translators: header image description
-#: ../functions.php:193
+#: ../functions.php:162
 msgid "Mountain"
 msgstr "Berg"
 
-#: ../functions.php:390
+#: ../functions.php:171 ../inc/catchbox-menus.php:68
+msgid "Primary Menu"
+msgstr "Huvudmeny"
+
+#: ../functions.php:172 ../inc/catchbox-menus.php:96
+#: ../inc/catchbox-menus.php:187
+msgid "Secondary Menu"
+msgstr "Sidomeny"
+
+#: ../functions.php:173 ../inc/catchbox-menus.php:124
+#: ../inc/catchbox-menus.php:227
+msgid "Footer Menu"
+msgstr "Sidfots meny"
+
+#: ../functions.php:408
 msgid "Main Sidebar"
 msgstr "Huvudsakligt sidof&auml;lt"
 
-#: ../functions.php:399
+#: ../functions.php:417
 msgid "Footer Area One"
 msgstr "Sidfotsomr&aring;de 1"
 
-#: ../functions.php:401 ../functions.php:411 ../functions.php:421
+#: ../functions.php:419 ../functions.php:429 ../functions.php:439
 msgid "An optional widget area for your site footer"
 msgstr "Ett frivilligt widgetomr&aring;de i bloggens sidfot"
 
-#: ../functions.php:409
+#: ../functions.php:427
 msgid "Footer Area Two"
 msgstr "Sidfotsomr&aring;de 2"
 
-#: ../functions.php:419
+#: ../functions.php:437
 msgid "Footer Area Three"
 msgstr "Sidfotsomr&aring;de 3"
 
-#: ../functions.php:453 ../functions.php:482 ../single.php:15
+#: ../functions.php:471 ../functions.php:500 ../single.php:15
 msgid "Post navigation"
 msgstr "Inl&auml;ggsnavigering"
 
-#: ../functions.php:461 ../functions.php:490
+#: ../functions.php:479 ../functions.php:508
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ldre inl&auml;gg"
 
-#: ../functions.php:462 ../functions.php:491
+#: ../functions.php:480 ../functions.php:509
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nyare inl&auml;gg <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:569
+#: ../functions.php:587
 msgid "Pingback:"
 msgstr "Pingback:"
 
 #. translators: 1: comment author, 2: date and time
-#: ../functions.php:586
+#: ../functions.php:604
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s p&aring; %2$s <span class=\"says\">sade:</span>"
 
 #. translators: 1: date, 2: time
-#: ../functions.php:592
+#: ../functions.php:610
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s p&aring; %2$s"
 
-#: ../functions.php:601
+#: ../functions.php:619
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar v&auml;ntar p&aring; granskning."
 
-#: ../functions.php:610
+#: ../functions.php:628
 msgid "Reply <span>&darr;</span>"
 msgstr "Svara <span>&darr;</span>"
 
-#: ../functions.php:629
+#: ../functions.php:647
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -443,18 +449,22 @@ msgstr ""
 "class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
 "rel=\"author\">%7$s</a></span></span>"
 
-#: ../functions.php:692
+#: ../functions.php:710
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:902
+#: ../functions.php:917
 msgid "Name"
 msgstr "Namn"
 
-#: ../functions.php:904 ../inc/customizer/customizer.php:604
+#: ../functions.php:919 ../inc/customizer/customizer.php:604
 #: ../inc/theme-options.php:877
 msgid "Email"
 msgstr "E-post"
+
+#: ../functions.php:1042
+msgid "Footer Social Links Menu"
+msgstr ""
 
 #: ../image.php:15
 msgid "Image navigation"
@@ -486,24 +496,24 @@ msgstr ""
 msgid "Primary menu"
 msgstr "Huvudmeny"
 
-#: ../inc/catchbox-menus.php:71 ../inc/catchbox-menus.php:104
-msgid "Skip to primary content"
-msgstr "G&aring; till huvudsakligt inneh&aring;ll"
-
-#: ../inc/catchbox-menus.php:72 ../inc/catchbox-menus.php:105
-msgid "Skip to secondary content"
-msgstr "G&aring; till sekund&auml;rt inneh&aring;ll"
-
-#: ../inc/catchbox-menus.php:102
+#: ../inc/catchbox-menus.php:97
 msgid "Secondary menu"
 msgstr "Sidomeny"
 
-#: ../inc/catchbox-menus.php:133
+#: ../inc/catchbox-menus.php:125
 msgid "Footer menu"
 msgstr "Sidfots meny"
 
-#: ../inc/catchbox-menus.php:220
+#: ../inc/catchbox-menus.php:159
 msgid "Menu"
+msgstr "Meny"
+
+#: ../inc/catchbox-menus.php:163
+msgid "Primary Mobile Menu"
+msgstr ""
+
+#: ../inc/catchbox-menus.php:192 ../inc/catchbox-menus.php:231
+msgid "Secondary Mobile Menu"
 msgstr ""
 
 #: ../inc/customizer/customizer-custom-controls.php:18
@@ -609,9 +619,9 @@ msgstr ""
 msgid "Slider Options"
 msgstr "Inst&auml;llningar f&ouml;r bildspel"
 
-#: ../inc/customizer/customizer.php:116
-msgid "Slider Effect \tOptions"
-msgstr ""
+#: ../inc/customizer/customizer.php:116 ../inc/theme-options.php:711
+msgid "Slider Effect Options"
+msgstr "Inst&auml;llningar f&ouml;r bildspelseffekt"
 
 #: ../inc/customizer/customizer.php:124 ../inc/theme-options.php:649
 msgid "Social Links"
@@ -1080,10 +1090,6 @@ msgstr ""
 msgid "Save"
 msgstr "Spara"
 
-#: ../inc/theme-options.php:711
-msgid "Slider Effect Options"
-msgstr "Inst&auml;llningar f&ouml;r bildspelseffekt"
-
 #: ../inc/theme-options.php:716
 msgid "Transition Effect:"
 msgstr "&Ouml;verg&aring;seffekt:"
@@ -1201,21 +1207,27 @@ msgstr ""
 "Tyv&auml;rr - din s&ouml;kning gav inga tr&auml;ffar. F&ouml;rs&ouml;k igen "
 "med andra s&ouml;kord "
 
-#: ../searchform.php:11
-msgid "Search"
-msgstr "S&ouml;k"
+#: ../searchform.php:19
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
 
-#: ../sidebar.php:29
+#: ../searchform.php:22
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: ../sidebar.php:25 ../sidebar.php:30
 msgid "Primary Sidebar Widget Area"
 msgstr ""
 
-#: ../sidebar.php:31
+#: ../sidebar.php:32
 msgid ""
 "This is the Primary Sidebar Widget Area if you are using a two column site "
 "layout option."
 msgstr ""
 
-#: ../sidebar.php:32
+#: ../sidebar.php:33
 #, php-format
 msgid ""
 "By default it will load Search and Archives widgets as shown below. You can "
@@ -1223,7 +1235,7 @@ msgid ""
 "which will replace default widgets."
 msgstr ""
 
-#: ../sidebar.php:38
+#: ../sidebar.php:39
 msgid "Archives"
 msgstr "Arkiv"
 
@@ -1239,6 +1251,15 @@ msgstr "Senare <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Etikett-arkiv: %s"
+
+#~ msgid "Skip to primary content"
+#~ msgstr "G&aring; till huvudsakligt inneh&aring;ll"
+
+#~ msgid "Skip to secondary content"
+#~ msgstr "G&aring; till sekund&auml;rt inneh&aring;ll"
+
+#~ msgid "Search"
+#~ msgstr "S&ouml;k"
 
 #~ msgid "More Theme Options &raquo;"
 #~ msgstr "Fler temainst&auml;llningar &raquo;"

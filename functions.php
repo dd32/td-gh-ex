@@ -75,64 +75,33 @@ function catchbox_setup() {
 	if ( ! isset( $content_width ) )
 	$content_width = 818;
 	
-	/* Catch Box is now available for translation.
-	 * Add your files into /languages/ directory.
-	 * @see http://codex.wordpress.org/Function_Reference/load_theme_textdomain
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on Catch Box, use a find and replace
+	 * to change 'twentysixteen' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'catch-box', get_template_directory() . '/languages' );
-	
-	/**
-     * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
-     * @see http://codex.wordpress.org/Function_Reference/add_editor_style
-     */
-	add_editor_style();
-	
-	// Load up our theme options page and related code.
-	require( get_template_directory() . '/inc/theme-options.php' );
-	
-	// Grab Catch Box's Adspace Widget.
-	require( get_template_directory() . '/inc/widgets.php' );
 
-	// Add default posts and comments RSS feed links to <head>.
+	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/**
-	 * Setup title support for theme
-	 * Supported from WordPress version 4.1 onwards 
-	 * More Info: https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
 	 */
-	add_theme_support( 'title-tag' );	
+	add_theme_support( 'title-tag' );
 
-	/**
-     * This feature enables custom-menus support for a theme.
-     * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
-     */		
-	register_nav_menus(array(
-		'primary' 	=> __( 'Primary Menu', 'catch-box' ),
-	   	'secondary'	=> __( 'Secondary Menu', 'catch-box' ),
-		'footer'	=> __( 'Footer Menu', 'catch-box' )
-	) );
-
-	/**
-     * This feature enables Jetpack plugin Infinite Scroll
-     */		
-    add_theme_support( 'infinite-scroll', array(
-		'type'           => 'click',										
-        'container'      => 'content',
-        'footer_widgets' => array( 'sidebar-2', 'sidebar-3', 'sidebar-4' ),
-        'footer'         => 'page',
-    ) );
-	
-	// Add support for custom backgrounds
-	add_theme_support( 'custom-background' ); 
-
-	/**
-     * This feature enables post-thumbnail support for a theme.
-     * @see http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-     */
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// The next four constants set how Catch Boxsupports custom headers.
+	// The next four constants set how Catch Box supports custom headers.
 
 	// The default header text color
 	define( 'HEADER_TEXTCOLOR', '000' );
@@ -193,6 +162,51 @@ function catchbox_setup() {
 			'description' => __( 'Mountain', 'catch-box' )
 		),
 	) );
+
+	// Add support for custom backgrounds
+	add_theme_support( 'custom-background' ); 
+
+	// This theme uses wp_nav_menu() in three locations.
+	register_nav_menus(array(
+		'primary' 	=> __( 'Primary Menu', 'catch-box' ),
+	   	'secondary'	=> __( 'Secondary Menu', 'catch-box' ),
+		'footer'	=> __( 'Footer Menu', 'catch-box' )
+	) );
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
+
+	/*
+	 * This theme styles the visual editor to resemble the theme style,
+	 * specifically font, colors, icons, and column width.
+	 */
+	add_editor_style();
+	
+	// Load up our theme options page and related code.
+	require( get_template_directory() . '/inc/theme-options.php' );
+	
+	// Grab Catch Box's Adspace Widget.
+	require( get_template_directory() . '/inc/widgets.php' );
+
+	/**
+     * This feature enables Jetpack plugin Infinite Scroll
+     */		
+    add_theme_support( 'infinite-scroll', array(
+		'type'           => 'click',										
+        'container'      => 'content',
+        'footer_widgets' => array( 'sidebar-2', 'sidebar-3', 'sidebar-4' ),
+        'footer'         => 'page',
+    ) );
+
 }
 endif; // catchbox_setup
 
@@ -344,7 +358,11 @@ if ( ! function_exists( 'catchbox_continue_reading_link' ) ) :
  * Returns a "Continue Reading" link for excerpts
  */
 function catchbox_continue_reading_link() {
-	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'catch-box' ) . '</a>';
+	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . sprintf( 
+					__( 'Continue reading %s', 'textdomain' ), 
+					'<span class="screen-reader-text">  '.get_the_title().'</span>' 
+				). 
+				'<span class="meta-nav">&rarr;</span></a>';
 }
 endif;
 
@@ -389,10 +407,10 @@ function catchbox_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'catch-box' ),
 		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget' => "</section>",
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
 	) );
 
 	register_sidebar( array(
@@ -819,6 +837,15 @@ if ( ! function_exists( 'catchbox_scripts_method' ) ):
 function catchbox_scripts_method() {
 	global $post;	
 	
+	// Add Genericons, used in the main stylesheet.
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
+	
+	/**
+	 * Loads up Responsive Menu
+	 */
+	wp_enqueue_script('sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1.1', false );
+
+
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 	
@@ -826,11 +853,8 @@ function catchbox_scripts_method() {
 	if ( is_front_page() || is_home() ) {
 		wp_enqueue_script( 'catchbox_slider', get_template_directory_uri() . '/js/catchbox_slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
-	
-	/**
-	 * Loads up Responsive Menu
-	 */
-	wp_enqueue_script('sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1.1', false );
+
+	wp_enqueue_script( 'catchbox-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151112', true );
 
 	/**
 	 * Adds JavaScript to pages with the comment form to support
@@ -842,26 +866,17 @@ function catchbox_scripts_method() {
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'catchbox-style', get_stylesheet_uri() );
-	
-	//For genericons
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', false, '3.3' );
+
+	// Adds JavaScript for handling the navigation menu hide-and-show behavior.
+	wp_enqueue_script( 'catchbox-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20152512', true );
 	
 	/**
 	 * Loads up Scroll Up script
 	 */	
 	wp_enqueue_script( 'catchbox-scrollup', get_template_directory_uri() . '/js/catchbox-scrollup.min.js', array( 'jquery' ), '20072014', true  );
 	
-
-	//Browser Specific Enqueue Script i.e. for IE 1-6
-	$catchbox_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if(preg_match('/(?i)msie [1-6]/',$catchbox_ua)) {
-		wp_enqueue_script( 'catchbox-pngfix', get_template_directory_uri() . '/js/pngfix.min.js' );	  
-	}
-
-	//browser specific queuing i.e. for IE 1-8
-	if(preg_match('/(?i)msie [1-8]/',$catchbox_ua)) {
-	 	wp_enqueue_script( 'catchbox-html5', get_template_directory_uri() . '/js/html5.min.js' );
-	}
+	// Load the html5 shiv.
+	wp_enqueue_script( 'catchbox-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
 	
 }
 endif; // catchbox_scripts_method
@@ -1024,111 +1039,111 @@ function catchbox_socialprofile() {
 		echo '<!-- refreshing cache -->';
 		
 		$catchbox_socialprofile = '
-			<div class="social-profile">
+			<nav class="social-profile" role="navigation" aria-label="' . esc_attr__( 'Footer Social Links Menu', 'catch-box' ) . '">
  		 		<ul>';
 					//Facebook
 					if ( !empty( $options['social_facebook'] ) ) {
-						$catchbox_socialprofile .= '<li class="facebook"><a href="'. esc_url( $options['social_facebook'] ) .'" title="Facebook" target="_blank">Facebook</a></li>';
+						$catchbox_socialprofile .= '<li class="facebook"><a href="'. esc_url( $options['social_facebook'] ) .'"><span class="screen-reader-text">Facebook</span></a></li>';
 					}
 				
 					//Twitter
 					if ( !empty( $options['social_twitter'] ) ) {
-						$catchbox_socialprofile .= '<li class="twitter"><a href="'. esc_url( $options['social_twitter'] ) .'" title="Twitter" target="_blank">Twitter</a></li>';
+						$catchbox_socialprofile .= '<li class="twitter"><a href="'. esc_url( $options['social_twitter'] ) .'"><span class="screen-reader-text">Twitter</span></a></li>';
 					}
 					
 					//Google+
 					if ( !empty( $options['social_google'] ) ) {
-						$catchbox_socialprofile .= '<li class="google-plus"><a href="'. esc_url( $options['social_google'] ) .'" title="Google Plus" target="_blank">Google Plus</a></li>';
+						$catchbox_socialprofile .= '<li class="google-plus"><a href="'. esc_url( $options['social_google'] ) .'"><span class="screen-reader-text">Google Plus</span></a></li>';
 					}
 				
 					//Linkedin
 					if ( !empty( $options['social_linkedin'] ) ) {
-						$catchbox_socialprofile .= '<li class="linkedin"><a href="'. esc_url( $options['social_linkedin'] ) .'" title="Linkedin" target="_blank">Linkedin</a></li>';
+						$catchbox_socialprofile .= '<li class="linkedin"><a href="'. esc_url( $options['social_linkedin'] ) .'"><span class="screen-reader-text">Linkedin</span></a></li>';
 					}
 					
 					//Pinterest
 					if ( !empty( $options['social_pinterest'] ) ) {
-						$catchbox_socialprofile .= '<li class="pinterest"><a href="'. esc_url( $options['social_pinterest'] ) .'" title="Pinterest" target="_blank">Pinterest</a></li>';
+						$catchbox_socialprofile .= '<li class="pinterest"><a href="'. esc_url( $options['social_pinterest'] ) .'"><span class="screen-reader-text">Pinterest</span></a></li>';
 					}
 					
 					//Youtube
 					if ( !empty( $options['social_youtube'] ) ) {
-						$catchbox_socialprofile .= '<li class="you-tube"><a href="'. esc_url( $options['social_youtube'] ) .'" title="YouTube" target="_blank">YouTube</a></li>';
+						$catchbox_socialprofile .= '<li class="you-tube"><a href="'. esc_url( $options['social_youtube'] ) .'"><span class="screen-reader-text">YouTube</span></a></li>';
 					}
 					
 					//RSS Feed
 					if ( !empty( $options['social_rss'] ) ) {
-						$catchbox_socialprofile .= '<li class="rss"><a href="'. esc_url( $options['social_rss'] ) .'" title="RSS Feed" target="_blank">RSS Feed</a></li>';
+						$catchbox_socialprofile .= '<li class="rss"><a href="'. esc_url( $options['social_rss'] ) .'"><span class="screen-reader-text">RSS Feed</span></a></li>';
 					}
 					
 					//Deviantart
 					if ( !empty( $options['social_deviantart'] ) ) {
-						$catchbox_socialprofile .= '<li class="deviantart"><a href="'. esc_url( $options['social_deviantart'] ) .'" title="Deviantart" target="_blank">Deviantart</a></li>';
+						$catchbox_socialprofile .= '<li class="deviantart"><a href="'. esc_url( $options['social_deviantart'] ) .'"><span class="screen-reader-text">Deviantart</span></a></li>';
 					}		
 					
 					//Tumblr
 					if ( !empty( $options['social_tumblr'] ) ) {
-						$catchbox_socialprofile .= '<li class="tumblr"><a href="'. esc_url( $options['social_tumblr'] ) .'" title="Tumblr" target="_blank">Tumblr</a></li>';
+						$catchbox_socialprofile .= '<li class="tumblr"><a href="'. esc_url( $options['social_tumblr'] ) .'"><span class="screen-reader-text">Tumblr</span></a></li>';
 					}	
 					
 					//Vimeo
 					if ( !empty( $options['social_viemo'] ) ) {
-						$catchbox_socialprofile .= '<li class="vimeo"><a href="'. esc_url( $options['social_viemo'] ) .'" title="Vimeo" target="_blank">Vimeo</a></li>';
+						$catchbox_socialprofile .= '<li class="vimeo"><a href="'. esc_url( $options['social_viemo'] ) .'"><span class="screen-reader-text">Vimeo</span></a></li>';
 					}	
 					
 					//Dribbble
 					if ( !empty( $options['social_dribbble'] ) ) {
-						$catchbox_socialprofile .= '<li class="dribbble"><a href="'. esc_url( $options['social_dribbble'] ) .'" title="Dribbble" target="_blank">Dribbble</a></li>';
+						$catchbox_socialprofile .= '<li class="dribbble"><a href="'. esc_url( $options['social_dribbble'] ) .'"><span class="screen-reader-text">Dribbble</span></a></li>';
 					}	
 					
 					//MySpace
 					if ( !empty( $options['social_myspace'] ) ) {
-						$catchbox_socialprofile .= '<li class="my-space"><a href="'. esc_url( $options['social_myspace'] ) .'" title="MySpace" target="_blank">MySpace</a></li>';
+						$catchbox_socialprofile .= '<li class="my-space"><a href="'. esc_url( $options['social_myspace'] ) .'"><span class="screen-reader-text">MySpace</span></a></li>';
 					}	
 					
 					//Aim
 					if ( !empty( $options['social_aim'] ) ) {
-						$catchbox_socialprofile .= '<li class="aim"><a href="'. esc_url( $options['social_aim'] ) .'" title="Aim" target="_blank">Aim</a></li>';
+						$catchbox_socialprofile .= '<li class="aim"><a href="'. esc_url( $options['social_aim'] ) .'"><span class="screen-reader-text">Aim</span></a></li>';
 					}	
 					
 					//Flickr
 					if ( !empty( $options[ 'social_flickr'] ) ) {
-						$catchbox_socialprofile .= '<li class="flickr"><a href="'. esc_url( $options['social_flickr'] ) .'" title="Flickr" target="_blank">Flickr</a></li>';
+						$catchbox_socialprofile .= '<li class="flickr"><a href="'. esc_url( $options['social_flickr'] ) .'"><span class="screen-reader-text">Flickr</span></a></li>';
 					}	
 					
 					//Slideshare
 					if ( !empty( $options[ 'social_slideshare' ] ) ) {
-						$catchbox_socialprofile .= '<li class="slideshare"><a href="'. esc_url( $options[ 'social_slideshare' ] ) .'" title="Slideshare" target="_blank">Slideshare</a></li>';
+						$catchbox_socialprofile .= '<li class="slideshare"><a href="'. esc_url( $options[ 'social_slideshare' ] ) .'"><span class="screen-reader-text">Slideshare</span></a></li>';
 					}
 					
 					//Instagram
 					if ( !empty( $options[ 'social_instagram' ] ) ) {
-						$catchbox_socialprofile .= '<li class="instagram"><a href="'. esc_url( $options[ 'social_instagram' ] ) .'" title="Instagram" target="_blank">Instagram</a></li>';
+						$catchbox_socialprofile .= '<li class="instagram"><a href="'. esc_url( $options[ 'social_instagram' ] ) .'"><span class="screen-reader-text">Instagram</span></a></li>';
 					}	
 					
 					//skype
 					if ( !empty( $options[ 'social_skype' ] ) ) {
-						$catchbox_socialprofile .= '<li class="skype"><a href="'. esc_attr( $options[ 'social_skype' ] ) .'" title="Skype" target="_blank">Skype</a></li>';
+						$catchbox_socialprofile .= '<li class="skype"><a href="'. esc_attr( $options[ 'social_skype' ] ) .'"><span class="screen-reader-text">Skype</span></a></li>';
 					}
 					
 					//Soundcloud
 					if ( !empty( $options[ 'social_soundcloud' ] ) ) {
-						$catchbox_socialprofile .= '<li class="soundcloud"><a href="'. esc_url( $options[ 'social_soundcloud' ] ) .'" title="Soundcloud" target="_blank">Soundcloud</a></li>';
+						$catchbox_socialprofile .= '<li class="soundcloud"><a href="'. esc_url( $options[ 'social_soundcloud' ] ) .'"><span class="screen-reader-text">Soundcloud</span></a></li>';
 					}
 					
 					//Email
 					if ( !empty( $options[ 'social_email' ] )  && is_email( $options[ 'social_email' ] ) ) {	
-						$catchbox_socialprofile .= '<li class="email"><a href="mailto:'. sanitize_email( $options[ 'social_email' ] ) .'" title="Email" target="_blank">Email</a></li>';
+						$catchbox_socialprofile .= '<li class="email"><a href="mailto:'. sanitize_email( $options[ 'social_email' ] ) .'"><span class="screen-reader-text">Email</span></a></li>';
 					}					
 					
 					//Xing
 					if ( !empty( $options[ 'social_xing' ] ) ) {
-						$catchbox_socialprofile .= '<li class="xing"><a href="'. esc_url( $options[ 'social_xing' ] ) .'" title="Xing" target="_blank">Xing</a></li>';
+						$catchbox_socialprofile .= '<li class="xing"><a href="'. esc_url( $options[ 'social_xing' ] ) .'"><span class="screen-reader-text">Xing</span></a></li>';
 					}
 					
 					$catchbox_socialprofile .= '
 				</ul>
-			</div>';
+			</nav><!-- .social-profile -->';
 		set_transient( 'catchbox_socialprofile', $catchbox_socialprofile, 604800 );		
 	}
 	echo $catchbox_socialprofile;	
@@ -1301,7 +1316,7 @@ add_action( 'catchbox_site_generator', 'catchbox_footer_content', 15 );
  */
 function catchbox_scrollup() {
 	
-	echo '<a href="#branding" id="scrollup"></a>';
+	echo '<a href="#branding" id="scrollup"><span class="screen-reader-text">Go to Header Section</span></a>';
 	
 }
 add_action( 'catchbox_after', 'catchbox_scrollup', 10 );
@@ -1328,6 +1343,17 @@ if ( ! function_exists( 'catchbox_breadcrumb_display' ) ) :
 	}
 endif; // catchbox_breadcrumb_display	
 add_action( 'catchbox_content', 'catchbox_breadcrumb_display', 20 );
+
+
+if ( ! function_exists( 'catchbox_skiptocontain' ) ) :
+	/**
+	 * Display Skip to Contain Link
+	 */
+	function catchbox_skiptocontain() {
+		echo '<a href="#main" class="skip-link screen-reader-text">Skip to content</a>';
+	}
+endif; // catchbox_breadcrumb_display	
+add_action( 'catchbox_before_header', 'catchbox_skiptocontain', 10 );
 
 
 /**
