@@ -201,8 +201,8 @@ function themeofwp_admin_header_image() {
 	?>
 	<div id="headimg" style="background: url(<?php echo esc_url( get_header_image() ); ?>) no-repeat scroll top; background-size: 1600px auto;">
 		<div class="home-link">
-			<h1 class="displaying-header-text"><a id="name" style="<?php echo esc_attr( $style ); ?>" onclick="return false;" href="#" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 id="desc" class="displaying-header-text" style="<?php echo esc_attr( $style ); ?>"><?php bloginfo( 'description' ); ?></h2>
+			<h1 class="displaying-header-text"><a id="name" style="<?php echo esc_attr( $style ); ?>" onclick="return false;" href="#" tabindex="-1"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
+			<h2 id="desc" class="displaying-header-text" style="<?php echo esc_attr( $style ); ?>"><?php esc_attr( bloginfo( 'description' ) ); ?></h2>
 		</div>
 	</div>
 <?php }

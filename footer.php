@@ -66,7 +66,7 @@
 					<hr>
 					
 					<p class="text-center">
-						&copy; <?php echo date('Y'); ?>, <?php bloginfo( 'name' ); ?>  / <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'themeofwp' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'themeofwp' ), 'WordPress' ); ?></a> / 
+						&copy; <?php echo date('Y'); ?>, <?php esc_attr( bloginfo( 'name' ) ); ?>  / <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'themeofwp' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'themeofwp' ), 'WordPress' ); ?></a> / 
 							<?php printf( __( 'Theme: %1$s by %2$s', 'themeofwp' ), 'Avien Lite', '<a href="http://themeofwp.com" rel="designer">ThemeofWP.com</a>' ); ?>
 					</p>
 						

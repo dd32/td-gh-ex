@@ -1,12 +1,11 @@
 === Avien Light ===
 Contributors: themeofwpcom
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.4
-Stable tag: 1.9
+Version: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, two-columns, right-sidebar, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, flexible-header, custom-menu, featured-image-header, featured-images, front-page-post-form, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: white, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, flexible-header, custom-menu, featured-image-header, featured-images, front-page-post-form, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
 Avien Light is a free version of the Avien Premium http://themeofwp.com/downloads/avien-ultra-responsive-wordpress-theme/
 
