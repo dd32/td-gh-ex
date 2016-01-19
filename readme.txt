@@ -136,6 +136,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+
+@version 1.4.1
+corrected description
+@version 1.4
+1. Added Customizer Setting.
 @version 1.3.3
 1. Change Banner Image & Product Image.
 2. Update Font-awesome Icon Folder.

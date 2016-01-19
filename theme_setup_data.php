@@ -17,23 +17,23 @@ function theme_data_setup()
 	$project_img4 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb3.png';
 	return $rambo_theme_options=array(
 						
-			'front_page' => 'on',
+			'front_page' => true,
 			'rambo_stylesheet'=>'default.css',			
 			'upload_image_logo'=>'',
 			'height'=>'50',
 			'width'=>'150',
-			'rambo_texttitle'=>'on',
+			'rambo_texttitle'=>true,
 			'upload_image_favicon'=>'',			
 			'rambo_custom_css'=>'',
 			
 			//Home image section 	
-			'home_banner_enabled'=>'on',
+			'home_banner_enabled'=>true,
 			'home_custom_image' => $slide_image_uri,								
 			'home_image_title' => __('Theme Feature Goes Here!','rambo'),
 			'home_image_description' => __('Rambo makes content easy to view on any device with any resolution. You may check this with resizing. Fully Responsive Theme Amazing Design.','rambo'),	
 			
 			// service
-			'home_service_enabled'=>'on',
+			'home_service_enabled'=>true,
 			'home_service_one_icon'=>'fa-tachometer',
 			'home_service_one_title'=>__('Service One','rambo'),
 			'home_service_one_description'=>__('This is service one, reliable to user and comfortable to operate. You can easily manage all sub services using one instance.  ','rambo'),
@@ -51,7 +51,7 @@ function theme_data_setup()
 			'home_service_fourth_description'=>__('This is service Four, reliable to user and comfortable to operate. You can easily manage all sub services using one instance.','rambo'),
 			
 			// footer customization
-			'footer_widgets_enabled'=>'on',
+			'footer_widgets_enabled'=>true,
 			'rambo_copy_rights_text'=>__('&copy;2014&nbsp;ALL Rights Reserved','rambo'),			
 			'rambo_designed_by_head'=>__('Designed By','rambo'),
 			'rambo_designed_by_text'=>__('Webriti','rambo'),
@@ -59,14 +59,14 @@ function theme_data_setup()
 				
 			
 			//Social media links
-			'footer_social_media_enabled'=>'on',
+			'footer_social_media_enabled'=>true,
 			'social_media_twitter_link' =>"#",
 			'social_media_facebook_link' =>"#",
 			'social_media_linkedin_link' =>"#",
 			'social_media_google_plus' =>"#",
 			
 			//Projects Section Settings
-			'home_projects_enabled' => 'on',
+			'home_projects_enabled' => true,
 			'project_heading_one' => __('Featured Portfolio Projects','rambo'),
 			'project_tagline' => __('Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.','rambo'),
 			'project_one_thumb' => $project_img1,

@@ -7,8 +7,10 @@
   * @license      :	license.txt
   * @filesource   :	wp-content/themes/rambo/footer.php
   */ 
-  $current_options = get_option('rambo_theme_options'); ?>
-<?php if($current_options['footer_widgets_enabled']=="on") { ?>
+  $rambo_theme_options = theme_data_setup();
+  $current_options = wp_parse_args(  get_option( 'rambo_theme_options', array() ), $rambo_theme_options );
+  ?>
+<?php if($current_options['footer_widgets_enabled']==true) { ?>
 <div class="hero-widgets-section">
   <div class="container">
     <div class="row">
@@ -38,7 +40,7 @@
           <?php  echo ($current_options['rambo_copy_rights_text']); } ?><?php }?>
         </p>
       </div>
-      <?php if($current_options['footer_social_media_enabled']=="on") { ?>
+      <?php if($current_options['footer_social_media_enabled']==true) { ?>
       <div class="span4">
         <div class="footer_social pull-right">
           <a href="<?php if($current_options['social_media_facebook_link']!='') { echo esc_url($current_options['social_media_facebook_link']); } else { echo "#"; } ?>" class="facebook">&nbsp;</a>
@@ -51,13 +53,6 @@
     </div>
   </div>
 </div>
-<?php
-  $rambo_current_options=get_option('rambo_theme_options');
-  if($rambo_current_options['rambo_custom_css']!='') {  ?>
-<style type="text/css">
-  <?php echo htmlspecialchars_decode($rambo_current_options['rambo_custom_css']); ?>
-</style>
-<?php } ?>
 <?php wp_footer(); ?>
 </body>
 </html>

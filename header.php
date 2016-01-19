@@ -15,8 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
     <title><?php wp_title( '|', true, 'right' ); ?></title>
-    <?php 	$rambo_current_options=get_option('rambo_theme_options'); 	
-      if($rambo_current_options['upload_image_favicon']!='')
+    <?php 	
+	$rambo_theme_options = theme_data_setup();
+   $rambo_current_options = wp_parse_args(  get_option( 'rambo_theme_options', array() ), $rambo_theme_options );
+	if($rambo_current_options['upload_image_favicon']!='')
       	{ ?>
     <link rel="shortcut icon" href="<?php  echo esc_url($rambo_current_options['upload_image_favicon']); ?>" />
     <?php } ?>	
@@ -36,7 +38,7 @@
             </a>
             <!-------custom logo and custom test and defualt logo text-------->
             <a href="<?php echo esc_url(home_url('/')) ; ?>" class="brand">
-            <?php if($rambo_current_options['rambo_texttitle'] =="on") { ?>
+            <?php if($rambo_current_options['rambo_texttitle'] ==true) { ?>
             <?php $blogname = get_bloginfo( );
               $blogname1 = substr($blogname,0,1);
               $blogname2 = substr($blogname,1);

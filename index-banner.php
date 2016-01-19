@@ -7,8 +7,9 @@
   * @license      :	license.txt
   * @filesource   :	wp-content/themes/rambo/index-banner.php
   */
-  $current_options=get_option('rambo_theme_options');
-  if($current_options['home_banner_enabled']=="on")
+  $rambo_theme_options = theme_data_setup();
+  $current_options = wp_parse_args(  get_option( 'rambo_theme_options', array() ), $rambo_theme_options );
+  if($current_options['home_banner_enabled']==true)
   { 	
   ?>
 <div class="front_banner">

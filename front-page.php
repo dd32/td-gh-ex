@@ -7,8 +7,11 @@
   * @license      :	license.txt
   * @filesource   :	wp-content/themes/rambo/front-rambo.php
   */ 
-  		$check = get_option('rambo_theme_options');
-  		if (  $check['front_page'] != 'on' ) {
+  		
+		$rambo_theme_options = theme_data_setup();
+		$current_options = wp_parse_args(  get_option( 'rambo_theme_options', array() ), $rambo_theme_options );
+		
+  		if ( $current_options['front_page'] != true ) {
   		get_template_part('index');
   		}
   	else {

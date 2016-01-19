@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Rambo\n"
-"POT-Creation-Date: 2014-11-12 18:29+0530\n"
-"PO-Revision-Date: 2014-11-12 19:19+0530\n"
+"Project-Id-Version: rambo\n"
+"POT-Creation-Date: 2015-12-25 18:36+0530\n"
+"PO-Revision-Date: 2015-12-25 18:36+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -10,1029 +10,1440 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: D:\\xampp\\htdocs\\wordpress_lite\\wp-content\\themes"
-"\\rambo-lite\n"
-"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\wordpress_lite\\wp-content\\themes"
-"\\rambo-lite\n"
+"X-Poedit-Basepath: D:\\xampp\\htdocs\\wordpress_update\\wp-content\\themes"
+"\\rambo\n"
+"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\wordpress_update\\wp-content"
+"\\themes\\rambo\n"
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/404.php:7
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/404.php:8
 msgid "Unfortunately, the page you tried accessing could not be retrieved. "
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/404.php:9
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/404.php:10
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/archive.php:22
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/author.php:22
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/category.php:22
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/index.php:22
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/search.php:18
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/tag.php:22
-msgid "Leave a comment"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/archive.php:23
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/author.php:23
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/category.php:23
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/index.php:23
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/search.php:19
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/single.php:29
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/tag.php:23
-msgid "By"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/archive.php:25
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/author.php:25
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/category.php:25
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/fullwidth.php:26
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/index.php:25
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/page.php:25
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/single.php:31
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/tag.php:25
-msgid "Read More"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/archive.php:30
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/author.php:30
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/category.php:30
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/index.php:30
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/tag.php:30
-msgid "Tags:"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/banner-strip.php:17
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/banner-strip.php:17
 msgid "Daily Archives: "
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/banner-strip.php:19
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/banner-strip.php:19
 msgid "Monthly Archives: "
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/banner-strip.php:21
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/banner-strip.php:21
 msgid "Yearly Archives: "
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/banner-strip.php:23
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/banner-strip.php:23
 msgid "Category Archives: "
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/banner-strip.php:25
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/banner-strip.php:25
 msgid "Tag Archives: "
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/banner-strip.php:27
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/banner-strip.php:27
 msgid "Author Archives:"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/banner-strip.php:29
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/banner-strip.php:29
 msgid "Oops Sorry,No Page Found"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/banner-strip.php:32
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/banner-strip.php:32
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/banner-strip.php:36
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/banner-strip.php:36
 msgid "Blog Archives"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:11
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:161
+msgid "Install Required Plugins"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:162
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions.php:141
+msgid "Install Plugins"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:163
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions.php:142
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:164
+msgid "Something went wrong."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:175
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions.php:154
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:176
+msgid "Return to the dashboard"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:177
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1939
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions.php:155
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:178
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:179
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:180
+msgid "Dismiss this notice"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:531
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2156
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1166
+msgid "Private Repository"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1169
+msgid "Pre-Packaged"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1174
+msgid "WordPress Repository"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1177
+msgid "Required"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1177
+msgid "Recommended"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1180
+msgid "Not Installed"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1182
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1287
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1395
+msgid "Install"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1309
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1396
+msgid "Activate"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1358
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1374
+msgid "Plugin"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1375
+msgid "Source"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1376
+msgid "Type"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1377
+msgid "Status"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1922
+msgid "Install package not available."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1923
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1924
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1925
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1926
+msgid "Plugin install failed."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1927
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:1938
+msgid "Plugin activation failed."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2052
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2053
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2053
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2062
+msgid "Show Details"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2053
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2062
+msgid "Hide Details"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2054
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2055
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2059
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2060
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2061
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2062
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2063
+msgid "All installations have been completed."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/class-tgm-plugin-activation.php:2064
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:11
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:17
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:17
 msgid "Comments"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:21
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:21
 msgid "Comment navigation"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:22
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:22
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:23
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:23
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:34
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:34
 msgid "You must be"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:34
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:34
 msgid "to post a comment"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:39
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:39
 msgid "Name"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:41
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:41
 msgid "Email"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:42
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:42
 msgid "Website"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:55
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:55
 msgid "Logged in as "
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:55
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:55
 msgid " Log out?"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:57
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:57
 msgid "Post Comment"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/comments.php:60
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/comments.php:60
 msgid "Leave a Comment"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/footer.php:30
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/content.php:15
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/fullwidth.php:26
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/page.php:25
+msgid "Read More"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/content.php:21
+msgid "Tags:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/footer.php:30
 msgid "Powered By "
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/footer.php:30
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/footer.php:30
 msgid "WordPress"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions.php:36
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions.php:52
 msgid "Page"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions.php:57
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions.php:73
 msgid "Primary Menu"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/index-banner.php:19
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions.php:140
+msgid "Install Recommended Plugins"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions.php:143
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions.php:156
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/index-banner.php:19
 msgid "Theme Feature Goes Here !"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/index-banner.php:20
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/index-banner.php:20
 msgid ""
 "This is Dummy Text. This is Dummy Text. This is Dummy Text.  I repeat.. This "
 "is Dummy Text."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/page.php:26
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/single.php:32
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/page.php:26
 msgid "Pages:"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/search.php:25
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/search.php:22
 msgid "Nothing Found"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/search.php:27
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/search.php:24
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/single.php:28
-msgid "No comments yet"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/template-blog-leftsidebar.php:25
+msgid "Previous"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/single.php:28
-msgid "10 comment"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/template-blog-leftsidebar.php:26
+msgid "Next"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/single.php:28
-#, php-format
-msgid "% comments"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/single.php:28
-msgid "comments-link"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/single.php:28
-msgid "Comments are Disabled"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:29
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:32
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:91
 msgid "Theme Feature Goes Here!"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:30
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:33
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:105
 msgid ""
 "Rambo makes content easy to view on any device with any resolution. You may "
 "check this with resizing. Fully Responsive Theme Amazing Design."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:35
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:38
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:383
 msgid "Service One"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:36
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:39
 msgid ""
 "This is service one, reliable to user and comfortable to operate. You can "
 "easily manage all sub services using one instance.  "
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:39
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:42
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:434
 msgid "Service Two"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:40
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:43
 msgid ""
 "This is service two, reliable to user and comfortable to operate. You can "
 "easily manage all sub services using one instance."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:43
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:46
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:485
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:536
 msgid "Service Three"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:44
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:47
 msgid ""
 "This is service Three, reliable to user and comfortable to operate. You can "
 "easily manage all sub services using one instance."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:47
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:50
 msgid "Service Four"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:48
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:51
 msgid ""
 "This is service Four, reliable to user and comfortable to operate. You can "
 "easily manage all sub services using one instance."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:52
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:55
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1100
 msgid "&copy;2014&nbsp;ALL Rights Reserved"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:53
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:56
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1115
 msgid "Designed By"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:54
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:57
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1130
 msgid "Webriti"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:67
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:70
 msgid "Featured Portfolio Projects"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:68
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:71
 msgid ""
 "Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique "
 "senectus et netus et Nulla facilisi."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:70
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:73
 msgid "Product one"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:71
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:75
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:79
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:83
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:74
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:78
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:82
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:86
 msgid ""
 "A set of pieces of creative work collected to be shown to potential "
 "customers or employers; \"the artist had put together a portfolio of his work"
 "\";"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:74
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:77
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:707
 msgid "Product two"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:78
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:81
 msgid "Product Three"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/theme_setup_data.php:82
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/theme_setup_data.php:85
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:797
 msgid "Product Four"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/commentbox/comment-function.php:21
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/template-tags.php:9
+msgid "leave a comment"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/template-tags.php:10
+msgid "By"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/commentbox/comment-function.php:21
 msgid "Reply"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/commentbox/comment-function.php:36
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/commentbox/comment-function.php:36
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/menu/default_menu_walker.php:23
-msgid "Home"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer-pro.php:13
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:580
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:848
+msgid "http://webriti.com/rambo/"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_option_pannel.php:7
-msgid "Rambo"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer-pro.php:13
+msgid "UPGRADE  TO PRO"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_option_pannel.php:9
-msgid "Support Desk"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer-pro.php:20
+msgid "UPGRADE  TO PRO VERSION"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_option_pannel.php:10
-msgid "Theme Documentation"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer-pro.php:33
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer-pro.php:62
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer-pro.php:99
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:595
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:863
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_layout.php:78
+msgid "Discover rambo Pro"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_option_pannel.php:19
-msgid "Home Page"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer-pro.php:47
+msgid "https://wordpress.org/support/view/theme-reviews/rambo#postform/"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_option_pannel.php:20
-msgid "Quick Start"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer-pro.php:47
+msgid "ADD YOUR REVIEW"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_option_pannel.php:21
-msgid "Banner Setting"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer-pro.php:80
+msgid "http://webriti.com/help/"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_option_pannel.php:23
-msgid "Service Section"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer-pro.php:80
+msgid "DOCUMENTATION"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_option_pannel.php:25
-msgid "Projects Section"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_option_pannel.php:30
-msgid "Footer Customization"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_option_pannel.php:33
-msgid "Social media links"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_option_pannel.php:36
-msgid "Upgrade To Premium"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:20
-msgid "Quality Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:22
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer-pro.php:84
 msgid ""
-"Quality is a Responsive WordPress Theme. It is ideal for Corporate Sector , "
-"Business Website.Very Cleaned Design."
+"The Pro Version gives you more opportunities to enhance your site and "
+"business. In order to create effective online presence one have to showcase "
+"their wide range of products, have to use contact us enquiry form, have to "
+"make effective about us page, have to introduce team members, etc etc . The "
+"pro version will give it all. Buy the pro version and give us a chance to "
+"serve you better. "
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:23
-msgid ""
-"Quality is designed with Readability Flexibility in mind. It is suitable for "
-"Business website and other corporate website owner."
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:7
+msgid "Header Settings"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:24
-msgid "You can build an effective online presence for your business"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:13
+msgid "Front Page Setting"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:26
-msgid "Buy Quality Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:27
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:45
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:63
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:82
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:101
-msgid "View Demo"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:28
-msgid "New Theme"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:38
-msgid "Health Centre Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:40
-msgid ""
-"Health Centre is a Responsive WordPress Theme. It is ideal for Gym/Health "
-"Healing Centre Owner.Very Cleaned Design."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:41
-msgid ""
-"Health Centre is designed with Readability Flexibility in mind. It is "
-"suitable for Dentists, Doctors , Surgeons, hospitals and other type of "
-"Medical Websites."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:42
-msgid "Build an effective online presence with HealthCentre"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:44
-msgid "Buy Health Centre Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:56
-msgid "Rambo Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:58
-msgid ""
-"Rambo is a Responsive Multi-Purpose Wordpress Theme. It is ideal for "
-"creating a corporate website. It boasts of a highy functional Home Page ."
-"Very Cleaned Design."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:59
-msgid ""
-"Rambo is designed with Readability Flexibility in mind. Customize it to your "
-"hearts content with Sortable Project Areas, Services Areas and Call Out "
-"Section.Use these great features to build an effective online presence for "
-"your business."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:60
-msgid ""
-"All of our Theme contain Responsive frameworks that adapt to Mobile Devices."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:62
-msgid "Buy Rambo Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:74
-msgid "Busiprof Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:76
-msgid ""
-"A Beautiful and FLexible Responsive Businees Theme. It is ideal for creating "
-"a corporate website. It boasts of a highy functional Home Page and "
-"Widgetized Footer. Build an effective online presence with BusiProf."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:77
-msgid ""
-"Busiprof is designed with Flexibility in mind. Customize it to your hearts "
-"content with Sortable Project Areas, Services Areas and Testimonial "
-"Section. . Use these great features to build an effective online presence "
-"for your business"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:78
-msgid ""
-"The majority of our themes contain responsive frameworks that adapt to "
-"Mobile Devices."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:81
-msgid "Buy busiprof Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:93
-msgid "Spasalon Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:95
-msgid ""
-"A responsive theme for SPA SALON and BEAUTY SALON type of business that uses "
-"multiple nav menus, Right-sidebar, Featured Slider and Beautifully designed "
-"home page all manage via option panel."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:96
-msgid ""
-"Spasalon is designed with content flexibility and Intuitive features in "
-"mind. Use these great core features to grow your business."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:97
-msgid ""
-"The majority of our themes contain responsive frameworks that mold perfectly "
-"to fit all your mobile and Apple devices."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:98
-msgid ""
-"A responsive theme for SPA SALON and BEAUTY SALON type of business that uses "
-"multiple nav menus, Right-sidebar, Featured Slider."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/webriti_theme.php:100
-msgid "Buy Spasalon Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:2
-msgid "Footer Customization settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:44
-msgid "Enable Footer widgets"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:45
-msgid "Enable Footer widgets in all pages."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:48
-msgid "Copy Rights Text"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:51
-msgid "Enter custom copy rights text."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:55
-msgid "Designed By Head"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:58
-msgid "Enter Privacy Policy Text."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:62
-msgid "Designed By Name"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:65
-msgid "Enter Name for Company/Website."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:69
-msgid "Designed By Link"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:72
-msgid "Enter URL for your website."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:81
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:79
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:100
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/home_page_banner_settings.php:69
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:159
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:137
-msgid "Options data successfully Saved"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_customization_settings.php:82
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:80
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:101
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/home_page_banner_settings.php:70
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:160
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:138
-msgid "Options data successfully reset"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:2
-msgid "Social media Links settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:40
-msgid "Enable Social media in footer "
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:41
-msgid "Enable Social media icon in footer section."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:44
-msgid "Twitter Link:"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:47
-msgid "Enter twitter link."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:51
-msgid "Linkedin Links:"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:54
-msgid "Enter linkedin link."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:59
-msgid "Facebook Links:"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:62
-msgid "Enter facebook link."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:67
-msgid "Google Plus Links:"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/footer_social_media_settings.php:70
-msgid "Enter google plus link."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:46
-msgid "Quick Start Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:50
-msgid "Enable Home Page ?"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:50
-msgid "Check this box for enabling the Custom Home Page of the theme."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:51
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:31
 msgid "Enable Home on front page."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:55
-msgid "Custom Logo"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:40
+msgid "Site favicon"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:56
-msgid "Logo must be in 150 X 50 px"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:42
+msgid "Upload a favicon"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:65
-msgid "Logo Height"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:53
+msgid "Choose your favicon (ideal width and height is 16x16 or 32x32)"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:66
-msgid "Logo height must be less then 80px"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:59
+msgid "Header Logo setting"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:71
-msgid "Logo Width"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:77
+msgid "Upload a 150x150 for Logo Image"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:72
-msgid "Logo width must be less then 200 px"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:96
+msgid "Enable/Disabe Text Logo"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:77
-msgid "Text Title"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:117
+msgid "Enter Logo Width"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:78
-msgid "Enable text-based Site Title and Tagline. Setup title"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:136
+msgid "Enter Logo Height"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:78
-msgid "tagline in"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:78
-msgid "General Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:81
-msgid "Custom Favicon"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:82
-msgid "Custom Favicon Must be in 25 X 25 px"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:91
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:144
 msgid "Custom css"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/header_page_settings.php:93
-msgid "Paste your custom css code and change your layout without code editing."
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_header.php:157
+msgid "Custom css snippet:"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/home_page_banner_settings.php:2
-msgid "Home Banner Settings"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:6
+msgid "Want to add More Slides and Animation Effect Then"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/home_page_banner_settings.php:40
-msgid "Banner in Front page"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:6
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:13
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:21
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:30
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_layout.php:7
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:7
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:6
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:14
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:22
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:30
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:10
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:7
+msgid " Upgrade To Pro"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/home_page_banner_settings.php:41
-msgid "Enable Banner on front page."
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:13
+msgid "Want to Add Site Intro Then"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/home_page_banner_settings.php:44
-msgid "Banner Image"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:21
+msgid "Want to add Latest News Section Then"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/home_page_banner_settings.php:45
-msgid "Banner Image must be in 1600 X 400 px"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:30
+msgid "Want to add Footer callout Section Then"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/home_page_banner_settings.php:54
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:39
+msgid "Home Page Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:45
+msgid "Slider Setting"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:64
+msgid "Enable slider on front page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:79
+msgid "Image Upload"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:97
 msgid "Banner Title"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/home_page_banner_settings.php:56
-msgid "Enter Banner title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/home_page_banner_settings.php:59
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:111
 msgid "Banner Description"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/home_page_banner_settings.php:61
-msgid "Enter Banner description text less then 150 character ."
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:128
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:259
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:887
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:947
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_layout.php:60
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:31
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:63
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:356
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:444
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:509
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:35
+msgid "Rambo Upgrade"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:2
-msgid "Projects Section settings"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:138
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:152
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:161
+msgid "slide"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:72
-msgid "Enable Home Project Section"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:149
+msgid "Select slider Animation"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:73
-msgid "Enable Projects section in fornt page."
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:152
+msgid "fade"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:76
-msgid "Home Project  Heading"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:172
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:106
+msgid "Slide direction"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:78
-msgid "Project Section Heading"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:175
+msgid "horizontal"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:80
-msgid "Enter Project Section Heading"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:175
+msgid "vertical"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:82
-msgid "Project Section Tagline"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:181
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:292
+msgid "2000"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:82
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:93
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:110
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:127
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:144
-msgid "Enter Project Thumbnail"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:192
+msgid "Animation speed"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:84
-msgid "Enter Project Section Tagline"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:201
+msgid "2500"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:87
-msgid "Home Project One"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:212
+msgid "Slideshow speed"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:89
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:225
+msgid "Click Here To Add Slider"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:245
+msgid "Site Intro "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:269
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:979
+msgid "Rambo is a clean and fully responsive Template."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:278
+msgid "Intro description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:289
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1017
+msgid "Purchase Now"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:298
+msgid "Intro button text"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:309
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1038
+msgid "#"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:318
+msgid "Intro button link"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:335
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1065
+msgid "Open link new tab/window"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:341
+msgid "Service Setting "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:360
+msgid "Enable Service Section On HOME Page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:375
+msgid "Service Icon One"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:392
+msgid "Service Title One"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:401
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:452
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:503
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:554
+msgid ""
+"This is service one, reliable to user and comfortable to operate. You can "
+"easily manage all sub services using one instance."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:410
+msgid "Service Description One"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:426
+msgid "Service Icon Two"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:443
+msgid "Service Title Two"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:461
+msgid "Service Description Two"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:477
+msgid "Service Icon Three"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:494
+msgid "Service Title Three"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:512
+msgid "Service Description Three"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:528
+msgid "Service Icon Four"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:545
+msgid "Service Title Four"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:563
+msgid "Service Description Four"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:577
+msgid "Want to add more services, than upgrade to pro version"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:580
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:848
+msgid "UPGRADE TO PRO"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:605
+msgid "Project Setting"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:624
+msgid "Enable Project Section On HOME Page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:634
+msgid "Featured Portfolio Project"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:641
+msgid "Project title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:649
+msgid ""
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit lorem ipsum dolor "
+"sit amet"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:656
+msgid "Project Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:669
 msgid "Project One Title"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:91
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:108
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:125
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:142
-msgid "Enter Project Title"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:694
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:737
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:781
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:827
+msgid ""
+"A set of pieces of creative work collected to be shown to potential "
+"customers or employers; \"the artist had put together a portfolio of his work"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:93
-msgid "Project One Thumbnail"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:99
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:699
 msgid "Project One Description"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:101
-msgid "Enter home Project One description text less then 150 character ."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:104
-msgid "Home Project Two"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:106
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:712
 msgid "Project Two Title"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:110
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:726
 msgid "Project Two Thumbnail"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:116
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:742
 msgid "Project Two Description"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:118
-msgid "Enter home Project Two description text less then 150 character ."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:121
-msgid "Home Project Three"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:123
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:756
 msgid "Project Three Title"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:127
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:770
 msgid "Project Three Thumbnail"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:133
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:787
 msgid "Project Three Description"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:135
-msgid "Enter home Project Three description text less then 150 character ."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:138
-msgid "Home Project Four"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:140
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:802
 msgid "Project Four Title"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:144
-msgid "Project Four Thumbnail"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:816
+msgid "Project four Thumbnail"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:150
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:832
 msgid "Project Four Description"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/projects_page.php:152
-msgid "Enter home Project Four description text less then 150 character ."
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:845
+msgid "Want to add more Project, than upgrade to pro version"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:2
-msgid "Service Section settings"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:873
+msgid "Recent News Setting"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:65
-msgid "Enable Home Service Section"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:905
+msgid "Enable Latest News Section"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:66
-msgid "Enable service section in fornt page."
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:913
+msgid "Recent News"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:70
-msgid "Home Service One "
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:921
+msgid "Recent News Section Heading"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:72
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:88
-msgid "Fontawesome Icon"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:931
+msgid "Footer Call Out Area Setting"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:72
-msgid "Click here to font awesome icon"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:971
+msgid "Enable Site Intro"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:74
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:90
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:106
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:121
-msgid "Enter service fontawesome icon"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:989
+msgid "Footer call out title"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:76
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:92
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:108
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:123
-msgid "Title"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:998
+msgid ""
+"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis "
+"praesentium voluptatum deleniti atque corrupti quos excepturi vehicula sem "
+"ut volutpat. Ut non libero magna fusce condimentum eleifend enim a feugiat."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:78
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:94
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:125
-msgid "Enter home service title"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1008
+msgid "Footer call out description"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:80
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:96
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:112
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:127
-msgid "Description"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1027
+msgid "Footer call out button text\t"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:82
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:98
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:114
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:129
-msgid "Enter home service description text less then 150 character ."
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1047
+msgid "Call Out Button Link"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:86
-msgid "home service two "
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1073
+msgid "Footer Copyright Custmization "
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:102
-msgid "home service three "
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1090
+msgid "Enable Footer widgets in all pages."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:104
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:119
-msgid "Image"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1106
+msgid "Copy Rights Text"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:110
-msgid "Enter home servicetitle"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1121
+msgid "Designed By Head"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/service_page_settings.php:117
-msgid "home service fourth "
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1136
+msgid "Designed By Name"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:87
-msgid "Sr. No."
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1145
+msgid "http://www.webriti.com"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:88
-msgid "Features"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1151
+msgid "Designed By Link"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:89
-msgid "Free"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_layout.php:7
+msgid "Want to add Theme layout Feature Then"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:90
-msgid "Premium"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_layout.php:24
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_layout.php:96
+msgid "Enable"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:95
-msgid "Home Page Sections "
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_layout.php:39
+msgid "Slider section always top on the home page"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:101
-msgid "Responsive Home Page Slider"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_layout.php:40
+msgid "Note:"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:106
-msgid "In-Built Color Schemes "
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_layout.php:40
+msgid ""
+"By default all the section are enable on homepage. If you do not want to "
+"display any section just drag that section to the disabled box."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:112
-msgid "Blog Layout Variations"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_layout.php:46
+msgid "Theme Layout Manager"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:118
-msgid "Page Templates"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_layout.php:114
+msgid "Disable"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:123
-msgid "About Us Template, Portfolio Template, Services Template...   "
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:7
+msgid "Want to add Post Type Slug"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:129
-msgid "Custom Typography"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:15
+msgid "Post Type Slug Setting"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:135
-msgid "In-Built Contact Form"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:42
+msgid "rambo_slider"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:141
-msgid "Custom Widgets,Shortcodes.."
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:49
+msgid "Slider Slug"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:147
-msgid "Layout Type"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:59
+msgid "rambo_service"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:148
-msgid "Wide"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:64
+msgid "Service Slug"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:149
-msgid "Wide And Boxed"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:74
+msgid "rambo_testimonial"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:153
-msgid "Theme Support "
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:81
+msgid "Testimonial Slug"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:154
-msgid "Via Wordpress Forums"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:91
+msgid "rambo_project"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/theme_options/pages/UpgradeToPro.php:155
-msgid "Private Forums with Email Support"
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:98
+msgid "Portfolio/Project Slug"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/widget/custom-sidebar.php:15
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:108
+msgid "rambo_team"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:115
+msgid "Our Team Slug"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_socila_link.php:28
+msgid "Enable Social media icon footer section."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_socila_link.php:47
+msgid "Twitter Link:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_socila_link.php:67
+msgid "Linkedin Links:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_socila_link.php:86
+msgid "Facebook Links:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_socila_link.php:105
+msgid "Google Plus Links:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:6
+msgid "Want to add About us Template Then"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:14
+msgid "Want to add Service Page Template Then"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:22
+msgid "Want to add Google maps Then"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:30
+msgid "Want to add Contact Page Template Setting Then"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:39
+msgid "Template Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:47
+msgid "About Page Setting"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:83
+msgid ""
+"Enable About Us content with Featured Image and social media links on About "
+"Us Page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:92
+msgid "Meet Our"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:101
+msgid "About Page Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:120
+msgid "Enable Our team section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:128
+msgid "Meet the Team"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:137
+msgid "Our Team Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:151
+msgid "Click Here To Add Team Member"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:182
+msgid "Enable testmonials section on about us page."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:191
+msgid "Testimonials"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:200
+msgid "Testimonials Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:214
+msgid "Click Here To Add Testimonial"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:246
+msgid "Enable client strip on About us page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:255
+msgid "Our Client"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:264
+msgid "Client Strip Heading"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:274
+msgid "5"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:283
+msgid "Number of client display in client strip"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:303
+msgid "Client strip slide speed"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:316
+msgid "Click Here To Add Clients"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:340
+msgid "Service Page Setting"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:375
+msgid "Enable testmonials section on service template."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:393
+msgid "Enable client strip on Service Page template."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:407
+msgid "Click Here To Add Service"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:429
+msgid "Google Maps"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:465
+msgid "Enable Google Map in contact page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:476
+msgid ""
+"https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;"
+"q=Kota+Industrial+Area,+Kota,+Rajasthan&amp;aq=2&amp;oq=kota+&amp;"
+"sll=25.003049,76.117499&amp;sspn=0.020225,0.042014&amp;t=h&amp;ie=UTF8&amp;"
+"hq=&amp;hnear=Kota+Industrial+Area,+Kota,+Rajasthan&amp;z=13&amp;"
+"ll=25.142832,75.879538"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:484
+msgid "Google Map URL:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:493
+msgid "Contact Page Setting"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:521
+msgid "Contact Form"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:530
+msgid "Contact Form Heading:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:548
+msgid "Enable Get in touch in contact page."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:558
+msgid "Get in Touch"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:567
+msgid "Get in Touch Text:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:577
+msgid ""
+"Lorem ipsum dolor sit amet, usu rebum errem pericula ea, ei alia quaerendum "
+"vix. Ea justo tritani sit, odio ignota quo te. Lorem ipsum dolor sit amet."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:586
+msgid "Get in Touch Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:606
+msgid "Enable our office section in contact page."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:615
+msgid "Our Office"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:624
+msgid "Our Office Text:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:634
+msgid "New York City, USA"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:643
+msgid "Contact Address:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:654
+msgid "420-300-3850"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:663
+msgid "Contact Phone Number:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:673
+msgid "themes@webriti.com"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_template.php:682
+msgid "Contact Email:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:10
+msgid "Want To add More Styling and Theme Color Then"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:28
+msgid "Theme Color Schemes Settings "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:41
+msgid "Predefined Colors"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:67
+msgid "Skin Color Enable"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:86
+msgid "Skin Color"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:95
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:108
+msgid "wide"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:108
+msgid "boxed"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:7
+msgid "Want to add Typography Setting Then"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:15
+msgid "Typography Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:20
+msgid "Typhography Enable / Disable"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:51
+msgid "Enable Custom Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:70
+msgid "General Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:84
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:141
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:198
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:254
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:310
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:366
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:423
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:479
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:535
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:591
+msgid "Font Size"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:101
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:158
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:215
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:271
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:327
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:383
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:440
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:496
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:552
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:608
+msgid "Font Family"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:117
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:174
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:231
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:287
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:343
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:399
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:456
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:512
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:568
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:624
+msgid "Font Style"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:127
+msgid "Menus Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:184
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:240
+msgid "Post / Page Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:296
+msgid "Service Title Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:352
+msgid "Portfolio Title Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:409
+msgid "Widget Heading Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:465
+msgid "Call Out Area Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:521
+msgid "Call Out Area Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/customizer/customizer_typography.php:577
+msgid "Call Out Area Button"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/menu/default_menu_walker.php:23
+msgid "Home"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/widget/custom-sidebar.php:15
 msgid "Sidebar"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/widget/custom-sidebar.php:17
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/widget/custom-sidebar.php:17
 msgid "The primary widget area"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/widget/custom-sidebar.php:25
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/widget/custom-sidebar.php:25
 msgid "Footer Widget Area"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_lite\wp-content\themes\rambo-lite/functions/widget/custom-sidebar.php:27
+#: D:\xampp\htdocs\wordpress_update\wp-content\themes\rambo/functions/widget/custom-sidebar.php:27
 msgid "footer widget area"
 msgstr ""
