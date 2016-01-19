@@ -3,6 +3,7 @@
     var panel = $('html', window.parent.document);
     var body = $('body');
     var siteTitle = $('.site-title');
+    var siteTitleFooter = $('#site-footer').children('h3');
     var siteTitleLink = siteTitle.children('a');
     var logo = $('#logo');
     var inlineStyles = $('#ct-ignite-style-inline-css');
@@ -14,6 +15,7 @@
             if( siteTitle.find('img').length == 0 ) {
                 siteTitle.children('a').text( to );
             }
+            siteTitleFooter.children('a').text( to );
         } );
     } );
     // Tagline
@@ -47,6 +49,8 @@
     // Logo Position - up/down
     wp.customize( 'logo_positioning_updown_setting', function( value ) {
         value.bind( function( to ) {
+            // get logo in case not initially available
+            logo = $('#logo');
             logo.css({
                 'bottom': to + 'px',
                 'position': 'relative',
@@ -58,6 +62,8 @@
     // Logo Position - left/right
     wp.customize( 'logo_positioning_leftright_setting', function( value ) {
         value.bind( function( to ) {
+            // get logo in case not initially available
+            logo = $('#logo');
             logo.css({
                 'left': to + 'px',
                 'position': 'relative',
@@ -68,6 +74,8 @@
     // Logo Size - width
     wp.customize( 'logo_size_width_setting', function( value ) {
         value.bind( function( to ) {
+            // get logo in case not initially available
+            logo = $('#logo');
             var newVal = parseInt(to) + 156;
             logo.css('max-width', newVal + 'px');
         } );
@@ -75,6 +83,8 @@
     // Logo Size - height
     wp.customize( 'logo_size_height_setting', function( value ) {
         value.bind( function( to ) {
+            // get logo in case not initially available
+            logo = $('#logo');
             var newVal = parseInt(to) + 59;
             logo.css('max-height', newVal + 'px');
         } );
