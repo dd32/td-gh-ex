@@ -2,11 +2,12 @@
 /**
  * Common Header Banner.
  */
-$home_slider_video_height = '';
-if(!empty(of_get_option('home_slider_video_height'))) {
-    $home_slider_video_height = 'height: '.of_get_option('home_slider_video_height').'px' ;
-}
-
+ $home_slider_video_height = '';
+ $hm_v_height = of_get_option('home_slider_video_height');
+ if(!empty($hm_v_height)) {
+     $home_slider_video_height = 'height: '.$hm_v_height.'px' ;
+ }
+ 
 ?>
 <?php $enable_home_slider = of_get_option('home_page_slider'); ?>
 <?php if (($enable_home_slider == 1) && is_front_page()): ?>
