@@ -4,13 +4,13 @@ Theme URI: https://www.competethemes.com/apex/
 Author: Compete Themes
 Author URI: https://www.competethemes.com/
 Description: Apex is a sophisticated, minimalist theme. It looks great and performs wonderfully on phones, tablets, laptops, and everything in between. As a fast, responsive, accessibility-ready, and translation-ready theme, Apex is a theme you can trust to present your content to the world. See our fully setup demo here: https://www.competethemes.com/apex-live-demo/
-Version: 1.13
+Version: 1.15
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, silver, white, light, fluid-layout, responsive-layout, two-columns, right-sidebar, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: apex
 
-Apex WordPress Theme, Copyright 2015 Compete Themes
+Apex WordPress Theme, Copyright 2016 Compete Themes
 Apex is distributed under the terms of the GNU GPL
 */
 /*===== Variables =====*/
@@ -42,7 +42,7 @@ h3, .post-title {
 
 .wp-caption-text, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]):not([type="image"]),
 textarea, input[type="submit"], .comment-respond label, #cancel-comment-reply-link, .comment-footer a,
-.comment-footer span, .site-footer .design-credit span, .tagline, .more-link, .comments-link, .sticky-status, .post-date, .post-tags a, .further-reading span, .widget > * {
+.comment-footer span, .site-footer .design-credit span, .tagline, .more-link, .comments-link, .sticky-status, .post-byline, .post-tags a, .further-reading span, .widget > * {
   font-size: 0.75em;
   /* 12px / 16px */
   line-height: 1.5;
@@ -292,6 +292,16 @@ a img {
   border: none;
 }
 
+#breadcrumbs {
+  margin-top: 0;
+  padding: 0 6.25%;
+}
+
+@media all and (min-width: 56.25em) {
+  #breadcrumbs {
+    padding: 0;
+  }
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
   html {
     -webkit-text-size-adjust: none;
@@ -354,12 +364,7 @@ a img {
 .archive-header h2 {
   font-size: 1em;
   line-height: 1.5;
-  font-weight: 400;
   color: #6B6B6B;
-}
-.archive-header span {
-  font-weight: 700;
-  color: #333333;
 }
 .archive-header p {
   font-style: italic;
@@ -462,7 +467,7 @@ li.pingback {
   display: inline-block;
   width: 50%;
   vertical-align: top;
-  margin: 0;
+  margin: 0 0 0 -4px;
 }
 .comment-pagination .next-comment {
   text-align: left;
@@ -471,6 +476,12 @@ li.pingback {
 @media all and (min-width: 37.5em) {
   .comments {
     padding: 0;
+  }
+}
+/* Disqus */
+@media all and (max-width: 600px) {
+  #disqus_thread {
+    padding: 0 6.25%;
   }
 }
 .site-footer {
@@ -641,10 +652,19 @@ li.pingback {
 
   .social-media-icons {
     display: inline-block;
+    float: left;
     margin: 0;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
   }
   .social-media-icons li:last-child a {
     margin-left: 0;
+  }
+  .social-media-icons.fade {
+    opacity: 0;
+    -webkit-transform: translateX(4px);
+    -ms-transform: translateX(4px);
+    transform: translateX(4px);
   }
 }
 @media all and (min-width: 56.25em) {
@@ -664,33 +684,37 @@ li.pingback {
     margin-top: 1em;
   }
 }
-.loop-pagination {
+.pagination {
   margin: 3em 0;
   padding: 0 6.25%;
   text-align: center;
   color: #6B6B6B;
 }
-.loop-pagination a,
-.loop-pagination span {
+.pagination a,
+.pagination span {
   margin: 0 0.75em;
 }
-.loop-pagination a {
+.pagination a {
   color: #6B6B6B;
 }
-.loop-pagination a:link, .loop-pagination a:visited {
+.pagination a:link, .pagination a:visited {
   color: #6B6B6B;
 }
-.loop-pagination a:hover, .loop-pagination a:active, .loop-pagination a:focus {
+.pagination a:hover, .pagination a:active, .pagination a:focus {
   color: #333333;
   text-decoration: underline;
 }
-.loop-pagination .current {
+.pagination .current {
   color: #333333;
   font-weight: 700;
 }
 
+.infinite-scroll .pagination {
+  display: none;
+}
+
 @media all and (min-width: 56.25em) {
-  .loop-pagination {
+  .pagination {
     text-align: right;
     padding: 0;
   }
@@ -714,6 +738,7 @@ li.pingback {
   }
 }
 .menu-primary-container {
+  position: relative;
   max-height: 0;
   overflow: hidden;
   -webkit-transition: max-height 0.2s ease-in-out;
@@ -880,22 +905,25 @@ li.pingback {
   }
   .menu-primary-items ul a:hover ~ ul, .menu-primary-items ul a:active ~ ul, .menu-primary-items ul a:focus ~ ul {
     top: -12px;
-    right: calc(100% - 24px);
+    right: 100%;
+    right: calc(100% + 2px);
   }
   .menu-primary-items ul a:hover:after, .menu-primary-items ul a:active:after {
     top: 0;
     height: 36px;
     width: 72px;
     right: 100%;
+    right: calc(100% + 2px);
   }
   .menu-primary-items ul ul {
     right: 100%;
-    right: calc(100% - 18px);
+    right: calc(100% + 8px);
     top: -12px;
   }
   .menu-primary-items ul ul:hover, .menu-primary-items ul ul.focused {
     top: -12px;
-    right: calc(100% - 24px);
+    right: 100%;
+    right: calc(100% + 2px);
   }
   .menu-primary-items li {
     position: relative;
@@ -985,9 +1013,13 @@ li.pingback {
   color: #333333;
 }
 
-.full-post .entry:not(.has-more-link) .comments-link {
+.full-post .entry .comments-link {
   display: block;
   margin: 3em 0;
+}
+.full-post.blog .post-content p:last-of-type, .full-post.archive .post-content p:last-of-type, .full-post.search .post-content p:last-of-type {
+  display: block;
+  margin: 1.5em 0;
 }
 
 .blog .post-content p:last-of-type,
@@ -1214,6 +1246,85 @@ li.pingback {
   margin-bottom: 6px;
 }
 
+.site-header .search-form-container {
+  position: absolute;
+  top: 22px;
+  left: 1.5em;
+}
+.site-header .search-form-container button {
+  position: relative;
+  z-index: 9;
+  background: none;
+  border: none;
+  margin: 5px 0 0 -10px;
+  padding: 6px 10px;
+  font-size: 1em;
+  line-height: 1.5;
+}
+.site-header .search-form-container button:hover {
+  cursor: pointer;
+}
+.site-header .search-form-container button:focus {
+  outline: none;
+}
+.site-header .search-form-container button:focus i {
+  color: #333333;
+}
+.site-header .search-form-container button.open + form {
+  opacity: 1;
+}
+.site-header .search-form-container i {
+  color: #6B6B6B;
+  z-index: -1;
+}
+.site-header .search-form-container form {
+  position: absolute;
+  top: 0;
+  left: -12px;
+  right: 0;
+  padding-top: 6px;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s ease-in-out, right 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out, right 0.15s ease-in-out;
+}
+.site-header .search-form-container .search-field {
+  max-width: none !important;
+  outline: none !important;
+  padding: 6px 12px !important;
+}
+.site-header .search-form-container .search-field::-webkit-search-decoration, .site-header .search-form-container .search-field::-webkit-search-cancel-button, .site-header .search-form-container .search-field::-webkit-search-results-button, .site-header .search-form-container .search-field::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+.site-header .search-form-container .search-field:focus {
+  background: #F2F2F2 !important;
+  outline: solid 1px #D8D8D8 !important;
+}
+
+@media all and (min-width: 50em) {
+  .site-header .search-form-container {
+    position: relative;
+    float: left;
+    top: -6px;
+    left: 0;
+    z-index: 9;
+    text-align: left;
+    margin: 0 1.5em 0 0;
+  }
+  .site-header .search-form-container button {
+    margin: 0;
+    padding: 4px 10px;
+  }
+  .site-header .search-form-container button:hover {
+    cursor: pointer;
+  }
+  .site-header .search-form-container button.open + form {
+    right: -266px;
+  }
+  .site-header .search-form-container form {
+    padding-top: 0;
+    left: 0;
+  }
+}
 .search-box {
   margin: 3em 0 1.5em;
   padding: 0 6.25%;
