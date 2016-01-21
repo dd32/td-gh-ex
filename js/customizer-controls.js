@@ -1,8 +1,9 @@
-/*
+/**
  * Customizer-controls.js
  *
  * Add Theme Page, Theme Documentation and Rate this theme quick links to theme options panel in customizer
  *
+ * @package Rubine Lite
  */
 
 ( function( $ ) {
@@ -26,23 +27,24 @@
 		themePage = $('<a class="rubine-theme-page"></a>')
 			.attr('href', rubine_theme_links.themeURL)
 			.attr('target', '_blank')
-			.text(rubine_theme_links.themeLabel)
-			.css({ 'display' : 'block' });
+			.text(rubine_theme_links.themeLabel);
 		
 		themeDocu = $('<a class="rubine-theme-docu"></a>')
 			.attr('href', rubine_theme_links.docuURL)
 			.attr('target', '_blank')
-			.text(rubine_theme_links.docuLabel)
-			.css({ 'display' : 'block' });
+			.text(rubine_theme_links.docuLabel);
 		
 		rateTheme = $('<a class="rubine-rate-theme"></a>')
 			.attr('href', rubine_theme_links.rateURL)
 			.attr('target', '_blank')
-			.text(rubine_theme_links.rateLabel)
-			.css({ 'display' : 'block' });
+			.text(rubine_theme_links.rateLabel);
 		
 		// Add Links to Box
-		content = box.append(title).append(themePage).append(themeDocu).append(rateTheme);
+		content = box
+			.append(title)
+			.append(themePage).append("<br />")
+			.append(themeDocu).append("<br />")
+			.append(rateTheme);
 		
 		setTimeout(function () {
 			$('#accordion-panel-rubine_options_panel .control-panel-content').append(content);

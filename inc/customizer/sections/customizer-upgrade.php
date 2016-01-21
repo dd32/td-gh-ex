@@ -26,7 +26,7 @@ function rubine_customize_register_upgrade_settings( $wp_customize ) {
         )
     );
     $wp_customize->add_control( new Rubine_Customize_Upgrade_Control(
-        $wp_customize, 'rubine_control_upgrade', array(
+        $wp_customize, 'rubine_theme_options[upgrade]', array(
             'section' => 'rubine_section_upgrade',
             'settings' => 'rubine_theme_options[upgrade]',
             'priority' => 1

@@ -26,7 +26,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
         )
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
-        $wp_customize, 'rubine_control_post_images', array(
+        $wp_customize, 'rubine_theme_options[post_images]', array(
             'label' => esc_html__( 'Post Images', 'rubine-lite' ),
             'section' => 'rubine_section_post',
             'settings' => 'rubine_theme_options[post_images]',
@@ -41,7 +41,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
         'sanitize_callback' => 'rubine_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'rubine_control_posts_thumbnails_single', array(
+    $wp_customize->add_control( 'rubine_theme_options[post_thumbnails_single]', array(
         'label'    => esc_html__( 'Display featured images on single posts', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[post_thumbnails_single]',
@@ -59,7 +59,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
         )
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
-        $wp_customize, 'rubine_control_excerpt_text_headline', array(
+        $wp_customize, 'rubine_theme_options[excerpt_text_headline]', array(
             'label' => esc_html__( 'Text after Excerpts', 'rubine-lite' ),
             'section' => 'rubine_section_post',
             'settings' => 'rubine_theme_options[excerpt_text_headline]',
@@ -74,7 +74,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
         'sanitize_callback' => 'rubine_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'rubine_control_excerpt_text', array(
+    $wp_customize->add_control( 'rubine_theme_options[excerpt_text]', array(
         'label'    => esc_html__( 'Display [...] after excerpts', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[excerpt_text]',
@@ -92,7 +92,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
         )
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
-        $wp_customize, 'rubine_control_postmeta_headline', array(
+        $wp_customize, 'rubine_theme_options[postmeta_headline]', array(
             'label' => esc_html__( 'Post Meta', 'rubine-lite' ),
             'section' => 'rubine_section_post',
             'settings' => 'rubine_theme_options[postmeta_headline]',
@@ -107,7 +107,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
         'sanitize_callback' => 'rubine_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'rubine_control_meta_date', array(
+    $wp_customize->add_control( 'rubine_theme_options[meta_date]', array(
         'label'    => esc_html__( 'Display post date', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[meta_date]',
@@ -122,7 +122,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
         'sanitize_callback' => 'rubine_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'rubine_control_meta_author', array(
+    $wp_customize->add_control( 'rubine_theme_options[meta_author]', array(
         'label'    => esc_html__( 'Display post author', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[meta_author]',
@@ -137,7 +137,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
         'sanitize_callback' => 'rubine_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'rubine_control_meta_category', array(
+    $wp_customize->add_control( 'rubine_theme_options[meta_category]', array(
         'label'    => esc_html__( 'Display post categories', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[meta_category]',
@@ -152,7 +152,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
         'sanitize_callback' => 'rubine_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'rubine_control_meta_tags', array(
+    $wp_customize->add_control( 'rubine_theme_options[meta_tags]', array(
         'label'    => esc_html__( 'Display post tags', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[meta_tags]',
@@ -170,7 +170,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
         )
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
-        $wp_customize, 'rubine_control_post_footer_headline', array(
+        $wp_customize, 'rubine_theme_options[post_footer_headline]', array(
             'label' => esc_html__( 'Post Footer', 'rubine-lite' ),
             'section' => 'rubine_section_post',
             'settings' => 'rubine_theme_options[post_footer_headline]',
@@ -185,7 +185,7 @@ function rubine_customize_register_post_settings( $wp_customize ) {
         'sanitize_callback' => 'rubine_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'rubine_control_post_navigation', array(
+    $wp_customize->add_control( 'rubine_theme_options[post_navigation]', array(
         'label'    => esc_html__( 'Display post navigation on single posts', 'rubine-lite' ),
         'section'  => 'rubine_section_post',
         'settings' => 'rubine_theme_options[post_navigation]',

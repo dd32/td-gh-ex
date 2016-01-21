@@ -22,10 +22,10 @@ function rubine_customize_register_general_settings( $wp_customize ) {
         'default'           => 'right-sidebar',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'rubine_sanitize_layout'
+        'sanitize_callback' => 'rubine_sanitize_select'
 		)
 	);
-    $wp_customize->add_control( 'rubine_control_layout', array(
+    $wp_customize->add_control( 'rubine_theme_options[layout]', array(
         'label'    => esc_html__( 'Theme Layout', 'rubine-lite' ),
         'section'  => 'rubine_section_general',
         'settings' => 'rubine_theme_options[layout]',
@@ -47,7 +47,7 @@ function rubine_customize_register_general_settings( $wp_customize ) {
         )
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
-        $wp_customize, 'rubine_control_footer_content', array(
+        $wp_customize, 'rubine_theme_options[footer_content]', array(
             'label' => esc_html__( 'Footer Icons', 'rubine-lite' ),
             'section' => 'rubine_section_general',
             'settings' => 'rubine_theme_options[footer_content]',
@@ -64,7 +64,7 @@ function rubine_customize_register_general_settings( $wp_customize ) {
         'sanitize_callback' => 'rubine_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'rubine_control_footer_icons', array(
+    $wp_customize->add_control( 'rubine_theme_options[footer_icons]', array(
         'label'    => esc_html__( 'Display Social Icons in footer', 'rubine-lite' ),
         'section'  => 'rubine_section_general',
         'settings' => 'rubine_theme_options[footer_icons]',
@@ -82,7 +82,7 @@ function rubine_customize_register_general_settings( $wp_customize ) {
         )
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
-        $wp_customize, 'rubine_control_default_fonts', array(
+        $wp_customize, 'rubine_theme_options[default_fonts]', array(
             'label' => esc_html__( 'Default Fonts', 'rubine-lite' ),
             'section' => 'rubine_section_general',
             'settings' => 'rubine_theme_options[default_fonts]',
@@ -99,7 +99,7 @@ function rubine_customize_register_general_settings( $wp_customize ) {
         'sanitize_callback' => 'rubine_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'rubine_control_deactivate_google_fonts', array(
+    $wp_customize->add_control( 'rubine_theme_options[deactivate_google_fonts]', array(
         'label'    => esc_html__( 'Deactivate Google Fonts in case your language is not compatible.', 'rubine-lite' ),
         'section'  => 'rubine_section_general',
         'settings' => 'rubine_theme_options[deactivate_google_fonts]',

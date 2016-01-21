@@ -108,9 +108,9 @@ function rubine_customize_controls_js() {
 	// Localize the script
 	wp_localize_script( 'rubine-lite-customizer-controls', 'rubine_theme_links', array(
 		'title'	=> esc_html__( 'Theme Links', 'rubine-lite' ),
-		'themeURL'	=> esc_url( 'http://themezee.com/themes/rubine/?utm_source=customizer&utm_medium=textlink&utm_campaign=rubine&utm_content=theme-page' ),
+		'themeURL'	=> esc_url( __( 'https://themezee.com/themes/rubine/', 'rubine-lite' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=rubine&utm_content=theme-page' ),
 		'themeLabel'	=> esc_html__( 'Theme Page', 'rubine-lite' ),
-		'docuURL'	=> esc_url( 'http://themezee.com/docs/rubine-documentation/?utm_source=customizer&utm_medium=textlink&utm_campaign=rubine&utm_content=documentation' ),
+		'docuURL'	=> esc_url( __( 'https://themezee.com/docs/rubine-documentation/', 'rubine-lite' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=rubine&utm_content=documentation' ),
 		'docuLabel'	=>  esc_html__( 'Theme Documentation', 'rubine-lite' ),
 		'rateURL'	=> esc_url( 'http://wordpress.org/support/view/theme-reviews/rubine-lite?filter=5' ),
 		'rateLabel'	=> esc_html__( 'Rate this theme', 'rubine-lite' ),

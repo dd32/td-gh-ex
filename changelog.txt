@@ -2,6 +2,11 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.2.3
+-----------------------------------
+[changed] all themezee.com links to https and made them translatable
+[improved] sanitize functions in Customizer
+
 Version 1.2.2
 -----------------------------------
 [added] support for ThemeZee Related Posts plugin

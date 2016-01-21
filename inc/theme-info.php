@@ -42,10 +42,10 @@ function rubine_display_theme_info_page() {
 		<hr>
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'rubine-lite' ); ?>:</strong>
-				<a href="<?php echo esc_url( 'http://themezee.com/themes/rubine/?utm_source=theme-info&utm_medium=textlink&utm_campaign=rubine&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'rubine-lite' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/rubine/', 'rubine-lite' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=rubine&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'rubine-lite' ); ?></a>
 				<a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php esc_html_e( 'Changelog', 'rubine-lite' ); ?></a>
 				<a href="<?php echo esc_url( 'http://preview.themezee.com/rubine/?utm_source=theme-info&utm_medium=textlink&utm_campaign=rubine&utm_content=demo' ); ?>" target="_blank"><?php esc_html_e( 'Theme Demo', 'rubine-lite' ); ?></a>
-				<a href="<?php echo esc_url( 'http://themezee.com/docs/rubine-documentation/?utm_source=theme-info&utm_medium=textlink&utm_campaign=rubine&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'rubine-lite' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/rubine-documentation/', 'rubine-lite' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=rubine&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'rubine-lite' ); ?></a>
 				<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/rubine-lite?filter=5' ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'rubine-lite' ); ?></a>
 			</p>
 		</div>
@@ -66,7 +66,7 @@ function rubine_display_theme_info_page() {
 							<?php esc_html_e( 'You need help to setup and configure this theme? We got you covered with an extensive theme documentation on our website.', 'rubine-lite' ); ?>
 						</p>
 						<p>
-							<a href="<?php echo esc_url( 'http://themezee.com/docs/rubine-documentation/?utm_source=theme-info&utm_medium=button&utm_campaign=rubine&utm_content=documentation' ); ?>" target="_blank" class="button button-secondary">
+							<a href="<?php echo esc_url( __( 'https://themezee.com/docs/rubine-documentation/', 'rubine-lite' ) . '?utm_source=theme-info&utm_medium=button&utm_campaign=rubine&utm_content=documentation' ); ?>" target="_blank" class="button button-secondary">
 								<?php printf( esc_html__( 'View %s Documentation', 'rubine-lite' ), 'Rubine' ); ?>
 							</a>
 						</p>
@@ -92,7 +92,7 @@ function rubine_display_theme_info_page() {
 							<?php printf( esc_html__( 'Purchase the Pro Version of %s to get additional features and advanced customization options.', 'rubine-lite' ), 'Rubine'); ?>
 						</p>
 						<p>
-							<a href="<?php echo esc_url( 'http://themezee.com/themes/rubine/?utm_source=theme-info&utm_medium=button&utm_campaign=rubine&utm_content=pro-version' ); ?>" target="_blank" class="button button-secondary">
+							<a href="<?php echo esc_url( __( 'https://themezee.com/addons/rubine-pro/', 'rubine-lite' ) . '?utm_source=theme-info&utm_medium=button&utm_campaign=rubine&utm_content=pro-version' ); ?>" target="_blank" class="button button-secondary">
 								<?php printf( esc_html__( 'Learn more about %s Pro', 'rubine-lite' ), 'Rubine'); ?>
 							</a>
 						</p>
@@ -116,7 +116,7 @@ function rubine_display_theme_info_page() {
 			
 			<p><?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'rubine-lite' ), 
 				$theme->get( 'Name' ),
-				'<a target="_blank" href="http://themezee.com/?utm_source=theme-info&utm_medium=footer&utm_campaign=rubine" title="ThemeZee">ThemeZee</a>',
+				'<a target="_blank" href="' . __( 'https://themezee.com/', 'rubine-lite' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=rubine" title="ThemeZee">ThemeZee</a>',
 				'<a target="_blank" href="http://wordpress.org/support/view/theme-reviews/rubine-lite?filter=5" title="Rubine Lite Review">' . esc_html__( 'rate it', 'rubine-lite' ) . '</a>'); ?>
 			</p>
 		
