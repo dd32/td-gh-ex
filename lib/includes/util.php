@@ -45,7 +45,7 @@ function ad_mag_lite_content_get_audio($content, $enable_multi = false) {
 }
 
 function ad_mag_lite_content_get_video($content, $enable_multi = false) {
-    return ad_mag_lite_content_get_media($content, $enable_multi, array('vimeo', 'youtube', 'video', 'embed'));
+    return ad_mag_lite_content_get_media($content, $enable_multi, array('vimeo', 'youtube', 'video', 'embed', 'wpvideo'));
 }
 
 /**

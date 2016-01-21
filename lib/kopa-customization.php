@@ -1,15 +1,15 @@
 <?php
 
-add_action('after_setup_theme', array('Kopa_Customization', 'get_instance'));	
+add_action('after_setup_theme', array('Ad_Mag_Lite_Customization', 'get_instance'));	
 
-class Kopa_Customization{
+class Ad_Mag_Lite_Customization{
 
 	public function __construct(){
 		add_action('customize_register', array($this, 'customize_register'));
 	}
 
 	public static function get_instance(){
-		new Kopa_Customization();		
+		new Ad_Mag_Lite_Customization();		
 	}
 
 	public function customize_register($wp_customize){

@@ -65,7 +65,7 @@
                 $content = str_replace('<p>&nbsp;</p>', '', $content);
                 break;
             }
-            echo wp_kses_post($content);
+            echo sprintf( '%s', $content);
             ?>
 
 </article> 
