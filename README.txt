@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 1.1.6 =
+
+** Update Overrides woocommerce template in our theme and make our theme compatible with latest version of woocommerce.
+
 = 1.1.5 =
 
 ** Change the fallback_menu function prefix.
