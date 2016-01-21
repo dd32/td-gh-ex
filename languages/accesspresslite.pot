@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: AccessPress Lite 2.42\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-19 13:01+0545\n"
-"POT-Revision-Date: Mon Nov 09 2015 16:44:43 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Thu Jan 21 2016 10:40:14 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: Prabin Dangol <info@accesspressthemes.com>\n"
@@ -193,7 +193,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../header.php:73
+#: ../header.php:70
 msgid "Menu"
 msgstr ""
 
@@ -340,38 +340,38 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: ../inc/class-tgm-plugin-activation.php:333 ../inc/extras.php:665
+#: ../inc/class-tgm-plugin-activation.php:333 ../inc/extras.php:618
 msgid "Install Required Plugins"
 msgstr ""
 
-#: ../inc/class-tgm-plugin-activation.php:334 ../inc/extras.php:666
+#: ../inc/class-tgm-plugin-activation.php:334 ../inc/extras.php:619
 msgid "Install Plugins"
 msgstr ""
 
-#: ../inc/class-tgm-plugin-activation.php:335 ../inc/extras.php:667
+#: ../inc/class-tgm-plugin-activation.php:335 ../inc/extras.php:620
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: ../inc/class-tgm-plugin-activation.php:336 ../inc/extras.php:668
+#: ../inc/class-tgm-plugin-activation.php:336 ../inc/extras.php:621
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: ../inc/class-tgm-plugin-activation.php:337 ../inc/extras.php:669
+#: ../inc/class-tgm-plugin-activation.php:337 ../inc/extras.php:622
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:342 ../inc/extras.php:674
+#: ../inc/class-tgm-plugin-activation.php:342 ../inc/extras.php:627
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:347 ../inc/extras.php:679
+#: ../inc/class-tgm-plugin-activation.php:347 ../inc/extras.php:632
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %1$s "
@@ -382,7 +382,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:352 ../inc/extras.php:684
+#: ../inc/class-tgm-plugin-activation.php:352 ../inc/extras.php:637
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -393,14 +393,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:357 ../inc/extras.php:689
+#: ../inc/class-tgm-plugin-activation.php:357 ../inc/extras.php:642
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:362 ../inc/extras.php:694
+#: ../inc/class-tgm-plugin-activation.php:362 ../inc/extras.php:647
 #, php-format
 msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
 msgid_plural ""
@@ -409,21 +409,21 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:367 ../inc/extras.php:699
+#: ../inc/class-tgm-plugin-activation.php:367 ../inc/extras.php:652
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:372 ../inc/extras.php:704
+#: ../inc/class-tgm-plugin-activation.php:372 ../inc/extras.php:657
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:377 ../inc/extras.php:709
+#: ../inc/class-tgm-plugin-activation.php:377 ../inc/extras.php:662
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %1$s "
@@ -434,25 +434,25 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:382 ../inc/extras.php:714
+#: ../inc/class-tgm-plugin-activation.php:382 ../inc/extras.php:667
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:387 ../inc/extras.php:719
+#: ../inc/class-tgm-plugin-activation.php:387 ../inc/extras.php:672
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:392 ../inc/extras.php:724
+#: ../inc/class-tgm-plugin-activation.php:392 ../inc/extras.php:677
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:397 ../inc/extras.php:729
+#: ../inc/class-tgm-plugin-activation.php:397 ../inc/extras.php:682
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -461,30 +461,30 @@ msgid "Return to the dashboard"
 msgstr ""
 
 #: ../inc/class-tgm-plugin-activation.php:399 ../inc/class-tgm-plugin-activation.
-#: php:3033 ../inc/extras.php:730
+#: php:3033 ../inc/extras.php:683
 msgid "Plugin activated successfully."
 msgstr ""
 
 #: ../inc/class-tgm-plugin-activation.php:400 ../inc/class-tgm-plugin-activation.
-#: php:2836 ../inc/extras.php:731
+#: php:2836 ../inc/extras.php:684
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/class-tgm-plugin-activation.php:401 ../inc/extras.php:732
+#: ../inc/class-tgm-plugin-activation.php:401 ../inc/extras.php:685
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: ../inc/class-tgm-plugin-activation.php:402 ../inc/extras.php:733
+#: ../inc/class-tgm-plugin-activation.php:402 ../inc/extras.php:686
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
 
-#: ../inc/class-tgm-plugin-activation.php:403 ../inc/extras.php:734
+#: ../inc/class-tgm-plugin-activation.php:403 ../inc/extras.php:687
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
@@ -493,7 +493,7 @@ msgstr ""
 msgid "Dismiss this notice"
 msgstr ""
 
-#: ../inc/class-tgm-plugin-activation.php:405 ../inc/extras.php:735
+#: ../inc/class-tgm-plugin-activation.php:405 ../inc/extras.php:688
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
@@ -822,96 +822,91 @@ msgid ""
 "Sidebar tab"
 msgstr ""
 
-#: ../inc/extras.php:64
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: ../inc/extras.php:114
+#: ../inc/extras.php:67
 msgid "Left Sidebar"
 msgstr ""
 
-#: ../inc/extras.php:116 ../inc/extras.php:136
+#: ../inc/extras.php:69 ../inc/extras.php:89
 msgid "Display items in the Left Sidebar of the inner pages"
 msgstr ""
 
-#: ../inc/extras.php:124
+#: ../inc/extras.php:77
 msgid "Right Sidebar"
 msgstr ""
 
-#: ../inc/extras.php:126
+#: ../inc/extras.php:79
 msgid "Display items in the Right Sidebar of the inner pages"
 msgstr ""
 
-#: ../inc/extras.php:134
+#: ../inc/extras.php:87
 msgid "Event Sidebar"
 msgstr ""
 
-#: ../inc/extras.php:144
+#: ../inc/extras.php:97
 msgid "Blog Right Sidebar"
 msgstr ""
 
-#: ../inc/extras.php:146
+#: ../inc/extras.php:99
 msgid "Display items for the blog category in the Right Sidebar of the inner pages"
 msgstr ""
 
-#: ../inc/extras.php:154
+#: ../inc/extras.php:107
 msgid "Footer Area One"
 msgstr ""
 
-#: ../inc/extras.php:156
+#: ../inc/extras.php:109
 msgid "Display items in First Footer Area"
 msgstr ""
 
-#: ../inc/extras.php:164
+#: ../inc/extras.php:117
 msgid "Footer Area Two"
 msgstr ""
 
-#: ../inc/extras.php:166
+#: ../inc/extras.php:119
 msgid "Display items in Second Footer Area"
 msgstr ""
 
-#: ../inc/extras.php:174
+#: ../inc/extras.php:127
 msgid "Footer Area Three"
 msgstr ""
 
-#: ../inc/extras.php:176
+#: ../inc/extras.php:129
 msgid "Display items in Third Footer Area"
 msgstr ""
 
-#: ../inc/extras.php:184
+#: ../inc/extras.php:137
 msgid "Footer Area Four"
 msgstr ""
 
-#: ../inc/extras.php:186
+#: ../inc/extras.php:139
 msgid "Display items in Fourth Footer Area"
 msgstr ""
 
-#: ../inc/extras.php:194
+#: ../inc/extras.php:147
 msgid "Left Block above footer"
 msgstr ""
 
-#: ../inc/extras.php:196
+#: ../inc/extras.php:149
 msgid "Display items in the left just above the footer"
 msgstr ""
 
-#: ../inc/extras.php:204
+#: ../inc/extras.php:157
 msgid "Middle Block above footer"
 msgstr ""
 
-#: ../inc/extras.php:206
+#: ../inc/extras.php:159
 msgid "Display items in the middle just above the footer and replaces defaul gallery"
 msgstr ""
 
-#: ../inc/extras.php:214
+#: ../inc/extras.php:167
 msgid "Right Block above footer"
 msgstr ""
 
-#: ../inc/extras.php:216
+#: ../inc/extras.php:169
 msgid "Display items in the Right just above the footer and replaces Testimonials"
 msgstr ""
 
-#: ../inc/extras.php:620
+#: ../inc/extras.php:573
 #, php-format
 msgid "Go to <a href=\"%s\">Theme Options Panel</a> to set up the website."
 msgstr ""
@@ -1553,7 +1548,7 @@ msgid "Any question!! Click <a href=\"%s\" target=\"_blank\">here</a> for Live C
 msgstr ""
 
 #. Name of the theme
-msgid "Accesspress Lite"
+msgid "AccessPress Lite"
 msgstr ""
 
 #. Theme URI of the theme

@@ -60,6 +60,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.45.9
+* Espanish Translation Added
+Contributer - José Roldán <rolozco@ono.com>
+
 Version 2.45.8
 * Added theme support for the title tag and remove the hardcoded Title Tag
 
