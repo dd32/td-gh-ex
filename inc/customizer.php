@@ -248,14 +248,14 @@ function athena_customize_register( $wp_customize ) {
         'panel'                 => 'homepage',
     ) );
     
-    // 1st slide
+    // Widget
     $wp_customize->add_setting( 'homepage_widget_background', array (
         'default'               => get_template_directory_uri() . '/inc/images/widget.jpg',
         'transport'             => 'postMessage',
         'sanitize_callback'     => 'athena_sanitize'
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control1', array (
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control5', array (
         'label' =>              __( 'Widget Background', 'athena' ),
         'section'               => 'homepage_widget',
         'mime_type'             => 'image',

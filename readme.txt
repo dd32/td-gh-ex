@@ -9,8 +9,6 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-
-
 == Description ==
 
 Athena 
@@ -36,11 +34,18 @@ the menu items will drop to a new line and will not look as good as intended.
 
 == Changelog ==
 
-= 1.0 - October 24 2015 =
+= 1.0.0 - October 24 2015 =
 First version of the theme released
 
-= 1.1 - January 17th, 2016
+= 1.01 - January 17th, 2016
 Modifications based on theme review feedback
+
+= 1.02 - January 18th, 2016
+
+= 1.03 - January 21st, 2016
+Fixed an error in the slide #1 image upload in customizer
+Fixed color issue in dropdown menus in widgets
+
 
 == Credits ==
 
@@ -79,8 +84,8 @@ Modifications based on theme review feedback
     - License               SIL Open Font
     - License URL           http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
-8. Google Fonts - Lato
-    - URL                   https://www.google.com/fonts/specimen/Lato
+8. Google Fonts
+    - URL                   https://www.google.com/fonts/
     - License               SIL Open Font
     - License URL           http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
@@ -91,10 +96,10 @@ Modifications based on theme review feedback
     - Photographer          Unsplash                 
 
 10. Slider Image 2
-    - URL                   http://pixabay.com/en/ipad-samsung-music-play-google-605439/
+    - URL                   https://pixabay.com/en/people-man-model-glasses-516370/
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
-    - Photographer          FirmBee                 
+    - Photographer          hahanriji                 
 
 11. OwlCarousel
     - URL                   https://github.com/OwlFonk/OwlCarousel/blob/master/README.md#license
@@ -132,7 +137,7 @@ Modifications based on theme review feedback
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
     - Photographer          StartupStockPhotos
 
-18. Homepage Image  
+18. TGM Plugin Activation  
     - URL                   http://tgmpluginactivation.com/
     - License               Licensed under GPLv2 or later
     - License URL           http://www.gnu.org/licenses/gpl.html

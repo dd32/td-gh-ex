@@ -91,16 +91,6 @@ function athena_widgets_init() {
         'after_title' => '</h2>',
     ));
 
-//    register_sidebar(array(
-//        'name' => esc_html__('Left Sidebar', 'athena'),
-//        'id' => 'sidebar-left',
-//        'description' => '',
-//        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-//        'after_widget' => '</aside>',
-//        'before_title' => '<h2 class="widget-title">',
-//        'after_title' => '</h2>',
-//    ));
-
     register_sidebar(array(
         'name' => esc_html__('Shop Sidebar ( WooCommerce )', 'athena'),
         'id' => 'sidebar-shop',
@@ -210,16 +200,6 @@ function athena_main_width(){
     
     $width = 12;
     
-//    if( get_theme_mod( 'sidebar_location', 'right' ) == 'none' ) :
-//        
-//        $width = 12;
-//    
-//    else :
-//        
-//        $width = 8;
-//        
-//    endif;
-    
     if( is_active_sidebar('sidebar-left') && is_active_sidebar('sidebar-right') ) :
         
         $width = 6;
@@ -258,7 +238,8 @@ function athena_customize_nav($items) {
 }
 
 add_filter('wp_nav_menu_items', 'athena_customize_nav');
-//delete_option('theme_mods_athena');
+
+
 function athena_custom_css() {
     ?>
     <style type="text/css">
