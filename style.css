@@ -2,16 +2,16 @@
 Theme Name: ProMax
 Theme URI: http://www.insertcart.com/product/promax-wordpress-theme/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo http://demo.baztro.com/promax 
-Version: 1.5.5
-Author: InsertCart by Sandy
+Version: 1.5.5.1
+Author: InsertCart.com
 Author URI: http://www.insertcart.com/
 Tags: black, blue, white, light, red, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, responsive-layout
 Text Domain: promax
 License: GNU General Public License v2
 License URI: license.txt
-Copyright (C) 2015 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Copyright (C) 2016 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-ProMax WordPress theme, Copyright (C) 2015 BazTro
+ProMax WordPress theme, Copyright (C) 2016 BazTro
 ProMax WordPress theme is licensed under the GPL.
 
 */
@@ -868,11 +868,11 @@ box-shadow: 0 1px 3px 0 #B5B5B5; -moz-box-shadow: 0 1px 3px 0 #b5b5b5; -webkit-b
 }
 .imag .entry {
 padding: 4px 5px 0px 5px;
-    font-size: 14px;
+    font-size: 13px;
 }
 .entry {
 padding: 18px 5px 0px 5px;
-font-size: 16px;
+font-size: 14px;
     line-height: 24px;
 
 }

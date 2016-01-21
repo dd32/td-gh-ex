@@ -36,7 +36,7 @@ function promax_breadcrumbs() {
         $parentCat = get_category($thisCat->parent);
         if ($thisCat->parent != 0)
             echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-        echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+        echo $before . __('Archive by category "','promax') . single_cat_title('', false) . '"' . $after;
     } elseif (is_day()) {
         echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
         echo '<a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
@@ -79,15 +79,15 @@ function promax_breadcrumbs() {
             echo $crumb . ' ' . $delimiter . ' ';
         echo $before . esc_html(get_the_title()) . $after;
     } elseif (is_search()) {
-        echo $before . __('Search results for "' . get_search_query() . '"','promax')  . '"' . $after;
+        echo $before . __('Search results for','promax') . get_search_query() . $after;
     } elseif (is_tag()) {
-        echo $before . __('Posts tagged "' . single_tag_title('', false) . '"','promax') . $after;
+        echo $before . __('Posts tagged ','promax') . single_tag_title('', false) . $after;
     } elseif (is_author()) {
         global $author;
         $userdata = get_userdata($author);
         echo $before . __('Articles posted by ','promax'). $userdata->display_name . $after;
     } elseif (is_404()) {
-        echo $before . 'Error 404' . $after;
+        echo $before . __('Error 404','promax') . $after;
     }
 
     if (get_query_var('paged')) {
