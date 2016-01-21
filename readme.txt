@@ -1,9 +1,13 @@
 adamos is a responsive, highly customizable theme.
 
-Theme instructions can be found at http://templateexpress.com/adam/documentation/
+Theme instructions: http://www.templateexpress.com/docs/adamos/
+Theme demo: http://www.templateexpress.com/demos/adamos/
 
 Changelog
 --------------------------------------------
+Version: 2.8
+* Updated url's for new demos and documentation
+
 Version: 2.7
 * Fixed issue with featured promo bar link being duplicated in Featured box one url.
 
