@@ -89,6 +89,10 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.25.3
+* Indonesian Translation Added
+Contributer - Rio Bermano <riobermano92@gmail.com>
+
 Version 1.25.2
 * Added the theme support for title tag and removed the hardcoded title tag
 
