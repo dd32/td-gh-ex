@@ -1,0 +1,910 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Beam v0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2016-01-09 08:13:51+0000\n"
+"Last-Translator: emirowski <onlinedoo@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:19
+#@ beam
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:23
+#@ beam
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: archive.php:35
+#, php-format
+#@ beam
+msgid "Author Archive: %s"
+msgstr ""
+
+#: archive.php:43
+#, php-format
+#@ beam
+msgid "Daily Archive: %s"
+msgstr ""
+
+#: archive.php:46
+#, php-format
+#@ beam
+msgid "Monthly Archive: %s"
+msgstr ""
+
+#: archive.php:49
+#, php-format
+#@ beam
+msgid "Yearly Archive: %s"
+msgstr ""
+
+#: archive.php:52
+#@ beam
+msgid "Asides"
+msgstr ""
+
+#: archive.php:55
+#@ beam
+msgid "Images"
+msgstr ""
+
+#: archive.php:58
+#@ beam
+msgid "Videos"
+msgstr ""
+
+#: archive.php:61
+#@ beam
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:64
+#@ beam
+msgid "Links"
+msgstr ""
+
+#: archive.php:67
+#: footer.php:28
+#: sidebar-left.php:22
+#: sidebar.php:17
+#: sidebar.php:53
+#@ beam
+msgid "Archives"
+msgstr ""
+
+#: author.php:23
+#: content-single.php:104
+#, php-format
+#@ beam
+msgid "About %s"
+msgstr ""
+
+#: author.php:69
+#: no-results.php:13
+#@ beam
+msgid "Nothing Found"
+msgstr ""
+
+#: author.php:73
+#: no-results.php:28
+#@ beam
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: comments.php:27
+#, php-format
+#@ beam
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:30
+#@ beam
+msgid "Add Yours?"
+msgstr ""
+
+#: comments.php:35
+#: comments.php:55
+#@ beam
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:36
+#: comments.php:56
+#@ beam
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:37
+#: comments.php:57
+#@ beam
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:67
+#: content-single.php:18
+#@ beam
+msgid "Comments are closed."
+msgstr ""
+
+#: content-front.php:37
+#: content-page.php:37
+#: content-single.php:48
+#: content.php:29
+#: image.php:61
+#@ beam
+msgid "Pages:"
+msgstr ""
+
+#: content-front.php:43
+#: content-notitle.php:25
+#: content-page.php:42
+#: content-single.php:93
+#: content.php:71
+#: image.php:35
+#: image.php:67
+#: inc/template-tags.php:73
+#: inc/template-tags.php:111
+#@ beam
+msgid "Edit"
+msgstr ""
+
+#: content-single.php:23
+#@ beam
+msgid "Add Comment"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:58
+#: content.php:40
+#: content.php:55
+#@ beam
+msgid ", "
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:61
+#@ beam
+msgid " "
+msgstr ""
+
+#: content-single.php:66
+#, php-format
+#@ beam
+msgid "<i class=\"1 fa fa-tags\"></i> Category %2$s   <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\"> <i class=\"fa fa-link\"></i></a>"
+msgstr ""
+
+#: content-single.php:68
+#, php-format
+#@ beam
+msgid "<a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\"> <i class=\"fa fa-link\"></i>Permalink</a>"
+msgstr ""
+
+#: content-single.php:74
+#, php-format
+#@ beam
+msgid "<p class=\"categories\"><i class=\"fa fa-folder-open\"></i> Categories %1$s </p> <p class=\"tags\"><i class=\"2 fa fa-tags\"></i> Tags %2$s </p> <p> <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\"><i class=\"fa fa-link\"></i>Permalink</a></p>"
+msgstr ""
+
+#: content-single.php:76
+#, php-format
+#@ beam
+msgid "<i class=\"fa fa-folder-open\"></i> %1$s  <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\"><i class=\"fa fa-link\"></i>Permalink</a>"
+msgstr ""
+
+#: content.php:26
+#@ beam
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content.php:48
+#: content.php:59
+#, php-format
+#@ beam
+msgid "%1$s"
+msgstr ""
+
+#: content.php:65
+#@ beam
+msgid "Leave a comment"
+msgstr ""
+
+#: content.php:65
+#@ beam
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:65
+#@ beam
+msgid "% Comments"
+msgstr ""
+
+#: footer-squeeze.php:46
+#: footer.php:73
+#@ beam
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: footer-squeeze.php:46
+#: footer.php:73
+#, php-format
+#@ beam
+msgid "Powered by %s"
+msgstr ""
+
+#: footer-squeeze.php:48
+#: footer.php:75
+#, php-format
+#@ beam
+msgid "Runs on %1$s."
+msgstr ""
+
+#: footer.php:35
+#: sidebar-left.php:29
+#: sidebar.php:24
+#: sidebar.php:60
+#@ beam
+msgid "Meta"
+msgstr ""
+
+#: functions.php:52
+#@ beam
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:53
+#@ beam
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:115
+#@ beam
+msgid "Sidebar Right"
+msgstr ""
+
+#: functions.php:124
+#@ beam
+msgid "Sidebar Left"
+msgstr ""
+
+#: functions.php:133
+#@ beam
+msgid "Sidebar Home"
+msgstr ""
+
+#: functions.php:142
+#@ beam
+msgid "Footer Widget"
+msgstr ""
+
+#: header-squeeze.php:63
+#: header.php:64
+#@ beam
+msgid "Skip to content"
+msgstr ""
+
+#: image.php:24
+#, php-format
+#@ beam
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr ""
+
+#: image.php:40
+#@ beam
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr ""
+
+#: image.php:41
+#@ beam
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/adm/kirki/config.php:29
+#@ beam
+msgid "Layout options"
+msgstr ""
+
+#: inc/adm/kirki/config.php:30
+#@ beam
+msgid "Choose Your Favorite Layout"
+msgstr ""
+
+#: inc/adm/kirki/config.php:35
+#@ beam
+msgid "Design options"
+msgstr ""
+
+#: inc/adm/kirki/config.php:36
+#@ beam
+msgid "This panel contains all Design Options"
+msgstr ""
+
+#: inc/adm/kirki/config.php:41
+#@ beam
+msgid "Home Page"
+msgstr ""
+
+#: inc/adm/kirki/config.php:42
+#@ beam
+msgid "Home Page Options"
+msgstr ""
+
+#: inc/adm/kirki/config.php:47
+#: inc/adm/kirki/config.php:48
+#@ beam
+msgid "Footer Options"
+msgstr ""
+
+#: inc/adm/kirki/config.php:53
+#@ beam
+msgid "Custom Fields"
+msgstr ""
+
+#: inc/adm/kirki/config.php:54
+#@ beam
+msgid "This panel contains Custom Fields"
+msgstr ""
+
+#: inc/adm/kirki/config.php:66
+#@ beam
+msgid "Choose Layout"
+msgstr ""
+
+#: inc/adm/kirki/config.php:67
+#@ beam
+msgid "Choose between No Sidebar, Left Sidebar, Right Sidebar or Double Sidebar templates"
+msgstr ""
+
+#: inc/adm/kirki/config.php:82
+#@ beam
+msgid "Sidebar Visibility"
+msgstr ""
+
+#: inc/adm/kirki/config.php:83
+#@ beam
+msgid "Uncheck the box if you would like to hide Sidebar site-wide "
+msgstr ""
+
+#: inc/adm/kirki/config.php:93
+#@ kirki
+msgid "Custom CSS"
+msgstr ""
+
+#: inc/adm/kirki/config.php:94
+#@ beam
+msgid "Add Your Custom CSS Here"
+msgstr ""
+
+#: inc/adm/kirki/config.php:105
+#@ beam
+msgid "Copyright"
+msgstr ""
+
+#: inc/adm/kirki/config.php:106
+#@ beam
+msgid "Edit Copyright Text"
+msgstr ""
+
+#: inc/adm/kirki/config.php:107
+#@ beam
+msgid "This text will be displayed after Footer Menu"
+msgstr ""
+
+#: inc/adm/kirki/config.php:117
+#@ beam
+msgid "Logo"
+msgstr ""
+
+#: inc/adm/kirki/config.php:118
+#@ beam
+msgid "Upload Your Logo here"
+msgstr ""
+
+#: inc/adm/kirki/config.php:127
+#@ beam
+msgid "Header Background"
+msgstr ""
+
+#: inc/adm/kirki/config.php:128
+#@ beam
+msgid "Upload Your Header Background Image"
+msgstr ""
+
+#: inc/adm/kirki/config.php:143
+#@ beam
+msgid "Site Background"
+msgstr ""
+
+#: inc/adm/kirki/config.php:144
+#@ beam
+msgid "Upload Your Site Background Image"
+msgstr ""
+
+#: inc/adm/kirki/config.php:159
+#@ beam
+msgid "Header height"
+msgstr ""
+
+#: inc/adm/kirki/config.php:160
+#@ beam
+msgid "Set Your Header Height here (number only! e.g. 170)"
+msgstr ""
+
+#: inc/adm/kirki/config.php:176
+#@ beam
+msgid "Header Color"
+msgstr ""
+
+#: inc/adm/kirki/config.php:177
+#@ beam
+msgid "Set Your Header Color here"
+msgstr ""
+
+#: inc/adm/kirki/config.php:193
+#@ beam
+msgid "Footer Color"
+msgstr ""
+
+#: inc/adm/kirki/config.php:194
+#@ beam
+msgid "Set Your Footer Color here"
+msgstr ""
+
+#: inc/adm/kirki/config.php:209
+#@ beam
+msgid "Header Gradient Color"
+msgstr ""
+
+#: inc/adm/kirki/config.php:210
+#@ beam
+msgid "This is the from* color"
+msgstr ""
+
+#: inc/adm/kirki/config.php:226
+#@ beam
+msgid "This is the to* color"
+msgstr ""
+
+#: inc/adm/kirki/config.php:242
+#@ beam
+msgid "Use Gradient Header Colors"
+msgstr ""
+
+#: inc/adm/kirki/config.php:243
+#@ beam
+msgid "Check the box if you would like to use Header Gradient colors"
+msgstr ""
+
+#: inc/adm/kirki/config.php:266
+#@ beam
+msgid "Show Menu"
+msgstr ""
+
+#: inc/adm/kirki/config.php:267
+#@ beam
+msgid "Chose whether if you want to show or hide your menu"
+msgstr ""
+
+#: inc/adm/kirki/config.php:272
+#: inc/adm/kirki/config.php:287
+#: inc/adm/kirki/config.php:302
+#: inc/adm/kirki/config.php:317
+#@ beam
+msgid "Show"
+msgstr ""
+
+#: inc/adm/kirki/config.php:273
+#: inc/adm/kirki/config.php:288
+#: inc/adm/kirki/config.php:303
+#: inc/adm/kirki/config.php:318
+#@ beam
+msgid "Hide"
+msgstr ""
+
+#: inc/adm/kirki/config.php:281
+#@ beam
+msgid "Show Footer Widget Area"
+msgstr ""
+
+#: inc/adm/kirki/config.php:282
+#@ beam
+msgid "Chose whether if you want to show or hide Footer Widgets"
+msgstr ""
+
+#: inc/adm/kirki/config.php:296
+#@ beam
+msgid "Show Author Bio"
+msgstr ""
+
+#: inc/adm/kirki/config.php:297
+#@ beam
+msgid "Chose whether if you want to show or hide Bio box below Post entry"
+msgstr ""
+
+#: inc/adm/kirki/config.php:311
+#@ beam
+msgid "Show Home Page Widget"
+msgstr ""
+
+#: inc/adm/kirki/config.php:312
+#@ beam
+msgid "Chose whether if you want Home Page Widget to be visible"
+msgstr ""
+
+#: inc/adm/kirki/config.php:327
+#@ beam
+msgid "Chose Width"
+msgstr ""
+
+#: inc/adm/kirki/config.php:328
+#@ beam
+msgid "Chose Your Preferred Default Site Width"
+msgstr ""
+
+#: inc/adm/kirki/config.php:333
+#@ beam
+msgid "980px"
+msgstr ""
+
+#: inc/adm/kirki/config.php:334
+#@ beam
+msgid "1312px"
+msgstr ""
+
+#: inc/adm/kirki/config.php:343
+#@ beam
+msgid "Home Page Widget"
+msgstr ""
+
+#: inc/adm/kirki/config.php:344
+#@ beam
+msgid "Show Home Page Widget Content"
+msgstr ""
+
+#: inc/adm/kirki/config.php:349
+#: inc/adm/kirki/config.php:364
+#@ beam
+msgid "Yes"
+msgstr ""
+
+#: inc/adm/kirki/config.php:350
+#: inc/adm/kirki/config.php:365
+#@ beam
+msgid "No"
+msgstr ""
+
+#: inc/adm/kirki/config.php:358
+#@ beam
+msgid "Home Page Sidebar"
+msgstr ""
+
+#: inc/adm/kirki/config.php:359
+#@ beam
+msgid "Show Home Page Sidebar"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:52
+#@ kirki
+msgid "Background Color"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:53
+#@ kirki
+msgid "Background Image"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:54
+#@ kirki
+msgid "No Repeat"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:55
+#@ kirki
+msgid "Repeat All"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:56
+#@ kirki
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:57
+#@ kirki
+msgid "Repeat Vertically"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:58
+#@ kirki
+msgid "Inherit"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:59
+#@ kirki
+msgid "Background Repeat"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:60
+#@ kirki
+msgid "Cover"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:61
+#@ kirki
+msgid "Contain"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:62
+#@ kirki
+msgid "Background Size"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:63
+#@ kirki
+msgid "Fixed"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:64
+#@ kirki
+msgid "Scroll"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:65
+#@ kirki
+msgid "Background Attachment"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:66
+#@ kirki
+msgid "Left Top"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:67
+#@ kirki
+msgid "Left Center"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:68
+#@ kirki
+msgid "Left Bottom"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:69
+#@ kirki
+msgid "Right Top"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:70
+#@ kirki
+msgid "Right Center"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:71
+#@ kirki
+msgid "Right Bottom"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:72
+#@ kirki
+msgid "Center Top"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:73
+#@ kirki
+msgid "Center Center"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:74
+#@ kirki
+msgid "Center Bottom"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:75
+#@ kirki
+msgid "Background Position"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:76
+#@ kirki
+msgid "Background Opacity"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:77
+#@ kirki
+msgid "ON"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:78
+#@ kirki
+msgid "OFF"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:79
+#@ kirki
+msgid "All"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:80
+#@ kirki
+msgid "Cyrillic"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:81
+#@ kirki
+msgid "Cyrillic Extended"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:82
+#@ kirki
+msgid "Devanagari"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:83
+#@ kirki
+msgid "Greek"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:84
+#@ kirki
+msgid "Greek Extended"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:85
+#@ kirki
+msgid "Khmer"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:86
+#@ kirki
+msgid "Latin"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:87
+#@ kirki
+msgid "Latin Extended"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:88
+#@ kirki
+msgid "Vietnamese"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:89
+#@ kirki
+msgctxt "font style"
+msgid "Serif"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:90
+#@ kirki
+msgctxt "font style"
+msgid "Sans Serif"
+msgstr ""
+
+#: inc/adm/kirki/includes/class-kirki-toolkit.php:91
+#@ kirki
+msgctxt "font style"
+msgid "Monospace"
+msgstr ""
+
+#: inc/extras.php:102
+#, php-format
+#@ beam
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:34
+#@ beam
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:38
+#@ beam
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: inc/template-tags.php:39
+#@ beam
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: inc/template-tags.php:44
+#@ beam
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: inc/template-tags.php:48
+#@ beam
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:71
+#@ beam
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:83
+#, php-format
+#@ beam
+msgid "%s <span class=\"says\">said on</span>"
+msgstr ""
+
+#: inc/template-tags.php:86
+#, php-format
+#@ beam
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:93
+#@ beam
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:189
+#, php-format
+#@ beam
+msgid "<div class=\"byline\"><i class=\"fa fa-user\"></i>  %2$s</div> <div class=\"posted-on\"><i class=\"fa fa-calendar\"></i> %1$s</div> "
+msgstr ""
+
+#: inc/template-tags.php:197
+#, php-format
+#@ beam
+msgid "All posts by %s"
+msgstr ""
+
+#: no-results.php:19
+#, php-format
+#@ beam
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:23
+#@ beam
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: search.php:18
+#, php-format
+#@ beam
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:10
+#: searchform.php:11
+#@ beam
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:11
+#@ beam
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:13
+#@ beam
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
