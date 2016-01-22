@@ -2,6 +2,11 @@ Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/
 
 -------------- January 2016 ----------------
 
+22/01/16  - Iconic One Version 1.4.9
+
+* Mobile menu fix - mobile menu will work even if Menu isn't set to Primary
+* Sub-menu fix 
+
 01/01/16  - Iconic One Version 1.4.8
 
 * Fixed the minor translation Warning caused by the latest Theme Check plugin update.
