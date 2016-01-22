@@ -91,7 +91,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'wallstreet_pro_options[portfolio_image_one]',
 			array(
-				'label' => 'Project One Thumbnail',
+				'label' => __('Project One Thumbnail','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[portfolio_image_one]',
 				'section' => 'project_one_section_settings',
@@ -148,7 +148,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'wallstreet_pro_options[portfolio_image_two]',
 			array(
-				'label' => 'Project two Thumbnail',
+				'label' => __('Project two Thumbnail','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[portfolio_image_two]',
 				'section' => 'project_two_section_settings',
@@ -209,7 +209,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'wallstreet_pro_options[portfolio_image_three]',
 			array(
-				'label' => 'Project three Thumbnail',
+				'label' => __('Project three Thumbnail','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[portfolio_image_three]',
 				'section' => 'project_three_section_settings',
@@ -269,7 +269,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'wallstreet_pro_options[portfolio_image_four]',
 			array(
-				'label' => 'Project four Thumbnail',
+				'label' => __('Project four Thumbnail','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[portfolio_image_four]',
 				'section' => 'project_four_section_settings',

@@ -17,7 +17,7 @@ function wallstreet_slider_customizer( $wp_customize ) {
 			'wallstreet_pro_options[slider_image]',
 			array(
 				'type'        => 'upload',
-				'label' => 'Image Upload',
+				'label' => __('Image Upload','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[slider_image]',
 				'section' => 'slider_section_settings',

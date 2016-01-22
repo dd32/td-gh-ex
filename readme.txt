@@ -52,6 +52,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.4.1
+1.  Added Spanish Translation
 @Version 1.6.4
 1. Change Service & Banner Image.
 2. Update Font awesome Icon 4.4.0 to 4.5.0

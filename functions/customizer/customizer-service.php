@@ -50,7 +50,7 @@ $wp_customize->add_panel( 'wallstreet_service_options', array(
 			$wp_customize,
 			'wallstreet_pro_options[service_image_one]',
 			array(
-				'label' => 'Service Image One',
+				'label' => __('Service Image One','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[service_image_one]',
 				'section' => 'service_section_one',
@@ -111,7 +111,7 @@ $wp_customize->add_setting( 'wallstreet_pro_options[service_image_two]',array('d
 			$wp_customize,
 			'wallstreet_pro_options[service_image_two]',
 			array(
-				'label' => 'Service Image Two',
+				'label' => __('Service Image Two','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[service_image_two]',
 				'section' => 'service_section_two',
@@ -170,7 +170,7 @@ $wp_customize->add_setting( 'wallstreet_pro_options[service_image_three]',array(
 			$wp_customize,
 			'wallstreet_pro_options[service_image_three]',
 			array(
-				'label' => 'Service Image Three',
+				'label' => __('Service Image Three','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[service_image_three]',
 				'section' => 'service_section_three',
