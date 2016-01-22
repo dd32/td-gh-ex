@@ -5,18 +5,13 @@
 	Since Small Business 1.0
 */
 
-	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly. Thanks!');
-	if ( post_password_required() ) { ?>
-<p class="nocomments"><?php 'This post is password protected. Enter the password to view comments.'; ?></p>
-<?php
-		return;
-	}
+if ( post_password_required() ) { return; }
+
 ?>
 
 <div id="commentsbox">
 <?php if ( have_comments() ) : ?>
-	<h2 class="comments"><?php comments_number('No Comments', 'One Comment', '% Comments' );?><?php _e(' to ','smallbusiness'); ?> <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+	<h2 class="comments"><?php comments_number( __('No Comments', 'small-business'), __('One Comment', 'small-business'),  __('% Comments', 'small-business') );?> to  <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 	<ol class="commentlist">
 		<?php wp_list_comments(); ?>
 	</ol>
@@ -30,7 +25,7 @@
 	</div>
 <?php else : ?>
 	<?php if ( ! comments_open() && ! is_page() ) : ?>
-		<p class="watermark"><?php 'Comments are Closed'; ?></p>
+		<p class="watermark"><?php echo __('Comments are Closed', 'small-business'); ?></p>
 	<?php endif; ?>
 <?php endif; ?>
 <?php if ( comments_open() ) : ?>

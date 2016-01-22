@@ -1,6 +1,6 @@
 <?php
 /* Small Business Theme's General Page to display all Pages
-	Copyright: 2012-2014, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Small Business 1.0
 */
@@ -15,17 +15,17 @@
 			<div class="content-ver-sep"> </div>
             <div class="entrytext">
  <?php the_post_thumbnail('category-thumb'); ?>
- <?php the_content('<p class="read-more">Read the rest of this page &raquo;</p>'); ?>
+ <?php the_content('<p class="read-more">'.__('Read the rest of this page &raquo;', 'small-business').'</p>'); ?>
 
-				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+				<?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ','small-business'), 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
 			</div>
 		</div>
 		<?php endwhile; ?><div class="clear"> </div>
-	<?php edit_post_link('Edit This Entry', '<p>', '</p>'); ?>
+	<?php edit_post_link(__('Edit This Entry','small-business'), '<p>', '</p>'); ?>
 	<?php comments_template('', true); ?>
 	<?php else: ?>
-		<p>Sorry, no pages matched your criteria.</p>
+		<p><?php _e('Sorry, no pages matched your criteria','small-business'); ?></p>
 	<?php endif; ?>
 	</div>
 

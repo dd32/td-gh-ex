@@ -1,31 +1,26 @@
 <?php
 /* 	Small Business Theme's Functions
-	Copyright: 2012-2014, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Small Business 1.0
 */
   
-
-// Load the D5 Framework Optios Page and Meta Page
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	function smallbusiness_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky_posts' => 1, 'posts_per_page'  => 2 ); }
-	require_once get_template_directory() . '/inc/options-framework.php';
-
-// 	Tell WordPress for wp_title in order to modify document title content
-	function smallbusiness_filter_wp_title( $title ) {
-    $site_name = get_bloginfo( 'name' );
-    $filtered_title = $site_name . $title;
-    return $filtered_title;
+	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
+	function smallbusiness_about_page() { 
+	add_theme_page( 'Small Business Options', 'Small Business Options', 'edit_theme_options', 'theme-about', 'smallbusiness_theme_about' ); 
 	}
-	add_filter( 'wp_title', 'smallbusiness_filter_wp_title' );
-	
+	add_action('admin_menu', 'smallbusiness_about_page');
+	function smallbusiness_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }	
+	function smallbusiness_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky_posts' => 1, 'posts_per_page'  => 2 ); }
 	function smallbusiness_setup() {
+	load_theme_textdomain( 'small-business', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
-  	register_nav_menus( array( 'main-menu' => "Main Menu", 'top-menu' => "Top Menu" ) );
+  	register_nav_menus( array( 'main-menu' => __( 'Main Menu', 'small-business' ), 'top-menu' => __( 'Top Menu', 'small-business' ) ) );
 
 //	Set the content width based on the theme's design and stylesheet.
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 650;
+	add_theme_support( "title-tag" );
 	
 	add_editor_style('editor-style.css');
 
@@ -48,7 +43,7 @@
 	
 // 	WordPress 3.4 Custom Header Support				
 	$smallbusiness_custom_header = array(
-	'default-image'          => get_template_directory_uri() . '/images/logo.png',
+	'default-image'          => '',
 	'random-default'         => false,
 	'width'                  => 300,
 	'height'                 => 90,
@@ -71,11 +66,15 @@
 		wp_enqueue_script( 'comment-reply' ); 
 	}
 	
-	wp_enqueue_script( 'jquery');
-	wp_enqueue_script( 'smallbusiness-menu-style', get_template_directory_uri(). '/js/menu.js' );
+	wp_enqueue_script( 'smallbusiness-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	wp_enqueue_style('smallbusiness-gfonts', '//fonts.googleapis.com/css?family=Coda:400', false );
+	wp_enqueue_script( 'slider-main', get_template_directory_uri() . '/js/slider.js', array( 'jquery' ) );
 	}
 	add_action( 'wp_enqueue_scripts', 'smallbusiness_enqueue_scripts' );
+	
+// 	Functions for adding script to Admin Area
+	function smallbusiness_admin_style() { wp_enqueue_style( 'smallbusiness_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
+	add_action( 'admin_enqueue_scripts', 'smallbusiness_admin_style' );
 
 // 	Functions for adding some custom code within the head tag of site
 	function smallbusiness_custom_code() {
@@ -116,7 +115,7 @@
 	
 	function smallbusiness_excerpt_more($more) {
        global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">Read the Rest...</a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">'.__('Read the rest of this page &raquo;', 'small-business').'</a>';
 	}
 	add_filter('excerpt_more', 'smallbusiness_excerpt_more');
 
@@ -126,14 +125,16 @@
 	return $args;
 	}
 	add_filter( 'wp_page_menu_args', 'smallbusiness_page_menu_args' );
-
+	function smallbusiness_credit() {
+		echo '&nbsp;| Small Business Theme by: <a href="'.esc_url('http://d5creation.com').'" target="_blank"><img  width="30px" src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
+	}
 
 //	Registers the Widgets and Sidebars for the site
 	function smallbusiness_widgets_init() {
 
 	
 	register_sidebar( array(
-		'name' => 'Front Page Sidebar',
+		'name' => __('Front Page Sidebar','small-business'), 
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -143,7 +144,7 @@
 	
 	
 	register_sidebar( array(
-		'name' => 'Main Sidebar',
+		'name' => __('Main Sidebar','small-business'), 
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -153,9 +154,8 @@
 
 	
 	register_sidebar( array(
-		'name' => 'Footer Area One',
+		'name' => __('Footer Area One','small-business'), 
 		'id' => 'sidebar-3',
-		'description' => 'An optional widget area for your site footer',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -163,9 +163,8 @@
 	) );
 
 	register_sidebar( array(
-		'name' => 'Footer Area Two',
+		'name' => __('Footer Area Two','small-business'), 
 		'id' => 'sidebar-4',
-		'description' => 'An optional widget area for your site footer',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -173,9 +172,8 @@
 	) );
 
 	register_sidebar( array(
-		'name' => 'Footer Area Three',
+		'name' => __('Footer Area Three','small-business'), 
 		'id' => 'sidebar-5',
-		'description' => 'An optional widget area for your site footer',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',

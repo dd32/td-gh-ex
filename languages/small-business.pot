@@ -1,0 +1,352 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Small Business\n"
+"POT-Creation-Date: 2016-01-23 02:39+0600\n"
+"PO-Revision-Date: 2016-01-23 02:33+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:11 archive.php:67 index.php:37 search.php:45
+msgid "Not Found"
+msgstr ""
+
+#: 404.php:12 archive.php:68 index.php:38 search.php:46
+msgid ""
+"Apologies, but the page you requested could not be found. Perhaps searching "
+"will help"
+msgstr ""
+
+#: 404.php:15 archive.php:71 index.php:41 search.php:49
+msgid "Or Return to the Home Page"
+msgstr ""
+
+#: 404.php:16 archive.php:73 index.php:43 search.php:51
+msgid "You can also Visit the Following. These are the Featured Contents"
+msgstr ""
+
+#: archive.php:14
+msgid "now browsing by category"
+msgstr ""
+
+#: archive.php:20
+msgid "now browsing by tag"
+msgstr ""
+
+#: archive.php:25
+msgid "now browsing by day"
+msgstr ""
+
+#: archive.php:28
+msgid "now browsing by month"
+msgstr ""
+
+#: archive.php:31
+msgid "now browsing by year"
+msgstr ""
+
+#: archive.php:34
+msgid "now browsing by author"
+msgstr ""
+
+#: archive.php:37
+msgid "now browsing the general archives"
+msgstr ""
+
+#: archive.php:43 single.php:16
+msgid "Posted by:"
+msgstr ""
+
+#: archive.php:43
+msgid " on"
+msgstr ""
+
+#: archive.php:48 fullwidth.php:18 functions.php:118 index.php:18 page.php:18
+#: search.php:29
+msgid "Read the rest of this page &raquo;"
+msgstr ""
+
+#: archive.php:52 index.php:21 search.php:32 single.php:24
+msgid "Posted in"
+msgstr ""
+
+#: archive.php:52 index.php:21 search.php:32 single.php:24
+msgid "Edit"
+msgstr ""
+
+#: archive.php:52 index.php:21 search.php:32 single.php:24
+msgid "No Comments &#187;"
+msgstr ""
+
+#: archive.php:52 index.php:21 search.php:32 single.php:24
+msgid "1 Comment &#187;"
+msgstr ""
+
+#: archive.php:52 search.php:32
+msgid "% Comments &#187;"
+msgstr ""
+
+#: archive.php:52 search.php:32
+msgid "Tags: "
+msgstr ""
+
+#: archive.php:61 front-page.php:34 index.php:28 search.php:39
+msgid "&laquo; Previous Entries"
+msgstr ""
+
+#: archive.php:62 front-page.php:35 index.php:29 search.php:40
+msgid "Next Entries &raquo;"
+msgstr ""
+
+#: archive.php:71 search.php:49
+msgid "Browse the Home Page"
+msgstr ""
+
+#: comments.php:14
+msgid "No Comments"
+msgstr ""
+
+#: comments.php:14
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:14
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:28
+msgid "Comments are Closed"
+msgstr ""
+
+#: featured-box.php:15 featured-box.php:22 featured-box.php:29
+msgid " ... Read More ... "
+msgstr ""
+
+#: fullwidth.php:20 page.php:25
+msgid "Edit This Entry"
+msgstr ""
+
+#: functions.php:18
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:18
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:137
+msgid "Front Page Sidebar"
+msgstr ""
+
+#: functions.php:147
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions.php:157
+msgid "Footer Area One"
+msgstr ""
+
+#: functions.php:166
+msgid "Footer Area Two"
+msgstr ""
+
+#: functions.php:175
+msgid "Footer Area Three"
+msgstr ""
+
+#: inc/customize.php:9
+msgid "Small Business OPTIONS"
+msgstr ""
+
+#: inc/customize.php:17
+msgid ""
+"Go with Small Business Extend for exciting Post Options, Theme Options and "
+"Extra Functionalities"
+msgstr ""
+
+#: inc/customize.php:25
+msgid "Front Page Heading"
+msgstr ""
+
+#: inc/customize.php:35
+msgid "Small Business Theme"
+msgstr ""
+
+#: inc/customize.php:43
+msgid "Featured Title"
+msgstr ""
+
+#: inc/customize.php:51
+msgid ""
+"The Customizable Background and other options of Small Business will give "
+"the WordPress Driven Site an attractive look.  Small Business Extend will "
+"give your Extra Freedom and Functionality which you must love"
+msgstr ""
+
+#: inc/customize.php:59
+msgid "Featured Description"
+msgstr ""
+
+#: inc/customize.php:75
+msgid "Featured Link"
+msgstr ""
+
+#: inc/customize.php:84
+msgid ""
+"All the developers of D5 Creation have come from the disadvantaged part or "
+"group of the society. All have established themselves after a long and hard "
+"struggle in their life ----- D5 Creation Team"
+msgstr ""
+
+#: inc/customize.php:92
+msgid "Quote Text"
+msgstr ""
+
+#: inc/customize.php:110
+msgid "Show the Footer Sidebar"
+msgstr ""
+
+#: inc/customize.php:113
+msgid ""
+"Uncheck this if you do not want to show the footer sidebar (Widgets) "
+"automatically"
+msgstr ""
+
+#: index.php:21 single.php:24
+msgid "% Comments &#187;small-business"
+msgstr ""
+
+#: index.php:21 single.php:24
+msgid "<br />Tags: "
+msgstr ""
+
+#: page.php:20
+msgid "<p><strong>Pages:</strong> "
+msgstr ""
+
+#: page.php:28
+msgid "Sorry, no pages matched your criteria"
+msgstr ""
+
+#: search.php:12
+msgid "Search Results"
+msgstr ""
+
+#: search.php:19
+msgid "Search Term:"
+msgstr ""
+
+#: search.php:20
+msgid "Number of Results:"
+msgstr ""
+
+#: search.php:24
+msgid "Entry Date: "
+msgstr ""
+
+#: searchform.php:12
+msgid "Search Text Here"
+msgstr ""
+
+#: searchform.php:13
+msgid "Search"
+msgstr ""
+
+#: sidebar-footer.php:22
+msgid "Categories"
+msgstr ""
+
+#: sidebar-footer.php:33
+msgid "Sample Text"
+msgstr ""
+
+#: sidebar-footer.php:33
+msgid ""
+"Small Business is a theme for Small Business Companies. Customizable "
+"Background and other options will give the WordPress Driven Site an "
+"attractive look. Small Business is super elegant and Professional Theme "
+"which will create the business widely expressed. Right and Footer Sidebar "
+"will be usable for showing the widgets and PlunIns items"
+msgstr ""
+
+#: sidebar-footer.php:43
+msgid "This is a Test List 01"
+msgstr ""
+
+#: sidebar-footer.php:44
+msgid "This is a Test List 02"
+msgstr ""
+
+#: sidebar-footer.php:45
+msgid "This is a Test List 03"
+msgstr ""
+
+#: sidebar-footer.php:46
+msgid "This is a Test List 04"
+msgstr ""
+
+#: sidebar-footer.php:47
+msgid "This is a Test List 05"
+msgstr ""
+
+#: sidebar-frontpage.php:13 sidebar.php:12
+msgid "Archives"
+msgstr ""
+
+#: sidebar-frontpage.php:20 sidebar.php:19
+msgid "Meta"
+msgstr ""
+
+#: single.php:25
+msgid "Pages:"
+msgstr ""
+
+#: single.php:30
+msgid "&laquo; Previous Image"
+msgstr ""
+
+#: single.php:31
+msgid "Next Image &raquo;"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Small Business"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://d5creation.com/theme/smallbusiness/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Small Business is a theme for Business. Customizable Background and other "
+"options will give the WordPress Driven Site an attractive look.  Small "
+"Business is super elegant and Professional Theme which will create the "
+"business widely expressed. The Slider will show the featured images and "
+"contents of posts  automatically.  Front Page, Right and Footer Sidebar will "
+"be usable for showing the widgets and PlugIns items. Full Wide page can be "
+"used for showing showcase or other pages. Small Business Pro has come with "
+"exciting Post Options, Theme Options and Extra Functionalities. D5 "
+"Creation's Support will be with you, Always!"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "D5 Creation"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://d5creation.com/"
+msgstr ""
