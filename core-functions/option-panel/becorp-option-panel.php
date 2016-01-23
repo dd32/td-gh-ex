@@ -31,8 +31,8 @@
 				</div>	
              </div>				
 			<div class="col-md-3 notify-btn">
-					<a href="http://asiathemes.com/Becorp" target="blank" class="btn btn-success btn-lg"><?php _e('View Becorp Pro Demo','becorp'); ?> </a>
-					<a href="http://asiathemes.com" target="_blank" class="btn btn-primary btn-lg" ><?php _e('Upgrade to Becorp Pro','becorp'); ?></a>
+					<a href="http://asiathemes.com/preview/?item=becorp" target="blank" class="btn btn-success btn-lg"><?php _e('View Becorp Pro Demo','becorp'); ?> </a>
+					<a href="https://asiathemes.com/becorpdetail.php" target="_blank" class="btn btn-primary btn-lg" ><?php _e('Upgrade to Becorp Pro','becorp'); ?></a>
 			</div>
 	</div>
 <div class="clearfix"></div>

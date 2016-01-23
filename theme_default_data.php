@@ -108,7 +108,7 @@ function theme_default_data()
 	'footer_customization_text' => get_theme_mod('footer_customization_text',__('@ 2015 Becorp Theme','becorp')),
 	'footer_customization_develop' => get_theme_mod('footer_customization_develop',__('Developed By','becorp')),
 	'develop_by_name' => get_theme_mod('develop_by_name',__('Asisa Themes ','becorp')),
-	'develop_by_link' => 'http://asiathemes.com/',
+	'develop_by_link' => 'https://asiathemes.com/',
 	
 	);
   	}

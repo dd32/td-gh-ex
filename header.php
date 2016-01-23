@@ -14,7 +14,6 @@
     <meta name="keywords" content="HTML5, CSS3, Theme, Flat, Responsive, Multipurpose, Modern" />
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>"/>
-	<link rel="stylesheet"  href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 	<?php
 	if($header_setting['becorp_custom_css']!='') {  ?>
 	<style>

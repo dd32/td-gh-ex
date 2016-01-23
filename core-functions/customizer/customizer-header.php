@@ -692,7 +692,7 @@ $wp_customize->remove_control('header_textcolor');
     public function render_content() {
     ?>
       <div class="pro-box">
-		<a href="<?php echo esc_url( __('http://asiathemes/Becorp/', 'becorp'));?>" target="_blank" class="button" id="review_pro"><?php _e( 'Add more Slides take the Pro','becorp' ); ?></a>
+		<a href="<?php echo esc_url( __('https://asiathemes.com/becorpdetail.php', 'becorp'));?>" target="_blank" class="button" id="review_pro"><?php _e( 'Add more Slides take the Pro','becorp' ); ?></a>
 	 
 	<div>
     <?php
@@ -1173,7 +1173,7 @@ $wp_customize->add_control( new WP_slider_Customize_Control( $wp_customize, 'bec
     public function render_content() {
     ?>
       <div class="pro-box">
-		<a href="<?php echo esc_url( __('http://asiathemes/Becorp/', 'becorp'));?>" target="_blank" class="button" id="review_pro"><?php _e( 'Add more portfolio take the Pro','becorp' ); ?></a>
+		<a href="<?php echo esc_url( __('https://asiathemes.com/becorpdetail.php', 'becorp'));?>" target="_blank" class="button" id="review_pro"><?php _e( 'Add more portfolio take the Pro','becorp' ); ?></a>
 	 
 	<div>
     <?php
@@ -1351,7 +1351,7 @@ $wp_customize->add_control( new WP_portfolio_Customize_Control( $wp_customize, '
 	$wp_customize->add_setting(
 	'becorp_option[develop_by_link]'
 		, array(
-        'default'        => 'http://asiathemes.com/',
+        'default'        => 'https://asiathemes.com/',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'esc_url_raw',
 		'type'=> 'option',
@@ -1411,7 +1411,7 @@ class More_becorp_Control extends WP_Customize_Control {
 		?>
 		<label style="overflow: hidden; zoom: 1;">
 			<div class="col-md-2 col-sm-6 content-btn">					
-					<a style="margin-bottom:20px;margin-left:20px;" href="http://asiathemes.com/Becorp/" target="blank" class="btn pro-btn-success btn"><?php _e('Upgrade to becorp Premium','becorp'); ?> </a>
+					<a style="margin-bottom:20px;margin-left:20px;" href="https://asiathemes.com/becorpdetail.php" target="blank" class="btn pro-btn-success btn"><?php _e('Upgrade to becorp Premium','becorp'); ?> </a>
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<img class="becorp_img_responsive " src="<?php echo ASIATHEMES_TEMPLATE_DIR_URI .'/images/becorp.jpg'?>">
@@ -1436,7 +1436,7 @@ class More_becorp_Control extends WP_Customize_Control {
 					</ul>
 			</div>
 			<div class="col-md-2 col-sm-6 content-btn">					
-					<a style="margin-bottom:20px;margin-left:20px;" href="http://asiathemes.com/Becorp/" target="blank" class="btn pro-btn-success btn"><?php _e('Upgrade to becorp Premium','becorp'); ?> </a>
+					<a style="margin-bottom:20px;margin-left:20px;" href="https://asiathemes.com/becorpdetail.php" target="blank" class="btn pro-btn-success btn"><?php _e('Upgrade to becorp Premium','becorp'); ?> </a>
 			</div>
 			<span class="customize-control-title"><?php _e( 'Enjoying With Becorp', 'becorp' ); ?></span>
 			<p>

@@ -3110,7 +3110,16 @@ tbody.collapse.in {
        -o-transition: height .35s ease;
           transition: height .35s ease;
 }
-
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
 .dropdown {
   position: relative;
 }
@@ -3124,7 +3133,7 @@ tbody.collapse.in {
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 160px;
+  /* max-width: auto !important; */
   padding: 5px 0;
   margin: 2px 0 0;
   font-size: 14px;

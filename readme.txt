@@ -26,6 +26,12 @@ released
 4.Fix Meta Date overlapped with other meta data issue.
 5.Fix Post pagination issue.
 
+@Version: 1.4
+1. Fix issue --> You need to enqueue your style.css stylesheet in header.php.
+2. Fix issue --> You need to provide un-minified versions of animations.min.css, animations.min.js, and lightbox.min.js. You can leave the minified versions but un-minified versions are required as well.
+3. Fix issue --> You shouldn't be calling your own version of jQuery in scripts.php in the core-functions folder. You're required to use core-bundled scripts.
+4. Fix issue --> Remove all unnecessary contents from Tags in style.css file.
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL
@@ -55,12 +61,12 @@ Licensed under MIT license :http://opensource.org/licenses/MIT
 Visible, Sam Sehnert, samatdf, TeamDF, https://github.com/teamdf/jquery-visible/
 Source:https://github.com/joemottershaw/
 
-jQuery JavaScript Library -- v1.11.0 --
+jQuery JavaScript Library 
 Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors 
 Released under the MIT license : http://jquery.org/license
 Source:http://jquery.com/
 
-lightbox-2.6.min jQuery -- v1.9 --
+lightbox jQuery -- v1.9 --
 Licensed under MIT license :https://jquery.org/license/
 
 carousel.js jQuery
