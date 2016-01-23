@@ -29,13 +29,13 @@ class arise_contact_widgets extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('address1'); ?>">
-				<?php _e('Adress:', 'arise'); ?>
+				<?php _e('Address:', 'arise'); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id('address1'); ?>" name="<?php echo $this->get_field_name('address1'); ?>" type="text" value="<?php if(isset ( $instance['address1'] ) ) echo strip_tags( $instance['address1'] ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('address_link1'); ?>">
-				<?php _e('Adress Link:', 'arise'); ?>
+				<?php _e('Address Link:', 'arise'); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id('address_link1'); ?>" name="<?php echo $this->get_field_name('address_link1'); ?>" type="text" value="<?php if(isset ( $instance['address_link1'] ) ) echo esc_url( $instance['address_link1'] ); ?>" />
 		</p>

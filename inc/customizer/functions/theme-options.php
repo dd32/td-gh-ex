@@ -220,7 +220,7 @@
 	));
 	$wp_customize->add_setting( 'arise_theme_options[arise_scroll]', array(
 		'default' => 0,
-		'sanitize_callback' => 'arise_sanitize_select',
+		'sanitize_callback' => 'arise_checkbox_integer',
 		'type' => 'option',
 	));
 	$wp_customize->add_control( 'arise_theme_options[arise_scroll]', array(
@@ -228,6 +228,30 @@
 		'label' => __('Disable Goto Top', 'arise'),
 		'section' => 'arise_custom_header',
 		'settings' => 'arise_theme_options[arise_scroll]',
+		'type' => 'checkbox',
+	));
+	$wp_customize->add_setting( 'arise_theme_options[arise_top_social_icons]', array(
+		'default' => 0,
+		'sanitize_callback' => 'arise_checkbox_integer',
+		'type' => 'option',
+	));
+	$wp_customize->add_control( 'arise_theme_options[arise_top_social_icons]', array(
+		'priority'=>40,
+		'label' => __('Disable Top Social Icons', 'arise'),
+		'section' => 'arise_custom_header',
+		'settings' => 'arise_theme_options[arise_top_social_icons]',
+		'type' => 'checkbox',
+	));
+	$wp_customize->add_setting( 'arise_theme_options[arise_buttom_social_icons]', array(
+		'default' => 0,
+		'sanitize_callback' => 'arise_checkbox_integer',
+		'type' => 'option',
+	));
+	$wp_customize->add_control( 'arise_theme_options[arise_buttom_social_icons]', array(
+		'priority'=>40,
+		'label' => __('Disable Buttom Social Icons', 'arise'),
+		'section' => 'arise_custom_header',
+		'settings' => 'arise_theme_options[arise_buttom_social_icons]',
 		'type' => 'checkbox',
 	));
 	$wp_customize->add_setting( 'arise_theme_options[arise_reset_all]', array(

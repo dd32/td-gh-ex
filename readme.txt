@@ -88,6 +88,7 @@ There are 3 Menus registered in this theme. Main Menu, Top Menu and Social Icon 
 == Translation ==
 
 Arise theme is translation ready
+If you have language translation file then feel free to submit your translation at themefreesia@gmail.com. We will add your translation file on upcomming version.
 
 =================================================================================
 
@@ -99,4 +100,4 @@ Please refer to changelog.txt file
 
 = Theme Instructions =
 
-For detail instructions visit http://themefreesia.com/theme-instruction/arise/
+For detail instructions visit http://themefreesia.com/theme-instruction/arise/s

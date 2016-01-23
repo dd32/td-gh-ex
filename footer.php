@@ -71,7 +71,10 @@ if (!is_page_template('page-templates/arise-corporate.php') ){
 	<?php } ?>
 	<div class="site-info">
 		<div class="container">
-			<?php do_action('social_links');
+			<?php
+			if(has_nav_menu('social-link') && $arise_settings['arise_buttom_social_icons'] == 0):
+				do_action('social_links');
+			endif;
 				do_action('arise_sitegenerator_footer'); ?>
 			<div style="clear:both;"></div>
 		</div> <!-- end .container -->

@@ -42,7 +42,7 @@ $arise_settings = arise_get_theme_options(); ?>
 								wp_nav_menu($args);
 								echo '</div>'.'<!-- end .min-nav -->';
 							endif;
-							if(has_nav_menu('social-link')):
+							if(has_nav_menu('social-link') && $arise_settings['arise_top_social_icons'] == 0):
 								echo '<div class="header-social-block">';
 									do_action('social_links');
 								echo '</div>'.'<!-- end .header-social-block -->';

@@ -26,7 +26,7 @@ function arise_get_option_defaults_values() {
 		'arise_excerpt_length'	=> '30',
 		'arise_search_text' => 'Search',
 		'arise_single_post_image' => 'off',
-		'exouds_reset_all' => 0,
+		'arise_reset_all' => 0,
 		'arise_stick_menu'	=>0,
 		'arise_blog_post_image' => 'on',
 		'arise_blog_content_layout' => 'excerptblog_display',
@@ -34,7 +34,6 @@ function arise_get_option_defaults_values() {
 		'arise_slider_type' => 'default_slider',
 		'arise_slider_textposition' => 'middle',
 		'arise_slider_no' => '4',
-		'arise_slider_link' => 0,
 		'arise_slider_button' => 0,
 		'arise_total_features' => '3',
 		'arise_features_title' => '',
@@ -53,6 +52,8 @@ function arise_get_option_defaults_values() {
 		'arise_entry_format_blog' => 'show',
 		'arise_entry_meta_blog' => 'show-meta',
 		'arise_slider_content'	=> 'on',
+		'arise_top_social_icons'	=> 0,
+		'arise_buttom_social_icons'	=> 0
 		);
 	return apply_filters( 'arise_get_option_defaults_values', $arise_default_values );
 }
