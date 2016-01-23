@@ -956,7 +956,18 @@ $semperfi_customizer_array_of_options = array(
 
     'header_min_size' => array(
         'type' => 'range',
-        'label' => __('Adjust the Size of the Header', 'localize_semperfi'),
+        'label' => __('Adjust the padding of the Header', 'localize_semperfi'),
+        'priority' => '91',
+        'section' => 'size',
+        'standard' => '0',
+        'high' => '16',
+        'low' => '0',
+        'step' => '.25',
+        'units' => 'em'),
+
+    'header_height' => array(
+        'type' => 'range',
+        'label' => __('Adjust the Height of the Header', 'localize_semperfi'),
         'priority' => '91',
         'section' => 'size',
         'standard' => '0',
@@ -986,6 +997,16 @@ $semperfi_customizer_array_of_options = array(
         'choices' => array(
             'off' => __('Search Bar is Hidden', 'localize_semperfi'),
             'on' => __('Display the Search', 'localize_semperfi'))),
+
+    'tagline_display' => array(
+        'type' => 'select',
+        'label' => __('Display / Hide Tagline', 'localize_semperfi'),
+        'priority' => '3',
+        'section' => 'options',
+        'standard' => 'display',
+        'choices' => array(
+            'block' => __('Tagline is Visible', 'localize_semperfi'),
+            'none' => __('Tagline is Hidden', 'localize_semperfi'))),
 
     'number_slides' => array(
         'type' => 'select',
@@ -1339,7 +1360,7 @@ function semperfi_add_customizer_css() {
 
         'fontcolor' => array(
             'default' => '#111111',
-            'css' => 'body, .blog .content > div a p, .search .content > div a p, .post_title, .post_title a, aside a {color: $',
+            'css' => 'body, .blog .content > div a p, .search .content > div a p, .post_title, .post_title a, aside a, em {color: $',
             'css2' => '.post_title, .comment-reply-title {border-bottom:1px solid $',
             'css3' => '.post_title, .comment-reply-title {border-top:2px solid $',
             'css4' => '.featured_image {border-bottom:1px solid $',
@@ -1397,12 +1418,16 @@ function semperfi_add_customizer_css() {
             'css'=> '.header {background-size:$'),
         
         'headerbackgroundposition' => array(
-            'default' => 'ccenter',
+            'default' => 'center',
             'css'=> '.header {background-position:center $'),
 
         'backgroundpaper' => array(
             'default' => 'clean',
             'css' => '.content {background-image: url("' . get_template_directory_uri() . '/images/$.png")'),
+
+        'tagline_display' => array(
+            'default' => 'block',
+            'css' => '.header a {display:$'),
 
         'content_bg' => array(
             'default' => '',
@@ -1435,6 +1460,10 @@ function semperfi_add_customizer_css() {
         'header_min_size' => array(
             'default' => '0',
             'css' => '.header {padding:$em 0'),
+
+        'header_height' => array(
+            'default' => '0',
+            'css' => '.header {height:$em'),
 
         'title_rotation' => array(
             'default' => '0',
