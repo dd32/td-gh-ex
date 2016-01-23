@@ -26,14 +26,9 @@ function weaverx_customizer_define_image_sections( $sections ) {
 		'title'   => __( 'Global Image Settings', 'weaver-xtreme' ),
 		'description' => 'Set Image options for Site Wrapper &amp; Container. Use Colors to set colors.',
 		'options' => array(
-			'images-heading-global' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Global Image Settings', 'weaver-xtreme' ),
-					'description'   => __( 'These settings control images in both the Container (including content and sidebars) and Footer Areas. They do not include the Header Area.', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'images-heading-global' => weaverx_cz_group_title( __( 'Global Image Settings', 'weaver-xtreme' ),
+				__( 'These settings control images in both the Container (including content and sidebars) and Footer Areas. They do not include the Header Area.', 'weaver-xtreme' )),
+
 			'media_lib_border_color' => weaverx_cz_coloropt(
 				'media_lib_border_color',
 				__('Image Border Color', 'weaver-xtreme'),
@@ -80,19 +75,10 @@ function weaverx_customizer_define_image_sections( $sections ) {
 				),
 			),
 
-			'media_lib_border_color_css'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_css', 'transport' => 'refresh',	'default' => ''
-				),
-				'control' => array(
-					'control_type' => 'WeaverX_Textarea_Control',
-					'label'   => __( 'Custom CSS for Images.', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'type'  => 'textarea',
-					'input_attrs' => array(
-						'rows' => '2',
-						'placeholder' => __('{border:1px solid #0F0;} /* for example */', 'weaver-xtreme'),
-					),
-				),
-			),
+			'media_lib_border_color_css'     => weaverx_cz_css(__( 'Custom CSS for Images.', 'weaver-xtreme' ),
+					__('Note: this custom CSS will live-update for ALL images, even if the above Restrict Borders is checked.
+The normal site view will respect the Restrict Borders setting.','weaver-xtreme')),
+
 
 			'caption_color' => weaverx_cz_coloropt(
 				'caption_color',
@@ -101,20 +87,7 @@ function weaverx_customizer_define_image_sections( $sections ) {
 			),
 
 
-			'caption_color_css'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_css', 'transport' => 'refresh',	'default' => ''
-				),
-				'control' => array(
-					'control_type' => 'WeaverX_Textarea_Control',
-					'label'   => __( 'Custom CSS for Captions.', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'type'  => 'textarea',
-					'input_attrs' => array(
-						'rows' => '2',
-						'placeholder' => __('{ font-size:150%; font-weight:bold; } /* for example */', 'weaver-xtreme'),
-					),
-				),
-			),
-
+			'caption_color_css'  =>   weaverx_cz_css(__( 'Custom CSS for Captions.', 'weaver-xtreme' )),
 
 
 		),
@@ -128,15 +101,7 @@ function weaverx_customizer_define_image_sections( $sections ) {
 		'panel'   => $panel,
 		'title'   => __( 'Header Area', 'weaver-xtreme' ),
 		'options' => array(
-		'images-heading-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Header', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
-
-
+		'images-heading-header' => weaverx_cz_heading( __( 'Site Header', 'weaver-xtreme' )),
 
 		'header_image_max_width_dec'     => array(
 				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 100.0	),
@@ -153,17 +118,8 @@ function weaverx_customizer_define_image_sections( $sections ) {
 				),
 			),
 
-		'header_actual_size' => array(
-				'setting' => array(
-					'transport' => 'postMessage',
-				),
-				'control' => array(
-					'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-					'label' => __( 'Use Actual Image Size', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					'description' => __( 'Check to use actual header image size. (Default: theme width)', 'weaver-xtreme' ),
-					'type'	=> 'checkbox'
-				),
-			),
+		'header_actual_size' => weaverx_cz_checkbox( __( 'Use Actual Image Size', 'weaver-xtreme' ),
+			__( 'Check to use actual header image size. (Default: theme width)', 'weaver-xtreme' ), 'plus'),
 
 		'header_image_align' => weaverx_cz_select_plus(
 				__( 'Align Header Image', 'weaver-xtreme' ),
@@ -172,16 +128,8 @@ function weaverx_customizer_define_image_sections( $sections ) {
 			),
 
 
-		'link_site_image' => array(
-				'setting' => array(
-					'transport' => 'refresh',
-				),
-				'control' => array(
-					'label' => __( 'Header Image Links to Site', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __( 'Check to add a link to site home page for Header Image. Note: If used with <em>Move Title/Tagline over Image</em>, parts of the header image will not be clickable.', 'weaver-xtreme' ),
-					'type'	=> 'checkbox'
-				),
-			),
+		'link_site_image' => weaverx_cz_checkbox_refresh( __( 'Header Image Links to Site', 'weaver-xtreme' ),
+			__( 'Check to add a link to site home page for Header Image. Note: If used with <em>Move Title/Tagline over Image</em>, parts of the header image will not be clickable.', 'weaver-xtreme')),
 
 		'header_image_height_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'refresh', 'default' => 188	),
@@ -208,22 +156,10 @@ function weaverx_customizer_define_image_sections( $sections ) {
 				__( 'You can specify alternate header images using the <em>Featured Image Location</em> option on the <em>Images</em> panel, as well as Per Page and Per Post options.', 'weaver-xtreme' )
 			),
 
-
-
-			'images-heading-logo-html' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Logo/HTML', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					'description'   => __( 'The site Logo/HTML is being deprecated. It is still accessible from the traditional Appearance settings interface.', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
-
-
+			'images-heading-logo-html' => weaverx_cz_heading( __( 'Site Logo/HTML', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+				__( 'The site Logo/HTML is being deprecated. It is still accessible from the traditional Appearance settings interface.', 'weaver-xtreme' )),
 		),
 	);
-
-
 
 
 	/**
@@ -234,24 +170,12 @@ function weaverx_customizer_define_image_sections( $sections ) {
 		'title'   => __( 'Content', 'weaver-xtreme' ),
 		'description' => __('Images on page and post content.', 'weaver-xtreme'),
 		'options' => array(
-			'images-content-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'General Image Settings', 'weaver-xtreme' ),
-					'description'   => __( 'General image settings found on the <em>Global Image Settings</em> panel.', 'weaver-xtreme' ),
-					'type'  => 'heading',
 
-				),
-			),
+			'images-content-heading' => weaverx_cz_heading( __( 'General Image Settings', 'weaver-xtreme' ),
+				__( 'General image settings found on the <em>Global Image Settings</em> panel.', 'weaver-xtreme' )),
 
-			'images-content-FI' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Featured Image - Pages', 'weaver-xtreme' ),
-					'description'   => __( 'Display of Page Featured Images', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'images-content-FI' => weaverx_cz_group_title( __( 'Featured Image - Pages', 'weaver-xtreme' ),
+					__( 'Display of Page Featured Images', 'weaver-xtreme' )),
 
 			'page_fi_location' => weaverx_cz_select(
 				__( 'Featured Image Location', 'weaver-xtreme' ),
@@ -292,8 +216,6 @@ function weaverx_customizer_define_image_sections( $sections ) {
 					),
 				),
 			),
-
-
 		),
 	);
 
@@ -305,14 +227,8 @@ function weaverx_customizer_define_image_sections( $sections ) {
 		'title'   => __( 'Post Specific', 'weaver-xtreme' ),
 		'description' => __('Post Specific Images - override Content Images.', 'weaver-xtreme'),
 		'options' => array(
-			'images-postspecific-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'General Image Settings', 'weaver-xtreme' ),
-					'description'   => __( 'General image settings found on the <em>Site Wrapper &amp; Container</em> panel.', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'images-postspecific-heading' => weaverx_cz_heading( __( 'General Image Settings', 'weaver-xtreme' ),
+				__( 'General image settings found on the <em>Site Wrapper &amp; Container</em> panel.', 'weaver-xtreme' )),
 
 
 			'post_avatar_int'     => array(
@@ -330,15 +246,8 @@ function weaverx_customizer_define_image_sections( $sections ) {
 				),
 			),
 
-
-			'images-content-FI-full' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Featured Image - Full Blog Posts', 'weaver-xtreme' ),
-					'description'   => __( 'Display of Post Featured Images when Post is displayed as a Full Post.', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'images-content-FI-full' => weaverx_cz_group_title( __( 'Featured Image - Full Blog Posts', 'weaver-xtreme' ),
+				__( 'Display of Post Featured Images when Post is displayed as a Full Post.', 'weaver-xtreme' )),
 
 			'post_full_fi_location' => weaverx_cz_select(
 				__( 'Featured Image Location - Full Post', 'weaver-xtreme' ),
@@ -382,14 +291,8 @@ function weaverx_customizer_define_image_sections( $sections ) {
 			),
 
 
-			'images-content-FI-excerpt' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Featured Image - Excerpt Posts', 'weaver-xtreme' ),
-					'description'   => __( 'Display of Post Featured Images when Post is displayed as an Excerpt.', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'images-content-FI-excerpt' => weaverx_cz_group_title( __( 'Featured Image - Excerpt Posts', 'weaver-xtreme' ),
+				__( 'Display of Post Featured Images when Post is displayed as an Excerpt.', 'weaver-xtreme' )),
 
 			'post_excerpt_fi_location' => weaverx_cz_select(
 				__( 'Featured Image Location - Excerpt', 'weaver-xtreme' ),
@@ -433,14 +336,8 @@ function weaverx_customizer_define_image_sections( $sections ) {
 			),
 
 
-			'images-content-FI-single' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Featured Image - Single Page', 'weaver-xtreme' ),
-					'description'   => __( 'Display of Post Featured Images when Post is displayed on the Single Page.', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'images-content-FI-single' => weaverx_cz_group_title( __( 'Featured Image - Single Page', 'weaver-xtreme' ),
+				__( 'Display of Post Featured Images when Post is displayed on the Single Page.', 'weaver-xtreme' )),
 
 			'post_fi_location' => weaverx_cz_select(
 				__( 'Featured Image Location - Single Page', 'weaver-xtreme' ),
@@ -480,8 +377,6 @@ function weaverx_customizer_define_image_sections( $sections ) {
 					),
 				),
 			),
-
-
 
 		),
 	);
@@ -603,62 +498,4 @@ if (true) {
 endif;
 
 add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_image_sections' );
-
-function weaverx_cz_add_image($root, $label = '', $description = '' , $transport = 'postMessage', $version = 'XPlus' ) {
-	$opt = array();
-
-	if ($version == 'XPlus') $label .= WEAVERX_PLUS_ICON;
-	if ($transport == 'refresh') $label .= WEAVERX_REFRESH_ICON;
-	$opt[$root . '-heading'] = array(
-		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
-		'label'   => $label,
-		'type'  => 'group-title'));
-
-	if ($description) {
-		$opt[$root . '-desc'] = array(
-		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
-		'description'   => $description,
-		'type'  => 'text'));
-	}
-
-
-
-	$opt["_bg_{$root}_url"] = array(
-			'setting' => array(
-				'transport' => $transport,
-				'sanitize_callback' => 'esc_url_raw'
-			),
-			'control' => array(
-				'control_type' => WEAVERX_PLUS_IMAGE_CONTROL,
-				'label' => '',
-				//'type'  => 'checkbox',
-			),
-		);
-
-	$opt["_bg_{$root}_rpt"] = array(
-			'setting' => array(
-				'transport' => $transport,
-				'default' => 'repeat'
-			),
-			'control' => array(
-				'control_type' => WEAVERX_PLUS_SELECT_CONTROL,
-				'label' => __('Tile BG Image', 'weaver-xtreme'),
-				'type'    => 'select',
-				'choices' => weaverx_cz_choices_repeat(),
-			),
-		);
-
-	$opt["_bg_{$root}_rpt_css"] = array(
-			'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_css', 'transport' => 'refresh',	'default' => '' ),
-			'control' => array(
-				'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-				'label'   => __( 'Additional CSS', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-				'type'  => 'text',
-			),
-		);
-
-
-
-	return $opt;
-
-}
+?>

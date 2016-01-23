@@ -2528,6 +2528,13 @@ each(function(){this.style.setProperty('background-color', weaverxFixTo( to ),'i
 	api( 'weaverx_settings[inject_postfooter_bgcolor_css]', function( value ) {
 		value.bind( function( to ) { weaverxStyle('#inject_postfooter', to, "content_bgcolor_css"); } ); } );
 
+	// Imgage injection
+
+	api( 'weaverx_settings[caption_color_css]', function( value ) {
+		value.bind( function( to ) { weaverxStyle('.wp-caption p.wp-caption-text,#content .gallery .gallery-caption,.entry-attachment .entry-caption', to, "caption_color_css"); } ); } );
+
+		api( 'weaverx_settings[media_lib_border_color_css]', function( value ) {
+		value.bind( function( to ) { weaverxStyle('.container img, .colophon img', to, "media_lib_border_color_css"); } ); } );
 	// X Plus Injection
 
 

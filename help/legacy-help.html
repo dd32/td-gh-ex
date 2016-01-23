@@ -1942,6 +1942,15 @@ If you need a joined class (e.g. #post-nnn.content-single), then put a vertical 
             as described</li>
           <li>.content-2-col,.content-2-col-left, .content-2-col-right - used to
             display two column content</li>
+		  <li>.content-3-col - used to display 3 columns. <br />NOTE: when you use the 2 or 3 column
+		  classes, you should wrap all the content in a div, and follow with a clear div like this:<br />
+		  <pre>
+	&lt;div>
+		&lt;div class="content-3-col">Column 1&lt;/div>
+		&lt;div class="content-3-col">Column 2&lt;/div>
+		&lt;div class="content-3-col">Column 3&lt;/div>
+	&lt;/div>&lt;div style="clear:both;">&lt;/div>
+		  </pre></li>
           <li>.clearfix - use in a &lt;div&gt; after the column classes to reset
             for normal display</li>
           <li>#page-top, #page-bottom - defined on every page as &lt;a&gt; links

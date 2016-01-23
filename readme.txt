@@ -229,3 +229,9 @@ with testing and feature suggestions.
 = Version 2.0.4 =
 * Fix: Customizer preview of bar under a title options
 * Fix: Generating invalid custom css file for Weaver Xtreme Plus.
+* Tweak: .content-3-col help file information updated
+
+= Version 2.0.5 =
+* New: Disable Google Fonts (Advanced Option)
+* Fix: Caption color, image border updates in Customizer
+* Fix: Default WP Site BG Color now shows in Customizer

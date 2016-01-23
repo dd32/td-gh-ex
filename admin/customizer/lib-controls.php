@@ -252,7 +252,8 @@ function weaverx_cz_choices_font_family() {
 
 	$base = array(
 		'inherit' => __('Inherit', 'weaver-xtreme'),
-
+		);
+	$google = array(
 		'google' => __('---* Google Fonts (For All Browsers) *', 'weaver-xtreme'),
 		'sans-g' => __('--- -- Sans-Serif Google Fonts --', 'weaver-xtreme'),
 		'open-sans' => __('Open Sans', 'weaver-xtreme'),
@@ -288,6 +289,10 @@ function weaverx_cz_choices_font_family() {
 		'handlee' => __('Handlee', 'weaver-xtreme'),
 
 		'blank-w' => __('--- ', 'weaver-xtreme'),
+
+		);
+
+	$web = array(
 
 		'web' => __('---* Web Fonts *', 'weaver-xtreme'),
 		'web-hote' => __('--- - May not match on Android/iOS -', 'weaver-xtreme'),
@@ -330,6 +335,10 @@ function weaverx_cz_choices_font_family() {
             $base[$gfont] = $val['name'] . ' (' . WEAVERX_PLUS_ICON . 'font)';
         }
     }
+	if ( ! weaverx_getopt('disable_google_fonts')) {
+		$base = array_merge($base, $google);
+	}
+	$base = array_merge($base, $web);
 
 	return $base;
 }
@@ -1264,7 +1273,7 @@ function weaverx_cz_heading($label, $description = '') {
 	);
 }
 
-function weaverx_cz_checkbox($label, $description = '') {
+function weaverx_cz_checkbox($label, $description = '', $plus = '') {
 
 	/*
 	'checkbox' => weaverx_cz_checkbox(
@@ -1272,12 +1281,18 @@ function weaverx_cz_checkbox($label, $description = '') {
 				description
 			),
 	 */
+	$cb = null;
+	if ( $plus != '' ) {
+		$label .= WEAVERX_PLUS_ICON;
+		$cb= WEAVERX_PLUS_CHECKBOX_CONTROL;
+	}
 	return array(
 		'setting' => array(
 			'sanitize_callback' => 'absint',
 			'transport' => 'postMessage'
 		),
 		'control' => array(
+			'control_type' => $cb,
 			'label' => $label,
 			'description' => $description,
 			'type'  => 'checkbox',
@@ -1294,6 +1309,7 @@ function weaverx_cz_checkbox_refresh($label, $description = '') {
 			),
 	 */
 	$label .= WEAVERX_REFRESH_ICON;
+
 	return array(
 		'setting' => array(
 			'sanitize_callback' => 'absint',
@@ -1307,4 +1323,286 @@ function weaverx_cz_checkbox_refresh($label, $description = '') {
 	);
 
 }
+
+function weaverx_cz_css($label, $description = '') {
+	return array(
+		'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_css', 'transport' => 'postMessage',	'default' => ''),
+		'control' => array(
+			'control_type' => 'WeaverX_Textarea_Control',
+			'label'   => $label,
+			'description' => $description,
+			'type'  => 'textarea',
+			'input_attrs' => array(
+				'rows' => '2',
+				'placeholder' => __('{font-size:150%;font-weight:bold;} /* for example */', 'weaver-xtreme'),
+			)
+		)
+	);
+}
+
+
+function weaverx_cz_add_class($label, $description = '') {
+	if ( $description == '')
+		$description = __( 'Space separated class names to add to this area.', 'weaver-xtreme' );
+	return array(
+		'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_css', 'transport' => 'refresh',	'default' => '' ),
+		'control' => array(
+			'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
+			'label'   => $label . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+			'description'   => $description,
+			'type'  => 'text',
+			'input_attrs' => array(
+				'style' => 'width:85%;'
+			),
+		),
+	);
+}
+
+function weaverx_cz_textarea($label, $description = '', $rows = '1', $placeholder = '',
+							  $transport = 'postMessage', $plus = false, $sanitize = 'weaverx_cz_sanitize_html') {
+	/*
+	 weaverx_cz_textarea($label,
+				$description,
+				$rows , $placeholder,
+				$refresh, $plus),
+
+	 */
+	if ($plus)
+		$control_type = WEAVERX_PLUS_TEXTAREA_CONTROL;
+	else
+		$control_type = 'WeaverX_Textarea_Control';
+	if ($plus)
+		$label .= WEAVERX_PLUS_ICON;
+	if ($transport == 'refresh')
+		$label .= WEAVERX_REFRESH_ICON;
+
+	return array(
+				'setting' => array( 'sanitize_callback' => $sanitize, 'transport' => $transport, 'default' => ''
+				),
+				'control' => array(
+					'control_type' => $control_type,
+					'label'   => $label,
+					'description'   => $description,
+					'type'  => 'textarea',
+					'input_attrs' => array(
+						'rows' => $rows,
+						'placeholder' => $placeholder,
+					),
+				),
+			);
+
+}
+
+function weaverx_cz_html_textarea($label, $description = '', $rows = '1') {
+	/*
+	 weaverx_cz_html_textarea($label,
+				$description,
+				$rows),
+	 */
+
+	return array(
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_html', 'transport' => 'postMessage', 'default' => ''
+				),
+				'control' => array(
+					'control_type' => 'WeaverX_Textarea_Control',
+					'label'   => $label,
+					'description'   => $description,
+					'type'  => 'textarea',
+					'input_attrs' => array(
+						'rows' => $rows,
+						'placeholder' => __('Any HTML, including shortcodes.', 'weaver-xtreme'),
+					),
+				),
+			);
+}
+
+function weaverx_cz_add_image($root, $label = '', $description = '' , $transport = 'postMessage', $version = 'XPlus' ) {
+	$opt = array();
+
+	if ($version == 'XPlus') $label .= WEAVERX_PLUS_ICON;
+	if ($transport == 'refresh') $label .= WEAVERX_REFRESH_ICON;
+
+	$opt[$root . '-heading'] = weaverx_cz_group_title( $label );
+
+
+	if ($description) {
+		$opt[$root . '-desc'] = array(
+		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
+		'description'   => $description,
+		'type'  => 'text'));
+	}
+
+
+
+	$opt["_bg_{$root}_url"] = array(
+			'setting' => array(
+				'transport' => $transport,
+				'sanitize_callback' => 'esc_url_raw'
+			),
+			'control' => array(
+				'control_type' => WEAVERX_PLUS_IMAGE_CONTROL,
+				'label' => '',
+				//'type'  => 'checkbox',
+			),
+		);
+
+	$opt["_bg_{$root}_rpt"] = array(
+			'setting' => array(
+				'transport' => $transport,
+				'default' => 'repeat'
+			),
+			'control' => array(
+				'control_type' => WEAVERX_PLUS_SELECT_CONTROL,
+				'label' => __('Tile BG Image', 'weaver-xtreme'),
+				'type'    => 'select',
+				'choices' => weaverx_cz_choices_repeat(),
+			),
+		);
+
+	$opt["_bg_{$root}_rpt_css"] = array(
+			'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_css', 'transport' => 'refresh',	'default' => '' ),
+			'control' => array(
+				'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
+				'label'   => __( 'Additional CSS', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+				'type'  => 'text',
+			),
+		);
+
+
+
+	return $opt;
+
+}
+
+function weaverx_cz_add_fonts($root, $label = '', $description = '' , $transport = 'refresh', $bold = 'bold' ) {
+
+	$opt = array();
+
+
+	if ($root != 'm_primary')	// add a line except top
+		$opt[$root . '-headingline'] = weaverx_cz_line();
+
+	$glabel = $label;
+	if ($transport == 'refresh')
+		$glabel .= WEAVERX_REFRESH_ICON;
+
+	$opt[$root . '-font-hdrm'] = weaverx_cz_group_title($glabel, $description);
+
+	// Font Size
+	$opt[$root . '_font_size'] = weaverx_cz_select(
+		'',
+		'<strong>' . __('Select Font Size for ', 'weaver-xtreme') . $label . '</strong>',
+		'weaverx_cz_choices_font_size',	'', $transport
+	);
+
+
+
+	// Font Family
+	/* for future - add more fonts...
+	 *$opt[$root . '_font_family'] = array(
+		'setting' => array(	'transport' => 'refresh', 'default' => 'sans-serif'	),
+		'control' => array(
+			'control_type' => 'WeaverX_Misc_Control',
+			'label'   => __( 'Font Family', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+			'description'   => '',
+			'type'  => 'select-fontfamily',
+			'choices' => weaverx_cz_choices_font_family()
+		),
+	);
+	*/
+
+	$opt[$root . '_font_family'] = weaverx_cz_select(
+		'',
+		'<strong>' . __('Select Font Family for ', 'weaver-xtreme') . $label . '</strong>',
+		'weaverx_cz_choices_font_family',	'', $transport
+	);
+
+	// Bold / Normal
+
+	if ($root == 'tagline' || $root == 'content_h' || strpos($root, '_title') > 0) {
+		if ($transport == 'refresh') {
+			$opt[$root . '_normal'] =  weaverx_cz_checkbox_refresh(
+				__('Normal Weight for ', 'weaver-xtreme') . $label,
+				'' //'<strong>' . __('Normal Weight for ', 'weaver-xtreme') . $label . '</strong>'
+			);
+		} else {
+			$opt[$root . '_normal'] =  weaverx_cz_checkbox(
+				__('Normal Weight for ', 'weaver-xtreme') . $label,
+				''// '<strong>' . __('Normal Weight for ', 'weaver-xtreme') . $label . '</strong>'
+			);
+		}
+	} else {
+		$opt[$root . '_bold'] =  weaverx_cz_select(
+			'',
+			'<strong>' . __('Use Bold for ', 'weaver-xtreme') . $label . '</strong>',
+			'weaverx_cz_choices_bold_italic',	'', $transport
+		);
+	}
+
+		// Italic
+	$opt[$root . '_italic'] = weaverx_cz_select(
+		'',
+		'<strong>' . __('Use <em>Italic</em> for ', 'weaver-xtreme') . $label . '</strong>',
+		'weaverx_cz_choices_bold_italic',	'', $transport
+	);
+
+
+	return $opt;
+
+}
+
+function weaverx_cz_add_link_fonts($root, $label = '', $description = '' , $transport = 'postMessage' ) {
+
+	// called for: link, ibarlink, contentlink, ilink, wlink, footerlink
+
+	$opt = array();
+
+	$opt[$root . '-fontlink-hdm'] = weaverx_cz_group_title($label, $description);
+
+	/* $opt[$root . '-heading'] = array(
+		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
+		'label'   => $label,
+		'type'  => 'group-title'));
+
+	if ($description) {
+		$opt[$root . '-desc'] = array(
+		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
+		'description'   => $description,
+		'type'  => 'text'));
+	} */
+
+
+	// Bold
+	$opt[$root . '_strong'] =  weaverx_cz_select(
+		'',
+		'<strong>' . __('Use Bold for ', 'weaver-xtreme') . $label . '</strong>',
+		'weaverx_cz_choices_bold_italic',	'', $transport
+	);
+
+
+		// Italic
+	$opt[$root . '_em'] = weaverx_cz_select(
+		'',
+		'<strong>' . __('Use <em>Italic</em> for ', 'weaver-xtreme') . $label . '</strong>',
+		'weaverx_cz_choices_bold_italic',	'', $transport
+	);
+
+
+	// UNderline
+
+	$opt[$root . '_u'] = array(
+		'setting' => array(
+			'transport' => $transport
+		),
+		'control' => array(
+			'label' => __( 'Underline', 'weaver-xtreme' ),
+			'description' => '<strong>' . __('Use <u>Underline</u> for ', 'weaver-xtreme') . $label . '</strong>',
+			'type'  => 'checkbox',
+		),
+	);
+
+	return $opt;
+
+}
+
 ?>

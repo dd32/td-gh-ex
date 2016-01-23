@@ -16,14 +16,8 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 
 		'options' => array(
 
-			'custom-help-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Introductory Help for Custom CSS', 'weaver-xtreme' ),
-					'description'   => __( 'These Custom CSS sections allow you to add custom CSS for different sections without needing to know the id or class for the section. You should simply enter normal CSS rules enclosed by braces <em>{selector:value;}</em>. You don not need to enter any id or class name. There are other helpful features to this custom CSS feature explained in the Help Documentation. See the link on the desktop <em>Appearance &rarr; Weaver Xtreme Admin &rarr; Theme Help</em> panel. Note that these Custom CSS rules are a very advanced feature of Weaver Xtreme, and most people will not need them. They do allow web designers to build highly customized sites.', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'custom-help-heading' => weaverx_cz_group_title( __( 'Introductory Help for Custom CSS', 'weaver-xtreme' ),
+				__( 'These Custom CSS sections allow you to add custom CSS for different sections without needing to know the id or class for the section. You should simply enter normal CSS rules enclosed by braces <em>{selector:value;}</em>. You don not need to enter any id or class name. There are other helpful features to this custom CSS feature explained in the Help Documentation. See the link on the desktop <em>Appearance &rarr; Weaver Xtreme Admin &rarr; Theme Help</em> panel. Note that these Custom CSS rules are a very advanced feature of Weaver Xtreme, and most people will not need them. They do allow web designers to build highly customized sites.', 'weaver-xtreme' )),
 
 		),
 	);
@@ -156,15 +150,7 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 		'title'   => __( 'Menus', 'weaver-xtreme' ),
 		'description' => __( 'Set custom for Menus.', 'weaver-xtreme' ),
 		'options' => array(
-			'custom-mm-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Primary Menu', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
-
-
+			'custom-mm-heading' => weaverx_cz_group_title(__( 'Primary Menu', 'weaver-xtreme' )),
 
 			'm_primary_bgcolor_css'     => weaverx_cz_css(__( 'Primary Menu Bar Custom CSS', 'weaver-xtreme' )),
 
@@ -182,14 +168,8 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 
 			// --- secondary
 
-			'custom-sm-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Secondary Menu', 'weaver-xtreme' ),
-					'description' => __('You must define a Secondary Menu from the Custom Menus Content menu.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'custom-sm-heading' => weaverx_cz_group_title( __( 'Secondary Menu', 'weaver-xtreme' ),
+				__('You must define a Secondary Menu from the Custom Menus Content menu.', 'weaver-xtreme')	),
 
 			'm_secondary_bgcolor_css'     => weaverx_cz_css(__( 'Secondary Menu Bar Custom CSS', 'weaver-xtreme' )),
 
@@ -207,14 +187,8 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 			'custom-minim-line1' => weaverx_cz_line(),
 			// mini-menu
 
-			'custom-minim-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Header Mini Menu', 'weaver-xtreme' ),
-					'description' => __('You must define a Header Menu from the Custom Menus Content menu.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'custom-minim-heading' => weaverx_cz_group_title( __( 'Header Mini Menu', 'weaver-xtreme' ),
+				__('You must define a Header Menu from the Custom Menus Content menu.', 'weaver-xtreme')),
 
 			'm_header_mini_bgcolor_css'     => weaverx_cz_css(__( 'Header Mini Menu Custom CSS', 'weaver-xtreme' ),
 				__('Custom CSS for full Mini Menu "bar".', 'weaver-xtreme')),
@@ -226,14 +200,9 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 
 			'custom-allm-line1' => weaverx_cz_line(),
 
-			'custom-allmenus-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Custom For All Menus', 'weaver-xtreme' ),
-					'description' => __('These options specify current page attributes for all menus.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'custom-allmenus-heading' => weaverx_cz_group_title( __( 'Custom For All Menus', 'weaver-xtreme' ),
+				__('These options specify current page attributes for all menus.', 'weaver-xtreme')),
+
 			'menubar_curpage_bgcolor_css'     => weaverx_cz_css(__( 'Current Page', 'weaver-xtreme' )),
 
 		),
@@ -244,13 +213,7 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 
 			'custom-xm-line1' => weaverx_cz_line(),
 
-			'custom-xm-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Extra Menu', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					'type'  => 'group-title',
-				),
-			),
+			'custom-xm-heading' => weaverx_cz_group_title( __( 'Extra Menu', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON ),
 
 			'm_extra_bgcolor_css'     => weaverx_cz_css(__( 'Extra Menu Bar Custom CSS', 'weaver-xtreme' )),
 
@@ -282,15 +245,7 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 		'title'   => __( 'Info Bar', 'weaver-xtreme' ),
 		'description' => __('Info Bar with breadcrumbs and paged navigation displayed under Primary Menu.', 'weaver-xtreme'),
 		'options' => array(
-			'custom-info-bar-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Info Bar', 'weaver-xtreme' ),
-					'type'  => 'heading',
-
-				),
-			),
-
+			'custom-info-bar-heading' => weaverx_cz_heading( __( 'Info Bar', 'weaver-xtreme' )),
 
 			'infobar_bgcolor_css'	=> weaverx_cz_css(__( 'Info Bar Custom CSS', 'weaver-xtreme' )),
 
@@ -308,14 +263,8 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 		'title'   => __( 'Content', 'weaver-xtreme' ),
 		'description' => __('custom for general page and post content.', 'weaver-xtreme'),
 		'options' => array(
-		'custom-content-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'General Content', 'weaver-xtreme' ),
-					'type'  => 'heading',
+		'custom-content-heading' => weaverx_cz_heading( __( 'General Content', 'weaver-xtreme' )),
 
-				),
-			),
 		'content_bgcolor_css'     	=> weaverx_cz_css(__( 'Content Custom CSS', 'weaver-xtreme' )),
 
 		'content_add_class' 		=> weaverx_cz_add_class(__( 'Content: Add Classes', 'weaver-xtreme' )),
@@ -338,6 +287,9 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 
 		'comment_submit_bgcolor_css' => weaverx_cz_css(__( 'Comment Submit Button Custom CSS', 'weaver-xtreme' )),
 
+		'content-image-css'			=> weaverx_cz_heading( __('Images', 'weaver-xtreme'),
+				__('Custom CSS for Images is found on "Images : Global Image Settings".', 'weaver-xtreme')),
+
 		),
 	);
 
@@ -349,13 +301,8 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 		'title'   => __( 'Post Specific', 'weaver-xtreme' ),
 		'description' => __('Post Specific custom - override Content custom.', 'weaver-xtreme'),
 		'options' => array(
-		'custom-postspecific-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Post Specific', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+
+		'custom-postspecific-heading' => weaverx_cz_heading( __( 'Post Specific', 'weaver-xtreme' )),
 
 		'post_bgcolor_css'     		=> weaverx_cz_css(__( 'Post Area Custom CSS', 'weaver-xtreme' )),
 
@@ -387,54 +334,30 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 		'description' => __('Main Sidebars and Widget areas. Header and Footer areas options under Header and Footer panels.', 'weaver-xtreme'),
 		'options' => array(
 
-			'custom-primary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Primary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
+			'custom-primary-widget-heading' => weaverx_cz_group_title( __( 'Primary Widget Area', 'weaver-xtreme' )),
+
 			'primary_bgcolor_css'	=> weaverx_cz_css(__( 'Primary Widget Area Custom CSS', 'weaver-xtreme' )),
 
 			'primary_add_class' 	=> weaverx_cz_add_class(__( 'Primary Widget Area: Add Classes', 'weaver-xtreme' )),
 
 
-			'custom-secondary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Secondary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
+			'custom-secondary-widget-heading' => weaverx_cz_group_title( __( 'Secondary Widget Area', 'weaver-xtreme' )),
+
 			'secondary_bgcolor_css'	=> weaverx_cz_css(__( 'Secondary Widget Area Custom CSS', 'weaver-xtreme' )),
 
 			'secondary_add_class' 	=> weaverx_cz_add_class(__( 'Secondary Widget Area: Add Classes', 'weaver-xtreme' )),
 
 
-			'custom-top-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Top Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'custom-top-widget-heading' => weaverx_cz_group_title( __( 'Top Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
 
 			'top_bgcolor_css' 	=> weaverx_cz_css(__( 'Top Widget Areas Custom CSS', 'weaver-xtreme' )),
 
 			'top_add_class' 	=> weaverx_cz_add_class(__( 'Top Widget Areas: Add Classes', 'weaver-xtreme' )),
 
 
-			'custom-bottom-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Bottom Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'custom-bottom-widget-heading' => weaverx_cz_group_title( __( 'Bottom Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme') ),
 
 			'bottom_bgcolor_css'	=> weaverx_cz_css(__( 'Bottom Widget Areas Custom CSS', 'weaver-xtreme' )),
 
@@ -449,13 +372,7 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 		'panel'   => $panel,
 		'title'   => __( 'Individual Widgets', 'weaver-xtreme' ),
 		'options' => array(
-		'custom-widgets-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Individual Widgets', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+		'custom-widgets-heading' => weaverx_cz_heading( __( 'Individual Widgets', 'weaver-xtreme' )),
 
 		'widget_bgcolor_css'   		=> weaverx_cz_css(__( 'Individual Widget Custom CSS', 'weaver-xtreme' )),
 
@@ -508,38 +425,5 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 }
 endif;
 
-function weaverx_cz_css($label, $description = '') {
-	return array(
-		'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_css', 'transport' => 'postMessage',	'default' => ''),
-		'control' => array(
-			'control_type' => 'WeaverX_Textarea_Control',
-			'label'   => $label,
-			'description' => $description,
-			'type'  => 'textarea',
-			'input_attrs' => array(
-				'rows' => '2',
-				'placeholder' => __('{font-size:150%;font-weight:bold;} /* for example */', 'weaver-xtreme'),
-			)
-		)
-	);
-}
-
-
-function weaverx_cz_add_class($label, $description = '') {
-	if ( $description == '')
-		$description = __( 'Space separated class names to add to this area.', 'weaver-xtreme' );
-	return array(
-		'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_css', 'transport' => 'refresh',	'default' => '' ),
-		'control' => array(
-			'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-			'label'   => $label . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-			'description'   => $description,
-			'type'  => 'text',
-			'input_attrs' => array(
-				'style' => 'width:85%;'
-			),
-		),
-	);
-}
 
 add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_custom_sections' );

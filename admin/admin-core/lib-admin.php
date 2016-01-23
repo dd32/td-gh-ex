@@ -582,8 +582,14 @@ function weaverx_elink( $href, $title, $label, $before='', $after='') {
 
 		array('val' => 'handlee', 'desc' => __('Handlee (Cursive)', 'weaver-xtreme') )
 	);
-	unset($fonts[0]);	// kill original 'default'
-	return array_merge($base, $fonts);	// put the new fonts at the top
+
+	if ( ! weaverx_getopt('disable_google_fonts')) {
+		if (!empty($fonts))
+			unset($fonts[0]);	// kill original 'default'
+		return array_merge($base, $fonts);	// put the new fonts at the top
+	} else {
+		return $fonts;
+	}
 
 
  }

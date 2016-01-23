@@ -49,8 +49,8 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 		$gf = str_replace('&subset=','&subset=vietnamese,', $gf);
 	}
 
-
-	echo $gf;
+	if ( ! weaverx_getopt('disable_google_fonts'))
+		echo $gf . "\n";
 
 	// Now we need to polyfill IE8. We need 2 scripts loaded AFTER the .css stylesheets. wp_enqueue_script
 	// does not work because it can't add the test for < IE9. And you can't just include the code directly

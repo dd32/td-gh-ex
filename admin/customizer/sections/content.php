@@ -17,15 +17,9 @@ function weaverx_customizer_define_content_sections( $sections ) {
 
 		'options' => array(
 
-			'content-headsec-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Introductory Help for &lt;HEAD&gt; Section', 'weaver-xtreme' ),
-					'description'   => __( 'This panel allows you to add HTML to the &lt;HEAD&gt; Section of every page on your site.<br /><br />
-PLEASE NOTE: Only minimal validation is made on the field values, so be careful not to use invalid code. Invalid code is usually harmless, but it can make your site display incorrectly. If your site looks broken after make changes here, please double check that what you entered uses valid HTML or CSS rules.', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'content-headsec-heading' => weaverx_cz_heading( __( 'Introductory Help for &lt;HEAD&gt; Section', 'weaver-xtreme' ),
+				__( 'This panel allows you to add HTML to the &lt;HEAD&gt; Section of every page on your site.<br /><br />
+PLEASE NOTE: Only minimal validation is made on the field values, so be careful not to use invalid code. Invalid code is usually harmless, but it can make your site display incorrectly. If your site looks broken after make changes here, please double check that what you entered uses valid HTML or CSS rules.', 'weaver-xtreme' )),
 
 			'head_opts' => weaverx_cz_textarea(__( '&lt;HEAD&gt; Section Content', 'weaver-xtreme' ),
 					/* $description = */ __(
@@ -94,13 +88,7 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 		'title'   => __( 'Menus', 'weaver-xtreme' ),
 		'description' => __( 'Set content for Menus.', 'weaver-xtreme' ),
 		'options' => array(
-			'content-mm-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Primary Menu', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'content-mm-heading' => weaverx_cz_group_title( __( 'Primary Menu', 'weaver-xtreme' )),
 
 			'm_primary_html_left' =>  weaverx_cz_textarea(__( 'Left HTML', 'weaver-xtreme' ),
 				__( 'Add HTML to menu bar. Works best with Centered Menu. You can adjust color and top/bottom spacing on the respective panels. (&diams;)', 'weaver-xtreme' ),
@@ -114,14 +102,8 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 				'postMessage', true),
 
 
-			'content-sm-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Secondary Menu', 'weaver-xtreme' ),
-					'description' => __('You must define a Secondary Menu from the Custom Menus Content menu.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'content-sm-heading' => weaverx_cz_group_title( __( 'Secondary Menu', 'weaver-xtreme' ),
+				__('You must define a Secondary Menu from the Custom Menus Content menu.', 'weaver-xtreme')),
 
 			'm_secondary_html_left' =>  weaverx_cz_textarea(__( 'Left HTML', 'weaver-xtreme' ),
 				__( 'Add HTML to menu bar. Works best with Centered Menu. You can adjust color and top/bottom spacing on the respective panels. (&diams;)', 'weaver-xtreme' ),
@@ -136,13 +118,7 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 
 
 
-			'content-xm-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Extra Menu', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'content-xm-heading' => weaverx_cz_group_title( __( 'Extra Menu', 'weaver-xtreme' )),
 
 			'm_extra_html_left' =>  weaverx_cz_textarea(__( 'Left HTML', 'weaver-xtreme' ),
 				__( 'Add HTML to menu bar. Works best with Centered Menu. You can adjust color and top/bottom spacing on the respective panels. (&diams;)', 'weaver-xtreme' ),
@@ -174,15 +150,8 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 				__( 'Change default <em>Continue reading &rarr;</em> message for excerpts. You can include HTML (e.g., &lt;img>).', 'weaver-xtreme' ),
 				'1'),
 
-
-			'content-post-meta' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Custom Post Info Lines', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					'description'   => __( 'Replace Info Lines with custom info line templates. Advanced options: see help file.', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'content-post-meta' => weaverx_cz_group_title( __( 'Custom Post Info Lines', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+				__( 'Replace Info Lines with custom info line templates. Advanced options: see help file.', 'weaver-xtreme' )),
 
 			'custom_posted_on' => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_html', 'transport' => 'refresh',	'default' => ''
@@ -422,10 +391,7 @@ function weaverx_cz_add_injection($root, $label = '', $description = '' , $versi
 	$opt = array();
 
 	if ($version == 'XPlus') $label .= WEAVERX_PLUS_ICON;
-	$opt[$root . '-heading'] = array(
-		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
-		'label'   => $label,
-		'type'  => 'group-title'));
+	$opt[$root . '-heading'] = weaverx_cz_group_title( $label );
 
 	if ($description) {
 		$opt[$root . '-desc'] = array(
@@ -499,65 +465,6 @@ function weaverx_cz_add_injection($root, $label = '', $description = '' , $versi
 
 
 	return $opt;
-
-}
-
-function weaverx_cz_textarea($label, $description = '', $rows = '1', $placeholder = '',
-							  $transport = 'postMessage', $plus = false, $sanitize = 'weaverx_cz_sanitize_html') {
-	/*
-	 weaverx_cz_textarea($label,
-				$description,
-				$rows , $placeholder,
-				$refresh, $plus),
-
-	 */
-	if ($plus)
-		$control_type = WEAVERX_PLUS_TEXTAREA_CONTROL;
-	else
-		$control_type = 'WeaverX_Textarea_Control';
-	if ($plus)
-		$label .= WEAVERX_PLUS_ICON;
-	if ($transport == 'refresh')
-		$label .= WEAVERX_REFRESH_ICON;
-
-	return array(
-				'setting' => array( 'sanitize_callback' => $sanitize, 'transport' => $transport, 'default' => ''
-				),
-				'control' => array(
-					'control_type' => $control_type,
-					'label'   => $label,
-					'description'   => $description,
-					'type'  => 'textarea',
-					'input_attrs' => array(
-						'rows' => $rows,
-						'placeholder' => $placeholder,
-					),
-				),
-			);
-
-}
-
-function weaverx_cz_html_textarea($label, $description = '', $rows = '1') {
-	/*
-	 weaverx_cz_html_textarea($label,
-				$description,
-				$rows),
-	 */
-
-	return array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_html', 'transport' => 'postMessage', 'default' => ''
-				),
-				'control' => array(
-					'control_type' => 'WeaverX_Textarea_Control',
-					'label'   => $label,
-					'description'   => $description,
-					'type'  => 'textarea',
-					'input_attrs' => array(
-						'rows' => $rows,
-						'placeholder' => __('Any HTML, including shortcodes.', 'weaver-xtreme'),
-					),
-				),
-			);
 
 }
 ?>

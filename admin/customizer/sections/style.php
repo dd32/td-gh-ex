@@ -105,27 +105,13 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 		'description' => 'Set borders, shadows, and rounded corners for main Wrapper and Container wrapping areas.',
 		'options' => array(
 
-			'wrapper-style-genopts' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'General Style Global Options', 'weaver-xtreme' ),
-					'description' => __('These settings control global attributes of borders, etc.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'wrapper-style-genopts' => weaverx_cz_group_title( __( 'General Style Global Options', 'weaver-xtreme' ),
+				__('These settings control global attributes of borders, etc.', 'weaver-xtreme')),
 
 
+			'wrapper-style-heading' => weaverx_cz_group_title( __( 'Wrapper Area', 'weaver-xtreme' ),
+				__('The Wrapper is the &lt;div&gt; that wraps entire site.', 'weaver-xtreme')),
 
-
-
-			'wrapper-style-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Wrapper Area', 'weaver-xtreme' ),
-					'description' => __('The Wrapper is the &lt;div&gt; that wraps entire site.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
 			'wrapper_border'=> array(
 				'setting' => array(
 					'sanitize_callback' => 'absint',
@@ -149,14 +135,9 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 			),
 
 
-			'container-style-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Container Area', 'weaver-xtreme' ),
-					'description' => __('The Container is the &lt;div&gt; that wraps site content areas, including sidebars. Does not include Header and Footer.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'container-style-heading' => weaverx_cz_group_title( __( 'Container Area', 'weaver-xtreme' ),
+				__('The Container is the &lt;div&gt; that wraps site content areas, including sidebars. Does not include Header and Footer.', 'weaver-xtreme')),
+
 			'container_border' => array(
 				'setting' => array(
 					'sanitize_callback' => 'absint',
@@ -194,13 +175,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 		'panel'   => $panel,
 		'title'   => __( 'Header Area', 'weaver-xtreme' ),
 		'options' => array(
-		'style-heading-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Header Area Borders', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+		'style-heading-header' => weaverx_cz_group_title( __( 'Site Header Area Borders', 'weaver-xtreme' )),
 
 		'header_border' => array(
 				'setting' => array(
@@ -235,13 +210,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 				),
 			),
 
-		'style-shadow-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Header Area Shadows', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+		'style-shadow-header' => weaverx_cz_group_title( __( 'Site Header Area Shadows', 'weaver-xtreme' )),
 
 		'header_shadow' => weaverx_cz_select(
 				__( 'Add shadow to header', 'weaver-xtreme' ),
@@ -264,14 +233,8 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			//  rounded
 
-		'style-rounded-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Header Rounded Corners', 'weaver-xtreme' ),
-					'description' => __('Note that rounded corners require borders or bg color to show, and interact with surrounding areas. You may have to set several options to get rounded corners to display.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+		'style-rounded-header' => weaverx_cz_group_title( __( 'Site Header Rounded Corners', 'weaver-xtreme' ),
+			__('Note that rounded corners require borders or bg color to show, and interact with surrounding areas. You may have to set several options to get rounded corners to display.', 'weaver-xtreme')),
 
 		'header_rounded' => weaverx_cz_select(
 				__( 'Add rounded corners to Header Area', 'weaver-xtreme' ),
@@ -374,14 +337,8 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			'style-sm-line2' => weaverx_cz_line(),
 
-			'style-allmenus-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Style For All Menus', 'weaver-xtreme' ),
-					'description' => __('These options specify current page attributes for all menus.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'style-allmenus-heading' => weaverx_cz_group_title( __( 'Style For All Menus', 'weaver-xtreme' ),
+				__('These options specify current page attributes for all menus.', 'weaver-xtreme')),
 
 			'placeholder_cursor' => weaverx_cz_select(
 				__( 'Placeholder Menu Hover Cursor', 'weaver-xtreme' ),
@@ -638,14 +595,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 		'title'   => __( 'Sidebars &amp; Widget Areas', 'weaver-xtreme' ),
 		'description' => __('Style for Main Sidebars and Widget areas.', 'weaver-xtreme'),
 		'options' => array(
-			'style-primary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Primary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
+			'style-primary-widget-heading' => weaverx_cz_group_title( __( 'Primary Widget Area', 'weaver-xtreme' )),
 
 			'primary_border'=> array(
 				'setting' => array(
@@ -675,14 +625,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 
 
-			'style-secondary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Secondary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
+			'style-secondary-widget-heading' => weaverx_cz_group_title( __( 'Secondary Widget Area', 'weaver-xtreme' )),
 
 			'secondary_border'=> array(
 				'setting' => array(
@@ -711,14 +654,8 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 
 
-			'style-top-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Top Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'style-top-widget-heading' => weaverx_cz_group_title( __( 'Top Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
 
 			'top_border'=> array(
 				'setting' => array(
@@ -745,14 +682,8 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 
 
-			'style-bottom-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Bottom Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'style-bottom-widget-heading' => weaverx_cz_group_title( __( 'Bottom Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
 
 			'bottom_border'=> array(
 				'setting' => array(
@@ -856,13 +787,8 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 		'panel'   => $panel,
 		'title'   => __( 'Footer Area', 'weaver-xtreme' ),
 		'options' => array(
-			'style-footer-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Footer Borders', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'style-footer-heading' => weaverx_cz_group_title( __( 'Footer Borders', 'weaver-xtreme' )),
+
 			'footer_border' => array(
 				'setting' => array(
 					'sanitize_callback' => 'absint',
@@ -896,13 +822,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			// SHADOW
 
-			'style-footer-shadow-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Footer Shadows', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'style-footer-shadow-heading' => weaverx_cz_group_title( __( 'Footer Shadows', 'weaver-xtreme' )),
 
 			'footer_shadow' => weaverx_cz_select(
 				__( 'Add shadow to Footer Area', 'weaver-xtreme' ),
@@ -926,13 +846,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			// ROUNDED
 
-			'style-footer-rounded-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Footer Rounded Corners', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'style-footer-rounded-heading' => weaverx_cz_group_title( __( 'Footer Rounded Corners', 'weaver-xtreme' )),
 
 			'footer_rounded' => weaverx_cz_select(
 				__( 'Add rounded corners to Footer Area', 'weaver-xtreme' ),

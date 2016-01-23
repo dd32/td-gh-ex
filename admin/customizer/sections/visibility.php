@@ -169,14 +169,8 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 			'viz-pm-line2' => weaverx_cz_line(),
 
-			'visibility-minim-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Header Mini Menu', 'weaver-xtreme' ),
-					'description' => __('You must define a Header Menu from the Custom Menus Content menu.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'visibility-minim-heading' => weaverx_cz_group_title( __( 'Header Mini Menu', 'weaver-xtreme' ),
+				__('You must define a Header Menu from the Custom Menus Content menu.', 'weaver-xtreme')),
 
 			'm_header_mini_hide' => weaverx_cz_select(
 				__( 'Hide Header Mini Menu', 'weaver-xtreme' ),
@@ -291,14 +285,8 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 		'title'   => __( 'Content', 'weaver-xtreme' ),
 		'description' => __('visibility for general page and post content.', 'weaver-xtreme'),
 		'options' => array(
-			'visibility-content-comments-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Comments', 'weaver-xtreme' ),
-					'description' => __('Visibility settings for Comments area.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'visibility-content-comments-heading' => weaverx_cz_group_title( __( 'Comments', 'weaver-xtreme' ),
+				__('Visibility settings for Comments area.', 'weaver-xtreme')),
 
 
 			'hide_old_comments' => array(
@@ -351,14 +339,8 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 				),
 			),
 
-			'visibility-content-comments-note' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Hiding/Enabling Page and Post Comments', 'weaver-xtreme' ),
-					'description' => __('Controlling "Reply/Leave a Comment" visibility for pages and posts is <strong>not</strong> a theme function. It is controlled by WordPress on the <em>Settings &rarr; Discussion</em> menu.', 'weaver-xtreme'),
-					'type'  => 'heading',
-				),
-			),
+			'visibility-content-comments-note' => weaverx_cz_heading( __( 'Hiding/Enabling Page and Post Comments', 'weaver-xtreme' ),
+				__('Controlling "Reply/Leave a Comment" visibility for pages and posts is <strong>not</strong> a theme function. It is controlled by WordPress on the <em>Settings &rarr; Discussion</em> menu.', 'weaver-xtreme')),
 
 		),
 	);
@@ -374,13 +356,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 
 
-			'visibility-posts-metax-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Post Meta Info Lines', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'visibility-posts-metax-heading' => weaverx_cz_group_title( __( 'Post Meta Info Lines', 'weaver-xtreme' )),
 
 			'post_info_hide_top' => weaverx_cz_checkbox_refresh(
 				__( 'Hide top post meta info line', 'weaver-xtreme' ),
@@ -408,14 +384,8 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 
 
-			'visibility-posts-note-meta-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'NOTE:', 'weaver-xtreme' ),
-					'description'   => __( 'Hiding any meta info item will force using Icons instead of text descriptions.', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'visibility-posts-note-meta-heading' => weaverx_cz_heading( __( 'NOTE:', 'weaver-xtreme' ),
+				__( 'Hiding any meta info item will force using Icons instead of text descriptions.', 'weaver-xtreme' )),
 
 			'post_hide_date' => weaverx_cz_checkbox_refresh(
 				__( 'Hide Post Date', 'weaver-xtreme' )
@@ -453,21 +423,9 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 			),
 
 
-			'visibility-posts-nav-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Post Navigation', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'visibility-posts-nav-heading' => weaverx_cz_group_title( __( 'Post Navigation', 'weaver-xtreme' )),
 
-			'visibility-posts-misc-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Other Post Visibility Options', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'visibility-posts-misc-heading' => weaverx_cz_group_title( __( 'Other Post Visibility Options', 'weaver-xtreme' )),
 
 			'hide_post_format_icon' => array(
 				'setting' => array(
@@ -505,14 +463,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 		'title'   => __( 'Sidebars &amp; Widget Areas', 'weaver-xtreme' ),
 		'description' => __('Main Sidebars and Widget areas. Header and Footer areas options under Header and Footer panels.', 'weaver-xtreme'),
 		'options' => array(
-			'visibility-primary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Primary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
+			'visibility-primary-widget-heading' => weaverx_cz_group_title( __( 'Primary Widget Area', 'weaver-xtreme' )),
 
 			'primary_hide' => weaverx_cz_select(
 				__( 'Hide Primary Widget Area', 'weaver-xtreme' ),
@@ -523,14 +474,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 
 
-			'visibility-secondary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Secondary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
+			'visibility-secondary-widget-heading' => weaverx_cz_group_title( __( 'Secondary Widget Area', 'weaver-xtreme' )),
 
 			'secondary_hide' => weaverx_cz_select(
 				__( 'Hide Secondary Widget Area', 'weaver-xtreme' ),
@@ -539,14 +483,8 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 			),
 
 
-			'visibility-top-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Top Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'visibility-top-widget-heading' => weaverx_cz_group_title( __( 'Top Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
 
 			'top_hide' => weaverx_cz_select(
 				__( 'Hide Top Widget Areas', 'weaver-xtreme' ),
@@ -557,14 +495,8 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 
 
-			'visibility-bottom-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Bottom Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'visibility-bottom-widget-heading' => weaverx_cz_group_title( __( 'Bottom Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
 
 			'bottom_hide' => weaverx_cz_select(
 				__( 'Hide Bottom Widget Areas', 'weaver-xtreme' ),

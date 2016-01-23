@@ -27,13 +27,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 		'panel'   => $panel,
 		'title'   => __( 'Header Area', 'weaver-xtreme' ),
 		'options' => array(
-			'layout-heading-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Header', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'layout-heading-header' => weaverx_cz_heading( __( 'Site Header', 'weaver-xtreme' )),
 
 			'header_sb_position'=> array(
 				'setting' => array(
@@ -72,15 +66,9 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				),
 			),
 
-			'layout-header-custom-widths' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Header Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					'description'   => __( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ),
-					'type'  => 'heading',
+			'layout-header-custom-widths' => weaverx_cz_heading( __( 'Header Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+				__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' )),
 
-				),
-			),
 			'_header_lw_cols_list' => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh',	'default' => '' ),
 				'control' => array(
@@ -151,13 +139,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 		'title'   => __( 'Menus', 'weaver-xtreme' ),
 		'description' => __( 'Set layout for Menus.', 'weaver-xtreme' ),
 		'options' => array(
-			'layout-primary-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Layout For Primary Menu', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'layout-primary-heading' => weaverx_cz_group_title( __( 'Layout For Primary Menu', 'weaver-xtreme' )),
 
 			'm_primary_move' => array(
 				'setting' => array(
@@ -171,13 +153,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				),
 			),
 
-			'layout-secondary-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Layout For Secondary', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'layout-secondary-heading' => weaverx_cz_group_title( __( 'Layout For Secondary', 'weaver-xtreme' )),
 
 			'm_secondary_move' => array(
 				'setting' => array(
@@ -192,14 +168,8 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 			),
 
 
-			'layout-allmenus-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Layout For All Menus', 'weaver-xtreme' ),
-					'description' => __('These options that apply to all menus.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'layout-allmenus-heading' => weaverx_cz_group_title( __( 'Layout For All Menus', 'weaver-xtreme' ),
+				__('These options that apply to all menus.', 'weaver-xtreme')),
 
 			'use_smartmenus' => array(
 				'setting' => array(
@@ -384,14 +354,9 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				)
 			),
 
-			'layout-post-excerpt' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Excerpts / Full Posts', 'weaver-xtreme' ),
-					'description' => __( 'How to display posts in Blog and Archive views.', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'layout-post-excerpt' => weaverx_cz_group_title( __( 'Excerpts / Full Posts', 'weaver-xtreme' ),
+				__( 'How to display posts in Blog and Archive views.', 'weaver-xtreme' )),
+
 			'fullpost_blog' => array(
 				'setting' => array(
 					'sanitize_callback' => 'absint',
@@ -441,14 +406,8 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 			),
 
 
-			'layout-post-nav' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Post Navigation', 'weaver-xtreme' ),
-					'description' => __( 'Navigation for moving between Posts.', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'layout-post-nav' => weaverx_cz_group_title( __( 'Post Navigation', 'weaver-xtreme' ),
+				__( 'Navigation for moving between Posts.', 'weaver-xtreme' )),
 
 			'nav_style' => weaverx_cz_select(
 				__( 'Blog Navigation Style', 'weaver-xtreme' ),
@@ -553,14 +512,8 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 		'title'   => __( 'Sidebars & Widget Areas', 'weaver-xtreme' ),
 		'description' => __('Main Sidebars and Widget areas. Header and Footer areas options under Header and Footer panels. Note: General Sidebar Layout for different page types is shown first. Layout options for specific Widget Areas (Primary, Secondary, Top, Bottom) are shown after that, so scroll down!', 'weaver-xtreme'),
 		'options' => array(
-			'layout-primary-all-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Sidebar Layout for Page Types', 'weaver-xtreme' ),
-					'description' => __( 'Sidebar Layout for each type of page ("stack top" used for mobile view).', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'layout-primary-all-heading' => weaverx_cz_group_title( __( 'Sidebar Layout for Page Types', 'weaver-xtreme' ),
+				__( 'Sidebar Layout for each type of page ("stack top" used for mobile view).', 'weaver-xtreme' )),
 
 			'layout_default' => weaverx_cz_select(
 				__( 'Blog, Post, Page Default', 'weaver-xtreme' ),
@@ -637,14 +590,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				)
 			),
 
-			'layout-primary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Primary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
+			'layout-primary-widget-heading' => weaverx_cz_group_title( __( 'Primary Widget Area', 'weaver-xtreme' )),
 
 			'primary_cols_int'     => array(
 				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 1
@@ -661,15 +607,9 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				),
 			),
 
-			'layout-primary-custom-widths' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					'description'   => __( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ),
-					'type'  => 'heading',
+			'layout-primary-custom-widths' => weaverx_cz_heading( __( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+				__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' )),
 
-				),
-			),
 			'_primary_lw_cols_list' => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh',	'default' => '' ),
 				'control' => array(
@@ -729,14 +669,8 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 
 
-			'layout-secondary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Secondary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
+			'layout-secondary-widget-heading' => weaverx_cz_group_title( __( 'Secondary Widget Area', 'weaver-xtreme' )),
+
 			'secondary_cols_int'     => array(
 				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 1
 				),
@@ -751,15 +685,9 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 					),
 				),
 			),
-			'layout-secondary-custom-widths' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					'description'   => __( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ),
-					'type'  => 'heading',
+			'layout-secondary-custom-widths' => weaverx_cz_heading( __( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+				__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' )),
 
-				),
-			),
 			'_secondary_lw_cols_list' => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh',	'default' => '' ),
 				'control' => array(
@@ -817,17 +745,8 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 
 
-
-
-
-			'layout-top-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Top Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'layout-top-widget-heading' => weaverx_cz_group_title( __( 'Top Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
 
 			'top_cols_int'     => array(
 				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 1
@@ -844,15 +763,9 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				),
 			),
 
-			'layout-top-custom-widths' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					'description'   => __( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ),
-					'type'  => 'heading',
+			'layout-top-custom-widths' => weaverx_cz_heading( __( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+				__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' )),
 
-				),
-			),
 			'_top_lw_cols_list' => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh',	'default' => '' ),
 				'control' => array(
@@ -908,14 +821,9 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 
 
-			'layout-bottom-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Bottom Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'layout-bottom-widget-heading' => weaverx_cz_group_title( __( 'Bottom Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
+
 			'bottom_cols_int'     => array(
 				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 1
 				),
@@ -931,15 +839,9 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				),
 			),
 
-			'layout-bottom-custom-widths' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					'description'   => __( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ),
-					'type'  => 'heading',
+			'layout-bottom-custom-widths' => weaverx_cz_heading( __( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+				__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' )),
 
-				),
-			),
 			'_bottom_lw_cols_list' => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh',	'default' => '' ),
 				'control' => array(
@@ -1034,15 +936,9 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				),
 			),
 
-			'layout-footer-custom-widths' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Footer Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					'description'   => __( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ),
-					'type'  => 'heading',
-
-				),
-			),
+			'layout-footer-custom-widths' => weaverx_cz_heading( __( 'Footer Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+				__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' )),
+			
 			'_footer_lw_cols_list' => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh',	'default' => '' ),
 				'control' => array(

@@ -111,15 +111,9 @@ If you have a theme using transparent backgrounds, this option will likely impro
 				),
 			),
 
-			'general_admin-roles' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Per Page and Per Post Option Panels by Roles', 'weaver-xtreme' ),
-					'description'   => __( 'Single site Administrator and Multi-Site Super Administrator will always have the Per Page and Per Post options panel displayed.
-You may selectively disable these options for other User Roles using the check boxes below.', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'general_admin-roles' => weaverx_cz_group_title( __( 'Per Page and Per Post Option Panels by Roles', 'weaver-xtreme' ),
+				__( 'Single site Administrator and Multi-Site Super Administrator will always have the Per Page and Per Post options panel displayed.
+You may selectively disable these options for other User Roles using the check boxes below.', 'weaver-xtreme' )),
 
 			'_hide_mu_admin_per' => weaverx_cz_checkbox(
 				__( 'Hide Per Page/Post Options for MultiSite Admins &diams;', 'weaver-xtreme' )
@@ -135,15 +129,9 @@ You may selectively disable these options for other User Roles using the check b
 			),
 
 
-			'general_admin-names' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Theme Name and Description', 'weaver-xtreme' ),
-					'description'   => __( 'You can change the name and description of your current settings if you would like to create a new theme
-theme file for sharing with others, or for you own identification.', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'general_admin-names' => weaverx_cz_group_title( __( 'Theme Name and Description', 'weaver-xtreme' ),
+				__( 'You can change the name and description of your current settings if you would like to create a new theme
+theme file for sharing with others, or for you own identification.', 'weaver-xtreme' )),
 
 			'themename' => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_head_code', 'transport' => 'refresh',	'default' => ''

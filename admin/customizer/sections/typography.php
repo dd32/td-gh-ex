@@ -148,7 +148,15 @@ function weaverx_customizer_define_typography_sections( $sections ) {
 				),
 			),
 
-			'typo-lang-intro' => weaverx_cz_group_title(__('Google Font Language Character Sets', 'weaver-xtreme'),
+			'typo-google-font-opts' => weaverx_cz_group_title(__('Integrated Google Fonts', 'weaver-xtreme'),
+				__('Weaver Xtreme integrates a selected set of Google Font families. You can disable them, or add differenet language support in this section.', 'weaver-xtreme')),
+
+			'disable_google_fonts' => weaverx_cz_checkbox_refresh(
+				__('Disable Google Font Integration', 'weaver-xtreme'),
+				__('<strong>ADVANCED OPTION!</strong> <em>Be sure you understand the consequences of this option.</em> By disabling Google Font Integration, the Google Fonts definitions will <strong>not</strong> be loaded for your site, and the options will not be displayed on Font Family options subsequently. <strong style="color:red;font-weight:bold;">Please note:</strong> Any previously selected Google Font Families will revert to generic serif, sans, mono, and script fonts. Google Font Families WILL be displayed in the Customizer options until you manually refresh the Customizer page.', 'weaver-xtreme')
+			),
+
+			'typo-lang-intro' => weaverx_cz_heading(__('Google Font Language Character Sets', 'weaver-xtreme'),
 				__('By default, integrated Google Fonts will include the <em>Latin Extended</em> character set. If you need a Crylic, Greek, Hebrew, or Vietnamese character set, these are currently supported by Google Fonts for <em>some</em> font families.
 Google Fonts not supported for these character sets, and character sets for most other world languages will be displayed
 using the default browser serif and sans fonts.', 'weaver-xtreme') ),
@@ -319,14 +327,9 @@ weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xt
 	$cur_page = array(
 		'typo-am-line1' => weaverx_cz_line(),
 
-		'typo-allmenus-heading' => array(
-			'control' => array(
-				'control_type' => 'WeaverX_Misc_Control',
-				'label'   => __( 'Typography For All Menus', 'weaver-xtreme' ),
-				'description' => __('These options specify current page attributes for all menus.', 'weaver-xtreme'),
-				'type'  => 'group-title',
-			),
-		),
+		'typo-allmenus-heading' => weaverx_cz_group_title( __( 'Typography For All Menus', 'weaver-xtreme' ),
+			__('These options specify current page attributes for all menus.', 'weaver-xtreme')),
+
 		'menubar_curpage_bold' => array(
 			'setting' => array(
 			),
@@ -520,133 +523,4 @@ endif;
 
 add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_typography_sections' );
 
-function weaverx_cz_add_fonts($root, $label = '', $description = '' , $transport = 'refresh', $bold = 'bold' ) {
-
-	$opt = array();
-
-
-	if ($root != 'm_primary')	// add a line except top
-		$opt[$root . '-headingline'] = weaverx_cz_line();
-
-	$glabel = $label;
-	if ($transport == 'refresh')
-		$glabel .= WEAVERX_REFRESH_ICON;
-
-	$opt[$root . '-font-hdrm'] = weaverx_cz_group_title($glabel, $description);
-
-	// Font Size
-	$opt[$root . '_font_size'] = weaverx_cz_select(
-		'',
-		'<strong>' . __('Select Font Size for ', 'weaver-xtreme') . $label . '</strong>',
-		'weaverx_cz_choices_font_size',	'', $transport
-	);
-
-
-
-	// Font Family
-	/* for future - add more fonts...
-	 *$opt[$root . '_font_family'] = array(
-		'setting' => array(	'transport' => 'refresh', 'default' => 'sans-serif'	),
-		'control' => array(
-			'control_type' => 'WeaverX_Misc_Control',
-			'label'   => __( 'Font Family', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-			'description'   => '',
-			'type'  => 'select-fontfamily',
-			'choices' => weaverx_cz_choices_font_family()
-		),
-	);
-	*/
-
-	$opt[$root . '_font_family'] = weaverx_cz_select(
-		'',
-		'<strong>' . __('Select Font Family for ', 'weaver-xtreme') . $label . '</strong>',
-		'weaverx_cz_choices_font_family',	'', $transport
-	);
-
-	// Bold / Normal
-
-	if ($root == 'tagline' || $root == 'content_h' || strpos($root, '_title') > 0) {
-		if ($transport == 'refresh') {
-			$opt[$root . '_normal'] =  weaverx_cz_checkbox_refresh(
-				__('Normal Weight for ', 'weaver-xtreme') . $label,
-				'' //'<strong>' . __('Normal Weight for ', 'weaver-xtreme') . $label . '</strong>'
-			);
-		} else {
-			$opt[$root . '_normal'] =  weaverx_cz_checkbox(
-				__('Normal Weight for ', 'weaver-xtreme') . $label,
-				''// '<strong>' . __('Normal Weight for ', 'weaver-xtreme') . $label . '</strong>'
-			);
-		}
-	} else {
-		$opt[$root . '_bold'] =  weaverx_cz_select(
-			'',
-			'<strong>' . __('Use Bold for ', 'weaver-xtreme') . $label . '</strong>',
-			'weaverx_cz_choices_bold_italic',	'', $transport
-		);
-	}
-
-		// Italic
-	$opt[$root . '_italic'] = weaverx_cz_select(
-		'',
-		'<strong>' . __('Use <em>Italic</em> for ', 'weaver-xtreme') . $label . '</strong>',
-		'weaverx_cz_choices_bold_italic',	'', $transport
-	);
-
-
-	return $opt;
-
-}
-
-function weaverx_cz_add_link_fonts($root, $label = '', $description = '' , $transport = 'postMessage' ) {
-
-	// called for: link, ibarlink, contentlink, ilink, wlink, footerlink
-
-	$opt = array();
-
-	$opt[$root . '-fontlink-hdm'] = weaverx_cz_group_title($label, $description);
-
-	/* $opt[$root . '-heading'] = array(
-		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
-		'label'   => $label,
-		'type'  => 'group-title'));
-
-	if ($description) {
-		$opt[$root . '-desc'] = array(
-		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
-		'description'   => $description,
-		'type'  => 'text'));
-	} */
-
-
-	// Bold
-	$opt[$root . '_strong'] =  weaverx_cz_select(
-		'',
-		'<strong>' . __('Use Bold for ', 'weaver-xtreme') . $label . '</strong>',
-		'weaverx_cz_choices_bold_italic',	'', $transport
-	);
-
-
-		// Italic
-	$opt[$root . '_em'] = weaverx_cz_select(
-		'',
-		'<strong>' . __('Use <em>Italic</em> for ', 'weaver-xtreme') . $label . '</strong>',
-		'weaverx_cz_choices_bold_italic',	'', $transport
-	);
-
-
-	// UNderline
-
-	$opt[$root . '_u'] = array(
-		'setting' => array(
-			'transport' => $transport
-		),
-		'control' => array(
-			'label' => __( 'Underline', 'weaver-xtreme' ),
-			'description' => '<strong>' . __('Use <u>Underline</u> for ', 'weaver-xtreme') . $label . '</strong>',
-			'type'  => 'checkbox',
-		),
-	);
-
-	return $opt;
-
-}
+?>

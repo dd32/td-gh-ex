@@ -15,7 +15,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 	/**
 	 * General
 	 */
-	$colorscheme_sections['color-wrapping'] = array(
+	$colorscheme_sections['color-wrapping'] = array(	// NOTE: this name needed to move WP Site Background color to here in load-customizer.php
 		'panel'   => $panel,
 		'title'   => __( 'Wrapping Areas', 'weaver-xtreme' ),
 		'description' => 'Set colors. Use Typography to set fonts.',
@@ -72,14 +72,8 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 			),
 
 
-			'color-border-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Border Color', 'weaver-xtreme' ),
-					'description' => __('Border Color option found on <em>Style &rarr; Wrapping Areas</em> panel.', 'weaver-xtreme'),
-					'type'  => 'heading',
-				),
-			),
+			'color-border-heading' => weaverx_cz_heading( __( 'Border Color', 'weaver-xtreme' ),
+				__('Border Color option found on <em>Style &rarr; Wrapping Areas</em> panel.', 'weaver-xtreme')),
 
 
 		),
@@ -255,13 +249,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 		'title'   => __( 'Menus', 'weaver-xtreme' ),
 		'description' => __( 'Set text, background, and hover colors for menus.', 'weaver-xtreme' ),
 		'options' => array(
-			'color-mm-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Primary Menu Colors', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'color-mm-heading' => weaverx_cz_group_title( __( 'Primary Menu Colors', 'weaver-xtreme' )),
 
 			'm_primary_color' => weaverx_cz_coloropt('m_primary_color',
 				__('Primary Menu Bar Text Color', 'weaver-xtreme'),
@@ -320,15 +308,8 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 
 
-
-			'color-sm-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Secondary Menu Colors', 'weaver-xtreme' ),
-					'description' => __('You must define a Secondary Menu from the Custom Menus Content menu.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'color-sm-heading' => weaverx_cz_group_title( __( 'Secondary Menu Colors', 'weaver-xtreme' ),
+				__('You must define a Secondary Menu from the Custom Menus Content menu.', 'weaver-xtreme')),
 
 			'm_secondary_color' => weaverx_cz_coloropt('m_secondary_color',
 				__('Secondary Menu Bar Text Color', 'weaver-xtreme'),
@@ -387,14 +368,8 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 
 
-			'color-minim-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Header Mini Menu Colors', 'weaver-xtreme' ),
-					'description' => __('You must define a Header Menu from the Custom Menus Content menu.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'color-minim-heading' => weaverx_cz_group_title( __( 'Header Mini Menu Colors', 'weaver-xtreme' ),
+				__('You must define a Header Menu from the Custom Menus Content menu.', 'weaver-xtreme')),
 
 			'm_header_mini_color' => weaverx_cz_coloropt('m_header_mini_color',
 				__('Header Mini Menu Text Color', 'weaver-xtreme') ),
@@ -407,14 +382,8 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				'', 'refresh'),
 
 
-			'color-allmenus-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Colors For All Menus', 'weaver-xtreme' ),
-					'description' => __('These options specify current page attributes for all menus.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'color-allmenus-heading' => weaverx_cz_group_title( __( 'Colors For All Menus', 'weaver-xtreme' ),
+				__('These options specify current page attributes for all menus.', 'weaver-xtreme')),
 
 			'menubar_curpage_color' => weaverx_cz_coloropt('menubar_curpage_color',
 				 __('Menus Current Page Text Color', 'weaver-xtreme') ),
@@ -438,13 +407,8 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 	if (weaverx_cz_is_plus()) {
 		$new_opts = array (
-			'color-xm-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Extra Menu Colors', 'weaver-xtreme' )  . WEAVERX_PLUS_ICON,
-					'type'  => 'group-title',
-				),
-			),
+			'color-xm-heading' => weaverx_cz_group_title( __( 'Extra Menu Colors', 'weaver-xtreme' )  . WEAVERX_PLUS_ICON),
+
 			'm_extra_color' => weaverx_cz_coloropt('m_extra_color',
 				__('Extra Menu Bar Text Color', 'weaver-xtreme'),
 				__('Text Color for Entire menu bar.', 'weaver-xtreme') ),
@@ -677,13 +641,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 		'title'   => __( 'Post Specific', 'weaver-xtreme' ),
 		'description' => __('Post Specific Colors - override Content colors.', 'weaver-xtreme'),
 		'options' => array(
-			'color-post-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Post Specific', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'color-post-heading' => weaverx_cz_heading( __( 'Post Specific', 'weaver-xtreme' )),
 
 			'post_color' => weaverx_cz_coloropt(
 				'post_color',
@@ -765,14 +723,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 		'description' => __('Main Sidebars and Widget areas. Header and Footer areas options under Header and Footer panels.', 'weaver-xtreme'),
 		'options' => array(
 
-			'color-primary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Primary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
+			'color-primary-widget-heading' => weaverx_cz_group_title( __( 'Primary Widget Area', 'weaver-xtreme' )),
 
 			'primary_color'   => array(
 				'setting' => array(
@@ -798,14 +749,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 			),
 
 
-			'color-secondary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Secondary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
+			'color-secondary-widget-heading' => weaverx_cz_group_title( __( 'Secondary Widget Area', 'weaver-xtreme' )),
 
 			'secondary_color'   => array(
 				'setting' => array(
@@ -832,15 +776,9 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 
 
+			'color-top-widget-heading' => weaverx_cz_group_title( __( 'Top Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
 
-			'color-top-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Top Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
 			'top_color'   => array(
 				'setting' => array(
 					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
@@ -865,14 +803,9 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 			),
 
 
-			'color-bottom-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Bottom Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'color-bottom-widget-heading' => weaverx_cz_group_title( __( 'Bottom Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
+
 			'bottom_color'   => array(
 				'setting' => array(
 					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,

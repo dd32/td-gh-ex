@@ -64,9 +64,9 @@ function weaverx_cz_customize_order($wp_customize) {
 	$wp_customize->get_panel( 'nav_menus' )->title 		= __( 'Custom Menus Content', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON;
 
 	// Move and rename Background Color control to Global section of Color panel
-	$wp_customize->get_control( 'background_color' )->section =  'weaverx_color-background';
+	$wp_customize->get_control( 'background_color' )->section =  'weaverx_color-wrapping';
 	$wp_customize->get_control( 'background_color' )->label = __( 'Site Background Color - WP Value', 'weaver-xtreme' );
-	$wp_customize->get_control( 'background_color' )->description = __('BG color from WP. Theme version below is the preferred value to use.', 'weaver-xtreme');
+	$wp_customize->get_control( 'background_color' )->description = __('WordPress default Site BG color. Weaver Xtreme Theme version option below is the preferred value to use.', 'weaver-xtreme');
 
 }
 

@@ -90,14 +90,9 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 			// ------- WRAPPER
 
-			'wrapper-space-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Global Wrapper Area', 'weaver-xtreme' ),
-					'description' => __('The Wrapper is the &lt;div&gt; that wraps entire site.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'wrapper-space-heading' => weaverx_cz_group_title( __( 'Global Wrapper Area', 'weaver-xtreme' ),
+				__('The Wrapper is the &lt;div&gt; that wraps entire site.', 'weaver-xtreme')),
+
 			'wrapper_padding_T'     => array(
 				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
@@ -186,14 +181,9 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 			// ------- CONTAINER
 
-			'container-space-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Container Area', 'weaver-xtreme' ),
-					'description' => __('The Container is the &lt;div&gt; that wraps the content. Does not include Header and Footer.', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'container-space-heading' => weaverx_cz_group_title(__( 'Container Area', 'weaver-xtreme' ),
+				__('The Container is the &lt;div&gt; that wraps the content. Does not include Header and Footer.', 'weaver-xtreme')),
+
 			'container_width_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => $container_width_transport, 'default' => 100	),
 				'control' => array(
@@ -332,14 +322,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 		'title'   => __( 'Header Area', 'weaver-xtreme' ),
 		'description'   => __( 'Set spacing for Header Area. Option groups include <span style="color:blue;">Site Header Area, Site Title and Tagline, Header Widget Area</span>, and <span style="color:blue;">Header HTML Area</span>.', 'weaver-xtreme' ),
 		'options' => array(
-		'spacing-heading-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Header Area', 'weaver-xtreme' ),
-					'description'   => __( 'Spacing of the whole Header Area', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+		'spacing-heading-header' => weaverx_cz_group_title( __( 'Site Header Area', 'weaver-xtreme' ),
+			__( 'Spacing of the whole Header Area', 'weaver-xtreme' )),
 
 		'header_width_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float',
@@ -465,14 +449,9 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 			// Title/tagline
 
-			'spacing-title-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Title and Tagline', 'weaver-xtreme' ),
-					'description'   => __( 'Spacing for the Site Title and Tagline', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'spacing-title-header' => weaverx_cz_group_title( __( 'Site Title and Tagline', 'weaver-xtreme' ),
+				__( 'Spacing for the Site Title and Tagline', 'weaver-xtreme' )),
+
 			'title_over_image'=> array(
 				'setting' => array(
 
@@ -485,14 +464,9 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 
-			'spacing-titleposition' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Title Position', 'weaver-xtreme' ),
-					'description'   => __( 'Adjust left and top margins for Title. Decimal and negative values allowed.', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'spacing-titleposition' => weaverx_cz_heading( __( 'Title Position', 'weaver-xtreme' ),
+				__( 'Adjust left and top margins for Title. Decimal and negative values allowed.', 'weaver-xtreme' )),
+
 			'site_title_position_xy_X'     => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage',	'default' => 7
 				),
@@ -591,14 +565,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 			// ------- Header Widget Area
 
-			'spacing-widgetarea-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Header Widget Area', 'weaver-xtreme' ),
-					'description'   => __( 'Spacing for the Header Widget Area', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'spacing-widgetarea-header' => weaverx_cz_group_title( __( 'Header Widget Area', 'weaver-xtreme' ),
+				__( 'Spacing for the Header Widget Area', 'weaver-xtreme' )),
 
 			'header_sb_width_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100	),
@@ -706,27 +674,15 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 
-			'spacing-heading-widgets' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Widget Area Columns', 'weaver-xtreme' ),
-					'description' => __('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme'),
-					'type'  => 'heading',
-				),
-			),
+			'spacing-heading-widgets' => weaverx_cz_heading( __( 'Widget Area Columns', 'weaver-xtreme' ),
+				__('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme')),
 
 
 
 			// ------- Header HTML Area
 
-			'spacing-htmltarea-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Header HTML Area', 'weaver-xtreme' ),
-					'description'   => __( 'Spacing for the Header HTML Area', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'spacing-htmltarea-header' => weaverx_cz_group_title( __( 'Header HTML Area', 'weaver-xtreme' ),
+				__( 'Spacing for the Header HTML Area', 'weaver-xtreme' )),
 
 			'header_html_width_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100	),
@@ -1170,14 +1126,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 		'title'   => __( 'Info Bar', 'weaver-xtreme' ),
 		'description' => __('Info Bar with breadcrumbs and paged navigation displayed under Primary Menu.', 'weaver-xtreme'),
 		'options' => array(
-		'spacing-info-bar-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Info Bar', 'weaver-xtreme' ),
-					'type'  => 'heading',
-
-				),
-			),
+		'spacing-info-bar-heading' => weaverx_cz_heading( __( 'Info Bar', 'weaver-xtreme' )),
 
 		'infobar_width_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100	),
@@ -1382,14 +1331,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 					),
 				),
 			),
-			'spacing-content-widthinfo' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Width', 'weaver-xtreme' ),
-					'description'   => __( 'The width of this area is automatically determined by the enclosing area.', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'spacing-content-widthinfo' => weaverx_cz_heading( __( 'Width', 'weaver-xtreme' ),
+				__( 'The width of this area is automatically determined by the enclosing area.', 'weaver-xtreme' )),
 
 			'content_smartmargin'=> array(
 				'setting' => array(
@@ -1531,14 +1474,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 
-			'spacing-post-widthinfo' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Width', 'weaver-xtreme' ),
-					'description'   => __( 'The width of this area is automatically determined by the enclosing area.', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'spacing-post-widthinfo' => weaverx_cz_heading( __( 'Width', 'weaver-xtreme' ),
+				__( 'The width of this area is automatically determined by the enclosing area.', 'weaver-xtreme' )),
 
 			'post_smartmargin'=> array(
 				'setting' => array(
@@ -1581,14 +1518,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 		'title'   => __( 'Sidebars / Widget Areas', 'weaver-xtreme' ),
 		'description' => __('Main Sidebars and Widget areas.', 'weaver-xtreme'),
 		'options' => array(
-			'spacing-sidbars-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Sidebar Widths', 'weaver-xtreme' ),
-					'description' => __( 'Width of the left and right vertical sidebars in the Container Area. Note that the width of the adjoining Content area is automatically determined by the sidebar layouts and widths.', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'spacing-sidbars-heading' => weaverx_cz_group_title( __( 'Sidebar Widths', 'weaver-xtreme' ),
+				__( 'Width of the left and right vertical sidebars in the Container Area. Note that the width of the adjoining Content area is automatically determined by the sidebar layouts and widths.', 'weaver-xtreme' )),
 
 		'left_sb_width_int'     => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 25
@@ -1649,14 +1580,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 
-			'spacing-primary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Primary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
+			'spacing-primary-widget-heading' => weaverx_cz_group_title( __( 'Primary Widget Area', 'weaver-xtreme' )),
+
 			'primary_padding_T'     => array(
 				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
@@ -1740,14 +1665,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 					),
 				),
 			),
-			'spacing-primary-widthinfo' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Width', 'weaver-xtreme' ),
-					'description'   => __( 'The width of this area is automatically determined by the enclosing area.', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'spacing-primary-widthinfo' => weaverx_cz_heading( __( 'Width', 'weaver-xtreme' ),
+				__( 'The width of this area is automatically determined by the enclosing area.', 'weaver-xtreme' )),
 
 			'primary_smartmargin'=> array(
 				'setting' => array(
@@ -1760,26 +1679,12 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 
-			'spacing-primary-widgets' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Widget Area Columns', 'weaver-xtreme' ),
-					'description' => __('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme'),
-					'type'  => 'heading',
-				),
-			),
+			'spacing-primary-widgets' => weaverx_cz_heading( __( 'Widget Area Columns', 'weaver-xtreme' ),
+				__('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme')),
 
 
+			'spacing-secondary-widget-heading' => weaverx_cz_group_title( __( 'Secondary Widget Area', 'weaver-xtreme' )),
 
-
-			'spacing-secondary-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Secondary Widget Area', 'weaver-xtreme' ),
-					'description' => '',
-					'type'  => 'group-title',
-				),
-			),
 			'secondary_padding_T'     => array(
 				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
@@ -1863,14 +1768,9 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 					),
 				),
 			),
-			'spacing-secondary-widthinfo' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Width', 'weaver-xtreme' ),
-					'description'   => __( 'The width of this area is automatically determined by the enclosing area.', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'spacing-secondary-widthinfo' => weaverx_cz_heading( __( 'Width', 'weaver-xtreme' ),
+				__( 'The width of this area is automatically determined by the enclosing area.', 'weaver-xtreme' )),
+
 			'secondary_smartmargin'=> array(
 				'setting' => array(
 				),
@@ -1882,26 +1782,15 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 
-			'spacing-secondary-widgets' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Widget Area Columns', 'weaver-xtreme' ),
-					'description' => __('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme'),
-					'type'  => 'heading',
-				),
-			),
+			'spacing-secondary-widgets' => weaverx_cz_heading( __( 'Widget Area Columns', 'weaver-xtreme' ),
+				__('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme')),
 
 
 
 
-			'spacing-top-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Top Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'spacing-top-widget-heading' => weaverx_cz_group_title( __( 'Top Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
+
 			'top_width_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100	),
 				'control' => array(
@@ -2008,24 +1897,13 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 
-			'spacing-top-widgets' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Widget Area Columns', 'weaver-xtreme' ),
-					'description' => __('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme'),
-					'type'  => 'heading',
-				),
-			),
+			'spacing-top-widgets' => weaverx_cz_heading( __( 'Widget Area Columns', 'weaver-xtreme' ),
+				__('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme')),
 
 
-			'spacing-bottom-widget-heading' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Bottom Widget Areas', 'weaver-xtreme' ),
-					'description' => __('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
+			'spacing-bottom-widget-heading' => weaverx_cz_group_title( __( 'Bottom Widget Areas', 'weaver-xtreme' ),
+				__('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
+
 			'bottom_width_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100	),
 				'control' => array(
@@ -2134,14 +2012,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 
 
-			'spacing-bottom-widgets' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Widget Area Columns', 'weaver-xtreme' ),
-					'description' => __('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme'),
-					'type'  => 'heading',
-				),
-			),
+			'spacing-bottom-widgets' => weaverx_cz_heading( __( 'Widget Area Columns', 'weaver-xtreme' ),
+				__('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme')),
 
 
 	));
@@ -2256,14 +2128,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 		'title'   => __( 'Footer Area', 'weaver-xtreme' ),
 		'description'   => __( 'Set spacing for Footer Area. Option groups include <span style="color:blue;">Site Footer Area, Site Title and Tagline, Footer Widget Area</span>, and <span style="color:blue;">Footer HTML Area</span>.', 'weaver-xtreme' ),
 		'options' => array(
-			'spacing-heading-footer' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Footer Area', 'weaver-xtreme' ),
-					'description'   => __( 'Spacing of the whole Footer Area', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'spacing-heading-footer' => weaverx_cz_group_title( __( 'Site Footer Area', 'weaver-xtreme' ),
+				__( 'Spacing of the whole Footer Area', 'weaver-xtreme' )),
 
 		'footer_width_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => $foot_width_transport, 'default' => 100	),
@@ -2388,14 +2254,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 			// ------- Footer Widget Area
 
-			'spacing-widgetarea-footer' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Footer Widget Area', 'weaver-xtreme' ),
-					'description'   => __( 'Spacing for the Footer Widget Area', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'spacing-widgetarea-footer' => weaverx_cz_group_title( __( 'Footer Widget Area', 'weaver-xtreme' ),
+				__( 'Spacing for the Footer Widget Area', 'weaver-xtreme' )),
 
 			'footer_sb_width_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100	),
@@ -2504,26 +2364,14 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 
-			'spacing-footer-widgets' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Widget Area Columns', 'weaver-xtreme' ),
-					'description' => __('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme'),
-					'type'  => 'heading',
-				),
-			),
+			'spacing-footer-widgets' => weaverx_cz_heading( __( 'Widget Area Columns', 'weaver-xtreme' ),
+				__('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme')),
 
 
 			// ------- Footer HTML Area
 
-			'spacing-htmltarea-footer' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Footer HTML Area', 'weaver-xtreme' ),
-					'description'   => __( 'Spacing for the Footer HTML Area', 'weaver-xtreme' ),
-					'type'  => 'group-title',
-				),
-			),
+			'spacing-htmltarea-footer' => weaverx_cz_group_title( __( 'Footer HTML Area', 'weaver-xtreme' ),
+				__( 'Spacing for the Footer HTML Area', 'weaver-xtreme' )),
 
 			'footer_html_width_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100	),
@@ -2649,23 +2497,11 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 		'description' => __('Weaver Xtreme features several options specifically designed to create exciting full width site designs. Although one could logically place these options in other panels, putting most of them all here is easier. The overall site width is still on the <em>Spacing &rarr; Global Spacing<em> panel. <strong>You likely want to change the default site width.</strong> Using the options available here, the strategy is to confine you content to a reasonable width, perhaps 1600 or 1900. Then you can extend attribute to the full screen width without making your content area too wide. You can also get interesting effects by adjusting the widths of each of these sections on the <em>Spacing</em> panel. Just play with these options to see how they all work together! And remember, your site will always automatically adjust to mobile devices.', 'weaver-xtreme'),
 		'options' => array(
 
-			'general-full-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Header Area', 'weaver-xtreme' ),
-					'description' => __('The Header Area contains the Menus, the Header Widget Area, the Site Image, and the Header HTML Area.',
-						'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
-			'general-full-header-width' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Header Area Width', 'weaver-xtreme' ),
-					'description' => __('You might want to adjust the Header Area width and alignment on the <em>Spacing &rarr; Site Header Spacing</em> panel.', 'weaver-xtreme'),
-					'type'  => 'heading',
-				),
-			),
+			'general-full-header' => weaverx_cz_group_title( __( 'Site Header Area', 'weaver-xtreme' ),
+				__('The Header Area contains the Menus, the Header Widget Area, the Site Image, and the Header HTML Area.',	'weaver-xtreme')),
+
+			'general-full-header-width' => weaverx_cz_heading( __( 'Header Area Width', 'weaver-xtreme' ),
+				__('You might want to adjust the Header Area width and alignment on the <em>Spacing &rarr; Site Header Spacing</em> panel.', 'weaver-xtreme')),
 
 			'general-full-line-1' => array(	'control' => array(	'control_type' => 'WeaverX_Misc_Control', 'type'  => 'line' )),
 
@@ -2679,11 +2515,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 
-			'general-full-header-or-' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( '** OR **', 'weaver-xtreme' ),
-					'type'  => 'heading')),
+			'general-full-header-or-' => weaverx_cz_heading( __( '** OR **', 'weaver-xtreme' )),
 
 			'header_extend_bgcolor'   => array(
 				'setting' => array(
@@ -2710,13 +2542,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 					'type'  => 'checkbox',
 				),
 			),
-			'general-full-header-or-2' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( '** OR **', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'general-full-header-or-2' => weaverx_cz_heading( __( '** OR **', 'weaver-xtreme' )),
+
 			'm_primary_extend_bgcolor'   => array(
 				'setting' => array(
 					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
@@ -2739,13 +2566,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 					'type'  => 'checkbox',
 				),
 			),
-			'general-full-header-or-2a' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( '** OR **', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'general-full-header-or-2a' => weaverx_cz_heading( __( '** OR **', 'weaver-xtreme' )),
+
 			'm_secondary_extend_bgcolor'   => array(
 				'setting' => array(
 					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
@@ -2760,23 +2582,11 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 			'general-full-line-4' => array(	'control' => array(	'control_type' => 'WeaverX_Misc_Control', 'type'  => 'line' )),
 
-			'general-full-container' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Container Area', 'weaver-xtreme' ),
-					'description' => __('The Container Area contains the main content area, plus the primary, secondary, top, and bottom widget areas.',
-						'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
-			'general-full-containerx-width' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Container Area Width', 'weaver-xtreme' ),
-					'description' => __('You might want to adjust the Container Area width and alignment on the <em>Spacing &rarr; Wrapping Areas</em> panel.', 'weaver-xtreme'),
-					'type'  => 'heading',
-				),
-			),
+			'general-full-container' => weaverx_cz_group_title( __( 'Site Container Area', 'weaver-xtreme' ),
+				__('The Container Area contains the main content area, plus the primary, secondary, top, and bottom widget areas.',	'weaver-xtreme')),
+
+			'general-full-containerx-width' => weaverx_cz_heading( __( 'Container Area Width', 'weaver-xtreme' ),
+				__('You might want to adjust the Container Area width and alignment on the <em>Spacing &rarr; Wrapping Areas</em> panel.', 'weaver-xtreme')),
 
 			'container_extend_width'=> array(
 				'setting' => array(
@@ -2787,13 +2597,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 					'type'  => 'checkbox',
 				),
 			),
-			'general-full-header-or-3' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( '** OR **', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'general-full-header-or-3' => weaverx_cz_heading( __( '** OR **', 'weaver-xtreme' )),
+
 			'container_extend_bgcolor'   => array(
 				'setting' => array(
 					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
@@ -2810,23 +2615,11 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 
 
-			'general-full-footer' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Site Footer Area', 'weaver-xtreme' ),
-					'description' => __('The Footer Area contains the Footer Widget Area, the Footer HTML Area, the copyright line.',
-						'weaver-xtreme'),
-					'type'  => 'group-title',
-				),
-			),
-			'general-full-footerx-width' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Footer Area Width', 'weaver-xtreme' ),
-					'description' => __('You might want to adjust the Footer Area width and alignment on the <em>Spacing &rarr; Footer Area Spacing</em> panel.', 'weaver-xtreme'),
-					'type'  => 'heading',
-				),
-			),
+			'general-full-footer' => weaverx_cz_group_title( __( 'Site Footer Area', 'weaver-xtreme' ),
+				__('The Footer Area contains the Footer Widget Area, the Footer HTML Area, the copyright line.', 'weaver-xtreme')),
+
+			'general-full-footerx-width' => weaverx_cz_heading( __( 'Footer Area Width', 'weaver-xtreme' ),
+				__('You might want to adjust the Footer Area width and alignment on the <em>Spacing &rarr; Footer Area Spacing</em> panel.', 'weaver-xtreme')),
 
 			'footer_extend_width'=> array(
 				'setting' => array(
@@ -2837,13 +2630,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 					'type'  => 'checkbox',
 				),
 			),
-			'general-full-header-or-4' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( '** OR **', 'weaver-xtreme' ),
-					'type'  => 'heading',
-				),
-			),
+			'general-full-header-or-4' => weaverx_cz_heading(  __( '** OR **', 'weaver-xtreme' )),
+			
 			'footer_extend_bgcolor'   => array(
 				'setting' => array(
 					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
