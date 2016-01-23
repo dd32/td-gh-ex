@@ -31,6 +31,9 @@ function theme_data_setup()
 			'home_custom_image' => $slide_image_uri,								
 			'home_image_title' => __('Theme Feature Goes Here!','rambo'),
 			'home_image_description' => __('Rambo makes content easy to view on any device with any resolution. You may check this with resizing. Fully Responsive Theme Amazing Design.','rambo'),	
+			'read_more_text' => __('Read more','rambo'),
+			'read_more_button_link' => '#',
+			'read_more_link_target' => true,
 			
 			// service
 			'home_service_enabled'=>true,

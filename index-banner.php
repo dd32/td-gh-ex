@@ -19,6 +19,8 @@
       <div class="banner_con">
         <h2><?php if(isset($current_options['home_image_title']))	{ echo $current_options['home_image_title']; } else { _e('Theme Feature Goes Here !','rambo'); } ?></h2>
         <h5 class="banner-title"><span><?php if(isset($current_options['home_image_description']))	{ echo $current_options['home_image_description']; } else { _e('This is Dummy Text. This is Dummy Text. This is Dummy Text.  I repeat.. This is Dummy Text.','rambo'); } ?></span></h5>
+		<?php } if($current_options['read_more_text'] != '') { ?>
+		<a href="<?php echo $current_options['read_more_button_link']; ?>" <?php if( $current_options['read_more_link_target'] == 1 ) { echo "target='_blank'"; } ?> class="flex_btn"><?php echo $current_options['read_more_text']; ?></a>
       </div>
     </li>
   </div>

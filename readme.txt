@@ -136,9 +136,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
-
+@version 1.4.2
+1. Add Read More Button.
+2. Update Pot File.
 @version 1.4.1
-corrected description
+1. corrected styling description.
 @version 1.4
 1. Added Customizer Setting.
 @version 1.3.3

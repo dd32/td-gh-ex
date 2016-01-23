@@ -44,6 +44,7 @@ class rambo_Customize_footer_callout_upgrade extends WP_Customize_Control {
         array(
             'title' => __('Slider Setting','rambo'),
             'description' => '',
+			'priority'   => 50,
 			'panel'  => 'home_page_setting',)
     );
 	
@@ -113,7 +114,57 @@ class rambo_Customize_footer_callout_upgrade extends WP_Customize_Control {
 		'type' => 'textarea',
     ));
 	
-	
+	$wp_customize ->add_setting (
+	'rambo_theme_options[read_more_text]',
+	array( 
+	'default' => __('Read More','rambo'),
+	'capability'     => 'edit_theme_options',
+	'sanitize_callback' => 'sanitize_text_field',
+	'type' => 'option',
+	) 
+	);
+
+	$wp_customize->add_control (
+	'rambo_theme_options[read_more_text]',
+	array (  
+	'label' => __('Read More Button text','rambo'),
+	'section' => 'slider_section_settings',
+	'type' => 'text',
+	) );
+
+	$wp_customize ->add_setting (
+	'rambo_theme_options[read_more_button_link]',
+	array( 
+	'default' => __('#','rambo'),
+	'capability'     => 'edit_theme_options',
+	'sanitize_callback' => 'sanitize_text_field',
+	'type'=> 'option',
+	) );
+
+	$wp_customize->add_control (
+	'rambo_theme_options[read_more_button_link]',
+	array (  
+	'label' => __('Read More Button Link','rambo'),
+	'section' => 'slider_section_settings',
+	'type' => 'text',
+	) );
+
+	$wp_customize->add_setting(
+		'rambo_theme_options[read_more_link_target]',
+		array('capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+		'default' => true,
+		));
+
+	$wp_customize->add_control(
+		'rambo_theme_options[read_more_link_target]',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Open link new tab/window','rambo'),
+			'section' => 'slider_section_settings',
+		)
+	);
 	
 	$wp_customize->add_setting( 'rambo_theme_options[cleint_upgrade]', array(
 		'default'				=> false,
@@ -244,6 +295,7 @@ $wp_customize->add_control( new WP_slider_Customize_Control( $wp_customize, 'sli
 $wp_customize->add_section( 'site_intro' , array(
 		'title'      => __('Site Intro ', 'rambo'),
 		'panel'  => 'home_page_setting',
+		'priority'   => 100,
    	) );
 	
 $wp_customize->add_setting( 'rambo_theme_options[site_intro_upgrade]', array(
@@ -340,6 +392,7 @@ $wp_customize->add_setting( 'rambo_theme_options[site_intro_upgrade]', array(
 $wp_customize->add_section( 'service_section_head' , array(
 		'title'      => __('Service Setting ', 'rambo'),
 		'panel'  => 'home_page_setting',
+		'priority'   => 150,
    	) );
 	
 
@@ -533,7 +586,7 @@ $wp_customize->add_setting(
 	$wp_customize->add_setting(
     'rambo_theme_options[home_service_fourth_title]',
     array(
-        'default' => __('Service Three','rambo'),
+        'default' => __('Service Four','rambo'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
@@ -604,6 +657,7 @@ $wp_customize->add_section(
         array(
             'title' => __('Project Setting','rambo'),
             'description' => '',
+			'priority'   => 200,
 			'panel'  => 'home_page_setting',)
     );
 
@@ -872,6 +926,7 @@ $wp_customize->add_control( new WP_project_Customize_Control( $wp_customize, 'pr
         array(
             'title' => __('Recent News Setting','rambo'),
             'description' => '',
+			'priority'   => 250,
 			'panel'  => 'home_page_setting',)
     );
 $wp_customize->add_setting( 'rambo_theme_options[news_upgrade]', array(
@@ -930,6 +985,7 @@ $wp_customize->add_section(
         array(
             'title' => __('Footer Call Out Area Setting','rambo'),
             'description' => '',
+			'priority'   => 300,
 			'panel'  => 'home_page_setting',)
     );
 
@@ -1072,6 +1128,7 @@ $wp_customize->add_setting( 'rambo_theme_options[footer_upgrade]', array(
         array(
             'title' => __('Footer Copyright Custmization ','rambo'),
             'description' => '',
+			'priority'   => 350,
 			'panel'  => 'home_page_setting',)
     );
 	
