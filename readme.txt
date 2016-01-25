@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1015 Bruce E Wampler
 Requires at least: 4.2
 Tested up to: 4.4
-Stable tag: 2.0.4
+Stable tag: 2.0.7
 
 == Description ==
 
@@ -235,3 +235,6 @@ with testing and feature suggestions.
 * New: Disable Google Fonts (Advanced Option)
 * Fix: Caption color, image border updates in Customizer
 * Fix: Default WP Site BG Color now shows in Customizer
+
+= Version 2.0.7 =
+* Versioning issue with WP.org upload
