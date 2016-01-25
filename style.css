@@ -4,7 +4,7 @@
     Author:       AccessPress Theme
     Author URI:   http://accesspressthemes.com/
     Description:  AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-    Version:      2.2.5
+    Version:      2.2.6
     License:      GNU General Public License v3 or later
     License URI:  http://www.gnu.org/licenses/gpl-3.0.html
     Text Domain:  accesspress-mag
@@ -2727,8 +2727,55 @@ Galleries
 }
 
 /*RLT support*/ 
-.rtl .bread-you {
+.rtl .bread-you, .rtl #site-navigation .nav-wrapper, .rtl #site-navigation ul li, 
+.rtl .bottompost-wrapper .post-image, 
+.rtl .second-block-wrapper .rightposts-wrapper .post-image, 
+.rtl .random-posts-wrapper .post-img, 
+.rtl .sidebar-posts-wrapper .post-image, 
+.rtl .review-posts-wrapper .single-review .post-image, 
+.rtl .latest-single-post .post-img,
+.rtl #top-navigation, .rtl #top-navigation .menu li, 
+.rtl .bottom-footer .site-info, .rtl .bottom-footer .ak-info,
+.rtl .site-branding {
     float: right;
+}
+.rtl .search-icon, .rtl .random-post, .rtl #top-right-navigation, .rtl #top-right-navigation .menu li,
+.rtl .subfooter-menu, .rtl .header-ad {
+    float: left;
+}
+.rtl .bottompost-wrapper .post-image, 
+.rtl .second-block-wrapper .rightposts-wrapper .post-image, 
+.rtl .random-posts-wrapper .post-img, 
+.rtl .sidebar-posts-wrapper .post-image, 
+.rtl .review-posts-wrapper .single-review .post-image, 
+.rtl .latest-single-post .post-img {
+    margin-right: 0;
+    margin-left: 4%;
+}
+.rtl #footer-navigation ul li:last-child a {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.rtl .bottom-footer .ak-info {
+    margin-left: 0px;
+    margin-right: 5px;
+}
+.rtl #top-navigation .menu li a, .rtl #top-right-navigation .menu li a {
+    border-right: 1px solid #ffffff;
+}
+.rtl #top-navigation .menu > li:first-child > a, .rtl #top-right-navigation .menu > li:first-child > a {
+    padding-right: 0;
+    border-right: none;
+    padding-left: 15px;
+}
+.rtl .current-date {
+    float: right;
+    margin-right: 0;
+    margin-left: 30px;
+}
+.rtl #site-navigation ul.menu > li:first-child {
+    padding-right: 0;
 }
 .rtl .bread-you:after {
     left: -4px;
@@ -2736,7 +2783,6 @@ Galleries
     right: inherit ;
     border-left: none ;
 }
-
 .rtl .widget_archive ul li:after,
 .rtl .widget_recent_entries ul li:after,
 .rtl .widget_categories ul li:after,
@@ -2747,7 +2793,11 @@ Galleries
     top: 0;
     font-family: "FontAwesome";
 }
-.rtl .widget_recent_entries ul li:before{
+.rtl .widget_recent_entries ul li:before,
+.rtl .widget_recent_comments ul li:before,
+.rtl .widget_archive ul li:before,
+.rtl .widget_categories ul li:before,
+.rtl .widget_meta ul li:before {
     content: none;
 }
 .rtl .widget_recent_entries ul li:after{
@@ -2756,30 +2806,18 @@ Galleries
 .rtl .widget ul li a {
     margin-right: 26px;
 }
-.rtl .widget_recent_comments ul li:before{
-    content: none;
-}
 .rtl .widget_recent_comments ul li:after{
     content: "\f086";
 }
-.rtl .widget_archive ul li:before {
-    content: none;
-}
 .rtl .widget_archive ul li:after {
     content: "\f187";
-}
-.rtl .widget_categories ul li:before{
-    content: none;
 }
 .rtl .widget_categories ul li:after{
     content: "\f07b";
 }
 .rtl .widget.widget_categories ul li a {
-    float: right;
+    
     margin-left: 10px;
-}
-.rtl .widget_meta ul li:before{
-    content: none;
 }
 .rtl .widget_meta ul li:after{
     content: "\f104";
@@ -2788,7 +2826,28 @@ Galleries
     left: 10px;
     top: 5px;
 }
-
+.rtl .widget.widget_categories ul li > ul{
+    margin: 0 15px 0 0;
+}
 .rtl .widget ul li.recentcomments {
     padding: 5px 30px 5px 35px;
+}
+.rtl .entry-meta .comment_count {
+    float: left;
+    margin-right: 15px;
+    margin-left: 0;
+}
+.rtl .entry-meta .comment_count i {
+    margin-right: 0;
+    margin-left: 7px;
+}
+.rtl .entry-meta .post-categories li {
+    margin-right: 0;
+    margin-left: 5px;
+}
+.rtl .nav-links .nav-previous {
+    text-align: left;
+}
+.rtl .link-caption {
+    direction: ltr;
 }

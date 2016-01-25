@@ -98,7 +98,7 @@ add_action( 'after_setup_theme', 'accesspress_mag_setup' );
  * Enqueue scripts and styles.
  */
 function accesspress_mag_scripts() {
-	if ( of_get_option( 'news_ticker_option', '1' ) == 1 ) {        
+	if ( of_get_option( 'news_ticker_option', '1' ) == 1 ) {
       wp_enqueue_style( 'ticker-style', get_template_directory_uri() . '/js/news-ticker/ticker-style.css' );
       
       wp_enqueue_script( 'news-ticker', get_template_directory_uri() . '/js/news-ticker/jquery.ticker.js', array( 'jquery' ), '1.0.0', true );

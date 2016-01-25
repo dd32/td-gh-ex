@@ -70,6 +70,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.2.6
+ * Fixed some layout design for RTL support
+ 
 Version 2.2.5
  * Updated woocommerce template
  * Refine and removed unused/comment codes

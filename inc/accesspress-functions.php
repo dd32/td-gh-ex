@@ -292,7 +292,7 @@ function accesspress_mag_function_script(){
                 feedType: 'xml',
                 displayType: 'reveal',
                 htmlFeed: true,
-                debugMode: true,    
+                debugMode: true,
                 fadeInSpeed: 600,
                 //displayType: 'fade',
                 pauseOnItems: 4000,

@@ -66,7 +66,7 @@ $page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout',
                         $editor_query->the_post();
                         $editor_image_id = get_post_thumbnail_id();
                         $editor_big_image_path = wp_get_attachment_image_src( $editor_image_id, 'accesspress-mag-block-big-thumb', true );
-                        $editor_small_image_path = wp_get_attachment_image_src( $editor_image_id, 'accesspres-mag-block-small-thumb', true );
+                        $editor_small_image_path = wp_get_attachment_image_src( $editor_image_id, 'accesspress-mag-block-small-thumb', true );
                         $editor_image_alt = get_post_meta( $editor_image_id, '_wp_attachment_image_alt', true );
             ?>
                 <div class="single_post clearfix <?php if( $e_counter == 1 ){ echo 'first-post non-zoomin'; }?>">

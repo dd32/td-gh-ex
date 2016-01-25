@@ -548,3 +548,48 @@
 		-moz-box-sizing:border-box;
 	}
 }
+
+/* For RTL Support */ 
+.rtl .apmag-themeoption .accesspress-mag-logo,
+.rtl .apmag-themeoption .nav-tab-wrapper, 
+.rtl .apmag-themeoption .heading-arrow,
+.rtl .apmag-themeoption .section h4.heading,
+.rtl .apmag-themeoption #optionsframework .section .explain,
+.rtl #optionsframework .section-radio label, #optionsframework .section-multicheck label,
+.rtl #optionsframework .controls .of-typography,
+.rtl .switch_options span,
+.rtl #optionsframework .controls .of-radio-img-img,
+.rtl #optionsframework .screenshot,
+.rtl #optionsframework .reset-button,
+.rtl .apmag-themeoption .metabox-holder {
+	float: right;
+}
+.rtl .apmag-themeoption .ak-socials,
+.rtl .apmag-themeoption .heading-arrow,
+.rtl #optionsframework .button-primary {
+	float: left;
+}
+.rtl .fa-angle-right:before {
+    content: "\f104" !important;
+}
+.rtl .apmag-themeoption .heading-arrow {
+	margin-left: 10px;
+}
+.rtl #optionsframework input.checkbox, #optionsframework input.of-radio {
+	margin: 0 0 5px 10px;
+	float: right;
+}
+.rtl #optionsframework .controls .of-typography-size, .rtl #optionsframework .controls .of-typography-style {
+	margin-left: 5px;
+	margin-right: 0px;
+}
+.rtl .switch_options span:first-of-type {
+    border-radius: 0 2px 2px 0;
+    border-left: 0;
+    border-right: 1px solid #aaa;
+}
+.rtl .switch_options span:last-of-type {
+    border-radius: 2px 0 0 2px;
+    border-right: 0;
+    border-left: 1px solid #aaa;
+}
