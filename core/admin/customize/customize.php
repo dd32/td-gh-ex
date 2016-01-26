@@ -6,6 +6,20 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 		
 		$theme_panel = array ( 
 
+			/* START SUPPORT SECTION */ 
+
+			array(
+			
+				"title" => __( "Get support","alhenalite"),
+				"id" => "alhenalite-customize-info",
+				"type" => "alhenalite-customize-info",
+				"section" => "alhenalite-customize-info",
+				"priority" => "09",
+
+			),
+
+			/* START BACKGROUND SECTION */ 
+
 			array(
 				
 				"label" => __( "Full Image Background","alhenalite"),
