@@ -133,17 +133,22 @@ if (!function_exists('alhenalite_require')) {
 	
 			if ( ( !alhenalite_setting('wip_loadsystem') ) || ( alhenalite_setting('wip_loadsystem') == "mode_a" ) ) {
 		
-				$folder = dirname(dirname(__FILE__)) . $folder ;  
+				$dir = dirname(dirname(__FILE__)) . $folder ;  
 				
-				$files = scandir($folder);  
+				$files = scandir($dir);  
 				  
-				foreach ($files as $key => $name) {  
-				
-					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
-					
-						require_once $folder . $name;
+				foreach ($files as $key => $value) {  
+
+					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
+						
+						if ( !is_dir( $dir . $value) ) { 
+							
+							require_once $dir . $value;
+						
+						} 
 					
 					} 
+
 				}  
 			
 			} else if ( alhenalite_setting('wip_loadsystem') == "mode_b" ) {
@@ -182,15 +187,20 @@ if (!function_exists('alhenalite_enqueue_script')) {
 				
 				$files = scandir($dir);  
 				  
-				foreach ($files as $key => $name) {  
+				foreach ($files as $key => $value) {  
 
-					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
+					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
 						
-						wp_enqueue_script( str_replace('.js','',$name), get_template_directory_uri() . $folder . "/" . $name , array('jquery'), FALSE, TRUE ); 
+						if ( !is_dir( $dir . $value) ) { 
+							
+							wp_enqueue_script( str_replace('.js','',$value), get_template_directory_uri() . $folder . "/" . $value , array('jquery'), FALSE, TRUE ); 
 						
+						} 
+					
 					} 
+
 				}  
-			
+
 			} else if ( alhenalite_setting('wip_loadsystem') == "mode_b" ) {
 	
 				$dh  = opendir(get_template_directory().$folder);
@@ -229,15 +239,19 @@ if (!function_exists('alhenalite_enqueue_style')) {
 				
 				$files = scandir($dir);  
 				  
-				foreach ($files as $key => $name) {  
+				foreach ($files as $key => $value) {  
+
+					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
+						
+						if ( !is_dir( $dir . $value) ) { 
+							
+							wp_enqueue_style( str_replace('.css','',$value), get_template_directory_uri() . $folder . "/" . $value ); 
+						
+						} 
 					
-					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
-						
-						wp_enqueue_style( str_replace('.css','',$name), get_template_directory_uri() . $folder . "/" . $name ); 
-						
 					} 
+
 				}  
-			
 			
 			} else if ( alhenalite_setting('wip_loadsystem') == "mode_b" ) {
 	
