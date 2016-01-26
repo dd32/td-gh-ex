@@ -32,6 +32,9 @@ released
 3. Fix issue --> You shouldn't be calling your own version of jQuery in scripts.php in the core-functions folder. You're required to use core-bundled scripts.
 4. Fix issue --> Remove all unnecessary contents from Tags in style.css file.
 
+@Version: 1.5
+1.Remove JQuery Own version form script.php on line no. 19.
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL

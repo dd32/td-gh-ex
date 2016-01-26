@@ -16,7 +16,7 @@ function asiathemes_scripts()
 	wp_enqueue_style('becorp-font-awesome-4.4.0',ASIATHEMES_TEMPLATE_DIR_URI . '/css/font-awesome-4.4.0/css/font-awesome.css');
 
 	/*------Js-------------*/
-	wp_enqueue_script('becorp-jquery', ASIATHEMES_TEMPLATE_DIR_URI .'/js/jquery.js');
+	wp_enqueue_script('jquery');
 	wp_enqueue_script('becorp-bootstrap', ASIATHEMES_TEMPLATE_DIR_URI .'/js/bootstrap.js');
 	wp_enqueue_script('becorp-carousel', ASIATHEMES_TEMPLATE_DIR_URI .'/js/carousel.js');
 	wp_enqueue_script('becorp-lightbox', ASIATHEMES_TEMPLATE_DIR_URI .'/js/lightbox/lightbox.js');
