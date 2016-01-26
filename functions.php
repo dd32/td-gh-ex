@@ -94,17 +94,12 @@ function appointment_add_to_author_profile( $contactmethods ) {
 		$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','appointment');
 		$contactmethods['google_profile'] = __('Google Profile URL','appointment');
 		return $contactmethods;
-	}
-add_filter( 'user_contactmethods', 'appointment_add_to_author_profile', 10, 1);
+		}
+		add_filter( 'user_contactmethods', 'appointment_add_to_author_profile', 10, 1);
 	
-	function appointment_excerpt_length($length ) {
-	        return 25;
-	        }
-	        add_filter( 'excerpt_length', 'appointment_excerpt_length', 999 );
-	       
-	        add_filter('get_the_excerpt','appointment_post_slider_excerpt');
-	        add_filter('excerpt_more','__return_false');
-        function appointment_post_slider_excerpt($output){
+	
+	    add_filter('get_the_excerpt','appointment_post_slider_excerpt');
+	    function appointment_post_slider_excerpt($output){
 		$output = strip_tags(preg_replace(" (\[.*?\])",'',$output));
 		$output = strip_shortcodes($output);		
 		$original_len = strlen($output);

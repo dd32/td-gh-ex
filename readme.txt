@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.4.5.1
+1. Slider Issue resolved.
 @version 2.4.5
 1. Add Meta Setting label Text.
 @version 2.4.4
