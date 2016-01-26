@@ -74,7 +74,7 @@ function catchbox_setup() {
 	 */
 	if ( ! isset( $content_width ) )
 	$content_width = 818;
-	
+
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -121,12 +121,12 @@ function catchbox_setup() {
 
 	// Add Catch Box's custom image sizes
 	add_image_size( 'featured-header', HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true ); // Used for logo (header) images
-	
+
 	//disable old image size for featued posts add_image_size( 'featured-slider', 560, 270, true );
 	add_image_size( 'featured-slider', 644, 320, true ); // Used for featured posts if a large-feature doesn't exist
 
-	// Add support for custom header	
-	add_theme_support( 'custom-header', array( 
+	// Add support for custom header
+	add_theme_support( 'custom-header', array(
 		// Header image random rotation default
 		'random-default'			=> false,
 		// Header image flex width
@@ -164,7 +164,7 @@ function catchbox_setup() {
 	) );
 
 	// Add support for custom backgrounds
-	add_theme_support( 'custom-background' ); 
+	add_theme_support( 'custom-background' );
 
 	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menus(array(
@@ -190,18 +190,18 @@ function catchbox_setup() {
 	 * specifically font, colors, icons, and column width.
 	 */
 	add_editor_style();
-	
+
 	// Load up our theme options page and related code.
 	require( get_template_directory() . '/inc/theme-options.php' );
-	
+
 	// Grab Catch Box's Adspace Widget.
 	require( get_template_directory() . '/inc/widgets.php' );
 
 	/**
      * This feature enables Jetpack plugin Infinite Scroll
-     */		
+     */
     add_theme_support( 'infinite-scroll', array(
-		'type'           => 'click',										
+		'type'           => 'click',
         'container'      => 'content',
         'footer_widgets' => array( 'sidebar-2', 'sidebar-3', 'sidebar-4' ),
         'footer'         => 'page',
@@ -226,7 +226,7 @@ if ( ! function_exists( 'catchbox_header_style' ) ) :
 function catchbox_header_style() {
 
 	$text_color = get_header_textcolor();
-	
+
 	// If no custom options for text are set, let's bail.
 	if ( $text_color == HEADER_TEXTCOLOR )
 		return;
@@ -244,8 +244,8 @@ function catchbox_header_style() {
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-	<?php 
-	
+	<?php
+
 		// If the user has set a custom color for the text use that
 		else :
 	?>
@@ -325,7 +325,7 @@ function catchbox_admin_header_image() { ?>
 		else
 			$style = ' style="display:none"';
 		?>
-		
+
 		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
 		<?php if ( $image ) : ?>
@@ -346,7 +346,7 @@ function catchbox_excerpt_length( $length ) {
 	$options = catchbox_get_theme_options();
 	if( empty( $options['excerpt_length'] ) )
 		$options = catchbox_get_default_theme_options();
-		
+
 	$length = $options['excerpt_length'];
 	return $length;
 }
@@ -358,10 +358,10 @@ if ( ! function_exists( 'catchbox_continue_reading_link' ) ) :
  * Returns a "Continue Reading" link for excerpts
  */
 function catchbox_continue_reading_link() {
-	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . sprintf( 
-					__( 'Continue reading %s', 'textdomain' ), 
-					'<span class="screen-reader-text">  '.get_the_title().'</span>' 
-				). 
+	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . sprintf(
+					__( 'Continue reading %s', 'textdomain' ),
+					'<span class="screen-reader-text">  '.get_the_title().'</span>'
+				).
 				'<span class="meta-nav">&rarr;</span></a>';
 }
 endif;
@@ -401,7 +401,7 @@ if ( ! function_exists( 'catchbox_widgets_init' ) ):
  * @since Catch Box 1.0
  */
 function catchbox_widgets_init() {
-	
+
 	register_widget( 'catchbox_adwidget' );
 
 	register_sidebar( array(
@@ -448,13 +448,13 @@ endif; // catchbox_widgets_init
 add_action( 'widgets_init', 'catchbox_widgets_init' );
 
 
-if ( ! function_exists( 'catchbox_content_nav' ) ) : 
+if ( ! function_exists( 'catchbox_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
  */
 function catchbox_content_nav( $nav_id ) {
 	global $wp_query;
-	
+
 	/**
 	 * Check Jetpack Infinite Scroll
 	 * if it's active then disable pagination
@@ -466,24 +466,24 @@ function catchbox_content_nav( $nav_id ) {
 		}
 	}
 
-	if ( $wp_query->max_num_pages > 1 ) {  ?>  
+	if ( $wp_query->max_num_pages > 1 ) {  ?>
 		<nav id="<?php echo $nav_id; ?>">
 			<h3 class="assistive-text"><?php _e( 'Post navigation', 'catch-box' ); ?></h3>
-			<?php if ( function_exists('wp_pagenavi' ) )  { 
+			<?php if ( function_exists('wp_pagenavi' ) )  {
 				wp_pagenavi();
 			}
-			elseif ( function_exists('wp_page_numbers' ) ) { 
+			elseif ( function_exists('wp_page_numbers' ) ) {
 				wp_page_numbers();
 			}
-			else { ?>	
+			else { ?>
 				<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-box' ) ); ?></div>
 				<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-box' ) ); ?></div>
-			<?php 
+			<?php
 			} ?>
 		</nav><!-- #nav -->
-		<?php 
+		<?php
 	}
-	
+
 }
 endif; // catchbox_content_nav
 
@@ -494,23 +494,23 @@ if ( ! function_exists( 'catchbox_content_query_nav' ) ) :
  */
 function catchbox_content_query_nav( $nav_id ) {
 	global $wp_query;
-	
+
 	if ( $wp_query->max_num_pages > 1 ) { ?>
 		<nav id="<?php echo $nav_id; ?>">
         	<h3 class="assistive-text"><?php _e( 'Post navigation', 'catch-box' ); ?></h3>
-			<?php if ( function_exists('wp_pagenavi' ) )  { 
+			<?php if ( function_exists('wp_pagenavi' ) )  {
                 wp_pagenavi();
             }
-            elseif ( function_exists('wp_page_numbers' ) ) { 
+            elseif ( function_exists('wp_page_numbers' ) ) {
                 wp_page_numbers();
             }
-            else { ?>	
+            else { ?>
             	<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-box' ) ); ?></div>
                 <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-box' ) ); ?></div>
-            <?php 
+            <?php
             } ?>
 		</nav><!-- #nav -->
-	<?php 
+	<?php
 	}
 }
 endif; // catchbox_content_nav
@@ -636,7 +636,7 @@ function catchbox_comment( $comment, $args, $depth ) {
 endif; // catchbox_comment
 
 
-if ( ! function_exists( 'catchbox_posted_on' ) ) : 
+if ( ! function_exists( 'catchbox_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  * Create your own catchbox_posted_on to override in a child theme
@@ -657,7 +657,7 @@ function catchbox_posted_on() {
 endif; // catchbox_posted_on
 
 
-if ( ! function_exists( 'catchbox_body_classes' ) ) : 
+if ( ! function_exists( 'catchbox_body_classes' ) ) :
 /**
  * Adds two classes to the array of body classes.
  * The first is if the site has only had one author with published posts.
@@ -679,13 +679,13 @@ function catchbox_body_classes( $classes ) {
 	}
 	elseif ( $layout == 'content-onecolumn' || is_page_template( 'page-onecolumn.php' ) && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' ) ) {
 		$classes[] = 'no-sidebar one-column';
-	}		
+	}
 	elseif ( is_page_template( 'page-disable-sidebar.php' ) || is_attachment() ) {
 		$classes[] = 'no-sidebar';
 	}
 	elseif ( is_page_template( 'page-fullwidth.php' ) || is_attachment() ) {
 		$classes[] = 'no-sidebar full-width';
-	}	
+	}
 
 	if ( empty ( $options ['enable_menus'] ) ) {
 		$classes[] = 'one-menu';
@@ -699,9 +699,9 @@ add_filter( 'body_class', 'catchbox_body_classes' );
 
 
 /**
- * Adds in post ID when viewing lists of posts 
+ * Adds in post ID when viewing lists of posts
  * This will help the admin to add the post ID in featured slider
- * 
+ *
  * @param mixed $post_columns
  * @return post columns
  */
@@ -743,7 +743,7 @@ function catchbox_pass_slider_value() {
 	$transition_effect = $options[ 'transition_effect' ];
 	$transition_delay = $options[ 'transition_delay' ] * 1000;
 	$transition_duration = $options[ 'transition_duration' ] * 1000;
-	wp_localize_script( 
+	wp_localize_script(
 		'catchbox_slider',
 		'js_value',
 		array(
@@ -766,11 +766,11 @@ if ( ! function_exists( 'catchbox_sliders' ) ) :
  *
  * @uses set_transient and delete_transient
  */
-function catchbox_sliders() {	
+function catchbox_sliders() {
 	global $post;
-	
+
 	//delete_transient( 'catchbox_sliders' );
-		
+
 	// get data value from catchbox_options_slider through theme options
 	$options = catchbox_get_theme_options();
 	// get slider_qty from theme options
@@ -784,10 +784,10 @@ function catchbox_sliders() {
 	if( isset( $options[ 'featured_slider' ] ) && !array_filter( $options[ 'featured_slider' ] ) ) {
 	    return;
 	}
-		
+
 	if( ( !$catchbox_sliders = get_transient( 'catchbox_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
 		echo '<!-- refreshing cache -->';
-	
+
 		$catchbox_sliders = '
 		<div id="slider">
 			<section id="slider-wrap">';
@@ -797,10 +797,10 @@ function catchbox_sliders() {
 				'orderby' 		 => 'post__in',
 				'ignore_sticky_posts' => 1 // ignore sticky posts
 			));
-				
+
 			$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
 				$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title( $post->ID ) ) );
-				
+
 				if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
 				$catchbox_sliders .= '
 				<div class="'.$classes.'">
@@ -822,9 +822,9 @@ function catchbox_sliders() {
 		</div> <!-- #featured-slider -->';
 		set_transient( 'catchbox_sliders', $catchbox_sliders, 86940 );
 	}
-	echo $catchbox_sliders;	
+	echo $catchbox_sliders;
 }
-endif;  // catchbox_sliders 
+endif;  // catchbox_sliders
 
 
 if ( ! function_exists( 'catchbox_scripts_method' ) ):
@@ -835,11 +835,11 @@ if ( ! function_exists( 'catchbox_scripts_method' ) ):
  * hooks action wp_enqueue_scripts
  */
 function catchbox_scripts_method() {
-	global $post;	
-	
+	global $post;
+
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
-	
+
 	/**
 	 * Loads up Responsive Menu
 	 */
@@ -848,7 +848,7 @@ function catchbox_scripts_method() {
 
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
-	
+
 	//Enqueue Slider Script only in Front Page
 	if ( is_front_page() || is_home() ) {
 		wp_enqueue_script( 'catchbox_slider', get_template_directory_uri() . '/js/catchbox_slider.js', array( 'jquery-cycle' ), '1.0', true );
@@ -862,22 +862,22 @@ function catchbox_scripts_method() {
 	 */
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-	}	
+	}
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'catchbox-style', get_stylesheet_uri() );
 
 	// Adds JavaScript for handling the navigation menu hide-and-show behavior.
 	wp_enqueue_script( 'catchbox-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20152512', true );
-	
+
 	/**
 	 * Loads up Scroll Up script
-	 */	
+	 */
 	wp_enqueue_script( 'catchbox-scrollup', get_template_directory_uri() . '/js/catchbox-scrollup.min.js', array( 'jquery' ), '20072014', true  );
-	
+
 	// Load the html5 shiv.
 	wp_enqueue_script( 'catchbox-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
-	
+
 }
 endif; // catchbox_scripts_method
 
@@ -917,7 +917,7 @@ function catchbox_comment_form_fields( $fields ) {
     $fields['author'] = '<p class="comment-form-author"><label for="author">' . esc_attr__( 'Name', 'catch-box' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
         '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
     $fields['email'] = '<p class="comment-form-email"><label for="email">' . esc_attr__( 'Email', 'catch-box' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-        '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>'; 
+        '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
     return $fields;
 }
 endif; // catchbox_comment_form_fields
@@ -928,29 +928,29 @@ add_filter( 'comment_form_default_fields', 'catchbox_comment_form_fields' );
 /**
  * Get the favicon Image from theme options
  *
- * @uses favicon 
+ * @uses favicon
  * @get the data value of image from theme options
  * @display favicon
  *
- * @uses set_transient and delete_transient 
+ * @uses set_transient and delete_transient
  */
 function catchbox_favicon() {
-	//delete_transient( 'catchbox_favicon' );	
-	
+	//delete_transient( 'catchbox_favicon' );
+
 	if ( !$catchbox_favicon = get_transient( 'catchbox_favicon' ) ) {
-		
+
 		$options = catchbox_get_theme_options();
-		
+
 		if ( !empty( $options['fav_icon'] ) )  {
-			$catchbox_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />'; 	
+			$catchbox_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />';
 		}
-		
+
 		set_transient( 'catchbox_favicon', $catchbox_favicon, 86940 );
-		
+
 	}
-	
-	echo $catchbox_favicon ;	
-	
+
+	echo $catchbox_favicon ;
+
 }
 
 //Load Favicon in Header Section
@@ -963,29 +963,29 @@ function catchbox_favicon() {
 /**
  * Get the Web Click Icon from theme options
  *
- * @uses web clip 
+ * @uses web clip
  * @get the data value of image from theme options
  * @display web clip
  *
- * @uses set_transient and delete_transient 
+ * @uses set_transient and delete_transient
  */
 function catchbox_webclip() {
-	//delete_transient( 'catchbox_webclip' );	
-	
+	//delete_transient( 'catchbox_webclip' );
+
 	if ( !$catchbox_webclip = get_transient( 'catchbox_webclip' ) ) {
-		
+
 		$options = catchbox_get_theme_options();
-		
+
 		if ( !empty( $options['web_clip'] ) )  {
-			$catchbox_webclip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';	
+			$catchbox_webclip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';
 		}
-		
+
 		set_transient( 'catchbox_webclip', $catchbox_webclip, 86940 );
-		
+
 	}
-	
-	echo $catchbox_webclip ;	
-	
+
+	echo $catchbox_webclip ;
+
 }
 
 //Load webclip in Header Section
@@ -997,7 +997,7 @@ add_action('wp_head', 'catchbox_webclip');
  */
 function catchbox_rss_redirect() {
 	$options = catchbox_get_theme_options();
-	if ( !empty( $options['feed_url'] ) ) {	
+	if ( !empty( $options['feed_url'] ) ) {
 		$url = 'Location: '.$options['feed_url'];
 		if ( is_feed() && !preg_match('/feedburner|feedvalidator/i', $_SERVER['HTTP_USER_AGENT']))
 		{
@@ -1020,13 +1020,13 @@ function catchbox_socialprofile() {
 	//delete_transient( 'catchbox_socialprofile' );
 
     $options = catchbox_get_theme_options();
-	$flag = 0;	
+	$flag = 0;
 	if( !empty( $options ) ) {
 		foreach( $options as $option ) {
 			if( $option ) {
 				$flag = 1;
 			}
-			else { 
+			else {
 				$flag = 0;
 			}
 			if( $flag == 1) {
@@ -1034,10 +1034,10 @@ function catchbox_socialprofile() {
 			}
 		}
 	}
-			
+
 	if( ( !$catchbox_socialprofile = get_transient( 'catchbox_socialprofile' ) ) && ($flag == 1) ) {
 		echo '<!-- refreshing cache -->';
-		
+
 		$catchbox_socialprofile = '
 			<nav class="social-profile" role="navigation" aria-label="' . esc_attr__( 'Footer Social Links Menu', 'catch-box' ) . '">
  		 		<ul>';
@@ -1045,112 +1045,112 @@ function catchbox_socialprofile() {
 					if ( !empty( $options['social_facebook'] ) ) {
 						$catchbox_socialprofile .= '<li class="facebook"><a href="'. esc_url( $options['social_facebook'] ) .'"><span class="screen-reader-text">Facebook</span></a></li>';
 					}
-				
+
 					//Twitter
 					if ( !empty( $options['social_twitter'] ) ) {
 						$catchbox_socialprofile .= '<li class="twitter"><a href="'. esc_url( $options['social_twitter'] ) .'"><span class="screen-reader-text">Twitter</span></a></li>';
 					}
-					
+
 					//Google+
 					if ( !empty( $options['social_google'] ) ) {
 						$catchbox_socialprofile .= '<li class="google-plus"><a href="'. esc_url( $options['social_google'] ) .'"><span class="screen-reader-text">Google Plus</span></a></li>';
 					}
-				
+
 					//Linkedin
 					if ( !empty( $options['social_linkedin'] ) ) {
 						$catchbox_socialprofile .= '<li class="linkedin"><a href="'. esc_url( $options['social_linkedin'] ) .'"><span class="screen-reader-text">Linkedin</span></a></li>';
 					}
-					
+
 					//Pinterest
 					if ( !empty( $options['social_pinterest'] ) ) {
 						$catchbox_socialprofile .= '<li class="pinterest"><a href="'. esc_url( $options['social_pinterest'] ) .'"><span class="screen-reader-text">Pinterest</span></a></li>';
 					}
-					
+
 					//Youtube
 					if ( !empty( $options['social_youtube'] ) ) {
 						$catchbox_socialprofile .= '<li class="you-tube"><a href="'. esc_url( $options['social_youtube'] ) .'"><span class="screen-reader-text">YouTube</span></a></li>';
 					}
-					
+
 					//RSS Feed
 					if ( !empty( $options['social_rss'] ) ) {
 						$catchbox_socialprofile .= '<li class="rss"><a href="'. esc_url( $options['social_rss'] ) .'"><span class="screen-reader-text">RSS Feed</span></a></li>';
 					}
-					
+
 					//Deviantart
 					if ( !empty( $options['social_deviantart'] ) ) {
 						$catchbox_socialprofile .= '<li class="deviantart"><a href="'. esc_url( $options['social_deviantart'] ) .'"><span class="screen-reader-text">Deviantart</span></a></li>';
-					}		
-					
+					}
+
 					//Tumblr
 					if ( !empty( $options['social_tumblr'] ) ) {
 						$catchbox_socialprofile .= '<li class="tumblr"><a href="'. esc_url( $options['social_tumblr'] ) .'"><span class="screen-reader-text">Tumblr</span></a></li>';
-					}	
-					
+					}
+
 					//Vimeo
 					if ( !empty( $options['social_viemo'] ) ) {
 						$catchbox_socialprofile .= '<li class="vimeo"><a href="'. esc_url( $options['social_viemo'] ) .'"><span class="screen-reader-text">Vimeo</span></a></li>';
-					}	
-					
+					}
+
 					//Dribbble
 					if ( !empty( $options['social_dribbble'] ) ) {
 						$catchbox_socialprofile .= '<li class="dribbble"><a href="'. esc_url( $options['social_dribbble'] ) .'"><span class="screen-reader-text">Dribbble</span></a></li>';
-					}	
-					
+					}
+
 					//MySpace
 					if ( !empty( $options['social_myspace'] ) ) {
 						$catchbox_socialprofile .= '<li class="my-space"><a href="'. esc_url( $options['social_myspace'] ) .'"><span class="screen-reader-text">MySpace</span></a></li>';
-					}	
-					
+					}
+
 					//Aim
 					if ( !empty( $options['social_aim'] ) ) {
 						$catchbox_socialprofile .= '<li class="aim"><a href="'. esc_url( $options['social_aim'] ) .'"><span class="screen-reader-text">Aim</span></a></li>';
-					}	
-					
+					}
+
 					//Flickr
 					if ( !empty( $options[ 'social_flickr'] ) ) {
 						$catchbox_socialprofile .= '<li class="flickr"><a href="'. esc_url( $options['social_flickr'] ) .'"><span class="screen-reader-text">Flickr</span></a></li>';
-					}	
-					
+					}
+
 					//Slideshare
 					if ( !empty( $options[ 'social_slideshare' ] ) ) {
 						$catchbox_socialprofile .= '<li class="slideshare"><a href="'. esc_url( $options[ 'social_slideshare' ] ) .'"><span class="screen-reader-text">Slideshare</span></a></li>';
 					}
-					
+
 					//Instagram
 					if ( !empty( $options[ 'social_instagram' ] ) ) {
 						$catchbox_socialprofile .= '<li class="instagram"><a href="'. esc_url( $options[ 'social_instagram' ] ) .'"><span class="screen-reader-text">Instagram</span></a></li>';
-					}	
-					
+					}
+
 					//skype
 					if ( !empty( $options[ 'social_skype' ] ) ) {
 						$catchbox_socialprofile .= '<li class="skype"><a href="'. esc_attr( $options[ 'social_skype' ] ) .'"><span class="screen-reader-text">Skype</span></a></li>';
 					}
-					
+
 					//Soundcloud
 					if ( !empty( $options[ 'social_soundcloud' ] ) ) {
 						$catchbox_socialprofile .= '<li class="soundcloud"><a href="'. esc_url( $options[ 'social_soundcloud' ] ) .'"><span class="screen-reader-text">Soundcloud</span></a></li>';
 					}
-					
+
 					//Email
-					if ( !empty( $options[ 'social_email' ] )  && is_email( $options[ 'social_email' ] ) ) {	
+					if ( !empty( $options[ 'social_email' ] )  && is_email( $options[ 'social_email' ] ) ) {
 						$catchbox_socialprofile .= '<li class="email"><a href="mailto:'. sanitize_email( $options[ 'social_email' ] ) .'"><span class="screen-reader-text">Email</span></a></li>';
-					}					
-					
+					}
+
 					//Xing
 					if ( !empty( $options[ 'social_xing' ] ) ) {
 						$catchbox_socialprofile .= '<li class="xing"><a href="'. esc_url( $options[ 'social_xing' ] ) .'"><span class="screen-reader-text">Xing</span></a></li>';
 					}
-					
+
 					$catchbox_socialprofile .= '
 				</ul>
 			</nav><!-- .social-profile -->';
-		set_transient( 'catchbox_socialprofile', $catchbox_socialprofile, 604800 );		
+		set_transient( 'catchbox_socialprofile', $catchbox_socialprofile, 604800 );
 	}
-	echo $catchbox_socialprofile;	
+	echo $catchbox_socialprofile;
 }
-endif; // catchbox_socialprofile	
+endif; // catchbox_socialprofile
 
-// Load Social Profile catchbox_site_generator hook 
+// Load Social Profile catchbox_site_generator hook
 add_action('catchbox_site_generator', 'catchbox_socialprofile', 10 );
 
 
@@ -1160,22 +1160,22 @@ if ( ! function_exists( 'catchbox_slider_display' ) ) :
  */
 function catchbox_slider_display() {
 	global $post, $wp_query;
-	
+
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
-	
+	$page_for_posts = get_option('page_for_posts');
+
 	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();	
-		
+	$page_id = $wp_query->get_queried_object_id();
+
 	if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 		if ( function_exists( 'catchbox_pass_slider_value' ) ) { catchbox_pass_slider_value(); }
-		if ( function_exists( 'catchbox_sliders' ) ) { catchbox_sliders(); } 
-	} 
+		if ( function_exists( 'catchbox_sliders' ) ) { catchbox_sliders(); }
+	}
 }
 endif; //catchbox_slider_display
 
-// Load slider in  catchbox_content hook 
+// Load slider in  catchbox_content hook
 add_action('catchbox_content', 'catchbox_slider_display', 10);
 
 
@@ -1189,19 +1189,19 @@ if ( ! function_exists( 'catchbox_header_image' ) ) :
  * @since Catch Box 2.5
  */
 function catchbox_header_image() {
-	
+
 	// Check to see if the header image has been removed
 	global $_wp_default_headers;
 	$header_image = get_header_image();
 	if ( ! empty( $header_image ) ) : ?>
-    
+
     	<div id="site-logo">
         	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
                 <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
             </a>
       	</div>
-        
-	<?php endif; // end check for removed header image 	
+
+	<?php endif; // end check for removed header image
 }
 endif;
 
@@ -1212,20 +1212,20 @@ if ( ! function_exists( 'catchbox_header_details' ) ) :
  *
  * @since Catch Box 2.5
  */
-function catchbox_header_details() { 
+function catchbox_header_details() {
 
 	// Check to see if the header image has been removed
 	global $_wp_default_headers;
 	$header_image = get_header_image();
-	if ( ! empty( $header_image ) ) : 
+	if ( ! empty( $header_image ) ) :
      	echo '<div id="hgroup" class="site-details with-logo">';
 	else :
-    	echo '<div id="hgroup" class="site-details">';     
+    	echo '<div id="hgroup" class="site-details">';
 	endif; // end check for removed header image  ?>
- 
+
    		<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
        	<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-   	</div><!-- #hgroup -->   
+   	</div><!-- #hgroup -->
 
 <?php
 }
@@ -1239,13 +1239,13 @@ if ( ! function_exists( 'catchbox_headerdetails' ) ) :
  * @since Catch Box 2.5
  */
 function catchbox_headerdetails() {
-	
+
 	// Getting data from Theme Options
 	$options = catchbox_get_theme_options();
 	$sitedetails = $options['site_title_above'];
-	
+
 	echo '<div class="logo-wrap clearfix">';
-	
+
 	if ( $sitedetails == '0' ) {
 		echo catchbox_header_image();
 		echo catchbox_header_details();
@@ -1253,14 +1253,14 @@ function catchbox_headerdetails() {
 		echo catchbox_header_details();
 		echo catchbox_header_image();
 	}
-	
+
 	echo '</div><!-- .logo-wrap -->';
 
-} 
+}
 endif; //catchbox_headerdetails
 
 // Loads Header Details in catchbox_headercontent hook
-add_action( 'catchbox_headercontent', 'catchbox_headerdetails', 10 ); 
+add_action( 'catchbox_headercontent', 'catchbox_headerdetails', 10 );
 
 
 if ( ! function_exists( 'catchbox_header_search' ) ) :
@@ -1269,20 +1269,20 @@ if ( ! function_exists( 'catchbox_header_search' ) ) :
  *
  * @since Catch Box 2.5
  */
-function catchbox_header_search() { 
+function catchbox_header_search() {
 
 	// Getting data from Theme Options
 	$options = catchbox_get_theme_options();
-    
+
 	if ( $options ['disable_header_search'] == 0 ) :
     	get_search_form();
-    endif;  
+    endif;
 
-}        
+}
 endif; //catchbox_header_search
 
 // Loads Header Search in catchbox_headercontent hook
-add_action( 'catchbox_headercontent', 'catchbox_header_search', 15 ); 
+add_action( 'catchbox_headercontent', 'catchbox_header_search', 15 );
 
 
 if ( ! function_exists( 'catchbox_footer_content' ) ) :
@@ -1292,20 +1292,20 @@ if ( ! function_exists( 'catchbox_footer_content' ) ) :
  * @since Catch Box 2.5
  */
 function catchbox_footer_content() {
-	//delete_transient( 'catchbox_footer_content' );	
-	
+	//delete_transient( 'catchbox_footer_content' );
+
 	if ( ( !$catchbox_footer_content = get_transient( 'catchbox_footer_content' ) ) ) {
 		echo '<!-- refreshing cache -->';
-		
+
 		$catchbox_footer_content = catchbox_assets();
-		
+
     	set_transient( 'catchbox_footer_content', $catchbox_footer_content, 86940 );
     }
 	echo $catchbox_footer_content;
 }
 endif; //catchbox_footer_content
 
-// Load footer content in  catchbox_site_generator hook 
+// Load footer content in  catchbox_site_generator hook
 add_action( 'catchbox_site_generator', 'catchbox_footer_content', 15 );
 
 
@@ -1315,9 +1315,9 @@ add_action( 'catchbox_site_generator', 'catchbox_footer_content', 15 );
  * @uses catchbox_after action
  */
 function catchbox_scrollup() {
-	
+
 	echo '<a href="#branding" id="scrollup"><span class="screen-reader-text">Go to Header Section</span></a>';
-	
+
 }
 add_action( 'catchbox_after', 'catchbox_scrollup', 10 );
 
@@ -1338,10 +1338,10 @@ if ( ! function_exists( 'catchbox_breadcrumb_display' ) ) :
 		elseif ( function_exists( 'bcn_display' ) ) {
 			echo '<div class="breadcrumbs breadcrumbnavxt" xmlns:v="http://rdf.data-vocabulary.org/#">';
 					bcn_display();
-			echo '</div><!-- .breadcrumbnavxt -->';	
+			echo '</div><!-- .breadcrumbnavxt -->';
 		}
 	}
-endif; // catchbox_breadcrumb_display	
+endif; // catchbox_breadcrumb_display
 add_action( 'catchbox_content', 'catchbox_breadcrumb_display', 20 );
 
 
@@ -1352,7 +1352,7 @@ if ( ! function_exists( 'catchbox_skiptocontain' ) ) :
 	function catchbox_skiptocontain() {
 		echo '<a href="#main" class="skip-link screen-reader-text">Skip to content</a>';
 	}
-endif; // catchbox_breadcrumb_display	
+endif; // catchbox_breadcrumb_display
 add_action( 'catchbox_before_header', 'catchbox_skiptocontain', 10 );
 
 

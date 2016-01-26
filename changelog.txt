@@ -1,5 +1,8 @@
 == Change log ==
 
+Version 4.2.1
+* Fixed: Continue Reading - Text domain issue (Reported by jie66)
+
 Version 4.2
 * Added Accessibility support
 ** Fixed: Headings
@@ -20,11 +23,11 @@ Version 4.2
 * Bug Fixed: Slider next and previous anchor issue (Reported by Keith)
 * Bug Fixed: Text in Customizer Label "Slider Effect Options" extra tab
 * Bug Fixed: Image size issue in mobile devices due to padding and border ( Reported by mailhunter )
-* Compatibility fix: Customizer Reset option not working when returning any value in WordPress 4.4
-* Removed pngfix.js and pngfix.min.js  no longer needed to support png issue in IE6
-* Update html5.js
-* Update genericion to version 3.4.1
-* Updated screenshot
+* Compatibility fixed: Customizer Reset option not working when returning any value in WordPress 4.4
+* Removed: pngfix.js and pngfix.min.js  no longer needed to support png issue in IE6
+* Updated: html5.js
+* Updated: Genericons to 3.4.1
+* Updated: screenshot
 
 Version 4.1
 * Added text-domain in style.css file
