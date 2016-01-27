@@ -64,11 +64,10 @@ get_template_part('inc/dragfun/dragtheme', 'css');
 <span><?php _e( 'Breaking', 'aqueduct'); ?></span>
 <ul class="newsticker">
 <?php
-	$argss = array( 'numberposts' => '7' );
-	$recent_postss = wp_get_recent_posts( $argss );
-	foreach( $recent_postss as $recent ){
-		echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
-	}
+	$recent_postss = new WP_Query( '&posts_per_page=7' );
+        while($recent_postss->have_posts()) : $recent_postss->the_post();
+		echo '<li><a href="' . get_permalink() . '">' .   get_the_title() .'</a> </li> ';
+        endwhile; 
 ?>
 </ul>
 </div>

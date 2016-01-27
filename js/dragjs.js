@@ -307,4 +307,9 @@ jQuery(".secondary-navigation ul").tinyNav({
 jQuery(".globetoogle").click(function(){
 jQuery(".drag-social-button").toggle();
 });
+var secnavwidth = jQuery("#bottom-navigation").width();
+
+if(secnavwidth > 700){
+     jQuery("#bottom-navigation").css('float', 'left');
+}
 });

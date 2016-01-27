@@ -21,7 +21,13 @@
  if ( get_the_post_thumbnail() != '' ) {
  	echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
   $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
+ $imginfo = getimagesize($source_image_url);
+  if($imginfo[0] >= 250 && $imginfo[1] >= 200){
   $resizedImage = aq_resize($source_image_url, 250, 200, true);
+  }
+  else{
+  $resizedImage = $source_image_url;
+  }
    echo '<img src="';
    echo $resizedImage;
    echo '" alt="';the_title();
@@ -29,7 +35,13 @@
     echo '</a>';
 } elseif(howlthemes_catch_that_image()){
  $source_image_url = howlthemes_catch_that_image();
- $resizedImage = aq_resize($source_image_url, 250, 200, true);
+ $imginfo = getimagesize($source_image_url);
+  if($imginfo[0] >= 250 && $imginfo[1] >= 200){
+  $resizedImage = aq_resize($source_image_url, 250, 200, true);
+  }
+  else{
+  $resizedImage = $source_image_url;
+  }
  echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
  echo '<img src="';
  echo $resizedImage;

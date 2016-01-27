@@ -147,8 +147,8 @@ $wp_customize->add_control(
         'label' =>  __( 'Home Page Display', 'aqueduct' ),
         'section' => 'howl-themes_magazine',
         'choices' => array(
-            'blog' => 'Latest posts - Blog Layout',
-            'magazine' => 'News Boxes - use Home Builder',
+            'blog' =>  __( 'Latest posts - Blog Layout', 'aqueduct' ),
+            'magazine' => __( 'News Boxes - use Home Builder', 'aqueduct' ),
         ),
     )
 );
@@ -171,6 +171,8 @@ $wp_customize->add_setting(
  
 $categories = get_categories('hide_empty=0&orderby=name');
 $all_cats = array();
+$all_cats['0'] = "Select a Category";
+
 foreach ($categories as $category_item ) {
 $all_cats[$category_item->cat_ID] = $category_item->cat_name;
 }
@@ -421,7 +423,7 @@ $wp_customize->add_control(
 /**
  * Adds textarea support to the theme customizer
  */
-class Example_Customize_Textarea_Control extends WP_Customize_Control {
+class aqueduct_Customize_Textarea_Control extends WP_Customize_Control {
     public $type = 'fontsize';
  
     public function render_content() {
@@ -447,7 +449,7 @@ $wp_customize->add_setting(
   );
  
 $wp_customize->add_control(
-    new Example_Customize_Textarea_Control(
+    new aqueduct_Customize_Textarea_Control(
         $wp_customize,
         'fontsize',
         array(
