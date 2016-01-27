@@ -1,0 +1,791 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Benevolent\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Wed Jan 27 2016 17:39:19 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Wed Jan 27 2016 17:39:21 GMT+0545 (Nepal Standard Time)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: ../404.php:19
+msgid "Error 404"
+msgstr ""
+
+#: ../404.php:20
+msgid "Page Not Found"
+msgstr ""
+
+#: ../404.php:21
+msgid "This page could not be found on the server."
+msgstr ""
+
+#: ../404.php:22
+msgid "Return to Homepage"
+msgstr ""
+
+#: ../archive.php:40 ../index.php:46 ../search.php:42 ../inc/benevolent-custom-
+#: functions.php:235
+msgid "Page"
+msgstr ""
+
+#: ../comments.php:28
+msgid "Comments"
+msgstr ""
+
+#: ../comments.php:43
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:46
+msgid "Older Comments"
+msgstr ""
+
+#: ../comments.php:47
+msgid "Newer Comments"
+msgstr ""
+
+#: ../comments.php:60
+msgid "Comments are closed."
+msgstr ""
+
+#: ../comments.php:74
+msgid "Required fields are marked"
+msgstr ""
+
+#: ../comments.php:97
+msgid "Leave a Reply"
+msgstr ""
+
+#: ../comments.php:98
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: ../comments.php:99
+msgid "Cancel Reply"
+msgstr ""
+
+#: ../comments.php:100
+msgid "POST COMMENT"
+msgstr ""
+
+#: ../comments.php:103
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
+#: ../comments.php:109
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: ../comments.php:115
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this "
+"account\">Log out?</a>"
+msgstr ""
+
+#: ../comments.php:122
+msgid "Your email address will not be published. "
+msgstr ""
+
+#: ../footer.php:42
+msgid "All Rights Reserved."
+msgstr ""
+
+#: ../footer.php:43
+msgid "Theme by "
+msgstr ""
+
+#: ../footer.php:43
+msgid "Rara Theme"
+msgstr ""
+
+#: ../footer.php:43
+#, php-format
+msgid "Powered by %s"
+msgstr ""
+
+#: ../footer.php:43
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: ../functions.php:53
+msgid "Primary"
+msgstr ""
+
+#: ../functions.php:121
+msgid "Right Sidebar"
+msgstr ""
+
+#: ../functions.php:131
+msgid "Footer One"
+msgstr ""
+
+#: ../functions.php:141
+msgid "Footer Two"
+msgstr ""
+
+#: ../functions.php:151
+msgid "Footer Three"
+msgstr ""
+
+#: ../functions.php:161
+msgid "Footer Four"
+msgstr ""
+
+#: ../header.php:47 ../inc/customizer.php:77
+msgid "Donate Now"
+msgstr ""
+
+#: ../header.php:48 ../inc/customizer.php:95
+msgid "#"
+msgstr ""
+
+#: ../header.php:57
+msgid "Menu"
+msgstr ""
+
+#: ../search.php:19
+msgid "Search Results"
+msgstr ""
+
+#: ../search.php:24
+#, php-format
+msgid "Showing Results for %s"
+msgstr ""
+
+#. Name of the template
+msgid "Home Page"
+msgstr ""
+
+#: ../inc/benevolent-custom-functions.php:143 ../inc/customizer.php:1483
+msgid ">"
+msgstr ""
+
+#: ../inc/benevolent-custom-functions.php:144 ../inc/customizer.php:1465
+msgid "Home"
+msgstr ""
+
+#: ../inc/benevolent-custom-functions.php:166
+msgid "Search Result"
+msgstr ""
+
+#: ../inc/benevolent-custom-functions.php:310
+#, php-format
+msgid "<b class=\"fn\">%s</b>"
+msgstr ""
+
+#: ../inc/benevolent-custom-functions.php:313
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: ../inc/benevolent-custom-functions.php:320
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: ../inc/benevolent-custom-functions.php:320
+msgid "(Edit)"
+msgstr ""
+
+#: ../inc/benevolent-custom-functions.php:379 ../inc/customizer.php:272
+msgid "Learn More"
+msgstr ""
+
+#. $id
+#: ../inc/benevolent-metabox.php:13
+msgid "Sidebar Layout"
+msgstr ""
+
+#: ../inc/benevolent-metabox.php:23
+msgid "Right sidebar<br/>(default)"
+msgstr ""
+
+#: ../inc/benevolent-metabox.php:28
+msgid "No sidebar"
+msgstr ""
+
+#: ../inc/benevolent-metabox.php:40
+msgid "Choose Sidebar Template"
+msgstr ""
+
+#: ../inc/customizer.php:18
+msgid "Choose Post"
+msgstr ""
+
+#: ../inc/customizer.php:34
+msgid "Choose Category"
+msgstr ""
+
+#: ../inc/customizer.php:46
+msgid "Default Settings"
+msgstr ""
+
+#: ../inc/customizer.php:47
+msgid "Default section provided by wordpress customizer."
+msgstr ""
+
+#: ../inc/customizer.php:67
+msgid "Donate Button"
+msgstr ""
+
+#: ../inc/customizer.php:85 ../inc/customizer.php:1368
+msgid "Button Text"
+msgstr ""
+
+#: ../inc/customizer.php:103 ../inc/customizer.php:1386
+msgid "Button Url"
+msgstr ""
+
+#: ../inc/customizer.php:114
+msgid "Slider Settings"
+msgstr ""
+
+#: ../inc/customizer.php:132
+msgid "Enable Home Page Slider"
+msgstr ""
+
+#: ../inc/customizer.php:150
+msgid "Enable Slider Auto Transition"
+msgstr ""
+
+#: ../inc/customizer.php:168
+msgid "Enable Slider Loop"
+msgstr ""
+
+#: ../inc/customizer.php:186
+msgid "Enable Slider Pager"
+msgstr ""
+
+#: ../inc/customizer.php:204
+msgid "Enable Slider Caption"
+msgstr ""
+
+#: ../inc/customizer.php:222
+msgid "Choose Slider Animation"
+msgstr ""
+
+#: ../inc/customizer.php:226
+msgid "Fade"
+msgstr ""
+
+#: ../inc/customizer.php:227
+msgid "Slide"
+msgstr ""
+
+#: ../inc/customizer.php:244
+msgid "Slider Speed"
+msgstr ""
+
+#: ../inc/customizer.php:262
+msgid "Animation Speed"
+msgstr ""
+
+#: ../inc/customizer.php:280
+msgid "Readmore Text"
+msgstr ""
+
+#: ../inc/customizer.php:298
+msgid "Choose Slider Category"
+msgstr ""
+
+#: ../inc/customizer.php:312
+msgid "Home Page Settings"
+msgstr ""
+
+#: ../inc/customizer.php:313
+msgid "Customize Home Page Settings"
+msgstr ""
+
+#: ../inc/customizer.php:321
+msgid "Intro Section"
+msgstr ""
+
+#: ../inc/customizer.php:339
+msgid "Enable Intro Section"
+msgstr ""
+
+#: ../inc/customizer.php:357
+msgid "Intro Section Title"
+msgstr ""
+
+#: ../inc/customizer.php:375
+msgid "Intro Section Content"
+msgstr ""
+
+#: ../inc/customizer.php:393
+msgid "Intro One Title"
+msgstr ""
+
+#: ../inc/customizer.php:411
+msgid "Intro One Link"
+msgstr ""
+
+#: ../inc/customizer.php:429
+msgid "Intro One Url"
+msgstr ""
+
+#: ../inc/customizer.php:449
+msgid "Upload a Logo One"
+msgstr ""
+
+#: ../inc/customizer.php:471
+msgid "Upload a Image One"
+msgstr ""
+
+#: ../inc/customizer.php:491
+msgid "Intro Two Title"
+msgstr ""
+
+#: ../inc/customizer.php:509
+msgid "Intro Two Link"
+msgstr ""
+
+#: ../inc/customizer.php:527
+msgid "Intro Two Url"
+msgstr ""
+
+#: ../inc/customizer.php:547
+msgid "Upload a Logo Two"
+msgstr ""
+
+#: ../inc/customizer.php:569
+msgid "Upload a Image Two"
+msgstr ""
+
+#: ../inc/customizer.php:589
+msgid "Intro Three Title"
+msgstr ""
+
+#: ../inc/customizer.php:607
+msgid "Intro Three Link"
+msgstr ""
+
+#: ../inc/customizer.php:625
+msgid "Intro Three Url"
+msgstr ""
+
+#: ../inc/customizer.php:645
+msgid "Upload a Logo Three"
+msgstr ""
+
+#: ../inc/customizer.php:667
+msgid "Upload a Image Three"
+msgstr ""
+
+#: ../inc/customizer.php:680
+msgid "Community Section"
+msgstr ""
+
+#: ../inc/customizer.php:698
+msgid "Enable Community Section"
+msgstr ""
+
+#: ../inc/customizer.php:716
+msgid "Community Section Title"
+msgstr ""
+
+#: ../inc/customizer.php:734
+msgid "Select Post One"
+msgstr ""
+
+#: ../inc/customizer.php:753
+msgid "Select Post Two"
+msgstr ""
+
+#: ../inc/customizer.php:772
+msgid "Select Post Three"
+msgstr ""
+
+#: ../inc/customizer.php:791
+msgid "Select Post Four"
+msgstr ""
+
+#: ../inc/customizer.php:803
+msgid "Stat Counter Section"
+msgstr ""
+
+#: ../inc/customizer.php:821
+msgid "Enable Stat Counter Section"
+msgstr ""
+
+#: ../inc/customizer.php:839
+msgid "First Stat Counter Number"
+msgstr ""
+
+#: ../inc/customizer.php:857
+msgid "First Stat Counter Title"
+msgstr ""
+
+#: ../inc/customizer.php:875
+msgid "Second Stat Counter Number"
+msgstr ""
+
+#: ../inc/customizer.php:893
+msgid "Second Stat Counter Title"
+msgstr ""
+
+#: ../inc/customizer.php:911
+msgid "Third Stat Counter Number"
+msgstr ""
+
+#: ../inc/customizer.php:929
+msgid "Third Stat Counter Title"
+msgstr ""
+
+#: ../inc/customizer.php:947
+msgid "Fourth Stat Counter Number"
+msgstr ""
+
+#: ../inc/customizer.php:965
+msgid "Fourth Stat Counter Title"
+msgstr ""
+
+#: ../inc/customizer.php:976
+msgid "Blog Section"
+msgstr ""
+
+#: ../inc/customizer.php:994
+msgid "Enable Blog Section"
+msgstr ""
+
+#: ../inc/customizer.php:1012
+msgid "Show Blog Date"
+msgstr ""
+
+#: ../inc/customizer.php:1030
+msgid "Blog Section Title"
+msgstr ""
+
+#: ../inc/customizer.php:1048
+msgid "Blog Section Content"
+msgstr ""
+
+#: ../inc/customizer.php:1058 ../inc/widget-featured-post.php:96 ../inc/widget-
+#: featured-post.php:143 ../sections/section-blog.php:11 ../template-
+#: parts/content.php:63
+msgid "Read More"
+msgstr ""
+
+#: ../inc/customizer.php:1066
+msgid "Blog Section Read More Text"
+msgstr ""
+
+#: ../inc/customizer.php:1077
+msgid "Sponsor Section"
+msgstr ""
+
+#: ../inc/customizer.php:1095
+msgid "Enable Sponsor Section"
+msgstr ""
+
+#: ../inc/customizer.php:1113
+msgid "Sponsor Section Title"
+msgstr ""
+
+#: ../inc/customizer.php:1133
+msgid "Upload Logo One"
+msgstr ""
+
+#: ../inc/customizer.php:1151
+msgid "Logo One Url"
+msgstr ""
+
+#: ../inc/customizer.php:1171
+msgid "Upload Logo Two"
+msgstr ""
+
+#: ../inc/customizer.php:1189
+msgid "Logo Two Url"
+msgstr ""
+
+#: ../inc/customizer.php:1209
+msgid "Upload Logo Three"
+msgstr ""
+
+#: ../inc/customizer.php:1227
+msgid "Logo Three Url"
+msgstr ""
+
+#: ../inc/customizer.php:1247
+msgid "Upload Logo Four"
+msgstr ""
+
+#: ../inc/customizer.php:1265
+msgid "Logo Four Url"
+msgstr ""
+
+#: ../inc/customizer.php:1285
+msgid "Upload Logo Five"
+msgstr ""
+
+#: ../inc/customizer.php:1303
+msgid "Logo Five Url"
+msgstr ""
+
+#: ../inc/customizer.php:1314
+msgid "Promotional Section"
+msgstr ""
+
+#: ../inc/customizer.php:1332
+msgid "Enable Promotional Section"
+msgstr ""
+
+#: ../inc/customizer.php:1350
+msgid "Promotional Section Title"
+msgstr ""
+
+#: ../inc/customizer.php:1406
+msgid "Background Image"
+msgstr ""
+
+#: ../inc/customizer.php:1419
+msgid "Breadcrumb Settings"
+msgstr ""
+
+#: ../inc/customizer.php:1437
+msgid "Enable Breadcrumb"
+msgstr ""
+
+#: ../inc/customizer.php:1455
+msgid "Show current"
+msgstr ""
+
+#: ../inc/customizer.php:1473
+msgid "Breadcrumb Home Text"
+msgstr ""
+
+#: ../inc/customizer.php:1491
+msgid "Breadcrumb Separator"
+msgstr ""
+
+#: ../inc/template-tags.php:23
+#, php-format
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#: ../inc/template-tags.php:28
+#, php-format
+msgctxt "post author"
+msgid "%s"
+msgstr ""
+
+#: ../inc/template-tags.php:36
+msgid "Leave a comment"
+msgstr ""
+
+#: ../inc/template-tags.php:36
+msgid "1 Comment"
+msgstr ""
+
+#: ../inc/template-tags.php:36
+#, php-format
+msgid "% Comments"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#. translators: used between list items, there is a space after the comma
+#: ../inc/template-tags.php:50 ../inc/template-tags.php:56
+msgid ", "
+msgstr ""
+
+#: ../inc/template-tags.php:52
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: ../inc/template-tags.php:58
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
+#: ../inc/template-tags.php:65 ../template-parts/content-page.php:42
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#. Base ID
+#: ../inc/widget-featured-post.php:25
+msgid "RARA: Featured Post"
+msgstr ""
+
+#: ../inc/widget-featured-post.php:26
+msgid "A Featured Post Widget"
+msgstr ""
+
+#: ../inc/widget-featured-post.php:83
+msgid "--choose--"
+msgstr ""
+
+#: ../inc/widget-featured-post.php:104
+msgid "Posts"
+msgstr ""
+
+#: ../inc/widget-featured-post.php:114
+msgid "Read More Text"
+msgstr ""
+
+#: ../inc/widget-featured-post.php:118
+msgid "Excerpt Character"
+msgstr ""
+
+#: ../inc/widget-featured-post.php:124 ../inc/widget-recent-post.php:117
+msgid "Show Post Thumbnail"
+msgstr ""
+
+#. Base ID
+#: ../inc/widget-recent-post.php:25
+msgid "RARA: Recent Post"
+msgstr ""
+
+#: ../inc/widget-recent-post.php:26
+msgid "A Recent Post Widget"
+msgstr ""
+
+#: ../inc/widget-recent-post.php:72
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: ../inc/widget-recent-post.php:98 ../inc/widget-recent-post.php:140
+msgid "Recent Posts"
+msgstr ""
+
+#: ../inc/widget-recent-post.php:106 ../inc/widget-social-links.php:95
+msgid "Title"
+msgstr ""
+
+#: ../inc/widget-recent-post.php:111
+msgid "Number of Posts"
+msgstr ""
+
+#: ../inc/widget-recent-post.php:122
+msgid "Show Post Date"
+msgstr ""
+
+#. Base ID
+#: ../inc/widget-social-links.php:24
+msgid "RARA: Social Links"
+msgstr ""
+
+#: ../inc/widget-social-links.php:25
+msgid "A Social Links Widget"
+msgstr ""
+
+#: ../inc/widget-social-links.php:54 ../inc/widget-social-links.php:100
+msgid "Facebook"
+msgstr ""
+
+#: ../inc/widget-social-links.php:56 ../inc/widget-social-links.php:105
+msgid "Twitter"
+msgstr ""
+
+#: ../inc/widget-social-links.php:58 ../inc/widget-social-links.php:110
+msgid "Pinterest"
+msgstr ""
+
+#: ../inc/widget-social-links.php:60
+msgid "Linkedin"
+msgstr ""
+
+#: ../inc/widget-social-links.php:62 ../inc/widget-social-links.php:120
+msgid "Google Plus"
+msgstr ""
+
+#: ../inc/widget-social-links.php:64 ../inc/widget-social-links.php:125
+msgid "Instagram"
+msgstr ""
+
+#: ../inc/widget-social-links.php:66 ../inc/widget-social-links.php:130
+msgid "YouTube"
+msgstr ""
+
+#: ../inc/widget-social-links.php:83 ../inc/widget-social-links.php:149
+msgid "Social Media"
+msgstr ""
+
+#: ../inc/widget-social-links.php:115
+msgid "LinkedIn"
+msgstr ""
+
+#: ../template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: ../template-parts/content-none.php:21
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../template-parts/content-page.php:31 ../template-parts/content.php:55
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post.
+#: ../template-parts/content.php:38 ../template-parts/content.php:47
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Name of the theme
+msgid "Benevolent"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "http://raratheme.com/theme/benevolent/"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Benevolent is a simple, modern and easy to use WordPress theme for non-"
+"profit organisations, charity causes, political organisations and "
+"foundations. The theme is apt for organisations looking for clean and "
+"professional WordPress Theme. The design is responsive and the theme looks "
+"great on tablets, laptops and mobile phones. Benevolent comes with several "
+"features and it is customisable. The front page has advance slider option, "
+"call for donation at several places, project showcase, impact showcase with "
+"statistics counter, latest articles and sponsors showcase of the cause. The "
+"theme is also SEO friendly which makes it easy to find on search engines "
+"like Google. The theme supports all kinds of post formats such as gallery, "
+"image, video, etc. It has 3 custom widgets - recent posts, social media and "
+"about us. The theme is translation ready."
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://raratheme.com/"
+msgstr ""

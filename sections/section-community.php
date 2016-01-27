@@ -1,0 +1,77 @@
+<?php
+/**
+ * Community Section
+ * 
+ * @package Benevolent
+ */
+ 
+ $benevolent_community_section_title = get_theme_mod( 'benevolent_community_section_title' );
+ $benevolent_community_post_one = get_theme_mod( 'benevolent_community_post_one' );
+ $benevolent_community_post_two = get_theme_mod( 'benevolent_community_post_two' );
+ $benevolent_community_post_three = get_theme_mod( 'benevolent_community_post_three' );
+ $benevolent_community_post_four = get_theme_mod( 'benevolent_community_post_four' );
+ 
+ if( $benevolent_community_section_title ) echo '<header class="header"><h2 class="main-title">' . esc_html( $benevolent_community_section_title ) . '</h2></header>'; 
+ 
+ if( $benevolent_community_post_one || $benevolent_community_post_two || $benevolent_community_post_three || $benevolent_community_post_four ){
+    $community_posts = array( $benevolent_community_post_one, $benevolent_community_post_two, $benevolent_community_post_three, $benevolent_community_post_four );
+    $community_posts = array_filter( $community_posts );
+    
+    $community_qry = new WP_Query( array( 
+        'post_type'     => 'post',
+        'posts_per_page'=> -1,
+        'post__in'     => $community_posts,
+        'orderby'       => 'post__in',
+        'ignore_sticky_posts' => true
+    
+    ) );
+    if( $community_qry->have_posts() ){
+        echo '<div class="community-holder">';
+        while( $community_qry->have_posts() ){
+            $community_qry->the_post();
+            if( has_post_thumbnail() ){
+            ?>
+            <div class="columns-2">
+				<?php the_post_thumbnail( 'benevolent-community' ); ?>
+				<div class="text-holder">
+                    <div class="table">
+                        <div class="table-row">
+                            <div class="table-cell">				
+                            <strong class="title"><?php the_title(); ?></strong>
+				            <?php 
+                            if( has_excerpt() ){ 
+				                echo wpautop( get_the_excerpt() );
+                            }else{
+                                echo wpautop( benevolent_excerpt( get_the_content(), 25, '.', false, false ) );    
+                            } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    			<div class="hover-state">
+                    <div class="table">
+                        <div class="table-row">
+                            <div class="table-cell">
+				                <strong class="title"><?php the_title(); ?></strong>
+				                <?php 
+                                if( has_excerpt() ){ 
+    				                echo wpautop( get_the_excerpt() );
+                                }else{
+                                    echo wpautop( benevolent_excerpt( get_the_content(), 25, '.', false, false ) );    
+                                } ?>
+				                <div class="btn-holder">
+                                    <a href="<?php the_permalink(); ?>"><span class="fa fa-angle-right"></span></a>
+                                </div>
+				                <div class="text-content"><?php echo wpautop( benevolent_excerpt( get_the_content(), 150, '.', false, false ) ); ?></div>
+				            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+            }
+        }
+        wp_reset_postdata(); 
+        echo '</div>';
+    }
+ }			
