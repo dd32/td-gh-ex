@@ -290,7 +290,6 @@ function actuate_body_class($classes) {
     $classes[] = 'orange';
     $classes[] = 'right_sidebar';
     $classes[] = 'theme-wide';
-    $classes[] = 'thumbnail-left';
 
     return $classes;
 }
@@ -335,7 +334,7 @@ function actuate_social_section_show() {
     $output .= actuate_get_social_section_individual_icon('twitter', __('Twitter','actuate'), 'twitter');
     $output .= actuate_get_social_section_individual_icon('rss', __('RSS feed','actuate'), 'rss');
     
-    if($output !== false): ?>
+    if($output != false): ?>
         <div id="social-section" class="social-section">
             <?php echo $output ?>
         </div>

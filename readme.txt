@@ -14,9 +14,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 = Where can I find theme support? =
 
-Go to https://wordpress.org/support/theme/actuate
+Go to https://wordpress.org/support/theme/actuate or contact us at contact[at]mudthemes.com
 
 == Changelog ==
+
+= Version 1.0.1.3 - 28/01/2015 =
+* (style.css) Fixed bug for comments CSS
+* (style.css) Fixed bug for responsive loop/post CSS
+* (style.css) Fixed bug for gallery
+* (style.css) Fixed bug for YouTube responsive videos
+* (style.css) Fixed bug for responsive comments
+* (style.css) Fixed bug for navigation below posts
+* (loop.php) Linked date to post permalink
+* (functions.php) Fixed bug in function actuate_social_section_show()
+* (functions.php) Removed unused body class from function actuate_body_class()
 
 = Version 1.0.1.2 - 24/12/2015 =
 * (assets/global/jquery.sidr.js) Added sidr js file

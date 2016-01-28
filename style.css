@@ -2,7 +2,7 @@
 Theme Name: Actuate
 Theme URI: http://www.mudthemes.com/actuate
 Description: Actuate is a clean, beautiful and responsive theme useful for personal blogging, corporate or magazine blogs. It has 3 columns homepage with big thumbnails which gives your site a stylish look. Actuate has a single menu with 4 sidebars which consist of a beautiful Footer box. Actuate is fully Translation ready and comes with GPL license and online documentation.
-Version: 1.0.1.2
+Version: 1.0.1.3
 Author: mudThemes
 Author URI: http://www.mudthemes.com
 Tags: white, orange, light, responsive-layout, fluid-layout, two-columns, three-columns, right-sidebar, custom-menu, threaded-comments, theme-options, translation-ready, custom-background
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: actuate
 
 ======================================================
-Actuate WordPress Theme, Copyright 2015 mudthemes.com
+Actuate WordPress Theme, Copyright 2016 mudthemes.com
 Actuate is distributed under the terms of the GNU GPL
 ======================================================
 
@@ -371,6 +371,11 @@ i {
 }
 a {
   outline: none;
+}
+iframe,
+object,
+embed {
+  width: 100%;
 }
 body {
   line-height: 1;
@@ -785,6 +790,7 @@ body {
 .archive-nav .nav-previous {
   display: inline-block;
   float: right;
+  padding-bottom: 7px;
 }
 .post-nav .nav-previous i,
 .archive-nav .nav-previous i {
@@ -795,6 +801,7 @@ body {
 .archive-nav .nav-next {
   display: inline-block;
   text-align: left;
+  padding-bottom: 7px;
 }
 .post-nav .nav-next i,
 .archive-nav .nav-next i {
@@ -1140,6 +1147,11 @@ body {
   box-sizing: border-box;
   padding: 10px;
 }
+.single .wp-caption-text,
+.page .wp-caption-text {
+  padding: 0 5px;
+  font-size: .8em;
+}
 .custom-page-template div.content-section {
   padding-top: 25px;
 }
@@ -1202,7 +1214,6 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0 auto;
-  width: 145px;
   text-align: center;
   padding: 10px;
   line-height: 1;
@@ -1366,7 +1377,7 @@ body {
   float: right;
 }
 .comments-section .comment-respond {
-  width: 600px;
+  width: 70%;
   margin: 30px auto 0;
 }
 .comments-section .comment-respond h3.comment-reply-title {
@@ -1377,12 +1388,12 @@ body {
   width: 150px;
 }
 .comments-section .comment-respond form input[type="text"] {
-  width: 400px;
+  width: 100%;
   height: 30px;
   font-size: 16px;
 }
 .comments-section .comment-respond form textarea {
-  width: 400px;
+  width: 100%;
   height: 100px;
   font-size: 16px;
   vertical-align: text-top;
@@ -1463,6 +1474,9 @@ body {
   font-size: 13px;
   font-weight: 400;
   text-decoration: none;
+}
+.loop-post-meta .loop-meta-date {
+  font-weight: 300;
 }
 .loop-post-excerpt .loop-post-text {
   padding: 0;
@@ -2923,6 +2937,13 @@ body #scrollUp:hover {
   }
 }
 @media only screen and (max-width: 500px) {
+  .loop-thumbnail-section {
+    width: 100%;
+  }
+  .loop-content-section {
+    padding-top: 20px;
+    width: 100%;
+  }
   .loop-section-col:first-of-type .loop-section {
     padding-top: 25px;
   }
@@ -2984,12 +3005,19 @@ body #scrollUp:hover {
   .read-more a {
     padding: 10px 40px 11px;
   }
+  .comment-author-avatar-container {
+    padding: 5px !important;
+  }
 }
 @media only screen and (max-width: 650px) {
   .inner-content-section {
     width: 100% !important;
     clear: both;
     margin-bottom: 35px;
+  }
+  .inner-post-section {
+    width: 100%;
+    clear: both;
   }
   .sidebar-right-section {
     width: 100% !important;
@@ -3004,11 +3032,27 @@ body #scrollUp:hover {
   .loop-container-section {
     border-right: 0;
   }
+  .inner-post-section {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  .post-title {
+    padding-right: 0 !important;
+  }
+  .post-content {
+    padding-right: 0 !important;
+  }
+  .comment-respond {
+    width: 100% !important;
+  }
   .sidebar-right-section .widget,
   .footerbox-section .widget {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .gallery .gallery-item {
+    width: 50% !important;
   }
 }
 .orange #wrapper .primarymenu-section li .sub-menu {

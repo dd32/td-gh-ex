@@ -48,7 +48,7 @@ global $actuate_loop_count;
                     <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php echo __('Permalink to', 'actuate'). ' ' ?><?php the_title_attribute() ?>"><?php the_title() ?></a></h1>
                     <?php if(!actuate_get_option('disable_blog_p_meta')): ?>
                        <div class="loop-post-meta">
-                            <span><?php _e('Written on', 'actuate') ?> </span><span class="loop-meta-date"><?php echo get_the_time('M, d, Y') ?></span>
+                            <span><?php _e('Written on', 'actuate') ?> </span><a href="<?php echo get_the_permalink() ?>" rel="bookmark"><span class="loop-meta-date"><?php echo get_the_time('M, d, Y') ?></span></a>
                             <span><?php _e('by', 'actuate') ?> </span><span class="loop-meta-author"><?php the_author_posts_link() ?></span>
                             <?php if(!actuate_get_option('disable_blog_p_meta_comments')): ?>
                             <span class="loop-meta-comments"> | <?php comments_popup_link( __('No comments yet', 'actuate'), __('1 comment','actuate'), '% '.__('comments','actuate'), 'comments-link', __('No Comments','actuate')); ?></span>
