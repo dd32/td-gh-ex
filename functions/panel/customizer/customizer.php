@@ -377,7 +377,7 @@ function simplecatch_customize_register( $wp_customize ) {
 			'title' 		=> __( 'More Tag Text', 'simple-catch' ),
 			'description'	=> '',
 			'field_type' 	=> 'text',
-			'sanitize' 		=> 'sanitize_text_field',
+			'sanitize' 		=> 'simplecatch_sanitize_more_tag_text',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'excerpt_more_tag_settings',
 			'default' 		=> $defaults['more_tag_text']

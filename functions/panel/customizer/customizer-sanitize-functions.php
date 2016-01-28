@@ -192,10 +192,6 @@ function simplecatch_sanitize_number_range( $number, $setting ) {
  * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
  */
 function simplecatch_sanitize_select( $input, $setting ) {
-	
-	// Ensure input is a slug.
-	$input = sanitize_key( $input );
-	
 	// Get list of choices from the control associated with the setting.
 	$choices = $setting->manager->get_control( $setting->id )->choices;
 	
@@ -220,7 +216,7 @@ function simplecatch_reset_all_settings( $input ) {
         simplecatch_themeoption_invalidate_caches();
     } 
     else {
-        return '';
+        return "0";
     }
 }
 

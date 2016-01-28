@@ -4,16 +4,13 @@ Theme URI: http://catchthemes.com/themes/simple-catch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Color Schemes, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, Spanish, German, Italian, Danish, Czech, Hungarian and Brazilian Portuguese. Theme Support at http://catchthemes.com/support/
-Version: 3.0
+Version: 3.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: simple-catch
 Tags: black, gray, silver, white, light, dark, brown, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
 */
 
-/* =Import css
------------------------------------------------ */
-	@import url(css/978.css);
-	
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -478,7 +475,7 @@ ul.social-profile li {
 	float: left;
 	margin: 10px 10px 0 0;
 }
-	
+
 #header ul.social-profile li {
 	margin: 10px 0 0 10px;
 }
@@ -724,9 +721,9 @@ ul.social-profile li.email a:hover {
 	line-height: 48px;
 	color: #444;
 	float: left;
-	white-space: nowrap;	
+	white-space: nowrap;
 }
-#header #mainmenu ul li a:hover, 
+#header #mainmenu ul li a:hover,
 #header #mainmenu ul li.current-menu-item a,
 #header #mainmenu ul li.current-menu-parent a,
 #header #mainmenu ul li.current_page_item a,
@@ -773,7 +770,7 @@ ul.social-profile li.email a:hover {
 	line-height: 18px;
 	font-size: 13px;
 	font-weight: normal;
-	white-space: normal;	
+	white-space: normal;
 }
 #header #mainmenu ul li ul li a:hover, #header #mainmenu ul li ul li:hover > a {
 	background-color:#333;
@@ -1181,7 +1178,7 @@ input[type=submit] {
 	line-height:22px;
 	box-shadow: 0 2px 2px #e0e0e0 inset;
 }
-#commentform #submit, 
+#commentform #submit,
 .wpcf7-form .wpcf7-submit {
 	background:url(images/submit.jpg) center top no-repeat;
 	border: 0 none;
@@ -1202,7 +1199,7 @@ input[type=submit] {
 .wpcf7-form .wpcf7-submit {
     margin: 0;
 }
-#respond #commentform #submit:hover, 
+#respond #commentform #submit:hover,
 .wpcf7-form .wpcf7-submit:hover {
 	background-position:center bottom;
 	border:none;
@@ -1265,10 +1262,10 @@ img.alignright {
 	margin-left: 20px;
 	margin-bottom: 20px;
 }
-img.size-auto, 
-img.size-full, 
-img.size-large, 
-img.size-medium, 
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
 .attachment img {
 	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
 	height: auto; /* Override height to match resized width for correct aspect ratio. */
@@ -1508,7 +1505,7 @@ img.size-medium,
 }
 /* =Pagination
 -------------------------------------------------------------- */
-#content #wp_page_numbers, 
+#content #wp_page_numbers,
 #content .wp-pagenavi {
 	float: right;
 	margin: 0;
@@ -1530,10 +1527,10 @@ img.size-medium,
     padding: 2px;
 }
 #content #wp_page_numbers ul li {
-	margin-left: 10px;	
+	margin-left: 10px;
 }
 #content #wp_page_numbers ul li a,
-#content .wp-pagenavi a, 
+#content .wp-pagenavi a,
 #content .wp-pagenavi span {
 	border: none;
 	float:left;
@@ -1547,7 +1544,7 @@ img.size-medium,
 	padding:0 12px;
 	text-decoration:none;
 }
-#content .wp-pagenavi a, 
+#content .wp-pagenavi a,
 #content .wp-pagenavi span {
 	margin: 0 0 0 10px;
 }
@@ -1556,13 +1553,13 @@ img.size-medium,
 	background:#444;
 	color:#fff;
 }
-#content #wp_page_numbers ul li.active_page a, 
+#content #wp_page_numbers ul li.active_page a,
 #content .wp-pagenavi span.current {
 	background:#444;
 	color:#fff;
 	font-weight: normal;
 }
-/* Single pagination */ 
+/* Single pagination */
 .pagination {
 	clear: both;
 	text-align: right;
@@ -1592,7 +1589,7 @@ img.size-medium,
 .pagination a:hover span {
 	background: none repeat #ddd;
 }
-/* Default wp-page */ 
+/* Default wp-page */
 ul.default-wp-page  {
 	margin:0;
 	list-style: none outside;

@@ -1,5 +1,15 @@
 == Changelog ==
 
+Version 3.1
+* Added Text Domain in style.css
+* Added Button that links to Customizer-> Header Image in Theme Options
+* Bug Fixed: Some Select types not updating in Customizer
+* Bug Fixed: Excerpt More Tag sanitization issue
+* Bug Fixed: Header meta charset issue
+* Compatibility fix: Customizer Reset option not working when returning any value in WordPress 4.4
+* Updated: German translation
+* Updated: Removed @import 978 grid from style.css and added it as dependency for main stylesheet
+
 Version 3.0
 * Added all theme options to customizer
 
@@ -45,14 +55,14 @@ Version 2.6.7
 * Added span for slider title, separator and content to give better control through CSS
 
 Version 2.6.6
-* Added brown color scheme 
-* Fixed dark color scheme 
+* Added brown color scheme
+* Fixed dark color scheme
 
 Version 2.6.5
-* Added dark color scheme 
+* Added dark color scheme
 * Fixed custom css issues with color options
 * Moved style.css enqueue to wp_enqueue_scripts
-* Merged Content Background and Content Color Options to Color Options 
+* Merged Content Background and Content Color Options to Color Options
 
 Version 2.6.4
 * Added Simple Catch: Advertisement widget to add google ads and custom image ads
@@ -104,11 +114,11 @@ Version 2.4
 * Added layout 'No Sidebar, Full Width'
 
 Version 2.3.4
-* Added Web Clip Icon Option 
+* Added Web Clip Icon Option
 
 Version 2.3.3
 * Moved comment-reply script to wp_enqueue_scripts
-* Added Post ID shown in the All Posts Table in admin section 
+* Added Post ID shown in the All Posts Table in admin section
 * Added !function_exists() condition to support child theme easy editing
 * Fixed the css for wp-caption img
 
@@ -152,7 +162,7 @@ Version 1.9.1.1
 
 Version 1.9.1
 * Redesign whole Theme Options panel
-* Made Header Logo and Favicon disable by default. 
+* Made Header Logo and Favicon disable by default.
 * Added action to redirect to Theme Options upon activation
 
 Version 1.9
@@ -223,7 +233,7 @@ Version 1.4.2
 * Changed Theme URI to match with the new theme site
 * Change the license to GPL 2
 * Added Info bar in Theme Option Panel
-* Fixed Slider Initialization 
+* Fixed Slider Initialization
 
 Version 1.4.1
 * Fixing Color Options
@@ -247,7 +257,7 @@ Version 1.3.5.3
 Version 1.3.5.2
 * Updated FAQ in Theme Options
 * Fixed Theme Option Data Validation for html special character &rarr; in continue reading. This fixed the problem in the server where Theme Option was not being saved.
-* Fixed Slider loading issue and display overlap 
+* Fixed Slider loading issue and display overlap
 * Added un-minified version of JS as per GPL
 * Updated simplecatch.pot file
 
@@ -281,7 +291,7 @@ Version 1.3.2
 * Fixed the css issue for search title
 
 Version 1.3.1.2
-* Fixed Link for logo and site title in simplecatch_headerdetails() function 
+* Fixed Link for logo and site title in simplecatch_headerdetails() function
 
 Version 1.3.1.1
 * Fixed logo condition in simplecatch_headerdetails() function
@@ -317,7 +327,7 @@ Version 1.2.7
 
 Version 1.2.6
 * Fixed CSS for Dropdown menu height to accept longer titles
-* Added Layout Options under Theme Options 
+* Added Layout Options under Theme Options
 * Added more slider options under Slider Options
 
 Version 1.2.5
@@ -331,7 +341,7 @@ Version 1.2.4
 Version 1.2.3
 * Fixed css for alignment and footer clear
 * Fixed the layout and css for error404 page
-* Change the Heading from H1 to h2 class entry title 
+* Change the Heading from H1 to h2 class entry title
 * Remove title modification from header.php and added function simplecatch_filter_wp_title() to filter the wp_title
 * Added Enqueue Comment Reply Script in function simplecatch_enqueue_comment_reply_script and removed it from header
 * Added Social Icons for Linkedin, Slideshare, Foursquare, Vimeo, Flickr, Tumblr, DeviantArt,  Dribbble, MySpace and WordPress
