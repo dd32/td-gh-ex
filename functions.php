@@ -6,12 +6,6 @@
  *
  * @package Avien_Light
  */
- 
- // Nav walker
-require( get_template_directory()  . '/inc/navwalker.php');
-
-// Mobile walker
-require( get_template_directory()  . '/inc/mobile-navwalker.php');
 
 if ( ! function_exists( 'themeofwp_setup' ) ) :
 /**
@@ -110,29 +104,6 @@ add_action( 'after_setup_theme', 'themeofwp_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
- 
-class themeofWP_Walker extends Walker_Page {
-
-    function start_lvl( &$output, $depth = 0, $args = array() ) {
-        $indent = str_repeat("\t", $depth);
-
-        if ($depth == 0) {
-            $output .= "\n$indent<ul class='dropdown-menu' role='menu'>\n";
-        } else {
-            $output .= "\n$indent<ul class='dropdown-menu' role='menu'>\n";
-        }
-    }
-
-    function end_lvl( &$output, $depth = 0, $args = array() ) {
-        $indent = str_repeat("\t", $depth);
-
-        if ($depth == 0) {
-            $output .= "$indent</ul>\n";
-        } else {
-            $output .= "$indent</ul>\n";
-        }
-    }
-}
 function themeofwp_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'themeofwp' ),

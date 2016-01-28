@@ -106,9 +106,9 @@
 										<?php if ( ( function_exists( 'jetpack_the_site_logo' ) && jetpack_has_site_logo() ) ) : 
 											jetpack_the_site_logo(); 
 										else : ?>
-										 <a class="navbar-brand text-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr( bloginfo( 'name' ) ); ?>">
-											<?php esc_attr( bloginfo( 'name' ) ); ?>
-											<span class="site-description"><?php esc_attr( bloginfo('description') ); ?></span>
+										 <a class="navbar-brand text-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
+											<?php bloginfo( 'name' ); ?>
+											<span class="site-description"><?php bloginfo('description'); ?></span>
 										</a>
 										<?php endif; ?>
 									</div>
@@ -123,7 +123,6 @@
 											'container'       => false,
 											'menu_class'      => 'nav navbar-nav navbar-main',
 											'fallback_cb'     => 'wp_page_menu',
-											'walker'          => new wp_bootstrap_navwalker()
 											) ); 
 										
 										} else {
@@ -133,7 +132,6 @@
 											
 												'container' => '',
 												'title_li' => '',
-												'walker' => new themeofWP_Walker(),
 													
 											));
 										echo '</ul>';
@@ -154,7 +152,6 @@
 												  'container'       => false,
 												  'fallback_cb'     => 'wp_page_menu',
 												  'menu_class'      => 'nav navbar-nav',
-												  'walker'          => new wp_bootstrap_mobile_navwalker()
 												
 												) ); 
 											
@@ -165,7 +162,6 @@
 												
 													'container' => '',
 													'title_li' => '',
-													'walker' => new themeofWP_Walker(),
 														
 												));
 											echo '</ul>';

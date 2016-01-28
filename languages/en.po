@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Avien Lite 2.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2016-01-19 21:19-0000\n"
-"PO-Revision-Date: 2016-01-19 21:19-0000\n"
+"POT-Creation-Date: 2016-01-28 02:02-0000\n"
+"PO-Revision-Date: 2016-01-28 02:02-0000\n"
 "Last-Translator: \n"
 "Language-Team: ThemeofWP.com <info@themeofwp.com>\n"
 "Language: en\n"
@@ -78,40 +78,40 @@ msgid "Theme: %1$s by %2$s"
 msgstr ""
 
 # @ _s
-#: functions.php:59
+#: functions.php:53
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:60
+#: functions.php:54
 msgid "Footer Menu"
 msgstr ""
 
 # @ _s
-#: functions.php:138
+#: functions.php:109
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:148
+#: functions.php:119
 msgid "Footer"
 msgstr ""
 
-#: functions.php:150
+#: functions.php:121
 msgid "Widgets in this area will be shown before footer area."
 msgstr ""
 
-#: functions.php:159
+#: functions.php:130
 msgid "Header Right"
 msgstr ""
 
-#: functions.php:161
+#: functions.php:132
 msgid "Widgets in this area will be shown on header right area."
 msgstr ""
 
-#: functions.php:170
+#: functions.php:141
 msgid "Header Left"
 msgstr ""
 
-#: functions.php:172
+#: functions.php:143
 msgid "Widgets in this area will be shown on header left area."
 msgstr ""
 
