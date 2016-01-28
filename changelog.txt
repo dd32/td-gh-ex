@@ -1,5 +1,11 @@
 == Change log ==
 
+Version 4.3
+* Added: Meetup social icon
+* Replaced: Twitter old social icon with the new one
+* Bug Fixed: Continue Reading - Text domain issue (content-aside.php and functions.php) (Reported by jie66)
+* Bug Fixed: Gallery images styles (Reported by Petr Sabata)
+
 Version 4.2.1
 * Fixed: Continue Reading - Text domain issue (Reported by jie66)
 

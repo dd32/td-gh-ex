@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-26 21:48+0545\n"
-"PO-Revision-Date: 2016-01-26 21:48+0545\n"
+"POT-Creation-Date: 2016-01-28 20:08+0545\n"
+"PO-Revision-Date: 2016-01-28 20:08+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: H.P. Brinkmann\n"
 "Language: cs\n"
@@ -71,7 +71,7 @@ msgstr "F Y"
 msgid "Yearly Archives: %s"
 msgstr "Roční archiv: %s"
 
-#: ../archive.php:26 ../inc/theme-options.php:1286
+#: ../archive.php:26 ../inc/theme-options.php:1294
 msgid "Y"
 msgstr "Y"
 
@@ -446,14 +446,107 @@ msgstr "ID"
 msgid "Name"
 msgstr "Jméno"
 
-#: ../functions.php:919 ../inc/customizer/customizer.php:604
-#: ../inc/theme-options.php:877
+#: ../functions.php:919 ../functions.php:1136
+#: ../inc/customizer/customizer.php:604 ../inc/theme-options.php:877
 msgid "Email"
 msgstr "E-Mail"
 
 #: ../functions.php:1042
 msgid "Footer Social Links Menu"
 msgstr ""
+
+#: ../functions.php:1046 ../inc/customizer/customizer.php:424
+#: ../inc/theme-options.php:630 ../inc/theme-options.php:770
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../functions.php:1051 ../inc/customizer/customizer.php:434
+#: ../inc/theme-options.php:631 ../inc/theme-options.php:775
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../functions.php:1056
+msgid "Google Plus"
+msgstr "Google Plus"
+
+#: ../functions.php:1061
+msgid "Linkedin"
+msgstr "Linkedin"
+
+#: ../functions.php:1066 ../inc/customizer/customizer.php:464
+#: ../inc/theme-options.php:793
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: ../functions.php:1071
+msgid "YouTube"
+msgstr "YouTube"
+
+#: ../functions.php:1076 ../inc/theme-options.php:805
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: ../functions.php:1081 ../inc/theme-options.php:811
+msgid "Deviantart"
+msgstr "Deviantart"
+
+#: ../functions.php:1086 ../inc/customizer/customizer.php:504
+#: ../inc/theme-options.php:817
+msgid "Tumblr"
+msgstr "Tumblr"
+
+#: ../functions.php:1091 ../inc/customizer/customizer.php:514
+#: ../inc/theme-options.php:823
+msgid "Vimeo"
+msgstr "Vimeo"
+
+#: ../functions.php:1096 ../inc/customizer/customizer.php:524
+#: ../inc/theme-options.php:829
+msgid "Dribbble"
+msgstr "Dribbble"
+
+#: ../functions.php:1101 ../inc/customizer/customizer.php:534
+#: ../inc/theme-options.php:835
+msgid "MySpace"
+msgstr "MySpace"
+
+#: ../functions.php:1106
+msgid "AIM"
+msgstr "AIM"
+
+#: ../functions.php:1111 ../inc/customizer/customizer.php:554
+#: ../inc/customizer/customizer.php:574 ../inc/theme-options.php:847
+msgid "Flickr"
+msgstr "Flickr"
+
+#: ../functions.php:1116 ../inc/customizer/customizer.php:564
+#: ../inc/theme-options.php:853
+msgid "Slideshare"
+msgstr "Slideshare"
+
+#: ../functions.php:1121 ../inc/theme-options.php:859
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../functions.php:1126 ../inc/customizer/customizer.php:584
+#: ../inc/theme-options.php:865
+msgid "Skype"
+msgstr "Skype"
+
+#: ../functions.php:1131 ../inc/customizer/customizer.php:594
+#: ../inc/theme-options.php:871
+msgid "Soundcloud"
+msgstr "Soundcloud"
+
+#: ../functions.php:1141 ../inc/customizer/customizer.php:614
+#: ../inc/theme-options.php:882
+msgid "Xing"
+msgstr "Xing"
+
+#: ../functions.php:1146 ../inc/customizer/customizer.php:624
+#: ../inc/theme-options.php:887
+msgid "Meetup"
+msgstr "Meetup"
 
 #: ../image.php:15
 msgid "Image navigation"
@@ -731,16 +824,6 @@ msgstr ""
 msgid "Transition Length"
 msgstr "Délka trvání přechodu"
 
-#: ../inc/customizer/customizer.php:424 ../inc/theme-options.php:630
-#: ../inc/theme-options.php:770
-msgid "Facebook"
-msgstr "Facebook"
-
-#: ../inc/customizer/customizer.php:434 ../inc/theme-options.php:631
-#: ../inc/theme-options.php:775
-msgid "Twitter"
-msgstr "Twitter"
-
 #: ../inc/customizer/customizer.php:444
 msgid "Google+"
 msgstr "Google+"
@@ -748,10 +831,6 @@ msgstr "Google+"
 #: ../inc/customizer/customizer.php:454 ../inc/theme-options.php:787
 msgid "LinkedIn"
 msgstr "LinkedIn"
-
-#: ../inc/customizer/customizer.php:464 ../inc/theme-options.php:793
-msgid "Pinterest"
-msgstr "Pinterest"
 
 #: ../inc/customizer/customizer.php:474 ../inc/theme-options.php:799
 msgid "Youtube"
@@ -765,89 +844,52 @@ msgstr "RSS"
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/customizer/customizer.php:504 ../inc/theme-options.php:817
-msgid "Tumblr"
-msgstr "Tumblr"
-
-#: ../inc/customizer/customizer.php:514 ../inc/theme-options.php:823
-msgid "Vimeo"
-msgstr "Vimeo"
-
-#: ../inc/customizer/customizer.php:524 ../inc/theme-options.php:829
-msgid "Dribbble"
-msgstr "Dribbble"
-
-#: ../inc/customizer/customizer.php:534 ../inc/theme-options.php:835
-msgid "MySpace"
-msgstr "MySpace"
-
 #: ../inc/customizer/customizer.php:544 ../inc/theme-options.php:841
 msgid "Aim"
 msgstr "Aim"
 
-#: ../inc/customizer/customizer.php:554 ../inc/customizer/customizer.php:574
-#: ../inc/theme-options.php:847
-msgid "Flickr"
-msgstr "Flickr"
-
-#: ../inc/customizer/customizer.php:564 ../inc/theme-options.php:853
-msgid "Slideshare"
-msgstr "Slideshare"
-
-#: ../inc/customizer/customizer.php:584 ../inc/theme-options.php:865
-msgid "Skype"
-msgstr "Skype"
-
-#: ../inc/customizer/customizer.php:594 ../inc/theme-options.php:871
-msgid "Soundcloud"
-msgstr "Soundcloud"
-
-#: ../inc/customizer/customizer.php:614 ../inc/theme-options.php:882
-msgid "Xing"
-msgstr "Xing"
-
-#: ../inc/customizer/customizer.php:626 ../inc/theme-options.php:906
+#: ../inc/customizer/customizer.php:636 ../inc/theme-options.php:911
 msgid "Code to display on Header"
 msgstr "Code to display on Header"
 
-#: ../inc/customizer/customizer.php:627
+#: ../inc/customizer/customizer.php:637
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:637 ../inc/theme-options.php:917
+#: ../inc/customizer/customizer.php:647 ../inc/theme-options.php:922
 msgid "Code to display on Footer"
 msgstr "Code to display on Footer"
 
-#: ../inc/customizer/customizer.php:638
+#: ../inc/customizer/customizer.php:648
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Footer"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:767
+#: ../inc/customizer/customizer.php:777
 #, php-format
 msgid "#%s Featured Post ID"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:782
+#: ../inc/customizer/customizer.php:792
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../inc/customizer/customizer.php:784
+#: ../inc/customizer/customizer.php:794
 msgid "Reset all settings"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:794
+#: ../inc/customizer/customizer.php:804
 msgid "Check to reset all settings to default"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:804 ../inc/customizer/customizer.php:815
+#: ../inc/customizer/customizer.php:814 ../inc/customizer/customizer.php:825
 msgid "Important Links"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:849
+#: ../inc/customizer/customizer.php:859
 msgid "Upgrade To Pro"
 msgstr ""
 
@@ -956,7 +998,7 @@ msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
 #: ../inc/theme-options.php:614 ../inc/theme-options.php:615
-#: ../inc/theme-options.php:1328
+#: ../inc/theme-options.php:1336
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
@@ -1075,7 +1117,7 @@ msgstr ""
 "se budou články ve slideru zobrazovat ."
 
 #: ../inc/theme-options.php:707 ../inc/theme-options.php:753
-#: ../inc/theme-options.php:889 ../inc/theme-options.php:928
+#: ../inc/theme-options.php:894 ../inc/theme-options.php:933
 msgid "Save"
 msgstr "Uložit"
 
@@ -1095,19 +1137,7 @@ msgstr "vteřin"
 msgid "Google +"
 msgstr "Google +"
 
-#: ../inc/theme-options.php:805
-msgid "RSS Feed"
-msgstr "RSS Feed"
-
-#: ../inc/theme-options.php:811
-msgid "Deviantart"
-msgstr "Deviantart"
-
-#: ../inc/theme-options.php:859
-msgid "Instagram"
-msgstr "Instagram"
-
-#: ../inc/theme-options.php:888
+#: ../inc/theme-options.php:893
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
@@ -1115,11 +1145,11 @@ msgstr ""
 "<strong>Poznámka:</strong>Zadejte URL adresy pro dané profily na určených "
 "sociálních sítích."
 
-#: ../inc/theme-options.php:901
+#: ../inc/theme-options.php:906
 msgid "Header and Footer Code"
 msgstr "Header and Footer Code"
 
-#: ../inc/theme-options.php:913
+#: ../inc/theme-options.php:918
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -1127,7 +1157,7 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 
-#: ../inc/theme-options.php:924
+#: ../inc/theme-options.php:929
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
@@ -1135,19 +1165,19 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 
-#: ../inc/theme-options.php:1307
+#: ../inc/theme-options.php:1315
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/theme-options.php:1317
+#: ../inc/theme-options.php:1325
 msgid "Theme: Catch Box by "
 msgstr "Theme: Catch Box by "
 
-#: ../inc/theme-options.php:1339
+#: ../inc/theme-options.php:1347
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/theme-options.php:1339
+#: ../inc/theme-options.php:1347
 msgid "All Rights Reserved"
 msgstr "Všechna práva vyhrazena."
 

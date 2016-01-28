@@ -882,7 +882,12 @@ function catchbox_theme_options_render_page() {
                                         <th scope="row"><label><?php _e( 'Xing', 'catch-box' ); ?></label></th>
                                         <td><input type="text" size="45" name="catchbox_theme_options[social_xing]" value="<?php if ( isset( $options[ 'social_xing' ] ) ) echo esc_url( $options[ 'social_xing' ] ); ?>" />
                                         </td>
-                                    </tr>                                     
+                                    </tr> 
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Meetup', 'catch-box' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_theme_options[social_meetup]" value="<?php if( isset( $options[ 'social_meetup' ] ) ) echo esc_url( $options[ 'social_meetup' ] ); ?>" />
+                                        </td>
+                                    </tr>                                    
                                 </tbody>
                             </table>
                             <p><?php _e( '<strong>Note:</strong> Enter the url for correponding social networking website', 'catch-box' ); ?></p>
@@ -1105,7 +1110,10 @@ function catchbox_theme_options_validate( $input ) {
 		$options_validated[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );			
 	//Xing
 	if( isset( $input[ 'social_xing' ] ) )
-		$options_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );				
+		$options_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );
+	//Meetup
+	if( isset( $input[ 'social_meetup' ] ) )
+		$options_validated[ 'social_meetup' ] = esc_url_raw( $input[ 'social_meetup' ] );					
 
 	// data validation for tracking code
 	if( isset( $input[ 'tracker_header' ] ) )

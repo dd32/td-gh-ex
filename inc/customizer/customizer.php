@@ -619,6 +619,16 @@ function catchbox_customize_register( $wp_customize ) {
 			'section' 		=> 'predefined_social_icons',
 			'default' 		=> ''
 		),
+		'social_meetup' => array(
+			'id' 			=> 'social_meetup',
+			'title' 		=> __( 'Meetup', 'catch-box' ),
+			'description'	=> '',
+			'field_type' 	=> 'url',
+			'sanitize' 		=> 'esc_url_raw',
+			'panel' 		=> 'social_links',
+			'section' 		=> 'predefined_social_icons',
+			'default' 		=> ''
+		),		
 
 		//Webmaster Tools
 		'tracker_header' => array(
