@@ -1,6 +1,6 @@
 <?php
 /* 	SunRain Theme's General Page to display all Pages
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
@@ -17,15 +17,15 @@
  <?php the_post_thumbnail('thumbnail');  ?>
  <?php sunrain_content(); ?>
 
-				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+				<?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ','sunrain'), 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
 			</div>
 		</div>
 		<?php endwhile; ?><div class="clear"> </div>
-	<?php edit_post_link('Edit', '<p>', '</p>'); ?><br />
+	<?php edit_post_link(__('Edit','sunrain'), '<p>', '</p>'); ?>
 	<?php comments_template(); ?>
 	<?php else: ?>
-		<p>Sorry, no pages matched your criteria.</p>
+		<p><?php _e('Sorry, no pages matched your criteria','sunrain'); ?></p>
 	<?php endif; ?>
 	</div>
 

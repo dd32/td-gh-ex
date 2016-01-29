@@ -1,6 +1,6 @@
 <?php 
 /* 	SunRain Theme's part for showing blog or page in the front page
-	Copyright: 2012-2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
@@ -24,8 +24,8 @@
  <?php endwhile; endif; ?>
 
 <div id="page-nav">
-<div class="alignleft"><?php previous_posts_link('&laquo;  Previous Entries' ) ?></div>
-	<div class="alignright"><?php next_posts_link('Next Entries &raquo;') ?></div>
+<div class="alignleft"><?php previous_posts_link(__('&laquo; Previous Entries', 'sunrain')) ?></div>
+	<div class="alignright"><?php next_posts_link(__('Next Entries &raquo;', 'sunrain')) ?></div>
 </div>
 </div>
 <?php get_sidebar();  ?>

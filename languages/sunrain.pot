@@ -1,0 +1,429 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Small Business\n"
+"POT-Creation-Date: 2016-01-29 18:31+0600\n"
+"PO-Revision-Date: 2016-01-23 02:33+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:11
+msgid "Not Found"
+msgstr ""
+
+#: 404.php:12
+msgid ""
+"Apologies, but the page you requested could not be found. Perhaps searching "
+"will help"
+msgstr ""
+
+#: 404.php:15
+msgid "Or Return to the Home Page"
+msgstr ""
+
+#: 404.php:17 archive.php:71 blog.php:42 index.php:39 search.php:49
+msgid "You can also Visit the Following. These are the Featured Contents"
+msgstr ""
+
+#: archive.php:14
+msgid "now browsing by category"
+msgstr ""
+
+#: archive.php:20
+msgid "now browsing by tag"
+msgstr ""
+
+#: archive.php:25
+msgid "now browsing by day"
+msgstr ""
+
+#: archive.php:28
+msgid "now browsing by month"
+msgstr ""
+
+#: archive.php:31
+msgid "now browsing by year"
+msgstr ""
+
+#: archive.php:34
+msgid "now browsing by author"
+msgstr ""
+
+#: archive.php:37
+msgid "now browsing the general archives"
+msgstr ""
+
+#: archive.php:60 blog.php:30 front-page-content.php:27 index.php:28
+#: search.php:38
+msgid "&laquo; Previous Entries"
+msgstr ""
+
+#: archive.php:61 blog.php:31 front-page-content.php:28 index.php:29
+#: search.php:39
+msgid "Next Entries &raquo;"
+msgstr ""
+
+#: archive.php:66 blog.php:37 index.php:35 search.php:45
+msgid "Sorry, we could not find anything that matched your search"
+msgstr ""
+
+#: archive.php:68 blog.php:39 index.php:36 search.php:46
+msgid "You Can Try Another Search..."
+msgstr ""
+
+#: archive.php:70 blog.php:41 index.php:38 search.php:48
+msgid "&laquo; Or Return to the Home Page"
+msgstr ""
+
+#: comments.php:13
+msgid "No Comments"
+msgstr ""
+
+#: comments.php:13
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:13
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:27
+msgid "Comments are Closed"
+msgstr ""
+
+#: front-page.php:67
+msgid "Latest <em>Blog"
+msgstr ""
+
+#: fullwidth.php:22 page.php:25
+msgid "Edit"
+msgstr ""
+
+#: functions.php:16
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:16
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:113 functions.php:119
+msgid "Read More"
+msgstr ""
+
+#: functions.php:151
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:160
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: functions.php:169
+msgid "Footer Area One"
+msgstr ""
+
+#: functions.php:178
+msgid "Footer Area Two"
+msgstr ""
+
+#: functions.php:187
+msgid "Footer Area Three"
+msgstr ""
+
+#: functions.php:196
+msgid "Footer Area Four"
+msgstr ""
+
+#: inc/customize.php:9
+msgid "SunRain Options"
+msgstr ""
+
+#: inc/customize.php:24
+msgid "Use Responsive Layout"
+msgstr ""
+
+#: inc/customize.php:27
+msgid "Check the Box if you want the Responsive Layout of your Website"
+msgstr ""
+
+#: inc/customize.php:42
+msgid "Front Page Post/Page Visibility"
+msgstr ""
+
+#: inc/customize.php:45
+msgid ""
+"Select Option how you want to show or do not want to show Posts/Pages in the "
+"Front Page as per WordPress Reading Settings"
+msgstr ""
+
+#: inc/customize.php:56 inc/customize.php:117 inc/customize.php:149
+msgid "WordPress is web software you can use to create websites!"
+msgstr ""
+
+#: inc/customize.php:64
+msgid "Front Page Heading 01"
+msgstr ""
+
+#: inc/customize.php:71 inc/customize.php:164
+msgid ""
+"It is Amazing!  Over 60 million people have chosen WordPress to power the "
+"place on the web"
+msgstr ""
+
+#: inc/customize.php:79
+msgid "Front Page Heading 01 Description"
+msgstr ""
+
+#: inc/customize.php:87
+msgid "Learn More"
+msgstr ""
+
+#: inc/customize.php:95
+msgid "Heading 01 Button Text"
+msgstr ""
+
+#: inc/customize.php:110
+msgid "Heading 01 Button URL"
+msgstr ""
+
+#: inc/customize.php:125
+msgid "Front Page Heading 02"
+msgstr ""
+
+#: inc/customize.php:132
+msgid ""
+"The core software is built by hundreds of community volunteers, and when you "
+"are ready for more there are thousands of plugins and themes available to "
+"transform your site into almost anything you can imagine. Over 60 million "
+"people have chosen WordPress to power the place on the web they call \"home"
+"\" <em>- we would love you to join the family"
+msgstr ""
+
+#: inc/customize.php:140
+msgid "Front Page Heading 02 Description"
+msgstr ""
+
+#: inc/customize.php:157
+msgid "Front Page Heading 03"
+msgstr ""
+
+#: inc/customize.php:172
+msgid "Front Page Heading 03 Description"
+msgstr ""
+
+#: inc/customize.php:190
+msgid "Featured Image"
+msgstr ""
+
+#: inc/customize.php:193
+msgid ""
+"Upload an image for the Featured Box. 200px X 200px image is recommended"
+msgstr ""
+
+#: inc/customize.php:199
+msgid "SunRain Theme for SunRain"
+msgstr ""
+
+#: inc/customize.php:207
+msgid "Featured Title"
+msgstr ""
+
+#: inc/customize.php:215
+msgid ""
+"The Color changing options of SunRain will give the WordPress Driven Site an "
+"attractive look. SunRain is super elegant and Professional Responsive Theme "
+"which will create the business widely expressed"
+msgstr ""
+
+#: inc/customize.php:223
+msgid "Featured Description"
+msgstr ""
+
+#: inc/customize.php:243
+msgid "Google Plus Link"
+msgstr ""
+
+#: inc/customize.php:257
+msgid "Picassa Web Album Link"
+msgstr ""
+
+#: inc/customize.php:271
+msgid "Linked In Link"
+msgstr ""
+
+#: inc/customize.php:285
+msgid "Feed or Blog Link"
+msgstr ""
+
+#: inc/customize.php:301
+msgid "Slide 01 Image 01"
+msgstr ""
+
+#: inc/customize.php:304
+msgid "Upload an image. 500px X 420px PNG image is recommended"
+msgstr ""
+
+#: inc/customize.php:318
+msgid "Slide 01 Image 02"
+msgstr ""
+
+#: inc/customize.php:321
+msgid "Upload an image. 400px X 300px PNG image is recommended"
+msgstr ""
+
+#: inc/customize.php:335
+msgid "Slide 01 Image 03"
+msgstr ""
+
+#: inc/customize.php:338
+msgid "Upload an image. 200px X 60px PNG image is recommended"
+msgstr ""
+
+#: inc/customize.php:352
+msgid "Slide 01 Image 04"
+msgstr ""
+
+#: inc/customize.php:355
+msgid "Upload an image. 290px X 100px PNG image is recommended"
+msgstr ""
+
+#: inc/customize.php:370
+msgid "Slide 01 Image 05"
+msgstr ""
+
+#: inc/customize.php:373
+msgid "Upload an image. 250px X 70px PNG image is recommended"
+msgstr ""
+
+#: inc/customize.php:388
+msgid "Slide 02 Image"
+msgstr ""
+
+#: inc/customize.php:391
+msgid "Upload an image. 350px X 450px PNG image is recommended"
+msgstr ""
+
+#: inc/customize.php:396
+msgid "WordPress"
+msgstr ""
+
+#: inc/customize.php:404
+msgid "Slide 02 Text 01"
+msgstr ""
+
+#: inc/customize.php:411
+msgid "Most Userd CMS"
+msgstr ""
+
+#: inc/customize.php:419
+msgid "Slide 02 Text 02"
+msgstr ""
+
+#: inc/customize.php:425
+msgid "Ultimate Freedom"
+msgstr ""
+
+#: inc/customize.php:433
+msgid "Slide 02 Text 03"
+msgstr ""
+
+#: inc/customize.php:439
+msgid "World Leading"
+msgstr ""
+
+#: inc/customize.php:447
+msgid "Slide 02 Text 04"
+msgstr ""
+
+#: inc/customize.php:453
+msgid "Free to Use"
+msgstr ""
+
+#: inc/customize.php:461
+msgid "Slide 02 Text 05"
+msgstr ""
+
+#: page.php:20
+msgid "<p><strong>Pages:</strong> "
+msgstr ""
+
+#: page.php:28
+msgid "Sorry, no pages matched your criteria"
+msgstr ""
+
+#: search.php:12
+msgid "Search Results"
+msgstr ""
+
+#: search.php:19
+msgid "Search Term:"
+msgstr ""
+
+#: search.php:20
+msgid "Number of Results:"
+msgstr ""
+
+#: searchform.php:12
+msgid "Search Text Here"
+msgstr ""
+
+#: searchform.php:13
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:12
+msgid "Archives"
+msgstr ""
+
+#: sidebar.php:19
+msgid "Meta"
+msgstr ""
+
+#: single.php:30
+msgid "&laquo; Previous Image"
+msgstr ""
+
+#: single.php:31
+msgid "Next Image &raquo;"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "SunRain"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://d5creation.com/themes/sunrain/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"SunRain is CSS3 Powered and WordPress Latest Version Ready Responsive "
+"Theme.  SunRain has Multi Layered Slider where two Slides can show many "
+"Items which can be controlled from the Theme Options Panel.  Super Elegant "
+"and Professional Sunrain Theme will be adjusted automatically with all smart "
+"devices if the Responsive Layout be Selected.  Full Wide Template can be "
+"used for showing showcase or other pages. You can Visit the SunRain Demo at "
+"http://demo.d5creation.com/wp/themes/sunrain"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "D5 Creation"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://d5creation.com/"
+msgstr ""

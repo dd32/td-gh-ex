@@ -1,7 +1,7 @@
 <?php
 
 /* 	SunRain Theme's Single Page to display Single Page or Post
-	Copyright: 2012-2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
@@ -27,8 +27,8 @@ get_header(); ?>
             <div class="floatleft"><?php previous_post_link('&laquo; %link'); ?></div>
 			<div class="floatright"><?php next_post_link('%link &raquo;'); ?></div><br /><br />
             <?php if ( is_attachment() ): ?>
-            <div class="floatleft"><?php previous_image_link( false, '&laquo; ' . of_get_option('pi3', 'Previous Image') ); ?></div>
-			<div class="floatright"><?php next_image_link( false,  of_get_option('ni3', 'Next Image') . ' &raquo;' ); ?></div> 
+            <div class="floatleft"><?php previous_image_link( false, __('&laquo; Previous Image','sunrain') ); ?></div>
+			<div class="floatright"><?php next_image_link( false, __('Next Image &raquo;','sunrain') ); ?></div> 
             <?php endif; ?>
           	</div>
 			

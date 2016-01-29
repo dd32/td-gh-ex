@@ -1,6 +1,6 @@
 <?php
 /* 	SunRain Theme's Footer
-	Copyright: 2012-2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
@@ -16,10 +16,10 @@
 <div id="footer-content">
 
 <div id="social">
-<a href="<?php echo esc_url(of_get_option('gplus-link', '#')); ?>" class="gplus-link" target="_blank"></a>
-<a href="<?php echo esc_url(of_get_option('picassa-link', '#')); ?>" class="picassa-link" target="_blank"></a>
-<a href="<?php echo esc_url(of_get_option('li-link', '#')); ?>" class="li-link" target="_blank"></a>
-<a href="<?php echo esc_url(of_get_option('feed-link', '#')); ?>" class="feed-link" target="_blank"></a>
+<a href="<?php echo esc_url(sunrain_get_option('gplus-link', '#')); ?>" class="gplus-link" target="_blank"></a>
+<a href="<?php echo esc_url(sunrain_get_option('picassa-link', '#')); ?>" class="picassa-link" target="_blank"></a>
+<a href="<?php echo esc_url(sunrain_get_option('li-link', '#')); ?>" class="li-link" target="_blank"></a>
+<a href="<?php echo esc_url(sunrain_get_option('feed-link', '#')); ?>" class="feed-link" target="_blank"></a>
 </div>
 
 <?php

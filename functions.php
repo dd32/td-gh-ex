@@ -1,28 +1,24 @@
 <?php
 /* 	SunRain Theme's Functions
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
-
-//	Set the content width based on the theme's design and stylesheet.
-	if ( ! isset( $content_width ) ) $content_width = 584;
-
-// 	Load the D5 Framework Optios Page
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-
-
-// 	Tell WordPress for wp_title in order to modify document title content
-	function sunrain_filter_wp_title( $title ) {
-    $site_name = get_bloginfo( 'name' );
-    $filtered_title = $site_name . $title;
-    return $filtered_title;
+	
+	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
+	function sunrain_about_page() { 
+	add_theme_page( 'SunRain Options', 'SunRain Options', 'edit_theme_options', 'theme-about', 'sunrain_theme_about' ); 
 	}
-	add_filter( 'wp_title', 'sunrain_filter_wp_title' );
+	add_action('admin_menu', 'sunrain_about_page');
+	function sunrain_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }		
 	
 	function sunrain_setup() {
-	register_nav_menus( array( 'main-menu' => "Main Menu", 'top-menu' => "Top Menu" ) );
+	register_nav_menus( array( 'main-menu' => __('Main Menu', 'sunrain'), 'top-menu' => __('Top Menu', 'sunrain') ) );
+	load_theme_textdomain( 'sunrain', get_template_directory() . '/languages' );
+//	Set the content width based on the theme's design and stylesheet.
+	global $content_width; if ( ! isset( $content_width ) ) $content_width = 584;
+	add_theme_support( 'title-tag' );
+
 
 // 	Tell WordPress for the Feed Link
 	add_editor_style();
@@ -43,7 +39,7 @@
 	
 // 	WordPress 3.4 Custom Header Support				
 	$sunrain_custom_header = array(
-	'default-image'          => get_template_directory_uri() . '/images/logo.png',
+	'default-image'          => '',
 	'random-default'         => false,
 	'width'                  => 300,
 	'height'                 => 90,
@@ -67,18 +63,22 @@
 		wp_enqueue_script( 'comment-reply' ); 
 	}
 	
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'sunrain-menu-style', get_template_directory_uri(). '/js/menu.js' );
+	wp_enqueue_script( 'sunrain-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	
 	wp_register_style('sunrain-gfonts1', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', false );
 	wp_enqueue_style('sunrain-gfonts1');
 	if (is_front_page()): 
-	wp_enqueue_script( 'sunrain-main-slider', get_template_directory_uri() . '/js/jquery.fractionslider.min.js' );
+	wp_enqueue_script( 'sunrain-main-slider', get_template_directory_uri() . '/js/jquery.fractionslider.min.js', array( 'jquery' ) );
 	wp_enqueue_style('sunrain-main-slider-css', get_template_directory_uri(). '/css/fractionslider.css' );
 	endif;
-	if ( of_get_option('responsive', '0') == '1' ) : wp_enqueue_style('sunrain-responsive', get_template_directory_uri(). '/style-responsive.css' ); endif;
+	if ( sunrain_get_option('responsive', '0') == '1' ) : wp_enqueue_style('sunrain-responsive', get_template_directory_uri(). '/style-responsive.css' ); endif;
 	}
 	add_action( 'wp_enqueue_scripts', 'sunrain_enqueue_scripts' );
+	
+// 	Functions for adding script to Admin Area
+	function sunrain_admin_style() { wp_enqueue_style( 'sunrain_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
+	add_action( 'admin_enqueue_scripts', 'sunrain_admin_style' );
+
 
 // 	Functions for adding some custom code within the head tag of site
 	function sunrain_custom_code() {
@@ -110,18 +110,18 @@
 	
 	function sunrain_excerpt_more($more) {
     global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">Read More<span> ></span></a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">'.__('Read More', 'sunrain').'<span> ></span></a>';
 	}
 	add_filter('excerpt_more', 'sunrain_excerpt_more');
 	
 	// Content Type Showing
 	function sunrain_content() {
-	if (( of_get_option('contype', '1') != '2' ) || is_page() || is_single() ) : the_content('<span class="read-more">Read More<span> ></span></span>');
+	if (( sunrain_get_option('contype', '1') != '2' ) || is_page() || is_single() ) : the_content('<span class="read-more">'.__('Read More', 'sunrain').'<span> ></span></span>');
 	else: the_excerpt();
 	endif;	
 	}
 	
-	function sunrain_creditline() { $sunain_theme_data = wp_get_theme(); $sunain_author_uri = $sunain_theme_data->get( 'AuthorURI' ); echo '<span class="credit">| SunRain Theme by: <a href="'. $sunain_author_uri .'" target="_blank"><img  src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
+	function sunrain_creditline() { echo '<span class="credit">| SunRain Theme by: <a href="'. esc_url('http://d5creation.com') .'" target="_blank"><img  src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
 
 //	Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link
 	function sunrain_page_menu_args( $args ) {
@@ -148,7 +148,7 @@
 	function sunrain_widgets_init() {
 
 	register_sidebar( array(
-		'name' =>  'Primary Sidebar', 
+		'name' => __('Primary Sidebar','sunrain'), 
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -157,7 +157,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => 'Secondary Sidebar',
+		'name' => __('Secondary Sidebar','sunrain'),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -166,9 +166,8 @@
 	) );
 	 
 	register_sidebar( array(
-		'name' => 'Footer Area One', 
+		'name' => __('Footer Area One','sunrain'),
 		'id' => 'sidebar-3',
-		'description' => 'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -176,9 +175,8 @@
 	) );
 	    
 	register_sidebar( array(
-		'name' =>  'Footer Area Two', 
+		'name' =>  __('Footer Area Two','sunrain'),
 		'id' => 'sidebar-4',
-		'description' => 'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -186,9 +184,8 @@
 	) );
 
 	register_sidebar( array(
-		'name' => 'Footer Area Three', 
+		'name' => __('Footer Area Three','sunrain'),
 		'id' => 'sidebar-5',
-		'description' =>  'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -196,9 +193,8 @@
 	) );
 	
 	register_sidebar( array(
-		'name' => 'Footer Area Four', 
+		'name' => __('Footer Area Four','sunrain'),
 		'id' => 'sidebar-6',
-		'description' =>  'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',

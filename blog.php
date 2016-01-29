@@ -1,7 +1,7 @@
 <?php 
 /* 	Template Name: Blog
 	SunRain Theme's Blog Posts Showung Template
-	Copyright: 2012-2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since sunrain 1.2.6
 */
@@ -27,19 +27,19 @@ $wp_query = new WP_Query(array( 'type' => 'post', 'paged' => ( get_query_var('pa
  <?php endwhile; ?>
 
 <div id="page-nav">
-<div class="alignleft"><?php previous_posts_link('&laquo;  Previous Entries' ) ?></div>
-<div class="alignright"><?php next_posts_link('Next Entries &raquo;') ?></div>
+<div class="alignleft"><?php previous_posts_link(__('&laquo; Previous Entries','sunrain')) ?></div>
+<div class="alignright"><?php next_posts_link(__('Next Entries &raquo;','sunrain'),'') ?></div>
 </div>
   
  
  <?php  else:  ?>
  
- <h1 class="arc-post-title">Sorry, we couldn't find anything that matched your search.</h1>
+ <h1 class="arc-post-title"><?php _e('Sorry, we could not find anything that matched your search', 'sunrain'); ?></h1>
 		
-		<h3 class="arc-src"><span>You Can Try Another Search...</span></h3>
+		<h3 class="arc-src"><span><?php _e('You Can Try Another Search...', 'sunrain'); ?></span></h3>
 		<?php get_search_form(); ?>
-		<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; Or Return to the Home Page</a></p><br />
-		<h2 class="post-title-color">You can also Visit the Following. These are the Featured Contents</h2>
+		<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page"><?php _e('&laquo; Or Return to the Home Page', 'sunrain'); ?></a></p><br />
+		<h2 class="post-title-color"><?php _e('You can also Visit the Following. These are the Featured Contents', 'sunrain'); ?></h2>
 		<div class="content-ver-sep"></div><br />
 		<?php get_template_part( 'featured-box' ); ?> 
  
