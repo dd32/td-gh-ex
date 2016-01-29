@@ -1,6 +1,6 @@
 <?php 
 /* 	News Press's Archive Page
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since NewsPress 1.0
 */
@@ -34,14 +34,14 @@ get_header(); ?>
 		<h1 class="arc-post-title"><?php echo get_the_author(); ?></h1>
 		<div class="clear">&nbsp;</div>
 		<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-		<h1 class="arc-post-title"><?php echo 'Archives' ; ?> </h1>
+		<h1 class="arc-post-title"><?php echo __('Archives','newspress-lite'); ?> </h1>
  	 	<?php } ?>
 
 		<?php while (have_posts()) : the_post(); ?>
 		
 			<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
  			
- 			<h2 class="post-title <?php if (get_post_meta( $post->ID, 'np_vih', true ) == 'on' ): echo 'vi-heading'; endif; ?> "><a href="<?php the_permalink(); ?>"><?php the_title		();?></a></h2>
+ 			<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 			<?php newspress_author_meta(); ?>
  			<div class="content-ver-sep"> </div>
  			<div class="entrytext"><?php the_post_thumbnail(); ?>

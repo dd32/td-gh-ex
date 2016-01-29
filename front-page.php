@@ -2,7 +2,7 @@
 /*
 	Template Name: Front Page
 	NewsPress Theme's Front Page to Display the Home Page if Selected
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since NewsPress 1.0
 */
@@ -10,7 +10,7 @@
 
 <?php get_header();  
 
-if (esc_html(of_get_option('fpostex', '0')) == '1' || 'posts' != get_option( 'show_on_front' ) ):
+if (esc_html(newspress_get_option('fpostex', '0')) == '1' || 'posts' != get_option( 'show_on_front' ) ):
 
 ?>
 
@@ -51,7 +51,7 @@ if (esc_html(of_get_option('fpostex', '0')) == '1' || 'posts' != get_option( 'sh
                 </a> 
  				<p data-position="270,20" data-in="bottom" data-step="2" data-out="fade" >
                 	<a href="<?php echo the_permalink(); ?>" class="read-more cat-read-more">
-						<?php echo 'Read More'; ?>
+						<?php echo __('Read More','newspress-lite'); ?>
                     </a>
                     <span class="rarrow"> </span>
                 </p>
@@ -155,9 +155,9 @@ echo '<div class="fpage-cat" >';
 <?php $newspress_excerptlength= '15'; the_excerpt(); ?> </a> <?php else: ?>
 <h4 class="fcpt"><li><a href="<?php the_permalink() ?>" ><?php the_title(); ?></a></li></h4></a>
 <?php endif; endwhile; ?>
-	<a class="read-more cat-read-more" href="<?php echo get_category_link($newspress_cat->cat_ID); ?>" target="_blank"><?php echo 'Read All'; ?></a><span class="rarrow"> </span>
+	<a class="read-more cat-read-more" href="<?php echo get_category_link($newspress_cat->cat_ID); ?>" target="_blank"><?php echo __('Read All','newspress-lite'); ?></a><span class="rarrow"> </span>
  	<?php else : 
-		echo '<h2>No Posts for '.$newspress_cat->name.' Category</h2>';				
+		echo '<h2>'. __('No Posts for','newspress-lite'). ' '.$newspress_cat->name.' '. __('Category','newspress-lite'). '</h2>';				
 	 endif; 
 	 
 	 wp_reset_postdata(); 
@@ -167,7 +167,7 @@ echo '</div> <!--end of fpage-cat-->';
 endforeach; wp_reset_postdata(); ?>
 </div><div class="clear"></div>
 
-<?php endif; if (esc_html(of_get_option('fpostex', '0')) != '1' ): get_template_part( 'front-page-content' ); endif; ?>
+<?php endif; if (esc_html(newspress_get_option('fpostex', '0')) != '1' ): get_template_part( 'front-page-content' ); endif; ?>
 
 <?php get_footer(); ?>
 

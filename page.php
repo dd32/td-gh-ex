@@ -1,6 +1,6 @@
 <?php
 /* 	News Press's General Page to display all Pages
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since NewsPress 1.0
 */
@@ -16,7 +16,7 @@
             <div class="entrytext">
 				<?php the_post_thumbnail('single-page'); ?>
  				<?php newspress_content(); ?>
-				<?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' .  'Pages:' . '</span>', 'after' => '</div>' ) ); ?><br />
+				<?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' .  __('Pages:','newspress-lite') . '</span>', 'after' => '</div>' ) ); ?><br />
 			</div>
 		</div>
 		<?php endwhile; ?><div class="clear"> </div>

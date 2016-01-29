@@ -1,33 +1,26 @@
 <?php
 /* 	News Press's Functions
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since NewsPress 1.0
 */
-   
-// Load the D5 Framework Optios Page
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 
-// 	Tell WordPress for wp_title in order to modify document title content
-	function newspress_filter_wp_title( $title ) {
-    $site_name = get_bloginfo( 'name' );
-    $filtered_title = $site_name . $title;
-    return $filtered_title;
+	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
+	function newspress_about_page() { 
+	add_theme_page( 'NewsPress Options', 'NewsPress Options', 'edit_theme_options', 'theme-about', 'newspress_theme_about' ); 
 	}
-	add_filter( 'wp_title', 'newspress_filter_wp_title' );
-	
+	add_action('admin_menu', 'newspress_about_page');
+	function newspress_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }	
+   
 	function newspress_setup() {
-		
+	load_theme_textdomain( 'newspress', get_template_directory() . '/languages' );
 //	Set the content width based on the theme's design and stylesheet.
-	global $content_width;
-	if ( ! isset( $content_width ) ) $content_width = 684;
-	
-	register_nav_menus( array( 'main-menu' => "Main Menu", 'top-menu' => "Top Menu" ) );
+	global $content_width; 	if ( ! isset( $content_width ) ) $content_width = 684;
+	register_nav_menus( array( 'main-menu' => __('Main Menu', 'newspress-lite'), 'top-menu' => __('Top Menu', 'newspress-lite') ) );
 
 // 	Tell WordPress for the Feed Link
 	add_theme_support( 'automatic-feed-links' );
-
+	add_theme_support( 'title-tag' );
 
     add_theme_support( 'post-thumbnails' );
 	add_image_size( 'post-page', 350, 175, true );
@@ -45,7 +38,7 @@
 	
 // 	WordPress 3.4 Custom Header Support				
 	$newspress_custom_header = array(
-	'default-image'          => get_template_directory_uri() . '/images/logo.png',
+	'default-image'          => '',
 	'random-default'         => false,
 	'width'                  => 300,
 	'height'                 => 90,
@@ -65,18 +58,15 @@
 // 	Functions for adding script
 	function newspress_enqueue_scripts() {
 	wp_enqueue_style('newspress-style', get_stylesheet_uri(), false);	
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
-		wp_enqueue_script( 'comment-reply' ); 
-	}
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
 	
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'newspress-menu-style', get_template_directory_uri(). '/js/menu.js' );
+	wp_enqueue_script( 'newspress-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	wp_register_style ('newspress-gfonts1', '//fonts.googleapis.com/css?family=Oswald:400,300,700', false );
 	wp_enqueue_style('newspress-gfonts1' );
 
 	
 	if (is_front_page()):
-	wp_enqueue_script( 'newspress-main-slider', get_template_directory_uri() . '/js/jquery.fractionslider.min.js' );
+	wp_enqueue_script( 'newspress-main-slider', get_template_directory_uri() . '/js/jquery.fractionslider.min.js', array( 'jquery' ) );
 	wp_enqueue_style('newspress-main-slider-css', get_template_directory_uri(). '/css/fractionslider.css' );
 	endif;
 	
@@ -84,9 +74,12 @@
 	}
 	add_action( 'wp_enqueue_scripts', 'newspress_enqueue_scripts' );
 	
+// 	Functions for adding script to Admin Area
+	function newspress_admin_style() { wp_enqueue_style( 'newspress_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
+	add_action( 'admin_enqueue_scripts', 'newspress_admin_style' );
+	
 	function newspress_creditline () {
-	$newspress_theme_data = wp_get_theme(); $newspress_author_uri = $newspress_theme_data->get( 'AuthorURI' );
-	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | NewsPress Theme by: <a href="'. $newspress_author_uri .'" target="_blank"> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
+	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | NewsPress Theme by: <a href="'.esc_url('http://d5creation.com').'" target="_blank"> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
     }
 
 	
@@ -102,12 +95,12 @@
 	
 	function newspress_excerpt_more($more) {
        global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' . 'Read More' . '</a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' . __('Read More','newspress-lite') . '</a>';
 	}
 	add_filter('excerpt_more', 'newspress_excerpt_more');
 	
 	function newspress_content() {
-	if ( is_page() || is_single() ) : the_content('<span class="read-more">' . 'Read More' . '</span>');
+	if ( is_page() || is_single() ) : the_content('<span class="read-more">' . __('Read More','newspress-lite') . '</span>');
 	else: the_excerpt();
 	endif;	
 	}
@@ -115,7 +108,7 @@
 	// 	Post Meta Design
 	function newspress_post_meta() { ?>
 	<div class="post-meta"><span class="post-edit"> <?php edit_post_link(''); ?></span></span>
-	<span class="post-tag"> <?php the_tags('<span class="post-tag-icon"></span>', ', '); ?> </span><span class="post-category"> <?php the_category(', '); ?> </span> <span class="post-comments"> <?php comments_popup_link('No Comments' . ' &#187;', 'One Comment' . ' &#187;', '% ' . 'Comments' . ' &#187;', ' &#187;' . 'commentsbox',  'Comments are Off'); ?></span>
+	<span class="post-tag"> <?php the_tags('<span class="post-tag-icon"></span>', ', '); ?> </span><span class="post-category"> <?php the_category(', '); ?> </span> <span class="post-comments"> <?php comments_popup_link(__('No Comments','newspress-lite') . ' &#187;', __('One Comment','newspress-lite') . ' &#187;', '% ' . __('Comments','newspress-lite') . ' &#187;', ' &#187;' . 'commentsbox',  __('Comments are Off','newspress-lite')); ?></span>
 	</div> 
 	
 	<?php
@@ -134,18 +127,18 @@
 //	News Page Navigation
 	function newspress_page_nav() { ?>
 	<div id="page-nav">
-    <div class="alignleft"><?php previous_posts_link('&laquo;  ' . 'Newer News' ) ?></div>
-	<div class="alignright"><?php next_posts_link('Older News' .' &raquo;') ?></div>
+    <div class="alignleft"><?php previous_posts_link('&laquo;  ' . __('Newer News','newspress-lite') ) ?></div>
+	<div class="alignright"><?php next_posts_link(__('Older News','newspress-lite') .' &raquo;') ?></div>
 	</div>
 	<?php }
 
 	
 //	404 Error Content
 	function newspress_404() { ?>
-	<h1 class="arc-post-title page-404"><?php echo 'Sorry, we could not find anything that matched your search.'; ?></h1>
-		<h3 class="arc-src"><span><?php echo 'You Can Try Another Search...'; ?></span></h3>
+	<h1 class="arc-post-title page-404"><?php echo __('Sorry, we could not find anything that matched your search.','newspress-lite'); ?></h1>
+		<h3 class="arc-src"><span><?php echo __('You Can Try Another Search...','newspress-lite'); ?></span></h3>
 		<?php get_search_form(); ?>
-		<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; <?php echo 'Or Return to the Home Page'; ?></a></p><br />
+		<p><a href="<?php echo home_url(); ?>" title="<?php _e('Browse the Home Page','newspress-lite'); ?>">&laquo; <?php echo __('Or Return to the Home Page','newspress-lite'); ?></a></p><br />
 	<?php }
 
 
@@ -176,7 +169,7 @@
 	function newspress_widgets_init() {
 		
 	register_sidebar( array(
-		'name' =>  'Front Page Sidebar', 
+		'name' =>  __('Front Page Sidebar','newspress-lite'), 
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -185,7 +178,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' =>  'News Page Sidebar', 
+		'name' =>  __('News Page Sidebar','newspress-lite'), 
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -194,9 +187,9 @@
 	) );
 
 	register_sidebar( array(
-		'name' =>  'Footer Area One', 
+		'name' =>  __('Footer Area One','newspress-lite'), 
 		'id' => 'sidebar-3',
-		'description' =>  'An optional widget area for your site footer', 
+		'description' =>  __('An optional widget area for your site footer','newspress-lite'), 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -204,9 +197,9 @@
 	) );
 
 	register_sidebar( array(
-		'name' =>  'Footer Area Two', 
+		'name' =>  __('Footer Area Two','newspress-lite'), 
 		'id' => 'sidebar-4',
-		'description' =>  'An optional widget area for your site footer', 
+		'description' =>  __('An optional widget area for your site footer','newspress-lite'), 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -214,9 +207,9 @@
 	) );
 
 	register_sidebar( array(
-		'name' =>  'Footer Area Three', 
+		'name' =>  __('Footer Area Three','newspress-lite'), 
 		'id' => 'sidebar-5',
-		'description' =>  'An optional widget area for your site footer', 
+		'description' =>  __('An optional widget area for your site footer','newspress-lite'), 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -224,9 +217,9 @@
 	) );
 	
 	register_sidebar( array(
-		'name' =>  'Footer Area Four', 
+		'name' =>  __('Footer Area Four','newspress-lite'), 
 		'id' => 'sidebar-6',
-		'description' =>  'An optional widget area for your site footer', 
+		'description' =>  __('An optional widget area for your site footer','newspress-lite'), 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',

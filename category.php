@@ -1,6 +1,6 @@
 <?php 
 /* 	News Press's Category Page
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since NewsPress 1.0
 */
@@ -16,7 +16,7 @@ get_header(); ?>
 
  if (have_posts()) : ?>
  <div class="fsubhcontainer">
- <?php 	$newspress_counterc =0; while (have_posts()) : the_post(); $counter++; ?>
+ <?php 	$newspress_counterc =0; while (have_posts()) : the_post(); $newspress_counterc++; ?>
  <?php if ( $newspress_counterc == 2 ): echo '<div class="clear"></div>'; $newspress_counterc = 1;  else: $newspress_counterc++;  endif; ?>
  <div class="fsubheading" >
  <div <?php post_class(); ?> id="post-<?php the_ID(); ?>"> 

@@ -1,0 +1,230 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Small Business\n"
+"POT-Creation-Date: 2016-01-30 00:09+0600\n"
+"PO-Revision-Date: 2016-01-23 02:33+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:11
+msgid "404: Not Found"
+msgstr ""
+
+#: archive.php:37 sidebar-frontpage.php:12 sidebar.php:12
+msgid "Archives"
+msgstr ""
+
+#: comments.php:14 functions.php:111
+msgid "No Comments"
+msgstr ""
+
+#: comments.php:14 functions.php:111
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:14 functions.php:111
+msgid "Comments"
+msgstr ""
+
+#: comments.php:14
+msgid " to"
+msgstr ""
+
+#: comments.php:28
+msgid "Comments are Closed"
+msgstr ""
+
+#: front-page.php:54 functions.php:98 functions.php:103
+msgid "Read More"
+msgstr ""
+
+#: front-page.php:158
+msgid "Read All"
+msgstr ""
+
+#: fullwidth.php:20 page.php:19 single.php:23
+msgid "Pages:"
+msgstr ""
+
+#: functions.php:19
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:19
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:111
+msgid "Comments are Off"
+msgstr ""
+
+#: functions.php:130
+msgid "Newer News"
+msgstr ""
+
+#: functions.php:131
+msgid "Older News"
+msgstr ""
+
+#: functions.php:138
+msgid "Sorry, we could not find anything that matched your search."
+msgstr ""
+
+#: functions.php:139
+msgid "You Can Try Another Search..."
+msgstr ""
+
+#: functions.php:141
+msgid "Browse the Home Page"
+msgstr ""
+
+#: functions.php:141
+msgid "Or Return to the Home Page"
+msgstr ""
+
+#: functions.php:172
+msgid "Front Page Sidebar"
+msgstr ""
+
+#: functions.php:181
+msgid "News Page Sidebar"
+msgstr ""
+
+#: functions.php:190
+msgid "Footer Area One"
+msgstr ""
+
+#: functions.php:192 functions.php:202 functions.php:212 functions.php:222
+msgid "An optional widget area for your site footer"
+msgstr ""
+
+#: functions.php:200
+msgid "Footer Area Two"
+msgstr ""
+
+#: functions.php:210
+msgid "Footer Area Three"
+msgstr ""
+
+#: functions.php:220
+msgid "Footer Area Four"
+msgstr ""
+
+#: image.php:22 single.php:28
+msgid "Previous Image"
+msgstr ""
+
+#: image.php:23 single.php:29
+msgid "Next Image"
+msgstr ""
+
+#: inc/customize.php:9
+msgid "NewsPress Options"
+msgstr ""
+
+#: inc/customize.php:24
+msgid "Set News Style Front Page without considering the WP Reading Settings"
+msgstr ""
+
+#: inc/customize.php:27
+msgid ""
+"If you select This Options the WordPress Settings > Reading will not be "
+"considered and the News Style Front Page will be displayed. This is "
+"recommended for News Sites"
+msgstr ""
+
+#: inc/customize.php:42
+msgid "Social Link - "
+msgstr ""
+
+#: inc/customize.php:45
+msgid ""
+"Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/"
+"d5creation/</b>.  If you do not want to show anything here leave the box "
+"blank. This Version supports only WordPress, Dribbble, Github, Tumblr, "
+"YouTube, Flickr, Vimeo, Instagram, Codepen and LinkedIn  "
+msgstr ""
+
+#: inc/customize.php:61
+msgid "Image: Left of Logo"
+msgstr ""
+
+#: inc/customize.php:64 inc/customize.php:82
+msgid "Upload/Select an Image. Recommended Size: 250px X 90px"
+msgstr ""
+
+#: inc/customize.php:79
+msgid "Image: Right of Logo"
+msgstr ""
+
+#: search.php:11
+msgid "Search Results"
+msgstr ""
+
+#: search.php:18
+msgid "Search Term"
+msgstr ""
+
+#: search.php:19
+msgid "Number of Results"
+msgstr ""
+
+#: searchform.php:12 searchform.php:13
+msgid "Search..."
+msgstr ""
+
+#: sidebar-frontpage.php:19 sidebar.php:19
+msgid "Meta"
+msgstr ""
+
+#: single.php:24
+msgid "Previous News"
+msgstr ""
+
+#: single.php:25
+msgid "Next News"
+msgstr ""
+
+#: single.php:51
+msgid "Related News"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "NewsPress Lite"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://d5creation.com/theme/newspress"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"NewsPress is a Multipurpose WordPress Theme. The best use can be operating "
+"News Media, News Paper, Online News Agency etc.  Multi Layer Slider will "
+"give extra impression to your readers. Easy and Flexible NewsPress Theme is "
+"fully RESPONSIVE which can be fit within any screen of devices. NewsPress "
+"Extend is one of the most popular News Themes. You can find the Demo Here: "
+"http://demo.d5creation.com/themes/?theme=NewsPress"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "D5 Creation"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://d5creation.com/"
+msgstr ""

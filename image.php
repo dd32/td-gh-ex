@@ -1,7 +1,7 @@
 <?php
 
 /* 	 Single Page to display Image
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since NewsPress 1.0
 */
@@ -19,8 +19,8 @@ get_header(); ?>
             <?php echo wp_get_attachment_image( $attachment_id, 'single-page' ); the_excerpt(); ?>
             </div>
             <div class="clear"> </div>
-           <div class="floatleft"><?php previous_image_link( false, '&laquo; ' . 'Previous Image' ); ?></div>
-			<div class="floatright"><?php next_image_link( false,  'Next Image' . ' &raquo;' ); ?></div> 
+           <div class="floatleft"><?php previous_image_link( false, '&laquo; ' . __('Previous Image','newspress-lite') ); ?></div>
+			<div class="floatright"><?php next_image_link( false,  __('Next Image','newspress-lite') . ' &raquo;' ); ?></div> 
             <div class="clear"> </div><br />
             <?php newspress_post_meta(); ?><br />
 			<?php endwhile; endif; ?>

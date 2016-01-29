@@ -1,7 +1,7 @@
 <?php
 
 /* 	 Single Page to display Single Page or Post
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since NewsPress 1.0
 */
@@ -20,13 +20,13 @@ get_header(); ?>
             </div>
             <div class="clear"> </div>
             <?php newspress_post_meta(); ?><br />
-            <?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' . 'Pages:' . '</span>', 'after' => '</div>' ) ); ?><br />
-            <div class="floatleft"><b><?php previous_post_link('&laquo; %link ('. 'Previous News' . ')'); ?></b></div>
-			<div class="floatright"><b><?php next_post_link('('. 'Next News' . ') %link &raquo;'); ?></b></div><br />
+            <?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __('Pages:','newspress-lite') . '</span>', 'after' => '</div>' ) ); ?><br />
+            <div class="floatleft"><b><?php previous_post_link('&laquo; %link ('. __('Previous News','newspress-lite') . ')'); ?></b></div>
+			<div class="floatright"><b><?php next_post_link('('. __('Next News','newspress-lite') . ') %link &raquo;'); ?></b></div><br />
             <div class="clear"> </div>
             <?php if ( is_attachment() ): ?>
-            <div class="floatleft"><?php previous_image_link( false, '&laquo; ' . 'Previous Image' ); ?></div>
-			<div class="floatright"><?php next_image_link( false,  'Next Image' . ' &raquo;' ); ?></div> 
+            <div class="floatleft"><?php previous_image_link( false, '&laquo; ' . __('Previous Image','newspress-lite') ); ?></div>
+			<div class="floatright"><?php next_image_link( false,  __('Next Image','newspress-lite') . ' &raquo;' ); ?></div> 
 			<?php  endif; endwhile; endif; ?><br />
           	            
           <!-- End the Loop. -->          
@@ -48,7 +48,7 @@ $args = array(
 	
 $my_query = new WP_Query($args); if (have_posts()) : $counter =0;  ?>
  <div class="fpage-catspecial">
- <h2 class="fcname"><?php echo'Related News'; ?></h2>
+ <h2 class="fcname"><?php echo __('Related News','newspress-lite'); ?></h2>
  
  <?php while ( $my_query->have_posts()) :  $my_query->the_post(); $counter++; ?>
  <?php if ($counter == 1 || $counter == 2 ) : ?>
