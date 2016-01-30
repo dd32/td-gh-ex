@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-MyKnowledgeBase version 3.0 - february 2016
+MyKnowledgeBase version 3.1 - february 2016
 - file header: the search bar in header is for posts only
 - file search: post nav inside the loop
 - file style: fixed alignment of next and prev post link
