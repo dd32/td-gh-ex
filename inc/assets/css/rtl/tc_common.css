@@ -1,5 +1,5 @@
 /*!
- * Customizr v3.4.17
+ * Customizr v3.4.18
  *
  * Licensed under the GNU General Public License v2 or later
  * http://www.gnu.org/licenses/gpl-2.0.html
@@ -7023,6 +7023,17 @@ article .no-thumb figcaption {
 }
 .tc-post-list-grid .expanded .entry-title a {
   color: #fff;
+}
+/* Edit link for the expanded post and for the grid-customizer */
+.tc-grid-figure .edit-link {
+  position: absolute;
+  z-index: 20;
+  bottom: 1px;
+  left: 1px;
+  padding: 0 2px;
+  font-size: 11px;
+  line-height: 15px;
+  text-transform: none;
 }
 /* HOVER */
 .tc-post-list-grid .hover:not(.expanded) figcaption,

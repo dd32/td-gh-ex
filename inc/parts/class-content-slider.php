@@ -109,10 +109,12 @@ class TC_slider {
     //link post id
     $link_id                = apply_filters( 'tc_slide_link_id', esc_attr(get_post_meta( $id, $key = 'slide_link_key' , $single = true )), $id, $slider_name_id );
     //link
-    $link_url               = apply_filters( 'tc_slide_link_url', esc_url(get_post_meta( $id, $key = 'slide_custom_link_key', $single = true )), $id, $slider_name_id );
+    $link_url               = esc_url( get_post_meta( $id, $key = 'slide_custom_link_key', $single = true ) );
 
     if ( ! $link_url )
       $link_url = $link_id ? get_permalink( $link_id ) : $link_url;
+
+    $link_url               = apply_filters( 'tc_slide_link_url', $link_url, $id, $slider_name_id );
 
     //link target
     $link_target_bool       = esc_attr(get_post_meta( $id, $key= 'slide_link_target_key', $single = true ));
@@ -1047,7 +1049,7 @@ class TC_slider {
     switch ( $id ) {
       case 1 :
         $data['title']        = __( 'Discover how to replace or remove this demo slider.', 'customizr' );
-        $data['link_url']     = implode('/', array('http:/','docs.presscustomizr.com' , 'article', '102-customizr-theme-options-front-page' ) ); //do we need an anchor in the doc?
+        $data['link_url']     = implode('/', array('http:/','docs.presscustomizr.com' , 'article', '102-customizr-theme-options-front-page/#front-page-slider' ) ); //do we need an anchor in the doc?
         $data['button_text']  = __( 'Check the front page slider doc &raquo;' , 'customizr');
       break;
 
