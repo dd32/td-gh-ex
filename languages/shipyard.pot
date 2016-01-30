@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Shipyard\n"
-"POT-Creation-Date: 2016-01-07 14:59+0100\n"
+"POT-Creation-Date: 2016-01-30 12:39+0100\n"
 "PO-Revision-Date: 2015-11-16 00:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 archive.php:46 index.php:48 search.php:40
+#: 404.php:9 archive.php:46 index.php:48 search.php:46
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:10 archive.php:47 index.php:49 search.php:41
+#: 404.php:10 archive.php:47 index.php:49 search.php:47
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
@@ -58,12 +58,12 @@ msgstr ""
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:41 index.php:43 search.php:48
-msgid "&laquo; Older posts"
+#: archive.php:41 index.php:43 search.php:41
+msgid "Older posts &raquo;"
 msgstr ""
 
-#: archive.php:42 index.php:44 search.php:49
-msgid "Newer posts &raquo;"
+#: archive.php:42 index.php:44 search.php:42
+msgid "&laquo; Newer posts"
 msgstr ""
 
 #: comments.php:17
@@ -100,27 +100,27 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:98
+#: functions.php:97
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:100 functions.php:110 functions.php:120
+#: functions.php:99 functions.php:109 functions.php:119
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:108
+#: functions.php:107
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:117
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:165 functions.php:174
+#: functions.php:164 functions.php:173
 msgid "Logo"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:166
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
