@@ -37,8 +37,8 @@
 		<?php endwhile; ?>
 
 		<div class="post-nav">
-			<?php next_posts_link(__( '&laquo; Older posts', 'gridbulletin' )); ?>
-			<?php previous_posts_link(__( 'Newer posts &raquo;', 'gridbulletin' )); ?>
+			<?php next_posts_link(__( 'Older posts &raquo;', 'gridbulletin' )); ?>
+			<?php previous_posts_link(__( '&laquo; Newer posts', 'gridbulletin' )); ?>
 		</div>
 
 		<?php else: ?>

@@ -1,7 +1,7 @@
 /*
 Theme Name: GridBulletin
 Theme URI: http://www.guidovanderleest.nl/gridbulletin
-Version: 3.1
+Version: 3.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: GridBulletin is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: grid layout on homepage and archive page, primary sidebar, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
@@ -147,8 +147,8 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 .nav-head {width:98%; clear:both; float:left; background:#0066ff; padding:0 1%; margin:10px 0 0;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin:0; z-index:999;}
-.nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0 0 0 10px;}
-.nav-head ul li a {text-decoration:none; color:#fff; background:none; padding:10px 10px; display:inline-block;}
+.nav-head ul li {list-style-type:none; display:inline-block; position:relative;}
+.nav-head ul li a {text-decoration:none; color:#fff; background:none; padding:10px 0; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
 .nav-head .current_page_item > a, .nav-head .current_page_parent > a {text-decoration:underline;}
 
@@ -184,8 +184,8 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 /* POST NAV */
 .post-nav {width:100%; clear:both; float:left; display:block;}
-.nav-prev {float:right; padding:5px 0;}
-.nav-next{float:left; padding:5px 0;}
+.nav-prev {float:left; padding:5px 0;}
+.nav-next {float:right; padding:5px 0;}
 
 
 /* EDIT LINK */
