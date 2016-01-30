@@ -1,25 +1,48 @@
-<?php
+<?php get_header();
 
-do_action( 'semperfi_single_the_header' );
+while ( have_posts() ) : the_post(); ?>
 
-do_action( 'semperfi_single_after_header' );
+<div id="post-<?php the_ID(); ?>" <?php post_class('contents'); ?>>
 
-do_action( 'semperfi_single_before_content' );
+    <h3 class="post_title"><?php if (get_theme_mod('display_date_setting') != 'off' ) : ?><time datetime="<?php the_time('Y-m-d H:i') ?>"><?php the_time('M jS') ?><br/><?php the_time('Y') ?></time><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'localize_semperfi'); } ?></h3>
 
-do_action( 'semperfi_single_the_content' );
+    <?php the_post_thumbnail('large_featured', array( 'class' => "featured_image"));
 
-do_action( 'semperfi_single_after_content' );
+    the_content(); ?>
 
-do_action( 'semperfi_single_before_comments' );
+    <span class="tags">
 
-do_action( 'semperfi_single_the_comments' );
+        <?php wp_link_pages( array('before' => 'Pages: ', 'after' => '</br>') ); ?>
 
-do_action( 'semperfi_single_after_comments' );
+        Post Categories: <?php the_category(', '); the_tags('</br>Tags: ', ', ', ''); ?>
 
-do_action( 'semperfi_single_before_footer' );
+    </span>
 
-do_action( 'semperfi_single_the_footer' );
+</div>
 
-wp_footer();
 
-do_action( 'semperfi_single_after_footer' );
+
+<?php if ((get_theme_mod('previousnext_setting') != 'page') && (get_theme_mod('previousnext_setting') != 'neither')) : ?>
+
+    <div class="stars_and_bars">
+        <span class="left"><?php previous_post_link('%link', '&#8249; %title'); ?></span>
+        <span class="right"><?php next_post_link('%link', '%title &#8250;'); ?></span>
+    </div>
+
+<?php else : ?>
+
+    <div class="stars_and_bars"></div>
+
+<?php endif;
+
+if (!is_home() && (get_theme_mod('comments_setting') != 'none') && (get_theme_mod('comments_setting') != 'page')) :
+
+    comments_template();
+
+endif;
+
+endwhile;
+
+if (semperfi_is_sidebar_active('widget')) get_sidebar();
+
+get_footer(); ?>
