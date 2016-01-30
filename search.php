@@ -8,45 +8,46 @@
 <div id="content">
 
 	<?php if ( have_posts() ) : ?>
+
 		<h3 class="page-title"><?php printf( __( 'Search Results for: %s', 'simplyblack' ), get_search_query() ); ?></h3>
 			
 		<?php while ( have_posts() ) : the_post(); ?>
 
-		<h3 class="post-title">
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'simplyblack'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
-		</h3>
+			<h3 class="post-title">
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'simplyblack'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
+			</h3>
 
-		<div class="postmetadata">
-			<?php printf( __( 'Posted on %s', 'simplyblack' ), '<a href="'. esc_url( get_permalink() ) .'">' . esc_html( get_the_date() ). '</a>' ); ?> <?php echo '|'; ?> 
-			<?php printf( __( 'By %s', 'simplyblack' ), sprintf( '<a href="%1$s">%2$s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() ) ) ); ?>
-			<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-				<?php echo '|'; ?> <?php comments_popup_link( __( 'Leave a response', 'simplyblack' ), __( '1 response', 'simplyblack' ), __( '% responses', 'simplyblack' ) ); ?>
-			<?php endif; ?>
+			<div class="postmetadata">
+				<?php printf( __( 'Posted on %s', 'simplyblack' ), '<a href="'. esc_url( get_permalink() ) .'">' . esc_html( get_the_date() ). '</a>' ); ?> <?php echo '|'; ?> 
+				<?php printf( __( 'By %s', 'simplyblack' ), sprintf( '<a href="%1$s">%2$s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() ) ) ); ?>
+				<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+					<?php echo '|'; ?> <?php comments_popup_link( __( 'Leave a response', 'simplyblack' ), __( '1 response', 'simplyblack' ), __( '% responses', 'simplyblack' ) ); ?>
+				<?php endif; ?>
+			</div>
+
+			<?php if ( has_post_thumbnail() ) { 
+				the_post_thumbnail(); 
+			} ?>
+
+			<?php the_excerpt(); ?>
+
+			<div class="more">
+				<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'simplyblack' ); ?></a>
+			</div>
+
+		<?php endwhile; ?>
+
+		<div class="post-nav">
+			<?php next_posts_link(__( 'Older posts &raquo;', 'simplyblack' )); ?>
+			<?php previous_posts_link(__( '&laquo; Newer posts', 'simplyblack' )); ?>
 		</div>
 
-		<?php if ( has_post_thumbnail() ) { 
-			the_post_thumbnail(); 
-		} ?>
+		<?php else: ?>
+			<h3 class="page-title"><?php _e( 'Nothing Found', 'simplyblack' ); ?></h3>
+			<p><?php _e('Sorry, no posts matched your criteria.', 'simplyblack'); ?></p>
+			<?php get_search_form(); ?>
 
-		<?php the_excerpt(); ?>
-
-		<div class="more">
-			<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'simplyblack' ); ?></a>
-		</div>
-
-		<?php endwhile; else: ?>
-					
-		<h3 class="page-title"><?php _e( 'Nothing Found', 'simplyblack' ); ?></h3>
-		<p><?php _e('Sorry, no posts matched your criteria.', 'simplyblack'); ?></p>
-
-		<?php get_search_form(); ?>
-			
 	<?php endif; ?>
-
-	<div class="post-nav">
-		<?php next_posts_link(__( '&laquo; Older posts', 'simplyblack' )); ?>
-		<?php previous_posts_link(__( 'Newer posts &raquo;', 'simplyblack' )); ?>
-	</div>
 
 </div>
 <?php get_sidebar(); ?>

@@ -38,8 +38,8 @@
 		<?php endwhile; ?>
 
 		<div class="post-nav">
-			<?php next_posts_link(__( '&laquo; Older posts', 'simplyblack' )); ?>
-			<?php previous_posts_link(__( 'Newer posts &raquo;', 'simplyblack' )); ?>
+			<?php next_posts_link(__( 'Older posts &raquo;', 'simplyblack' )); ?>
+			<?php previous_posts_link(__( '&laquo; Newer posts', 'simplyblack' )); ?>
 		</div>
 
 		<?php else: ?>
