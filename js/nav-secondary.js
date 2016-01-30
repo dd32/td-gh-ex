@@ -1,5 +1,5 @@
 /*
- * MOBILE NAVIGATION WITHOUT SUBPAGE LISTING
+ * MOBILE NAVIGATION
  * Source: http://maxfoundry.com/articles/116/responsive-mobile-navigation-in-wordpress
  * Copyright author: John Hartley
  * License: GNU General Public License v3 or later
@@ -22,7 +22,11 @@ jQuery(document).ready(function() {
 		var el = jQuery(this);
 
 		if(el.parents('.nav-head-secondary ul ul').length) {
-			// if there are ul in li do nothing
+			// if there are ul in li
+			jQuery('<option />', {
+				'value': el.attr('href'),
+				'text':  '- ' + el.text()
+			}).appendTo('.nav-head-secondary select');
 		} else { 
 			// if no ul in li
 			jQuery('<option />', {

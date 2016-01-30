@@ -1,10 +1,10 @@
 /*
 Theme Name: PrivateBusiness
 Theme URI: http://www.guidovanderleest.nl/privatebusiness
-Version: 4.0
+Version: 4.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: PrivateBusiness is a free, clean, minimalistic, responsive, mobile friendly WordPress theme for Private or Business website. Features: primary sidebar, widget areas in header, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, header navigation, dropdown navigation. That's it. Enjoy. 
+Description: PrivateBusiness is a free, clean, minimalistic, responsive, mobile friendly WordPress theme for Private or Business website. Features: primary sidebar, widget areas in header, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, blue, light, gray, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -140,8 +140,17 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 .nav-head-secondary select {display:none;}
 .nav-head-secondary ul {padding:0; margin:0; z-index:999;}
 .nav-head-secondary ul li {list-style-type:none; display:inline-block; position:relative;}
-.nav-head-secondary .current_page_item > a {text-decoration:underline;}
-.nav-head-secondary ul ul {display:none;}
+.nav-head-secondary ul li a {text-decoration:none; padding:0 0 5px; display:inline-block;}
+.nav-head-secondary ul li a:hover {text-decoration:underline;}
+.nav-head-secondary .current_page_item > a, .nav-head-secondary .current_page_parent > a {text-decoration:underline;}
+
+
+/* HEADER FIRST SECONDARY SUBMENU */
+.nav-head-secondary ul ul {display:none; position:absolute; top:100%;}
+.nav-head-secondary ul ul ul {display:none; position:absolute; top:30%; left:100%;}
+.nav-head-secondary ul ul a {width:12em; padding:5px 10px; background:#333; color:#fff; text-align:left;}
+.nav-head-secondary ul li:hover > ul {display:block;}
+.nav-head-secondary ul li ul li {margin:0;}
 
 
 /* HEADER SECOND */
@@ -156,8 +165,8 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 .nav-head-primary {width:98%; clear:both; float:left; background:#0066ff; padding:0 1%;}
 .nav-head-primary select {display:none;}
 .nav-head-primary ul {padding:0; margin:0; z-index:999;}
-.nav-head-primary ul li {list-style-type:none; display:inline-block; position:relative; margin:0 0 0 10px;}
-.nav-head-primary ul li a {text-decoration:none; color:#fff; background:none; padding:10px 10px; display:inline-block;}
+.nav-head-primary ul li {list-style-type:none; display:inline-block; position:relative;}
+.nav-head-primary ul li a {text-decoration:none; color:#fff; background:none; padding:10px 0; display:inline-block;}
 .nav-head-primary ul li a:hover {text-decoration:underline;}
 .nav-head-primary .current_page_item > a, .nav-head-primary .current_page_parent > a {text-decoration:underline;}
 
@@ -195,8 +204,8 @@ a.readmore:hover {background: #333; text-decoration:none;}
 
 /* POST NAV */
 .post-nav {width:100%; clear:both; float:left; display:block;}
-.nav-prev {float:right; padding:5px 0;}
-.nav-next{float:left; padding:5px 0;}
+.nav-prev {float:left; padding:5px 0;}
+.nav-next {float:right; padding:5px 0;}
 
 
 /* EDIT LINK */

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PrivateBusiness\n"
-"POT-Creation-Date: 2016-01-07 14:59+0100\n"
+"POT-Creation-Date: 2016-01-30 12:39+0100\n"
 "PO-Revision-Date: 2015-11-15 22:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,51 +19,51 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 archive.php:46 index.php:48 search.php:39
+#: 404.php:9 archive.php:46 index.php:48 search.php:46
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:10 archive.php:47 index.php:49 search.php:40
+#: 404.php:10 archive.php:47 index.php:49 search.php:47
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: archive.php:17 index.php:19 search.php:16
+#: archive.php:17 index.php:19 search.php:17
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: archive.php:21 index.php:23 search.php:20 single.php:16
+#: archive.php:21 index.php:23 search.php:21 single.php:16
 #, php-format
 msgid "Posted on %s"
 msgstr ""
 
-#: archive.php:22 index.php:24 search.php:21 single.php:17
+#: archive.php:22 index.php:24 search.php:22 single.php:17
 #, php-format
 msgid "By %s"
 msgstr ""
 
-#: archive.php:24 index.php:26 search.php:23 single.php:19
+#: archive.php:24 index.php:26 search.php:24 single.php:19
 msgid "Leave a response"
 msgstr ""
 
-#: archive.php:24 index.php:26 search.php:23 single.php:19
+#: archive.php:24 index.php:26 search.php:24 single.php:19
 msgid "1 response"
 msgstr ""
 
-#: archive.php:24 index.php:26 search.php:23 single.php:19
+#: archive.php:24 index.php:26 search.php:24 single.php:19
 msgid "% responses"
 msgstr ""
 
-#: archive.php:35 index.php:37 search.php:34
+#: archive.php:35 index.php:37 search.php:35
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:41 index.php:43 search.php:47
-msgid "&laquo; Older posts"
+#: archive.php:41 index.php:43 search.php:41
+msgid "Older posts &raquo;"
 msgstr ""
 
-#: archive.php:42 index.php:44 search.php:48
-msgid "Newer posts &raquo;"
+#: archive.php:42 index.php:44 search.php:42
+msgid "&laquo; Newer posts"
 msgstr ""
 
 #: comments.php:16
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: search.php:11
+#: search.php:12
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""

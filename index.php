@@ -37,16 +37,17 @@
 			<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'privatebusiness' ); ?></a>
 		</div>
 
-		<?php endwhile; ?>
+	<?php endwhile; ?>
 
 		<div class="post-nav">
-			<?php next_posts_link(__( '&laquo; Older posts', 'privatebusiness' )); ?>
-			<?php previous_posts_link(__( 'Newer posts &raquo;', 'privatebusiness' )); ?>
+			<?php next_posts_link(__( 'Older posts &raquo;', 'privatebusiness' )); ?>
+			<?php previous_posts_link(__( '&laquo; Newer posts', 'privatebusiness' )); ?>
 		</div>
 
-	<?php else: ?>
-		<h3 class="page-title"><?php _e( 'Nothing Found', 'privatebusiness' ); ?></h3>
-		<p><?php _e('Sorry, no posts matched your criteria.', 'privatebusiness'); ?></p>
+		<?php else: ?>
+			<h3 class="page-title"><?php _e( 'Nothing Found', 'privatebusiness' ); ?></h3>
+			<p><?php _e('Sorry, no posts matched your criteria.', 'privatebusiness'); ?></p>
+
 	<?php endif; ?>
 
 </div>

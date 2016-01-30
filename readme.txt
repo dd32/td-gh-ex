@@ -29,7 +29,7 @@ You can add your own background(image) via WordPress Dashboard > Appearance > Cu
 
 HOW TO SET MENU
 ===============
-Theme offers a menu that can contain subpages (2 levels deep) and a single level header menu.
+Theme offers 2 menu's that can contain subpages (2 levels deep).
 You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 
