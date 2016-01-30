@@ -6,6 +6,7 @@
 
 <?php get_header(); ?>
 <div id="content">
+
 	<?php if ( have_posts() ) : ?>
 		<?php
 			the_archive_title( '<h4 class="page-title">', '</h4>' );
@@ -38,8 +39,8 @@
 		<?php endwhile; ?>
 
 		<div class="post-nav">
-			<?php next_posts_link(__( '&laquo; Older posts', 'bluegray' )); ?>
-			<?php previous_posts_link(__( 'Newer posts &raquo;', 'bluegray' )); ?>
+			<?php next_posts_link(__( 'Older posts &raquo;', 'bluegray' )); ?>
+			<?php previous_posts_link(__( '&laquo; Newer posts', 'bluegray' )); ?>
 		</div>
 
 		<?php else: ?>
