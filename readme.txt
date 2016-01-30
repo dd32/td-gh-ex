@@ -29,12 +29,19 @@ Responsive clean theme. More info at http://web-profile.com.ua/activetab/
 * show or hide site description in header section
 * menu position type (fixed or static)
 * show excerpt or full content in the list of posts
-* custom favicon upload (favicon shown in frontend and admin sections)
 * custom head code - could be inserted any javascript or css code into head section before closing [/head] tag
 * custom footer code - same as head code, but it will be inserted before closing [/body] tag
 
 
 == Changelog ==
+
+
+= 2.5 - 2016-01-30 =
+* removed sitemap template because it can be easily solved with Page-list plugin - https://wordpress.org/plugins/page-list/
+* removed archive templates because it can be easily solved with Extra-Shortcodes plugin - https://wordpress.org/plugins/extra-shortcodes/
+* removed favicon because now favicon can be set via WordPress Customizer
+* updated Bootstrap v.3.3.6
+* code refactoring
 
 = 2.4 - 2015-11-07 =
 * added Text Domain for translate.wordpress.org
@@ -188,7 +195,7 @@ Responsive clean theme. More info at http://web-profile.com.ua/activetab/
 
 == Other Notes ==
 
-activetab theme, copyright 2015 web-profile.com.ua
+activetab theme, copyright 2016 web-profile.com.ua
 activetab theme is distributed under the terms of the GNU GPL
 
 

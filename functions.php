@@ -1,7 +1,6 @@
 <?php
 
-define('ACTIVETAB_THEME_VERSION', '2.4');
-define('ACTIVETAB_VERSION', ACTIVETAB_THEME_VERSION); // for backward capability
+define('ACTIVETAB_THEME_VERSION', '2.5');
 
 
 if ( ! isset( $content_width ) ) {
@@ -24,7 +23,7 @@ if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
 		wp_enqueue_style( 'activetab-style', get_stylesheet_uri(), array( 'activetab-bootstrap-style', 'dashicons' ), ACTIVETAB_THEME_VERSION, 'all' ); // get_stylesheet_directory_uri() . '/style.css'
 	}
 	add_action( 'wp_enqueue_scripts', 'activetab_enqueue_scripts_and_styles' );
-endif; // activetab_enqueue_scripts_and_styles()
+endif;
 
 
 if ( ! function_exists( 'activetab_setup' ) ) :
@@ -99,7 +98,7 @@ if ( ! function_exists( 'activetab_setup' ) ) :
 
 	}
 	add_action( 'after_setup_theme', 'activetab_setup' );
-endif; // activetab_setup()
+endif;
 
 
 // register sidebars & footer widgets
@@ -125,7 +124,7 @@ if ( ! function_exists( 'activetab_register_widgets' ) ) :
 		) );
 	}
 	add_action( 'widgets_init', 'activetab_register_widgets' );
-endif; // activetab_register_widgets()
+endif;
 
 
 if ( ! function_exists( 'activetab_list_pages' ) ) :
@@ -134,7 +133,7 @@ if ( ! function_exists( 'activetab_list_pages' ) ) :
 		<nav class="nav-menu nav clearfix" role="navigation"><ul class="nav"><?php wp_list_pages( 'title_li=' ); ?></ul></nav>
 		<?php
 	}
-endif; // activetab_list_pages()
+endif;
 
 
 if ( ! function_exists( 'activetab_comments' ) ) :
@@ -192,28 +191,28 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 
 								edit_comment_link( '<span class="btn btn-default btn-xs"><i class="dashicons dashicons-edit"></i> '.__( 'Edit', 'activetab' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
 
-								echo '</div> <!-- /.comment-meta -->';
+								echo '</div><!-- .comment-meta -->';
 								?>
-							</div> <!-- /.comment-author /.vcard -->
+							</div><!-- .comment-author .vcard -->
 
 							<?php if ( $comment->comment_approved == '0' ) : ?>
 								<div class="alert alert-warning"><?php _e( 'Your comment is awaiting moderation.', 'activetab' ); ?></div>
 							<?php endif; ?>
 
-						</header><!-- /.comment-meta -->
+						</header><!-- .comment-meta -->
 
 						<div class="comment-content"><?php comment_text(); ?></div>
 
 						<div class="reply">
 							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="btn btn-default"><i class="dashicons dashicons-admin-comments"></i> '.__( 'Reply', 'activetab' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-						</div> <!-- /.reply -->
-					</article> <!-- /#comment-<?php comment_ID(); ?> -->
+						</div><!-- .reply -->
+					</article><!-- #comment-<?php comment_ID(); ?> -->
 
 				<?php
 				break;
 		endswitch;
 	}
-endif; // activetab_comments()
+endif;
 
 
 if ( ! function_exists( 'activetab_post_date' ) ) :
@@ -221,7 +220,7 @@ if ( ! function_exists( 'activetab_post_date' ) ) :
 		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="dashicons dashicons-calendar-alt" title="'.esc_attr( __( 'Published', 'activetab' ) ).'"></i> '.'<a href="'.esc_url( get_permalink() ).'" title="'.get_the_time().'"><time class="entry-date" datetime="'.get_the_date( 'c' ).'" title="'.get_the_time().'">'.get_the_date().'</time></a></span>'."\n";
 		return $post_date;
 	}
-endif; // activetab_post_date()
+endif;
 
 
 if ( ! function_exists( 'activetab_post_sticky' ) ) :
@@ -235,7 +234,7 @@ if ( ! function_exists( 'activetab_post_sticky' ) ) :
 
 		return $post_sticky;
 	}
-endif; // activetab_post_sticky()
+endif;
 
 
 if ( ! function_exists( 'activetab_post_author' ) ) :
@@ -246,7 +245,7 @@ if ( ! function_exists( 'activetab_post_author' ) ) :
 		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="dashicons dashicons-admin-users" title="'.esc_attr( __( 'Author', 'activetab' ) ).'"></i> <a href="'.esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ).'" title="'.esc_attr(  __( 'Author', 'activetab' ) ).'">'.get_the_author().'</a></span>'."\n";
 		return $post_author;
 	}
-endif; // activetab_post_author()
+endif;
 
 
 if ( ! function_exists( 'activetab_comments_count' ) ) :
@@ -257,7 +256,7 @@ if ( ! function_exists( 'activetab_comments_count' ) ) :
 		}
 		return $post_comments_count;
 	}
-endif; // activetab_comments_count()
+endif;
 
 
 if ( ! function_exists( 'activetab_post_categories' ) ) :
@@ -269,7 +268,7 @@ if ( ! function_exists( 'activetab_post_categories' ) ) :
 			return ''; // no categories
 		}
 	}
-endif; // activetab_post_categories()
+endif;
 
 
 if ( ! function_exists( 'activetab_post_tags' ) ) :
@@ -281,7 +280,7 @@ if ( ! function_exists( 'activetab_post_tags' ) ) :
 			return ''; // no tags
 		}
 	}
-endif; // activetab_post_tags()
+endif;
 
 
 if ( ! function_exists( 'activetab_post_meta' ) ) :
@@ -292,13 +291,14 @@ if ( ! function_exists( 'activetab_post_meta' ) ) :
 			$post_meta .= '<div class="entry-meta-row">'."\n" . $post_tags . '</div>'."\n";
 		}
 
-		return "\n".'<div class="entry-meta">'."\n".$post_meta.'</div> <!-- /.entry-meta -->'."\n";
+		return "\n".'<div class="entry-meta">'."\n".$post_meta.'</div><!-- .entry-meta -->'."\n";
 	}
-endif; // activetab_post_meta()
+endif;
 
 
 if ( ! function_exists( 'activetab_nav' ) ) :
 	function activetab_nav( $class='top' ) { // show next/prev navigation links when needed
+		// todo: replace with get_the_posts_navigation();
 		global $wp_query;
 		$nav = '';
 		if ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
@@ -310,11 +310,11 @@ if ( ! function_exists( 'activetab_nav' ) ) :
 			endif;
 		endif;
 		if ( ! empty( $nav ) ) { // do not show empty markup
-			$nav = "\n".'<nav class="site-posts-navigation site-comments-navigation-'.$class.'" role="navigation"><ul class="pager">'.$nav.'</ul></nav> <!-- /.site-posts-navigation -->'."\n";
+			$nav = "\n".'<nav class="site-posts-navigation site-comments-navigation-'.$class.'" role="navigation"><ul class="pager">'.$nav.'</ul></nav><!-- .site-posts-navigation -->'."\n";
 		}
 		return $nav;
 	}
-endif; // activetab_nav()
+endif;
 
 
 if ( ! function_exists( 'activetab_excerpt_more' ) ) :
@@ -322,7 +322,7 @@ if ( ! function_exists( 'activetab_excerpt_more' ) ) :
 		return '...';
 	}
 	add_filter('excerpt_more', 'activetab_excerpt_more');
-endif; // activetab_excerpt_more()
+endif;
 
 
 if ( ! function_exists( 'activetab_is_homepage' ) ) :
@@ -344,16 +344,11 @@ if ( ! function_exists( 'activetab_is_homepage' ) ) :
 			return false;
 		}
 	}
-endif; // activetab_is_homepage()
+endif;
 
 
 if ( ! function_exists( 'activetab_wp_head' ) ) :
 function activetab_wp_head() { // output content to the head section
-
-	$favicon_url = of_get_option( 'favicon_url', '' );
-	if ( ! empty( $favicon_url ) ) {
-		echo "\n".'<link rel="shortcut icon" type="image/x-icon" href="'.$favicon_url.'">'."\n";
-	}
 
 	$code_head = of_get_option( 'code_head', '' );
 	if ( ! empty( $code_head ) ) { // output js head code
@@ -364,20 +359,7 @@ function activetab_wp_head() { // output content to the head section
 
 }
 add_action( 'wp_head', 'activetab_wp_head' );
-endif; // activetab_wp_head()
-
-
-if ( ! function_exists( 'activetab_admin_head' ) ) :
-	function activetab_admin_head() { // output content to the admin head section
-
-		$favicon_url = of_get_option( 'favicon_url', '' );
-		if ( ! empty( $favicon_url ) ) {
-			echo "\n".'<link rel="shortcut icon" type="image/x-icon" href="'.$favicon_url.'">'."\n";
-		}
-
-	}
-	add_action( 'admin_head', 'activetab_admin_head' );
-endif; // activetab_admin_head()
+endif;
 
 
 if ( ! function_exists( 'activetab_wp_footer' ) ) :
@@ -392,7 +374,22 @@ if ( ! function_exists( 'activetab_wp_footer' ) ) :
 
 	}
 	add_action( 'wp_footer', 'activetab_wp_footer' );
-endif; // activetab_wp_footer()
+endif;
+
+
+if ( ! function_exists( 'activetab_rss_button' ) ) :
+	function activetab_rss_button() { // output content to the footer section
+		$output = '';
+		if ( is_category() ) {
+			$output = '<a href="'.get_category_feed_link( get_query_var( 'cat' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Category RSS feed', 'activetab' ) ).'"><i class="dashicons dashicons-rss"></i></a>';
+		} elseif ( is_tag() ) {
+			$output = '<a href="'.get_tag_feed_link( get_query_var( 'tag_id' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Tag RSS feed', 'activetab' ) ).'"><i class="dashicons dashicons-rss"></i></a>';
+		} elseif ( is_author() ) {
+			$output = '<a href="'.get_author_feed_link( get_the_author_meta( 'ID' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Author RSS feed', 'activetab' ) ).'"><i class="dashicons dashicons-rss"></i></a>';
+		}
+		return $output;
+	}
+endif;
 
 
 // ========== options framework ==========
