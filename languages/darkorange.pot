@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkOrange\n"
-"POT-Creation-Date: 2016-01-07 14:57+0100\n"
+"POT-Creation-Date: 2016-01-30 12:38+0100\n"
 "PO-Revision-Date: 2015-11-15 18:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 archive.php:46 index.php:52 search.php:40
+#: 404.php:9 archive.php:46 index.php:52 search.php:46
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:10 archive.php:47 index.php:53 search.php:41
+#: 404.php:10 archive.php:47 index.php:53 search.php:47
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
@@ -58,12 +58,12 @@ msgstr ""
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:41 index.php:47 search.php:48
-msgid "&laquo; Older posts"
+#: archive.php:41 index.php:47 search.php:41
+msgid "Older posts &raquo;"
 msgstr ""
 
-#: archive.php:42 index.php:48 search.php:49
-msgid "Newer posts &raquo;"
+#: archive.php:42 index.php:48 search.php:42
+msgid "&laquo; Newer posts"
 msgstr ""
 
 #: comments.php:16
@@ -100,31 +100,31 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:100
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:101 functions.php:111 functions.php:121 functions.php:131
+#: functions.php:102 functions.php:112 functions.php:122 functions.php:132
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:109
+#: functions.php:110
 msgid "Homepage Sidebar"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:120
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:130
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:176 functions.php:185
+#: functions.php:177 functions.php:186
 msgid "Logo"
 msgstr ""
 
-#: functions.php:178
+#: functions.php:179
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
@@ -132,7 +132,7 @@ msgstr ""
 msgid "Featured post"
 msgstr ""
 
-#: page-full.php:29 page.php:28 single.php:42
+#: page-full.php:29 page.php:28 single.php:41
 msgid "Edit"
 msgstr ""
 
@@ -141,16 +141,16 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: single.php:31
+#: single.php:30
 #, php-format
 msgid "Posted in %s"
 msgstr ""
 
-#: single.php:31 single.php:33
+#: single.php:30 single.php:32
 msgid ", "
 msgstr ""
 
-#: single.php:33
+#: single.php:32
 #, php-format
 msgid "Tags: %s"
 msgstr ""

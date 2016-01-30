@@ -29,7 +29,7 @@
 			<?php if ( get_theme_mod( 'darkorange_logo' ) ) : ?> 
 				<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'darkorange_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
 			<?php else : ?> 
-				<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> </h1>
+				<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
 				<h4><?php bloginfo('description'); ?></h4> 
 			<?php endif; ?>
 		</div>
@@ -43,14 +43,12 @@
 			<div class="image-homepage"> 
 				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 			</div>
-		<?php } ?>
-		<?php } ?> 
 	
-		<?php if ( is_front_page() ) {?> 
-		<?php if ( is_active_sidebar( 'homepage' ) ) {?> 
+			<?php if ( is_active_sidebar( 'homepage' ) ) {?> 
 			<div class="sidebar-homepage"> 
 				<?php dynamic_sidebar( 'homepage' ); ?>
 			</div>
+			<?php } ?>
 		<?php } ?>
  		<?php } ?> 
 	</div>
