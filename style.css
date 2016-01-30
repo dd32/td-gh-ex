@@ -1,7 +1,7 @@
 /*
 Theme Name: Medical
 Theme URI: http://www.guidovanderleest.nl/medical
-Version: 3.1
+Version: 3.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: Medical is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: primary sidebar, widget areas in header, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
@@ -188,8 +188,8 @@ a.readmore:hover {background:#333; text-decoration:none;}
 
 /* POST NAV */
 .post-nav {width:100%; clear:both; float:left; display:block;}
-.nav-prev {float:right; padding:5px 0;}
-.nav-next{float:left; padding:5px 0;}
+.nav-prev {float:left; padding:5px 0;}
+.nav-next {float:right; padding:5px 0;}
 
 
 /* EDIT LINK */

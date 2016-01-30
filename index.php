@@ -39,14 +39,15 @@
 
 	<?php endwhile; ?>
 
-	<div class="post-nav">
-		<?php next_posts_link(__( '&laquo; Older posts', 'medical' )); ?>
-		<?php previous_posts_link(__( 'Newer posts &raquo;', 'medical' )); ?>
-	</div>
+		<div class="post-nav">
+			<?php next_posts_link(__( 'Older posts &raquo;', 'medical' )); ?>
+			<?php previous_posts_link(__( '&laquo; Newer posts', 'medical' )); ?>
+		</div>
 
-	<?php else: ?>
-		<h4 class="page-title"><?php _e( 'Nothing Found', 'medical' ); ?></h4>
-		<p><?php _e('Sorry, no posts matched your criteria.', 'medical'); ?></p>
+		<?php else: ?>
+			<h4 class="page-title"><?php _e( 'Nothing Found', 'medical' ); ?></h4>
+			<p><?php _e('Sorry, no posts matched your criteria.', 'medical'); ?></p>
+
 	<?php endif; ?>
 
 </div>
