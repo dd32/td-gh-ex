@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+LeftSide version 2.9 - february 2016
+- file search: post nav inside the loop
+- file style: fixed alignment of next and prev post link
+- several small adjustments
+
 LeftSide version 2.8 - january 2016
 - file header: removed is_home so homepage content is not displayed when using a static blog page
 - several small adjustments

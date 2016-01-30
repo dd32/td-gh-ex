@@ -1,7 +1,7 @@
 /*
 Theme Name: LeftSide
 Theme URI: http://www.guidovanderleest.nl/leftside
-Version: 2.8
+Version: 2.9
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: LeftSide is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: sidebar on left side, navigation on left side, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description. That's it. Enjoy. 
@@ -180,8 +180,8 @@ a.readmore:hover {background:#666; color:#ddd; text-decoration:none;}
 
 /* POST NAV */
 .post-nav {width:100%; clear:both; float:left; display:block;}
-.nav-prev {float:right; padding:5px 0;}
-.nav-next{float:left; padding:5px 0;}
+.nav-prev {float:left; padding:5px 0;}
+.nav-next {float:right; padding:5px 0;}
 
 
 /* EDIT LINK */
