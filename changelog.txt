@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-PrivateBusiness version 4.1 - february 2016
+PrivateBusiness version 4.2 - february 2016
 - file search: post nav inside the loop
 - file style: fixed alignment of next and prev post link
 - header menu supports subpages now
