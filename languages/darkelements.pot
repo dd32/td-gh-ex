@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkElements\n"
-"POT-Creation-Date: 2016-01-07 14:57+0100\n"
+"POT-Creation-Date: 2016-01-30 12:37+0100\n"
 "PO-Revision-Date: 2015-11-15 17:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 archive.php:46 index.php:48 search.php:40
+#: 404.php:9 archive.php:46 index.php:48 search.php:46
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:10 archive.php:47 index.php:49 search.php:41
+#: 404.php:10 archive.php:47 index.php:49 search.php:47
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
@@ -58,12 +58,12 @@ msgstr ""
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:41 index.php:43 search.php:48
-msgid "&laquo; Older posts"
+#: archive.php:41 index.php:43 search.php:41
+msgid "Older posts &raquo;"
 msgstr ""
 
-#: archive.php:42 index.php:44 search.php:49
-msgid "Newer posts &raquo;"
+#: archive.php:42 index.php:44 search.php:42
+msgid "&laquo; Newer posts"
 msgstr ""
 
 #: comments.php:16

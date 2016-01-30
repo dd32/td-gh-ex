@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkElements version 3.5 - february 2016
+- file search: post nav inside the loop
+- file style: fixed alignment of next and prev post link
+- several small adjustments
+
 DarkElements version 3.4 - january 2016
 - file header: removed is_home so homepage content is not displayed when using a static blog page
 - several small adjustments
