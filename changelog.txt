@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 3.0 - february 2016
+- file header: the search bar in header is for posts only
+- file search: post nav inside the loop
+- file style: fixed alignment of next and prev post link
+- several small adjustments
+
 MyKnowledgeBase version 2.9 - january 2016
 - file header: removed is_home so homepage content is not displayed when using a static blog page
 - several small adjustments
