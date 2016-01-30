@@ -45,14 +45,15 @@
 
 	<?php endwhile; ?>
 
-	<div class="post-nav">
-		<?php next_posts_link(__( '&laquo; Older posts', 'multicolors' )); ?>
-		<?php previous_posts_link(__( 'Newer posts &raquo;', 'multicolors' )); ?>
-	</div>
+		<div class="post-nav">
+			<?php next_posts_link(__( 'Older posts &raquo;', 'multicolors' )); ?>
+			<?php previous_posts_link(__( '&laquo; Newer posts', 'multicolors' )); ?>
+		</div>
 
-	<?php else: ?>
-		<h4 class="page-title"><?php _e( 'Nothing Found', 'multicolors' ); ?></h4>
-		<p><?php _e('Sorry, no posts matched your criteria.', 'multicolors'); ?></p>
+		<?php else: ?>
+			<h4 class="page-title"><?php _e( 'Nothing Found', 'multicolors' ); ?></h4>
+			<p><?php _e('Sorry, no posts matched your criteria.', 'multicolors'); ?></p>
+
 	<?php endif; ?>
 				
 </div>

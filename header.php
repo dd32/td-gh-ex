@@ -36,39 +36,39 @@
 	</div>
 
 	<?php if ( is_front_page() ) {?> 
+	<?php if ( get_header_image() ) {?> 
 	<div id="header-third-container">
-	<div id="header-third">
-		<?php if ( get_header_image() ) {?> 
-		<div class="image-header"> 
-			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-		</div>
-		<?php } ?> 
+		<div id="header-third">
+			<div class="image-header"> 
+				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+			</div>
 	
-		<?php if ( is_active_sidebar( 'header' ) ) {?> 
-		<div class="sidebar-header"> 
-			<?php dynamic_sidebar( 'header' ); ?>
+			<?php if ( is_active_sidebar( 'header' ) ) {?> 
+			<div class="sidebar-header"> 
+				<?php dynamic_sidebar( 'header' ); ?>
+			</div>
+			<?php } ?>
 		</div>
-		<?php } ?>
 	</div>
-	</div>
+	<?php } ?> 
 	<?php } ?> 
 
 	<?php if( is_front_page() ) {?>
 	<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-middle' ) || is_active_sidebar( 'homepage-left' ) ) {?> 
 	<div id="header-fourth-container">
-	<div id="header-fourth">
-		<div class="home-left"> 
-			<?php dynamic_sidebar( 'homepage-left' ); ?>
-		</div>
+		<div id="header-fourth">
+			<div class="home-left"> 
+				<?php dynamic_sidebar( 'homepage-left' ); ?>
+			</div>
 	
-		<div class="home-middle"> 
-			<?php dynamic_sidebar( 'homepage-middle' ); ?>
-		</div>
+			<div class="home-middle"> 
+				<?php dynamic_sidebar( 'homepage-middle' ); ?>
+			</div>
 	
-		<div class="home-right"> 
-			<?php dynamic_sidebar( 'homepage-right' ); ?>
+			<div class="home-right"> 
+				<?php dynamic_sidebar( 'homepage-right' ); ?>
+			</div>
 		</div>
-	</div>
 	</div>
 	<?php } ?>	
 	<?php } ?>

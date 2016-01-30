@@ -1,7 +1,7 @@
 /*
 Theme Name: MultiColors
 Theme URI: http://www.guidovanderleest.nl/multicolors
-Version: 3.3
+Version: 3.4
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MultiColors is a colorful, free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: primary sidebar, widget areas in header, widget areas in footer, custom header image, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
@@ -148,8 +148,8 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 .nav-head {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px;}
 .nav-head select {display:none;}
 .nav-head ul {width:100%; margin:0; padding:0; z-index:999;}
-.nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0 5px 0 0;}
-.nav-head ul li a {text-decoration:none; color:#eee; background:none; padding:10px 20px 10px 0; display:inline-block;}
+.nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0 20px 0 0;}
+.nav-head ul li a {text-decoration:none; color:#eee; background:none; padding:10px 0; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
 .nav-head .current_page_item > a, .nav-head .current_page_parent > a {text-decoration:underline;}
 
@@ -207,14 +207,14 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 a.readmore {float:right; padding:2px 5px; background:#333; color:#eee; text-decoration:none;}
 a.readmore:hover {background:#666; text-decoration:none;}
 
-.post-home {width:49%; float:left; margin:0 0 20px;}
-.post-home.left {clear:left; margin:0 2% 20px 0;}
+.post-home {width:49%; float:left; margin:0;}
+.post-home.left {clear:left; margin:0 2% 0 0;}
 
 
 /* POST NAV */
 .post-nav {width:100%; clear:both; float:left; display:block;}
-.nav-prev {float:right; padding:5px 0;}
-.nav-next{float:left; padding:5px 0;}
+.nav-prev {float:left; padding:5px 0;}
+.nav-next {float:right; padding:5px 0;}
 
 
 /* EDIT LINK */
@@ -332,7 +332,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#eee; background:#ff7700; border:0;}
 
 	/* CONTENT */
-	.post-home, .post-home.left {width:100%; clear:both; float:left; margin:0 0 10px;}
+	.post-home, .post-home.left {width:100%; clear:both; float:left; margin:0 auto 0;}
 
 	/* HEADINGS */
 	.post-title, .page-title, .widgettitle, #footer .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
