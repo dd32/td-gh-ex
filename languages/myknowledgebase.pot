@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2016-01-31 00:17+0100\n"
+"POT-Creation-Date: 2016-01-31 13:49+0100\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -149,11 +149,27 @@ msgstr ""
 msgid "Only numeric characters allowed."
 msgstr ""
 
-#: header.php:54 header.php:56
-msgid "Search for posts..."
+#: functions.php:214
+msgid "Search Bar"
+msgstr ""
+
+#: functions.php:216
+msgid "Change title of the knowledgebase posts search bar."
+msgstr ""
+
+#: functions.php:223
+msgid "Search Bar Title"
+msgstr ""
+
+#: functions.php:224
+msgid "This will overwrite the default title."
 msgstr ""
 
 #: header.php:57
+msgid "Search for posts..."
+msgstr ""
+
+#: header.php:63
 msgid "Search"
 msgstr ""
 

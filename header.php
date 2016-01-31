@@ -51,9 +51,15 @@
 	<?php } ?>
 
 	<div id="header-third"> 
-		<h4 class="search-title"><?php _e( 'Search for posts...', 'myknowledgebase' ); ?></h4>
+		<?php if ( get_theme_mod( 'myknowledgebase_search' ) ) {
+			$search_title = esc_attr( get_theme_mod( 'myknowledgebase_search' ) );
+		} else {
+			$search_title = esc_attr__( 'Search for posts...', 'myknowledgebase' );
+		} ?>
+
+		<h4 class="search-title"><?php echo $search_title; ?></h4>
 		<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>"> 
-			<input type="search" class="search-field" placeholder="<?php _e( 'Search for posts...', 'myknowledgebase' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php _e( 'Search for posts...', 'myknowledgebase' ) ?>" /> 
+			<input type="search" class="search-field" placeholder="<?php echo $search_title; ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo $search_title; ?>" /> 
 			<input type="submit" id="searchsubmit" value="<?php _e( 'Search', 'myknowledgebase' ) ?>" />
 			<input type="hidden" name="post_type" value="post" />
 		</form>

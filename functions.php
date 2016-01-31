@@ -210,6 +210,22 @@
 			'type' => 'number', 
 			'settings' => 'myknowledgebase_posts', 
 		) ) );
+		$wp_customize->add_section( 'myknowledgebase_search_section' , array( 	
+			'title' => __( 'Search Bar', 'myknowledgebase' ), 
+			'priority' => 32, 
+			'description' => __( 'Change title of the knowledgebase posts search bar.', 'myknowledgebase' ),
+		) );
+		$wp_customize->add_setting( 'myknowledgebase_search', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_search', array( 
+			'label' => __( 'Search Bar Title', 'myknowledgebase' ), 
+			'description' => __( 'This will overwrite the default title.', 'myknowledgebase' ), 
+			'section' => 'myknowledgebase_search_section', 
+			'settings' => 'myknowledgebase_search', 
+		) ) );
+
 	} 
 	add_action('customize_register', 'myknowledgebase_theme_customizer');
 
