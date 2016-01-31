@@ -588,14 +588,14 @@ img{
     display: block;
     margin: 0 auto
 }
-.button-link{
+#optionsframework-wrap .button-link{
     background: #FFF;
     padding: 10px;
     text-align: center;
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
 }
-.button-link a{
+#optionsframework-wrap .button-link a{
     width: 49%;
     display: inline-block;
 }

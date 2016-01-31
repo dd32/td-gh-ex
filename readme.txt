@@ -96,6 +96,9 @@ Pattern Images
 
 ---------------------------------------------
 == Changelog ==
+Version 1.21
+* CSS fixes with the latest version of the WordPress 4.4
+
 Version 1.20
 * Hardcoded Title tag removed
 
