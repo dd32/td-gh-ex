@@ -71,7 +71,10 @@
 			if ( mobile.is( ':visible' ) || 'visible' == slideout.css( 'visibility' ) ) {
 				return;
 			}
-			window.location.href = $( this ).parent().attr( 'href' );
+			var url = $( this ).parent().attr( 'href' );
+			if ( url ) {
+				window.location.href = $( this ).parent().attr( 'href' );
+			}
 		});
 		
 		if ('ontouchstart' in document.documentElement) {

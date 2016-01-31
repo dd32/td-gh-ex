@@ -1,5 +1,10 @@
 === changelog ===
 
+= (1/31/2016) - 1.3.25 =
+* Fix undefined 404 page is no menu item URL exists and you click on dropdown arrow
+* Fix dropdown arrow in IE
+* Czech translation updated
+
 = (1/28/2016) - 1.3.24 =
 * Add fixed width class to menu fallback search icon
 * Add subtle fade back to slide down drop menu

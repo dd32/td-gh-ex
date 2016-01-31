@@ -5,7 +5,7 @@
  * @package GeneratePress
  */
 	
-define( 'GENERATE_VERSION', '1.3.24');
+define( 'GENERATE_VERSION', '1.3.25');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -261,7 +261,7 @@ function generate_scripts()
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'generate-navigation', get_template_directory_uri() . '/js/navigation.min.js', array( 'jquery' ), GENERATE_VERSION, true );
 	
-	if ( 'hover' !== $generate_settings[ 'nav_dropdown_type' ] ) {
+	if ( 'click' == $generate_settings[ 'nav_dropdown_type' ] || 'click-arrow' == $generate_settings[ 'nav_dropdown_type' ] ) {
 		wp_enqueue_script( 'generate-dropdown-click', get_template_directory_uri() . '/js/dropdown-click.min.js', array( 'jquery' ), GENERATE_VERSION, true );
 	} else {
 		wp_enqueue_script( 'generate-dropdown', get_template_directory_uri() . '/js/dropdown.min.js', array( 'jquery' ), GENERATE_VERSION, true );
