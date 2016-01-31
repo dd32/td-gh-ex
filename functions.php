@@ -843,8 +843,7 @@ function catchbox_scripts_method() {
 	/**
 	 * Loads up Responsive Menu
 	 */
-	wp_enqueue_script('sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1.1', false );
-
+	wp_enqueue_script('catchbox-sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '2.1.0', false );
 
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
