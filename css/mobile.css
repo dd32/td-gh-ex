@@ -150,6 +150,10 @@
 		width: 100%;
 	}
 	
+	.menu-item-has-children .dropdown-menu-toggle {
+		float: right;
+	}
+	
 	.header-widget {
 		float: none;
 		max-width: 100%;
