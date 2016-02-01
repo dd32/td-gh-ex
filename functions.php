@@ -184,6 +184,22 @@
 			'section' => 'darkelements_logo_section', 
 			'settings' => 'darkelements_logo', 
 		) ) );
+		$wp_customize->add_section( 'darkelements_menu_title_section' , array( 	
+			'title' => __( 'Menu Title', 'darkelements' ), 
+			'priority' => 31, 
+			'description' => __( 'Change title displayed above the menu.', 'darkelements' ),
+		) );
+		$wp_customize->add_setting( 'darkelements_menu_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'darkelements_menu_title', array( 
+			'label' => __( 'Menu Title', 'darkelements' ), 
+			'description' => __( 'This will overwrite the default title.', 'darkelements' ), 
+			'section' => 'darkelements_menu_title_section', 
+			'settings' => 'darkelements_menu_title', 
+		) ) );
+
 	} 
 	add_action('customize_register', 'darkelements_theme_customizer');
 

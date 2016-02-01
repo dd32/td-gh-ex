@@ -30,9 +30,13 @@
 		</div>
 
 		<?php if ( has_nav_menu( 'primary' ) ) : ?> 
-			<h4 class="nav-widgettitle">
-				<?php _e('Navigation', 'darkelements'); ?>
-			</h4>
+			<?php if ( get_theme_mod( 'darkelements_menu_title' ) ) {
+				$menu_title = esc_attr( get_theme_mod( 'darkelements_menu_title' ) );
+			} else {
+				$menu_title = esc_attr__( 'Navigation', 'darkelements' );
+			} ?>
+			<h4 class="nav-widgettitle"><?php echo $menu_title; ?></h4>
+
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 		<?php endif; ?>
 

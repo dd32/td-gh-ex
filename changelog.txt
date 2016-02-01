@@ -1,7 +1,8 @@
 CHANGELOG
 =========
 
-DarkElements version 3.5 - february 2016
+DarkElements version 3.6 - february 2016
+- theme customizer: change menu title
 - file search: post nav inside the loop
 - file style: fixed alignment of next and prev post link
 - several small adjustments

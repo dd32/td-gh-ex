@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkElements\n"
-"POT-Creation-Date: 2016-01-30 12:37+0100\n"
+"POT-Creation-Date: 2016-02-01 08:33+0100\n"
 "PO-Revision-Date: 2015-11-15 17:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -128,7 +128,19 @@ msgstr ""
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
-#: header.php:34
+#: functions.php:188 functions.php:197
+msgid "Menu Title"
+msgstr ""
+
+#: functions.php:190
+msgid "Change title displayed above the menu."
+msgstr ""
+
+#: functions.php:198
+msgid "This will overwrite the default title."
+msgstr ""
+
+#: header.php:36
 msgid "Navigation"
 msgstr ""
 
