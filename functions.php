@@ -184,6 +184,22 @@
 			'section' => 'leftside_logo_section', 
 			'settings' => 'leftside_logo', 
 		) ) );
+		$wp_customize->add_section( 'leftside_menu_title_section' , array( 	
+			'title' => __( 'Menu Title', 'leftside' ), 
+			'priority' => 31, 
+			'description' => __( 'Change title displayed above the menu.', 'leftside' ),
+		) );
+		$wp_customize->add_setting( 'leftside_menu_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'leftside_menu_title', array( 
+			'label' => __( 'Menu Title', 'leftside' ), 
+			'description' => __( 'This will overwrite the default title.', 'leftside' ), 
+			'section' => 'leftside_menu_title_section', 
+			'settings' => 'leftside_menu_title', 
+		) ) );
+
 	} 
 	add_action('customize_register', 'leftside_theme_customizer');
 

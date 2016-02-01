@@ -1,7 +1,8 @@
 CHANGELOG
 =========
 
-LeftSide version 2.9 - february 2016
+LeftSide version 3.0 - february 2016
+- theme customizer: change menu title
 - file search: post nav inside the loop
 - file style: fixed alignment of next and prev post link
 - several small adjustments
