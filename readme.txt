@@ -127,6 +127,16 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.4
+- Fixed:   Function home_page_menu_args() renamed to thinkup_menu_homelink() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Updated: Portfolio masonry container checks updated in main-frontend.js.
+- Updated: Variable $open_sans renamed to $font_translate in function thinkup_googlefonts_url().
+- Updated: Function thinkup_is_blog() renamed to thinkup_check_isblog() to be inline with proper naming convention.
+- Updated: Function thinkup_add_menuclass() renamed to thinkup_input_menuclass() to be inline with proper naming convention.
+- Updated: Function thinkup_input_logoretinaja() renamed to thinkup_input_logoretinaja() to be inline with proper naming convention.
+- Updated: Function thinkup_get_comments_number_str() renamed to thinkup_comments_returnstring() to be inline with proper naming convention.
+- Updated: Function thinkup_get_comments_popup_link() renamed to thinkup_input_commentspopuplink() to be inline with proper naming convention.
+
 Version 1.3.3
 - Updated: Social media links in pre-header now open in new tab.
 - Updated: Translation .pot file added. Old files .mo and .po removed.
