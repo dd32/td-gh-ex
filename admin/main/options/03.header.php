@@ -317,7 +317,7 @@ $j = 0;
 
 			if ( ! empty( $social['link'] ) and $social['toggle'] == '1' ) {
 			echo '<li class="social ' . strtolower( $social['social'] ) . '">',
-				 '<a href="' . esc_url( $social['link'] ) . '" data-tip="bottom" data-original-title="' . str_replace( '-plus', '+', $social['social'] ) . '">',
+				 '<a href="' . esc_url( $social['link'] ) . '" data-tip="bottom" data-original-title="' . str_replace( '-plus', '+', $social['social'] ) . '" target="_blank">',
 				 '<i class="fa fa-' . strtolower( $social['social'] ) . '"></i>',
 				 '</a>',
 				 '</li>';
@@ -384,7 +384,7 @@ $j = 0;
 
 			if ( ! empty( $social['link'] ) and $social['toggle'] == '1' ) {
 			echo '<li class="social ' . strtolower( $social['social'] ) . '">',
-				 '<a href="' . esc_url( $social['link'] ) . '" data-tip="top" data-original-title="' . str_replace( '-plus', '+', $social['social'] ) . '">',
+				 '<a href="' . esc_url( $social['link'] ) . '" data-tip="top" data-original-title="' . str_replace( '-plus', '+', $social['social'] ) . '" target="_blank">',
 				 '<i class="fa fa-' . strtolower( $social['social'] ) . '"></i>',
 				 '</a>',
 				 '</li>';
