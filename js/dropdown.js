@@ -72,7 +72,7 @@
 				return;
 			}
 			var url = $( this ).parent().attr( 'href' );
-			if ( url ) {
+			if ( typeof url != 'undefined' ) {
 				window.location.href = $( this ).parent().attr( 'href' );
 			}
 		});
