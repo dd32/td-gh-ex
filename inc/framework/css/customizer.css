@@ -1,0 +1,22 @@
+.at-styling-options {
+  display: none;
+  background-color: #F7F7F7;
+  border: 1px solid #ebebeb;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+li[id^="accordion-section-sidebar-widgets-widget-area-"] .at-styling-options,
+div[id^="widget-area-"] .at-styling-options {
+  display: block;
+}
+.at-styling-inner {
+	display: none;
+}
+.at-styling-options h4 span {
+	font-size: 12px;
+    color: #AFAFAF;
+    float: right;
+    padding: 0 2px;
+    font-weight: 300;
+    cursor: pointer;
+}
