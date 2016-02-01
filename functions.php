@@ -29,7 +29,7 @@ function create_setup() {
 	 * to change 'create' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'create', get_template_directory() . '/languages' );
-	
+
 	// Create styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', create_fonts_url() ) );
 
@@ -42,10 +42,10 @@ function create_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	
+
 	// Set default size.
 	set_post_thumbnail_size( 650, 488, true );
-	
+
 	// Add default size for single pages.
 	add_image_size( 'create-single', '650', '9999', false );
 
@@ -54,7 +54,7 @@ function create_setup() {
 
 	// Add default size for homepage.
 	add_image_size( 'create-header', '1024', '350', true );
-		
+
 	// Add default logo size for Jetpack.
 	add_image_size( 'create-site-logo', '300', '9999', false );
 
@@ -90,7 +90,7 @@ function create_setup() {
 
 	/**
 	 * Setup title support for theme
-	 * Supported from WordPress version 4.1 onwards 
+	 * Supported from WordPress version 4.1 onwards
 	 * More Info: https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
 	 */
 	add_theme_support( 'title-tag' );
@@ -113,7 +113,7 @@ function create_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
-	
+
 	register_sidebar( array(
 		'name'          => __( 'Intro Widget', 'create' ),
 		'id'            => 'sidebar-2',
@@ -130,33 +130,33 @@ add_action( 'widgets_init', 'create_widgets_init' );
  * Enqueue scripts and styles.
  */
 function create_scripts() {
-	
-	// Enqueue masonry	
+
+	// Enqueue masonry
 	wp_enqueue_script( 'masonry');
 
 	// Localize script (only few lines in helpers.js)
-    wp_localize_script( 'create-helpers', 'create-vars', array(  
- 	    'author'   => __( 'Your Name', 'create' ), 
+    wp_localize_script( 'create-helpers', 'create-vars', array(
+ 	    'author'   => __( 'Your Name', 'create' ),
  	    'email'    => __( 'E-mail', 'create' ),
 		'url'      => __( 'Website', 'create' ),
-		'comment'  => __( 'Your Comment', 'create' ) 
- 	) );	
-	
+		'comment'  => __( 'Your Comment', 'create' )
+ 	) );
+
 	// Enqueue default style
 	wp_enqueue_style( 'create-style', get_stylesheet_uri() );
-	
+
 	// Google fonts
 	wp_enqueue_style( 'create-fonts', create_fonts_url(), array(), '1.0.0' );
-	
+
 	//For genericons
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.3' );
-	
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.4.1' );
+
     // JS helpers (This is also the place where we call the jQuery in array)
 	wp_enqueue_script( 'create-helpers', get_template_directory_uri() . '/js/helpers.js', array( 'jquery' ), '1.0.0', true );
 
 	// Mobile navigation
 	wp_enqueue_script( 'create-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
-	
+
 	// Skip link fix
 	wp_enqueue_script( 'create-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
 
@@ -198,8 +198,38 @@ function create_scripts() {
 			wp_enqueue_script( 'jquery.cycle2' );
 		}
 	}
+
+	/**
+	 * Loads up Scroll Up script
+	 */
+	$disable_scrollup = get_theme_mod( 'disable_scrollup', create_get_default_theme_options( 'disable_scrollup' ) );
+
+	if ( '1' != $disable_scrollup ) {
+		wp_enqueue_script( 'create-scrollup', get_template_directory_uri() . '/js/scrollup.js', array( 'jquery' ), '20141223	', true  );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'create_scripts' );
+
+/**
+ * Enqueue scripts and styles for Metaboxes
+ * @uses wp_register_script, wp_enqueue_script, and  wp_enqueue_style
+ *
+ * @action admin_print_scripts-post-new, admin_print_scripts-post, admin_print_scripts-page-new, admin_print_scripts-page
+ *
+ * @since Create 1.4
+ */
+function create_enqueue_metabox_scripts() {
+    //Scripts
+    wp_enqueue_script( 'create-metabox', get_template_directory_uri() . '/js/metabox.js', array( 'jquery', 'jquery-ui-tabs' ), '2013-10-05' );
+
+	//CSS Styles
+	wp_enqueue_style( 'create-metabox-tabs', get_template_directory_uri() . '/css/metabox-tabs.css' );
+}
+add_action( 'admin_print_scripts-post-new.php', 'create_enqueue_metabox_scripts', 11 );
+add_action( 'admin_print_scripts-post.php', 'create_enqueue_metabox_scripts', 11 );
+add_action( 'admin_print_scripts-page-new.php', 'create_enqueue_metabox_scripts', 11 );
+add_action( 'admin_print_scripts-page.php', 'create_enqueue_metabox_scripts', 11 );
+
 
 /**
  * Register Google fonts.
@@ -247,6 +277,11 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/structure.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
@@ -255,3 +290,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Include featured slider
  */
 require get_template_directory() . '/inc/featured-slider.php';
+
+/**
+ * Include Metaboxes
+ */
+require get_template_directory() . '/inc/metabox.php';

@@ -31,8 +31,6 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php create_paging_nav(); ?>
-
 		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>
@@ -40,6 +38,8 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main><!-- #main -->
+
+		<?php create_paging_nav(); ?>
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

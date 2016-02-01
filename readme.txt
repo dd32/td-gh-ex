@@ -3,13 +3,13 @@
 Contributors: Catch Themes and Emil Uzelac 
 Tags: black, tan, white, light, dark, two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-menu, editor-style, featured-images, microformats, sticky-post, theme-options, translation-ready
 Requires at least: 4.1
-Tested up to: 4.3
-Create WordPress Theme, Copyright 2012-2015 Catchthemes.com
+Tested up to: 4.4.1
+Create WordPress Theme, Copyright 2012-2016 Catchthemes.com
 Create is distributed under the terms of the GNU General Public License v3 
 
 == Description ==
 
-Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
+Create your website using Create WordPress Theme. Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
 
 * Responsive Layout
 * Custom Background

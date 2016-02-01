@@ -17,200 +17,73 @@ function create_customize_register( $wp_customize ) {
 
 	$defaults = create_get_default_theme_options();
 
-	// Featured Slider
-	$wp_customize->add_panel( 'create_featured_slider', array(
-	    'capability'     => 'edit_theme_options',
-	    'description'    => __( 'Featured Slider Options', 'create' ),
-	    'priority'       => 500,
-		'title'    		 => __( 'Featured Slider Options', 'create' ),
+	//Theme Options
+	require get_template_directory() . '/inc/customizer-includes/customizer-theme-options.php';
+
+	//Featured Slider
+	require get_template_directory() . '/inc/customizer-includes/customizer-featured-slider-options.php';
+
+    // Reset all settings to default
+	$wp_customize->add_section( 'create_reset_all_settings', array(
+		'description'	=> __( 'Caution: Reset all settings to default. Refresh the page after save to view full effects.', 'create' ),
+		'priority' 		=> 700,
+		'title'    		=> __( 'Reset all settings', 'create' ),
 	) );
 
-	$wp_customize->add_section( 'create_featured_slider', array(
-		'panel'			=> 'create_featured_slider',
-		'priority'		=> 1,
-		'title'			=> __( 'Featured Slider Settings', 'create' ),
-	) );
-
-	$wp_customize->add_setting( 'featured_slider_option', array(
+	$wp_customize->add_setting( 'reset_all_settings', array(
 		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['featured_slider_option'],
-		'sanitize_callback' => 'sanitize_key',
+		'default'			=> $defaults['reset_all_settings'],
+		'sanitize_callback' => 'create_reset_all_settings',
+		'transport'			=> 'postMessage',
 	) );
 
-	$featured_slider_content_options = create_featured_slider_options();
-	$choices = array();
-	foreach ( $featured_slider_content_options as $featured_slider_content_option ) {
-		$choices[$featured_slider_content_option['value']] = $featured_slider_content_option['label'];
-	}
-
-	$wp_customize->add_control( 'featured_slider_option', array(
-		'choices'   => $choices,
-		'label'    	=> __( 'Enable Slider on', 'create' ),
-		'priority'	=> '1.1',
-		'section'  	=> 'create_featured_slider',
-		'settings' 	=> 'featured_slider_option',
-		'type'    	=> 'select',
+	$wp_customize->add_control( 'reset_all_settings', array(
+		'label'    => __( 'Check to reset all settings to default', 'create' ),
+		'section'  => 'create_reset_all_settings',
+		'settings' => 'reset_all_settings',
+		'type'     => 'checkbox',
 	) );
+	// Reset all settings to default end
 
-	$wp_customize->add_setting( 'featured_slide_transition_effect', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['featured_slide_transition_effect'],
-		'sanitize_callback'	=> 'create_sanitize_featured_slide_transition_effects',
-	) );
+	class CreateImportantLinks extends WP_Customize_Control {
+        public $type = 'important-links';
 
-	$create_featured_slide_transition_effects = create_featured_slide_transition_effects();
-	$choices = array();
-	foreach ( $create_featured_slide_transition_effects as $create_featured_slide_transition_effect ) {
-		$choices[$create_featured_slide_transition_effect['value']] = $create_featured_slide_transition_effect['label'];
-	}
-
-	$wp_customize->add_control( 'featured_slide_transition_effect' , array(
-		'choices'  	=> $choices,
-		'label'		=> __( 'Transition Effect', 'create' ),
-		'priority'	=> '2',
-		'section'  	=> 'create_featured_slider',
-		'settings' 	=> 'featured_slide_transition_effect',
-		'type'	  	=> 'select',
-		)
-	);
-
-	$wp_customize->add_setting( 'featured_slide_transition_delay', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['featured_slide_transition_delay'],
-		'sanitize_callback'	=> 'absint',
-	) );
-
-	$wp_customize->add_control( 'featured_slide_transition_delay' , array(
-		'description'	=> __( 'seconds(s)', 'create' ),
-		'input_attrs' => array(
-        	'style' => 'width: 40px;'
-    	),
-    	'label'    		=> __( 'Transition Delay', 'create' ),
-		'priority'		=> '2.1.1',
-		'section'  		=> 'create_featured_slider',
-		'settings' 		=> 'featured_slide_transition_delay',
-		)
-	);
-
-	$wp_customize->add_setting( 'featured_slide_transition_length', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['featured_slide_transition_length'],
-		'sanitize_callback'	=> 'absint',
-	) );
-
-	$wp_customize->add_control( 'featured_slide_transition_length' , array(
-		'description'	=> __( 'seconds(s)', 'create' ),
-		'input_attrs' => array(
-        	'style' => 'width: 40px;'
-    	),
-    	'label'    		=> __( 'Transition Length', 'create' ),
-		'priority'		=> '2.1.2',
-		'section'  		=> 'create_featured_slider',
-		'settings' 		=> 'featured_slide_transition_length',
-		)
-	);
-
-	$wp_customize->add_setting( 'featured_slider_type', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['featured_slider_type'],
-		'sanitize_callback'	=> 'sanitize_key',
-	) );
-
-	$featured_slider_types = create_featured_slider_types();
-	$choices = array();
-	foreach ( $featured_slider_types as $featured_slider_type ) {
-		$choices[$featured_slider_type['value']] = $featured_slider_type['label'];
-	}
-
-	$wp_customize->add_control( 'featured_slider_type', array(
-		'choices'  	=> $choices,
-		'label'    	=> __( 'Select Slider Type', 'create' ),
-		'priority'	=> '2.1.3',
-		'section'  	=> 'create_featured_slider',
-		'settings' 	=> 'featured_slider_type',
-		'type'	  	=> 'select',
-	) );
-
-	$wp_customize->add_setting( 'featured_slide_number', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['featured_slide_number'],
-		'sanitize_callback'	=> 'create_sanitize_no_of_slider',
-	) );
-
-	$wp_customize->add_control( 'featured_slide_number' , array(
-		'description'	=> __( 'Save and refresh the page if No. of Slides is changed (Max no of slides is 20)', 'create' ),
-		'input_attrs' 	=> array(
-            'style' => 'width: 45px;',
-            'min'   => 0,
-            'max'   => 20,
-            'step'  => 1,
-        	),
-		'label'    		=> __( 'No of Slides', 'create' ),
-		'priority'		=> '2.1.4',
-		'section'  		=> 'create_featured_slider',
-		'settings' 		=> 'featured_slide_number',
-		'type'	   		=> 'number',
-		)
-	);
-
-	//Get featured slides humber from theme options
-	$featured_slide_number	= get_theme_mod( 'featured_slide_number', create_get_default_theme_options( 'featured_slide_number' ) );
-	
-	//loop for featured page sliders
-	for ( $i=1; $i <= $featured_slide_number ; $i++ ) {
-		$wp_customize->add_setting( 'featured_slider_page_'. $i, array(
-			'capability'		=> 'edit_theme_options',
-			'sanitize_callback'	=> 'create_sanitize_page',
-		) );
-
-		$wp_customize->add_control( 'featured_slider_page_'. $i .'', array(
-			'label'    	=> __( 'Featured Page', 'create' ) . ' # ' . $i ,
-			'priority'	=> '4' . $i,
-			'section'  	=> 'create_featured_slider',
-			'settings' 	=> 'featured_slider_page_'. $i,
-			'type'	   	=> 'dropdown-pages',
-		) );
-	}
-
-    class CreateImportantLinks extends WP_Customize_Control {
-        public $type = 'important-links'; 
-        
         public function render_content() {
         	//Add Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links
             $important_links = array(
-							'theme_instructions' => array( 
+							'theme_instructions' => array(
 								'link'	=> esc_url( 'http://catchthemes.com/theme-instructions/create/' ),
 								'text' 	=> __( 'Theme Instructions', 'create' ),
 								),
-							'support' => array( 
+							'support' => array(
 								'link'	=> esc_url( 'http://catchthemes.com/support/' ),
 								'text' 	=> __( 'Support', 'create' ),
 								),
-							'changelog' => array( 
+							'changelog' => array(
 								'link'	=> esc_url( 'http://catchthemes.com/changelogs/create-theme/' ),
 								'text' 	=> __( 'Changelog', 'create' ),
 								),
-							'donate' => array( 
+							'donate' => array(
 								'link'	=> esc_url( 'http://catchthemes.com/donate/' ),
 								'text' 	=> __( 'Donate Now', 'create' ),
 								),
-							'review' => array( 
+							'review' => array(
 								'link'	=> esc_url( 'https://wordpress.org/support/view/theme-reviews/create' ),
 								'text' 	=> __( 'Review', 'create' ),
 								),
-							'facebook' => array( 
+							'facebook' => array(
 								'link'	=> esc_url( 'https://www.facebook.com/catchthemes/' ),
 								'text' 	=> __( 'Facebook', 'create' ),
 								),
-							'twitter' => array( 
+							'twitter' => array(
 								'link'	=> esc_url( 'https://twitter.com/catchthemes/' ),
 								'text' 	=> __( 'Twitter', 'create' ),
 								),
-							'gplus' => array( 
+							'gplus' => array(
 								'link'	=> esc_url( 'https://plus.google.com/+Catchthemes/' ),
 								'text' 	=> __( 'Google+', 'create' ),
 								),
-							'pinterest' => array( 
+							'pinterest' => array(
 								'link'	=> esc_url( 'http://www.pinterest.com/catchthemes/' ),
 								'text' 	=> __( 'Pinterest', 'create' ),
 								),
@@ -239,7 +112,7 @@ function create_customize_register( $wp_customize ) {
          'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',
-    ) ) );  
+    ) ) );
     //Important Links End
 
 }
@@ -253,12 +126,6 @@ function create_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'create_customize_preview_js' );
 
-/**
- * Dummy Sanitizaition function as it contains no value to be sanitized
- */
-function create_sanitize_important_link() {
-	return false;
-}
 
 /**
  * Custom scripts and styles on customize.php for create.
@@ -282,54 +149,8 @@ function create_customize_scripts() {
 }
 add_action( 'customize_controls_print_footer_scripts', 'create_customize_scripts' );
 
-/**
- * Sanitizes page in slider
- * @param  $input entered value
- * @return sanitized output
- *
- * @since Create 1.2
- */
-function create_sanitize_page( $input ) {
-	if(  get_post( $input ) ){
-		return $input;
-	}
-    else {
-    	return '';
-    }
-}
+//Sanitize callback functions for customizer
+require get_template_directory() . '/inc/customizer-includes/customizer-sanitize-functions.php';
 
-/**
- * Sanitizes slider number
- * @param  $input entered value
- * @return sanitized output
- *
- * @since Create 1.2
- */
-function create_sanitize_no_of_slider( $input ) {
-	if ( absint( $input ) > 20 ) {
-    	return 20;
-    } 
-    else {
-    	return absint( $input );
-    }
-}
-
-/**
- * Sanitizes feature slider transition effects
- * @param  $input entered value
- * @return sanitized output
- *
- * @since Create 1.2
- */
-function create_sanitize_featured_slide_transition_effects( $input ) {
-	$create_featured_slide_transition_effects = array_keys( create_featured_slide_transition_effects() );
-	
-	if ( in_array( $input, $create_featured_slide_transition_effects ) ) {
-		return $input;
-	}
-	else {
-		$defaults = create_get_default_theme_options();
-
-		return $defaults['featured_slide_transition_effect'];
-	}
-}
+//Active callbacks for customizer
+require get_template_directory() . '/inc/customizer-includes/customizer-active-callbacks.php';

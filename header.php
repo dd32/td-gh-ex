@@ -4,64 +4,71 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package Create
+ * @package Create Pro
  */
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php wp_head(); ?>
+/**
+ * create_doctype hook
+ *
+ * @hooked create_doctype -  10
+ *
+ */
+do_action( 'create_doctype' );
+?>
+
+<head>
+<?php
+/**
+ * create_before_wp_head hook
+ *
+ * @hooked create_head -  10
+ *
+ */
+do_action( 'create_before_wp_head' );
+
+wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'create' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-    
-    <div class="site-banner">
-		<div class="site-branding">
-        
-		    <nav id="site-navigation" class="main-navigation create-menu" role="navigation">
-			    <button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Menu', 'create' ); ?></button>
-			    <?php wp_nav_menu( array( 
-				    'theme_location' => 'primary' ) 
-				    ); 
-				?>
-		    </nav><!-- #site-navigation -->
-        
-            <?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-		</div><!-- .site-branding -->
-        
-        <?php if ( has_nav_menu( 'social' ) ) : ?>
-            <div class="social-menu">
-		        <?php wp_nav_menu( array(
-				    'theme_location' => 'social',
-				    'depth'          => '1',
-				    'link_before'    => '<span class="screen-reader-text">',
-				    'link_after'     => '</span>' )
-				    );
-                ?>
-            </div><!-- .social-menu -->       
-        <?php endif; ?>
-        
-        </div><!-- .site-banner -->
-       
-	</header><!-- #masthead -->
+	<?php
+	/**
+	 * create_before_header hook
+	 *
+	 * @hooked create_page_start -  10
+	 *
+	 */
+	do_action( 'create_before_header' );
 
-	<?php	
-	/** 
-	 * create_before_content hook
+	/**
+	 * create_header hook
+	 *
+	 * @hooked create_header_start -  10
+	 * @hooked create_site_banner_start -  20
+	 * @hooked create_site_branding_start -  30
+	 * @hooked create_primary_menu -  40
+	 * @hooked create_logo -  50
+	 * @hooked create_site_title_description -  60
+	 * @hooked create_site_branding_end -  70
+	 * @hooked create_social_menu - 90
+	 * @hooked create_site_banner_end - 110
+	 * @hooked create_header_end -  200
+	 *
+	 */
+	do_action( 'create_header' );
+
+
+	/**
+	 * create_after_header hook
 	 *
 	 * @hooked create_slider - 10
 	 */
-	do_action( 'create_before_content');
-	?>
+	do_action( 'create_after_header' );
 
-	<div id="content" class="site-content">
+	/**
+	 * create_content hook
+	 *
+	 * @hooked create_content_start -  10
+	 * @hooked create_intro_sidebar -  20
+	 */
+	do_action( 'create_content' );

@@ -6,14 +6,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <?php if ( has_post_thumbnail() ) : ?>
-    <div class="entry-thumbnail">
-        <a href="<?php the_permalink(); ?>" rel="bookmark">
-             <?php the_post_thumbnail( 'create-home' ); ?>
-        </a>
-    </div><!-- .entry-thumbnail -->
-    <?php endif; ?>
-    
+    <?php create_archive_content_image(); ?>
+
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -25,14 +19,16 @@
 	</header><!-- .entry-header -->
 
 	<?php
-	    if ( is_home() || is_archive() ) {		
-			echo '<div class="entry-summary">';	        	
-	        	the_excerpt();			
+	    $create_content_layout 	= get_theme_mod( 'content_layout', create_get_default_theme_options( 'content_layout' ) );
+
+		if ( is_archive() || 'excerpt-featured-image' == $create_content_layout ) {
+			echo '<div class="entry-summary">';
+	        	the_excerpt();
 			echo '</div><!-- .entry-summary -->';
-		} 
+		}
 		else {
-    		echo '<div class="entry-content">'; 
-			
+    		echo '<div class="entry-content">';
+
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
 				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'create' ),

@@ -16,22 +16,44 @@ function create_paging_nav() {
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'create' ); ?></h1>
-		<div class="nav-links">
 
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'create' ) ); ?></div>
-			<?php endif; ?>
+	$pagination_type = get_theme_mod( 'pagination_type', create_get_default_theme_options( 'pagination_type' ) );
 
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'create' ) ); ?></div>
-			<?php endif; ?>
+	/**
+	 * Check if navigation type is Jetpack Infinite Scroll and if it is enabled, else goto default pagination
+	 * if it's active then disable pagination
+	 */
+	if ( ( 'infinite-scroll-click' == $pagination_type || 'infinite-scroll-scroll' == $pagination_type ) && class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) {
+		return false;
+	}
+	//Check number pagination the_posts_pagination used only from WordPress 4.1
+	elseif ( 'numeric' == $pagination_type && function_exists( 'the_posts_pagination' ) ) {
+		// Previous/next page navigation.
+		the_posts_pagination( array(
+			'prev_text'          => __( 'Previous page', 'create' ),
+			'next_text'          => __( 'Next page', 'create' ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'create' ) . ' </span>',
+		) );
+	}
+	//Load default navigation
+	else { ?>
+		<nav class="navigation paging-navigation" role="navigation">
+			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'create' ); ?></h1>
+			<div class="nav-links">
 
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
+				<?php if ( get_next_posts_link() ) : ?>
+				<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'create' ) ); ?></div>
+				<?php endif; ?>
+
+				<?php if ( get_previous_posts_link() ) : ?>
+				<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'create' ) ); ?></div>
+				<?php endif; ?>
+
+			</div><!-- .nav-links -->
+		</nav><!-- .navigation -->
 	<?php
+	}
+
 }
 endif;
 

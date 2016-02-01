@@ -4,30 +4,58 @@
 		/*
 		 * Masonry
 		 */
-		var $container = $( ".create-masonry #main" );
+		
+		//Masonry blocks
+		$blocks = $(".create-masonry #main");
 
-		$container.imagesLoaded( function(){
-			$container.masonry ({
-				itemSelector: '.hentry',
-				isFitWidth: true,
-				columnWidth: 261,
-				gutter: 60,
+		$blocks.imagesLoaded(function(){
+			$blocks.masonry({
+				"columnWidth": 261,
+				"itemSelector": ".hentry",
+				"isFitWidth": true,
+				"gutter": 60
 			});
 
-			$container.find( '.hentry' ).animate( {
+			// Fade blocks in after images are ready (prevents jumping and re-rendering)
+			$(".hentry").fadeIn();
+			$blocks.find( '.hentry' ).animate( {
 				'opacity' : 1
 			} );
+
 		});
 
-		$( document ).on( "post-load", function () {
-			setTimeout( function() {
-				$container.imagesLoaded( function() {
-					$container.masonry( 'reloadItems' ).masonry( 'layout' );
-					$container.find( '.hentry' ).animate( {
-						'opacity' : 1
-					} );
+		$(document).ready( function() { setTimeout( function() { $blocks.masonry(); }, 500); });
+
+		$(window).resize(function () {
+			$blocks.masonry();
+		});
+
+		// When Jetpack Infinite scroll posts have loaded
+		$( document.body ).on( 'post-load', function () {
+
+			var $container = $('.create-masonry #main');
+			$container.masonry( 'reloadItems' );
+			
+			$blocks.imagesLoaded(function(){
+				$blocks.masonry({
+					"columnWidth": 261,
+					"itemSelector": ".hentry",
+					"isFitWidth": true,
+					"gutter": 60
 				});
-			}, 1500 );
+		
+				// Fade blocks in after images are ready (prevents jumping and re-rendering)
+				$(".hentry").fadeIn();
+				$blocks.find( '.hentry' ).animate( {
+					'opacity' : 1
+				} );
+
+			});
+			
+			$container.masonry( 'reloadItems' );
+			
+			$(document).ready( function() { setTimeout( function() { $blocks.masonry(); }, 500); });
+
 		});
 		
 		/*

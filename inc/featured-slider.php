@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Create Pro
- * @since Create 1.2 
+ * @since Create 1.2
  */
 
 if( !function_exists( 'create_featured_slider' ) ) :
@@ -17,35 +17,38 @@ if( !function_exists( 'create_featured_slider' ) ) :
  */
 function create_featured_slider() {
 	global $post, $wp_query;
-	
+	//create_flush_transients();
+
 	// get data value from options
 	$enableslider	= get_theme_mod( 'featured_slider_option', create_get_default_theme_options( 'featured_slider_option' ) );
-	$sliderselect	= get_theme_mod( 'featured_slider_type', create_get_default_theme_options( 'featured_slider_type' ) );
-
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
 
 	// Front page displays in Reading Settings
-	$page_for_posts = get_option('page_for_posts'); 
- 
+	$page_for_posts = get_option('page_for_posts');
+
 	if ( $enableslider == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'homepage' ) ) {
-		$featured_slide_transition_effect	= get_theme_mod( 'featured_slide_transition_effect', create_get_default_theme_options( 'featured_slide_transition_effect' ) );
-		$featured_slide_transition_length	= get_theme_mod( 'featured_slide_transition_length', create_get_default_theme_options( 'featured_slide_transition_length' ) );
-		$featured_slide_transition_delay	= get_theme_mod( 'featured_slide_transition_delay', create_get_default_theme_options( 'featured_slide_transition_delay' ) );
+		echo '<!-- refreshing cache -->';
+		$sliderselect                     = get_theme_mod( 'featured_slider_type', create_get_default_theme_options( 'featured_slider_type' ) );
+		$imageloader                      = get_theme_mod( 'featured_slider_image_loader', create_get_default_theme_options( 'featured_slider_image_loader' ) );
+		$featured_slide_transition_effect = get_theme_mod( 'featured_slide_transition_effect', create_get_default_theme_options( 'featured_slide_transition_effect' ) );
+		$featured_slide_transition_length = get_theme_mod( 'featured_slide_transition_length', create_get_default_theme_options( 'featured_slide_transition_length' ) );
+		$featured_slide_transition_delay  = get_theme_mod( 'featured_slide_transition_delay', create_get_default_theme_options( 'featured_slide_transition_delay' ) );
 		$create_featured_slider = '
 			<section id="feature-slider">
 				<div class="wrapper">
-					<div class="cycle-slideshow" 
+					<div class="cycle-slideshow"
 					    data-cycle-log="false"
 					    data-cycle-pause-on-hover="true"
 					    data-cycle-swipe="true"
 					    data-cycle-auto-height=container
-					    data-cycle-fx="'. $featured_slide_transition_effect .'"
-						data-cycle-speed="'. $featured_slide_transition_length * 1000 .'"
-						data-cycle-timeout="'. $featured_slide_transition_delay * 1000 .'"
+					    data-cycle-fx="'. esc_attr( $featured_slide_transition_effect ) .'"
+						data-cycle-speed="'. esc_attr( $featured_slide_transition_length ) * 1000 .'"
+						data-cycle-timeout="'. esc_attr( $featured_slide_transition_delay ) * 1000 .'"
+						data-cycle-loader="'. esc_attr( $imageloader ) .'"
 						data-cycle-slides="> article"
 						>
-					    
+
 					    <!-- prev/next links -->
 					    <div class="cycle-prev"></div>
 					    <div class="cycle-next"></div>
@@ -57,7 +60,7 @@ function create_featured_slider() {
 						if ( $sliderselect == 'demo-featured-slider' && function_exists( 'create_demo_slider' ) ) {
 							$create_featured_slider .=  create_demo_slider();
 						}
-						else {
+						elseif ( $sliderselect == 'featured-page-slider' && function_exists( 'create_page_slider' ) ) {
 							$create_featured_slider .=  create_page_slider();
 						}
 
@@ -65,12 +68,11 @@ function create_featured_slider() {
 					</div><!-- .cycle-slideshow -->
 				</div><!-- .wrapper -->
 			</section><!-- #feature-slider -->';
-				
 		echo $create_featured_slider;
 	}
 }
 endif;
-add_action( 'create_before_content', 'create_featured_slider', 10 );
+add_action( 'create_after_header', 'create_featured_slider', 10 );
 
 
 if ( ! function_exists( 'create_demo_slider' ) ) :
@@ -99,10 +101,10 @@ function create_demo_slider() {
 								</header>
 								<div class="entry-content">
 									<p>Slider Image 1 Content</p>
-								</div>   
-							</div>             
-						</article><!-- .slides --> 	
-						
+								</div>
+							</div>
+						</article><!-- .slides -->
+
 						<article class="post demo-image-2 hentry slides displaynone">
 							<figure class="Slider Image 2">
 								<a title="Slider Image 2" href="'. esc_url( home_url( '/' ) ) .'">
@@ -118,8 +120,8 @@ function create_demo_slider() {
 								</header>
 								<div class="entry-content">
 									<p>Slider Image 2 Content</p>
-								</div>   
-							</div>             
+								</div>
+							</div>
 						</article><!-- .slides --> ';
 	return $create_demo_slider;
 }
@@ -157,7 +159,7 @@ function create_page_slider() {
 			'post__in'			=> $page_list,
 			'orderby' 			=> 'post__in'
 		));
-		$i=0; 
+		$i=0;
 
 		while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
 			$title_attribute = the_title_attribute( array( 'before' => __( 'Permalink to:', 'create' ), 'echo' => false ) );
@@ -174,7 +176,7 @@ function create_page_slider() {
 				else {
 					//Default value if there is no first image
 					$create_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1200x514.jpg" >';
-					
+
 					//Get the first image in page, returns false if there is no image
 					$create_first_image = create_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'attached-page-image' ) );
 
@@ -203,7 +205,7 @@ function create_page_slider() {
 					$create_page_slider .= '
 				</div><!-- .entry-container -->
 			</article><!-- .slides -->';
-		endwhile; 
+		endwhile;
 
 		wp_reset_query();
   	}
