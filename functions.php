@@ -106,7 +106,7 @@ function thinkup_frontscripts() {
 
 	// Add theme stylesheets.
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.min.css', '', '2.3.2' );
-	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.7.4' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.7.5' );
 	wp_enqueue_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 
 	// Add Font Packages.
@@ -123,7 +123,7 @@ function thinkup_frontscripts() {
 	wp_register_script( 'retina', get_template_directory_uri() . '/lib/scripts/retina.js', array( 'jquery' ), '0.0.2', '', true );
 
 	// Add Blog scripts
-	if ( is_blog() ) {
+	if ( thinkup_check_isblog() ) {
 		wp_enqueue_script( 'jquery-masonry' );
 		wp_enqueue_script( 'imagesloaded', get_template_directory_uri() . '/lib/scripts/plugins/imagesloaded/imagesloaded.js', array( 'jquery' ), '3.1.4', true );	
 	}

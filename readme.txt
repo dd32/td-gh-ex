@@ -98,6 +98,15 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.7.5
+- Fixed:   Function is_blog() renamed to thinkup_check_isblog() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Fixed:   Function add_menuclass() renamed to thinkup_input_menuclass() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Fixed:   Function home_page_menu_args() renamed to thinkup_menu_homelink() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Fixed:   Function get_comments_popup_link() renamed to get_comments_popup_link() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Fixed:   Function get_comments_number_str() renamed to thinkup_comments_returnstring() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Updated: Portfolio masonry container checks updated in main-frontend.js.
+- Updated: Function thinkup_input_logoretinaja() renamed to thinkup_input_logoretinaja() to be inline with proper naming convention.
+
 Version 1.7.4
 - Updated: Social media links in pre-header now open in new tab.
 - Updated: Translation .pot file added. Old files .mo and .po removed.
