@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/blogghiamo/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Minimal WordPress Theme with two columns, unlimited colors, theme options and share buttons created by CrestaProject.com. Live demo http://crestaproject.com/demo/blogghiamo/
-Version: 1.3.6
+Version: 1.3.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blogghiamo
@@ -982,7 +982,7 @@ aside ul li {
 .theTop {
 	text-align: center;
 }
-.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header {
+.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header, #disqus_thread {
 	background: #ffffff;
 	-webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
 	-moz-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
@@ -1107,7 +1107,7 @@ span.overlay-img {
 	font-size: 25px;
 }
 
-.hentry, .page-header {
+.hentry, .page-header, #disqus_thread {
 	margin: 0 0 1em;
 	padding: 3em;
 }
@@ -1443,7 +1443,7 @@ object {
 	.theTop, .comments-area, .site-main .post-navigation {
 		padding: 1.5em 0.5em;
 	}
-	.hentry, .page-header, footer.site-footer, .widget {
+	.hentry, .page-header, footer.site-footer, .widget, #disqus_thread {
 		padding: 1.5em 0.5em;
 	}
 	.theTop, .comments-area, .site-main .post-navigation {

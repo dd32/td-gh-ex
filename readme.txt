@@ -111,3 +111,7 @@ Version 1.3.5
 Version 1.3.6
 * Added two new social buttons
 * Fixed input type color
+
+Version 1.3.7
+* Added Disqus Support
+* Minor bug fixes

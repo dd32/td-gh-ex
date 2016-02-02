@@ -345,7 +345,7 @@ function blogghiamo_custom_css_styles() {
 	.menu-toggle:focus	{
 		color: <?php echo esc_attr($box_color_second); ?>;
 	}
-	.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header,
+	.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header, #disqus_thread,
 	.crestaPostStripeInner,
 	.page-content,
 	.entry-content,
