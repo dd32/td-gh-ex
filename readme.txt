@@ -52,6 +52,9 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.4.2
+1.  Adding full width page template
+2.  Remove page title and meta from page.php and fullwidth.php
 @Version 1.6.4.1
 1.  Added Spanish Translation
 @Version 1.6.4
