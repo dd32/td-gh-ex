@@ -48,9 +48,15 @@ Images
 
 == Changelog ==
 
+= 1.1.7 =
+
+** Fixed the customizer page layout and background pattern image style.
+** Fixed the responsive issue.
+** Update Overrides woocommerce template in our theme and make theme compatible with latest version of woocommerce (5.0.2).
+
 = 1.1.6 =
 
-** Update Overrides woocommerce template in our theme and make our theme compatible with latest version of woocommerce.
+** Update Overrides woocommerce template in our theme and make our theme compatible with latest version of woocommerce. 
 
 = 1.1.5 =
 

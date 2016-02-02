@@ -23,33 +23,30 @@
         <div class="before-top-header">
             <div class="ak-container clearfix">
                 <?php if (as_before_top_header_enabled()): ?>
-                    <?php accesspress_ticker_header_customizer(); ?>
-            
+                    <?php accesspress_ticker_header_customizer(); ?>            
                 <?php endif; ?>
                     <?php
-                    if (is_user_logged_in()) {
-                        global $current_user;
-                        get_currentuserinfo();
-                        ?>
-                        <div class="welcome-user">
-                            <span class="line">|</span>
-                            <?php _e('Welcome', 'accesspress-store'); ?>
-                            <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="my-account">
-                                <span class="user-name">
-                                    <?php echo $current_user->display_name; ?>
-                                </span>
-                            </a>
-                            <?php _e('!', 'accesspress-store'); ?>
-                        </div>
-                    <?php }
+                        if (is_user_logged_in()) {
+                            global $current_user;
+                            get_currentuserinfo();
                     ?>
+                            <div class="welcome-user">
+                                <span class="line">|</span>
+                                <?php _e('Welcome', 'accesspress-store'); ?>
+                                <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="my-account">
+                                    <span class="user-name">
+                                        <?php echo $current_user->display_name; ?>
+                                    </span>
+                                </a>
+                                <?php _e('!', 'accesspress-store'); ?>
+                            </div>
+                    <?php } ?>
 
                     <?php if (is_active_sidebar('header-callto-action')): ?>
                         <div class="header-callto">
                             <?php dynamic_sidebar('header-callto-action') ?>
                         </div>
-                    <?php endif; ?>
-                    
+                    <?php endif; ?>                   
                 
             </div>
         </div>
@@ -59,28 +56,27 @@
 
             <!-- Cart Link -->
             <?php
-            if (is_woocommerce_activated()):
-                echo accesspress_wcmenucart();
-            endif;
+                if (is_woocommerce_activated()):
+                    echo accesspress_wcmenucart();
+                endif;
             ?>
             <?php
-            if (function_exists('YITH_WCWL')) {
-                $wishlist_url = YITH_WCWL()->get_wishlist_url();
-                ?>
-                <a class="quick-wishlist" href="<?php echo $wishlist_url; ?>" title="Wishlist">
-                    <i class="fa fa-heart"></i>
-                    <?php echo "(" . yith_wcwl_count_products() . ")"; ?>
-                </a>
-                <?php
-            }
+                if (function_exists('YITH_WCWL')) {
+                    $wishlist_url = YITH_WCWL()->get_wishlist_url();
+                    ?>
+                    <a class="quick-wishlist" href="<?php echo $wishlist_url; ?>" title="Wishlist">
+                        <i class="fa fa-heart"></i>
+                        <?php echo "(" . yith_wcwl_count_products() . ")"; ?>
+                    </a>
+                    <?php
+                }
             ?>
             <div class="login-woocommerce">
                 <?php
                 if (is_user_logged_in()) {
                     global $current_user;
                     get_currentuserinfo();
-                    ?>
-
+                ?>
                     <a href="<?php echo wp_logout_url( home_url() ); ?>" class="logout">
                         <?php _e(' LogOut', 'accesspress-store'); ?>
                     </a>
@@ -90,10 +86,8 @@
                     <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="account">
                         <?php _e('LogIn', 'accesspress-store'); ?>
                     </a>
-                <?php }
-                ?>
+                <?php } ?>
             </div>
-
             <!-- if enabled from customizer -->
             <?php if (!get_theme_mod('hide_header_product_search')) { ?>
                 <div class="search-form">
@@ -119,10 +113,10 @@
                         <div class="clearfix"></div>
                         <div id="menu">
                             <?php
-                            if (is_page('checkout') && get_theme_mod('hide_navigation_checkout')) {
-                                
-                            } else {
-                                ?>
+                                if (is_page('checkout') && get_theme_mod('hide_navigation_checkout')) {
+                                    
+                                } else {
+                            ?>
                                 <nav id="site-navigation" class="main-navigation" role="navigation">
                                     <a class="menu-toggle">
                                         <?php _e('Menu', 'accesspress-store'); ?>

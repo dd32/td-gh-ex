@@ -54,31 +54,31 @@
             $other_seal_1 = get_theme_mod('other2_image');
             $other_seal_2 = get_theme_mod('other3_image');
             ?>
-            <?php if(!empty($payment_partner_1)): ?>
+            <?php if(!empty($payment_partner_1)) : ?>
                 <img id="partner_logo1" class="partner-logos" src="<?php echo esc_url($payment_partner_1)?>" alt="<?php _e('Partner Logo 1', 'accesspress-store') ?>" />
             <?php endif; ?>
 
-            <?php if(!empty($payment_partner_2)): ?>
+            <?php if(!empty($payment_partner_2)) : ?>
                 <img id="partner_logo2" class="partner-logos" src="<?php echo  esc_url($payment_partner_2)?>" alt="<?php _e('Partner Logo 2', 'accesspress-store') ?>" />
             <?php endif; ?>
 
-            <?php if(!empty($payment_partner_3)): ?>
+            <?php if(!empty($payment_partner_3)) : ?>
                 <img id="partner_logo3" class="partner-logos" src="<?php echo  esc_url($payment_partner_3)?>" alt="<?php _e('Partner Logo 3', 'accesspress-store') ?>" />
             <?php endif; ?>
 
-            <?php if(!empty($payment_partner_4)): ?>
+            <?php if(!empty($payment_partner_4)) : ?>
                 <img id="partner_logo4" class="partner-logos" src="<?php echo  esc_url($payment_partner_4)?>" alt="<?php _e('Partner Logo 4', 'accesspress-store') ?>" />
             <?php endif; ?>
 
-            <?php if(!empty($ssl_seal)): ?>
+            <?php if(!empty($ssl_seal)) : ?>
                 <img id="ssl_seal" class="partner-logos" src="<?php echo  esc_url($ssl_seal)?>" alt="<?php _e('SSL Seal', 'accesspress-store') ?>" />
             <?php endif; ?>
 
-            <?php if(!empty($other_seal_1)): ?>
+            <?php if(!empty($other_seal_1)) : ?>
                 <img id="other_seal1" class="partner-logos" src="<?php echo  esc_url($other_seal_1)?>" alt="<?php _e('Other Seal 1', 'accesspress-store') ?>" />
             <?php endif; ?>
 
-            <?php if(!empty($other_seal_2)): ?>
+            <?php if(!empty($other_seal_2)) : ?>
                 <img id="other_seal2" class="partner-logos" src="<?php echo  esc_url($other_seal_2)?>" alt="<?php _e('Other Seal 2', 'accesspress-store') ?>" />
             <?php endif; ?>
 

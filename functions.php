@@ -123,7 +123,6 @@ require get_template_directory() . '/inc/custom-metabox.php';
  * Load Option Framework file.
  */
  define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/option-framework/' );
-//require get_template_directory() . '/inc/option-framework/options-framework.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -153,11 +152,6 @@ require get_template_directory() . '/inc/assets/assets-slider-setting.php';
  * Load Woocommerce Setting
  */
 require get_template_directory() . '/inc/assets/assets-woocommerce-setting.php';
-
-/**
- * Load Social Setting
- */
-//require get_template_directory() . '/inc/assets/assets-social-setting.php';
 
 /**
  * Load Page/Post Setting
@@ -212,10 +206,10 @@ function accesspress_store_display_upsell() {
 	$directory_uri = get_template_directory_uri();
 	?>
 	<div class="wrap">
-	<h1 style="margin-bottom:20px;">
-	<img src="<?php echo get_template_directory_uri(); ?>/inc/images/accesspressthemes.png"/>
-	<?php echo sprintf(__( 'More Themes from <a href="%s" target="_blank">AccessPress Themes</a>', 'accesspress-store' ) , esc_url('https://accesspressthemes.com/'))?>
-	</h1>
+		<h1 style="margin-bottom:20px;">
+			<img src="<?php echo get_template_directory_uri(); ?>/inc/images/accesspressthemes.png"/>
+		<?php echo sprintf(__( 'More Themes from <a href="%s" target="_blank">AccessPress Themes</a>', 'accesspress-store' ) , esc_url('https://accesspressthemes.com/'))?>
+		</h1>
 
 	<div class="theme-browser rendered">
 		<div class="themes">

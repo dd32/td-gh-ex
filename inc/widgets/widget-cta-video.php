@@ -151,8 +151,6 @@ class accesspress_cta_video extends WP_Widget {
 
         // Loop through fields
         foreach ($widget_fields as $widget_field) {
-
-            // Make array elements available as variables
             extract($widget_field);
             $accesspress_store_widgets_field_value = !empty($instance[$accesspress_store_widgets_name]) ? esc_attr($instance[$accesspress_store_widgets_name]) : '';
             accesspress_store_widgets_show_widget_field($this, $widget_field, $accesspress_store_widgets_field_value);
