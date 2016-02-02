@@ -1,10 +1,31 @@
 .clearboth {
     clear: both;
 }
+.kaira-theme-options-wrap {
+    position: relative;
+    margin: 10px 0 20px 0;
+}
+.kra-click-preview {
+    cursor: pointer;
+    color: #006CC9 !important;
+}
+.premium-upsell-wrap {
+    max-width: 900px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: #FFF;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 0;
+    padding: 20px;
+    display: none;
+}
 .kaira-upsell-btn {
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 4px;
-    background-color: #4965A0;
+    background-color: #006CC9;
     box-shadow: inset 0 1px 0 rgba(120,200,230,.5),0 1px 0 rgba(0,0,0,.15);
     color: #EBEBEB;
     display: inline-block;
@@ -15,7 +36,7 @@
 }
 .kaira-upsell-btn:hover {
     color: #FFFFFF;
-    background-color: #517BC5;
+    background-color: #0546B7;
 }
 
 .kaira-recommended-plugins {
@@ -28,6 +49,9 @@
 	padding: 0;
 	max-width: 1442px;
 	min-width: 852px;
+}
+.kaira-theme-options-wrap form h2 {
+    padding: 25px 0 0 20px;
 }
 .kaira-theme-options-wrap .ui-tabs-nav li {
 	display: block;
@@ -106,7 +130,13 @@
 	color: #949494;
 }
 .kaira-theme-options-wrap .wrap h3, .wrap table {
-	display: none;
+	background-color: #FFF;
+	max-width: 1120px;
+	border-radius: 5px;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+}
+.wrap table h4 {
+    padding: 0 20px 0;
 }
 td.kaira-heading-td {
     margin-bottom: 0;
@@ -115,7 +145,7 @@ td.kaira-heading-td {
 }
 .kaira-theme-options-wrap .form-table th,
 .kaira-theme-options-wrap .form-table td {
-    padding: 20px 0 25px;
+    padding: 25px 20px 20px;
 }
 .kaira-theme-options-wrap .form-table th {
     min-width: 260px;
@@ -274,9 +304,7 @@ td.kaira-heading-td {
     color: #858585;
 }
 
-.premium-albar-wrap {
-    
-}
+.premium-albar-wrap {}
 .premium-albar-block {
     border-bottom: 1px solid #E2E2E2;
     margin: 0 0 40px;
@@ -299,4 +327,18 @@ td.kaira-heading-td {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     max-width: 100%;
     height: auto;
+}
+
+@media screen and (max-width: 782px) {
+    
+    .premium-albar-block-left,
+    .premium-albar-block-right {
+        width: 100%;
+        float: none;
+    }
+    
+}
+
+#wpfooter {
+    position: relative;
 }

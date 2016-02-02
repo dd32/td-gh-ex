@@ -1,19 +1,30 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Albar\n"
-"POT-Creation-Date: 2015-09-17 06:03+0200\n"
-"PO-Revision-Date: 2015-09-17 06:03+0200\n"
+"POT-Creation-Date: 2016-02-02 14:29+0200\n"
+"PO-Revision-Date: 2016-02-02 14:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_attr;_n:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
+"__ngettext_noop:1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;"
+"esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: js\n"
+
+#: 404.php:24 no-results.php:22 no-results.php:31
+msgid "Return Home"
+msgstr ""
+
+#: 404.php:25 no-results.php:23 no-results.php:32
+msgid "Search"
+msgstr ""
 
 #: archive.php:23
 #, php-format
@@ -135,6 +146,10 @@ msgstr ""
 msgid "Tags %1$s"
 msgstr ""
 
+#: content.php:72 includes/blog/blog-standard.php:83
+msgid "Read More"
+msgstr ""
+
 #: footer.php:17
 #, php-format
 msgid ""
@@ -214,10 +229,6 @@ msgstr ""
 
 #: image.php:74
 msgid "Both comments and trackbacks are currently closed."
-msgstr ""
-
-#: includes/blog/blog-standard.php:83
-msgid "Read More"
 msgstr ""
 
 #: includes/headers/header-layout-one.php:18
@@ -313,6 +324,16 @@ msgstr ""
 msgid "Post navigation"
 msgstr ""
 
+#: includes/inc/template-tags.php:38
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: includes/inc/template-tags.php:39
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
 #: includes/inc/template-tags.php:44
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
@@ -328,6 +349,12 @@ msgstr ""
 #: includes/inc/template-tags.php:81
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: includes/inc/template-tags.php:87
+#, php-format
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
 msgstr ""
 
 #: includes/inc/template-tags.php:94
@@ -359,7 +386,7 @@ msgstr ""
 msgid "0"
 msgstr ""
 
-#: includes/widgets/alba-carousel.php:65
+#: includes/widgets/alba-carousel.php:65 includes/widgets/alba-carousel.php:119
 msgid "1"
 msgstr ""
 
@@ -372,15 +399,43 @@ msgid "Category"
 msgstr ""
 
 #: includes/widgets/alba-carousel.php:113
-msgid "Enter the ID's of the <a href=\""
+msgid ""
+"Enter the ID's of the post categories you want to show in this carousel. Eg: "
+"\"4,6,8\". Or leave blank to show ALL posts."
 msgstr ""
 
 #: includes/widgets/alba-carousel.php:117
 msgid "Columns"
 msgstr ""
 
+#: includes/widgets/alba-carousel.php:120
+msgid "2"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:121
+msgid "3"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:122
+msgid "4"
+msgstr ""
+
 #: includes/widgets/alba-carousel.php:127
 msgid "Show Featured Image"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:129
+#: includes/widgets/alba-carousel.php:137
+#: includes/widgets/alba-carousel.php:145
+#: includes/widgets/alba-carousel.php:159
+msgid "On"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:130
+#: includes/widgets/alba-carousel.php:138
+#: includes/widgets/alba-carousel.php:146
+#: includes/widgets/alba-carousel.php:160
+msgid "Off"
 msgstr ""
 
 #: includes/widgets/alba-carousel.php:135
@@ -407,6 +462,18 @@ msgstr ""
 
 #: includes/widgets/alba-carousel.php:165
 msgid "Carousel Pagination"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:167
+msgid "Numbers"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:168
+msgid "Dots"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:169 includes/widgets/alba-icon.php:81
+msgid "None"
 msgstr ""
 
 #: includes/widgets/alba-heading.php:10
@@ -442,12 +509,48 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
+#: includes/widgets/alba-heading.php:71
+msgid "Lined heading"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:72
+msgid "Title heading"
+msgstr ""
+
 #: includes/widgets/alba-heading.php:77
 msgid "Size"
 msgstr ""
 
+#: includes/widgets/alba-heading.php:79
+msgid "Small"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:80
+msgid "Medium"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:81
+msgid "Large"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:82
+msgid "Extra Large"
+msgstr ""
+
 #: includes/widgets/alba-heading.php:87
 msgid "Alignment"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:89 includes/widgets/alba-icon.php:90
+msgid "Left"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:90 includes/widgets/alba-icon.php:91
+msgid "Center"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:91 includes/widgets/alba-icon.php:92
+msgid "Right"
 msgstr ""
 
 #: includes/widgets/alba-icon.php:10
@@ -482,8 +585,44 @@ msgstr ""
 msgid "Icon Size"
 msgstr ""
 
+#: includes/widgets/alba-icon.php:68
+msgid "18px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:69
+msgid "26px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:70
+msgid "34px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:71
+msgid "48px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:72
+msgid "66px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:73
+msgid "86px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:74
+msgid "100px"
+msgstr ""
+
 #: includes/widgets/alba-icon.php:79
 msgid "Icon Style"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:82
+msgid "Round"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:83
+msgid "Square"
 msgstr ""
 
 #: includes/widgets/alba-icon.php:88
@@ -500,17 +639,19 @@ msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: no-results.php:22 no-results.php:31
-msgid "Return Home"
-msgstr ""
-
-#: no-results.php:23 no-results.php:32
-msgid "Search"
-msgstr ""
-
 #: search.php:16
 #, php-format
 msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:9
+msgctxt "placeholder"
+msgid "Search&hellip;"
+msgstr ""
+
+#: searchform.php:11
+msgctxt "submit button"
+msgid "&nbsp;"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:21
@@ -537,10 +678,6 @@ msgstr ""
 msgid "Website Text"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:28
-msgid "Kaira"
-msgstr ""
-
 #: settings/class.kaira-theme-settings.php:67
 msgid "ALBAR Settings"
 msgstr ""
@@ -554,319 +691,328 @@ msgid "This is a default description."
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:115
-msgid "Albar Theme Settings"
+msgid "Albar Settings"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:116
-msgid "Install <a href=\""
+msgid "Install our recommended plugins to make your website development easier"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:118
 msgid "Theme options updated."
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:136
+#: settings/class.kaira-theme-settings.php:127
 msgid "Save Changes"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:251
-msgid "Upgrade to premium for only <b>$16</b>"
+#: settings/class.kaira-theme-settings.php:242
+msgid "View added Premium Features"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:276
+#: settings/class.kaira-theme-settings.php:267
 msgid "Website Layout"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:277
+#: settings/class.kaira-theme-settings.php:268
 msgid "Select if you'd like the layout to be Full Width or Boxed"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:286
+#: settings/class.kaira-theme-settings.php:277
 msgid "Favicon"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:287
+#: settings/class.kaira-theme-settings.php:278
 msgid ""
 "Upload a favicon to your website, this needs to be 16 pixels by 16 pixels"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:301 settings/tpl/upsell-page.php:18
+#: settings/class.kaira-theme-settings.php:292 settings/tpl/upsell-page.php:18
 msgid "Header Layout"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:302
-#: settings/class.kaira-theme-settings.php:316
-#: settings/class.kaira-theme-settings.php:348
-#: settings/class.kaira-theme-settings.php:476
-#: settings/class.kaira-theme-settings.php:624
+#: settings/class.kaira-theme-settings.php:293
+#: settings/class.kaira-theme-settings.php:307
+#: settings/class.kaira-theme-settings.php:339
+#: settings/class.kaira-theme-settings.php:467
+#: settings/class.kaira-theme-settings.php:615
 msgid "http://app.sellwire.net/p/Wu"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:308
+#: settings/class.kaira-theme-settings.php:299
 msgid "Header Search"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:309
+#: settings/class.kaira-theme-settings.php:300
 msgid "Select this to show the search in the header"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:315 settings/tpl/upsell-page.php:32
+#: settings/class.kaira-theme-settings.php:306 settings/tpl/upsell-page.php:32
 msgid "Sticky Header"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:326
+#: settings/class.kaira-theme-settings.php:317
 msgid "Enable Slider"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:327
+#: settings/class.kaira-theme-settings.php:318
 msgid ""
 "Click to enable the default homepage slider<br /><br />See <a href=\"http://"
-"demo.kairaweb.com/albar/installing-premium/albar-default-slider/\" target="
-"\"_blank\">instructions here</a> on setting up the default slider"
+"kairaweb.com/support/topic/setting-up-the-default-slider/\" target=\"_blank"
+"\">instructions here</a> on setting up the default slider"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:340
+#: settings/class.kaira-theme-settings.php:331
 msgid "Slider Categories"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:341
-#: settings/class.kaira-theme-settings.php:483
-msgid "Enter the ID of the <a href=\""
+#: settings/class.kaira-theme-settings.php:332
+msgid ""
+"Enter the ID of the post category you'd like to display in the Home page "
+"Slider, separated by a comma (,) -> Eg: \"13, 17, 19\""
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:347 settings/tpl/upsell-page.php:45
+#: settings/class.kaira-theme-settings.php:338 settings/tpl/upsell-page.php:45
 msgid "Slider Transitions"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:354
+#: settings/class.kaira-theme-settings.php:345
 msgid "Circular slider"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:355
+#: settings/class.kaira-theme-settings.php:346
 msgid "Select if the slider should be circular"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:361
+#: settings/class.kaira-theme-settings.php:352
 msgid "Infinite slider"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:362
+#: settings/class.kaira-theme-settings.php:353
 msgid "Select if the slider should be infinite"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:368
+#: settings/class.kaira-theme-settings.php:359
 msgid "Show slider Pagination"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:369
+#: settings/class.kaira-theme-settings.php:360
 msgid "Click to display slider pagination"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:375
+#: settings/class.kaira-theme-settings.php:366
 msgid "Scroll the slider automatically"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:376
+#: settings/class.kaira-theme-settings.php:367
 msgid "Click to scroll the slider automatically"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:382
+#: settings/class.kaira-theme-settings.php:373
 msgid "Enable slider links"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:383
+#: settings/class.kaira-theme-settings.php:374
 msgid ""
 "Select if you want the slides to link to their post page<br /><br />See here "
 "how to <a href=\"http://demo.kairaweb.com/albar/installing-premium/removing-"
 "the-slider-title/\" target=\"_blank\">remove the slider titles</a>"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:392
+#: settings/class.kaira-theme-settings.php:383
 msgid "Main Color"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:393
+#: settings/class.kaira-theme-settings.php:384
 msgid "This is the color of buttons, etc around the site. Default: #4965A0"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:399
+#: settings/class.kaira-theme-settings.php:390
 msgid "Main Hover Color"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:400
+#: settings/class.kaira-theme-settings.php:391
 msgid ""
 "This is the hover color for buttons, etc around the site. Default: #3e578b"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:414
+#: settings/class.kaira-theme-settings.php:405
 msgid "Body font URL"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:415
-#: settings/class.kaira-theme-settings.php:436
+#: settings/class.kaira-theme-settings.php:406
+#: settings/class.kaira-theme-settings.php:427
 msgid ""
 "Enter ONLY the fonts URL here. Eg: link href='<b><big> //fonts.googleapis."
 "com/css?family=Open+Sans:400italic,400 </big></b>' rel='stylesheet' "
 "type='text/css'"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:421
+#: settings/class.kaira-theme-settings.php:412
 msgid "Body font name"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:422
+#: settings/class.kaira-theme-settings.php:413
 msgid ""
 "Enter the FULL name. Eg:<b><big> font-family: 'Open Sans', sans-serif; </"
 "big></b>"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:427
+#: settings/class.kaira-theme-settings.php:418
 msgid "Body font color"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:428
+#: settings/class.kaira-theme-settings.php:419
 msgid "Select a color for the body font. Default: #7B7D80"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:435
+#: settings/class.kaira-theme-settings.php:426
 msgid "Heading font URL"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:442
+#: settings/class.kaira-theme-settings.php:433
 msgid "Heading font name"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:443
+#: settings/class.kaira-theme-settings.php:434
 msgid ""
 "Enter the FULL name. Eg:<b><big> font-family: 'Roboto', sans-serif; </big></"
 "b>"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:448
+#: settings/class.kaira-theme-settings.php:439
 msgid "Heading font color"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:449
+#: settings/class.kaira-theme-settings.php:440
 msgid "Select a color for the body font. Default: #5A5A5A"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:462
+#: settings/class.kaira-theme-settings.php:453
 msgid "Custom CSS"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:463
+#: settings/class.kaira-theme-settings.php:454
 msgid ""
 "Add Custom CSS to add your own styling to the Theme. For an advanced CSS "
 "Plugin re recommend <a href=\"https://wordpress.org/plugins/so-css/\" target="
 "\"_blank\">SiteOrigin CSS</a>"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:475 settings/tpl/upsell-page.php:58
+#: settings/class.kaira-theme-settings.php:466 settings/tpl/upsell-page.php:58
 msgid "Blog Layout"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:482
+#: settings/class.kaira-theme-settings.php:473
 msgid "Blog Categories"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:489
+#: settings/class.kaira-theme-settings.php:474
+msgid ""
+"Enter the ID of the post categories you'd like to EXCLUDE from the Blog, "
+"enter only the ID's with a minus sign (-) before them, separated by a comma "
+"(,)<br />If you enter the ID's without the minus then it'll show ONLY posts "
+"in that category.<br />Eg: \"-13, -17, -19\""
+msgstr ""
+
+#: settings/class.kaira-theme-settings.php:480
 msgid "Blog Page Title"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:490
+#: settings/class.kaira-theme-settings.php:481
 msgid "Enter the title you want for the blog page."
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:496
+#: settings/class.kaira-theme-settings.php:487
 msgid "Blog Posts Per Page"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:497
+#: settings/class.kaira-theme-settings.php:488
 msgid "Enter the number of posts you'd like to show per page"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:507
-#: settings/class.kaira-theme-settings.php:602
+#: settings/class.kaira-theme-settings.php:498
+#: settings/class.kaira-theme-settings.php:593
 msgid "Email Address"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:514
+#: settings/class.kaira-theme-settings.php:505
 msgid "Skype"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:521
+#: settings/class.kaira-theme-settings.php:512
 msgid "Facebook"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:528
+#: settings/class.kaira-theme-settings.php:519
 msgid "Twitter"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:535
+#: settings/class.kaira-theme-settings.php:526
 msgid "Google Plus"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:542
+#: settings/class.kaira-theme-settings.php:533
 msgid "YouTube"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:549
+#: settings/class.kaira-theme-settings.php:540
 msgid "Instagram"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:556
+#: settings/class.kaira-theme-settings.php:547
 msgid "Pinterest"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:563
+#: settings/class.kaira-theme-settings.php:554
 msgid "LinkedIn"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:570
+#: settings/class.kaira-theme-settings.php:561
 msgid "Tumblr"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:577
+#: settings/class.kaira-theme-settings.php:568
 msgid "Flickr"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:588
+#: settings/class.kaira-theme-settings.php:579
 msgid "Address"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:595
+#: settings/class.kaira-theme-settings.php:586
 msgid "Header Email Text"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:609
+#: settings/class.kaira-theme-settings.php:600
 msgid "Phone Number"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:623
+#: settings/class.kaira-theme-settings.php:614
 msgid "Footer Copy Text"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:636
+#: settings/class.kaira-theme-settings.php:627
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:637
+#: settings/class.kaira-theme-settings.php:628
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:642
+#: settings/class.kaira-theme-settings.php:633
 msgid "Error 404 Message"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:643
+#: settings/class.kaira-theme-settings.php:634
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:657
+#: settings/class.kaira-theme-settings.php:648
 msgid "No Search Results"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:658
+#: settings/class.kaira-theme-settings.php:649
 msgid "Enter the default text for when no search results are found"
 msgstr ""
 

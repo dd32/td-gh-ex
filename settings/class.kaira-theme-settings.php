@@ -25,7 +25,7 @@ class Kaira_theme_settings {
         $this->sections['social']   = __( 'Social Links', 'albar' );
         $this->sections['website']   = __( 'Website Text', 'albar' );
         
-		$this->sections['premium']     = __( 'Kaira', 'albar' );
+		$this->sections['premium']     = __( '', 'albar' );
 		
 		add_action( 'admin_menu', array( &$this, 'kaira_add_pages' ) );
         
@@ -112,7 +112,7 @@ class Kaira_theme_settings {
 		
 		echo '<div class="wrap kaira-theme-options-wrap">
             	<div class="icon32" id="icon-options-general"></div>
-            	<h2>' . __( 'Albar Theme Settings', 'albar' ) . '</h2>
+            	<h2>' . __( 'Albar Settings', 'albar' ) . '</h2>
                 <div class="kaira-recommended-plugins">' . __( 'Install our recommended plugins to make your website development easier', 'albar' ) . '</div>';
             		if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == true )
             			echo '<div class="updated fade"><p>' . __( 'Theme options updated.', 'albar' ) . '</p></div>';
@@ -120,16 +120,7 @@ class Kaira_theme_settings {
             		echo '<form action="options.php" method="post">';
             	
             		settings_fields( 'kaira_theme_options' );
-            		echo '<div class="ui-tabs">
-            			<ul class="ui-tabs-nav">';
             		
-                    $tab_count = 1;
-            		foreach ( $this->sections as $section_slug => $section ) {
-            			echo '<li><a href="#tab-' . $tab_count . '">' . $section . '</a></li>';
-                        $tab_count++;
-                    }
-            		
-            		echo '</ul>';
             		do_settings_sections( $_GET['page'] );
             		
             		echo '</div>
@@ -248,7 +239,7 @@ class Kaira_theme_settings {
                 
             case 'upsell':
                 echo '<a href="' . esc_url( $desc ) . '" class="kaira-upsell-btn" target="_blank">Upgrade to Albar Premium</a>';
-                echo '<br /><span class="description">' . __( 'Upgrade to premium', 'albar' ) . '</span></label>';
+                echo '<br /><span class="kra-click-preview description">' . __( 'View added Premium Features', 'albar' ) . '</span></label>';
                 break;
 						
 			case 'text':
@@ -513,7 +504,7 @@ class Kaira_theme_settings {
             'section' => 'social',
             'title'   => __( 'Skype', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'url',
+            'type'    => 'text',
             'std'     => ''
         );
         $this->settings['kra-social-facebook'] = array(
@@ -693,7 +684,6 @@ class Kaira_theme_settings {
 	public function load_kaira_scripts() {
         wp_register_script( 'kaira-theme-admin-js', get_stylesheet_directory_uri() . '/settings/js/kaira-admin.js', array( 'jquery', 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch', 'iris', 'wp-color-picker' ), false, 1 );
         wp_enqueue_script( 'kaira-theme-admin-js' );
-        wp_print_scripts( 'jquery-ui-tabs' );
         wp_enqueue_media();
 	}
 	

@@ -5,25 +5,11 @@
 ( function( $ ) {
     
     jQuery( document ).ready( function() {
-        // Functionality for the settings tabs
-        var wrapped = $( '.wrap h3' ).wrap( '<div class=\"ui-tabs-panel ui-tabs-hide\">' );
-        var content_count = 1;
         
-        wrapped.each(function() {
-            $( this ).parent().append($( this ).parent().nextUntil( 'div.ui-tabs-panel' ));
+        $( '.kra-click-preview' ).click( function(e){
+            $( '.premium-upsell-wrap' ).fadeToggle();
+            $( 'html, body' ).animate( {'scrollTop':0} );
         });
-        
-        $( '.ui-tabs-panel' ).each(function() {
-            $(this).attr( 'id', 'tab-' + content_count );
-            content_count++;
-        });
-        
-        $( '.ui-tabs' ).tabs({
-            fx: { opacity: 'toggle', duration: 'fast' }
-        });
-        
-        $( '.wrap h3, .wrap table' ).show();
-        
         
         // WP Media upload functionality
         var kra_media = true,

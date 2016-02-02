@@ -68,6 +68,11 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.7.0
+* Fixed Albar Settings page, broken since latest WP update
+* Styling tweaks
+* Updated language .pot file
+
 #### 1.6.9
 * Styling tweaks
 * Allow flex header image width/height
