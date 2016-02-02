@@ -326,7 +326,7 @@ function servicesText_customizer( $wp_customize ) {
 		'one'		=> __( 'Icon 1', 'akyra' ),
 		'two'		=> __( 'Icon 2', 'akyra' ),
 		'three'		=> __( 'Icon 3', 'akyra' ),
-		'four'		=> __( 'Icon 4', 'akyra' ),
+		
 	);
 	
 	
@@ -595,7 +595,7 @@ add_action( 'customize_controls_print_styles', 'customize_styles_akyra_upgrade')
 function akyra_reorder_sections_theme_customizer($wp_customize){
 	
 	$wp_customize->get_section('title_tagline')->priority = 2;
-	$wp_customize->get_section('akyra_logo_section')->priority = 3;
+ 
 	$wp_customize->get_section('nav')->priority = 4;
 	$wp_customize->get_section('header_image')->priority = 6;
 	$wp_customize->get_section('colors')->priority = 7;

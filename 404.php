@@ -22,7 +22,7 @@ get_header();
 				</div>
 			</div>
 <!--Start Content Grid-->
-<div class="mainblogwrapper clearfix">
+<div class="mainblogwrapper">
     <div class="container">
         <div class="row">
             <div class="mainblogcontent">
@@ -35,7 +35,6 @@ get_header();
             <p> <?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'akyra' ); ?> </p>
              
             <?php the_widget('WP_Widget_Recent_Posts', array('number' => 10), array('widget_id' => '404')); ?>
-        
          </div>
         
         <div class="clearfix"></div>

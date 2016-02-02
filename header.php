@@ -32,17 +32,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <?php if(get_theme_mod('akyra_logo')): ?> 
+               <?php if(get_theme_mod('akyra_logo')): ?> 
 			   <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <?php echo '<img src="'.esc_url( get_theme_mod( 'akyra_logo' ) ).'">'; ?> </a>
 			   <?php  else:  ?>  
 			      <a class="navbar-brand" id="divSiteTitle" href="<?php echo esc_url( home_url( '/' ) ); ?>"> <?php echo bloginfo('name');?> </a> <br> <a href="" class="desnav" id="divTagLine"> <?php echo bloginfo('description'); ?></a> 
                
-                <?php endif; ?> 
+                <?php endif; ?>   
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                
-                 <?php 
+              
+              
+              <?php 
 			$defaults = array(
 					'theme_location'  => 'primary',
 					'container'       => '',
@@ -56,12 +57,12 @@
 					'after'           => '',
 					'link_before'     => '',
 					'link_after'      => '',
-					'items_wrap'      => '<ul class="nav navbar-nav navbar-right">%3$s</ul>',
+					'items_wrap'      => '<ul id="nav" class="nav navbar-nav navbar-right">%3$s</ul>',
 					'depth'           => 0,
 					'walker'          => ''
 					);
 			wp_nav_menu($defaults); ?>
-                
+              
             </div>
             <!-- /.navbar-collapse -->
         </div>

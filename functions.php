@@ -1,6 +1,7 @@
 <?php
+
  
-/* akyra Theme Starts */
+ /* akyra Theme Starts */
 if ( ! function_exists( 'akyra_setup' ) ) :
 function akyra_setup() {
 	/*
@@ -8,15 +9,17 @@ function akyra_setup() {
 	 *
 	 */
 	load_theme_textdomain( 'akyra', get_template_directory() . '/languages' );
- 	add_editor_style();
+	// This theme styles the visual editor to resemble the theme style.
+	add_editor_style();
+	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
-	 	global $content_width;
+	global $content_width;
 if ( ! isset( $content_width ) )
      $content_width = 900; /* pixels */
+	add_theme_support( "title-tag" );
 	
+	 
 	
-	
-		 add_theme_support( "title-tag" );
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 798, 398, true );
 	add_image_size( 'akyra-full-width', 1038, 576, true );
@@ -25,14 +28,7 @@ if ( ! isset( $content_width ) )
 		'primary'   => __( 'Main Menu', 'akyra' ),
 		'secondary' => __( 'Secondary menu  for footer menu', 'akyra' ),		
 	) );
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	
-	/*
-	 * Enable support for Post Formats.
-	 */
+	 
 	// This theme allows users to set a custom background.
 	add_theme_support( 'custom-background', apply_filters( 'akyra_custom_background_args', array(
 		'default-color' => 'f5f5f5',
@@ -47,7 +43,6 @@ if ( ! isset( $content_width ) )
 }
 endif; // akyra_setup
 add_action( 'after_setup_theme', 'akyra_setup' );
-
  
  
  
@@ -96,11 +91,6 @@ add_action('wp_head', 'akyra_header_add_favicon');
  
  
  
- 
- 
- 
- 
-
 // Adding breadcrumbs
 function akyra_breadcrumbs() {
  echo '<li><a href="';
@@ -155,12 +145,6 @@ if (is_attachment()) {
         echo '<li class="active">'. __('Search Results for "','akyra').'' . get_search_query() . '"' ; echo "</li>";
     }
     }
- 
-
- 
-
- 
- 
  
  
  
@@ -256,25 +240,26 @@ function akyra_add_nav_class($output) {
     return $output;
 }
 add_filter('wp_list_categories', 'akyra_add_nav_class');
- 
+/*
+ * Replace Excerpt [...] with Read More
+**/
+function akyra_read_more( ) {
+return ' ... <p class="moree"><a class="arbtnn arbtnn-small arbtnnsrborder" href="'. get_permalink( get_the_ID() ) . '">Read more <i class="fa fa-arrow-circle-right"></i></a></p>';
+ }
+add_filter( 'excerpt_more', 'akyra_read_more' ); 
 /**
  * Enqueues scripts and styles for front-end.
  */
 function akyra_scripts_styles() {
 	 wp_enqueue_style('bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.css');
-         wp_enqueue_style( 'akyra-basic-style', get_stylesheet_uri() );
+          wp_enqueue_style( 'akyra-basic-style', get_stylesheet_uri() );
+ wp_enqueue_style('normalize', get_template_directory_uri() . '/styles/normalize.css');
 		  wp_enqueue_style('font-awesome', get_template_directory_uri() . '/styles/font-awesome.css');
-		    wp_enqueue_style('normalize', get_template_directory_uri() . '/styles/normalize.css');
-	 
-		    // Add Google Fonts
-  wp_register_style( 'akyra-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,700,800,600');
-
-  wp_enqueue_style( 'akyra-fonts' );
-		 
-	 
+		
 		  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array('jquery'),false,true);
 		  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.js',array('jquery'),false,true);
 		  wp_enqueue_script( 'custom', get_template_directory_uri() . '/scripts/custom.js',array('jquery'),false,true);
+		  
 	  if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'akyra_scripts_styles' );
@@ -283,12 +268,13 @@ add_action( 'wp_enqueue_scripts', 'akyra_scripts_styles' );
 
 
 
- 
 
 
 
- 
- 
+
+
+
+
 
 // placeholder to textarea
 function akyra_comment_textarea_field($comment_field) {
@@ -311,11 +297,6 @@ add_filter('comment_text', 'akyra_wrap_comment_text');
 
 
 
-
-
-
-
- 
 
 if ( ! function_exists( 'akyra_ie_js_header' ) ) {
 	function akyra_ie_js_header () {
@@ -344,13 +325,14 @@ add_action( 'wp_footer', 'akyra_ie_js_footer', 20 );
 
 
 
+
+
+
  
 
 
 
-
-
-
+ 
 
 
 
@@ -405,9 +387,12 @@ function akyra_paginate($pages = '', $range = 1)
 
 
 
+
 require get_template_directory() . '/inc/customizer.php';
 
 
 require get_template_directory() . '/inc/akyra-admin_page.php';
+
+
 
 

@@ -24,7 +24,7 @@
 				</div>
 			</div>
 <!--Start Content Grid-->
-<div class="mainblogwrapper clearfix">
+<div class="mainblogwrapper">
     <div class="container">
         <div class="row">
             <div class="mainblogcontent">
@@ -41,7 +41,7 @@
                 if (have_posts())
                     the_post();
                 ?>
-                 <h1>
+                <h1>
                     <?php if (is_day()) : ?>
                         <?php printf(__('Daily Archives: %s', 'akyra'), get_the_date()); ?>
                     <?php elseif (is_month()) : ?>
@@ -62,14 +62,18 @@
                  * If you want to overload this in a child theme then include a file
                  * called loop-archives.php and that will be used instead.
                  */
-                get_template_part('loop', 'archive');
+                 get_template_part('loop', 'archive');
                 ?>
+                 
             <div class="clearfix"></div>
+                        
                         <nav id="nav-single"> <span class="nav-previous">
-                                <?php next_posts_link(__( 'Next Post', 'akyra' )); ?>
+                                <?php next_posts_link(__( 'Next Post <i class="fa fa-long-arrow-right"></i>', 'akyra' )); ?>
                             </span> <span class="nav-next">
-                        <?php previous_posts_link(__( 'Previous Post', 'akyra' )); ?>
+                        <?php previous_posts_link(__( '<i class="fa fa-long-arrow-left"></i> Previous Post', 'akyra' )); ?>
                             </span> </nav>
+                        
+                         
            <div class="clearfix"></div>
                 </div>
                 <div class="col-md-3">

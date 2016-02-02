@@ -1,4 +1,6 @@
-
+ 
+ 
+ 
  /* scroll to top */
  jQuery(document).ready(function(){
 
@@ -16,7 +18,7 @@
 		});
 
 		// scroll body to 0px on click
-		jQuery('#topp a').click(function () {
+		jQuery('#back-top a').click(function () {
 			jQuery('body,html').animate({
 				scrollTop: 0
 			}, 800);
@@ -29,10 +31,6 @@
 
  
 
- 
-
-
-
 //slider
 
 jQuery(document).ready(function() {
@@ -41,5 +39,4 @@ jQuery(document).ready(function() {
 	});
 	
 	});
-
 

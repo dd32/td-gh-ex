@@ -68,7 +68,6 @@ if (post_password_required()) {
 
 
 
-
 <div class="clearfix"></div>
 <div id="comments" class="comments-area">
 	<?php if ( have_comments() ) : 	?>

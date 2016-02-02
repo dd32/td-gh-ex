@@ -17,7 +17,7 @@ get_header(); ?>
 </div>
 				</div>
 			</div>
-<div class="mainblogwrapper clearfix">
+<div class="mainblogwrapper">
     <div class="container">
         <div class="row">
         
@@ -28,18 +28,19 @@ get_header(); ?>
             
           <h1><?php printf( __( 'Search Results for: %s', 'akyra' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
         
-      <?php get_template_part('loop', 'search'); ?>
+        <?php get_template_part('loop', 'search'); ?>
+          <!--end / post-content--> 
           
        <div class="clearfix"></div>
                     <!-- *** Post1 Starts Ends *** -->
-                   
-        
-        <!--end / article--> 
-        <nav id="nav-single"> <span class="nav-previous">
-                           <?php next_posts_link(__( 'Next Post', 'akyra' )); ?>
-                        </span> <span class="nav-next">
- <?php previous_posts_link(__( 'Previous Post', 'akyra' )); ?>
-                        </span> </nav>
+                    <!-- *** Post loop ends*** -->
+                     
+         <!--end / article--> 
+         <nav id="nav-single"> <span class="nav-previous">
+                                <?php next_posts_link(__( 'Next Post <i class="fa fa-long-arrow-right"></i>', 'akyra' )); ?>
+                            </span> <span class="nav-next">
+                        <?php previous_posts_link(__( '<i class="fa fa-long-arrow-left"></i> Previous Post', 'akyra' )); ?>
+                            </span> </nav>  <div class="clearfix"></div>
       </div>
       
       <!--end / main-->

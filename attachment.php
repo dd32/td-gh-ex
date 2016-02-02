@@ -19,7 +19,7 @@ get_header();
 				</div>
 			</div>
 <!--Start Content Grid-->
-<div class="mainblogwrapper clearfix">
+<div class="mainblogwrapper">
 	<div class="container">
 		<div class="row">
 			<div class="mainblogcontent">

@@ -21,10 +21,8 @@ get_header(); ?>
 </div>
 				</div>
 			</div>
-
-
 <!--end / page-title-->
-<div class="mainblogwrapper clearfix">
+<div class="mainblogwrapper">
     <div class="container">
         <div class="row">
             <div class="mainblogcontent">
@@ -35,8 +33,8 @@ get_header(); ?>
                     <!-- *** Post1 Starts *** -->
                     <?php if (have_posts()) while (have_posts()) : the_post(); ?> 
                             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                <div class="article-page">
-                                    <h1 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+                                <div class="theme-page">
+                                     <div class="headline"><h2><?php the_title(); ?></h2></div>
 
                                     <?php the_content(); ?>
                                 </div>
@@ -46,10 +44,11 @@ get_header(); ?>
 
                     <!-- *** Post1 Starts Ends *** -->
                     <!-- *** Post loop ends*** -->
-                    <div class="clearfix"></div>
+                   
                     <!-- ***Comment Template *** -->
                     <?php comments_template(); ?>
                     <!-- ***Comment Template *** -->
+                     <div class="clearfix"></div>
                 </div>
                 <div class="col-md-3">
                     <!-- *** Sidebar Starts *** -->
