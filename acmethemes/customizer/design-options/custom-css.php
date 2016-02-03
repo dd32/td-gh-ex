@@ -12,7 +12,8 @@ $wp_customize->add_section( 'acmeblog-design-custom-css-option', array(
 $wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-custom-css]', array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults['acmeblog-custom-css'],
-    'sanitize_callback' => 'acmeblog_sanitize_custom_css'
+    'sanitize_callback'    => 'wp_filter_nohtml_kses',
+    'sanitize_js_callback' => 'wp_filter_nohtml_kses'
 ) );
 $wp_customize->add_control( 'acmeblog_theme_options[acmeblog-custom-css]', array(
     'label'		=> __( 'Custom CSS', 'acmeblog' ),

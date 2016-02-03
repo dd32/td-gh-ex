@@ -12,7 +12,7 @@ $wp_customize->add_section( 'acmeblog-header-logo', array(
 $wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-header-logo]', array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults['acmeblog-header-logo'],
-    'sanitize_callback' => 'acmeblog_sanitize_image'
+    'sanitize_callback' => 'esc_url_raw'
 ) );
 $wp_customize->add_control(
     new WP_Customize_Image_Control(

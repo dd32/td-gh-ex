@@ -36,69 +36,6 @@ if ( !function_exists('acmeblog_sanitize_checkbox') ) :
 endif;
 
 /**
- * Sanitizing the custom css
- *
- * @since acmeblog 1.0.0
- *
- * @param string $input
- * @return string $input
- *
- */
-if ( !function_exists('acmeblog_sanitize_custom_css') ) :
-	function acmeblog_sanitize_custom_css( $input ) {
-		if ( $input != '' ) {
-			$input = str_replace( '<=', '&lt;=', $input );
-
-			$input = wp_kses_split( $input, array(), array() );
-
-			$input = str_replace( '&gt;', '>', $input );
-
-			$input = strip_tags( $input );
-
-			return $input;
-		}
-		else {
-			return '';
-		}
-	}
-endif;
-
-/**
- * Sanitizing the image callback example
- *
- * @see wp_check_filetype() https://developer.wordpress.org/reference/functions/wp_check_filetype/
- *
- * @since acmeblog 1.0.0
- *
- * @param string $image Image filename.
- * @param $setting Setting instance.
- * @return string the image filename if the extension is allowed; otherwise, the setting default.
- *
- */
-if ( !function_exists('acmeblog_sanitize_image') ) :
-	function acmeblog_sanitize_image( $image, $setting ) {
-		/*
-         * Array of valid image file types.
-         *
-         * The array includes image mime types that are included in wp_get_mime_types()
-         */
-		$mimes = array(
-			'jpg|jpeg|jpe' => 'image/jpeg',
-			'gif'          => 'image/gif',
-			'png'          => 'image/png',
-			'bmp'          => 'image/bmp',
-			'tif|tiff'     => 'image/tiff',
-			'ico'          => 'image/x-icon'
-		);
-		/*Return an array with file extension and mime_type.*/
-		$file = wp_check_filetype( $image, $mimes );
-		/*If $image has a valid mime_type, return it; otherwise, return the default.*/
-		return ( $file['ext'] ? $image : $setting->default );
-	}
-endif;
-
-
-/**
  * Sanitizing the page/post
  *
  * @since acmeblog 1.0.0

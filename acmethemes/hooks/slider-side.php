@@ -76,8 +76,8 @@ if ( !function_exists('acmeblog_feature_side') ) :
                 <figure class="beside-thumb clearfix">
                     <img src="<?php echo esc_url( get_template_directory_uri()."/assets/img/no-image-330-195.jpg" ); ?>"/>
                 </figure>
-                <div class="beside-caption clearfix" style="color: #2D2D2D">
-                    <h3 class="post-title" style="color: #2D2D2D">
+                <div class="acme-default beside-caption clearfix">
+                    <h3 class="acme-default post-title">
                         <?php _e('Select post', 'acmeblog' );?>
                     </h3>
                     <div class="post-date">
@@ -89,7 +89,7 @@ if ( !function_exists('acmeblog_feature_side') ) :
                 <figure class="beside-thumb clearfix">
                     <img src="<?php echo esc_url( get_template_directory_uri()."/assets/img/no-image-330-195.jpg" ); ?>"/>
                 </figure>
-                <div class="beside-caption clearfix" style="color: #2D2D2D">
+                <div class="acme-default beside-caption clearfix">
                     <h3 class="post-title">
                         <?php _e('Select another post', 'acmeblog' );?>
                     </h3>

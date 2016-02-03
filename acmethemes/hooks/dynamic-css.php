@@ -14,10 +14,11 @@ if ( ! function_exists( 'acmeblog_dynamic_css' ) ) :
 
         global $acmeblog_customizer_all_values;
         /*Color options */
-        $acmeblog_primary_color = $acmeblog_customizer_all_values['acmeblog-primary-color'];
-        ?>
-        <style type="text/css">
-            /*background*/
+        $acmeblog_primary_color = esc_attr( $acmeblog_customizer_all_values['acmeblog-primary-color'] );
+        $custom_css = '';
+
+        /*background*/
+        $custom_css .= "
             mark,
             .comment-form .form-submit input,
             .slider-section .cat-links a,
@@ -25,9 +26,10 @@ if ( ! function_exists( 'acmeblog_dynamic_css' ) ) :
             #calendar_wrap #wp-calendar #today a,
             .wpcf7-form input.wpcf7-submit:hover,
             .breadcrumb{
-                background: <?php echo esc_attr( $acmeblog_primary_color ); ?>;
-            }
-            /*color*/
+                background: {$acmeblog_primary_color};
+            }";
+        /*color*/
+        $custom_css .= "
             a:hover,
             .header-wrapper .menu li a:hover,
             .screen-reader-text:focus,
@@ -55,46 +57,50 @@ if ( ! function_exists( 'acmeblog_dynamic_css' ) ) :
             .header-wrapper .menu > li.current-menu-parent > a,
             .header-wrapper .menu > li.current_page_parent > a,
             .header-wrapper .menu > li.current_page_ancestor > a{
-                color: <?php echo esc_attr( $acmeblog_primary_color ); ?>;
-            }
-            /*border*/
-            .nav-links .nav-previous a:hover,
+                color: {$acmeblog_primary_color};
+            }";
+
+        /*border*/
+         $custom_css .= "
+         .nav-links .nav-previous a:hover,
             .nav-links .nav-next a:hover{
-                border-top: 1px solid <?php echo esc_attr( $acmeblog_primary_color ); ?>;
+                border-top: 1px solid {$acmeblog_primary_color};
             }
             .besides-slider .beside-post{
-                border-bottom: 3px solid <?php echo esc_attr( $acmeblog_primary_color ); ?>;
+                border-bottom: 3px solid {$acmeblog_primary_color};
             }
             .page-header .page-title,
             .single .entry-header .entry-title{
-                border-bottom: 1px solid <?php echo esc_attr( $acmeblog_primary_color ); ?>;
+                border-bottom: 1px solid {$acmeblog_primary_color};
             }
             .page-header .page-title:before,
             .single .entry-header .entry-title:before{
-                border-bottom: 7px solid <?php echo esc_attr( $acmeblog_primary_color ); ?>;
+                border-bottom: 7px solid {$acmeblog_primary_color};
             }
             .wpcf7-form input.wpcf7-submit:hover,
             article.post.sticky,
             .read-more:hover{
-                border: 2px solid <?php echo esc_attr( $acmeblog_primary_color ); ?>;
+                border: 2px solid {$acmeblog_primary_color};
             }
             .breadcrumb::after {
-                border-left: 5px solid <?php echo esc_attr( $acmeblog_primary_color ); ?>;
+                border-left: 5px solid {$acmeblog_primary_color};
             }
             .tagcloud a{
-                border: 1px solid  <?php echo esc_attr( $acmeblog_primary_color ); ?>;
+                border: 1px solid {$acmeblog_primary_color};
             }
             .widget-title{
-                border-left: 2px solid <?php echo esc_attr( $acmeblog_primary_color ); ?>;;
+                border-left: 2px solid {$acmeblog_primary_color};
             }
-            /*media width*/
+         ";
+        /*media width*/
+        $custom_css .= "
             @media screen and (max-width:992px){
                 .slicknav_btn.slicknav_open{
-                    border: 1px solid <?php echo esc_attr( $acmeblog_primary_color ); ?>;
+                    border: 1px solid {$acmeblog_primary_color};
                 }
                 .slicknav_btn.slicknav_open:before{
-                    background: <?php echo esc_attr( $acmeblog_primary_color ); ?>;
-                    box-shadow: 0 6px 0 0 <?php echo esc_attr( $acmeblog_primary_color ); ?>, 0 12px 0 0 <?php echo esc_attr( $acmeblog_primary_color ); ?>;
+                    background: {$acmeblog_primary_color};
+                    box-shadow: 0 6px 0 0 {$acmeblog_primary_color}, 0 12px 0 0 {$acmeblog_primary_color};
                 }
                 .slicknav_nav li:hover > a,
                 .slicknav_nav li.current-menu-ancestor a,
@@ -102,19 +108,16 @@ if ( ! function_exists( 'acmeblog_dynamic_css' ) ) :
                 .slicknav_nav li.current_page_item a,
                 .slicknav_nav li.current_page_item .slicknav_item span,
                 .slicknav_nav li .slicknav_item:hover a{
-                    color: <?php echo esc_attr( $acmeblog_primary_color ); ?>;
+                    color: {$acmeblog_primary_color};
                 }
-            }
-        <?php
-        $acmeblog_custom_css = $acmeblog_customizer_all_values['acmeblog-custom-css'];
-        $acmeblog_custom_css_output = '';
+            }";
+        /*custom css*/
+        $acmeblog_custom_css = wp_filter_nohtml_kses ( $acmeblog_customizer_all_values['acmeblog-custom-css'] );
         if ( ! empty( $acmeblog_custom_css ) ) {
-        $acmeblog_custom_css_output .= esc_textarea( $acmeblog_custom_css ) ;
+            $custom_css .= $acmeblog_custom_css;
         }
-        echo $acmeblog_custom_css_output;/*escaping done above*/
-         ?>
-        </style>
-        <?php
+        wp_add_inline_style( 'acmeblog-style', $custom_css );
+
     }
 endif;
-add_action( 'acmeblog_action_after_wp_head', 'acmeblog_dynamic_css', 10 );
+add_action( 'wp_enqueue_scripts', 'acmeblog_dynamic_css', 99 );

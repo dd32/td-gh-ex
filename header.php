@@ -30,16 +30,7 @@ do_action( 'acmeblog_action_before_head' );?>
 		do_action( 'acmeblog_action_before_wp_head' );
 
 		wp_head();
-
-		/**
-		 * acmeblog_action_after_wp_head hook
-		 * @since acmeblog 1.0.0
-		 *
-		 * @hooked null
-		 */
-		do_action( 'acmeblog_action_after_wp_head' );
 		?>
-
 	</head>
 <body <?php body_class();?>>
 

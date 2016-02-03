@@ -252,7 +252,7 @@ if ( ! function_exists( 'acmeblog_before_content' ) ) :
         <?php
         global $acmeblog_customizer_all_values;
         $acmeblog_enable_feature = $acmeblog_customizer_all_values['acmeblog-enable-feature'];
-        if ( is_home() && 1 == $acmeblog_enable_feature ) {
+        if ( is_front_page() && 1 == $acmeblog_enable_feature ) {
             echo '<div class="slider-feature-wrap clearfix">';
             /**
              * Slide
