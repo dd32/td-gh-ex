@@ -89,3 +89,6 @@ Version 2.0.7
 
 Verion 2.0.9
 * Added Editor Style for editing TinyMCE visual editor styles.
+
+Version 3.0.1
+* Fixed Some theme tranlation issues

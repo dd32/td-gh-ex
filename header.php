@@ -117,7 +117,7 @@
                                         <span class="screen-reader-text"><?php _e('Search for:', 'accesspress-basic'); ?></span>
                                         <input type="search" title="Search for:" name="s" value="" placeholder="<?php _e('Search content...', 'accesspress-basic'); ?>" class="search-field">
                                     </label>
-                                    <input type="submit" value="Search" class="search-submit">
+                                    <input type="submit" value="<?php _e('Search', 'accesspress-basic'); ?>" class="search-submit">
                                  </form>
                          <div class="overlay-search"> </div> 
                         </div>
