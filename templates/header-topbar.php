@@ -1,5 +1,5 @@
 <?php global $pinnacle; ?>
-<section id="topbar" class="topclass">
+<div id="topbar" class="topclass">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-ss-6 kad-topbar-left">
@@ -92,4 +92,4 @@
         </div>
     <?php endif;?>
     </div> <!-- Close Container -->
-  </section>
+  </div>

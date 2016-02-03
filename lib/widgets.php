@@ -173,13 +173,13 @@ add_action('widgets_init', 'pinnacle_widgets_init');
  * Contact widget
  */
 class kad_contact_widget extends WP_Widget {
-  function kad_contact_widget() {
+  private static $instance = 0;
+    public function __construct() {
     $widget_ops = array('classname' => 'widget_kadence_contact', 'description' => __('Use this widget to add a Vcard to your site', 'pinnacle'));
-    $this->__construct('widget_kadence_contact', __('Pinnacle: Contact/Vcard', 'pinnacle'), $widget_ops);
-    $this->alt_option_name = 'widget_kadence_contact';
+    parent::__construct('widget_kadence_contact', __('Pinnacle: Contact/Vcard', 'pinnacle'), $widget_ops);
   }
 
-  function widget($args, $instance) {
+  public function widget($args, $instance) {
 
     $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
     if (!isset($instance['company'])) { $instance['company'] = ''; }
@@ -216,7 +216,7 @@ class kad_contact_widget extends WP_Widget {
 
   }
 
-  function update($new_instance, $old_instance) {
+  public function update($new_instance, $old_instance) {
     $instance = $old_instance;
     $instance['title']          = strip_tags($new_instance['title']);
     $instance['company']        = strip_tags($new_instance['company']);
@@ -231,7 +231,7 @@ class kad_contact_widget extends WP_Widget {
     return $instance;
   }
 
-  function form($instance) {
+  public function form($instance) {
       $title          = isset($instance['title']) ? esc_attr($instance['title']) : '';
       $company        = isset($instance['company']) ? esc_attr($instance['company']) : '';
       $name           = isset($instance['name']) ? esc_attr($instance['name']) : '';
@@ -290,10 +290,10 @@ class kad_contact_widget extends WP_Widget {
  * Social widget
  */
 class kad_social_widget extends WP_Widget {
-  function kad_social_widget() {
+  private static $instance = 0;
+    public function __construct() {
     $widget_ops = array('classname' => 'widget_kadence_social', 'description' => __('Simple way to add Social Icons', 'pinnacle'));
-    $this->__construct('widget_kadence_social', __('Pinnacle: Social Links', 'pinnacle'), $widget_ops);
-    $this->alt_option_name = 'widget_kadence_social';
+    parent::__construct('widget_kadence_social', __('Pinnacle: Social Links', 'pinnacle'), $widget_ops);
   }
 
   function widget($args, $instance) {
@@ -351,7 +351,7 @@ class kad_social_widget extends WP_Widget {
 
   }
 
-  function update($new_instance, $old_instance) {
+  public function update($new_instance, $old_instance) {
     $instance = $old_instance;
      $instance['title']     = strip_tags($new_instance['title']);
     $instance['facebook']   = strip_tags($new_instance['facebook']);
@@ -371,7 +371,7 @@ class kad_social_widget extends WP_Widget {
     return $instance;
   }
 
-  function form($instance) {
+  public function form($instance) {
     $title      = isset($instance['title']) ? esc_attr($instance['title']) : '';
     $facebook   = isset($instance['facebook']) ? esc_attr($instance['facebook']) : '';
     $twitter    = isset($instance['twitter']) ? esc_attr($instance['twitter']) : '';
@@ -453,14 +453,14 @@ class kad_social_widget extends WP_Widget {
  */
 class kad_recent_posts_widget extends WP_Widget {
 
-  function kad_recent_posts_widget() {
+  private static $instance = 0;
+    public function __construct() {
       $widget_ops = array('classname' => 'kadence_recent_posts', 'description' => __('This shows the most recent posts on your site with a thumbnail', 'pinnacle'));
-      $this->__construct('kadence_recent_posts', __('Pinnacle: Recent Posts', 'pinnacle'), $widget_ops);
-      $this->alt_option_name = 'kadence_recent_entries';
+      parent::__construct('kadence_recent_posts', __('Pinnacle: Recent Posts', 'pinnacle'), $widget_ops);
 
   }
 
-  function widget($args, $instance) {
+  public function widget($args, $instance) {
 
     if ( ! isset( $args['widget_id'] ) )
       $args['widget_id'] = $this->id;
@@ -501,7 +501,7 @@ class kad_recent_posts_widget extends WP_Widget {
 
   }
 
-  function update( $new_instance, $old_instance ) {
+  public function update( $new_instance, $old_instance ) {
     $instance = $old_instance;
     $instance['title'] = strip_tags($new_instance['title']);
     $instance['number'] = (int) $new_instance['number'];
@@ -510,7 +510,7 @@ class kad_recent_posts_widget extends WP_Widget {
     return $instance;
   }
 
-  function form( $instance ) {
+  public function form( $instance ) {
     $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
     $number = isset($instance['number']) ? absint($instance['number']) : 5;
     if (isset($instance['thecate'])) { $thecate = esc_attr($instance['thecate']); } else {$thecate = '';}
@@ -543,14 +543,14 @@ class kad_recent_posts_widget extends WP_Widget {
  */
 class kad_post_grid_widget extends WP_Widget {
 
-  function kad_post_grid_widget() {
+  private static $instance = 0;
+    public function __construct() {
       $widget_ops = array('classname' => 'kadence_image_grid', 'description' => __('This shows a grid of featured images from recent posts or portfolio items', 'pinnacle'));
-      $this->__construct('kadence_image_grid', __('Pinnacle: Post Grid', 'pinnacle'), $widget_ops);
-      $this->alt_option_name = 'kadence_image_grid';
+      parent::__construct('kadence_image_grid', __('Pinnacle: Post Grid', 'pinnacle'), $widget_ops);
 
   }
 
-  function widget($args, $instance) {
+  public function widget($args, $instance) {
 
     if ( ! isset( $args['widget_id'] ) )
       $args['widget_id'] = $this->id;
@@ -608,7 +608,7 @@ class kad_post_grid_widget extends WP_Widget {
 <?php
   }
 
-  function update( $new_instance, $old_instance ) {
+  public function update( $new_instance, $old_instance ) {
     $instance = $old_instance;
     $instance['title'] = strip_tags($new_instance['title']);
     $instance['number'] = (int) $new_instance['number'];
@@ -619,7 +619,7 @@ class kad_post_grid_widget extends WP_Widget {
     return $instance;
   }
 
-  function form( $instance ) {
+  public function form( $instance ) {
     
     $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
     $gridchoice = isset($instance['gridchoice']) ? esc_attr($instance['gridchoice']) : '';
@@ -671,10 +671,10 @@ class kad_post_grid_widget extends WP_Widget {
 
 class kad_image_widget extends WP_Widget{
 
-    function kad_image_widget() {
+  private static $instance = 0;
+    public function __construct() {
         $widget_ops = array('classname' => 'kadence_simple_image', 'description' => __('This allows for an image and a simple about text.', 'pinnacle'));
-        $this->__construct('kadence_simple_image', __('Pinnacle: Image', 'pinnacle'), $widget_ops);
-        $this->alt_option_name = 'kadence_simple_image';
+        parent::__construct('kadence_simple_image', __('Pinnacle: Image', 'pinnacle'), $widget_ops);
     }
 
     public function widget($args, $instance){ 
@@ -714,7 +714,7 @@ class kad_image_widget extends WP_Widget{
     <?php echo $after_widget; ?>
     <?php }
 
-    function update($new_instance, $old_instance) {
+  public function update($new_instance, $old_instance) {
         $instance = $old_instance;
         $instance['text'] = strip_tags( $new_instance['text'] );
         $instance['image_uri'] = strip_tags( $new_instance['image_uri'] );

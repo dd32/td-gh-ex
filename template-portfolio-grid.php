@@ -2,11 +2,10 @@
 /*
 Template Name: Portfolio Grid
 */
-?>
-	<?php get_header(); ?>
-		<?php get_template_part('templates/page', 'header'); ?>
- 
-		<?php global $post, $pinnacle;
+get_header(); 
+get_template_part('templates/page', 'header'); 
+
+ global $post, $pinnacle;
 			$portfolio_category    = get_post_meta( $post->ID, '_kad_portfolio_type', true );
 			$portfolio_style       = get_post_meta( $post->ID, '_kad_portfolio_style', true );
 			$portfolio_items       = get_post_meta( $post->ID, '_kad_portfolio_items', true );
@@ -119,7 +118,7 @@ Template Name: Portfolio Grid
 	<div id="content" class="container">
    		<div class="row">
       		<div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
-				<div class="container entry-content" temprop="mainContentOfPage"><?php get_template_part('templates/content', 'page'); ?></div>              
+				<div class="container entry-content" itemprop="mainContentOfPage"><?php get_template_part('templates/content', 'page'); ?></div>              
             		<div id="portfoliowrapper" class="rowtight <?php echo esc_attr($pstyleclass);?> <?php echo esc_attr($phoverstyleclass);?>"> 
 
 		           	<?php if ( post_type_exists( 'portfolio' ) ) {

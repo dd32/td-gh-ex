@@ -1,6 +1,8 @@
-	<?php get_header(); ?>
-			<?php get_template_part('templates/content', 'singleportfolio'); ?>
-			<?php get_sidebar(); ?>
+<?php get_header(); 
+
+	get_template_part('templates/content', 'singleportfolio');
+				
+				get_sidebar(); ?>
       		</div><!-- /.row-->
     	</div><!-- /.content -->
   	</div><!-- /.wrap -->

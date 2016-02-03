@@ -1,6 +1,6 @@
-	<?php get_header(); ?>
+<?php get_header(); 
 
-			<?php global $pinnacle; 
+	 global $pinnacle; 
 			if(isset($pinnacle['mobile_switch']) && $pinnacle['mobile_switch'] == '1') {
 		 		$m_home_header = $pinnacle['choose_mobile_slider'];
 				if ($m_home_header == "flex") {

@@ -6,7 +6,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.5.0
+ * @version     2.5.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -49,7 +49,7 @@ if(is_shop() || is_product_category() || is_product_tag()) {
 	$catimgheight = $catimgwidth; ?> 
 
 	<div class="<?php echo esc_attr($itemsize); ?> kad_shop_default kad_product">
-		<div class="product-category postclass grid_item">
+		<div <?php wc_product_cat_class('product-category postclass grid_item ', $category ); ?>>
 
 		<?php 
 				/**

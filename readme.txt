@@ -32,6 +32,11 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.3.6 | 3rd Febuary 2015 = 
+* Update: Various HTML changes (Thanks LAN.)
+* Update: Cart css.
+* Update: Woocommerce file.
+
 = 1.3.5 | 30th December 2015 = 
 * Update: Subtitle support for shortcodes.
 * Update: Woocommerce dolphin support.

@@ -32,7 +32,7 @@
           $logocclass = 'col-md-4 col-sm-8 col-ss-9'; 
           $menulclass = 'col-md-8 col-sm-4 col-ss-3';
         } ?>
-<header id="kad-banner" class="banner headerclass kad-header-style-basic" role="banner" data-pageheaderbg="<?php echo esc_attr($pageheaderbg);?>" data-header-base-height="<?php echo esc_attr($header_height);?>">
+<header id="kad-banner" class="banner headerclass kad-header-style-basic" data-pageheaderbg="<?php echo esc_attr($pageheaderbg);?>" data-header-base-height="<?php echo esc_attr($header_height);?>">
 <?php if (pinnacle_display_topbar()) : 
     get_template_part('templates/header', 'topbar');
   endif; ?>
@@ -56,7 +56,7 @@
       </div><!-- close col -->
       <div class="<?php echo esc_attr($menulclass); ?> kad-header-right">
         <?php if (has_nav_menu('primary_navigation')) : ?>
-            <nav id="nav-main" class="clearfix kad-primary-nav" role="navigation">
+            <nav id="nav-main" class="clearfix kad-primary-nav">
                 <?php wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'sf-menu'));?>
             </nav> 
             <div id="mobile-nav-trigger" class="nav-trigger">

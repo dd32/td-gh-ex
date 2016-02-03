@@ -24,7 +24,7 @@ Template Name: Blog
       
       				<div class="main <?php echo esc_attr( pinnacle_main_class() );?> <?php echo esc_attr($postclass) .' '. esc_attr($fullclass); ?>" role="main">
       					
-      					<div class="entry-content" temprop="mainContentOfPage">
+      					<div class="entry-content" itemprop="mainContentOfPage">
 			      			<?php get_template_part('templates/content', 'page'); ?>
 			      		</div>
 		      		<?php

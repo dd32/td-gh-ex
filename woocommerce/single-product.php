@@ -10,9 +10,10 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 get_header();
-?>
-	<?php get_template_part('templates/woo', 'product-header'); ?>
+  
+  get_template_part('templates/woo', 'product-header'); ?>
 
         <div id="content" class="container">
            	<div class="row">

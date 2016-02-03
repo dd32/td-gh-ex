@@ -1,5 +1,5 @@
 <?php global $pinnacle; ?>
-<footer id="containerfooter" class="footerclass" role="contentinfo">
+<footer id="containerfooter" class="footerclass">
   	<div class="container">
   		<div class="row">
   			<?php if(isset($pinnacle['footer_layout'])) { $footer_layout = $pinnacle['footer_layout']; } else { $footer_layout = 'fourc'; }

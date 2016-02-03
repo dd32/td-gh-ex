@@ -2,10 +2,9 @@
 /*
 Template Name: Blog Grid
 */
-?>
-	<?php get_header(); ?>
-		
-		<?php get_template_part('templates/page', 'header'); ?>
+
+	get_header(); 
+	get_template_part('templates/page', 'header'); ?>
 		<div id="content" class="container">
    			<div class="row">
    				<?php global $post, $postcolumn;
@@ -36,7 +35,7 @@ Template Name: Blog Grid
 					} ?>
 
 		      	<div class="main <?php echo esc_attr( pinnacle_main_class() );?>" role="main">
-		      		<div class="entry-content" temprop="mainContentOfPage">
+		      		<div class="entry-content" itemprop="mainContentOfPage">
 		      		<?php get_template_part('templates/content', 'page'); ?>
 		      		</div>
 
