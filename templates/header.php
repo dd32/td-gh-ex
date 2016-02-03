@@ -1,7 +1,7 @@
 <?php global $virtue; ?>
-<header class="banner headerclass" role="banner">
+<header class="banner headerclass">
 <?php if (kadence_display_topbar()) : ?>
-  <section id="topbar" class="topclass">
+  <div id="topbar" class="topclass">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-sm-6 kad-topbar-left">
@@ -53,7 +53,7 @@
         </div> <!-- close col-md-6-->
       </div> <!-- Close Row -->
     </div> <!-- Close Container -->
-  </section>
+  </div>
 <?php endif; ?>
 <?php if(isset($virtue['logo_layout'])) {
   if($virtue['logo_layout'] == 'logocenter') {$logocclass = 'col-md-12'; $menulclass = 'col-md-12';}
@@ -82,7 +82,7 @@
        </div><!-- close logo span -->
        <?php if (has_nav_menu('primary_navigation')) : ?>
          <div class="<?php echo esc_attr($menulclass); ?> kad-header-right">
-           <nav id="nav-main" class="clearfix" role="navigation">
+           <nav id="nav-main" class="clearfix">
               <?php wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'sf-menu')); ?>
            </nav> 
           </div> <!-- Close menuclass-->
@@ -112,7 +112,7 @@
             if (has_nav_menu('secondary_navigation')) : ?>
   <section id="cat_nav" class="navclass">
     <div class="container">
-     <nav id="nav-second" class="clearfix" role="navigation">
+     <nav id="nav-second" class="clearfix">
      <?php wp_nav_menu(array('theme_location' => 'secondary_navigation', 'menu_class' => 'sf-menu')); ?>
    </nav>
     </div><!--close container-->

@@ -14,7 +14,7 @@
                           if(empty($image)) {$image = $slide['url'];} ?>
                             <li> 
                             <?php if($slide['link'] != '') echo '<a href="'.$slide['link'].'" target="'.$target.'">'; ?>
-                              <img src="<?php echo $image; ?>" alt="<?php echo esc_attr($slide['description']);?>" title="<?php echo esc_attr($slide['title']); ?>" />
+                              <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($slide['title']); ?>" width="<?php echo esc_attr($slidewidth);?>" height="<?php echo esc_attr($slideheight);?>"  />
                                   <?php if ($captions == '1') { ?> 
                                     <div class="flex-caption">
                                     <?php if ($slide['title'] != '') echo '<div class="captiontitle headerfont">'.$slide['title'].'</div>'; ?>

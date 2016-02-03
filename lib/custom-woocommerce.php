@@ -219,19 +219,11 @@ add_action( 'woocommerce_shop_loop_subcategory_title', 'kt_woocommerce_template_
 
 
 // define the woocommerce_loop_add_to_cart_link callback
-function kt_filter_woocommerce_loop_add_to_cart_link( $html, $product ) {
-    $html = sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button kad-btn headerfont kad_add_to_cart %s product_type_%s">%s</a>',
-      esc_url( $product->add_to_cart_url() ),
-      esc_attr( $product->id ),
-      esc_attr( $product->get_sku() ),
-      $product->is_purchasable() ? 'add_to_cart_button' : '',
-      esc_attr( $product->product_type ),
-      esc_html( $product->add_to_cart_text() )
-    );
-    return $html;
+function kt_add_class_woocommerce_loop_add_to_cart_link($array, $product) {
+  $array['class'] .= ' kad-btn headerfont kad_add_to_cart';
+  return $array;
 }   
-// add the filter
-add_filter( 'woocommerce_loop_add_to_cart_link', 'kt_filter_woocommerce_loop_add_to_cart_link', 10, 2 );
+add_filter('woocommerce_loop_add_to_cart_args', 'kt_add_class_woocommerce_loop_add_to_cart_link', 10, 2);
 
 remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
 remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );

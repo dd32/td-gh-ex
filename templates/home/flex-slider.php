@@ -49,7 +49,7 @@
                     if(empty($image)) {$image = $slide['url'];} ?>
                       <li> 
                         <?php if($slide['link'] != '') echo '<a href="'.esc_url($slide['link']).'" target="'.esc_attr($target).'">'; ?>
-                          <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($slide['title']); ?>" />
+                          <img src="<?php echo esc_url($image); ?>" width="<?php echo esc_attr($slidewidth);?>" height="<?php echo esc_attr($slideheight);?>" alt="<?php echo esc_attr($slide['title']); ?>" />
                               <?php if ($captions == '1') { ?> 
                                 <div class="flex-caption">
               								  <?php if (!empty($slide['title'])) {

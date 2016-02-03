@@ -16,7 +16,7 @@
             $postclass = 'postlist';
           } ?>
     <div class="main <?php echo esc_attr(kadence_main_class()); ?>  <?php echo esc_attr($postclass);?>" role="main">
-
+    
     <?php if (!have_posts()) : ?>
         <div class="alert">
           <?php _e('Sorry, no results were found.', 'virtue'); ?>

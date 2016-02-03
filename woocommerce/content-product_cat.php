@@ -6,7 +6,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.5.0
+ * @version     2.5.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -55,7 +55,7 @@ if($img_ratio == 'portrait') {
 ?>
 
 <div class="<?php echo esc_attr($itemsize); ?> kad_product">
-<div class="product-category grid_item">
+<div <?php wc_product_cat_class('product-category grid_item', $category ); ?>>
 
 	<?php 
 	/**
@@ -72,7 +72,7 @@ if($img_ratio == 'portrait') {
 	 */
 	do_action( 'woocommerce_before_subcategory_title', $category );
 				if($img_ratio == 'off') {
-					woocommerce_subcategory_thumbnail();
+					woocommerce_subcategory_thumbnail($category);
 				} else {
 
 					$thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true  );
