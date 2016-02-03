@@ -17,7 +17,7 @@ function aripop_setup() {
 	 	global $content_width;
 if ( ! isset( $content_width ) )
      $content_width = 900; /* pixels */
-	 add_theme_support( "title-tag" );
+	 
 	
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 798, 398, true );
@@ -47,7 +47,40 @@ add_action( 'after_setup_theme', 'aripop_setup' );
  
  
  
- 
+function aripop_of_head_css() {
+  
+    $output = '';
+    $custom_css = esc_attr(get_theme_mod( 'aripop_custom_css' ) );
+    if ($custom_css <> '') {
+        $output .= $custom_css . "\n";
+    }
+// Output styles
+    if ($output <> '') {
+        $output = "<!-- Custom Styling -->\n<style type=\"text/css\">\n" . $output . "</style>\n";
+        echo $output;
+    }
+}
+
+add_action('wp_head', 'aripop_of_head_css');
+
+
+
+function aripop_header_add_favicon() {
+  
+    $outputfevicon = '';
+    $custom_fevicon = esc_attr(get_theme_mod( 'aripop_logo2' ) );
+    if ($custom_fevicon <> '') {
+        $outputfevicon .= $custom_fevicon . "\n";
+    }
+// Output styles
+    if ($outputfevicon <> '') {
+        $outputfevicon = '<link rel="shortcut icon" href="' . $outputfevicon . '">';
+        echo $outputfevicon;
+    }
+}
+
+add_action('wp_head', 'aripop_header_add_favicon');
+
 
 
  
@@ -218,9 +251,9 @@ function aripop_scripts_styles() {
 		 wp_enqueue_style('font-awesome', get_template_directory_uri() . '/styles/font-awesome.css');
 		   
 			 
-		  wp_enqueue_script( 'aripop_modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array('jquery'),false,true);
+		  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array('jquery'),false,true);
 		  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.js',array('jquery'),false,true);
-		  wp_enqueue_script( 'aripop_custom', get_template_directory_uri() . '/scripts/custom.js',array('jquery'),false,true);
+		  wp_enqueue_script( 'custom', get_template_directory_uri() . '/scripts/custom.js',array('jquery'),false,true);
 	  if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'aripop_scripts_styles' );
@@ -228,7 +261,15 @@ add_action( 'wp_enqueue_scripts', 'aripop_scripts_styles' );
 
 
 
- 
+
+
+
+
+
+
+
+
+
 
 // placeholder to textarea
 function aripop_comment_textarea_field($comment_field) {
@@ -302,8 +343,8 @@ add_action( 'wp_footer', 'aripop_ie_js_footer', 20 );
  */
 function aripop_add_menuid ($page_markup) {
 preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
- 
-$toreplace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
+$divclass = $matches[1];
+$toreplace = array('<div class="'.$divclass.'">', '</div>');
 $replace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
 $new_markup = str_replace($toreplace,$replace, $page_markup);
 $new_markup= preg_replace('/<ul/', '<ul class="nav navbar-nav navbar-right"', $new_markup);

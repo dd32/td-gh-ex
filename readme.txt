@@ -54,29 +54,16 @@ Copyright: Dave Gandy http://fontawesome.io
 
 /**********************************************************/
 
-== Installation == 
+== THEME USAGE == 
 
-1. Sign into your WordPress dashboard, go to Appearance > Themes, and click Add New.
-2. Click Add New.
-3. Click Upload.
-4. Click Choose File and select the theme zip file.
-5. Click Install Now.
-6. Click Add New, then click Upload, then click Choose File.
-7. After WordPress installs the theme, click Activate.
-8. You've successfully installed your new theme!
- 
+= Theme Instruction =
+Get theme instruction at http://arinio.com/document/
+
+= Free Support =
+Get free support at http://arinio.com/support/
 
 = Theme Features Usage =
-All Available options can be used from Appearance->Customize
-
-Important Theme Customization Option Given Below.
-Aripop Support - Here You can Upgrade Your Theme. 
-Slider Setting - Here You can change your Slider Images  & Slider Text.
-Bassic Setting - Here You can change theme logo or copyright text.
-Services Setting - Here You can change Front Page service section. You can put Title & Description of Services.
-
-
-
+All available options can be used from Appearance->Customize
 
 /**********************************************************/
 
@@ -91,8 +78,7 @@ url : http://creativecommons.org/publicdomain/zero/1.0/
  
  
 other images made by us .
-License:  Creative Commons license
-url : http://creativecommons.org/publicdomain/zero/1.0/
+
 
 
 
