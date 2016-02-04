@@ -21,11 +21,16 @@ get_header();
         <section class="slider-wrapper">
             <div class="apmag-container"> 
                 <?php
-                    if( wp_is_mobile() ) {
-                        do_action( 'accesspress_mag_slider_mobile' );
+                    $accesspress_mag_slider_layout = of_get_option( 'slider_layout' );
+                    if( $accesspress_mag_slider_layout == 'slider_highlight' ) {
+                        do_action('accesspress_mag_slider_highlight');
                     } else {
-                        do_action( 'accesspress_mag_slider' );
-                    }
+                        if( wp_is_mobile() ) {
+                            do_action( 'accesspress_mag_slider_mobile' );
+                        } else {
+                            do_action( 'accesspress_mag_slider' );
+                        }
+                    }                    
                 ?>
             </div><!-- .apmag-container -->
         </section><!-- .slider-wrapper -->

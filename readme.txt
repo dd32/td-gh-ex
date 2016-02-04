@@ -70,6 +70,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.2.7
+ * Added new features of highlighted section beside slider section
+ 
 Version 2.2.6
  * Fixed some layout design for RTL support
  

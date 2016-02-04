@@ -358,7 +358,7 @@
 	border-bottom: 1px solid #ccc;
 	color: #FFF;
 	display: block;
-	font-family: "Ubuntu",sans-serif;
+	/*font-family: "Ubuntu",sans-serif;*/
 	font-size: 13px;
 	font-weight: bold;
 	padding: 17px 23px;
@@ -393,7 +393,7 @@
 .apmag-themeoption .group-heading{
 	color: #333333;
 	font-family: "Ubuntu",sans-serif;
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: bold;
 	line-height: 17px;
 	margin-bottom: 0;
@@ -575,7 +575,7 @@
 .rtl .apmag-themeoption .heading-arrow {
 	margin-left: 10px;
 }
-.rtl #optionsframework input.checkbox, #optionsframework input.of-radio {
+.rtl #optionsframework input.checkbox, .rtl #optionsframework input.of-radio {
 	margin: 0 0 5px 10px;
 	float: right;
 }

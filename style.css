@@ -4,7 +4,7 @@
     Author:       AccessPress Theme
     Author URI:   http://accesspressthemes.com/
     Description:  AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-    Version:      2.2.6
+    Version:      2.2.7
     License:      GNU General Public License v3 or later
     License URI:  http://www.gnu.org/licenses/gpl-3.0.html
     Text Domain:  accesspress-mag
@@ -962,7 +962,7 @@
     #top-right-navigation .menu li a:hover,
     #top-right-navigation .menu li.current-menu-item > a,
     #top-right-navigation .menu li.current-menu-ancestor > a {
-        color: #fff;
+        color: #c62c1a;
     }
     #top-navigation ul.sub-menu,
     #footer-navigation ul.sub-menu {
@@ -1372,7 +1372,49 @@
     /*--------------------------------------------------------------
             Slider css 
             --------------------------------------------------------------*/
+    .apmag-slider-area{
+        width: 53%;
+        float: left;
+        padding-right: 8px;
+      
+    }
+    .beside-highlight-area{
+        width: 47%;
+        float: right;
+        padding-left: 6px;
+    }
+    .signle-highlight-post{
+        width: 49%;
+        float: left;
+        vertical-align: top;
+        position: relative;
+        margin:0 5px 10px 0;
+    }
+    .signle-highlight-post:nth-child(even){
+        margin-right: 0;
+        float: right;
+    }
+
+     .signle-highlight-post .post-desc-wrapper{
+           position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+                background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.8));
+    }
     
+    .post-desc-wrapper .post-title{
+          font-size: 16px;
+    margin-bottom: 5px;
+    color: #fff;
+      }
+      .post-desc-wrapper .post-title a{
+            color: #FFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
     .slider-wrapper {
         margin-bottom: 55px;
     }
@@ -1460,7 +1502,6 @@
     }
     .big_slide {
         float: left;
-        width: 765px;
         position: relative;
         margin-right: 3px;
     }
@@ -1477,15 +1518,15 @@
         width: 100%;
     }
     .big-cat-box {
-        background: none repeat scroll 0 0 #3d3d3d;
-        color: #ffffff;
-        padding:10px;
-        position: absolute;
-        right: 44px;
-        text-align: center;
-        top: 0;
-        width: 150px;
-        z-index: 99;
+           background: none repeat scroll 0 0 rgba(61, 61, 61, 0.79);
+    color: #FFF;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 150px;
+    z-index: 99;
     }
     .big-cat-box span {
         display: inline-block;
@@ -1532,8 +1573,13 @@
         color: #ffffff;
         left: 0;
         position: absolute;
-        width: 92%;
+        width: 100%;
+        padding: 7px 5px;
         z-index: 99;
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.8));
     }
     .big-cat-box i {
         margin-right: 0;
@@ -1581,12 +1627,12 @@
         position: relative;
     }
     .mag-slider-caption .slide-title {
-        background: none repeat scroll 0 0 rgba(250, 53, 34, 0.5);
+       
         color: #ffffff;
         font-family: "Oswald",sans-serif;
         font-size: 24px;
         font-weight: 300;
-        line-height: 22px;
+        line-height: 31px;
         margin: 0 0 0;
         padding: 8px 10px;
         text-transform: uppercase;
@@ -1739,9 +1785,13 @@
     .latest-single-post a:hover{
         color: #DC3522;
     }
+    .beside-highlight-area .block-poston a, 
+    .beside-highlight-area .block-poston span{
+        color: #fff;
+    }
     .block-poston a, 
     .block-poston span {
-        color: #cccccc;
+        color: #3A3737;
         font-size: 14px;
         font-style: normal;
     }
@@ -2182,6 +2232,9 @@ Galleries
     margin: 0 0 0 10px;
     padding: 0 0 0 10px;
     border-left: 1px solid #ffffff;
+}
+#footer-navigation ul li a:hover{
+    color: #c62c1a;
 }
 #footer-navigation ul li:first-child a{
     border: none;

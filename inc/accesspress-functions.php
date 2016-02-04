@@ -90,7 +90,7 @@ endif;
 /**
  * Homepage Slider settings 
  */
-if ( ! function_exists( 'accesspress_mag_slider_cb' ) ) : 
+if ( ! function_exists( 'accesspress_mag_slider_cb' ) ) :
 function accesspress_mag_slider_cb(){
         $slider_posts_option = of_get_option( 'slider_post_option', ' ' );
         $slider_category = of_get_option( 'homepage_slider_category' );
@@ -125,7 +125,7 @@ function accesspress_mag_slider_cb(){
         if( $slider_query->have_posts() ) {
             echo '<div id="homeslider">';
             while( $slider_query->have_posts() ) {
-                $slide_counter++;                                                            
+                $slide_counter++;
                 $slider_query->the_post();
                 $post_id = get_the_ID();
                 $post_image_id = get_post_thumbnail_id();
@@ -207,18 +207,15 @@ if ( ! function_exists( 'accesspress_mag_slider_mobile_cb' ) ) :
             $slider_args['category_name'] = $slider_category;
         }
         $slider_query = new WP_Query( $slider_args );
-        $slide_counter = 0; 
         if( $slider_query->have_posts() )
         {
             echo '<div id="homeslider-mobile">';
             while( $slider_query->have_posts() )
             {
-                $slide_counter++;                                                            
                 $slider_query->the_post();
                 $post_id = get_the_ID();
                 $post_image_id = get_post_thumbnail_id();
                 $post_big_image_path = wp_get_attachment_image_src( $post_image_id, 'accesspress-mag-slider-big-thumb', true );
-                $post_small_image_path = wp_get_attachment_image_src( $post_image_id, 'accesspress-mag-slider-small-thumb', true );
                 $post_image_alt = get_post_meta( $post_image_id, '_wp_attachment_image_alt', true );
             ?>                        
                     <div class="slider">
@@ -243,6 +240,59 @@ if ( ! function_exists( 'accesspress_mag_slider_mobile_cb' ) ) :
     }
 endif ;
 add_action( 'accesspress_mag_slider_mobile', 'accesspress_mag_slider_mobile_cb', 10 );
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/**
+ * Homepage Slider with highlight section
+ */
+if ( ! function_exists( 'accesspress_mag_slider_highlight_cb' ) ) : 
+    function accesspress_mag_slider_highlight_cb() {
+?>
+        <div class="slider-highlight-section">
+            <div class="apmag-slider-area">
+                <?php do_action( 'accesspress_mag_slider_mobile' ); ?>
+            </div><!-- .apmag-slider-area -->
+            <div class="beside-highlight-area">
+                <?php 
+                    $highlight_category = of_get_option( 'slider_highlight_category' );
+                    $highlight_args = array(
+                                'post_type' => 'post',
+                                'post_status' => 'publish',
+                                'posts_per_page' => 4,
+                                'order' => 'DESC'
+                            );
+                    if(  !empty( $highlight_category ) ){
+                        $highlight_args['category_name'] = $highlight_category;
+                    }
+                    $highlight_query = new WP_Query( $highlight_args );
+                    if( $highlight_query->have_posts() ) {
+                        echo '<div class="highlighted_posts_area">';
+                        while ( $highlight_query->have_posts() ) {
+                            $highlight_query->the_post();
+                            $post_image_id = get_post_thumbnail_id();
+                            $post_image_path = wp_get_attachment_image_src( $post_image_id, 'accesspress-mag-singlepost-style1', true );
+                            $post_image_alt = get_post_meta( $post_image_id, '_wp_attachment_image_alt', true );
+                ?>
+                            <div class="signle-highlight-post">
+                                <figure class="highlighted-post-image">
+                                    <a href="<?php the_permalink();?>" title="<?php the_title();?>"><img src="<?php echo esc_url( $post_image_path[0] );?>" alt="<?php echo esc_attr( $post_image_alt );?>" /></a>
+                                </figure>
+                                <div class="post-desc-wrapper">
+                                    <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+                                    <div class="block-poston"><?php do_action('accesspress_mag_home_posted_on');?></div>
+                                </div>
+                            </div><!--. signle-highlight-post -->
+                <?php
+
+                        }
+                        echo '</div>';
+                    }
+                ?>
+            </div><!-- .beside-highlight-area -->
+        </div><!-- .slider-highlight-section -->
+<?php
+    }
+endif;
+add_action( 'accesspress_mag_slider_highlight', 'accesspress_mag_slider_highlight_cb', 10 );
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
 /**
@@ -267,15 +317,17 @@ function accesspress_mag_function_script(){
         /*--------------For Home page slider-------------------*/
         
             $("#homeslider").bxSlider({
+                mode: 'horizontal',
                 controls: <?php echo esc_attr( $slider_controls ); ?>,
                 pager: <?php echo esc_attr( $slider_pager ); ?>,
                 pause: <?php echo intval( $slider_pause ); ?>,
-                speed: 1000,
+                speed: 1500,
                 auto: <?php echo esc_attr( $slider_auto_transaction ); ?>
-                                        
+                                      
             });
             
             $("#homeslider-mobile").bxSlider({
+                mode: 'horizontal',
                 controls: <?php echo esc_attr( $slider_controls ); ?>,
                 pager: <?php echo esc_attr( $slider_pager ); ?>,
                 pause: <?php echo intval( $slider_pause ); ?>,

@@ -14,9 +14,7 @@
     .site-branding {
         width: 30%;
     }
-    .big_slide {
-        width: 58%;
-    }
+  
     .big_slide:after,
     .small_slide:after {
         width: 100%;
@@ -25,9 +23,7 @@
         float: right;
         width: 41.5%;
     }
-    .mag-slider-caption {
-        width: 90%;
-    }
+   
     .slide-image > img {
         width: 100%;
     }
@@ -61,6 +57,9 @@
     .sidebar-top-ad,
     .homepage-middle-ad, .article-ad-section{
         width: 100%;
+    }
+    .signle-highlight-post{
+        width: 47%;
     }
 }
 /* Portrait tablet to landscape and desktop */
@@ -284,6 +283,24 @@
     #site-navigation {
         position: relative !important;
     }
+    .apmag-slider-area{
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 0;
+    }
+    .beside-highlight-area{
+        width: 100%;
+        padding: 0;
+    }
+    .signle-highlight-post{
+        width: 49%;
+        margin:2px 1px;
+        float: none;
+        display: inline-block;
+    }
+    .signle-highlight-post img{
+        width: 100%;
+    }
 }
 /* Landscape phones and down */
 @media (max-width: 579px) {
@@ -429,6 +446,7 @@
         width: auto;
         float: none;
     }
+   
 }
 
 
@@ -441,5 +459,11 @@
     .ak-search .search-form .search-submit{
         width: 20%;
     }
-
+    .apmag-slider-area{
+        margin-bottom: 10px;
+    }
+ .signle-highlight-post{
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
 }

@@ -63,6 +63,12 @@ function optionsframework_options() {
         'no-sidebar'=>$imagepath.'no-sidebar.png',
         );
 
+    // Homepage Slider Layouts
+    $homepage_slider_layout = array(
+        'slider_default' => $imagepath.'slider-default.jpg',
+        'slider_highlight' => $imagepath.'slider-highlight.jpg'
+    );
+
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_template_directory_uri() . '/images/';
     
@@ -402,24 +408,40 @@ function optionsframework_options() {
             'type' => 'switch'
             );
     $options[] = array(
-            'name' => __( 'Select Slide`s Posts', 'accesspress-mag' ),
+            'name' => __( 'Slider Layouts', 'accesspress-mag' ),
+            'desc' => __( "Choose your slider layout as you like", 'accesspress-mag' ),
+            'id' => 'slider_layout',
+            'class'=>'slider_layout_image',
+            'std' => 'slider_default',
+            'type' => 'images',
+            'options' => $homepage_slider_layout
+            );
+    $options[] = array(
+            'name' => __( 'Slider Posts from', 'accesspress-mag' ),
             'desc' => __( 'Choose option to slide posts in slider', 'accesspress-mag' ),
             'id' => 'slider_post_option',            
             'options' => array(
-                    ' ' => __( 'Show Latest Posts', 'accesspress-mag' ),
-                    'cat' => __( 'Show posts from a category', 'accesspress-mag' ),
+                    ' ' => __( 'Latest Posts', 'accesspress-mag' ),
+                    'cat' => __( 'Category Posts', 'accesspress-mag' ),
                     ),
             'type' => 'radio',
             'class' => 'slider_type',
             'std' => ' ' 
             );             
     $options[] = array(
-            'name' => __( 'Select Category', 'accesspress-mag' ),
+            'name' => __( 'Category for Slider', 'accesspress-mag' ),
             'desc' => __( 'Select a category for homepage slider', 'accesspress-mag' ),    
             'id' => 'homepage_slider_category',
             'type' => 'select',
             'options' => $options_categories
-            );   
+            );
+    $options[] = array(
+            'name' => __( 'Category for Highlight Section', 'accesspress-mag' ),
+            'desc' => __( 'Select a category for highlight section beside slider', 'accesspress-mag' ),    
+            'id' => 'slider_highlight_category',
+            'type' => 'select',
+            'options' => $options_categories
+            );
     $options[] = array(
             'name' => __( 'Show Pager', 'accesspress-mag' ),                
             'desc' => __( 'Show or hide the slider pager', 'accesspress-mag' ),
