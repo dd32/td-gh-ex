@@ -4,7 +4,7 @@ Theme Name: Sneak Lite
 Description: Sneak Lite is a clean, minimal and responsive Sueva child theme, based on Bootstrap framework, with a new menu and buttons style and a different layout for the elements like sidebar and with a new fonts.
 Author: ThemeinProgress.
 Author URI: https://www.themeinprogress.com
-Version: 1.1.1
+Version: 2.0.0
 Template: suevafree
 Tags: gray, light, black, orange, blue, white, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
 License: GNU General Public License v3 or later
@@ -19,47 +19,56 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
    =============================================== */
 
 ::selection {
-	background: #48c2ae;
+	background: #ff6644;
 	color:#fff; 
 }
 
 ::-moz-selection {
-	background: #48c2ae;
+	background: #ff6644;
 	color:#fff; 
 }
 
-a:hover {
+a:hover ,
+a:active ,
+a:focus {
 	text-decoration:none;
 	border-bottom:none;
+	outline:none;
 }
 
 a:hover,
 #footer a:hover {
-	color:#48c2ae;
+	color:#ff6644;
 }
 
-a.button,
+.button,
+.wpcf7-form input[type=submit] ,
+.comment-form input[type=submit] ,
 .contact-form input[type=submit] {
 	background-color:#fff;
-	color:#48c2ae;
-	border:solid 1px #48c2ae;
+	color:#ff6644;
+	border:solid 1px #ff6644;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
 	font-size:14px;
 	text-transform:none;
-	width:120px;
-	padding:14px;
-	font-weight:normal
+	font-weight:normal;
+	min-width:120px;
+	padding:12px 14px;
 }
 
-a.button:hover,
+.button:hover,
+.wpcf7-form input[type=submit]:hover ,
+.comment-form input[type=submit]:hover ,
 .contact-form input[type=submit]:hover {
-	background-color:#3aa694;
+	background-color:#d14a2b;
 	color:#fff;
-	border:solid 1px #3aa694;
+	border:solid 1px #d14a2b;
 }
 
+.wpcf7-form input[type=submit] ,
+.comment-form input[type=submit] ,
 .contact-form input[type=submit] {
 	margin:35px 0 -20px 0;
 }
@@ -77,7 +86,7 @@ td,
 th,
 .textwidget,
 a.post-edit-link,
-a.button,
+.button,
 #footer a,
 #footer p,
 #footer li,
@@ -102,7 +111,7 @@ nav#mainmenu ul ul li a,
 h3#reply-title small, .logged-in-as,
 .contact-form input[type=text], .contact-form textarea,
 .contact-form input[type=submit],
-article blockquote p,
+.post-article blockquote p,
 .entry-tags,
 .entry-info,
 #footer ul.widget-category li,
@@ -139,12 +148,13 @@ h3#reply-title, h3.comments {
 	font-family:'Fjalla One',Verdana, Geneva, sans-serif; 
 }
 
+
 /* ===============================================
    HEADER
    =============================================== */
 
 #logo a:hover { 
-	color:#48c2ae;
+	color:#ff6644;
 }
 
 /* ===============================================
@@ -153,6 +163,10 @@ h3#reply-title, h3.comments {
 
 nav#mainmenu {
 	margin:0 0 25px 0;
+}
+
+nav#mainmenu.menubar {
+	padding-top:20px;
 }
 
 nav#mainmenu ul li {
@@ -176,7 +190,7 @@ nav#mainmenu ul li.current_page_item > a,
 nav#mainmenu ul li.current-menu-parent > a, 
 nav#mainmenu ul li.current_page_ancestor > a, 
 nav#mainmenu ul li.current-menu-ancestor > a { 
-	background-color:#48c2ae;
+	background-color:#ff6644;
 	color:#fff !important;
 	margin-bottom:0;
 	text-decoration:none;
@@ -193,7 +207,6 @@ nav#mainmenu ul ul {
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border:none !important;
-	outline:solid 1px #ddd;
 }
 
 nav#mainmenu ul ul li {
@@ -218,7 +231,7 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
 	outline:none !important;
 	margin:0;
 	text-decoration:none;
-	background-color:#48c2ae;
+	background-color:#ff6644;
 }
 
 
@@ -235,37 +248,57 @@ nav#mainmenu ul ul li ul {
    SIDEBAR
    =============================================== */
 
-#sidebar .tagcloud a, 
+#sidebar.sneak_sidebar .post-article {
+	margin-bottom:25px;
+}
+
+#sidebar.sneak_sidebar .post-article:last-of-type{
+	margin-bottom:0;
+}
+
+#sidebar.sneak_sidebar .sidebar-box {
+	padding:0;
+	background:none;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+#sidebar.sneak_sidebar .post-article {
+	padding:0 20px;
+	background:#fff;
+}
+
+#sidebar.sneak_sidebar .tagcloud a, 
 #footer .tagcloud a {
-	background-color:#48c2ae;
+	background-color:#ff6644;
 }
 
-#sidebar .tagcloud a:hover, 
+#sidebar.sneak_sidebar .tagcloud a:hover, 
 #footer .tagcloud a:hover { 
-	background-color: #3aa694;
-}
-
-#sidebar .widget-box {
-	padding:20px;
+	background-color: #d14a2b;
 }
 
 /* ===============================================
    CONTENTS
    =============================================== */
 
-article blockquote {
-	border-color:#48c2ae;
+.post-article blockquote {
+	border-color:#ff6644;
 }
 
-.pin-article .title a:hover {
-	color:#48c2ae;
+.post-container .title a:hover {
+	color:#ff6644;
+	text-decoration:none;
+	border:none;
+	outline:none;
 }
 
 .pin-container:after {
 	display:none;
 }
 
-.pin-article {
+.post-container .post-article {
 	border-radius: 0;
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
@@ -315,10 +348,6 @@ h3#reply-title, h3.comments {
 	margin-bottom:55px;
 }
 
-.categories a {
-	color:#333;
-}
-
 .wp-caption {
 	max-width: 100% !important;
 }
@@ -329,12 +358,7 @@ h3#reply-title, h3.comments {
    
 .wp-pagenavi a:hover , 
 .wp-pagenavi span.current {
-	background-color:#48c2ae;
-}
-
-
-.wp-pagenavi {
-	margin:25px 0;
+	background-color:#ff6644;
 }
 
 .wp-pagenavi a, 
@@ -357,7 +381,7 @@ h3#reply-title, h3.comments {
 	border:none;
 }
 
-@media screen and (min-width : 0px) and (max-width : 768px)  {	
+@media screen and (min-width : 0px) and (max-width : 992px)  {	
 	
 	.line:before {
 		background:none;

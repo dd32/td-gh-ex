@@ -1,30 +1,113 @@
 <?php
 
+/*-----------------------------------------------------------------------------------*/
+/* SIDEBAR OVERRIDE */
+/*-----------------------------------------------------------------------------------*/  
+
+if (!function_exists('sneaklite_actions_override')) {
+
+	function sneaklite_actions_override() {
+		
+		remove_action( 'suevafree_side_sidebar', 'suevafree_side_sidebar_function', 10, 2 );
+
+	}
+	
+	add_action('init','sneaklite_actions_override');
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* SIDEBAR TEMPLATE */
+/*-----------------------------------------------------------------------------------*/  
+
+if (!function_exists('sneaklite_side_sidebar_function')) {
+
+	function sneaklite_side_sidebar_function($name) { ?>
+    
+        <div class="col-md-4">
+                    
+            <div class="row">
+                
+                <div id="sidebar" class="sneak_sidebar col-md-12">
+                            
+                    <div class="sidebar-box">
+    
+                        <?php if ( is_active_sidebar($name)) { 
+                        
+                            dynamic_sidebar($name);
+                        
+                        } else { 
+                            
+							the_widget( 'WP_Widget_Archives','',
+							array('before_widget' => '<div class="post-article"><div class="widget-box">',
+								  'after_widget'  => '</div></div>',
+								  'before_title'  => '<h4 class="title">',
+								  'after_title'   => '</h4>'
+							));
+			
+							the_widget( 'WP_Widget_Calendar',
+							array("title"=> __('Calendar','wip')),
+							array('before_widget' => '<div class="post-article"><div class="widget-box">',
+								  'after_widget'  => '</div></div>',
+								  'before_title'  => '<h4 class="title">',
+								  'after_title'   => '</h4>'
+							));
+			
+							the_widget( 'WP_Widget_Categories','',
+							array('before_widget' => '<div class="post-article"><div class="widget-box">',
+								  'after_widget'  => '</div></div>',
+								  'before_title'  => '<h4 class="title">',
+								  'after_title'   => '</h4>'
+							));
+                        
+                         } ?>
+    
+                    </div>
+                            
+                </div>
+                
+            </div>
+                        
+        </div>
+        
+<?php
+
+	}
+
+	add_action( 'suevafree_side_sidebar', 'sneaklite_side_sidebar_function', 10, 2 );
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* WIDGETS */
+/*-----------------------------------------------------------------------------------*/  
+
 function sneaklite_widgets_init() {
 
 	unregister_sidebar( 'sidebar-area' );
 	unregister_sidebar( 'home_sidebar_area' );
 	unregister_sidebar( 'category-sidebar-area' );
 	unregister_sidebar( 'bottom-sidebar-area' );
+	unregister_sidebar( 'search-sidebar-area' );
 
 	register_sidebar(array(
 	
-		'name' => 'Sidebar',
+		'name' => __('Sidebar','suevafree'),
 		'id'   => 'sidebar-area',
-		'description'   => 'This sidebar will be shown after the contents.',
-		'before_widget' => '<div class="pin-article span4"><div class="widget-box">',
+		'description'   => __('This sidebar will be shown at the side of posts and pages.','suevafree'),
+		'before_widget' => '<div class="post-article"><div class="widget-box">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<h4 class="title">',
 		'after_title'   => '</h4>'
 	
 	));
-	
+
 	register_sidebar(array(
-	
-		'name' => 'Home Sidebar',
+
+		'name' => __('Home Sidebar','suevafree'),
 		'id'   => 'home_sidebar_area',
-		'description'   => __( "This sidebar will be shown for the homepage","wip"),
-		'before_widget' => '<div class="pin-article span4"><div class="widget-box">',
+		'description'   => __( "This sidebar will be shown at the side of the homepage","suevafree"),
+		'before_widget' => '<div class="post-article"><div class="widget-box">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<h4 class="title">',
 		'after_title'   => '</h4>'
@@ -32,11 +115,11 @@ function sneaklite_widgets_init() {
 	));
 
 	register_sidebar(array(
-	
-		'name' => 'Category Sidebar',
+
+		'name' => __('Category Sidebar','suevafree'),
 		'id'   => 'category-sidebar-area',
-		'description'   => 'This sidebar will be shown after the content.',
-		'before_widget' => '<div class="pin-article span4"><div class="widget-box">',
+		'description'   => __('This sidebar will be shown at the side of category page.','suevafree'),
+		'before_widget' => '<div class="post-article"><div class="widget-box">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<h4 class="title">',
 		'after_title'   => '</h4>'
@@ -44,11 +127,23 @@ function sneaklite_widgets_init() {
 	));
 
 	register_sidebar(array(
+
+		'name' => __('Search Sidebar','suevafree'),
+		'id'   => 'search-sidebar-area',
+		'description'   => __('This sidebar will be shown at the side of search page.','suevafree'),
+		'before_widget' => '<div class="post-article"><div class="widget-box">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<h4 class="title">',
+		'after_title'   => '</h4>'
 	
-		'name' => 'Bottom Sidebar',
+	));
+	
+	register_sidebar(array(
+
+		'name' => __('Bottom Sidebar','suevafree'),
 		'id'   => 'bottom-sidebar-area',
-		'description'   => 'This sidebar will be shown after the content.',
-		'before_widget' => '<div class="span3"><div class="widget-box">',
+		'description'   => __('This sidebar will be shown after the content.','suevafree'),
+		'before_widget' => '<div class="col-md-3"><div class="widget-box">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<h4 class="title">',
 		'after_title'   => '</h4>'
@@ -69,9 +164,9 @@ if (!function_exists('sneaklite_scripts_styles')) {
 
 		wp_deregister_style ( 'suevafree-' . get_theme_mod('suevafree_skin') );
 
-		if ( ( get_theme_mod('suevafree_skin') ) && ( get_theme_mod('suevafree_skin') <> "cyan" ) ):
+		if ( get_theme_mod('suevafree_skin') ):
 		
-			wp_enqueue_style( 'sneaklite- ' . get_theme_mod('suevafree_skin') , get_stylesheet_directory_uri() . '/inc/skins/' . get_theme_mod('suevafree_skin') . '.css' ); 
+			wp_enqueue_style( 'sneaklite- ' . get_theme_mod('suevafree_skin') , get_stylesheet_directory_uri() . '/assets/skins/' . get_theme_mod('suevafree_skin') . '.css' ); 
 		
 		endif;
 	

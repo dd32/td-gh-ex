@@ -1,10 +1,16 @@
 .::-moz-selection {
-    background-color: #f97c8a;
+    background-color: #ff6644;
 }
 ::selection {
-    background-color: #f97c8a;
+    background-color: #ff6644;
 }
 
+.button {
+	border-color:#ff6644;
+}
+
+#back-to-top i.open, 
+#back-to-top i:hover,
 nav#mainmenu ul li a:hover,
 nav#mainmenu li:hover > a,
 nav#mainmenu ul li.current-menu-item > a, 
@@ -12,10 +18,9 @@ nav#mainmenu ul li.current_page_item > a,
 nav#mainmenu ul li.current-menu-parent > a, 
 nav#mainmenu ul li.current_page_ancestor > a, 
 nav#mainmenu ul li.current-menu-ancestor > a, 
-pin-article .link:hover,
-.pin-article .quote:hover,
-.pin-article .link a:hover,
-.button,
+.post-container .link:hover,
+.post-container .quote:hover,
+.post-container .link a:hover,
 .wp-pagenavi a:hover,
 .wp-pagenavi span.current,
 .wip-pagination span,
@@ -24,7 +29,7 @@ pin-article .link:hover,
 .skills .views:hover,
 .filter li:hover,
 .filter li.active {
-    background-color: #f97c8a;
+    background-color: #ff6644;
 }
 
 .copyright a,
@@ -35,21 +40,23 @@ nav#mainmenu ul li.current_page_item > a,
 nav#mainmenu ul li.current-menu-parent > a,
 nav#mainmenu ul li.current_page_ancestor > a,
 nav#mainmenu ul li.current-menu-ancestor > a ,
-a.button,
+.button,
+.wpcf7-form input[type=submit],
+.comment-form input[type=submit],
 .contact-form input[type=submit] {
-    color: #f97c8a;
+    color: #ff6644;
 }
 
 nav#mainmenu ul ul {
-    border-top-color: #f97c8a;
+    border-top-color: #ff6644;
 }
 
 nav#mainmenu ul ul:before {
-    border-bottom-color: #f97c8a;
+    border-bottom-color: #ff6644;
 }
 
 nav#mainmenu ul ul li ul {
-    border-top-color: #f97c8a;
+    border-top-color: #ff6644;
 }
 
 
@@ -63,7 +70,7 @@ nav#mainmenu ul ul li.current_page_ancestor > a,
 nav#mainmenu ul ul li.current-menu-ancestor > a,
 #sidebar .tagcloud a,
 #footer .tagcloud a {
-    background-color: #f97c8a;
+    background-color: #ff6644;
 }
 
 nav#mainmenu ul ul li a:hover,
@@ -72,39 +79,47 @@ nav#mainmenu ul ul li.current_page_item > a,
 nav#mainmenu ul ul li.current_page_ancestor > a,
 nav#mainmenu ul ul li.current_page_ancestor > a,
 nav#mainmenu ul ul li.current-menu-ancestor > a {
-    border-top-color: #f97c8a;
+    border-top-color: #ff6644;
 }
 
 .button:hover,
 #sidebar .tagcloud a:hover,
 #footer .tagcloud a:hover,
-a.button:hover,
+.button:hover,
+.wpcf7-form input[type=submit]:hover,
+.comment-form input[type=submit]:hover,
 .contact-form input[type=submit]:hover {
-    background-color: #f07381;
+    background-color: #d14a2b;
 }
 
-a.button:hover,
+.button:hover,
+.wpcf7-form input[type=submit]:hover,
+.comment-form input[type=submit]:hover,
 .contact-form input[type=submit]:hover {
-    border-color: #f07381;
+    border-color: #d14a2b;
 }
 
 a:hover,
 #footer .copyright a:hover,
-.pin-article .title a:hover,
+.post-container .title a:hover,
 #footer a:hover,
 #footer ul.widget-category li:hover,
 #footer ul.widget-category li a:hover,
-.pin-article .title a:hover,
+.post-container .title a:hover,
 #logo a:hover {
-    color: #f97c8a;
+    color: #ff6644;
 }
 
+#back-to-top i.open, 
+#back-to-top i:hover,
 #footer,
 #footer .widget,
-article blockquote,
-a.button,
+.post-article blockquote,
+.button,
+.wpcf7-form input[type=submit],
+.comment-form input[type=submit],
 .contact-form input[type=submit] {
-    border-color: #f97c8a;
+    border-color: #ff6644;
 }
 
 #footer .title,

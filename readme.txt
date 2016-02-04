@@ -3,8 +3,11 @@ Sneak Lite Wordpress Theme
 
 Sneak Lite is a clean, minimal and responsive Sueva child theme, based on Bootstrap framework, with a new menu and buttons style and a different layout for the elements like sidebar and with a new fonts.
 
-Created by ThemeinProgress, http://www.themeinprogress.com 
+Created by ThemeinProgress, http://www.themeinprogress.com
 
+Important: This version of Sneak Lite (2.0.0) needs the same version of the parent theme Suevafree (2.0.0)
+
+https://wordpress.org/themes/download/suevafree.2.0.0.zip
 
 License
 -------
