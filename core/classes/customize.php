@@ -17,14 +17,14 @@ class suevafree_customize {
 
 		wp_enqueue_style ( 
 			'suevafree_panel', 
-			get_template_directory_uri() . '/core/admin/inc/css/customize.css', 
+			get_template_directory_uri() . '/core/admin/assets/css/customize.css', 
 			array(), 
 			''
 		);
 
 		wp_enqueue_script( 
 			  'customizer-preview',
-			  get_template_directory_uri().'/core/admin/inc/js/customizer-preview.js',
+			  get_template_directory_uri().'/core/admin/assets/js/customizer-preview.js',
 			  array( 'jquery' ),
 			  '1.0.0', 
 			  true
@@ -313,7 +313,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
                 <ul>
                 
-                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/theme/suevafree' ); ?>" title="<?php _e('Open a new ticket','suevafree');?>" target="_blank"><?php _e('Open a new ticket','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/theme/'.get_stylesheet() ); ?>" title="<?php _e('Open a new ticket','suevafree');?>" target="_blank"><?php _e('Open a new ticket','suevafree');?></a></li>
                     <li><a class="button" href="<?php echo esc_url( 'mailto:support@wpinprogress.com' ); ?>" title="<?php _e('Send a reminder','suevafree');?>" target="_blank"><?php _e('Send a reminder','suevafree');?></a></li>
                 
                 </ul>
@@ -323,7 +323,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
                 <ul>
                 
-                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/suevafree#postform' ); ?>" title="<?php _e('Rate this Theme','suevafree');?>" target="_blank"><?php _e('Rate this Theme','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php _e('Rate this Theme','suevafree');?>" target="_blank"><?php _e('Rate this Theme','suevafree');?></a></li>
                     <li><a class="button" href="<?php echo esc_url( 'https://www.facebook.com/WpInProgress' ); ?>" title="<?php _e('Like on Facebook','suevafree');?>" target="_blank"><?php _e('Like on Facebook','suevafree');?></a></li>
                     <li><a class="button" href="<?php echo esc_url( 'http://eepurl.com/SknoL' ); ?>" title="<?php _e('Subscribe our newsletter','suevafree');?>" target="_blank"><?php _e('Subscribe our newsletter','suevafree');?></a></li>
                 

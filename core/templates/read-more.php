@@ -14,17 +14,21 @@ if (!function_exists('suevafree_excerpt_function')) {
 	function suevafree_excerpt_function() {
 		
 		global $post,$more;
-		
+
 		$more = 0;
 	
 		if ($pos=strpos($post->post_content, '<!--more-->')): 
+		
 			$content = the_content();
+		
 		else:
+		
 			$content = the_excerpt();
+		
 		endif;
 		
-		echo '<p>' . $content . ' <a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","suevafree") . '</a> </p>';
-	
+		echo $content. '<a class="read-more" href="'.get_permalink($post->ID).'" title="More"> <span class="button">'.__('Read More','suevafree').'</span> </a>';
+
 	}
 	
 	add_action( 'suevafree_excerpt','suevafree_excerpt_function', 10, 2 );

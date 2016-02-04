@@ -1,48 +1,9 @@
-<?php if ( suevafree_template('span') == "span8" ) : ?>
-        
-	<section id="sidebar" class="pin-article span4">
-    
-    	<div class="sidebar-box">
-            
-			<?php if ( is_active_sidebar('sidebar-area')) { 
-            
-                dynamic_sidebar('sidebar-area');
-            
-            } else { 
-                
-                the_widget( 'WP_Widget_Calendar',
-				array("title"=> __('Calendar','suevafree')),
-				array('before_widget' => '<div class="widget-box">',
-					  'after_widget'  => '</div>',
-					  'before_title'  => '<h4 class="title">',
-					  'after_title'   => '</h4>'
-				)
-				
-				);
+<?php 
 
-                the_widget( 'WP_Widget_Archives','',
-				array('before_widget' => '<div class="widget-box">',
-					  'after_widget'  => '</div>',
-					  'before_title'  => '<h4 class="title">',
-					  'after_title'   => '</h4>'
-				)
-
-				);
-
-                the_widget( 'WP_Widget_Categories','',
-				array('before_widget' => '<div class="widget-box">',
-					  'after_widget'  => '</div>',
-					  'before_title'  => '<h4 class="title">',
-					  'after_title'   => '</h4>'
-				)
-
-				);
-
-            
-             } ?>
-
-		</div>
-
-	</section>
-    
-<?php endif; ?>
+	if ( suevafree_template('span') == "col-md-8" ) : 
+		
+		do_action('suevafree_side_sidebar', 'sidebar-area');
+			
+	endif;
+		
+?>

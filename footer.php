@@ -16,7 +16,7 @@
     
              <div class="row copyright" >
                
-                <div class="span6" >
+                <div class="col-md-6" >
                 
                     <p>
                         <?php if (suevafree_setting('suevafree_copyright_text')): ?>
@@ -31,7 +31,7 @@
                     
                 </div>
                 
-                <div class="span6" >
+                <div class="col-md-6" >
                 
                     <!-- start social -->
                     

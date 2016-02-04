@@ -1,8 +1,9 @@
-.pin-article .link:hover,
+.post-container .link:hover,
+.wpcf7-form input[type=submit] ,
 .contact-form input[type=submit],
 .comment-form input[type=submit],
-.pin-article .quote:hover,
-.pin-article .link a:hover,
+.post-container .quote:hover,
+.post-container .link a:hover,
 .button,
 .wp-pagenavi a:hover,
 .wp-pagenavi span.current,
@@ -12,7 +13,7 @@
 .skills .views:hover,
 .filter li:hover,
 .filter li.active {
-    background-color: #ff6644;
+    background-color: #b93333;
 }
 nav#mainmenu ul li a:hover,
 nav#mainmenu li:hover > a,
@@ -21,22 +22,22 @@ nav#mainmenu ul li.current_page_item > a,
 nav#mainmenu ul li.current-menu-parent > a,
 nav#mainmenu ul li.current_page_ancestor > a,
 nav#mainmenu ul li.current-menu-ancestor > a {
-    color: #ff6644;
+    color: #b93333;
 }
 ::-moz-selection {
-    background-color: #ff6644;
+    background-color: #b93333;
 }
 ::selection {
-    background-color: #ff6644;
+    background-color: #b93333;
 }
 nav#mainmenu ul ul {
-    border-top-color: #ff6644;
+    border-top-color: #b93333;
 }
 nav#mainmenu ul ul:before {
-    border-bottom-color: #ff6644;
+    border-bottom-color: #b93333;
 }
 nav#mainmenu ul ul li ul {
-    border-top-color: #ff6644;
+    border-top-color: #b93333;
 }
 nav#mainmenu ul ul li a:hover,
 nav#mainmenu ul ul li.current-menu-item > a,
@@ -46,7 +47,7 @@ nav#mainmenu ul ul li.current_page_ancestor > a,
 nav#mainmenu ul ul li.current-menu-ancestor > a,
 #sidebar .tagcloud a,
 #footer .tagcloud a {
-    background: #ff6644;
+    background: #b93333;
 }
 nav#mainmenu ul ul li a:hover,
 nav#mainmenu ul ul li.current-menu-item > a,
@@ -54,8 +55,9 @@ nav#mainmenu ul ul li.current_page_item > a,
 nav#mainmenu ul ul li.current_page_ancestor > a,
 nav#mainmenu ul ul li.current_page_ancestor > a,
 nav#mainmenu ul ul li.current-menu-ancestor > a {
-    border-top-color: #ff6644;
+    border-top-color: #b93333;
 }
+.wpcf7-form input[type=submit]:hover ,
 .contact-form input[type=submit]:hover,
 .comment-form input[type=submit]:hover,
 .button:hover,
@@ -66,24 +68,24 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
 .flexslider:hover .flex-prev:hover,
 #back-to-top i.open,
 #back-to-top i:hover {
-    background-color: #d14a2b;
+    background-color: #872424;
 }
 #back-to-top i.open,
 #back-to-top i:hover {
-    border-color: #d14a2b;
+    border-color: #872424;
 }
 a:hover,
 #footer a:hover,
 #footer ul.widget-category li:hover,
 #footer ul.widget-category li a:hover,
-.pin-article .title a:hover,
+.post-container .title a:hover,
 #logo a:hover {
-    color: #d14a2b;
+    color: #872424;
 }
 #footer,
 #footer .widget,
-article blockquote {
-    border-color: #ff6644;
+.post-article blockquote {
+    border-color: #b93333;
 }
 #footer .title,
 #footer p,

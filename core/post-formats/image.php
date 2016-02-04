@@ -12,7 +12,7 @@
 	
 ?>
     
-<article class="article">
+<div class="post-article">
 
 	<?php
 	
@@ -59,4 +59,4 @@
 
 	<?php do_action('suevafree_after_content'); ?>
 
-</article>
+</div>

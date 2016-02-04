@@ -100,6 +100,10 @@ if (!function_exists('suevafree_setting')) {
 		if ( isset($suevafree_setting) ) :
 			
 			return $suevafree_setting;
+			
+		else:
+		
+			return false;
 	
 		endif;
 		
@@ -111,13 +115,17 @@ if (!function_exists('suevafree_setting')) {
 /* Post meta */
 /*-----------------------------------------------------------------------------------*/ 
 
-function suevafree_postmeta($id) {
-
-	global $post;
+if (!function_exists('suevafree_postmeta')) {
 	
-	$val = get_post_meta( $post->ID , $id, TRUE);
-	if(isset($val))
-		return $val;
+	function suevafree_postmeta($id) {
+	
+		global $post;
+		
+		$val = get_post_meta( $post->ID , $id, TRUE);
+		if(isset($val))
+			return $val;
+	
+	}
 
 }
 
@@ -133,17 +141,22 @@ if (!function_exists('suevafree_require')) {
 	
 			if ( ( !suevafree_setting('suevafree_loadsystem') ) || ( suevafree_setting('suevafree_loadsystem') == "mode_a" ) ) {
 		
-				$folder = dirname(dirname(__FILE__)) . $folder ;  
+				$dir = dirname(dirname(__FILE__)) . $folder ;  
 				
-				$files = scandir($folder);  
+				$files = scandir($dir);  
 				  
-				foreach ($files as $key => $name) {  
-				
-					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
-					
-						require_once $folder . $name;
+				foreach ($files as $key => $value) {  
+
+					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
+						
+						if ( !is_dir( $dir . $value) ) { 
+							
+							require_once $dir . $value;
+						
+						} 
 					
 					} 
+
 				}  
 			
 			} else if ( suevafree_setting('suevafree_loadsystem') == "mode_b" ) {
@@ -182,15 +195,20 @@ if (!function_exists('suevafree_enqueue_script')) {
 				
 				$files = scandir($dir);  
 				  
-				foreach ($files as $key => $name) {  
+				foreach ($files as $key => $value) {  
 
-					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
+					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
 						
-						wp_enqueue_script( str_replace('.js','',$name), get_template_directory_uri() . $folder . "/" . $name , array('jquery'), FALSE, TRUE ); 
+						if ( !is_dir( $dir . $value) ) { 
+							
+							wp_enqueue_script( str_replace('.js','',$value), get_template_directory_uri() . $folder . "/" . $value , array('jquery'), FALSE, TRUE ); 
 						
+						} 
+					
 					} 
+
 				}  
-			
+
 			} else if ( suevafree_setting('suevafree_loadsystem') == "mode_b" ) {
 	
 				$dh  = opendir(get_template_directory().$folder);
@@ -229,15 +247,19 @@ if (!function_exists('suevafree_enqueue_style')) {
 				
 				$files = scandir($dir);  
 				  
-				foreach ($files as $key => $name) {  
+				foreach ($files as $key => $value) {  
+
+					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
+						
+						if ( !is_dir( $dir . $value) ) { 
+							
+							wp_enqueue_style( str_replace('.css','',$value), get_template_directory_uri() . $folder . "/" . $value ); 
+						
+						} 
 					
-					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
-						
-						wp_enqueue_style( str_replace('.css','',$name), get_template_directory_uri() . $folder . "/" . $name ); 
-						
 					} 
+
 				}  
-			
 			
 			} else if ( suevafree_setting('suevafree_loadsystem') == "mode_b" ) {
 	
@@ -265,75 +287,76 @@ if (!function_exists('suevafree_enqueue_style')) {
 /* POST CLASS */
 /*-----------------------------------------------------------------------------------*/   
 
-function suevafree_post_class($classes) {
+if (!function_exists('suevafree_post_class')) {
 	
-	if ( is_single() ) :
-
-		$classes[] = 'pin-article ' . suevafree_template('span') . ' ' . suevafree_template('sidebar') ;
-
-	else :
-
-		$classes[] = 'pin-article ' . suevafree_template('span') ;
-
-	endif;
-
+	function suevafree_post_class($classes) {
 		
-	return $classes;
+		$classes[] = 'post-container col-md-12';
+	
+		return $classes;
+		
+	}
+	
+	add_filter('post_class', 'suevafree_post_class');
 	
 }
-
-add_filter('post_class', 'suevafree_post_class');
-
 
 /*-----------------------------------------------------------------------------------*/
 /* Body class */
 /*-----------------------------------------------------------------------------------*/   
 
-function suevafree_body_class($classes) {
-
-	$classes[] = 'custombody';
+if (!function_exists('suevafree_body_class')) {
+	
+	function suevafree_body_class($classes) {
+	
+		$classes[] = 'custombody';
+			
+		return $classes;
 		
-	return $classes;
+	}
+	
+	add_filter('body_class', 'suevafree_body_class');
 	
 }
-
-add_filter('body_class', 'suevafree_body_class');
-
 
 /*-----------------------------------------------------------------------------------*/
 /* Content template */
 /*-----------------------------------------------------------------------------------*/ 
 
-function suevafree_template($id) {
-
-	$template = array ( "full" => "span12" , "left-sidebar" => "span8" , "right-sidebar" => "span8" );
-
-	$span = $template["right-sidebar"];
-	$sidebar =  "right-sidebar";
-
-	if ( suevafree_setting('suevafree_home') && is_home() ){
-		
-		$span = $template[suevafree_setting('suevafree_home')];
-		$sidebar =  suevafree_setting('suevafree_home');
-
-	} else if ( suevafree_setting('suevafree_category_layout') && suevafree_get_archive_title() ) {
-		
-		$span = $template[suevafree_setting('suevafree_category_layout')];
-		$sidebar =  suevafree_setting('suevafree_category_layout');
-
-	} else if ( suevafree_setting('suevafree_search_layout') && is_search() ) {
-		
-		$span = $template[suevafree_setting('suevafree_search_layout')];
-		$sidebar =  suevafree_setting('suevafree_search_layout');
-
-	} else if ( suevafree_postmeta('suevafree_template') && ( is_page() || is_single() ) ){
-
-		$span = $template[suevafree_postmeta('suevafree_template')];
-		$sidebar =  suevafree_postmeta('suevafree_template');
-			
-	}
+if (!function_exists('suevafree_template')) {
 	
-	return ${$id};
+	function suevafree_template($id) {
+	
+		$template = array ( "full" => "col-md-12" , "left-sidebar" => "col-md-8" , "right-sidebar" => "col-md-8" );
+	
+		$span = $template["right-sidebar"];
+		$sidebar =  "right-sidebar";
+	
+		if ( suevafree_setting('suevafree_home') && is_home() ){
+			
+			$span = $template[suevafree_setting('suevafree_home')];
+			$sidebar =  suevafree_setting('suevafree_home');
+	
+		} else if ( suevafree_setting('suevafree_category_layout') && suevafree_get_archive_title() ) {
+			
+			$span = $template[suevafree_setting('suevafree_category_layout')];
+			$sidebar =  suevafree_setting('suevafree_category_layout');
+	
+		} else if ( suevafree_setting('suevafree_search_layout') && is_search() ) {
+			
+			$span = $template[suevafree_setting('suevafree_search_layout')];
+			$sidebar =  suevafree_setting('suevafree_search_layout');
+	
+		} else if ( suevafree_postmeta('suevafree_template') && ( is_page() || is_single() ) ){
+	
+			$span = $template[suevafree_postmeta('suevafree_template')];
+			$sidebar =  suevafree_postmeta('suevafree_template');
+				
+		}
+		
+		return ${$id};
+		
+	}
 	
 }
 
@@ -384,6 +407,35 @@ if ( ! function_exists( 'suevafree_custom_login_logo' ) ) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* LOGIN LOGO URL */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('suevafree_login_logo_url')) {
+
+	function suevafree_login_logo_url() {
+		return home_url();
+	}
+
+	add_filter( 'login_headerurl', 'suevafree_login_logo_url' );
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* LOGIN LOGO TITLE */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('suevafree_login_logo_title')) {
+
+	function suevafree_login_logo_title() {
+		return get_bloginfo('name') . " | " . get_bloginfo('description') ;
+	}
+	
+	add_filter( 'login_headertitle', 'suevafree_login_logo_title' );
+	
+}
+
+
+/*-----------------------------------------------------------------------------------*/
 /* Excerpt */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -408,23 +460,23 @@ if (!function_exists('suevafree_scripts_styles')) {
 
 	function suevafree_scripts_styles() {
 	
-		suevafree_enqueue_style('/inc/css');
+		suevafree_enqueue_style('/assets/css');
 
-		if ( ( get_theme_mod('suevafree_skin') ) && ( get_theme_mod('suevafree_skin') <> "orange" ) ):
+		if ( get_theme_mod('suevafree_skin') ):
 	
-			wp_enqueue_style( 'suevafree-' . get_theme_mod('suevafree_skin') , get_template_directory_uri() . '/inc/skins/' . get_theme_mod('suevafree_skin') . '.css' ); 
+			wp_enqueue_style( 'suevafree-' . get_theme_mod('suevafree_skin') , get_template_directory_uri() . '/assets/skins/' . get_theme_mod('suevafree_skin') . '.css' ); 
 		
 		endif;
 
 		wp_enqueue_style( 'suevafree-google-fonts', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Raleway:400,800,900,700,600,500,300,200,100|Allura&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic' );
+
+		suevafree_enqueue_script('/assets/js');
 
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	
 		wp_enqueue_script( "jquery-ui-core", array('jquery'));
 		wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
 
-		suevafree_enqueue_script('/inc/js');
-		
 	}
 	
 	add_action( 'wp_enqueue_scripts', 'suevafree_scripts_styles', 11 );

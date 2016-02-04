@@ -1,5 +1,14 @@
 SuevaFree Changelog
 
+- Version 2.0.0 - Released: 04.02.2016
+
+-- Important : New Bootstrap framework version (3.3.5).
+-- Important : Each child theme (Like Sneak or Polar Lite ) must be adapted.
+-- Added: Custom container width (from the option panel).
+-- Added: New menu layout (from the option panel).
+-- Added: Contact Form 7 support.
+-- Edit  : Code optimized.
+
 - Version 1.4.3 - Released: 18.01.2016
 
 -- Added : Support section on Customize.

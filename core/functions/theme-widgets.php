@@ -4,9 +4,9 @@ function suevafree_widgets_init() {
 
 	register_sidebar(array(
 	
-		'name' => 'Sidebar',
+		'name' => __('Sidebar','suevafree'),
 		'id'   => 'sidebar-area',
-		'description'   => 'This sidebar will be shown at the side of content.',
+		'description'   => __('This sidebar will be shown at the side of posts and pages.','suevafree'),
 		'before_widget' => '<div id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4 class="title">',
@@ -16,7 +16,7 @@ function suevafree_widgets_init() {
 	
 	register_sidebar(array(
 	
-		'name' => 'Home Sidebar',
+		'name' => __('Home Sidebar','suevafree'),
 		'id'   => 'home_sidebar_area',
 		'description'   => __( "This sidebar will be shown at the side of the homepage","suevafree"),
 		'before_widget' => '<div id="%1$s" class="widget-box %2$s">',
@@ -28,9 +28,9 @@ function suevafree_widgets_init() {
 
 	register_sidebar(array(
 	
-		'name' => 'Category Sidebar',
+		'name' => __('Category Sidebar','suevafree'),
 		'id'   => 'category-sidebar-area',
-		'description'   => 'This sidebar will be shown at the side of the category page.',
+		'description'   => __('This sidebar will be shown at the side of category page.','suevafree'),
 		'before_widget' => '<div id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4 class="title">',
@@ -40,9 +40,9 @@ function suevafree_widgets_init() {
 
 	register_sidebar(array(
 	
-		'name' => 'Search Sidebar',
+		'name' => __('Search Sidebar','suevafree'),
 		'id'   => 'search-sidebar-area',
-		'description'   => 'This sidebar will be shown at the side of the search page.',
+		'description'   => __('This sidebar will be shown at the side of search page.','suevafree'),
 		'before_widget' => '<div id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4 class="title">',
@@ -52,10 +52,10 @@ function suevafree_widgets_init() {
 
 	register_sidebar(array(
 	
-		'name' => 'Bottom Sidebar',
+		'name' => __('Bottom Sidebar','suevafree'),
 		'id'   => 'bottom-sidebar-area',
-		'description'   => 'This sidebar will be shown after the content.',
-		'before_widget' => '<div id="%1$s" class="span3 %2$s"><div class="widget-box">',
+		'description'   => __('This sidebar will be shown after the content.','suevafree'),
+		'before_widget' => '<div id="%1$s" class="col-md-3 %2$s"><div class="widget-box">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<h4 class="title">',
 		'after_title'   => '</h4>'

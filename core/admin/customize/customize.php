@@ -30,7 +30,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"id" => "suevafree-customize-info",
 				"type" => "suevafree-customize-info",
 				"section" => "suevafree-customize-info",
-				"priority" => "09",
+				"priority" => "08",
 
 			),
 
@@ -52,7 +52,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"type" => "section",
 				"id" => "loadsystem_section",
 				"panel" => "general_panel",
-				"priority" => "10",
+				"priority" => "09",
 
 			),
 
@@ -79,7 +79,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"title" => __( "Color Scheme","suevafree"),
 				"type" => "section",
 				"panel" => "general_panel",
-				"priority" => "11",
+				"priority" => "10",
 				"id" => "colorscheme_section",
 
 			),
@@ -106,6 +106,51 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				
 				"std" => "orange",
 			
+			),
+
+			/* PAGE WIDTH */ 
+
+			array( 
+
+				"title" => __( "Page width",'suevafree'),
+				"type" => "section",
+				"id" => "pagewidth_section",
+				"panel" => "general_panel",
+				"priority" => "11",
+
+			),
+
+			array( 
+
+				"label" => __( "Screen greater than 768px",'suevafree'),
+				"description" => __( "Set a width, for a screen greater than 768 pixel (for example 750 and not 750px ) ",'suevafree'),
+				"id" => "wip_screen1",
+				"type" => "text",
+				"section" => "pagewidth_section",
+				"std" => "750",
+
+			),
+
+			array( 
+
+				"label" => __( "Screen greater than 992px",'suevafree'),
+				"description" => __( "Set a width, for a screen greater than 992 pixel (for example 940 and not 940px ) ",'suevafree'),
+				"id" => "wip_screen2",
+				"type" => "text",
+				"section" => "pagewidth_section",
+				"std" => "940",
+
+			),
+
+			array( 
+
+				"label" => __( "Screen greater than 1200px",'suevafree'),
+				"description" => __( "Set a width, in px, for a screen greater than 1200 pixel (for example 1170 and not 1170px ) ",'suevafree'),
+				"id" => "wip_screen3",
+				"type" => "text",
+				"section" => "pagewidth_section",
+				"std" => "940",
+
 			),
 
 			/* SETTINGS SECTION */ 
@@ -252,7 +297,23 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"std" => "right-sidebar",
 			
 			),
+
+			array(
+				
+				"label" => __("Menu Layout","suevafree"),
+				"description" => __("Choose a layout for the menu.","suevafree"),
+				"id" => "suevafree_menu_layout",
+				"type" => "select",
+				"section" => "layouts_section",
+				"options" => array (
+				   "" => __( "Default","suevafree"),
+				   "menubar" => __( "Alternative menu","suevafree"),
+				),
+				
+				"std" => "",
 			
+			),
+
 			/* LOGIN AREA SECTION */ 
 
 			array( 

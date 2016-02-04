@@ -9,6 +9,29 @@
 	if ( get_theme_mod('suevafree_full_image_background') == "on" )
 		echo "body {  -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}"; 
 
+/* =================== BEGIN PAGE WIDTH =================== */
+
+	if (suevafree_setting('wip_screen1')) {
+	
+		echo "@media (min-width:768px){.container{width:".suevafree_setting('wip_screen1')."px}}"; 
+		echo "@media (min-width:768px){.container.block{width:" . (suevafree_setting('wip_screen1')-10) . "px}}"; 
+		echo "@media (min-width:768px){.container.grid-container{width:" . (suevafree_setting('wip_screen1')-20) . "px}}"; 
+	}
+	
+	if (suevafree_setting('wip_screen2')) {
+		
+		echo "@media (min-width:992px){.container{width:".suevafree_setting('wip_screen2')."px}}"; 
+		echo "@media (min-width:992px){.container.block{width:" . (suevafree_setting('wip_screen2')-10) . "px}}"; 
+		echo "@media (min-width:768px){.container.grid-container{width:" . (suevafree_setting('wip_screen2')-20) . "px}}"; 
+	}
+	
+	if (suevafree_setting('wip_screen3'))  {
+		
+		echo "@media (min-width:1200px){.container{width:".suevafree_setting('wip_screen3')."px}}"; 
+		echo "@media (min-width:1200px){.container.block{width:" . (suevafree_setting('wip_screen3')-10) . "px}}"; 
+		echo "@media (min-width:768px){.container.grid-container{width:" . (suevafree_setting('wip_screen3')-20) . "px}}"; 
+	}
+	
 /* =================== BEGIN LOGO STYLE =================== */
 
 	$logostyle = '';
@@ -51,7 +74,7 @@
 /* =================== BEGIN CONTENT STYLE =================== */
 
 	if (suevafree_setting('suevafree_content_font_size')) 
-		echo ".article p, .article li, .article address, .article dd, .article blockquote, .article td, .article th { font-size:".suevafree_setting('suevafree_content_font_size')."}"; 
+		echo ".post-article p, .post-article li, .post-article address, .post-article dd, .post-article blockquote, .post-article td, .post-article th { font-size:".suevafree_setting('suevafree_content_font_size')."}"; 
 
 /* =================== END NAV STYLE =================== */
 

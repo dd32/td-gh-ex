@@ -3,6 +3,7 @@
 <?php 
 
 global $wp_query;
+
 $big = 999999999;
 
 if ( (is_category()) || (is_search()) ) { 

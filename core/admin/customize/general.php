@@ -9,7 +9,7 @@ if (!function_exists('suevafree_admin_init')) {
 		 wp_enqueue_style( "thickbox" );
 		 add_thickbox();
 	
-		$file_dir = get_template_directory_uri()."/core/admin/inc/";
+		$file_dir = get_template_directory_uri()."/core/admin/assets/";
 	
 		wp_enqueue_style ( 'suevafree_style', $file_dir.'css/theme.css' ); 
 		wp_enqueue_script( 'suevafree_script', $file_dir.'js/theme.js',array('jquery'),'',TRUE ); 

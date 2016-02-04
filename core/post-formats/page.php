@@ -8,7 +8,7 @@
         
 <?php } ?>
     
-<article class="article">
+<div class="post-article">
 
 	<?php
 	
@@ -47,4 +47,4 @@
 	
 	?>
 
-</article>
+</div>
