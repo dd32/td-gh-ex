@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.6.3 | 4rd February 2016 =
+* Update: lightbox issue.
+
 = Version 2.6.3 | 3rd February 2016 =
 * Update: Cart css.
 * Update: Woocommerce file.

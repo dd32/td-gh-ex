@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2015-09-07 16:27-0700\n"
+"POT-Creation-Date: 2016-02-04 12:22-0700\n"
 "PO-Revision-Date: 2015-05-26 17:23-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -352,7 +352,7 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../lib/cleanup.php:119 ../templates/content-fullpost.php:74
+#: ../lib/cleanup.php:106 ../templates/content-fullpost.php:74
 #: ../templates/content-fullpostfull.php:75
 msgid "Continued"
 msgstr ""
@@ -406,7 +406,7 @@ msgstr ""
 
 #: ../lib/cmb/init.php:244 ../lib/metaboxes.php:98 ../lib/metaboxes.php:123
 #: ../lib/metaboxes.php:154 ../lib/metaboxes.php:165
-#: ../themeoptions/framework.php:1813
+#: ../themeoptions/framework.php:1822
 msgid "Default"
 msgstr ""
 
@@ -543,20 +543,20 @@ msgstr ""
 msgid "Head Content"
 msgstr ""
 
-#: ../lib/metaboxes.php:99 ../themeoptions/options.php:1713
+#: ../lib/metaboxes.php:99 ../themeoptions/options.php:1743
 msgid "None"
 msgstr ""
 
-#: ../lib/metaboxes.php:100 ../themeoptions/options.php:1713
+#: ../lib/metaboxes.php:100 ../themeoptions/options.php:1743
 msgid "Image Slider"
 msgstr ""
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129
-#: ../themeoptions/options.php:1713
+#: ../themeoptions/options.php:1743
 msgid "Video"
 msgstr ""
 
-#: ../lib/metaboxes.php:102 ../themeoptions/options.php:1713
+#: ../lib/metaboxes.php:102 ../themeoptions/options.php:1743
 msgid "Image"
 msgstr ""
 
@@ -639,11 +639,11 @@ msgstr ""
 msgid "Display a carousel with similar or recent posts?"
 msgstr ""
 
-#: ../lib/metaboxes.php:167 ../themeoptions/options.php:1747
+#: ../lib/metaboxes.php:167 ../themeoptions/options.php:1777
 msgid "Yes - Display Recent Posts"
 msgstr ""
 
-#: ../lib/metaboxes.php:168 ../themeoptions/options.php:1747
+#: ../lib/metaboxes.php:168 ../themeoptions/options.php:1777
 msgid "Yes - Display Similar Posts"
 msgstr ""
 
@@ -685,17 +685,6 @@ msgstr ""
 
 #: ../lib/metaboxes.php:254
 msgid "Sidebar Options"
-msgstr ""
-
-#: ../lib/scripts.php:33
-msgid ""
-"Sorry, no products matched your selection. Please choose a different "
-"combination."
-msgstr ""
-
-#: ../lib/scripts.php:34
-msgid ""
-"Sorry, this product is unavailable. Please choose a different combination."
 msgstr ""
 
 #: ../lib/utils.php:69
@@ -756,221 +745,221 @@ msgstr ""
 msgid "Footer Column 4"
 msgstr ""
 
-#: ../lib/widgets.php:177
+#: ../lib/widgets.php:178
 msgid "Use this widget to add a Vcard to your site"
 msgstr ""
 
-#: ../lib/widgets.php:178
+#: ../lib/widgets.php:179
 msgid "Virtue: Contact/Vcard"
 msgstr ""
 
-#: ../lib/widgets.php:205
+#: ../lib/widgets.php:191
 msgid "vCard"
 msgstr ""
 
-#: ../lib/widgets.php:281 ../lib/widgets.php:448 ../lib/widgets.php:608
-#: ../lib/widgets.php:746
+#: ../lib/widgets.php:256 ../lib/widgets.php:396 ../lib/widgets.php:532
+#: ../lib/widgets.php:646
 msgid "Title:"
 msgstr ""
 
-#: ../lib/widgets.php:285
+#: ../lib/widgets.php:260
 msgid "Company Name:"
 msgstr ""
 
-#: ../lib/widgets.php:289
+#: ../lib/widgets.php:264
 msgid "Name:"
 msgstr ""
 
-#: ../lib/widgets.php:293
+#: ../lib/widgets.php:268
 msgid "Street Address:"
 msgstr ""
 
-#: ../lib/widgets.php:297
+#: ../lib/widgets.php:272
 msgid "City/Locality:"
 msgstr ""
 
-#: ../lib/widgets.php:301
+#: ../lib/widgets.php:276
 msgid "State/Region:"
 msgstr ""
 
-#: ../lib/widgets.php:305
+#: ../lib/widgets.php:280
 msgid "Zipcode/Postal Code:"
 msgstr ""
 
-#: ../lib/widgets.php:309
+#: ../lib/widgets.php:284
 msgid "Mobile Telephone:"
 msgstr ""
 
-#: ../lib/widgets.php:313
+#: ../lib/widgets.php:288
 msgid "Fixed Telephone:"
 msgstr ""
 
-#: ../lib/widgets.php:317
+#: ../lib/widgets.php:292
 msgid "Email:"
 msgstr ""
 
-#: ../lib/widgets.php:328
+#: ../lib/widgets.php:304
 msgid "Simple way to add Social Icons"
 msgstr ""
 
-#: ../lib/widgets.php:329
+#: ../lib/widgets.php:305
 msgid "Virtue: Social Links"
 msgstr ""
 
-#: ../lib/widgets.php:452
+#: ../lib/widgets.php:400
 msgid "Facebook:"
 msgstr ""
 
-#: ../lib/widgets.php:456
+#: ../lib/widgets.php:404
 msgid "Twitter:"
 msgstr ""
 
-#: ../lib/widgets.php:460
+#: ../lib/widgets.php:408
 msgid "Instagram:"
 msgstr ""
 
-#: ../lib/widgets.php:464
+#: ../lib/widgets.php:412
 msgid "GooglePlus:"
 msgstr ""
 
-#: ../lib/widgets.php:468
+#: ../lib/widgets.php:416
 msgid "Flickr:"
 msgstr ""
 
-#: ../lib/widgets.php:472
+#: ../lib/widgets.php:420
 msgid "Vimeo:"
 msgstr ""
 
-#: ../lib/widgets.php:476
+#: ../lib/widgets.php:424
 msgid "Youtube:"
 msgstr ""
 
-#: ../lib/widgets.php:480
+#: ../lib/widgets.php:428
 msgid "Pinterest:"
 msgstr ""
 
-#: ../lib/widgets.php:484
+#: ../lib/widgets.php:432
 msgid "Dribbble:"
 msgstr ""
 
-#: ../lib/widgets.php:488
+#: ../lib/widgets.php:436
 msgid "Linkedin:"
 msgstr ""
 
-#: ../lib/widgets.php:492
+#: ../lib/widgets.php:440
 msgid "Tumblr:"
 msgstr ""
 
-#: ../lib/widgets.php:496
+#: ../lib/widgets.php:444
 msgid "VK:"
 msgstr ""
 
-#: ../lib/widgets.php:500
+#: ../lib/widgets.php:448
 msgid "RSS:"
 msgstr ""
 
-#: ../lib/widgets.php:514
+#: ../lib/widgets.php:463
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr ""
 
-#: ../lib/widgets.php:515
+#: ../lib/widgets.php:464
 msgid "Virtue: Recent Posts"
 msgstr ""
 
-#: ../lib/widgets.php:540 ../templates/recentblog-carousel.php:7
+#: ../lib/widgets.php:474 ../templates/recentblog-carousel.php:7
 msgid "Recent Posts"
 msgstr ""
 
-#: ../lib/widgets.php:611
+#: ../lib/widgets.php:535
 msgid "Number of posts to show:"
 msgstr ""
 
-#: ../lib/widgets.php:614
+#: ../lib/widgets.php:538
 msgid "Limit to Catagory (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:625
+#: ../lib/widgets.php:550
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
 
-#: ../lib/widgets.php:626
+#: ../lib/widgets.php:551
 msgid "Virtue: Image Grid"
 msgstr ""
 
-#: ../lib/widgets.php:651
+#: ../lib/widgets.php:561
 msgid "Post Gallery"
 msgstr ""
 
-#: ../lib/widgets.php:749
+#: ../lib/widgets.php:649
 msgid "Grid Choice:"
 msgstr ""
 
-#: ../lib/widgets.php:751
+#: ../lib/widgets.php:651
 msgid "Blog Posts"
 msgstr ""
 
-#: ../lib/widgets.php:752
+#: ../lib/widgets.php:652
 msgid "Portfolio"
 msgstr ""
 
-#: ../lib/widgets.php:755
+#: ../lib/widgets.php:655
 msgid "If Post - Choose Category (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:758
+#: ../lib/widgets.php:658
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:761
+#: ../lib/widgets.php:661
 msgid "Number of images to show:"
 msgstr ""
 
-#: ../lib/widgets.php:788
+#: ../lib/widgets.php:689
 msgid "This allows for an image and a simple about text."
 msgstr ""
 
-#: ../lib/widgets.php:789
+#: ../lib/widgets.php:690
 msgid "Virtue: Image"
 msgstr ""
 
-#: ../lib/widgets.php:843
+#: ../lib/widgets.php:739
 msgid "Lightbox"
 msgstr ""
 
-#: ../lib/widgets.php:844
+#: ../lib/widgets.php:740
 msgid "New Window"
 msgstr ""
 
-#: ../lib/widgets.php:845
+#: ../lib/widgets.php:741
 msgid "Same Window"
 msgstr ""
 
-#: ../lib/widgets.php:846
+#: ../lib/widgets.php:742
 msgid "No Link"
 msgstr ""
 
-#: ../lib/widgets.php:858
+#: ../lib/widgets.php:754
 msgid "Image URL"
 msgstr ""
 
-#: ../lib/widgets.php:860
+#: ../lib/widgets.php:756
 msgid "Upload"
 msgstr ""
 
-#: ../lib/widgets.php:863
+#: ../lib/widgets.php:759
 msgid "Image opens in"
 msgstr ""
 
-#: ../lib/widgets.php:867
+#: ../lib/widgets.php:763
 msgid "Image Link (optional)"
 msgstr ""
 
-#: ../lib/widgets.php:871
+#: ../lib/widgets.php:767
 msgid "Text/Caption (optional)"
 msgstr ""
 
-#: ../page-blog.php:70 ../templates/home/blog-home.php:141
+#: ../page-blog.php:70 ../templates/home/blog-home.php:142
 #: ../templates/home/latest-slider.php:58
 #: ../templates/recentblog-carousel.php:71
 #: ../templates/similarblog-carousel.php:77
@@ -978,7 +967,7 @@ msgid "Sorry, no blog entries found."
 msgstr ""
 
 #: ../page-portfolio.php:132 ../templates/home/portfolio-carousel.php:86
-#: ../templates/recentportfolio-carousel.php:54
+#: ../templates/recentportfolio-carousel.php:65
 msgid "Sorry, no portfolio entries found."
 msgstr ""
 
@@ -1021,58 +1010,39 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../templates/comments.php:54 ../templates/content-fullpost.php:85
+#: ../templates/comments.php:52
+msgid "Name"
+msgstr ""
+
+#: ../templates/comments.php:54
+msgid "Email (will not be published)"
+msgstr ""
+
+#: ../templates/comments.php:56
+msgid "Website"
+msgstr ""
+
+#: ../templates/comments.php:60
+msgid "Comment"
+msgstr ""
+
+#: ../templates/comments.php:67 ../templates/content-fullpost.php:85
 #: ../templates/content-fullpostfull.php:86
 msgid "Leave a Reply"
 msgstr ""
 
-#: ../templates/comments.php:54
+#: ../templates/comments.php:68
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: ../templates/comments.php:57
-#, php-format
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
-
-#: ../templates/comments.php:62
-#, php-format
-msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
-msgstr ""
-
-#: ../templates/comments.php:63
-msgid "Log out of this account"
-msgstr ""
-
-#: ../templates/comments.php:63
-msgid "Log out &raquo;"
-msgstr ""
-
-#: ../templates/comments.php:68
-msgid "Name"
-msgstr ""
-
-#: ../templates/comments.php:70
-msgid "Email (will not be published)"
-msgstr ""
-
-#: ../templates/comments.php:72
-msgid "Website"
-msgstr ""
-
-#: ../templates/comments.php:83
-msgid "Comment"
-msgstr ""
-
-#: ../templates/comments.php:85
+#: ../templates/comments.php:69
 msgid "Submit Comment"
 msgstr ""
 
 #: ../templates/content-fullpost.php:80
-#: ../templates/content-fullpostfull.php:81
-#: ../templates/content-single.php:108
-#: ../templates/content-singleportfolio.php:181
+#: ../templates/content-fullpostfull.php:81 ../templates/content-single.php:108
+#: ../templates/content-singleportfolio.php:186
 msgid "Pages:"
 msgstr ""
 
@@ -1111,7 +1081,7 @@ msgstr ""
 msgid "Latest from the Blog"
 msgstr ""
 
-#: ../templates/home/blog-home.php:131
+#: ../templates/home/blog-home.php:132
 msgid "READ MORE"
 msgstr ""
 
@@ -1127,33 +1097,33 @@ msgstr ""
 msgid "Similar Posts"
 msgstr ""
 
-#: ../themeoptions/core/enqueue.php:450
+#: ../themeoptions/core/enqueue.php:453
 msgid "You have changes that are not saved. Would you like to save them now?"
 msgstr ""
 
-#: ../themeoptions/core/enqueue.php:458
+#: ../themeoptions/core/enqueue.php:461
 msgid "Are you sure? Resetting will lose all custom values."
 msgstr ""
 
-#: ../themeoptions/core/enqueue.php:466
+#: ../themeoptions/core/enqueue.php:469
 msgid "Are you sure? Resetting will lose all custom values in this section."
 msgstr ""
 
-#: ../themeoptions/core/enqueue.php:474
+#: ../themeoptions/core/enqueue.php:477
 msgid ""
 "Your current options will be replaced with the values of this preset. Would "
 "you like to proceed?"
 msgstr ""
 
-#: ../themeoptions/core/enqueue.php:481
+#: ../themeoptions/core/enqueue.php:484
 msgid "Please Wait"
 msgstr ""
 
-#: ../themeoptions/core/enqueue.php:492
+#: ../themeoptions/core/enqueue.php:495
 msgid "There was an error saving. Here is the result of your action:"
 msgstr ""
 
-#: ../themeoptions/core/enqueue.php:493
+#: ../themeoptions/core/enqueue.php:496
 msgid ""
 "There was a problem with your action. Please try again or reload the page."
 msgstr ""
@@ -1197,36 +1167,36 @@ msgid ""
 "the reason. Ensure you update or remove them."
 msgstr ""
 
-#: ../themeoptions/framework.php:226
+#: ../themeoptions/framework.php:228
 #, php-format
 msgid "Options panel created using %1$s"
 msgstr ""
 
-#: ../themeoptions/framework.php:226
+#: ../themeoptions/framework.php:228
 msgid "Redux Framework"
 msgstr ""
 
-#: ../themeoptions/framework.php:230 ../themeoptions/framework.php:234
+#: ../themeoptions/framework.php:232 ../themeoptions/framework.php:236
 msgid "Options"
 msgstr ""
 
-#: ../themeoptions/framework.php:1664
+#: ../themeoptions/framework.php:1673
 msgid "Enable"
 msgstr ""
 
-#: ../themeoptions/framework.php:1669
+#: ../themeoptions/framework.php:1678
 msgid "Disable"
 msgstr ""
 
-#: ../themeoptions/framework.php:1675
+#: ../themeoptions/framework.php:1684
 msgid "moving the mouse over"
 msgstr ""
 
-#: ../themeoptions/framework.php:1677
+#: ../themeoptions/framework.php:1686
 msgid "clicking"
 msgstr ""
 
-#: ../themeoptions/framework.php:1681
+#: ../themeoptions/framework.php:1690
 #, php-format
 msgid ""
 "Hints are tooltips that popup when %d the hint icon, offering addition "
@@ -1234,16 +1204,36 @@ msgid ""
 "the link below."
 msgstr ""
 
-#: ../themeoptions/framework.php:1686
+#: ../themeoptions/framework.php:1695
 msgid "Hints"
 msgstr ""
 
-#: ../themeoptions/framework.php:2685
-msgid "Invalid security credential, please reload the page and try again."
+#: ../themeoptions/framework.php:2702
+msgid "Invalid security credential.  Please reload the page and try again."
 msgstr ""
 
-#: ../themeoptions/framework.php:2761
+#: ../themeoptions/framework.php:2711
+msgid "Invalid user capability.  Please reload the page and try again."
+msgstr ""
+
+#: ../themeoptions/framework.php:2787
 msgid "Your panel has no fields. Nothing to save."
+msgstr ""
+
+#: ../themeoptions/framework.php:3880
+msgid ""
+"<strong>Redux Framework Notice: </strong>There are references to the Redux "
+"Framework support site in your config's <code>admin_bar_links</code> "
+"argument.  This is sample data.  Please change or remove this data before "
+"shipping your product."
+msgstr ""
+
+#: ../themeoptions/framework.php:3895
+msgid ""
+"<strong>Redux Framework Notice: </strong>There are references to the Redux "
+"Framework support site in your config's <code>share_icons</code> argument.  "
+"This is sample data.  Please change or remove this data before shipping your "
+"product."
 msgstr ""
 
 #: ../themeoptions/options.php:28 ../themeoptions/options.php:29
@@ -2069,228 +2059,253 @@ msgid "Page/Post Settings"
 msgstr ""
 
 #: ../themeoptions/options.php:1650
-msgid "Page and Post Settings"
+msgid "Page and Post Comment Settings"
 msgstr ""
 
 #: ../themeoptions/options.php:1656
-msgid "Allow Comments on Pages"
+msgid "Show Comments Closed Text?"
 msgstr ""
 
 #: ../themeoptions/options.php:1657
+msgid "Choose to show or hide comments closed alert below posts."
+msgstr ""
+
+#: ../themeoptions/options.php:1664
+msgid "Allow Comments on Pages"
+msgstr ""
+
+#: ../themeoptions/options.php:1665
 msgid "Turn on to allow comments on pages"
 msgstr ""
 
-#: ../themeoptions/options.php:1666
+#: ../themeoptions/options.php:1672
+msgid "Allow Comments on Portfolio Posts"
+msgstr ""
+
+#: ../themeoptions/options.php:1673
+msgid "Turn on to allow comments on Portfolio posts"
+msgstr ""
+
+#: ../themeoptions/options.php:1680
+msgid "Portfolio Post"
+msgstr ""
+
+#: ../themeoptions/options.php:1688
 msgid "All Projects Portfolio Page"
 msgstr ""
 
-#: ../themeoptions/options.php:1667
+#: ../themeoptions/options.php:1689
 msgid ""
 "This sets the link in every single portfolio page. *note: You still have to "
 "set the page template to portfolio."
 msgstr ""
 
-#: ../themeoptions/options.php:1673
-msgid "Allow Comments on Portfolio Posts"
-msgstr ""
-
-#: ../themeoptions/options.php:1674
-msgid "Turn on to allow comments on Portfolio posts"
-msgstr ""
-
-#: ../themeoptions/options.php:1681
-msgid "Show Comments Closed Text?"
-msgstr ""
-
-#: ../themeoptions/options.php:1682
-msgid "Choose to show or hide comments closed alert below posts."
-msgstr ""
-
-#: ../themeoptions/options.php:1689
-msgid "Blog Post Defaults"
-msgstr ""
-
 #: ../themeoptions/options.php:1695
-msgid "Blog Post Summary Default"
+msgid "Portfolio Type Page Defaults"
 msgstr ""
 
-#: ../themeoptions/options.php:1705
-msgid "Default post summary feature Image"
+#: ../themeoptions/options.php:1701
+msgid "Portfolio Type - Post Columns"
 msgstr ""
 
-#: ../themeoptions/options.php:1706
-msgid "Replace theme default feature image for posts without a featured image"
+#: ../themeoptions/options.php:1702
+msgid "Choose how many columns for portfolio type pages"
+msgstr ""
+
+#: ../themeoptions/options.php:1711
+msgid "Show Types under Title"
 msgstr ""
 
 #: ../themeoptions/options.php:1712
+msgid "Choose to show or hide portfolio type under title."
+msgstr ""
+
+#: ../themeoptions/options.php:1719
+msgid "Blog Post Defaults"
+msgstr ""
+
+#: ../themeoptions/options.php:1725
+msgid "Blog Post Summary Default"
+msgstr ""
+
+#: ../themeoptions/options.php:1735
+msgid "Default post summary feature Image"
+msgstr ""
+
+#: ../themeoptions/options.php:1736
+msgid "Replace theme default feature image for posts without a featured image"
+msgstr ""
+
+#: ../themeoptions/options.php:1742
 msgid "Blog Post Head Content Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1721
+#: ../themeoptions/options.php:1751
 msgid "Show Previous and Next posts links?"
 msgstr ""
 
-#: ../themeoptions/options.php:1722
+#: ../themeoptions/options.php:1752
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
 msgstr ""
 
-#: ../themeoptions/options.php:1729
+#: ../themeoptions/options.php:1759
 msgid "Show Author Icon with posts?"
 msgstr ""
 
-#: ../themeoptions/options.php:1730
+#: ../themeoptions/options.php:1760
 msgid "Choose to show or hide author icon under post title."
 msgstr ""
 
-#: ../themeoptions/options.php:1737
+#: ../themeoptions/options.php:1767
 msgid "Blog Post Author Box Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1738 ../themeoptions/options.php:1747
+#: ../themeoptions/options.php:1768 ../themeoptions/options.php:1777
 msgid "No, Do not Show"
 msgstr ""
 
-#: ../themeoptions/options.php:1738
+#: ../themeoptions/options.php:1768
 msgid "Yes, Show"
 msgstr ""
 
-#: ../themeoptions/options.php:1746
+#: ../themeoptions/options.php:1776
 msgid "Blog Post Bottom Carousel Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1755
+#: ../themeoptions/options.php:1785
 msgid "Blog Category/Archive Defaults"
 msgstr ""
 
-#: ../themeoptions/options.php:1761
+#: ../themeoptions/options.php:1791
 msgid "Blog Archive"
 msgstr ""
 
-#: ../themeoptions/options.php:1762
+#: ../themeoptions/options.php:1792
 msgid "Choose to show full post or post excerpt."
 msgstr ""
 
-#: ../themeoptions/options.php:1774 ../themeoptions/options.php:1775
+#: ../themeoptions/options.php:1804 ../themeoptions/options.php:1805
 msgid "Misc Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1781
+#: ../themeoptions/options.php:1811
 msgid "Hide Image Border"
 msgstr ""
 
-#: ../themeoptions/options.php:1782
+#: ../themeoptions/options.php:1812
 msgid "Choose to show or hide image border for images added in pages or posts"
 msgstr ""
 
-#: ../themeoptions/options.php:1790
-msgid "Custom Favicon"
+#: ../themeoptions/options.php:1820
+msgid ""
+"Custom Favicon, *Note depreciated. Use WordPress site icon in customizer."
 msgstr ""
 
-#: ../themeoptions/options.php:1791
+#: ../themeoptions/options.php:1821
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
 
-#: ../themeoptions/options.php:1797
+#: ../themeoptions/options.php:1827
 msgid "Contact Form Email"
 msgstr ""
 
-#: ../themeoptions/options.php:1798
+#: ../themeoptions/options.php:1828
 msgid "Sets the email for the contact page email form."
 msgstr ""
 
-#: ../themeoptions/options.php:1805
+#: ../themeoptions/options.php:1835
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../themeoptions/options.php:1806
+#: ../themeoptions/options.php:1836
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
 
-#: ../themeoptions/options.php:1813
+#: ../themeoptions/options.php:1843
 msgid "Create Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1819
+#: ../themeoptions/options.php:1849
 msgid "Create Custom Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1820
+#: ../themeoptions/options.php:1850
 msgid "Type new sidebar name into textbox"
 msgstr ""
 
-#: ../themeoptions/options.php:1821
+#: ../themeoptions/options.php:1851
 msgid "Extra Sidebar"
 msgstr ""
 
-#: ../themeoptions/options.php:1827
+#: ../themeoptions/options.php:1857
 msgid "Wordpress Galleries"
 msgstr ""
 
-#: ../themeoptions/options.php:1833
+#: ../themeoptions/options.php:1863
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr ""
 
-#: ../themeoptions/options.php:1834
+#: ../themeoptions/options.php:1864
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
 
-#: ../themeoptions/options.php:1841
+#: ../themeoptions/options.php:1871
 msgid "Theme Lightbox"
 msgstr ""
 
-#: ../themeoptions/options.php:1847
+#: ../themeoptions/options.php:1877
 msgid "Turn Off Theme Lightbox?"
 msgstr ""
 
-#: ../themeoptions/options.php:1857
+#: ../themeoptions/options.php:1887
 msgid "Advanced Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1858
+#: ../themeoptions/options.php:1888
 msgid "Custom CSS Box"
 msgstr ""
 
-#: ../themeoptions/options.php:1864
+#: ../themeoptions/options.php:1894
 msgid "Custom CSS"
 msgstr ""
 
-#: ../themeoptions/options.php:1865
+#: ../themeoptions/options.php:1895
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: ../themeoptions/options.php:1873
+#: ../themeoptions/options.php:1903
 msgid "Import / Export"
 msgstr ""
 
-#: ../themeoptions/options.php:1874
+#: ../themeoptions/options.php:1904
 msgid "Import and Export your Theme Options from text or URL."
 msgstr ""
 
-#: ../themeoptions/templates/panel/footer.tpl.php:48
-#: ../themeoptions/templates/panel/header_stickybar.tpl.php:19
+#: ../themeoptions/templates/panel/footer.tpl.php:57
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:21
 msgid "Save Changes"
 msgstr ""
 
-#: ../themeoptions/templates/panel/footer.tpl.php:51
-#: ../themeoptions/templates/panel/header_stickybar.tpl.php:21
+#: ../themeoptions/templates/panel/footer.tpl.php:61
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:25
 msgid "Reset Section"
 msgstr ""
 
-#: ../themeoptions/templates/panel/footer.tpl.php:52
-#: ../themeoptions/templates/panel/header_stickybar.tpl.php:22
+#: ../themeoptions/templates/panel/footer.tpl.php:62
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:26
 msgid "Reset All"
 msgstr ""
 
-#: ../themeoptions/templates/panel/footer.tpl.php:57
-#: ../themeoptions/templates/panel/header_stickybar.tpl.php:25
+#: ../themeoptions/templates/panel/footer.tpl.php:67
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:29
 msgid "Working..."
 msgstr ""
 
@@ -2321,6 +2336,10 @@ msgid ""
 "mode enabled. Contact them directly to fix it."
 msgstr ""
 
+#: ../themeoptions/templates/panel/header.tpl.php:58
+msgid "FORCED DEV MODE OFF ENABLED"
+msgstr ""
+
 #: ../themeoptions/templates/panel/header_stickybar.tpl.php:15
 msgid "Expand"
 msgstr ""
@@ -2342,27 +2361,10 @@ msgstr ""
 msgid "Shop"
 msgstr ""
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:24
+#: ../woocommerce/single-product/add-to-cart/variable.php:26
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:36
+#: ../woocommerce/single-product/add-to-cart/variable.php:38
 msgid "Clear selection"
-msgstr ""
-
-#: ../woocommerce/single-product/review.php:26
-#, php-format
-msgid "Rated %d out of 5"
-msgstr ""
-
-#: ../woocommerce/single-product/review.php:27
-msgid "out of 5"
-msgstr ""
-
-#: ../woocommerce/single-product/review.php:34
-msgid "Your comment is awaiting approval"
-msgstr ""
-
-#: ../woocommerce/single-product/review.php:43
-msgid "verified owner"
 msgstr ""

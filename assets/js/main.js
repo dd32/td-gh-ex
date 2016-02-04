@@ -51,6 +51,22 @@ jQuery(document).ready(function ($) {
 		    	$(this).addClass('toggle-active');
 		    }
 		});
+		/**
+		 * Checks href targets to see if a given anchor is linking to an image.
+		 *
+		 * @since  0.1.0
+		 * @return mixed
+		 */
+		function kt_check_images( index, element ) {
+			return /(png|jpg|jpeg|gif|tiff|bmp)$/.test(
+				$( element ).attr( 'href' ).toLowerCase().split( '?' )[0].split( '#' )[0]
+			);
+		}
+
+		function kt_find_images() {
+			$( 'a[href]' ).filter( kt_check_images ).attr( 'data-rel', 'lightbox' );
+		}
+		kt_find_images();
 		$("a[rel^='lightbox']").magnificPopup({type:'image'});
 	    $("a[data-rel^='lightbox']").magnificPopup({type:'image'});
 			$('.kad-light-gallery').each(function(){
