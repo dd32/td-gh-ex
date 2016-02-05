@@ -1,11 +1,10 @@
 <?php get_header(); ?>
 
-  <section class="section">
-  <main role="main" itemprop="mainContentOfPage">
+  <main class="section" id="section">
 
-    <?php if ( have_posts() ) : ?>
+    <?php if( have_posts() ) : ?>
   
-      <h2 class="pagetitle"><?php _e( 'Searching for', 'adelle-theme' ); ?> &quot;<?php the_search_query(); ?>&quot;</h2>
+      <h2 class="pagetitle"><?php _e( 'Searching for', 'adelle' ); ?> &quot;<?php the_search_query(); ?>&quot;</h2>
 
     <?php while ( have_posts() ) : the_post(); ?>
 
@@ -17,8 +16,7 @@
 
     <?php else : get_template_part( 'content', 'none' ); endif; ?>
 
-  </main>
-  </section><!-- .section -->
+  </main><!-- .section -->
 
   <?php get_sidebar(); ?>
 

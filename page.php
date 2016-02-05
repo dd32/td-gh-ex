@@ -1,21 +1,20 @@
 <?php get_header(); ?>
 
-  <section class="section">
-  <main role="main" itemprop="mainContentOfPage">
+  <main class="section">
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <article <?php post_class( "article" ); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/Article">
+    <article class="article article-page" itemscope itemtype="http://schema.org/CreativeWork">
 
       <header class="post-header">
         <h2 class="post-title entry-title" itemprop="headline"><?php the_title(); ?></h2>
       </header>
  
-      <article class="post-content" itemprop="text">
+      <article class="post-content entry-content" itemprop="text">
 
         <?php the_content(); ?>
 
-        <?php echo adelle_theme_get_link_pages() ?>
+        <?php echo adelle_theme_get_link_pages(); ?>
 
         <?php comments_template( '/comments.php', true ); ?>
 
@@ -25,8 +24,7 @@
 
     <?php endwhile; endif; ?>
 
-  </main>
-  </section><!-- .section -->
+  </main><!-- .section -->
 
   <?php get_sidebar(); ?>
 

@@ -1,14 +1,14 @@
 /*
 Theme Name:		Adelle
 Description:	Your brand is eager and ready to go. The Adelle Theme is ready for you! With a soft pink confetti header and minimalist two-columns, you can get started blogging in no time. Adelle is poised to host any female-oriented brand.
-Version:			15.08.03
-Author:				BluChic
+Version:			16.01.1
+Author:				Bluchic
 Author URI:		http://www.bluchic.com
-Theme URI:		http://www.bluchic.com/shop/adelle-theme
+Theme URI:		http://www.bluchic.com/shop/freebies/adelle-theme/
 License:			GPL
 License URI:	http://www.gnu.org/licenses/gpl-2.0.html
 Tags:					black, pink, white, light, two-columns, right-sidebar, fluid-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, theme-options, threaded-comments, translation-ready
-Text Domain:  adelle-theme
+Text Domain:  adelle
 */
 
 /* 
@@ -51,7 +51,7 @@ hr {background: none; border: none; margin: 10px 0; border-bottom: 1px solid #cc
 code {font-size: 1.1em;}
 code {display: inline-block; border: 1px solid #eee; font-size: 0.9em; padding: 0 3px;}
 pre {overflow: auto; font-family: 'courier new', courier, monospace; font-size: 0.85em; padding: 10px;  border: 1px solid #ccc;}
-html {-webkit-font-smoothing: antialiased; -webkit-text-stroke: .001em;}
+html {-webkit-font-smoothing: antialiased;}
 @-webkit-keyframes fontfix { from{ opacity: 1; } to { opacity: 1; } }
 @-moz-keyframes fontfix { from{ opacity: 1; } to { opacity: 1; } }
 @-o-keyframes fontfix { from{ opacity: 1; } to { opacity: 1; } }
@@ -269,8 +269,8 @@ position: absolute; width: 200px; background: #000; z-index: 200;
 /* .article misc */
 .article blockquote {font: italic 400 1.4em 'Lora', Serif; display: block; clear: both; margin: 20px 0; padding: 20px 20px 20px 60px; background: #f8f8f8 url('images/blockquote.gif') no-repeat 20px 25px; font-style: italic; color: #888;}
 .article blockquote p {padding: 0;}
-.article ul {margin: 0 0 20px 25px; list-style: circle outside;}
-.article ol {margin: 0 0 20px 25px; list-style: decimal outside;}
+.article ul {margin: 0 0 20px 45px; list-style: circle outside;}
+.article ol {margin: 0 0 20px 45px; list-style: decimal outside;}
 .article li {margin: 3px 0; line-height: 1.8em;}
 
 /* .article misc */
@@ -293,12 +293,21 @@ position: absolute; width: 200px; background: #000; z-index: 200;
 .footer-navi li.next {float: right;}
 
 /* .gallery */
-.gallery {clear: both; overflow: hidden;}
-.gallery .gallery-item {margin-top: 0 !important;}
+.gallery {clear: both; overflow: hidden; margin: 15px 0;}
+.gallery .gallery-item {display: inline-block; text-align: center; vertical-align: top; width: 100%;}
+.gallery-columns-2 .gallery-item {max-width: 50%;}
+.gallery-columns-3 .gallery-item {max-width: 33.33%;}
+.gallery-columns-4 .gallery-item {max-width: 25%;}
+.gallery-columns-5 .gallery-item {max-width: 20%;}
+.gallery-columns-6 .gallery-item {max-width: 16.66%;}
+.gallery-columns-7 .gallery-item {max-width: 14.28%;}
+.gallery-columns-8 .gallery-item {max-width: 12.5%;}
+.gallery-columns-9 .gallery-item {max-width: 11.11%;}
+.gallery-caption {}
 .gallery dl {margin: 0;}
 .gallery a {padding: 5px; display: block;}
-.gallery a img {max-width: 100%; height: auto;}
-.gallery-caption {}
+.gallery a img {max-width: 100%; height: auto; border: none !important;}
+.gallery-caption {font-size: .9em;}
 
 /* .sideform */
 .sideform {clear: both; overflow: hidden; text-align: center;}
@@ -329,7 +338,7 @@ p.footer-copy a:hover {color: #fff;}
 p.comment-inputs {margin-bottom: 0;}
 .required-input {color: #f00;}
 .comment-input {width: 50%;}
-.comment-textarea {width: 95%; height: 80px;}
+.comment-textarea {width: 90% !important; height: 80px;}
 .comment-input,
 .comment-textarea {border: 1px solid #ccc; padding: 5px; color: #999; font: normal .85em Verdana, Tahoma, Arial, San-serif;}
 .avatar {margin-right: 20px; float: left; border: 1px solid #999;}
@@ -392,9 +401,9 @@ img.alignleft {display: inline; margin: 0 20px 10px 0;}
 /* .wp-caption */
 .aligncenter,
 div.aligncenter {display: block; margin-left: auto; margin-right: auto;}
-.wp-caption {border: 1px solid #ccc; background: #efefef; margin: 15px; padding: 1%; text-align: center; max-width: 96%;}
+.wp-caption {background: #efefef; margin: 15px; padding: 1%; text-align: center; max-width: 96%;}
 .wp-caption img {border: 0;}
-.wp-caption p.wp-caption-text {font-size: 0.85em; line-height: 1.2em; padding: 3px 0; margin: 0;}
+.wp-caption .wp-caption-text {font-size: 0.85em; line-height: 1.2em; padding: 3px 0; margin: 0;}
 
 /* .screen-reader-text */
 .screen-reader-text {}

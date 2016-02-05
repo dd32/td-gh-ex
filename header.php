@@ -13,17 +13,17 @@
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+<header class="header" id="header" itemscope itemtype="http://schema.org/WPHeader">
 
   <?php echo adelle_theme_heading(); ?>
 
-  <nav class="nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <nav class="nav" id="nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
     <?php wp_nav_menu( 'theme_location=top_menu&container_class=menu&fallback_cb=wp_page_menu&show_home=1' ); ?>
 
     <form role="search" method="get" class="header-form" action="<?php echo esc_url( home_url() ); ?>">
       <fieldset>
-        <input type="text" name="s" class="header-text uniform" size="15" title="<?php esc_attr_e( 'Search', 'adelle-theme' ); ?>" />
-        <input type="submit" class="uniform" value="<?php esc_attr_e( 'Search', 'adelle-theme' ); ?>" />
+        <input type="text" name="s" class="header-text uniform" size="15" title="<?php esc_attr_e( 'Search', 'adelle' ); ?>" />
+        <input type="submit" class="uniform" value="<?php esc_attr_e( 'Search', 'adelle' ); ?>" />
       </fieldset>
     </form>
 

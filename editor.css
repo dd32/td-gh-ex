@@ -1,7 +1,7 @@
 /*
 Used to style the TinyMCE editor.
 */
-html .mceContentBody {width: 580px;}
+html .mceContentBody {}
 * {font: normal 14px Arial, Verdana, Tahoma, sans-serif; color: #555; line-height: 1.8em;}
 pre {font: normal 11px Arial, Verdana, Tahoma, sans-serif;}
 code, code var {font-family: Arial, Verdana, Tahoma, sans-serif;}
