@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/tracks/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, social media icons, search bar, comment display controls, premium layouts and features, and more.  See our fully-setup live demo here: https://www.competethemes.com/tracks-live-demo/
-Version: 1.46
+Version: 1.47
 Tags: black, gray, silver, white, dark, one-column, fluid-layout, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: tracks
 License: GNU General Public License v2 or later
@@ -992,6 +992,10 @@ a img {
 
   .excerpt-content {
     padding-bottom: 3em;
+  }
+
+  .full-without-featured:not(.has-post-thumbnail):not(.has-video):not(.has-featured-slider) .excerpt-container {
+    width: 100%;
   }
 }
 .entry {
@@ -2617,10 +2621,9 @@ li.pingback:first-child {
 
 ATTENTION:
 
-CSS edits made here won't have any effect. Tracks doesn't load the style.css file because
-it loads a minified version of the stylesheet instead (style.min.css) to make your site faster.
+Please do not edit this. Your changes will be overwritten when you update Tracks.
 
-If you want to make CSS edits to your site, use the "Custom CSS" section in the Customizer.
+If you want to make CSS edits, use the "Custom CSS" section in the Customizer instead (Appearance > Customize).
 
 If you want more information about customizing Tracks with CSS, check out this guide: https://www.competethemes.com/help/custom-css-tracks/
 

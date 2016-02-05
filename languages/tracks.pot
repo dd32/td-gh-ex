@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Tracks 1.45\n"
+"Project-Id-Version: Tracks 1.46\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-01-21 16:23:10+00:00\n"
+"POT-Creation-Date: 2016-02-05 19:36:57+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,25 +13,25 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.4.8\n"
 
-#: comments.php:24 comments.php:44 comments.php:66
+#: comments.php:23 comments.php:43 comments.php:65
 msgid "Be First to Comment"
 msgstr ""
 
-#: comments.php:24 comments.php:44 comments.php:66
+#: comments.php:23 comments.php:43 comments.php:65
 msgid "One Comment"
 msgstr ""
 
-#: comments.php:24 comments.php:44 comments.php:66
+#: comments.php:23 comments.php:43 comments.php:65
 msgid "% Comments"
 msgstr ""
 
-#: comments.php:58
+#: comments.php:57
 msgid ""
 "Comments are closed, but <a href=\"%s\" title=\"Trackback URL for this "
 "post\">trackbacks</a> and pingbacks are open."
 msgstr ""
 
-#: comments.php:80 comments.php:86
+#: comments.php:79 comments.php:86
 msgid "Comments are closed."
 msgstr ""
 
@@ -83,8 +83,12 @@ msgstr ""
 msgid "No Newer Posts"
 msgstr ""
 
-#: content/social-icons.php:45
+#: content/social-icons.php:44
 msgid "email"
+msgstr ""
+
+#: content/social-icons.php:51
+msgid "contact form"
 msgstr ""
 
 #: content/tag-links.php:9
@@ -132,7 +136,7 @@ msgid "Secondary"
 msgstr ""
 
 #: functions.php:40 functions.php:74 inc/customizer.php:85
-#: inc/customizer.php:138 inc/customizer.php:704 inc/customizer.php:723
+#: inc/customizer.php:138 inc/customizer.php:745 inc/customizer.php:764
 msgid "Footer"
 msgstr ""
 
@@ -198,7 +202,7 @@ msgstr ""
 msgid "Enter Your Comment"
 msgstr ""
 
-#: functions.php:188 functions.php:197 functions.php:213 inc/customizer.php:576
+#: functions.php:188 functions.php:197 functions.php:213 inc/customizer.php:617
 msgid "Read the Post"
 msgstr ""
 
@@ -214,13 +218,13 @@ msgstr ""
 msgid "Where should the tagline display?"
 msgstr ""
 
-#: inc/customizer.php:83 inc/customizer.php:136 inc/customizer.php:702
-#: inc/customizer.php:721
+#: inc/customizer.php:83 inc/customizer.php:136 inc/customizer.php:743
+#: inc/customizer.php:762
 msgid "Header & Footer"
 msgstr ""
 
-#: inc/customizer.php:84 inc/customizer.php:137 inc/customizer.php:703
-#: inc/customizer.php:722
+#: inc/customizer.php:84 inc/customizer.php:137 inc/customizer.php:744
+#: inc/customizer.php:763
 msgid "Header"
 msgstr ""
 
@@ -244,7 +248,7 @@ msgstr ""
 msgid "Where should the icons display?"
 msgstr ""
 
-#: inc/customizer.php:139 inc/customizer.php:724
+#: inc/customizer.php:139 inc/customizer.php:765
 msgid "Do not display"
 msgstr ""
 
@@ -252,232 +256,252 @@ msgstr ""
 msgid "Email Address"
 msgstr ""
 
-#: inc/customizer.php:216
+#: inc/customizer.php:226
 msgid "Search Bar"
 msgstr ""
 
-#: inc/customizer.php:227
+#: inc/customizer.php:237
 msgid "Show search bar at top of site?"
 msgstr ""
 
-#: inc/customizer.php:231 inc/customizer.php:255 inc/customizer.php:271
-#: inc/customizer.php:287 inc/customizer.php:491 inc/customizer.php:508
-#: inc/customizer.php:525 inc/customizer.php:736
+#: inc/customizer.php:241 inc/customizer.php:265 inc/customizer.php:281
+#: inc/customizer.php:297 inc/customizer.php:532 inc/customizer.php:549
+#: inc/customizer.php:566 inc/customizer.php:777
 msgid "Show"
 msgstr ""
 
-#: inc/customizer.php:232 inc/customizer.php:256 inc/customizer.php:272
-#: inc/customizer.php:288 inc/customizer.php:492 inc/customizer.php:509
-#: inc/customizer.php:526 inc/customizer.php:737
+#: inc/customizer.php:242 inc/customizer.php:266 inc/customizer.php:282
+#: inc/customizer.php:298 inc/customizer.php:533 inc/customizer.php:550
+#: inc/customizer.php:567 inc/customizer.php:778
 msgid "Hide"
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:250
 msgid "Post Meta"
 msgstr ""
 
-#: inc/customizer.php:251
+#: inc/customizer.php:261
 msgid "Display date above post title?"
 msgstr ""
 
-#: inc/customizer.php:267
+#: inc/customizer.php:277
 msgid "Display author name above post title?"
 msgstr ""
 
-#: inc/customizer.php:283
+#: inc/customizer.php:293
 msgid "Display category above post title?"
 msgstr ""
 
-#: inc/customizer.php:296
+#: inc/customizer.php:306
 msgid "Comments"
 msgstr ""
 
-#: inc/customizer.php:307
+#: inc/customizer.php:317
 msgid "Show comments on:"
 msgstr ""
 
-#: inc/customizer.php:312 inc/customizer.php:760
+#: inc/customizer.php:322 inc/customizer.php:801
 msgid "Posts"
 msgstr ""
 
-#: inc/customizer.php:313 inc/customizer.php:761
+#: inc/customizer.php:323 inc/customizer.php:802
 msgid "Pages"
 msgstr ""
 
-#: inc/customizer.php:314 inc/customizer.php:762
+#: inc/customizer.php:324 inc/customizer.php:803
 msgid "Attachments"
 msgstr ""
 
-#: inc/customizer.php:315 inc/customizer.php:763
+#: inc/customizer.php:325 inc/customizer.php:804
 msgid "Do not show"
 msgstr ""
 
-#: inc/customizer.php:324
+#: inc/customizer.php:334
 msgid "Footer Text"
 msgstr ""
 
-#: inc/customizer.php:334
+#: inc/customizer.php:344
 msgid "Edit the text in your footer"
 msgstr ""
 
-#: inc/customizer.php:343
+#: inc/customizer.php:353
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:354
+#: inc/customizer.php:364
 msgid "Add Custom CSS Here:"
 msgstr ""
 
-#: inc/customizer.php:386 theme-options.php:63
+#: inc/customizer.php:396 theme-options.php:63
 msgid "Premium Layouts"
 msgstr ""
 
-#: inc/customizer.php:395
+#: inc/customizer.php:405
 msgid ""
 "Want more layouts? Check out the <a target=\"_blank\" href=\"%s\">Tracks "
-"Theme Upgrades</a>."
+"Pro Plugin</a>."
 msgstr ""
 
-#: inc/customizer.php:400
+#: inc/customizer.php:410
 msgid "Choose the layout for Tracks"
 msgstr ""
 
-#: inc/customizer.php:414
+#: inc/customizer.php:424
 msgid "Image size on Blog"
 msgstr ""
 
-#: inc/customizer.php:430
+#: inc/customizer.php:440
 msgid "Image size on Posts"
 msgstr ""
 
-#: inc/customizer.php:446
+#: inc/customizer.php:456
 msgid "Style"
 msgstr ""
 
-#: inc/customizer.php:450 inc/customizer.php:806
+#: inc/customizer.php:460 inc/customizer.php:847
 msgid "Overlay"
 msgstr ""
 
-#: inc/customizer.php:451 inc/customizer.php:807
+#: inc/customizer.php:461 inc/customizer.php:848
 msgid "Title below"
 msgstr ""
 
-#: inc/customizer.php:462
+#: inc/customizer.php:472
 msgid "Show full posts on Blog/Archives?"
 msgstr ""
 
-#: inc/customizer.php:466 inc/customizer.php:557 inc/customizer.php:642
-#: inc/customizer.php:750
+#: inc/customizer.php:476 inc/customizer.php:598 inc/customizer.php:683
+#: inc/customizer.php:791
 msgid "Yes"
 msgstr ""
 
-#: inc/customizer.php:467 inc/customizer.php:558 inc/customizer.php:643
-#: inc/customizer.php:751
+#: inc/customizer.php:477 inc/customizer.php:599 inc/customizer.php:684
+#: inc/customizer.php:792
 msgid "No"
 msgstr ""
 
-#: inc/customizer.php:475
+#: inc/customizer.php:485
 msgid "Additional Options"
 msgstr ""
 
-#: inc/customizer.php:486
+#: inc/customizer.php:496
+msgid "Posts without Featured Images should display:"
+msgstr ""
+
+#: inc/customizer.php:501 inc/customizer.php:878
+msgid "Empty half"
+msgstr ""
+
+#: inc/customizer.php:502 inc/customizer.php:879
+msgid "Full-width text"
+msgstr ""
+
+#: inc/customizer.php:503 inc/customizer.php:880
+msgid "Fallback image"
+msgstr ""
+
+#: inc/customizer.php:513
+msgid "Upload a fallback image"
+msgstr ""
+
+#: inc/customizer.php:527
 msgid "Show scroll-to-top arrow?"
 msgstr ""
 
-#: inc/customizer.php:503
+#: inc/customizer.php:544
 msgid "Show author info box after posts?"
 msgstr ""
 
-#: inc/customizer.php:520
+#: inc/customizer.php:561
 msgid "Show prev/next links after posts?"
 msgstr ""
 
-#: inc/customizer.php:537
+#: inc/customizer.php:578
 msgid "Zoom-in blog images on hover?"
 msgstr ""
 
-#: inc/customizer.php:541
+#: inc/customizer.php:582
 msgid "Zoom in"
 msgstr ""
 
-#: inc/customizer.php:542
+#: inc/customizer.php:583
 msgid "Do not zoom in"
 msgstr ""
 
-#: inc/customizer.php:553
+#: inc/customizer.php:594
 msgid "Lazy load images?"
 msgstr ""
 
-#: inc/customizer.php:568
+#: inc/customizer.php:609
 msgid "Word count in automatic excerpts"
 msgstr ""
 
-#: inc/customizer.php:581
+#: inc/customizer.php:622
 msgid "Read More link text"
 msgstr ""
 
-#: inc/customizer.php:598
+#: inc/customizer.php:639
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer.php:599
+#: inc/customizer.php:640
 msgid ""
 "Use the Header Color section if your new background image makes the menu "
 "hard to read."
 msgstr ""
 
-#: inc/customizer.php:609
+#: inc/customizer.php:650
 msgid "Background image"
 msgstr ""
 
-#: inc/customizer.php:626
+#: inc/customizer.php:667
 msgid "Background Texture"
 msgstr ""
 
-#: inc/customizer.php:627
+#: inc/customizer.php:668
 msgid ""
 "Use the Header Color section if your new texture makes the menu hard to "
 "read."
 msgstr ""
 
-#: inc/customizer.php:638
+#: inc/customizer.php:679
 msgid "Enable background texture?"
 msgstr ""
 
-#: inc/customizer.php:656
+#: inc/customizer.php:697
 msgid "Choose a Texture"
 msgstr ""
 
-#: inc/customizer.php:675
+#: inc/customizer.php:716
 msgid "Header Color"
 msgstr ""
 
-#: inc/customizer.php:676
+#: inc/customizer.php:717
 msgid "Change to dark if your new background makes the menu hard to read."
 msgstr ""
 
-#: inc/customizer.php:687
+#: inc/customizer.php:728
 msgid "Light or dark header color?"
 msgstr ""
 
-#: inc/customizer.php:691 inc/customizer.php:824
+#: inc/customizer.php:732 inc/customizer.php:865
 msgid "Light"
 msgstr ""
 
-#: inc/customizer.php:692 inc/customizer.php:825
+#: inc/customizer.php:733 inc/customizer.php:866
 msgid "Dark"
 msgstr ""
 
-#: inc/customizer.php:774
+#: inc/customizer.php:815
 msgid "Zoom"
 msgstr ""
 
-#: inc/customizer.php:775
+#: inc/customizer.php:816
 msgid "Do not Zoom"
 msgstr ""
 
-#: inc/customizer.php:894
-msgid "View Tracks Theme Upgrades"
+#: inc/customizer.php:949
+msgid "View the Tracks Pro Plugin"
 msgstr ""
 
 #: inc/user-profile.php:66
@@ -599,15 +623,15 @@ msgid "Visit Support Center"
 msgstr ""
 
 #: theme-options.php:46
-msgid "Premium Upgrades"
+msgid "Tracks Pro Plugin"
 msgstr ""
 
 #: theme-options.php:47
-msgid "Make your site more customizable and beautiful with premium upgrades"
+msgid "Make your site more customizable and beautiful with Tracks Pro"
 msgstr ""
 
 #: theme-options.php:49
-msgid "Visit Upgrades Gallery"
+msgid "Visit Tracks Pro"
 msgstr ""
 
 #: theme-options.php:53
@@ -668,14 +692,6 @@ msgid ""
 "the <a href=\"%s\">Customizer</a>"
 msgstr ""
 
-#. Theme Name of the plugin/theme
-msgid "Tracks"
-msgstr ""
-
-#. Theme URI of the plugin/theme
-msgid "https://www.competethemes.com/tracks/"
-msgstr ""
-
 #. Description of the plugin/theme
 msgid ""
 "A bold, beautiful, and responsive theme. Tracks is perfect for personal "
@@ -685,20 +701,12 @@ msgid ""
 "https://www.competethemes.com/tracks-live-demo/"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Compete Themes"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://www.competethemes.com"
-msgstr ""
-
-#: inc/customizer.php:418 inc/customizer.php:434 inc/customizer.php:797
+#: inc/customizer.php:428 inc/customizer.php:444 inc/customizer.php:838
 msgctxt "size of the featured image"
 msgid "size based on image size"
 msgstr ""
 
-#: inc/customizer.php:419 inc/customizer.php:435 inc/customizer.php:798
+#: inc/customizer.php:429 inc/customizer.php:445 inc/customizer.php:839
 msgctxt "size of the featured image"
 msgid "2:1 width/height ratio like posts"
 msgstr ""

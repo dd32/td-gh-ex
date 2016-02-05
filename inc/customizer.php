@@ -190,12 +190,22 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 				$label = 'Tencent Weibo';
 			} elseif ( $social_site == 'paypal' ) {
 				$label = 'PayPal';
+			} elseif ( $social_site == 'email-form' ) {
+				$label = 'Contact Form';
 			}
 
-			// setting
-			$wp_customize->add_setting( $social_site, array(
-				'sanitize_callback' => 'esc_url_raw'
-			) );
+			if ( $social_site == 'skype' ) {
+				// setting
+				$wp_customize->add_setting( $social_site, array(
+					'sanitize_callback' => 'ct_tracks_sanitize_skype'
+				) );
+			} else {
+				// setting
+				$wp_customize->add_setting( $social_site, array(
+					'sanitize_callback' => 'esc_url_raw'
+				) );
+			}
+
 			// control
 			$wp_customize->add_control( $social_site, array(
 				'type'     => 'url',
@@ -392,7 +402,7 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 		'sanitize_callback' => 'ct_tracks_sanitize_premium_layouts'
 	) );
 
-	$description_layout = sprintf( __( 'Want more layouts? Check out the <a target="_blank" href="%s">Tracks Theme Upgrades</a>.', 'tracks' ), 'https://www.competethemes.com/tracks/tracks-theme-upgrades/' );
+	$description_layout = sprintf( __( 'Want more layouts? Check out the <a target="_blank" href="%s">Tracks Pro Plugin</a>.', 'tracks' ), 'https://www.competethemes.com/tracks-pro/' );
 
 	// control - layout select
 	$wp_customize->add_control( 'premium_layouts_setting', array(
@@ -475,6 +485,37 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 		'title'    => __( 'Additional Options', 'tracks' ),
 		'priority' => 90
 	) );
+	// setting - no featured image
+	$wp_customize->add_setting( 'additional_options_no_featured_image', array(
+		'default'           => 'full',
+		'sanitize_callback' => 'ct_tracks_sanitize_no_featured_image',
+	) );
+	// control - no featured image
+	$wp_customize->add_control( 'additional_options_no_featured_image', array(
+		'type'     => 'radio',
+		'label'    => __( 'Posts without Featured Images should display:', 'tracks' ),
+		'section'  => 'ct_tracks_additional_options',
+		'setting'  => 'additional_options_no_featured_image',
+		'priority' => 5,
+		'choices'  => array(
+			'empty'    => __( 'Empty half', 'tracks' ),
+			'full'     => __( 'Full-width text', 'tracks' ),
+			'fallback' => __( 'Fallback image', 'tracks' )
+		),
+	) );
+	// setting - fallback image
+	$wp_customize->add_setting( 'additional_options_fallback_featured_image', array(
+		'sanitize_callback' => 'esc_url_raw'
+	) );
+	// control - fallback image
+	$wp_customize->add_control( new WP_Customize_Image_Control(
+		$wp_customize, 'additional_options_fallback_featured_image', array(
+			'label'    => __( 'Upload a fallback image', 'tracks' ),
+			'section'  => 'ct_tracks_additional_options',
+			'priority' => 6,
+			'settings' => 'additional_options_fallback_featured_image'
+		)
+	) );
 	// setting - return to top arrow
 	$wp_customize->add_setting( 'additional_options_return_top_settings', array(
 		'default'           => 'show',
@@ -486,7 +527,7 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 		'label'    => __( 'Show scroll-to-top arrow?', 'tracks' ),
 		'section'  => 'ct_tracks_additional_options',
 		'setting'  => 'additional_options_return_top_settings',
-		'priority' => 5,
+		'priority' => 19,
 		'choices'  => array(
 			'show' => __( 'Show', 'tracks' ),
 			'hide' => __( 'Hide', 'tracks' )
@@ -832,6 +873,20 @@ function ct_tracks_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
 }
 
+function ct_tracks_sanitize_no_featured_image( $input ) {
+	$valid = array(
+		'empty'    => __( 'Empty half', 'tracks' ),
+		'full'     => __( 'Full-width text', 'tracks' ),
+		'fallback' => __( 'Fallback image', 'tracks' )
+	);
+
+	return array_key_exists( $input, $valid ) ? $input : '';
+}
+
+function ct_tracks_sanitize_skype( $input ) {
+	return esc_url_raw( $input, array( 'http', 'https', 'skype' ) );
+}
+
 /***** Helper Functions *****/
 
 function ct_tracks_textures_array() {
@@ -891,7 +946,7 @@ function ct_tracks_sanitize_css( $css ) {
 function ct_tracks_customize_preview_js() { ?>
 
 	<script>
-		jQuery('#customize-info').prepend('<div class="upgrades-ad"><a href="https://www.competethemes.com/tracks/tracks-theme-upgrades/" target="_blank"><?php _e( 'View Tracks Theme Upgrades', 'tracks' ); ?> <span>&rarr;</span></a></div>');
+		jQuery('#customize-info').prepend('<div class="upgrades-ad"><a href="https://www.competethemes.com/tracks-pro/" target="_blank"><?php _e( 'View the Tracks Pro Plugin', 'tracks' ); ?> <span>&rarr;</span></a></div>');
 	</script>
 <?php }
 add_action( 'customize_controls_print_footer_scripts', 'ct_tracks_customize_preview_js' );

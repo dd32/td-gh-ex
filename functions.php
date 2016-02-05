@@ -275,6 +275,18 @@ if ( ! function_exists( 'ct_tracks_featured_image' ) ) {
 			$has_image = true;
 		}
 
+		// if no featured image, try fallback
+		if ( $has_image == false ) {
+
+			if ( get_theme_mod( 'additional_options_no_featured_image' ) == 'fallback' ) {
+				$image = get_theme_mod( 'additional_options_fallback_featured_image' );
+
+				if ( $image ) {
+					$has_image = true;
+				}
+			}
+		}
+
 		if ( $has_image == true ) {
 			// if lazy loading is enabled
 			if ( get_theme_mod( 'additional_options_lazy_load_settings' ) == 'yes' && ( is_archive() || is_home() ) ) {
@@ -398,6 +410,13 @@ function ct_tracks_post_class_update( $classes ) {
 		}
 	}
 
+	$featured_image_fallback = get_theme_mod( 'additional_options_no_featured_image' );
+
+	// if full or not set b/c full is the default (and Customizer doesn't save by default)
+	if ( $featured_image_fallback == 'full' || empty( $featured_image_fallback ) ) {
+		$classes[] = 'full-without-featured';
+	}
+
 	return $classes;
 }
 add_filter( 'post_class', 'ct_tracks_post_class_update' );
@@ -475,7 +494,8 @@ if ( ! function_exists( 'ct_tracks_social_site_list' ) ) {
 			'weibo',
 			'tencent-weibo',
 			'paypal',
-			'email'
+			'email',
+			'email-form'
 		);
 
 		return apply_filters( 'ct_tracks_social_site_list_filter', $social_sites );
@@ -719,3 +739,10 @@ function ct_tracks_get_content_template() {
 		get_template_part( 'content' );
 	}
 }
+
+// allow skype URIs to be used
+function ct_tracks_allow_skype_protocol( $protocols ){
+	$protocols[] = 'skype';
+	return $protocols;
+}
+add_filter( 'kses_allowed_protocols' , 'ct_tracks_allow_skype_protocol' );

@@ -37,15 +37,29 @@ if ( ! empty( $active_sites ) ) {
 				$class = 'fa fa-' . $active_site;
 			}
 
-			if ( $active_site == 'email' ) {
-				?>
+			if ( $active_site == 'email' ) { ?>
 				<li>
 					<a class="email" target="_blank"
 					   href="mailto:<?php echo antispambot( is_email( get_theme_mod( $active_site ) ) ); ?>">
 						<i class="fa fa-envelope" title="<?php esc_attr_e( 'email', 'tracks' ); ?>"></i>
 					</a>
 				</li>
-			<?php } else { ?>
+			<?php } elseif ( $active_site == 'email-form' ) { ?>
+				<li>
+					<a class="contact-form" target="_blank"
+					   href="<?php echo esc_url( get_theme_mod( $active_site ) ); ?>">
+						<i class="fa fa-envelope-o" title="<?php esc_attr_e( 'contact form', 'tracks' ); ?>"></i>
+					</a>
+				</li>
+			<?php }  elseif ( $active_site == 'skype') { ?>
+				<li>
+					<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
+					   href="<?php echo esc_url( get_theme_mod( $active_site ), array( 'http', 'https', 'skype' ) ); ?>">
+						<i class="<?php echo esc_attr( $class ); ?>" title="<?php esc_attr( $active_site ); ?>"></i>
+					</a>
+				</li>
+				<?php
+			} else { ?>
 				<li>
 					<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
 					   href="<?php echo esc_url( get_theme_mod( $active_site ) ); ?>">
