@@ -1,11 +1,15 @@
 == Changelog ==
 
+= 2.1 =
+* Bug Fixed: Site title line height issue
+* Added German translation de_DE.po and de_DE 
+
 = 2.0 =
 * Added: Theme Options -> Custom CSS option, Excerpt Options, Homepage / Frontpage Settings, Layout Options, ScrollUp Options, Pagination Options and Search Options
 * Added: Metabox Options
 * Bug Fixed: infinite scroll issue
 * Bug Fixed: Layout issues in Static Homepage(Reported by kerrigo)
-* Updated: Genericion to version 3.4.1
+* Updated: Genericons to version 3.4.1
 
 = 1.3 =
 * Added Featured Slider

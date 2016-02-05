@@ -3,8 +3,8 @@ Theme Name: Create
 Theme URI: http://catchthemes.com/themes/create/
 Author: Catch Themes
 Author URI: http://catchthemes.com/
-Description: Create your website using Create WordPress Theme. Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
-Version: 2.0
+Description: Create your website using Create WordPress Theme. Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! Create a beautiful, yet professional WordPress site in no time! This theme is translation ready and also currently translated in German language. Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
+Version: 2.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: create
@@ -682,7 +682,7 @@ h6 {
     color: #090401;
     clear: both;
     font-weight: 400;
-    line-height: 2.1;
+    line-height: 1.4;
 }
 
 h1:first-child,
