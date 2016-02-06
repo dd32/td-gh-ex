@@ -21,7 +21,6 @@ if ( ! function_exists( 'acmeblog_dynamic_css' ) ) :
         $custom_css .= "
             mark,
             .comment-form .form-submit input,
-            .slider-section .cat-links a,
             #calendar_wrap #wp-calendar #today,
             #calendar_wrap #wp-calendar #today a,
             .wpcf7-form input.wpcf7-submit:hover,

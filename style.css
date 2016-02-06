@@ -4,7 +4,7 @@ Theme URI: http://www.acmethemes.com/themes/acmeblog/
 Author: acmethemes
 Author URI: http://www.acmethemes.com/
 Description: AcmeBlog is professional blog theme, can be used for blog, news and magazine site. It is a modern responsive theme. It is SEO friendly theme. You can just focus on writing content and images. The theme has beautifully designed featured section and you have full control over it. AcmeBlog is very easy to use and customize. It has very light weight theme but have highly customizable theme customizer. With its advanced setting, you can control featured section, homepage, sidebar and inner pages. You have full control over header setting- logo, date, search and social. Further you can add your own copyright text in the footer. This theme come with advanced layout/design control. Default layout can be full or boxed, sidebar options are left, right and no sidebar. Image can be enable/disable in blog and archive pages. You can change whole site primary color. With the custom CSS and custom background image option, you can further customize your site. In the single post, you can show-hide related posts. Also with extra theme options, you can add breadcrumb and search placeholder. The theme comes with reset options too. Again Author widget, allow you to add author information. Support : http://www.acmethemes.com/supports/ and Demo http://www.acmethemes.com/demo/?theme=acmeblog
-Version: 1.1.2
+Version: 1.1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: acmeblog
@@ -557,8 +557,7 @@ i.fa{
 .format-link .entry-title,
 .format-audio .entry-title,
 .format-chat .entry-title {
-	font-size: 20px;
-	margin: 0 0 10px;
+	font-size: 30px;
 }
 
 .blog .format-status .entry-title,
@@ -1119,11 +1118,6 @@ object {
 .home-bxslider{
 	display: none;
 }
-.home-bxslider .cat-links {
-	left: 0;
-	position: absolute;
-	z-index: 1;
-}
 .slider-section {
 	float: left;
 	overflow: hidden;
@@ -1152,11 +1146,14 @@ object {
 }
 .slider-section .slider-desc {
 	background: rgba(0, 0, 0, 0.4);
-	bottom: 25%;
-	left: 15%;
-	padding-bottom: 24px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 	position: absolute;
 	width: 70%;
+	height: 45%;
 	text-align: center;
 }
 .slider-section .slide-title,
@@ -1197,24 +1194,16 @@ object {
 .slider-section .above-slider-details i{
 	margin: 9px;
 }
-.slider-section .cat-links a:hover {
-	color: #2D2D2D;
-}
-.slider-section .bx-controls-direction{
-	position: absolute;
-	top: 50%;
-	width: 100%;
-}
 .slider-section .bx-controls-direction a{
 	background: rgba(0, 0, 0, 0.4);
 	display: inline-block;
 	font-size: 39px;
 	height: 40px;
-	position: relative;
 	text-shadow: none;
-	top: 0;
 	width: 40px;
 	text-align: center;
+	position: absolute;
+	top: 50%;
 }
 .slider-section .bx-controls-direction a.bx-next{
 	background-position: -38px 0;
@@ -1294,6 +1283,9 @@ object {
 /* Landscape phone to portrait tablet */
 @media screen and (max-width:767px){
 	/*** SLIDER ***/
+	.slider-section .slider-desc {
+		height: 45%!important;
+	}
 	.slider-section, .besides-slider{
 		width: 100%;
 	}
@@ -1306,6 +1298,9 @@ object {
 /* Landscape phones and down */
 @media screen and (max-width:640px){
 	/*** SLIDER ***/
+	.slider-section .slider-desc {
+		height: 45%!important;
+	}
 	.slider-section {
 		width: 100%;
 	}
@@ -1319,7 +1314,7 @@ object {
 @media screen and (max-width:480px){
 	/*** SLIDER ***/
 	.slider-section .slider-desc {
-		bottom: 20%;
+		height: 30%!important;
 	}
 	.home-bxslider .cat-links {
 		display: none;
