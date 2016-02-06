@@ -5,10 +5,31 @@
     background-color: #f0b70c;
 }
 
+.header-cart-widget{
+    border-top-color: #f0b70c;
+}
+.header-cart-widget:before {
+    border-bottom-color: #f0b70c;
+}
+
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt,
+.woocommerce a.button,
+.woocommerce #respond input#submit, 
+.woocommerce button.button, 
+.woocommerce input.button,
+.woocommerce .wc-proceed-to-checkout input,
 .button {
 	border-color:#f0b70c;
 }
 
+.woocommerce input.button#place_order,
+.header-cart a span,
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.woocommerce nav.woocommerce-pagination ul li a:focus, 
+.woocommerce nav.woocommerce-pagination ul li a:hover,
 #back-to-top i.open, 
 #back-to-top i:hover,
 nav#mainmenu ul li a:hover,
@@ -32,6 +53,25 @@ nav#mainmenu ul li.current-menu-ancestor > a,
     background-color: #f0b70c;
 }
 
+.header-cart-widget .buttons a { 
+	color:#f0b70c !important  ;
+}
+
+.woocommerce .cart .button, 
+.woocommerce .cart input.button,
+.star-rating span,
+.woocommerce p.stars,
+.woocommerce p.stars a,
+.woocommerce p.stars:hover a,
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt,
+.woocommerce a.button,
+.woocommerce #respond input#submit, 
+.woocommerce button.button, 
+.woocommerce input.button,
+.woocommerce .wc-proceed-to-checkout input,
 .copyright a,
 nav#mainmenu ul li a:hover,
 nav#mainmenu li:hover > a,
@@ -41,8 +81,8 @@ nav#mainmenu ul li.current-menu-parent > a,
 nav#mainmenu ul li.current_page_ancestor > a,
 nav#mainmenu ul li.current-menu-ancestor > a ,
 .button,
-.wpcf7-form input[type=submit] ,
-.comment-form input[type=submit] ,
+.wpcf7-form input[type=submit],
+.comment-form input[type=submit],
 .contact-form input[type=submit] {
     color: #f0b70c;
 }
@@ -82,6 +122,24 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
     border-top-color: #f0b70c;
 }
 
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active ,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+    color: #bd9009;
+}
+
+.woocommerce input.button#place_order:hover,
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce a.button:hover,
+.woocommerce a.add_to_cart_button:hover,
+.woocommerce .woocommerce-message a.button:hover ,
+.woocommerce #respond input#submit:hover, 
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover,
+.woocommerce .wc-proceed-to-checkout input:hover,
 .button:hover,
 #sidebar .tagcloud a:hover,
 #footer .tagcloud a:hover,
@@ -92,11 +150,27 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
     background-color: #bd9009;
 }
 
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce a.button:hover,
+.woocommerce a.add_to_cart_button:hover,
+.woocommerce .woocommerce-message a.button:hover ,
+.woocommerce #respond input#submit:hover, 
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover,
+.woocommerce .wc-proceed-to-checkout input:hover,
 .button:hover,
 .wpcf7-form input[type=submit]:hover,
 .comment-form input[type=submit]:hover,
 .contact-form input[type=submit]:hover {
     border-color: #bd9009;
+}
+
+.header-cart-widget .buttons a:hover {
+    border-color: #bd9009 !important;
 }
 
 a:hover,

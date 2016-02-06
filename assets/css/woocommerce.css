@@ -1,0 +1,98 @@
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt,
+.woocommerce a.button,
+.woocommerce #respond input#submit, 
+.woocommerce button.button, 
+.woocommerce input.button,
+.woocommerce .wc-proceed-to-checkout input,
+.button,
+.wpcf7-form input[type=submit] ,
+.comment-form input[type=submit] ,
+.contact-form input[type=submit] {
+	background-color:#fff;
+	color:#ff6644;
+	border:solid 1px #ff6644;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	font-size:14px;
+	text-transform:none;
+	font-weight:normal;
+	min-width:120px;
+	padding:12px 14px;
+}
+
+.woocommerce input.button#place_order {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	color:#fff;
+}
+
+.woocommerce .cart .button, 
+.woocommerce .cart input.button {
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+}
+
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce a.button:hover,
+.woocommerce a.add_to_cart_button:hover,
+.woocommerce .woocommerce-message a.button:hover ,
+.woocommerce #respond input#submit:hover, 
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover,
+.woocommerce .wc-proceed-to-checkout input:hover,
+.button:hover,
+.wpcf7-form input[type=submit]:hover ,
+.comment-form input[type=submit]:hover ,
+.contact-form input[type=submit]:hover {
+	background-color:#d14a2b;
+	color:#fff;
+	border:solid 1px #d14a2b;
+}
+
+.product-content,
+.cross-sells h2,
+.upsells-products h2 ,
+.related-products h2 ,
+.woocommerce .cart .button, 
+.woocommerce .cart input.button,
+.woocommerce nav.woocommerce-pagination ul li {	
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.woocommerce .cart .button, 
+.woocommerce .cart input.button,
+.header-cart-widget p , 
+.header-cart-widget span, 
+.header-cart-widget li, 
+.header-cart-widget a { 
+	font-family:"Roboto Slab" !important;
+	font-weight:normal;
+}
+
+.header-cart-widget .buttons a { 
+	text-align:center !important
+}
+
+.header-cart-widget .buttons a:hover{ 
+	color:#fff !important;
+	border:solid 1px #d14a2b !important;
+}
+
+.woocommerce .cart .button:hover, 
+.woocommerce .cart input.button:hover{ 
+	color:#fff ;
+}
