@@ -1,4 +1,9 @@
 == CHANGE LOG ==
+= 1.1.8 =
+	- New - View ThemeFreesia Options added
+	- Update - pot file updated
+	- Update - Font family added for Blogquote, Headings and Navigation
+
 = 1.1.7 =
 	- Fixed 
 		- gototop disable issue fixed

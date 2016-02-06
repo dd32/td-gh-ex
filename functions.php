@@ -139,6 +139,9 @@ if(!class_exists('Arise_Plus_Features')){
 			<a href="<?php echo esc_url( 'http://demo.themefreesia.com/arise/' ); ?>" title="<?php esc_attr_e( 'View Demo', 'arise' ); ?>" target="_blank" id="about_arise">
 			<?php _e( 'View Demo', 'arise' ); ?>
 			</a><br/>
+			<a href="<?php echo esc_url(home_url('/')).'wp-admin/theme-install.php?search=author:themefreesia'; ?>" title="<?php esc_attr_e( 'View ThemeFreesia Themes', 'arise' ); ?>" target="_blank" id="about_arise">
+                <?php _e( 'View ThemeFreesia Themes', 'arise' ); ?>
+            </a><br/>
 		<?php
 		}
 	}

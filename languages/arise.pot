@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: arise 1.0\n"
-"POT-Creation-Date: 2016-01-18 18:32+0545\n"
+"POT-Creation-Date: 2016-02-03 20:32+0545\n"
 "PO-Revision-Date: 2015-08-07 08:34+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeFreesia <themefreesia@gmail.com>\n"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: footer.php:82
+#: footer.php:85
 msgid "Go to Top"
 msgstr ""
 
@@ -375,31 +375,39 @@ msgstr ""
 msgid "Disable Goto Top"
 msgstr ""
 
-#: inc/customizer/functions/theme-options.php:241
+#: inc/customizer/functions/theme-options.php:240
+msgid "Disable Top Social Icons"
+msgstr ""
+
+#: inc/customizer/functions/theme-options.php:252
+msgid "Disable Buttom Social Icons"
+msgstr ""
+
+#: inc/customizer/functions/theme-options.php:265
 msgid "Reset all default settings. (Refresh it to view the effect)"
 msgstr ""
 
-#: inc/customizer/functions/theme-options.php:247
+#: inc/customizer/functions/theme-options.php:271
 msgid "Enter your custom CSS"
 msgstr ""
 
-#: inc/customizer/functions/theme-options.php:258
+#: inc/customizer/functions/theme-options.php:282
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer/functions/theme-options.php:266
+#: inc/customizer/functions/theme-options.php:290
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer/functions/theme-options.php:271
+#: inc/customizer/functions/theme-options.php:295
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer/functions/theme-options.php:276
+#: inc/customizer/functions/theme-options.php:300
 msgid "Navigation"
 msgstr ""
 
-#: inc/customizer/functions/theme-options.php:281
+#: inc/customizer/functions/theme-options.php:305
 msgid "Static Front Page"
 msgstr ""
 
