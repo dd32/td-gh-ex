@@ -55,7 +55,7 @@
 
     <?php if ( (!suevafree_setting('suevafree_view_back_to_top') ) || ( suevafree_setting('suevafree_view_back_to_top') == "on" ) ): ?>
     
-        <div id="back-to-top"> <i class="icon icon-chevron-up"></i> </div>
+        <div id="back-to-top"> <i class="fa fa-chevron-up"></i> </div>
 	
     <?php endif; ?>
     

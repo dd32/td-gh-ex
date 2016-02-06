@@ -9,24 +9,30 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-function suevafree_postformat_function() {
-
-	if ( get_post_type( get_the_ID()) == "page" ) {
-		$postformats = "page";
-	} 
+if (!function_exists('suevafree_postformat_function')) {
 	
-	else if ( !get_post_format() )  {
-		$postformats = "standard";
-	} 
-					
-	else {
-		$postformats = get_post_format();
+	function suevafree_postformat_function() {
+	
+		if ( get_post_type( get_the_ID()) == "page" ) {
+				
+			$postformats = "page";
+			
+		} else if ( get_post_type( get_the_ID()) == "product" ) {
+			
+			$postformats = "product";
+			
+		} else {
+			
+			$postformats = "standard";
+			
+		}
+						
+		get_template_part( 'core/post-formats/' . $postformats );
+	
 	}
-					
-	get_template_part( 'core/post-formats/'.$postformats );
-
+	
+	add_action( 'suevafree_postformat','suevafree_postformat_function', 10, 2 );
+	
 }
-
-add_action( 'suevafree_postformat','suevafree_postformat_function', 10, 2 );
 
 ?>

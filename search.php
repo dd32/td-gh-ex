@@ -40,7 +40,7 @@
 		
 	<?php endwhile; else:  ?>
 
-            <div class="post-container <?php echo suevafree_template('span'); ?>" >
+            <div class="post-container col-md-12" >
     
                 <div class="post-article search">
                     

@@ -1,28 +1,19 @@
 <?php 
-		
-	if ( has_post_thumbnail() ) { ?>
-        
-		 <div class="pin-container">
-			<?php the_post_thumbnail('blog'); ?>
-		</div>
-        
-<?php } ?>
+
+/**
+ * Wp in Progress
+ * 
+ * @author WPinProgress
+ *
+ * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+do_action('suevafree_thumbnail', 'blog' ); ?>
     
 <div class="post-article">
 
-	<?php
-	
-		if (is_single()) :
-
-			do_action("suevafree_title","single"); 
-
-		else :
-
-			do_action("suevafree_title","blog"); 
-
-		endif;
-	
-	?>
+	<?php do_action('suevafree_before_content'); ?>
     
     <div class="line"></div>
 
@@ -43,7 +34,6 @@
 		comments_template();
 		
 	endif;
-	
 	
 	?>
 

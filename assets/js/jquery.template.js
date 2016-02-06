@@ -1,6 +1,21 @@
 jQuery.noConflict()(function($){
 
 /* ===============================================
+   HEADER CART
+   ============================================= */
+	
+	$('section.header-cart').hover(
+		
+		function () {
+			$(this).children('div.header-cart-widget').stop(true, true).fadeIn(100);
+		}, 
+		function () {
+			$(this).children('div.header-cart-widget').stop(true, true).fadeOut(400);		
+		}
+			
+	);
+
+/* ===============================================
    Footer
    =============================================== */
 

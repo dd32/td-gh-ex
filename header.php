@@ -45,7 +45,9 @@
                         ?>
                                 
                     </a>
-                            
+
+					<?php echo suevafree_header_cart(); ?>
+
                 </div>
     
                 <nav id="mainmenu" class="<?php echo suevafree_setting('suevafree_menu_layout'); ?>">

@@ -12,9 +12,29 @@
 .skills .views.active,
 .skills .views:hover,
 .filter li:hover,
-.filter li.active {
+.filter li.active,
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt,
+.woocommerce a.button,
+.woocommerce #respond input#submit, 
+.woocommerce button.button, 
+.woocommerce input.button,
+.woocommerce input.button#place_order,
+.woocommerce .wc-proceed-to-checkout input,
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.woocommerce nav.woocommerce-pagination ul li a:focus, 
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+.header-cart a span {
     background-color: #84ad37;
 }
+.star-rating span,
+.woocommerce p.stars,
+.woocommerce p.stars a,
+.woocommerce p.stars:hover a,
 nav#mainmenu ul li a:hover,
 nav#mainmenu li:hover > a,
 nav#mainmenu ul li.current-menu-item > a,
@@ -30,10 +50,12 @@ nav#mainmenu ul li.current-menu-ancestor > a {
 ::selection {
     background-color: #84ad37;
 }
-nav#mainmenu ul ul {
+nav#mainmenu ul ul,
+.header-cart-widget{
     border-top-color: #84ad37;
 }
-nav#mainmenu ul ul:before {
+nav#mainmenu ul ul:before,
+.header-cart-widget:before {
     border-bottom-color: #84ad37;
 }
 nav#mainmenu ul ul li ul {
@@ -57,6 +79,18 @@ nav#mainmenu ul ul li.current_page_ancestor > a,
 nav#mainmenu ul ul li.current-menu-ancestor > a {
     border-top-color: #84ad37;
 }
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce a.button:hover,
+.woocommerce a.add_to_cart_button:hover,
+.woocommerce .woocommerce-message a.button:hover ,
+.woocommerce #respond input#submit:hover, 
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover,
+.woocommerce .wc-proceed-to-checkout input:hover,
 .wpcf7-form input[type=submit]:hover ,
 .contact-form input[type=submit]:hover,
 .comment-form input[type=submit]:hover,
@@ -74,6 +108,8 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
 #back-to-top i:hover {
     border-color: #5d7a27;
 }
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active ,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
 a:hover,
 #footer a:hover,
 #footer ul.widget-category li:hover,

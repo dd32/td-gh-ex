@@ -1,62 +1,24 @@
 <?php 
-    
-	if ( has_post_thumbnail() ) : ?>
-        
-		<div class="pin-container">
-			<?php the_post_thumbnail('blog'); ?>
-        </div>
-        
-<?php 
 
-	endif; 
+/**
+ * Wp in Progress
+ * 
+ * @author WPinProgress
+ *
+ * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+do_action('suevafree_thumbnail', 'blog' ); ?>
 	
-?>
-    
 <div class="post-article">
 
 	<?php
-	
-		if (is_single()) :
 
-			do_action("suevafree_title","single"); 
+		do_action('suevafree_before_content');
+		do_action('suevafree_post_info');
+		do_action('suevafree_after_content');
 
-		else :
-
-			do_action("suevafree_title","blog"); 
-
-		endif;
-	
 	?>
     
-    <div class="line"> 
-
-        <div class="entry-info">
-       
-            <span class="entry-date"><i class="icon-time" ></i><?php echo get_the_date(); ?></span>
-            
-			<?php if (comments_open()): ?>
-            
-                <span class="entry-comments">
-                    
-                    <i class="icon-comments-alt" ></i>
-                    <?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.__( "No comments","suevafree").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.__( "comment","suevafree").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.__( "comments","suevafree").'</a>' ); ?>
-                
-                </span>
-            
-			<?php endif; ?>
-            
-            <span class="entry-standard"><i class="icon-edit"></i><?php _e( "Article","suevafree") ?></span>
-        	
-			<?php if (suevafree_setting('suevafree_view_author') == "on" ) : ?>
-
-                <span class="entry-author"><i class="icon-user"></i><?php the_author(); ?></span>
-
-            <?php endif; ?>
-            
-        </div>
-    
-    </div>
-
-	<?php do_action('suevafree_after_content'); ?>
-
 </div>

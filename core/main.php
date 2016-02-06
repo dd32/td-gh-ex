@@ -10,6 +10,32 @@
  */
 
 /*-----------------------------------------------------------------------------------*/
+/* Woocommerce is active */
+/*-----------------------------------------------------------------------------------*/ 
+
+if ( ! function_exists( 'suevafree_is_woocommerce_active' ) ) {
+	
+	function suevafree_is_woocommerce_active( $type = "" ) {
+	
+        global $woocommerce;
+
+        if ( isset( $woocommerce ) ) {
+			
+			if ( !$type || call_user_func($type) ) {
+            
+				return true;
+			
+			}
+			
+		}
+	
+	}
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------*/
 /* TAG TITLE */
 /*-----------------------------------------------------------------------------------*/  
 
@@ -119,12 +145,28 @@ if (!function_exists('suevafree_postmeta')) {
 	
 	function suevafree_postmeta($id) {
 	
-		global $post;
+		global $post, $wp_query;
 		
-		$val = get_post_meta( $post->ID , $id, TRUE);
-		if(isset($val))
-			return $val;
+		$content_ID = $post->ID;
 	
+		if( suevafree_is_woocommerce_active('is_shop') ) {
+	
+			$content_ID = get_option('woocommerce_shop_page_id');
+	
+		}
+
+		$val = get_post_meta( $content_ID , $id, TRUE);
+		
+		if(isset($val)) {
+			
+			return $val;
+			
+		} else {
+				
+			return '';
+			
+		}
+
 	}
 
 }
@@ -284,15 +326,69 @@ if (!function_exists('suevafree_enqueue_style')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* POST ICON */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('suevafree_posticon')) {
+
+	function suevafree_posticon() {
+	
+		$icons = array (
+		
+			"video" => "fa fa-film" , 
+			"gallery" => "fa fa-camera" , 
+			"audio" => "fa fa-music" , 
+			"chat" => "fa fa-users", 
+			"status" => "fa fa-keyboard-o", 
+			"image" => "fa fa-file-image-o", 
+			"quote" => "fa fa-quote-left", 
+			"link" => "fa fa-external-link", 
+			"aside" => "fa fa-file-text-o", 
+		
+		);
+	
+		if (get_post_format()) { 
+		
+			$icon = '<span class="entry-'.get_post_format().'"><i class="'.$icons[get_post_format()].'"></i>'.ucfirst(strtolower(get_post_format())).'</span>'; 
+		
+		} else {
+		
+			$icon = '<span class="entry-standard"><i class="fa fa-pencil-square-o"></i>'.__( "Article","suevafree").'</span>'; 
+		
+		}
+	
+		return $icon;
+		
+	}
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* POST CLASS */
 /*-----------------------------------------------------------------------------------*/   
 
 if (!function_exists('suevafree_post_class')) {
 	
 	function suevafree_post_class($classes) {
+
+		if ( suevafree_is_woocommerce_active('is_cart') ) :
 		
-		$classes[] = 'post-container col-md-12';
-	
+			$classes[] = 'woocommerce_cart_page';
+				
+		endif;
+
+		if ( !is_product() ) :
+
+			$classes[] = 'post-container col-md-12';
+
+		endif;
+		
+		if ( is_page() ) :
+
+			$classes[] = 'full';
+
+		endif;
+		
 		return $classes;
 		
 	}
@@ -332,26 +428,36 @@ if (!function_exists('suevafree_template')) {
 		$span = $template["right-sidebar"];
 		$sidebar =  "right-sidebar";
 	
-		if ( suevafree_setting('suevafree_home') && is_home() ){
-			
-			$span = $template[suevafree_setting('suevafree_home')];
-			$sidebar =  suevafree_setting('suevafree_home');
+		if ( suevafree_is_woocommerce_active('is_woocommerce') && ( suevafree_is_woocommerce_active('is_product_category') || suevafree_is_woocommerce_active('is_product_tag') ) && suevafree_setting('wip_woocommerce_category_layout') ) {
+		
+			$span = $template[suevafree_setting('wip_woocommerce_category_layout')];
+			$sidebar =  suevafree_setting('wip_woocommerce_category_layout');
+
+		} else if ( suevafree_is_woocommerce_active('is_woocommerce') && is_search() && suevafree_postmeta('wip_template') ) {
+					
+			$span = $template[suevafree_postmeta('wip_template')];
+			$sidebar =  suevafree_postmeta('wip_template');
 	
-		} else if ( suevafree_setting('suevafree_category_layout') && suevafree_get_archive_title() ) {
-			
-			$span = $template[suevafree_setting('suevafree_category_layout')];
-			$sidebar =  suevafree_setting('suevafree_category_layout');
-	
-		} else if ( suevafree_setting('suevafree_search_layout') && is_search() ) {
-			
-			$span = $template[suevafree_setting('suevafree_search_layout')];
-			$sidebar =  suevafree_setting('suevafree_search_layout');
-	
-		} else if ( suevafree_postmeta('suevafree_template') && ( is_page() || is_single() ) ){
-	
-			$span = $template[suevafree_postmeta('suevafree_template')];
-			$sidebar =  suevafree_postmeta('suevafree_template');
-				
+		} else if ( ( is_page() || is_single() || suevafree_is_woocommerce_active('is_shop') ) && suevafree_postmeta('wip_template') ) {
+					
+			$span = $template[suevafree_postmeta('wip_template')];
+			$sidebar =  suevafree_postmeta('wip_template');
+
+		} else if ( ! suevafree_is_woocommerce_active('is_woocommerce') && ( is_category() || is_tag() || is_tax() || is_month() ) && suevafree_setting('wip_category_layout') ) {
+
+			$span = $template[suevafree_setting('wip_category_layout')];
+			$sidebar =  suevafree_setting('wip_category_layout');
+						
+		} else if ( is_home() && suevafree_setting('wip_home') ) {
+					
+			$span = $template[suevafree_setting('wip_home')];
+			$sidebar =  suevafree_setting('wip_home');
+
+		} else if ( ! suevafree_is_woocommerce_active('is_woocommerce') && is_search() && suevafree_setting('wip_search_layout') ) {
+
+			$span = $template[suevafree_setting('wip_search_layout')];
+			$sidebar =  suevafree_setting('wip_search_layout');
+						
 		}
 		
 		return ${$id};
@@ -476,6 +582,7 @@ if (!function_exists('suevafree_scripts_styles')) {
 	
 		wp_enqueue_script( "jquery-ui-core", array('jquery'));
 		wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
+		wp_enqueue_script( "masonry", array('jquery') );
 
 	}
 	
@@ -581,7 +688,9 @@ if (!function_exists('suevafree_setup')) {
 		add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link','status','chat','image' ) );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'post-thumbnails' );
-	
+
+		add_theme_support( 'woocommerce' );
+
 		add_theme_support( 'title-tag' );
 	
 		add_image_size( 'blog', 940,429, TRUE ); 
