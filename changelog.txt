@@ -1,6 +1,6 @@
 SuevaFree Changelog
 
-- Version 2.0.1 - Released: 06.02.2016
+- Version 2.0.2 - Released: 06.02.2016
 
 -- Added: WooCommerce support.
 -- Added: WooCommerce header cart.
