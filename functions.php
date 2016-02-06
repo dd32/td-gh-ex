@@ -168,7 +168,7 @@ if (!function_exists('sneaklite_scripts_styles')) {
 
 		if ( get_theme_mod('suevafree_skin') ):
 		
-			wp_enqueue_style( 'sneaklite- ' . get_theme_mod('suevafree_skin') , get_stylesheet_directory_uri() . '/assets/skins/' . get_theme_mod('suevafree_skin') . '.css' ); 
+			wp_enqueue_style( 'sneaklite-' . get_theme_mod('suevafree_skin') , get_stylesheet_directory_uri() . '/assets/skins/' . get_theme_mod('suevafree_skin') . '.css' ); 
 		
 		endif;
 	
