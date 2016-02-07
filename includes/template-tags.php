@@ -20,6 +20,8 @@ and features for this theme.
 ================================================================================================
 Table of Content
 ================================================================================================
+1.0 - Timestamp
+2.0 - Comments
 1.0 - Metadata Posted On
 2.0 - Metadata Posted In
 3.0 - Custom Widget Sidebars
@@ -30,66 +32,69 @@ Table of Content
 
 /*
 ================================================================================================
-1.0 - Metadata Posted On
+1.0 - Post Timestamp
 ================================================================================================
 */
- function beyond_expectations_metadata_posted_on_setup(){
-    // This function will call and output The Date and Author
-    printf(('<i class="fa fa-calendar"></i>%2$s <i class="fa fa-user"></i>%3$s'), 'meta-prep meta-prep-author',
-    sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-        get_permalink(),
-        esc_attr( get_the_time() ),
-        get_the_date('m/d/Y')),
-    sprintf( '<a class="url fn n" href="%1$s" title="%2$s">%3$s</a>',
-    get_author_posts_url( get_the_author_meta( 'ID' ) ),
-    esc_attr( sprintf( __( 'View all posts by %s', 'beyond-expectations' ), get_the_author() ) ),
-    get_the_author()
-    ));
-
-    // This function will only display when sticky post is enabled!
-    if (is_sticky()){
-        echo '<i class="fa fa-thumb-tack sticky"></i>' . __('Sticky Post', 'beyond-expectations');
-    } 
-
-    // This function will call and output Comments
-    printf('<i class="fa fa-comments"></i>'); 
-    if (comments_open()) {
-        comments_popup_link('Add Comment','1 Comment','% Comments');
+if (!function_exists('beyond_expectations_post_timestamp_author_setup')) {
+    function beyond_expectations_post_timestamp_author_setup() {
+        printf(('%2$s by %3$s'), 'meta-prep meta-prep-author', 
+        sprintf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+            get_permalink(),
+            esc_attr(get_the_time()),
+            get_the_date('F d, Y')),
+        sprintf('<a href="%1$s" title="%2$s">%3$s</a>',
+        get_author_posts_url(get_the_author_meta('ID')),
+        esc_attr(sprintf(__('View all posts by $s', 'beyond-expectations'), get_the_author())), 
+        get_the_author()
+        ));
     }
-    else {
-        _e('Comments Closed', 'beyond-expectations');
+}
+
+/*
+================================================================================================
+2.0 - Comments
+================================================================================================
+*/
+if (!function_exists('beyond_expectations_add_comments_setup')) {
+    function beyond_expectations_add_comments_setup() {
+        if (comments_open()) {
+            comments_popup_link('Add Comment','1 Comment','% Comments');
+        }
+        else {
+            _e('Comments are Closed', 'beyond-expectations');
+        }
     }
-    
-     if (is_user_logged_in()) { ?>
-         <i class="fa fa-pencil"></i>
-    <?php
-        edit_post_link( __( 'Edit', 'beyond-expectations' ), '<span class="edit-link">', '</span>' );
-     }
 }
 
 /*
 ================================================================================================
 2.0 - Metadata Posted In
 ================================================================================================
-*/
-function beyond_expectations_metadata_posted_in_setup() {
-	// Retrieves tag list of current post, separated by commas.
-	$tag_list = get_the_tag_list( '', ', ' );
-        $posted_in = '';
-	if ( $tag_list ) {
-			$posted_in = '<i class = "fa fa-archive"></i>%1$s<i class="fa fa-tags"></i>%2$s';
-	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-			$posted_in = '<i class = "fa fa-archive"></i>%1$s';
-	}
-	// Prints the string, replacing the placeholders.
-	printf(
-			$posted_in,
-			get_the_category_list( ', ' ),
-			$tag_list,
-			get_permalink(),
-			the_title_attribute( 'echo=0' )
-	);
+
+if (!function_exists('beyond_expectations_cat_tag_setup')) {
+    function beyond_expectations_cat_tag_setup() { ?>
+        <aside class="index-meta group">
+            <ul>
+
+
+                    <li class="theComments">
+                        <?php comments_popup_link( ( 'Leave a comment'), ( '1 Comment'), ( '% Comments') ); ?>
+                    </li><!-- .theComments -->
+
+                <?php
+
+                    $category_terms = wp_get_post_categories($post->ID);
+                    if ( $category_terms ) {
+                        echo get_the_category_list(); 
+                    }
+                ?>
+            </ul>		
+
+        </aside><!-- .index-meta -->
+    <?php }
 }
+*/
+
 
 /*
 ================================================================================================

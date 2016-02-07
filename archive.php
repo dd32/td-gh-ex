@@ -49,7 +49,7 @@ perform their jobs.
             <?php while (have_posts()) : the_post(); ?>
                 <?php get_template_part('template-parts/content', 'archive'); ?>
         <?php endwhile; ?>
-                <?php beyond-expectations_paging_navigation_setup(); ?>
+                <?php beyond_expectations_paging_navigation_setup(); ?>
         <?php else : ?>
                 <?php get_template_part('template-parts/content', 'none'); ?>
         <?php endif; ?>

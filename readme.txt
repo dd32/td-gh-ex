@@ -56,6 +56,10 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.0.3
+Readjust container width
+Change layout to fit what it was supposed to be. 
+
 Version: 0.0.2
 Replace Footer Site Info with correct url and info
 Replace Screenshot Author and URL

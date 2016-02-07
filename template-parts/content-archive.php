@@ -14,14 +14,38 @@ archive in many ways.
 ================================================================================================
 */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header">
-        <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo (get_the_title()) ? get_the_title() : __('(No Title)', 'beyond-expectations'); ?></a></h3>
-    </header>
-    <small class="metadata-posted-on"><?php beyond_expectations_metadata_posted_on_setup(); ?></small>
-    <div class="entry-content">
-        <?php the_content(); ?>
-        <?php wp_link_pages(); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
+    <div class="post-timestamp">
+        <?php beyond_expectations_post_timestamp_author_setup(); ?>
     </div>
-    <small class="metadata-posted-in"><?php beyond_expectations_metadata_posted_in_setup(); ?></small>
+    <header class="entry-header">
+        <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo (get_the_title()) ? get_the_title() : __('No Title', 'beyond-expectations'); ?></a></h1>
+    </header>
+    <div class="entry-content-container">
+        <div class="entry-metadata-container cf">
+            <div class="posted-comments">
+                <?php beyond_expectations_add_comments_setup(); ?>
+            </div>
+        </div>
+        <div class="entry-content">
+            <?php the_excerpt(); ?>
+                <div class="read-more">
+                    <a href="<?php echo get_permalink(); ?>"><?php _e('Read More', 'beyond-expectations'); ?></a>
+                </div>
+            <?php wp_link_pages(); ?>
+            
+            <div class="index-meta cf">
+                <ul>
+                    <li>
+                        <?php
+                            $category_terms = wp_get_post_categories( $post->ID );
+                                if ( $category_terms ) {
+                                    echo get_the_category_list(); 
+                                }
+                        ?>
+                    </li>
+                </ul>		
+            </div>
+        </div>
+    </div>
 </article>

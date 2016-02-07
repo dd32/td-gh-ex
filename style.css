@@ -7,7 +7,7 @@ Description: Beyond Expectations is a responsive WordPress theme with many featu
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, white, dark, one-column, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, sticky-post, threaded-comments, translation-ready
-Version: 0.0.2
+Version: 0.0.3
 Text Domain: beyond-expectations
 
 This theme, like WordPress, is licensed under the GPL.
@@ -522,6 +522,7 @@ th {
 body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
+    font-weight: 300;
 }
 
 /*
@@ -546,12 +547,12 @@ img {
 ================================================================================================
 */
 a {
-    color: #666666;
+    color: #000080;
     text-decoration: none;
 }
 
 a:hover {
-    color: #000080;
+    color: #333333;
     text-decoration: none;
 }
 
@@ -585,6 +586,8 @@ a:hover {
 
 .primary-navigation a {
     color: #ffffff;
+    font-size: 15px;
+    font-weight: 300;
     display: block;
     padding: 9px 15px;
     text-decoration: none;
@@ -929,8 +932,8 @@ input[type = "search"] {
 ================================================================================================
 */
 .site-container { 
-    margin: 10px auto;
-    max-width: 1200px;
+    margin: 5px auto 0 auto;
+    max-width: 1190px;
     padding: 0 10px;
 }
 
@@ -975,7 +978,7 @@ input[type = "search"] {
 */
 .content-area {
     float: left;
-    width: 66.66666666666667%;
+    width: 72.91666666666667%;
 }
 
 .entry-title {
@@ -985,7 +988,20 @@ input[type = "search"] {
 }
 
 .post {
-    margin: 0 0 40px 0;
+    border-bottom: 1px solid #cccccc;
+    margin: 0 0 25px 0;
+    padding-bottom: 25px;
+}
+
+.entry-content-container {
+    margin-top: 25px;
+    margin-left: 22.85714285714286%;
+}
+
+.entry-metadata-container {
+    float: left;
+    margin-left: -29.62962962962963%;
+    width: 27%;
 }
 
 .entry-content {
@@ -994,19 +1010,99 @@ input[type = "search"] {
 
 .entry-content p {
     font-weight: 300;
-    margin: 0 0 10px 0;
+    line-height: 25px;
+    margin: 0 0 15px 0;
     padding: 0;
 }
 
-.metadata-posted-on {
-    display: block;
+.post-timestamp {
+    font-size: 14px;
+    margin: 10px 0 5px 0;
+}
+
+.posted-comments {
+    font-size: 13px;
+}
+
+.posted-comments a {
+    background: #333333;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 3px 20px;
+}
+
+.posted-comments a:hover {
+    background: #3399ff;
+}
+
+.read-more {
+    clear: both;
+    font-size: 13px;
+    float: right;
+}
+
+.read-more a {
+    background: #333333;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 3px 20px;
+}
+
+.read-more a:hover {
+    background: #3399ff;
+}
+
+.index-meta {
+	margin: 0;
+    padding: 0;
+}
+
+.index-meta ul {
+    float: left;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.metadata-posted-in {
-    display: block;
-    margin-top: 10px;
+.index-meta li {
+	float: left;
+	margin: 0 2px 0 0;
+}
+
+.index-meta li a:link,
+.index-meta li a:visited {
+	font-size: 12px;
+	padding: 4px 20px;
+	background: #9b9b9b;
+	text-decoration: none;
+	color: #fff;
+}
+
+.index-meta ul ul li a:link,
+.index-meta ul ul li a:visited {
+	padding: 2px 10px;
+}
+
+.index-meta li.theComments a:link,
+.index-meta li.theComments a:visited {
+	background: #333;
+}
+
+.index-meta li a:hover,
+.index-meta li.theComments a:hover,
+.index-meta li a:focus,
+.index-meta li.theComments a:focus {
+	background: #3399FF;
+}
+
+li.theComments span {
+	display: none;
+}
+
+.post-tags li a {
+    margin-right: 2px;
 }
 
 .sticky {
@@ -1034,9 +1130,6 @@ input[type = "search"] {
 17.0 - Content Area (Comments)
 ================================================================================================
 */
-
-
-
 .comments-title {
     border-bottom: 1px solid #CCCCCC;
     font-size: 20px;
@@ -1220,10 +1313,10 @@ ol.children {
 21.0 - Widget Area
 ================================================================================================
 */
-
 .widget-area {
     float: right;
-    width: 29.296875%;
+    /* width: 29.296875%; */
+    width: 25%;
 }
 
 .widget-area .search-submit,
@@ -1296,8 +1389,14 @@ input[type = "search"] {
     width: 100%;
 }
 
+#wp-calendar a {
+    color: #0000ff;
+    font-style: italic;
+    font-weight: 400;
+}
+
 #wp-calendar caption {
-    font-weight: bold;
+    font-weight: 400;
     margin: 5px 0;
     text-align: center;
 }
@@ -1306,7 +1405,12 @@ input[type = "search"] {
     font-weight: 400;
 }
 
-#wp-calendar th, td {
+#wp-calendar th {
+    font-weight: 400;
+}
+
+#wp-calendar td {
+    font-weight: 300;
     padding: 6px 0;
 }
 
@@ -1373,11 +1477,29 @@ input[type = "search"] {
 26.0 - Media Queries (Mobile Large)
 ================================================================================================
 */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) { 
+    .entry-content-container {
+        margin-top: 25px;
+        margin-left: 0;
+    }
+
+    .entry-metadata-container {
+        float: none;
+        margin-left: 0;
+        width: 38%;
+    }
     
     .content-area {
         float: none;
         width: 100%;
+    }
+    
+    .entry-title {
+        margin-bottom: -15px;
+    }
+    
+    .entry-content {
+        margin-top: 20px;
     }
     
     .widget-area {
@@ -1474,6 +1596,38 @@ input[type = "search"] {
 27.0 - Media Queries (Tablet Small)
 ================================================================================================
 */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .entry-content-container {
+        margin-top: 25px;
+        margin-left: 0;
+    }
+
+    .entry-metadata-container {
+        float: none;
+        margin-left: 0;
+        width: 38%;
+    }
+    
+    .entry-title {
+        margin-bottom: -15px;
+    }
+    
+    .entry-content {
+        margin-top: 20px;
+    }
+    
+    .content-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .widget-area {
+        float: none;
+        width: 100%;
+    }
+}
+
+
 
 .fa-calendar,
 .fa-archive {
