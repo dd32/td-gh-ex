@@ -31,17 +31,23 @@ content. This content.php is the main content that will be displayed.
             <?php the_content(); ?>
             <?php wp_link_pages(); ?>
             
-            <div class="index-meta cf">
-                <ul>
+            <div class="index-meta">
+                <?php
+                    $category_terms = wp_get_post_categories( $post->ID );
+                        if ( $category_terms ) {
+                            echo get_the_category_list(); 
+                        }
+                ?>
+                <ul class="post-tags">
                     <li>
                         <?php
-                            $category_terms = wp_get_post_categories( $post->ID );
-                                if ( $category_terms ) {
-                                    echo get_the_category_list(); 
-                                }
+                        $tag_terms = wp_get_post_tags($post->ID);
+                        if ($tag_terms) {
+                        echo get_the_tag_list();
+                        }
                         ?>
                     </li>
-                </ul>		
+                </ul>
             </div>
         </div>
     </div>
