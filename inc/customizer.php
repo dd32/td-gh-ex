@@ -555,6 +555,26 @@ function aaron_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting( 'aaron_width',		array(
+			'sanitize_callback' => 'aaron_sanitize_page',
+			'default' => 100,
+		)
+	);
+	$wp_customize->add_control('aaron_width',		array(
+			'type' => 'range',
+			'label' =>  __( 'Change the width of the main content.', 'aaron' ),
+			'section' => 'aaron_section_advanced',
+			 'input_attrs' => array(
+		        'min'   => 30,
+		        'max'   => 100,
+		        'step'  => 4,
+		       // 'class' => 'test-class test',
+		       // 'style' => 'color: #0a0',
+   			 ),
+		)
+	);
+
+
 	/* if jetpack is installed, add the featured heading to the customizer. */
 	$wp_customize->add_setting( 'aaron_featured_headline',		array(
 				'sanitize_callback' => 'aaron_sanitize_text',
@@ -637,20 +657,29 @@ function aaron_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'aaron_caps',		array(
-			'sanitize_callback' => 'aaron_sanitize_checkbox',
+			'sanitize_callback' => 'aaron_sanitize_cap',
 		)
 	);
-	$wp_customize->add_control('aaron_caps',		array(
-			'type' => 'checkbox',
-			'label' =>  __( 'Check this box to change the text displayed as UPPERCASE to Capitalized.', 'aaron' ),
-			'section' => 'aaron_section_accessibility',
+	$wp_customize->add_control( 'aaron_caps',		array(
+			'type'           => 'select',
+			'label' =>  __( 'Change the capitalization', 'aaron' ),
+			'description' => __( 'By default, Aaron displays the navigation and headings as uppercase. You can use this option to change the capitalization.', 'aaron' ),
+			'section' => 'aaron_font',
+			'choices' => array(
+					'uppercase'	=> __( 'Uppercase (Default, transforms all characters to uppercase).','aaron' ),
+				 	'initial'	=> __( 'Normal','aaron' ),
+	            	'capitalize'	=> __( 'Capitalized	(Transforms the first character of each word to uppercase).','aaron' ),
+	            	)
+
 		)
 	);
+
+
 
 
 	$wp_customize->add_section( 'aaron_font' , array(
-	    'title'      => __( 'Fonts', 'aaron' ),
-		'Description' => __('Changing the fonts can affect accessibility.', 'aaron'),
+	    'title'      => __( 'Typography', 'aaron' ),
+		'description' => __( 'Changing the fonts can affect accessibility.', 'aaron' ),
 	    'priority'   => 100
 	) );
 
@@ -796,6 +825,21 @@ function aaron_sanitize_action_radio( $input ) {
     $valid = array(
 	    'a' =>  __('Transparent (Default)','aaron'),
 	    'b' =>  __('Pick a color','aaron'),
+    );
+ 
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+/*Capitalization of navigation and headings*/
+function aaron_sanitize_cap( $input ) {
+    $valid = array(
+	  	'uppercase'	=> __( 'Uppercase (Default, transforms all characters to uppercase).','aaron' ),
+		'initial'	=> __( 'Normal.','aaron' ),
+	    'capitalize'	=> __( 'Capitalized	(Transforms the first character of each word to uppercase).','aaron' ),
     );
  
     if ( array_key_exists( $input, $valid ) ) {

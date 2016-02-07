@@ -42,22 +42,18 @@
 		}
 	};
 
-	/* Close meny with Esc key*/
-
+	/* Close menu with Esc key*/
 	jQuery(document).ready(function($) {
-	$( document ).keyup( function( e ) { 
-	    if ( e.keyCode === 27 ) { 
-	    	if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-				container.className = container.className.replace( ' toggled', '' );
-				button.setAttribute( 'aria-expanded', 'false' );
-				menu.setAttribute( 'aria-expanded', 'false' );
-			}
-	     } 
-	} ); 
-
-
-
-});	
+		$( document ).keyup( function( e ) { 
+		    if ( e.keyCode === 27 ) { 
+		    	if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+					container.className = container.className.replace( ' toggled', '' );
+					button.setAttribute( 'aria-expanded', 'false' );
+					menu.setAttribute( 'aria-expanded', 'false' );
+				}
+		     } 
+		} ); 
+	});	
 
 
 } )();

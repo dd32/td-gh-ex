@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aaron\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2016-01-19 18:39+0100\n"
+"POT-Creation-Date: 2016-02-07 13:12+0100\n"
 "PO-Revision-Date: 2015-05-20 17:43+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_nx;esc_attr_e;_ex\n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: archive-jetpack-testimonial.php:32 documentation.php:179
+#: archive-jetpack-testimonial.php:32 documentation.php:180
 msgid "Testimonials"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 #: documentation.php:15
 msgid ""
 "Thank you everyone who has contributed with ideas and bug reports so far! "
-"Your feedback is essential for the future developement of the theme."
+"Your feedback is essential for the future development of the theme."
 msgstr ""
 
 #: documentation.php:29
@@ -116,7 +116,7 @@ msgstr ""
 #: documentation.php:35
 msgid ""
 "A one line menu is recommended, or the menu will overlap your content. Use "
-"submenus instead."
+"sub menus instead."
 msgstr ""
 
 #: documentation.php:37
@@ -172,7 +172,7 @@ msgstr ""
 
 #: documentation.php:51
 msgid ""
-"By default, the primary meny also shows the site title and a search form. "
+"By default, the primary menu also shows the site title and a search form. "
 "The search form is not visible on screens smaller than 800 pixels.<br>\n"
 "\t\tYou can edit these features under the Advanced settings tab in the "
 "Customizer."
@@ -192,7 +192,7 @@ msgstr ""
 #: documentation.php:59
 msgid ""
 "To hide either sidebar, remove the widgets. The content of the page will "
-"expand to full width when the sidebar is hidden."
+"expand when the sidebar is hidden."
 msgstr ""
 
 #: documentation.php:60
@@ -265,7 +265,8 @@ msgstr ""
 #: documentation.php:96
 msgid ""
 "The Landing page template only shows your header, it does not display your "
-"footer, your featured content, post content or page content."
+"footer, your featured content, post content or page content. Your header "
+"image will display as a fullscreen image."
 msgstr ""
 
 #: documentation.php:97
@@ -278,134 +279,147 @@ msgstr ""
 msgid "It will display the footer widget area, but not the sidebar."
 msgstr ""
 
-#: documentation.php:101
+#: documentation.php:99
+msgid ""
+"The Static and Featured page template will display the content of the "
+"selected page together with your featured content. You also need to active "
+"the Jetpack module for Featured Content."
+msgstr ""
+
+#: documentation.php:100
+msgid ""
+"The Grid page template shows your posts in a responsive masonry grid. It "
+"does not display the sidebar."
+msgstr ""
+
+#: documentation.php:103
 msgid ""
 "Page sections are a great way to display your shortcodes, testimonials, "
 "pricing tables, contact information and similar."
 msgstr ""
 
-#: documentation.php:102
+#: documentation.php:104
 msgid ""
 "The two page sections can display up to 3 pages each. Pages in the top "
 "section are displayed above the blog content, and pages in the bottom "
 "section are displayed below."
 msgstr ""
 
-#: documentation.php:103
+#: documentation.php:105
 msgid ""
 "You can also show your page sections without your blog content by setting a "
 "static front page, using the Sections page template."
 msgstr ""
 
-#: documentation.php:107 inc/customizer.php:139
+#: documentation.php:109 inc/customizer.php:139
 msgid "Advanced settings"
 msgstr ""
 
-#: documentation.php:108
+#: documentation.php:110
 msgid ""
 "Under the Advanced settings tab in the customizer you will find the "
 "following options:"
 msgstr ""
 
-#: documentation.php:110
+#: documentation.php:112
 msgid "Note: Search results show excerpts by default."
 msgstr ""
 
-#: documentation.php:120
+#: documentation.php:122
 msgid ""
 "To display the header together with an individual post or page, go to Edit "
 "mode and activate the Header settings that are located below your post "
 "content."
 msgstr ""
 
-#: documentation.php:121
+#: documentation.php:123
 msgid "Your post view will inherit the settings from the front page."
 msgstr ""
 
-#: documentation.php:122
+#: documentation.php:124
 msgid "Options:"
 msgstr ""
 
-#: documentation.php:135
+#: documentation.php:137
 msgid ""
 "Note: In version 2.0, the accessibility settings were moved from the "
 "Advanced Settings to it's own setting in the customizer."
 msgstr ""
 
-#: documentation.php:136
+#: documentation.php:138
 msgid "Changing the colors of the theme can affect accessibility."
 msgstr ""
 
-#: documentation.php:153
+#: documentation.php:154
 msgid ""
 "Aaron uses Open Sans for body, and defaults to Montserrat for headings, "
 "menus and footer texts."
 msgstr ""
 
-#: documentation.php:154
+#: documentation.php:155
 msgid ""
 "You will find an option to change Montserrat to a different font in the "
 "customizer."
 msgstr ""
 
-#: documentation.php:159
+#: documentation.php:160
 msgid ""
 "Aaron has been tested with and style has been added for the following "
 "plugins:"
 msgstr ""
 
-#: documentation.php:167
+#: documentation.php:168
 msgid ""
 "-Once Jetpack has been activated, you can select up to six posts or pages as "
 "a front page feature. Chose a tag and add it to your posts to separate them "
 "from the rest."
 msgstr ""
 
-#: documentation.php:168
+#: documentation.php:169
 msgid ""
 "You can also choose a headline for your featured section. Featured images "
 "are optional and the recommended image size is 360x300 pixels."
 msgstr ""
 
-#: documentation.php:169
+#: documentation.php:170
 msgid ""
 "An image describing three featured posts on the front page, two with "
 "featured images and one that only displays the post title."
 msgstr ""
 
-#: documentation.php:174
+#: documentation.php:175
 #, php-format
 msgid ""
 "<a href=\"%s\">Read more about how to setup your Portfolio on Jetpacks "
 "support site.</a>"
 msgstr ""
 
-#: documentation.php:176
+#: documentation.php:177
 msgid "An image describing two portfolio items."
 msgstr ""
 
-#: documentation.php:179
+#: documentation.php:180
 msgid "Aaron also supports Jetpack"
 msgstr ""
 
-#: documentation.php:180
+#: documentation.php:181
 msgid "Tip:"
 msgstr ""
 
-#: documentation.php:180
+#: documentation.php:181
 msgid ""
 "I recommend creating a page and adding this shortcode, and then including "
 "the page as a front page section."
 msgstr ""
 
-#: documentation.php:181
+#: documentation.php:182
 #, php-format
 msgid ""
 "<a href=\"%s\">Read more about how to setup your Testimonials on Jetpacks "
 "support site.</a>"
 msgstr ""
 
-#: documentation.php:186
+#: documentation.php:187
 msgid ""
 "An image describing how sharing buttons are added to the post footer below "
 "Tags and Categories."
@@ -478,7 +492,7 @@ msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions.php:277
+#: functions.php:281
 msgid "(Untitled)"
 msgstr ""
 
@@ -498,7 +512,7 @@ msgstr ""
 msgid "Mountain"
 msgstr ""
 
-#: inc/custom-header.php:100
+#: inc/custom-header.php:132
 msgid "Click here to setup your Call to Action"
 msgstr ""
 
@@ -550,39 +564,39 @@ msgstr ""
 msgid "Header background image position:"
 msgstr ""
 
-#: inc/customizer.php:181 inc/customizer.php:746
+#: inc/customizer.php:181 inc/customizer.php:775
 msgid "left top"
 msgstr ""
 
-#: inc/customizer.php:182 inc/customizer.php:747
+#: inc/customizer.php:182 inc/customizer.php:776
 msgid "left center"
 msgstr ""
 
-#: inc/customizer.php:183 inc/customizer.php:748
+#: inc/customizer.php:183 inc/customizer.php:777
 msgid "left bottom"
 msgstr ""
 
-#: inc/customizer.php:184 inc/customizer.php:749
+#: inc/customizer.php:184 inc/customizer.php:778
 msgid "right top"
 msgstr ""
 
-#: inc/customizer.php:185 inc/customizer.php:750
+#: inc/customizer.php:185 inc/customizer.php:779
 msgid "right center"
 msgstr ""
 
-#: inc/customizer.php:186 inc/customizer.php:751
+#: inc/customizer.php:186 inc/customizer.php:780
 msgid "right bottom"
 msgstr ""
 
-#: inc/customizer.php:187 inc/customizer.php:752
+#: inc/customizer.php:187 inc/customizer.php:781
 msgid "center top"
 msgstr ""
 
-#: inc/customizer.php:188 inc/customizer.php:753
+#: inc/customizer.php:188 inc/customizer.php:782
 msgid "center center"
 msgstr ""
 
-#: inc/customizer.php:189 inc/customizer.php:754
+#: inc/customizer.php:189 inc/customizer.php:783
 msgid "center bottom"
 msgstr ""
 
@@ -590,15 +604,15 @@ msgstr ""
 msgid "Header background image size:"
 msgstr ""
 
-#: inc/customizer.php:203 inc/customizer.php:767
+#: inc/customizer.php:203 inc/customizer.php:796
 msgid "cover"
 msgstr ""
 
-#: inc/customizer.php:204 inc/customizer.php:768
+#: inc/customizer.php:204 inc/customizer.php:797
 msgid "contain"
 msgstr ""
 
-#: inc/customizer.php:205 inc/customizer.php:769
+#: inc/customizer.php:205 inc/customizer.php:798
 msgid "auto"
 msgstr ""
 
@@ -606,19 +620,19 @@ msgstr ""
 msgid "Header background image repeat:"
 msgstr ""
 
-#: inc/customizer.php:219 inc/customizer.php:782
+#: inc/customizer.php:219 inc/customizer.php:811
 msgid "repeat"
 msgstr ""
 
-#: inc/customizer.php:220 inc/customizer.php:783
+#: inc/customizer.php:220 inc/customizer.php:812
 msgid "repeated only horizontally"
 msgstr ""
 
-#: inc/customizer.php:221 inc/customizer.php:784
+#: inc/customizer.php:221 inc/customizer.php:813
 msgid "repeated only vertically"
 msgstr ""
 
-#: inc/customizer.php:222 inc/customizer.php:785
+#: inc/customizer.php:222 inc/customizer.php:814
 msgid " no repeat"
 msgstr ""
 
@@ -738,82 +752,108 @@ msgstr ""
 msgid "Check this box to hide the clickable site title in the header menu."
 msgstr ""
 
-#: inc/customizer.php:561 index.php:22 index.php:26
+#: inc/customizer.php:565
+msgid "Change the width of the main content."
+msgstr ""
+
+#: inc/customizer.php:581 index.php:22 index.php:26
 #: templates/static-and-featured.php:17 templates/static-and-featured.php:22
 msgid "Featured"
 msgstr ""
 
-#: inc/customizer.php:566
+#: inc/customizer.php:586
 msgid "Headline above your featured content:"
 msgstr ""
 
-#: inc/customizer.php:575
+#: inc/customizer.php:595
 msgid "Top Section"
 msgstr ""
 
-#: inc/customizer.php:577
+#: inc/customizer.php:597
 msgid "Select up to 3 pages that will be displayed above your blog content."
 msgstr ""
 
-#: inc/customizer.php:589 inc/customizer.php:610
+#: inc/customizer.php:609 inc/customizer.php:630
 msgid "Select a page:"
 msgstr ""
 
-#: inc/customizer.php:596
+#: inc/customizer.php:616
 msgid "Bottom Section"
 msgstr ""
 
-#: inc/customizer.php:598
+#: inc/customizer.php:618
 msgid ""
 "Select up to 3 pages that will be displayed below your blog content, but "
 "above the footer."
 msgstr ""
 
-#: inc/customizer.php:623
+#: inc/customizer.php:643
 msgid "Add a descriptive screen reader text for the footer."
 msgstr ""
 
-#: inc/customizer.php:634
+#: inc/customizer.php:654
 msgid "Add a descriptive screen reader text for the sidebar."
 msgstr ""
 
-#: inc/customizer.php:645
+#: inc/customizer.php:665
+msgid "Change the capitalization"
+msgstr ""
+
+#: inc/customizer.php:666
 msgid ""
-"Check this box to change the text displayed as UPPERCASE to Capitalized."
+"By default, Aaron displays the navigation and headings as uppercase. You can "
+"use this option to change the capitalization."
 msgstr ""
 
-#: inc/customizer.php:652
-msgid "Fonts"
+#: inc/customizer.php:669 inc/customizer.php:840
+msgid "Uppercase (Default, transforms all characters to uppercase)."
 msgstr ""
 
-#: inc/customizer.php:653
+#: inc/customizer.php:670
+msgid "Normal"
+msgstr ""
+
+#: inc/customizer.php:671 inc/customizer.php:842
+msgid ""
+"Capitalized\t(Transforms the first character of each word to uppercase)."
+msgstr ""
+
+#: inc/customizer.php:681
+msgid "Typography"
+msgstr ""
+
+#: inc/customizer.php:682
 msgid "Changing the fonts can affect accessibility."
 msgstr ""
 
-#: inc/customizer.php:667
+#: inc/customizer.php:696
 msgid "Choose a font for headings, menus and footer texts."
 msgstr ""
 
-#: inc/customizer.php:672
+#: inc/customizer.php:701
 msgid "(Default)"
 msgstr ""
 
-#: inc/customizer.php:673
+#: inc/customizer.php:702
 msgid "(Same as body)"
 msgstr ""
 
-#: inc/customizer.php:693
+#: inc/customizer.php:722
 msgid ""
 "Are you sure that you want to reset your settings? Type YES in the box, save "
 "and refresh the page."
 msgstr ""
 
-#: inc/customizer.php:797
+#: inc/customizer.php:826
 msgid "Transparent (Default)"
 msgstr ""
 
-#: inc/customizer.php:798
+#: inc/customizer.php:827
 msgid "Pick a color"
+msgstr ""
+
+#: inc/customizer.php:841
+msgid "Normal."
 msgstr ""
 
 #: inc/metabox.php:38

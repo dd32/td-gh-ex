@@ -20,7 +20,7 @@ get_header(); ?>
 	     		    query_posts($args);
 					  while ( have_posts() ) : the_post();
 
-						get_template_part( 'content', 'page' );
+						get_template_part( 'content', 'section' );
 
 					  endwhile; 
 					 wp_reset_query();
@@ -30,7 +30,7 @@ get_header(); ?>
 			<?php
 				 while ( have_posts() ) : the_post();
 
-				 	get_template_part( 'content', 'page' ); 
+				 	get_template_part( 'content', 'section' ); 
 
 				 endwhile;
 			?>
@@ -43,7 +43,7 @@ get_header(); ?>
 	     		    query_posts($args);
 					  while ( have_posts() ) : the_post();
 
-						get_template_part( 'content', 'page' );
+						get_template_part( 'content', 'section' );
 
 					  endwhile; 
 					wp_reset_query();

@@ -9,10 +9,16 @@ function aaron_highlights() {
 			//Is this highlight visisble?
 			if ( !get_theme_mod( 'aaron_highlight' . $i . '_hide' ) ){
 			//Now check if there is any actual content to show:
+
 				if ( get_theme_mod( 'aaron_highlight' . $i . '_headline' ) OR get_theme_mod( 'aaron_highlight' . $i . '_text' ) 
 					OR get_theme_mod( 'aaron_highlight' . $i . '_icon' ) AND get_theme_mod( 'aaron_highlight' . $i . '_icon' ) <>"no-icon" 
 					OR get_theme_mod( 'aaron_highlight' . $i . '_image' ) ){
 					echo '<div class="highlights" style="background:' . get_theme_mod( 'aaron_highlight' . $i . '_bgcolor', '#fafafa' ) . ';">';
+
+					//Lets make the whole area clickable if there is a link:
+					if (get_theme_mod( 'aaron_highlight' . $i . '_link' ) <>"" ) {
+						echo '<a href="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) . '">';
+					}	
 
 					//If there is an icon, show it unless there is also an image, then the image will replace the icon.				
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_icon' ) AND get_theme_mod( 'aaron_highlight' . $i . '_icon' ) <>"no-icon" AND !get_theme_mod( 'aaron_highlight' . $i . '_image' ) ){
@@ -36,7 +42,9 @@ function aaron_highlights() {
 					}			
 					if (get_theme_mod( 'aaron_highlight' . $i . '_text' ) <>"" ){
 						echo '<p style="color:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_textcolor', '#333333' ) ). ';">' . esc_html(  get_theme_mod( 'aaron_highlight' . $i . '_text' ) ) . '</p>';
-					}	
+					}
+
+					//Close the link:
 					if (get_theme_mod( 'aaron_highlight' . $i . '_link' ) <>"" ) {
 						echo '</a>';
 					}

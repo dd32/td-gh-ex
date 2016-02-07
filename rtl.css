@@ -431,7 +431,6 @@ textarea {
 .nav-previous a,
 .nav-next a{text-decoration:none;}
 
-
 .nav-previous a:hover,
 .nav-next a:hover {text-decoration:underline; background:url('images/border.png') repeat-x bottom;}
 
@@ -711,8 +710,8 @@ content:'';
 		display: none;
 	}
 
-	.menu-toggle{ margin:20px;
-	}
+	.menu-toggle{ margin:20px; }
+
 	.menu-toggle:before {
 		content: "\f0c9";
 		display: inline-block;
@@ -1084,6 +1083,11 @@ table#wp-calendar,
 	border:none;
 }
 
+.site-branding .widget{
+	background: #fafafa;
+	width:22%;
+}
+
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
@@ -1133,10 +1137,6 @@ table#wp-calendar,
 	z-index:2;
 	background: url(images/border.png) repeat-x bottom;
 }
-
-/*Hide the site content if the landing page template is used.*/
-.page-template-landingpage .site-content{ display:none;}
-
 
 .site-footer{
 	background:#fff;
@@ -1194,6 +1194,26 @@ table#wp-calendar,
 	margin:0 auto;
 	float:none;
 }
+
+.page-template-grid .content-area{
+	width:96%;
+	margin:0 auto;
+	float:none;
+}
+
+/*Hide the site content if the page templates are used.*/
+.page-template-landingpage .site-content,
+.page-template-header-and-footer .site-content{display:none;}
+
+.page-template-grid .featured-post{
+	margin:initial;
+}
+
+/* ---- grid-item ---- */
+.page-template-grid .grid-sizer,
+.page-template-grid .grid-item { width: 30%; margin-bottom:45px;}
+.page-template-grid .grid-item--width2 { width: 60%; }
+.page-template-grid .grid-item--width3 { width: 90%; }
 
 /*--------------------------------------------------------------
 10.1 Call to action
@@ -1400,32 +1420,6 @@ table#wp-calendar,
 	margin: 1em 0 0;
 }
 
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-	padding:12px;
-	position:relative;
-	background:#fff;
-	font-size:14px;
-	font-size:1.4rem;
-	text-transform:uppercase;
-	letter-spacing: 2px; 
-	border:1px solid #f2f2f2;
-	border-radius:4px;
-	display:inline-block;
-}
-
-.page-links a{
-	padding:5px;
-	border:1px solid transparent;
-	border-radius:4px;
-}
-
-.page-links a:hover{
-	border:1px solid #999;
-}
-
-
 .entry-title, 
 .entry-title a{
 	font-size:32px;
@@ -1525,6 +1519,31 @@ table#wp-calendar,
 .site-footer a:hover {
 	text-decoration:underline;
 	background: url(images/border.png) repeat-x bottom;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+	padding:12px;
+	position:relative;
+	background:#fff;
+	font-size:14px;
+	font-size:1.4rem;
+	text-transform:uppercase;
+	letter-spacing: 2px; 
+	border:1px solid #f2f2f2;
+	border-radius:4px;
+	display:inline-block;
+}
+
+.page-links a{
+	padding:5px;
+	border:1px solid transparent;
+	border-radius:4px;
+}
+
+.page-links a:hover{
+	border:1px solid #999;
 }
 
 .tags-links i::before, 
@@ -2157,6 +2176,9 @@ div.bbp-template-notice p{
 	display:none;
 }
 
+#bbpress-forums .bbp-breadcrumb-home{display:none;}
+#bbpress-forums .bbp-breadcrumb-sep:first-of-type { display:none; }
+
 .bbp-user-section{margin-top:10px;}
 
 #bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a,
@@ -2166,6 +2188,21 @@ span.bbp-admin-links a,
 .bbp-reply-header a.bbp-reply-permalink{
 	color:#333;
 }
+
+.bbp-topic-description a:hover,
+span.bbp-admin-links a:hover{
+	color:#000;
+	text-decoration: underline;
+}
+
+#bbpress-forums .bbp-topic-description a,
+#bbpress-forums .bbp-topic-description a:visited,
+#bbpress-forums .bbp-forum-description a,
+#bbpress-forums .bbp-forum-description a:visited{text-decoration: underline;}
+#bbpress-forums .bbp-topic-description a:hover,
+#bbpress-forums .bbp-topic-description a:focus,
+#bbpress-forums .bbp-forum-description a:hover,
+#bbpress-forums .bbp-forum-description a:focus{text-decoration: none;}
 
 #bbpress-forums #bbp-your-profile fieldset input, 
 #bbpress-forums #bbp-your-profile fieldset textarea{
@@ -2184,6 +2221,36 @@ span.bbp-admin-links a,
 	border: 1px solid rgba(162, 196, 251, 1);
 }
 
+#bbpress-forums .bbp-form legend{font-weight:bold;}
+
+#bbpress-forums .status-closed,
+#bbpress-forums .status-closed a
+{color:#557997!important;}
+
+#bbpress-forums .status-closed .bbp-topic-title:before{
+	font: normal 16px/1 'dashicons';
+	font-size:16px;
+	height:16px;
+	width:16px;
+content: "\f160";
+	-webkit-font-smoothing: antialiased;
+}
+
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation a,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation a:visited,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a:visited{
+	text-decoration:underline;
+	color:#000;
+}
+
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation a:hover,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a:hover,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation a:focus,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a:focus
+{
+	text-decoration:none;
+}
 /*--------------------------------------------------------------
 14.0 Woocommerce
 --------------------------------------------------------------*/
@@ -2278,7 +2345,7 @@ span.bbp-admin-links a,
 --------------------------------------------------------------*/
 
 @media screen and (max-width: 1100px) {
-	 
+	.page-template-grid .content-area,
 	.content-area{
 		width:100%; 
 		margin:0 auto;
@@ -2292,7 +2359,8 @@ span.bbp-admin-links a,
 		margin-right:0;
 		padding:0;
 	}
-
+	
+	.site-branding .widget,
 	.site-footer .widget,
 	.widget{
 		width:auto;
@@ -2304,11 +2372,13 @@ span.bbp-admin-links a,
 }
 
 @media screen and (max-width: 900px) {
+	.page-template-grid .grid-sizer,
+	.page-template-grid .grid-item,
 	.site-footer .widget,
+	.site-branding .widget,
 	.widget{
 		width:46%;
 	}
-
 }
 
 @media screen and (max-width: 800px) {	
@@ -2335,6 +2405,9 @@ span.bbp-admin-links a,
 		margin:0 auto 45px auto;
 	}
 
+	.page-template-grid .grid-sizer,
+	.page-template-grid .grid-item{width: 100%;}
+
 	#action{
 		width: 80%;
 		margin:45px auto 45px auto;
@@ -2358,7 +2431,6 @@ span.bbp-admin-links a,
 		margin:0 auto 0px auto; 
 	}
 
-
 	.jetpack-testimonial,
 	.jetpack-testimonial .entry-content,
 	.single-jetpack-portfolio .content-area, 
@@ -2379,6 +2451,9 @@ span.bbp-admin-links a,
 
 @media screen and (max-width: 600px) {
 
+	.site-branding{margin-top:45px;}
+
+	.site-branding .widget,
 	.site-footer .widget,
 	.widget{
 		width:100%;	

@@ -20,6 +20,18 @@ If you have any questions, accessibility issues or feature requests for this the
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
+Version 2.6, 2016-02-07
+Made the image and icons in the Highlights click able if there is a link.
+Added an option to the customizer where you can change the width of the main content. 
+Renamed the Fonts section to Typography.
+Improved the capitalization setting so that you (finally :) ) can display the headings just the way you wrote them, without forcing capitalization.
+Moved the capitalization setting from the Accessibility section to Typography.
+Improved the css for bbPress.
+Added a grid page template.
+Improved the landing page template so that the header image displays as a full screen image.
+Improved the header and footer page template by removing white space between the sections.
+
+
 Version 2.5, 2016-01-19
 Fixed a critical css bug.
 Added support for Jetpack share on pages.
@@ -58,7 +70,7 @@ Updated the documentation and language file.
 Version 2.1, 2015-06-05
 Removed the example highlights. (They caused more issues than their worth =) )
 Added defaults to the header background image position.
-Fixed contrast ussues when the header image is not loaded ( Updated default background color and default CTA text color).
+Fixed contrast issues when the header image is not loaded ( Updated default background color and default CTA text color).
 Fixed a bug with the Call To Action background color.
 Added aria-hidden="true" to decorative icon fonts.
 Added a template that combines a static front page with featured posts (Requires Jetpack).
@@ -74,9 +86,6 @@ Increased the width of pages and posts (when the meta is hidden).
 Added an option to change the Call to Action background color.
 The header now has no forced height and will instead fit your content.
 Fixed html errors and a bug with comments and avatars.
-
-
-
 Updated documentation and language files, and added attribution for Sela WordPress theme by Automattic, for help with testimonials :)
 
 
@@ -95,7 +104,7 @@ Added an option to change the text color of the Call to Action button.
 Added an additional widget area to the footer below the social menu, where you can add a copyright text.
 
 Highlights:
-You can now add upto 9 Highlights.
+You can now add up to 9 Highlights.
 You can also display the Highlights without icons, or upload your own image.
 The minimum height of the Highlights have been adjusted.
 
@@ -109,7 +118,7 @@ Updated the documentation and language file.
 Version 1.5
 Set the minimum height of the header to the viewport height.
 Removed the recommended image size for the header.
-Removed social icons from the header meny.
+Removed social icons from the header menu.
 Slight increase of font-size on some elements.
 
 
@@ -121,7 +130,7 @@ images/ -contains header images, borer and images for the setup help.
 languages/ -contains language files.
 inc/ -contains the template tag and customizer files.
 fonts/ -contains Font Awesome files.
-js/ -contains javscript
+js/ -contains javascript
 templates/ -contains page templates
 
 == Resources Used In This Theme ==

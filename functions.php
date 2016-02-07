@@ -215,6 +215,11 @@ function aaron_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	if ( is_page_template( 'templates/grid.php' ) ) {
+		wp_enqueue_script( 'masonry');
+		wp_enqueue_script( 'aaron-grid', get_template_directory_uri() . '/js/grid.js', array(), true );
+	}
+
 	 /* If using a child theme, auto-load the parent theme style. */
     if ( is_child_theme() ) {
         wp_enqueue_style( 'parent-style', trailingslashit( get_template_directory_uri() ) . 'style.css' );
@@ -351,7 +356,7 @@ function aaron_customize_css() {
 	}
 
 	//Change UPPERCASE to Capitalized Text Instead
-	if( get_theme_mod( 'aaron_caps' )) {
+	if( get_theme_mod( 'aaron_caps' ) ) {
 		echo '.main-navigation,
 			.widget-title,
 			.widgettitle,
@@ -367,7 +372,7 @@ function aaron_customize_css() {
 			.comment-reply-title,
 			.featured-headline,
 			.testimonial-entry-title,
-			.featured-post h2 { text-transform:capitalize; }\n';
+			.featured-post h2 { text-transform:' . get_theme_mod( 'aaron_caps' ) . '; }\n';
 	}
 
 	//Font setting:
@@ -424,6 +429,10 @@ function aaron_customize_css() {
 	if( is_singular() && aaron_get_meta( 'aaron_show_header') ){
 		echo ".page .site-content,\n
 			.single .site-content{margin-top:45px;}\n";
+	}
+
+	if ( get_theme_mod('aaron_width')){
+		echo ".site-content{ width:" . get_theme_mod('aaron_width') ."%; margin-left:auto; margin-right:auto;}\n";
 	}
 
 echo '</style>';

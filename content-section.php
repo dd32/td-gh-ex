@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying page content in page.php
+ * The template used for displaying page content in sections.
  *
  * @package aaron
  */
@@ -8,19 +8,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php 
-
 		if ( ! aaron_get_meta( 'aaron_replace_title' ) ){
-			if ( is_page_template( 'templates/sections.php' ) ) {
-				echo '<header class="entry-header">';
+			echo '<header class="entry-header">';
 				the_title( '<h2 class="entry-title">', '</h2>' ); 
-				echo '</header><!-- .entry-header -->';
-
-			}else{
-				echo '<header class="entry-header">';
-				the_title( '<h1 class="entry-title">', '</h1>' ); 
-				echo '</header><!-- .entry-header -->';
+			echo '</header><!-- .entry-header -->';
 			}
-		}
 		?>
 	<div class="entry-content">
 		<?php 

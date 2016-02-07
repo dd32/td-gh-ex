@@ -3,9 +3,9 @@ Theme Name: Aaron
 Theme URI: http://wptema.se/Aaron
 Author: Carolina Nymark
 Author URI: http://wptema.se
-Description: Aaron is a responsive, accessibility-ready multi-purpose theme. Features include Call to action and frontpage Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. We recommend that you install the Jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with Woocommerce and bbPress.
+Description: Aaron is a responsive, accessibility-ready multi-purpose theme. Features include Call to action and front page Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu), five page templates and three widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. We recommend that you install the Jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with Woocommerce and bbPress.
 If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
-Version: 2.5
+Version: 2.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2015-2016
@@ -439,7 +439,6 @@ textarea {
 .nav-previous a,
 .nav-next a{text-decoration:none;}
 
-
 .nav-previous a:hover,
 .nav-next a:hover {text-decoration:underline; background:url('images/border.png') repeat-x bottom;}
 
@@ -719,9 +718,7 @@ content:'';
 		display: none;
 	}
 
-	.menu-toggle{ 
-		margin:20px;
-	}
+	.menu-toggle{ margin:20px; }
 	.menu-toggle:before {
 		content: "\f0c9";
 		display: inline-block;
@@ -1149,10 +1146,6 @@ table#wp-calendar,
 	background: url(images/border.png) repeat-x bottom;
 }
 
-/*Hide the site content if the landing page template is used.*/
-.page-template-landingpage .site-content{ display:none;}
-
-
 .site-footer{
 	background:#fff;
 	padding:12px 0 12px 0;
@@ -1209,6 +1202,27 @@ table#wp-calendar,
 	margin:0 auto;
 	float:none;
 }
+
+.page-template-grid .content-area{
+	width:96%;
+	margin:0 auto;
+	float:none;
+}
+
+/*Hide the site content if the page templates are used.*/
+.page-template-landingpage .site-content,
+.page-template-header-and-footer .site-content{display:none;}
+
+.page-template-grid .featured-post{
+	margin:initial;
+}
+
+/* ---- grid-item ---- */
+.page-template-grid .grid-sizer,
+.page-template-grid .grid-item { width: 30%; margin-bottom:45px;}
+.page-template-grid .grid-item--width2 { width: 60%; }
+.page-template-grid .grid-item--width3 { width: 90%; }
+
 
 /*--------------------------------------------------------------
 10.1 Call to action
@@ -1533,7 +1547,6 @@ table#wp-calendar,
 	padding:5px;
 	border:1px solid transparent;
 	border-radius:4px;
-
 }
 
 .page-links a:hover{
@@ -1806,7 +1819,7 @@ table#wp-calendar,
 	display:inline-block;
 	margin:25px 40px 25px 40px;
 	padding:21px 12px 12px 12px;
-	width:26%;
+	width:23%;
 	box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
 	vertical-align:top;
 	background:#fcfcfc;
@@ -1822,6 +1835,7 @@ table#wp-calendar,
 	font-size:14px;
 	font-size:1.4rem;
 	letter-spacing: 2px; 
+	text-align:center;
 }
 
 .featured-post h2 a:hover{
@@ -2131,6 +2145,7 @@ a:hover img{
 /*--------------------------------------------------------------
 13.0 BBpress
 --------------------------------------------------------------*/
+#bbpress-forums{padding-top:6px;}
 
 #bbpress-forums,
 #bbpress-forums .bbp-breadcrumb,
@@ -2139,8 +2154,10 @@ a:hover img{
 	font-size:1.6rem;
 }
 
+#bbpress-forums .bbp-header,
 #bbpress-forums .bbp-forum-info .bbp-forum-content, 
 #bbpress-forums p.bbp-topic-meta,
+#bbpress-forums .forum-titles,
 div.bbp-template-notice p{
 	font-size:14px;
 	font-size:1.4rem;
@@ -2157,7 +2174,7 @@ div.bbp-template-notice p{
 }
 
 .bbpress .entry-content{
-	width:90%;
+	width:100%;
 }
 .bbpress .forum .entry-title{
 	background: url(images/border.png) repeat-x bottom;
@@ -2172,6 +2189,9 @@ div.bbp-template-notice p{
 	display:none;
 }
 
+#bbpress-forums .bbp-breadcrumb-home{display:none;}
+#bbpress-forums .bbp-breadcrumb-sep:first-of-type { display:none; }
+
 .bbp-user-section{margin-top:10px;}
 
 #bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a,
@@ -2181,6 +2201,22 @@ span.bbp-admin-links a,
 .bbp-reply-header a.bbp-reply-permalink{
 	color:#333;
 }
+
+.bbp-topic-description a:hover,
+span.bbp-admin-links a:hover{
+	color:#000;
+	text-decoration: underline;
+}
+
+
+#bbpress-forums .bbp-topic-description a,
+#bbpress-forums .bbp-topic-description a:visited,
+#bbpress-forums .bbp-forum-description a,
+#bbpress-forums .bbp-forum-description a:visited{text-decoration: underline;}
+#bbpress-forums .bbp-topic-description a:hover,
+#bbpress-forums .bbp-topic-description a:focus,
+#bbpress-forums .bbp-forum-description a:hover,
+#bbpress-forums .bbp-forum-description a:focus{text-decoration: none;}
 
 #bbpress-forums #bbp-your-profile fieldset input, 
 #bbpress-forums #bbp-your-profile fieldset textarea{
@@ -2197,6 +2233,37 @@ span.bbp-admin-links a,
 	color: #111;
 	box-shadow: 0 0 5px rgba(162, 196, 251, 1);
 	border: 1px solid rgba(162, 196, 251, 1);
+}
+
+#bbpress-forums .bbp-form legend{font-weight:bold;}
+
+#bbpress-forums .status-closed,
+#bbpress-forums .status-closed a
+{color:#557997!important;}
+
+#bbpress-forums .status-closed .bbp-topic-title:before{
+	font: normal 16px/1 'dashicons';
+	font-size:16px;
+	height:16px;
+	width:16px;
+content: "\f160";
+	-webkit-font-smoothing: antialiased;
+}
+
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation a,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation a:visited,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a:visited{
+	text-decoration:underline;
+	color:#000;
+}
+
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation a:hover,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a:hover,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation a:focus,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a:focus
+{
+	text-decoration:none;
 }
 
 /*--------------------------------------------------------------
@@ -2293,7 +2360,7 @@ span.bbp-admin-links a,
 --------------------------------------------------------------*/
 
 @media screen and (max-width: 1100px) {
-	 
+	.page-template-grid .content-area,
 	.content-area{
 		width:100%; 
 		margin:0 auto;
@@ -2307,6 +2374,7 @@ span.bbp-admin-links a,
 		margin-right:0;
 		padding:0;
 	}
+
 	.site-branding .widget,
 	.site-footer .widget,
 	.widget{
@@ -2319,12 +2387,13 @@ span.bbp-admin-links a,
 }
 
 @media screen and (max-width: 900px) {
+	.page-template-grid .grid-sizer,
+	.page-template-grid .grid-item,
 	.site-footer .widget,
-	..site-branding .widget,
+	.site-branding .widget,
 	.widget{
 		width:46%;
 	}
-
 }
 
 @media screen and (max-width: 800px) {	
@@ -2350,6 +2419,9 @@ span.bbp-admin-links a,
 		width: 80%;
 		margin:0 auto 45px auto;
 	}
+	
+	.page-template-grid .grid-sizer,
+	.page-template-grid .grid-item{width: 100%;}
 
 	#action{
 		width: 80%;
@@ -2374,7 +2446,6 @@ span.bbp-admin-links a,
 		margin:0 auto 0px auto; 
 	}
 
-
 	.jetpack-testimonial,
 	.jetpack-testimonial .entry-content,
 	.single-jetpack-portfolio .content-area, 
@@ -2394,13 +2465,16 @@ span.bbp-admin-links a,
 }
 
 @media screen and (max-width: 600px) {
+
+	.site-branding{margin-top:45px;}
+
 	.site-branding .widget,
 	.site-footer .widget,
 	.widget{
 		width:100%;	
 		margin-right:0;
 	}
-	
+
 	.site-title {font-size: 4rem;}
 
 	/*Increase text-size on tiny screens */

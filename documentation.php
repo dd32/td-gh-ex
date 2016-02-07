@@ -12,7 +12,7 @@ function aaron_docs() {
 	<b><?php esc_html_e( 'Thank you for downloading and trying out Aaron!', 'aaron'); ?></b><br><br>
 	<?php printf( __( 'If you like the theme, please review it on <a href="%s">WordPress.org</a>', 'aaron'), esc_url( 'https://wordpress.org/support/view/theme-reviews/aaron' ) );?><br>
 	<b><?php printf( __( 'If you have any questions, accessibility issues or feature requests for this theme, please visit <a href="%s">http://wptema.se/Aaron</a>.', 'aaron'), esc_url( 'http://wptema.se/Aaron' ) ); ?></b><br>
-	<?php _e( 'Thank you everyone who has contributed with ideas and bug reports so far! Your feedback is essential for the future developement of the theme.', 'aaron'); ?>
+	<?php _e( 'Thank you everyone who has contributed with ideas and bug reports so far! Your feedback is essential for the future development of the theme.', 'aaron'); ?>
 </div>
 	<ul class="doc-menu">
 		<li><a href="#aaron-menus"><?php esc_html_e( 'Menus','aaron' ); ?></a></li>
@@ -32,7 +32,7 @@ function aaron_docs() {
 			
 		<b><?php esc_html_e( 'The Primary menu','aaron' ); ?></b> <?php _ex('is fixed at the top of the website and shows two menu levels.','The Primary menu', 'aaron')?>
 		<?php _e( 'This menu will collapse on smaller screens, and can then be opened and closed by a menu button. It can also be closed with the Esc key.','aaron' ); ?><br>
-		<?php _e( 'A one line menu is recommended, or the menu will overlap your content. Use submenus instead.','aaron' ); ?><br><br>
+		<?php _e( 'A one line menu is recommended, or the menu will overlap your content. Use sub menus instead.','aaron' ); ?><br><br>
 
 		<img src="<?php echo get_template_directory_uri() . '/images/doc-social.jpg';?>" alt="<?php esc_attr_e( 'An image describing how social icons are lined up next to each other in the Social menu','aaron' ); ?>"><br>
 
@@ -48,7 +48,7 @@ function aaron_docs() {
 		tumblr, twitter, vimeo, vine<br> yelp, youtube, wordpress, paypal, lastfm, behance, deviantart, spotify, skype, slack, amazon, steam, xing, medium, qq, codepen.</i>';?>
 		<br><br>
 		<b><?php esc_html_e( 'Advanced','aaron' ); ?></b><br>
-		<?php _e('By default, the primary meny also shows the site title and a search form. The search form is not visible on screens smaller than 800 pixels.<br>
+		<?php _e('By default, the primary menu also shows the site title and a search form. The search form is not visible on screens smaller than 800 pixels.<br>
 		You can edit these features under the Advanced settings tab in the Customizer.','aaron' ); ?>
 	</div>
 
@@ -56,7 +56,7 @@ function aaron_docs() {
 		<h3><?php esc_html_e( 'Widget areas','aaron' ); ?></h3>
 		<?php _e( 'The theme now has two different sidebars: one for the front page and blog index, and one for other pages.','aaron' ); ?><br>
 		<?php _e( 'To show either sidebar, all you need to do is place your widgets inside them.','aaron' ); ?><br>
-		<?php _e( 'To hide either sidebar, remove the widgets. The content of the page will expand to full width when the sidebar is hidden.','aaron' ); ?><br><br>
+		<?php _e( 'To hide either sidebar, remove the widgets. The content of the page will expand when the sidebar is hidden.','aaron' ); ?><br><br>
 		<?php _e( 'Both sidebars and the header and footer widget areas can hold <b>any number of widgets</b>. The footer widget area is shown on all pages.','aaron' ); ?><br>
 		<?php _e( 'There is also one additional widget area in the footer below the social menu, where you can place a text widget and add your copyright text.','aaron' );?> <br>
 	</div>
@@ -93,9 +93,11 @@ function aaron_docs() {
 			<img src="<?php echo get_template_directory_uri() . '/images/doc-static.jpg';?>" alt="<?php esc_attr_e( 'An image describing how to set a static front page.','aaron' ); ?>"><br>
 
 			<h3><?php esc_html_e( 'Templates','aaron' ); ?></h3>
-			<?php _e( 'The Landing page template only shows your header, it does not display your footer, your featured content, post content or page content.','aaron' ); ?><br>
+			<?php _e( 'The Landing page template only shows your header, it does not display your footer, your featured content, post content or page content. Your header image will display as a fullscreen image.','aaron' ); ?><br>
 			<?php _e( 'The Header & Footer page template only shows your header and footer, it does not display your featured content, post content or page content.','aaron' ); ?>  
-			<?php _e( 'It will display the footer widget area, but not the sidebar.','aaron' ); ?><br><br>
+			<?php _e( 'It will display the footer widget area, but not the sidebar.','aaron' ); ?><br>
+			<?php _e( 'The Static and Featured page template will display the content of the selected page together with your featured content. You also need to active the Jetpack module for Featured Content.','aaron' ); ?><br>
+			<?php _e( 'The Grid page template shows your posts in a responsive masonry grid. It does not display the sidebar.','aaron' ); ?><br><br>
 
 			<b><?php esc_html_e( 'Page sections','aaron' ); ?></b><br>
             <?php _e( 'Page sections are a great way to display your shortcodes, testimonials, pricing tables, contact information and similar.', 'aaron' ); ?><br>
@@ -107,7 +109,7 @@ function aaron_docs() {
 		<h3><?php _e('Advanced settings','aaron' ); ?></h3>
 		<?php _e('Under the Advanced settings tab in the customizer you will find the following options:','aaron' ); ?><br>
 		<ul>
-			<li><?php esc_html_e( 'Show the excerpt instead of the full content on the front page, blog listing and archives','aaron' ); ?> <?php _e('Note: Search results show excerpts by default.','aaron' ); ?></li>
+			<li><?php esc_html_e( 'Show the excerpt instead of the full content on the front page, blog listing and archives.','aaron' ); ?> <?php _e('Note: Search results show excerpts by default.','aaron' ); ?></li>
 			<li><?php esc_html_e( 'Hide the meta information. -This will hide the category and tags.','aaron' ); ?></li>
 			<li><?php esc_html_e( 'Hide the author and post date information.','aaron' ); ?></li>
 			<li><?php esc_html_e( 'Show the breadcrumb navigation. -Breadcrumbs are shown below the post title. ','aaron' ); ?></li>
@@ -138,7 +140,6 @@ function aaron_docs() {
 		<ul>
 			<li><?php esc_html_e( 'Skip link: the theme has one skip link at the very top that lets you skip to the content.','aaron' ); ?></li>
 			<li><?php esc_html_e( 'In the customizer you can add personalized screen reader texts for your sidebar and footer.','aaron' ); ?></li>
-			<li><?php esc_html_e( 'There is also an option to change text displayed as UPPERCASE to Capitalized.','aaron' ); ?></li>
 			<li><?php esc_html_e( 'Known issues:','aaron' ); ?>
 				<ul>
 					<li><?php esc_html_e( 'Some widgets that uses forms (category dropdown) are missing form labels. This is a known issue with WordPress.','aaron' ); ?></li>
