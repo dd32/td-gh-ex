@@ -119,10 +119,11 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_headline'],
 		'sanitize_callback'	=> 'wp_kses_post',
+		'transport'			=> 'postMessage',
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_content_headline]' , array(
-		'active_callback'	=> 'catchbase_is_featured_content_active',
+		'active_callback'	=> 'catchbase_is_demo_featured_content_inactive',
 		'description'		=> __( 'Leave field empty if you want to remove Headline', 'catch-base' ),
 		'label'    			=> __( 'Headline for Featured Content', 'catch-base' ),
 		'priority'			=> '5',
@@ -136,10 +137,11 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_subheadline'],
 		'sanitize_callback'	=> 'wp_kses_post',
+		'transport'			=> 'postMessage',
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_content_subheadline]' , array(
-		'active_callback'	=> 'catchbase_is_featured_content_active',
+		'active_callback'	=> 'catchbase_is_demo_featured_content_inactive',
 		'description'		=> __( 'Leave field empty if you want to remove Sub-headline', 'catch-base' ),
 		'label'    			=> __( 'Sub-headline for Featured Content', 'catch-base' ),
 		'priority'			=> '6',

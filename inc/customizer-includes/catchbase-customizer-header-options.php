@@ -48,46 +48,53 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	}
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_image_size]', array(
-			'choices'  	=> $choices,
-			'label'		=> __( 'Page/Post Featured Header Image Size', 'catch-base' ),
-			'section'   => 'header_image',
-			'settings'  => 'catchbase_theme_options[featured_image_size]',
-			'type'	  	=> 'select',
+		'active_callback' 	=> 'catchbase_is_featured_header_image_enabled',
+		'choices'  	=> $choices,
+		'label'		=> __( 'Page/Post Featured Header Image Size', 'catch-base' ),
+		'section'   => 'header_image',
+		'settings'  => 'catchbase_theme_options[featured_image_size]',
+		'type'	  	=> 'select',
 	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_header_image_alt]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_header_image_alt'],
 		'sanitize_callback' => 'sanitize_text_field',
+		'transport'			=> 'postMessage'
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_header_image_alt]', array(
-			'label'		=> __( 'Featured Header Image Alt/Title Tag ', 'catch-base' ),
-			'section'   => 'header_image',
-	        'settings'  => 'catchbase_theme_options[featured_header_image_alt]',
-	        'type'	  	=> 'text',
+		'active_callback' 	=> 'catchbase_is_featured_header_image_enabled',
+		'label'		=> __( 'Featured Header Image Alt/Title Tag ', 'catch-base' ),
+		'section'   => 'header_image',
+        'settings'  => 'catchbase_theme_options[featured_header_image_alt]',
+        'type'	  	=> 'text',
 	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_header_image_url]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_header_image_url'],
 		'sanitize_callback' => 'esc_url_raw',
+		'transport'			=> 'postMessage'
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_header_image_url]', array(
-			'label'		=> __( 'Featured Header Image Link URL', 'catch-base' ),
-			'section'   => 'header_image',
-	        'settings'  => 'catchbase_theme_options[featured_header_image_url]',
-	        'type'	  	=> 'text',
+		'active_callback' 	=> 'catchbase_is_featured_header_image_enabled',
+		'label'				=> __( 'Featured Header Image Link URL', 'catch-base' ),
+		'section'   		=> 'header_image',
+        'settings'  		=> 'catchbase_theme_options[featured_header_image_url]',
+        'type'	  			=> 'text',
 	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_header_image_base]', array(
 		'capability'		=> 'edit_theme_options',
-		'default'	=> $defaults['featured_header_image_url'],
+		'default'			=> $defaults['featured_header_image_url'],
 		'sanitize_callback' => 'catchbase_sanitize_checkbox',
+		'transport'			=> 'postMessage'
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_header_image_base]', array(
+		'active_callback' 	=> 'catchbase_is_featured_header_image_enabled',
 		'label'    	=> __( 'Check to Open Link in New Window/Tab', 'catch-base' ),
 		'section'  	=> 'header_image',
 		'settings' 	=> 'catchbase_theme_options[featured_header_image_base]',

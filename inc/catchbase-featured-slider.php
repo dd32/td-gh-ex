@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -24,7 +24,7 @@ if( !function_exists( 'catchbase_featured_slider' ) ) :
  */
 function catchbase_featured_slider() {
 	global $post, $wp_query;
-	catchbase_flush_transients();
+	//catchbase_flush_transients();
 	// get data value from options
 	$options 		= catchbase_get_theme_options();
 	$enableslider 	= $options['featured_slider_option'];
@@ -36,28 +36,27 @@ function catchbase_featured_slider() {
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
- 
+	$page_for_posts = get_option('page_for_posts');
+
 	if ( $enableslider == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'homepage' ) ) {
 		if( ( !$catchbase_featured_slider = get_transient( 'catchbase_featured_slider' ) ) ) {
 			echo '<!-- refreshing cache -->';
-		
+
 			$catchbase_featured_slider = '
 				<section id="feature-slider">
 					<div class="wrapper">
-						<div class="cycle-slideshow" 
+						<div class="cycle-slideshow"
 						    data-cycle-log="false"
 						    data-cycle-pause-on-hover="true"
 						    data-cycle-swipe="true"
 						    data-cycle-auto-height=container
-						    data-cycle-loop=1
 						    data-cycle-fx="'. esc_attr( $options['featured_slide_transition_effect'] ) .'"
 							data-cycle-speed="'. esc_attr( $options['featured_slide_transition_length'] ) * 1000 .'"
 							data-cycle-timeout="'. esc_attr( $options['featured_slide_transition_delay'] ) * 1000 .'"
 							data-cycle-loader="'. esc_attr( $imageloader ) .'"
 							data-cycle-slides="> article"
 							>
-						    
+
 						    <!-- prev/next links -->
 						    <div class="cycle-prev"></div>
 						    <div class="cycle-next"></div>
@@ -72,12 +71,12 @@ function catchbase_featured_slider() {
 							elseif ( $sliderselect == 'featured-page-slider' && function_exists( 'catchbase_page_slider' ) ) {
 								$catchbase_featured_slider .=  catchbase_page_slider( $options );
 							}
-			
+
 			$catchbase_featured_slider .= '
 						</div><!-- .cycle-slideshow -->
 					</div><!-- .wrapper -->
 				</section><!-- #feature-slider -->';
-			
+
 			set_transient( 'catchbase_featured_slider', $catchbase_featured_slider, 86940 );
 		}
 		echo $catchbase_featured_slider;
@@ -112,10 +111,10 @@ function catchbase_demo_slider( $options ) {
 					</header>
 					<div class="entry-content">
 						<p>Slider Image 1 Content</p>
-					</div>   
-				</div>             
-			</article><!-- .slides --> 	
-			
+					</div>
+				</div>
+			</article><!-- .slides -->
+
 			<article class="post hentry slides demo-image displaynone">
 				<figure class="Slider Image 2">
 					<a title="Slider Image 2" href="'. esc_url( home_url( '/' ) ) .'">
@@ -130,8 +129,8 @@ function catchbase_demo_slider( $options ) {
 					</header>
 					<div class="entry-content">
 						<p>Slider Image 2 Content</p>
-					</div>   
-				</div>             
+					</div>
+				</div>
 			</article><!-- .slides -->';
 	return $output;
 }
@@ -148,7 +147,7 @@ if ( ! function_exists( 'catchbase_page_slider' ) ) :
  */
 function catchbase_page_slider( $options ) {
 	$quantity		= absint( $options['featured_slide_number'] );
-	
+
 	global $post;
 
     $output 				= '';
@@ -172,17 +171,17 @@ function catchbase_page_slider( $options ) {
 			'post__in'			=> $page_list,
 			'orderby' 			=> 'post__in'
 		));
-		$i=0; 
+		$i=0;
 
 		while ( $get_featured_posts->have_posts()) {
-			$get_featured_posts->the_post(); 
+			$get_featured_posts->the_post();
 
 			$i++;
-			
+
 			$title_attribute =the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) );
-			
+
 			$excerpt = get_the_excerpt();
-			
+
 			if ( $i == 1 ) { $classes = 'page pageid-'.$post->ID.' hentry slides displayblock'; } else { $classes = 'page pageid-'.$post->ID.' hentry slides displaynone'; }
 			$output .= '
 			<article class="'.$classes.'">
@@ -195,7 +194,7 @@ function catchbase_page_slider( $options ) {
 				else {
 					//Default value if there is no first image
 					$catchbase_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1200x514.jpg" >';
-					
+
 					//Get the first image in page, returns false if there is no image
 					$catchbase_first_image = catchbase_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'attached-page-image' ) );
 
@@ -208,7 +207,7 @@ function catchbase_page_slider( $options ) {
 						'. $catchbase_image .'
 					</a>';
 				}
-				
+
 				$output .= '
 				</figure><!-- .slider-image -->
 				<div class="entry-container">
@@ -224,7 +223,7 @@ function catchbase_page_slider( $options ) {
 					$output .= '
 				</div><!-- .entry-container -->
 			</article><!-- .slides -->';
-		} 
+		}
 
 		wp_reset_query();
   	}

@@ -33,6 +33,8 @@ function catchbase_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogdescription' )->transport	= 'postMessage';
 
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
 	$options  = catchbase_get_theme_options();
 
 	$defaults = catchbase_get_default_theme_options();
@@ -41,19 +43,6 @@ function catchbase_customize_register( $wp_customize ) {
 	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-custom-controls.php';
 
 	// Custom Logo (added to Site Title and Tagline section in Theme Customizer)
-	$wp_customize->add_setting( 'catchbase_theme_options[logo]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['logo'],
-		'sanitize_callback'	=> 'catchbase_sanitize_image'
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo', array(
-		'label'		=> __( 'Logo', 'catch-base' ),
-		'priority'	=> 100,
-		'section'   => 'title_tagline',
-        'settings'  => 'catchbase_theme_options[logo]',
-    ) ) );
-
     $wp_customize->add_setting( 'catchbase_theme_options[logo_disable]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['logo_disable'],
@@ -62,38 +51,57 @@ function catchbase_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[logo_disable]', array(
 		'label'    => __( 'Check to disable logo', 'catch-base' ),
-		'priority' => 101,
+		'priority' => 100,
 		'section'  => 'title_tagline',
 		'settings' => 'catchbase_theme_options[logo_disable]',
 		'type'     => 'checkbox',
 	) );
+
+	$wp_customize->add_setting( 'catchbase_theme_options[logo]', array(
+		'capability'		=> 'edit_theme_options',
+		'default'			=> $defaults['logo'],
+		'sanitize_callback'	=> 'catchbase_sanitize_image',
+		'transport'			=> 'postMessage',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo', array(
+		'active_callback' 	=> 'catchbase_is_logo_enabled',
+		'label'				=> __( 'Logo', 'catch-base' ),
+		'priority'			=> 101,
+		'section'   		=> 'title_tagline',
+        'settings'  		=> 'catchbase_theme_options[logo]',
+    ) ) );
 	
 	$wp_customize->add_setting( 'catchbase_theme_options[logo_alt_text]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['logo_alt_text'],
 		'sanitize_callback'	=> 'sanitize_text_field',
+		'transport'			=> 'postMessage',
 	) );
 
 	$wp_customize->add_control( 'catchbase_logo_alt_text', array(
-		'label'    	=> __( 'Logo Alt Text', 'catch-base' ),
-		'priority'	=> 102,
-		'section' 	=> 'title_tagline',
-		'settings' 	=> 'catchbase_theme_options[logo_alt_text]',
-		'type'     	=> 'text',
+		'active_callback' 	=> 'catchbase_is_logo_enabled',
+		'label'    			=> __( 'Logo Alt Text', 'catch-base' ),
+		'priority'			=> 102,
+		'section' 			=> 'title_tagline',
+		'settings' 			=> 'catchbase_theme_options[logo_alt_text]',
+		'type'     			=> 'text',
 	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[move_title_tagline]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['move_title_tagline'],
 		'sanitize_callback' => 'catchbase_sanitize_checkbox',
+		'transport'			=> 'postMessage',
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[move_title_tagline]', array(
-		'label'    => __( 'Check to move Site Title and Tagline before logo', 'catch-base' ),
-		'priority' => 103,
-		'section'  => 'title_tagline',
-		'settings' => 'catchbase_theme_options[move_title_tagline]',
-		'type'     => 'checkbox',
+		'active_callback' 	=> 'catchbase_is_logo_enabled',
+		'label'    			=> __( 'Check to move Site Title and Tagline before logo', 'catch-base' ),
+		'priority' 			=> 103,
+		'section'  			=> 'title_tagline',
+		'settings' 			=> 'catchbase_theme_options[move_title_tagline]',
+		'type'     			=> 'checkbox',
 	) );
 	// Custom Logo End
 	 
@@ -192,6 +200,13 @@ add_action( 'customize_register', 'catchbase_customize_register' );
  */
 function catchbase_customize_preview() {
 	wp_enqueue_script( 'catchbase_customizer', get_template_directory_uri() . '/js/catchbase-customizer.min.js', array( 'customize-preview' ), '20120827', true );
+
+	//setting home_url value to avail it in catchbase_customizer script in data object
+	$data = array(
+			'home_url'			=> esc_url( get_home_url( '/' ) ),
+		);
+
+	wp_localize_script( 'catchbase_customizer', 'data', $data );
 	
 	//Flush transients on preview
 	catchbase_flush_transients();

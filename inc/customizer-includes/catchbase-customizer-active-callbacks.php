@@ -13,6 +13,43 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	exit();
 }
 
+if( ! function_exists( 'catchbase_is_logo_enabled' ) ) :
+	/**
+	* Return true if logo is enabled
+	*
+	* @since  Catch Base 2.7
+	*/
+	function catchbase_is_logo_enabled( $control ) {
+		return !$control->manager->get_setting( 'catchbase_theme_options[logo_disable]' )->value();
+	}
+endif;
+
+
+if( ! function_exists( 'catchbase_is_featured_header_image_enabled' ) ) :
+	/**
+	* Return true if featured header image is enabled
+	*
+	* @since  Catch Base 2.7
+	*/
+	function catchbase_is_featured_header_image_enabled( $control ) {
+		$enabled = $control->manager->get_setting( 'catchbase_theme_options[enable_featured_header_image]' )->value();
+		return ( $enabled !== 'disabled' );		
+	}
+endif;
+
+if( ! function_exists( 'catchbase_is_promotion_headline_enabled' ) ) :
+	/**
+	* Return true if promotion headline is enabled
+	*
+	* @since  Catch Base 2.7
+	*/
+	function catchbase_is_promotion_headline_enabled( $control ) {
+		$enabled = $control->manager->get_setting( 'catchbase_theme_options[promotion_headline_option]' )->value();
+		return ( $enabled !== 'disabled' );		
+	}
+endif;
+
+
 if( ! function_exists( 'catchbase_is_slider_active' ) ) :
 	/**
 	* Return true if slider is active
