@@ -1,13 +1,13 @@
 <?php
+/**
+ * Hawea functions and definitions
+ *
+ * @package Ari
+ */
 
 /* Make theme available for translation */
 /* Translations can be filed in the /languages/ directory */
-load_theme_textdomain( 'ari', TEMPLATEPATH . '/languages' );
-
-	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
+load_theme_textdomain( 'ari', get_template_directory() . '/languages' );
 
 /* Set the content width based on the theme's design and stylesheet. */
 if ( ! isset( $content_width ) )
@@ -23,6 +23,9 @@ function ari_setup() {
 	/* This theme styles the visual editor with editor-style.css to match the theme style. */
 	add_editor_style();
 	
+	// Let WordPress manage the document title.
+	add_theme_support( 'title-tag' );
+	
 	/* This theme uses post thumbnails */
 	add_theme_support( 'post-thumbnails' );
 
@@ -33,9 +36,37 @@ function ari_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'ari'),
 	) );
+	
+	// Implement the Custom Header feature
+	require get_template_directory() . '/inc/custom-header.php';
+
+	// This theme allows users to set a custom background.
+	add_theme_support( 'custom-background', apply_filters( 'ari_custom_background_args', array(
+		'default-color'	=> 'ffffff',
+		'default-image'	=> '',
+	) ) );
 
 }
 endif;
+
+/* Enqueue scripts and styles */
+function ari_scripts() {
+	global $wp_styles;
+
+
+	// Loads JavaScript to pages with the comment form to support sites with threaded comments (when in use)
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+	wp_enqueue_script( 'comment-reply' );
+
+	// Loads main stylesheet.
+	wp_enqueue_style( 'ari-style', get_stylesheet_uri(), array(), '20160207' );
+	
+	// Loads dark stylesheet
+	if ( get_theme_mod ( 'dark_theme' ) )
+	wp_enqueue_style( 'ari-dark-style', get_template_directory_uri() . '/css/dark.css', array(), '1.0' );
+}
+add_action( 'wp_enqueue_scripts', 'ari_scripts' );
+
 
 /* Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link. */
 function ari_page_menu_args( $args ) {
@@ -78,7 +109,7 @@ if ( ! function_exists( 'ari_comment' ) ) :
 /*  Search form custom styling */
 function ari_search_form( $form ) {
 
-    $form = '<form role="search" method="get" id="searchform" action="'.get_bloginfo('url').'" >
+    $form = '<form role="search" method="get" id="searchform" action="'.home_url().'" >
     <input type="text" class="search-input" value="' . get_search_query() . '" name="s" id="s" />
     <input type="submit" id="searchsubmit" value="'. esc_attr__('Search', 'ari') .'" />
     </form>';
@@ -162,12 +193,6 @@ function ari_widgets_init() {
 /* Register sidebars by running ari_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'ari_widgets_init' );
 
-/* Removes the default styles that are packaged with the Recent Comments widget. */
-function ari_remove_recent_comments_style() {
-	global $wp_widget_factory;
-	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
-}
-add_action( 'widgets_init', 'ari_remove_recent_comments_style' );
 
 if ( ! function_exists( 'ari_posted_on' ) ) :
 /* Prints HTML with meta information for the current post—date/time and author. */
@@ -190,12 +215,15 @@ endif;
 
 /* Custom Ari Social Links Widget */
 class Ari_SocialLinks_Widget extends WP_Widget {
-	function Ari_SocialLinks_Widget() {
-		$widget_ops = array(
-			'classname' => 'widget_social_links',
-			'description' => 'A list with your social profile links' );
-		$this->WP_Widget('social_links', 'Ari Social Links', $widget_ops);
+
+	public function __construct() {
+		parent::__construct( 'social_links', __( 'Ari Social Links', 'ari' ), array(
+			'classname'   => 'widget_social_links',
+			'description' => __( 'A list with your social profile links', 'ari' ),
+		) );
 	}
+	
+	
 	function widget($args, $instance) {
 		extract($args, EXTR_SKIP);
 		echo $before_widget;
@@ -329,107 +357,39 @@ class Ari_SocialLinks_Widget extends WP_Widget {
 // register Ari SocialLinks Widget
 add_action('widgets_init', create_function('', 'return register_widget("Ari_SocialLinks_Widget");'));
 
-/* Ari Theme-Options Page */
-function themeoptions_admin_menu()
-{
-	// here's where we add the theme options page link to the dashboard sidebar
-	add_theme_page("Theme Options", __('Theme Options', 'ari'), 'edit_themes', basename(__FILE__), 'themeoptions_page');
+
+// Custom CSS Styles
+function ari_customize_css() {
+    ?>
+	<style type="text/css">
+	<?php if ('#ffffff' != get_theme_mod( 'background_color' ) ) { ?>
+		#site-navigation {background:#<?php echo get_theme_mod('background_color', '#ffffff'); ?>;}
+	<?php } ?>
+	<?php if ('#88C34B' != get_theme_mod( 'link_color' ) ) { ?>
+	a,
+	ul.sidebar li.widget_text a,
+	#content h2 a:hover,
+	ul.sidebar a:hover,
+	.comment-meta a:hover,
+	p.logged-in-as a:hover,
+	p.meta a:hover,
+	a.post-edit-link:hover,
+	#footer a:hover
+	{ color: <?php echo get_theme_mod('link_color', '#000000'); ?>;}
+	<?php } ?>
+	<?php if ('#4C4C4C' != get_theme_mod( 'text_color' ) ) { ?>
+	body, #content h2 a { color: <?php echo get_theme_mod('text_color', '#000000'); ?>; }
+	<?php } ?>
+	</style>
+    <?php
 }
+add_action( 'wp_head', 'ari_customize_css');
 
-function themeoptions_page() {
-	if ( isset( $_POST['update_themeoptions'] ) ) { themeoptions_update(); }  //check options update
-	?>
-	<div class="wrap">
-		<div id="icon-themes" class="icon32"><br /></div>
-		<h2><?php _e('Theme Options', 'ari'); ?></h2>
-
-		<form method="POST" action="">
-			<input type="hidden" name="update_themeoptions" value="true" />
-			
-			<table class="form-table" style="margin-bottom: 50px;">
-			<h3><?php _e('Switch to the dark theme version', 'ari'); ?></h3>
-			<tr valign="top">
-				<th scope="row"><label for="dark-style"><?php _e('Ari dark theme version', 'ari'); ?></label></th>
-				<td><input type="checkbox" name="dark-style" id="dark-style" <?php echo get_option('ari_dark-style'); ?> /><?php _e(' check the box, if you want to use the dark theme version', 'ari'); ?></h4></td>
-			</tr>
- 			</table>
-			
-			<table class="form-table" style="margin-bottom: 50px;">
-			<h3><?php _e('Change the Theme Colors', 'ari'); ?></h3>
-			<p class="description"><?php _e('(You can find out the HEX value of any color with the <a href="http://chir.ag/projects/name-that-color/" target="_blank">Name that Color</a> online-tool)', 'ari'); ?></p>
-			<tr valign="top">
-				<th scope="row"><label for="background-color"><?php _e('Background Color', 'ari'); ?></label></th>
-				<td><input type="text" name="background-color" id="background-color" size="32" value="<?php echo get_option('ari_background-color'); ?>"/> <span class="description"><?php _e(' e.g. #FFFFFF or white (default color: white)', 'ari'); ?></span></td>
-			</tr>
-  			<tr valign="top">
-				<th scope="row"><label for="linkcolor-1"><?php _e('First Link Color', 'ari'); ?></label></th>
-				<td><input type="text" name="linkcolor-1" id="linkcolor-1" size="32" value="<?php echo get_option('ari_linkcolor-1'); ?>"/> <span class="description"><?php _e(' e.g. #0000FF or blue (default green link color: #88C34B)', 'ari'); ?></span></td>
-			</tr>
-			<tr valign="top">
-				<th scope="row"><label for="linkcolor-2"><?php _e('Second Link Color', 'ari'); ?></label></th>
-				<td><input type="text" name="linkcolor-2" id="linkcolor-2" size="32" value="<?php echo get_option('ari_linkcolor-2'); ?>"/> <span class="description"><?php _e(' e.g. #FF0000 or red (default grey link color: #999999)', 'ari'); ?></span></td>
-			</tr>			
-			<tr valign="top">
-				<th scope="row"><label for="text-color"><?php _e('Text Color', 'ari'); ?></label></th>
-				<td><input type="text" name="text-color" id="text-color" size="32" value="<?php echo get_option('ari_text-color'); ?>"/> <span class="description"><?php _e(' e.g. #4C4C4C (default text color: #4C4C4C)', 'ari'); ?></span></td>
-			</tr>
- 			</table>
-			
-			<table class="form-table" style="margin-bottom: 10px;">
-			<h3><?php _e('Use an image as your logo', 'ari'); ?></h3>
-			<tr valign="top">
-				<th scope="row"><label for="logo-image"><?php _e('Logo Image URL', 'ari'); ?></label></th>
-				<td><input type="text" name="logo-image" id="logo-image" size="70" value="<?php echo get_option('ari_logo-image'); ?>"/><br/><span
-                            class="description"> <a href="<?php echo home_url(); ?>/wp-admin/media-new.php" target="_blank"><?php _e('Upload your logo image', 'ari'); ?></a> <?php _e(' using the WordPress Media Library and insert the URL here<br/>(the maximum logo image size is: 240 x 75 Pixel)', 'ari'); ?> </span><br/><br/><img src="<?php echo (get_option('logo-image')) ? get_option('logo-image') : get_template_directory_uri() . '/images/logo.png' ?>"
-                     alt=""/></td>
-			</tr>
-			</table>
-			
-			<p><input type="submit" name="search" value="<?php _e('Update Options', 'ari'); ?>" class="button button-primary" /></p>
-		</form>
-
-	</div>
-	<?php
-}
-
-add_action('admin_menu', 'themeoptions_admin_menu');
-
-// Update options
-function themeoptions_update(){
-
-	if (isset($_POST['dark-style'])=='on') { $display = 'checked'; } else { $display = ''; }
-	update_option('ari_dark-style', $display);
-	update_option('ari_background-color', 	$_POST['background-color']);
-	update_option('ari_linkcolor-1', 	$_POST['linkcolor-1']);
-	update_option('ari_linkcolor-2', 	$_POST['linkcolor-2']);
-	update_option('ari_text-color', 	$_POST['text-color']);
-	update_option('ari_logo-image', 	$_POST['logo-image']);
-	
-}
-
-
-// Custom CSS-Styles for Background, Text-Color and Link Colors
-function insert_custom_css(){
-?>
-<style type="text/css">
-<?php if (get_option('ari_background-color') ) { ?>body { background-color: <?php echo get_option('ari_background-color'); ?>; } <?php } ?>
-<?php if (get_option('ari_text-color') ) { ?>body { color: <?php echo get_option('ari_text-color'); ?>; }
-#content h2 a { color: <?php echo get_option('ari_text-color'); ?>; }
-<?php } ?>
-<?php if (get_option('ari_linkcolor-1') ) { ?>a, ul.sidebar li.widget_text a { color:<?php echo get_option('ari_linkcolor-1'); ?>; }
-#content h2 a:hover, ul.sidebar a:hover, .comment-meta a:hover, p.logged-in-as a:hover, p.meta a:hover, a.post-edit-link:hover, #footer a:hover { color:<?php echo get_option('ari_linkcolor-1'); ?>; }
-#searchsubmit:hover, form#commentform p.form-submit input#submit:hover, input.wpcf7-submit:hover  {
-	background:<?php echo get_option('ari_linkcolor-1'); ?>;
-}
-<?php } ?>
-<?php if (get_option('ari_linkcolor-2') ) { ?>ul.sidebar a, p.meta a, .comment-meta a, p.logged-in-as a, a.post-edit-link, #footer a { color:<?php echo get_option('ari_linkcolor-2'); ?>; }
-<?php } ?>
-</style>
-<?php
-}
-
-add_action('wp_head', 'insert_custom_css');
 
 /* Remove the default CSS style from the WP image gallery */
 add_filter('gallery_style', create_function('$a', 'return "
 <div class=\'gallery\'>";'));
+
+
+/* Customizer additions */
+require get_template_directory() . '/inc/customizer.php';

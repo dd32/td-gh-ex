@@ -2,6 +2,11 @@
 For detailed documentation and support please visit: http://www.elmastudio.de/wordpress-themes/ari/
 ------------------------------------------------------------------------------------------------------------
 
+Version 1.2 - February 07th 2016
+-----------------------------------
+- General code update to keep theme compatible with current WordPress version
+
+
 Version 1.1.2 - September 25th 2011
 -----------------------------------
 1. Fixed overlapping footer issue if theme has a very long title (by adding a 70% width to the footer div).

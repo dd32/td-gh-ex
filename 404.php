@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying 404 error pages.
+ *
+ * @package Ari
+ */
+
+get_header(); ?>
 
 <div id="main">
 	<div id="content">

@@ -1,6 +1,8 @@
 <?php
 /**
  * The right, additional Sidebar containing the secondary widget areas.
+ *
+ * @package Ari
  */
 ?>
 

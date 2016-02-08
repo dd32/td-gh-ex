@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The Template for displaying the tags archive.
+ *
+ * @package Ari
+ */
+
+get_header(); ?>
 
 <div id="main">
 	<div id="content">

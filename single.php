@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The Template for displaying all single posts.
+ *
+ * @package Ari
+ */
+
+get_header(); ?>
 
 <div id="main">
 	<div id="content">
@@ -49,8 +56,8 @@
 	</div>
 	<!--end Post-->
 	
-		<p class="previous"><?php previous_post_link( '%link',  __( '&larr;  Previous Post', 'Previous post link', 'ari' ) ); ?></p>
-		<p class="next"><?php next_post_link( '%link', __( 'Next Post &rarr;', 'Next post link', 'ari' ) ); ?></p>
+		<p class="previous"><?php previous_post_link( '%link',  __( '&larr;  Previous Post', 'ari' ) ); ?></p>
+		<p class="next"><?php next_post_link( '%link', __( 'Next Post &rarr;', 'ari' ) ); ?></p>
 	
 	</div>
 	<!--end Content-->

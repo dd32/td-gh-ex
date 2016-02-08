@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The main template file.
+ *
+ * @package Ari
+ */
+
+get_header(); ?>
 
 <div id="main">
 

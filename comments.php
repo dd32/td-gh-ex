@@ -1,3 +1,11 @@
+<?php
+/**
+ * The template for displaying Comments.
+ *
+ * @package Ari
+ */
+?>
+
 <?php if ( post_password_required() ) : ?>
 				<p><?php _e( 'This post is password protected. Enter the password to view any comments.', 'ari' ); ?></p>
 <?php
