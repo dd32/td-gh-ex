@@ -20,6 +20,7 @@
 /**
  * Include the TGM_Plugin_Activation class.
  */
+
 require_once dirname( __FILE__ ) . '/class-tgm.php';
 
 add_action( 'tgmpa_register', 'athena_register_required_plugins' );
@@ -43,11 +44,15 @@ function athena_register_required_plugins() {
      * Array of plugin arrays. Required keys are name and slug.
      * If the source is NOT from the .org repo, then source is also required.
      */
-    $plugins =         array (
-        'name' => 'Our Team Showcase',
-        'slug' => 'our-team-enhanced',
-        'required' => false,
+    $plugins = array(
+        // This is an example of how to include a plugin from the WordPress Plugin Repository.
+        array(
+            'name' => 'Our Team Showcase',
+            'slug' => 'our-team-enhanced',
+            'required' => false,
+        )
     );
+
 
     $config = array (
         'id' => 'athena', // Unique ID for hashing notices for multiple instances of TGMPA.
