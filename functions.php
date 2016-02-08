@@ -287,7 +287,8 @@ if ( ! function_exists( 'unlimited_social_array' ) ) {
 			'paypal'        => 'unlimited_paypal_profile',
 			'weibo'         => 'unlimited_weibo_profile',
 			'tencent-weibo' => 'unlimited_tencent_weibo_profile',
-			'email'         => 'unlimited_email_profile'
+			'email'         => 'unlimited_email_profile',
+			'email_form'    => 'unlimited_email_form'
 		);
 
 		return apply_filters( 'unlimited_social_array_filter', $social_sites );
@@ -337,7 +338,7 @@ if ( ! function_exists( 'unlimited_social_icons_output' ) ) {
 
 				// get the URL
 				if ( $source == 'author' ) {
-					$url = get_the_author_meta( $active_site );
+					$url = get_the_author_meta( $key );
 				} elseif ( $source == 'header' ) {
 					$url = get_theme_mod( $active_site );
 				}
@@ -355,6 +356,22 @@ if ( ! function_exists( 'unlimited_social_icons_output' ) ) {
 						<a class="email" target="_blank"
 						   href="mailto:<?php echo antispambot( is_email( $url ) ); ?>">
 							<i class="fa fa-envelope" title="<?php esc_attr_e( 'email', 'unlimited' ); ?>"></i>
+						</a>
+					</li>
+				<?php
+				} elseif ( $active_site == 'email_form' ) { ?>
+					<li>
+						<a class="contact-form" target="_blank"
+						   href="<?php echo esc_url( $url ); ?>">
+							<i class="fa fa-envelope-o" title="<?php esc_attr_e( 'contact form', 'unlimited' ); ?>"></i>
+						</a>
+					</li>
+				<?php
+				} elseif ( $active_site == 'skype' ) { ?>
+					<li>
+						<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
+						   href="<?php echo esc_url( $url, array( 'http', 'https', 'skype') ); ?>">
+							<i class="<?php echo esc_attr( $class ); ?>" title="<?php esc_attr( $active_site ); ?>"></i>
 						</a>
 					</li>
 				<?php } else { ?>
@@ -558,3 +575,10 @@ function unlimited_get_content_template() {
 		get_template_part( 'content' );
 	}
 }
+
+// allow skype URIs to be used
+function ct_unlimited_allow_skype_protocol( $protocols ){
+	$protocols[] = 'skype';
+	return $protocols;
+}
+add_filter( 'kses_allowed_protocols' , 'ct_unlimited_allow_skype_protocol' );

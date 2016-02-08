@@ -44,14 +44,6 @@ function unlimited_add_customizer_content( $wp_customize ) {
 		<?php }
 	}
 
-	// create ad controls
-	class unlimited_description_control extends WP_Customize_Control {
-
-		public function render_content() {
-			echo $this->description;
-		}
-	}
-
 	/***** Logo Upload *****/
 
 	// section
@@ -135,13 +127,24 @@ function unlimited_add_customizer_content( $wp_customize ) {
 				$label = 'Tencent Weibo';
 			} elseif ( $social_site == 'paypal' ) {
 				$label = 'PayPal';
+			} elseif ( $social_site == 'email_form' ) {
+				$label = 'Contact Form';
 			}
 
-			// setting
-			$wp_customize->add_setting( $social_site, array(
-				'sanitize_callback' => 'esc_url_raw',
-				'transport'         => 'postMessage'
-			) );
+			if ( $social_site == 'skype' ) {
+				// setting
+				$wp_customize->add_setting( $social_site, array(
+					'sanitize_callback' => 'ct_unlimited_sanitize_skype',
+					'transport'         => 'postMessage'
+				) );
+			} else {
+				// setting
+				$wp_customize->add_setting( $social_site, array(
+					'sanitize_callback' => 'esc_url_raw',
+					'transport'         => 'postMessage'
+				) );
+			}
+
 			// control
 			$wp_customize->add_control( $social_site, array(
 				'type'     => 'url',
@@ -193,7 +196,7 @@ function unlimited_add_customizer_content( $wp_customize ) {
 		'transport'         => 'postMessage'
 	) );
 
-	$description_layout = sprintf( __( 'Want more layouts? <a target="_blank" href="%s">Check out Unlimited Pro</a>', 'unlimited' ), 'https://www.competethemes.com/unlimited-pro/' );
+	$description_layout = sprintf( __( 'Want more layouts? <a target="_blank" href="%s">Check out Unlimited Pro</a>.', 'unlimited' ), 'https://www.competethemes.com/unlimited-pro/' );
 
 	// control
 	$wp_customize->add_control( 'layout', array(
@@ -304,149 +307,6 @@ function unlimited_add_customizer_content( $wp_customize ) {
 		'settings' => 'custom_css'
 	) );
 
-	/*
-	 * PRO only sections
-	 */
-
-	/***** Header Image *****/
-
-	// section
-	$wp_customize->add_section( 'unlimited_header_image', array(
-		'title'    => __( 'Header Image', 'unlimited' ),
-		'priority' => 35
-	) );
-	// setting
-	$wp_customize->add_setting( 'header_image_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new unlimited_description_control(
-		$wp_customize, 'header_image_ad', array(
-			'section'     => 'unlimited_header_image',
-			'settings'    => 'header_image_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> for advanced header image functionality.', 'unlimited' ), 'https://www.competethemes.com/unlimited-pro/' )
-		)
-	) );
-
-	/***** Colors *****/
-
-	// section
-	$wp_customize->add_section( 'unlimited_colors', array(
-		'title'    => __( 'Colors', 'unlimited' ),
-		'priority' => 50
-	) );
-	// setting
-	$wp_customize->add_setting( 'colors_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new unlimited_description_control (
-		$wp_customize, 'colors_ad', array(
-			'section'     => 'unlimited_colors',
-			'settings'    => 'colors_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> to change your colors.', 'unlimited' ), 'https://www.competethemes.com/unlimited-pro/' )
-		)
-	) );
-
-	/***** Background *****/
-
-	// section
-	$wp_customize->add_section( 'unlimited_background', array(
-		'title'    => __( 'Background', 'unlimited' ),
-		'priority' => 55
-	) );
-	// setting
-	$wp_customize->add_setting( 'background_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new unlimited_description_control(
-		$wp_customize, 'background_ad', array(
-			'section'     => 'unlimited_background',
-			'settings'    => 'background_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> for advanced background image and texture functionality.', 'unlimited' ), 'https://www.competethemes.com/unlimited-pro/' )
-		)
-	) );
-
-	/***** Fonts *****/
-
-	// section
-	$wp_customize->add_section( 'unlimited_font', array(
-		'title'    => __( 'Font', 'unlimited' ),
-		'priority' => 40
-	) );
-	// setting
-	$wp_customize->add_setting( 'font_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new unlimited_description_control(
-		$wp_customize, 'font_ad', array(
-			'section'     => 'unlimited_font',
-			'settings'    => 'font_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> to change your font.', 'unlimited' ), 'https://www.competethemes.com/unlimited-pro/' )
-		)
-	) );
-
-	/***** Fixed Menu *****/
-
-	// section
-	$wp_customize->add_section( 'unlimited_fixed_menu', array(
-		'title'    => __( 'Fixed Menu', 'unlimited' ),
-		'priority' => 15
-	) );
-	// setting
-	$wp_customize->add_setting( 'fixed_menu_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new unlimited_description_control(
-		$wp_customize, 'fixed_menu_ad', array(
-			'section'     => 'unlimited_fixed_menu',
-			'settings'    => 'fixed_menu_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> to change your menu to a fixed style.', 'unlimited' ), 'https://www.competethemes.com/unlimited-pro/' )
-		)
-	) );
-
-	/***** Display Control *****/
-
-	// section
-	$wp_customize->add_section( 'unlimited_display_control', array(
-		'title'    => __( 'Display Controls', 'unlimited' ),
-		'priority' => 70
-	) );
-	// setting
-	$wp_customize->add_setting( 'display_control_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new unlimited_description_control(
-		$wp_customize, 'display_control_ad', array(
-			'section'     => 'unlimited_display_control',
-			'settings'    => 'display_control_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> to get hide/show controls.', 'unlimited' ), 'https://www.competethemes.com/unlimited-pro/' )
-		)
-	) );
-
-	/***** Footer Text *****/
-
-	// section
-	$wp_customize->add_section( 'unlimited_footer_text', array(
-		'title'    => __( 'Footer Text', 'unlimited' ),
-		'priority' => 85
-	) );
-	// setting
-	$wp_customize->add_setting( 'footer_text_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new unlimited_description_control(
-		$wp_customize, 'footer_text_ad', array(
-			'section'     => 'unlimited_footer_text',
-			'settings'    => 'footer_text_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> to customize the footer text.', 'unlimited' ), 'https://www.competethemes.com/unlimited-pro/' )
-		)
-	) );
 }
 
 /***** Custom Sanitization Functions *****/
@@ -523,6 +383,10 @@ function unlimited_sanitize_comments_setting( $input ) {
 
 function unlimited_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
+}
+
+function ct_unlimited_sanitize_skype( $input ) {
+	return esc_url_raw( $input, array( 'http', 'https', 'skype' ) );
 }
 
 /***** Helper Functions *****/
