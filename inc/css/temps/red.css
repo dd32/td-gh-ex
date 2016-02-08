@@ -9,29 +9,29 @@ and open the template in the editor.
 */
 
 a,a:visited{
-    color: #36B3A8;
+    color: #E74C3C;
 }
 
 a:hover,
 a:focus,
 .site-info a:hover{
-    color: #ec7063;
+    color: #CE4335;
 }
 
 ul.athena-nav > li.menu-item.current-menu-item a,
 ul.athena-nav > li.menu-item.current-menu-parent a,
 ul.athena-nav > li.menu-item a:hover{
     
-    border-bottom: 2px solid #ec7063;
+    border-bottom: 2px solid #CE4335;
 
 }
 
 ul.athena-nav > li > ul li.current-menu-item > a{
-    color: #36B3A8;
+    color: #E74C3C;
 }
 
 ul.athena-nav ul li a:hover{
-    color: #ec7063;
+    color: #CE4335;
 }
 
 .athena-button.primary,
@@ -42,7 +42,7 @@ input[type="submit"],
 .woocommerce input.button.alt,
 .woocommerce #respond input#submit.alt, 
 .woocommerce a.button.alt{
-    background: #36B3A8;
+    background: #E74C3C;
     color: #fff;
 }
 
@@ -51,20 +51,20 @@ input[type="submit"],
 .woocommerce input.button.alt:hover,
 .woocommerce #respond input#submit.alt:hover, 
 .woocommerce a.button.alt:hover{
-    background: #ec7063;
+    background: #CE4335;
 }
 
 .woocommerce .woocommerce-message{
-    border-top-color: #36B3A8;
+    border-top-color: #E74C3C;
 }
 
 .woocommerce .woocommerce-message:before{
-    color: #36B3A8;
+    color: #E74C3C;
 }
 
 .main-navigation .athena-cart,
 .athena-mobile-cart .athena-cart{
-    background: #36B3A8 !important;
+    background: #E74C3C !important;
     transition: 0.25s all ease-in-out;
     -moz-transition: 0.25s all ease-in-out;
     -webkit-transition: 0.25s all ease-in-out;
@@ -73,12 +73,12 @@ input[type="submit"],
 
 .main-navigation .athena-cart:hover,
 .athena-mobile-cart .athena-cart:hover{
-    background: #ec7063 !important;
+    background: #CE4335 !important;
 }
 
 #athena-featured,
 .woocommerce span.onsale{
-    background: #36B3A8;
+    background: #E74C3C;
     color: #fff;
 }
 #athena-featured .fa{
@@ -86,13 +86,13 @@ input[type="submit"],
 }
 
 #authica-social a:hover{
-    color: #ec7063;
+    color: #CE4335;
 }
 
 .scroll-top:hover{
-    background: #ec7063;
+    background: #CE4335;
 }
 
 #athena-overlay-trigger{
-    border-color: transparent transparent #36B3A8 transparent;
+    border-color: transparent transparent #E74C3C transparent;
 }

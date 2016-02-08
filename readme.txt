@@ -1,17 +1,17 @@
 === Athena ===
 
-Contributors: automattic
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Contributors: smartcat,automattic
+Tags: black, blue, green, pink, red, yellow, dark, light, full-width-template, threaded-comments, responsive-layout, left-sidebar, featured-images, right-sidebar, one-column, two-columns, three-columns, custom-colors, featured-image-header, front-page-post-form, theme-options, translation-ready, photoblogging
 
 Requires at least: 4.0
-Tested up to: 4.3.1
-Stable tag: 1.0
+Tested up to: 4.4.2
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Athena 
+Athena is a feature-loaded, user-friendly, fully responsive, Parallax modern WordPress theme built with care and SEO in mind. It is a multi-purpose theme with a design that can be used by a business, restaurant, freelancers, photographers, bloggers, musicians and creative agencies. Athena features a full width frontpage slider, animated callouts with over 600 icons to choose from. The blog is an attractive masonry grid. It comes with many color options, left and right sidebars, 6 widget areas, primary and footer menus, mobile responsive menu and links to your social media sites . Athena allows you to fully customize your site without having to work with code. Athena also features a live customizer, allowing you to change settings and preview them live.
 
 == Installation ==
 	
@@ -45,6 +45,12 @@ Modifications based on theme review feedback
 = 1.03 - January 21st, 2016
 Fixed an error in the slide #1 image upload in customizer
 Fixed color issue in dropdown menus in widgets
+
+= 1.04 - Minor bug fix
+
+= 1.05 - February 8th, 2016
+Updates to theme mod sanitization
+Updating theme info in style.css, readme.txt
 
 
 == Credits ==
@@ -128,7 +134,7 @@ Fixed color issue in dropdown menus in widgets
 
 16. Parallax.js
     - URL                   https://github.com/pixelcog/parallax.js/
-    - License               SIL Open Font
+    - License               MIT
     - License URL           http://www.opensource.org/licenses/mit-license.php
 
 17. Homepage Image  
@@ -141,5 +147,3 @@ Fixed color issue in dropdown menus in widgets
     - URL                   http://tgmpluginactivation.com/
     - License               Licensed under GPLv2 or later
     - License URL           http://www.gnu.org/licenses/gpl.html
-
-

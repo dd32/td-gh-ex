@@ -61,9 +61,6 @@ function athena_scripts() {
     wp_enqueue_script('athena-carousel', get_template_directory_uri() . '/inc/js/owl.carousel.min.js', array('jquery'), ATHENA_VERSION, true);
     wp_enqueue_script('athena-slicknav', get_template_directory_uri() . '/inc/js/slicknav.min.js', array('jquery'), ATHENA_VERSION, true);
     wp_enqueue_script('athena-wow', get_template_directory_uri() . '/inc/js/wow.js', array('jquery'), ATHENA_VERSION, true);
-
-
-
     wp_enqueue_script('athena-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery', 'jquery-ui-core', 'jquery-masonry'), ATHENA_VERSION);
 }
 
@@ -585,16 +582,6 @@ function athena_recent_posts() {
                     <img src="<?php echo $url; ?> " title="<?php echo $post['post_title']; ?>"/>
                     <div class="overlay">
                         <a href="<?php echo get_permalink($post['ID']) ?>" class="title"><?php echo $post['post_title']; ?></a>
-<!--                          <?php $date = new DateTime($post['post_date']); ?>
-                        <div class="date">
-                            <i class="fa fa-calendar"></i>
-                            <?php echo date('M d', strtotime($post['post_date'])); ?>
-                        </div>
-                        <div class="author">
-                            <i class="fa fa-pencil"></i>
-                            <?php echo get_userdata($post['post_author'])->user_login; ?>
-                        </div>
-                        <br>-->
                         <br>
                         <br>
                         <div class="center">

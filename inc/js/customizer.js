@@ -3,7 +3,7 @@ jQuery( document ).ready( function( $ ){
 //    $('#customize-header-actions').append('<a class="button button-primary">Upgrade to Pro</a>');
 
     $('#customize-info .preview-notice').html('<a class="button button-primary" href="http://smartcatdesign.net/preview/athena/" target="_BLANK">Upgrade to Athena Pro</a>');
-    $('#customize-info .preview-notice').append('<p style="color: #cc0000">The pro version includes more colors, the ability to add more slides in the slider, more font options, an animated Ajax contact form, testimonials carousel and more!</p>');
+    $('#customize-info .preview-notice').append('<p style="color: #cc0000">The pro version includes more skin colors, the ability to add more slides in the slider, more font options, an animated Ajax contact form, testimonials carousel, FAQs, Photo Gallery and more!</p>');
 
     $( '#customize-control-theme_color input[type=radio]' ).each( function() {
 

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This file represents an example of the code that themes would use to register
  * the required plugins.
@@ -11,19 +10,19 @@
  *
  * @package    TGM-Plugin-Activation
  * @subpackage Example
- * @version    2.5.1
+ * @version    2.5.2
  * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright  Copyright (c) 2011, Thomas Griffin
  * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
  * @link       https://github.com/TGMPA/TGM-Plugin-Activation
  */
+
 /**
  * Include the TGM_Plugin_Activation class.
  */
 require_once dirname( __FILE__ ) . '/class-tgm.php';
 
 add_action( 'tgmpa_register', 'athena_register_required_plugins' );
-
 /**
  * Register the required plugins for this theme.
  *
@@ -39,33 +38,17 @@ add_action( 'tgmpa_register', 'athena_register_required_plugins' );
  * TGM_Plugin_Activation class constructor.
  */
 function athena_register_required_plugins() {
+    
     /*
      * Array of plugin arrays. Required keys are name and slug.
      * If the source is NOT from the .org repo, then source is also required.
      */
-    $plugins = array (
-        // This is an example of how to include a plugin from the WordPress Plugin Repository.
-        array (
-            'name' => 'Our Team Showcase',
-            'slug' => 'our-team-enhanced',
-            'required' => false,
-        ),
-        array (
-            'name' => 'WP Construction Mode',
-            'slug' => 'wp-construction-mode',
-            'required' => false,
-        ),
+    $plugins =         array (
+        'name' => 'Our Team Showcase',
+        'slug' => 'our-team-enhanced',
+        'required' => false,
     );
 
-    /*
-     * Array of configuration settings. Amend each line as needed.
-     *
-     * TGMPA will start providing localized text strings soon. If you already have translations of our standard
-     * strings available, please help us make TGMPA even better by giving us access to these translations or by
-     * sending in a pull-request with .po file(s) with the translations.
-     *
-     * Only uncomment the strings in the config array if you want to customize the strings.
-     */
     $config = array (
         'id' => 'athena', // Unique ID for hashing notices for multiple instances of TGMPA.
         'default_path' => '', // Default absolute path to bundled plugins.
