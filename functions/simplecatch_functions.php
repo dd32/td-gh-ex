@@ -12,8 +12,11 @@ function simplecatch_scripts_method() {
 	//Register 978 grid to add it in main stylesheet as dependency
 	wp_register_style( 'simplecatch_grid', get_template_directory_uri() . '/css/978.css' );
 
+	//Register Google Font Style
+	wp_register_style( 'simplecatch_web_fonts', simplecatch_load_google_fonts(), array(), null );
+
 	// Enqueue catchevolution Sytlesheet
-	wp_enqueue_style( 'simplecatch_style', get_stylesheet_uri(), array( 'simplecatch_grid' ) );
+	wp_enqueue_style( 'simplecatch_style', get_stylesheet_uri(), array( 'simplecatch_grid', 'simplecatch_web_fonts' ) );
 
 	/**
 	 * Loads up Color Scheme
@@ -65,10 +68,26 @@ add_action( 'wp_enqueue_scripts', 'simplecatch_scripts_method' );
  * @action wp_enqueue_scripts
  */
 function simplecatch_load_google_fonts() {
-    wp_register_style('google-fonts', 'http://fonts.googleapis.com/css?family=Lobster');
-	wp_enqueue_style( 'google-fonts');
+    $fonts_url = '';
+
+	/* Translators: If there are characters in your language that are not
+	* supported by Lobster, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$lora = _x( 'on', 'Lobster font: on or off', 'simple-catch' );
+
+	if ( 'off' !== $lora ) {
+		$font_families[] = 'Lobster';
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+	}
+	return esc_url_raw( $fonts_url );
 }
-add_action('wp_enqueue_scripts', 'simplecatch_load_google_fonts');
 
 
 /**

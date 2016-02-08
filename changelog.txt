@@ -1,5 +1,9 @@
 == Changelog ==
 
+Version 3.2
+* Bug Fixed: Google font now loads in all protocols(previously nor loading properly in https protocol)
+* Enhanced: Google font delivery
+
 Version 3.1
 * Added Text Domain in style.css
 * Added Button that links to Customizer-> Header Image in Theme Options

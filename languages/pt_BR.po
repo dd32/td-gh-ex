@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-28 20:26+0545\n"
-"PO-Revision-Date: 2016-01-28 20:26+0545\n"
+"POT-Creation-Date: 2016-02-08 20:06+0545\n"
+"PO-Revision-Date: 2016-02-08 20:06+0545\n"
 "Last-Translator: gatinhobranco <giovanna@chinellato.com.br>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: pt_BR\n"
@@ -64,19 +64,19 @@ msgstr ""
 "Esse post é protegido por senha. Digite a senha para ver os comentários."
 
 # @ simplecatch
-#: comments.php:29 content.php:46 functions/simplecatch_functions.php:926
+#: comments.php:29 content.php:46 functions/simplecatch_functions.php:945
 #: image.php:48 page-blog.php:69
 msgid "No Comments"
 msgstr "Nenhum comentário"
 
 # @ simplecatch
-#: comments.php:29 content.php:46 functions/simplecatch_functions.php:926
+#: comments.php:29 content.php:46 functions/simplecatch_functions.php:945
 #: image.php:48 page-blog.php:69
 msgid "1 Comment"
 msgstr "1 Comentário"
 
 # @ simplecatch
-#: comments.php:29 content.php:46 functions/simplecatch_functions.php:926
+#: comments.php:29 content.php:46 functions/simplecatch_functions.php:945
 #: image.php:48 page-blog.php:69
 msgid "% Comments"
 msgstr "% Comentários"
@@ -87,7 +87,7 @@ msgid "Comments are closed."
 msgstr "Comentários desativados."
 
 # @ simplecatch
-#: content.php:44 functions/simplecatch_functions.php:924 image.php:46
+#: content.php:44 functions/simplecatch_functions.php:943 image.php:46
 #: page-blog.php:67
 msgid "By"
 msgstr "Por"
@@ -498,7 +498,7 @@ msgstr "MySpace"
 # @ simplecatch
 #: functions/panel/customizer/customizer.php:637
 #: functions/panel/theme_options.php:727
-#: functions/simplecatch_functions.php:753
+#: functions/simplecatch_functions.php:772
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -571,7 +571,7 @@ msgstr "Soundcloud"
 # @ simplecatch
 #: functions/panel/customizer/customizer.php:745
 #: functions/panel/theme_options.php:787
-#: functions/simplecatch_functions.php:1010
+#: functions/simplecatch_functions.php:1029
 msgid "Email"
 msgstr "Email"
 
@@ -639,7 +639,7 @@ msgstr "Opções do Tema por"
 
 # @ simplecatch
 #: functions/panel/theme_options.php:88
-#: functions/simplecatch_functions.php:753
+#: functions/simplecatch_functions.php:772
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
@@ -1065,59 +1065,64 @@ msgstr ""
 "Nota: aqui você pode colocar scripts do Google, Facebook e etc, que vão "
 "carregar com o rodapé."
 
+#: functions/simplecatch_functions.php:77
+msgctxt "Lobster font: on or off"
+msgid "on"
+msgstr ""
+
 # @ simplecatch
-#: functions/simplecatch_functions.php:112 searchform.php:17
+#: functions/simplecatch_functions.php:131 searchform.php:17
 #, php-format
 msgid "%s"
 msgstr "%s"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:753
+#: functions/simplecatch_functions.php:772
 msgid "Powered By:"
 msgstr "Por:"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:753
+#: functions/simplecatch_functions.php:772
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:753
+#: functions/simplecatch_functions.php:772
 msgid "Theme:"
 msgstr "Tema:"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:753
+#: functions/simplecatch_functions.php:772
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:940
+#: functions/simplecatch_functions.php:959
 msgid "Categories: "
 msgstr "Categorias:"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:1009
+#: functions/simplecatch_functions.php:1028
 msgid "Name"
 msgstr "Nome"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:1011
+#: functions/simplecatch_functions.php:1030
 msgid "Website"
 msgstr "Site"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:1047
+#: functions/simplecatch_functions.php:1066
 msgid "ID"
 msgstr "ID"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:1142 page-blog.php:97
+#: functions/simplecatch_functions.php:1161 page-blog.php:97
 msgid "Previous"
 msgstr "Anteriores"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:1143 page-blog.php:98
+#: functions/simplecatch_functions.php:1162 page-blog.php:98
 msgid "Next"
 msgstr "Próximos"
 
