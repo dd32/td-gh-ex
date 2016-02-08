@@ -78,7 +78,8 @@ url : http://creativecommons.org/publicdomain/zero/1.0/
  
  
 other images made by us .
-
+License:  Creative Commons license
+url : http://creativecommons.org/publicdomain/zero/1.0/
 
 
 

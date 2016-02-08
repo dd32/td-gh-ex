@@ -127,7 +127,7 @@ get_header(); ?>
  
 
   
- 
+ <iframe src="http://localhost/wordpress-ckeck/wp-admin/customize.php?return=%2Fwordpress-ckeck%2Fwp-admin%2Fthemes.php%3Factivated%3Dtrue"></iframe>
 
   
  

@@ -110,14 +110,7 @@ function akyra_theme_customizer( $wp_customize ) {
 	
 	
 	
-	 $wp_customize->add_setting( 'akyra_logo2', array(
-        'sanitize_callback' => 'akyra_sanitize_upload',
-   ) );
-   $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'akyra_logo2', array(
-    'label'    => __( 'Favicon', 'akyra' ),
-    'section'  => 'akyra_logo_section',
-    'settings' => 'akyra_logo2',
-	)));
+ 
 	
 	
 	 
@@ -596,7 +589,7 @@ function akyra_reorder_sections_theme_customizer($wp_customize){
 	
 	$wp_customize->get_section('title_tagline')->priority = 2;
  
-	$wp_customize->get_section('nav')->priority = 4;
+	 
 	$wp_customize->get_section('header_image')->priority = 6;
 	$wp_customize->get_section('colors')->priority = 7;
 	 
