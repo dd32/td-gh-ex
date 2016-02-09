@@ -96,6 +96,11 @@ Pattern Images
 
 ---------------------------------------------
 == Changelog ==
+Version 1.22
+* Fontawesome path error fixed.
+* Minor edit in off canvas menu js file
+
+== Changelog ==
 Version 1.21
 * CSS fixes with the latest version of the WordPress 4.4
 

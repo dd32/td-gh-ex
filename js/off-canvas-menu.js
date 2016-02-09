@@ -74,7 +74,6 @@
 
             nav_class = 'js-nav';
 
-console.log(inner);
         app.init = function()
         {
             if (_init) {
