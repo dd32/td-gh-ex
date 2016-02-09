@@ -13,38 +13,38 @@
  * Enqueue scripts and styles
  */
 function catcheverest_scripts() {
-	
+
 	//Getting Ready to load data from Theme Options Panel
 	global $post, $wp_query, $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
-	
+
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
+	$page_for_posts = get_option('page_for_posts');
 
 	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();	
-	
+	$page_id = $wp_query->get_queried_object_id();
+
 	/**
 	 * Loads up main stylesheet.
 	 */
 	wp_enqueue_style( 'catcheverest-style', get_stylesheet_uri() );
-	
+
 	/**
 	 * Add Genericons font, used in the main stylesheet.
-	 */	
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );	
-	
+	 */
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
+
 	/**
 	 * Loads up Responsive stylesheet and Menu JS
 	 */
 	$disable_responsive = $options[ 'disable_responsive' ];
-	
-	if ( $disable_responsive == "0" ) {	
+
+	if ( $disable_responsive == "0" ) {
 		wp_enqueue_style( 'catcheverest-responsive', get_template_directory_uri() . '/css/responsive.css' );
 		wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/catcheverest-menu.min.js', array( 'jquery' ), '20130224', true );
 	}
-	
+
 	/**
 	 * Adds JavaScript to pages with the comment form to support
 	 * sites with threaded comments (when in use).
@@ -52,38 +52,40 @@ function catcheverest_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
+
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 
 	/**
 	 * Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
-	 */			
+	 */
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
-	
+
 	/**
 	 * Loads up catcheverest-slider and jquery-cycle set up as dependent on catcheverest-slider
-	 */	
+	 */
 	$enableslider = $options[ 'enable_slider' ];
 	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'enable-slider-homepage' ) ) {
 		wp_enqueue_script( 'catcheverest-slider', get_template_directory_uri() . '/js/catcheverest-slider.js', array( 'jquery-cycle' ), '20130114', true );
 	}
-	
+
 	/**
 	 * Loads up Scroll Up script
-	 */	
-	wp_enqueue_script( 'catcheverest-scrollup', get_template_directory_uri() . '/js/catcheverest-scrollup.min.js', array( 'jquery' ), '20072014', true  );
-	
+	 */
+	if ( empty( $options['disable_scrollup'] ) ) {
+		wp_enqueue_script( 'catcheverest-scrollup', get_template_directory_uri() . '/js/catcheverest-scrollup.min.js', array( 'jquery' ), '20072014', true  );
+	}
+
 	/**
 	 * Browser Specific Enqueue Script
-	 */		
+	 */
 	$catcheverest_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
 	if(preg_match('/(?i)msie [1-8]/',$catcheverest_ua)) {
-	 	wp_enqueue_script( 'catcheverest-ieltc8', get_template_directory_uri() . '/js/catcheverest-ielte8.min.js', array( 'jquery' ), '20130114', false );	
+	 	wp_enqueue_script( 'catcheverest-ieltc8', get_template_directory_uri() . '/js/catcheverest-ielte8.min.js', array( 'jquery' ), '20130114', false );
 		wp_enqueue_style( 'catcheverest-iecss', get_template_directory_uri() . '/css/ie.css' );
 	}
-	
+
 }
 add_action( 'wp_enqueue_scripts', 'catcheverest_scripts' );
 
@@ -97,8 +99,8 @@ function catcheverest_responsive() {
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 	$disable_responsive = $options[ 'disable_responsive' ];
-	
-	if ( $disable_responsive == "0" ) {	
+
+	if ( $disable_responsive == "0" ) {
 		echo '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">';
 	}
 }
@@ -111,8 +113,8 @@ add_action( 'wp_head', 'catcheverest_responsive', 5 );
  * @since Catch Everest 1.0
  */
 function catcheverest_inline_css() {
-	//delete_transient( 'catcheverest_inline_css' );	
-	
+	//delete_transient( 'catcheverest_inline_css' );
+
 	if ( ( !$catcheverest_inline_css = get_transient( 'catcheverest_inline_css' ) ) ) {
 		// Getting data from Theme Options
 		global $catcheverest_options_settings;
@@ -125,7 +127,7 @@ function catcheverest_inline_css() {
 			$catcheverest_inline_css .=  $options['custom_css'] . "\n";
 			$catcheverest_inline_css .= '</style>' . "\n";
 		}
-			
+
 	set_transient( 'catcheverest_inline_css', $catcheverest_inline_css, 86940 );
 	}
 	echo $catcheverest_inline_css;
@@ -148,7 +150,7 @@ add_filter( 'wp_page_menu_args', 'catcheverest_page_menu_args' );
 /**
  * Removes div from wp_page_menu() and replace with ul.
  *
- * @since Catch Everest 1.0 
+ * @since Catch Everest 1.0
  */
 function catcheverest_wp_page_menu ($page_markup) {
     preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
@@ -184,9 +186,9 @@ function catcheverest_continue_reading() {
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
-    
+
 	$more_tag_text = $options[ 'more_tag_text' ];
-	
+
 	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  sprintf( __( '%s', 'catch-everest' ) , $more_tag_text ) . '</a>';
 }
 
@@ -223,9 +225,9 @@ function catcheverest_more_link( $more_link, $more_link_text ) {
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
-	
+
 	$more_tag_text = $options[ 'more_tag_text' ];
-	
+
 	return str_replace( $more_link_text, $more_tag_text, $more_link );
 }
 add_filter( 'the_content_more_link', 'catcheverest_more_link', 10, 2 );
@@ -234,11 +236,11 @@ add_filter( 'the_content_more_link', 'catcheverest_more_link', 10, 2 );
 /**
  * Redirect WordPress Feeds To FeedBurner
  */
-function catcheverest_rss_redirect() {	
+function catcheverest_rss_redirect() {
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
-	
+
     if ($options['feed_url']) {
 		$url = 'Location: '.$options['feed_url'];
 		if ( is_feed() && !preg_match('/feedburner|feedvalidator/i', $_SERVER['HTTP_USER_AGENT']))
@@ -261,58 +263,58 @@ function catcheverest_body_classes( $classes ) {
 	global $post, $wp_query, $catcheverest_options_settings;
 	$options = $catcheverest_options_settings;
 	$themeoption_layout = $options['sidebar_layout'];
-	
+
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
+	$page_for_posts = get_option('page_for_posts');
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
-		
+
 	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
-	
+
 	// Blog Page setting in Reading Settings
 	if ( $page_id == $page_for_posts ) {
 		$layout = get_post_meta( $page_for_posts,'catcheverest-sidebarlayout', true );
-	}	
+	}
 	// Front Page setting in Reading Settings
 	elseif ( $page_id == $page_on_front ) {
 		$layout = get_post_meta( $page_on_front,'catcheverest-sidebarlayout', true );
-	}		
+	}
 	// Settings for page/post/attachment
 	elseif ( is_singular() ) {
-		if ( is_attachment() ) { 
+		if ( is_attachment() ) {
 			$parent = $post->post_parent;
 			$layout = get_post_meta( $parent, 'catcheverest-sidebarlayout', true );
 		} else {
-			$layout = get_post_meta( $post->ID, 'catcheverest-sidebarlayout', true ); 
+			$layout = get_post_meta( $post->ID, 'catcheverest-sidebarlayout', true );
 		}
 	}
 	else {
-		$layout = 'default';	
+		$layout = 'default';
 	}
 
 	//check empty and load default
 	if ( empty( $layout ) ) {
-		$layout = 'default';	
+		$layout = 'default';
 	}
-	
+
 	if( ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar') ) ) {
 		$classes[] = 'no-sidebar';
 	}
 	elseif( ( $layout == 'no-sidebar-full-width' || ( $layout=='default' && $themeoption_layout == 'no-sidebar-full-width') ) ) {
 		$classes[] = 'no-sidebar-full-width';
-	}		
+	}
 	elseif( ( $layout == 'left-sidebar' || ( $layout=='default' && $themeoption_layout == 'left-sidebar') ) ){
 		$classes[] = 'left-sidebar';
 	}
 	elseif( ( $layout == 'right-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar') ) ){
 		$classes[] = 'right-sidebar';
-	}	
-	
+	}
+
 	$current_content_layout = $options['content_layout'];
 	if( $current_content_layout == 'full' ) {
 		$classes[] = 'content-full';
@@ -320,7 +322,7 @@ function catcheverest_body_classes( $classes ) {
 	elseif ( $current_content_layout == 'excerpt' ) {
 		$classes[] = 'content-excerpt';
 	}
-	
+
 	return $classes;
 }
 add_filter( 'body_class', 'catcheverest_body_classes' );
@@ -346,35 +348,35 @@ add_filter( 'attachment_link', 'catcheverest_enhanced_image_navigation', 10, 2 )
 /**
  * Get the favicon Image from theme options
  *
- * @uses favicon 
+ * @uses favicon
  * @get the data value of image from theme options
  * @display favicon
  *
  * @uses default favicon if favicon field on theme options is empty
  *
- * @uses set_transient and delete_transient 
+ * @uses set_transient and delete_transient
  */
 function catcheverest_favicon() {
-	//delete_transient( 'catcheverest_favicon' );	
-	
+	//delete_transient( 'catcheverest_favicon' );
+
 	if( ( !$catcheverest_favicon = get_transient( 'catcheverest_favicon' ) ) ) {
 		global $catcheverest_options_settings;
    		$options = $catcheverest_options_settings;
-		
+
 		echo '<!-- refreshing cache -->';
 		if ( empty( $options[ 'remove_favicon' ] ) ) :
 			// if not empty fav_icon on theme options
 			if ( !empty( $options[ 'fav_icon' ] ) ) :
-				$catcheverest_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />'; 	
+				$catcheverest_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />';
 			else:
 				// if empty fav_icon on theme options, display default fav icon
 				$catcheverest_favicon = '<link rel="shortcut icon" href="'. get_template_directory_uri() .'/images/favicon.ico" type="image/x-icon" />';
 			endif;
 		endif;
-		
-		set_transient( 'catcheverest_favicon', $catcheverest_favicon, 86940 );	
-	}	
-	echo $catcheverest_favicon ;	
+
+		set_transient( 'catcheverest_favicon', $catcheverest_favicon, 86940 );
+	}
+	echo $catcheverest_favicon ;
 } // catcheverest_favicon
 
 //Load Favicon in Header Section
@@ -390,9 +392,9 @@ if ( ! function_exists( 'catcheverest_header_left' ) ) :
  *
  * Shows the site logo, title and description
  * @uses catcheverest_header action to add it in the header
- */ 
+ */
 function catcheverest_header_left() { ?>
-    
+
         <div id="header-left">
             <?php
             // Check to see if the header image has been removed
@@ -404,15 +406,15 @@ function catcheverest_header_left() { ?>
                 </a></h1>
                 <div id="hgroup" class="with-logo">
             <?php else :
-                echo '<div id="hgroup">';   
+                echo '<div id="hgroup">';
             endif; // end check for removed header image ?>
-                    
+
                 <h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                 <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
             </div><!-- #hgroup -->
         </div><!-- #header-left -->
 
-<?php 
+<?php
 }
 endif; // catcheverest_header_left
 
@@ -422,11 +424,11 @@ add_action( 'catcheverest_hgroup_wrap', 'catcheverest_header_left', 10 );
 /**
  * Shows Header Right Sidebar
  */
-function catcheverest_header_right() { 
+function catcheverest_header_right() {
 
-	/* A sidebar in the Header Right 
+	/* A sidebar in the Header Right
 	*/
-	get_sidebar( 'header-right' ); 
+	get_sidebar( 'header-right' );
 
 }
 add_action( 'catcheverest_hgroup_wrap', 'catcheverest_header_right', 15 );
@@ -444,11 +446,11 @@ function catcheverest_header_menu() { ?>
             <h2 class="assistive-text"><?php _e( 'Primary Menu', 'catch-everest' ); ?></h2>
             <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catch-everest' ); ?>"><?php _e( 'Skip to content', 'catch-everest' ); ?></a></div>
             <?php
-                if ( has_nav_menu( 'primary' ) ) { 
+                if ( has_nav_menu( 'primary' ) ) {
                     $catcheverest_primary_menu = array(
                         'theme_location'    => 'primary',
-                        'container_class' 	=> 'menu-header-container', 
-                        'items_wrap'        => '<ul class="menu">%3$s</ul>' 
+                        'container_class' 	=> 'menu-header-container',
+                        'items_wrap'        => '<ul class="menu">%3$s</ul>'
                     );
                     wp_nav_menu( $catcheverest_primary_menu );
                 }
@@ -457,8 +459,8 @@ function catcheverest_header_menu() { ?>
                     wp_page_menu( array( 'menu_class'  => 'menu' ) );
                     echo '</div>';
                 }
-            ?> 	         
-        </nav><!-- .site-navigation .main-navigation -->  
+            ?>
+        </nav><!-- .site-navigation .main-navigation -->
 	</div>
 <?php
 }
@@ -475,7 +477,7 @@ function catcheverest_pass_slider_value() {
 	$transition_effect = $options[ 'transition_effect' ];
 	$transition_delay = $options[ 'transition_delay' ] * 1000;
 	$transition_duration = $options[ 'transition_duration' ] * 1000;
-	wp_localize_script( 
+	wp_localize_script(
 		'catcheverest-slider',
 		'js_value',
 		array(
@@ -493,16 +495,16 @@ if ( ! function_exists( 'catcheverest_post_sliders' ) ) :
  *
  * @uses catcheverest_header action to add it in the header
  */
-function catcheverest_post_sliders() { 
+function catcheverest_post_sliders() {
 	//delete_transient( 'catcheverest_post_sliders' );
-	
+
 	global $post, $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 
-	
+
 	if( ( !$catcheverest_post_sliders = get_transient( 'catcheverest_post_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
 		echo '<!-- refreshing cache -->';
-		
+
 		$catcheverest_post_sliders = '
 		<div id="main-slider" class="container">
         	<section class="featured-slider">';
@@ -521,7 +523,7 @@ function catcheverest_post_sliders() {
 						<figure class="slider-image">
 							<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
 								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'
-							</a>	
+							</a>
 						</figure>
 						<div class="entry-container">
 							<header class="entry-header">
@@ -534,7 +536,7 @@ function catcheverest_post_sliders() {
 							}
 							$catcheverest_post_sliders .= '
 						</div>
-					</article><!-- .slides -->';				
+					</article><!-- .slides -->';
 				endwhile; wp_reset_query();
 				$catcheverest_post_sliders .= '
 			</section>
@@ -544,22 +546,22 @@ function catcheverest_post_sliders() {
         	</div>
         	<div id="controllers"></div>
   		</div><!-- #main-slider -->';
-			
+
 	set_transient( 'catcheverest_post_sliders', $catcheverest_post_sliders, 86940 );
 	}
-	echo $catcheverest_post_sliders;	
-} 
-endif; // catcheverest_post_sliders	
+	echo $catcheverest_post_sliders;
+}
+endif; // catcheverest_post_sliders
 
 
 /**
  * Shows Default Slider Demo if there is not iteam in Featured Post Slider
  */
-function catcheverest_default_sliders() { 
+function catcheverest_default_sliders() {
 	//delete_transient( 'catcheverest_default_sliders' );
-	
+
 	if ( !$catcheverest_default_sliders = get_transient( 'catcheverest_default_sliders' ) ) {
-		echo '<!-- refreshing cache -->';	
+		echo '<!-- refreshing cache -->';
 		$catcheverest_default_sliders = '
 		<div id="main-slider" class="container">
 			<section class="featured-slider">
@@ -580,7 +582,7 @@ function catcheverest_default_sliders() {
 						</div>
 					</div>
 				</article><!-- .slides -->
-				
+
 				<article class="post hentry slides displaynone">
 					<figure class="slider-image">
 						<a title="Nepal Prayer Wheels" href="#">
@@ -595,9 +597,9 @@ function catcheverest_default_sliders() {
 						</header>
 						<div class="entry-content">
 							<p>A prayer wheel is a cylindrical wheel on a spindle made from metal, wood, stone, leather or coarse cotton. Traditionally, the mantra Om Mani Padme Hum is written in Sanskrit on the outside of the wheel.</p>
-						</div>   
-					</div>             
-				</article><!-- .slides -->                   
+						</div>
+					</div>
+				</article><!-- .slides -->
 			</section>
 			<div id="slider-nav">
 				<a class="slide-previous">&lt;</a>
@@ -605,11 +607,11 @@ function catcheverest_default_sliders() {
 			</div>
 			<div id="controllers"></div>
 		</div><!-- #main-slider -->';
-			
+
 	set_transient( 'catcheverest_default_sliders', $catcheverest_default_sliders, 86940 );
 	}
-	echo $catcheverest_default_sliders;	
-} // catcheverest_default_sliders	
+	echo $catcheverest_default_sliders;
+} // catcheverest_default_sliders
 
 
 if ( ! function_exists( 'catcheverest_slider_display' ) ) :
@@ -623,20 +625,20 @@ function catcheverest_slider_display() {
 	// get data value from theme options
 	$enableslider = $options[ 'enable_slider' ];
 	$featuredslider = $options[ 'featured_slider' ];
-	
+
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
+	$page_for_posts = get_option('page_for_posts');
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
 
 	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'enable-slider-homepage' ) ) :
-	 
-	
-		// This function passes the value of slider effect to js file 
+
+
+		// This function passes the value of slider effect to js file
 		if ( function_exists( 'catcheverest_pass_slider_value' ) ) : catcheverest_pass_slider_value(); endif;
-		
+
 		// Select Slider
 		if ( !empty( $featuredslider ) ) {
 			catcheverest_post_sliders();
@@ -645,8 +647,8 @@ function catcheverest_slider_display() {
 			catcheverest_default_sliders();
 		}
 
-			
-	endif;	
+
+	endif;
 }
 endif; // catcheverest_slider_display
 
@@ -659,9 +661,9 @@ if ( ! function_exists( 'catcheverest_homepage_headline' ) ) :
  *
  * @uses catcheverest_before_main action to add it in the header
  */
-function catcheverest_homepage_headline() { 
+function catcheverest_homepage_headline() {
 	//delete_transient( 'catcheverest_homepage_headline' );
-	
+
 	global $post, $wp_query, $catcheverest_options_settings;;
    	$options = $catcheverest_options_settings;
 
@@ -670,38 +672,38 @@ function catcheverest_homepage_headline() {
 	$disable_subheadline = $options[ 'disable_homepage_subheadline' ];
 	$homepage_headline = $options[ 'homepage_headline' ];
 	$homepage_subheadline = $options[ 'homepage_subheadline' ];
-	
+
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
+	$page_for_posts = get_option('page_for_posts');
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
-	
+
 
 	if ( ( empty( $disable_headline ) || empty( $disable_subheadline ) ) && ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) ) {
-		
+
 		if ( !$catcheverest_homepage_headline = get_transient( 'catcheverest_homepage_headline' ) ) {
-			
-			echo '<!-- refreshing cache -->';	
-			
+
+			echo '<!-- refreshing cache -->';
+
 			$catcheverest_homepage_headline = '<div id="homepage-message" class="container"><p>';
-			
+
 			if ( $disable_headline == "0" ) {
 				$catcheverest_homepage_headline .= sprintf( __( '%s', 'catch-everest' ) , $homepage_headline );
 			}
 			if ( $disable_subheadline == "0" ) {
 				$catcheverest_homepage_headline .= '<span>' . sprintf( __( '%s', 'catch-everest' ) , $homepage_subheadline ) . '</span>';
-			}			
-			
-			$catcheverest_homepage_headline .= '</p></div>';  
-			
+			}
+
+			$catcheverest_homepage_headline .= '</p></div>';
+
 			set_transient( 'catcheverest_homepage_headline', $catcheverest_homepage_headline, 86940 );
 		}
-		echo $catcheverest_homepage_headline;	
+		echo $catcheverest_homepage_headline;
 	 }
-} 
-endif; // catcheverest_homepage_headline	
+}
+endif; // catcheverest_homepage_headline
 
 add_action( 'catcheverest_before_main', 'catcheverest_homepage_headline', 10 );
 
@@ -711,15 +713,15 @@ add_action( 'catcheverest_before_main', 'catcheverest_homepage_headline', 10 );
  *
  * @uses catcheverest_before_main action to add it in the header
  */
-function catcheverest_default_featured_content() { 
+function catcheverest_default_featured_content() {
 	//delete_transient( 'catcheverest_default_featured_content' );
-	
+
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 	$disable_homepage_featured = $options[ 'disable_homepage_featured' ];
-	
-	if ( $disable_homepage_featured == "0" ) { 
+
+	if ( $disable_homepage_featured == "0" ) {
 		if ( !$catcheverest_default_featured_content = get_transient( 'catcheverest_default_featured_content' ) ) {
 			$catcheverest_default_featured_content = '
 			<section id="featured-post">
@@ -738,9 +740,9 @@ function catcheverest_default_featured_content() {
 						<div class="entry-content">
 							A prayer wheel is a cylindrical wheel on a spindle made from metal, wood, stone, leather or coarse cotton. Traditionally, the mantra Om Mani Padme Hum is written in Sanskrit on the outside of the wheel.
 						</div>
-					</div><!-- .entry-container -->			
+					</div><!-- .entry-container -->
 				</article>
-				
+
 				<article class="post hentry">
 					<figure class="featured-homepage-image">
 						<a href="#" title="Mount Everest">
@@ -756,7 +758,7 @@ function catcheverest_default_featured_content() {
 						<div class="entry-content">
 							Mount Everest is the Earth\'s highest mountain, with a peak at 8,848 metres above sea level and the 5th tallest mountain measured from the centre of the Earth. It is located in the Nepal.
 						</div>
-					</div><!-- .entry-container -->			
+					</div><!-- .entry-container -->
 				</article>
 
 				<article class="post hentry">
@@ -774,7 +776,7 @@ function catcheverest_default_featured_content() {
 						<div class="entry-content">
 							Kangchenjunga is the third highest mountain in the world, with apeat at 8,586 metres above sea level. It is located on the boundary between Nepal and the Indian state of Sikkim.
 						</div>
-					</div><!-- .entry-container -->			
+					</div><!-- .entry-container -->
 				</article>
 			</section><!-- #featured-post -->';
 		}
@@ -789,62 +791,62 @@ if ( ! function_exists( 'catcheverest_homepage_featured_content' ) ) :
  *
  * @uses catcheverest_before_main action to add it in the header
  */
-function catcheverest_homepage_featured_content() { 
+function catcheverest_homepage_featured_content() {
 	//delete_transient( 'catcheverest_homepage_featured_content' );
-	
+
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 	$disable_homepage_featured = $options[ 'disable_homepage_featured' ];
 	$quantity = $options [ 'homepage_featured_qty' ];
 	$headline = $options [ 'homepage_featured_headline' ];
-	
-	if ( $disable_homepage_featured == "0" ) { 
-		
+
+	if ( $disable_homepage_featured == "0" ) {
+
 		if ( !$catcheverest_homepage_featured_content = get_transient( 'catcheverest_homepage_featured_content' )  && ( !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) ) {
-			
-			echo '<!-- refreshing cache -->';	
-			
+
+			echo '<!-- refreshing cache -->';
+
 			$catcheverest_homepage_featured_content = '<section id="featured-post">';
-			
+
 			if ( !empty( $headline ) ) {
 				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . sprintf( __( '%s', 'catch-everest' ) , $headline ) . '</h1>';
 			}
-			
+
 			$catcheverest_homepage_featured_content .= '<div class="featued-content-wrap">';
-			
+
 				for ( $i = 1; $i <= $quantity; $i++ ) {
-					
-	
+
+
 					if ( !empty ( $options[ 'homepage_featured_base' ][ $i ] ) ) {
 						$target = '_blank';
 					} else {
 						$target = '_self';
 					}
-							
+
 					//Adding in Classes for Display blok and none
 					if ( $i % 3 == 1  || $i == 1 ) {
-						$classes = "post hentry first"; 
-					} 
-					else { 
-						$classes = "post hentry"; 
+						$classes = "post hentry first";
 					}
-							
+					else {
+						$classes = "post hentry";
+					}
+
 					//Checking Link
 					if ( !empty ( $options[ 'homepage_featured_url' ][ $i ] ) ) {
 						$link = $options[ 'homepage_featured_url' ][ $i ];
 					} else {
 						$link = '#';
 					}
-					
+
 					//Checking Title
 					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
 						$title = sprintf( __( '%s', 'catch-everest' ) , $options[ 'homepage_featured_title' ][ $i ] );
 					} else {
 						$title = '';
-					}			
-					
-	
+					}
+
+
 					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) || !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
 						$catcheverest_homepage_featured_content .= '
 						<article class="'.$classes.'">';
@@ -854,13 +856,13 @@ function catcheverest_homepage_featured_content() {
 									<a title="'.$title.'" href="'.$link.'" target="'.$target.'">
 										<img src="'.$options[ 'homepage_featured_image' ][ $i ].'" class="wp-post-image" alt="'.$title.'" title="'.$title.'">
 									</a>
-								</figure>';  
+								</figure>';
 							}
 							if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
 								$catcheverest_homepage_featured_content .= '
 								<div class="entry-container">';
-								
-									if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) { 
+
+									if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
 										$catcheverest_homepage_featured_content .= '
 										<header class="entry-header">
 											<h1 class="entry-title">
@@ -868,33 +870,33 @@ function catcheverest_homepage_featured_content() {
 											</h1>
 										</header>';
 									}
-									if ( !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) { 
+									if ( !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
 										$catcheverest_homepage_featured_content .= '
 										<div class="entry-content">
 											' . sprintf( __( '%s', 'catch-everest' ) , $options[ 'homepage_featured_content' ][ $i ] ) . '
 										</div>';
 									}
 								$catcheverest_homepage_featured_content .= '
-								</div><!-- .entry-container -->';	
+								</div><!-- .entry-container -->';
 							}
-						$catcheverest_homepage_featured_content .= '			
-						</article><!-- .slides -->';	
+						$catcheverest_homepage_featured_content .= '
+						</article><!-- .slides -->';
 					}
-			
+
 				}
-			
+
 			$catcheverest_homepage_featured_content .= '</div><!-- .featued-content-wrap -->';
-			
-			$catcheverest_homepage_featured_content .= '</section><!-- #featured-post -->';	
-			
+
+			$catcheverest_homepage_featured_content .= '</section><!-- #featured-post -->';
+
 		}
-		
+
 		echo $catcheverest_homepage_featured_content;
-		
+
 	}
- 
-} 
-endif; // catcheverest_homepage_featured_content	
+
+}
+endif; // catcheverest_homepage_featured_content
 
 
 /**
@@ -902,7 +904,7 @@ endif; // catcheverest_homepage_featured_content
  *
  * @uses catcheverest_before_main action to add it in the header
  */
-function catcheverest_homepage_featured_display() { 	
+function catcheverest_homepage_featured_display() {
 
 	global $post, $wp_query, $catcheverest_options_settings;;
    	$options = $catcheverest_options_settings;
@@ -910,14 +912,14 @@ function catcheverest_homepage_featured_display() {
 	// Getting data from Theme Options
 	$options = $catcheverest_options_settings;
 	$disable_homepage_featured = $options[ 'disable_homepage_featured' ];
-	
+
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
+	$page_for_posts = get_option('page_for_posts');
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
-	
+
 
 	if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 		if  ( !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) {
@@ -926,8 +928,8 @@ function catcheverest_homepage_featured_display() {
 			catcheverest_default_featured_content();
 		}
 	}
-	
-} // catcheverest_homepage_featured_content	
+
+} // catcheverest_homepage_featured_content
 
 add_action( 'catcheverest_main', 'catcheverest_homepage_featured_display', 10 );
 
@@ -969,14 +971,14 @@ function catcheverest_footer_sidebar_class() {
 /**
  * Function for footer content
  */
-function catcheverest_footer_content() { 
-	//delete_transient( 'catcheverest_footer_content_new' );	
-	
+function catcheverest_footer_content() {
+	//delete_transient( 'catcheverest_footer_content_new' );
+
 	if ( ( !$catcheverest_footer_content = get_transient( 'catcheverest_footer_content_new' ) ) ) {
 		echo '<!-- refreshing cache -->';
-		
+
 		$catcheverest_footer_content = catcheverest_assets();
-		
+
     	set_transient( 'catcheverest_footer_content_new', $catcheverest_footer_content, 86940 );
     }
 	echo $catcheverest_footer_content;
@@ -991,7 +993,7 @@ add_action( 'catcheverest_site_generator', 'catcheverest_footer_content', 10 );
 function catcheverest_alter_home( $query ){
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
-		
+
     $cats = $options[ 'front_page_category' ];
 
     if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
@@ -1018,14 +1020,14 @@ if ( ! function_exists( 'catcheverest_social_networks' ) ) :
   */
 function catcheverest_social_networks() {
 	//delete_transient( 'catcheverest_social_networks' );
-	
+
 	// get the data value from theme options
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 
     $elements = array();
 
-	$elements = array( 	$options[ 'social_facebook' ], 
+	$elements = array( 	$options[ 'social_facebook' ],
 						$options[ 'social_twitter' ],
 						$options[ 'social_googleplus' ],
 						$options[ 'social_linkedin' ],
@@ -1068,14 +1070,14 @@ function catcheverest_social_networks() {
 				break;
 			}
 		}
-	}	
-	
+	}
+
 	if ( ( !$catcheverest_social_networks = get_transient( 'catcheverest_social_networks' ) ) && ( $flag == 1 ) )  {
 		echo '<!-- refreshing cache -->';
-		
+
 		$catcheverest_social_networks .='
 		<ul class="social-profile">';
-	
+
 			//facebook
 			if ( !empty( $options[ 'social_facebook' ] ) ) {
 				$catcheverest_social_networks .=
@@ -1100,7 +1102,7 @@ function catcheverest_social_networks() {
 			if ( !empty( $options[ 'social_pinterest' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Pinterest', 'catch-everest' ) .'</a></li>';
-			}				
+			}
 			//Youtube
 			if ( !empty( $options[ 'social_youtube' ] ) ) {
 				$catcheverest_social_networks .=
@@ -1110,12 +1112,12 @@ function catcheverest_social_networks() {
 			if ( !empty( $options[ 'social_vimeo' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Vimeo', 'catch-everest' ) .'</a></li>';
-			}				
+			}
 			//Slideshare
 			if ( !empty( $options[ 'social_slideshare' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'SlideShare', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'SlideShare', 'catch-everest' ) .'</a></li>';
-			}				
+			}
 			//Foursquare
 			if ( !empty( $options[ 'social_foursquare' ] ) ) {
 				$catcheverest_social_networks .=
@@ -1150,7 +1152,7 @@ function catcheverest_social_networks() {
 			if ( !empty( $options[ 'social_wordpress' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'WordPress', 'catch-everest' ) .'</a></li>';
-			}				
+			}
 			//RSS
 			if ( !empty( $options[ 'social_rss' ] ) ) {
 				$catcheverest_social_networks .=
@@ -1160,12 +1162,12 @@ function catcheverest_social_networks() {
 			if ( !empty( $options[ 'social_delicious' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="delicious"><a href="'.esc_url( $options[ 'social_delicious' ] ).'" title="'. esc_attr__( 'Delicious', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Delicious', 'catch-everest' ) .'</a></li>';
-			}				
+			}
 			//Last.fm
 			if ( !empty( $options[ 'social_lastfm' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'. esc_attr__( 'Last.fm', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Last.fm', 'catch-everest' ) .'</a></li>';
-			}				
+			}
 			//Instagram
 			if ( !empty( $options[ 'social_instagram' ] ) ) {
 				$catcheverest_social_networks .=
@@ -1175,17 +1177,17 @@ function catcheverest_social_networks() {
 			if ( !empty( $options[ 'social_github' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'. esc_attr__( 'GitHub', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'GitHub', 'catch-everest' ) .'</a></li>';
-			}	
+			}
 			//Vkontakte
 			if ( !empty( $options[ 'social_vkontakte' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="vkontakte"><a href="'.esc_url( $options[ 'social_vkontakte' ] ).'" title="'. esc_attr__( 'Vkontakte', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Vkontakte', 'catch-everest' ) .'</a></li>';
-			}				
+			}
 			//My World
 			if ( !empty( $options[ 'social_myworld' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="myworld"><a href="'.esc_url( $options[ 'social_myworld' ] ).'" title="'. esc_attr__( 'My World', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'My World', 'catch-everest' ) .'</a></li>';
-			}				
+			}
 			//Odnoklassniki
 			if ( !empty( $options[ 'social_odnoklassniki' ] ) ) {
 				$catcheverest_social_networks .=
@@ -1210,7 +1212,7 @@ function catcheverest_social_networks() {
 			if ( !empty( $options[ 'social_email' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Email', 'catch-everest' ) .'</a></li>';
-			}			
+			}
 			//Contact
 			if ( !empty( $options[ 'social_contact' ] ) ) {
 				$catcheverest_social_networks .=
@@ -1220,12 +1222,12 @@ function catcheverest_social_networks() {
 			if ( !empty( $options[ 'social_xing' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Xing', 'catch-everest' ) .'</a></li>';
-			}			
-			
+			}
+
 			$catcheverest_social_networks .='
 		</ul>';
-		
-		set_transient( 'catcheverest_social_networks', $catcheverest_social_networks, 86940 );	 
+
+		set_transient( 'catcheverest_social_networks', $catcheverest_social_networks, 86940 );
 	}
 	echo $catcheverest_social_networks;
 }
@@ -1241,15 +1243,15 @@ endif; // catcheverest_social_networks
  * @uses set_transient and delete_transient API for cache
  */
 function catcheverest_webmaster() {
-	//delete_transient( 'catcheverest_webmaster' );	
-	
+	//delete_transient( 'catcheverest_webmaster' );
+
 	if ( ( !$catcheverest_webmaster = get_transient( 'catcheverest_webmaster' ) ) ) {
 
 		// get the data value from theme options
 		global $catcheverest_options_settings;
    		$options = $catcheverest_options_settings;
-		echo '<!-- refreshing cache -->';	
-		
+		echo '<!-- refreshing cache -->';
+
 		$catcheverest_webmaster = '';
 		//google
 		if ( !empty( $options['google_verification'] ) ) {
@@ -1267,7 +1269,7 @@ function catcheverest_webmaster() {
 		if ( !empty( $options['analytic_header'] ) ) {
 			$catcheverest_webmaster =  $options[ 'analytic_header' ] ;
 		}
-			
+
 		set_transient( 'catcheverest_webmaster', $catcheverest_webmaster, 86940 );
 	}
 	echo $catcheverest_webmaster;
@@ -1284,20 +1286,20 @@ add_action('wp_head', 'catcheverest_webmaster');
  * @uses set_transient and delete_transient
  */
 function catcheverest_footercode() {
-	//delete_transient( 'catcheverest_footercode' );	
-	
+	//delete_transient( 'catcheverest_footercode' );
+
 	if ( ( !$catcheverest_footercode = get_transient( 'catcheverest_footercode' ) ) ) {
 
 		// get the data value from theme options
 		global $catcheverest_options_settings;
    		$options = $catcheverest_options_settings;
-		echo '<!-- refreshing cache -->';	
-		
+		echo '<!-- refreshing cache -->';
+
 		//site stats, analytics header code
 		if ( !empty( $options['analytic_footer'] ) ) {
 			$catcheverest_footercode =  $options[ 'analytic_footer' ] ;
 		}
-			
+
 		set_transient( 'catcheverest_footercode', $catcheverest_footercode, 86940 );
 	}
 	echo $catcheverest_footercode;
@@ -1306,9 +1308,9 @@ add_action('wp_footer', 'catcheverest_footercode');
 
 
 /**
- * Adds in post ID when viewing lists of posts 
+ * Adds in post ID when viewing lists of posts
  * This will help the admin to add the post ID in featured slider
- * 
+ *
  * @param mixed $post_columns
  * @return post columns
  */
@@ -1374,7 +1376,7 @@ function catcheverest_pagemenu_filter( $text ) {
 
 	$text = str_replace(array_keys($replace), $replace, $text);
   	return $text;
-	
+
 }
 endif; // catcheverest_pagemenu_filter
 
@@ -1384,37 +1386,37 @@ add_filter('wp_page_menu', 'catcheverest_pagemenu_filter');
 /**
  * Get the Web Clip Icon Image from theme options
  *
- * @uses web_clip and remove_web_clip 
+ * @uses web_clip and remove_web_clip
  * @get the data value of image from theme options
  * @display webclip icon
  *
  * @uses default Web Click Icon if web_clip field on theme options is empty
  *
- * @uses set_transient and delete_transient 
+ * @uses set_transient and delete_transient
  */
 function catcheverest_web_clip() {
-	//delete_transient( 'catcheverest_web_clip' );	
-	
+	//delete_transient( 'catcheverest_web_clip' );
+
 	if( ( !$catcheverest_web_clip = get_transient( 'catcheverest_web_clip' ) ) ) {
-		
+
 		// get the data value from theme options
 		global $catcheverest_options_settings;
    		$options = $catcheverest_options_settings;
-		
+
 		echo '<!-- refreshing cache -->';
 		if ( empty( $options[ 'remove_web_clip' ] ) ) :
 			// if not empty web_clip on theme options
 			if ( !empty( $options[ 'web_clip' ] ) ) :
-				$catcheverest_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />'; 	
+				$catcheverest_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';
 			else:
 				// if empty web_clip on theme options, display default webclip icon
 				$catcheverest_web_clip = '<link rel="apple-touch-icon-precomposed" href="'. get_template_directory_uri() .'/images/apple-touch-icon.png" />';
 			endif;
 		endif;
-		
-		set_transient( 'catcheverest_web_clip', $catcheverest_web_clip, 86940 );	
-	}	
-	echo $catcheverest_web_clip ;	
+
+		set_transient( 'catcheverest_web_clip', $catcheverest_web_clip, 86940 );
+	}
+	echo $catcheverest_web_clip ;
 } // catcheverest_web_clip
 
 //Load webclip icon in Header Section
@@ -1424,11 +1426,27 @@ add_action( 'wp_head', 'catcheverest_web_clip' );
 /**
  * This function loads Scroll Up Navigation
  *
- * @uses catcheverest_after_footer action
+ * @get the data value from theme options for disable
+ * @uses catcheverest_after_footer action to add the code in the footer
+ * @uses set_transient and delete_transient
  */
 function catcheverest_scrollup() {
-	
-	echo '<a href="#masthead" id="scrollup"></a>';
-	
+	//delete_transient( 'catcheverest_scrollup' );
+
+	if ( !$catcheverest_scrollup = get_transient( 'catcheverest_scrollup' ) ) {
+
+		// get the data value from theme options
+		global $catcheverest_options_settings;
+   		$options = $catcheverest_options_settings;
+		echo '<!-- refreshing cache -->';
+
+		//site stats, analytics header code
+		if ( empty( $options['disable_scrollup'] ) ) {
+			$catcheverest_scrollup =  '<a href="#masthead" id="scrollup"></a>' ;
+		}
+
+		set_transient( 'catcheverest_scrollup', $catcheverest_scrollup, 86940 );
+	}
+	echo $catcheverest_scrollup;
 }
 add_action( 'catcheverest_after_footer', 'catcheverest_scrollup', 10 );

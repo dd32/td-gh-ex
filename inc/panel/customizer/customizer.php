@@ -17,7 +17,7 @@
  */
 function catcheverest_customize_register( $wp_customize ) {
 	global $catcheverest_options_settings, $catcheverest_options_defaults;
-    
+
     $options = $catcheverest_options_settings;
 
 	$defaults = $catcheverest_options_defaults;
@@ -26,7 +26,7 @@ function catcheverest_customize_register( $wp_customize ) {
 	require get_template_directory() . '/inc/panel/customizer/customizer-custom-controls.php';
 
 	$theme_slug = 'catcheverest_';
-	
+
 	$settings_page_tabs = array(
 		'theme_options' => array(
 			'id' 			=> 'theme_options',
@@ -72,7 +72,7 @@ function catcheverest_customize_register( $wp_customize ) {
 					'id' 			=> 'layout_options',
 					'title' 		=> __( 'Layout Options', 'catch-everest' ),
 					'description' 	=> '',
-				),	
+				),
 				'header_options' => array(
 					'id' 			=> 'header_options',
 					'title' 		=> __( 'Header Options', 'catch-everest' ),
@@ -93,11 +93,14 @@ function catcheverest_customize_register( $wp_customize ) {
 					'title' 		=> __( 'Homepage/Frontpage Settings', 'catch-everest' ),
 					'description' 	=> '',
 				),
-							
-				
 				'custom_css' => array(
 					'id' 			=> 'custom_css',
 					'title' 		=> __( 'Custom CSS', 'catch-everest' ),
+					'description' 	=> '',
+				),
+				'scrollup_options' => array(
+					'id' 			=> 'scrollup_options',
+					'title' 		=> __( 'Scroll Up', 'catch-everest' ),
 					'description' 	=> '',
 				),
 
@@ -173,13 +176,13 @@ function catcheverest_customize_register( $wp_customize ) {
 	//Add Panels and sections
 	foreach ( $settings_page_tabs as $panel ) {
 		$wp_customize->add_panel(
-			$theme_slug . $panel['id'], 
+			$theme_slug . $panel['id'],
 			array(
 				'priority' 		=> 200,
 				'capability' 	=> 'edit_theme_options',
 				'title' 		=> $panel['title'],
 				'description' 	=> $panel['description'],
-			) 
+			)
 		);
 
 		// Loop through tabs for sections
@@ -199,7 +202,7 @@ function catcheverest_customize_register( $wp_customize ) {
 				$theme_slug . $section['id'],
 				// parameters
 				$params
-				
+
 			);
 		}
 	}
@@ -371,6 +374,18 @@ function catcheverest_customize_register( $wp_customize ) {
 			'default' 		=> $defaults['homepage_headline']
 		),
 
+		//Update Notifier
+		'disable_scrollup' => array(
+			'id' 			=> 'disable_scrollup',
+			'title' 		=> __( 'Check to Disable Scroll Up', 'catch-everest' ),
+			'description' 	=> '',
+			'field_type' 	=> 'checkbox',
+			'sanitize' 		=> 'catcheverest_sanitize_checkbox',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'scrollup_options',
+			'default' 		=> $defaults['disable_scrollup']
+		),
+
 		//Homepage Headline Options
 		'homepage_headline' => array(
 			'id' 			=> 'homepage_headline',
@@ -455,7 +470,7 @@ function catcheverest_customize_register( $wp_customize ) {
 			'panel' 		=> 'homepage_settings',
 			'section' 		=> 'homepage_featured_content_options',
 			'default' 		=> $defaults['homepage_featured_headline']
-		),		
+		),
 		'homepage_featured_qty' => array(
 			'id' 			=> 'homepage_featured_qty',
 			'title' 		=> __( 'Number of Featured Content', 'catch-everest' ),
@@ -853,8 +868,8 @@ function catcheverest_customize_register( $wp_customize ) {
 		//Webmaster Tools
 		'analytic_header' => array(
 			'id' 				=> 'analytic_header',
-			'title' 			=> __( 'Code to display on Header', 'catch-box' ),
-			'description' 		=> __( 'Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on Header', 'catch-box' ),
+			'title' 			=> __( 'Code to display on Header', 'catch-everest' ),
+			'description' 		=> __( 'Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on Header', 'catch-everest' ),
 			'field_type' 		=> 'textarea',
 			'sanitize' 			=> 'wp_kses_stripslashes',
 			'panel' 			=> 'webmaster_tools',
@@ -864,8 +879,8 @@ function catcheverest_customize_register( $wp_customize ) {
 		),
 		'analytic_footer' => array(
 			'id' 				=> 'analytic_footer',
-			'title' 			=> __( 'Code to display on Footer', 'catch-box' ),
-			'description' 		=> __( 'Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on footer', 'catch-box' ),
+			'title' 			=> __( 'Code to display on Footer', 'catch-everest' ),
+			'description' 		=> __( 'Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on footer', 'catch-everest' ),
 			'field_type' 		=> 'textarea',
 			'sanitize' 			=> 'wp_kses_stripslashes',
 			'panel' 			=> 'webmaster_tools',
@@ -893,16 +908,16 @@ function catcheverest_customize_register( $wp_customize ) {
 						'section'   => $theme_slug . $option['section'],
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
 
-			$wp_customize->add_control( 
-				new WP_Customize_Image_Control( 
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
 					$params
-				) 
+				)
 			);
 		}
 		else if ('checkbox' == $option['field_type'] ) {
@@ -921,7 +936,7 @@ function catcheverest_customize_register( $wp_customize ) {
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
 						'name'  	=> $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
@@ -933,11 +948,11 @@ function catcheverest_customize_register( $wp_customize ) {
 				$params['section']	= $theme_slug . $option['section'];
 			}
 
-			$wp_customize->add_control( 
-				new CatchEverest_Customize_Checkbox( 
+			$wp_customize->add_control(
+				new CatchEverest_Customize_Checkbox(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
-					$params	
-				) 
+					$params
+				)
 			);
 		}
 		else if ('category-multiple' == $option['field_type'] ) {
@@ -959,13 +974,13 @@ function catcheverest_customize_register( $wp_customize ) {
 						'description'	=> $option['description'],
 						'name'	 		=> $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
 
-			$wp_customize->add_control( 
-				new CatchEverest_Customize_Dropdown_Categories_Control ( 
+			$wp_customize->add_control(
+				new CatchEverest_Customize_Dropdown_Categories_Control (
 					$wp_customize,
 					$theme_slug . 'options[' . $option['id'] . ']',
 					$params
@@ -1015,7 +1030,7 @@ function catcheverest_customize_register( $wp_customize ) {
 			$wp_customize->add_control(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
-				$params			
+				$params
 			);
 		}
 	}
@@ -1032,15 +1047,15 @@ function catcheverest_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
-			new CatchEverest_Note_Control( 
+		$wp_customize->add_control(
+			new CatchEverest_Note_Control(
 				$wp_customize, $theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
 				array(
 					'label'		=> sprintf( __( 'Featured Content #%s', 'catch-everest' ), $i ),
 					'section'   => $theme_slug .'homepage_featured_content_options',
 					'settings'  => $theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
-				) 
-			) 
+				)
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1053,15 +1068,15 @@ function catcheverest_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
-			new WP_Customize_Image_Control( 
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
 				$wp_customize, $theme_slug . 'options[homepage_featured_image][' . $i . ']',
 				array(
 					'label'		=> __( 'Image', 'catch-everest' ),
 					'section'   => $theme_slug .'homepage_featured_content_options',
 					'settings'  => $theme_slug . 'options[homepage_featured_image][' . $i . ']',
-				) 
-			) 
+				)
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1074,14 +1089,14 @@ function catcheverest_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_url][' . $i . ']',
 			array(
 				'label'		=> __( 'Link URL', 'catch-everest' ),
 				'section'	=> $theme_slug .'homepage_featured_content_options',
 				'settings'	=> $theme_slug . 'options[homepage_featured_url][' . $i . ']',
 				'type'		=> 'url'
-			) 
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1094,14 +1109,14 @@ function catcheverest_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_base][' . $i . ']',
 			array(
 				'label'		=> __( 'Target. Open Link in New Window?', 'catch-everest' ),
 				'section'	=> $theme_slug .'homepage_featured_content_options',
 				'settings'	=> $theme_slug . 'options[homepage_featured_base][' . $i . ']',
 				'type'		=> 'text'
-			) 
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1114,7 +1129,7 @@ function catcheverest_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_title][' . $i . ']',
 			array(
 				'label'			=> __( 'Title', 'catch-everest' ),
@@ -1122,7 +1137,7 @@ function catcheverest_customize_register( $wp_customize ) {
 				'settings'		=> $theme_slug . 'options[homepage_featured_title][' . $i . ']',
 				'description'	=> __( 'Leave empty if you want to remove title', 'catch-everest' ),
 				'type'			=> 'text'
-			) 
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1135,7 +1150,7 @@ function catcheverest_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_content][' . $i . ']',
 			array(
 				'label'			=> __( 'Content', 'catch-everest' ),
@@ -1143,7 +1158,7 @@ function catcheverest_customize_register( $wp_customize ) {
 				'settings'		=> $theme_slug . 'options[homepage_featured_content][' . $i . ']',
 				'description'	=> __( 'Appropriate Words: 10', 'catch-everest' ),
 				'type'			=> 'textarea'
-			) 
+			)
 		);
 	}
 
@@ -1159,7 +1174,7 @@ function catcheverest_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[featured_slider][' . $i . ']',
 			array(
 				'label'		=> sprintf( __( 'Featured Post Slider #%s', 'catch-everest' ), $i ),
@@ -1213,7 +1228,7 @@ function catcheverest_customize_register( $wp_customize ) {
         'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',
-    ) ) );  
+    ) ) );
     //Important Links End
 }
 add_action( 'customize_register', 'catcheverest_customize_register' );

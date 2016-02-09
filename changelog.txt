@@ -1,5 +1,12 @@
 == Changelog ==
 
+version 2.6
+* Added: Disable scrollup option.
+* Bug Fixed: Theme Instructions and Changelog links in customizer
+* Compatibility fix: Customizer Reset option not working when returning any value in WordPress 4.4
+* Updated: German language file
+* Updated: Genericons version 3.4.1
+
 version 2.5.1
 * Bug Fixed: Customizer Dropdown type saving issue
 * Bug Fixed: Check to Disable Latest posts changed to Check to Disable latest posts( Reported by mr-nocommentmsn-com )

@@ -56,7 +56,7 @@ class CatchEverest_Important_Links extends WP_Customize_Control {
     	//Add Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links
         $important_links = array(
 						'theme_instructions' => array( 
-							'link'	=> esc_url( 'http://catchthemes.com/theme-instructions/catcheverest/' ),
+							'link'	=> esc_url( 'http://catchthemes.com/theme-instructions/catch-everest/' ),
 							'text' 	=> __( 'Theme Instructions', 'catch-everest' ),
 							),
 						'support' => array( 
@@ -64,7 +64,7 @@ class CatchEverest_Important_Links extends WP_Customize_Control {
 							'text' 	=> __( 'Support', 'catch-everest' ),
 							),
 						'changelog' => array( 
-							'link'	=> esc_url( 'http://catchthemes.com/changelogs/catcheverest-theme/' ),
+							'link'	=> esc_url( 'http://catchthemes.com/changelogs/catch-everest-theme/' ),
 							'text' 	=> __( 'Changelog', 'catch-everest' ),
 							),
 						'donate' => array( 
@@ -72,7 +72,7 @@ class CatchEverest_Important_Links extends WP_Customize_Control {
 							'text' 	=> __( 'Donate Now', 'catch-everest' ),
 							),
 						'review' => array( 
-							'link'	=> esc_url( 'https://wordpress.org/support/view/theme-reviews/catcheverest' ),
+							'link'	=> esc_url( 'https://wordpress.org/support/view/theme-reviews/catch-everest' ),
 							'text' 	=> __( 'Review', 'catch-everest' ),
 							),
 						);
