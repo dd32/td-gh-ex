@@ -4,7 +4,7 @@ Theme URI: https://www.themeinprogress.com/sueva/
 Description: Suevafree is a free responsive clean and corporate Tumblelog WordPress theme, perfect to manage your personal, lifestyle, travel, food, recipes or fashion blog. Now is ecommerce ready and is optimized to work with WooCommerce and Contact Form 7 plugins. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3. 
 Author: ThemeinProgress.
 Author URI: https://www.themeinprogress.com
-Version: 2.0.2
+Version: 2.0.3
 Tags: gray, light, black, orange, blue, pink, purple, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options,responsive-layout, translation-ready, one-column, photoblogging
 Text Domain: suevafree
 Domain Path: /languages
@@ -485,6 +485,7 @@ textarea:focus {
 } 
 #logo a img{
 	margin-top:-10px;
+	max-width:100%
 } 
 
 

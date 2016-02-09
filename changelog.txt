@@ -1,5 +1,12 @@
 SuevaFree Changelog
 
+- Version 2.0.3 - Released: 09.02.2016
+
+-- Fixed: Image as logo mobile issue.
+-- Added: WooCommerce header cart.
+-- Updated: Font Awesome icons.
+-- Edit  : Code optimized.
+
 - Version 2.0.2 - Released: 06.02.2016
 
 -- Added: WooCommerce support.
