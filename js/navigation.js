@@ -37,7 +37,7 @@
 
 // Better focus for hidden submenu items for accessibility.
 ( function( $ ) {
-	$( '.main-navigation' ).find( 'a' ).on( 'focus.catchbox blur.catchbox', function() {
+	$( '.menu-focus' ).find( 'a' ).on( 'focus.catchbox blur.catchbox', function() {
 		$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
 	} );
 

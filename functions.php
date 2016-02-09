@@ -837,6 +837,8 @@ if ( ! function_exists( 'catchbox_scripts_method' ) ):
 function catchbox_scripts_method() {
 	global $post;
 
+	$options = get_option( 'catchbox_theme_options' );
+
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 
@@ -872,7 +874,9 @@ function catchbox_scripts_method() {
 	/**
 	 * Loads up Scroll Up script
 	 */
-	wp_enqueue_script( 'catchbox-scrollup', get_template_directory_uri() . '/js/catchbox-scrollup.min.js', array( 'jquery' ), '20072014', true  );
+	if ( empty( $options['disable_scrollup'] ) ) {
+		wp_enqueue_script( 'catchbox-scrollup', get_template_directory_uri() . '/js/catchbox-scrollup.min.js', array( 'jquery' ), '20072014', true  );
+	}
 
 	// Load the html5 shiv.
 	wp_enqueue_script( 'catchbox-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );

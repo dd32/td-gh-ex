@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-31 11:30+0545\n"
-"PO-Revision-Date: 2016-01-31 11:30+0545\n"
+"POT-Creation-Date: 2016-02-10 00:56+0545\n"
+"PO-Revision-Date: 2016-02-10 00:56+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: H.P. Brinkmann\n"
 "Language: sk_SK\n"
@@ -71,7 +71,7 @@ msgstr "F Y"
 msgid "Yearly Archives: %s"
 msgstr "Ročný archív: %s"
 
-#: ../archive.php:26 ../inc/theme-options.php:1294
+#: ../archive.php:26 ../inc/theme-options.php:1325
 msgid "Y"
 msgstr "Y"
 
@@ -440,109 +440,109 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:916
+#: ../functions.php:920
 msgid "Name"
 msgstr "Meno"
 
-#: ../functions.php:918 ../functions.php:1135
-#: ../inc/customizer/customizer.php:604 ../inc/theme-options.php:877
+#: ../functions.php:922 ../functions.php:1139
+#: ../inc/customizer/customizer.php:621 ../inc/theme-options.php:901
 msgid "Email"
 msgstr "E-Mail"
 
-#: ../functions.php:1041
+#: ../functions.php:1045
 msgid "Footer Social Links Menu"
 msgstr ""
 
-#: ../functions.php:1045 ../inc/customizer/customizer.php:424
-#: ../inc/theme-options.php:630 ../inc/theme-options.php:770
+#: ../functions.php:1049 ../inc/customizer/customizer.php:441
+#: ../inc/theme-options.php:654 ../inc/theme-options.php:794
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../functions.php:1050 ../inc/customizer/customizer.php:434
-#: ../inc/theme-options.php:631 ../inc/theme-options.php:775
+#: ../functions.php:1054 ../inc/customizer/customizer.php:451
+#: ../inc/theme-options.php:655 ../inc/theme-options.php:799
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../functions.php:1055
+#: ../functions.php:1059
 msgid "Google Plus"
 msgstr "Google Plus"
 
-#: ../functions.php:1060
+#: ../functions.php:1064
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions.php:1065 ../inc/customizer/customizer.php:464
-#: ../inc/theme-options.php:793
+#: ../functions.php:1069 ../inc/customizer/customizer.php:481
+#: ../inc/theme-options.php:817
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions.php:1070
+#: ../functions.php:1074
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../functions.php:1075 ../inc/theme-options.php:805
+#: ../functions.php:1079 ../inc/theme-options.php:829
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-#: ../functions.php:1080 ../inc/theme-options.php:811
+#: ../functions.php:1084 ../inc/theme-options.php:835
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../functions.php:1085 ../inc/customizer/customizer.php:504
-#: ../inc/theme-options.php:817
+#: ../functions.php:1089 ../inc/customizer/customizer.php:521
+#: ../inc/theme-options.php:841
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions.php:1090 ../inc/customizer/customizer.php:514
-#: ../inc/theme-options.php:823
+#: ../functions.php:1094 ../inc/customizer/customizer.php:531
+#: ../inc/theme-options.php:847
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions.php:1095 ../inc/customizer/customizer.php:524
-#: ../inc/theme-options.php:829
+#: ../functions.php:1099 ../inc/customizer/customizer.php:541
+#: ../inc/theme-options.php:853
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions.php:1100 ../inc/customizer/customizer.php:534
-#: ../inc/theme-options.php:835
+#: ../functions.php:1104 ../inc/customizer/customizer.php:551
+#: ../inc/theme-options.php:859
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions.php:1105
+#: ../functions.php:1109
 msgid "AIM"
 msgstr "AIM"
 
-#: ../functions.php:1110 ../inc/customizer/customizer.php:554
-#: ../inc/customizer/customizer.php:574 ../inc/theme-options.php:847
+#: ../functions.php:1114 ../inc/customizer/customizer.php:571
+#: ../inc/customizer/customizer.php:591 ../inc/theme-options.php:871
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions.php:1115 ../inc/customizer/customizer.php:564
-#: ../inc/theme-options.php:853
+#: ../functions.php:1119 ../inc/customizer/customizer.php:581
+#: ../inc/theme-options.php:877
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions.php:1120 ../inc/theme-options.php:859
+#: ../functions.php:1124 ../inc/theme-options.php:883
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions.php:1125 ../inc/customizer/customizer.php:584
-#: ../inc/theme-options.php:865
+#: ../functions.php:1129 ../inc/customizer/customizer.php:601
+#: ../inc/theme-options.php:889
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions.php:1130 ../inc/customizer/customizer.php:594
-#: ../inc/theme-options.php:871
+#: ../functions.php:1134 ../inc/customizer/customizer.php:611
+#: ../inc/theme-options.php:895
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../functions.php:1140 ../inc/customizer/customizer.php:614
-#: ../inc/theme-options.php:882
+#: ../functions.php:1144 ../inc/customizer/customizer.php:631
+#: ../inc/theme-options.php:906
 msgid "Xing"
 msgstr "Xing"
 
-#: ../functions.php:1145 ../inc/customizer/customizer.php:624
-#: ../inc/theme-options.php:887
+#: ../functions.php:1149 ../inc/customizer/customizer.php:641
+#: ../inc/theme-options.php:911
 msgid "Meetup"
 msgstr "Meetup"
 
@@ -596,12 +596,12 @@ msgid "Secondary Mobile Menu"
 msgstr ""
 
 #: ../inc/customizer/customizer-custom-controls.php:18
-#: ../inc/theme-options.php:629
+#: ../inc/theme-options.php:653
 msgid "Theme Instructions"
 msgstr "Nastavenie šablóny"
 
 #: ../inc/customizer/customizer-custom-controls.php:22
-#: ../inc/theme-options.php:627
+#: ../inc/theme-options.php:651
 msgid "Support"
 msgstr "Podpora"
 
@@ -617,8 +617,8 @@ msgstr ""
 msgid "Review"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:33 ../inc/theme-options.php:199
-#: ../inc/theme-options.php:200 ../inc/theme-options.php:647
+#: ../inc/customizer/customizer.php:33 ../inc/theme-options.php:207
+#: ../inc/theme-options.php:208 ../inc/theme-options.php:671
 msgid "Theme Options"
 msgstr "Nastavenie šablóny"
 
@@ -640,26 +640,26 @@ msgid ""
 "144px height, which will support High Resolution Devices like iPad Retina"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:48 ../inc/customizer/customizer.php:222
+#: ../inc/customizer/customizer.php:48 ../inc/customizer/customizer.php:227
 #: ../inc/theme-options.php:82
 msgid "Color Scheme"
 msgstr "Farebná schéma"
 
-#: ../inc/customizer/customizer.php:53 ../inc/customizer/customizer.php:233
+#: ../inc/customizer/customizer.php:53 ../inc/customizer/customizer.php:238
 #: ../inc/theme-options.php:90
 msgid "Link Color"
 msgstr "Farba odkazov"
 
-#: ../inc/customizer/customizer.php:58 ../inc/customizer/customizer.php:243
+#: ../inc/customizer/customizer.php:58 ../inc/customizer/customizer.php:248
 #: ../inc/theme-options.php:98
 msgid "Default Layout"
 msgstr "Základné rozloženie"
 
-#: ../inc/customizer/customizer.php:63 ../inc/customizer/customizer.php:254
+#: ../inc/customizer/customizer.php:63 ../inc/customizer/customizer.php:259
 msgid "Content Layout"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:68 ../inc/customizer/customizer.php:266
+#: ../inc/customizer/customizer.php:68 ../inc/customizer/customizer.php:271
 #: ../inc/theme-options.php:114
 msgid "Excerpt Length in Words"
 msgstr "Presná dĺžka podľa počtu slov"
@@ -672,7 +672,7 @@ msgstr "Presmerovanie"
 msgid "Move Site Title and Tagline?"
 msgstr "Presunúť nadpis a popis stránky?"
 
-#: ../inc/customizer/customizer.php:83 ../inc/customizer/customizer.php:302
+#: ../inc/customizer/customizer.php:83 ../inc/customizer/customizer.php:307
 #: ../inc/theme-options.php:138
 msgid "Default Display Text in Search"
 msgstr "Základné zobrazovanie textu vo vyhľadávaní"
@@ -685,209 +685,217 @@ msgstr "Zrušiť vyhľadávanie v hlavičke?"
 msgid "Enable Secondary & Footer Menu in Mobile Devices?"
 msgstr "Zapnúť sekundárne & menu pre pätu v mobilných zariadeniach?"
 
-#: ../inc/customizer/customizer.php:98 ../inc/customizer/customizer.php:330
+#: ../inc/customizer/customizer.php:98 ../inc/customizer/customizer.php:335
 #: ../inc/theme-options.php:162
 msgid "Custom CSS Styles"
 msgstr "Vlastné CSS štýlovanie"
 
-#: ../inc/customizer/customizer.php:106 ../inc/customizer/customizer.php:107
+#: ../inc/customizer/customizer.php:103
+msgid "Scroll Up Options"
+msgstr ""
+
+#: ../inc/customizer/customizer.php:111 ../inc/customizer/customizer.php:112
 msgid "Featured Slider"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:111 ../inc/theme-options.php:677
+#: ../inc/customizer/customizer.php:116 ../inc/theme-options.php:701
 msgid "Slider Options"
 msgstr "Nastavenie slidera"
 
-#: ../inc/customizer/customizer.php:116 ../inc/theme-options.php:711
+#: ../inc/customizer/customizer.php:121 ../inc/theme-options.php:735
 msgid "Slider Effect Options"
 msgstr "Nastavenie efektu prechodu medzi položkami v slideri"
 
-#: ../inc/customizer/customizer.php:124 ../inc/theme-options.php:649
+#: ../inc/customizer/customizer.php:129 ../inc/theme-options.php:673
 msgid "Social Links"
 msgstr "Sociálne siete"
 
-#: ../inc/customizer/customizer.php:125
+#: ../inc/customizer/customizer.php:130
 msgid "Add your social links here"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:129
+#: ../inc/customizer/customizer.php:134
 msgid "Predefined Social Icons"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:136 ../inc/customizer/customizer.php:141
-#: ../inc/theme-options.php:650
+#: ../inc/customizer/customizer.php:141 ../inc/customizer/customizer.php:146
+#: ../inc/theme-options.php:674
 msgid "Webmaster Tools"
 msgstr "Webmaster Tools"
 
-#: ../inc/customizer/customizer.php:137 ../inc/customizer/customizer.php:142
+#: ../inc/customizer/customizer.php:142 ../inc/customizer/customizer.php:147
 #, php-format
 msgid ""
 "Webmaster Tools falls under Plugins Territory according to Theme Review "
 "Guidelines in WordPress.org. This feature will be depreciated in future "
 "versions from Catch Box free version. If you want this feature, then you can "
-"add <a target=\"_blank\" href=\"%s\">Catch Web Tools</a>  plugin."
+"add <a href=\"%s\">Catch Web Tools</a>  plugin."
 msgstr ""
 
-#: ../inc/customizer/customizer.php:198
+#: ../inc/customizer/customizer.php:203
 msgid "Fav Icon"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:210
+#: ../inc/customizer/customizer.php:215
 msgid "Web Clip Icon"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:282
+#: ../inc/customizer/customizer.php:287
 msgid "Feed Redirect url"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:293 ../inc/theme-options.php:489
+#: ../inc/customizer/customizer.php:298 ../inc/theme-options.php:499
 msgid "Check to move above the Header/Logo Image"
 msgstr "Zaškrknúť pre presunutie Hlavy/Loga hore"
 
-#: ../inc/customizer/customizer.php:312 ../inc/theme-options.php:519
+#: ../inc/customizer/customizer.php:317 ../inc/theme-options.php:529
 msgid "Check to Disable"
 msgstr "Nezobrazovať"
 
-#: ../inc/customizer/customizer.php:321 ../inc/theme-options.php:534
+#: ../inc/customizer/customizer.php:326 ../inc/theme-options.php:544
 msgid "Check to Enable"
 msgstr "Umožniť zobrazenie"
 
-#: ../inc/customizer/customizer.php:342
+#: ../inc/customizer/customizer.php:347
+msgid "Check to disable scroll up"
+msgstr ""
+
+#: ../inc/customizer/customizer.php:359
 msgid "Check to Exclude Slider posts from Homepage posts"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:351 ../inc/theme-options.php:692
+#: ../inc/customizer/customizer.php:368 ../inc/theme-options.php:716
 msgid "Number of Slides"
 msgstr "Počet slajdov"
 
-#: ../inc/customizer/customizer.php:352
+#: ../inc/customizer/customizer.php:369
 msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:367
+#: ../inc/customizer/customizer.php:384
 msgid "Transition Effect"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:375 ../inc/theme-options.php:721
+#: ../inc/customizer/customizer.php:392 ../inc/theme-options.php:745
 msgid "fade"
 msgstr "zoslabnutie"
 
-#: ../inc/customizer/customizer.php:376 ../inc/theme-options.php:722
+#: ../inc/customizer/customizer.php:393 ../inc/theme-options.php:746
 msgid "wipe"
 msgstr "wipe"
 
-#: ../inc/customizer/customizer.php:377 ../inc/theme-options.php:723
+#: ../inc/customizer/customizer.php:394 ../inc/theme-options.php:747
 msgid "scrollUp"
 msgstr "Vymeniť z hora"
 
-#: ../inc/customizer/customizer.php:378 ../inc/theme-options.php:724
+#: ../inc/customizer/customizer.php:395 ../inc/theme-options.php:748
 msgid "scrollDown"
 msgstr "Vymeniť z dola"
 
-#: ../inc/customizer/customizer.php:379 ../inc/theme-options.php:725
+#: ../inc/customizer/customizer.php:396 ../inc/theme-options.php:749
 msgid "scrollLeft"
 msgstr "Vymeniť z ľava"
 
-#: ../inc/customizer/customizer.php:380 ../inc/theme-options.php:726
+#: ../inc/customizer/customizer.php:397 ../inc/theme-options.php:750
 msgid "scrollRight"
 msgstr "Vymeniť z prava"
 
-#: ../inc/customizer/customizer.php:381 ../inc/theme-options.php:727
+#: ../inc/customizer/customizer.php:398 ../inc/theme-options.php:751
 msgid "blindX"
 msgstr "roletaX"
 
-#: ../inc/customizer/customizer.php:382 ../inc/theme-options.php:728
+#: ../inc/customizer/customizer.php:399 ../inc/theme-options.php:752
 msgid "blindY"
 msgstr "roletaY"
 
-#: ../inc/customizer/customizer.php:383 ../inc/theme-options.php:729
+#: ../inc/customizer/customizer.php:400 ../inc/theme-options.php:753
 msgid "blindZ"
 msgstr "roletaZ"
 
-#: ../inc/customizer/customizer.php:384 ../inc/theme-options.php:730
+#: ../inc/customizer/customizer.php:401 ../inc/theme-options.php:754
 msgid "cover"
 msgstr "prekryť"
 
-#: ../inc/customizer/customizer.php:385 ../inc/theme-options.php:731
+#: ../inc/customizer/customizer.php:402 ../inc/theme-options.php:755
 msgid "shuffle"
 msgstr "Prehodiť"
 
-#: ../inc/customizer/customizer.php:390
+#: ../inc/customizer/customizer.php:407
 msgid "Transition Delay (in seconds)"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:406 ../inc/theme-options.php:746
+#: ../inc/customizer/customizer.php:423 ../inc/theme-options.php:770
 msgid "Transition Length"
 msgstr "Dĺžka trvania prechodu"
 
-#: ../inc/customizer/customizer.php:444
+#: ../inc/customizer/customizer.php:461
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/customizer/customizer.php:454 ../inc/theme-options.php:787
+#: ../inc/customizer/customizer.php:471 ../inc/theme-options.php:811
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/customizer/customizer.php:474 ../inc/theme-options.php:799
+#: ../inc/customizer/customizer.php:491 ../inc/theme-options.php:823
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/customizer/customizer.php:484
+#: ../inc/customizer/customizer.php:501
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/customizer/customizer.php:494
+#: ../inc/customizer/customizer.php:511
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/customizer/customizer.php:544 ../inc/theme-options.php:841
+#: ../inc/customizer/customizer.php:561 ../inc/theme-options.php:865
 msgid "Aim"
 msgstr "Aim"
 
-#: ../inc/customizer/customizer.php:636 ../inc/theme-options.php:911
+#: ../inc/customizer/customizer.php:653 ../inc/theme-options.php:935
 msgid "Code to display on Header"
 msgstr "Kód na zobrazenie v hlavičke"
 
-#: ../inc/customizer/customizer.php:637
+#: ../inc/customizer/customizer.php:654
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:647 ../inc/theme-options.php:922
+#: ../inc/customizer/customizer.php:664 ../inc/theme-options.php:946
 msgid "Code to display on Footer"
 msgstr "Kód pre zobrazenie v päte"
 
-#: ../inc/customizer/customizer.php:648
+#: ../inc/customizer/customizer.php:665
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Footer"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:777
+#: ../inc/customizer/customizer.php:794
 #, php-format
 msgid "#%s Featured Post ID"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:792
+#: ../inc/customizer/customizer.php:809
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../inc/customizer/customizer.php:794
+#: ../inc/customizer/customizer.php:811
 msgid "Reset all settings"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:804
+#: ../inc/customizer/customizer.php:821
 msgid "Check to reset all settings to default"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:814 ../inc/customizer/customizer.php:825
+#: ../inc/customizer/customizer.php:831 ../inc/customizer/customizer.php:842
 msgid "Important Links"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:859
+#: ../inc/customizer/customizer.php:876
 msgid "Upgrade To Pro"
 msgstr ""
 
@@ -903,179 +911,187 @@ msgstr "Web Clip Icon URL"
 msgid "Content layout"
 msgstr "Rozloženie obsahu"
 
-#: ../inc/theme-options.php:222
+#: ../inc/theme-options.php:170
+msgid "Scroll Up"
+msgstr ""
+
+#: ../inc/theme-options.php:230
 msgid "Insert as Favicon"
 msgstr "Insert as Favicon"
 
-#: ../inc/theme-options.php:222
+#: ../inc/theme-options.php:230
 msgid "Add/Change Favicon"
 msgstr "Pridať/zmeniť Favicon"
 
-#: ../inc/theme-options.php:236
+#: ../inc/theme-options.php:244
 msgid "Insert as Web Clip Icon"
 msgstr "Insert as Web Clip Icon"
 
-#: ../inc/theme-options.php:236
+#: ../inc/theme-options.php:244
 msgid "Add/Change Web Clip Icon"
 msgstr "Pridať/zmeniť Web Clip Icon"
 
-#: ../inc/theme-options.php:250
+#: ../inc/theme-options.php:258
 msgid "Light"
 msgstr "Svetlé"
 
-#: ../inc/theme-options.php:256
+#: ../inc/theme-options.php:264
 msgid "Dark"
 msgstr "Tmavé"
 
-#: ../inc/theme-options.php:262
+#: ../inc/theme-options.php:270
 msgid "Blue"
 msgstr "Modré"
 
-#: ../inc/theme-options.php:268
+#: ../inc/theme-options.php:276
 msgid "Green"
 msgstr "Zelené"
 
-#: ../inc/theme-options.php:274
+#: ../inc/theme-options.php:282
 msgid "Red"
 msgstr "Červené"
 
-#: ../inc/theme-options.php:280
+#: ../inc/theme-options.php:288
 msgid "Brown"
 msgstr "Hnedé"
 
-#: ../inc/theme-options.php:286
+#: ../inc/theme-options.php:294
 msgid "Orange"
 msgstr "Orange"
 
-#: ../inc/theme-options.php:305
+#: ../inc/theme-options.php:313
 msgid "Content on left"
 msgstr "Obsah na ľavej strane"
 
-#: ../inc/theme-options.php:310
+#: ../inc/theme-options.php:318
 msgid "Content on right"
 msgstr "Obsah na pravej strane"
 
-#: ../inc/theme-options.php:315
+#: ../inc/theme-options.php:323
 msgid "One-column, no sidebar"
 msgstr "Jeden stĺpec, bez sidebaru"
 
-#: ../inc/theme-options.php:333
+#: ../inc/theme-options.php:341
 msgid "Show excerpt"
 msgstr "Zobraziť výpis"
 
-#: ../inc/theme-options.php:338
+#: ../inc/theme-options.php:346
 msgid "Show full content"
 msgstr "Zobraziť celý obsah článku"
 
-#: ../inc/theme-options.php:461
+#: ../inc/theme-options.php:471
 msgid "Words"
 msgstr "Slová"
 
-#: ../inc/theme-options.php:548
+#: ../inc/theme-options.php:558
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS Tutorial od W3Schools"
 
-#: ../inc/theme-options.php:548
+#: ../inc/theme-options.php:558
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/theme-options.php:548
+#: ../inc/theme-options.php:558
 msgid "CSS Tutorial"
 msgstr "CSS Tutorial"
 
-#: ../inc/theme-options.php:548
+#: ../inc/theme-options.php:558
 msgid "Click Here to Read"
 msgstr "Čítať"
 
-#: ../inc/theme-options.php:612
+#: ../inc/theme-options.php:572 ../inc/theme-options.php:713
+msgid "Check to disable"
+msgstr "Nezobrazovať: "
+
+#: ../inc/theme-options.php:636
 msgid "Theme Options By"
 msgstr "Nastavenie témy"
 
-#: ../inc/theme-options.php:614
+#: ../inc/theme-options.php:638
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../inc/theme-options.php:614 ../inc/theme-options.php:615
-#: ../inc/theme-options.php:1336
+#: ../inc/theme-options.php:638 ../inc/theme-options.php:639
+#: ../inc/theme-options.php:1367
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../inc/theme-options.php:621
+#: ../inc/theme-options.php:645
 msgid "http://catchthemes.com/themes/catch-box-pro/"
 msgstr "http://catchthemes.com/themes/catch-box-pro/"
 
-#: ../inc/theme-options.php:621
+#: ../inc/theme-options.php:645
 msgid "Upgrade to Catch Box Pro"
 msgstr "Upgradovať na Catch Box Pro"
 
-#: ../inc/theme-options.php:626
+#: ../inc/theme-options.php:650
 msgid "http://catchthemes.com/donate/"
 msgstr "http://catchthemes.com/donate/"
 
-#: ../inc/theme-options.php:626
+#: ../inc/theme-options.php:650
 msgid "Donate"
 msgstr "Prispieť"
 
-#: ../inc/theme-options.php:627
+#: ../inc/theme-options.php:651
 msgid "http://catchthemes.com/support/"
 msgstr "http://catchthemes.com/"
 
-#: ../inc/theme-options.php:628
+#: ../inc/theme-options.php:652
 msgid "http://catchthemes.com/support-forum/forum/catch-box-public/"
 msgstr "http://catchthemes.com/support-forum/forum/catch-box-public/"
 
-#: ../inc/theme-options.php:628
+#: ../inc/theme-options.php:652
 msgid "Support Forum"
 msgstr "Fórum podpory"
 
-#: ../inc/theme-options.php:629
+#: ../inc/theme-options.php:653
 msgid "http://catchthemes.com/theme-instructions/catch-box/"
 msgstr "http://catchthemes.com/theme-instructions/catch-box/"
 
-#: ../inc/theme-options.php:630
+#: ../inc/theme-options.php:654
 msgid "https://www.facebook.com/catchthemes/"
 msgstr "https://www.facebook.com/catchthemes/"
 
-#: ../inc/theme-options.php:630
+#: ../inc/theme-options.php:654
 msgid "Like Catch Themes on Facebook"
 msgstr "Like Catch Themes na Facebooku"
 
-#: ../inc/theme-options.php:631
+#: ../inc/theme-options.php:655
 msgid "https://twitter.com/catchthemes/"
 msgstr "https://twitter.com/catchthemes/"
 
-#: ../inc/theme-options.php:631
+#: ../inc/theme-options.php:655
 msgid "Follow Catch Themes on Twitter"
 msgstr "Sleduj Catch Themes na Twitteri"
 
-#: ../inc/theme-options.php:632
+#: ../inc/theme-options.php:656
 msgid "http://wordpress.org/support/view/theme-reviews/catch-box/"
 msgstr "http://wordpress.org/support/view/theme-reviews/catch-box/"
 
-#: ../inc/theme-options.php:632
+#: ../inc/theme-options.php:656
 msgid "Rate us 5 Star on WordPress"
 msgstr "Ohodnoť nás 5-timi hviezdičkami na WordPresse"
 
-#: ../inc/theme-options.php:632
+#: ../inc/theme-options.php:656
 msgid "5 Star Rating"
 msgstr "Hodnotenie 5 hviezdičiek"
 
-#: ../inc/theme-options.php:638
+#: ../inc/theme-options.php:662
 #, php-format
 msgid ""
 "Theme Options Panel will be retired on future versions. Please use %1$s "
 "Customizer %2$s instead."
 msgstr ""
 
-#: ../inc/theme-options.php:648
+#: ../inc/theme-options.php:672
 msgid "Featured Post Slider"
 msgstr "Slider zvýraznených článkov"
 
-#: ../inc/theme-options.php:681 ../inc/theme-options.php:683
+#: ../inc/theme-options.php:705 ../inc/theme-options.php:707
 msgid "Post Slider Tutorial"
 msgstr "Post Slider Tutorial"
 
-#: ../inc/theme-options.php:683
+#: ../inc/theme-options.php:707
 msgid ""
 "http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
 "slider/"
@@ -1083,30 +1099,26 @@ msgstr ""
 "http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
 "slider/"
 
-#: ../inc/theme-options.php:683
+#: ../inc/theme-options.php:707
 msgid "Click Here to Read Post Slider Tutorial"
 msgstr "Click Here to Read Post Slider Tutorial"
 
-#: ../inc/theme-options.php:687
+#: ../inc/theme-options.php:711
 msgid "Exclude Slider post from Home page posts:"
 msgstr ""
 "Vylúčiť príspevky, ktoré sú použité v slideri z výpisu článkou na domácej "
 "obrazovke: "
 
-#: ../inc/theme-options.php:689
-msgid "Check to disable"
-msgstr "Nezobrazovať: "
-
-#: ../inc/theme-options.php:698
+#: ../inc/theme-options.php:722
 msgid "Featured Post ID"
 msgstr "ID zvýraznených článkov"
 
 # @ default
-#: ../inc/theme-options.php:700
+#: ../inc/theme-options.php:724
 msgid "Click Here To Edit"
 msgstr "Kliknite sem pre úpravu"
 
-#: ../inc/theme-options.php:706
+#: ../inc/theme-options.php:730
 msgid ""
 "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage "
 "Featured Slider."
@@ -1114,28 +1126,28 @@ msgstr ""
 "<strong>Poznámka</strong>: Tu môžete napísať ID číslo článkov, podľa ktorého "
 "sa budú články v slideri zobrazovať."
 
-#: ../inc/theme-options.php:707 ../inc/theme-options.php:753
-#: ../inc/theme-options.php:894 ../inc/theme-options.php:933
+#: ../inc/theme-options.php:731 ../inc/theme-options.php:777
+#: ../inc/theme-options.php:918 ../inc/theme-options.php:957
 msgid "Save"
 msgstr "Uložiť"
 
-#: ../inc/theme-options.php:716
+#: ../inc/theme-options.php:740
 msgid "Transition Effect:"
 msgstr "Efekt prechodu:"
 
-#: ../inc/theme-options.php:737
+#: ../inc/theme-options.php:761
 msgid "Transition Delay"
 msgstr "Doba statického zobrazenia"
 
-#: ../inc/theme-options.php:740 ../inc/theme-options.php:749
+#: ../inc/theme-options.php:764 ../inc/theme-options.php:773
 msgid "second(s)"
 msgstr "sekúnd"
 
-#: ../inc/theme-options.php:781
+#: ../inc/theme-options.php:805
 msgid "Google +"
 msgstr "Google +"
 
-#: ../inc/theme-options.php:893
+#: ../inc/theme-options.php:917
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
@@ -1143,11 +1155,11 @@ msgstr ""
 "<strong>Poznámka:</strong>Zadajte URL adresy pre dané profily na určených "
 "sociálnych sietiach."
 
-#: ../inc/theme-options.php:906
+#: ../inc/theme-options.php:930
 msgid "Header and Footer Code"
 msgstr "Kód v hlave a v päte"
 
-#: ../inc/theme-options.php:918
+#: ../inc/theme-options.php:942
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -1155,7 +1167,7 @@ msgstr ""
 "Poznámka: Sem môžete vložiť kód z Google, Facebooku alebo iných, ktorý sa "
 "načíta v hlave"
 
-#: ../inc/theme-options.php:929
+#: ../inc/theme-options.php:953
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
@@ -1163,19 +1175,19 @@ msgstr ""
 "Poznámka: Sem môžete vložiť kód z Google, Facebooku alebo iných, ktorý sa "
 "načíta v päte"
 
-#: ../inc/theme-options.php:1315
+#: ../inc/theme-options.php:1346
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/theme-options.php:1325
+#: ../inc/theme-options.php:1356
 msgid "Theme: Catch Box by "
 msgstr "Theme: Catch Box by "
 
-#: ../inc/theme-options.php:1347
+#: ../inc/theme-options.php:1378
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/theme-options.php:1347
+#: ../inc/theme-options.php:1378
 msgid "All Rights Reserved"
 msgstr "Všetky práva vyhradené"
 

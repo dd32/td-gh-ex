@@ -98,6 +98,11 @@ function catchbox_customize_register( $wp_customize ) {
 					'title' 		=> __( 'Custom CSS Styles', 'catch-box' ),
 					'description' 	=> '',
 				),
+				'scrollup' => array(
+					'id' 			=> 'scrollup',
+					'title' 		=> __( 'Scroll Up Options', 'catch-box' ),
+					'description' 	=> '',
+				),
 			),
 		),
 
@@ -134,12 +139,12 @@ function catchbox_customize_register( $wp_customize ) {
 		'webmaster_tools' => array(
 			'id' 			=> 'webmaster_tools',
 			'title' 		=> __( 'Webmaster Tools', 'catch-box' ),
-			'description' 	=>  sprintf( __( 'Webmaster Tools falls under Plugins Territory according to Theme Review Guidelines in WordPress.org. This feature will be depreciated in future versions from Catch Box free version. If you want this feature, then you can add <a target="_blank" href="%s">Catch Web Tools</a>  plugin.', 'catch-box' ), esc_url( 'https://wordpress.org/plugins/catch-web-tools/' ) ),
+			'description' 	=>  sprintf( __( 'Webmaster Tools falls under Plugins Territory according to Theme Review Guidelines in WordPress.org. This feature will be depreciated in future versions from Catch Box free version. If you want this feature, then you can add <a href="%s">Catch Web Tools</a>  plugin.', 'catch-box' ), esc_url( 'https://wordpress.org/plugins/catch-web-tools/' ) ),
 			'sections' 		=> array(
 				'webmaster_tools' => array(
 					'id' 			=> 'webmaster_tools',
 					'title' 		=> __( 'Webmaster Tools', 'catch-box' ),
-					'description' 	=>  sprintf( __( 'Webmaster Tools falls under Plugins Territory according to Theme Review Guidelines in WordPress.org. This feature will be depreciated in future versions from Catch Box free version. If you want this feature, then you can add <a target="_blank" href="%s">Catch Web Tools</a>  plugin.', 'catch-box' ), esc_url( 'https://wordpress.org/plugins/catch-web-tools/' ) ),
+					'description' 	=>  sprintf( __( 'Webmaster Tools falls under Plugins Territory according to Theme Review Guidelines in WordPress.org. This feature will be depreciated in future versions from Catch Box free version. If you want this feature, then you can add <a href="%s">Catch Web Tools</a>  plugin.', 'catch-box' ), esc_url( 'https://wordpress.org/plugins/catch-web-tools/' ) ),
 				),
 			),
 		),
@@ -334,6 +339,18 @@ function catchbox_customize_register( $wp_customize ) {
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'custom_css',
 			'default' 		=> ''
+		),
+
+		//Scroll Up Options
+		'disable_scrollup' => array(
+			'id' 			=> 'disable_scrollup',
+			'title' 		=> __( 'Check to disable scroll up', 'catch-box' ),
+			'description' 	=> '',
+			'field_type' 	=> 'checkbox',
+			'sanitize' 		=> 'catchbox_sanitize_checkbox',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'scrollup',
+			'default' 		=> $defaults['disable_scrollup'],
 		),
 
 		//Slider Options
@@ -628,7 +645,7 @@ function catchbox_customize_register( $wp_customize ) {
 			'panel' 		=> 'social_links',
 			'section' 		=> 'predefined_social_icons',
 			'default' 		=> ''
-		),		
+		),
 
 		//Webmaster Tools
 		'tracker_header' => array(

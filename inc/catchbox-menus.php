@@ -65,7 +65,7 @@ if ( ! function_exists( 'catchbox_header_menu' ) ) :
  * @since Catch Box 2.5
  */
 function catchbox_header_menu() { ?>
-    <nav id="access" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'catch-box' ); ?>">
+    <nav id="access" class="main-navigation menu-focus" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'catch-box' ); ?>">
         <h3 class="assistive-text"><?php _e( 'Primary menu', 'catch-box' ); ?></h3>
         <?php
             if ( has_nav_menu( 'primary', 'catch-box' ) ) { 
@@ -88,9 +88,9 @@ function catchbox_header_menu() { ?>
         // Check is footer menu is enable or not
         $options = catchbox_get_theme_options();
         if ( !empty ($options ['enable_menus'] ) ) :
-            $menuclass = "mobile-enable";
+            $menuclass = "menu-focus mobile-enable";
         else :
-            $menuclass = "mobile-disable";
+            $menuclass = "menu-focus mobile-disable";
         endif;
         ?>
         <nav id="access-secondary" class="<?php echo $menuclass; ?>"  role="navigation" aria-label="<?php esc_attr_e( 'Secondary Menu', 'catch-box' ); ?>">
