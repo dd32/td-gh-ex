@@ -23,12 +23,7 @@
 
     <div class="entry-content">
         <?php igthemes_before_single_content(); ?>
-          <?php if ( igthemes_option('main_post_content', 'full ') ) {
-                the_content();
-                } else {
-                the_excerpt();
-                }
-            ?>
+          <?php the_content();?>
         <?php igthemes_after_single_content(); ?>
         <?php
             wp_link_pages( array(

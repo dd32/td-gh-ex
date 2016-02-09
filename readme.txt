@@ -165,3 +165,6 @@ Changelog
 * Moved css and js files.
 * Fixed facebook url in the IG Social Widget.
 * Fixed little bug in IG Recent Posts.
+
+== 1.34 ==
+* Fixed content display error.
