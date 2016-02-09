@@ -35,7 +35,7 @@ function ct_author_options_content() {
 			</p>
 		</div>
 		<div class="content content-premium-upgrade">
-			<h3><?php _e( 'Get More Features & Flexibility', 'author' ); ?></h3>
+			<h3><?php _e( 'Author Pro Plugin', 'author' ); ?></h3>
 			<p><?php _e( 'Download the Author Pro plugin and unlock custom colors, featured videos, background images, and more', 'author' ); ?>...</p>
 			<p>
 				<a target="_blank" class="button-primary"
@@ -49,6 +49,11 @@ function ct_author_options_content() {
 				<a target="_blank" class="button-primary"
 				   href="https://www.competethemes.com/wordpress-resources/"><?php _e( 'View Resources', 'author' ); ?></a>
 			</p>
+		</div>
+		<div class="content content-review">
+			<h3><?php _e( 'Leave a Review', 'author' ); ?></h3>
+			<p><?php _e( 'Help others find Author by leaving a review on wordpress.org.', 'author' ); ?></p>
+			<a target="_blank" class="button-primary" href="https://wordpress.org/support/view/theme-reviews/author"><?php _e( 'Leave a Review', 'author' ); ?></a>
 		</div>
 		<div class="content content-delete-settings">
 			<h3><?php _e( 'Reset Customizer Settings', 'author' ); ?></h3>

@@ -45,14 +45,6 @@ function ct_author_add_customizer_content( $wp_customize ) {
 		<?php }
 	}
 
-	// create ad controls
-	class author_description_control extends WP_Customize_Control {
-
-		public function render_content() {
-			echo $this->description;
-		}
-	}
-
 	/***** Avatar *****/
 
 	// section
@@ -137,7 +129,7 @@ function ct_author_add_customizer_content( $wp_customize ) {
 			) );
 			// control
 			$wp_customize->add_control( $social_site, array(
-				'label'    => __( 'Email Address:', 'author' ),
+				'label'    => __( 'Email Address', 'author' ),
 				'section'  => 'ct_author_social_media_icons',
 				'priority' => $priority,
 			) );
@@ -173,12 +165,21 @@ function ct_author_add_customizer_content( $wp_customize ) {
 				$label = 'Tencent Weibo';
 			} elseif ( $social_site == 'paypal' ) {
 				$label = 'PayPal';
+			} elseif ( $social_site == 'email-form' ) {
+				$label = 'Contact Form';
 			}
 
-			// setting
-			$wp_customize->add_setting( $social_site, array(
-				'sanitize_callback' => 'esc_url_raw'
-			) );
+			if ( $social_site == 'skype' ) {
+				// setting
+				$wp_customize->add_setting( $social_site, array(
+					'sanitize_callback' => 'ct_author_sanitize_skype'
+				) );
+			} else {
+				// setting
+				$wp_customize->add_setting( $social_site, array(
+					'sanitize_callback' => 'esc_url_raw'
+				) );
+			}
 			// control
 			$wp_customize->add_control( $social_site, array(
 				'type'     => 'url',
@@ -287,130 +288,6 @@ function ct_author_add_customizer_content( $wp_customize ) {
 		'settings' => 'custom_css'
 	) );
 
-
-	/*
-	 * PRO only sections
-	 */
-
-	/***** Header Image *****/
-
-	// section
-	$wp_customize->add_section( 'author_header_image', array(
-		'title'    => __( 'Header Image', 'author' ),
-		'priority' => 35
-	) );
-	// setting
-	$wp_customize->add_setting( 'header_image_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new author_description_control(
-		$wp_customize, 'header_image_ad', array(
-			'section'     => 'author_header_image',
-			'settings'    => 'header_image_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> for advanced header image functionality.', 'author' ), 'https://www.competethemes.com/author-pro/' )
-		)
-	) );
-
-	/***** Colors *****/
-
-	// section
-	$wp_customize->add_section( 'author_colors', array(
-		'title'    => __( 'Colors', 'author' ),
-		'priority' => 50
-	) );
-	// setting
-	$wp_customize->add_setting( 'colors_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new author_description_control(
-		$wp_customize, 'colors_ad', array(
-			'section'     => 'author_colors',
-			'settings'    => 'colors_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to change your colors.', 'author' ), 'https://www.competethemes.com/author-pro/' )
-		)
-	) );
-
-	/***** Background *****/
-
-	// section
-	$wp_customize->add_section( 'author_background', array(
-		'title'    => __( 'Background', 'author' ),
-		'priority' => 55
-	) );
-	// setting
-	$wp_customize->add_setting( 'background_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new author_description_control(
-		$wp_customize, 'background_ad', array(
-			'section'     => 'author_background',
-			'settings'    => 'background_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> for advanced background image and texture functionality.', 'author' ), 'https://www.competethemes.com/author-pro/' )
-		)
-	) );
-
-	/***** Fonts *****/
-
-	// section
-	$wp_customize->add_section( 'author_font', array(
-		'title'    => __( 'Font', 'author' ),
-		'priority' => 40
-	) );
-	// setting
-	$wp_customize->add_setting( 'font_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new author_description_control(
-		$wp_customize, 'font_ad', array(
-			'section'     => 'author_font',
-			'settings'    => 'font_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to change your font.', 'author' ), 'https://www.competethemes.com/author-pro/' )
-		)
-	) );
-
-	/***** Display Control *****/
-
-	// section
-	$wp_customize->add_section( 'author_display_control', array(
-		'title'    => __( 'Display Controls', 'author' ),
-		'priority' => 70
-	) );
-	// setting
-	$wp_customize->add_setting( 'display_control_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new author_description_control(
-		$wp_customize, 'display_control_ad', array(
-			'section'     => 'author_display_control',
-			'settings'    => 'display_control_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to get hide/show controls.', 'author' ), 'https://www.competethemes.com/author-pro/' )
-		)
-	) );
-
-	/***** Footer Text *****/
-
-	// section
-	$wp_customize->add_section( 'author_footer_text', array(
-		'title'    => __( 'Footer Text', 'author' ),
-		'priority' => 85
-	) );
-	// setting
-	$wp_customize->add_setting( 'footer_text_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new author_description_control(
-		$wp_customize, 'footer_text_ad', array(
-			'section'     => 'author_footer_text',
-			'settings'    => 'footer_text_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Author Pro Plugin</a> to customize the footer text.', 'author' ), 'https://www.competethemes.com/author-pro/' )
-		)
-	) );
 }
 
 /***** Custom Sanitization Functions *****/
@@ -474,6 +351,10 @@ function ct_author_sanitize_yes_no_settings( $input ) {
 
 function ct_author_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
+}
+
+function ct_author_sanitize_skype( $input ) {
+	return esc_url_raw( $input, array( 'http', 'https', 'skype' ) );
 }
 
 function ct_author_sanitize_css( $css ) {
