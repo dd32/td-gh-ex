@@ -415,7 +415,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Facebook Url","suevafree"),
-				"description" => __( "Insert Facebook Url (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Facebook Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_facebook_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -426,7 +426,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Twitter Url","suevafree"),
-				"description" => __( "Insert Twitter Url (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Twitter Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_twitter_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -437,7 +437,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Flickr Url","suevafree"),
-				"description" => __( "Insert Flickr Url (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Flickr Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_flickr_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -448,7 +448,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Google Url","suevafree"),
-				"description" => __( "Insert Google Url (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Google Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_google_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -459,7 +459,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Linkedin Url","suevafree"),
-				"description" => __( "Insert Linkedin Url (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Linkedin Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_linkedin_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -470,7 +470,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Myspace Url","suevafree"),
-				"description" => __( "Insert Myspace Url (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Myspace Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_myspace_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -481,7 +481,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Pinterest Url","suevafree"),
-				"description" => __( "Insert Pinterest Url (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Pinterest Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_pinterest_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -492,7 +492,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Tumblr Url","suevafree"),
-				"description" => __( "Insert Tumblr Url (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Tumblr Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_tumblr_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -503,7 +503,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Youtube Url","suevafree"),
-				"description" => __( "Insert Youtube Url (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Youtube Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_youtube_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -514,7 +514,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Vimeo Url","suevafree"),
-				"description" => __( "Insert Vimeo Url (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Vimeo Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_vimeo_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -524,8 +524,85 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array( 
 
+				"label" => __( "Instagram Url","suevafree"),
+				"description" => __( "Insert Instagram Url (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_instagram_button",
+				"type" => "url",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
+				"label" => __( "Deviantart Url","suevafree"),
+				"description" => __( "Insert Deviantart Url (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_deviantart_button",
+				"type" => "url",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
+				"label" => __( "Github Url","suevafree"),
+				"description" => __( "Insert Github Url (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_github_button",
+				"type" => "url",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
+				"label" => __( "Xing Url","suevafree"),
+				"description" => __( "Insert Xing Url (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_xing_button",
+				"type" => "url",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+			
+			array( 
+
+				"label" => __( "Dribbble Url","suevafree"),
+				"description" => __( "Insert Dribbble Url (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_dribbble_button",
+				"type" => "url",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+			
+			array( 
+
+				"label" => __( "Dropbox Url","suevafree"),
+				"description" => __( "Insert Dropbox Url (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_dropbox_button",
+				"type" => "url",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+			
+			array( 
+
+				"label" => __( "Whatsapp Number","suevafree"),
+				"description" => __( "Insert Whatsapp number (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_whatsapp_button",
+				"type" => "button",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
 				"label" => __( "Skype Url","suevafree"),
-				"description" => __( "Insert Skype ID (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Skype ID (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_skype_button",
 				"type" => "button",
 				"section" => "footer_section",
@@ -536,7 +613,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Email Address","suevafree"),
-				"description" => __( "Insert Email Address (empty if you want to hide the button)","suevafree"),
+				"description" => __( "Insert Email Address (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_email_button",
 				"type" => "button",
 				"section" => "footer_section",

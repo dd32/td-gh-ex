@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-06 17:51+0100\n"
-"PO-Revision-Date: 2016-02-06 17:51+0100\n"
+"POT-Creation-Date: 2016-02-10 17:49+0100\n"
+"PO-Revision-Date: 2016-02-10 17:52+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -90,18 +90,18 @@ msgstr ""
 #: core/admin/customize/customize.php:17 core/admin/customize/customize.php:176
 #: core/admin/customize/customize.php:192
 #: core/admin/customize/customize.php:208
-#: core/admin/customize/customize.php:555
+#: core/admin/customize/customize.php:632
 msgid "No"
 msgstr "No"
 
 #: core/admin/customize/customize.php:18 core/admin/customize/customize.php:177
 #: core/admin/customize/customize.php:193
 #: core/admin/customize/customize.php:209
-#: core/admin/customize/customize.php:556
+#: core/admin/customize/customize.php:633
 msgid "Yes"
 msgstr "Si"
 
-#: core/admin/customize/customize.php:29 core/classes/customize.php:308
+#: core/admin/customize/customize.php:29 core/classes/customize.php:313
 msgid "Get support"
 msgstr "Ottieni supporto."
 
@@ -384,9 +384,9 @@ msgid "Facebook Url"
 msgstr "Url Facebook"
 
 #: core/admin/customize/customize.php:418
-msgid "Insert Facebook Url (empty if you want to hide the button)"
+msgid "Insert Facebook Url (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci l'url di Facebook, lascia il campo vuoto per non visualizzare il "
+"Inserisci l’url di Facebook, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
 #: core/admin/customize/customize.php:428
@@ -394,9 +394,9 @@ msgid "Twitter Url"
 msgstr "Url Twitter"
 
 #: core/admin/customize/customize.php:429
-msgid "Insert Twitter Url (empty if you want to hide the button)"
+msgid "Insert Twitter Url (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci l'url di Twitter, lascia il campo vuoto per non visualizzare il "
+"Inserisci l’url di Twitter, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
 #: core/admin/customize/customize.php:439
@@ -404,9 +404,9 @@ msgid "Flickr Url"
 msgstr "Url Flickr"
 
 #: core/admin/customize/customize.php:440
-msgid "Insert Flickr Url (empty if you want to hide the button)"
+msgid "Insert Flickr Url (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci l'url di Flickr, lascia il campo vuoto per non visualizzare il "
+"Inserisci l’url di Flickr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
 #: core/admin/customize/customize.php:450
@@ -414,9 +414,9 @@ msgid "Google Url"
 msgstr "Url Google"
 
 #: core/admin/customize/customize.php:451
-msgid "Insert Google Url (empty if you want to hide the button)"
+msgid "Insert Google Url (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci l'url di Google, lascia il campo vuoto per non visualizzare il "
+"Inserisci l’url di Google, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
 #: core/admin/customize/customize.php:461
@@ -424,9 +424,9 @@ msgid "Linkedin Url"
 msgstr "Url Linkedin"
 
 #: core/admin/customize/customize.php:462
-msgid "Insert Linkedin Url (empty if you want to hide the button)"
+msgid "Insert Linkedin Url (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci l'url di Linkedin, lascia il campo vuoto per non visualizzare il "
+"Inserisci l’url di LinkedIn, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
 #: core/admin/customize/customize.php:472
@@ -434,9 +434,9 @@ msgid "Myspace Url"
 msgstr "Url Myspace"
 
 #: core/admin/customize/customize.php:473
-msgid "Insert Myspace Url (empty if you want to hide the button)"
+msgid "Insert Myspace Url (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci l'url di Myspace, lascia il campo vuoto per non visualizzare il "
+"Inserisci l’url di Myspace, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
 #: core/admin/customize/customize.php:483
@@ -444,9 +444,9 @@ msgid "Pinterest Url"
 msgstr "Url Pinterest"
 
 #: core/admin/customize/customize.php:484
-msgid "Insert Pinterest Url (empty if you want to hide the button)"
+msgid "Insert Pinterest Url (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci l'url di Pinterest, lascia il campo vuoto per non visualizzare il "
+"Inserisci l’url di Pinterest, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
 #: core/admin/customize/customize.php:494
@@ -454,9 +454,9 @@ msgid "Tumblr Url"
 msgstr "Url Tumblr"
 
 #: core/admin/customize/customize.php:495
-msgid "Insert Tumblr Url (empty if you want to hide the button)"
+msgid "Insert Tumblr Url (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci l'url di Tumblr, lascia il campo vuoto per non visualizzare il "
+"Inserisci l’url di Tumblr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
 #: core/admin/customize/customize.php:505
@@ -464,9 +464,9 @@ msgid "Youtube Url"
 msgstr "Url Youtube"
 
 #: core/admin/customize/customize.php:506
-msgid "Insert Youtube Url (empty if you want to hide the button)"
+msgid "Insert Youtube Url (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci l'url di Youtube, lascia il campo vuoto per non visualizzare il "
+"Inserisci l’url di YouTube, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
 #: core/admin/customize/customize.php:516
@@ -474,131 +474,199 @@ msgid "Vimeo Url"
 msgstr "Url Vimeo"
 
 #: core/admin/customize/customize.php:517
-msgid "Insert Vimeo Url (empty if you want to hide the button)"
+msgid "Insert Vimeo Url (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci l'url di Vimeo, lascia il campo vuoto per non visualizzare il "
+"Inserisci l’url di Vimeo, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
 #: core/admin/customize/customize.php:527
-msgid "Skype Url"
-msgstr "Url Skype"
+msgid "Instagram Url"
+msgstr "Url Instagram"
 
 #: core/admin/customize/customize.php:528
-msgid "Insert Skype ID (empty if you want to hide the button)"
+msgid "Insert Instagram Url (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci l'url di Skype, lascia il campo vuoto per non visualizzare il "
+"Inserisci l’url di Instagram, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
 #: core/admin/customize/customize.php:538
+msgid "Deviantart Url"
+msgstr "Url Deviantart"
+
+#: core/admin/customize/customize.php:539
+msgid "Insert Deviantart Url (leave empty if you want to hide the button)"
+msgstr ""
+"Inserire l’url di Deviantart (lasciare vuoto se si desidera nascondere il "
+"pulsante)"
+
+#: core/admin/customize/customize.php:549
+msgid "Github Url"
+msgstr " Url Github"
+
+#: core/admin/customize/customize.php:550
+msgid "Insert Github Url (leave empty if you want to hide the button)"
+msgstr ""
+"Inserisci l’url di Github, lascia il campo vuoto per non visualizzare il "
+"pulsante."
+
+#: core/admin/customize/customize.php:560
+msgid "Xing Url"
+msgstr ""
+
+#: core/admin/customize/customize.php:561
+msgid "Insert Xing Url (leave empty if you want to hide the button)"
+msgstr "Inserire l’url di Xing (lasciare vuoto per nascondere il pulsante)."
+
+#: core/admin/customize/customize.php:571
+msgid "Dribbble Url"
+msgstr "Url Dribbble"
+
+#: core/admin/customize/customize.php:572
+msgid "Insert Dribbble Url (leave empty if you want to hide the button)"
+msgstr ""
+"Inserire l’url di Dribbble (lasciare vuoto se si desidera nascondere il "
+"pulsante)"
+
+#: core/admin/customize/customize.php:582
+msgid "Dropbox Url"
+msgstr "Url Dropbox"
+
+#: core/admin/customize/customize.php:583
+msgid "Insert Dropbox Url (leave empty if you want to hide the button)"
+msgstr ""
+"Inserire url di Dropbox (lasciare vuoto se si desidera nascondere il "
+"pulsante)"
+
+#: core/admin/customize/customize.php:593
+msgid "Whatsapp Number"
+msgstr ""
+
+#: core/admin/customize/customize.php:594
+msgid "Insert Whatsapp number (leave empty if you want to hide the button)"
+msgstr ""
+"Inserisci il numero WhatsApp, lascia il campo vuoto per non visualizzare il "
+"pulsante."
+
+#: core/admin/customize/customize.php:604
+msgid "Skype Url"
+msgstr "Url Skype"
+
+#: core/admin/customize/customize.php:605
+msgid "Insert Skype ID (leave empty if you want to hide the button)"
+msgstr ""
+"Inserisci l’url di Skype, lascia il campo vuoto per non visualizzare il "
+"pulsante."
+
+#: core/admin/customize/customize.php:615
 msgid "Email Address"
 msgstr "Indirizzo email"
 
-#: core/admin/customize/customize.php:539
-msgid "Insert Email Address (empty if you want to hide the button)"
+#: core/admin/customize/customize.php:616
+msgid "Insert Email Address (leave empty if you want to hide the button)"
 msgstr ""
-"Inserisci la tua email, lascia il campo vuoto per non visualizzare il "
-"pulsante."
+"Inserire indirizzo Email (lasciare vuoto se si desidera nascondere il "
+"pulsante)"
 
-#: core/admin/customize/customize.php:549
+#: core/admin/customize/customize.php:626
 msgid "Feed Rss Button"
 msgstr "Pulsante Feed Rss"
 
-#: core/admin/customize/customize.php:550
+#: core/admin/customize/customize.php:627
 msgid "Do you want to display the Feed Rss button?"
 msgstr "Vuoi visualizzare il pulsante dei Feed Rss?"
 
-#: core/admin/customize/customize.php:567
-#: core/admin/customize/customize.php:568
+#: core/admin/customize/customize.php:644
+#: core/admin/customize/customize.php:645
 msgid "Typography"
 msgstr "Tipografia"
 
-#: core/admin/customize/customize.php:579
+#: core/admin/customize/customize.php:656
 msgid "Logo"
 msgstr "Logo"
 
-#: core/admin/customize/customize.php:589
-#: core/admin/customize/customize.php:623
-#: core/admin/customize/customize.php:646
+#: core/admin/customize/customize.php:666
+#: core/admin/customize/customize.php:700
+#: core/admin/customize/customize.php:723
 msgid "Font size"
 msgstr "Grandezza del font"
 
-#: core/admin/customize/customize.php:590
+#: core/admin/customize/customize.php:667
 msgid "Insert a size, for logo font (For example, 60px) "
 msgstr "Inserisci una grandezza, per il logo (Ad esempio, 60px)"
 
-#: core/admin/customize/customize.php:600
+#: core/admin/customize/customize.php:677
 msgid "Description font size"
 msgstr "Grandezza per la descrizione del logo"
 
-#: core/admin/customize/customize.php:601
+#: core/admin/customize/customize.php:678
 msgid "Insert a size, for logo description (For example, 14px) "
 msgstr "Seleziona una grandezza per la descrizione del logo (Ad esempio, 14px)"
 
-#: core/admin/customize/customize.php:613
+#: core/admin/customize/customize.php:690
 msgid "Menu"
 msgstr "Menu"
 
-#: core/admin/customize/customize.php:624
+#: core/admin/customize/customize.php:701
 msgid "Insert a size, for menu font (For example, 14px) "
 msgstr "Inserisci una grandezza, per il menu (Ad esempio, 14px)"
 
-#: core/admin/customize/customize.php:636
+#: core/admin/customize/customize.php:713
 msgid "Content"
 msgstr "Contenuto"
 
-#: core/admin/customize/customize.php:647
+#: core/admin/customize/customize.php:724
 msgid "Insert a size, for content font (For example, 14px) "
 msgstr "Inserisci una grandezza, per il font del contenuto (ad esempio, 14px)"
 
-#: core/admin/customize/customize.php:660
+#: core/admin/customize/customize.php:737
 msgid "Headlines"
 msgstr "Titoli"
 
-#: core/admin/customize/customize.php:670
+#: core/admin/customize/customize.php:747
 msgid "H1 headline"
 msgstr "Elementi H1"
 
-#: core/admin/customize/customize.php:671
+#: core/admin/customize/customize.php:748
 msgid "Insert a size, for for H1 elements (For example, 24px) "
 msgstr "Inserisci una grandezza, per i titoli H1 (Ad esempio, 24px)"
 
-#: core/admin/customize/customize.php:681
+#: core/admin/customize/customize.php:758
 msgid "H2 headline"
 msgstr "Elementi H2"
 
-#: core/admin/customize/customize.php:682
+#: core/admin/customize/customize.php:759
 msgid "Insert a size, for for H2 elements (For example, 22px) "
 msgstr "Inserisci una grandezza, per i titoli H2 (Ad esempio, 22px)"
 
-#: core/admin/customize/customize.php:692
+#: core/admin/customize/customize.php:769
 msgid "H3 headline"
 msgstr "Elementi H3"
 
-#: core/admin/customize/customize.php:693
+#: core/admin/customize/customize.php:770
 msgid "Insert a size, for for H3 elements (For example, 20px) "
 msgstr "Inserisci una grandezza, per i titoli H3 (Ad esempio, 20px)"
 
-#: core/admin/customize/customize.php:703
+#: core/admin/customize/customize.php:780
 msgid "H4 headline"
 msgstr "\"\"Elementi H4"
 
-#: core/admin/customize/customize.php:704
+#: core/admin/customize/customize.php:781
 msgid "Insert a size, for for H4 elements (For example, 18px) "
 msgstr "Inserisci una grandezza, per i titoli H4 (Ad esempio, 18px)"
 
-#: core/admin/customize/customize.php:714
+#: core/admin/customize/customize.php:791
 msgid "H5 headline"
 msgstr "Elementi H5"
 
-#: core/admin/customize/customize.php:715
+#: core/admin/customize/customize.php:792
 msgid "Insert a size, for for H5 elements (For example, 16px) "
 msgstr "Inserisci una grandezza, per i titoli H5 (Ad esempio, 16px)"
 
-#: core/admin/customize/customize.php:725
+#: core/admin/customize/customize.php:802
 msgid "H6 headline"
 msgstr "Elementi H6"
 
-#: core/admin/customize/customize.php:726
+#: core/admin/customize/customize.php:803
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr "Inserisci una grandezza, per i titoli H6 (Ad esempio, 14px)"
 
@@ -606,7 +674,7 @@ msgstr "Inserisci una grandezza, per i titoli H6 (Ad esempio, 14px)"
 msgid "Upgrade to Sueva Premium"
 msgstr "Aggiorna a Sueva Premium"
 
-#: core/classes/customize.php:312
+#: core/classes/customize.php:317
 msgid ""
 "If you've opened a new support ticket from <strong>WordPress.org</strong>, "
 "please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
@@ -616,15 +684,15 @@ msgstr ""
 "invia un promemoria a <strong>support@wpinprogress.com</strong>, per "
 "ottenere rapidamente una risposta."
 
-#: core/classes/customize.php:316
+#: core/classes/customize.php:321
 msgid "Open a new ticket"
 msgstr "Apri un nuovo ticket."
 
-#: core/classes/customize.php:317
+#: core/classes/customize.php:322
 msgid "Send a reminder"
 msgstr "Invia un promemoria."
 
-#: core/classes/customize.php:322
+#: core/classes/customize.php:327
 msgid ""
 "If you like this theme and support, <strong>I'd appreciate</strong> any of "
 "the following:"
@@ -632,15 +700,15 @@ msgstr ""
 "Se ti piace il tema oppure il servizio di supporto, <strong>è gradita</"
 "strong> una delle seguenti azioni:"
 
-#: core/classes/customize.php:326
+#: core/classes/customize.php:331
 msgid "Rate this Theme"
 msgstr "Valuta questo tema."
 
-#: core/classes/customize.php:327
+#: core/classes/customize.php:332
 msgid "Like on Facebook"
 msgstr "Seguici su Facebook."
 
-#: core/classes/customize.php:328
+#: core/classes/customize.php:333
 msgid "Subscribe our newsletter"
 msgstr "Registrati alla nostra newsletter."
 
@@ -1148,6 +1216,66 @@ msgstr "Informazioni aggiuntive"
 #: woocommerce/single-product/up-sells.php:47
 msgid "You may also like&hellip;"
 msgstr ""
+
+#~ msgid "Insert Facebook Url (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci l'url di Facebook, lascia il campo vuoto per non visualizzare "
+#~ "il pulsante."
+
+#~ msgid "Insert Twitter Url (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci l'url di Twitter, lascia il campo vuoto per non visualizzare il "
+#~ "pulsante."
+
+#~ msgid "Insert Flickr Url (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci l'url di Flickr, lascia il campo vuoto per non visualizzare il "
+#~ "pulsante."
+
+#~ msgid "Insert Google Url (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci l'url di Google, lascia il campo vuoto per non visualizzare il "
+#~ "pulsante."
+
+#~ msgid "Insert Linkedin Url (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci l'url di Linkedin, lascia il campo vuoto per non visualizzare "
+#~ "il pulsante."
+
+#~ msgid "Insert Myspace Url (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci l'url di Myspace, lascia il campo vuoto per non visualizzare il "
+#~ "pulsante."
+
+#~ msgid "Insert Pinterest Url (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci l'url di Pinterest, lascia il campo vuoto per non visualizzare "
+#~ "il pulsante."
+
+#~ msgid "Insert Tumblr Url (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci l'url di Tumblr, lascia il campo vuoto per non visualizzare il "
+#~ "pulsante."
+
+#~ msgid "Insert Youtube Url (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci l'url di Youtube, lascia il campo vuoto per non visualizzare il "
+#~ "pulsante."
+
+#~ msgid "Insert Vimeo Url (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci l'url di Vimeo, lascia il campo vuoto per non visualizzare il "
+#~ "pulsante."
+
+#~ msgid "Insert Skype ID (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci l'url di Skype, lascia il campo vuoto per non visualizzare il "
+#~ "pulsante."
+
+#~ msgid "Insert Email Address (empty if you want to hide the button)"
+#~ msgstr ""
+#~ "Inserisci la tua email, lascia il campo vuoto per non visualizzare il "
+#~ "pulsante."
 
 #~ msgid "Aside"
 #~ msgstr "Disgressione"

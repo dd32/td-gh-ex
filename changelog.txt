@@ -1,7 +1,8 @@
 SuevaFree Changelog
 
-- Version 2.0.4 - Released: 10.02.2016
+- Version 2.0.5 - Released: 10.02.2016
 
+-- Added: New social icons ( Instagram, Deviantart, Github, Xing, Dribbble, Dropbox and WhatsApp )
 -- Fixed: Issue with Skype and Email social buttons.
 
 - Version 2.0.3 - Released: 09.02.2016

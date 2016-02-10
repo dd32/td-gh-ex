@@ -280,6 +280,7 @@ class suevafree_customize {
 		
 			'suevafree_footer_email_button' => 'mailto:',
 			'suevafree_footer_skype_button' => 'skype:',
+			'suevafree_footer_whatsapp_button' => 'tel:',
 		
 		);
 		
@@ -291,7 +292,7 @@ class suevafree_customize {
 	
 			} else {
 	
-				return esc_url_raw( $value, array('skype', 'mailto'));
+				return esc_url_raw( $value, array('skype', 'mailto', 'tel'));
 	
 			}
 			

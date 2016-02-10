@@ -4,7 +4,7 @@ Theme URI: https://www.themeinprogress.com/sueva/
 Description: Suevafree is a free responsive clean and corporate Tumblelog WordPress theme, perfect to manage your personal, lifestyle, travel, food, recipes or fashion blog. Now is ecommerce ready and is optimized to work with WooCommerce and Contact Form 7 plugins. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3. 
 Author: ThemeinProgress.
 Author URI: https://www.themeinprogress.com
-Version: 2.0.4
+Version: 2.0.5
 Tags: gray, light, black, orange, blue, pink, purple, yellow, green, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options,responsive-layout, translation-ready, one-column, photoblogging, featured-images, full-width-template, post-formats
 Text Domain: suevafree
 Domain Path: /languages
@@ -1104,35 +1104,7 @@ form#searchform #searchsubmit {
 
 /* END DEFAULT ELEMENTS */
 
-/* START SOCIAL BUTTON */
-
-.social-button { 
-	float:left; 
-	height:20px; 
-	margin-top:20px; 
-	width:auto;
-}
-.facebook-box {
-	width:102px;
-}
-.facebook-box.en {
-	width:82px;
-}
-.google-plus { 
-	width:65px;
-}
-.twitter-box { 
-	width:85px;
-}
-.pinterest { 
-	width:85px;
-	margin-top:19px; 
-}
-
-/* END SOCIAL BUTTON */
-
 /* START DEFAULT STYLE */
-
 
 .entry-tags { 
 	font-family: 'Raleway',Verdana, Geneva, sans-serif;
@@ -1573,19 +1545,29 @@ tr:nth-child(2n+2) {
 .socials { 
 	float:right;
 }
+
 .socials a { 
 	display:inline-block; 
-	margin: 0 0 0 5px; 
+	margin: 0; 
 	height:24px;
 	width:24px;
-	text-indent:-9999px; 
+	background:#444649;
 	filter: none !important;
+	text-align:center;
+	line-height:24px;
 }
+
 .socials a:hover { 
 	opacity: 0.7; 
 	filter: alpha(opacity=70);
 	border-bottom:none;
+	color:#fff !important
 }
+
+.socials a.myspace { 
+	background:url('assets/images/icons/social/myspace.png') no-repeat;
+}
+
 .tipsy { 
 	padding: 5px; 
 	font-size: 10px; 
@@ -1594,46 +1576,6 @@ tr:nth-child(2n+2) {
 	filter: alpha(opacity=80); 
 	background-repeat: no-repeat;  
 	background-image: url(assets/images/icons/tipsy.gif);
-}
-
-a.facebook { 
-	background:url('assets/images/icons/social/facebook.png') no-repeat;
-}
-a.flickr { 
-	background:url('assets/images/icons/social/flickr.png') no-repeat;
-}
-a.google  { 
-	background:url('assets/images/icons/social/google.png') no-repeat;
-}
-a.linkedin  { 
-	background:url('assets/images/icons/social/linkedin.png') no-repeat;
-}
-a.myspace  { 
-	background:url('assets/images/icons/social/myspace.png') no-repeat;
-}
-a.pinterest {  
-	background:url('assets/images/icons/social/pinterest.png') no-repeat;
-}
-a.rss { 
-	background:url('assets/images/icons/social/rss.png') no-repeat;
-}
-a.skype  { 
-	background:url('assets/images/icons/social/skype.png') no-repeat;
-}
-a.tumblr  { 
-	background:url('assets/images/icons/social/tumblr.png') no-repeat;
-}
-a.twitter { 
-	background:url('assets/images/icons/social/twitter.png') no-repeat;
-}
-a.vimeo  { 
-	background:url('assets/images/icons/social/vimeo.png') no-repeat;
-}
-a.youtube  { 
-	background:url('assets/images/icons/social/youtube.png') no-repeat;
-}
-a.email  { 
-	background:url('assets/images/icons/social/email.png') no-repeat;
 }
 
 .tipsy-inner { 
