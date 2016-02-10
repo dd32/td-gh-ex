@@ -282,15 +282,19 @@ class suevafree_customize {
 			'suevafree_footer_skype_button' => 'skype:',
 		
 		);
-
-		if ( !strstr ( $value, $sanize[$setting->id]) ) :
-
-			return $sanize[$setting->id] . $value;
-
-		else:
-
-			return esc_url_raw($value, array('skype', 'mailto'));
-
+		
+		if ( $value ) :
+	
+			if ( !strstr ( $value, $sanize[$setting->id]) ) {
+	
+				return $sanize[$setting->id] . $value ;
+	
+			} else {
+	
+				return esc_url_raw( $value, array('skype', 'mailto'));
+	
+			}
+			
 		endif;
 
 	}

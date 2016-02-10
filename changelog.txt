@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 2.0.4 - Released: 10.02.2016
+
+-- Fixed: Issue with Skype and Email social buttons.
+
 - Version 2.0.3 - Released: 09.02.2016
 
 -- Fixed: Image as logo mobile issue.
