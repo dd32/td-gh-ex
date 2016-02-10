@@ -284,6 +284,14 @@ class suevafree_customize {
 		
 		);
 		
+		$sanize = array (
+		
+			'suevafree_footer_email_button' => 'mailto:',
+			'suevafree_footer_skype_button' => 'skype:',
+			'suevafree_footer_whatsapp_button' => 'tel:',
+		
+		);
+		
 		if ( $value ) :
 	
 			if ( !strstr ( $value, $sanize[$setting->id]) ) {
@@ -296,6 +304,10 @@ class suevafree_customize {
 	
 			}
 			
+		else:
+		
+			return '';
+		
 		endif;
 
 	}
