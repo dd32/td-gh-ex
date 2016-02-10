@@ -91,7 +91,7 @@ class Aglee_Lite_Services_Widget extends WP_Widget {
             if($feat_query->have_posts()) :
                 ?>
                 <div class="service-post-wrapper-block clearfix">
-                <h1>Our services</h1>
+                <h1><?php _e('Our services','aglee-lite'); ?></h1>
                 <?php
                 while($feat_query->have_posts()) : $feat_query->the_post();
                     $img = wp_get_attachment_image_src(get_post_thumbnail_id(),'services-thumb', true);
@@ -101,9 +101,9 @@ class Aglee_Lite_Services_Widget extends WP_Widget {
                         <figure class="services-post-thumbnail">
                             <a href="<?php the_permalink(); ?>">
                                 <?php if(has_post_thumbnail()) : ?>
-                                    <img src="<?php echo $img_src; ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" />
+                                    <img src="<?php echo esc_url($img_src); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" />
                                 <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri().'/images/no-services-thumbnail.png'; ?>" />
+                                    <img src="<?php echo esc_url(get_template_directory_uri().'/images/no-services-thumbnail.png'); ?>" />
                                 <?php endif; ?>
                             </a>
                             <figcaption> 

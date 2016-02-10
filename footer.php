@@ -10,7 +10,7 @@
 
 	</div><!-- #content -->
 	<footer id="colophon" class="site-footer" role="contentinfo">
-        <?php if(($show_footer_featured_section = get_theme_mod('footer_widget')) == 1) : ?>
+        <?php if(($aglee_lite_show_footer_featured_section = get_theme_mod('footer_widget')) == 1) : ?>
             <div class="footer-featured-section">
                 <div class="ap-container clearfix">
                     <div class="featured-footer-wrap">
@@ -44,9 +44,9 @@
                 <div class="copyright-info">
                     Copyright &copy; <?php the_date( 'Y' ); ?> <a href="<?php get_home_url(); ?>">
                         <?php 
-                        $footer_text = get_theme_mod('aglee_lite_footertext','AgleeLite');
-                        if(!empty($footer_text)){
-                            echo esc_attr($footer_text);                              
+                        $aglee_lite_footer_text = get_theme_mod('aglee_lite_footertext','AgleeLite');
+                        if(!empty($aglee_lite_footer_text)){
+                            echo esc_attr($aglee_lite_footer_text);                              
                         }else{
                             echo bloginfo('name');
                         }
@@ -55,7 +55,7 @@
                     <span class="sep"> | </span>
                         <a target="_blank" href="<?php echo esc_url( __( 'http://wordpress.org/', 'aglee-lite' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'aglee-lite' ), 'WordPress' ); ?></a>
         			<span class="sep"> | </span>
-                        <?php _e( 'Theme: ', 'aglee-lite' ); ?><a href="<?php esc_url('http://ww38.themes.com/'); ?>" target="_blank" rel="designer">Aglee Lite</a>
+                        <?php _e( 'Theme: ', 'aglee-lite' ); ?><a href="<?php esc_url('http://ww38.themes.com/'); ?>" target="_blank" rel="designer"><?php _e('Aglee Lite', 'aglee-lite'); ?></a>
                 </div>
                 <?php if(is_active_sidebar('aglee_footer_social_links')) : ?>
                 <div class="footer-socials">

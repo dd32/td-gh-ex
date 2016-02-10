@@ -116,7 +116,7 @@ class Aglee_Lite_Cta_Widget extends WP_Widget {
 	 * @param	array	$new_instance	Values just sent to be saved.
 	 * @param	array	$old_instance	Previously saved values from database.
 	 *
-	 * @uses	accesspress_pro_widgets_updated_field_value()		defined in widget-fields.php
+	 * @uses	aglee_lite_widgets_updated_field_value()		defined in widget-fields.php
 	 *
 	 * @return	array Updated safe values to be saved.
 	 */
@@ -146,7 +146,7 @@ class Aglee_Lite_Cta_Widget extends WP_Widget {
 	 *
 	 * @param	array $instance Previously saved values from database.
 	 *
-	 * @uses	accesspress_pro_widgets_show_widget_field()		defined in widget-fields.php
+	 * @uses	aglee_lite_widgets_show_widget_field()		defined in widget-fields.php
 	 */
 	public function form( $instance ) {
 		$widget_fields = $this->widget_fields();
