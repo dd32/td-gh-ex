@@ -377,7 +377,7 @@ if (!function_exists('suevafree_post_class')) {
 				
 		endif;
 
-		if ( !is_product() ) :
+		if ( !suevafree_is_woocommerce_active('is_product') ) :
 
 			$classes[] = 'post-container col-md-12';
 
