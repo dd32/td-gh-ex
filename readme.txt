@@ -70,6 +70,11 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.2.8
+ * Fixed slider caption bacground color
+ * Mangaed position for search and random icon at mobile device
+ * Removed top menu wrapper from mobile device
+ 
 Version 2.2.7
  * Added new features of highlighted section beside slider section
  

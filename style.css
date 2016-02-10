@@ -4,7 +4,7 @@
     Author:       AccessPress Theme
     Author URI:   http://accesspressthemes.com/
     Description:  AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-    Version:      2.2.7
+    Version:      2.2.8
     License:      GNU General Public License v3 or later
     License URI:  http://www.gnu.org/licenses/gpl-3.0.html
     Text Domain:  accesspress-mag
@@ -1411,7 +1411,7 @@
     margin-bottom: 5px;
     color: #fff;
       }
-      .post-desc-wrapper .post-title a{
+.signle-highlight-post .post-desc-wrapper .post-title a{
             color: #FFF;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
@@ -1587,13 +1587,29 @@
         width: 22px;
     }
     .mag-slider-caption .slide-title {
+        background: none repeat scroll 0 0 rgba(250, 53, 34, 0.5);
         color: #ffffff;
+        font-family: "Oswald",sans-serif;
         font-size: 24px;
-        font-weight: 400;
-        margin: 0 0 18px;
-        line-height: 25px;
-        font-family: 'Oswald', sans-serif;
+        font-weight: 300;
+        line-height: 22px;
+        margin: 0 0 0;
+        padding: 8px 10px;
         text-transform: uppercase;
+        float: left;
+    }
+    .slider-highlight-section .mag-slider-caption .slide-title {
+        bottom: 0;
+        color: #ffffff;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        padding: 7px 5px;
+        z-index: 99;
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+        background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+        background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.8));
     }
     .slide-excerpt {
         background: none repeat scroll 0 0 rgba(250, 53, 34, 0.5);
@@ -1625,19 +1641,7 @@
     .small_slide {
         margin-bottom: 2px;
         position: relative;
-    }
-    .mag-slider-caption .slide-title {
-       
-        color: #ffffff;
-        font-family: "Oswald",sans-serif;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: 31px;
-        margin: 0 0 0;
-        padding: 8px 10px;
-        text-transform: uppercase;
-        float: left;
-    }
+    }    
     .mag-small-slider-caption .slide-title {
         background: none repeat scroll 0 0 rgba(250, 53, 34, 0.8);
         font-size: 16px;
