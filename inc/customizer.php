@@ -20,16 +20,6 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	/***** Add Custom Controls *****/
-	/* Ad Controls */
-
-	class apex_description_control extends WP_Customize_Control {
-
-		public function render_content() {
-			echo $this->description;
-		}
-	}
-
 	/***** Logo Upload *****/
 
 	// section
@@ -113,13 +103,24 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 				$label = 'Tencent Weibo';
 			} elseif ( $social_site == 'paypal' ) {
 				$label = 'PayPal';
+			} elseif ( $social_site == 'email-form' ) {
+				$label = 'Contact Form';
 			}
 
-			// setting
-			$wp_customize->add_setting( $social_site, array(
-				'sanitize_callback' => 'esc_url_raw',
-				'transport'         => 'postMessage'
-			) );
+			if ( $social_site == 'skype' ) {
+				// setting
+				$wp_customize->add_setting( $social_site, array(
+					'sanitize_callback' => 'ct_apex_sanitize_skype',
+					'transport'         => 'postMessage'
+				) );
+			} else {
+				// setting
+				$wp_customize->add_setting( $social_site, array(
+					'sanitize_callback' => 'esc_url_raw',
+					'transport'         => 'postMessage'
+				) );
+			}
+
 			// control
 			$wp_customize->add_control( $social_site, array(
 				'type'     => 'url',
@@ -247,130 +248,6 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 		'section'  => 'apex_custom_css',
 		'settings' => 'custom_css'
 	) );
-
-	/*
-	 * PRO only sections
-	 */
-
-	/***** Header Image *****/
-
-	// section
-	$wp_customize->add_section( 'apex_header_image', array(
-		'title'    => __( 'Header Image', 'apex' ),
-		'priority' => 35
-	) );
-	// setting
-	$wp_customize->add_setting( 'header_image_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new apex_description_control(
-		$wp_customize, 'header_image_ad', array(
-			'section'     => 'apex_header_image',
-			'settings'    => 'header_image_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Apex Pro Plugin</a> for advanced header image functionality.', 'apex' ), 'https://www.competethemes.com/apex-pro/' )
-		)
-	) );
-
-	/***** Colors *****/
-
-	// section
-	$wp_customize->add_section( 'apex_colors', array(
-		'title'    => __( 'Colors', 'apex' ),
-		'priority' => 50
-	) );
-	// setting
-	$wp_customize->add_setting( 'colors_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new apex_description_control(
-		$wp_customize, 'colors_ad', array(
-			'section'     => 'apex_colors',
-			'settings'    => 'colors_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Apex Pro Plugin</a> to change your colors.', 'apex' ), 'https://www.competethemes.com/apex-pro/' )
-		)
-	) );
-
-	/***** Fonts *****/
-
-	// section
-	$wp_customize->add_section( 'apex_font', array(
-		'title'    => __( 'Font', 'apex' ),
-		'priority' => 40
-	) );
-	// setting
-	$wp_customize->add_setting( 'font_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new apex_description_control(
-		$wp_customize, 'font_ad', array(
-			'section'     => 'apex_font',
-			'settings'    => 'font_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Apex Pro Plugin</a> to change your font.', 'apex' ), 'https://www.competethemes.com/apex-pro/' )
-		)
-	) );
-
-	/***** Display Control *****/
-
-	// section
-	$wp_customize->add_section( 'apex_display_control', array(
-		'title'    => __( 'Display Controls', 'apex' ),
-		'priority' => 70
-	) );
-	// setting
-	$wp_customize->add_setting( 'display_control_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new apex_description_control(
-		$wp_customize, 'display_control_ad', array(
-			'section'     => 'apex_display_control',
-			'settings'    => 'display_control_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Apex Pro Plugin</a> to get hide/show controls.', 'apex' ), 'https://www.competethemes.com/apex-pro/' )
-		)
-	) );
-
-	/***** Footer Text *****/
-
-	// section
-	$wp_customize->add_section( 'apex_footer_text', array(
-		'title'    => __( 'Footer Text', 'apex' ),
-		'priority' => 85
-	) );
-	// setting
-	$wp_customize->add_setting( 'footer_text_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new apex_description_control(
-		$wp_customize, 'footer_text_ad', array(
-			'section'     => 'apex_footer_text',
-			'settings'    => 'footer_text_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Apex Pro Plugin</a> to customize the footer text.', 'apex' ), 'https://www.competethemes.com/apex-pro/' )
-		)
-	) );
-
-	/***** Layout *****/
-
-	// section
-	$wp_customize->add_section( 'apex_layout', array(
-		'title'    => __( 'Layout', 'apex' ),
-		'priority' => 47
-	) );
-	// setting
-	$wp_customize->add_setting( 'layout_text_ad', array(
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( new apex_description_control(
-		$wp_customize, 'layout_ad', array(
-			'section'     => 'apex_layout',
-			'settings'    => 'layout_text_ad',
-			'description' => sprintf( __( 'Activate the <a target="_blank" href="%s">Apex Pro Plugin</a> to change your layout.', 'apex' ), 'https://www.competethemes.com/apex-pro/' )
-		)
-	) );
 }
 
 /***** Custom Sanitization Functions *****/
@@ -409,6 +286,10 @@ function ct_apex_sanitize_yes_no_settings( $input ) {
 
 function ct_apex_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
+}
+
+function ct_apex_sanitize_skype( $input ) {
+	return esc_url_raw( $input, array( 'http', 'https', 'skype' ) );
 }
 
 function ct_apex_sanitize_css( $css ) {
