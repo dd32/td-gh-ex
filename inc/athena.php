@@ -27,23 +27,20 @@ function athena_scripts() {
     }
 
 
-    wp_enqueue_style('athena-font-raleway', '//fonts.googleapis.com/css?family=Raleway:400,300,600', array(), ATHENA_VERSION);
-
-    if ('Raleway, sans-serif' == get_theme_mod('theme_header_font', 'Raleway, sans-serif'))
+    if ( 'Raleway, sans-serif' == get_theme_mod('header_font', 'Raleway, sans-serif') || 'Raleway, sans-serif' == get_theme_mod('theme_font', 'Raleway, sans-serif') )
         wp_enqueue_style('athena-font-raleway', '//fonts.googleapis.com/css?family=Raleway:400,300,600', array(), ATHENA_VERSION);
 
+    if ( 'Lato, sans-serif' == get_theme_mod('header_font', 'Raleway, sans-serif') || 'Lato, sans-serif' == get_theme_mod('theme_font', 'Raleway, sans-serif') )
+        wp_enqueue_style('athena-font-lato', '//fonts.googleapis.com/css?family=Lato:400,700,300', array(), ATHENA_VERSION);
 
-    if ('Source Sans Pro, sans-serif' == get_theme_mod('theme_header_font', 'Raleway, sans-serif'))
-        wp_enqueue_style('athena-font-sans', '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600', array(), ATHENA_VERSION);
+    if ( 'Source Sans Pro, sans-serif' == get_theme_mod('header_font', 'Raleway, sans-serif') || 'Source Sans Pro, sans-serif' == get_theme_mod('theme_font', 'Raleway, sans-serif') )
+        wp_enqueue_style('athena-font-source', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,300', array(), ATHENA_VERSION);
 
-    if ('Lato, sans-serif' == get_theme_mod('theme_header_font', 'Raleway, sans-serif'))
-        wp_enqueue_style('athena-font-lato', '//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic', array(), ATHENA_VERSION);
+    if ( 'Open Sans, sans-serif' == get_theme_mod('header_font', 'Raleway, sans-serif') || 'Open Sans, sans-serif' == get_theme_mod('theme_font', 'Raleway, sans-serif') )
+        wp_enqueue_style('athena-font-opensans', '//fonts.googleapis.com/css?family=Open+Sans:400,300,600', array(), ATHENA_VERSION);
 
-    if ('Josefin Sans, sans-serif' == get_theme_mod('theme_header_font', 'Raleway, sans-serif'))
-        wp_enqueue_style('athena-font-josefin', '//fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700', array(), ATHENA_VERSION);
-
-    if ('Open Sans, sans-serif' == get_theme_mod('theme_header_font', 'Raleway, sans-serif'))
-        wp_enqueue_style('athena-font-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700', array(), ATHENA_VERSION);
+    if ( 'Lobster Two, cursive' == get_theme_mod('header_font', 'Raleway, sans-serif') || 'Lobster Two, cursive' == get_theme_mod('theme_font', 'Raleway, sans-serif') )
+        wp_enqueue_style('athena-font-lobster', '//fonts.googleapis.com/css?family=Lobster+Two:400,700', array(), ATHENA_VERSION);
 
     wp_enqueue_style('athena-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.css', array(), ATHENA_VERSION);
     wp_enqueue_style('athena-bootstrap-theme', get_template_directory_uri() . '/inc/css/bootstrap-theme.min.css', array(), ATHENA_VERSION);
@@ -276,15 +273,19 @@ function athena_render_homepage() { ?>
                         <div class="col-sm-6 parallax">
                             <h2 class="header-text animated slideInDown slide1-header"><?php echo esc_attr( get_theme_mod( 'featured_image1_title', __( 'Welcome to Athena', 'athena' )  ) ); ?></h2>
                             
-                            <a href="<?php echo esc_url( get_theme_mod( 'slide1_button1_url', '#') ); ?>" 
+                            <?php if( get_theme_mod( 'slide1_button1_text', 'True' ) ) : ?>
+                            <a href="<?php echo esc_url( get_theme_mod( 'slide1_button1_url', '#') ); ?>"
                                class="athena-button primary large animated flipInX slide1_button1 delay3">
                                 <?php echo esc_attr( get_theme_mod( 'slide1_button1_text', __( 'View Features', 'athena' )  ) ); ?>
                             </a>
-                            
-                            <a href="<?php echo esc_url( get_theme_mod( 'slide1_button2_url', '#') ); ?>" 
+                            <?php endif; ?>
+
+                            <?php if( get_theme_mod( 'slide1_button2_text', 'True' ) ) : ?>
+                            <a href="<?php echo esc_url( get_theme_mod( 'slide1_button2_url', '#') ); ?>"
                                class="athena-button default large animated flipInX slide1_button2 delay3">
                                 <?php echo esc_attr( get_theme_mod( 'slide1_button2_text', __( 'Learn More', 'athena' )  ) ); ?>
                             </a>
+                            <?php endif; ?>
                             
                         </div>
                         <div class="col-sm-6">
@@ -305,15 +306,19 @@ function athena_render_homepage() { ?>
                         <div class="col-sm-6 parallax">
                             <h2 class="header-text animated slideInDown slide2-header"><?php echo esc_attr( get_theme_mod( 'featured_image2_title', __( 'Welcome to Athena', 'athena' )  ) ); ?></h2>
                             
-                            <a href="<?php echo esc_url( get_theme_mod( 'slide2_button1_url', '#') ); ?>" 
+                            <?php if( get_theme_mod( 'slide2_button1_text', 'True' ) ) : ?>
+                            <a href="<?php echo esc_url( get_theme_mod( 'slide2_button1_url', '#') ); ?>"
                                class="athena-button primary large animated flipInX slide2_button1 delay3">
                                 <?php echo esc_attr( get_theme_mod( 'slide2_button1_text', __( 'View Features', 'athena' )  ) ); ?>
                             </a>
-                            
-                            <a href="<?php echo esc_url( get_theme_mod( 'slide2_button2_url', '#') ); ?>" 
+                            <?php endif; ?>
+
+                            <?php if( get_theme_mod( 'slide2_button2_text', 'True' ) ) : ?>
+                            <a href="<?php echo esc_url( get_theme_mod( 'slide2_button2_url', '#') ); ?>"
                                class="athena-button default large animated flipInX slide2_button2 delay3">
                                 <?php echo esc_attr( get_theme_mod( 'slide2_button2_text', __( 'Learn More', 'athena' )  ) ); ?>
                             </a>
+                            <?php endif; ?>
                             
                         </div>
                         <div class="col-sm-6">
@@ -326,7 +331,8 @@ function athena_render_homepage() { ?>
             </div>                
 
         </div>
-
+        
+        <?php if( get_theme_mod( 'overlay_bool', 'on' ) == 'on' ) : ?>
         <div id="athena-overlay-trigger">
 
             <div class="overlay-widget">
@@ -346,15 +352,17 @@ function athena_render_homepage() { ?>
                 <span class="fa fa-chevron-down scroll-down animated slideInUp delay-long"></span>
             </div>
         </div>
-        
+        <?php endif; ?>
         
     </div>
 
     <div class="clear"></div>
 
+    <?php if( get_theme_mod('callout_bool', 'on' ) == 'on' ) : ?>
+
     <div id="athena-featured">
 
-        <div class="col-sm-4 featured-box featured-box1">
+        <div class="col-sm-4 featured-box featured-box1" data-target="<?php echo esc_url( get_theme_mod( 'callout1_href', '#' ) ); ?>">
 
             <div class="reveal animated fadeInUp reveal">
 
@@ -367,10 +375,10 @@ function athena_render_homepage() { ?>
                 <p class="athena-desc"><?php echo esc_attr(get_theme_mod('callout1_text', __('Athena looks amazing on desktop and mobile devices.', 'athena'))); ?></p>
 
             </div>
-            
+
         </div>
 
-        <div class="col-sm-4 featured-box featured-box2 ">
+        <div class="col-sm-4 featured-box featured-box2" data-target="<?php echo esc_url( get_theme_mod( 'callout2_href', '#' ) ); ?>">
 
             <div class="reveal animated fadeInUp delay1">
 
@@ -383,13 +391,13 @@ function athena_render_homepage() { ?>
                 <p class="athena-desc"><?php echo esc_attr(get_theme_mod('callout2_text', __('Athena is easy to use and customize without having to touch code', 'athena'))); ?></p>
 
             </div>
-            
+
         </div>
 
-        <div class="col-sm-4 featured-box featured-box3 ">
+        <div class="col-sm-4 featured-box featured-box3" data-target="<?php echo esc_url( get_theme_mod( 'callout3_href', '#' ) ); ?>">
 
             <div class="reveal animated fadeInUp delay2">
-            
+
                 <div class="athena-icon">
                     <span class="<?php echo esc_attr(get_theme_mod('callout3_icon', __('fa fa-shopping-cart', 'athena'))); ?>"></span>
                 </div>
@@ -397,14 +405,14 @@ function athena_render_homepage() { ?>
                 <h3 class="athena-title"><?php echo esc_attr(get_theme_mod('callout3_title', __('WooCommerce', 'athena'))); ?></h3>
 
                 <p class="athena-desc"><?php echo esc_attr(get_theme_mod('callout3_text', __('Athena supports WooCommerce to build an online shopping site', 'athena'))); ?></p>
-                
+
             </div>
         </div>
 
     </div>
+  <?php endif; ?>
     
-    <div class="clear"></div>
-
+   
     
     <?php get_sidebar('homepage'); ?>
 

@@ -258,7 +258,7 @@ function athena_customize_register( $wp_customize ) {
         'section'               => 'homepage_widget',
         'mime_type'             => 'image',
         'settings'              => 'homepage_widget_background',
-        'description'           => __( 'Select the image file that you would like to use as the background image', 'athena' ),        
+        'description'           => __( 'Select the image file that you would like to use as the background image. You can change the contents of this Widget from <strong>Appearance - Widgets</strong>', 'athena' ),        
     ) ) );
     
 
@@ -280,7 +280,7 @@ function athena_customize_register( $wp_customize ) {
     
     $wp_customize->add_setting( 'overlay_bool', array (
         'default'               => 'on',
-        'transport'             => 'postMessage',
+        'transport'             => 'refresh',
         'sanitize_callback'     => 'athena_on_off_sanitize'
     ) );
     
@@ -308,131 +308,184 @@ function athena_customize_register( $wp_customize ) {
     ));
     
     
+   // **************************************************
+   // ********************* Callouts *******************
+   // **************************************************
+
+    // callouts setting
+    $wp_customize->add_setting('callout_bool', array(
+        'default' => 'on',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'athena_on_off_sanitize'
+    ));
+
+    $wp_customize->add_control('callout_bool', array(
+        'label' => __('Display Icon Callouts on Frontpage', 'athena'),
+        'section' => 'homepage_callouts',
+        'type' => 'radio',
+        'choices' => array(
+            'on' => __('Show', 'athena'),
+            'off' => __('Hide', 'athena')
+        )
+    ));
     // Callout #1
-    $wp_customize->add_setting( 'callout1_icon', array (
-        'default'               => 'fa fa-laptop',
-        'transport'             => 'postMessage',
-        'sanitize_callback'     => 'athena_icon_sanitize'
-    ) );
-    
-   $wp_customize->add_control( 'callout1_icon', array(
-        'label'   => __( 'Callout #1: Select Icon', 'athena' ),
-        'section' => 'homepage_callouts',
-        'type'    => 'select',
-        'choices'    => athena_icons()
+    $wp_customize->add_setting('callout1_icon', array(
+        'default' => 'fa fa-laptop',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'athena_icon_sanitize'
     ));
-    
-    $wp_customize->add_setting( 'callout1_title', array (
-        'default'               => 'Responsive',
-        'transport'             => 'postMessage',
-        'sanitize_callback'     => 'athena_text_sanitize'
-    ) );
-    
-    $wp_customize->add_control( 'callout1_title', array(
-        'type'                  => 'text',
-        'section'               => 'homepage_callouts',
-        'label'                 => __( 'Callout #1: Title', 'athena' ),
-        'description'           => __( 'Set the callout title text', 'athena' ),
-        
-    ) );
-    
-    $wp_customize->add_setting( 'callout1_text', array (
-        'default'               => __( 'Athena is a carefully designed and developed theme that you can use to make your site stand out', 'athena'),
-        'transport'             => 'postMessage',
-        'sanitize_callback'     => 'athena_text_sanitize'
-    ) );
-    
-    $wp_customize->add_control( 'callout1_text', array(
-        'type'                  => 'textarea',
-        'section'               => 'homepage_callouts',
-        'label'                 => __( 'Callout #1: Description', 'athena' ),
-        'description'           => __( 'Set the callout detail text', 'athena' ),
-        
-    ) );
-    
+
+    $wp_customize->add_control('callout1_icon', array(
+        'label' => __('Callout #1: Select Icon', 'athena'),
+        'section' => 'homepage_callouts',
+        'type' => 'select',
+        'choices' => athena_icons()
+    ));
+
+    $wp_customize->add_setting('callout1_title', array(
+        'default' => 'Responsive',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'athena_text_sanitize'
+    ));
+
+    $wp_customize->add_control('callout1_title', array(
+        'type' => 'text',
+        'section' => 'homepage_callouts',
+        'label' => __('Callout #1: Title', 'athena'),
+        'description' => __('Set the callout title text', 'athena'),
+    ));
+
+    $wp_customize->add_setting('callout1_href', array(
+        'default' => '#',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'esc_url_raw'
+    ));
+
+    $wp_customize->add_control('callout1_href', array(
+        'type' => 'text',
+        'section' => 'homepage_callouts',
+        'label' => __('Callout #1: Link', 'athena'),
+        'description' => __('Set the callout link URL', 'athena'),
+    ));
+
+    $wp_customize->add_setting('callout1_text', array(
+        'default' => __('Athena is a carefully designed and developed theme that you can use to make your site stand out', 'athena'),
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'athena_text_sanitize'
+    ));
+
+    $wp_customize->add_control('callout1_text', array(
+        'type' => 'textarea',
+        'section' => 'homepage_callouts',
+        'label' => __('Callout #1: Description', 'athena'),
+        'description' => __('Set the callout detail text', 'athena'),
+    ));
+
     // Callout #2
-    $wp_customize->add_setting( 'callout2_icon', array (
-        'default'               => 'fa fa-magic',
-        'transport'             => 'postMessage',
-        'sanitize_callback'     => 'athena_icon_sanitize'
-    ) );
-    
-   $wp_customize->add_control( 'callout2_icon', array(
-        'label'   => __( 'Callout #2: Select Icon', 'athena' ),
+    $wp_customize->add_setting('callout2_icon', array(
+        'default' => 'fa fa-magic',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'athena_icon_sanitize'
+    ));
+
+    $wp_customize->add_control('callout2_icon', array(
+        'label' => __('Callout #2: Select Icon', 'athena'),
         'section' => 'homepage_callouts',
-        'type'    => 'select',
-        'choices'    => athena_icons()
+        'type' => 'select',
+        'choices' => athena_icons()
+    ));
+
+    $wp_customize->add_setting('callout2_title', array(
+        'default' => __('Customizable', 'athena'),
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'athena_text_sanitize'
+    ));
+
+    $wp_customize->add_control('callout2_title', array(
+        'type' => 'text',
+        'section' => 'homepage_callouts',
+        'label' => __('Callout #2: Title', 'athena'),
+        'description' => __('Set the callout title text', 'athena'),
     ));
     
-    $wp_customize->add_setting( 'callout2_title', array (
-        'default'               => __('Customizable', 'athena'),
-        'transport'             => 'postMessage',
-        'sanitize_callback'     => 'athena_text_sanitize'
-    ) );
-    
-    $wp_customize->add_control( 'callout2_title', array(
-        'type'                  => 'text',
-        'section'               => 'homepage_callouts',
-        'label'                 => __( 'Callout #2: Title', 'athena' ),
-        'description'           => __( 'Set the callout title text', 'athena' ),
-        
-    ) );
-    
-    $wp_customize->add_setting( 'callout2_text', array (
-        'default'               => __('Athena is easy to use and customize without having to touch code', 'athena'),
-        'transport'             => 'postMessage',
-        'sanitize_callback'     => 'athena_text_sanitize'
-    ) );
-    
-    $wp_customize->add_control( 'callout2_text', array(
-        'type'                  => 'textarea',
-        'section'               => 'homepage_callouts',
-        'label'                 => __( 'Callout #2: Description', 'athena' ),
-        'description'           => __( 'Set the callout detail text', 'athena' ),
-        
-    ) );
-    
+    $wp_customize->add_setting('callout2_href', array(
+        'default' => '#',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'esc_url_raw'
+    ));
+
+    $wp_customize->add_control('callout2_href', array(
+        'type' => 'text',
+        'section' => 'homepage_callouts',
+        'label' => __('Callout #2: Link', 'athena'),
+        'description' => __('Set the callout link URL', 'athena'),
+    ));
+
+    $wp_customize->add_setting('callout2_text', array(
+        'default' => __('Athena is easy to use and customize without having to touch code', 'athena'),
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'athena_text_sanitize'
+    ));
+
+    $wp_customize->add_control('callout2_text', array(
+        'type' => 'textarea',
+        'section' => 'homepage_callouts',
+        'label' => __('Callout #2: Description', 'athena'),
+        'description' => __('Set the callout detail text', 'athena'),
+    ));
+
     // Callout #3
-    $wp_customize->add_setting( 'callout3_icon', array (
-        'default'               => 'fa fa-shopping-cart',
-        'transport'             => 'postMessage',
-        'sanitize_callback'     => 'athena_icon_sanitize'
-    ) );
-    
-   $wp_customize->add_control( 'callout3_icon', array(
-        'label'   => __( 'Callout #3: Select Icon', 'athena' ),
+    $wp_customize->add_setting('callout3_icon', array(
+        'default' => 'fa fa-shopping-cart',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'athena_icon_sanitize'
+    ));
+
+    $wp_customize->add_control('callout3_icon', array(
+        'label' => __('Callout #3: Select Icon', 'athena'),
         'section' => 'homepage_callouts',
-        'type'    => 'select',
-        'choices'    => athena_icons()
+        'type' => 'select',
+        'choices' => athena_icons()
+    ));
+
+    $wp_customize->add_setting('callout3_title', array(
+        'default' => __('WooCommerce', 'athena'),
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'athena_text_sanitize'
+    ));
+
+    $wp_customize->add_control('callout3_title', array(
+        'type' => 'text',
+        'section' => 'homepage_callouts',
+        'label' => __('Callout #3: Title', 'athena'),
+        'description' => __('Set the callout title text', 'athena'),
     ));
     
-    $wp_customize->add_setting( 'callout3_title', array (
-        'default'               => __('WooCommerce', 'athena'),
-        'transport'             => 'postMessage',
-        'sanitize_callback'     => 'athena_text_sanitize'
-    ) );
-    
-    $wp_customize->add_control( 'callout3_title', array(
-        'type'                  => 'text',
-        'section'               => 'homepage_callouts',
-        'label'                 => __( 'Callout #3: Title', 'athena' ),
-        'description'           => __( 'Set the callout title text', 'athena' ),
-        
-    ) );
-    
-    $wp_customize->add_setting( 'callout3_text', array (
-        'default'               => __('Athena supports WooCommerce to build an online shopping site', 'athena'),
-        'transport'             => 'postMessage',
-        'sanitize_callback'     => 'athena_text_sanitize'
-    ) );
-    
-    $wp_customize->add_control( 'callout3_text', array(
-        'type'                  => 'textarea',
-        'section'               => 'homepage_callouts',
-        'label'                 => __( 'Callout #3: Description', 'athena' ),
-        'description'           => __( 'Set the callout detail text', 'athena' ),
-        
-    ) );
+    $wp_customize->add_setting('callout3_href', array(
+        'default' => '#',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'esc_url_raw'
+    ));
+
+    $wp_customize->add_control('callout3_href', array(
+        'type' => 'text',
+        'section' => 'homepage_callouts',
+        'label' => __('Callout #3: Link', 'athena'),
+        'description' => __('Set the callout link URL', 'athena'),
+    ));
+
+    $wp_customize->add_setting('callout3_text', array(
+        'default' => __('Athena supports WooCommerce to build an online shopping site', 'athena'),
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'athena_text_sanitize'
+    ));
+
+    $wp_customize->add_control('callout3_text', array(
+        'type' => 'textarea',
+        'section' => 'homepage_callouts',
+        'label' => __('Callout #3: Description', 'athena'),
+        'description' => __('Set the callout detail text', 'athena'),
+    ));
     
     // *********************************************
     // ****************** Apperance *****************
@@ -515,7 +568,7 @@ function athena_customize_register( $wp_customize ) {
     
     $wp_customize->add_setting( 'header_font', array (
         'default'               => 'Raleway, sans-serif',
-        'transport'             => 'postMessage',
+        'transport'             => 'refresh',
         'sanitize_callback'     => 'athena_font_sanitize'
     ) );
     
@@ -530,7 +583,7 @@ function athena_customize_register( $wp_customize ) {
     
     $wp_customize->add_setting( 'theme_font', array (
         'default'               => 'Raleway, sans-serif',
-        'transport'             => 'postMessage',
+        'transport'             => 'refresh',
         'sanitize_callback'     => 'athena_font_sanitize'
     ) );
     
@@ -597,7 +650,7 @@ function athena_customize_register( $wp_customize ) {
         'section'               => 'footer_background',
         'mime_type'             => 'image',
         'settings'              => 'footer_background_image',
-        'description'           => __( 'Select the image file that you would like to use as the footer background', 'athena' ),        
+        'description'           => __( 'Select the image file that you would like to use as the footer background. You can change the contents of this Widget from <strong>Appearance - Widgets</strong>', 'athena' ),        
     ) ) );
     
     $wp_customize->add_section( 'footer_text', array (
@@ -759,23 +812,23 @@ function athena_fonts(){
         'Arial, Helvetica, sans-serif'          => 'Arial',
         'Arial Black, Gadget, sans-serif'       => 'Arial Black',
         'Courier New, monospace'                => 'Courier New',
-        'Lobster, cursive'                      => 'Lobster - Cursive',
+        'Lobster Two, cursive'                  => 'Lobster - Cursive',
         'Georgia, serif'                        => 'Georgia',
         'Impact, Charcoal, sans-serif'          => 'Impact',
-        'Josefin Sans, sans-serif'              => 'Josefin',
         'Lucida Console, Monaco, monospace'     => 'Lucida Console',
         'Lucida Sans Unicode, Lucida Grande, sans-serif' => 'Lucida Sans Unicode',
         'MS Sans Serif, Geneva, sans-serif'     => 'MS Sans Serif',
         'MS Serif, New York, serif'             => 'MS Serif',
         'Open Sans, sans-serif'                 => 'Open Sans',
-        'Palatino Linotype, Book Antiqua, Palatino, serif' => 'Palatino Linotype',
         'Source Sans Pro, sans-serif'           => 'Source Sans Pro',
         'Lato, sans-serif'                      => 'Lato',
         'Tahoma, Geneva, sans-serif'            => 'Tahoma',
         'Times New Roman, Times, serif'         => 'Times New Roman',
         'Trebuchet MS, sans-serif'              => 'Trebuchet MS',
         'Verdana, Geneva, sans-serif'           => 'Verdana',
+        'Raleway, sans-serif'                   => 'Raleway',
     );
+    
     
     return $font_family_array;
 }

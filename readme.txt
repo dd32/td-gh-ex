@@ -5,7 +5,7 @@ Tags: black, blue, green, pink, red, yellow, dark, light, full-width-template, t
 
 Requires at least: 4.0
 Tested up to: 4.4.2
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,7 @@ Athena is a feature-loaded, user-friendly, fully responsive, Parallax modern Wor
 
 = Does this theme support any plugins? =
 
-Athena includes support for Infinite Scroll in Jetpack.
+Athena includes support for Infinite Scroll in Jetpack, Our Team Showcase and WooCommerce.
 
 = How many menu items does Athena support ?
 
@@ -37,21 +37,28 @@ the menu items will drop to a new line and will not look as good as intended.
 = 1.0.0 - October 24 2015 =
 First version of the theme released
 
-= 1.01 - January 17th, 2016
+= 1.0.1 - January 17th, 2016
 Modifications based on theme review feedback
 
-= 1.02 - January 18th, 2016
+= 1.0.2 - January 18th, 2016
 
-= 1.03 - January 21st, 2016
+= 1.0.3 - January 21st, 2016
 Fixed an error in the slide #1 image upload in customizer
 Fixed color issue in dropdown menus in widgets
 
-= 1.04 - Minor bug fix
+= 1.0.4 - Minor bug fix
 
-= 1.05 - February 8th, 2016
+= 1.0.5 - February 8th, 2016
 Updates to theme mod sanitization
 Updating theme info in style.css, readme.txt
 
+= 1.0.6 - February 9th, 2016
+Fix to TGMPA bug resulting from namechange
+
+= 1.0.7 - 
+Added option allowing users to remove the Icon Callouts
+Added option allowing users to add a URL for the Icon Callouts
+Slider buttons now hide when the text is left empty
 
 == Credits ==
 

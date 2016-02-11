@@ -37,7 +37,9 @@ jQuery(document).ready(function ($) {
 
     $('#athena-featured .featured-box').click(function () {
 
-        window.location.href = $(this).attr('data-target');
+        if( $(this).attr('data-target') && $(this).attr('data-target') != '#' ) {
+            window.location.href = $(this).attr('data-target');
+        }
 
     });
 
