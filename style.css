@@ -1,13 +1,15 @@
 /*
 Theme Name: Activello
-Theme URI: http://Activello.com
-Description: Activello description
-Version: 1.0.0
+Theme URI: https://colorlib.com/wp/themes/activello/
+Author: Colorlib
+Author URI: http://colorlib.com
+Description: Activello is a clean and minimal WordPress blog theme with premium look and feel well suited for food, fashion, travel, lifestyle, sports and any other awesome blogs. This theme features WooCommerce integration that allows you to create fully functional eCommerce website side by side with your blog. This theme has several customization options that are available WordPress Theme Customizer. Theme is also multilingual ready and translated in several languages. Activello is the only WordPress blog theme you will ever need. 
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: activello
 Domain Path: /languages/
-Tags: green, light, white, gray, black, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, photoblogging, left-sidebar, translation-ready, custom-background, custom-colors, custom-menu, featured-images, full-width-template, post-formats, theme-options, threaded-comments
+Tags: light, white, gray, black, purple, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, photoblogging, left-sidebar, translation-ready, custom-background, custom-colors, custom-menu, featured-images, full-width-template, post-formats, theme-options, threaded-comments
 
 
 This theme, like WordPress, is licensed under the GPL.
@@ -471,7 +473,7 @@ article.post .post-categories, .post-inner-content .cat-item {
   padding: 0 0 8px 0;
   list-style: none;
 }
-article.post .post-categories:after, 
+article.post .post-categories:after,
 .post-inner-content .cat-item:after {
   content: "";
   position: absolute;
@@ -508,47 +510,48 @@ article.grid iframe {
 }
 /* Masonary style */
 @media (min-width: 768px) {
-.article-container{
-    overflow: hidden;
-}
-.blog.home article.post {
-    width: 50%;
-    margin: 0;
-    padding-right: 10px;
-    display: inline-block;
-    float: left;
-}
-.blog.home article.post .read-more, .blog.home article.post .entry-footer{
-    display: none;
-}
-.blog.home article.post .post-inner-content{
-    border: 0;
-    padding: 30px 0 0;
-}
-.blog.home article.post:first-child, .blog.home article.post:nth-child(2) {
-    width: 100%;
-    padding: 0!important;
-}
-.blog.home article.post:first-child .post-inner-content, .blog.home article.post:nth-child(2) .post-inner-content{
-    border-bottom: 1px solid #dedede;
-}
-.blog.home article.post:first-child .post-inner-content{
-    padding: 0 0 50px;
-}
-.blog.home article.post:nth-child(2) .post-inner-content{
-    padding: 50px 0;
-}
-.blog.home article.post:first-child .read-more, .blog.home article.post:nth-child(2) .read-more,
-.blog.home article.post:first-child .entry-footer, .blog.home article.post:nth-child(2) .entry-footer{
-    display: block;
-}
-.blog.home article.post:nth-child(odd){
-    clear: left;
-    padding-right: 25px;
-}
-.blog.home article.post:nth-child(even){
-    padding-left: 25px;
-}
+    .article-container{
+        overflow: hidden;
+    }
+    .blog.home article.post {
+        width: 50%;
+        margin: 0;
+        padding-right: 10px;
+        display: inline-block;
+        float: left;
+    }
+    .blog.home article.post .read-more, .blog.home article.post .entry-footer{
+        display: none;
+    }
+    .blog.home article.post .post-inner-content{
+        border: 0;
+        padding: 0 0 30px;
+    }
+    .blog.home .page-1 article.post:first-child, .blog.home .page-1 article.post:nth-child(2) {
+        width: 100%;
+        padding: 0!important;
+    }
+    .blog.home .page-1 article.post:first-child .post-inner-content, .blog.home .page-1 article.post:nth-child(2) .post-inner-content{
+        border-bottom: 1px solid #dedede;
+    }
+    .blog.home .page-1 article.post:first-child .post-inner-content{
+        padding: 0 0 50px;
+    }
+    .blog.home .page-1 article.post:nth-child(2) .post-inner-content{
+        padding: 50px 0;
+        margin-bottom: 30px;
+    }
+    .blog.home .page-1 article.post:first-child .read-more, .blog.home .page-1 article.post:nth-child(2) .read-more,
+    .blog.home .page-1 article.post:first-child .entry-footer, .blog.home .page-1 article.post:nth-child(2) .entry-footer{
+        display: block;
+    }
+    .blog.home article.post:nth-child(odd){
+        clear: left;
+        padding-right: 25px;
+    }
+    .blog.home article.post:nth-child(even){
+        padding-left: 25px;
+    }
 }
 .site-main {
   max-width: 100%;
@@ -646,7 +649,6 @@ article.grid iframe {
           transition: opacity 0.3s linear;
   display: block;
   margin: auto;
-  width: 100%;
 }
 .single-featured:hover {
   opacity: 0.8;
@@ -700,17 +702,6 @@ object {
 }
 .widget ul.nav.nav-tabs {
   padding: 0;
-}
-.has-sidebar-left #secondary {
-  padding-right: 40px;
-}
-.no-sidebar {
-    float: none;
-    margin: 0 auto;
-}
-.has-full-width .post .single-featured,
-.has-full-width .site-main {
-  width: 100%;
 }
 
 #secondary .widget {
@@ -834,7 +825,7 @@ ul#menu-social-items,
 /* =Buttons
 ----------------------------------------------- */
 .btn-default, .label-default,
-.woocommerce #respond input#submit, 
+.woocommerce #respond input#submit,
 .woocommerce a.button, .woocommerce button.button,
 .woocommerce input.button,
 .woocommerce #respond input#submit.alt,
@@ -861,7 +852,7 @@ input[type=submit] {
 .btn-default:active,
 #image-navigation .nav-previous a:hover,
 #image-navigation .nav-next a:hover,
-.woocommerce #respond input#submit:hover, 
+.woocommerce #respond input#submit:hover,
 .woocommerce a.button:hover, .woocommerce button.button:hover,
 .woocommerce input.button:hover,
 .woocommerce #respond input#submit.alt:hover,
@@ -992,7 +983,7 @@ article.post .post-categories a:hover,
 .flex-caption .post-categories a:hover,
 .flex-caption .read-more a:hover,
 .flex-caption h2:hover,
-.comment-meta.commentmetadata a:hover, 
+.comment-meta.commentmetadata a:hover,
 .post-inner-content .cat-item a:hover  {
   color: #a161bf;
 }
@@ -1095,7 +1086,7 @@ letter-spacing: 1px;
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #9B5EB8;
+  color: #a161bf;
   background-color: transparent;
 }
 .dropdown-menu > li > a:hover,
@@ -1103,7 +1094,7 @@ letter-spacing: 1px;
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
   color: #fff;
-  background-color: #9B5EB8;
+  background-color: #a161bf;
 }
 .navbar-collapse {
   float: left;
@@ -1143,7 +1134,7 @@ letter-spacing: 1px;
   font-size: 13px;
 }
 .navbar-default .navbar-nav .current-menu-ancestor a.dropdown-toggle {
-  color: #9B5EB8;
+  color: #a161bf;
   background-color: transparent;
 }
 .navbar-default .navbar-nav .open .dropdown-menu > li.active > a {
@@ -1174,7 +1165,7 @@ letter-spacing: 1px;
 .dropdown-menu>.active>a,
 .dropdown-menu>.active>a:hover,
 .dropdown-menu>.active>a:focus {
-  background-color: #9B5EB8;
+  background-color: #a161bf;
   color: #fff;
 }
 .dropdown-menu .divider {
@@ -1584,7 +1575,7 @@ p.logged-in-as {
   color: #777;
 }
 .site-info a:hover {
-  color: #999;
+  color: #a161bf;
 }
 .site-info {
   color: #999;
@@ -1676,7 +1667,7 @@ p.logged-in-as {
     text-align: center;
   }
   .main-content-inner{
-      margin-bottom: 30px; 
+      margin-bottom: 30px;
   }
 }
 
@@ -1732,4 +1723,17 @@ table#wp-calendar {
 }
 .woocommerce .woocommerce-info:before {
     color: #a161bf;
+}
+
+/* Layout */
+
+.has-sidebar-left #secondary {
+  padding-right: 40px;
+}
+.no-sidebar {
+    float: none;
+    margin: 0 auto;
+}
+.full-width {
+  width: 100%;
 }

@@ -46,48 +46,6 @@ function activello_body_classes( $classes ) {
 add_filter( 'body_class', 'activello_body_classes' );
 
 
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-  /**
-   * Filters wp_title to print a neat <title> tag based on what is being viewed.
-   *
-   * @param string $title Default title text for current view.
-   * @param string $sep Optional separator.
-   * @return string The filtered title.
-   */
-  function activello_wp_title( $title, $sep ) {
-    if ( is_feed() ) {
-      return $title;
-    }
-    global $page, $paged;
-    // Add the blog name
-    $title .= get_bloginfo( 'name', 'display' );
-    // Add the blog description for the home/front page.
-    $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description && ( is_home() || is_front_page() ) ) {
-      $title .= " $sep $site_description";
-    }
-    // Add a page number if necessary:
-    if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-      $title .= " $sep " . sprintf( esc_html__( 'Page %s', 'activello' ), max( $paged, $page ) );
-    }
-    return $title;
-  }
-  add_filter( 'wp_title', 'activello_wp_title', 10, 2 );
-  /**
-   * Title shim for sites older than WordPress 4.1.
-   *
-   * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-   * @todo Remove this function when WordPress 4.3 is released.
-   */
-  function activello_render_title() {
-    ?>
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
-    <?php
-  }
-  add_action( 'wp_head', 'activello_render_title' );
-endif;
-
-
 // Mark Posts/Pages as Untiled when no title is used
 add_filter( 'the_title', 'activello_title' );
 
@@ -98,28 +56,6 @@ function activello_title( $title ) {
     return $title;
   }
 }
-
-/**
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
- */
-function activello_setup_author() {
-  global $wp_query;
-
-  if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-    $GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-  }
-}
-add_action( 'wp', 'activello_setup_author' );
-
 
 /**
  * Password protected post form using Boostrap classes
@@ -198,11 +134,10 @@ if ( ! function_exists( 'activello_featured_slider' ) ) :
  * Featured image slider, displayed on front page for static page and blog
  */
 function activello_featured_slider() {
-  if ( is_front_page() && get_theme_mod( 'activello_featured_hide' ) == 1 ) {
+  if ( ( is_home() || is_front_page() ) && get_theme_mod( 'activello_featured_hide' ) == 1 ) {
 		
 		wp_enqueue_style( 'flexslider-css' );
 		wp_enqueue_script( 'flexslider-js' );
-		wp_enqueue_script( 'flexslider-customization' );
 		
     echo '<div class="flexslider">';
       echo '<ul class="slides">';
@@ -301,45 +236,6 @@ function activello_add_favicon() {
 add_action( 'wp_head', 'activello_add_favicon', 0 );
 add_action( 'admin_head', 'activello_add_favicon', 0 );
 
-/*
- * This one shows/hides the an option when a checkbox is clicked.
- */
-add_action( 'optionsframework_custom_scripts', 'optionsframework_custom_scripts' );
-
-function optionsframework_custom_scripts() { ?>
-
-<script type="text/javascript">
-jQuery(document).ready(function() {
-
-  jQuery('#activello_slider_checkbox').click(function() {
-      jQuery('#section-activello_slide_categories').fadeToggle(400);
-  });
-
-  if (jQuery('#activello_slider_checkbox:checked').val() !== undefined) {
-    jQuery('#section-activello_slide_categories').show();
-  }
-
-  jQuery('#activello_slider_checkbox').click(function() {
-      jQuery('#section-activello_slide_number').fadeToggle(400);
-  });
-
-  if (jQuery('#activello_slider_checkbox:checked').val() !== undefined) {
-    jQuery('#section-activello_slide_number').show();
-  }
-
-});
-</script>
-
-<?php
-}
-
-/*
- * This display logo from wp customizer setting.
- */
-function activello_logo() {
-	$logo = wp_get_attachment_image_src( get_theme_mod( 'activello_logo' ), 'medium' );
-	return $logo[0];
-}
 
 /*
  * This display blog description from wp customizer setting.
@@ -351,7 +247,7 @@ function activello_cats() {
 	foreach ( get_categories() as $categories => $category ) {
 		$cats[$category->term_id] = $category->name;
 	}
-	
+
 	return $cats;
 }
 
@@ -383,7 +279,7 @@ function activello_cb_comment($comment, $args, $depth) {
     <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
       <?php
         /* translators: 1: date, 2: time */
-        printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( 'Edit' ), '  ', '' );
+        sprintf( __( '%1$s at %2$s', 'activello' ), get_comment_date(), get_comment_time() ); ?></a><?php edit_comment_link( __( 'Edit', 'activello' ), '  ', '' );
       ?>
     </div>
 
@@ -423,7 +319,7 @@ if (!function_exists('get_activello_theme_setting'))  {
           .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .open > a,
           .navbar-default .navbar-nav > .open > a:hover, blockquote:before,
           .navbar-default .navbar-nav > .open > a:focus, .cat-title a,
-          .single .entry-content a{color:' . get_theme_mod('accent_color') . '}';
+          .single .entry-content a, .site-info a:hover {color:' . get_theme_mod('accent_color') . '}';
 
       echo 'article.post .post-categories:after, .post-inner-content .cat-item:after, #secondary .widget-title:after {background:' . get_theme_mod('accent_color') . '}';
 
@@ -438,7 +334,9 @@ if (!function_exists('get_activello_theme_setting'))  {
           .woocommerce input.button.alt:hover, .input-group-btn:last-child>.btn:hover, .scroll-to-top:hover,
           button, html input[type=button]:hover, input[type=reset]:hover, .comment-list li .comment-body:after, .page-links a:hover span, .page-links span,
           input[type=submit]:hover, .comment-form #submit:hover, .tagcloud a:hover,
-          .single .entry-content a:hover{background-color:' . get_theme_mod('accent_color') . '; }';
+          .single .entry-content a:hover, .dropdown-menu > li > a:hover, 
+          .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+          .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{background-color:' . get_theme_mod('accent_color') . '; }';
     }
     if ( get_theme_mod('social_color')) {
       echo '#social a, .header-search-icon { color:' . get_theme_mod('social_color') .'}';

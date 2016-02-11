@@ -28,7 +28,7 @@ if ( ! function_exists( 'activello_main_content_bootstrap_classes' ) ) :
  * Add Bootstrap classes to the main-content-area wrapper.
  */
 function activello_main_content_bootstrap_classes() {
-	if ( is_page_template( 'page-fullwidth.php' ) || get_theme_mod( 'activello_sidebar_position' ) == "full-width" ) {
+	if ( is_page_template( 'page-fullwidth.php' ) ) {
 		return 'col-sm-12 col-md-12';
 	}
 	return 'col-sm-12 col-md-8';
@@ -68,8 +68,7 @@ function activello_setup() {
 
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(
-    'primary'      => esc_html__( 'Primary Menu', 'activello' ),
-    //'footer-links' => esc_html__( 'Footer Links', 'activello' ) // secondary nav in footer
+    'primary'      => esc_html__( 'Primary Menu', 'activello' )
   ) );
 
   // Enable support for Post Formats.
@@ -121,7 +120,6 @@ function activello_widgets_init() {
   register_widget( 'activello_social_widget' );
   register_widget( 'activello_recent_posts' );
   register_widget( 'activello_categories' );
-	register_widget( 'activello_instagram_widget' );
 }
 add_action( 'widgets_init', 'activello_widgets_init' );
 
@@ -132,7 +130,6 @@ add_action( 'widgets_init', 'activello_widgets_init' );
 require_once(get_template_directory() . '/inc/widgets/widget-categories.php');
 require_once(get_template_directory() . '/inc/widgets/widget-social.php');
 require_once(get_template_directory() . '/inc/widgets/widget-recent-posts.php');
-require_once(get_template_directory() . '/inc/widgets/widget-instagram.php');
 
 /**
  * This function removes inline styles set by WordPress gallery.
@@ -175,30 +172,24 @@ function activello_scripts() {
   if( ( is_home() || is_front_page() ) && get_theme_mod('activello_featured_hide') == 1 ) {
     wp_register_script( 'flexslider-js', get_template_directory_uri() . '/inc/js/flexslider.min.js', array('jquery'), '20140222', true );
   }
-  
+
   // Main theme related functions
-  wp_enqueue_script( 'activello-functions', get_template_directory_uri() . '/inc/js/functions.min.js', array('jquery', 'flexslider-js') );
+  wp_enqueue_script( 'activello-functions', get_template_directory_uri() . '/inc/js/functions.min.js', array('jquery') );
 
   // This one is for accessibility
   wp_enqueue_script( 'activello-skip-link-focus-fix', get_template_directory_uri() . '/inc/js/skip-link-focus-fix.js', array(), '20140222', true );
 
   // Add instafeed/instagram
   if( is_active_widget( false, false, 'activello-instagram', true ) ){
-    wp_enqueue_script('activello-instafeedjs', get_template_directory_uri().'/inc/js/instafeed.min.js', array('jquery') );	
+    wp_enqueue_script('activello-instafeedjs', get_template_directory_uri().'/inc/js/instafeed.min.js', array('jquery') );
   }
-	
+
   // Threaded comments
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
   }
 }
 add_action( 'wp_enqueue_scripts', 'activello_scripts' );
-
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -236,8 +227,14 @@ require get_template_directory() . '/inc/metaboxes.php';
 require get_template_directory() . '/inc/socialnav.php';
 
 /* Globals */
-global $site_layout;
+global $site_layout, $header_show;
 $site_layout = array('pull-right' =>  esc_html__('Left Sidebar','activello'), 'side-right' => esc_html__('Right Sidebar','activello'), 'no-sidebar' => esc_html__('No Sidebar','activello'),'full-width' => esc_html__('Full Width', 'activello'));
+$header_show = array(
+                        'logo-only' => __('Logo Only', 'activello'),
+                        'logo-text' => __('Logo + Tagline', 'activello'),
+                        'title-only' => __('Title Only', 'activello'),
+                        'title-text' => __('Title + Tagline', 'activello')
+                      );
 
 /* Get Single Post Category */
 function get_single_category($post_id){
@@ -251,24 +248,6 @@ function get_single_category($post_id){
         return wp_list_categories('echo=0&title_li=&show_count=0&include='.$post_categories[0]);
     }
     return '';
-}
-
-// Change what's hidden by default
-add_filter('default_hidden_meta_boxes', 'be_hidden_meta_boxes', 10, 2);
-function be_hidden_meta_boxes($hidden, $screen) {
-    if ( 'post' == $screen->base || 'page' == $screen->base ) {
-        // removed 'postexcerpt',
-        $hidden = array(
-            'slugdiv',
-            'trackbacksdiv',
-            'postcustom',
-            'commentstatusdiv',
-            'commentsdiv',
-            'authordiv',
-            'revisionsdiv'
-        );
-    }
-    return $hidden;
 }
 
 if ( ! function_exists( 'activello_woo_setup' ) ) :
