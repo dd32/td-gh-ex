@@ -30,8 +30,9 @@ $catchkathmandu_options_defaults = array(
 	'featured_header_image_base'			=> '0',
  	'disable_header_right_sidebar'			=> '0',
 	'color_scheme'							=> 'light',
-	'reset_typography'						=> '2',	
-	'custom_css'							=> '',	
+	'reset_typography'						=> '2',
+	'custom_css'							=> '',
+	'disable_scrollup'						=> '0',
 	'sidebar_layout'						=> 'right-sidebar',
 	'content_layout'						=> 'full',
 	'featured_image'						=> 'featured',
@@ -59,7 +60,7 @@ $catchkathmandu_options_defaults = array(
 	'select_slider_type'					=> 'demo-slider',
 	'enable_slider'							=> 'enable-slider-homepage',
  	'featured_slider'						=> array(),
-	'featured_slider_page'					=> array(),	
+	'featured_slider_page'					=> array(),
 	'slider_category'						=> array(),
 	'featured_image_slider_image'			=> array(),
 	'featured_image_slider_link' 			=> array(),
@@ -69,7 +70,7 @@ $catchkathmandu_options_defaults = array(
 	'slider_qty'							=> 4,
  	'transition_effect'						=> 'fade',
  	'transition_delay'						=> 4,
- 	'transition_duration'					=> 1,	
+ 	'transition_duration'					=> 1,
 	'exclude_slider_post'					=> 0,
  	'social_facebook'						=> '',
  	'social_twitter'						=> '',
@@ -205,7 +206,7 @@ function catchkathmandu_page_post_featured_image_size() {
 	$options = array(
 		'full' 		=> __( 'Full Image', 'catch-kathmandu' ),
 		'slider' 	=> __( 'Slider Image', 'catch-kathmandu' ),
-		'featured'	=> __( 'Featured Image', 'catch-kathmandu' ),		
+		'featured'	=> __( 'Featured Image', 'catch-kathmandu' ),
 	);
 
 	return apply_filters( 'catchkathmandu_page_post_featured_image_size', $options );
@@ -222,7 +223,7 @@ function catchkathmandu_content_featured_image_size() {
 		'full' 		=> __( 'Full Image', 'catch-kathmandu' ),
 		'slider' 	=> __( 'Slider Image', 'catch-kathmandu' ),
 		'featured'	=> __( 'Featured Image', 'catch-kathmandu' ),
-		'disable'	=> __( 'Disable Image', 'catch-kathmandu' ),		
+		'disable'	=> __( 'Disable Image', 'catch-kathmandu' ),
 	);
 
 	return apply_filters( 'catchkathmandu_content_featured_image_size', $options );

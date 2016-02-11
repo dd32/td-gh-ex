@@ -17,7 +17,7 @@
  */
 function catchkathmandu_customize_register( $wp_customize ) {
 	global $catchkathmandu_options_settings, $catchkathmandu_options_defaults;
-    
+
     $options = $catchkathmandu_options_settings;
 
 	$defaults = $catchkathmandu_options_defaults;
@@ -104,7 +104,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 					'id' 			=> 'layout_options',
 					'title' 		=> __( 'Layout Options', 'catch-kathmandu' ),
 					'description' 	=> '',
-				),				
+				),
 				'search_text_settings' => array(
 					'id' 			=> 'search_text_settings',
 					'title' 		=> __( 'Search Text Settings', 'catch-kathmandu' ),
@@ -123,6 +123,11 @@ function catchkathmandu_customize_register( $wp_customize ) {
 				'custom_css' => array(
 					'id' 			=> 'custom_css',
 					'title' 		=> __( 'Custom CSS', 'catch-kathmandu' ),
+					'description' 	=> '',
+				),
+				'scrollup_options' => array(
+					'id' 			=> 'scrollup_options',
+					'title' 		=> __( 'Scroll Up', 'catch-kathmandu' ),
 					'description' 	=> '',
 				),
 
@@ -171,13 +176,13 @@ function catchkathmandu_customize_register( $wp_customize ) {
 	//Add Panels and sections
 	foreach ( $settings_page_tabs as $panel ) {
 		$wp_customize->add_panel(
-			$theme_slug . $panel['id'], 
+			$theme_slug . $panel['id'],
 			array(
 				'priority' 		=> 200,
 				'capability' 	=> 'edit_theme_options',
 				'title' 		=> $panel['title'],
 				'description' 	=> $panel['description'],
-			) 
+			)
 		);
 
 		// Loop through tabs for sections
@@ -197,7 +202,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 				$theme_slug . $section['id'],
 				// parameters
 				$params
-				
+
 			);
 		}
 	}
@@ -626,6 +631,18 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'custom_css',
 			'default' 		=> $defaults['homepage_headline']
+		),
+
+		//Scroll Up
+		'disable_scrollup' => array(
+			'id' 			=> 'disable_scrollup',
+			'title' 		=> __( 'Check to Disable Scroll Up', 'catch-kathmandu' ),
+			'description' 	=> '',
+			'field_type' 	=> 'checkbox',
+			'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'scrollup_options',
+			'default' 		=> $defaults['disable_scrollup']
 		),
 
 		//Slider Options
@@ -1081,15 +1098,15 @@ function catchkathmandu_customize_register( $wp_customize ) {
 				)
 			);
 
-			$wp_customize->add_control( 
-				new WP_Customize_Image_Control( 
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
 					array(
 						'label'		=> $option['title'],
 						'section'   => $theme_slug . $option['section'],
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
-					) 
-				) 
+					)
+				)
 			);
 		}
 		else if ('checkbox' == $option['field_type'] ) {
@@ -1109,16 +1126,16 @@ function catchkathmandu_customize_register( $wp_customize ) {
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
 						'name'  	=> $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
 
-			$wp_customize->add_control( 
-				new Catchkathmandu_Customize_Checkbox( 
+			$wp_customize->add_control(
+				new Catchkathmandu_Customize_Checkbox(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
-					$params	
-				) 
+					$params
+				)
 			);
 		}
 		else if ('category-multiple' == $option['field_type'] ) {
@@ -1140,13 +1157,13 @@ function catchkathmandu_customize_register( $wp_customize ) {
 						'description'	=> $option['description'],
 						'name'	 		=> $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
 
-			$wp_customize->add_control( 
-				new Catchkathmandu_Customize_Dropdown_Categories_Control ( 
+			$wp_customize->add_control(
+				new Catchkathmandu_Customize_Dropdown_Categories_Control (
 					$wp_customize,
 					$theme_slug . 'options[' . $option['id'] . ']',
 					$params
@@ -1190,7 +1207,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			$wp_customize->add_control(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
-				$params			
+				$params
 			);
 		}
 	}
@@ -1207,15 +1224,15 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
-			new Catchkathmandu_Note_Control( 
+		$wp_customize->add_control(
+			new Catchkathmandu_Note_Control(
 				$wp_customize, $theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
 				array(
 					'label'		=> sprintf( __( 'Featured Content #%s', 'catch-kathmandu' ), $i ),
 					'section'   => $theme_slug .'homepage_featured_content_options',
 					'settings'  => $theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
-				) 
-			) 
+				)
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1228,15 +1245,15 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
-			new WP_Customize_Image_Control( 
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
 				$wp_customize, $theme_slug . 'options[homepage_featured_image][' . $i . ']',
 				array(
 					'label'		=> __( 'Image', 'catch-kathmandu' ),
 					'section'   => $theme_slug .'homepage_featured_content_options',
 					'settings'  => $theme_slug . 'options[homepage_featured_image][' . $i . ']',
-				) 
-			) 
+				)
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1249,14 +1266,14 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_url][' . $i . ']',
 			array(
 				'label'		=> __( 'Link URL', 'catch-kathmandu' ),
 				'section'	=> $theme_slug .'homepage_featured_content_options',
 				'settings'	=> $theme_slug . 'options[homepage_featured_url][' . $i . ']',
 				'type'		=> 'url'
-			) 
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1269,14 +1286,14 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_base][' . $i . ']',
 			array(
 				'label'		=> __( 'Target. Open Link in New Window?', 'catch-kathmandu' ),
 				'section'	=> $theme_slug .'homepage_featured_content_options',
 				'settings'	=> $theme_slug . 'options[homepage_featured_base][' . $i . ']',
 				'type'		=> 'text'
-			) 
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1289,7 +1306,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_title][' . $i . ']',
 			array(
 				'label'			=> __( 'Title', 'catch-kathmandu' ),
@@ -1297,7 +1314,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 				'settings'		=> $theme_slug . 'options[homepage_featured_title][' . $i . ']',
 				'description'	=> __( 'Leave empty if you want to remove title', 'catch-kathmandu' ),
 				'type'			=> 'text'
-			) 
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1310,7 +1327,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_content][' . $i . ']',
 			array(
 				'label'			=> __( 'Content', 'catch-kathmandu' ),
@@ -1318,7 +1335,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 				'settings'		=> $theme_slug . 'options[homepage_featured_content][' . $i . ']',
 				'description'	=> __( 'Appropriate Words: 10', 'catch-kathmandu' ),
 				'type'			=> 'textarea'
-			) 
+			)
 		);
 	}
 
@@ -1334,7 +1351,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[featured_slider][' . $i . ']',
 			array(
 				'label'		=> sprintf( __( 'Featured Post Slider #%s', 'catch-kathmandu' ), $i ),
@@ -1389,7 +1406,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
         'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',
-    ) ) );  
+    ) ) );
     //Important Links End
 }
 add_action( 'customize_register', 'catchkathmandu_customize_register' );

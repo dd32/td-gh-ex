@@ -1,8 +1,16 @@
 == Changelog ==
 
+Version 3.6
+* Added: Disable scrollup option
+* Removed: HTML script loading from header and added it as wp_enqueue_script() in catchkathmandu_scripts() function
+* Updated: Danish translation de_DE.po and de_DE.mo
+* Updated: Genericons to 3.4.1
+* Updated: html5 script to version 3.7.3
+* Updated: German translation de_DE.po and de_DE.mo
+
 Version 3.5.2
 * Bug Fixed: Compatibility issue, customizer Reset option not working when returning any value in WordPress 4.4
-* Bug Fixed: Instagraph social icon title issue ( Reported by Andreas Grieb )
+* Bug Fixed: Instagram social icon title issue ( Reported by Andreas Grieb )
 
 Version 3.5.1
 * Bug Fixed: Customizer Dropdown type saving issue
