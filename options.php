@@ -93,13 +93,13 @@ function optionsframework_options() {
 $options[] = array(
             'desc' => '<h2 style="color: #FFF !important;">' . esc_attr__( 'Upgrade to Premium Theme & Enable Full Features!', 'promax' ) . '</h2>
             <li>' . esc_attr__( 'SEO Optimized WordPress Theme.', 'promax' ) . '</li>
-            <li>' . esc_attr__( 'More Slides for your slider.', 'promax' ) . '</li>
+            <li>' . esc_attr__( 'Unlock All features.', 'promax' ) . '</li>
             <li>' . esc_attr__( 'Theme Customization help & Support Forum.', 'promax' ) . '</li>
             <li>' . esc_attr__( 'Page Speed Optimize for better result.', 'promax' ) . '</li>
             <li>' . esc_attr__( 'Color Customize of theme.', 'promax' ) . '</li>
             <li>' . esc_attr__( 'Custom Widgets and Functions.', 'promax' ) . '</li>
             <li>' . esc_attr__( 'Social Media Integration.', 'promax' ) . '</li>
-            <li>' . esc_attr__( 'Responsive Website Design.', 'promax' ) . '</li>
+            <li>' . esc_attr__( 'Mobile Responsive Website Design.', 'promax' ) . '</li>
             <li>' . esc_attr__( 'Different Website Layout to Select.', 'promax' ) . '</li>
             <li>' . esc_attr__( 'Many of Other customize feature for your blog or website.', 'promax' ) . '</li>
             <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/product/promax-wordpress-theme/','promax')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'promax' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://www.insertcart.com/contact-us/','promax')) . '" target="_blank">' . esc_attr__( 'Need Support !', 'promax' ) . '</a></span></p>',
@@ -140,7 +140,37 @@ $options[] = array(
 		'id' => 'promax_popular',
 		'std' => '1',
 		'type' => 'checkbox');
-		
+		$options[] = array(
+		'name' => __('TOP and Navigation Menu hide or show', 'promax'),
+		'desc' => __('Top Menu.', 'promax'),
+		'id' => 'promax_topmenushow',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));
+		$options[] = array(
+		'desc' => __('Navigation Menu', 'promax'),
+		'id' => 'promax_navimenushow',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));
+	$options[] = array(
+		'name' => "Post Box Height ",
+		'desc' => "Choose post box height Fixed or Auto.",
+		'id' => "promax_boxheight",
+		'std' => "fixed",
+		'type' => "images",
+		'options' => array(
+			'fixed' => $imagepath . 'boxfixed.jpg',
+			'auto' => $imagepath . 'boxauto.jpg',
+			
+			)
+	);
 $options[] = array(
 		'name' => __('Social Profiles', 'promax'),
 		'type' => 'heading');

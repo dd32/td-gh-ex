@@ -3,6 +3,14 @@ ob_start();
 function promax_backg() {
 		global $background ?>
        <style type="text/css">
+	   <?php
+	   		if (of_get_option('promax_boxheight') =='fixed') {
+            echo '<style type="text/css">.imag{height:355px !important;}</style>' . "\n";
+        }
+		
+	elseif (of_get_option('promax_boxheight') =='auto') {
+		echo '<style type="text/css">.imag{height:auto !important;}</style>' . "\n";
+	}?>
 <?php if ( get_header_image() ) : ?>	
 		#header{background-image:url("<?php esc_url(header_image());?>"); display: flex;background-repeat: round;}
 		<?php endif; ?>

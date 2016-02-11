@@ -130,7 +130,7 @@ global $content_width;
  function promax_search_form( $form ) {
 	$form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
 	<div><label class="screen-reader-text" for="s">' . __( 'Search for:','promax' ) . '</label>
-	<input type="text" value="' . get_search_query() . '" name="s" id="s" />
+	<input type="text" placeholder="'. esc_attr__( 'Search..','promax' ) .'" value="' . get_search_query() . '" name="s" id="s" />
 	<input type="submit" id="searchsubmit" value="'. esc_attr__( 'Go','promax' ) .'" />
 	</div>
 	</form>';
@@ -253,6 +253,11 @@ function promax_register_required_plugins() {
 		array(
 			'name'      => 'Regenerate Thumbnails',
 			'slug'      => 'regenerate-thumbnails',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Menu Icons',
+			'slug'      => 'menu-icons',
 			'required'  => false,
 		),
 

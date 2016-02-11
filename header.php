@@ -28,7 +28,8 @@
 
 	<!-- END HEADER -->
 
-	<!-- BEGIN TOP NAVIGATION -->		
+	<!-- BEGIN TOP NAVIGATION -->
+	<?php if (of_get_option('promax_topmenushow') !=='off') { ?>
 <div id="navigation" class="nav"> <?php get_template_part('/includes/social'); ?>
     <div id="navigation-inner" class="clearfix">
 		<div class="secondary">
@@ -37,6 +38,8 @@
 	    </div> <!-- end div #navigation-inner -->
 	</div> <!-- end div #navigation -->
 	<!-- END TOP NAVIGATION -->
+<?php } ?>
+<?php if (of_get_option('promax_navimenushow') !=='off') { ?>
 	<div id="pronav" class="nav"> 
     <div id="pronav-inner" class="clearfix">
 		<div class="secondary">		
@@ -45,3 +48,4 @@
 	    </div> <!-- end div #pronav-inner -->
 	</div> <!-- end div #pronav -->
 	<!-- END TOP NAVIGATION -->
+<?php } ?>
