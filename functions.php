@@ -70,20 +70,6 @@ add_action('wp_head', 'akyra_of_head_css');
 
 
  
- function prefix_custom_site_icon_size( $sizes ) {
-   $sizes[] = 64;
- 
-   return $sizes;
-}
-add_filter( 'site_icon_image_sizes', 'prefix_custom_site_icon_size' );
- 
-function prefix_custom_site_icon_tag( $meta_tags ) {
-   $meta_tags[] = sprintf( '<link rel="icon" href="%s" sizes="64x64" />', esc_url( get_site_icon_url( null, 64 ) ) );
- 
-   return $meta_tags;
-}
-add_filter( 'site_icon_meta_tags', 'prefix_custom_site_icon_tag' );
- 
  
  
  
