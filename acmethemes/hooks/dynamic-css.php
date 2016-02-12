@@ -16,11 +16,11 @@ if ( ! function_exists( 'acmeblog_dynamic_css' ) ) :
         /*Color options */
         $acmeblog_primary_color = esc_attr( $acmeblog_customizer_all_values['acmeblog-primary-color'] );
         $custom_css = '';
-
         /*background*/
         $custom_css .= "
             mark,
             .comment-form .form-submit input,
+            .slider-section .cat-links a,
             #calendar_wrap #wp-calendar #today,
             #calendar_wrap #wp-calendar #today a,
             .wpcf7-form input.wpcf7-submit:hover,

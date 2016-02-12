@@ -4,7 +4,7 @@ Theme URI: http://www.acmethemes.com/themes/acmeblog/
 Author: acmethemes
 Author URI: http://www.acmethemes.com/
 Description: AcmeBlog is professional blog theme, can be used for blog, news and magazine site. It is a modern responsive theme. It is SEO friendly theme. You can just focus on writing content and images. The theme has beautifully designed featured section and you have full control over it. AcmeBlog is very easy to use and customize. It has very light weight theme but have highly customizable theme customizer. With its advanced setting, you can control featured section, homepage, sidebar and inner pages. You have full control over header setting- logo, date, search and social. Further you can add your own copyright text in the footer. This theme come with advanced layout/design control. Default layout can be full or boxed, sidebar options are left, right and no sidebar. Image can be enable/disable in blog and archive pages. You can change whole site primary color. With the custom CSS and custom background image option, you can further customize your site. In the single post, you can show-hide related posts. Also with extra theme options, you can add breadcrumb and search placeholder. The theme comes with reset options too. Again Author widget, allow you to add author information. Support : http://www.acmethemes.com/supports/ and Demo http://www.acmethemes.com/demo/?theme=acmeblog
-Version: 1.1.6
+Version: 1.1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: acmeblog
@@ -1121,6 +1121,11 @@ object {
 .home-bxslider{
 	display: none;
 }
+.home-bxslider .cat-links {
+	left: 0;
+	position: absolute;
+	z-index: 1;
+}
 .slider-section {
 	float: left;
 	overflow: hidden;
@@ -1186,6 +1191,9 @@ object {
 	display: inline-block;
 	font-size: 11px;
 	padding: 4px 11px;
+}
+.slider-section .cat-links a:hover {
+	color: #2d2d2d;
 }
 .slider-section .above-slider-details{
 	background: none;
