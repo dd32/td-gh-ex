@@ -4,7 +4,7 @@ Theme URI: http://www.acmethemes.com/themes/acmeblog/
 Author: acmethemes
 Author URI: http://www.acmethemes.com/
 Description: AcmeBlog is professional blog theme, can be used for blog, news and magazine site. It is a modern responsive theme. It is SEO friendly theme. You can just focus on writing content and images. The theme has beautifully designed featured section and you have full control over it. AcmeBlog is very easy to use and customize. It has very light weight theme but have highly customizable theme customizer. With its advanced setting, you can control featured section, homepage, sidebar and inner pages. You have full control over header setting- logo, date, search and social. Further you can add your own copyright text in the footer. This theme come with advanced layout/design control. Default layout can be full or boxed, sidebar options are left, right and no sidebar. Image can be enable/disable in blog and archive pages. You can change whole site primary color. With the custom CSS and custom background image option, you can further customize your site. In the single post, you can show-hide related posts. Also with extra theme options, you can add breadcrumb and search placeholder. The theme comes with reset options too. Again Author widget, allow you to add author information. Support : http://www.acmethemes.com/supports/ and Demo http://www.acmethemes.com/demo/?theme=acmeblog
-Version: 1.1.5
+Version: 1.1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: acmeblog
@@ -45,7 +45,8 @@ html{
 }
 body{
 	margin : 0;
-	word-wrap : break-word;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 article,
 aside,
@@ -211,7 +212,6 @@ td,th{
 --------------------------------------------------------------*/
 
 body {
-	background: #eeeeef;
 	color: #2D2D2D;
 	font-family: 'Lato', sans-serif;
 	font-size: 14px;
@@ -572,9 +572,6 @@ i.fa{
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
 .comment-reply-title,
 .comments-title{
 	border-bottom: 1px solid #d9d9d9;
@@ -1115,6 +1112,12 @@ object {
 	}
 }
 /*SLIDER AND FEATURED SECTION*/
+.slider-feature-wrap{
+	margin-bottom: 17px;
+}
+.boxed-layout .slider-feature-wrap{
+	margin-bottom: 0;
+}
 .home-bxslider{
 	display: none;
 }
@@ -1217,7 +1220,6 @@ object {
 	width: 31%;
 }
 .besides-slider .beside-post{
-	margin-bottom: 65px;
 	float: left;
 	position: relative;
 }
@@ -1569,11 +1571,6 @@ article.post.sticky{
 .blog-no-image article .entry-content{
 	padding:0 2% 0 0;
 }
-/*Recent Post*/
-.entry-content > p {
-	word-break: break-all;
-}
-
 /*** ERROR404 ***/
 .error404 #primary{
 	text-align: center;
