@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-10 00:56+0545\n"
-"PO-Revision-Date: 2016-02-10 00:56+0545\n"
+"POT-Creation-Date: 2016-02-12 13:17+0545\n"
+"PO-Revision-Date: 2016-02-12 13:17+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: D'CLIC <contact@dclic.info>\n"
 "Language: en\n"
@@ -454,7 +454,7 @@ msgstr "E-mail"
 
 #: ../functions.php:1045
 msgid "Footer Social Links Menu"
-msgstr ""
+msgstr "Меню социальных ссылок в подвале"
 
 #: ../functions.php:1049 ../inc/customizer/customizer.php:441
 #: ../inc/theme-options.php:654 ../inc/theme-options.php:794
@@ -611,15 +611,15 @@ msgstr "Поддержка и помощь (Eng)"
 
 #: ../inc/customizer/customizer-custom-controls.php:26
 msgid "Changelog"
-msgstr ""
+msgstr "Журнал изменений"
 
 #: ../inc/customizer/customizer-custom-controls.php:30
 msgid "Donate Now"
-msgstr ""
+msgstr "Пожертвовать"
 
 #: ../inc/customizer/customizer-custom-controls.php:34
 msgid "Review"
-msgstr ""
+msgstr "Отзыв"
 
 #: ../inc/customizer/customizer.php:33 ../inc/theme-options.php:207
 #: ../inc/theme-options.php:208 ../inc/theme-options.php:671
@@ -628,15 +628,15 @@ msgstr "Параметры темы"
 
 #: ../inc/customizer/customizer.php:34
 msgid "Basic theme Options"
-msgstr ""
+msgstr "Основные настройки темы"
 
 #: ../inc/customizer/customizer.php:38
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #: ../inc/customizer/customizer.php:43
 msgid "Webclip Icon Options"
-msgstr ""
+msgstr "Webclip Icon Options"
 
 #: ../inc/customizer/customizer.php:44
 msgid ""
@@ -661,7 +661,7 @@ msgstr "Выберите скелет сайта:"
 
 #: ../inc/customizer/customizer.php:63 ../inc/customizer/customizer.php:259
 msgid "Content Layout"
-msgstr ""
+msgstr "Отображение материала"
 
 #: ../inc/customizer/customizer.php:68 ../inc/customizer/customizer.php:271
 #: ../inc/theme-options.php:114
@@ -700,7 +700,7 @@ msgstr ""
 
 #: ../inc/customizer/customizer.php:111 ../inc/customizer/customizer.php:112
 msgid "Featured Slider"
-msgstr ""
+msgstr "Готовый слайдер"
 
 #: ../inc/customizer/customizer.php:116 ../inc/theme-options.php:701
 msgid "Slider Options"
@@ -738,11 +738,11 @@ msgstr ""
 
 #: ../inc/customizer/customizer.php:203
 msgid "Fav Icon"
-msgstr ""
+msgstr "Fav Icon"
 
 #: ../inc/customizer/customizer.php:215
 msgid "Web Clip Icon"
-msgstr ""
+msgstr "Web Clip Icon"
 
 #: ../inc/customizer/customizer.php:287
 msgid "Feed Redirect url"
@@ -780,7 +780,7 @@ msgstr ""
 
 #: ../inc/customizer/customizer.php:384
 msgid "Transition Effect"
-msgstr ""
+msgstr "Эффект перехода"
 
 #: ../inc/customizer/customizer.php:392 ../inc/theme-options.php:745
 msgid "fade"
@@ -886,22 +886,24 @@ msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
+"Внимание!!! Сброс всех настроек на настройки по умолчанию. Сохраните "
+"изменения и обновите страницу."
 
 #: ../inc/customizer/customizer.php:811
 msgid "Reset all settings"
-msgstr ""
+msgstr "Сброс всех настроек"
 
 #: ../inc/customizer/customizer.php:821
 msgid "Check to reset all settings to default"
-msgstr ""
+msgstr "Настройки по умолчанию"
 
 #: ../inc/customizer/customizer.php:831 ../inc/customizer/customizer.php:842
 msgid "Important Links"
-msgstr ""
+msgstr "Полезные ссылки"
 
 #: ../inc/customizer/customizer.php:876
 msgid "Upgrade To Pro"
-msgstr ""
+msgstr "Обновить до PRO"
 
 #: ../inc/theme-options.php:64
 msgid "Favicon URL"
@@ -917,7 +919,7 @@ msgstr "Отображение материала"
 
 #: ../inc/theme-options.php:170
 msgid "Scroll Up"
-msgstr ""
+msgstr "Прокрутка вверх"
 
 #: ../inc/theme-options.php:230
 msgid "Insert as Favicon"
@@ -1198,7 +1200,7 @@ msgstr ""
 
 #: ../inc/widgets.php:21
 msgid "Use this widget to add any type of Ad as a widget. "
-msgstr ""
+msgstr "Используйте этот виджет для добавления рекламы."
 
 #: ../inc/widgets.php:39
 msgid "Title (optional):"
@@ -1235,7 +1237,7 @@ msgstr ""
 
 #: ../searchform.php:19
 msgid "Search for:"
-msgstr ""
+msgstr "Искать:"
 
 #: ../searchform.php:22
 msgid "Search"
@@ -1243,7 +1245,7 @@ msgstr "Поиск"
 
 #: ../sidebar.php:25 ../sidebar.php:30
 msgid "Primary Sidebar Widget Area"
-msgstr ""
+msgstr "Область основной боковой панели"
 
 #: ../sidebar.php:32
 msgid ""
@@ -1258,6 +1260,8 @@ msgid ""
 "add widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> "
 "which will replace default widgets."
 msgstr ""
+"По умолчанию будут показаны виджеты Поиск и Архив. Вы можете добавиьт еще "
+"виджеты если перейдёте на <a href=\"%s\">Панель виджетов</a>."
 
 #: ../sidebar.php:39
 msgid "Archives"

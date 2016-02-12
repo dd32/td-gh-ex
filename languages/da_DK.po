@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-10 00:55+0545\n"
-"PO-Revision-Date: 2016-02-10 00:55+0545\n"
+"POT-Creation-Date: 2016-02-12 13:11+0545\n"
+"PO-Revision-Date: 2016-02-12 13:11+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Kris Thomsen <mail@kristhomsen.dk>\n"
 "Language: da_DK\n"
@@ -621,7 +621,7 @@ msgstr "Hjælp til tema"
 
 #: ../inc/customizer/customizer-custom-controls.php:26
 msgid "Changelog"
-msgstr ""
+msgstr "Ændringslog"
 
 #: ../inc/customizer/customizer-custom-controls.php:30
 msgid "Donate Now"
@@ -629,7 +629,7 @@ msgstr "Doner Nu"
 
 #: ../inc/customizer/customizer-custom-controls.php:34
 msgid "Review"
-msgstr ""
+msgstr "Anmeldelse"
 
 #: ../inc/customizer/customizer.php:33 ../inc/theme-options.php:207
 #: ../inc/theme-options.php:208 ../inc/theme-options.php:671
@@ -638,21 +638,23 @@ msgstr "Temaindstillinger"
 
 #: ../inc/customizer/customizer.php:34
 msgid "Basic theme Options"
-msgstr ""
+msgstr "Grundlæggende tema indstillinger"
 
 #: ../inc/customizer/customizer.php:38
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #: ../inc/customizer/customizer.php:43
 msgid "Webclip Icon Options"
-msgstr ""
+msgstr "Webclip ikon indstillinger"
 
 #: ../inc/customizer/customizer.php:44
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height "
 "144px height, which will support High Resolution Devices like iPad Retina"
 msgstr ""
+"Web Clip ikonet for Apple-enheder. Anbefalede størrelse - bredde 144px og "
+"højde 144px højde, som vil støtte høj opløsning enheder som iPad nethinden"
 
 #: ../inc/customizer/customizer.php:48 ../inc/customizer/customizer.php:227
 #: ../inc/theme-options.php:82
@@ -671,7 +673,7 @@ msgstr "Standard layout"
 
 #: ../inc/customizer/customizer.php:63 ../inc/customizer/customizer.php:259
 msgid "Content Layout"
-msgstr ""
+msgstr "Indholdslayout"
 
 #: ../inc/customizer/customizer.php:68 ../inc/customizer/customizer.php:271
 #: ../inc/theme-options.php:114
@@ -710,7 +712,7 @@ msgstr ""
 
 #: ../inc/customizer/customizer.php:111 ../inc/customizer/customizer.php:112
 msgid "Featured Slider"
-msgstr ""
+msgstr "Fremhævet slider"
 
 #: ../inc/customizer/customizer.php:116 ../inc/theme-options.php:701
 msgid "Slider Options"
@@ -726,11 +728,11 @@ msgstr "Sociale links"
 
 #: ../inc/customizer/customizer.php:130
 msgid "Add your social links here"
-msgstr ""
+msgstr "Tilføj dine sociale links her"
 
 #: ../inc/customizer/customizer.php:134
 msgid "Predefined Social Icons"
-msgstr ""
+msgstr "Foruddefinerede Sociale Ikoner"
 
 #: ../inc/customizer/customizer.php:141 ../inc/customizer/customizer.php:146
 #: ../inc/theme-options.php:674
@@ -748,15 +750,15 @@ msgstr ""
 
 #: ../inc/customizer/customizer.php:203
 msgid "Fav Icon"
-msgstr ""
+msgstr "Fav Icon"
 
 #: ../inc/customizer/customizer.php:215
 msgid "Web Clip Icon"
-msgstr ""
+msgstr "Web Clip Icon"
 
 #: ../inc/customizer/customizer.php:287
 msgid "Feed Redirect url"
-msgstr ""
+msgstr "Url til feed-omdirigering"
 
 #: ../inc/customizer/customizer.php:298 ../inc/theme-options.php:499
 msgid "Check to move above the Header/Logo Image"
@@ -772,11 +774,11 @@ msgstr "Afkryds for at  aktivere"
 
 #: ../inc/customizer/customizer.php:347
 msgid "Check to disable scroll up"
-msgstr ""
+msgstr "Afmærk for at deaktivere Scroll Up"
 
 #: ../inc/customizer/customizer.php:359
 msgid "Check to Exclude Slider posts from Homepage posts"
-msgstr ""
+msgstr "Afmærk for at udelukke Slider indlæg fra homepage/forside indlæg?"
 
 #: ../inc/customizer/customizer.php:368 ../inc/theme-options.php:716
 msgid "Number of Slides"
@@ -787,10 +789,11 @@ msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
+"Customizer siden skal genindlæses efter arkivering af ændring i antal slides"
 
 #: ../inc/customizer/customizer.php:384
 msgid "Transition Effect"
-msgstr ""
+msgstr "Transitions-effekt"
 
 #: ../inc/customizer/customizer.php:392 ../inc/theme-options.php:745
 msgid "fade"
@@ -838,7 +841,7 @@ msgstr "shuffle"
 
 #: ../inc/customizer/customizer.php:407
 msgid "Transition Delay (in seconds)"
-msgstr ""
+msgstr "Transition - forsinkelse"
 
 #: ../inc/customizer/customizer.php:423 ../inc/theme-options.php:770
 msgid "Transition Length"
@@ -876,6 +879,7 @@ msgstr "Code to display on Header"
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr ""
+"Her kan du sætte scripts fra Google, Facebook osv som bliver indlæst i Header"
 
 #: ../inc/customizer/customizer.php:664 ../inc/theme-options.php:946
 msgid "Code to display on Footer"
@@ -885,6 +889,7 @@ msgstr "Code to display on Footer"
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Footer"
 msgstr ""
+"Her kan du sætte scripts fra Google, Facebook osv som bliver indlæst i Footer"
 
 #: ../inc/customizer/customizer.php:794
 #, php-format
@@ -896,22 +901,24 @@ msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
+"Advarsel: Nulstil alle indstillinger til standard. Genindlæs siden efter "
+"arkivering for at se effekten."
 
 #: ../inc/customizer/customizer.php:811
 msgid "Reset all settings"
-msgstr ""
+msgstr "Nulstil alle indstillinger"
 
 #: ../inc/customizer/customizer.php:821
 msgid "Check to reset all settings to default"
-msgstr ""
+msgstr "Afmærk for at nulstille alle indstillinger til standard"
 
 #: ../inc/customizer/customizer.php:831 ../inc/customizer/customizer.php:842
 msgid "Important Links"
-msgstr ""
+msgstr "Vigtige links"
 
 #: ../inc/customizer/customizer.php:876
 msgid "Upgrade To Pro"
-msgstr ""
+msgstr "Opgrader til Pro"
 
 #: ../inc/theme-options.php:64
 msgid "Favicon URL"
@@ -927,7 +934,7 @@ msgstr "Indholdslayout"
 
 #: ../inc/theme-options.php:170
 msgid "Scroll Up"
-msgstr ""
+msgstr "rul op"
 
 #: ../inc/theme-options.php:230
 msgid "Insert as Favicon"
@@ -1097,6 +1104,8 @@ msgid ""
 "Theme Options Panel will be retired on future versions. Please use %1$s "
 "Customizer %2$s instead."
 msgstr ""
+"Tema indstillinger bliver udfaset i fremtidige versioner. Brug venligst %1$s "
+"Customizer %2$s i stedet."
 
 #: ../inc/theme-options.php:672
 msgid "Featured Post Slider"
@@ -1209,11 +1218,11 @@ msgstr "Alle rettigheder forbeholdt"
 
 #: ../inc/widgets.php:20
 msgid "CT: Adspace Widget"
-msgstr ""
+msgstr "CT: Reklamer"
 
 #: ../inc/widgets.php:21
 msgid "Use this widget to add any type of Ad as a widget. "
-msgstr ""
+msgstr "Brug denne widget til at tilføje forskellige typer af annoncering"
 
 #: ../inc/widgets.php:39
 msgid "Title (optional):"
@@ -1251,12 +1260,12 @@ msgstr ""
 #: ../searchform.php:19
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "Søg efter:"
 
 #: ../searchform.php:22
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Søg"
 
 #: ../sidebar.php:25 ../sidebar.php:30
 msgid "Primary Sidebar Widget Area"

@@ -1,9 +1,15 @@
 == Change log ==
 
+Version 4.3.3
+* Bug Fixed: Accessibility
+** Fixed: Keyboard navigation for Pagination
+** Fixed: Contrast for calendar widget and comments link
+* Fixed German, Russian, French, Portuguese(Brazil) and Danish translation
+
 Version 4.3.2
 * Added accessibility-ready tag
 * Bug Fixed: Accessibility
-** Fixed: Headlings
+** Fixed: Headings
 ** Fixed: Contrasts
 ** Fixed: Keyboard navigation
 ** Fixed: Disallowed by removing `targer="_blank"` 

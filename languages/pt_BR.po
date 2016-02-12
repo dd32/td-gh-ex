@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-10 00:55+0545\n"
-"PO-Revision-Date: 2016-02-10 00:55+0545\n"
+"POT-Creation-Date: 2016-02-12 13:26+0545\n"
+"PO-Revision-Date: 2016-02-12 13:26+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -468,7 +468,7 @@ msgstr "Email"
 
 #: ../functions.php:1045
 msgid "Footer Social Links Menu"
-msgstr ""
+msgstr "Menu de links sociais do rodapé"
 
 #: ../functions.php:1049 ../inc/customizer/customizer.php:441
 #: ../inc/theme-options.php:654 ../inc/theme-options.php:794
@@ -633,7 +633,7 @@ msgstr "Gostou do tema? Faça uma Doação!"
 
 #: ../inc/customizer/customizer-custom-controls.php:34
 msgid "Review"
-msgstr ""
+msgstr "Revisão"
 
 #: ../inc/customizer/customizer.php:33 ../inc/theme-options.php:207
 #: ../inc/theme-options.php:208 ../inc/theme-options.php:671
@@ -642,11 +642,11 @@ msgstr "Opções do Tema"
 
 #: ../inc/customizer/customizer.php:34
 msgid "Basic theme Options"
-msgstr ""
+msgstr "Opções básicas do tema"
 
 #: ../inc/customizer/customizer.php:38
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #: ../inc/customizer/customizer.php:43
 msgid "Webclip Icon Options"
@@ -675,7 +675,7 @@ msgstr "Layout Padrão"
 
 #: ../inc/customizer/customizer.php:63 ../inc/customizer/customizer.php:259
 msgid "Content Layout"
-msgstr ""
+msgstr "Layout do Conteúdo"
 
 #: ../inc/customizer/customizer.php:68 ../inc/customizer/customizer.php:271
 #: ../inc/theme-options.php:114
@@ -717,7 +717,7 @@ msgstr ""
 
 #: ../inc/customizer/customizer.php:111 ../inc/customizer/customizer.php:112
 msgid "Featured Slider"
-msgstr ""
+msgstr "Slider em destaque"
 
 #: ../inc/customizer/customizer.php:116 ../inc/theme-options.php:701
 msgid "Slider Options"
@@ -755,11 +755,11 @@ msgstr ""
 
 #: ../inc/customizer/customizer.php:203
 msgid "Fav Icon"
-msgstr ""
+msgstr "Fav Icon"
 
 #: ../inc/customizer/customizer.php:215
 msgid "Web Clip Icon"
-msgstr ""
+msgstr "Web Clip Icon"
 
 #: ../inc/customizer/customizer.php:287
 msgid "Feed Redirect url"
@@ -797,7 +797,7 @@ msgstr ""
 
 #: ../inc/customizer/customizer.php:384
 msgid "Transition Effect"
-msgstr ""
+msgstr "Escolha o efeito de transição"
 
 #: ../inc/customizer/customizer.php:392 ../inc/theme-options.php:745
 msgid "fade"
@@ -903,22 +903,34 @@ msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
+"<strong>Atenção:</strong> Essa é uma ação para repor, redefinir (Reset) ou "
+"reinstalar todas as configurações para o padrão original do tema."
+"<br><strong>Importante:</strong> Certifique-se de fazer uma cópia de todas "
+"as configurações personalizadas por você, caso queira voltar àquilo que "
+"havia feito anteriormente.<br>Se é isso que realmente você quer "
+"<strong>(redefinir as configurações para o padrão original)</strong>, "
+"precisará marcar a caixa de seleção abaixo, clicar em <strong>\"Salvar & "
+"Publicar\"</strong>, atualizar sua página no navegador para visualizar os "
+"efeitos completos no padrão original do tema. E assim, começar uma nova "
+"configuração personalizada do zero."
 
 #: ../inc/customizer/customizer.php:811
 msgid "Reset all settings"
-msgstr ""
+msgstr "Redefinir (Reset) todas as configurações"
 
 #: ../inc/customizer/customizer.php:821
 msgid "Check to reset all settings to default"
 msgstr ""
+"Marque essa caixa de seleção, para redefinir (Reset) todas as configurações "
+"para o padrão original do tema."
 
 #: ../inc/customizer/customizer.php:831 ../inc/customizer/customizer.php:842
 msgid "Important Links"
-msgstr ""
+msgstr "Links que são muito importantes"
 
 #: ../inc/customizer/customizer.php:876
 msgid "Upgrade To Pro"
-msgstr ""
+msgstr "Atualizar para Pro"
 
 #: ../inc/theme-options.php:64
 msgid "Favicon URL"
@@ -934,7 +946,7 @@ msgstr "Layout do Conteúdo"
 
 #: ../inc/theme-options.php:170
 msgid "Scroll Up"
-msgstr ""
+msgstr "Deslizar para cima"
 
 #: ../inc/theme-options.php:230
 msgid "Insert as Favicon"
@@ -1279,16 +1291,16 @@ msgstr ""
 #: ../searchform.php:19
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "Pesquisar por:"
 
 #: ../searchform.php:22
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Pesquisar"
 
 #: ../sidebar.php:25 ../sidebar.php:30
 msgid "Primary Sidebar Widget Area"
-msgstr ""
+msgstr "Área da barra lateral principal"
 
 #: ../sidebar.php:32
 msgid ""
@@ -1303,6 +1315,9 @@ msgid ""
 "add widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> "
 "which will replace default widgets."
 msgstr ""
+"Por padrão ele irá carregar os widgets Pesquisar e Arquivos, conforme "
+"mostrado abaixo. Você pode adicionar widget para esta área, visitando o seu "
+"<a href=\"%s\">Painel Widgets</a> que irá substituir os widgets padrão."
 
 #: ../sidebar.php:39
 msgid "Archives"

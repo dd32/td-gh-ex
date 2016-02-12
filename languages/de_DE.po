@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Catch Box v1.7\n"
+"Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-10 00:55+0545\n"
-"PO-Revision-Date: 2016-02-10 00:55+0545\n"
+"POT-Creation-Date: 2016-02-12 13:11+0545\n"
+"PO-Revision-Date: 2016-02-12 13:11+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: H.P. Brinkmann\n"
 "Language: de_DE\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
 "esc_attr_e;esc_attr__\n"
@@ -813,7 +813,7 @@ msgstr "Benutzerdefinierte CSS-Stile"
 
 #: ../inc/customizer/customizer.php:103
 msgid "Scroll Up Options"
-msgstr ""
+msgstr "Hoch scrollen Optionen"
 
 #: ../inc/customizer/customizer.php:111 ../inc/customizer/customizer.php:112
 msgid "Featured Slider"
@@ -836,11 +836,11 @@ msgstr "Links zu Sozialen Netzwerken"
 
 #: ../inc/customizer/customizer.php:130
 msgid "Add your social links here"
-msgstr ""
+msgstr "Fügen Sie die Links Ihrer sozialen Netzwerke hier ein"
 
 #: ../inc/customizer/customizer.php:134
 msgid "Predefined Social Icons"
-msgstr ""
+msgstr "Vordefinierte Symbole Sozialer Netzwerke"
 
 # @ catchbox
 #: ../inc/customizer/customizer.php:141 ../inc/customizer/customizer.php:146
@@ -867,7 +867,7 @@ msgstr "Web Clip Icon"
 
 #: ../inc/customizer/customizer.php:287
 msgid "Feed Redirect url"
-msgstr ""
+msgstr "Feed Umleitungs-URL"
 
 #: ../inc/customizer/customizer.php:298 ../inc/theme-options.php:499
 msgid "Check to move above the Header/Logo Image"
@@ -885,11 +885,11 @@ msgstr "Ankreuzen zum aktivieren"
 
 #: ../inc/customizer/customizer.php:347
 msgid "Check to disable scroll up"
-msgstr ""
+msgstr "Anklicken um Hoch scrollen  zu deaktivieren"
 
 #: ../inc/customizer/customizer.php:359
 msgid "Check to Exclude Slider posts from Homepage posts"
-msgstr ""
+msgstr "Anklicken um Slider Beiträge von den Homepage Beiträgen ausschließen"
 
 # @ catchbox
 #: ../inc/customizer/customizer.php:368 ../inc/theme-options.php:716
@@ -901,6 +901,8 @@ msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
+"Die benutzerdefinierte Seite muss nach dem Speichern aktualisiert werden, "
+"wenn die Anzahl der Slides geändert wurde"
 
 #: ../inc/customizer/customizer.php:384
 msgid "Transition Effect"
@@ -1005,6 +1007,8 @@ msgstr "Code to display on Header"
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr ""
+"Hier können Sie Skripte von Google, Facebook, Twitter etc. einfügen, die "
+"dann im Header geladen werden"
 
 #: ../inc/customizer/customizer.php:664 ../inc/theme-options.php:946
 msgid "Code to display on Footer"
@@ -1014,6 +1018,8 @@ msgstr "Code to display on Footer"
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Footer"
 msgstr ""
+"Hier können Sie Skripte von Google, Facebook, Twitter etc. einfügen, die "
+"dann im Footer geladen werden"
 
 #: ../inc/customizer/customizer.php:794
 #, php-format
@@ -1025,6 +1031,8 @@ msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
+"WARNUNG: Setzt alle Einstellungen auf Werkszustand zurück. Lade die Seite "
+"neu, um die Änderungen zu sehen."
 
 #: ../inc/customizer/customizer.php:811
 msgid "Reset all settings"
@@ -1040,7 +1048,7 @@ msgstr "Wichtige Links"
 
 #: ../inc/customizer/customizer.php:876
 msgid "Upgrade To Pro"
-msgstr ""
+msgstr "Auf Pro upgraden"
 
 # @ catchbox
 #: ../inc/theme-options.php:64
@@ -1058,7 +1066,7 @@ msgstr "Inhaltslayout"
 
 #: ../inc/theme-options.php:170
 msgid "Scroll Up"
-msgstr ""
+msgstr "hoch scrollen"
 
 #: ../inc/theme-options.php:230
 msgid "Insert as Favicon"
@@ -1253,6 +1261,8 @@ msgid ""
 "Theme Options Panel will be retired on future versions. Please use %1$s "
 "Customizer %2$s instead."
 msgstr ""
+"Theme Optionenfenster wird in zukünftigen Versionen nicht mehr enthalten "
+"sein. Bitte verwenden Sie %1$s Customizer %2$s stattdessen."
 
 # @ catchbox
 #: ../inc/theme-options.php:672
@@ -1379,11 +1389,12 @@ msgstr "Alle Rechte vorbehalten"
 
 #: ../inc/widgets.php:20
 msgid "CT: Adspace Widget"
-msgstr ""
+msgstr "CT: Werbung"
 
 #: ../inc/widgets.php:21
 msgid "Use this widget to add any type of Ad as a widget. "
 msgstr ""
+"Verwenden Sie diesen Widget, um jede Art von Werbung als Widget hinzuzufügen."
 
 # @ catchbox
 #: ../inc/widgets.php:39
@@ -1428,12 +1439,12 @@ msgstr ""
 #: ../searchform.php:19
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "Suche nach:"
 
 #: ../searchform.php:22
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
 #: ../sidebar.php:25 ../sidebar.php:30
 msgid "Primary Sidebar Widget Area"
@@ -1443,7 +1454,7 @@ msgstr "Primärer Seitenleisten Widget-Bereich"
 msgid ""
 "This is the Primary Sidebar Widget Area if you are using a two column site "
 "layout option."
-msgstr ""
+msgstr "Dies ist die Erste Sidebar Widget-Area, wenn du ein 2-Layout nutzt."
 
 #: ../sidebar.php:33
 #, php-format
@@ -1452,6 +1463,9 @@ msgid ""
 "add widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> "
 "which will replace default widgets."
 msgstr ""
+"Standardmäßig wird das Such- und Archiv-Widget geladen, du siehst es unten. "
+"Du kannst im <a href=\"%s\">Widgets Panel</a> neue Widgets hinzufügen, die "
+"die alten Widgets ersetzen."
 
 # @ catchbox
 #: ../sidebar.php:39
