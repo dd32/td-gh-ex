@@ -1,5 +1,4 @@
 <?php if( is_active_sidebar('home-orange-sidebar_left') || is_active_sidebar('home-orange-sidebar_center') || is_active_sidebar('home-orange-sidebar_right') ) : ?>
-
 <div class="top-contact-detail-section">
 	<div class="container">
 		<div class="row">
@@ -30,5 +29,4 @@
 	</div>
 </div>
 <div class="clearfix"></div>
-
 <?php endif; ?>

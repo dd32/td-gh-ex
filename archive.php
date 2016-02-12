@@ -32,12 +32,8 @@ get_header(); ?>
 		</div>	
 	</div>
 </div>
-<!-- Page Seperator --><div class="page-seperator"></div><!-- /Page Seperator -->
-
-<div class="clearfix"></div>
-
 <!-- /Page Title Section ---->
-<div class="blog-section-lg">
+<div class="page-builder">
 	<div class="container">
 		<div class="row">
 		
@@ -50,9 +46,14 @@ get_header(); ?>
 				?>
 				<?php get_template_part('content',''); ?>
 				<?php endwhile;	?>
-				<div class="blog-pagination-square">
-					<?php previous_posts_link( __('Previous','appointment') ); ?>
-					<?php next_posts_link( __('Next','appointment') ); ?> 
+				<div class="blog-pagination">
+				<?php
+				// Previous/next page navigation.
+				the_posts_pagination( array(
+				'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
+				'next_text'          => '<i class="fa fa-angle-double-right"></i>',
+				) );
+				?>
 				</div>
 			</div>
 			<!--Sidebar Area-->

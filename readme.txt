@@ -94,6 +94,12 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.4.6
+1. Solved Styling issue.
+2. Remove Page Separator.
+3. Added Page Builder Class.
+4. Add contact form 7 plugin style.
+5. Add Title Breadcrumbs Color.
 @version 2.4.5.1
 1. Slider Issue resolved.
 @version 2.4.5

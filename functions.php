@@ -29,11 +29,6 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-footer-callout.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-template.php');
 	
-	
-	
-	
-	
-	
 	// Custom Category control 
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/custom-controls/select/category-dropdown-custom-control.php');
 	/* Theme Setup Function */
@@ -108,7 +103,7 @@ function appointment_add_to_author_profile( $contactmethods ) {
 		if($original_len>155) {
 		$output = $output;
 		return  '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>'.
-	                       '<div class="blog-btn-area-sm"><a href="' . get_permalink() . '" class="blog-btn-sm">'.__("
+	                       '<div class="slide-btn-area-sm"><a href="' . get_permalink() . '" class="slide-btn-sm">'.__("
 						   Read more","appointment").'</a></div>';
 		}
 		else

@@ -9,7 +9,7 @@ public $type = 'new_menu';
        
 	   {
 	   ?>
-	   <h3><?php _e('Want To add More Styling and Theme Color Then','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','appointment'); ?> </a>
+	   <h3><?php _e('Want To Use Below Predefined Themes Colors then','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','appointment'); ?> </a>
 	   <h3><?php _e('Predefined Colors','appointment'); ?></h3>
 		<?php
 		  $name = '_customize-color-radio-' . $this->id; 
@@ -61,6 +61,14 @@ public $type = 'new_menu';
             'green.css' => 'green.jpg',
 			'red.css' => 'red.jpg',
 			'cyan.css' => 'cyan.jpg',
+			'regalblue.css' =>'regal.jpg',
+			'lightsea.css' => 'lightsea.jpg',
+			'wadgewood.css' => 'wadge.jpg',
+			'aqua.css' => 'aqua.jpg',
+			'yellow.css' => 'yellow.jpg',
+			'pink.css' => 'pink.jpg',
+			'cirousblue.css' => 'cirous.jpg',
+			'mandy.css' => 'mandy.jpg',
     )
 	
 	)));

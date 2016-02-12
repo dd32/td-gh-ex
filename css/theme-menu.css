@@ -19,6 +19,7 @@
 	margin-bottom: 0px;
 	border-radius: 0px;
 }
+.navbar-nav li .caret { display: none; }
 .nav {
     list-style: outside none none;
     margin-bottom: 0;
@@ -65,22 +66,14 @@
 	margin-top: 0px;
 	z-index: 20;
 }
-.navbar .navbar-nav > .active > a,
-.navbar .navbar-nav > .active > a:hover,
-.navbar .navbar-nav > .active > a:focus {
-    background-color: #00c2a9;
-	color: #FFFFFF;
-}
 .navbar .navbar-nav > .open > a,
 .navbar .navbar-nav > .open > a:hover,
 .navbar .navbar-nav > .open > a:focus {
 	background-color: #ffffff;
-	color: #ee591f;
 }
 .navbar .navbar-nav > li > a:hover,
 .navbar .navbar-nav > li > a:focus {
 	background-color: #ffffff;
-	color: #ee591f;
 }
 .navbar .navbar-nav > li {
     margin-right: 0px;
@@ -99,12 +92,19 @@
 	transition: all 0.3s ease-in-out 0s;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	color: #ffffff !important;
-	background-color: #ee591f !important;
+	color: #ffffff;
 }
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.navbar-default .navbar-nav .open .dropdown-menu > li > a { background: transparent !important; color: #1b1b1b !important; }
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover { background: transparent !important; } 
+}
+@media only screen and (min-width: 200px) and (max-width: 480px) {
+.navbar-default .navbar-nav .open .dropdown-menu > li > a { background: transparent !important; color: #1b1b1b !important; }
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover { background: transparent !important; }
+}
+
 /*Dropdown Menus & Submenus Css----------------------------------------------------------*/
 .dropdown-menu {
-	background-color: #ee591f;
     padding: 0;
 	min-width: 200px;
 	border-radius: 0px;
@@ -112,6 +112,7 @@
 	border: 0 none;
 	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
+.navbar-default .dropdown-menu > li { padding: 0; }
 .dropdown-menu > li > a {
     color: #ffffff;
     font-family: 'Open Sans';
@@ -119,10 +120,10 @@
     font-size: 14px;
     line-height: 20px;
     padding: 15px 20px;
-	border-bottom: 1px solid #c64412;
 	transition: all 0.3s ease-in-out 0s;
 	letter-spacing: 0.5px;
-	white-space: normal !important;
+	word-wrap:break-word;
+	white-space: normal;
 }
 .dropdown-menu > li > a:last-chlid {
 	border-bottom: 0px;
@@ -132,7 +133,6 @@
 .dropdown-menu > li > a:focus {
     color: #ffffff;
     text-decoration: none;
-    background-color: #c64412;
 }
 .dropdown-submenu { position:relative; }
 .dropdown-submenu > .dropdown-menu {
@@ -159,12 +159,6 @@
 .navbar-right .dropdown-menu {
     left: 0;
     right: 0;
-}
-
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus
-{
-background-color:#ee591f !important ; 
-
 }
 
 @media only screen and (max-width: 767px) and (min-width: 480px)

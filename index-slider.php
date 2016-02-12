@@ -19,7 +19,7 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
 		<div class="carousel-inner" role="listbox">
 		<div class="item active">
 		   <img src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/slide/slide1.jpg">
-			<div class="slide-caption">
+			<div class="container slide-caption">
 				<div class="slide-text-bg1"><h2><?php _e('Powerful Bootstrap Theme','appointment'); ?></h2></div>
 				<div class="slide-text-bg2"><span><?php _e('This is Mixed corporate layout with simple and clean design ready for professional business websites. Let us introduce core features of Mixed!','appointment'); ?></span></div>	
 				<div class="slide-btn-area-sm"><a href="#" class="slide-btn-sm"><?php _e('Read More','appointment'); ?></a></div>		
@@ -27,7 +27,7 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
 		</div>  
 		<div class="item">
 		   <img src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/slide/slide2.jpg">
-			<div class="slide-caption">
+			<div class="container slide-caption">
 				<div class="slide-text-bg1"><h2><?php _e('Powerful Bootstrap Theme','appointment'); ?></h2></div>
 				<div class="slide-text-bg2"><span><?php _e('This is Mixed corporate layout with simple and clean design ready for professional business websites. Let us introduce core features of Mixed!','appointment'); ?></span></div>	
 				<div class="slide-btn-area-sm"><a href="#" class="slide-btn-sm"><?php _e('Read More','appointment'); ?></a></div>		
@@ -35,7 +35,7 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
 		</div>
 		<div class="item">
 		  <img src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/slide/slide3.jpg">
-			<div class="slide-caption">
+			<div class="container slide-caption">
 				<div class="slide-text-bg1"><h2><?php _e('Powerful Bootstrap Theme','appointment'); ?></h2></div>
 				<div class="slide-text-bg2"><span><?php _e('This is Mixed corporate layout with simple and clean design ready for professional business websites. Let us introduce core features of Mixed!','appointment'); ?></span></div>	
 				<div class="slide-btn-area-sm"><a href="#" class="slide-btn-sm"><?php _e('Read More','appointment'); ?></a></div>		
@@ -87,15 +87,25 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
 			}
 			if(!has_post_thumbnail()){
 			 echo '<img class="img-responsive" src="'.WEBRITI_TEMPLATE_DIR_URI.'/images/slide/no-image.jpg">'; ?>
-			 <div class="slide-caption">
+			 <div class="container slide-caption">
+			 <?php if($post->post_title !="") {?>
 				<div class="slide-text-bg1"><h2><?php the_title();?></h2></div>
-				<?php echo get_the_excerpt(); ?>
+				<?php }
+				if($post->post_content !="")
+				{
+				echo get_the_excerpt(); 
+				}?>
 			</div>
 			<?php }
 			else { ?>
-			<div class="slide-caption">
+			<div class="container slide-caption">
+			 <?php if($post->post_title !="") {?>
 				<div class="slide-text-bg1"><h2><?php the_title();?></h2></div>
-				<?php echo get_the_excerpt(); ?>
+				<?php }
+				if($post->post_content !="")
+				{
+				echo get_the_excerpt(); 
+				}?>
 			</div>
 			<?php } ?>
 		</div> 

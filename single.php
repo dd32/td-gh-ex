@@ -2,7 +2,7 @@
 get_header();
 get_template_part('index','banner'); ?>
 <!-- Blog Section Right Sidebar -->
-<div class="blog-section-lg">
+<div class="page-builder">
 	<div class="container">
 		<div class="row">
 		
@@ -52,15 +52,9 @@ get_template_part('index','banner'); ?>
 							</ul>
 						</div>
 					</div>	
-				</div>
-			<div class="blog-pagination-square">
-					<?php previous_posts_link( __('Previous','appointment') ); ?>
-					<?php next_posts_link( __('Next','appointment') ); ?> 
-			</div>	
+				</div>	
 				<!--/Blog Author-->
-				<?php } ?>
-			<?php comments_template('',true); ?>	
-				<?php } ?>	
+				<?php } comments_template('',true);  } ?>	
 				</div>
 			<!-- /Blog Area -->			
 			

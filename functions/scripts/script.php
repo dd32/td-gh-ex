@@ -4,9 +4,11 @@
 function appointment_scripts()
  {
 		wp_enqueue_style('appointment-style', get_stylesheet_uri() );
+		wp_enqueue_style('appointment-bootstrap-css',WEBRITI_TEMPLATE_DIR_URI.'/css/bootstrap.css');
 		wp_enqueue_style('appointment-default',WEBRITI_TEMPLATE_DIR_URI.'/css/default.css');
-        wp_enqueue_style('appointment-bootstrap-css',WEBRITI_TEMPLATE_DIR_URI.'/css/bootstrap.css');
 		wp_enqueue_style('appointment-menu-css',WEBRITI_TEMPLATE_DIR_URI.'/css/theme-menu.css');
+		wp_enqueue_style('appointment-element-css',WEBRITI_TEMPLATE_DIR_URI.'/css/element.css');
+		
 	/* Font Awesome */
        wp_enqueue_style('appointment-font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome/css/font-awesome.min.css');		
     /* Media Responsive Css */

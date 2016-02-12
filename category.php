@@ -17,29 +17,27 @@
 		</div>	
 	</div>
 </div>
-<!-- /Page Title Section -->
-<!-- Page Seperator --><div class="page-seperator"></div><!-- /Page Seperator -->
-<div class="clearfix"></div>
-<!-- /Page Title Section ---->
-<div class="blog-section-lg">
+<div class="page-builder">
 	<div class="container">
 		<div class="row">
 			<!-- Blog Area -->
 			<div class="<?php appointment_post_layout_class(); ?>" >
-			<?php 
-		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1 ;
-		$category_id = get_query_var('cat');
-		$args = array( 'post_type' => 'post','cat' => $category_id ,'paged' => $paged );
-		$loop = new WP_Query( $args );
-		if( have_posts() ) :
-		 while( $loop->have_posts() ) : $loop->the_post(); ?>
-				<?php get_template_part('content','')?>
-				<?php endwhile; ?>
-				<?php endif; ?>
-			<!-- Blog Pagination -->
-				<div class="blog-pagination-square">
-					<?php previous_posts_link( __('Previous','appointment') ); ?>
-					<?php next_posts_link( __('Next','appointment') ); ?> 
+			   <?php 
+				if ( have_posts() ) :
+					// Start the Loop.
+					while ( have_posts() ) : the_post();
+						get_template_part( 'content','');
+					endwhile;
+				endif;
+				?>
+				<div class="blog-pagination">
+				<?php
+				// Previous/next page navigation.
+				the_posts_pagination( array(
+				'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
+				'next_text'          => '<i class="fa fa-angle-double-right"></i>',
+				) );
+				?>
 				</div>
 			<!-- /Blog Pagination -->
 			</div>
