@@ -26,7 +26,7 @@ get_header();
 		
 		    do_action( 'actions_before_index_elements' );
 			
-			    do_action( 'actions_index_elements' );
+			    do_action( 'actions_index_elements' ); // Give your elements priorities so that they hook in the right place.
 				
 			do_action( 'actions_after_index_elements' );
         
@@ -61,7 +61,7 @@ get_header();
 		
 		    do_action( 'actions_before_index_elements' );
 			
-			    do_action( 'actions_index_elements' );
+			    do_action( 'actions_index_elements' ); // Give your elements priorities so that they hook in the right place.
 				
 			do_action( 'actions_after_index_elements' );
         
@@ -114,7 +114,7 @@ get_header();
 	
 	    do_action( 'actions_before_single' );
 		
-            do_action( 'actions_single_post_elements' );
+            do_action( 'actions_single_post_elements' ); // Give your elements priorities so that they hook in the right place.
 			
 		    do_action( 'aactions_single_post_comments' );
 			
@@ -138,11 +138,11 @@ get_header();
 	
         if ( have_posts() ) :
 		
-		    do_action( 'actions_before_index_elements' );
+		    do_action( 'actions_before_search_elements' );
 			
-			    do_action( 'actions_index_elements' );
+			    do_action( 'actions_index_elements' ); // Give your elements priorities so that they hook in the right place.
 				
-			do_action( 'actions_after_index_elements' );
+			do_action( 'actions_after_search_elements' );
         
 		// If no content, include the "No posts found" action.
 		else :

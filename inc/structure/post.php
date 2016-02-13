@@ -91,11 +91,14 @@ if ( ! function_exists( 'actions_post_nav' ) ) {
 	/**
 	 * Display navigation to next/previous post when applicable.
 	 */
-	function actions_post_nav() {
-		$args = array(
-			'next_text' => '%title &nbsp;<span class="meta-nav">&rarr;</span>',
-			'prev_text' => '<span class="meta-nav">&larr;</span>&nbsp;%title',
-			);
-		the_post_navigation( $args );
+	function actions_post_nav() {		
+		the_post_navigation( array(
+			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post: ', 'actions' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Next post:', 'actions' ) . '</span> ' .
+				'<span class="post-title">%title</span>',
+			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post: ', 'actions' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Previous post:', 'actions' ) . '</span> ' .
+				'<span class="post-title">%title</span>',
+		) );
 	}
 }

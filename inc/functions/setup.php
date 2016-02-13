@@ -107,12 +107,71 @@ function actions_widgets_init() {
 	) );
 }
 
+if ( ! function_exists( 'actions_fonts_url' ) ) :
+/**
+ * Register Google fonts for Twenty Sixteen.
+ *
+ * Create your own actions_fonts_url() function to override in a child theme.
+ *
+ * @since Twenty Sixteen 1.0
+ *
+ * @return string Google fonts URL for the theme.
+ */
+function actions_fonts_url() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
+
+	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'actions' ) ) {
+		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
+	}
+
+	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'actions' ) ) {
+		$fonts[] = 'Montserrat:400,700';
+	}
+
+	/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'actions' ) ) {
+		$fonts[] = 'Inconsolata:400';
+	}
+
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
+	}
+
+	return $fonts_url;
+}
+endif;
+
+/**
+ * Handles JavaScript detection.
+ *
+ * Adds a `js` class to the root `<html>` element when JavaScript is detected.
+ *
+ * @since Twenty Sixteen 1.0
+ */
+function actions_javascript_detection() {
+	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+}
+add_action( 'wp_head', 'actions_javascript_detection', 0 );
+
 /**
  * Enqueue scripts and styles.
  * @since  1.0.0
  */
 function actions_scripts() {
 	global $actions_version;
+	
+	// Add custom fonts, used in the main stylesheet.
+	wp_enqueue_style( 'actions-fonts', actions_fonts_url(), array(), null );
+
+	// Add Genericons, used in the main stylesheet.
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/inc/genericons/genericons.css', array(), '3.4.1' );
 
 	wp_enqueue_style( 'actions-style', get_template_directory_uri() . '/style.css', '', $actions_version );
 

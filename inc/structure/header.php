@@ -21,12 +21,13 @@ if ( ! function_exists( 'actions_site_branding' ) ) {
 					<span class="site-title">
 						<?php 
 						$title = get_bloginfo('name');
+						$description = get_bloginfo( 'description');
 						if ( get_theme_mod( 'actions_logo' ) ) : ?>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<img src="<?php echo get_theme_mod( 'actions_logo' ); ?>" alt="<?php echo esc_attr( $title ); ?>">
 							</a>
 						<?php else : ?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $title ); ?>">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $description ); ?>" alt="<?php echo esc_attr( $title ); ?>">
 								<?php echo $title; ?>
 							</a>
 						<?php endif; ?>
