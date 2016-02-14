@@ -2,7 +2,7 @@
 Theme Name: ProMax
 Theme URI: http://www.insertcart.com/product/promax-wordpress-theme/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo http://demo.baztro.com/promax 
-Version: 1.5.5.3
+Version: 1.5.6
 Author: InsertCart.com
 Author URI: http://www.insertcart.com/
 Tags: black, blue, white, light, red, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, responsive-layout
@@ -704,6 +704,14 @@ max-width: 100% !important;
 height: 190px;
 padding: 0px 0px 10px 0px;
 }
+header.page-header{
+    border: 1px solid;
+    padding: 10px;
+    border-color: #ddd;
+    background: #FBFBFB;
+    margin-bottom: 10px;
+	    max-width: 93%;
+}
 /* ===================== post-slider ===================== */
 .post-slider {
 	color: #ddd;
@@ -795,15 +803,6 @@ color: #fff;
 
 }
 
-.post h1 {
-margin-bottom: 10px;
-font-style: normal;
-font-weight: 600;
-color: inherit;
-text-rendering: optimizelegibility;
-font-size: 30px;
-}
-
 /*============Post Table===============*/
 
 #pagecont table, #singlecontent table {
@@ -861,7 +860,7 @@ margin-right: 3%;
 width: 30%;
 overflow: hidden;
 margin-bottom: 3%;
-border-bottom: 1px solid #DDD;
+padding-bottom: 5px;
 height: 335px;
 box-shadow: 0 0px 1px 0 #B5B5B5;
 -moz-box-shadow: 0 0px 1px 0 #b5b5b5;
@@ -1469,6 +1468,14 @@ table#wp-calendar td {
 	text-align: center;
 }
 /* ===================== comments ===================== */
+a.comment-reply-link::before{
+    content: "\f112";
+	font-family:FontAwesome;
+	    padding: 4px;
+}
+p.form-submit{
+clear: both;
+   }
 .large-6{
     width: 50%;}
 .row.collapse > .column, .row.collapse > .columns{

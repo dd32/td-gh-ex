@@ -3,7 +3,14 @@
 		<div id="page">
 			<div id="page-inner" class="clearfix">
 				
-				<div id="content">				
+				<div id="content">	
+<header class="page-header">
+				<?php
+					the_archive_title( '<h1 class="page-title titlepage"><i class="fa fa-list-alt"></i> ', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				?>
+				</header><!-- .page-header -->		
+							
 				<?php if (have_posts()) : ?>
 				<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>					
 				<?php /* If this is a category archive */ if (is_category()) { ?>		

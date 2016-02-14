@@ -36,6 +36,12 @@ Custom Css:
 
 == Change log ==
 
+= 1.5.6 =
+* Added Category description in archive page
+* Fixed popular post title alignment in firefox
+* Added comment reply icon
+* Added block grid select option
+
 = 1.5.3 =
 * Navigation code update
 * Fixed minor issue
