@@ -237,33 +237,7 @@ function accesspress_ticker_setting($wp_customize){
         'fullwidth' => __('Full Width', 'accesspress-store')
         )
       )
-    );
-
-  $wp_customize->add_section('responsive_setting',
-    array(
-     'title'            =>       __('Responsive Setting', 'accesspress-store'),
-     'priority'         =>      '110',
-     'panel'            =>      'general_setting',
-     )
-    );
-
-  $wp_customize->add_setting(
-    'accesspress_ed_responsive',
-    array(
-      'default'       =>      '1',
-      'sanitize_callback' => 'accesspress_store_integer_sanitize'
-      )
-    );
-
-  $wp_customize->add_control(new WP_Customize_Switch_Control(
-    $wp_customize,
-    'accesspress_ed_responsive',
-    array(
-      'section'       =>      'responsive_setting',
-      'label'         =>      __('Enable or Disable Responsive Design', 'accesspress-store'),
-      'type'          =>      'switch',
-      )
-    ));
+    );  
 
   //Custom css section
     $wp_customize->add_section('accesspress_store_setting', array(

@@ -18,6 +18,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
 global $woocommerce_loop;
 
 // Store loop count we're currently on
@@ -37,7 +38,6 @@ $woocommerce_loop['loop']++;
 	if ( $woocommerce_loop['loop'] % $woocommerce_loop['columns'] == 0 )
 		echo ' last';
 	?>">
-
 	<?php do_action( 'woocommerce_before_subcategory', $category ); ?>
 
 	<a href="<?php echo get_term_link( $category->slug, 'product_cat' ); ?>">
@@ -50,7 +50,6 @@ $woocommerce_loop['loop']++;
 			 */
 			do_action( 'woocommerce_before_subcategory_title', $category );
 		?>
-
 		<h3>
 			<?php
 				echo $category->name;
@@ -59,16 +58,12 @@ $woocommerce_loop['loop']++;
 					echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . $category->count . ')</mark>', $category );
 			?>
 		</h3>
-
 		<?php
 			/**
 			 * woocommerce_after_subcategory_title hook
 			 */
 			do_action( 'woocommerce_after_subcategory_title', $category );
 		?>
-
 	</a>
-
 	<?php do_action( 'woocommerce_after_subcategory', $category ); ?>
-
 </li>

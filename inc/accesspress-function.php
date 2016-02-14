@@ -178,11 +178,8 @@ function accesspress_store_scripts() {
 
 	wp_enqueue_style( 'accesspress-store-style', get_stylesheet_uri() );
 
-	//check if responsive mode is enabled.
-	if(get_theme_mod('accesspress_ed_responsive','1')==1){
-		wp_enqueue_style( 'accesspress-store-style-responsive', get_template_directory_uri() . '/css/responsive.css');
-	}
-
+	wp_enqueue_style( 'accesspress-store-minify-style', get_template_directory_uri() . '/css/responsive.css');		
+	
 	wp_enqueue_script( 'accesspress-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	
 	wp_enqueue_script( 'accesspress-store-slick', get_template_directory_uri() . '/js/slick.js', array('jquery'), '1.5.0', true );

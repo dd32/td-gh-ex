@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 1.1.7
+Version: 1.1.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -16,63 +16,9 @@ AccessPress Store is based on Underscores http://underscores.me/, (C) 2012-2015 
 /*--------------------------------------------------------------
 1.0 Reset
 --------------------------------------------------------------*/
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-font,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,
+del,dfn,em,font,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,
+legend,table,caption,tbody,tfoot,thead,tr,th,td {
     border: 0;
     font-family: inherit;
     font-size: 100%;
@@ -110,16 +56,7 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-nav,
-section {
+article,aside,details,figcaption,figure,footer,header,main,nav,section {
     display: block;
 }
 ol,
@@ -131,16 +68,12 @@ table {
     border-collapse: separate;
     border-spacing: 0;
 }
-caption,
-th,
+caption,th,
 td {
     font-weight: normal;
     text-align: left;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before,blockquote:after,q:before,q:after {
     content: "";
 }
 blockquote,
@@ -161,21 +94,12 @@ a img {
 2.0 Typography
 --------------------------------------------------------------*/
 
-body,
-button,
-input,
-select,
-textarea {
+body,button,input,select,textarea {
     color: #141414;
     font-size: 15px;
     line-height: 1.8;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
     clear: both;
     color: #141414;
     font-family: "Open Sans", sans-serif;
@@ -208,9 +132,7 @@ b,
 strong {
     font-weight: 600;
 }
-dfn,
-cite,
-em,
+dfn,cite,em,
 i {
     font-style: italic;
 }
@@ -231,21 +153,16 @@ pre {
     overflow: auto;
     padding: 1.6em;
 }
-code,
-kbd,
-tt,
-var {
+code,kbd,tt,var {
     font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     font-size: 15px;
     font-size: 1.5rem;
 }
-abbr,
-acronym {
+abbr,acronym {
     border-bottom: 1px dotted #666;
     cursor: help;
 }
-mark,
-ins {
+mark,ins {
     
     text-decoration: none;
 }
@@ -3321,9 +3238,6 @@ Responsive grid for pages
     background: url("images/mini-prev-arrow.png") no-repeat scroll center center;
     background-size: 100%;
 }
-/*.slick-disabled {
-    cursor: not-allowed !important;
-}*/
 .new-prod-slide .slick-next:hover,
 .new-prod-slide .slick-next.slick-disabled {
     background: url("images/mini-next-arrow.png") no-repeat scroll center center;
@@ -4748,15 +4662,11 @@ span.onsale:after,
 .woocommerce.single.single-product .entry-summary .product_meta div span {
     color: #7f7e7e !important;
 }
+
 .woocommerce.single.single-product .entry-summary .product_meta {
     margin: 30px 0px;
-    margin-top: 15px;
+    margin-top: 35px;
 }
-/*
-.woocommerce.single.single-product .entry-summary .apss-social-share a:hover .apss-icon-block {background: url("images/social.png") no-repeat scroll center center !important;display: block;height: 45px !important;width: 45px !important;}
-.woocommerce.single.single-product .entry-summary .apss-social-share a:hover i{color:#ffffff !important;}
-*/
-
 .woocommerce.single.single-product div.product form.cart {
     margin-bottom: 10px;
     /*display: inline-block;*/
@@ -4807,6 +4717,7 @@ span.onsale:after,
 .woocommerce.single.single-product .entry-summary .yith-wcwl-add-to-wishlist{
     float: right;
     margin-top: 0px;
+    margin-bottom: -30px;
 }
 
 .woocommerce.single.single-product .woocommerce-tabs {
@@ -6515,11 +6426,7 @@ ul.products.list li.product hr {
     line-height: 1 !important;
 }
 /*last menu item style*/
-
 #site-navigation > .store-menu > ul li:last-child:hover ul ul{
     left: auto;
     right: 100%
 }
- 
-
-/*boxed body style*/

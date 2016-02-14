@@ -6,7 +6,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.5.0
+ * @version     2.5.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -42,22 +42,22 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	<div class="item-img">
 	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
 		<?php
-		/**
-		 * woocommerce_before_shop_loop_item_title hook
-		 *
-		 * @hooked woocommerce_show_product_loop_sale_flash - 10
-		 * @hooked woocommerce_template_loop_product_thumbnail - 10
-		 */
-		do_action( 'woocommerce_before_shop_loop_item_title' );
+			/**
+			 * woocommerce_before_shop_loop_item_title hook
+			 *
+			 * @hooked woocommerce_show_product_loop_sale_flash - 10
+			 * @hooked woocommerce_template_loop_product_thumbnail - 10
+			 */
+			do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
 	</a>
 	<?php
-	/**
-	 * woocommerce_after_shop_loop_item hook
-	 *
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item' ); 
+		/**
+		 * woocommerce_after_shop_loop_item hook
+		 *
+		 * @hooked woocommerce_template_loop_add_to_cart - 10
+		 */
+		do_action( 'woocommerce_after_shop_loop_item' ); 
 	?>
 	</div>
 	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
@@ -66,22 +66,22 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	</a>
 	<div class="price-cart">
 		<?php
-		/**
-		 * woocommerce_after_shop_loop_item_title hook
-		 *
-		 * @hooked woocommerce_template_loop_rating - 5
-		 * @hooked woocommerce_template_loop_price - 10
-		 */
-		do_action( 'woocommerce_after_shop_loop_item_title' );
-		remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating' , 5 );
+			/**
+			 * woocommerce_after_shop_loop_item_title hook
+			 *
+			 * @hooked woocommerce_template_loop_rating - 5
+			 * @hooked woocommerce_template_loop_price - 10
+			 */
+			do_action( 'woocommerce_after_shop_loop_item_title' );
+			remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating' , 5 );
 		?>
 	</div>
 	<?php 
-	if( function_exists( 'YITH_WCWL' ) ){
-		$url = add_query_arg( 'add_to_wishlist', $product->id );
-		?>
-		<a class="item-wishlist" href="<?php echo $url ?>"><?php _e('Wishlist','accesspress-store'); ?></a>
-		<?php
-	}
+		if( function_exists( 'YITH_WCWL' ) ){
+			$url = add_query_arg( 'add_to_wishlist', $product->id );
+			?>
+			<a class="item-wishlist" href="<?php echo $url ?>"><?php _e('Wishlist','accesspress-store'); ?></a>
+			<?php
+		}
 	?>
 </div>

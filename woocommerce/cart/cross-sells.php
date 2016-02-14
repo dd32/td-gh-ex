@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.5.0
+ * @version     2.5.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -51,6 +51,4 @@ if ( $products->have_posts() ) : ?>
 
 	</div>
 
-<?php endif;
-
-wp_reset_query();
+<?php endif; wp_reset_query();

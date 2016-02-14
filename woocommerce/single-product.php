@@ -12,7 +12,7 @@
  * @see     http://docs.woothemes.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.5.0
+ * @version 2.5.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -85,5 +85,4 @@ if($breadcrumb == '1') :
         </div>
     </div>
 </div>
-
 <?php get_footer('shop'); ?>

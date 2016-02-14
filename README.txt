@@ -48,6 +48,12 @@ Images
 
 == Changelog ==
 
+= 1.1.8 =
+
+** Fixed the product details page add to cart, meta, variations style issue.
+** Manage style.css file and delete unnecessary css code.
+** Update Overrides woocommerce template in our theme and make theme compatible with latest version of woocommerce (5.0.2).
+
 = 1.1.7 =
 
 ** Fixed the customizer page layout and background pattern image style.

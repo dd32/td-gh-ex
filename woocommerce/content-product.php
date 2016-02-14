@@ -12,7 +12,7 @@
  * @see     http://docs.woothemes.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.5.0
+ * @version 2.5.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -50,24 +50,24 @@ if (0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'])
             <div class="outer-img">
                 <div class="inner-img">
                     <?php
-                    /**
-                     * woocommerce_before_shop_loop_item_title hook
-                     *
-                     * @hooked woocommerce_show_product_loop_sale_flash - 10
-                     * @hooked woocommerce_template_loop_product_thumbnail - 10
-                     */
-                    do_action('woocommerce_before_shop_loop_item_title');
+                        /**
+                         * woocommerce_before_shop_loop_item_title hook
+                         *
+                         * @hooked woocommerce_show_product_loop_sale_flash - 10
+                         * @hooked woocommerce_template_loop_product_thumbnail - 10
+                         */
+                        do_action('woocommerce_before_shop_loop_item_title');
                     ?>
                 </div>
             </div>
         </a>
         <?php
-        if (function_exists('YITH_WCWL')) {
-            $url = add_query_arg('add_to_wishlist', $product->id);
-            ?>
-            <a class="item-wishlist" href="<?php echo $url ?>"><?php _e('Wishlist','accesspress-store'); ?></a>
-            <?php
-        }
+            if (function_exists('YITH_WCWL')) {
+                $url = add_query_arg('add_to_wishlist', $product->id);
+                ?>
+                <a class="item-wishlist" href="<?php echo $url ?>"><?php _e('Wishlist','accesspress-store'); ?></a>
+                <?php
+            }
         ?>
     </div>
     <div class="collection_desc clearfix">
@@ -77,20 +77,20 @@ if (0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'])
         </a>
         <div class="price-cart">
             <?php
-            /**
-             * woocommerce_after_shop_loop_item_title hook
-             *
-             * @hooked woocommerce_template_loop_rating - 5
-             * @hooked woocommerce_template_loop_price - 10
-             */
-            do_action('woocommerce_after_shop_loop_item_title');
-            
-            /**
-             * woocommerce_after_shop_loop_item hook
-             *
-             * @hooked woocommerce_template_loop_add_to_cart - 10
-             */
-            do_action('woocommerce_after_shop_loop_item');
+                /**
+                 * woocommerce_after_shop_loop_item_title hook
+                 *
+                 * @hooked woocommerce_template_loop_rating - 5
+                 * @hooked woocommerce_template_loop_price - 10
+                 */
+                do_action('woocommerce_after_shop_loop_item_title');
+                
+                /**
+                 * woocommerce_after_shop_loop_item hook
+                 *
+                 * @hooked woocommerce_template_loop_add_to_cart - 10
+                 */
+                do_action('woocommerce_after_shop_loop_item');
             ?>
         </div>
     </div>
