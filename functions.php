@@ -12,6 +12,32 @@
  * @since Esteem 1.0
  */
 
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) )
+	$content_width = 642;
+
+/**
+ * $content_width global variable adjustment as per layout option.
+ */
+function esteem_content_width() {
+   global $post;
+   global $content_width;
+
+   if( $post ) { $layout_meta = get_post_meta( $post->ID, '_esteem_layout', true ); }
+   if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
+   $esteem_default_layout = get_theme_mod( 'esteem_default_layout', 'right_sidebar' );
+
+   if( $layout_meta == 'default_layout' ) {
+      if ( $esteem_default_layout == 'no_sidebar_full_width' ) { $content_width = 978; /* pixels */ }
+      else { $content_width = 642; /* pixels */ }
+   }
+   elseif ( $layout_meta == 'no_sidebar_full_width' ) { $content_width = 978; /* pixels */ }
+   else { $content_width = 642; /* pixels */ }
+}
+add_action( 'template_redirect', 'esteem_content_width' );
+
 add_action( 'after_setup_theme', 'esteem_setup' );
 
 if( !function_exists( 'esteem_setup' ) ) :
@@ -21,12 +47,6 @@ if( !function_exists( 'esteem_setup' ) ) :
  * @since 1.0
  */
 function esteem_setup() {
-	global $content_width;
-	/**
-	 * Set the content width based on the theme's design and stylesheet.
-	 */
-	if ( ! isset( $content_width ) )
-		$content_width = 700;
 
 	/*
 	 * Make theme available for translation.
