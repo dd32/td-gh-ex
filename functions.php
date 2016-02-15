@@ -12,6 +12,33 @@
  * @since Freedom 1.0
  */
 
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+global $content_width;
+if ( ! isset( $content_width ) )
+  $content_width = 660;
+
+/**
+ * $content_width global variable adjustment as per layout option.
+ */
+function freedom_content_width() {
+   global $post;
+   global $content_width;
+
+   if( $post ) { $layout_meta = get_post_meta( $post->ID, 'freedom_page_layout', true ); }
+   if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
+   $freedom_default_layout = get_theme_mod( 'freedom_default_layout', 'no_sidebar_full_width' );
+
+   if( $layout_meta == 'default_layout' ) {
+      if ( $freedom_default_layout != 'no_sidebar_full_width' ) { $content_width = 1000; /* pixels */ }
+      else { $content_width = 660; /* pixels */ }
+   }
+   elseif ( $layout_meta == 'no_sidebar_full_width' ) { $content_width = 1000; /* pixels */ }
+   else { $content_width = 660; /* pixels */ }
+}
+add_action( 'template_redirect', 'freedom_content_width' );
+
 add_action( 'after_setup_theme', 'freedom_setup' );
 /**
  * All setup functionalities.
@@ -20,13 +47,6 @@ add_action( 'after_setup_theme', 'freedom_setup' );
  */
 if( !function_exists( 'freedom_setup' ) ) :
 function freedom_setup() {
-
-	/**
-	 * Set the content width based on the theme's design and stylesheet.
-	 */
-	global $content_width;
-	if ( ! isset( $content_width ) )
-		$content_width = 660;
 
 	/*
 	 * Make theme available for translation.

@@ -50,6 +50,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.9 =
+* Fontawesome icons updated to 4.5.0
+* Content width adjusted according to the layout choosed
+* Removed backward compatibility of WordPress title
+
 = Version 1.0.8 =
 * SEO Optimization
 
