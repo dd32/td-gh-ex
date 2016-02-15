@@ -12,6 +12,32 @@
  * @since Accelerate 1.0
  */
 
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) )
+   $content_width = 720;
+
+/**
+ * $content_width global variable adjustment as per layout option.
+ */
+function accelerate_content_width() {
+   global $post;
+   global $content_width;
+
+   if( $post ) { $layout_meta = get_post_meta( $post->ID, 'accelerate_page_layout', true ); }
+   if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
+   $accelerate_default_layout = accelerate_options( 'accelerate_default_layout', 'right_sidebar' );
+
+   if( $layout_meta == 'default_layout' ) {
+      if ( $accelerate_default_layout == 'no_sidebar_full_width' ) { $content_width = 1100; /* pixels */ }
+      else { $content_width = 720; /* pixels */ }
+   }
+   elseif ( $layout_meta == 'no_sidebar_full_width' ) { $content_width = 1100; /* pixels */ }
+   else { $content_width = 720; /* pixels */ }
+}
+add_action( 'template_redirect', 'accelerate_content_width' );
+
 add_action( 'after_setup_theme', 'accelerate_setup' );
 /**
  * All setup functionalities.
@@ -20,13 +46,6 @@ add_action( 'after_setup_theme', 'accelerate_setup' );
  */
 if( !function_exists( 'accelerate_setup' ) ) :
 function accelerate_setup() {
-
-	/**
-	 * Set the content width based on the theme's design and stylesheet.
-	 */
-	global $content_width;
-	if ( ! isset( $content_width ) )
-		$content_width = 720;
 
 	/*
 	 * Make theme available for translation.

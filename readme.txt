@@ -49,6 +49,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= 1.2.4 =
+* Content width adjusted according to the layout choosed
+* Fontawesome icons updated to version 4.5.0
+* Removed backward compatability for WOrdPress title tag
+
 = 1.2.3 =
 * Some fixes for better SEO.
 * Changed Screenshot.
