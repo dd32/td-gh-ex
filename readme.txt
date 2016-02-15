@@ -64,6 +64,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.2 =
+* Removed backward compatibility for the WordPress title tag
+
 = Version 1.2.1 =
 * SEO Optimization
 

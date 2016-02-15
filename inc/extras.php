@@ -54,57 +54,6 @@ function radiate_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'radiate_body_classes' );
 
-// Backwards compatibility for older versions
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-
-   add_action( 'wp_head', 'radiate_render_title' );
-   function radiate_render_title() {
-      ?>
-      <title>
-      <?php
-      /**
-       * Print the <title> tag based on what is being viewed.
-       */
-      wp_title( '|', true, 'right' );
-      ?>
-      </title>
-      <?php
-   }
-
-   add_filter( 'wp_title', 'radiate_wp_title', 10, 2 );
-   /**
-    * Filters wp_title to print a neat <title> tag based on what is being viewed.
-    *
-    * @param string $title Default title text for current view.
-    * @param string $sep Optional separator.
-    * @return string The filtered title.
-    */
-   function radiate_wp_title( $title, $sep ) {
-   	global $page, $paged;
-
-   	if ( is_feed() ) {
-   		return $title;
-   	}
-
-   	// Add the blog name
-   	$title .= get_bloginfo( 'name' );
-
-   	// Add the blog description for the home/front page.
-   	$site_description = get_bloginfo( 'description', 'display' );
-   	if ( $site_description && ( is_home() || is_front_page() ) ) {
-   		$title .= " $sep $site_description";
-   	}
-
-   	// Add a page number if necessary:
-   	if ( $paged >= 2 || $page >= 2 ) {
-   		$title .= " $sep " . sprintf( __( 'Page %s', 'radiate' ), max( $paged, $page ) );
-   	}
-
-   	return $title;
-   }
-
-endif;
-
 add_action('wp_head', 'radiate_internal_css');
 /**
  * Hooks the Custom Internal CSS to head section
