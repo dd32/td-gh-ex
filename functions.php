@@ -16,7 +16,35 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
-	$content_width = 700;
+	$content_width = 750;
+
+/**
+ * $content_width global variable adjustment as per layout option.
+ */
+function spacious_content_width() {
+   global $post;
+   global $content_width;
+
+   if( $post ) { $layout_meta = get_post_meta( $post->ID, 'spacious_page_layout', true ); }
+   if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
+   $spacious_default_layout = spacious_options( 'default_layout', 'right_sidebar' );
+
+   if ( $layout_meta == 'default_layout' ) {
+      if ( ( spacious_options( 'spacious_site_layout', 'box_1218px' ) == 'box_978px' ) || ( spacious_options( 'spacious_site_layout', 'box_1218px' ) == 'wide_978px' ) ) {
+         if ( $spacious_default_layout == 'no_sidebar_full_width' ) { $content_width = 978; /* pixels */ }
+         else { $content_width = 642; /* pixels */ }
+      }
+      elseif ( $spacious_default_layout == 'no_sidebar_full_width' ) { $content_width = 1218; /* pixels */ }
+      else { $content_width = 750; /* pixels */ }
+   }
+   elseif ( ( spacious_options( 'spacious_site_layout', 'box_1218px' ) == 'box_978px' ) || ( spacious_options( 'spacious_site_layout', 'box_1218px' ) == 'wide_978px' ) ) {
+      if ( $layout_meta == 'no_sidebar_full_width' ) { $content_width = 978; /* pixels */ }
+      else { $content_width = 642; /* pixels */ }
+   }
+   elseif ( $layout_meta == 'no_sidebar_full_width' ) { $content_width = 1218; /* pixels */ }
+   else { $content_width = 750; /* pixels */ }
+}
+add_action( 'template_redirect', 'spacious_content_width' );
 
 add_action( 'after_setup_theme', 'spacious_setup' );
 /**

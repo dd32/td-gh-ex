@@ -45,6 +45,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.3.7 =
+* Content width is now adjusted with site layout choosed.
+* Removed backward compatibility for WordPress title tag.
+
 = Version 1.3.6 =
 * SEO Optimization
 
