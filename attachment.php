@@ -40,7 +40,7 @@ get_header();
                             </a></p>
                          
                       <p class="att-meta">   <?php
-                        printf(__('By %2$s', 'akyra'), 'meta-prep meta-prep-author', sprintf('<a class="url fn n" href="%1$s" title="%2$s">%3$s</a>', get_author_posts_url(get_the_author_meta('ID')), sprintf(esc_attr__('View all posts by %s', 'akyra'), get_the_author()), get_the_author()
+                        printf(__('By %2$s', 'akyra'), 'meta-prep meta-prep-author', sprintf('<a class="url fn n" href="%1$s" title="%2$s">%3$s</a>', esc_url(get_author_posts_url(get_the_author_meta('ID'))), sprintf(esc_attr__('View all posts by %s', 'akyra'), get_the_author()), get_the_author()
                                 )
                         );
                         ?>
@@ -81,7 +81,7 @@ get_header();
                             $next_attachment_url = wp_get_attachment_url();
                         }
                         ?>
-                        <p><a href="<?php echo esc_url($next_attachment_url); ?>" title="<?php echo esc_attr(get_the_title()); ?>" rel="attachment">
+                        <p><a href="<?php echo esc_url($next_attachment_url); ?>" title="<?php the_title(); ?>" rel="attachment">
                                 <?php
                                 $attachment_size = apply_filters('twentyten_attachment_size', 900);
                                 echo wp_get_attachment_image($post->ID, array($attachment_size, 9999)); // filterable image width with, essentially, no limit for image height.
@@ -90,7 +90,7 @@ get_header();
                         <?php previous_image_link(false); ?>
                         <?php next_image_link(false); ?>
                     <?php else : ?>
-                        <a href="<?php echo esc_url(wp_get_attachment_url()); ?>" title="<?php echo esc_attr(get_the_title()); ?>" rel="attachment"><?php echo basename(get_permalink()); ?></a>
+                        <a href="<?php echo esc_url(wp_get_attachment_url()); ?>" title="<?php the_title(); ?>" rel="attachment"><?php echo basename(get_permalink()); ?></a>
                     <?php endif; ?>
                     <?php if (!empty($post->post_excerpt))
                         the_excerpt();
