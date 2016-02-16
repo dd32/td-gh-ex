@@ -12,13 +12,13 @@ function cpotheme_admin_welcome_notice(){
 		
 		if(current_user_can('manage_options') && $welcome_dismissed != 'dismissed' && $display){
 			wp_enqueue_style('cpotheme_admin');
-			$welcome_url = '<a href="'.esc_url(admin_url('themes.php?page=cpotheme-welcome')).'">'.__('quickstart guide', 'cpotheme').'</a>';
+			$welcome_url = '<a href="'.esc_url(admin_url('themes.php?page=cpotheme-welcome')).'">'.__('quickstart guide', 'affluent').'</a>';
 			$plugin_url = '<strong><a href="'.esc_url(admin_url('themes.php?page=cpotheme-welcome')).'">CPO Content Types</a></strong>';
 			echo '<div class="updated">';
 			echo '<div class="cpotheme-notice">';
-			echo '<a href="'.add_query_arg('ctdismiss', CPOTHEME_ID.'_wizard').'" class="cpotheme-notice-dismiss">'.__('Dismiss This Notice', 'cpotheme').'</a>';
-			echo '<p>'.sprintf(esc_html__('%s is ready! It is highly recommended that you install the %s companion plugin and then check the quickstart guide to see how it all works.', 'cpotheme'), esc_attr(CPOTHEME_NAME), $plugin_url, $welcome_url).'</p>';
-			echo '<p><a href="'.esc_url(admin_url('themes.php?page=cpotheme-welcome')).'" class="button button-primary" style="text-decoration: none;">'.sprintf(__('Start Using %s', 'cpotheme'), esc_attr(CPOTHEME_NAME)).'</a></p>';
+			echo '<a href="'.add_query_arg('ctdismiss', CPOTHEME_ID.'_wizard').'" class="cpotheme-notice-dismiss">'.__('Dismiss This Notice', 'affluent').'</a>';
+			echo '<p>'.sprintf(esc_html__('%s is ready! It is highly recommended that you install the %s companion plugin and then check the quickstart guide to see how it all works.', 'affluent'), esc_attr(CPOTHEME_NAME), $plugin_url, $welcome_url).'</p>';
+			echo '<p><a href="'.esc_url(admin_url('themes.php?page=cpotheme-welcome')).'" class="button button-primary" style="text-decoration: none;">'.sprintf(__('Start Using %s', 'affluent'), esc_attr(CPOTHEME_NAME)).'</a></p>';
 			echo '</div>';
 			echo '</div>';
 		}

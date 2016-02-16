@@ -15,11 +15,11 @@ if(!function_exists('cpotheme_page_title')){
 		}elseif(is_author()){
 			the_author();
 		}elseif(is_date()){
-			_e('Archive', 'cpotheme');
+			_e('Archive', 'affluent');
 		}elseif(is_404()){
-			echo __('Page Not Found', 'cpotheme');
+			echo __('Page Not Found', 'affluent');
 		}elseif(is_search()){
-			echo __('Search Results for', 'cpotheme').' "'.get_search_query().'"';
+			echo __('Search Results for', 'affluent').' "'.get_search_query().'"';
 		}else{
 			echo get_the_title($current_id);
 		}
@@ -87,7 +87,7 @@ if(!function_exists('cpotheme_charset')){
 if(!function_exists('cpotheme_edit')){
 	function cpotheme_edit(){
 		if(cpotheme_get_option('general_editlinks'))
-			edit_post_link(__('Edit', 'cpotheme'));
+			edit_post_link(__('Edit', 'affluent'));
 	}
 }
 
@@ -140,7 +140,7 @@ if(!function_exists('cpotheme_block')){
 //Print 404 message
 if(!function_exists('cpotheme_404')){
 	function cpotheme_404(){
-		echo apply_filters('cpotheme_404', __('The requested page could not be found. It could have been deleted or changed location. Try searching for it using the search function.', 'cpotheme'));
+		echo apply_filters('cpotheme_404', __('The requested page could not be found. It could have been deleted or changed location. Try searching for it using the search function.', 'affluent'));
 	}
 }
 
@@ -166,7 +166,7 @@ if(!function_exists('cpotheme_subfooter')){
 if(!function_exists('cpotheme_footer')){
 	function cpotheme_footer(){		
 		echo '<div class="footer-content">';
-		echo '&copy; '.get_bloginfo('name').' '.date("Y").'. '.sprintf(__('<a href="%s">%s</a> theme by CPOThemes.', 'cpotheme'), esc_url(CPOTHEME_PREMIUM_URL), esc_attr(CPOTHEME_NAME)); 
+		echo '&copy; '.get_bloginfo('name').' '.date("Y").'. '.sprintf(__('<a href="%s">%s</a> theme by CPOThemes.', 'affluent'), esc_url(CPOTHEME_PREMIUM_URL), esc_attr(CPOTHEME_NAME)); 
 		echo '</div>';
 	}
 }
@@ -189,15 +189,15 @@ if(!function_exists('cpotheme_sitemap')){
 	function cpotheme_sitemap(){		
 		//Print page list
 		echo '<div class="column col2">';
-		echo '<h3>'.__('Pages', 'cpotheme').'</h3>';
+		echo '<h3>'.__('Pages', 'affluent').'</h3>';
 		echo '<ul>'.wp_list_pages('sort_column=menu_order&title_li=&echo=0').'</ul>';
 		echo '</div>';
 		
 		//Print post categories and tag cloud
 		echo '<div class="column col2 col-last">';
-		echo '<h3>'.__('Post Categories', 'cpotheme').'</h3>';
+		echo '<h3>'.__('Post Categories', 'affluent').'</h3>';
 		echo '<ul>'.wp_list_categories('title_li=&show_count=1&echo=0').'</ul>';
-		echo '<h3>'.__('Post Tags', 'cpotheme').'</h3>';
+		echo '<h3>'.__('Post Tags', 'affluent').'</h3>';
 		echo '<ul>'.wp_tag_cloud('echo=0').'</ul>';
 		echo '</div>';
 		
@@ -341,7 +341,7 @@ if(!function_exists('cpotheme_breadcrumb')){
 						endif;
 						
 					elseif(is_search()):					
-						$result .= __('Search Results', 'cpotheme');
+						$result .= __('Search Results', 'affluent');
 					else:
 						if(isset($post->ID)) $current_id = $post->ID; else $current_id = false;
 						if($current_id){
@@ -350,9 +350,9 @@ if(!function_exists('cpotheme_breadcrumb')){
 					endif;
 				}elseif(is_404()){
 					$result = "<span class='breadcrumb-separator'></span>";
-					$result .= __('Page Not Found', 'cpotheme');
+					$result .= __('Page Not Found', 'affluent');
 				}
-				$result = '<a class="breadcrumb-link" href="'.home_url().'">'.__('Home', 'cpotheme').'</a>'.$result;
+				$result = '<a class="breadcrumb-link" href="'.home_url().'">'.__('Home', 'affluent').'</a>'.$result;
 			}
 			
 			$output = '<div id="breadcrumb" class="breadcrumb">'.$result.'</div>';
@@ -374,12 +374,12 @@ if(!function_exists('cpotheme_search_form')){
 			echo '<div class="search-form">';
 			echo '<form role="search" method="get" id="search-form" class="search-form" action="'.home_url('/').'">';
 			echo '<input type="text" value="'.$search_query.'" name="s" id="s" />';
-			echo '<input type="submit" id="search-submit" value="'.__('Search', 'cpotheme').'" />';
+			echo '<input type="submit" id="search-submit" value="'.__('Search', 'affluent').'" />';
 			echo '</form>';
 			echo '</div>';
 			
 			if(!have_posts()){
-				echo '<p class="search-submit">'.__('No results were found. Please try searching with different terms.', 'cpotheme').'</p>';
+				echo '<p class="search-submit">'.__('No results were found. Please try searching with different terms.', 'affluent').'</p>';
 			}
 		}
 	}
@@ -391,7 +391,7 @@ if(!function_exists('cpotheme_postpage_image')){
 	function cpotheme_postpage_image(){
 		if(has_post_thumbnail()){
 			if(!is_singular('post')){
-				echo '<a href="'.get_permalink(get_the_ID()).'" title="'.sprintf(esc_attr__('Go to %s', 'cpotheme'), the_title_attribute('echo=0')).'" rel="bookmark">';
+				echo '<a href="'.get_permalink(get_the_ID()).'" title="'.sprintf(esc_attr__('Go to %s', 'affluent'), the_title_attribute('echo=0')).'" rel="bookmark">';
 				the_post_thumbnail('portfolio');
 				echo '</a>';
 			}else{
@@ -407,7 +407,7 @@ if(!function_exists('cpotheme_postpage_title')){
 	function cpotheme_postpage_title(){
 		if(!is_singular('post')){
 			echo '<h2 class="post-title">';
-			echo '<a href="'.get_permalink(get_the_ID()).'" title="'.sprintf(esc_attr__('Go to %s', 'cpotheme'), the_title_attribute('echo=0')).'" rel="bookmark">';
+			echo '<a href="'.get_permalink(get_the_ID()).'" title="'.sprintf(esc_attr__('Go to %s', 'affluent'), the_title_attribute('echo=0')).'" rel="bookmark">';
 			the_title();
 			echo '</a>';
 			echo '</h2>';
@@ -447,7 +447,7 @@ if(!function_exists('cpotheme_postpage_date')){
 //Displays the author link
 if(!function_exists('cpotheme_postpage_author')){
 	function cpotheme_postpage_author($display = false, $format_text =''){
-		$author_alt = sprintf(esc_attr__('View all posts by %s', 'cpotheme'), get_the_author());
+		$author_alt = sprintf(esc_attr__('View all posts by %s', 'affluent'), get_the_author());
 		$author = sprintf('<a href="%1$s" title="%2$s">%3$s</a>', get_author_posts_url(get_the_author_meta('ID')), $author_alt,get_the_author());
 		if($format_text != ''){
 			$author = sprintf($format_text, $author);
@@ -479,11 +479,11 @@ if(!function_exists('cpotheme_postpage_comments')){
 			$text = $format_text;
 		}else{
 			if($comments_num == 0)
-				$text = __('No Comments', 'cpotheme');
+				$text = __('No Comments', 'affluent');
 			elseif($comments_num == 1)
-				$text = __('One Comment', 'cpotheme');
+				$text = __('One Comment', 'affluent');
 			else
-				$text = __('%1$s Comments', 'cpotheme');
+				$text = __('%1$s Comments', 'affluent');
 		}
 		
 		$comments = sprintf($text, number_format_i18n($comments_num));
@@ -507,7 +507,7 @@ if(!function_exists('cpotheme_postpage_readmore')){
 	function cpotheme_postpage_readmore($classes = ''){
 		if(!is_singular('post')){
 			echo '<a class="post-readmore '.esc_attr($classes).'" href="'.get_permalink(get_the_ID()).'">';
-			echo apply_filters('cpotheme_readmore', __('Read More', 'cpotheme'));
+			echo apply_filters('cpotheme_readmore', __('Read More', 'affluent'));
 			echo '</a>';
 		}
 	}
@@ -535,16 +535,16 @@ if(!function_exists('cpotheme_author')){
 				echo '<div class="author-social">';
 				$user_meta = get_the_author_meta('user_url'); 
 				if($user_meta != '')
-					echo '<a target="_blank" rel="nofollow" class="author-web" href="'.esc_attr($user_meta).'">'.__('Website', 'cpotheme').'</a>';
+					echo '<a target="_blank" rel="nofollow" class="author-web" href="'.esc_attr($user_meta).'">'.__('Website', 'affluent').'</a>';
 				$user_meta = get_the_author_meta('facebook'); 
 				if($user_meta != '')
-					echo '<a target="_blank" rel="nofollow" class="author-facebook" href="'.esc_attr($user_meta).'">'.__('Facebook', 'cpotheme').'</a>';
+					echo '<a target="_blank" rel="nofollow" class="author-facebook" href="'.esc_attr($user_meta).'">'.__('Facebook', 'affluent').'</a>';
 				$user_meta = get_the_author_meta('twitter'); 
 				if($user_meta != '')
-					echo '<a target="_blank" rel="nofollow" class="author-twitter" href="//twitter.com/'.esc_attr($user_meta).'">'.__('Twitter', 'cpotheme').'</a>';
+					echo '<a target="_blank" rel="nofollow" class="author-twitter" href="//twitter.com/'.esc_attr($user_meta).'">'.__('Twitter', 'affluent').'</a>';
 				$user_meta = get_the_author_meta('googleplus'); 
 				if($user_meta != '')
-					echo '<a target="_blank" rel="nofollow" class="author-googleplus" href="'.esc_attr($user_meta).'">'.__('Google+', 'cpotheme').'</a>';
+					echo '<a target="_blank" rel="nofollow" class="author-googleplus" href="'.esc_attr($user_meta).'">'.__('Google+', 'affluent').'</a>';
 				do_action('cpotheme_author_links');
 				echo '</div>';
 				echo '</div>';
@@ -598,9 +598,9 @@ if(!function_exists('cpotheme_pagination')){
 
 		//First Page Link
 		if(1 == $current_page)
-			$out .= '<span class="first_page">'.__('First', 'cpotheme').'</span>';
+			$out .= '<span class="first_page">'.__('First', 'affluent').'</span>';
 		else
-			$out .= '<a class="pagination-page page first_page" href="'.esc_url(get_pagenum_link(1)).'">'.__('First', 'cpotheme').'</a>';
+			$out .= '<a class="pagination-page page first_page" href="'.esc_url(get_pagenum_link(1)).'">'.__('First', 'affluent').'</a>';
 
 		//Show each page
 		foreach(range($start_page, $end_page) as $i){
@@ -612,9 +612,9 @@ if(!function_exists('cpotheme_pagination')){
 		
 		//Last Page Link
 		if($total_pages == $current_page)
-			$out .= '<span class="last_page">'.__('Last', 'cpotheme').'</span>';
+			$out .= '<span class="last_page">'.__('Last', 'affluent').'</span>';
 		else
-			$out .= '<a class="pagination-page page last_page" href="'.esc_url(get_pagenum_link($total_pages)).'">'.__('Last', 'cpotheme').'</a>';
+			$out .= '<a class="pagination-page page last_page" href="'.esc_url(get_pagenum_link($total_pages)).'">'.__('Last', 'affluent').'</a>';
 		
 		$out = '<div id="pagination" class="pagination">'.$out.'</div>';
 
@@ -770,7 +770,7 @@ if(!function_exists('cpotheme_comments_protected')){
 	function cpotheme_comments_protected(){
 		if(post_password_required()){
 			echo '<p class="comments-protected">';
-			_e('This page is protected. Please type the password to be able to read its contents.', 'cpotheme');
+			_e('This page is protected. Please type the password to be able to read its contents.', 'affluent');
 			echo '</p>';
 			return true;
 		}
@@ -784,9 +784,9 @@ if(!function_exists('cpotheme_comments_title')){
 	function cpotheme_comments_title(){
 		echo '<h3 id="comments-title" class="comments-title">';
 		if(get_comments_number() == 1) 
-			_e('One comment', 'cpotheme');
+			_e('One comment', 'affluent');
 		else 
-			printf(__('%s comments', 'cpotheme'), number_format_i18n(get_comments_number()));
+			printf(__('%s comments', 'affluent'), number_format_i18n(get_comments_number()));
 		echo '</h3>';
 	}
 }
@@ -806,7 +806,7 @@ if(!function_exists('cpotheme_comment')){
 			<div class="comment-body">
 				<div class="comment-title">
 					<div class="comment-options">
-						<?php edit_comment_link(__('Edit', 'cpotheme')); ?>
+						<?php edit_comment_link(__('Edit', 'affluent')); ?>
 						<?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
 					</div>
 					<div class="comment-author">
@@ -814,14 +814,14 @@ if(!function_exists('cpotheme_comment')){
 					</div>
 					<div class="comment-date">
 						<a rel="nofollow" href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
-							<?php printf(__('%1$s at %2$s', 'cpotheme'), get_comment_date(),  get_comment_time()); ?>
+							<?php printf(__('%1$s at %2$s', 'affluent'), get_comment_date(),  get_comment_time()); ?>
 						</a>
 					</div>
 				</div>
 				
 				<div class="comment-content">    
 					<?php if($comment->comment_approved == '0'): ?>
-						<span class="comment-approval"><?php _e('Your comment is awaiting approval.', 'cpotheme'); ?></span>
+						<span class="comment-approval"><?php _e('Your comment is awaiting approval.', 'affluent'); ?></span>
 					<?php endif; ?>
 
 					<?php comment_text(); ?>
@@ -833,7 +833,7 @@ if(!function_exists('cpotheme_comment')){
 		case 'pingback': case 'trackback': ?>
 		<li class="pingback">
 			<?php comment_author_link(); ?>
-			<?php edit_comment_link(__('Edit', 'cpotheme'), ' (', ')'); ?>
+			<?php edit_comment_link(__('Edit', 'affluent'), ' (', ')'); ?>
 		<?php break;
 		endswitch;
 	}
@@ -845,10 +845,10 @@ if(!function_exists('cpotheme_comments_pagination')){
 		if(get_comment_pages_count() > 1 && get_option('page_comments')){
 			echo '<div class="comments-navigation">';
 			echo '<div class="comments-previous">';
-			previous_comments_link(__('Older', 'cpotheme'));
+			previous_comments_link(__('Older', 'affluent'));
 			echo '</div>';
 			echo '<div class="comments-next">';
-			next_comments_link(__('Newer', 'cpotheme'));
+			next_comments_link(__('Newer', 'affluent'));
 			echo '</div>';
 			echo '</div>';
 		}

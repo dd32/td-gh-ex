@@ -10,7 +10,7 @@ if(!function_exists('cpotheme_setup')){
 		if(!defined('CPOTHEME_ID')) define('CPOTHEME_ID', 'core');
 		if(!defined('CPOTHEME_NAME')) define('CPOTHEME_NAME', 'theme');
 		if(!defined('CPOTHEME_VERSION')) define('CPOTHEME_VERSION', '1.0.0');
-		if(!defined('CPOTHEME_PREMIUM_NAME')) define('CPOTHEME_PREMIUM_NAME', __('Premium Version', 'cpotheme'));
+		if(!defined('CPOTHEME_PREMIUM_NAME')) define('CPOTHEME_PREMIUM_NAME', __('Premium Version', 'affluent'));
 		if(!defined('CPOTHEME_PREMIUM_URL')) define('CPOTHEME_PREMIUM_URL', 'http://www.cpothemes.com');
 		if(!defined('CPOTHEME_THUMBNAIL_WIDTH')) define('CPOTHEME_THUMBNAIL_WIDTH', '600');
 		if(!defined('CPOTHEME_THUMBNAIL_HEIGHT')) define('CPOTHEME_THUMBNAIL_HEIGHT', '400');
@@ -34,7 +34,7 @@ if(!function_exists('cpotheme_setup')){
 		//Load translation text domain and make translation available
 		$languages_path = get_template_directory().'/core/languages';
 		if(defined('CPOTHEME_CORELITE')) $languages_path = CPOTHEME_CORELITE.'/languages';
-		load_theme_textdomain('cpotheme', $languages_path);
+		load_theme_textdomain('affluent', $languages_path);
 		$locale = get_locale();
 		$locale_file = get_template_directory()."/languages/$locale.php";
 		if(is_readable($locale_file)) require_once($locale_file);

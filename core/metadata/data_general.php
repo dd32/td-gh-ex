@@ -25,16 +25,16 @@ function cpotheme_metadata_sidebarposition(){
 if(!function_exists('cpotheme_metadata_layoutstyle')){
 	function cpotheme_metadata_layoutstyle(){
 		$data = array(
-		'fixed' => __('Full Width', 'cpotheme'),
-		'boxed' => __('Boxed', 'cpotheme'));
+		'fixed' => __('Full Width', 'affluent'),
+		'boxed' => __('Boxed', 'affluent'));
 		return $data;
 	}
 }
 
 function cpotheme_metadata_featured_page(){
 	$data = array(
-	'none' => __('None', 'cpotheme'),
-	'slider' => __('In The Slider', 'cpotheme'),
-	'features' => __('In The Featured Boxes', 'cpotheme'));
+	'none' => __('None', 'affluent'),
+	'slider' => __('In The Slider', 'affluent'),
+	'features' => __('In The Featured Boxes', 'affluent'));
 	return apply_filters('cpotheme_metadata_featured_page', $data);
 }

@@ -13,9 +13,9 @@ function cpotheme_styling_fonts(){
 add_action('widgets_init', 'cpotheme_init_sidebar');
 function cpotheme_init_sidebar(){
 	
-    register_sidebar(array('name' => __('Default Widgets', 'cpotheme'),
+    register_sidebar(array('name' => __('Default Widgets', 'affluent'),
     'id' => 'primary-widgets',
-    'description' => __('Sidebar shown in all standard pages by default.', 'cpotheme'),
+    'description' => __('Sidebar shown in all standard pages by default.', 'affluent'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<div class="widget-title heading">',
@@ -26,8 +26,8 @@ function cpotheme_init_sidebar(){
 	for($count = 1; $count <= $footer_columns; $count++){
 		register_sidebar(array(
 		'id' => 'footer-widgets-'.$count,
-		'name' => __('Footer Widgets', 'cpotheme').' '.$count,
-		'description' => __('Shown in the footer area.', 'cpotheme'),
+		'name' => __('Footer Widgets', 'affluent').' '.$count,
+		'description' => __('Shown in the footer area.', 'affluent'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<div class="widget-title heading">',
@@ -40,8 +40,8 @@ function cpotheme_init_sidebar(){
 add_action('widgets_init', 'cpotheme_init_menu');
 function cpotheme_init_menu(){
     register_nav_menus(array(
-	'top_menu' => __('Top Menu', 'cpotheme'),
-    'main_menu' => __('Main Menu', 'cpotheme'),
-    'footer_menu' => __('Footer Menu', 'cpotheme')
+	'top_menu' => __('Top Menu', 'affluent'),
+    'main_menu' => __('Main Menu', 'affluent'),
+    'footer_menu' => __('Footer Menu', 'affluent')
 	));
 }

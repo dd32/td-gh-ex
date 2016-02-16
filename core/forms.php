@@ -36,12 +36,12 @@ if(!function_exists('cpotheme_form_yesno')){
 		$output = '';
 		$output .= '<label for="'.$name.'_yes">';
 		$output .= '<input type="radio" name="'.$name.'" id="'.$name.'_yes" value="1" '.$checked_yes.'/>'; 
-		$output .= __('Yes', 'cpotheme').'</label>';
+		$output .= __('Yes', 'affluent').'</label>';
 		$output .= '&nbsp;&nbsp;&nbsp;&nbsp;';
 		
 		$output .= '<label for="'.$name.'_no">';
 		$output .= '<input type="radio" name="'.$name.'" id="'.$name.'_no" value="0" '.$checked_no.'/>'; 
-		$output .= __('No', 'cpotheme').'</label>';
+		$output .= __('No', 'affluent').'</label>';
 		
 		return $output;
 	}

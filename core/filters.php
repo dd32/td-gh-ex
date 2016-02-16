@@ -68,7 +68,7 @@ if(!function_exists('cpotheme_has_post_thumbnail')){
 add_filter('image_size_names_choose', 'cpotheme_add_thumbnail');
 if(!function_exists('cpotheme_add_thumbnail')){
 	function cpotheme_add_thumbnail($sizes){
-		return array_merge($sizes, array('portfolio' => __('Portfolio Size', 'cpotheme')));
+		return array_merge($sizes, array('portfolio' => __('Portfolio Size', 'affluent')));
 	}
 }
 

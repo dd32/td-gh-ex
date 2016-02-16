@@ -7,8 +7,8 @@ function cpotheme_metadata_layout_options(){
 	
 	$cpotheme_data['layout_sidebar'] = array(
 	'name' => 'layout_sidebar',
-	'label' => __('Sidebar Position', 'cpotheme'),
-	'desc' => __('Determines the location of the sidebar by default.', 'cpotheme'),
+	'label' => __('Sidebar Position', 'affluent'),
+	'desc' => __('Determines the location of the sidebar by default.', 'affluent'),
 	'type' => 'imagelist',
 	'option' => cpotheme_metadata_sidebarposition(),
 	'std' => 'default');
@@ -24,8 +24,8 @@ function cpotheme_metadata_feature_options(){
 	$cpotheme_data['feature_icon'] = array(
 	'name' => 'feature_icon',
 	'std'  => '',
-	'label' => __('Feature Icon', 'cpotheme'),
-	'desc' => __('Sets an icon to be used as the featured element.', 'cpotheme'),
+	'label' => __('Feature Icon', 'affluent'),
+	'desc' => __('Sets an icon to be used as the featured element.', 'affluent'),
 	'type' => 'iconlist');
 	
 	return apply_filters('cpotheme_metadata_feature', $cpotheme_data);
@@ -40,8 +40,8 @@ function cpotheme_metadata_portfolio_options(){
 	$cpotheme_data['portfolio_featured'] = array(
 	'name' => 'portfolio_featured',
 	'std'  => '',
-	'label' => __('Featured Item', 'cpotheme'),
-	'desc' => __('Specifies whether this item appears in the homepage.', 'cpotheme'),
+	'label' => __('Featured Item', 'affluent'),
+	'desc' => __('Specifies whether this item appears in the homepage.', 'affluent'),
 	'type' => 'yesno');
 	
 	return apply_filters('cpotheme_metadata_portfolio', $cpotheme_data);
@@ -56,8 +56,8 @@ function cpotheme_metadata_product_options(){
 	$cpotheme_data['product_featured'] = array(
 	'name' => 'product_featured',
 	'std'  => '',
-	'label' => __('Featured Item', 'cpotheme'),
-	'desc' => __('Specifies whether this item appears in the homepage.', 'cpotheme'),
+	'label' => __('Featured Item', 'affluent'),
+	'desc' => __('Specifies whether this item appears in the homepage.', 'affluent'),
 	'type' => 'yesno');
 	
 	return apply_filters('cpotheme_metadata_product', $cpotheme_data);
@@ -72,15 +72,15 @@ function cpotheme_metadata_service_options(){
 	$cpotheme_data['service_featured'] = array(
 	'name' => 'service_featured',
 	'std'  => '',
-	'label' => __('Featured Item', 'cpotheme'),
-	'desc' => __('Specifies whether this item appears in the homepage.', 'cpotheme'),
+	'label' => __('Featured Item', 'affluent'),
+	'desc' => __('Specifies whether this item appears in the homepage.', 'affluent'),
 	'type' => 'yesno');
 	
 	$cpotheme_data['service_icon'] = array(
 	'name' => 'service_icon',
 	'std'  => '',
-	'label' => __('Service Icon', 'cpotheme'),
-	'desc' => __('Sets an icon to be used as the service preview.', 'cpotheme'),
+	'label' => __('Service Icon', 'affluent'),
+	'desc' => __('Sets an icon to be used as the service preview.', 'affluent'),
 	'type' => 'iconlist');
 	
 	return apply_filters('cpotheme_metadata_service', $cpotheme_data);
@@ -95,8 +95,8 @@ function cpotheme_metadata_team_options(){
 	$data['team_featured'] = array(
 	'name' => 'team_featured',
 	'std'  => '',
-	'label' => __('Featured Member', 'cpotheme'),
-	'desc' => __('Specifies whether this member appears in the homepage.', 'cpotheme'),
+	'label' => __('Featured Member', 'affluent'),
+	'desc' => __('Specifies whether this member appears in the homepage.', 'affluent'),
 	'type' => 'yesno');
 	
 	return apply_filters('cpotheme_metadata_team', $data);
@@ -111,8 +111,8 @@ function cpotheme_metadata_page_options(){
 	$data['page_featured'] = array(
 	'name' => 'page_featured',
 	'std'  => '',
-	'label' => __('Show In Homepage', 'cpotheme'),
-	'desc' => __('Specifies whether this item is featured in the homepage.', 'cpotheme'),
+	'label' => __('Show In Homepage', 'affluent'),
+	'desc' => __('Specifies whether this item is featured in the homepage.', 'affluent'),
 	'type' => 'select',
 	'option' => cpotheme_metadata_featured_page());
 	
