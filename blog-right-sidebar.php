@@ -5,7 +5,7 @@ Template Name: Blog-right-sidebar
 get_header();
 get_template_part('index','banner'); ?>
 <!-- Blog Section with Sidebar -->
-<div class="blog-section-lg">
+<div class="page-builder">
 	<div class="container">
 		<div class="row">
 		 <!-- Blog Area -->
@@ -18,12 +18,15 @@ get_template_part('index','banner'); ?>
 					$post_type_data->the_post();
 					global $more;
 					$more = 0;
-					?>		
-			<?php get_template_part('content',''); ?>
-				<?php } ?>
-				<div class="blog-pagination-square">
-					<?php previous_posts_link( __('Previous','appointment') ); ?>
-					<?php next_posts_link( __('Next','appointment'), $post_type_data->max_num_pages ); ?> 
+					get_template_part('content',''); 
+					} ?>
+				<div class="blog-pagination">
+				<?php 
+                $GLOBALS['wp_query']->max_num_pages = $post_type_data->max_num_pages;
+				the_posts_pagination( array(
+				'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
+				'next_text'          => '<i class="fa fa-angle-double-right"></i>',
+				) ); ?>
 				</div>
 			</div>
 			<!-- /Blog Area -->			
