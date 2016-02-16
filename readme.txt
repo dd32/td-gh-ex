@@ -7,7 +7,8 @@ In this version you will get the theme blue color variant. Couple of templates a
 For any ideas, support and feedback you can access the theme forum.
 
 == Version ==
-
+= 1.0.2 =
+1. Solved styling issue.
 = 1.0.1 =
 1. Removed Blog and Left sidebar Templates
 2. Added scripts perfix to appointment-green
