@@ -1,0 +1,126 @@
+# Copyright (C) 2015 Motohiro Sunouchi
+# This file is distributed under the CC-BY.
+msgid ""
+msgstr ""
+"Project-Id-Version: 43d records 0.9\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/43d_records\n"
+"POT-Creation-Date: 2015-11-08 06:49:59+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin_inc/post.php:14
+msgid "Recorded Sound"
+msgstr "録音"
+
+#: admin_inc/post.php:27
+msgid "Set MP3 File"
+msgstr "MP3ファイルを設定"
+
+#: admin_inc/post.php:28 admin_inc/post.php:43
+msgid "Clear"
+msgstr "登録解除"
+
+#: admin_inc/post.php:42
+msgid "Set OGG File (option)"
+msgstr "OGGファイルを設定 (オプション)"
+
+#: admin_inc/post.php:48
+msgid "Cover Image (Jpeg image as large as possible)"
+msgstr "ビジュアルイメージ (可能な限り高画素のJpeg画像)"
+
+#: admin_inc/post.php:55
+msgid "Set Jpeg Image"
+msgstr "Jpeg画像を登録"
+
+#: admin_inc/post.php:58
+msgid "Delete Jpeg Image"
+msgstr "Jpeg画像を登録解除"
+
+#: admin_inc/post.php:67
+msgid "Date Recorded On"
+msgstr "録音日"
+
+#: admin_inc/post.php:69
+msgid "Date (Month Day, Year)"
+msgstr "日付"
+
+#: admin_inc/post.php:74
+msgid "Time (Hours:Minutes)"
+msgstr "時刻 (時:分)"
+
+#: admin_inc/post.php:80
+msgid "Equipments"
+msgstr "機材・設備"
+
+#: admin_inc/post.php:89
+msgid "Location"
+msgstr "場所"
+
+#: admin_inc/post.php:92
+msgid "Latitude"
+msgstr "経度"
+
+#: admin_inc/post.php:97
+msgid "Longitude"
+msgstr "緯度"
+
+#: comments.php:20
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "&ldquo;%2$s&rdquo; へのコメント"
+msgstr[1] "&ldquo;%2$s&rdquo; への%1$s件のコメント"
+
+#: comments.php:27 comments.php:47
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:29 comments.php:49
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:31 comments.php:50
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:60
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:159
+msgid "43d Records Editor"
+msgstr "43d Records 編集欄"
+
+#: index.php:180
+msgid "Pages:"
+msgstr ""
+
+#: index.php:180
+msgid "<span>&laquo; Previous Entry</span> &ldquo;%title&rdquo;"
+msgstr "<span>&laquo; 前の投稿</span> &ldquo;%title&rdquo;"
+
+#: index.php:181
+msgid "<span>&raquo; Next Entry</span> &ldquo;%title&rdquo;"
+msgstr "<span>&raquo; 次の投稿</span> &ldquo;%title&rdquo;"
+
+#. Theme Name of the plugin/theme
+msgid "43d records"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"43d records is a WordPress theme for publishing sounds and photographs by "
+"field recordings."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Motohiro Sunouchi"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://about.me/snotch"
+msgstr ""
