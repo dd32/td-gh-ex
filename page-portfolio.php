@@ -30,7 +30,7 @@ Template Name: Portfolio Grid
 			   		} else {
 			   			$p_orderby = 'menu_order';
 			   		}
-			   		if($p_orderby == 'menu_order') {
+			   		if($p_orderby == 'menu_order' || $p_orderby == 'title') {
 			   			$p_order = 'ASC';
 			   		} else {
 			   			$p_order = 'DESC';

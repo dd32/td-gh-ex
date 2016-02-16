@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2016-02-04 12:28-0700\n"
-"PO-Revision-Date: 2016-02-04 14:05-0700\n"
+"POT-Creation-Date: 2016-02-10 15:42-0500\n"
+"PO-Revision-Date: 2016-02-15 16:09-0700\n"
 "Last-Translator: Matthieu Durocher <matthieu@technocyclope.com>\n"
 "Language-Team: Matthieu Durocher <matthieu@technocyclope.com>\n"
 "Language: fr_FR\n"
@@ -39,11 +39,11 @@ msgstr "Désolé, aucun résultat n'a été trouvé."
 
 #: ../lib/authorbox.php:5
 msgid "About Author"
-msgstr "À propos"
+msgstr "À propos de l'auteur"
 
 #: ../lib/authorbox.php:6 ../lib/utils.php:60
 msgid "Latest Posts"
-msgstr "Billets récents"
+msgstr "Articles récents"
 
 #: ../lib/authorbox.php:13 ../lib/authorbox.php:16 ../lib/authorbox.php:20
 #: ../lib/authorbox.php:24 ../lib/authorbox.php:28 ../lib/authorbox.php:32
@@ -94,7 +94,7 @@ msgstr "sur Instagram"
 
 #: ../lib/authorbox.php:69
 msgid "Latest posts from"
-msgstr "Billets récents de"
+msgstr "Articles récents de"
 
 #: ../lib/class-tgm-plugin-activation.php:303
 #: ../lib/virtuetoolkit-activate.php:35
@@ -450,11 +450,11 @@ msgstr "Votre panier d'achats"
 
 #: ../lib/custom.php:416 ../templates/entry-post-links.php:3
 msgid "Previous Post"
-msgstr "Billet précédant"
+msgstr "Article précédant"
 
 #: ../lib/custom.php:416 ../templates/entry-post-links.php:6
 msgid "Next Post"
-msgstr "Billet suivant"
+msgstr "Article suivant"
 
 #: ../lib/custom.php:516
 msgid "Occupation"
@@ -526,7 +526,7 @@ msgstr "Tout"
 
 #: ../lib/metaboxes.php:36
 msgid "All Blog Posts"
-msgstr "Toutes les billets du blogue"
+msgstr "Toutes les articles du blogue"
 
 #: ../lib/metaboxes.php:68
 msgid "Page Title and Subtitle"
@@ -542,7 +542,7 @@ msgstr "Le sous-titre ira sous le titre de la page"
 
 #: ../lib/metaboxes.php:85
 msgid "Post Options"
-msgstr "Options du billet"
+msgstr "Options de l'article"
 
 #: ../lib/metaboxes.php:93
 msgid "Head Content"
@@ -584,13 +584,13 @@ msgid ""
 "Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, "
 "example: 650, does not apply to carousel slider)</b>"
 msgstr ""
-"La valeur par défaut est 700 ou 1140 pour les billets pleine-largeur "
+"La valeur par défaut est 700 ou 1140 pour les articles pleine-largeur "
 "<b>(Note : entrez juste un nombre, exemple : 650, ne s'applique pas au "
 "carrousel)</b>"
 
 #: ../lib/metaboxes.php:118
 msgid "Post Summary"
-msgstr "Sommaire du billet"
+msgstr "Sommaire de l'article"
 
 #: ../lib/metaboxes.php:124
 msgid "Text"
@@ -643,19 +643,19 @@ msgstr "Afficher une boîte d'information de l'auteure ou l'auteur ?"
 
 #: ../lib/metaboxes.php:160
 msgid "Posts Carousel"
-msgstr "Carrousel de billets"
+msgstr "Carrousel des articles"
 
 #: ../lib/metaboxes.php:161
 msgid "Display a carousel with similar or recent posts?"
-msgstr "Afficher un carrousel avec des billets similaires ou récents ?"
+msgstr "Afficher un carrousel avec des articles similaires ou récents ?"
 
 #: ../lib/metaboxes.php:167 ../themeoptions/options.php:1777
 msgid "Yes - Display Recent Posts"
-msgstr "Oui, afficher les billets récents"
+msgstr "Oui, afficher les articles récents"
 
 #: ../lib/metaboxes.php:168 ../themeoptions/options.php:1777
 msgid "Yes - Display Similar Posts"
-msgstr "Oui, afficher les billets similaires"
+msgstr "Oui, afficher les articles similaires"
 
 #: ../lib/metaboxes.php:173
 msgid "Carousel Title"
@@ -663,7 +663,7 @@ msgstr "Titre du carrousel"
 
 #: ../lib/metaboxes.php:174
 msgid "ex. Similar Posts"
-msgstr "ex. billets similaires"
+msgstr "ex. articles similaires"
 
 #: ../lib/metaboxes.php:184
 msgid "Blog List Options"
@@ -676,16 +676,16 @@ msgstr "Catégorie de blogue"
 #: ../lib/metaboxes.php:194
 msgid "Select all blog posts or a specific category to show"
 msgstr ""
-"Sélectionnez tous les billets du blogue ou une catégorie spécifique à "
+"Sélectionnez tous les articles du blogue ou une catégorie spécifique à "
 "afficher"
 
 #: ../lib/metaboxes.php:200
 msgid "How Many Posts Per Page"
-msgstr "Combien de billets par page"
+msgstr "Combien d'articles par page"
 
 #: ../lib/metaboxes.php:224
 msgid "Display Post Content as:"
-msgstr "Afficher le contenu du billet comme :"
+msgstr "Afficher le contenu de l'article comme :"
 
 #: ../lib/metaboxes.php:229
 msgid "Summary"
@@ -717,7 +717,7 @@ msgstr "Archives annuelles : %s"
 #: ../lib/utils.php:75
 #, php-format
 msgid "Author Archives: %s"
-msgstr "Archives des billets publiés par %s"
+msgstr "Archives des articles publiés par %s"
 
 #: ../lib/utils.php:80
 #, php-format
@@ -873,20 +873,20 @@ msgstr "RSS :"
 #: ../lib/widgets.php:463
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr ""
-"Cela affiche à l'aide de miniatures les billets les plus récents de votre "
+"Cela affiche à l'aide de miniatures les articles les plus récents de votre "
 "site"
 
 #: ../lib/widgets.php:464
 msgid "Virtue: Recent Posts"
-msgstr "Virtue: Billets récents"
+msgstr "Virtue: Articles récents"
 
 #: ../lib/widgets.php:474 ../templates/recentblog-carousel.php:7
 msgid "Recent Posts"
-msgstr "Billets récents"
+msgstr "Articles récents"
 
 #: ../lib/widgets.php:535
 msgid "Number of posts to show:"
-msgstr "Nombre de billets à afficher :"
+msgstr "Nombre d'articles à afficher :"
 
 #: ../lib/widgets.php:538
 msgid "Limit to Catagory (Optional):"
@@ -896,8 +896,8 @@ msgstr "Limiter à la catégorie (optionnel)"
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
-"Cela affiche une grille d'images en vedette provenant de nouveaux billets ou "
-"d'items du portefolio"
+"Cela affiche une grille d'images en vedette provenant de nouveaux articles "
+"ou d'items du portefolio"
 
 #: ../lib/widgets.php:551
 msgid "Virtue: Image Grid"
@@ -905,7 +905,7 @@ msgstr "Virtue : Grille d'images"
 
 #: ../lib/widgets.php:561
 msgid "Post Gallery"
-msgstr "Galerie du billet"
+msgstr "Galerie de l'article"
 
 #: ../lib/widgets.php:649
 msgid "Grid Choice:"
@@ -913,7 +913,7 @@ msgstr "Choix de grille :"
 
 #: ../lib/widgets.php:651
 msgid "Blog Posts"
-msgstr "Billets du blogue"
+msgstr "Articles du blogue"
 
 #: ../lib/widgets.php:652
 msgid "Portfolio"
@@ -921,7 +921,7 @@ msgstr "Portefolio"
 
 #: ../lib/widgets.php:655
 msgid "If Post - Choose Category (Optional):"
-msgstr "Si c'est un billet, choisir la catégorie (optionnel) :"
+msgstr "Si c'est un article, choisir la catégorie (optionnel) :"
 
 #: ../lib/widgets.php:658
 msgid "If Portfolio - Choose Type (Optional):"
@@ -1111,7 +1111,7 @@ msgstr "Projets récents"
 
 #: ../templates/similarblog-carousel.php:7
 msgid "Similar Posts"
-msgstr "Billets similaires"
+msgstr "Articles similaires"
 
 #: ../themeoptions/core/enqueue.php:453
 msgid "You have changes that are not saved. Would you like to save them now?"
@@ -1248,10 +1248,14 @@ msgstr "Indices"
 #: ../themeoptions/framework.php:2702
 msgid "Invalid security credential.  Please reload the page and try again."
 msgstr ""
+"Certificat de sécurité invalide, veuillez recharger la page et essayez à "
+"nouveau."
 
 #: ../themeoptions/framework.php:2711
 msgid "Invalid user capability.  Please reload the page and try again."
 msgstr ""
+"La capacité de l’utilisateur est non valide. Veuillez recharger la page et "
+"réessayez."
 
 #: ../themeoptions/framework.php:2787
 msgid "Your panel has no fields. Nothing to save."
@@ -1264,6 +1268,10 @@ msgid ""
 "argument.  This is sample data.  Please change or remove this data before "
 "shipping your product."
 msgstr ""
+"<strong>Redux Framework Notice: </strong>There are references to the Redux "
+"Framework support site in your config's <code>admin_bar_links</code> "
+"argument.  This is sample data.  Please change or remove this data before "
+"shipping your product."
 
 #: ../themeoptions/framework.php:3895
 msgid ""
@@ -1272,6 +1280,10 @@ msgid ""
 "This is sample data.  Please change or remove this data before shipping your "
 "product."
 msgstr ""
+"<strong>Redux Framework Notice: </strong>There are references to the Redux "
+"Framework support site in your config's <code>share_icons</code> argument.  "
+"This is sample data.  Please change or remove this data before shipping your "
+"product."
 
 #: ../themeoptions/options.php:28 ../themeoptions/options.php:29
 msgid "Theme Options"
@@ -1621,7 +1633,7 @@ msgstr "Choisissez la disposition de la page d'accueil"
 
 #: ../themeoptions/options.php:657
 msgid "Latest Blog Posts"
-msgstr "Billets récents"
+msgstr "Articles récents"
 
 #: ../themeoptions/options.php:658
 msgid "Portfolio Carousel"
@@ -1653,11 +1665,11 @@ msgstr "ex. : Quoi de nouveau sur le blogue"
 
 #: ../themeoptions/options.php:685
 msgid "Choose How many posts on Homepage"
-msgstr "Choisissez le nombre de billets sur la page d'accueil"
+msgstr "Choisissez le nombre d'articles sur la page d'accueil"
 
 #: ../themeoptions/options.php:697
 msgid "Limit posts to a Category"
-msgstr "Limiter les billets à une catégorie"
+msgstr "Limiter les articles à une catégorie"
 
 #: ../themeoptions/options.php:698
 msgid "Leave blank to select all"
@@ -1717,14 +1729,14 @@ msgstr "Options de contenu de la page"
 
 #: ../themeoptions/options.php:787
 msgid "Latest Post Display"
-msgstr "Affichage des billets récents"
+msgstr "Affichage des articles récents"
 
 #: ../themeoptions/options.php:788
 msgid ""
 "If Latest Post page is font page. Choose to show full post or post excerpt."
 msgstr ""
-"Si la page Dernières billets est la page d'accueil. Choisissez d'afficher le "
-"billet ou un extrait."
+"Si la page Derniers articles est la page d'accueil. Choisissez d'afficher "
+"l'article ou un extrait."
 
 #: ../themeoptions/options.php:802
 msgid "Shop Settings"
@@ -2140,11 +2152,11 @@ msgstr "Choisissez la taille et le style du menu mobile"
 
 #: ../themeoptions/options.php:1649
 msgid "Page/Post Settings"
-msgstr "Réglages page/billet"
+msgstr "Réglages page/article"
 
 #: ../themeoptions/options.php:1650
 msgid "Page and Post Comment Settings"
-msgstr ""
+msgstr "Réglages des commentaires pour les pages et les articles"
 
 #: ../themeoptions/options.php:1656
 msgid "Show Comments Closed Text?"
@@ -2154,7 +2166,7 @@ msgstr "Afficher l'avis de commentaires clos ?"
 msgid "Choose to show or hide comments closed alert below posts."
 msgstr ""
 "Choisir d'afficher ou de cacher l'avis de fermeture des commentaires sous "
-"les billets."
+"les articles."
 
 #: ../themeoptions/options.php:1664
 msgid "Allow Comments on Pages"
@@ -2166,15 +2178,15 @@ msgstr "Autoriser les commentaires sur les pages"
 
 #: ../themeoptions/options.php:1672
 msgid "Allow Comments on Portfolio Posts"
-msgstr "Autoriser les commentaires sur les billets de type portefolio"
+msgstr "Autoriser les commentaires sur les articles de type portefolio"
 
 #: ../themeoptions/options.php:1673
 msgid "Turn on to allow comments on Portfolio posts"
-msgstr "Autoriser les commentaires sur les billets de type portefolio"
+msgstr "Autoriser les commentaires sur les articles de type portefolio"
 
 #: ../themeoptions/options.php:1680
 msgid "Portfolio Post"
-msgstr ""
+msgstr "Publication portefolio"
 
 #: ../themeoptions/options.php:1688
 msgid "All Projects Portfolio Page"
@@ -2190,71 +2202,71 @@ msgstr ""
 
 #: ../themeoptions/options.php:1695
 msgid "Portfolio Type Page Defaults"
-msgstr ""
+msgstr "Paramètres par défaut des page de type portefolio"
 
 #: ../themeoptions/options.php:1701
 msgid "Portfolio Type - Post Columns"
-msgstr ""
+msgstr "Type portefolio - colonnes de la publication"
 
 #: ../themeoptions/options.php:1702
 msgid "Choose how many columns for portfolio type pages"
-msgstr ""
+msgstr "Choisir le nombre de colonnes pour les pages de type portefolio"
 
 #: ../themeoptions/options.php:1711
 msgid "Show Types under Title"
-msgstr ""
+msgstr "Afficher les type sous le titre"
 
 #: ../themeoptions/options.php:1712
 msgid "Choose to show or hide portfolio type under title."
-msgstr ""
+msgstr "Choisir d'afficher ou de masquer le type portefolio sous le titre."
 
 #: ../themeoptions/options.php:1719
 msgid "Blog Post Defaults"
-msgstr "Valeurs par défaut des billets"
+msgstr "Valeurs par défaut des articles"
 
 #: ../themeoptions/options.php:1725
 msgid "Blog Post Summary Default"
-msgstr "Valeur par défaut du sommaire de billet"
+msgstr "Valeur par défaut du sommaire de l'article"
 
 #: ../themeoptions/options.php:1735
 msgid "Default post summary feature Image"
-msgstr "Image vedette par défaut du résumé de billet"
+msgstr "Image vedette par défaut du résumé de l'article"
 
 #: ../themeoptions/options.php:1736
 msgid "Replace theme default feature image for posts without a featured image"
 msgstr ""
-"Remplacer l'image en vedette par défaut du thème pour les billets sans une "
+"Remplacer l'image en vedette par défaut du thème pour les articles sans une "
 "image en vedette"
 
 #: ../themeoptions/options.php:1742
 msgid "Blog Post Head Content Default"
-msgstr "Valeur par défaut de contenu d'entête du billet"
+msgstr "Valeur par défaut de contenu d'entête de l'article"
 
 #: ../themeoptions/options.php:1751
 msgid "Show Previous and Next posts links?"
-msgstr "Afficher les liens vers les billets précédent et suivant"
+msgstr "Afficher les liens vers les articles précédent et suivant"
 
 #: ../themeoptions/options.php:1752
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
 msgstr ""
-"Choisissez d'afficher ou de cacher les liens vers les billets précédent et "
-"suivant dans le pied de page d'un billet."
+"Choisissez d'afficher ou de cacher les liens vers les articles précédent et "
+"suivant dans le pied de page d'un article."
 
 #: ../themeoptions/options.php:1759
 msgid "Show Author Icon with posts?"
-msgstr "Afficher l'avatar de la personne auteure avec les billets ?"
+msgstr "Afficher l'avatar de la personne auteure avec les articles ?"
 
 #: ../themeoptions/options.php:1760
 msgid "Choose to show or hide author icon under post title."
 msgstr ""
 "Choisissez d'afficher ou de cacher l'avatar de la personne auteure sous le "
-"titre du billet."
+"titre de l'article."
 
 #: ../themeoptions/options.php:1767
 msgid "Blog Post Author Box Default"
-msgstr "Boite d'auteurat de billet par défaut"
+msgstr "Boite d'auteurat d'article par défaut"
 
 #: ../themeoptions/options.php:1768 ../themeoptions/options.php:1777
 msgid "No, Do not Show"
@@ -2266,7 +2278,7 @@ msgstr "Oui, afficher"
 
 #: ../themeoptions/options.php:1776
 msgid "Blog Post Bottom Carousel Default"
-msgstr "Carrousel de bas de billet par défaut"
+msgstr "Carrousel de bas d'article par défaut"
 
 #: ../themeoptions/options.php:1785
 msgid "Blog Category/Archive Defaults"
@@ -2278,7 +2290,7 @@ msgstr "Archive du blogue"
 
 #: ../themeoptions/options.php:1792
 msgid "Choose to show full post or post excerpt."
-msgstr "Choisir d'afficher le billet au complet ou juste un extrait."
+msgstr "Choisir d'afficher l'article au complet ou juste un extrait."
 
 #: ../themeoptions/options.php:1804 ../themeoptions/options.php:1805
 msgid "Misc Settings"
@@ -2292,12 +2304,14 @@ msgstr "Cacher la bordure de l'image"
 msgid "Choose to show or hide image border for images added in pages or posts"
 msgstr ""
 "Choisissez d'afficher ou de cacher la bordure des images ajoutées dans les "
-"pages et les billets"
+"pages et les articles"
 
 #: ../themeoptions/options.php:1820
 msgid ""
 "Custom Favicon, *Note depreciated. Use WordPress site icon in customizer."
 msgstr ""
+"Favicon personnalisée, * Note : obsolète. Utiliser plutôt l'icône de site "
+"dans Apparence/Personnaliser."
 
 #: ../themeoptions/options.php:1821
 msgid ""
@@ -2446,7 +2460,7 @@ msgstr ""
 
 #: ../themeoptions/templates/panel/header.tpl.php:58
 msgid "FORCED DEV MODE OFF ENABLED"
-msgstr ""
+msgstr "FORCED DEV MODE OFF ENABLED"
 
 #: ../themeoptions/templates/panel/header_stickybar.tpl.php:15
 msgid "Expand"
@@ -2459,7 +2473,7 @@ msgstr "Non évalué"
 #: ../woocommerce/loop/sale-flash.php:16
 #: ../woocommerce/single-product/sale-flash.php:16
 msgid "Sale!"
-msgstr "Promo !"
+msgstr "Vente !"
 
 #: ../woocommerce/single-product.php:27 ../woocommerce/single-product.php:29
 msgid "Back to"

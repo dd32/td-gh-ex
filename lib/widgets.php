@@ -184,9 +184,7 @@ class Kadence_Contact_Widget extends WP_Widget {
     if (!isset($args['widget_id'])) {
       $args['widget_id'] = null;
     }
-
-    ob_start();
-    extract($args, EXTR_SKIP);
+    extract($args);
 
     $title = apply_filters('widget_title', empty($instance['title']) ? __('vCard', 'virtue') : $instance['title'], $instance, $this->id_base);
   if (!isset($instance['company'])) { $instance['company'] = ''; }
@@ -310,8 +308,7 @@ class Kadence_Social_Widget extends WP_Widget {
       $args['widget_id'] = null;
     }
 
-    ob_start();
-    extract($args, EXTR_SKIP);
+    extract($args);
 
     $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
     if (!isset($instance['facebook'])) { $instance['facebook'] = ''; }
@@ -468,7 +465,6 @@ class Kadence_Recent_Posts_Widget extends WP_Widget {
     if ( ! isset( $args['widget_id'] ) )
       $args['widget_id'] = $this->id;
 
-    ob_start();
     extract($args);
 
     $title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts', 'virtue') : $instance['title'], $instance, $this->id_base);
@@ -555,7 +551,6 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
     if ( ! isset( $args['widget_id'] ) )
       $args['widget_id'] = $this->id;
 
-    ob_start();
     extract($args);
 
     $title = apply_filters('widget_title', empty($instance['title']) ? __('Post Gallery', 'virtue') : $instance['title'], $instance, $this->id_base);
