@@ -18,7 +18,7 @@ function blogghiamo_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'blogghiamo' ); ?></h1>
+		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'blogghiamo' ); ?></h2>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>

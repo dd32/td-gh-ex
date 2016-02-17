@@ -20,7 +20,7 @@ Licensed under GPLv2 or later
 Scripts used in the site are as below:
 	1. Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1
 	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
-	3. Smooth Scroll script (https://gist.github.com/galambalazs/6477177/) licensed under MIT
+	3. Smooth Scroll script (https://github.com/galambalazs/smoothscroll-for-websites) licensed under MIT
 
 Image used in Theme Screenshot
 	1. Picjumbo (http://picjumbo.com/lonely-road-in-the-middle-of-fields/) Free photos for commercial and personal works
@@ -114,4 +114,9 @@ Version 1.3.6
 
 Version 1.3.7
 * Added Disqus Support
+* Minor bug fixes
+
+Version 1.3.8
+* Updated SmoothScroll to 1.4.0 version
+* Updated H2 post title
 * Minor bug fixes
