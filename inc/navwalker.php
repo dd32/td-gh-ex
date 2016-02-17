@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class Name: wp_bootstrap_navwalker
+ * Class Name: activello_wp_bootstrap_navwalker
  * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
  * Description: A custom WordPress nav walker class to implement the Bootstrap 3 navigation style in a custom theme using the WordPress built in menu manager.
  * Version: 2.0.4
@@ -10,7 +10,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-class wp_bootstrap_navwalker extends Walker_Nav_Menu {
+class activello_wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
         /**
          * @see Walker::start_lvl()
@@ -193,7 +193,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
                                 $fb_output .= ' class="' . $menu_class . '"';
 
                         $fb_output .= '>';
-                        $fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
+                        $fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">'.__( 'Add a menu', 'activello').'</a></li>';
                         $fb_output .= '</ul>';
 
                         if ( $container )
