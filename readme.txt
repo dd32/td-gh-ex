@@ -58,10 +58,13 @@ Fonts
 ----------------------------------------------------
 
 ScreenShot Images under CC0 Public Domain
-    https://pixabay.com/en/glamour-style-hat-woman-portrait-678834/
-    http://pixabay.com/en/model-fashion-glamour-girl-female-600238/
-    https://pixabay.com/en/girls-friends-friendship-young-685778/
-    https://pixabay.com/en/woman-beach-model-beauty-game-692785/
+    https://pixabay.com/en/kayak-ocean-rafting-canoe-boat-282329/
+    https://pixabay.com/en/leave-room-interior-design-luxurious-825316/
+    https://pixabay.com/en/fashion-beauty-model-portrait-girl-1063100/
+    https://pixabay.com/en/kayak-ocean-rafting-canoe-boat-282329/
+    https://unsplash.com/photos/CPWhnIkL4Lk
+    https://pixabay.com/en/girl-woman-sunglasses-fashion-691105/
+    https://pixabay.com/en/ship-illuminated-night-ship-484696/
 
 GPL compatible for own images
     accesspress-mag/images/demo-images/728-90.png
@@ -69,6 +72,10 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+
+Version 2.2.9
+ * Fixed padding between slider and highlighted section
+ * Changed screenshot
 
 Version 2.2.8
  * Fixed slider caption bacground color

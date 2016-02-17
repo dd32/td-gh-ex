@@ -4,7 +4,7 @@
     Author:       AccessPress Theme
     Author URI:   http://accesspressthemes.com/
     Description:  AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-    Version:      2.2.8
+    Version:      2.2.9
     License:      GNU General Public License v3 or later
     License URI:  http://www.gnu.org/licenses/gpl-3.0.html
     Text Domain:  accesspress-mag
@@ -1381,14 +1381,14 @@
     .beside-highlight-area{
         width: 47%;
         float: right;
-        padding-left: 6px;
+        /*padding-left: 6px;*/
     }
     .signle-highlight-post{
         width: 49%;
         float: left;
         vertical-align: top;
         position: relative;
-        margin:0 5px 10px 0;
+        margin:0 5px 6px 0;
     }
     .signle-highlight-post:nth-child(even){
         margin-right: 0;
@@ -1587,7 +1587,7 @@
         width: 22px;
     }
     .mag-slider-caption .slide-title {
-        background: none repeat scroll 0 0 rgba(250, 53, 34, 0.5);
+        background: none repeat scroll 0 0 rgba(250, 53, 34, 0.7);
         color: #ffffff;
         font-family: "Oswald",sans-serif;
         font-size: 24px;
