@@ -1,4 +1,4 @@
-Swell Lite v1.2.1
+Swell Lite v1.2.10
 http://www.swelltheme.com
 http://organicthemes.com
 
@@ -110,3 +110,44 @@ CHANGELOG v1.2.1:
 - Screenshot update
 - Added admin notice
 - Updated language files
+
+CHANGELOG v1.2.2:
+- Removed parallax from custom header for faster load
+- Updated admin notice
+- Updated description
+- Regenerated language files
+- Minor tweak to fitvids
+
+CHANGELOG v1.2.3:
+- Minor code cleanup
+- Added new social icons to stylesheet
+
+CHANGELOG v1.2.4:
+- Fix for mobile menu
+- Fix for one wrong text domain
+- Updated theme prefixes
+- Updated language file
+
+CHANGELOG v1.2.5:
+- Added styles for columns
+- Menu style tweak
+
+CHANGELOG v1.2.6:
+- Added edit post link to post
+- Style tweaks
+
+CHANGELOG v1.2.7:
+- Fix for mobile menu javascript issues
+- Fix to allow HTML in site description
+
+CHANGELOG v1.2.8:
+- Fixed sidebar issue related to column style additions
+
+CHANGELOG v1.2.9:
+- Added Yelp social icon
+- Added function to disable superfish.js on mobile
+- Updated superfish.js script
+
+CHANGELOG v1.2.10:
+- Replaced pagination function
+- Replaced mobile nav toggle with button instead of span

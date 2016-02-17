@@ -16,19 +16,25 @@
 		});
 	}
 	
-	/* Parallax ---------------------*/
-	function parallaxSetup() {
-		var $window = $(window);
-		$('#custom-header[data-type="background"]').each(function(){
-			var $bgobj = $(this); // assigning the object
-			$(window).scroll(function() {
-				var yPos = -($window.scrollTop() / $bgobj.data('speed'));
-				// Put together our final background position
-				var coords = '50% '+ yPos + 'px';
-				// Move the background
-				$bgobj.css({ backgroundPosition: coords });
-			});
-		});
+	/* Disable Superfish on mobile ---------------------*/
+	function superfishMobile() {
+		var sf, body;
+		var breakpoint = 767;
+	    body = $('body');
+	    sf = $('ul.menu');
+	    if ( body.width() >= breakpoint ) {
+	      // Enable superfish when the page first loads if we're on desktop
+	      sf.superfish();
+	    }
+	    $(window).resize(function() {
+	        if ( body.width() >= breakpoint && !sf.hasClass('sf-js-enabled') ) {
+	            // You only want SuperFish to be re-enabled once (sf.hasClass)
+	            sf.superfish('init');
+	        } else if ( body.width() < breakpoint ) {
+	            // Smaller screen, disable SuperFish
+	            sf.superfish('destroy');
+	        }
+	    });
 	}
 		
 	function modifyPosts() {
@@ -46,14 +52,14 @@
 		});
 		
 		/* Fit Vids ---------------------*/
-		$('.postarea').fitVids();
+		$('.content').fitVids();
 		
 	}
 	
 	$( document )
 	.ready( removeNoJsClass )
 	.ready( superfishSetup )
-	.ready( parallaxSetup )
+	.ready( superfishMobile )
 	.ready( modifyPosts )
 	.on( 'post-load', modifyPosts );
 	
