@@ -21,9 +21,9 @@
 		
 		<div class="credits">
 			<?php thebox_credits(); ?><br>
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'thebox' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'thebox' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'thebox' ) ); ?>"><?php printf( __( 'Powered by %s', 'thebox' ), 'WordPress' ); ?></a>
 			<span class="sep"> / </span>
-			<?php printf( __( 'Theme: %1$s by %2$s', 'thebox' ), 'The Box', '<a href="http://design.altervista.org" rel="designer">Design Lab</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s', 'thebox' ), 'The Box', '<a href="http://www.designlabthemes.com/" rel="designer">Design Lab</a>' ); ?>
 		</div>
 		
 		<?php
