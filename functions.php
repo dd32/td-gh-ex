@@ -65,7 +65,7 @@ function thebox_scripts() {
 	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/icons-font.css', array(), '1.6' );
 		
 	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.2' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.2.1' );
 	
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -300,7 +300,7 @@ if(is_admin()){
         <p>
           <?php
             printf(__('<strong>Upgrade to The Box Plus</strong> version to get extended functionality and advanced customization options: %1$s', 'thebox'),
-            sprintf('<a class="button button-primary" style="text-decoration:none" href="http://design.altervista.org/thebox-plus">%s</a>', '<strong>Try The Box Plus</strong>')
+            sprintf('<a class="button button-primary" style="text-decoration:none" href="http://www.designlabthemes.com/the-box-plus-wordpress-theme/">%s</a>', '<strong>Try The Box Plus</strong>')
             );
           ?>
         </p>

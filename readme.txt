@@ -28,7 +28,7 @@ The Box has been fully optimised for small screen display. Your content will loo
 Dutch translation by Theo Muys
 
 # Copyright, License & Other info #
-The Box Theme, Copyright 2014 Design Lab (http://design.altervista.org/)
+The Box Theme, Copyright 2014 Design Lab (http://www.designlabthemes.com/)
 License: [GNU General Public License v2.0](http://www.gnu.org/licenses/gpl-2.0.html)
 FontAwesome Icon font License: [SIL Open Font License (OFL)](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 

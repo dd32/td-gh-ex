@@ -53,7 +53,7 @@ function thebox_options_do_page() {
 				<th scope="row"><strong><?php _e( 'Support', 'thebox' ); ?></strong></th>
 				<td>
 					<p>
-						<a href="http://design.altervista.org/thebox-documentation"><?php _e( 'You find documentation here', 'thebox' ); ?></a>
+						<a href="http://www.designlabthemes.com/the-box-documentation/"><?php _e( 'You find documentation here', 'thebox' ); ?></a>
 					</p>
 				</td>
 			</tr>
@@ -62,7 +62,7 @@ function thebox_options_do_page() {
 				<td>
 					<p>
 						<?php _e( 'Want more customizations and flexibility?', 'thebox' ); ?>
-						<a href="http://design.altervista.org/thebox-plus"><strong><?php _e( 'Try The Box Plus.', 'thebox' ); ?></strong></a>
+						<a href="http://www.designlabthemes.com/the-box-plus-wordpress-theme/"><strong><?php _e( 'Try The Box Plus.', 'thebox' ); ?></strong></a>
 					</p>
 				</td>
 			</tr>
