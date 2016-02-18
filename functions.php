@@ -50,7 +50,7 @@ add_action( 'after_setup_theme', 'aripop_setup' );
 function aripop_of_head_css() {
   
     $output = '';
-    $custom_css = esc_attr(get_theme_mod( 'aripop_custom_css' ) );
+    $custom_css = esc_attr(get_theme_mod( 'custom_css' ) );
     if ($custom_css <> '') {
         $output .= $custom_css . "\n";
     }
@@ -64,23 +64,7 @@ function aripop_of_head_css() {
 add_action('wp_head', 'aripop_of_head_css');
 
 
-
-function aripop_header_add_favicon() {
-  
-    $outputfevicon = '';
-    $custom_fevicon = esc_attr(get_theme_mod( 'aripop_logo2' ) );
-    if ($custom_fevicon <> '') {
-        $outputfevicon .= $custom_fevicon . "\n";
-    }
-// Output styles
-    if ($outputfevicon <> '') {
-        $outputfevicon = '<link rel="shortcut icon" href="' . $outputfevicon . '">';
-        echo $outputfevicon;
-    }
-}
-
-add_action('wp_head', 'aripop_header_add_favicon');
-
+ 
 
 
  

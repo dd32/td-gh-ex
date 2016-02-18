@@ -6,7 +6,7 @@
             <div class="row">
             
             <div class="col-md-6 avfoo">
-            <p><?php if(get_theme_mod('copyright_text')): echo esc_attr( get_theme_mod( 'copyright_text' ) ); else: echo __('Copyright &#169; 2016 All Rights Reserved.', 'aripop');  endif;?> </p>
+            <p><?php if(get_theme_mod('aripop_copyright_text')): echo esc_attr( get_theme_mod( 'aripop_copyright_text' ) ); else: echo __('Copyright &#169; 2016 All Rights Reserved.', 'aripop');  endif;?> </p>
             <p class="copyright">
 <?php _e('Powered by','aripop'); ?> <a href="<?php echo esc_url( 'http://wordpress.org' ); ?>" rel="nofollow"><?php _e('WordPress','aripop'); ?></a>. <?php _e('Theme by','aripop'); ?> <a href="<?php echo esc_url( 'http://arinio.com' ); ?>" rel="nofollow"><?php _e('Arinio','aripop'); ?></a>
                   </p>

@@ -110,15 +110,7 @@ function aripop_theme_customizer( $wp_customize ) {
 	
 	
 	
-	 $wp_customize->add_setting( 'aripop_logo2', array(
-        'sanitize_callback' => 'aripop_sanitize_upload',
-   ) );
-   $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aripop_logo2', array(
-    'label'    => __( 'Favicon', 'aripop' ),
-    'section'  => 'aripop_logo_section',
-    'settings' => 'aripop_logo2',
-	)));
-	
+	 
 	
 	 
 	$wp_customize->add_setting(
@@ -156,17 +148,19 @@ function aripop_theme_customizer( $wp_customize ) {
 	
 	
 		$wp_customize->add_setting(
-	    'aripop_custom_css', array(
-		    'default' => __( '', 'aripop' ),
+	    'custom_css', array(
+		    'default' => '',
 			'capability' => 'edit_theme_options', 
 		    'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'sanitize_js_callback' => 'wp_filter_nohtml_kses'
 	    )
 	);
 	
 	$wp_customize->add_control(
-		'aripop_custom_css', array(
+		'aripop_custom_css_control', array(
 			'label'    => __( 'Custom CSS', 'aripop' ),
 			'section' => 'aripop_logo_section',
+			'settings' => 'custom_css',
 			'type' => 'textarea',
 		)
 	);

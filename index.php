@@ -18,7 +18,7 @@ get_header(); ?>
 					<div class="row">
  <div class="col-md-12  col-sm-12 ">
         <ol class="breadcrumb ">
-         <i class="fa fa-home pr-10"></i> <?php aripop_breadcrumbs(); ?>
+        &nbsp;
         </ol>
       </div>
 </div>
