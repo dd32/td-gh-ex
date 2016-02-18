@@ -1,16 +1,20 @@
 == Change log ==
 
+= 2.7.1 =
+* Bug Fixed: Genericons issue with To Top plugin
+* Bug Fixed: German language translation issue in de_DE.po and de_DE.mo file
+
 = 2.7 =
 * Added: Disable scrollup option.
 * Added: Social Icons for Phone, Handset, Cart, Cloud, Link( Custom Link )
 * Bug Fixed: Featured Slider not looping
-* Enhancement: Used antispambot() function on emails output on social icons
-* Updated Disable Logo checkbox to hide Logo, Logo alt text and Logo url
-* Updated Disable Featured Header Image to hide Header image size, Header image alt text, Header image url, Header image target
-* Updated Disable Promotion headline to hide Promotion headline text, Promotion subheadline text, Promotion headline button text, Promotion headline button url, Promotion headline target
+* Enhanced: Used antispambot() function on emails output on social icons
+* Updated: Disable Logo checkbox to hide Logo, Logo alt text and Logo url
+* Updated: Disable Featured Header Image to hide Header image size, Header image alt text, Header image url, Header image target
+* Updated: Disable Promotion headline to hide Promotion headline text, Promotion subheadline text, Promotion headline button text, Promotion headline button url, Promotion headline target
 * Updated: changed transport -> refresh to transport -> postMessage in Customizer API where feasible to make it more user friendly
-* Updated Genericons to 3.4.1
-* Updated Jetpack Scroll Pagination Option to enable infinite scroll in Reading Settings
+* Updated: Genericons to 3.4.1
+* Updated: Jetpack Scroll Pagination Option to enable infinite scroll in Reading Settings
 
 = 2.6 =
 * Added: Danish translation da_DK.po and da_DK.mo

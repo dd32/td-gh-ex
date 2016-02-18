@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2016-02-07 16:09+0545\n"
-"PO-Revision-Date: 2016-02-07 16:09+0545\n"
+"POT-Creation-Date: 2016-02-18 17:19+0545\n"
+"PO-Revision-Date: 2016-02-18 17:19+0545\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -29,9 +29,9 @@ msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Parece que nada foi encontrado que se relacione com sua pesquisa. Como sugestão, "
-"tente um dos links abaixo ou faça uma nova pesquisa, com novo termo, semelhante, "
-"seja a solução?"
+"Parece que nada foi encontrado que se relacione com sua pesquisa. Como "
+"sugestão, tente um dos links abaixo ou faça uma nova pesquisa, com novo "
+"termo, semelhante, seja a solução?"
 
 #: ../archive.php:30
 #, php-format
@@ -133,7 +133,8 @@ msgstr "Infelizmente sua pesquisa não gerou um resultado válido!"
 
 #: ../content-none.php:21 ../no-results.php:20
 #, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 "Pronto para publicar o seu primeiro post? <a href=\"%1$s\">Comece aqui</a>."
 
@@ -147,8 +148,8 @@ msgstr ""
 
 #: ../content-none.php:30 ../no-results.php:29
 msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching "
-"can help."
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 "Parece que não consegue encontrar o que você está procurando. Talvez o campo "
 "Pesquisar poderá ajudar em sua busca, tente!"
@@ -233,8 +234,8 @@ msgstr "%1$s em %2$s"
 #: ../inc/catchbase-core.php:669
 msgid "Your comment is awaiting moderation."
 msgstr ""
-"<strong>Seu comentário está aguardando a nossa moderação; obrigado por comentar!"
-"</strong>"
+"<strong>Seu comentário está aguardando a nossa moderação; obrigado por "
+"comentar!</strong>"
 
 #: ../inc/catchbase-core.php:772
 msgctxt "Used before publish date."
@@ -316,8 +317,8 @@ msgstr "Catch Base é um tema WordPress responsivo premium"
 
 #: ../inc/catchbase-default-options.php:67
 msgid ""
-"This is promotion headline. You can edit this from Appearance -> Customize -> "
-"Theme Options -> Promotion Headline Options"
+"This is promotion headline. You can edit this from Appearance -> Customize -"
+"> Theme Options -> Promotion Headline Options"
 msgstr ""
 "Esta é a Promoção da Manchete. E você pode editar a partir de: Aparência => "
 "Personalizar => Opções do Tema => Opções da frase de apresentação da manchete"
@@ -363,7 +364,8 @@ msgstr "Conteúdo, Barra lateral principal"
 #: ../inc/catchbase-default-options.php:171
 #: ../inc/catchbase-default-options.php:664
 msgid "Three Columns ( Secondary Sidebar, Content, Primary Sidebar )"
-msgstr "Três colunas (barra lateral secundária, conteúdo, barra lateral principal)"
+msgstr ""
+"Três colunas (barra lateral secundária, conteúdo, barra lateral principal)"
 
 #: ../inc/catchbase-default-options.php:175
 #: ../inc/catchbase-default-options.php:669
@@ -543,7 +545,8 @@ msgstr "Twitter"
 msgid "Googleplus"
 msgstr "Googleplus"
 
-#: ../inc/catchbase-default-options.php:515 ../inc/catchbase-social-icons.php:37
+#: ../inc/catchbase-default-options.php:515
+#: ../inc/catchbase-social-icons.php:37
 msgid "Email"
 msgstr "Email"
 
@@ -708,9 +711,9 @@ msgid ""
 "Headline, Subheadline and Feaured Content from \"Appearance -> Customize -> "
 "Featured Content Options\"."
 msgstr ""
-"Aqui você pode mostrar o número x de conteúdo em destaque. Você pode editar esta "
-"manchete, o subtítulo e o conteúdo apresentado a partir de \"Aparência => "
-"Personalizar => Conteúdo em destaque => Opções do conteúdo em destaque\"."
+"Aqui você pode mostrar o número x de conteúdo em destaque. Você pode editar "
+"esta manchete, o subtítulo e o conteúdo apresentado a partir de \"Aparência "
+"=> Personalizar => Conteúdo em destaque => Opções do conteúdo em destaque\"."
 
 #: ../inc/catchbase-featured-content.php:269
 #: ../inc/catchbase-featured-content.php:278
@@ -758,11 +761,11 @@ msgstr "Barra lateral principal"
 
 #: ../inc/catchbase-widgets.php:36
 msgid ""
-"This is the primary sidebar if you are using a two or three column site layout "
-"option."
+"This is the primary sidebar if you are using a two or three column site "
+"layout option."
 msgstr ""
-"Esta é a barra lateral principal se você estiver usando uma opção de layout para "
-"o Website de duas ou três colunas."
+"Esta é a barra lateral principal se você estiver usando uma opção de layout "
+"para o Website de duas ou três colunas."
 
 #: ../inc/catchbase-widgets.php:41
 msgid "Secondary Sidebar"
@@ -770,10 +773,11 @@ msgstr "Barra lateral secundária"
 
 #: ../inc/catchbase-widgets.php:47
 msgid ""
-"This is the secondary sidebar if you are using a three column site layout option."
+"This is the secondary sidebar if you are using a three column site layout "
+"option."
 msgstr ""
-"Esta é a barra lateral secundária, se você estiver usando uma opção de layout "
-"para o Website de três colunas."
+"Esta é a barra lateral secundária, se você estiver usando uma opção de "
+"layout para o Website de três colunas."
 
 #: ../inc/catchbase-widgets.php:54
 #, php-format
@@ -799,7 +803,8 @@ msgstr "Título (opcional):"
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:41
 msgid ""
-"Hold down the Ctrl (windows) / Command (Mac) button to select multiple options."
+"Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
+"options."
 msgstr ""
 "Mantenha pressionado o botão Ctrl no (Windows) ou Command no (Mac) para "
 "selecionar múltiplas opções."
@@ -855,8 +860,8 @@ msgstr "Selecione o tipo de conteúdo"
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:127
 msgid "Leave field empty if you want to remove Headline"
 msgstr ""
-"Deixe em branco se você quiser remover a frase de apresentação da manchete na "
-"página inicial"
+"Deixe em branco se você quiser remover a frase de apresentação da manchete "
+"na página inicial"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:128
 msgid "Headline for Featured Content"
@@ -865,8 +870,8 @@ msgstr "Manchete para o conteúdo em destaque"
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:145
 msgid "Leave field empty if you want to remove Sub-headline"
 msgstr ""
-"Deixe em branco se você quiser remover a frase de apresentação do subtítulo da "
-"manchete"
+"Deixe em branco se você quiser remover a frase de apresentação do subtítulo "
+"da manchete"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:146
 msgid "Sub-headline for Featured Content"
@@ -916,8 +921,8 @@ msgstr "Escolha o efeito de transição"
 msgid "seconds(s)"
 msgstr ""
 "O tempo em segundo(s)<br/>Exemplo: de 0.1 a 0.9 ou 1 ou 2 ou 7 ou 15 ou 23,  "
-"enfim... o número é para sua livre escolha!<br/>Teste abaixo qualquer número e "
-"escolha o que fique melhor para a visualização!"
+"enfim... o número é para sua livre escolha!<br/>Teste abaixo qualquer número "
+"e escolha o que fique melhor para a visualização!"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:93
 msgid "Transition Delay"
@@ -929,16 +934,16 @@ msgstr "Regular a velocidade da transição entre os Slides."
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:133
 msgid ""
-"True: Fixes the height overlap issue. Slideshow will start as soon as two slider "
-"are available. Slide may display in random, as image is fetch.<br>Wait: Fixes "
-"the height overlap issue.<br> Slideshow will start only after all images are "
-"available."
+"True: Fixes the height overlap issue. Slideshow will start as soon as two "
+"slider are available. Slide may display in random, as image is fetch."
+"<br>Wait: Fixes the height overlap issue.<br> Slideshow will start only "
+"after all images are available."
 msgstr ""
 "Verdade: corrige o problema de sobreposição na altura. Apresentação será "
-"iniciada tão logo dois slides estarem disponíveis. O slider pode exibir de forma "
-"aleatória, como a imagem é apresentada.<br>Aguardar: corrige o problema de "
-"sobreposição na altura.<br>Apresentação será iniciada somente após todas as "
-"imagens estarem disponíveis."
+"iniciada tão logo dois slides estarem disponíveis. O slider pode exibir de "
+"forma aleatória, como a imagem é apresentada.<br>Aguardar: corrige o "
+"problema de sobreposição na altura.<br>Apresentação será iniciada somente "
+"após todas as imagens estarem disponíveis."
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:135
 msgid "Image Loader"
@@ -950,7 +955,8 @@ msgstr "Selecione o tipo de Slider Show"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:172
 msgid ""
-"Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
+"Save and refresh the page if No. of Slides is changed (Max no of slides is "
+"20)"
 msgstr ""
 "<strong>\"Salvar & Publicar\"</strong> a página se o número de slides for "
 "alterado (Max número de slides é 20)"
@@ -1000,10 +1006,10 @@ msgid ""
 "Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
 "{action}. More Information in readme file"
 msgstr ""
-"Ligação Skype podem ser nos formatos:<br>callto://+{número}<br> skype:{nome de "
-"usuário}?{ação}. Mais <strong>informações importantes de configuração</strong> "
-"você encontra no arquivo leia-me (readme.txt) dentro da pasta principal deste "
-"tema."
+"Ligação Skype podem ser nos formatos:<br>callto://+{número}<br> skype:{nome "
+"de usuário}?{ação}. Mais <strong>informações importantes de configuração</"
+"strong> você encontra no arquivo leia-me (readme.txt) dentro da pasta "
+"principal deste tema."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:20
 msgid "Basic theme Options"
@@ -1015,15 +1021,15 @@ msgstr "Opções do tema"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:28
 msgid ""
-"Breadcrumbs are a great way of letting your visitors find out where they are on "
-"your site with just a glance. You can enable/disable them on homepage and entire "
-"site."
+"Breadcrumbs are a great way of letting your visitors find out where they are "
+"on your site with just a glance. You can enable/disable them on homepage and "
+"entire site."
 msgstr ""
-"Caminho de navegação (Breadcrumbs - navegação orientada que é exibida no alto do "
-"conteúdo da página inicial (Home), das páginas ou postagens) é uma ótima maneira "
-"de você deixar seus visitantes descobrir onde eles estão navegando em seu site, "
-"com apenas um olhar. Aqui você pode ativá-lo ou desativa-lo na página inicial ou "
-"no site inteiro."
+"Caminho de navegação (Breadcrumbs - navegação orientada que é exibida no "
+"alto do conteúdo da página inicial (Home), das páginas ou postagens) é uma "
+"ótima maneira de você deixar seus visitantes descobrir onde eles estão "
+"navegando em seu site, com apenas um olhar. Aqui você pode ativá-lo ou "
+"desativa-lo na página inicial ou no site inteiro."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:30
 msgid "Breadcrumb Options"
@@ -1061,16 +1067,16 @@ msgstr "Opções do resumo do post (Excerpt)"
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:116
 msgid "Excerpt length. Default is 40 words"
 msgstr ""
-"Quantidade de palavras (excerpt) que serão usadas para apresentar o resumo da "
-"postagem, em páginas que usarem esse recurso. ( exemplo: home, categorias, "
-"etc...).<br><strong>O padrão é de 40 palavras.</strong>"
+"Quantidade de palavras (excerpt) que serão usadas para apresentar o resumo "
+"da postagem, em páginas que usarem esse recurso. ( exemplo: home, "
+"categorias, etc...).<br><strong>O padrão é de 40 palavras.</strong>"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:123
 msgid "Excerpt Length (words)"
 msgstr ""
-"Quantidade de palavras que serão usadas para apresentar o resumo da postagem, "
-"(Excerpt), em páginas que usarem esse recurso. ( exemplo: home, categorias, "
-"etc...)"
+"Quantidade de palavras que serão usadas para apresentar o resumo da "
+"postagem, (Excerpt), em páginas que usarem esse recurso. ( exemplo: home, "
+"categorias, etc...)"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:137
 msgid "Read More Text"
@@ -1078,8 +1084,8 @@ msgstr "Texto leia mais"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:146
 msgid ""
-"Only posts that belong to the categories selected here will be displayed on the "
-"front page"
+"Only posts that belong to the categories selected here will be displayed on "
+"the front page"
 msgstr ""
 "Somente as postagens que pertencem às categorias selecionadas aqui, serão "
 "exibidas na primeira página."
@@ -1106,12 +1112,12 @@ msgstr "Adicionar/Mudar - Favicon"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:193
 msgid ""
-"Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
-"height, which will support High Resolution Devices like iPad Retina."
+"Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height "
+"144px height, which will support High Resolution Devices like iPad Retina."
 msgstr ""
-"Nota: Web Clip Ícone para dispositivos da Apple. Tamanho recomendado - largura "
-"144px e altura 144px, que irá suportar dispositivos de alta resolução, como iPad "
-"de Retina."
+"Nota: Web Clip Ícone para dispositivos da Apple. Tamanho recomendado - "
+"largura 144px e altura 144px, que irá suportar dispositivos de alta "
+"resolução, como iPad de Retina."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:194
 msgid "Select/Add Web Clip Icon"
@@ -1128,13 +1134,13 @@ msgstr "Layout do arquivo de conteúdo"
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:273
 #, php-format
 msgid ""
-"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
-"<br/>Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
-"Plugin</a> with Infinite Scroll module Enabled."
+"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</"
+"a>.<br/>Infinite Scroll Options requires <a target=\"_blank\" href=\"%s"
+"\">JetPack Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
-"Opção numérica requer <a target=\"_blank\" href=\"%s\">Plugin WP-PageNavi</a>."
-"<br/>Opção de rolagem infinita requer <a target=\"_blank\" href=\"%s\">Plugin "
-"JetPack</a> com módulo de rolagem infinita habilitado."
+"Opção numérica requer <a target=\"_blank\" href=\"%s\">Plugin WP-PageNavi</"
+"a>.<br/>Opção de rolagem infinita requer <a target=\"_blank\" href=\"%s"
+"\">Plugin JetPack</a> com módulo de rolagem infinita habilitado."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:280
 #, php-format
@@ -1148,9 +1154,11 @@ msgstr ""
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:291
 #, php-format
 msgid ""
-"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
+"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</"
+"a>."
 msgstr ""
-"Opção numérica requer <a target=\"_blank\" href=\"%s\">Plugin WP-PageNavi</a>."
+"Opção numérica requer <a target=\"_blank\" href=\"%s\">Plugin WP-PageNavi</"
+"a>."
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:302
 msgid "Pagination Options"
@@ -1234,7 +1242,8 @@ msgstr "Texto Alt do logotipo do Website"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:100
 msgid "Check to move Site Title and Tagline before logo"
-msgstr "Marque aqui para mover o título e o slogan do Website antes do logotipo"
+msgstr ""
+"Marque aqui para mover o título e o slogan do Website antes do logotipo"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:126
 msgid "Color Scheme"
@@ -1242,18 +1251,19 @@ msgstr "Esquema de Cores"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:151
 msgid ""
-"Caution: Reset all settings to default. Refresh the page after save to view full "
-"effects."
+"Caution: Reset all settings to default. Refresh the page after save to view "
+"full effects."
 msgstr ""
 "<strong>Atenção:</strong> Essa é uma ação para repor, redefinir (Reset) ou "
 "reinstalar todas as configurações para o padrão original do tema."
-"<br><strong>Importante:</strong> Certifique-se de fazer uma cópia de todas as "
-"configurações personalizadas por você, caso queira voltar àquilo que havia feito "
-"anteriormente.<br>Se é isso que realmente você quer <strong>(redefinir as "
-"configurações para o padrão original)</strong>, precisará marcar a caixa de "
-"seleção abaixo, clicar em <strong>\"Salvar & Publicar\"</strong>, atualizar sua "
-"página no navegador para visualizar os efeitos completos no padrão original do "
-"tema. E assim, começar uma nova configuração personalizada do zero."
+"<br><strong>Importante:</strong> Certifique-se de fazer uma cópia de todas "
+"as configurações personalizadas por você, caso queira voltar àquilo que "
+"havia feito anteriormente.<br>Se é isso que realmente você quer "
+"<strong>(redefinir as configurações para o padrão original)</strong>, "
+"precisará marcar a caixa de seleção abaixo, clicar em <strong>\"Salvar & "
+"Publicar\"</strong>, atualizar sua página no navegador para visualizar os "
+"efeitos completos no padrão original do tema. E assim, começar uma nova "
+"configuração personalizada do zero."
 
 #: ../inc/customizer-includes/catchbase-customizer.php:153
 msgid "Reset all settings"
@@ -1262,8 +1272,8 @@ msgstr "Redefinir (Reset) todas as configurações"
 #: ../inc/customizer-includes/catchbase-customizer.php:164
 msgid "Check to reset all settings to default"
 msgstr ""
-"Marque essa caixa de seleção, para redefinir (Reset) todas as configurações para "
-"o padrão original do tema."
+"Marque essa caixa de seleção, para redefinir (Reset) todas as configurações "
+"para o padrão original do tema."
 
 #: ../inc/customizer-includes/catchbase-customizer.php:174
 #: ../inc/customizer-includes/catchbase-customizer.php:185
@@ -1276,13 +1286,13 @@ msgstr "Faça Upgrade para o Tema Catch Base Pro &raquo;"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:229
 msgid ""
-"Some settings might be missing or disorganized in this version of WordPress. So "
-"we suggest you to upgrade to version 4.0 or better."
+"Some settings might be missing or disorganized in this version of WordPress. "
+"So we suggest you to upgrade to version 4.0 or better."
 msgstr ""
 "Algumas configurações podem estar ausentes ou desorganizada nesta versão do "
-"WordPress. Então nós sugerimos para atualizar para a versão 4.0 ou superior do "
-"WordPress, o ideal é sempre estar usando a última versão disponibilizada pelos "
-"desenvolvedores do WordPress."
+"WordPress. Então nós sugerimos para atualizar para a versão 4.0 ou superior "
+"do WordPress, o ideal é sempre estar usando a última versão disponibilizada "
+"pelos desenvolvedores do WordPress."
 
 #: ../no-results.php:14
 msgid "Error 404-Page NOT Found"
@@ -1309,22 +1319,22 @@ msgstr "Área da barra lateral secundária"
 
 #: ../sidebar-secondary.php:31
 msgid ""
-"This is the Secondary Sidebar Widget Area if you are using a three column site "
-"layout option."
+"This is the Secondary Sidebar Widget Area if you are using a three column "
+"site layout option."
 msgstr ""
-"Esta é a barra lateral secundária, se você estiver usando uma opção de layout "
-"para o site de três colunas."
+"Esta é a barra lateral secundária, se você estiver usando uma opção de "
+"layout para o site de três colunas."
 
 #: ../sidebar-secondary.php:32 ../sidebar.php:79
 #, php-format
 msgid ""
-"By default it will load Search and Archives widgets as shown below. You can add "
-"widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> which will "
-"replace default widgets."
+"By default it will load Search and Archives widgets as shown below. You can "
+"add widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> "
+"which will replace default widgets."
 msgstr ""
-"Por padrão ele irá carregar os widgets Pesquisar e Arquivos, conforme mostrado "
-"abaixo. Você pode adicionar widget para esta área, visitando o seu <a href=\"%s"
-"\">Painel Widgets</a> que irá substituir os widgets padrão."
+"Por padrão ele irá carregar os widgets Pesquisar e Arquivos, conforme "
+"mostrado abaixo. Você pode adicionar widget para esta área, visitando o seu "
+"<a href=\"%s\">Painel Widgets</a> que irá substituir os widgets padrão."
 
 #: ../sidebar.php:75
 msgid "Primary Sidebar Widget Area"
@@ -1332,11 +1342,11 @@ msgstr "Área da barra lateral principal"
 
 #: ../sidebar.php:78
 msgid ""
-"This is the Primary Sidebar Widget Area if you are using a two or three column "
-"site layout option."
+"This is the Primary Sidebar Widget Area if you are using a two or three "
+"column site layout option."
 msgstr ""
-"Esta é a barra lateral principal se você estiver usando uma opção de layout para "
-"o site de duas ou três colunas."
+"Esta é a barra lateral principal se você estiver usando uma opção de layout "
+"para o site de duas ou três colunas."
 
 #~ msgid "StumbleUpon"
 #~ msgstr "Stumbleupon"
