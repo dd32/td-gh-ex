@@ -28,7 +28,7 @@ if ( ! function_exists( 'actions_site_branding' ) ) {
 							</a>
 						<?php else : ?>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $description ); ?>" alt="<?php echo esc_attr( $title ); ?>">
-								<?php echo $title; ?>
+								<?php bloginfo( 'name' ); ?>
 							</a>
 						<?php endif; ?>
 					</span>
@@ -56,7 +56,7 @@ if ( ! function_exists( 'actions_primary_navigation' ) ) {
 			
 				<nav id="site-navigation" class="main-navigation clear" role="navigation">
 				
-					<span class="menu-toggle"><i class="fa fa-bars"></i> <?php _e( 'Menu', 'actions' ); ?></span>
+					<span class="menu-toggle"> <?php _e( 'Menu', 'actions' ); ?></span>
 					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'actions' ); ?></a>		
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'actions_menu_home' ) ); ?>
 				

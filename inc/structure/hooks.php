@@ -54,6 +54,14 @@ add_action( 'actions_before_sidebar',	      'actions_top_sidebar',          10 )
 add_action( 'actions_after_sidebar',	      'actions_bottom_sidebar',       10 );
 
 /**
+ * Footer Wrapper
+ * @see  actions_footer_top()
+ * @see  actions_footer_bottom()
+ */
+add_action( 'actions_footer_open',	    'actions_footer_top',         10 );
+add_action( 'actions_footer_close',	    'actions_footer_bottom',      10 );
+
+/**
  * Footer
  * @see  actions_footer_widgets()
  * @see  actions_credit()

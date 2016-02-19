@@ -116,7 +116,7 @@ get_header();
 		
             do_action( 'actions_single_post_elements' ); // Give your elements priorities so that they hook in the right place.
 			
-		    do_action( 'aactions_single_post_comments' );
+		    do_action( 'actions_single_post_comments' );
 			
         do_action( 'actions_after_single' );
 		

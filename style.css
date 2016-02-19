@@ -4,7 +4,7 @@
  Description:  Simple, clean and actionable WordPress theme built around Actions.
  Author:       WP DevHQ
  Author URI:   http://www.wpdevhq.com/
- Version:      1.0.1
+ Version:      1.0.2
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready, translation-ready
@@ -195,66 +195,9 @@ Structure
 	width: 33.5%;
 }
 
-a,
-.header-menu a:hover,
-.header-menu a:focus  {
-	color: #3498db;
-}
-
 input[type="submit"],
-input[type="button"],
-.main-navigation,
-.main-navigation ul li:hover > ul,
-.main-navigation ul li:focus > ul {
+input[type="button"] {
 	background: #323a45;
-}
-
-.main-navigation a:hover,
-.main-navigation a:focus {
-	background: #3498db;
-}
-
-/**
- * 2.0 - Genericons
- */
-
-.social-navigation a:before,
-.secondary-toggle:before,
-.dropdown-toggle:after,
-.bypostauthor > article .fn:after,
-.comment-reply-title small a:before,
-.comment-navigation .nav-next a:after,
-.comment-navigation .nav-previous a:before,
-.posted-on:before,
-.byline:before,
-.cat-links:before,
-.tags-links:before,
-.comments-link:before,
-.entry-format:before,
-.edit-link:before,
-.full-size-link:before,
-.pagination .prev:before,
-.pagination .next:before,
-.image-navigation a:before,
-.image-navigation a:after,
-.format-link .entry-title a:after,
-.entry-content .more-link:after,
-.entry-summary .more-link:after,
-.author-link:after {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	display: inline-block;
-	font-family: "Genericons";
-	font-size: 16px;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	line-height: 1;
-	speak: none;
-	text-align: center;
-	text-decoration: inherit;
-	text-transform: none;
-	vertical-align: top;
 }
 
 /**
@@ -500,7 +443,9 @@ Links
 --------------------------------------------------------------*/
 a {
 	text-decoration: none;
+	color: #3498db;
 }
+
 a:hover,
 a:focus {
 	color: #404040;
@@ -513,7 +458,6 @@ code,
 kbd, 
 tt, 
 var, 
-.header-menu a, 
 .navigation a, 
 .comment-navigation a, 
 .page-title, 
@@ -583,8 +527,8 @@ blockquote:after,
 .site-main > article:after,
 .primary-menu:before,
 .primary-menu:after,
-.social-links-menu:before,
-.social-links-menu:after,
+.menu-toggle:before,
+.menu-toggle:after,
 .textwidget:before,
 .textwidget:after,
 .content-bottom-widgets:before,
@@ -621,43 +565,41 @@ Menus
 	clear: both;
 	display: block;
 	color: #fff;
-	padding-left: 12px;
 	border-radius: 3px;
 	margin-bottom: 32px;
 	width: 100%;
 }
-.header-menu {
-	position: absolute;
-		right: 0;
-		top: 32px;
-}
-.main-navigation ul,
-.header-menu ul {
+.main-navigation ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
-.main-navigation li,
-.header-menu li {
+.main-navigation li {
 	float: left;
 	position: relative;
-	transition: all 1.2s;
-}
-.header-menu li:not(:last-child) {
-	padding-right: 24px;
+	transition: all 0.2s;
 }
 .main-navigation a {
 	display: block;
-	color: #fff;
+	color:  #23282d;
 	text-decoration: none;
 	padding: 12px;
 }
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+	background: #3498db;
+	color: #fff;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li:focus > ul {
+	background: #f8f8f8;
+}
+
 .main-navigation ul ul li:last-child a:hover,
 .main-navigation ul ul li:last-child a:focus {
 	border-radius: 0 0 3px 3px;
-}
-.header-menu a {
-	font-size: 13px;
 }
 .skip-link.screen-reader-text {
 	padding: 0;
@@ -671,9 +613,6 @@ Menus
 	z-index: 99999;
 	border-radius: 0 0 3px 3px;
 }
-.header-menu ul ul {
-	display: none;
-}
 .main-navigation ul ul ul {
 	left: 100%;
 	top: 0;
@@ -681,30 +620,22 @@ Menus
 .main-navigation ul ul a {
 	width: 260px;
 }
-.main-navigation ul ul li {
-}
 .main-navigation li:hover > a,
 .main-navigation li:focus > a {
-	transition: all 1.2s;
-}
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul :focus > a {
-}
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a:focus {
+	transition: all 0.4s;
 }
 .main-navigation ul li:hover > ul,
 .main-navigation ul li:focus > ul {
 	display: block;
 }
-.main-navigation .current_page_item a,
-.main-navigation .current-menu-item a {
-}
+
+
 /* Small menu */
 .menu-toggle {
 	cursor: pointer;
 	display: none;
 	padding: 12px;
+	color: #000;
 }
 
 .navigation a:hover,
@@ -714,7 +645,6 @@ Menus
 .comment-navigation a:focus {
 	color: #404040;
 }
-
 
 .pagination .page-numbers {
     letter-spacing: 0.0131579em;
@@ -825,7 +755,6 @@ Clearings
 .site-footer:after {
 	clear: both;
 }
-
 
 /*--------------------------------------------------------------
 Header
@@ -940,8 +869,10 @@ footer.entry-meta,
 }
 
 .byline,
-.posted-on {
-	margin-right: 2em;
+.posted-on,
+.cat-links,
+.tags-links {
+	margin-right: 1em;
 }
 .featured-image {
 	margin-bottom: 1.2em;
@@ -950,13 +881,8 @@ footer.entry-meta,
 	margin-bottom: 1.2em;
 }
 .comments-link {
-	float: right;
+	float: none;
 }
-.entry-content .entry-meta .fa,
-.entry-meta .tax-links .fa {
-	margin-right: 6px;
-}
-
 
 footer.entry-meta {
 	border: none;
@@ -984,18 +910,6 @@ footer.entry-meta {
 	display: inline-block;
 	font-size: 18px;
 }
-.social-links {
-	position: absolute;
-		top: 10px;
-		right: 0;
-}
-.social-links a {
-	margin-left: 6px;
-}
-.social-links a:hover,
-.social-links a:focus {
-	color: #404040;
-}
 
 .comments-area {
 	margin: 0 3.6923% 1.5em 0;
@@ -1013,7 +927,7 @@ footer.entry-meta {
 	font-size: 1.4375rem;
 	font-weight: 700;
 	line-height: 1.3125;
-	padding-top: 1.217391304em;
+	padding-top: 0;
 }
 
 .comments-title {
@@ -1028,7 +942,7 @@ footer.entry-meta {
 .comment-list article,
 .comment-list .pingback,
 .comment-list .trackback {
-	padding: 1.75em 0;
+	padding: 1.25em 0;
 }
 
 .comment-list .children {
@@ -1037,7 +951,7 @@ footer.entry-meta {
 }
 
 .comment-list .children > li {
-	padding-left: 0.875em;
+	padding-left: 1.575em;
 }
 
 .comment-author {
@@ -1053,11 +967,11 @@ footer.entry-meta {
 	width: 28px;
 }
 
-.bypostauthor > article .fn:after {
-	content: "\f304";
-	left: 3px;
-	position: relative;
-	top: 5px;
+/*
+ * For WordPress.org Requirements
+ */
+.bypostauthor {
+	
 }
 
 .comment-metadata,
@@ -1090,14 +1004,6 @@ footer.entry-meta {
 	display: inline-block;
 }
 
-.comment-metadata .edit-link:before,
-.pingback .edit-link:before {
-	content: "\002f";
-	display: inline-block;
-	opacity: 0.7;
-	padding: 0 0.538461538em;
-}
-
 .comment-content ul,
 .comment-content ol {
 	margin: 0 0 1.5em 1.25em;
@@ -1117,7 +1023,7 @@ footer.entry-meta {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1;
-	margin-top: 2.1538461538em;
+	margin-top: 1.1538461538em;
 	padding: 0.5384615385em 0.5384615385em 0.4615384615em;
 }
 
@@ -1186,7 +1092,7 @@ footer.entry-meta {
 }
 
 .comment-reply-title small {
-	font-size: 100%;
+	font-size: 60%;
 }
 
 .comment-reply-title small a {
@@ -1194,7 +1100,7 @@ footer.entry-meta {
 	float: right;
 	height: 32px;
 	overflow: hidden;
-	width: 26px;
+	width: 15%;
 }
 
 .comment-reply-title small a:hover,
@@ -1202,12 +1108,6 @@ footer.entry-meta {
 	color: #1a1a1a;
 }
 
-.comment-reply-title small a:before {
-	content: "\f405";
-	font-size: 32px;
-	position: relative;
-	top: -5px;
-}
 
 /*--------------------------------------------------------------
 Sidebar
@@ -1222,10 +1122,13 @@ Sidebar
 	padding: 0;
 }
 .widget {
-	margin: 0 0 1em;
+    margin: 0 0 1em;
 }
 .widget-title {
 	margin-bottom: 16px;
+}
+.widget:first-child .widget-title {
+    margin-top: 1.1em;
 }
 .widget ul {
 	margin: 0;
@@ -1398,35 +1301,11 @@ Plugin support
 		padding-right: 20px;
 		padding-left: 20px;
 	}
-	.top-bar {
-		padding-right: 100px;
-	}
-	.header-menu,
-	.top-bar .social-links {
-		right: 20px;
-	}
 }
 
 @media screen and (max-width: 767px) {
-	.site-header,
-	.top-bar {
+	.site-header {
 		text-align: center;
-	}
-	.header-menu,
-	.top-bar .social-links {
-		position: static;
-	}
-	.top-bar {
-		padding-right: 20px;
-	}
-	.header-menu ul {
-		text-align: center;
-		margin-top: 16px;
-	}
-	.site-header .header-menu li {
-		display: inline-block;
-		float: none;
-		padding: 0 10px;
 	}
 	.main-navigation {
 		padding-left: 0;

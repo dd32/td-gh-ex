@@ -77,13 +77,9 @@ if ( ! function_exists( 'actions_bottom_wrapper' ) ) {
  * @return  void
  */
 if ( ! function_exists( 'actions_get_sidebar' ) ) {
-	function actions_get_sidebar() { ?>
-	
-	<?php
+	function actions_get_sidebar() {
 		get_sidebar();
-	} ?>
-	
-	<?php
+	} 
 }
 
 /**
@@ -111,6 +107,36 @@ if ( ! function_exists( 'actions_bottom_sidebar' ) ) {
 		?>
 		</div><!-- .sidebar .widget-area -->
 		<?php
+	}
+}
+
+/**
+ * Before Footer
+ * Closes the wrapping divs
+ * @since   1.0.3
+ * @return  void
+ */
+if ( ! function_exists( 'actions_footer_top' ) ) {
+	function actions_footer_top() {
+		?>		
+		    <footer id="colophon" class="site-footer inner" role="contentinfo">
+		        <div class="site-info">		
+	    <?php
+	}
+}
+
+/**
+ * After Footer
+ * Closes the wrapping divs
+ * @since   1.0.3
+ * @return  void
+ */
+if ( ! function_exists( 'actions_footer_bottom' ) ) {
+	function actions_footer_bottom() {
+		?>
+		        </div><!-- .site-info -->
+		    </footer>
+	    <?php
 	}
 }
 

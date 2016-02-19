@@ -17,20 +17,20 @@ function actions_paging_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'actions' ); ?></h1>
-		<div class="nav-links">
+	    <nav class="navigation paging-navigation" role="navigation">
+		    <h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'actions' ); ?></h1>
+		    <div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( '<i class="fa fa-arrow-circle-left"></i>' . __( 'Older posts', 'actions' ) ); ?></div>
+			    <div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'actions' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'actions' ) . '<i class="fa fa-arrow-circle-right"></i>' ); ?></div>
+			    <div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'actions' ) ); ?></div>
 			<?php endif; ?>
 
-		</div>
-	</nav>
+		    </div>
+	    </nav>
 	<?php
 }
 }
@@ -54,8 +54,8 @@ function actions_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'actions' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', '<i class="fa fa-arrow-circle-left"></i>' . _x( '%title', 'Previous post link', 'actions' ) );
-				next_post_link( '<div class="nav-next">%link</div>', _x( '%title ', 'Next post link', 'actions' ) . '<i class="fa fa-arrow-circle-right"></i>' );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '%title', 'Previous post link', 'actions' ) );
+				next_post_link( '<div class="nav-next">%link</div>', _x( '%title ', 'Next post link', 'actions' ) );
 			?>
 		</div>
 	</nav>
@@ -81,7 +81,6 @@ function actions_posted_on() {
 	);
 	?>
 	<span class="byline">
-		<i class="fa fa-pencil"></i>
 		<?php
 		printf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -90,7 +89,6 @@ function actions_posted_on() {
 		?>
 	</span>
 	<span class="posted-on">
-		<i class="fa fa-calendar"></i>
 		<?php
 		printf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),

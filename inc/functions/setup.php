@@ -153,7 +153,7 @@ endif;
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  *
- * @since Twenty Sixteen 1.0
+ * @since Actions 1.0.1
  */
 function actions_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
@@ -168,14 +168,11 @@ function actions_scripts() {
 	global $actions_version;
 	
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'actions-fonts', actions_fonts_url(), array(), null );
-
-	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/inc/genericons/genericons.css', array(), '3.4.1' );
+	wp_enqueue_style( 'actions-fonts', actions_fonts_url(), array(), null );	
 
 	wp_enqueue_style( 'actions-style', get_template_directory_uri() . '/style.css', '', $actions_version );
 
-	wp_style_add_data( 'actions-style', 'rtl', 'replace' );
+	wp_style_add_data( 'actions-rtl', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'actions-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20120206', true );
 
@@ -193,7 +190,7 @@ function actions_scripts() {
  * @since  1.0.0
  */
 function actions_child_scripts() {
-	if ( is_child_theme() ) {
+	if ( is_child_theme() || !is_admin() ) {
 		wp_enqueue_style( 'actions-child-style', get_stylesheet_uri(), '' );
 	}
 }
