@@ -2,6 +2,9 @@
 
 = Theme Name: Appointway Theme=
 
+= Version: 1.0.9 =
+* Support Link Button Added In WordPress Customize.
+
 = Version: 1.0.8 =
 * Theme option to WordPress customizer API migration.
 

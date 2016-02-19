@@ -511,7 +511,6 @@ class Appointway_Customizer {
         $value = sanitize_text_field($value);
         return $value;
     }
-
     /**
      * adds sanitization callback funtion : email
      * @package Appointway
@@ -520,7 +519,6 @@ class Appointway_Customizer {
         $value = sanitize_email($value);
         return $value;
     }
-
     /**
      * adds sanitization callback funtion : number
      * @package Appointway
@@ -529,8 +527,19 @@ class Appointway_Customizer {
         $value = preg_replace("/[^0-9+ ]/", "", $value);
         return $value;
     }
-
 }
-
 // Setup the Theme Customizer settings and controls...
 add_action('customize_register', array('Appointway_Customizer', 'Appointway_Register'));
+function inkthemes_registers() {
+    wp_register_script( 'inkthemes_jquery_ui', '//code.jquery.com/ui/1.11.0/jquery-ui.js', array("jquery"), true  );
+	wp_register_script( 'inkthemes_customizer_script', get_template_directory_uri() . '/functions/js/inkthemes_customizer.js', array("jquery","inkthemes_jquery_ui"), true  );
+	wp_enqueue_script( 'inkthemes_customizer_script' );
+	wp_localize_script( 'inkthemes_customizer_script', 'ink_advert', array(
+	'pro' => __('View PRO version','appointway'),
+	'url' => esc_url('http://www.inkthemes.com/wp-themes/appointway-wordpress-theme/'),
+	'support_text' => __('Need Help!','appointway'),
+	'support_url' => esc_url('http://www.inkthemes.com/lets-connect/'),
+	)			
+	);
+}
+add_action( 'customize_controls_enqueue_scripts', 'inkthemes_registers' );
