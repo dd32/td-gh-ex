@@ -1,6 +1,11 @@
 <?php
 
-define('ACTIVETAB_THEME_VERSION', '2.5');
+define('ACTIVETAB_THEME_VERSION', '3.0');
+
+
+include( 'inc/activetab-functions.php' );
+
+include( 'inc/activetab-settings.php' );
 
 
 if ( ! isset( $content_width ) ) {
@@ -8,8 +13,8 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
-	function activetab_enqueue_scripts_and_styles() {
+if ( ! function_exists( 'activetab_enqueue_scripts' ) ) :
+	function activetab_enqueue_scripts() {
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -22,7 +27,16 @@ if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
 		wp_enqueue_style( 'activetab-bootstrap-theme-style', get_template_directory_uri() . '/bootstrap/css/bootstrap-theme.css', array(), ACTIVETAB_THEME_VERSION, 'all' );
 		wp_enqueue_style( 'activetab-style', get_stylesheet_uri(), array( 'activetab-bootstrap-style', 'dashicons' ), ACTIVETAB_THEME_VERSION, 'all' ); // get_stylesheet_directory_uri() . '/style.css'
 	}
-	add_action( 'wp_enqueue_scripts', 'activetab_enqueue_scripts_and_styles' );
+	add_action( 'wp_enqueue_scripts', 'activetab_enqueue_scripts' );
+endif;
+
+
+if ( ! function_exists( 'activetab_admin_enqueue_scripts' ) ) :
+	function activetab_admin_enqueue_scripts() {
+		// including the WP media scripts here because they are needed for the image upload field
+		wp_enqueue_media();
+	}
+	add_action( 'admin_enqueue_scripts', 'activetab_admin_enqueue_scripts' );
 endif;
 
 
@@ -48,6 +62,8 @@ if ( ! function_exists( 'activetab_setup' ) ) :
 		add_theme_support( 'post-thumbnails' ); // featured images
 		set_post_thumbnail_size( 800, 9999 ); // unlimited height, soft crop
 
+		add_theme_support( 'woocommerce' );
+		
 		$custom_header_args = array(
 			'default-image'          => get_template_directory_uri() . '/img/headers/nature.jpg',
 			'random-default'         => true, // random image rotation
@@ -105,9 +121,18 @@ endif;
 if ( ! function_exists( 'activetab_register_widgets' ) ) :
 	function activetab_register_widgets() {
 		register_sidebar( array(
-			'name' => __( 'Sidebar', 'activetab' ),
-			'id' => 'sidebar',
-			//'description' => 'Sidebar widgets description.',
+			'name' => __( 'Sidebar Left', 'activetab' ),
+			'id' => 'sidebar_left',
+			//'description' => 'Sidebar Left.',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
+		) );
+		register_sidebar( array(
+			'name' => __( 'Sidebar Right', 'activetab' ),
+			'id' => 'sidebar_right',
+			//'description' => 'Sidebar Right.',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h4 class="widget-title">',
@@ -347,36 +372,6 @@ if ( ! function_exists( 'activetab_is_homepage' ) ) :
 endif;
 
 
-if ( ! function_exists( 'activetab_wp_head' ) ) :
-function activetab_wp_head() { // output content to the head section
-
-	$code_head = of_get_option( 'code_head', '' );
-	if ( ! empty( $code_head ) ) { // output js head code
-		echo "\n".'<!-- activetab head code -->'."\n";
-		echo $code_head;
-		echo "\n".'<!-- /end of activetab head code -->'."\n";
-	}
-
-}
-add_action( 'wp_head', 'activetab_wp_head' );
-endif;
-
-
-if ( ! function_exists( 'activetab_wp_footer' ) ) :
-	function activetab_wp_footer() { // output content to the footer section
-
-		$code_footer = of_get_option( 'code_footer', '' );
-		if ( ! empty( $code_footer ) ) { // output js head code
-			echo "\n".'<!-- activetab footer code -->'."\n";
-			echo $code_footer;
-			echo "\n".'<!-- /end of activetab footer code -->'."\n";
-		}
-
-	}
-	add_action( 'wp_footer', 'activetab_wp_footer' );
-endif;
-
-
 if ( ! function_exists( 'activetab_rss_button' ) ) :
 	function activetab_rss_button() { // output content to the footer section
 		$output = '';
@@ -392,71 +387,45 @@ if ( ! function_exists( 'activetab_rss_button' ) ) :
 endif;
 
 
-// ========== options framework ==========
+if ( ! function_exists( 'activetab_wp_head' ) ) :
+	function activetab_wp_head() { // output content to the head section
 
-/*
- * Loads the Options Panel
- * If you're loading from a child theme use stylesheet_directory instead of template_directory
- */
+		$settings = activetab_get_settings();
+		$code_head = $settings['code_head'];
+		$max_width = $settings['max_width'];
+		
+		if ( ! empty( $max_width ) ) {
+			echo "\n".'<!-- Activetab settings -->'."\n";
+			echo '<style type="text/css">'."\n";
+			echo '.site-container {'."\n";
+			echo '	max-width: '.$max_width.'px;'."\n";
+			echo '}'."\n";
+			echo '</style>'."\n";
+			echo "\n".'<!-- end of Activetab settings -->'."\n";
+		}
+		
+		if ( ! empty( $code_head ) ) {
+			echo "\n".'<!-- Activetab head code -->'."\n";
+			echo $code_head;
+			echo "\n".'<!-- end of Activetab head code -->'."\n";
+		}
 
-if ( ! function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/options-framework/' );
-	require_once dirname( __FILE__ ) . '/options-framework/options-framework.php';
-}
-
-
-/**
- * A unique identifier is defined to store the options in the database and reference them from the theme.
- * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
- * If the identifier changes, it'll appear as if the options have been reset.
- */
-
-function optionsframework_option_name() { // set theme option name to 'activetab_options' and save all options there
-
-	// This gets the theme name from the stylesheet
-	$themename = wp_get_theme();
-	$themename = preg_replace( "/\W/", "_", strtolower( $themename ) );
-
-	$optionsframework_settings = get_option( 'optionsframework' );
-	$optionsframework_settings['id'] = $themename . '_options';
-	update_option( 'optionsframework', $optionsframework_settings );
-
-}
+	}
+	add_action( 'wp_head', 'activetab_wp_head' );
+endif;
 
 
-function activetab_optionscheck_change_santiziation() { // remove default and add custom filter for textarea in options framework
-	remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
-	add_filter( 'of_sanitize_textarea', 'activetab_custom_sanitize_textarea' );
-}
-add_action( 'admin_init', 'activetab_optionscheck_change_santiziation', 100 );
+if ( ! function_exists( 'activetab_wp_footer' ) ) :
+	function activetab_wp_footer() { // output content to the footer section
 
-function activetab_custom_sanitize_textarea( $input ) { // allow script and style tags for textarea
-	global $allowedposttags;
-	$custom_allowedtags['script'] = array(
-		'type' => array(),
-		'src' => array(),
-		'title' => array(),
-		'media' => array(),
-		'rel' => array(),
-		'id' => array()
-	);
-	$custom_allowedtags['style'] = array(
-		'type' => array(),
-		'href' => array(),
-		'title' => array(),
-		'media' => array(),
-		'rel' => array(),
-		'id' => array()
-	);
-	$custom_allowedtags['link'] = array(
-		'type' => array(),
-		'href' => array(),
-		'title' => array(),
-		'media' => array(),
-		'rel' => array(),
-		'id' => array()
-	);
-	$custom_allowedtags = array_merge( $custom_allowedtags, $allowedposttags );
-	$output = wp_kses( $input, $custom_allowedtags );
-	return $output;
-}
+		$settings = activetab_get_settings();
+		$code_footer = $settings['code_footer'];
+		if ( ! empty( $code_footer ) ) {
+			echo "\n".'<!-- Activetab footer code -->'."\n";
+			echo $code_footer;
+			echo "\n".'<!-- end of Activetab footer code -->'."\n";
+		}
+
+	}
+	add_action( 'wp_footer', 'activetab_wp_footer' );
+endif;

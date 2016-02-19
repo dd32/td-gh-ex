@@ -1,40 +1,49 @@
-=== activetab ===
-Theme Name: activetab
+=== Activetab ===
+Theme Name: Activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Responsive clean theme. More info at http://web-profile.com.ua/activetab/
+Responsive and flexible theme. Features: 6 layouts (1, 2 or 3 columns), widget-ready sidebars, Search Engines Friendly, WooCommerce support and much more. More info at http://web-profile.com.ua/activetab/
 
 == Description ==
 
-* responsive and clean
-* two columns, right sidebar, fixed or static multi-level drop down menu
-* widget-ready sidebar and footer areas
+* Responsive and flexible
+* 6 layouts: 1-column (content), 2-columns (content/sidebar-right, sidebar-left/content), 3-columns (content/sidebar-left/sidebar-right, sidebar-left/content/sidebar-right, sidebar-left/sidebar-right/content)
+* fixed multi-level drop down menu
+* widget-ready 2 sidebars and footer areas
 * 2 extra page templates: "full width (no sidebar)" and "redirect to first subpage"
 * support for: custom background, custom header, custom menu, editor style, post thumbnails, microformats, rtl language support, sticky post and threaded-comments
+* Search Engines Friendly
 * automatic rss-feeds in the head section, added rss-feed links for posts, comments, categories, tags and authors
 * all site elements are intuitive and users will use the site more easily
-* correct html5 document structure for better search engine indexing
+* WooCommerce support
 * translation ready; Ukrainian, Russian, Hebrew and German translations included
 * includes a sample WordPress Child theme for rapid development
 
 
-= activetab theme options: =
+= Activetab theme settings: =
 
+* max width
+* layout
 * custom logo upload
-* show or hide site title in header section
-* show or hide site description in header section
-* menu position type (fixed or static)
-* show excerpt or full content in the list of posts
+* show excerpt or content in the list of posts
 * custom head code - could be inserted any javascript or css code into head section before closing [/head] tag
 * custom footer code - same as head code, but it will be inserted before closing [/body] tag
 
 
 == Changelog ==
 
+= 3.0 - 2016-02-18 =
+* removed Options Framework
+* added Settings via Settings API
+* added settings: max width, layout, excerpt or content in list, head code, footer code
+* added support for 1-col, 2-cols and 3-cols layouts
+* added WooCommerce support
+* dropped support for old IE versions
+* renamed 'activetab' to 'Activetab'
 
 = 2.5 - 2016-01-30 =
 * removed sitemap template because it can be easily solved with Page-list plugin - https://wordpress.org/plugins/page-list/
@@ -202,7 +211,6 @@ activetab theme is distributed under the terms of the GNU GPL
 = Bundled Resources: =
 
 * [Bootstrap](http://getbootstrap.com/) licensed under [MIT](http://opensource.org/licenses/MIT)
-* [Options Framework](http://wptheming.com/options-framework-theme/) licensed under [GPL](https://github.com/devinsays/options-framework-theme/blob/master/license.txt)
 * [Pixabay](http://pixabay.com/) public domain images
 * [Dashicons](https://developer.wordpress.org/resource/dashicons/) licensed under [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -213,4 +221,3 @@ activetab theme is distributed under the terms of the GNU GPL
 * http://pixabay.com/en/beach-beautiful-blue-coast-84560/
 * http://pixabay.com/en/solar-flare-flare-explosion-67532/
 * http://pixabay.com/en/baby-boy-child-childhood-computer-84626/
-* http://pixabay.com/en/lion-head-mane-black-silhouette-308089/

@@ -1,11 +1,11 @@
 /*
-Theme Name: activetab
+Theme Name: Activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
-Description: Responsive clean theme. More info at http://web-profile.com.ua/activetab/
-Version: 2.5
+Description: Activetab is Responsive and Flexible theme. Features: 6 templates (1 column, 2 columns, 3 columns, 2 sidebars), Search Engines Friendly, WooCommerce Compatible, Cross-Browser Compatible and much more. More info at http://web-profile.com.ua/activetab/
+Version: 3.0
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
-Tags: gray, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, buddypress
+Tags: white, light, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, buddypress
 Text Domain: activetab
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 body {
 	padding: 0 0 20px 0;
-	background-color: #fbfbfb;
+	background-color: #fff;
 	color: #222;
 }
 
@@ -26,11 +26,10 @@ body {
 	margin-right: auto;
 	padding: 20px 20px;
 	background: #fff;
-	border: 1px solid #e6e6e6;
 }
 
 .site-container {
-	max-width: 1000px; /* site width */
+	max-width: 1200px; /* site width */
 }
 
 
@@ -42,7 +41,7 @@ body {
 	border-radius: 2px;
 }
 .bg-lite-blue {
-	background-color: #E0EDFE; /* F3F9FE */
+	background-color: #E0EDFE;
 	border: 1px solid #ccc;
 }
 .bg-lite-white {
@@ -307,9 +306,12 @@ img#wpstats {
 }
 
 /* ========== images ========== */
-.wrap-thumbnail {
+.image-thumbnail {
 	float: left;
 	margin: 0 15px 10px 0;
+}
+.image-full {
+	margin: 0 0 10px 0;
 }
 .site-main img {
 	max-width: 100%;
@@ -792,6 +794,12 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 
 
 /* ========== site-header ========== */
+.site-header {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
 .site-sidebar-header {
 	margin: 0 0 30px 0;
 }
@@ -803,11 +811,7 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 .site-sidebar-header a:hover img {
 	opacity: 0.8;
 }
-.site-logo-title {
-	border-bottom: 1px solid #ddd;
-	padding-bottom: 20px;
-	margin-bottom: 20px;
-}
+
 .site-logo {
 	float: left;
 	margin: 0 30px 0 0;
@@ -820,8 +824,6 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 	padding: 0;
 	border: 0;
 }
-.site-title {}
-.site-title h3 {}
 
 
 /* ========== sidebar ========== */
@@ -913,7 +915,7 @@ table#wp-calendar td, table#wp-calendar th {
 
 /* ========== footer ========== */
 .site-footer {
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 16px;
 	color: #555;
 	padding: 20px 0 0 0;
@@ -926,9 +928,22 @@ table#wp-calendar td, table#wp-calendar th {
 }
 .site-footer .site-footer-left {}
 .site-footer .site-footer-right {
-	opacity: 0.8;
+	
+}
+.site-footer .site-footer-right i {
+	text-decoration: none;
+    font-size: 16px;
+    top: 3px;
+    position: relative;
+}
+.site-footer .site-footer-right a {
+	text-decoration: none;
+	color: #000;
 	transition: all 0.3s ease;
 }
-.site-footer .site-footer-right:hover {
-	opacity: 1;
+.site-footer .site-footer-right a:hover {
+	color: #555;
+}
+.site-footer .site-footer-right a span {
+	text-decoration: underline;
 }

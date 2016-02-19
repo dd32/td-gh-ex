@@ -4,13 +4,7 @@
 
 <?php get_template_part( 'template-parts/wrap', 'before' ); ?>
 
-	<?php while ( have_posts() ) : the_post(); // the loop ?>
-
-		<?php get_template_part( 'content', 'single' ); ?>
-
-		<?php comments_template( '', true ); ?>
-
-	<?php endwhile; // end of the loop ?>
+	<?php woocommerce_content(); ?>
 
 <?php get_template_part( 'template-parts/wrap', 'after' ); ?>
 

@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
+<?php get_sidebar( 'before-content' ); ?>
 
-<?php get_template_part( 'template-part', 'wrap-before' ); ?>
+<?php get_template_part( 'template-parts/wrap', 'before' ); ?>
 
 				<?php if (have_posts()) : ?>
 
@@ -31,8 +32,8 @@
 
 				<?php endif; ?>
 
-<?php get_template_part( 'template-part', 'wrap-after' ); ?>
+<?php get_template_part( 'template-parts/wrap', 'after' ); ?>
 
-<?php get_sidebar(); ?>
+<?php get_sidebar( 'after-content' ); ?>
 
 <?php get_footer(); ?>
