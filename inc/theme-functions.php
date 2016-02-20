@@ -57,7 +57,7 @@ if ( ! function_exists( 'simple_life_get_theme_option_defaults' ) ) :
 		'pagination_type'              => 'default',
 		'footer_widgets'               => 0,
 		'copyright_text'               => '&copy; ' . esc_html__( '2015 All rights reserved', 'simple-life' ),
-		'powered_by'                   => false,
+		'powered_by'                   => true,
 		'go_to_top'                    => true,
 		);
 		$defaults = apply_filters( 'simple_life_filter_default_theme_options', $defaults );
@@ -182,4 +182,25 @@ if ( ! function_exists( 'simple_life_footer_widgets' ) ) :
 		echo $container_close; // WPCS: XSS OK.
 
 	} // End function simple_life_footer_widgets.
+endif;
+
+if ( ! function_exists( 'simple_life_primary_menu_fallback' ) ) :
+
+	/**
+	 * Primary menu callback.
+	 *
+	 * @since 1.0.0
+	 */
+	function simple_life_primary_menu_fallback() {
+
+		echo '<ul>';
+		echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . __( 'Home', 'simple-life' ). '</a></li>';
+		wp_list_pages( array(
+			'title_li' => '',
+			'depth'    => 1,
+			'number'   => 10,
+		) );
+		echo '</ul>';
+
+	}
 endif;

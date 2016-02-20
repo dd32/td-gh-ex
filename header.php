@@ -10,11 +10,13 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<?php endif; ?>
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -33,7 +35,7 @@
 		<?php if ( ( false === $replace_site_title && ! empty( $site_logo ) ) || empty( $site_logo ) ) : ?>
   			<h1 class="site-title text-center"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		<?php endif ?>
-			<h2 class="site-description text-center"><?php bloginfo( 'description' ); ?></h2>
+			<p class="site-description text-center"><?php bloginfo( 'description' ); ?></p>
 		</div>
 		<?php if ( get_header_image() ) : ?>
 		<div id="site-header">
@@ -44,8 +46,16 @@
 		<?php endif; ?>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'simple-life' ); ?></button>
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'primary',
+					'menu_id'        => 'primary-menu',
+					'fallback_cb'    => 'simple_life_primary_menu_fallback',
+				) );
+			?>
 		</nav><!-- #site-navigation -->
+
 	</header><!-- #masthead -->
 
 
