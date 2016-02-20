@@ -19,17 +19,17 @@ if( ! function_exists( 'agama_breadcrumbs' ) ) {
 			
 			if( is_archive() ) {
 				if ( is_day() ) :
-					$h1 	= sprintf( '<h1>%s</h1> <span>%s</span>', __( 'Daily Archives', 'agama-pro' ), get_the_date() );
-					$output	= sprintf( '<li class="active">%s</li>', __( 'Daily Archives', 'agama-pro' ) );
+					$h1 	= sprintf( '<h1>%s</h1> <span>%s</span>', __( 'Daily Archives', 'agama' ), get_the_date() );
+					$output	= sprintf( '<li class="active">%s</li>', __( 'Daily Archives', 'agama' ) );
 				elseif ( is_month() ) :
-					$h1 	= sprintf( '<h1>%s</h1> <span>%s</span>', __( 'Monthly Archives', 'agama-pro' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'agama-pro' ) ) );
-					$output	= sprintf( '<li class="active">%s</li>', __( 'Monthly Archives', 'agama-pro' ) );
+					$h1 	= sprintf( '<h1>%s</h1> <span>%s</span>', __( 'Monthly Archives', 'agama' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'agama' ) ) );
+					$output	= sprintf( '<li class="active">%s</li>', __( 'Monthly Archives', 'agama' ) );
 				elseif ( is_year() ) :
-					$h1		= sprintf( '<h1>%s</h1> <span>%s</span>', __( 'Yearly Archives', 'agama-pro' ), get_the_date( _x( 'Y', 'yearly archives date format', 'agama-pro' ) ) );
-					$output	= sprintf( '<li class="active">%s</li>', __( 'Yearly Archives', 'agama-pro' ) );
+					$h1		= sprintf( '<h1>%s</h1> <span>%s</span>', __( 'Yearly Archives', 'agama' ), get_the_date( _x( 'Y', 'yearly archives date format', 'agama' ) ) );
+					$output	= sprintf( '<li class="active">%s</li>', __( 'Yearly Archives', 'agama' ) );
 				else :
-					$h1		= __( 'Archives', 'agama-pro' );
-					$output = sprintf( '<li class="active">%s</li>', __( 'Archives', 'agama-pro' ) );
+					$h1		= __( 'Archives', 'agama' );
+					$output = sprintf( '<li class="active">%s</li>', __( 'Archives', 'agama' ) );
 				endif;
 			}
 			
@@ -49,32 +49,32 @@ if( ! function_exists( 'agama_breadcrumbs' ) ) {
 			
 			
 			if( is_tag() ) {
-				$h1		= sprintf( '<h1>%s</h1>', __( 'Tag', 'agama-pro' ) );
+				$h1		= sprintf( '<h1>%s</h1>', __( 'Tag', 'agama' ) );
 				$output	= sprintf( '<li class="active">%s</li>', single_tag_title('', false) );
 			}
 			
 			if( is_404() ) {
-				$h1		= sprintf( '<h1>%s</h1> <span>%s</span>', '404', __( 'Page not Found', 'agama-pro' ) );
-				$output	= sprintf( '<li class="active">%s</li>', __( 'Page not Found', 'agama-pro' ) );
+				$h1		= sprintf( '<h1>%s</h1> <span>%s</span>', '404', __( 'Page not Found', 'agama' ) );
+				$output	= sprintf( '<li class="active">%s</li>', __( 'Page not Found', 'agama' ) );
 			}
 			
 			if( is_search() ) {
-				$h1		= sprintf( '<h1>%s</h1>', __( 'Search', 'agama-pro' ) );
-				$output = sprintf( '<li class="active">%s</li>', __( 'Search', 'agama-pro' ) );
+				$h1		= sprintf( '<h1>%s</h1>', __( 'Search', 'agama' ) );
+				$output = sprintf( '<li class="active">%s</li>', __( 'Search', 'agama' ) );
 			}
 			
 			// WooCommerce
 			if( class_exists('Woocommerce') ) {
 				
 				if( is_shop() ) {
-					$h1		= sprintf( '<h1>%s</h1>', __( 'Shop', 'agama-pro' ) );
-					$output	= sprintf( '<li class="active">%s</li>', __( 'Shop', 'agama-pro' ) );
+					$h1		= sprintf( '<h1>%s</h1>', __( 'Shop', 'agama' ) );
+					$output	= sprintf( '<li class="active">%s</li>', __( 'Shop', 'agama' ) );
 				}
 				
 			}
 			
 			if( is_home() || is_front_page() ) {
-				$h1 	= sprintf( '<h1>%s</h1>', __( 'Homepage', 'agama-pro' ) );
+				$h1 	= sprintf( '<h1>%s</h1>', __( 'Homepage', 'agama' ) );
 				$output	= '';
 			} 
 			
@@ -86,7 +86,7 @@ if( ! function_exists( 'agama_breadcrumbs' ) ) {
 				<div class="container clearfix">
 					<?php echo $h1; ?>
 					<ol class="breadcrumb">
-						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Home', 'agama-pro' ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Home', 'agama' ); ?></a></li>
 							<?php echo $output; ?>
 					</ol>
 				</div>

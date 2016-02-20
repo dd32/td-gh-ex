@@ -113,6 +113,20 @@ if( ! class_exists( 'Agama' ) ) {
 		}
 		
 		/**
+		 * Bootstrap Content Wrapper Class
+		 *
+		 * @since 1.1.7
+		 */
+		static function bs_class() {
+			if( is_active_sidebar( 'sidebar-1' ) ) {
+				$class = 'col-md-9';
+			} else {
+				$class = 'col-md-12';
+			}
+			return esc_attr( $class );
+		}
+		
+		/**
 		 * Excerpt Lenght
 		 *
 		 * @since 1.0.0

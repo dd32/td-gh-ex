@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content col-md-9">
+	<div id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
 		<div id="content" role="main" <?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' && ! is_singular() ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
 		<?php if ( have_posts() ) : ?>
 

@@ -1,9 +1,11 @@
+<?php $search_post_thumbnails = get_theme_mod('agama_search_page_thumbnails', ''); ?>
+
 <!-- Small Thumbs -->
 <div class="small-thumbs">
 
 	 <div class="entry clearfix">
 		
-		<?php if( has_post_thumbnail() ): ?>
+		<?php if( has_post_thumbnail() && ! is_search() || is_search() && has_post_thumbnail() && $search_post_thumbnails ): ?>
 		<!-- Entry Image -->
 		<div class="entry-image">
 		

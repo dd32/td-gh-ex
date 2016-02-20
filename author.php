@@ -11,7 +11,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="site-content col-md-9">
+	<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
 	
 		
 		
@@ -137,4 +137,5 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

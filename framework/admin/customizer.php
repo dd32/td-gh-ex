@@ -186,6 +186,23 @@ function agama_customize_register( $wp_customize ) {
 				'settings'		=> 'agama_favicon'
 			)
 		)
+	); // Search Page Post Thumbnails
+	$wp_customize->add_setting('agama_search_page_thumbnails', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_search_page_thumbnails', array(
+				'label'			=> __( 'Search Page Post Thumbnails', 'agama' ),
+				'description'	=> __( 'Enable posts thumbnails on search page ?', 'agama' ),
+				'section'		=> 'agama_general_section',
+				'settings'		=> 'agama_search_page_thumbnails',
+				'type'			=> 'checkbox'
+			)
+		)
 	);
 /******************** Agama Layout Settings ******************************************/
 	$wp_customize->add_section('agama_layout_section', array(
@@ -613,7 +630,25 @@ function agama_customize_register( $wp_customize ) {
 				'settings'		=> 'agama_frontpage_1_img'
 			)
 		)
-	);// Frontpage Box 1 Text
+	); 
+	// Frontpage Box 1 Icon URL
+	$wp_customize->add_setting( 'agama_frontpage_box_1_icon_url', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_1_icon_url', array(
+				'label'			=> __( 'Box 1 Icon / Image URL', 'agama' ),
+				'description'	=> __( 'Starting with: http://', 'agama' ),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_box_1_icon_url',
+				'type'			=> 'text'
+			)
+		)
+	); // Frontpage Box 1 Text
 	$wp_customize->add_setting( 'agama_frontpage_box_1_text', array(
 		'default'			=> 'Powerful Layout with Responsive functionality that can be adapted to any screen size.',
 		'capability'		=> 'edit_theme_options',
@@ -722,6 +757,23 @@ function agama_customize_register( $wp_customize ) {
 				'description'	=> __('You can use image instead of FontAwesome icon, just upload it here.', 'agama'),
 				'section'		=> 'agama_frontpage_boxes_section',
 				'settings'		=> 'agama_frontpage_2_img'
+			)
+		)
+	); // Frontpage Box 2 Icon URL
+	$wp_customize->add_setting( 'agama_frontpage_box_2_icon_url', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_2_icon_url', array(
+				'label'			=> __( 'Box 2 Icon / Image URL', 'agama' ),
+				'description'	=> __( 'Starting with: http://', 'agama' ),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_box_2_icon_url',
+				'type'			=> 'text'
 			)
 		)
 	); // Frontpage Box 2 Text
@@ -835,6 +887,23 @@ function agama_customize_register( $wp_customize ) {
 				'settings'		=> 'agama_frontpage_3_img'
 			)
 		)
+	); // Frontpage Box 3 Icon URL
+	$wp_customize->add_setting( 'agama_frontpage_box_3_icon_url', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_3_icon_url', array(
+				'label'			=> __( 'Box 3 Icon / Image URL', 'agama' ),
+				'description'	=> __( 'Starting with: http://', 'agama' ),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_box_3_icon_url',
+				'type'			=> 'text'
+			)
+		)
 	); // Frontpage Box 3 Text
 	$wp_customize->add_setting( 'agama_frontpage_box_3_text', array(
 		'default'			=> 'Stretch your Website to the Full Width or make it boxed to surprise your visitors.',
@@ -944,6 +1013,23 @@ function agama_customize_register( $wp_customize ) {
 				'description'	=> __('You can use image instead of FontAwesome icon, just upload it here.', 'agama'),
 				'section'		=> 'agama_frontpage_boxes_section',
 				'settings'		=> 'agama_frontpage_4_img'
+			)
+		)
+	); // Frontpage Box 4 Icon URL
+	$wp_customize->add_setting( 'agama_frontpage_box_4_icon_url', array(
+		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'agama_frontpage_box_4_icon_url', array(
+				'label'			=> __( 'Box 4 Icon / Image URL', 'agama' ),
+				'description'	=> __( 'Starting with: http://', 'agama' ),
+				'section'		=> 'agama_frontpage_boxes_section',
+				'settings'		=> 'agama_frontpage_box_4_icon_url',
+				'type'			=> 'text'
 			)
 		)
 	); // Frontpage Box 4 Text
@@ -2051,6 +2137,12 @@ function agama_customize_css() { ?>
 	footer[role="contentinfo"] a:hover {
 		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>; 
 	}
+	
+	<?php if( ! is_active_sidebar( 'sidebar-1' ) ): ?>
+	#content[role=main] {
+		max-width: 100% !important;
+	}
+	<?php endif; ?>
 	
 	<?php if( ! get_theme_mod('agama_blog_post_meta', true) && get_theme_mod('agama_blog_layout', 'list') == 'list' ): ?>
 	.list-style .entry-content { margin-left: 0 !important; }

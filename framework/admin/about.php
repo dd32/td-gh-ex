@@ -74,16 +74,11 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-						echo '<p>ADDED: Breadcrumb background color feature.</p>';
-						echo '<p>ADDED: Breadcrumb links color feature.</p>';
-						echo '<p>ADDED: Breadcrumb text color feature.</p>';
-						echo '<p>ADDED: Footer widget area background color feature.</p>';
-						echo '<p>ADDED: Footer bottom area background color feature.</p>';
-						echo '<p>FIXED: Current menu item background color on navigation.</p>';
-						echo '<p>UPDATED: ReStyled footer area.</p>';
-						echo '<p>UPDATED: Language translation files.</p>';
-						echo '<p>IMPLEMENTED: Action hook for breadcrumbs. (agama_breadcrumbs_action)</p>';
-						echo '<p>IMPLEMENTED: Action hook for frontpage boxes. (agama_frontpage_boxes_action)</p>';
+						echo '<p>ADDED: Pages / posts will became full-width if no active widgets in Main Sidebar area.</p>';
+						echo '<p>ADDED: Frontpage boxes icons / image URL feature.</p>';
+						echo '<p>ADDED: Search page post thumbnails on / off feature.</p>';
+						echo '<p>FIXED: Search page blog grid layout issue.</p>';
+						echo '<p>FIXED: Mobile menu always expanded bug.</p>';
 				echo '</div>';
 				
 			echo '</div>';

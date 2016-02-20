@@ -11,7 +11,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="site-content col-md-9">
+	<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
 		<div id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>

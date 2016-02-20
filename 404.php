@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content col-md-9">
+	<div id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
 		<div id="content" role="main">
 
 			<article id="post-0" class="post error404 no-results not-found">
@@ -27,4 +27,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

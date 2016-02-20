@@ -68,6 +68,12 @@ if( ! function_exists( 'agama_frontpage_boxes' ) ) {
 			$box_3_img = get_theme_mod('agama_frontpage_3_img', '');
 			$box_4_img = get_theme_mod('agama_frontpage_4_img', '');
 			
+			// Boxes FA Icon / Image URL
+			$box_1_icon_url = get_theme_mod('agama_frontpage_box_1_icon_url', '');
+			$box_2_icon_url = get_theme_mod('agama_frontpage_box_2_icon_url', '');
+			$box_3_icon_url = get_theme_mod('agama_frontpage_box_3_icon_url', '');
+			$box_4_icon_url = get_theme_mod('agama_frontpage_box_4_icon_url', '');
+			
 			// Boxes FA Icon Color
 			$box_1_icon_color = get_theme_mod('agama_frontpage_box_1_icon_color', '#f7a805');
 			$box_2_icon_color = get_theme_mod('agama_frontpage_box_2_icon_color', '#f7a805');
@@ -85,10 +91,18 @@ if( ! function_exists( 'agama_frontpage_boxes' ) ) {
 				<?php if( $box_1_enable ): ?>
 				<div class="<?php echo esc_attr( $bs_class ); ?>">
 					
+					<?php if( $box_1_icon_url ): ?>
+					<a href="<?php echo esc_url( $box_1_icon_url ); ?>">
+					<?php endif; ?>
+					
 					<?php if( $box_1_img ): ?>
 						<img src="<?php echo esc_url( $box_1_img ); ?>">
 					<?php else: ?>
 						<i class="fa <?php echo esc_attr( $box_1_icon ); ?>" style="color:<?php echo esc_attr( $box_1_icon_color ); ?>;"></i>
+					<?php endif; ?>
+					
+					<?php if( $box_1_icon_url ): ?>
+					</a>
 					<?php endif; ?>
 					
 					<h2><?php echo $box_1_title; ?></h2>
@@ -100,10 +114,18 @@ if( ! function_exists( 'agama_frontpage_boxes' ) ) {
 				<?php if( $box_2_enable ): ?>
 				<div class="<?php echo esc_attr( $bs_class ); ?>">
 					
+					<?php if( $box_2_icon_url ): ?>
+					<a href="<?php echo esc_url( $box_2_icon_url ); ?>">
+					<?php endif; ?>
+					
 					<?php if( $box_2_img ): ?>
 						<img src="<?php echo esc_url( $box_2_img ); ?>">
 					<?php else: ?>
 						<i class="fa <?php echo esc_attr( $box_2_icon ); ?>" style="color:<?php echo esc_attr( $box_2_icon_color ); ?>;"></i>
+					<?php endif; ?>
+					
+					<?php if( $box_2_icon_url ): ?>
+					</a>
 					<?php endif; ?>
 					
 					<h2><?php echo $box_2_title; ?></h2>
@@ -115,10 +137,18 @@ if( ! function_exists( 'agama_frontpage_boxes' ) ) {
 				<?php if( $box_3_enable ): ?>
 				<div class="<?php echo esc_attr( $bs_class ); ?>">
 					
+					<?php if( $box_3_icon_url ): ?>
+					<a href="<?php echo esc_url( $box_3_icon_url ); ?>">
+					<?php endif; ?>
+					
 					<?php if( $box_3_img ): ?>
 						<img src="<?php echo esc_url( $box_3_img ); ?>">
 					<?php else: ?>
 						<i class="fa <?php echo esc_attr( $box_3_icon ); ?>" style="color:<?php echo esc_attr( $box_3_icon_color ); ?>;"></i>
+					<?php endif; ?>
+					
+					<?php if( $box_3_icon_url ): ?>
+					</a>
 					<?php endif; ?>
 					
 					<h2><?php echo $box_3_title; ?></h2>
@@ -130,10 +160,18 @@ if( ! function_exists( 'agama_frontpage_boxes' ) ) {
 				<?php if( $box_4_enable ): ?>
 				<div class="<?php echo esc_attr( $bs_class ); ?>">
 					
+					<?php if( $box_4_icon_url ): ?>
+					<a href="<?php echo esc_url( $box_4_icon_url ); ?>">
+					<?php endif; ?>
+					
 					<?php if( $box_4_img ): ?>
 						<img src="<?php echo esc_url( $box_4_img ); ?>">
 					<?php else: ?>
 						<i class="fa <?php echo esc_attr( $box_4_icon ); ?>" style="color:<?php echo esc_attr( $box_4_icon_color ); ?>;"></i>
+					<?php endif; ?>
+					
+					<?php if( $box_4_icon_url ): ?>
+					</a>
 					<?php endif; ?>
 					
 					<h2><?php echo $box_4_title; ?></h2>

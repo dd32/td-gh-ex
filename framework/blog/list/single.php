@@ -52,7 +52,7 @@
 		<!-- Tags -->
 		<div class="tagcloud clearfix bottommargin">
 			<?php the_tags(false, false, false); ?>
-		</div>
+		</div><!-- Tags End -->
 
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'agama' ), 'after' => '</div>' ) ); ?>
 		

@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="site-content col-md-9">
+	<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
 		
 		
 		<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
@@ -78,4 +78,5 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

@@ -1,6 +1,8 @@
+<?php $search_post_thumbnails = get_theme_mod('agama_search_page_thumbnails', ''); ?>
+
 <header class="entry-header">
 
-	<?php if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() && ! is_search() ) { // Attachments ?>
+	<?php if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() && ! is_search() || is_search() && has_post_thumbnail() && $search_post_thumbnails ) { // Attachments ?>
 		
 		<figure class="hover1">
 		
