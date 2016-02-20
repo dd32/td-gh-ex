@@ -9,8 +9,7 @@ function akyra_setup() {
 	 *
 	 */
 	load_theme_textdomain( 'akyra', get_template_directory() . '/languages' );
-	// This theme styles the visual editor to resemble the theme style.
-	add_editor_style();
+	 
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 	global $content_width;
