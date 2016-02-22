@@ -32,7 +32,7 @@ if ( ! function_exists( 'suevafree_header_cart' ) ) {
 
 	function suevafree_header_cart() {
 
-		if ( suevafree_is_woocommerce_active() && ( !suevafree_setting('wip_woocommerce_header_cart') || suevafree_setting('wip_woocommerce_header_cart') == "on" ) ) :
+		if ( suevafree_is_woocommerce_active() && ( !suevafree_setting('suevafree_woocommerce_header_cart') || suevafree_setting('suevafree_woocommerce_header_cart') == "on" ) ) :
 		
 	?>
 
@@ -156,12 +156,6 @@ if (!function_exists('suevafree_woocommerce_after_main_content')) {
 	</script>
 
 <?php
-	
-		if ( (is_shop() || is_product()) && (suevafree_postmeta('wip_bottom_sidebar') && suevafree_postmeta('wip_bottom_sidebar') <> "none") ):
-
-			do_action('suevafree_bottom_sidebar', suevafree_postmeta('wip_bottom_sidebar'));
-		
-		endif;
 
 	}
 	

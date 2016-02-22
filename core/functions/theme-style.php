@@ -11,25 +11,25 @@
 
 /* =================== BEGIN PAGE WIDTH =================== */
 
-	if (suevafree_setting('wip_screen1')) {
+	if (suevafree_setting('suevafree_screen1')) {
 	
-		echo "@media (min-width:768px){.container{width:".suevafree_setting('wip_screen1')."px}}"; 
-		echo "@media (min-width:768px){.container.block{width:" . (suevafree_setting('wip_screen1')-10) . "px}}"; 
-		echo "@media (min-width:768px){.container.grid-container{width:" . (suevafree_setting('wip_screen1')-20) . "px}}"; 
+		echo "@media (min-width:768px){.container{width:".suevafree_setting('suevafree_screen1')."px}}"; 
+		echo "@media (min-width:768px){.container.block{width:" . (suevafree_setting('suevafree_screen1')-10) . "px}}"; 
+		echo "@media (min-width:768px){.container.grid-container{width:" . (suevafree_setting('suevafree_screen1')-20) . "px}}"; 
 	}
 	
-	if (suevafree_setting('wip_screen2')) {
+	if (suevafree_setting('suevafree_screen2')) {
 		
-		echo "@media (min-width:992px){.container{width:".suevafree_setting('wip_screen2')."px}}"; 
-		echo "@media (min-width:992px){.container.block{width:" . (suevafree_setting('wip_screen2')-10) . "px}}"; 
-		echo "@media (min-width:768px){.container.grid-container{width:" . (suevafree_setting('wip_screen2')-20) . "px}}"; 
+		echo "@media (min-width:992px){.container{width:".suevafree_setting('suevafree_screen2')."px}}"; 
+		echo "@media (min-width:992px){.container.block{width:" . (suevafree_setting('suevafree_screen2')-10) . "px}}"; 
+		echo "@media (min-width:768px){.container.grid-container{width:" . (suevafree_setting('suevafree_screen2')-20) . "px}}"; 
 	}
 	
-	if (suevafree_setting('wip_screen3'))  {
+	if (suevafree_setting('suevafree_screen3'))  {
 		
-		echo "@media (min-width:1200px){.container{width:".suevafree_setting('wip_screen3')."px}}"; 
-		echo "@media (min-width:1200px){.container.block{width:" . (suevafree_setting('wip_screen3')-10) . "px}}"; 
-		echo "@media (min-width:768px){.container.grid-container{width:" . (suevafree_setting('wip_screen3')-20) . "px}}"; 
+		echo "@media (min-width:1200px){.container{width:".suevafree_setting('suevafree_screen3')."px}}"; 
+		echo "@media (min-width:1200px){.container.block{width:" . (suevafree_setting('suevafree_screen3')-10) . "px}}"; 
+		echo "@media (min-width:768px){.container.grid-container{width:" . (suevafree_setting('suevafree_screen3')-20) . "px}}"; 
 	}
 	
 /* =================== BEGIN LOGO STYLE =================== */

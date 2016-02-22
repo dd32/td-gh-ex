@@ -428,35 +428,35 @@ if (!function_exists('suevafree_template')) {
 		$span = $template["right-sidebar"];
 		$sidebar =  "right-sidebar";
 	
-		if ( suevafree_is_woocommerce_active('is_woocommerce') && ( suevafree_is_woocommerce_active('is_product_category') || suevafree_is_woocommerce_active('is_product_tag') ) && suevafree_setting('wip_woocommerce_category_layout') ) {
+		if ( suevafree_is_woocommerce_active('is_woocommerce') && ( suevafree_is_woocommerce_active('is_product_category') || suevafree_is_woocommerce_active('is_product_tag') ) && suevafree_setting('suevafree_woocommerce_category_layout') ) {
 		
-			$span = $template[suevafree_setting('wip_woocommerce_category_layout')];
-			$sidebar =  suevafree_setting('wip_woocommerce_category_layout');
+			$span = $template[suevafree_setting('suevafree_woocommerce_category_layout')];
+			$sidebar =  suevafree_setting('suevafree_woocommerce_category_layout');
 
-		} else if ( suevafree_is_woocommerce_active('is_woocommerce') && is_search() && suevafree_postmeta('wip_template') ) {
+		} else if ( suevafree_is_woocommerce_active('is_woocommerce') && is_search() && suevafree_postmeta('suevafree_template') ) {
 					
-			$span = $template[suevafree_postmeta('wip_template')];
-			$sidebar =  suevafree_postmeta('wip_template');
+			$span = $template[suevafree_postmeta('suevafree_template')];
+			$sidebar =  suevafree_postmeta('suevafree_template');
 	
-		} else if ( ( is_page() || is_single() || suevafree_is_woocommerce_active('is_shop') ) && suevafree_postmeta('wip_template') ) {
+		} else if ( ( is_page() || is_single() || suevafree_is_woocommerce_active('is_shop') ) && suevafree_postmeta('suevafree_template') ) {
 					
-			$span = $template[suevafree_postmeta('wip_template')];
-			$sidebar =  suevafree_postmeta('wip_template');
+			$span = $template[suevafree_postmeta('suevafree_template')];
+			$sidebar =  suevafree_postmeta('suevafree_template');
 
-		} else if ( ! suevafree_is_woocommerce_active('is_woocommerce') && ( is_category() || is_tag() || is_tax() || is_month() ) && suevafree_setting('wip_category_layout') ) {
+		} else if ( ! suevafree_is_woocommerce_active('is_woocommerce') && ( is_category() || is_tag() || is_tax() || is_month() ) && suevafree_setting('suevafree_category_layout') ) {
 
-			$span = $template[suevafree_setting('wip_category_layout')];
-			$sidebar =  suevafree_setting('wip_category_layout');
+			$span = $template[suevafree_setting('suevafree_category_layout')];
+			$sidebar =  suevafree_setting('suevafree_category_layout');
 						
-		} else if ( is_home() && suevafree_setting('wip_home') ) {
+		} else if ( is_home() && suevafree_setting('suevafree_home') ) {
 					
-			$span = $template[suevafree_setting('wip_home')];
-			$sidebar =  suevafree_setting('wip_home');
+			$span = $template[suevafree_setting('suevafree_home')];
+			$sidebar =  suevafree_setting('suevafree_home');
 
-		} else if ( ! suevafree_is_woocommerce_active('is_woocommerce') && is_search() && suevafree_setting('wip_search_layout') ) {
+		} else if ( ! suevafree_is_woocommerce_active('is_woocommerce') && is_search() && suevafree_setting('suevafree_search_layout') ) {
 
-			$span = $template[suevafree_setting('wip_search_layout')];
-			$sidebar =  suevafree_setting('wip_search_layout');
+			$span = $template[suevafree_setting('suevafree_search_layout')];
+			$sidebar =  suevafree_setting('suevafree_search_layout');
 						
 		}
 		

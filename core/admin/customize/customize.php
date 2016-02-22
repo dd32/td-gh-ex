@@ -124,7 +124,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 				"label" => __( "Screen greater than 768px",'suevafree'),
 				"description" => __( "Set a width, for a screen greater than 768 pixel (for example 750 and not 750px ) ",'suevafree'),
-				"id" => "wip_screen1",
+				"id" => "suevafree_screen1",
 				"type" => "text",
 				"section" => "pagewidth_section",
 				"std" => "750",
@@ -135,7 +135,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 				"label" => __( "Screen greater than 992px",'suevafree'),
 				"description" => __( "Set a width, for a screen greater than 992 pixel (for example 940 and not 940px ) ",'suevafree'),
-				"id" => "wip_screen2",
+				"id" => "suevafree_screen2",
 				"type" => "text",
 				"section" => "pagewidth_section",
 				"std" => "940",
@@ -146,7 +146,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 				"label" => __( "Screen greater than 1200px",'suevafree'),
 				"description" => __( "Set a width, in px, for a screen greater than 1200 pixel (for example 1170 and not 1170px ) ",'suevafree'),
-				"id" => "wip_screen3",
+				"id" => "suevafree_screen3",
 				"type" => "text",
 				"section" => "pagewidth_section",
 				"std" => "940",
@@ -285,7 +285,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				
 				"label" => __("WooCommerce Category Layout","suevafree"),
 				"description" => __("Select a layout for the woocommerce categories.","suevafree"),
-				"id" => "wip_woocommerce_category_layout",
+				"id" => "suevafree_woocommerce_category_layout",
 				"type" => "select",
 				"section" => "layouts_section",
 				"options" => array (
