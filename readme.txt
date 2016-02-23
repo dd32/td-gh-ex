@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.4.7
+1. Change Theme URI
 @version 2.4.6
 1. Solved Styling issue.
 2. Remove Page Separator.
