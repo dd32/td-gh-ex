@@ -23,41 +23,20 @@ if(!function_exists('cpotheme_meta_fields')){
 			$output .= '<div class="field">';
 			
 			// Print metaboxes here. Develop different cases for each type of field.
-			if($field_type == 'readonly')
-				$output .= cpotheme_form_readonly($field_name, $field_value);
-			
-			elseif($field_type == 'text')
+			if($field_type == 'text')
 				$output .= cpotheme_form_text($field_name, $field_value, $current_meta);
-			
-			elseif($field_type == 'textarea')
-				$output .= cpotheme_form_textarea($field_name, $field_value, $current_meta);
 			
 			elseif($field_type == 'select')
 				$output .= cpotheme_form_select($field_name, $field_value, $current_meta['option'], $current_meta);
 			
-			elseif($field_type == 'collection')
-				$output .= cpotheme_form_collection($field_name, $field_value, $current_meta['option'], $current_meta);
-			
-			elseif($field_type == 'checkbox')
-				$output .= cpotheme_form_checkbox($field_name, $field_value, $current_meta['option'], $current_meta);
-			
 			elseif($field_type == 'yesno')
 				$output .= cpotheme_form_yesno($field_name, $field_value, $current_meta);
 			
-			elseif($field_type == 'color')
-				$output .= cpotheme_form_color($field_name, $field_value);
-					
 			elseif($field_type == 'imagelist')
 				$output .= cpotheme_form_imagelist($field_name, $field_value, $current_meta['option'], $current_meta);
 
 			elseif($field_type == 'iconlist')
 				$output .= cpotheme_form_iconlist($field_name, $field_value, $current_meta);
-				
-			elseif($field_type == 'upload') 
-				$output .= cpotheme_form_upload($field_name, $field_value, null, $post);
-				
-			elseif($field_type == 'date') 
-				$output .= cpotheme_form_date($field_name, $field_value, null);
 				
 			$output .= '</div>';
 			$output .= '<div class="desc">'.$field_desc.'</div></div>';
@@ -72,7 +51,7 @@ if(!function_exists('cpotheme_meta_save')){
 
 		if(!isset($_POST['post_ID']) || !current_user_can('edit_posts')) return;
 		
-		if(!wp_verify_nonce($_POST['cpotheme_nonce'], 'cpotheme_savemeta')) return;
+		if(!isset($_POST['cpotheme_nonce']) || !wp_verify_nonce($_POST['cpotheme_nonce'], 'cpotheme_savemeta')) return;
 		
 		$cpo_metaboxes = $option;
 		$post_id = $_POST['post_ID'];

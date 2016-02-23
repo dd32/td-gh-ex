@@ -30,29 +30,17 @@ if(!function_exists('cpotheme_taxonomy_meta_fields')){
 			if($field_type == 'text')
 				$output .= cpotheme_form_text($field_name, $field_value, $current_meta);
 			
-			elseif($field_type == 'textarea')
-				$output .= cpotheme_form_textarea($field_name, $field_value, $current_meta);
-			
 			elseif($field_type == 'select')
 				$output .= cpotheme_form_select($field_name, $field_value, $current_meta['option'], $current_meta);
-			
-			elseif($field_type == 'checkbox')
-				$output .= cpotheme_form_checkbox($field_name, $field_value, $current_meta);
 			
 			elseif($field_type == 'yesno')
 				$output .= cpotheme_form_yesno($field_name, $field_value, $current_meta);
 			
-			elseif($field_type == 'color')
-				$output .= cpotheme_form_color($field_name, $field_value);
-					
 			elseif($field_type == 'imagelist')
 				$output .= cpotheme_form_imagelist($field_name, $field_value, $current_meta['option'], $current_meta);
 
-			elseif($field_type == 'upload') 
-				$output .= cpotheme_form_upload($field_name, $field_value, null, $post);
-				
-			elseif($field_type == 'date') 
-				$output .= cpotheme_form_date($field_name, $field_value, null);
+			elseif($field_type == 'iconlist')
+				$output .= cpotheme_form_iconlist($field_name, $field_value, $current_meta);
 				
 			//Separators
 			if($field_type != 'separator' && $field_type != 'divider'){

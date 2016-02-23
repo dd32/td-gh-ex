@@ -168,11 +168,7 @@ if(!function_exists('cpotheme_current_id')){
 
 //Return true if posts should be displayed on homepage
 function cpotheme_show_posts(){
-	$display = false;
-	if(!is_front_page() || cpotheme_get_option('home_posts') === true){
-		$display = true;
-	}
-	return $display;
+	return true;
 }
 
 
@@ -186,9 +182,20 @@ function cpotheme_show_title(){
 }
 
 
+//Flush rewrite rules on theme activation
 add_action('after_switch_theme', 'cpotheme_rewrite_flush');
 function cpotheme_rewrite_flush(){
     flush_rewrite_rules();
+	cpotheme_update_option(CPOTHEME_ID.'_activation_time', time());
+}
+
+
+//Sanitize boolean values
+function cpotheme_sanitize_bool($data){
+    if($data === true){
+		return true;
+	}
+	return false;
 }
 
 

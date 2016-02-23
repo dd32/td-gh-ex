@@ -1,7 +1,7 @@
 <?php if(!isset($content_width)) $content_width = 640;
 define('CPOTHEME_ID', 'intuition');
 define('CPOTHEME_NAME', 'Intuition');
-define('CPOTHEME_VERSION', '1.3.4');
+define('CPOTHEME_VERSION', '1.3.5');
 //Other constants
 define('CPOTHEME_LOGO_WIDTH', '150');
 define('CPOTHEME_THUMBNAIL_HEIGHT', '350');
