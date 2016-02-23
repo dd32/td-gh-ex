@@ -69,7 +69,7 @@ function cpotheme_customizer_controls($data){
 	$data['home_posts']['default'] = true;
 	$data['home_features']['default'] = '';
 	$data['layout_style'] = array(
-	'label' => __('Layout Style', 'cpocore'),
+	'label' => __('Layout Style', 'intuition'),
 	'section' => 'cpotheme_layout_general',
 	'type' => 'select',
 	'choices' => cpotheme_metadata_layoutstyle(),
@@ -77,8 +77,8 @@ function cpotheme_customizer_controls($data){
 	
 	//Colors
 	$data['primary_color'] = array(
-	'label' => __('Primary Color', 'cpocore'),
-	'description' => __('Used in buttons, headings, and other prominent elements.', 'cpocore'),
+	'label' => __('Primary Color', 'intuition'),
+	'description' => __('Used in buttons, headings, and other prominent elements.', 'intuition'),
 	'section' => 'colors',
 	'type' => 'color',
 	'sanitize' => 'sanitize_hex_color',
