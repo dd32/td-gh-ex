@@ -48,6 +48,13 @@ Images
 
 == Changelog ==
 
+= 1.1.9 =
+
+** Fixed the parent menu and child menu responsive issue.
+** Fixed the list view and grid view button issue in archive page and product page.
+** Fixed the contact us widget title issue.
+** Fixed the add to cart and wishlist button issue.
+
 = 1.1.8 =
 
 ** Fixed the product details page add to cart, meta, variations style issue.

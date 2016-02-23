@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 1.1.8
+Version: 1.1.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -889,7 +889,7 @@ COMMON CSS
 
 body {
     font-weight: 400;
-    /*overflow: hidden;*/
+    overflow: hidden;
     
     position: relative;
 }
@@ -4605,9 +4605,9 @@ span.onsale:after,
     border: 0px;
     height: 32px;
 }
-.woocommerce.single.single-product .entry-summary form .single_variation_wrap {
+/*.woocommerce.single.single-product .entry-summary form .single_variation_wrap {
     display: inline-block;
-}
+}*/
 .woocommerce.single.single-product .entry-summary form button.button {
     display: inline-block;
     padding: 0px 20px;
@@ -4617,9 +4617,11 @@ span.onsale:after,
     color: #8f8f8f;
     margin-top: 0px;
     font-size: 14px;
-    line-height: 28px;
-    height: 32px;
+    line-height: inherit;
+    height: auto;
     border-radius: 0px;
+    width: 70%;
+    white-space: normal;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -4632,7 +4634,7 @@ span.onsale:after,
     margin-top: 0;
     height: 32px !important;
     margin-top: 0px;
-    font-size: 14px !important;
+  /*  font-size: 14px !important;*/
     line-height: 28px !important;
     overflow: hidden !important;
     border-radius: 0px;
@@ -4672,7 +4674,10 @@ span.onsale:after,
     /*display: inline-block;*/
 }
 .woocommerce.single.single-product div.product form.cart {
+     display: inline-block;
     margin-bottom: -31px;
+    vertical-align: bottom;
+    width: 55%;
 }
 .yith-wcwl-add-to-wishlist .feedback{
     display: none;
@@ -4684,11 +4689,11 @@ span.onsale:after,
     color: #fff;
     font-weight: 700;
     font-size: 12px;
-    line-height: 30px;
+    line-height: inherit !important;
     text-transform: uppercase;
     border-radius: 0px;
-    height: 33px;
-    padding: 0px 15px;
+    height: auto !important;
+    padding: 3px 15px;
     text-align: center;
     margin: 0px;
     border: 2px solid #e24545;
@@ -4715,9 +4720,12 @@ span.onsale:after,
     border: 2px solid #e24545;
 }
 .woocommerce.single.single-product .entry-summary .yith-wcwl-add-to-wishlist{
-    float: right;
-    margin-top: 0px;
-    margin-bottom: -30px;
+    display: inline-block;
+    margin-bottom: -29px;
+    margin-top: 0;
+    vertical-align: bottom;
+    width: 44%;
+    line-height: 20px;
 }
 
 .woocommerce.single.single-product .woocommerce-tabs {
@@ -5596,13 +5604,12 @@ padding-right: 55px;
     margin: 0 0 10px;
 }
 .woocommerce .content-area .gridlist-toggle {
-    display: block;
-    clear: both;
+    clear: none;
+    display: inline-block;
     margin-bottom: 20px !important;
     padding: 0 !important;
     line-height: 0em !important;
-    position: absolute;
-    left: 312px;
+    float: left;
 }
 .woocommerce .content-area .products {
     margin-bottom: 0px;
