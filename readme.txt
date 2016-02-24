@@ -48,6 +48,12 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+Version 1.3.5
+* Added Disqus compatibility
+* Fixed site title in single post
+* Fixed h1 and h2 post title
+* Minor bug fixes
+
 Version 1.3.4
 * Fixed IE9 CSS condition
 * Minor Bug Fixes

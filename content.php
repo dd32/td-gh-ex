@@ -16,7 +16,7 @@
 	
 	<?php
 		if ( '' != get_the_post_thumbnail() ) {
-			echo '<div class="entry-featuredImg"><a href="' .get_permalink(). '"><span class="overlay-img"></span>';
+			echo '<div class="entry-featuredImg"><a href="' .esc_url(get_permalink()). '"><span class="overlay-img"></span>';
 			if ($i == 0 && $lastbig == 1 ) {
 				the_post_thumbnail('annina-normal-post');
 			} else {
@@ -41,7 +41,7 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer smallPart annCenter">
-		<span class="read-more"><a href="<?php echo get_permalink(); ?>"><?php _e('Read More', 'annina') ?></a><i class="fa spaceLeft fa-caret-right"></i></span>
+		<span class="read-more"><a href="<?php echo esc_url(get_permalink()); ?>"><?php _e('Read More', 'annina') ?></a><i class="fa spaceLeft fa-caret-right"></i></span>
 		<?php edit_post_link( __( 'Edit', 'annina' ), '<span class="edit-link floatLeft"><i class="fa fa-wrench spaceRight"></i>', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 	</div><!-- .content-annina -->

@@ -345,7 +345,8 @@ function annina_custom_css_styles() {
 	}
 	.post-navigation .meta-nav:hover, 
 	.paging-navigation .meta-nav:hover,
-	.content-annina {
+	.content-annina,
+	#disqus_thread {
 		background: <?php echo esc_attr($box_color_second); ?>;
 	}
 	<?php endif; ?>
