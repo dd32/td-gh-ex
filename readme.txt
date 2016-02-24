@@ -92,3 +92,10 @@ Version 1.3.6
 Version 1.3.7
 * Fixed IE9 CSS condition
 * Minor Bug Fixes
+
+Version 1.3.8
+* Improved Disqus compatibility
+* Updated Sticky Sidebar script
+* Fixed site title in single post
+* Fixed h1 and h2 post title
+* Minor bug fixes

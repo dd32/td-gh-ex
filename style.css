@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/storto/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Storto: Simple and Modern WordPress Theme created by CrestaProject.com. Live demo http://crestaproject.com/demo/storto/
-Version: 1.3.7
+Version: 1.3.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: storto
@@ -125,12 +125,12 @@ textarea {
 	font-family: 'Alegreya Sans', sans-serif;
 	font-size: 16px;
 	line-height: 1.7;
+	text-rendering: optimizeLegibility;
 }
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	text-rendering: optimizeLegibility;
 }
-h1 {font-size: 28px;line-height:3.4rem;}
+h1, h2.entry-title {font-size: 28px;line-height:3.4rem;}
 h2 {font-size: 24px;line-height:2.8rem;}
 h3 {font-size: 20px;line-height:2.4rem;}
 h4 {font-size: 18px;}
@@ -323,6 +323,16 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
 textarea {
 	color: #666;
 	border: 1px solid transparent;
@@ -338,6 +348,16 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
 textarea:focus {
 	color: #aaaaaa;
 	outline: none;
@@ -347,7 +367,17 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"] {
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
 	padding: 5px;
 }
 textarea {
@@ -675,15 +705,18 @@ footer.site-footer {
 	margin: 0 auto;
 	margin-bottom: 1.5em;
 }
-h1.site-title {
+h1.site-title, p.site-title {
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: -3px;
 	font-size: 35px;
+	margin: 0;
+	line-height: 3.4rem;
 }
-h2.site-description {
+.site-description {
 	font-weight: 300;
 	font-size: 21px;
+	margin-bottom: 10px;
 }
 .smallPart {
 	font-size: 14px;
@@ -742,7 +775,7 @@ header.page-header h1 span {
 	-webkit-transition: border .3s ease-in-out;
 	transition: border .3s ease-in-out;
 }
-header.entry-header, .page-content, .entry-content, .entry-summary, footer.entry-footer, .comments-area, footer.site-footer {
+header.entry-header, .page-content, .entry-content, .entry-summary, footer.entry-footer, .comments-area, footer.site-footer, #disqus_thread {
 	padding: 0 3em;
 }
 .entry-title, .page-title {
@@ -1002,7 +1035,7 @@ object {
 	.site-content {
 		padding: 1.5em 0;
 	}
-	header.entry-header, .page-content, .entry-content, .entry-summary, footer.entry-footer, .comments-area, footer.site-footer {
+	header.entry-header, .page-content, .entry-content, .entry-summary, footer.entry-footer, .comments-area, footer.site-footer, #disqus_thread {
 		padding: 0 1.5em;
 	}
 	header.site-header {
