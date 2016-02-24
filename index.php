@@ -4,11 +4,7 @@
 
 		<?php fkidd_display_slider(); ?>
 	
-	<?php else : ?>
-	
-		<?php fkidd_show_page_header_section(); ?>
-
-<?php endif; ?>
+	<?php endif; ?>
 
 <div class="clear">
 </div>

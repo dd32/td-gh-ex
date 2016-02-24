@@ -9,12 +9,19 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( !is_single() ) :
-			
-				echo '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" title="'.get_the_title().'">'.get_the_title().'</a></h1>';
+	<?php if ( is_single() ) : ?>
+
+			<h1 class="entry-title">
+				<?php the_title(); ?>
+			</h1>
+
+	<?php else : ?>
 	
-			endif;
-	?>
+			<h1 class="entry-title">
+				<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+			</h1>
+	
+	<?php endif; ?>
 
 	<div class="before-content">
 		<span class="author-icon">

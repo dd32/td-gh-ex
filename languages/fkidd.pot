@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fKidd Theme\n"
-"POT-Creation-Date: 2015-10-11 22:49+0200\n"
-"PO-Revision-Date: 2015-10-11 22:49+0200\n"
+"POT-Creation-Date: 2016-02-24 08:53+0200\n"
+"PO-Revision-Date: 2016-02-24 08:53+0200\n"
 "Last-Translator: \n"
 "Language-Team: Tishonator Team <info@tishonator.com>\n"
 "Language: English\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: ../"
+"X-Poedit-SearchPath-0: ../../"
 "fkidd\n"
 
 #: ../search.php:8
@@ -38,8 +38,8 @@ msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
 #: ../comments.php:22
-#: ../template-parts/content-page.php:17
-#: ../template-parts/content.php:56
+#: ../template-parts/content-page.php:18
+#: ../template-parts/content.php:63
 msgid "No Comments"
 msgstr ""
 
@@ -56,8 +56,8 @@ msgid "to"
 msgstr ""
 
 #: ../comments.php:37
-#: ../template-parts/content-page.php:17
-#: ../template-parts/content.php:56
+#: ../template-parts/content-page.php:18
+#: ../template-parts/content.php:63
 msgid "Comments are closed."
 msgstr ""
 
@@ -65,177 +65,155 @@ msgstr ""
 msgid "primary menu"
 msgstr ""
 
-#: ../functions.php:97
-#, php-format
-msgid ""
-"The fKidd theme is a free version of the Professional WordPress Theme tKidd. "
-"<a href=\"%s\" class=\"button-primary\" target=\"_blank\">Get tKidd Theme</"
-"a><br />"
-msgstr ""
-
-#: ../functions.php:107
-msgid "Header Image"
-msgstr ""
-
-#: ../functions.php:115
-msgid "Colors"
-msgstr ""
-
-#: ../functions.php:122
-msgid "Background Image"
-msgstr ""
-
-#: ../functions.php:133
+#: ../functions.php:125
 msgid "Slider"
 msgstr ""
 
-#: ../functions.php:149
+#: ../functions.php:140
 msgid ""
 "<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur "
 "adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "
 "aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
 msgstr ""
 
-#: ../functions.php:156
+#: ../functions.php:147
 #, php-format
 msgid "Slide #%s Content"
 msgstr ""
 
-#: ../functions.php:174
+#: ../functions.php:165
 #, php-format
 msgid "Slide #%s Image"
 msgstr ""
 
-#: ../functions.php:188
+#: ../functions.php:179
 msgid "Footer"
 msgstr ""
 
-#: ../functions.php:205
+#: ../functions.php:195
 msgid "Copyright Text"
 msgstr ""
 
-#: ../functions.php:219
+#: ../functions.php:209
 msgid "Social Sites"
 msgstr ""
 
-#: ../functions.php:236
+#: ../functions.php:216
 msgid "Facebook Page URL"
 msgstr ""
 
-#: ../functions.php:255
+#: ../functions.php:220
 msgid "Google+ Page URL"
 msgstr ""
 
-#: ../functions.php:274
+#: ../functions.php:224
+msgid "Twitter URL"
+msgstr ""
+
+#: ../functions.php:228
+msgid "LinkedIn"
+msgstr ""
+
+#: ../functions.php:232
+msgid "Instagram"
+msgstr ""
+
+#: ../functions.php:236
 msgid "RSS Feeds URL"
 msgstr ""
 
-#: ../functions.php:293
+#: ../functions.php:240
+msgid "Tumblr"
+msgstr ""
+
+#: ../functions.php:244
 msgid "YouTube channel URL"
 msgstr ""
 
-#: ../functions.php:377
+#: ../functions.php:248
+msgid "Pinterest"
+msgstr ""
+
+#: ../functions.php:252
+msgid "VK"
+msgstr ""
+
+#: ../functions.php:256
+msgid "Flickr"
+msgstr ""
+
+#: ../functions.php:260
+msgid "Vine"
+msgstr ""
+
+#: ../functions.php:339
 msgid "Sidebar Widget Area"
 msgstr ""
 
-#: ../functions.php:379
+#: ../functions.php:341
 msgid "The sidebar widget area"
 msgstr ""
 
-#: ../functions.php:395
+#: ../functions.php:366
 msgid "Follow us on Facebook"
 msgstr ""
 
-#: ../functions.php:401
+#: ../functions.php:368
 msgid "Follow us on Google+"
 msgstr ""
 
-#: ../functions.php:407
+#: ../functions.php:370
+msgid "Follow us on Twitter"
+msgstr ""
+
+#: ../functions.php:372
+msgid "Follow us on LinkedIn"
+msgstr ""
+
+#: ../functions.php:374
+msgid "Follow us on Instagram"
+msgstr ""
+
+#: ../functions.php:376
 msgid "Follow our RSS Feeds"
 msgstr ""
 
-#: ../functions.php:413
+#: ../functions.php:378
+msgid "Follow us on Tumblr"
+msgstr ""
+
+#: ../functions.php:380
 msgid "Follow us on Youtube"
 msgstr ""
 
-#: ../functions.php:470
+#: ../functions.php:382
+msgid "Follow us on Pinterest"
+msgstr ""
+
+#: ../functions.php:384
+msgid "Follow us on VK"
+msgstr ""
+
+#: ../functions.php:386
+msgid "Follow us on Flickr"
+msgstr ""
+
+#: ../functions.php:388
+msgid "Follow us on Vine"
+msgstr ""
+
+#: ../functions.php:442
 msgid ""
 "<h3>Lorem ipsum dolor</h3><p>Lorem ipsum dolor sit amet, consectetur "
 "adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "
 "aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
 msgstr ""
 
-#: ../functions.php:500
-#, php-format
-msgid "%s - Page %s"
-msgstr ""
-
-#: ../functions.php:506
-msgid "Asides"
-msgstr ""
-
-#: ../functions.php:509
-msgid "Images"
-msgstr ""
-
-#: ../functions.php:512
-msgid "Videos"
-msgstr ""
-
-#: ../functions.php:515
-msgid "Audio"
-msgstr ""
-
-#: ../functions.php:518
-msgid "Quotes"
-msgstr ""
-
-#: ../functions.php:521
-msgid "Links"
-msgstr ""
-
-#: ../functions.php:524
-msgid "Galleries"
-msgstr ""
-
-#: ../functions.php:527
-#, php-format
-msgid "Tag Archives: %s"
-msgstr ""
-
-#: ../functions.php:530
-#, php-format
-msgid "Category Archives: %s"
-msgstr ""
-
-#: ../functions.php:533
-#, php-format
-msgid "Daily Archives: %s"
-msgstr ""
-
-#: ../functions.php:536
-#, php-format
-msgid "Monthly Archives: %s"
-msgstr ""
-
-#: ../functions.php:540
-#, php-format
-msgid "Yearly Archives: %s"
-msgstr ""
-
-#: ../functions.php:544
-msgid "Archives"
-msgstr ""
-
-#: ../functions.php:547
-msgid "Error 404: Not Found"
-msgstr ""
-
-#: ../functions.php:583
+#: ../functions.php:475
 msgid "Read More"
 msgstr ""
 
-#: ../functions.php:596
+#: ../functions.php:488
 msgid "Read More..."
 msgstr ""
 
@@ -253,17 +231,17 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../template-parts/content-page.php:17
-#: ../template-parts/content.php:56
+#: ../template-parts/content-page.php:18
+#: ../template-parts/content.php:63
 msgid "1 Comment"
 msgstr ""
 
-#: ../template-parts/content-page.php:17
-#: ../template-parts/content.php:56
+#: ../template-parts/content-page.php:18
+#: ../template-parts/content.php:63
 msgid "% Comments"
 msgstr ""
 
-#: ../template-parts/content-page.php:21
-#: ../template-parts/content.php:96
+#: ../template-parts/content-page.php:22
+#: ../template-parts/content.php:103
 msgid "Edit"
 msgstr ""

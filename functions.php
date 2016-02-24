@@ -29,7 +29,7 @@ function fkidd_setup() {
 	) );
 
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 'full', 'full', true );
+	set_post_thumbnail_size( 1200, 0, true );
 
 	if ( ! isset( $content_width ) )
 		$content_width = 900;
@@ -48,12 +48,12 @@ function fkidd_setup() {
 	add_theme_support( 'custom-header', array (
 					   'default-image'          => '',
 					   'random-default'         => false,
-					   'width'                  => 0,
-					   'height'                 => 0,
-					   'flex-height'            => false,
-					   'flex-width'             => false,
+					   'width'                  => 113,
+					   'height'                 => 40,
+					   'flex-height'            => true,
+					   'flex-width'             => true,
 					   'default-text-color'     => '',
-					   'header-text'            => true,
+					   'header-text'            => '',
 					   'uploads'                => true,
 					   'wp-head-callback'       => '',
 					   'admin-head-callback'    => '',
@@ -88,41 +88,33 @@ endif; // fkidd_setup
 add_action( 'after_setup_theme', 'fkidd_setup' );
 
 /**
- * Gets additional theme settings description
+ * Add Social Site control into Customizer
  */
-function fkidd_get_customizer_sectoin_info() {
+function fkidd_customize_add_social_site($wp_customize, $controlId, $label, $defaultValue) {
 
-	$premiumThemeUrl = 'https://tishonator.com/product/tkidd';
+	$wp_customize->add_setting(
+		$controlId,
+		array(
+		    'default'           => $defaultValue,
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
 
-	return sprintf( __( 'The fKidd theme is a free version of the Professional WordPress Theme tKidd. <a href="%s" class="button-primary" target="_blank">Get tKidd Theme</a><br />', 'fkidd' ), $premiumThemeUrl );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $controlId,
+        array(
+            'label'          => $label,
+            'section'        => 'fkidd_social_section',
+            'settings'       => $controlId,
+            'type'           => 'text',
+            )
+        )
+	);
 }
 
 /**
  * Register theme settings in the customizer
  */
 function fkidd_customize_register( $wp_customize ) {
-
-	// Header Image Section
-	$wp_customize->add_section( 'header_image', array(
-		'title' => __( 'Header Image', 'fkidd' ),
-		'description' => fkidd_get_customizer_sectoin_info(),
-		'theme_supports' => 'custom-header',
-		'priority' => 60,
-	) );
-
-	// Colors Section
-	$wp_customize->add_section( 'colors', array(
-		'title' => __( 'Colors', 'fkidd' ),
-		'description' => fkidd_get_customizer_sectoin_info(),
-		'priority' => 50,
-	) );
-
-	// Background Image Section
-	$wp_customize->add_section( 'background_image', array(
-			'title' => __( 'Background Image', 'fkidd' ),
-			'description' => fkidd_get_customizer_sectoin_info(),
-			'priority' => 70,
-		) );
 
 	/**
 	 * Add Slider Section
@@ -132,7 +124,6 @@ function fkidd_customize_register( $wp_customize ) {
 		array(
 			'title'       => __( 'Slider', 'fkidd' ),
 			'capability'  => 'edit_theme_options',
-			'description' => fkidd_get_customizer_sectoin_info(),
 		)
 	);
 	
@@ -187,7 +178,6 @@ function fkidd_customize_register( $wp_customize ) {
 		array(
 			'title'       => __( 'Footer', 'fkidd' ),
 			'capability'  => 'edit_theme_options',
-			'description' => fkidd_get_customizer_sectoin_info(),
 		)
 	);
 	
@@ -218,85 +208,56 @@ function fkidd_customize_register( $wp_customize ) {
 		array(
 			'title'       => __( 'Social Sites', 'fkidd' ),
 			'capability'  => 'edit_theme_options',
-			'description' => fkidd_get_customizer_sectoin_info(),
 		)
 	);
 	
 	// Add facebook url
-	$wp_customize->add_setting(
-		'fkidd_social_facebook',
-		array(
-		    'default'           => '#',
-		    'sanitize_callback' => 'esc_url_raw',
-		)
-	);
-
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fkidd_social_facebook',
-        array(
-            'label'          => __( 'Facebook Page URL', 'fkidd' ),
-            'section'        => 'fkidd_social_section',
-            'settings'       => 'fkidd_social_facebook',
-            'type'           => 'text',
-            )
-        )
-	);
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_facebook',
+		__( 'Facebook Page URL', 'fkidd' ), '#');
 
 	// Add google+ url
-	$wp_customize->add_setting(
-		'fkidd_social_google',
-		array(
-		    'default'           => '#',
-		    'sanitize_callback' => 'esc_url_raw',
-		)
-	);
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_google',
+		__( 'Google+ Page URL', 'fkidd' ), '#');
 
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fkidd_social_google',
-        array(
-            'label'          => __( 'Google+ Page URL', 'fkidd' ),
-            'section'        => 'fkidd_social_section',
-            'settings'       => 'fkidd_social_google',
-            'type'           => 'text',
-            )
-        )
-	);
+	// Add twitter url
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_twitter',
+		__( 'Twitter URL', 'fkidd' ), '#');
+
+	// Add LinkedIn
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_linkedin',
+		__( 'LinkedIn', 'fkidd' ), '#');
+
+	// Add Instagram
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_instagram',
+		__( 'Instagram', 'fkidd' ), '#');
 
 	// Add RSS Feeds url
-	$wp_customize->add_setting(
-		'fkidd_social_rss',
-		array(
-		    'default'           => get_bloginfo( 'rss2_url' ),
-		    'sanitize_callback' => 'esc_url_raw',
-		)
-	);
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_rss',
+		__( 'RSS Feeds URL', 'fkidd' ), get_bloginfo( 'rss2_url' ));
 
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fkidd_social_rss',
-        array(
-            'label'          => __( 'RSS Feeds URL', 'fkidd' ),
-            'section'        => 'fkidd_social_section',
-            'settings'       => 'fkidd_social_rss',
-            'type'           => 'text',
-            )
-        )
-	);
+	// Add Tumblr Text Control
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_tumblr',
+		__( 'Tumblr', 'fkidd' ), '#');
 
 	// Add YouTube channel url
-	$wp_customize->add_setting(
-		'fkidd_social_youtube',
-		array(
-		    'default'           => '#',
-		    'sanitize_callback' => 'esc_url_raw',
-		)
-	);
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_youtube',
+		__( 'YouTube channel URL', 'fkidd' ), '#');
 
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fkidd_social_youtube',
-        array(
-            'label'          => __( 'YouTube channel URL', 'fkidd' ),
-            'section'        => 'fkidd_social_section',
-            'settings'       => 'fkidd_social_youtube',
-            'type'           => 'text',
-            )
-        )
-	);
+	// Add Pinterest Text Control
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_pinterest',
+		__( 'Pinterest', 'fkidd' ), '#');
+
+	// Add VK Text Control
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_vk',
+		__( 'VK', 'fkidd' ), '#');
+
+	// Add Flickr Text Control
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_flickr',
+		__( 'Flickr', 'fkidd' ), '#');
+
+	// Add Vine Text Control
+	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_vine',
+		__( 'Vine', 'fkidd' ), '#');
 }
 add_action('customize_register', 'fkidd_customize_register');
 
@@ -308,6 +269,7 @@ add_action('customize_register', 'fkidd_customize_register');
 function fkidd_load_scripts() {
 
 	// load main stylesheet.
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
 	wp_enqueue_style( 'fkidd-style', get_stylesheet_uri(), array( ) );
 	
 	wp_enqueue_style( 'fkidd-fonts', fkidd_fonts_url(), array(), null );
@@ -385,35 +347,45 @@ function fkidd_widgets_init() {
 }
 add_action( 'widgets_init', 'fkidd_widgets_init' );
 
+function fkidd_display_single_social_site($socialSiteID, $defaultValue, $title, $cssClass) {
+
+	$socialURL = get_theme_mod( $socialSiteID, $defaultValue );
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_url( $title )
+							. '" class="' . esc_attr( $cssClass ) . '"></a></li>';
+	}
+
+}
+
+/**
+ * Display Social Websites
+ */
 function fkidd_display_social_sites() {
 
-	echo '<ul class="header-social-widget">';
+	fkidd_display_single_social_site('fkidd_social_facebook', '#', __('Follow us on Facebook', 'fkidd'), 'facebook16' );
 
-	$socialURL = get_theme_mod('fkidd_social_facebook', '#');
-	if ( !empty($socialURL) ) {
+	fkidd_display_single_social_site('fkidd_social_google', '#', __('Follow us on Google+', 'fkidd'), 'google16' );
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Facebook', 'fkidd') . '" class="facebook16"></a>';
-	}
+	fkidd_display_single_social_site('fkidd_social_twitter', '#', __('Follow us on Twitter', 'fkidd'), 'twitter16' );
 
-	$socialURL = get_theme_mod('fkidd_social_google', '#');
-	if ( !empty($socialURL) ) {
+	fkidd_display_single_social_site('fkidd_social_linkedin', '#', __('Follow us on LinkedIn', 'fkidd'), 'linkedin16' );
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Google+', 'fkidd') . '" class="google16"></a>';
-	}
+	fkidd_display_single_social_site('fkidd_social_instagram', '#', __('Follow us on Instagram', 'fkidd'), 'instagram16' );
 
-	$socialURL = get_theme_mod('fkidd_social_rss', get_bloginfo( 'rss2_url' ));
-	if ( !empty($socialURL) ) {
+	fkidd_display_single_social_site('fkidd_social_rss', get_bloginfo( 'rss2_url' ), __('Follow our RSS Feeds', 'fkidd'), 'rss16' );
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow our RSS Feeds', 'fkidd') . '" class="rss16"></a>';
-	}
+	fkidd_display_single_social_site('fkidd_social_tumblr', '#', __('Follow us on Tumblr', 'fkidd'), 'tumblr16' );
 
-	$socialURL = get_theme_mod('fkidd_social_youtube', '#');
-	if ( !empty($socialURL) ) {
+	fkidd_display_single_social_site('fkidd_social_youtube', '#', __('Follow us on Youtube', 'fkidd'), 'youtube16' );
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Youtube', 'fkidd') . '" class="youtube16"></a>';
-	}
+	fkidd_display_single_social_site('fkidd_social_pinterest', '#', __('Follow us on Pinterest', 'fkidd'), 'pinterest16' );
 
-	echo '</ul>';
+	fkidd_display_single_social_site('fkidd_social_vk', '#', __('Follow us on VK', 'fkidd'), 'vk16' );
+
+	fkidd_display_single_social_site('fkidd_social_flickr', '#', __('Follow us on Flickr', 'fkidd'), 'flickr16' );
+
+	fkidd_display_single_social_site('fkidd_social_vine', '#', __('Follow us on Vine', 'fkidd'), 'vine16' );
 }
 
 /**
@@ -487,86 +459,6 @@ function fkidd_display_slider() { ?>
 }
 
 /**
- * Displays the Page Header Section including Page Title and Breadcrumb
- */
-function fkidd_show_page_header_section() { 
-	global $paged, $page;
-
-	if ( is_single() || is_page() ) :
-        $title = single_post_title( '', false );
-
-	elseif ( is_home() ) :
-		if ( $paged >= 2 || $page >= 2 ) :
-			$title = sprintf( __( '%s - Page %s', 'fkidd' ), single_post_title( '', false ), max( $paged, $page ) );	
-		else :
-			$title = single_post_title( '', false );	
-		endif;
-
-	elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-		$title = __( 'Asides', 'fkidd' );
-
-	elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-		$title = __( 'Images', 'fkidd' );
-
-	elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-		$title = __( 'Videos', 'fkidd' );
-
-	elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-		$title = __( 'Audio', 'fkidd' );
-
-	elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-		$title = __( 'Quotes', 'fkidd' );
-
-	elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-		$title = __( 'Links', 'fkidd' );
-		
-	elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-		$title = __( 'Galleries', 'fkidd' );
-		
-	elseif ( is_tag() ) :
-		$title = sprintf( __( 'Tag Archives: %s', 'fkidd' ), single_tag_title( '', false ) );
-
-	elseif ( is_category() ) :
-		$title = sprintf( __( 'Category Archives: %s', 'fkidd' ), single_cat_title( '', false ) );
-		
-	elseif ( is_day() ) :
-		$title = sprintf( __( 'Daily Archives: %s', 'fkidd' ), get_the_date() );
-
-	elseif ( is_month() ) :
-		$title = sprintf( __( 'Monthly Archives: %s', 'fkidd' ),
-					get_the_date( _x( 'F Y', 'monthly archives date format', 'fkidd' ) ) );
-
-	elseif ( is_year() ) :
-		$title = sprintf( __( 'Yearly Archives: %s', 'fkidd' ),
-					get_the_date( _x( 'Y', 'yearly archives date format', 'fkidd' )  ) );
-
-	elseif ( is_archive() ) :
-		$title = __( 'Archives', 'fkidd' );
-		
-	elseif ( is_404() ) :
-		$title = __( 'Error 404: Not Found', 'fkidd' );
-
-	else :
-		$title = wp_title('', false);
-
-	endif;
-	
-	
-	?>
-
-	<section id="page-header">
-		<div id="page-header-content">
-
-			<h1><?php echo $title; ?></h1>
-
-			<div class="clear">
-			</div>
-		</div>
-    </section>
-<?php
-}
-
-/**
  *	Used to load the content for posts and pages.
  */
 function fkidd_the_content() {
@@ -595,5 +487,20 @@ function fkidd_the_content_single() {
 	}
 	the_content( __( 'Read More...', 'fkidd') );
 }
+
+/*
+Enqueue Script for top buttons
+*/
+function fkidd_customizer_controls(){
+
+	wp_register_script( 'fkidd_customizer_top_buttons', get_template_directory_uri() . '/js/customizer-top-buttons.js', array( 'jquery' ), true  );
+	wp_enqueue_script( 'fkidd_customizer_top_buttons' );
+
+	wp_localize_script( 'fkidd_customizer_top_buttons', 'customBtns', array(
+		'prodemo' => esc_html__( 'Demo Premium version', 'fkidd' ),
+        'proget' => esc_html__( 'Get Premium version', 'fkidd' )
+	) );
+}
+add_action( 'customize_controls_enqueue_scripts', 'fkidd_customizer_controls' );
 
 ?>

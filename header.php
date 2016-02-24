@@ -11,7 +11,9 @@
 			<header id="header-main">
 				<div id="header-content-wrapper">
 					<div id="header-top">
-						<?php fkidd_display_social_sites(); ?>
+						<ul class="header-social-widget">
+							<?php fkidd_display_social_sites(); ?>
+						</ul>
 					</div>
 					<div id="header-logo">
 						<?php fkidd_show_website_logo_image_or_title(); ?>

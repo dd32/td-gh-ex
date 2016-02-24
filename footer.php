@@ -2,6 +2,12 @@
 			<footer id="footer-main">
 				<div id="footer-content-wrapper">
 					<div class="clear">
+						<div id="fsocial">
+							<ul class="footer-social-widget">
+								<?php fkidd_display_social_sites(); ?>
+							</ul>
+						</div>
+
 					</div>
 					<div id="copyright">
 						<p>
