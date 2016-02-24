@@ -370,7 +370,7 @@ msgid "Many of Other customize feature for your blog or website."
 msgstr ""
 
 #: options.php:113
-msgid "http://www.insertcart.com/optimize/"
+msgid "http://www.insertcart.com/product/optimize-wp-theme/"
 msgstr ""
 
 #: options.php:113

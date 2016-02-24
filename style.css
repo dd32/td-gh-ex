@@ -4,14 +4,14 @@ Author: InsertCart
 Author URI: http://www.insertcart.com
 Theme URI: http://www.insertcart.com/product/optimize-wp-theme/
 Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts WooCommerce Supported for eCommerce website. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully optimize style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link. Live working Demo http://demo.baztro.com/optimize/
-Version: 1.7.2
+Version: 1.7.3
 Tags: black, white, light, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: optimize
 License: GNU General Public License v2
 License URI: license.txt
-Copyright (C) 2015 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.4 See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Copyright (C) 2016 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.4 See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-Optimize WordPress theme, Copyright (C) 2015 InsertCart
+Optimize WordPress theme, Copyright (C) 2016 InsertCart
 Optimize WordPress theme is licensed under the GPL.
 
 */
@@ -59,6 +59,13 @@ License: SIL Open Font License, 1.1
 	url('fonts/monda-regular.ttf') format('truetype');
 }
 /* ===================== general ===================== */
+#footer,
+#page,
+#navigation,
+.wrapper{
+    max-width: 1348px;
+    margin: 0 auto;
+}
 
 body {
 	font: 500 13px/23px 'Monda', sans-serif;
@@ -392,7 +399,6 @@ text-transform:uppercase;
 transition: all 0.2s ease-in-out;
 }
 #navigation .secondary ul a{height: 46px;
-line-height: 45px;
 font-size:13px;
 }
 	 
@@ -427,11 +433,10 @@ overflow: hidden;
 text-align: left;
 border-right: none;} 
 #navigation .secondary ul ul a{
-	padding: 9px 0px 9px 15px;
-	background: #333;
+padding: 15px 0px 15px 15px;
+background: #333;
 color:#fff;
 height:auto;
-line-height: 30px;
 }
 #navigation  ul ul a:hover {
 	opacity: 1;
@@ -440,7 +445,7 @@ line-height: 30px;
 #navigation  ul ul ul {border-top:0;margin: -50px 0 0 212px;}
 #navigation  ul li li  { margin:0;border:0;}
 #navigation  ul li:hover { opacity: 1;position:static;}
-#navigation  ul li:hover ul ul, #navigation  ul li:hover ul ul ul, #navigation  ul li:hover ul ul ul ul { left:-999em; padding-top: 15px;}
+#navigation  ul li:hover ul ul, #navigation  ul li:hover ul ul ul, #navigation  ul li:hover ul ul ul ul { left:-999em; padding-top: 6px;}
 #navigation  ul li:hover ul, #navigation  ul li li:hover ul,#navigation  ul li li li:hover ul,#navigation  ul li li li li:hover ul { left:auto; }
 
 .nav li > a:after {
@@ -479,8 +484,8 @@ font-size: 16px;
 	z-index: 100;
 	margin: 0 auto;
 	width: 90%;
-	
-	
+    margin-bottom: -5px;
+    min-height: 140px;	
 }
 #header-inner {
 	margin: auto;
@@ -576,6 +581,13 @@ margin: 1%;
 #rdfa{
 	background:#f5f5f5;
 	}
+header.page-header{
+    border: 1px solid;
+    padding: 10px;
+    border-color: #ddd;
+    background: #FBFBFB;
+    margin-bottom: 10px;
+}		
 /* ===================== post-slider ===================== */
 .post-slider {
 	color: #ddd;
@@ -1128,6 +1140,15 @@ box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
 #wp-calendar tbody td#today{background: none repeat scroll 0% 0% #2D89A7;color: #fff;}
 
 /* ===================== comments ===================== */
+p.form-submit{
+	clear: both;
+	text-align: right;
+}
+a.comment-reply-link::before{
+    content: "\f112";
+	font-family:FontAwesome;
+	    padding: 4px;
+}
 .large-6{
     width: 98%;}
 .row.collapse > .column, .row.collapse > .columns{

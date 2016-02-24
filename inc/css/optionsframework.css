@@ -1,4 +1,8 @@
 /* Options Framework Admin Styles */
+div#options-group-4.group.advanceoptionsproonly {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 .basicsettings-tab, .basicsettings-tab :hover{
 background-image: url("../images/home.png");
 background-repeat: no-repeat;

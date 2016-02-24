@@ -16,7 +16,34 @@ function optimize_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
         
       $wp_customize->remove_section("background_image");
-                        
+      $wp_customize->add_section( 'optimize_responsive' , 
+        array(
+				'title'       => __( 'Theme Options & Settings', 'optimize' ),
+				'priority'    => 30,
+				'description'	=> __('Upload Logo and Change Theme Settings Please Go to Theme options.', 'optimize'). '<a href="' . esc_url(__(admin_url( 'admin.php?page=options-framework' ).'','optimize')) . '" target="_blank">' . esc_attr__( ' Change Theme Options', 'optimize' ) . '</a>'
+					
+		));
+		
+         //Show or Hide woo product
+         $wp_customize->add_setting('reponsive',
+	
+		array(
+			'default'			=> 'Go To optimize Options',
+			'type'				=> 'theme_mod',
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'optimize_sanitize_text'
+		)
+	);
+                 $wp_customize->add_control(new WP_customize_control ($wp_customize,'reponsive',
+                         array (
+                             
+                             'settings'		=> 'reponsive',
+                             'section'		=> 'optimize_responsive',
+                             'type'		=> 'text',    	 
+                            'label'		=> __( 'Dashboard > Appearance > optimize options', 'optimize' )
+			
+                             
+                         )  ));                          
   
 }
 

@@ -91,17 +91,17 @@ function optionsframework_options() {
 	$options = array();
 $options[] = array(
     'desc' => '<h2 style="color: #FFF !important;">' . esc_attr__( 'Upgrade to Premium Theme & Enable Full Features!', 'optimize' ) . '</h2>
+            <li>' . esc_attr__( 'Mobile Responsive Website Design.', 'optimize' ) . '</li>
             <li>' . esc_attr__( 'SEO Optimized WordPress Theme.', 'optimize' ) . '</li>
-            <li>' . esc_attr__( 'More Slides for your slider.', 'optimize' ) . '</li>
+            <li>' . esc_attr__( 'Unlock Premium Features.', 'optimize' ) . '</li>
             <li>' . esc_attr__( 'Theme Customization help & Support Forum.', 'optimize' ) . '</li>
             <li>' . esc_attr__( 'Page Speed Optimize for better result.', 'optimize' ) . '</li>
             <li>' . esc_attr__( 'Color Customize of theme.', 'optimize' ) . '</li>
             <li>' . esc_attr__( 'Custom Widgets and Functions.', 'optimize' ) . '</li>
             <li>' . esc_attr__( 'Social Media Integration.', 'optimize' ) . '</li>
-            <li>' . esc_attr__( 'Responsive Website Design.', 'optimize' ) . '</li>
             <li>' . esc_attr__( 'Different Website Layout to Select.', 'optimize' ) . '</li>
             <li>' . esc_attr__( 'Many of Other customize feature for your blog or website.', 'optimize' ) . '</li>
-            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/optimize/','optimize')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'optimize' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://www.insertcart.com/','optimize')) . '" target="_blank">' . esc_attr__( 'Shop More Themes !', 'optimize' ) . '</a></span></p>',
+            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/product/optimize-wp-theme/','optimize')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'optimize' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://www.insertcart.com/','optimize')) . '" target="_blank">' . esc_attr__( 'Shop More Themes !', 'optimize' ) . '</a></span></p>',
             'class' => 'tesingh',
             'type' => 'info');
 	$options[] = array(
@@ -170,7 +170,7 @@ $options[] = array(
 		'desc' => __('Paste Ad Code for top banner.', 'optimize'),
             'id' => 'optimize_ad1',
             'std' => '',
-            'type' => 'editor'
+            'type' => 'textarea'
 			
 	);
 	$options[] = array(
@@ -178,13 +178,13 @@ $options[] = array(
 		'desc' => __('Activate Ads Space Below Navigation and put code in below test field.', 'optimize'),
 		'id' => 'optimize_banner_top',
 		'std' => '',
-		'type' => 'editor');
+		'type' => 'textarea');
 	$options[] = array(
 		 'name' => __( 'AD Code For Single Post', 'optimize' ),
             'desc' => __('Paste Ad code for single post it show ads below post title and before content.','optimize'),
             'id' => 'optimize_ad2',
             'std' => '',
-            'type' => 'editor'
+            'type' => 'textarea'
 			);
    	
 		
@@ -416,7 +416,7 @@ $options[] = array(
 		$options[] = array(
 		    'desc' => 'Footer Copyright Text.',
             'id' => 'optimize_ftarea',
-            'std' => '&#169; 2013 Designed by: <a href="http://www.wrock.org/seo-optimized-wordpress-theme/" title="wRock.Org">wRock.Org</a> | Powered by <a href="http://wordpress.org/">WordPress</a>',
+            'std' => '&#169; 2016 Theme: <a href="http://www.insertcart.com/product/optimize-wp-theme/" title="Insertcart.com">optimize</a> | Powered by <a href="http://wordpress.org/">WordPress</a>',
             'type' => 'editor',
 			'settings' => $wp_editor_settings= array(
 		'wpautop' => true, // Default

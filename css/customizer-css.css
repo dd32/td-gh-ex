@@ -4,7 +4,12 @@ Optimize Theme
 /* 
     Author     : Sandy
 */
-
+li#accordion-section-optimize_responsive > h3.accordion-section-title:before {
+    content: "\f472";
+    font-family: dashicons;
+    padding: 3px;
+	color: #0073aa;
+}
 #accordion-panel-nav_menus > ul{
     margin-top: -290px !important;
 }
