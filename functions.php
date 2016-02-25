@@ -38,6 +38,63 @@
  * @since Catch Box 1.0
  */
 
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 530; /* pixels */
+}
+
+
+if ( ! function_exists( 'catchbox_content_width' ) ) :
+/**
+ * Change the content width based on the Theme Settings and Page/Post Settings
+ */
+function catchbox_content_width() {
+
+	//Getting Ready to load data from Theme Options Panel
+	global $post, $wp_query, $content_width, $catchbox_options_settings;
+   	$options = $catchbox_options_settings;
+	$themeoption_layout = $options['sidebar_layout'];
+
+	// Front page displays in Reading Settings
+	$page_on_front = get_option('page_on_front') ;
+	$page_for_posts = get_option('page_for_posts');
+
+	// Get Page ID outside Loop
+	$page_id = $wp_query->get_queried_object_id();
+
+	// Blog Page setting in Reading Settings
+	if ( $page_id == $page_for_posts ) {
+		$layout = get_post_meta( $page_for_posts, 'catchbox-sidebarlayout', true );
+	}
+	// Settings for page/post/attachment
+	elseif ( $post) {
+ 		if ( is_attachment() ) {
+			$parent = $post->post_parent;
+			$layout = get_post_meta( $parent, 'catchbox-sidebarlayout', true );
+		} else {
+			$layout = get_post_meta( $post->ID, 'catchbox-sidebarlayout', true );
+		}
+	}
+
+	if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
+		$layout='default';
+	}
+
+	if ( ( $layout == 'no-sidebar-full-width' || ( $layout=='default' && $themeoption_layout == 'no-sidebar-full-width' ) ) ) {
+		$content_width = 880; /* pixels */
+	}
+	elseif ( ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar' ) ) ) {
+		$content_width = 660; /* pixels */
+	}
+	elseif ( ( $layout == 'no-sidebar-one-column' || ( $layout=='default' && $themeoption_layout == 'no-sidebar-one-column' ) ) ) {
+		$content_width = 620; /* pixels */
+	}
+
+}
+endif; // catchbox_content_width
+
 
 /**
  * Tell WordPress to run catchbox_setup() when the 'after_setup_theme' hook is run.
@@ -65,15 +122,6 @@ if ( ! function_exists( 'catchbox_setup' ) ) :
  * @since Catch Box 1.0
  */
 function catchbox_setup() {
-
-	/**
-	 * Global content width.
-	 *
-	 * Set the content width based on the theme's design and stylesheet.
-	 * making it large as we have template without sidebar which is large
-	 */
-	if ( ! isset( $content_width ) )
-	$content_width = 818;
 
 	/*
 	 * Make theme available for translation.
@@ -785,7 +833,7 @@ function catchbox_sliders() {
 	    return;
 	}
 
-	if( ( !$catchbox_sliders = get_transient( 'catchbox_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
+	if( ( !$catchbox_sliders = get_transient( 'catchbox_sliders' ) ) && !empty( array_filter( $options[ 'featured_slider' ] ) ) ) {
 		echo '<!-- refreshing cache -->';
 
 		$catchbox_sliders = '
@@ -1091,7 +1139,7 @@ function catchbox_socialprofile() {
 
 					//Vimeo
 					if ( !empty( $options['social_viemo'] ) ) {
-						$catchbox_socialprofile .= '<li class="vimeo"><a href="'. esc_url( $options['social_viemo'] ) .'"><span class="screen-reader-text">'. esc_attr__( 'Vimeo', 'catch-box' ) .'</span></a></li>';
+						$catchbox_socialprofile .= '<li class="viemo"><a href="'. esc_url( $options['social_viemo'] ) .'"><span class="screen-reader-text">'. esc_attr__( 'Vimeo', 'catch-box' ) .'</span></a></li>';
 					}
 
 					//Dribbble
