@@ -568,7 +568,7 @@ function aripop_reorder_sections_theme_customizer($wp_customize){
 	
 	$wp_customize->get_section('title_tagline')->priority = 2;
 	$wp_customize->get_section('aripop_logo_section')->priority = 3;
-	$wp_customize->get_section('nav')->priority = 4;
+ 
 	$wp_customize->get_section('header_image')->priority = 6;
 	$wp_customize->get_section('colors')->priority = 7;
 	 
