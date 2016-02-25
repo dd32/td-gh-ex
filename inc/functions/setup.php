@@ -56,7 +56,7 @@ if ( ! function_exists( 'actions_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
-			'primary'		=> __( 'Primary Menu', 'actions' ),
+			'primary'		=> esc_html__( 'Primary Menu', 'actions' ),
 		) );
 
 		/*
@@ -72,23 +72,37 @@ if ( ! function_exists( 'actions_setup' ) ) :
 			'widgets',
 		) );
 
-		// Add support for the Site Logo plugin and the site logo functionality in JetPack
-		// https://github.com/automattic/site-logo
-		// http://jetpack.me/
-		
-		$args = array(
-            'header-text' => array(
-                'site-title',
-                'site-description',
-            ),
-            'size' => 'medium',
-        );
-        add_theme_support( 'site-logo', $args );		
+		/*
+	     * Enable support for site logo.
+	     */
+	    add_image_size( 'actions-logo', 250, 75, true );
+	    add_theme_support( 'site-logo', 
+		    array( 
+			    'size' => 'actions-logo' 
+			) 
+		);		
 
 		// Declare support for title theme feature
-		add_theme_support( 'title-tag' );
+		add_theme_support( 'title-tag' );		
 	}
 endif; // actions_setup
+
+if ( ! function_exists( 'actions_the_site_logo' ) ) {
+/**
+ * Displays the optional site logo.
+ *
+ * Returns early if the site logo is not available.
+ *
+ * @since Twenty Sixteen 1.2
+ */
+    function actions_the_site_logo() {
+	    if ( ! function_exists( 'the_site_logo' ) ) {
+		    return;
+	    } else {
+		    the_site_logo();
+	    }
+    }
+}
 
 /**
  * Register widget area.
@@ -97,7 +111,7 @@ endif; // actions_setup
  */
 function actions_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'actions' ),
+		'name'          => esc_html__( 'Sidebar', 'actions' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',

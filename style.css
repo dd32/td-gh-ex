@@ -4,7 +4,7 @@
  Description:  Simple, clean and actionable WordPress theme built around Actions.
  Author:       WP DevHQ
  Author URI:   http://www.wpdevhq.com/
- Version:      1.0.2
+ Version:      1.0.3
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready, translation-ready
@@ -551,10 +551,6 @@ blockquote:after,
 	clear: both;
 }
 
-.site-title {
-	margin-bottom: 1.6em;
-}
-
 /*--------------------------------------------------------------
 Menus
 --------------------------------------------------------------*/
@@ -776,6 +772,24 @@ Header
 .site-title a:hover {
 	color: #007acc;
 }
+
+
+
+/*
+ * Site Logo support only for WP.com
+ */
+.site-logo-link {
+	display: block;
+    float: left;
+	margin: 5px 0 1.6em;
+    padding-right: 5px;
+}
+
+.wp-site-logo .site-title {
+	margin-top: 3.608695652em;  
+}
+
+
 
 /*--------------------------------------------------------------
 Content
@@ -1296,6 +1310,12 @@ Plugin support
 	width: 100%;
 }
 
+@media screen and (max-width: 44.375em) {
+    .site-logo-link {
+	    float: none;
+    }
+}
+
 @media screen and (max-width: 1040px) {
 	.inner {
 		padding-right: 20px;
@@ -1306,6 +1326,9 @@ Plugin support
 @media screen and (max-width: 767px) {
 	.site-header {
 		text-align: center;
+	}
+	.wp-site-logo .site-title {
+		margin-top: 0.5em;
 	}
 	.main-navigation {
 		padding-left: 0;
@@ -1348,5 +1371,20 @@ Plugin support
 	.comments-link {
 		display: inline-block;
 		float: none;
+	}
+}
+
+
+@media screen and (min-width: 44.375em) {
+    .wp-site-logo .site-title {
+		margin-top: 0.5em;
+	}
+}
+
+@media screen and (min-width: 56.875em) {
+	.wp-site-logo .site-header-main {
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
 	}
 }

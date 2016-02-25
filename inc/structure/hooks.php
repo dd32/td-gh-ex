@@ -58,8 +58,8 @@ add_action( 'actions_after_sidebar',	      'actions_bottom_sidebar',       10 );
  * @see  actions_footer_top()
  * @see  actions_footer_bottom()
  */
-add_action( 'actions_footer_open',	    'actions_footer_top',         10 );
-add_action( 'actions_footer_close',	    'actions_footer_bottom',      10 );
+add_action( 'actions_footer_open',	          'actions_footer_top',           10 );
+add_action( 'actions_footer_close',	          'actions_footer_bottom',        10 );
 
 /**
  * Footer
@@ -68,10 +68,11 @@ add_action( 'actions_footer_close',	    'actions_footer_bottom',      10 );
  */
 add_action( 'actions_footer_elements_before', 'actions_footer_before',	      10 );
 add_action( 'actions_footer_elements',        'actions_footer_credit',		  20 );
-add_action( 'actions_footer_elements_after',  'actions_footer_before',	      10 );
+add_action( 'actions_footer_elements_after',  'actions_footer_after',	      10 );
+add_action( 'actions_footer_elements_after',  'actions_footer_after',	      10 );
 
 /**
- * Posts
+ * Posts - index/home
  * @see  actions_post_header()
  * @see  actions_post_meta()
  * @see  actions_post_content()
@@ -84,6 +85,10 @@ add_action( 'actions_index_elements',		  'actions_post_content',		  10 );
 add_action( 'actions_index_elements',		  'actions_paging_nav',		      20 );
 add_action( 'actions_index_content_none',	  'actions_content_none',		  10 );
 
+
+/**
+ * Single Post
+ */
 add_action( 'actions_single_post_elements',	  'actions_post_content',		  10 );
 add_action( 'actions_single_post_elements',	  'actions_display_comments',	  20 );
 add_action( 'actions_single_post_elements',	  'actions_post_nav',			  30 );

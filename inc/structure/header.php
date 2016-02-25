@@ -18,23 +18,17 @@ if ( ! function_exists( 'actions_site_branding' ) ) {
 	    <div class="main">
 			<header id="masthead" class="site-header inner">
 				<div class="header-elements">
+					<?php actions_the_site_logo(); ?>
 					<span class="site-title">
 						<?php 
 						$title = get_bloginfo('name');
-						$description = get_bloginfo( 'description');
-						if ( get_theme_mod( 'actions_logo' ) ) : ?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-								<img src="<?php echo get_theme_mod( 'actions_logo' ); ?>" alt="<?php echo esc_attr( $title ); ?>">
-							</a>
-						<?php else : ?>
+						$description = get_bloginfo( 'description'); ?>
+						
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $description ); ?>" alt="<?php echo esc_attr( $title ); ?>">
 								<?php bloginfo( 'name' ); ?>
 							</a>
-						<?php endif; ?>
+						
 					</span>
-					<nav id="header-navigation" class="header-menu" role="navigation">
-						<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => 'actions_menu_home' ) ); ?>
-					</nav>
 				</div>
 			</header>			
 		</div>
