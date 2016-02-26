@@ -73,6 +73,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.3.0
+ * Fixed slider and highlighted section bugs in firefox browser
+ 
 Version 2.2.9
  * Fixed padding between slider and highlighted section
  * Changed screenshot
