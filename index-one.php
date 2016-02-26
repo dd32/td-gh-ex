@@ -532,7 +532,7 @@ wp_reset_query(); ?>
 			        		</div>
 			        	</div>
 					<div class="testimoinal-client-name"><?php the_title(); ?></div>
-					</div>
+				</div>
                 <?php endwhile; ?>
 				</div>
 			</div>

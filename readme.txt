@@ -46,7 +46,9 @@ Images
     http://pixabay.com/en/beautiful-face-female-girl-happy-19075/
     http://pixabay.com/en/board-blank-border-couple-empty-84420/
     http://pixabay.com/en/teacher-lecturer-writer-counselor-99741/
-
+    
+    https://pixabay.com/en/fashion-beauty-model-portrait-girl-1063100/
+    
     http://pixabay.com/en/money-bills-calculator-save-256312/
     http://pixabay.com/en/architecture-banking-blue-building-19171/
     http://pixabay.com/en/keyboard-apple-input-keys-hardware-338510/
@@ -60,6 +62,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Veresion 2.46.0
+*Add new home page layout with new design
+
 Version 2.45.9
 * Espanish Translation Added
 Contributer - José Roldán <rolozco@ono.com>

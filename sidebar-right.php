@@ -105,12 +105,18 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/testimonial-dummy.jpg" alt="no-image"/>
                             <?php }?>
 		        		</div>
-
+                        <?php $home_template = $accesspresslite_settings['accesspresslite_home_template']; 
+                            if($home_template == 'template_two') { ?>
+        					<div class="testimoinal-client-name"><?php the_title(); ?></div>
+                            <?php } ?>
 			        	<div class="testimonial-excerpt">
 			        		<?php echo accesspresslite_excerpt( get_the_content() , 90 ) ?>
 			        	</div>
 			        	<div class="clearfix"></div>
-					<div class="testimoinal-client-name"><?php the_title(); ?></div>
+                        <?php 
+                            if(!$home_template == 'template_two') { ?>
+        					<div class="testimoinal-client-name"><?php the_title(); ?></div>
+                            <?php } ?>
 					</div>
 			<?php endwhile; ?>
 	        </div>

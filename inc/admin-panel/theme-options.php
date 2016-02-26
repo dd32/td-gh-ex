@@ -288,6 +288,17 @@ function accesspresslite_theme_options_page() {
 			<div id="options-group-1" class="group">
 			<h3><?php _e('Basic Settings','accesspresslite'); ?></h3>
 				<table class="form-table">
+                    <tr><th scope="row"><label for="home_template"><?php _e('Home Page Template','accesspresslite'); ?></label></th>
+    					<td>
+    					<?php $accesspresslite_home_templates = array('template_one' => __('Template One','accesspresslite'),'template_two' => __('Template Two','accesspresslite')); ?>
+    					<?php
+    					foreach ( $accesspresslite_home_templates as $accesspresslite_home_template_key => $accesspresslite_home_template ) : ?>
+    						<input type="radio" id="<?php echo esc_attr($accesspresslite_home_template); ?>" name="accesspresslite_options[accesspresslite_home_template]" value="<?php echo esc_attr($accesspresslite_home_template_key); ?>" <?php checked( $settings['accesspresslite_home_template'], $accesspresslite_home_template_key ); ?> />
+    						<label for="<?php echo esc_attr($accesspresslite_home_template) ?>"><?php echo esc_attr($accesspresslite_home_template); ?></label><br />
+    					<?php endforeach;
+    					?>
+    					</td>
+					</tr>
 					<tr>
 						<th><label for="footer_copyright"><?php _e('Disable Responsive Design?','accesspresslite'); ?></label></th>
 						<td>
@@ -417,12 +428,19 @@ function accesspresslite_theme_options_page() {
 					</tr>
 
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+                    
+                    <tr>
+                        <th scope="row"><label for="footer_title"><?php _e('Footer Title','accesspresslite'); ?></label></th>
+                        <td>
+    					   <input id="footer_title" name="accesspresslite_options[footer_title]" type="text" value="<?php echo esc_attr($settings['footer_title']); ?>" />
+    					<em class="f13"><?php _e('Only For Home Template Two','accesspresslite'); ?></em></td>
+                    </tr>
 
 					<tr>
-					<th scope="row"><label for="footer_copyright"><?php _e('Footer Copyright Text','accesspresslite'); ?></label></th>
-					<td>
-					<input id="footer_copyright" name="accesspresslite_options[footer_copyright]" type="text" value="<?php echo esc_attr($settings['footer_copyright']); ?>" />
-					</td>
+    					<th scope="row"><label for="footer_copyright"><?php _e('Footer Copyright Text','accesspresslite'); ?></label></th>
+    					<td>
+    					   <input id="footer_copyright" name="accesspresslite_options[footer_copyright]" type="text" value="<?php echo esc_attr($settings['footer_copyright']); ?>" />
+    					</td>
 					</tr>
 				</table>
 			</div>

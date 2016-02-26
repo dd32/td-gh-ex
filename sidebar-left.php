@@ -132,12 +132,12 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/testimonial-dummy.jpg" alt="no-image"/>
                             <?php }?>
 		        		</div>
-
+                        <div class="testimoinal-client-name"><?php the_title(); ?></div>
 			        	<div class="testimonial-excerpt">
 			        		<?php echo accesspresslite_excerpt( get_the_content() , 90 ) ?>
 			        	</div>
 			        	<div class="clearfix"></div>
-					<div class="testimoinal-client-name"><?php the_title(); ?></div>
+					
 					</div>
 			<?php endwhile; ?>
 	        </div>

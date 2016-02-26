@@ -16,6 +16,10 @@
  * @uses accesspresslite_admin_header_image()
  */
 function accesspresslite_custom_header_setup() {
+    global $accesspresslite_options;
+    $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+    $home_template = $accesspresslite_settings['accesspresslite_home_template']; 
+    if($home_template !== 'template_two' || $home_template == ''){       
 	add_theme_support( 'custom-header', apply_filters( 'accesspresslite_custom_header_args', array(
 		'default-image'          => get_template_directory_uri() . '/images/demo/logo.png',
 		'default-text-color'     => '000000',
@@ -27,6 +31,21 @@ function accesspresslite_custom_header_setup() {
 		'admin-head-callback'    => 'accesspresslite_admin_header_style',
 		'admin-preview-callback' => 'accesspresslite_admin_header_image',
 	) ) );
+    }
+    else
+    {
+        add_theme_support( 'custom-header', apply_filters( 'accesspresslite_custom_header_args', array(
+		'default-image'          => get_template_directory_uri() . '/images/demo/logo2.png',
+		'default-text-color'     => '000000',
+		'width'                  => 190,
+		'height'                 => 70,
+		'flex-height'            => true,
+		'flex-width'             => true,
+		'wp-head-callback'       => 'accesspresslite_header_style',
+		'admin-head-callback'    => 'accesspresslite_admin_header_style',
+		'admin-preview-callback' => 'accesspresslite_admin_header_image',
+	) ) );
+    }
 }
 add_action( 'after_setup_theme', 'accesspresslite_custom_header_setup' );
 

@@ -59,7 +59,8 @@ function accesspresslite_setup() {
 
 	add_image_size( 'event-thumbnail', 135, 100, true); //Latest News Events Small Image
 	add_image_size( 'featured-thumbnail', 350, 245, true); //Featured Image
-	add_image_size( 'portfolio-thumbnail', 400, 450, true); //Portfolio Image		
+	add_image_size( 'portfolio-thumbnail', 400, 450, true); //Portfolio Image
+    add_image_size('template_two_event_home',273,235,true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -118,3 +119,4 @@ require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
  * Implement the More Theme Page
  */
 require get_template_directory() . '/inc/more-themes.php';
+add_filter('widget_text', 'do_shortcode');

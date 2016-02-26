@@ -14,10 +14,15 @@
 	<?php 
 		global $accesspresslite_options;
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-
+        $home_template = $accesspresslite_settings['accesspresslite_home_template'];
+        $footer_title = $accesspresslite_settings['footer_title'];
 		if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' )  || is_active_sidebar( 'footer-4' ) ) : ?>
 		<div id="top-footer">
-		<div class="ak-container">
+		<div class="ak-container"><?php
+        if($home_template == 'template_two'){
+         if($footer_title){?>
+                <h1 class="footer_title_text"><?php echo esc_attr($footer_title); ?></h1>
+        <?php }} ?>
 			<div class="footer1 footer">
 				<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
 					<?php dynamic_sidebar( 'footer-1' ); ?>
@@ -58,7 +63,7 @@
 
 			<div class="copyright">
 				<?php _e('Copyright','accesspresslite') ?> &copy; <?php echo date('Y') ?> 
-				<a href="<?php echo home_url(); ?>">
+				<a target="_blank" href="http://demo.accesspressthemes.com/accesspresslite/">
 				<?php if(!empty($accesspresslite_settings['footer_copyright'])){
 					echo $accesspresslite_settings['footer_copyright']; 
 					}else{
