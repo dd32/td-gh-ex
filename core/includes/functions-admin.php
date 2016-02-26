@@ -39,8 +39,12 @@ function responsive_upgrade_bar() {
 					style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
 			</div>
 		</div>
+		
+	
 	</div>
-
+	<div class="updated">
+		<p><strong><?php _e('Pro version has slidedeck integrated and so you can create sliders using 13 dynamic sources','responsive'); ?></strong></p>
+	</div>
 <?php
 }
 
@@ -90,11 +94,6 @@ function responsive_install_plugins() {
 		array(
 			'name'     => 'iFeature Slider', // The plugin name
 			'slug'     => 'ifeature-slider', // The plugin slug (typically the folder name)
-			'required' => false
-		),
-		array(
-			'name'     => 'inSite for WP: Personalization Made Easy', // The plugin name
-			'slug'     => 'insite-for-wp-personalization-made-easy', // The plugin slug (typically the folder name)
 			'required' => false
 		)
 	);
