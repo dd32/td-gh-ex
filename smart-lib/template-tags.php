@@ -251,9 +251,9 @@ function maxflat_searchform() {
 	<div class="row">
 		<div class="columns sixteen mobile-four">
 			<input id="search-input" type="text" name="s"
-						 placeholder="<?php _e( 'Search for ...',  __MAXFLAT::domain() ); ?>" value="">
+						 placeholder="<?php _e( 'Search for ...',  'maxflat' ); ?>" value="">
 			<input class="button" id="top-searchsubmit" type="submit"
-						 value="<?php _e( 'Search', __MAXFLAT::domain() ); ?>">
+						 value="<?php _e( 'Search', 'maxflat' ); ?>">
 		</div>
 	</div>
 
