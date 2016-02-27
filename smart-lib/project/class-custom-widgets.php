@@ -90,9 +90,7 @@ class Smart_Widget_Recent_Posts extends Smart_Core_Widget {
 		parent::__construct( 'smartlib-recent-posts', __( ucfirst('harmonux') .' Extended Recent Posts', 'harmonux'), $widget_ops );
 		$this->alt_option_name = 'widget_recent_entries_Smartlib';
 
-		add_action( 'save_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'flush_widget_cache' ) );
+
 	}
 
 	function widget( $args, $instance ) {
@@ -176,7 +174,7 @@ class Smart_Widget_Recent_Posts extends Smart_Core_Widget {
 		$instance['show_post_thumbnail'] = (bool) $new_instance['show_post_thumbnail'];
 		$instance['show_post_author']    = (bool) $new_instance['show_post_author'];
 
-		$this->flush_widget_cache();
+
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset( $alloptions['widget_recent_entries'] ) )
@@ -185,9 +183,7 @@ class Smart_Widget_Recent_Posts extends Smart_Core_Widget {
 		return $instance;
 	}
 
-	function flush_widget_cache() {
-		wp_cache_delete( 'widget_recent_posts', 'widget' );
-	}
+
 
 	function form( $instance ) {
 
@@ -245,9 +241,7 @@ class Smart_Widget_One_Author extends Smart_Core_Widget {
 		parent::__construct( 'harmonux_one-author', __( ucfirst('harmonux') .' One Author Profile', 'harmonux'), $widget_ops );
 		$this->alt_option_name = 'smartlib-one-author';
 
-		add_action( 'save_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'flush_widget_cache' ) );
+
 	}
 
 	function widget( $args, $instance ) {
@@ -345,9 +339,7 @@ class Smart_Widget_One_Author extends Smart_Core_Widget {
 	<?php
 	}
 
-	function flush_widget_cache() {
-		wp_cache_delete( 'harmonux_one_author', 'widget' );
-	}
+
 }
 
 
@@ -368,9 +360,7 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 		parent::__construct( 'smartlib-social-icons', __( ucfirst('harmonux') .'  Social Icons', 'harmonux'), $widget_ops );
 		$this->alt_option_name = 'smartlib-social-icons';
 
-		add_action( 'save_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'flush_widget_cache' ) );
+
 
 		$this->form_args = array(
 			'title',
@@ -470,9 +460,7 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 	<?php
 	}
 
-	function flush_widget_cache() {
-		wp_cache_delete( 'smartlib-social-icons', 'widget' );
-	}
+
 }
 
 
@@ -492,10 +480,6 @@ class Smart_Widget_Video extends Smart_Core_Widget {
 		$widget_ops = array( 'classname' => 'smartlib-video_widget', 'description' => __( "Featured Video Widget", 'harmonux') );
 		parent::__construct( 'smartlib-video-widget', __( ucfirst('harmonux') .' Video Widget', 'harmonux'), $widget_ops );
 		$this->alt_option_name = 'smartlib-video-widget';
-
-		add_action( 'save_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'flush_widget_cache' ) );
 
 
 	}
@@ -595,9 +579,7 @@ class Smart_Widget_Video extends Smart_Core_Widget {
 	<?php
 	}
 
-	function flush_widget_cache() {
-		wp_cache_delete( 'smartlib-video-widget', 'widget' );
-	}
+
 }
 
 
@@ -617,9 +599,7 @@ class Smart_Widget_Recent_Videos extends Smart_Core_Widget {
 		parent::__construct( 'smartlib-recent-video-widget', __( ucfirst('harmonux') .'  Recent Video', 'harmonux'), $widget_ops );
 		$this->alt_option_name = 'smartlib-recent-videos-widget';
 
-		add_action( 'save_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'flush_widget_cache' ) );
+
 
 
 	}
@@ -717,9 +697,7 @@ class Smart_Widget_Recent_Videos extends Smart_Core_Widget {
 	<?php
 	}
 
-	function flush_widget_cache() {
-		wp_cache_delete( 'smartlib-recent-video-widget', 'widget' );
-	}
+
 }
 
 /**
@@ -737,9 +715,7 @@ class Smart_Widget_Recent_Galleries extends Smart_Core_Widget{
 		parent::__construct( 'smartlib-recent-gallery-widget', __( ucfirst('harmonux') .'  Recent Galleries', 'harmonux'), $widget_ops );
 		$this->alt_option_name = 'smartlib-gallery_recent_widget';
 
-		add_action( 'save_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'flush_widget_cache' ) );
+
 
 
 	}
@@ -853,9 +829,7 @@ class Smart_Widget_Recent_Galleries extends Smart_Core_Widget{
 	<?php
 	}
 
-	function flush_widget_cache() {
-		wp_cache_delete( 'smartlib-recent-gallery-widget', 'widget' );
-	}
+
 
 }
 

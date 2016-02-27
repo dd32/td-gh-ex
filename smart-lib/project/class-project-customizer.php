@@ -1059,7 +1059,7 @@ if (class_exists('WP_Customize_Control')) {
         <li id="harmonux_customize_layout_placeholder" class="harmonux_customize_layout_placeholder">
             <div class="smartlib-form-proversion-info-outer">
                 <div class="smartlib-form-proversion-info-inner"><a
-                        href="http://www.mojo-themes.com/item/harmonux-clean-responsive-ux-focused-wordpress-theme/"
+                        href="http://www.mojo-themes.com/item/harmonux-clean-responsive-ux-focused-wordpress-theme/?r=netbiel"
                         target="_blank"
                         class="harmonux-proversion-link"><?php _e('Available in pro version &#187;', 'harmonux');?></a>
                 </div>

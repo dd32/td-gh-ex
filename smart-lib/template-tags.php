@@ -239,9 +239,9 @@ function harmonux_searchform() {
 	<div class="row">
 		<div class="columns large-16">
 			<input id="search-input" type="text" name="s"
-						 placeholder="<?php _e( 'Search for ...',  __HARMONUX::domain() ); ?>" value="">
+						 placeholder="<?php _e( 'Search for ...',  'harmonux' ); ?>" value="">
 			<input class="button" id="top-searchsubmit" type="submit"
-						 value="<?php _e( 'Search', __HARMONUX::domain() ); ?>">
+						 value="<?php _e( 'Search', 'harmonux' ); ?>">
 		</div>
 	</div>
 
