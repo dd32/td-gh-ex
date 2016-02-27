@@ -2,6 +2,10 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.2.4
+-----------------------------------
+[added] support for Jetpack Infinite Scroll feature
+
 Version 1.2.3
 -----------------------------------
 [changed] all themezee.com links to https and made them translatable

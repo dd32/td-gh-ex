@@ -2,7 +2,7 @@
 Theme Name: Rubine Lite
 Theme URI: https://themezee.com/themes/rubine/
 Description: Rubine Lite is a clean and retina-ready magazine theme created with usability and simplicity in mind. The theme offers a gorgeous featured content area on the home page to highlight your most important posts. Of course the design is fully responsive and makes your content readable on every device.
-Version: 1.2.3
+Version: 1.2.4
 Author: ThemeZee
 Author URI: https://themezee.com
 Tags: two-columns, light, red, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, four-columns, black, blue, silver, white, green, gray
@@ -635,6 +635,30 @@ input, textarea, select {
 	box-shadow: inset 0.3em 0 0 #cc1111;
 }
 
+/* Post Navigation */
+.post-navigation {
+	margin-bottom: 2em;
+	padding: 1em;
+	border: 1px solid #e5e5e5;
+	color: #222;
+	background: #fff;
+	line-height: 1.5;
+}
+.post-navigation .nav-links:before,
+.post-navigation .nav-links:after {
+	content: "";
+	display: table;
+}
+.post-navigation .nav-links:after {
+	clear: both;
+}
+.post-navigation .nav-links .nav-previous {
+	float: left;
+}
+.post-navigation .nav-links .nav-next {
+	float: right;
+}
+
 /* Archives and Search Heading */
 .archive-title {
 	font-weight: bold;
@@ -683,28 +707,23 @@ input, textarea, select {
 	color: #fff;
 }
 
-/* Post Navigation */
-.post-navigation {
+/* Infinite Scroll Pagination */
+.infinite-scroll .post-pagination {
+	display: none;
+}
+.infinite-scroll #infinite-handle span {
+	display: inline-block;
 	margin-bottom: 2em;
-	padding: 1em;
-	border: 1px solid #e5e5e5;
-	color: #222;
-	background: #fff;
-	line-height: 1.5;
+	padding: 0.6em 1em;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	background: #cc1111;
 }
-.post-navigation .nav-links:before,
-.post-navigation .nav-links:after {
-	content: "";
-	display: table;
-}
-.post-navigation .nav-links:after {
-	clear: both;
-}
-.post-navigation .nav-links .nav-previous {
-	float: left;
-}
-.post-navigation .nav-links .nav-next {
-	float: right;
+.infinite-scroll #infinite-handle span:hover {
+	background-color: #333;
 }
 
 /* Breadcrumbs */
@@ -830,8 +849,6 @@ big, .big_tag {
 	font-size: 1.3em;
 }
 ins {
-	padding: 1px 2px;
-	background: #ffa;
 	text-decoration: none;
 }
 code, pre {
