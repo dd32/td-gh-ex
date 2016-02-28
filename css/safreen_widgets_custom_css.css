@@ -1,0 +1,24 @@
+.customize-control-widget_form .widget-control-save {
+	display:block !important;
+}
+
+
+
+/*--------------------------WIDGETS------------------------------------*/
+
+/*MEDIA PICKER Remove BUTTON*/
+i.fa.fa-times.media-picker-remove {position: absolute;margin-top: -30px;margin-left: 5px;background-color: #FFF;color: #E48E8E;padding: 4px;border-radius: 50%;width: 15px;height: 15px;text-align: center;cursor: pointer;opacity: 0.7;right: 20px;}
+i.fa.fa-times.media-picker-remove:hover{ opacity:1;}
+a.media-picker-button.button {display: block; max-width: 100px;}
+.widget_input_wrap {margin: 15px 0;}
+img.media-picker-preview { max-width: 100%!important; height: auto;}
+
+
+.accordion-toggle {cursor: pointer;}
+  .accordion-content {display: none;}
+  .accordion-content.default {display: block;}
+
+
+
+
+.customize-control-widget_form .widget-control-save { display:block !important;}
