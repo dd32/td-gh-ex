@@ -1,5 +1,8 @@
 == Change log ==
 
+Version 4.3.5
+* Bug Fixed: Undefined index - featured_slider in catchbox_sliders (Reported by kigazw)
+
 Version 4.3.4
 * Bug Fixed: Editor Style
 * Bug Fixed: Table Style

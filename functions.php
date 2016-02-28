@@ -827,50 +827,49 @@ function catchbox_sliders() {
 	}
 
 	$postperpage = $options[ 'slider_qty' ];
+	if ( isset( $options[ 'featured_slider' ] ) ) {
+		//In customizer, all values are returned but with empty, this rectifies the issue in customizer
+		$slider_array = array_filter( $options[ 'featured_slider' ] );
 
-	//In customizer, all values are returned but with empty, this rectifies the issue in customizer
-	if( isset( $options[ 'featured_slider' ] ) && !array_filter( $options[ 'featured_slider' ] ) ) {
-	    return;
+		if( ( !$catchbox_sliders = get_transient( 'catchbox_sliders' ) ) && !empty( $slider_array ) ) {
+			echo '<!-- refreshing cache -->';
+
+			$catchbox_sliders = '
+			<div id="slider">
+				<section id="slider-wrap">';
+				$get_featured_posts = new WP_Query( array(
+					'posts_per_page' => $postperpage,
+					'post__in'		 => $options[ 'featured_slider' ],
+					'orderby' 		 => 'post__in',
+					'ignore_sticky_posts' => 1 // ignore sticky posts
+				));
+
+				$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
+					$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title( $post->ID ) ) );
+
+					if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
+					$catchbox_sliders .= '
+					<div class="'.$classes.'">
+						<a href="'. esc_url ( get_permalink() ).'" title="'.sprintf( esc_attr__( 'Permalink to %s', 'catch-box' ), the_title_attribute( 'echo=0' ) ).'" rel="bookmark">
+								'.get_the_post_thumbnail( $post->ID, 'featured-slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
+						</a>
+						<div class="featured-text">'
+							.the_title( '<span class="slider-title">','</span>', false ).' <span class="sep">:</span>
+							<span class="slider-excerpt">'.get_the_excerpt().'</span>
+						</div><!-- .featured-text -->
+					</div> <!-- .slides -->';
+				endwhile; wp_reset_query();
+			$catchbox_sliders .= '
+				</section> <!-- .slider-wrap -->
+				<nav id="nav-slider">
+					<div class="nav-previous"><img class="pngfix" src="'.get_template_directory_uri().'/images/previous.png" alt="next slide"></div>
+					<div class="nav-next"><img class="pngfix" src="'.get_template_directory_uri().'/images/next.png" alt="next slide"></div>
+				</nav>
+			</div> <!-- #featured-slider -->';
+			set_transient( 'catchbox_sliders', $catchbox_sliders, 86940 );
+		}
+		echo $catchbox_sliders;
 	}
-
-	if( ( !$catchbox_sliders = get_transient( 'catchbox_sliders' ) ) && !empty( array_filter( $options[ 'featured_slider' ] ) ) ) {
-		echo '<!-- refreshing cache -->';
-
-		$catchbox_sliders = '
-		<div id="slider">
-			<section id="slider-wrap">';
-			$get_featured_posts = new WP_Query( array(
-				'posts_per_page' => $postperpage,
-				'post__in'		 => $options[ 'featured_slider' ],
-				'orderby' 		 => 'post__in',
-				'ignore_sticky_posts' => 1 // ignore sticky posts
-			));
-
-			$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-				$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title( $post->ID ) ) );
-
-				if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
-				$catchbox_sliders .= '
-				<div class="'.$classes.'">
-					<a href="'. esc_url ( get_permalink() ).'" title="'.sprintf( esc_attr__( 'Permalink to %s', 'catch-box' ), the_title_attribute( 'echo=0' ) ).'" rel="bookmark">
-							'.get_the_post_thumbnail( $post->ID, 'featured-slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
-					</a>
-					<div class="featured-text">'
-						.the_title( '<span class="slider-title">','</span>', false ).' <span class="sep">:</span>
-						<span class="slider-excerpt">'.get_the_excerpt().'</span>
-					</div><!-- .featured-text -->
-				</div> <!-- .slides -->';
-			endwhile; wp_reset_query();
-		$catchbox_sliders .= '
-			</section> <!-- .slider-wrap -->
-			<nav id="nav-slider">
-				<div class="nav-previous"><img class="pngfix" src="'.get_template_directory_uri().'/images/previous.png" alt="next slide"></div>
-				<div class="nav-next"><img class="pngfix" src="'.get_template_directory_uri().'/images/next.png" alt="next slide"></div>
-			</nav>
-		</div> <!-- #featured-slider -->';
-		set_transient( 'catchbox_sliders', $catchbox_sliders, 86940 );
-	}
-	echo $catchbox_sliders;
 }
 endif;  // catchbox_sliders
 
