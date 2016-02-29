@@ -371,11 +371,6 @@ function zenzero_custom_css_styles() {
 	input[type="button"]:hover,
 	input[type="reset"]:hover,
 	input[type="submit"]:hover,
-	input[type="text"]:focus,
-	input[type="email"]:focus,
-	input[type="url"]:focus,
-	input[type="password"]:focus,
-	input[type="search"]:focus,
 	.paging-navigation .nav-links a:hover, 
 	.comment-navigation a:hover,
 	.entry-footer a:hover {
