@@ -2,7 +2,7 @@
 
 /**
  *
- * Sueva Theme Functions
+ * Bazaar Theme Functions
  *
  * This is your standard WordPress
  * functions.php file.

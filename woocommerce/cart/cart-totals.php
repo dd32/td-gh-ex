@@ -98,8 +98,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="wc-proceed-to-checkout">
        
-        <input type="submit" class="btn btn-flat update_cart" name="update_cart" value="<?php _e( 'Update Shopping Cart', 'yit' ); ?>" />
-        <input type="submit" class="checkout-button btn btn-alternative" name="proceed" value="<?php _e( 'Proceed to Checkout', 'yit' ); ?>" />
+        <input type="submit" class="btn btn-flat update_cart" name="update_cart" value="<?php _e( 'Update Shopping Cart', 'bazaar-lite' ); ?>" />
+        <input type="submit" class="checkout-button btn btn-alternative" name="proceed" value="<?php _e( 'Proceed to Checkout', 'bazaar-lite' ); ?>" />
 
 	</div>
 
