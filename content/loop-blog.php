@@ -10,7 +10,7 @@
 		<!-- BEGIN .article -->
 		<div class="article">
 		
-			<?php if (get_theme_mod('display_date_blog', '1') == '1') { ?>
+			<?php if ( '1' == get_theme_mod('display_date_blog', '1') ) { ?>
 			<div class="post-date">
 				<p><i class="fa fa-comment"></i> <a href="<?php the_permalink(); ?>#comments"><?php comments_number( esc_html__("Leave a Comment", 'swell-lite'), esc_html__("1 Comment", 'swell-lite'), '% Comments'); ?></a></p>
 				<p><i class="fa fa-clock-o"></i> 
@@ -25,7 +25,7 @@
 		
 			<h2 class="headline"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php esc_attr(the_title_attribute()); ?>"><?php the_title(); ?></a></h2>
 			
-			<?php if (get_theme_mod('display_author_blog', '1') == '1') { ?>
+			<?php if ( '1' == get_theme_mod('display_author_blog', '1') ) { ?>
 				<div class="post-author">
 					<p><?php esc_html_e("by", 'swell-lite'); ?> <?php esc_url ( the_author_posts_link() ); ?></p>
 				</div>
@@ -44,11 +44,12 @@
 <?php endwhile; ?>
 
 	<?php if ( $wp_query->max_num_pages > 1 ) { ?>
-		<!-- BEGIN .pagination -->
-		<div class="pagination">
-			<?php echo swell_lite_get_pagination_links(); ?>
-		<!-- END .pagination -->
-		</div>
+	
+		<?php the_posts_pagination( array(
+		    'prev_text' => esc_attr__( '&laquo;', 'swell-lite' ),
+		    'next_text' => esc_attr__( '&raquo;', 'swell-lite' ),
+		) ); ?>
+		
 	<?php } ?>
 
 <?php else : ?>

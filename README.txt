@@ -1,4 +1,4 @@
-Swell Lite v1.2.9
+Swell Lite v1.3
 http://www.swelltheme.com
 http://organicthemes.com
 
@@ -147,3 +147,12 @@ CHANGELOG v1.2.9:
 - Added Yelp social icon
 - Added function to disable superfish.js on mobile
 - Updated superfish.js script
+
+CHANGELOG v1.2.10:
+- Replaced pagination function
+- Replaced mobile nav toggle with button instead of span
+
+CHANGELOG v1.3:
+- Pagination style tweaks
+- Created customizer option to hide main menu
+- Changed options to Yoda conditions
