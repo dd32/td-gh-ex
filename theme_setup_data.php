@@ -10,11 +10,12 @@
  *-----------------------------------------------------------------------------------*/ 
 function theme_data_setup()
 {
-	$slide_image_uri =WEBRITI_TEMPLATE_DIR_URI .'/images/default/slide/slide.jpg';
+	$slide_image_uri =WEBRITI_TEMPLATE_DIR_URI .'/images/default/slide/slide.png';
 	$project_img1 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb.png';
 	$project_img2 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb1.png';
 	$project_img3 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb2.png';
 	$project_img4 = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb3.png';
+	
 	return $rambo_theme_options=array(
 						
 			'front_page' => true,

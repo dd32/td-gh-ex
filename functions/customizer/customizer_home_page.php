@@ -67,7 +67,7 @@ class rambo_Customize_footer_callout_upgrade extends WP_Customize_Control {
         'type' => 'checkbox',
     ));
 	
-	$wp_customize->add_setting( 'rambo_theme_options[home_custom_image]',array('default' => get_template_directory_uri().'/images/default/slide/slide.jpg',
+	$wp_customize->add_setting( 'rambo_theme_options[home_custom_image]',array('default' => get_template_directory_uri().'/images/default/slide/slide.png',
 	'type' => 'option','sanitize_callback' => 'esc_url_raw',
 	));
  

@@ -1,4 +1,4 @@
-Rambo Theme README.
+﻿Rambo Theme README.
 
 A Business Blog theme that supports Primary menu's , Primary sidebar,Three widgets area at the footer region  etc. 
 It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. 
@@ -136,6 +136,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.4.4
+1. Default slider image issue.
 @version 1.4.3
 1. Fixed Styling issue.
 @version 1.4.2
