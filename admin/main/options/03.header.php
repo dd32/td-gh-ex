@@ -280,49 +280,49 @@ global $thinkup_header_rsslink;
 			/* Facebook settings */
 			if ( $thinkup_header_facebookswitch == '1' ) {
 				echo '<li class="social facebook"><a href="' . esc_url( $thinkup_header_facebooklink ) . '" data-tip="bottom" data-original-title="Facebook" target="_blank">',
-					 '<i class="icon-facebook"></i>',
+					 '<i class="fa fa-facebook"></i>',
 					 '</a></li>';
 			}
 
 			/* Twitter settings */
 			if ( $thinkup_header_twitterswitch == '1' ) {
 				echo '<li class="social twitter"><a href="' . esc_url( $thinkup_header_twitterlink ) . '" data-tip="bottom" data-original-title="Twitter" target="_blank">',
-					 '<i class="icon-twitter"></i>',
+					 '<i class="fa fa-twitter"></i>',
 					 '</a></li>';
 			}
 
 			/* Google+ settings */
 			if ( $thinkup_header_googleswitch == '1' ) {
 				echo '<li class="social google"><a href="' . esc_url( $thinkup_header_googlelink ) . '" data-tip="bottom" data-original-title="Google+" target="_blank">',
-					 '<i class="icon-google-plus"></i>',
+					 '<i class="fa fa-google-plus"></i>',
 					 '</a></li>';
 			}
 
 			/* LinkedIn settings */
 			if ( $thinkup_header_linkedinswitch == '1' ) {
 				echo '<li class="social linkedin"><a href="' . esc_url( $thinkup_header_linkedinlink ) . '" data-tip="bottom" data-original-title="LinkedIn" target="_blank">',
-					 '<i class="icon-linkedin"></i>',
+					 '<i class="fa fa-linkedin"></i>',
 					 '</a></li>';
 			}
 
 			/* Flickr settings */
 			if ( $thinkup_header_flickrswitch == '1' ) {
 				echo '<li class="social flickr"><a href="' . esc_url( $thinkup_header_flickrlink ) . '" data-tip="bottom" data-original-title="Flickr" target="_blank">',
-					 '<i class="icon-flickr"></i>',
+					 '<i class="fa fa-flickr"></i>',
 					 '</a></li>';
 			}
 
 			/* YouTube settings */
 			if ( $thinkup_header_youtubeswitch == '1' ) {
 				echo '<li class="social youtube"><a href="' . esc_url( $thinkup_header_youtubelink ) . '" data-tip="bottom" data-original-title="YouTube" target="_blank">',
-					 '<i class="icon-youtube-play"></i>',
+					 '<i class="fa fa-youtube-play"></i>',
 					 '</a></li>';
 			}
 
 			/* RSS settings */
 			if ( $thinkup_header_rssswitch == '1' ) {
 				echo '<li class="social rss"><a href="' . esc_url( $thinkup_header_rsslink ) . '" data-tip="bottom" data-original-title="RSS" target="_blank">',
-					 '<i class="icon-rss"></i>',
+					 '<i class="fa fa-rss"></i>',
 					 '</a></li>';
 			}
 

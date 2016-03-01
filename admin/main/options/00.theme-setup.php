@@ -20,17 +20,6 @@ function thinkup_bodystyle() {
 	do_action('thinkup_bodystyle');
 }
 
-// Activates premium features in page builder
-function thinkup_check_premium($classes){
-
-	// Add class to admin area to make page builder parallax work (if template-parallax.php is present)
-	if ( '' != locate_template( 'template-parallax.php' ) ) {	
-		$classes = 'thinkup_parallax_enabled';
-	}
-	return $classes;
-}
-add_action( 'admin_body_class', 'thinkup_check_premium');
-
 
 /* ----------------------------------------------------------------------------------
 	CORRECT Z-INDEX OF OEMBED OBJECTS

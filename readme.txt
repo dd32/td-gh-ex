@@ -127,6 +127,12 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.5
+- Updated: Font Awesome library updated to v4.2.0.
+- Updated: Translation .pot file added. Old files .mo and .po removed.
+- Updated: All Font Awesome icon classes now use fa- prefix instead of icon- prefix.
+- Removed: Function thinkup_check_premium() removed as it has no purpose in the theme.
+
 Version 1.3.4
 - Fixed:   Function home_page_menu_args() renamed to thinkup_menu_homelink() to ensure correct prefixing and reduce change of conflict with 3rd party code.
 - Updated: Portfolio masonry container checks updated in main-frontend.js.
@@ -142,7 +148,7 @@ Version 1.3.3
 - Updated: Translation .pot file added. Old files .mo and .po removed.
 
 Version 1.3.2
-- Fixed:   Disables sortable slides in Customizer. This prevents issues where phantom slides still appear after deleting slides.
+- Fixed:   Disabled sortable slides in Customizer. This prevents issues where phantom slides still appear after deleting slides.
 - Updated: Various minor styling updates for theme options in customizer.
 
 Version 1.3.1
