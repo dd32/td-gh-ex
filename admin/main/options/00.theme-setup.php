@@ -298,7 +298,7 @@ if ( ! function_exists( 'thinkup_input_addimagesizes' ) ) {
 
 		// 3 Column Layout
 		add_image_size( 'column3-1/1', 380, 380, true );
-		add_image_size( 'column3-1/3', 320, 107, true );
+		add_image_size( 'column3-1/3', 380, 127, true );
 		add_image_size( 'column3-2/5', 380, 152, true );	
 		add_image_size( 'column3-2/3', 380, 254, true );
 		add_image_size( 'column3-3/4', 380, 285, true );

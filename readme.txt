@@ -93,6 +93,12 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.7
+- Updated: Post share icons now display correctly on single post pages.
+- Updated: Image dimensions for column3-1/3 size changed to be 380px x 127px.
+- Removed: Old files .mo and .po removed.
+- Removed: Function thinkup_check_premium() removed as it has no purpose in the theme.
+
 Version 1.2.6
 - Fixed:   Function home_page_menu_args() renamed to thinkup_menu_homelink() to ensure correct prefixing and reduce change of conflict with 3rd party code.
 - Updated: Social media links in pre-header now open in new tab.
