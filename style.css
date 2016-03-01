@@ -4,7 +4,7 @@ Theme URI: http://www.thinkupthemes.com/free/engrave-lite/
 Author: ThinkUpThemes
 Author URI: http://www.ThinkUpThemes.com
 Description: Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.7.5
+Version: 1.7.6
 License: GNU General Public License
 License URI: /licenses/license.txt
 Tags: black, dark, red, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background
@@ -477,8 +477,14 @@ iframe.twitter-tweet {
 .nav-next a .meta-icon {
 	display: table;
 	background: #FFF;
+	height: 20px;
 	padding: 1px 6px 2px;
 	border: 1px solid #DDD;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
@@ -493,6 +499,7 @@ iframe.twitter-tweet {
 }
 .nav-previous a i,
 .nav-next a i {
+	line-height: 1;
     vertical-align: top;
     display: table-cell;
 }
@@ -2247,10 +2254,18 @@ padding: 0;
 }
 .blog-icon i {
 	color: white;
+    width: 37px;
+    height: 37px;
+    line-height: 1;
 	padding: 10px;
 	float: left;
 	display: inline-block;
 	background: #EC4C4C;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;

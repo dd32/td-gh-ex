@@ -98,6 +98,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.7.6
+- Updated: Font Awesome library updated to v4.2.0.
+- Updated: All Font Awesome icon classes now use fa- prefix instead of icon- prefix.
+- Updated: Translation .pot file added. Old files .mo and .po removed.
+
 Version 1.7.5
 - Fixed:   Function is_blog() renamed to thinkup_check_isblog() to ensure correct prefixing and reduce change of conflict with 3rd party code.
 - Fixed:   Function add_menuclass() renamed to thinkup_input_menuclass() to ensure correct prefixing and reduce change of conflict with 3rd party code.
