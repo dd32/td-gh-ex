@@ -223,6 +223,11 @@ ul.widget-category li:hover,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
     background-color: #9b59b6;
 }
+
+.star-rating span,
+.woocommerce p.stars,
+.woocommerce p.stars a,
+.woocommerce p.stars:hover a,
 .line a:hover,
 a.more:hover,
 a:hover,

@@ -4,7 +4,7 @@
 
 	do_action('bazaarlite_header_sidebar', 'header_sidebar_area');
 
-	if ( ( !bazaarlite_setting('wip_search_layout')) || ( bazaarlite_setting('wip_search_layout') == "masonry" ) ) {
+	if ( !bazaarlite_setting('wip_search_layout') || bazaarlite_setting('wip_search_layout') == "masonry" ) {
 				
 		get_template_part('layouts/search-masonry'); 
 		

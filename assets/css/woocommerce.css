@@ -218,6 +218,13 @@ span.sku_wrapper {
    Woocommerce comments
    ============================================= */
 
+.star-rating span,
+.woocommerce p.stars,
+.woocommerce p.stars a,
+.woocommerce p.stars:hover a {
+	color:#48c9b0;
+}
+
 .woocommerce #reviews #comments ol.commentlist li .comment-avatar {
 	margin:0 auto 25px auto;
 }
@@ -550,7 +557,14 @@ body.minimal-layout .woocommerce-info {
 	-moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
-	font-weight:400
+	font-weight:400;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+	text-rendering: optimizeLegibility;
+	
 }
 
 #footer .woocommerce a.button:hover {

@@ -187,7 +187,8 @@ if (!function_exists('bazaarlite_template')) {
 		
 			"full" => "col-md-12" , 
 			"left-sidebar" => "col-md-8" , 
-			"right-sidebar" => "col-md-8"
+			"right-sidebar" => "col-md-8",
+			"masonry" => "col-md-4"
 		
 		);
 	
@@ -209,7 +210,7 @@ if (!function_exists('bazaarlite_template')) {
 			$span = $template[bazaarlite_postmeta('wip_template')];
 			$sidebar =  bazaarlite_postmeta('wip_template');
 
-		} else if ( ! bazaarlite_is_woocommerce_active('is_woocommerce') && ( is_category() || is_tag() || is_tax() || is_month() ) && bazaarlite_setting('wip_category_layout') ) {
+		} else if ( !bazaarlite_is_woocommerce_active('is_woocommerce') && ( is_category() || is_tag() || is_tax() || is_month() ) && bazaarlite_setting('wip_category_layout') ) {
 
 			$span = $template[bazaarlite_setting('wip_category_layout')];
 			$sidebar =  bazaarlite_setting('wip_category_layout');

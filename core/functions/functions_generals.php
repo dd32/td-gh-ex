@@ -17,9 +17,9 @@ if (!function_exists('bazaarlite_post_class')) {
 				
 		endif;
 
-		if ( ( !bazaarlite_is_single()) && ( is_home() ) ) {
+		if ( !bazaarlite_is_single() && is_home() ) {
 			
-			if ( ( !bazaarlite_setting('wip_home')) || ( bazaarlite_setting('wip_home') == "masonry" ) ) {
+			if ( !bazaarlite_setting('wip_home') || bazaarlite_setting('wip_home') == "masonry" ) {
 
 				$classes[] = $masonry;
 
@@ -29,9 +29,9 @@ if (!function_exists('bazaarlite_post_class')) {
 
 			}
 			
-		} else if ( ( !bazaarlite_is_single()) && ( bazaarlite_get_archive_title() ) ) {
+		} else if ( !bazaarlite_is_single() && bazaarlite_get_archive_title() ) {
 			
-			if ( ( !bazaarlite_setting('wip_category_layout')) || ( bazaarlite_setting('wip_category_layout') == "masonry" ) ) {
+			if ( !bazaarlite_setting('wip_category_layout') || bazaarlite_setting('wip_category_layout') == "masonry" ) {
 
 				$classes[] = $masonry;
 
@@ -41,9 +41,9 @@ if (!function_exists('bazaarlite_post_class')) {
 
 			}
 			
-		} else if ( ( !bazaarlite_is_single()) && ( is_search() ) ) {
+		} else if ( !bazaarlite_is_single() && is_search() ) {
 			
-			if ( ( !bazaarlite_setting('wip_search_layout')) || ( bazaarlite_setting('wip_search_layout') == "masonry" ) ) {
+			if ( !bazaarlite_setting('wip_search_layout') || bazaarlite_setting('wip_search_layout') == "masonry" ) {
 
 				$classes[] = $masonry;
 

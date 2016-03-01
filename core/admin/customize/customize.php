@@ -280,7 +280,7 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				   "masonry" => __( "Masonry","bazaar-lite"),
 				),
 				
-				"std" => "right-sidebar",
+				"std" => "masonry",
 			
 			),
 	
@@ -299,7 +299,7 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				   "masonry" => __( "Masonry","bazaar-lite"),
 				),
 				
-				"std" => "right-sidebar",
+				"std" => "masonry",
 			
 			),
 	
@@ -334,7 +334,7 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				   "masonry" => __( "Masonry","bazaar-lite"),
 				),
 				
-				"std" => "right-sidebar",
+				"std" => "masonry",
 			
 			),
 

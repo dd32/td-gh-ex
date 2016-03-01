@@ -13,9 +13,11 @@
 if (!function_exists('bazaarlite_footer_sidebar_function')) {
 
 	function bazaarlite_footer_sidebar_function() {
-		
-		if ( (is_home()) || (is_archive()) || (is_tax()) || (is_search()) ) {
-			
+
+		$sidebarname = "";
+
+		if ( is_home() || bazaarlite_get_archive_title() || is_search() ) {
+
 			$sidebarname = "footer_sidebar_area";
 			
 		} else if ( bazaarlite_postmeta('wip_footer_sidebar') ) {

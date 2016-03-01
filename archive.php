@@ -3,8 +3,8 @@
 	get_header();
 	
 	do_action('bazaarlite_header_sidebar', 'header_sidebar_area');
-
-	if ( strstr ( bazaarlite_setting('wip_category_layout'), 'col-md' ) ) {
+	
+	if ( !bazaarlite_setting('wip_category_layout') || bazaarlite_setting('wip_category_layout') == "masonry" ) {
 				
 		get_template_part('layouts/archive-masonry'); 
 		

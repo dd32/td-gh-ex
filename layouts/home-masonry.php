@@ -3,7 +3,6 @@
 	<?php 
 	
 		do_action('bazaarlite_masonry'); 
-
 		do_action( 'bazaarlite_pagination', 'home'); 
 	
 	?>
