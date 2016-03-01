@@ -1,4 +1,4 @@
-Swell Lite v1.3
+Swell Lite v1.3.1
 http://www.swelltheme.com
 http://organicthemes.com
 
@@ -156,3 +156,10 @@ CHANGELOG v1.3:
 - Pagination style tweaks
 - Created customizer option to hide main menu
 - Changed options to Yoda conditions
+
+CHANGELOG v1.3.1:
+- Deleted unnecessary styles
+- More pagination updates
+- Hid comment navigation title
+- Escaped custom header
+- Regenerated language files
