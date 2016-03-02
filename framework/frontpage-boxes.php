@@ -75,10 +75,10 @@ if( ! function_exists( 'agama_frontpage_boxes' ) ) {
 			$box_4_icon_url = get_theme_mod('agama_frontpage_box_4_icon_url', '');
 			
 			// Boxes FA Icon Color
-			$box_1_icon_color = get_theme_mod('agama_frontpage_box_1_icon_color', '#f7a805');
-			$box_2_icon_color = get_theme_mod('agama_frontpage_box_2_icon_color', '#f7a805');
-			$box_3_icon_color = get_theme_mod('agama_frontpage_box_3_icon_color', '#f7a805');
-			$box_4_icon_color = get_theme_mod('agama_frontpage_box_4_icon_color', '#f7a805');
+			$box_1_icon_color = get_theme_mod('agama_frontpage_box_1_icon_color', '#A2C605');
+			$box_2_icon_color = get_theme_mod('agama_frontpage_box_2_icon_color', '#A2C605');
+			$box_3_icon_color = get_theme_mod('agama_frontpage_box_3_icon_color', '#A2C605');
+			$box_4_icon_color = get_theme_mod('agama_frontpage_box_4_icon_color', '#A2C605');
 			
 			// Boxes text
 			$box_1_text = get_theme_mod('agama_frontpage_box_1_text', 'Powerful Layout with Responsive functionality that can be adapted to any screen size.');

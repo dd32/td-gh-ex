@@ -2,6 +2,16 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.2.0 Mar 3 2016 =
+* ADDED: Transparent header (Header V1) feature.
+* ADDED: Transparent header (Header V1) styling feature.
+* ADDED: Slider features.
+* ADDED: Logo max-height feature.
+* ADDED: German translation files (Credits: Thomas Moritz).
+* UPDATED: Rewritten customizer options completely.
+* UPDATED: Mobile menu completely rewritten.
+* UPDATED: Language translation files.
+
 = 1.1.7 Feb 20 2016 =
 * ADDED: Pages / posts will became full-width if no active widgets in Main Sidebar area.
 * ADDED: Frontpage boxes icon / image URL feature.
@@ -138,11 +148,13 @@ Agama is distributed under the terms of the GNU GPL2
  * imagesLoaded - http://imagesloaded.desandro.com/ - MIT License
  * scrollToTop - https://plugins.jquery.com/scrollToTop/ - MIT License
  * jRespond - https://github.com/ten1seven/jRespond - MIT License
+ * Animate - http://daneden.github.io/animate.css/ - MIT License
+ * Easing - http://gsgd.co.uk/sandbox/jquery/easing/ - BSD License
+ * Camera - http://www.pixedelic.com/plugins/camera/ - MIT License
  
  Images used in Screenshot are licensed under Creative Commons Zero License:
 
- * Pixabay - http://pixabay.com - https://pixabay.com/en/office-freelancer-computer-business-583839/ - CC0 1.0 License
- * Vadim Sherbakov - http://tumblr.unsplash.com/post/56830717581/download-by-vadim-sherbakov - CC0 1.0 License
+ * John Cobb - https://unsplash.com/johncobb - https://unsplash.com/photos/ssAcdlJRsI4 - CC0 1.0 License
  
  Unless otherwise specified, all the theme files, scripts and images
  are licensed under GNU General Public License version 2, see file license.txt.

@@ -34,7 +34,7 @@
 <!-- Main Wrappe -->
 <div id="main-wrapper">
 
-	<header id="masthead" class="site-header clearfix" role="banner">
+	<header id="masthead" class="site-header clearfix <?php Agama::header_class(); ?>" role="banner">
 		
 		<?php get_template_part( 'framework/headers' ); // Get headers ?>
 		
@@ -47,21 +47,39 @@
 		
 	</header><!-- #masthead -->
 	
-	<?php if( get_theme_mod( 'agama_breadcrumb', true ) ): ?>
-		
-		<?php // If breadcrumb is disabled on homepage do not show anything
+	<?php
+	#############################################################
+	# SLIDER ACTION
+	#############################################################
+	if( get_theme_mod( 'agama_slider_image_1', AGAMA_IMG . 'header_img.jpg' ) || 
+		get_theme_mod( 'agama_slider_image_2', AGAMA_IMG . 'header_img.jpg' ) ):
+	
+		do_action( 'agama_slider_action' );
+	
+	endif;
+	#############################################################
+	# BREADCRUMB ACTION
+	#############################################################
+	if( get_theme_mod( 'agama_breadcrumb', true ) ):
+		// If breadcrumb is disabled on homepage do not show anything
 		if( get_theme_mod( 'agama_breadcrumb_homepage', '' ) && is_home() || 
-		    get_theme_mod( 'agama_breadcrumb_homepage', '' ) && is_front_page() ): else: ?>
+		    get_theme_mod( 'agama_breadcrumb_homepage', '' ) && is_front_page() ): else:
 			
-			<?php do_action( 'agama_breadcrumbs_action' ); ?>
+			do_action( 'agama_breadcrumbs_action' );
 			
-		<?php endif; ?>
-		
-	<?php endif; ?>
+		endif;
+	endif; ?>
 
 	<div id="page" class="hfeed site">
 		<div id="main" class="wrapper">
 			<div class="vision-row clearfix">
-				<?php if( get_theme_mod('agama_frontpage_boxes_everywhere', false) || is_home() || is_front_page() ): ?>
-					<?php do_action( 'agama_frontpage_boxes_action' ); ?>
-				<?php endif; ?>
+				
+				<?php 
+				#############################################################
+				# FRONTPAGE BOXES ACTION
+				#############################################################
+				if( get_theme_mod('agama_frontpage_boxes_everywhere', false) || is_home() || is_front_page() ):
+				
+					do_action( 'agama_frontpage_boxes_action' ); 
+					
+				endif; ?>

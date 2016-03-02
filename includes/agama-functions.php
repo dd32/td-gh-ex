@@ -1,13 +1,5 @@
 <?php
-
-// Include framework init file
-get_template_part('framework/framework-init');
-
-// Include Agama class
-get_template_part('includes/agama-class');
-
-// Include WooCommerce class file
-get_template_part('includes/woocommerce');
+if( ! defined( 'ABSPATH' ) ) exit;
 
 // Custom header support
 get_template_part('includes/custom-header');

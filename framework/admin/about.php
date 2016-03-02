@@ -74,11 +74,14 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-						echo '<p>ADDED: Pages / posts will became full-width if no active widgets in Main Sidebar area.</p>';
-						echo '<p>ADDED: Frontpage boxes icons / image URL feature.</p>';
-						echo '<p>ADDED: Search page post thumbnails on / off feature.</p>';
-						echo '<p>FIXED: Search page blog grid layout issue.</p>';
-						echo '<p>FIXED: Mobile menu always expanded bug.</p>';
+						echo '<p>ADDED: Transparent header (Header V1) feature.</p>';
+						echo '<p>ADDED: Transparent header (Header V1) styling feature.</p>';
+						echo '<p>ADDED: Slider features.</p>';
+						echo '<p>ADDED: Logo max-height feature.</p>';
+						echo '<p>ADDED: German translation files (Credits: Thomas Moritz).</p>';
+						echo '<p>UPDATED: Rewritten customizer options completely.</p>';
+						echo '<p>UPDATED: Mobile menu completely rewritten.</p>';
+						echo '<p>UPDATED: Language translation files.</p>';
 				echo '</div>';
 				
 			echo '</div>';

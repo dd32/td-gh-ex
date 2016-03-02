@@ -1,9 +1,18 @@
-<?php if( get_theme_mod('agama_header_style', 'sticky') == 'sticky' ): // Sticky header ?>
+<?php
+if( ! defined( 'ABSPATH' ) ) exit;
 
-	<?php get_template_part( 'framework/headers/header-sticky' ); ?>
+switch( get_theme_mod( 'agama_header_style', 'transparent' ) ):
 
-<?php else: // Default header ?>
+	case 'transparent':
+		get_template_part( 'framework/headers/header-transparent' );
+	break;
+	
+	case 'sticky':
+		get_template_part( 'framework/headers/header-sticky' );
+	break;
+	
+	case 'default':
+		get_template_part( 'framework/headers/header-default' );
+	break;
 
-	<?php get_template_part( 'framework/headers/header-default' ); ?>
-
-<?php endif; ?>
+endswitch;

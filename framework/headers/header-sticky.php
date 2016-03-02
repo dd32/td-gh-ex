@@ -1,36 +1,38 @@
 <?php if( get_theme_mod( 'agama_top_navigation', true ) ): ?>
+<!-- Top Area Wrapper -->
 <div id="top-bar">
 	<div id="top-bar-wrap">
 		<div class="container-fullwidth clearfix">
-
+			
+			<!-- Left Side -->
 			<div class="pull-left nobottommargin">
 				
-				<!-- Top Links -->
+				<!-- Top Navigation -->
 				<div class="top-links">
-				
 					<?php echo Agama::menu( 'top' ); ?>
-					
-				</div><!-- / Top Links -->
+				</div><!-- Top Navigation End -->
 
-			</div>
-
+			</div><!-- Left Side End -->
+			
+			<!-- Right Side -->
 			<div class="pull-right nobottommargin">
 
-				<!-- Top Social -->
+				<!-- Social Icons -->
 				<div id="top-social">
 					<?php Agama::sociali( false, 'animated' ); ?>
-				</div><!-- / Top Social -->
+				</div><!-- Social Icons End -->
 
-			</div>
+			</div><!-- Right Side End -->
 
 		</div>
 	</div>
-</div><!-- #top-bar end -->
+</div><!-- Top Area Wrapper End -->
 <?php endif; ?>
 
 <div class="sticky-header clear">
 	<div class="sticky-header-inner clear">
-	
+		
+		<!-- Logo -->
 		<div class="pull-left">
 			<?php if( get_theme_mod( 'agama_logo', '' ) ): ?>
 				<a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
@@ -39,22 +41,22 @@
 			<?php else: ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php endif; ?>
-		</div>
+		</div><!-- Logo End -->
 		
+		<!-- Primary Navigation -->
 		<nav role="navigation" class="pull-right">
-			
 			<?php echo Agama::menu( 'primary', 'sticky-nav' ); ?>
-			
-		</nav><!-- .top-navigation -->
+		</nav><!-- Primary Navigation End -->
 		
+		<!-- Mobile Navigation Toggle -->
+		<a href="#mobile-menu" data-toggle="collapse" class="mobile-menu-toggle collapsed">
+			<?php _e( 'Mobile Menu Toggle', 'agama' ); ?>
+		</a><!-- Mobile Navigation Toggle End -->
+
 	</div>
-	<div class="mobile-nav clearfix">
-		<div class="mobile-nav-icons">
-			<?php if( class_exists('Woocommerce') ): global $woocommerce; ?>
-			<a href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" class="fa fa-2x fa-shopping-cart"></a>
-			<?php endif; ?>
-			<a class="fa fa-2x fa-bars"></a>
-		</div>
-		<?php echo Agama::menu( 'primary', 'mobile-nav-menu' ); ?>
-	</div><!-- .mobile-nav -->
 </div>
+
+<!-- Mobile Navigation -->
+<nav class="mobile-menu collapse">
+	<?php echo Agama::menu( 'primary', 'menu' ); ?>
+</nav><!-- Mobile Navigation End -->

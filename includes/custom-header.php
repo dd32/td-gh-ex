@@ -24,7 +24,7 @@ function agama_custom_header_setup() {
 		'default-image'          => '',
 
 		// Set height and width, with a maximum value for the width.
-		'height'                 => 480,
+		'height'                 => 960,
 		'width'                  => 1920,
 		'max-width'              => 2000,
 
