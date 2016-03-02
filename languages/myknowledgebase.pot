@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2016-01-31 13:49+0100\n"
+"POT-Creation-Date: 2016-03-01 22:46+0100\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 archive.php:46 index.php:48 search.php:46
+#: 404.php:9 archive.php:40 index.php:42 search.php:40
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:10 archive.php:47 index.php:49 search.php:47
+#: 404.php:10 archive.php:41 index.php:43 search.php:41
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
@@ -32,56 +32,18 @@ msgstr ""
 msgid "Permalink to %s"
 msgstr ""
 
-#: archive.php:21 index.php:23 search.php:21 single.php:16
-#, php-format
-msgid "Posted on %s"
-msgstr ""
-
-#: archive.php:22 index.php:24 search.php:22 single.php:17
-#, php-format
-msgid "By %s"
-msgstr ""
-
-#: archive.php:24 index.php:26 search.php:24 single.php:19
-msgid "Leave a response"
-msgstr ""
-
-#: archive.php:24 index.php:26 search.php:24 single.php:19
-msgid "1 response"
-msgstr ""
-
-#: archive.php:24 index.php:26 search.php:24 single.php:19
-msgid "% responses"
-msgstr ""
-
-#: archive.php:35 index.php:37 search.php:35
+#: archive.php:29 index.php:31 search.php:29
 msgid "Read More &raquo;"
-msgstr ""
-
-#: archive.php:41 index.php:43 search.php:41
-msgid "Older posts &raquo;"
-msgstr ""
-
-#: archive.php:42 index.php:44 search.php:42
-msgid "&laquo; Newer posts"
 msgstr ""
 
 #: comments.php:16
 #, php-format
-msgid "1 response on %2$s"
-msgid_plural "%1$s responses on %2$s"
+msgid "1 comment on %2$s"
+msgid_plural "%1$s comments on %2$s"
 msgstr[0] ""
 
-#: comments.php:29
-msgid "&laquo; Older Comments"
-msgstr ""
-
-#: comments.php:30
-msgid "Newer Comments &raquo;"
-msgstr ""
-
 #: comments.php:35
-msgid "Comments are closed"
+msgid "Comments are closed."
 msgstr ""
 
 #: footer.php:25
@@ -114,15 +76,15 @@ msgid "Homepage Sidebar"
 msgstr ""
 
 #: functions.php:117
-msgid "Footer Sidebar Right"
+msgid "Footer Right"
 msgstr ""
 
 #: functions.php:127
-msgid "Footer Sidebar Middle"
+msgid "Footer Middle"
 msgstr ""
 
 #: functions.php:137
-msgid "Footer Sidebar Left"
+msgid "Footer Left"
 msgstr ""
 
 #: functions.php:184 functions.php:193
@@ -142,7 +104,7 @@ msgid "Set amount of posts for each knowledgebase category."
 msgstr ""
 
 #: functions.php:207
-msgid "Posts per page"
+msgid "Posts per category"
 msgstr ""
 
 #: functions.php:208
@@ -177,8 +139,31 @@ msgstr ""
 msgid "Featured post"
 msgstr ""
 
-#: page-full.php:29 page.php:28 single.php:41
+#: page-full.php:29 page.php:28 single.php:35
 msgid "Edit"
+msgstr ""
+
+#: postmeta.php:8
+#, php-format
+msgid "Posted on %s"
+msgstr ""
+
+#: postmeta.php:9
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: postmeta.php:11
+msgid "No Comments"
+msgstr ""
+
+#: postmeta.php:11
+msgid "1 comment"
+msgstr ""
+
+#: postmeta.php:11
+#, php-format
+msgid "% comments"
 msgstr ""
 
 #: search.php:12
@@ -186,18 +171,18 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: single.php:30
+#: single.php:24
 #, php-format
-msgid "Posted in %s"
+msgid "Category: %s"
 msgstr ""
 
-#: single.php:30 single.php:32
+#: single.php:24 single.php:26
 msgid ", "
 msgstr ""
 
-#: single.php:32
+#: single.php:26
 #, php-format
-msgid "Tags: %s"
+msgid "Tag: %s"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -213,10 +198,10 @@ msgid ""
 "MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile friendly "
 "WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, "
 "Wiki or Link Portal with a custom page template and using the default "
-"categories and posts. Features: primary sidebar, widget areas in header, "
-"widget areas in footer, custom header image, custom background, custom logo "
-"to replace blogname and description, full width page template, dropdown "
-"navigation. That's it. Enjoy."
+"categories and posts. Features: sidebar, widget areas on homepage, widget "
+"areas in footer, custom header image, custom background, custom logo to "
+"replace blogname and description, full width page template, dropdown "
+"navigation. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme

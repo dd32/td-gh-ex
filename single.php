@@ -12,13 +12,7 @@
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
 			<h4 class="post-title"><?php the_title(); ?></h4>
 
-			<div class="postmetadata">
-				<?php printf( __( 'Posted on %s', 'myknowledgebase' ), '<a href="'. esc_url( get_permalink() ) .'">' . esc_html( get_the_date() ). '</a>' ); ?> <?php echo '|'; ?> 
-				<?php printf( __( 'By %s', 'myknowledgebase' ), sprintf( '<a href="%1$s">%2$s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() ) ) ); ?>
-				<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-					<?php echo '|'; ?> <?php comments_popup_link( __( 'Leave a response', 'myknowledgebase' ), __( '1 response', 'myknowledgebase' ), __( '% responses', 'myknowledgebase' ) ); ?>
-				<?php endif; ?>
-			</div>
+			<?php get_template_part( 'postmeta' ); ?>
 	
 			<?php the_content(); ?>
 
@@ -27,9 +21,9 @@
 			<?php } ?> 
 
 			<div class="postmetadata">
-				<?php printf( __( 'Posted in %s', 'myknowledgebase' ), get_the_category_list( __( ', ', 'myknowledgebase' ) ) ); ?>
+				<?php printf( __( 'Category: %s', 'myknowledgebase' ), get_the_category_list( __( ', ', 'myknowledgebase' ) ) ); ?>
 				<?php if(has_tag() ) : ?>
-					<?php echo '|'; ?> <?php printf(__( 'Tags: %s', 'myknowledgebase' ), get_the_tag_list('', __( ', ', 'myknowledgebase' ) ) ); ?>
+					<?php echo '|'; ?> <?php printf(__( 'Tag: %s', 'myknowledgebase' ), get_the_tag_list('', __( ', ', 'myknowledgebase' ) ) ); ?>
 				<?php endif; ?>
 			</div>
 		</div>

@@ -1,10 +1,10 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: http://www.guidovanderleest.nl/myknowledgebase
-Version: 3.2
+Version: 3.3
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: primary sidebar, widget areas in header, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
+Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, blue, light, gray, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -67,8 +67,8 @@ table {
 
 
 /* BODY AND CONTAINER */
-body {background:#fff; font-family:'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
-#container {max-width:1200px; position:relative; margin:0 auto 0; padding:0 1%; text-align:left; word-wrap:break-word;}
+body {background:#fff; font-family:'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em; text-align:left; word-wrap:break-word;}
+#container {max-width:1200px; position:relative; margin:0 auto 0; padding:0 1%;}
 #container:after {content:''; display:block; height:0; clear:both;}
 
 
@@ -92,15 +92,16 @@ a:hover {text-decoration:underline;}
 
 strong, b {font-weight:bold;}
 small {font-size:0.75em;}
-big {font-size: 1.5em;}
+big {font-size:1.25em;}
 sub {vertical-align:sub; font-size:0.9em;}
 sup {vertical-align:super; font-size:0.9em;}
-ins, mark {font-weight:bold; background:none; color:#08a0ff;}
+ins, mark {font-weight:bold; background:none; text-decoration:none; color:#08a0ff;}
 cite, em, abbr, acronym {font-style:italic;}
-code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #eee;}
+code, kbd, samp, var {font-family:monospace, monospace;}
+pre {margin:10px 0; padding:5px 10px; white-space:pre-wrap; border:1px solid #eee;}
 blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #08a0ff;}
 address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #08a0ff;}
-p {margin:0 0 10px; text-align:justify;}
+p {margin:0 0 10px;}
 
 
 /* TABLE AND HTML TAGS */
@@ -120,8 +121,8 @@ dd {margin:0 0 0 20px;}
 input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #eee; padding:2px 5px; background:none; font-size:1em; font-family:'Open Sans', sans-serif;}
 input[type="submit"], input[type="reset"], input[type="button"] {cursor:pointer; border:0; padding:2px 5px; background:#08a0ff; color:#fff;}
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {background:#333;}
-input[type="checkbox"]{-webkit-appearance:checkbox; -moz-appearance:checkbox;}
-input[type="radio"]{-webkit-appearance:radio; -moz-appearance:radio;}
+input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
+input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
 select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
@@ -140,7 +141,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* HEADER FIRST MENU */
 .nav-head {width:65%; float:right; text-align:right; margin:25px 0 0;}
 .nav-head select {display:none;}
-.nav-head ul {padding:0; margin:0; z-index:999;}
+.nav-head ul {padding:0; margin:0; z-index:999; list-style:none;}
 .nav-head ul li {list-style-type:none; display:inline-block; position:relative;}
 .nav-head ul li a {text-decoration:none; padding:0 0 5px; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}

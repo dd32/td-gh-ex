@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 3.3 - march 2016
+- added file postmeta
+- files archive, index, search and single: relocated postmetadata to separate file
+- file style and custom-editor-style: updated html tags (thanks Tom)
+- updated text strings (thanks Tom)
+- several small adjustments
+
 MyKnowledgeBase version 3.2 - february 2016
 - file header: the search bar in header is for posts only
 - theme customizer: change search bar title

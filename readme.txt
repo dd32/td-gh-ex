@@ -21,7 +21,7 @@ If you want this page to be homepage go to Settings > Reading and select this pa
 
 HOW TO CREATE A LINK PORTAL 
 ===========================
-If you only want to display a list of links you can install this plugin: https://wordpress.org/plugins/page-links-to
+To display a list of website links you can install this plugin: https://wordpress.org/plugins/page-links-to
 While creating a post you can add the URL (website) of your choice.
 When you click the post link in frontend it will redirect you to this URL (so the post will not open).
 
@@ -29,7 +29,7 @@ When you click the post link in frontend it will redirect you to this URL (so th
 HOW TO CHANGE HEADER IMAGE
 ==========================
 You can change the header-image via WordPress Dashboard > Appearance > Customize.
-I advice you to use a header-image of 600px wide and 400px high. 
+You will find the recommended size there too.
 
 
 HOW TO SET LOGO
@@ -46,6 +46,11 @@ HOW TO SET MENU
 ===============
 Theme offers a menu that can contain subpages (2 levels deep).
 You can create and set menu via WordPress Dashboard > Appearance > Menus.
+
+
+HOW TO CHANGE SEARCH BAR TITLE
+==============================
+You can change the search bar title via WordPress Dashboard > Appearance > Customize.
 
 
 TRANSLATION

@@ -114,7 +114,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Right', 'myknowledgebase' ),
+		'name' => __( 'Footer Right', 'myknowledgebase' ),
 		'id' => 'footer-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'myknowledgebase' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -124,7 +124,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Middle', 'myknowledgebase' ),
+		'name' => __( 'Footer Middle', 'myknowledgebase' ),
 		'id' => 'footer-middle',
 		'description' => __( 'You can add one or multiple widgets here.', 'myknowledgebase' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -134,7 +134,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Left', 'myknowledgebase' ),
+		'name' => __( 'Footer Left', 'myknowledgebase' ),
 		'id' => 'footer-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'myknowledgebase' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -204,7 +204,7 @@
 			'sanitize_callback' => 'sanitize_text_field', 
 		) ); 
 		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_posts', array( 
-			'label' => __( 'Posts per page', 'myknowledgebase' ), 
+			'label' => __( 'Posts per category', 'myknowledgebase' ), 
 			'description' => __( 'Only numeric characters allowed.', 'myknowledgebase' ), 
 			'section' => 'myknowledgebase_posts_section', 
 			'type' => 'number', 
