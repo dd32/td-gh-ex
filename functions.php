@@ -94,7 +94,7 @@
 // Sidebars
 	function onecolumn_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar Right', 'onecolumn' ),
+		'name' => __( 'Homepage Right', 'onecolumn' ),
 		'id' => 'homepage-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -104,7 +104,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar Left', 'onecolumn' ),
+		'name' => __( 'Homepage Left', 'onecolumn' ),
 		'id' => 'homepage-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -114,7 +114,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Right', 'onecolumn' ),
+		'name' => __( 'Footer Right', 'onecolumn' ),
 		'id' => 'footer-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -124,7 +124,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Left', 'onecolumn' ),
+		'name' => __( 'Footer Left', 'onecolumn' ),
 		'id' => 'footer-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',

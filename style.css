@@ -1,10 +1,10 @@
 /*
 Theme Name: OneColumn
 Theme URI: http://www.guidovanderleest.nl/onecolumn
-Version: 4.0
+Version: 4.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: OneColumn is a free, clean, minimalistic, responsive, mobile friendly one column WordPress theme. Features: widget areas in header, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, dropdown navigation. That's it. Enjoy. 
+Description: OneColumn is a free, clean, minimalistic, responsive, mobile friendly, one column WordPress theme. Features: widget areas on homepage, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, dropdown navigation. Enjoy. 
 Tags: one-column, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, gray, orange, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -67,15 +67,15 @@ table {
 
 
 /* BODY AND CONTAINER */
-body {background:#fff; font-family:'Open Sans', sans-serif; font-size:1em; line-height:1.5em; color:#333;}
-#container {width:100%; float:left; margin:0 auto 0; background:none; text-align:left; word-wrap:break-word;}
+body {background:#fff; font-family:'Open Sans', sans-serif; font-size:1em; line-height:1.5em; color:#333; text-align:left; word-wrap:break-word;}
+#container {width:100%; float:left; margin:0 auto 0;}
 
 
 /* MAIN CONTENT AREA */
 #main-content {max-width:960px; clear:both; position:relative; margin:0 auto 0;}
 #main-content:after {content:''; display:block; height:0; clear:both;}
 
-#content {width:96%; clear:both; float:left; padding:20px 2%; background:#f8f8f8;}
+#content {width:94%; clear:both; float:left; padding:20px 3%; background:#f8f8f8;}
 
 
 /* HEADINGS */
@@ -93,15 +93,16 @@ a:hover {text-decoration:underline;}
 
 strong, b {font-weight:bold;}
 small {font-size:0.75em;}
-big {font-size:1.5em;}
+big {font-size:1.25em;}
 sub {vertical-align:sub; font-size:0.9em;}
 sup {vertical-align:super; font-size:0.9em;}
-ins, mark {font-weight:bold; background:none; color:#f26535;}
+ins, mark {font-weight:bold; background:none; text-decoration:none; color:#f26535;}
 cite, em, abbr, acronym {font-style:italic;}
-code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #ccc;}
+code, kbd, samp, var {font-family:monospace, monospace;}
+pre {margin:10px 0; padding:5px 10px; white-space:pre-wrap; border:1px solid #ccc;}
 blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #f26535;}
 address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #f26535;}
-p {margin:0 0 10px; text-align:justify;}
+p {margin:0 0 10px;}
 
 
 /* TABLE AND LISTS */
@@ -121,8 +122,8 @@ dd {margin:0 0 0 20px;}
 input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #ccc; padding:2px 5px; background:none; font-size:1em; font-family:'Open Sans', sans-serif;}
 input[type="submit"], input[type="reset"], input[type="button"] {cursor:pointer; border:0; padding:2px 5px; background:#f26535; color:#fff;}
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {background: #333;}
-input[type="checkbox"]{-webkit-appearance:checkbox; -moz-appearance:checkbox;}
-input[type="radio"]{-webkit-appearance:radio; -moz-appearance:radio;}
+input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
+input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
 select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
@@ -147,7 +148,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* HEADER MENU */
 .nav-head {width:100%; float:left; clear:both; padding:10px 0;}
 .nav-head select {display:none;}
-.nav-head ul {padding:0; margin:0; z-index:999;}
+.nav-head ul {padding:0; margin:0; z-index:999; list-style:none;}
 .nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0 10px;}
 .nav-head ul li a {text-decoration:none; color:#fff; background:none; padding:10px 0; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
@@ -163,7 +164,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HOMEPAGE WIDGET AREA */
-#header-widgets {width:96%; float:left; clear:both; padding:0 2%; background:#f8f8f8; border-bottom:3px solid #f26535;}
+#header-widgets {width:94%; float:left; clear:both; padding:0 3%; background:#f8f8f8; border-bottom:3px solid #f26535;}
 
 .home-left {float:left; width:48%;}
 .home-right {float:right; width:48%;}
@@ -250,13 +251,13 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* FOOTER */
-#footer {width:96%; float:left; clear:both; padding:20px 2%; background:#f26535; color:#fff;}
+#footer {width:94%; float:left; clear:both; padding:20px 3%; background:#f26535; color:#fff;}
 #footer .site-info {width:100%; clear:both; text-align:center;}
 #footer .site-info a {color:#fff;}
 
 
 /* FOOTER WIDGET AREA */
-#sidebar {width:96%; float:left; clear:both; padding:0 2%; color:#333; background:#f8f8f8; border-top:3px solid #f26535;}
+#sidebar {width:94%; float:left; clear:both; padding:0 3%; color:#333; background:#f8f8f8; border-top:3px solid #f26535;}
 
 .footer-left {float:left; width:48%;}
 .footer-right {float:right; width:48%;}
