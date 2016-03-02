@@ -79,7 +79,7 @@ function quickpress_excerpt_more( $more ) {
 // credits
 function quickpress_credits() {
     echo '<p class="text-center">
-	<a href="http://www.quickonlinethemes.com/wordpress/quickpress/" title="QuickPress Theme" rel="nofollow" >QuickPress Theme</a>' 
+	<a href="http://www.quickonlinethemes.com/wordpress/quickpress/" title="QuickPress Theme">QuickPress Theme</a>' 
  	. __(' powered by ', 'quickpress') . 
 	'<a href="http://wordpress.org">WordPress</a>
 	</p>';
