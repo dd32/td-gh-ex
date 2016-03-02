@@ -2,7 +2,7 @@
 Theme Name: ProMax
 Theme URI: http://www.insertcart.com/product/promax-wordpress-theme/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo http://demo.baztro.com/promax 
-Version: 1.5.6
+Version: 1.5.7
 Author: InsertCart.com
 Author URI: http://www.insertcart.com/
 Tags: black, blue, white, light, red, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, responsive-layout
@@ -865,7 +865,7 @@ height: 335px;
 box-shadow: 0 0px 1px 0 #B5B5B5;
 -moz-box-shadow: 0 0px 1px 0 #b5b5b5;
 -webkit-box-shadow: 0 0px 1px 0 #B5B5B5;
-
+    position: relative;
 }
 .imag .entry {
 padding: 4px 5px 0px 5px;
@@ -915,7 +915,6 @@ display: inline;
 position: absolute;
 background: #4DD247;
 padding: 6px;
-max-width: 19%;
 overflow: overlay;
 }
 .homecat a {
@@ -1068,7 +1067,7 @@ content: "\f02b";
 #metad{
 	border-bottom: 1px solid #DDD;
 }
-.postcateg::before{
+.postcateg a::before{
 	content: "\f009";
 	font: normal normal normal 14px/1 FontAwesome;
 	padding: 6px;
@@ -1484,11 +1483,11 @@ clear: both;
 	float: left;
 	position: relative;
 }
-.small-3{
-	    width: 25%;
+.small-2{
+	    width: 20%;
 }
-.small-9{
-	    width: 75%;
+.small-10{
+	    width: 80%;
 }
 .column + .column:last-child, .columns + .column:last-child, .column + .columns:last-child, .columns + .columns:last-child{
 float:right;

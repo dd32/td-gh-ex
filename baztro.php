@@ -108,4 +108,12 @@ function promax_breadcrumbs() {
 
     echo '</div>';
 }
+
+	function promax_tiltechange() {
+	if (of_get_option('promax_latestchange') != '') {
+            echo '' . of_get_option('promax_latestchange') . '' . "\n";
+        }
+	else {echo 'Latest Posts' . "\n";
+	}	
+	}
 ?>

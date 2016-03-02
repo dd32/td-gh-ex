@@ -4,7 +4,7 @@
 	<?php if (of_get_option('promax_latest' ) =='1' ) {load_template(get_template_directory() . '/includes/ltposts.php'); } ?>
 		<div id="page-inner" class="clearfix">
 						<div id="content">
-					<div class="posthd">Latest Posts</div>
+					<div class="posthd"><?php promax_tiltechange(); ?></div>
 					<?php if(have_posts()) : ?>
 					<?php while(have_posts())  : the_post(); ?>
 							<div class="imag"><?php get_template_part('/includes/post'); ?></div>

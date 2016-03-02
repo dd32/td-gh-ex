@@ -22,7 +22,7 @@ $wp_customize->add_section( 'promax_responsive' ,
         array(
 				'title'       => __( 'Theme Options & Settings', 'promax' ),
 				'priority'    => 30,
-'description'	=> __('Upload Logo and Change Theme Settings Please Go to Theme options.', 'promax'). '<a href="' . esc_url(__(admin_url( 'admin.php?page=options-framework' ).'','promax')) . '" target="_blank">' . esc_attr__( ' Change Theme Options', 'promax' ) . '</a>'
+				'description'	=> __('Upload Logo and Change Theme Settings Please Go to Theme options.', 'promax'). '<a href="' . esc_url(__(admin_url( 'admin.php?page=options-framework' ).'','promax')) . '" target="_blank">' . esc_attr__( ' Change Theme Options', 'promax' ) . '</a>'
 					
 		));
 		

@@ -36,6 +36,10 @@ Custom Css:
 
 == Change log ==
 
+= 1.5.7 =
+* Added German, Arabic, Hindi translation
+* Now you can change text of latest post
+
 = 1.5.6 =
 * Added Category description in archive page
 * Fixed popular post title alignment in firefox
