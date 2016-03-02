@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+DarkElements version 3.7 - march 2016
+- added file postmeta
+- files archive, index, search and single: relocated postmetadata to separate file
+- file style and custom-editor-style: updated html tags (thanks Tom)
+- updated text strings (thanks Tom)
+- several small adjustments
+
 DarkElements version 3.6 - february 2016
 - theme customizer: change menu title
 - file search: post nav inside the loop

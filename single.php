@@ -12,14 +12,8 @@
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
 			<h4 class="post-title"><?php the_title(); ?></h4>
 
-			<div class="postmetadata">
-				<?php printf( __( 'Posted on %s', 'darkelements' ), '<a href="'. esc_url( get_permalink() ) .'">' . esc_html( get_the_date() ). '</a>' ); ?> <?php echo '|'; ?> 
-				<?php printf( __( 'By %s', 'darkelements' ), sprintf( '<a href="%1$s">%2$s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() ) ) ); ?>
-				<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-					<?php echo '|'; ?> <?php comments_popup_link( __( 'Leave a response', 'darkelements' ), __( '1 response', 'darkelements' ), __( '% responses', 'darkelements' ) ); ?>
-				<?php endif; ?>
-			</div>
-	
+			<?php get_template_part( 'postmeta' ); ?>
+		
 			<?php the_content(); ?>
 
 			<?php if ( $multipage ) { ?>
@@ -27,9 +21,9 @@
 			<?php } ?> 
 
 			<div class="postmetadata">
-				<?php printf( __( 'Posted in %s', 'darkelements' ), get_the_category_list( __( ', ', 'darkelements' ) ) ); ?>
+				<?php printf( __( 'Category: %s', 'darkelements' ), get_the_category_list( __( ', ', 'darkelements' ) ) ); ?>
 				<?php if(has_tag() ) : ?>
-					<?php echo '|'; ?> <?php printf(__( 'Tags: %s', 'darkelements' ), get_the_tag_list('', __( ', ', 'darkelements' ) ) ); ?>
+					<?php echo '|'; ?> <?php printf(__( 'Tag: %s', 'darkelements' ), get_the_tag_list('', __( ', ', 'darkelements' ) ) ); ?>
 				<?php endif; ?>
 			</div>
 		</div>

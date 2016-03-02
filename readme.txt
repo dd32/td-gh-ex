@@ -14,7 +14,7 @@ To set a static homepage go to your WordPress Dashboard > Settings > Reading and
 HOW TO CHANGE HEADER IMAGE
 ==========================
 You can change the header-image via WordPress Dashboard > Appearance > Customize.
-I advice you to use a header-image of 680px wide and 450px high. 
+You will find the recommended size there too.
 
 
 HOW TO SET LOGO
@@ -31,6 +31,11 @@ HOW TO SET MENU
 ===============
 Theme offers a menu that can contain subpages (2 levels deep).
 You can create and set menu via WordPress Dashboard > Appearance > Menus.
+
+
+HOW TO CHANGE MENU TITLE
+========================
+You can change the menu title via WordPress Dashboard > Appearance > Customize.
 
 
 TRANSLATION

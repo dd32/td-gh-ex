@@ -104,7 +104,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Right', 'darkelements' ),
+		'name' => __( 'Footer Right', 'darkelements' ),
 		'id' => 'footer-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'darkelements' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -114,7 +114,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Middle', 'darkelements' ),
+		'name' => __( 'Footer Middle', 'darkelements' ),
 		'id' => 'footer-middle',
 		'description' => __( 'You can add one or multiple widgets here.', 'darkelements' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -124,7 +124,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Left', 'darkelements' ),
+		'name' => __( 'Footer Left', 'darkelements' ),
 		'id' => 'footer-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'darkelements' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',

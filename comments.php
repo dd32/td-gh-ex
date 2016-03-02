@@ -13,7 +13,7 @@ if ( post_password_required() )
 
 	<?php if ( have_comments() ) : ?>
 		<h4 class="comments-title">
-			<?php printf( _n( '1 response on %2$s', '%1$s responses on %2$s', get_comments_number(), 'darkelements' ), number_format_i18n( get_comments_number() ), get_the_title() ); ?> 
+			<?php printf( _n( '1 comment on %2$s', '%1$s comments on %2$s', get_comments_number(), 'darkelements' ), number_format_i18n( get_comments_number() ), get_the_title() ); ?> 
 		</h4>
 
 		<ol class="comment-list">
@@ -26,13 +26,13 @@ if ( post_password_required() )
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<div class="comment-nav">
-				<?php previous_comments_link( __( '&laquo; Older Comments', 'darkelements' ) ); ?>
-				<?php next_comments_link( __( 'Newer Comments &raquo;', 'darkelements' ) ); ?>
+				<?php previous_comments_link(); ?>
+				<?php next_comments_link(); ?>
 			</div>	
 		<?php endif; ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
-			<h4 class="no-comments"><?php _e( 'Comments are closed' , 'darkelements' ); ?></h4>
+			<h4 class="no-comments"><?php _e( 'Comments are closed.', 'darkelements' ); ?></h4>
 		<?php endif; ?>
 
 	<?php endif; ?>
