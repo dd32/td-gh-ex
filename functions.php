@@ -117,7 +117,7 @@ function darkorange_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Right', 'darkorange' ),
+		'name' => __( 'Footer Right', 'darkorange' ),
 		'id' => 'footer-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'darkorange' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -127,7 +127,7 @@ function darkorange_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Left', 'darkorange' ),
+		'name' => __( 'Footer Left', 'darkorange' ),
 		'id' => 'footer-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'darkorange' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
