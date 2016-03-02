@@ -104,7 +104,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Right', 'shipyard' ),
+		'name' => __( 'Footer Right', 'shipyard' ),
 		'id' => 'footer-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'shipyard' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -114,7 +114,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Left', 'shipyard' ),
+		'name' => __( 'Footer Left', 'shipyard' ),
 		'id' => 'footer-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'shipyard' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
