@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+LeftSide version 3.1 - march 2016
+- added file postmeta
+- files archive, index, search and single: relocated postmetadata to separate file
+- file style and custom-editor-style: updated html tags (thanks Tom)
+- updated text strings (thanks Tom)
+- several small adjustments
+
 LeftSide version 3.0 - february 2016
 - theme customizer: change menu title
 - file search: post nav inside the loop
