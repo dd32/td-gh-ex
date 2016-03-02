@@ -104,7 +104,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar Right', 'bluegray' ),
+		'name' => __( 'Homepage Right', 'bluegray' ),
 		'id' => 'homepage-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -114,7 +114,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar Middle', 'bluegray' ),
+		'name' => __( 'Homepage Middle', 'bluegray' ),
 		'id' => 'homepage-middle',
 		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -124,7 +124,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar Left', 'bluegray' ),
+		'name' => __( 'Homepage Left', 'bluegray' ),
 		'id' => 'homepage-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -134,7 +134,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Right', 'bluegray' ),
+		'name' => __( 'Footer Right', 'bluegray' ),
 		'id' => 'footer-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -144,7 +144,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Middle', 'bluegray' ),
+		'name' => __( 'Footer Middle', 'bluegray' ),
 		'id' => 'footer-middle',
 		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -154,7 +154,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Left', 'bluegray' ),
+		'name' => __( 'Footer Left', 'bluegray' ),
 		'id' => 'footer-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'bluegray' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',

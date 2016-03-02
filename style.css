@@ -1,10 +1,10 @@
 /*
 Theme Name: BlueGray
 Theme URI: http://www.guidovanderleest.nl/bluegray
-Version: 3.7
+Version: 3.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: BlueGray is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: primary sidebar, widget areas in header, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
+Description: BlueGray is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, blue, light, dark, gray, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -67,8 +67,8 @@ table {
 
 
 /* BODY AND CONTAINER */
-body {background:#eee; font-family:'Open Sans', sans-serif; font-size:1em; color:#333; line-height:1.5em;}
-#container {width:100%; float:left; margin:0 auto 0; text-align:left; word-wrap:break-word;}
+body {background:#eee; font-family:'Open Sans', sans-serif; font-size:1em; color:#333; line-height:1.5em; text-align:left; word-wrap:break-word;}
+#container {width:100%; float:left; margin:0 auto 0;}
 
 
 /* MAIN CONTENT AREA */
@@ -94,15 +94,16 @@ a:hover {text-decoration:underline;}
 
 strong, b {font-weight:bold;}
 small {font-size:0.75em;}
-big {font-size: 1.5em;}
+big {font-size:1.25em;}
 sub {vertical-align:sub; font-size:0.9em;}
 sup {vertical-align:super; font-size:0.9em;}
-ins, mark {font-weight:bold; background:none; color:#00aaff;}
+ins, mark {font-weight:bold; background:none; text-decoration:none; color:#00aaff;}
 cite, em, abbr, acronym {font-style:italic;}
-code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #ddd;}
+code, kbd, samp, var {font-family:monospace, monospace;}
+pre {margin:10px 0; padding:5px 10px; white-space:pre-wrap; border:1px solid #ddd;}
 blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #00aaff;}
 address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #00aaff;}
-p {margin:0 0 10px; text-align:justify;}
+p {margin:0 0 10px;}
 
 
 /* TABLE AND LISTS */
@@ -122,8 +123,8 @@ dd {margin:0 0 0 20px;}
 input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #ddd; padding:2px 5px; background:none; color:#333; font-size:1em; font-family:'Open Sans', sans-serif;}
 input[type="submit"], input[type="reset"], input[type="button"] {cursor:pointer; border:0; padding:2px 5px; background:#00aaff; color:#fff;}
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {background:#333;}
-input[type="checkbox"]{-webkit-appearance:checkbox; -moz-appearance:checkbox;}
-input[type="radio"]{-webkit-appearance:radio; -moz-appearance:radio;}
+input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
+input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
 select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
@@ -149,7 +150,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* HEADER SECOND MENU */
 .nav-head {width:100%; clear:both; float:left; background:#333;}
 .nav-head select {display:none;}
-.nav-head ul {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px 0; z-index:999;}
+.nav-head ul {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px 0; z-index:999; list-style:none;}
 .nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0 10px;}
 .nav-head ul li a {text-decoration:none; color:#ddd; background:none; padding:10px 0; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
