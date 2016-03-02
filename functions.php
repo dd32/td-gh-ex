@@ -114,7 +114,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Right', 'medical' ),
+		'name' => __( 'Footer Right', 'medical' ),
 		'id' => 'footer-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'medical' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -124,7 +124,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Middle', 'medical' ),
+		'name' => __( 'Footer Middle', 'medical' ),
 		'id' => 'footer-middle',
 		'description' => __( 'You can add one or multiple widgets here.', 'medical' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -134,7 +134,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Left', 'medical' ),
+		'name' => __( 'Footer Left', 'medical' ),
 		'id' => 'footer-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'medical' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',

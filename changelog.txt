@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+Medical version 3.3 - march 2016
+- added file postmeta
+- files archive, index, search and single: relocated postmetadata to separate file
+- file style and custom-editor-style: updated html tags (thanks Tom)
+- updated text strings (thanks Tom)
+- several small adjustments
+
 Medical version 3.2 - february 2016
 - file search: post nav inside the loop
 - file style: fixed alignment of next and prev post link
