@@ -253,7 +253,7 @@ function accesspress_slickliderscript(){
 	$accesspress_show_pager = (get_theme_mod('show_pager','0') == "0") ? "false" : "true";
 	$accesspress_show_controls = (get_theme_mod('show_controls','0') == "0") ? "false" : "true";
 	$accesspress_auto_transition = (get_theme_mod('auto_transition','0') == "0") ? "false" : "true";
-	$accesspress_slider_transition = (get_theme_mod('slider_transition','true')) ? "true" : "false";
+	$accesspress_slider_transition = get_theme_mod('slider_transition','true');
 	$accesspress_slider_speed = (!get_theme_mod('slider_speed')) ? "5000" : get_theme_mod('slider_speed');
 	$accesspress_slider_pause = (!get_theme_mod('slider_pause')) ? "5000" : get_theme_mod('slider_pause');
 	if( $accesspress_show_slider == "1") : 
@@ -266,11 +266,30 @@ function accesspress_slickliderscript(){
 				speed: <?php echo esc_attr($accesspress_slider_speed); ?>,
 				fade: <?php echo esc_attr($accesspress_slider_transition); ?>,
 				cssEase: 'linear',
-				slickPause:<?php echo esc_attr($accesspress_slider_pause); ?>,
+				autoplaySpeed:<?php echo esc_attr($accesspress_slider_pause); ?>,
 				autoplay:<?php echo esc_attr($accesspress_auto_transition); ?>,
 				adaptiveHeight:true,
-				infinite:false
-			});				
+				infinite:true,
+                draggable: true,
+			});
+
+			<?php if($accesspress_slider_transition == "true"){ ?>
+			$('#main-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+			
+			    $('#main-slider .slick-slide .caption-title').removeClass('fadeInDown animated displayNone');
+			    $('#main-slider .slick-slide[data-slick-index='+nextSlide+'] .caption-title').addClass('fadeInDown animated');
+			    $('#main-slider .slick-slide[data-slick-index='+currentSlide+'] .caption-title').addClass('displayNone');
+			    
+			    $('#main-slider .slick-slide .caption-content').removeClass('fadeInUp animated displayNone'); 
+			    $('#main-slider .slick-slide[data-slick-index='+nextSlide+'] .caption-content').addClass('fadeInUp animated');
+			    $('#main-slider .slick-slide[data-slick-index='+currentSlide+'] .caption-content').addClass('displayNone');
+			    
+			    $('#main-slider .slick-slide .caption-read-more1').removeClass('zoomIn animated displayNone'); 
+			    $('#main-slider .slick-slide[data-slick-index='+nextSlide+'] .caption-read-more1').addClass('zoomIn animated');
+			    $('#main-slider .slick-slide[data-slick-index='+currentSlide+'] .caption-read-more1').addClass('displayNone');
+			 
+			});	
+			<?php } ?> 				
 		});
 	</script>
 	<?php

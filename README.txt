@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 2.0.0 =
+
+** Animation added in main slider caption text.
+
 = 1.1.9 =
 
 ** Fixed the parent menu and child menu responsive issue.
