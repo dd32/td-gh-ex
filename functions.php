@@ -106,7 +106,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar Right', 'privatebusiness' ),
+		'name' => __( 'Homepage Right', 'privatebusiness' ),
 		'id' => 'homepage-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -116,7 +116,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar Left', 'privatebusiness' ),
+		'name' => __( 'Homepage Left', 'privatebusiness' ),
 		'id' => 'homepage-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -126,7 +126,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Right', 'privatebusiness' ),
+		'name' => __( 'Footer Right', 'privatebusiness' ),
 		'id' => 'footer-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -136,7 +136,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Left', 'privatebusiness' ),
+		'name' => __( 'Footer Left', 'privatebusiness' ),
 		'id' => 'footer-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',

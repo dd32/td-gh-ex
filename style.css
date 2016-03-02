@@ -1,10 +1,10 @@
 /*
 Theme Name: PrivateBusiness
 Theme URI: http://www.guidovanderleest.nl/privatebusiness
-Version: 4.2
+Version: 4.3
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: PrivateBusiness is a free, clean, minimalistic, responsive, mobile friendly WordPress theme for Private or Business website. Features: primary sidebar, widget areas in header, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
+Description: PrivateBusiness is a free, clean, minimalistic, responsive, mobile friendly WordPress theme for a private or business website. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, blue, light, gray, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -67,8 +67,8 @@ table {
 
 
 /* BODY AND CONTAINER */
-body {background:#eee; font-family:'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
-#container {max-width:1200px; position:relative; background:#fff; margin:10px auto 10px; padding:20px 0 0; text-align:left; word-wrap:break-word;}
+body {background:#eee; font-family:'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em; text-align:left; word-wrap:break-word;}
+#container {max-width:1200px; position:relative; background:#fff; margin:10px auto 10px; padding:20px 0 0;}
 #container:after {content:''; display:block; height:0; clear:both;}
 
 
@@ -92,15 +92,16 @@ a:hover {text-decoration:underline;}
 
 strong, b {font-weight:bold;}
 small {font-size:0.75em;}
-big {font-size:1.5em;}
+big {font-size:1.25em;}
 sub {vertical-align:sub; font-size:0.9em;}
 sup {vertical-align:super; font-size:0.9em;}
-ins, mark {font-weight:bold; background:none; color:#0066ff;}
+ins, mark {font-weight:bold; background:none; text-decoration:none; color:#0066ff;}
 cite, em, abbr, acronym {font-style:italic;}
-code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #ccc;}
+code, kbd, samp, var {font-family:monospace, monospace;}
+pre {margin:10px 0; padding:5px 10px; white-space:pre-wrap; border:1px solid #ccc;}
 blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #0066ff;}
 address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #0066ff;}
-p {margin:0 0 10px; text-align:justify;}
+p {margin:0 0 10px;}
 
 
 /* TABLE AND LISTS */
@@ -120,8 +121,8 @@ dd {margin:0 0 0 20px;}
 input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #ccc; padding:2px 5px; background:none; font-size:1em; font-family:'Open Sans', sans-serif;}
 input[type="submit"], input[type="reset"], input[type="button"] {cursor:pointer; border:0; padding:2px 5px; background:#0066ff; color:#fff;}
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {background:#333;}
-input[type="checkbox"]{-webkit-appearance:checkbox; -moz-appearance:checkbox;}
-input[type="radio"]{-webkit-appearance:radio; -moz-appearance:radio;}
+input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
+input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
 select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
@@ -138,7 +139,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* HEADER FIRST SECONDARY MENU */
 .nav-head-secondary {width:60%; float:right; text-align:right; margin:10px 0 0;}
 .nav-head-secondary select {display:none;}
-.nav-head-secondary ul {padding:0; margin:0; z-index:999;}
+.nav-head-secondary ul {padding:0; margin:0; z-index:999; list-style:none;}
 .nav-head-secondary ul li {list-style-type:none; display:inline-block; position:relative;}
 .nav-head-secondary ul li a {text-decoration:none; padding:0 0 5px; display:inline-block;}
 .nav-head-secondary ul li a:hover {text-decoration:underline;}
@@ -164,7 +165,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* HEADER SECOND PRIMARY MENU */
 .nav-head-primary {width:98%; clear:both; float:left; background:#0066ff; padding:0 1%;}
 .nav-head-primary select {display:none;}
-.nav-head-primary ul {padding:0; margin:0; z-index:999;}
+.nav-head-primary ul {padding:0; margin:0; z-index:999; list-style:none;}
 .nav-head-primary ul li {list-style-type:none; display:inline-block; position:relative;}
 .nav-head-primary ul li a {text-decoration:none; color:#fff; background:none; padding:10px 0; display:inline-block;}
 .nav-head-primary ul li a:hover {text-decoration:underline;}
