@@ -5,7 +5,7 @@ get_header(); ?>
 
 <div class="ct_single">
 	<div class="container"><div class="row">
-		<?php if(function_exists('ct_breadcrumbs') && of_get_option("show_breadcrumb") =='yes' ) ct_breadcrumbs();?>   
+		<?php if(function_exists('acool_breadcrumbs') && of_get_option("show_breadcrumb") =='yes' ) acool_breadcrumbs();?>   
         
         <div class="col-md-9 ct_single_content ct_post_content">    
         <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
@@ -42,7 +42,8 @@ get_header(); ?>
             <?php the_content(); ?>
 
 
-            <hr style="color:#CCC; margin:0; padding:0;">    
+            <p class="ct_clear"></p>
+            <hr class="ct_hr">  
      
             
         <?php endwhile;endif; ?> 
@@ -52,7 +53,7 @@ get_header(); ?>
         
         </div>
         
-        <?php get_sidebar(); ?> 
+        <?php get_sidebar( 'acool' ); ?>
           
     
 	</div></div> 		      

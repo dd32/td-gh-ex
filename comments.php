@@ -40,7 +40,7 @@ if ( post_password_required() ) {
 				'style'      => 'ol',
 				'short_ping' => true,
 				'avatar_size'=> 34,
-				'callback' => 'better_comments',
+				'callback' => 'acool_better_comments',
 			) );
 		?>
 	</ol><!-- .comment-list -->

@@ -13,7 +13,7 @@
 <div class="ct_acool ">
 	<header id="ct_header" class="ct_header_class site-header ct_header_class_post_page fixed">
     <div class="header_box <?php if(ct_get_option( 'ct_acool','box_header_center' )){echo 'container';}?>">
-		
+
         <div class="ct_logo ct_f_left">
         
         <?php if ( of_get_option('logo')!="") { ?>
@@ -72,5 +72,4 @@
         </div> <!-- #ct-top-navigation -->
         
         </div>
-
 	</header>

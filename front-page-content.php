@@ -26,8 +26,7 @@
 	
 ?>
 
-
-    <div id="ct_content" class="ct_acool_content"> 
+	<div id="ct_content" class="ct_acool_content">   
 	<?php
        
 		if(  $sectionNum > 0 )
@@ -44,8 +43,10 @@
 				}
 				else
 				{
-					$title_style  = "";$background  = "";
-					$title        =  esc_attr( of_get_option('section_title_'.$i, ''));//section title					
+					$title_style  = "";
+					$background  = "";
+					$template     =  esc_attr( of_get_option('ct_select_section_temp_'.$i, ''));//Select Content Template for this section
+					//$title        =  esc_attr( of_get_option('section_title_'.$i, ''));//section title					
 					$post_list_link  =  esc_attr( of_get_option('section_post_list_'.$i, ''));
 					
 					$title_color    = esc_attr(of_get_option('section_title_color_'.$i, '') );//title_color
@@ -59,7 +60,7 @@
 					if( $anchor == "" )$anchor       =  sanitize_title( esc_attr( of_get_option('section_title_'.($i), '')) );
 					if( $anchor == "" )$anchor = "section-".($i+1);   					
 					$section_id  = uniqid("section-id-");
-							
+					//echo $anchor ;		
 					$section_background       = of_get_option( 'section_background_'.$i );
 					$background               = acool_get_background( $section_background , 1);
 										
@@ -87,7 +88,7 @@
 												'repeat'=> ($youtube_video_loop==1)?true:false,
 												'defaultVolum'=>$default_volum ,
 												"container" =>"section.section-video-background",
-												"playerid"=>$title
+												"playerid"=>$template
 												);
 						$background        = "";
 						$class            .= " section-video-background";
@@ -111,12 +112,12 @@
 					}
 	?>
    
-        <section  id="<?php echo $section_id ; ?>" class="ct_section ct_section_<?php echo $title?><?php echo $class; ?>" style=" <?php echo $background; ?>">
+        <section  id="<?php echo $section_id ; ?>" class="ct_section ct_section_<?php echo $template?> <?php echo $class; ?>"  <?php if($background!==''){echo 'style=" '.$background.'" ';} ?>>
 			<div class="container <?php if($full_width == 'yes'){ echo 'ct_full_width';} if($video_enable == 1 ){ echo ' ct_video_height';}?>"> 
 
 				<?php                   
 				  $content = do_shortcode(  $content  ) ;
-				  if($title == 'post_list')
+				  if($template == 'post_list')
 				  {
 					  echo $content ;
 				?>
@@ -176,7 +177,8 @@
 				  	echo $content ;
 					
 				  }
-                ?>						
+                ?>	
+                 					
 			</div>
             
             <?php 
@@ -191,7 +193,7 @@
 			}//for( $i=0; $i<$sectionNum; $i++ )
 		}//if(  $sectionNum > 0 )
     ?>    
-             
+        
     </div><!--div id="ct_content" class="ct_acool_content"-->
 
 <?php get_footer(); ?>

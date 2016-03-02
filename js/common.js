@@ -1,5 +1,15 @@
 jQuery(document).ready(function($){
-
+    window.addEventListener('DOMContentLoaded', function() {
+        new QueryLoader2(document.querySelector("body"), {
+            barColor: "#efefef",
+            backgroundColor: "#111",
+            percentage: true,
+            barHeight: 1,
+            minimumTime: 200,
+            fadeOutTime: 1000
+        });
+    });
+	
 	//tooltip
 	$(function () { $("[data-toggle='tooltip']").tooltip(); });
 
@@ -52,9 +62,62 @@ jQuery(document).ready(function($){
 	} );
 
 
+  //fact
+		var decimal_places = 0;
+		var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 10;
+	  	$('.fact').waypoint(function(down) {
+		  	$('.fact').each(function () {
+			  	var $this = $(this);
+			  	$({ Counter: 0 }).animate({ Counter: parseInt($(this).data('fact')) }, {
+				  duration: 1000,
+				  easing: 'swing',
+				  step: function () {
+					  $this.text(Math.ceil(this.Counter));
+				  }
+			  	});//$({ Counter: 0 }).animate({ Counter: parseInt($(this).data('fact')) }, {
+		  	});//$('.fact').each(function () {
+
+
+		  	$('.fact').animateNumber(
+			{
+			  	color: 'green',
+			},
+			1000
+		  	)		  
+	  },	
+	  {
+		offset: '70%',
+		triggerOnce: true
+	 });//$('.fact').waypoint(function(down) {
+		  
+	// progress bar
+	$('.progress-bar').waypoint(function()
+		{			
+			$(".progress-bar").each(function(){
+				var percent = $(this).data("percent");	
+				var progressBarWidth = percent * $(".col-md-9").width() / 100;
+				$(this).animate({ width: progressBarWidth }, 100);
+			});
+		},	
+		{
+		  offset: '90%',
+		  triggerOnce: true
+		}
+	);	
+	
 
 });
 
-
-
-
+//return top
+window.onscroll=function(){ 
+	if ($(document).scrollTop() > 200) 
+	{ 
+		$(".side").css({display:"block"});
+	}else{ 
+		$(".side").css({display:"none"});	
+	} 
+}
+function goTop(){
+	$('html,body').animate({'scrollTop':0},600);
+}
+//return top end

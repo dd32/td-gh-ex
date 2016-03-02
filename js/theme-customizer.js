@@ -98,6 +98,57 @@
 	} );	
 	
 	
+    //Update other_link_color in real time...
+    wp.customize( 'ct_acool[other_link_color]', function( value ) {
+		
+        value.bind( function( newval ) {			
+            $('a').css('color', newval );			
+            $('li a').css('color', newval );			
+			
+        } );
+    } );	
+	
+    wp.customize( 'ct_acool[other_link_hover_color]', function( value ) {
+		
+        value.bind( function( newval ) {			
+            $('li a:hover').css('color', newval );			
+            $('a:hover').css('color', newval );			
+			
+        } );
+    } );	
+
+
+    wp.customize( 'ct_acool[content_link_color]', function( value ) {
+		
+        value.bind( function( newval ) {			
+            $('.ct_single_content p a').css('color', newval );		
+			
+        } );
+    } );	
+	
+    wp.customize( 'ct_acool[content_link_hover_color]', function( value ) {
+		
+        value.bind( function( newval ) {			
+            $('.ct_single_content p a:hover').css('color', newval );				
+        } );
+    } );	
+
+
+    wp.customize( 'ct_acool[footer_info]', function( value ) {
+		
+        value.bind( function( newval ) {
+			$("span.footer_info").text(newval);	
+			$('span.footer_info').css('display', 'block' );	
+			//span.footer_info{ display:block;}		
+            //$('.ct_single_content p a:hover').css('color', newval );				
+        } );
+    } );	
+
+
+
+	
+	//a:link, a:visited, a:focus,a{color:'.$ct_acool['other_link_color'].';}
+	
 //#ct-top-navigation{ margin:15px 0 0 0;}.ct_logo{ padding-left:20px;}
 
 /*	

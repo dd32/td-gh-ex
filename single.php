@@ -4,10 +4,12 @@
 
 	<div class="container"><div class="row">
     
- 		<div style="margin-left:15px; padding:0;"><?php if(function_exists('ct_breadcrumbs') && of_get_option("show_breadcrumb") =='yes' ) ct_breadcrumbs();?></div>  
+    	<?php get_sidebar( 'content' ); ?>
     
-        <div class="col-md-9 ct_single_content" >  
-       
+    
+ 		<div style="margin-left:15px; padding:0;"><?php if(function_exists('acool_breadcrumbs') && of_get_option("show_breadcrumb") =='yes' ) acool_breadcrumbs();?></div>  
+    
+        <div class="col-md-9 ct_single_content" >     
         <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
         	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <h1 class="ct_title_h1"><?php the_title(); ?></h1>
@@ -25,23 +27,33 @@
     
             <?php the_content(); ?>
             
+            <p class="ct_clear"></p>
+            <hr class="ct_hr"> 
             
-            <hr style="color:#CCC; margin:3em 0 1em 0;"> 
+          
             <?php if(has_tag()){?>
                 <div id="article-tag">
                 <?php the_tags('<strong>Tags:</strong> ', ' , ' , ''); ?>
                 </div> 
             <?php }?> 
             
+			<p></p>
+
+			<?php acool_previous_next('normal');?>
+
+            
             <?php
                 $withcomments = "1";
                 comments_template();
-            ?>       
+            ?>  
+            
+
+                 
              </div>  
         <?php endwhile;endif; ?> 
         </div>
     
-        <?php get_sidebar(); ?> 
+        <?php get_sidebar( 'acool' ); ?>
              
 	</div></div> 		      
 </div>

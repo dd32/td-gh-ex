@@ -59,7 +59,7 @@ class Options_Framework_Media_Uploader {
 		if ( $value ) {
 			$class = ' has-file';
 		}
-		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file chosen', 'Acool') .'" />' . "\n";
+		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file selected', 'Acool') .'" />' . "\n";
 		if ( function_exists( 'wp_enqueue_media' ) ) {
 			if ( ( $value == '' ) ) {
 				$output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __( 'Upload', 'Acool' ) . '" />' . "\n";

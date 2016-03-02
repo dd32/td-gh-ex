@@ -33,7 +33,25 @@
 							?>
       	
                           	</ul>
-                          	<p>&copy; <?php echo date("Y");?>, <?php printf(__('Powered by <a href="%s">WordPress</a>. Designed by <a href="%s">CooThemes.com</a>.','Acool'),esc_url('http://wordpress.org/'),esc_url('http://www.coothemes.com/'));?></p>
+                          	<p>
+							<?php 
+								$footer_info = ct_get_option( 'ct_acool','footer_info' );
+								
+								if ( '' != $footer_info )
+								{
+									//echo '<span class="footer_info">'.esc_html($footer_info).'</span>'; 
+									echo '<span class="footer_info">'.$footer_info.'</span>'; 
+									//echo '<p class="footer_info">'.$footer_info.'</p>'; 
+								}
+                            ?>                            
+                            
+                            
+                           <?php printf(__('Powered by <a href="%s">WordPress</a>. Designed by <a href="%s">CooThemes.com</a>.','Acool'),esc_url('http://wordpress.org/'),esc_url('http://www.coothemes.com/'));?>
+                            
+
+
+                                                   
+                            </p>
                       	</div>
                   	</div>
               	</div>
@@ -43,6 +61,12 @@
     </footer>
  
 </div><!--div class="ct_acool "-->
+
+<div class="side">
+	<ul>
+		<li id="gotop"><a href="javascript:goTop();" class="sidetop"><img src="<?php echo get_template_directory_uri(); ?>/images/side_icon05.png"></a></li>
+	</ul>
+</div>
 
 <?php wp_footer(); ?>
 </body>

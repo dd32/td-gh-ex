@@ -206,6 +206,7 @@ class Options_Framework_Admin {
 				</div>
 				</form>
 			</div> <!-- / #container -->
+            <?php do_action( 'optionsframework_sidebar' ); ?>
 		</div>
 		<?php do_action( 'optionsframework_after' ); ?>
 		</div> <!-- / .wrap -->

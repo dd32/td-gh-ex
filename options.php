@@ -14,6 +14,49 @@ function optionsframework_option_name() {
 	//return 'options-framework-theme';
 }
 
+
+function ct_std_select($i)
+{
+	switch ($i)
+	{
+		case 0:
+		  $return = 'video';
+		  break;
+		case 1:
+		  $return = 'columns';
+		  break;
+		case 2:
+		  $return = 'post_list';
+		  break;
+		case 3:
+		  $return = 'team';
+		  break;				  
+		case 4:
+		  $return = 'facts';
+		  break;				  
+		case 5:
+		  $return = 'progress_bar';
+		  break;				  
+		case 6:
+		  $return = 'price';
+		  break;				  
+		case 7:
+		  $return = 'video';
+		  break;
+		case 8:
+		  $return = 'video';
+		  break;	
+		case 9:
+		  $return = 'video';
+		  break;					  			  				  
+		  
+		default:
+		  $return = 'video';
+	}
+	
+	return $return;
+}
+			
 /**
  * Defines an array of options that will be used to generate the settings page and be saved in the database.
  * When creating the 'id' fields, make sure to use all lowercase and no spaces.
@@ -26,7 +69,7 @@ function optionsframework_option_name() {
 function optionsframework_options()
 {
 	// initialized data
-	
+
 	// Background Defaults
 	$background_defaults = array(
 		'color' => '',
@@ -63,9 +106,9 @@ function optionsframework_options()
 		'position' => 'top center',
 		'attachment'=>'scroll' );
 
-	// If using image radio buttons, define a directory path
 	//$imagepath =  get_template_directory_uri() . '/images/';
-	$imagepath =  'https://www.coothemes.com/wp-content/themes/acool/images/';	
+	$imagepath =  'https://www.coothemes.com/wp-content/themes/acool/images/';
+	//$imagepath =  'http://localhost/wp440/images/';		
 
 	$options = array();
 
@@ -108,9 +151,9 @@ function optionsframework_options()
 		'type' => 'upload');
 		
 	
-	$options[] = array('name' => __('Link Color', 'Acool'),'id' => 'link_color','std'=>'#2C2C2C' ,'type'=> 'color');	
-	$options[] = array('name' => __('Link Mouseover Color', 'Acool'),'std'=>'#0c8432','id' => 'link_mouseover_color' ,'type'=> 'color');	
-	$options[] = array('name' => __('Site Title Color', 'Acool'),'id' => 'site_title_color','std'=>'#2C2C2C' ,'type'=> 'color');	
+	//$options[] = array('name' => __('Link Color', 'Acool'),'id' => 'link_color','std'=>'#03a325' ,'type'=> 'color');	
+	//$options[] = array('name' => __('Link Mouseover Color', 'Acool'),'std'=>'#0c8432','id' => 'link_mouseover_color' ,'type'=> 'color');	
+	//$options[] = array('name' => __('Site Title Color', 'Acool'),'id' => 'site_title_color','std'=>'#2C2C2C' ,'type'=> 'color');	
 	
 	$options[] = array(
 		'name' => __('404 Page Content', 'Acool'),
@@ -140,7 +183,7 @@ function optionsframework_options()
 			'name' => __('Enable Featured Homepage', 'Acool'),
 			'desc' => sprintf(__('Active featured homepage Layout.  The standardized way of creating Static Front Pages: <a href="%s" target="_blank">Creating a Static Front Page</a>', 'Acool'),esc_url('http://codex.wordpress.org/Creating_a_Static_Front_Page')),
 			'id' => 'enable_home_page',
-			'std' => '1',
+			'std' => '0',
 			'type' => 'checkbox');
 		  
 		 $options[] = array(
@@ -149,11 +192,11 @@ function optionsframework_options()
 			'id' => 'section_num',
 			'type' => 'select',
 			'class' => 'mini',
-			'std' => '4',
+			'std' => '7',
 			'options' => array_combine(range(1,10), range(1,10)) );
 	
 			
-		 $section_num = of_get_option( 'section_num', 4 );
+		 $section_num = of_get_option( 'section_num', 7 );
 	
 	
 		 //set video main div
@@ -174,6 +217,8 @@ function optionsframework_options()
 				$video_background_section[$i] = "Secion ".$i;
 			}
 		}*/
+		
+		
 		$options[]  = array('name' => __('Video Background Section', 'Acool'),'std' => '1','id' => 'video_background_section',
 			'type'  => 'select','options'=>$video_background_section);
 			
@@ -182,16 +227,14 @@ function optionsframework_options()
 		 
 		//slider or content
 		$options[] = array('name' => __('Section 1 Content', 'Acool'),'std' => 'slider','class' => 'mini','id' => 'section_1_content','type' => 'select','options'=>array("content"=>__('Content', 'Acool'),"slider"=>__('Slider', 'Acool')));
-			
-	
-		$section_title              = array("video_default","columns","post_list","team","");	
-		$section_title_color        = array("","#00bceb","#ffffff","#3b3b3b","#ff8400");//array("","#3b3b3b","#4dad00","#305999","#ff8400");
-		$section_title_border_color = array("","#009dc4","#459a00","#305999","#ff6c00");
-		$section_content_color      = array("#ffffff","#595959","#ffffff","#595959","#ffffff");
-		$section_anchor             = array("section-video-default","section-columns","section-post-list","section-team","section-footer");
-		$section_css_class          = array("","","","","");
-		$section_background_size    = array("yes","no","no","yes","no");
-		$section_full_width         = array("yes","no","yes","no","");
+		//$section_title_border_color = array("","#009dc4","#459a00","#305999","#ff6c00");		
+		$section_title              = array("video"                , "columns"       ,"post_list"        ,"team"        ,"facts"         ,"progress_bar"        ,"price"        );	
+		$section_title_color        = array(""                     , "#00bceb"       ,"#ffffff"          ,"#3b3b3b"     ,"#303030"       ,"#303030"             ,"#303030"      );
+		$section_content_color      = array("#ffffff"              ,"#595959"        ,"#ffffff"          ,"#595959"     ,"#303030"       ,"#ffffff"             ,"#ffffff"      );
+		$section_anchor             = array("section-video-default","section-columns","section-post-list","section-team","section-facts" ,"section-progress-bar","section-price");
+		$section_css_class          = array(""                     ,""               ,""                 ,""            ,""              ,""                    ,""             );
+		$section_background_size    = array("yes"                  ,"yes"            ,"yes"              ,"yes"         ,"yes"           ,"yes"                 ,"yes"          );
+		$section_full_width         = array("yes"                  ,"no"             ,"yes"              ,"no"          ,"no"            ,"no"                  ,"no"           );
 		
 		$section_background = array
 		(
@@ -224,12 +267,26 @@ function optionsframework_options()
 					'attachment'=>'scroll' 
 				),
 			 array(
-					'color' => '#020202',
+					'color' => '#ffffff',
 					'image' => '',
 					'repeat' => 'repeat',
 					'position' => 'top left',
 					'attachment'=>'scroll' 
-				)
+				),
+			 array(
+					'color' => '#61c148',
+					'image' => '',
+					'repeat' => 'repeat',
+					'position' => 'top left',
+					'attachment'=>'scroll' 
+				),			
+			 array(
+					'color' => '#ffffff',
+					'image' => '',
+					'repeat' => 'repeat',
+					'position' => 'top left',
+					'attachment'=>'scroll' 
+				)				
 		);
 
 		$section_content   = array(
@@ -343,7 +400,143 @@ function optionsframework_options()
 							<p class="ct_team_text2"> consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>                      
 						</div>                                          
 					</div>
-			'						
+			', 
+				   
+			'<h2 class="case-tx0">FACTS</h2>				
+                <div class="row ct_facts">                
+                    <div class="col-xs-12 col-sm-6 col-lg-3 ct_clear_margin_padding">               
+                        <span id="" class="fact" data-fact="88">0</span>
+                        <p>Employees</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3 ct_clear_margin_padding">                 
+                        <span id="" class="fact" data-fact="168">0</span>
+                        <p>Projects</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3 ct_clear_margin_padding">              
+                       <span id="" class="fact" data-fact="76">0</span>
+                       <p>Dogs</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3 ct_clear_margin_padding">              
+                       <span id="" class="fact" data-fact="18">0</span>
+                       <p>Offices</p>
+                    </div>
+                </div>
+			', 
+				   
+			'<h2 class="case-tx0">OUR SKILLS</h2>
+			<div class="ct_progress" >
+				<div class="col-md-6 ">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					 Lorem Ipsum has been the industry standard dummy text ever since the 1500s, 
+					 when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+					<div class="clear"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="col-md-3  ct_progress_px">Web Design</div>
+					<div class="col-md-9 progress ct_clear_margin_padding ct_progress_px">
+						<div class="progress-bar ct_progress_width" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" data-percent="80">
+							<div>80% </div>
+						</div>
+					</div>
+					<div class="ct_clear"></div>
+					<div class="col-md-3 ct_progress_px">HTML/CSS</div>
+					<div class="col-md-9 progress ct_clear_margin_padding ct_progress_px">
+						<div class="progress-bar progress-bar-success  ct_progress_width" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"  data-percent="70">
+							<div>70% </div>
+						</div>
+					</div>
+					<div class="ct_clear"></div>
+					<div class="col-md-3 ct_progress_px">PHP Coding</div>
+					<div class="col-md-9 progress ct_clear_margin_padding ct_progress_px">
+						<div class="progress-bar progress-bar-info ct_progress_width" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"  data-percent="90">
+							<div>90% </div>
+						</div>
+					</div>
+					<div class="ct_clear"></div>
+					<div class="col-md-3 ct_progress_px">SEO</div>
+					<div class="col-md-9 progress ct_clear_margin_padding ct_progress_px">
+						<div class="progress-bar progress-bar-warning ct_progress_width" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" data-percent="85">
+							<div>85% </div>
+						</div>
+					</div>  
+				</div>
+			</div>
+			',
+			'<h2 class="case-tx0">PRICE TABLE</h2>
+                <div id="pricePlans">
+                    <ul id="plans">
+                        <li class="plan">
+                            <ul class="planContainer">
+                                <li class="title"><h2>Plan 1</h2></li>
+                                <li class="price"><p>$10/<span>month</span></p></li>
+                                <li>
+                                    <ul class="options">
+                                        <li>2x <span>option 1</span></li>
+                                        <li>Free <span>option 2</span></li>
+                                        <li>Unlimited <span>option 3</span></li>
+                                        <li>Unlimited <span>option 4</span></li>
+                                        <li>1x <span>option 5</span></li>
+                                    </ul>
+                                </li>
+                                <li class="button"><a href="#">Purchase</a></li>
+                            </ul>
+                        </li>
+            
+                        <li class="plan">
+                            <ul class="planContainer">
+                                <li class="title"><h2 class="bestPlanTitle">Plan 2</h2></li>
+                                <li class="price"><p class="bestPlanPrice">$20/month</p></li>
+                                <li>
+                                    <ul class="options">
+                                        <li>2x <span>option 1</span></li>
+                                        <li>Free <span>option 2</span></li>
+                                        <li>Unlimited <span>option 3</span></li>
+                                        <li>Unlimited <span>option 4</span></li>
+                                        <li>1x <span>option 5</span></li>
+                                    </ul>
+                                </li>
+                                <li class="button"><a class="bestPlanButton" href="#">Purchase</a></li>
+                            </ul>
+                        </li>
+            
+                        <li class="plan">
+                            <ul class="planContainer">
+                                <li class="title"><h2>Plan 3</h2></li>
+                                <li class="price"><p>$30/<span>month</span></p></li>
+                                <li>
+                                    <ul class="options">
+                                        <li>2x <span>option 1</span></li>
+                                        <li>Free <span>option 2</span></li>
+                                        <li>Unlimited <span>option 3</span></li>
+                                        <li>Unlimited <span>option 4</span></li>
+                                        <li>1x <span>option 5</span></li>
+                                    </ul>
+                                </li>
+                                <li class="button"><a href="#">Purchase</a></li>
+                            </ul>
+                        </li>
+            
+                        <li class="plan">
+                            <ul class="planContainer">
+                                <li class="title"><h2>Plan 4</h2></li>
+                                <li class="price"><p>$40/<span>month</span></p></li>
+                                <li>
+                                    <ul class="options">
+                                        <li>2x <span>option 1</span></li>
+                                        <li>Free <span>option 2</span></li>
+                                        <li>Unlimited <span>option 3</span></li>
+                                        <li>Unlimited <span>option 4</span></li>
+                                        <li>1x <span>option 5</span></li>
+                                    </ul>
+                                </li>
+                                <li class="button"><a href="#">Purchase</a></li>
+                            </ul>
+                        </li>
+                    </ul> <!-- End ul#plans -->
+                </div>	<!--div id="pricePlans"-->
+			'	
+					
 		);
 			 
 		 
@@ -367,11 +560,12 @@ function optionsframework_options()
 			if(!isset($section_background_size[$i])){$section_background_size[$i] = "";}
 			
 			
-			if(!isset($section_full_width[$i])){$section_full_width[$i] = "";}		
+			if(!isset($section_full_width[$i])){$section_full_width[$i] = "";}	
+			if(!isset($section_full_width[$i])){$section_full_width[$i] = "";}					
 	
 			
 			$options[] = array(	'desc' => '<div class="options-section"><h3 class="groupTitle">Section '.($i+1).'</h3>', 'class' => 'toggle_option_group home-section group_close','type' => 'info');
-			
+						
 			$options[] = array(
 			'name' => '',
 			'desc' => '<div style="overflow:hidden; background-color:#eee;"><a data-section="'.$i.'" class="delete-section button-primary" style="float:right;" title="'.__('Delete', 'Acool').'">'.__('Delete this section', 'Acool').'</a></div>',
@@ -380,11 +574,49 @@ function optionsframework_options()
 			'type' => 'info',
 			'class'=>'section-item section-delete-button');
 			
-			$options[] = array('name' => __('Section Title', 'Acool'),'id' => 'section_title_'.$i.'','type' => 'text','std'=>$section_title[$i]);
+			
+
+			if($i==0)
+			{					
+				$options[] = array(
+					'name' => __('Select Content Template for this section', 'Acool'),
+					'std' => ct_std_select($i),
+					'id' => 'ct_select_section_temp_'.$i.'',
+					'type' => 'select',
+					'class'=>'mini ct_select_section_temp',
+					'options'=>array(
+						"video"=>"video",
+						"slider"=>"slider",
+						//"columns"=>"columns",			
+						//"post_list"=>"post_list",					
+						//"team"=>"team",
+						//"workteam"=>"workteam"
+						)
+					);
+			}else{
+				$options[] = array(
+					'name' => __('Select Content Template for this section', 'Acool'),
+					'std' => ct_std_select($i),
+					'id' => 'ct_select_section_temp_'.$i.'',
+					'type' => 'select',
+					'class'=>'mini ct_select_section_temp',
+					'options'=>array(
+						//"video"=>"video",
+						"columns"=>"columns",			
+						"post_list"=>"post_list",								
+						"team"=>"team",
+						"facts"=>"facts",						
+						"progress_bar"=>"progress_bar",
+						"price"=>"price"						
+						)
+					);
+			}
+			//$options[] = array('name' => __('Section Content', 'Acool'),'id' => 'section_content_'.$i,'std' => $section_content[$i],'type' => 'editor');			
+			//$options[] = array('name' => __('Section Title', 'Acool'),'id' => 'section_title_'.$i.'','type' => 'text','std'=>$section_title[$i]);
 			$options[] = array('name' => __('Title Color', 'Acool'),'id' => 'section_title_color_'.$i.'','type' => 'color','std'=>$section_title_color[$i]);
 			//$options[] = array('name' => __('Title Border Color', 'Acool'),'id' => 'section_title_border_color_'.$i.'','type' => 'color','std'=>$section_title_border_color[$i]);
 			$options[] = array('name' => __('Content Color', 'Acool'),'id' => 'section_content_color_'.$i.'','type' => 'color','std'=>$section_content_color[$i]);
-			$options[] = array('name' => __('Section ID', 'Acool'),'id' => 'section_anchor_'.$i.'','type' => 'text','std'=>$section_anchor[$i],'desc'=>__('Add anchor tag to jump to specific section on one page without having any space or symbol. This section id will be related with the menu link, it should be call on wp appearance menu by using # after site url. It is usually all lowercase and contains only letters, numbers, and hyphens.', 'Acool'));
+			//$options[] = array('name' => __('Section ID', 'Acool'),'id' => 'section_anchor_'.$i.'','type' => 'text','std'=>$section_anchor[$i],'desc'=>__('Add anchor tag to jump to specific section on one page without having any space or symbol. This section id will be related with the menu link, it should be call on wp appearance menu by using # after site url. It is usually all lowercase and contains only letters, numbers, and hyphens.', 'Acool'));
 			
 			if($section_title[$i] =='post_list' )
 			{
@@ -399,6 +631,7 @@ function optionsframework_options()
 			$options[] = array('name' => __('Full Width', 'Acool'),'std' => $section_full_width[$i],'id' => 'full_width_'.$i.'','type' => 'select','class'=>'mini','options'=>array("no"=>"no","yes"=>"yes"));
 			$options[] = array('name' => __('Section Css Class', 'Acool'),'id' => 'section_css_class_'.$i.'','type' => 'text','std'=>$section_css_class[$i]);
 			$options[] = array('name' => __('Section Content', 'Acool'),'id' => 'section_content_'.$i,'std' => $section_content[$i],'type' => 'editor');
+			
 			$options[] = array('desc' => __('</div>', 'Acool'),'class' => 'toggle_title','type' => 'info');
 			
 		}
@@ -417,7 +650,6 @@ function optionsframework_options()
 	$options[] = array('name' => __('Breadcrumb', 'Acool'),'desc' =>__( "Display the breadcrumb in posts lists :post page, blog page, archives, search results..." , "Acool" ),	'id' => 'show_breadcrumb',	'type' => 'select',	'class' => 'mini',	'std' => '1','options' => array('yes'=>'yes','no'=>'no')  );
 	//$show_breadcrumb         =  of_get_option("show_breadcrumb");
 	//since 1.0.2 end
-
 
 				
 	// FOOTER	
@@ -503,7 +735,6 @@ function optionsframework_options()
 		//END HOME PAGE SLIDER
 
 	}
-
 
 	//Blog
 	$options[] = array('name' => __('Blog', 'Acool'),'type' => 'heading');
