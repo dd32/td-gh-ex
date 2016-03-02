@@ -104,7 +104,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Header Sidebar', 'multicolors' ),
+		'name' => __( 'Homepage Sidebar', 'multicolors' ),
 		'id' => 'header',
 		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -114,7 +114,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar Right', 'multicolors' ),
+		'name' => __( 'Homepage Right', 'multicolors' ),
 		'id' => 'homepage-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -124,7 +124,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar Middle', 'multicolors' ),
+		'name' => __( 'Homepage Middle', 'multicolors' ),
 		'id' => 'homepage-middle',
 		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -134,7 +134,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar Left', 'multicolors' ),
+		'name' => __( 'Homepage Left', 'multicolors' ),
 		'id' => 'homepage-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -144,7 +144,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Right', 'multicolors' ),
+		'name' => __( 'Footer Right', 'multicolors' ),
 		'id' => 'footer-right',
 		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -154,7 +154,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Middle', 'multicolors' ),
+		'name' => __( 'Footer Middle', 'multicolors' ),
 		'id' => 'footer-middle',
 		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -164,7 +164,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar Left', 'multicolors' ),
+		'name' => __( 'Footer Left', 'multicolors' ),
 		'id' => 'footer-left',
 		'description' => __( 'You can add one or multiple widgets here.', 'multicolors' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',

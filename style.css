@@ -1,10 +1,10 @@
 /*
 Theme Name: MultiColors
 Theme URI: http://www.guidovanderleest.nl/multicolors
-Version: 3.4
+Version: 3.5
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: MultiColors is a colorful, free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: primary sidebar, widget areas in header, widget areas in footer, custom header image, custom logo to replace blogname and description, full width page template, dropdown navigation. That's it. Enjoy. 
+Description: MultiColors is a free, clean, minimalistic, responsive, mobile friendly, colorful WordPress theme. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, red, orange, yellow, green, blue, purple, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -67,8 +67,8 @@ table {
 
 
 /* BODY AND CONTAINER */
-body {background:#800080; font-family:'Open Sans', sans-serif; font-size:1em; color:#eee; line-height:1.5em;}
-#container {width:100%; float:left; margin:0 auto 0; text-align:left; word-wrap:break-word;}
+body {background:#800080; font-family:'Open Sans', sans-serif; font-size:1em; color:#eee; line-height:1.5em; text-align:left; word-wrap:break-word;}
+#container {width:100%; float:left; margin:0 auto 0;}
 
 
 /* MAIN CONTENT AREA */
@@ -90,20 +90,21 @@ h6 {font-size:0.75em; line-height:2em;}
 
 
 /* LINKS AND HTML TAGS */
-a {text-decoration:underline; color:#eee;}
-a:hover {text-decoration:none;}
+a {text-decoration:none; color:#ddd;}
+a:hover {text-decoration:underline; color:#eee;}
 
 strong, b {font-weight:bold;}
 small {font-size:0.75em;}
-big {font-size: 1.5em;}
+big {font-size:1.25em;}
 sub {vertical-align:sub; font-size:0.9em;}
 sup {vertical-align:super; font-size:0.9em;}
-ins, mark {font-weight:bold; background:none; color:#333;}
+ins, mark {font-weight:bold; background:none; text-decoration:none; color:#333;}
 cite, em, abbr, acronym {font-style:italic;}
-code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #eee;}
+code, kbd, samp, var {font-family:monospace, monospace;}
+pre {margin:10px 0; padding:5px 10px; white-space:pre-wrap; border:1px solid #eee;}
 blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #eee;}
 address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #eee;}
-p {margin:0 0 10px; text-align:justify;}
+p {margin:0 0 10px;}
 
 
 /* TABLE AND LISTS */
@@ -123,8 +124,8 @@ dd {margin:0 0 0 20px;}
 input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #eee; padding:2px 5px; background:none; color:#eee; font-size:1em; font-family:'Open Sans', sans-serif;}
 input[type="submit"], input[type="reset"], input[type="button"] {cursor:pointer; border:0; padding:2px 5px; background:#333; color:#eee;}
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {background:#666;}
-input[type="checkbox"]{-webkit-appearance:checkbox; -moz-appearance:checkbox;}
-input[type="radio"]{-webkit-appearance:radio; -moz-appearance:radio;}
+input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
+input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
 select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
@@ -136,7 +137,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 #header-first-container .logo {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:10px 20px;}
 #header-first-container .logo h1 {text-align:left; line-height:1em;} 
 #header-first-container .logo h1 a {color:#eee; text-decoration:none;}
-#header-first-container .logo h1 a:hover {text-decoration:none; color:#333;}
+#header-first-container .logo h1 a:hover {color:#333; text-decoration:none;}
 #header-first-container .logo h4 {text-align:right; line-height:1em;}
 
 
@@ -147,7 +148,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* HEADER SECOND MENU */
 .nav-head {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px;}
 .nav-head select {display:none;}
-.nav-head ul {width:100%; margin:0; padding:0; z-index:999;}
+.nav-head ul {width:100%; margin:0; padding:0; z-index:999; list-style:none;}
 .nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0 20px 0 0;}
 .nav-head ul li a {text-decoration:none; color:#eee; background:none; padding:10px 0; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
@@ -197,7 +198,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 /* POST */
 .post-title {clear:both;}
-.post-title a {text-decoration:none;}
+.post-title a {color:#eee; text-decoration:none;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .sticky {clear:both; display:block; text-align:center; margin:10px 0; padding:5px; border-top:2px solid #eee; border-bottom:2px solid #eee;}
 .postmetadata {clear:both; display:block; margin:20px 0; padding:5px 10px; background:#f8f8f8; color:#333; border:1px solid #eee;}
