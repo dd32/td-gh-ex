@@ -58,7 +58,7 @@ function quickchic_excerpt_more( $more ) {
 // credits
 function quickchic_credits() {
     echo '<p class="text-center">
-	<a href="http://www.quickonlinethemes.com/wordpress/quickchic/" title="QuickChic Theme" rel="nofollow" >QuickChic Theme</a>' 
+	<a href="http://www.quickonlinethemes.com/wordpress/quickchic/" title="QuickChic Theme">QuickChic Theme</a>' 
  	. __(' powered by ', 'quickchic') . 
 	'<a href="http://wordpress.org">WordPress</a>
 	</p>';
