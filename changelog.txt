@@ -1,5 +1,11 @@
 == Change log ==
 
+Version 4.3.6
+* Updated: French translation fr_FR.po and fr_FR.mo
+* Updated: Sidr menu script to version 2.1.1.1
+* Updated: Meta viewport for better responsive support
+* Updated: Facebook Social icon
+
 Version 4.3.5
 * Bug Fixed: Undefined index - featured_slider in catchbox_sliders (Reported by kigazw)
 
