@@ -52,34 +52,45 @@
     
     // Adding custom dynamic styles to the site
     function aglee_lite_custom_dynamic_styles(){
-     $aglee_lite_background_image = get_theme_mod('site_pattern_setting');
-     
-     $aglee_lite_bg_img = get_template_directory_uri().'/inc/admin-panel/images/'.$aglee_lite_background_image.'.png';
-     
-     if(($aglee_lite_aglee_lite_layout = get_theme_mod('site_layout_setting')) == 'boxed') :
-        ?>
-    <style type="text/css" rel="stylesheet">
-        <?php if($aglee_lite_background_image == 'pattern0') : ?>
-        body{
-            background: none;
+        $aglee_lite_background_image = get_theme_mod('site_pattern_setting');
+
+        $aglee_lite_bg_img = get_template_directory_uri().'/inc/admin-panel/images/'.$aglee_lite_background_image.'.png';
+
+        if(($aglee_lite_aglee_lite_layout = get_theme_mod('site_layout_setting')) == 'boxed') :
+            ?>
+        <style type="text/css" rel="stylesheet">
+            <?php if($aglee_lite_background_image == 'pattern0') : 
+            ?>
+            body{
+                background: none;
+            }
+            <?php 
+            else : ?>
+            body{
+                background: url(<?php echo $aglee_lite_bg_img; ?>);
+            }
+            <?php 
+            endif; ?>                
+        </style>
+        <?php
+        endif;
+        //Custom CSS CODE
+        $custom_css = get_theme_mod('aglee_lite_custom_css');
+        if(!empty($custom_css)){echo "<style>$custom_css</style>";}
+        //custom js
+        $custom_js = get_theme_mod('aglee_lite_custom_js');
+        if(!empty($custom_js)){
+            echo '<script type="text/javascript">'.$custom_js.'</script>';
         }
-    <?php else : ?>
-    body{
-        background: url(<?php echo $aglee_lite_bg_img; ?>);
     }
-<?php endif; ?>                
-</style>
-<?php
-endif;
-}
-add_action('wp_head','aglee_lite_custom_dynamic_styles');
+    add_action('wp_head','aglee_lite_custom_dynamic_styles');
 
 
     // Filter for excerpt read more
-function aglee_lite_custom_excerpt_more( $aglee_lite_more ) {
-   return '...';
-}
-add_filter( 'excerpt_more', 'aglee_lite_custom_excerpt_more' );
+    function aglee_lite_custom_excerpt_more( $aglee_lite_more ) {
+     return '...';
+ }
+ add_filter( 'excerpt_more', 'aglee_lite_custom_excerpt_more' );
 
     /**
      * Since I'm already doing a tutorial, I'm not going to include comments to
@@ -157,9 +168,9 @@ $plugins = array(
             'complete'                        => __( 'All plugins installed and activated successfully. %s', 'aglee-lite' ),
             'nag_type'                        => 'updated'
             )
-);
+        );
 
-tgmpa( $plugins, $config );
+    tgmpa( $plugins, $config );
 
 }
 add_action( 'tgmpa_register', 'aglee_lite_required_plugins' );

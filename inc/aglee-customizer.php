@@ -518,13 +518,69 @@ function aglee_lite_customizer( $wp_customize ) {
             'title' => __( 'Slider Settings', 'aglee-lite' ),
         ) 
     );
+
+    // slider display option
+    $wp_customize->add_section(
+        'slider_show_option',
+        array(
+            'title' => __('Show Slider','aglee-lite'),
+            'priorty' => '10',
+            'panel' => 'slider_setting_pannel'
+        )
+    );
+    
+    $wp_customize->add_setting(
+        'slider_setting',
+        array(
+            'default' => '',
+            'transport'=>'refresh',
+            'sanitize_callback' => 'sanitize_checkbox'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'slider_setting',
+            array(
+                'label'=>__('Show Slider','aglee-lite'),
+                'section'=>'slider_show_option',
+                'type'=>'checkbox'
+            )
+    );
+
+    // slider display option
+    $wp_customize->add_section(
+        'slider_show_caption_option',
+        array(
+            'title' => __('Show Slider Caption','aglee-lite'),
+            'priorty' => '10',
+            'panel' => 'slider_setting_pannel'
+        )
+    );
+    
+    $wp_customize->add_setting(
+        'slider_setting_caption',
+        array(
+            'default' => '1',
+            'transport'=>'refresh',
+            'sanitize_callback' => 'sanitize_checkbox'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'slider_setting_caption',
+            array(
+                'label'=>__('Show Slider Caption','aglee-lite'),
+                'section'=>'slider_show_caption_option',
+                'type'=>'checkbox'
+            )
+    );
     
     // Slider type option post as a slider or category as a slider ..........................
     $wp_customize->add_section(
         'slider_type',
         array(
             'title' => __('Slider Settings','aglee-lite'),
-            'priority' => 20,
+            'priority' => '20',
             'panel' => 'slider_setting_pannel',
         )
     );
@@ -657,35 +713,6 @@ function aglee_lite_customizer( $wp_customize ) {
     ) );   
     
     
-    // slider display option
-    $wp_customize->add_section(
-        'slider_show_option',
-        array(
-            'title' => __('Show Slider','aglee-lite'),
-            'priorty' => 20,
-            'panel' => 'slider_setting_pannel'
-        )
-    );
-    
-    $wp_customize->add_setting(
-        'slider_setting',
-        array(
-            'default' => '',
-            'transport'=>'refresh',
-            'sanitize_callback' => 'sanitize_checkbox'
-        )
-    );
-    
-    $wp_customize->add_control(
-        'slider_setting',
-            array(
-                'label'=>__('Show Slider','aglee-lite'),
-                'section'=>'slider_show_option',
-                'type'=>'checkbox'
-            )
-    );
-    
-
     
     // slider display setting in single page
     $wp_customize -> add_section(
@@ -1104,6 +1131,41 @@ function aglee_lite_customizer( $wp_customize ) {
             'type' => 'text'
         )
       );
+
+      // Custom Css/Js
+    $wp_customize -> add_section(
+        'aglee_lite_custom_tools',
+        array(
+            'title' => __('Custom Tools','aglee-lite'),
+            'priority' => 220,
+        )
+    );
+
+    //Custom css code
+    $wp_customize->add_setting('aglee_lite_custom_css', array(
+        'default' => '',
+        'sanitize_callback' => 'aglee_lite_sanitize_custom_codes',
+        ));
+
+    $wp_customize->add_control('aglee_lite_custom_css',array(
+        'type' => 'textarea',
+        'label' => __('Custom Css Code','aglee-lite'),
+        'description' => __( 'Enter your custom css code here.', 'aglee-lite' ),
+        'section' => 'aglee_lite_custom_tools',
+        ));
+
+    //Custom js code
+    $wp_customize->add_setting('aglee_lite_custom_js', array(
+        'default' => '',
+        'sanitize_callback' => 'aglee_lite_sanitize_custom_codes',
+        ));
+
+    $wp_customize->add_control('aglee_lite_custom_js',array(
+        'type' => 'textarea',
+        'label' => __('Custom Js Code','aglee-lite'),
+        'description' => __( 'Enter your custom js code here.', 'aglee-lite' ),
+        'section' => 'aglee_lite_custom_tools',
+        ));
     
     //General dropdown sanitize for integer value
     function aglee_sanitize_dropdown_general( $input ) {
@@ -1122,6 +1184,10 @@ function aglee_lite_customizer( $wp_customize ) {
         } else {
             return '';
         }
+    }
+    //custom tools sanitizer 
+    function aglee_lite_sanitize_custom_codes($input){
+        return $input;
     }
     
     }

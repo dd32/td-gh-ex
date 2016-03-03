@@ -60,6 +60,10 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.11 - 3rd March, 2015 =
+* Added custom css and js boxes
+* Added slider caption show hide feature
+
 = 1.0.10 - 10th February, 2015 =
 * Minor bug fixes.
 
