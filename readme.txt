@@ -30,6 +30,12 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.6.6 | 2nd March 2016 =
+* Update: Language strings.
+* Update: Responsive images for products.
+* Update: Theme Options. Add info for customizer.
+* Fix: Issue with icon select.
+
 = Version 2.6.5 | 16th February 2016 =
 * Update: Portfolio order for title.
 * Update: Widget issue.

@@ -51,25 +51,36 @@
 	                    				$imagesize = 'tcol-md-5 tcol-sm-12 tcol-ss-12';
 	                    			}
 	                    			if (has_post_thumbnail( $post->ID ) ) {
-										$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
-										$thumbnailURL = $image_url[0]; 
+										$image_id = get_post_thumbnail_id( $post->ID );
+										$image_url = wp_get_attachment_image_src( $image_id, 'full' ); 
+										$thumbnailURL = $image_url[0];
 										$image = aq_resize($thumbnailURL, $img_width, 270, true);
 										if(empty($image)) { $image = $thumbnailURL; }
+										$image_meta = get_post_meta( $image_id, '_wp_attachment_metadata', true );
+          								$img_srcset = wp_calculate_image_srcset(array( $img_width, '270'), $image, $image_meta, $image_id);
 							 		} else {
 								 		$thumbnailURL = virtue_post_default_placeholder();
 										$image = aq_resize($thumbnailURL, $img_width, 270, true);
 										if(empty($image)) { $image = $thumbnailURL; }
+          								$img_srcset = '';
 							 		} ?>
-								 <div class="<?php echo $imagesize;?>">
-									 <div class="imghoverclass">
-		                           		<a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-		                           			<img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
-		                           		</a> 
-		                             </div>
-		                         </div>
-
+									<div class="<?php echo esc_attr($imagesize);?>">
+									 	<div class="imghoverclass">
+			                           		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+			                           			<img src="<?php echo esc_url($image); ?>"
+			                           			width="<?php echo esc_attr($img_width);?>" height="270" 
+			                           			<?php if(!empty($img_srcset)) { ?>
+			                           				srcset="<?php echo esc_attr( $img_srcset ); ?>"
+                									sizes="(max-width: <?php echo esc_attr($img_width);?>px) 100vw, <?php echo esc_attr($img_width);?>px"
+                								<?php } ?>
+			                           			alt="<?php the_title(); ?>" 
+			                           			class="iconhover" 
+			                           			style="display:block;">
+			                           		</a> 
+		                             	</div>
+		                         	</div>
                            		<?php $image = null; $thumbnailURL = null; ?> 
-                           		<?php } else {
+                           	<?php } else {
                            		if (has_post_thumbnail( $post->ID ) ) {
                            			if($home_sidebar == true) {
                            				$textsize = 'tcol-md-12 tcol-sm-12 tcol-ss-12';
@@ -78,31 +89,34 @@
                            				$textsize = 'tcol-md-7 tcol-sm-12 tcol-ss-12';
                            				$imagesize = 'tcol-md-5 tcol-sm-12 tcol-ss-12';
                            			}
-										$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
-										$thumbnailURL = $image_url[0]; 
+                           				$image_id = get_post_thumbnail_id( $post->ID );
+										$image_url = wp_get_attachment_image_src( $image_id, 'full' ); 
+										$thumbnailURL = $image_url[0];
 										$image = aq_resize($thumbnailURL, $img_width, 270, true);
 										if(empty($image)) { $image = $thumbnailURL; }
+										$image_meta = get_post_meta( $image_id, '_wp_attachment_metadata', true );
+          								$img_srcset = wp_calculate_image_srcset(array( $img_width, '270'), $image, $image_meta, $image_id);
 										?>
 									<div class="<?php echo esc_attr($imagesize);?>">
 									 	<div class="imghoverclass">
 			                           		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-			                           			<img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+			                           			<img src="<?php echo esc_url($image); ?>"
+			                           			width="<?php echo esc_attr($img_width);?>" height="270" 
+			                           			srcset="<?php echo esc_attr( $img_srcset ); ?>"
+                								sizes="(max-width: <?php echo esc_attr($img_width);?>px) 100vw, <?php echo esc_attr($img_width);?>px"
+			                           			alt="<?php the_title(); ?>" 
+			                           			class="iconhover" 
+			                           			style="display:block;">
 			                           		</a> 
 		                             	</div>
 		                         	</div>
 		                        	<?php $image = null; $thumbnailURL = null; ?> 
 		                        <?php } else { 
-		                        	$textsize = 'tcol-md-12 tcol-ss-12';
+		                        		$textsize = 'tcol-md-12 tcol-ss-12';
 		                        	} 
 		                    }?>
 	                       		<div class="<?php echo esc_attr($textsize);?> postcontent">
-	                       			<div class="postmeta updated color_gray">
-				                        	<div class="postdate bg-lightgray headerfont" itemprop="datePublished">
-				                        		<span class="postday"><?php echo get_the_date('j'); ?></span>
-				                        		<?php echo get_the_date('M Y');?>
-				                        	</div>
-				                            
-				                        </div>
+	                       			<?php get_template_part('templates/post', 'date'); ?> 
 				                    <header class="home_blog_title">
 			                          	<a href="<?php the_permalink() ?>">
 			                          		<h4 class="entry-title"><?php the_title(); ?></h4>

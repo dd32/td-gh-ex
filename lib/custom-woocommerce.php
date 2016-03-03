@@ -105,9 +105,16 @@ add_filter('add_to_cart_fragments', 'kadence_woocommerce_header_add_to_cart_frag
 function kadence_woocommerce_header_add_to_cart_fragment( $fragments ) {
     global $woocommerce;
     ob_start(); ?>
-
     <a class="cart-contents" href="<?php echo esc_url($woocommerce->cart->get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', 'virtue'); ?>">
-        <i class="icon-shopping-cart" style="padding-right:5px;"></i>  <?php _e('Your Cart', 'virtue');?> <span class="kad-cart-dash">-</span> <?php echo $woocommerce->cart->get_cart_total(); ?>
+        <i class="icon-shopping-cart" style="padding-right:5px;"></i>
+        <?php _e('Your Cart', 'virtue');?>
+        <span class="kad-cart-dash">-</span>
+        <?php if ( WC()->cart->tax_display_cart == 'incl' ) {
+              echo WC()->cart->get_cart_subtotal(); 
+            } else {
+              echo WC()->cart->get_cart_total();
+            }
+        ?>
     </a>
     <?php
     $fragments['a.cart-contents'] = ob_get_clean();
@@ -180,14 +187,30 @@ if ($woocommerce_loop['columns'] == '3'){
 
       if($resizeimage == 1) { 
           if ( has_post_thumbnail() ) {
-          $product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
-          $product_image_url = $product_image[0]; 
+          $image_id = get_post_thumbnail_id( $post->ID );
+          $product_image_array = wp_get_attachment_image_src( $image_id, 'full' );  
+          $product_image_url = $product_image_array[0]; 
+          // Make sure there is a copped image to output
           $image_product = aq_resize($product_image_url, $productimgwidth, $productimgwidth, true);
-                if(empty($image_product)) {$image_product = $product_image_url;} ?> 
-                 <img width="<?php echo $productimgwidth;?>" height="<?php echo esc_attr($productimgwidth);?>" src="<?php echo esc_attr($image_product);?>" class="attachment-shop_catalog wp-post-image" alt="<?php the_title();?>">
-                 <?php } elseif ( woocommerce_placeholder_img_src() ) {
+          if(empty($image_product)) {$image_product = $product_image_url;} 
+          // Get srcset
+          $image_meta = get_post_meta( $image_id, '_wp_attachment_metadata', true );
+          $img_srcset = wp_calculate_image_srcset(array( $productimgwidth, $productimgheight), $product_image_url, $image_meta, $image_id);
+           // Get alt and fall back to title if no alt
+          $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+          if(empty($alt_text)) {$alt_text = get_the_title();}
+          ?> 
+                <img width="<?php echo esc_attr($productimgwidth);?>" height="<?php echo esc_attr($productimgheight);?>" 
+                src="<?php echo esc_url($image_product);?>"
+                <?php if(!empty($img_srcset)) { ?>
+                srcset="<?php echo esc_attr( $img_srcset ); ?>"
+                sizes="(max-width: <?php echo esc_attr($productimgwidth);?>px) 100vw, <?php echo esc_attr($productimgwidth);?>px" 
+                <?php } ?>
+                class="attachment-shop_catalog size-<?php echo esc_attr($productimgwidth.'x'.$productimgheight);?> wp-post-image" 
+                alt="<?php echo esc_attr($alt_text); ?>">
+        <?php } elseif ( woocommerce_placeholder_img_src() ) {
                  echo woocommerce_placeholder_img( 'shop_catalog' );
-                 }  
+        }  
       } else { 
         echo '<div class="kad-woo-image-size">';
         echo woocommerce_template_loop_product_thumbnail();

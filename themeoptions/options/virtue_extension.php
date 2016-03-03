@@ -4,6 +4,15 @@ if ( class_exists( 'Redux' ) ) {
     $opt_name = 'virtue';
     Redux::setExtensions( $opt_name, dirname( __FILE__ ) . '/extensions/' );
 }
+
+add_action( "redux/extension/customizer/control/includes","kt_info_customizer" );
+function kt_info_customizer(){
+    if ( ! class_exists( 'Redux_Customizer_Control_info' ) ) {
+        class Redux_Customizer_Control_info extends Redux_Customizer_Control {
+            public $type = "redux-info";
+        }
+    }
+}
 /* if(!function_exists('redux_register_custom_extension_loader')) :
     function redux_register_custom_extension_loader($ReduxFramework) {
         $path = dirname( __FILE__ ) . '/extensions/';
@@ -27,3 +36,4 @@ if ( class_exists( 'Redux' ) ) {
     add_action("redux/extensions/virtue/before", 'redux_register_custom_extension_loader', 0);
 endif;
 */
+

@@ -2,8 +2,8 @@
 /*
 Template Name: Feature
 */
-?>
-	<?php global $post; 
+
+	global $post; 
 			$headoption = get_post_meta( $post->ID, '_kad_page_head', true ); 
 				if ($headoption == 'flex') {
 					get_template_part('templates/flex', 'slider');

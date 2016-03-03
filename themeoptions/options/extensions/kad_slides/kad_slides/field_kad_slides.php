@@ -194,14 +194,7 @@ if (!class_exists('ReduxFramework_kad_slides')) {
             wp_enqueue_script (
                 'redux-field-media-js', 
                 ReduxFramework::$_url . 'inc/fields/media/field_media' . Redux_Functions::isMin () . '.js', 
-                array( 'jquery' ), 
-                time (), 
-                true
-            );
-
-            wp_enqueue_style (
-                'redux-field-media-css', 
-                ReduxFramework::$_url . 'inc/fields/media/field_media.css', 
+                array( 'jquery', 'redux-js' ), 
                 time (), 
                 true
             );

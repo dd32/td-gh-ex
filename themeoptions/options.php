@@ -391,6 +391,12 @@ Redux::setSection( $opt_name, array(
     'desc' => "<div class='redux-info-field'><h3>".__('Home Page Slider Options', 'virtue')."</h3></div>",
     'fields' => array(
         array(
+            'id'=>'info_home_slider_settings_notice',
+            'type' => 'info',
+            'customizer' => true,
+            'desc' => __('*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to Apperance > Theme Options > Home Slider for all Home slider settings', 'virtue'),
+            ),
+        array(
             'id'=>'choose_slider',
             'type' => 'select',
             'title' => __('Choose a Home Image Slider', 'virtue'), 
@@ -790,6 +796,12 @@ Redux::setSection( $opt_name, array(
             'options' => array('summery' => 'Post Excerpt','full' => 'Full'),
             'default' => 'summery',
             'width' => 'width:60%',
+            ),
+           array(
+            'id'=>'info_home_layout_settings_notice',
+            'type' => 'info',
+            'customizer' => true,
+            'desc' => __('*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to Apperance > Theme Options > Home Layout for all home layout settings', 'virtue'),
             ),
         ),
 
@@ -1361,6 +1373,12 @@ Redux::setSection( $opt_name, array(
     'title' => __('Typography', 'virtue'),
     'desc' => "<div class='redux-info-field'><h3>".__('Header Font Options', 'virtue')."</h3></div>",
     'fields' => array(
+        array(
+            'id'=>'info_typography_settings_notice',
+            'type' => 'info',
+            'customizer' => true,
+            'desc' => __('*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to Apperance > Theme Options > Typography settings for all Typography settings', 'virtue'),
+            ),
     	array(
             'id'=>'font_h1',
             'type' => 'typography', 
@@ -1539,6 +1557,12 @@ Redux::setSection( $opt_name, array(
     'title' => __('Menu Settings', 'virtue'),
     'desc' => "<div class='redux-info-field'><h3>".__('Primary Menu Options', 'virtue')."</h3></div>",
     'fields' => array(
+        array(
+            'id'=>'info_menu_settings_notice',
+            'type' => 'info',
+            'customizer' => true,
+            'desc' => __('*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to Apperance > Theme Options > Menu settings for all menu settings', 'virtue'),
+            ),
     	array(
             'id'=>'font_primary_menu',
             'type' => 'typography', 
@@ -1873,6 +1897,8 @@ Redux::setSection( $opt_name, array(
         array(
             'id'=>'kadence_lightbox',
             'type' => 'switch', 
+            'on' => __('Lightbox Off', 'virtue'),
+            'off' => __('Lightbox On', 'virtue'),
             'customizer' => true,
             'title' => __('Turn Off Theme Lightbox?', 'virtue'),
             "default" => 0,

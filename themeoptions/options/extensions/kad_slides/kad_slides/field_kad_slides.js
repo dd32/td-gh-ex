@@ -13,7 +13,7 @@
     redux.field_objects.kad_slides.init = function( selector ) {
 
         if ( !selector ) {
-            selector = $( document ).find( '.redux-container-kad_slides' );
+            selector = $( document ).find( ".redux-group-tab:visible" ).find( '.redux-container-kad_slides' );
         }
 
         $( selector ).each(

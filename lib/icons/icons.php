@@ -1,13 +1,7 @@
 <?php
 /*
 * Title		: CMB Icomoon Extension 
-*Description: Adds a field Option to <a href="https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress">Custom Metaboxes and Fields</a>
-* Documentation	: URI: https://github.com/retlehs/cmb-extensions
-* License	:
-* Version	: 0.1
-* Author    : Ben Word (with modifications from Benjamin Ritner)
-* Author URI: http://benword.com/
- */
+*/
  
  
 $extensions = array(

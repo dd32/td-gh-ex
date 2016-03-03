@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2016-02-10 15:42-0500\n"
-"PO-Revision-Date: 2016-02-15 16:09-0700\n"
+"Project-Id-Version: Virtue\n"
+"POT-Creation-Date: 2016-02-27 18:54-0700\n"
+"PO-Revision-Date: 2016-02-27 18:54-0700\n"
 "Last-Translator: Matthieu Durocher <matthieu@technocyclope.com>\n"
 "Language-Team: Matthieu Durocher <matthieu@technocyclope.com>\n"
 "Language: fr_FR\n"
@@ -357,7 +357,7 @@ msgstr "Toutes les installations ont été complétées."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Installation de l'extension %1$s (%2$d/%3$d)"
 
-#: ../lib/cleanup.php:106 ../templates/content-fullpost.php:74
+#: ../lib/cleanup.php:78 ../templates/content-fullpost.php:74
 #: ../templates/content-fullpostfull.php:75
 msgid "Continued"
 msgstr "Lire la suite­­"
@@ -440,11 +440,11 @@ msgstr "| (Modifier)"
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération."
 
-#: ../lib/custom-woocommerce.php:109 ../templates/header.php:39
+#: ../lib/custom-woocommerce.php:108 ../templates/header-topbar.php:37
 msgid "View your shopping cart"
 msgstr "Afficher votre panier d'achats"
 
-#: ../lib/custom-woocommerce.php:110 ../templates/header.php:40
+#: ../lib/custom-woocommerce.php:110 ../templates/header-topbar.php:39
 msgid "Your Cart"
 msgstr "Votre panier d'achats"
 
@@ -548,20 +548,20 @@ msgstr "Options de l'article"
 msgid "Head Content"
 msgstr "Contenu de l'entête"
 
-#: ../lib/metaboxes.php:99 ../themeoptions/options.php:1743
+#: ../lib/metaboxes.php:99 ../themeoptions/options.php:1767
 msgid "None"
 msgstr "Aucun"
 
-#: ../lib/metaboxes.php:100 ../themeoptions/options.php:1743
+#: ../lib/metaboxes.php:100 ../themeoptions/options.php:1767
 msgid "Image Slider"
 msgstr "Carrousel d'images"
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129
-#: ../themeoptions/options.php:1743
+#: ../themeoptions/options.php:1767
 msgid "Video"
 msgstr "Vidéo"
 
-#: ../lib/metaboxes.php:102 ../themeoptions/options.php:1743
+#: ../lib/metaboxes.php:102 ../themeoptions/options.php:1767
 msgid "Image"
 msgstr "Image"
 
@@ -649,11 +649,11 @@ msgstr "Carrousel des articles"
 msgid "Display a carousel with similar or recent posts?"
 msgstr "Afficher un carrousel avec des articles similaires ou récents ?"
 
-#: ../lib/metaboxes.php:167 ../themeoptions/options.php:1777
+#: ../lib/metaboxes.php:167 ../themeoptions/options.php:1801
 msgid "Yes - Display Recent Posts"
 msgstr "Oui, afficher les articles récents"
 
-#: ../lib/metaboxes.php:168 ../themeoptions/options.php:1777
+#: ../lib/metaboxes.php:168 ../themeoptions/options.php:1801
 msgid "Yes - Display Similar Posts"
 msgstr "Oui, afficher les articles similaires"
 
@@ -765,213 +765,213 @@ msgstr "Utilisez ce widget pour ajouter un vCard à votre site"
 msgid "Virtue: Contact/Vcard"
 msgstr "Virtue : Contact / vCard"
 
-#: ../lib/widgets.php:191
+#: ../lib/widgets.php:189
 msgid "vCard"
 msgstr "vCard"
 
-#: ../lib/widgets.php:256 ../lib/widgets.php:396 ../lib/widgets.php:532
-#: ../lib/widgets.php:646
+#: ../lib/widgets.php:254 ../lib/widgets.php:393 ../lib/widgets.php:528
+#: ../lib/widgets.php:641
 msgid "Title:"
 msgstr "Titre :"
 
-#: ../lib/widgets.php:260
+#: ../lib/widgets.php:258
 msgid "Company Name:"
 msgstr "Nom de l'entreprise :"
 
-#: ../lib/widgets.php:264
+#: ../lib/widgets.php:262
 msgid "Name:"
 msgstr "Nom complet :"
 
-#: ../lib/widgets.php:268
+#: ../lib/widgets.php:266
 msgid "Street Address:"
 msgstr "Adresse :"
 
-#: ../lib/widgets.php:272
+#: ../lib/widgets.php:270
 msgid "City/Locality:"
 msgstr "Ville / Localité :"
 
-#: ../lib/widgets.php:276
+#: ../lib/widgets.php:274
 msgid "State/Region:"
 msgstr "État / région"
 
-#: ../lib/widgets.php:280
+#: ../lib/widgets.php:278
 msgid "Zipcode/Postal Code:"
 msgstr "Code postal :"
 
-#: ../lib/widgets.php:284
+#: ../lib/widgets.php:282
 msgid "Mobile Telephone:"
 msgstr "Téléphone mobile :"
 
-#: ../lib/widgets.php:288
+#: ../lib/widgets.php:286
 msgid "Fixed Telephone:"
 msgstr "Téléphone :"
 
-#: ../lib/widgets.php:292
+#: ../lib/widgets.php:290
 msgid "Email:"
 msgstr "Courriel :"
 
-#: ../lib/widgets.php:304
+#: ../lib/widgets.php:302
 msgid "Simple way to add Social Icons"
 msgstr "Un moyen simple d'ajouter des icônes de réseaux sociaux"
 
-#: ../lib/widgets.php:305
+#: ../lib/widgets.php:303
 msgid "Virtue: Social Links"
 msgstr "Virtue : liens vers les réseaux sociaux"
 
-#: ../lib/widgets.php:400
+#: ../lib/widgets.php:397
 msgid "Facebook:"
 msgstr "Facebook :"
 
-#: ../lib/widgets.php:404
+#: ../lib/widgets.php:401
 msgid "Twitter:"
 msgstr "Twitter :"
 
-#: ../lib/widgets.php:408
+#: ../lib/widgets.php:405
 msgid "Instagram:"
 msgstr "Instagram :"
 
-#: ../lib/widgets.php:412
+#: ../lib/widgets.php:409
 msgid "GooglePlus:"
 msgstr "Google+ :"
 
-#: ../lib/widgets.php:416
+#: ../lib/widgets.php:413
 msgid "Flickr:"
 msgstr "Flickr :"
 
-#: ../lib/widgets.php:420
+#: ../lib/widgets.php:417
 msgid "Vimeo:"
 msgstr "Vimeo :"
 
-#: ../lib/widgets.php:424
+#: ../lib/widgets.php:421
 msgid "Youtube:"
 msgstr "Youtube :"
 
-#: ../lib/widgets.php:428
+#: ../lib/widgets.php:425
 msgid "Pinterest:"
 msgstr "Pinterest :"
 
-#: ../lib/widgets.php:432
+#: ../lib/widgets.php:429
 msgid "Dribbble:"
 msgstr "Dribbble :"
 
-#: ../lib/widgets.php:436
+#: ../lib/widgets.php:433
 msgid "Linkedin:"
 msgstr "Linkedin :"
 
-#: ../lib/widgets.php:440
+#: ../lib/widgets.php:437
 msgid "Tumblr:"
 msgstr "Tumblr :"
 
-#: ../lib/widgets.php:444
+#: ../lib/widgets.php:441
 msgid "VK:"
 msgstr "VK :"
 
-#: ../lib/widgets.php:448
+#: ../lib/widgets.php:445
 msgid "RSS:"
 msgstr "RSS :"
 
-#: ../lib/widgets.php:463
+#: ../lib/widgets.php:460
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr ""
 "Cela affiche à l'aide de miniatures les articles les plus récents de votre "
 "site"
 
-#: ../lib/widgets.php:464
+#: ../lib/widgets.php:461
 msgid "Virtue: Recent Posts"
 msgstr "Virtue: Articles récents"
 
-#: ../lib/widgets.php:474 ../templates/recentblog-carousel.php:7
+#: ../lib/widgets.php:470 ../templates/recentblog-carousel.php:7
 msgid "Recent Posts"
 msgstr "Articles récents"
 
-#: ../lib/widgets.php:535
+#: ../lib/widgets.php:531
 msgid "Number of posts to show:"
 msgstr "Nombre d'articles à afficher :"
 
-#: ../lib/widgets.php:538
+#: ../lib/widgets.php:534
 msgid "Limit to Catagory (Optional):"
 msgstr "Limiter à la catégorie (optionnel)"
 
-#: ../lib/widgets.php:550
+#: ../lib/widgets.php:546
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
 "Cela affiche une grille d'images en vedette provenant de nouveaux articles "
 "ou d'items du portefolio"
 
-#: ../lib/widgets.php:551
+#: ../lib/widgets.php:547
 msgid "Virtue: Image Grid"
 msgstr "Virtue : Grille d'images"
 
-#: ../lib/widgets.php:561
+#: ../lib/widgets.php:556
 msgid "Post Gallery"
 msgstr "Galerie de l'article"
 
-#: ../lib/widgets.php:649
+#: ../lib/widgets.php:644
 msgid "Grid Choice:"
 msgstr "Choix de grille :"
 
-#: ../lib/widgets.php:651
+#: ../lib/widgets.php:646
 msgid "Blog Posts"
 msgstr "Articles du blogue"
 
-#: ../lib/widgets.php:652
+#: ../lib/widgets.php:647
 msgid "Portfolio"
 msgstr "Portefolio"
 
-#: ../lib/widgets.php:655
+#: ../lib/widgets.php:650
 msgid "If Post - Choose Category (Optional):"
 msgstr "Si c'est un article, choisir la catégorie (optionnel) :"
 
-#: ../lib/widgets.php:658
+#: ../lib/widgets.php:653
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr "Si c'est un portefolio, choisir le type (optionnel) :"
 
-#: ../lib/widgets.php:661
+#: ../lib/widgets.php:656
 msgid "Number of images to show:"
 msgstr "Nombre d'images à afficher :"
 
-#: ../lib/widgets.php:689
+#: ../lib/widgets.php:684
 msgid "This allows for an image and a simple about text."
 msgstr "Cela permet une image et un simple texte à propos"
 
-#: ../lib/widgets.php:690
+#: ../lib/widgets.php:685
 msgid "Virtue: Image"
 msgstr "Virtue : image"
 
-#: ../lib/widgets.php:739
+#: ../lib/widgets.php:734
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: ../lib/widgets.php:740
+#: ../lib/widgets.php:735
 msgid "New Window"
 msgstr "Nouvelle fenêtre"
 
-#: ../lib/widgets.php:741
+#: ../lib/widgets.php:736
 msgid "Same Window"
 msgstr "Même fenêtre"
 
-#: ../lib/widgets.php:742
+#: ../lib/widgets.php:737
 msgid "No Link"
 msgstr "Pas de lien"
 
-#: ../lib/widgets.php:754
+#: ../lib/widgets.php:749
 msgid "Image URL"
 msgstr "URL de l'image"
 
-#: ../lib/widgets.php:756
+#: ../lib/widgets.php:751
 msgid "Upload"
 msgstr "Téléverser"
 
-#: ../lib/widgets.php:759
+#: ../lib/widgets.php:754
 msgid "Image opens in"
 msgstr "L'image s'ouvre dans"
 
-#: ../lib/widgets.php:763
+#: ../lib/widgets.php:758
 msgid "Image Link (optional)"
 msgstr "Lien vers l'image (optionel)"
 
-#: ../lib/widgets.php:767
+#: ../lib/widgets.php:762
 msgid "Text/Caption (optional)"
 msgstr "Texte"
 
@@ -1089,7 +1089,7 @@ msgstr "Classé dans :"
 msgid "By"
 msgstr "Par"
 
-#: ../templates/header.php:95
+#: ../templates/header.php:55
 msgid "Menu"
 msgstr "Menu"
 
@@ -1496,100 +1496,106 @@ msgstr "Paramètres du diaporama d'accueil"
 msgid "Home Page Slider Options"
 msgstr "Option du carrousel de la page d'accueil"
 
-#: ../themeoptions/options.php:396
+#: ../themeoptions/options.php:397
+msgid ""
+"*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to "
+"Apperance > Theme Options > Home Slider for all Home slider settings"
+msgstr ""
+
+#: ../themeoptions/options.php:402
 msgid "Choose a Home Image Slider"
 msgstr "Choisissez un carrousel d'images pour la page d'accueil"
 
-#: ../themeoptions/options.php:397
+#: ../themeoptions/options.php:403
 msgid "If you don't want an image slider on your home page choose none."
 msgstr ""
 "Si vous ne voulez pas d'un carrousel d'images sur votre page d'accueil, "
 "choisissez aucun."
 
-#: ../themeoptions/options.php:408 ../themeoptions/options.php:524
+#: ../themeoptions/options.php:414 ../themeoptions/options.php:530
 msgid "Slider Images"
 msgstr "Images du carrousel"
 
-#: ../themeoptions/options.php:409 ../themeoptions/options.php:525
+#: ../themeoptions/options.php:415 ../themeoptions/options.php:531
 msgid "Use large images for best results."
 msgstr "Utilisez de grandes images pour de meilleurs résultats."
 
-#: ../themeoptions/options.php:415 ../themeoptions/options.php:533
+#: ../themeoptions/options.php:421 ../themeoptions/options.php:539
 msgid "Slider Max Height"
 msgstr "Hauteur maximale du carrousel"
 
-#: ../themeoptions/options.php:416 ../themeoptions/options.php:427
-#: ../themeoptions/options.php:534 ../themeoptions/options.php:546
+#: ../themeoptions/options.php:422 ../themeoptions/options.php:433
+#: ../themeoptions/options.php:540 ../themeoptions/options.php:552
 msgid "Note: does not work if images are smaller than max."
 msgstr "Note : ne fonctionne pas si les images sont plus petites."
 
-#: ../themeoptions/options.php:426 ../themeoptions/options.php:545
+#: ../themeoptions/options.php:432 ../themeoptions/options.php:551
 msgid "Slider Max Width"
 msgstr "Largeur maximale du carrousel"
 
-#: ../themeoptions/options.php:437 ../themeoptions/options.php:557
+#: ../themeoptions/options.php:443 ../themeoptions/options.php:563
 msgid "Auto Play?"
 msgstr "Lecture automatique ?"
 
-#: ../themeoptions/options.php:438 ../themeoptions/options.php:558
+#: ../themeoptions/options.php:444 ../themeoptions/options.php:564
 msgid "This determines if a slider automatically scrolls"
 msgstr "Cela détermine si le carrousel défile automatiquement."
 
-#: ../themeoptions/options.php:445 ../themeoptions/options.php:566
+#: ../themeoptions/options.php:451 ../themeoptions/options.php:572
 msgid "Slider Pause Time"
 msgstr "Délai de défilement"
 
-#: ../themeoptions/options.php:446 ../themeoptions/options.php:567
+#: ../themeoptions/options.php:452 ../themeoptions/options.php:573
 msgid "How long to pause on each slide, in milliseconds."
 msgstr "Durée de pause entre les images, en millisecondes."
 
-#: ../themeoptions/options.php:456 ../themeoptions/options.php:578
+#: ../themeoptions/options.php:462 ../themeoptions/options.php:584
 msgid "Transition Type"
 msgstr "Type de transition"
 
-#: ../themeoptions/options.php:457 ../themeoptions/options.php:579
+#: ../themeoptions/options.php:463 ../themeoptions/options.php:585
 msgid "Choose a transition type"
 msgstr "Choisissez le type de transition"
 
-#: ../themeoptions/options.php:465 ../themeoptions/options.php:588
+#: ../themeoptions/options.php:471 ../themeoptions/options.php:594
 msgid "Slider Transition Time"
 msgstr "Durée de transition du carrousel"
 
-#: ../themeoptions/options.php:466 ../themeoptions/options.php:589
+#: ../themeoptions/options.php:472 ../themeoptions/options.php:595
 msgid "How long for slide transitions, in milliseconds."
 msgstr "Durée des transitions, en millisecondes."
 
-#: ../themeoptions/options.php:476 ../themeoptions/options.php:600
+#: ../themeoptions/options.php:482 ../themeoptions/options.php:606
 msgid "Show Captions?"
 msgstr "Afficher les légendes ?"
 
-#: ../themeoptions/options.php:477 ../themeoptions/options.php:601
+#: ../themeoptions/options.php:483 ../themeoptions/options.php:607
 msgid "Choose to show or hide captions"
 msgstr "Choisir d'afficher ou de cacher les légendes"
 
-#: ../themeoptions/options.php:485 ../themeoptions/options.php:609
+#: ../themeoptions/options.php:491 ../themeoptions/options.php:615
 msgid "Video Embed Code"
 msgstr "Code d'inclusion de vidéo"
 
-#: ../themeoptions/options.php:486 ../themeoptions/options.php:610
+#: ../themeoptions/options.php:492 ../themeoptions/options.php:616
 msgid "If your using a video on the home page place video embed code here."
 msgstr ""
 "Si vous utilisez une vidéo sur la page d'accueil, placez le code d'inclusion "
 "de vidéo ici."
 
-#: ../themeoptions/options.php:497
+#: ../themeoptions/options.php:503
 msgid "Home Mobile Slider"
 msgstr "Diaporama d'accueil pour mobiles"
 
-#: ../themeoptions/options.php:498
+#: ../themeoptions/options.php:504
 msgid "Create a more lightweight home slider for your mobile visitors."
 msgstr "Créez un carrousel d'accueil plus léger pour l'accès via mobiles."
 
-#: ../themeoptions/options.php:504
+#: ../themeoptions/options.php:510
 msgid "Would you like to use this feature?"
 msgstr "Voulez-vous utiliser cette fonctionnalité ?"
 
-#: ../themeoptions/options.php:505
+#: ../themeoptions/options.php:511
 msgid ""
 "Choose if you would like to show a different slider on your home page for "
 "your mobile visitors."
@@ -1597,189 +1603,195 @@ msgstr ""
 "Choisissez si vous voulez afficher un carrousel différent sur votre page "
 "d'accueil pour l'accès via mobiles."
 
-#: ../themeoptions/options.php:512
+#: ../themeoptions/options.php:518
 msgid "Choose a Slider for Mobile"
 msgstr "Choisissez un carrousel pour mobile"
 
-#: ../themeoptions/options.php:513
+#: ../themeoptions/options.php:519
 msgid "Choose which slider you would like to show for mobile viewers."
 msgstr ""
 "Choisissez quel carrousel vous souhaitez montrer aux personnes qui accèdent "
 "au site avec un mobile."
 
-#: ../themeoptions/options.php:621
+#: ../themeoptions/options.php:627
 msgid "Home Layout"
 msgstr "Disposition de la page d'accueil"
 
-#: ../themeoptions/options.php:629
+#: ../themeoptions/options.php:635
 msgid "Display a sidebar on the Home Page?"
 msgstr "Afficher une barre latérale sur la page d'accueil ?"
 
-#: ../themeoptions/options.php:630
+#: ../themeoptions/options.php:636
 msgid "This determines if there is a sidebar on the home page."
 msgstr "Cela détermine si il y a une barre latérale sur la page d'accueil."
 
-#: ../themeoptions/options.php:641
+#: ../themeoptions/options.php:647
 msgid "Choose a Sidebar for your Home Page"
 msgstr "Choisissez une barre latérale pour votre page d'accueil"
 
-#: ../themeoptions/options.php:652
+#: ../themeoptions/options.php:658
 msgid "Homepage Layout Manager"
 msgstr "Gestionnaire de disposition de la page d'accueil"
 
-#: ../themeoptions/options.php:653
+#: ../themeoptions/options.php:659
 msgid "Organize how you want the layout to appear on the homepage"
 msgstr "Choisissez la disposition de la page d'accueil"
 
-#: ../themeoptions/options.php:657
+#: ../themeoptions/options.php:663
 msgid "Latest Blog Posts"
 msgstr "Articles récents"
 
-#: ../themeoptions/options.php:658
+#: ../themeoptions/options.php:664
 msgid "Portfolio Carousel"
 msgstr "Carrousel de portefolio"
 
-#: ../themeoptions/options.php:659 ../themeoptions/options.php:763
+#: ../themeoptions/options.php:665 ../themeoptions/options.php:769
 msgid "Icon Menu"
 msgstr "Menu d'icônes"
 
-#: ../themeoptions/options.php:662
+#: ../themeoptions/options.php:668
 msgid "Page Title"
 msgstr "Titre de la page"
 
-#: ../themeoptions/options.php:663
+#: ../themeoptions/options.php:669
 msgid "Page Content"
 msgstr "Contenu de la page"
 
-#: ../themeoptions/options.php:672
+#: ../themeoptions/options.php:678
 msgid "Home Blog Settings"
 msgstr "Réglages du blogue en page d'accueil"
 
-#: ../themeoptions/options.php:678
+#: ../themeoptions/options.php:684
 msgid "Home Blog Title"
 msgstr "Titre du blogue en page d'accueil"
 
-#: ../themeoptions/options.php:679
+#: ../themeoptions/options.php:685
 msgid "ex: Latest from the blog"
 msgstr "ex. : Quoi de nouveau sur le blogue"
 
-#: ../themeoptions/options.php:685
+#: ../themeoptions/options.php:691
 msgid "Choose How many posts on Homepage"
 msgstr "Choisissez le nombre d'articles sur la page d'accueil"
 
-#: ../themeoptions/options.php:697
+#: ../themeoptions/options.php:703
 msgid "Limit posts to a Category"
 msgstr "Limiter les articles à une catégorie"
 
-#: ../themeoptions/options.php:698
+#: ../themeoptions/options.php:704
 msgid "Leave blank to select all"
 msgstr "Laissez vide pour tout sélectionner"
 
-#: ../themeoptions/options.php:706
+#: ../themeoptions/options.php:712
 msgid "Home Portfolio Carousel Settings"
 msgstr "Réglages du carrousel de portefolio de la page d'accueil"
 
-#: ../themeoptions/options.php:712
+#: ../themeoptions/options.php:718
 msgid "Home Portfolio Carousel title"
 msgstr "Titre du carrousel de portefolio de la page d'accueil"
 
-#: ../themeoptions/options.php:713
+#: ../themeoptions/options.php:719
 msgid "ex: Portfolio Carousel title"
 msgstr "ex. : titre du carrousel de portefolio"
 
-#: ../themeoptions/options.php:721
+#: ../themeoptions/options.php:727
 msgid "Portfolio Carousel Category Type"
 msgstr "Type de catégorie de carrousel de portefolio"
 
-#: ../themeoptions/options.php:722
+#: ../themeoptions/options.php:728
 msgid "Leave blank to select all types"
 msgstr "Laissez vide pour sélectionner tous les types"
 
-#: ../themeoptions/options.php:730
+#: ../themeoptions/options.php:736
 msgid "Choose how many portfolio items are in carousel"
 msgstr "Choisissez le nombre d'items du portefolio sont dans le carrousel"
 
-#: ../themeoptions/options.php:740
+#: ../themeoptions/options.php:746
 msgid "Portfolio Carousel Order by"
 msgstr "Classer le carrousel de portefolio par"
 
-#: ../themeoptions/options.php:741
+#: ../themeoptions/options.php:747
 msgid "Choose how the portfolio items should be ordered in the carousel."
 msgstr "Choisissez l'ordre des items du portefolio dans le carrousel."
 
-#: ../themeoptions/options.php:750
+#: ../themeoptions/options.php:756
 msgid "Display Portfolio Types under Title"
 msgstr "Afficher les types de portefolio sous le titre"
 
-#: ../themeoptions/options.php:757
+#: ../themeoptions/options.php:763
 msgid "Home Icon Menu"
 msgstr "Menu d'icônes de la page d'accueil"
 
-#: ../themeoptions/options.php:764
+#: ../themeoptions/options.php:770
 msgid "Choose your icons for the icon menu."
 msgstr "Choisissez vos icônes pour le menu d'icônes."
 
-#: ../themeoptions/options.php:771
+#: ../themeoptions/options.php:777
 msgid "Choose how many columns in each row"
 msgstr "Choisissez le nombre de colonnes dans chaque rangée"
 
-#: ../themeoptions/options.php:781
+#: ../themeoptions/options.php:787
 msgid "Page Content Options"
 msgstr "Options de contenu de la page"
 
-#: ../themeoptions/options.php:787
+#: ../themeoptions/options.php:793
 msgid "Latest Post Display"
 msgstr "Affichage des articles récents"
 
-#: ../themeoptions/options.php:788
+#: ../themeoptions/options.php:794
 msgid ""
 "If Latest Post page is font page. Choose to show full post or post excerpt."
 msgstr ""
 "Si la page Derniers articles est la page d'accueil. Choisissez d'afficher "
 "l'article ou un extrait."
 
-#: ../themeoptions/options.php:802
+#: ../themeoptions/options.php:804
+msgid ""
+"*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to "
+"Apperance > Theme Options > Home Layout for all home layout settings"
+msgstr ""
+
+#: ../themeoptions/options.php:814
 msgid "Shop Settings"
 msgstr "Réglages de la boutique"
 
-#: ../themeoptions/options.php:803
+#: ../themeoptions/options.php:815
 msgid "Shop Archive Page Settings (Woocommerce plugin required)"
 msgstr ""
 "Réglages de la page d'archive de boutique (extension Woocommerce requise)"
 
-#: ../themeoptions/options.php:810
+#: ../themeoptions/options.php:822
 msgid "Display the sidebar on shop archives?"
 msgstr "Afficher la barre latérale sur les archives de la boutique ?"
 
-#: ../themeoptions/options.php:811
+#: ../themeoptions/options.php:823
 msgid "This determines if there is a sidebar on the shop and category pages."
 msgstr ""
 "Cela détermine si il y a une barre latérale sur les pages de produits de la "
 "boutique."
 
-#: ../themeoptions/options.php:821
+#: ../themeoptions/options.php:833
 msgid "Choose a Sidebar for your shop page"
 msgstr "Choisissez une barre latérale pour votre page boutique"
 
-#: ../themeoptions/options.php:831
+#: ../themeoptions/options.php:843
 msgid "How many products per page"
 msgstr "Combien de produits par page"
 
-#: ../themeoptions/options.php:841
+#: ../themeoptions/options.php:853
 msgid "Show Ratings in Shop and Category Pages"
 msgstr "Montrer les cotes dans les pages de produits de la boutique"
 
-#: ../themeoptions/options.php:842
+#: ../themeoptions/options.php:854
 msgid "This determines if the rating is displayed in the product archive pages"
 msgstr ""
 "Cela détermine si la cote est affichée dans les pages de produits de la "
 "boutique"
 
-#: ../themeoptions/options.php:849
+#: ../themeoptions/options.php:861
 msgid "Quantity Box plus and minus"
 msgstr "Boîte de quantité plus et moins"
 
-#: ../themeoptions/options.php:850
+#: ../themeoptions/options.php:862
 msgid ""
 "Turn this off if you would like to use browser added plus and minus for "
 "number boxes"
@@ -1787,83 +1799,83 @@ msgstr ""
 "Désactiver cette option si vous souhaitez utiliser les plus et moins ajoutés "
 "par le navigateur pour les zones numériques"
 
-#: ../themeoptions/options.php:857
+#: ../themeoptions/options.php:869
 msgid "Shop Category Image Size"
 msgstr "Taille d'image de catégorie Boutique"
 
-#: ../themeoptions/options.php:862
+#: ../themeoptions/options.php:874
 msgid "Category Image Aspect Ratio"
 msgstr "Rapport d'aspect d'image de catégorie"
 
-#: ../themeoptions/options.php:863
+#: ../themeoptions/options.php:875
 msgid "This sets how you want your category images to be cropped."
 msgstr "Cela définit comment les images de catégorie seront recadrées."
 
-#: ../themeoptions/options.php:864
+#: ../themeoptions/options.php:876
 msgid "Square 1:1"
 msgstr "Carré 1:1"
 
-#: ../themeoptions/options.php:864
+#: ../themeoptions/options.php:876
 msgid "Portrait 3:4"
 msgstr "Portrait 3:4"
 
-#: ../themeoptions/options.php:864
+#: ../themeoptions/options.php:876
 msgid "Landscape 4:3"
 msgstr "Paysage 4:3"
 
-#: ../themeoptions/options.php:864
+#: ../themeoptions/options.php:876
 msgid "Wide Landscape 4:2"
 msgstr "Paysage large 2:1"
 
-#: ../themeoptions/options.php:864
+#: ../themeoptions/options.php:876
 msgid "Turn Off"
 msgstr "Éteindre"
 
-#: ../themeoptions/options.php:873
+#: ../themeoptions/options.php:885
 msgid "Shop Product Title Settings"
 msgstr "Réglages du titre des pages de produits de la boutique"
 
-#: ../themeoptions/options.php:878
+#: ../themeoptions/options.php:890
 msgid "Shop & archive Product title Font"
 msgstr "Police du titre des pages de produits de la boutique"
 
-#: ../themeoptions/options.php:894
+#: ../themeoptions/options.php:906
 msgid "Choose Size and Style for product titles on category and archive pages."
 msgstr ""
 "Choisissez la taille et le style pour les titres de produits sur les pages "
 "de produits de la boutique."
 
-#: ../themeoptions/options.php:906
+#: ../themeoptions/options.php:918
 msgid "Set Product Title to Uppercase?"
 msgstr "Mettre le titre du produit en lettres capitales"
 
-#: ../themeoptions/options.php:907
+#: ../themeoptions/options.php:919
 msgid "This makes your product titles uppercase on Category pages"
 msgstr ""
 "Cela met les titres de vos produits en capitales sur les pages de produits "
 "de la boutique"
 
-#: ../themeoptions/options.php:913
+#: ../themeoptions/options.php:925
 msgid "Product title Min Height"
 msgstr "Hauteur minimal du titre de produits"
 
-#: ../themeoptions/options.php:914
+#: ../themeoptions/options.php:926
 msgid ""
 "If your titles are long increase this to help align your products height."
 msgstr ""
 "Si vos titres sont longs augmenter cette valeur pour aider à aligner la "
 "hauteur de votre produits."
 
-#: ../themeoptions/options.php:925
+#: ../themeoptions/options.php:937
 msgid "Product Image Sizes"
 msgstr "Tailles des images de produits"
 
-#: ../themeoptions/options.php:931
+#: ../themeoptions/options.php:943
 msgid "Enable Product Image Crop on Catalog pages"
 msgstr ""
 "Permettre le recadrage des images de produits sur les pages du catalogue"
 
-#: ../themeoptions/options.php:932
+#: ../themeoptions/options.php:944
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 270px for Catalog Images"
@@ -1871,12 +1883,12 @@ msgstr ""
 "Si désactivé, les dimensions de l'image sont définies par les paramètres de "
 "WooCommerce - largeur recommandée : 270px pour les images du catalogue"
 
-#: ../themeoptions/options.php:939
+#: ../themeoptions/options.php:951
 msgid "Enable Product Image Crop on product Page"
 msgstr ""
 "Permettre le recadrage des images de produits sur les pages de produits"
 
-#: ../themeoptions/options.php:940
+#: ../themeoptions/options.php:952
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 468px for Single Product Image"
@@ -1885,41 +1897,41 @@ msgstr ""
 "WooCommerce - largeur recommandée : 468px pour les images sur les pages "
 "produits"
 
-#: ../themeoptions/options.php:947
+#: ../themeoptions/options.php:959
 msgid "Product Page Settings"
 msgstr "Réglages des pages produits"
 
-#: ../themeoptions/options.php:952
+#: ../themeoptions/options.php:964
 msgid "Display product tabs?"
 msgstr "Afficher les onglets sur les pages produits ?"
 
-#: ../themeoptions/options.php:953
+#: ../themeoptions/options.php:965
 msgid "This determines if product tabs are displayed"
 msgstr "Cela détermine si les onglets sont affichés sur les pages produits"
 
-#: ../themeoptions/options.php:962
+#: ../themeoptions/options.php:974
 msgid "Display related products?"
 msgstr "Afficher les produits apparentés ?"
 
-#: ../themeoptions/options.php:963
+#: ../themeoptions/options.php:975
 msgid "This determines related products are displayed"
 msgstr ""
 "Cela détermine si les produits apparentés sont affichés sur les pages "
 "produits"
 
-#: ../themeoptions/options.php:973
+#: ../themeoptions/options.php:985
 msgid "Basic Styling"
 msgstr "Style de base"
 
-#: ../themeoptions/options.php:974
+#: ../themeoptions/options.php:986
 msgid "Basic Stylng"
 msgstr "Style de base"
 
-#: ../themeoptions/options.php:979
+#: ../themeoptions/options.php:991
 msgid "Theme Skin Stylesheet"
 msgstr "Feuille de style de l'habillage du thème"
 
-#: ../themeoptions/options.php:980
+#: ../themeoptions/options.php:992
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
@@ -1928,271 +1940,283 @@ msgstr ""
 "sur cette feuille de style. Exemple: les couleurs établies dans la section "
 "Typographie."
 
-#: ../themeoptions/options.php:990
+#: ../themeoptions/options.php:1002
 msgid "Primary Color"
 msgstr "Couleur principale"
 
-#: ../themeoptions/options.php:991
+#: ../themeoptions/options.php:1003
 msgid "Choose the default Highlight color for your site."
 msgstr "Choisissez la couleur de rehaussement par défaut pour le site."
 
-#: ../themeoptions/options.php:1000
+#: ../themeoptions/options.php:1012
 msgid "20% lighter than Primary Color"
 msgstr "20% plus clair que la couleur principale"
 
-#: ../themeoptions/options.php:1001
+#: ../themeoptions/options.php:1013
 msgid "This is used for hover effects"
 msgstr "Ceci est utilisé pour les effets de survol"
 
-#: ../themeoptions/options.php:1010
+#: ../themeoptions/options.php:1022
 msgid "Sitewide Gray Fonts"
 msgstr "Polices grises pour l'ensemble du site"
 
-#: ../themeoptions/options.php:1020
+#: ../themeoptions/options.php:1032
 msgid "Footer Font Color"
 msgstr "Couleur de police de pied de page"
 
-#: ../themeoptions/options.php:1034
+#: ../themeoptions/options.php:1046
 msgid "Advanced Styling"
 msgstr "Style avancé"
 
-#: ../themeoptions/options.php:1035
+#: ../themeoptions/options.php:1047
 msgid "Main Content Background"
 msgstr "Fond du contenu principal"
 
-#: ../themeoptions/options.php:1040
+#: ../themeoptions/options.php:1052
 msgid "Content Background Color"
 msgstr "Couleur de fond du contenu"
 
-#: ../themeoptions/options.php:1050 ../themeoptions/options.php:1095
-#: ../themeoptions/options.php:1140 ../themeoptions/options.php:1185
-#: ../themeoptions/options.php:1230 ../themeoptions/options.php:1275
-#: ../themeoptions/options.php:1320
+#: ../themeoptions/options.php:1062 ../themeoptions/options.php:1107
+#: ../themeoptions/options.php:1152 ../themeoptions/options.php:1197
+#: ../themeoptions/options.php:1242 ../themeoptions/options.php:1287
+#: ../themeoptions/options.php:1332
 msgid "Upload background image or texture"
 msgstr "Téléversez une image ou une texture"
 
-#: ../themeoptions/options.php:1056 ../themeoptions/options.php:1101
-#: ../themeoptions/options.php:1146 ../themeoptions/options.php:1191
-#: ../themeoptions/options.php:1236 ../themeoptions/options.php:1281
-#: ../themeoptions/options.php:1326
+#: ../themeoptions/options.php:1068 ../themeoptions/options.php:1113
+#: ../themeoptions/options.php:1158 ../themeoptions/options.php:1203
+#: ../themeoptions/options.php:1248 ../themeoptions/options.php:1293
+#: ../themeoptions/options.php:1338
 msgid "Image repeat options"
 msgstr "Options de répétition d'image"
 
-#: ../themeoptions/options.php:1064 ../themeoptions/options.php:1109
-#: ../themeoptions/options.php:1154 ../themeoptions/options.php:1199
-#: ../themeoptions/options.php:1244 ../themeoptions/options.php:1289
-#: ../themeoptions/options.php:1334
+#: ../themeoptions/options.php:1076 ../themeoptions/options.php:1121
+#: ../themeoptions/options.php:1166 ../themeoptions/options.php:1211
+#: ../themeoptions/options.php:1256 ../themeoptions/options.php:1301
+#: ../themeoptions/options.php:1346
 msgid "X image placement options"
 msgstr "Option de positionnement horizontal de l'image"
 
-#: ../themeoptions/options.php:1072 ../themeoptions/options.php:1117
-#: ../themeoptions/options.php:1162 ../themeoptions/options.php:1207
-#: ../themeoptions/options.php:1252 ../themeoptions/options.php:1297
-#: ../themeoptions/options.php:1342
+#: ../themeoptions/options.php:1084 ../themeoptions/options.php:1129
+#: ../themeoptions/options.php:1174 ../themeoptions/options.php:1219
+#: ../themeoptions/options.php:1264 ../themeoptions/options.php:1309
+#: ../themeoptions/options.php:1354
 msgid "Y image placement options"
 msgstr "Option de positionnement vertical de l'image"
 
-#: ../themeoptions/options.php:1080
+#: ../themeoptions/options.php:1092
 msgid "Topbar Background"
 msgstr "Fond de la barre supérieure"
 
-#: ../themeoptions/options.php:1086
+#: ../themeoptions/options.php:1098
 msgid "Topbar Background Color"
 msgstr "Couleur de fond de la barre supérieure"
 
-#: ../themeoptions/options.php:1125
+#: ../themeoptions/options.php:1137
 msgid "Header Background"
 msgstr "Fond de l'entête"
 
-#: ../themeoptions/options.php:1130
+#: ../themeoptions/options.php:1142
 msgid "Header Background Color"
 msgstr "Couleur de fond de l'entête"
 
-#: ../themeoptions/options.php:1170
+#: ../themeoptions/options.php:1182
 msgid "Secondary Menu Background"
 msgstr "Fond du menu secondaire"
 
-#: ../themeoptions/options.php:1175
+#: ../themeoptions/options.php:1187
 msgid "Secondary menu Background Color"
 msgstr "Couleur de fond du menu secondaire"
 
-#: ../themeoptions/options.php:1215
+#: ../themeoptions/options.php:1227
 msgid "Mobile Menu Background"
 msgstr "Fond du menu mobile"
 
-#: ../themeoptions/options.php:1220
+#: ../themeoptions/options.php:1232
 msgid "Mobile Background Color"
 msgstr "Couleur de fond mobile"
 
-#: ../themeoptions/options.php:1260
+#: ../themeoptions/options.php:1272
 msgid "Footer Background"
 msgstr "Fond du pied de page"
 
-#: ../themeoptions/options.php:1265
+#: ../themeoptions/options.php:1277
 msgid "Footer Background Color"
 msgstr "Couleur de fond du pied de page"
 
-#: ../themeoptions/options.php:1305
+#: ../themeoptions/options.php:1317
 msgid "Body Background"
 msgstr "Fond du corps"
 
-#: ../themeoptions/options.php:1310
+#: ../themeoptions/options.php:1322
 msgid "Body Background Color"
 msgstr "Couleur de fond du corps"
 
-#: ../themeoptions/options.php:1350
+#: ../themeoptions/options.php:1362
 msgid "Fixed or Scroll"
 msgstr "Fixe ou défilant"
 
-#: ../themeoptions/options.php:1361
+#: ../themeoptions/options.php:1373
 msgid "Typography"
 msgstr "Typographie"
 
-#: ../themeoptions/options.php:1362
+#: ../themeoptions/options.php:1374
 msgid "Header Font Options"
 msgstr "Options des polices d'entête"
 
-#: ../themeoptions/options.php:1367
+#: ../themeoptions/options.php:1380
+msgid ""
+"*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to "
+"Apperance > Theme Options > Typography settings for all Typography settings"
+msgstr ""
+
+#: ../themeoptions/options.php:1385
 msgid "H1 Headings"
 msgstr "Titre H1"
 
-#: ../themeoptions/options.php:1383
+#: ../themeoptions/options.php:1401
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
 msgstr ""
 "Choisissez la taille et le style pour les titres H1. Ceci défini le style de "
 "vos titres de page."
 
-#: ../themeoptions/options.php:1394
+#: ../themeoptions/options.php:1412
 msgid "H2 Headings"
 msgstr "Titre H2"
 
-#: ../themeoptions/options.php:1410
+#: ../themeoptions/options.php:1428
 msgid "Choose Size and Style for h2"
 msgstr "Choisissez la taille et le style pour les titres H2"
 
-#: ../themeoptions/options.php:1421
+#: ../themeoptions/options.php:1439
 msgid "H3 Headings"
 msgstr "Titre H3"
 
-#: ../themeoptions/options.php:1437
+#: ../themeoptions/options.php:1455
 msgid "Choose Size and Style for h3"
 msgstr "Choisissez la taille et le style pour les titres H3"
 
-#: ../themeoptions/options.php:1448
+#: ../themeoptions/options.php:1466
 msgid "H4 Headings"
 msgstr "Titre H4"
 
-#: ../themeoptions/options.php:1464
+#: ../themeoptions/options.php:1482
 msgid "Choose Size and Style for h4"
 msgstr "Choisissez la taille et le style pour les titres H4"
 
-#: ../themeoptions/options.php:1475
+#: ../themeoptions/options.php:1493
 msgid "H5 Headings"
 msgstr "Titre H5"
 
-#: ../themeoptions/options.php:1491
+#: ../themeoptions/options.php:1509
 msgid "Choose Size and Style for h5"
 msgstr "Choisissez la taille et le style pour les titres H5"
 
-#: ../themeoptions/options.php:1503
+#: ../themeoptions/options.php:1521
 msgid "Body Font Options"
 msgstr "Options de police de corps"
 
-#: ../themeoptions/options.php:1508
+#: ../themeoptions/options.php:1526
 msgid "Body Font"
 msgstr "Police de corps"
 
-#: ../themeoptions/options.php:1524
+#: ../themeoptions/options.php:1542
 msgid "Choose Size and Style for paragraphs"
 msgstr "Choisissez la taille et le style des paragraphes"
 
-#: ../themeoptions/options.php:1539
+#: ../themeoptions/options.php:1557
 msgid "Menu Settings"
 msgstr "Réglages de menu"
 
-#: ../themeoptions/options.php:1540
+#: ../themeoptions/options.php:1558
 msgid "Primary Menu Options"
 msgstr "Options du menu principal"
 
-#: ../themeoptions/options.php:1546
+#: ../themeoptions/options.php:1564
+msgid ""
+"*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to "
+"Apperance > Theme Options > Menu settings for all menu settings"
+msgstr ""
+
+#: ../themeoptions/options.php:1570
 msgid "Primary Menu Font"
 msgstr "Police du menu principal"
 
-#: ../themeoptions/options.php:1561
+#: ../themeoptions/options.php:1585
 msgid "Choose Size and Style for primary menu"
 msgstr "Choisissez la taille et le style du menu principal"
 
-#: ../themeoptions/options.php:1573
+#: ../themeoptions/options.php:1597
 msgid "Secondary Menu Options"
 msgstr "Option du menu secondaire"
 
-#: ../themeoptions/options.php:1579
+#: ../themeoptions/options.php:1603
 msgid "Secondary Menu Font"
 msgstr "Police du menu secondaire"
 
-#: ../themeoptions/options.php:1594
+#: ../themeoptions/options.php:1618
 msgid "Choose Size and Style for secondary menu"
 msgstr "Choisissez la taille et le style du menu secondaire"
 
-#: ../themeoptions/options.php:1606
+#: ../themeoptions/options.php:1630
 msgid "Mobile Menu Options"
 msgstr "Option du menu mobile"
 
-#: ../themeoptions/options.php:1612
+#: ../themeoptions/options.php:1636
 msgid "Submenu items collapse until opened"
 msgstr "Les items de sous-menu restent fermés jusqu'à leur ouverture"
 
-#: ../themeoptions/options.php:1619
+#: ../themeoptions/options.php:1643
 msgid "Mobile Menu Font"
 msgstr "Police du menu mobile"
 
-#: ../themeoptions/options.php:1634
+#: ../themeoptions/options.php:1658
 msgid "Choose Size and Style for Mobile Menu"
 msgstr "Choisissez la taille et le style du menu mobile"
 
-#: ../themeoptions/options.php:1649
+#: ../themeoptions/options.php:1673
 msgid "Page/Post Settings"
 msgstr "Réglages page/article"
 
-#: ../themeoptions/options.php:1650
+#: ../themeoptions/options.php:1674
 msgid "Page and Post Comment Settings"
 msgstr "Réglages des commentaires pour les pages et les articles"
 
-#: ../themeoptions/options.php:1656
+#: ../themeoptions/options.php:1680
 msgid "Show Comments Closed Text?"
 msgstr "Afficher l'avis de commentaires clos ?"
 
-#: ../themeoptions/options.php:1657
+#: ../themeoptions/options.php:1681
 msgid "Choose to show or hide comments closed alert below posts."
 msgstr ""
 "Choisir d'afficher ou de cacher l'avis de fermeture des commentaires sous "
 "les articles."
 
-#: ../themeoptions/options.php:1664
+#: ../themeoptions/options.php:1688
 msgid "Allow Comments on Pages"
 msgstr "Autoriser les commentaires sur les pages"
 
-#: ../themeoptions/options.php:1665
+#: ../themeoptions/options.php:1689
 msgid "Turn on to allow comments on pages"
 msgstr "Autoriser les commentaires sur les pages"
 
-#: ../themeoptions/options.php:1672
+#: ../themeoptions/options.php:1696
 msgid "Allow Comments on Portfolio Posts"
 msgstr "Autoriser les commentaires sur les articles de type portefolio"
 
-#: ../themeoptions/options.php:1673
+#: ../themeoptions/options.php:1697
 msgid "Turn on to allow comments on Portfolio posts"
 msgstr "Autoriser les commentaires sur les articles de type portefolio"
 
-#: ../themeoptions/options.php:1680
+#: ../themeoptions/options.php:1704
 msgid "Portfolio Post"
 msgstr "Publication portefolio"
 
-#: ../themeoptions/options.php:1688
+#: ../themeoptions/options.php:1712
 msgid "All Projects Portfolio Page"
 msgstr "Page de tous les portefolios de projets"
 
-#: ../themeoptions/options.php:1689
+#: ../themeoptions/options.php:1713
 msgid ""
 "This sets the link in every single portfolio page. *note: You still have to "
 "set the page template to portfolio."
@@ -2200,53 +2224,53 @@ msgstr ""
 "Ceci définit le lien sur chaque page de portefolio. *Attention : Vous devez "
 "quand même régler le modèle de page à «portefolio»."
 
-#: ../themeoptions/options.php:1695
+#: ../themeoptions/options.php:1719
 msgid "Portfolio Type Page Defaults"
 msgstr "Paramètres par défaut des page de type portefolio"
 
-#: ../themeoptions/options.php:1701
+#: ../themeoptions/options.php:1725
 msgid "Portfolio Type - Post Columns"
 msgstr "Type portefolio - colonnes de la publication"
 
-#: ../themeoptions/options.php:1702
+#: ../themeoptions/options.php:1726
 msgid "Choose how many columns for portfolio type pages"
 msgstr "Choisir le nombre de colonnes pour les pages de type portefolio"
 
-#: ../themeoptions/options.php:1711
+#: ../themeoptions/options.php:1735
 msgid "Show Types under Title"
 msgstr "Afficher les type sous le titre"
 
-#: ../themeoptions/options.php:1712
+#: ../themeoptions/options.php:1736
 msgid "Choose to show or hide portfolio type under title."
 msgstr "Choisir d'afficher ou de masquer le type portefolio sous le titre."
 
-#: ../themeoptions/options.php:1719
+#: ../themeoptions/options.php:1743
 msgid "Blog Post Defaults"
 msgstr "Valeurs par défaut des articles"
 
-#: ../themeoptions/options.php:1725
+#: ../themeoptions/options.php:1749
 msgid "Blog Post Summary Default"
 msgstr "Valeur par défaut du sommaire de l'article"
 
-#: ../themeoptions/options.php:1735
+#: ../themeoptions/options.php:1759
 msgid "Default post summary feature Image"
 msgstr "Image vedette par défaut du résumé de l'article"
 
-#: ../themeoptions/options.php:1736
+#: ../themeoptions/options.php:1760
 msgid "Replace theme default feature image for posts without a featured image"
 msgstr ""
 "Remplacer l'image en vedette par défaut du thème pour les articles sans une "
 "image en vedette"
 
-#: ../themeoptions/options.php:1742
+#: ../themeoptions/options.php:1766
 msgid "Blog Post Head Content Default"
 msgstr "Valeur par défaut de contenu d'entête de l'article"
 
-#: ../themeoptions/options.php:1751
+#: ../themeoptions/options.php:1775
 msgid "Show Previous and Next posts links?"
 msgstr "Afficher les liens vers les articles précédent et suivant"
 
-#: ../themeoptions/options.php:1752
+#: ../themeoptions/options.php:1776
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
@@ -2254,66 +2278,66 @@ msgstr ""
 "Choisissez d'afficher ou de cacher les liens vers les articles précédent et "
 "suivant dans le pied de page d'un article."
 
-#: ../themeoptions/options.php:1759
+#: ../themeoptions/options.php:1783
 msgid "Show Author Icon with posts?"
 msgstr "Afficher l'avatar de la personne auteure avec les articles ?"
 
-#: ../themeoptions/options.php:1760
+#: ../themeoptions/options.php:1784
 msgid "Choose to show or hide author icon under post title."
 msgstr ""
 "Choisissez d'afficher ou de cacher l'avatar de la personne auteure sous le "
 "titre de l'article."
 
-#: ../themeoptions/options.php:1767
+#: ../themeoptions/options.php:1791
 msgid "Blog Post Author Box Default"
 msgstr "Boite d'auteurat d'article par défaut"
 
-#: ../themeoptions/options.php:1768 ../themeoptions/options.php:1777
+#: ../themeoptions/options.php:1792 ../themeoptions/options.php:1801
 msgid "No, Do not Show"
 msgstr "Non, ne pas afficher"
 
-#: ../themeoptions/options.php:1768
+#: ../themeoptions/options.php:1792
 msgid "Yes, Show"
 msgstr "Oui, afficher"
 
-#: ../themeoptions/options.php:1776
+#: ../themeoptions/options.php:1800
 msgid "Blog Post Bottom Carousel Default"
 msgstr "Carrousel de bas d'article par défaut"
 
-#: ../themeoptions/options.php:1785
+#: ../themeoptions/options.php:1809
 msgid "Blog Category/Archive Defaults"
 msgstr "Catégorie par défaut"
 
-#: ../themeoptions/options.php:1791
+#: ../themeoptions/options.php:1815
 msgid "Blog Archive"
 msgstr "Archive du blogue"
 
-#: ../themeoptions/options.php:1792
+#: ../themeoptions/options.php:1816
 msgid "Choose to show full post or post excerpt."
 msgstr "Choisir d'afficher l'article au complet ou juste un extrait."
 
-#: ../themeoptions/options.php:1804 ../themeoptions/options.php:1805
+#: ../themeoptions/options.php:1828 ../themeoptions/options.php:1829
 msgid "Misc Settings"
 msgstr "Réglages divers"
 
-#: ../themeoptions/options.php:1811
+#: ../themeoptions/options.php:1835
 msgid "Hide Image Border"
 msgstr "Cacher la bordure de l'image"
 
-#: ../themeoptions/options.php:1812
+#: ../themeoptions/options.php:1836
 msgid "Choose to show or hide image border for images added in pages or posts"
 msgstr ""
 "Choisissez d'afficher ou de cacher la bordure des images ajoutées dans les "
 "pages et les articles"
 
-#: ../themeoptions/options.php:1820
+#: ../themeoptions/options.php:1844
 msgid ""
 "Custom Favicon, *Note depreciated. Use WordPress site icon in customizer."
 msgstr ""
 "Favicon personnalisée, * Note : obsolète. Utiliser plutôt l'icône de site "
 "dans Apparence/Personnaliser."
 
-#: ../themeoptions/options.php:1821
+#: ../themeoptions/options.php:1845
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
@@ -2321,19 +2345,19 @@ msgstr ""
 "Téléversez une image de 16px par 16px de format png, gif ou ico qui "
 "représentera votre site."
 
-#: ../themeoptions/options.php:1827
+#: ../themeoptions/options.php:1851
 msgid "Contact Form Email"
 msgstr "Adresse de courriel du formulaire de contact"
 
-#: ../themeoptions/options.php:1828
+#: ../themeoptions/options.php:1852
 msgid "Sets the email for the contact page email form."
 msgstr "Défini l'adresse de courriel pour le formulaire de la page de contact."
 
-#: ../themeoptions/options.php:1835
+#: ../themeoptions/options.php:1859
 msgid "Footer Copyright Text"
 msgstr "Avis de protection du droit d'auteur du pied de page"
 
-#: ../themeoptions/options.php:1836
+#: ../themeoptions/options.php:1860
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
@@ -2342,31 +2366,31 @@ msgstr ""
 "utiliser les balises-macro («shortcodes») suivantes dans votre texte de bas "
 "de page : [copyright] [site-name] [the-year]"
 
-#: ../themeoptions/options.php:1843
+#: ../themeoptions/options.php:1867
 msgid "Create Sidebars"
 msgstr "Creation de barres latérales"
 
-#: ../themeoptions/options.php:1849
+#: ../themeoptions/options.php:1873
 msgid "Create Custom Sidebars"
 msgstr "Créer des barres latérales personnalisées"
 
-#: ../themeoptions/options.php:1850
+#: ../themeoptions/options.php:1874
 msgid "Type new sidebar name into textbox"
 msgstr "Entrez le nouveau nom de la barre latérale dans la zone de texte"
 
-#: ../themeoptions/options.php:1851
+#: ../themeoptions/options.php:1875
 msgid "Extra Sidebar"
 msgstr "Barre latérale extra"
 
-#: ../themeoptions/options.php:1857
+#: ../themeoptions/options.php:1881
 msgid "Wordpress Galleries"
 msgstr "Galeries WordPress"
 
-#: ../themeoptions/options.php:1863
+#: ../themeoptions/options.php:1887
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr "Permettre aux galeries Virtue de remplacer celles de WordPress"
 
-#: ../themeoptions/options.php:1864
+#: ../themeoptions/options.php:1888
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
@@ -2374,36 +2398,44 @@ msgstr ""
 "Désactivez cette option si vous utilisez une extensions pour personnaliser "
 "des galeries, par exemple jetpack."
 
-#: ../themeoptions/options.php:1871
+#: ../themeoptions/options.php:1895
 msgid "Theme Lightbox"
 msgstr "Négatoscope (lightbox) du thème"
 
-#: ../themeoptions/options.php:1877
+#: ../themeoptions/options.php:1900
+msgid "Lightbox Off"
+msgstr ""
+
+#: ../themeoptions/options.php:1901
+msgid "Lightbox On"
+msgstr ""
+
+#: ../themeoptions/options.php:1903
 msgid "Turn Off Theme Lightbox?"
 msgstr "Désactiver le négatoscope (lightbox) du thème ?"
 
-#: ../themeoptions/options.php:1887
+#: ../themeoptions/options.php:1913
 msgid "Advanced Settings"
 msgstr "Réglages avancés"
 
-#: ../themeoptions/options.php:1888
+#: ../themeoptions/options.php:1914
 msgid "Custom CSS Box"
 msgstr "Encadré de CSS personnalisé"
 
-#: ../themeoptions/options.php:1894
+#: ../themeoptions/options.php:1920
 msgid "Custom CSS"
 msgstr "CSS personnalisé"
 
-#: ../themeoptions/options.php:1895
+#: ../themeoptions/options.php:1921
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 "Ajouter rapidement un peu de CSS à votre thème en l'ajoutant à cette zone."
 
-#: ../themeoptions/options.php:1903
+#: ../themeoptions/options.php:1929
 msgid "Import / Export"
 msgstr "Importation et Exportation"
 
-#: ../themeoptions/options.php:1904
+#: ../themeoptions/options.php:1930
 msgid "Import and Export your Theme Options from text or URL."
 msgstr ""
 "Importer et exporter les Options du thème à partir de texte ou d'une URL."

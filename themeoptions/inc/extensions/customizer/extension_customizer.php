@@ -261,6 +261,7 @@
             // All sections, settings, and controls will be added here
             public function _register_customizer_controls( $wp_customize ) {
 
+
                 if ( ! class_exists( 'Redux_Customizer_Section' ) ) {
                     include_once dirname( __FILE__ ) . '/inc/customizer_section.php';
                     if ( method_exists( $wp_customize, 'register_section_type' ) ) {
