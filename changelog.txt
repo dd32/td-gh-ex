@@ -1,4 +1,7 @@
 == CHANGE LOG ==
+= 1.1.9 =
+	- Update - target_blank removed from sider
+	- Update - Service widgets name changed to our featured
 = 1.1.8 =
 	- New - View ThemeFreesia Options added
 	- Update - pot file updated

@@ -203,9 +203,9 @@ function arise_page_sliders() {
 						$arise_page_sliders_display .= '<div class="slider-buttons">';
 						if($arise_settings['arise_slider_button'] == 0){
 							if($excerpt_text == '' || $excerpt_text == 'Read More') :
-								$arise_page_sliders_display 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.get_permalink().'"'.' class="btn-default vivid" target = "_blank">'.__('Read More', 'arise').'</a>';
+								$arise_page_sliders_display 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.get_permalink().'"'.' class="btn-default vivid">'.__('Read More', 'arise').'</a>';
 							else:
-							$arise_page_sliders_display 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.get_permalink().'"'.' class="btn-default vivid" target = "_blank">'.$arise_settings[ 'arise_tag_text' ].'</a>';
+							$arise_page_sliders_display 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.get_permalink().'"'.' class="btn-default vivid">'.$arise_settings[ 'arise_tag_text' ].'</a>';
 							endif;
 								}
 							if(!empty($slider_custom_text)){

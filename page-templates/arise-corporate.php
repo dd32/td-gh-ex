@@ -12,7 +12,7 @@ get_header();
 $arise_settings = arise_get_theme_options();
 	echo '<div id="main">';
 	if($arise_settings['arise_disable_features'] != 1){
-		echo '<!-- Service Widget ============================================= -->';
+		echo '<!-- Front Page Features ============================================= -->';
 		global $post;
 		$arise_features = '';
 		$arise_total_page_no = 0; 
@@ -73,7 +73,7 @@ $arise_settings = arise_get_theme_options();
 					endwhile;
 					$arise_features 	.='</div><!-- .end column clearfix -->';
 					$arise_features 	.='</div><!-- .container clearfix -->
-					</section><!-- end .widget_service -->';
+					</section><!-- end .arise_frontpage_features -->';
 				}
 		echo $arise_features;
 	}
