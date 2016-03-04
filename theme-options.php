@@ -50,10 +50,15 @@ function unlimited_options_content() {
 				   href="https://www.competethemes.com/wordpress-resources/"><?php _e( 'View Resources', 'unlimited' ); ?></a>
 			</p>
 		</div>
+		<div class="content content-review">
+			<h3><?php _e( 'Leave a Review', 'unlimited' ); ?></h3>
+			<p><?php _e( 'Help others find unlimited by leaving a review on wordpress.org.', 'unlimited' ); ?></p>
+			<a target="_blank" class="button-primary" href="https://wordpress.org/support/view/theme-reviews/unlimited"><?php _e( 'Leave a Review', 'unlimited' ); ?></a>
+		</div>
 		<div class="content content-delete-settings">
 			<h3><?php _e( 'Reset Unlimited Settings', 'unlimited' ); ?></h3>
 			<p>
-				<?php printf( __( "<strong>Warning:</strong> Clicking this button will erase the Unlimited theme's current settings in the <a href='%s'>Customizer</a>", 'unlimited' ), esc_url( $customizer_url ) ); ?>
+				<?php printf( __( "<strong>Warning:</strong> Clicking this button will erase the Unlimited theme's current settings in the <a href='%s'>Customizer</a>.", 'unlimited' ), esc_url( $customizer_url ) ); ?>
 			</p>
 			<form method="post">
 				<input type="hidden" name="unlimited_reset_customizer" value="unlimited_reset_customizer_settings"/>

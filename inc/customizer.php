@@ -137,21 +137,28 @@ function unlimited_add_customizer_content( $wp_customize ) {
 					'sanitize_callback' => 'ct_unlimited_sanitize_skype',
 					'transport'         => 'postMessage'
 				) );
+				// control
+				$wp_customize->add_control( $social_site, array(
+					'type'        => 'url',
+					'label'       => $label,
+					'description' => sprintf( __( 'Accepts Skype link protocol (<a href="%s" target="_blank">learn more</a>)', 'unlimited' ), 'https://www.competethemes.com/blog/skype-links-wordpress/' ),
+					'section'     => 'unlimited_social_media_icons',
+					'priority'    => $priority
+				) );
 			} else {
 				// setting
 				$wp_customize->add_setting( $social_site, array(
 					'sanitize_callback' => 'esc_url_raw',
 					'transport'         => 'postMessage'
 				) );
+				// control
+				$wp_customize->add_control( $social_site, array(
+					'type'     => 'url',
+					'label'    => $label,
+					'section'  => 'unlimited_social_media_icons',
+					'priority' => $priority
+				) );
 			}
-
-			// control
-			$wp_customize->add_control( $social_site, array(
-				'type'     => 'url',
-				'label'    => $label,
-				'section'  => 'unlimited_social_media_icons',
-				'priority' => $priority
-			) );
 		}
 		// increment the priority for next site
 		$priority = $priority + 5;
@@ -196,12 +203,10 @@ function unlimited_add_customizer_content( $wp_customize ) {
 		'transport'         => 'postMessage'
 	) );
 
-	$description_layout = sprintf( __( 'Want more layouts? <a target="_blank" href="%s">Check out Unlimited Pro</a>.', 'unlimited' ), 'https://www.competethemes.com/unlimited-pro/' );
-
 	// control
 	$wp_customize->add_control( 'layout', array(
 		'label'       => __( 'Choose your layout:', 'unlimited' ),
-		'description' => $description_layout,
+		'description' => sprintf( __( 'Want more layouts? <a target="_blank" href="%s">Check out Unlimited Pro</a>.', 'unlimited' ), 'https://www.competethemes.com/unlimited-pro/' ),
 		'section'     => 'unlimited_layout',
 		'settings'    => 'layout',
 		'type'        => 'radio',
