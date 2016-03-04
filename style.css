@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/tracks/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, social media icons, search bar, comment display controls, premium layouts and features, and more.  See our fully-setup live demo here: https://www.competethemes.com/tracks-live-demo/
-Version: 1.47
+Version: 1.48
 Tags: black, gray, silver, white, dark, one-column, fluid-layout, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: tracks
 License: GNU General Public License v2 or later
@@ -591,6 +591,10 @@ a img {
   -webkit-transition: opacity 0.3s 0.3s ease;
           transition: opacity 0.3s 0.3s ease;
 }
+.site-header.toggled .menu-primary, .site-header.toggled .menu-primary-tracks,
+.site-header.toggled .menu-primary-tracks {
+  left: 0;
+}
 .site-header.toggled .menu-unset > ul,
 .site-header.toggled .menu-primary-items {
   opacity: 1;
@@ -625,6 +629,7 @@ a img {
     background: none;
     position: static;
     width: 100%;
+    height: auto;
     padding: 0;
     margin: 0;
     text-align: right;
