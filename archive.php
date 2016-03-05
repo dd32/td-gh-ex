@@ -8,7 +8,12 @@
  */
 
 get_header(); ?>
+	<div id="content" class="site-content container">
 <div class="row">
+<?php $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); ?>
+		<?php if( 'left' == $sidebar_position ) :?>
+			<?php get_sidebar(); ?>
+		<?php endif; ?>  
 
 	<section id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">
@@ -91,7 +96,13 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php greenr_paging_nav(); ?>
+	<?php 
+		if(  get_theme_mod ('numeric_pagination',true) && function_exists( 'greenr_pagination' ) ) : 
+				greenr_pagination();
+			else :
+				greenr_post_nav();     
+			endif; 
+	?>
 
 		<?php else : ?>
 
@@ -102,5 +113,8 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+	<?php if( 'right' == $sidebar_position ) :?>
+			<?php get_sidebar(); ?>
+	<?php endif; ?>
+	
 <?php get_footer(); ?>

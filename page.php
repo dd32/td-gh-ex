@@ -12,15 +12,26 @@
 
 get_header(); ?>
 
-	<div class="sixteen columns">
-		<div class="breadcrumb">
+	<div class="container">
+		<div class="sixteen columns breadcrumb">	
+			<header class="entry-header">
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+			</header><!-- .entry-header -->
 			<?php if ( get_theme_mod('breadcrumb' ) && function_exists( 'greenr_breadcrumbs' ) ) : ?>
 				<div id="breadcrumb" role="navigation">
 					<?php greenr_breadcrumbs(); ?>
 				</div>
-			<?php endif; ?>
+			<?php endif; ?>  
 		</div>
 	</div>
+
+
+<div id="content" class="site-content container">
+
+		<?php $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); ?>
+		<?php if( 'left' == $sidebar_position ) :?>
+			<?php get_sidebar('left'); ?>
+		<?php endif; ?> 
 
 	<div id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">
@@ -41,5 +52,8 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+     <?php if( 'right' == $sidebar_position ) :?>
+			<?php get_sidebar(); ?>
+		<?php endif; ?>
+
 <?php get_footer(); ?>

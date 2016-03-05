@@ -46,6 +46,10 @@ http://www.gratisography.com/pictures/46_1.jpg
 
 == Change Log ==
 
+
+Version 1.1.3
+	* Added more customizer options 
+
 Version 1.1.2
 	* Error uploading 1.1.1
 

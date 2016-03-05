@@ -17,7 +17,7 @@ $woocommerce = __( 'Woo Commerce', 'greenr' );
 $woocommerce_details = __( 'Greenr Pro has full design/code integration for WooCommerce, your shop will look as good as the rest of your site!', 'greenr' );
 $custom_widget = __( 'Custom Widget', 'greenr' );
 $custom_widget_details = __( 'We offer many custom widgets that are stylized and ready for use. Simply drag &amp; drop into place to activate!', 'greenr' );
-$advanced_admin = __( 'Advanced Admin', 'greenr' );
+$advanced_admin = __( 'Advanced Admin', 'greenr' );    
 $advanced_admin_details = __( 'Advanced Redux Framework for theme options panel, you can customize any part of your site quickly and easily!', 'greenr' );
 $font_awesome = __( 'Font Awesome', 'greenr' );
 $font_awesome_details = __( 'Font Awesome icons are fully integrated into the theme. Use them anywhere in your site in 6 different sizes!', 'greenr' );
@@ -141,9 +141,9 @@ function greenr_display_upgrade() {
 
 $options = array( 
     'capability' => 10,   
-    'type' => 'theme_mod',
+    'type' => 'theme_mod', 
     'pro_url' => 'http://www.webulousthemes.com/?add-to-cart',
-    'panels' => array(
+    'panels' => apply_filters( 'greenr_customizer_options', array(
         'theme_options' => array(
             'priority'       => 9,
             'title'          => __('Theme Options', 'greenr'),
@@ -152,7 +152,7 @@ $options = array(
                     'title' => __('General Settings', 'greenr'),                
                     'description' => __('General Settings of Theme to change look and feel through out the site', 'greenr'),
                     'fields' => array(
-                        'color' => array(   
+                        'color' => array(       
                             'type' => 'select',
                             'label' => __('Select your Color Scheme.', 'greenr'),
                             'choices' => array(       
@@ -182,6 +182,23 @@ $options = array(
                             'sanitize_callback' => 'greenr_breadcrumb_char_choices',
                             'default' => 1,  
                         ),
+                        'numeric_pagination' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Numeric Page Navigation', 'greenr'),
+                                'description' => __('Check to display numeric page navigation, instead of Previous Posts / Next Posts links.', 'greenr'),
+                                'default' => 1,  
+                         ),
+                        'sidebar_position' => array(
+                            'type' => 'radio',
+                            'label' => __('Main Layout', 'greenr'),
+                            'description' => __('Select main content and sidebar alignment.', 'greenr'),
+                            'choices' => array(
+                                'left' => __('Sidebar Left', 'greenr'),
+                                'right' => __('Sidebar Right', 'greenr'),
+                            ),
+                            'default' => 'right',  
+                        ),
+
                        
                     ),
                 ),
@@ -211,10 +228,71 @@ $options = array(
                         'contact' => array(
                             'type' => 'text',
                             'label' => __('Contact Us: Enter Contact Info Phone/Email.', 'greenr'),
+                            'default' => 'Call Us: +01 234 567 890',
                             'sanitize' => 'sanitize_text_field'
                         ),        
                     ),
                 ),
+                'primary_color_field' => array(      
+                        'title' => __('Change Color Options', 'greenr'),
+                        'description' => __('This will reflect in links, buttons,Navigation and many others. Choose a color to match your site.', 'greenr'),
+                        'fields' => array( 
+                            'enable_primary_color' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Custom Primary color', 'greenr'),
+                                'default' => 0,
+                                'sanitize_callback' => 'greenr_boolean',
+                            ),
+                            'primary_color' => array(
+                                'type' => 'color',
+                                'label' => __('Primary Color', 'greenr'),   
+                                'description' => __('', 'greenr'),
+                                'sanitize_callback' => 'sanitize_hex_color',
+                                'default' => '#56cc00'
+                            ),
+                            'enable_nav_primary_color' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Custom Navigation Primary color', 'greenr'),
+                                'default' => 0,
+                                'sanitize_callback' => 'greenr_boolean',
+                            ),
+                            'nav_primary_color' => array(   
+                                'type' => 'color',
+                                'label' => __('Navigation Primary  Color', 'greenr'),   
+                                'description' => __('', 'greenr'),
+                                'sanitize_callback' => 'sanitize_hex_color',
+                                'default' => '#56cc00'
+                            ),
+                            'enable_dd_bg_color' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Custom Navigation Dropdown Background color', 'greenr'),
+                                'default' => 0,
+                                'sanitize_callback' => 'greenr_boolean',
+                            ),
+                            'dd_bg_color' => array(   
+                                'type' => 'color',
+                                'label' => __('Navigation Dropdown Background Color', 'greenr'),   
+                                'description' => __('', 'greenr'),
+                                'sanitize_callback' => 'sanitize_hex_color',
+                                'default' => '#e2e1e1'
+                            ),
+                            'enable_secondary_color' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Custom Secondary color', 'greenr'),
+                                'default' => 0,
+                                'sanitize_callback' => 'greenr_boolean',
+                            ),
+                           'secondary_color' => array(
+                                'type' => 'color',
+                                'label' => __('Secondary Color', 'greenr'),
+                                'description' => __('', 'greenr'),
+                                'sanitize_callback' => 'sanitize_hex_color',
+                                'transport' => 'postMessage',
+                                'default' => '#000'
+                            ),
+                     
+                        ),
+                    ),
                 'footer_section' => array(
                     'title' => __('Footer', 'greenr'),
                     'description' => __('Theme options related to footer area of theme', 'greenr'),
@@ -223,8 +301,14 @@ $options = array(
                             'type' => 'checkbox',
                             'label' => __('Check to Enable 4 Column Footer widget Area', 'greenr'),
                             'description' => __(' Check to enable 4 Column Footer widget Area', 'greenr'),
-                            'default' => 0,  
+                            'default' => 1,  
                             'sanitize_callback' => 'greenr_boolean',  
+                        ),
+                        'copyright' => array(
+                            'type' => 'textarea',
+                            'label' => __('Footer Copyright Text (Validated that it\'s HTML Allowed)', 'greenr'),
+                            'description' => __('HTML Allowed. <b>This field is even HTML validated! </b>', 'greenr'),
+                            'sanitize_callback' => 'wbls_footer_copyright',
                         ),
                     ),
                 ),
@@ -274,22 +358,98 @@ $options = array(
                     'title' => __('Blog', 'greenr'),
                     'description' => __('Blog options for site', 'greenr'),
                     'fields' => array(
-                        'featured-image' => array(        
-                            'type' => 'checkbox',
-                            'label' => __('Check to show featured image', 'greenr'),
-                            'description' => __('Check to show featured image', 'greenr'),
-                            'default' => 1,  
-                            'sanitize_callback' => 'greenr_boolean',  
+                            'featured_image' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Featured Image', 'greenr'),
+                                'default' => 1,
+                                'sanitize_callback' => 'greenr_boolean',
+                            ),
+                            'featured_image_size' => array(
+                                'type' => 'radio',
+                                'label' => __('Choose the featured image display type for Blog Page ', 'greenr'),
+                                'choices' => array(
+                                    '1' => 'Large Featured Image',
+                                    '2' => 'Small Featured Image',        
+                                ),
+                                'default' => '1',      
+                            ),
+                            'single_featured_image' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Single Post Featured Image', 'greenr'),
+                                'default' => 1,
+                                'sanitize_callback' => 'greenr_boolean',
+                            ),
+                            'single_featured_image_size' => array(
+                                'type' => 'radio',
+                                'label' => __('Choose the featured image display type for Single Page ', 'greenr'),
+                                'choices' => array(
+                                    '1' => 'Large Featured Image',
+                                    '2' => 'Small Featured Image',      
+                                ),
+                                'default' => '1',   
+                            ),
+                             'author_bio_box' => array(
+                                'type' => 'checkbox',
+                                'label' => __(' Enable Author Bio Box below single post', 'greenr'),
+                                'description' => __('Show Author information box below single post.', 'greenr'),
+                                'default' => 0,  
+                            ),
+                            'social_sharing_box' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show social sharing options box below single post', 'greenr'),
+                                'description' => __('Show social sharing options box below single post.', 'greenr'),
+                                'default' => 1,  
+                            ),
+                            'related_posts' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show related posts', 'greenr'),
+                                'description' => __('Show related posts.', 'greenr'),
+                                'default' => 0,  
+                            ),
+                            'comments' => array(
+                                'type' => 'checkbox',
+                                'label' => __(' Show Comments', 'greenr'),
+                                'description' => __('Show Comments', 'greenr'),
+                                'default' => 1,  
+                            ),
                         ),
-                        'single-featured-image' => array(
-                            'type' => 'checkbox',
-                            'label' => __('Check to show featured image on single post', 'greenr'),
-                            'description' => __('Check to show featured image on single post', 'greenr'),
-                            'default' => 1, 
-                            'sanitize_callback' => 'greenr_boolean',   
-                        ),             
-                    ),
             
+                ),
+                'social_sharing_box' => array(
+                        'title' => __('Social Sharing Box', 'greenr'),
+                        'description' => __('Social Sharing Icons Setup', 'greenr'),
+                        'fields' => array(
+                            'facebook_sb' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show facebook sharing option in single posts', 'greenr'),
+                                'description' => __('Show facebook sharing option in single posts.', 'greenr'),
+                                'default' => 1,  
+                            ),
+                            'twitter_sb' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show twitter sharing option in single posts', 'greenr'),
+                                'description' => __('Show twitter sharing option in single posts.', 'greenr'),                               
+                                'default' => 1,  
+                            ),
+                            'linkedin_sb' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show linkedin sharing option in single posts', 'greenr'),
+                                'description' => __('Show linkedin sharing option in single posts.', 'greenr'),
+                                'default' => 1,  
+                            ),
+                            'google-plus_sb' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show googleplus sharing option in single posts', 'greenr'),
+                                'description' => __('Show googleplus sharing option in single posts.', 'greenr'),
+                                'default' => 1,  
+                            ),
+                            'email_sb' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show email sharing option in single posts', 'greenr'),
+                                'description' => __('Show email sharing option in single posts.', 'greenr'),
+                                'default' => 1,  
+                            ),
+                        ),
                 ),
             ), 
         ), // theme options panel  end//
@@ -359,7 +519,7 @@ $options = array(
                     'title' => __('Info Section','greenr'),
                     'fields' => array (
                          'info' => array(
-                            'type' => 'text',    
+                            'type' => 'textarea',    
                             'label' => __('Info', 'greenr'),
                             'sanitize' => 'sanitize_text_field',
                             'default' => sprintf( __( '<div class="one-third column"><img src="%1$s"></div><div class="two-thirds column"><h2>Info text : Set your own custom text. Click  <a href="%2$s" target="_blank"> Customizer </a> and Goto Home => Info Section.</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "Content here, content here", making it look like readable English.</p><div class="row"><div class="eight columns"><h2>Branding Design</h2><p>Duis blandit eget leo eu interdum. Mauris accumsan euismod aliquet. Phasellus quis mi vitae orci tempor tempus vel sit amet nulla. Fusce gravida ligula et felis ultricies, lobortis interdum est ultrices. Praesent commodo justo eget sapien ornare hendrerit. Cras consequat lobortis velit, et hendrerit sapien. Sed commodo vel sem a convallis.</p><a href="#">Keep Reading</a></div><div class="eight columns"><h2>Web Development</h2><p>Duis blandit eget leo eu interdum. Mauris accumsan euismod aliquet. Phasellus quis mi vitae orci tempor tempus vel sit amet nulla. Fusce gravida ligula et felis ultricies, lobortis interdum est ultrices. Praesent commodo justo eget sapien ornare hendrerit. Cras consequat lobortis velit, et hendrerit sapien. Sed commodo vel sem a convallis.</p><a href="#">Keep Reading</a></div></div></div>', 'greenr'), get_template_directory_uri() . '/images/info.png', admin_url('customize.php') ),
@@ -370,7 +530,7 @@ $options = array(
                     'title' => __('Testimonial Section','greenr'),
                     'fields' => array (
                          'testimonial' => array(
-                            'type' => 'text',
+                            'type' => 'textarea',
                             'label' => __('Enter Testimonial Text', 'greenr'),
                             'sanitize' => 'sanitize_text_field',
                             'default' =>  sprintf( __( '<div class="container gap"><div class="testimonials"><ul class="slides"><li><div class="testimony"><img src="%1$s"><p>Testimonial text : Set your own custom text. Click  <a href="%2$s"target="_blank"> Customizer </a> and Goto Home => Testimonial Section .</p><p class="client"><strong>Lord Varys</strong>, Spy Master, Iron Throne</p></div></li></ul><br class="clear"/></div></div>', 'greenr' ), get_template_directory_uri() . '/images/client.png', admin_url('customize.php') ),
@@ -393,7 +553,7 @@ $options = array(
                             'default' => __( 'Featured Page', 'greenr' ),
                         ),
                         'service-description-1' => array(
-                            'type' => 'text',
+                            'type' => 'textarea',
                             'label' => __('Service Description', 'greenr'),
                             'sanitize' => 'sanitize_text_field',
                             'default' => sprintf( __( '<p>Featured page description text : use the page excerpt or set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Service Section -2 .</p>', 'greenr' ), admin_url('customize.php') ),
@@ -416,7 +576,7 @@ $options = array(
                             'default' => __( 'Featured Page', 'greenr' ),
                         ),
                         'service-description-2' => array(
-                            'type' => 'text',
+                            'type' => 'textarea',
                             'label' => __('Service Description', 'greenr'),
                             'sanitize' => 'sanitize_text_field',
                             'default' => sprintf( __( '<p>Featured page description text : use the page excerpt or set your own custom text. Click  <a href="%1$s" target="_blank"> Customizer </a> and Goto Home => Service Section -2 .</p>', 'greenr' ), admin_url('customize.php') ),
@@ -439,7 +599,7 @@ $options = array(
                             'default' => __( 'Featured Page', 'greenr' ),
                         ),
                         'service-description-3' => array(
-                            'type' => 'text',
+                            'type' => 'textarea',
                             'label' => __('Service Description', 'greenr'),
                             'sanitize' => 'sanitize_text_field',
                             'default' => sprintf( __( '<p>Featured page description text : use the page excerpt or set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Service Section -2 .</p>', 'greenr' ), admin_url('customize.php') ),
@@ -462,7 +622,7 @@ $options = array(
                             'default' => __( 'Featured Page', 'greenr' ),
                         ),
                         'service-description-4' => array(
-                            'type' => 'text',
+                            'type' => 'textarea',
                             'label' => __('Service Description', 'greenr'),
                             'sanitize' => 'sanitize_text_field',
                             'default' => sprintf( __( '<p>Featured page description text : use the page excerpt or set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Service Section -2 .</p>', 'greenr' ), admin_url('customize.php') ),
@@ -473,16 +633,35 @@ $options = array(
                     'title' => __('Additional Info Section','greenr'),
                     'fields' => array (
                          'cta' => array(
-                            'type' => 'text',
+                            'type' => 'textarea',
                             'label' => __('Additional Info', 'greenr'),
                             'sanitize' => 'sanitize_text_field',
                             'default' => sprintf( __( '<div class="callout-widget"><div class="call-content"><p>CTA text : Set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Additional Info Section .</p></div><div class="callout-btn"><a href="#">Take Action</a></div><br class="clear"></div>', 'greenr'), admin_url('customize.php') ),
                         ),
                     ),
                 ),
+                'pro_home_section' => array(
+                    'title' => __('Use Page Builder', 'greenr'),
+                    'fields' => array(
+                       'page-builder' => array(
+                            'type' => 'checkbox',
+                            'label' => __('Use Page Builder: Check this to disable theme options for home page content and use page builder to enter content', 'greenr'),
+                            'default' => 0,  
+                        ),
+                        'flexslider' => array(
+                            'type' => 'text',
+                            'label' => __('Enter FlexSlider shortcode (FlexSlider for Home Page)', 'greenr'),
+                            'description' => __('FlexSlider for Home Page.  Enter a FlexSlider shortcode to be displayed on Home Page','greenr'),
+                            'sanitize' => 'sanitize_text_field'
+                        ),
+                    )
+                )
 
             ),
         ), // home panel end // 
+        
+
+    )
     )//panel end//
 );
 
@@ -502,5 +681,27 @@ function greenr_boolean($value) {
         return $value;
     } else {
         return false;
+    }
+}
+
+if ( ! function_exists( 'wbls_footer_copyright' ) ) {
+
+    function wbls_footer_copyright($string) {
+           $allowed_tags = array(    
+                                'a' => array(
+                                    'href' => array(),
+                                    'title' => array()
+                                ),
+                                'img' => array(
+                                    'src' => array(),
+                                    'alt' => array()
+                                ),
+                                'p' => array(),
+                                'br' => array(),
+                                'em' => array(),
+                                'strong' => array(),
+        );
+        return wp_kses( $string,$allowed_tags);
+
     }
 }

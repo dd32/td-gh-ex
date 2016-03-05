@@ -11,14 +11,15 @@ add_action( 'wp_enqueue_scripts', 'greenr_fontawesome' );
 add_action( 'redux/page/greenr/enqueue', 'greenr_fontawesome' );
 
 function greenr_scripts() {
-	wp_enqueue_style( 'greenr-neuton', '//fonts.googleapis.com/css?family=Neuton:400,700' );
-	wp_enqueue_style( 'greenr-roboto', '//fonts.googleapis.com/css?family=Roboto' );
-	wp_enqueue_style( 'greenr-flexslider', GREENR_PARENT_URL . '/css/flexslider.css' );
+	wp_enqueue_style( 'greenr-font-ptsans', greenr_theme_font_url('PT Sans:400,700'), array(), 20150807 );
+	wp_enqueue_style( 'greenr-font-roboto', greenr_theme_font_url('Roboto'), array(), 20150807 );
+	wp_enqueue_style( 'greenr-font-neuton', greenr_theme_font_url('Neuton:400,700'), array(), 20150807 );
+	wp_enqueue_style( 'flexslider', GREENR_PARENT_URL . '/css/flexslider.css' );
 	wp_enqueue_style( 'greenr-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'greenr-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'greenr-skip-link-focus-fix', GREENR_PARENT_URL . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'greenr-flexsliderjs', GREENR_PARENT_URL . '/js/jquery.flexslider-min.js', array('jquery'), '2.2.2', true );
+	wp_enqueue_script( 'jquery-flexslider', GREENR_PARENT_URL . '/js/jquery.flexslider-min.js', array('jquery'), '2.2.2', true );
 	wp_enqueue_script( 'jquery-ui-accordion', false, array('jquery'));
 	wp_enqueue_script( 'greenr-custom', GREENR_PARENT_URL . '/js/custom.js', array('jquery'), '1.0', true );	
 
@@ -38,11 +39,29 @@ function greenr_scripts() {
 			wp_enqueue_style( 'greenr-flat', GREENR_PARENT_URL . '/css/green_flat.css');
 			break;
 		default:
-			wp_enqueue_style( 'greenr-style', get_stylesheet_uri() );
+			wp_enqueue_style( 'greenr-default', GREENR_PARENT_URL . '/css/green_default.css' );
 			break;
 	}		  
 }
 add_action( 'wp_enqueue_scripts', 'greenr_scripts' );
+
+/**
+ * Register Google fonts.
+ *
+ * @return string
+ */
+function greenr_theme_font_url($font) {
+	$font_url = '';
+	/*
+	 * Translators: If there are characters in your language that are not supported
+	 * by Font, translate this to 'off'. Do not translate into your own language.
+	 */
+	if ( 'off' !== _x( 'on', 'Font: on or off', 'greenr' ) ) {
+		$font_url = esc_url( add_query_arg( 'family', urlencode($font), "//fonts.googleapis.com/css" ) );
+	}
+
+	return $font_url;   
+}
 
 function greenr_admin_style() {
 	wp_enqueue_style( 'greenr-fontawesome', GREENR_PARENT_URL . '/css/font-awesome.min.css' );

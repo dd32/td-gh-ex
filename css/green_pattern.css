@@ -24,8 +24,7 @@
 --------------------------------------------------------------*/
 /*
 	@import "colors-layout/color_green_flat";
-	@import "colors-layout/color_green_default";
-	
+	@import "colors-layout/color_green_pattern";	
 */
 /*--------------------------------------------------------------
 0.0 Reset
@@ -53,6 +52,7 @@ html {
   /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
   overflow-y: scroll;
   /* Keeps page centered in all browsers regardless of content height */
+  overflow-X: hidden;
   -webkit-text-size-adjust: 100%;
   /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
   -ms-text-size-adjust: 100%;
@@ -799,9 +799,7 @@ a {
         border-bottom: none;
         padding: 10px;
         display: block;
-        height: auto;
-        font-size: 14px;
-        font-size: 1.4rem; }
+        height: auto; }
         .main-navigation ul ul a:before {
           font-family: FontAwesome;
           content: "\F054";
@@ -828,10 +826,21 @@ a {
     .main-navigation a:hover {
       border-bottom: 3px solid #56cc00;
       color: #56cc00; }
-  .main-navigation .current_page_item a,
-  .main-navigation .current-menu-item a, .main-navigation ul.menu.nav-menu > li.current-menu-ancestor > a {
+      .main-navigation a:hover:before {
+        color: #56cc00; }
+  .main-navigation .current_page_item > a,
+  .main-navigation .current-menu-item > a,
+  .main-navigation .current-menu-ancestor > a {
     border-bottom: 3px solid #56cc00;
     color: #56cc00; }
+  .main-navigation ul.menu.nav-menu > li.current-menu-ancestor > a {
+    color: #56cc00; }
+  .main-navigation ul.menu.nav-menu > li.current-menu-ancestor
+  .current_page_item > a {
+    border: 0; }
+    .main-navigation ul.menu.nav-menu > li.current-menu-ancestor
+    .current_page_item > a:before {
+      color: #56cc00; }
 
 /* Small menu */
 .menu-toggle {
@@ -844,6 +853,17 @@ a {
 
   .main-navigation ul {
     display: none; } }
+.page-navigation ol li a, .page-navigation ol li.bpn-current, .page-navigation ol li.bpn-current:hover {
+  display: inline-block;
+  padding: 7px 15px;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  background-color: #d7d7d7;
+  color: #000000; }
+  .page-navigation ol li a:hover, .page-navigation ol li.bpn-current:hover {
+    background-color: #56cc00;
+    color: #ffffff; }
+
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -870,8 +890,36 @@ a {
     display: inline-block;
     padding: 10px 25px;
     background-color: #d7d7d7;
-    color: #000000; }
+    color: #000000;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid #d7d7d7; }
     .post-navigation .nav-links a:hover {
+      background-color: #56cc00;
+      color: #ffffff;
+      border-color: #56cc00; }
+
+.nav-links a:before {
+  border-bottom: 2px solid #ffffff;
+  content: "";
+  display: block;
+  left: 0px;
+  min-height: 100%;
+  padding-bottom: 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 10; }
+
+.page-navigation {
+  padding-bottom: 25px; }
+  .page-navigation ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    .page-navigation ol li {
+      display: inline; }
+    .page-navigation ol li.bpn-current, .page-navigation ol li.bpn-current:hover {
       background-color: #56cc00;
       color: #ffffff; }
 
@@ -884,7 +932,7 @@ a {
   .comment-navigation .nav-next a:hover,
   .comment-navigation .nav-previous a:hover {
     background-color: #e2e1e1;
-    color: #ffffff; }
+    color: #000000; }
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -1054,6 +1102,9 @@ a {
     font-size: 14px;
     font-size: 1.4rem; }
 
+.widget_calendar #today a {
+  color: #ffffff; }
+
 .widget_calendar th,
 .widget_calendar td {
   text-align: center;
@@ -1092,6 +1143,89 @@ a {
 input.search-submit {
   margin-top: 10px;
   text-transform: uppercase; }
+
+.copy {
+  background-color: #000000;
+  padding: 15px 0; }
+  .copy a {
+    color: #ffffff; }
+    .copy a:hover {
+      color: #56cc00; }
+      .footer-bottom .widget-title {
+  display: none; }
+
+#secondary {
+  padding-left: 50px; }
+
+.right-sidebar {
+  padding-left: 0px !important;
+  padding-right: 50px; }
+
+/* Footer Menu */
+.footer-bottom aside {
+  margin-bottom: 0; }
+.footer-bottom ul.menu {
+  margin: 0;
+  padding: 0; }
+  .footer-bottom ul.menu ul.sub-menu {
+    margin: 0;
+    display: inline; }
+  .footer-bottom ul.menu li {
+    display: inline;
+    margin: 0 4px 0 0; }
+    .footer-bottom ul.menu li a {
+      margin-bottom: 10px;
+      display: inline-block;
+      font-size: 0.9em;
+      border-bottom: none;
+      padding: 2px 6px;
+      color: #ffffff; }
+      .footer-bottom ul.menu li a:hover {
+        background-color: #56cc00; }
+  .footer-bottom ul.menu li.current_page_item a {
+    background: #56cc00 !important;
+    color: #ffffff; }
+
+.widget_social-networks-widget,
+.share-box {
+  margin: 0;
+  padding: 0; }
+  .widget_social-networks-widget h3,
+  .share-box h3 {
+    display: none; }
+  .widget_social-networks-widget ul,
+  .share-box ul {
+    margin: 0;
+    padding: 0;
+    text-align: right; }
+    .widget_social-networks-widget ul li,
+    .share-box ul li {
+      border: 0;
+      padding: 0;
+      display: inline;
+      margin: 0 5px 0 0; }
+      .widget_social-networks-widget ul li a,
+      .share-box ul li a {
+        width: 35px;
+        height: 35px;
+        line-height: 32px;
+        text-align: center;
+        display: inline-block;
+        color: #000000;
+        border-bottom: 3px solid transparent; }
+        .widget_social-networks-widget ul li a:hover,
+        .share-box ul li a:hover {
+          border-color: #56cc00; }
+    .widget_social-networks-widget ul li:last-child,
+    .share-box ul li:last-child {
+      margin-right: 0; }
+
+.share-box {
+  margin-bottom: 20px; }
+  .share-box h4 {
+    margin-bottom: 10px; }
+  .share-box ul {
+    text-align: left; }
 
 /*--------------------------------------------------------------
 10.0 Content
@@ -1160,6 +1294,15 @@ input.search-submit {
     .entry-meta a:hover,
     .entry-footer a:hover {
       color: #56cc00; }
+
+.site-content {
+  margin-top: 50px; }
+
+#secondary {
+  margin-top: 25px; }
+
+.top-contact {
+  margin-bottom: 10px; }
 
 /*--------------------------------------------------------------
 10.2 Asides
@@ -1373,8 +1516,7 @@ dl.wp-caption {
         border-bottom: 3px solid #56cc00; }
 
 #header-bottom {
-  border-bottom: 1px solid #e2e1e1;
-  margin-bottom: 30px; }
+  border-bottom: 1px solid #e2e1e1; }
 
 h2.site-description {
   font-size: 18px;
@@ -1383,6 +1525,9 @@ h2.site-description {
 
 .site-title {
   line-height: normal; }
+
+.site-branding {
+  margin-top: 15px; }
 
 .footer-widgets {
   background-color: #2a2a2a;
@@ -1757,8 +1902,7 @@ h2.site-description {
   z-index: 2; }
   .site-header #header-bottom {
     margin-bottom: 0; }
-  .site-header .site-branding {
-    padding: 15px 0; }
+
 
 .services {
   background: url("../images/bg-repeat-pattern1.png") repeat left top;
@@ -1896,8 +2040,12 @@ h2.site-description {
   .widget-area .search-form input.search-field {
     width: 96%; }
 
-  .social {
-    float: none; }
+  .social li, .social {
+    float: none;
+    text-align: center; }
+
+  .social li {
+    display: inline-block; }
 
   .widget_archive select,
   .widget_categories select {
@@ -1907,7 +2055,8 @@ h2.site-description {
     height: auto; }
 
   #header-top p {
-    margin: 0; }
+    margin: 0;
+    text-align: center; }
 
   .site-branding {
     text-align: center; }
@@ -1919,7 +2068,10 @@ h2.site-description {
     width: 100%; }
 
   .services .four.columns {
-    margin-bottom: 2.5em; } }
+    margin-bottom: 2.5em; }
+
+  .main-navigation ul {
+    float: left; } }
 @media only screen and (max-width: 700px) {
   #commentform .comment-form-author,
   #commentform .comment-form-email,
@@ -1962,14 +2114,46 @@ h2.site-description {
     padding: 8px;
     width: 100%; }
 
-  .menu-toggle {
-    display: none; }
-
   .testimonials .testimony img {
     float: none;
     margin: 0 auto; }
 
   .testimonials ul li p {
     margin: 0; } }
+.breadcrumb .entry-title {
+  margin-bottom: 10px; }
+.breadcrumb #breadcrumb {
+  text-transform: uppercase;
+  padding-bottom: 25px; }
+  .breadcrumb #breadcrumb a {
+    color: #56cc00; }
+    .breadcrumb #breadcrumb a:hover {
+      color: #e2e1e1; }
+  .breadcrumb #breadcrumb span {
+    margin-left: 8px;
+    margin-right: 8px; }
+    .breadcrumb #breadcrumb span:first-child {
+      margin-left: 0; }
+
+.columns.breadcrumb {
+  border-bottom: 1px solid grey;
+  margin-bottom: 25px; }
+
+.breadcrumb {
+  margin: 0 -100% !important;
+  padding: 10px 100% 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  content: "";
+  display: table;
+  width: 100%;
+  background: url("../images/bg-repeat-footer.png") repeat center center;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center; }
+  .breadcrumb h1,
+  .breadcrumb #crumbs {
+    color: #ffffff; }
 
 /*# sourceMappingURL=green_pattern.css.map */

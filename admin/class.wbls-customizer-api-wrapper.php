@@ -4,8 +4,10 @@
 	 *
 	 * Also, adds custom controls for Customizer by extending it.
 	 */
-
+if( ! class_exists('Wbls_Customizer_API_Wrapper') ) {
 	class Wbls_Customizer_API_Wrapper {
+
+		private static $_instance;
 
 		// Holds Panels of Customizer Options
 		// TODO: Have to test without Panels
@@ -47,6 +49,15 @@
 			add_action('customize_register', array($this, 'init'));
 		}
 
+		public static function getInstance($options) {
+			if(! self::$_instance) {
+				self::$_instance = new Wbls_Customizer_API_Wrapper($options);
+			}
+			return self::$_instance;
+		}
+
+		
+
 		/**
 		 * Includes custom control classes and then add panels, section and fields
 		 * @param  [type] $wp_customize [description]
@@ -54,7 +65,6 @@
 		 */
 		public function init($wp_customize) {
 			add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
-			require_once get_template_directory() . '/admin/custom-controls.php';
 			if( ! empty($this->_root_sections)) {
 				$this->sections = $this->_root_sections['sections'];
 				$this->add_sections($wp_customize);	
@@ -241,20 +251,6 @@
 						)
 					);
 					break;
-				case 'disabled-select':
-					$wp_customize->add_control( 
-						new Wbls_Customize_Disabled_Select_Control( 
-							$wp_customize, 
-							$field_id, 
-							array(
-								'label' => isset($label) ? $label : '',
-								'setting' => $field_id,
-								'section' => $this->_section_id,
-								'choices' => $choices,
-							)
-						)
-					);
-					break;
 				default:
 					$wp_customize->add_control(
 						$field_id,
@@ -271,3 +267,4 @@
 
 		}
 	}
+}

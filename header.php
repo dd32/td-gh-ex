@@ -31,17 +31,18 @@ endif;
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'greenr' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header header-wrap" role="banner">
 		<div id="header-top">
 			<div class="container">
-				<?php if( get_theme_mod( 'contact' ) ) : ?>    
-				<div class="ten columns">
-					<p><?php echo esc_html( get_theme_mod( 'contact' ) ); ?></p>
+				<div class="eight columns top-contact">
+					<?php if( get_theme_mod( 'contact' ) ) : ?>    
+						<p><?php echo esc_html( get_theme_mod( 'contact' ) ); ?></p>
+					<?php else: echo '&nbsp;' ?>
+					<?php endif; ?>
 				</div>
-				<?php endif; ?>
 				
-				<div class="six columns">
-					<ul class="social">
+				<div class="eight columns">
+					<ul class="social top-right">
 					<?php if( get_theme_mod( 'social-twitter' ) ) : ?>
 						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-twitter' ) ); ?>" class="fa fa-twitter"></a></li>
 					<?php endif; ?>		
@@ -71,11 +72,11 @@ endif;
 
 		<div id="header-bottom">
 			<div class="container">
-				<div class="site-branding six columns">  
+				<div class="logo site-branding six columns">  
 					<?php 
 						$logo_title = get_theme_mod( 'site-title' );
 						$logo = get_theme_mod( 'custom-logo', '' );
-						$tagline = get_theme_mod( 'site-description' );
+						$tagline = get_theme_mod( 'site-description',true );
 					?>
 					<?php	if( $logo_title &&  $logo != '' ) : ?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url($logo) ?>"></a></h1>
@@ -88,14 +89,16 @@ endif;
 						<?php endif; ?>				
 				</div>
 
-				<nav id="site-navigation" class="main-navigation ten columns" role="navigation">
-					<button class="menu-toggle"><?php _e( 'Primary Menu', 'greenr' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-				</nav><!-- #site-navigation -->
+				<div class="ten columns">
+					<div class="top-right">
+						<nav id="site-navigation" class="main-navigation" role="navigation">
+							<button class="menu-toggle"><?php _e( 'Primary Menu', 'greenr' ); ?></button>
+							<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+						</nav><!-- #site-navigation -->
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	</header><!-- #masthead -->
 
-<?php	if ( ! is_front_page() || is_home() ) : ?>
-	<div id="content" class="site-content container">
-<?php endif; ?>

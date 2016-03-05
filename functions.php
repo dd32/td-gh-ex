@@ -66,6 +66,14 @@ function greenr_setup() {
 	// Add title-tag support
 	add_theme_support( 'title-tag' );
 
+		/*
+		 * Add Additional image sizes
+		 *
+		 */
+		add_image_size( 'greenr-blog-full-width', 1200,350, true );
+		add_image_size( 'greenr-small-featured-image-width', 450,300, true );
+		add_image_size( 'greenr-blog-large-width', 800,300, true );
+
 	//greenr_customizer_setup();
 }
 endif; // greenr_setup
@@ -120,10 +128,90 @@ if( ! function_exists( 'greenr_customizer_setup' ) ) {
 	}
 }
 
+
+	/* Defining directory PATH Constants */
+	define( 'GREENR_PARENT_DIR', get_template_directory() );
+	define( 'GREENR_CHILD_DIR', get_stylesheet_directory() );
+	define( 'GREENR_INCLUDES_DIR', GREENR_PARENT_DIR. '/includes' );
+
+	/** Defining URL Constants */
+	define( 'GREENR_PARENT_URL', get_template_directory_uri() );
+	define( 'GREENR_CHILD_URL', get_stylesheet_directory_uri() );
+	define( 'GREENR_INCLUDES_URL', GREENR_PARENT_URL . '/includes' );
+
+	/* 
+	Check for language directory setup in Child Theme
+	If not present, use parent theme's languages dir
+	*/
+	if ( ! defined( 'GREENR_LANGUAGES_URL' ) ) /** So we can predefine to child theme */
+		define( 'GREENR_LANGUAGES_URL', GREENR_PARENT_URL . '/languages' );
+
+	if ( ! defined( 'GREENR_LANGUAGES_DIR' ) ) /** So we can predefine to child theme */
+		define( 'GREENR_LANGUAGES_DIR', GREENR_PARENT_DIR . '/languages' );
+
+
 /**
- * Defining constants to use through out theme code
+ * Register widget area.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-require_once get_template_directory() . '/includes/constants.php';
+function greenr_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'greenr' ),
+		'id'            => 'sidebar-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 1', 'greenr' ),
+		'id'            => 'footer-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 2', 'greenr' ),
+		'id'            => 'footer-2',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 3', 'greenr' ),
+		'id'            => 'footer-3',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 4', 'greenr' ),
+		'id'            => 'footer-4',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+   register_sidebar( array(
+		'name'          => __( 'Footer Nav', 'greenr' ),
+		'id'            => 'footer-nav',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'greenr_widgets_init' );
 
 /**
  * Load Theme Options Panel
@@ -131,19 +219,48 @@ require_once get_template_directory() . '/includes/constants.php';
 require get_template_directory() . '/includes/theme-options.php';
 
 /**
- * Include all includes. Genius
+ * Enqueue Scripts and Styles
  */
-require_once GREENR_INCLUDES_DIR. '/all.php';
+require_once GREENR_INCLUDES_DIR . '/enqueue.php';
+
+/**
+ * Implement the Custom Header feature.
+ */
+require GREENR_INCLUDES_DIR . '/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require GREENR_INCLUDES_DIR . '/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require GREENR_INCLUDES_DIR . '/extras.php';
+
+/**
+ * Customizer
+ */
+require GREENR_INCLUDES_DIR . '/customizer.php';
+
+
+/**
+ * JigoShop Support
+ */
+require_once( GREENR_INCLUDES_DIR . '/jigoshop.php' );
 
 
 function greenr_slide_exists() {
 	
 	for ( $slide = 1; $slide < 6; $slide++) {
-		$url = get_theme_mod( 'image_upload-' .$slide );
-		if ( $url ) {
+		$url = get_theme_mod( 'image_upload-' .$slide );   
+		$caption = get_theme_mod( 'flexcaption-' .$slide );  
+		if ( $url || $caption ) {
 			return true;
 		} 
 	}
 	
 	return false;	
 }
+
+

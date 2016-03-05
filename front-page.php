@@ -12,6 +12,23 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
     include( get_home_template() );
 } else {
 	get_header(); 
+	if ( get_theme_mod('page-builder' ) ) { 
+		if( get_theme_mod('flexslider') ) {   
+			echo do_shortcode( get_theme_mod('flexslider'));
+		} ?>
+
+		<div id="content" class="site-content container">
+			<div id="primary" class="content-area sixteen columns">
+				<main id="main" class="site-main" role="main">
+					<?php
+						while ( have_posts() ) : the_post();
+							the_content();
+						endwhile;
+					?>
+					
+			     </main><!-- #main -->
+		     </div><!-- #primary -->    
+<?php	} else {
 
 		$output = '';
 		$output .= '<div class="flex-container">';         
@@ -143,8 +160,13 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 		echo '<div class="container gap">';
 		echo '<div class="callout-widget"><div class="call-content"><p>CTA text : Set your own custom text. Click  <a href="'.admin_url('customize.php').'"target="_blank"> Customizer </a> and Goto Home => Additional Info Section .</p></div><div class="callout-btn"><a href="#">Take Action</a></div><br class="clear"></div>';
 		echo '</div>';
-	}
-
+	} ?>
+			</main><!-- #main -->
+			</div><!-- #primary -->
+<?php
+}
 	get_footer(); 
 }
 ?>
+
+	 
