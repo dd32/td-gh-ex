@@ -1,6 +1,6 @@
 <?php
 /* 	Writing Board's General Page to display all Pages
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Writing Board 1.0
 */
@@ -17,15 +17,15 @@
  <?php the_post_thumbnail('writingboard-category-thumb'); writingboard_content(); ?>
  
 
-				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+				<?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ','writing-board'), 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
 			</div>
 		</div>
 		<?php endwhile; ?><div class="clear"> </div>
-	<?php edit_post_link('Edit This Entry', '<p>', '</p>'); ?>
+	<?php edit_post_link(__('Edit This Entry','writing-board'), '<p>', '</p>'); ?>
 	 <?php if (comments_open( $post->ID ) == true ): comments_template('', true); endif; ?>
 	<?php else: ?>
-		<p>Sorry, no pages matched your criteria.</p>
+		<p><?php _e('Sorry, no pages matched your criteria','writing-board'); ?></p>
 	<?php endif; ?>
 	</div>
 

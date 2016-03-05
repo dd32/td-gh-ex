@@ -1,7 +1,7 @@
 <?php
 /*
 	Writing Board's Front Page to Display the Home Page if Selected
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Writing Board 1.0
 */
@@ -27,7 +27,7 @@
                    	<div class="slide-text-container">
                 		<h2 class="fslidersubtitle captionDelay2 FromTop"><?php the_title(); ?></h2>
                	 		<h3 class="fslidedescription captionDelay3 FromTop"><?php  $WritingBoardExcerptLength=25; the_excerpt(); ?></h3>
-                  		<a href="<?php the_permalink(); ?>" class="fslidelink captionDelay4 FromBottom" ><?php echo of_get_option('slider-link-text', 'Learn More'); ?></a>
+                  		<a href="<?php the_permalink(); ?>" class="fslidelink captionDelay4 FromBottom" ><?php echo writingboard_get_option('slider-link-text', 'Learn More'); ?></a>
                     </div>
                     <?php if (!empty($writingboard_thumburl)): ?><img src="<?php echo $writingboard_thumburl['0']; ?>" /><?php endif; ?>
             </li>
@@ -38,15 +38,15 @@
 			</div></div><div class="clear"> </div>  
        
         
-<?php if ( esc_textarea(of_get_option('heading_text', 'WordPress is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the same time.') != '' )): ?>  
-	<h1 id="heading"><?php echo esc_textarea(of_get_option('heading_text', 'WordPress is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the same time.')); ?></h1>
+<?php if ( esc_textarea(writingboard_get_option('heading_text', 'WordPress is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the same time') != '' )): ?>  
+	<h1 id="heading"><?php echo esc_textarea(writingboard_get_option('heading_text', 'WordPress is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the same time.')); ?></h1>
 <?php endif; ?>
  
 <div class="clear"> </div>
 
 
 <div class="fpec">
-	<h3 class="fpgal-title">L A T E S T &nbsp; P O S T S</h3>
+	<h3 class="fpgal-title"><?php _e('L A T E S T &nbsp; P O S T S', 'writing-board'); ?></h3>
 	<?php $featured_args = array( 'post_type'=> 'post', 'ignore_sticky_posts' => 1, 'posts_per_page'  => '10' ); $featured_query = new WP_Query($featured_args); 
  	if (have_posts()) : ?>
  	<ul class="editorschoice">
@@ -70,9 +70,9 @@
         </div>
  
  	<?php endwhile; ?>
-		<div id="page-nav">
-			<div class="alignleft"><?php previous_posts_link('<span class="fa-arrow-left"></span> NEWER ENTRIES' ) ?></div>
-			<div class="alignright"><?php next_posts_link('OLDER ENTRIES <span class="fa-arrow-right"></span>') ?></div>
+        <div id="page-nav">
+			<div class="alignleft"><?php previous_posts_link('<span class="fa-arrow-left"></span> '.__('NEWER ENTRIES', 'writing-board') ) ?></div>
+			<div class="alignright"><?php next_posts_link(__('OLDER ENTRIES', 'writing-board').' <span class="fa-arrow-right"></span>') ?></div>
 		</div>
 <?php endif; ?>
 
@@ -80,5 +80,5 @@
 
 
 </div>
-<?php if (of_get_option('frs-check', 0 ) !='1' ): get_sidebar( 'frontpage' );  endif;?>
+<?php if (writingboard_get_option('frs-check', 0 ) !='1' ): get_sidebar( 'frontpage' );  endif;?>
 <?php get_footer(); ?>
