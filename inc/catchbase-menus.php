@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -16,7 +16,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 if ( ! function_exists( 'catchbase_primary_menu' ) ) :
 /**
- * Shows the Primary Menu 
+ * Shows the Primary Menu
  *
  * default load in sidebar-header-right.php
  */
@@ -27,7 +27,7 @@ function catchbase_primary_menu() {
             <h1 class="assistive-text"><?php _e( 'Primary Menu', 'catch-base' ); ?></h1>
             <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catch-base' ); ?>"><?php _e( 'Skip to content', 'catch-base' ); ?></a></div>
             <?php
-                if ( has_nav_menu( 'primary' ) ) { 
+                if ( has_nav_menu( 'primary' ) ) {
                     $catchbase_primary_menu_args = array(
                         'theme_location'    => 'primary',
                         'menu_class'        => 'menu catchbase-nav-menu',
@@ -38,7 +38,7 @@ function catchbase_primary_menu() {
                 else {
                     wp_page_menu( array( 'menu_class'  => 'menu catchbase-nav-menu' ) );
                 }
-                
+
                 ?>
                 <div id="search-toggle" class="genericon">
                     <a class="screen-reader-text" href="#search-container"><?php _e( 'Search', 'catch-base' ); ?></a>
@@ -57,18 +57,18 @@ add_action( 'catchbase_after_header', 'catchbase_primary_menu', 20 );
 
 if ( ! function_exists( 'catchbase_secondary_menu' ) ) :
 /**
- * Shows the Secondary Menu 
+ * Shows the Secondary Menu
  *
  * default load in sidebar-header-right.php
  */
 function catchbase_secondary_menu() {
-    if ( has_nav_menu( 'secondary' ) ) { 
+    if ( has_nav_menu( 'secondary' ) ) {
 	?>
     	<nav class="nav-secondary" role="navigation">
             <div class="wrapper">
                 <h1 class="assistive-text"><?php _e( 'Secondary Menu', 'catch-base' ); ?></h1>
                 <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catch-base' ); ?>"><?php _e( 'Skip to content', 'catch-base' ); ?></a></div>
-                <?php             
+                <?php
                     $catchbase_secondary_menu_args = array(
                         'theme_location'    => 'secondary',
                         'menu_class' => 'menu catchbase-nav-menu'
@@ -102,7 +102,7 @@ function catchbase_mobile_menus() {
             );
             wp_nav_menu( $args );
         }
-        else { 
+        else {
             wp_page_menu( array( 'menu_class'  => 'menu' ) );
         }
     echo '</nav><!-- #mobile-header-left-nav -->';
@@ -131,24 +131,24 @@ if ( ! function_exists( 'catchbase_mobile_header_nav_anchor' ) ) :
  * @uses catchbase_header action to add in the Header
  */
 function catchbase_mobile_header_nav_anchor() {
-    
-    // Header Left Mobile Menu Anchor 
+
+    // Header Left Mobile Menu Anchor
     if ( has_nav_menu( 'primary' ) ) {
         $classes = "mobile-menu-anchor primary-menu";
     }
     else {
-        $classes = "mobile-menu-anchor page-menu"; 
+        $classes = "mobile-menu-anchor page-menu";
     }
     ?>
-    
+
     <div id="mobile-header-left-menu" class="<?php echo $classes; ?>">
         <a href="#mobile-header-left-nav" id="header-left-menu" class="genericon genericon-menu">
             <span class="mobile-menu-text"><?php _e( 'Menu', 'catch-base' );?></span>
         </a>
     </div><!-- #mobile-header-menu -->
-    <?php    
+    <?php
 }
-endif; //catchbase_mobile_menus    
+endif; //catchbase_mobile_menus
 add_action( 'catchbase_header', 'catchbase_mobile_header_nav_anchor', 30 );
 
 
@@ -158,15 +158,15 @@ if ( ! function_exists( 'catchbase_mobile_secondary_nav_anchor' ) ) :
  * @uses catchbase_header action to add in the Header
  */
 function catchbase_mobile_secondary_nav_anchor() {
-    if ( has_nav_menu( 'secondary' ) ) {  
-        ?>    
+    if ( has_nav_menu( 'secondary' ) ) {
+        ?>
         <div id="mobile-header-right-menu" class="mobile-menu-anchor secondary-menu">
             <a href="#mobile-header-right-menu" id="secondary-menu" class="genericon genericon-menu">
                 <span class="mobile-menu-text"><?php _e( 'Menu', 'catch-base' );?></span>
             </a>
         </div><!-- #mobile-header-menu -->
-    <?php    
+    <?php
     }
 }
-endif; //catchbase_mobile_secondary_nav_anchor    
+endif; //catchbase_mobile_secondary_nav_anchor
 add_action( 'catchbase_header', 'catchbase_mobile_secondary_nav_anchor', 50 );

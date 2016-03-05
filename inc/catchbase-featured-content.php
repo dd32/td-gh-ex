@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -24,17 +24,17 @@ if( !function_exists( 'catchbase_featured_content_display' ) ) :
 */
 function catchbase_featured_content_display() {
 	//catchbase_flush_transients();
-	
+
 	global $post, $wp_query;
 
 	// get data value from options
 	$options 		= catchbase_get_theme_options();
 	$enablecontent 	= $options['featured_content_option'];
 	$contentselect 	= $options['featured_content_type'];
-	
+
 	// Front page displays in Reading Settings
 	$page_on_front 	= get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
+	$page_for_posts = get_option('page_for_posts');
 
 
 	// Get Page ID outside Loop
@@ -44,7 +44,7 @@ function catchbase_featured_content_display() {
 			$layouts 	 = $options ['featured_content_layout'];
 			$headline 	 = $options ['featured_content_headline'];
 			$subheadline = $options ['featured_content_subheadline'];
-	
+
 			echo '<!-- refreshing cache -->';
 
 			if ( !empty( $layouts ) ) {
@@ -55,7 +55,7 @@ function catchbase_featured_content_display() {
 				$classes 		.= ' demo-featured-content' ;
 				$headline 		= __( 'Featured Content', 'catch-base' );
 				$subheadline 	= __( 'Here you can showcase the x number of Featured Content. You can edit this Headline, Subheadline and Feaured Content from "Appearance -> Customize -> Featured Content Options".', 'catch-base' );
-			} 
+			}
 			elseif ( $contentselect == 'featured-page-content' ) {
 				$classes .= ' featured-page-content' ;
 			}
@@ -114,13 +114,13 @@ if ( ! function_exists( 'catchbase_featured_content_display_position' ) ) :
  * Homepage Featured Content Position
  *
  * @action catchbase_content, catchbase_after_secondary
- * 
+ *
  * @since Catch Base 1.0
  */
 function catchbase_featured_content_display_position() {
 	// Getting data from Theme Options
 	$options 		= catchbase_get_theme_options();
-	
+
 	//Check Featured Content Position
 	if ( isset( $options [ 'featured_content_position' ] ) ) {
 		$featured_content_position = $options [ 'featured_content_position' ];
@@ -130,12 +130,12 @@ function catchbase_featured_content_display_position() {
 		$featured_content_position =  $options [ 'move_posts_home' ];
 	}
 
-	if ( '1' != $featured_content_position ) { 
+	if ( '1' != $featured_content_position ) {
 		add_action( 'catchbase_before_content', 'catchbase_featured_content_display', 40 );
 	} else {
 		add_action( 'catchbase_after_content', 'catchbase_featured_content_display', 40 );
 	}
-	
+
 }
 endif; // catchbase_featured_content_display_position
 add_action( 'catchbase_before', 'catchbase_featured_content_display_position' );
@@ -165,7 +165,7 @@ function catchbase_demo_content( $options ) {
 				<div class="entry-content">
 					The Kathmandu Durbar Square holds the palaces of the Malla and Shah kings who ruled over the city. Along with these palaces, the square surrounds quadrangles revealing courtyards and temples.
 				</div>
-			</div><!-- .entry-container -->			
+			</div><!-- .entry-container -->
 		</article>
 
 		<article id="featured-post-2" class="post hentry post-demo">
@@ -181,9 +181,9 @@ function catchbase_demo_content( $options ) {
 				<div class="entry-content">
 					Situated western part in the outskirts of the Kathmandu valley, Seto Gumba also known as Druk Amitabh Mountain or White Monastery, is one of the most popular Buddhist monasteries of Nepal.
 				</div>
-			</div><!-- .entry-container -->			
+			</div><!-- .entry-container -->
 		</article>
-		
+
 		<article id="featured-post-3" class="post hentry post-demo">
 			<figure class="featured-content-image">
 				<img alt="Swayambhunath" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
@@ -197,7 +197,7 @@ function catchbase_demo_content( $options ) {
 				<div class="entry-content">
 					Swayambhunath is an ancient religious site up in the hill around Kathmandu Valley. It is also known as the Monkey Temple as there are holy monkeys living in the north-west parts of the temple.
 				</div>
-			</div><!-- .entry-container -->			
+			</div><!-- .entry-container -->
 		</article>';
 
 	if( 'layout-four' == $options ['featured_content_layout']) {
@@ -213,9 +213,9 @@ function catchbase_demo_content( $options ) {
 					</h1>
 				</header>
 				<div class="entry-content">
-					Dhulikhel is a popular place to observe the high Himalaya - A Tourist Paradise: The spectacular snowfed mountains seen from Dhuklikhel must be one of the finest panoramic views in the world. 
+					Dhulikhel is a popular place to observe the high Himalaya - A Tourist Paradise: The spectacular snowfed mountains seen from Dhuklikhel must be one of the finest panoramic views in the world.
 				</div>
-			</div><!-- .entry-container -->			
+			</div><!-- .entry-container -->
 		</article>';
 	}
 
@@ -240,7 +240,7 @@ function catchbase_page_content( $options ) {
 	$more_link_text				= $options['excerpt_more_text'];
 
 	$show_content				= isset( $options['featured_content_show'] ) ? $options['featured_content_show'] : 'excerpt';
-	
+
 	$catchbase_page_content 	= '';
 
    	$number_of_page 			= 0; 		// for number of pages
@@ -264,18 +264,18 @@ function catchbase_page_content( $options ) {
                     'post_type'				=> 'page',
                 ));
 
-		$i=0; 
+		$i=0;
 		while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
 			$title_attribute = the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) );
-			
+
 			$excerpt = get_the_excerpt();
-			
+
 			$catchbase_page_content .= '
-				<article id="featured-post-' . $i . '" class="post hentry featured-page-content">';	
+				<article id="featured-post-' . $i . '" class="post hentry featured-page-content">';
 				if ( has_post_thumbnail() ) {
 					$catchbase_page_content .= '
 					<figure class="featured-homepage-image">
-						<a href="' . get_permalink() . '" "' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
+						<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
 						'. get_the_post_thumbnail( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
 						</a>
 					</figure>';
@@ -303,7 +303,7 @@ function catchbase_page_content( $options ) {
 						if ( 'excerpt' == $show_content ) {
 							$catchbase_page_content .= '<div class="entry-excerpt"><p>' . $excerpt . '</p></div><!-- .entry-excerpt -->';
 						}
-						elseif ( 'full-content' == $show_content ) { 
+						elseif ( 'full-content' == $show_content ) {
 							$content = apply_filters( 'the_content', get_the_content() );
 							$content = str_replace( ']]>', ']]&gt;', $content );
 							$catchbase_page_content .= '<div class="entry-content">' . $content . '</div><!-- .entry-content -->';
@@ -314,8 +314,8 @@ function catchbase_page_content( $options ) {
 		endwhile;
 
 		wp_reset_query();
-	}		
-	
+	}
+
 	return $catchbase_page_content;
 }
 endif; // catchbase_page_content

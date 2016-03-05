@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -168,7 +168,7 @@ endif;
 if ( ! function_exists( 'catchbase_content_sidebar_wrap_end' ) ) :
 	/**
 	 * End div id #content_sidebar_wrap
-	 * 
+	 *
 	 * @since Catch Base 1.0
 	 */
 	function catchbase_content_sidebar_wrap_end() {
@@ -182,7 +182,7 @@ endif;
 if ( ! function_exists( 'catchbase_sidebar_secondary' ) ) :
 	/**
 	 * Secondary Sidebar
-	 * 
+	 *
 	 * @since Catch Base 1.0
 	 */
 	function catchbase_sidebar_secondary() {
@@ -198,53 +198,17 @@ if ( ! function_exists( 'catchbase_layout_condition_check' ) ) :
 	 * @since Catch Base 1.0
 	 */
 	function catchbase_layout_condition_check() {
-		global $post, $wp_query;
-
-		$options = catchbase_get_theme_options();
-		
-		$themeoption_layout = $options['theme_layout'];
-		
-		// Front page displays in Reading Settings
-		$page_on_front = get_option('page_on_front') ;
-		$page_for_posts = get_option('page_for_posts'); 
-
-		// Get Page ID outside Loop
-		$page_id = $wp_query->get_queried_object_id();	
-		
-		// Blog Page or Front Page setting in Reading Settings
-		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
-	        $layout 		= get_post_meta( $page_id,'catchbase-layout-option', true );
-	    }
-		else if ( is_singular() ) {
-			if ( is_attachment() ) { 
-				$parent = $post->post_parent;
-				$layout = get_post_meta( $parent, 'catchbase-layout-option', true );				
-			} 
-			else {
-				$layout = get_post_meta( $post->ID, 'catchbase-layout-option', true );
-			}
-		}
-		else {
-			$layout = 'default';
-		}
-
-		//check empty and load default
-		if( empty( $layout ) ) {
-			$layout = 'default';
-		}
-		
+		$layout = catchbase_get_theme_layout();
 		if ( $layout == 'three-columns' || ( $layout=='default' && ( $themeoption_layout == 'three-columns' ) ) ){
-			add_action( 'catchbase_content', 'catchbase_content_sidebar_wrap_start', 40 );
-
 			add_action( 'catchbase_after_content', 'catchbase_content_sidebar_wrap_end', 10 );
-			
+
 			add_action( 'catchbase_after_content', 'catchbase_sidebar_secondary', 20 );
 
-			
+			add_action( 'catchbase_content', 'catchbase_content_sidebar_wrap_start', 40 );
 		}
 	} // catchbase_layout_condition_check
 endif;
-add_action( 'catchbase_before', 'catchbase_layout_condition_check' ); 
+add_action( 'catchbase_before', 'catchbase_layout_condition_check' );
 
 
 if ( ! function_exists( 'catchbase_footer_content_start' ) ) :
@@ -305,8 +269,8 @@ function catchbase_header_right() { ?>
 				</div>
 			</section>
 		<?php } ?>
-	</aside><!-- .sidebar .header-sidebar .widget-area -->	
-<?php	
+	</aside><!-- .sidebar .header-sidebar .widget-area -->
+<?php
 }
 endif;
 add_action( 'catchbase_header', 'catchbase_header_right', 60 );

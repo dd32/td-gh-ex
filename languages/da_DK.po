@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-18 17:19+0545\n"
-"PO-Revision-Date: 2016-02-18 17:19+0545\n"
+"POT-Creation-Date: 2016-03-05 21:02+0545\n"
+"PO-Revision-Date: 2016-03-05 21:02+0545\n"
 "Last-Translator: Kurt <catchme@vindu.dk>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: da_DK\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -28,8 +28,8 @@ msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Det ligner intet blev fundet på denne placering. Måske prøve en af ​​"
-"nedenstående links eller en søgning?"
+"Det ligner intet blev fundet på denne placering. Måske prøve en af ​​nedenstående "
+"links eller en søgning?"
 
 #: ../archive.php:30
 #, php-format
@@ -97,7 +97,7 @@ msgstr "Lyd"
 msgid "Chats"
 msgstr "Chats"
 
-#: ../archive.php:69 ../sidebar-secondary.php:45 ../sidebar.php:92
+#: ../archive.php:69 ../sidebar-secondary.php:45 ../sidebar.php:56
 msgid "Archives"
 msgstr "Arkiver"
 
@@ -123,11 +123,9 @@ msgstr "Intet fundet"
 
 #: ../content-none.php:21 ../no-results.php:20
 #, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Klar til at udgive dit første indlæg? <a href=\"%1$s\"> Kom godt i gang her "
-"</a>."
+"Klar til at udgive dit første indlæg? <a href=\"%1$s\"> Kom godt i gang her </a>."
 
 #: ../content-none.php:25 ../no-results.php:24
 msgid ""
@@ -139,17 +137,16 @@ msgstr ""
 
 #: ../content-none.php:30 ../no-results.php:29
 msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"Det synes vi ikke kan finde det, du leder efter. Måske søger kan hjælpe."
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching "
+"can help."
+msgstr "Det synes vi ikke kan finde det, du leder efter. Måske søger kan hjælpe."
 
 #: ../content-page.php:28 ../content-single.php:31 ../content.php:46
 msgid "Pages:"
 msgstr "Sider:"
 
-#: ../content-page.php:35 ../inc/catchbase-core.php:646
-#: ../inc/catchbase-core.php:665
+#: ../content-page.php:35 ../inc/catchbase-core.php:622
+#: ../inc/catchbase-core.php:641
 msgid "Edit"
 msgstr "Rediger"
 
@@ -186,100 +183,100 @@ msgstr "Fejl 404"
 msgid "Page %s"
 msgstr "Side %s"
 
-#: ../inc/catchbase-core.php:127 ../inc/catchbase-menus.php:27
+#: ../inc/catchbase-core.php:93 ../inc/catchbase-menus.php:27
 msgid "Primary Menu"
 msgstr "Primær Menu"
 
-#: ../inc/catchbase-core.php:128 ../inc/catchbase-menus.php:69
+#: ../inc/catchbase-core.php:94 ../inc/catchbase-menus.php:69
 msgid "Secondary Menu"
 msgstr "Sekundær menu"
 
-#: ../inc/catchbase-core.php:612
+#: ../inc/catchbase-core.php:588
 msgid "Post navigation"
 msgstr "indlægs navigation"
 
-#: ../inc/catchbase-core.php:621
+#: ../inc/catchbase-core.php:597
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\"> ← </ span> Ældre indlæg"
 
-#: ../inc/catchbase-core.php:622
+#: ../inc/catchbase-core.php:598
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nyere indlæg <span class=\"meta-nav\"> → </ span>"
 
-#: ../inc/catchbase-core.php:646
+#: ../inc/catchbase-core.php:622
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/catchbase-core.php:656
+#: ../inc/catchbase-core.php:632
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">skriver:</span>"
 
-#: ../inc/catchbase-core.php:662
+#: ../inc/catchbase-core.php:638
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s kl. %2$s"
 
-#: ../inc/catchbase-core.php:669
+#: ../inc/catchbase-core.php:645
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar venter på at blive godkendt"
 
-#: ../inc/catchbase-core.php:772
+#: ../inc/catchbase-core.php:748
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Udgivet den</span>"
 
-#: ../inc/catchbase-core.php:779
+#: ../inc/catchbase-core.php:755
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Forfatter</span>"
 
-#: ../inc/catchbase-core.php:808 ../inc/catchbase-core.php:816
+#: ../inc/catchbase-core.php:784 ../inc/catchbase-core.php:792
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/catchbase-core.php:811
+#: ../inc/catchbase-core.php:787
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">kategorier</span>"
 
-#: ../inc/catchbase-core.php:819
+#: ../inc/catchbase-core.php:795
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Tags</span>"
 
-#: ../inc/catchbase-core.php:962
+#: ../inc/catchbase-core.php:938
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catchbase-core.php:1462
+#: ../inc/catchbase-core.php:1452
 msgid "Scroll Up"
 msgstr "Rul op"
 
-#: ../inc/catchbase-core.php:1480
+#: ../inc/catchbase-core.php:1470
 msgid "Posted on"
 msgstr "Udgivet den"
 
-#: ../inc/catchbase-core.php:1481
+#: ../inc/catchbase-core.php:1471
 msgid "By"
 msgstr "Af"
 
-#: ../inc/catchbase-core.php:1522
+#: ../inc/catchbase-core.php:1512
 msgid "Next &rarr;"
 msgstr "Næste &rarr;"
 
-#: ../inc/catchbase-core.php:1523
+#: ../inc/catchbase-core.php:1513
 msgid "Next post:"
 msgstr "Næste indlæg:"
 
-#: ../inc/catchbase-core.php:1525
+#: ../inc/catchbase-core.php:1515
 msgid "&larr; Previous"
 msgstr "&larr; Forrige"
 
-#: ../inc/catchbase-core.php:1526
+#: ../inc/catchbase-core.php:1516
 msgid "Previous post:"
 msgstr "Forrige indlæg:"
 
@@ -293,8 +290,8 @@ msgstr ""
 
 #: ../inc/catchbase-default-options.php:67
 msgid ""
-"This is promotion headline. You can edit this from Appearance -> Customize -"
-"> Theme Options -> Promotion Headline Options"
+"This is promotion headline. You can edit this from Appearance -> Customize -> "
+"Theme Options -> Promotion Headline Options"
 msgstr ""
 
 #: ../inc/catchbase-default-options.php:68
@@ -599,8 +596,8 @@ msgstr "Primær sidebar"
 
 #: ../inc/catchbase-widgets.php:36
 msgid ""
-"This is the primary sidebar if you are using a two or three column site "
-"layout option."
+"This is the primary sidebar if you are using a two or three column site layout "
+"option."
 msgstr ""
 
 #: ../inc/catchbase-widgets.php:41
@@ -609,8 +606,7 @@ msgstr ""
 
 #: ../inc/catchbase-widgets.php:47
 msgid ""
-"This is the secondary sidebar if you are using a three column site layout "
-"option."
+"This is the secondary sidebar if you are using a three column site layout option."
 msgstr ""
 
 #: ../inc/catchbase-widgets.php:54
@@ -637,8 +633,7 @@ msgstr "Title (optional):"
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:41
 msgid ""
-"Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
-"options."
+"Hold down the Ctrl (windows) / Command (Mac) button to select multiple options."
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:54
@@ -769,10 +764,10 @@ msgstr "Transitions-længde"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:133
 msgid ""
-"True: Fixes the height overlap issue. Slideshow will start as soon as two "
-"slider are available. Slide may display in random, as image is fetch."
-"<br>Wait: Fixes the height overlap issue.<br> Slideshow will start only "
-"after all images are available."
+"True: Fixes the height overlap issue. Slideshow will start as soon as two slider "
+"are available. Slide may display in random, as image is fetch.<br>Wait: Fixes "
+"the height overlap issue.<br> Slideshow will start only after all images are "
+"available."
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:135
@@ -785,8 +780,7 @@ msgstr "Vælg slider type"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:172
 msgid ""
-"Save and refresh the page if No. of Slides is changed (Max no of slides is "
-"20)"
+"Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:179
@@ -839,9 +833,9 @@ msgstr "Tema indstillinger"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:28
 msgid ""
-"Breadcrumbs are a great way of letting your visitors find out where they are "
-"on your site with just a glance. You can enable/disable them on homepage and "
-"entire site."
+"Breadcrumbs are a great way of letting your visitors find out where they are on "
+"your site with just a glance. You can enable/disable them on homepage and entire "
+"site."
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:30
@@ -890,8 +884,8 @@ msgstr "Mere Tag Tekst"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:146
 msgid ""
-"Only posts that belong to the categories selected here will be displayed on "
-"the front page"
+"Only posts that belong to the categories selected here will be displayed on the "
+"front page"
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:149
@@ -916,8 +910,8 @@ msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:193
 msgid ""
-"Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height "
-"144px height, which will support High Resolution Devices like iPad Retina."
+"Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
+"height, which will support High Resolution Devices like iPad Retina."
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:194
@@ -935,9 +929,9 @@ msgstr ""
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:273
 #, php-format
 msgid ""
-"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</"
-"a>.<br/>Infinite Scroll Options requires <a target=\"_blank\" href=\"%s"
-"\">JetPack Plugin</a> with Infinite Scroll module Enabled."
+"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
+"<br/>Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
+"Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:280
@@ -950,8 +944,7 @@ msgstr ""
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:291
 #, php-format
 msgid ""
-"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</"
-"a>."
+"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:302
@@ -1044,8 +1037,8 @@ msgstr "Farvetema"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:151
 msgid ""
-"Caution: Reset all settings to default. Refresh the page after save to view "
-"full effects."
+"Caution: Reset all settings to default. Refresh the page after save to view full "
+"effects."
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer.php:153
@@ -1067,8 +1060,8 @@ msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer.php:229
 msgid ""
-"Some settings might be missing or disorganized in this version of WordPress. "
-"So we suggest you to upgrade to version 4.0 or better."
+"Some settings might be missing or disorganized in this version of WordPress. So "
+"we suggest you to upgrade to version 4.0 or better."
 msgstr ""
 
 #: ../no-results.php:14
@@ -1091,26 +1084,26 @@ msgstr ""
 
 #: ../sidebar-secondary.php:31
 msgid ""
-"This is the Secondary Sidebar Widget Area if you are using a three column "
-"site layout option."
+"This is the Secondary Sidebar Widget Area if you are using a three column site "
+"layout option."
 msgstr ""
 
-#: ../sidebar-secondary.php:32 ../sidebar.php:79
+#: ../sidebar-secondary.php:32 ../sidebar.php:43
 #, php-format
 msgid ""
-"By default it will load Search and Archives widgets as shown below. You can "
-"add widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> "
-"which will replace default widgets."
+"By default it will load Search and Archives widgets as shown below. You can add "
+"widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> which will "
+"replace default widgets."
 msgstr ""
 
-#: ../sidebar.php:75
+#: ../sidebar.php:39
 msgid "Primary Sidebar Widget Area"
 msgstr ""
 
-#: ../sidebar.php:78
+#: ../sidebar.php:42
 msgid ""
-"This is the Primary Sidebar Widget Area if you are using a two or three "
-"column site layout option."
+"This is the Primary Sidebar Widget Area if you are using a two or three column "
+"site layout option."
 msgstr ""
 
 #~ msgid "Googleplus"

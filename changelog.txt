@@ -1,5 +1,12 @@
 == Change log ==
 
+= 2.8 =
+* Fixed: Featured Page Content anchor attribute issue (title missing)
+* Updated: Sidr menu script to version 2.1.1.1
+* Updated: Meta viewport for better responsive support
+* Updated: Content Width Implementation
+* Updated: Theme Layout retrieval via function
+
 = 2.7.1 =
 * Bug Fixed: Genericons issue with To Top plugin
 * Bug Fixed: German language translation issue in de_DE.po and de_DE.mo file
@@ -47,18 +54,18 @@
 = 2.2 =
 * Added: Missing keywords esc_attr_x in .pot file
 * Bug Fixed: Featured slider overlapping text and image issue
-* Bug Fixed: Escaped missing options in slider, social icons and breadcrumb implementation 
-* Changed the link for html5shiv in readme file 
-* Optimized Customizer Scripts 
+* Bug Fixed: Escaped missing options in slider, social icons and breadcrumb implementation
+* Changed the link for html5shiv in readme file
+* Optimized Customizer Scripts
 * Updated: French translation fr_FR.po and fr_FR.mo
 * Updated: Handling of default hex color values of custom background color and custom header text color
 
-= 2.1 = 
+= 2.1 =
 * Added: Single Post navigation
 * Updated: German translation de_DE.po and de_DE.mo
 * Updated: Brazilian Portuguese translation pt_BR.po and pt_BR.mo
 
-= 2.0 = 
+= 2.0 =
 * Added Featured Content "Display Content" option
 * Combined options for Featured Content and renamed the section From Featured Content Options to Featured Content in Customizer
 * Combined options for Featured Slider and renamed the section From Featured Slider Options to Featured Slider in Customizer
@@ -66,7 +73,7 @@
 * Updated Social Widget name
 * Updated: Brazilian Portuguese translation pt_BR.po and pt_BR.mo
 
-= 1.9 = 
+= 1.9 =
 * Added: Support for Random Header Image
 * Bug Fixed: Removal of extra '/' in sub-categories in breadcrumb and updates in breadcrumb
 * Bug Fixed: Blog page featured image not overwriting default header image
@@ -80,7 +87,7 @@
 
 = 1.7 =
 * Added Brazilian Portuguese translation pt_BR.po and pt_BR.mo
-* Bug Fixed: Sidebar layout option 
+* Bug Fixed: Sidebar layout option
 * Bug Fixed: Social icon wrap
 * Bug Fixed: Featured page content showing full content instead of excerpt
 
@@ -108,13 +115,13 @@
 * Replaced all require_once with require
 
 = 1.3 =
-* Added Option in Enable Header Image: Excluding Home, Page/Post Featured Image 
+* Added Option in Enable Header Image: Excluding Home, Page/Post Featured Image
 * Added catchbase- prefix to some js handles as done in _s
 * Bug Fixed: undefined index $page_for_posts for Featured Header Image
 * Bug Fixed: featured-heading-wrap, $headline and $subheadline empty check in featured content
 * Bug Fixed: Featured Content missing classes entry-header and entry-title
 * Bug Fixed: Html is now allowed in Promotion Headline
-* Bug Fixed: Setting max-width for button, input, select, textarea 
+* Bug Fixed: Setting max-width for button, input, select, textarea
 * Changed get_page to get_post as get_page is depreciated
 * Fixed header text condition for Sidebar
 * Removed jquery cookie and its dependencies
@@ -134,7 +141,7 @@
 * Added title tag via add theme support
 * Bug Fixed: Homepage Category Conditions (Reporter by leucospis)
 * Bug Fixed: Removed unnecessary code in sidebar options meta (Reporter by ladonnaraeh)
-* Bug Fixed: Assistive text 
+* Bug Fixed: Assistive text
 * Bug Fixed: Secondary Menu anchor ID
 * Changed customizer button color
 * Removed unnecessary file catchbase-customizer-color-options.php
@@ -147,20 +154,20 @@
 = 1.1 =
 * Added Foursquare, PollDaddy and Twitch TV social icons
 * Bug Fixed: Featured header image
-* Bug Fixed: Featured content width in mobile 
+* Bug Fixed: Featured content width in mobile
 * Bug Fixed: Sanitize email for email output
 * Bug Fixed: Typo in content featured image
 * Bug Fixed: Primary sidebar closing tag issue
 * Removed unnecessary body_class for page-blog
 * Moved Featured content position option from Homepage/Frontpage options to featured content settings
-* Changed catchbase_footer_content_start and catchbase_footer_sidebar hook priority  
+* Changed catchbase_footer_content_start and catchbase_footer_sidebar hook priority
 
 = 1.0 =
 * Fixed Sub-menu issue
 * Fixed featured image issue in archive pages
 * Fixed color scheme
 * Fixed frontpage category options
-* Fixed content width 
+* Fixed content width
 * Fixed featured content positions
 * Removed dark-noise.png image
 * Removed unnecessary header right sidebar
