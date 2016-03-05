@@ -38,10 +38,15 @@ get_template_part( 'includes/customizer' );
  */
  add_action( 'after_switch_theme', 'agama_blue_after_switch_theme' );
  function agama_blue_after_switch_theme() {
+	// Set logo color
+	set_theme_mod( 'agama_header_v1_logo_color', '#00a4d0' );
 	// Set layout full-width
 	set_theme_mod( 'agama_layout_style', 'fullwidth' );
 	// Set primary color
 	set_theme_mod( 'agama_primary_color', '#00a4d0' );
+	// Set slider buttons color
+	set_theme_mod( 'agama_slider_button_bg_color_1', '#00a4d0' );
+	set_theme_mod( 'agama_slider_button_bg_color_2', '#00a4d0' );
 	// Set frontpage boxes icons colors
 	set_theme_mod( 'agama_frontpage_box_1_icon_color', '#00a4d0' );
 	set_theme_mod( 'agama_frontpage_box_2_icon_color', '#00a4d0' );

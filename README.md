@@ -16,9 +16,13 @@ Agama Blue is distributed under the terms of the GNU GPL.
 ## Image Credits
 
 Image used on screenshot:
- * [Eutah Mizushima][Unsplash] (https://unsplash.com/photos/OWwK_0_EnxY) [License: CC0]
+ * John Cobb - https://unsplash.com/johncobb - https://unsplash.com/photos/ssAcdlJRsI4 - CC0 1.0 License
  
 ## Changelog
+
+= v1.0.2 - 05 Mar 2016 =
+* UPDATED: Child theme customize options under "Agama Blue Options" panel.
+* FIXED: Various issues.
 
 = v1.0.1 - 14 Dec 2015 =
 * ADDED: Frontpage blog feature.

@@ -53,9 +53,6 @@
 							<li><i class="fa fa-calendar"></i> <?php echo get_the_time('d M, Y'); ?></li>
 							<li><a href="<?php the_permalink(); ?>#comments"><i class="fa fa-comments"></i> <?php echo get_comments_number(); ?></a></li>
 						</ul>
-						<div class="entry-content">
-							<?php the_excerpt(); ?>
-						</div>
 					</div>
 				</div>
 				

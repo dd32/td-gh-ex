@@ -3,7 +3,7 @@ Theme Name:  Agama Blue
 Theme URI:   http://www.theme-vision.com/agama-blue/
 Description: Agama Blue is child theme of Agama.
 
-Version:    1.0.1
+Version:    1.0.2
 Author:     Jaroslav Svetlik
 Author URI: http://www.theme-vision.com/
 
@@ -223,13 +223,18 @@ body:not(.device-touch) .entry-link {
  
 /* Individual Post
  *----------------------------------------------*/
- .ipost { margin-bottom: 40px; }
-.ipost .entry-image img { border-radius: 0; }
+.ipost { margin-bottom: 40px; }
+.ipost .entry-image img { 
+	border-radius: 0; 
+	width: 262.5px;
+	height: 197px;
+}
 .ipost .entry-title h3,
 .ipost .entry-title h4 {
 	margin: 0;
 	font-size: 16px;
 	font-weight: 600;
+	height: 30px;
 }
 .ipost .entry-title h4 { font-size: 15px; }
 .ipost .entry-title h3 a,
