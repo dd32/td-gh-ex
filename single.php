@@ -10,7 +10,7 @@
 	<?php while (have_posts()) : the_post(); ?>
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
-			<h3 class="post-title"><?php the_title(); ?></h3>
+			<h1 class="page-title-post"><?php the_title(); ?></h1>
 
 			<?php get_template_part( 'postmeta' ); ?>
 
@@ -20,12 +20,7 @@
 				<div class="pagelink"><?php wp_link_pages(); ?></div>
 			<?php } ?> 
 
-			<div class="postmetadata">
-				<?php printf( __( 'Category: %s', 'onecolumn' ), get_the_category_list( __( ', ', 'onecolumn' ) ) ); ?>
-				<?php if(has_tag() ) : ?>
-					<?php echo '|'; ?> <?php printf(__( 'Tag: %s', 'onecolumn' ), get_the_tag_list('', __( ', ', 'onecolumn' ) ) ); ?>
-				<?php endif; ?>
-			</div>
+			<?php get_template_part( 'postmeta-single' ); ?>
 		</div>
 
 		<?php comments_template(); ?>
