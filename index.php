@@ -17,9 +17,9 @@
 			</div>
 		<?php endif; ?>
 
-		<h4 class="post-title">
+		<h2 class="post-title">
 			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'darkorange'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
-		</h4>
+		</h2>
 
 		<?php get_template_part( 'postmeta' ); ?>
 
@@ -43,7 +43,7 @@
 		</div>
 
 		<?php else: ?>
-			<h4 class="page-title"><?php _e( 'Nothing Found', 'darkorange' ); ?></h4>
+			<h1 class="page-title"><?php _e( 'Nothing Found', 'darkorange' ); ?></h1>
 			<p><?php _e('Sorry, no posts matched your criteria.', 'darkorange'); ?></p>
 
 	<?php endif; ?>
