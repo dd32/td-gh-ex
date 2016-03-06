@@ -12,7 +12,7 @@
 	<?php while (have_posts()) : the_post(); ?>
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
-			<h4 class="post-title"><?php the_title(); ?></h4>
+			<h1 class="page-title-post"><?php the_title(); ?></h1>
 
 			<?php get_template_part( 'postmeta' ); ?>
 	
@@ -22,12 +22,7 @@
 				<div class="pagelink"><?php wp_link_pages(); ?></div>
 			<?php } ?> 
 
-			<div class="postmetadata">
-				<?php printf( __( 'Category: %s', 'multicolors' ), get_the_category_list( __( ', ', 'multicolors' ) ) ); ?>
-				<?php if(has_tag() ) : ?>
-					<?php echo '|'; ?> <?php printf(__( 'Tag: %s', 'multicolors' ), get_the_tag_list('', __( ', ', 'multicolors' ) ) ); ?>
-				<?php endif; ?>
-			</div>
+			<?php get_template_part( 'postmeta-single' ); ?>
 		</div>
 
 		<?php comments_template(); ?>

@@ -1,7 +1,7 @@
 /*
 Theme Name: MultiColors
 Theme URI: http://www.guidovanderleest.nl/multicolors
-Version: 3.5
+Version: 3.6
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MultiColors is a free, clean, minimalistic, responsive, mobile friendly, colorful WordPress theme. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
@@ -138,7 +138,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 #header-first-container .logo h1 {text-align:left; line-height:1em;} 
 #header-first-container .logo h1 a {color:#eee; text-decoration:none;}
 #header-first-container .logo h1 a:hover {color:#333; text-decoration:none;}
-#header-first-container .logo h4 {text-align:right; line-height:1em;}
+#header-first-container .logo h2 {text-align:right; font-size:1.5em; line-height:1em;}
 
 
 /* HEADER SECOND */
@@ -191,13 +191,14 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* PAGE */
-.page-title {clear:both; padding:0 0 20px;}
+.page-title {clear:both; padding:0 0 20px; font-size:1.5em; line-height:1.5em;}
+.page-title-post {clear:both; font-size:1.5em; line-height:1.5em;}
 .archive-description {display:block; font-style:italic;}
 .pagelink {clear:both; display:block; margin:20px 0 10px;}
 
 
 /* POST */
-.post-title {clear:both;}
+.post-title {clear:both; font-size:1.5em; line-height:1.5em;}
 .post-title a {color:#eee; text-decoration:none;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .sticky {clear:both; display:block; text-align:center; margin:10px 0; padding:5px; border-top:2px solid #eee; border-bottom:2px solid #eee;}
@@ -241,6 +242,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .gallery dl, .gallery dt, .gallery dd {margin:0; padding:0;}
 .gallery-caption {max-width:100%; text-align:center;}
 
+#container .gallery img {border:0;}
+
 
 /* SEARCHFORM */
 .search-form {padding:10px 0;}
@@ -274,9 +277,9 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* SIDEBAR AND WIDGETS */
 #sidebar {width:32%; float:right; padding:20px 0 0;}
 .widget {padding:15px 5%; margin:0 0 20px; background:#f8f8f8; color:#333; border:1px solid #eee;}
-.widget a{color:#00aaff; text-decoration:none;}
-.widget a:hover{text-decoration:underline;}
-.widgettitle {margin:0 0 10px; padding:0 0 5px; color:#00aaff; border-bottom:2px solid #00aaff;}
+.widget a {color:#00aaff; text-decoration:none;}
+.widget a:hover {text-decoration:underline;}
+.widgettitle {margin:0 0 10px; padding:0 0 5px; color:#00aaff; border-bottom:2px solid #00aaff; font-size:1.5em;}
 
 
 /* WIDGET INPUTS */
@@ -320,7 +323,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* HEADER */
 	#header-first-container .logo {width:96%; float:left; padding:10px 2%; text-align:center;}
 	#header-first-container .logo h1 {font-size:2em; text-align:center;}
-	#header-first-container .logo h4 {font-size:1.3em; text-align:center; margin:10px 0 0;}
+	#header-first-container .logo h2 {font-size:1.3em; text-align:center; margin:10px 0 0;}
 	#header-third {width:96%; float:left; padding:0 2%;}
 	#header-third .image-header {width:100%;}
 	#header-third .sidebar-header {width:100%; padding:0;}
@@ -336,7 +339,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.post-home, .post-home.left {width:100%; clear:both; float:left; margin:0 auto 0;}
 
 	/* HEADINGS */
-	.post-title, .page-title, .widgettitle, #footer .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
+	.post-title, .page-title, .page-title-post, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
 
 	/* IMAGES */
 	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
