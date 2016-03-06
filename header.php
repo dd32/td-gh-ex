@@ -25,7 +25,7 @@
 				<img src='<?php echo esc_url( get_theme_mod( 'gridbulletin_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
 			<?php else : ?> 
 				<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
-				<h4><?php bloginfo('description'); ?></h4> 
+				<h2><?php bloginfo('description'); ?></h2> 
 			<?php endif; ?>
 		</div>
 	</div>

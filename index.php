@@ -17,9 +17,9 @@
 			</div>
 		<?php endif; ?>
 
-		<h5 class="post-title">
+		<h2 class="post-title">
 			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'gridbulletin'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
-		</h5>
+		</h2>
 
 		<?php if ( has_post_thumbnail() ) { 
 			the_post_thumbnail('list', array('class' => 'list-image'));
@@ -39,7 +39,7 @@
 		</div>
 
 		<?php else: ?>
-			<h3 class="page-title"><?php _e( 'Nothing Found', 'gridbulletin' ); ?></h3>
+			<h1 class="page-title"><?php _e( 'Nothing Found', 'gridbulletin' ); ?></h1>
 			<p><?php _e('Sorry, no posts matched your criteria.', 'gridbulletin'); ?></p>
 
 	<?php endif; ?>
