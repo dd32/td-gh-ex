@@ -38,6 +38,8 @@ get_template_part( 'includes/customizer' );
  */
  add_action( 'after_switch_theme', 'agama_blue_after_switch_theme' );
  function agama_blue_after_switch_theme() {
+	// Set header style
+	set_theme_mod( 'agama_header_style', 'sticky' );
 	// Set logo color
 	set_theme_mod( 'agama_header_v1_logo_color', '#00a4d0' );
 	// Set layout full-width

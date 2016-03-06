@@ -20,9 +20,12 @@ Image used on screenshot:
  
 ## Changelog
 
-= v1.0.2 - 05 Mar 2016 =
+= 1.0.3 - 06 Mar 2016 =
+* UPDATED: Default header style for Agama Blue.
+
+= 1.0.2 - 05 Mar 2016 =
 * UPDATED: Child theme customize options under "Agama Blue Options" panel.
 * FIXED: Various issues.
 
-= v1.0.1 - 14 Dec 2015 =
+= 1.0.1 - 14 Dec 2015 =
 * ADDED: Frontpage blog feature.
