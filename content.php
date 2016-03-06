@@ -45,7 +45,7 @@
 
 					<div class="entry-summary entry-summary-with-thumbnail">
 				 		<?php if ( has_post_thumbnail() ) : ?>
-			 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+			 				<a href="<?php the_permalink(); ?>">
 			 					<?php the_post_thumbnail( $archive_image_thumbnail_size, array( 'class' => 'align' . $archive_image_alignment ) ); ?>
 			 				</a>
 				 		<?php endif; ?>
@@ -61,7 +61,7 @@
 			?>
 					<div class="entry-content">
 						<?php if ( has_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+							<a href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail( $archive_image_thumbnail_size, array( 'class' => 'align' . $archive_image_alignment ) ); ?>
 							</a>
 						<?php endif; ?>
@@ -88,7 +88,7 @@
 			if ( $categories_list && simple_life_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-			<i class="fa fa-folder-open"></i>
+			<i class="fa fa-folder-open" aria-hidden="true"></i>
 			<?php printf( '%1$s', $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories. ?>
@@ -99,7 +99,7 @@
 			if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-			<i class="fa fa-tags"></i>
+			<i class="fa fa-tags" aria-hidden="true"></i>
 			<?php printf( '<span>&nbsp;%1$s</span>', $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list. ?>
@@ -107,9 +107,9 @@
 
 		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 
-		<span class="comments-link"><i class="fa fa-comment"></i>&nbsp;<?php comments_popup_link( esc_html__( 'Leave a comment', 'simple-life' ), esc_html__( '1 Comment', 'simple-life' ), esc_html__( '% Comments', 'simple-life' ) ); ?></span>
+		<span class="comments-link"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp;<?php comments_popup_link( esc_html__( 'Leave a comment', 'simple-life' ), esc_html__( '1 Comment', 'simple-life' ), esc_html__( '% Comments', 'simple-life' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( esc_html__( 'Edit', 'simple-life' ), '<span class="edit-link pull-right"><i class="fa fa-edit"></i>', '</span>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'simple-life' ), '<span class="edit-link pull-right"><i class="fa fa-edit" aria-hidden="true"></i>', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

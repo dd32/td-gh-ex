@@ -4,7 +4,7 @@ Theme URI: http://www.nilambar.net/2015/03/simple-life-free-wordpress-theme.html
 Author: Nilambar Sharma
 Author URI: http://www.nilambar.net/
 Description: Simple Life is a simple and minimal theme for your awesome WordPress website. It comes with a whole set of interesting, rich features and flexible theme customization. This theme is easily customizable with the Customizer feature of WordPress. It is also translation ready.
-Version: 1.4
+Version: 1.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: simple-life
@@ -210,7 +210,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: medium none;
-	background: none repeat scroll 0 0 #0fa5d9;
+	background: none repeat scroll 0 0 #0b789c;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	font-size: 12px;
@@ -220,7 +220,14 @@ input[type="submit"] {
 	font-weight: bold;
 	text-transform: uppercase;
 }
-
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+	border: 1px #FFF solid;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+}
 input[type="checkbox"],
 input[type="radio"] {
 	padding: 0; /* Addresses excess padding in IE8/9 */
@@ -277,14 +284,13 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a,
-a:visited {
-	color: #0fa5d9;
-}
+a:visited,
 a:hover,
 a:focus,
 a:active {
-	color: #0fa5d9;
+	color: #0b789c;
 }
+
 a:focus {
 	outline: thin dotted;
 }
@@ -302,7 +308,7 @@ a:active {
 	display: block;
 	float: left;
 	width: 100%;
-	background-color: #0fa5d9;
+	background-color: #0b789c;
 }
 
 .main-navigation ul {
@@ -365,7 +371,7 @@ a:active {
 .main-navigation ul ul a:hover,
 .main-navigation ul ul a:focus,
 .main-navigation ul ul a:active {
-	color: #0fa5d9;
+	color: #0b789c;
 }
 
 .main-navigation ul ul li {
@@ -560,9 +566,6 @@ a:active {
 }
 
 /* Search widget */
-.search-form .search-submit {
-	display: none;
-}
 .search-form .search-form label {
 	width:100%;
 }
@@ -571,7 +574,7 @@ a:active {
 	font-weight: normal;
 	font-family: inherit;
 	box-sizing: border-box;
-  max-width: 350px;
+	max-width: 350px;
 }
 .search-form .search-field {
 	width:100%;
@@ -626,7 +629,7 @@ article.sticky {
 .entry-meta,
 .entry-footer {
     clear: both;
-    color: #0fa5d9;
+    color: #0b789c;
 }
 .entry-meta span{
 	margin-right: 15px;
@@ -680,14 +683,14 @@ h2 a, h3 a {
     text-decoration: none !important;
 }
 h2 a:hover, h3 a:hover {
-    color: #0fa5d9 !important;
+    color: #0b789c !important;
 }
 
 .entry-post-format {
 	position: relative;
 	float: right;
   width: 48px;
-  color: #0fa5d9;
+  color: #0b789c;
   font-size: 20px;
 }
 .site-main .paging-navigation,
@@ -940,7 +943,7 @@ body{
 .site-title a:focus,
 .site-title a:active {
 	text-decoration: none;
-	color: #0fa5d9;
+	color: #0b789c;
 }
 
 .site-branding .site-logo{
@@ -980,14 +983,12 @@ body{
     padding: 0;
     margin-left:15px;
 }
-.widget li {
-    /*margin-left: 15px;*/
-}
+.widget li {}
 .widget li:before {
 	font-family: 'FontAwesome';
 	content: '\f105';
-	margin:0 5px 0 -15px;
-	color: #0fa5d9;
+	margin: 0 5px 0 -15px;
+	color: #0b789c;
 }
 
 .widget_recent_comments #recentcomments li:before{
@@ -995,7 +996,7 @@ body{
 
 }
 .nav-links i.fa{
-	color: #0fa5d9;
+	color: #0b789c;
 }
 
 
@@ -1067,7 +1068,7 @@ body.search-no-results .page-content {
 /*woocommerce starts*/
 .woocommerce .woocommerce-breadcrumb a,
 .woocommerce-page .woocommerce-breadcrumb a {
-    color: #0fa5d9;
+    color: #0b789c;
 }
 .woocommerce #content div.product p.price del, .woocommerce #content div.product span.price del, .woocommerce div.product p.price del, .woocommerce div.product span.price del, .woocommerce-page #content div.product p.price del, .woocommerce-page #content div.product span.price del, .woocommerce-page div.product p.price del, .woocommerce-page div.product span.price del {
     font-size: 0.9em;
@@ -1114,6 +1115,11 @@ a.scrollup, a.scrollup:active {
     position: fixed;
     right: 20px;
     z-index: 9999;
+}
+a.scrollup:focus {
+	border: 1px #FFF solid;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 }
 
 @media only screen and (max-width:767px) {

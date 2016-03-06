@@ -7,7 +7,9 @@
 		$( '.widget' ).find( 'ul' ).addClass( 'list-unstyled' );
 
 		$( '#site-navigation' ).meanmenu( {
-			meanScreenWidth: '640'
+			meanScreenWidth: '640',
+			meanMenuOpen: '<span /><span /><span /><span class="screen-reader-text">' + Simple_Life_Screen_Reader_Text.expand + '</span>',
+			meanMenuClose: 'X<span class="screen-reader-text">' + Simple_Life_Screen_Reader_Text.collapse + '</span>'
 		});
 
 		// Implement go to top.
