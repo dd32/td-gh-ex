@@ -1,104 +1,97 @@
-INSTALLATION
-============
+=== MyKnowledgeBase ===
+Contributors: Guido07111975
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
+Version: 3.4
+Requires at least: 3.7
+Tested up to: 4.4
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, blue, gray, editor-style, translation-ready
+
+
+== Description ==
+MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
+
+
+== Installation ==
 1. Go to your WordPress Dashboard > Appearance > Themes.
 2. Select and install a new theme from the online WordPress Theme Directory or from your pc (zip file).
 3. Once activated, you're ready to use it.
 
+= Set hompepage =
+You can use the default homepage (displaying posts) or set a static page as homepage.
 
-HOW TO SET HOMEPAGE
-===================
-You can use the default homepage (displaying posts) or set a static page as homepage. 
 To set a static homepage go to your WordPress Dashboard > Settings > Reading and select the page you want.
 
+= Header image =
+You can change the header image via WordPress Dashboard > Appearance > Customize. 
 
-HOW TO CREATE A KNOWLEDGE BASE 
-==============================
-The Knowledge Base uses the default WordPress categories and posts.
-Create a new page and select the Knowledge Base template on the right. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
-Set amount of posts for each category via WordPress Dashboard > Appearance > Customize. 
-If you want this page to be homepage go to Settings > Reading and select this page as hompepage.
-
-
-HOW TO CREATE A LINK PORTAL 
-===========================
-To display a list of website links you can install this plugin: https://wordpress.org/plugins/page-links-to
-While creating a post you can add the URL (website) of your choice.
-When you click the post link in frontend it will redirect you to this URL (so the post will not open).
-
-
-HOW TO CHANGE HEADER IMAGE
-==========================
-You can change the header-image via WordPress Dashboard > Appearance > Customize.
 You will find the recommended size there too.
 
-
-HOW TO SET LOGO
-===============
+= Logo =
 You can add your own logo in stead of blogname and description via WordPress Dashboard > Appearance > Customize.
 
-
-HOW TO CHANGE BACKGROUND
-========================
+= Background =
 You can add your own background(image) via WordPress Dashboard > Appearance > Customize.
 
-
-HOW TO SET MENU
-===============
+= Menu = 
 Theme offers a menu that can contain subpages (2 levels deep).
+
 You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
+= Create a knowledgebase =
+The Knowledge Base uses the default WordPress categories and posts.
 
-HOW TO CHANGE SEARCH BAR TITLE
-==============================
+Create a new page and select the Knowledge Base template on the right. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
+
+Set amount of posts for each category via WordPress Dashboard > Appearance > Customize. 
+
+If you want this page to be homepage go to Settings > Reading and select this page as hompepage.
+
+= Create a link portal =
+To display a list of website links you can install this plugin: https://wordpress.org/plugins/page-links-to
+
+While creating a post you can add the URL (website) of your choice.
+
+When you click the post link in frontend it will redirect you to this URL (so the post will not open).
+
+= Seach bar title =
 You can change the search bar title via WordPress Dashboard > Appearance > Customize.
 
 
-TRANSLATION
-===========
+== Copyright ==
+= Fonts =
+* Font: Open Sans
+* Source: http://www.google.com/fonts/specimen/Open+Sans
+* Copyright author: Steve Matteson
+* Apache License, version 2.0
+* http://www.apache.org/licenses/LICENSE-2.0.html
+
+= Scripts =
+* Script: nav.js
+* Source: http://maxfoundry.com/articles/116/responsive-mobile-navigation-in-wordpress
+* Copyright author: John Hartley
+* GNU General Public License v3 or later
+* http://www.gnu.org/licenses/gpl-3.0.html
+
+= Images =
+* Item: boats.jpg
+* Copyright author: Guido van der Leest
+* Author URI: http://www.guidovanderleest.nl
+* GNU General Public License v3 or later
+* http://www.gnu.org/licenses/gpl-3.0.html
+
+
+== Notes ==
+= Translation =
 This theme is translation-ready and supports language packs from wordpress.org
 
-
-FONTS
-=====
-Font: Open Sans
-Source: http://www.google.com/fonts/specimen/Open+Sans
-Copyright author: Steve Matteson
-Licence: Apache License, version 2.0
-License URI: http://www.apache.org/licenses/LICENSE-2.0.html
-
-
-Scripts
-=======
-Script: nav.js
-Source: http://maxfoundry.com/articles/116/responsive-mobile-navigation-in-wordpress
-Copyright author: John Hartley
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-
-
-THEME IMAGES
-============
-Item: boats.jpg
-Copyright author: Guido van der Leest
-Author URI: http://www.guidovanderleest.nl
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-
-
-CREDITS
-=======
+= Credits =
 Without the WordPress codex and help from the WordPress community I was not able to develop my theme, so: thank you!
 
-
-SUPPORT
-=======
-If you have a question or problem using this WordPress theme, please visit the WordPress Theme Directory and post a message in the Support Forum.
+= Support = 
+If you have a question or problem using this WordPress theme, please visit the WordPress Theme Directory and post a message in Support Forum.
 
 
-CHANGELOG
-=========
-See separate file called changelog
-
-
-Enjoy,
-Guido
+== Changelog == 
+See separate file called changelog.

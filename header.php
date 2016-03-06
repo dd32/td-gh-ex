@@ -25,7 +25,7 @@
 				<img src='<?php echo esc_url( get_theme_mod( 'myknowledgebase_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
 			<?php else : ?> 
 				<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
-				<h5><?php bloginfo('description'); ?></h5> 
+				<h2><?php bloginfo('description'); ?></h2> 
 			<?php endif; ?>
 		</div>
 
@@ -57,7 +57,7 @@
 			$search_title = esc_attr__( 'Search for posts...', 'myknowledgebase' );
 		} ?>
 
-		<h4 class="search-title"><?php echo $search_title; ?></h4>
+		<h3 class="searchbar-title"><?php echo $search_title; ?></h3>
 		<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>"> 
 			<input type="search" class="search-field" placeholder="<?php echo $search_title; ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo $search_title; ?>" /> 
 			<input type="submit" id="searchsubmit" value="<?php _e( 'Search', 'myknowledgebase' ) ?>" />
