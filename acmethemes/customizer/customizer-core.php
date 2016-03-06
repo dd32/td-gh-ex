@@ -126,6 +126,8 @@ if ( !function_exists('acmeblog_get_default_theme_options') ) :
             'acmeblog-facebook-url'         => '',
             'acmeblog-twitter-url'          => '',
             'acmeblog-youtube-url'          => '',
+            'acmeblog-instagram-url'        => '',
+            'acmeblog-pinterest-url'        => '',
             'acmeblog-enable-social'        => '',
             'acmeblog-menu-show-search'     => 1,
 

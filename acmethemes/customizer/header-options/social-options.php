@@ -50,6 +50,34 @@ $wp_customize->add_control( 'acmeblog_theme_options[acmeblog-youtube-url]', arra
     'priority'  => 25
 ) );
 
+/*Instagram url*/
+$wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-instagram-url]', array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults['acmeblog-instagram-url'],
+    'sanitize_callback' => 'esc_url_raw',
+) );
+$wp_customize->add_control( 'acmeblog_theme_options[acmeblog-instagram-url]', array(
+    'label'		=> __( 'Instagram url', 'acmeblog' ),
+    'section'   => 'acmeblog-header-social',
+    'settings'  => 'acmeblog_theme_options[acmeblog-instagram-url]',
+    'type'	  	=> 'url',
+    'priority'  => 30
+) );
+
+/*Pinterest  url*/
+$wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-pinterest-url]', array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults['acmeblog-pinterest-url'],
+    'sanitize_callback' => 'esc_url_raw',
+) );
+$wp_customize->add_control( 'acmeblog_theme_options[acmeblog-pinterest-url]', array(
+    'label'		=> __( 'Pinterest url', 'acmeblog' ),
+    'section'   => 'acmeblog-header-social',
+    'settings'  => 'acmeblog_theme_options[acmeblog-pinterest-url]',
+    'type'	  	=> 'url',
+    'priority'  => 35
+) );
+
 /*enable social*/
 $wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-enable-social]', array(
     'capability'		=> 'edit_theme_options',
@@ -61,5 +89,5 @@ $wp_customize->add_control( 'acmeblog_theme_options[acmeblog-enable-social]', ar
     'section'   => 'acmeblog-header-social',
     'settings'  => 'acmeblog_theme_options[acmeblog-enable-social]',
     'type'	  	=> 'checkbox',
-    'priority'  => 30
+    'priority'  => 40
 ) );

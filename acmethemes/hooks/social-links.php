@@ -31,7 +31,18 @@ if ( !function_exists('acmeblog_social_links') ) :
                 <a href="<?php echo esc_url( $acmeblog_customizer_all_values['acmeblog-youtube-url'] ); ?>" class="youtube" data-title="Youtube" target="_blank">
                     <span class="font-icon-social-youtube"><i class="fa fa-youtube"></i></span>
                 </a>
-            <?php } ?>
+            <?php }
+            if ( !empty( $acmeblog_customizer_all_values['acmeblog-instagram-url'] ) ) { ?>
+                <a href="<?php echo esc_url( $acmeblog_customizer_all_values['acmeblog-instagram-url'] ); ?>" class="instagram" data-title="Instagram" target="_blank">
+                    <span class="font-icon-social-instagram"><i class="fa fa-instagram"></i></span>
+                </a>
+            <?php }
+            if ( !empty( $acmeblog_customizer_all_values['acmeblog-pinterest-url'] ) ) { ?>
+                <a href="<?php echo esc_url( $acmeblog_customizer_all_values['acmeblog-pinterest-url'] ); ?>" class="pinterest" data-title="Pinterest" target="_blank">
+                    <span class="font-icon-social-pinterest"><i class="fa fa-pinterest"></i></span>
+                </a>
+            <?php }
+            ?>
         </div>
         <?php
     }
