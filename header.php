@@ -25,7 +25,7 @@
 				<img src='<?php echo esc_url( get_theme_mod( 'darkelements_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
 			<?php else : ?> 
 				<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
-				<h4><?php bloginfo('description'); ?></h4> 
+				<h2><?php bloginfo('description'); ?></h2> 
 			<?php endif; ?>
 		</div>
 
@@ -35,7 +35,7 @@
 			} else {
 				$menu_title = esc_attr__( 'Navigation', 'darkelements' );
 			} ?>
-			<h4 class="nav-widgettitle"><?php echo $menu_title; ?></h4>
+			<h3 class="nav-widgettitle"><?php echo $menu_title; ?></h3>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 		<?php endif; ?>

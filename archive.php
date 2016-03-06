@@ -8,14 +8,14 @@
 <div id="content">
 	<?php if ( have_posts() ) : ?>
 		<?php
-			the_archive_title( '<h4 class="page-title">', '</h4>' );
+			the_archive_title( '<h1 class="page-title">', '</h1>' );
 			the_archive_description( '<div class="archive-description">', '</div>' );
 		?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
-			<h4 class="post-title">
+			<h2 class="post-title">
 				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'darkelements'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
-			</h4>
+			</h2>
 
 			<?php get_template_part( 'postmeta' ); ?>
 
@@ -37,7 +37,7 @@
 		</div>
 
 		<?php else: ?>
-			<h4 class="page-title"><?php _e( 'Nothing Found', 'darkelements' ); ?></h4>
+			<h1 class="page-title"><?php _e( 'Nothing Found', 'darkelements' ); ?></h1>
 			<p><?php _e('Sorry, no posts matched your criteria.', 'darkelements'); ?></p>
 	<?php endif; ?>
 

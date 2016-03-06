@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 <div id="content">
-	<h4 class="page-title"><?php _e( 'Nothing Found', 'darkelements' ); ?></h4>
+	<h1 class="page-title"><?php _e( 'Nothing Found', 'darkelements' ); ?></h1>
 	<p><?php _e('Sorry, no posts matched your criteria.', 'darkelements'); ?></p>
 	<?php get_search_form(); ?>
 </div>

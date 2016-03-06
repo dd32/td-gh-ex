@@ -1,6 +1,17 @@
 CHANGELOG
 =========
 
+DarkElements version 3.8 - march 2016
+- added file postmeta-single
+- file single: relocated postmetadata to separate file
+- bugfix in file custom-editor-style: removed tags from reset stylesheet
+- seo improvement: blog description is h2 (thanks Tom)
+- seo improvement: all page titles are h1 and all post titles are h2 (thanks Tom)
+- seo improvement: all widget titles are h3 (thanks Tom)
+- file single: changed title class into .page-title-post
+- updated readme file to WordPress default
+- file style: removed -moz-border-radius because not supported anymore
+
 DarkElements version 3.7 - march 2016
 - added file postmeta
 - files archive, index, search and single: relocated postmetadata to separate file
