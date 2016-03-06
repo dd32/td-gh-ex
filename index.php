@@ -15,9 +15,9 @@
 			</div>
 		<?php endif; ?>
 
-		<h3 class="post-title">
+		<h2 class="post-title">
 			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'simplyblack'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
-		</h3>
+		</h2>
 
 		<?php get_template_part( 'postmeta' ); ?>
 
@@ -39,7 +39,7 @@
 		</div>
 
 		<?php else: ?>
-			<h3 class="page-title"><?php _e( 'Nothing Found', 'simplyblack' ); ?></h3>
+			<h1 class="page-title"><?php _e( 'Nothing Found', 'simplyblack' ); ?></h1>
 			<p><?php _e('Sorry, no posts matched your criteria.', 'simplyblack'); ?></p>
 
 	<?php endif; ?>
