@@ -15,9 +15,9 @@
 			</div>
 		<?php endif; ?>
 
-		<h3 class="post-title">
+		<h2 class="post-title">
 			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'privatebusiness'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
-		</h3>
+		</h2>
 
 		<?php get_template_part( 'postmeta' ); ?>
 
@@ -39,7 +39,7 @@
 		</div>
 
 		<?php else: ?>
-			<h3 class="page-title"><?php _e( 'Nothing Found', 'privatebusiness' ); ?></h3>
+			<h1 class="page-title"><?php _e( 'Nothing Found', 'privatebusiness' ); ?></h1>
 			<p><?php _e('Sorry, no posts matched your criteria.', 'privatebusiness'); ?></p>
 
 	<?php endif; ?>

@@ -9,13 +9,13 @@
 
 	<?php if ( have_posts() ) : ?>
 
-		<h3 class="page-title"><?php printf( __( 'Search Results for: %s', 'privatebusiness' ), get_search_query() ); ?></h3>
+		<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'privatebusiness' ), get_search_query() ); ?></h1>
 			
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<h3 class="post-title">
+			<h2 class="post-title">
 				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'privatebusiness'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
-			</h3>
+			</h2>
 
 			<?php get_template_part( 'postmeta' ); ?>
 
@@ -37,7 +37,7 @@
 		</div>
 
 		<?php else: ?>
-			<h3 class="page-title"><?php _e( 'Nothing Found', 'privatebusiness' ); ?></h3>
+			<h1 class="page-title"><?php _e( 'Nothing Found', 'privatebusiness' ); ?></h1>
 			<p><?php _e('Sorry, no posts matched your criteria.', 'privatebusiness'); ?></p>
 			<?php get_search_form(); ?>
 
