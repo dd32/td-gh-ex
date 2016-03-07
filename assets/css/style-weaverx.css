@@ -227,7 +227,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .content-2-col,
 .is-mobile .content-3-col {
 	float:			left;
-	width:			49.8%;
+	width:			50%;
 	overflow:		hidden;
 	padding-right:  2%;
 	padding-left:   2%;
@@ -1001,10 +1001,6 @@ img.fi-aligncenter-pb {
 	max-width:			100%;
 }
 
-#branding #header-image img.fi-page-header-image,
-#branding #header-image img.fi-post-header-image {
-	margin:				0;
-}
 
 #branding #header-image img {
 	width:				100%;

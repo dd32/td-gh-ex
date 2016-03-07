@@ -272,6 +272,11 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 				),
 			),
 
+			'info_home_label' =>  weaverx_cz_textarea(__( 'Breadcrumb for Home', 'weaver-xtreme' ),
+				__( 'This lets you change the breadcrumb label for your home page. (Default: Home)', 'weaver-xtreme' ),
+				'1', '',
+				'refresh', false),
+
 
 
 		),

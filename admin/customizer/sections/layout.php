@@ -8,17 +8,6 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 	$panel = 'weaverx_layout';
 	$layout_sections = array();
 
-	/**
-	 * General
-	 */
-	$layout_sections['layout-wrapping'] = array(
-		'panel'   => $panel,
-		'title'   => __( 'Wrapping Areas', 'weaver-xtreme' ),
-		'options' => array(
-
-		),
-	);
-
 
 	/**
 	 * Site Header
@@ -37,7 +26,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_SELECT_CONTROL,
 					'label' => __( 'Header Widget Area Position', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					'description' => __( 'Change where Header Widget Area is displayed within the Header Area. You can move it to one of five positions in the Header.', 'weaver-xtreme' ),
+					'description' => __( 'Change where Header Widget Area is displayed within the Header Area. You can move it to one of seven positions in the Header.', 'weaver-xtreme' ),
 					'type'	=> 'select',
 					'choices' =>array(
 						'top' => __('Top of Header', 'weaver-xtreme' /*adm*/),
@@ -45,6 +34,8 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 						'after_header' => __('After Header Image', 'weaver-xtreme' /*adm*/) ,
 						'after_html' => __('After HTML Block', 'weaver-xtreme' /*adm*/) ,
 						'after_menu' => __('After Lower Menu', 'weaver-xtreme' /*adm*/) ,
+						'pre_header' => __('Pre-#header &lt;div&gt;', 'weaver-xtreme' /*adm*/),
+						'post_header' => __('Post-#header &lt;div&gt;', 'weaver-xtreme' /*adm*/),
 
 					),
 				),
@@ -938,7 +929,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 			'layout-footer-custom-widths' => weaverx_cz_heading( __( 'Footer Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
 				__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' )),
-			
+
 			'_footer_lw_cols_list' => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh',	'default' => '' ),
 				'control' => array(

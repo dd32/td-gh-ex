@@ -110,6 +110,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 	weaverx_clear_both('preheader');
 	weaverx_inject_area('preheader');	// inject pre-header HTML
+	weaverx_header_widget_area( 'pre_header' );
 	weaverx_area_div( 'header',  $hdr_class );      // <div id='header'>
 
 	weaverx_inject_area('header');	// inject header HTML
@@ -213,16 +214,23 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 					$hdr = str_replace(array('http://', 'https://'),'//', $hdr);
 
 					if ( weaverx_getopt('link_site_image') ) { ?>
-<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php } ?>
-				<img src="<?php echo $hdr ?>"  alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /> <?php
-					weaverx_e_opt('link_site_image',"</a>\n");	/* need to close link */
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+<?php }
+					$width = weaverx_getopt_default('theme_width_int',940);
+					$custom_header_sizes = apply_filters( 'weaverx_custom_header_sizes', "(max-width: {$width}px) 100vw, 1920px" );
+					if (weaverx_getopt('header_actual_size')) { ?>
+<img src="<?php echo $hdr ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+					<?php } else {
+				?>
+<img src="<?php echo $hdr; ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /> <?php
+					}
+					weaverx_e_opt('link_site_image',"\n</a>");	/* need to close link */
 				} else {
 					echo '<div class="clear-header-image" style="clear:both"></div>'; // needs a clear if not an img
 				}
 			}
 
-			echo("\t\t</div><!-- #header-image -->\n");
+			echo("\n</div><!-- #header-image -->\n");
 		} // ! $really_hide
 	} /* end hide-header-image */
 
@@ -261,5 +269,6 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 	weaverx_header_widget_area( 'after_menu' );           // show header widget area if set to this position
 	echo "\n</div><div class='clear-header-end' style='clear:both;'></div><!-- #header -->\n";
+	weaverx_header_widget_area( 'post_header' );
 	do_action('weaverx_post_header');
 ?>

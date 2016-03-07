@@ -70,42 +70,13 @@ function weaverx_admin_help() {
 	plugin. You can now preview your changes live and on the fly.
 	This is a revolutionary change in how you can design your own site.
 </p>
-<pre>
-= Version 2.0 =
-* New:     Added Customizer Option Interface - Setting options is now a WYSIWYG experience!
-* New:     20+ Google Fonts included and integrated to free theme version.
-*          -- Other additions and changes ---
-* New:    Columns for post content
-* New:    Added Header/Footer Center Content within HTML area option
-* New:    Retain Menu Bar Hover BG Color option when open submenus
-* New:    Top/Bottom margins on Primary, Secondary, Extra Menu bars
-* New:    Character and Word spacing (Xtreme Plus)
-* New:    Support for Cryllic, Greek, Hebrew, and Vietnamese character sets with some fonts.
-* Change: Removed WP Appearance : "Theme Options" from core theme. (now included with theme support plugin)
-* Change: Appearance "Theme Options" label changed to "Weaver Xtreme Admin"
-* Change: No longer recommend WP Retina 2x plugin as that functionality is now in WP 4.4
-* Tweak:  Default font changed to "Open Sans" from "Arial" to take advantage of Google Fonts.
-* Tweak:  #header-html 100% width default
-* Tweak:  Changed Footer Area, Container Area, and Info Bar to border-box.
-* Tweak:  #content default margin bottom changed to 0. This works better with Customizer.
-* Tweak:  Changed < hr > height to 2px for default.
-* Tweak:  Mini Menu top margin default changed to 0em.
-* Tweak:  Added .weaverx_inject_area class to all injection areas
-* Fix:    Header/Footer HTML center alignment option
-* Fix:    misc fixes/tweaks to Version 1.3
-
-= Version 2.0.3 =
-* New: Added Don't Use Customizer option for slow hosts/computers
-* Fix: Container Max Width live update issue
-* Fix: Switch to Customizer bad link on subdirectory installs
-* Fix: Bug in menu bottom margin
-* Fix: Header HTML would not hide if Centered
-* Fix: Spelling error in Romanian translation file
-* Fix: Customizer link color preview
-* Tweak: new algorithm for Customizer Custom CSS live update
-* Tweak: modified weaverx_site_title and weaverx_tagline filters to allow HTML
-</pre>
+<?php
+$notes = weaverx_relative_url('') . 'readme.txt';
+?>
+<p>
+	<h3><a href="<?php echo $notes;?>" target="_blank">Click here to view most recent release notes.</a></h3>
 </p>
+
 	</div>
 </div>
 <div style="float:right;width:40%;padding-right:1%">

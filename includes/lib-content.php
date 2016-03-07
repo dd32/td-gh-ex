@@ -663,7 +663,9 @@ function weaverx_fi( $who, $where ) {
 
 	$show_post = ( $who == 'post' ) && ( $show == $where);
 
-	$align = ($where == 'title_featured') ? 'fi-alignleft' : weaverx_getopt_default( $who . '_fi_align' , 'fi-alignleft');
+	//$align = ($where == 'title_featured') ? 'fi-alignleft' : weaverx_getopt_default( $who . '_fi_align' , 'fi-alignleft');
+
+	$align = weaverx_getopt_default( $who . '_fi_align' , 'fi-alignleft');
 
 	$before = '';
 	if ( $where == 'post-before' ) {
@@ -683,14 +685,32 @@ function weaverx_fi( $who, $where ) {
 
 	if ( $show == $where || $show_post ) {
 		if ( $show == 'header-image' ) {			// special case : header replacement area
+
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'full' );        // (url, width, height)
+			$hdr = $image[0];
+			$hdr_height = $image[2];
+			$hdr_width = $image[1];
+
+			// wp customizer preview hack for WP 4.4 beta, might go away for 4.4 release
+			$url = get_template_directory_uri();
+			$url = str_replace(array('http://', 'https://'),'', $url);
+			$hdr = str_replace('%s', $url, $hdr);		// 4.4 preview breaks this
+			$hdr = str_replace(array('http://', 'https://'),'//', $hdr);
+
 			if ( weaverx_getopt('link_site_image') ) { ?>
-<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			<?php
-				the_post_thumbnail( 'full', $attr );
-				echo "</a>\n";
-			} else {
-				the_post_thumbnail( 'full', $attr );
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+<?php }
+			$width = weaverx_getopt_default('theme_width_int',940);
+			$custom_header_sizes = apply_filters( 'weaverx_custom_header_sizes', "(max-width: {$width}px) 100vw, 1920px" );
+			if (weaverx_getopt('header_actual_size')) { ?>
+<img src="<?php echo $hdr ?>" width="<?php echo $hdr_width; ?>" height="<?php echo $hdr_height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+			<?php } else {
+		?>
+<img src="<?php echo $hdr; ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_post_thumbnail_id( ) ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo $hdr_width; ?>" height="<?php echo $hdr_height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /> <?php
 			}
+			weaverx_e_opt('link_site_image',"\n</a>");	/* need to close link */
+
+
 			return true;
 		}
 
@@ -712,6 +732,7 @@ function weaverx_fi( $who, $where ) {
 			return true;
 		}
 	}
+	return false;
 }
 }
 //--
@@ -814,11 +835,11 @@ function weaverx_show_only_title() {
 			  )
 		) {
 		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
-		echo "\t</article><!-- /#post; -->\n";
+		echo "\t</article><!-- /#post; --><div style='clear:both'></div>\n";
 		return true;
 	} elseif ( weaverx_t_get('showposts') && weaverx_t_get('show') == 'title_featured') {
 		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
-		echo "\t</article><!-- /#post. -->\n";
+		echo "\t</article><!-- /#post. --><div style='clear:both'></div>\n";
 		return true;
 	} elseif ( weaverx_t_get('showposts') && (weaverx_t_get('show') == 'title' || weaverx_t_get('show') == 'titlelist')) {
 		echo "\t</article><!-- /#post -->\n";

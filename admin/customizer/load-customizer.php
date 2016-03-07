@@ -223,7 +223,9 @@ define('CUSTOMIZER_MENU','customizer-menu');
 		'wp_settings' => __('WordPress Settings','weaver-xtreme'),
 		'html_inject' => __('HTML Injection Areas', 'weaver-xtreme'),
 
-		'loadingMsg'	=> __('Please wait. Customizer Loading...', 'weaver-xtreme')
+		'loadingMsg'	=> __('Please wait. Customizer Loading...', 'weaver-xtreme'),
+		'helpURL' 	=> 	get_template_directory_uri() . '/help/help.html#get-started',
+		'cust_help'	=>	__('Weaver Xtreme Customizer Help','weaver-xtreme')
 	);
 
 	wp_localize_script('weaverx-customizer-menu', 'wvrxCM', $local );
@@ -302,9 +304,12 @@ function weaverx_customizer_get_panels() {
 		'custom'			=> array( 'title' => __( 'Custom CSS', 'weaver-xtreme' ), 'priority' => 11100,
 				'description'    => __( 'Define Custom CSS rules for whole site or specific areas. Add HTML to several "injection areas" - useful for ads or custom third party scripts. <em>Weaver Xtreme Plus</em> also allows you to define PHP code for WP filters or actions.' , 'weaver-xtreme' )  ),
 
-		//'speedtest'      	=> array( 'title' => __( 'Speed Test', 'weaver-xtreme' ), 'priority' => 2000 ),
+		// ultimate want to add per page/post options here, but can't do it beause can't get current page or post ID to make controls selectively
+		// display, or in fact access the custom options on a per page/post basis.
 
+		//'per_page' => apply_filters('weaverx_add_per_page_customizer',array()),
 
+		//'per_post' => apply_filters('weaverx_add_per_post_customizer',array()),
 
 	);
 
@@ -332,7 +337,8 @@ function weaverx_customizer_add_panels( $wp_customize ) {
 	// Add panels
 	foreach ( $panels as $panel => $data ) {
 		// Add panel
-		$wp_customize->add_panel( $theme_prefix . $panel, $data );
+		if (!empty($data))
+			$wp_customize->add_panel( $theme_prefix . $panel, $data );
 	}
 
 

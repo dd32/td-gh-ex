@@ -286,22 +286,22 @@ function weaverx_cat_slugs_to_ids($cats) {
 	$cat_list = '';
 	foreach ($clist as $slug) {
 	$neg = 1;	// not negative
-	if ($slug[0] == '-') {
-		$slug = substr($slug,1);	// zap the -
-		$neg = -1;
-	}
-	if (strlen($slug) > 0 && is_numeric($slug)) { // allow both slug and id
-		$cat_id = $neg * (int)$slug;
-		if ($cat_list == '') $cat_list = strval($cat_id);
-		else $cat_list .= ','.strval($cat_id);
-	} else {
-		$cur_cat = get_category_by_slug($slug);
-		if (is_object($cur_cat)) {
-			$cat_id = $neg * (int)$cur_cat->cat_ID;
+		if ($slug[0] == '-') {
+			$slug = substr($slug,1);	// zap the -
+			$neg = -1;
+		}
+		if (strlen($slug) > 0 && is_numeric($slug)) { // allow both slug and id
+			$cat_id = $neg * (int)$slug;
 			if ($cat_list == '') $cat_list = strval($cat_id);
 			else $cat_list .= ','.strval($cat_id);
+		} else {
+			$cur_cat = get_category_by_slug($slug);
+			if (is_object($cur_cat)) {
+				$cat_id = $neg * (int)$cur_cat->cat_ID;
+				if ($cat_list == '') $cat_list = strval($cat_id);
+				else $cat_list .= ','.strval($cat_id);
+			}
 		}
-	}
 	}
 	if (empty($cat_list)) $cat_list='99999999';
 	return $cat_list;
@@ -509,17 +509,14 @@ function weaverx_archive_loop( $type ) {
 	weaverx_post_count_clear();
 	echo ("<div class=\"wvrx-posts\">\n");		// needed here, and all post loops to make content-n-col work with :nth-of-type
 
+	if ($archive_cols && weaverx_masonry('begin-posts'))	// wrap all posts
+		$num_cols = 1;		// force to 1 cols
 
 	while ( have_posts() ) {
 		the_post();
 		weaverx_post_count_bump();
 
-		if ($archive_cols && !$masonry_wrap) {
-			$masonry_wrap = true;
-			if (weaverx_masonry('begin-posts'))	// wrap all posts
-				$num_cols = 1;		// force to 1 cols
-		}
-		weaverx_masonry('begin-post');	// wrap each post
+		if ($archive_cols) weaverx_masonry('begin-post');	// wrap each post
 		switch ($num_cols) {
 			case 1:
 				get_template_part( 'templates/content', get_post_format() );
@@ -542,11 +539,12 @@ function weaverx_archive_loop( $type ) {
 			default:
 				get_template_part( 'templates/content', get_post_format() );
 		}   // end switch num cols
-		weaverx_masonry('end-post');
+		if ($archive_cols) weaverx_masonry('end-post');
 
 	}	// end while have posts
-	weaverx_masonry('end-posts');
-	echo ("</div>\n");
+	if ($archive_cols)
+		weaverx_masonry('end-posts');
+	echo ("</div> <!-- .wvrx-posts -->\n");
 
 }
 
@@ -692,7 +690,7 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 	$crumbPagination = '';
 
 	if ( weaverx_getopt('menu_nohome')) {
-		$name = get_the_title(get_option( 'page_on_front' ));
+		$name = weaverx_getopt('info_home_label') ? weaverx_getopt('info_home_label') : esc_attr( get_bloginfo( 'name', 'display' ) );
 	} else {
 		$name = weaverx_getopt('info_home_label') ? weaverx_getopt('info_home_label') : __('Home','weaver-xtreme'); //text for the 'Home' link
 	}
@@ -762,11 +760,13 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 			$cur_cat = $cats[0];
 		else
 			$cur_cat = '';
-		foreach ($cats as $cat) {
-			$children = get_categories( array ('parent' => $cat->term_id ));
-			if (count($children) == 0) {
-			$cur_cat = $cat;
-			break;
+		if ($cats) {
+			foreach ($cats as $cat) {
+				$children = get_categories( array ('parent' => $cat->term_id ));
+				if (count($children) == 0) {
+					$cur_cat = $cat;
+					break;
+				}
 			}
 		}
 		if ($cur_cat) {

@@ -98,9 +98,8 @@ function weaverx_setup() {
 
 	weaverx_init_opts('functions');
 
-	$width = weaverx_getopt_default('theme_width_int');
-	if (!$width)
-		$width = 940;
+	$width = weaverx_getopt_default('theme_width_int',940);
+
 
 	$height = weaverx_getopt('header_image_height_int');
 	if (!$height)

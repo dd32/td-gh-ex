@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1015 Bruce E Wampler
 Requires at least: 4.2
 Tested up to: 4.4
-Stable tag: 2.0.7
+Stable tag: 2.0.8
 
 == Description ==
 
@@ -237,4 +237,25 @@ with testing and feature suggestions.
 * Fix: Default WP Site BG Color now shows in Customizer
 
 = Version 2.0.7 =
-* Versioning issue with WP.org upload
+* Versioning issue with WP.org upload, no 2.0.6
+
+= Version 2.0.8 =
+* New: Pre and Post #header div position for Header Widget Area (X-Plus)
+* Fix: tweak TinyMCE styling for paragraph top margin and ul, ol, and li spacing
+* Fix: small issue with breadcrumbs
+* Fix: Header Image now uses WP 4.4 responsive image size loading
+* Fix: Per Page 25% sidebar width override now works
+* Fix: Drop Down Menu handling for Windows 10 Touch Devices
+* Tweak: Weaver Xtreme Customizer help link on Customizer ? link
+* Tweak: changed Release Notes on Help tab to directly open the readme.txt file via link
+* Tweak: handling of default width
+* Tweak: .content-2-col width changed to full 50%.
+* Tweak: Added category filtering check as workaround for some other broken plugins
+* Tweak: Title + FI display now uses FI alignment as set for excerpts
+* Tweak: First breadcrumb title didn't make sense if "No Home Menu Item" option checked. With
+         that option, first breadcrumb will be site's title, or value of Info Bar Home Breadcrumb.
+* Tweak: Added new section to Help file about CUstomizer Interface
+* Tweak: Fixed Page with Posts to honor Password Protection and not show posts
+* Change: Changed behavior of Use Post Featured Image as Header on Single Page View. Now
+          behaves exactly like standard header image - size, centering, etc. The class
+		  .fi-page-header-image is no longer used, and has been removed.

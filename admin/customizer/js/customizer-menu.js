@@ -91,6 +91,9 @@ function wvrxShrink() {
 
 //The section below adds the Menu HTML at the top of the body to place a Menu item on the Top bar
 
+jQuery(".customize-panel-description").append(" \
+<a target='_blank' href='" + wvrxCM.helpURL + "'><strong>" + wvrxCM.cust_help +"</strong></a>");
+
 jQuery("#customize-header-actions").prepend(" \
 <div id='wx-loading'>&nbsp;" + wvrxCM.loadingMsg + "</div> \
 <!-- Resize buttons --> \

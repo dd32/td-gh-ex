@@ -57,7 +57,25 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	//weaverx_edit_link();
 	echo "\n<!-- PwP: End Page content -->\n";
 
+
 	$top_of_pwp = ob_get_clean();			// now get the top sidebar, etc.
+
+	if (post_password_required()) {
+		get_template_part('templates/infobar');	// put the info bar now that the posts info is available
+		echo $top_of_pwp;
+		// every thing done, so allow comments?
+		// comments_template( '', true );
+		weaverx_sb_postcontent('blog');
+?>
+		</div><!-- #content -->
+<?php
+		weaverx_sidebar_after( $sb_layout, 'blog' );
+?>
+		<div class="clear-container-end" style="clear:both"></div></div><!-- /#container -->
+<?php
+	weaverx_get_footer('blog');
+
+	} else {		// show posts
 
 
 	// Now, the posts
@@ -223,9 +241,11 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		//$wp_query = $old_query;
 		wp_reset_query();
 		wp_reset_postdata();	// need these so extra-menus work in rightsidebar and footer
+
 		weaverx_sidebar_after( $sb_layout, 'blog' );
 ?>
 		<div class="clear-container-end" style="clear:both"></div></div><!-- /#container -->
 <?php
 	weaverx_get_footer('blog');
+	} // end of show posts section
 ?>

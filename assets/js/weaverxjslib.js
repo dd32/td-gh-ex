@@ -2,7 +2,7 @@
  * Weaver Xtreme JavaScript support Library
  *
  * Author: WeaverTheme - www.weavertheme.com
- * @version 1.2.9
+ * @version 2.0.8
  * @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
  * @author  Bruce Wampler
  *
@@ -228,6 +228,7 @@ if (!Object.create) {               // IE8 shim for Object.create
 	})()
 };
 
+
 (function( $, window, undefined ) {
 	'use strict';
 
@@ -270,10 +271,11 @@ if (!Object.create) {               // IE8 shim for Object.create
 			// Initialize the toggle button.
 			menu.initToggleButton();
 
-			// Initialize the arrows.
+
 			menu.el.addClass(mo.arrowClass)
 				.find('ul').parent().addClass(mo.hasSubmenuClass)
-				.children('a').append('<span class="' + mo.toggleSubmenuClass + '"></span>'); // prepend/append
+				.children('a').attr( 'aria-haspopup', true ).append('<span class="' + mo.toggleSubmenuClass + '"></span>'); // prepend/append
+			
 
 			// Catch click events on submenu toggle handlers.
 			menu.el.on('click', '.' + mo.toggleSubmenuClass, function( e ) {
@@ -430,6 +432,7 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 	/* Detect device in use  */
 	if (wvrxOpts.useSmartMenus != '0')
 		return;
+
 	var weaverx_isTouch = ("ontouchstart" in window)
 		|| (navigator.MaxTouchPoints > 0)
 		|| (navigator.msMaxTouchPoints > 0);
@@ -446,7 +449,7 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 			var $this = $(this);
 
 			// Fix for IE
-			$this.attr( 'aria-haspopup', true );
+			//$this.attr( 'aria-haspopup', true );
 
 			// Initial setting to handle first click
 			$this.data('dataNoclick', false);

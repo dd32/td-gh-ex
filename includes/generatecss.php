@@ -1039,7 +1039,7 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 	// emit code for .is-desktop to resize widget areas (need .is-desktop to make IE8 work on free or in-line CSS)
 
 
-	if ( $r_sb_w != 25 || $smart != 1 ) {      // changed right sidebar width (or smart width)
+	if ( $r_sb_w != 25 || $smart != 1 || $override ) {      // changed right sidebar width (or smart width)
 		$cw = 100 - $r_sb_w;
 		$cw_m = $cw - $smart;
 		$r_sb_m = $r_sb_w - $smart;
@@ -1049,7 +1049,7 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 
 	}
 
-	if ( $l_sb_w != 25 || $smart != 1 ) {      // changed left sidebar width
+	if ( $l_sb_w != 25 || $smart != 1  || $override ) {      // changed left sidebar width
 		$cw = 100 - $l_sb_w;
 		$cw_m = $cw - $smart;
 		$l_sb_m = $l_sb_w - $smart;
@@ -1059,7 +1059,7 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 
 	}
 
-	if ( $ls_sb_w != 25 || $rs_sb_w != 25 || $smart != 1 ) {     // changed a split width
+	if ( $ls_sb_w != 25 || $rs_sb_w != 25 || $smart != 1 || $override ) {     // changed a split width
 		$cw = 100 - $ls_sb_w - $rs_sb_w;
 		$lsb_margin = $cw + $rs_sb_w;
 		$cw_l_m = $ls_sb_w + $smart;
