@@ -94,3 +94,9 @@ Version 1.5.8
 Version 1.5.9
 * Fixed IE9 CSS condition
 * Minor Bug Fixes
+
+Version 1.6.0
+* Fixed site title and post title heading
+* Added Disqus style
+* Improved CSS input
+* Minor bug fixes

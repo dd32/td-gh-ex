@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/semplicemente/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Clean WordPress Theme created by CrestaProject.com. Live demo http://crestaproject.com/demo/semplicemente/
-Version: 1.5.9
+Version: 1.6.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: semplicemente
@@ -134,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	color: #404040;
 }
-h1 {font-size: 28px;line-height:3.4rem;}
+h1, header.entry-header h2.entry-title {font-size: 28px;line-height:3.4rem;}
 h2 {font-size: 24px;line-height:2.8rem;}
 h3 {font-size: 20px;line-height:2.4rem;}
 h4 {font-size: 18px;}
@@ -337,6 +337,16 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
 textarea {
 	color: #666;
 	border: 1px solid rgba(0,0,0,.05);
@@ -347,6 +357,16 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
 textarea:focus {
 	outline: none;
 	border: 1px solid rgba(0,0,0,.1);
@@ -355,7 +375,17 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"] {
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
 	padding: 3px;
 }
 textarea {
@@ -795,15 +825,19 @@ aside ul li {
 	border-bottom: 1px solid rgba(0,0,0,.05);
 	padding: 1em 0;
 }
-h1.site-title {
+.site-title {
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: -3px;
 	font-size: 35px;
+	line-height: 3.4rem;
+	margin: 0;
 }
-h2.site-description {
+p.site-description {
 	font-weight: 300;
 	font-size: 21px;
+	line-height: 2.8rem;
+	margin: 0;
 }
 .posted-on, .byline, .comments-link, .cat-links, .entry-format {
 	padding-right: 15px;
@@ -878,11 +912,14 @@ h2.site-description {
 .top-search.active {
 	color: #36c1c8;
 }
-.nav-links, .comments-title {
+.nav-links, .comments-title, #disqus_thread {
 	background: #ffffff;
 	border: 1px solid rgba(0,0,0,.1);
 	border-bottom: 2px solid rgba(0,0,0,.1);
 	border-radius: 4px;
+}
+#disqus_thread {
+	padding: 1.5em;
 }
 .paging-navigation .nav-links, .comments-title {
 	padding: 1.5em;
@@ -1172,7 +1209,7 @@ object {
 		-moz-column-break-inside: initial;
 		column-break-inside: initial;
 	}
-	h1 {font-size: 22px;line-height:2.8rem;}
+	h1, header.entry-header h2.entry-title {font-size: 22px;line-height:2.8rem;}
 	h2 {font-size: 20px;line-height:2rem;}
 	h3 {font-size: 16px;line-height:1.6rem;}
 	h4 {font-size: 13px;}
@@ -1182,9 +1219,15 @@ object {
 		padding: 5px 0;
 	}
 }
-@media all and (max-width: 479px) {
+@media all and (max-width: 420px) {
 	#page {
-		max-width: 297px;
+		max-width: 360px;
 		margin: 20px auto;
+	}
+}
+
+@media all and (max-width: 365px) {
+	#page {
+		max-width: 300px;
 	}
 }

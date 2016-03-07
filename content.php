@@ -7,13 +7,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		if ( '' != get_the_post_thumbnail() ) {
-			echo '<div class="entry-featuredImg"><a href="' .get_permalink(). '"><span class="overlay-img"></span>';
+			echo '<div class="entry-featuredImg"><a href="' .esc_url(get_permalink()). '"><span class="overlay-img"></span>';
 			the_post_thumbnail('normal-post');
 			echo '</a></div>';
 		}
 	?>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
@@ -38,7 +38,7 @@
 	<footer class="entry-footer">	
 		<?php edit_post_link( __( 'Edit', 'semplicemente' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight"></i>', '</span>' ); ?>
 		<div class="readMoreLink">
-			<a href="<?php echo get_permalink(); ?>"><?php _e('Read More', 'semplicemente') ?><i class="fa spaceLeft fa-angle-double-right"></i></a>
+			<a href="<?php echo esc_url(get_permalink()); ?>"><?php _e('Read More', 'semplicemente') ?><i class="fa spaceLeft fa-angle-double-right"></i></a>
 		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
