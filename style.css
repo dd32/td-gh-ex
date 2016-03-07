@@ -4,7 +4,7 @@ Author: InsertCart
 Author URI: http://www.insertcart.com
 Theme URI: http://www.insertcart.com/product/optimize-wp-theme/
 Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts WooCommerce Supported for eCommerce website. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully optimize style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link. Live working Demo http://demo.baztro.com/optimize/
-Version: 1.7.3
+Version: 1.7.4
 Tags: black, white, light, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: optimize
 License: GNU General Public License v2
@@ -37,7 +37,7 @@ Optimize WordPress theme is licensed under the GPL.
 .clearfix {
 	display: block;
 }
-
+iframe{max-width:100%;}
 /*
 Monda-Regular: Copyright (c) 2012, vernon adams (vern@newtypography.co.uk), with Reserved Font Names 'Monda'
 Styled by: https://plus.google.com/107807505287232434305/about
@@ -59,12 +59,10 @@ License: SIL Open Font License, 1.1
 	url('fonts/monda-regular.ttf') format('truetype');
 }
 /* ===================== general ===================== */
-#footer,
-#page,
-#navigation,
 .wrapper{
-    max-width: 1348px;
+    max-width: 1080px;
     margin: 0 auto;
+	width: 95%;
 }
 
 body {
@@ -100,23 +98,23 @@ h1 {
 }
 h2 {
 	font-size: 22px;
-	line-height: 22px;
+	line-height: 24px;
 }
 h3 {
 	font-size: 18px;
-	line-height: 18px;
+	line-height: 20px;
 	}
 h4 {
 	font-size: 14px;
-	line-height: 14px;
+	line-height: 16px;
 	}
 h5 {
 	font-size: 12px;
-	line-height: 12px;
+	line-height: 14px;
 }
 h6 {
 	font-size: 12px;
-	line-height: 12px;
+	line-height: 14px;
 }
 input, textarea { 
 }
@@ -367,13 +365,12 @@ img, img a {
 }
 #navigation-inner {
 margin: 0 auto;
-width: 90%;
 position: relative;
-background: #6171C7;
+background: #00B157;
 min-width: 790px;
 }
  #navigation .secondary{
-	background: #6171C7;
+	background: #00B157;
 	margin-bottom: 5px;
  }
 #navigation  ul {
@@ -391,7 +388,7 @@ display: block;
  padding: 0 18px;
 height: 35px;
 color:#fff;
-line-height: 48px;
+line-height: 45px;
 text-transform:uppercase;
 -webkit-transition: all 0.2s ease-in-out;
 -moz-transition: all 0.2s ease-in-out;
@@ -437,10 +434,9 @@ padding: 15px 0px 15px 15px;
 background: #333;
 color:#fff;
 height:auto;
-}
-#navigation  ul ul a:hover {
+}#navigation ul ul a:hover{
 	opacity: 1;
-	color:#89D942;
+	background:#89D942;
 }
 #navigation  ul ul ul {border-top:0;margin: -50px 0 0 212px;}
 #navigation  ul li li  { margin:0;border:0;}
@@ -483,15 +479,13 @@ font-size: 16px;
 	position: relative;
 	z-index: 100;
 	margin: 0 auto;
-	width: 90%;
     margin-bottom: -5px;
     min-height: 140px;	
 }
 #header-inner {
 	margin: auto;
-	width: 100%;
 	position: relative;
-	min-width: 770px;
+	padding:7px;
 }
 #header #logo {
 	float: left;
@@ -548,7 +542,6 @@ color:#333;
 }
 #page-inner {
 	margin: 0 auto;
-	width: 90%;
 	position: relative;
 	
 	
@@ -657,66 +650,23 @@ form#searchform input#s {
 }
 
 /*============Post Table===============*/
-#pagecont table {
-width: 95%;
-color: #666;
-font-size: 12px;
-text-shadow: 1px 1px 0px #FFF;
-background: #EAEBEC;
-margin: 20px;
-border: #CCC 1px solid;
-}
-#pagecont table tr {
-text-align: center;
-padding-left: 20px;
-}
-#pagecont table th {
-padding: 9px 15px 9px 25px;
-background: #FD4326;
-font-size: 20px;
-color: #FFF;
-text-shadow: none;
-text-align: left;
-}
-#pagecont table tr td {
-padding: 6px 15px;
-border-top: 1px solid #FFF;
-border-bottom: 1px solid #E0E0E0;
-background: #fff
-}
-#content table {
-width: 95%;
-color: #666;
-border-collapse: collapse;
-font-size: 12px;
-text-shadow: 1px 1px 0px #FFF;
-background: #EAEBEC;
-margin: 20px;
-border: #CCC 1px solid;
-}
-#content table tr {
-text-align: center;
-padding-left: 20px;
-}
-#content table th {
-padding: 2px;
-background: #FD4326;
-color: #FFF;
-text-shadow: none;
-text-align: left;
-}
-#content table tr td {
-text-align: center;
-padding: 2px;
-vertical-align: middle;
-border: 1px solid #000;
-}
 
+ caption { text-align: center; color: #333; font-size: 12px; margin-top: 10px; margin-bottom: 15px;background: #f5f5f5;padding: 10px;font-weight: bold; }
+ thead { font-size: 10px; }
+ thead th { margin-bottom: 8px;background: #f5f5f5;border-right: 1px solid #fff;padding: 10px;color: #333; }
+ tbody { color: #aaa; }
+ tbody td { background: #f5f5f5; border: 1px solid #fff; text-align: center; padding:8px;}
+ tbody td:hover { background: #fff; }
+ tbody .pad { background: #f5f5f5; }
+ tfoot #next { font-size: 10px; text-transform: uppercase; text-align: right; }
+ tfoot #prev { font-size: 10px; text-transform: uppercase; padding-top: 10px; }
+ tbody td#today{background: none repeat scroll 0% 0% #2D89A7;color: #fff;}
 
 table {
 border-collapse: separate;
 border-spacing: 0;
 margin-bottom: 10px;
+    width: 100%;
 }
 caption, th, td { 
 	text-align: left;
@@ -804,7 +754,7 @@ content: "\f02b";
     font: normal normal normal 14px/1 FontAwesome;
     padding: 3px;}
 
-.postcateg::before{
+.postcateg a::before{
 	content: "\f009";
 	font: normal normal normal 14px/1 FontAwesome;
 	padding: 6px;
@@ -986,6 +936,8 @@ margin-bottom: -10px;
 }
 .latest-post a {
 	float: none;
+    font-size: 0.92rem;
+    font-weight: bold;
 }
 .latest-post img {
 	float: left;
@@ -1071,7 +1023,75 @@ background: #DDD;
 	text-align: center;
 	padding: 10px;
 }
+/* ===================== Footer Widget ===================== */
+#footerhorizontal ul {margin: 5px; padding: 0; 
+	list-style-type: none; list-style-image: none; }
+#footerhorizontal li {display: inline; }
+#footerhorizontal ul li a {text-decoration:none;  margin: 4px;}
+#footerhorizontal li::after{content: "\007c";}
 
+
+	
+#bottom-menu {
+z-index: 1;
+list-style-type: none;
+margin: 0 auto;
+padding-bottom: 10px;
+width: 100%;
+overflow: hidden;
+
+}
+#bottom-menu-inner {
+	margin: auto;
+	width: 100%;
+	position: relative;
+}
+#bottom-menu a {
+	text-decoration: none;
+}
+#bottom-menu a:hover {
+	text-decoration: none;
+	
+}
+#bottom-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#bottom-menu ul li a {
+}
+#bottom-menu ul li li {
+	padding-left: 10px;
+	border-bottom: none;
+}
+#bottom-menu h4 {
+    line-height: 24px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    padding-bottom: 9px;
+    font-weight: bold;
+    border-bottom: 4px solid #EEE;
+}
+#bottom-menu-1 {
+width: 32%;
+margin-right: 2%;
+float: left;
+display: inline;
+overflow: hidden;
+}
+#bottom-menu-2 {
+width: 32%;
+margin-right: 2%;
+float: left;
+display: inline;
+overflow: hidden;
+}
+#bottom-menu-4 {
+width: 32%;
+float: left;
+display: inline;
+overflow: hidden;
+}
 /* ===================== pagenavi ===================== */
 #pagenavi {
 	text-align:left;
@@ -1087,7 +1107,7 @@ margin: 2px;
 text-decoration: none;
 line-height: 24px;
 border: 1px solid;
-background: #6171C7;
+background: #00B157;
 color: #fff;
 }
 #pagenavi span {
@@ -1095,7 +1115,8 @@ padding: 5px 14px 5px 14px;
 margin-right: 10px;
 text-decoration: none;
 line-height: 24px;
-border: 1px solid;
+background: #89D942;
+    color: #fff;
 }
 #pagenavi a:hover {
 	text-decoration: none;
@@ -1106,8 +1127,8 @@ border: 1px solid;
 	margin: 2px;
 	line-height:25px;
 	font-weight: bold;
-	color: #fff;
-	background-color: #a5a5a5;
+	background: #89D942;
+    color: #fff;
 }
 /* ===================== Scroll to top ===================== */
 .backtop {

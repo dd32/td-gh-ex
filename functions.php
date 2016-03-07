@@ -5,6 +5,7 @@ require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 include_once('baztro.php');
 include_once('includes/installs.php');
 include_once('includes/core/core.php');
+include_once('includes/ltposts.php');
 
 // Implement the Custom Header feature.
 require get_template_directory() . '/includes/custom-header.php';
@@ -66,6 +67,7 @@ function optimize_theme_setup() {
         add_theme_support('automatic-feed-links');
 		
 		register_nav_menu( 'primary', __( 'Navigation Menu', 'optimize' ) );
+		register_nav_menu( 'Footer-menu', __( 'Footer Menu', 'optimize' ) );
 		// Setup the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'esell_custom_background_args', array(
 		'default-color' => 'F3F3F3',
@@ -124,6 +126,32 @@ add_action( 'after_setup_theme', 'optimize_theme_setup' );
 	    'after_title' => '</h4>',
 	    'id' => 'opsidebar',
 	));	
+	register_sidebar(array(
+		'name' => __( 'Footer 1', 'optimize' ),
+	    'id' => 'opbottom1',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	    'after_widget' => '</div>',
+	    'before_title' => '<h4>',
+	    'after_title' => '</h4>',
+	));
+
+	register_sidebar(array(
+		'name' => __( 'Footer 2', 'optimize' ),
+	    'id' => 'opbottom2',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	    'after_widget' => '</div>',
+	    'before_title' => '<h4>',
+	    'after_title' => '</h4>',
+	));	
+
+	register_sidebar(array(
+		'name' => __( 'Footer 3', 'optimize' ),
+	    'id' => 'opbottom3',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	    'after_widget' => '</div>',
+	    'before_title' => '<h4>',
+	    'after_title' => '</h4>',
+	));		
 }
 add_action('widgets_init', 'optimize_widgets_init');
 //---------------------------- [ Pagenavi Function ] ------------------------------//

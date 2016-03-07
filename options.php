@@ -138,19 +138,25 @@ $options[] = array(
 		'name' => __('Enable or Disable short length Excerpt for Post', 'optimize'),
 		'desc' => __('Check or uncheck this box to show post Content or Excerpt.', 'optimize'),
 		'id' => 'optimize_postexerpt',
-		'std' => 'on',
+		'std' => 'off',
 		'type' => 'radio',
 		'options' => array(
 						'on' => 'Content',
 						'off' => 'Excerpt'
 						));
-		$options[] = array(		
+	$options[] = array(		
 		'desc' => __('Excerpt Length Number of words display in every post description Default is 45.(Pro Only)', 'optimize'),
 		'id' => 'optimize_excerp',
 		'std' => '45',
 		'class' => 'mini',
 		'type' => 'text');
-
+	$options[] = array(
+		'name' => __('Website Width in Pixels [It Calculate Max Width]', 'optimize'),
+		'desc' => __('PX-  Please input Max-Width for your website Default value 1080px, also it is 5% padding from sides', 'optimize'),
+		'id' => 'optimize_maxwidth',
+		'std' => '1080',
+		'class' => 'mini',
+		'type' => 'text');
 				
 $options[] = array(
 		'name' => __('Custom Styling', 'optimize'),
@@ -166,22 +172,22 @@ $options[] = array(
 		'name' => __('Ads Management', 'optimize'),
 		'type' => 'heading');
 	 $options[] = array(
-		'name' => __( 'AD Code For Top Baner', 'optimize' ),
-		'desc' => __('Paste Ad Code for top banner.', 'optimize'),
+		'name' => __('Ads Code For Top Baner', 'optimize' ),
+		'desc' => __('Put Your Ads in Top from logo', 'optimize'),
             'id' => 'optimize_ad1',
             'std' => '',
             'type' => 'textarea'
 			
 	);
 	$options[] = array(
-		'name' => __('Paste Ads code below navigation', 'optimize'),
-		'desc' => __('Activate Ads Space Below Navigation and put code in below test field.', 'optimize'),
+		'name' => __('Ads Below Navigation Menu', 'optimize'),
+		'desc' => __('Put Your Ads Code Below Navigation Menu and Above Content.', 'optimize'),
 		'id' => 'optimize_banner_top',
 		'std' => '',
 		'type' => 'textarea');
 	$options[] = array(
-		 'name' => __( 'AD Code For Single Post', 'optimize' ),
-            'desc' => __('Paste Ad code for single post it show ads below post title and before content.','optimize'),
+		 'name' => __( 'Ads Code for Single Post', 'optimize' ),
+            'desc' => __('Put Your Ads Code in Single Post Just above content start and below title.','optimize'),
             'id' => 'optimize_ad2',
             'std' => '',
             'type' => 'textarea'

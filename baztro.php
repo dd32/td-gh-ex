@@ -20,7 +20,7 @@
 		#header{background-image:url("<?php esc_url(header_image());?>");}
 		<?php endif; ?>
 	
-		
+		.wrapper{ max-width: <?php echo of_get_option( 'optimize_maxwidth', '1080' ); ?>px !important;}
 	</style><?php
 		
 		

@@ -7,8 +7,10 @@
 	</div>			<div class="entry">
 		<?php if (of_get_option('optimize_postexerpt') =='on')   :
 				the_content(); 
-				else :
+				elseif (of_get_option('optimize_postexerpt') =='off') :
 				optimize_excerpt('optimize_excerptlength_index', 'optimize_excerptmore');
+				else :
+					optimize_excerpt('optimize_excerptlength_index', 'optimize_excerptmore');
 				endif; 
 			?>
 			</div><a href="<?php the_permalink(); ?>"><span class="readmore"><?php _e('Continue reading &raquo;', 'optimize'); ?></span></a>
@@ -20,8 +22,10 @@
 		<div class="entry">
 		<?php if (of_get_option('optimize_postexerpt') =='on')   :
 				the_content(); 
-				else :
+				elseif (of_get_option('optimize_postexerpt') =='off') :
 				optimize_excerpt('optimize_excerptlength_index', 'optimize_excerptmore');
+				else :
+					optimize_excerpt('optimize_excerptlength_index', 'optimize_excerptmore');
 				endif; 
 			?>
 		</div><a href="<?php the_permalink(); ?>"><span class="readmore"><?php _e('Continue reading &raquo;', 'optimize'); ?></span></a>

@@ -5,7 +5,7 @@
 			<?php get_template_part('/includes/banner-top'); ?>
 			
 				<div id="content">
-					<div class="post clearfix">
+					<div class="post clearfix">						
 						<h2><?php _e('404 Error&#58; Not Found', 'optimize'); ?>
 						</h2>
 						<div class="entry">
