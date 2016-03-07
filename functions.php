@@ -17,7 +17,7 @@ function aripop_setup() {
 	 	global $content_width;
 if ( ! isset( $content_width ) )
      $content_width = 900; /* pixels */
-	 
+	 add_theme_support( "title-tag" );
 	
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 798, 398, true );
@@ -327,8 +327,8 @@ add_action( 'wp_footer', 'aripop_ie_js_footer', 20 );
  */
 function aripop_add_menuid ($page_markup) {
 preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
-$divclass = $matches[1];
-$toreplace = array('<div class="'.$divclass.'">', '</div>');
+ 
+$toreplace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
 $replace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
 $new_markup = str_replace($toreplace,$replace, $page_markup);
 $new_markup= preg_replace('/<ul/', '<ul class="nav navbar-nav navbar-right"', $new_markup);

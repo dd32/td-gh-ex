@@ -83,7 +83,7 @@ get_header();
                             $next_attachment_url = wp_get_attachment_url();
                         }
                         ?>
-                        <p><a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr(get_the_title()); ?>" rel="attachment">
+                        <p><a href="<?php echo esc_url($next_attachment_url);  ?>" title="<?php echo esc_attr(get_the_title()); ?>" rel="attachment">
                                 <?php
                                 $attachment_size = apply_filters('twentyten_attachment_size', 900);
                                 echo wp_get_attachment_image($post->ID, array($attachment_size, 9999)); // filterable image width with, essentially, no limit for image height.
