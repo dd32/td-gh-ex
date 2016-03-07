@@ -11,9 +11,14 @@ get_header(); ?>
 	
 			<div id="content" role="main">
 
-	<?php get_template_part( 'content', 'page'); ?>
+			<?php cryout_before_content_hook(); ?>
+
+				<?php get_template_part( 'content', 'page'); ?>
+	
+			<?php cryout_after_content_hook(); ?>
 
 			</div><!-- #content -->
+			
 			<?php get_sidebar(); ?>
 		</section><!-- #container -->
 

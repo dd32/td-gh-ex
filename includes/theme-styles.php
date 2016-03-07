@@ -20,9 +20,9 @@ function mantra_register_styles() {
 	global $mantra_options;
 	foreach ($mantra_options as $key => $value) { ${"$key"} = $value ;}
 
-	wp_register_style( 'mantras', get_stylesheet_uri() );
+	wp_register_style( 'mantras', get_stylesheet_uri(), NULL, _CRYOUT_THEME_VERSION  );
 	
-	if($mantra_mobile=="Enable") {	wp_register_style( 'mantra-mobile', get_template_directory_uri() . '/style-mobile.css' );}
+	if($mantra_mobile=="Enable") {	wp_register_style( 'mantra-mobile', get_template_directory_uri() . '/style-mobile.css', NULL, _CRYOUT_THEME_VERSION  );}
 	
 	wp_register_style( 'mantra_googlefont', esc_attr($mantra_googlefont2 ));
 	wp_register_style( 'mantra_googlefonttitle', esc_attr($mantra_googlefonttitle2 ));
@@ -81,11 +81,11 @@ foreach ($mantra_options as $key => $value) {
 
 // If frontend - load the js for the menu and the social icons animations
 	if ( !is_admin() ) {
-		wp_register_script('cryout-frontend',get_template_directory_uri() . '/js/frontend.js', array('jquery') );
+		wp_register_script('cryout-frontend',get_template_directory_uri() . '/js/frontend.js', array('jquery'), _CRYOUT_THEME_VERSION  );
 		wp_enqueue_script('cryout-frontend');
   		// If mantra from page is enabled and the current page is home page - load the nivo slider js							
 		if($mantra_frontpage == "Enable" && is_front_page()) {
-							wp_register_script('cryout-nivoSlider',get_template_directory_uri() . '/js/nivo-slider.js', array('jquery'));
+							wp_register_script('cryout-nivoSlider',get_template_directory_uri() . '/js/nivo-slider.js', array('jquery'), _CRYOUT_THEME_VERSION );
 							wp_enqueue_script('cryout-nivoSlider');
 							}
   	}

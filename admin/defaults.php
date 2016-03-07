@@ -208,10 +208,6 @@ $mantra_defaults = array(
 
 "mantra_copyright" => "",
 "mantra_customcss" => "/* Mantra Custom CSS */  ",
-"mantra_customjs" => "",
-"mantra_seo" => "Enable",
-"mantra_seo_home_desc" => "",
-"mantra_seo_gen_desc" => "Auto",
-"mantra_seo_author" => "Do not use");
+"mantra_customjs" => "");
 
 ?>

@@ -1,4 +1,24 @@
 <?php
+
+function mantra_theme_settings_placeholder() { 
+	if (function_exists('mantra_theme_settings_restore') ):
+			mantra_theme_settings_restore();
+	else:
+?>
+   <div id="mantra-settings-placeholder">
+		<h3>Where are the theme settings?</h3>
+		<p>Following the <a href="https://make.wordpress.org/themes/2015/04/21/this-weeks-meeting-important-information-regarding-theme-options/" target="_blank">Wordpress Theme Review Guidelines</a>, starting with Mantra v2.5 we had to remove the settings page from the theme and transfer all the settings to the <a href="http://codex.wordpress.org/Appearance_Customize_Screen" target="_blank">Customizer</a> interface.</p>
+		<p>However, we feel that the Customizer interface does not provide the right medium (in space of terms and usability) for our existing theme options. We've created our settings with a certain layout that is not yet compatible with the Customizer interface.</p>
+		<p>As an alternative solution that allows us to keep updating and improving our theme we have moved the settings functionality to the separate <a href="https://wordpress.org/plugins/cryout-theme-settings/" target="_blank">Cryout Serious Theme Settings</a> plugin. To restore the theme settings page to previous functionality, all you need to do is install this free plugin with a couple of clicks.</p>
+		<h3>How do I restore the settings?</h3>
+		<p><strong>Navigate <a href="themes.php?page=mantra-extra-plugins">to this page</a> to install and activate the Cryout Serious Theme Settings plugin, then return here to find the settings page in all its past glory.</strong></p>
+		<p>The plugin is compatible with all our themes that are affected by this change and only needs to be installed once.</p>
+		<p>If you already have the plugin installed make sure you have it updated to the latest available version.</p>
+   </div>
+<?php
+	endif;
+} // mantra_theme_settings_placeholder()
+
 /**
  * Export Mantra settings to file
  */

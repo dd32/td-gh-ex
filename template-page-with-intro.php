@@ -7,6 +7,7 @@ Template Name: Category page with intro
 
 <section id="container">
 	<div id="content" role="main">
+	<?php cryout_before_content_hook(); ?>
 
 	 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -42,7 +43,8 @@ Template Name: Category page with intro
 	endwhile;
 	if($mantra_pagination=="Enable") mantra_pagination($the_query->max_num_pages); else mantra_content_nav( 'nav-below' );	
 	?>
-		
+	
+	<?php cryout_after_content_hook(); ?>	
 	</div><!-- #content -->
 	
 	<?php get_sidebar(); ?>

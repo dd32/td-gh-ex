@@ -16,6 +16,7 @@ get_header(); ?>
 
 		<section id="container" class="one-column">
 			<div id="content" role="main">
+			<?php cryout_before_content_hook(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
@@ -31,7 +32,7 @@ get_header(); ?>
 				<?php comments_template( '', true ); ?>
 
 <?php endwhile; ?>
-
+			<?php cryout_after_content_hook(); ?>
 			</div><!-- #content -->
 		</section><!-- #container -->
 

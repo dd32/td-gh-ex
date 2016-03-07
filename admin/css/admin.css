@@ -120,7 +120,7 @@ margin-left:20px;
 color:#666;
 }
 
-#accordion h3 {
+#accordion h3, #accordion h2 {
 border:none;
 background-image:none;
 background:#F5F5F5;
@@ -143,7 +143,7 @@ border-radius:0;
 transition:background ease .3s;
 }
 
-#accordion h3:hover {
+#accordion h3:hover, #accordion h2:hover {
 background:#FFF;
 }
 
@@ -342,7 +342,7 @@ padding:6px;
 display:none;
 }
 
-#accrodion > h3 {
+#accordion > h3, #accordion > h2 {
 display:block;
 }
 
@@ -629,4 +629,20 @@ padding:5px 10px;
 .twitter-follow-button.twitter-follow-button {
 	margin:0 8px;
 }
+
+#mantra-settings-placeholder { 
+	background: #fff; 
+	padding: 0 10px 10px 10px; } 
+
+#mantra-settings-placeholder h3 { 
+	background: #444; 
+	color: #fff; 
+	text-transform: uppercase;  
+	font-weight: 400;  
+	padding: 10px;  
+	margin: 0 -10px; 
+	font-size: 14px; } 
+
+#mantra-settings-placeholder a {  
+    color: #24C1BB; } 
 

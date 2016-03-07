@@ -134,7 +134,6 @@ global $mantra_defaults;
 
 	$input['mantra_customcss'] =  wp_kses_post(trim($input['mantra_customcss']));
 	$input['mantra_customjs'] =  wp_kses_post(trim($input['mantra_customjs']));
-	$input['mantra_seo_home_desc'] =  wp_kses_post(trim($input['mantra_seo_home_desc']));
 
 	$input['mantra_googlefont'] = 	trim(wp_kses_data($input['mantra_googlefont']));
 	$input['mantra_googlefonttitle'] = 	trim(wp_kses_data($input['mantra_googlefonttitle']));

@@ -163,18 +163,29 @@ else 		jQuery('#slider-post-number').hide();
 // Create accordion from existing settings table
 	jQuery('.form-table').wrap('<div>');
 	jQuery(function() {
+		if (jQuery( "#accordion h2" ).length > 0) { 
+			// wordpress 4.4+ changed headings to h2 
+			jQuery( "#accordion" ).accordion({ 
+	                header: 'h2', 
+	                heightStyle: "content", 
+	                collapsible: true, 
+	                navigation: true, 
+	                active: false 
+	            }); 
+	        } else {
 			jQuery( "#accordion" ).accordion({
-				header: 'h3',
-				autoHeight: false, // for jQueryUI <1.10
-				heightStyle: "content", // required in jQueryUI 1.10
-				collapsible: true,
-				navigation: true,
-				active: false
+					header: 'h3',
+					autoHeight: false, // for jQueryUI <1.10
+					heightStyle: "content", // required in jQueryUI 1.10
+					collapsible: true,
+					navigation: true,
+					active: false
 				});
-					});
+			}
+	});
 
 
-  });// ready
+});// ready
 
   // Change border for selecte inputs
 function changeBorder (idName, className) {

@@ -257,6 +257,9 @@ foreach($items as $id=>$item) {
 	echo "</select>";
 	echo "<div><small>".__("Enable the presentation front-page. This will become your new home page. It has a slider and columns for presentation
 		text and images.<br>If you have this enabled but don't see a Presentation page then go to <a href='options-reading.php'> Settings &raquo; Reading </a> and make sure you have selected <strong>Front Page Displays</strong> as <Strong>Your Latest Posts</strong>.","mantra")."</small></div>";
+	if ($mantra_options['mantra_frontpage'] == 'Enable' && get_option('show_on_front') != 'posts') {
+		printf ( '<div class="slmini" style="color:#cb5920;">'.__('You have enabled the Presentation Page but your WordPress\' <em>Front page displays</em> option is set to use a static page. WordPress guidelines require that the static page option have priority over theme options.<br> Go to %1$s and set the <em>Front page displays</em> option to <em><strong>Your latest posts</strong></em> to display the presentation page.',"mantra").'</div>', '<a href="/wp-admin/options-reading.php" > Settings &raquo; Reading</a>');
+	};
 
 }
 
@@ -673,23 +676,23 @@ echo "<div style='width:100%;'>".__("Choose the areas to hide on the first page.
 
 		echo " <label id='$items[0]' for='$items[0]$items[0]' class='hideareas $checkedClass0'><input  ";
 		 checked($mantra_options['mantra_fronthideheader'],'1');
-	echo "value='1' id='$items[0]$items[0]'  name='ma_options[mantra_fronthideheader]' type='checkbox' /> ".__("Hide the header area (image or background color).","mantra")." </label>";
+	echo " value='1' id='$items[0]$items[0]'  name='ma_options[mantra_fronthideheader]' type='checkbox' /> ".__("Hide the header area (image or background color).","mantra")." </label>";
 
 		echo " <label id='$items[1]' for='$items[1]$items[1]' class='hideareas $checkedClass1'><input  ";
 		 checked($mantra_options['mantra_fronthidemenu'],'1');
-	echo "value='1' id='$items[1]$items[1]'  name='ma_options[mantra_fronthidemenu]' type='checkbox' /> ".__("Hide the main menu (the top navigation tabs).","mantra")." </label>";
+	echo " value='1' id='$items[1]$items[1]'  name='ma_options[mantra_fronthidemenu]' type='checkbox' /> ".__("Hide the main menu (the top navigation tabs).","mantra")." </label>";
 
 		echo " <label id='$items[2]' for='$items[2]$items[2]' class='hideareas $checkedClass2'><input  ";
 		 checked($mantra_options['mantra_fronthidewidget'],'1');
-	echo "value='1' id='$items[2]$items[2]'  name='ma_options[mantra_fronthidewidget]' type='checkbox' /> ".__("Hide the footer widgets. ","mantra")." </label>";
+	echo " value='1' id='$items[2]$items[2]'  name='ma_options[mantra_fronthidewidget]' type='checkbox' /> ".__("Hide the footer widgets. ","mantra")." </label>";
 
 		echo " <label id='$items[3]' for='$items[3]$items[3]' class='hideareas $checkedClass3'><input  ";
 		 checked($mantra_options['mantra_fronthidefooter'],'1');
-	echo "value='1' id='$items[3]$items[3]'  name='ma_options[mantra_fronthidefooter]' type='checkbox' /> ".__("Hide the footer (copyright area).","mantra")." </label>";
+	echo " value='1' id='$items[3]$items[3]'  name='ma_options[mantra_fronthidefooter]' type='checkbox' /> ".__("Hide the footer (copyright area).","mantra")." </label>";
 
 	echo " <label id='$items[4]' for='$items[4]$items[4]' class='hideareas $checkedClass4'><input  ";
 		 checked($mantra_options['mantra_fronthideback'],'1');
-	echo "value='1' id='$items[4]$items[4]'  name='ma_options[mantra_fronthideback]' type='checkbox' /> ".__("Hide the white color. Only the background color remains.","mantra")." </label>";
+	echo " value='1' id='$items[4]$items[4]'  name='ma_options[mantra_fronthideback]' type='checkbox' /> ".__("Hide the white color. Only the background color remains.","mantra")." </label>";
 
 
 echo "</div></div>";
@@ -1408,9 +1411,9 @@ function cryout_setting_image_fn() {
 
 		$checkedClass = ($mantra_options['mantra_image']==$item) ? ' checkedClass' : '';
 
-		echo " <label id='$item' for='$item$item' class='images $checkedClass'><input  ";
+		echo " <label id='$item' for='$item$item' class='images $checkedClass'><input ";
 		 checked($mantra_options['mantra_image'],$item);
-	echo "value='$item' id='$item$item' onClick=\"changeBorder('$item','images');\" name='ma_options[mantra_image]' type='radio' /><img id='image$item'  src='".get_template_directory_uri()."/admin/images/testimg.png'/></label>";
+	echo " value='$item' id='$item$item' onClick=\"changeBorder('$item','images');\" name='ma_options[mantra_image]' type='radio' /><img id='image$item'  src='".get_template_directory_uri()."/admin/images/testimg.png'/></label>";
 	}
 
 		echo "<div><small>".__("The border around your inserted images. ","mantra")."</small></div>";
@@ -1859,7 +1862,7 @@ foreach($items as $id=>$item) {
 
 		echo " <label style='border:none;margin-left:10px;' id='$items[0]' for='$items[0]$items[0]' class='socialsdisplay $checkedClass'><input type='hidden' name='ma_options[mantra_fpostlink]' value='0' /><input  ";
 		 checked($mantra_options['mantra_fpostlink'],'1');
-	echo "value='1' id='$items[0]$items[0]'  name='ma_options[mantra_fpostlink]' type='checkbox' /> Link the thumbail to the post </label>";
+	echo " value='1' id='$items[0]$items[0]'  name='ma_options[mantra_fpostlink]' type='checkbox' /> Link the thumbail to the post </label>";
 
 
 	echo "<div><small>".__("Show featured images as thumbnails on posts. The images must be selected for each post in the Featured Image section.","mantra")."</small></div>";
@@ -1907,7 +1910,7 @@ function cryout_setting_fsize_fn() {
 
 		echo " <label id='fcrop' for='mantra_fcrop' class='socialsdisplay $checkedClass'><input  ";
 		 checked($mantra_options['mantra_fcrop'],'1');
-	echo "value='1' id='mantra_fcrop'  name='ma_options[mantra_fcrop]' type='checkbox' /> Crop images to exact size. </label>";
+	echo " value='1' id='mantra_fcrop'  name='ma_options[mantra_fcrop]' type='checkbox' /> Crop images to exact size. </label>";
 
 
 	echo "<div><small>".__("The size you want the thumbnails to have (in pixels). By default imges will be scaled with aspect ratio kept. Choose to crop the images if you want the exact size.","mantra")."</small></div>";
@@ -2005,19 +2008,19 @@ global $mantra_options;
 
 		echo " <label id='$items[0]' for='$items[0]$items[0]' class='socialsdisplay $checkedClass0'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay0'],'1');
-	echo "value='1' id='$items[0]$items[0]'  name='ma_options[mantra_socialsdisplay0]' type='checkbox' /> Top right corner of header </label>";
+	echo " value='1' id='$items[0]$items[0]'  name='ma_options[mantra_socialsdisplay0]' type='checkbox' /> Top right corner of header </label>";
 
 		echo " <label id='$items[1]' for='$items[1]$items[1]' class='socialsdisplay $checkedClass1'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay1'],'1');
-	echo "value='1' id='$items[1]$items[1]'  name='ma_options[mantra_socialsdisplay1]' type='checkbox' /> Under menu - left side </label>";
+	echo " value='1' id='$items[1]$items[1]'  name='ma_options[mantra_socialsdisplay1]' type='checkbox' /> Under menu - left side </label>";
 
 		echo " <label id='$items[2]' for='$items[2]$items[2]' class='socialsdisplay $checkedClass2'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay2'],'1');
-	echo "value='1' id='$items[2]$items[2]'  name='ma_options[mantra_socialsdisplay2]' type='checkbox' /> Under menu - right side </label>";
+	echo " value='1' id='$items[2]$items[2]'  name='ma_options[mantra_socialsdisplay2]' type='checkbox' /> Under menu - right side </label>";
 
 		echo " <label id='$items[3]' for='$items[3]$items[3]' class='socialsdisplay $checkedClass3'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay3'],'1');
-	echo "value='1' id='$items[3]$items[3]'  name='ma_options[mantra_socialsdisplay3]' type='checkbox' /> In the footer (smaller icons) </label>";
+	echo " value='1' id='$items[3]$items[3]'  name='ma_options[mantra_socialsdisplay3]' type='checkbox' /> In the footer (smaller icons) </label>";
 
 
 
@@ -2050,59 +2053,5 @@ function cryout_setting_customjs_fn() {
 	global $mantra_options;
 	echo "<textarea id='mantra_customjs' name='ma_options[mantra_customjs]' rows='8' cols='70' type='textarea' >".esc_textarea(htmlspecialchars_decode($mantra_options['mantra_customjs'], ENT_QUOTES))." </textarea>";
 	echo "<div><small>".__("Insert your custom Javascript code here. (Google Analytics and any other forms of Analytic software).<br> The &ltscript&gt tags are not needed.","mantra")."</small></div>";
-}
-function cryout_setting_seo_fn() {
-	global $mantra_options;
-	$items = array ("Enable" , "Disable");
-	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
-	echo "<select id='mantra_seo' name='ma_options[mantra_seo]'>";
-foreach($items as $id=>$item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_seo'],$item);
-	echo ">$itemsare[$id]</option>";
-}
-	echo "</select>";
-	echo "<div><small>".__("Enable Mantra's Search Engine Optimization. This is enabled by default and should only be disabled if you are using a SEO plugin.","mantra")."</small></div>";
-	echo "<br><small>".__("All title tags are handled automatically by Mantra.","mantra")."</small>";
-
-	echo "<div class='slmini'>";
-		echo "<b>".__("Homepage Meta Description","mantra")."</b>";
-		echo "<textarea id='mantra_seo_home_desc' name='ma_options[mantra_seo_home_desc]' rows='2' cols=50' type='textarea' >{$mantra_options['mantra_seo_home_desc']}  </textarea>";
-		echo "<small>".__("This is unique and you should fill this in. Describe your site the best you can and try not to go over 160 characters.","mantra")."</small>";
-	echo "</div>";
-
-	echo "<div class='slmini'>";
-		echo "<b> Meta Descriptions for all other pages: </b>";
-		$moreitems = array ("Auto" , "Manual");
-		$moreitemsare = array( __("Auto","mantra"), __("Manual","mantra"));
-		echo "<select id='mantra_seo_gen_desc' name='ma_options[mantra_seo_gen_desc]'>";
-		foreach($moreitems as $id=>$item) {
-			echo "<option value='$item'";
-			selected($mantra_options['mantra_seo_gen_desc'],$item);
-			echo ">$moreitemsare[$id]</option>";
-				}
-		echo "</select>";
-		echo "<small>".__("<u>Auto</u> - Mantra will automatically add post expcerpts to 'page' and 'post'	meta descriptions.<br>
-					   <u>Manual</u> - you will enable a new custom field in your post/page admin section where you can type the exact description you want for every post and page.<br>
-					   For category pages, the actual category descriptions will be used. Go to Posts > Categories and you can fill in a description for every category you have.","mantra")."</small>";
-	echo "</div>";
-
-	echo "<div class='slmini'>";
-		echo "<b>".__("Post Author","mantra")."</b>";
-	$authors=wp_list_authors (array("echo"=>false,"html"=> false));
-	$authors_array = explode ("," , $authors);
-	array_unshift($authors_array,__("Do not use","mantra"));
-	echo "<select id='mantra_seo_author' name='ma_options[mantra_seo_author]'>";
-		foreach($authors_array as $item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_seo_author'],$item);
-	echo ">$item</option>";
-}
-	echo "</select>";
-
-
-		echo "<small>".__("If you want to show an author in the meta tags.","mantra")."</small>";
-	echo "</div>";
-
 }
 ?>
