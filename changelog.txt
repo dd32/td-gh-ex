@@ -1,12 +1,16 @@
 == Changelog ==
 
+Version 2.8.1
+* Updated: Sidr menu script to version 2.1.1.1
+* Updated: Meta viewport for better responsive support
+
 Version 2.8
 * Added Text Domain in style.css 
 * Bug Fixed: Customizer Dropdown type saving issue
 * Bug Fixed: Full Content Display changed to Archive Content Layout in customizer
-* Compatibility fix: Customizer Reset option not working when returning any value in WordPress 4.4
 * Bug Fixed: Theme Instructions and Changelog links in customizer
 * Bug Fixed: Removed wp_title() from header.php
+* Compatibility fix: Customizer Reset option not working when returning any value in WordPress 4.4
 
 Version 2.7.1
 * Updated responsive menu js to fixed touch issue

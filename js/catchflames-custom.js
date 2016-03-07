@@ -1,6 +1,6 @@
 // Catch Flames Custom Scripts
 jQuery(document).ready(function() {
-	
+
 	/* Waypoint */
 	if ( jQuery.isFunction( jQuery.fn.waypoint ) ) {
 		var waypointheader = new Waypoint({
@@ -20,11 +20,11 @@ jQuery(document).ready(function() {
 			element: document.getElementById('page'),
 			handler: function(direction) {
 				if( direction == 'up' ) {
-					jQuery('#scrollup').fadeOut();	
+					jQuery('#scrollup').fadeOut();
 				}
 				else {
 					jQuery('#scrollup').fadeIn();
-				}	
+				}
 			},
 			offset: -500
 		})
@@ -55,7 +55,7 @@ jQuery(document).ready(function() {
 			that.toggleClass( 'displayblock' );
 			wrapper.toggleClass( 'displaynone' );
 
-	});	
+	});
 
 	//sidr
 	if ( jQuery.isFunction( jQuery.fn.sidr ) ) {

@@ -1,8 +1,8 @@
 = Catch Flames =
-* Catch Flames by the Catch Themes, http://catchthemes.com/
+* Catch Flames by the Catch Themes, https://catchthemes.com/
 
 == ABOUT Catch Flames ==
-Catch Flames is a Simple, Clean, Lightweight, Box Shaped Full-Width responsive WordPress theme that automatically adapts to the screen's size, ensuring that your content is displayed beautifully no matter what device visitors are using. Catch Flames is wider, bigger and looks luxuriously spacious. It uses Three Columns Layout as its default layout and can be changed to Two Columns or One Column as per your need. This theme can be considered as the successor of our popular theme Catch Box, as it has been further carefully crafted keeping in mind the concerns and adaptation possibilities requested by our existing CatchBox users. Catch Flames is based on HTML5, CSS3 and Catch Themes' very own easy to use Theme Options panel, all of which make it highly customizable and flexible. Put together your beautiful, yet professional website in no time. This theme is compatible with popular plugins such as WPML, qTranslate, mqTranslate, Polulang, WooCommerce, Jetpack, WP-PageNavi, Contact Form 7 and so on. This theme is translation ready and is currently translated in Brazilian Portuguese, French and Spanish. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-flames/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-flames/
+Catch Flames is a Simple, Clean, Lightweight, Box Shaped Full-Width responsive WordPress theme that automatically adapts to the screen's size, ensuring that your content is displayed beautifully no matter what device visitors are using. Catch Flames is wider, bigger and looks luxuriously spacious. It uses Three Columns Layout as its default layout and can be changed to Two Columns or One Column as per your need. This theme can be considered as the successor of our popular theme Catch Box, as it has been further carefully crafted keeping in mind the concerns and adaptation possibilities requested by our existing CatchBox users. Catch Flames is based on HTML5, CSS3 and Catch Themes' very own easy to use Theme Options panel, all of which make it highly customizable and flexible. Put together your beautiful, yet professional website in no time. This theme is compatible with popular plugins such as WPML, qTranslate, mqTranslate, Polulang, WooCommerce, Jetpack, WP-PageNavi, Contact Form 7 and so on. This theme is translation ready and is currently translated in Brazilian Portuguese, French and Spanish. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-flames/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-flames/
 
 Note: If you are familiar with Catch Box, you will easily be able to access the back-end modules of Catch Flames and be able comfortably use its features.
 
@@ -70,7 +70,7 @@ black, gray, tan, white, dark, light, one-column, two-columns, three-columns, le
 4. Complete all of the required inputs on the Catch Flames Options page (in the WP admin panel) and click "Save Changes".
 
 == Theme Instructions ==
-1. For detail theme instructions please check our theme instructions page at http://catchthemes.com/theme-instructions/catch-flames/
+1. For detail theme instructions please check our theme instructions page at https://catchthemes.com/theme-instructions/catch-flames/
 
 == Change Log ==
-Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/catch-flames-change-log/
+Please refer to changelog.txt file or change log page at https://catchthemes.com/changelogs/catch-flames-change-log/

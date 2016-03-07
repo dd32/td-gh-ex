@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames\n"
-"POT-Creation-Date: 2016-01-11 12:21+0545\n"
+"POT-Creation-Date: 2016-03-07 10:38+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Yoshi van den Akker <yoshivda@gmail.com>\n"
@@ -140,7 +140,7 @@ msgstr "Reacties zijn gesloten."
 #: ../content-gallery.php:18 ../content-gallery.php:50 ../content-image.php:18
 #: ../content-link.php:18 ../content-page.php:13 ../content-quote.php:16
 #: ../content-status.php:17 ../content.php:31 ../content.php:35
-#: ../inc/catchflames-functions.php:852
+#: ../inc/catchflames-functions.php:863
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalink naar %s"
@@ -189,7 +189,7 @@ msgstr "Pagina's:"
 #: ../content-gallery.php:98 ../content-image.php:76 ../content-link.php:52
 #: ../content-page.php:30 ../content-quote.php:81 ../content-single.php:66
 #: ../content-status.php:53 ../content.php:113 ../image.php:100
-#: ../inc/catchflames-functions.php:403
+#: ../inc/catchflames-functions.php:414
 msgid "Edit"
 msgstr "Wijzig"
 
@@ -266,7 +266,7 @@ msgstr ""
 "span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title="
 "\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
-#: ../content-image.php:47 ../inc/catchflames-functions.php:441
+#: ../content-image.php:47 ../inc/catchflames-functions.php:452
 #, php-format
 msgid "View all posts by %s"
 msgstr "Bekijk alle berichten van %s"
@@ -357,45 +357,45 @@ msgstr ""
 "%5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</"
 "a>"
 
-#: ../inc/catchflames-functions.php:283 ../single.php:18
+#: ../inc/catchflames-functions.php:294 ../single.php:18
 msgid "Post navigation"
 msgstr "Bericht navigatie"
 
-#: ../inc/catchflames-functions.php:291
+#: ../inc/catchflames-functions.php:302
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Oudere berichten"
 
-#: ../inc/catchflames-functions.php:292
+#: ../inc/catchflames-functions.php:303
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nieuwere berichten <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/catchflames-functions.php:371
+#: ../inc/catchflames-functions.php:382
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/catchflames-functions.php:371
+#: ../inc/catchflames-functions.php:382
 msgid "(Edit)"
 msgstr "(Wijzig)"
 
-#: ../inc/catchflames-functions.php:386
+#: ../inc/catchflames-functions.php:397
 msgid "Post author"
 msgstr "Auteur van het bericht"
 
 #. translators: 1: date, 2: time
-#: ../inc/catchflames-functions.php:392
+#: ../inc/catchflames-functions.php:403
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s op %2$s"
 
-#: ../inc/catchflames-functions.php:398
+#: ../inc/catchflames-functions.php:409
 msgid "Your comment is awaiting moderation."
 msgstr "Je reactie wacht op moderatie"
 
-#: ../inc/catchflames-functions.php:407
+#: ../inc/catchflames-functions.php:418
 msgid "Reply"
 msgstr "Reageer"
 
-#: ../inc/catchflames-functions.php:435
+#: ../inc/catchflames-functions.php:446
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -410,139 +410,139 @@ msgstr ""
 "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
 "\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../inc/catchflames-functions.php:554
+#: ../inc/catchflames-functions.php:565
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchflames-functions.php:700
+#: ../inc/catchflames-functions.php:711
 #: ../inc/panel/customizer/customizer.php:560
 #: ../inc/panel/theme-options.php:115 ../inc/panel/theme-options.php:847
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchflames-functions.php:705
+#: ../inc/catchflames-functions.php:716
 #: ../inc/panel/customizer/customizer.php:570
 #: ../inc/panel/theme-options.php:116 ../inc/panel/theme-options.php:855
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchflames-functions.php:710
+#: ../inc/catchflames-functions.php:721
 #: ../inc/panel/customizer/customizer.php:580
 #: ../inc/panel/theme-options.php:117 ../inc/panel/theme-options.php:863
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchflames-functions.php:715 ../inc/panel/theme-options.php:895
+#: ../inc/catchflames-functions.php:726 ../inc/panel/theme-options.php:895
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/catchflames-functions.php:720
+#: ../inc/catchflames-functions.php:731
 #: ../inc/panel/customizer/customizer.php:590
 #: ../inc/panel/theme-options.php:871
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchflames-functions.php:725
+#: ../inc/catchflames-functions.php:736
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchflames-functions.php:730
+#: ../inc/catchflames-functions.php:741
 #: ../inc/panel/customizer/customizer.php:610
 #: ../inc/panel/theme-options.php:887
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchflames-functions.php:735
+#: ../inc/catchflames-functions.php:746
 #: ../inc/panel/customizer/customizer.php:630
 #: ../inc/panel/theme-options.php:903
 msgid "AIM"
 msgstr "AIM"
 
-#: ../inc/catchflames-functions.php:740
+#: ../inc/catchflames-functions.php:751
 #: ../inc/panel/customizer/customizer.php:640
 #: ../inc/panel/theme-options.php:911
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchflames-functions.php:745
+#: ../inc/catchflames-functions.php:756
 #: ../inc/panel/customizer/customizer.php:650
 #: ../inc/panel/theme-options.php:920
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchflames-functions.php:750
+#: ../inc/catchflames-functions.php:761
 #: ../inc/panel/customizer/customizer.php:660
 #: ../inc/panel/theme-options.php:928
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchflames-functions.php:755
+#: ../inc/catchflames-functions.php:766
 #: ../inc/panel/customizer/customizer.php:670
 #: ../inc/panel/theme-options.php:936
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchflames-functions.php:760
+#: ../inc/catchflames-functions.php:771
 #: ../inc/panel/customizer/customizer.php:680
 #: ../inc/panel/theme-options.php:944
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchflames-functions.php:765
+#: ../inc/catchflames-functions.php:776
 #: ../inc/panel/customizer/customizer.php:690
 #: ../inc/panel/theme-options.php:953
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchflames-functions.php:770
+#: ../inc/catchflames-functions.php:781
 #: ../inc/panel/customizer/customizer.php:700
 #: ../inc/panel/theme-options.php:961
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchflames-functions.php:775
+#: ../inc/catchflames-functions.php:786
 #: ../inc/panel/customizer/customizer.php:710
 #: ../inc/panel/theme-options.php:969
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/catchflames-functions.php:780
+#: ../inc/catchflames-functions.php:791
 #: ../inc/panel/customizer/customizer.php:720
 #: ../inc/panel/theme-options.php:977
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchflames-functions.php:785
+#: ../inc/catchflames-functions.php:796
 #: ../inc/panel/customizer/customizer.php:730
 #: ../inc/panel/theme-options.php:985
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchflames-functions.php:790
+#: ../inc/catchflames-functions.php:801
 #: ../inc/panel/customizer/customizer.php:740
 #: ../inc/panel/theme-options.php:993
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/catchflames-functions.php:795
+#: ../inc/catchflames-functions.php:806
 #: ../inc/panel/customizer/customizer.php:750
 #: ../inc/panel/theme-options.php:1001
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catchflames-functions.php:800
+#: ../inc/catchflames-functions.php:811
 #: ../inc/panel/customizer/customizer.php:760
 #: ../inc/panel/theme-options.php:1009
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catchflames-functions.php:805
+#: ../inc/catchflames-functions.php:816
 #: ../inc/panel/customizer/customizer.php:770
 #: ../inc/panel/theme-options.php:1017
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchflames-functions.php:810
+#: ../inc/catchflames-functions.php:821
 msgid "SpecificFeeds"
 msgstr "SpecificFeeds"
 
