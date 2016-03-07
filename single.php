@@ -1,7 +1,7 @@
 <?php
 
 /* 	SPARK Theme's Single Page to display Single Page or Post
-	Copyright: 2014-2015, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SPARK 1.0
 */
@@ -24,7 +24,7 @@ get_header(); ?>
             <div class="up-bottom-border">
             <?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __('Pages:', 'spark') . '</span>', 'after' => '</div><br/>' ) ); ?>
             
-            <?php echo __('Posted in', 'spark'); ?> <?php the_category(', ') ?> | <?php edit_post_link( __('Edit', 'spark'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;', 'spark'), __('1 Comment &#187;', 'spark'), __('% Comments &#187;', 'spark')); ?> <?php the_tags('<br />'. __('Tags: ', 'spark'), ', ', '<br />'); ?></p><br />
+            <p class="postmetadata"><?php echo __('Posted in', 'spark'); ?> <?php the_category(', ') ?> | <?php edit_post_link( __('Edit', 'spark'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;', 'spark'), __('1 Comment &#187;', 'spark'), __('% Comments &#187;', 'spark')); ?> <?php the_tags('<br />'. __('Tags: ', 'spark'), ', ', '<br />'); ?></p><br />
             <div class="floatleft"><?php previous_post_link('&laquo; %link'); ?></div>
 			<div class="floatright"><?php next_post_link('%link &raquo;'); ?></div><br /><br />
             <?php if ( is_attachment() ): ?>

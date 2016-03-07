@@ -1,28 +1,27 @@
 <?php
 /* 	SPARK Theme's Functions
-	Copyright: 2014-2015, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SPARK 1.0
 */
  
-// 	Load the D5 Framework Optios Page
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-	require_once get_template_directory() . '/inc/options.php';
+ 	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
 	
-// 	Tell WordPress for wp_title in order to modify document title content
-	function spark_filter_wp_title( $title ) {
-    $site_name = get_bloginfo( 'name' );
-    $filtered_title = $site_name . $title;
-    return $filtered_title;
+	function spark_about_page() { 
+	add_theme_page( 'D5 Creation Themes', 'D5 Creation Themes', 'edit_theme_options', 'd5-themes', 'spark_d5_themes' );
+	add_theme_page( 'SPARK Options', 'SPARK Options', 'edit_theme_options', 'theme-about', 'spark_theme_about' ); 
 	}
-	add_filter( 'wp_title', 'spark_filter_wp_title' );
-
-	function spark_setup() {
+	add_action('admin_menu', 'spark_about_page');
+	function spark_d5_themes() {  require_once ( trailingslashit(get_template_directory()) . 'inc/d5-themes.php' ); }
+	function spark_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }
+ 
+ 	function spark_setup() {
 //	Set the content width based on the theme's design and stylesheet.
 	load_theme_textdomain( 'spark', get_template_directory() . '/languages' );	
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 584;
+	
+	add_theme_support( 'title-tag' );
 
 // 	Tell WordPress for the Feed Link
 	register_nav_menus( array( 'main-menu' => __('Main Menu', 'spark') ) );
@@ -80,6 +79,9 @@
 	
 	add_action( 'wp_enqueue_scripts', 'spark_enqueue_scripts' );
 
+// 	Functions for adding script to Admin Area
+	function spark_admin_style() { wp_enqueue_style( 'spark_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
+	add_action( 'admin_enqueue_scripts', 'spark_admin_style' );
 
 // 	Functions for adding some custom code within the head tag of site
 	function spark_custom_code() {

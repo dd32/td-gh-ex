@@ -1,6 +1,6 @@
 <?php 
 /* 	SPARK Theme's part for showing blog or page in the front page
-	Copyright: 2014-2015, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SPARK 1.0
 */

@@ -1,0 +1,443 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Innovation Lite\n"
+"POT-Creation-Date: 2016-03-08 03:26+0600\n"
+"PO-Revision-Date: 2015-10-29 02:02+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:11 archive.php:66 index.php:35 search.php:41
+msgid "Not Found"
+msgstr ""
+
+#: 404.php:12 archive.php:67 index.php:36 search.php:42
+msgid ""
+"Apologies, but the page you requested could not be found. Perhaps searching "
+"will help."
+msgstr ""
+
+#: 404.php:14 archive.php:70 index.php:39 search.php:45
+msgid "Or Return to the Home Page"
+msgstr ""
+
+#: 404.php:16 archive.php:72 index.php:41 search.php:47
+msgid "You can also Visit the Following. These are the Featured Contents"
+msgstr ""
+
+#: archive.php:14
+msgid "now browsing by category"
+msgstr ""
+
+#: archive.php:20
+msgid "now browsing by tag"
+msgstr ""
+
+#: archive.php:25
+msgid "now browsing by day"
+msgstr ""
+
+#: archive.php:28
+msgid "now browsing by month"
+msgstr ""
+
+#: archive.php:31
+msgid "now browsing by year"
+msgstr ""
+
+#: archive.php:34 archive.php:37 sidebar.php:12
+msgid "Archives"
+msgstr ""
+
+#: archive.php:34
+msgid "now browsing by author"
+msgstr ""
+
+#: archive.php:37
+msgid "now browsing the general archives"
+msgstr ""
+
+#: archive.php:43 fcontent.php:12 index.php:13 single.php:17
+msgid "Posted by:"
+msgstr ""
+
+#: archive.php:51 fcontent.php:20 index.php:21 search.php:32 single.php:27
+msgid "Posted in"
+msgstr ""
+
+#: archive.php:51 fcontent.php:20 index.php:21 search.php:32 single.php:27
+msgid "Edit"
+msgstr ""
+
+#: archive.php:51 fcontent.php:20 index.php:21 search.php:32 single.php:27
+msgid "No Comments &#187;"
+msgstr ""
+
+#: archive.php:51 fcontent.php:20 index.php:21 search.php:32 single.php:27
+msgid "1 Comment &#187;"
+msgstr ""
+
+#: archive.php:51 fcontent.php:20 index.php:21 search.php:32 single.php:27
+msgid "% Comments &#187;"
+msgstr ""
+
+#: archive.php:51 fcontent.php:20 index.php:21 search.php:32 single.php:27
+msgid "Tags: "
+msgstr ""
+
+#: archive.php:60 index.php:28
+msgid "Newer Entries"
+msgstr ""
+
+#: archive.php:61 index.php:29
+msgid "Older Entries"
+msgstr ""
+
+#: comments.php:13
+msgid "No Comments"
+msgstr ""
+
+#: comments.php:13
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:13
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:28
+msgid "Comments are Closed"
+msgstr ""
+
+#: fcontent.php:12 single.php:17
+msgid " on"
+msgstr ""
+
+#: fcontent.php:27
+msgid "&laquo; Previous Entries"
+msgstr ""
+
+#: fcontent.php:28
+msgid "Next Entries &raquo;"
+msgstr ""
+
+#: fullwidth.php:22 page.php:25
+msgid "Edit This Entry"
+msgstr ""
+
+#: functions.php:27
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:116 functions.php:121
+msgid "Read More..."
+msgstr ""
+
+#: functions.php:135
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:144
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: functions.php:153
+msgid "Footer Area One"
+msgstr ""
+
+#: functions.php:162
+msgid "Footer Area Two"
+msgstr ""
+
+#: functions.php:171
+msgid "Footer Area Three"
+msgstr ""
+
+#: functions.php:181
+msgid "Footer Area Four"
+msgstr ""
+
+#: functions.php:197
+msgid "(Untitled)"
+msgstr ""
+
+#: inc/customize.php:9
+msgid "SPARK OPTIONS"
+msgstr ""
+
+#: inc/customize.php:16
+msgid "Welcome to the SPARK WordPress Theme!"
+msgstr ""
+
+#: inc/customize.php:24
+msgid "Front Page Heading"
+msgstr ""
+
+#: inc/customize.php:31
+msgid ""
+"You can use SPARK Extend Theme for more options, more functions and more "
+"visual elements. Extend Version has come with simple color customization "
+"option"
+msgstr ""
+
+#: inc/customize.php:39
+msgid "Front Page Heading Description"
+msgstr ""
+
+#: inc/customize.php:58
+msgid "Banner Image"
+msgstr ""
+
+#: inc/customize.php:61
+msgid "Upload a Banner Image. 1050px X 400px image is recommended"
+msgstr ""
+
+#: inc/customize.php:67
+msgid "Recent Works"
+msgstr ""
+
+#: inc/customize.php:75
+msgid "Input your Row Title Heret"
+msgstr ""
+
+#: inc/customize.php:78 inc/customize.php:185
+msgid "Input your Row Title Here"
+msgstr ""
+
+#: inc/customize.php:83
+msgid ""
+"The Color changing options of SPARK will give the WordPress Driven Site an "
+"attractive look"
+msgstr ""
+
+#: inc/customize.php:91
+msgid "Row Description"
+msgstr ""
+
+#: inc/customize.php:94
+msgid ""
+"Input the description of Featured Areas. Please limit the words within 30 so "
+"that the layout should be clean and attractive. You can also input any HTML, "
+"Videos or iframe here. But please keep in mind about the limitation of width "
+"of the box"
+msgstr ""
+
+#: inc/customize.php:113
+msgid "First Row Featured Image"
+msgstr ""
+
+#: inc/customize.php:116
+msgid ""
+"Upload an image for the Featured Box. 230px X 115px image is recommended"
+msgstr ""
+
+#: inc/customize.php:121
+msgid "SPARK Theme for Small Business"
+msgstr ""
+
+#: inc/customize.php:129 inc/customize.php:217
+msgid "Title"
+msgstr ""
+
+#: inc/customize.php:137
+msgid ""
+"The Color changing options of SPARK will give the WordPress Driven Site an "
+"attractive look. SPARK is super elegant and Professional Responsive Theme "
+"which will create the business widely expressed"
+msgstr ""
+
+#: inc/customize.php:145 inc/customize.php:233
+msgid "Description"
+msgstr ""
+
+#: inc/customize.php:164
+msgid "Show Second Row Featured Boxs"
+msgstr ""
+
+#: inc/customize.php:167
+msgid "Uncheck this if you do not want to show the Second Row Featured Boxs"
+msgstr ""
+
+#: inc/customize.php:174
+msgid "Our Services"
+msgstr ""
+
+#: inc/customize.php:182
+msgid "Row Subject"
+msgstr ""
+
+#: inc/customize.php:190
+msgid ""
+"SPARK is super elegant and Professional Responsive Theme which will create "
+"the business widely expressed"
+msgstr ""
+
+#: inc/customize.php:198
+msgid "Second Row Description"
+msgstr ""
+
+#: inc/customize.php:201
+msgid ""
+"Input the description of Featured Areas. Please limit the words within 30 so "
+"that the layout should be clean and attractive"
+msgstr ""
+
+#: inc/customize.php:209
+msgid "SPARK Theme for Business"
+msgstr ""
+
+#: inc/customize.php:225
+msgid ""
+"SPARK is super elegant and Professional Responsive Theme which will create "
+"the business widely expressed. The Color changing options of SPARK will give "
+"the WordPress Driven Site an attractive look"
+msgstr ""
+
+#: inc/customize.php:244
+msgid "WE ARE INSIDE"
+msgstr ""
+
+#: inc/customize.php:252
+msgid "Staff Boxes Heading"
+msgstr ""
+
+#: inc/customize.php:259
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua"
+msgstr ""
+
+#: inc/customize.php:267
+msgid "Staff Boxes Heading Description"
+msgstr ""
+
+#: inc/customize.php:290
+msgid "Staff Image"
+msgstr ""
+
+#: inc/customize.php:293
+msgid "Uoload the Staff Image. The Sample Image is 300px X 200px"
+msgstr ""
+
+#: inc/customize.php:299
+msgid "OUR PROJECT "
+msgstr ""
+
+#: inc/customize.php:307
+msgid "Staff Name"
+msgstr ""
+
+#: inc/customize.php:315
+msgid "Innovation Lite is a Professional Responsive Theme"
+msgstr ""
+
+#: inc/customize.php:323
+msgid "Staff Designation"
+msgstr ""
+
+#: inc/customize.php:338
+msgid "Staff Social Links - "
+msgstr ""
+
+#: inc/customize.php:341
+msgid ""
+"Input Your Social Page Link. Example: <b>https://wordpress.org/themes/author/"
+"d5creation</b>.  If you do not want to show anything here leave the box "
+"blank. Supported Links are: wordpress.org, wordpress.com, dribbble.com, "
+"github.com, tumblr.com, youtube.com, flickr.com, vimeo.com, codepen.io, "
+"linkedin.com"
+msgstr ""
+
+#: inc/customize.php:381
+msgid "Profile Link - "
+msgstr ""
+
+#: inc/customize.php:384
+msgid "Input Your Profile Page Link here"
+msgstr ""
+
+#: inc/customize.php:400
+msgid "Social Link - "
+msgstr ""
+
+#: inc/customize.php:403
+msgid ""
+"Input Your Social Page Link. Example: <b>http://wordpress.org/d5creation</"
+"b>.  If you do not want to show anything here leave the box blank. Supported "
+"Links are: wordpress.org, wordpress.com, dribbble.com, github.com, tumblr."
+"com, youtube.com, flickr.com, vimeo.com, codepen.io, linkedin.com"
+msgstr ""
+
+#: page.php:20 single.php:25
+msgid "Pages:"
+msgstr ""
+
+#: page.php:28
+msgid "Sorry, no pages matched your criteria."
+msgstr ""
+
+#: search.php:12
+msgid "Search Results"
+msgstr ""
+
+#: search.php:19
+msgid "Search Term:"
+msgstr ""
+
+#: search.php:20
+msgid "Number of Results:"
+msgstr ""
+
+#: searchform.php:12
+msgid "Search Text Here"
+msgstr ""
+
+#: searchform.php:13
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:19
+msgid "Meta"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "SPARK"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://d5creation.com/themes/spark/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"SPARK is a CSS3 Powered and WordPress Latest Version Ready Theme for Small "
+"Business Companies to Corporate Business. Modern Design and other options "
+"will give the WordPress Driven Site an attractive look.  SPARK is "
+"Responsive, Super Elegant and Professional Theme which will be adjusted "
+"automatically with all smart devices.  Right and Footer Sidebar will be "
+"usable for showing the widgets. Full Wide Template can be used for showing "
+"showcase or other pages. You can Visit the SPARK Demo Here: http://demo."
+"d5creation.com/themes/?theme=SPARK  and Theme Page Here: http://d5creation."
+"com/theme/spark"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "D5 Creation"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://d5creation.com/"
+msgstr ""

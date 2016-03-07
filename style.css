@@ -7,7 +7,7 @@ Author URI: http://d5creation.com/
 
 Description: SPARK is a CSS3 Powered and WordPress Latest Version Ready Theme for Small Business Companies to Corporate Business. Modern Design and other options will give the WordPress Driven Site an attractive look.  SPARK is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices.  Right and Footer Sidebar will be usable for showing the widgets. Full Wide Template can be used for showing showcase or other pages. You can Visit the SPARK Demo Here: http://demo.d5creation.com/themes/?theme=SPARK  and Theme Page Here: http://d5creation.com/theme/spark 
 
-Version: 1.3
+Version: 1.5
 
 Tags: gray, light, white, two-columns, right-sidebar, fixed-layout, fluid-layout, responsive-layout, black, blue, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support,full-width-template, translation-ready, theme-options 
 
@@ -224,7 +224,7 @@ input#s{width:70%;min-width:235px;}
 #featured-boxs img.box-image:hover{box-shadow:0 0 11px 0px #555555;}
 #featured-boxs img.box-icon{width:50px;height:50px;}
 h3.featured-box2{width:160px;float:right;}
-.featured-box, .featured-box-first{display: inline-block; margin: 0 20px 20px; width:230px; vertical-align: top; text-align:left;}
+.featured-box, .featured-box-first{display: inline-block; margin: 0 20px 20px; width:229.5px; vertical-align: top; text-align:left;}
 
 blockquote, q {background:#DDDDDD;background:none repeat scroll 0 0 rgba(255, 255, 255, 0.35);border-left:10px solid #ccc;margin:20px 10px;padding:10px;quotes:quotes:'<<' '>>';border-right:10px solid #ccc;}
 blockquote:before, q:before {color:#ccc;content:'\201C';font-size:4em;line-height:.1em;margin-right:.20em;vertical-align:-.4em;}
@@ -315,3 +315,6 @@ background-size: 100% 100%;
 .social-link a[href*="vimeo.com"]::before { content: '\f194'; color:   #1AB7EA; }
 .social-link a[href*="codepen.io"]::before { content: '\f1cb'; color:   #555555; }
 .social-link a[href*="linkedin.com"]::before { content: '\f0e1'; color:   #05ace3; }
+/* Text meant only for screen readers. */
+.screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; overflow: hidden; }
+.screen-reader-text:focus { background-color: #f1f1f1; border-radius: 3px; box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); clip: auto !important; color: #21759b; 	display: block; font-size: 14px; font-size: 0.875rem; font-weight: bold; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; 	text-decoration: none; top: 5px; width: auto; z-index: 100000; /* Above WP toolbar. */ }
