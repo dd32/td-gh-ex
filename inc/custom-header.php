@@ -13,14 +13,14 @@
  * Set up the WordPress core custom header arguments and settings.
  *
  * @uses add_theme_support() to register support for 3.4 and up.
- * @uses themeofwp_header_style() to style front-end.
- * @uses themeofwp_admin_header_style() to style wp-admin form.
- * @uses themeofwp_admin_header_image() to add custom markup to wp-admin form.
+ * @uses avien_light_header_style() to style front-end.
+ * @uses avien_light_admin_header_style() to style wp-admin form.
+ * @uses avien_light_admin_header_image() to add custom markup to wp-admin form.
  * @uses register_default_headers() to set up the bundled header images.
  *
  * @since Avien_Light
  */
-function themeofwp_custom_header_setup() {
+function avien_light_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
 		'default-text-color'     => '000000',
@@ -30,29 +30,29 @@ function themeofwp_custom_header_setup() {
 		'width'                  => 1000,
 
 		// Callbacks for styling the header and the admin preview.
-		'wp-head-callback'       => 'themeofwp_header_style',
-		'admin-head-callback'    => 'themeofwp_admin_header_style',
-		'admin-preview-callback' => 'themeofwp_admin_header_image',
+		'wp-head-callback'       => 'avien_light_header_style',
+		'admin-head-callback'    => 'avien_light_admin_header_style',
+		'admin-preview-callback' => 'avien_light_admin_header_image',
 	);
 
 	add_theme_support( 'custom-header', $args );
 
 }
-add_action( 'after_setup_theme', 'themeofwp_custom_header_setup', 11 );
+add_action( 'after_setup_theme', 'avien_light_custom_header_setup', 11 );
 
 /**
  * Load our special font CSS files.
  *
  * @since Avien_Light
  */
-function themeofwp_custom_header_fonts() {
+function avien_light_custom_header_fonts() {
 	// Add Source Sans Pro and Bitter fonts.
-	wp_enqueue_style( 'themeofwp-fonts', themeofwp_fonts_url(), array(), null );
+	wp_enqueue_style( 'avien-light-fonts', avien-light_fonts_url(), array(), null );
 
 	// Add Genericons font.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.03' );
 }
-add_action( 'admin_print_styles-appearance_page_custom-header', 'themeofwp_custom_header_fonts' );
+add_action( 'admin_print_styles-appearance_page_custom-header', 'avien_light_custom_header_fonts' );
 
 /**
  * Style the header text displayed on the blog.
@@ -61,7 +61,7 @@ add_action( 'admin_print_styles-appearance_page_custom-header', 'themeofwp_custo
  *
  * @since Avien_Light
  */
-function themeofwp_header_style() {
+function avien_light_header_style() {
 	$header_image = get_header_image();
 	$text_color   = get_header_textcolor();
 
@@ -71,7 +71,7 @@ function themeofwp_header_style() {
 
 	// If we get this far, we have custom styles.
 	?>
-	<style type="text/css" id="themeofwp-header-css">
+	<style type="text/css" id="avien-light-header-css">
 	<?php
 		if ( ! empty( $header_image ) ) :
 	?>
@@ -127,10 +127,10 @@ function themeofwp_header_style() {
  *
  * @since Avien_Light
  */
-function themeofwp_admin_header_style() {
+function avien_light_admin_header_style() {
 	$header_image = get_header_image();
 ?>
-	<style type="text/css" id="themeofwp-admin-header-css">
+	<style type="text/css" id="avien-light-admin-header-css">
 	.appearance_page_custom-header #headimg {
 		border: none;
 		-webkit-box-sizing: border-box;
@@ -193,7 +193,7 @@ function themeofwp_admin_header_style() {
  *
  * @since Avien_Light
  */
-function themeofwp_admin_header_image() {
+function avien_light_admin_header_image() {
 	$style = 'color: #' . get_header_textcolor() . ';';
 	if ( ! display_header_text() ) {
 		$style = 'display: none;';

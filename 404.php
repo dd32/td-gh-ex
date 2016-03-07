@@ -15,9 +15,9 @@ get_header(); ?>
 		<!--/#error-->
 		<div class="container">
 			<h1>4<i class="fa fa-ban"></i>4</h1>
-			<h2><?php _e( 'Page not found', 'themeofwp' );?></h2>
-			<p><?php _e( 'The Page you are looking for doesn\'t exist or an other error occurred!', 'themeofwp' );?> </p>
-			<a class="btn btn-default" href="<?php echo home_url(); ?>"><?php _e( 'Go back to the homepage', 'themeofwp' );?></a>
+			<h2><?php _e( 'Page not found', 'avien-light' );?></h2>
+			<p><?php _e( 'The Page you are looking for doesn\'t exist or an other error occurred!', 'avien-light' );?> </p>
+			<a class="btn btn-default" href="<?php echo home_url(); ?>"><?php _e( 'Go back to the homepage', 'avien-light' );?></a>
 		</div>
 		<!--/#error-->
 		

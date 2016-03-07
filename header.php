@@ -69,7 +69,7 @@
 									<!--/.header-right widget-->
 								
 								</div>
-								<!--/.themeofwp_layout -->
+								<!--/.avien-light_layout -->
 
 							</div>
 							<!--/.row -->
@@ -90,14 +90,14 @@
 							<!--/.row -->
 							<div class="row">
 							
-								<!--/.themeofwp_layout -->
+								<!--/.avien-light_layout -->
 								<div class="col-md-12 colwrapper">
 					
 									<!--/.navbar-header -->
 									<div class="navbar-header site-title">
 										
 										<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-										  <span class="sr-only"><?php _e('Toggle navigation', 'themeofwp'); ?></span>
+										  <span class="sr-only"><?php _e('Toggle navigation', 'avien-light'); ?></span>
 										  <span class="icon-bar"></span>
 										  <span class="icon-bar"></span>
 										  <span class="icon-bar"></span>
@@ -174,7 +174,7 @@
 									<!--/.mobile-menu -->
 						  
 								</div>
-								<!--/.themeofwp_layout-->
+								<!--/.avien-light_layout-->
 								
 							</div>
 							<!--/.row -->

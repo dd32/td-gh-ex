@@ -40,7 +40,7 @@ get_header(); ?>
 								<div class="carousel-content">
 									<h2><?php echo get_the_title() ?></h2>
 									<p><?php the_excerpt(); ?></p>
-									<a class="btn btn-default btn-lg" href="<?php the_permalink(); ?>">Read More</a>
+									<a class="btn btn-default btn-lg" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'avien-light' );?></a>
 								</div>
 							</div>
 						</div>

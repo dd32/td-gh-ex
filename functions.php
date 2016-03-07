@@ -7,7 +7,7 @@
  * @package Avien_Light
  */
 
-if ( ! function_exists( 'themeofwp_setup' ) ) :
+if ( ! function_exists( 'avien_light_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'themeofwp_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function themeofwp_setup() {
+function avien_light_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Avien Light, use a find and replace
-	 * to change 'themeofwp' to the name of your theme in all the template files.
+	 * to change 'avien-light' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'themeofwp', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'avien-light', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -50,8 +50,8 @@ function themeofwp_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'themeofwp' ),
-		'footer' => esc_html__( 'Footer Menu', 'themeofwp' ),
+		'primary' => esc_html__( 'Primary Menu', 'avien-light' ),
+		'footer' => esc_html__( 'Footer Menu', 'avien-light' ),
 	) );
 
 	/*
@@ -79,13 +79,13 @@ function themeofwp_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'themeofwp_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'avien-light_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
-endif; // themeofwp_setup
-add_action( 'after_setup_theme', 'themeofwp_setup' );
+endif; // avien-light_setup
+add_action( 'after_setup_theme', 'avien_light_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -94,19 +94,19 @@ add_action( 'after_setup_theme', 'themeofwp_setup' );
  *
  * @global int $content_width
  */
-function themeofwp_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'themeofwp_content_width', 640 );
+function avien_light_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'avien_light_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'themeofwp_content_width', 0 );
+add_action( 'after_setup_theme', 'avien_light_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function themeofwp_widgets_init() {
+function avien_light_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'themeofwp' ),
+		'name'          => esc_html__( 'Sidebar', 'avien-light' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<div class="widget">',
@@ -116,9 +116,9 @@ function themeofwp_widgets_init() {
 	) );
 	
 	register_sidebar(array(
-	  'name' => __( 'Footer', 'themeofwp' ),
+	  'name' => __( 'Footer', 'avien-light' ),
 	  'id' => 'bottom',
-	  'description' => __( 'Widgets in this area will be shown before footer area.' , 'themeofwp'),
+	  'description' => __( 'Widgets in this area will be shown before footer area.' , 'avien-light'),
 	  'before_title' => '<h3>',
 	  'after_title' => '</h3>',
 	  'before_widget' => '<div class="col-lg-3 footer_widgets">',
@@ -127,9 +127,9 @@ function themeofwp_widgets_init() {
 	);
 
 	register_sidebar(array(
-	  'name' => __( 'Header Right', 'themeofwp' ),
+	  'name' => __( 'Header Right', 'avien-light' ),
 	  'id' => 'header-right',
-	  'description' => __( 'Widgets in this area will be shown on header right area.' , 'themeofwp'),
+	  'description' => __( 'Widgets in this area will be shown on header right area.' , 'avien-light'),
 	  'before_title' => '',
 	  'after_title' => '',
 	  'before_widget' => '',
@@ -138,9 +138,9 @@ function themeofwp_widgets_init() {
 	);
 
 	register_sidebar(array(
-	  'name' => __( 'Header Left', 'themeofwp' ),
+	  'name' => __( 'Header Left', 'avien-light' ),
 	  'id' => 'header-left',
-	  'description' => __( 'Widgets in this area will be shown on header left area.' , 'themeofwp'),
+	  'description' => __( 'Widgets in this area will be shown on header left area.' , 'avien-light'),
 	  'before_title' => '',
 	  'after_title' => '',
 	  'before_widget' => '',
@@ -148,40 +148,40 @@ function themeofwp_widgets_init() {
 	  )
 	);
 }
-add_action( 'widgets_init', 'themeofwp_widgets_init' );
+add_action( 'widgets_init', 'avien_light_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function themeofwp_scripts() {
-	wp_enqueue_style( 'themeofwp-style', get_stylesheet_uri() );
+function avien_light_scripts() {
+	wp_enqueue_style( 'avien-light-style', get_stylesheet_uri() );
 	wp_enqueue_style ( 'bootstrap',   get_template_directory_uri() . '/inc/css/bootstrap.css');
     wp_enqueue_style ( 'fontawesome',     get_template_directory_uri() . '/inc/css/font-awesome.css');
 
-	wp_enqueue_script( 'themeofwp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-	wp_enqueue_script( 'themeofwp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script ( 'bootstrap-js',   get_template_directory_uri() . '/inc/js/bootstrap.js', array('jquery'));
-	wp_enqueue_script ( 'fitvids', 	get_template_directory_uri() . '/inc/js/jquery.fitvids.js', array(), '1.3', true );
-	wp_enqueue_script ( 'easing', 		get_template_directory_uri() . '/inc/js/jquery.easing.1.3.js', array(), '1.3', true );
-	wp_enqueue_script ( 'respond', 		get_template_directory_uri() . '/inc/js/respond.js', array(), '1.4.2', true );
-	wp_enqueue_script ( 'framework-js',   get_template_directory_uri() . '/inc/js/framework.js', array(), '3.3', true);
+	wp_enqueue_script( 'avien-light-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'avien-light-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script ( 'avien-light-bootstrap-js',   get_template_directory_uri() . '/inc/js/bootstrap.js', array('jquery'));
+	wp_enqueue_script ( 'avien-light-fitvids', 	get_template_directory_uri() . '/inc/js/jquery.fitvids.js', array(), '1.3', true );
+	wp_enqueue_script ( 'avien-light-easing', 		get_template_directory_uri() . '/inc/js/jquery.easing.1.3.js', array(), '1.3', true );
+	wp_enqueue_script ( 'avien-light-respond', 		get_template_directory_uri() . '/inc/js/respond.js', array(), '1.4.2', true );
+	wp_enqueue_script ( 'avien-light-framework-js',   get_template_directory_uri() . '/inc/js/framework.js', array(), '3.3', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'themeofwp_scripts' );
+add_action( 'wp_enqueue_scripts', 'avien_light_scripts' );
 
-function themeofwp_slider_script() {
+function avien_light_slider_script() {
 	if ( is_home() ) {
-		wp_enqueue_style( 'themeofwp-owl-carousel', get_template_directory_uri() . '/inc/css/owl.carousel.css');
-		wp_enqueue_style( 'themeofwp-owl-transitions', get_template_directory_uri() . '/inc/css/owl.transitions.css');
-		wp_enqueue_script( 'themeofwp-owl-carousel-js', get_template_directory_uri() . '/inc/js/owl.carousel.js', array(), '1.3.3', true );
-		wp_enqueue_script( 'themeofwp-owl-slider-js', get_template_directory_uri() . '/inc/js/slider.js', array(), '1.3.3', true );
+		wp_enqueue_style( 'avien-light-owl-carousel', get_template_directory_uri() . '/inc/css/owl.carousel.css');
+		wp_enqueue_style( 'avien-light-owl-transitions', get_template_directory_uri() . '/inc/css/owl.transitions.css');
+		wp_enqueue_script( 'avien-light-owl-carousel-js', get_template_directory_uri() . '/inc/js/owl.carousel.js', array(), '1.3.3', true );
+		wp_enqueue_script( 'avien-light-owl-slider-js', get_template_directory_uri() . '/inc/js/slider.js', array(), '1.3.3', true );
 	}
 }
 
-add_action('wp_enqueue_scripts', 'themeofwp_slider_script', 15, 0);
+add_action('wp_enqueue_scripts', 'avien_light_slider_script', 15, 0);
 
 /**
  * Implement the Custom Header feature.

@@ -23,11 +23,11 @@
 				<!--/.row-->
 				<div class="row">
 					
-					<!--/.themeofwp_layout-->
+					<!--/.avien-light_layout-->
 					<div class="col-md-12 colwrapper">
 						<?php dynamic_sidebar('bottom'); ?>
 					</div>
-					<!--/.themeofwp_layout-->
+					<!--/.avien-light_layout-->
 					
 				</div>
 				<!--/.row-->
@@ -66,8 +66,8 @@
 					<hr>
 					
 					<p class="text-center">
-						&copy; <?php echo date('Y'); ?>, <?php esc_attr( bloginfo( 'name' ) ); ?>  / <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'themeofwp' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'themeofwp' ), 'WordPress' ); ?></a> / 
-							<?php printf( __( 'Theme: %1$s by %2$s', 'themeofwp' ), 'Avien Lite', '<a href="http://themeofwp.com" rel="designer">ThemeofWP.com</a>' ); ?>
+						&copy; <?php echo date('Y'); ?>, <?php esc_attr( bloginfo( 'name' ) ); ?>  / <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'avien-light' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'avien-light' ), 'WordPress' ); ?></a> / 
+							<?php printf( __( 'Theme: %1$s by %2$s', 'avien-light' ), 'Avien Lite', '<a href="http://avien-light.com" rel="designer">ThemeofWP.com</a>' ); ?>
 					</p>
 						
 				</div>
