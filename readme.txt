@@ -18,7 +18,14 @@ Go to https://wordpress.org/support/theme/actuate or contact us at contact[at]mu
 
 == Changelog ==
 
-= Version 1.0.1.3 - 28/01/2015 =
+= Version 1.0.1.4 - 07/03/2016 =
+(footer.php) Modified i18n string
+(functions.php) Modified function actuate_nav() to call wp_nav_menu() once
+(style.css) Fixed bug for cite tag and sidebar nested lists
+(readme.txt) Added license for Google fonts
+(actuate.pot) Regenerated translation file
+
+= Version 1.0.1.3 - 28/01/2016 =
 * (style.css) Fixed bug for comments CSS
 * (style.css) Fixed bug for responsive loop/post CSS
 * (style.css) Fixed bug for gallery
@@ -76,3 +83,5 @@ Go to https://wordpress.org/support/theme/actuate or contact us at contact[at]mu
 * Sidr: by Alberto Varela (https://github.com/artberri/sidr), licensed under [MIT](http://www.opensource.org/licenses/mit-license.php)
 * Respond.js: by Scott Jehl (https://github.com/scottjehl), licensed under [MIT](http://www.opensource.org/licenses/mit-license.php)
 * Font Awesome: by Dave gandy (http://fontawesome.io), dual licensed under [SIL OFL 1.1](http://scripts.sil.org/OFL) and [MIT](http://www.opensource.org/licenses/mit-license.php)
+* Font Merriweather: by Eben Sorkin (https://www.google.com/fonts/specimen/Merriweather), licensed under [SIL OFL 1.1](http://scripts.sil.org/OFL)
+* Font Oswald: by Vernon Adams (https://www.google.com/fonts/specimen/Oswald), licensed under [SIL OFL 1.1](http://scripts.sil.org/OFL)

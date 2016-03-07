@@ -90,26 +90,32 @@ add_action( 'after_setup_theme', 'actuate_setup' );
  * @since 1.0
  */
 function actuate_nav($location) {
-    switch ($location):
-        case 'primary':
-            wp_nav_menu(array(
-                'theme_location' => 'primary',
-                'container_id' => 'menu',
-                'menu_class' => 'sf-menu actuate_menu clearfix',
-                'menu_id' => 'actuate_menu',
-                'fallback_cb' => 'actuate_nav_fallback' // Fallback function in case no menu item is defined.
-            ));
-            break;
-        case 'mobile':
-            wp_nav_menu(array(
-                'theme_location' => 'primary',
-                'container_id' => 'sidr-menu',
-                'menu_class' => '',
-                'menu_id' => '',
-                'fallback_cb' => 'actuate_mobile_nav_fallback' // Fallback function in case no menu item is defined.
-            ));
-            break;
-    endswitch;
+    $container_id = '';
+    $menu_class = '';
+    $menu_id = '';
+    $fallback_cb = '';
+    
+    if ( $location == 'primary' ) {
+
+        $container_id = 'menu';
+        $menu_class = 'sf-menu actuate_menu clearfix';
+        $menu_id = 'actuate_menu';
+        $fallback_cb = 'actuate_nav_fallback';
+
+    } elseif ( $location == 'mobile' ){
+
+        $container_id = 'sidr-menu';
+        $fallback_cb = 'actuate_mobile_nav_fallback';
+
+    }
+
+    wp_nav_menu(array(
+        'theme_location' => 'primary',
+        'container_id' => $container_id,
+        'menu_class' => $menu_class,
+        'menu_id' => $menu_id,
+        'fallback_cb' => $fallback_cb // Fallback function in case no menu item is defined.
+    ));
 }
 
 
