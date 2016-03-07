@@ -30,8 +30,8 @@ $adventurous_options_defaults = array(
 	'featured_header_image_alt'				=> '',
 	'featured_header_image_base'			=> '0',
  	'disable_header_right_sidebar'			=> '0',
-	'reset_typography'						=> '2',	
-	'custom_css'							=> '',	
+	'reset_typography'						=> '2',
+	'custom_css'							=> '',
 	'sidebar_layout'						=> 'right-sidebar',
 	'content_layout'						=> 'full',
 	'featured_image'						=> 'featured',
@@ -63,8 +63,9 @@ $adventurous_options_defaults = array(
 	'slider_qty'							=> 4,
  	'transition_effect'						=> 'fade',
  	'transition_delay'						=> 4,
- 	'transition_duration'					=> 1,	
+ 	'transition_duration'					=> 1,
 	'exclude_slider_post'					=> '0',
+	'disable_scrollup'						=> '0',
  	'social_facebook'						=> '',
  	'social_twitter'						=> '',
  	'social_googleplus'						=> '',
@@ -197,7 +198,7 @@ function adventurous_page_post_featured_image_size() {
 	$options = array(
 		'full' 		=> __( 'Full Image', 'adventurous' ),
 		'slider' 	=> __( 'Slider Image', 'adventurous' ),
-		'featured'	=> __( 'Featured Image', 'adventurous' ),		
+		'featured'	=> __( 'Featured Image', 'adventurous' ),
 	);
 
 	return apply_filters( 'adventurous_page_post_featured_image_size', $options );
@@ -214,7 +215,7 @@ function adventurous_content_featured_image_size() {
 		'full' 		=> __( 'Full Image', 'adventurous' ),
 		'slider' 	=> __( 'Slider Image', 'adventurous' ),
 		'featured'	=> __( 'Featured Image', 'adventurous' ),
-		'disable'	=> __( 'Disable Image', 'adventurous' ),		
+		'disable'	=> __( 'Disable Image', 'adventurous' ),
 	);
 
 	return apply_filters( 'adventurous_content_featured_image_size', $options );

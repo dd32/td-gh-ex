@@ -50,28 +50,28 @@ class Adventurous_Customize_Dropdown_Categories_Control extends WP_Customize_Con
 
 //Custom control for important link
 class Adventurous_Important_Links extends WP_Customize_Control {
-    public $type = 'important-links'; 
-    
+    public $type = 'important-links';
+
     public function render_content() {
     	//Add Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links
         $important_links = array(
-						'theme_instructions' => array( 
+						'theme_instructions' => array(
 							'link'	=> esc_url( 'http://catchthemes.com/theme-instructions/adventurous/' ),
 							'text' 	=> __( 'Theme Instructions', 'adventurous' ),
 							),
-						'support' => array( 
+						'support' => array(
 							'link'	=> esc_url( 'http://catchthemes.com/support/' ),
 							'text' 	=> __( 'Support', 'adventurous' ),
 							),
-						'changelog' => array( 
+						'changelog' => array(
 							'link'	=> esc_url( 'http://catchthemes.com/changelogs/adventurous-theme/' ),
 							'text' 	=> __( 'Changelog', 'adventurous' ),
 							),
-						'donate' => array( 
+						'donate' => array(
 							'link'	=> esc_url( 'http://catchthemes.com/donate/' ),
 							'text' 	=> __( 'Donate Now', 'adventurous' ),
 							),
-						'review' => array( 
+						'review' => array(
 							'link'	=> esc_url( 'https://wordpress.org/support/view/theme-reviews/adventurous' ),
 							'text' 	=> __( 'Review', 'adventurous' ),
 							),
@@ -110,6 +110,6 @@ class Adventurous_Customize_Checkbox extends WP_Customize_Control {
         </label>
          <?php if ( !empty( $this->description ) ) : ?>
             <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-        <?php endif; ?>	        
+        <?php endif; ?>
     <?php }
 }

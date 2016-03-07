@@ -27,8 +27,8 @@ function adventurous_content_nav( $nav_id ) {
 		if ( $jetpack_active_modules && in_array( 'infinite-scroll', $jetpack_active_modules ) ) {
 			return false;
 		}
-	}	
-	
+	}
+
 	// Don't print empty markup on single pages if there's nowhere to navigate.
 	if ( is_single() ) {
 		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
@@ -57,18 +57,18 @@ function adventurous_content_nav( $nav_id ) {
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
-		<?php if ( function_exists('wp_pagenavi' ) )  { 
+		<?php if ( function_exists('wp_pagenavi' ) )  {
         	wp_pagenavi();
 		}
-		else { ?> 
+		else { ?>
 			<?php if ( get_next_posts_link() ) : ?>
             <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'adventurous' ) ); ?></div>
             <?php endif; ?>
-    
+
             <?php if ( get_previous_posts_link() ) : ?>
             <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'adventurous' ) ); ?></div>
             <?php endif;
-		} ?>			
+		} ?>
 
 	<?php endif; ?>
 
@@ -85,7 +85,7 @@ if ( ! function_exists( 'adventurous_content_query_nav' ) ) :
  * @since Adventurous 1.0
  */
 function adventurous_content_query_nav( $nav_id ) {
-	global $wp_query, $post;	
+	global $wp_query, $post;
 
 	// Don't print empty markup on single pages if there's nowhere to navigate.
 	if ( is_single() ) {
@@ -115,19 +115,19 @@ function adventurous_content_query_nav( $nav_id ) {
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
-		<?php if ( function_exists('wp_pagenavi' ) )  { 
+		<?php if ( function_exists('wp_pagenavi' ) )  {
         	wp_pagenavi();
 		}
-		else { ?> 
+		else { ?>
 			<?php if ( get_next_posts_link() ) : ?>
             <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'adventurous' ) ); ?></div>
             <?php endif; ?>
-    
+
             <?php if ( get_previous_posts_link() ) : ?>
             <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'adventurous' ) ); ?></div>
-            <?php endif; 
+            <?php endif;
 		} ?>
-       
+
 	<?php endif; ?>
 
 	</nav><!-- #<?php echo $nav_id; ?> -->
@@ -210,20 +210,20 @@ if ( ! function_exists( 'adventurous_header_meta' ) ) :
  * @since Adventurous 1.0
  */
 function adventurous_header_meta() {
-	
+
 	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
 	);
-	
+
 	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'adventurous' ), get_the_author() ) ),
 		get_the_author()
 	);
-	
+
 	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
 		$utility_text = __( '<span class="on-date">Posted on %1$s</span><span class="by-author"> by %2$s</span>', 'adventurous' );
 
@@ -245,7 +245,7 @@ if ( ! function_exists( 'adventurous_footer_meta' ) ) :
  * @since Adventurous 1.0
  */
 function adventurous_footer_meta() {
-	
+
 	// Translators: used between list items, there is a space after the comma.
 	$categories_list = get_the_category_list( __( ', ', 'adventurous' ) );
 
@@ -258,8 +258,8 @@ function adventurous_footer_meta() {
 		$utility_text = __( '<span class="in-category">Posted in %1$s</span><span class="sep"> | </span><span class="in-tag">Tagged %2$s</span>', 'adventurous' );
 	} elseif ( $categories_list ) {
 		$utility_text = __( '<span class="in-category">Posted in %1$s</span>', 'adventurous' );
-	} 
-	
+	}
+
 	printf(
 		$utility_text,
 		$categories_list,

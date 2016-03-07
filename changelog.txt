@@ -1,5 +1,12 @@
 == Changelog ==
 
+Version 1.9
+* Added Czech translation da_DK.po and da_DK.mo files
+* Added: Disable scrollup option.
+* Bug Fixed: Default value for Custom CSS in customizer
+* Updated: Genericons to 3.4.1
+* Updated: HTML5 script to 3.7.3
+
 Version 1.8.3
 * Bug Fixed: Added Missing Promotion Headline Button Open Link in New Window/Tab in customizer ( Reported by truewp )
 * Compatibility fix: Customizer Reset options not working when returning any value in WordPress 4.4

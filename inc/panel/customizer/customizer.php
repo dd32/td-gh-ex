@@ -17,7 +17,7 @@
  */
 function adventurous_customize_register( $wp_customize ) {
 	global $adventurous_options_settings, $adventurous_options_defaults;
-    
+
     $options = $adventurous_options_settings;
 
 	$defaults = $adventurous_options_defaults;
@@ -67,7 +67,7 @@ function adventurous_customize_register( $wp_customize ) {
 					'id' 			=> 'layout_options',
 					'title' 		=> __( 'Layout Options', 'adventurous' ),
 					'description' 	=> '',
-				),				
+				),
 				'search_text_settings' => array(
 					'id' 			=> 'search_text_settings',
 					'title' 		=> __( 'Search Text Settings', 'adventurous' ),
@@ -78,6 +78,11 @@ function adventurous_customize_register( $wp_customize ) {
 					'title' 		=> __( 'Excerpt / More Tag Settings', 'adventurous' ),
 					'description' 	=> '',
 				),
+				'disable_scrollup' => array(
+					'id' 			=> 'disable_scrollup',
+					'title' 		=> __( 'Scroll Up', 'adventurous' ),
+					'description' 	=> '',
+				),
 				'custom_css' => array(
 					'id' 			=> 'custom_css',
 					'title' 		=> __( 'Custom CSS', 'adventurous' ),
@@ -85,7 +90,7 @@ function adventurous_customize_register( $wp_customize ) {
 				),
 
 			),
-		),		
+		),
 		'featured_content' => array(
 			'id' 			=> 'featured_content',
 			'title' 		=> __( 'Featured Content', 'adventurous' ),
@@ -129,13 +134,13 @@ function adventurous_customize_register( $wp_customize ) {
 	//Add Panels and sections
 	foreach ( $settings_page_tabs as $panel ) {
 		$wp_customize->add_panel(
-			$theme_slug . $panel['id'], 
+			$theme_slug . $panel['id'],
 			array(
 				'priority' 		=> 200,
 				'capability' 	=> 'edit_theme_options',
 				'title' 		=> $panel['title'],
 				'description' 	=> $panel['description'],
-			) 
+			)
 		);
 
 		// Loop through tabs for sections
@@ -155,7 +160,7 @@ function adventurous_customize_register( $wp_customize ) {
 				$theme_slug . $section['id'],
 				// parameters
 				$params
-				
+
 			);
 		}
 	}
@@ -213,6 +218,7 @@ function adventurous_customize_register( $wp_customize ) {
 			'id' 			=> 'reset_featured_image',
 			'title' 		=> __( 'Check to Reset Header Featured Image Options', 'adventurous' ),
 			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'adventurous' ),
+			'transport'		=> 'postMessage',
 			'field_type' 	=> 'checkbox',
 			'sanitize' 		=> 'adventurous_sanitize_reset_featured_image',
 			'section' 		=> 'header_image',
@@ -263,7 +269,7 @@ function adventurous_customize_register( $wp_customize ) {
 			'default' 		=> $defaults['web_clip']
 		),
 
-		//Header Options		
+		//Header Options
 		'remove_header_logo' => array(
 			'id' 			=> 'remove_header_logo',
 			'title' 		=> __( 'Check to Disable Logo', 'adventurous' ),
@@ -508,6 +514,18 @@ function adventurous_customize_register( $wp_customize ) {
 			'default' 		=> $defaults['reset_moretag']
 		),
 
+		//Scroll Settings
+		'disable_scrollup' => array(
+			'id' 			=> 'disable_scrollup',
+			'title' 		=> __( 'Check to disable scroll up', 'adventurous' ),
+			'description' 	=> '',
+			'field_type' 	=> 'checkbox',
+			'sanitize' 		=> 'adventurous_sanitize_checkbox',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'disable_scrollup',
+			'default' 		=> $defaults['disable_scrollup'],
+		),
+
 		//Custom Css
 		'custom_css' => array(
 			'id' 			=> 'custom_css',
@@ -517,7 +535,7 @@ function adventurous_customize_register( $wp_customize ) {
 			'sanitize' 		=> 'adventurous_sanitize_custom_css',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'custom_css',
-			'default' 		=> $defaults['homepage_headline']
+			'default' 		=> $defaults['custom_css']
 		),
 
 		//Featured Content
@@ -552,7 +570,7 @@ function adventurous_customize_register( $wp_customize ) {
 			'section' 		=> 'featured_content_settings',
 			'default' 		=> $defaults['homepage_featured_subheadline']
 		),
-		
+
 		'homepage_featured_qty' => array(
 			'id' 			=> 'homepage_featured_qty',
 			'title' 		=> __( 'Number of Featured Content', 'adventurous' ),
@@ -999,6 +1017,7 @@ function adventurous_customize_register( $wp_customize ) {
 	);
 
 	foreach ( $settings_parameters as $option ) {
+		$transport = isset( $option[ 'transport' ] ) ? $option[ 'transport' ] : 'refresh';
 		if( 'image' == $option['field_type'] ) {
 			$wp_customize->add_setting(
 				// $id
@@ -1011,15 +1030,15 @@ function adventurous_customize_register( $wp_customize ) {
 				)
 			);
 
-			$wp_customize->add_control( 
-				new WP_Customize_Image_Control( 
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
 					array(
 						'label'		=> $option['title'],
 						'section'   => $theme_slug . $option['section'],
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
-					) 
-				) 
+					)
+				)
 			);
 		}
 		else if ('checkbox' == $option['field_type'] ) {
@@ -1030,7 +1049,8 @@ function adventurous_customize_register( $wp_customize ) {
 				array(
 					'type'				=> 'option',
 					'sanitize_callback'	=> $option['sanitize'],
-					'default'			=> $option['default'],				)
+					'default'			=> $option['default'],
+					'transport'			=> $transport				)
 			);
 
 			$params = array(
@@ -1038,7 +1058,7 @@ function adventurous_customize_register( $wp_customize ) {
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
 						'name'  	=> $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
@@ -1050,11 +1070,11 @@ function adventurous_customize_register( $wp_customize ) {
 				$params['section']	= $theme_slug . $option['section'];
 			}
 
-			$wp_customize->add_control( 
-				new Adventurous_Customize_Checkbox( 
+			$wp_customize->add_control(
+				new Adventurous_Customize_Checkbox(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
-					$params	
-				) 
+					$params
+				)
 			);
 		}
 		else if ('category-multiple' == $option['field_type'] ) {
@@ -1076,13 +1096,13 @@ function adventurous_customize_register( $wp_customize ) {
 						'description'	=> $option['description'],
 						'name'	 		=> $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
 
-			$wp_customize->add_control( 
-				new Adventurous_Customize_Dropdown_Categories_Control ( 
+			$wp_customize->add_control(
+				new Adventurous_Customize_Dropdown_Categories_Control (
 					$wp_customize,
 					$theme_slug . 'options[' . $option['id'] . ']',
 					$params
@@ -1132,7 +1152,7 @@ function adventurous_customize_register( $wp_customize ) {
 			$wp_customize->add_control(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
-				$params			
+				$params
 			);
 		}
 	}
@@ -1149,15 +1169,15 @@ function adventurous_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
-			new Adventurous_Note_Control( 
+		$wp_customize->add_control(
+			new Adventurous_Note_Control(
 				$wp_customize, $theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
 				array(
 					'label'		=> sprintf( __( 'Featured Content #%s', 'adventurous' ), $i ),
 					'section'   => $theme_slug .'featured_content_settings',
 					'settings'  => $theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
-				) 
-			) 
+				)
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1170,15 +1190,15 @@ function adventurous_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
-			new WP_Customize_Image_Control( 
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
 				$wp_customize, $theme_slug . 'options[homepage_featured_image][' . $i . ']',
 				array(
 					'label'		=> __( 'Image', 'adventurous' ),
 					'section'   => $theme_slug .'featured_content_settings',
 					'settings'  => $theme_slug . 'options[homepage_featured_image][' . $i . ']',
-				) 
-			) 
+				)
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1191,14 +1211,14 @@ function adventurous_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_url][' . $i . ']',
 			array(
 				'label'		=> __( 'Link URL', 'adventurous' ),
 				'section'	=> $theme_slug .'featured_content_settings',
 				'settings'	=> $theme_slug . 'options[homepage_featured_url][' . $i . ']',
 				'type'		=> 'url'
-			) 
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1211,14 +1231,14 @@ function adventurous_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_base][' . $i . ']',
 			array(
 				'label'		=> __( 'Target. Open Link in New Window?', 'adventurous' ),
 				'section'	=> $theme_slug .'featured_content_settings',
 				'settings'	=> $theme_slug . 'options[homepage_featured_base][' . $i . ']',
 				'type'		=> 'text'
-			) 
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1231,7 +1251,7 @@ function adventurous_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_title][' . $i . ']',
 			array(
 				'label'			=> __( 'Title', 'adventurous' ),
@@ -1239,7 +1259,7 @@ function adventurous_customize_register( $wp_customize ) {
 				'settings'		=> $theme_slug . 'options[homepage_featured_title][' . $i . ']',
 				'description'	=> __( 'Leave empty if you want to remove title', 'adventurous' ),
 				'type'			=> 'text'
-			) 
+			)
 		);
 
 		$wp_customize->add_setting(
@@ -1252,7 +1272,7 @@ function adventurous_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_content][' . $i . ']',
 			array(
 				'label'			=> __( 'Content', 'adventurous' ),
@@ -1260,7 +1280,7 @@ function adventurous_customize_register( $wp_customize ) {
 				'settings'		=> $theme_slug . 'options[homepage_featured_content][' . $i . ']',
 				'description'	=> __( 'Appropriate Words: 10', 'adventurous' ),
 				'type'			=> 'textarea'
-			) 
+			)
 		);
 	}
 
@@ -1276,7 +1296,7 @@ function adventurous_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[featured_slider][' . $i . ']',
 			array(
 				'label'		=> sprintf( __( 'Featured Post Slider #%s', 'adventurous' ), $i ),
@@ -1331,7 +1351,7 @@ function adventurous_customize_register( $wp_customize ) {
         'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',
-    ) ) );  
+    ) ) );
     //Important Links End
 }
 add_action( 'customize_register', 'adventurous_customize_register' );

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-19 23:11+0545\n"
-"PO-Revision-Date: 2015-12-19 23:11+0545\n"
+"POT-Creation-Date: 2016-03-07 09:03+0545\n"
+"PO-Revision-Date: 2016-03-07 09:03+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de\n"
@@ -102,7 +102,7 @@ msgstr "Es können keine Kommentare abgegeben werden."
 #: ../content-gallery.php:25 ../content-gallery.php:42
 #: ../content-gallery.php:43 ../content-image.php:23 ../content-page.php:18
 #: ../content-search.php:16 ../content-single.php:18 ../content-video.php:24
-#: ../content.php:32 ../inc/adventurous-functions.php:182
+#: ../content.php:32 ../inc/adventurous-functions.php:186
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalink zu %s"
@@ -179,8 +179,8 @@ msgstr[1] "Diese Galerie enthält <a %1$s>%2$s Fotos</a>"
 msgid "All Image Posts"
 msgstr "Alle Foto-Beiträge"
 
-#: ../content-image.php:24 ../inc/panel/adventurous-theme-options.php:836
-#: ../inc/panel/customizer/customizer.php:1177
+#: ../content-image.php:24 ../inc/panel/adventurous-theme-options.php:854
+#: ../inc/panel/customizer/customizer.php:1197
 msgid "Image"
 msgstr "Foto"
 
@@ -301,178 +301,178 @@ msgstr "Highway"
 msgid "Buddha"
 msgstr "Buddha"
 
-#: ../inc/adventurous-functions.php:710
+#: ../inc/adventurous-functions.php:714
 #: ../inc/panel/adventurous-theme-options.php:108
-#: ../inc/panel/adventurous-theme-options.php:1071
-#: ../inc/panel/customizer/customizer.php:701
+#: ../inc/panel/adventurous-theme-options.php:1089
+#: ../inc/panel/customizer/customizer.php:719
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/adventurous-functions.php:715
+#: ../inc/adventurous-functions.php:719
 #: ../inc/panel/adventurous-theme-options.php:109
-#: ../inc/panel/adventurous-theme-options.php:1079
-#: ../inc/panel/customizer/customizer.php:711
+#: ../inc/panel/adventurous-theme-options.php:1097
+#: ../inc/panel/customizer/customizer.php:729
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/adventurous-functions.php:720
-#: ../inc/panel/adventurous-theme-options.php:1087
-#: ../inc/panel/customizer/customizer.php:721
+#: ../inc/adventurous-functions.php:724
+#: ../inc/panel/adventurous-theme-options.php:1105
+#: ../inc/panel/customizer/customizer.php:739
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/adventurous-functions.php:725
-#: ../inc/panel/customizer/customizer.php:761
+#: ../inc/adventurous-functions.php:729
+#: ../inc/panel/customizer/customizer.php:779
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/adventurous-functions.php:730
-#: ../inc/panel/adventurous-theme-options.php:1095
-#: ../inc/panel/customizer/customizer.php:731
+#: ../inc/adventurous-functions.php:734
+#: ../inc/panel/adventurous-theme-options.php:1113
+#: ../inc/panel/customizer/customizer.php:749
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/adventurous-functions.php:735
+#: ../inc/adventurous-functions.php:739
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/adventurous-functions.php:740
-#: ../inc/panel/adventurous-theme-options.php:1111
-#: ../inc/panel/customizer/customizer.php:751
+#: ../inc/adventurous-functions.php:744
+#: ../inc/panel/adventurous-theme-options.php:1129
+#: ../inc/panel/customizer/customizer.php:769
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/adventurous-functions.php:745
+#: ../inc/adventurous-functions.php:749
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/adventurous-functions.php:750
+#: ../inc/adventurous-functions.php:754
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/adventurous-functions.php:755
-#: ../inc/panel/adventurous-theme-options.php:1143
-#: ../inc/panel/customizer/customizer.php:791
+#: ../inc/adventurous-functions.php:759
+#: ../inc/panel/adventurous-theme-options.php:1161
+#: ../inc/panel/customizer/customizer.php:809
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/adventurous-functions.php:760
-#: ../inc/panel/adventurous-theme-options.php:1151
-#: ../inc/panel/customizer/customizer.php:801
+#: ../inc/adventurous-functions.php:764
+#: ../inc/panel/adventurous-theme-options.php:1169
+#: ../inc/panel/customizer/customizer.php:819
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/adventurous-functions.php:765
-#: ../inc/panel/adventurous-theme-options.php:1159
-#: ../inc/panel/customizer/customizer.php:811
+#: ../inc/adventurous-functions.php:769
+#: ../inc/panel/adventurous-theme-options.php:1177
+#: ../inc/panel/customizer/customizer.php:829
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/adventurous-functions.php:770
-#: ../inc/panel/adventurous-theme-options.php:1167
-#: ../inc/panel/customizer/customizer.php:821
+#: ../inc/adventurous-functions.php:774
+#: ../inc/panel/adventurous-theme-options.php:1185
+#: ../inc/panel/customizer/customizer.php:839
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/adventurous-functions.php:775
-#: ../inc/panel/adventurous-theme-options.php:1175
-#: ../inc/panel/customizer/customizer.php:831
+#: ../inc/adventurous-functions.php:779
+#: ../inc/panel/adventurous-theme-options.php:1193
+#: ../inc/panel/customizer/customizer.php:849
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/adventurous-functions.php:780
-#: ../inc/panel/adventurous-theme-options.php:1183
-#: ../inc/panel/customizer/customizer.php:841
+#: ../inc/adventurous-functions.php:784
+#: ../inc/panel/adventurous-theme-options.php:1201
+#: ../inc/panel/customizer/customizer.php:859
 msgid "WordPress"
 msgstr "Wordpress"
 
-#: ../inc/adventurous-functions.php:785
-#: ../inc/panel/adventurous-theme-options.php:1191
-#: ../inc/panel/customizer/customizer.php:851
+#: ../inc/adventurous-functions.php:789
+#: ../inc/panel/adventurous-theme-options.php:1209
+#: ../inc/panel/customizer/customizer.php:869
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/adventurous-functions.php:790
-#: ../inc/panel/adventurous-theme-options.php:1199
-#: ../inc/panel/customizer/customizer.php:861
+#: ../inc/adventurous-functions.php:794
+#: ../inc/panel/adventurous-theme-options.php:1217
+#: ../inc/panel/customizer/customizer.php:879
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/adventurous-functions.php:795
-#: ../inc/panel/adventurous-theme-options.php:1207
-#: ../inc/panel/customizer/customizer.php:871
+#: ../inc/adventurous-functions.php:799
+#: ../inc/panel/adventurous-theme-options.php:1225
+#: ../inc/panel/customizer/customizer.php:889
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/adventurous-functions.php:800
-#: ../inc/panel/adventurous-theme-options.php:1215
-#: ../inc/panel/customizer/customizer.php:881
+#: ../inc/adventurous-functions.php:804
+#: ../inc/panel/adventurous-theme-options.php:1233
+#: ../inc/panel/customizer/customizer.php:899
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/adventurous-functions.php:805
-#: ../inc/panel/adventurous-theme-options.php:1223
-#: ../inc/panel/customizer/customizer.php:891
+#: ../inc/adventurous-functions.php:809
+#: ../inc/panel/adventurous-theme-options.php:1241
+#: ../inc/panel/customizer/customizer.php:909
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/adventurous-functions.php:810
-#: ../inc/panel/adventurous-theme-options.php:1231
-#: ../inc/panel/customizer/customizer.php:901
+#: ../inc/adventurous-functions.php:814
+#: ../inc/panel/adventurous-theme-options.php:1249
+#: ../inc/panel/customizer/customizer.php:919
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/adventurous-functions.php:815
-#: ../inc/panel/adventurous-theme-options.php:1239
-#: ../inc/panel/customizer/customizer.php:911
+#: ../inc/adventurous-functions.php:819
+#: ../inc/panel/adventurous-theme-options.php:1257
+#: ../inc/panel/customizer/customizer.php:929
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/adventurous-functions.php:820
-#: ../inc/panel/adventurous-theme-options.php:1247
-#: ../inc/panel/customizer/customizer.php:921
+#: ../inc/adventurous-functions.php:824
+#: ../inc/panel/adventurous-theme-options.php:1265
+#: ../inc/panel/customizer/customizer.php:939
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/adventurous-functions.php:825
+#: ../inc/adventurous-functions.php:829
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/adventurous-functions.php:830
-#: ../inc/panel/adventurous-theme-options.php:1263
-#: ../inc/panel/customizer/customizer.php:941
+#: ../inc/adventurous-functions.php:834
+#: ../inc/panel/adventurous-theme-options.php:1281
+#: ../inc/panel/customizer/customizer.php:959
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/adventurous-functions.php:835
+#: ../inc/adventurous-functions.php:839
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/adventurous-functions.php:840
-#: ../inc/panel/adventurous-theme-options.php:1279
-#: ../inc/panel/customizer/customizer.php:961
+#: ../inc/adventurous-functions.php:844
+#: ../inc/panel/adventurous-theme-options.php:1297
+#: ../inc/panel/customizer/customizer.php:979
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/adventurous-functions.php:845
-#: ../inc/panel/adventurous-theme-options.php:1287
-#: ../inc/panel/customizer/customizer.php:971
+#: ../inc/adventurous-functions.php:849
+#: ../inc/panel/adventurous-theme-options.php:1305
+#: ../inc/panel/customizer/customizer.php:989
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/adventurous-functions.php:850
-#: ../inc/panel/adventurous-theme-options.php:1295
-#: ../inc/panel/customizer/customizer.php:981
+#: ../inc/adventurous-functions.php:854
+#: ../inc/panel/adventurous-theme-options.php:1313
+#: ../inc/panel/customizer/customizer.php:999
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/adventurous-functions.php:855
-#: ../inc/panel/adventurous-theme-options.php:1303
-#: ../inc/panel/customizer/customizer.php:991
+#: ../inc/adventurous-functions.php:859
+#: ../inc/panel/adventurous-theme-options.php:1321
+#: ../inc/panel/customizer/customizer.php:1009
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/adventurous-functions.php:877
+#: ../inc/adventurous-functions.php:881
 msgid "ID"
 msgstr "ID"
 
@@ -505,13 +505,13 @@ msgid "Enable"
 msgstr "Aktivieren"
 
 #: ../inc/adventurous-metabox.php:44
-#: ../inc/panel/adventurous-theme-options-defaults.php:184
-#: ../inc/panel/adventurous-theme-options-defaults.php:249
-#: ../inc/panel/adventurous-theme-options-defaults.php:296
+#: ../inc/panel/adventurous-theme-options-defaults.php:185
+#: ../inc/panel/adventurous-theme-options-defaults.php:250
+#: ../inc/panel/adventurous-theme-options-defaults.php:297
 #: ../inc/panel/adventurous-theme-options.php:347
 #: ../inc/panel/adventurous-theme-options.php:490
-#: ../inc/panel/adventurous-theme-options.php:772
-#: ../inc/panel/adventurous-theme-options.php:928
+#: ../inc/panel/adventurous-theme-options.php:790
+#: ../inc/panel/adventurous-theme-options.php:946
 msgid "Disable"
 msgstr "Deaktivieren"
 
@@ -533,31 +533,31 @@ msgid "No sidebar"
 msgstr "Keine Seitenleiste"
 
 #: ../inc/adventurous-metabox.php:91
-#: ../inc/panel/adventurous-theme-options-defaults.php:200
-#: ../inc/panel/adventurous-theme-options-defaults.php:216
+#: ../inc/panel/adventurous-theme-options-defaults.php:201
+#: ../inc/panel/adventurous-theme-options-defaults.php:217
 #: ../inc/panel/adventurous-theme-options.php:365
 #: ../inc/panel/adventurous-theme-options.php:448
 msgid "Featured Image"
 msgstr "Hervorgehobenes Foto"
 
 #: ../inc/adventurous-metabox.php:96
-#: ../inc/panel/adventurous-theme-options-defaults.php:198
-#: ../inc/panel/adventurous-theme-options-defaults.php:214
+#: ../inc/panel/adventurous-theme-options-defaults.php:199
+#: ../inc/panel/adventurous-theme-options-defaults.php:215
 #: ../inc/panel/adventurous-theme-options.php:357
 #: ../inc/panel/adventurous-theme-options.php:452
 msgid "Full Image"
 msgstr "Vollbild"
 
 #: ../inc/adventurous-metabox.php:101
-#: ../inc/panel/adventurous-theme-options-defaults.php:199
-#: ../inc/panel/adventurous-theme-options-defaults.php:215
+#: ../inc/panel/adventurous-theme-options-defaults.php:200
+#: ../inc/panel/adventurous-theme-options-defaults.php:216
 #: ../inc/panel/adventurous-theme-options.php:361
 #: ../inc/panel/adventurous-theme-options.php:456
 msgid "Slider Image"
 msgstr "Slider-Show"
 
 #: ../inc/adventurous-metabox.php:106
-#: ../inc/panel/adventurous-theme-options-defaults.php:217
+#: ../inc/panel/adventurous-theme-options-defaults.php:218
 #: ../inc/panel/adventurous-theme-options.php:460
 msgid "Disable Image"
 msgstr "Foto deaktivieren"
@@ -785,186 +785,186 @@ msgstr "Weiterlesen &rarr;"
 msgid "Search &hellip;"
 msgstr "Suche &hellip;"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:98
-#: ../inc/panel/adventurous-theme-options.php:1754
+#: ../inc/panel/adventurous-theme-options-defaults.php:99
+#: ../inc/panel/adventurous-theme-options.php:1779
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:98
-#: ../inc/panel/adventurous-theme-options.php:1754
+#: ../inc/panel/adventurous-theme-options-defaults.php:99
+#: ../inc/panel/adventurous-theme-options.php:1779
 msgid "All Rights Reserved"
 msgstr "Alle rechte vorbehalten"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:98
-#: ../inc/panel/adventurous-theme-options.php:1754
+#: ../inc/panel/adventurous-theme-options-defaults.php:99
+#: ../inc/panel/adventurous-theme-options.php:1779
 msgid "Adventurous Theme by"
 msgstr "Adventurous Theme by"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:116
+#: ../inc/panel/adventurous-theme-options-defaults.php:117
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:137
+#: ../inc/panel/adventurous-theme-options-defaults.php:138
 msgid "http://catchthemes.com"
 msgstr "http://catchthemes.com"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:137
+#: ../inc/panel/adventurous-theme-options-defaults.php:138
 #: ../inc/panel/adventurous-theme-options.php:93
 #: ../inc/panel/adventurous-theme-options.php:94
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:148
+#: ../inc/panel/adventurous-theme-options-defaults.php:149
 msgid "Light (Blue)"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:149
+#: ../inc/panel/adventurous-theme-options-defaults.php:150
 msgid "Dark"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:150
+#: ../inc/panel/adventurous-theme-options-defaults.php:151
 msgid "Light (Black)"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:164
-#: ../inc/panel/adventurous-theme-options.php:809
+#: ../inc/panel/adventurous-theme-options-defaults.php:165
+#: ../inc/panel/adventurous-theme-options.php:827
 msgid "3 Columns"
 msgstr "3 Spalten"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:165
-#: ../inc/panel/adventurous-theme-options.php:814
+#: ../inc/panel/adventurous-theme-options-defaults.php:166
+#: ../inc/panel/adventurous-theme-options.php:832
 msgid "4 Columns"
 msgstr "4 Spalten"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:179
-#: ../inc/panel/adventurous-theme-options-defaults.php:247
-#: ../inc/panel/adventurous-theme-options-defaults.php:294
+#: ../inc/panel/adventurous-theme-options-defaults.php:180
+#: ../inc/panel/adventurous-theme-options-defaults.php:248
+#: ../inc/panel/adventurous-theme-options-defaults.php:295
 #: ../inc/panel/adventurous-theme-options.php:322
 #: ../inc/panel/adventurous-theme-options.php:480
-#: ../inc/panel/adventurous-theme-options.php:764
-#: ../inc/panel/adventurous-theme-options.php:920
+#: ../inc/panel/adventurous-theme-options.php:782
+#: ../inc/panel/adventurous-theme-options.php:938
 msgid "Homepage"
 msgstr "Startseite"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:180
+#: ../inc/panel/adventurous-theme-options-defaults.php:181
 #: ../inc/panel/adventurous-theme-options.php:327
 msgid "Excluding Homepage"
 msgstr "außer auf der Startseite"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:181
-#: ../inc/panel/adventurous-theme-options-defaults.php:248
-#: ../inc/panel/adventurous-theme-options-defaults.php:295
+#: ../inc/panel/adventurous-theme-options-defaults.php:182
+#: ../inc/panel/adventurous-theme-options-defaults.php:249
+#: ../inc/panel/adventurous-theme-options-defaults.php:296
 #: ../inc/panel/adventurous-theme-options.php:332
 #: ../inc/panel/adventurous-theme-options.php:485
-#: ../inc/panel/adventurous-theme-options.php:768
-#: ../inc/panel/adventurous-theme-options.php:924
+#: ../inc/panel/adventurous-theme-options.php:786
+#: ../inc/panel/adventurous-theme-options.php:942
 msgid "Entire Site"
 msgstr "gesamte Site"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:182
+#: ../inc/panel/adventurous-theme-options-defaults.php:183
 #: ../inc/panel/adventurous-theme-options.php:337
 msgid "Entire Site, Page/Post Featured Image"
 msgstr "Gesamte Seite, mit Seiten/Beitrag-Themenbild"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:183
+#: ../inc/panel/adventurous-theme-options-defaults.php:184
 #: ../inc/panel/adventurous-theme-options.php:342
 msgid "Pages & Posts"
 msgstr "Seiten & Beiträge"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:231
+#: ../inc/panel/adventurous-theme-options-defaults.php:232
 #: ../inc/panel/adventurous-theme-options.php:628
 msgid "Right Sidebar"
 msgstr "Seitenleiste rechts"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:232
+#: ../inc/panel/adventurous-theme-options-defaults.php:233
 #: ../inc/panel/adventurous-theme-options.php:633
 msgid "Left Sidebar"
 msgstr "Seitenleiste links"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:233
+#: ../inc/panel/adventurous-theme-options-defaults.php:234
 #: ../inc/panel/adventurous-theme-options.php:638
 msgid "No Sidebar"
 msgstr "Keine Seitenleiste"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:263
+#: ../inc/panel/adventurous-theme-options-defaults.php:264
 #: ../inc/panel/adventurous-theme-options.php:648
-#: ../inc/panel/customizer/customizer.php:441
+#: ../inc/panel/customizer/customizer.php:447
 msgid "Full Content Display"
 msgstr "Gesamten Inhalt anzeigen"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:264
+#: ../inc/panel/adventurous-theme-options-defaults.php:265
 #: ../inc/panel/adventurous-theme-options.php:652
 msgid "Excerpt/Blog Display"
 msgstr "Auszugsanzeige (Excerpt)"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:278
-#: ../inc/panel/adventurous-theme-options.php:899
+#: ../inc/panel/adventurous-theme-options-defaults.php:279
+#: ../inc/panel/adventurous-theme-options.php:917
 msgid "Demo Slider"
 msgstr "Slider-Demo"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:279
-#: ../inc/panel/adventurous-theme-options.php:903
+#: ../inc/panel/adventurous-theme-options-defaults.php:280
+#: ../inc/panel/adventurous-theme-options.php:921
 msgid "Post Slider"
 msgstr "Beitrags-Slider"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:280
-#: ../inc/panel/adventurous-theme-options.php:908
+#: ../inc/panel/adventurous-theme-options-defaults.php:281
+#: ../inc/panel/adventurous-theme-options.php:926
 msgid "Category Slider"
 msgstr "Kategorien-Slider"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:310
-#: ../inc/panel/adventurous-theme-options.php:955
+#: ../inc/panel/adventurous-theme-options-defaults.php:311
+#: ../inc/panel/adventurous-theme-options.php:973
 msgid "fade"
 msgstr "Überblenden"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:311
-#: ../inc/panel/adventurous-theme-options.php:956
+#: ../inc/panel/adventurous-theme-options-defaults.php:312
+#: ../inc/panel/adventurous-theme-options.php:974
 msgid "wipe"
 msgstr "Auswischen"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:312
-#: ../inc/panel/adventurous-theme-options-defaults.php:314
-#: ../inc/panel/adventurous-theme-options.php:957
+#: ../inc/panel/adventurous-theme-options-defaults.php:313
+#: ../inc/panel/adventurous-theme-options-defaults.php:315
+#: ../inc/panel/adventurous-theme-options.php:975
 msgid "scrollUp"
 msgstr "Nach oben scrollen"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:313
-#: ../inc/panel/adventurous-theme-options.php:958
+#: ../inc/panel/adventurous-theme-options-defaults.php:314
+#: ../inc/panel/adventurous-theme-options.php:976
 msgid "scrollDown"
 msgstr "Nach unten scrollen"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:315
-#: ../inc/panel/adventurous-theme-options.php:959
+#: ../inc/panel/adventurous-theme-options-defaults.php:316
+#: ../inc/panel/adventurous-theme-options.php:977
 msgid "scrollLeft"
 msgstr "Nach links scrollen"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:316
-#: ../inc/panel/adventurous-theme-options.php:960
+#: ../inc/panel/adventurous-theme-options-defaults.php:317
+#: ../inc/panel/adventurous-theme-options.php:978
 msgid "scrollRight"
 msgstr "Nach rechts scrollen"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:317
-#: ../inc/panel/adventurous-theme-options.php:961
+#: ../inc/panel/adventurous-theme-options-defaults.php:318
+#: ../inc/panel/adventurous-theme-options.php:979
 msgid "blindX"
 msgstr "blinderen X"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:318
-#: ../inc/panel/adventurous-theme-options.php:962
+#: ../inc/panel/adventurous-theme-options-defaults.php:319
+#: ../inc/panel/adventurous-theme-options.php:980
 msgid "blindY"
 msgstr "blinderen Y"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:319
-#: ../inc/panel/adventurous-theme-options.php:963
+#: ../inc/panel/adventurous-theme-options-defaults.php:320
+#: ../inc/panel/adventurous-theme-options.php:981
 msgid "blindZ"
 msgstr "blinderen Z"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:320
-#: ../inc/panel/adventurous-theme-options.php:964
+#: ../inc/panel/adventurous-theme-options-defaults.php:321
+#: ../inc/panel/adventurous-theme-options.php:982
 msgid "cover"
 msgstr "bedecken"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:321
-#: ../inc/panel/adventurous-theme-options.php:965
+#: ../inc/panel/adventurous-theme-options-defaults.php:322
+#: ../inc/panel/adventurous-theme-options.php:983
 msgid "shuffle"
 msgstr "zufällig"
 
@@ -1062,19 +1062,19 @@ msgid ""
 msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:126
-#: ../inc/panel/customizer/customizer.php:91
-#: ../inc/panel/customizer/customizer.php:92
+#: ../inc/panel/customizer/customizer.php:96
+#: ../inc/panel/customizer/customizer.php:97
 msgid "Featured Content"
 msgstr "Inhaltsexposees"
 
 #: ../inc/panel/adventurous-theme-options.php:127
-#: ../inc/panel/customizer/customizer.php:104
-#: ../inc/panel/customizer/customizer.php:105
+#: ../inc/panel/customizer/customizer.php:109
+#: ../inc/panel/customizer/customizer.php:110
 msgid "Featured Slider"
 msgstr "Slider-Exposees"
 
 #: ../inc/panel/adventurous-theme-options.php:128
-#: ../inc/panel/customizer/customizer.php:117
+#: ../inc/panel/customizer/customizer.php:122
 msgid "Social Links"
 msgstr "Verweise auf Soziale Medien"
 
@@ -1093,7 +1093,8 @@ msgstr "Favicon deaktivieren?"
 #: ../inc/panel/adventurous-theme-options.php:544
 #: ../inc/panel/adventurous-theme-options.php:553
 #: ../inc/panel/adventurous-theme-options.php:562
-#: ../inc/panel/adventurous-theme-options.php:938
+#: ../inc/panel/adventurous-theme-options.php:758
+#: ../inc/panel/adventurous-theme-options.php:956
 msgid "Check to disable"
 msgstr "Markieren zum deaktivieren"
 
@@ -1128,12 +1129,13 @@ msgstr "Vorschau"
 #: ../inc/panel/adventurous-theme-options.php:684
 #: ../inc/panel/adventurous-theme-options.php:719
 #: ../inc/panel/adventurous-theme-options.php:744
-#: ../inc/panel/adventurous-theme-options.php:820
-#: ../inc/panel/adventurous-theme-options.php:880
-#: ../inc/panel/adventurous-theme-options.php:988
-#: ../inc/panel/adventurous-theme-options.php:1023
-#: ../inc/panel/adventurous-theme-options.php:1056
-#: ../inc/panel/adventurous-theme-options.php:1310
+#: ../inc/panel/adventurous-theme-options.php:762
+#: ../inc/panel/adventurous-theme-options.php:838
+#: ../inc/panel/adventurous-theme-options.php:898
+#: ../inc/panel/adventurous-theme-options.php:1006
+#: ../inc/panel/adventurous-theme-options.php:1041
+#: ../inc/panel/adventurous-theme-options.php:1074
+#: ../inc/panel/adventurous-theme-options.php:1328
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
@@ -1227,12 +1229,12 @@ msgid "Check to Disable"
 msgstr "Markieren, um zu deaktivieren"
 
 #: ../inc/panel/adventurous-theme-options.php:317
-#: ../inc/panel/customizer/customizer.php:167
+#: ../inc/panel/customizer/customizer.php:172
 msgid "Enable Featured Header Image"
 msgstr "Kopfthemenbild aktivieren"
 
 #: ../inc/panel/adventurous-theme-options.php:353
-#: ../inc/panel/customizer/customizer.php:177
+#: ../inc/panel/customizer/customizer.php:182
 msgid "Page/Post Featured Image Size"
 msgstr "Seiten/Beitrag-Themenbildgröße"
 
@@ -1261,24 +1263,24 @@ msgid "There is no Header Image"
 msgstr "Es gibt kein Header-Themenbild"
 
 #: ../inc/panel/adventurous-theme-options.php:400
-#: ../inc/panel/customizer/customizer.php:187
+#: ../inc/panel/customizer/customizer.php:192
 msgid "Featured Header Image Alt/Title Tag"
 msgstr "Header-Themenbild: Alternativer Titel"
 
 #: ../inc/panel/adventurous-theme-options.php:408
-#: ../inc/panel/customizer/customizer.php:196
+#: ../inc/panel/customizer/customizer.php:201
 msgid "Featured Header Image Link URL"
 msgstr "Header-Themenbild: URL-Verweis"
 
 #: ../inc/panel/adventurous-theme-options.php:416
-#: ../inc/panel/adventurous-theme-options.php:853
-#: ../inc/panel/customizer/customizer.php:1217
+#: ../inc/panel/adventurous-theme-options.php:871
+#: ../inc/panel/customizer/customizer.php:1237
 msgid "Target. Open Link in New Window?"
 msgstr "Verweisziel; Verweis in einem neuen Fenster öffnen?"
 
 #: ../inc/panel/adventurous-theme-options.php:420
 #: ../inc/panel/adventurous-theme-options.php:535
-#: ../inc/panel/adventurous-theme-options.php:857
+#: ../inc/panel/adventurous-theme-options.php:875
 msgid "Check to open in new window"
 msgstr "Markieren, um den Inhalt in einem neuen Fenster anzuzeigen"
 
@@ -1293,7 +1295,7 @@ msgid "Check to reset"
 msgstr "Markieren zum zurücksetzen."
 
 #: ../inc/panel/adventurous-theme-options.php:444
-#: ../inc/panel/customizer/customizer.php:417
+#: ../inc/panel/customizer/customizer.php:423
 msgid "Content Featured Image Size"
 msgstr "Größe des Inhalt-Themenbildes"
 
@@ -1303,12 +1305,12 @@ msgid "Promotion Headline Options"
 msgstr "Optionen für die Themen-Kopfzeile"
 
 #: ../inc/panel/adventurous-theme-options.php:475
-#: ../inc/panel/customizer/customizer.php:302
+#: ../inc/panel/customizer/customizer.php:308
 msgid "Enable Promotion"
 msgstr "Themen-Zeile aktivieren"
 
 #: ../inc/panel/adventurous-theme-options.php:496
-#: ../inc/panel/customizer/customizer.php:313
+#: ../inc/panel/customizer/customizer.php:319
 msgid "Headline Text"
 msgstr "Kopfzeilen-Text"
 
@@ -1317,7 +1319,7 @@ msgid "The appropriate length for Headine is around 10 words."
 msgstr "Die geeignete Länge der Kopfzeile liegt bei 10 Wörtern."
 
 #: ../inc/panel/adventurous-theme-options.php:505
-#: ../inc/panel/customizer/customizer.php:323
+#: ../inc/panel/customizer/customizer.php:329
 msgid "Subheadline Text"
 msgstr "Text für die untere Kopfzeile"
 
@@ -1334,7 +1336,7 @@ msgid "The appropriate length for Headine is around 3 words."
 msgstr "Die geeignete Länge des Schaltflächen-Textes liegt bei 3 Wörtern."
 
 #: ../inc/panel/adventurous-theme-options.php:523
-#: ../inc/panel/customizer/customizer.php:343
+#: ../inc/panel/customizer/customizer.php:349
 msgid "Button Link"
 msgstr "Verweisziel der Schaltfläche"
 
@@ -1373,7 +1375,7 @@ msgstr ""
 "Beiträge anzuzeigen"
 
 #: ../inc/panel/adventurous-theme-options.php:593
-#: ../inc/panel/customizer/customizer.php:405
+#: ../inc/panel/customizer/customizer.php:411
 msgid "Homepage posts categories:"
 msgstr "Kategorien für die Beiträge der Startseite:"
 
@@ -1384,12 +1386,12 @@ msgid ""
 msgstr "Es werden nur Beiträge angezeigt, die diesen Kategorien entsprechen"
 
 #: ../inc/panel/adventurous-theme-options.php:598
-#: ../inc/panel/adventurous-theme-options.php:1038
+#: ../inc/panel/adventurous-theme-options.php:1056
 msgid "--Disabled--"
 msgstr "--Deaktiviert--"
 
 #: ../inc/panel/adventurous-theme-options.php:609
-#: ../inc/panel/adventurous-theme-options.php:1049
+#: ../inc/panel/adventurous-theme-options.php:1067
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr ""
 "Durch gedrückthalten der STRG-Taste können mehrere Kategoren ausgewählt "
@@ -1401,7 +1403,7 @@ msgid "Layout Options"
 msgstr "Layout-Optionen"
 
 #: ../inc/panel/adventurous-theme-options.php:623
-#: ../inc/panel/customizer/customizer.php:430
+#: ../inc/panel/customizer/customizer.php:436
 msgid "Sidebar Layout Options"
 msgstr "Layout-Optionen für die Seitenleiste"
 
@@ -1419,7 +1421,7 @@ msgid "Search Text Settings"
 msgstr "Suchtext-Einstellungen"
 
 #: ../inc/panel/adventurous-theme-options.php:677
-#: ../inc/panel/customizer/customizer.php:464
+#: ../inc/panel/customizer/customizer.php:470
 msgid "Default Display Text in Search"
 msgstr "Voreingestellter Anzeigetext im Feld \"Suche\""
 
@@ -1429,12 +1431,12 @@ msgid "Excerpt / More Tag Settings"
 msgstr "Einstellungen für den Hinweis auf Auszug / weiteren Text"
 
 #: ../inc/panel/adventurous-theme-options.php:694
-#: ../inc/panel/customizer/customizer.php:476
+#: ../inc/panel/customizer/customizer.php:482
 msgid "More Tag Text"
 msgstr "\"Weiterer Text\"-Hinweis"
 
 #: ../inc/panel/adventurous-theme-options.php:702
-#: ../inc/panel/customizer/customizer.php:486
+#: ../inc/panel/customizer/customizer.php:492
 msgid "Excerpt length(words)"
 msgstr "Auszugslänge (Anzahl Worte)"
 
@@ -1443,7 +1445,7 @@ msgid "Reset Excerpt?"
 msgstr "Auszugseinstellungen zurücksetzen?"
 
 #: ../inc/panel/adventurous-theme-options.php:725
-#: ../inc/panel/customizer/customizer.php:83
+#: ../inc/panel/customizer/customizer.php:88
 msgid "Custom CSS"
 msgstr "Benutzerdefiniertes CSS"
 
@@ -1467,172 +1469,183 @@ msgstr "CSS-Tutorial"
 msgid "Click Here to Read"
 msgstr "Hier klicken, um zu lesen"
 
-#: ../inc/panel/adventurous-theme-options.php:755
+#: ../inc/panel/adventurous-theme-options.php:750
+#: ../inc/panel/customizer/customizer.php:83
+#, fuzzy
+msgid "Scroll Up"
+msgstr "Nach oben scrollen"
+
+#: ../inc/panel/adventurous-theme-options.php:754
+#, fuzzy
+msgid "Disable Scroll Up?"
+msgstr "Favicon deaktivieren?"
+
+#: ../inc/panel/adventurous-theme-options.php:773
 msgid "Featured Settings"
 msgstr "Einstellungen zur Inhaltsexposition"
 
-#: ../inc/panel/adventurous-theme-options.php:759
-#: ../inc/panel/customizer/customizer.php:526
+#: ../inc/panel/adventurous-theme-options.php:777
+#: ../inc/panel/customizer/customizer.php:544
 msgid "Enable Featured Content"
 msgstr "Inhaltsexposition aktivieren"
 
-#: ../inc/panel/adventurous-theme-options.php:778
-#: ../inc/panel/customizer/customizer.php:537
+#: ../inc/panel/adventurous-theme-options.php:796
+#: ../inc/panel/customizer/customizer.php:555
 msgid "Featured Content Headline Text"
 msgstr "Titelzeile der Inhaltsexposees "
 
-#: ../inc/panel/adventurous-theme-options.php:779
+#: ../inc/panel/adventurous-theme-options.php:797
 msgid "Leave empty if you want to remove headline."
 msgstr "Leer lassen, um die Themenzeile zu entfernen"
 
-#: ../inc/panel/adventurous-theme-options.php:787
+#: ../inc/panel/adventurous-theme-options.php:805
 msgid "Featured Content Subheadline Text"
 msgstr "Beschreibung der Inhaltsexposees"
 
-#: ../inc/panel/adventurous-theme-options.php:788
-#: ../inc/panel/customizer/customizer.php:548
+#: ../inc/panel/adventurous-theme-options.php:806
+#: ../inc/panel/customizer/customizer.php:566
 msgid "Leave empty if you want to remove Subheadline"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:796
-#: ../inc/panel/customizer/customizer.php:558
+#: ../inc/panel/adventurous-theme-options.php:814
+#: ../inc/panel/customizer/customizer.php:576
 msgid "Number of Featured Content"
 msgstr "Anzahl Inhaltsexposees"
 
-#: ../inc/panel/adventurous-theme-options.php:804
-#: ../inc/panel/customizer/customizer.php:574
+#: ../inc/panel/adventurous-theme-options.php:822
+#: ../inc/panel/customizer/customizer.php:592
 msgid "Featured Content Layout"
 msgstr "Layout der Exposees"
 
-#: ../inc/panel/adventurous-theme-options.php:827
+#: ../inc/panel/adventurous-theme-options.php:845
 msgid "Featured Content Options"
 msgstr "Optionen der Inhaltsexposees"
 
-#: ../inc/panel/adventurous-theme-options.php:833
-#: ../inc/panel/customizer/customizer.php:1156
+#: ../inc/panel/adventurous-theme-options.php:851
+#: ../inc/panel/customizer/customizer.php:1176
 #, php-format
 msgid "Featured Content #%s"
 msgstr "Inhaltsexposition #%s"
 
-#: ../inc/panel/adventurous-theme-options.php:840
+#: ../inc/panel/adventurous-theme-options.php:858
 msgid "Insert Image"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:840
+#: ../inc/panel/adventurous-theme-options.php:858
 msgid "Change Image"
 msgstr "Bild ändern"
 
-#: ../inc/panel/adventurous-theme-options.php:845
-#: ../inc/panel/customizer/customizer.php:1197
+#: ../inc/panel/adventurous-theme-options.php:863
+#: ../inc/panel/customizer/customizer.php:1217
 msgid "Link URL"
 msgstr "URL des Verweises"
 
-#: ../inc/panel/adventurous-theme-options.php:848
+#: ../inc/panel/adventurous-theme-options.php:866
 msgid "Add in the Target URL for the content"
 msgstr "Den URL-Verweis zu diesem Inhalt hinzufügen"
 
-#: ../inc/panel/adventurous-theme-options.php:862
-#: ../inc/panel/customizer/customizer.php:1237
+#: ../inc/panel/adventurous-theme-options.php:880
+#: ../inc/panel/customizer/customizer.php:1257
 msgid "Title"
 msgstr "Titel"
 
-#: ../inc/panel/adventurous-theme-options.php:865
-#: ../inc/panel/customizer/customizer.php:1240
+#: ../inc/panel/adventurous-theme-options.php:883
+#: ../inc/panel/customizer/customizer.php:1260
 msgid "Leave empty if you want to remove title"
 msgstr "Leer lassen, um den Titel nicht anzuzeigen"
 
-#: ../inc/panel/adventurous-theme-options.php:870
-#: ../inc/panel/customizer/customizer.php:1258
+#: ../inc/panel/adventurous-theme-options.php:888
+#: ../inc/panel/customizer/customizer.php:1278
 msgid "Content"
 msgstr "Inhalt des Exposees"
 
-#: ../inc/panel/adventurous-theme-options.php:871
+#: ../inc/panel/adventurous-theme-options.php:889
 msgid "The appropriate length for Content is around 10 words."
 msgstr "Die geeignete Länge des Exposees liegt bei 10 Wörtern."
 
-#: ../inc/panel/adventurous-theme-options.php:890
-#: ../inc/panel/customizer/customizer.php:109
+#: ../inc/panel/adventurous-theme-options.php:908
+#: ../inc/panel/customizer/customizer.php:114
 msgid "Slider Options"
 msgstr "Slider-Optionen"
 
-#: ../inc/panel/adventurous-theme-options.php:894
-#: ../inc/panel/customizer/customizer.php:644
+#: ../inc/panel/adventurous-theme-options.php:912
+#: ../inc/panel/customizer/customizer.php:662
 msgid "Select Slider Type"
 msgstr "Slidertyp wählen"
 
-#: ../inc/panel/adventurous-theme-options.php:915
-#: ../inc/panel/customizer/customizer.php:587
+#: ../inc/panel/adventurous-theme-options.php:933
+#: ../inc/panel/customizer/customizer.php:605
 msgid "Enable Slider"
 msgstr "Slider aktivieren"
 
-#: ../inc/panel/adventurous-theme-options.php:934
+#: ../inc/panel/adventurous-theme-options.php:952
 msgid "Disable Text in Slider?"
 msgstr "Text in Slider deaktivieren?"
 
-#: ../inc/panel/adventurous-theme-options.php:943
-#: ../inc/panel/customizer/customizer.php:656
+#: ../inc/panel/adventurous-theme-options.php:961
+#: ../inc/panel/customizer/customizer.php:674
 msgid "Number of Slides"
 msgstr "Anzahl Bilder"
 
-#: ../inc/panel/adventurous-theme-options.php:951
+#: ../inc/panel/adventurous-theme-options.php:969
 msgid "Transition Effect:"
 msgstr "Übergangseffekt:"
 
-#: ../inc/panel/adventurous-theme-options.php:971
-#: ../inc/panel/customizer/customizer.php:610
+#: ../inc/panel/adventurous-theme-options.php:989
+#: ../inc/panel/customizer/customizer.php:628
 msgid "Transition Delay"
 msgstr "Übergangsverzögerung"
 
-#: ../inc/panel/adventurous-theme-options.php:975
-#: ../inc/panel/adventurous-theme-options.php:984
+#: ../inc/panel/adventurous-theme-options.php:993
+#: ../inc/panel/adventurous-theme-options.php:1002
 msgid "second(s)"
 msgstr "Sekunde(n)"
 
-#: ../inc/panel/adventurous-theme-options.php:980
-#: ../inc/panel/customizer/customizer.php:627
+#: ../inc/panel/adventurous-theme-options.php:998
+#: ../inc/panel/customizer/customizer.php:645
 msgid "Transition Length"
 msgstr "Übergangsdauer"
 
-#: ../inc/panel/adventurous-theme-options.php:995
+#: ../inc/panel/adventurous-theme-options.php:1013
 msgid "Featured Post Slider Options"
 msgstr "Optionen für den Slider hervorgehobener Beiträge"
 
-#: ../inc/panel/adventurous-theme-options.php:999
+#: ../inc/panel/adventurous-theme-options.php:1017
 msgid "Exclude Slider post from Homepage posts?"
 msgstr "Den Slider von der Startseite ausschließen?"
 
-#: ../inc/panel/adventurous-theme-options.php:1003
+#: ../inc/panel/adventurous-theme-options.php:1021
 msgid "Check to exclude"
 msgstr "Markieren, um auszuschließen"
 
-#: ../inc/panel/adventurous-theme-options.php:1010
-#: ../inc/panel/customizer/customizer.php:1282
+#: ../inc/panel/adventurous-theme-options.php:1028
+#: ../inc/panel/customizer/customizer.php:1302
 #, php-format
 msgid "Featured Post Slider #%s"
 msgstr "Inhaltsexpositionsslider #%s"
 
-#: ../inc/panel/adventurous-theme-options.php:1014
+#: ../inc/panel/adventurous-theme-options.php:1032
 msgid "Click Here To Edit"
 msgstr "Zum bearbeiten hier klicken"
 
-#: ../inc/panel/adventurous-theme-options.php:1020
+#: ../inc/panel/adventurous-theme-options.php:1038
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Hinweis: Hier die ID jener Beiträge angeben, die auf der Startseite im "
 "Slider erscheinen sollen."
 
-#: ../inc/panel/adventurous-theme-options.php:1029
+#: ../inc/panel/adventurous-theme-options.php:1047
 msgid "Featured Category Slider Options"
 msgstr "Optionen für den Slider hervorgehobener Kategorien"
 
-#: ../inc/panel/adventurous-theme-options.php:1033
-#: ../inc/panel/customizer/customizer.php:688
+#: ../inc/panel/adventurous-theme-options.php:1051
+#: ../inc/panel/customizer/customizer.php:706
 msgid "Select Slider Categories"
 msgstr "Kategorien für den Slider auswählen"
 
-#: ../inc/panel/adventurous-theme-options.php:1034
-#: ../inc/panel/customizer/customizer.php:689
+#: ../inc/panel/adventurous-theme-options.php:1052
+#: ../inc/panel/customizer/customizer.php:707
 msgid ""
 "Use this only is you want to display posts from Specific Categories in "
 "Featured Slider"
@@ -1640,7 +1653,7 @@ msgstr ""
 "Nur verwenden, wenn Beiträge bestimmter Kategorien im Exposee-Slider "
 "angezeigt werden sollen"
 
-#: ../inc/panel/adventurous-theme-options.php:1053
+#: ../inc/panel/adventurous-theme-options.php:1071
 msgid ""
 "Note: Here you can select the categories from which latest posts will "
 "display on Featured Slider."
@@ -1648,36 +1661,36 @@ msgstr ""
 "Hinweis: Hier können die Kategorien ausgewählt werden, deren zugeordnete "
 "neueste Beiträge im Exposee-Slider angezeigt werden."
 
-#: ../inc/panel/adventurous-theme-options.php:1067
+#: ../inc/panel/adventurous-theme-options.php:1085
 msgid "Predefine Social Icons"
 msgstr "Social-Media-Icons vordefinition"
 
-#: ../inc/panel/adventurous-theme-options.php:1103
-#: ../inc/panel/customizer/customizer.php:741
+#: ../inc/panel/adventurous-theme-options.php:1121
+#: ../inc/panel/customizer/customizer.php:759
 msgid "Youtube"
 msgstr "YouTube"
 
-#: ../inc/panel/adventurous-theme-options.php:1119
+#: ../inc/panel/adventurous-theme-options.php:1137
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/panel/adventurous-theme-options.php:1127
-#: ../inc/panel/customizer/customizer.php:771
+#: ../inc/panel/adventurous-theme-options.php:1145
+#: ../inc/panel/customizer/customizer.php:789
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/panel/adventurous-theme-options.php:1135
-#: ../inc/panel/customizer/customizer.php:781
+#: ../inc/panel/adventurous-theme-options.php:1153
+#: ../inc/panel/customizer/customizer.php:799
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../inc/panel/adventurous-theme-options.php:1255
-#: ../inc/panel/customizer/customizer.php:931
+#: ../inc/panel/adventurous-theme-options.php:1273
+#: ../inc/panel/customizer/customizer.php:949
 msgid "Goodreads"
 msgstr "Goodreads"
 
-#: ../inc/panel/adventurous-theme-options.php:1271
-#: ../inc/panel/customizer/customizer.php:951
+#: ../inc/panel/adventurous-theme-options.php:1289
+#: ../inc/panel/customizer/customizer.php:969
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
@@ -1717,162 +1730,167 @@ msgstr ""
 msgid "Homepage/Frontpage Settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:96
+#: ../inc/panel/customizer/customizer.php:101
 msgid "Featured Content Settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:118
+#: ../inc/panel/customizer/customizer.php:123
 msgid "Add your social links here"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:122
+#: ../inc/panel/customizer/customizer.php:127
 msgid "Predefined Social Icons"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:205
+#: ../inc/panel/customizer/customizer.php:210
 msgid "Check to Open Link in New Tab/Window"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:214
+#: ../inc/panel/customizer/customizer.php:219
 msgid "Check to Reset Header Featured Image Options"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:215
-#: ../inc/panel/customizer/customizer.php:453
-#: ../inc/panel/customizer/customizer.php:503
-#: ../inc/panel/customizer/customizer.php:676
+#: ../inc/panel/customizer/customizer.php:220
+#: ../inc/panel/customizer/customizer.php:459
+#: ../inc/panel/customizer/customizer.php:509
+#: ../inc/panel/customizer/customizer.php:694
 msgid "Please refresh the customizer after saving if reset option is used"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:225
+#: ../inc/panel/customizer/customizer.php:231
 msgid "Check to Disable Favicon"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:235
+#: ../inc/panel/customizer/customizer.php:241
 msgid "Fav Icon"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:247
+#: ../inc/panel/customizer/customizer.php:253
 msgid "Check to Disable Web Clip Icon"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:257
+#: ../inc/panel/customizer/customizer.php:263
 msgid "Web Clip Icon"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:269
+#: ../inc/panel/customizer/customizer.php:275
 msgid "Check to Disable Logo"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:279
+#: ../inc/panel/customizer/customizer.php:285
 msgid "Logo"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:289
+#: ../inc/panel/customizer/customizer.php:295
 msgid "Check to Disable Header Right Sidebar"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:314
-#: ../inc/panel/customizer/customizer.php:1261
+#: ../inc/panel/customizer/customizer.php:320
+#: ../inc/panel/customizer/customizer.php:1281
 msgid "Appropriate Words: 10"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:324
+#: ../inc/panel/customizer/customizer.php:330
 msgid "Appropriate Words: 15"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:333
+#: ../inc/panel/customizer/customizer.php:339
 msgid "Button Text "
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:334
+#: ../inc/panel/customizer/customizer.php:340
 msgid "Appropriate Words: 3"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:344
+#: ../inc/panel/customizer/customizer.php:350
 msgid "Add link for your homepage headline button"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:353
+#: ../inc/panel/customizer/customizer.php:359
 msgid "Check to Open Link in New Window/Tab? "
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:363
+#: ../inc/panel/customizer/customizer.php:369
 msgid "Check to Disable Homepage Headline"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:373
+#: ../inc/panel/customizer/customizer.php:379
 msgid "Check to Disable Homepage Subheadline"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:383
+#: ../inc/panel/customizer/customizer.php:389
 msgid "Check to Disable Homepage Button"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:395
+#: ../inc/panel/customizer/customizer.php:401
 msgid "Check to Disable Latest Posts"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:406
+#: ../inc/panel/customizer/customizer.php:412
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:452
+#: ../inc/panel/customizer/customizer.php:458
 msgid "Check to Reset Layout"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:502
+#: ../inc/panel/customizer/customizer.php:508
 msgid "Check to Reset Excerpt"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:514
+#: ../inc/panel/customizer/customizer.php:520
+#, fuzzy
+msgid "Check to disable scroll up"
+msgstr "Markieren zum deaktivieren"
+
+#: ../inc/panel/customizer/customizer.php:532
 msgid "Enter your custom CSS styles"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:538
+#: ../inc/panel/customizer/customizer.php:556
 msgid "Leave empty if you want to remove headline"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:547
+#: ../inc/panel/customizer/customizer.php:565
 msgid "Featured Content Subheadline Text "
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:598
+#: ../inc/panel/customizer/customizer.php:616
 msgid "Transition Effect"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:657
+#: ../inc/panel/customizer/customizer.php:675
 msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:675
+#: ../inc/panel/customizer/customizer.php:693
 msgid "Check to Exclude Slider posts from Homepage posts"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1297
+#: ../inc/panel/customizer/customizer.php:1317
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1299
+#: ../inc/panel/customizer/customizer.php:1319
 msgid "Reset all settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1309
+#: ../inc/panel/customizer/customizer.php:1329
 msgid "Check to reset all settings to default"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1319
-#: ../inc/panel/customizer/customizer.php:1330
+#: ../inc/panel/customizer/customizer.php:1339
+#: ../inc/panel/customizer/customizer.php:1350
 msgid "Important Links"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1368
+#: ../inc/panel/customizer/customizer.php:1388
 msgid "Upgrade To Pro &raquo;"
 msgstr ""
 

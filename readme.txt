@@ -5,7 +5,7 @@ Adventurous Theme by Catch Themes, http://catchthemes.com/
 
 == About Adventurous ==
 
-Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese, Hungarian, Dutch, German and Danish languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/adventurous/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/adventurous/ 
+Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese, Hungarian, Dutch, German, Polish, Danish and Czech languages. Supports popular plugins like WP-PageNavi, Jetpack, Contact Form 7, Catch Web Tools and more. Check out Theme Instructions at http://catchthemes.com/theme-instructions/adventurous/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/
 
 
 == Tags ==
@@ -18,10 +18,11 @@ black, blue, gray, green, white, dark,light, one-column, two-columns, left-sideb
 Adventurous theme is translation ready. 
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@hotmail.com )
 Added Translation for Hungarian by Dinnye ( Email: pdinnye@gmail.com )
-Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com) and Yoshi van den Akker ( Email: yoshivda@gmail.com )
+Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com ) and Yoshi van den Akker ( Email: yoshivda@gmail.com )
 Added Translation for German by Volker Homann ( Email: adventurous@volkerhomann.de )
-Added Translation for Polish by Piotrek Jas (fansitejustgames@gmail.com)
+Added Translation for Polish by Piotrek Jas (Email: fansitejustgames@gmail.com )
 Added Translation for Danish by Alexander Leo-Hansen ( Email: alexanderleoh@gmail.com )
+Added Translation for Czech by Dan Frolec (Email: dan@frolec.cz)
 
 
 == License ==
@@ -84,12 +85,12 @@ This is added to help the users to use those ids in the Featured Page Slider Opt
 
 == Theme Instruction ==
 
-Check out the theme instruction at http://catchthemes.com/theme-instructions/adventurous/
+Check out the theme instruction at https://catchthemes.com/theme-instructions/adventurous/
 
 
 == Free Support Forum ==
 
-Access to free support forum at http://catchthemes.com/support-forum/forum/adventurous-public/
+Access to free support forum at https://catchthemes.com/support-forum/forum/adventurous-public/
 
 
 == Installation ==
@@ -101,4 +102,4 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/adven
 
 
 == Changelog ==
-Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/adventurous-theme/
+Please refer to changelog.txt file or change log page at https://catchthemes.com/changelogs/adventurous-theme/
