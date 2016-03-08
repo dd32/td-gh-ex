@@ -148,7 +148,8 @@ function digital_theme_setup() {
 		register_nav_menus(
 			array(
  				'primary' => __('Top Navigation', 'digital'),
-				'digital-navigation' => __('Navigation', 'digital'),
+				'digital-navigation' => __('Navigation', 'digital'),				
+ 				'Footer-menu' => __('Footer Menu', 'digital'),
 				)		
 				);
 		

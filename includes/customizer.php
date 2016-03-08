@@ -16,7 +16,34 @@ function digital_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
         
       $wp_customize->remove_section("background_image");
-                        
+         $wp_customize->add_section( 'digital_responsive' , 
+        array(
+				'title'       => __( 'Theme Options & Settings', 'digital' ),
+				'priority'    => 30,
+				'description'	=> __('Upload Logo and Change Theme Settings Please Go to Theme options.', 'digital'). '<a href="' . esc_url(__(admin_url( 'admin.php?page=options-framework' ).'','digital')) . '" target="_blank">' . esc_attr__( ' Change Theme Options', 'digital' ) . '</a>'
+					
+		));
+		
+         //Show or Hide woo product
+         $wp_customize->add_setting('reponsive',
+	
+		array(
+			'default'			=> 'Go To digital Options',
+			'type'				=> 'theme_mod',
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'digital_sanitize_text'
+		)
+	);
+                 $wp_customize->add_control(new WP_customize_control ($wp_customize,'reponsive',
+                         array (
+                             
+                             'settings'		=> 'reponsive',
+                             'section'		=> 'digital_responsive',
+                             'type'		=> 'text',    	 
+                            'label'		=> __( 'Dashboard > Appearance > digital options', 'digital' )
+			
+                             
+                         )  ));               
   
 }
 
