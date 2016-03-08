@@ -73,3 +73,24 @@ textarea {
 	margin-left: 0.5em;
 	margin-right: 0;
 }
+@media all and (max-width: 768px) {
+	.menu-toggle, .main-navigation.toggled .nav-menu {
+		text-align: right;
+		float: right;
+	}
+	.menu-toggle i {
+		float: left;
+	}
+	.main-navigation.toggled .nav-menu ul {
+		right: inherit;
+		left: auto;
+		padding-right: 5%;
+		padding-left: inherit;
+	}
+	.main-navigation ul ul {
+		float: right;
+	}
+	.main-navigation ul ul a {
+		text-align: right;
+	}
+}

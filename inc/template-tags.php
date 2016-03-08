@@ -18,7 +18,7 @@ function zenzero_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'zenzero' ); ?></h1>
+		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'zenzero' ); ?></h2>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -49,7 +49,7 @@ function zenzero_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'zenzero' ); ?></h1>
+		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'zenzero' ); ?></h2>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', '<i class="fa prevNext fa-lg fa-angle-left"></i> <div class="meta-nav" aria-hidden="true"><small>' . __( 'Previous Post', 'zenzero' ) . '</small> ' . '<span class="smallPart">%title</span></div><span class="screen-reader-text">' . __( 'Previous post link', 'zenzero' ) . '</span> ' );
