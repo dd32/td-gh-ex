@@ -141,8 +141,8 @@
 		width:30%;
 	}
 
-	.body_template_two #site-navigation .menu-toggle {
-		margin-top: -56px;
+	.body_template_two #site-navigation.main-navigation.menu-center .menu-toggle {
+		margin:7px 0;
 	    background: url(../images/menu.png) no-repeat center rgb(249, 130, 83);
 	}
 
@@ -169,12 +169,9 @@
 		display: none;
 	}
 
-	.body_template_two #masthead .center_menu_top .site-branding {
+	.body_template_two #masthead .center_menu_top .site-branding, 
+	.body_template_two .main-navigation.menu-right {
     	text-align: left;
-	}
-
-	.body_template_two #site-navigation.main-navigation.menu-center .menu-toggle {
-		margin:7px 0;
 	}
 
 	.body_template_two #site-navigation.main-navigation.menu-center ul li, 

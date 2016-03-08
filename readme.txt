@@ -63,6 +63,11 @@ Images
 
 == Changelog ==
 Veresion 2.46.0
+*Change Screenshot
+*Fix design issue at footer
+*Fix menu design issue
+
+Veresion 2.46.0
 *Add new home page layout with new design
 
 Version 2.45.9

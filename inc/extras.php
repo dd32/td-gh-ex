@@ -36,6 +36,9 @@ function accesspresslite_body_classes( $classes ) {
     if ($home_template == 'template_two') {
 		$classes[] = 'body_template_two';
 	}
+    if ($home_template == 'template_one') {
+		$classes[] = 'body_template_one';
+	}
 
 	return $classes;
 }

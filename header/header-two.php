@@ -62,7 +62,7 @@ $menu_align = $accesspresslite_settings['menu_alignment'];?>
     			</a>
     		</div><!-- .site-branding -->
             <?php } ?>
-				<h1 class="menu-toggle"><?php _e( 'Menu', 'accesspresslite' ); ?></h1>
+            <h1 class="menu-toggle"><?php _e( 'Menu', 'accesspresslite' ); ?></h1>
                 <div class="menu-menu-1-container_wraper">
     				<?php wp_nav_menu( array( 
     				'theme_location' => 'primary' ) ); ?>
