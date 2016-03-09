@@ -722,8 +722,8 @@ body.archive.woocommerce .product-category h3 {
 }
 
 body.archive.woocommerce .product-category h3:hover,
-body.archive.woocommerce .product-category h3:hover,
-body.archive.woocommerce .product-category h3:hover{
+body.archive.woocommerce .product-category h3:active,
+body.archive.woocommerce .product-category h3:focus {
 	color:#2980b9;
 }
 
