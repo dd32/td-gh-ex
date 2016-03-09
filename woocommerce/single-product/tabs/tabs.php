@@ -41,3 +41,5 @@ if ( ! empty( $tabs ) ) : ?>
 	</div>
 
 <?php endif;	 ?>
+
+	<div class="clear"></div>
