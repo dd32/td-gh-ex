@@ -4,22 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<?php 
-	$becorp_options=theme_default_data(); 
+	$becorp_options=becorp_theme_default_data(); 
 	$header_setting = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options ); ?>
-	<?php if($header_setting['upload_image_favicon']!=''){ ?>
-	<link rel="shortcut icon" href="<?php  echo $header_setting['upload_image_favicon']; ?>" /> 
-	<?php } ?>
-    <title><?php wp_title('',true,'right'); ?></title>
-    <meta name="description" content="HTML5 & CSS3 Multipurpose Theme" />
     <meta name="keywords" content="HTML5, CSS3, Theme, Flat, Responsive, Multipurpose, Modern" />
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
-	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>"/>
-	<?php
-	if($header_setting['becorp_custom_css']!='') {  ?>
-	<style>
-	<?php echo $header_setting['becorp_custom_css']; ?>
-	</style>
-	<?php } wp_head(); ?>
+	<?php  wp_head(); ?>
   </head>
 <body <?php body_class(); ?>>
   

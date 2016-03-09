@@ -1,5 +1,5 @@
 <?php
-$becorp_options=theme_default_data(); 
+$becorp_options=becorp_theme_default_data(); 
 $collout_options = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options ); 
 if($collout_options['home_call_out_area_enabled'] == 1 ) {  ?>
 <div class="buy-it-area">

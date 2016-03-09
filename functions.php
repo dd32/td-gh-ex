@@ -35,7 +35,7 @@ add_action( 'after_setup_theme', 'asiathemes_setup' );
 				 'admin-head-callback' => 'mytheme_admin_header_style',
 				 );
 				 
-				 add_theme_support( 'custom-header', $header_args );
+			add_theme_support( 'custom-header', $header_args );
 			// This theme uses wp_nav_menu() in one location.
 			add_theme_support('post-thumbnails');
 			// This theme uses wp_nav_menu() in one location.
@@ -46,20 +46,20 @@ add_action( 'after_setup_theme', 'asiathemes_setup' );
 			//Default Data
 			if ( ! isset( $content_width ) ) $content_width = 900;
 			require_once('theme_default_data.php');
-			$becorp_option=theme_default_data();
+			$becorp_option=becorp_theme_default_data();
 			require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/option-panel/becorp-option-setting.php' ); // for Option Panel 
 			
 }
-			/****--- Navigation for Author, Category , Tag , Archive ---***/
-				function asiathemes_navigation() { ?>
-				<div class="row">
-				<div class="blog-pagination">
-				<?php //posts_nav_link(); 
-				previous_posts_link( __('Previous','becorp') ); 
-				next_posts_link( __('Next','becorp') ); ?>
-				</div>
-				</div>
-				<?php }
+		/****--- Navigation for Author, Category , Tag , Archive ---***/
+			function asiathemes_navigation() { ?>
+			<div class="row">
+			<div class="blog-pagination">
+			<?php //posts_nav_link(); 
+			previous_posts_link( __('Previous','becorp') ); 
+			next_posts_link( __('Next','becorp') ); ?>
+			</div>
+			</div>
+			<?php }
 			
 			// Wordpress Editor style
 			function asiathemes_add_editor_styles() {
@@ -69,12 +69,12 @@ add_action( 'after_setup_theme', 'asiathemes_setup' );
 	
 	
 	
-	/*******************
-	* Add Class Gravtar
-	* ******************/
-	add_filter('get_avatar','asiathemes_gravatar_class');
-	function asiathemes_gravatar_class($class) {
-    $class = str_replace("class='avatar", "class='author-image", $class);
-    return $class;
-	}
+			/*******************
+			* Add Class Gravtar
+			* ******************/
+			add_filter('get_avatar','asiathemes_gravatar_class');
+			function asiathemes_gravatar_class($class) {
+			$class = str_replace("class='avatar", "class='author-image", $class);
+			return $class;
+			}
 ?>

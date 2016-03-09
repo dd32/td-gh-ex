@@ -1,5 +1,5 @@
 <?php
-$becorp_options=theme_default_data(); 
+$becorp_options=becorp_theme_default_data(); 
 $home_latest_post_option = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options );
 if($home_latest_post_option['home_blog_enabled'] == 1 ) { ?>
 <div class="container">
@@ -25,7 +25,7 @@ if($home_latest_post_option['home_blog_enabled'] == 1 ) { ?>
 					<div class="media home-blog">
 					<?php $default_img = array('class' => "img-responsive");
 						if(has_post_thumbnail()) : ?>
-							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('home-blog-thumb',$default_img);?> </a>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('becorp-home-blog-thumb',$default_img);?> </a>
 									<?php endif; if(has_post_thumbnail()) { ?>
 							<span class="date hidden-xs"><?php echo get_the_date('M'); ?><span><?php echo get_the_date('j'); ?></span></span>
 							<?php } else { echo""; } ?>

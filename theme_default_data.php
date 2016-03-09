@@ -1,11 +1,9 @@
 <?php 
-function theme_default_data()
+function becorp_theme_default_data()
   	{
 	return $becorp_option=array(
 	//Front-page 
 	'front_page_enabled'=> 1,
-	'theme_page_layout' => get_theme_mod('theme_page_layout',__('wide','becorp')),
-	'theme_style_sheet' => 'default.css',
 	
 	//Header Settings
 	'header_info_phone' =>get_theme_mod('header_info_phone',__('(2)245 23 68','becorp')),
@@ -108,7 +106,7 @@ function theme_default_data()
 	'footer_customization_text' => get_theme_mod('footer_customization_text',__('@ 2015 Becorp Theme','becorp')),
 	'footer_customization_develop' => get_theme_mod('footer_customization_develop',__('Developed By','becorp')),
 	'develop_by_name' => get_theme_mod('develop_by_name',__('Asisa Themes ','becorp')),
-	'develop_by_link' => 'https://asiathemes.com/',
+	'develop_by_link' => 'http://asiathemes.com/',
 	
 	);
   	}

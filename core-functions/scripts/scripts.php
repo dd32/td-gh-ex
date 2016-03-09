@@ -2,7 +2,13 @@
 function asiathemes_scripts()
 {
  /*--------Css----------*/
-	 wp_enqueue_style('becorp-style', get_stylesheet_uri());
+	$becorp_custom_css = wp_parse_args(  get_option( 'becorp_option', array() ) );
+	$custom_css= esc_attr($becorp_custom_css['becorp_custom_css']);
+	
+	wp_enqueue_style('becorp-style', get_stylesheet_uri());
+	
+	wp_add_inline_style( 'becorp-style', $custom_css );
+   
 	 wp_enqueue_style('becorp-bootstrap', ASIATHEMES_TEMPLATE_DIR_URI . '/css/bootstrap.css');
 	 wp_enqueue_style('becorp-media-responsive', ASIATHEMES_TEMPLATE_DIR_URI . '/css/media-responsive.css');
 	 wp_enqueue_style('becorp-font',ASIATHEMES_TEMPLATE_DIR_URI . '/css/font/font.css');
@@ -17,17 +23,21 @@ function asiathemes_scripts()
 
 	/*------Js-------------*/
 	wp_enqueue_script('jquery');
+	wp_enqueue_script('becorp-content', ASIATHEMES_TEMPLATE_DIR_URI .'/js/becorp-content.js');
 	wp_enqueue_script('becorp-bootstrap', ASIATHEMES_TEMPLATE_DIR_URI .'/js/bootstrap.js');
 	wp_enqueue_script('becorp-carousel', ASIATHEMES_TEMPLATE_DIR_URI .'/js/carousel.js');
-	wp_enqueue_script('becorp-lightbox', ASIATHEMES_TEMPLATE_DIR_URI .'/js/lightbox/lightbox.js');
+	wp_enqueue_script('becorp-lightbox', ASIATHEMES_TEMPLATE_DIR_URI .'/js/lightbox/lightbox-2.6.min.js');
 	wp_enqueue_script('becorp-menu', ASIATHEMES_TEMPLATE_DIR_URI .'/js/menu.js',array('jquery'));
 	wp_enqueue_script('becorp-page-scroll-js' , ASIATHEMES_TEMPLATE_DIR_URI.'/js/page-scroll.js');
 	
 	/******* becorp tab js*********/
 	wp_enqueue_script('becorp-tab-js',ASIATHEMES_TEMPLATE_DIR_URI.'/js/becorp-tab-js.js');
-	wp_enqueue_script('becorp-animations-js',ASIATHEMES_TEMPLATE_DIR_URI.'/js/animations.js');
+	
+	/** Switcher js **/
+	 wp_enqueue_script('becorp-animations.min-js',ASIATHEMES_TEMPLATE_DIR_URI.'/js/animations.min.js');
+	
 	// /** Animation CSS **/
-	wp_enqueue_style('becorp-animations.min-css',ASIATHEMES_TEMPLATE_DIR_URI.'/css/animations.css');
+	wp_enqueue_style('becorp-animations.min-css',ASIATHEMES_TEMPLATE_DIR_URI.'/css/animations.min.css');
 	
 	if ( is_singular() ){ wp_enqueue_script( "comment-reply" );	}
 }

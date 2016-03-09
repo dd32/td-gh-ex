@@ -1,5 +1,5 @@
 <?php 
-$becorp_options=theme_default_data(); 
+$becorp_options=becorp_theme_default_data(); 
 $home_service_setting = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options );
 if($home_service_setting['service_section_enabled'] == 1 ) { ?>
 <!------------Services Section----------------->

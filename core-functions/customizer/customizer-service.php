@@ -284,7 +284,7 @@ class WP_service_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
       <div class="pro-box">
-		<a href="<?php echo esc_url( __('https://asiathemes.com/becorpdetail.php', 'becorp'));?>" target="_blank" class="button" id="review_pro"><?php _e( 'Add more service get the Pro','becorp' ); ?></a>
+		<a href="<?php echo esc_url( __('https://asiathemes.com', 'becorp'));?>" target="_blank" class="button" id="review_pro"><?php _e( 'Add more service get the Pro','becorp' ); ?></a>
 	 
 	<div>
     <?php

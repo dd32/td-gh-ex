@@ -1,4 +1,4 @@
-<?php $becorp_options=theme_default_data(); 
+<?php $becorp_options=becorp_theme_default_data(); 
 $current_options = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options );
 if ($current_options['front_page_enabled']=="1" && is_front_page()) {
 	

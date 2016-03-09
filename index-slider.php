@@ -11,7 +11,7 @@
 
 <!-- Slider Section -->	
 <?php 
-$becorp_options=theme_default_data(); 
+$becorp_options=becorp_theme_default_data(); 
 $slider_setting = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options ); 
 if($slider_setting['home_banner_enabled'] == 1 ) {
 ?>

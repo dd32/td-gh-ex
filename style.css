@@ -6,8 +6,8 @@ Author URI:https://asiathemes.com/
 Created by: Asiathemes
 Description: Becorp is a responsive and fully customizable template for Business and Multipurpose theme.The Theme has You can use it for your business, portfolio, blogging or any type of site.Custom menus to choose the menu in Primary Location that is in Header area of the site. which is ideal for creating a corporate / business website.
 Becorp is Retina ready.We focused on usability across various devices, starting with smartphones.Becorp is a Cross-Browser Compatible theme that works on All leading web browsers.In header area and footer of the theme offers Social Media Links to add your Social Links here.translation ready and many more.
-Version:  1.5
-Tags: orange, custom-menu, right-sidebar, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, responsive-layout
+Version:  1.6
+Tags: black,blue, purple,red,orange, white,green, yellow, two-columns, three-columns, four-columns, custom-menu, right-sidebar, fixed-layout, fluid-layout, custom-background,featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, responsive-layout
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: becorp
@@ -318,7 +318,7 @@ ul.top-social li a.icon-linkedin:hover {
 }
 .dropdown-menu>li>a {
 	font-family: 'Lato';
-	font-weight:500 !important;
+	font-weight:400 !important;
 	font-size: 16px;
 	clear: both;
 	color:#0F0F0F !important;
@@ -409,6 +409,12 @@ ul.top-social li a.icon-linkedin:hover {
 }
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
     margin-left: 0px;
+}
+.dropdown-submenu > a:after {
+    display: block;
+    content: "\f105";
+    float: right;
+    font-family: FontAwesome;
 }
 
 /*------Home Top Callout------*/
@@ -2083,6 +2089,7 @@ font-size:24px;
 font-family:'Courgette',cursive;
 padding:25px;}
 .page404 .return a,.page404-content a{color:#008080;}
+.page404 .return a:hover{color:#f24f18 !important;}
 .page404v2{
 background:url(../images/404bg.png) top center #000;
 padding:310px 0;

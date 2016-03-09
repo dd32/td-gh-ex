@@ -1,6 +1,6 @@
 === Theme Info ===
 Author:asiathemes
-Author URI: http://asiathemes.com/
+Author URI: https://asiathemes.com/
 
 ****NOTE****
 
@@ -26,14 +26,14 @@ released
 4.Fix Meta Date overlapped with other meta data issue.
 5.Fix Post pagination issue.
 
-@Version: 1.4
-1. Fix issue --> You need to enqueue your style.css stylesheet in header.php.
-2. Fix issue --> You need to provide un-minified versions of animations.min.css, animations.min.js, and lightbox.min.js. You can leave the minified versions but un-minified versions are required as well.
-3. Fix issue --> You shouldn't be calling your own version of jQuery in scripts.php in the core-functions folder. You're required to use core-bundled scripts.
-4. Fix issue --> Remove all unnecessary contents from Tags in style.css file.
+@Version: 1.437024
+1.Fixed all issues.
 
-@Version: 1.5
-1.Remove JQuery Own version form script.php on line no. 19.
+@Version 1.5
+1.Fixed Screenshort resolution.
+
+@version 1.6
+1.As per review fixed all issues from @version 1.5
 
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
@@ -64,12 +64,12 @@ Licensed under MIT license :http://opensource.org/licenses/MIT
 Visible, Sam Sehnert, samatdf, TeamDF, https://github.com/teamdf/jquery-visible/
 Source:https://github.com/joemottershaw/
 
-jQuery JavaScript Library 
+jQuery JavaScript Library -- v1.11.0 --
 Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors 
 Released under the MIT license : http://jquery.org/license
 Source:http://jquery.com/
 
-lightbox jQuery -- v1.9 --
+lightbox-2.6.min jQuery -- v1.9 --
 Licensed under MIT license :https://jquery.org/license/
 
 carousel.js jQuery
@@ -118,18 +118,19 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 Images Taken from :
 *************** Slider Images ***************
-Image Slide 1:http://globe-views.com/dcim/dreams/business/business-01.jpg
+Image Slide 1:https://pixabay.com/en/colleagues-seminar-presentation-437024/
 
-Image Slide 2:http://business.nowmag.org/wp-content/uploads/2014/01/Business-Mentors-Business-Mentoring-Mentoring-Business-Coaching-Business-Mentors1.jpg
+Image Slide 2:https://pixabay.com/en/laptop-notebook-startup-computer-849798/
 
-Image Slide 3:http://pivotmarketing.ca/wp-content/uploads/2015/07/Pivot-Header-8.png
+Image Slide 3:https://pixabay.com/en/executive-laptop-business-office-844143/
 
 *************** Portfolio Images URL ***************
-https://pixabay.com/get/7d6d5ce94d11f71adeba/1444070726/student-849822_1280.jpg?direct
+https://pixabay.com/en/student-typing-keyboard-text-woman-849828/
 
-https://pixabay.com/get/99dccb1c61a8e2b46c7d/1444073288/pause-828757_1280.jpg?direct
+https://pixabay.com/en/student-typing-keyboard-text-woman-849822/
 
-https://pixabay.com/en/photos/download/student-849828_1280.jpg
+https://pixabay.com/en/pause-break-tennis-match-rest-828757/
+
 **************************************************************
 All Images have been used in the Becorp theme, Created by asiathemes .Also they are GPL Licensed and free to use and free to redistribute further. 
 ********************************************************--- EOF ---*************************************************************

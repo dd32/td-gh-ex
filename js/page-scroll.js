@@ -3,7 +3,7 @@
 * Created by: asiathemes
 * Copyright (c) 2015 Becorp
 * Date: 5 Oct, 2015
-* http://www.asiathemes.com/Becorp
+* https://asiathemes.com/
 */
 
 /*-- Page Scroll To Top Section ---------------*/

@@ -1,4 +1,4 @@
-<?php $becorp_option=theme_default_data(); 
+<?php $becorp_option=becorp_theme_default_data(); 
 $portfolio_options = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_option );
 if($portfolio_options['enable_home_portfolio'] == 1 ) { ?>
 <div class="container portfolio-section">

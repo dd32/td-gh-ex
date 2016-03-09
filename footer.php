@@ -2,7 +2,7 @@
  <div class="container">
        <div class="row">
 		<?php
-			$becorp_options=theme_default_data(); 
+			$becorp_options=becorp_theme_default_data(); 
 			$footer_setting = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options );
 			global $k;
 			$k=1;
@@ -38,7 +38,7 @@
 						<a href="#"><img src="<?php echo get_template_directory_uri () ?>/images/thumb/3.jpg" alt="" /></a>
 					</div>
 					<div class="widget-content">
-						<h5><a href="#"><?php _e('How To Download The Google Fonts Catalog','becorp'); ?></a></h5>
+						<h5><a href="#"><?php _e('Google Fonts Catalog','becorp'); ?></a></h5>
 						<span><?php _e('Jul 29 2013','becorp'); ?></span>
 					</div>
 					<div class="clearfix"></div>

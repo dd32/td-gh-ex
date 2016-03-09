@@ -8,7 +8,6 @@
 			  <h3><?php _e('Our Latest Features','becorp'); ?></h3>
 			  <div class="col-md-6">
 					<ul>
-						<li><?php _e('5 GB Free Web Hosting with','becorp'); ?> <?php _e('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pro version','becorp'); ?> </li>
 						<li><?php _e('Responsive Design','becorp'); ?> </li>
 						<li><?php _e('8 types Colors Scheme','becorp'); ?>  </li>
 						<li><?php _e('Patterns Background','becorp'); ?>   </li>
@@ -31,8 +30,8 @@
 				</div>	
              </div>				
 			<div class="col-md-3 notify-btn">
-					<a href="http://asiathemes.com/preview/?item=becorp" target="blank" class="btn btn-success btn-lg"><?php _e('View Becorp Pro Demo','becorp'); ?> </a>
-					<a href="https://asiathemes.com/becorpdetail.php" target="_blank" class="btn btn-primary btn-lg" ><?php _e('Upgrade to Becorp Pro','becorp'); ?></a>
+					<a href="http://asiathemes.asia/?item=becorp" target="blank" class="btn btn-success btn-lg"><?php _e('View Becorp Pro Demo','becorp'); ?> </a>
+					<a href="https://asiathemes.com" target="_blank" class="btn btn-primary btn-lg" ><?php _e('Upgrade to Becorp Pro','becorp'); ?></a>
 			</div>
 	</div>
 <div class="clearfix"></div>
@@ -48,7 +47,7 @@
 <div class="clearfix"></div>
 <div class="header1">
   <div class="logo">
-    <h2></a> <a href="#"><img src="<?php echo get_template_directory_uri();?>/core-functions/option-panel/images/asialogo.png"></a><a href="<?php bloginfo ( 'url' );?>/wp-admin/customize.php" target="_blank" class="pull-right"><?php _e('Wiew Customizer','becorp'); ?></h2> 
+    <h2><a href="#"><img src="<?php echo get_template_directory_uri();?>/core-functions/option-panel/images/asialogo.png"></a><a href="<?php bloginfo ( 'url' );?>/wp-admin/customize.php" target="_blank" class="pull-right"><?php _e('View Customizer','becorp'); ?></h2> 
    </div>
 </div>
 <div class="clearfix"></div>
