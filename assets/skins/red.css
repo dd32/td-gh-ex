@@ -108,9 +108,14 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
 #back-to-top i:hover {
     border-color: #872424;
 }
+body.archive.woocommerce .product-category h3:hover,
+body.archive.woocommerce .product-category h3:hover,
+body.archive.woocommerce .product-category h3:hover,
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active ,
 .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
 a:hover,
+a:active,
+a:focus,
 #footer a:hover,
 #footer ul.widget-category li:hover,
 #footer ul.widget-category li a:hover,
