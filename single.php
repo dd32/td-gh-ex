@@ -7,7 +7,7 @@
 
 get_header(); 
 wp_reset_postdata();
-global $post;
+global $post, $accespress_mag_default;
 $accesspress_mag_show_breadcrumbs = of_get_option( 'show_hide_breadcrumbs', '1' );
 $post_template_value = of_get_option( 'global_post_template', 'single' );
 $accesspress_mag_post_template = get_post_meta( $post->ID, 'accesspress_mag_post_template_layout', true );
@@ -33,7 +33,7 @@ do_action( 'accesspress_mag_before_body_content' );
 			<?php
                 get_template_part( 'content', $content_value );
 
-                $accesspress_mag_show_author_box = of_get_option( 'show_author_box' );
+                $accesspress_mag_show_author_box = of_get_option( 'show_author_box', '1' );
                 if( $accesspress_mag_show_author_box == 1 ) {
             ?>
             <div class="author-metabox">
@@ -73,7 +73,7 @@ do_action( 'accesspress_mag_before_body_content' );
 	</div><!-- #primary -->
 
 <?php 
-    $global_sidebar = of_get_option( 'global_post_sidebar' );
+    $global_sidebar = of_get_option( 'global_post_sidebar', 'right-sidebar' );
     $post_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_sidebar_layout', true );
     if( $post_sidebar == 'global-sidebar' || empty( $post_sidebar ) ){
         $sidebar_option = $global_sidebar;

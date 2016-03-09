@@ -30,6 +30,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
     
 	add_action( 'wp_head', 'accesspress_mag_render_title' );
 endif;
+$accesspress_mag_default = get_option('accesspress-mag');
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
 /**
@@ -386,7 +387,7 @@ function accesspress_mag_sidebar_layout_class($classes){
     	if( is_404()){
     	$classes[] = ' ';
     	}elseif(is_singular()){
- 	    $global_sidebar= esc_attr( of_get_option( 'global_post_sidebar' ) );
+ 	    $global_sidebar= esc_attr( of_get_option( 'global_post_sidebar', 'right-sidebar' ) );
     	$post_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_sidebar_layout', true );        
         $page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout', true );
         if( 'post'==get_post_type() ){
@@ -466,9 +467,8 @@ add_filter( 'body_class', 'accesspress_mag_website_layout_class' );
 if( ! function_exists( 'accesspress_mag_post_meta_cb' ) ): 
     function accesspress_mag_post_meta_cb(){
         global $post;
-        //$show_post_views = of_get_option( 'show_post_views' );
-        $show_comment_count = of_get_option( 'show_comment_count' );
-        if($show_comment_count==1){
+        $show_comment_count = of_get_option( 'show_comment_count', '1' );
+        if( $show_comment_count == 1 ) {
             $post_comment_count = get_comments_number( $post->ID );
             echo '<span class="comment_count"><i class="fa fa-comments"></i>'.esc_attr( $post_comment_count ).'</span>';
         }
@@ -483,8 +483,8 @@ add_action( 'accesspress_mag_post_meta', 'accesspress_mag_post_meta_cb', 10 );
 if( ! function_exists( 'accesspress_mag_home_posted_on_cb' ) ):  
     function accesspress_mag_home_posted_on_cb(){
         global $post;        
-        $show_comment_count = of_get_option( 'show_comment_count' );
-        $show_post_date = of_get_option( 'post_show_date' );
+        $show_comment_count = of_get_option( 'show_comment_count', '1' );
+        $show_post_date = of_get_option( 'post_show_date', '1' );
         
     	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
     	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -553,16 +553,20 @@ endif;
  */
 if( ! function_exists( 'accesspress_mag_excerpt' ) ):
     function accesspress_mag_excerpt(){
-        global $post;
-        $excerpt_type = esc_attr( of_get_option( 'excerpt_type' ) );
-        $excerpt_length = intval( of_get_option( 'excerpt_lenght' ) );
-        $excerpt_content = get_the_content($post -> ID);
-        if( $excerpt_type == 'letters' ){
-            $excerpt_content = accesspress_mag_letter_count( $excerpt_content, $excerpt_length );
+        global $post, $accesspress_mag_default;        
+        if( !empty( $accesspress_mag_default ) ) {
+            $excerpt_type = esc_attr( of_get_option( 'excerpt_type' ) );
+            $excerpt_length = intval( of_get_option( 'excerpt_lenght' ) );
+            $excerpt_content = get_the_content($post -> ID);
+            if( $excerpt_type == 'letters' ){
+                $excerpt_content = accesspress_mag_letter_count( $excerpt_content, $excerpt_length );
+            } else {
+                $excerpt_content = accesspress_mag_word_count( $excerpt_content, $excerpt_length );
+            }
+            echo '<p>'. $excerpt_content .'</p>';
         } else {
-            $excerpt_content = accesspress_mag_word_count( $excerpt_content, $excerpt_length );
+            the_excerpt();
         }
-        echo '<p>'. $excerpt_content .'</p>';
     }
 endif;
 
@@ -725,7 +729,7 @@ function accesspress_mag_remove_wc_breadcrumbs() {
     remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 ); 
 } 
 
-$accesspress_show_breadcrumb = of_get_option( 'show_hide_breadcrumbs' ); 
+$accesspress_show_breadcrumb = of_get_option( 'show_hide_breadcrumbs', '1' ); 
 if( ( function_exists( 'accesspress_mag_woocommerce_breadcrumbs' ) && $accesspress_show_breadcrumb == 1 ) ) { 
     add_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 10, 0 ); 
 }

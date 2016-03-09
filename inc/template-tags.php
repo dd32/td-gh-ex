@@ -108,8 +108,8 @@ if ( ! function_exists( 'accesspress_mag_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function accesspress_mag_posted_on() {
-    $show_post_date = of_get_option('post_show_date');
-    $show_author = of_get_option('show_author_name');
+    $show_post_date = of_get_option( 'post_show_date', '1' );
+    $show_author = of_get_option( 'show_author_name', '1' );
     
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -123,7 +123,7 @@ function accesspress_mag_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
     
-    if($show_post_date==1){
+    if( $show_post_date == 1 ) {
 	  $posted_on = sprintf(
     		_x( '%s', 'post date', 'accesspress-mag' ),$time_string
     		
@@ -134,7 +134,7 @@ function accesspress_mag_posted_on() {
     }
     
     
-    if($show_author==1){
+    if( $show_author == 1 ) {
         $byline = sprintf(
     		_x( 'by %s', 'post author', 'accesspress-mag' ),
     		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
@@ -155,7 +155,7 @@ if ( ! function_exists( 'accesspress_mag_entry_footer' ) ) :
 function accesspress_mag_entry_footer() {
     if('post'==get_post_type() && !is_tag() ){
         $trans_tagged = of_get_option( 'trans_tagged', 'Tagged' );
-        $accesspress_mag_show_tags = of_get_option('show_tags_post');
+        $accesspress_mag_show_tags = of_get_option( 'show_tags_post', '1' );
          if($accesspress_mag_show_tags!='0'){
             /* translators: used between list items, there is a space after the comma */
     		$tags_list = get_the_tag_list( '', __( ' ', 'accesspress-mag' ) );

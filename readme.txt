@@ -73,6 +73,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.3.1
+ * Fixed default index file settings for posts
+ 
 Version 2.3.0
  * Fixed slider and highlighted section bugs in firefox browser
  
