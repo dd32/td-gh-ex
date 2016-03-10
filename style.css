@@ -4,7 +4,7 @@ Theme URI: http://themeofwp.com/downloads/avien-lite-free-wordpress-theme/
 Author: ThemeofWP.com
 Author URI: http://themeofwp.com
 Description: Avien Ultra Responsive WordPress Theme
-Version: 2.5
+Version: 2.6
 Tags: white, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, flexible-header, custom-menu, featured-images, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1057,6 +1057,25 @@ nav#filter a {
 	box-shadow: 1px 1px 10px #ccc;
 	opacity: 0.99;
 }
+.sub-menu {
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    list-style: outside none none;
+    margin: 2px 0 0;
+    min-width: 160px;
+    padding: 5px 0;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    z-index: 1000;
+}
 
 /*		Logo
 --------------------------------------------------------------------------------------------------*/
@@ -1082,7 +1101,7 @@ nav#filter a {
 .navbar .navbar-main li i {
   padding-left: 7px;
 }
-.dropdown li i {
+.dropdown li i, .sub-menu li i{
 	float: right;
 	padding-left: 7px;
 	position: absolute;
@@ -1120,7 +1139,7 @@ nav#filter a {
 	background: none;
 	color: #000;
 }
-.navbar .navbar-main .dropdown-menu {
+.navbar .navbar-main .dropdown-menu, .navbar .navbar-main .sub-menu {
 	background: none;
 	box-shadow: none;
 	border: 0;
@@ -1128,25 +1147,28 @@ nav#filter a {
 	margin-top: -3px;
 	font-size:12px;
 }
-.navbar .navbar-main .dropdown-menu > li {
+.navbar .navbar-main .dropdown-menu > li, .navbar .navbar-main .sub-menu > li {
 	text-align:left;
 }
-.navbar .navbar-main .dropdown-menu > li > a {
+.navbar .navbar-main .dropdown-menu > li > a, .navbar .navbar-main .sub-menu > li > a{
 	padding: 8px 15px;
 	color: #bdc3c7;
 }
 .navbar .navbar-main .dropdown-menu > li:hover > a,
 .navbar .navbar-main .dropdown-menu > li:focus > a,
-.navbar .navbar-main .dropdown-menu > li.active > a {
+.navbar .navbar-main .dropdown-menu > li.active > a,
+.navbar .navbar-main .sub-menu > li:hover > a,
+.navbar .navbar-main .sub-menu > li:focus > a,
+.navbar .navbar-main .sub-menu > li.active > a {
 	background-color: rgba(165, 165, 165, 0.2);
 }
-.navbar .navbar-main .dropdown-menu > li:last-child > a {
+.navbar .navbar-main .dropdown-menu > li:last-child > a, .navbar .navbar-main .sub-menu > li:last-child > a {
 	border-radius: 0 0 3px 3px;
 }
-.navbar .navbar-main .dropdown-menu > li.divider {
+.navbar .navbar-main .dropdown-menu > li.divider, .navbar .navbar-main .sub-menu > li.divider {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.navbar .navbar-main li.dropdown:hover > ul.dropdown-menu {
+.navbar .navbar-main li.dropdown:hover > ul.dropdown-menu, .navbar .navbar-main li.menu-item-has-children:hover > ul.sub-menu {
 	display: block;
 		-webkit-animation: fadeInUp 300ms;
 			-moz-animation: fadeInUp 300ms;
@@ -1154,7 +1176,7 @@ nav#filter a {
 					-o-animation: fadeInUp 300ms;
 						animation: fadeInUp 300ms;
 }
-.navbar .navbar-main .sub-menu .dropdown-menu {
+.navbar .navbar-main .dropdown-menu .dropdown-menu, .navbar .navbar-main .sub-menu .sub-menu {
 	left: 100%;
 	top: 0;
 	margin-top: 0;
@@ -3052,21 +3074,30 @@ color: #A9D360;
 font-family: arial;}  
 
 /* Current Menu Item */
-.dropdown.active{
+.dropdown.active, .current-menu-item{
 border-top:0px none ;
 border-bottom:2px solid #A9D360;}
 
 
 /* Child Menu Items */
-.dropdown-menu > li {border:none !important;}
-.dropdown-menu > li > a {
+.dropdown-menu > li, .sub-menu > li {border:none !important;}
+.dropdown-menu > li > a, .sub-menu > li > a {
 background: #ffffff !important;color: #020202 !important;font-size: 12px !important;font-family: arial !important;border-top:px   !important;
-border-bottom:1px solid #f5f5f5 !important;} 
+border-bottom:1px solid #f5f5f5 !important;
+white-space: nowrap;
+line-height: 1.42857;
+font-weight: normal;
+display: block;
+clear: both;
+} 
 
 /* Child Menu Items Hover */
 .dropdown-menu > li:hover > a,
 .dropdown-menu > li:focus > a,
-.dropdown-menu > li.active > a{ 
+.dropdown-menu > li.active > a,
+.sub-menu > li:hover > a,
+.sub-menu > li:focus > a,
+.sub-menu > li.active > a{ 
 background: #ffffff !important;
 color: #A9D360 !important;
 font-family: arial !important;

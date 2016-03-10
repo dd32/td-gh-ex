@@ -67,7 +67,7 @@
 					
 					<p class="text-center">
 						&copy; <?php echo date('Y'); ?>, <?php esc_attr( bloginfo( 'name' ) ); ?>  / <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'avien-light' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'avien-light' ), 'WordPress' ); ?></a> / 
-							<?php printf( __( 'Theme: %1$s by %2$s', 'avien-light' ), 'Avien Lite', '<a href="http://avien-light.com" rel="designer">ThemeofWP.com</a>' ); ?>
+							<?php printf( __( 'Theme: %1$s by %2$s', 'avien-light' ), 'Avien Lite', '<a href="http://themeofwp.com/" rel="designer">ThemeofWP.com</a>' ); ?>
 					</p>
 						
 				</div>

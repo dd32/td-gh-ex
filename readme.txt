@@ -2,7 +2,7 @@
 Contributors: themeofwpcom
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.4
-Version: 2.5
+Version: 2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, flexible-header, custom-menu, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
@@ -27,7 +27,7 @@ Avien Light includes support for Infinite Scroll in Jetpack also tested with all
 
 == Changelog ==
 
-= 2.3 - January 29 2015 =
+= 2.5 - March 15 2016 =
 * Initial release
 
 == Credits ==
