@@ -43,10 +43,10 @@ if( $box_1_enable || $box_2_enable || $box_3_enable || $box_4_enable ):
 	}
 
 	// Boxes title
-	$box_1_title = get_theme_mod('agama_frontpage_box_1_title', 'Responsive Layout');
-	$box_2_title = get_theme_mod('agama_frontpage_box_2_title', 'Endless Possibilities');
-	$box_3_title = get_theme_mod('agama_frontpage_box_3_title', 'Boxed & Wide Layouts');
-	$box_4_title = get_theme_mod('agama_frontpage_box_4_title', 'Powerful Performance');
+	$box_1_title = get_theme_mod('agama_frontpage_box_1_title', __( 'Responsive Layout', 'agama-blue' ) );
+	$box_2_title = get_theme_mod('agama_frontpage_box_2_title', __( 'Endless Possibilities', 'agama-blue' ) );
+	$box_3_title = get_theme_mod('agama_frontpage_box_3_title', __( 'Boxed & Wide Layouts', 'agama-blue' ) );
+	$box_4_title = get_theme_mod('agama_frontpage_box_4_title', __( 'Powerful Performance', 'agama-blue' ) );
 	
 	// Boxes FA Icon
 	$box_1_icon = get_theme_mod('agama_frontpage_box_1_icon', 'fa-tablet');
@@ -60,76 +60,70 @@ if( $box_1_enable || $box_2_enable || $box_3_enable || $box_4_enable ):
 	$box_3_img = get_theme_mod('agama_frontpage_3_img', '');
 	$box_4_img = get_theme_mod('agama_frontpage_4_img', '');
 	
-	// Boxes FA Icon Color
-	$box_1_icon_color = get_theme_mod('agama_frontpage_box_1_icon_color', '#f7a805');
-	$box_2_icon_color = get_theme_mod('agama_frontpage_box_2_icon_color', '#f7a805');
-	$box_3_icon_color = get_theme_mod('agama_frontpage_box_3_icon_color', '#f7a805');
-	$box_4_icon_color = get_theme_mod('agama_frontpage_box_4_icon_color', '#f7a805');
-	
 	// Boxes text
-	$box_1_text = get_theme_mod('agama_frontpage_box_1_text', 'Powerful Layout with Responsive functionality that can be adapted to any screen size.');
-	$box_2_text = get_theme_mod('agama_frontpage_box_2_text', 'Complete control on each & every element that provides endless customization possibilities.');
-	$box_3_text = get_theme_mod('agama_frontpage_box_3_text', 'Stretch your Website to the Full Width or make it boxed to surprise your visitors.');
-	$box_4_text = get_theme_mod('agama_frontpage_box_4_text', 'Optimized code that are completely customizable and deliver unmatched fast performance.'); ?>
+	$box_1_text = get_theme_mod('agama_frontpage_box_1_text', __( 'Powerful Layout with Responsive functionality that can be adapted to any screen size.', 'agama-blue' ) );
+	$box_2_text = get_theme_mod('agama_frontpage_box_2_text', __( 'Complete control on each & every element that provides endless customization possibilities.', 'agama-blue' ) );
+	$box_3_text = get_theme_mod('agama_frontpage_box_3_text', __( 'Stretch your Website to the Full Width or make it boxed to surprise your visitors.', 'agama-blue' ) );
+	$box_4_text = get_theme_mod('agama_frontpage_box_4_text', __( 'Optimized code that are completely customizable and deliver unmatched fast performance.', 'agama-blue' ) ); ?>
 
 	<div id="frontpage-boxes" class="clearfix">
 		
 		<?php if( $box_1_enable ): ?>
-		<div class="<?php echo esc_attr( $bs_class ); ?>">
+		<div class="<?php echo esc_attr( $bs_class ); ?> fbox-1">
 			
 			<?php if( $box_1_img ): ?>
 				<img src="<?php echo esc_url( $box_1_img ); ?>">
 			<?php else: ?>
-				<i class="fa <?php echo esc_attr( $box_1_icon ); ?>" style="color:<?php echo esc_attr( $box_1_icon_color ); ?>;"></i>
+				<i class="fa <?php echo esc_attr( $box_1_icon ); ?>"></i>
 			<?php endif; ?>
 			
-			<h2><?php echo $box_1_title; ?></h2>
-			<p><?php echo $box_1_text; ?></p>
+			<h2><?php echo esc_attr( $box_1_title ); ?></h2>
+			<p><?php echo esc_html( $box_1_text ); ?></p>
 		
 		</div>
 		<?php endif; ?>
 		
 		<?php if( $box_2_enable ): ?>
-		<div class="<?php echo esc_attr( $bs_class ); ?>">
+		<div class="<?php echo esc_attr( $bs_class ); ?> fbox-2">
 			
 			<?php if( $box_2_img ): ?>
 				<img src="<?php echo esc_url( $box_2_img ); ?>">
 			<?php else: ?>
-				<i class="fa <?php echo esc_attr( $box_2_icon ); ?>" style="color:<?php echo esc_attr( $box_2_icon_color ); ?>;"></i>
+				<i class="fa <?php echo esc_attr( $box_2_icon ); ?>"></i>
 			<?php endif; ?>
 			
-			<h2><?php echo $box_2_title; ?></h2>
-			<p><?php echo $box_2_text; ?></p>
+			<h2><?php echo esc_attr( $box_2_title ); ?></h2>
+			<p><?php echo esc_html( $box_2_text ); ?></p>
 		
 		</div>
 		<?php endif; ?>
 		
 		<?php if( $box_3_enable ): ?>
-		<div class="<?php echo esc_attr( $bs_class ); ?>">
+		<div class="<?php echo esc_attr( $bs_class ); ?> fbox-3">
 			
 			<?php if( $box_3_img ): ?>
 				<img src="<?php echo esc_url( $box_3_img ); ?>">
 			<?php else: ?>
-				<i class="fa <?php echo esc_attr( $box_3_icon ); ?>" style="color:<?php echo esc_attr( $box_3_icon_color ); ?>;"></i>
+				<i class="fa <?php echo esc_attr( $box_3_icon ); ?>"></i>
 			<?php endif; ?>
 			
-			<h2><?php echo $box_3_title; ?></h2>
-			<p><?php echo $box_3_text; ?></p>
+			<h2><?php echo esc_attr( $box_3_title ); ?></h2>
+			<p><?php echo esc_html( $box_3_text ); ?></p>
 		
 		</div>
 		<?php endif; ?>
 		
 		<?php if( $box_4_enable ): ?>
-		<div class="<?php echo esc_attr( $bs_class ); ?>">
+		<div class="<?php echo esc_attr( $bs_class ); ?> fbox-4">
 			
 			<?php if( $box_4_img ): ?>
 				<img src="<?php echo esc_url( $box_4_img ); ?>">
 			<?php else: ?>
-				<i class="fa <?php echo esc_attr( $box_4_icon ); ?>" style="color:<?php echo esc_attr( $box_4_icon_color ); ?>;"></i>
+				<i class="fa <?php echo esc_attr( $box_4_icon ); ?>"></i>
 			<?php endif; ?>
 			
-			<h2><?php echo $box_4_title; ?></h2>
-			<p><?php echo $box_4_text; ?></p>
+			<h2><?php echo esc_attr( $box_4_title ); ?></h2>
+			<p><?php echo esc_html( $box_4_text ); ?></p>
 		
 		</div>
 		<?php endif; ?>

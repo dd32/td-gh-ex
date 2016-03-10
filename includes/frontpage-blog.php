@@ -1,7 +1,7 @@
 <div class="section notopmargin notopborder section-blog">
 	<div class="container clearfix">
 		<div class="heading-block center nomargin">
-			<h3><?php echo esc_html( get_theme_mod( 'agama_blue_blog_heading', 'Latest from the Blog' ) ); ?></h3>
+			<h3><?php echo esc_html( get_theme_mod( 'agama_blue_blog_heading', __( 'Latest from the Blog', 'agama-blue' ) ) ); ?></h3>
 		</div>
 	</div>
 </div>
@@ -12,7 +12,7 @@
 		<?php if ( have_posts() ) : ?>
 	
 			<?php
-			$posts_per_page = get_theme_mod( 'agama_blue_blog_posts_number', '4' );
+			$posts_per_page = get_theme_mod( 'agama_blue_blog_posts_number', '4' ) - 1;
 			// Fix Paged on Static Homepage
 			if( get_query_var('paged') ) { 
 				$paged = get_query_var('paged'); 
@@ -25,9 +25,10 @@
 				'posts_per_page' => $posts_per_page,
 				'paged' => $paged
 			);
-			query_posts( $args ); ?>
+			
+			$the_query = new WP_Query( $args ); ?>
 	
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 	
 				<div class="col-md-3 col-sm-6 bottommargin">
 					<div class="ipost clearfix">
@@ -41,7 +42,7 @@
 						<?php else: ?>
 						<div class="entry-image">
 							<a href="<?php the_permalink(); ?>">
-								<img class="image_fade" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97300&w=400&h=300">
+								<img class="image_fade" src="<?php echo get_stylesheet_directory_uri() . '/images/blog_thumb_placeholder.png'; ?>">
 							</a>
 						</div>
 						<?php endif; ?>
@@ -51,7 +52,7 @@
 						</div>
 						<ul class="entry-meta clearfix">
 							<li><i class="fa fa-calendar"></i> <?php echo get_the_time('d M, Y'); ?></li>
-							<li><a href="<?php the_permalink(); ?>#comments"><i class="fa fa-comments"></i> <?php echo get_comments_number(); ?></a></li>
+							<li><a href="<?php echo get_comments_link(); ?>"><i class="fa fa-comments"></i> <?php echo get_comments_number(); ?></a></li>
 						</ul>
 					</div>
 				</div>

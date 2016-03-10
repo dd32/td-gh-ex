@@ -20,6 +20,9 @@ Image used on screenshot:
  
 ## Changelog
 
+= 1.0.4 - 10 Mar 2016 =
+* UPDATED: Few minor changes.
+
 = 1.0.3 - 06 Mar 2016 =
 * UPDATED: Default header style for Agama Blue.
 

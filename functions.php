@@ -32,31 +32,6 @@ get_template_part( 'includes/customizer' );
  }
  
 /**
- * Set colors on theme activated
- *
- * @since 1.0
- */
- add_action( 'after_switch_theme', 'agama_blue_after_switch_theme' );
- function agama_blue_after_switch_theme() {
-	// Set header style
-	set_theme_mod( 'agama_header_style', 'sticky' );
-	// Set logo color
-	set_theme_mod( 'agama_header_v1_logo_color', '#00a4d0' );
-	// Set layout full-width
-	set_theme_mod( 'agama_layout_style', 'fullwidth' );
-	// Set primary color
-	set_theme_mod( 'agama_primary_color', '#00a4d0' );
-	// Set slider buttons color
-	set_theme_mod( 'agama_slider_button_bg_color_1', '#00a4d0' );
-	set_theme_mod( 'agama_slider_button_bg_color_2', '#00a4d0' );
-	// Set frontpage boxes icons colors
-	set_theme_mod( 'agama_frontpage_box_1_icon_color', '#00a4d0' );
-	set_theme_mod( 'agama_frontpage_box_2_icon_color', '#00a4d0' );
-	set_theme_mod( 'agama_frontpage_box_3_icon_color', '#00a4d0' );
-	set_theme_mod( 'agama_frontpage_box_4_icon_color', '#00a4d0' );
- }
- 
-/**
  * Agama Blue Frontpage Features
  *
  * @since 1.0.1
