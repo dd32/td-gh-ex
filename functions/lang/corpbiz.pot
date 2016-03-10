@@ -1,998 +1,1169 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: corpbiz\n"
-"POT-Creation-Date: 2015-05-15 16:40+0530\n"
-"PO-Revision-Date: 2015-05-15 16:42+0530\n"
+"POT-Creation-Date: 2016-03-10 12:18+0530\n"
+"PO-Revision-Date: 2016-03-10 12:18+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.6\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: C:\\xampp\\htdocs\\wordpress_lite\\wp-content\\themes"
-"\\corpbiz-lite\n"
-"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress_lite\\wp-content\\themes"
+"X-Poedit-Basepath: D:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\corpbiz-"
+"lite\n"
+"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
 "\\corpbiz-lite\n"
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/404.php:6
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/404.php:9
 msgid "Error -404"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/404.php:15
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/404.php:18
 msgid "Error 404"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/404.php:16
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/404.php:19
 msgid "Oops! Page not found"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/404.php:17
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/404.php:20
 msgid "We`re sorry, but the page you are looking for doesn`t exist."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/404.php:18
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/404.php:21
 msgid "Go to Homepage"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/archive.php:8
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/archive.php:7
 msgid "Daily Archives:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/archive.php:10
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/archive.php:9
 msgid "Monthly Archives:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/archive.php:12
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/archive.php:11
 msgid "Yearly Archives:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/archive.php:14
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/archive.php:13
 msgid "Blog Archives"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:2
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:2
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:14
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:14
 msgid "Reply"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:32
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:23
+msgid "at"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:32
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:51
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:51
 msgid "Comment navigation"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:52
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:52
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:53
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:53
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:63
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:63
 msgid "You must be"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:63
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:63
 msgid "logged in"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:63
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:63
 msgid "to post a comment"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:82
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:84
 msgid "Logged in as "
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:82
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:84
 msgid " Log out?"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:84
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:86
 msgid "Submit Comment"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/comments.php:87
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/comments.php:89
 msgid "Leave a Reply"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/content.php:10
-msgid "Read More"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/content.php:20
+msgid "Posted by : &nbsp;"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions.php:25
-#, php-format
-msgid "Page %s"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions.php:55
+msgid "Page"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions.php:42
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions.php:66
 msgid "Primary Menu"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions.php:43
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions.php:67
 msgid "Secondary Menu"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions.php:65
-msgid "Sidebar"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions.php:67
-msgid "The primary widget area"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions.php:75
-msgid "Footer Widget Area"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions.php:77
-msgid "footer widget area"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/header.php:21
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/header.php:29
 msgid "Toggle navigation"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/index-slider.php:19
-msgid "Flexible Responsive"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/index-slider.php:20
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/index-slider.php:27
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/index-slider.php:34
-msgid "Multi-Purpose Theme"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/index-slider.php:26
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/index-slider.php:33
-msgid "Clean Elegant"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/search.php:10
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/search.php:14
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/search.php:17
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/search.php:28
+msgid "Posted by: &nbsp;"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/search.php:54
 msgid "Nothing Found"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/search.php:20
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/search.php:57
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/tag.php:8
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/tag.php:7
 #, php-format
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:41
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:25
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:36
+msgid "Built Your Website"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:37
+msgid ""
+"Corpbiz is extremely clean in each code line, intensely awesome in wvery "
+"homepage, supper easy to use, highly flexible with responsive feature."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:38
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/excerpt/excerpt.php:14
+msgid "Read More"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:48
+msgid "Sample Pages"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:49
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque "
 "faucibus risus non iaculis. Fusce a augue ante, pellentesque pretium erat. "
 "Fusce in turpis in velit tempor pretium. Integer a leo libero"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:42
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:26
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:50
 msgid "Buy it now"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:43
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:27
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:52
 msgid "View Portfolio"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:46
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:47
-msgid "Responsive Design"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:47
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:53
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:59
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:65
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:48
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:54
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:60
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:66
-msgid ""
-"Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:52
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:53
-msgid "Power full Admin"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:58
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:59
-msgid "Great Support"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:64
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:65
-msgid "Clean Minimal Design"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:70
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:42
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:65
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:106
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:968
 msgid "Our Work Speaks Thousand Words"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:71
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:66
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:107
 msgid ""
 "We have successfully completed over 2500 projects in mobile and web. Here "
 "are few of them."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:73
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:45
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:98
-msgid "Portfolio One"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:78
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:51
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:113
-msgid "Portfolio Two"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:83
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:56
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:130
-msgid "Portfolio Three"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:88
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:61
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:147
-msgid "Portfolio Four"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:94
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:43
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:75
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:130
 msgid "Our Nice Services"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:95
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:44
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:76
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:131
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque "
 "faucibus risus non iaculis."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:97
-msgid "@ Copyright 2014  Corpbiz Design & Developed by"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:82
+msgid "Responsive Design"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/theme_setup_data.php:98
-msgid "Webriti"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:83
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:89
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:95
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:101
+msgid ""
+"Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/template-tag.php:15
-msgid "Posted by: &nbsp;"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:88
+msgid "Power full Admin"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/option_pannel.php:4
-msgid "theme"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:94
+msgid "Great Support"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/option_pannel.php:4
-msgid "Option Panel"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:100
+msgid "Clean Minimal Design"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:2
-msgid "Settings"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:109
+msgid "Portfolio One"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:7
-msgid "Corpbiz"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:114
+msgid "Portfolio Two"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:8
-msgid "Like us on facebook"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:119
+msgid "Portfolio Three"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:18
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:124
+msgid "Portfolio Four"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:136
+msgid "We are here to help you"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:137
+msgid "24+7 hours support by us"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:141
+msgid "Need Support?"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:142
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:149
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:156
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur faucibus risus non iaculis. Fusce a "
+"augue Fusce in turpis in"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:143
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:150
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:157
+msgid "learn more"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:148
+msgid "Check Our Forum"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:155
+msgid "Get Updated"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:162
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:182
+msgid "What Our Clients Say"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:163
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:183
+msgid "lets see what we hear from our valuable clients"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:169
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1923
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1936
+msgid "Latest blog Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:173
+msgid "Get your app ideas transformed into reality"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:174
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur faucibus risus non iaculis. Fusce a "
+"augue Fusce in turpis in."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:175
+msgid "Buy it Now"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:188
+msgid "Contact Info"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:189
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:429
+msgid ""
+"Aliquam suscipit quis odio a volutpat. Aenean sed sagittis dolor. "
+"Pellentesque vitae fermentum diam, vitae gravida eros. Proin interdum "
+"imperdiet elit, in auctor sem consequat sed."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:190
+msgid "Contact Us"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:192
+msgid "138, AtlantisLnKingsport "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/theme_setup_data.php:193
+msgid "Illinois. 121164 "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:8
+msgid "Template Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:15
+msgid "About Us Template"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:31
+msgid "Want to add About Page Template than upgrade to pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:34
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:181
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:295
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:356
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:281
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:872
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:916
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1273
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1316
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1442
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1804
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:65
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_pro.php:13
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_texonomy_archive.php:32
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_theme_style.php:43
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:32
+msgid "http://webriti.com/corpbiz/"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:34
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:181
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:295
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:356
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:281
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:872
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:916
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1273
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1316
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1442
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1804
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:65
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_texonomy_archive.php:32
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_theme_style.php:43
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:32
+msgid "UPGRADE TO PRO"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:49
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:131
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:196
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:310
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:371
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:296
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:888
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:932
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1288
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1331
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1409
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1457
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1819
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:80
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:98
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_pro.php:33
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_pro.php:63
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_pro.php:96
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_texonomy_archive.php:47
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_theme_style.php:58
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:47
+msgid "Discover corpbiz Pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:69
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:217
+msgid "Hide Service Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:88
+msgid "Hide Team Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:97
+msgid "Our Staff"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:104
+msgid "Team Section Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:117
+msgid "Click Here to add Team Member"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:151
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:252
+msgid "Hide Client Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:162
+msgid "Service Template"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:178
+msgid "Want to add Service Page Template than upgrade to pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:235
+msgid "Hide Project Slider Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:270
+msgid "Hide Footer callout Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:279
+msgid "Blog Page Setting"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:292
+msgid "Want to add Blog Page Template than upgrade to pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:331
+msgid "Enable Blog Meta Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:340
+msgid "Contact Information"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:353
+msgid "Want to add Contact Page Template than upgrade to pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:388
+msgid "Contact Us Text:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:405
+msgid "Enable Contact Info in contact page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:420
+msgid "Contact Info Title:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:436
+msgid "Contact Info Description:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:455
+msgid "Contact Address Line One:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:471
+msgid "Contact Address Line Two:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:487
+msgid "Contact Phone Number:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:503
+msgid "Contact Email:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:522
+msgid "Enable Google Map in contact page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:537
+msgid "Google Map URL:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer-template.php:557
+msgid "Hide Footer contact callout section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_footer_customization.php:11
+msgid "Footer Customization"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_footer_customization.php:16
+msgid "Footer Copyright"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_footer_customization.php:24
+#, php-format
+msgid ""
+"<p>All Rights Reserved by Corpbiz. Designed and Developed by <a href=\"%1$s"
+"\" target=\"_blank\">WordPress Theme</a><p>"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_footer_customization.php:31
+msgid "Footer Customization text"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:48
+msgid "Home Page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:53
 msgid "Quick Start"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:20
-msgid "Slider Settings"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:66
+msgid "Enable Logo Text"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:22
-msgid "Site Info Setting"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:24
-msgid "Service Setting"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:26
-msgid "Portfolio Setting"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:28
-msgid "Footer Custmization setting"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:30
-msgid "Meta Setting"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:32
-msgid "Upgrade to Pro"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/webriti_option_pannel.php:33
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/showlove.php:5
-msgid "Show some love"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/blog_page_setting.php:31
-msgid "Meta Settings"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/blog_page_setting.php:33
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/footer_customization_settings.php:31
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:41
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:75
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:79
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:36
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:68
-msgid "Options data successfully Saved"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/blog_page_setting.php:34
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/footer_customization_settings.php:32
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:42
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:76
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:80
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:37
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:69
-msgid "Options data successfully reset"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/blog_page_setting.php:46
-msgid "Enable Meta on post:"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/blog_page_setting.php:47
-msgid "Enable Meta On page."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/blog_page_setting.php:48
-msgid "If you only want to remove Author, Date and Category from the posts."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/footer_customization_settings.php:29
-msgid "Footer Customizations"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/footer_customization_settings.php:43
-msgid "footer customizations text"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/footer_customization_settings.php:45
-msgid "Enter the footer customizations text"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/footer_customization_settings.php:48
-msgid "Created By Webriti text"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/footer_customization_settings.php:50
-msgid "Enter the created by webriti text"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/footer_customization_settings.php:54
-msgid "Created By Link"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/footer_customization_settings.php:56
-msgid "Enter the Call Out Button Link"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:38
-msgid "Quick Start Settings"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:53
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:80
 msgid "Custom Logo"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:54
-msgid "Add custom logo from here suggested size is 150X50 px"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:64
-msgid "Logo Height"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:65
-msgid ""
-"Default Logo Height : 50px, if you want to increase than specify your value"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:70
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:94
 msgid "Logo Width"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:71
-msgid ""
-"Default Logo Width : 150px, if you want to increase than specify your value"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:108
+msgid "Logo Height"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:76
-msgid "Text Title"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:77
-msgid "Enable text-based Site Title.   Setup title"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:77
-msgid "Click Here"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:80
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:123
 msgid "Custom Favicon"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:81
-msgid "Make sure you upload .icon image type which is not more then 25X25 px."
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:137
+msgid "Google Tracking code"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:90
-msgid "Custom css"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:151
+msgid "Custom CSS"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_page_settings.php:92
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:162
+msgid "Slider Image one"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:198
+msgid "Slider Image Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:206
 msgid ""
-"This is a powerful feature provided here. No need to use custom css plugin, "
-"just paste your css code and see the magic."
+"Corpbiz is extremely clean in each code line, intensely awesome in very "
+"homepage, supper easy to use, highly flexible with responsive feature."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:43
-msgid ""
-"We have successfully completed over 2500 projects in mobile and web. Here "
-"are few of them"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:212
+msgid "Slider Image Desription"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:73
-msgid "Portfolio "
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:220
+msgid "Learn More"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:87
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:99
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:115
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:132
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:149
-msgid "Portfolio Title"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:230
+msgid "Read More Button Label Text"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:89
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:101
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:117
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:134
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:151
-msgid "Enter the Portfolio Title."
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:238
+msgid "#"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:92
-msgid "Portfolio Description"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:247
+msgid "Read More Button Link"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:94
-msgid "Enter the Portfolio Description."
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:264
+msgid "Open link new tab/window"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:103
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:119
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:136
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:153
-msgid "Portfolio image"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:278
+msgid "Add More slider than upgrade to pro"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:107
-msgid "Home project one page image Link"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:304
+msgid "Site Info"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:109
-msgid "Enter the home project one image link."
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:317
+msgid "Site Info Title One"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:110
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:126
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:143
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:160
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:115
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:133
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:151
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:169
-msgid "Open link in a new window/tab"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:331
+msgid "Site Info Title Two"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:123
-msgid "Home project two page image Link"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:125
-msgid "Enter the home project image two link."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:140
-msgid "Home project three page image Link"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:142
-msgid "Enter the home project image three link."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:157
-msgid "Home project four page image Link"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_project_portfolio_settings.php:159
-msgid "Enter the home project image four link."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:77
-msgid "Service Settings "
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:91
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:105
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:123
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:141
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:159
-msgid "Service Title"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:93
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:107
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:125
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:143
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:161
-msgid "Enter the Service Title."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:96
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:108
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:126
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:144
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:162
-msgid "Service Description"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:98
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:110
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:128
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:146
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:164
-msgid "Enter the Service Description."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:101
-msgid "Service One"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:102
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:120
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:138
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:156
-msgid "Service Icons"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:104
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:122
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:140
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:158
-msgid "Service Icon (Using Font Awesome icons name) like: fa-rub."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:104
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:122
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:140
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:158
-msgid "Get your fontawesome icons."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:112
-msgid "Home service one page and icon Link"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:114
-msgid "Enter the home service one icon and title link."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:119
-msgid "Service Two"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:130
-msgid "Home service two page and icon Link"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:132
-msgid "Enter the home service two icon and title link."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:137
-msgid "Service Three"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:148
-msgid "Home service third page and icon Link"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:150
-msgid "Enter the home service third icon and title link."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:155
-msgid "Service Four"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:166
-msgid "Home service fourth page and icon Link"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_service_settings.php:168
-msgid "Enter the home service fourth icon and title link."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:24
-msgid "Sample Pages"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:34
-msgid "Site Info settings"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:49
-msgid "Site Info title one"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:51
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:56
-msgid "Enter the Site Info title."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:54
-msgid "Site Info title Two"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:59
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:345
 msgid "Site Info Description"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:61
-msgid "Enter the Site info description."
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:359
+msgid "Button one Text"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:64
-msgid "Label one Text"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:373
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:415
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1582
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1671
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1761
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1882
+msgid "Open window in new tab"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:66
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:74
-msgid "Enter the Site Info text."
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:387
+msgid "Button one url"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:68
-msgid "Label one Link"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:401
+msgid "Button Two Text"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:69
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:77
-msgid "To Add Link Upgrade to Pro"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:429
+msgid "Button two url"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:72
-msgid "Label two Text"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:438
+msgid "Service Settings"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_site_info_settings.php:76
-msgid "Label Two Link"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:458
+msgid " Enable Service Section on front page."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:8
-msgid "Sorry, your nonce did not verify."
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:467
+msgid "Our Services"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:66
-msgid "Home Slider Setting"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:476
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:564
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:654
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:747
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:837
+msgid "Service Title"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:80
-msgid "Enable Home Slider"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:82
-msgid "Enable Home Slider on front page."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:85
-msgid "Select Slider Type"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:86
-msgid "Demo slider"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:87
-msgid "Post slider"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:88
-msgid "Category slider"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:92
-msgid "Animation"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:95
-msgid "fade"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:97
-msgid "Select the Animation Type."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:100
-msgid "Animation speed"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:115
-msgid "Select Slide Animation speed."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:118
-msgid "Slideshow speed"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:133
-msgid "Select the Slide Show Speed."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:139
-msgid "Enable Feature post slider on Page."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:141
-msgid "Featured post slider section"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:145
-msgid "Featured Post Slider"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:149
-msgid "Click Here To Edit"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:150
-msgid "You can use multiple ID's seprated by Commma[ , ]"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/home_slider_settings.php:156
-msgid "Featured Category slider section"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/showlove.php:8
-msgid "Like this theme? Support us by:"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/showlove.php:10
-msgid "Buy It"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/showlove.php:11
-msgid "Rate It"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/showlove.php:12
-msgid "Tweet It"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:24
-msgid "Premium Theme Features"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:29
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:485
 msgid ""
-"corpbiz is designed with Readability Flexibility in mind. Customize it to "
-"your hearts content with Sortable Project Areas, Services Areas and Call Out "
-"Section. . Use these great features to build an effective online presence "
-"for your business."
+"Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu "
+"fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in "
+"culpa qui officia deserunt mollit anim id est laborum."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:30
-msgid "Upgrade To Pro Version"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:493
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:582
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:672
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:855
+msgid "Service Description"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:31
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:157
-msgid "View Live demo"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:511
+msgid "Service One icon"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:39
-msgid "Responsive Layout"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:530
+msgid "Home service one page and icon Link"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:40
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:547
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:637
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:729
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:819
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1054
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1120
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1188
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1257
+msgid "Open Link New tab/window"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:555
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:645
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:738
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:828
+msgid "Easy to Use"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:573
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:663
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:756
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:846
 msgid ""
-"All of our Theme contain Responsive frameworks that adapt to all Mobile "
-"Devices."
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur "
+"adipisicing elit dignissim dapib tumst."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:46
-msgid "All Browser Support"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:601
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:691
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:783
+msgid "Service Icon"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:47
-msgid "Theme supports all browsers.Like"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:620
+msgid "Home service two page and icon Link"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:47
-msgid "IE 9"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:711
+msgid "Home service three page and icon Link"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:47
-msgid "+"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:765
+msgid "Description three"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:47
-msgid "Google Chrome"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:802
+msgid "Home service four page and icon Link"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:47
-msgid "Mozilla Firefox"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:869
+msgid "Want to add more service than upgrade to pro"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:47
-msgid "Apple Safari"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:899
+msgid "Project Slider Settings"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:58
-msgid "Translation Ready"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:913
+msgid "Want to add Project Slider than upgrade to pro"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:59
-msgid "You can use corpbiz - the WordPress Theme for any language."
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:941
+msgid "Portfolio Settings"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:64
-msgid "Great Support Team"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:960
+msgid "Enable portfolio section on home Page"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:65
-msgid "Webriti  always offers you Great and Quick support."
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:974
+msgid "portfolio Title"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:74
-msgid "corpbiz-Lite Vs corpbiz-Premium"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:982
+msgid ""
+"We have successfully completed over 2500 portfolios in mobile and web. Here "
+"are few of them.."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:77
-msgid "Sr. No."
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:988
+msgid "portfolio Description"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:78
-msgid "Features"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1002
+msgid "portfolio Title One"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:79
-msgid "Free"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1037
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1103
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1171
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1240
+msgid "Home portfolio one page and icon Link"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:80
-msgid "Premium"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1069
+msgid "portfolio Title Two"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:85
-msgid "1"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1134
+msgid "portfolio Title Three"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:85
-msgid "Home Page Sections "
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1203
+msgid "portfolio Title Four"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:86
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:90
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:104
-msgid "2"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1270
+msgid "Want to add more portfolios and categorization than upgrade to pro"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:87
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:102
-msgid "4"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1299
+msgid "Client Settings"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:91
-msgid "Responsive Home Page Slider"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1313
+msgid "Want to add Client than upgrade to pro"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:96
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1349
+msgid "Home Page client Heading"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1364
+msgid "Home Page Client section description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1379
+msgid "Number of Client on Client Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1395
+msgid "Click Here To add Client"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1424
+msgid "Theme Support Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1439
+msgid "Want to add Theme Support Setting Section than upgrade to pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1478
+msgid "Theme Support Background"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1492
+msgid "Section Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1507
+msgid "Section Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1522
+msgid "Icon 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1537
+msgid "Title 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1552
+msgid "Description 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1567
+msgid "Learn More Text 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1596
+msgid "Learn More Button link 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1611
+msgid "Icon 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1626
+msgid "Title 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1641
+msgid "Description 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1656
+msgid "Learn More Text 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1686
+msgid "Learn More Button link 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1701
+msgid "Icon 3"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1716
+msgid "Title 3"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1731
+msgid "Description 3"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1746
+msgid "Learn More Text 3"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1776
+msgid "Learn More Button link 3"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1786
+msgid "Footer Callout"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1801
+msgid "Want to add Footer callout than upgrade to pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1837
+msgid "Call Out Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1852
+msgid "Call Out Text"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1867
+msgid "Call Out Button Text"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1896
+msgid "Call Out Button URL"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1908
+msgid "Home Blog Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1917
+msgid "From Blog"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1930
+msgid "Lorem ipsum dolor sit ametconsectetuer adipiscing elit."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1951
+msgid "Select Category for Latest blog"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1960
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1970
 msgid "3"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:97
-msgid "Blog Layout Variations"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1968
+msgid "Select Number of Post"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:103
-msgid "Page Templates"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:105
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:119
-msgid "7"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:108
-msgid "5"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:108
-msgid "About Us Template, Portfolio Template, Services Template...   "
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:113
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1970
 msgid "6"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:114
-msgid "Custom Typography"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:120
-msgid "In-Built Contact Form"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:125
-msgid "8"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:126
-msgid "Custom Widgets,Shortcodes.."
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:131
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1970
 msgid "9"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:132
-msgid "Theme Support "
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1970
+msgid "12"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:133
-msgid "Via Wordpress Forums"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_home_page.php:1970
+msgid "15"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:134
-msgid "Private Forums with Email Support"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:18
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:114
+msgid "Enable"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:150
-msgid "Upgarde to Premium Here"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:33
+msgid "Slider section always top on the home page"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress_lite\wp-content\themes\corpbiz-lite/functions/theme_options/pages/UpgradeToPro.php:156
-msgid "Upgrade To Premium Version"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:34
+msgid "Note:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:34
+msgid ""
+"By default all the section are enable on homepage. If you do not want to "
+"display any section just drag that section to the disabled box."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:42
+msgid "Layout Manager"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:47
+msgid "Front Page Layout"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_layout_manager.php:62
+msgid "Use Home Page Layout Section Setting Drag & Drop than upgrade to pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_pro.php:13
+msgid "UPGRADE  TO PRO"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_pro.php:20
+msgid "UPGRADE  TO PRO VERSION"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_pro.php:48
+msgid "https://wordpress.org/support/view/theme-reviews/corpbiz#postform/"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_pro.php:48
+msgid "ADD YOUR REVIEW"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_pro.php:77
+msgid "http://webriti.com/help/"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_pro.php:77
+msgid "DOCUMENTATION"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_pro.php:81
+msgid ""
+"The Pro Version gives you more opportunities to enhance your site and "
+"business. In order to create effective online presence one have to showcase "
+"their wide range of products, have to use contact us enquiry form, have to "
+"make effective about us page, have to introduce team members, etc etc . The "
+"pro version will give it all. Buy the pro version and give us a chance to "
+"serve you better. "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_texonomy_archive.php:11
+msgid "Texonomy Archive Portfolio"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_texonomy_archive.php:16
+msgid "Texonomy Archive"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_texonomy_archive.php:29
+msgid "Add Taxonomy Portfolio Category Template than upgrade to pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_texonomy_archive.php:64
+msgid "Number of Taxonomy archive portfolio"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_theme_style.php:27
+msgid "Theme Style Setting"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_theme_style.php:40
+msgid "Use Below Default Color Skin & Custom Color skin than upgrade to pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_theme_style.php:76
+msgid "Predefined Colors"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_theme_style.php:106
+msgid "Skin Color Enable"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_theme_style.php:125
+msgid "Skin Color"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:11
+msgid "Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:16
+msgid "Typography Enable / Disable"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:29
+msgid "Use Typography to chnage Font size,Font family etc. than upgrade to pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:64
+msgid "Enable Custom Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:83
+msgid "General Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:97
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:153
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:210
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:266
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:322
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:378
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:434
+msgid "Font Size"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:114
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:170
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:227
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:283
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:339
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:395
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:451
+msgid "Font Family"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:130
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:186
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:243
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:299
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:355
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:411
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:467
+msgid "Font Style"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:139
+msgid "Menu Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:196
+msgid "Post Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:252
+msgid "Service Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:308
+msgid "Widget Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:364
+msgid "Callout Title Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/customizer/customizer_typography.php:420
+msgid "Callout Description Typography"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/widget/custom-sidebar.php:7
+msgid "Sidebar"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/widget/custom-sidebar.php:9
+msgid "The primary widget area"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/widget/custom-sidebar.php:17
+msgid "Footer Widget Area Left"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\corpbiz-lite/functions/widget/custom-sidebar.php:19
+msgid "footer widget left area"
 msgstr ""

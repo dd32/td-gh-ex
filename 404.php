@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+get_header();
+if(!is_home()) { echo '</div>'; }
+ ?>
 <div class="page_mycarousel">
 	<div class="container page_title_col">
 		<div class="row">
@@ -15,7 +18,7 @@
 				<h2><?php _e('Error 404','corpbiz'); ?></h2>
 				<h4><?php _e('Oops! Page not found','corpbiz'); ?></h4>
 				<p><?php _e('We`re sorry, but the page you are looking for doesn`t exist.','corpbiz'); ?></p>
-				<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cont_btn btn_red"><?php _e('Go to Homepage','corpbiz'); ?></a></p>
+				<p><a href="<?php echo esc_html(site_url());?>" class="cont_btn btn_red"><?php _e('Go to Homepage','corpbiz'); ?></a></p>
 			</div>
 		</div>
 	</div>

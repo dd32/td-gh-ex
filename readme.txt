@@ -49,10 +49,49 @@ All images in Corpbiz are licensed under the terms of the GNU GPL.
 
 ======Site Title and Description=============
 Site Title and its description in not shown on home page besides this both are used above each page / post along with the search field.
+ 
+
+Corpbiz WordPress Theme bundles the following third-party resources:
+
+Slider Image
+URL: https://pixabay.com/en/business-hard-working-autonomous-1067978/
+Source:http://pixabay.com
+License: CC0 Public Domain
+
+Portfolio Image
+URL: https://pixabay.com/en/business-hard-working-autonomous-1067978/
+Source:http://pixabay.com
+License: CC0 Public Domain
+
+URL: https://pixabay.com/en/office-working-computer-tablet-1069207/
+Source:http://pixabay.com
+License: CC0 Public Domain
+
+
+URL: https://pixabay.com/en/monks-path-sunset-landscape-1077839/
+Source:http://pixabay.com
+License: CC0 Public Domain
+
+URL: https://pixabay.com/en/woman-girl-headphones-music-977020/
+Source:http://pixabay.com
+License: CC0 Public Domain
+
+Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Source: http://fontawesome.io
+# --- EOF --- #
+
 	
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.1
+1. Add Theme Description.
+2. Update Theme Tags.
+@Version 1.6
+1. Update Slider.
+2. Use Default Navigation.
+3. Solved Styling issue.
 @Version 1.5
 1. Change Product Image
 2. Update Font-awesome Icon 4.4.0 to 4.5.0 
@@ -150,26 +189,5 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see .
-
-
-Corpbiz WordPress Theme bundles the following third-party resources:
-
-Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
-License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-Source: http://fontawesome.io
-
-Bootstrap v3.1.1 (http://getbootstrap.com) Copyright 2011-2014 Twitter, Inc.
-Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-Source: http://getbootstrap.com
-	
-List Of Roboto Fonts Used:
-1 Roboto Regular
-2 Roboto Black
-3 Roboto Light
-4 Roboto Medium
-5 Roboto Thin
-
-Roboto Fonts: http://www.google.com/fonts/specimen/Roboto) by Christian Robertson
-Licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html
 
 # --- EOF --- #

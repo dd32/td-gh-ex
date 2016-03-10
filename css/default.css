@@ -1,0 +1,91 @@
+/*
+* Author: Corpbiz
+* Created by: Shahid (Scientech IT)
+* Copyright (c) 2014 Corpbiz
+* Date: 28 May, 2014
+* http://www.webriti.com
+* Name: default.css
+
+*/
+ 
+ 
+/*Menubar colors */ 
+
+.navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus, .navbar .navbar-nav > .active > a,
+.navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus, .navbar .navbar-nav > .open > a, .navbar .navbar-nav > .open > a:hover, .navbar .navbar-nav > .open > a:focus, .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus, .dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus, .btn_login, .btn_green, .footer_callout_area, .pagination span.current { 
+	background-color: #66d1b9; 
+}
+
+/*Background colors */
+
+.header_top_widget .tagcloud a:hover, .header_top_widget .tagcloud a:focus, .header_top_widget .searchform div #searchsubmit, .btn_green, .footer_callout_area { background-color: #66d1b9; }
+
+/* Font Colors */
+
+.header_contact_social li > a > i:hover, .homepage_top_callout h2 > span, .service_icon_green { color: #66d1b9; }
+
+/* Border colors */
+
+.blog_author img { border: 4px solid #66d9c1; }
+
+/* Box Shadow*/
+
+.btn_green { box-shadow: 0 3px 0px 0 #619d8f; }
+
+/* Pink Color Scheme */
+.btn_red, .flex-btn, .page_up, .support_icon_red, .support_btn_red, .sidebar_widget_tab > .active a, .paginations a:hover, .paginations a.active, .more-link, .callout_btn, .widget table caption, .widget table tbody a, .qua_dropcape_square span, 
+.tagcloud a:hover, .tagcloud a:focus, 
+.footer-sidebar .widget .tagcloud a:hover, 
+.footer-sidebar .widget .tagcloud a:focus, 
+.header-sidebar .widget .tagcloud a:hover, 
+.header-sidebar .widget .tagcloud a:focus, 
+input[type="submit"], 
+.btn_common { 
+	background-color: #fa7073; 
+}
+a, a:hover, a:focus, ins, 
+.widget ul li a:hover, 
+.widget ul li a:focus, 
+.widget table #next a:hover, 
+.widget table #next a:focus, 
+.widget table #prev a:hover, 
+.widget table #prev a:focus, 
+.footer_menu_links li > a:hover { 
+	color: #fa7073; 
+}
+.tagcloud a:hover, .tagcloud a:focus, 
+.footer-sidebar .widget .tagcloud a:hover, 
+.footer-sidebar .widget .tagcloud a:focus, 
+.header-sidebar .widget .tagcloud a:hover, 
+.header-sidebar .widget .tagcloud a:focus { 
+    border: 1px solid #fa7073;
+}
+
+blockquote { border-left: 5px solid #fa7073; }
+
+.btn_red, 
+.flex-btn, 
+.more-link, 
+.callout_btn, 
+input[type="submit"], 
+.btn_common { 
+    box-shadow: 0 3px 0 0 #cc6567;
+}
+.callout_btn { color: #ffffff; }
+.callout_btn:hover, 
+.callout_btn:focus { 
+	color: #ffffff; 
+}
+.portfolio_tabs li.active > a, 
+.portfolio_tabs li > a:hover, 
+.portfolio_caption a:hover, 
+.portfolio_caption span, 
+.sidebar_links p span, 
+.tab-content p > a, 
+.blog_author h6 > span, 
+.reply a, 
+.reply a:hover, 
+address a { 
+	color: #fa7073; 
+}

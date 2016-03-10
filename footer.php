@@ -1,23 +1,20 @@
 <!--Footer Section-->
 <?php $corpbiz_options=theme_data_setup(); 
-	  $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $corpbiz_options ); ?>
-<div class="footer_section">
+	$current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $corpbiz_options ); 
+if ( is_active_sidebar( 'footer_widget_area_left' ) || is_active_sidebar( 'footer_widget_area_center' ) ||  is_active_sidebar( 'footer_widget_area_right' )) { ?>	
+<div class="footer-sidebar">
 	<div class="container">
-		<div class="row">
-			<?php 
-			if ( is_active_sidebar( 'footer-widget-area' ) )
-			{ dynamic_sidebar( 'footer-widget-area' );	}
-			?>
-		</div>
+		<?php get_template_part('sidebar','footer');?>
 	</div>
 </div>
+<?php } ?>
 <!--/Footer Section-->
 <!--Footer Copyright Section-->
 <div class="container">
 	<div class="row copyright_menu_section">
-		<?php if($current_options['footer_copyright']!='') { ?>
+		<?php if($current_options['footer_copyright_text']!='') { ?>
 		<div class="col-md-6">			
-			<p><?php echo $current_options['footer_copyright'];?></p>
+			<p> <?php echo $current_options['footer_copyright_text']; ?></p>
 		</div>	
 		<?php } ?>
 		<div class="col-md-6">			
@@ -30,8 +27,8 @@
 			?>
 		</div>
 	</div>
-</div>	
-<!--/Footer Copyright Section-->
+</div>
+<!--Page Up--><a href="#" class="page_up"><i class="fa fa-chevron-up"></i></a><!--/Page Up-->
 <?php wp_footer(); ?>
   </body>
 </html>

@@ -3,7 +3,7 @@ $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $co
 <div class="portfolio_section">
 	<div class="container">
 		<div class="row">
-			<div class="corpo_heading_title">
+			<div class="section_title">
 			<?php if($current_options['portfolio_title'] !='') { ?>
 				<h1><?php echo esc_html($current_options['portfolio_title']);  ?></h1>
 				<?php } ?>

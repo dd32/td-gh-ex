@@ -1,20 +1,19 @@
-/*!
- * Theme Menu Css created by Shahid (Scientech)
- */
- 
+/*
+* Author: Corpbiz Theme
+* Created by: Shahid (Scientech IT)
+* Copyright (c) 2014 Corpbiz
+* Date: 28 May, 2014
+* http://www.webriti.com
+
+*/
+
 /*Menu Section--------------------------------------------------------------------------*/
  
 .navbar_section {
 	background: transparent;
 }
 .navbar-inverse .navbar-toggle {
-    background: none repeat scroll 0 0 #66d1b9;
     border-color: #ffffff;
-	width: 45px;
-}
-.navbar-inverse .navbar-toggle:hover,
-.navbar-inverse .navbar-toggle:focus {
-  background-color: #66d1b9;
 }
 .navbar-inverse {
     border-color: none;
@@ -24,10 +23,10 @@
 	border-color: none;
 }
 .navbar-brand {
-    font-size: 18px;
+    font-size: 36px;line-height: 35px; 
     height: auto;
-    line-height: 35px;
-	padding: 22.5px 15px 22.5px 0px;
+    
+	padding: 10px 15px 10px 0; 
 	margin-right: 50px;
 }
 .navbar-inverse {
@@ -36,44 +35,34 @@
 	border-top: 0;
 	border-right: 0;
 	border-left: 0;
-	padding: 5px 0;
+	padding: 0; 
 }
 .navbar {
+	background: rgba(0, 0, 0, 0.3); padding: 10px 0;
     border-radius: 0px;
 }
 .navbar-wrapper {
-	margin-top: 8px;
-}/*
+	margin-top: 0px; 
+}
 .navbar-wrapper {
 	position: absolute;
 	top: 0;
 	right: 0;
 	left: 0;
-	z-index: 20;
-}*/
-.navbar-wrapper {
-	position: relative;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 20;
-	}
-	
+	z-index: 10;
+}
 .navbar .navbar-nav > .active > a,
 .navbar .navbar-nav > .active > a:hover,
 .navbar .navbar-nav > .active > a:focus {
-    background-color: #66d1b9;
 	color: #FFFFFF;
 }
 .navbar .navbar-nav > .open > a,
 .navbar .navbar-nav > .open > a:hover,
 .navbar .navbar-nav > .open > a:focus {
-	background-color: #66d1b9;
 	color: #FFFFFF;
 }
 .navbar .navbar-nav > li > a:hover,
 .navbar .navbar-nav > li > a:focus {
-	background-color: #66d1b9;
 	color: #FFFFFF;
 }
 .navbar .navbar-nav > li {
@@ -83,17 +72,15 @@
 .navbar .navbar-nav > li > a {
     line-height: 20px;
     padding: 11px 16px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 2px 2px 2px 2px;
 	color: #ffffff;
-	font-family: 'Roboto';
-	font-weight:400; 
+	font-family: 'Roboto'; 
+	font-weight: 500;
 	text-transform: uppercase;
 	font-size: 15px;
 }
 .nav {
-    /* position: relative; 
-    top: 20px;*/
-	margin-top: 26px;
+   margin-top: 0px; padding: 14px 0;
 }
 .navbar {
 	margin-bottom: 0px;
@@ -106,14 +93,15 @@
     padding: 0;
 	min-width: 250px;
 }
+.dropdown-menu li { margin: 0; padding: 0; }
 .dropdown-menu > li > a {
     color: #666666;
-    font-family: 'Roboto';
-	font-weight:400;
+    font-family: 'Roboto'; 
+	font-weight: 500;
     font-size: 15px;
     line-height: 20px;
     padding: 15px 20px;
-	border-bottom: 1px solid #DEDEDE;
+	border-bottom: 1px solid #eeeeee; transition: all 0.3s ease-in-out 0s; white-space: normal; 
 }
 .dropdown-menu > li > a:last-chlid {
 	border-bottom: 0px;
@@ -122,7 +110,6 @@
 .dropdown-menu > li > a:focus {
   color: #ffffff;
   text-decoration: none;
-  background-color: #66d1b9;
 }
 .dropdown-submenu{
     position:relative;
@@ -140,23 +127,11 @@
 .dropdown-submenu:hover > .dropdown-menu{
     display:block;
 }
-.dropdown-submenu > a:after{
-    /* display:block;
-    content:" ";
-    float: right;
-    width: 0 !important;
-    height:0 !important;
-    border-color: 0px !important;
-    border-style: solid solid dotted !important;
-    border-width: 6px 3px 0 !important;
-	border-radius: 50% !important;
-    margin-top:9px;
-    margin-right:-10px; */
-}
 .dropdown-submenu i {
 	font-size: 14px;
-	float: right;
 	line-height: 1.5;
+	position: absolute; 
+	right: 10px; 
 }
 .dropdown-submenu .pull-left{
     float:none;
@@ -174,6 +149,7 @@
 .navbar-right .dropdown-menu {
     left: 0;
     right: 0;
+	border-radius: 0px; 
 }
 .navbar-nav > li > a > i {
     font-size: 18px;
@@ -182,28 +158,14 @@
     padding-top: 0;
 }
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-    margin-left: 0px;
+    margin-left: 0px; 
+	color: #ffffff;
 }
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-    background-color: #66d1b9;
-    color: #fff;
-    outline: 0 none;
-    text-decoration: none;
-} 
-
-
-/* .navbar-collapse {
-    margin-left: 15px !important;
-    margin-right: 15px !important;
-	} */
-/*Menu with Login and Register Buttons--------*/
 .navbar-form {
     margin: 0px;
 }
 .btn_login {
-    background-color: #66d1b9;
-	font-family: 'Roboto';
-	font-weight:900;
+	font-family: 'Roboto'; Font-weight: 600; 
 	font-size: 14px;
 	line-height: 20px;
 	text-transform: uppercase;
@@ -218,8 +180,8 @@
 }
 .btn_register {
     background-color: #072720;
-	font-family: 'Roboto';
-	font-weight:900;
+	font-family: 'Roboto'; 
+	font-weight: 600;
 	font-size: 14px;
 	line-height: 20px;
 	text-transform: uppercase;
@@ -228,7 +190,3 @@
 	border-radius: 0px;
 	padding: 11px 16px;
 }
-/* .row {
-    margin-left: 0px;
-    margin-right: 0px;
-} */

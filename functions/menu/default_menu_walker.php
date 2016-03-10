@@ -1,12 +1,15 @@
-<?php 
-function webriti_page_menu_args( $args ) {
-	if ( ! isset( $args['show_home'] ) )
-		$args['show_home'] = true;
-	return $args;
-}
+<?php
+if( !function_exists('webriti_page_menu_args')){
+	function webriti_page_menu_args( $args ) {
+		if ( ! isset( $args['show_home'] ) )
+			$args['show_home'] = true;
+		return $args;
+	}
+} 
+
 add_filter( 'wp_page_menu_args', 'webriti_page_menu_args' );
 
- 
+if( !function_exists('webriti_fallback_page_menu')){ 
 function webriti_fallback_page_menu( $args = array() ) {
 
 	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
@@ -53,7 +56,10 @@ function webriti_fallback_page_menu( $args = array() ) {
 	else
 		return $menu;
 }
-class webriti_walker_page_menu extends Walker_Page{
+}
+
+if( !class_exists('webriti_walker_page_menu') ){
+	class webriti_walker_page_menu extends Walker_Page{
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class='dropdown-menu'>\n";
@@ -92,4 +98,6 @@ class webriti_walker_page_menu extends Walker_Page{
 		}
 	}
 }
+}
+
 ?>

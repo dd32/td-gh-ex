@@ -1,0 +1,105 @@
+#accordion-section-appointment_pro_section h3
+{background-color: #f5f5f5!important;
+color:#555 !important;
+font-size:14px !important;
+ }
+ 
+.upgrade {
+  background-color: #1d4467;
+  border-color: #1d4467;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+   margin-bottom: 0px;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius:2px;
+}
+.review {
+  background-color: #82b541;
+  border-color: #1ec846;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+   margin-bottom: 0;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius:2px;
+}
+.document{
+  background-color: #ee591f;
+  border-color: #ef9c28;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius:2px;
+}
+.pro-box
+{display:block;text-align:center; margin-bottom: 0px;}
+.pro-vesrion 
+{text-align:center; margin-top:15px;}
+
+.service {
+  background-color: #143745;
+  border-color: #ef9c28;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius: 2px;
+  }
+  .pro-vesrion p{line-height:20px;} 
+
+
+.sortable{ 
+list-style-type: none;
+ margin: 0;
+ padding: 0; 
+ margin-bottom: 10px;
+ min-height:100px;
+ padding:5px 0;
+ }
+ .customizer_layout {
+  background-color:#ccc;
+ }
+ .sortable li {
+ margin: 5px;
+ padding: 5px;
+ width: 215px; 
+ background-color:#fff;
+ border:1px solid #000;
+ text-align:center;
+ }
+ 
+ #customize-control-corpbiz_options-front_page_data label {
+ display:none !important;
+ }
+ 
+  #customize-control-corpbiz_options-front_page_data label , #customize-control-corpbiz_options-layout_textbox_disable label
+ {
+ display:none !important;
+ }
+ #customize-control-corpbiz_options-theme_color  input { display:none;}
+ 
+ #customize-control-corpbiz_options-theme_color label img {border:3px solid #fff;}
+ .selected_img {border:2px solid #ceed1e !important;}
+ 
+ 
+ #accordion-section-project_slider_settings .accordion-section-title:after, #accordion-section-client_settings .accordion-section-title:after,#accordion-section-theme_support .accordion-section-title:after, #accordion-section-footer_callout .accordion-section-title:after, #accordion-panel-about_setting .accordion-section-title:after, #accordion-panel-layout_manager_panel .accordion-section-title:after, #accordion-panel-texonomy_archive_portfolio .accordion-section-title:after, #accordion-panel-typography .accordion-section-title:after, #accordion-section-theme_style .accordion-section-title:after  {content: "\f160";}

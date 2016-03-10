@@ -1,0 +1,138 @@
+/*Widget Css-------------------------------------------------------------------------------------------------------------------*/
+/*Rss Widget*/
+.rss-date, .widget_rss cite {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 25px;
+    padding: 5px 0;
+}
+.rss-date { font-weight: 500; }
+.rssSummary { padding: 5px 0 5px; font-weight: 400; }
+
+/* Wp Default Core classes ------------------------------------------------------------------------------------------------------------*/
+h1, .h1, h2, .h2,
+h3, .h3, h4, .h4,
+h5, .h5, h6, .h6  { margin: 0 0 20px; font-weight: 400; } 
+p { margin: 0 0 20px; } 
+/* Ul and ol lists*/
+ul, ol { margin: 0 0 25px; padding: 0 0px 0px 15px; }
+ul li, ol li { font-family: 'Roboto'; font-size: 16px; font-weight: 500; line-height: 25px; margin: 0; padding: 6px 0; vertical-align: top; }
+ul li, ul li a, ol li, ol li a  { border: 0 none; }
+li > ul, li > ol, blockquote > ul, blockquote > ol {
+    margin-left: 1.3333em;
+}
+/* Blockquote*/
+blockquote { background-color: #f8f8f8; font-family: 'Roboto'; margin: 0 0 20px; }
+blockquote, blockquote p { font-size: 18px; font-style: italic; font-weight: 400; letter-spacing: 1px; padding: 15px 20px; line-height: 25px; }
+.entry-content blockquote p { margin: 0; }
+blockquote cite, blockquote small { font-size: 15px; display: block; line-height: 20px; padding-top: 10px; }
+blockquote em, blockquote i, blockquote cite { font-style: normal; }
+blockquote strong, blockquote b { font-weight: 600; }
+/*Address*/
+address { font-style: italic; margin: 0 0 20px; line-height: 25px;color: #787878;font-family: 'Roboto';font-size: 16px; }
+address span { display: block; padding: 0 0 20px; }
+address span:last-child { padding-bottom: 0; }
+address span i { color: #aeb6b9; font-size: 20px; padding: 0 10px 0 0px; }
+/*Table*/
+table { border-spacing: 0; letter-spacing: 0.5px; margin: 0 0 20px; text-align: left; table-layout: fixed; width: 100%; }
+table, table th, table td { border: 1px solid #e0e4e6; padding: 10px; }
+table { padding: 0; }
+table th { text-align: left; line-height: 1.9375; }
+table td { line-height: 1.9375; }
+tbody a { font-weight: 600;}
+/*Definition Lists*/
+dl { margin-bottom: 20px; margin-top: 0; }
+dl dt { font-weight: 700; margin-bottom: 5px; }
+dl dd { margin-bottom: 20px; margin-left: 0px; }
+/*Abriviation, Acronym, Big, Strike, del, em, Ins, cite, q*/
+abbr, tla, acronym { text-decoration: underline; cursor: help; }
+acronym { border-bottom: 0 none; }
+big { font-size: larger; font-weight: 600; }
+s, strike, del { text-decoration: line-through; }
+em, cite, q { font-style:italic; }
+ins { text-decoration: none; padding: 0 3px; }
+code, kbd, tt, var, samp, pre {
+    font-family: Inconsolata, monospace;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+/*Image Alignment*/
+.alignleft { display: inline; float: left; }
+.alignright { display: inline; float: right; }
+.aligncenter { display: block; margin-right: auto; margin-left: auto; }
+blockquote.alignleft, .wp-caption.alignleft, img.alignleft { margin: 0.4em 1.6em 1.6em 0; }
+blockquote.alignright, .wp-caption.alignright, img.alignright { margin: 0.4em 0 1.6em 1.6em; }
+blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter { clear: both; margin-top: 0.4em; margin-bottom: 1.6em; }
+.wp-caption.alignleft, .wp-caption.alignright, .wp-caption.aligncenter { margin-bottom: 1.2em; }
+img.alignnone{ display: block; margin: 0 auto; height: auto; }
+.alignnone img{ display: block; height: auto; }
+img.alignleft, .wp-caption.alignleft{ margin-right: 30px; }
+img.alignright, .wp-caption.alignright{ margin-left: 30px; float: right;}
+img.wp-caption .alignnone { display: block; margin: 0 auto; height: auto; }
+.wp-caption .wp-caption-text, .gallery-caption, .entry-caption {  
+	clear: left;
+    font-style: italic;
+    line-height: 1.5em;
+	font-size: 14px;
+    margin: 12px 0;
+}
+.wp-caption.alignright { margin: 5px 0 20px 20px;}
+.wp-caption.alignleft { margin: 5px 20px 20px 0;}
+.gallery .gallery-icon img { height: auto; max-width: 90%; padding: 0; }
+.gallery-item .gallery-caption { font-size: 14px; margin: 12px 0; text-align: center; font-style: italic; line-height: 1.5em; }
+a img.alignright { float: right; }
+a img.alignnone { margin: 5px 20px 20px 0; }
+a img.alignleft { float: left; }
+a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
+/*Additional Important need*/
+.entry-content .wp-caption, .cont-description .wp-caption{ width: 100% !important; } 
+.portfolio-content .wp-caption{ padding:0; position:relative; width: 100% !important; background-color:transparent; }
+/*Page Links*/
+.page-links a {
+	border-radius: 2px;
+    display: inline-block;
+	border: 0 none;
+    font-size: 14px;
+	font-weight: 600;
+    line-height: 20px;
+    margin: 0px 3px 3px;
+    padding: 7px 18px;
+    text-align: center;
+    transition: all 0.4s ease 0s;
+}
+.page-links a:hover { text-decoration: none; }
+/*Form - Pwd Input and Label*/
+.post-password-form label {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    text-transform: uppercase;
+	width: 80%;
+}
+select, input[type="text"], .post-password-form input[type="password"] { 
+	border: 1px solid #e0e4e6;
+	line-height: 20px;
+	color: #787878;
+	height: 45px;
+	border-radius: 1px;
+	padding: 12px 10px;
+	width: 100%; 
+	box-shadow: none;
+	outline: 0;
+}
+input[type="text"] { margin: 0 0 15px; }
+input[type="submit"] { 
+	color: #ffffff;
+    display: inline-block;
+    font-family: 'Roboto';
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0px 0 3px;
+    padding: 11px 30px;
+    text-align: center;
+	border: 0 none;
+ }
