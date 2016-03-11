@@ -1,0 +1,741 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Byline\n"
+"POT-Creation-Date: 2015-07-03 09:27-0500\n"
+"PO-Revision-Date: 2015-07-03 09:27-0500\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:16
+msgid "It looks like nothing was found at this location. Perhaps try a search?"
+msgstr ""
+
+#: archive.php:29
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: archive.php:31
+#, php-format
+msgid "Tag Archive for %s"
+msgstr ""
+
+#: archive.php:33
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:35
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:35
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:37
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:37
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:39
+msgid "Blog Archives"
+msgstr ""
+
+#: comments.php:29
+#, php-format
+msgid "1 comment for &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments for &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:40
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:42
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:51
+msgid "Comments are closed."
+msgstr ""
+
+#: content-footer.php:11 image.php:56
+msgid "Pages:"
+msgstr ""
+
+#: content-footer.php:12
+msgid "Tags:"
+msgstr ""
+
+#: content-footer.php:13 functions.php:324 image.php:57
+msgid "Edit"
+msgstr ""
+
+#: content-header.php:30 content.php:17
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: content-header.php:31 content.php:18
+#, php-format
+msgid "Posts by %s"
+msgstr ""
+
+#: content-image.php:18 content-page.php:17 content-status.php:20
+#: content.php:36 functions.php:369
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content-none.php:9
+msgid "Nothing found"
+msgstr ""
+
+#: content-none.php:14
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:18
+msgid ""
+"Sorry, but no posts matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-none.php:23
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content-status.php:16
+#, php-format
+msgid "Posted on %1$s at %2$s"
+msgstr ""
+
+#: content.php:28
+msgid "0 Comments"
+msgstr ""
+
+#: content.php:28
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:28
+msgid "% Comments"
+msgstr ""
+
+#: footer.php:29
+#, php-format
+msgid "The %s Theme by %s."
+msgstr ""
+
+#: functions.php:63
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:64
+msgid "Social"
+msgstr ""
+
+#: functions.php:87
+msgid "Default Header 1"
+msgstr ""
+
+#: functions.php:219
+msgid "Upper Sidebar"
+msgstr ""
+
+#: functions.php:221
+msgid "This section appears above the sidebar menu area."
+msgstr ""
+
+#: functions.php:229
+msgid "Lower Sidebar"
+msgstr ""
+
+#: functions.php:231
+msgid "This section appears below the sidebar menu area."
+msgstr ""
+
+#: functions.php:239
+msgid "Extended Footer"
+msgstr ""
+
+#: functions.php:241
+msgid "This is the extended footer. Add at least one widget to make it appear."
+msgstr ""
+
+#: functions.php:249
+msgid "Footer Notice"
+msgstr ""
+
+#: functions.php:251
+msgid ""
+"This is the footer notice area. It works best with a copyright notice or a "
+"banner ad."
+msgstr ""
+
+#: functions.php:278
+msgid "Posts navigation"
+msgstr ""
+
+#: functions.php:279
+msgid "&larr; Older posts"
+msgstr ""
+
+#: functions.php:281
+msgid "Newer posts &rarr;"
+msgstr ""
+
+#: functions.php:323
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:328
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:347
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:347
+msgid "(edit)"
+msgstr ""
+
+#: functions.php:469
+#, php-format
+msgid "%1$s search results for \"%2$s\""
+msgstr ""
+
+#: header.php:47
+msgid "Skip to content"
+msgstr ""
+
+#: image.php:66 index.php:29
+msgid "Post navigation"
+msgstr ""
+
+#: image.php:68
+msgid "<span class=\"meta-nav\">&larr;</span> Previous Image"
+msgstr ""
+
+#: image.php:71
+msgid "Next Image <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: index.php:32
+msgid "<span class=\"meta-nav\">&larr;</span> Previous Article<br />"
+msgstr ""
+
+#: index.php:41
+msgid "Next Article <span class=\"meta-nav\">&rarr;</span><br />"
+msgstr ""
+
+#: about.php:28
+#, php-format
+msgid ""
+"Thanks for choosing %s! You can read hints and tips on how get the most out "
+"of your new theme on the %sabout screen%s."
+msgstr ""
+
+#: about.php:30
+#, php-format
+msgid "Learn more about %s"
+msgstr ""
+
+#: about.php:46 about.php:57
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: about.php:57
+#, php-format
+msgid "Welcome to %s %s"
+msgstr ""
+
+#: about.php:115
+#, php-format
+msgid ""
+"Read through the following documentation to learn more about <em>%s</em> and "
+"how to use the available theme options. Or %scheck out the demo%s to see it "
+"in action."
+msgstr ""
+
+#: about.php:124
+msgid "The Customizer"
+msgstr ""
+
+#: about.php:130
+#, php-format
+msgid ""
+"All theme options for <em>%s</em> are controlled under %sAppearance &rarr; "
+"Customize%s. From there, you can modify layout, colors, custom menus, and "
+"more."
+msgstr ""
+
+#: about.php:133
+msgid "Site Icon"
+msgstr ""
+
+#: about.php:135
+msgid ""
+"To add an icon logo, click <strong>Select Image</strong> to activate the "
+"media uploader. Drag over your  image or select one from your media library."
+msgstr ""
+
+#: about.php:140
+msgid "Custom Menus"
+msgstr ""
+
+#: about.php:142
+#, php-format
+msgid ""
+"<em>%s</em> includes two Custom Menu locations: the Primary top menu and the "
+"Social menu."
+msgstr ""
+
+#: about.php:144
+#, php-format
+msgid ""
+"To add a navigation menu to the header, go to %sAppearance &rarr; Menus%s. "
+"By default, a list of categories will appear in this location if no custom "
+"menu is set."
+msgstr ""
+
+#: about.php:146
+msgid ""
+"Clicking on a top-level link in the primary navigation will open up the "
+"first dropdown list of sub-menu links."
+msgstr ""
+
+#: about.php:148
+msgid "Social Menu"
+msgstr ""
+
+#: about.php:154
+#, php-format
+msgid ""
+"To use the social menu, go to %sAppearance &rarr; Menus%s and create a new "
+"menu. Call it \"Social\" just to make it easy to remember. Use the Link "
+"panel on the left to add any of the following social sites:"
+msgstr ""
+
+#: about.php:172
+msgid ""
+"Once you&rsquo;ve added the social sites you want with a link to each "
+"profile - like <code>https://twitter.com/bavotasan</code> - check the Social "
+"box at the bottom of the menu and click <strong>Save Menu</strong>. Your "
+"social links will now be displayed at the top right of your site."
+msgstr ""
+
+#: about.php:177
+msgid "The Sidebar"
+msgstr ""
+
+#: about.php:183
+msgid ""
+"There are two widgetized areas within the offcanvas sidebar: upper sidebar "
+"&amp; lower sidebar. Adding a widget to the upper sidebar will place it "
+"above the menus."
+msgstr ""
+
+#: about.php:185
+msgid ""
+"In the demo, I&rsquo;ve added a little bio to the upper sidebar with a Text "
+"widget and the following HTML:"
+msgstr ""
+
+#: about.php:192
+#, php-format
+msgid ""
+"You can achieve the circular image by adding the %s class to the IMG tag."
+msgstr ""
+
+#: about.php:198
+msgid "The Google Font Manager"
+msgstr ""
+
+#: about.php:204
+#, php-format
+msgid ""
+"You can manage all of your Google Fonts by going to %sAppearance &rarr; "
+"Google Fonts%s. Once there, click on <strong>Help</strong> in the top right "
+"for instructions on how to use the fonts manager."
+msgstr ""
+
+#: about.php:209
+msgid "Jetpack"
+msgstr ""
+
+#: about.php:215
+msgid "Tiled Galleries"
+msgstr ""
+
+#: about.php:217
+#, php-format
+msgid ""
+"%sJetpack&rsquo;s Tiled Galleries%s will display your images in a beautiful "
+"mosaic layout. Go to %sJetpack &rarr; Settings%s to turn it on. "
+msgstr ""
+
+#: about.php:219
+msgid "Carousel"
+msgstr ""
+
+#: about.php:221
+#, php-format
+msgid ""
+"With %sJetpack&rsquo;s Carousel%s, clicking on one of your gallery images "
+"will open up a featured lightbox slideshow. Turn it on by going to %sJetpack "
+"&rarr; Settings%s. "
+msgstr ""
+
+#: about.php:226
+msgid "The Extended Footer"
+msgstr ""
+
+#: about.php:232
+#, php-format
+msgid ""
+"To display widgets in your footer go to %sAppearance &rarr; Widgets%s and "
+"add at least one widget to the Extended Footer area."
+msgstr ""
+
+#: about.php:234
+#, php-format
+msgid ""
+"You can include a copyright notice or banner ad in the footer by adding a "
+"Text widget to the Footer Notice area on %sAppearance &rarr; Widgets%s."
+msgstr ""
+
+#: about.php:239
+msgid "Pull Quotes"
+msgstr ""
+
+#: about.php:245
+msgid ""
+"You can easily include a pull quote within your text by using the following "
+"code within the Text/HTML editor:"
+msgstr ""
+
+#: about.php:247
+msgid ""
+"&lt;blockquote class=\"pullquote\"&gt;This is a pull quote that will appear "
+"within your text.&lt;/blockquote&gt;"
+msgstr ""
+
+#: about.php:248
+msgid "You can also align it to the right with this code:"
+msgstr ""
+
+#: about.php:250
+msgid ""
+"&lt;blockquote class=\"pullquote alignright\"&gt;This is a pull quote that "
+"will appear within your text.&lt;/blockquote&gt;"
+msgstr ""
+
+#: about.php:254
+#, php-format
+msgid ""
+"For more information, check out the %sDocumentation &amp; FAQs%s section on "
+"my site."
+msgstr ""
+
+#: custom-css-editor.php:19 custom-css-editor.php:30
+msgid "Custom CSS"
+msgstr ""
+
+#: custom-css-editor.php:30
+msgid "Custom CSS Editor"
+msgstr ""
+
+#: custom-css-editor.php:73
+msgid "Custom CSS updated."
+msgstr ""
+
+#: custom-css-editor.php:75
+msgid ""
+"Please add all your custom CSS here and avoid modifying the core theme "
+"files, since that'll make upgrading the theme problematic. Your custom CSS "
+"will be loaded after the theme's stylesheets, which means that your rules "
+"will take precedence."
+msgstr ""
+
+#: custom-css-editor.php:77
+msgid ""
+"Just add your CSS here for what you want to change, you don't need to copy "
+"all the theme's style.css content."
+msgstr ""
+
+#: custom-css-editor.php:79
+#, php-format
+msgid "If you're new to CSS, start with a %sbeginner tutorial%s."
+msgstr ""
+
+#: custom-css-editor.php:93
+msgid "Save Changes"
+msgstr ""
+
+#: customizer.php:89
+msgid "Customize"
+msgstr ""
+
+#: customizer.php:110
+msgid "Site Icon (75 x 75 pixels)"
+msgstr ""
+
+#: customizer.php:136
+msgid "Fonts"
+msgstr ""
+
+#: customizer.php:138
+#, php-format
+msgid "Go to the %sGoogle Fonts admin page%s to manage your font options."
+msgstr ""
+
+#: customizer.php:147
+msgid "Site Title"
+msgstr ""
+
+#: customizer.php:160
+msgid "Main Text"
+msgstr ""
+
+#: customizer.php:173 customizer.php:220
+msgid "Headers (h1, h2, h3, etc...)"
+msgstr ""
+
+#: customizer.php:187
+msgid "Sidebar Backround Color"
+msgstr ""
+
+#: customizer.php:198
+msgid "Footer Backround Color"
+msgstr ""
+
+#: customizer.php:209
+msgid "Extended Footer Backround Color"
+msgstr ""
+
+#: customizer.php:231
+msgid "Main Text Color"
+msgstr ""
+
+#: customizer.php:242
+msgid "Link Color"
+msgstr ""
+
+#: customizer.php:253
+msgid "Link Hover Color"
+msgstr ""
+
+#: import-export.php:9
+msgid "Click the button below to export all of your saved theme options."
+msgstr ""
+
+#: import-export.php:12
+msgid "Export options"
+msgstr ""
+
+#: import-export.php:17
+msgid "Choose a theme options file from your computer to import:"
+msgstr ""
+
+#: import-export.php:20
+msgid "Import options"
+msgstr ""
+
+#: import-export.php:50
+msgid "Please choose a file to import."
+msgstr ""
+
+#: import-export.php:130
+msgid "There was a security issue. Please try again."
+msgstr ""
+
+#: import-export.php:142
+msgid ""
+"Error importing options! Please check that you uploaded a theme options "
+"export file."
+msgstr ""
+
+#: import-export.php:147
+msgid ""
+"Error importing options! The options you uploaded are not for the current "
+"theme."
+msgstr ""
+
+#: import-export.php:171
+msgid "Export/Import Theme Options"
+msgstr ""
+
+#: manage-fonts.php:46 manage-fonts.php:59
+#: manage-fonts.php:78 manage-fonts.php:92
+msgid "Google Fonts"
+msgstr ""
+
+#: manage-fonts.php:59
+msgid "Google Fonts Manager"
+msgstr ""
+
+#: manage-fonts.php:80
+msgid "If you want to add more Google Fonts use the form below to:"
+msgstr ""
+
+#: manage-fonts.php:82
+msgid "Choose a font from Google Fonts"
+msgstr ""
+
+#: manage-fonts.php:83
+msgid "Select font weight(s) and style(s)"
+msgstr ""
+
+#: manage-fonts.php:84
+msgid "Select a character set"
+msgstr ""
+
+#: manage-fonts.php:85
+msgid "Follow the instructions next to each field in the form below"
+msgstr ""
+
+#: manage-fonts.php:86
+#, php-format
+msgid "Go to the %sCustomizer%s and choose one of the newly added Google Fonts"
+msgstr ""
+
+#: manage-fonts.php:91
+msgid "For more information:"
+msgstr ""
+
+#: manage-fonts.php:125
+msgid "Font Name"
+msgstr ""
+
+#: manage-fonts.php:125
+msgid ""
+"The full name of the Google Font family.<br />e.g. <code>Open Sans</code>"
+msgstr ""
+
+#: manage-fonts.php:126
+msgid "Font Weight"
+msgstr ""
+
+#: manage-fonts.php:126
+msgid ""
+"The weight and font style, separated by a comma. Default is 400.<br />e.g. "
+"<code>400,400italic</code>"
+msgstr ""
+
+#: manage-fonts.php:127
+msgid "Font Set"
+msgstr ""
+
+#: manage-fonts.php:127
+msgid ""
+"The character set, separated by a comma. Default is latin.<br />e.g. "
+"<code>latin,greek-ext</code>"
+msgstr ""
+
+#: manage-fonts.php:173
+msgid "Settings updated."
+msgstr ""
+
+#: manage-fonts.php:203
+msgid "(default)"
+msgstr ""
+
+#: manage-fonts.php:220
+msgid "Add Font"
+msgstr ""
+
+#: searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: sidebar.php:18
+msgid "Main menu"
+msgstr ""
+
+#: sidebar.php:29
+msgid "Default Widget"
+msgstr ""
+
+#: sidebar.php:30
+#, php-format
+msgid ""
+"This is just a default widget. It'll disappear as soon as you add your own "
+"widgets on the %sWidgets admin page%s."
+msgstr ""
+
+#: sidebar.php:32
+msgid "Below is an example of an unordered list."
+msgstr ""
+
+#: sidebar.php:34
+msgid "List item one"
+msgstr ""
+
+#: sidebar.php:35
+msgid "List item two"
+msgstr ""
+
+#: sidebar.php:36
+msgid "List item three"
+msgstr ""
+
+#: sidebar.php:37
+msgid "List item four"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Byline"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://themes.bavotasan.com/themes/byline-wordpress-theme/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Simplify your site with Byline, a theme specifically built for writers. "
+"Display your latest article in its entirety, including comments, right on "
+"your home page. Select an infinite number of colors and any Google Font you "
+"like to customize the design so that it perfectly fits your style. Looks "
+"great on desktop browsers, tablets and handheld devices. For a live demo go "
+"to http://demos.bavotasan.com/byline/."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "c.bavota"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://bavotasan.com/"
+msgstr ""
