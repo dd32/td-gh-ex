@@ -232,26 +232,21 @@ function accesspress_mag_widgets_show_widget_field($instance = '', $widget_field
                              'file-archive-o', 'file-audio-o', 'file-video-o', 'file-code-o', 'vine', 'codepen', 'jsfiddle', 'life-ring', 'circle-o-notch', 'rebel', 'empire', 'git-square', 'git', 'hacker-news', 'tencent-weibo', 'qq', 'weixin', 'paper-plane', 'paper-plane-o', 'history', 'circle-thin', 'header', 'paragraph', 'sliders', 'share-alt', 'share-alt-square', 'bomb', 'futbol-o', 'tty', 'binoculars', 'plug', 'slideshare', 'twitch', 'yelp', 'newspaper-o', 
                              'wifi', 'calculator', 'paypal', 'google-wallet', 'cc-visa', 'cc-mastercard', 'cc-discover', 'cc-amex', 'cc-paypal', 'cc-stripe', 'bell-slash', 'bell-slash', 'bell-slash-o', 'trash', 'copyright', 'at', 'eyedropper', 'paint-brush', 'birthday-cake', 'area-chart', 'pie-chart', 'line-chart', 'lastfm', 'lastfm-square', 'toggle-off', 'toggle-on', 'bicycle', 'bus', 'ioxhost', 'angellist', 'cc', 'ils', 'meanpath' 
                             );
-                            //echo '<pre>';
-//                              print_r($icon_class_array);
-//                            echo '</pre>';
                 ?>
                 <ul class="ap-font-group">
-                    <!-- <li><i class="fa fa-glass"></i></li> -->
                     <?php foreach( $icon_class_array as $count => $class ) {
                         echo '<li><i class="fa fa-'. $class .'"></i></li>';
                     }?>
                 </ul>
             </div>
-
             <?php
             break;
     }
 }
 
-function accesspress_mag_widgets_updated_field_value($widget_field, $new_field_value) {
+function accesspress_mag_widgets_updated_field_value( $widget_field, $new_field_value ) {
 
-    extract($widget_field);
+    extract( $widget_field );
 
     // Allow only integers in number fields
     if ($accesspress_mag_widgets_field_type == 'number') {
@@ -308,10 +303,6 @@ function optionsframework_media_scriptss($hook) {
     ));
 
     wp_enqueue_style( 'accesspress-mag-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-    //wp_enqueue_style( 'ap-admin-css', get_template_directory_uri() . '/inc/css/ap-admin.css' );
-    //wp_enqueue_script('ap-admin-js', get_template_directory_uri() . '/inc/js/ap-admin.js', array('jquery'));
-    //wp_enqueue_script('ap-admin-js');
 }
 
 add_action('admin_enqueue_scripts', 'optionsframework_media_scriptss');
-

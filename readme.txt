@@ -73,6 +73,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.3.2
+ * Fixed shop widget at woo-commerce archive and single pages
+ 
 Version 2.3.1
  * Fixed default index file settings for posts
  

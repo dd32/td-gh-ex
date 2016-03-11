@@ -787,3 +787,13 @@ if( !function_exists( 'accesspress_mag_post_categories_cb' ) ):
         }
     }
 endif;
+
+/*---------------------------------------------------------------------------------*/
+add_filter( 'loop_shop_columns', 'loop_columns' );
+if ( !function_exists( 'loop_columns' ) ) {
+    function loop_columns() {
+        // Change number or products per row to $x
+        $products_in_column = 4;
+        return $products_in_column;
+    }
+}
