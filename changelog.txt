@@ -1,4 +1,7 @@
 == CHANGE LOG ==
+= 2.0 =
+	- Update - Screenshot image Changed
+
 = 1.1.9 =
 	- Update - target_blank removed from sider
 	- Update - Service widgets name changed to our featured

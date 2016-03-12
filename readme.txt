@@ -41,8 +41,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 	-Images
 		Screenshot Images: 
-		https://pixabay.com/en/frozen-berries-red-fruits-berry-201495/
-		https://pixabay.com/en/drink-coffee-work-create-build-864958/
+		https://pixabay.com/en/suit-man-dapper-work-male-869380/
 		Licensed: Public Domain Images
 
 	-TGM-Plugin-Activation
