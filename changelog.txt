@@ -1,6 +1,16 @@
 *** Fukasawa Changelog ***
 
 
+Version 1.07 (2016-03-12)
+-------------------------
+- Fixed automated theme scanning error (.ds_store)
+
+
+Version 1.06 (2016-03-12)
+-------------------------
+- Fixed an issue with empty titles
+
+
 Version 1.05 (2015-08-25)
 -------------------------
 - Fixed an issue with overflowing images
