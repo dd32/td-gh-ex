@@ -1,6 +1,12 @@
 *** Fukasawa Changelog ***
 
 
+Version 1.08 (2016-03-12)
+-------------------------
+- Fixed Flickr widget styling issue
+- Removed extra semicolon in Flickr widget input label
+
+
 Version 1.07 (2016-03-12)
 -------------------------
 - Fixed automated theme scanning error (.ds_store)
