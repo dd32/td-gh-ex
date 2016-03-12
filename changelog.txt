@@ -1,6 +1,11 @@
 *** Baskerville Changelog ***
 
 
+Version 1.18 (2016-03-12)
+-------------------------
+- Removed wp_title() from header.php
+
+
 Version 1.17 (2015-08-25)
 -------------------------
 - Fixed an issue with overflowing images
