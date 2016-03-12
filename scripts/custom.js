@@ -4,7 +4,7 @@
 //slider
 
 jQuery(document).ready(function() {
-	$('#myCarousel').carousel({
+	jQuery('#myCarousel').carousel({
 	  interval: 7000
 	});
 	
