@@ -1,6 +1,11 @@
 *** Garfunkel Changelog ***
 
 
+Version 1.08 (2016-03-12)
+-------------------------
+- Removed the wp_title() function from header (replaced with title_tag())
+
+
 Version 1.07 (2015-08-25)
 -------------------------
 - Fixed an issue with overflowing images
