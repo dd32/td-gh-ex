@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.6
+- Fixed:   Custom titles now display correctly on mobile layouts. Issue previously caused titles to be squashed on smaller screens.
+
 Version 1.3.5
 - Updated: Font Awesome library updated to v4.2.0.
 - Updated: Translation .pot file added. Old files .mo and .po removed.
