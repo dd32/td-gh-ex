@@ -1,7 +1,12 @@
 *** Hemingway Changelog ***
 
 
-Version 1.54 (2015-08-24)
+Version 1.55 (2016-03-12)
+-------------------------
+- Removed wp_title() from header.php
+
+
+Version 1.54 (2015-08-25)
 -------------------------
 - Fixed overflow bug with wp-caption
 - Added screen-reader-text styling
