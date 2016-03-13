@@ -83,13 +83,19 @@
 
 // Enqueues scripts and styles for front-end
 	function gridbulletin_scripts() {
-			wp_enqueue_style( 'gridbulletin-style', get_stylesheet_uri() );
-			wp_enqueue_script( 'gridbulletin-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
-			wp_enqueue_style( 'gridbulletin-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+		wp_enqueue_style( 'gridbulletin-style', get_stylesheet_uri() );
+		wp_enqueue_script( 'gridbulletin-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+		wp_enqueue_style( 'gridbulletin-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
 
-			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-				wp_enqueue_script( 'comment-reply' );
-			}
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
+		// mobile nav args
+		$gridbulletin_mobile_nav_args = array(
+			'navText' => __( 'Menu', 'gridbulletin' )
+		);
+		// localize script with data for mobile nav
+		wp_localize_script( 'gridbulletin-nav', 'objectL10n', $gridbulletin_mobile_nav_args );
 	}
 	add_action( 'wp_enqueue_scripts', 'gridbulletin_scripts' );
 

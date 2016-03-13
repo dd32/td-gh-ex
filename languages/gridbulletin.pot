@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GridBulletin\n"
-"POT-Creation-Date: 2016-03-01 22:45+0100\n"
+"POT-Creation-Date: 2016-03-13 23:39+0100\n"
 "PO-Revision-Date: 2015-11-15 20:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -58,31 +58,35 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:95
+msgid "Menu"
+msgstr ""
+
+#: functions.php:106
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:102 functions.php:112 functions.php:122 functions.php:132
+#: functions.php:108 functions.php:118 functions.php:128 functions.php:138
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:110
+#: functions.php:116
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:126
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:136
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:177 functions.php:186
+#: functions.php:183 functions.php:192
 msgid "Logo"
 msgstr ""
 
-#: functions.php:179
+#: functions.php:185
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
@@ -90,8 +94,22 @@ msgstr ""
 msgid "Featured post"
 msgstr ""
 
-#: page-full.php:29 page.php:28 single.php:34
+#: page-full.php:29 page.php:28 single.php:29
 msgid "Edit"
+msgstr ""
+
+#: postmeta-single.php:8
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: postmeta-single.php:8 postmeta-single.php:10
+msgid ", "
+msgstr ""
+
+#: postmeta-single.php:10
+#, php-format
+msgid "Tag: %s"
 msgstr ""
 
 #: postmeta.php:8
@@ -105,7 +123,7 @@ msgid "By %s"
 msgstr ""
 
 #: postmeta.php:11
-msgid "No Comments"
+msgid "No comments"
 msgstr ""
 
 #: postmeta.php:11
@@ -120,20 +138,6 @@ msgstr ""
 #: search.php:12
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
-
-#: single.php:23
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: single.php:23 single.php:25
-msgid ", "
-msgstr ""
-
-#: single.php:25
-#, php-format
-msgid "Tag: %s"
 msgstr ""
 
 #. Theme Name of the plugin/theme
