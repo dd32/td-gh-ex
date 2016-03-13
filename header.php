@@ -33,7 +33,7 @@
 			<?php if ( get_theme_mod( 'leftside_menu_title' ) ) {
 				$menu_title = esc_attr( get_theme_mod( 'leftside_menu_title' ) );
 			} else {
-				$menu_title = esc_attr__( 'Navigation', 'leftside' );
+				$menu_title = esc_attr__( 'Menu', 'leftside' );
 			} ?>
 			<h3 class="nav-widgettitle"><?php echo $menu_title; ?></h3>
 
