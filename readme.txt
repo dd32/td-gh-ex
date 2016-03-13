@@ -1,7 +1,7 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 3.4
+Version: 3.5
 Requires at least: 3.7
 Tested up to: 4.4
 License: GNU General Public License v3 or later
@@ -57,6 +57,9 @@ When you click the post link in frontend it will redirect you to this URL (so th
 
 = Seach bar title =
 You can change the search bar title via WordPress Dashboard > Appearance > Customize.
+
+= Browser support =
+Because I have used css selector 'nth-of-type' it might not display 100% in IE8 and older.
 
 
 == Copyright ==

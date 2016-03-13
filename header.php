@@ -54,7 +54,7 @@
 		<?php if ( get_theme_mod( 'myknowledgebase_search' ) ) {
 			$search_title = esc_attr( get_theme_mod( 'myknowledgebase_search' ) );
 		} else {
-			$search_title = esc_attr__( 'Search for posts...', 'myknowledgebase' );
+			$search_title = esc_attr__( 'Search Posts', 'myknowledgebase' );
 		} ?>
 
 		<h3 class="searchbar-title"><?php echo $search_title; ?></h3>

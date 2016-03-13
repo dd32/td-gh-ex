@@ -80,13 +80,19 @@
 
 // Enqueues scripts and styles for front-end
 	function myknowledgebase_scripts() {
-			wp_enqueue_style( 'myknowledgebase-style', get_stylesheet_uri() );
-			wp_enqueue_script( 'myknowledgebase-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
-			wp_enqueue_style( 'myknowledgebase-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+		wp_enqueue_style( 'myknowledgebase-style', get_stylesheet_uri() );
+		wp_enqueue_script( 'myknowledgebase-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+		wp_enqueue_style( 'myknowledgebase-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
 
-			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-				wp_enqueue_script( 'comment-reply' );
-			}
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
+		// mobile nav args
+		$myknowledgebase_mobile_nav_args = array(
+			'navText' => __( 'Menu', 'myknowledgebase' )
+		);
+		// localize script with data for mobile nav
+		wp_localize_script( 'myknowledgebase-nav', 'objectL10n', $myknowledgebase_mobile_nav_args );
 	}
 	add_action( 'wp_enqueue_scripts', 'myknowledgebase_scripts' );
 
@@ -213,7 +219,7 @@
 		$wp_customize->add_section( 'myknowledgebase_search_section' , array( 	
 			'title' => __( 'Search Bar', 'myknowledgebase' ), 
 			'priority' => 32, 
-			'description' => __( 'Change title of the knowledgebase posts search bar.', 'myknowledgebase' ),
+			'description' => __( 'Change title of the knowledgebase search bar.', 'myknowledgebase' ),
 		) );
 		$wp_customize->add_setting( 'myknowledgebase_search', array( 
 			'capability' => 'edit_theme_options', 

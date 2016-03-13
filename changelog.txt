@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 3.5 - march 2016
+- localized mobile menu
+- mobile menu now supports 2 level subpages
+
 MyKnowledgeBase version 3.4 - march 2016
 - added file postmeta-single
 - file single: relocated postmetadata to separate file
@@ -106,5 +110,3 @@ MyKnowledgeBase version 1.5 - november 2014
 
 MyKnowledgeBase version 1.4 - october 2014 
 - first stable release
-
-
