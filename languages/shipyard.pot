@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Shipyard\n"
-"POT-Creation-Date: 2016-03-01 22:47+0100\n"
+"POT-Creation-Date: 2016-03-13 23:41+0100\n"
 "PO-Revision-Date: 2015-11-16 00:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -62,27 +62,31 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:97
+#: functions.php:92
+msgid "Menu"
+msgstr ""
+
+#: functions.php:103
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:99 functions.php:109 functions.php:119
+#: functions.php:105 functions.php:115 functions.php:125
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:107
+#: functions.php:113
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:123
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:164 functions.php:173
+#: functions.php:170 functions.php:179
 msgid "Logo"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:172
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
@@ -90,8 +94,22 @@ msgstr ""
 msgid "Featured post"
 msgstr ""
 
-#: page-full.php:29 page.php:28 single.php:35
+#: page-full.php:29 page.php:28 single.php:30
 msgid "Edit"
+msgstr ""
+
+#: postmeta-single.php:8
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: postmeta-single.php:8 postmeta-single.php:10
+msgid ", "
+msgstr ""
+
+#: postmeta-single.php:10
+#, php-format
+msgid "Tag: %s"
 msgstr ""
 
 #: postmeta.php:8
@@ -105,7 +123,7 @@ msgid "By %s"
 msgstr ""
 
 #: postmeta.php:11
-msgid "No Comments"
+msgid "No comments"
 msgstr ""
 
 #: postmeta.php:11
@@ -120,20 +138,6 @@ msgstr ""
 #: search.php:12
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
-
-#: single.php:24
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: single.php:24 single.php:26
-msgid ", "
-msgstr ""
-
-#: single.php:26
-#, php-format
-msgid "Tag: %s"
 msgstr ""
 
 #. Theme Name of the plugin/theme
