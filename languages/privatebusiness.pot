@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PrivateBusiness\n"
-"POT-Creation-Date: 2016-03-02 00:07+0100\n"
+"POT-Creation-Date: 2016-03-13 23:40+0100\n"
 "PO-Revision-Date: 2015-11-15 22:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -66,36 +66,40 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:94
+msgid "Menu"
+msgstr ""
+
+#: functions.php:106
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:101 functions.php:111 functions.php:121 functions.php:131
-#: functions.php:141
+#: functions.php:108 functions.php:118 functions.php:128 functions.php:138
+#: functions.php:148
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:109
+#: functions.php:116
 msgid "Homepage Right"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:126
 msgid "Homepage Left"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:136
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:146
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:186 functions.php:195
+#: functions.php:193 functions.php:202
 msgid "Logo"
 msgstr ""
 
-#: functions.php:188
+#: functions.php:195
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
@@ -103,8 +107,22 @@ msgstr ""
 msgid "Featured post"
 msgstr ""
 
-#: page-full.php:29 page.php:28 single.php:35
+#: page-full.php:29 page.php:28 single.php:30
 msgid "Edit"
+msgstr ""
+
+#: postmeta-single.php:8
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: postmeta-single.php:8 postmeta-single.php:10
+msgid ", "
+msgstr ""
+
+#: postmeta-single.php:10
+#, php-format
+msgid "Tag: %s"
 msgstr ""
 
 #: postmeta.php:8
@@ -118,7 +136,7 @@ msgid "By %s"
 msgstr ""
 
 #: postmeta.php:11
-msgid "No Comments"
+msgid "No comments"
 msgstr ""
 
 #: postmeta.php:11
@@ -133,20 +151,6 @@ msgstr ""
 #: search.php:12
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
-
-#: single.php:24
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: single.php:24 single.php:26
-msgid ", "
-msgstr ""
-
-#: single.php:26
-#, php-format
-msgid "Tag: %s"
 msgstr ""
 
 #. Theme Name of the plugin/theme

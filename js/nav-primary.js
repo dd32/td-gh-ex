@@ -10,29 +10,36 @@ jQuery(document).ready(function() {
 	// build <select> dropdown
 	jQuery("<select />").appendTo("div.nav-head-primary");
 
-	// create option "Menu..."
+	// create option Menu
 	jQuery("<option />", {
 		"selected": "selected",
 		"value": "",
-		"text": "Menu..."  
+		"text": objectL10n.navText  
 	}).appendTo(".nav-head-primary select");
 
 	// populate
 	jQuery(".nav-head-primary ul li a").each(function() {
 		var el = jQuery(this);
-
-		if(el.parents('.nav-head-primary ul ul').length) {
-			// if there are ul in li
-			jQuery('<option />', {
-				'value': el.attr('href'),
-				'text':  '- ' + el.text()
-			}).appendTo('.nav-head-primary select');
-		} else { 
-			// if no ul in li
-			jQuery('<option />', {
-				'value': el.attr('href'),
-				'text': el.text()
-			}).appendTo('.nav-head-primary select');
+		if(el.parents(".nav-head-primary ul ul ul").length) {
+			// if subpage level two
+			jQuery("<option />", {
+				"value": el.attr("href"),
+				"text":  "- - " + el.text()
+			}).appendTo(".nav-head-primary select");
+		} 
+		else if(el.parents(".nav-head-primary ul ul").length) {
+			// if subpage level one
+			jQuery("<option />", {
+				"value": el.attr("href"),
+				"text":  "- " + el.text()
+			}).appendTo(".nav-head-primary select");
+		} 
+		else { 
+			// if no subpage
+			jQuery("<option />", {
+				"value": el.attr("href"),
+				"text": el.text()
+			}).appendTo(".nav-head-primary select");
 		}
 	});
 
