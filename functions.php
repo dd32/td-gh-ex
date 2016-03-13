@@ -80,13 +80,19 @@
 
 // Enqueues scripts and styles for front-end
 	function simplyblack_scripts() {
-			wp_enqueue_style( 'simplyblack-style', get_stylesheet_uri() );
-			wp_enqueue_script( 'simplyblack-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
-			wp_enqueue_style( 'simplyblack-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+		wp_enqueue_style( 'simplyblack-style', get_stylesheet_uri() );
+		wp_enqueue_script( 'simplyblack-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+		wp_enqueue_style( 'simplyblack-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
 
-			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-				wp_enqueue_script( 'comment-reply' );
-			}
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
+		// mobile nav args
+		$simplyblack_mobile_nav_args = array(
+			'navText' => __( 'Menu', 'simplyblack' )
+		);
+		// localize script with data for mobile nav
+		wp_localize_script( 'simplyblack-nav', 'objectL10n', $simplyblack_mobile_nav_args );
 	}
 	add_action( 'wp_enqueue_scripts', 'simplyblack_scripts' );
 
