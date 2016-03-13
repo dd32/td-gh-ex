@@ -14,9 +14,9 @@
 /*
  * Primary content width according to the design and stylesheet.
  */
-if ( ! isset( $content_width ) )
+if ( ! isset( $content_width ) ) {
 	$content_width = 665;
-
+}
 /*
  * Iconic One supported features and Registering defaults
  */
