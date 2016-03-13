@@ -35,7 +35,7 @@
 		</div>
 
 		<?php if ( has_nav_menu( 'primary' ) ) {?> 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head-mobile' ) ); ?>
 		<?php } ?> 
 
 		<?php if ( is_front_page() ) {?> 

@@ -8,36 +8,43 @@
 
 jQuery(document).ready(function() { 
 	// build <select> dropdown
-	jQuery("<select />").appendTo("div.nav-head");
+	jQuery("<select />").appendTo("div.nav-head-mobile");
 
-	// create option "Menu..."
+	// create option Menu
 	jQuery("<option />", {
 		"selected": "selected",
 		"value": "",
-		"text": "Menu..."  
-	}).appendTo(".nav-head select");
+		"text": objectL10n.navText  
+	}).appendTo(".nav-head-mobile select");
 
 	// populate
-	jQuery(".nav-head ul li a").each(function() {
+	jQuery(".nav-head-mobile ul li a").each(function() {
 		var el = jQuery(this);
-
-		if(el.parents('.nav-head ul ul').length) {
-			// if there are ul in li
-			jQuery('<option />', {
-				'value': el.attr('href'),
-				'text':  '- ' + el.text()
-			}).appendTo('.nav-head select');
-		} else { 
-			// if no ul in li
-			jQuery('<option />', {
-				'value': el.attr('href'),
-				'text': el.text()
-			}).appendTo('.nav-head select');
+		if(el.parents(".nav-head-mobile ul ul ul").length) {
+			// if subpage level two
+			jQuery("<option />", {
+				"value": el.attr("href"),
+				"text":  "- - " + el.text()
+			}).appendTo(".nav-head-mobile select");
+		} 
+		else if(el.parents(".nav-head-mobile ul ul").length) {
+			// if subpage level one
+			jQuery("<option />", {
+				"value": el.attr("href"),
+				"text":  "- " + el.text()
+			}).appendTo(".nav-head-mobile select");
+		} 
+		else { 
+			// if no subpage
+			jQuery("<option />", {
+				"value": el.attr("href"),
+				"text": el.text()
+			}).appendTo(".nav-head-mobile select");
 		}
 	});
 
 	// make links work 
-	jQuery(".nav-head select").change(function() { 
+	jQuery(".nav-head-mobile select").change(function() { 
 		window.location = jQuery(this).find("option:selected").val();
 	});
 });

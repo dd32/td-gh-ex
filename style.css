@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkOrange
 Theme URI: http://www.guidovanderleest.nl/darkorange
-Version: 4.2
+Version: 4.3
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkOrange is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
@@ -153,7 +153,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER SECOND MOBILE MENU */
-#header-second .nav-head {display:none;}
+#header-second .nav-head-mobile {display:none;}
 
 
 /* HEADER SECOND LOGO */
@@ -218,10 +218,9 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .wp-caption {max-width:100%;}
 .wp-caption-text {text-align:center;}
 
+.gallery img {border:0 !important;}
 .gallery dl, .gallery dt, .gallery dd {margin:0; padding:0;}
 .gallery-caption {max-width:100%; text-align:center;}
-
-#container .gallery img {border:0;}
 
 
 /* SEARCHFORM */
@@ -301,9 +300,9 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#header-second .sidebar-homepage {width:100%; margin:0 auto 0; float:left;} 
 
 	/* MENU */
-	#header-second .nav-head ul {display:none;} 
-	#header-second .nav-head {width:100%; display:block; margin:0 0 10px; padding:0;}
-	#header-second .nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#444; border:0;}
+	#header-second .nav-head-mobile ul {display:none;} 
+	#header-second .nav-head-mobile {width:100%; display:block; margin:0 0 10px; padding:0;}
+	#header-second .nav-head-mobile select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#444; border:0;}
 
 	/* CONTENT */
 	.post-home, .post-home.left {width:100%; clear:both; float:left; margin:0 auto 0;}
