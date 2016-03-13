@@ -80,13 +80,19 @@
 
 // Enqueues scripts and styles for front-end
 	function multicolors_scripts() {
-			wp_enqueue_style( 'multicolors-style', get_stylesheet_uri() );
-			wp_enqueue_script( 'multicolors-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
-			wp_enqueue_style( 'multicolors-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+		wp_enqueue_style( 'multicolors-style', get_stylesheet_uri() );
+		wp_enqueue_script( 'multicolors-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+		wp_enqueue_style( 'multicolors-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
 
-			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-				wp_enqueue_script( 'comment-reply' );
-			}
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
+		// mobile nav args
+		$multicolors_mobile_nav_args = array(
+			'navText' => __( 'Menu', 'multicolors' )
+		);
+		// localize script with data for mobile nav
+		wp_localize_script( 'multicolors-nav', 'objectL10n', $multicolors_mobile_nav_args );
 	}
 	add_action( 'wp_enqueue_scripts', 'multicolors_scripts' );
 
