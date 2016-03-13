@@ -33,7 +33,7 @@
 			<?php if ( get_theme_mod( 'darkelements_menu_title' ) ) {
 				$menu_title = esc_attr( get_theme_mod( 'darkelements_menu_title' ) );
 			} else {
-				$menu_title = esc_attr__( 'Navigation', 'darkelements' );
+				$menu_title = esc_attr__( 'Menu', 'darkelements' );
 			} ?>
 			<h3 class="nav-widgettitle"><?php echo $menu_title; ?></h3>
 
