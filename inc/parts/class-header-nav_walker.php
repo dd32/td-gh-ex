@@ -16,7 +16,7 @@ if ( ! class_exists( 'TC_nav_walker' ) ) :
     function __construct($_location) {
       self::$instance =& $this;
       $this -> tc_location = $_location;
-      add_filter( 'nav_menu_css_class' , array($this, 'tc_add_bootstrap_classes'), 10, 4 );
+      add_filter( 'tc_nav_menu_css_class' , array($this, 'tc_add_bootstrap_classes'), 10, 4 );
     }
 
 
@@ -24,6 +24,8 @@ if ( ! class_exists( 'TC_nav_walker' ) ) :
     * hook : nav_menu_css_class
     */
     function tc_add_bootstrap_classes($classes, $item, $args, $depth ) {
+      //cast $classes into array
+      $classes = (array)$classes;
       //check if $item is a dropdown ( a parent )
       //this is_dropdown property has been added in the the display_element() override method
       if ( $item -> is_dropdown ) {
@@ -58,7 +60,7 @@ if ( ! class_exists( 'TC_nav_walker' ) ) :
 
         //adds arrows down
         if ( $depth === 0 )
-            $item_html      = str_replace( '</a>' , ' <b class="caret"></b></a>' , $item_html);
+            $item_html      = str_replace( '</a>' , ' <strong class="caret"></strong></a>' , $item_html);
       }
       elseif (stristr( $item_html, 'li class="divider' )) {
         $item_html = preg_replace( '/<a[^>]*>.*?<\/a>/iU' , '' , $item_html);
@@ -75,6 +77,8 @@ if ( ! class_exists( 'TC_nav_walker' ) ) :
       //we add a property here
       //will be used in override start_el() and class filter
       $element->is_dropdown = ! empty( $children_elements[$element->ID]);
+
+      $element->classes = apply_filters( 'tc_nav_menu_css_class', array_filter( empty( $element->classes) ? array() : (array)$element->classes ), $element, $args, $depth );
 
       //let the parent do the rest of the job !
       parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output);
@@ -140,7 +144,7 @@ if ( ! class_exists( 'TC_nav_walker_page' ) ) :
 
         //adds arrows down
         if ( $depth === 0 )
-          $item_html      = str_replace( '</a>' , ' <b class="caret"></b></a>' , $item_html);
+          $item_html      = str_replace( '</a>' , ' <strong class="caret"></strong></a>' , $item_html);
       }
 
       elseif (stristr( $item_html, 'li class="divider' )) {

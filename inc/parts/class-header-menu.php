@@ -49,6 +49,9 @@ if ( ! class_exists( 'TC_menu' ) ) :
       if ( $this -> tc_is_sidenav_enabled() ){
         add_action( 'wp_head'                     , array( $this , 'tc_set_sidenav_hooks') );
         add_filter( 'tc_user_options_style'       , array( $this , 'tc_set_sidenav_style') );
+      } else {
+        // add main menu notice
+        add_action( '__navbar'                    , array( $this, 'tc_maybe_display_main_menu_notice'), 50 );
       }
       //this adds css classes to the navbar-wrapper :
       //1) to the main menu if regular (sidenav not enabled)
@@ -90,6 +93,10 @@ if ( ! class_exists( 'TC_menu' ) ) :
     }
 
 
+    /**
+    * Displays a dismissable block of information in the sidenav wrapper when conditions are met
+    * hook : __sidenav
+    */
     function tc_maybe_display_sidenav_help() {
       if (  ! TC_placeholders::tc_is_sidenav_help_on() )
         return;
@@ -259,7 +266,7 @@ if ( ! class_exists( 'TC_menu' ) ) :
             <div class="<?php echo $tc_side_nav_inner_class; ?>">
               <?php do_action( '__sidenav' ); ?>
             </div><!--.tc-sn-inner -->
-          </nav><!--#tc-sn-->
+          </nav><!-- //#tc-sn -->
         <?php
       $_sidenav = ob_get_contents();
       ob_end_clean();
@@ -339,8 +346,35 @@ if ( ! class_exists( 'TC_menu' ) ) :
 
 
     /***************************************
-    * PLACEHOLDER VIEW
+    * PLACEHOLDERS VIEW
     ****************************************/
+    /**
+    * Displays the placeholder view if conditions are met in TC_placeholders::tc_is_main_menu_notice_on()
+    * fired in tc_menu_display(), hook : __navbar
+    * @since Customizr 3.4+
+    */
+    function tc_maybe_display_main_menu_notice() {
+      if (  ! TC_placeholders::tc_is_main_menu_notice_on() )
+          return;
+      ?>
+      <div class="tc-placeholder-wrap tc-main-menu-notice">
+        <?php
+          printf('<p><strong>%1$s<br/>%2$s</strong></p>',
+              __( "You can now display your menu as a vertical and mobile friendly side menu, animated when revealed.", "customizr" ),
+              sprintf( __("%s or %s.", "customizr"),
+                sprintf( '<a href="%1$s" title="%2$s" target="blank">%2$s</a><span class="tc-external"></span>', esc_url('demo.presscustomizr.com?design=nav'), __( "Try it with the demo", "customizr") ),
+                sprintf( '<a href="%1$s" title="%2$s">%3$s</a>', TC_utils::tc_get_customizer_url( array( "section" => "nav") ), __( "open the customizer menu section", "customizr"), __("change your menu design now", "customizr") )
+              )
+          );
+          printf('<a class="tc-dismiss-notice" href="#" title="%1$s">%1$s x</a>',
+                __( 'dismiss notice', 'customizr')
+          );
+        ?>
+      </div>
+      <?php
+    }
+
+
     /**
     * Displays the placeholder view if conditions are met in TC_placeholders::tc_is_second_menu_placeholder_on()
     * fired in tc_menu_display(), hook : __navbar
@@ -352,11 +386,11 @@ if ( ! class_exists( 'TC_menu' ) ) :
       ?>
       <div class="nav-collapse collapse tc-placeholder-wrap tc-menu-placeholder">
         <?php
-          printf('<p><strong>%1$s %2$s</strong></p>',
-              __( "You can display another menu here.", "customizr" ),
-              sprintf( __("Setup this menu %s or read the %s.", "customizr"),
-                sprintf( '<a href="%1$s" title="%2$s">%3$s</a>', TC_utils::tc_get_customizer_url( array( "section" => "nav") ), __( "Add a menu", "customizr"), __("now", "customizr") ),
-                sprintf( '<a href="%1$s" title="%2$s" target="blank">%2$s</a><span class="tc-external"></span>', esc_url('doc.presscustomizr.com/customizr/header-options/#navigation'), __( "documentation", "customizr") )
+          printf('<p><strong>%1$s<br/>%2$s</strong></p>',
+              __( "You can display your main menu or a second menu here horizontally.", "customizr" ),
+              sprintf( __("%s or read the %s.", "customizr"),
+                sprintf( '<a href="%1$s" title="%2$s">%3$s</a>', TC_utils::tc_get_customizer_url( array( "section" => "nav") ), __( "Manage menus in the header", "customizr"), __("Manage your menus in the header now", "customizr") ),
+                sprintf( '<a href="%1$s" title="%2$s" target="blank">%2$s</a><span class="tc-external"></span>', esc_url('http://docs.presscustomizr.com/article/101-customizr-theme-options-header-settings/#navigation'), __( "documentation", "customizr") )
               )
           );
           printf('<a class="tc-dismiss-notice" href="#" title="%1$s">%1$s x</a>',
@@ -403,9 +437,6 @@ if ( ! class_exists( 'TC_menu' ) ) :
     * @since Customizr 3.2.0
     */
     function tc_add_body_classes($_classes) {
-      if ( 1 != esc_attr( TC_utils::$inst->tc_opt( 'tc_display_boxed_navbar') ) )
-        array_push( $_classes , 'no-navbar' );
-
       //menu type class
       $_menu_type = $this -> tc_is_sidenav_enabled() ? 'tc-side-menu' : 'tc-regular-menu';
       array_push( $_classes, $_menu_type );
@@ -532,20 +563,10 @@ if ( ! class_exists( 'TC_menu' ) ) :
             -webkit-border-radius: 6px;
             -moz-border-radius: 6px;
             border-radius: 6px;
-            -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);
-            -moz-box-shadow:  0 2px 8px rgba(0,0,0,.2)
-            box-shadow:  0 2px 8px rgba(0,0,0,.2)
             -webkit-background-clip: padding-box;
             -moz-background-clip: padding;
             background-clip: padding-box;
-          }
-          .tc-second-menu-on .navbar .nav>li>.dropdown-menu:before {
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-bottom: 7px solid #ccc;
-            border-bottom-color: rgba(0,0,0,.2);
-            top: -7px;
-            left: 9px;
+            padding: 5px 0;
           }
           .tc-second-menu-on .navbar .nav>li>.dropdown-menu:after, .navbar .nav>li>.dropdown-menu:before{
             content: '';
@@ -599,6 +620,9 @@ if ( ! class_exists( 'TC_menu' ) ) :
             -webkit-border-radius: 6px;
             -moz-border-radius: 6px;
             border-radius: 6px;
+          }
+          .tc-second-menu-on .dropdown-submenu>a:after {
+            content: ' ';
           }
         }\n
 

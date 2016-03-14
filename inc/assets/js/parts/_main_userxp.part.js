@@ -49,6 +49,12 @@ var czrapp = czrapp || {};
         break;
       }
     },//eventHandler
+ 
+    //outline firefox fix, see https://github.com/presscustomizr/customizr/issues/538
+    outline: function() {
+      if ( czrapp.$_body.hasClass( 'mozilla' ) )
+        tcOutline();
+    },
 
     //SMOOTH SCROLL
     smoothScroll: function() {
@@ -61,8 +67,23 @@ var czrapp = czrapp || {};
       if ( ! TCParams.anchorSmoothScroll || 'easeOutExpo' != TCParams.anchorSmoothScroll )
             return;
 
-      var _excl_sels = ( TCParams.anchorSmoothScrollExclude && _.isArray( TCParams.anchorSmoothScrollExclude ) ) ? TCParams.anchorSmoothScrollExclude.join(',') : '';
-      $('a[href^="#"]', '#content').not( _excl_sels ).click(function () {
+      var _excl_sels = ( TCParams.anchorSmoothScrollExclude && _.isArray( TCParams.anchorSmoothScrollExclude.simple ) ) ? TCParams.anchorSmoothScrollExclude.simple.join(',') : '',
+          self = this,
+          $_links = $('a[href^="#"]', '#content').not(_excl_sels);
+
+      //Deep exclusion
+      //are ids and classes selectors allowed ?
+      //all type of selectors (in the array) must pass the filter test
+      _deep_excl = _.isObject( TCParams.anchorSmoothScrollExclude.deep ) ? TCParams.anchorSmoothScrollExclude.deep : null ;
+      if ( _deep_excl )
+        _links = _.toArray($_links).filter( function ( _el ) {
+          return ( 2 == ( ['ids', 'classes'].filter( 
+                        function( sel_type) { 
+                            return self.isSelectorAllowed( $(_el), _deep_excl, sel_type); 
+                        } ) ).length 
+                );
+        });
+      $(_links).click( function () {
         var anchor_id = $(this).attr("href");
 
         //anchor el exists ?
@@ -92,11 +113,13 @@ var czrapp = czrapp || {};
     //BACK TO TOP
     backToTop : function() {
       var $_html = $("html, body"),
-          _backToTop = function($) {
-            return ($.which > 0 || "mousedown" === $.type || "mousewheel" === $.type) && $_html.stop().off( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
+          _backToTop = function( evt ) {
+            return ( evt.which > 0 || "mousedown" === evt.type || "mousewheel" === evt.type) && $_html.stop().off( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
           };
 
-      $(".back-to-top, .tc-btt-wrapper, .btt-arrow").on("click touchstart touchend", function ($) {
+      $(".back-to-top, .tc-btt-wrapper, .btt-arrow").on("click touchstart touchend", function ( evt ) {
+        evt.preventDefault();
+        evt.stopPropagation();
         $_html.on( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
         $_html.animate({
             scrollTop: 0
@@ -104,7 +127,6 @@ var czrapp = czrapp || {};
             $_html.stop().off( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
             //czrapp.$_window.trigger('resize');
         });
-        $.preventDefault();
       });
     },
 

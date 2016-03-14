@@ -25,7 +25,7 @@ if ( ! class_exists( 'TC_admin_page' ) ) :
       //config infos
       add_action( '__after_welcome_panel'  , array( $this , 'tc_config_infos' ), 20 );
       //build the support url
-      $this -> support_url = TC___::tc_is_pro() ? sprintf('%ssupport-forums/forum/customizr-pro/' , TC_WEBSITE ) : esc_url('wordpress.org/support/theme/customizr');
+      $this -> support_url = TC___::tc_is_pro() ? esc_url( sprintf('%ssupport' , TC_WEBSITE ) ) : esc_url('wordpress.org/support/theme/customizr');
       //fix #wpfooter absolute positioning in the welcome and about pages
       add_action( 'admin_print_styles'      , array( $this, 'tc_fix_wp_footer_link_style') );
     }
@@ -60,8 +60,8 @@ if ( ! class_exists( 'TC_admin_page' ) ) :
       function tc_welcome_panel() {
 
         $is_help        = isset($_GET['help'])  ?  true : false;
-        $_faq_url       = TC___::tc_is_pro() ? esc_url('doc.presscustomizr.com/customizr-pro/faq/') : esc_url('doc.presscustomizr.com/customizr/faq/');
-        $_support_url   = TC___::tc_is_pro() ? TC_WEBSITE .'support-forums/forum/customizr-pro/' : esc_url('wordpress.org/support/theme/customizr');
+        $_faq_url       = esc_url('http://docs.presscustomizr.com/category/90-faq-and-common-issues');
+        $_support_url   = $this -> support_url;
         $_theme_name    = TC___::tc_is_pro() ? 'Customizr Pro' : 'Customizr';
 
         do_action('__before_welcome_panel');
@@ -90,33 +90,35 @@ if ( ! class_exists( 'TC_admin_page' ) ) :
               <?php
                 printf( '<p>%1$s</p>',
                   sprintf( __( "The best way to start is to read the %s." , "customizr" ),
-                    sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s</a>', esc_url('doc.presscustomizr.com'), __("documentation" , "customizr") )
+                    sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s</a>', esc_url('docs.presscustomizr.com'), __("documentation" , "customizr") )
                   )
                 );
                 printf( '<p>%1$s</p><p><strong>%2$s</strong></p>',
                   __( "If you don't find an answer to your issue in the documentation, don't panic! The Customizr theme is used by a growing community of webmasters reporting bugs and making continuous improvements. If you have a problem with the theme, chances are that it's already been reported and fixed in the support forums.", "customizr" ),
-                  sprintf( __( "The easiest way to search in the support forums is to use our Google powered search engine on our %s.", "customizr" ),
+                  TC___::tc_is_pro() ? '' : sprintf( __( "The easiest way to search in the support forums is to use our Google powered search engine on our %s.", "customizr" ),
                     sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s</a>', esc_url('presscustomizr.com'), __("home page" , "customizr") )
                   )
                 );
                 ?>
               </div>
               <div class="feature-section col two-col">
-                <div>
+                <div class="col">
                    <br/>
-                    <a class="button-secondary customizr-help" title="documentation" href="<?php echo TC_WEBSITE ?>customizr" target="_blank"><?php _e( 'Read the documentation','customizr' ); ?></a>
+                    <a class="button-secondary customizr-help" title="documentation" href="<?php echo esc_url('docs.presscustomizr.com/') ?>" target="_blank"><?php _e( 'Read the documentation','customizr' ); ?></a>
                 </div>
-                <div class="last-feature">
+                <div class="last-feature col">
                   <br/>
                     <a class="button-secondary customizr-help" title="faq" href="<?php echo $_faq_url; ?>" target="_blank"><?php _e( 'Check the FAQ','customizr' ); ?></a>
                  </div>
               </div><!-- .two-col -->
               <div class="feature-section col two-col">
-                 <div>
-                    <a class="button-secondary customizr-help" title="code snippets" href="<?php echo TC_WEBSITE ?>code-snippets/" target="_blank"><?php _e( 'Code snippets','customizr' ); ?></a>
+                 <div class="col">
+                    <a class="button-secondary customizr-help" title="code snippets" href="<?php echo TC_WEBSITE ?>code-snippets/" target="_blank"><?php _e( 'Code snippets for developers','customizr' ); ?></a>
                 </div>
-                 <div class="last-feature">
-                    <a class="button-secondary customizr-help" title="forum" href="<?php echo $_support_url; ?>" target="_blank"><?php _e( 'Get support in the forum','customizr' ); ?></a>
+                 <div class="last-feature col">
+                    <a class="button-secondary customizr-help" title="help" href="<?php echo $_support_url; ?>" target="_blank">
+                      <?php TC___::tc_is_pro() ? _e( 'Get support','customizr' ) : _e( 'Get help in the free support forum','customizr' ); ?>
+                    </a>
                  </div>
               </div><!-- .two-col -->
             </div><!-- .changelog -->
@@ -134,7 +136,7 @@ if ( ! class_exists( 'TC_admin_page' ) ) :
                 printf( '<p><strong>%1$s</strong></p>',
                   sprintf( __( "The best way to start with %s is to read the %s and visit the %s.", "customizr"),
                     $_theme_name,
-                    sprintf( '<a href="%1$s" title="%2$s" target="_blank">%2$s</a>', esc_url('doc.presscustomizr.com'), __("documentation", "customizr") ),
+                    sprintf( '<a href="%1$s" title="%2$s" target="_blank">%2$s</a>', esc_url('docs.presscustomizr.com'), __("documentation", "customizr") ),
                     sprintf( '<a href="%1$s" title="%2$s" target="_blank">%2$s</a>', esc_url('demo.presscustomizr.com'), __("demo website", "customizr") )
                   )
                 );
@@ -165,7 +167,7 @@ if ( ! class_exists( 'TC_admin_page' ) ) :
 
                 <div class="feature-section col three-col">
 
-                  <div>
+                  <div class="col">
                     <h3><?php _e( 'We need sponsors!','customizr' ); ?></h3>
                     <p><?php  _e( '<strong>We do our best do make Customizr the perfect free theme for you!</strong><br/> Please help support it\'s continued development with a donation of $20, $50, or even $100.','customizr' ) ?></br>
 
@@ -173,13 +175,13 @@ if ( ! class_exists( 'TC_admin_page' ) ) :
                     </p>
                   </div>
 
-                  <div>
+                  <div class="col">
                     <h3><?php _e( 'Happy user of Customizr?','customizr' ); ?></h3>
                     <p><?php _e( 'If you are happy with the theme, say it on wordpress.org and give Customizr a nice review! <br />(We are addicted to your feedbacks...)','customizr' ) ?></br>
                     <a class="button-primary review-customizr" title="Customizr WordPress Theme" href="<?php echo esc_url('wordpress.org/support/view/theme-reviews/customizr') ?>" target="_blank">Review Customizr &raquo;</a></p>
                   </div>
 
-                  <div class="last-feature">
+                  <div class="last-feature col">
                     <h3><?php _e( 'Follow us','customizr' ); ?></h3>
                     <p class="tc-follow"><a href="<?php echo TC_WEBSITE.'blog' ?>" target="_blank"><img src="<?php echo TC_BASE_URL.'inc/admin/img/pc.png' ?>" alt="Press Customizr" /></a></p>
                     <!-- Place this tag where you want the widget to render. -->
@@ -193,13 +195,13 @@ if ( ! class_exists( 'TC_admin_page' ) ) :
               <h3 style="text-align:left"><?php _e("Go Customizr Pro" ,'customizr') ?></h3>
 
               <div class="feature-section images-stagger-right">
-                <a class="" title="<?php _e("Visit the extension's page",'customizr') ?>" href="<?php echo TC_WEBSITE ?>extension/customizr-pro/" target="_blank"><img alt="Customizr'extensions" src="<?php echo TC_BASE_URL.'inc/admin/img/customizr-pro.png' ?>" class=""></a>
+                <a class="" title="<?php _e("Visit the extension's page",'customizr') ?>" href="<?php echo TC_WEBSITE ?>customizr-pro/" target="_blank"><img alt="Customizr'extensions" src="<?php echo TC_BASE_URL.'inc/admin/img/customizr-pro.png' ?>" class=""></a>
                 <h4 style="text-align: left"><?php _e('Easily take your web design one step further' ,'customizr') ?></h4></br>
 
                 <p style="text-align: left"><?php _e("The Customizr Pro WordPress theme allows anyone to create a beautiful, professional and fully responsive website in a few seconds. In the Pro version, you'll get all the features of the free version plus some really cool and even revolutionary ones." , 'customizr') ?>
                 </p>
                 <p style="text-align:left">
-                    <a class="button-primary review-customizr" title="<?php _e("Discover Customizr Pro",'customizr') ?>" href="<?php echo TC_WEBSITE ?>extension/customizr-pro/" target="_blank"><?php _e("Discover Customizr Pro",'customizr') ?> &raquo;</a>
+                    <a class="button-primary review-customizr" title="<?php _e("Discover Customizr Pro",'customizr') ?>" href="<?php echo TC_WEBSITE ?>customizr-pro/" target="_blank"><?php _e("Discover Customizr Pro",'customizr') ?> &raquo;</a>
                 </p>
               </div>
             </div>
@@ -228,7 +230,7 @@ if ( ! class_exists( 'TC_admin_page' ) ) :
             is_blog_admin() ? _e( 'Go to Dashboard &rarr; Home','customizr' ) : _e( 'Go to Dashboard','customizr' ); ?></a>
         </div>
 
-      </div><!-- #customizr-admin-panel -->
+      </div><!-- //#customizr-admin-panel -->
       <?php
     }
 
@@ -343,12 +345,14 @@ foreach ( $plugins as $plugin_path ) {
 
   echo $plugin['Name'] . ' :' . $plugin['Version'] ."\n";
 }
-
 endif;
+//GET MYSQL VERSION
+global $wpdb;
+$mysql_ver =  ( ! empty( $wpdb->use_mysqli ) && $wpdb->use_mysqli ) ? @mysqli_get_server_info( $wpdb->dbh ) : @mysql_get_server_info();
 ?>
 
 PHP Version:              <?php echo PHP_VERSION . "\n"; ?>
-MySQL Version:            <?php echo @mysql_get_server_info() . "\n"; ?>
+MySQL Version:            <?php echo $mysql_ver . "\n"; ?>
 Web Server Info:          <?php echo $_SERVER['SERVER_SOFTWARE'] . "\n"; ?>
 
 WordPress Memory Limit:   <?php echo ( $this -> tc_let_to_num( WP_MEMORY_LIMIT )/( 1024 ) )."MB"; ?><?php echo "\n"; ?>
