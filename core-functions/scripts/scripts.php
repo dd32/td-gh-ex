@@ -1,5 +1,5 @@
 <?php
-function asiathemes_scripts()
+function becorp_scripts()
 {
  /*--------Css----------*/
 	$becorp_custom_css = wp_parse_args(  get_option( 'becorp_option', array() ) );
@@ -41,6 +41,6 @@ function asiathemes_scripts()
 	
 	if ( is_singular() ){ wp_enqueue_script( "comment-reply" );	}
 }
-add_action('wp_enqueue_scripts', 'asiathemes_scripts');
+add_action('wp_enqueue_scripts', 'becorp_scripts');
 
 ?>

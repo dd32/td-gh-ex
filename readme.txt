@@ -35,6 +35,9 @@ released
 @version 1.6
 1.As per review fixed all issues from @version 1.5
 
+@version 1.7
+1.As per review fixed all issues from @version 1.6
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL
@@ -116,7 +119,14 @@ Copyright 2015 asiathemes
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Images Taken from :
+*************** Images Description ***************
+
+Images Taken from : https://pixabay.com/
+
+This images comes under GPL,GNU license.
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl.html
+
 *************** Slider Images ***************
 Image Slide 1:https://pixabay.com/en/colleagues-seminar-presentation-437024/
 

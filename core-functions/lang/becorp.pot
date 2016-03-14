@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: becorp\n"
-"POT-Creation-Date: 2016-03-10 01:10+0530\n"
-"PO-Revision-Date: 2016-03-10 01:10+0530\n"
+"POT-Creation-Date: 2016-03-14 23:19+0530\n"
+"PO-Revision-Date: 2016-03-14 23:19+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -785,7 +785,7 @@ msgstr ""
 
 #: core-functions/customizer/customizer-service.php:246
 #: theme_default_data.php:74
-msgid "Ipsum dolor sit amet"
+msgid "Print Quality Design"
 msgstr ""
 
 #: core-functions/customizer/customizer-service.php:255

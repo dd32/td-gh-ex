@@ -84,8 +84,8 @@
 									'theme_location' => 'primary',
 									'container'  => 'collapse navbar-collapse',
 									'menu_class' => 'nav navbar-nav navbar-right',
-									'fallback_cb' => 'asiathemes_fallback_page_menu',
-									'walker' => new asiathemes_nav_walker()
+									'fallback_cb' => 'becorp_fallback_page_menu',
+									'walker' => new becorp_nav_walker()
 									)
 								);	?> 
         </div><!--/.nav-collapse -->

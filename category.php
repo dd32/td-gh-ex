@@ -29,7 +29,7 @@
 					get_template_part('content','post');
 					
 					endwhile; endif; ?>
-				<?php asiathemes_navigation(); ?>
+				<?php becorp_navigation(); ?>
 		</div>
 		<?php get_sidebar();?>	
 	</div>

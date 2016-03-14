@@ -21,8 +21,8 @@
 	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/customizer/customizer-header.php');
 	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
 
-add_action( 'after_setup_theme', 'asiathemes_setup' ); 	
-		function asiathemes_setup()
+add_action( 'after_setup_theme', 'becorp_setup' ); 	
+		function becorp_setup()
 		{	// Load text domain for translation-ready
 			load_theme_textdomain( 'becorp', ASIATHEMES_THEME_FUNCTIONS_PATH . '/lang' );
 			add_theme_support( 'title-tag' );
@@ -51,29 +51,29 @@ add_action( 'after_setup_theme', 'asiathemes_setup' );
 			
 }
 		/****--- Navigation for Author, Category , Tag , Archive ---***/
-			function asiathemes_navigation() { ?>
+			function becorp_navigation() { ?>
 			<div class="row">
 			<div class="blog-pagination">
-			<?php //posts_nav_link(); 
-			previous_posts_link( __('Previous','becorp') ); 
-			next_posts_link( __('Next','becorp') ); ?>
+				<?php //posts_nav_link(); 
+				previous_posts_link( __('Previous','becorp') ); 
+				next_posts_link( __('Next','becorp') ); ?>
 			</div>
 			</div>
 			<?php }
 			
 			// Wordpress Editor style
-			function asiathemes_add_editor_styles() {
+			function becorp_add_editor_styles() {
 				add_editor_style( 'custom-editor-style.css' );
 			}
-			add_action( 'admin_init', 'asiathemes_add_editor_styles' );
+			add_action( 'admin_init', 'becorp_add_editor_styles' );
 	
 	
 	
 			/*******************
 			* Add Class Gravtar
 			* ******************/
-			add_filter('get_avatar','asiathemes_gravatar_class');
-			function asiathemes_gravatar_class($class) {
+			add_filter('get_avatar','becorp_gravatar_class');
+			function becorp_gravatar_class($class) {
 			$class = str_replace("class='avatar", "class='author-image", $class);
 			return $class;
 			}

@@ -14,7 +14,7 @@ get_template_part('title','strip');
 				
 				get_template_part('content','post');
 				endwhile; endif;
-				asiathemes_navigation(); ?> 	
+				becorp_navigation(); ?> 	
 		</div>
 <?php get_sidebar(); ?>		
 	</div>

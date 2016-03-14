@@ -26,7 +26,7 @@
 					get_template_part('content','post');
 				?>
 				<?php endwhile; endif; ?>
-				<?php asiathemes_navigation(); ?>
+				<?php becorp_navigation(); ?>
 		</div>
 		<?php get_sidebar();?>	
 	</div>

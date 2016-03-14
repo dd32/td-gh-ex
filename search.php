@@ -12,7 +12,7 @@ get_template_part('title','strip');
 <section id="blog">
 <div class="container">
 	<div class="row">
-<div class="<?php if( is_active_sidebar('sidebar-data')) { echo "col-md-8"; }  else { echo "col-md-12"; } ?>">				
+		<div class="<?php if( is_active_sidebar('sidebar-data')) { echo "col-md-8"; }  else { echo "col-md-12"; } ?>">				
 			<?php if ( have_posts() ) : ?>
 				<h2><?php printf( __( "Search Results for: %s", 'becorp' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 			<?php 
@@ -54,7 +54,7 @@ get_template_part('title','strip');
 			<?php endif; ?>
 				<!--/.blog-item-->		
 			<!---Blog pagination-->
-				<?php asiathemes_navigation(); ?>
+				<?php becorp_navigation(); ?>
 			
 		</div><!--/.col-sm-8-->
 	

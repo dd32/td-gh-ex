@@ -1,5 +1,5 @@
 <?php
-function asiathemes_service_customizer( $wp_customize ) {
+function becorp_service_customizer( $wp_customize ) {
  
 //Service section panel
 $wp_customize->add_panel( 'becorp_service_options', array(
@@ -243,7 +243,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'becorp_option[service_three_title]',
     array(
-        'default' => __('Ipsum dolor sit amet','becorp'),
+        'default' => __('Print Quality Design','becorp'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' =>'option',
@@ -315,5 +315,5 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'be
 );
 
 }
-add_action( 'customize_register', 'asiathemes_service_customizer' );
+add_action( 'customize_register', 'becorp_service_customizer' );
 ?>

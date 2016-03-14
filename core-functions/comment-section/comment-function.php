@@ -1,7 +1,7 @@
 <?php
 // code for comment
-if ( ! function_exists( 'asiathemes_comment' ) ) :
-function asiathemes_comment( $comment, $args, $depth ) 
+if ( ! function_exists( 'becorp_comment' ) ) :
+function becorp_comment( $comment, $args, $depth ) 
 {
 	$GLOBALS['comments'] = $comment;
 	//get theme data
@@ -28,8 +28,8 @@ function asiathemes_comment( $comment, $args, $depth )
 <?php
 }
 endif;
-add_filter('get_avatar','asiathemes_add_gravatar_class');
-function asiathemes_add_gravatar_class($class) {
+add_filter('get_avatar','becorp_comment_add_gravatar_class');
+function becorp_comment_add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='uthor-image", $class);
     return $class;
 }

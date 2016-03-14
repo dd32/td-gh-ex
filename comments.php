@@ -52,10 +52,10 @@
                                             <input id="author" name="author" type="text" value="" size="30" aria-required="true"></div>',
 		'email' => '<div class="col-md-4">
                                         	<label for="email">'.__('Email','becorp').'<span class="required">*</span></label>
-                                            <input id="email" name="author" type="text" value="" size="30" aria-required="true"></div>',
+                                            <input id="email" name="email" type="text" value="" size="30" aria-required="true"></div>',
 		'website' => '<div class="col-md-4">
                                         	<label for="url">'.__('Website','becorp').'<span class="required">*</span></label>
-                                            <input id="url" name="url" type="text" value="" size="30" aria-required="true">
+                                            <input id="website" name="website" type="text" value="" size="30" aria-required="true">
                                         </div></div>',
 					
                                     	
@@ -63,10 +63,10 @@
                                         
                                     
 		);
-	function my_fields($fields) { 
+	function becorp_my_fields($fields) { 
 		return $fields;
 	}
-	add_filter('comment_form_default_fields','my_fields');
+	add_filter('comment_form_default_fields','becorp_my_fields');
 		$defaults = array(
 		'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
 		'comment_field'=> '<div class="row">

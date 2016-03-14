@@ -1,8 +1,8 @@
 <div class="wrapper">
 	<div class="at-notify" id="at-notify">
 		  <div class="col-md-3">
-				<h1><a href="#"><?php _e('Becorp','becorp');?> <span> <?php _e('Premium','becorp');?></span></a></h1>
-				<h4><a href="#"><?php _e('Get Our','becorp'); ?> <span><?php _e('Premium Theme','becorp'); ?></span></a></h4>
+				<h1><?php _e('Becorp','becorp');?> <span> <?php _e('Premium','becorp');?></span></h1>
+				<h4><a href="http://asiathemes.asia/?item=becorp"><?php _e('Get Our','becorp'); ?> <span><?php _e('Premium Theme','becorp'); ?></span></a></h4>
 			</div>
             <div class="col-md-6">
 			  <h3><?php _e('Our Latest Features','becorp'); ?></h3>
@@ -47,7 +47,7 @@
 <div class="clearfix"></div>
 <div class="header1">
   <div class="logo">
-    <h2><a href="#"><img src="<?php echo get_template_directory_uri();?>/core-functions/option-panel/images/asialogo.png"></a><a href="<?php bloginfo ( 'url' );?>/wp-admin/customize.php" target="_blank" class="pull-right"><?php _e('View Customizer','becorp'); ?></h2> 
+    <h2><a href="https://asiathemes.com"><img src="<?php echo get_template_directory_uri();?>/core-functions/option-panel/images/asialogo.png"></a><a href="<?php bloginfo ( 'url' );?>/wp-admin/customize.php" target="_blank" class="pull-right"><?php _e('View Customizer','becorp'); ?></h2> 
    </div>
 </div>
 <div class="clearfix"></div>

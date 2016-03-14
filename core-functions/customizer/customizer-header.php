@@ -1,6 +1,6 @@
 <?php
-add_action( 'customize_register', 'asiathemes_header_customizer' );
-function asiathemes_header_customizer( $wp_customize ) {
+add_action( 'customize_register', 'becorp_header_customizer' );
+function becorp_header_customizer( $wp_customize ) {
 wp_enqueue_style('becorp-customizr', ASIATHEMES_TEMPLATE_DIR_URI .'/css/customizr.css');
 $wp_customize->remove_control('header_textcolor');
 
@@ -428,7 +428,7 @@ $wp_customize->remove_control('header_textcolor');
 		, array(
         'default'        => '',
         'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_strip_all_tags',
 		'type'=> 'option',
     ));
     $wp_customize->add_control( 'becorp_option[becorp_custom_css]', array(

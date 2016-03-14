@@ -1,10 +1,10 @@
 <?php 
-function asiathemes_page_menu_args( $args ) {
+function becorp_page_menu_args( $args ) {
 	if ( ! isset( $args['show_home'] ) )
 		$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'asiathemes_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'becorp_page_menu_args' );
 
  
 function asiathemes_fallback_page_menu( $args = array() ) {
@@ -40,7 +40,7 @@ function asiathemes_fallback_page_menu( $args = array() ) {
 
 	$list_args['echo'] = false;
 	$list_args['title_li'] = '';
-	$list_args['walker'] = new asiathemes_walker_page_menu;
+	$list_args['walker'] = new becorp_walker_page_menu;
 	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages($list_args) );
 
 	if ( $menu )
@@ -53,7 +53,7 @@ function asiathemes_fallback_page_menu( $args = array() ) {
 	else
 		return $menu;
 }
-class asiathemes_walker_page_menu extends Walker_Page{
+class becorp_walker_page_menu extends Walker_Page{
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class='dropdown-menu'>\n";

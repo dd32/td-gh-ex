@@ -71,7 +71,7 @@ function becorp_theme_default_data()
 	'service_two_description' => get_theme_mod('service_two_description',__('Duis autem vel eum iriure dolor in hendrerit in vulputate. Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.','becorp')),
 
 	'service_three_icon' => 'fa-leaf',
-	'service_three_title'=> get_theme_mod('service_three_title',__('Ipsum dolor sit amet','becorp')),
+	'service_three_title'=> get_theme_mod('service_three_title',__('Print Quality Design','becorp')),
 	'service_three_description' => get_theme_mod('service_three_description',__('Duis autem vel eum iriure dolor in hendrerit in vulputate. Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.','becorp')),
 	
 	//Project Portfolio Section
@@ -106,7 +106,7 @@ function becorp_theme_default_data()
 	'footer_customization_text' => get_theme_mod('footer_customization_text',__('@ 2015 Becorp Theme','becorp')),
 	'footer_customization_develop' => get_theme_mod('footer_customization_develop',__('Developed By','becorp')),
 	'develop_by_name' => get_theme_mod('develop_by_name',__('Asisa Themes ','becorp')),
-	'develop_by_link' => 'http://asiathemes.com/',
+	'develop_by_link' => 'https://asiathemes.com/',
 	
 	);
   	}
