@@ -93,6 +93,18 @@
          return '';
       }
    }
+
+   function accesspress_store_radio_sanitize_header_layout($input) {
+      $valid_keys = array(
+        'headerone' => __('Header Style One', 'accesspress-store'),
+        'headertwo' => __('Header Style Two', 'accesspress-store') 
+      );
+      if ( array_key_exists( $input, $valid_keys ) ) {
+         return $input;
+      } else {
+         return '';
+      }
+   }   
    
    
    function accesspress_store_radio_sanitize_enabledisable($input) {

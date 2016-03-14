@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.0.0
+Version: 2.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -401,11 +401,11 @@ a {
     padding: 15px 20px;
     color: #ffffff;
     text-transform: uppercase;
-    -webkit-transition: color 0.25s ease-out;
-    -moz-transition: color 0.25s ease-out;
-    -ms-transition: color 0.25s ease-out;
-    -o-transition: color 0.25s ease-out;
-    transition: color 0.25s ease-out;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
 }
 .main-navigation ul.menu > li.menu-item-has-children > a {
     padding-right: 32px;
@@ -926,7 +926,7 @@ body {
 }
 #site-branding .site-logo {
     float: left;
-    margin-right: 5px;
+    margin-right: 15px;
 }
 #site-branding .site-text {
     float: left;
@@ -992,9 +992,11 @@ body {
     color: #fff;
     font-size: 14px;
     text-transform: uppercase;
-    -webkit-transition: color 0.3s ease 0s;
-    -moz-transition: color 0.3s ease 0s;
-    transition: color 0.3s ease 0s;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
     font-weight: 400;
     position: relative;
     display: block;
@@ -1015,6 +1017,95 @@ body {
     content: "/";
     color: #AAA;
 }
+
+/*--------------------------------------------------
+HEADER TWO
+---------------------------------------------------*/
+.headertwo .before-top-header {
+    border-bottom: 1px solid #eee;
+}
+.headertwo #site-branding {
+    display: inline-block;
+    min-height: inherit;
+    width: 30%;
+    vertical-align: middle;
+    padding-bottom: 0;
+}
+.headertwo .headertwo-wrap {
+    display: inline-block;
+    width: 69%;
+    vertical-align: middle;
+}
+.headertwo .home_navigation {
+    background: none;
+    border-top: 1px solid #eee;
+}
+.headertwo .home_navigation .inner_home::after, .headertwo .home_navigation .inner_home #menu::after {
+    display: none;
+}
+.headertwo .home_navigation .inner_home {
+    border-bottom: 1px solid #eee;
+}
+.headertwo .home_navigation .right-header-main.clearfix {
+    background: none;
+    float: none;
+    margin-top: 0;
+    max-height: inherit;
+    max-width: 100%;
+    position: static;
+    width: 100%;
+    height: auto;
+}
+.headertwo .home_navigation .inner_home #menu {
+    float: none;
+}
+.headertwo .home_navigation .main-navigation ul.menu {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+.headertwo .home_navigation .inner_home #menu .main-navigation ul.menu > li > ul::after {
+    top: 0;
+}
+.headertwo #site-navigation > .store-menu > ul > li::before {
+    background: radial-gradient(rgba(0, 0, 0, 0.3), transparent 70%);
+    background: -webkit-radial-gradient(rgba(0, 0, 0, 0.3), transparent 70%);
+    background: -moz-radial-gradient(rgba(0, 0, 0, 0.3), transparent 70%);
+    background: -ms-radial-gradient(rgba(0, 0, 0, 0.3), transparent 70%)
+    background: -o-radial-gradient(rgba(0, 0, 0, 0.3), transparent 70%);
+    content: "";
+    height: 35px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 1px;
+}
+.headertwo #site-navigation > .store-menu > ul > li:last-child::before {
+    display: none;
+}
+.headertwo .home_navigation .inner_home #menu .main-navigation ul.menu > li > ul {
+    padding-top: 12px;
+}
+.headertwo .home_navigation .inner_home #menu .main-navigation ul.menu > li:hover > ul {
+    top: 100%;
+    background: none;
+}
+.headertwo .home_navigation .inner_home #menu .main-navigation ul.menu > li.menu-item-has-children::after {
+    top: 22px;
+    right: 15px;
+    border-width: 4px;
+    border-top-color: #777;
+}
+.headertwo .home_navigation .inner_home #menu .main-navigation ul.menu > li:hover::after {
+    border-top-color: #e24545;
+}
+.headertwo .home_navigation .inner_home #menu #site-navigation .menu > li > a {
+    padding: 7px 13px;
+    color: #777;
+}
+
+.headertwo .home_navigation .inner_home #menu #site-navigation .menu > li.menu-item-has-children > a {
+    padding-right: 30px;
+}
+
 /*--------------------------------------------------------------
         Search Home css
 --------------------------------------------------------------*/
@@ -3971,12 +4062,12 @@ ul.products.list li.product .gridlist-buttonwrap {
 /*style for product right align nav*/
 .widget_accesspress_store_product2 .feature-cat-product.right_align .slick-next,
 .widget_accesspress_store_product2 .feature-cat-product.right_align .slick-prev{
-	position:absolute;
-	left:0;	
-	
+    position:absolute;
+    left:0; 
+    
 }
 .widget_accesspress_store_product2 .feature-cat-product.right_align .slick-next{
-	margin-left:29px;	
+    margin-left:29px;   
 }
 .columns-widget-count-2 aside {
     width: 48%;
@@ -4215,8 +4306,8 @@ div.view-cart .sub-menu {
 } 
 .top-header {
     margin: 0px;
-    margin-bottom: 10px;
-    padding-top: 10px;
+    margin-bottom: 15px;
+    padding-top: 15px;
 }
 .top-header span.amount {
     margin: 0px;
@@ -4241,8 +4332,11 @@ a.quick-wishlist {
     margin-right: 0px;
     padding-left: 10px;
     padding-right: 10px;
-    color: #e24747;
+    color: #919191;
     line-height: 16px;
+}
+.headertwo .headertwo-wrap .login-woocommerce a {
+    color: #919191;
 }
 .view-cart {
     padding-left: 10px;
@@ -4253,6 +4347,9 @@ a.quick-wishlist {
 .view-cart a.wcmenucart-contents {
     color: #919191;
     text-transform: uppercase;
+}
+.headertwo .headertwo-wrap a:hover {
+    color: #e24747;
 }
 .cart-empty {
     color: #a94442;
@@ -4300,11 +4397,11 @@ a.quick-wishlist {
     text-transform: uppercase;
     color: #ffffff;
     line-height: 20px;
-    -webkit-transition: color .2s ease;
-    -moz-transition: color .2s ease;
-    -ms-transition: color .2s ease;
-    -o-transition: color .2s ease;
-    transition: color .2s ease;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
     margin: 0px;
 }
 #site-navigation .menu>li>a {
@@ -4313,15 +4410,22 @@ a.quick-wishlist {
     text-decoration: none;
     text-transform: uppercase;
     color: #ffffff;
-    -webkit-transition: color .2s ease;
-    -moz-transition: color .2s ease;
-    -ms-transition: color .2s ease;
-    -o-transition: color .2s ease;
-    transition: color .2s ease;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
     margin: 0px;
 }
-#site-navigation li a:hover {
+#site-navigation li a:hover,
+.headertwo .home_navigation .inner_home #menu #site-navigation .store-menu > ul > li:hover > a,
+.headertwo .home_navigation .inner_home #menu #site-navigation .menu > li.current-menu-item > a,
+.headertwo .home_navigation .inner_home #menu #site-navigation .menu > li.current_page_item > a {
     color: #e24545;
+}
+
+.headertwo .home_navigation .inner_home #menu #site-navigation ul ul li a:hover {
+    color: #fff;
 }
 .right-header a.my-account {
     font-weight: 500;
@@ -4474,6 +4578,29 @@ a.quick-wishlist {
     float: right;
     background: #efefef;
     position: relative;
+}
+
+.headertwo .headertwo-wrap .search-form {
+    background: none;
+    width: 40%;
+}
+.headertwo .headertwo-wrap form.searchform {
+    border: 1px solid #eee;
+}
+.headertwo .headertwo-wrap .search-form input.search-field {
+    padding-left: 10px;
+}
+.headertwo .headertwo-wrap .search-form button.searchsubmit {
+    border: none;
+    background: #eee none repeat scroll 0 0;
+    color: #777;
+    font-size: 14px;
+    transition: all ease 0.4s;
+    -webkit-transition: all ease 0.4s;
+}
+.headertwo .headertwo-wrap .search-form button.searchsubmit:hover {
+    background: #e24545;
+    color: #fff;
 }
 .slick-track li {} 
 .slick-track li a:first-child {
@@ -4911,7 +5038,7 @@ span.onsale:after,
     background: rgba(0, 0, 0, 0.8);
 }
 .boxed .cta-vid-wrap{
-	padding:0 20px;	
+    padding:0 20px; 
 }
 #ap-cta-video .widget_accesspress_cta_simple {
     background: url(images/you.png) no-repeat right;
@@ -5407,10 +5534,10 @@ span.onsale:after,
 }
 #secondary.sidebar ul {
     margin: 0px;
-	
+    
 }
 #secondary.sidebar .product_list_widget{
-	padding-top:10px;
+    padding-top:10px;
 }
 #secondary.sidebar ul ul li {
     margin-left: 0px;
@@ -5523,14 +5650,14 @@ li.cat-parent {
 
 .amount {
     margin-right: 5px;
-	
+    
 }
 #secondary.sidebar ul li ins span.amount,
 #secondary.sidebar ul li span.amount{
-	color:#77a464;
+    color:#77a464;
 }
 #secondary.sidebar ul li del span.amount{
-	    color: #e24545;	
+        color: #e24545; 
 }
 .woocommerce ul.cart_list li img,
 .woocommerce ul.product_list_widget li img {

@@ -453,14 +453,8 @@ if(is_woocommerce_activated()):
 	}
 
 	function accesspress_header_scripts(){
-		$fav_icon = get_theme_mod('accesspress_favicon');
 		$page_background_option = get_theme_mod('accesspress_background_type');
 		$show_slider = get_theme_mod('show_slider');
-		if(!empty($fav_icon)):
-			?>
-		<link rel="icon" type="image/png" href="<?php echo $fav_icon; ?>"> 
-		<?php    
-		endif;
 		echo "<style>";
 		echo "html body{";
 		if($page_background_option == 'image'): 

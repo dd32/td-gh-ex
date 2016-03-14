@@ -157,8 +157,6 @@ require get_template_directory() . '/inc/assets/assets-woocommerce-setting.php';
  * Load Page/Post Setting
  */
 require get_template_directory() . '/inc/assets/assets-pagepost-setting.php';
-
-
 /**
  * Load Page/Post Setting
  */

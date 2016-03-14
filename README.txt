@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 2.0.1 =
+
+** New header layout added.
+
 = 2.0.0 =
 
 ** Animation added in main slider caption text.
