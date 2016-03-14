@@ -4,7 +4,7 @@
  *
  * @since 1.0.0
  */
-$bavotasan_theme_data = wp_get_theme();
+$bavotasan_theme_data = wp_get_theme( 'arcade-basic' );
 define( 'BAVOTASAN_THEME_URL', get_template_directory_uri() );
 define( 'BAVOTASAN_THEME_TEMPLATE', get_template_directory() );
 define( 'BAVOTASAN_THEME_VERSION', trim( $bavotasan_theme_data->Version ) );
@@ -52,7 +52,7 @@ if ( ! function_exists( 'bavotasan_setup' ) ) :
  * @since 1.0.0
  */
 function bavotasan_setup() {
-	load_theme_textdomain( 'arcade', BAVOTASAN_THEME_TEMPLATE . '/library/languages' );
+	load_theme_textdomain( 'arcade-basic', BAVOTASAN_THEME_TEMPLATE . '/library/languages' );
 
 	// Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'automatic-feed-links' );
@@ -61,7 +61,7 @@ function bavotasan_setup() {
 	add_editor_style( 'library/css/admin/editor-style.css' );
 
 	// This theme uses wp_nav_menu() in two location.
-	register_nav_menu( 'primary', __( 'Primary Menu', 'arcade' ) );
+	register_nav_menu( 'primary', __( 'Primary Menu', 'arcade-basic' ) );
 
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'gallery', 'image', 'video', 'audio', 'quote', 'link', 'status', 'aside' ) );
@@ -86,7 +86,7 @@ function bavotasan_setup() {
 		'header01' => array(
 			'url' => '%s/library/images/header01.jpg',
 			'thumbnail_url' => '%s/library/images/header01-thumbnail.jpg',
-			'description' => __( 'Default Header 1', 'arcade' )
+			'description' => __( 'Default Header 1', 'arcade-basic' )
 		),
 	) );
 
@@ -203,9 +203,9 @@ function bavotasan_widgets_init() {
 	require( BAVOTASAN_THEME_TEMPLATE . '/library/widgets/widget-image-icon.php' ); // Custom Image/Icon Text widget
 
 	register_sidebar( array(
-		'name' => __( 'First Sidebar', 'arcade' ),
+		'name' => __( 'First Sidebar', 'arcade-basic' ),
 		'id' => 'sidebar',
-		'description' => __( 'This is the first sidebar. It won\'t appear on the home page unless you set a static front page.', 'arcade' ),
+		'description' => __( 'This is the first sidebar. It won\'t appear on the home page unless you set a static front page.', 'arcade-basic' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -213,19 +213,19 @@ function bavotasan_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Jumbo Headline', 'arcade' ),
+		'name' => __( 'Jumbo Headline', 'arcade-basic' ),
 		'id' => 'jumbo-headline',
-		'description' => __( 'Area on the home page below the large header image. Designed specifically for one text widget. ', 'arcade' ),
+		'description' => __( 'Area on the home page below the large header image. Designed specifically for one text widget. ', 'arcade-basic' ),
 		'before_widget' => '<aside id="%1$s" class="jumbo-headline %2$s">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h1>',
-		'after_title' => '</h1>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Home Page Top Area', 'arcade' ),
+		'name' => __( 'Home Page Top Area', 'arcade-basic' ),
 		'id' => 'home-page-top-area',
-		'description' => __( 'Area on the home page above the main content. Designed specifically for four Icon & Text widgets. Add at least one widget to make it appear.', 'arcade' ),
+		'description' => __( 'Area on the home page above the main content. Designed specifically for four Icon & Text widgets. Add at least one widget to make it appear.', 'arcade-basic' ),
 		'before_widget' => '<aside id="%1$s" class="home-widget col-md-3 %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="home-widget-title">',
@@ -250,13 +250,13 @@ function bavotasan_pagination() {
 		return;
 	?>
 	<nav class="navigation clearfix" role="navigation">
-		<h1 class="sr-only"><?php _e( 'Posts navigation', 'arcade' ); ?></h1>
+		<div class="sr-only"><?php _e( 'Posts navigation', 'arcade-basic' ); ?></div>
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '&larr; Older posts', 'arcade' ) ); ?></div>
+		<div class="nav-previous"><?php next_posts_link( __( '&larr; Older posts', 'arcade-basic' ) ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'arcade' ) ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'arcade-basic' ) ); ?></div>
 		<?php endif; ?>
 	</nav><!-- .navigation -->
 	<?php
@@ -297,12 +297,12 @@ function bavotasan_comment( $comment, $args, $depth ) {
 					</div>
 					<div class="comment-meta">
 						<?php
-						printf( __( '%1$s at %2$s', 'arcade' ), get_comment_date(), get_comment_time() );
-						edit_comment_link( __( '(edit)', 'arcade' ), '  ', '' );
+						printf( __( '%1$s at %2$s', 'arcade-basic' ), get_comment_date(), get_comment_time() );
+						edit_comment_link( __( '(edit)', 'arcade-basic' ), '  ', '' );
 						?>
 					</div>
 					<div class="comment-text">
-						<?php if ( '0' == $comment->comment_approved ) { echo '<em>' . __( 'Your comment is awaiting moderation.', 'arcade' ) . '</em>'; } ?>
+						<?php if ( '0' == $comment->comment_approved ) { echo '<em>' . __( 'Your comment is awaiting moderation.', 'arcade-basic' ) . '</em>'; } ?>
 						<?php comment_text() ?>
 					</div>
 					<?php if ( $args['max_depth'] != $depth && comments_open() && 'pingback' != $comment->comment_type ) { ?>
@@ -321,7 +321,7 @@ function bavotasan_comment( $comment, $args, $depth ) {
 		<li id="comment-<?php comment_ID(); ?>" class="pingback">
 			<div class="comment-body">
 				<i class="fa fa-paperclip"></i>
-				<?php _e( 'Pingback:', 'arcade' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(edit)', 'arcade' ), ' ' ); ?>
+				<?php _e( 'Pingback:', 'arcade-basic' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(edit)', 'arcade-basic' ), ' ' ); ?>
 			</div>
 			<?php
 			break;
@@ -364,7 +364,7 @@ function bavotasan_excerpt_more( $text ) {
 	if ( is_singular() )
 		return $text;
 
-	return '<p class="excerpt">' . $text . ' <a href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read more &rarr;', 'arcade' ) . '</a></p>';
+	return '<p class="excerpt">' . $text . ' <a href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read more &rarr;', 'arcade-basic' ) . '</a></p>';
 }
 endif; // bavotasan_excerpt_more
 
@@ -515,7 +515,7 @@ class Bavotasan_Page_Navigation_Walker extends Walker_Nav_Menu {
 		$item_html = '';
 		parent::start_el( $item_html, $item, $depth, $args );
 
-		if ( $item->is_dropdown && ( $depth === 0 ) ) {
+		if ( $item->is_dropdown ) {
 			$item_html = str_replace( '<a', '<a class="dropdown-toggle" data-toggle="dropdown" data-target="#"', $item_html );
 			$item_html = str_replace( '</a>', ' <span class="caret"></span></a>', $item_html );
 		} elseif ( stristr( $item_html, 'li class="divider' ) ) {

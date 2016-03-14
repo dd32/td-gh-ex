@@ -13,7 +13,7 @@
 			if( has_post_thumbnail() && ! is_single() )
 				the_post_thumbnail( 'full', array( 'class' => 'alignnone' ) );
 			else
-				the_content( __( 'Read more', 'arcade') );
+				the_content( __( 'Read more', 'arcade-basic') );
 			?>
 	    </div><!-- .entry-content -->
 

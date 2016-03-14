@@ -61,6 +61,15 @@ Licensed under the terms of CC0
 
 == CHANGELOG ==
 
+03/14/2016 v1.0.7
+* H1 tag fix
+* Tweaked mobile menu
+* Updated text domain
+* Updated archive.php title tag
+* Updated Bootstrap
+* Updated screenshot
+* Updated language file
+
 05/12/2015 v1.0.6
 * Fix for post meta
 * Fix for custom menu widget

@@ -16,7 +16,7 @@ get_header(); ?>
 							global $wp_query;
 						    $num = $wp_query->found_posts;
 							printf( '%1$s "%2$s"',
-							    $num . __( ' search results for', 'arcade'),
+							    $num . __( ' search results for', 'arcade-basic'),
 							    get_search_query()
 							);
 						?></h1>

@@ -10,11 +10,13 @@
 	$all_videos.not( 'object object' ).each( function() {
 		var $video = $(this);
 
-		if ( $video.parents( 'object' ).length )
+		if ( $video.parents( 'object' ).length ) {
 			return;
+		}
 
-		if ( ! $video.prop( 'id' ) )
+		if ( ! $video.prop( 'id' ) ) {
 			$video.attr( 'id', 'rvw' + Math.floor( Math.random() * 999999 ) );
+		}
 
 		$video
 			.wrap( '<div class="responsive-video-wrapper" style="padding-top: ' + ( $video.attr( 'height' ) / $video.attr( 'width' ) * 100 ) + '%" />' )
@@ -22,7 +24,6 @@
 			.removeAttr( 'width' );
 	} );
 
-	// Image anchor
 	$( 'a[href="#"]' ).click( function(e) {
 		e.preventDefault();
 	} );
@@ -43,6 +44,11 @@
 		} );
 	}
 
+	$( '#site-navigation' ).find( '.dropdown-toggle' ).click( function() {
+		$( '#site-navigation' ).find( 'li' ).not( $(this).parents() ).removeClass( 'open' );
+		$(this).parent().toggleClass( 'open' );
+	} );
+
     // Arc the site title
     if ( 0 != theme_js_vars.arc )
         $( '#site-title a' ).arctext( {
@@ -50,6 +56,7 @@
         	rotate: is_rtl,
         	fitText	: theme_js_vars.fittext
         } );
+
     // Set up jumbo header image
     if ( $card.length ) {
         $window

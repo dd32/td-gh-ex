@@ -17,7 +17,7 @@
 	    <div class="entry-content description clearfix">
 		    <?php
 			if ( is_singular() && ! is_front_page() )
-			    the_content( __( 'Read more', 'arcade') );
+			    the_content( __( 'Read more', 'arcade-basic') );
 			else
 				the_excerpt();
 			?>

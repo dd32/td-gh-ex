@@ -67,7 +67,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			<label class="customize-control-select"><span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<span class="custom-icon-container"><i class="fa <?php echo esc_attr( $this->value() ); ?>"></i></span>
 				<input type="hidden" class="image-widget-custom-icon" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> />
-				<a href="#" class="view-icons"><?php _e( 'View Icons', 'arcade' ); ?></a> | <a href="#" class="delete-icon"><?php _e( 'Remove Icon', 'arcade' ); ?></a>
+				<a href="#" class="view-icons"><?php _e( 'View Icons', 'arcade-basic' ); ?></a> | <a href="#" class="delete-icon"><?php _e( 'Remove Icon', 'arcade-basic' ); ?></a>
 				<?php bavotasan_font_awesome_icons( false ); ?>
 			</label>
 			</div>
@@ -94,7 +94,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				</label>
 				<?php
 			endforeach;
-			echo '<p class="description">' . __( 'The sidebar will not appear on the Post Block page template.', 'arcade' ) . '</p>';
+			echo '<p class="description">' . __( 'The sidebar will not appear on the Post Block page template.', 'arcade-basic' ) . '</p>';
 	    }
 	}
 }
@@ -103,6 +103,7 @@ class Bavotasan_Customizer {
 	public function __construct() {
 		add_action( 'customize_register', array( $this, 'customize_register' ) );
 		add_action( 'customize_controls_print_styles', array( $this, 'customize_controls_print_styles' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_controls_enqueue_scripts' ) );
 	}
 
 	public function customize_controls_print_styles() {
@@ -129,7 +130,7 @@ class Bavotasan_Customizer {
 		) );
 
 		$wp_customize->add_control( new Bavotasan_Text_Description_Control( $wp_customize, 'arc', array(
-			'label' => __( 'Arc Radius', 'arcade' ),
+			'label' => __( 'Arc Radius', 'arcade-basic' ),
 			'section' => 'title_tagline',
 			'priority' => 10,
 		) ) );
@@ -140,9 +141,9 @@ class Bavotasan_Customizer {
 		) );
 
 		$wp_customize->add_control( new Bavotasan_Text_Description_Control( $wp_customize, 'arc_inner', array(
-			'label' => __( 'Arc Radius (Inner Pages)', 'arcade' ),
+			'label' => __( 'Arc Radius (Inner Pages)', 'arcade-basic' ),
 			'section' => 'title_tagline',
-			'description' => __( 'The space and rotation for each letter will be calculated using the arc radius and the width of the site title. Leave blank for no arc.', 'arcade' ),
+			'description' => __( 'The space and rotation for each letter will be calculated using the arc radius and the width of the site title. Leave blank for no arc.', 'arcade-basic' ),
 			'priority' => 20,
 		) ) );
 
@@ -152,7 +153,7 @@ class Bavotasan_Customizer {
 		) );
 
 		$wp_customize->add_control( 'fittext', array(
-			'label' => __( 'Use Fittext for long site title', 'arcade' ),
+			'label' => __( 'Use Fittext for long site title', 'arcade-basic' ),
 			'section' => 'title_tagline',
 			'type' => 'checkbox',
 			'priority' => 30,
@@ -164,14 +165,14 @@ class Bavotasan_Customizer {
 		) );
 
 		$wp_customize->add_control( new Bavotasan_Icon_Select_Control( $wp_customize, 'header_icon', array(
-			'label' => __( 'Header Icon', 'arcade' ),
+			'label' => __( 'Header Icon', 'arcade-basic' ),
 			'section' => 'title_tagline',
 			'priority' => 40,
 		) ) );
 
 		// Layout section panel
 		$wp_customize->add_section( 'bavotasan_layout', array(
-			'title' => __( 'Layout', 'arcade' ),
+			'title' => __( 'Layout', 'arcade-basic' ),
 			'priority' => 35,
 		) );
 
@@ -181,13 +182,13 @@ class Bavotasan_Customizer {
 		) );
 
 		$wp_customize->add_control( 'width', array(
-			'label' => __( 'Site Width', 'arcade' ),
+			'label' => __( 'Site Width', 'arcade-basic' ),
 			'section' => 'bavotasan_layout',
 			'priority' => 10,
 			'type' => 'select',
 			'choices' => array(
-				'1170' => __( '1200px', 'arcade' ),
-				'992' => __( '992px', 'arcade' ),
+				'1170' => __( '1200px', 'arcade-basic' ),
+				'992' => __( '992px', 'arcade-basic' ),
 			),
 		) );
 
@@ -209,7 +210,7 @@ class Bavotasan_Customizer {
 		) );
 
 		$wp_customize->add_control( 'primary', array(
-			'label' => __( 'Main Content Width', 'arcade' ),
+			'label' => __( 'Main Content Width', 'arcade-basic' ),
 			'section' => 'bavotasan_layout',
 			'priority' => 15,
 			'type' => 'select',
@@ -222,12 +223,12 @@ class Bavotasan_Customizer {
 		) );
 
 		$layout_choices = array(
-			'left' => __( 'Left', 'arcade' ),
-			'right' => __( 'Right', 'arcade' ),
+			'left' => __( 'Left', 'arcade-basic' ),
+			'right' => __( 'Right', 'arcade-basic' ),
 		);
 
 		$wp_customize->add_control( new Bavotasan_Post_Layout_Control( $wp_customize, 'layout', array(
-			'label' => __( 'Sidebar Layout', 'arcade' ),
+			'label' => __( 'Sidebar Layout', 'arcade-basic' ),
 			'section' => 'bavotasan_layout',
 			'size' => false,
 			'priority' => 25,
@@ -235,19 +236,19 @@ class Bavotasan_Customizer {
 		) ) );
 
 		$colors = array(
-			'default' => __( 'Default', 'arcade' ),
-			'info' => __( 'Light Blue', 'arcade' ),
-			'primary' => __( 'Blue', 'arcade' ),
-			'danger' => __( 'Red', 'arcade' ),
-			'warning' => __( 'Yellow', 'arcade' ),
-			'success' => __( 'Green', 'arcade' ),
+			'default' => __( 'Default', 'arcade-basic' ),
+			'info' => __( 'Light Blue', 'arcade-basic' ),
+			'primary' => __( 'Blue', 'arcade-basic' ),
+			'danger' => __( 'Red', 'arcade-basic' ),
+			'warning' => __( 'Yellow', 'arcade-basic' ),
+			'success' => __( 'Green', 'arcade-basic' ),
 		);
 
 		// Posts panel
 		$wp_customize->add_section( 'bavotasan_posts', array(
-			'title' => __( 'Posts', 'arcade' ),
+			'title' => __( 'Posts', 'arcade-basic' ),
 			'priority' => 45,
-			'description' => __( 'These options do not affect the Post Block page template.', 'arcade' ),
+			'description' => __( 'These options do not affect the Post Block page template.', 'arcade-basic' ),
 		) );
 
 		$wp_customize->add_setting( 'display_author', array(
@@ -256,7 +257,7 @@ class Bavotasan_Customizer {
 		) );
 
 		$wp_customize->add_control( 'display_author', array(
-			'label' => __( 'Display Author', 'arcade' ),
+			'label' => __( 'Display Author', 'arcade-basic' ),
 			'section' => 'bavotasan_posts',
 			'type' => 'checkbox',
 			'priority' => 10,
@@ -268,7 +269,7 @@ class Bavotasan_Customizer {
 		) );
 
 		$wp_customize->add_control( 'display_date', array(
-			'label' => __( 'Display Date', 'arcade' ),
+			'label' => __( 'Display Date', 'arcade-basic' ),
 			'section' => 'bavotasan_posts',
 			'type' => 'checkbox',
 			'priority' => 20,
@@ -280,7 +281,7 @@ class Bavotasan_Customizer {
 		) );
 
 		$wp_customize->add_control( 'display_categories', array(
-			'label' => __( 'Display Categories', 'arcade' ),
+			'label' => __( 'Display Categories', 'arcade-basic' ),
 			'section' => 'bavotasan_posts',
 			'type' => 'checkbox',
 			'priority' => 30,
@@ -292,7 +293,7 @@ class Bavotasan_Customizer {
 		) );
 
 		$wp_customize->add_control( 'display_comment_count', array(
-			'label' => __( 'Display Comment Count', 'arcade' ),
+			'label' => __( 'Display Comment Count', 'arcade-basic' ),
 			'section' => 'bavotasan_posts',
 			'type' => 'checkbox',
 			'priority' => 40,
@@ -310,5 +311,14 @@ class Bavotasan_Customizer {
 
         return $value;
     }
+
+	public function customize_controls_enqueue_scripts() {
+		wp_enqueue_script( 'bavotasan-customizer', BAVOTASAN_THEME_URL . '/library//js/admin/customizer.js', array( 'jquery' ), '', true );
+        wp_localize_script( 'bavotasan-customizer', 'Bavotasan_Customizer', array(
+            'upgradeAd' => __( 'Upgrade to premium version', 'arcade-basic' ),
+        ));
+
+		wp_enqueue_style( 'bavotasan-customizer-styles', BAVOTASAN_THEME_URL . '/library/css/admin/customizer.css' );
+	}
 }
 $bavotasan_customizer = new Bavotasan_Customizer;

@@ -102,6 +102,10 @@ input, textarea {
 	color: #555;
 }
 
+.screen-reader-text {
+	@extend .sr-only;
+}
+
 /* =Header
 -------------------------------------------------------------- */
 #header,
@@ -287,7 +291,7 @@ input, textarea {
 		}
 	}
 
-	@include breakpoint(phone) {
+	@include breakpoint(600) {
 		top: 0 !important;
 		position: absolute;
 	}
@@ -333,16 +337,24 @@ input, textarea {
 	background-color: #444;
 }
 
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+	background: none;
+	border: 0;
+	color: #fff;
+}
+
 /* =Social Menu
 -------------------------------------------------------------- */
 #menu-social {
 	margin-top: 7px;
-	padding: 0 15px;
+	padding: 0 20px;
 	overflow: hidden;
+	margin-right: 0;
 
 	@include breakpoint(tablet) {
 		float: none;
 		margin-bottom: 10px;
+		padding: 0;
 	}
 
 	ul {
@@ -522,7 +534,7 @@ input, textarea {
 		border-bottom: 3px solid #eee;
 	}
 
-	h1 {
+	h2 {
 		font-size: 40px;
 		line-height: 1.3;
 		margin-bottom: 10px;
@@ -1542,22 +1554,19 @@ iframe {
 		margin-top:-6px;
 	}
 
-	&:hover > .dropdown-menu {
-		display: block;
-	}
+	@media (min-width:769px) {
+		&:hover > .dropdown-menu {
+			display: block;
+		}
 
-	> a:after {
-		display:block;
-		content:"";
-		float:right;
-		width:0;
-		height:0;
-		border-color:transparent;
-		border-style:solid;
-		border-width:5px 0 5px 5px;
-		border-left-color:#ccc;
-		margin-top:5px;
-		margin-right:-10px;
+		.caret {
+			float:right;
+			border-color:transparent;
+			border-style:solid;
+			border-width:5px 0 5px 5px;
+			border-left-color:#ccc;
+			margin-top:5px;
+		}
 	}
 
 	&.pull-left {

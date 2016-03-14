@@ -9,7 +9,7 @@
 	    <?php get_template_part( 'content', 'header' ); ?>
 
 		<div class="entry-content description clearfix">
-	        <?php the_content( __( 'Read more', 'arcade') ); ?>
+	        <?php the_content( __( 'Read more', 'arcade-basic') ); ?>
 	    </div><!-- .entry-content -->
 
 	    <?php get_template_part( 'content', 'footer' ); ?>
