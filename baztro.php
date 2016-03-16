@@ -1,20 +1,25 @@
 <?php
 ob_start();
-function promax_backg() {
-		global $background ?>
-       <style type="text/css">
+function promax_backg() { ?>
+
 	   <?php
-	   		if (of_get_option('promax_boxheight') =='fixed') {
+	if (of_get_option('promax_boxheight') =='fixed') {
             echo '<style type="text/css">.imag{height:355px !important;}</style>' . "\n";
         }
-		
 	elseif (of_get_option('promax_boxheight') =='auto') {
 		echo '<style type="text/css">.imag{height:auto !important;}</style>' . "\n";
-	}?>
+	}
+	else { echo '<style type="text/css">.imag{height:355px !important;}</style>' . "\n";}?>
+	       <style type="text/css">
 <?php if ( get_header_image() ) : ?>	
-		#header{background-image:url("<?php esc_url(header_image());?>"); display: flex;background-repeat: round;}
+		#header{background-image:url("<?php esc_url(header_image());?>");}
 		<?php endif; ?>
-	
+#header-inner,
+#page-inner,
+#bottom-menu-inner,
+#footer-inner,
+#ltpost,
+#pronav-inner { max-width: <?php echo of_get_option( 'promax_maxwidth', '1200' ); ?>px !important;}
 		
 	</style>
     

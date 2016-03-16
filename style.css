@@ -2,7 +2,7 @@
 Theme Name: ProMax
 Theme URI: http://www.insertcart.com/product/promax-wordpress-theme/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo http://demo.baztro.com/promax 
-Version: 1.5.7
+Version: 1.5.8
 Author: InsertCart.com
 Author URI: http://www.insertcart.com/
 Tags: black, blue, white, light, red, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, responsive-layout
@@ -72,6 +72,17 @@ body {
 	margin: auto !important;
 	background: #FFF;
 }
+#header-inner,
+#ltpost,
+#page-inner,
+#bottom-menu-inner,
+#footer-inner,
+#pronav-inner {
+	width: 90%;
+	max-width:1200px;
+    margin: 0 auto;
+	}
+
 a {
 	color: #2D89A7;
 	text-decoration: none;
@@ -187,6 +198,7 @@ table {
 .highlight {
 background: #ffff66;
 }
+iframe{max-width:100%;}
 .rounded {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -486,7 +498,6 @@ border-bottom: 1px solid #E9E9E9;
 }
 #pronav-inner {
 	margin: 0 auto;
-	width: 90%;
 	position: relative;	
 }
 #pronav .secondary{
@@ -601,7 +612,6 @@ border-right: none;}
 }
 #header-inner {
 	margin: auto;
-	width: 90%;
 	position: relative;
 	min-height:140px;
 
@@ -664,10 +674,7 @@ color: #fff;
 }
 #page-inner {
 	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	
-	
+	position: relative;	
 }
 #page-inner #banner-top{
 	margin: 10px 0px 10px 0px;
@@ -974,7 +981,7 @@ box-shadow: 0 0px 3px 0 #B5B5B5;
 -webkit-box-shadow: 0 0px 3px 0 #B5B5B5;
 margin-right: 3%;
 height: 75px;
-width: 16.5%;
+width: 17%;
 overflow: hidden;
 }
 .latest-post a {
@@ -992,10 +999,6 @@ padding-right: 8px;
 }
 #latesthd {
 margin-bottom: -10px;
-}
-#ltpost {
-padding-left: 5%;
-	
 }
 /******************Popular Posts****************/
 #populars { list-style:none; }
@@ -1312,6 +1315,11 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
 	background: #f5f5f5;
 }
 /* ===================== bottom-menu ===================== */
+#footerhorizontal ul {margin: 5px; padding: 0; 
+	list-style-type: none; list-style-image: none; }
+#footerhorizontal li {display: inline; }
+#footerhorizontal ul li a {text-decoration:none;margin: 4px;font-size: 0.8rem;}
+#footerhorizontal li::after{content: "\007c";}
  #footerads{
 	padding:12px;
 }
@@ -1327,7 +1335,6 @@ color: #FFF;
 }
 #bottom-menu-inner {
 	margin: auto;
-	width: 90%;
 	position: relative;
 }
 #bottom-menu a {
@@ -1387,7 +1394,6 @@ overflow: hidden;
 }
 #footer-inner {
 	margin: auto;
-	width: 90%;
 	position: relative;
 	padding: 10px;
 text-align: center;

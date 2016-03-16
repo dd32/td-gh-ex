@@ -177,6 +177,13 @@ $options[] = array(
 			
 			)
 	);
+	$options[] = array(
+		'name' => __('Website Width in Pixels [It Calculate Max Width]', 'promax'),
+		'desc' => __('PX-  Please input Max-Width for your website Default value 1200px, also it is 5% padding from sides', 'promax'),
+		'id' => 'promax_maxwidth',
+		'std' => '1200',
+		'class' => 'mini',
+		'type' => 'text');	
 $options[] = array(
 		'name' => __('Social Profiles', 'promax'),
 		'type' => 'heading');
