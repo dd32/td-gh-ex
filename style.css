@@ -4,7 +4,7 @@ Theme URI: http://www.webulousthemes.com/boxy/
 Author: N. Venkat Raj
 Author URI: http://www.webulousthemes.com/
 Description: Boxy is uniquely designed, elegant looking responsive theme. It uses Skeleton Grid system and SASS to keep CSS DRY. It's multi purpose theme and suited for all types of sites. It comes with Jigoshop support. It has advanced theme options panel to customize various parts of site, footer widget area to accommodate 4 widgets. Check the demo at http://demo.webulous.in/boxy/
-Version: 1.1.5
+Version: 1.1.6
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: boxy
@@ -45,9 +45,6 @@ and Blueprint http://www.blueprintcss.org/
 	12.1 Captions
 	12.2 Galleries
 --------------------------------------------------------------*/
-/*
-@import "colors-layout/color_blue";
-*/
 /*--------------------------------------------------------------
 0.0 Reset
 --------------------------------------------------------------*/
@@ -796,7 +793,7 @@ a {
 .paging-navigation .nav-previous a,
 .post-navigation .nav-previous a, .comment-navigation .nav-next a,
 .paging-navigation .nav-next a,
-.post-navigation .nav-next a, .page-links a, a.more-link {
+.post-navigation .nav-next a, .page-links a, a.more-link, .page-navigation ol li a, .page-navigation ol li.bpn-current, .page-navigation ol li.bpn-current:hover {
   display: inline-block;
   padding: 5px 10px;
   background-color: #FFFFFF;
@@ -806,7 +803,7 @@ a {
   .paging-navigation .nav-previous a:hover,
   .post-navigation .nav-previous a:hover, .comment-navigation .nav-next a:hover,
   .paging-navigation .nav-next a:hover,
-  .post-navigation .nav-next a:hover, .page-links a:hover, a.more-link:hover {
+  .post-navigation .nav-next a:hover, .page-links a:hover, a.more-link:hover, .page-navigation ol li a:hover, .page-navigation ol li.bpn-current:hover {
     background-color: #FFFFFF;
     border-color: #3a3a3a;
     color: #f94242; }
@@ -863,6 +860,43 @@ a {
     margin-right: 0; }
   .site-main .post-navigation .nav-links a:hover span {
     border-color: #3a3a3a; }
+
+.comment-navigation .nav-previous a,
+.paging-navigation .nav-previous a,
+.post-navigation .nav-previous a, .comment-navigation .nav-next a,
+.paging-navigation .nav-next a,
+.post-navigation .nav-next a, .page-links a, a.more-link, .page-navigation ol li a, .page-navigation ol li.bpn-current, .page-navigation ol li.bpn-current:hover {
+  display: inline-block;
+  padding: 2px 10px;
+  background-color: #FFFFFF;
+  color: #3a3a3a;
+  border: 2px solid #f94242; }
+  .comment-navigation .nav-previous a:hover,
+  .paging-navigation .nav-previous a:hover,
+  .post-navigation .nav-previous a:hover, .comment-navigation .nav-next a:hover,
+  .paging-navigation .nav-next a:hover,
+  .post-navigation .nav-next a:hover, .page-links a:hover, a.more-link:hover, .page-navigation ol li a:hover, .page-navigation ol li.bpn-current:hover {
+    background-color: #FFFFFF;
+    border-color: #3a3a3a;
+    color: #f94242; }
+
+.page-navigation {
+  padding: 25px 0;
+  text-align: right; }
+  .page-navigation ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    .page-navigation ol li {
+      display: inline; }
+      .page-navigation ol li a {
+        padding: 3px 10px;
+        margin-right: 5px; }
+    .page-navigation ol li.bpn-current, .page-navigation ol li.bpn-current:hover {
+      padding: 3px 10px;
+      margin-right: 5px;
+      background-color: #D7D7D7;
+      border-color: #3a3a3a; }
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -1014,8 +1048,7 @@ a {
   transition: all 0.5s ease;
   cursor: pointer;
   width: auto;
-  color: #3a3a3a;
-  border: 2px solid #D7D7D7; }
+  color: #3a3a3a; }
   .widget_search .search-submit:hover {
     border-color: #f94242;
     background-color: #FFFFFF; }
@@ -1077,6 +1110,13 @@ a {
 #secondary .widget_pages ul.children li:last-child {
   border: 0; }
 
+#secondary {
+  padding-left: 50px; }
+
+.right-sidebar {
+  padding-left: 0px !important;
+  padding-right: 50px; }
+
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
@@ -1095,6 +1135,37 @@ a {
   font-size: 18px;
   font-size: 1.8rem;
   color: #6D6D6D; }
+
+.nav-wrap .search-form {
+  text-align: right; }
+
+header .search-form {
+  margin-top: 4px; }
+
+.search-form input.search-field {
+  border: 2px solid #f94242;
+  padding: 2px 10px; }
+.search-form span.fa fa-search btn-search {
+  margin: 0; }
+
+.search-form {
+  position: relative; }
+  .search-form input.search-field {
+    width: 88%; }
+  .search-form .search-submit {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    top: 0;
+    background-color: transparent; }
+    .search-form .search-submit:hover {
+      background-color: transparent; }
+  .search-form .btn-search {
+    position: absolute;
+    right: 20px;
+    top: 8px; }
 
 .site-footer {
   color: #FFFFFF;
@@ -1139,6 +1210,8 @@ a {
     color: #3a3a3a;
     text-align: center;
     padding: 20px 0; }
+    .site-footer .footer-bottom .widget-title {
+      display: none; }
     .site-footer .footer-bottom a {
       color: #f94242; }
       .site-footer .footer-bottom a:hover {
@@ -1176,6 +1249,40 @@ a {
 .site-footer .widget_nav_menu li {
   padding-top: 5px;
   padding-bottom: 5px; }
+
+/* Footer Menu */
+.footer-bottom p {
+  margin: 0;
+  text-align: left; }
+
+.footer-right aside {
+  margin: 0; }
+.footer-right ul.menu {
+  text-align: right;
+  margin: 0;
+  padding: 0; }
+  .footer-right ul.menu ul.sub-menu {
+    margin: 0;
+    display: inline; }
+  .footer-right ul.menu li {
+    display: inline;
+    margin: 0 4px 0 0;
+    border: none; }
+    .footer-right ul.menu li a {
+      margin-bottom: 10px;
+      display: inline-block;
+      font-size: 0.9em;
+      padding: 2px 6px;
+      background-color: #FFFFFF;
+      border: 2px solid #3a3a3a;
+      color: #3a3a3a;
+      background-image: none; }
+      .footer-right ul.menu li a:hover {
+        background-color: #f94242;
+        color: #FFFFFF; }
+  .footer-right ul.menu li.current_page_item a {
+    background: #f94242;
+    color: #FFFFFF; }
 
 #content {
   padding-top: 20px; }
@@ -1541,13 +1648,6 @@ a.lost_password {
     width: 100%; }
 .sidebar del {
   color: #f94242; }
-
-#secondary .widget_top_rated li,
-#secondary .widget_recent_entries li,
-#secondary .jigoshop_random_products li,
-#secondary .widget_recent_reviews li,
-#secondary .jigoshop_cart li {
-  background: none; }
 
 #tabs ul.tabs {
   background-color: #D7D7D7;
@@ -2062,6 +2162,10 @@ td.cart-row-total {
   background-color: #3a3a3a;
   clear: both; }
 
+.flexslider {
+  border: none;
+  margin: 0; }
+
 .flex-container {
   position: relative; }
   .flex-container .flex-direction-nav a {
@@ -2070,6 +2174,8 @@ td.cart-row-total {
     text-align: center;
     display: block;
     color: #3a3a3a; }
+    .flex-container .flex-direction-nav a:before {
+      font-size: 28px; }
   .flex-container .flex-direction-nav a {
     background-color: #FFFFFF; }
   .flex-container .flex-direction-nav a:hover {
@@ -2082,10 +2188,16 @@ td.cart-row-total {
     width: 45%; }
     .flex-container .flex-caption h1, .flex-container .flex-caption h2, .flex-container .flex-caption h3, .flex-container .flex-caption h4, .flex-container .flex-caption h5, .flex-container .flex-caption h6, .flex-container .flex-caption p,
     .flex-container .flex-caption ul {
-      margin: 0 0 .5em; }
+      margin: 0 0 .5em;
+      background-color: rgba(1, 1, 1, 0.6);
+      padding: 15px;
+      text-align: right;
+      color: #FFFFFF; }
     .flex-container .flex-caption h2, .flex-container .flex-caption h3, .flex-container .flex-caption h1, .flex-container .flex-caption h4 {
       font-weight: 700;
       line-height: 1; }
+    .flex-container .flex-caption a:hover {
+      color: #FFFFFF; }
   .flex-container .flexslider .flex-image {
     width: 100%; }
     .flex-container .flexslider .flex-image img {
@@ -2095,10 +2207,14 @@ td.cart-row-total {
     position: relative; }
   .flex-container .flex-control-paging li a {
     border-color: #3a3a3a !important;
-    background-color: #FFFFFF; }
+    background-color: #FFFFFF;
+    border-radius: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid; }
   .flex-container .flex-control-paging li a.flex-active,
   .flex-container .flex-control-paging li a:hover {
-    background-color: #f94242 !important; }
+    background-color: #f94242; }
   .flex-container p.btn-slider a {
     display: inline-block;
     padding: 5px 15px;
@@ -2183,6 +2299,83 @@ td.cart-row-total {
   margin-bottom: 30px;
   padding-bottom: 15px;
   padding-top: 15px; }
+
+.site-content {
+  margin-top: 50px; }
+
+.home .site-content {
+  margin-top: 0; }
+
+.breadcrumb-wrap {
+  padding: 12px 15px;
+  border-bottom: 1px solid #D7D7D7; }
+  .breadcrumb-wrap #breadcrumb #crumbs {
+    padding: 20px 0 0;
+    color: #000;
+    text-align: right; }
+  .breadcrumb-wrap #breadcrumb a {
+    color: #3a3a3a; }
+    .breadcrumb-wrap #breadcrumb a:hover {
+      color: #f94242; }
+  .breadcrumb-wrap #breadcrumb .fa.fa-home:before {
+    font-size: 20px;
+    font-size: 2rem; }
+  .breadcrumb-wrap #breadcrumb span {
+    margin-left: 8px;
+    margin-right: 8px; }
+    .breadcrumb-wrap #breadcrumb span:first-child {
+      margin-left: 0; }
+
+.breadcrumb-wrap {
+  margin-bottom: 0; }
+  .breadcrumb-wrap .entry-header {
+    margin-bottom: 0; }
+    .breadcrumb-wrap .entry-header h1 {
+      margin-bottom: 0;
+      text-transform: none; }
+
+.share-box {
+  margin: 0;
+  padding: 0; }
+
+.share-box h3, .top-right h3 {
+  display: none; }
+.share-box ul, .top-right ul {
+  margin: 0; }
+  .share-box ul li, .top-right ul li {
+    border: 0;
+    padding: 0;
+    display: inline;
+    margin: 0; }
+    .share-box ul li a, .top-right ul li a {
+      color: #FFFFFF;
+      width: 35px;
+      height: 35px;
+      line-height: 32px;
+      text-align: center;
+      margin-right: 3px;
+      display: inline-block;
+      background-color: #FFFFFF;
+      border: 2px solid #f94242;
+      color: #3a3a3a;
+      margin: 5px; }
+      .share-box ul li a:hover, .top-right ul li a:hover {
+        background-color: #f94242;
+        color: #FFFFFF; }
+  .share-box ul li:last-child, .top-right ul li:last-child {
+    margin-right: 0; }
+
+.site-header .widget_social-networks-widget {
+  padding-top: 20px; }
+
+.share-box {
+  padding: 25px 0; }
+  .share-box ul li a {
+    margin: 0; }
+
+.top-right {
+  padding: 20px 0px;
+  text-align: right; }
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll
@@ -2294,6 +2487,12 @@ object {
   .site-branding {
     text-align: center; }
 
+  .top-right, .footer-right ul.menu, .footer-bottom p {
+    text-align: center; }
+
+  .footer-bottom p {
+    margin-bottom: 20px; }
+
   .flex-container .flexslider .flex-image {
     width: 100%; }
   .flex-container .flexslider .flex-caption {
@@ -2308,9 +2507,6 @@ object {
 
   ol.comment-list .comment-body {
     width: 88%; }
-
-  .menu-toggle, .main-navigation.toggled .nav-menu {
-    display: none; }
 
   .primary-menu {
     padding: 10px 0; }

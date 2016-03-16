@@ -11,23 +11,36 @@
  */
 
 get_header(); ?>
-
-	<div class="sixteen columns">
-		<div class="breadcrumb">
-					<?php if ( get_theme_mod('breadcrumb' ) && function_exists( 'boxy_breadcrumbs' ) ) : ?>
-				<div id="breadcrumb" role="navigation">
-					<?php boxy_breadcrumbs(); ?>
-				</div>
-			<?php endif; ?>
+<div class="breadcrumb-wrap">
+	<div class="container">
+		<div class="sixteen columns">
+	        <header class="entry-header ten columns">
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+			</header><!-- .entry-header -->
+			<div class="breadcrumb six columns">
+				<?php if ( get_theme_mod('breadcrumb' ) && function_exists( 'boxy_breadcrumbs' ) ) : ?>
+					<div id="breadcrumb" role="navigation">
+						<?php boxy_breadcrumbs(); ?>
+					</div>
+				<?php endif; ?>  
+			</div>
 		</div>
 	</div>
+</div>
+
+<div id="content" class="site-content container">
+
+		<?php $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); ?>
+		<?php if( 'left' == $sidebar_position ) :?>
+			<?php get_sidebar('left'); ?>
+		<?php endif; ?> 
 
 	<div id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php get_template_part( 'content', 'page' ); ?>    	
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
@@ -41,5 +54,8 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+     <?php if( 'right' == $sidebar_position ) :?>
+			<?php get_sidebar(); ?>
+		<?php endif; ?>
+
 <?php get_footer(); ?>

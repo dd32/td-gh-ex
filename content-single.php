@@ -6,22 +6,32 @@ global $boxy;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title( '','' ); ?></h1>
-
+	
 		<div class="entry-meta">
 			<?php boxy_posted_on(); ?>
 		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
 
-	<div class="entry-content">      
-		<?php if( get_theme_mod( 'single-featured-image' ) ) : ?>
-		<?php if( has_post_thumbnail() && ! post_password_required() ) : ?>
-			<div class="post-thumb">
-				<?php the_post_thumbnail(); ?>
-			</div>
-		<?php endif; ?>
-	<?php endif; ?>
+	<div class="entry-content">  
+	
+<?php
+$single_featured_image = get_theme_mod( 'single_featured_image',true); 
+$single_featured_image_size = get_theme_mod ('single_featured_image_size','1');
+if ($single_featured_image ) :
+	 if ( $single_featured_image_size == '1' ) :?>
+	 		<div class="post-thumb blog-thumb">
+	 <?php  if( has_post_thumbnail() && ! post_password_required() ) :   
+				the_post_thumbnail('boxy-blog-large-width');
+			endif;?>
+			</div><?php
+		 else: ?>
+		 	<div class="post-thumb blog-thumb"><?php
+		 	if( has_post_thumbnail() && ! post_password_required() ) :   
+					the_post_thumbnail('boxy-small-featured-image-width');
+			endif;?>
+			</div><?php
+	endif;  
+endif;?>
+
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -36,7 +46,7 @@ global $boxy;
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( __( ', ', 'boxy' ) );
-				if ( $categories_list && boxy_categorized_blog() ) :
+				if ( $categories_list ) :
 			?>
 			<span class="cat-links">
 				<i class="fa fa-list-alt"></i>

@@ -18,20 +18,25 @@ global $boxy;
 		if( get_theme_mod( 'footer-widgets' ) ) : ?>
 		<div class="footer-top">
 			<div class="container">
-				<div class="row">
 					<?php get_template_part( 'footer', 'widgets' ); ?>
-				</div>
 			</div>
 		</div>
 	<?php endif; ?>
-		<div class="footer-bottom">
+		<div class="footer-bottom copy">
 			<div class="container">
-				<div class="sixteen columns">
-					<div class="site-info">
-						<?php printf( __( 'Proudly powered by %s', 'boxy' ), '<a href="http://wordpress.org">WordPress</a>' ); ?>
-						<span class="sep"> | </span>
-						<?php printf( __( 'Theme %1$s by %2$s', 'boxy' ), 'Boxy', '<a href="http://www.webulousthemes.com/" rel="designer">Webulous Themes</a>' ); ?>
-					</div><!-- .site-info -->
+				<div class="eight columns">
+					<?php if( get_theme_mod('copyright') ) : ?>
+							<p><?php echo get_theme_mod('copyright'); ?></p>
+						<?php else : ?>
+							<p>
+							<?php printf( __( 'Powered by <a href="http://wordpress.org/">%1$s</a>', 'boxy' ), 'WordPress' ); ?>
+							<span class="sep"> | </span>
+							<?php printf( __( 'Theme: %1$s by %2$s.', 'boxy' ), 'Boxy', '<a href="http://www.webulousthemes.com" rel="author">Webulous Themes</a>' ); ?>
+							</p>
+					   <?php endif; ?>
+				</div>
+				<div class="footer-right eight columns">      
+					<?php dynamic_sidebar( 'footer-nav' ); ?>
 				</div>
 			</div>
 		</div>

@@ -21,7 +21,7 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function boxy_setup() {    
+	function boxy_setup() {         
 
 		// Makes theme translation ready
 		load_theme_textdomain( 'boxy', BOXY_LANGUAGES_DIR );
@@ -35,7 +35,7 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'rpgallery', 250, 200, true );
+		add_image_size( 'boxy-rpgallery', 250, 200, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -57,6 +57,14 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 
 		// Add theme support for title tag
 		add_theme_support( 'title-tag' );
+
+		/*
+		 * Add Additional image sizes
+		 *
+		 */
+		add_image_size( 'boxy-blog-full-width', 1200,350, true );
+		add_image_size( 'boxy-small-featured-image-width', 450,300, true );
+		add_image_size( 'boxy-blog-large-width', 800,300, true );
 	}
 endif; // boxy_setup
 add_action( 'after_setup_theme', 'boxy_setup' );
@@ -119,22 +127,146 @@ if( ! function_exists( 'boxy_customizer_setup' ) ) {
 	}
 }
 
+// constant //
+
+/* Defining directory PATH Constants */
+define( 'BOXY_PARENT_DIR', get_template_directory() );
+define( 'BOXY_CHILD_DIR', get_stylesheet_directory() );
+define( 'BOXY_INCLUDES_DIR', BOXY_PARENT_DIR. '/includes' );
+
+/** Defining URL Constants */
+define( 'BOXY_PARENT_URL', get_template_directory_uri() );
+define( 'BOXY_CHILD_URL', get_stylesheet_directory_uri() );
+define( 'BOXY_INCLUDES_URL', BOXY_PARENT_URL . '/includes' );
+
+/*
+	Check for language directory setup in Child Theme
+	If not present, use parent theme's languages dir
+	*/
+if ( ! defined( 'BOXY_LANGUAGES_URL' ) ) /** So we can predefine to child theme */
+	define( 'BOXY_LANGUAGES_URL', BOXY_PARENT_URL . '/languages' );
+
+if ( ! defined( 'BOXY_LANGUAGES_DIR' ) ) /** So we can predefine to child theme */
+	define( 'BOXY_LANGUAGES_DIR', BOXY_PARENT_DIR . '/languages' );
 
 
 /**
- * Defining constants to use through out theme code
+ * Register widgetized area and update sidebar with default widgets.
  */
-require_once get_template_directory() . '/includes/constants.php';
+function boxy_widgets_init() {
+	register_sidebar( array(
+			'name'          => __( 'Sidebar', 'boxy' ),
+			'id'            => 'sidebar-1',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+
+	register_sidebar( array(
+		'name'          => __( 'Header Top Right', 'boxy' ),
+		'id'            => 'header-top-right',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+
+	register_sidebar( array(
+			'name'          => __( 'Footer 1', 'boxy' ),
+			'id'            => 'footer-1',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+
+	register_sidebar( array(
+			'name'          => __( 'Footer 2', 'boxy' ),
+			'id'            => 'footer-2',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+
+	register_sidebar( array(
+			'name'          => __( 'Footer 3', 'boxy' ),
+			'id'            => 'footer-3',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+
+	register_sidebar( array(
+			'name'          => __( 'Footer 4', 'boxy' ),
+			'id'            => 'footer-4',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+
+   register_sidebar( array(
+		'name'          => __( 'Footer Nav', 'boxy' ),
+		'id'            => 'footer-nav',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'boxy_widgets_init' );
+
+
+// all //
 
 /**
  * Load Theme Options Panel
  */
-require get_template_directory() . '/includes/theme-options.php';
+require BOXY_INCLUDES_DIR . '/theme-options.php';
 
 /**
- * Include all includes. Genius
+ * Customizer additions.
  */
-require_once BOXY_INCLUDES_DIR. '/all.php';
+require BOXY_INCLUDES_DIR . '/customizer.php';
+
+
+/**
+ * Enqueue Scripts and Styles
+ */
+require_once BOXY_INCLUDES_DIR . '/enqueue.php';
+
+/**
+ * Implement the Custom Header feature.
+ */
+require BOXY_INCLUDES_DIR . '/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require BOXY_INCLUDES_DIR . '/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require BOXY_INCLUDES_DIR . '/extras.php';
+
+/**
+ * Load Jigoshop Support
+ */
+require_once BOXY_INCLUDES_DIR . '/jigoshop.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require BOXY_INCLUDES_DIR. '/jetpack.php';
+
+
+
 
 function boxy_slide_exists() {
 	

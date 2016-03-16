@@ -141,7 +141,7 @@ $options = array(
     'capability' => 10,   
     'type' => 'theme_mod',
     'pro_url' => 'http://www.webulousthemes.com/?add-to-cart=25',
-    'panels' => array(
+    'panels' => apply_filters( 'boxy_customizer_options', array(
         'theme_options' => array(
             'priority'       => 9,
             'title'          => __('Theme Options', 'boxy'),       
@@ -168,7 +168,7 @@ $options = array(
                             'default' => 1, 
                             'sanitize_callback' => 'boxy_boolean',   
                         ),
-                        'breadcrumb-char' => array(
+                        'breadcrumb_char' => array(
                             'type' => 'select',
                             'label' => __('Breadcrumb Character', 'boxy'),
                             'description' => __(' Check to display breadcrumb navigation.', 'boxy'),
@@ -177,9 +177,27 @@ $options = array(
                                 '2' => __('/', 'boxy'),
                                 '3' => __('>', 'boxy'),
                             ),
+                            'default' => 1, 
                             'sanitize_callback' => 'boxy_breadcrumb_char_choices',
-                            'default' => 1,  
+                            
                         ),
+                        'numeric_pagination' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Numeric Page Navigation', 'boxy'),
+                                'description' => __('Check to display numeric page navigation, instead of Previous Posts / Next Posts links.', 'boxy'),
+                                'default' => 1,  
+                         ),
+                        'sidebar_position' => array(
+                            'type' => 'radio',
+                            'label' => __('Main Layout', 'boxy'),
+                            'description' => __('Select main content and sidebar alignment.', 'boxy'),
+                            'choices' => array(
+                                'left' => __('Sidebar Left', 'boxy'),
+                                'right' => __('Sidebar Right', 'boxy'),
+                            ),
+                            'default' => 'right',  
+                        ),
+
                        
                     ),
                 ),
@@ -205,9 +223,88 @@ $options = array(
                             'label' => __('Enable to show site description in header.', 'boxy'),
                             'default' => 1,  
                             'sanitize_callback' => 'boxy_boolean',  
+                        ),
+                        'header_search' => array(
+                            'type' => 'checkbox',
+                            'label' => __('Show Search box in Navigation', 'boxy'),
+                            'default' => 1,
+                            'sanitize_callback' => 'boxy_boolean',
                         ),        
                     ),
                 ),
+                'primary_color_field' => array(      
+                        'title' => __('Change Color Options', 'boxy'),
+                        'description' => __('This will reflect in links, buttons,Navigation and many others. Choose a color to match your site.', 'boxy'),
+                        'fields' => array( 
+                            'enable_primary_color' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Custom Primary color', 'boxy'),
+                                'default' => 0,
+                                'sanitize_callback' => 'boxy_boolean',
+                            ),
+                            'primary_color' => array(
+                                'type' => 'color',
+                                'label' => __('Primary Color', 'boxy'),   
+                                'description' => __('', 'boxy'),
+                                'sanitize_callback' => 'sanitize_hex_color',
+                                'default' => '#f94242'
+                            ),
+                            'enable_nav_bg_color' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Custom Navigation Background color', 'boxy'),
+                                'default' => 0,
+                                'sanitize_callback' => 'boxy_boolean',
+                            ),
+                            'nav_bg_color' => array(   
+                                'type' => 'color',
+                                'label' => __('Navigation Background Color', 'boxy'),   
+                                'description' => __('', 'boxy'),
+                                'sanitize_callback' => 'sanitize_hex_color',
+                                'default' => '#d7d7d7'
+                            ),
+                            'enable_dd_bg_color' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Custom Navigation Dropdown Background color', 'boxy'),
+                                'default' => 0,
+                                'sanitize_callback' => 'boxy_boolean',
+                            ),
+                            'dd_bg_color' => array(   
+                                'type' => 'color',
+                                'label' => __('Navigation Dropdown Background Color', 'boxy'),   
+                                'description' => __('', 'boxy'),
+                                'sanitize_callback' => 'sanitize_hex_color',
+                                'default' => '#d7d7d7'
+                            ),
+                            'enable_nav_hover_color' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Custom Navigation Hover color', 'boxy'),
+                                'default' => 0,
+                                'sanitize_callback' => 'boxy_boolean',
+                            ),
+                            'nav_hover_color' => array(   
+                                'type' => 'color',
+                                'label' => __('Navigation Hover Color', 'boxy'),   
+                                'description' => __('', 'boxy'),
+                                'sanitize_callback' => 'sanitize_hex_color',
+                                'default' => '#fff'
+                            ),
+                            'enable_secondary_color' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Custom Secondary color', 'boxy'),
+                                'default' => 0,
+                                'sanitize_callback' => 'boxy_boolean',
+                            ),
+                           'secondary_color' => array(
+                                'type' => 'color',
+                                'label' => __('Secondary Color', 'boxy'),
+                                'description' => __('', 'boxy'),
+                                'sanitize_callback' => 'sanitize_hex_color',
+                                'transport' => 'postMessage',
+                                'default' => '#3a3a3a'
+                            ),
+                     
+                        ),
+                    ),
                 'footer_section' => array(
                     'title' => __('Footer', 'boxy'),
                     'description' => __('Theme options related to footer area of theme', 'boxy'),
@@ -216,32 +313,112 @@ $options = array(
                             'type' => 'checkbox',
                             'label' => __('Check to Enable 4 Column Footer widget Area', 'boxy'),
                             'description' => __(' Check to enable 4 Column Footer widget Area', 'boxy'),
-                            'default' => 0,  
-                            'sanitize_callback' => 'boxy_boolean',  
-                        ),
-                    ),
-                ),
-                'blog_section' => array(
-                    'title' => __('Blog', 'boxy'),
-                    'description' => __('Blog options for site', 'boxy'),
-                    'fields' => array(
-                        'featured-image' => array(        
-                            'type' => 'checkbox',
-                            'label' => __('Check to show featured image', 'boxy'),
-                            'description' => __('Check to show featured image', 'boxy'),
                             'default' => 1,  
                             'sanitize_callback' => 'boxy_boolean',  
                         ),
-                        'single-featured-image' => array(
-                            'type' => 'checkbox',
-                            'label' => __('Check to show featured image on single post', 'boxy'),
-                            'description' => __('Check to show featured image on single post', 'boxy'),
-                            'default' => 1, 
-                            'sanitize_callback' => 'boxy_boolean',   
-                        ),             
+                        'copyright' => array(
+                            'type' => 'textarea',
+                            'label' => __('Footer Copyright Text (Validated that it\'s HTML Allowed)', 'boxy'),
+                            'description' => __('HTML Allowed. <b>This field is even HTML validated! </b>', 'boxy'),
+                            'sanitize_callback' => 'wbls_footer_copyright',
+                        ),
                     ),
-            
                 ),
+                'blog' => array(
+                        'title' => __('Blog', 'boxy'),
+                        'description' => __('Blog related options', 'boxy'),
+                        'fields' => array(
+                            'featured_image' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Featured Image', 'boxy'),
+                                'default' => 1,
+                                'sanitize_callback' => 'boxy_boolean',
+                            ),
+                            'featured_image_size' => array(
+                                'type' => 'radio',
+                                'label' => __('Choose the featured image display type for Blog Page ', 'boxy'),
+                                'choices' => array(
+                                    '1' => 'Large Featured Image',
+                                    '2' => 'Small Featured Image',        
+                                ),
+                                'default' => '1',      
+                            ),
+                            'single_featured_image' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Enable Single Post Featured Image', 'boxy'),
+                                'default' => 1,
+                                'sanitize_callback' => 'boxy_boolean',
+                            ),
+                            'single_featured_image_size' => array(
+                                'type' => 'radio',
+                                'label' => __('Choose the featured image display type for Single Page ', 'boxy'),
+                                'choices' => array(
+                                    '1' => 'Large Featured Image',
+                                    '2' => 'Small Featured Image',      
+                                ),
+                                'default' => '1',   
+                            ),
+                             'author_bio_box' => array(
+                                'type' => 'checkbox',
+                                'label' => __(' Enable Author Bio Box below single post', 'boxy'),
+                                'description' => __('Show Author information box below single post.', 'boxy'),
+                                'default' => 0,  
+                            ),
+                            'social_sharing_box' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show social sharing options box below single post', 'boxy'),
+                                'description' => __('Show social sharing options box below single post.', 'boxy'),
+                                'default' => 1,  
+                            ),
+                            'related_posts' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show related posts', 'boxy'),
+                                'description' => __('Show related posts.', 'boxy'),
+                                'default' => 0,  
+                            ),
+                            'comments' => array(
+                                'type' => 'checkbox',
+                                'label' => __(' Show Comments', 'boxy'),
+                                'description' => __('Show Comments', 'boxy'),
+                                'default' => 1,  
+                            ),
+                        ),
+                 ),
+                'social_sharing_box' => array(
+                        'title' => __('Social Sharing Box', 'boxy'),
+                        'description' => __('Social Sharing Icons Setup', 'boxy'),
+                        'fields' => array(
+                            'facebook_sb' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show facebook sharing option in single posts', 'boxy'),
+                                'description' => __('Show facebook sharing option in single posts.', 'boxy'),
+                                'default' => 1,  
+                            ),
+                            'twitter_sb' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show twitter sharing option in single posts', 'boxy'),
+                                'description' => __('Show twitter sharing option in single posts.', 'boxy'),                                'default' => 1,  
+                            ),
+                            'linkedin_sb' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show linkedin sharing option in single posts', 'boxy'),
+                                'description' => __('Show linkedin sharing option in single posts.', 'boxy'),
+                                'default' => 1,  
+                            ),
+                            'google-plus_sb' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show googleplus sharing option in single posts', 'boxy'),
+                                'description' => __('Show googleplus sharing option in single posts.', 'boxy'),
+                                'default' => 1,  
+                            ),
+                            'email_sb' => array(
+                                'type' => 'checkbox',
+                                'label' => __('Show email sharing option in single posts', 'boxy'),
+                                'description' => __('Show email sharing option in single posts.', 'boxy'),
+                                'default' => 1,  
+                            ),
+                        ),
+                    ),
             ), 
         ), // theme options panel  end//
        'home' => array(
@@ -426,11 +603,28 @@ $options = array(
                         ),                 
                     ),
                 ),
+                'pro_home_section' => array(
+                    'title' => __('Use Page Builder', 'boxy'),
+                    'fields' => array(
+                       'page-builder' => array(
+                            'type' => 'checkbox',
+                            'label' => __('Use Page Builder: Check this to disable theme options for home page content and use page builder to enter content', 'boxy'),
+                            'default' => 0,  
+                        ),
+                        'flexslider' => array(
+                            'type' => 'text',
+                            'label' => __('Enter FlexSlider shortcode (FlexSlider for Home Page)', 'boxy'),
+                            'description' => __('FlexSlider for Home Page.  Enter a FlexSlider shortcode to be displayed on Home Page','boxy'),
+                            'sanitize' => 'sanitize_text_field'
+                        ),
+                    )
+                )
 
 
                 
             ), // end//
         ), // home panel end // 
+    )
     )//panel end//
 );
 
@@ -450,5 +644,27 @@ function boxy_boolean($value) {
         return $value;
     } else {
         return false;
+    }
+}
+
+if ( ! function_exists( 'wbls_footer_copyright' ) ) {
+
+    function wbls_footer_copyright($string) {
+          $allowed_tags = array(    
+                                'a' => array(
+                                    'href' => array(),
+                                    'title' => array()
+                                ),
+                                'img' => array(
+                                    'src' => array(),
+                                    'alt' => array()
+                                ),
+                                'p' => array(),
+                                'br' => array(),
+                                'em' => array(),
+                                'strong' => array(),
+        );
+        return wp_kses( $string,$allowed_tags);
+
     }
 }

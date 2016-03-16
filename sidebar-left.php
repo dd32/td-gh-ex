@@ -10,7 +10,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<div id="secondary" class="widget-area  five columns" role="complementary">
+<div id="secondary" class="widget-area five columns right-sidebar" role="complementary">
 	<div class="left-sidebar">
 <?php if( is_page() ) : 
 		if(function_exists('generated_dynamic_sidebar') ){ 
@@ -22,6 +22,5 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	else:
 		dynamic_sidebar( 'sidebar-1' ); 
 	endif; ?>
-
 	</div>
-</div><!-- #secondary -->
+</div><!-- #secondary -->   
