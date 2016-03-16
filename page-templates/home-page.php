@@ -4,11 +4,9 @@
  */
 get_header(); 
 $a1_options = get_option( 'a1_theme_options' );
-
 ?>
-<section class="section-main">
+<section class="section-main" style="<?php if (!empty($a1_options['fixed-top-menu'])){ ?>margin-top:93px; <?php } ?>">
 <!--home banner-->
-
 <?php if(empty($a1_options['remove-slider'])) { ?>
 <div class="col-md-12 home-banner">
 	<div id="myCarousel" class="carousel slide">
@@ -32,17 +30,14 @@ $a1_options = get_option( 'a1_theme_options' );
 	   <?php } endfor; ?>
 	</div> 
 </div>
-
 <?php } ?>
-
 <!--home banner end-->
 <!--feature part-->
-
 <?php if(empty($a1_options['remove-core-features'])) { ?>
 <div class="col-md-12 home-feature">
 	<div class="container a1-container">
-		<?php if(!empty($a1_options['coretitle']) || !empty($a1_options['corecaption'])) { ?>
-			<div class="col-md-8 col-md-offset-2 feature-top">
+		<?php if(!empty($a1_options['coretitle']) || !empty($a1_options['corecaption'])) { ?>		   
+                        <div class="col-md-8 col-md-offset-2 feature-top">
 				<?php if(!empty($a1_options['coretitle'])) { ?>
 				<h2 class="home-heading"><?php echo esc_attr($a1_options['coretitle']); ?></h2>
 				<div class="circle-border"><span class="fa fa-circle"></span></div>
@@ -51,23 +46,27 @@ $a1_options = get_option( 'a1_theme_options' );
 		<?php } ?>
 		<div class="col-md-12 no-padding-lr">
 			<div class="row feature-row1">
-			<?php for($a1_section_i=1; $a1_section_i <=3 ;$a1_section_i++ ): ?>		
+			<?php for($a1_section_i=1; $a1_section_i <=3 ;$a1_section_i++ ): ?>
+                        <?php $core_link = esc_url($a1_options['coresectionlink-'.$a1_section_i]); ?>
+                             <?php if(!empty($core_link)){ ?>
+                                <a href="<?php echo $core_link; ?>">
+                             <?php } ?>
 				<div class="col-md-4 col-sm-4 feature-box">
 					<?php if(!empty($a1_options['home-icon-'.$a1_section_i])) { ?><span><img src="<?php echo esc_url($a1_options['home-icon-'.$a1_section_i]); ?>" /></span>
 					<?php } if(!empty($a1_options['section-title-'.$a1_section_i])) { echo '<h5>'.esc_attr($a1_options['section-title-'.$a1_section_i]).'</h5>'; }
 					 if(!empty($a1_options['section-content-'.$a1_section_i])) { echo '<p>'.esc_attr($a1_options['section-content-'.$a1_section_i]).'</p>'; } ?>
 				</div>
+                              <?php if(!empty($core_link)){ ?>
+                                </a>
+                             <?php } ?>
 			 <?php endfor; ?>    
 			</div>
 		</div>    
 	</div>
 </div>
-
 <?php } ?>
-
 <!--feature part end--> 
 <!--product description start-->
-
 <?php if(empty($a1_options['remove-product-description'])) { ?>
 <div class="col-md-12 home-product">
 	<div class="container a1-container">
@@ -107,12 +106,9 @@ $a1_options = get_option( 'a1_theme_options' );
 		</div>
 	</div>
 </div>
-
 <?php } ?>
-
 <!--product end-->
 <!--get touch start-->
-
 <?php if(empty($a1_options['remove-getin-touch'])) { ?>
 <div class="col-md-12 home-contact">
 	<div class="container a1-container a1-get-touch-home">
@@ -120,16 +116,10 @@ $a1_options = get_option( 'a1_theme_options' );
 		<?php if(!empty($a1_options['get-touch-caption'])) { echo '<p>'.esc_attr($a1_options['get-touch-caption']).'</p>'; } ?>
 		<?php if(!empty($a1_options['get-touch-logo'])) { ?><div class="logo-contact"><img src="<?php echo esc_url($a1_options['get-touch-logo']); ?>" alt=""></div><?php } ?>
 		<?php if(!empty($a1_options['contactus-now-text'])) {
-
 $data = '<a class="contact-button" href="'.esc_url($a1_options['get-touch-page']).'">'.esc_attr($a1_options['contactus-now-text']).'</a>'; echo apply_filters("the_content",$data); } ?>
 	</div>
 </div>
-
 <?php } ?>
-
 <!--get touch end-->
-
 </section>
-
 <?php get_footer(); ?>
-

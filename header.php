@@ -27,15 +27,12 @@ global $a1_options;
         <![endif]-->
         <?php wp_head(); ?>
     </head>
-
     <body <?php body_class(); ?>>
-
-        <header>
+        <header style="<?php if (!empty($a1_options['fixed-top-menu'])){ ?>position:fixed; <?php } ?>">
             <?php if (empty($a1_options['remove-top-header'])): ?>
                 <div class="col-md-12 top-header no-padding-lr">
                     <div class="container a1-container">
                         <div class="col-md-6 col-sm-6 location-part  no-padding-lr">
-
                             <?php if (!empty($a1_options['phone'])): ?>
                                 <p><i class="fa fa-phone"></i><?php echo esc_attr($a1_options['phone']); ?></p>
                             <?php endif; ?>
@@ -48,7 +45,6 @@ global $a1_options;
                                 <?php if (!empty($a1_options['fburl'])): ?><li><a href="<?php echo esc_url($a1_options['fburl']) ?>"><i class="fa fa-facebook"></i></a></li><?php endif; ?>
                                 <?php if (!empty($a1_options['twitter'])): ?><li><a href="<?php echo esc_url($a1_options['twitter']) ?>"><i class="fa fa-twitter"></i></a></li><?php endif; ?>
                                 <?php if (!empty($a1_options['pinterest'])): ?><li><a href="<?php echo esc_url($a1_options['pinterest']) ?>"><i class="fa fa-pinterest-square"></i></a></li><?php endif; ?>
-
                                 <?php if (!empty($a1_options['googleplus'])): ?><li><a href="<?php echo esc_url($a1_options['googleplus']) ?>"><i class="fa fa-google-plus"></i></a></li><?php endif; ?>
                             </ul>                            
                         </div>
@@ -56,7 +52,6 @@ global $a1_options;
                     </div>
                 </div>
             <?php endif;?>
-
             <div class="col-md-12 bottom-header no-padding-lr">
                 <div class="container a1-container">
                     <div class="col-md-2 no-padding-lr header-logo"> <a href="<?php echo esc_url(home_url()); ?>">
@@ -66,7 +61,6 @@ global $a1_options;
                                 <?php echo get_bloginfo('name'); ?>        
                             <?php endif; ?>        
                         </a> </div>
-
                     <div class="col-md-10 no-padding-lr">
                         <nav class="a1-nav">
                             <div class="navbar-header">
@@ -93,7 +87,6 @@ global $a1_options;
                                 );
                                 wp_nav_menu($a1_defaults);
                                 ?>          
-
                             </div>
                         </nav>
                     </div>

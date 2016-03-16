@@ -45,7 +45,6 @@
     font-size: 16px;
     height: auto;
     padding: 5px 10px;
-
     transition:all 0.8s ease-in-out;
     -webkit-transition:all 0.8s ease-in-out;
 }
@@ -119,7 +118,6 @@
 }
 .right-box .nav-tab-wrapper ul li .nav-tab-active{
     background-color:#fff;
-
 }
 .right-box .nav-tab-wrapper ul li .nav-tab-active:after {
     content: '';
@@ -157,7 +155,6 @@
     font-weight: bold;
     transition:all 0.8s ease-in-out;
     -webkit-transition:all 0.8s ease-in-out;
-
 }
 .a1-inner-tab.active:after{
     content:"-";
@@ -172,7 +169,6 @@
     border-left: 1px solid #dfdfdf;
     border-right: 1px solid #dfdfdf;
     float: left;
-
     padding-left: 15px;
     padding-top: 15px;
     width: 96.7%;
@@ -425,11 +421,9 @@
     position: absolute;
     top: 0;
     width: 53px;
-
     transition:all 0.3s ease-in-out 0s;
     -webkit-transition:all 0.3s ease-in-out 0s;
 }
-
 .theme-background .ft-control{
     height:120px;
     width:120px;
@@ -501,7 +495,6 @@ p.mail-condition{
     padding: 8px 0 10px;
     width: 100%;
     max-width: 858px;
-
 }
 .fasterthemes-pro-logo {
     margin: 10px 30px 2px;

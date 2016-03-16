@@ -1,11 +1,8 @@
 <?php
-
 function a1_options_init() {
     register_setting('a1_options', 'a1_theme_options', 'a1_options_validate');
 }
-
 add_action('admin_init', 'a1_options_init');
-
 function a1_options_validate($input) {
     /* -------------- Basic Settings---------------- */
     $input['logo'] = a1_image_validation(esc_url_raw($input['logo']));
@@ -58,7 +55,6 @@ function a1_options_validate($input) {
     $input['entry-meta-tags'] = sanitize_text_field($input['entry-meta-tags']);
     return $input;
 }
-
 function a1_image_validation($a1_imge_url) {
     $a1_filetype = wp_check_filetype($a1_imge_url);
     $a1_supported_image = array('gif', 'jpg', 'jpeg', 'png', 'ico');
@@ -68,16 +64,15 @@ function a1_image_validation($a1_imge_url) {
         return '';
     }
 }
-
 function a1_framework_load_scripts() {
     wp_enqueue_media();
     wp_enqueue_style('a1-framework', get_template_directory_uri() . '/theme-options/css/a1_framework.css', false, '1.0.0');
     wp_enqueue_script('a1-options-custom', get_template_directory_uri() . '/theme-options/js/a1-custom.js', array('jquery'));
-    wp_enqueue_script('a1-media-uploader', get_template_directory_uri() . '/theme-options/js/media-uploader.js', array('jquery'));
+    if( isset($_GET['page']) && ($_GET['page']=='a1_framework') ) :
+        wp_enqueue_script('a1-media-uploader', get_template_directory_uri() . '/theme-options/js/media-uploader.js', array('jquery'));
+    endif;
 }
-
 add_action('admin_enqueue_scripts', 'a1_framework_load_scripts');
-
 function a1_framework_menu_settings() {
     $a1_menu = array(
         'page_title' => __('A1 Theme Options', 'a1'),
@@ -88,14 +83,11 @@ function a1_framework_menu_settings() {
     );
     return apply_filters('a1_framework_menu', $a1_menu);
 }
-
 add_action('admin_menu', 'a1_theme_options_add_page');
-
 function a1_theme_options_add_page() {
     $a1_menu = a1_framework_menu_settings();
     add_theme_page($a1_menu['page_title'], $a1_menu['menu_title'], $a1_menu['capability'], $a1_menu['menu_slug'], $a1_menu['callback']);
 }
-
 function a1_framework_page() {
     global $select_options;
     if (!isset($_REQUEST['settings-updated']))
@@ -139,7 +131,7 @@ function a1_framework_page() {
                         settings_fields('a1_options');
                         $a1_options = get_option('a1_theme_options');
                         ?>
-                        <!-------------- Basic Settings----------------->
+                        <!--Basic Settings-->
                         <div id="options-group-1" class="group basicsettings a1-inner-tabs">
                             <div class="section theme-tabs theme-logo">
                                 <a class="heading a1-inner-tab active" href="javascript:void(0)"><?php _e('Logo (Recommended Size : 100px * 62px)', 'a1'); ?></a>
@@ -155,7 +147,6 @@ function a1_framework_page() {
                                             <?php
                                             if (!empty($a1_options['logo'])) {
                                                 echo "<img src='" . esc_url($a1_options['logo']) . "' /><a class='remove-image'>";
-
                                                 echo "</a>";
                                             }
                                             ?>
@@ -177,7 +168,6 @@ function a1_framework_page() {
                                             <?php
                                             if (!empty($a1_options['favicon'])) {
                                                 echo "<img src='" . esc_url($a1_options['favicon']) . "' /><a class='remove-image'>";
-
                                                 echo"</a>";
                                             }
                                             ?>
@@ -194,13 +184,15 @@ function a1_framework_page() {
                                 </div>
                             </div>
                         </div>
-                        <!-------------- Top Header Settings----------------->
+                        <!-- Top Header Settings-->
                         <div id="options-group-2" class="group topheadersettings a1-inner-tabs">
                             <div class="theme-tabs theme-colors theme-fonts">
                                 <div style="display: block;">
                                     <div class="ft-control">
                                         <input type="checkbox" id="a1-remove-top-header" name="a1_theme_options[remove-top-header]" <?php if (!empty($a1_options['remove-top-header'])) { ?> checked="checked" <?php } ?> value="<?php _e('yes', 'a1'); ?>">
                                         <label class="remove-slider-class" for="a1-remove-top-header"><?php _e('Check this if you want to hide the top header', 'a1'); ?>.</label>
+                                        <input type="checkbox" id="a1-fixed-top-menu" name="a1_theme_options[fixed-top-menu]" <?php if (!empty($a1_options['fixed-top-menu'])) { ?> checked="checked" <?php } ?> value="<?php _e('yes', 'a1'); ?>">
+                                        <label class="remove-slider-class" for="a1-fixed-top-menu"><?php _e('Check this if you want to have FIXED main menu', 'a1'); ?>.</label>
                                     </div>
                                 </div>
                             </div>
@@ -285,7 +277,7 @@ function a1_framework_page() {
                                 </div>
                             </div>
                         </div>
-                        <!-------------- Footer Settings----------------->
+                        <!-- Footer Settings-->
                         <div id="options-group-3" class="group footersettings a1-inner-tabs">
                             <div id="section-footertext" class="section theme-tabs"> <a class="heading a1-inner-tab active" href="javascript:void(0)"><?php _e('Copyright Text', 'a1'); ?></a>
                                 <div class="a1-inner-tab-group active">
@@ -312,8 +304,8 @@ function a1_framework_page() {
                                 </div>
                             </div>
                         </div>
-                        <!-------------- Homepage settings ----------------->
-                        <div id="options--group-4" class="group a1-inner-tabs">
+                        <!-- Homepage settings -->
+                        <div id="options-group-4" class="group a1-inner-tabs">
                             <br /><h3><?php _e('Banner Slider', 'a1'); ?></h3>
                             <div class="theme-tabs theme-colors theme-fonts">
                                 <div style="display: block;">
@@ -327,6 +319,7 @@ function a1_framework_page() {
                                 <div class="section theme-tabs theme-slider-img"> <a class="heading a1-inner-tab" href="javascript:void(0)"><?php _e('Slider', 'a1'); ?> <?php echo $a1_i; ?></a>
                                     <div class="a1-inner-tab-group">
                                         <div class="ft-control">
+<p> <?php _e('Size of the image should be 1350px X 534px','a1'); ?> </p>
                                             <input id="slider-img-<?php echo $a1_i; ?>" class="upload" type="text" name="a1_theme_options[slider-img-<?php echo $a1_i; ?>]"
                                                    value="<?php
                                                    if (!empty($a1_options['slider-img-' . $a1_i])) {
@@ -338,7 +331,6 @@ function a1_framework_page() {
                                                 <?php
                                                 if (!empty($a1_options['slider-img-' . $a1_i])) {
                                                     echo "<img src='" . esc_url($a1_options['slider-img-' . $a1_i]) . "' /><a class='remove-image'>";
-
                                                     echo "</a>";
                                                 }
                                                 ?>
@@ -406,20 +398,21 @@ function a1_framework_page() {
                                 <div class="section theme-tabs theme-slider-img"> <a class="heading a1-inner-tab" href="javascript:void(0)"><?php _e('Tab', 'a1'); ?> <?php echo $a1_section_i; ?></a>
                                     <div class="a1-inner-tab-group">
                                         <div class="ft-control">
+<p> <?php _e('Size of the icon should be 43px X 28px','a1'); ?> </p>
                                             <input id="first-image-<?php echo $a1_section_i; ?>" class="upload" type="text" name="a1_theme_options[home-icon-<?php echo $a1_section_i; ?>]" value="<?php
                                             if (!empty($a1_options['home-icon-' . $a1_section_i])) {
                                                 echo esc_url($a1_options['home-icon-' . $a1_section_i]);
                                             }
                                             ?>" placeholder="<?php _e('No file chosen', 'a1'); ?>" />
-                                            <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'a1'); ?>" />
+<input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'a1'); ?>" />
                                             <div class="screenshot" id="first-img-<?php echo $a1_section_i; ?>">
                                                 <?php
                                                 if (!empty($a1_options['home-icon-' . $a1_section_i])) {
                                                     echo "<img src='" . esc_url($a1_options['home-icon-' . $a1_section_i]) . "' /><a class='remove-image'>";
-
                                                     echo "</a>";
                                                 }
-                                                ?>
+                                                ?> 
+
                                             </div>
                                         </div>
                                         <div class="ft-control">
@@ -431,7 +424,7 @@ function a1_framework_page() {
                                             ?>">
                                         </div>
                                         <div class="ft-control">
-                                            <div class="explain"><?php _e('Enter score features tab content for home template , you would like to display in the Home Page', 'a1'); ?>.</div>
+                                            <div class="explain"><?php _e('Enter core features tab content for home template , you would like to display in the Home Page', 'a1'); ?>.</div>
                                             <textarea name="a1_theme_options[section-content-<?php echo $a1_section_i; ?>]" rows="6" id="content-<?php echo $a1_section_i; ?>" placeholder="<?php _e('Enter Content here', 'a1'); ?>" class="of-input"><?php
                                                 if (!empty($a1_options['section-content-' . $a1_section_i])) {
                                                     echo esc_attr($a1_options['section-content-' . $a1_section_i]);
@@ -439,6 +432,16 @@ function a1_framework_page() {
                                                 ?>
                                             </textarea>
                                         </div>
+
+<div class="ft-control">
+                                            <input type="text" placeholder="<?php _e('Link to this section', 'a1'); ?>" id="coresectionlink-<?php echo $a1_section_i; ?>" class="of-input" name="a1_theme_options[coresectionlink-<?php echo $a1_section_i; ?>]" size="32"  value="<?php
+                                            if (!empty($a1_options['coresectionlink-' . $a1_section_i])) {
+                                                echo esc_url($a1_options['coresectionlink-' . $a1_section_i]);
+                                            }
+                                            ?>">
+                                        </div>
+
+
                                     </div>
                                 </div>
                             <?php endfor; ?>
@@ -481,11 +484,7 @@ function a1_framework_page() {
                                     <div class="ft-control">
                                         <div class="explain"><?php _e('Enter product content for your site , you would like to display in the Home Page', 'a1'); ?>.</div>
                                         <?php
-                                        if (!empty($a1_content)) {
-                                            $a1_content = $a1_options['productcontent'];
-                                        } else {
-                                            $a1_content = '';
-                                        }
+                                        $a1_content = $a1_options['productcontent'];
                                         $a1_editor_id = 'productcontent';
                                         $a1_settings = array('textarea_name' => 'a1_theme_options[productcontent]', 'textarea_rows' => 25);
                                         wp_editor($a1_content, $a1_editor_id, $a1_settings);
@@ -552,7 +551,6 @@ function a1_framework_page() {
                                             <?php
                                             if (!empty($a1_options['get-touch-logo'])) {
                                                 echo "<img src='" . esc_url($a1_options['get-touch-logo']) . "' /><a class='remove-image'>";
-
                                                 echo "</a>";
                                             }
                                             ?>
@@ -585,7 +583,7 @@ function a1_framework_page() {
                                 </div>
                             </div>
                         </div>
-                        <!-------------- Blog Settings----------------->
+                        <!-- Blog Settings-->
                         <div id="options-group-5" class="group blogsettings a1-inner-tabs">
                             <div id="section-blogtitle" class="section theme-tabs"> <a class="heading a1-inner-tab active" href="javascript:void(0)"><?php _e('Blog Title', 'a1'); ?></a>
                                 <div class="a1-inner-tab-group active">
@@ -658,8 +656,18 @@ function a1_framework_page() {
                                     </div>
                                 </div>
                             </div>
+                            <div class="theme-tabs theme-colors theme-fonts">
+                                <div style="display: block;">
+                                    <div class="theme-tabs ft-control">
+                                        <input type="checkbox" id="a1-hide-meta-info-single" name="a1_theme_options[hide-meta-info-single]" <?php if (!empty($a1_options['hide-meta-info-single'])) { ?> checked="checked" <?php } ?> value="<?php _e('yes', 'a1'); ?>">
+                                        <label class="remove-slider-class" for="a1-hide-meta-info-single"><?php _e('Check this to hide meta info on the single blog posts.', 'a1'); ?>.</label>
+                                        <input type="checkbox" id="a1-hide-meta-info-archieve-pages" name="a1_theme_options[hide-meta-info-archieve-pages]" <?php if (!empty($a1_options['hide-meta-info-archieve-pages'])) { ?> checked="checked" <?php } ?> value="<?php _e('yes', 'a1'); ?>">
+                                        <label class="remove-slider-class" for="a1-hide-meta-info-archieve-pages"><?php _e('Check this to hide meta info on all archieve pages (author, tag, date etc).', 'a1'); ?>.</label>                                        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-------------- Pro Features group ----------------->
+                        <!-- Pro Features group -->
                         <div id="options-group-6" class="group faster-inner-tabs fasterthemes-pro-image">
                             <div class="fasterthemes-pro-header">
                                 <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/a1_pro_features-logo.png" class="fasterthemes-pro-logo" />
@@ -667,7 +675,7 @@ function a1_framework_page() {
                             </div>
                             <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/a1_pro_features.png" />
                         </div>
-                        <!-------------- End group ----------------->
+                        <!-- End group -->
                     </div>
                 </div>
             </div>

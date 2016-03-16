@@ -43,12 +43,10 @@ global $a1_options;
                 </div>
             </div>
         </div>
-
 <?php } ?>
     <div class="footer-botom">
         <div class="container a1-container">
             <div class="row">
-
                         <?php
                         if (!empty($a1_options['footer-content'])) {
                             echo "<p class='container a1-container footer-content'>" . esc_attr($a1_options['footer-content']) . "</p>";
@@ -62,9 +60,9 @@ global $a1_options;
                         _e('Powered by', 'a1');
                         echo ' <a target="_blank" href="http://wordpress.org">';
                         _e('WordPress', 'a1');
-                        echo '</a> ';
+                        echo '</a>  ';
                         _e('and', 'a1');
-                        echo ' <a target="_blank" href="<a href="http://fasterthemes.com/wordpress-themes/a1" target="_blank">A1</a>.';
+                        echo '<a target="_blank" href="http://fasterthemes.com/wordpress-themes/a1" target="_blank"> A1 </a>.';
                         ?></p>
                 </div>
                 <div class="col-md-6 col-sm-6 footer-menu">
@@ -72,14 +70,9 @@ global $a1_options;
                 </div>
             </div>
         </div>
-
     </div>
 </footer>
-
 <!--footer end--> 
-
 <?php wp_footer(); ?>
-
 </body>
-
 </html>
