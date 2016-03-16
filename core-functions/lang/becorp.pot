@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: becorp\n"
-"POT-Creation-Date: 2016-03-14 23:19+0530\n"
-"PO-Revision-Date: 2016-03-14 23:19+0530\n"
+"POT-Creation-Date: 2016-03-16 17:20+0530\n"
+"PO-Revision-Date: 2016-03-16 17:21+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -28,8 +28,7 @@ msgstr ""
 msgid "Page 404"
 msgstr ""
 
-#: 404.php:20 404.php:22 core-functions/customizer/customizer-header.php:1263
-#: core-functions/customizer/customizer-header.php:1274
+#: 404.php:20 404.php:22
 msgid "4"
 msgstr ""
 
@@ -45,7 +44,7 @@ msgstr ""
 msgid "Return to the"
 msgstr ""
 
-#: 404.php:25 functions.php:58
+#: 404.php:25 functions.php:56
 msgid "Previous"
 msgstr ""
 
@@ -182,626 +181,200 @@ msgstr ""
 msgid "Custom Header Settings"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:33
-msgid "Front Page Enable/Disabe"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:40 theme_default_data.php:9
+#: core-functions/customizer/customizer-header.php:22 theme_default_data.php:7
 msgid "(2)245 23 68"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:46
+#: core-functions/customizer/customizer-header.php:28
 msgid "Header Headline :"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:58
+#: core-functions/customizer/customizer-header.php:40
 msgid "Header Text :"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:65
+#: core-functions/customizer/customizer-header.php:47
 msgid "Header Logo setting"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:83
+#: core-functions/customizer/customizer-header.php:65
 msgid "Upload a 250x50 for Logo Image"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:101
+#: core-functions/customizer/customizer-header.php:83
 msgid "Enable/Disabe Logo"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:122
+#: core-functions/customizer/customizer-header.php:104
 msgid "Enter Logo Width"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:140
+#: core-functions/customizer/customizer-header.php:122
 msgid "Enter Logo Height"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:162
+#: core-functions/customizer/customizer-header.php:144
 msgid "Show Logo text"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:192
+#: core-functions/customizer/customizer-header.php:174
 msgid "Hide Social icons"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:214
+#: core-functions/customizer/customizer-header.php:196
 msgid "Facebook URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:231
-#: core-functions/customizer/customizer-header.php:269
-#: core-functions/customizer/customizer-header.php:305
-#: core-functions/customizer/customizer-header.php:342
-#: core-functions/customizer/customizer-header.php:379
-#: core-functions/customizer/customizer-header.php:416
-#: core-functions/customizer/customizer-header.php:981
-#: core-functions/customizer/customizer-header.php:1061
-#: core-functions/customizer/customizer-header.php:1141
+#: core-functions/customizer/customizer-header.php:213
+#: core-functions/customizer/customizer-header.php:251
+#: core-functions/customizer/customizer-header.php:287
+#: core-functions/customizer/customizer-header.php:324
+#: core-functions/customizer/customizer-header.php:361
+#: core-functions/customizer/customizer-header.php:398
 msgid "Open Link New tab/window"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:251
+#: core-functions/customizer/customizer-header.php:233
 msgid "Twitter URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:287
+#: core-functions/customizer/customizer-header.php:269
 msgid "Linkdin URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:324
+#: core-functions/customizer/customizer-header.php:306
 msgid "Dribbble URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:361
+#: core-functions/customizer/customizer-header.php:343
 msgid "Google URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:398
+#: core-functions/customizer/customizer-header.php:380
 msgid "rss URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:422
+#: core-functions/customizer/customizer-header.php:404
 msgid "Custom css"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:435
+#: core-functions/customizer/customizer-header.php:417
 msgid "Custom css snippet:"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:445
-msgid "Featured Slider Settings"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:465
-msgid "Hide Home slider"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:488
-msgid "Upload Slider Image One"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:496
-#: core-functions/customizer/customizer-header.php:594
-#: core-functions/customizer/customizer-header.php:931
-#: theme_default_data.php:38 theme_default_data.php:42
-#: theme_default_data.php:46 theme_default_data.php:83
-msgid "Becorp Responsive"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:502
-msgid "Slider Image Title one :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:509
-#: core-functions/customizer/customizer-header.php:1246
-#: core-functions/customizer/customizer-service.php:77
-#: theme_default_data.php:39 theme_default_data.php:43
-#: theme_default_data.php:47 theme_default_data.php:63
-#: theme_default_data.php:81 theme_default_data.php:84
-#: theme_default_data.php:89 theme_default_data.php:94
-#: theme_default_data.php:102
-msgid "Duis autem vel eum iriure dolor in hendrerit in vulputate."
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:515
-msgid "Slider Image  Description One:"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:537
-msgid "Upload Slider Image Two"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:545
-#: core-functions/customizer/customizer-header.php:1011
-#: theme_default_data.php:88
-msgid "Awesome Layout"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:551
-msgid "Slider Image Title Two"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:564
-msgid "Slider Image two Description :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:586
-msgid "Upload Slider Image Three"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:600
-msgid "Slider Image Title Three"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:613
-msgid "Slider Image three Description"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:622
-#: theme_default_data.php:48
-msgid "More Details!"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:629
-msgid "Slider Button Text"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:643
-msgid "Slider Button Link"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:660
-msgid "Open New tab/window"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:674
-#: core-functions/customizer/customizer-header.php:1155
-#: core-functions/customizer/customizer-service.php:287
-msgid "https://asiathemes.com"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:674
-msgid "Add more Slides take the Pro"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:691
-#: core-functions/customizer/customizer-header.php:1172
-#: core-functions/customizer/customizer-service.php:311
-msgid "Discover becorp Pro"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:705
-#: core-functions/customizer/customizer-header.php:718
-#: theme_default_data.php:35
-msgid "slide"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:716
-msgid "Select slider Animation"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:718
-msgid "Fade"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:728
-msgid "2000"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:737
-msgid "Input slide Duration"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:750
-msgid "Contact call-out Settings"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:771
-msgid "Hide Home Call-out Section"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:781
-#: theme_default_data.php:54
-msgid "Powerfully Creativity with Professional Clean Developed Website Themes"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:788
-msgid "Theme Collout Description"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:795
-#: theme_default_data.php:55
-msgid "get started now!"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:802
-msgid "Theme Collout Button Title"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:809
-msgid "#"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:818
-msgid "purchase callout Button Link"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:834
-msgid "Open link new tab/window"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:843
-msgid "Home Portfolio Settings"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:861
-msgid "Enable/Disabe Home Portfolio"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:875
-msgid "Portfolio Title One :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:888
-msgid "Portfolio Title Two :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:901
-msgid "Portfolio Description :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:923
-msgid "Upload Portfolio Image One"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:937
-msgid "Portfolio Image One Title :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:950
-msgid "Portfolio Image One Description :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:964
-msgid "Portfolio Image One URL :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1003
-msgid "Upload Portfolio Image Two"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1017
-msgid "Portfolio Image Two Title :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1030
-msgid "Portfolio Image two Description :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1044
-msgid "Portfolio Image Two URL :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1083
-msgid "Upload Portfolio Image Three"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1097
-msgid "Portfolio Image Three Title :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1110
-msgid "Portfolio Image three Description :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1124
-msgid "Portfolio Image Three URL :"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1155
-msgid "Add more portfolio take the Pro"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1184
-msgid "Home Latest Blog Posts Settings"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1206
-msgid "Hide Home Blog Posts Section"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1216 footer.php:34
-#: theme_default_data.php:100
-msgid "Latest"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1223
-#: core-functions/customizer/customizer-header.php:1237
-msgid "Latest Blog Posts Section title One"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1230
-msgid "Blog Posts"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1253
-msgid "Latest News Description"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1272
-msgid "Select Number of Post"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1274
-msgid "2"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1274
-msgid "6"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1274
-msgid "8"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1274
-msgid "10"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1274
-msgid "12"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1274
-msgid "14"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1274
-msgid "16"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1284
+#: core-functions/customizer/customizer-header.php:424
 msgid "Footer Customization"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1291
+#: core-functions/customizer/customizer-header.php:431
 msgid "@ 2015 Becorp Theme "
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1297
+#: core-functions/customizer/customizer-header.php:437
 msgid "Footer Customization Text"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1305
+#: core-functions/customizer/customizer-header.php:445
 msgid "Developed By "
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1311
+#: core-functions/customizer/customizer-header.php:451
 msgid "Footer Customization Developed By"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1319
-#: theme_default_data.php:108
+#: core-functions/customizer/customizer-header.php:459
+#: theme_default_data.php:33
 msgid "Asisa Themes "
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1325
+#: core-functions/customizer/customizer-header.php:465
 msgid "Theme Developed By Name"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1339
+#: core-functions/customizer/customizer-header.php:479
 msgid "Theme Developed By Link"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1345
+#: core-functions/customizer/customizer-header.php:485
 msgid "Upgrade to Becorp Premium"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1356
+#: core-functions/customizer/customizer-header.php:496
 msgid "becorp Premium"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1393
-#: core-functions/customizer/customizer-header.php:1418
+#: core-functions/customizer/customizer-header.php:533
+#: core-functions/customizer/customizer-header.php:557
 msgid "Upgrade to becorp Premium"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1399
+#: core-functions/customizer/customizer-header.php:539
 msgid "Becorp Premium - Features"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1401
-msgid "5 GB Free Web Hosting with Pro version "
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:1402
+#: core-functions/customizer/customizer-header.php:541
 msgid "One Year Free Support "
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1403
+#: core-functions/customizer/customizer-header.php:542
 #: core-functions/option-panel/becorp-option-panel.php:11
 msgid "Responsive Design"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1404
+#: core-functions/customizer/customizer-header.php:543
 #: core-functions/option-panel/becorp-option-panel.php:22
 msgid "More than 10 Templates"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1405
+#: core-functions/customizer/customizer-header.php:544
 msgid "3 Types of Portfolio Templates"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1406
+#: core-functions/customizer/customizer-header.php:545
 msgid "8 types Themes Colors Scheme"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1407
+#: core-functions/customizer/customizer-header.php:546
 #: core-functions/option-panel/becorp-option-panel.php:13
 msgid "Patterns Background"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1408
+#: core-functions/customizer/customizer-header.php:547
 msgid "WPML Compatible"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1409
+#: core-functions/customizer/customizer-header.php:548
 msgid "Image Background"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1410
+#: core-functions/customizer/customizer-header.php:549
 msgid "Ultimate Portfolio layout with Taxonomy Tab effect"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1411
+#: core-functions/customizer/customizer-header.php:550
 #: core-functions/option-panel/becorp-option-panel.php:25
 msgid "Translation Ready"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1412
+#: core-functions/customizer/customizer-header.php:551
 #: core-functions/option-panel/becorp-option-panel.php:26
 msgid "Coming Soon Mode"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1413
+#: core-functions/customizer/customizer-header.php:552
 #: core-functions/option-panel/becorp-option-panel.php:16
 msgid "Google Fonts"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1420
+#: core-functions/customizer/customizer-header.php:559
 msgid "Enjoying With Becorp"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:1423
+#: core-functions/customizer/customizer-header.php:562
 #, php-format
 msgid ""
 "If you Like our Products , Please do Rate us on %sWordPress.org%s?  We'd "
 "really appreciate it!"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:8
-msgid "Service Settings"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:13
-msgid "Service Heading "
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:33
-msgid "Hide Home Service Section"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:42
-#: theme_default_data.php:61 theme_default_data.php:79
-msgid "Our"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:51
-msgid "Service Title One"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:59
-#: theme_default_data.php:62
-msgid "Services"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:68
-msgid "Service Title Two"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:85
-msgid "Service Description"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:94
-msgid "Service Section one"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:108
-msgid "Service icon"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:112
-#: core-functions/customizer/customizer-service.php:175
-#: core-functions/customizer/customizer-service.php:238
-msgid ""
-"Add More <a href=\"http://fontawesome.io/icons/\" target=\"_blank"
-"\">FontAwesome Icons</a>"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:118
-#: theme_default_data.php:66
-msgid "Qui Blandit Praesent"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:127
-msgid "Title one"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:136
-#: core-functions/customizer/customizer-service.php:200
-#: core-functions/customizer/customizer-service.php:264
-#: theme_default_data.php:67 theme_default_data.php:71
-#: theme_default_data.php:75
-msgid ""
-"Duis autem vel eum iriure dolor in hendrerit in vulputate. Lorem ipsum dolor "
-"sit amet consectetur Lorem ipsum dolor sit amet consectetur."
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:145
-msgid "Description One"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:153
-msgid "Service Section Two"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:172
-msgid "Icon Two Like: fa-group"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:182
-#: theme_default_data.php:70
-msgid "Tation Dipiscing Elit"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:191
-msgid "Title two"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:209
-msgid "Description two"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:216
-msgid "Service Section Three"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:235
-msgid "Icon three  Like: fa-group"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:246
-#: theme_default_data.php:74
-msgid "Print Quality Design"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:255
-msgid "Title three"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:273
-msgid "Description three"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:287
-msgid "Add more service get the Pro"
-msgstr ""
-
-#: core-functions/customizer/customizer-service.php:295
-msgid "Add More service"
 msgstr ""
 
 #: core-functions/option-panel/becorp-option-panel.php:4
@@ -948,6 +521,10 @@ msgid " Layered PSD Files"
 msgstr ""
 
 #: footer.php:34
+msgid "Latest"
+msgstr ""
+
+#: footer.php:34
 msgid "Post"
 msgstr ""
 
@@ -983,11 +560,11 @@ msgstr ""
 msgid "1 -234 -456 -7890"
 msgstr ""
 
-#: functions.php:42
+#: functions.php:40
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:59
+#: functions.php:57
 msgid "Next"
 msgstr ""
 
@@ -1029,26 +606,14 @@ msgstr ""
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: theme_default_data.php:10
+#: theme_default_data.php:8
 msgid "becorp@gmail.com"
 msgstr ""
 
-#: theme_default_data.php:80
-msgid "Projects"
-msgstr ""
-
-#: theme_default_data.php:93
-msgid "Bussinus Corporate"
-msgstr ""
-
-#: theme_default_data.php:101
-msgid "Blog Post"
-msgstr ""
-
-#: theme_default_data.php:106
+#: theme_default_data.php:31
 msgid "@ 2015 Becorp Theme"
 msgstr ""
 
-#: theme_default_data.php:107
+#: theme_default_data.php:32
 msgid "Developed By"
 msgstr ""

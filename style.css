@@ -6,7 +6,7 @@ Author URI:https://asiathemes.com/
 Created by: Asiathemes
 Description: Becorp is a responsive and fully customizable template for Business and Multipurpose theme.The Theme has You can use it for your business, portfolio, blogging or any type of site.Custom menus to choose the menu in Primary Location that is in Header area of the site. which is ideal for creating a corporate / business website.
 Becorp is Retina ready.We focused on usability across various devices, starting with smartphones.Becorp is a Cross-Browser Compatible theme that works on All leading web browsers.In header area and footer of the theme offers Social Media Links to add your Social Links here.translation ready and many more.
-Version:  1.7
+Version:  1.8
 Tags: black,blue, purple,red,orange, white,green, yellow, two-columns, three-columns, four-columns, custom-menu, right-sidebar, fixed-layout, fluid-layout, custom-background,featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, responsive-layout
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -595,8 +595,9 @@ ul.top-social li a.icon-linkedin:hover {
 	border: 1px solid #e9e9e9;
 	background-color: #fcfcfc;
 	padding: 0px;
-	width: 100%;
-	max-width: 100%;
+	margin: 10px 44px;
+	/* width: 100%; */
+	max-width: 80%;
 }
 .blog-wrapper table { margin-bottom: 24px; }
 .widget div#calendar_wrap table > caption {
@@ -1539,7 +1540,8 @@ ul.list-ok li:before {
   box-shadow: none;
   display: inline-block !important;
   height:45px !important;
-  width: 82% !important;
+  max-width: 70% !important;
+  margin: 16px 42px;
 } 
 
 /* .search_box:focus{
@@ -1548,17 +1550,18 @@ ul.list-ok li:before {
 } */
 
  .btn-search {
-  border-radius:0 !important;
-  color: #FFFFFF;
-  border: 1px solid #CCCCCC;
-  background-color:#FB662F;
-  height:45px !important;
-  border-top-right-radius:4px !important;
-  border-bottom-right-radius:4px !important;
-  margin-left: -6px !important;
-  margin-top: -2px;
-  width: 18% !important;
-} 
+    border-radius: 0 !important;
+    color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    background-color: #FB662F;
+    height: 45px !important;
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+    margin-left: -49px !important;
+    margin-top: -2px;
+    max-width: 50% !important;
+    margin: -3px -39px -62px;
+}
 .widget h3 {
   border-bottom: 1px solid #e6e6e6 !important;
   color: #4D4C4C;

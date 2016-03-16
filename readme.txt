@@ -38,6 +38,9 @@ released
 @version 1.7
 1.As per review fixed all issues from @version 1.6
 
+@version 1.8
+1.As per review fixed all issues from @version 1.7
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL
@@ -123,23 +126,13 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 Images Taken from : https://pixabay.com/
 
-This images comes under GPL,GNU license.
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl.html
+*************** Footer letest-post widget Images ***************
+Image 1:- https://pixabay.com/en/fashion-beauty-model-portrait-girl-1063100/
+Image 2:- https://pixabay.com/en/female-blue-woman-fashion-models-204274/ 
+Image 3:- https://pixabay.com/en/model-modeling-pose-attractive-885294/ 
 
-*************** Slider Images ***************
-Image Slide 1:https://pixabay.com/en/colleagues-seminar-presentation-437024/
-
-Image Slide 2:https://pixabay.com/en/laptop-notebook-startup-computer-849798/
-
-Image Slide 3:https://pixabay.com/en/executive-laptop-business-office-844143/
-
-*************** Portfolio Images URL ***************
-https://pixabay.com/en/student-typing-keyboard-text-woman-849828/
-
-https://pixabay.com/en/student-typing-keyboard-text-woman-849822/
-
-https://pixabay.com/en/pause-break-tennis-match-rest-828757/
+*************** Header Titile Strip Image ***************
+Header title image :- https://pixabay.com/en/background-pattern-title-1260891/
 
 **************************************************************
 All Images have been used in the Becorp theme, Created by asiathemes .Also they are GPL Licensed and free to use and free to redistribute further. 

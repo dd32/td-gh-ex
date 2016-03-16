@@ -15,11 +15,9 @@
 	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' );
 	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/comment-section/comment-function.php' ); //for comments sections
 	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/widgets/register-sidebar.php' ); //for widget register
-	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/resize-image/image_resize.php' ); //image resize
 	
 	//Customizer
 	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/customizer/customizer-header.php');
-	require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
 
 add_action( 'after_setup_theme', 'becorp_setup' ); 	
 		function becorp_setup()
@@ -47,7 +45,6 @@ add_action( 'after_setup_theme', 'becorp_setup' );
 			if ( ! isset( $content_width ) ) $content_width = 900;
 			require_once('theme_default_data.php');
 			$becorp_option=becorp_theme_default_data();
-			require( ASIATHEMES_THEME_FUNCTIONS_PATH . '/option-panel/becorp-option-setting.php' ); // for Option Panel 
 			
 }
 		/****--- Navigation for Author, Category , Tag , Archive ---***/
