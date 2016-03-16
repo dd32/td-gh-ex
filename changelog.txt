@@ -17,3 +17,4 @@ V1.0.8 - 2015-01-29 new comment styles
 V1.1.0 - 2015-02-19 changed text domain to minimum-minimal, defined text domain in style.css header, enqueued the google fonts,  internationalized search.php line 43/44, escape `rwp('logo') and `add_styles()`, prefixed the image size handles `add_image_size()` and script
  handles `wp_enqueue_script()`, prefixed all of the functions with the theme slug `minimum_minimal`, removed code from bottom of functions.php
 V1.1.1 - 2015-02-19 Created Template part dropdowns and included it in archives, internationalized search.php line 43/44 placeholder and title, rwp function renamed into minimumminimaloptions
+V1.1.1 - 2016-03-16 'section' => 'title_tagline' enabled and Logo settings moved there, title-tag support added, exchanged screenshot for 1200x9000px version

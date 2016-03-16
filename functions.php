@@ -105,27 +105,7 @@ if (!isset($content_width))
     $content_width = 753;
 
 // Page Titles
-function minimum_minimal_wp_title($title, $sep) {
-    global $paged, $page;
-    
-    if (is_feed())
-        return $title;
-    
-    // Add the site name.
-    $title .= get_bloginfo('name');
-    
-    // Add the site description for the home/front page.
-    $site_description = get_bloginfo('description', 'display');
-    if ($site_description && (is_home() || is_front_page()))
-        $title = "$title $sep $site_description";
-    
-    // Add a page number if necessary.
-    if ($paged >= 2 || $page >= 2)
-        $title = "$title $sep " . sprintf(__('Page %s', 'minimum-minimal'), max($paged, $page));
-    
-    return $title;
-}
-add_filter('wp_title', 'minimum_minimal_wp_title', 10, 2);
+add_theme_support( 'title-tag' );
 
 
 // Ad Link to Customizer
@@ -156,16 +136,10 @@ add_action('customize_register', 'minimum_minimal_customize_register');
 function minimum_minimal_customize_register($wp_customize) {
     
     /* Logo, Title & Tagline */
-    $wp_customize->remove_section('title_tagline');
-    
-    $wp_customize->add_section('minimumminimaloptions_logo', array(
-        'title' => __('Title & Logo', 'minimum-minimal'),
-        'priority' => 10
-    ));
     
     $wp_customize->add_control('blogname', array(
         'label' => __('Site Title', 'minimum-minimal'),
-        'section' => 'minimumminimaloptions_logo',
+        'section' => 'title_tagline',
         'settings' => 'blogname',
         'priority' => 5
     ));
@@ -186,7 +160,7 @@ function minimum_minimal_customize_register($wp_customize) {
     
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo', array(
         'label' => __('Logo Image', 'minimum-minimal'),
-        'section' => 'minimumminimaloptions_logo',
+        'section' => 'title_tagline',
         'settings' => 'minimumminimaloptions[logo]',
         'priority' => 20
     )));
