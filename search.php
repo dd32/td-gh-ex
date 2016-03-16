@@ -15,7 +15,7 @@
           <?php endif;?>
           <ul class="blog-icons clearfix">
             <li><i class="icon-user"></i> <a href="#"><?php the_author();?></a></li>
-            <li><i class="icon-calendar"></i> <a href="#"><?php the_date('M j,Y');?> </a></li>
+            <li class="calendar-icon"><a href="#"><?php echo get_the_date(get_option('M j,Y'));?> </a></li>
             <li><i class="icon-comment"></i>  <?php  comments_popup_link( __( "Leave a comment", 'sis_spa' ),__( "1 Comment", 'sis_spa' ), __( "% Comments", 'sis_spa' ),'name' ); ?></li>
           </ul>
         </div>

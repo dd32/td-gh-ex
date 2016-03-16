@@ -2,7 +2,7 @@
 * Theme Name: Spasalon
 * Theme URI: http://webriti.com/spasalon-lite-description/
 * Description: A responsive theme for SPA SALON and BEAUTY SALON type of business that uses multiple nav menus, right-sidebar,Featured Slider and Beautifully designed home page all manage via option panel.It has a pixel-perfect design that is great for any health care ,salons , spas etc related services who wants a new look for their site. Very recently added a support for woocommerce plugin. Now you create an effective online shop presence with the help of this woocommerce support i.e we have styled this theme in such a manner so that the woocommerce pages/templates looks very similar to the theme styles.
-* Version: 1.5.8
+* Version: 1.5.9.1
 * Author: webriti
 * Author URI: http://www.webriti.com
 * Tags: pink, white, full-width-template, threaded-comments, right-sidebar, one-column, two-columns, fixed-layout, custom-menu, sticky-post, theme-options, translation-ready, responsive-layout,featured-images
@@ -2938,6 +2938,7 @@ article.sticky .featured-post {
 	padding: 3px 0 3px 23px;
 	margin: .4em 0;
 	border-bottom: 1px solid #DEDEDE;
+	display: flex;
 }
 .calendar-icon {
 	background-image: url("images/calendar_icon.png") ;

@@ -19,7 +19,7 @@
             <?php endif;?>
             <ul class="spa-blog-icon clearfix" id="blog-left-icons">
               <li class="admin-icon"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php the_author();?></a></li>
-              <li class="calendar-icon"> <?php echo get_the_date('M j,Y');?></li>
+              <li class="calendar-icon"><a href="#"><?php echo get_the_date(get_option('M j,Y'));?> </a></li>
               <li class="blog-comment-icon">  <?php  comments_popup_link( __( 'Leave a comment', 'sis_spa' ),__( '1 Comment', 'sis_spa' ), __( '% Comments', 'sis_spa' ) ); ?></li>
             </ul>
           </div>

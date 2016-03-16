@@ -100,6 +100,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.5.9.1
+1. Add Message Next version moving option panel to Customizer.
+@version 1.5.9
+1. Styling issue resolved.
 @version 1.5.8
 1. Change Banner Thumbnail Image, Service Image and Product Image.
 @version 1.5.7

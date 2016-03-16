@@ -201,6 +201,7 @@
         <!-- header div is end -->
       </div>
     </div>
+	<h3><?php _e('In the next version ie 1.6 we are moving all the theme options in the customizer, as per the latest guidelines.','sis_spa'); ?></h3>
     <div  class="wrap">
       <div class="icon32" id="icon-themes"><br></div>
       <h2 class="nav-tab-wrapper">				
