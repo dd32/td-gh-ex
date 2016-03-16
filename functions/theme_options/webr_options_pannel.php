@@ -10,7 +10,8 @@
       <div id="pro-connect" style="margin-bottom:5px;padding:5px;">
         <a class="btn btn-large btn-danger" href="#myModal"  data-toggle="modal"><strong><?php _e('Upgrade to Pro','busi_prof'); ?></strong></a>&nbsp;&nbsp;
         <a class="btn btn-large btn-info" href="http://wordpress.org/themes/busiprof" target="_blank"><strong><?php _e('Rate Busiprof','busi_prof'); ?></strong></a>
-        <div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="background:transparent;border:0px;">
+		<h3><?php _e('In the next version ie 1.7 we are moving all the theme options in the customizer, as per the latest guidelines.','busi_prof'); ?></h3>
+		<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="background:transparent;border:0px;">
           <div class="modal-header" style="border:0px;">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/close_256.png' ?> " /></button>
             <h4 id="myModalLabel"></h4>

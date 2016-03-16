@@ -57,6 +57,9 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.6.3
+1. Update Theme URI
+2. Add Message : In the next version ie 1.7 we are moving all the theme options in the customizer
 @version 1.6.2
 1. Change Banner,Product and Screenshot Images.
 @version 1.6.1
