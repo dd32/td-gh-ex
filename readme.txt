@@ -2,17 +2,17 @@
 
 Theme Name: Unite
 Theme URI: http://colorlib.com/wp/unite/
-Version: 1.6.1
-Tested up to: WP 4.2
+Version: 2.0.2
+Tested up to: WP 4.5
 
 Author: Aigars Silkalns
 Author URI: http://colorlib.com/wp/
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 -------------------------------------------------------
-Unite theme, Copyright 2014-2105 colorlib.com
+Unite theme, Copyright 2014-2016 colorlib.com
 Unite WordPress theme is distributed under the terms of the GNU GPL
-Unite is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Unite is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 -------------------------------------------------------
 
 /*========= Credits =========*/

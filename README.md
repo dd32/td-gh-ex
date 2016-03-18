@@ -2,8 +2,8 @@
 
 Theme Name: Unite
 Theme URI: http://colorlib.com/wp/unite/
-Version: 1.6.1
-Tested up to: WP 4.2
+Version: 2.0.2
+Tested up to: WP 4.5
 
 #Copyright notice#
 
@@ -60,6 +60,36 @@ Theme documentation is available on http://colorlib.com/wp/support/unite
 
 #Changelog#
 
+####2.0.2 - 18.03.2016 ####
+
+* Added a new social icons
+* Other small bug fixes.
+* Updated translation files
+
+####2.0.1 - 08.02.2016 ####
+
+* Added missing header navigation
+
+####2.0 - 17.11.2015 ####
+
+* Removed redundant functions
+* Removed Theme Options in favor to WordPress Theme Customizer
+* Other code cleanup
+
+####1.6.7 - 09.10.2015 ####
+
+* Added Brazilian Portuguese translation thanks to Paulo Eishima
+
+####1.6.6 - 10.07.2015 ####
+
+* Replaced h1 tags with h2 on blog and archive pages for better SEO
+* Improved Custom CSS forum output
+
+####1.6.5 - 24.04.2015 ####
+
+* Theme is now much more Child Theme friendly.
+* Added numerous check for if function_exists.
+
 ####1.6.1 - 24.04.2015 ####
 
 Fixed potential security vulnerability for TGM-Plugin-Activation
@@ -79,7 +109,7 @@ Fixed potential security vulnerability for TGM-Plugin-Activation
 
 ####1.5.9 - 11.02.2015 ####
 
-* Improved favicon support and now loaded in frontend and backend. 
+* Improved favicon support and now loaded in frontend and backend.
 
 ####1.5.8 - 26.01.2015 ####
 
@@ -89,14 +119,14 @@ Fixed potential security vulnerability for TGM-Plugin-Activation
 
 ####1.5.7 - 15.01.2015 ####
 
-* Fixed error in main JavaScript file. 
+* Fixed error in main JavaScript file.
 
 ####1.5.6 - 20.11.2014 ####
 
 * Styling improvements for WooCommerce
 * Improved social icons on hover
 * Updated readme file for Github.
-* All updated made possible thanks to [@amiyasahu](https://github.com/amiyasahu) 
+* All updated made possible thanks to [@amiyasahu](https://github.com/amiyasahu)
 
 ####1.5.5 - 15.11.2014 ####
 
@@ -105,7 +135,7 @@ Fixed potential security vulnerability for TGM-Plugin-Activation
 ####1.5.4 - 07.11.2014 ####
 
 * Tiny HTML improvements
-* Fixed problems with Jetpack Infinite scroll after plugin update. 
+* Fixed problems with Jetpack Infinite scroll after plugin update.
 
 ####1.5.3 - 02.11.2014 ####
 

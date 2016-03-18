@@ -45,7 +45,7 @@ function unite_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/**
+	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -80,10 +80,13 @@ function unite_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+
 }
 endif; // unite_setup
 add_action( 'after_setup_theme', 'unite_setup' );
 
+
+if ( ! function_exists( 'unite_widgets_init' ) ) :
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
@@ -104,9 +107,9 @@ function unite_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widgettitle">',
 		'after_title'   => '</h3>',
-  ));
+    ));
 
-  register_sidebar(array(
+    register_sidebar(array(
 		'id'            => 'home2',
 		'name'          => 'Homepage Widget 2',
 		'description'   => 'Used only on the homepage page template.',
@@ -114,9 +117,9 @@ function unite_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widgettitle">',
 		'after_title'   => '</h3>',
-  ));
+    ));
 
-  register_sidebar(array(
+    register_sidebar(array(
 		'id'            => 'home3',
 		'name'          => 'Homepage Widget 3',
 		'description'   => 'Used only on the homepage page template.',
@@ -124,15 +127,28 @@ function unite_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widgettitle">',
 		'after_title'   => '</h3>',
-  ));
+    ));
 
-  register_widget( 'unite_popular_posts_widget' );
+    register_widget( 'unite_popular_posts_widget' );
+    register_widget( 'unite_social_widget' );
 }
+endif;
 add_action( 'widgets_init', 'unite_widgets_init' );
 
-include(get_template_directory() . "/inc/popular-posts-widget.php");
+/**
+ * Include widgets for Unite theme
+ */
+include(get_template_directory() . "/inc/widgets/popular-posts-widget.php");
+include(get_template_directory() . "/inc/widgets/widget-social.php");
+
+/**
+ * Include Metabox for Unite theme
+ */
+include(get_template_directory() . "/inc/metaboxes.php");
 
 
+
+if ( ! function_exists( 'unite_scripts' ) ) :
 /**
  * Enqueue scripts and styles.
  */
@@ -152,31 +168,22 @@ function unite_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+endif;
 add_action( 'wp_enqueue_scripts', 'unite_scripts' );
 
+
+if ( ! function_exists( 'unite_ie_support_header' ) ) :
 /**
  * Add HTML5 shiv and Respond.js for IE8 support of HTML5 elements and media queries
  */
 function unite_ie_support_header() {
-	echo '<!--[if lt IE 9]>'. "\n";
-	echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/html5shiv.min.js' ) . '"></script>'. "\n";
-	echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/respond.min.js' ) . '"></script>'. "\n";
-	echo '<![endif]-->'. "\n";
+    echo '<!--[if lt IE 9]>'. "\n";
+    echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/html5shiv.min.js' ) . '"></script>'. "\n";
+    echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/respond.min.js' ) . '"></script>'. "\n";
+    echo '<![endif]-->'. "\n";
 }
+endif;
 add_action( 'wp_head', 'unite_ie_support_header', 1 );
-
-/*
- * Loads the Options Panel
- *
- * If you're loading from a child theme use stylesheet_directory
- * instead of template_directory
- */
-
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/admin/' );
-require_once dirname( __FILE__ ) . '/inc/admin/options-framework.php';
-// Loads options.php from child or parent theme
-$optionsfile = locate_template( 'options.php' );
-load_template( $optionsfile );
 
 /**
  * Implement the Custom Header feature.
@@ -209,3 +216,61 @@ require get_template_directory() . '/inc/jetpack.php';
 
 require get_template_directory() . '/inc/navwalker.php';
 
+/**
+ * Load social nav
+ */
+require get_template_directory() . '/inc/socialnav.php';
+
+/* All Globals variables */
+global $text_domain;
+$text_domain = 'unite';
+
+global $site_layout;
+$site_layout = array('side-pull-left' => esc_html__('Right Sidebar', 'dazzling'),'side-pull-right' => esc_html__('Left Sidebar', 'dazzling'),'no-sidebar' => esc_html__('No Sidebar', 'dazzling'),'full-width' => esc_html__('Full Width', 'dazzling'));
+
+// Option to switch between the_excerpt and the_content
+global $blog_layout;
+$blog_layout = array('1' => __('Display full content for each post', 'unite'),'2' => __('Display excerpt for each post', 'unite'));
+
+// Typography Options
+global $typography_options;
+$typography_options = array(
+        'sizes' => array( '6px' => '6px','10px' => '10px','12px' => '12px','14px' => '14px','15px' => '15px','16px' => '16px','18'=> '18px','20px' => '20px','24px' => '24px','28px' => '28px','32px' => '32px','36px' => '36px','42px' => '42px','48px' => '48px' ),
+        'faces' => array(
+                'arial'          => 'Arial',
+                'verdana'        => 'Verdana, Geneva',
+                'trebuchet'      => 'Trebuchet',
+                'georgia'        => 'Georgia',
+                'times'          => 'Times New Roman',
+                'tahoma'         => 'Tahoma, Geneva',
+                'Open Sans'      => 'Open Sans',
+                'palatino'       => 'Palatino',
+                'helvetica'      => 'Helvetica',
+                'helvetica-neue' => 'Helvetica Neue,Helvetica,Arial,sans-serif'
+        ),
+        'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
+        'color'  => true
+);
+
+/**
+ * Helper function to return the theme option value.
+ * If no value has been saved, it returns $default.
+ * Needed because options are saved as serialized strings.
+ *
+ * Not in a class to support backwards compatibility in themes.
+ */
+if ( ! function_exists( 'of_get_option' ) ) :
+function of_get_option( $name, $default = false ) {
+
+  $option_name = '';
+  // Get option settings from database
+  $options = get_option( 'unite' );
+
+  // Return specific option
+  if ( isset( $options[$name] ) ) {
+    return $options[$name];
+  }
+
+  return $default;
+}
+endif;
