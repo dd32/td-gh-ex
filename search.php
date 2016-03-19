@@ -38,17 +38,14 @@
 	  <?php endif; ?>
      
 		<!--Pagination Start-->
-        <?php   if (function_exists('faster_pagination') ) {?>
-            <?php faster_pagination();?>
-        <?php }else { ?>
-        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
-		<nav class="mywiki-nav">
+    <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+    <nav class="mywiki-nav">
             <span class="mywiki-nav-previous"><?php previous_posts_link(); ?></span>
             <span class="mywiki-nav-next"><?php next_posts_link(); ?></span>
         </nav>
-         <?php } ?>
-        <?php }//is plugin active ?>
-		<!--Pagination End-->
+    <?php } ?>
+    <!--Pagination End-->
+    
       
     </div>
   </div>

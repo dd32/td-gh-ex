@@ -96,3 +96,6 @@ Version 2.2.2 (12th Dec. 2014)
 
 Version 2.2.3 (20th Aug 2015)
     i) Fixed WP_Widget deprecation issue.
+
+Version 2.3 (19th March 2016)
+    i) Fixed Small Bugs

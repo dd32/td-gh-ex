@@ -35,7 +35,7 @@
 	<?php 
 		if(!empty($mywiki_options['footertext']))
 			echo esc_attr($mywiki_options['footertext']).' ';
-		printf( __( 'Powered by %1$s and %2$s.', 'mywiki' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>', '<a href="http://fasterthemes.com/wordpress-themes/mywiki" target="_blank">MyWiki</a>' );
+		printf( __( 'Powered by %1$s and My%2$s.', 'mywiki' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>', '<a href="http://fasterthemes.com/wordpress-themes/mywiki" target="_blank">Wiki WordPress Theme</a>' );
 	?> 
 </footer>
     </p>

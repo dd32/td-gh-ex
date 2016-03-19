@@ -27,6 +27,7 @@ function mywiki_setup() {
 	add_editor_style( 'css/editor-style.css' );
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
+  add_theme_support( 'title-tag' );
 	/*
 	 * Enable support for Post Formats.
 	 */
@@ -47,10 +48,28 @@ endif; // mywiki_setup
 // Implement Custom Header features.
 require get_template_directory() . '/function/custom-header.php';
 
-/*** TGM ***/
-require_once('function/tgm-plugins.php');
-
 add_action( 'after_setup_theme', 'mywiki_setup' );
+
+
+/*Title*/
+function mywiki_wp_title( $title, $sep ) {
+  global $paged, $page;
+  if ( is_feed() ) { return $title; } // end if
+  // Add the site name.
+  $title .= get_bloginfo( 'name' );
+  // Add the site description for the home/front page.
+  $site_description = get_bloginfo( 'description', 'display' );
+  if ( $site_description && ( is_home() || is_front_page() ) ) {
+    $title = "$title $sep $site_description";
+  } // end if
+  // Add a page number if necessary.
+  if ( $paged >= 2 || $page >= 2 ) {
+    $title = sprintf( __( 'Page %s', 'mywiki' ), max( $paged, $page ) ) . " $sep $title";
+  } // end if
+  return $title;
+} // end mywiki_wp_title
+add_filter( 'wp_title', 'mywiki_wp_title', 10, 2 );
+
 
 if ( ! function_exists( 'mywiki_entry_meta' ) ) :
 /**
@@ -73,11 +92,11 @@ function mywiki_entry_meta() {
 		get_the_author()
 	);
 	if ( $mywiki_tag_list ) {
-		$mywiki_utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: '.get_comments_number().'.', 'mywiki' );
+		$mywiki_utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: '.get_comments_number(), 'mywiki' );
 	} elseif ( $mywiki_category_list ) {
-		$mywiki_utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: '.get_comments_number().'.', 'mywiki' );
+		$mywiki_utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: '.get_comments_number(), 'mywiki' );
 	} else {
-		$mywiki_utility_text = __( 'Posted %3$s by %4$s Comments:'.get_comments_number().'.', 'mywiki' );
+		$mywiki_utility_text = __(__( 'Posted %3$s by %4$s Comments:','mywiki'), get_comments_number());
 	}
 	printf(
 		$mywiki_utility_text,
@@ -101,8 +120,8 @@ return $mywiki_new_markup; } //}
 add_filter('wp_page_menu', 'mywiki_add_menuclass');
 register_nav_menus(
 		array(
-			'primary' => __( 'The Main Menu', 'MyWiki' ),  // main nav in header
-			'footer-links' => __( 'Footer Links', 'MyWiki' ) // secondary nav in footer
+			'primary' => __( 'The Main Menu', 'mywiki' ),  // main nav in header
+			'footer-links' => __( 'Footer Links', 'mywiki' ) // secondary nav in footer
 		)
 	);
 function mywiki_category_widget_function($mywiki_args) {
@@ -411,8 +430,8 @@ function mywiki_custom_breadcrumbs() {
   
     } elseif ( is_author() ) {
        global $author;
-      $$mywiki_userdata = get_userdata($author);
-      echo $mywiki_before . _e('Articles posted by ','mywiki'). $$mywiki_userdata->display_name . $mywiki_after;
+      $mywiki_userdata = get_userdata($author);
+      echo $mywiki_before . _e('Articles posted by ','mywiki'). $mywiki_userdata->display_name . $mywiki_after;
   
     } elseif ( is_404() ) {
       echo $mywiki_before . _e('Error 404 ','mywiki'). $mywiki_after;
@@ -428,31 +447,13 @@ function mywiki_custom_breadcrumbs() {
   
   }
 } // end qt_custom_breadcrumbs()
-/**
- * Filter the page title.
- **/
-function mywiki_wp_title( $title, $sep ) {
-	global $paged, $page;
-	if ( is_feed() )
-		return $title;
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-	// Add the site description for the home/front page.
-	$mywiki_site_description = get_bloginfo( 'description', 'display' );
-	if ( $mywiki_site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $mywiki_site_description";
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'mywiki' ), max( $paged, $page ) );
-	return $title;
-}
-add_filter( 'wp_title', 'mywiki_wp_title', 10, 2 );
+
 /* ===========================================================
 				T H E M E  O P T I O N S
 =============================================================*/
 require_once('theme-options/fasterthemes.php'); 
 /**
- * Wikki search
+ * Wiki search
  */
 function mywiki_search() {
 	global $wpdb;
@@ -508,7 +509,7 @@ function mywiki_comment( $comment, $args, $depth ) {
 					<div class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 							<time datetime="<?php comment_time( 'c' ); ?>">
-								<?php printf( __( '%1$s at %2$s', '1: date, 2: time' ), get_comment_date(), get_comment_time() ); ?>
+								<?php printf( __( '%1$s at %2$s', 'mywiki' ), get_comment_date(), get_comment_time() ); ?>
 							</time>
 						</a>
 						<?php edit_comment_link( __( 'Edit','mywiki' ), '<span class="edit-link">', '</span>' ); ?>

@@ -6,7 +6,6 @@ $mywiki_options = get_option( 'faster_theme_options' );
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php if(!empty($mywiki_options['favicon'])) { ?>
 <link rel="shortcut icon" href="<?php echo esc_url($mywiki_options['favicon']);?>">
 <?php } ?>

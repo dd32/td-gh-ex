@@ -78,7 +78,7 @@ function mywiki_framework_page(){
           <?php settings_fields( 'mywiki_options' );  
 		$mywiki_options = get_option( 'faster_theme_options' ); ?>
      
-          <!-------------- First group ----------------->
+          <!-- First group -->
           <div id="options-group-1" class="group faster-inner-tabs">
           	<div class="section theme-tabs theme-logo">
             <a class="heading faster-inner-tab active" href="javascript:void(0)"><?php _e('Site Logo','mywiki'); ?></a>
@@ -118,7 +118,7 @@ function mywiki_framework_page(){
               </div>
             </div>            
           </div>             
-          <!-------------- Second group ----------------->
+          <!-- Second group -->
           <div id="options-group-2" class="group faster-inner-tabs">            
             <div id="section-facebook" class="section theme-tabs">
             	<a class="heading faster-inner-tab active" href="javascript:void(0)"><?php _e('Facebook','mywiki'); ?></a>
@@ -158,15 +158,15 @@ function mywiki_framework_page(){
               </div>
             </div>
           </div>   
-          <!-------------- Third group ----------------->
+          <!-- Third group -->
           <div id="options-group-3" class="group faster-inner-tabs fasterthemes-pro-image">
           	<div class="fasterthemes-pro-header">
-              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="fasterthemes-pro-logo" />
-              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=Mywiki" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" width="75%" class="fasterthemes-pro-logo" />
+              <a href="http://fasterthemes.com/wordpress-themes/MyWiki" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
               </div>
-          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.jpg" />
+          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.jpg" width="85%" />
           </div>
-        <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
+        <!-- F I N A L - - T H E M E - - O P T I O N S --> 
       </div>
      </div>
 	</div>
@@ -181,10 +181,4 @@ function mywiki_framework_page(){
     </form>    
 </div>
 <div class="save-options"><h2><?php _e('Options saved successfully.','mywiki'); ?></h2></div>
-<div class="newsletter">    
-     <h1><?php _e('Subscribe with us','mywiki'); ?></h1>
-       <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","mywiki"); ?>
-          <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join','mywiki'); ?></a>
-       </p> 
-    </div>
 <?php } ?>
