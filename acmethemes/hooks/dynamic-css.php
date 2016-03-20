@@ -78,6 +78,7 @@ if ( ! function_exists( 'acmeblog_dynamic_css' ) ) :
             }
             .wpcf7-form input.wpcf7-submit:hover,
             article.post.sticky,
+            .comment-form .form-submit input,
             .read-more:hover{
                 border: 2px solid {$acmeblog_primary_color};
             }
