@@ -531,21 +531,41 @@ wp_reset_query(); ?>
 	        <?php wp_reset_postdata(); 
 			}else{ 
 			?>
-			<h3 class="widget-title"><?php _e('Testimonials','accesspresslite'); ?></h3>
-			<div class="testimonial-wrap_two">
-				<div class="testimonial-above_footer_two">
-					<div class="testimonial-single">
+			<h3>Testimonial</h3>
+			
+	        <div class="testimonial-wrap_two">
+		        <div class="testimonial-slider">
+		        
+		        	<div class="testimonial-single">
 			        	<div class="testimonial-list clearfix">
-                            <div class="image_title_content clearfix">                        
+                            <div class="image_title_content clearfix">
     			        		<div class="testimonial-thumbnail">
-    			        		   <img src="<?php echo get_template_directory_uri(); ?>/images/demo/testimonial_two.jpg">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/demo/testimonial-image4.jpg" alt="no-image"/>
     			        		</div>
-                                <div class="testimoinal-client-name_two"><?php _e('Yanetxys Torreblanca','accesspresslite'); ?></div>
-                                <span class="testimonial_date">20 February,2016</span>                                                        
-                            </div>                            
-			        		<div class="testimonial-excerpt_two"><?php _e('Thanks for delivering top quality services to your clients. It just takes a minute to get an answer from you when in difficulties.','accesspresslite'); ?></div>
+                                <div class="testimoinal-client-name_two">Jhon Doe</div>
+                                <span class="testimonial_date">17 September,2015</span>                               
+                            </div>
+			        		<div class="testimonial-excerpt_two">
+			        			labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco labolabore et dolore magna aliqua....
+			        		</div>
 			        	</div>
 					</div>
+                    
+                    <div class="testimonial-single">
+			        	<div class="testimonial-list clearfix">
+                            <div class="image_title_content clearfix">
+    			        		<div class="testimonial-thumbnail">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/demo/testimonial_two.jpg" alt="no-image"/>
+    			        		</div>
+                                <div class="testimoinal-client-name_two">Scarlet Eva</div>
+                                <span class="testimonial_date">15 February,2014</span>                               
+                            </div>
+			        		<div class="testimonial-excerpt_two">
+			        			labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco labolabore et dolore magna aliqua....
+			        		</div>
+			        	</div>
+					</div>
+                
 				</div>
 			</div>
 				

@@ -62,6 +62,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.46.3
+*Footer Gallery Issue Fixed
+*Change Default content
+
 Veresion 2.46.0
 *Change Screenshot
 *Fix design issue at footer

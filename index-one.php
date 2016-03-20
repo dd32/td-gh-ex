@@ -451,51 +451,26 @@ wp_reset_query(); ?>
         echo do_shortcode($gallery_code );
         else: ?>
         <h3>Gallery</h3>
-        <div class="gallery">
-            <dl class="gallery-item">
-            <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img1.jpg">
-            <img class="attachment-thumbnail" width="150" height="150" alt="img1" src="<?php echo get_template_directory_uri();?>/images/demo/img1-thumb.jpg">
-            </a>
-            </dt>
-            </dl>
-            <dl class="gallery-item">
-            <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img2.jpg">
-            <img class="attachment-thumbnail" width="150" height="150" alt="img2" src="<?php echo get_template_directory_uri();?>/images/demo/img2-thumb.jpg">
-            </a>
-            </dt>
-            </dl>
-            <br style="clearfix: both">
-            <dl class="gallery-item">
-            <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img3.jpg">
-            <img class="attachment-thumbnail" width="150" height="150" alt="img3" src="<?php echo get_template_directory_uri();?>/images/demo/img3-thumb.jpg">
-            </a>
-            </dt>
-            </dl>
-            <dl class="gallery-item">
-            <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img4.jpg">
-            <img class="attachment-thumbnail" width="150" height="150" alt="img4" src="<?php echo get_template_directory_uri();?>/images/demo/img4-thumb.jpg">
-            </a>
-            </dt>
-            </dl>
-            <dl class="gallery-item">
-            <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img5.jpg">
-            <img class="attachment-thumbnail" width="150" height="150" alt="img5" src="<?php echo get_template_directory_uri();?>/images/demo/img5-thumb.jpg">
-            </a>
-            </dt>
-            </dl>
-            <dl class="gallery-item">
-            <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img6.jpg">
-            <img class="attachment-thumbnail" width="150" height="150" alt="img6" src="<?php echo get_template_directory_uri();?>/images/demo/img6-thumb.jpg">
-            </a>
-            </dt>
-            </dl>
-        </div>
+		<div id="gallery-1" class="gallery galleryid-445 gallery-columns-3 gallery-size-thumbnail"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="<?php echo get_template_directory_uri();?>/images/demo/img1-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img1-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img6-thumb"></a>
+			</dt></dl><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="<?php echo get_template_directory_uri();?>/images/demo/img2-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img2-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img5-thumb"></a>
+			</dt></dl><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="<?php echo get_template_directory_uri();?>/images/demo/img3-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img3-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img4-thumb"></a>
+			</dt></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="<?php echo get_template_directory_uri();?>/images/demo/img4-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img4-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img3-thumb"></a>
+			</dt></dl><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="<?php echo get_template_directory_uri();?>/images/demo/img5-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img5-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img2-thumb"></a>
+			</dt></dl><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="<?php echo get_template_directory_uri();?>/images/demo/img6-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img6-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img1-thumb"></a>
+			</dt></dl><br style="clear: both">
+		</div>
         <?php endif; ?>	
 		</div>        
         

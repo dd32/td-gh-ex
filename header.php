@@ -28,7 +28,7 @@ $home_template = $accesspresslite_settings['accesspresslite_home_template'];
 
 	<header id="masthead" class="site-header">
     <?php
-        if($home_template == 'template_two'){
+        if($home_template == 'template_two' || $home_template == ''){
             get_template_part('header/header-two');
          }
         else{

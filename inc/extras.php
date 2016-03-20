@@ -33,7 +33,7 @@ function accesspresslite_body_classes( $classes ) {
     global $accesspresslite_options;
     $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
      $home_template = $accesspresslite_settings['accesspresslite_home_template'];
-    if ($home_template == 'template_two') {
+    if ($home_template == 'template_two' || $home_template == '') {
 		$classes[] = 'body_template_two';
 	}
     if ($home_template == 'template_one') {
@@ -202,7 +202,7 @@ function accesspresslite_scripts() {
 	wp_enqueue_style( 'accesspresslite-woo-commerce-style', get_template_directory_uri() . '/css/woocommerce.css' );
 	wp_enqueue_style( 'accesspresslite-font-style', get_template_directory_uri() . '/css/fonts.css' );
 	wp_enqueue_style( 'accesspresslite-style', get_stylesheet_uri() );
-    if($layout_home == 'template_two'){
+    if($layout_home == 'template_two' || $layout_home == ''){
         wp_enqueue_style('accesspresslite-templatetwo-style',get_template_directory_uri().'/css/template-two.css');
         if ( $accesspresslite_settings[ 'responsive_design' ] == 0 ) {
             wp_enqueue_style('accesspresslite-templatetwo-responsive',get_template_directory_uri().'/css/responsive-template-two.css');
@@ -381,7 +381,7 @@ function accesspresslite_bxslidercb(){
 				<?php if($accesspresslite_settings['slider_speed']) {?>
 				speed:'<?php echo esc_attr($accesspresslite_settings['slider_speed']); ?>',
 				<?php } ?>
-                <?php if($home_template == 'template_two'){ ?>
+                <?php if($home_template == 'template_two'|| $home_template == ''){ ?>
                 nextSelector: '#slider-next',
                 prevSelector: '#slider-prev',
                 
@@ -427,7 +427,7 @@ function accesspresslite_bxslidercb(){
 					}
 				} ?>
 			    </div>
-                <?php if($home_template == 'template_two'){ ?>
+                <?php if($home_template == 'template_two' || $home_template == ''){ ?>
                 <span id="slider-prev"></span><span id="slider-next"></span>
                 <?php } ?>
         	<?php
@@ -477,7 +477,7 @@ function accesspresslite_bxslidercb(){
 				<?php if($accesspresslite_settings['slider_speed']) {?>
 				speed:'<?php echo esc_attr($accesspresslite_settings['slider_speed']); ?>',
 				<?php } ?>
-                <?php if($home_template == 'template_two'){ ?>
+                <?php if($home_template == 'template_two'|| $home_template == ''){ ?>
                 nextSelector: '#slider-next',
                 prevSelector: '#slider-prev',
                 <?php } ?>
@@ -509,7 +509,7 @@ function accesspresslite_bxslidercb(){
                 <?php  endif; ?>
 			</div>
 		</div>
-        <?php if($home_template == 'template_two'){ ?>
+        <?php if($home_template == 'template_two' || $home_template == ''){ ?>
                 <span id="slider-prev"></span><span id="slider-next"></span>
                 <?php } ?>
 	<?php
@@ -556,19 +556,30 @@ function accesspresslite_custom_css(){
 
 add_action('wp_head','accesspresslite_custom_css');
 
-function accesspresslite_call_to_action_cb(){
+function accesspresslite_call_to_action_cb()
+{
 	global $accesspresslite_options;
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-	if(!empty($accesspresslite_settings['action_text'])){
-	?>
-	<section id="call-to-action">
-	<div class="ak-container">
-		<h4><?php echo $accesspresslite_settings['action_text']; ?></h4>
-		<a class="action-btn" href="<?php echo esc_url($accesspresslite_settings['action_btn_link']); ?>"><?php echo esc_attr($accesspresslite_settings['action_btn_text']); ?></a>
-	</div>
-	</section>
-	<?php
-	}
+    $home_template = $accesspresslite_settings['accesspresslite_home_template'];
+    if($home_template == ''){
+        ?>
+    	<section id="call-to-action">
+    	<div class="ak-container">
+    		<h4>Check Our AccessPress Pro Theme - A premium version of AccessPres Lite</h4>
+    		<a class="action-btn" href="#">Check Now</a>
+    	</div>
+    	</section>
+<?php
+    }
+	if(!empty($accesspresslite_settings['action_text']))
+    { ?>
+    	<section id="call-to-action">
+    	<div class="ak-container">
+    		<h4><?php echo $accesspresslite_settings['action_text']; ?></h4>
+    		<a class="action-btn" href="<?php echo esc_url($accesspresslite_settings['action_btn_link']); ?>"><?php echo esc_attr($accesspresslite_settings['action_btn_text']); ?></a>
+    	</div>
+    	</section>
+<?php }
 }
 
 add_action('accesspresslite_call_to_action','accesspresslite_call_to_action_cb', 10);
@@ -632,6 +643,16 @@ function accesspresslite_register_required_plugins() {
             'name'      => 'Ultimate Form Builder Lite',
             'slug'      => 'ultimate-form-builder-lite',
             'required'  => false,
+        ),
+        array(
+            'name' =>'Accesspress Social Share',
+            'slug'=>'accesspress-social-share',
+            'required'=>false,
+        ),
+        array(
+            'name' =>'Accesspress Social Login Lite',
+            'slug'=>'accesspress-social-login-lite',
+            'required'=>false,
         )
     );
 

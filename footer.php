@@ -18,7 +18,7 @@
 		if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' )  || is_active_sidebar( 'footer-4' ) ) : ?>
 		<div id="top-footer">
 		<div class="ak-container"><?php
-        if($home_template == 'template_two'){
+        if($home_template == 'template_two' || $home_template == ''){
          if($footer_title){?>
                 <h1 class="footer_title_text"><?php echo esc_attr($footer_title); ?></h1>
         <?php }} ?>

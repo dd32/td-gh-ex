@@ -27,7 +27,7 @@ $menu_align = $accesspresslite_settings['menu_alignment'];?>
                 <div class="social_search_container">
                     <div class="search_right">
                         <?php
-                        if($accesspresslite_settings['show_search'] == 1){ ?>
+                        if($accesspresslite_settings['show_search'] == 1 || $accesspresslite_settings['show_search'] == ''){ ?>
             				<div class="ak-search">
             					<?php get_search_form(); ?>
                                 <i class="fa fa-search search_one"></i>

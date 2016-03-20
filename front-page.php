@@ -14,11 +14,12 @@ get_header(); ?>
 		if ( 'page' == get_option( 'show_on_front' ) ) {
 		    include( get_page_template() );
 		}
-        elseif($home_template == 'template_two'){
-            get_template_part( 'index', 'two' );
+        elseif($home_template == 'template_one'){
+            
+            get_template_part( 'index', 'one' );
         } 
         else {
-			get_template_part( 'index', 'one' ); 
+			get_template_part( 'index', 'two' );
 		}
 		
 		
