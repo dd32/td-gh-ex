@@ -558,7 +558,21 @@ $options[] = array(
             'std' => esc_attr__( 'Copyright  &#169; 2015 Theme by: ', 'promax' ) . '<a href="' . esc_url(__('http://www.insertcart.com/product/promax-wordpress-theme/','promax')) . '" title="' . esc_attr__( 'InsertCart.com', 'promax' ) . '">' . esc_attr__( 'InsertCart.com', 'promax' ) . '</a>',
              'type' => 'editor',
 			'settings' => $wp_editor_settings);
+$options[] = array(
+		'name' => __('Theme Support', 'promax'),
+		'type' => 'heading' );
 
+
+	$options[] = array(
+		 'desc' => '<h2>' . esc_attr__( 'Need support about theme go to Support forum', 'promax' ) . '</h2>' . esc_attr__( 'If you have any problem in using options then please read theme documentation first ', 'promax' ) . '<a href="' . esc_url(__('http://www.insertcart.com/promax-theme-setup-guide-and-documentation/','promax')) . '" target="_blank">' . esc_attr__( 'Theme Documentation', 'promax' ) . '</a>  ' . esc_attr__( 'Before you contact us via directly please use support forum also We recommend you to use some WordPress plugin like "Regenerate Thumbnails" WordPress SEO and W3tc to optimize and get great website experience.', 'promax' ) . '
+            <p><span class="buypre"><a href="' . esc_url(__('http://forum.insertcart.com','promax')) . '" target="_blank">' . esc_attr__( 'Support Forum', 'promax' ) . '</a></span></p></br>
+			<ol>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/making-post-by-importing-docx-file-content-into-post-images/','promax')) . '" target="_blank">' . esc_attr__( 'Making Post by Importing Docx File Content into Post Images', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/how-to-secure-website-made-these-changes-in-htaccess/','promax')) . '" target="_blank">' . esc_attr__( 'How to Secure Website? Made these changes in .htaccess', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/how-to-add-icon-navigation-menu/','promax')) . '" target="_blank">' . esc_attr__( 'How to Add Icon Navigation Menu', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/how-to-install-a-required-or-recommended-plugin/','promax')) . '" target="_blank">' . esc_attr__( 'How to Install a Required or Recommended Plugin', 'promax' ) . '</a></li>
+			</ol>',
+            'type' => 'info');		
 		
 		
 	return $options;

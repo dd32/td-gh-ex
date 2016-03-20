@@ -8,7 +8,15 @@
 					<div id="pagepost-<?php the_ID(); ?>" class="pagepost clearfix">					
 						<h1><?php the_title(); ?></h1>
 						<div id="metad"><span class="postmeta_box">
-		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
+		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link(
+		sprintf(
+			/* translators: %s: Name of current post */
+			esc_html__( 'Edit %s', 'promax' ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		),
+		'<span class="edit-link">',
+		'</span>'
+	); ?>
 	</span></div>							<div class="entry" class="clearfix">
 																
 								<?php the_content(); ?>

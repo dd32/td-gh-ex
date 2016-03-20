@@ -8,7 +8,15 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/Article">
 <h1 itemprop="headline"><?php the_title(); ?></h1>
 <div id="metad"><span class="postmeta_box">
-		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
+		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link(
+		sprintf(
+			/* translators: %s: Name of current post */
+			esc_html__( 'Edit %s', 'promax' ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		),
+		'<span class="edit-link">',
+		'</span>'
+	); ?>
 	</span></div>		<div class="entry clearfix">
 			<?php if ( of_get_option('promax_ad2') <> "" ) { echo stripslashes(of_get_option('promax_ad2')); } ?>
 			<?php the_content(); ?> 
