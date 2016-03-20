@@ -92,3 +92,7 @@ Verion 2.0.9
 
 Version 3.0.1
 * Fixed Some theme tranlation issues
+
+Version 3.0.2
+* Fixed issue of appearing shortcode tags in feature section in home page.
+* Fixed issue of appearing shortcode tags in service section in home page.

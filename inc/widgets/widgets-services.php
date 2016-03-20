@@ -112,7 +112,8 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
                         </h5>
                         </a>
                         <div class="services-post-excerpt">
-                            <?php echo wp_trim_words(get_the_content(),24); ?>
+                        	<?php $content = trim(strip_tags(strip_shortcodes( get_the_content() ))); ?>
+                            <?php echo wp_trim_words($content,24); ?>
                         </div>
                         <a class="services_readmore-button readmore-button" href="<?php the_permalink(); ?>">
                             <?php if(empty($services_readmore_text)) : ?>

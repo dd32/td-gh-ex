@@ -125,7 +125,8 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
                             <h2><?php echo get_the_title(); ?></h2>
                         </a>
                         <div class="feature-post-excerpt">
-                            <?php echo wp_trim_words(get_the_content(),35,'...'); ?>
+                            <?php $content = trim(strip_tags(strip_shortcodes( get_the_content() ))); ?>
+                            <?php echo wp_trim_words($content,35,'...'); ?>
                         </div>
                         <a class="feat_readmore-button readmore-button" href="<?php the_permalink(); ?>">
                             <?php if(empty($features_readmore_text)) : ?>

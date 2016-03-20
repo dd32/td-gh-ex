@@ -122,6 +122,16 @@
             'name'      => 'Newsletter',
             'slug'      => 'newsletter',
             'required'  => false,
+        ),
+        array(
+            'name'      => 'Ultimate Form Builder Lite',
+            'slug'      => 'ultimate-form-builder-lite',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'AccessPress Social Login Lite',
+            'slug'      => 'accesspress-social-login-lite',
+            'required'  => false,
         )
     );
 
