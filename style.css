@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.0.1
+Version: 2.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -646,11 +646,13 @@ boxed .#site-navigation > .store-menu > ul > li:last-child:hover ul:after {
 .ak-container:before,
 .promo-product1:before,
 .feature-cat-product-wrap:before,
-.clearfix:before,
+.clearfix:before, 
+.clear:before,
 .ak-container:after,
 .promo-product1:after,
 .feature-cat-product-wrap:after,
-.clearfix:after,
+.clearfix:after, 
+.clear:after,
 .ak-container:before,
 .entry-content:before,
 .entry-content:after,
@@ -665,7 +667,8 @@ boxed .#site-navigation > .store-menu > ul > li:last-child:hover ul:after {
     content: "";
     display: table;
 }
-.clearfix:after,
+.clearfix:after, 
+.clear:after,
 .ak-container:after,
 .promo-product1:after,
 .promo-product1:after,
@@ -1017,6 +1020,7 @@ body {
     content: "/";
     color: #AAA;
 }
+
 
 /*--------------------------------------------------
 HEADER TWO
@@ -2264,6 +2268,10 @@ widget css
     padding-left: 25px;
     list-style: none;
     margin: 0;
+}
+#secondary .widget_archive ul, #secondary .widget_categories ul, #secondary .widget_recent_entries ul, 
+#secondary .widget_meta ul, #secondary .widget_recent_comments ul {
+    padding-left: 0;
 }
 .widget_archive a,
 .widget_categories a,
@@ -5232,6 +5240,7 @@ span.onsale:after,
 }
 #top-footer .cta-banner {
     width: auto;
+    margin-left: 0;
 }
 #top-footer .cta-banner .text-5-value {
     color: #a0a0a0;
@@ -5533,8 +5542,10 @@ span.onsale:after,
     background: url("images/rply.png") no-repeat right !important;
 }
 #secondary.sidebar ul {
-    margin: 0px;
-    
+    margin: 0px;  
+}
+#secondary.sidebar ul.children {
+    margin-top: 5px;
 }
 #secondary.sidebar .product_list_widget{
     padding-top:10px;
@@ -5546,23 +5557,40 @@ span.onsale:after,
     display: none;
 }
 #secondary.sidebar ul li {
-    padding-left: 0px;
-    font-size: 15px;
-    list-style: none;
-    line-height: 40px;
-    color: #a8a7a7;
     border-bottom: 1px solid #f2f2f2;
-    white-space: nowrap;
+    color: #a8a7a7;
+    font-size: 15px;
+    line-height: 22px;
+    list-style: outside none none;
+    margin-bottom: 5px;
     overflow: hidden;
+    padding-bottom: 5px;
+    padding-left: 0;
     text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#secondary.sidebar ul li.menu-item-has-children {
+    border-bottom: medium none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+#secondary.sidebar ul li ul.children li:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 li.cat-parent {
     border-bottom: 1px solid transparent !important;
 }
+#secondary.sidebar ul li.menu-item-has-children .sub-menu {
+    border-top: 1px solid #eee;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding-top: 5px;
+}
 #secondary.sidebar ul li:hover>a,
 #secondary.sidebar ul li:hover {
     color: #e24545;
-    border-color: #e24545;
+    /*border-color: #e24545;*/
 }
 #secondary.sidebar ul li a span:hover {
     color: #e24545;
@@ -5677,7 +5705,7 @@ li.cat-parent {
     border-bottom: 1px solid #f2f2f2 !important;
 }
 .woocommerce .widget_products ul li:hover {
-    border-bottom: 1px solid #e24545 !important;
+    /*border-bottom: 1px solid #e24545 !important;*/
     cursor: pointer;
 }
 .woocommerce .widget_products ul li:first-child {
@@ -5982,6 +6010,16 @@ ul.products.list li.product:last-child {
     right: 5px;
     margin-top: -8px;
 }
+.woocommerce .star-rating span {
+    text-indent: 999px; 
+    left: 2px;
+}
+.woocommerce .star-rating span::before {
+    text-indent: -2px;
+}
+#secondary.sidebar .woocommerce ul li .star-rating span {
+    line-height: inherit !important;
+}   
 
 /*--Comment Form Css--*/
 
@@ -6209,6 +6247,7 @@ h3#order_review_heading {
 .error-404 {
     text-align: center;
     min-height: 400px;
+    margin-top: 60px;
 }
 .error-404 .page-header {
     border-left: 0;
@@ -6426,13 +6465,18 @@ ul.products.list li.product hr {
     position: relative;
     background-color: #F9F9F9;
 }
+.style_one .promo-image {
+    max-height: 400px;
+    overflow: hidden;
+}
 .style_one .caption {
-    position: absolute;
-    width: 50%;
     display: inline-block;
-    text-align: left;
-    top: 30px;
     left: 100px;
+    margin-top: -130px;
+    position: absolute;
+    text-align: left;
+    top: 50%;
+    width: 50%;
 }
 .style_one .widget-title {
     font-size: 44px;
@@ -6563,4 +6607,332 @@ ul.products.list li.product hr {
 #site-navigation > .store-menu > ul li:last-child:hover ul ul{
     left: auto;
     right: 100%
+}
+
+/*------------------------------------------
+AP WIDGET TITLE SECOND AYOUT
+-------------------------------------------*/
+.apwidget_title #ap-cta-video .widget_accesspress_cta_simple, .apwidget_title .top-footer-block .widget-title, 
+.apwidget_title #secondary.sidebar .widget-title {
+    overflow: visible;
+}
+.apwidget_title #ap-cta-video .widget_accesspress_cta_simple .cta-banner {
+    padding-right: 0;
+}
+.apwidget_title .title-bg, .apwidget_title #ap-cta-video .widget_accesspress_cta_simple, .apwidget_title .top-footer-block .widget-title {
+    background: none;
+    border-bottom: 1px solid #ddd;
+}
+.apwidget_title #ap-cta-video .widget_accesspress_cta_simple {
+    border-bottom-color: #444; 
+}
+.apwidget_title .search-results h2.entry-title, .apwidget_title .prod-title {
+    background: none;
+    padding-right: 0px;
+}
+.apwidget_title .prod-title::after {
+    border-bottom: 2px solid #cc444d;
+    border-top: none;
+    border-right: none;
+    width: 100%;
+    top: 2px;
+}
+#ap-cta-video .widget_accesspress_cta_simple .cta-banner .banner-btn:after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    border-bottom: 2px solid #cc444d;
+    width: 100%;
+    height: 100%;
+}
+.apwidget_title .new-prod-slide .slick-prev, .apwidget_title .new-prod-slide .slick-next,
+.widget_accesspress_store_product2 .feature-cat-product .slick-prev, .widget_accesspress_store_product2 .feature-cat-product .slick-next {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    border-radius: 100%;
+    height: 40px;
+    line-height: 78px;
+    margin-top: -40px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -70px;
+    top: 50%;
+    visibility: hidden;
+    width: 40px;
+}
+.widget_accesspress_store_product2 .feature-cat-product .slick-prev, .widget_accesspress_store_product2 .feature-cat-product .slick-next {
+    text-indent: 50px;
+}
+.apwidget_title .new-prod-slide .slick-prev, .widget_accesspress_store_product2 .feature-cat-product .slick-prev {
+    left: 0;
+}
+.apwidget_title .new-prod-slide .slick-next, .widget_accesspress_store_product2 .feature-cat-product .slick-next,
+.widget_accesspress_store_product2 .feature-cat-product.right_align .slick-next {
+    right: 0;
+    margin-left: 0;
+    left: inherit;
+}
+.apwidget_title .new-prod-slide .slick-prev::before, .widget_accesspress_store_product2 .feature-cat-product .slick-prev::before {
+    color: #fff;
+    content: "\f104";
+    font-family: fontawesome;
+    font-size: 3em;
+    margin-top: -40px;
+    position: absolute;
+    text-indent: 77px;
+    top: 50%;
+}
+.widget_accesspress_store_product2 .feature-cat-product .slick-prev::before {
+    text-indent: -50px;
+    right: 15px;
+}
+.apwidget_title .new-prod-slide .slick-next::before, .widget_accesspress_store_product2 .feature-cat-product .slick-next::before {
+    color: #fff;
+    content: "\f105";
+    font-family: fontawesome;
+    font-size: 3em;
+    margin-top: -40px;
+    position: absolute;
+    text-indent: 85px;
+    top: 50%;
+}
+.widget_accesspress_store_product2 .feature-cat-product .slick-next::before {
+    left: 31px;
+    text-indent: -50px;
+}
+.apwidget_title .new-prod-slide:hover .slick-prev, .apwidget_title .new-prod-slide:hover .slick-next,
+.widget_accesspress_store_product2 .feature-cat-product:hover .slick-prev, .widget_accesspress_store_product2 .feature-cat-product:hover .slick-next {
+    opacity: 1;
+    visibility: visible;
+}
+.apwidget_title .new-prod-slide .slick-prev:hover, .apwidget_title .new-prod-slide .slick-next:hover,
+.widget_accesspress_store_product2 .feature-cat-product .slick-prev:hover, 
+.widget_accesspress_store_product2 .feature-cat-product .slick-next:hover {
+    background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
+}
+.apwidget_title .widget, .apwidget_title #secondary.sidebar .woocommerce, .apwidget_title #comments .comment-list,
+.apwidget_title .woocommerce .cart-collaterals .cart_totals, .apwidget_title.woocommerce-page .cart-collaterals .cart_totals, 
+.apwidget_title.woocommerce-cart .cross-sells h2, .apwidget_title.woocommerce-cart .cart_totals h2, 
+.apwidget_title .checkout .woocommerce-billing-fields, .apwidget_title .checkout .woocommerce-billing-fields p, 
+.apwidget_title .checkout .woocommerce-shipping-fields, .apwidget_title .checkout .woocommerce-shipping-fields p {
+    position: relative;
+}
+.apwidget_title .top-footer-block .widget-title, .apwidget_title #secondary.sidebar .widget-title, .apwidget_title .comments-title, 
+.apwidget_title .comments-area .comment-respond h3.comment-reply-title,
+.apwidget_title.woocommerce-cart .cross-sells h2, .apwidget_title.woocommerce-cart .cart_totals h2 {
+    background: none;
+    border-bottom: 2px solid #cc444d;
+    display: inline-block; 
+}
+.apwidget_title .comments-area .comment-respond h3.comment-reply-title {
+    background: none !important;
+}
+.apwidget_title #secondary.sidebar .widget-title, .apwidget_title .comments-title,
+.apwidget_title .comments-area .comment-respond h3.comment-reply-title, 
+.apwidget_title.woocommerce-cart .cross-sells h2, .apwidget_title.woocommerce-cart .cart_totals h2 {
+    z-index: 1;
+}
+.apwidget_title .widget > ul:before, .apwidget_title .widget > div:before {
+    border-top: 1px solid #ddd;
+    top: 37px;
+    content: "";
+    /* height: 100%; */
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+.apwidget_title #secondary.sidebar .product_list_widget::before, .apwidget_title #secondary.sidebar .woocommerce > ul:before,
+.apwidget_title .comment-form::before, .apwidget_title .widget > p::before, .apwidget_title #secondary.sidebar .widget_price_filter::after {
+    border-top: 1px solid #ddd;
+    content: "";
+    /*height: 100%;*/
+    position: absolute;
+    top: 36px;
+    width: 100%;
+    left: 0;
+}
+.apwidget_title .top-footer-block .cta-banner {
+    margin-top: 0;
+}
+.apwidget_title .widget .bx-wrapper {
+    position: static;
+}
+.apwidget_title .comment-form::before {
+    top: 46px;
+}
+.apwidget_title .sidebar .widget > ul::before, .apwidget_title .sidebar .widget > div::before {
+    top: 36px;
+    z-index: inherit;
+}
+.apwidget_title .sidebar .widget.widget_aptf_slider_widget > div::before {
+    top: -6px;
+}
+.apwidget_title .comment-list:before {
+    border-top: 1px solid #ddd;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: -29px;
+    width: 100%;
+}
+.apwidget_title .widget.widget_accesspress_storemo > div::before,
+.widget.widget_accesspress_store_icon_text > div:before,
+.apwidget_title section .widget > ul:before, .apwidget_title section .widget > div:before {
+    display: none;
+}
+.apwidget_title #secondary.sidebar .widget_accesspress_storemo .widget-title {
+    border-bottom: none;
+}
+.apwidget_title #secondary.sidebar .promo-desc {
+    font-size: 25px;
+}
+.widget.widget_accesspress_storemo .btn.promo-link-btn {
+    background: #e24545 none repeat scroll 0 0;
+    border: 2px solid #e24545;
+    color: #fff;
+    display: inline-block;
+    font-weight: 300;
+    margin-top: 20px;
+    padding: 10px 25px;
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+}
+.apwidget_title .widget_search, .apwidget_title.woocommerce-cart .cross-sells h2, .apwidget_title.woocommerce-cart .cart_totals h2 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.apwidget_title .widget_search .searchform::before, .apwidget_title .woocommerce .cart-collaterals .cart_totals::before, 
+.apwidget_title.woocommerce-page .cart-collaterals .cart_totals::before,
+.apwidget_title .checkout .woocommerce-billing-fields::before, .apwidget_title .checkout .woocommerce-shipping-fields:before {
+    border-top: 1px solid #ddd;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 51px;
+    width: 100%;
+}
+.apwidget_title .woocommerce .cart-collaterals .cart_totals::before, .apwidget_title.woocommerce-page .cart-collaterals .cart_totals::before, 
+.apwidget_title .checkout .woocommerce-billing-fields::before, .apwidget_title .checkout .woocommerce-shipping-fields:before {
+    top: 41px;
+}
+.apwidget_title .widget_search .searchform {
+    border: 5px solid #ddd;
+    margin-top: 10px;
+    position: static;
+}
+.apwidget_title .widget_search button {
+    color: #999;
+    display: inline-block;
+    font-size: 20px;
+    height: 40px;
+    margin-top: 0;
+    padding: 0 5px;
+    position: static;
+    vertical-align: middle;
+    width: 9%;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+}
+.apwidget_title .widget_search button:hover {
+    color: #e24545;
+}
+.apwidget_title .widget_search input {
+    border: medium none;
+    border-radius: 0;
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+}
+.apwidget_title .widget.widget_text.elp-widget input {
+    border-color: #ddd;
+    border-radius: 0;
+    width: 100%;
+}
+.apwidget_title .widget.widget_text.elp-widget input[type="button"] {
+    background: #e24545 none repeat scroll 0 0;
+    border: 2px solid #e24545;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 300;
+    padding: 0 20px;
+    text-transform: uppercase;
+    transition: background 0.3s ease 0s;
+    -webkit-transition: background 0.3s ease 0s;
+    width: auto;
+    font-size: 13px;
+    line-height: 35px;
+    margin-left: 0;
+    overflow: hidden;
+}
+.apwidget_title .widget.widget_text.elp-widget input[type="button"]:hover {
+    background: #ffffff none repeat scroll 0 0;
+    border-color: #e24545;
+    color: #e24545;
+}
+.apwidget_title .checkout .woocommerce-billing-fields h3, .apwidget_title .checkout .woocommerce-shipping-fields h3 {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border-bottom: 2px solid #cc444d;
+    display: table;
+    padding-left: 0;
+    position: relative;
+    width: auto;
+    z-index: 1;
+}
+.apwidget_title .checkout.woocommerce-checkout > h3#order_review_heading::before {
+    border-bottom: 2px solid #cc444d;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 1px;
+    width: 100px;
+}
+.apwidget_title .checkout.woocommerce-checkout > h3#order_review_heading {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border-bottom: 1px solid #ddd;
+    padding-left: 0;
+    position: relative;
+}
+.woocommerce .wishlist-title h2 {
+    font-size: 16px; 
+}
+
+.apwidget_title .top-footer-block .widget-title {
+    z-index: 1;
+}
+.apwidget_title .top-footer-block .widget > ul::before, .apwidget_title .top-footer-block .widget > div::before {
+    z-index: inherit;
+}
+.apwidget_title .widget_aptf_slider_widget .bx-wrapper {
+    position: static;
+}
+#secondary .widget_accesspress_cta_simple .cta-banner {
+    float: none;
+    margin-left: 0;
+    width: 100%;
+}
+.apwidget_title .sidebar .widget_aptf_widget .aptf-single-tweet-wrapper {
+    border-bottom: 1px dashed #ddd;
+    float: none;
+    padding-bottom: 20px;
+}
+.apwidget_title .sidebar .widget_aptf_widget .aptf-single-tweet-wrapper:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.apwidget_title .sidebar .widget_aptf_widget .aptf-single-tweet-wrapper:before, 
+.apwidget_title .sidebar .widget_aptf_widget .aptf-single-tweet-wrapper:after {
+    display: table;
+    content: "";
+    clear: both;
 }

@@ -48,6 +48,12 @@ Images
 
 == Changelog ==
 
+= 2.0.5 =
+
+** Add the options to change widget header layout.
+** Fixed the some responsive issue
+** Generate the new .po file
+
 = 2.0.1 =
 
 ** New header layout added.

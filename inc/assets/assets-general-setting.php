@@ -1,6 +1,26 @@
 <?php
 function accesspress_ticker_setting($wp_customize){
   
+  $wp_customize->add_section( 'accesspress_widget_header_layout', array(
+      'title'           =>      __('Widget Title Layout Settings', 'accesspress-store'),
+      'priority'        =>      '3',
+  ));
+
+  $wp_customize->add_setting( 'accesspress_widget_layout_type', array(
+      'default'       =>      'title_style_one',
+      'sanitize_callback' => 'accesspress_store_radio_sanitize_widget_layout'
+  ));
+                          
+  $wp_customize->add_control( 'accesspress_widget_layout_type', array(
+      'section'       =>      'accesspress_widget_header_layout',
+      'label'         =>      __('Widget Title Layout Type', 'accesspress-store'),
+      'description'   =>  __('Theme have two different widget title layout select layout as you want', 'accesspress-store'),
+      'type'          =>      'radio',
+      'choices'       =>      array( 
+        'title_style_one' => __('Widget Title Style One', 'accesspress-store'),
+        'title_style_two' => __('Widget Title Style Two', 'accesspress-store') 
+  )));
+
   $wp_customize->add_section( 'accesspress_header_layout', array(
       'title'           =>      __('Header Layout Settings', 'accesspress-store'),
       'priority'        =>      '3',

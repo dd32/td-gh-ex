@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessPress Store\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Nov 04 2015 12:08:12 GMT+0545 (Nepal Standard Time)\n"
-"POT-Revision-Date: Wed Nov 04 2015 12:08:44 GMT+0545 (Nepal Standard Time)\n"
+"POT-Creation-Date: Sun Mar 20 2016 16:40:28 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Sun Mar 20 2016 16:40:32 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -42,39 +42,40 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:35 ../comments.php:56
+#: ../comments.php:35 ../comments.php:57
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:38 ../comments.php:59
+#: ../comments.php:38 ../comments.php:60
 msgid "Older Comments"
 msgstr ""
 
-#: ../comments.php:39 ../comments.php:60
+#: ../comments.php:39 ../comments.php:61
 msgid "Newer Comments"
 msgstr ""
 
-#: ../comments.php:72
+#: ../comments.php:73
 msgid "Comments are closed."
 msgstr ""
 
-#: ../content-blog.php:69 ../content.php:20
+#: ../content-blog.php:64 ../content.php:20 ../template-blog.php:99
 msgid "Posted On"
 msgstr ""
 
-#: ../content-blog.php:71 ../content.php:22
+#: ../content-blog.php:66 ../content.php:22 ../template-blog.php:101
 msgid "at"
 msgstr ""
 
-#: ../content-blog.php:73 ../content.php:24
+#: ../content-blog.php:68 ../content.php:24 ../template-blog.php:103
 msgid "by"
 msgstr ""
 
-#: ../content-blog.php:91 ../content.php:38
+#: ../content-blog.php:86 ../content.php:38 ../template-blog.php:121
 msgid "Read More"
 msgstr ""
 
-#: ../content-blog.php:96 ../content-page.php:25 ../content-single.php:23
+#: ../content-blog.php:91 ../content-page.php:25 ../content-single.php:23 ..
+#: /template-blog.php:126
 msgid "Pages:"
 msgstr ""
 
@@ -145,57 +146,37 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:200 ../functions.php:201
+#: ../functions.php:192 ../functions.php:193
 msgid "More Themes"
 msgstr ""
 
-#: ../functions.php:217
+#: ../functions.php:209
 #, php-format
 msgid "More Themes from <a href=\"%s\" target=\"_blank\">AccessPress Themes</a>"
 msgstr ""
 
-#: ../functions.php:245 ../inc/accesspress-plugin-activation.php:2215
+#: ../functions.php:237 ../inc/accesspress-plugin-activation.php:2215
 msgid "Active"
 msgstr ""
 
-#: ../functions.php:247
+#: ../functions.php:239
 msgid "Customize"
 msgstr ""
 
-#: ../functions.php:282
+#: ../functions.php:274
 msgid "Already installed"
 msgstr ""
 
-#: ../functions.php:285 ../inc/accesspress-plugin-activation.php:2612
+#: ../functions.php:277 ../inc/accesspress-plugin-activation.php:2612
 msgid "Activate"
 msgstr ""
 
-#: ../functions.php:294
+#: ../functions.php:286
 msgid "Install Now"
 msgstr ""
 
-#: ../functions.php:297
+#: ../functions.php:289
 msgid "Live Preview"
-msgstr ""
-
-#: ../header.php:34
-msgid "Welcome"
-msgstr ""
-
-#: ../header.php:40
-msgid "!"
-msgstr ""
-
-#: ../header.php:84
-msgid " LogOut"
-msgstr ""
-
-#: ../header.php:90
-msgid "LogIn"
-msgstr ""
-
-#: ../header.php:127
-msgid "Menu"
 msgstr ""
 
 #: ../search.php:15
@@ -208,7 +189,31 @@ msgid "Search products"
 msgstr ""
 
 #. Name of the template
+msgid "Blog Page Template"
+msgstr ""
+
+#. Name of the template
 msgid "HomePage"
+msgstr ""
+
+#: ../header/header-one.php:15 ../header/header-two.php:15
+msgid "Welcome"
+msgstr ""
+
+#: ../header/header-one.php:21 ../header/header-two.php:21
+msgid "!"
+msgstr ""
+
+#: ../header/header-one.php:62 ../header/header-two.php:66
+msgid " Logout"
+msgstr ""
+
+#: ../header/header-one.php:68 ../header/header-two.php:72
+msgid "Login"
+msgstr ""
+
+#: ../header/header-one.php:104 ../header/header-two.php:108
+msgid "Menu"
 msgstr ""
 
 #: ../inc/accesspress-function.php:10
@@ -271,82 +276,82 @@ msgstr ""
 msgid "Footer Area 4"
 msgstr ""
 
-#: ../inc/accesspress-function.php:358
+#: ../inc/accesspress-function.php:374
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../inc/accesspress-function.php:359
+#: ../inc/accesspress-function.php:375
 msgid "Start shopping"
 msgstr ""
 
-#: ../inc/accesspress-function.php:363
+#: ../inc/accesspress-function.php:379
 #, php-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:489
+#: ../inc/accesspress-function.php:499
 msgctxt "breadcrumb"
 msgid "Home"
 msgstr ""
 
-#: ../inc/accesspress-function.php:508
+#: ../inc/accesspress-function.php:518
 msgid "Home"
 msgstr ""
 
-#: ../inc/accesspress-function.php:527
+#: ../inc/accesspress-function.php:537
 msgid "Archive by category"
 msgstr ""
 
-#: ../inc/accesspress-function.php:529
+#: ../inc/accesspress-function.php:539
 msgid "Search results for"
 msgstr ""
 
-#: ../inc/accesspress-function.php:587
+#: ../inc/accesspress-function.php:597
 msgid "Posts tagged"
 msgstr ""
 
-#: ../inc/accesspress-function.php:591
+#: ../inc/accesspress-function.php:601
 msgid "Articles posted by "
 msgstr ""
 
-#: ../inc/accesspress-function.php:599
+#: ../inc/accesspress-function.php:609
 msgid "Page"
 msgstr ""
 
-#: ../inc/accesspress-function.php:773 ../inc/accesspress-plugin-activation.php:333
+#: ../inc/accesspress-function.php:800 ../inc/accesspress-plugin-activation.php:333
 msgid "Install Required Plugins"
 msgstr ""
 
-#: ../inc/accesspress-function.php:774 ../inc/accesspress-plugin-activation.php:334
+#: ../inc/accesspress-function.php:801 ../inc/accesspress-plugin-activation.php:334
 msgid "Install Plugins"
 msgstr ""
 
-#: ../inc/accesspress-function.php:775 ../inc/accesspress-plugin-activation.php:335
+#: ../inc/accesspress-function.php:802 ../inc/accesspress-plugin-activation.php:335
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: ../inc/accesspress-function.php:776 ../inc/accesspress-plugin-activation.php:336
+#: ../inc/accesspress-function.php:803 ../inc/accesspress-plugin-activation.php:336
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: ../inc/accesspress-function.php:777 ../inc/accesspress-plugin-activation.php:337
+#: ../inc/accesspress-function.php:804 ../inc/accesspress-plugin-activation.php:337
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:780 ../inc/accesspress-plugin-activation.php:342
+#: ../inc/accesspress-function.php:807 ../inc/accesspress-plugin-activation.php:342
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:783 ../inc/accesspress-plugin-activation.php:347
+#: ../inc/accesspress-function.php:810 ../inc/accesspress-plugin-activation.php:347
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %1$s "
@@ -357,7 +362,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:786 ../inc/accesspress-plugin-activation.php:352
+#: ../inc/accesspress-function.php:813 ../inc/accesspress-plugin-activation.php:352
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -368,14 +373,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:789 ../inc/accesspress-plugin-activation.php:357
+#: ../inc/accesspress-function.php:816 ../inc/accesspress-plugin-activation.php:357
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:792 ../inc/accesspress-plugin-activation.php:362
+#: ../inc/accesspress-function.php:819 ../inc/accesspress-plugin-activation.php:362
 #, php-format
 msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
 msgid_plural ""
@@ -384,21 +389,21 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:795 ../inc/accesspress-plugin-activation.php:367
+#: ../inc/accesspress-function.php:822 ../inc/accesspress-plugin-activation.php:367
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:798 ../inc/accesspress-plugin-activation.php:372
+#: ../inc/accesspress-function.php:825 ../inc/accesspress-plugin-activation.php:372
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:801 ../inc/accesspress-plugin-activation.php:377
+#: ../inc/accesspress-function.php:828 ../inc/accesspress-plugin-activation.php:377
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %1$s "
@@ -409,58 +414,58 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:804 ../inc/accesspress-plugin-activation.php:382
+#: ../inc/accesspress-function.php:831 ../inc/accesspress-plugin-activation.php:382
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:807 ../inc/accesspress-plugin-activation.php:387
+#: ../inc/accesspress-function.php:834 ../inc/accesspress-plugin-activation.php:387
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:810 ../inc/accesspress-plugin-activation.php:392
+#: ../inc/accesspress-function.php:837 ../inc/accesspress-plugin-activation.php:392
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:813 ../inc/accesspress-plugin-activation.php:397
+#: ../inc/accesspress-function.php:840 ../inc/accesspress-plugin-activation.php:397
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: ../inc/accesspress-function.php:814 ../inc/accesspress-plugin-activation.php:
+#: ../inc/accesspress-function.php:841 ../inc/accesspress-plugin-activation.php:
 #: 399 ../inc/accesspress-plugin-activation.php:3029
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: ../inc/accesspress-function.php:815 ../inc/accesspress-plugin-activation.php:
+#: ../inc/accesspress-function.php:842 ../inc/accesspress-plugin-activation.php:
 #: 400 ../inc/accesspress-plugin-activation.php:2832
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:816 ../inc/accesspress-plugin-activation.php:401
+#: ../inc/accesspress-function.php:843 ../inc/accesspress-plugin-activation.php:401
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: ../inc/accesspress-function.php:817 ../inc/accesspress-plugin-activation.php:402
+#: ../inc/accesspress-function.php:844 ../inc/accesspress-plugin-activation.php:402
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
 
-#: ../inc/accesspress-function.php:818 ../inc/accesspress-plugin-activation.php:403
+#: ../inc/accesspress-function.php:845 ../inc/accesspress-plugin-activation.php:403
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: ../inc/accesspress-function.php:819 ../inc/accesspress-plugin-activation.php:405
+#: ../inc/accesspress-function.php:846 ../inc/accesspress-plugin-activation.php:405
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
@@ -766,7 +771,7 @@ msgstr ""
 msgid "Boxed"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:8 ../inc/assets/assets-general-setting.php:237
+#: ../inc/accesspress-sanitizer.php:8 ../inc/assets/assets-general-setting.php:196
 msgid "Full Width"
 msgstr ""
 
@@ -796,39 +801,55 @@ msgstr ""
 msgid "Blog Full Content"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:42 ../inc/assets/assets-general-setting.php:149
+#: ../inc/accesspress-sanitizer.php:42 ../inc/assets/assets-general-setting.php:151
 msgid "Color"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:43 ../inc/assets/assets-general-setting.php:150
+#: ../inc/accesspress-sanitizer.php:43 ../inc/assets/assets-general-setting.php:152
 msgid "Image"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:44 ../inc/assets/assets-general-setting.php:151
+#: ../inc/accesspress-sanitizer.php:44 ../inc/assets/assets-general-setting.php:153
 msgid "Pattern"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:87 ../inc/assets/assets-slider-setting.php:102
+#: ../inc/accesspress-sanitizer.php:87 ../inc/assets/assets-slider-setting.php:78
 msgid "Fade"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:88 ../inc/assets/assets-slider-setting.php:103
+#: ../inc/accesspress-sanitizer.php:88 ../inc/assets/assets-slider-setting.php:79
 msgid "Slide"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:100 ../inc/class/class-custom-switch.php:18
+#: ../inc/accesspress-sanitizer.php:99 ../inc/assets/assets-general-setting.php:40
+msgid "Header Style One"
+msgstr ""
+
+#: ../inc/accesspress-sanitizer.php:100 ../inc/assets/assets-general-setting.php:41
+msgid "Header Style Two"
+msgstr ""
+
+#: ../inc/accesspress-sanitizer.php:111 ../inc/assets/assets-general-setting.php:20
+msgid "Widget Title Style One"
+msgstr ""
+
+#: ../inc/accesspress-sanitizer.php:112 ../inc/assets/assets-general-setting.php:21
+msgid "Widget Title Style Two"
+msgstr ""
+
+#: ../inc/accesspress-sanitizer.php:124 ../inc/class/class-custom-switch.php:18
 msgid "Enable"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:101 ../inc/class/class-custom-switch.php:19
+#: ../inc/accesspress-sanitizer.php:125 ../inc/class/class-custom-switch.php:19
 msgid "Disable"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:112 ../inc/class/class-custom-switch.php:37
+#: ../inc/accesspress-sanitizer.php:136 ../inc/class/class-custom-switch.php:37
 msgid "Yes"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:113 ../inc/class/class-custom-switch.php:38
+#: ../inc/accesspress-sanitizer.php:137 ../inc/class/class-custom-switch.php:38
 msgid "No"
 msgstr ""
 
@@ -856,7 +877,7 @@ msgstr ""
 msgid "here"
 msgstr ""
 
-#: ../inc/extras.php:52
+#: ../inc/extras.php:58
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -1031,111 +1052,115 @@ msgstr ""
 msgid "Blog Layout"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:9
-msgid "General Setting"
-msgstr ""
-
-#: ../inc/assets/assets-general-setting.php:10
-msgid "This allows to edit the header"
+#: ../inc/assets/assets-general-setting.php:5
+msgid "Widget Title Layout Settings"
 msgstr ""
 
 #: ../inc/assets/assets-general-setting.php:16
-msgid "Ticker Setting"
+msgid "Widget Title Layout Type"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:33
-msgid "Enable Disable Ticker"
+#: ../inc/assets/assets-general-setting.php:17
+msgid "Theme have two different widget title layout select layout as you want"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:25
+msgid "Header Layout Settings"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:36
+msgid "Header Layout Type"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:37
+msgid "Theme have two different heder layout select you header layout as you want"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:48
+msgid "General Setting"
 msgstr ""
 
 #: ../inc/assets/assets-general-setting.php:49
+msgid "This allows to edit the header"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:53
+msgid "Ticker Setting"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:65
+msgid "Enable Disable Ticker"
+msgstr ""
+
+#: ../inc/assets/assets-general-setting.php:77
 msgid "Ticker Title"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:64
+#: ../inc/assets/assets-general-setting.php:88
 msgid "Ticker Text 1"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:82
+#: ../inc/assets/assets-general-setting.php:99
 msgid "Ticker Text2"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:98
+#: ../inc/assets/assets-general-setting.php:110
 msgid "Ticker Text3"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:115
+#: ../inc/assets/assets-general-setting.php:121
 msgid "Ticker Text4"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:122
+#: ../inc/assets/assets-general-setting.php:128
 msgid "Header Logo"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:129
+#: ../inc/assets/assets-general-setting.php:134
 msgid "Background"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:144
+#: ../inc/assets/assets-general-setting.php:146
 msgid "Select the Background type"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:145
+#: ../inc/assets/assets-general-setting.php:147
 msgid "Select the Background type for your website"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:171
+#: ../inc/assets/assets-general-setting.php:165
 msgid "Background Pattern"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:187
-msgid "Favicon Image"
-msgstr ""
-
-#: ../inc/assets/assets-general-setting.php:205
-msgid "Upload Favicon"
-msgstr ""
-
-#: ../inc/assets/assets-general-setting.php:206
-msgid "Standard Size of Favicon is 40x40px"
-msgstr ""
-
-#: ../inc/assets/assets-general-setting.php:213
+#: ../inc/assets/assets-general-setting.php:178
 msgid "Layout Setting"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:231
+#: ../inc/assets/assets-general-setting.php:190
 msgid "Website Layout"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:232
+#: ../inc/assets/assets-general-setting.php:191
 msgid "Make your website either box layout or full width from click away"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:236
+#: ../inc/assets/assets-general-setting.php:195
 msgid "Boxed Layout"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:244
-msgid "Responsive Setting"
-msgstr ""
-
-#: ../inc/assets/assets-general-setting.php:263
-msgid "Enable or Disable Responsive Design"
-msgstr ""
-
-#: ../inc/assets/assets-general-setting.php:271
+#: ../inc/assets/assets-general-setting.php:203
 msgid "Custom CSS Section"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:283
+#: ../inc/assets/assets-general-setting.php:215
 msgid "Custom CSS"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:292
+#: ../inc/assets/assets-general-setting.php:224
 msgid "Footer Copyright"
 msgstr ""
 
-#: ../inc/assets/assets-general-setting.php:304
+#: ../inc/assets/assets-general-setting.php:236
 msgid "Copyright Text"
 msgstr ""
 
@@ -1375,175 +1400,175 @@ msgstr ""
 msgid "Buy Now"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:9
+#: ../inc/assets/assets-slider-setting.php:8
 msgid "Slider Setting"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:10
+#: ../inc/assets/assets-slider-setting.php:9
 msgid "This allows to edit the Slider"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:17
+#: ../inc/assets/assets-slider-setting.php:13
 msgid "Basic Slider Settings"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:34
+#: ../inc/assets/assets-slider-setting.php:25
 msgid "Show Slider"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:51
+#: ../inc/assets/assets-slider-setting.php:37
 msgid "Show Pager"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:68
+#: ../inc/assets/assets-slider-setting.php:49
 msgid "Show Controls"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:85
+#: ../inc/assets/assets-slider-setting.php:61
 msgid "Auto Transition"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:99
+#: ../inc/assets/assets-slider-setting.php:75
 msgid "Slider Transitions (Slide/Fade)"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:118
+#: ../inc/assets/assets-slider-setting.php:89
 msgid "Slider Speed"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:133
+#: ../inc/assets/assets-slider-setting.php:100
 msgid "Slider Pause"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:151
+#: ../inc/assets/assets-slider-setting.php:111
 msgid "Show Caption"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:162
+#: ../inc/assets/assets-slider-setting.php:117
 msgid "Slider 1"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:171
+#: ../inc/assets/assets-slider-setting.php:123
 msgid "Slider 2"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:181
+#: ../inc/assets/assets-slider-setting.php:129
 msgid "Slider 3"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:191
+#: ../inc/assets/assets-slider-setting.php:135
 msgid "Slider 4"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:200
+#: ../inc/assets/assets-slider-setting.php:141
 msgid "Slider 5"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:209
+#: ../inc/assets/assets-slider-setting.php:149
 msgid "Select Slider Post"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:220
+#: ../inc/assets/assets-slider-setting.php:161
 msgid "Select Post For Slider One"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:238
+#: ../inc/assets/assets-slider-setting.php:176
 msgid "Slider 1 Button Link"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:253
+#: ../inc/assets/assets-slider-setting.php:188
 msgid "Slider 1 Button Text"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:264
+#: ../inc/assets/assets-slider-setting.php:199
 msgid "Select Post For Slider Two"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:281
+#: ../inc/assets/assets-slider-setting.php:213
 msgid "Slider 2 Button Link"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:296
+#: ../inc/assets/assets-slider-setting.php:225
 msgid "Slider 2 Button Text"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:308
+#: ../inc/assets/assets-slider-setting.php:236
 msgid "Select Post For Slider Three"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:325
+#: ../inc/assets/assets-slider-setting.php:250
 msgid "Slider 3 Button Link"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:340
+#: ../inc/assets/assets-slider-setting.php:262
 msgid "Slider 3 Button Text"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:352
+#: ../inc/assets/assets-slider-setting.php:274
 msgid "Select Post For Slider Four"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:369
+#: ../inc/assets/assets-slider-setting.php:288
 msgid "Slider 4 Button Link"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:384
+#: ../inc/assets/assets-slider-setting.php:300
 msgid "Slider 4 Button Text"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:395
+#: ../inc/assets/assets-slider-setting.php:311
 msgid "Select Post For Slider Five"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:412
+#: ../inc/assets/assets-slider-setting.php:325
 msgid "Slider 5 Button Link"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:427
+#: ../inc/assets/assets-slider-setting.php:337
 msgid "Slider 5 Button Text"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:436
+#: ../inc/assets/assets-slider-setting.php:345
 msgid "Breadcrumb Setting"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:437
+#: ../inc/assets/assets-slider-setting.php:346
 msgid "This allows to upload breadcrumb background image"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:442
+#: ../inc/assets/assets-slider-setting.php:350
 msgid "WooCommerce Archive Page"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:456 ../inc/assets/assets-slider-
-#: setting.php:493 ../inc/assets/assets-slider-setting.php:530 ..
-#: /inc/assets/assets-slider-setting.php:567
+#: ../inc/assets/assets-slider-setting.php:362 ../inc/assets/assets-slider-
+#: setting.php:393 ../inc/assets/assets-slider-setting.php:424 ..
+#: /inc/assets/assets-slider-setting.php:455
 msgid "Enable/Disable Breadcrumb"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:471 ../inc/assets/assets-slider-
-#: setting.php:508 ../inc/assets/assets-slider-setting.php:545 ..
-#: /inc/assets/assets-slider-setting.php:582
+#: ../inc/assets/assets-slider-setting.php:375 ../inc/assets/assets-slider-
+#: setting.php:406 ../inc/assets/assets-slider-setting.php:437 ..
+#: /inc/assets/assets-slider-setting.php:468
 msgid "Upload Background Image"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:473 ../inc/assets/assets-slider-
-#: setting.php:510 ../inc/assets/assets-slider-setting.php:547 ..
-#: /inc/assets/assets-slider-setting.php:584
+#: ../inc/assets/assets-slider-setting.php:377 ../inc/assets/assets-slider-
+#: setting.php:408 ../inc/assets/assets-slider-setting.php:439 ..
+#: /inc/assets/assets-slider-setting.php:470
 msgid ""
 "Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 "
 "&times; 156 Pixels."
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:479
+#: ../inc/assets/assets-slider-setting.php:381
 msgid "WooCommerce Single Product Page"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:516
+#: ../inc/assets/assets-slider-setting.php:412
 msgid "Breadcrumb Page Options"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:553
+#: ../inc/assets/assets-slider-setting.php:443
 msgid "Breadcrumb Post Options"
 msgstr ""
 
@@ -1847,7 +1872,7 @@ msgid "New!"
 msgstr ""
 
 #: ../inc/widgets/widget-product1.php:211 ../woocommerce/content-feat-product.php:
-#: 83 ../woocommerce/content-product.php:61
+#: 83 ../woocommerce/content-product.php:68
 msgid "Wishlist"
 msgstr ""
 

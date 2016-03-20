@@ -104,6 +104,18 @@
       } else {
          return '';
       }
+   } 
+
+   function accesspress_store_radio_sanitize_widget_layout($input) {
+      $valid_keys = array(
+        'title_style_one' => __('Widget Title Style One', 'accesspress-store'),
+        'title_style_two' => __('Widget Title Style Two', 'accesspress-store')  
+      );
+      if ( array_key_exists( $input, $valid_keys ) ) {
+         return $input;
+      } else {
+         return '';
+      }
    }   
    
    
