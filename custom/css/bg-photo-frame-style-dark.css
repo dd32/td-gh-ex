@@ -151,7 +151,7 @@ body {
   background: rgba(0, 0, 0, 0.75) !important; }
 
 #bg-photo-frame-thumb-thumbs a {
-  border-color: #FFF; }
+  border-color: #000 !important; }
 
 #bg-photo-frame-thumb-thumbs a:hover, #bg-photo-frame-thumb-thumbs a:focus {
-  border-color: #000; }
+  border-color: #FFF !important; }
