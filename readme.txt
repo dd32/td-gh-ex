@@ -52,6 +52,9 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.4.3
+1. Update Style.css
+2. Add Default.css File.
 @Version 1.6.4.2
 1.  Adding full width page template
 2.  Remove page title and meta from page.php and fullwidth.php

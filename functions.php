@@ -120,7 +120,8 @@ function webriti_scripts()
 {	
 	$current_options = get_option('wallstreet_pro_options');
 	wp_enqueue_style('wallstreet-style', get_stylesheet_uri() );
-	wp_enqueue_style('wallstreet-bootstrap', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');	
+	wp_enqueue_style('bootstrap', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');
+	wp_enqueue_style('wallstreet-default',WEBRITI_TEMPLATE_DIR_URI.'/css/default.css');	
 	wp_enqueue_style('wallstreet-theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');
 	wp_enqueue_style('wallstreet-media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');	
 	wp_enqueue_style('wallstreet-font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome/css/font-awesome.min.css');
