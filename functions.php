@@ -5197,7 +5197,17 @@ if ( !function_exists( 'raindrops_is_fluid' ) ) {
 				.rd-pw-doc5.rd-col-1 .yui-t4 #container > .first {
 					margin:0;
 				}
-				.rd-pw-doc5.rd-col-1 .topsidebar,
+				.rd-pw-doc5.rd-col-1 .topsidebar > ul > .widget_calendar #calendar_wrap,
+				.rd-pw-doc5.rd-col-1 .topsidebar > ul > .raindrops-pinup-entries .page,
+				.rd-pw-doc5.rd-col-1 .topsidebar > ul > .raindrops-pinup-entries .post,
+				.rd-pw-doc5.rd-col-1 .topsidebar > ul > .raindrops-extend-archive .eco-archive,
+				.rd-pw-doc5.rd-col-1 .topsidebar > ul > .widget_categories ul,
+				.rd-pw-doc5.rd-col-1 .topsidebar > ul > .widget_nav_menu > div,
+				.rd-pw-doc5.rd-col-1 .topsidebar > ul > .widget_tag_cloud .tagcloud,
+				.rd-pw-doc5.rd-col-1 .topsidebar > ul > .widget_text .textwidget,
+				.rd-pw-doc5.rd-col-1 .topsidebar > ul > .widget_search #searchform,
+				.rd-pw-doc5.rd-col-1 .topsidebar > ul > li > .widgettitle,
+				.rd-pw-doc5.rd-col-1 .topsidebar > ul > li > ul,
 				.rd-pw-doc5.rd-col-1 .rd-tpl-image,
 				.rd-pw-doc5.rd-col-1 .breadcrumbs,
 				.rd-pw-doc5.rd-col-1 .wp-pagenavi,
@@ -8985,6 +8995,14 @@ if ( !function_exists( 'raindrops_oembed_filter' ) ) {
 		if ( preg_match( '!(speakerdeck.com|speakerd)!', $url ) ) {
 			return sprintf( '<%2$s class="rd-ratio-075 rd-speakerdeck clearfix"><div>%1$s</div></%2$s>', $html, $element );
 		}
+		/*
+		 * https://www.slideshare.net/slideshow/embed_code/7306301
+		 */		
+		if ( preg_match( '!(slideshare.net)!', $url ) ) {
+			return sprintf( '<%2$s class="oembed-container rd-slideshare clearfix"><div>%1$s</div></%2$s>', $html, $element );
+		}
+		
+		
 		/**
 		 * note: 4:3 ratio can use .rd-ratio-075
 		 */
