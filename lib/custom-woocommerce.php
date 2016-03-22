@@ -174,8 +174,10 @@ if ( empty( $woocommerce_loop['columns'] ) )
 
 if ($woocommerce_loop['columns'] == '3'){ 
   $productimgwidth = 365;
+  $productimgheight = 365;
 } else {
   $productimgwidth = 268;
+  $productimgheight = 268;
 }
 
 

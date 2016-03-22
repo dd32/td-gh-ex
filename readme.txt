@@ -30,6 +30,11 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.6.7 | 22nd March 2016 =
+* Update: Cat issue.
+* Update: Blog carousel issue.
+* Update: Admin css.
+
 = Version 2.6.6 | 2nd March 2016 =
 * Update: Language strings.
 * Update: Responsive images for products.

@@ -45,8 +45,7 @@
 										$image = aq_resize($thumbnailURL, $catimgwidth, $catimgheight, true);
 										if(empty($image)) {$image = $thumbnailURL;} 
 								} else { 
-									$theme_url = get_template_directory_uri(); 
-									$image = $theme_url.'/assets/img/post_standard.jpg';
+									$image = virtue_post_default_placeholder();
 								}?>
 						<div class="imghoverclass">
 		                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">

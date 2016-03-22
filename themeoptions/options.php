@@ -2,7 +2,7 @@
 define( 'LAYOUT_PATH', get_template_directory() . '/assets/css/skins/' );
 define( 'OPTIONS_PATH', get_template_directory_uri() . '/themeoptions/options/' );
 load_theme_textdomain('virtue', get_template_directory() . '/languages');
-$alt_stylesheet_path = LAYOUT_PATH;
+$alt_stylesheet_path = apply_filters('kt_skin_style_path', LAYOUT_PATH);
 $alt_stylesheets = array(); 
 if ( is_dir($alt_stylesheet_path) ) {if ($alt_stylesheet_dir = opendir($alt_stylesheet_path) ) {while ( ($alt_stylesheet_file = readdir($alt_stylesheet_dir)) !== false ) {if(stristr($alt_stylesheet_file, ".css") !== false) {$alt_stylesheets[$alt_stylesheet_file] = $alt_stylesheet_file;}}}}
 
