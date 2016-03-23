@@ -621,6 +621,20 @@ function accesspresslite_admin_notice() {
 
 add_action( 'admin_notices', 'accesspresslite_admin_notice' );
 
+function accesspress_check_old_template(){
+    $settings = get_option( 'accesspresslite_options');
+    
+    if(  $settings['accesspresslite_template_set'] != 'yes'){ 
+        
+        $settings['accesspresslite_home_template'] = 'template_one';
+        $settings['accesspresslite_template_set'] = 'yes';
+        
+        update_option('accesspresslite_options', $settings);
+        
+    }
+}
+add_action( 'init', 'accesspress_check_old_template' );
+
 function accesspresslite_register_required_plugins() {
 
     $plugins = array(

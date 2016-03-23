@@ -94,7 +94,9 @@ $accesspresslite_options = array(
     'action_btn_link' => esc_url('http://accesspressthemes.com/accesspresslite-pro/'),
     'welcome_post_content' => false,
     'show_eventdate' => true,
-    'disable_event' => false
+    'disable_event' => false,
+    'accesspresslite_home_template' => 'template_two',
+    'accesspresslite_template_set' => 'yes'
 
 );
 
@@ -1075,6 +1077,7 @@ function accesspresslite_theme_options_page() {
 
 						<?php _e('For Queries Regading Pro Themes','accesspresslite'); ?><br/>
 						<a href="mailto:support@accesspressthemes.com">support@accesspressthemes.com</a><br/>
+                        <input type="hidden" name="accesspresslite_options[accesspresslite_template_set]" value="<?php echo esc_attr($settings['accesspresslite_template_set']); ?>" />
 						</p>
 						</td>
 					</tr>
@@ -1136,6 +1139,7 @@ function accesspresslite_validate_options( $input ) {
     $input['view_all_text'] = sanitize_text_field( $input['view_all_text'] );
     $input['action_text'] = sanitize_text_field( $input['action_text'] );
     $input['action_btn_text'] = sanitize_text_field( $input['action_btn_text'] );
+    $input['accesspresslite_home_template'] = sanitize_text_field( $input['accesspresslite_home_template'] );
     $input['custom_css'] = wp_filter_nohtml_kses( $input['custom_css'] );
 
     // We select the previous value of the field, to restore it in case an invalid entry has been given
