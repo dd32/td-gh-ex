@@ -1,4 +1,5 @@
 <?php
+if(!function_exists('arise_get_option_defaults_values')):
 /******************** ARISE DEFAULT OPTION VALUES ******************************************/
 function arise_get_option_defaults_values() {
 	global $arise_default_values;
@@ -57,4 +58,5 @@ function arise_get_option_defaults_values() {
 		);
 	return apply_filters( 'arise_get_option_defaults_values', $arise_default_values );
 }
+endif;
 ?>

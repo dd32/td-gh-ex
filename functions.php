@@ -97,9 +97,11 @@ function arise_content_width() {
 add_action( 'template_redirect', 'arise_content_width' );
 
 /***************************************************************************************/
-function arise_get_theme_options() {
-    return wp_parse_args(  get_option( 'arise_theme_options', array() ),  arise_get_option_defaults_values() );
-}
+if(!function_exists('arise_get_theme_options')):
+	function arise_get_theme_options() {
+	    return wp_parse_args(  get_option( 'arise_theme_options', array() ),  arise_get_option_defaults_values() );
+	}
+endif;
 
 /***************************************************************************************/
 require get_template_directory() . '/inc/customizer/arise-default-values.php';

@@ -1,4 +1,6 @@
 == CHANGE LOG ==
+= 2.0.1 =
+	- Fix - Conflict with Child theme issue fixed
 = 2.0 =
 	- Update - Screenshot image Changed
 

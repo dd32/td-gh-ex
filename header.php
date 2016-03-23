@@ -101,14 +101,18 @@ $arise_settings = arise_get_theme_options(); ?>
 				if($arise_settings['arise_slider_type'] == 'default_slider') {
 						arise_page_sliders();
 				}else{
+					if(class_exists('Arise_Plus_Features')):
 						arise_image_sliders();
+					endif;
 				}
 			}
 			if($enable_slider=='enitresite'){
 				if($arise_settings['arise_slider_type'] == 'default_slider') {
 						arise_page_sliders();
 				}else{
+					if(class_exists('Arise_Plus_Features')):
 						arise_image_sliders();
+					endif;
 				}
 			}
 		}
