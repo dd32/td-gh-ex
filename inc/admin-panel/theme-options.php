@@ -96,7 +96,7 @@ $accesspresslite_options = array(
     'show_eventdate' => true,
     'disable_event' => false,
     'accesspresslite_home_template' => 'template_two',
-    'accesspresslite_template_set' => 'yes'
+    'template_option_selected' =>'yes'
 
 );
 
@@ -1077,7 +1077,7 @@ function accesspresslite_theme_options_page() {
 
 						<?php _e('For Queries Regading Pro Themes','accesspresslite'); ?><br/>
 						<a href="mailto:support@accesspressthemes.com">support@accesspressthemes.com</a><br/>
-                        <input type="hidden" name="accesspresslite_options[accesspresslite_template_set]" value="<?php echo esc_attr($settings['accesspresslite_template_set']); ?>" />
+                        <input id="template_option_selected" name="accesspresslite_options[template_option_selected]" type="hidden" value="yes" />
 						</p>
 						</td>
 					</tr>
@@ -1141,6 +1141,7 @@ function accesspresslite_validate_options( $input ) {
     $input['action_btn_text'] = sanitize_text_field( $input['action_btn_text'] );
     $input['accesspresslite_home_template'] = sanitize_text_field( $input['accesspresslite_home_template'] );
     $input['custom_css'] = wp_filter_nohtml_kses( $input['custom_css'] );
+    $input['template_option_selected'] = sanitize_text_field( $input['template_option_selected'] );
 
     // We select the previous value of the field, to restore it in case an invalid entry has been given
 	$prev = $settings['featured_post1'];

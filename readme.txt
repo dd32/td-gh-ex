@@ -1,4 +1,4 @@
-License: GNU General Public License v3 or later
+﻿License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 AccessPress Lite WordPress Theme, Copyright 2014 http://wordpresssuperexpress.com
 AccessPress Lite is distributed under the terms of the GNU GPL v3
@@ -62,8 +62,14 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.46.5
+* Update default template selection ssue
+
 Version 2.46.4
-*Update Template selection issue
+* Update Template selection issue
+
+Version 2.46.5
+* Update Template selection issue
 
 Version 2.46.3
 *Footer Gallery Issue Fixed

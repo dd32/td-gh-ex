@@ -623,14 +623,15 @@ add_action( 'admin_notices', 'accesspresslite_admin_notice' );
 
 function accesspress_check_old_template(){
     $settings = get_option( 'accesspresslite_options');
-    
-    if(  $settings['accesspresslite_template_set'] != 'yes'){ 
-        
-        $settings['accesspresslite_home_template'] = 'template_one';
-        $settings['accesspresslite_template_set'] = 'yes';
-        
-        update_option('accesspresslite_options', $settings);
-        
+    $temp_val = $settings['template_option_selected'];
+    if($temp_val != 'yes'){
+        if(  !empty($settings['menu_alignment'])){ 
+            
+            $settings['accesspresslite_home_template'] = 'template_one';
+            
+            update_option('accesspresslite_options', $settings);
+            
+        }
     }
 }
 add_action( 'init', 'accesspress_check_old_template' );
