@@ -25,8 +25,8 @@
 				
 <div class="gap"></div><?php if (of_get_option('promax_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
 		<div id="single-nav" class="clearfix">
-			<div id="single-nav-left"><?php previous_post_link('&laquo; <strong>%link</strong>'); ?></div>
-		<div id="single-nav-right"><?php next_post_link('<strong>%link</strong> &raquo;'); ?></div>
+			<div id="single-nav-left"><?php previous_post_link('<strong>%link</strong>'); ?></div>
+		<div id="single-nav-right"><?php next_post_link('<strong>%link</strong>'); ?></div>
         </div>
         <!-- END single-nav -->
 			<div class="comments">	<?php comments_template(); ?>	</div> <!-- end div .comments --></article>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ProMax\n"
-"POT-Creation-Date: 2016-03-19 10:49+0530\n"
-"PO-Revision-Date: 2016-03-19 11:48+0530\n"
+"POT-Creation-Date: 2016-03-23 09:10+0530\n"
+"PO-Revision-Date: 2016-03-23 09:19+0530\n"
 "Last-Translator: InsertCart.com <admin@insertcart.com>\n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -21,57 +21,53 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 image.php:110 layout/archive-default.php:28
-#: layout/archive-full.php:62 layout/archive-left.php:29
-#: layout/index-default.php:8 layout/index-full.php:43 layout/index-left.php:9
-#: layout/page-default.php:33 layout/page-full.php:32 layout/page-left.php:34
-#: layout/single-default.php:34 layout/single-full.php:34
-#: layout/single-left.php:35 search.php:14
+#: 404.php:8 archive.php:37 image.php:100 index.php:15 page.php:35
+#: search.php:19 single.php:36
 msgid "404 Error&#58; Not Found"
 msgstr "404 خطأ: لم يتم العثور على"
 
-#: 404.php:12
+#: 404.php:11
 msgid ""
 "Sorry, but the page you are trying to reach is unavailable or does not exist."
 msgstr "عذرا، ولكن الصفحة التي تحاول الوصول غير متوفرة أو لا وجود لها."
 
-#: 404.php:13
+#: 404.php:12
 msgid "You may interested with this"
 msgstr "تستطيع المهتمة بهذا"
 
-#: 404.php:15
-msgid "Tags Cloud"
-msgstr "سحابة العلامات"
+#: archive.php:20
+msgid "Archive for"
+msgstr "ارشيف ل"
 
-#: 404.php:17
-msgid "Search Here"
-msgstr "ابحث هنا"
+#: archive.php:29
+msgid "Blog Archives"
+msgstr "أرشيف المدونة"
 
-#: baztro.php:170
+#: baztro.php:37
 msgid "Home"
 msgstr "رئيسي"
 
-#: baztro.php:186
+#: baztro.php:53
 msgid "Archive by category \""
 msgstr "أرشيف حسب الفئة \""
 
-#: baztro.php:229
+#: baztro.php:96
 msgid "Search results for"
 msgstr "نتائج البحث عن"
 
-#: baztro.php:231
+#: baztro.php:98
 msgid "Posts tagged "
 msgstr "وظيفة معلم"
 
-#: baztro.php:235
+#: baztro.php:102
 msgid "Articles posted by "
 msgstr "المقالات التي نشرت من قبل"
 
-#: baztro.php:237
+#: baztro.php:104
 msgid "Error 404"
 msgstr "خطأ 404"
 
-#: baztro.php:243
+#: baztro.php:110 functions.php:217
 msgid "Page"
 msgstr "صفحة"
 
@@ -592,83 +588,87 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: comments.php:6
-msgid "This post is password protected. Enter the password to view comments."
-msgstr ""
-
-#: comments.php:12
-msgid "comments"
+#: comments.php:22
+msgid "Comments"
 msgstr "تعليقات"
 
-#: functions.php:42
-msgid "Name"
-msgstr "اسم"
+#: comments.php:27 comments.php:44
+msgid "Comment navigation"
+msgstr "تعليق الملاحة"
 
-#: functions.php:44
-msgid "Email"
-msgstr "البريد الإلكتروني"
+#: comments.php:28 comments.php:45
+msgid "Older Comments"
+msgstr "أقدم تعليقات"
 
-#: functions.php:46
-msgid "Website"
-msgstr "موقع الكتروني"
+#: comments.php:29 comments.php:46
+msgid "Newer Comments"
+msgstr "تعليقات جديدة"
 
-#: functions.php:96
+#: comments.php:56
+msgid "Comments are closed."
+msgstr "التعليقات مغلقة."
+
+#: functions.php:76
 #, php-format
 msgid "%2$s  %4$s"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:86
 #, php-format
 msgid "View all posts by %s"
 msgstr "مشاهدة جميع المشاركات بواسطة %s"
 
-#: functions.php:114
-msgid "Search for:"
-msgstr "البحث عن:"
-
-#: functions.php:115
-msgid "Search.."
-msgstr "بحث.."
-
 #: functions.php:116
-msgid "Go"
-msgstr "بحث"
-
-#: functions.php:181
 msgid "Navigation"
 msgstr "ملاحة"
 
-#: functions.php:182
+#: functions.php:117
 msgid "Primary"
 msgstr "ابتدائي"
 
-#: functions.php:183
+#: functions.php:118
 msgid "Footer Menu"
 msgstr "القائمة تذييل"
 
-#: functions.php:228
+#: functions.php:133
+msgid "Search for:"
+msgstr "البحث عن:"
+
+#: functions.php:134
+msgid "Search.."
+msgstr "بحث.."
+
+#: functions.php:135
+msgid "Go"
+msgstr "بحث"
+
+#: functions.php:177
 msgid "Sidebar Right"
 msgstr "الحق في الشريط الجانبي"
 
-#: functions.php:236
+#: functions.php:185
 msgid "Bottom Menu 1"
 msgstr "القائمة أسفل 1"
 
-#: functions.php:245
+#: functions.php:194
 msgid "Bottom Menu 2"
 msgstr "القائمة أسفل 2"
 
-#: functions.php:254
+#: functions.php:203
 msgid "Bottom Menu 3"
 msgstr "القائمة أسفل 3"
 
-#: header.php:36
-msgid "&#8801; Menu"
-msgstr "&#8801; قائمة طعام"
+#: functions.php:296
+msgid "Name"
+msgstr "اسم"
 
-#: header.php:64
-msgid "Menu"
-msgstr "قائمة طعام"
+#: functions.php:298
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: functions.php:300
+msgid "Website"
+msgstr "موقع الكتروني"
 
 #: image.php:14
 #, php-format
@@ -680,22 +680,17 @@ msgid ""
 "a>."
 msgstr ""
 
-#: image.php:28 image.php:90 layout/page-default.php:10 layout/page-full.php:9
-#: layout/page-left.php:11 layout/single-default.php:10
-#: layout/single-full.php:10 layout/single-left.php:11
-#, php-format
-msgid "Edit %s"
-msgstr "تحرير %s"
+#: image.php:25
+msgid "Edit"
+msgstr "تحرير"
 
-#: image.php:81 layout/page-default.php:20 layout/page-full.php:19
-#: layout/page-left.php:21 layout/single-default.php:20
-#: layout/single-full.php:20 layout/single-left.php:21
+#: image.php:73 page.php:23 single.php:24
 msgid "Pages:"
 msgstr "الصفحات:"
 
 #: inc/includes/class-options-framework-admin.php:91
 msgid "ProMax Theme Options"
-msgstr ""
+msgstr "خيارات الموضوع بروماكس"
 
 #: inc/includes/class-options-framework-admin.php:92
 msgid "ProMax Options"
@@ -819,7 +814,37 @@ msgstr ""
 msgid "Bold Italic"
 msgstr ""
 
-#: includes/author.php:3
+#: includes/adfun.php:17
+msgid "Copyright &#169;"
+msgstr ""
+
+#: includes/adfun.php:17
+msgid "Powered by"
+msgstr ""
+
+#: includes/adfun.php:17
+msgid "WordPress"
+msgstr ""
+
+#: includes/adfun.php:17
+msgid " Theme "
+msgstr ""
+
+#. Theme URI of the plugin/theme
+#: includes/adfun.php:17 options.php:105 options.php:558
+msgid "http://www.insertcart.com/product/promax-wordpress-theme/"
+msgstr ""
+
+#: includes/adfun.php:17
+msgid "InsertCart"
+msgstr ""
+
+#: includes/adfun.php:17
+#, php-format
+msgid "ProMax %s"
+msgstr ""
+
+#: includes/author.php:2
 msgid "About"
 msgstr "حول"
 
@@ -841,7 +866,7 @@ msgstr ""
 
 #: includes/core/core.php:47
 msgid "You Should Try Our Other Themes Also"
-msgstr ""
+msgstr "عليك أن تحاول لدينا غيرها من الموضوعات أيضا"
 
 #: includes/core/core.php:82
 msgid ": Current"
@@ -853,11 +878,65 @@ msgstr ""
 
 #: includes/core/core.php:143
 msgid "Install Now"
-msgstr ""
+msgstr "تثبيت الآن"
 
 #: includes/core/core.php:147
 msgid "Live Preview"
+msgstr "معاينة حية"
+
+#: includes/customizer.php:23
+msgid "Theme Options & Settings"
+msgstr "خيارات الموضوع وإعدادات"
+
+#: includes/customizer.php:25
+msgid "Upload Logo and Change Theme Settings Please Go to Theme options."
+msgstr "تحميل الشعار وتغيير إعدادات موضوع يرجى الذهاب إلى خيارات الموضوع."
+
+#: includes/customizer.php:25
+msgid " Change Theme Options"
+msgstr "تغيير الخيارات لقضاء وقت الفراغ"
+
+#: includes/customizer.php:45
+msgid "Dashboard > Appearance > ProMax options"
+msgstr "لوحة التحكم> المظهر> خيارات بروماكس"
+
+#: includes/customizer.php:87
+msgid "Documentation"
+msgstr "توثيق"
+
+#: includes/customizer.php:88
+msgid "Upgrade to Pro"
+msgstr "التطور للاحترافية"
+
+#: includes/customizer.php:89 options.php:568
+msgid "Support Forum"
+msgstr "المنتدى الدعم"
+
+#: includes/installs.php:12
+#, php-format
+msgid "Settings saved and %s activated successfully."
 msgstr ""
+
+#: includes/installs.php:14
+#, php-format
+msgid "%s activated successfully."
+msgstr ""
+
+#: includes/installs.php:16
+msgid "Visit site"
+msgstr ""
+
+#: includes/installs.php:18
+msgid "Theme Options"
+msgstr "خيارات الموضوع"
+
+#: includes/installs.php:19
+msgid "Help Forum"
+msgstr "المنتدى المساعدة"
+
+#: includes/list.php:11 includes/list.php:19
+msgid "Continue reading"
+msgstr "مواصلة القراءة"
 
 #: includes/popular.php:1
 msgid "Popular post"
@@ -875,147 +954,179 @@ msgstr "1 تعليق"
 msgid "% Comments"
 msgstr "٪ تعليقات"
 
-#: includes/share.php:10
-msgid "SHARE WITH FRIENDS:"
-msgstr "شارك مع الاصدقاء:"
-
-#: layout/archive-default.php:14 layout/archive-full.php:13
-#: layout/archive-left.php:15
-msgid "Archive for"
-msgstr "ارشيف ل"
-
-#: layout/archive-default.php:23 layout/archive-full.php:22
-#: layout/archive-left.php:24
-msgid "Blog Archives"
-msgstr "أرشيف المدونة"
-
-#: options.php:22
+#: options.php:23
 msgid "3"
 msgstr ""
 
-#: options.php:23
+#: options.php:24
 msgid "5"
 msgstr ""
 
-#: options.php:24
+#: options.php:25
 msgid "6"
 msgstr ""
 
-#: options.php:25
+#: options.php:26
 msgid "8"
 msgstr ""
 
-#: options.php:26
+#: options.php:27
 msgid "10"
 msgstr ""
 
-#: options.php:31
+#: options.php:32
 msgid "French Toast"
 msgstr ""
 
-#: options.php:32
+#: options.php:33
 msgid "Pancake"
 msgstr ""
 
-#: options.php:33
+#: options.php:34
 msgid "Omelette"
 msgstr ""
 
-#: options.php:34
+#: options.php:35
 msgid "Crepe"
 msgstr ""
 
-#: options.php:35
+#: options.php:36
 msgid "Waffle"
 msgstr ""
 
+#: options.php:94
+msgid "Upgrade to Premium Theme & Enable Full Features!"
+msgstr "الترقية إلى موضوع قسط وتمكين الميزات الكاملة!"
+
+#: options.php:95
+msgid "SEO Optimized WordPress Theme."
+msgstr "كبار المسئولين الاقتصاديين الأمثل وورد موضوع."
+
+#: options.php:96
+msgid "Unlock All features."
+msgstr "فتح جميع الميزات."
+
+#: options.php:97
+msgid "Theme Customization help & Support Forum."
+msgstr "موضوع التخصيص مساعدة ودعم المنتدى."
+
+#: options.php:98
+msgid "Page Speed Optimize for better result."
+msgstr "الصفحة سرعة تحسين للحصول على نتيجة أفضل."
+
+#: options.php:99
+msgid "Color Customize of theme."
+msgstr "اللون تخصيص من الموضوع."
+
+#: options.php:100
+msgid "Custom Widgets and Functions."
+msgstr "القطع المخصصة وظائف."
+
+#: options.php:101
+msgid "Social Media Integration."
+msgstr "الاندماج الاجتماعي وسائل الإعلام."
+
 #: options.php:102
+msgid "Mobile Responsive Website Design."
+msgstr "المحمول الاستجابة تصميم الموقع."
+
+#: options.php:103
+msgid "Different Website Layout to Select."
+msgstr "يختلف تخطيط الموقع إلى تحديد."
+
+#: options.php:104
+msgid "Many of Other customize feature for your blog or website."
+msgstr "العديد من ميزة تخصيص أخرى لبلوق الخاص بك أو الموقع."
+
+#: options.php:105
+msgid "Upgrade Now"
+msgstr "ترقية الآن"
+
+#: options.php:105
+msgid "http://www.insertcart.com/contact-us/"
+msgstr ""
+
+#: options.php:105
+msgid "Need Support !"
+msgstr "بحاجة إلى دعم!"
+
+#: options.php:109
 msgid "Basic Settings"
 msgstr "الإعدادات الأساسية"
 
-#: options.php:106
+#: options.php:113
 msgid "Custom Favicon URL"
 msgstr "URL فافيكون مخصص"
 
-#: options.php:107
-msgid "Enter Favicon Image ."
+#: options.php:114
+msgid "Enter Favicon Image."
 msgstr "أدخل فافيكون صورة."
 
-#: options.php:112
+#: options.php:119
 msgid "Upload Site Logo"
 msgstr "تحميل شعار الموقع"
 
-#: options.php:113
+#: options.php:120
 msgid ""
-"Upload Website Logo that fit here. Note you can upload any size it will "
+"Upload Website Logo to fit here. Note you can upload any size it will "
 "automatic resize ."
 msgstr ""
+"تحميل موقع الشعار لتناسب هنا. ملاحظة يمكنك تحميل أي حجم وسوف تغيير حجم "
+"التلقائي."
 
-#: options.php:118
+#: options.php:125
 msgid "Show Author Profile"
 msgstr "مشاهدة الملف الشخصي الكاتب"
 
-#: options.php:119
+#: options.php:126
 msgid "Check the box to show Author Profile Below the Post and Pages."
-msgstr ""
+msgstr "تحقق من المربع لعرض الملف الشخصي الكاتب بالأسفل المشاركة والصفحات."
 
-#: options.php:125
+#: options.php:132
 msgid "Show Latest Posts Below Navigation"
 msgstr "عرض أحدث المشاركات أدناه الإنتقال"
 
-#: options.php:126
-msgid "Show 5 Latest Posts with Thumbnail."
-msgstr "عرض 5 آخر المشاركات مع الصور المصغرة."
+#: options.php:133
+msgid "Show 5 Latest Posts with Thumbnail (Only Premium User Customize)."
+msgstr "عرض 5 آخر المشاركات مع الصور المصغرة (العضو قسط فقط حسب الطلب)."
 
-#: options.php:131
-msgid "Uncheck to hide latest post box from Mobile"
-msgstr "قم بإلغاء التحديد لإخفاء أحدث مربع آخر من المحمول"
-
-#: options.php:136
-msgid "Latest Post Link Color"
-msgstr "آخر مشاركة ارتباط اللون"
-
-#: options.php:141
-msgid "<b>Latest Posts and Breadcrumb</b> background Color change"
-msgstr "أحدث المشاركات وخلفية التفصيلي تغيير اللون"
-
-#: options.php:146
-msgid "<b>For Latest Posts</b>"
-msgstr "لأحدث المشاركات"
-
-#: options.php:153
+#: options.php:138
 msgid "Latest Post Bar on Index page"
 msgstr "آخر مشاركة المحامين على صفحة فهرس"
 
-#: options.php:159
+#: options.php:139 options.php:376
+msgid "Change Text of Latest Post."
+msgstr "تغيير نص آخر بوست."
+
+#: options.php:144
 msgid "Show Popular Posts in Sidebar"
 msgstr "عرض المشاركات الشعبية في الشريط الجانبي"
 
-#: options.php:160
-msgid "Check the box to Show Popular Posts with Thumbnail in Sidebar."
-msgstr "ضع علامة في المربع إظهار شعبية وظيفة مع صورة مصغرة في الشريط الجانبي."
+#: options.php:145
+msgid ""
+"Check the box to Show Popular Posts with Thumbnail in Sidebar (Only Premium "
+"User Customize)."
+msgstr ""
+"ضع علامة في المربع إظهار شعبية وظيفة مع صورة مصغرة في الشريط الجانبي (فقط "
+"العضو قسط حسب الطلب)."
 
-#: options.php:165
-msgid "<b>For Popular Posts</b>"
-msgstr "للشعبية وظيفة"
-
-#: options.php:171
+#: options.php:150
 msgid "TOP and Navigation Menu hide or show"
 msgstr "أعلى والملاحة اخفاء القائمة أو العرض"
 
-#: options.php:172
+#: options.php:151
 msgid "Top Menu."
 msgstr "القائمة العلوية."
 
-#: options.php:181
+#: options.php:160
 msgid "Navigation Menu"
 msgstr "قائمة الملاحة"
 
-#: options.php:203
+#: options.php:181
 msgid "Website Width in Pixels [It Calculate Max Width]"
 msgstr "عرض موقع في بكسل [وحساب ماكس العرض]"
 
-#: options.php:204
+#: options.php:182
 msgid ""
 "PX-  Please input Max-Width for your website Default value 1200px, also it "
 "is 5% padding from sides"
@@ -1023,366 +1134,466 @@ msgstr ""
 "PX- الرجاء إدخال ماكس العرض لموقعك القيمة الافتراضية 1200px، كما أنه هو 5٪ "
 "الحشو من الجانبين"
 
-#: options.php:211
-msgid "Social Media"
-msgstr "وسائل التواصل الاجتماعي"
+#: options.php:188
+msgid "Social Profiles"
+msgstr "لمحات اجتماعية"
 
-#: options.php:214
+#: options.php:191
 msgid "Facebook Link"
-msgstr ""
+msgstr "الفيسبوك لينك"
 
-#: options.php:215
+#: options.php:192
 msgid "Enter your Facebook URL if you have one."
-msgstr ""
+msgstr "إدخال URL الفيسبوك الخاص بك إذا كان لديك واحد."
 
-#: options.php:220
+#: options.php:197
 msgid "Twitter Follow Link"
-msgstr ""
+msgstr "تويتر اتبع الرابط"
 
-#: options.php:221
+#: options.php:198
 msgid "Enter your Twitter URL if you have one."
-msgstr ""
+msgstr "إدخال URL التغريد الخاص بك إذا كان لديك واحد."
 
-#: options.php:226
+#: options.php:203
 msgid "YouTube Channel Link"
-msgstr ""
+msgstr "قناة يوتيوب رابط"
 
-#: options.php:227
+#: options.php:204
 msgid "Enter your YouTube URL if you have one."
-msgstr ""
+msgstr "إدخال URL على YouTube إذا كان لديك واحد."
 
-#: options.php:232
+#: options.php:209
 msgid "Google+ URL"
-msgstr ""
+msgstr "URL على + Google"
 
-#: options.php:233
+#: options.php:210
 msgid "Enter your Google+ Link if you have one."
-msgstr ""
+msgstr "أدخل في + Google لينك الخاص بك إذا كان لديك واحد."
 
-#: options.php:238
-msgid "RSS Feed URL"
-msgstr ""
-
-#: options.php:239
-msgid "Enter your RSS Link if you have one."
-msgstr ""
-
-#: options.php:246
+#: options.php:217
 msgid "Custom Styling"
 msgstr "التصميم حسب الطلب"
 
-#: options.php:249
+#: options.php:220
 msgid "Custom CSS"
 msgstr "CSS مخصص"
 
-#: options.php:250
+#: options.php:221
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
+"بسرعة إضافة بعض CSS إلى الموضوع الخاص بك عن طريق إضافته إلى هذه الكتلة."
 
-#: options.php:256
+#: options.php:227
 msgid "Ads Management"
 msgstr "إدارة الإعلانات"
 
-#: options.php:260
-msgid ""
-"If you want to add or edit more code and place widget then you need to edit "
-"from Widget area."
-msgstr ""
-"إذا كنت ترغب في إضافة أو تعديل المزيد من رمز ومكان القطعة ثم تحتاج إلى تحرير "
-"من منطقة القطعة."
+#: options.php:235
+msgid "Paste Ads code for header."
+msgstr "لصق إعلانات رمز لرأس."
 
-#: options.php:260
-msgid "Dashboard > Appearance > Widget > add widget wherever you want."
+#: options.php:236
+msgid "Enter your ads code here, preferably units Ex. 728*90 lead-board ads."
 msgstr ""
+"إدخال الإعلانات التعليمات البرمجية الخاصة بك هنا، ويفضل الوحدات السابقين. "
+"مقاس 728x90 إعلانات الرصاص متنها."
+
+#: options.php:241
+msgid "Ads Code For Single Post"
+msgstr "الإعلانات الرمز لمشاركة واحدة"
+
+#: options.php:242
+msgid ""
+"Paste Ads code for single post it show ads below post title and before "
+"content."
+msgstr ""
+"لصق إعلانات رمز ظيفة واحدة أن تظهر الإعلانات أدناه آخر لقب وقبل المحتوى."
+
+#: options.php:247
+msgid "Ads Code For Footer"
+msgstr "الإعلانات الرمز لتذييل"
+
+#: options.php:248
+msgid "Paste Ads Code for Footer Area"
+msgstr "لصق الإعلانات مدونة تذييل منطقة"
+
+#: options.php:254
+msgid "Advance (Pro Only)"
+msgstr "مقدما (برو فقط)"
+
+#: options.php:258
+msgid "<span class=\"pre-title\">New Features</span>"
+msgstr "الميزات الجديدة"
+
+#: options.php:262
+msgid "Social Share Buttons with count"
+msgstr "أزرار المشاركة الاجتماعية مع العد"
 
 #: options.php:263
-msgid ""
-"To use scripts or adsense codes paste theme into text editor in these box"
-msgstr ""
-
-#: options.php:264
-msgid ""
-"Enter your ads code here for header, preferably units Ex. 728*90 lead-board "
-"ad."
-msgstr ""
-
-#: options.php:272
-msgid "AD Code For Single Post"
-msgstr ""
-
-#: options.php:281
-msgid "AD Code For Footer"
-msgstr ""
-
-#: options.php:291
-msgid "Advance Options"
-msgstr "خيارات متقدمة"
-
-#: options.php:299
-msgid "Social Share Buttons with count"
-msgstr ""
-
-#: options.php:300
 msgid "Display social share buttons with count below post title."
-msgstr ""
+msgstr "عرض أزرار سهم الاجتماعية مع عدد أقل من آخر لقب."
 
-#: options.php:306
+#: options.php:269
 msgid "Responsive Website Design"
-msgstr ""
+msgstr "استجابة تصميم الموقع"
 
-#: options.php:307
+#: options.php:270
 msgid ""
 "Enable Responsive Design for you website to increase experience on Mobile "
 "Devices"
 msgstr ""
+"تمكين تصميم الاستجابة لموقع الويب الخاص بك لزيادة الخبرة في الأجهزة النقالة"
 
-#: options.php:312
+#: options.php:275
 msgid "Excerpt Length (Number of words display in post description)"
-msgstr ""
+msgstr "مقتطفات طول (عدد الكلمات عرضه في آخر وصف)"
+
+#: options.php:276
+msgid "Number of words display in every post description Default is 45."
+msgstr "عدد الكلمات عرض في كل وظيفة وصف الافتراضي هو 45."
+
+#: options.php:282
+msgid "Numbers of Latest and Popular posts to display)"
+msgstr "عدد آخر وشعبية وظيفة لعرضه)"
+
+#: options.php:283
+msgid "<b>For Latest Posts</b>"
+msgstr "لأحدث المشاركات"
+
+#: options.php:289
+msgid "<b>For Popular Posts</b>"
+msgstr "للشعبية وظيفة"
+
+#: options.php:295
+msgid "Home Icon from Top and Main Navigation"
+msgstr "Icon الرئيسية من الأعلى وقائمة التصفح الرئيسية"
+
+#: options.php:296
+msgid "Show or Hide Home Icon."
+msgstr "إظهار أو إخفاء الصفحة الرئيسية أيقونة."
+
+#: options.php:306
+msgid "Customize Theme Background"
+msgstr "تخصيص موضوع الخلفية"
+
+#: options.php:307
+msgid "Header Background color."
+msgstr "رأس لون الخلفية."
 
 #: options.php:313
-msgid "Number of words display in every post description Default is 45."
-msgstr ""
+msgid "Footer Area Color Customization"
+msgstr "التخصيص تذييل مساحة اللون"
 
-#: options.php:321
-msgid "Home Icon from Top and Main Navigation"
-msgstr ""
+#: options.php:314
+msgid "Footer Widget background color."
+msgstr "تذييل القطعة لون الخلفية."
 
-#: options.php:322
-msgid "Show or Hide Home Icon."
-msgstr ""
+#: options.php:319
+msgid "Footer Widget Title Color."
+msgstr "تذييل القطعة عنوان اللون."
 
-#: options.php:332
-msgid "Header Background"
-msgstr ""
+#: options.php:324
+msgid "Footer widget links color."
+msgstr "تذييل القطعة تربط اللون."
 
-#: options.php:333
-msgid "Header Background color."
-msgstr ""
+#: options.php:329
+msgid "Footer copyright background color."
+msgstr "تذييل لون الخلفية حقوق التأليف والنشر."
 
-#: options.php:340
-msgid "Website Background Color and Image"
-msgstr ""
-
-#: options.php:341
-msgid "Change the background CSS Color or Image."
-msgstr ""
-
-#: options.php:346
+#: options.php:336
 msgid "Change Link Color"
-msgstr ""
+msgstr "تغيير لون الارتباط"
 
-#: options.php:347
+#: options.php:337
 msgid "Select Links Color."
-msgstr ""
+msgstr "اختر خيارات اللون."
 
-#: options.php:352
+#: options.php:342
 msgid "Change Link Hover Color."
-msgstr ""
+msgstr "تغيير ارتباط تحوم اللون."
 
-#: options.php:358
+#: options.php:348
 msgid "Main Navigation Colors"
-msgstr ""
+msgstr "الألوان التصفح الرئيسية"
 
-#: options.php:359
+#: options.php:349
 msgid "Main Navigation Background."
-msgstr ""
+msgstr "خلفية قائمة التصفح الرئيسية"
 
-#: options.php:364
+#: options.php:354
 msgid "Main Navigation hover Color."
-msgstr ""
+msgstr "Main Navigation hover Color."
 
-#: options.php:370
-msgid "Primary Navigation color."
-msgstr ""
+#: options.php:360
+msgid "Categories Navigation color."
+msgstr "فئات الإنتقال اللون."
 
-#: options.php:376
-msgid "Primary Navigation Hover color."
-msgstr ""
+#: options.php:366
+msgid "Categories Navigation Hover color."
+msgstr "فئات الإنتقال تحوم اللون."
+
+#: options.php:371
+msgid "<b>Latest Posts and Breadcrumb</b> background Color change"
+msgstr "أحدث المشاركات وخلفية التفصيلي تغيير اللون"
+
+#: options.php:381
+msgid "Edit Categories & date/author stamp from thumbnail"
+msgstr "تحرير الأقسام وتاريخ / ختم المؤلف من الصور المصغرة"
 
 #: options.php:382
-msgid "Edit Categories & date/author stamp from thumbnail"
-msgstr ""
-
-#: options.php:383
 msgid ""
 "Show or Hide Date & Author Stamp from Thumbnail in index and other archive "
 "pages ."
 msgstr ""
+"إظهار أو إخفاء التاريخ والكاتب ختم من صورة مصغرة في مؤشر وغيرها من صفحات "
+"الأرشيف."
 
-#: options.php:393
+#: options.php:391
+msgid "Display Shadow of every post on main page ."
+msgstr "عرض الظل من كل وظيفة على الصفحة الرئيسية."
+
+#: options.php:400
 msgid ""
 "Show or Hide Categories Button from Thumbnail in index and other archive "
 "pages ."
-msgstr ""
-
-#: options.php:402
-msgid "Categories Background Color Change."
-msgstr ""
-
-#: options.php:408
-msgid "Page Number Navigation Color Change "
-msgstr ""
+msgstr "إظهار أو إخفاء زر فئات من صورة مصغرة في مؤشر وغيرها من صفحات الأرشيف."
 
 #: options.php:409
+msgid "Categories Background Color Change."
+msgstr "فئات لون الخلفية تغيير."
+
+#: options.php:415
+msgid "Page Number Navigation Color Change "
+msgstr "تغيير رقم الصفحة الإنتقال اللون"
+
+#: options.php:416
 msgid "Change Current Page Background."
-msgstr ""
+msgstr "تغيير خلفية الصفحة الحالية."
 
-#: options.php:414
+#: options.php:421
 msgid "Change background color of other pages."
-msgstr ""
+msgstr "تغيير لون الخلفية من الصفحات الأخرى."
 
-#: options.php:419
+#: options.php:426
 msgid "Numbers text Color Change."
-msgstr ""
+msgstr "أرقام النص تغيير لون."
 
-#: options.php:424
-msgid "Sidebar color customize"
-msgstr ""
+#: options.php:431
+msgid "Other customize color & design"
+msgstr "غيرها من الألوان تخصيص وتصميم"
 
-#: options.php:425
+#: options.php:432
 msgid "Sidebar Widget heading background Color change"
-msgstr ""
+msgstr "الشريط الجانبي القطعة متجهة خلفية تغيير اللون"
 
-#: options.php:430
-msgid "Sidebar Widget title color"
-msgstr ""
+#: options.php:437
+msgid "Latest Post widget Link Color"
+msgstr "آخر مشاركة القطعة ارتباط اللون"
 
-#: options.php:435
-msgid "Main content and buttons colors"
-msgstr ""
-
-#: options.php:436
-msgid "<b>Search Go button color</b>"
-msgstr ""
-
-#: options.php:441
-msgid "<b>Comment submit and reply button</b>"
-msgstr ""
-
-#: options.php:446
-msgid "Footer Area Color Customization"
-msgstr ""
+#: options.php:442
+msgid "<b>Recent Posts and Breadcrumb</b> background Color change"
+msgstr "المشاركات الأخيرة والتفصيلي خلفية تغيير اللون"
 
 #: options.php:447
-msgid "Footer Widget background color."
-msgstr ""
-
-#: options.php:452
-msgid "Footer Widget Title Color."
-msgstr ""
-
-#: options.php:457
-msgid "Footer widget links color."
-msgstr ""
-
-#: options.php:462
-msgid "Footer copyright background color."
-msgstr ""
-
-#: options.php:467
 msgid "Customize Theme Fonts"
-msgstr ""
+msgstr "تخصيص الخطوط الموضوع"
 
-#: options.php:468
+#: options.php:448
 msgid "Change <b>Body (Theme) Font</b> color and Size."
-msgstr ""
+msgstr "تغيير الجسم (موضوع) لون الخط والحجم."
 
-#: options.php:473
+#: options.php:453
 msgid "Change <b>H1 Posts and Pages Title </b>Font color or Size."
-msgstr ""
+msgstr "تغيير H1 المشاركات والصفحات عنوان الخط أو اللون أو الحجم."
 
-#: options.php:478
+#: options.php:458
 msgid "Footer Widget Area Settings"
-msgstr ""
+msgstr "إعدادات تذييل القطعة المساحة"
 
-#: options.php:479
+#: options.php:459
 msgid "Show or Hide Footer Widget Area."
+msgstr "إظهار أو إخفاء تذييل القطعة المساحة."
+
+#: options.php:470
+msgid "Website layout"
+msgstr "تصميم موقع الويب"
+
+#: options.php:471
+msgid "Select Images for Website layout."
+msgstr "حدد الصور للتخطيط الموقع."
+
+#: options.php:482
+msgid "<span class=\"pre-titleseo\">SEO & Meta Options</span>"
 msgstr ""
 
-#: options.php:507
+#: options.php:485
 msgid "Google+ Publisher URL"
-msgstr ""
+msgstr "عنوان الناشر في + Google"
 
-#: options.php:508
+#: options.php:486
 msgid ""
 "Paste Your Google Publisher URL https://plus.google.com/YOUR-GOOGLE+ID/posts."
 msgstr ""
+"لصق الناشر URL على Google https://plus.google.com/YOUR-GOOGLE+ID/posts."
 
-#: options.php:513
+#: options.php:491
 msgid "Bing Site Verification"
-msgstr ""
+msgstr "بنج التأكيد الموقع"
 
-#: options.php:514
+#: options.php:492
 msgid "Enter the ID only. It will be verified by Yahoo as well."
 msgstr ""
 
-#: options.php:519
+#: options.php:497
 msgid "Google Site verification"
+msgstr "التحقق موقع Google"
+
+#: options.php:498
+msgid "Enter your ID only."
+msgstr "أدخل اسم المستخدم الخاص بك فقط."
+
+#: options.php:505
+msgid "<span class=\"pre-titlecus\">Customization</span>"
 msgstr ""
+
+#: options.php:508
+msgid "Breadcrumbs Options"
+msgstr "خيارات فتات الخبز"
+
+#: options.php:509
+msgid "Check Box to Enable or Disable Breadcrumbs."
+msgstr "خانة الاختيار لتمكين أو تعطيل فتات الخبز."
+
+#: options.php:514
+msgid "Enable Post Meta Info."
+msgstr "تمكين المشاركة ميتا معلومات."
+
+#: options.php:515
+msgid "Check Box to Show or Hide Tags "
+msgstr "خانة لإظهار أو إخفاء الكلمات"
 
 #: options.php:520
-msgid "Enter your ID only."
-msgstr ""
+msgid "Check Box to Show or Hide Comments "
+msgstr "خانة لإظهار أو إخفاء التعليقات"
 
 #: options.php:525
-msgid "Footer Script Area"
-msgstr ""
+msgid "Check Box to Show or Hide Categories "
+msgstr "خانة لإظهار أو إخفاء الفئات"
 
-#: options.php:526
-msgid "Enter Code for footer like google analytics."
-msgstr ""
+#: options.php:530
+msgid "Check Box to Show or Hide Author and date "
+msgstr "خانة لإظهار أو إخفاء الكاتب والتاريخ"
 
 #: options.php:536
-msgid "Breadcrumbs Options"
-msgstr ""
+msgid "Next and Previous Post Link"
+msgstr "المقبل، والوظيفة السابقة لينك"
 
 #: options.php:537
-msgid "Check Box to Enable or Disable Breadcrumbs."
-msgstr ""
+msgid "Show or Hide Next and Previous Post Link below every post."
+msgstr "إظهار أو إخفاء التالي والوظيفة السابقة رابط أدناه كل وظيفة."
 
-#: options.php:542
-msgid "Enable Post Meta Info."
-msgstr ""
+#: options.php:546
+msgid "Show or Hide Copy Right Text"
+msgstr "إظهار أو إخفاء نص حقوق الطبع والنشر"
 
-#: options.php:543
-msgid "Check Box to Show or Hide Tags "
-msgstr ""
+#: options.php:547
+msgid "Show or Hide Copyright Text and Link."
+msgstr "إظهار أو إخفاء نص المؤلف وينك."
 
-#: options.php:548
-msgid "Check Box to Show or Hide Comments "
-msgstr ""
-
-#: options.php:553
-msgid "Check Box to Show or Hide Categories "
-msgstr ""
+#: options.php:556
+msgid "Footer Copyright Text change."
+msgstr "تذييل حقوق النشر تغيير النص."
 
 #: options.php:558
-msgid "Check Box to Show or Hide Author and date "
+msgid "Copyright  &#169; 2015 Theme by: "
 msgstr ""
 
-#: options.php:564
-msgid "Next and Previous Post Link"
+#. Author of the plugin/theme
+#: options.php:558
+msgid "InsertCart.com"
 msgstr ""
 
-#: options.php:565
-msgid "Show or Hide Next and Previous Post Link below every post."
+#: options.php:562
+msgid "Theme Support"
+msgstr "دعم موضوع"
+
+#: options.php:567
+msgid "Need support about theme go to Support forum"
+msgstr "تحتاج دعم حول موضوع تذهب لدعم المنتدى"
+
+#: options.php:567
+msgid ""
+"If you have any problem in using options then please read theme "
+"documentation first "
+msgstr ""
+"إذا كان لديك أي مشكلة في استخدام خيارات ثم الرجاء قراءة الوثائق موضوع لأول "
+"مرة"
+
+#: options.php:567
+msgid "http://www.insertcart.com/promax-theme-setup-guide-and-documentation/"
 msgstr ""
 
-#: options.php:574
-msgid "Show or Hide Copyright Text"
+#: options.php:567
+msgid "Theme Documentation"
+msgstr "وثائق موضوع"
+
+#: options.php:567
+msgid ""
+"Before you contact us via directly please use support forum also We "
+"recommend you to use some WordPress plugin like \"Regenerate Thumbnails\" "
+"WordPress SEO and W3tc to optimize and get great website experience."
+msgstr ""
+"قبل الاتصال بنا عبر مباشرة يرجى استخدام منتدى الدعم أيضا نحن ننصح لاستخدام "
+"بعض وورد البرنامج المساعد مثل \"مصغرات إعادة إنشاء\" وورد كبار المسئولين "
+"الاقتصاديين وW3tc لتحسين والحصول على الخبرة موقع كبيرة."
+
+#: options.php:568
+msgid "http://forum.insertcart.com"
 msgstr ""
 
-#: options.php:575
-msgid "Show or Hide Copyright Text and Link."
+#: options.php:570
+msgid ""
+"http://www.insertcart.com/making-post-by-importing-docx-file-content-into-"
+"post-images/"
 msgstr ""
+
+#: options.php:570
+msgid "Making Post by Importing Docx File Content into Post Images"
+msgstr "مما يجعل مشاركة بواسطة استيراد دوكإكس محتوى الملف إلى الصور المشاركة"
+
+#: options.php:571
+msgid ""
+"http://www.insertcart.com/how-to-secure-website-made-these-changes-in-"
+"htaccess/"
+msgstr ""
+
+#: options.php:571
+msgid "How to Secure Website? Made these changes in .htaccess"
+msgstr "كيفية تأمين الموقع؟ إجراء هذه التغييرات في هتكس"
+
+#: options.php:572
+msgid "http://www.insertcart.com/how-to-add-icon-navigation-menu/"
+msgstr ""
+
+#: options.php:572
+msgid "How to Add Icon Navigation Menu"
+msgstr "كيفية إضافة القائمة أيقونة الإنتقال"
+
+#: options.php:573
+msgid ""
+"http://www.insertcart.com/how-to-install-a-required-or-recommended-plugin/"
+msgstr ""
+
+#: options.php:573
+msgid "How to Install a Required or Recommended Plugin"
+msgstr "كيفية تثبيت المطلوبة أو الموصى بها البرنامج المساعد"
+
+#: page.php:14 single.php:14
+#, php-format
+msgid "Edit %s"
+msgstr "تحرير %s"
 
 #. Theme Name of the plugin/theme
 msgid "ProMax"
-msgstr ""
-
-#. Theme URI of the plugin/theme
-msgid "http://www.insertcart.com/product/promax-wordpress-theme/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -1392,16 +1603,63 @@ msgid ""
 "on your mobile and desktop or any other device. Theme comes with lots of "
 "customization and connect social media like Facebook, Google+, twitter, "
 "YouTube and Adsense ready It supports all the awesome WordPress features "
-"completely free theme for blogging."
+"completely free theme for blogging. Now theme support WooCommerce plugin "
+"demo http://demo.baztro.com/promax"
 msgstr ""
-
-#. Author of the plugin/theme
-msgid "Sandy"
-msgstr ""
+"بروماكس الموضوع هو أفضل تصميم وورد موضوع لأغراض شخصية وتجارية تستخدم مع "
+"ميزات كاملة وكبار المسئولين الاقتصاديين Optimize.This ورد موضوع يمكن تتكيف "
+"بسهولة على الهاتف المحمول وسطح المكتب أو أي جهاز آخر. موضوع يأتي مع الكثير "
+"من التخصيص وربط وسائل الاعلام الاجتماعية مثل الفيسبوك، جوجل، تويتر، يوتيوب و "
+"AdSense جاهز وهو يدعم جميع رائع ورد يتميز موضوع خال تماما عن التدوين. الآن "
+"موضوع الدعم WooCommerce المساعد تجريبي http://demo.baztro.com/promax"
 
 #. Author URI of the plugin/theme
-msgid "http://www.insertcart.com"
+msgid "http://www.insertcart.com/"
 msgstr ""
 
-#~ msgid "Edit"
-#~ msgstr "تحرير"
+#~ msgid "Tags Cloud"
+#~ msgstr "سحابة العلامات"
+
+#~ msgid "Search Here"
+#~ msgstr "ابحث هنا"
+
+#~ msgid "comments"
+#~ msgstr "تعليقات"
+
+#~ msgid "&#8801; Menu"
+#~ msgstr "&#8801; قائمة طعام"
+
+#~ msgid "Menu"
+#~ msgstr "قائمة طعام"
+
+#~ msgid "SHARE WITH FRIENDS:"
+#~ msgstr "شارك مع الاصدقاء:"
+
+#~ msgid "Enter Favicon Image ."
+#~ msgstr "أدخل فافيكون صورة."
+
+#~ msgid "Show 5 Latest Posts with Thumbnail."
+#~ msgstr "عرض 5 آخر المشاركات مع الصور المصغرة."
+
+#~ msgid "Uncheck to hide latest post box from Mobile"
+#~ msgstr "قم بإلغاء التحديد لإخفاء أحدث مربع آخر من المحمول"
+
+#~ msgid "Latest Post Link Color"
+#~ msgstr "آخر مشاركة ارتباط اللون"
+
+#~ msgid "Check the box to Show Popular Posts with Thumbnail in Sidebar."
+#~ msgstr ""
+#~ "ضع علامة في المربع إظهار شعبية وظيفة مع صورة مصغرة في الشريط الجانبي."
+
+#~ msgid "Social Media"
+#~ msgstr "وسائل التواصل الاجتماعي"
+
+#~ msgid ""
+#~ "If you want to add or edit more code and place widget then you need to "
+#~ "edit from Widget area."
+#~ msgstr ""
+#~ "إذا كنت ترغب في إضافة أو تعديل المزيد من رمز ومكان القطعة ثم تحتاج إلى "
+#~ "تحرير من منطقة القطعة."
+
+#~ msgid "Advance Options"
+#~ msgstr "خيارات متقدمة"

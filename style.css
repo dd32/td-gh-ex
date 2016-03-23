@@ -2,7 +2,7 @@
 Theme Name: ProMax
 Theme URI: http://www.insertcart.com/product/promax-wordpress-theme/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo http://demo.baztro.com/promax 
-Version: 1.5.9
+Version: 1.6
 Author: InsertCart.com
 Author URI: http://www.insertcart.com/
 Tags: black, blue, white, light, red, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, responsive-layout
@@ -361,8 +361,11 @@ img, img a {
 }
 
 /************Top Navigation Menu************/
-
+.nav{
+margin:0 auto;}
 #navigation .home-icon img{padding-bottom: 3px;}
+#navigation .home-icon {display:block;}
+.home-icon{display:none;}
 #navigation {
 	margin: 0;
 	font-size: 12px;
@@ -371,12 +374,13 @@ img, img a {
 	margin: 0 auto;
 	width: 100%;
 	z-index: 100;
+	height: 48px;
 	background: #5B89B8;
 }
 #navigation-inner {
-	margin-left: 5%;
-	width: 70%;
 	position: relative;
+	    float: left;
+		    
 
 }
 #navigation .secondary{
@@ -466,8 +470,7 @@ font-size: 16px;
     content: '';
 }
 /*******************Pronav*************/
-#TopMenuSocial{float: right;
-margin-right: 5%;}
+#TopMenuSocial{float: right;}
 #TopMenuSocial a {
     color: #fff;
 }
@@ -650,22 +653,35 @@ margin-top: 10px;
 color:#fff;
 }
 
-#single-nav  :hover{
+#single-nav  a:hover{
 background: #333;
 
 }
 
-#single-nav-left{
+#single-nav-left a::before{
+    content: "\f101";
+	font-family:FontAwesome;
+	padding:5px;
+}
+
+#single-nav-left a{
 	float:left;
 background: #359BED;
 padding: 6px 12px;
 color: #fff;
+width: 45%;
 }
-#single-nav-right{
+#single-nav-right a::after{
+    content: "\f100";
+	font-family:FontAwesome;
+	padding:5px;
+}
+#single-nav-right a{
 background: #359BED;
 float: right;
 padding: 6px 12px;
 color: #fff;
+width: 45%;
 }
 #page {
 	margin-top: 20px;
@@ -899,12 +915,22 @@ font-size: 14px;
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 }
+.nav-previous a::before {
+	content: "\f060";
+	font-family:FontAwesome;
+	padding:5px;
+}
+.nav-next a::after {
+    content: "\f061";
+	font-family:FontAwesome;
+	padding:5px;
+}
 .nav-previous {
-	float: left;
 	width: 50%;
+	float:left;
 }
 .nav-next {
-	float: right;
+float:right;
 	text-align: right;
 	width: 50%;
 }
@@ -1018,6 +1044,7 @@ margin: 2px 0px 12px 0px;
 padding: 6px 0px 6px 8px;
 background: #DC3030;
 width: 95.5%;
+    float: left;
 }
 .postmeta li {
 	display: inline;
@@ -1145,7 +1172,7 @@ margin-right: 5px;
 #sidebar .boxinside {
 clear: both;
 }
-#sidebar .home-icon{display:none;}
+
 
 select {
 max-width: 95%;
@@ -1592,7 +1619,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 	margin: 10px 0;
 }
 .comments h3 {
-	margin:84px 0 30px 0;
+    margin-top: 7%;
+    margin-bottom: 2%;
 	font-size:24px;
 	font-weight: bold;
 	text-transform: capitalize;
@@ -1601,6 +1629,7 @@ ol.commentlist {
 	list-style:none;
 	margin:0 0 1em;
 	padding:0;
+	clear:both;
 	text-indent:0;
 }
 ol.commentlist li.comment {

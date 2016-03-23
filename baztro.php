@@ -19,6 +19,7 @@ function promax_backg() { ?>
 #bottom-menu-inner,
 #footer-inner,
 #ltpost,
+.nav,
 #pronav-inner { max-width: <?php echo of_get_option( 'promax_maxwidth', '1200' ); ?>px !important;}
 		
 	</style>
