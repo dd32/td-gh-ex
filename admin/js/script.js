@@ -1,7 +1,7 @@
 ( function( $ ) {
 	// Add Make Plus message
 		upgrade = $('<a class="greenr-buy-pro"></a>')
-			.attr('href', 'http://www.webulousthemes.com/?add-to-cart=27')
+			.attr('href', 'http://www.webulousthemes.com/request-free-trial-for-themes/')
 			.attr('target', '_blank')
 			.text(greenr_upgrade.message)
 		;
@@ -10,7 +10,7 @@
 			.attr('target','_blank')
 			.text(greenr_upgrade.demo);
 		docs = $('<a class="greenr-docs"></a>')
-			.attr('href','http://docs.webulous.in/greenr-free/')
+			.attr('href','http://documentation.webulous.in/greenr-free/')
 			.attr('target','_blank')
 			.text(greenr_upgrade.docs);
 		support = $('<a class="greenr-docs"></a>')
