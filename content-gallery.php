@@ -8,11 +8,11 @@
  * @subpackage Artwork
  * @since Artwork 1.0
  */
-global $themePageTemplate;
+global $mp_artwork_page_template;
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-in-blog post'); ?>>
-    <?php
-      theme_get_post_gallery($post, $themePageTemplate); 
-    ?>
-    <?php theme_post_meta($post); ?>
+    <?php mp_artwork_get_post_gallery($post, $mp_artwork_page_template); ?>
+    <div class="clearfix"></div>
+    <?php mp_artwork_post_meta($post); ?>
 </article><!-- #post -->

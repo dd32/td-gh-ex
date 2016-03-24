@@ -8,18 +8,18 @@ body {
 }
 
 .footer-widget {
-  margin: 67px 8.33333% 0 0;
+  margin: 4.188em 8.33333% 0 0;
   padding-left: 0;
-  padding-right: 15px;
+  padding-right: 0.938em;
 }
 
 .footer-widget .footer-title:before {
   left: 0;
-  right: -60px;
+  right: -3.750em;
 }
 
 .social-profile a {
-  margin: 0 0 22px 25px;
+  margin: 0 0 1.375em 1.563em;
 }
 
 .sf-menu ul {

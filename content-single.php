@@ -8,10 +8,11 @@
  * @subpackage Artwork
  * @since Artwork 1.0
  */
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="container">
-        <?php theme_post_thumbnail($post, 'single.php'); ?>
+        <?php mp_artwork_post_thumbnail($post, 'single.php'); ?>
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
                 <header class="entry-header">
@@ -22,6 +23,7 @@
                 <div class="entry-content">
                     <?php the_content(); ?>
                     <?php wp_link_pages(array('before' => '<nav class="navigation paging-navigation wp-paging-navigation">', 'after' => '</nav>', 'link_before' => '<span>', 'link_after' => '</span>')); ?>
+                    <div class="clearfix"></div>
                 </div><!-- .entry-content -->
             </div>
         </div>
@@ -35,7 +37,7 @@
             </div>
         </div>
         <?php
-        theme_related_posts();
+        mp_artwork_get_related_posts();
         ?>
     </footer><!-- .entry-meta -->
 </article><!-- #post -->

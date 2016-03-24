@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Full Width (Page)
+ * Template Name: Full Width
  * The template file for pages without right sidebar.
  * @package Artwork
  * @since Artwork 1.0

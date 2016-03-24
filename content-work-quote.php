@@ -8,53 +8,36 @@
  * @subpackage Artwork
  * @since Artwork 1.0
  */
-global $themePageTemplate;
+global $mp_artwork_page_template;
+
 ?>
 <article class="page-wrapper">
     <div id="post-<?php the_ID(); ?>" <?php post_class('work-post'); ?>>
         <div class="container">
-             <?php theme_post_thumbnail($post, $themePageTemplate); ?>
+            <?php mp_artwork_post_thumbnail($post, $mp_artwork_page_template); ?>
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">  
-
-                    <?php
-                    theme_post_first_category($post);
-                    ?>
+                    <?php mp_artwork_post_first_category($post); ?>
                     <div class="entry-wrapper">
                         <header class="entry-header">
                             <?php
-                            $title = the_title('<h2 class="entry-title h4"><a href="'.get_permalink().'" rel="bookmark">', '</a></h2>', false);
-                            if ($title) {
-                                echo $title;
+                            $mp_artwork_title = the_title('<h2 class="entry-title h4"><a href="' . get_permalink() . '" rel="bookmark">', '</a></h2>', false);
+                            if ($mp_artwork_title) {
+                                echo $mp_artwork_title;
                             } else {
-                                ?>
-                                <div class="entry-meta">
-                                    <?php
-                                    echo '<span>';
-                                    _e('Posted on', 'artwork-lite');
-                                    echo '</span> ';
-                                    theme_posted_on($post);
-                                    ?>
-                                </div>
-                                <?php
+                                mp_artwork_posted_on_meta($post);
                             }
                             ?> 
                         </header>
                         <section class="entry entry-content">
-                               <?php the_content(); ?>
+                            <?php the_content(); ?>                            
+                            <div class="clearfix"></div>
                         </section>
                         <?php
-                        if ($title) {
+                        if ($mp_artwork_title) {
                             ?>
-                            <footer class="entry-footer">
-                                <div class="entry-meta">
-                                    <?php
-                                    echo '<span>';
-                                    _e('Posted on', 'artwork-lite');
-                                    echo '</span> ';
-                                    theme_posted_on($post);
-                                    ?>
-                                </div>
+                            <footer class="entry-footer">                                
+                                <?php mp_artwork_posted_on_meta($post); ?>
                             </footer>
                         <?php } ?>
                     </div>  

@@ -8,7 +8,8 @@
  * @subpackage Artwork
  * @since Artwork 1.0
  */
-global $themePageTemplate;
+global $mp_artwork_page_template;
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-in-blog post'); ?>>
        <header class="entry-header">
@@ -17,9 +18,8 @@ global $themePageTemplate;
         </h2>
     </header> 
     <section class="entry entry-content">
-         <?php echo theme_get_first_embed_media($post->ID); ?>
-    </section>
-
-    
-    <?php theme_post_meta($post); ?>
+        <?php echo mp_artwork_get_first_embed_media($post->ID); ?>        
+        <div class="clearfix"></div>
+    </section>    
+    <?php mp_artwork_post_meta($post); ?>
 </article><!-- #post -->

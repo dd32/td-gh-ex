@@ -12,6 +12,7 @@
  * If the current post is protected by a password and the visitor has not yet
  * entered the password we will return early without loading the comments.
  */
+
 if (post_password_required())
     return;
 ?>
@@ -24,7 +25,7 @@ if (post_password_required())
                 'style' => 'ol',
                 'short_ping' => true,
                 'avatar_size' => 72,
-                'callback' => 'theme_comment'
+                'callback' => array($mp_artwork,'theme_comment')
             ));
             ?>
         </ol><!-- .comment-list -->
@@ -48,16 +49,16 @@ if (post_password_required())
     <?php endif; // have_comments()  ?>
     <?php
     if (comments_open()) {
-        $req = get_option('require_name_email');
-        $aria_req = ( $req ? " aria-required='true'" : '' );
-        $comment_args = array(
+        $mp_artwork_req = get_option('require_name_email');
+        $mp_artwork_aria_req = ( $mp_artwork_req ? " aria-required='true'" : '' );
+        $mp_artwork_comment_args = array(
             'fields' => apply_filters('comment_form_default_fields', array(
                 'author' => '<div class="form-group comment-form-author">' .
                 '<input class="form-control" id="author" placeholder="' . __('Name*', 'artwork-lite') . '" name="author" type="text" value="' .
-                esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' />' .
+                esc_attr($commenter['comment_author']) . '" size="30"' . $mp_artwork_aria_req . ' />' .
                 '</div><!-- #form-section-author .form-section -->',
                 'email' => '<div class="form-group comment-form-email">' .
-                '<input class="form-control" id="email" placeholder="' . __('Email*', 'artwork-lite') . '" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' />' .
+                '<input class="form-control" id="email" placeholder="' . __('Email*', 'artwork-lite') . '" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $mp_artwork_aria_req . ' />' .
                 '</div><!-- #form-section-email .form-section -->',
                 'url' => '<div class="form-group comment-form-url">' .
                 '<input class="form-control" placeholder="' .__('Website', 'artwork-lite') . '" id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) .
@@ -65,7 +66,7 @@ if (post_password_required())
             'comment_notes_after' => '',
             'comment_field' => '<div class="form-group comment-form-comment"><textarea placeholder="'. __('Comment*', 'artwork-lite') .'" rows="8" class="form-control" id="comment" name="comment" aria-required="true"></textarea></div>'
         );
-        comment_form($comment_args);
+        comment_form($mp_artwork_comment_args);
     }
     ?>
 

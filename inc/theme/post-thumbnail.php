@@ -1,36 +1,5 @@
 <?php
-/*
- * Post thumbnail 
- */
-
-function theme_post_thumbnail($post, $themePageTemplate) {
-    ?>
-    <?php if (has_post_thumbnail() && !post_password_required() && !is_attachment()) : ?>
-        <div class="entry-thumbnail">
-            <?php if ($themePageTemplate == 'template-works.php'): ?>
-                <a href = "<?php the_permalink(); ?>" ><?php the_post_thumbnail('thumb-large-blog'); ?></a>
-            <?php else: ?>
-                <?php if ($themePageTemplate == 'single.php'): ?>
-                    <?php the_post_thumbnail('thumb-large-blog'); ?>
-                <?php else: ?>
-                    <a href = "<?php the_permalink(); ?>" ><?php the_post_thumbnail(); ?></a>
-                <?php endif; ?>
-            <?php endif; ?>
-        </div>
-    <?php else:
-        ?>
-        <?php if ($themePageTemplate == 'template-two-columns-blog.php'): ?>
-            <div class="entry-thumbnail empty-entry-thumbnail">
-                <a href = "<?php the_permalink(); ?>" rel="external" title="<?php the_title(); ?>"><span class="date-post">
-                        <?php echo get_post_time('j M'); ?>
-                    </span></a>
-            </div> 
-        <?php endif; ?>
-    <?php
-    endif;
-}
-
-function theme_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr) {
+function mp_artwork_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr) {
     $html = '';
     $id = $post_thumbnail_id;
     $image = wp_get_attachment_image_src($id, $size);
@@ -72,4 +41,4 @@ function theme_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $
     return $html;
 }
 
-add_filter('post_thumbnail_html', 'theme_post_thumbnail_html', 99, 5);
+add_filter('post_thumbnail_html', 'mp_artwork_post_thumbnail_html', 99, 5);

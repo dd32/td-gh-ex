@@ -8,10 +8,11 @@
  * @subpackage Artwork
  * @since Artwork 1.0
  */
-global $themePageTemplate;
+global $mp_artwork_page_template;
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-in-blog post'); ?>>
-    <?php echo theme_get_first_embed_media($post->ID); ?>
+    <?php echo mp_artwork_get_first_embed_media($post->ID); ?>
     <header class="entry-header">
         <h2 class="entry-title h4">
             <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -20,9 +21,10 @@ global $themePageTemplate;
     <section class="entry-content">
         <p>
             <?php
-            theme_get_content_theme(107, false);
+            mp_artwork_get_content_theme(107, false);
             ?>
-        </p>
+        </p>        
+        <div class="clearfix"></div>
     </section>
-    <?php theme_post_meta($post); ?>
+    <?php mp_artwork_post_meta($post); ?>
 </article><!-- #post -->

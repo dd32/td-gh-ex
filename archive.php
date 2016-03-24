@@ -16,6 +16,7 @@
  * @subpackage artwork
  * @since artwork 1.0
  */
+
 get_header();?>
 <div class="container main-container">
     <div class="row clearfix">
@@ -24,8 +25,8 @@ get_header();?>
                 <?php /* The loop */ ?>
                 <?php while (have_posts()) : the_post(); ?>
                     <?php get_template_part('content', get_post_format()); ?>
-                <?php endwhile; ?>
-                <?php theme_content_nav( 'nav-below' ); ?>
+                <?php endwhile; ?>                
+                <?php mp_artwork_content_nav( 'nav-below' ); ?>
             <?php else : ?>
                 <?php get_template_part('content', 'none'); ?>
             <?php endif; ?>
@@ -36,4 +37,6 @@ get_header();?>
         </div>
     </div>
 </div>
-<?php get_footer(); ?>
+<?php get_footer();
+
+

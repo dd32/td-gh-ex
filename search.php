@@ -6,7 +6,9 @@
  * @subpackage Artwork
  * @since Artwork 1.0
  */
-get_header(); ?>
+
+get_header();
+?>
 <div class="container main-container">
     <div class="row clearfix">
         <div class=" col-xs-12 col-sm-8 col-md-8 col-lg-8">
@@ -15,14 +17,12 @@ get_header(); ?>
                 <?php while (have_posts()) : the_post(); ?>
                     <?php get_template_part('content', 'search'); ?>
                 <?php endwhile; ?>
-                <?php theme_content_nav( 'nav-below' ); ?>
-
-            <?php else : ?>
+                <?php mp_artwork_content_nav('nav-below'); ?>
+                <?php else : ?>
                 <article id="post-0" class="post no-results not-found">
                     <div class="entry-content">
                         <h3 class="entry-title"><?php _e('Nothing Found', 'artwork-lite'); ?></h3>
                         <p><?php _e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'artwork-lite'); ?></p>
-                        <?php get_search_form(); ?>
                     </div><!-- .entry-content -->
                 </article><!-- #post-0 -->
             <?php endif; ?>
@@ -33,6 +33,5 @@ get_header(); ?>
         </div>
     </div>
 </div>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
 

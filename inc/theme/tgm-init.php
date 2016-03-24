@@ -18,11 +18,11 @@
  * @link       https://github.com/TGMPA/TGM-Plugin-Activation
  */
 /**
- * Include the TGM_Plugin_Activation class.
+ * Include the MP_Artwork_TGM_Plugin_Activation class.
  */
 require_once get_template_directory() . '/classes/theme/class-tgm-plugin-activation.php';
 
-add_action('tgmpa_register', 'theme_register_required_plugins');
+add_action('tgmpa_register', 'mp_artwork_register_required_plugins');
 
 /**
  * Register the required plugins for this theme.
@@ -36,9 +36,9 @@ add_action('tgmpa_register', 'theme_register_required_plugins');
  * arrays.
  *
  * This function is hooked into tgmpa_init, which is fired within the
- * TGM_Plugin_Activation class constructor.
+ * MP_Artwork_TGM_Plugin_Activation class constructor.
  */
-function theme_register_required_plugins() {
+function mp_artwork_register_required_plugins() {
     /*
      * Array of plugin arrays. Required keys are name and slug.
      * If the source is NOT from the .org repo, then source is also required.
@@ -61,15 +61,10 @@ function theme_register_required_plugins() {
      }
    
     array_push($plugins, array(
-        'name' => 'Works for Artwork theme',
+        'name' => 'Artwork Theme Engine',
         'slug' => 'mp-artwork',
-        'source' => get_template_directory_uri() . '/assets/mp-artwork.zip',
-        'required' => true,
-        'version' => '1.0',
-        'force_activation' => false,
-        'force_deactivation' => false,
-        'external_url' => '',
-            )
+		'is_callable' => 'mp-artwork',
+		)
     );
     /*
      * Array of configuration settings. Amend each line as needed.
@@ -96,9 +91,9 @@ function theme_register_required_plugins() {
     tgmpa($plugins, $config);
 }
 
-add_action('admin_head', 'theme_admin_style');
+add_action('admin_head', 'mp_artwork_admin_style');
 
-function theme_admin_style() {
+function mp_artwork_admin_style() {
     echo '<style>
     #setting-error-tgmpa{
         display:block;
