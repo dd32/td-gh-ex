@@ -263,4 +263,7 @@ function greenr_slide_exists() {
 	return false;	
 }
 
-
+add_action('admin_notices','wbls_try_free');
+function wbls_try_free() {
+	printf( __('<div class="notice notice-warning is-dismissible"><p>Try <a href="%1$s">Greenr Pro Version </a> for Free</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button></div>','greenr'),esc_url('http://www.webulousthemes.com/request-free-trial-for-themes/') );
+}

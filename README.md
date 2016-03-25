@@ -46,6 +46,9 @@ http://www.gratisography.com/pictures/46_1.jpg
 
 == Change Log ==
 
+Version 1.1.5
+	*  Added Admin notice for `Try Pro for Free` 
+
 Version 1.1.4
 	* `Try pro for free` option Added
 	*  Change Documentation url 
