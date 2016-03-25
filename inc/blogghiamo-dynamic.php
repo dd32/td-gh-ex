@@ -332,7 +332,6 @@ function blogghiamo_custom_css_styles() {
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
-	.main-navigation ul li .indicator,
 	.main-navigation a,
 	.main-navigation a:hover, 
 	.main-navigation a:focus, 
@@ -344,6 +343,11 @@ function blogghiamo_custom_css_styles() {
 	.menu-toggle:hover,
 	.menu-toggle:focus	{
 		color: <?php echo esc_attr($box_color_second); ?>;
+	}
+	@media screen and (max-width: 768px) {
+		.main-navigation ul li .indicator {
+			color: <?php echo esc_attr($box_color_second); ?>;
+		}
 	}
 	.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header, #disqus_thread,
 	.crestaPostStripeInner,

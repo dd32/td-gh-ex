@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/blogghiamo/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Minimal WordPress Theme with two columns, unlimited colors, theme options and share buttons created by CrestaProject.com. Live demo http://crestaproject.com/demo/blogghiamo/
-Version: 1.3.8
+Version: 1.3.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blogghiamo
@@ -155,7 +155,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p.site-title {
 	clear: both;
 	text-rendering: optimizeLegibility;
 	line-height: 1.3;
@@ -518,23 +519,16 @@ a:active {
 	border-right: 0;
 }
 
-.main-navigation ul li .indicator {
-	position: absolute;
-	right: 7px;
-	top: 28px;
-	font-family: 'FontAwesome';
-	font-size: 12px;
-	line-height: 1;
-	color: #ffffff;
-}
-.main-navigation ul ul li .indicator {
-	top: 22px;
-}
-.main-navigation ul li .indicator:before {
+.main-navigation li a:not(:last-child):after {
 	content: "\f0d7";
+	font-family: FontAwesome;
+	margin: 0 0 0 5px;
+	font-size: 10px;
 }
-.main-navigation ul ul li .indicator:before {
+.main-navigation ul ul li a:not(:last-child):after {
 	content: "\f0da";
+	margin: 0 0 0 5px;
+	float: right;
 }
 
 .main-navigation a {
@@ -640,7 +634,7 @@ a:active {
 	}
 	
 	.main-navigation.toggled .nav-menu ul {
-		display: block;
+		display: none;
 		left: auto;
 		position: relative;
 		top: 0;
@@ -671,6 +665,30 @@ a:active {
 	.main-navigation a {
 		border-bottom: 1px solid rgba(0,0,0,.05);
 		padding: 1.5em;
+	}
+	.main-navigation li a:not(:last-child):after, .main-navigation ul ul li a:not(:last-child):after {
+		content: "";
+		font-family: FontAwesome;
+		margin: 0;
+	}
+	.main-navigation ul li .indicator {
+		cursor: pointer;
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-family: 'FontAwesome';
+		font-size: 12px;
+		width: 55px;
+		line-height: 55px;
+		text-align: center;
+		border-left: 1px solid rgba(0,0,0,.05);
+		color: #ffffff;
+	}
+	.main-navigation ul li .indicator:before {
+		content: "\f067";
+	}
+	.main-navigation ul li .yesOpen.indicator:before {
+		content: "\f068";
 	}
 }
 
@@ -949,12 +967,13 @@ aside ul li {
 	font-size: 60px;
 	text-shadow: 4px 3px 0px #ffffff, 9px 8px 0px rgba(0, 0, 0, 0.1);
 	letter-spacing: -2px;
+	margin: 0;
 }
 
 .site-description {
 	font-weight: 300;
 	font-size: 20px;
-	margin-top: 0.5em;
+	margin: 0.5em 0 0;
 	letter-spacing: -1px;
 }
 .socialLine {
@@ -1486,10 +1505,21 @@ object {
 }
 @media all and (max-width: 479px) {
 	#page {
-		max-width: 297px;
+		max-width: 400px;
 	}
 	.form-allowed-tags {
 		display: none;
+	}
+}
+@media all and (max-width: 420px) {
+	#page {
+		max-width: 360px;
+	}
+}
+
+@media all and (max-width: 365px) {
+	#page {
+		max-width: 300px;
 	}
 }
 

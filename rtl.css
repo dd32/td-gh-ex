@@ -51,9 +51,19 @@ textarea {
 	left: 0;
 	right: inherit;
 }
-.comment-reply-title small {
+.comment-reply-title small, .menu-toggle i {
 	float: left;
 }
-code {
+code, .menu-toggle, .main-navigation.toggled .nav-menu {
 	text-align: right;
+}
+.main-navigation ul li .indicator {
+	right: inherit;
+    left: 0;
+	border-left: 0px;
+	border-right: 1px solid rgba(0,0,0,.05);
+}
+.main-navigation.toggled .nav-menu ul {
+	padding-left: inherit;
+	padding-right: 5%;
 }

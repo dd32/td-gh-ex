@@ -1,5 +1,5 @@
 //
-// SmoothScroll for websites v1.4.0 (Balazs Galambosi)
+// SmoothScroll for websites v1.4.4 (Balazs Galambosi)
 // http://www.smoothscroll.net/
 //
 // Licensed under the terms of the MIT license.
@@ -369,7 +369,7 @@ function keydown(event) {
                   (event.shiftKey && event.keyCode !== key.spacebar);
     
     // our own tracked active element could've been removed from the DOM
-    if (!document.contains(activeElement)) {
+    if (!document.body.contains(activeElement)) {
         activeElement = document.activeElement;
     }
 
@@ -680,7 +680,8 @@ var isEdge    = /Edge/.test(userAgent); // thank you MS
 var isChrome  = /chrome/i.test(userAgent) && !isEdge; 
 var isSafari  = /safari/i.test(userAgent) && !isEdge; 
 var isMobile  = /mobile/i.test(userAgent);
-var isEnabledForBrowser = (isChrome || isSafari) && !isMobile;
+var isIEWin7  = /Windows NT 6.1/i.test(userAgent) && /rv:11/i.test(userAgent);
+var isEnabledForBrowser = (isChrome || isSafari || isIEWin7) && !isMobile;
 
 var wheelEvent;
 if ('onwheel' in document.createElement('div'))

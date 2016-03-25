@@ -120,3 +120,11 @@ Version 1.3.8
 * Updated SmoothScroll to 1.4.0 version
 * Updated H2 post title
 * Minor bug fixes
+
+Version 1.3.9
+* Fixed site title and site description heading
+* Fixed mobile view
+* Improved mobile menu
+* Improved RTL mode
+* Updated SmoothScroll to 1.4.4 version
+* Minor bug fixes

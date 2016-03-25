@@ -49,7 +49,7 @@ function blogghiamo_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'blogghiamo' ); ?></h1>
+		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'blogghiamo' ); ?></h2>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><i class="fa fa-angle-left spaceRight"></i><span>' . __( 'Previous Post', 'blogghiamo' ) . '</span></div> ' . '<span class="screen-reader-text">' . __( 'Previous post:', 'blogghiamo' ) . '</span> ' );
