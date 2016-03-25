@@ -22,7 +22,7 @@ function weaverx_customizer_define_typography_sections( $sections ) {
 
 
 			'site_fontsize_int'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 16
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 16
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -54,7 +54,7 @@ function weaverx_customizer_define_typography_sections( $sections ) {
 			),
 
 			'site_fontsize_tablet_int'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 16
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh',	'default' => 16
 				),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
@@ -69,7 +69,7 @@ function weaverx_customizer_define_typography_sections( $sections ) {
 				),
 			),
 			'site_fontsize_phone_int'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 16
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh',	'default' => 16
 				),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,

@@ -20,7 +20,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 			'hide_tooltip' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -252,7 +252,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 			'info_search' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 				),
 				'control' => array(
 					'label' => __( 'Show Search Box', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
@@ -263,7 +263,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 			'info_addlogin' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 				),
 				'control' => array(
 					'label' => __( 'Show Log In', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
@@ -296,7 +296,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 			'hide_old_comments' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -308,7 +308,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 			),
 			'form_allowed_tags' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -320,7 +320,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 			),
 			'hide_comment_bubble' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -333,7 +333,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 			'hide_comment_hr' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -434,7 +434,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 			'hide_post_format_icon' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 				),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,

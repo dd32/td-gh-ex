@@ -37,7 +37,7 @@ function weaverx_customizer_define_image_sections( $sections ) {
 
 
 			'media_lib_border_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Image Border Width (px)', 'weaver-xtreme' ),
@@ -53,7 +53,7 @@ function weaverx_customizer_define_image_sections( $sections ) {
 
 			'show_img_shadows'=> array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -65,7 +65,7 @@ function weaverx_customizer_define_image_sections( $sections ) {
 
 			'restrict_img_border'=> array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -104,7 +104,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 		'images-heading-header' => weaverx_cz_heading( __( 'Site Header', 'weaver-xtreme' )),
 
 		'header_image_max_width_dec'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 100.0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 100.0	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Maximum Image Width (%)', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
@@ -132,7 +132,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 			__( 'Check to add a link to site home page for Header Image. Note: If used with <em>Move Title/Tagline over Image</em>, parts of the header image will not be clickable.', 'weaver-xtreme')),
 
 		'header_image_height_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'refresh', 'default' => 188	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 188	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Suggested Header Image Height (px)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
@@ -203,7 +203,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 			),
 
 			'page_fi_width'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'refresh', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 0	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Featured Image Width (%)', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
@@ -232,7 +232,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 
 
 			'post_avatar_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 28	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 28	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Author Avatar Size (px)', 'weaver-xtreme' ),
@@ -276,7 +276,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 
 
 			'post_full_fi_width'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'refresh', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 0	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Featured Image Width (%) - Full Post', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
@@ -321,7 +321,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 
 
 			'post_excerpt_fi_width'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'refresh', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 0	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Featured Image Width (%) - Excerpt', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
@@ -364,7 +364,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 			),
 
 			'post_fi_width'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'refresh', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 0	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Featured Image Width (%) - Single Page', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,

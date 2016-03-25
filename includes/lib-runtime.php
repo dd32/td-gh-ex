@@ -679,7 +679,7 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 	$containerAfter = '</span>';
 	$containerCrumb = '<span class="crumbs">';
 	$containerCrumbEnd = '</span>';
-	$delimiter = '&rarr;'; //' &raquo; ';
+	$delimiter = apply_filters('weaverx_breadcrumb_delimiter', '&rarr;'); //' &raquo; ';
 
 	$baseLink = '';
 	$hierarchy = '';
@@ -874,11 +874,11 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 	if (is_rtl()) {
 		$list = explode($delimiter,$bc);	// split on the arrow
 		$list = array_reverse($list);
-		$larrow = '&larr;';
+		$larrow = apply_filters('weaverx_breadcrumb_delimiter_rtl','&larr;');
 		$bc = implode($larrow,$list);
 	}
 	// Wrap crumbs
-	$bc = $containerBefore . $containerCrumb . $bc . $containerCrumbEnd . $containerAfter;
+	$bc = apply_filters('weaverx_breadcrumbs', $containerBefore . $containerCrumb . $bc . $containerCrumbEnd . $containerAfter);
 
 	if ($echo) echo $bc;
 	else return $bc;

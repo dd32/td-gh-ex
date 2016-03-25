@@ -43,7 +43,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 
 			'header_sb_cols_int'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 1
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh',	'default' => 1
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -175,7 +175,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 			),
 
 			'mobile_alt_switch'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'refresh', 'default' => 767	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 767	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Menu Mobile/Desktop Switch Point (px)', 'weaver-xtreme' ). WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
@@ -271,7 +271,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 			'archive_cols' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -283,7 +283,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 			'blog_first_one' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -295,7 +295,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 			'blog_sticky_one' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -307,7 +307,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 			'compact_post_formats' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -329,7 +329,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 			'reset_content_opts' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -350,7 +350,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 			'fullpost_blog' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -362,7 +362,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 			'fullpost_archive' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -372,7 +372,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 			),
 			'fullpost_search' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -381,7 +381,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				),
 			),
 			'excerpt_length'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 40
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh',	'default' => 40
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -409,7 +409,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 			'nav_hide_above' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -421,7 +421,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 			),
 			'nav_hide_below' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -433,7 +433,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 			),
 			'nav_show_first' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -452,7 +452,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 
 			'single_nav_link_cats' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -464,7 +464,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 			),
 			'single_nav_hide_above' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -476,7 +476,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 			),
 			'single_nav_hide_below' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -584,7 +584,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 			'layout-primary-widget-heading' => weaverx_cz_group_title( __( 'Primary Widget Area', 'weaver-xtreme' )),
 
 			'primary_cols_int'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 1
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh',	'default' => 1
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -663,7 +663,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 			'layout-secondary-widget-heading' => weaverx_cz_group_title( __( 'Secondary Widget Area', 'weaver-xtreme' )),
 
 			'secondary_cols_int'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 1
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh',	'default' => 1
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -740,7 +740,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				__('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
 
 			'top_cols_int'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 1
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh',	'default' => 1
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -816,7 +816,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 				__('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
 
 			'bottom_cols_int'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 1
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh',	'default' => 1
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -913,7 +913,7 @@ function weaverx_customizer_define_layout_sections( $sections ) {
 		'options' => array(
 
 			'footer_sb_cols_int'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'refresh',	'default' => 1
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh',	'default' => 1
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',

@@ -34,7 +34,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			'border_width_int'     => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage',
 					'default' => 1
 				),
@@ -60,7 +60,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			'rounded_corners_radius'     => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh',
 					'default' => 8
 				),
@@ -114,7 +114,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			'wrapper_border'=> array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -140,7 +140,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			'container_border' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -179,7 +179,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 		'header_border' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -190,7 +190,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 		'header_sb_border'=> array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -201,7 +201,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 		'header_html_border'=> array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -409,7 +409,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 		'options' => array(
 			'infobar_border' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -445,7 +445,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 		'content_border' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -471,7 +471,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 		'page_title_underline_int'     => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage',
 					'default' => 0
 				),
@@ -505,7 +505,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 		'show_comment_borders' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'refresh'
 				),
 				'control' => array(
@@ -533,7 +533,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 		'post_border' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -564,7 +564,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 		'post_title_underline_int'     => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage',
 					'default' => 0
 				),
@@ -599,7 +599,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			'primary_border'=> array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -629,7 +629,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			'secondary_border'=> array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -659,7 +659,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			'top_border'=> array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -687,7 +687,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			'bottom_border'=> array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -724,7 +724,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 		'options' => array(
 			'widget_border'=> array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -750,7 +750,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			'widget_title_underline_int'     => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage',
 					'default' => 0
 				),
@@ -791,7 +791,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 			'footer_border' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -801,7 +801,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 			),
 			'footer_sb_border' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(
@@ -811,7 +811,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 			),
 			'footer_html_border' => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage'
 				),
 				'control' => array(

@@ -215,10 +215,10 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 					if ( weaverx_getopt('link_site_image') ) { ?>
 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-<?php }
+<?php 				}
 					$width = weaverx_getopt_default('theme_width_int',940);
 					$custom_header_sizes = apply_filters( 'weaverx_custom_header_sizes', "(max-width: {$width}px) 100vw, 1920px" );
-					if (weaverx_getopt('header_actual_size')) { ?>
+					if ( weaverx_getopt('header_actual_size') || stripos($hdr, '.gif') !== false ) { ?>
 <img src="<?php echo $hdr ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 					<?php } else {
 				?>

@@ -702,7 +702,7 @@ function weaverx_fi( $who, $where ) {
 <?php }
 			$width = weaverx_getopt_default('theme_width_int',940);
 			$custom_header_sizes = apply_filters( 'weaverx_custom_header_sizes', "(max-width: {$width}px) 100vw, 1920px" );
-			if (weaverx_getopt('header_actual_size')) { ?>
+			if (weaverx_getopt('header_actual_size') || stripos($hdr, '.gif') !== false ) { ?>
 <img src="<?php echo $hdr ?>" width="<?php echo $hdr_width; ?>" height="<?php echo $hdr_height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 			<?php } else {
 		?>

@@ -7,8 +7,8 @@
 if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 // Admin panel that gets added to the page edit page for per page options
 
-if ( ! ( function_exists( 'wvrx_ts_installed' ) ||
-		function_exists( 'weaverxplus_plugin_installed' ) ) ) {
+if ( !function_exists( 'wvrx_ts_installed' ) &&
+	 !function_exists( 'weaverxplus_plugin_installed' )  ) {
 
 	add_action('admin_menu', 'weaverx_add_page_fields');
 

@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1015 Bruce E Wampler
 Requires at least: 4.2
 Tested up to: 4.4
-Stable tag: 2.0.8
+Stable tag: 2.0.9
 
 == Description ==
 
@@ -259,3 +259,10 @@ with testing and feature suggestions.
 * Change: Changed behavior of Use Post Featured Image as Header on Single Page View. Now
           behaves exactly like standard header image - size, centering, etc. The class
 		  .fi-page-header-image is no longer used, and has been removed.
+
+= Version 2.0.9 =
+* New: Hide Font Family/Size options in Page/Post Editor (Weaver Xtreme Plus)
+* New: $delimiter = apply_filters('weaverx_breadcrumb_delimiter', '&rarr;'); for breadcrumbs
+* Tweak: Internal hooks to Weaver Xtreme Plus and Weaver Xtreme Theme Support
+* Tweak: Handling of .gif header image
+* Fix: Some zero value Customizer settings failed to save correctly.

@@ -513,6 +513,11 @@ function weaverx_cz_sanitize_float( $value ) {
 	return floatval( $value );
 }
 
+function weaverx_cz_sanitize_int( $value ) {
+	if (!$value) return '0';
+	else return absint($value);
+}
+
 function weaverx_default_sanitize($in) {
 	// called for checkboxes, which must be okay
 	return $in;
@@ -1288,7 +1293,7 @@ function weaverx_cz_checkbox($label, $description = '', $plus = '') {
 	}
 	return array(
 		'setting' => array(
-			'sanitize_callback' => 'absint',
+			'sanitize_callback' => 'weaverx_cz_sanitize_int',
 			'transport' => 'postMessage'
 		),
 		'control' => array(
@@ -1312,7 +1317,7 @@ function weaverx_cz_checkbox_refresh($label, $description = '') {
 
 	return array(
 		'setting' => array(
-			'sanitize_callback' => 'absint',
+			'sanitize_callback' => 'weaverx_cz_sanitize_int',
 			'transport' => 'refresh'
 		),
 		'control' => array(

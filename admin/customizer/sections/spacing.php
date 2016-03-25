@@ -19,7 +19,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 			'theme_width_int'     => array(
 				'setting' => array(
-					'sanitize_callback' => 'absint',
+					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 					'transport' => 'postMessage',
 					'default' => 940
 				),
@@ -94,7 +94,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				__('The Wrapper is the &lt;div&gt; that wraps entire site.', 'weaver-xtreme')),
 
 			'wrapper_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -108,7 +108,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'wrapper_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -122,7 +122,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'wrapper_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -136,7 +136,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'wrapper_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -151,7 +151,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'wrapper_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -165,7 +165,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'wrapper_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -199,7 +199,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'container_max_width_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 2000	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 2000	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Container Area Max Width (px)', 'weaver-xtreme' ). WEAVERX_PLUS_ICON,
@@ -221,7 +221,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 
 			'container_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -235,7 +235,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'container_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -249,7 +249,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'container_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => $container_width_transport,	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => $container_width_transport,	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -263,7 +263,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'container_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => $container_width_transport,	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => $container_width_transport,	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -278,7 +278,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'container_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -291,7 +291,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'container_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -342,7 +342,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 		'header_max_width_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 2000	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 2000	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Header Area Max Width (px)', 'weaver-xtreme' ). WEAVERX_PLUS_ICON,
@@ -363,7 +363,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'header_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -377,7 +377,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -391,7 +391,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => $hdr_width_transport,	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => $hdr_width_transport,	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -405,7 +405,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => $hdr_width_transport,	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => $hdr_width_transport,	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -420,7 +420,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'header_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -433,7 +433,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -591,7 +591,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 
 			'header_sb_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -604,7 +604,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_sb_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -618,7 +618,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_sb_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -632,7 +632,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_sb_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -647,7 +647,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'header_sb_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -660,7 +660,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_sb_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -717,7 +717,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'header_html_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -730,7 +730,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_html_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -744,7 +744,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_html_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -758,7 +758,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_html_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -773,7 +773,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'header_html_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -786,7 +786,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'header_html_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -844,7 +844,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'm_primary_top_margin_dec'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -859,7 +859,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'm_primary_bottom_margin_dec'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -934,7 +934,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'm_secondary_top_margin_dec'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -949,7 +949,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'm_secondary_bottom_margin_dec'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1050,7 +1050,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'm_extra_top_margin_dec'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1065,7 +1065,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'm_extra_bottom_margin_dec'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1152,7 +1152,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 
 			'infobar_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 5	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 5	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -1166,7 +1166,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'infobar_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 5
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 5
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1180,7 +1180,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'infobar_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 5
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 5
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1194,7 +1194,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'infobar_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 5
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 5
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1209,7 +1209,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'infobar_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -1222,7 +1222,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'infobar_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1249,7 +1249,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 		'options' => array(
 
 			'content_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 4	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 4	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -1262,7 +1262,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'content_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 8
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 8
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1276,7 +1276,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'content_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 2
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 2
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1290,7 +1290,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'content_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 2
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 2
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1305,7 +1305,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'content_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -1318,7 +1318,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'content_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1391,7 +1391,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 		'options' => array(
 
 			'post_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -1404,7 +1404,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'post_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1418,7 +1418,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'post_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1432,7 +1432,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'post_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1447,7 +1447,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'post_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -1460,7 +1460,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'post_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1583,7 +1583,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			'spacing-primary-widget-heading' => weaverx_cz_group_title( __( 'Primary Widget Area', 'weaver-xtreme' )),
 
 			'primary_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -1596,7 +1596,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'primary_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1610,7 +1610,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'primary_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1624,7 +1624,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'primary_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1639,7 +1639,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'primary_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -1652,7 +1652,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'primary_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 10
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1686,7 +1686,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			'spacing-secondary-widget-heading' => weaverx_cz_group_title( __( 'Secondary Widget Area', 'weaver-xtreme' )),
 
 			'secondary_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -1699,7 +1699,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'secondary_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1713,7 +1713,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'secondary_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1727,7 +1727,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'secondary_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1742,7 +1742,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'secondary_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -1755,7 +1755,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'secondary_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 10
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1813,7 +1813,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'top_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 8	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 8	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -1826,7 +1826,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'top_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 8
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 8
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1840,7 +1840,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'top_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 8
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 8
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1854,7 +1854,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'top_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 8
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 8
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1869,7 +1869,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'top_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 10	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 10	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -1882,7 +1882,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'top_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 10
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 10
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -1927,7 +1927,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 
 			'bottom_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 8	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 8	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -1940,8 +1940,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'bottom_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 8
-				),
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 8 ),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Bottom Padding (px)', 'weaver-xtreme' ),
@@ -1954,8 +1953,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'bottom_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 8
-				),
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 8),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Left Padding (px)', 'weaver-xtreme' ),
@@ -1968,8 +1966,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'bottom_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 8
-				),
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 8 ),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Right Padding (px)', 'weaver-xtreme' ),
@@ -1983,7 +1980,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'bottom_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 10	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 10	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -1996,8 +1993,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'bottom_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 10
-				),
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 10),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Bottom Margin (px)', 'weaver-xtreme' ),
@@ -2031,7 +2027,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 		// ------- Widgets
 
 			'widget_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -2044,7 +2040,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'widget_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2058,7 +2054,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'widget_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2072,7 +2068,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'widget_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2087,7 +2083,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'widget_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -2100,7 +2096,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'widget_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2146,7 +2142,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 		'footer_max_width_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 2000	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 2000	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Footer Area Max Width (px)', 'weaver-xtreme' ). WEAVERX_PLUS_ICON,
@@ -2167,7 +2163,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'footer_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 8	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 8	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -2181,7 +2177,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 8
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 8
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2195,7 +2191,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => $foot_refresh,	'default' => 8
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => $foot_refresh,	'default' => 8
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2209,7 +2205,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => $foot_width_transport,	'default' => 8
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => $foot_width_transport,	'default' => 8
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2224,7 +2220,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'footer_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -2237,7 +2233,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2280,7 +2276,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 
 			'footer_sb_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -2293,7 +2289,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_sb_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2307,7 +2303,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_sb_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2321,7 +2317,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_sb_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2336,7 +2332,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'footer_sb_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -2349,7 +2345,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_sb_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2406,7 +2402,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'footer_html_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -2419,7 +2415,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_html_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2433,7 +2429,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_html_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2447,7 +2443,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_html_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2462,7 +2458,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 			'footer_html_margin_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'absint', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Margin (px)', 'weaver-xtreme' ),
@@ -2475,7 +2471,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_html_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'absint', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2631,7 +2627,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'general-full-header-or-4' => weaverx_cz_heading(  __( '** OR **', 'weaver-xtreme' )),
-			
+
 			'footer_extend_bgcolor'   => array(
 				'setting' => array(
 					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
