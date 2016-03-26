@@ -54,7 +54,7 @@
 			<div class="row">
 				<a class="toggle" gumby-trigger="#site-navigation > .row > ul" href="#"><i class="icon-menu"></i></a>
 				<div class="logo"><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></div>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'items_wrap' => '<ul id="%1$s" class="%2$s six columns">%3$s</ul>', 'walker' => new beauty_temple_walker) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => '', 'container' => '', 'items_wrap' => '<ul id="%1$s" class="%2$s six columns">%3$s</ul>', 'walker' => new beauty_temple_walker) ); ?>
 
 				<?php if ($social_links_fb || $social_links_tw || $social_links_gplus || $social_links_instagram || $social_links_behance):?>
 					<div class="social-links six columns">

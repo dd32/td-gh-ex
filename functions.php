@@ -333,6 +333,16 @@ class beauty_temple_walker extends Walker {
 }
 
 /**
+ * Plugins install.
+ */
+require get_template_directory() . '/inc/plugin-install.php';
+
+/**
+ * Custom Beautytemple widgets.
+ */
+require get_template_directory() . '/inc/beautytemple-widgets.php';
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
