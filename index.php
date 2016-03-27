@@ -1,0 +1,45 @@
+<?php 
+// This is the generic template used to display a page when nothing more specific matches the query
+
+get_header(); 
+?>
+
+<div class="bnt-container">
+
+	<div class="content content-blog">
+        <main class="site-main" role="main">
+
+			<?php 
+            // Start the Loop
+            if ( have_posts() ) { 
+                while ( have_posts() ) { 
+                    the_post(); 
+                    // Include the post-format-specific template for the content.
+                    get_template_part( 'content' );
+                // End the Loop
+                } 
+				// Navigation
+				if ( satori_option('bnt_ajax_pagination') != 1 ) {
+					bnt_blog_pagination();
+				}
+            } else {
+                // Display a specialized template if no posts have been found
+                get_template_part( 'content', 'none' );	
+            }
+            ?>
+            
+        </main>
+        
+        <?php 
+		if ( satori_option('bnt_ajax_pagination') == 1 ) {
+			bnt_ajax_load_more(); 
+		}
+		?>
+        
+    </div>
+            
+	<?php get_sidebar(); ?>
+            
+</div>
+
+<?php get_footer(); ?>

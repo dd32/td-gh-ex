@@ -1,0 +1,421 @@
+@charset "utf-8";
+/* Styles for the Theme Options page */
+
+div, 
+ul {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clear:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+#theme-options-form {
+	margin-top: 40px;	
+}
+
+.ui-tabs-nav {
+    margin: 0;
+	width: 15%;
+	float: left;
+	border-right: 1px solid #ddd;
+}
+
+.ui-tabs-nav li {
+	margin: 0;
+	line-height: 34px;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+}
+
+.ui-tabs-nav li a {
+	padding: 14px 20px 14px 0;
+    font-size: 13px;
+    line-height: 1.4;
+	text-decoration: none;
+	color: #999;
+	display: block;
+	text-transform: uppercase;
+}
+
+.ui-tabs-nav li a:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;	
+}
+
+.ui-tabs-nav li.ui-tabs-selected a,
+.ui-tabs-nav li.ui-state-active a {
+	border-width: 1px;
+	position: relative;
+    right: -10px;
+	background: #f1f1f1;
+	color: #0073aa;
+	font-weight: 700;
+}
+
+.ui-tabs-nav li a:hover {
+	color: #0073aa;
+	text-indent: 4px;
+}
+
+.ui-tabs-nav li.ui-tabs-selected a:hover,
+.ui-tabs-nav li.ui-state-active a:hover {
+	text-indent: 0;	
+}
+
+.settings-sections {
+	width: 50%;
+	float: left;
+}
+
+.settings-sections-inner {
+	margin-top: 5px;
+}
+
+.ui-tabs-panel {
+	padding: 0 0 60px 30px;
+}
+
+.ui-tabs-panel .form-table {
+	margin-top: -5px;	
+}
+
+.ui-tabs-panel td {
+	position: relative;	
+}
+
+.ui-tabs-panel .form-table th label {
+	padding-right: 20px;
+    display: inline-block;
+	color: #666;
+	cursor: initial;
+}
+
+.ui-tabs-panel .form-table th label[for=heading] {
+	font-size: 18px;
+	color: #000;
+}
+
+.ui-tabs-panel h2,
+.ui-tabs-panel h3 {
+	display: none !important;
+}
+
+.ui-tabs-panel h4 {
+    font-size: 1.3em;
+    margin: -1em -10px;
+}
+
+.ui-tabs-panel td label {
+	color: #aaa;
+	font-style: italic;
+	font-size: 13px;
+}
+
+.ui-tabs-panel .form-table .upload-container input {
+	padding: 3px 0 3px 5px;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.ui-tabs-panel textarea,
+input.regular-text {
+	width: 100%;	
+}
+
+.disabled-exp {
+	margin-left: 4px;
+    color: #333;
+    font-style: normal;
+    background: #FAFBC1;
+	vertical-align: middle;
+}
+
+input[disabled=disabled],
+input[disabled=disabled] + label {
+	cursor: inherit;
+}
+
+.wrap h2,
+.wrap h3, 
+.wrap table,
+.wrap .submit {
+	display: none;
+}
+
+@-webkit-keyframes rotate-forever {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@-moz-keyframes rotate-forever {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotate-forever {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+.spinner-circle {
+	-webkit-animation-duration: 0.75s;
+	-moz-animation-duration: 0.75s;
+	animation-duration: 0.75s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-name: rotate-forever;
+	-moz-animation-name: rotate-forever;
+	animation-name: rotate-forever;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function: linear;
+	animation-timing-function: linear;
+	height: 30px;
+	height: 3rem;
+	width: 30px;
+	width: 3rem;
+	border: 4px solid;
+	border-right-color: transparent;
+	border-radius: 50%;
+	display: inline-block;
+	color: #aaa;
+}
+
+.spinner-loading {
+	margin: 40px 0;
+	margin: 4rem 0;
+	text-align: center;	
+	width: 100%;
+}
+
+#wpcontent {
+	position: relative;	
+}
+
+#theme-options-form .submit {
+    position: relative;
+    top: -54px;
+	padding-left: 30px;
+	width: 112px;
+}
+
+#theme-options-form .description {
+	display: block;
+    padding-top: 6px;
+	margin-left: 2px;
+    color: #aaa;	
+}
+
+.upload-container {
+	padding-left: 80px;	
+}
+
+.upload-field {
+	width: 100%;	
+}
+
+.upload-button {
+	left: 10px;
+	top: 16px;
+	position: absolute;	
+}
+
+.form-submit-message {
+	position: fixed;
+    z-index: 200;
+    padding: 3em 4em;
+    background-color: #fff;
+	font-size: 16px;
+	width: 50%;
+    margin-left: -25%;
+    left: 50%;
+    top: 40%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.form-submit-message .dashicons {
+	margin-right: 10px;	
+}
+
+.form-submit-message .dashicons-yes {
+	color: #00cc00;	
+}
+
+.form-submit-message .dashicons-no-alt {
+	color: #cc0000;	
+}
+
+.form-submit-shadow {
+	background-color: rgba(0,0,0,0.3);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 190;
+}
+
+.theme-options-links {
+	width: 35%;
+	float: right;
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+
+.theme-options-links-inner {
+	border-left: 1px solid #ddd;
+	padding: 10px 30px 0 30px;
+}
+
+.links-section {
+	padding-bottom: 24px;
+}
+
+.links-social {
+	padding-bottom: 0;
+}
+
+.links-section a {
+	display: block;
+	margin-bottom: 8px;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.links-section a .dashicons,
+.links-section a svg {
+	padding-right: 8px;
+	font-size: 18px;
+	position: relative;
+}
+
+.links-section a:hover .dashicons,
+.links-section a:hover svg {
+	left: 3px;
+}
+
+.links-section a svg {
+    top: 4px;
+}
+
+.links-section a:hover {
+	text-decoration: underline;
+}
+
+.links-section a.button:hover,
+.links-section a:hover .dashicons {
+	text-decoration: none;
+}
+
+.links-section a:hover .dashicons,
+.button-exp:hover,
+.links-pointer:after:hover {
+	text-decoration: none !important;
+}
+
+.wp-core-ui .button.button-exp {
+	position: relative;
+	padding: 4px 14px 4px 36px;
+	margin-bottom: 8px;
+    height: auto;
+	/*
+	background-color: #F4C025;
+	color: #fff;
+	border-color: #D6A100;
+    -webkit-box-shadow: inset 0 1px 0 #FFEB3B,0 1px 0 rgba(0,0,0,.08);
+    box-shadow: inset 0 1px 0 #FFEB3B,0 1px 0 rgba(0,0,0,.08);
+	*/
+}
+
+.wp-core-ui .button.button-exp:hover {
+	background-color: darkorange;
+	color: #fff;
+	border-color: #D6A100;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.wp-core-ui .button.button-exp:hover:before {
+	color: #fff;
+}
+
+.button-exp:before {
+	position: absolute;
+	content: "\f511";
+	font-family: dashicons;
+	left: 14px;
+}
+
+.links-desc {
+	color: #aaa;
+	padding-bottom: 10px;
+}
+
+.links-pointer {
+	padding-left: 6px;
+	position: relative;
+}
+
+.links-pointer:after {
+	content: "\f345";
+	font-family: dashicons;
+	font-size: 14px;
+	font-size: 10px;
+    position: absolute;
+    top: 1px;
+}
+
+
+
+/* mobile screens */
+@media screen and (max-width: 1200px) {
+	
+	.form-submit-message {
+		width: 90%;
+    	margin-left: -15%;
+    	left: 20%; 
+	}
+	
+}

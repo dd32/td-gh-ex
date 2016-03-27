@@ -1,0 +1,2389 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Bento\n"
+"POT-Creation-Date: 2016-03-28 01:59+0300\n"
+"PO-Revision-Date: 2016-03-28 01:56+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:15
+msgid "This page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:20
+msgid ""
+"It looks like nothing was found for this URL. You can try clicking the logo "
+"to return to the home page or searching using the form below"
+msgstr ""
+
+#: comments.php:20
+msgctxt "comment section title"
+msgid "comment"
+msgid_plural "comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:50 comments.php:55
+msgid "Name"
+msgstr ""
+
+#: comments.php:63 comments.php:68
+msgid "Email"
+msgstr ""
+
+#: comments.php:76
+msgid "Submit Comment"
+msgstr ""
+
+#: comments.php:83
+msgid "Comment"
+msgstr ""
+
+#: content-none.php:7
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:14
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:18
+msgid "Sorry, but nothing matched your search terms"
+msgstr ""
+
+#: content-none.php:18
+msgid "Please try using different keywords"
+msgstr ""
+
+#: content-none.php:23
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help"
+msgstr ""
+
+#: functions.php:765
+msgid "Go to Theme Options"
+msgstr ""
+
+#: functions.php:767 includes/theme-options/class-satori-theme-options.php:948
+msgid "Get the Expansion Pack"
+msgstr ""
+
+#: functions.php:768
+msgid "Rate the theme (thanks!)"
+msgstr ""
+
+#: functions.php:769
+msgid "View theme manual"
+msgstr ""
+
+#: functions.php:942 includes/template-tags.php:486
+msgid "Continue reading"
+msgstr ""
+
+#: functions.php:1178
+msgid "SEO Settings"
+msgstr ""
+
+#: functions.php:1187
+msgid "Meta title"
+msgstr ""
+
+#: functions.php:1188
+msgid ""
+"Input the meta title - the text to be used by search engines as well as "
+"browser tabs (recommended max length - 60 symbols); the post title will be "
+"used by default if this field is empty."
+msgstr ""
+
+#: functions.php:1195
+msgid "Meta description"
+msgstr ""
+
+#: functions.php:1196
+msgid ""
+"Input the meta description - the text to be used by search engines on search "
+"result pages (recommended max length - 160 symbols); the first part of the "
+"post body will be used by default is this field is left blank."
+msgstr ""
+
+#: functions.php:1209
+msgid "General Settings"
+msgstr ""
+
+#: functions.php:1218
+msgid "Sidebar layout"
+msgstr ""
+
+#: functions.php:1219
+msgid "Choose whether to display a sidebar and on which side of the content"
+msgstr ""
+
+#: functions.php:1223
+msgid "Right Sidebar (default)"
+msgstr ""
+
+#: functions.php:1224
+msgid "Left Sidebar"
+msgstr ""
+
+#: functions.php:1225
+msgid "Full Width"
+msgstr ""
+
+#: functions.php:1232
+msgid "Page background color"
+msgstr ""
+
+#: functions.php:1233
+msgid ""
+"Choose the background color for current page/post. This will override any "
+"settings in the Theme Options"
+msgstr ""
+
+#: functions.php:1240
+msgid "Hide title"
+msgstr ""
+
+#: functions.php:1241
+msgid "Check this option if you DO NOT want to display the title on the page"
+msgstr ""
+
+#: functions.php:1248
+msgid "Uppercase title"
+msgstr ""
+
+#: functions.php:1249
+msgid ""
+"Check this option if you want the page title to be entirely in uppercase "
+"(useful for landing pages)."
+msgstr ""
+
+#: functions.php:1256
+msgid "Title position"
+msgstr ""
+
+#: functions.php:1257
+msgid "Choose the position of the title; default is left-aligned."
+msgstr ""
+
+#: functions.php:1261
+msgid "Left-aligned (default)"
+msgstr ""
+
+#: functions.php:1262
+msgid "Centered"
+msgstr ""
+
+#: functions.php:1269
+msgid "Title color"
+msgstr ""
+
+#: functions.php:1270
+msgid ""
+"Choose the text color for the title of this post. This will override any "
+"settings in the Theme Options"
+msgstr ""
+
+#: functions.php:1277
+msgid "Subtitle"
+msgstr ""
+
+#: functions.php:1278
+msgid "Input the subtitle for the page."
+msgstr ""
+
+#: functions.php:1285
+msgid "Subtitle color"
+msgstr ""
+
+#: functions.php:1286
+msgid ""
+"Choose the text color for the subtitle of this page; default is #999999 "
+"(light grey)."
+msgstr ""
+
+#: functions.php:1297
+msgid "Page Header Settings"
+msgstr ""
+
+#: functions.php:1306
+msgid "Activate extended header"
+msgstr ""
+
+#: functions.php:1307
+msgid ""
+"Check this box to enable extended header options such as header image and "
+"call-to-action-buttons."
+msgstr ""
+
+#: functions.php:1314
+msgid "Header height"
+msgstr ""
+
+#: functions.php:1315
+msgid ""
+"Choose the title top and bottom padding, which will affect the header "
+"height; default is 10%"
+msgstr ""
+
+#: functions.php:1319 functions.php:1362 functions.php:1609
+msgid "Choose value"
+msgstr ""
+
+#: functions.php:1321
+msgid "10% (default)"
+msgstr ""
+
+#: functions.php:1331
+msgid "Header image"
+msgstr ""
+
+#: functions.php:1332
+msgid ""
+"Upload the image to serve as the header; recommended size is 1400x300 pixels "
+"and above, yet mind the file size - excessively large images may worsen user "
+"experience"
+msgstr ""
+
+#: functions.php:1340
+msgid "Header video"
+msgstr ""
+
+#: functions.php:1341
+msgid ""
+"Upload the video file to be used as header background; if this is active, "
+"the header image will serve as a placeholder for mobile devices; .mp4 files "
+"are recommended, but you can also use .ogv and .webm formats. Please mind "
+"the file size - excessively large images may worsen user experience"
+msgstr ""
+
+#: functions.php:1349
+msgid "Header image overlay color"
+msgstr ""
+
+#: functions.php:1350
+msgid ""
+"Choose the color for the image overlay, designed to make the title text "
+"stand out more clearly"
+msgstr ""
+
+#: functions.php:1357
+msgid "Header image overlay opacity"
+msgstr ""
+
+#: functions.php:1358
+msgid ""
+"Choose the opacity level for the image overlay; 0.0 is fully transparent, "
+"1.0 is fully opaque, default is 0.3"
+msgstr ""
+
+#: functions.php:1366
+msgid "0.3 (default)"
+msgstr ""
+
+#: functions.php:1380
+msgid "Transparent website header"
+msgstr ""
+
+#: functions.php:1381
+msgid ""
+"Check this option to make the website header (the top area with the menu and "
+"the logo) look like a transparent overlay on top of the header image on this "
+"page."
+msgstr ""
+
+#: functions.php:1388
+msgid "Website menu color on this page"
+msgstr ""
+
+#: functions.php:1389
+msgid ""
+"Choose the color for the website menu on this page (useful for the "
+"transparent header)."
+msgstr ""
+
+#: functions.php:1396
+msgid "Website menu mouse-hover color on this page"
+msgstr ""
+
+#: functions.php:1397
+msgid ""
+"Choose the mouse-over color for the website menu on this page (useful for "
+"the transparent header)."
+msgstr ""
+
+#: functions.php:1404
+msgid "Call-to-action button text"
+msgstr ""
+
+#: functions.php:1405
+msgid "Input the text for an optional call-to-action button."
+msgstr ""
+
+#: functions.php:1412
+msgid "Call-to-action button link"
+msgstr ""
+
+#: functions.php:1413
+msgid ""
+"Paste the URL link to point the call-to-action button to; leave this blank "
+"to scroll the page below the header on button click."
+msgstr ""
+
+#: functions.php:1420
+msgid "Call-to-action button background color"
+msgstr ""
+
+#: functions.php:1421
+msgid ""
+"Choose the background color for the call-to-action buttons; default is "
+"#00b285 (green-blue)."
+msgstr ""
+
+#: functions.php:1429
+msgid "Call-to-action button mouse-over background color"
+msgstr ""
+
+#: functions.php:1430
+msgid ""
+"Choose the text color for the call-to-action buttons on hover; default is "
+"#00906c (dark-green)."
+msgstr ""
+
+#: functions.php:1438
+msgid "Call-to-action button text color"
+msgstr ""
+
+#: functions.php:1439
+msgid ""
+"Choose the text color for the primary call-to-action button; default is "
+"#ffffff (white)."
+msgstr ""
+
+#: functions.php:1447
+msgid "Secondary call-to-action button text"
+msgstr ""
+
+#: functions.php:1448
+msgid "Input the text for an optional secondary call-to-action button."
+msgstr ""
+
+#: functions.php:1455
+msgid "Secondary call-to-action button link"
+msgstr ""
+
+#: functions.php:1456
+msgid ""
+"Paste the URL link to point the secondary call-to-action button to; leave "
+"this blank to scroll the page below the header on button click."
+msgstr ""
+
+#: functions.php:1463
+msgid "Secondary call-to-action button color"
+msgstr ""
+
+#: functions.php:1464
+msgid ""
+"Choose the text and border color for the secondary call-to-action button; "
+"default is #00b285 (green-blue) or the same as the primary button."
+msgstr ""
+
+#: functions.php:1471
+msgid "Secondary call-to-action button mouse-over color"
+msgstr ""
+
+#: functions.php:1472
+msgid ""
+"Choose the text and border color for the secondary call-to-action button on "
+"hover; default is #00906c (dark-green) or the same as the primary button."
+msgstr ""
+
+#: functions.php:1483
+msgid "Map Header"
+msgstr ""
+
+#: functions.php:1492
+msgid "Activate Google Maps header"
+msgstr ""
+
+#: functions.php:1493
+msgid ""
+"Check this box to enable Google Maps header; note that this will deactivate "
+"the extended header image/video."
+msgstr ""
+
+#: functions.php:1500
+msgid "Map center location"
+msgstr ""
+
+#: functions.php:1501
+msgid ""
+"Input the address (country, city, or exact address) of the locaiton on which "
+"to center the map."
+msgstr ""
+
+#: functions.php:1508
+msgid "Map height"
+msgstr ""
+
+#: functions.php:1509
+msgid "Select the height of the map, in pixels."
+msgstr ""
+
+#: functions.php:1516
+msgid "400 (default)"
+msgstr ""
+
+#: functions.php:1526
+msgid "Map zoom level"
+msgstr ""
+
+#: functions.php:1527
+msgid ""
+"Choose the zoom level for the map, 1 being entire world and 20 being "
+"individual buildings."
+msgstr ""
+
+#: functions.php:1545
+msgid "15 (default)"
+msgstr ""
+
+#: functions.php:1556
+#, php-format
+msgid ""
+"You can insert the code for custom map styling here; check <a href=\"%s\" "
+"target=\"_blank\">Snazzymaps.com</a> for ready-made snippets: when on the "
+"page of the particular style, click on the \"Copy\" button or simply select "
+"and copy the code under the \"Javascript Style Array\" heading."
+msgstr ""
+
+#: functions.php:1559
+msgid "Map custom style"
+msgstr ""
+
+#: functions.php:1571
+msgid ""
+"Masonry Tile Settings / Only for displaying on \"Grid\" page template with "
+"\"Masonry\" grid type"
+msgstr ""
+
+#: functions.php:1580
+msgid "Tile size"
+msgstr ""
+
+#: functions.php:1581
+msgid ""
+"Choose the size of the tile relative to the default 1x1 tile (defined by the "
+"number of columns in the grid)"
+msgstr ""
+
+#: functions.php:1585
+msgid "1x1 (default)"
+msgstr ""
+
+#: functions.php:1595
+msgid "Tile overlay color"
+msgstr ""
+
+#: functions.php:1596
+msgid ""
+"Choose the color for an overlay for the tile background image; default is "
+"#666666 (grey)"
+msgstr ""
+
+#: functions.php:1604
+msgid "Tile overlay opacity"
+msgstr ""
+
+#: functions.php:1605
+msgid ""
+"Select the opacity level for an overlay for the tile background image, 0 is "
+"fully transparent (default is 0.6)"
+msgstr ""
+
+#: functions.php:1616
+msgid "0.6 (default)"
+msgstr ""
+
+#: functions.php:1627
+msgid "Tile text color"
+msgstr ""
+
+#: functions.php:1628
+msgid ""
+"Choose the color for the text inside the tile; default is #ffffff (white)"
+msgstr ""
+
+#: functions.php:1636
+msgid "Tile text size"
+msgstr ""
+
+#: functions.php:1637
+msgid "Choose the text size for the tile; default is 16px"
+msgstr ""
+
+#: functions.php:1644
+msgid "16 (default)"
+msgstr ""
+
+#: functions.php:1658
+msgid "Grid Settings"
+msgstr ""
+
+#: functions.php:1667
+msgid "Grid mode"
+msgstr ""
+
+#: functions.php:1668
+msgid "Choose which grid type to use on this page"
+msgstr ""
+
+#: functions.php:1681
+msgid "Number of columns"
+msgstr ""
+
+#: functions.php:1682
+msgid ""
+"Select the number of columns in the grid or number of base tiles per line in "
+"masonry"
+msgstr ""
+
+#: functions.php:1688
+msgid "3 (default)"
+msgstr ""
+
+#: functions.php:1698
+msgid "Content types"
+msgstr ""
+
+#: functions.php:1699
+#, php-format
+msgid "Install the %s to use the \"project\" (portfolio) content type"
+msgstr ""
+
+#: functions.php:1707
+msgid "Items per page"
+msgstr ""
+
+#: functions.php:1708
+msgid ""
+"Input the number of items to display per page; default is the number set in "
+"\"Settings - Reading\" admin section"
+msgstr ""
+
+#: functions.php:1716
+msgid "Item margins"
+msgstr ""
+
+#: functions.php:1717
+msgid "Input the margin width in pixels (default is 10)"
+msgstr ""
+
+#: functions.php:1725
+msgid "Hide tile overlays"
+msgstr ""
+
+#: functions.php:1726
+msgid "Only display tile overlays in masonry on mouse hover"
+msgstr ""
+
+#: functions.php:1733
+msgid "Force full width"
+msgstr ""
+
+#: functions.php:1734
+msgid ""
+"Check this option if you want the grid to stretch the entire width of the "
+"screen"
+msgstr ""
+
+#: functions.php:1741
+msgid "Load items on same page"
+msgstr ""
+
+#: functions.php:1742
+msgid ""
+"Replace the standard pagination with a button which loads next items without "
+"refreshing the page"
+msgstr ""
+
+#: functions.php:1845
+msgctxt "placeholder"
+msgid "Search Products&hellip;"
+msgstr ""
+
+#: functions.php:1845
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2.php:120
+msgid "Metabox configuration is required to have an ID parameter"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2.php:332
+msgid "Click to toggle"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Ajax.php:40
+msgid "Please Try Again"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Ajax.php:135
+msgid "Remove Embed"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Ajax.php:139
+#, php-format
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Field.php:955
+msgid "Add Group"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Field.php:956
+msgid "Remove Group"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Field.php:978
+#: includes/metaboxes/includes/CMB2_Field.php:982
+msgid "None"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:86
+#: includes/metaboxes/includes/CMB2_JS.php:119
+msgid "Clear"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:87
+msgid "Default"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:88
+msgid "Select Color"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:89
+msgid "Current Color"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:109
+msgctxt "Valid formatDate string for jquery-ui datepicker"
+msgid "mm/dd/yy"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:110
+msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:111
+msgid "Su, Mo, Tu, We, Th, Fr, Sa"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:112
+msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:113
+msgid ""
+"January, February, March, April, May, June, July, August, September, "
+"October, November, December"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:114
+msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:115
+msgid "Next"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:116
+msgid "Prev"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:117
+msgid "Today"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:118
+#: includes/metaboxes/includes/CMB2_JS.php:128
+msgid "Done"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:122
+msgid "Choose Time"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:123
+msgid "Time"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:124
+msgid "Hour"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:125
+msgid "Minute"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:126
+msgid "Second"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:127
+msgid "Now"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:129
+msgctxt ""
+"Valid formatting string, as per http://trentrichardson.com/examples/"
+"timepicker/"
+msgid "hh:mm TT"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:135
+msgid "Use this file"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:136
+msgid "Use these files"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:137
+#: includes/metaboxes/includes/CMB2_Types.php:1004
+msgid "Remove Image"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:138
+#: includes/metaboxes/includes/CMB2_Types.php:357
+#: includes/metaboxes/includes/CMB2_Types.php:1023
+msgid "Remove"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:139
+#: includes/metaboxes/includes/CMB2_Types.php:1018
+msgid "File:"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:140
+#: includes/metaboxes/includes/CMB2_Types.php:1021
+msgid "Download"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:141
+msgid "Select / Deselect All"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Types.php:298
+msgid "Add Row"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Types.php:749
+#: includes/metaboxes/includes/CMB2_Types.php:797
+msgid "No terms"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Types.php:864
+msgid "Add or Upload Files"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Types.php:926
+msgid "Add or Upload File"
+msgstr ""
+
+#: includes/metaboxes/includes/helper-functions.php:250
+msgid "Save"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:333
+msgid "Install Required Plugins"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:334
+msgid "Install Plugins"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:335
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:336
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:338
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:343
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:353
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:358
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:363
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:368
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:373
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:378
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:383
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:388
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:393
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:397
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:398
+msgid "Return to the dashboard"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:399
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3030
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:400
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2833
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:401
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:402
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:403
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:404
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:405
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:524
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:525
+msgid "Update Required"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:639
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:829
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3439
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:936
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:936
+#: includes/plugin-activation/class-tgm-plugin-activation.php:939
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:939
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:1117
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2829
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:1882
+#, php-format
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2168
+msgid "Required"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2171
+msgid "Recommended"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2187
+msgid "WordPress Repository"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2190
+msgid "External Source"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2193
+msgid "Pre-Packaged"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2210
+msgid "Not Installed"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2214
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2216
+msgid "Active"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2222
+msgid "Required Update not Available"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2225
+msgid "Requires Update"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2228
+msgid "Update recommended"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2236
+#, php-format
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2281
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2284
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2287
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2290
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2372
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2380
+msgid "Installed version:"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2388
+msgid "Minimum required version:"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2400
+msgid "Available version:"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2423
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2437
+msgid "Plugin"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2438
+msgid "Source"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2439
+msgid "Type"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2443
+msgid "Version"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2444
+msgid "Status"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2492
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2496
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2501
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2571
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2604
+msgid "Install"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2610
+msgid "Update"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2613
+msgid "Activate"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2644
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2646
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2682
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2684
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2789
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:2815
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3029
+msgid "Plugin activation failed."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3363
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3365
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3366
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3370
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3371
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3371
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3377
+msgid "Show Details"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3371
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3377
+msgid "Hide Details"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3372
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3373
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3376
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3377
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3378
+msgid "All installations have been completed."
+msgstr ""
+
+#: includes/plugin-activation/class-tgm-plugin-activation.php:3379
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/template-tags.php:535 includes/template-tags.php:590
+msgid "Posted by"
+msgstr ""
+
+#: includes/template-tags.php:546
+msgid "in"
+msgstr ""
+
+#: includes/template-tags.php:552
+msgid "0 comments"
+msgstr ""
+
+#: includes/template-tags.php:554
+msgid "comments"
+msgstr ""
+
+#: includes/template-tags.php:556
+msgid "1 comment"
+msgstr ""
+
+#: includes/template-tags.php:562
+msgid "on"
+msgstr ""
+
+#: includes/template-tags.php:569
+msgid "Edit this"
+msgstr ""
+
+#: includes/template-tags.php:598
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: includes/template-tags.php:618
+msgid "Newer Comments"
+msgstr ""
+
+#: includes/template-tags.php:621
+msgid "Older Comments"
+msgstr ""
+
+#: includes/template-tags.php:652
+msgid "Edit"
+msgstr ""
+
+#: includes/template-tags.php:668
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: includes/template-tags.php:682
+msgid "Previous page"
+msgstr ""
+
+#: includes/template-tags.php:683
+msgid "Next page"
+msgstr ""
+
+#: includes/template-tags.php:699
+msgid "Posts navigation"
+msgstr ""
+
+#: includes/template-tags.php:762
+msgid "theme by"
+msgstr ""
+
+#: includes/template-tags.php:782
+msgid "Load more"
+msgstr ""
+
+#: includes/template-tags.php:909
+msgid "Welcome to"
+msgstr ""
+
+#: includes/template-tags.php:910
+msgid "The Ultimate Free WordPress Theme"
+msgstr ""
+
+#: includes/template-tags.php:914
+msgid "Open theme manual"
+msgstr ""
+
+#: includes/template-tags.php:917
+msgid "View full demo"
+msgstr ""
+
+#: includes/template-tags.php:920
+msgid "Dismiss this heading"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:18
+msgid "Website Elements"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:19
+msgid "Layout and Background"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:20
+msgid "Fonts and Typography"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:21
+msgid "Header Colors"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:22
+msgid "Content Colors"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:23
+msgid "Footer Colors"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:24
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:25
+msgid "Page Meta Information"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:27
+msgid "Call to Action Popup"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:28
+msgid "Preloader"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:46
+msgid "Logo"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:47
+msgid "Upload the image to be used as the logo of the website"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:54
+msgid "Favicon"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:55
+msgid ""
+"Set the website favicon - the small image displayed in the browser tab; "
+"recommended size: 16x16 or 32x32."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:62
+msgid "Hide author block below posts"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:63
+msgid ""
+"Check this option to stop displaying the author information in blog posts, "
+"below the content."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:69
+msgid "Load posts on the same page in blog"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:70
+msgid ""
+"Enable this to replace the standard blog pagination with a \"Load more\" "
+"button that does not reload the page."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:77
+msgid "Fix header on top of page on scroll"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:78
+msgid ""
+"Check this option if you wish to fix the header to the top of the screen "
+"while the website is being scrolled."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:84
+msgid "Customize the copyright message in the footer"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:85
+msgid ""
+"Use this field to add your own message instead of the theme link in the "
+"footer."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:92
+msgid "Hide submenu items in mobile menu"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:93
+msgid "Check this option to only display top-level items in the mobile menu."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:99
+msgid "Number of products per shop page (WooCommerce only)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:100
+msgid ""
+"Indicate the number of products to be displayed per page in the WooCommerce "
+"shop page; default is 12. Note that the WooCommerce plugin is not part of "
+"the theme needs to be installed separately."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:108
+msgid "Number of columns on the shop page (WooCommerce only)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:109
+msgid ""
+"Input the number of columns for the WooCommerce shop page; default is 4; "
+"Note that the WooCommerce plugin is not part of the theme needs to be "
+"installed separately."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:115
+msgid "4 (default)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:127
+msgid "Content width"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:128
+msgid "Set the width of the content container, in pixels; default is 1080."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:135
+msgid "1080 (default)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:145
+msgid "Website layout"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:146
+msgid ""
+"Choose the layout of the website: - \"wide\" means that the full-width "
+"elements such as the header will stretch the entire width of the browser "
+"window (this is default). - \"boxed\" means that the website will be "
+"restricted to a maximum width and there will be space left between the "
+"content and the sides of the browser window."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:150
+msgid "Wide (default)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:151
+msgid "Boxed"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:158
+msgid "Boxed layout: website background"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:159
+msgid ""
+"Choose the type of background for the boxed website layout; default is solid "
+"color."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:163
+msgid "Solid color (default)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:164
+msgid "Repeated texture"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:165
+msgid "Full-size image"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:172
+msgid "Boxed layout: website background color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:173
+msgid ""
+"Choose the background color for the outer parts of the boxed website; "
+"default is #e6e6e6 (light-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:181
+msgid "Boxed layout: website background texture"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:182
+msgid ""
+"Upload the image to serve as the repeating texture for the outer parts of "
+"the boxed website."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:190
+msgid "Boxed layout: website background image"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:191
+msgid ""
+"Upload the image to serve as the full-width background for the outer parts "
+"of the boxed website."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:199
+msgid "Menu layout"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:200
+msgid ""
+"Choose the way the primary menu is displayed: - \"top, right-aligned\" is "
+"the classic header with menu on the right (this is default); \"top, centered"
+"\" makes the menu and the logo align to the center of the header, \"top, "
+"hamburger button\" hides the menu behind a mobile-style three-line icon "
+"which displays a full-page overlay menu when clicked - suitable for websites "
+"with simple and non-hierarchical navigation structure; \"left side\" "
+"displays the menu and the logo to the left of the content area, as a "
+"separate section."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:205
+msgid "Top, right-aligned (default)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:206
+msgid "Top, centered"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:207
+msgid "Top, hamburger button + overlay"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:208
+msgid "Left side"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:219
+msgid "Body font (Google Fonts)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:220
+#, php-format
+msgid ""
+"Input Google Font name for the body font, e.g. Open Sans, exactly as spelled "
+"in the Google Fonts directory. You can preview Google Fonts here: %s; "
+"Default is Open Sans."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:226
+msgid "Body font (Upload your own)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:227
+msgid ""
+"Upload the font file to be used as body font; you can use .ttf, .otf, .woff "
+"and .eot file formats. This overrides the previous setting."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:234
+msgid "Body text size"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:235
+msgid "Choose the font size for the body text; default is 14px."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:241
+#: includes/theme-options/class-satori-theme-options.php:288
+msgid "14 (default)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:251
+msgid "Headings font (Google Fonts)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:252
+#, php-format
+msgid ""
+"Input Google Font name for the headings font, e.g. Open Sans, exactly as "
+"spelled in the Google Fonts directory. You can preview Google Fonts here: "
+"%s; Default is Open Sans."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:258
+msgid "Headings font (Upload your own)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:259
+msgid ""
+"Upload the font file to be used as headings font; you can use .ttf, .otf, ."
+"woff and .eot file formats. This overrides the previous setting."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:266
+msgid "Menu font (Google Fonts)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:267
+#, php-format
+msgid ""
+"Input Google Font name for the menu font, e.g. Montserrat, exactly as "
+"spelled in the Google Fonts directory. You can preview Google Fonts here: "
+"%s; Default is Montserrat."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:273
+msgid "Menu font (Upload your own)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:274
+msgid ""
+"Upload the font file to be used as menu font; you can use .ttf, .otf, .woff "
+"and .eot file formats. This overrides the previous setting."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:281
+msgid "Menu text size"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:282
+msgid "Choose the font size for the menu text; default is 14px."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:300
+msgid "Remove uppercase from menu text"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:301
+msgid ""
+"Check this option to render the menu items in sentence case (normal caps)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:310
+msgid "Header background color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:311
+msgid ""
+"Choose the background color for the top section of the website; default is "
+"#ffffff (white)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:318
+msgid "Primary Menu"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:324
+msgid "Primary menu: background color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:325
+msgid ""
+"Choose the background color of the overlay menu; default is #eeeeee (light-"
+"grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:332
+msgid "Primary menu: text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:333
+msgid ""
+"Choose the text color for the main navigation menu; this will also apply to "
+"mobile menu text color by default, if nothing is chosen in the respective "
+"option below; default is #333333 (dark-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:340
+msgid "Primary menu: text color on hover"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:341
+msgid ""
+"Choose which color menu items become on mouse hover; default is #00b285 "
+"(blue-green)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:348
+msgid "Primary menu: item separators"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:349
+msgid ""
+"Choose the color for the separator lines in the primary menu; default is "
+"#eeeeee (light-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:356
+msgid "Primary menu: submenu background color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:357
+msgid ""
+"Choose the background color for the submenus; this will also apply to mobile "
+"menu background color by default, if nothing is chosen in the respective "
+"option below; default is #dddddd (grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:364
+msgid "Primary menu: submenu background color on hover"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:365
+msgid ""
+"Choose the color used as a background for submenu items on mouse hover; this "
+"will also apply to mobile menu hover background color by default, if nothing "
+"is chosen in the respective option below; default is #cccccc (grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:372
+msgid "Primary menu: submenu border color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:373
+msgid ""
+"Choose the color of submenu item borders; this will also apply to mobile "
+"menu border color by default, if nothing is chosen in the respective option "
+"below; default is #cccccc (grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:380
+msgid "Primary menu: submenu text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:381
+msgid "Choose the text color for the submenus; default is #333333 (dark-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:388
+msgid "Primary menu: submenu text color on hover"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:389
+msgid ""
+"Choose the mouse-hover text color for the submenus; default is #333333 (dark-"
+"grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:396
+msgid "Mobile Menu"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:402
+msgid "Mobile menu: background color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:403
+msgid ""
+"Choose the background color for the mobile menu; default is #dddddd (light-"
+"grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:410
+msgid "Mobile menu: background color on hover"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:411
+msgid "Choose the background color on hover; default is #cccccc (light-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:418
+msgid "Mobile menu: border color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:419
+msgid ""
+"Choose the border color for the mobile menu; default is #cccccc (light-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:426
+msgid "Mobile menu: text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:427
+msgid ""
+"Choose the text color for the mobile menu; default is #333333 (dark-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:434
+msgid "Mobile menu: text color on hover"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:435
+msgid ""
+"Choose the text color on mouse hover for the mobile menu; default is #333333 "
+"(dark-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:445
+msgid "Content area background color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:446
+msgid ""
+"Choose the background color for the main content area of the website; "
+"default is #f4f4f4 (light-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:453
+msgid "Heading color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:454
+msgid ""
+"Choose the color of headings throughout the website; default is #333333 "
+"(dark-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:461
+msgid "Body text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:462
+msgid ""
+"Choose the primary text color for the body of the website; default is "
+"#333333 (dark-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:469
+msgid "Link text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:470
+msgid ""
+"Choose the color for the link text throughout the website; default is "
+"#00b285 (blue-green)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:477
+msgid "Meta text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:478
+msgid ""
+"Pick the color for meta content such as post dates, comment counts, and post "
+"counts; default is #999999 (grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:485
+msgid "Delimiter line color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:486
+msgid ""
+"Choose the color for delimiter lines, e.g. before comments, in sidebar "
+"widgets and in the shopping cart; also applies to in-text tables; default is "
+"#dddddd (light-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:493
+msgid "Buttons and Inputs"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:499
+msgid "Input fields: background color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:500
+msgid ""
+"Choose the background color for input fields, such as comments and search; "
+"default is #e4e4e4 (light-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:507
+msgid "Input fields: text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:508
+msgid ""
+"Choose the color for the text typed into input fields, such as comment "
+"forms; default is #333333 (dark-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:515
+msgid "Input fields: placeholder text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:516
+msgid ""
+"Choose the placeholder text color for input fields, i.e. the text that "
+"appears in empty fields; default is #aaaaaa (grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:523
+msgid "Buttons color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:524
+msgid ""
+"Choose the color for buttons throughout the website; default is #00b285 "
+"(blue-green)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:531
+msgid "Button color on hover"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:532
+msgid ""
+"Choose the color for buttons on mouse hover; default is #00906c (dark blue-"
+"green)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:539
+msgid "Button text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:540
+msgid "Choose the color for button text; default is #ffffff (white)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:547
+msgid "Button text color on hover"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:548
+msgid ""
+"Choose the color for button text on mouse hover; default is #ffffff (white)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:555
+msgid "Secondary button color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:556
+msgid ""
+"Choose the color for secondary buttons, mainly for WooCommerce plugin, e.g. "
+"\"update basket\" and \"apply coupon\"; default is #999999 (grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:563
+msgid "Secondary button color on hover"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:564
+msgid ""
+"Choose the color for secondary buttons on mouse hover; default is #777777 "
+"(grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:571
+msgid "Secondary button text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:572
+msgid ""
+"Choose the text color for secondary buttons, mainly for WooCommerce plugin, "
+"e.g. \"update basket\" and \"apply coupon\"; default is #ffffff (white)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:579
+msgid "Secondary button text color on hover"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:580
+msgid ""
+"Choose the text color for secondary buttons on mouse hover; default is "
+"#ffffff (white)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:590
+msgid "Footer Widget Area"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:596
+msgid "Footer widget area background color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:597
+msgid ""
+"Choose the background color for the footer widget area; default is #888888 "
+"(grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:604
+msgid "Footer text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:605
+msgid "Choose the text color for the footer; default is #cccccc (light-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:612
+msgid "Footer link color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:613
+msgid "Choose the color for links in the footer; default is #ffffff (white)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:620
+msgid "Footer meta text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:621
+msgid ""
+"Choose the color meta text, such as dates and post counts, in the footer; "
+"default is #aaaaaa (light-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:628
+msgid "Footer delimiter text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:629
+msgid ""
+"Choose the color for delimiter lines in the footer widgets; default is "
+"#999999 (light-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:636
+msgid "Bottom Footer"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:642
+msgid "Bottom footer background color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:643
+msgid ""
+"Choose the background color for the bottom part of the footer containing the "
+"optional footer menu and the copyright information; default is #666666 "
+"(grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:650
+msgid "Bottom footer: text color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:651
+msgid ""
+"Choose the color for the bottom footer text; default is #cccccc (light-grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:658
+msgid "Bottom footer: link color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:659
+msgid ""
+"Choose the color for links in the bottom footer area; default is #ffffff "
+"(white)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:669
+msgid "Custom Styles"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:670
+msgid "Enter any custom CSS here to apply to the website."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:680
+msgid "Home page meta title"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:681
+msgid ""
+"Input the meta title for front page, to be used by search engines as well as "
+"browser tabs (recommended max length - 60 symbols); the site title from "
+"Settings -> General admin section will be used by default if this field is "
+"empty. "
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:687
+msgid "Home page meta description"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:688
+msgid ""
+"Input the meta description for front page, to be used by search engines "
+"(recommended max length - 160 symbols); the tagline from Settings -> General "
+"admin section will be used by default if this field is empty. "
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:695
+msgid "Site name for meta title"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:696
+msgid ""
+"Input the name of the website or the brand name to be used after each meta "
+"title (will not be used for the front page); if this field is empty, the "
+"value will be sourced from the site title in the Settings -> General admin "
+"menu section. "
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:702
+msgid "Separator for meta title"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:703
+msgid ""
+"Input the separator to be used between the parts of the meta titles on "
+"various pages; default is /. "
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:712
+msgid "Analytics code"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:713
+msgid ""
+"You can paste tracking snippets such as Google Analytics here. In case of "
+"Google Analytics, please visit the \"Admin\" section in your GA account, "
+"click on the \"Tracking Info --> Tracking Code\" in the middle column, and "
+"copy the code snippet from the textarea."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:723
+msgid "Display call to action popup"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:724
+msgid ""
+"Choose where to display the call-to-action popup for converting your website "
+"visitors. Use in moderation!"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:727
+msgid "Do not display (default)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:728
+msgid "Show on all pages"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:729
+msgid "Show only on front page"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:730
+msgid "Show only in blog"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:731
+msgid "Show only on particular page (set below)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:740
+msgid "Page on which to show the popup"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:741
+msgid "Select which page to display the popup on."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:749
+msgid "Popup trigger"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:750
+msgid ""
+"Choose the trigger for the popup; the \"Time on page\" trigger will display "
+"the popup after the visitor has spent a specified amount of time on the "
+"page, while the \"About to leave\" trigger will display the popup when the "
+"user moves the mouse outside the website window, indicating the intention to "
+"leave the website. Default is \"Time on page\"."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:754
+msgid "Time on page (default)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:755
+msgid "About to leave"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:762
+msgid "Time on page to display the popup"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:763
+msgid ""
+"Input the time, in seconds, after which the visitor will see the popup; "
+"default is 10 seconds."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:772
+msgid "Source of content for the popup"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:773
+msgid ""
+"Choose which page to use as a source of content for the popup; on the page "
+"you can have any text, images, and other content as well as contact forms, "
+"buttons and other elements generated by the Content Builder or any other "
+"third-party plugins. "
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:780
+msgid "Width of the popup window"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:781
+msgid "Input the width of the popup window, in pixels; default is 600."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:789
+msgid "Popup border thickness"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:790
+msgid "Set the border thickness of the popup box; default is 5 px."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:794
+msgid "0 (no border)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:799
+msgid "5 px (default)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:810
+msgid "Popup border color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:811
+msgid "Choose the color of the popup border; default is #999999 (grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:818
+msgid "Popup background overlay opacity"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:819
+msgid ""
+"Set the opacity of the shade that covers the rest of the page when the popup "
+"appears; 0.0 means fully transparent and 1.0 means completely opaque. "
+"Default is 0.2."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:825
+msgid "0.2 (default)"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:839
+msgid "Popup background overlay color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:840
+msgid ""
+"Choose the color of the shade that covers the rest of the page when the "
+"popup appears; default is #000000 (black)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:850
+msgid "Display loading screen"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:851
+msgid "Check this option to show an animation while a page is loading."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:858
+msgid "Preloader spinner color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:859
+msgid "Choose the color of the loading animation; default is #999999 (grey)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:866
+msgid "Preloader background color"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:867
+msgid ""
+"Choose the backround color of the loading screen; default is #ffffff (white)."
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:877
+#: includes/theme-options/class-satori-theme-options.php:911
+msgid "Theme Options"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:939
+msgid "Save Changes"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:1009
+msgid "Expansion Pack"
+msgstr ""
+
+#: includes/theme-options/class-satori-theme-options.php:1010
+#, php-format
+msgid ""
+"This option (and much more cool stuff) is available in the %s. Supercharge "
+"your Bento!"
+msgstr ""
+
+#: search.php:19
+msgid "Search results for"
+msgstr ""
+
+#: searchform.php:5
+msgid "Search"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Bento"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://satoristudio.net/bento-free-wordpress-theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Satori Studio"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://satoristudio.net/"
+msgstr ""
