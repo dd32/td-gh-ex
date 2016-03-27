@@ -41,6 +41,9 @@ released
 @version 1.8
 1.As per review fixed all issues from @version 1.7
 
+@version 1.9
+1.As per review fixed all issues from @version 1.8
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL
@@ -126,13 +129,12 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 Images Taken from : https://pixabay.com/
 
-*************** Footer letest-post widget Images ***************
-Image 1:- https://pixabay.com/en/fashion-beauty-model-portrait-girl-1063100/
-Image 2:- https://pixabay.com/en/female-blue-woman-fashion-models-204274/ 
-Image 3:- https://pixabay.com/en/model-modeling-pose-attractive-885294/ 
-
 *************** Header Titile Strip Image ***************
-Header title image :- https://pixabay.com/en/background-pattern-title-1260891/
+
+Header title image :- https://pixabay.com/en/abstract-polygon-black-white-grey-1175050/
+
+** --> All other images were created by Asiathemes as per requirement.
+** --> All Image link is a free public picture and distributed under the terms of the Creative Commons CC0 Universal Public Domain Dedication
 
 **************************************************************
 All Images have been used in the Becorp theme, Created by asiathemes .Also they are GPL Licensed and free to use and free to redistribute further. 

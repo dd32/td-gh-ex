@@ -1,7 +1,7 @@
 <?php
 add_action( 'customize_register', 'becorp_header_customizer' );
 function becorp_header_customizer( $wp_customize ) {
-wp_enqueue_style('becorp-customizr', ASIATHEMES_TEMPLATE_DIR_URI .'/css/customizr.css');
+wp_enqueue_style('becorp-customizr', BECORP_TEMPLATE_DIR_URI .'/css/customizr.css');
 $wp_customize->remove_control('header_textcolor');
 
 /* Header Section */
@@ -51,7 +51,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_setting(
 		'becorp_option[upload_image_logo]'
 		, array(
-        'default'        => ASIATHEMES_TEMPLATE_DIR_URI.'/images/logo.png',
+        'default'        => '',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
@@ -67,26 +67,6 @@ $wp_customize->remove_control('header_textcolor');
 			   )
 		   )
 	);
-	
-	//Enable/Disable logo text
-	$wp_customize->add_setting(
-    'becorp_option[text_title]',array(
-	'default'    => 1,
-	'sanitize_callback' => 'sanitize_text_field',
-	'type' => 'option'
-	));
-
-	$wp_customize->add_control(
-    'becorp_option[text_title]',
-    array(
-        'type' => 'checkbox',
-        'label' => __('Enable/Disabe Logo','becorp'),
-        'section' => 'header_logo',
-		'priority' => 10,
-    )
-	);
-	
-	
 	//Logo width
 	
 	$wp_customize->add_setting(
@@ -124,28 +104,6 @@ $wp_customize->remove_control('header_textcolor');
     )
 	);
 	
-	
-	
-	//Text logo
-	$wp_customize->add_setting(
-	'becorp_option[enable_header_logo_text]'
-    ,array(
-	'default' => 1,
-	'sanitize_callback' => 'sanitize_text_field',
-	'type' =>'option',
-	'priority' => 2,
-	
-	));
-
-	$wp_customize->add_control(
-    'becorp_option[enable_header_logo_text]',
-    array(
-        'type' => 'checkbox',
-        'label' => __('Show Logo text','becorp'),
-        'section' => 'header_logo',
-    )
-	);	
-	
 	//Header social Icon
 
 	$wp_customize->add_section(
@@ -171,7 +129,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_control(
     'becorp_option[header_social_media_enabled]',
     array(
-        'label' => __('Hide Social icons','becorp'),
+        'label' => __('Show Social icons','becorp'),
         'section' => 'header_social_icon',
         'type' => 'checkbox',
     )
@@ -201,7 +159,7 @@ $wp_customize->remove_control('header_textcolor');
 
 	$wp_customize->add_setting(
 	'becorp_option[facebook_media_enabled]',array(
-	'default' => 1,
+	'default' => 0,
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' => 'option',
 	));
@@ -239,7 +197,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_setting(
 	'becorp_option[twitter_media_enabled]'
     ,array(
-	'default' => 1,
+	'default' => 0,
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' => 'option',
 	));
@@ -275,7 +233,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_setting(
 	'becorp_option[linkedin_media_enabled]'
 	,array(
-	'default' => 1,
+	'default' => 0,
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' => 'option',
 	));
@@ -312,7 +270,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_setting(
 	'becorp_option[dribbble_media_enabled]'
 	,array(
-	'default' => 1,
+	'default' => 0,
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' => 'option',
 	));
@@ -349,7 +307,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_setting(
 	'becorp_option[google_media_enabled]'
 	,array(
-	'default' => 1,
+	'default' => 0,
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' => 'option',
 	));
@@ -386,7 +344,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_setting(
 	'becorp_option[rss_media_enabled]'
 	,array(
-	'default' => 1,
+	'default' => 0,
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' => 'option',
 	));
@@ -533,7 +491,7 @@ class More_becorp_Control extends WP_Customize_Control {
 					<a style="margin-bottom:20px;margin-left:20px;" href="https://asiathemes.com" target="blank" class="btn pro-btn-success btn"><?php _e('Upgrade to becorp Premium','becorp'); ?> </a>
 			</div>
 			<div class="col-md-4 col-sm-6">
-				<img class="becorp_img_responsive " src="<?php echo ASIATHEMES_TEMPLATE_DIR_URI .'/images/becorp.jpg'?>">
+				<img class="becorp_img_responsive " src="<?php echo BECORP_TEMPLATE_DIR_URI .'/images/becorp.jpg'?>">
 			</div>			
 			<div class="col-md-3 col-sm-6">
 				<h3 style="margin-top:10px;margin-left: 20px;text-decoration:underline;color:#333;"><?php echo _e( 'Becorp Premium - Features','becorp'); ?></h3>

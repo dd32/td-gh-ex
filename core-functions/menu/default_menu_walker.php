@@ -7,7 +7,7 @@ function becorp_page_menu_args( $args ) {
 add_filter( 'wp_page_menu_args', 'becorp_page_menu_args' );
 
  
-function asiathemes_fallback_page_menu( $args = array() ) {
+function becorp_fallback_page_menu( $args = array() ) {
 
 	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
 	$args = wp_parse_args( $args, $defaults );

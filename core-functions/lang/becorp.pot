@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: becorp\n"
-"POT-Creation-Date: 2016-03-16 17:20+0530\n"
-"PO-Revision-Date: 2016-03-16 17:21+0530\n"
+"POT-Creation-Date: 2016-03-28 02:29+0530\n"
+"PO-Revision-Date: 2016-03-28 02:29+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Return to the"
 msgstr ""
 
-#: 404.php:25 functions.php:56
+#: 404.php:25 functions.php:44
 msgid "Previous"
 msgstr ""
 
@@ -58,18 +58,6 @@ msgstr ""
 
 #: archive.php:7 author.php:7 category.php:7 tag.php:7 title-strip.php:5
 msgid "/"
-msgstr ""
-
-#: archive.php:11
-msgid "Daily Archives: "
-msgstr ""
-
-#: archive.php:13
-msgid "Monthly Archives: "
-msgstr ""
-
-#: archive.php:15
-msgid "Yearly Archives: "
 msgstr ""
 
 #: archive.php:17
@@ -181,7 +169,8 @@ msgstr ""
 msgid "Custom Header Settings"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:22 theme_default_data.php:7
+#: core-functions/customizer/customizer-header.php:22
+#: theme_default_data.php:7
 msgid "(2)245 23 68"
 msgstr ""
 
@@ -201,255 +190,166 @@ msgstr ""
 msgid "Upload a 250x50 for Logo Image"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:83
-msgid "Enable/Disabe Logo"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:104
+#: core-functions/customizer/customizer-header.php:84
 msgid "Enter Logo Width"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:122
+#: core-functions/customizer/customizer-header.php:102
 msgid "Enter Logo Height"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:144
-msgid "Show Logo text"
+#: core-functions/customizer/customizer-header.php:132
+msgid "Show Social icons"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:174
-msgid "Hide Social icons"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:196
+#: core-functions/customizer/customizer-header.php:154
 msgid "Facebook URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:213
-#: core-functions/customizer/customizer-header.php:251
-#: core-functions/customizer/customizer-header.php:287
-#: core-functions/customizer/customizer-header.php:324
-#: core-functions/customizer/customizer-header.php:361
-#: core-functions/customizer/customizer-header.php:398
+#: core-functions/customizer/customizer-header.php:171
+#: core-functions/customizer/customizer-header.php:209
+#: core-functions/customizer/customizer-header.php:245
+#: core-functions/customizer/customizer-header.php:282
+#: core-functions/customizer/customizer-header.php:319
+#: core-functions/customizer/customizer-header.php:356
 msgid "Open Link New tab/window"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:233
+#: core-functions/customizer/customizer-header.php:191
 msgid "Twitter URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:269
+#: core-functions/customizer/customizer-header.php:227
 msgid "Linkdin URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:306
+#: core-functions/customizer/customizer-header.php:264
 msgid "Dribbble URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:343
+#: core-functions/customizer/customizer-header.php:301
 msgid "Google URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:380
+#: core-functions/customizer/customizer-header.php:338
 msgid "rss URL"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:404
+#: core-functions/customizer/customizer-header.php:362
 msgid "Custom css"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:417
+#: core-functions/customizer/customizer-header.php:375
 msgid "Custom css snippet:"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:424
+#: core-functions/customizer/customizer-header.php:382
 msgid "Footer Customization"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:431
+#: core-functions/customizer/customizer-header.php:389
 msgid "@ 2015 Becorp Theme "
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:437
+#: core-functions/customizer/customizer-header.php:395
 msgid "Footer Customization Text"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:445
+#: core-functions/customizer/customizer-header.php:403
 msgid "Developed By "
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:451
+#: core-functions/customizer/customizer-header.php:409
 msgid "Footer Customization Developed By"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:459
-#: theme_default_data.php:33
-msgid "Asisa Themes "
+#: core-functions/customizer/customizer-header.php:417
+#: theme_default_data.php:32
+msgid "Asia Themes "
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:465
+#: core-functions/customizer/customizer-header.php:423
 msgid "Theme Developed By Name"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:479
+#: core-functions/customizer/customizer-header.php:437
 msgid "Theme Developed By Link"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:485
+#: core-functions/customizer/customizer-header.php:443
 msgid "Upgrade to Becorp Premium"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:496
+#: core-functions/customizer/customizer-header.php:454
 msgid "becorp Premium"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:533
-#: core-functions/customizer/customizer-header.php:557
+#: core-functions/customizer/customizer-header.php:491
+#: core-functions/customizer/customizer-header.php:515
 msgid "Upgrade to becorp Premium"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:539
+#: core-functions/customizer/customizer-header.php:497
 msgid "Becorp Premium - Features"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:541
+#: core-functions/customizer/customizer-header.php:499
 msgid "One Year Free Support "
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:542
-#: core-functions/option-panel/becorp-option-panel.php:11
+#: core-functions/customizer/customizer-header.php:500
 msgid "Responsive Design"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:543
-#: core-functions/option-panel/becorp-option-panel.php:22
+#: core-functions/customizer/customizer-header.php:501
 msgid "More than 10 Templates"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:544
+#: core-functions/customizer/customizer-header.php:502
 msgid "3 Types of Portfolio Templates"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:545
+#: core-functions/customizer/customizer-header.php:503
 msgid "8 types Themes Colors Scheme"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:546
-#: core-functions/option-panel/becorp-option-panel.php:13
+#: core-functions/customizer/customizer-header.php:504
 msgid "Patterns Background"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:547
+#: core-functions/customizer/customizer-header.php:505
 msgid "WPML Compatible"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:548
+#: core-functions/customizer/customizer-header.php:506
 msgid "Image Background"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:549
+#: core-functions/customizer/customizer-header.php:507
 msgid "Ultimate Portfolio layout with Taxonomy Tab effect"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:550
-#: core-functions/option-panel/becorp-option-panel.php:25
+#: core-functions/customizer/customizer-header.php:508
 msgid "Translation Ready"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:551
-#: core-functions/option-panel/becorp-option-panel.php:26
+#: core-functions/customizer/customizer-header.php:509
 msgid "Coming Soon Mode"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:552
-#: core-functions/option-panel/becorp-option-panel.php:16
+#: core-functions/customizer/customizer-header.php:510
 msgid "Google Fonts"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:559
+#: core-functions/customizer/customizer-header.php:517
 msgid "Enjoying With Becorp"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:562
+#: core-functions/customizer/customizer-header.php:520
 #, php-format
 msgid ""
 "If you Like our Products , Please do Rate us on %sWordPress.org%s?  We'd "
 "really appreciate it!"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:4
-msgid "Becorp"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:4
-msgid "Premium"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:5
-msgid "Get Our"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:5
-msgid "Premium Theme"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:8
-msgid "Our Latest Features"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:12
-msgid "8 types Colors Scheme"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:14
-msgid "3 Types Of Blog Templates"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:15
-msgid "Full Width & Boxed Layout"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:21
-msgid "One Year Free Support"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:23
-msgid "Bootstrap Slider"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:24
-msgid ""
-"Ultimate Portfolio layout with &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Taxonomy Tab "
-"effect"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:33
-msgid "View Becorp Pro Demo"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:34
-msgid "Upgrade to Becorp Pro"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:43
-msgid ""
-"We have add all the option Settings inside the customiser, this is powerfull "
-"utility of WordPress, with the help of this you can create your site with "
-"live preview, ie customizer will provide you the current time preview. We "
-"have not changed any structure so you will still be able to access the "
-"previously configured data."
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-panel.php:50
-msgid "View Customizer"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-setting.php:3
-msgid "becorp"
-msgstr ""
-
-#: core-functions/option-panel/becorp-option-setting.php:3
-msgid "Theme Options"
 msgstr ""
 
 #: core-functions/widgets/register-sidebar.php:7
@@ -460,116 +360,28 @@ msgstr ""
 msgid "The primary widget area"
 msgstr ""
 
-#: core-functions/widgets/register-sidebar.php:17
+#: core-functions/widgets/register-sidebar.php:17 footer.php:17
 msgid "Footer Widget Area"
 msgstr ""
 
-#: core-functions/widgets/register-sidebar.php:19
+#: core-functions/widgets/register-sidebar.php:19 footer.php:19
 msgid "footer widget area"
 msgstr ""
 
-#: footer.php:16 page.php:47 single.php:48
-msgid "About"
-msgstr ""
-
-#: footer.php:16
-msgid "Us"
-msgstr ""
-
-#: footer.php:17
-msgid ""
-"Excellent feature! I love it. One day I am definitely going to put this "
-"Bootstrap component into use and I will let you know once I I will let you "
-"know once Ido .Excellent feature! I love it. One day I am definitely going "
-"to put this Bootstrap component"
-msgstr ""
-
-#: footer.php:21
-msgid "Useful"
-msgstr ""
-
-#: footer.php:21
-msgid "Links"
-msgstr ""
-
-#: footer.php:23
-msgid "Home Page Variations"
-msgstr ""
-
-#: footer.php:24
-msgid "Awsome Slidershows"
-msgstr ""
-
-#: footer.php:25
-msgid "Features and Typography"
-msgstr ""
-
-#: footer.php:26
-msgid "Different &amp; Unique Pages"
-msgstr ""
-
-#: footer.php:27
-msgid "Single and Portfolios"
-msgstr ""
-
-#: footer.php:28
-msgid " Recent Blogs or News"
-msgstr ""
-
-#: footer.php:29
-msgid " Layered PSD Files"
-msgstr ""
-
-#: footer.php:34
-msgid "Latest"
-msgstr ""
-
-#: footer.php:34
-msgid "Post"
-msgstr ""
-
-#: footer.php:41 footer.php:51
-msgid "Google Fonts Catalog"
-msgstr ""
-
-#: footer.php:42 footer.php:52 footer.php:62
-msgid "Jul 29 2013"
-msgstr ""
-
-#: footer.php:61
-msgid "How To Download The Google Fonts Catalog"
-msgstr ""
-
-#: footer.php:70
-msgid "Contact"
-msgstr ""
-
-#: footer.php:70
-msgid "Info"
-msgstr ""
-
-#: footer.php:73
-msgid "2901 Marmora Road Glassgow"
-msgstr ""
-
-#: footer.php:74
-msgid "Seattle WA 98122-1090"
-msgstr ""
-
-#: footer.php:75 footer.php:76
-msgid "1 -234 -456 -7890"
-msgstr ""
-
-#: functions.php:40
+#: functions.php:31
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:57
+#: functions.php:45
 msgid "Next"
 msgstr ""
 
 #: page.php:37 single.php:38
 msgid "Tags : "
+msgstr ""
+
+#: page.php:47 single.php:48
+msgid "About"
 msgstr ""
 
 #: page.php:48 single.php:49
@@ -610,10 +422,10 @@ msgstr ""
 msgid "becorp@gmail.com"
 msgstr ""
 
-#: theme_default_data.php:31
+#: theme_default_data.php:30
 msgid "@ 2015 Becorp Theme"
 msgstr ""
 
-#: theme_default_data.php:32
+#: theme_default_data.php:31
 msgid "Developed By"
 msgstr ""

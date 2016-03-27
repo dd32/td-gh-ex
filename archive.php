@@ -4,15 +4,15 @@
   <div class="page-title">
 	<div class="container">
 	  <div class="row">
-		<div class="col-lg-5"><h6><a href="<?php echo esc_html(site_url());?>"><?php _e('Home','becorp');?></a><?php _e('/','becorp'); ?><span><?php the_title();?></span></h6></div>
+		<div class="col-lg-5"><h6><a href="<?php echo esc_html(home_url());?>"><?php _e('Home','becorp');?></a><?php _e('/','becorp'); ?><span><?php the_title();?></span></h6></div>
 		 <div class="col-lg-6">
 		 <h2>
 			<?php if ( is_day() ) : ?>
-				<?php  _e( "Daily Archives: ", 'becorp' ); echo (get_the_date()); ?>
+				<?php  the_archive_title(); ?>
 			<?php elseif ( is_month() ) : ?>
-				<?php  _e( "Monthly Archives: ", 'becorp' ); echo (get_the_date( 'F Y' )); ?>
+				<?php  the_archive_title(); ?>
 			<?php elseif ( is_year() ) : ?>
-				<?php  _e( "Yearly Archives: ", 'becorp' );  echo (get_the_date( 'Y' )); ?>
+				<?php  the_archive_title(); ?>
 			<?php else : ?>
 				<?php _e( "Blog Archives: ", 'becorp' ); ?>
 			<?php endif; ?></h2></div>

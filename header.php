@@ -6,7 +6,6 @@
 	<?php 
 	$becorp_options=becorp_theme_default_data(); 
 	$header_setting = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options ); ?>
-    <meta name="keywords" content="HTML5, CSS3, Theme, Flat, Responsive, Multipurpose, Modern" />
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
 	<?php  wp_head(); ?>
   </head>
@@ -70,12 +69,16 @@
 		  
           <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 		  				  
-					<?php if($header_setting['upload_image_logo']) { ?>
-					<img class="logo img-responsive" src="<?php  echo esc_url($header_setting['upload_image_logo']); ?>"  style="height:<?php if($header_setting['height']!='') { echo esc_html($header_setting['height']); } ?>px; width:<?php if($header_setting['width']!='') { echo esc_html($header_setting['width']); } ?>px;" />
+					<?php if($header_setting['upload_image_logo']!='') { ?>
+					<img class="logo img-responsive" src="<?php   echo esc_url($header_setting['upload_image_logo']);  ?>"  style="height:<?php if($header_setting['height']!='') { echo esc_html($header_setting['height']); } ?>px; width:<?php if($header_setting['width']!='') { echo esc_html($header_setting['width']); } ?>px;" />
+										
+					
+					
 		  <?php } else
 					{ 
-							echo get_bloginfo('name');
-						} ?>
+					echo get_bloginfo('name');
+							
+					 } ?>
 					
 		  </a>
         </div>

@@ -21,7 +21,7 @@
 						<li>
 							<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>		
 							<?php endif; ?>
-							<?php wp_list_comments( array( 'callback' => 'asiathemes_comment' ) ); ?>
+							<?php wp_list_comments( array( 'callback' => 'becorp_comment' ) ); ?>
 						</li>
 					</ul>
 				</li>
