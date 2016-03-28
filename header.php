@@ -21,6 +21,13 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<div class="preloader">
+<div class="preloader-inner">
+	<ul><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+</div>
+</div>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'astrid' ); ?></a>
 
@@ -41,24 +48,30 @@
 		<?php astrid_header_text(); ?>
 		<img class="large-header" src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" alt="<?php bloginfo('name'); ?>">
 		
-		<?php $mobile = get_theme_mod('mobile_header'); ?>
+		<?php $mobile_default = get_template_directory_uri() . '/images/header-mobile.jpg'; ?>
+		<?php $mobile = get_theme_mod('mobile_header', $mobile_default); ?>
 		<?php if ( $mobile ) : ?>
 		<img class="small-header" src="<?php echo esc_url($mobile); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" alt="<?php bloginfo('name'); ?>">
 		<?php else : ?>
 		<img class="small-header" src="<?php header_image(); ?>" width="1024" alt="<?php bloginfo('name'); ?>">
 		<?php endif; ?>
-
+	</div>
+	<?php elseif ( astrid_has_header() == 'has-shortcode' ) : ?>
+	<div class="shortcode-area">
+		<?php $shortcode = get_theme_mod('astrid_shortcode'); ?>
+		<?php echo do_shortcode($shortcode); ?>
 	</div>
 	<?php else : ?>
 	<div class="header-clone"></div>
 	<?php endif; ?>	
-
 
 	<?php if ( !is_page_template('page-templates/page_widgetized.php') ) : ?>
 		<?php $container = 'container'; ?>
 	<?php else : ?>
 		<?php $container = 'home-wrapper'; ?>
 	<?php endif; ?>
+
+	<?php do_action('astrid_before_content'); ?>
 
 	<div id="content" class="site-content">
 		<div class="<?php echo $container; ?>">

@@ -20,3 +20,34 @@ div[id^="widget-area-"] .at-styling-options {
     font-weight: 300;
     cursor: pointer;
 }
+#available-widgets #available-widgets-list div[class*="atframework_services"] .widget-title::before,
+#available-widgets #available-widgets-list div[class*="atframework_employees"] .widget-title::before,
+#available-widgets #available-widgets-list div[class*="atframework_facts"] .widget-title::before,
+#available-widgets #available-widgets-list div[class*="atframework_skills"] .widget-title::before,
+#available-widgets #available-widgets-list div[class*="atframework_posts"] .widget-title::before,
+#available-widgets #available-widgets-list div[class*="atframework_projects"] .widget-title::before,
+#available-widgets #available-widgets-list div[class*="atframework_clients"] .widget-title::before,
+#available-widgets #available-widgets-list div[class*="atframework_testimonials"] .widget-title::before {
+  color: #fcd088;
+}
+#available-widgets #available-widgets-list div[class*="atframework_services"] .widget-title::before {
+  content: '\f339';
+}
+#available-widgets #available-widgets-list div[class*="atframework_employees"] .widget-title::before {
+  content: '\f336';  
+}
+#available-widgets #available-widgets-list div[class*="atframework_facts"] .widget-title::before {
+  content: '\f313';  
+}
+#available-widgets #available-widgets-list div[class*="atframework_skills"] .widget-title::before {
+  content: '\f184';  
+}
+#available-widgets #available-widgets-list div[class*="atframework_posts"] .widget-title::before {
+  content: '\f109';  
+}
+#available-widgets #available-widgets-list div[class*="atframework_projects"] .widget-title::before {
+  content: '\f322';  
+}
+#available-widgets #available-widgets-list div[class*="atframework_clients"] .widget-title::before {
+  content: '\f307';
+}

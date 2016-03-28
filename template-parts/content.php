@@ -20,7 +20,7 @@
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
 
-		if ( 'post' === get_post_type() ) : ?>
+		if ( 'post' === get_post_type() && get_theme_mod('hide_meta') != 1 ) : ?>
 		<div class="entry-meta">
 			<?php astrid_posted_on(); ?>
 		</div><!-- .entry-meta -->
@@ -28,7 +28,7 @@
 		endif; ?>
 	</header><!-- .entry-header -->	
 
-	<?php if ( has_post_thumbnail() ) : ?>
+	<?php if ( has_post_thumbnail() && ( get_theme_mod( 'featured_image' ) != 1 ) ) : ?>
 		<?php if ( is_single() ) : ?>
 		<div class="single-thumb">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('astrid-large-thumb'); ?></a>
@@ -60,7 +60,7 @@
 		) );
 	?>
 		
-	<?php if ( is_single() ) : ?>
+	<?php if ( is_single() && get_theme_mod('hide_meta') != 1 ) : ?>
 	<footer class="entry-footer">
 		<?php astrid_entry_footer(); ?>
 	</footer><!-- .entry-footer -->

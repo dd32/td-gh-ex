@@ -2,17 +2,14 @@
 
 class Atframework_Facts extends WP_Widget {
 
-// constructor
-    function atframework_facts() {
+	public function __construct() {
 		$widget_ops = array('classname' => 'atframework_facts_widget', 'description' => __( 'Show your visitors some facts about your company.', 'astrid') );
         parent::__construct(false, $name = __('Astrid FP: Facts', 'astrid'), $widget_ops);
 		$this->alt_option_name = 'atframework_facts_widget';
     }
 	
-	// widget form creation
 	function form($instance) {
 
-	// Check values
 		$title     			= isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$fact_one   		= isset( $instance['fact_one'] ) ? esc_html( $instance['fact_one'] ) : '';
 		$fact_one_max   	= isset( $instance['fact_one_max'] ) ? esc_html( $instance['fact_one_max'] ) : '';
@@ -100,7 +97,6 @@ class Atframework_Facts extends WP_Widget {
 	<?php
 	}
 
-	// update widget
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$instance['title'] 			= strip_tags($new_instance['title']);
@@ -124,7 +120,6 @@ class Atframework_Facts extends WP_Widget {
 		return $instance;
 	}
 		
-	// display widget
 	function widget($args, $instance) {
 		$cache = array();
 		if ( ! $this->is_preview() ) {

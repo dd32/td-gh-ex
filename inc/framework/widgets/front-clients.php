@@ -7,7 +7,7 @@
 
 class Atframework_Clients extends WP_Widget {
 
-    function atframework_clients() {
+	public function __construct() {
 		$widget_ops = array('classname' => 'atframework_clients_widget', 'description' => __( 'Show a list of your clients.', 'astrid') );
         parent::__construct(false, $name = __('Astrid FP: Clients', 'astrid'), $widget_ops);
 		$this->alt_option_name = 'atframework_clients_widget';

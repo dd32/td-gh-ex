@@ -7,7 +7,7 @@
 
 class Atframework_Testimonials extends WP_Widget {
 
-    function atframework_testimonials() {
+	public function __construct() {
 		$widget_ops = array('classname' => 'atframework_testimonials_widget', 'description' => __( 'Display your testimonials.', 'astrid') );
         parent::__construct(false, $name = __('Astrid FP: Testimonials', 'astrid'), $widget_ops);
 		$this->alt_option_name = 'atframework_testimonials_widget';
@@ -110,7 +110,7 @@ class Atframework_Testimonials extends WP_Widget {
 
 				<div class="testimonial-area clearfix">
 					<?php while ( $testimonials->have_posts() ) : $testimonials->the_post(); ?>
-						<div class="testimonial">
+						<div class="testimonial astrid-3col">
 							<div class="testimonial-content">
 								<?php the_content(); ?>
 							</div>			

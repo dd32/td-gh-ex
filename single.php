@@ -31,5 +31,8 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+if ( get_theme_mod('fullwidth_single', 0) != 1 ) :
+	get_sidebar();
+endif;
 get_footer();
+?>

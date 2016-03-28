@@ -124,7 +124,7 @@ function astrid_widgets_init() {
 	foreach($pages as $page){
 		register_sidebar( array(
 			'name'          => esc_html__( 'Page - ', 'astrid' ) . $page->post_title,
-			'id'            => 'widget-area-' . $page->post_id,
+			'id'            => 'widget-area-' . strtolower($page->post_name),
 			'description'   => esc_html__( 'Use this widget area to build content for the page: ', 'astrid' ) . $page->post_title,
 			'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="atblock container">',
 			'after_widget'  => '</div></section>',
@@ -154,17 +154,24 @@ function astrid_widgets_init() {
 	register_widget( 'Atframework_Projects' );
 	register_widget( 'Atframework_Testimonials' );
 	register_widget( 'Atframework_Clients' );	
+	register_widget( 'Atframework_Posts' );		
+	register_widget( 'Atframework_Video' );		
+	register_widget( 'Atframework_Recent_Posts' );
+	register_widget( 'Atframework_Social' );		
 
 }
 add_action( 'widgets_init', 'astrid_widgets_init' );
 
-require get_template_directory() . "/widgets/front-services.php";
-require get_template_directory() . "/widgets/front-skills.php";
-require get_template_directory() . "/widgets/front-facts.php";
-require get_template_directory() . "/widgets/front-employees.php";
-require get_template_directory() . "/widgets/front-projects.php";
-require get_template_directory() . "/widgets/front-testimonials.php";
-require get_template_directory() . "/widgets/front-clients.php";
+//Homepage widgets
+$astrid_widgets = array('services', 'skills', 'facts', 'employees', 'projects', 'testimonials', 'clients', 'posts');
+foreach ( $astrid_widgets as $astrid_widget) {
+	locate_template( '/inc/framework/widgets/front-' . $astrid_widget . '.php', true, false );
+}
+
+//Sidebar widgets
+require get_template_directory() . "/inc/framework/widgets/video-widget.php";
+require get_template_directory() . "/inc/framework/widgets/posts-widget.php";
+require get_template_directory() . "/inc/framework/widgets/social-widget.php";
 
 /**
  * Enqueue scripts and styles.
@@ -172,27 +179,21 @@ require get_template_directory() . "/widgets/front-clients.php";
 function astrid_scripts() {
 	wp_enqueue_style( 'astrid-style', get_stylesheet_uri() );
 
-	if ( get_theme_mod('body_font_name') !='' ) {
-	    wp_enqueue_style( 'astrid-body-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('body_font_name')) ); 
-	} else {
-	    wp_enqueue_style( 'astrid-body-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic');
-	}
+	$body_font 		= get_theme_mod('body_font_name', '<link href=\'https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic\' rel=\'stylesheet\' type=\'text/css\'>');
+	$headings_font 	= get_theme_mod('headings_font_name', '<link href=\'https://fonts.googleapis.com/css?family=Josefin+Sans:300italic,300\' rel=\'stylesheet\' type=\'text/css\'>');
+	$remove 		= array("<link href='", "' rel='stylesheet' type='text/css'>", "https:", "http:");
+	$body_url 		= str_replace($remove, '', $body_font);
+	$headings_url 	= str_replace($remove, '', $headings_font);
 
-	if ( get_theme_mod('headings_font_name') !='' ) {
-	    wp_enqueue_style( 'astrid-headings-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('headings_font_name')) ); 
-	} else {
-	    wp_enqueue_style( 'astrid-headings-fonts', '//fonts.googleapis.com/css?family=Josefin+Sans:300italic,300'); 
-	}	
+	wp_enqueue_style( 'astrid-body-fonts', esc_attr($body_url) ); 
+	
+	wp_enqueue_style( 'astrid-headings-fonts', esc_attr($headings_url) ); 	
 
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/fonts/font-awesome.min.css' );	
 
-	wp_enqueue_script( 'astrid-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
-	wp_enqueue_script( 'astrid-smoothscroll', get_template_directory_uri() . '/js/smoothscroll.js', array('jquery'), '', true );
-
 	wp_enqueue_script( 'astrid-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true );
 
-	wp_enqueue_script( 'astrid-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '', true );
+	wp_enqueue_script( 'astrid-scripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -263,7 +264,7 @@ add_action( 'wp_head', 'astrid_html5shiv' );
  */
 function astrid_has_header() {
 	$front_header = get_theme_mod('front_header_type' ,'image');
-	$site_header = get_theme_mod('site_header_type', 'image');
+	$site_header = get_theme_mod('site_header_type', 'nothing');
 	global $post;
 	if ( !is_404() ) {
 		$single_toggle = get_post_meta( $post->ID, '_astrid_header_key', true );
@@ -271,10 +272,32 @@ function astrid_has_header() {
 		$single_toggle = false;
 	}
 
-	if ( get_header_image() && ( $front_header == 'image' && is_front_page() ) || ( $site_header == 'image' && !is_front_page() ) ) 
+	if ( get_header_image() && ( $front_header == 'image' && is_front_page() ) || ( $site_header == 'image' && !is_front_page() ) ) {
 		if (!$single_toggle)
 		return 'has-header';
+	} elseif ( ($front_header == 'shortcode' && is_front_page()) || ($site_header == 'shortcode' && !is_front_page()) ) {
+		if (!$single_toggle)
+		return 'has-shortcode';
+	}
 }
+
+/**
+ * Full width single posts
+ */
+function astrid_fullwidth_singles($classes) {
+	if ( function_exists('is_woocommerce') ) {
+		$woocommerce = is_woocommerce();
+	} else {
+		$woocommerce = false;
+	}
+
+	$single_layout = get_theme_mod('fullwidth_single', 0);
+	if ( is_single() && !$woocommerce && $single_layout ) {
+		$classes[] = 'fullwidth-single';
+	}
+	return $classes;
+}
+add_filter('body_class', 'astrid_fullwidth_singles');
 
 /**
  * Polylang compatibility
@@ -294,11 +317,11 @@ endif;
 function astrid_header_text() {
 
 	if ( !function_exists('pll_register_string') ) {
-		$header_text 		= get_theme_mod('header_text', 'FAST / EASY / FREE');
+		$header_text 		= get_theme_mod('header_text', '5 MINUTE SETUP');
 		$header_subtext 	= get_theme_mod('header_subtext', 'Time to meet Astrid');
 		$header_button		= get_theme_mod('header_button', 'Explore');
 	} else {
-		$header_text 		= pll__(get_theme_mod('header_text', 'FAST / EASY / FREE'));
+		$header_text 		= pll__(get_theme_mod('header_text', '5 MINUTE SETUP'));
 		$header_subtext 	= pll__(get_theme_mod('header_subtext', 'Time to meet Astrid'));
 		$header_button		= pll__(get_theme_mod('header_button', 'Explore'));
 	}
@@ -334,7 +357,7 @@ endif;
  * Footer site branding
  */
 if ( ! function_exists( 'astrid_footer_branding' ) ) :
-function astrid__footer_branding() {
+function astrid_footer_branding() {
 	$footer_logo = get_theme_mod('footer_logo');
 	echo '<div class="footer-branding">';
 	if ( $footer_logo ) :
@@ -350,19 +373,19 @@ endif;
  * Footer contact
  */
 if ( ! function_exists( 'astrid_footer_contact' ) ) :
-function astrid__footer_contact() {
+function astrid_footer_contact() {
 	$footer_contact_address = get_theme_mod('footer_contact_address', '29 Bedford St, London');
 	$footer_contact_email   = antispambot(get_theme_mod('footer_contact_email', 'office@site.com'));
 	$footer_contact_phone 	= get_theme_mod('footer_contact_phone', '(020) 4513 3568');
 
 	echo '<div class="footer-contact">';
-	if ($footer_contact_email) {
+	if ($footer_contact_address) {
 		echo '<div class="footer-contact-block">';
 		echo 	'<i class="fa fa-home"></i>';
 		echo 	'<span>' . esc_html($footer_contact_address) . '</span>';
 		echo '</div>';
 	}
-	if ($footer_contact_address) {
+	if ($footer_contact_email) {
 		echo '<div class="footer-contact-block">';
 		echo 	'<i class="fa fa-envelope"></i>';
 		echo 	'<span><a href="mailto:' . esc_html($footer_contact_email) . '">' . esc_html($footer_contact_email) . '</a></span>';
@@ -396,6 +419,18 @@ function astrid_excerpt_length( $length ) {
   return $excerpt;
 }
 add_filter( 'excerpt_length', 'astrid_excerpt_length', 99 );
+
+/**
+* Footer credits
+*/
+function astrid_footer_credits() {
+	echo '<a href="' . esc_url( __( 'https://wordpress.org/', 'astrid' ) ) . '">';
+		printf( __( 'Powered by %s', 'astrid' ), 'WordPress' );
+	echo '</a>';
+	echo '<span class="sep"> | </span>';
+	printf( __( 'Theme: %2$s by %1$s.', 'astrid' ), 'aThemes', '<a href="http://athemes.com/theme/astrid" rel="designer">Astrid</a>' );
+}
+add_action( 'astrid_footer', 'astrid_footer_credits' );
 
 /**
  * Implement the Custom Header feature.
@@ -432,50 +467,7 @@ require get_template_directory() . '/inc/framework/widget-options.php';
  */
 require get_template_directory() . '/inc/styles.php';
 
-function dziudek_theme_customizer_tooltips() {
-    ?>
-    <script type="text/javascript">
-    jQuery(document).ready(function() {
-        wp.customize.bind('ready', function() {
-            wp.customize.control.each(function(ctrl, i) {
-                var description = ctrl.container.find('.customize-control-description');
-                if(description.length) {
-                    var title = ctrl.container.find('.customize-control-title');
-                    var tooltip = description.text();
-                    description.remove();
-                    title.append('<div class="help-container"><div class="help-inner"><i class="dashicons dashicons-editor-help" style="vertical-align: bottom;"></i></div><div class="help-tooltip">'+tooltip+'</div></div>');
-                }
-            });
-        });
-    });
-    </script>
-    <style>
-    .help-container {
-    	float: right;
-    }
-    .help-inner {
-    	position: relative;
-    	display: inline-block;
-    	color: #949494;
-    }
-    .help-tooltip {
-    	display: none;
-    }
-	.help-tooltip {
-    	position: absolute;
-    	left: 0;
-    	background-color: rgba(0,0,0,0.9);
-    	color: #fff;
-    	line-height: 1.3;
-    	font-weight: 300;
-    	padding: 15px;
-    	z-index: 12;
-    }    
-    .help-container:hover .help-tooltip {
-    	display: block;
-    }
-    </style>
-    <?php
-}
- 
-add_action('customize_controls_print_scripts', 'dziudek_theme_customizer_tooltips');
+/**
+ * Woocommerce
+ */
+require get_template_directory() . '/woocommerce/woocommerce.php';

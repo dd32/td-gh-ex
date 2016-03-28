@@ -2,7 +2,7 @@
 
 class Atframework_Skills extends WP_Widget {
 
-    function atframework_skills() {
+	public function __construct() {
 		$widget_ops = array('classname' => 'atframework_skills_widget', 'description' => __( 'Show your visitors some of your skills.', 'astrid') );
         parent::__construct(false, $name = __('Astrid FP: Skills', 'astrid'), $widget_ops);
 		$this->alt_option_name = 'atframework_skills_widget';
@@ -156,9 +156,9 @@ class Atframework_Skills extends WP_Widget {
 		foreach (array_combine($names, $values) as $name => $value) { ?>
 			<?php if ($name !='') : ?>
 			<div class="skill">
-	 			<div class="name"><?php echo esc_html($name); ?></div>
-	            <div class="progress-bar" data-percent="<?php echo absint($value); ?>">
-					<div class="progress-animate"></div>
+	 			<div class="name"><?php echo $name; ?></div>
+	            <div class="progress-bar">
+					<div class="progress-animate" style="width:<?php echo $value; ?>%"></div>
 				</div>
 			</div>
 			<?php endif; ?> 

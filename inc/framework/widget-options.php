@@ -25,6 +25,7 @@ class Atframework_Widget_Options {
     $text_color         = isset( $instance['text_color'] ) ? esc_attr( $instance['text_color'] ) : '';
     $widget_title_color = isset( $instance['widget_title_color'] ) ? esc_attr( $instance['widget_title_color'] ) : '';
     $image_uri          = isset( $instance['image_uri'] ) ? esc_url($instance['image_uri']) : '';    
+    $sectionId          = isset( $instance['sectionId'] ) ? esc_attr($instance['sectionId']) : '';   
 		$column_width 	    = isset( $instance['column_width'] ) ? esc_attr( $instance['column_width'] ) : '';
     $padding            = isset( $instance['padding'] ) ? intval( $instance['padding'] ) : '100';
     $no_container       = isset( $instance['no_container'] ) ? (bool) $instance['no_container'] : false;
@@ -35,6 +36,8 @@ class Atframework_Widget_Options {
       <h4><?php _e( 'Styling', 'astrid' ); ?><span><?php _e( 'Click to expand', 'astrid' ); ?></span></h4>
       <div class="at-styling-inner">
         <em style="font-size:12px;"><?php _e( 'Options found in this panel apply only to this widget.', 'astrid' ); ?></em>
+        <p><label for="<?php echo $widget->get_field_id('sectionId'); ?>"><?php _e('Section ID', 'astrid'); ?><br></label>
+        <input class="widefat" id="<?php echo $widget->get_field_id( 'sectionId' ); ?>" name="<?php echo $widget->get_field_name( 'sectionId' ); ?>" type="text" value="<?php echo $sectionId; ?>" size="3" /></p>        
         <p><label for="<?php echo $widget->get_field_id('background_color'); ?>"><?php _e('Background color', 'astrid'); ?><br></label>
         <input type="text" name="<?php echo $widget->get_field_name('background_color'); ?>" id="<?php echo $widget->get_field_id('background_color'); ?>" class="color-field" value="<?php echo $background_color; ?>" /></p>
         <p><label for="<?php echo $widget->get_field_id('text_color'); ?>"><?php _e('Text color', 'astrid'); ?><br></label>
@@ -81,6 +84,7 @@ class Atframework_Widget_Options {
    * Update callback
    */
   public function widget_update ( $instance, $new_instance ) {
+    $instance['sectionId']          = strip_tags($new_instance['sectionId']);
     $instance['background_color']   = strip_tags( $new_instance['background_color'] );
     $instance['text_color']         = strip_tags( $new_instance['text_color'] );
     $instance['widget_title_color'] = strip_tags( $new_instance['widget_title_color'] );    
@@ -105,6 +109,7 @@ class Atframework_Widget_Options {
     if (isset($wp_registered_widgets[$id]['callback'][0]) && is_object($wp_registered_widgets[$id]['callback'][0])) {
       $settings           = $wp_registered_widgets[$id]['callback'][0]->get_settings();
       $instance           = $settings[substr( $id, strrpos( $id, '-' ) + 1 )];
+      $sectionId          = isset( $instance['sectionId'] ) ? esc_attr($instance['sectionId']) : '';
       $bg_color 		      = isset($instance['background_color']) ? $instance['background_color'] : null;
       $text_color 	      = isset($instance['text_color']) ? $instance['text_color'] : null;
       $widget_title_color = isset($instance['widget_title_color']) ? $instance['widget_title_color'] : null;      
@@ -113,7 +118,19 @@ class Atframework_Widget_Options {
       $padding            = isset( $instance['padding'] ) ? intval($instance['padding']) : '100';
       $no_container       = isset( $instance['no_container'] ) ? $instance['no_container'] : false;
 
-      $params[0]['before_widget'] = str_replace('<section', '<section style="background-color:' . $bg_color . ';color:' . $text_color . ';padding-top:' . $padding . 'px;padding-bottom:' . $padding . 'px;background-image:url(' . $image_uri . ');"', $params[0]['before_widget']);
+      if ($text_color) {
+        $inherit = 'inherit';
+      } else {
+        $inherit = 'noinherit';
+      }
+      if ($sectionId) {
+        $id =  ' id="' . $sectionId . '"';
+      } else {
+        $id = '';
+      }
+
+
+      $params[0]['before_widget'] = str_replace('<section', '<section' . $id . ' data-color="' . $inherit . '" style="color:' . $text_color . ';background-color:' . $bg_color . ';padding-top:' . $padding . 'px;padding-bottom:' . $padding . 'px;background-image:url(' . $image_uri . ');"', $params[0]['before_widget']);
       if ($image_uri) {
         $params[0]['before_widget'] = str_replace('<div class="atblock', '<div class="row-overlay"></div><div class="atblock', $params[0]['before_widget']);
       }

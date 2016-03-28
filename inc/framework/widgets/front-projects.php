@@ -7,7 +7,7 @@
 
 class Atframework_Projects extends WP_Widget {
 
-    function atframework_projects() {
+	public function __construct() {
 		$widget_ops = array('classname' => 'atframework_projects_widget', 'description' => __( 'Show off your latest projects.', 'astrid') );
         parent::__construct(false, $name = __('Astrid FP: Projects', 'astrid'), $widget_ops);
 		$this->alt_option_name = 'atframework_projects_widget';
@@ -33,9 +33,9 @@ class Atframework_Projects extends WP_Widget {
 	<p><label for="<?php echo $this->get_field_id( 'offset' ); ?>"><?php _e( 'Offset (number of projects needs to be different than -1 for this option to work):', 'astrid' ); ?></label>
 	<input id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo $offset; ?>" size="3" /></p>
     <p><label for="<?php echo $this->get_field_id('see_all'); ?>"><?php _e('The URL for your button [In case you want a button below your projects block]', 'astrid'); ?></label>
-	<input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'see_all' ); ?>" name="<?php echo $this->get_field_name( 'see_all' ); ?>" type="text" value="<?php echo $see_all; ?>" size="3" /></p>	
+	<input class="widefat" id="<?php echo $this->get_field_id( 'see_all' ); ?>" name="<?php echo $this->get_field_name( 'see_all' ); ?>" type="text" value="<?php echo $see_all; ?>" size="3" /></p>	
     <p><label for="<?php echo $this->get_field_id('see_all_text'); ?>"><?php _e('The text for the button [Defaults to <em>See all our projects</em> if left empty]', 'astrid'); ?></label>
-	<input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'see_all_text' ); ?>" name="<?php echo $this->get_field_name( 'see_all_text' ); ?>" type="text" value="<?php echo $see_all_text; ?>" size="3" /></p>	
+	<input class="widefat" id="<?php echo $this->get_field_id( 'see_all_text' ); ?>" name="<?php echo $this->get_field_name( 'see_all_text' ); ?>" type="text" value="<?php echo $see_all_text; ?>" size="3" /></p>	
 	<?php
 	}
 
