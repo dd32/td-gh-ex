@@ -30,14 +30,14 @@ $social_media_details = __( 'Want your users to stay in touch? No problem, boxy 
 $google_map = __( 'Google Map', 'boxy' );
 $google_map_details = __( 'Boxy Pro includes Goole Map as shortcode and widget. So, you can use it anywhere in your site!', 'boxy' );
 $view_demo = __( 'View Demo', 'boxy');
-$upgrade_to_pro = __( 'Upgrade To Pro', 'boxy' );   
+$upgrade_to_pro = __( 'Try Pro For Pro', 'boxy' );   
       
           
 $boxy_why_upgrade = <<< FEATURES
 <p class="wrap-header">
     <a class="view-demo" href="http://demo.webulous.in/boxy/">
         <i class="fa fa-eye"></i> $view_demo</a> 
-    <a class="upgrade" href="http://www.webulousthemes.com/?add-to-cart=25">
+    <a class="upgrade" href="http://www.webulousthemes.com/request-free-trial-for-themes/">
         <i class="fa fa-upload"></i> $upgrade_to_pro</a>
 </p>
 <div class="one-third column clear">

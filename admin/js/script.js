@@ -1,16 +1,16 @@
 ( function( $ ) {
 	// Add Make Plus message
 		upgrade = $('<a class="boxy-buy-pro"></a>')
-			.attr('href', 'http://www.webulousthemes.com/?add-to-cart=25')
+			.attr('href', 'http://www.webulousthemes.com/request-free-trial-for-themes/')
 			.attr('target', '_blank')
 			.text(boxy_upgrade.message)
 		;
 		demo = $('<a class="boxy-docs"></a>')
-			.attr('href','http://demo.webulous.in/boxy/')
+			.attr('href','http://demo.webulous.in/boxy/')   
 			.attr('target','_blank')
 			.text(boxy_upgrade.demo);
 		docs = $('<a class="boxy-docs"></a>')
-			.attr('href','http://docs.webulous.in/boxy-free/')
+			.attr('href','http://documentation.webulous.in/boxy-free/')
 			.attr('target','_blank')
 			.text(boxy_upgrade.docs);
 		support = $('<a class="boxy-docs"></a>')

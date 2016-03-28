@@ -91,7 +91,7 @@ if( ! class_exists('Wbls_Customizer_API_Wrapper') ) {
 				$this->_version,
 				true
 			);
-			wp_localize_script( 'customizer-js', 'boxy_upgrade', array( 'message' => __( 'Get Pro for just $39', 'boxy' ), 'docs' => __( 'Documentation', 'boxy' ), 'demo' => __( 'Demo', 'boxy' ), 'support' => __( 'Ask a Question', 'boxy' ) ) );
+			wp_localize_script( 'customizer-js', 'boxy_upgrade', array( 'message' => __( 'Try Pro For Free', 'boxy' ), 'docs' => __( 'Documentation', 'boxy' ), 'demo' => __( 'Demo', 'boxy' ), 'support' => __( 'Ask a Question', 'boxy' ) ) );
 		}
 
 		/**
