@@ -100,3 +100,6 @@ Version 1.6.0
 * Added Disqus style
 * Improved CSS input
 * Minor bug fixes
+
+Version 1.6.1
+* Minor bug fixes
