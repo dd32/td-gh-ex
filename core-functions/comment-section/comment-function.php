@@ -19,7 +19,10 @@ function becorp_comment( $comment, $args, $depth )
 			<div class="comment-content">
 			<div class="comment-meta">
 				<span class="comment-by"><?php the_author();?></span>
-				<span class="comment-date"><?php echo get_the_date(); ?>&nbsp;<?php _e('at','becorp');?>&nbsp;<?php comment_time('g:i a'); ?></span>
+				<span class="comment-date"><?php if ( ('d M  y') == get_option( 'date_format' ) ) :  comment_date('F j, Y');
+				else : 
+				comment_date(); 
+				endif; ?>&nbsp;<?php _e('at','becorp');?>&nbsp;<?php comment_time('g:i a'); ?></span>
 				<span class="reply-link"><a href="#"><?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth']))) ?></a></span>
 			</div>
 			<p><?php comment_text() ;?></p>

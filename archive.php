@@ -7,15 +7,15 @@
 		<div class="col-lg-5"><h6><a href="<?php echo esc_html(home_url());?>"><?php _e('Home','becorp');?></a><?php _e('/','becorp'); ?><span><?php the_title();?></span></h6></div>
 		 <div class="col-lg-6">
 		 <h2>
-			<?php if ( is_day() ) : ?>
-				<?php  the_archive_title(); ?>
-			<?php elseif ( is_month() ) : ?>
-				<?php  the_archive_title(); ?>
-			<?php elseif ( is_year() ) : ?>
-				<?php  the_archive_title(); ?>
-			<?php else : ?>
-				<?php _e( "Blog Archives: ", 'becorp' ); ?>
-			<?php endif; ?></h2></div>
+		<?php if ( is_day() ) : 
+				the_archive_title(); 
+			elseif ( is_month() ) : 
+				the_archive_title(); 
+			elseif ( is_year() ) : 
+				the_archive_title();
+				endif; ?>
+		</h2>
+		</div>
 	 </div>
 	</div>
   </div>	

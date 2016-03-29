@@ -7,7 +7,11 @@
 							<?php the_post_thumbnail('',$default_img);?>
 							</a>
 						<?php } ?>
-							<span class="date hidden-xs"><?php echo get_the_date('M'); ?><span><?php echo get_the_date('j'); ?></span></span>
+							<span class="date hidden-xs"><?php if ( ('F') == get_option( 'date_format' ) ) : ?>
+						<?php echo get_the_date('F'); ?>
+						<?php else : ?>
+						<?php echo get_the_date('F'); ?>
+						<?php endif; ?><span><?php echo get_the_date('j'); ?></span></span>
 		
 						</div>
 							<ul class="post-meta">

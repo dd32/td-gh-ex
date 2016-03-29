@@ -6,7 +6,7 @@ function becorp_theme_default_data()
 	//Header Settings
 	'header_info_phone' =>get_theme_mod('header_info_phone',__('(2)245 23 68','becorp')),
 	'header_info_mail'=> get_theme_mod('header_info_mail',__('becorp@gmail.com','becorp')),
-	'header_social_media_enabled' => 1,
+	'header_social_media_enabled' => 0,
 	'social_media_twitter_link' => '#',
 	'social_media_facebook_link' => '#',
 	'social_media_dribbble_link' => '#',

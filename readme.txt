@@ -44,6 +44,9 @@ released
 @version 1.9
 1.As per review fixed all issues from @version 1.8
 
+@version 2.0
+1.As per review fixed all issues from @version 1.9
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL

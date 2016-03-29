@@ -120,7 +120,7 @@ $wp_customize->remove_control('header_textcolor');
 	'becorp_option[header_social_media_enabled]'
     ,
     array(
-        'default' => 1,
+        'default' => 0,
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',

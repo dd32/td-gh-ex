@@ -22,7 +22,7 @@
 <li><?php _e('4','becorp'); ?></li>
 </ul>
 <h3><?php _e('Ooops!, Sorry those page you have requested doesnt exist','becorp'); ?></h3>
-<div class="return"><?php _e('Return to the','becorp');?> <a href="<?php echo esc_html(site_url());?>"><?php _e('Previous','becorp');?></a>&nbsp;<?php _e('or','becorp');?> <a href="<?php echo esc_html(site_url());?>"><?php _e('Homepage','becorp');?></a></div>
+<div class="return"><?php _e('Return to the','becorp');?> <a href="<?php echo esc_html(home_url());?>"><?php _e('Previous','becorp');?></a>&nbsp;<?php _e('or','becorp');?> <a href="<?php echo esc_html(home_url());?>"><?php _e('Homepage','becorp');?></a></div>
 </div>
 </div>
 </div>

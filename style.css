@@ -6,8 +6,8 @@ Author URI:https://asiathemes.com/
 Created by: Asiathemes
 Description: Becorp is a responsive and fully customizable template for Business and Multipurpose theme.The Theme has You can use it for your business, portfolio, blogging or any type of site.Custom menus to choose the menu in Primary Location that is in Header area of the site. which is ideal for creating a corporate / business website.
 Becorp is Retina ready.We focused on usability across various devices, starting with smartphones.Becorp is a Cross-Browser Compatible theme that works on All leading web browsers.In header area and footer of the theme offers Social Media Links to add your Social Links here.translation ready and many more.
-Version:  1.9
-Tags: black,blue, purple,red,orange, white,green, yellow, two-columns, three-columns, four-columns, custom-menu, right-sidebar, fixed-layout, fluid-layout, custom-background,featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, responsive-layout
+Version:  2.0
+Tags: orange, white, custom-menu, right-sidebar, theme-options, threaded-comments, featured-images, responsive-layout
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: becorp
@@ -1434,21 +1434,21 @@ ul.list-ok li:before {
 	opacity: 0.7;
 }
 .blog-content .date {
-  color: #FFFFFF;
-  font-family: 'roboto';
-  font-weight:400;
-  letter-spacing:1px;
-  font-size: 24px;
-  font-family: 'Lato';
-  font-weight:500;
-  left: 20px;
-  background: rgba(255,69,0,0.8);
-  margin-top: 0;
-  padding: 10px 10px;
-  position: absolute;
-  text-align: center;
-  text-transform: uppercase;
-  top: 0;
+    color: #FFFFFF;
+    font-family: 'roboto';
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-family: 'Lato';
+    font-weight: 500;
+    left: 20px;
+    background: rgba(255,69,0,0.8);
+    margin-top: 0;
+    padding: 10px 3px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
 }
 .post-date {
   left: 0 !important;
@@ -1477,7 +1477,7 @@ ul.list-ok li:before {
   font-size: 42px;
   font-weight: 700;
   line-height: 21px;
-  padding-bottom: 5px;
+  padding: 5px;
 }
 .btn-readmore {
 	padding: 8px 15px !important;
@@ -1653,21 +1653,22 @@ ul.list-ok li:before {
 
 /** Tag cloud style **/
 .widget > .tagcloud a {
-	background-color: #CCCCCC !important;
-	color: #fff;
+    background-color: #CCCCCC !important;
+    color: #fff;
     border: 1px solid #dadada;
-	border-radius: 2px !important; 
+    border-radius: 2px !important;
     cursor: pointer;
     display: inline-block;
-    /* font-family: 'Open Sans';*/
-    font-weight: 300; 
+    /* font-family: 'Open Sans'; */
+    font-weight: 300;
     font-size: 14px !important;
     line-height: 20px;
-    margin: 7px 4px 2px;
+    margin: 7px -41px 2px;
     padding: 6px 14px;
     transition: all 0.3s ease 0s;
     vertical-align: baseline;
     white-space: nowrap;
+    margin-left: 47px;
 }
 .widget > .tagcloud  > ul  > li { font-size:100px !important; }
  .widget > .tagcloud a:hover {
