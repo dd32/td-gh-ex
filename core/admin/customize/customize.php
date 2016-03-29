@@ -101,6 +101,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				   "purple" => __( "Purple","suevafree"),
 				   "yellow" => __( "Yellow","suevafree"),
 				   "green" => __( "Green","suevafree"),
+				   "black" => __( "Black","suevafree"),
 
 				),
 				

@@ -1,5 +1,10 @@
 SuevaFree Changelog
 
+- Version 2.1.1 - Released: 29.03.2016
+
+-- Fixed: Search widget layout.
+-- Added: Black theme skin.
+
 - Version 2.0.9 - Released: 09.03.2016
 
 -- Fixed: "Show categories & subcategories" option on shop page.

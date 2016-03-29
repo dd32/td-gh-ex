@@ -31,7 +31,7 @@
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
 .header-cart a span {
-    background-color: #84ad37;
+    background-color: #333333;
 }
 .star-rating span,
 .woocommerce p.stars,
@@ -44,24 +44,24 @@ nav#mainmenu ul li.current_page_item > a,
 nav#mainmenu ul li.current-menu-parent > a,
 nav#mainmenu ul li.current_page_ancestor > a,
 nav#mainmenu ul li.current-menu-ancestor > a {
-    color: #84ad37;
+    color: #333333;
 }
 ::-moz-selection {
-    background-color: #84ad37;
+    background-color: #333333;
 }
 ::selection {
-    background-color: #84ad37;
+    background-color: #333333;
 }
 nav#mainmenu ul ul,
 .header-cart-widget{
-    border-top-color: #84ad37;
+    border-top-color: #333333;
 }
 nav#mainmenu ul ul:before,
 .header-cart-widget:before {
-    border-bottom-color: #84ad37;
+    border-bottom-color: #333333;
 }
 nav#mainmenu ul ul li ul {
-    border-top-color: #84ad37;
+    border-top-color: #333333;
 }
 nav#mainmenu ul ul li a:hover,
 nav#mainmenu ul ul li.current-menu-item > a,
@@ -71,7 +71,7 @@ nav#mainmenu ul ul li.current_page_ancestor > a,
 nav#mainmenu ul ul li.current-menu-ancestor > a,
 #sidebar .tagcloud a,
 #footer .tagcloud a {
-    background: #84ad37;
+    background: #333333;
 }
 nav#mainmenu ul ul li a:hover,
 nav#mainmenu ul ul li.current-menu-item > a,
@@ -79,7 +79,7 @@ nav#mainmenu ul ul li.current_page_item > a,
 nav#mainmenu ul ul li.current_page_ancestor > a,
 nav#mainmenu ul ul li.current_page_ancestor > a,
 nav#mainmenu ul ul li.current-menu-ancestor > a {
-    border-top-color: #84ad37;
+    border-top-color: #333333;
 }
 .woocommerce #respond input#submit.alt:hover, 
 .woocommerce a.button.alt:hover, 
@@ -106,11 +106,11 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
 .flexslider:hover .flex-prev:hover,
 #back-to-top i.open,
 #back-to-top i:hover {
-    background-color: #5d7a27;
+    background-color: #8d8d8d;
 }
 #back-to-top i.open,
 #back-to-top i:hover {
-    border-color: #5d7a27;
+    border-color: #8d8d8d;
 }
 body.archive.woocommerce .product-category h3:hover,
 body.archive.woocommerce .product-category h3:active,
@@ -125,12 +125,12 @@ a:focus,
 #footer ul.widget-category li a:hover,
 .post-container .title a:hover,
 #logo a:hover {
-    color: #5d7a27;
+    color: #8d8d8d;
 }
 #footer,
 #footer .widget,
 .post-article blockquote {
-    border-color: #84ad37;
+    border-color: #333333;
 }
 #footer .title,
 #footer p,
