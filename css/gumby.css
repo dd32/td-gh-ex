@@ -1738,6 +1738,8 @@ article.post .entry-footer .edit-link .icon-pencil { margin-left: -2px; }
 
 .navigation.post-navigation { background: #fafafa; padding: 2em 2.2em 2.2em; border-bottom: 1px solid #eee; }
 
+.navigation.posts-navigation { margin-bottom: 50px; }
+
 article.page { background: #fff; margin-bottom: 3em; }
 article.page .entry-thumbnail img { display: table; width: 100%; }
 article.page .entry-header { padding: 2em 2.2em 0; }

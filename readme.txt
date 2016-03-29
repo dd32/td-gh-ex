@@ -1,4 +1,4 @@
-SlResponsive Uses:
+BeautyTemple Uses:
 - Entypo (http://www.entypo.com/),  licensed under SIL Open Font License (OFL).(http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 - Gumby Framewordk (http://gumbyframework.com/), licensed under MIT Open Source License. (http://opensource.org/licenses/MIT)  
 - Sass (http://sass-lang.com/), licensed under MIT Open Source License (http://sass-lang.com/documentation/file.MIT-LICENSE.html)
