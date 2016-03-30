@@ -1,4 +1,8 @@
 == CHANGE LOG ==
+= 2.0.2 =
+	- Fix - CSS bug fixed
+	-Update - Custom JS updated
+
 = 2.0.1 =
 	- Fix - Conflict with Child theme issue fixed
 = 2.0 =

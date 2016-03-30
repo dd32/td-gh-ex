@@ -58,8 +58,11 @@
 		line-height: 31px;
 	}
 	.slider-content .slider-text h3 {
-		font-size: 15px;
-		line-height: 22px;
+		font-size: 14px;
+		line-height: 21px;
+	}
+	a.slider-prev, a.slider-next {
+		font-size: 14px;
 	}
 	.widget_parallax_video .widget-title {
 		font-weight: 400;

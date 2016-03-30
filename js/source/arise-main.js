@@ -22,18 +22,17 @@ jQuery( function() {
 
 		// Menu toggle for below 768 screens.
 		( function() {
-			var nav = jQuery( '.main-navigation' ), button, menu;
-			if ( ! nav ) {
+			var togglenav = jQuery( '.main-navigation' ), button, menu;
+			if ( ! togglenav ) {
 				return;
 			}
 
-			button = nav.find( '.menu-toggle' );
+			button = togglenav.find( '.menu-toggle' );
 			if ( ! button ) {
 				return;
 			}
-
-			// Hide
-			menu = nav.find( '.menu' );
+			
+			menu = togglenav.find( '.menu' );
 			if ( ! menu || ! menu.children().length ) {
 				button.hide();
 				return;
@@ -41,7 +40,7 @@ jQuery( function() {
 
 			jQuery( '.menu-toggle' ).on( 'click', function() {
 				jQuery(this).toggleClass("on");
-				nav.toggleClass( 'toggled-on' );
+				togglenav.toggleClass( 'toggled-on' );
 			} );
 		} )();
 
