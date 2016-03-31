@@ -11,7 +11,7 @@
  */
 	
 	do_action('bazaarlite_before_content');
-	do_action('bazaarlite_thumbnail', 'thumbnail','on'); 
+	do_action('bazaarlite_thumbnail', 'bazaar-lite-thumbnail','on'); 
 
 ?>
 

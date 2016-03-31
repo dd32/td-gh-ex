@@ -2041,6 +2041,12 @@ body.infinitescroll .wp-pagenavi {
 	margin:0;
 }
 
+.wp-pagenavi .navigation {
+	position:relative;
+	top:0;
+	right:0;
+}
+
 .wip-pagination { 
 	text-align: center; 
 	position:relative;

@@ -228,7 +228,14 @@ class bazaarlite_customize {
 			}
 			
 		}
-
+		
+		if ( !bazaarlite_is_woocommerce_active() ) :
+		
+			$wp_customize->remove_control( 'wip_woocommerce_header_cart');
+			$wp_customize->remove_control( 'wip_woocommerce_category_layout');
+			
+		endif;
+		
    }
 
 	public function customize_select_sanize ( $value, $setting ) {

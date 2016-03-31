@@ -4,7 +4,7 @@
 	
 		do_action('bazaarlite_masonry'); 
 
-		do_action( 'bazaarlite_pagination', 'archive'); 
+		do_action( 'bazaarlite_pagination'); 
 	
 	?>
 

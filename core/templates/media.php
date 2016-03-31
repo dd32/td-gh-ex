@@ -39,7 +39,7 @@ if (!function_exists('bazaarlite_thumbnail_function')) {
 	
 		} else {
 		
-			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail');
+			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'bazaar-lite-thumbnail');
 			
 			if (!empty($thumb)) :
 			
@@ -52,7 +52,7 @@ if (!function_exists('bazaarlite_thumbnail_function')) {
                     <div class="overlay-image blog-thumb">
                         
                         <img src="<?php echo $thumb[0]; ?>" class="attachment-blog wp-post-image" alt="post image" title="post image"> 
-                        <a href="<?php echo get_permalink($post->ID); ?>" class="overlay link"></a>
+                        <a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" class="overlay link"></a>
                         
                     </div>
             

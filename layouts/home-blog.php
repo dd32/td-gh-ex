@@ -54,7 +54,7 @@
                         
                         <section class="contact-form">
                         
-                            <form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+                            <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                                  <input type="text" value="<?php _e( 'Search', 'bazaar-lite' ) ?>" name="s" id="s" onblur="if (this.value == '') {this.value = '<?php _e( 'Search', 'bazaar-lite' ) ?>';}" onfocus="if (this.value == '<?php _e( 'Search', 'bazaar-lite' ) ?>') {this.value = '';}" class="input-search"/>
                                  <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', 'bazaar-lite' ) ?>" />
                             </form>
@@ -91,6 +91,6 @@
            
     </div>
 
-    <?php do_action( 'bazaarlite_pagination', 'home'); ?>
+    <?php do_action( 'bazaarlite_pagination'); ?>
 
 </div>

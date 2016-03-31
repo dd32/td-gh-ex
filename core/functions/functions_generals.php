@@ -145,7 +145,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 			$title = "$title $sep $site_description";
 	
 		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( __( 'Page %s', 'seanlite' ), max( $paged, $page ) );
+			$title = "$title $sep " . sprintf( __( 'Page %s', 'bazaar-lite' ), max( $paged, $page ) );
 	
 		return $title;
 		

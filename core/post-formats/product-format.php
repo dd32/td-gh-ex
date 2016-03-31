@@ -13,7 +13,7 @@
 
 global $product;
 
-$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'product');
+$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'bazaar-lite-product');
 			
 $contentclass = "no-thumbnail";
 
@@ -30,7 +30,7 @@ if ( $image ) :
 endif;
 			
 $html .= '<div class="product-content '.$contentclass.'">';
-$html .= '<h3 class="product-title"><a href="'.get_permalink($post->ID).'">'.get_the_title().'</a></h3>';
+$html .= '<h3 class="product-title"><a href="'.esc_url( get_permalink( $post->ID ) ).'">'.get_the_title().'</a></h3>';
                         
 if ( bazaarlite_postmeta( '_sale_price' ) ) :	
                                     

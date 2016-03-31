@@ -12,65 +12,17 @@
 
 if (!function_exists('bazaarlite_pagination_function')) {
 
-	function bazaarlite_pagination_function( $type ) {
+	function bazaarlite_pagination_function() {
 		
-		global $wp_query,$post;
-		
-		$big = 999999999; 
-	
-		if ( $type == "archive" ) { 
-		
-			$paginate_links = paginate_links( array(
+		echo '<div class="wp-pagenavi">';
 				
-				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-				'format' => '?paged=%#%',
-				'prev_text'    => '<i class="fa fa-long-arrow-left"></i>',
-				'next_text'    => '<i class="fa fa-long-arrow-right"></i>',
-				'current' => max( 1, get_query_var('paged') ),
-				'total' => $wp_query->max_num_pages,
-				'add_args' => false,
-			
-			));
+		the_posts_pagination( array(
+			'mid_size' => 2,
+			'prev_text'    => '<i class="fa fa-long-arrow-left"></i>',
+			'next_text'    => '<i class="fa fa-long-arrow-right"></i>',
+		) );
 		
-		} else if ( $type == "home" ) { 
-	
-			$total = $wp_query->max_num_pages ; 
-			$paginate_links = paginate_links( array(
-				
-				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-				'format' => '?paged=%#%',
-				'prev_text'    => '<i class="fa fa-long-arrow-left"></i>',
-				'next_text'    => '<i class="fa fa-long-arrow-right"></i>',
-				'current' => max( 1, get_query_var('paged') ),
-				'total' => $total,
-				'add_args' => false,
-			
-			));
-		
-		} else if ( $type == "page" ) { 
-	
-			$args = array('post_type' => 'post', 'paged' => bazaarlite_paged(), 'posts_per_page' => get_option('posts_per_page'));
-			$query = new WP_Query( $args );
-			
-			$paginate_links = paginate_links( array(
-			
-				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-				'format' => '?paged=%#%',
-				'prev_text'    => '<i class="fa fa-long-arrow-left"></i>',
-				'next_text'    => '<i class="fa fa-long-arrow-right"></i>',
-				'current' => bazaarlite_paged(),
-				'total' => $query->max_num_pages ,
-				'add_args' => false,
-			
-			));
-	
-		}
-		
-		if (!empty($paginate_links)) {
-			echo '<div class="wp-pagenavi">';
-			echo $paginate_links;
-			echo '</div>';
-		}
+		echo '</div>';
 		
 	} 
 

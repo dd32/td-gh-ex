@@ -32,7 +32,7 @@
             
                         <div id="logo">
                                         
-                            <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name') ?>">
+                            <a href="<?php echo esc_url(home_url()); ?>" title="<?php bloginfo('name') ?>">
                                             
                                 <?php 
                                                         

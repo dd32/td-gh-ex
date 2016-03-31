@@ -12,12 +12,12 @@
 
 	if ( ! bazaarlite_is_single() ) :
 	
-		do_action('bazaarlite_thumbnail','thumbnail'); 
+		do_action('bazaarlite_thumbnail','bazaar-lite-thumbnail'); 
 	
 	else :
 
 		do_action('bazaarlite_before_content');
-		do_action('bazaarlite_thumbnail','thumbnail','on'); 
+		do_action('bazaarlite_thumbnail','bazaar-lite-thumbnail','on'); 
 
 ?>
 

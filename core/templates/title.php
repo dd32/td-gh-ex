@@ -21,7 +21,7 @@ if (!function_exists('bazaarlite_get_title_function')) {
 		
 			if ( ( $type == "blog" ) || ( $type == "search" ) ) { 
 				
-				$html = '<h2 class="title"><a href=" ' . get_permalink($post->ID) . '"> ' . $title . '</a></h2>';
+				$html = '<h2 class="title"><a href=" ' . esc_url( get_permalink( $post->ID ) ) . '"> ' . $title . '</a></h2>';
 				
 			} else if ( ( $type == "standard" ) || ( $type == "post" ) )  { 
 			

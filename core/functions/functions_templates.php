@@ -10,7 +10,7 @@ if (!function_exists('bazaarlite_breadcrumb')) {
 		
 		if ( !bazaarlite_is_woocommerce_active('is_woocommerce') ) {
 			
-			echo '<li><a href="' . home_url() . '">' . __("Home","bazaar-lite") . "</a></li> / ";
+			echo '<li><a href="' . esc_url(home_url()) . '">' . __("Home","bazaar-lite") . "</a></li> / ";
 			
 			if ( is_category() ) {
 				
@@ -79,7 +79,7 @@ if (!function_exists('bazaarlite_readmore_function')) {
 		if ( bazaarlite_setting('wip_readmore_button') == "off" ): 
 	
 			$class = 'more';
-			$button = ' [...] ';
+			$button = ' [&hellip;] ';
 		
 		endif;
 	
@@ -93,7 +93,7 @@ if (!function_exists('bazaarlite_readmore_function')) {
 		
 		endif;
 		
-		$html = $content. '<a class="'.$class.'" href="'.get_permalink($post->ID).'" title="More">'.$button.'</a>';
+		$html = $content. '<a class="'.$class.'" href="'.esc_url( get_permalink( $post->ID ) ).'" title="More">'.$button.'</a>';
 		
 		return $html;
 		
@@ -140,38 +140,6 @@ if (!function_exists('bazaarlite_posticon')) {
 		endif;
 	
 	}
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* LOGIN AREA */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('bazaarlite_custom_login_logo')) {
-	
-	function bazaarlite_custom_login_logo() { 
-	
-		if ( bazaarlite_setting('wip_login_logo') ) : ?>
-	
-			<style type="text/css">
-				
-				body.login div#login h1 a {
-					background-image: url('<?php echo bazaarlite_setting('wip_login_logo'); ?>');
-					-webkit-background-size: inherit;
-					background-size: inherit ;
-					width:100%;
-					height:<?php echo bazaarlite_setting('wip_login_logo_height'); ?>px;
-				}
-				
-			</style>
-		
-<?php 
-	
-		endif;
-	
-	}
-	
-	add_action( 'login_enqueue_scripts', 'bazaarlite_custom_login_logo' );
 
 }
 

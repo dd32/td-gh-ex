@@ -619,6 +619,30 @@ body.minimal-layout .woocommerce-info {
    Woocommerce shop layout
    ============================================= */
 
+body.archive.woocommerce .products-list h1.title {
+	margin-bottom:45px;
+}
+
+body.archive.woocommerce .product-category h3 {
+	margin:0;
+	color:#616161;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	font-weight:normal
+}
+
+body.archive.woocommerce .product-category h3:hover,
+body.archive.woocommerce .product-category h3:active,
+body.archive.woocommerce .product-category h3:focus{
+	color:#1abc9c;
+}
+
+body.archive.woocommerce .product-category mark.count {
+	padding:0;
+	background:none;
+}
+
 .product-wrapper {
 	margin-bottom:50px;
 }

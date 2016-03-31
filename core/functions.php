@@ -301,12 +301,8 @@ if (!function_exists('bazaarlite_setup')) {
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'title-tag' );
 		
-		add_image_size( 'thumbnail', bazaarlite_get_width(), bazaarlite_get_height(), TRUE ); 
-
-		add_image_size( 'product', 500,500, TRUE ); 
-		add_image_size( 'large', 449,304, TRUE ); 
-		add_image_size( 'medium', 290,220, TRUE ); 
-		add_image_size( 'small', 211,150, TRUE ); 
+		add_image_size( 'bazaar-lite-thumbnail', bazaarlite_get_width(), bazaarlite_get_height(), TRUE ); 
+		add_image_size( 'bazaar-lite-product', 500,500, TRUE ); 
 	
 		register_nav_menu( 'main-menu', 'Main menu' );
 

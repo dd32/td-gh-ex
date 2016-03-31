@@ -224,6 +224,9 @@ ul.widget-category li:hover,
     background-color: #3498db;
 }
 
+body.archive.woocommerce .product-category h3:hover,
+body.archive.woocommerce .product-category h3:active,
+body.archive.woocommerce .product-category h3:focus,
 .star-rating span,
 .woocommerce p.stars,
 .woocommerce p.stars a,

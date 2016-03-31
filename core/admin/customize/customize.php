@@ -220,7 +220,7 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 			array(
 				
 				"label" => __( "Read more button",'bazaar-lite'),
-				"description" => __( "Do you want to use a button, for open the posts? (Instead of [...])",'bazaar-lite'),
+				"description" => __( "Do you want to use a button, for open the posts? (Instead of [&hellip;])",'bazaar-lite'),
 				"id" => "wip_readmore_button",
 				"type" => "select",
 				"section" => "settings_section",
@@ -357,41 +357,6 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				"id" => "wip_blog_thumbinal",
 				"type" => "text",
 				"section" => "thumbnails_section",
-				"std" => "550",
-
-			),
-
-			/* LOGIN AREA SECTION */ 
-
-			array( 
-
-				"title" => __( "Login Area",'bazaar-lite'),
-				"type" => "section",
-				"id" => "login_area_section",
-				"panel" => "general_panel",
-				"priority" => "17",
-
-			),
-
-			array( 
-
-				"label" => __( "Custom Logo",'bazaar-lite'),
-				"description" => __( "Upload your custom logo, for the admin area.( Max 320px as width )",'bazaar-lite'),
-				"id" => "wip_login_logo",
-				"type" => "upload",
-				"section" => "login_area_section",
-				"std" => "",
-
-			),
-
-
-			array( 
-
-				"label" => __( "Height",'bazaar-lite'),
-				"description" => __( "Insert the height of your custom logo, without px (for example 550 and not 550px).",'bazaar-lite'),
-				"id" => "wip_login_logo_height",
-				"type" => "text",
-				"section" => "login_area_section",
 				"std" => "550",
 
 			),

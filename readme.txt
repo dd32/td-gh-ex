@@ -20,8 +20,8 @@ Credits
 -- Copyright © Dave Gandy 
 -- http://fortawesome.github.io/Font-Awesome/
 
---- Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /seanlite/fonts/ )
---- Code License under MIT License - http://opensource.org/licenses/mit-license.html ( Applies to the font-awesome.min.css file in /seanlite/css/ )
+--- Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /bazaarlite/fonts/ )
+--- Code License under MIT License - http://opensource.org/licenses/mit-license.html ( Applies to the font-awesome.min.css file in /bazaarlite/css/ )
 --- Brand Icons - All brand icons are trademarks of their respective owners. The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
 
 - Genericons
