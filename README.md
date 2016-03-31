@@ -88,7 +88,7 @@ F) Licenses of bundled resources
 	License: Distributed under the terms of the GPLv2 (https://www.gnu.org/licenses/gpl-2.0.html)
 	Copyright: 2015 WooThemes, http://www.woothemes.com
 	
-	5. Arimo Font - https://www.google.com/fonts/specimen/Arimo
+	5. Open Sans Font - https://www.google.com/fonts/specimen/Open Sans
 	License: Distributed under the terms of the Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
 	Copyright: 2013 Steve Matteson
 	
@@ -133,6 +133,10 @@ F) Licenses of bundled resources
 	Image 9: https://pixabay.com/en/clock-time-hour-minutes-watches-782536/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
 	Copyright: 2015 claudio losa (https://pixabay.com/en/users/closa-726076/)
+	
+	Background Image: https://pixabay.com/en/christmas-cactus-schlumbergera-103118/
+	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
+	Copyright: 2013 nightowl (https://pixabay.com/en/users/nightowl-29/)
 
 ===================================
 Enjoy!

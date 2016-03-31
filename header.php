@@ -33,7 +33,7 @@
 						
 				<div id="logo" class="site-branding clearfix">
 				
-					<?php do_action( 'beetle_site_title' ); ?>
+					<?php beetle_site_title(); ?>
 				
 				</div><!-- .site-branding -->
 				
@@ -69,11 +69,9 @@
 			</div>
 		
 		</header><!-- #masthead -->
-
+		
+		<?php beetle_breadcrumbs(); ?>
+		
 		<div id="content" class="site-content container clearfix">
 		
 			<?php beetle_header_image(); ?>
-			
-			<?php beetle_slider(); ?>
-			
-			<?php beetle_breadcrumbs(); ?>

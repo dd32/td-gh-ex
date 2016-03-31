@@ -35,11 +35,6 @@ function beetle_body_classes( $classes ) {
 		$classes[] = 'sidebar-left';
 	}
 	
-	// Add Small Post Layout class
-	if ( ( is_archive() or is_home() ) and 'left' == $theme_options['post_layout_archives'] ) {
-		$classes[] = 'post-layout-small';
-	}
-
 	return $classes;
 }
 add_filter( 'body_class', 'beetle_body_classes' );
@@ -63,7 +58,7 @@ function beetle_excerpt_length($length) {
 		return 30; // number of words
 	endif;
 }
-add_filter('excerpt_length', 'beetle_excerpt_length');
+add_filter( 'excerpt_length', 'beetle_excerpt_length' );
 
 
 /**
@@ -76,6 +71,18 @@ function beetle_magazine_posts_excerpt_length($length) {
     return 15;
 }
 
+/**
+ * Change excerpt more text for posts
+ *
+ * @param string $more_text Excerpt More Text
+ * @return string
+ */
+function beetle_excerpt_more( $more_text ) {
+	
+	return '';
+
+}
+add_filter( 'excerpt_more', 'beetle_excerpt_more' );
 
 /**
  * Set wrapper start for wooCommerce
@@ -85,8 +92,8 @@ function beetle_wrapper_start() {
 	echo '<section id="primary" class="content-area">';
 	echo '<main id="main" class="site-main" role="main">';
 }
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-add_action('woocommerce_before_main_content', 'beetle_wrapper_start', 10);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+add_action( 'woocommerce_before_main_content', 'beetle_wrapper_start', 10 );
 
 
 /**
@@ -97,55 +104,5 @@ function beetle_wrapper_end() {
 	echo '</main><!-- #main -->';
 	echo '</section><!-- #primary -->';
 }
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-add_action('woocommerce_after_main_content', 'beetle_wrapper_end', 10);
-
-
-/**
- * Returns the themezee.com links
- *
- * @param string $link Which link should be displayed
- * @return string $url URL to correct ThemeZee.com page
- */
-function beetle_theme_links( $link ) {
-    
-	// Set Language Variable
-	$language = get_locale();
-	
-	// Theme Links
-	$theme_links = array(
-		'homepage' 		=> 'https://themezee.com/',
-		'theme_page' 	=> 'https://themezee.com/themes/beetle/',
-		'documentation' => 'https://themezee.com/docs/beetle-documentation/',
-		'pro_version' 	=> 'https://themezee.com/themes/beetle/',
-		'toolkit' 		=> 'https://themezee.com/plugins/toolkit/',
-		'plugins' 		=> 'https://themezee.com/plugins/',
-	);
-	
-	// Links for German website
-	$theme_links_german = array(
-		'homepage' 		=> 'https://themezee.com/de/',
-		'theme_page' 	=> 'https://themezee.com/de/themes/beetle/',
-		'documentation' => 'https://themezee.com/de/docs/beetle-dokumentation/',
-		'pro_version' 	=> 'https://themezee.com/de/themes/beetle/',
-		'toolkit' 		=> 'https://themezee.com/de/plugins/toolkit/',
-		'plugins' 		=> 'https://themezee.com/de/plugins/',
-	);
-	
-	// Use URLs for German website when site language is German
-	if( 'de_DE' ==  $language or 'de_DE_formal' == $language or 'de_CH' == $language ) {
-		$theme_links = $theme_links_german;
-	}
-	
-	// Return URL
-	if( array_key_exists( $link, $theme_links ) ) {
-		
-		return $theme_links[$link];
-	
-	} else {
-		
-		return $theme_links['homepage'];
-		
-	}
-	
-}
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+add_action( 'woocommerce_after_main_content', 'beetle_wrapper_end', 10 );

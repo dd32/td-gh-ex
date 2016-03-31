@@ -8,18 +8,28 @@
  * @package Beetle
  */
 	
+	
+if ( ! function_exists( 'beetle_site_title' ) ):
 /**
  * Displays the site title in the header area
  */
-function beetle_site_title() { ?>
+function beetle_site_title() {
+	
+	// Get Theme Options from Database
+	$theme_options = beetle_theme_options();
 
-	<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-		<h1 class="site-title"><?php bloginfo('name'); ?></h1>
-	</a>
+	if ( ( is_home() and $theme_options['blog_title'] == '' ) or is_page_template( 'template-magazine.php' )  ) : ?>
+		
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	
+	<?php else : ?>
+		
+		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+	
+	<?php endif; 
 
-<?php
 }
-add_action( 'beetle_site_title', 'beetle_site_title' );
+endif;
 
 
 if ( ! function_exists( 'beetle_header_image' ) ):
@@ -33,13 +43,6 @@ function beetle_header_image() {
 	
 	// Display featured image as header image on static pages
 	if( is_page() && has_post_thumbnail() ) : ?>
-		
-		<div id="headimg" class="header-image featured-image-header">
-			<?php the_post_thumbnail( 'beetle-header-image' ); ?>
-		</div>
-	
-	<?php // Display Header Image on Single Posts
-	elseif( is_single() && has_post_thumbnail() && 'header' == $theme_options['post_layout_single'] ) : ?>
 		
 		<div id="headimg" class="header-image featured-image-header">
 			<?php the_post_thumbnail( 'beetle-header-image' ); ?>
@@ -77,39 +80,28 @@ function beetle_header_image() {
 endif;
 
 
-if ( ! function_exists( 'beetle_post_image_archives' ) ):
+if ( ! function_exists( 'beetle_post_content' ) ):
 /**
- * Displays the featured image on archive pages
+ * Displays the post content on archive pages
  */
-function beetle_post_image_archives() {
+function beetle_post_content() {
 	
 	// Get Theme Options from Database
 	$theme_options = beetle_theme_options();
 	
 	// Return early if no featured image should be displayed
-	if ( 'none' == $theme_options['post_layout_archives'] ) :
-		return;
-	endif;
+	if ( 'excerpt' == $theme_options['post_content'] ) {
+		
+		the_excerpt();
+		beetle_more_link();
 	
-	// Display Featured Image beside post content
-	if ( 'left' == $theme_options['post_layout_archives'] ) : ?>
+	} else {
+		
+		the_content( esc_html__( 'Read more', 'beetle' ) );
+		
+	}
 
-		<a class="post-thumbnail-small" href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
-			<?php the_post_thumbnail( 'beetle-thumbnail-medium' ); ?>
-		</a>
-
-<?php
-	// Display Featured Image above post content
-	else: ?>
-
-		<a href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
-			<?php the_post_thumbnail(); ?>
-		</a>
-
-<?php
-	endif;
-
-} // beetle_post_image_archives()
+} // beetle_post_content()
 endif;
 
 
@@ -123,7 +115,7 @@ function beetle_post_image_single() {
 	$theme_options = beetle_theme_options();
 	
 	// Display Post Thumbnail if activated
-	if ( 'top' == $theme_options['post_layout_single'] ) :
+	if ( true == $theme_options['post_image'] ) :
 
 		the_post_thumbnail();
 
@@ -292,7 +284,7 @@ function beetle_breadcrumbs() {
 	if ( function_exists( 'themezee_breadcrumbs' ) ) {
 
 		themezee_breadcrumbs( array( 
-			'before' => '<div class="breadcrumbs-container container clearfix">',
+			'before' => '<div class="breadcrumbs-container clearfix">',
 			'after' => '</div>'
 		) );
 		
@@ -362,7 +354,7 @@ function beetle_footer_text() { ?>
 	<span class="credit-link">
 		<?php printf( esc_html__( 'Powered by %1$s and %2$s.', 'beetle' ), 
 			'<a href="http://wordpress.org" title="WordPress">WordPress</a>',
-			'<a href="http://themezee.com/themes/beetle/" title="Beetle WordPress Theme">Beetle</a>'
+			'<a href="https://themezee.com/themes/beetle/" title="Beetle WordPress Theme">Beetle</a>'
 		); ?>
 	</span>
 

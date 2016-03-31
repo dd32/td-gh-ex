@@ -19,6 +19,13 @@ function beetle_theme_addons_setup() {
 	add_theme_support( 'themezee-breadcrumbs' );
 	add_theme_support( 'themezee-related-posts' );
 	
+	// Add Support for Infinite Scroll
+	add_theme_support( 'infinite-scroll', array(
+		'type' 		=> 'click',
+		'container' => 'main',
+		'render'    => 'beetle_infinite_scroll_render',
+	) );
+	
 }
 
 
@@ -57,9 +64,25 @@ add_action( 'after_setup_theme', 'beetle_theme_addons_image_sizes' );
 function beetle_theme_addons_image_sizes() {
 
 	// Add Widget Bundle Thumbnail
-	add_image_size( 'tzwb-thumbnail', 80, 60, true );
+	add_image_size( 'tzwb-thumbnail', 80, 64, true );
 	
 	// Add Related Posts Thumbnail
-	add_image_size( 'themezee-related-posts', 450, 250, true );
+	add_image_size( 'themezee-related-posts', 420, 300, true );
 
 }
+
+
+/**
+ * Custom render function for Infinite Scroll.
+ */
+function beetle_infinite_scroll_render() {
+
+	// Get Theme Options from Database
+	$theme_options = beetle_theme_options();
+	
+	while ( have_posts() ) {
+		the_post();
+		get_template_part( 'template-parts/content', $theme_options['post_layout'] );
+	}
+	
+} // beetle_infinite_scroll_render()

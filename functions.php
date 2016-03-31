@@ -110,8 +110,8 @@ function beetle_widgets_init() {
 		'description' => esc_html__( 'Appears on Magazine Homepage template only. You can use the Magazine Posts widgets here.', 'beetle' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<div class="widget-header"><h1 class="widget-title">',
-		'after_title' => '</h1></div>',
+		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+		'after_title' => '</h3></div>',
 	));
 	
 } // beetle_widgets_init
@@ -137,6 +137,9 @@ function beetle_scripts() {
 	// Register and enqueue navigation.js
 	wp_enqueue_script( 'beetle-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery') );
 	
+	// Passing Parameters to Navigation.js Javascript
+	wp_localize_script( 'beetle-jquery-navigation', 'beetle_menu_title', esc_html__( 'Menu', 'beetle' ) );
+	
 	// Register and Enqueue Google Fonts
 	wp_enqueue_style( 'beetle-default-fonts', beetle_google_fonts_url(), array(), null );
 
@@ -155,7 +158,7 @@ add_action( 'wp_enqueue_scripts', 'beetle_scripts' );
 function beetle_google_fonts_url() {
     
 	// Set default Fonts
-	$font_families = array('Arimo:400,400italic,700,700italic', 'Open Sans:400,400italic,600,700,700italic');
+	$font_families = array( 'Open Sans:400,400italic,700,700italic' );
 
 	// Build Fonts URL
 	$query_args = array(
@@ -176,10 +179,13 @@ function beetle_add_image_sizes() {
 	// Add Custom Header Image Size
 	add_image_size( 'beetle-header-image', 1230, 410, true );
 	
+	// Add Image Size for Archives
+	add_image_size( 'beetle-thumbnail-archive', 350, 280, true );
+	
 	// Add different thumbnail sizes for widgets and post layouts
-	add_image_size( 'beetle-thumbnail-small', 120, 70, true );
-	add_image_size( 'beetle-thumbnail-medium', 360, 180, true );
-	add_image_size( 'beetle-thumbnail-large', 600, 300, true );
+	add_image_size( 'beetle-thumbnail-small', 100, 80, true );
+	add_image_size( 'beetle-thumbnail-medium', 350, 250, true );
+	add_image_size( 'beetle-thumbnail-large', 420, 300, true );
 	
 }
 add_action( 'after_setup_theme', 'beetle_add_image_sizes' );
@@ -209,6 +215,5 @@ require get_template_directory() . '/inc/addons.php';
 require get_template_directory() . '/inc/slider.php';
 
 // include Widget Files
-require get_template_directory() . '/inc/widgets/widget-magazine-posts-boxed.php';
 require get_template_directory() . '/inc/widgets/widget-magazine-posts-columns.php';
 require get_template_directory() . '/inc/widgets/widget-magazine-posts-grid.php';
