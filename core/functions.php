@@ -97,46 +97,45 @@ if (!function_exists('bazaarlite_postmeta')) {
 
 if (!function_exists('bazaarlite_require')) {
 
-	function bazaarlite_require($folder) {
-	
-		if (isset($folder)) : 
-	
-			if ( ( !bazaarlite_setting('wip_loadsystem') ) || ( bazaarlite_setting('wip_loadsystem') == "mode_a" ) ) {
-		
-				$dir = dirname(dirname(__FILE__)) . $folder ;  
-				
-				$files = scandir($dir);  
-				  
-				foreach ($files as $key => $value) {  
+	function bazaarlite_require() {
 
-					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
-						
-						if ( !is_dir( $dir . $value) ) { 
-							
-							require_once $dir . $value;
-						
-						} 
-					
-					} 
-
-				}  
-			
-			} else if ( bazaarlite_setting('wip_loadsystem') == "mode_b" ) {
-	
-	
-				$dh  = opendir(get_template_directory().$folder);
-				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-					
-						require_once get_template_directory()."/".$folder.$filename;
-					
-					}
-				}
-			}
+		$files = array (
+			'/core/classes/customize.php',
+			'/core/classes/metaboxes.php',
+			'/core/admin/customize/customize.php',
+			'/core/admin/customize/general.php',
+			'/core/templates/after-content.php',
+			'/core/templates/before-content.php',
+			'/core/templates/bottom_sidebar.php',
+			'/core/templates/breadcrumb.php',
+			'/core/templates/footer_sidebar.php',
+			'/core/templates/header_sidebar.php',
+			'/core/templates/masonry.php',
+			'/core/templates/media.php',
+			'/core/templates/pagination.php',
+			'/core/templates/post-formats.php',
+			'/core/templates/readmore.php',
+			'/core/templates/side_sidebar.php',
+			'/core/templates/social_buttons.php',
+			'/core/templates/title.php',
+			'/core/scripts/infinitescroll.php',
+			'/core/scripts/infinitescroll_masonry.php',
+			'/core/scripts/masonry.php',
+			'/core/functions/functions_generals.php',
+			'/core/functions/functions_style.php',
+			'/core/functions/functions_templates.php',
+			'/core/functions/functions_widgets.php',
+			'/core/functions/functions_woocommerce.php',
+			'/core/metaboxes/pages.php',
+			'/core/metaboxes/posts.php',
+			'/core/metaboxes/product.php'
+		);
 		
-		endif;
+		foreach ($files as $file ) {
+
+			require_once( trailingslashit( get_template_directory() ) . $file );
+
+		}
 		
 	}
 
@@ -148,48 +147,26 @@ if (!function_exists('bazaarlite_require')) {
 
 if (!function_exists('bazaarlite_enqueue_script')) {
 
-	function bazaarlite_enqueue_script($folder) {
-	
-		if (isset($folder)) : 
-	
-			if ( ( !bazaarlite_setting('wip_loadsystem') ) || ( bazaarlite_setting('wip_loadsystem') == "mode_a" ) ) {
+	function bazaarlite_enqueue_script() {
+
+		$files = array (
+			'bazaar-lite-jquery.easing' => '/assets/js/jquery.easing.js',
+			'bazaar-lite-jquery.imagesloaded' => '/assets/js/jquery.imagesloaded.js',
+			'bazaar-lite-jquery.infinitescroll' => '/assets/js/jquery.infinitescroll.js',
+			'bazaar-lite-jquery.modernizr' => '/assets/js/jquery.modernizr.js',
+			'bazaar-lite-jquery.prettyPhoto' => '/assets/js/jquery.prettyPhoto.js',
+			'bazaar-lite-jquery.scrollTo' => '/assets/js/jquery.scrollTo.js',
+			'bazaar-lite-jquery.swipebox' => '/assets/js/jquery.swipebox.js',
+			'bazaar-lite-jquery.tinynav' => '/assets/js/jquery.tinynav.js',
+			'bazaar-lite-jquery.wip' => '/assets/js/jquery.wip.js'
+		);
 		
-				$dir = dirname(dirname(__FILE__)) . $folder ;  
-				
-				$files = scandir($dir);  
-				  
-				foreach ($files as $key => $value) {  
+		foreach ($files as $name => $file ) {
 
-					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
-						
-						if ( !is_dir( $dir . $value) ) { 
-							
-							wp_enqueue_script( str_replace('.js','',$value), get_template_directory_uri() . $folder . "/" . $value , array('jquery'), FALSE, TRUE ); 
-						
-						} 
-					
-					} 
+			wp_enqueue_script( $name, get_template_directory_uri() . $file , array('jquery'), FALSE, TRUE ); 
 
-				}  
-
-			} else if ( bazaarlite_setting('wip_loadsystem') == "mode_b" ) {
-	
-				$dh  = opendir(get_template_directory().$folder);
-				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-						
-						wp_enqueue_script( str_replace('.js','',$filename), get_template_directory_uri() . $folder . "/" . $filename , array('jquery'), FALSE, TRUE ); 
-					
-					}
-					
-				}
+		}
 		
-			}
-			
-		endif;
-	
 	}
 
 }
@@ -200,49 +177,25 @@ if (!function_exists('bazaarlite_enqueue_script')) {
 
 if (!function_exists('bazaarlite_enqueue_style')) {
 
-	function bazaarlite_enqueue_style($folder) {
-	
-		if (isset($folder)) : 
-	
-			if ( ( !bazaarlite_setting('wip_loadsystem') ) || ( bazaarlite_setting('wip_loadsystem') == "mode_a" ) ) {
-			
-				$dir = dirname(dirname(__FILE__)) . $folder ;  
-				
-				$files = scandir($dir);  
-				  
-				foreach ($files as $key => $value) {  
+	function bazaarlite_enqueue_style() {
 
-					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
-						
-						if ( !is_dir( $dir . $value) ) { 
-							
-							wp_enqueue_style( str_replace('.css','',$value), get_template_directory_uri() . $folder . "/" . $value ); 
-						
-						} 
-					
-					} 
-
-				}  
-			
-			} else if ( bazaarlite_setting('wip_loadsystem') == "mode_b" ) {
-	
-			
-				$dh  = opendir(get_template_directory().$folder);
-				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-						
-						wp_enqueue_style( str_replace('.css','',$filename), get_template_directory_uri() . $folder . "/" . $filename ); 
-				
-					}
-				
-				}
-			
-			}
+		$files = array (
+			'bazaar-lite-bootstrap' => '/assets/css/bootstrap.css',
+			'bazaar-lite-font-awesome' => '/assets/css/font-awesome.css',
+			'bazaar-lite-genericons' => '/assets/css/genericons.css',
+			'bazaar-lite-minimal_layout' => '/assets/css/minimal_layout.css',
+			'bazaar-lite-prettyPhoto' => '/assets/css/prettyPhoto.css',
+			'bazaar-lite-swipebox' => '/assets/css/swipebox.css',
+			'bazaar-lite-template' => '/assets/css/template.css',
+			'bazaar-lite-woocommerce' => '/assets/css/woocommerce.css'
+		);
 		
-		endif;
-	
+		foreach ($files as $name => $file ) {
+
+			wp_enqueue_style ( $name, get_template_directory_uri() . $file );
+
+		}
+
 	}
 
 }
@@ -312,20 +265,7 @@ if (!function_exists('bazaarlite_setup')) {
 			'default-color' => 'fafafa',
 		) );
 		
-		$require_array = array (
-			"/core/classes/",
-			"/core/admin/customize/",
-			"/core/templates/",
-			"/core/scripts/",
-			"/core/functions/",
-			"/core/metaboxes/",
-		);
-
-		foreach ( $require_array as $require_file ) {	
-		
-			bazaarlite_require($require_file);
-		
-		}
+		bazaarlite_require();
 		
 	}
 
