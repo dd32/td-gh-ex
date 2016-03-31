@@ -252,6 +252,12 @@ class suevafree_customize {
 			
 		}
 
+		if ( !suevafree_is_woocommerce_active() ) :
+		
+			$wp_customize->remove_control( 'suevafree_woocommerce_category_layout');
+			
+		endif;
+
    }
 
 	public function customize_select_sanize ( $value, $setting ) {
