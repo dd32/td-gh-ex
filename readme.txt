@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.7
+- Fixed:   Comments form updated to use custom arguments. PHP notices fixed for comments form - changes made comments.php file.
+
 Version 1.3.6
 - Fixed:   Custom titles now display correctly on mobile layouts. Issue previously caused titles to be squashed on smaller screens.
 
