@@ -7,23 +7,35 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package attirant
+ * @package klean
  */
- 
- get_header();
 
-if ( ! is_active_sidebar( 'sidebar-main' ) ) {
-	return;
-}
-?>
+if ( is_home() ) :
+	get_header();
+else: 
+	get_header('post');
+endif; ?>
+	<div id="primary-home" class="content-home col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<h2 id="page-title">
+		<span><?php _e("Recent Posts", 'attirant') ?></span>
+		</h2>
+			<main id="main" class="site-main grid-home col-lg-12 col-md-12 col-sm-12 col-xs-12" role="main">
+				
+				<?php while ( have_posts() ) : the_post(); ?>
+				
+				<?php 		get_template_part( 'template-parts/content', 'blog' ); 	?>
+					
+					
+					<?php
+						// If comments are open or we have at least one comment, load up the comment template
+						if ( comments_open() || '0' != get_comments_number() )
+							comments_template();
+					?>
 	
-<div id="primary-home">
-	<?php
-		dynamic_sidebar( 'sidebar-main' );  
-	 ?>
-</div>
-
-
-<?php
-	get_footer(); 
-?>
+				<?php endwhile; // end of the loop. ?>
+				
+				
+			</main><!-- #main -->
+			<?php attirant_pagination(); ?>
+	</div><!-- #primary-home-->
+<?php get_footer(); ?>

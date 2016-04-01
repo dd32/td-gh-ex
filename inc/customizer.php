@@ -15,7 +15,161 @@ function attirant_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
+	$wp_customize-> add_section(
+    'attirant_social',
+    array(
+    	'title'			=> __('Social Settings','attirant'),
+    	'description'	=> __('Manage the Social Icon Setings of your site.','attirant'),
+    	'priority'		=> 3,
+    	)
+    );
+    
+    $wp_customize-> add_setting(
+    'social',
+    array(
+    	'default'			=> false,
+    	'sanitize_callback'	=> 'attirant_sanitize_checkbox',
+    	)
+    );
+    
+    $wp_customize-> add_control(
+    'social',
+    array(
+    	'type'		=> 'checkbox',
+    	'label'		=> __('Enable Social Icons','attirant'),
+    	'section'	=> 'attirant_social',
+    	'priority'	=> 1,
+    	)
+    );
+
+    $wp_customize-> add_setting(
+    'facebook',
+    array(
+    	'default'	=> '',
+    	'sanitize_callback' => 'esc_url_raw',
+    	)
+    );
+    
+    $wp_customize-> add_control(
+    'facebook',
+    array(
+    	'label'		=> __('Facebook URL','attirant'),
+    	'section'	=> 'attirant_social',
+    	'type'		=> 'text',
+        'priority'   => 3
+    	)
+    );
+    
+    $wp_customize-> add_setting(
+    'twitter',
+    array(
+    	'default'	=> '',
+    	'sanitize_callback' => 'esc_url_raw',
+    	)
+    );
+    
+    $wp_customize-> add_control(
+    'twitter',
+    array(
+    	'label'		=> __('Twitter URL','attirant'),
+    	'section'	=> 'attirant_social',
+    	'type'		=> 'text',
+        'priority'   => 4
+    	)
+    );
+    
+    $wp_customize-> add_setting(
+    'google-plus',
+    array(
+    	'default'	=> '',
+    	'sanitize_callback' => 'esc_url_raw',
+    	)
+    );
+    
+    $wp_customize-> add_control(
+    'google-plus',
+    array(
+    	'label'		=> __('Google Plus URL','attirant'),
+    	'section'	=> 'attirant_social',
+    	'type'		=> 'text',
+        'priority'   => 5
+    	)
+    );
+    
+    $wp_customize-> add_setting(
+    'instagram',
+    array(
+    	'default'	=> '',
+    	'sanitize_callback' => 'esc_url_raw',
+    	)
+    );
+    
+    $wp_customize-> add_control(
+    'instagram',
+    array(
+    	'label'		=> __('Instagram URL','attirant'),
+    	'section'	=> 'attirant_social',
+    	'type'		=> 'text',
+        'priority'   => 6
+    	)
+    );
+    
+    $wp_customize-> add_setting(
+    'pinterest-p',
+    array(
+    	'default'	=> '',
+    	'sanitize_callback' => 'esc_url_raw',
+    	)
+    );
+    
+    $wp_customize-> add_control(
+    'pinterest-p',
+    array(
+    	'label'		=> __('Pinterest URL','attirant'),
+    	'section'	=> 'attirant_social',
+    	'type'		=> 'text',
+        'priority'   => 7
+    	)
+    );
+    
+    $wp_customize-> add_setting(
+    'youtube',
+    array(
+    	'default'	=> '',
+    	'sanitize_callback' => 'esc_url_raw',
+    	)
+    );
+    
+    $wp_customize-> add_control(
+    'youtube',
+    array(
+    	'label'		=> __('Youtube URL','attirant'),
+    	'section'	=> 'attirant_social',
+    	'type'		=> 'text',
+        'priority'   => 8
+    	)
+    ); 
+    
+    $wp_customize-> add_setting(
+    'envelope-o',
+    array(
+    	'default'	=> '',
+    	'sanitize_callback' => 'esc_url_raw',
+    	)
+    );
+    
+    $wp_customize-> add_control(
+    'envelope-o',
+    array(
+    	'label'		=> __('E-Mail','attirant'),
+    	'section'	=> 'attirant_social',
+    	'type'		=> 'e-mail',
+        'priority'   => 8
+    	)
+    );    
+	
 /*---- Showcase Area Settings ----*/
+
 	$wp_customize->add_panel(
     'attirant-showcase', 
     	array(

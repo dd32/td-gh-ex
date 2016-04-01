@@ -1,5 +1,5 @@
 
- <div id="slider-wrapper" class="container">
+ <div id="slider-wrapper">
 	<ul class="bxslider">
 		<?php 
 		for($i = 1; $i <= 3; $i++) { 
@@ -7,9 +7,26 @@
 			$d = 'attirant-desc-' . $i;
 			$u = 'attirant-url-' . $i;
 		?>	
-			<li><div class="slide"><a href="<?php echo esc_url( get_theme_mod($u) ); ?>">		
+			<li><div class="slide">
+				<?php if ( get_theme_mod( $u ) ) {?>
+				<a href="<?php echo esc_url( get_theme_mod($u) ); ?>">
+				<?php } ?>		
 				<img src="<?php echo get_theme_mod( $s ); ?>">	
-			</a><div class="slide_caption"><a href="<?php echo esc_url( get_theme_mod($u) ); ?>"><p><?php echo __(get_theme_mod($d), 'attirant' ); ?> </p></a></div></div>
+			<?php if ( get_theme_mod( $u ) ) { ?>
+			</a>
+			<?php } ?>
+			<?php if (get_theme_mod( $d ) ) { ?>
+			<div class="slide_caption">
+				<?php if ( get_theme_mod( $u ) ) {?>
+				<a href="<?php echo esc_url( get_theme_mod($u) ); ?>">
+				<?php } ?>
+					<p><?php echo __(get_theme_mod($d), 'attirant' ); ?> </p>
+				<?php if ( get_theme_mod( $u ) ) { ?>
+				</a>
+				<?php } ?>
+					</div>
+					<?php } ?>
+					</div>
 			 </li>
 		<?php } ?>
 	</ul>

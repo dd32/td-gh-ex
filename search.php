@@ -7,9 +7,9 @@
  * @package attirant
  */
 
-get_header(); ?>
+get_header('post'); ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-area col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<main id="main" class="site-main" role="main">
 
 		<?php

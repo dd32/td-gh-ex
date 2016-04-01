@@ -10,14 +10,34 @@
  */
 
 ?>
-
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div id="footer-sidebar" class="widget-area clear container" role="complementary">
+	<?php do_action( 'before_sidebar' ); ?>
+	<?php 
+		if ( is_active_sidebar( 'sidebar-2' ) ) { ?>
+		<div class="footer-column col-lg-4 col-md-4 col-sm-12 col-xs-12"> <?php
+			dynamic_sidebar( 'sidebar-2'); 
+		?> </div> <?php	
+		}
+			
+		if ( is_active_sidebar( 'sidebar-3' ) ) { ?>
+		<div class="footer-column col-lg-4 col-md-4 col-sm-12 col-xs-12"> <?php
+			dynamic_sidebar( 'sidebar-3'); 
+		?> </div> <?php	
+		}
+
+		if ( is_active_sidebar( 'sidebar-4' ) ) { ?>
+		<div class="footer-column col-lg-4 col-md-4 col-sm-12 col-xs-12"> <?php
+			dynamic_sidebar( 'sidebar-4'); 
+		?> </div> <?php	
+		}
+		
+		?>	 		
+	</div>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'attirant' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'attirant' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'attirant' ), 'attirant', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+			<?php printf( esc_html__( 'Theme - %1$s by %2$s', 'Attirant' ), '<b>Attirant</b>', '<a href="http://underscores.me/" rel="designer">Divjot Singh</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

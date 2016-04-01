@@ -48,6 +48,8 @@ function attirant_setup() {
 	) );
 	
 	add_image_size('featured-thumb','400','300', true);
+	add_image_size('attirant-blog-thumb','500','300', true);
+	add_image_size('attirant-single', '1440', '400', true);
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -109,7 +111,7 @@ function attirant_fonts_url() {
 	    }
 	    
 	    if ('off' !== $lato ) {
-		    $font_families[] = 'Lato:300,400';
+		    $font_families[] = 'Lato:300,400,900';
 	    }
 	    
 		$query_args = array(
@@ -140,8 +142,8 @@ function attirant_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h2 class="widget-title"><span>',
+		'after_title'   => '</span></h2>',
 	) );
 	
 	register_sidebar( array(
@@ -150,8 +152,38 @@ function attirant_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h2 class="widget-title"><span>',
+		'after_title'   => '</span></h2>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer Sidebar 1', 'attirant' ),
+		'id'            => 'sidebar-2',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer Sidebar 2', 'attirant' ),
+		'id'            => 'sidebar-3',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer Sidebar 3', 'attirant' ),
+		'id'            => 'sidebar-4',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
 	) );
 }
 add_action( 'widgets_init', 'attirant_widgets_init' );
@@ -176,7 +208,9 @@ function attirant_scripts() {
 	
 	wp_enqueue_script( 'attirant-custom-js', get_template_directory_uri() . '/js/custom.js', array(), true );
 	
-	wp_enqueue_script( 'attirant-slider-js', get_template_directory_uri() . '/js/jquery.bxslider.js', array(), true );
+	wp_enqueue_script('nav-js', get_template_directory_uri()."/js/jquery.slicknav.min.js", array(), true);
+	
+	wp_enqueue_script( 'slider-js', get_template_directory_uri() . '/js/jquery.bxslider.js', array(), true );
 
 	wp_enqueue_script( 'attirant-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
@@ -194,6 +228,58 @@ function attirant_get_image_id($image_url) {
         return $attachment[0]; 
 }
 
+function attirant_show_more() { 
+
+	$page_for_posts	= get_option( 'page_for_posts'	); ?>
+	
+	<div class="show-more">
+		<a href="<?php echo esc_url( get_page_link( $page_for_posts ) ); ?>"><?php _e('Show More Posts','attirant'); ?></a>
+	</div>
+<?php
+}
+
+function attirant_comment($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment;
+	extract($args, EXTR_SKIP);
+
+	if ( 'div' == $args['style'] ) {
+		$tag = 'div';
+		$add_below = 'comment';
+	} else {
+		$tag = 'li';
+		$add_below = 'div-comment';
+	}
+?>
+	<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+	<?php if ( 'div' != $args['style'] ) : ?>
+	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+	<?php endif; ?>
+	<div class="comment-author vcard">
+	<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+	<?php printf( __( '<cite class="fn">%s</cite>', 'attirant' ), get_comment_author_link() ); ?>
+	</div>
+	<?php if ( $comment->comment_approved == '0' ) : ?>
+		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.','attirant' ); ?></em>
+		<br />
+	<?php endif; ?>
+
+	<div class="comment-meta commentmetadata"><a href="<?php echo esc_html( get_comment_link( $comment->comment_ID ) ); ?>">
+		<?php
+			/* translators: 1: date, 2: time */
+			printf( __('%1$s','attirant'), get_comment_date() ); ?></a><?php edit_comment_link( __( '(Edit)','attirant' ), '  ', '' );
+		?>
+	</div>
+
+	<?php comment_text(); ?>
+
+	<div class="reply">
+	<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+	</div>
+	<?php if ( 'div' != $args['style'] ) : ?>
+	</div>
+	<?php endif; ?>
+<?php
+}
 
 /**
  * Implement the Custom Header feature.
@@ -225,3 +311,5 @@ require get_template_directory() . '/widgets/at-featured.php';
 
 
 require get_template_directory() . '/widgets/at-slider.php';
+
+require get_template_directory() . '/widgets/at-recent.php';

@@ -7,9 +7,9 @@
  * @package attirant
  */
 
-get_header(); ?>
+get_header('post'); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -31,7 +31,7 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content', 'archive' );
 
 			endwhile;
 

@@ -10,10 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('col-lg-12 col-md-12 col-sm-12 col-xs-12'); ?>>
-	<div class="blog-entry-title col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>	
-		</div>
-		<div class="featured-thumb col-lg-10 col-md-10 col-sm-10 col-xs-10">
+		<div class="featured-thumb col-lg-6 col-md-6 col-sm-12 col-xs-12">
 			<?php if (get_post_format() != "" ): ?>
 				<div class="post-format">
 				<?php
@@ -29,4 +26,9 @@
 	<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri()."/images/dthumb.jpg" ); ?>"></a>
 <?php endif; ?>
 		</div>
+		<div class="entry-content col-lg-6 col-md-6 col-sm-12 col-xs-12"><?php
+			attirant_posted_on(); ?>
+		<div class="blog-entry-title">
+			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>	
+		</div></div>
 </article>
