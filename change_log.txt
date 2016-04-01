@@ -25,3 +25,6 @@ i) Theme screenshot changed.
 
 Version 1.2.6
 i) Added author name function in blog and update translation file.
+
+Version 1.2.7
+i) Remove error from post comments.
