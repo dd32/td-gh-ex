@@ -98,10 +98,16 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.7.7
+- Fixed:   Comments form updated to use custom arguments. PHP notices fixed for comments form - changes made comments.php file.
+- Fixed:   Custom titles now display correctly on mobile layouts. Issue previously caused titles to be squashed on smaller screens.
+- Updated: Description for "thinkup_header_socialswitch" option now displays correctly
+- Updated: Minor css changes made in style.css to header, breadcrumbs and footer links.
+
 Version 1.7.6
 - Updated: Font Awesome library updated to v4.2.0.
-- Updated: All Font Awesome icon classes now use fa- prefix instead of icon- prefix.
 - Updated: Translation .pot file added. Old files .mo and .po removed.
+- Updated: All Font Awesome icon classes now use fa- prefix instead of icon- prefix.
 
 Version 1.7.5
 - Fixed:   Function is_blog() renamed to thinkup_check_isblog() to ensure correct prefixing and reduce change of conflict with 3rd party code.

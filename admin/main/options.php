@@ -909,19 +909,21 @@
 		'fields'     => array(
 				
 			array(
-				'title'   => __('Enable Search', 'redux-framework'), 
-				'desc'    => __('Switch on to enable header search.', 'redux-framework'),
-				'id'      => 'thinkup_header_searchswitch',
-				'type'    => 'switch',
-				'default' => '0',
+				'title'                      => __('Enable Search', 'redux-framework'), 
+				$thinkup_subtitle_panel      => __('Switch on to enable header search.', 'redux-framework'),
+				$thinkup_subtitle_customizer => __('Switch on to enable header search.', 'redux-framework'),
+				'id'                         => 'thinkup_header_searchswitch',
+				'type'                       => 'switch',
+				'default'                    => '0',
 			),
 
 			array(
-				'title'   => __('Enable Social Media Links', 'redux-framework'), 
-				'desc'    => __('Switch on to enable links to social media pages.', 'redux-framework'),
-				'id'      => 'thinkup_header_socialswitch',
-				'type'    => 'switch',
-				'default' => '0',
+				'title'                      => __('Enable Social Media Links', 'redux-framework'), 
+				$thinkup_subtitle_panel      => __('Switch on to enable links to social media pages.', 'redux-framework'),
+				$thinkup_subtitle_customizer => __('Switch on to enable links to social media pages.', 'redux-framework'),
+				'id'                         => 'thinkup_header_socialswitch',
+				'type'                       => 'switch',
+				'default'                    => '0',
 			),
 
             array(

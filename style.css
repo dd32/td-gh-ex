@@ -4,7 +4,7 @@ Theme URI: http://www.thinkupthemes.com/free/engrave-lite/
 Author: ThinkUpThemes
 Author URI: http://www.ThinkUpThemes.com
 Description: Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.7.6
+Version: 1.7.7
 License: GNU General Public License
 License URI: /licenses/license.txt
 Tags: black, dark, red, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background
@@ -762,7 +762,8 @@ li.pag-next {
 	float: none;
 	position: relative;
 }
-#header .sub-menu li {
+#header .header-links .sub-menu li {
+	float: none;
 	padding: 2px 15px;
 	border-bottom: 1px solid #222;
 }
@@ -1196,6 +1197,9 @@ input[type="submit"]:hover {
 #breadcrumbs a {
 	color: inherit;
 }
+#breadcrumbs-core {
+	display: inline-block;
+}
 
 /* =Pre-Designed Homepage
 ----------------------------------------------------------------------------- */
@@ -1594,6 +1598,7 @@ ul.pricing-table:after,
 	padding: 2px 0;
 }
 #footer .widget li a { 
+	display: inline-block;
 	padding: 1px 0px 1px 0px;
 }
 
