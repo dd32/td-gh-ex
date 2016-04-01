@@ -854,3 +854,31 @@ if(!function_exists('cpotheme_comments_pagination')){
 		}
 	}
 }
+
+
+//Print Tagline title
+if(!function_exists('cpotheme_tagline_title')){
+	function cpotheme_tagline_title(){
+		$tagline = cpotheme_get_option('home_tagline');
+		if($tagline != ''){
+			echo '<div class="tagline-title">';
+			echo $tagline;
+			echo '</div>';
+			
+		}
+	}
+}
+
+
+//Print Tagline content
+if(!function_exists('cpotheme_tagline_content')){
+	function cpotheme_tagline_content(){
+		$tagline = cpotheme_get_option('home_tagline_content');
+		if($tagline != ''){
+			echo '<div class="tagline-content">';
+			echo $tagline;
+			echo '</div>';
+			
+		}
+	}
+}

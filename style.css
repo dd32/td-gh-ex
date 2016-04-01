@@ -5,7 +5,7 @@ Description:Intuition is a responsive, all-terrain theme focused on showcasing y
 Tags:custom-menu, featured-images, responsive-layout, orange, right-sidebar, light, one-column, left-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, two-columns, white
 Author:CPOThemes
 Author URI:http://www.cpothemes.com
-Version:1.3.6
+Version:1.3.7
 License:GNU General Public License 2.0
 License URI:license.txt
 */
@@ -192,7 +192,7 @@ NAVIGATION
 .menu-main .current_page_ancestor > a:hover, 
 .menu-main .current-menu-item > a:hover { }
 /* Children Elements */
-.menu-main .has-children:before { color:#ccc; content:'\f0d7'; font-size:10px; }
+.menu-main .has-children:before { color:#ccc; font-size:10px; }
 .menu-main li ul { margin:0; width:220px; background:#fff; background:rgba(255,255,255,0.8); box-shadow:0 1px 3px 1px rgba(0,0,0,0.2), inset 0 0 3px 1px #fff; }
 .menu-main li ul li a { line-height:1.5; padding:10px 15px; font-size:0.9em; text-shadow:none; border-top:1px solid #fff; width:auto; }
 .menu-main li ul li:first-child a { border-top:none; }

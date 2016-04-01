@@ -49,6 +49,15 @@ if(!function_exists('cpotheme_metadata_sections')){
 			'priority' => 50);
 		}
 		
+		if(defined('CPOTHEME_USE_TAGLINE') && CPOTHEME_USE_TAGLINE == true){
+			$data['cpotheme_layout_tagline'] = array(
+			'title' => __('Tagline', 'intuition'),
+			'description' => __('Customize the appearance and of the homepage tagline.', 'intuition'),
+			'capability' => 'edit_theme_options',
+			'panel' => 'cpotheme_layout',
+			'priority' => 50);
+		}
+		
 		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
 			$data['cpotheme_layout_features'] = array(
 			'title' => __('Features', 'intuition'),
@@ -163,14 +172,17 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'sanitize' => 'cpotheme_sanitize_bool',
 		'std' => '1');
 		
-		$data['home_tagline'] = array(
-		'label' => __('Tagline Title', 'intuition'),
-		'section' => 'cpotheme_layout_home',
-		'empty' => true,
-		'multilingual' => true,
-		'default' => __('Add your custom tagline here.', 'intuition'),
-		'sanitize' => 'wp_kses_post',
-		'type' => 'textarea');
+		//Homepage tagline
+		if(defined('CPOTHEME_USE_TAGLINE') && CPOTHEME_USE_TAGLINE == true){
+			$data['home_tagline'] = array(
+			'label' => __('Tagline Title', 'intuition'),
+			'section' => 'cpotheme_layout_tagline',
+			'empty' => true,
+			'multilingual' => true,
+			'default' => __('Add your custom tagline title here.', 'intuition'),
+			'sanitize' => 'wp_kses_post',
+			'type' => 'text');
+		}
 		
 		//Homepage Slider
 		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_SLIDES') && CPOTHEME_USE_SLIDES == true){

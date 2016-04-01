@@ -52,6 +52,7 @@
 		<?php endforeach; ?>
 	</div>
 	<?php if($slide_count > 1): ?>
+	<?php wp_enqueue_style('cpotheme-fontawesome'); ?>
 	<div class="slider-prev" data-cycle-cmd="pause"></div>
 	<div class="slider-next" data-cycle-cmd="pause"></div>
 	<?php endif; ?>
