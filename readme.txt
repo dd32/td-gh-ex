@@ -93,6 +93,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.8
+- Fixed:   PHP notices fixed for comments form - changes made comments.php file.
+- Fixed:   Custom titles now display correctly on mobile layouts. Issue previously caused titles to be squashed on smaller screens.
+- Updated: Minor css changes made in style.css to header, breadcrumbs and footer links.
+
 Version 1.2.7
 - Updated: Post share icons now display correctly on single post pages.
 - Updated: Image dimensions for column3-1/3 size changed to be 380px x 127px.
