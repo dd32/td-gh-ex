@@ -263,6 +263,29 @@ function greenr_slide_exists() {
 	return false;	
 }
 
+/* Woocommerce support */
+
+add_theme_support('woocommerce');
+
+remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper');
+add_action('woocommerce_before_main_content', 'greenr_output_content_wrapper');
+
+function greenr_output_content_wrapper() {
+	echo '<div class="container"><div class="row"><div id="primary" class="content-area eleven columns">';
+}
+
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end' );
+add_action( 'woocommerce_after_main_content', 'greenr_output_content_wrapper_end' );
+
+function greenr_output_content_wrapper_end () {
+	echo "</div>";
+}
+
+add_action( 'init', 'greenr_remove_wc_breadcrumbs' );
+function greenr_remove_wc_breadcrumbs() {
+   	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+}
+
 add_action('admin_notices','wbls_try_free');
 function wbls_try_free() {
 	printf( __('<div class="notice notice-warning is-dismissible"><p>Try <a href="%1$s">Greenr Pro Version </a> for Free</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button></div>','greenr'),esc_url('http://www.webulousthemes.com/request-free-trial-for-themes/') );

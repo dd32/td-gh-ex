@@ -102,3 +102,20 @@ endif;
 		</div>
 	</header><!-- #masthead -->
 
+	<?php if ( function_exists( 'is_woocommerce' ) || function_exists( 'is_cart' ) || function_exists( 'is_checkout' )) :
+	 if ( is_woocommerce() || is_cart() || is_checkout() ) { ?>
+		   <div class="container">
+				<div class="sixteen columns breadcrumb">	
+					<header class="entry-header">
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+					</header><!-- .entry-header -->
+					<?php if ( get_theme_mod('breadcrumb' ) && function_exists( 'greenr_breadcrumbs' ) ) : ?>
+						<div id="breadcrumb" role="navigation">
+							<?php woocommerce_breadcrumb(); ?>
+						</div>
+					<?php endif; ?> 
+				</div>
+	        </div>
+	<?php } 
+	endif; ?>
+
