@@ -1,6 +1,11 @@
 *** Fukasawa Changelog ***
 
 
+Version 1.09 (2016-04-02)
+-------------------------
+- Fixed respond input margins with new order of inputs
+
+
 Version 1.08 (2016-03-12)
 -------------------------
 - Fixed Flickr widget styling issue
