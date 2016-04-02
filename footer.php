@@ -45,7 +45,9 @@
         </div>
     	<div class="col-md-6">
 		 <ul class="top-social footer_social_links">
-           <?php if($footer_setting['social_media_twitter_link']!='') {?>
+           <?php if($footer_setting['header_social_media_enabled']== 1 ) {
+
+					if($footer_setting['social_media_twitter_link']!='') {?>
 						<li><a class="icon-twitter" href="<?php echo esc_url($footer_setting['social_media_twitter_link']); ?>"<?php if( $footer_setting['twitter_media_enabled'] ==1 ) { echo "target='_blank'"; } ?>></a></li>
 						<?php }
 					if($footer_setting['social_media_facebook_link'] != '') { ?>
@@ -62,7 +64,7 @@
 						<?php }
 					if($footer_setting['social_media_rss_link']!='') { ?> 
 						<li><a class="icon-rss" href="<?php echo esc_url($footer_setting['social_media_rss_link']); ?>"<?php if( $footer_setting['rss_media_enabled'] ==1 ) { echo "target='_blank'"; } ?>></a></li>
-						<?php } ?>
+						<?php } } ?>
 		  </ul>	
     	</div>
       </div>
