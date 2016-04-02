@@ -62,15 +62,7 @@ body.admin-bar{
     margin-top: -85px;
 }
 
-ul{
-    margin: 0;
-    padding-left: 0;
-}
 
-ul li{
-    list-style: none;
-    padding-left: 0;
-}
 .delay1{
     -webkit-animation-delay: 0.1s;
     -moz-animation-delay: 0.1s;
@@ -232,6 +224,9 @@ ul li{
     cursor: pointer;
     font-weight: 100;
     font-size: 32px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     
 }
 
@@ -986,6 +981,17 @@ input[type="submit"]{
         float: right;
     }
     
+    div.athena-blog-content article h2.entry-title {
+        font-size: 20px;
+    }
+    
+    #athena-logo img {
+        max-height: 50px;
+    }
+
+    #athena-logo {
+        line-height: 50px;
+    }
     
 }
 

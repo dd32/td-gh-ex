@@ -76,17 +76,12 @@ jQuery(document).ready(function ($) {
     });
 
 
-    $('.athena-blog-content').imagesLoaded(function () {
-        $('.athena-blog-content').masonry({
-            itemSelector: '.athena-blog-post',
-            gutter: 0,
-            transitionDuration: 0,
-        }).masonry('reloadItems');
-    });
+
 
     $('#primary-menu').slicknav({
         prependTo: $('.athena-header-menu'),
-        label: ''
+        label: '',
+        allowParentLinks: true
     });
 
     $('.athena-search, #athena-search .fa.fa-close').click(function () {

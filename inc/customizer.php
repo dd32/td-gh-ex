@@ -245,6 +245,16 @@ function athena_customize_register( $wp_customize ) {
         'title'                 => __( 'Homepage Widget', 'athena' ),
         'panel'                 => 'homepage',
     ) );
+
+    $wp_customize->add_section( 'blog_layout', array (
+        'title'                 => __( 'Blog Layout', 'athena' ),
+        'panel'                 => 'appearance',
+    ) );
+
+    $wp_customize->add_section( 'site_search', array (
+        'title'                 => __( 'Site Search Icon', 'athena' ),
+        'panel'                 => 'appearance',
+    ) );
     
     // Widget
     $wp_customize->add_setting( 'homepage_widget_background', array (
@@ -305,6 +315,38 @@ function athena_customize_register( $wp_customize ) {
         'section' => 'homepage_overlay',
         'type'    => 'select',
         'choices'    => athena_icons()
+    ));
+   
+    $wp_customize->add_setting( 'blog_style', array (
+        'default'               => 'tiles',
+        'transport'             => 'refresh',
+        'sanitize_callback'     => 'athena_blogstyle_sanitize'
+    ) );
+    
+   $wp_customize->add_control( 'blog_style', array(
+        'label'   => __( 'Select the blog layout you prefer', 'athena' ),
+        'section' => 'blog_layout',
+        'type'    => 'radio',
+        'choices'    => array(
+            'stacked'    => __( 'Stacked', 'athena' ),
+            'tiles'    => __( 'Tiles', 'athena' )
+        )
+    ));
+   
+    $wp_customize->add_setting( 'show_search', array (
+        'default'               => 'on',
+        'transport'             => 'refresh',
+        'sanitize_callback'     => 'athena_on_off_sanitize'
+    ) );
+    
+   $wp_customize->add_control( 'show_search', array(
+        'label'   => __( 'Toggle the search icon in the menu', 'athena' ),
+        'section' => 'site_search',
+        'type'    => 'radio',
+        'choices'    => array(
+            'on'    => __( 'On', 'athena' ),
+            'off'    => __( 'Off', 'athena' )
+        )
     ));
     
     
@@ -962,6 +1004,19 @@ function athena_on_off_sanitize($input) {
     $valid = array(
         'on'    => __( 'Show', 'athena' ),
         'off'    => __( 'Hide', 'athena' )
+    );
+
+    if (array_key_exists($input, $valid)) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+function athena_blogstyle_sanitize($input) {
+    $valid = array(
+        'stacked'    => __( 'Stacked', 'athena' ),
+        'tiles'    => __( 'Tiles', 'athena' )
     );
 
     if (array_key_exists($input, $valid)) {

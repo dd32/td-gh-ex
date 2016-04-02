@@ -220,7 +220,9 @@ add_action('wp_ajax_athena_get_image', 'athena_get_image');
 
 function athena_customize_nav($items) {
 
+    if( get_theme_mod( 'show_search', 'on' ) == 'on' ) :
     $items .= '<li class="menu-item"><a class="athena-search" href="#search" role="button" data-toggle="modal"><span class="fa fa-search"></span></a></li>';
+    endif;
     
     if( class_exists( 'WooCommerce' ) ) :
         $items .= '<li><a class="athena-cart" href="' . WC()->cart->get_cart_url() . '"><span class="fa fa-shopping-cart"></span> ' . WC()->cart->get_cart_total() . '</a></li>';
@@ -257,6 +259,32 @@ function athena_custom_css() {
 }
 
 add_action('wp_head', 'athena_custom_css');
+
+
+function athena_custom_js() { 
+    
+    
+    if( get_theme_mod( 'blog_style', 'tiles' ) === 'tiles' ) :
+    
+    ?>
+    <script type="text/javascript">
+    jQuery(document).ready( function($) {
+        $('.athena-blog-content').imagesLoaded(function () {
+            $('.athena-blog-content').masonry({
+                itemSelector: '.athena-blog-post',
+                gutter: 0,
+                transitionDuration: 0,
+            }).masonry('reloadItems');
+        });
+    });
+    </script>
+    <?php else : ?>
+    <style>.athena-blog-post{ width: 100% !important }</style>
+    <?php 
+    endif;
+}
+
+add_action('wp_head', 'athena_custom_js');
 
 
 function athena_render_homepage() { ?>

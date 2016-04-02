@@ -19,7 +19,7 @@ function athena_setup() {
     
     
         if( !defined( 'ATHENA_VERSION' ) ) :
-            define('ATHENA_VERSION', '1.0.7');
+            define('ATHENA_VERSION', '1.0.8');
         endif;
     
         
@@ -128,6 +128,6 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load the theme functions
  */
-require get_template_directory() . '/inc/athena.php';
+require get_template_directory() . '/inc/athena/athena.php';
 
 require get_template_directory() . '/inc/tgm.php';
