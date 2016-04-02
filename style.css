@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Garfunkel
-	Version: 1.08
+	Version: 1.09
 	Description: Garfunkel is a stylish and responsive Pinterest-style theme with Masonry layout. It features responsive and retina-ready design, support for six post formats (including a gallery slideshow), six custom widgets, two page templates, Jetpack Infinite Scroll support, editor styling and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, red, white, dark, one-column, three-columns, fluid-layout, responsive-layout, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -2086,6 +2086,11 @@ img.alignright,
 
 .comment-form p { margin-top: 30px; } 
 
+.comment-form-comment + .comment-form-author,
+.comment-form-comment + .comment-form-author + .comment-form-email {
+    margin-top: 30px;
+}
+
 .comment-form p.logged-in-as,
 .comment-form p.comment-notes { 
 	line-height: 120%;
@@ -3044,8 +3049,12 @@ img#wpstats { display: none; }
 		padding: 13px 15px;
 		font-size: 0.9em;
 	}
-	
-	.comment-form p + p { margin-top: 20px; }
+    
+	.comment-form-comment + .comment-form-author,
+    .comment-form-comment + .comment-form-author + .comment-form-email,
+	.comment-form p + p { 
+        margin-top: 20px; 
+    }
 	
 	p.comment-form-author, 
 	p.comment-form-email {

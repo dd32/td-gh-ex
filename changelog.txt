@@ -1,6 +1,11 @@
 *** Garfunkel Changelog ***
 
 
+Version 1.09 (2016-03-12)
+-------------------------
+- Fixed respond input margins
+
+
 Version 1.08 (2016-03-12)
 -------------------------
 - Removed the wp_title() function from header (replaced with title_tag())
