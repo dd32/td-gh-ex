@@ -46,7 +46,11 @@ a,.cart-subtotal .amount,.comment-navigation .nav-previous a:hover,.site-footer 
 .site-footer .widget.widget_recent-work-widget .flex-direction-nav a.flex-next:hover,.site-footer .widget_testimonial-widget p.client,
 .site-footer .widget_nav_menu li a:hover,.ei-title h3,.breadcrumb #breadcrumb a:hover,.dropcap,
 .post-navigation .nav-next a:hover,.pullright:before,.widget_image-box-widget h4,
-.pullleft:before,.page-links a:hover,.pullnone:before,.page-navigation ol li a:hover,.page-navigation ol li.bpn-current:hover,a.more-link:hover,.site-main .post-navigation .nav-links a:hover,.widget-title,.widget #wp-calendar tbody td a
+.pullleft:before,.page-links a:hover,.order-total .amount,.woocommerce #content table.cart a.remove,
+.woocommerce table.cart a.remove,
+.woocommerce-page #content table.cart a.remove,
+.woocommerce-page table.cart a.remove,
+.cart-subtotal .amount,.pullnone:before,.page-navigation ol li a:hover,.page-navigation ol li.bpn-current:hover,a.more-link:hover,.site-main .post-navigation .nav-links a:hover,.widget-title,.widget #wp-calendar tbody td a
 		{
 				color: <?php echo esc_html($primary_color); ?>; 
 		}
@@ -62,13 +66,45 @@ input[type="submit"],.flex-container .flex-control-paging li a.flex-active,.site
 .btn-slider a:hover,
 .circle-icon-box .circle-icon-wrapper:hover,
 .portfolio-excerpt a.btn-readmore:hover,
-.service p.more-button a:hover,
-.menu-footer-menu-container ul.menu li a:hover,.slicknav_menu,
+.service p.more-button a:hover,.woocommerce #content div.product .woocommerce-tabs ul.tabs li a:hover,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
+.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li a:hover,
+.woocommerce-page div.product .woocommerce-tabs ul.tabs li a:hover,
+.woocommerce #content div.product .woocommerce-tabs ul.tabs li.active,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active,
+.woocommerce-page div.product .woocommerce-tabs ul.tabs li.active,
+.menu-footer-menu-container ul.menu li a:hover,.slicknav_menu,.woocommerce #content nav.woocommerce-pagination ul li a:focus,
+.woocommerce #content nav.woocommerce-pagination ul li a:hover,
+.woocommerce #content nav.woocommerce-pagination ul li span.current,
+.woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.woocommerce-page #content nav.woocommerce-pagination ul li a:focus,
+.woocommerce-page #content nav.woocommerce-pagination ul li a:hover,
+.woocommerce-page #content nav.woocommerce-pagination ul li span.current,
+.woocommerce-page nav.woocommerce-pagination ul li a:focus,
+.woocommerce-page nav.woocommerce-pagination ul li a:hover,
+.woocommerce-page nav.woocommerce-pagination ul li span.current,
 .menu-all-pages-container ul.menu li a:hover,.portfolio-excerpt a.btn-readmore:hover,
 .share-box ul li a:hover, .top-right ul li a:hover,table td#today,.flex-recent-posts ul.slides li a.post-readmore:hover .rp-thumb
 		{
 		 	background-color: <?php echo esc_html($primary_color); ?>; 
 		}
+
+.woocommerce #content input.button:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce-page #content input.button:hover,
+.woocommerce-page #respond input#submit:hover,
+.woocommerce-page a.button:hover,
+.woocommerce-page button.button:hover,
+.woocommerce-page input.button:hover {
+	background-color: <?php echo esc_html($primary_color); ?>!important; 
+}
+
 		.flex-recent-posts ul.slides li a.post-readmore:hover .rp-thumb {
 				opacity: 0.7;
 		}

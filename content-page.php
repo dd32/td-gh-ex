@@ -10,6 +10,9 @@
 	
 
 	<div class="entry-content">
+<?php	if( has_post_thumbnail() && ! post_password_required() ) :   
+				the_post_thumbnail('boxy-blog-large-width');
+		endif;?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

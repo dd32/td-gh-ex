@@ -42,6 +42,11 @@ http://pixabay.com/static/uploads/photo/2010/12/20/16/02/child-3853_640.jpg
 16. Other theme options are self explanatory.
 
 == Change Log ==
+
+v. 1.1.8
+	*  Fix Single page featured image
+	*  Added Woocommerce support
+
 v. 1.1.7
 	*  Added Admin notice for `Try Pro for Free` 
 	*  Change Documentation Link
