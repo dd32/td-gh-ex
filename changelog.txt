@@ -1,6 +1,11 @@
 *** Hoffman Changelog ***
 
 
+Version 1.16 (2016-04-02)
+-------------------------
+- Fixed respond input margins
+
+
 Version 1.15 (2016-01-10)
 -------------------------
 - Removed the show/hide menu customizer option added in the last update
