@@ -810,7 +810,9 @@ function bnt_wp_title( $title, $sep ) {
 function bnt_dismiss_novice() {
     $option = $_POST['novice_option'];
 	$new_value = 'dismissed';
-    update_option( $option, $new_value );
+	if ( current_user_can('install_themes') ) {
+		update_option( $option, $new_value );
+	}
 }
 
 
