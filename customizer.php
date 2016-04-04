@@ -378,6 +378,17 @@ $wp_customize->add_section(
 	'active_callback' => 'is_front_page',
 	));
 	$wp_customize->add_setting(
+		'enigma_options[service_home]',
+		array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['service_home'],
+			'sanitize_callback'=>'enigma_sanitize_checkbox',
+			'capability' => 'edit_theme_options'
+		)
+	);
+	
+	
+	$wp_customize->add_setting(
 	'enigma_options[home_service_heading]',
 		array(
 		'default'=>esc_attr($wl_theme_options['home_service_heading']),
@@ -477,6 +488,39 @@ $wp_customize->add_section(
 		'capability'=>'edit_theme_options',
 		)
 	);
+	
+	$wp_customize->add_setting(
+	'enigma_options[service_1_link]',
+		array(
+		'default'=>esc_attr($wl_theme_options['service_1_link']),
+		'type'=>'option',
+		'capability'=>'edit_theme_options',
+		'sanitize_callback'=>'esc_url_raw',
+		));
+	$wp_customize->add_setting(
+	'enigma_options[service_2_link]',
+		array(
+		'default'=>esc_attr($wl_theme_options['service_2_link']),
+		'type'=>'option',
+		'capability'=>'edit_theme_options',
+		'sanitize_callback'=>'esc_url_raw',
+		));
+	$wp_customize->add_setting(
+	'enigma_options[service_3_link]',
+		array(
+		'default'=>esc_attr($wl_theme_options['service_3_link']),
+		'type'=>'option',
+		'capability'=>'edit_theme_options',
+		'sanitize_callback'=>'esc_url_raw',
+		));
+	
+	$wp_customize->add_control( 'enigma_show_service', array(
+		'label'        => __( 'Enable Service on Home', 'weblizar' ),
+		'type'=>'checkbox',
+		'section'    => 'service_section',
+		'settings'   => 'enigma_options[service_home]'
+	) );
+	
 	$wp_customize->add_control(
     new enigma_Customize_Misc_Control(
         $wp_customize,
@@ -510,6 +554,12 @@ $wp_customize->add_section(
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_1_text]'
 	) );
+	$wp_customize->add_control( 'service_1_link', array(
+		'label'        => __( 'Service One Link', 'weblizar' ),
+		'type'=>'url',
+		'section'    => 'service_section',
+		'settings'   => 'enigma_options[service_1_link]'
+	) );
 		$wp_customize->add_control(
     new enigma_Customize_Misc_Control(
         $wp_customize,
@@ -540,6 +590,12 @@ $wp_customize->add_section(
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_2_text]'
 	) );
+	$wp_customize->add_control( 'service_2_link', array(
+		'label'        => __( 'Service Two Link', 'weblizar' ),
+		'type'=>'url',
+		'section'    => 'service_section',
+		'settings'   => 'enigma_options[service_2_link]'
+	) );
 		$wp_customize->add_control(new enigma_Customize_Misc_Control(
         $wp_customize, 'enigma_service_options3-line',
         array(
@@ -567,6 +623,12 @@ $wp_customize->add_section(
 		'type'=>'text',
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_3_text]'
+	) );
+	$wp_customize->add_control( 'service_3_link', array(
+		'label'        => __( 'Service Three Link', 'weblizar' ),
+		'type'=>'url',
+		'section'    => 'service_section',
+		'settings'   => 'enigma_options[service_3_link]'
 	) );
 /* Portfolio Section */
 	$wp_customize->add_section(
@@ -928,6 +990,21 @@ $wp_customize->add_section(
 		'section'    => 'callout_section',
 		'settings'   => 'enigma_options[fc_btn_link]'
 	) );
+	$wp_customize->add_setting(
+	'enigma_options[fc_icon]',
+		array(
+		'default'=>esc_attr($wl_theme_options['fc_icon']),
+		'type'=>'option',
+		'capability'=>'edit_theme_options',
+		'sanitize_callback'=>'enigma_sanitize_text',
+		)
+	);
+	$wp_customize->add_control( 'fc_icon', array(
+		'label'        => __( 'Footer callout Icon', 'weblizar' ),
+		'type'=>'text',
+		'section'    => 'callout_section',
+		'settings'   => 'enigma_options[fc_icon]'
+	) );
 	/* Footer Options */
 	$wp_customize->add_section('footer_section',array(
 	'title'=>__("Footer Options",'weblizar'),
@@ -1060,7 +1137,7 @@ class More_Enigma_Control extends WP_Customize_Control {
 					<a style="margin-bottom:20px;margin-left:20px;" href="http://weblizar.com/themes/enigma-premium/" target="blank" class="btn btn-success btn"><?php _e('Upgrade to Enigma Premium','weblizar'); ?> </a>
 			</div>
 			<div class="col-md-4 col-sm-6">
-				<img class="enigma_img_responsive " src="<?php echo WL_TEMPLATE_DIR_URI .'/core/theme-options/images/Enig.png'?>">
+				<img class="enigma_img_responsive " src="<?php echo WL_TEMPLATE_DIR_URI .'/images/Enig.png'?>">
 			</div>			
 			<div class="col-md-3 col-sm-6">
 				<h3 style="margin-top:10px;margin-left: 20px;text-decoration:underline;color:#333;"><?php echo _e( 'Enigma Premium - Features','weblizar'); ?></h3>

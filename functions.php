@@ -53,6 +53,7 @@
 			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'weblizar' ),
 			'fc_btn_txt' => __('More Features', 'weblizar' ),
 			'fc_btn_link' =>"#",
+			'fc_icon' => 'fa fa-thumbs-up', 
 			//Social media links
 			'header_social_media_in_enabled'=>'1',
 			'footer_section_social_media_enbled'=>'1',
@@ -65,11 +66,11 @@
 			
 			'email_id' => 'example@mymail.com',
 			'phone_no' => '0159753586',
-			'footer_customizations' => __(' &#169; 2015 Enigma Theme', 'weblizar' ),
+			'footer_customizations' => __(' &#169; 2016 Enigma Theme', 'weblizar' ),
 			'developed_by_text' => __('Theme Developed By', 'weblizar' ),
 			'developed_by_weblizar_text' => __('Weblizar Themes', 'weblizar' ),
 			'developed_by_link' => 'http://weblizar.com/',
-			
+			'service_home'=>'1',
 			'home_service_heading' => __('Our Services', 'weblizar' ),
 			'service_1_title'=>__("Idea",'weblizar' ),
 			'service_1_icons'=>"fa fa-google",
@@ -115,7 +116,6 @@
         weblizar_default_settings() 
     );    
 	}
-	require( WL_TEMPLATE_DIR_CORE . '/theme-options/option-panel.php' ); // for Options Panel
 	
 	/*After Theme Setup*/
 	add_action( 'after_setup_theme', 'weblizar_head_setup' ); 	
