@@ -5,18 +5,6 @@
  * @package Awaken
  */
 
-/**
- * Tweak the redux framework.
- * Register all the theme options.
- * Registers the wpex_option function.
- * 
- * Note: Awaken Options panel will be removed from the very next theme update. 
- * This is here just to copy customizations from Awaken Options panel to Customizer.
- */
-if ( file_exists( get_template_directory() . '/inc/options/admin-config.php') ) {
-	require_once( get_template_directory() . '/inc/options/admin-config.php' );
-}
-
 if ( ! function_exists( 'awaken_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -226,12 +214,11 @@ function awaken_scripts() {
 
 	wp_enqueue_script( 'awaken-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ) );
 
-    $awaken_user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if(preg_match('/(?i)msie [1-8]/',$awaken_user_agent)) {
-		wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv.js', true ); 
-	}
-
-	wp_enqueue_script( 'respond', get_template_directory_uri() . '/js/respond.min.js' );
+    wp_enqueue_script( 'respond', get_template_directory_uri().'/js/respond.min.js' );
+    wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
+ 
+    wp_enqueue_script( 'html5shiv',get_template_directory_uri().'/js/html5shiv.js');
+    wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
 	wp_enqueue_script( 'awaken-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 

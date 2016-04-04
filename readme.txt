@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.0.3
+Version    : 2.0.4
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -172,3 +172,7 @@ Fixed a issue in get_theme_mod in footer.php
 - Version 2.0.3
 Changed archive title for categories and tags.
 Fixed Google Plus icon not displaying issue.
+
+- Version 2.0.4
+Removed checking useragent for html5shiv and used wp_script_add_data instead.
+Removed unwanted file_exists check for admin-config.php. 
