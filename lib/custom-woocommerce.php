@@ -196,11 +196,19 @@ $product_column = $woocommerce_loop['columns'];
     if ( $resizeimage == 1 ) {
         echo '<div class="kad-product-noflipper">';
           if ( has_post_thumbnail() ) {
-            $product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
+            $image_id = get_post_thumbnail_id( $post->ID );
+            $product_image = wp_get_attachment_image_src( $image_id, 'full' ); 
             $product_image_url = $product_image[0]; 
             $image_product = aq_resize($product_image_url, $productimgwidth, $productimgheight, true);
-                  if(empty($image_product)) {$image_product = $product_image_url;} ?> 
-                  <img width="<?php echo esc_attr($productimgwidth);?>" height="<?php echo esc_attr($productimgheight);?>" src="<?php echo esc_attr($image_product);?>" class="attachment-shop_catalog wp-post-image" alt="<?php the_title();?>">
+            if(empty($image_product)) {$image_product = $product_image_url;} 
+            $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+            if(empty($alt_text)) {$alt_text = get_the_title();}
+            ?> 
+                  <img width="<?php echo esc_attr($productimgwidth);?>" height="<?php echo esc_attr($productimgheight);?>" 
+                  src="<?php echo esc_attr($image_product);?>" 
+                  <?php echo kt_get_srcset_output( $productimgwidth, $productimgheight, $product_image_url, $image_id); ?>
+                  class="attachment-shop_catalog size-<?php echo esc_attr($productimgwidth.'x'.$productimgheight);?> wp-post-image" 
+                  alt="<?php echo esc_attr($alt_text);?>">
                 <?php }
               echo '</div>';
       } else { 

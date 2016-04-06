@@ -59,17 +59,18 @@
             }
             if($postsummery == 'img_landscape' && has_post_thumbnail( $post->ID ) || $postsummery == 'img_portrait' && has_post_thumbnail( $post->ID )) { ?>
                 <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item" itemscope="" itemtype="http://schema.org/BlogPosting">
-                    <?php $image_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full' ); 
+                    <?php $image_id = get_post_thumbnail_id( $post->ID );
+                          $image_url = wp_get_attachment_image_src($image_id, 'full' ); 
                           $thumbnailURL = $image_url[0];
                           if($hardcrop) {
-                                    $image = aq_resize($thumbnailURL, $image_width, $image_height, true);
-                                  } else {
-                                    $image = aq_resize($thumbnailURL, $image_width, false);
-                                  }
-                          if(empty($image)) { $image = $thumbnailURL; } ?>
+                            $image = aq_resize($thumbnailURL, $image_width, $image_height, true, false);
+                          } else {
+                            $image = aq_resize($thumbnailURL, $image_width, null, false, false);
+                          }
+                          if(empty($image[0])) {$image = array($thumbnailURL,$image_width,$image_height);} ?>
                               <div class="imghoverclass img-margin-center">
                                 <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                  <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" <?php if($hardcrop) {echo 'width="'.esc_attr($image_width).'" height="'.esc_attr($image_height).'"';}?> itemprop="image" class="iconhover" style="display:block;">
+                                  <img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output( $image[1], $image[2], $thumbnailURL, $image_id);?> itemprop="image" class="iconhover" style="display:block;">
                                 </a> 
                               </div>
                               <?php $image = null; $thumbnailURL = null; ?>
@@ -87,7 +88,7 @@
                                             if(empty($image)) {$image = $attachment_url;} ?>
                                             <li>
                                                 <a href="<?php the_permalink() ?>">
-                                                    <img src="<?php echo esc_url($image); ?>" <?php echo 'width="'.esc_attr($image_width).'" height="'.esc_attr($image_height).'"';?> itemprop="image" class="" alt="<?php the_title(); ?>" />
+                                                    <img src="<?php echo esc_url($image); ?>" <?php echo 'width="'.esc_attr($image_width).'" height="'.esc_attr($image_height).'"';?> <?php echo kt_get_srcset_output( $image_width, $image_height, $attachment_url, $attachment);?> itemprop="image" class="" alt="<?php the_title(); ?>" />
                                                 </a>
                                             </li>
                                           <?php }

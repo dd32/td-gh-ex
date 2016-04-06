@@ -17,6 +17,66 @@ if ( is_plugin_active('qtranslate/qtranslate.php') ) {
     add_filter('woocommerce_cart_item_name', 'qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage', 0);
 }
 
+function kt_get_srcset($width,$height,$url,$id) {
+  if(empty($id) || empty($url)) {
+    return;
+  }
+  $image_meta = get_post_meta( $id, '_wp_attachment_metadata', true );
+  // If possible add in our images on the fly sizes
+  $ext = substr($image_meta['file'], strrpos($image_meta['file'], "."));
+  $pathflyfilename = str_replace($ext,'-'.$width.'x'.$height.'' . $ext, $image_meta['file']);
+  $pathretinaflyfilename = str_replace($ext, '-'.$width.'x'.$height.'@2x' . $ext, $image_meta['file']);
+  $flyfilename = basename($image_meta['file'], $ext) . '-'.$width.'x'.$height.'' . $ext;
+  $retinaflyfilename = basename($image_meta['file'], $ext) . '-'.$width.'x'.$height.'@2x' . $ext;
+
+  $upload_info = wp_upload_dir();
+  $upload_dir = $upload_info['basedir'];
+
+  $flyfile = trailingslashit($upload_dir).$pathflyfilename;
+  $retinafile = trailingslashit($upload_dir).$pathretinaflyfilename;
+  if(empty($image_meta['sizes']) ){ $image_meta['sizes'] = array();}
+    if (file_exists($flyfile)) {
+      $kt_add_imagesize = array(
+        'kt_on_fly' => array( 
+          'file'=> $flyfilename,
+          'width' => $width,
+          'height' => $height,
+          'mime-type' => $image_meta['sizes']['thumbnail']['mime-type'] 
+          )
+      );
+      $image_meta['sizes'] = array_merge($image_meta['sizes'], $kt_add_imagesize);
+    }
+    if (file_exists($retinafile)) {
+      $size = getimagesize( $retinafile );
+      if(($size[0] == 2 * $width) && ($size[1] == 2 * $height) ) {
+        $kt_add_imagesize_retina = array(
+        'kt_on_fly_retina' => array( 
+          'file'=> $retinaflyfilename,
+          'width' => 2 * $width,
+          'height' => 2 * $height,
+          'mime-type' => $image_meta['sizes']['thumbnail']['mime-type'] 
+          )
+        );
+        $image_meta['sizes'] = array_merge($image_meta['sizes'], $kt_add_imagesize_retina);
+      }
+    }
+    if(function_exists ( 'wp_calculate_image_srcset') ){
+      $output = wp_calculate_image_srcset(array( $width, $height), $url, $image_meta, $id);
+    } else {
+      $output = '';
+    }
+    return $output;
+}
+function kt_get_srcset_output($width,$height,$url,$id) {
+    $img_srcset = kt_get_srcset( $width, $height, $url, $id);
+    if(!empty($img_srcset) ) {
+      $output = 'srcset="'.esc_attr($img_srcset).'" sizes="(max-width: '.esc_attr($width).'px) 100vw, '.esc_attr($width).'px"';
+    } else {
+      $output = '';
+    }
+    return $output;
+}
+
 function pinnacle_img_placeholder() {
   return apply_filters('kadence_placeholder_image', get_template_directory_uri() . '/assets/img/post_standard.jpg');
 }

@@ -32,7 +32,12 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
-= 1.3.6 | 3rd Febuary 2015 = 
+= 1.3.7 | 6th April 2016 = 
+* Add: srcset to products, portfolio.
+* Update: Theme Options. Add info for customizer.
+* Update: icon select.
+
+= 1.3.6 | 3rd February 2016 = 
 * Update: Various HTML changes (Thanks LAN.)
 * Update: Cart css.
 * Update: Woocommerce file.

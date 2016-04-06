@@ -299,6 +299,12 @@ Redux::setSection( $opt_name, array(
             'customizer' => true,
             'width' => 'width:60%',
             ),
+    array(
+            'id'=>'info_pagetitle_settings_notice',
+            'type' => 'info',
+            'customizer' => true,
+            'desc' => __('*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to Apperance > Theme Options > Page Title settings for all settings', 'pinnacle'),
+            ),
     ),
 )
 );
@@ -423,6 +429,12 @@ Redux::setSection( $opt_name, array(
     'desc' => "<div class='redux-info-field'><h3>".__('Home Page Slider Options', 'pinnacle')."</h3></div>",
     'fields' => array(
         array(
+            'id'=>'info_home_slider_settings_notice',
+            'type' => 'info',
+            'customizer' => true,
+            'desc' => __('*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to Apperance > Theme Options > Home Slider for all Home slider settings', 'pinnacle'),
+            ),
+        array(
             'id'=>'choose_home_header',
             'type' => 'select',
             'title' => __('Choose a Home Image Slider', 'pinnacle'), 
@@ -430,12 +442,12 @@ Redux::setSection( $opt_name, array(
             'options' => array('none' => __('None', 'pinnacle'),'pagetitle' => __('Page Title', 'pinnacle'),'flex' => __('Flex Slider', 'pinnacle'),'carousel' => __('Carousel Slider', 'pinnacle'),'latest' => __('Latest Posts', 'pinnacle'), 'video' => __('Video', 'pinnacle')),
             'default' => 'pagetitle',
             'width' => 'width:60%',
-            'customizer' => false,
+            'customizer' => true,
             ),
         array(
             'id'=>'hs_behindheader',
             'type' => 'switch', 
-            'customizer' => false,
+            'customizer' => true,
             'title' => __('Place behind Header', 'pinnacle'),
             'subtitle'=> __('This enabled the transparent header on the home page.', 'pinnacle'),
             "default" => 1,
@@ -443,7 +455,7 @@ Redux::setSection( $opt_name, array(
         array(
             'id'=>'home_page_title',
             'type' => 'textarea',
-            'customizer' => false,
+            'customizer' => true,
             'title' => __('Home Page Title', 'pinnacle'), 
             'validate' => 'html',
             'default' => 'Welcome to [site-name]',
@@ -452,7 +464,7 @@ Redux::setSection( $opt_name, array(
         array(
             'id'=>'home_page_sub_title',
             'type' => 'textarea',
-            'customizer' => false,
+            'customizer' => true,
             'title' => __('Home Page SubTitle', 'pinnacle'), 
             'subtitle' => __('optional text below home page title', 'pinnacle'),
             'validate' => 'html',
@@ -462,7 +474,7 @@ Redux::setSection( $opt_name, array(
         array(
             'id'=>'home_page_title_ptop',
             'type' => 'slider', 
-            'customizer' => false,
+            'customizer' => true,
             'title' => __('Home Page Title Padding Top', 'pinnacle'),
             "default"       => "110",
             "min"       => "5",
@@ -473,7 +485,7 @@ Redux::setSection( $opt_name, array(
         array(
             'id'=>'home_page_title_pbottom',
             'type' => 'slider', 
-            'customizer' => false,
+            'customizer' => true,
             'title' => __('Home Page Title Padding Bottom', 'pinnacle'),
             "default"       => "110",
             "min"       => "5",
@@ -1142,6 +1154,12 @@ Redux::setSection( $opt_name, array(
             'width' => 'width:60%',
             'default' => '3',
             'required' => array('home_post_summery','=',array('grid')),
+            ),
+         array(
+            'id'=>'info_home_layout_settings_notice',
+            'type' => 'info',
+            'customizer' => true,
+            'desc' => __('*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to Apperance > Theme Options > Home Layout for all home layout settings', 'pinnacle'),
             ),
 
     ),
@@ -2082,6 +2100,12 @@ Redux::setSection( $opt_name, array(
     'title' => __('Typography', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Header Font Options', 'pinnacle')."</h3></div>",
     'fields' => array(
+        array(
+            'id'=>'info_typography_settings_notice',
+            'type' => 'info',
+            'customizer' => true,
+            'desc' => __('*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to Apperance > Theme Options > Typography settings for all Typography settings', 'pinnacle'),
+            ),
       array(
             'id'=>'font_h1',
             'type' => 'typography', 
@@ -2279,6 +2303,12 @@ Redux::setSection( $opt_name, array(
     'title' => __('Menu Settings', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Primary Menu Options', 'pinnacle')."</h3></div>",
     'fields' => array(
+        array(
+            'id'=>'info_menu_settings_notice',
+            'type' => 'info',
+            'customizer' => true,
+            'desc' => __('*NOTE: Make sure Virtue/Pinnacle Toolkit plugin is activated* <br>Go to Apperance > Theme Options > Menu settings for all menu settings', 'pinnacle'),
+            ),
       array(
             'id'=>'font_primary_menu',
             'type' => 'typography', 
@@ -2484,7 +2514,7 @@ Redux::setSection( $opt_name, array(
 
 function kadence_override_redux_icons_css() {
   wp_dequeue_style( 'redux-admin-css' );
-  wp_register_style('pinncale-redux-custom-css', get_template_directory_uri() . '/themeoptions/options_assets/css/style.css', false, 123);    
+  wp_register_style('pinncale-redux-custom-css', get_template_directory_uri() . '/themeoptions/options_assets/css/style.css', false, 134);    
   wp_enqueue_style('pinncale-redux-custom-css');
   wp_dequeue_style( 'select2-css' );
   wp_dequeue_script( 'select2-js' );
