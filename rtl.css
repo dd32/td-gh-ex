@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/apex/
 Author: Compete Themes
 Author URI: https://www.competethemes.com/
 Description: Apex is a sophisticated, minimalist theme. It looks great and performs wonderfully on phones, tablets, laptops, and everything in between. As a fast, responsive, accessibility-ready, and translation-ready theme, Apex is a theme you can trust to present your content to the world. See our fully setup demo here: https://www.competethemes.com/apex-live-demo/
-Version: 1.17
+Version: 1.18
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, silver, white, light, fluid-layout, responsive-layout, two-columns, right-sidebar, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -33,7 +33,7 @@ h2, .site-title {
   /* 37px */
 }
 
-h3, .post-title {
+h3, .comments-number h2, .post-title {
   font-size: 1.3125em;
   /* 21px / 16px */
   line-height: 1.143;
@@ -42,7 +42,7 @@ h3, .post-title {
 
 .wp-caption-text, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]):not([type="image"]),
 textarea, input[type="submit"], .comment-respond label, #cancel-comment-reply-link, .comment-footer a,
-.comment-footer span, .site-footer .design-credit span, .tagline, .more-link, .comments-link, .sticky-status, .post-byline, .post-tags a, .further-reading span, .widget > * {
+.comment-footer span, .site-footer .design-credit span, .tagline, .more-link, .comments-link, .sticky-status, .post-byline, .post-tags a, .further-reading span, .widget > *, .singular-attachment .attachment-caption {
   font-size: 0.75em;
   /* 12px / 16px */
   line-height: 1.5;
@@ -361,7 +361,7 @@ a img {
   margin: 3em 0 1.5em;
   padding: 0 6.25%;
 }
-.archive-header h2 {
+.archive-header h1 {
   font-size: 1em;
   line-height: 1.5;
   color: #6B6B6B;
@@ -1467,6 +1467,10 @@ li.pingback {
     margin-bottom: 3em;
   }
 }
+.singular-attachment .attachment-container img {
+  display: block;
+}
+
 /*
 
 ATTENTION:
