@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/author/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: Author is designed for publishers who want readers. That's why Author is fast, responsive, accessibility-ready, and optimally designed for reading. All scripts and stylesheets are minified, concatenated, and conditionally loaded to maximize performance. The layout adapts fluidly to all screen sizes to enhance usability. As one of few accessibility-ready themes, it performs well for users with wide ranges of disabilities. Lastly, based on the ancient Van de Graaf canon, Author is optimally designed for reading. Author is the theme your content deserves. See our fully setup live demo here: https://www.competethemes.com/author-live-demo/
-Version: 1.18
+Version: 1.19
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, silver, tan, white, dark, light, one-column, two-columns, left-sidebar, fluid-layout, responsive-layout, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -31,8 +31,8 @@ h2 {
   /* 37px */
 }
 
-h3, .site-title, .archive-header h2,
-.pagination h2 {
+h3, .site-title, .archive-header h1,
+.pagination h1 {
   font-size: 1.3125em;
   /* 21px / 16px */
   line-height: 1.143;
@@ -41,7 +41,7 @@ h3, .site-title, .archive-header h2,
 
 input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]):not([type="image"]),
 textarea, input[type="submit"], .tagline, .post-tags a, .widget_tag_cloud a, .further-reading span, .bypostauthor .author-name:after, .comment-footer a,
-.comment-footer span, .widget > *, .site-footer .design-credit {
+.comment-footer span, .widget > *, .site-footer .design-credit, .singular-attachment .attachment-caption {
   font-size: 0.75em;
   /* 12px / 16px */
   line-height: 1.5;
@@ -481,6 +481,7 @@ a img {
 }
 
 .site-title {
+  font-family: "Rokkitt", sans-serif;
   line-height: 36px;
 }
 .site-title a {
@@ -913,6 +914,16 @@ a img {
   -ms-transform: translateX(50%) translateY(-50%);
   transform: translateX(50%) translateY(-50%);
 }
+.featured-image .ccfic {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: #eeeeee;
+  padding: 4px 8px;
+  font-size: 13px;
+}
 
 .post-header {
   text-align: center;
@@ -1241,7 +1252,9 @@ a img {
   }
 }
 @media all and (min-width: 43.75em) {
+  .comments-number h2,
   .comments-number h3,
+  .comment-respond h2,
   .comment-respond h3 {
     font-size: 2.3125em;
     /* 37px / 16px */
@@ -1279,8 +1292,8 @@ a img {
   background: white;
   text-align: center;
 }
-.archive-header h2,
-.pagination h2 {
+.archive-header h1,
+.pagination h1 {
   display: inline-block;
   margin-left: 6px;
 }
@@ -1591,6 +1604,9 @@ a img {
 }
 .singular-attachment .entry .further-reading p {
   margin: 0;
+}
+.singular-attachment .attachment-container img {
+  display: block;
 }
 
 /**
