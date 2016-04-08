@@ -61,8 +61,8 @@ add_action( 'after_setup_theme', 'aster_theme_setup' );
 
 
 // SoundCloud
-add_filter('oembed_fetch_url', 'soundcloud_no_width', 10, 3);
-function soundcloud_no_width($provider, $url, $args) {
+add_filter('oembed_fetch_url', 'aster_soundcloud_no_width', 10, 3);
+function aster_soundcloud_no_width($provider, $url, $args) {
 	if ( 'soundcloud.com' == parse_url( $url, PHP_URL_HOST ) ) {
 		$provider = remove_query_arg( 'maxwidth', $provider );
 	}
@@ -124,8 +124,8 @@ add_action( 'wp_enqueue_scripts', 'aster_all_scripts_and_css' );
 // Woocommerce support
 //////////////////////////////////////////////////////////////////
 
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
+add_action( 'after_setup_theme', 'aster_woocommerce_support' );
+function aster_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
 
@@ -146,15 +146,15 @@ add_filter('wp_list_categories','aster_categories_post_count_filter');
 //////////////////////////////////////////////////////////////////
 // THE EXCERPT
 //////////////////////////////////////////////////////////////////
-function custom_excerpt_length( $length ) {
+function aster_custom_excerpt_length( $length ) {
 	return 46;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'aster_custom_excerpt_length', 999 );
 
-function new_excerpt_more( $more ) {
+function aster_new_excerpt_more( $more ) {
 	return '...';
 }
-add_filter( 'excerpt_more', 'new_excerpt_more' );
+add_filter( 'excerpt_more', 'aster_new_excerpt_more' );
 
 
 
@@ -228,7 +228,7 @@ endif;
 // Add Extra Fields In User Profile
 //////////////////////////////////////////////////////////////////
 
-function modify_user_contact_profile($profile_fields) {
+function aster_modify_user_contact_profile($profile_fields) {
 
 	// Add new fields
 	$profile_fields['facebook'] = __('Facebook URL', 'aster');
@@ -240,7 +240,7 @@ function modify_user_contact_profile($profile_fields) {
 
 	return $profile_fields;
 }
-add_filter('user_contactmethods', 'modify_user_contact_profile');
+add_filter('user_contactmethods', 'aster_modify_user_contact_profile');
 
 
 
