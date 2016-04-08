@@ -16,7 +16,7 @@ function digital_notice() {
 		$return .= '</strong> <a href="' . esc_url(home_url('/')) . '">' . __( 'Visit site', 'digital' ) . '</a></p>';
 		$return .= '<p>';
 		$return .= ' <a class="button button-primary theme-options" href="' . admin_url( 'themes.php?page=options-framework' ) . '">' . __( 'Theme Options', 'digital' ) . '</a>';
-		$return .= ' <a class="button button-primary help" href="http://forum.insertcart.com">' . __( 'Help Forum', 'digital' ) . '</a>';
+		$return .= ' <a class="button button-primary help" href="http://www.insertcart.com/digital-theme-documentation-setup/">' . __( 'Instruction & Help', 'digital' ) . '</a>';
 		$return .= '</p></div>';
 		echo $return;
 	}

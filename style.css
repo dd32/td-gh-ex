@@ -2,7 +2,7 @@
 Theme Name: Digital
 Theme URI: http://www.insertcart.com/product/digital-wp-theme/
 Description: Digital Responsive Multi-Purpose Theme is best WordPress theme design for personal and business uses support WooCommerce plugin supported with full inbuilt Slider features and SEO Optimize. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. This is a eCommerce theme to make sure run best online store with your website and start selling products.
-Version: 1.3.2
+Version: 1.3.3
 Author: insertcart.com
 Author URI: http://www.insertcart.com/
 Tags: black, blue, white, light, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
@@ -368,6 +368,8 @@ li.home-icon > a > i {
     font-size: 1.5rem;
     margin-top: 11px;
 }
+#navigation .home-icon {display:block;}
+.home-icon{display:none;}
 #navigation {
 	margin: 0;
 	font-size: 12px;
@@ -1004,6 +1006,16 @@ color:#858585;
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 }
+.nav-previous a::before {
+	content: "\f060";
+	font-family:FontAwesome;
+	padding:5px;
+}
+.nav-next a::after {
+    content: "\f061";
+	font-family:FontAwesome;
+	padding:5px;
+}
 .nav-previous {
 	float: left;
 	width: 50%;
@@ -1373,7 +1385,6 @@ span > span.posted-on > a > time > i, span > span.byline > span > a > i {
 #sidebar .boxinside {
 clear: both;
 }
-#sidebar .home-icon{display:none;}
 
 select {
 max-width: 95%;
@@ -1814,6 +1825,8 @@ ol.commentlist {
 	list-style:none;
 	margin:0 0 1em;
 	padding:0;
+	clear:both;
+	clear:both;
 	text-indent:0;
 }
 ol.commentlist li.comment {
