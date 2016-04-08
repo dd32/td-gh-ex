@@ -131,6 +131,9 @@ function spacious_header_title() {
 		elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
 			$spacious_header_title = __( 'Links', 'spacious' );
 
+		elseif ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) :
+			$spacious_header_title = woocommerce_page_title( false );
+
 		else :
 			$spacious_header_title = __( 'Archives', 'spacious' );
 

@@ -53,7 +53,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:26 inc/functions.php:547
+#: content-page.php:26 inc/functions.php:599
 msgid "Edit"
 msgstr ""
 
@@ -61,23 +61,23 @@ msgstr ""
 msgid "Tagged on: "
 msgstr ""
 
-#: functions.php:47
+#: functions.php:75
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:48
+#: functions.php:76
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:178
+#: functions.php:159
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: functions.php:180
+#: functions.php:161
 msgid "Theme Options"
 msgstr ""
 
-#: functions.php:182
+#: functions.php:163
 #, php-format
 msgid ""
 "<p style=\"font-size: 16px; max-width: 800px\";>As our themes are hosted on "
@@ -90,7 +90,7 @@ msgid ""
 "know via our <a href=\"%2$s\">Contact form</a></p>"
 msgstr ""
 
-#: header.php:84
+#: header.php:93
 msgid "Menu"
 msgstr ""
 
@@ -119,11 +119,11 @@ msgid "No Sidebar Content Centered"
 msgstr ""
 
 #: inc/customizer.php:22
-msgid "Upgrade to Pro"
+msgid "Theme Info"
 msgstr ""
 
 #: inc/customizer.php:26
-msgid "Free Support"
+msgid "Support Forum"
 msgstr ""
 
 #: inc/customizer.php:30
@@ -143,411 +143,402 @@ msgid "If you like our work. Buy us a beer."
 msgstr ""
 
 #: inc/customizer.php:61
-msgid "About Spacious"
-msgstr ""
-
-#: inc/customizer.php:83
-msgid "Header"
+msgid "Spacious Important Links"
 msgstr ""
 
 #: inc/customizer.php:89
+msgid "Header"
+msgstr ""
+
+#: inc/customizer.php:95
 msgid "Header Logo"
 msgstr ""
 
-#: inc/customizer.php:100
+#: inc/customizer.php:107
 msgid ""
 "Upload logo for your header. Recommended image size is 100 X 100 pixels."
 msgstr ""
 
-#: inc/customizer.php:108
+#: inc/customizer.php:115
 msgid "Show"
 msgstr ""
 
-#: inc/customizer.php:120
+#: inc/customizer.php:128
 msgid "Choose the option that you want."
 msgstr ""
 
-#: inc/customizer.php:123
+#: inc/customizer.php:131
 msgid "Header Logo Only"
 msgstr ""
 
-#: inc/customizer.php:124
+#: inc/customizer.php:132
 msgid "Header Text Only"
 msgstr ""
 
-#: inc/customizer.php:125
+#: inc/customizer.php:133
 msgid "Show Both"
 msgstr ""
 
-#: inc/customizer.php:126
+#: inc/customizer.php:134
 msgid "Disable"
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:141
 msgid "Header Image Position"
 msgstr ""
 
-#: inc/customizer.php:145
+#: inc/customizer.php:154
 msgid "Choose top header image display position."
 msgstr ""
 
-#: inc/customizer.php:148
+#: inc/customizer.php:157
 msgid ""
 "Position Above (Default): Display the Header image just above the site title "
 "and main menu part."
 msgstr ""
 
-#: inc/customizer.php:149
+#: inc/customizer.php:158
 msgid ""
 "Position Below: Display the Header image just below the site title and main "
 "menu part."
 msgstr ""
 
-#: inc/customizer.php:158
+#: inc/customizer.php:167
 msgid "Design"
 msgstr ""
 
-#: inc/customizer.php:164
+#: inc/customizer.php:173
 msgid "Site Layout"
 msgstr ""
 
-#: inc/customizer.php:176
+#: inc/customizer.php:186
 msgid "Choose your site layout. The change is reflected in whole site."
 msgstr ""
 
-#: inc/customizer.php:178
+#: inc/customizer.php:188
 msgid "Boxed layout with content width of 1218px"
 msgstr ""
 
-#: inc/customizer.php:179
+#: inc/customizer.php:189
 msgid "Boxed layout with content width of 978px"
 msgstr ""
 
-#: inc/customizer.php:180
+#: inc/customizer.php:190
 msgid "Wide layout with content width of 1218px"
 msgstr ""
 
-#: inc/customizer.php:181
+#: inc/customizer.php:191
 msgid "Wide layout with content width of 978px"
 msgstr ""
 
-#: inc/customizer.php:249
+#: inc/customizer.php:259
 msgid "Default layout"
 msgstr ""
 
-#: inc/customizer.php:261
+#: inc/customizer.php:272
 msgid ""
 "Select default layout. This layout will be reflected in whole site archives, "
 "search etc. The layout for a single post and page can be controlled from "
 "below options."
 msgstr ""
 
-#: inc/customizer.php:275
+#: inc/customizer.php:286
 msgid "Default layout for pages only"
 msgstr ""
 
-#: inc/customizer.php:287
+#: inc/customizer.php:299
 msgid ""
 "Select default layout for pages. This layout will be reflected in all pages "
 "unless unique layout is set for specific page."
 msgstr ""
 
-#: inc/customizer.php:301
+#: inc/customizer.php:313
 msgid "Default layout for single posts only"
 msgstr ""
 
-#: inc/customizer.php:313
+#: inc/customizer.php:326
 msgid ""
 "Select default layout for single posts. This layout will be reflected in all "
 "single posts unless unique layout is set for specific post."
 msgstr ""
 
-#: inc/customizer.php:327
+#: inc/customizer.php:340
 msgid "Blog Posts display type"
 msgstr ""
 
-#: inc/customizer.php:339
+#: inc/customizer.php:353
 msgid ""
 "Choose the display type for the latests posts view or posts page view "
 "(static front page)."
 msgstr ""
 
-#: inc/customizer.php:341
+#: inc/customizer.php:355
 msgid "Blog Image Large"
 msgstr ""
 
-#: inc/customizer.php:342
+#: inc/customizer.php:356
 msgid "Blog Image Medium"
 msgstr ""
 
-#: inc/customizer.php:343
+#: inc/customizer.php:357
 msgid "Blog Image Alternate Medium"
 msgstr ""
 
-#: inc/customizer.php:344
+#: inc/customizer.php:358
 msgid "Blog Full Content"
 msgstr ""
 
-#: inc/customizer.php:353
+#: inc/customizer.php:367
 msgid "Primary color option"
 msgstr ""
 
-#: inc/customizer.php:364
+#: inc/customizer.php:379
 msgid ""
 "This will reflect in links, buttons and many others. Choose a color to match "
 "your site."
 msgstr ""
 
-#: inc/customizer.php:372
+#: inc/customizer.php:387
 msgid "Color Skin"
 msgstr ""
 
-#: inc/customizer.php:384
+#: inc/customizer.php:400
 msgid "Choose the light or dark skin. This will be reflected in whole site."
 msgstr ""
 
-#: inc/customizer.php:411
+#: inc/customizer.php:427
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:423
+#: inc/customizer.php:440
 msgid "Write your custom css."
 msgstr ""
 
-#: inc/customizer.php:433
+#: inc/customizer.php:450
 msgid "Additional"
 msgstr ""
 
-#: inc/customizer.php:439
+#: inc/customizer.php:456
 msgid "Activate favicon"
 msgstr ""
 
-#: inc/customizer.php:451
+#: inc/customizer.php:469
 msgid "Check to activate favicon. Upload fav icon from below option"
 msgstr ""
 
-#: inc/customizer.php:459
+#: inc/customizer.php:477
 msgid "Upload favicon"
 msgstr ""
 
-#: inc/customizer.php:470
+#: inc/customizer.php:489
 msgid "Upload favicon for your site."
 msgstr ""
 
-#: inc/customizer.php:496
+#: inc/customizer.php:515
 msgid "Slider"
 msgstr ""
 
-#: inc/customizer.php:502
+#: inc/customizer.php:521
 msgid "Activate slider"
 msgstr ""
 
-#: inc/customizer.php:514
+#: inc/customizer.php:534
 msgid "Check to activate slider."
 msgstr ""
 
-#: inc/customizer.php:522
+#: inc/customizer.php:542
 msgid "Disable slider in Posts page"
 msgstr ""
 
-#: inc/customizer.php:534
+#: inc/customizer.php:555
 msgid "Check to disable slider in Posts Page"
 msgstr ""
 
-#: inc/customizer.php:543
+#: inc/customizer.php:564
 #, php-format
 msgid "Image Upload #%1$s"
 msgstr ""
 
-#: inc/customizer.php:555
+#: inc/customizer.php:577
 msgid "Upload slider image."
 msgstr ""
 
-#: inc/customizer.php:568
+#: inc/customizer.php:591
 msgid "Enter title for your slider."
 msgstr ""
 
-#: inc/customizer.php:581
+#: inc/customizer.php:605
 msgid "Enter your slider description."
 msgstr ""
 
-#: inc/customizer.php:588 inc/functions.php:550 inc/header-functions.php:106
+#: inc/customizer.php:612 inc/functions.php:602 inc/header-functions.php:42
 #: inc/widgets/widgets.php:258 inc/widgets/widgets.php:355
 msgid "Read more"
 msgstr ""
 
-#: inc/customizer.php:594
+#: inc/customizer.php:619
 msgid "Enter the button text. Default is \"Read more\""
 msgstr ""
 
-#: inc/customizer.php:607
+#: inc/customizer.php:633
 msgid "Enter link to redirect slider when clicked"
 msgstr ""
 
-#: inc/customizer.php:670
-msgid "Theme Info"
-msgstr ""
-
-#: inc/customizer.php:671
+#: inc/customizer.php:696
 msgid "View PRO version"
 msgstr ""
 
-#: inc/functions.php:356
+#: inc/functions.php:408
 msgid "Post navigation"
 msgstr ""
 
-#: inc/functions.php:360 navigation.php:42
+#: inc/functions.php:412 navigation.php:42
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: inc/functions.php:361 navigation.php:43
+#: inc/functions.php:413 navigation.php:43
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr ""
 
-#: inc/functions.php:366
+#: inc/functions.php:418
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/functions.php:370
+#: inc/functions.php:422
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/functions.php:396
+#: inc/functions.php:448
 msgid "Pingback:"
 msgstr ""
 
-#: inc/functions.php:396
+#: inc/functions.php:448
 msgid "(Edit)"
 msgstr ""
 
-#: inc/functions.php:411
+#: inc/functions.php:463
 msgid "Post author"
 msgstr ""
 
-#: inc/functions.php:414
+#: inc/functions.php:466
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/functions.php:416
+#: inc/functions.php:468
 #, php-format
 msgid "<a class=\"comment-permalink\" href=\"%1$s\">Permalink</a>"
 msgstr ""
 
-#: inc/functions.php:422
+#: inc/functions.php:474
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/functions.php:427
+#: inc/functions.php:479
 msgid "Reply"
 msgstr ""
 
-#: inc/functions.php:447
+#: inc/functions.php:499
 msgid "WordPress"
 msgstr ""
 
-#: inc/functions.php:449
+#: inc/functions.php:501
 msgid "ThemeGrill"
 msgstr ""
 
-#: inc/functions.php:451
+#: inc/functions.php:503
 #, php-format
 msgid "Copyright &copy; %1$s %2$s."
 msgstr ""
 
-#: inc/functions.php:451
+#: inc/functions.php:503
 #, php-format
 msgid "Powered by %s."
 msgstr ""
 
-#: inc/functions.php:451
+#: inc/functions.php:503
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: inc/functions.php:533
+#: inc/functions.php:585
 #, php-format
 msgid ""
 "<span class=\"date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">%3$s</"
 "a></span>"
 msgstr ""
 
-#: inc/functions.php:544
+#: inc/functions.php:596
 msgid "No Comments"
 msgstr ""
 
-#: inc/functions.php:544
+#: inc/functions.php:596
 msgid "1 Comment"
 msgstr ""
 
-#: inc/functions.php:544
+#: inc/functions.php:596
 msgid "% Comments"
 msgstr ""
 
-#: inc/functions.php:544
+#: inc/functions.php:596
 msgid "Comments Off"
 msgstr ""
 
-#: inc/header-functions.php:64
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: inc/header-functions.php:167
+#: inc/header-functions.php:103
 #, php-format
 msgid "Author: %s"
 msgstr ""
 
-#: inc/header-functions.php:175
+#: inc/header-functions.php:111
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
-#: inc/header-functions.php:178
+#: inc/header-functions.php:114
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
-#: inc/header-functions.php:181
+#: inc/header-functions.php:117
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
-#: inc/header-functions.php:184
+#: inc/header-functions.php:120
 msgid "Asides"
 msgstr ""
 
-#: inc/header-functions.php:187
+#: inc/header-functions.php:123
 msgid "Images"
 msgstr ""
 
-#: inc/header-functions.php:190
+#: inc/header-functions.php:126
 msgid "Videos"
 msgstr ""
 
-#: inc/header-functions.php:193
+#: inc/header-functions.php:129
 msgid "Quotes"
 msgstr ""
 
-#: inc/header-functions.php:196
+#: inc/header-functions.php:132
 msgid "Links"
 msgstr ""
 
-#: inc/header-functions.php:199 sidebar-left.php:29 sidebar.php:29
+#: inc/header-functions.php:138 sidebar-left.php:29 sidebar.php:29
 msgid "Archives"
 msgstr ""
 
-#: inc/header-functions.php:204
+#: inc/header-functions.php:143
 msgid "Page NOT Found"
 msgstr ""
 
-#: inc/header-functions.php:207
+#: inc/header-functions.php:146
 msgid "Search Results"
 msgstr ""
 
-#: inc/header-functions.php:240
+#: inc/header-functions.php:179
 msgid "You are here:"
 msgstr ""
 

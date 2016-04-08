@@ -45,6 +45,13 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.3.8 =
+* Fix - Slider disable in blog page bug fixed.
+* Tweaks - Theme information is properly organized in Customize panel.
+* Tweaks - Language file updated.
+* Feature - Theme is now compatible with WooCommerce.
+* Feature - Primary Color hover effect is added.
+
 = Version 1.3.7 =
 * Content width is now adjusted with site layout choosed.
 * Removed backward compatibility for WordPress title tag.

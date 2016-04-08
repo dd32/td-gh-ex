@@ -267,6 +267,49 @@ function spacious_favicon() {
 	}
 }
 
+/**************************************************************************************/
+
+/**
+ * Change hex code to RGB
+ * Source: https://css-tricks.com/snippets/php/convert-hex-to-rgb/#comment-1052011
+ */
+function spacious_hex2rgb($hexstr) {
+	$int = hexdec($hexstr);
+	$rgb = array("red" => 0xFF & ($int >> 0x10), "green" => 0xFF & ($int >> 0x8), "blue" => 0xFF & $int);
+	$r = $rgb['red'];
+	$g = $rgb['green'];
+	$b = $rgb['blue'];
+
+	return "rgba($r,$g,$b, 0.85)";
+}
+
+/**
+ * Generate darker color
+ * Source: http://stackoverflow.com/questions/3512311/how-to-generate-lighter-darker-color-with-php
+ */
+function spacious_darkcolor($hex, $steps) {
+	// Steps should be between -255 and 255. Negative = darker, positive = lighter
+	$steps = max(-255, min(255, $steps));
+
+	// Normalize into a six character long hex string
+	$hex = str_replace('#', '', $hex);
+	if (strlen($hex) == 3) {
+		$hex = str_repeat(substr($hex,0,1), 2).str_repeat(substr($hex,1,1), 2).str_repeat(substr($hex,2,1), 2);
+	}
+
+	// Split into three parts: R, G and B
+	$color_parts = str_split($hex, 2);
+	$return = '#';
+
+	foreach ($color_parts as $color) {
+		$color   = hexdec($color); // Convert to decimal
+		$color   = max(0,min(255,$color + $steps)); // Adjust color
+		$return .= str_pad(dechex($color), 2, '0', STR_PAD_LEFT); // Make two char hex code
+	}
+
+	return $return;
+}
+
 /****************************************************************************************/
 
 add_action('wp_head', 'spacious_custom_css');
@@ -275,6 +318,8 @@ add_action('wp_head', 'spacious_custom_css');
  */
 function spacious_custom_css() {
 	$primary_color = spacious_options( 'spacious_primary_color', '#0FBE7C' );
+	$primary_opacity = spacious_hex2rgb($primary_color);
+	$primary_dark    = spacious_darkcolor($primary_color, -50);
 	$spacious_internal_css = '';
 	if( $primary_color != '#0FBE7C' ) {
 		$spacious_internal_css = ' blockquote { border-left: 3px solid '.$primary_color.'; }
@@ -285,16 +330,17 @@ function spacious_custom_css() {
 			.main-navigation ul li.current_page_item a, .main-navigation ul li:hover > a { color: '.$primary_color.'; }
 			.main-navigation ul li ul { border-top: 1px solid '.$primary_color.'; }
 			.main-navigation ul li ul li a:hover, .main-navigation ul li ul li:hover > a, .main-navigation ul li.current-menu-item ul li a:hover { color: '.$primary_color.'; }
-			.site-header .menu-toggle:hover { background: '.$primary_color.'; }
+			.site-header .menu-toggle:hover.entry-meta a.read-more:hover,#featured-slider .slider-read-more-button:hover,.call-to-action-button:hover,.entry-meta .read-more-link:hover,.spacious-button:hover, input[type="reset"]:hover, input[type="button"]:hover, input[type="submit"]:hover, button:hover { background: '.$primary_dark.'; }
 			.main-small-navigation li:hover { background: '.$primary_color.'; }
 			.main-small-navigation ul > .current_page_item, .main-small-navigation ul > .current-menu-item { background: '.$primary_color.'; }
 			.main-navigation a:hover, .main-navigation ul li.current-menu-item a, .main-navigation ul li.current_page_ancestor a, .main-navigation ul li.current-menu-ancestor a, .main-navigation ul li.current_page_item a, .main-navigation ul li:hover > a  { color: '.$primary_color.'; }
 			.small-menu a:hover, .small-menu ul li.current-menu-item a, .small-menu ul li.current_page_ancestor a, .small-menu ul li.current-menu-ancestor a, .small-menu ul li.current_page_item a, .small-menu ul li:hover > a { color: '.$primary_color.'; }
 			#featured-slider .slider-read-more-button { background-color: '.$primary_color.'; }
 			#controllers a:hover, #controllers a.active { background-color: '.$primary_color.'; color: '.$primary_color.'; }
+			.widget_service_block a.more-link:hover, .widget_featured_single_post a.read-more:hover,#secondary a:hover,logged-in-as:hover  a,.single-page p a:hover{ color: '.$primary_dark.'; }
 			.breadcrumb a:hover { color: '.$primary_color.'; }
 			.tg-one-half .widget-title a:hover, .tg-one-third .widget-title a:hover, .tg-one-fourth .widget-title a:hover { color: '.$primary_color.'; }
-			.pagination span { background-color: '.$primary_color.'; }
+			.pagination span ,.site-header .menu-toggle:hover{ background-color: '.$primary_color.'; }
 			.pagination a span:hover { color: '.$primary_color.'; border-color: .'.$primary_color.'; }
 			.widget_testimonial .testimonial-post { border-color: '.$primary_color.' #EAEAEA #EAEAEA #EAEAEA; }
 			.call-to-action-content-wrapper { border-color: #EAEAEA #EAEAEA #EAEAEA '.$primary_color.'; }
@@ -562,4 +608,28 @@ function spacious_entry_meta() {
    endif;
 }
 endif;
+
+/**************************************************************************************/
+
+/**
+ * Making the theme Woocommrece compatible
+ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+
+add_filter( 'woocommerce_show_page_title', '__return_false' );
+
+add_action('woocommerce_before_main_content', 'spacious_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'spacious_wrapper_end', 10);
+
+function spacious_wrapper_start() {
+  echo '<div id="primary">';
+}
+
+function spacious_wrapper_end() {
+  echo '</div>';
+}
+
+add_theme_support( 'woocommerce' );
 ?>

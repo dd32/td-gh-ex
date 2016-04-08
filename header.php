@@ -110,7 +110,7 @@ wp_head();
 
 		<?php
    	if( spacious_options( 'spacious_activate_slider', '0' ) == '1' ) {
-   		if( spacious_options( 'spacious_blog_slider', '0' ) == '0' ) {
+   		if( spacious_options( 'spacious_blog_slider', '0' ) != '1' ) {
    			if( is_home() || is_front_page() ) {
    				spacious_featured_image_slider();
 			}
@@ -122,7 +122,7 @@ wp_head();
    	}
 
 		if( ( '' != spacious_header_title() )  && !( is_front_page() ) ) {
-			if( !( spacious_options( 'spacious_blog_slider', '0' ) == '0' && is_home( ) ) ){ ?>
+			if( !( spacious_options( 'spacious_blog_slider', '0' ) != '1' && is_home( ) ) ){ ?>
 				<div class="header-post-title-container clearfix">
 					<div class="inner-wrap">
 						<div class="post-title-wrapper">
