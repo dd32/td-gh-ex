@@ -15,15 +15,13 @@
 	//Sane Defaults
 	function weblizar_default_settings()
 {
-	$ImageUrl = WL_TEMPLATE_DIR_URI ."/images/1.png";
-	$ImageUrl2 = WL_TEMPLATE_DIR_URI ."/images/2.png";
-	$ImageUrl3 = WL_TEMPLATE_DIR_URI ."/images/3.png";
-	$ImageUrl4 = WL_TEMPLATE_DIR_URI ."/images/portfolio1.png";
-	$ImageUrl5 = WL_TEMPLATE_DIR_URI ."/images/portfolio2.png";
-	$ImageUrl6 = WL_TEMPLATE_DIR_URI ."/images/portfolio3.png";
-	$ImageUrl7 = WL_TEMPLATE_DIR_URI ."/images/portfolio4.png";
-	$ImageUrl8 = WL_TEMPLATE_DIR_URI ."/images/portfolio5.png";
-	$ImageUrl9 = WL_TEMPLATE_DIR_URI ."/images/portfolio6.png";
+	$ImageUrl =  esc_url(get_template_directory_uri() ."/images/1.png");
+	$ImageUrl2 = esc_url(get_template_directory_uri() ."/images/2.png");
+	$ImageUrl3 = esc_url(get_template_directory_uri() ."/images/3.png");
+	$ImageUrl4 = esc_url(get_template_directory_uri() ."/images/portfolio1.png");
+	$ImageUrl5 = esc_url(get_template_directory_uri() ."/images/portfolio2.png");
+	$ImageUrl6 = esc_url(get_template_directory_uri() ."/images/portfolio3.png");
+	$ImageUrl7 = esc_url(get_template_directory_uri() ."/images/portfolio4.png");
 	$wl_theme_options=array(
 			//Logo and Fevicon header			
 			'upload_image_logo'=>'',
@@ -104,7 +102,14 @@
 			'port_4_link'=>'#',
 			//BLOG Settings
 			'show_blog' => '1',
-			'blog_title'=>__('Latest Blog', 'weblizar' )
+			'blog_title'=>__('Latest Blog', 'weblizar' ),
+			
+			//Google font style
+			'main_heading_font' => 'Open Sans',
+			'menu_font' => 'Open Sans',
+			'theme_title' => 'Open Sans',
+			'desc_font_all' => 'Open Sans'
+			
 			
 		);
 		return apply_filters( 'enigma_options', $wl_theme_options );

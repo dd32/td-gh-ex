@@ -7,6 +7,10 @@ Enigma
 
 CHANGE-LOG:
 @Version: 2.3 [04/03/2016]
+1. Google font option added.
+2. Some other minor issue fixed.
+
+@Version: 2.3 [04/03/2016]
 1. Remove Theme Option Page.
 2. Service Link Added in Customizer.
 3. Service On/Off.
