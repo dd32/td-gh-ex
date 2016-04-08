@@ -43,12 +43,6 @@ function arise_arise_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'arise_arise_excerpt_length');
 
-/********************* CONTINUE READING LINKS FOR EXCERPT *********************************/
-function arise_continue_reading() {
-	 return '&hellip; '; 
-}
-add_filter('excerpt_more', 'arise_continue_reading');
-
 /***************** USED CLASS FOR BODY TAGS ******************************/
 function arise_body_class($classes) {
 	global $arise_site_layout, $arise_content_layout;

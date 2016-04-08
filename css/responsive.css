@@ -277,6 +277,9 @@
 	.menu {
 		display: none;
 	}
+	.widget_nav_menu 	.menu {
+		display: block;
+	}
 	.toggled-on .menu {
 		display: block;
 	}

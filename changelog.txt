@@ -1,4 +1,9 @@
 == CHANGE LOG ==
+= 2.0.3 =
+	- Fix - Footer menu Fixed
+	- Remove - excerpt_more function unwanted removed
+	- Update - CSS Updated
+
 = 2.0.2 =
 	- Fix - CSS bug fixed
 	-Update - Custom JS updated
