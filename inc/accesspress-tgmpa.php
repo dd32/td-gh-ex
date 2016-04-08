@@ -87,6 +87,29 @@ function accesspress_mag_required_plugins() {
             'force_activation'   => false,
             'force_deactivation' => false,
             ),
+        array(
+            'name'      => __( 'AccessPress Social Login Lite', 'accesspress-mag' ),
+            'slug'      => 'accesspress-social-login-lite',
+            'required'  => false,
+            'force_activation'   => false,
+            'force_deactivation' => false,
+            ),
+        array(
+            'name'      => __( 'AccessPress Social Login Lite', 'accesspress-mag' ),
+            'slug'      => 'accesspress-social-login-lite',
+            'required'  => false,
+            'force_activation'   => false,
+            'force_deactivation' => false,
+            ),
+        array(
+            'name'      => __( 'AccessPress Twitter Feed', 'accesspress-mag' ),
+            'slug'      => 'accesspress-twitter-feed',
+            'required'  => false,
+            'force_activation'   => false,
+            'force_deactivation' => false,
+            ),
+        
+        
     );
 
     /**

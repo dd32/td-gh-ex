@@ -19,8 +19,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
     
     register_sidebar( array(
@@ -29,8 +29,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
     
     register_sidebar( array(
@@ -39,8 +39,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
     
     register_sidebar( array(
@@ -49,8 +49,8 @@ function accesspress_mag_widgets_init() {
     	'description'   => '',
     	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     	'after_widget'  => '</aside>',
-    	'before_title'  => '<h1 class="widget-title"><span>',
-    	'after_title'   => '</span></h1>',
+    	'before_title'  => '<h4 class="widget-title"><span>',
+    	'after_title'   => '</span></h4>',
     ) );
     
     register_sidebar( array(
@@ -59,8 +59,8 @@ function accesspress_mag_widgets_init() {
     	'description'   => '',
     	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     	'after_widget'  => '</aside>',
-    	'before_title'  => '<h1 class="widget-title"><span>',
-    	'after_title'   => '</span></h1>',
+    	'before_title'  => '<h4 class="widget-title"><span>',
+    	'after_title'   => '</span></h4>',
     ) );
     
     register_sidebar( array(
@@ -69,8 +69,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
     
     register_sidebar( array(
@@ -79,8 +79,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
     
     register_sidebar( array(
@@ -89,8 +89,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
     
     register_sidebar( array(
@@ -99,8 +99,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
     
     register_sidebar( array(
@@ -109,8 +109,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
     
     register_sidebar( array(
@@ -119,8 +119,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
 
 	register_sidebar( array(
@@ -129,8 +129,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s widget-ads">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
 
 	register_sidebar( array(
@@ -139,8 +139,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s widget-ads">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
 
 	register_sidebar( array(
@@ -149,8 +149,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
 
 	register_sidebar( array(
@@ -159,8 +159,8 @@ function accesspress_mag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
+		'before_title'  => '<h4 class="widget-title"><span>',
+		'after_title'   => '</span></h4>',
 	) );
 }
 add_action( 'widgets_init', 'accesspress_mag_widgets_init' );
