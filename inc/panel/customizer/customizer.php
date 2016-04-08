@@ -225,71 +225,7 @@ function adventurous_customize_register( $wp_customize ) {
 			'default' 		=> $defaults['reset_featured_image']
 		),
 
-		//Favicon
-		'remove_favicon' => array(
-			'id' 			=> 'remove_favicon',
-			'title' 		=> __( 'Check to Disable Favicon', 'adventurous' ),
-			'description'	=> '',
-			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'adventurous_sanitize_checkbox',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'favicon',
-			'default' 		=> $defaults['remove_favicon']
-		),
-		'fav_icon' => array(
-			'id' 			=> 'fav_icon',
-			'title' 		=> __( 'Fav Icon', 'adventurous' ),
-			'description'	=> '',
-			'field_type' 	=> 'image',
-			'sanitize' 		=> 'adventurous_sanitize_image',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'favicon',
-			'default' 		=> $defaults['fav_icon']
-		),
-
-		//Web Clip Icon
-		'remove_web_clip' => array(
-			'id' 			=> 'remove_web_clip',
-			'title' 		=> __( 'Check to Disable Web Clip Icon', 'adventurous' ),
-			'description'	=> '',
-			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'adventurous_sanitize_checkbox',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'web_clip_icon_options',
-			'default' 		=> $defaults['remove_web_clip']
-		),
-		'web_clip' => array(
-			'id' 			=> 'web_clip',
-			'title' 		=> __( 'Web Clip Icon', 'adventurous' ),
-			'description'	=> '',
-			'field_type' 	=> 'image',
-			'sanitize' 		=> 'adventurous_sanitize_image',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'web_clip_icon_options',
-			'default' 		=> $defaults['web_clip']
-		),
-
 		//Header Options
-		'remove_header_logo' => array(
-			'id' 			=> 'remove_header_logo',
-			'title' 		=> __( 'Check to Disable Logo', 'adventurous' ),
-			'description'	=> '',
-			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'adventurous_sanitize_checkbox',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'header_options',
-			'default' 		=> $defaults['remove_header_logo']
-		),
-		'featured_logo_header' => array(
-			'id' 			=> 'featured_logo_header',
-			'title' 		=> __( 'Logo', 'adventurous' ),
-			'description'	=> '',
-			'field_type' 	=> 'image',
-			'sanitize' 		=> 'adventurous_sanitize_image',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'header_options',
-			'default' 		=> $defaults['featured_logo_header']
-		),
 		'disable_header_right_sidebar' => array(
 			'id' 			=> 'disable_header_right_sidebar',
 			'title' 		=> __( 'Check to Disable Header Right Sidebar', 'adventurous' ),
@@ -1016,6 +952,85 @@ function adventurous_customize_register( $wp_customize ) {
 		),
 	);
 
+	//@remove Remove if block when WordPress 4.8 is released
+	if( !function_exists( 'has_site_icon' ) ) {
+		$settings_favicon = array(
+			//Favicon
+			'remove_favicon' => array(
+				'id' 			=> 'remove_favicon',
+				'title' 		=> __( 'Check to Disable Favicon', 'adventurous' ),
+				'description'	=> '',
+				'field_type' 	=> 'checkbox',
+				'sanitize' 		=> 'adventurous_sanitize_checkbox',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'favicon',
+				'default' 		=> $defaults['remove_favicon']
+			),
+			'fav_icon' => array(
+				'id' 			=> 'fav_icon',
+				'title' 		=> __( 'Fav Icon', 'adventurous' ),
+				'description'	=> '',
+				'field_type' 	=> 'image',
+				'sanitize' 		=> 'adventurous_sanitize_image',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'favicon',
+				'default' 		=> $defaults['fav_icon']
+			),
+
+			//Web Clip Icon
+			'remove_web_clip' => array(
+				'id' 			=> 'remove_web_clip',
+				'title' 		=> __( 'Check to Disable Web Clip Icon', 'adventurous' ),
+				'description'	=> '',
+				'field_type' 	=> 'checkbox',
+				'sanitize' 		=> 'adventurous_sanitize_checkbox',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'web_clip_icon_options',
+				'default' 		=> $defaults['remove_web_clip']
+			),
+			'web_clip' => array(
+				'id' 			=> 'web_clip',
+				'title' 		=> __( 'Web Clip Icon', 'adventurous' ),
+				'description'	=> '',
+				'field_type' 	=> 'image',
+				'sanitize' 		=> 'adventurous_sanitize_image',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'web_clip_icon_options',
+				'default' 		=> $defaults['web_clip']
+			)
+		);
+
+		$settings_parameters = array_merge( $settings_parameters, $settings_favicon);
+	}
+
+	//@remove Remove if block when WordPress 4.8 is released
+	if( !function_exists( 'has_custom_logo' ) ) {
+		$settings_logo = array(
+			'featured_logo_header' => array(
+				'id' 			=> 'featured_logo_header',
+				'title' 		=> __( 'Logo', 'adventurous' ),
+				'description'	=> '',
+				'field_type' 	=> 'image',
+				'sanitize' 		=> 'adventurous_sanitize_image',
+				'section' 		=> 'title_tagline',
+				'default' 		=> $defaults['featured_logo_header'],
+				'priority'		=> '15'
+			),
+			'remove_header_logo' => array(
+				'id' 			=> 'remove_header_logo',
+				'title' 		=> __( 'Check to Disable Logo', 'adventurous' ),
+				'description'	=> '',
+				'field_type' 	=> 'checkbox',
+				'sanitize' 		=> 'adventurous_sanitize_checkbox',
+				'section' 		=> 'title_tagline',
+				'default' 		=> $defaults['remove_header_logo'],
+				'priority'		=> '16'
+			)
+		);
+
+		$settings_parameters = array_merge( $settings_parameters, $settings_logo);
+	}
+
 	foreach ( $settings_parameters as $option ) {
 		$transport = isset( $option[ 'transport' ] ) ? $option[ 'transport' ] : 'refresh';
 		if( 'image' == $option['field_type'] ) {
@@ -1237,7 +1252,7 @@ function adventurous_customize_register( $wp_customize ) {
 				'label'		=> __( 'Target. Open Link in New Window?', 'adventurous' ),
 				'section'	=> $theme_slug .'featured_content_settings',
 				'settings'	=> $theme_slug . 'options[homepage_featured_base][' . $i . ']',
-				'type'		=> 'text'
+				'type'		=> 'checkbox'
 			)
 		);
 

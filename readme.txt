@@ -1,11 +1,11 @@
 == Adventurous ==
 
-Adventurous Theme by Catch Themes, http://catchthemes.com/
+Adventurous Theme by Catch Themes, https://catchthemes.com/
 
 
 == About Adventurous ==
 
-Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese, Hungarian, Dutch, German, Polish, Danish and Czech languages. Supports popular plugins like WP-PageNavi, Jetpack, Contact Form 7, Catch Web Tools and more. Check out Theme Instructions at http://catchthemes.com/theme-instructions/adventurous/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/
+Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese, Hungarian, Dutch, German, Polish, Danish and Czech languages. Supports popular plugins like WP-PageNavi, Jetpack, Contact Form 7, Catch Web Tools and more. Check out Theme Instructions at https://catchthemes.com/theme-instructions/adventurous/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/
 
 
 == Tags ==
@@ -19,7 +19,7 @@ Adventurous theme is translation ready.
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@hotmail.com )
 Added Translation for Hungarian by Dinnye ( Email: pdinnye@gmail.com )
 Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com ) and Yoshi van den Akker ( Email: yoshivda@gmail.com )
-Added Translation for German by Volker Homann ( Email: adventurous@volkerhomann.de )
+Added Translation for German by Volker Homann ( Email: adventurous@volkerhomann.de ) and Felix Heim ( Email: felix.heim@heim-mietwaesche.de )
 Added Translation for Polish by Piotrek Jas (Email: fansitejustgames@gmail.com )
 Added Translation for Danish by Alexander Leo-Hansen ( Email: alexanderleoh@gmail.com )
 Added Translation for Czech by Dan Frolec (Email: dan@frolec.cz)

@@ -132,99 +132,106 @@ function adventurous_theme_options_do_page() {
                 <!-- Theme Options -->
                 <div id="themeoptions">
 
-                  	<div id="fav-icons" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon', 'adventurous' ); ?></a></h3>
-                        <div class="option-content inside">
-                       		<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Disable Favicon?', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type='hidden' value='0' name='adventurous_options[remove_favicon]'>
-                                    <input type="checkbox" id="favicon" name="adventurous_options[remove_favicon]" value="1" <?php checked( '1', $options['remove_favicon'] ); ?> /> <?php _e('Check to disable', 'adventurous'); ?>
-                                </div>
-                          	</div><!-- .row -->
-                       		<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Fav Icon URL:', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                                        <input class="upload-url" size="65" type="text" name="adventurous_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
-                                    <?php } else { ?>
-                                        <input class="upload-url" size="65" type="text" name="adventurous_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
-                                    <?php }  ?>
-                                    <input ref="<?php esc_attr_e( 'Insert as Fav Icon','adventurous' );?>" class="adventurous_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','adventurous' );?>" />
-                                </div>
-                          	</div><!-- .row -->
-                       		<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Preview', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-                        			<?php
-										if ( !empty( $options[ 'fav_icon' ] ) ) {
-											echo '<img src="'.esc_url( $options[ 'fav_icon' ] ).'" alt="fav" />';
-										} else {
-											echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
-										}
-									?>
-                              	</div>
-                            </div><!-- .row -->
-                            <div class="row">
-                      			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
-                          	</div><!-- .row -->
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->
+                  	<?php
+                    //@remove Remove if block when WordPress 4.8 is released
+                    if( !function_exists( 'has_site_icon' ) ) {
+                    ?>
 
-                    <div id="webclip-icon" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'adventurous' ); ?></a></h3>
-                        <div class="option-content inside">
-                       		<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Disable Web Clip Icon?', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-                        			<input type='hidden' value='0' name='adventurous_options[remove_web_clip]'>
-                        			<input type="checkbox" id="favicon" name="adventurous_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'adventurous'); ?>
-                              	</div>
-                         	</div><!-- .row -->
-                            <div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Web Clip Icon URL:', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-                        			<?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
-                                        <input class="upload-url" size="65" type="text" name="adventurous_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
-                                    <?php } else { ?>
-                                        <input size="65" type="text" name="adventurous_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
-                                    <?php }  ?>
-                                    <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','adventurous' );?>" class="adventurous_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','adventurous' );?>" />
-                              	</div>
-                         	</div><!-- .row -->
-                            <div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Preview', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-									<?php
-									if ( !empty( $options[ 'web_clip' ] ) ) {
-										echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="Web Clip Icon" />';
-									} else {
-										echo '<img src="'. get_template_directory_uri().'/images/apple-touch-icon.png" alt="Web Clip Icon" />';
-									}
-									?>
-                              	</div>
-                         	</div><!-- .row -->
-                            <div class="row">
-                             	<?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'adventurous' ); ?>
-                           	</div><!-- .row -->
-                            <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
-                          	</div><!-- .row -->
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->
+                        <div id="fav-icons" class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon', 'adventurous' ); ?></a></h3>
+                            <div class="option-content inside">
+                           		<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Disable Favicon?', 'adventurous' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<input type='hidden' value='0' name='adventurous_options[remove_favicon]'>
+                                        <input type="checkbox" id="favicon" name="adventurous_options[remove_favicon]" value="1" <?php checked( '1', $options['remove_favicon'] ); ?> /> <?php _e('Check to disable', 'adventurous'); ?>
+                                    </div>
+                              	</div><!-- .row -->
+                           		<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Fav Icon URL:', 'adventurous' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
+                                            <input class="upload-url" size="65" type="text" name="adventurous_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
+                                        <?php } else { ?>
+                                            <input class="upload-url" size="65" type="text" name="adventurous_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
+                                        <?php }  ?>
+                                        <input ref="<?php esc_attr_e( 'Insert as Fav Icon','adventurous' );?>" class="adventurous_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','adventurous' );?>" />
+                                    </div>
+                              	</div><!-- .row -->
+                           		<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Preview', 'adventurous' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                            			<?php
+    										if ( !empty( $options[ 'fav_icon' ] ) ) {
+    											echo '<img src="'.esc_url( $options[ 'fav_icon' ] ).'" alt="fav" />';
+    										} else {
+    											echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
+    										}
+    									?>
+                                  	</div>
+                                </div><!-- .row -->
+                                <div class="row">
+                          			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
+                              	</div><!-- .row -->
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
 
+                        <div id="webclip-icon" class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'adventurous' ); ?></a></h3>
+                            <div class="option-content inside">
+                           		<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Disable Web Clip Icon?', 'adventurous' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                            			<input type='hidden' value='0' name='adventurous_options[remove_web_clip]'>
+                            			<input type="checkbox" id="favicon" name="adventurous_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'adventurous'); ?>
+                                  	</div>
+                             	</div><!-- .row -->
+                                <div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Web Clip Icon URL:', 'adventurous' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                            			<?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
+                                            <input class="upload-url" size="65" type="text" name="adventurous_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
+                                        <?php } else { ?>
+                                            <input size="65" type="text" name="adventurous_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
+                                        <?php }  ?>
+                                        <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','adventurous' );?>" class="adventurous_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','adventurous' );?>" />
+                                  	</div>
+                             	</div><!-- .row -->
+                                <div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Preview', 'adventurous' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+    									<?php
+    									if ( !empty( $options[ 'web_clip' ] ) ) {
+    										echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="Web Clip Icon" />';
+    									} else {
+    										echo '<img src="'. get_template_directory_uri().'/images/apple-touch-icon.png" alt="Web Clip Icon" />';
+    									}
+    									?>
+                                  	</div>
+                             	</div><!-- .row -->
+                                <div class="row">
+                                 	<?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'adventurous' ); ?>
+                               	</div><!-- .row -->
+                                <div class="row">
+                                	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
+                              	</div><!-- .row -->
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
+                    <?php
+                    }
+                    ?>
 
                     <div id="header-options" class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Menu Options', 'adventurous' ); ?></a></h3>
@@ -255,44 +262,54 @@ function adventurous_theme_options_do_page() {
                     <div id="header-options" class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Header Options', 'adventurous' ); ?></a></h3>
                         <div class="option-content inside">
-                      		<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Disable Logo?', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type='hidden' value='0' name='adventurous_options[remove_header_logo]'>
-                                    <input type="checkbox" id="headerlogo" name="adventurous_options[remove_header_logo]" value="1" <?php checked( '1', $options['remove_header_logo'] ); ?> /> <?php _e('Check to disable', 'adventurous'); ?></td>
-                           		</div>
-                         	</div><!-- .row -->
-                      		<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Logo url', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
-                                    	<input  class="upload-url" size="65" type="text" name="adventurous_options[featured_logo_header]" value="<?php echo esc_url ( $options [ 'featured_logo_header' ]); ?>" class="upload" />
-                                	<?php
-									}
-									else { ?>
-                                    	<input class="upload-url" size="65" type="text" name="adventurous_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
-                                    <?php } ?>
-                                       	<input ref="<?php esc_attr_e( 'Insert as Logo','adventurous' );?>" class="adventurous_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Logo','adventurous' );?>" />
-                           		</div>
-                         	</div><!-- .row -->
-                            <div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Preview', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-									<?php
-									if ( !empty( $options[ 'featured_logo_header' ] ) ) {
-										echo '<img src="'.esc_url( $options[ 'featured_logo_header' ] ).'" alt="Logo" />';
-									} else {
-										echo '<img src="'. get_template_directory_uri().'/images/logo.png" alt="Logo" />';
-									}
-									?>
-                              	</div>
-                         	</div><!-- .row -->
+                      		<?php
+                            //@remove Remove if block when WordPress 4.8 is released
+                            if( !function_exists( 'has_custom_logo' ) ) {
+                            ?>
+
+                                <div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Disable Logo?', 'adventurous' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<input type='hidden' value='0' name='adventurous_options[remove_header_logo]'>
+                                        <input type="checkbox" id="headerlogo" name="adventurous_options[remove_header_logo]" value="1" <?php checked( '1', $options['remove_header_logo'] ); ?> /> <?php _e('Check to disable', 'adventurous'); ?></td>
+                               		</div>
+                             	</div><!-- .row -->
+                          		<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Logo url', 'adventurous' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
+                                        	<input  class="upload-url" size="65" type="text" name="adventurous_options[featured_logo_header]" value="<?php echo esc_url ( $options [ 'featured_logo_header' ]); ?>" class="upload" />
+                                    	<?php
+    									}
+    									else { ?>
+                                        	<input class="upload-url" size="65" type="text" name="adventurous_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
+                                        <?php } ?>
+                                           	<input ref="<?php esc_attr_e( 'Insert as Logo','adventurous' );?>" class="adventurous_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Logo','adventurous' );?>" />
+                               		</div>
+                             	</div><!-- .row -->
+                                <div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Preview', 'adventurous' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+    									<?php
+    									if ( !empty( $options[ 'featured_logo_header' ] ) ) {
+    										echo '<img src="'.esc_url( $options[ 'featured_logo_header' ] ).'" alt="Logo" />';
+    									} else {
+    										echo '<img src="'. get_template_directory_uri().'/images/logo.png" alt="Logo" />';
+    									}
+    									?>
+                                  	</div>
+                             	</div><!-- .row -->
+                            <?php
+                            }
+                            ?>
+
+
                         	<div class="row">
                             	<div class="col col-1">
                                 	<?php _e( 'Disable Header Right Section?', 'adventurous' ); ?>

@@ -1,8 +1,16 @@
 == Changelog ==
 
+Version 1.9.1
+* Bug Fixed: Target. Open Link in New Window? input type in Customizer=> Featured Content changed from text to checkbox ( Reported by krizgriz )
+* Updated: Meta viewport for better responsive support
+* Updated: Content Width Implementation
+* Updated: Theme Layout retrieval via function
+* Updated: Favicon and Web Clip Migration to Site Icon( Core Support )
+* Updated: Logo to Custom Logo( Core Support ) for WP version 4.5
+
 Version 1.9
 * Added Czech translation da_DK.po and da_DK.mo files
-* Added: Disable scrollup option.
+* Added: Disable scrollup option
 * Bug Fixed: Default value for Custom CSS in customizer
 * Updated: Genericons to 3.4.1
 * Updated: HTML5 script to 3.7.3
@@ -36,7 +44,7 @@ Version 1.7
 Version 1.6.2
 * Bug Fixed: Layout of Error 404 and No Result Found page
 * Bug Fixed: Footer widget issue in Mobile devices ( Reported By Haydie )
-* Bug Fixed: Masthead content issue when scrolling down ( Reported By Haydie ) 
+* Bug Fixed: Masthead content issue when scrolling down ( Reported By Haydie )
 * Updated Brazilian Portuguese translation pt_BR.po and pt_BR.mo
 
 Version 1.6.1
@@ -69,9 +77,9 @@ Version 1.3
 Version 1.2
 * Added meetup social icon
 * Added changelog.txt file which list the theme change log
-* Changed footer theme content 
+* Changed footer theme content
 * Fixed header top position issue
-* Replaced screenshot.jpg with screenshot.png 
+* Replaced screenshot.jpg with screenshot.png
 * Removed rem in font size css
 
 Version 1.1
@@ -92,7 +100,7 @@ Version 0.8
 * Optimized Theme Options panel to speed up
 
 Version 0.7
-* Remove blog page template page-blog.php 
+* Remove blog page template page-blog.php
 Note: Now to setup of Page as blog, go to "Settings => Readings". In Front page displays, check "A static page (select below)" and select your blog from "Posts page:" select box.
 
 Version 0.6
@@ -107,7 +115,7 @@ Version 0.4
 
 Version 0.3
 * Added background and text color in promotion wrapper in style.css
-* Changed to Favicon disable by default 
+* Changed to Favicon disable by default
 * Fixed content width
 * Fixed mobile menu css
 * Removed feed redirect option

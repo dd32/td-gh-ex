@@ -14,9 +14,9 @@
  */
 function adventurous_scripts() {
 
-	//Getting Ready to load data from Theme Options Panel
 	global $post, $wp_query, $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	// Getting data from Theme Options
+	$options = $adventurous_options_settings;
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
@@ -98,7 +98,7 @@ add_action( 'wp_enqueue_scripts', 'adventurous_scripts' );
  * @action wp_head
  */
 function adventurous_responsive() {
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">';
 } // adventurous_responsive
 add_filter( 'wp_head', 'adventurous_responsive', 1 );
 
@@ -113,9 +113,14 @@ add_filter( 'wp_head', 'adventurous_responsive', 1 );
  * @uses default favicon if favicon field on theme options is empty
  *
  * @uses set_transient and delete_transient
+ *
+ * @remove Remove this function when WordPress 4.8 is released
  */
 function adventurous_favicon() {
-	//delete_transient( 'adventurous_favicon' );
+	if ( function_exists( 'has_site_icon' ) ) {
+		//Bail Early if Core Site Icon Feature is Present
+		return;
+	}
 
 	if( ( !$adventurous_favicon = get_transient( 'adventurous_favicon' ) ) ) {
 		global $adventurous_options_settings;
@@ -322,7 +327,7 @@ add_filter( 'the_content_more_link', 'adventurous_more_link', 10, 2 );
  * @since Adventurous 1.0
  */
 function adventurous_body_classes( $classes ) {
-	global $post, $adventurous_options_settings;
+	global $adventurous_options_settings;
 	$options = $adventurous_options_settings;
 
 	if ( ( class_exists( 'Woocommerce' ) && is_woocommerce() ) &&  !is_active_sidebar( 'adventurous_woocommerce_sidebar' ) ) {
@@ -338,30 +343,7 @@ function adventurous_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	if ( $post) {
- 		if ( is_attachment() ) {
-			$parent = $post->post_parent;
-			$layout = get_post_meta( $parent,'adventurous-sidebarlayout', true );
-		} else {
-			$layout = get_post_meta( $post->ID,'adventurous-sidebarlayout', true );
-		}
-	}
-
-	if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-		$layout='default';
-	}
-
-	$themeoption_layout = $options['sidebar_layout'];
-
-	if( ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar') ) ) {
-		$classes[] = 'no-sidebar';
-	}
-	elseif( ( $layout == 'left-sidebar' || ( $layout=='default' && $themeoption_layout == 'left-sidebar') ) ){
-		$classes[] = 'left-sidebar';
-	}
-	elseif( ( $layout == 'right-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar') ) ){
-		$classes[] = 'right-sidebar';
-	}
+	$classes[] = adventurous_get_theme_layout();
 
 	$current_content_layout = $options['content_layout'];
 	if( $current_content_layout == 'full' ) {
@@ -926,9 +908,14 @@ add_filter('wp_page_menu', 'adventurous_pagemenu_filter');
  * @uses default Web Click Icon if web_clip field on theme options is empty
  *
  * @uses set_transient and delete_transient
+ *
+ * @remove Remove this function when WordPress 4.8 is released
  */
 function adventurous_web_clip() {
-	//delete_transient( 'adventurous_web_clip' );
+	if ( function_exists( 'has_site_icon' ) ) {
+		//Bail Early if Core Site Icon Feature is Present
+		return;
+	}
 
 	if( ( !$adventurous_web_clip = get_transient( 'adventurous_web_clip' ) ) ) {
 

@@ -2,7 +2,7 @@
 /**
  * Implementation of the Custom Header feature
  * http://codex.wordpress.org/Custom_Headers
- * 
+ *
  * @package Catch Themes
  * @subpackage Adventurous
  * @since Adventurous 1.0
@@ -25,7 +25,7 @@
  * @package Adventurous
  */
 function adventurous_custom_header_setup() {
-	
+
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
 		'highway' => array(
@@ -41,25 +41,25 @@ function adventurous_custom_header_setup() {
 			'description' => __( 'Buddha', 'adventurous' )
 		),
 	) );
-	
+
 	$args = array(
 		// Header image random rotation default
 		'random-default'		=> false,
-		
+
 		// Text color and image (empty to use none).
 		'default-text-color'     => '000',
-		
+
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 400,
 		'width'                  => 1600,
-		
+
 		// Support flexible height and width.
 		'flex-height'            => false,
 		'flex-width'             => false,
-			
+
 		// Random image rotation off by default.
-		'random-default'         => false,	
-			
+		'random-default'         => false,
+
 		// Callbacks for styling the header and the admin preview.
 		'wp-head-callback'       => 'adventurous_header_style',
 		'admin-head-callback'    => 'adventurous_admin_header_style',
@@ -67,11 +67,11 @@ function adventurous_custom_header_setup() {
 	);
 
 	$args = apply_filters( 'adventurous_custom_header_args', $args );
-	
+
 	/*
 	 * This theme supports custom header for logo
-	 * 
-	 */	
+	 *
+	 */
 	add_theme_support( 'custom-header', $args );
 }
 add_action( 'after_setup_theme', 'adventurous_custom_header_setup' );
@@ -169,18 +169,18 @@ function adventurous_admin_header_style() {
 		#site-title a {
 			color: #000;
 			text-decoration: none;
-		}		
+		}
 		#site-description  {
 			color: #333;
 			font-size: 14px;
 			font-style: italic;
 			line-height: 1.2;
 			padding: 0;
-			
+
 		}
 	<?php endif; ?>
-	
-	<?php 
+
+	<?php
 	$image = get_header_image();
 	if ( $image ) : ?>
 		#header-featured-image {
@@ -194,8 +194,8 @@ function adventurous_admin_header_style() {
 			max-width: 95%;
 			height: auto;
 		}
-	<?php endif; ?>	
-	
+	<?php endif; ?>
+
 	<?php
 		// Has the text been hidden?
 		if ( 'blank' == get_header_textcolor() ) :
@@ -230,30 +230,39 @@ if ( ! function_exists( 'adventurous_header_image' ) ) :
  *
  * @since Adventurous 1.0
  */
-function adventurous_header_image() { 
+function adventurous_header_image() {
 	//Get Theme Options Data
 	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;	
+   	$options = $adventurous_options_settings;
 	$text_color = get_header_textcolor();
-	
+
 	echo '<div id="header-left">';
-	
-		// Check Seconddary Menu 
+
+		// Check Seconddary Menu
 		if ( has_nav_menu( 'secondary' ) ) {
     		echo '<div id="secondary-mobile-menu"><a href="#" class="mobile-nav closed"><span class="mobile-menu-bar"></span></a></div>';
 		}
-         
+
+		$sitedetails = 'logo-disable';
+		$adventurous_header_logo = '';
+
 		// Check Logo
-		if ( empty( $options['remove_header_logo'] ) ) { 
+		if ( function_exists( 'has_custom_logo' ) ) {
+			if ( has_custom_logo() ) {
+				$adventurous_header_logo = '
+				<div id="site-logo">'. get_custom_logo() . '</div><!-- #site-logo -->';
+			}
+		}
+		else if ( empty( $options['remove_header_logo'] ) ) {
 
 			$sitedetails = 'logo-enable logo-left';
-			
+
 			// Check Logo URL
 			$adventurous_header_logo = '
 			<div id="site-logo">
             	<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
-					
-					
+
+
 					if ( !empty( $options[ 'featured_logo_header' ] ) ) {
 						$adventurous_header_logo .= '<img src="' . esc_url( $options['featured_logo_header'] ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" />';
 					} else {
@@ -264,16 +273,12 @@ function adventurous_header_image() {
 				</a>
 			</div><!-- #site-logo -->';
 		}
-		else {
-			$sitedetails = 'logo-disable'; 
-			$adventurous_header_logo = '';	
-		}
-		
+
 		if ( 'blank' == get_header_textcolor() ) {
 			$sitedetails .= ' assistive-text';
 		}
-		
-		
+
+
 		// Checking Header Details
 		$adventurous_header_details = '
 		<div id="hgroup" class="' . $sitedetails . '">
@@ -281,11 +286,11 @@ function adventurous_header_image() {
 				<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>
 			</h1>
 			<h2 id="site-description"> ' . esc_attr( get_bloginfo( 'description', 'display' ) ) . '</h2>
-		</div><!-- #hgroup -->';  		
-		
+		</div><!-- #hgroup -->';
+
 		echo $adventurous_header_logo;
 		echo $adventurous_header_details;
-		   
+
 		?>
 	</div><!-- #header-left"> -->
 <?php }
@@ -297,11 +302,11 @@ add_action( 'adventurous_hgroup_wrap', 'adventurous_header_image', 10 );
 /**
  * Shows Header Right Sidebar
  */
-function adventurous_header_right() { 
+function adventurous_header_right() {
 
-	/* A sidebar in the Header Right 
+	/* A sidebar in the Header Right
 	*/
-	get_sidebar( 'header-right' ); 
+	get_sidebar( 'header-right' );
 
 }
 add_action( 'adventurous_hgroup_wrap', 'adventurous_header_right', 20 );
@@ -314,8 +319,8 @@ if ( ! function_exists( 'adventurous_admin_header_image' ) ) :
  * @since Adventurous 1.0
  */
 function adventurous_admin_header_image() {
-	
-	adventurous_header_image(); 
+
+	adventurous_header_image();
 	adventurous_featured_image();
 
 }
@@ -338,17 +343,17 @@ function adventurous_featured_image() {
    	$options = $adventurous_options_settings;
 	$header_image = get_header_image();
 	$enableheaderimage = $options[ 'enable_featured_header_image' ];
-		
-	if ( !empty( $header_image ) ) {	
+
+	if ( !empty( $header_image ) ) {
 
 		// Header Image Title/Alt
 		if ( !empty( $options[ 'featured_header_image_alt' ] ) ) :
-			$title = esc_attr($options[ 'featured_header_image_alt' ]); 	
+			$title = esc_attr($options[ 'featured_header_image_alt' ]);
 		else:
-			$title = ''; 	
+			$title = '';
 		endif;
-		
-		// Header Image Link 
+
+		// Header Image Link
 		if ( !empty( $options[ 'featured_header_image_url' ] ) ) :
 			//support for qtranslate custom link
 			if ( function_exists( 'qtrans_convertURL' ) ) {
@@ -358,22 +363,22 @@ function adventurous_featured_image() {
 				$link = esc_url($options[ 'featured_header_image_url' ]);
 			}
 			if ( !empty( $options[ 'featured_header_image_base' ] ) ) :
-				$base = '_blank'; 	
+				$base = '_blank';
 			else:
-				$base = '_self'; 	
+				$base = '_self';
 			endif;
 			$linkopen = '<a title="'.$title.'" href="'.$link.'" target="'.$base.'">';
 			$linkclose = '</a>';
 		else:
-			$link = ''; 
-			$base = ''; 
+			$link = '';
+			$base = '';
 			$linkopen = '';
 			$linkclose = '';
 		endif;
-		
-		echo '<div id="header-featured-image">' . $linkopen . '<img id="main-feat-img" alt="' . $title . '" src="' . esc_url( $header_image ) . '" />' . $linkclose . '</div><!-- #header-featured-image -->';	
+
+		echo '<div id="header-featured-image">' . $linkopen . '<img id="main-feat-img" alt="' . $title . '" src="' . esc_url( $header_image ) . '" />' . $linkclose . '</div><!-- #header-featured-image -->';
 	}
-	
+
 } // adventurous_featured_image
 endif;
 
@@ -392,26 +397,26 @@ function adventurous_featured_page_post_image() {
 	global $post, $wp_query, $adventurous_options_settings;
    	$options = $adventurous_options_settings;
 	$featured_image = $options['page_featured_image'];
-	
+
 	if ( has_post_thumbnail() ) {
-		
+
 		echo '<div id="header-featured-image">';
-			
+
 			if ( !empty( $options[ 'featured_header_image_url' ] ) ) {
 				// Header Image Link Target
 				if ( !empty( $options[ 'featured_header_image_base' ] ) ) :
-					$base = '_blank'; 	
+					$base = '_blank';
 				else:
-					$base = '_self'; 	
+					$base = '_self';
 				endif;
-				
+
 				// Header Image Title/Alt
 				if ( !empty( $options[ 'featured_header_image_alt' ] ) ) :
-					$title = esc_attr( $options[ 'featured_header_image_alt' ] ); 
+					$title = esc_attr( $options[ 'featured_header_image_alt' ] );
 				else:
-					$title = ''; 	
+					$title = '';
 				endif;
-				
+
 				$linkopen = '<a title="'.$title.'" href="'.$options[ 'featured_header_image_url' ] .'" target="'.$base.'">';
 				$linkclose = '</a>';
 			}
@@ -419,25 +424,25 @@ function adventurous_featured_page_post_image() {
 				$linkopen = '';
 				$linkclose = '';
 			}
-		
+
 			echo $linkopen;
-				if ( $featured_image == 'featured' ) { 
+				if ( $featured_image == 'featured' ) {
 					echo get_the_post_thumbnail($post->ID, 'featured', array('id' => 'main-feat-img'));
-				} 
+				}
 				elseif ( $featured_image == 'slider' ) {
 					echo get_the_post_thumbnail($post->ID, 'slider', array('id' => 'main-feat-img'));
 				}
-				else { 
+				else {
 					echo get_the_post_thumbnail($post->ID, 'full', array('id' => 'main-feat-img'));
 				}
 			echo $linkclose;
 
 		echo '</div><!-- #header-featured-image -->';
-	}	
+	}
 	else {
 		adventurous_featured_image();
-	}	
-	
+	}
+
 } // adventurous_featured_page_post_image
 endif;
 
@@ -456,18 +461,18 @@ function adventurous_featured_overall_image() {
 	global $post, $wp_query, $adventurous_options_settings;
    	$options = $adventurous_options_settings;
 	$enableheaderimage =  $options[ 'enable_featured_header_image' ];
-	
+
 	// Front page displays in Reading Settings
-	$page_for_posts = get_option('page_for_posts'); 
+	$page_for_posts = get_option('page_for_posts');
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
-	
+
 	// Check Enable/Disable header image in Page/Post Meta box
 	if ( is_page() || is_single() ) {
 		//Individual Page/Post Image Setting
-		$individual_featured_image = get_post_meta( $post->ID, 'adventurous-header-image', true );  
-		
+		$individual_featured_image = get_post_meta( $post->ID, 'adventurous-header-image', true );
+
 		if ( $individual_featured_image == 'disable' || ( $individual_featured_image == 'default' && $enableheaderimage == 'disable' ) ) {
 			echo '<!-- Page/Post Disable Header Image -->';
 			return;
@@ -476,20 +481,20 @@ function adventurous_featured_overall_image() {
 			adventurous_featured_page_post_image();
 		}
 	}
-	
-	// Check Homepage 
+
+	// Check Homepage
 	if ( $enableheaderimage == 'homepage' ) {
 		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 			adventurous_featured_image();
 		}
 	}
-	// Check Excluding Homepage 
+	// Check Excluding Homepage
 	if ( $enableheaderimage == 'excludehome' ) {
 		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 			return false;
 		}
 		else {
-			adventurous_featured_image();	
+			adventurous_featured_image();
 		}
 	}
 	// Check Entire Site
@@ -504,7 +509,7 @@ function adventurous_featured_overall_image() {
 		else {
 			adventurous_featured_image();
 		}
-	}	
+	}
 	// Check Page/Post
 	elseif ( $enableheaderimage == 'pagespostes' ) {
 		if ( is_page() || is_single() ) {
@@ -514,7 +519,7 @@ function adventurous_featured_overall_image() {
 	else {
 		echo '<!-- Disable Header Image -->';
 	}
-	
+
 } // adventurous_featured_overall_image
 endif;
 
