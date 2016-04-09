@@ -377,6 +377,846 @@ $wp_customize->remove_control('header_textcolor');
         'type' => 'textarea',
     ));	
 	
+	// Slider Setting Section
+	
+	$wp_customize->add_section(
+        'slider_section_settings',
+        array(
+            'title' => __('Featured Slider Settings','becorp'),
+            'description' => '',
+			'panel'  => 'header_options',
+			'priority' => 35,
+			) );
+	
+	//Hide slider
+	
+	$wp_customize->add_setting(
+    'becorp_option[home_banner_enabled]',
+    array(
+        'default' => 1,
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    )	
+	);
+	$wp_customize->add_control(
+    'becorp_option[home_banner_enabled]',
+    array(
+        'label' => __('Hide Home slider','becorp'),
+        'section' => 'slider_section_settings',
+        'type' => 'checkbox',
+    )
+	);
+	 
+	 
+	//portfolio Image one setting
+	
+	$wp_customize->add_setting(
+		'becorp_option[slider_image_one]'
+		, array(
+        'default'        => get_template_directory_uri().'/images/slider/slide4.jpg',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control(
+		   new WP_Customize_Image_Control(
+			   $wp_customize,
+			   'becorp_option[slider_image_one]',
+			   array(
+				   'label'          => __( 'Upload Slider Image One', 'becorp' ),
+				   'section'        => 'slider_section_settings',
+				   'priority'   => 150,
+			   )
+		   )
+	);
+	$wp_customize->add_setting('becorp_option[slider_image_title_one]'
+		, array(
+        'default'        => __('Becorp Responsive','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_title_one]', array(
+        'label'   => __('Slider Image Title one :', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 151,
+    ));
+	$wp_customize->add_setting('becorp_option[slider_image_description_one]'
+		, array(
+        'default'        => __('Duis autem vel eum iriure dolor in hendrerit in vulputate.','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_description_one]', array(
+        'label'   => __('Slider Image  Description One:', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 152,
+    ));
+	
+//portfolio Image two setting
+	
+	$wp_customize->add_setting(
+		'becorp_option[slider_image_two]'
+		, array(
+        'default'        => get_template_directory_uri().'/images/slider/slide5.jpg',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control(
+		   new WP_Customize_Image_Control(
+			   $wp_customize,
+			   'becorp_option[slider_image_two]',
+			   array(
+				   'label'          => __( 'Upload Slider Image Two', 'becorp' ),
+				   'section'        => 'slider_section_settings',
+				   'priority'   => 155,
+			   )
+		   )
+	);
+	$wp_customize->add_setting('becorp_option[slider_image_title_two]'
+		, array(
+        'default'        => __('Awesome Layout','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_title_two]', array(
+        'label'   => __('Slider Image Title Two', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 156,
+    ));
+	$wp_customize->add_setting('becorp_option[slider_image_description_two]'
+		, array(
+        'default'        => 'Duis autem vel eum iriure dolor in hendrerit in vulputate.',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_description_two]', array(
+        'label'   => __('Slider Image two Description :', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 157,
+    ));
+	
+//portfolio Image three setting
+	
+	$wp_customize->add_setting(
+		'becorp_option[slider_image_three]'
+		, array(
+        'default'        => get_template_directory_uri().'/images/slider/slide6.jpg',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control(
+		   new WP_Customize_Image_Control(
+			   $wp_customize,
+			   'becorp_option[slider_image_three]',
+			   array(
+				   'label'          => __( 'Upload Slider Image Three', 'becorp' ),
+				   'section'        => 'slider_section_settings',
+				   'priority'   => 160,
+			   )
+		   )
+	);
+	$wp_customize->add_setting('becorp_option[slider_image_title_three]'
+		, array(
+        'default'        => __('Becorp Responsive','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_title_three]', array(
+        'label'   => __('Slider Image Title Three', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 161,
+    ));
+	$wp_customize->add_setting('becorp_option[slider_image_description_three]'
+		, array(
+        'default'        => 'Duis autem vel eum iriure dolor in hendrerit in vulputate.',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_description_three]', array(
+        'label'   => __('Slider Image three Description', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 162,
+    ));
+	
+	$wp_customize->add_setting(
+    'becorp_option[slider_button_text]',
+    array(
+        'default' => __('More Details!','becorp'),
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+		)
+	);	
+	$wp_customize->add_control( 'becorp_option[slider_button_text]',array(
+    'label'   => __('Slider Button Text','becorp'),
+    'section' => 'slider_section_settings',
+	 'type' => 'text',
+	 'priority'   => 163,
+	 )  );
+		
+	$wp_customize->add_setting('becorp_option[slider_image_link]'
+		, array(
+        'default'        => '#',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_link]', array(
+        'label'   => __('Slider Button Link', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 164,
+    ));
+	$wp_customize->add_setting(
+	'becorp_option[slider_button_tab]'
+    ,array(
+	'default' => 1,
+	'sanitize_callback' => 'sanitize_text_field',
+	'type' => 'option',
+	));
+
+	$wp_customize->add_control(
+    'becorp_option[slider_button_tab]',
+    array(
+        'type' => 'checkbox',
+        'label' => __('Open New tab/window','becorp'),
+        'section' => 'slider_section_settings',
+		'priority'   => 165,
+    )
+);
+	
+	class WP_slider_Customize_Control extends WP_Customize_Control {
+    public $type = 'new_menu';
+    /**
+    * Render the control's content.
+    */
+    public function render_content() {
+    ?>
+      <div class="pro-box">
+		<a href="<?php echo esc_url( __('https://asiathemes.com', 'becorp'));?>" target="_blank" class="button" id="review_pro"><?php _e( 'Add more Slides take the Pro','becorp' ); ?></a>
+	 
+	<div>
+    <?php
+    }
+}
+//Pro Portfolio section
+$wp_customize->add_setting(
+     'becorp_option[slider_pro]',
+    array(
+        'default' =>'',
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    )	
+);
+$wp_customize->add_control( new WP_slider_Customize_Control( $wp_customize, 'becorp_option[slider_pro]', array(	
+		'label' => __('Discover becorp Pro','becorp'),
+        'section' => 'slider_section_settings',
+		'setting' => 'becorp_option[slider_pro]',
+		'priority'   => 166,
+    ))
+);
+	
+	 
+	 
+	 //Slider animation
+	
+	$wp_customize->add_setting(
+    'becorp_option[slider_options]',
+    array(
+        'default' => __('slide','becorp'),
+		'type' => 'option',
+		'sanitize_callback' => 'sanitize_text_field',
+		
+    )
+	);
+
+	$wp_customize->add_control(
+    'becorp_option[slider_options]',
+    array(
+        'type' => 'select',
+        'label' => __('Select slider Animation','becorp'),
+        'section' => 'slider_section_settings',
+		 'choices' => array('slide'=>__('slide', 'becorp'), 'carousel-fade'=>__('Fade', 'becorp')),
+		 'priority'   => 167,
+		));
+		
+	
+	//Slider Animation duration
+
+	$wp_customize->add_setting(
+    'becorp_option[slider_transition_delay]',
+    array(
+        'default' => __('2000','becorp'),
+		'type' => 'option',
+		'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+	$wp_customize->add_control(
+    'becorp_option[slider_transition_delay]',
+    array(
+        'type' => 'text',
+        'label' => __('Input slide Duration','becorp'),
+        'section' => 'slider_section_settings',
+		'priority'   => 168,
+		
+		));
+		
+		// Home Callout Area Settings
+	
+	
+	$wp_customize->add_section(
+        'callout_section_settings',
+        array(
+            'title' => __('Contact call-out Settings','becorp'),
+            'description' => '',
+			'panel'  => 'header_options',
+			'priority' => 36,
+			) );
+	
+	
+	//Hide Home callout Section
+	
+	$wp_customize->add_setting(
+    'becorp_option[home_call_out_area_enabled]',
+    array(
+        'default' => 1,
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    )	
+	);
+	$wp_customize->add_control(
+    'becorp_option[home_call_out_area_enabled]',
+    array(
+        'label' => __('Hide Home Call-out Section','becorp'),
+        'section' => 'callout_section_settings',
+        'type' => 'checkbox',
+    )
+	);
+	
+	// add section to manage callout
+	$wp_customize->add_setting(
+    'becorp_option[home_call_out_description]',
+    array(
+        'default' => __('Powerfully Creativity with Professional Clean Developed Website Themes','becorp'),
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+		)
+	);	
+	$wp_customize->add_control( 'becorp_option[home_call_out_description]',array(
+    'label'   => __('Theme Collout Description','becorp'),
+    'section' => 'callout_section_settings',
+	 'type' => 'text',)  );
+	 
+	$wp_customize->add_setting(
+    'becorp_option[home_call_out_button_title]',
+    array(
+        'default' => __('get started now!','becorp'),
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+		)
+	);	
+	$wp_customize->add_control( 'becorp_option[home_call_out_button_title]',array(
+    'label'   => __('Theme Collout Button Title','becorp'),
+    'section' => 'callout_section_settings',
+	 'type' => 'text',)  );
+	 
+	$wp_customize ->add_setting (
+	'becorp_option[home_call_out_btn_link]',
+	array( 
+	'default' => __('#','becorp'),
+	'capability'     => 'edit_theme_options',
+	'sanitize_callback' => 'sanitize_text_field',
+	'type' => 'option',
+	) );
+
+	$wp_customize->add_control (
+	'becorp_option[home_call_out_btn_link]',
+	array (  
+	'label' => __('purchase callout Button Link','becorp'),
+	'section' => 'callout_section_settings',
+	'type' => 'text',
+	) );
+	
+	$wp_customize->add_setting(
+		'becorp_option[home_call_out_btn_link_target]',
+		array('capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+		));
+
+	$wp_customize->add_control(
+		'becorp_option[home_call_out_btn_link_target]',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Open link new tab/window','becorp'),
+			'section' => 'callout_section_settings',
+		)
+	);
+	
+	// Home Portfolio Section Setting
+	
+	$wp_customize->add_section( 'home_portfolio' , array(
+		'title'      => __('Home Portfolio Settings', 'becorp'),
+		'panel'  => 'header_options',
+		'priority'   => 37,
+   	) );
+	
+	
+	//Enable/Disable Portfolio Section
+	$wp_customize->add_setting(
+    'becorp_option[enable_home_portfolio]',array(
+	'default'    => 1,
+	'sanitize_callback' => 'sanitize_text_field',
+	'type' => 'option'
+	));
+
+	$wp_customize->add_control(
+    'becorp_option[enable_home_portfolio]',
+    array(
+        'type' => 'checkbox',
+        'label' => __('Enable/Disabe Home Portfolio','becorp'),
+        'section' => 'home_portfolio',
+		'priority'   => 100,
+    )
+	);
+	
+	$wp_customize->add_setting(
+	'becorp_option[portfolio_title_one]', array(
+        'default'        => 'Our',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control('becorp_option[portfolio_title_one]', array(
+        'label'   => __('Portfolio Title One :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 140,
+    ));
+	$wp_customize->add_setting('becorp_option[portfolio_title_two]'
+		, array(
+        'default'        => 'Projects',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[portfolio_title_two]', array(
+        'label'   => __('Portfolio Title Two :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 140,
+    ));
+	$wp_customize->add_setting('becorp_option[portfolio_description]'
+		, array(
+        'default'        => 'Duis autem vel eum iriure dolor in hendrerit in vulputate.',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[portfolio_description]', array(
+        'label'   => __('Portfolio Description :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 140,
+    ));
+	
+	//portfolio Image one setting
+	
+	$wp_customize->add_setting(
+		'becorp_option[upload_image_one]'
+		, array(
+        'default'        => get_template_directory_uri().'/images/port1.jpg',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control(
+		   new WP_Customize_Image_Control(
+			   $wp_customize,
+			   'becorp_option[upload_image_one]',
+			   array(
+				   'label'          => __( 'Upload Portfolio Image One', 'becorp' ),
+				   'section'        => 'home_portfolio',
+				   'priority'   => 150,
+			   )
+		   )
+	);
+	$wp_customize->add_setting('becorp_option[portfolio_image_one_title]'
+		, array(
+        'default'        => __('Becorp Responsive','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[portfolio_image_one_title]', array(
+        'label'   => __('Portfolio Image One Title :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 151,
+    ));
+	$wp_customize->add_setting('becorp_option[portfolio_image_one_description]'
+		, array(
+        'default'        => 'Duis autem vel eum iriure dolor in hendrerit in vulputate.',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[portfolio_image_one_description]', array(
+        'label'   => __('Portfolio Image One Description :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 152,
+    ));
+		
+	$wp_customize->add_setting('becorp_option[portfolio_image_one_link]'
+		, array(
+        'default'        => '#',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[portfolio_image_one_link]', array(
+        'label'   => __('Portfolio Image One URL :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 153,
+    ));
+	$wp_customize->add_setting(
+	'becorp_option[portfolio_new_tab]'
+    ,array(
+	'default' => 1,
+	'sanitize_callback' => 'sanitize_text_field',
+	'type' => 'option',
+	));
+
+	$wp_customize->add_control(
+    'becorp_option[portfolio_new_tab]',
+    array(
+        'type' => 'checkbox',
+        'label' => __('Open Link New tab/window','becorp'),
+        'section' => 'home_portfolio',
+		'priority'   => 154,
+    )
+);
+
+//portfolio Image two setting
+	
+	$wp_customize->add_setting(
+		'becorp_option[upload_image_two]'
+		, array(
+        'default'        => get_template_directory_uri().'/images/port2.jpg',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control(
+		   new WP_Customize_Image_Control(
+			   $wp_customize,
+			   'becorp_option[upload_image_two]',
+			   array(
+				   'label'          => __( 'Upload Portfolio Image Two', 'becorp' ),
+				   'section'        => 'home_portfolio',
+				   'priority'   => 155,
+			   )
+		   )
+	);
+	$wp_customize->add_setting('becorp_option[portfolio_image_two_title]'
+		, array(
+        'default'        => __('Awesome Layout','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[portfolio_image_two_title]', array(
+        'label'   => __('Portfolio Image Two Title :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 156,
+    ));
+	$wp_customize->add_setting('becorp_option[portfolio_image_two_description]'
+		, array(
+        'default'        => 'Duis autem vel eum iriure dolor in hendrerit in vulputate.',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[portfolio_image_two_description]', array(
+        'label'   => __('Portfolio Image two Description :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 157,
+    ));
+		
+	$wp_customize->add_setting('becorp_option[portfolio_image_two_link]'
+		, array(
+        'default'        => '#',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[portfolio_image_two_link]', array(
+        'label'   => __('Portfolio Image Two URL :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 158,
+    ));
+	$wp_customize->add_setting(
+	'becorp_option[portfolio_two_new_tab]'
+    ,array(
+	'default' => 1,
+	'sanitize_callback' => 'sanitize_text_field',
+	'type' => 'option',
+	));
+
+	$wp_customize->add_control(
+    'becorp_option[portfolio_two_new_tab]',
+    array(
+        'type' => 'checkbox',
+        'label' => __('Open Link New tab/window','becorp'),
+        'section' => 'home_portfolio',
+		'priority'   => 159,
+    )
+);
+
+//portfolio Image three setting
+	
+	$wp_customize->add_setting(
+		'becorp_option[upload_image_three]'
+		, array(
+        'default'        => get_template_directory_uri().'/images/port3.jpg',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control(
+		   new WP_Customize_Image_Control(
+			   $wp_customize,
+			   'becorp_option[upload_image_three]',
+			   array(
+				   'label'          => __( 'Upload Portfolio Image Three', 'becorp' ),
+				   'section'        => 'home_portfolio',
+				   'priority'   => 160,
+			   )
+		   )
+	);
+	$wp_customize->add_setting('becorp_option[portfolio_image_three_title]'
+		, array(
+        'default'        => 'Becorp Responsive',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[portfolio_image_three_title]', array(
+        'label'   => __('Portfolio Image Three Title :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 161,
+    ));
+	$wp_customize->add_setting('becorp_option[portfolio_image_three_description]'
+		, array(
+        'default'        => 'Duis autem vel eum iriure dolor in hendrerit in vulputate.',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[portfolio_image_three_description]', array(
+        'label'   => __('Portfolio Image three Description :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 162,
+    ));
+		
+	$wp_customize->add_setting('becorp_option[portfolio_image_three_link]'
+		, array(
+        'default'        => '#',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[portfolio_image_three_link]', array(
+        'label'   => __('Portfolio Image Three URL :', 'becorp'),
+        'section' => 'home_portfolio',
+        'type'    => 'text',
+		'priority'   => 163,
+    ));
+	$wp_customize->add_setting(
+	'becorp_option[portfolio_three_new_tab]'
+    ,array(
+	'default' => 1,
+	'sanitize_callback' => 'sanitize_text_field',
+	'type' => 'option',
+	));
+
+	$wp_customize->add_control(
+    'becorp_option[portfolio_three_new_tab]',
+    array(
+        'type' => 'checkbox',
+        'label' => __('Open Link New tab/window','becorp'),
+        'section' => 'home_portfolio',
+		'priority'   => 164,
+    )
+);
+	
+	class WP_portfolio_Customize_Control extends WP_Customize_Control {
+    public $type = 'new_menu';
+    /**
+    * Render the control's content.
+    */
+    public function render_content() {
+    ?>
+      <div class="pro-box">
+		<a href="<?php echo esc_url( __('https://asiathemes.com', 'becorp'));?>" target="_blank" class="button" id="review_pro"><?php _e( 'Add more portfolio take the Pro','becorp' ); ?></a>
+	 
+	<div>
+    <?php
+    }
+}
+//Pro Portfolio section
+$wp_customize->add_setting(
+     'becorp_option[portfolio_pro]',
+    array(
+        'default' => '',
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    )	
+);
+$wp_customize->add_control( new WP_portfolio_Customize_Control( $wp_customize, 'becorp_option[portfolio_pro]', array(	
+		'label' => __('Discover becorp Pro','becorp'),
+        'section' => 'home_portfolio',
+		'setting' => 'becorp_option[portfolio_pro]',
+		'priority'   => 165,
+    ))
+);
+
+// Home Blog Posts Section Setting
+	
+	$wp_customize->add_section(
+        'news_section_settings',
+        array(
+            'title' => __('Home Latest Blog Posts Settings','becorp'),
+            'description' => '',
+			'panel'  => 'header_options',
+			'priority' => 38,
+			)
+    );
+	
+	
+	//Hide Index Service Section
+	
+	$wp_customize->add_setting(
+    'becorp_option[home_blog_enabled]',
+    array(
+        'default' => 1,
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option'
+    )	
+	);
+	$wp_customize->add_control(
+    'becorp_option[home_blog_enabled]',
+    array(
+        'label' => __('Hide Home Blog Posts Section','becorp'),
+        'section' => 'news_section_settings',
+        'type' => 'checkbox',
+    )
+	);
+	
+	// add section to manage News
+	$wp_customize->add_setting(
+    'becorp_option[blog_title_one]',
+    array(
+        'default' => __('Latest','becorp'),
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+		)
+	);	
+	$wp_customize->add_control( 'becorp_option[blog_title_one]',array(
+    'label'   => __('Latest Blog Posts Section title One','becorp'),
+    'section' => 'news_section_settings',
+	 'type' => 'text',)  );
+
+	$wp_customize->add_setting(
+    'becorp_option[blog_title_two]',
+    array(
+        'default' => __('Blog Posts','becorp'),
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+		)
+	);	
+	$wp_customize->add_control( 'becorp_option[blog_title_two]',array(
+    'label'   => __('Latest Blog Posts Section title One','becorp'),
+    'section' => 'news_section_settings',
+	 'type' => 'text',)  );
+	
+	 
+	 
+	 $wp_customize->add_setting(
+    'becorp_option[blog_description]',
+    array(
+        'default' => __('Duis autem vel eum iriure dolor in hendrerit in vulputate.','becorp'),
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+		)
+	);	
+	$wp_customize->add_control( 'becorp_option[blog_description]',array(
+    'label'   => __('Latest News Description','becorp'),
+    'section' => 'news_section_settings',
+	 'type' => 'text',)  );	
+	
+	//Select number of latest news on front page
+	
+	$wp_customize->add_setting(
+    'becorp_option[post_display_count]',
+    array(
+		'type' => 'option',
+        'default' => __('4','becorp'),
+		'sanitize_callback' => 'sanitize_text_field',
+    )
+	);
+
+	$wp_customize->add_control(
+    'becorp_option[post_display_count]',
+    array(
+        'type' => 'select',
+        'label' => __('Select Number of Post','becorp'),
+        'section' => 'news_section_settings',
+		 'choices' => array('2'=>__('2', 'becorp'), '4'=>__('4', 'becorp'), '6' => __('6','becorp'), '8' => __('8','becorp'),'10'=> __('10','becorp'), '12'=> __('12','becorp'),'14'=> __('14','becorp'), '16' =>__('16','becorp')),
+		));
+	
+	function becorp_prefix_sanitize_layout( $news ) {
+    if ( ! in_array( $news, array( 1,'category_news' ) ) )    
+    return $news;
+}
+	
 	// Footer Copyright Option Settings
 	$wp_customize->add_section( 'footer_copyright_setting' , array(
 		'title'      => __('Footer Customization', 'becorp'),
@@ -386,7 +1226,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_setting(
 	'becorp_option[footer_customization_text]'
 		, array(
-        'default'        => __('@ 2015 Becorp Theme ','becorp'),
+        'default'        => __('@ 2016 Becorp Theme ','becorp'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type'=> 'option',

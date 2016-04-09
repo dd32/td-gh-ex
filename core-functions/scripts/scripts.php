@@ -27,6 +27,7 @@ function becorp_scripts()
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('becorp-content', BECORP_TEMPLATE_DIR_URI .'/js/becorp-content.js');
 	wp_enqueue_script('becorp-bootstrap', BECORP_TEMPLATE_DIR_URI .'/js/bootstrap.js');
+	wp_enqueue_script('becorp-carousel', BECORP_TEMPLATE_DIR_URI .'/js/carousel.js');
 	wp_enqueue_script('becorp-lightbox', BECORP_TEMPLATE_DIR_URI .'/js/lightbox/lightbox-2.6.min.js');
 	wp_enqueue_script('becorp-menu', BECORP_TEMPLATE_DIR_URI .'/js/menu.js',array('jquery'));
 	wp_enqueue_script('becorp-page-scroll-js' , BECORP_TEMPLATE_DIR_URI.'/js/page-scroll.js');

@@ -7,7 +7,7 @@ get_template_part('title','strip');
 <section id="blog">
 <div class="container">
 	<div class="row">
-		<div class="<?php if( is_active_sidebar('sidebar-data')) { echo "col-md-8"; }  else { echo "col-md-12"; } ?>">
+		<div class="col-md-8">
 			<?php
 				if ( have_posts()): 
 				while ( have_posts() ): the_post();
