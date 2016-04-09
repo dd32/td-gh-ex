@@ -24,6 +24,7 @@ Table of Content
 2.0 - Required Files
 3.0 - Enqueue Styles and Scripts
 4.0 - Main Theme Setup
+5.0 - Filters
 ================================================================================================
 */
 
@@ -109,3 +110,16 @@ if (!function_exists('beyond_expectations_theme_setup')) {
     }
     add_action('after_setup_theme', 'beyond_expectations_theme_setup');
 }
+
+/*
+================================================================================================
+5.0 - Filters
+================================================================================================
+*/
+function beyond_expectations_the_title($title) {    
+    if (!$title) {
+        return __('No Title', 'beyond-expectations');
+    }
+    return $title;
+}
+add_filter('the_title', 'beyond_expectations_the_title');

@@ -19,7 +19,7 @@ archive in many ways.
         <?php beyond_expectations_post_timestamp_author_setup(); ?>
     </div>
     <header class="entry-header">
-        <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo (get_the_title()) ? get_the_title() : __('No Title', 'beyond-expectations'); ?></a></h1>
+        <?php the_title(sprintf( '<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?> 
     </header>
     <div class="entry-content-container">
         <div class="entry-metadata-container cf">
@@ -40,7 +40,7 @@ archive in many ways.
                         <?php
                             $category_terms = wp_get_post_categories( $post->ID );
                                 if ( $category_terms ) {
-                                    echo get_the_category_list(); 
+                                    echo the_category(); 
                                 }
                         ?>
                     </li>

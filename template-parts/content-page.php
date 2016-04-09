@@ -18,7 +18,7 @@ from the single.php in a loop and displays the content here.
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-        <h1 class="entry-title"><?php echo (get_the_title()) ? get_the_title() : __('(No Title)', 'beyond-expectations'); ?></h1>
+        <?php the_title(sprintf('<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?> 
     </header>
     <div class="entry-content">
         <?php the_content(); ?>

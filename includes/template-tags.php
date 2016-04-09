@@ -39,11 +39,11 @@ if (!function_exists('beyond_expectations_post_timestamp_author_setup')) {
     function beyond_expectations_post_timestamp_author_setup() {
         printf(('%2$s by %3$s'), 'meta-prep meta-prep-author', 
         sprintf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-            get_permalink(),
+            esc_url(get_permalink()),
             esc_attr(get_the_time()),
             get_the_date('F d, Y')),
         sprintf('<a href="%1$s" title="%2$s">%3$s</a>',
-        get_author_posts_url(get_the_author_meta('ID')),
+        esc_url(get_author_posts_url(get_the_author_meta('ID'))),
         esc_attr(sprintf(__('View all posts by $s', 'beyond-expectations'), get_the_author())), 
         get_the_author()
         ));
@@ -70,30 +70,6 @@ if (!function_exists('beyond_expectations_add_comments_setup')) {
 ================================================================================================
 2.0 - Metadata Posted In
 ================================================================================================
-
-if (!function_exists('beyond_expectations_cat_tag_setup')) {
-    function beyond_expectations_cat_tag_setup() { ?>
-        <aside class="index-meta group">
-            <ul>
-
-
-                    <li class="theComments">
-                        <?php comments_popup_link( ( 'Leave a comment'), ( '1 Comment'), ( '% Comments') ); ?>
-                    </li><!-- .theComments -->
-
-                <?php
-
-                    $category_terms = wp_get_post_categories($post->ID);
-                    if ( $category_terms ) {
-                        echo get_the_category_list(); 
-                    }
-                ?>
-            </ul>		
-
-        </aside><!-- .index-meta -->
-    <?php }
-}
-*/
 
 
 /*
