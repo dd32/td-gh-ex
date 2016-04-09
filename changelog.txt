@@ -1,4 +1,7 @@
 == CHANGE LOG ==
+= 2.0.5 =
+	- Fix - Excerpt more function added which was previously removed
+
 = 2.0.4 =
 	- Tweak - Updated French language on version 1.1.3
 	- Update - Minor description changed

@@ -42,6 +42,11 @@ function arise_arise_excerpt_length($length) {
 	return absint($arise_excerpt_length);// this will return 30 words in the excerpt
 }
 add_filter('excerpt_length', 'arise_arise_excerpt_length');
+/********************* CONTINUE READING LINKS FOR EXCERPT *********************************/
+function arise_continue_reading() {
+	 return '&hellip; '; 
+}
+add_filter('excerpt_more', 'arise_continue_reading');
 
 /***************** USED CLASS FOR BODY TAGS ******************************/
 function arise_body_class($classes) {
