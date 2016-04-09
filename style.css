@@ -3,8 +3,8 @@ Theme Name:Arise
 Theme URI: http://themefreesia.com/themes/arise
 Author: Theme Freesia
 Author URI: http://themefreesia.com
-Description: Arise is a Responsive Multi-Purpose Business WordPress Theme, Designed and Developed by Theme Freesia. This theme supports popular plugins like Breadcrumb NavXT, WP-PageNavi, Contact Form 7, Jetpack by WordPress.com, Polylang, Newsletter, bbPress and wooCommerce. It is also translation ready and easily customizable with lots of options using Customizer. It consists contact us template, gallery template and many widgets and sidebar. Get free support at http://themefreesia.com/support-forum/ and View demo site at http://demo.themefreesia.com/arise
-Version: 2.0.3
+Description: Arise is a Responsive Multi-Purpose Business WordPress Theme, Designed and Developed by Theme Freesia. This theme supports popular plugins like Breadcrumb NavXT, WP-PageNavi, Contact Form 7, Jetpack by WordPress.com, Polylang, Newsletter, bbPress and wooCommerce. It is also translation ready and currently translated in French language. It is also easily customizable with lots of theme options using Customizer. It consists contact us template, gallery template and many widgets and sidebar. Get free support at http://themefreesia.com/support-forum/ and View demo site at http://demo.themefreesia.com/arise
+Version: 2.0.4
 Text Domain: arise
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -157,11 +157,11 @@ object {
 	font-family: 'Genericons';
 	font-weight: normal;
 	font-style: normal;
-	src: url('font/genericons-regular-webfont.eot');
-	src: url('font/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('font/genericons-regular-webfont.woff') format('woff'),
-		 url('font/genericons-regular-webfont.ttf') format('truetype'),
-		 url('font/genericons-regular-webfont.svg#genericonsregular') format('svg');
+	src: url('genericons/Genericons.eot');
+	src: url('genericons/Genericons.eot?') format('embedded-opentype'),
+		  url('genericons/Genericons.woff') format('woff'),
+		  url('genericons/Genericons.ttf') format('truetype'),
+		  url('genericons/Genericons.svg#Genericons') format('svg');
 }
 
 /* 2.0 Typography
