@@ -1,8 +1,11 @@
-== Changelog ==
+== Change log ==
+
+= 2.2 =
+* Added: Custom Logo( Core Support ) for WP version 4.5
 
 = 2.1 =
-* Bug Fixed: Site title line height issue
 * Added German translation de_DE.po and de_DE 
+* Bug Fixed: Site title line height issue
 
 = 2.0 =
 * Added: Theme Options -> Custom CSS option, Excerpt Options, Homepage / Frontpage Settings, Layout Options, ScrollUp Options, Pagination Options and Search Options

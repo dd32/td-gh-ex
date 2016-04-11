@@ -140,6 +140,11 @@ if ( ! function_exists( 'create_logo' ) ) :
 	 *
 	 */
 	function create_logo() {
+		if ( function_exists( 'has_custom_logo' ) ) {
+			if ( has_custom_logo() ) {
+				echo '<div class="site-logo">'. get_custom_logo() . '</div><!-- Site Logo div -->';
+			}
+		}
 		if ( function_exists( 'jetpack_the_site_logo' ) ) {
 			jetpack_the_site_logo();
 		}

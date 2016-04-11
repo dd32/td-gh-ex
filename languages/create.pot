@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Create\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/create-"
 "free/\n"
-"POT-Creation-Date: 2016-02-05 23:17+0545\n"
-"PO-Revision-Date: 2016-02-05 23:17+0545\n"
+"POT-Creation-Date: 2016-04-11 09:06+0545\n"
+"PO-Revision-Date: 2016-04-11 09:06+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -126,47 +126,47 @@ msgid "Social Menu"
 msgstr ""
 
 # @ create
-#: ../functions.php:108
+#: ../functions.php:118
 msgid "Sidebar"
 msgstr ""
 
 # @ create
-#: ../functions.php:110
+#: ../functions.php:120
 msgid "Main sidebar that appears on the left."
 msgstr ""
 
 # @ create
-#: ../functions.php:118
+#: ../functions.php:128
 msgid "Intro Widget"
 msgstr ""
 
 # @ create
-#: ../functions.php:120
+#: ../functions.php:130
 msgid "Additional widget that appears only on your default homepage."
 msgstr ""
 
 # @ create
-#: ../functions.php:139
+#: ../functions.php:149
 msgid "Your Name"
 msgstr ""
 
 # @ create
-#: ../functions.php:140
+#: ../functions.php:150
 msgid "E-mail"
 msgstr ""
 
 # @ create
-#: ../functions.php:141
+#: ../functions.php:151
 msgid "Website"
 msgstr ""
 
 # @ create
-#: ../functions.php:142
+#: ../functions.php:152
 msgid "Your Comment"
 msgstr ""
 
 # @ create
-#: ../functions.php:244
+#: ../functions.php:254
 msgctxt "Google font: on or off"
 msgid "on"
 msgstr ""
@@ -584,13 +584,13 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: ../inc/structure.php:354
+#: ../inc/structure.php:359
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "&copy; %1$s %2$s"
 msgstr ""
 
-#: ../inc/structure.php:384
+#: ../inc/structure.php:389
 msgctxt "attribution"
 msgid "by"
 msgstr ""

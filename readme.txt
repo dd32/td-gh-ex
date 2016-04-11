@@ -9,7 +9,7 @@ Create is distributed under the terms of the GNU General Public License v3
 
 == Description ==
 
-Create your website using Create WordPress Theme. Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! This theme is translation ready and also currently translated in German language. Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
+Create your website using Create WordPress Theme. Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! This theme is translation ready and also currently translated in German language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/create/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/create/
 
 * Responsive Layout
 * Custom Background
@@ -29,12 +29,13 @@ Create your website using Create WordPress Theme. Make a remarkable first impres
 == Translation ==
 
 Create theme is translation ready.
+Added Translation for German language
 
 
 == Support ==
 
-Support: http://catchthemes.com/support/
-Support Forum: http://catchthemes.com/support-forum/forum/create-free/
+Support: https://catchthemes.com/support/
+Support Forum: https://catchthemes.com/support-forum/forum/create-free/
 
 
 == Getting Started ==
@@ -62,7 +63,7 @@ Create theme will display page menu as the default menu items. You can create cu
 Create theme allows you display links to your social media profiles, like Twitter and Facebook, with icons.
 
 1. Create a new Custom Menu, and assign it to the Social Menu location.
-2. Add links to each of your social services using the Links panel. For example, http://twitter.com/catchthemes is our Twitter link.
+2. Add links to each of your social services using the Links panel. For example, https://twitter.com/catchthemes is our Twitter link.
 3. Icons for your social links will automatically appear if it’s available.
 
 Available icons: (Linking to any of the following sites will automatically display its icon in your social menu).
@@ -110,9 +111,9 @@ Theme supports Jetpack logo and it can be easily uploaded from Customizer area. 
 
 = Theme Instructions =
 
-For detail instructions, check out theme instructions page at http://catchthemes.com/theme-instructions/create/
+For detail instructions, check out theme instructions page at https://catchthemes.com/theme-instructions/create/
 
 
 == Change Log ==
 
-Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/create-theme/
+Please refer to changelog.txt file or change log page at https://catchthemes.com/changelogs/create-theme/
