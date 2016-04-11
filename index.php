@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php get_header();
+
+if ( is_home() ) {
+	echo '<h1 class="screen-reader-text">' . get_bloginfo("name") . ' ' . __('Posts', 'ignite') . '</h1>';
+} elseif ( is_archive() ) {
+	echo '<h1 class="screen-reader-text">' . get_the_archive_title() . '</h1>';
+}
+
+?>
 	<div id="loop-container" class="loop-container">
 		<?php
 		if ( have_posts() ) :
@@ -14,10 +22,16 @@
 // include loop pagination except for on bbPress Forum root
 if ( function_exists( 'is_bbpress' ) ) {
 	if ( ! ( is_bbpress() && is_archive() ) ) {
-		the_posts_pagination();
+		the_posts_pagination( array(
+			'prev_text' => __( 'Previous', 'ignite' ),
+			'next_text' => __( 'Next', 'ignite' )
+		) );
 	}
 } else {
-	the_posts_pagination();
+	the_posts_pagination( array(
+		'prev_text' => __( 'Previous', 'ignite' ),
+		'next_text' => __( 'Next', 'ignite' )
+	) );
 }
 
 get_footer();

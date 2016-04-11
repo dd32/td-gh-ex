@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/ignite/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: Ignite is a responsive blog theme. It includes logo tools, social media icons, a left- or right-sidebar layout, five fonts, custom background colors, and many additional display options. There is also a premium upgrade for Ignite called Ignite Plus. See our fully-setup live demo at https://www.competethemes.com/ignite-live-demo/
-Version: 1.59
+Version: 1.60
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, orange, silver, tan, white, light, two-columns, right-sidebar, left-sidebar, responsive-layout, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -861,6 +861,15 @@ a img {
   -ms-transform: translateX(50%) translateY(-50%);
   transform: translateX(50%) translateY(-50%);
 }
+.featured-image .ccfic {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8%;
+  font-size: 13px;
+}
 
 .excerpt-meta-top, .entry-meta-top {
   margin-bottom: 0.75em;
@@ -1045,6 +1054,9 @@ a img {
     padding-bottom: 66.5%;
     margin-top: -2.25em;
   }
+  .featured-image .ccfic {
+    padding: 4px 14.333%;
+  }
 }
 /* 900px */
 @media all and (min-width: 56.25em) {
@@ -1068,6 +1080,9 @@ a img {
     left: -18%;
     width: 136%;
     padding-bottom: 64.5%;
+  }
+  .featured-image .ccfic {
+    padding: 4px 13.333%;
   }
 
   .pagination {
@@ -1117,6 +1132,9 @@ a img {
     left: -16.67%;
     width: 133.33%;
     padding-bottom: 63.5%;
+  }
+  .featured-image .ccfic {
+    padding: 4px 12.5%;
   }
 }
 .sidebar-primary-container {
@@ -1363,6 +1381,11 @@ a img {
   border-top: solid 2px #D9DCDF;
   padding-top: 1.375em;
 }
+.comments-number h2 {
+  font-size: 1.625em;
+  /* 26px / 16px */
+  line-height: 1.85;
+}
 
 .comment-list {
   list-style: none;
@@ -1498,6 +1521,11 @@ li.pingback {
   padding-bottom: 0;
   overflow: hidden;
   text-align: center;
+}
+.site-footer h1 {
+  font-size: 1.625em;
+  /* 26px / 16px */
+  line-height: 1.85;
 }
 .site-footer a {
   color: #7C7D7F;
@@ -1859,6 +1887,14 @@ li.pingback {
 #disqus_thread {
   background: #fff;
   margin: -1.5em 0 1.5em;
+}
+
+.singular-attachment .attachment-container img {
+  display: block;
+}
+.singular-attachment .attachment-caption {
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 /*
