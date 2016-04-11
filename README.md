@@ -45,6 +45,9 @@ http://www.gratisography.com/pictures/46_1.jpg
 16. Other theme options are self explanatory.
 
 == Change Log ==
+Version 1.1.8
+   * Fix Woocommerce Breadcrumb Heading issue
+
 Version 1.1.7
 	*  Remove `Try pro for free` option
 
