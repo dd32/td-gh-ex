@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-08 20:05+0545\n"
-"PO-Revision-Date: 2016-02-08 20:05+0545\n"
+"POT-Creation-Date: 2016-04-11 23:49+0545\n"
+"PO-Revision-Date: 2016-04-11 23:49+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: cs\n"
@@ -61,19 +61,19 @@ msgstr ""
 "patříte, zadejte heslo."
 
 #: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:945 ../image.php:48
+#: ../functions/simplecatch_functions.php:952 ../image.php:48
 #: ../page-blog.php:69
 msgid "No Comments"
 msgstr "Žádné komentáře"
 
 #: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:945 ../image.php:48
+#: ../functions/simplecatch_functions.php:952 ../image.php:48
 #: ../page-blog.php:69
 msgid "1 Comment"
 msgstr "1 komentář"
 
 #: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:945 ../image.php:48
+#: ../functions/simplecatch_functions.php:952 ../image.php:48
 #: ../page-blog.php:69
 msgid "% Comments"
 msgstr "% komentářů"
@@ -87,7 +87,7 @@ msgstr "U tohoto článku nemůžete přidávat komentáře."
 msgid "Permalink to %s"
 msgstr "Permalink pro %s"
 
-#: ../content.php:44 ../functions/simplecatch_functions.php:943
+#: ../content.php:44 ../functions/simplecatch_functions.php:950
 #: ../image.php:46 ../page-blog.php:67
 msgid "By"
 msgstr "od"
@@ -126,7 +126,7 @@ msgid "Theme Instructions"
 msgstr ""
 
 #: ../functions/panel/customizer/customizer-custom-controls.php:55
-#: ../functions/panel/theme_options.php:100
+#: ../functions/panel/theme_options.php:103
 msgid "Support"
 msgstr "Sodpora"
 
@@ -143,9 +143,9 @@ msgid "Review"
 msgstr ""
 
 #: ../functions/panel/customizer/customizer.php:33
-#: ../functions/panel/theme_options.php:39
-#: ../functions/panel/theme_options.php:40
-#: ../functions/panel/theme_options.php:113
+#: ../functions/panel/theme_options.php:42
+#: ../functions/panel/theme_options.php:43
+#: ../functions/panel/theme_options.php:116
 msgid "Theme Options"
 msgstr "Natavení šablony"
 
@@ -168,60 +168,60 @@ msgid ""
 msgstr ""
 
 #: ../functions/panel/customizer/customizer.php:48
-#: ../functions/panel/customizer/customizer.php:330
-#: ../functions/panel/theme_options.php:385
-#: ../functions/panel/theme_options.php:390
+#: ../functions/panel/customizer/customizer.php:273
+#: ../functions/panel/theme_options.php:388
+#: ../functions/panel/theme_options.php:393
 msgid "Default Layout"
 msgstr "Základní  rozložení"
 
 #: ../functions/panel/customizer/customizer.php:53
-#: ../functions/panel/theme_options.php:453
+#: ../functions/panel/theme_options.php:456
 msgid "Homepage / Frontpage Category Setting"
 msgstr "Nastaven kategorií pro domovskou stránku"
 
 #: ../functions/panel/customizer/customizer.php:58
-#: ../functions/panel/theme_options.php:486
+#: ../functions/panel/theme_options.php:489
 msgid "Search Text Settings"
 msgstr "Search Text Settings"
 
 #: ../functions/panel/customizer/customizer.php:63
-#: ../functions/panel/theme_options.php:507
+#: ../functions/panel/theme_options.php:510
 msgid "Excerpt / More Tag Settings"
 msgstr "Výňatek "
 
 #: ../functions/panel/customizer/customizer.php:68
-#: ../functions/panel/theme_options.php:527
+#: ../functions/panel/theme_options.php:530
 msgid "Feed Redirect"
 msgstr "Přesměrování"
 
 #: ../functions/panel/customizer/customizer.php:73
-#: ../functions/panel/theme_options.php:543
+#: ../functions/panel/theme_options.php:546
 msgid "Custom CSS"
 msgstr "Vlastní CSS stylování"
 
 #: ../functions/panel/customizer/customizer.php:82
 #: ../functions/panel/customizer/customizer.php:83
-#: ../functions/panel/theme_options.php:114
+#: ../functions/panel/theme_options.php:117
 msgid "Featured Post Slider"
 msgstr "Featured Post Slider"
 
 #: ../functions/panel/customizer/customizer.php:87
-#: ../functions/panel/theme_options.php:571
+#: ../functions/panel/theme_options.php:574
 msgid "Add Slider Options"
 msgstr "Nastavení slideru"
 
 #: ../functions/panel/customizer/customizer.php:92
-#: ../functions/panel/theme_options.php:601
+#: ../functions/panel/theme_options.php:604
 msgid "Slider Effect Options"
 msgstr "Nastavení efektu přechodu mezi položkami ve slideru"
 
 #: ../functions/panel/customizer/customizer.php:139
-#: ../functions/panel/theme_options.php:115
+#: ../functions/panel/theme_options.php:118
 msgid "Social Links"
 msgstr "Sociální sítě"
 
 #: ../functions/panel/customizer/customizer.php:150
-#: ../functions/panel/theme_options.php:116
+#: ../functions/panel/theme_options.php:119
 msgid "Webmaster Tools"
 msgstr "Webmaster Tools"
 
@@ -234,752 +234,765 @@ msgid ""
 "add <a target=\"_blank\" href=\"%s\">Catch Web Tools</a>  plugin."
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:160
-msgid "Header Logo"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:169
+#: ../functions/panel/customizer/customizer.php:159
+#: ../functions/panel/customizer/customizer.php:734
 msgid "Check to Disable Site Title"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:178
-msgid "Check to Disable Header Logo"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:187
+#: ../functions/panel/customizer/customizer.php:168
 msgid "Check to Disable Site Description"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:196
+#: ../functions/panel/customizer/customizer.php:177
 msgid "Footer Logo"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:205
+#: ../functions/panel/customizer/customizer.php:186
 msgid "Check to Disable Footer Logo"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:216
-#: ../functions/panel/theme_options.php:277
+#: ../functions/panel/customizer/customizer.php:197
+#: ../functions/panel/theme_options.php:280
 msgid "Default Color Scheme"
 msgstr "Defaultní barva"
 
-#: ../functions/panel/customizer/customizer.php:226
+#: ../functions/panel/customizer/customizer.php:207
 msgid "Heading Color"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:235
+#: ../functions/panel/customizer/customizer.php:216
 msgid "Meta Description Color"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:244
+#: ../functions/panel/customizer/customizer.php:225
 msgid "Text Color"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:253
+#: ../functions/panel/customizer/customizer.php:234
 msgid "Link Color"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:262
+#: ../functions/panel/customizer/customizer.php:243
 msgid "Sidebar Widget Heading Color"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:271
+#: ../functions/panel/customizer/customizer.php:252
 msgid "Sidebar Widget Text Color"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:280
-#: ../functions/panel/theme_options.php:374
+#: ../functions/panel/customizer/customizer.php:261
+#: ../functions/panel/theme_options.php:377
 msgid "Check to Reset Color"
 msgstr "Check to Reset Color"
 
-#: ../functions/panel/customizer/customizer.php:281
+#: ../functions/panel/customizer/customizer.php:262
 msgid "Please refresh the customizer after saving if reset option is used"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:293
-msgid "Check to Disable Favicon"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:304
-msgid "Fav Icon"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:317
-msgid "Web Clip Icon"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:343
-#: ../functions/panel/theme_options.php:459
+#: ../functions/panel/customizer/customizer.php:286
+#: ../functions/panel/theme_options.php:462
 msgid "Front page posts categories:"
 msgstr "Kategorie pro domovskou obrazovku:"
 
-#: ../functions/panel/customizer/customizer.php:344
+#: ../functions/panel/customizer/customizer.php:287
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:355
-#: ../functions/panel/theme_options.php:491
+#: ../functions/panel/customizer/customizer.php:298
+#: ../functions/panel/theme_options.php:494
 msgid "Default Display Text in Search"
 msgstr "Default Display Text in Search"
 
-#: ../functions/panel/customizer/customizer.php:365
-#: ../functions/panel/theme_options.php:496
+#: ../functions/panel/customizer/customizer.php:308
+#: ../functions/panel/theme_options.php:499
 msgid "Search Button's text"
 msgstr "Search Button's text"
 
-#: ../functions/panel/customizer/customizer.php:377
-#: ../functions/panel/theme_options.php:512
+#: ../functions/panel/customizer/customizer.php:320
+#: ../functions/panel/theme_options.php:515
 msgid "More Tag Text"
 msgstr "Zobrazení celého příspěvku"
 
-#: ../functions/panel/customizer/customizer.php:387
-#: ../functions/panel/theme_options.php:517
+#: ../functions/panel/customizer/customizer.php:330
+#: ../functions/panel/theme_options.php:520
 msgid "Excerpt length(words)"
 msgstr "Přesná délka podle počtu slov"
 
-#: ../functions/panel/customizer/customizer.php:403
-#: ../functions/panel/theme_options.php:532
+#: ../functions/panel/customizer/customizer.php:346
+#: ../functions/panel/theme_options.php:535
 msgid "Feed Redirect URL"
 msgstr "Přesměrování"
 
-#: ../functions/panel/customizer/customizer.php:404
+#: ../functions/panel/customizer/customizer.php:347
 msgid " Add in the Feedburner URL"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:416
+#: ../functions/panel/customizer/customizer.php:359
 msgid "Enter your custom CSS styles"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:428
+#: ../functions/panel/customizer/customizer.php:371
 msgid "Check to Exclude Slider posts from Homepage posts"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:438
-#: ../functions/panel/theme_options.php:580
+#: ../functions/panel/customizer/customizer.php:381
+#: ../functions/panel/theme_options.php:583
 msgid "Number of Slides"
 msgstr "Počet slidů"
 
-#: ../functions/panel/customizer/customizer.php:439
+#: ../functions/panel/customizer/customizer.php:382
 msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:455
+#: ../functions/panel/customizer/customizer.php:398
 msgid "Check to Disable Slider Background Effect"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:465
+#: ../functions/panel/customizer/customizer.php:408
 msgid "Transition Effect"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:476
-#: ../functions/panel/theme_options.php:631
+#: ../functions/panel/customizer/customizer.php:419
+#: ../functions/panel/theme_options.php:634
 msgid "Transition Delay"
 msgstr "Doba statického zobrazení"
 
-#: ../functions/panel/customizer/customizer.php:492
-#: ../functions/panel/theme_options.php:638
+#: ../functions/panel/customizer/customizer.php:435
+#: ../functions/panel/theme_options.php:641
 msgid "Transition Length"
 msgstr "Délka trvání přechodu"
 
-#: ../functions/panel/customizer/customizer.php:511
-#: ../functions/panel/theme_options.php:102
-#: ../functions/panel/theme_options.php:656
+#: ../functions/panel/customizer/customizer.php:454
+#: ../functions/panel/theme_options.php:105
+#: ../functions/panel/theme_options.php:659
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../functions/panel/customizer/customizer.php:520
-#: ../functions/panel/theme_options.php:103
-#: ../functions/panel/theme_options.php:661
+#: ../functions/panel/customizer/customizer.php:463
+#: ../functions/panel/theme_options.php:106
+#: ../functions/panel/theme_options.php:664
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../functions/panel/customizer/customizer.php:529
-#: ../functions/panel/theme_options.php:666
+#: ../functions/panel/customizer/customizer.php:472
+#: ../functions/panel/theme_options.php:669
 msgid "Google+"
 msgstr "Google+"
 
-#: ../functions/panel/customizer/customizer.php:538
-#: ../functions/panel/theme_options.php:671
+#: ../functions/panel/customizer/customizer.php:481
+#: ../functions/panel/theme_options.php:674
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions/panel/customizer/customizer.php:547
-#: ../functions/panel/theme_options.php:676
+#: ../functions/panel/customizer/customizer.php:490
+#: ../functions/panel/theme_options.php:679
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../functions/panel/customizer/customizer.php:556
-#: ../functions/panel/theme_options.php:681
+#: ../functions/panel/customizer/customizer.php:499
+#: ../functions/panel/theme_options.php:684
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions/panel/customizer/customizer.php:565
+#: ../functions/panel/customizer/customizer.php:508
 msgid "LinkedIn"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:574
-#: ../functions/panel/theme_options.php:692
+#: ../functions/panel/customizer/customizer.php:517
+#: ../functions/panel/theme_options.php:695
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions/panel/customizer/customizer.php:583
-#: ../functions/panel/theme_options.php:697
+#: ../functions/panel/customizer/customizer.php:526
+#: ../functions/panel/theme_options.php:700
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../functions/panel/customizer/customizer.php:592
-#: ../functions/panel/theme_options.php:702
+#: ../functions/panel/customizer/customizer.php:535
+#: ../functions/panel/theme_options.php:705
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions/panel/customizer/customizer.php:601
-#: ../functions/panel/theme_options.php:707
+#: ../functions/panel/customizer/customizer.php:544
+#: ../functions/panel/theme_options.php:710
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions/panel/customizer/customizer.php:610
-#: ../functions/panel/theme_options.php:712
+#: ../functions/panel/customizer/customizer.php:553
+#: ../functions/panel/theme_options.php:715
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../functions/panel/customizer/customizer.php:619
-#: ../functions/panel/theme_options.php:717
+#: ../functions/panel/customizer/customizer.php:562
+#: ../functions/panel/theme_options.php:720
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions/panel/customizer/customizer.php:628
-#: ../functions/panel/theme_options.php:722
+#: ../functions/panel/customizer/customizer.php:571
+#: ../functions/panel/theme_options.php:725
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions/panel/customizer/customizer.php:637
-#: ../functions/panel/theme_options.php:727
-#: ../functions/simplecatch_functions.php:772
+#: ../functions/panel/customizer/customizer.php:580
+#: ../functions/panel/theme_options.php:730
+#: ../functions/simplecatch_functions.php:779
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/panel/customizer/customizer.php:646
-#: ../functions/panel/theme_options.php:732
+#: ../functions/panel/customizer/customizer.php:589
+#: ../functions/panel/theme_options.php:735
 msgid "RSS"
 msgstr "RSS"
 
-#: ../functions/panel/customizer/customizer.php:655
-#: ../functions/panel/theme_options.php:737
+#: ../functions/panel/customizer/customizer.php:598
+#: ../functions/panel/theme_options.php:740
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../functions/panel/customizer/customizer.php:664
-#: ../functions/panel/theme_options.php:742
+#: ../functions/panel/customizer/customizer.php:607
+#: ../functions/panel/theme_options.php:745
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../functions/panel/customizer/customizer.php:673
-#: ../functions/panel/theme_options.php:747
+#: ../functions/panel/customizer/customizer.php:616
+#: ../functions/panel/theme_options.php:750
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions/panel/customizer/customizer.php:682
-#: ../functions/panel/theme_options.php:752
+#: ../functions/panel/customizer/customizer.php:625
+#: ../functions/panel/theme_options.php:755
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../functions/panel/customizer/customizer.php:691
-#: ../functions/panel/theme_options.php:757
+#: ../functions/panel/customizer/customizer.php:634
+#: ../functions/panel/theme_options.php:760
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../functions/panel/customizer/customizer.php:700
-#: ../functions/panel/theme_options.php:762
+#: ../functions/panel/customizer/customizer.php:643
+#: ../functions/panel/theme_options.php:765
 msgid "My World"
 msgstr "My World"
 
-#: ../functions/panel/customizer/customizer.php:709
-#: ../functions/panel/theme_options.php:767
+#: ../functions/panel/customizer/customizer.php:652
+#: ../functions/panel/theme_options.php:770
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../functions/panel/customizer/customizer.php:718
-#: ../functions/panel/theme_options.php:772
+#: ../functions/panel/customizer/customizer.php:661
+#: ../functions/panel/theme_options.php:775
 msgid "Goodreads"
 msgstr "Goodreads"
 
-#: ../functions/panel/customizer/customizer.php:727
-#: ../functions/panel/theme_options.php:777
+#: ../functions/panel/customizer/customizer.php:670
+#: ../functions/panel/theme_options.php:780
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions/panel/customizer/customizer.php:736
-#: ../functions/panel/theme_options.php:782
+#: ../functions/panel/customizer/customizer.php:679
+#: ../functions/panel/theme_options.php:785
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../functions/panel/customizer/customizer.php:745
-#: ../functions/panel/theme_options.php:787
-#: ../functions/simplecatch_functions.php:1029
+#: ../functions/panel/customizer/customizer.php:688
+#: ../functions/panel/theme_options.php:790
+#: ../functions/simplecatch_functions.php:1036
 msgid "Email"
 msgstr "E-Mail"
 
-#: ../functions/panel/customizer/customizer.php:756
-#: ../functions/panel/theme_options.php:803
+#: ../functions/panel/customizer/customizer.php:699
+#: ../functions/panel/theme_options.php:806
 msgid "Code to display on Header"
 msgstr "Code to display on Header"
 
-#: ../functions/panel/customizer/customizer.php:757
+#: ../functions/panel/customizer/customizer.php:700
 msgid ""
 "Here you can put scripts from Google, Facebook, Twitter, Add This etc. which "
 "will load on Header"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:766
-#: ../functions/panel/theme_options.php:812
+#: ../functions/panel/customizer/customizer.php:709
+#: ../functions/panel/theme_options.php:815
 msgid "Code to display on Footer"
 msgstr "Code to display on Footer"
 
-#: ../functions/panel/customizer/customizer.php:767
+#: ../functions/panel/customizer/customizer.php:710
 msgid ""
 "Here you can put scripts from Google, Facebook, Twitter, Add This etc. which "
 "will load on footer"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:942
+#: ../functions/panel/customizer/customizer.php:725
+msgid "Header Logo"
+msgstr ""
+
+#: ../functions/panel/customizer/customizer.php:752
+msgid "Check to Disable Favicon"
+msgstr ""
+
+#: ../functions/panel/customizer/customizer.php:763
+msgid "Fav Icon"
+msgstr ""
+
+#: ../functions/panel/customizer/customizer.php:776
+msgid "Web Clip Icon"
+msgstr ""
+
+#: ../functions/panel/customizer/customizer.php:956
 #, php-format
 msgid "#%s Featured Post ID"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:956
+#: ../functions/panel/customizer/customizer.php:970
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:958
+#: ../functions/panel/customizer/customizer.php:972
 msgid "Reset all settings"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:968
+#: ../functions/panel/customizer/customizer.php:982
 msgid "Check to reset all settings to default"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:978
-#: ../functions/panel/customizer/customizer.php:989
+#: ../functions/panel/customizer/customizer.php:992
+#: ../functions/panel/customizer/customizer.php:1003
 msgid "Important Links"
 msgstr ""
 
-#: ../functions/panel/customizer/customizer.php:1027
+#: ../functions/panel/customizer/customizer.php:1041
 msgid "Upgrade To Pro &raquo;"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:80
+#: ../functions/panel/theme_options.php:83
 msgid "Options Saved"
 msgstr "Nastavení uloženo"
 
-#: ../functions/panel/theme_options.php:86
+#: ../functions/panel/theme_options.php:89
 msgid "Theme Options By"
 msgstr "Theme Options By"
 
-#: ../functions/panel/theme_options.php:88
-#: ../functions/simplecatch_functions.php:772
+#: ../functions/panel/theme_options.php:91
+#: ../functions/simplecatch_functions.php:779
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/panel/theme_options.php:88
-#: ../functions/panel/theme_options.php:89
+#: ../functions/panel/theme_options.php:91
+#: ../functions/panel/theme_options.php:92
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../functions/panel/theme_options.php:94
+#: ../functions/panel/theme_options.php:97
 msgid "http://catchthemes.com/themes/simple-catch-pro/"
 msgstr "http://catchthemes.com/themes/simple-catch-pro/"
 
-#: ../functions/panel/theme_options.php:94
+#: ../functions/panel/theme_options.php:97
 msgid "Upgrade to Simple Catch Pro"
 msgstr "Upgradovat na Simple Catch Pro"
 
-#: ../functions/panel/theme_options.php:99
+#: ../functions/panel/theme_options.php:102
 msgid "http://catchthemes.com/donate/"
 msgstr "http://catchthemes.com/donate/"
 
-#: ../functions/panel/theme_options.php:99
+#: ../functions/panel/theme_options.php:102
 msgid "Donate"
 msgstr "Přispět"
 
-#: ../functions/panel/theme_options.php:100
+#: ../functions/panel/theme_options.php:103
 msgid "http://catchthemes.com/support/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/panel/theme_options.php:101
+#: ../functions/panel/theme_options.php:104
 msgid "http://catchthemes.com/theme-instructions/simple-catch/"
 msgstr "http://catchthemes.com/theme-instructions/simple-catch/"
 
-#: ../functions/panel/theme_options.php:101
+#: ../functions/panel/theme_options.php:104
 msgid "Theme Instruction"
 msgstr "Nápověda k šabloně"
 
-#: ../functions/panel/theme_options.php:102
+#: ../functions/panel/theme_options.php:105
 msgid "https://www.facebook.com/catchthemes/"
 msgstr "https://www.facebook.com/catchthemes/"
 
-#: ../functions/panel/theme_options.php:102
+#: ../functions/panel/theme_options.php:105
 msgid "Like Catch Themes on Facebook"
 msgstr "Like Catch Themes on Facebook"
 
-#: ../functions/panel/theme_options.php:103
+#: ../functions/panel/theme_options.php:106
 msgid "https://twitter.com/catchthemes/"
 msgstr "https://twitter.com/catchthemes/"
 
-#: ../functions/panel/theme_options.php:103
+#: ../functions/panel/theme_options.php:106
 msgid "Follow Catch Themes on Twitter"
 msgstr "Follow Catch Themes on Twitter"
 
-#: ../functions/panel/theme_options.php:104
+#: ../functions/panel/theme_options.php:107
 msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
 msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
 
-#: ../functions/panel/theme_options.php:104
+#: ../functions/panel/theme_options.php:107
 msgid "Rate us 5 Star on WordPress"
 msgstr "Rate us 5 Star on WordPress"
 
-#: ../functions/panel/theme_options.php:104
+#: ../functions/panel/theme_options.php:107
 msgid "5 Star Rating"
 msgstr "5 Star Rating"
 
-#: ../functions/panel/theme_options.php:122
+#: ../functions/panel/theme_options.php:125
 msgid "Logo Options"
 msgstr "loga možnosti"
 
-#: ../functions/panel/theme_options.php:127
+#: ../functions/panel/theme_options.php:130
 msgid "Header logo url:"
 msgstr "Záhlaví loga url:"
 
-#: ../functions/panel/theme_options.php:134
-msgid "Change Header Logo"
-msgstr "Změny záhlaví loga"
+#: ../functions/panel/theme_options.php:137
+msgid "Insert Header Logo"
+msgstr ""
 
-#: ../functions/panel/theme_options.php:138
-#: ../functions/panel/theme_options.php:178
-#: ../functions/panel/theme_options.php:217
-#: ../functions/panel/theme_options.php:253
-#: ../functions/panel/theme_options.php:434
+#: ../functions/panel/theme_options.php:137
+msgid "Add/Change Header Logo"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:141
+#: ../functions/panel/theme_options.php:181
+#: ../functions/panel/theme_options.php:220
+#: ../functions/panel/theme_options.php:256
+#: ../functions/panel/theme_options.php:437
 msgid "Preview: "
 msgstr "Náhled:"
 
-#: ../functions/panel/theme_options.php:150
+#: ../functions/panel/theme_options.php:153
 msgid "Disable Header Logo?"
 msgstr "Zrušit Záhlaví loga"
 
-#: ../functions/panel/theme_options.php:152
-#: ../functions/panel/theme_options.php:159
-#: ../functions/panel/theme_options.php:164
-#: ../functions/panel/theme_options.php:192
-#: ../functions/panel/theme_options.php:231
+#: ../functions/panel/theme_options.php:155
+#: ../functions/panel/theme_options.php:162
+#: ../functions/panel/theme_options.php:167
+#: ../functions/panel/theme_options.php:195
+#: ../functions/panel/theme_options.php:234
 msgid "Check to Disable."
 msgstr "Nezobrazovat."
 
-#: ../functions/panel/theme_options.php:157
+#: ../functions/panel/theme_options.php:160
 msgid "Disable Site Title?"
 msgstr "Disable Site Title?"
 
-#: ../functions/panel/theme_options.php:162
+#: ../functions/panel/theme_options.php:165
 msgid "Disable Site Description?"
 msgstr "Disable Site Description?"
 
-#: ../functions/panel/theme_options.php:167
+#: ../functions/panel/theme_options.php:170
 msgid "Footer logo url: "
 msgstr "Zápatí loga url:"
 
-#: ../functions/panel/theme_options.php:174
-msgid "Change Footer Logo"
-msgstr "Změny Zápatí loga"
+#: ../functions/panel/theme_options.php:177
+msgid "Insert Footer Logo"
+msgstr ""
 
-#: ../functions/panel/theme_options.php:190
+#: ../functions/panel/theme_options.php:177
+msgid "Add/Change Footer Logo"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:193
 msgid "Disable Footer Logo?"
 msgstr "Deaktivovat Zápatí loga"
 
-#: ../functions/panel/theme_options.php:196
-#: ../functions/panel/theme_options.php:235
-#: ../functions/panel/theme_options.php:267
-#: ../functions/panel/theme_options.php:380
-#: ../functions/panel/theme_options.php:416
-#: ../functions/panel/theme_options.php:481
-#: ../functions/panel/theme_options.php:502
-#: ../functions/panel/theme_options.php:522
-#: ../functions/panel/theme_options.php:538
-#: ../functions/panel/theme_options.php:562
-#: ../functions/panel/theme_options.php:595
-#: ../functions/panel/theme_options.php:646
-#: ../functions/panel/theme_options.php:792
-#: ../functions/panel/theme_options.php:823
+#: ../functions/panel/theme_options.php:199
+#: ../functions/panel/theme_options.php:238
+#: ../functions/panel/theme_options.php:270
+#: ../functions/panel/theme_options.php:383
+#: ../functions/panel/theme_options.php:419
+#: ../functions/panel/theme_options.php:484
+#: ../functions/panel/theme_options.php:505
+#: ../functions/panel/theme_options.php:525
+#: ../functions/panel/theme_options.php:541
+#: ../functions/panel/theme_options.php:565
+#: ../functions/panel/theme_options.php:598
+#: ../functions/panel/theme_options.php:649
+#: ../functions/panel/theme_options.php:795
+#: ../functions/panel/theme_options.php:826
 msgid "Save"
 msgstr "Uložit"
 
-#: ../functions/panel/theme_options.php:201
+#: ../functions/panel/theme_options.php:204
 msgid "Fav Icon Option"
 msgstr "Nastavení Faviconu"
 
-#: ../functions/panel/theme_options.php:206
+#: ../functions/panel/theme_options.php:209
 msgid "Favicon URL:"
 msgstr "Favicon URL:"
 
-#: ../functions/panel/theme_options.php:213
-msgid "Change Fav icon Logo"
-msgstr "Přidat/změnit Favicon"
+#: ../functions/panel/theme_options.php:216
+msgid "Insert Favicon"
+msgstr ""
 
-#: ../functions/panel/theme_options.php:229
+#: ../functions/panel/theme_options.php:216
+msgid "Add/Change Favicon"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:232
 msgid "Disable Fav Icon?"
 msgstr "Zrušit Favicon?"
 
-#: ../functions/panel/theme_options.php:240
+#: ../functions/panel/theme_options.php:243
 msgid "Web Clip Icon Option"
 msgstr "Nastavení Web Clip Icon"
 
-#: ../functions/panel/theme_options.php:245
+#: ../functions/panel/theme_options.php:248
 msgid "Web Clip Icon URL:"
 msgstr "URL Web Clip Icon"
 
-#: ../functions/panel/theme_options.php:248
-msgid "Upload/Change Web Clip Icon"
-msgstr "Přidat/změnit Web Clip Icon"
+#: ../functions/panel/theme_options.php:251
+msgid "Insert Web Clip Icon"
+msgstr ""
 
-#: ../functions/panel/theme_options.php:259
+#: ../functions/panel/theme_options.php:251
+msgid "Add/Change Web Clip Icon"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:262
 msgid "No Web Clip Icon Found. Upload Web Clip Icon."
 msgstr "No Web Clip Icon Found. Upload Web Clip Icon."
 
-#: ../functions/panel/theme_options.php:272
+#: ../functions/panel/theme_options.php:275
 msgid "Color Options"
 msgstr "Nastavení barvy"
 
-#: ../functions/panel/theme_options.php:281
+#: ../functions/panel/theme_options.php:284
 msgid "Default"
 msgstr "Defaultní"
 
-#: ../functions/panel/theme_options.php:285
+#: ../functions/panel/theme_options.php:288
 #: ../functions/simplecatch_themeoptions_defaults.php:106
 msgid "Dark"
 msgstr "Tmavé"
 
-#: ../functions/panel/theme_options.php:289
+#: ../functions/panel/theme_options.php:292
 #: ../functions/simplecatch_themeoptions_defaults.php:107
 msgid "Brown"
 msgstr "Brown"
 
-#: ../functions/panel/theme_options.php:296
+#: ../functions/panel/theme_options.php:299
 msgid "Content Background:"
 msgstr "Barva pozadí"
 
-#: ../functions/panel/theme_options.php:300
+#: ../functions/panel/theme_options.php:303
 msgid "Need to replace default background?"
 msgstr "Need to replace default background?"
 
-#: ../functions/panel/theme_options.php:300
+#: ../functions/panel/theme_options.php:303
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
 msgstr "<a class=\"button\" href=\"%s\">Klikněte zde</a>"
 
-#: ../functions/panel/theme_options.php:306
+#: ../functions/panel/theme_options.php:309
 msgid "Heading Color:"
 msgstr "Heading Color:"
 
-#: ../functions/panel/theme_options.php:317
+#: ../functions/panel/theme_options.php:320
 msgid "Meta Description Color:"
 msgstr "Barva Meta podrobností:"
 
-#: ../functions/panel/theme_options.php:328
+#: ../functions/panel/theme_options.php:331
 msgid "Text Color:"
 msgstr "Barva textu"
 
-#: ../functions/panel/theme_options.php:339
+#: ../functions/panel/theme_options.php:342
 msgid "Link Color:"
 msgstr "Barva odkazů:"
 
-#: ../functions/panel/theme_options.php:350
+#: ../functions/panel/theme_options.php:353
 msgid "Sidebar Widget Heading Color:"
 msgstr "Barva názvu widgetu v bočním panelu:"
 
-#: ../functions/panel/theme_options.php:361
+#: ../functions/panel/theme_options.php:364
 msgid "Sidebar Widget Text Color:"
 msgstr "Barva textu widgetu v bočním panelu"
 
-#: ../functions/panel/theme_options.php:371
+#: ../functions/panel/theme_options.php:374
 msgid "Reset Color:"
 msgstr "Resetoat barvu:"
 
-#: ../functions/panel/theme_options.php:394
+#: ../functions/panel/theme_options.php:397
 msgid "Content on Left"
 msgstr "Pravý sidebar"
 
-#: ../functions/panel/theme_options.php:399
+#: ../functions/panel/theme_options.php:402
 #: ../functions/simplecatch_themeoptions_defaults.php:121
 msgid "Content on Right"
 msgstr "Levý boční panel"
 
-#: ../functions/panel/theme_options.php:404
+#: ../functions/panel/theme_options.php:407
 #: ../functions/simplecatch_themeoptions_defaults.php:122
 msgid "No Sidebar"
 msgstr "Žádný sidebar"
 
-#: ../functions/panel/theme_options.php:409
+#: ../functions/panel/theme_options.php:412
 #: ../functions/simplecatch_themeoptions_defaults.php:123
 msgid "No Sidebar, Full Width"
 msgstr "Přes celou šířku, žádné sidebary"
 
-#: ../functions/panel/theme_options.php:421
+#: ../functions/panel/theme_options.php:424
 msgid "Header Options"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:426
+#: ../functions/panel/theme_options.php:429
 msgid "Header Image:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:429
+#: ../functions/panel/theme_options.php:432
 msgid "Click here to change header image"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:429
+#: ../functions/panel/theme_options.php:432
 msgid "Click here to change Header Image"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:442
+#: ../functions/panel/theme_options.php:445
 msgid "There is no Header Image"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:461
+#: ../functions/panel/theme_options.php:464
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr ""
 "Na domovské stránce budou zobrazeny příspěvky pouze z těchto kategorií."
 
-#: ../functions/panel/theme_options.php:466
+#: ../functions/panel/theme_options.php:469
 msgid "--Disabled--"
 msgstr "--Zrušeno--"
 
-#: ../functions/panel/theme_options.php:476
+#: ../functions/panel/theme_options.php:479
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "Můžete zvolit více kategorií pomocí tlačítka CTRL"
 
-#: ../functions/panel/theme_options.php:548
+#: ../functions/panel/theme_options.php:551
 msgid "Enter your custom CSS styles."
 msgstr "Vlastní CSS stylování."
 
-#: ../functions/panel/theme_options.php:555
+#: ../functions/panel/theme_options.php:558
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS Tutorial od W3Schools"
 
-#: ../functions/panel/theme_options.php:557
+#: ../functions/panel/theme_options.php:560
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../functions/panel/theme_options.php:557
+#: ../functions/panel/theme_options.php:560
 msgid "CSS Tutorial"
 msgstr "CSS Tutorial"
 
-#: ../functions/panel/theme_options.php:557
+#: ../functions/panel/theme_options.php:560
 msgid "Click Here to Read"
 msgstr "Číst"
 
-#: ../functions/panel/theme_options.php:575
+#: ../functions/panel/theme_options.php:578
 msgid "Exclude Slider post from Home page posts:"
 msgstr ""
 "Vyloučit příspěvky, které jsou použity ve slideru, z výpisu článků na domácí "
 "obrazovce: "
 
-#: ../functions/panel/theme_options.php:586
+#: ../functions/panel/theme_options.php:589
 msgid "Featured Post ID"
 msgstr "Featured Post ID"
 
-#: ../functions/panel/theme_options.php:588
+#: ../functions/panel/theme_options.php:591
 msgid "Click Here To Edit"
 msgstr "Klikněte zde pro úpravu"
 
-#: ../functions/panel/theme_options.php:594
+#: ../functions/panel/theme_options.php:597
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "<strong>Poznámka</strong>: Zde můžete zadat ID číslo článků, podle kterého "
 "se budou články ve slideru zobrazovat."
 
-#: ../functions/panel/theme_options.php:605
+#: ../functions/panel/theme_options.php:608
 msgid "Disable Slider Background Effect:"
 msgstr "Disable Slider Background Effect:"
 
-#: ../functions/panel/theme_options.php:612
+#: ../functions/panel/theme_options.php:615
 msgid "Transition Effect:"
 msgstr "efekt přechodu:"
 
-#: ../functions/panel/theme_options.php:616
+#: ../functions/panel/theme_options.php:619
 #: ../functions/simplecatch_themeoptions_defaults.php:136
 msgid "fade"
 msgstr "zeslábnutí"
 
-#: ../functions/panel/theme_options.php:617
+#: ../functions/panel/theme_options.php:620
 #: ../functions/simplecatch_themeoptions_defaults.php:137
 msgid "wipe"
 msgstr "wipe"
 
-#: ../functions/panel/theme_options.php:618
+#: ../functions/panel/theme_options.php:621
 #: ../functions/simplecatch_themeoptions_defaults.php:138
 #: ../functions/simplecatch_themeoptions_defaults.php:140
 msgid "scrollUp"
 msgstr "Vyměnit ze shora"
 
-#: ../functions/panel/theme_options.php:619
+#: ../functions/panel/theme_options.php:622
 #: ../functions/simplecatch_themeoptions_defaults.php:139
 msgid "scrollDown"
 msgstr "Vyměnit z dola"
 
-#: ../functions/panel/theme_options.php:620
+#: ../functions/panel/theme_options.php:623
 #: ../functions/simplecatch_themeoptions_defaults.php:141
 msgid "scrollLeft"
 msgstr "Vyměnit z leva"
 
-#: ../functions/panel/theme_options.php:621
+#: ../functions/panel/theme_options.php:624
 #: ../functions/simplecatch_themeoptions_defaults.php:142
 msgid "scrollRight"
 msgstr "Vyměnit z prava"
 
-#: ../functions/panel/theme_options.php:622
+#: ../functions/panel/theme_options.php:625
 #: ../functions/simplecatch_themeoptions_defaults.php:143
 msgid "blindX"
 msgstr "roletaX"
 
-#: ../functions/panel/theme_options.php:623
+#: ../functions/panel/theme_options.php:626
 #: ../functions/simplecatch_themeoptions_defaults.php:144
 msgid "blindY"
 msgstr "roletaY"
 
-#: ../functions/panel/theme_options.php:624
+#: ../functions/panel/theme_options.php:627
 #: ../functions/simplecatch_themeoptions_defaults.php:145
 msgid "blindZ"
 msgstr "roletaZ"
 
-#: ../functions/panel/theme_options.php:625
+#: ../functions/panel/theme_options.php:628
 #: ../functions/simplecatch_themeoptions_defaults.php:146
 msgid "cover"
 msgstr "překrýt"
 
-#: ../functions/panel/theme_options.php:626
+#: ../functions/panel/theme_options.php:629
 #: ../functions/simplecatch_themeoptions_defaults.php:147
 msgid "shuffle"
 msgstr "Přehodit"
 
-#: ../functions/panel/theme_options.php:634
-#: ../functions/panel/theme_options.php:641
+#: ../functions/panel/theme_options.php:637
+#: ../functions/panel/theme_options.php:644
 msgid "second(s)"
 msgstr "vteřin"
 
-#: ../functions/panel/theme_options.php:687
+#: ../functions/panel/theme_options.php:690
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions/panel/theme_options.php:798
+#: ../functions/panel/theme_options.php:801
 msgid "Header and Footer Codes"
 msgstr "Kódy záhlaví a zápatí"
 
-#: ../functions/panel/theme_options.php:809
+#: ../functions/panel/theme_options.php:812
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -987,7 +1000,7 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 
-#: ../functions/panel/theme_options.php:819
+#: ../functions/panel/theme_options.php:822
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
@@ -1004,187 +1017,187 @@ msgstr ""
 msgid "%s"
 msgstr "%s"
 
-#: ../functions/simplecatch_functions.php:488
+#: ../functions/simplecatch_functions.php:495
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s on Facebook"
 
-#: ../functions/simplecatch_functions.php:493
+#: ../functions/simplecatch_functions.php:500
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s on Twitter"
 
-#: ../functions/simplecatch_functions.php:498
+#: ../functions/simplecatch_functions.php:505
 #, php-format
 msgid "%s on Google+"
 msgstr "%s on Google+"
 
-#: ../functions/simplecatch_functions.php:503
+#: ../functions/simplecatch_functions.php:510
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s on Linkedin"
 
-#: ../functions/simplecatch_functions.php:508
+#: ../functions/simplecatch_functions.php:515
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s on Pinterest"
 
-#: ../functions/simplecatch_functions.php:513
+#: ../functions/simplecatch_functions.php:520
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s on YouTube"
 
-#: ../functions/simplecatch_functions.php:518
+#: ../functions/simplecatch_functions.php:525
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s on Vimeo"
 
-#: ../functions/simplecatch_functions.php:523
+#: ../functions/simplecatch_functions.php:530
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s on Slideshare"
 
-#: ../functions/simplecatch_functions.php:528
+#: ../functions/simplecatch_functions.php:535
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s on Foursquare"
 
-#: ../functions/simplecatch_functions.php:533
+#: ../functions/simplecatch_functions.php:540
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s on Flickr"
 
-#: ../functions/simplecatch_functions.php:538
+#: ../functions/simplecatch_functions.php:545
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s on Tumblr"
 
-#: ../functions/simplecatch_functions.php:543
+#: ../functions/simplecatch_functions.php:550
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s on deviantART"
 
-#: ../functions/simplecatch_functions.php:548
+#: ../functions/simplecatch_functions.php:555
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s on Dribbble"
 
-#: ../functions/simplecatch_functions.php:553
+#: ../functions/simplecatch_functions.php:560
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s on MySpace"
 
-#: ../functions/simplecatch_functions.php:558
+#: ../functions/simplecatch_functions.php:565
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s on WordPress"
 
-#: ../functions/simplecatch_functions.php:563
+#: ../functions/simplecatch_functions.php:570
 #, php-format
 msgid "%s on RSS"
 msgstr "%s on RSS"
 
-#: ../functions/simplecatch_functions.php:568
+#: ../functions/simplecatch_functions.php:575
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s on Delicious"
 
-#: ../functions/simplecatch_functions.php:573
+#: ../functions/simplecatch_functions.php:580
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s on Last.fm"
 
-#: ../functions/simplecatch_functions.php:578
+#: ../functions/simplecatch_functions.php:585
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s on Instagram"
 
-#: ../functions/simplecatch_functions.php:583
+#: ../functions/simplecatch_functions.php:590
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s on GitHub"
 
-#: ../functions/simplecatch_functions.php:588
+#: ../functions/simplecatch_functions.php:595
 #, php-format
 msgid "%s on Vkontakte"
 msgstr "%s on Vkontakte"
 
-#: ../functions/simplecatch_functions.php:593
+#: ../functions/simplecatch_functions.php:600
 #, php-format
 msgid "%s on My World"
 msgstr "%s on My World"
 
-#: ../functions/simplecatch_functions.php:598
+#: ../functions/simplecatch_functions.php:605
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr "%s on Odnoklassniki"
 
-#: ../functions/simplecatch_functions.php:603
+#: ../functions/simplecatch_functions.php:610
 #, php-format
 msgid "%s on Goodreads"
 msgstr "%s on Goodreads"
 
-#: ../functions/simplecatch_functions.php:608
+#: ../functions/simplecatch_functions.php:615
 #, php-format
 msgid "%s on Skype"
 msgstr "%s on Skype"
 
-#: ../functions/simplecatch_functions.php:613
+#: ../functions/simplecatch_functions.php:620
 #, php-format
 msgid "%s on Soundcloud"
 msgstr "%s on Soundcloud"
 
-#: ../functions/simplecatch_functions.php:618
+#: ../functions/simplecatch_functions.php:625
 #, php-format
 msgid "%s on Email"
 msgstr "%s on Email"
 
-#: ../functions/simplecatch_functions.php:772
+#: ../functions/simplecatch_functions.php:779
 msgid "Powered By:"
 msgstr "Powered By:"
 
-#: ../functions/simplecatch_functions.php:772
+#: ../functions/simplecatch_functions.php:779
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:772
+#: ../functions/simplecatch_functions.php:779
 msgid "Powered By WordPress"
 msgstr "Powered By WordPress"
 
-#: ../functions/simplecatch_functions.php:772
+#: ../functions/simplecatch_functions.php:779
 msgid "Theme:"
 msgstr "Šablona:"
 
-#: ../functions/simplecatch_functions.php:772
+#: ../functions/simplecatch_functions.php:779
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:959
+#: ../functions/simplecatch_functions.php:966
 msgid "Categories: "
 msgstr "kategorií:"
 
-#: ../functions/simplecatch_functions.php:1028
+#: ../functions/simplecatch_functions.php:1035
 msgid "Name"
 msgstr "Jméno"
 
-#: ../functions/simplecatch_functions.php:1028
-#: ../functions/simplecatch_functions.php:1029
+#: ../functions/simplecatch_functions.php:1035
+#: ../functions/simplecatch_functions.php:1036
 msgid "( required )"
 msgstr "( požadovaný )"
 
-#: ../functions/simplecatch_functions.php:1030
+#: ../functions/simplecatch_functions.php:1037
 msgid "Website"
 msgstr "webové stránky"
 
-#: ../functions/simplecatch_functions.php:1066
+#: ../functions/simplecatch_functions.php:1073
 msgid "ID"
 msgstr "ID"
 
-#: ../functions/simplecatch_functions.php:1161 ../page-blog.php:97
+#: ../functions/simplecatch_functions.php:1168 ../page-blog.php:97
 msgid "Previous"
 msgstr "Předešlý"
 
-#: ../functions/simplecatch_functions.php:1162 ../page-blog.php:98
+#: ../functions/simplecatch_functions.php:1169 ../page-blog.php:98
 msgid "Next"
 msgstr "Další"
 
@@ -1311,6 +1324,18 @@ msgstr " Zkuste to prosím znovu s nějakým jiným klíčovým slovem."
 #: ../search.php:39
 msgid "Try more general keywords"
 msgstr " "
+
+#~ msgid "Change Header Logo"
+#~ msgstr "Změny záhlaví loga"
+
+#~ msgid "Change Footer Logo"
+#~ msgstr "Změny Zápatí loga"
+
+#~ msgid "Change Fav icon Logo"
+#~ msgstr "Přidat/změnit Favicon"
+
+#~ msgid "Upload/Change Web Clip Icon"
+#~ msgstr "Přidat/změnit Web Clip Icon"
 
 #~ msgid "Page %s"
 #~ msgstr "Stránka  %s"

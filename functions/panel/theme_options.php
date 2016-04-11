@@ -19,10 +19,13 @@ add_action( 'admin_menu', 'simplecatch_options_menu' );
 function simplecatch_admin_scripts() {
 	//jquery-cookie registered in functions.php
 	wp_enqueue_script( 'simplecatch_admin', get_template_directory_uri().'/functions/panel/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable', 'farbtastic' ), '20140317', false );
-	wp_enqueue_script( 'simplecatch_upload', get_template_directory_uri().'/functions/panel/add_image_scripts.min.js', array( 'jquery','media-upload','thickbox' ) );
-	wp_enqueue_script( 'simplecatch_color', get_template_directory_uri().'/functions/panel/color_picker.min.js', array( 'farbtastic' ) );
+    wp_enqueue_script( 'simplecatch_color', get_template_directory_uri().'/functions/panel/color_picker.min.js', array( 'farbtastic' ) );
 
-    wp_enqueue_style( 'simplecatch_admin_style',get_template_directory_uri().'/functions/panel/admin.css', array( 'farbtastic', 'thickbox' ), '1.0', 'screen' );
+    wp_enqueue_style( 'simplecatch_admin_style',get_template_directory_uri().'/functions/panel/admin.css', array( 'farbtastic' ), '1.0', 'screen' );
+
+    wp_enqueue_media();
+
+    wp_enqueue_script( 'simplecatch_upload', get_template_directory_uri().'/functions/panel/add_image_scripts.min.js', array( 'jquery','media-upload','thickbox' ) );
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'simplecatch_admin_scripts');
 
@@ -131,7 +134,7 @@ function simplecatch_theme_options_do_page() {
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo-head.png" alt="logo" />
                                             <?php }  ?>
-                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','simple-catch' );?>" />
+                                                <input ref="<?php esc_attr_e( 'Insert Header Logo','simple-catch' );?>" class="simplecatch_upload_image button" type="button" value="<?php esc_attr_e( 'Add/Change Header Logo','simple-catch' );?>" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -171,7 +174,7 @@ function simplecatch_theme_options_do_page() {
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="simplecatch_options[featured_logo_footer]" value="<?php echo get_template_directory_uri(); ?>/images/logo-foot.png" alt="logo" />
                                             <?php }  ?>
-                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Footer Logo','simple-catch' );?>" />
+                                                <input ref="<?php esc_attr_e( 'Insert Footer Logo','simple-catch' );?>" class="simplecatch_upload_image button" type="button" value="<?php esc_attr_e( 'Add/Change Footer Logo','simple-catch' );?>" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -210,7 +213,7 @@ function simplecatch_theme_options_do_page() {
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav icon" />
                                             <?php }  ?>
-                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav icon Logo','simple-catch' );?>" />
+                                                <input ref="<?php esc_attr_e( 'Insert Favicon','simple-catch' );?>" class="simplecatch_upload_image button" type="button" value="<?php esc_attr_e( 'Add/Change Favicon','simple-catch' );?>" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -245,7 +248,7 @@ function simplecatch_theme_options_do_page() {
                                         <th scope="row"><?php _e( 'Web Clip Icon URL:', 'simple-catch' ); ?></th>
                                         <td>
                                         	<input class="upload-url" size="65" type="text" name="simplecatch_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
-                                            <input id="web-clip-image" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Upload/Change Web Clip Icon','simple-catch' );?>" />
+                                            <input ref="<?php esc_attr_e( 'Insert Web Clip Icon','simple-catch' );?>" class="simplecatch_upload_image button" type="button" value="<?php esc_attr_e( 'Add/Change Web Clip Icon','simple-catch' );?>" />
                                      	</td>
                                     </tr>
 

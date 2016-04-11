@@ -49,74 +49,74 @@ function simplecatch_setup() {
 	 * @see http://codex.wordpress.org/Function_Reference/load_theme_textdomain
 	 */
 	load_theme_textdomain( 'simple-catch', get_template_directory() . '/languages' );
-	
+
 	$locale = get_locale();
     $locale_file = get_template_directory().'/languages/$locale.php';
     if (is_readable( $locale_file))
-		require_once( $locale_file);	
+		require_once( $locale_file);
 
 	// Load up theme options defaults
 	require( get_template_directory() . '/functions/simplecatch_themeoptions_defaults.php' );
-	
+
 	// Load up our theme options page and related code.
 	require( get_template_directory() . '/functions/panel/theme_options.php' );
-	
+
 	// Grab Simple Catch's Custom Tags widgets.
 	require( get_template_directory() . '/functions/widgets.php' );
-	
+
 	// Load up our Simple Catch's Functions
 	require( get_template_directory() . '/functions/simplecatch_functions.php' );
-	
+
 	// Load up our Simple Catch's metabox
 	require( get_template_directory() . '/functions/simplecatch_metabox.php' );
-	
+
 	/**
      * This feature enables Jetpack plugin Infinite Scroll
-     */		
+     */
     add_theme_support( 'infinite-scroll', array(
-		'type'          => 'click',										
+		'type'          => 'click',
         'container'     => 'content',
 		'render'    	=> 'simplecatch_infinite_scroll_render',
         'footer'        => 'page'
     ) );
-			
-	
+
+
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
 	add_theme_support( 'post-thumbnails' );
-	
+
 	/* We'll be using post thumbnails for custom features images on posts under blog category.
 	 * Larger images will be auto-cropped to fit.
 	 */
 	set_post_thumbnail_size( 210, 210 );
-	
+
 	// Add Simple Catch's custom image sizes
 	add_image_size( 'featured', 210, 210, true); // uses on homepage featured image
 	add_image_size( 'slider', 976, 313, true); // uses on Featured Slider on Homepage Header
-	
+
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
 	 * Setup title support for theme
-	 * Supported from WordPress version 4.1 onwards 
+	 * Supported from WordPress version 4.1 onwards
 	 * More Info: https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
 	 */
-	add_theme_support( 'title-tag' );	
-		
+	add_theme_support( 'title-tag' );
+
 	// remove wordpress version from header for security concern
 	remove_action( 'wp_head', 'wp_generator' );
- 
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'simple-catch' ) );
-	
-	// Add support for custom backgrounds	
+
+	// Add support for custom backgrounds
 	add_theme_support( 'custom-background' );
-	
+
 	// The default header text color
 	define( 'HEADER_TEXTCOLOR', '444' );
-	
-	// Add support for custom header	
-	add_theme_support( 'custom-header', array( 
+
+	// Add support for custom header
+	add_theme_support( 'custom-header', array(
 		// Header image random rotation default
 		'random-default'			=> false,
 		// Header image flex width
@@ -133,8 +133,18 @@ function simplecatch_setup() {
 		'admin-head-callback'		=> 'simplecatch_admin_header_style',
 		// Admin preview style callback
 		'admin-preview-callback'	=> 'simplecatch_admin_header_image'
-	) );	
-	
+	) );
+
+	//@remove Remove check when WordPress 4.8 is released
+	if ( function_exists( 'has_custom_logo' ) ) {
+		/**
+		* Setup Custom Logo Support for theme
+		* Supported from WordPress version 4.5 onwards
+		* More Info: https://make.wordpress.org/core/2016/03/10/custom-logo/
+		*/
+		add_theme_support( 'custom-logo' );
+	}
+
 } // simplecatch_setup
 endif;
 
@@ -148,7 +158,7 @@ if ( ! function_exists( 'simplecatch_header_style' ) ) :
 function simplecatch_header_style() {
 
 	$text_color = get_header_textcolor();
-	
+
 	// If no custom options for text are set, let's bail.
 	if ( $text_color == HEADER_TEXTCOLOR )
 		return;
@@ -165,8 +175,8 @@ function simplecatch_header_style() {
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-	<?php 
-	
+	<?php
+
 		// If the user has set a custom color for the text use that
 		else :
 	?>
@@ -188,7 +198,7 @@ if ( ! function_exists( 'simplecatch_admin_header_style' ) ) :
  * @since Simple Catch 2.7
  */
 function simplecatch_admin_header_style() {
-	
+
 			$color = get_header_textcolor();
 ?>
 	<style type="text/css">
@@ -277,7 +287,7 @@ if ( ! function_exists( 'simplecatch_admin_header_image' ) ) :
 *
  * @since Simple Catch 2.7
  */
-function simplecatch_admin_header_image() { 
+function simplecatch_admin_header_image() {
 
 	if ( function_exists( 'simplecatch_headerdetails' ) ):
 		simplecatch_headerdetails();
@@ -298,7 +308,7 @@ if ( ! function_exists( 'simplecatch_custom_header_image' ) ) :
  *
  * @since Simple Catch 2.7
  */
-function simplecatch_custom_header_image() { 
+function simplecatch_custom_header_image() {
 
 	if ( get_header_image() ) : ?>
     	<div id="headimg">
@@ -310,3 +320,78 @@ endif; // simplecatch_custom_header_image
 
 // Load Customizer
 require( get_template_directory() . '/functions/panel/customizer/customizer.php' );
+
+
+/**
+ * Migrate Logo to New WordPress core Custom Logo
+ *
+ *
+ * Runs if version number saved in theme_mod "logo_version" doesn't match current theme version.
+ */
+function simplecatch_logo_migrate() {
+	$ver = get_theme_mod( 'logo_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '3.3' ) >= 0 ) {
+		return;
+	}
+
+	/**
+	 * Get Theme Options Values
+	 */
+	global $simplecatch_options_settings;
+   	$options = $simplecatch_options_settings;
+
+   	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'the_custom_logo' ) ) {
+		if( isset( $options['featured_logo_header'] ) && '' != $options['featured_logo_header'] ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$logo = attachment_url_to_postid( $options['featured_logo_header'] );
+
+			if ( is_int( $logo ) ) {
+				set_theme_mod( 'custom_logo', $logo );
+			}
+		}
+
+  		// Update to match logo_version so that script is not executed continously
+		set_theme_mod( 'logo_version', '3.3' );
+	}
+}
+add_action( 'after_setup_theme', 'simplecatch_logo_migrate' );
+
+
+/**
+ * Migrate Custom Favicon to WordPress core Site Icon
+ *
+ * Runs if version number saved in theme_mod "site_icon_version" doesn't match current theme version.
+ */
+function simplecatch_site_icon_migrate() {
+	$ver = get_theme_mod( 'site_icon_version', false );
+
+	//Return if update has already been run
+	if ( version_compare( $ver, '3.3' ) >= 0 ) {
+		return;
+	}
+
+	/**
+	 * Get Theme Options Values
+	 */
+	global $simplecatch_options_settings;
+   	$options = $simplecatch_options_settings;
+
+   	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'has_site_icon' ) ) {
+		if( isset( $options['fav_icon'] ) && '' != $options['fav_icon'] ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$site_icon = attachment_url_to_postid( $options['fav_icon'] );
+
+			if ( is_int( $site_icon ) ) {
+				update_option( 'site_icon', $site_icon );
+			}
+		}
+
+	  	// Update to match site_icon_version so that script is not executed continously
+		set_theme_mod( 'site_icon_version', '3.3' );
+	}
+}
+add_action( 'after_setup_theme', 'simplecatch_site_icon_migrate' );

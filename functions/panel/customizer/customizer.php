@@ -17,7 +17,7 @@
  */
 function simplecatch_customize_register( $wp_customize ) {
 	global $simplecatch_options_settings, $simplecatch_options_defaults;
-    
+
     $options = $simplecatch_options_settings;
 
 	$defaults = $simplecatch_options_defaults;
@@ -26,7 +26,7 @@ function simplecatch_customize_register( $wp_customize ) {
 	require get_template_directory() . '/functions/panel/customizer/customizer-custom-controls.php';
 
 	$theme_slug = 'simplecatch_';
-	
+
 	$settings_page_tabs = array(
 		'theme_options' => array(
 			'id' 			=> 'theme_options',
@@ -47,7 +47,7 @@ function simplecatch_customize_register( $wp_customize ) {
 					'id' 			=> 'default_layout',
 					'title' 		=> __( 'Default Layout', 'simple-catch' ),
 					'description' 	=> '',
-				),	
+				),
 				'homepage_frontpage_settings' => array(
 					'id' 			=> 'homepage_frontpage_settings',
 					'title' 		=> __( 'Homepage / Frontpage Category Setting', 'simple-catch' ),
@@ -67,7 +67,7 @@ function simplecatch_customize_register( $wp_customize ) {
 					'id' 			=> 'feed_redirect',
 					'title' 		=> __( 'Feed Redirect', 'simple-catch' ),
 					'description' 	=> '',
-				),	
+				),
 				'custom_css' => array(
 					'id' 			=> 'custom_css',
 					'title' 		=> __( 'Custom CSS', 'simple-catch' ),
@@ -99,13 +99,13 @@ function simplecatch_customize_register( $wp_customize ) {
 	//Add Panels and sections
 	foreach ( $settings_page_tabs as $panel ) {
 		$wp_customize->add_panel(
-			$theme_slug . $panel['id'], 
+			$theme_slug . $panel['id'],
 			array(
 				'priority' 		=> 200,
 				'capability' 	=> 'edit_theme_options',
 				'title' 		=> $panel['title'],
 				'description' 	=> $panel['description'],
-			) 
+			)
 		);
 
 		// Loop through tabs for sections
@@ -125,7 +125,7 @@ function simplecatch_customize_register( $wp_customize ) {
 				$theme_slug . $section['id'],
 				// parameters
 				$params
-				
+
 			);
 		}
 	}
@@ -138,7 +138,7 @@ function simplecatch_customize_register( $wp_customize ) {
 			'priority'	=> 201,
 			'title' => __( 'Social Links', 'simple-catch' ),
 		)
-		
+
 	);
 
 	$wp_customize->add_section(
@@ -150,32 +150,13 @@ function simplecatch_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Webmaster Tools', 'simple-catch' ),
 			'description' 	=>  sprintf( __( 'Webmaster Tools falls under Plugins Territory according to Theme Review Guidelines in WordPress.org. This feature will be depreciated in future versions from Catch Box free version. If you want this feature, then you can add <a target="_blank" href="%s">Catch Web Tools</a>  plugin.', 'simple-catch' ), esc_url( 'https://wordpress.org/plugins/catch-web-tools/' ) ),
 		)
-		
+
 	);
 
 	$settings_parameters = array(
-		//Header Logo Options
-		'featured_logo_header' => array(
-			'id' 				=> 'featured_logo_header',
-			'title' 			=> __( 'Header Logo', 'simple-catch' ),
-			'description'		=> '',
-			'field_type' 		=> 'image',
-			'sanitize' 			=> 'simplecatch_sanitize_image',
-			'section' 			=> 'title_tagline',
-			'default' 			=> $defaults['featured_logo_header'],
-		),
-		'remove_header_logo' => array(
-			'id' 				=> 'remove_header_logo',
-			'title' 			=> __( 'Check to Disable Site Title', 'simple-catch' ),
-			'description'		=> '',
-			'field_type' 		=> 'checkbox',
-			'sanitize' 			=> 'simplecatch_sanitize_checkbox',
-			'section' 			=> 'title_tagline',
-			'default' 			=> $defaults['remove_header_logo'],
-		),
 		'remove_site_title' => array(
 			'id' 				=> 'remove_site_title',
-			'title' 			=> __( 'Check to Disable Header Logo', 'simple-catch' ),
+			'title' 			=> __( 'Check to Disable Site Title', 'simple-catch' ),
 			'description'		=> '',
 			'field_type' 		=> 'checkbox',
 			'sanitize' 			=> 'simplecatch_sanitize_checkbox',
@@ -284,45 +265,7 @@ function simplecatch_customize_register( $wp_customize ) {
 			'section' 		=> 'colors',
 			'default' 		=> $defaults['reset_color']
 		),
-		
 
-
-		//Favicon
-		'remove_fav_icon' => array(
-			'id' 				=> 'remove_fav_icon',
-			'title' 			=> __( 'Check to Disable Favicon', 'simple-catch' ),
-			'description'		=> '',
-			'field_type' 		=> 'checkbox',
-			'sanitize' 			=> 'simplecatch_sanitize_checkbox',
-			'panel' 			=> 'theme_options',
-			'section' 			=> 'favicon',
-			'default' 			=> $defaults['remove_fav_icon'],
-			'active_callback'	=> 'simplecatch_is_site_icon_active'
-		),
-		'fav_icon' => array(
-			'id' 				=> 'fav_icon',
-			'title' 			=> __( 'Fav Icon', 'simple-catch' ),
-			'description'		=> '',
-			'field_type' 		=> 'image',
-			'sanitize' 			=> 'simplecatch_sanitize_image',
-			'panel' 			=> 'theme_options',
-			'section' 			=> 'favicon',
-			'default' 			=> $defaults['fav_icon'],
-			'active_callback'	=> 'simplecatch_is_site_icon_active'
-		),
-
-		//Web Clip Icon
-		'web_clip' => array(
-			'id' 				=> 'web_clip',
-			'title' 			=> __( 'Web Clip Icon', 'simple-catch' ),
-			'description'		=> '',
-			'field_type' 		=> 'image',
-			'sanitize' 			=> 'simplecatch_sanitize_image',
-			'panel' 			=> 'theme_options',
-			'section' 			=> 'web_clip_icon_options',
-			'default' 			=> $defaults['web_clip'],
-			'active_callback'	=> 'simplecatch_is_site_icon_active'
-		),
 
 		//Layout Options
 		'sidebar_layout' => array(
@@ -336,7 +279,7 @@ function simplecatch_customize_register( $wp_customize ) {
 			'default' 		=> $defaults['sidebar_layout'],
 			'choices'		=> simplecatch_sidebar_layout_options(),
 		),
-		
+
 		//Homepage/Frontpage Settings
 		'front_page_category' => array(
 			'id' 			=> 'front_page_category',
@@ -503,7 +446,7 @@ function simplecatch_customize_register( $wp_customize ) {
 						            'step'  => 1,
 						        	)
 		),
-		
+
 
 		//Social Links
 		'social_facebook' => array(
@@ -773,6 +716,77 @@ function simplecatch_customize_register( $wp_customize ) {
 		),
 	);
 
+	//@remove Remove if block when WordPress 4.8 is released
+	if( !function_exists( 'has_custom_logo' ) ) {
+		$settings_logo = array(
+			//Header Logo Options
+			'featured_logo_header' => array(
+				'id' 				=> 'featured_logo_header',
+				'title' 			=> __( 'Header Logo', 'simple-catch' ),
+				'description'		=> '',
+				'field_type' 		=> 'image',
+				'sanitize' 			=> 'simplecatch_sanitize_image',
+				'section' 			=> 'title_tagline',
+				'default' 			=> $defaults['featured_logo_header'],
+			),
+			'remove_header_logo' => array(
+				'id' 				=> 'remove_header_logo',
+				'title' 			=> __( 'Check to Disable Site Title', 'simple-catch' ),
+				'description'		=> '',
+				'field_type' 		=> 'checkbox',
+				'sanitize' 			=> 'simplecatch_sanitize_checkbox',
+				'section' 			=> 'title_tagline',
+				'default' 			=> $defaults['remove_header_logo'],
+			),
+		);
+
+		$settings_parameters = array_merge( $settings_parameters, $settings_logo);
+	}
+
+	//@remove Remove if block when WordPress 4.8 is released
+	if( !function_exists( 'has_site_icon' ) ) {
+		$settings_favicon = array(
+			//Favicon
+			'remove_fav_icon' => array(
+				'id' 				=> 'remove_fav_icon',
+				'title' 			=> __( 'Check to Disable Favicon', 'simple-catch' ),
+				'description'		=> '',
+				'field_type' 		=> 'checkbox',
+				'sanitize' 			=> 'simplecatch_sanitize_checkbox',
+				'panel' 			=> 'theme_options',
+				'section' 			=> 'favicon',
+				'default' 			=> $defaults['remove_fav_icon'],
+				'active_callback'	=> 'simplecatch_is_site_icon_active'
+			),
+			'fav_icon' => array(
+				'id' 				=> 'fav_icon',
+				'title' 			=> __( 'Fav Icon', 'simple-catch' ),
+				'description'		=> '',
+				'field_type' 		=> 'image',
+				'sanitize' 			=> 'simplecatch_sanitize_image',
+				'panel' 			=> 'theme_options',
+				'section' 			=> 'favicon',
+				'default' 			=> $defaults['fav_icon'],
+				'active_callback'	=> 'simplecatch_is_site_icon_active'
+			),
+
+			//Web Clip Icon
+			'web_clip' => array(
+				'id' 				=> 'web_clip',
+				'title' 			=> __( 'Web Clip Icon', 'simple-catch' ),
+				'description'		=> '',
+				'field_type' 		=> 'image',
+				'sanitize' 			=> 'simplecatch_sanitize_image',
+				'panel' 			=> 'theme_options',
+				'section' 			=> 'web_clip_icon_options',
+				'default' 			=> $defaults['web_clip'],
+				'active_callback'	=> 'simplecatch_is_site_icon_active'
+			),
+		);
+
+		$settings_parameters = array_merge( $settings_parameters, $settings_favicon);
+	}
+
 	foreach ( $settings_parameters as $option ) {
 		if( 'image' == $option['field_type'] ) {
 			$wp_customize->add_setting(
@@ -790,7 +804,7 @@ function simplecatch_customize_register( $wp_customize ) {
 						'label'		=> $option['title'],
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( 'title_tagline' == $option['section'] ){
 				$params['section'] = $option['section'];
 			}
@@ -802,11 +816,11 @@ function simplecatch_customize_register( $wp_customize ) {
 				$params['active_callback'] = $option['active_callback'];
 			}
 
-			$wp_customize->add_control( 
-				new WP_Customize_Image_Control( 
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
 					$params
-				) 
+				)
 			);
 		}
 		else if ('checkbox' == $option['field_type'] ) {
@@ -825,7 +839,7 @@ function simplecatch_customize_register( $wp_customize ) {
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
 						'name'  	=> $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
@@ -837,11 +851,11 @@ function simplecatch_customize_register( $wp_customize ) {
 				$params['section']	= $theme_slug . $option['section'];
 			}
 
-			$wp_customize->add_control( 
-				new Simple_Catch_Customize_Checkbox( 
+			$wp_customize->add_control(
+				new Simple_Catch_Customize_Checkbox(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
-					$params	
-				) 
+					$params
+				)
 			);
 		}
 		else if ('category-multiple' == $option['field_type'] ) {
@@ -863,13 +877,13 @@ function simplecatch_customize_register( $wp_customize ) {
 						'description'	=> $option['description'],
 						'name'	 		=> $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
 
-			$wp_customize->add_control( 
-				new Simple_Catch_Customize_Dropdown_Categories_Control ( 
+			$wp_customize->add_control(
+				new Simple_Catch_Customize_Dropdown_Categories_Control (
 					$wp_customize,
 					$theme_slug . 'options[' . $option['id'] . ']',
 					$params
@@ -919,7 +933,7 @@ function simplecatch_customize_register( $wp_customize ) {
 			$wp_customize->add_control(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
-				$params			
+				$params
 			);
 		}
 	}
@@ -936,7 +950,7 @@ function simplecatch_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[featured_slider][' . $i . ']',
 			array(
 				'label'		=> sprintf( __( '#%s Featured Post ID', 'simple-catch' ), $i ),
@@ -990,7 +1004,7 @@ function simplecatch_customize_register( $wp_customize ) {
         'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',
-    ) ) );  
+    ) ) );
     //Important Links End
 }
 add_action( 'customize_register', 'simplecatch_customize_register' );

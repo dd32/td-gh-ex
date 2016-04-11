@@ -1,8 +1,8 @@
 === simplecatch ===
-* by the Catch Themes team, http://catchthemes.com/
+* by the Catch Themes team, https://catchthemes.com/
 
 == ABOUT Simple Catch==
-Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, Spanish, German, Italian, Danish, Czech, Hungarian and Brazilian Portuguese. Free Support Forum at http://catchthemes.com/support-forum/forum/simple-catch-public/
+Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, Spanish, German, Italian, Danish, Czech, Hungarian and Brazilian Portuguese. Free Support Forum at https://catchthemes.com/support-forum/forum/simple-catch-public/
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2, see file license.txt
@@ -22,7 +22,7 @@ Scripts used in the site are as below:
 3. Pngfix script uses DD_belatedPNG script http://www.dillerdesign.com/experiment/DD_belatedPNG/ licensed  MIT license
 
 == UPGRADE to Simple Catch Pro ==
-Simple Catch Pro is an advance version of our popular theme Simple Catch. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. Some of the additional features includes: Featured Image Slider, Responsive Design, Additional Layout Options, Custom Footer Editor, and Adspace Widget for Advertisement. For more details of Simple Catch Pro theme see this http://catchthemes.com/theme-instructions/simple-catch-pro/
+Simple Catch Pro is an advance version of our popular theme Simple Catch. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. Some of the additional features includes: Featured Image Slider, Responsive Design, Additional Layout Options, Custom Footer Editor, and Adspace Widget for Advertisement. For more details of Simple Catch Pro theme see this https://catchthemes.com/theme-instructions/simple-catch-pro/
 
 == Translation ==
 Simple Catch theme is translation ready. 
@@ -59,10 +59,10 @@ Simple Catch is distributed under the terms of the GNU General Public License v2
 This theme shows the Post ID of the posts in the All Posts table in the WordPress Dashboard. This is added to help the users to use those ids in the featured Post Slider Options in Theme Options Panel.
 
 == Theme Instruction ==
-Check out the theme instruction at http://catchthemes.com/theme-instructions/simple-catch/
+Check out the theme instruction at https://catchthemes.com/theme-instructions/simple-catch/
 
 == Free Support Forum ==
-Access to free support forum at http://catchthemes.com/support-forum/forum/simple-catch-public/
+Access to free support forum at https://catchthemes.com/support-forum/forum/simple-catch-public/
 
 == Installation ==
 
@@ -83,4 +83,4 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/simpl
 5. Complete all of the required inputs on the simplecatch Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
-Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/simple-catch-theme/
+Please refer to changelog.txt file or change log page at https://catchthemes.com/changelogs/simple-catch-theme/

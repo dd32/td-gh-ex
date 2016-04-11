@@ -1,5 +1,10 @@
 == Changelog ==
 
+Version 3.3
+* Updated Media Uploader in Theme Options
+* Updated: Favicon and Web Clip Migration to Site Icon( Core Support )
+* Updated: Logo to Custom Logo( Core Support ) for WP version 4.5
+
 Version 3.2
 * Bug Fixed: Google font now loads in all protocols(previously nor loading properly in https protocol)
 * Enhanced: Google font delivery
