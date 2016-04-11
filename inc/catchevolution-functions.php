@@ -9,52 +9,52 @@
 function catchevolution_scripts_method() {
 	global $post, $wp_query, $catchevolution_options_settings;
    	$options = $catchevolution_options_settings;
-	
+
 	// Get value from Theme Options panel
 	$enableslider = $options[ 'enable_slider' ];
-	
+
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
 	$page_for_posts = get_option('page_for_posts');
-	
+
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
-	
+
 	// Enqueue catchevolution Sytlesheet
 	wp_enqueue_style( 'catchevolution_style', get_stylesheet_uri() );
-	
+
 	// Register JQuery cycle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
-	
+
 	// Slider JS load loop
 	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && $enableslider == 'enable-slider-homepage' ) ) {
-		wp_enqueue_script( 'catchevolution-slider', get_template_directory_uri() . '/js/catchevolution.slider.js', array( 'jquery-cycle' ), '1.0', true );	
+		wp_enqueue_script( 'catchevolution-slider', get_template_directory_uri() . '/js/catchevolution.slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
-	
-	//Responsive 
+
+	//Responsive
 	wp_enqueue_script('catchevolution-menu', get_template_directory_uri() . '/js/catchevolution-menu.min.js', array('jquery'), '1.1.0', true);
 	wp_enqueue_style( 'catchevolution-responsive', get_template_directory_uri() . '/css/responsive.css' );
-	wp_enqueue_script( 'catchevolution-fitvids', get_template_directory_uri() . '/js/catchevolution-fitvids.min.js', array( 'jquery' ), '20130324', true );	
-	
+	wp_enqueue_script( 'catchevolution-fitvids', get_template_directory_uri() . '/js/catchevolution-fitvids.min.js', array( 'jquery' ), '20130324', true );
+
 	/**
 	 * Adds JavaScript to pages with the comment form to support
 	 * sites with threaded comments (when in use).
 	 */
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-	}	
-	
+	}
+
 	//Browser Specific Enqueue Script i.e. for IE 1-6
 	$catchevolution_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
 	if(preg_match('/(?i)msie [1-6]/',$catchevolution_ua)) {
-		wp_enqueue_script( 'catchevolution-pngfix', get_template_directory_uri() . '/js/pngfix.min.js' );	  
+		wp_enqueue_script( 'catchevolution-pngfix', get_template_directory_uri() . '/js/pngfix.min.js' );
 	}
 	//browser specific queuing i.e. for IE 1-8
 	if(preg_match('/(?i)msie [1-8]/',$catchevolution_ua)) {
-	 	wp_enqueue_script( 'catchevolution-ieltc8', get_template_directory_uri() . '/js/catchevolution-ielte8.min.js', array( 'jquery' ), '20130114', false );	
+	 	wp_enqueue_script( 'catchevolution-ieltc8', get_template_directory_uri() . '/js/catchevolution-ielte8.min.js', array( 'jquery' ), '20130114', false );
 		wp_enqueue_style( 'catchevolution-iecss', get_template_directory_uri() . '/css/ie.css' );
 	}
-	
+
 } // catchevolution_scripts_method
 add_action( 'wp_enqueue_scripts', 'catchevolution_scripts_method' );
 
@@ -78,11 +78,11 @@ add_action( 'admin_enqueue_scripts', 'catchevolution_register_js' );
  * Responsive Layout
  *
  * @get the data value of responsive layout from theme options
- * @display responsive meta tag 
+ * @display responsive meta tag
  * @action wp_head
  */
 function catchevolution_responsive() {
-	
+
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 
 } // catchevolution_responsive
@@ -92,36 +92,36 @@ add_filter( 'wp_head', 'catchevolution_responsive', 1 );
 /**
  * Get the favicon Image from theme options
  *
- * @uses favicon 
+ * @uses favicon
  * @get the data value of image from theme options
  * @display favicon
  *
  * @uses default favicon if favicon field on theme options is empty
  *
- * @uses set_transient and delete_transient 
+ * @uses set_transient and delete_transient
  */
 function catchevolution_favicon() {
-	//delete_transient( 'catchevolution_favicon' );	
-	
+	//delete_transient( 'catchevolution_favicon' );
+
 	if( ( !$catchevolution_favicon = get_transient( 'catchevolution_favicon' ) ) ) {
-		
+
 		global $catchevolution_options_settings;
-        $options = $catchevolution_options_settings;	
-		
+        $options = $catchevolution_options_settings;
+
 		echo '<!-- refreshing cache -->';
 		if ( empty( $options[ 'remove_favicon' ] ) ) :
 			// if not empty fav_icon on theme options
 			if ( !empty( $options[ 'fav_icon' ] ) ) :
-				$catchevolution_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />'; 	
+				$catchevolution_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />';
 			else:
 				// if empty fav_icon on theme options, display default fav icon
 				$catchevolution_favicon = '<link rel="shortcut icon" href="'. get_template_directory_uri() .'/images/favicon.ico" type="image/x-icon" />';
 			endif;
-		endif;		
-		
-		set_transient( 'catchevolution_favicon', $catchevolution_favicon, 86940 );	
-	}	
-	echo $catchevolution_favicon ;	
+		endif;
+
+		set_transient( 'catchevolution_favicon', $catchevolution_favicon, 86940 );
+	}
+	echo $catchevolution_favicon ;
 } // catchevolution_favicon
 
 //Load Favicon in Header Section
@@ -138,11 +138,11 @@ add_action( 'admin_head', 'catchevolution_favicon' );
  */
 function catchevolution_enqueue_color_scheme() {
 	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;	
+    $options = $catchevolution_options_settings;
 	$color_scheme = $options['color_scheme'];
 
 	if ( 'dark' == $color_scheme )
-		wp_enqueue_style( 'dark', get_template_directory_uri() . '/colors/dark.css', array(), null );	
+		wp_enqueue_style( 'dark', get_template_directory_uri() . '/colors/dark.css', array(), null );
 
 	do_action( 'catchevolution_enqueue_color_scheme', $color_scheme );
 }
@@ -155,30 +155,30 @@ add_action( 'wp_enqueue_scripts', 'catchevolution_enqueue_color_scheme' );
  * @since Catch Evolution Pro 1.0
  */
 function catchevolution_inline_css() {
-	//delete_transient( 'catchevolution_inline_css' );	
-	
+	//delete_transient( 'catchevolution_inline_css' );
+
 	global $catchevolution_options_settings, $catchevolution_options_defaults;
-	$options = $catchevolution_options_settings;	
+	$options = $catchevolution_options_settings;
 	$defaults = $catchevolution_options_defaults;
-		
-	if ( ( !$catchevolution_inline_css = get_transient( 'catchevolution_inline_css' ) ) && ( !empty( $options[ 'disable_header' ] ) || !empty( $options[ 'custom_css' ] ) ) ) {		
+
+	if ( ( !$catchevolution_inline_css = get_transient( 'catchevolution_inline_css' ) ) && ( !empty( $options[ 'disable_header' ] ) || !empty( $options[ 'custom_css' ] ) ) ) {
 		echo '<!-- refreshing cache -->' . "\n";
-			
+
 		$catchevolution_inline_css = '<!-- '.get_bloginfo('name').' inline CSS Styles -->' . "\n";
-		$catchevolution_inline_css	.= '<style type="text/css" media="screen">' . "\n";		
-		
+		$catchevolution_inline_css	.= '<style type="text/css" media="screen">' . "\n";
+
 		//Disable Header
 		if( !empty( $options[ 'disable_header' ] ) ) {
 			$catchevolution_inline_css	.=  "#branding { display: none; }" . "\n";
-		}	
-			
+		}
+
 		//Custom CSS Option
 		if( !empty( $options[ 'custom_css' ] ) ) {
 			$catchevolution_inline_css	.=  $options['custom_css'] . "\n";
-		}				
-		
+		}
+
 		$catchevolution_inline_css	.= '</style>' . "\n";
-			
+
 		set_transient( 'catchevolution_inline_css', $catchevolution_inline_css, 86940 );
 	}
 	echo $catchevolution_inline_css;
@@ -195,10 +195,10 @@ add_action('wp_head', 'catchevolution_inline_css');
 function catchevolution_excerpt_length( $length ) {
 	global $catchevolution_options_settings;
     $options = $catchevolution_options_settings;
-	
+
 	if( empty( $options['excerpt_length'] ) )
 		$options = catchevolution_get_default_theme_options();
-		
+
 	$length = $options['excerpt_length'];
 	return $length;
 }
@@ -250,7 +250,7 @@ if ( ! function_exists( 'catchevolution_content_nav' ) ) :
  */
 function catchevolution_content_nav( $nav_id ) {
 	global $wp_query;
-	
+
 	/**
 	 * Check Jetpack Infinite Scroll
 	 * if it's active then disable pagination
@@ -261,27 +261,27 @@ function catchevolution_content_nav( $nav_id ) {
 			return false;
 		}
 	}
-	
+
 	$nav_class = 'site-navigation paging-navigation';
 	if ( is_single() )
 		$nav_class = 'site-navigation post-navigation';
-	
+
 	if ( $wp_query->max_num_pages > 1 ) { ?>
         <nav role="navigation" id="<?php echo $nav_id; ?>">
         	<h3 class="assistive-text"><?php _e( 'Post navigation', 'catch-evolution' ); ?></h3>
-			<?php if ( function_exists('wp_pagenavi' ) )  { 
+			<?php if ( function_exists('wp_pagenavi' ) )  {
                 wp_pagenavi();
             }
-            elseif ( function_exists('wp_page_numbers' ) ) { 
+            elseif ( function_exists('wp_page_numbers' ) ) {
                 wp_page_numbers();
             }
-            else { ?>	
+            else { ?>
                 <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-evolution' ) ); ?></div>
                 <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-evolution' ) ); ?></div>
-            <?php 
+            <?php
             } ?>
-        </nav><!-- #nav -->	
-	<?php 
+        </nav><!-- #nav -->
+	<?php
 	}
 }
 endif; // catchevolution_content_nav
@@ -407,7 +407,7 @@ function catchevolution_comment( $comment, $args, $depth ) {
 endif; // ends check for catchevolution_comment()
 
 
-if ( ! function_exists( 'catchevolution_posted_on' ) ) : 
+if ( ! function_exists( 'catchevolution_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  * Create your own catchevolution_posted_on to override in a child theme
@@ -416,12 +416,12 @@ if ( ! function_exists( 'catchevolution_posted_on' ) ) :
  */
 function catchevolution_posted_on() {
 	/* Check Author URL to Support Google Authorship
-	* 
+	*
 	* By deault the author will link to author archieve page
 	* But if the author have added their Website in Profile page then it will link to author website
-	*/	
+	*/
 	if ( get_the_author_meta( 'user_url' ) != '' ) {
-		$catchevolution_author_url = 	esc_url( get_the_author_meta( 'user_url' ) );						  
+		$catchevolution_author_url = 	esc_url( get_the_author_meta( 'user_url' ) );
 	}
 	else {
 		$catchevolution_author_url = esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) );
@@ -434,7 +434,7 @@ function catchevolution_posted_on() {
 		$catchevolution_author_url,
 		esc_attr( sprintf( __( 'View all posts by %s', 'catch-evolution' ), get_the_author() ) ),
 		get_the_author()
-	);	
+	);
 }
 endif;
 
@@ -447,56 +447,36 @@ endif;
  * @since Catch Evolution 1.0
  */
 function catchevolution_body_classes( $classes ) {
-	global $post, $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;	
-	$themeoption_layout = $options['sidebar_layout'];
-	
 	if ( !is_active_sidebar( 'catchevolution_woocommerce_sidebar' ) && ( class_exists( 'Woocommerce' ) && is_woocommerce() ) ) {
 		$classes[] = 'woocommerce-nosidebar';
 	}
-	
-	if ( has_nav_menu( 'top', 'catch-evolution' ) && !empty ( $header_logo ) ) { 
+
+	if ( has_nav_menu( 'top', 'catch-evolution' ) && !empty ( $header_logo ) ) {
 		$classes[] = 'has-header-top menu-logo';
 	}
 	elseif ( has_nav_menu( 'top', 'catch-evolution' ) && empty ( $header_logo ) ) {
 		$classes[] = 'has-header-top';
 	}
-	
-	if ( !empty( $options['disable_header'] ) ) { 
+
+	if ( !empty( $options['disable_header'] ) ) {
 		$classes[] = 'disable-header';
 	}
-	
-	if ( $post)  {
- 		if ( is_attachment() ) { 
-			$parent = $post->post_parent;
-			$layout = get_post_meta( $parent,'catchevolution-sidebarlayout', true );
-		} else {
-			$layout = get_post_meta( $post->ID,'catchevolution-sidebarlayout', true ); 
-		}
-	}
 
-	if ( empty( $layout ) || ( !is_page() && !is_single() && 'product' != get_post_type() ) ) {
-		$layout='default';
-	}	
-	if ( $layout == 'three-columns' || ( $layout=='default' && $themeoption_layout == 'three-columns' ) || is_page_template( 'page-three-columns.php' ) ) {
+	$layout = catchevolution_get_theme_layout();
+
+	if ( $layout == 'three-columns' ) {
 		$classes[] = 'three-columns';
 	}
-	elseif ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar' ) || is_page_template( 'page-disable-sidebar.php' ) ) {
+	elseif ( $layout == 'no-sidebar' ) {
 		$classes[] = 'no-sidebar';
 	}
-	elseif ( $layout == 'no-sidebar-one-column' || ( $layout=='default' && $themeoption_layout == 'no-sidebar-one-column' ) || is_page_template( 'page-onecolumn.php' ) ) {
-		$classes[] = 'no-sidebar one-column';
-	}
-	elseif ( $layout == 'no-sidebar-full-width' || ( $layout=='default' && $themeoption_layout == 'no-sidebar-full-width' )  || is_page_template( 'page-fullwidth.php' ) ) {
-		$classes[] = 'no-sidebar full-width';
-	}
-	elseif ( $layout == 'left-sidebar' || ( $layout=='default' && $themeoption_layout == 'left-sidebar' ) ) {
+	elseif ( $layout == 'left-sidebar' ) {
 		$classes[] = 'left-sidebar';
 	}
-	elseif ( $layout == 'right-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar' ) ) {
+	elseif ( $layout == 'right-sidebar' ) {
 		$classes[] = 'right-sidebar';
-	}	
-	
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'catchevolution_body_classes' );
@@ -505,7 +485,7 @@ add_filter( 'body_class', 'catchevolution_body_classes' );
 /**
  * Adds in post and Page ID when viewing lists of posts and pages
  * This will help the admin to add the post ID in featured slider
- * 
+ *
  * @param mixed $post_columns
  * @return post columns
  */
@@ -537,17 +517,17 @@ add_action( 'admin_head-edit.php', 'catchevolution_posts_id_column_css' );
  */
 
 function catchevolution_pass_slider_value() {
-	
+
 	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;	
-	
+    $options = $catchevolution_options_settings;
+
 	$transition_effect = $options[ 'transition_effect' ];
-	
+
 	$transition_delay = $options[ 'transition_delay' ] * 1000;
-	
+
 	$transition_duration = $options[ 'transition_duration' ] * 1000;
-	
-	wp_localize_script( 
+
+	wp_localize_script(
 		'catchevolution-slider',
 		'js_value',
 		array(
@@ -555,9 +535,9 @@ function catchevolution_pass_slider_value() {
 			'transition_delay' => $transition_delay,
 			'transition_duration' => $transition_duration
 		)
-		
+
 	);
-	
+
 }//catchevolution_pass_slider_value
 
 
@@ -572,23 +552,23 @@ if ( ! function_exists( 'catchevolution_sliders' ) ) :
  *
  * @uses set_transient and delete_transient
  */
-function catchevolution_sliders() {	
+function catchevolution_sliders() {
 
 	global $post, $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;	
+    $options = $catchevolution_options_settings;
 	$postperpage = $options[ 'slider_qty' ];
-	$layout = $options[ 'sidebar_layout' ];	
-	
+	$layout = $options[ 'sidebar_layout' ];
+
 	//delete_transient( 'catchevolution_sliders' );
-	
-	// This function passes the value of slider effect to js file 
+
+	// This function passes the value of slider effect to js file
     if( function_exists( 'catchevolution_pass_slider_value' ) ) {
       	catchevolution_pass_slider_value();
   	}
-		
+
 	if( ( !$catchevolution_sliders = get_transient( 'catchevolution_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
 		echo '<!-- refreshing cache -->';
-		
+
 		$catchevolution_sliders = '
 		<div id="slider" class="post-slider">
 			<section id="slider-wrap">';
@@ -598,12 +578,12 @@ function catchevolution_sliders() {
 				'orderby' 		 => 'post__in',
 				'ignore_sticky_posts' => 1 // ignore sticky posts
 			));
-				
+
 			$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
 				$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title( $post->ID ) ) );
-				
+
 				if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
-				
+
 				$catchevolution_sliders .= '
 				<div class="'.$classes.'">
 					<a href="'.get_permalink().'" title="'.sprintf( esc_attr__( 'Permalink to %s', 'catch-evolution' ), the_title_attribute( 'echo=0' ) ).'" rel="bookmark">
@@ -624,25 +604,25 @@ function catchevolution_sliders() {
 		</div> <!-- #featured-slider -->';
 		set_transient( 'catchevolution_sliders', $catchevolution_sliders, 86940 );
 	}
-	echo $catchevolution_sliders;	
-} 
-endif; //catchevolution_sliders	
+	echo $catchevolution_sliders;
+}
+endif; //catchevolution_sliders
 
 
 if ( ! function_exists( 'catchevolution_default_sliders' ) ) :
 /**
  * Shows Default Slider Demo if there is not iteam in Featured Post Slider
  */
-function catchevolution_default_sliders() { 
+function catchevolution_default_sliders() {
 	//delete_transient( 'catchevolution_default_sliders' );
-	
-	// This function passes the value of slider effect to js file 
+
+	// This function passes the value of slider effect to js file
     if( function_exists( 'catchevolution_pass_slider_value' ) ) {
       	catchevolution_pass_slider_value();
-  	}	
-	
+  	}
+
 	if ( !$catchevolution_default_sliders = get_transient( 'catchevolution_default_sliders' ) ) {
-		echo '<!-- refreshing cache -->';	
+		echo '<!-- refreshing cache -->';
 		$catchevolution_default_sliders = '
 		<div id="slider">
 			<section id="slider-wrap">
@@ -660,12 +640,12 @@ function catchevolution_default_sliders() {
 			<div id="controllers">
 			</div><!-- #controllers -->
 		</div><!-- #slider -->';
-			
+
 	set_transient( 'catchevolution_default_sliders', $catchevolution_default_sliders, 86940 );
 	}
-	echo $catchevolution_default_sliders;	
+	echo $catchevolution_default_sliders;
 }
-endif; //catchevolution_default_sliders	
+endif; //catchevolution_default_sliders
 
 
 if ( ! function_exists( 'catchevolution_slider_display' ) ) :
@@ -674,19 +654,19 @@ if ( ! function_exists( 'catchevolution_slider_display' ) ) :
  */
 function catchevolution_slider_display() {
 	global $post, $wp_query, $catchevolution_options_settings;
-   	$options = $catchevolution_options_settings;	
+   	$options = $catchevolution_options_settings;
 	$enableslider = $options[ 'enable_slider' ];
 	$featuredslider = $options[ 'featured_slider' ];
-	
+
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 	
-		
+	$page_for_posts = get_option('page_for_posts');
+
 	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();	
-	
+	$page_id = $wp_query->get_queried_object_id();
+
 	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && $enableslider == 'enable-slider-homepage' ) ) :
-		
+
 		// Select Slider
 		if ( !empty( $featuredslider ) ) {
 			catchevolution_sliders();
@@ -694,9 +674,9 @@ function catchevolution_slider_display() {
 		else {
 			catchevolution_default_sliders();
 		}
-		
+
 	endif;
-	
+
 }
 endif; //catchevolution_slider_display
 
@@ -717,13 +697,13 @@ function catchevolution_alter_home( $query ){
 			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
 		}
 	}
-	
+
 	if ( !in_array( '0', $cats ) ) {
 		if( $query->is_main_query() && $query->is_home() ) {
 			$query->query_vars['category__in'] = $options[ 'front_page_category' ];
 		}
-	}	
-	
+	}
+
 }
 add_action( 'pre_get_posts','catchevolution_alter_home' );
 
@@ -783,9 +763,9 @@ function catchevolution_comment_form_fields( $fields ) {
     $fields['author'] = '<p class="comment-form-author"><label for="author">' . esc_attr__( 'Name', 'catch-evolution' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
         '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
     $fields['email'] = '<p class="comment-form-email"><label for="email">' . esc_attr__( 'Email', 'catch-evolution' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-        '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>'; 
+        '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
     return $fields;
-	
+
 }
 endif; //catchevolution_comment_form_fields
 
@@ -795,11 +775,11 @@ add_filter( 'comment_form_default_fields', 'catchevolution_comment_form_fields' 
 /**
  * Redirect WordPress Feeds To FeedBurner
  */
-function catchevolution_rss_redirect() {	
+function catchevolution_rss_redirect() {
 	global $catchevolution_options_settings;
     $options = $catchevolution_options_settings;
 
-	
+
     if ($options['feed_url']) {
 		$url = 'Location: '.$options['feed_url'];
 		if ( is_feed() && !preg_match('/feedburner|feedvalidator/i', $_SERVER['HTTP_USER_AGENT']))
@@ -815,14 +795,14 @@ add_action('template_redirect', 'catchevolution_rss_redirect');
 /**
  * shows footer content
  */
-function catchevolution_footer_content() { 
-	//delete_transient( 'catchevolution_footer_content_new' );	
-	
+function catchevolution_footer_content() {
+	//delete_transient( 'catchevolution_footer_content_new' );
+
 	if ( ( !$catchevolution_footer_content = get_transient( 'catchevolution_footer_content_new' ) ) ) {
 		echo '<!-- refreshing cache -->';
 
 		$catchevolution_footer_content = catchevolution_assets();
-		
+
     	set_transient( 'catchevolution_footer_content_new', $catchevolution_footer_content, 86940 );
     }
 	echo $catchevolution_footer_content;
@@ -840,14 +820,14 @@ if ( ! function_exists( 'catchevolution_social_networks' ) ) :
   */
 function catchevolution_social_networks() {
 	//delete_transient( 'catchevolution_social_networks' );
-	
+
 	// get the data value from theme options
 	global $catchevolution_options_settings;
-	$options = $catchevolution_options_settings;	
+	$options = $catchevolution_options_settings;
 
     $elements = array();
 
-	$elements = array( 	$options[ 'social_facebook' ], 
+	$elements = array( 	$options[ 'social_facebook' ],
 						$options[ 'social_twitter' ],
 						$options[ 'social_googleplus' ],
 						$options[ 'social_linkedin' ],
@@ -885,11 +865,11 @@ function catchevolution_social_networks() {
 				break;
 			}
 		}
-	}	
-	
+	}
+
 	if ( ( !$catchevolution_social_networks = get_transient( 'catchevolution_social_networks' ) ) && ( $flag == 1 ) )  {
 		echo '<!-- refreshing cache -->';
-		
+
 		$catchevolution_social_networks .='
 		<div class="social-profile"><ul>';
 
@@ -917,7 +897,7 @@ function catchevolution_social_networks() {
 			if ( !empty( $options[ 'social_pinterest' ] ) ) {
 				$catchevolution_social_networks .=
 					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Pinterest', 'catch-evolution' ).'</a></li>';
-			}				
+			}
 			//Youtube
 			if ( !empty( $options[ 'social_youtube' ] ) ) {
 				$catchevolution_social_networks .=
@@ -927,12 +907,12 @@ function catchevolution_social_networks() {
 			if ( !empty( $options[ 'social_vimeo' ] ) ) {
 				$catchevolution_social_networks .=
 					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Vimeo', 'catch-evolution' ).'</a></li>';
-			}				
+			}
 			//Slideshare
 			if ( !empty( $options[ 'social_aim' ] ) ) {
 				$catchevolution_social_networks .=
 					'<li class="aim"><a href="'.esc_url( $options[ 'social_aim' ] ).'" title="'. esc_attr__( 'AIM', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'AIM', 'catch-evolution' ).'</a></li>';
-			}				
+			}
 			//MySpace
 			if ( !empty( $options[ 'social_myspace' ] ) ) {
 				$catchevolution_social_networks .=
@@ -962,12 +942,12 @@ function catchevolution_social_networks() {
 			if ( !empty( $options[ 'social_wordpress' ] ) ) {
 				$catchevolution_social_networks .=
 					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'WordPress', 'catch-evolution' ).'</a></li>';
-			}				
+			}
 			//RSS
 			if ( !empty( $options[ 'social_rss' ] ) ) {
 				$catchevolution_social_networks .=
 					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'RSS', 'catch-evolution' ).'</a></li>';
-			}	
+			}
 			//Slideshare
 			if ( !empty( $options[ 'social_slideshare' ] ) ) {
 				$catchevolution_social_networks .=
@@ -977,7 +957,7 @@ function catchevolution_social_networks() {
 			if ( !empty( $options[ 'social_instagram' ] ) ) {
 				$catchevolution_social_networks .=
 					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Instagram', 'catch-evolution' ).'</a></li>';
-			}				
+			}
 			//Skype
 			if ( !empty( $options[ 'social_skype' ] ) ) {
 				$catchevolution_social_networks .=
@@ -987,17 +967,17 @@ function catchevolution_social_networks() {
 			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
 				$catchevolution_social_networks .=
 					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'Soundcloud', 'catch-evolution' ) .'" target="_blank">'. esc_attr__( 'Soundcloud', 'catch-evolution' ) .'</a></li>';
-			}	
+			}
 			//Email
 			if ( !empty( $options[ 'social_email' ] )  && is_email( $options[ 'social_email' ] ) ) {
 				$catchevolution_social_networks .=
 					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catch-evolution' ) .'" target="_blank">'. esc_attr__( 'Email', 'catch-evolution' ) .'</a></li>';
-			}	
+			}
 			//Contact
 			if ( !empty( $options[ 'social_contact' ] ) ) {
 				$catchevolution_social_networks .=
 					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'catch-evolution' ) .'">'. esc_attr__( 'Contact', 'catch-evolution' ) .'</a></li>';
-			}	
+			}
 			//Xing
 			if ( !empty( $options[ 'social_xing' ] ) ) {
 				$catchevolution_social_networks .=
@@ -1011,8 +991,8 @@ function catchevolution_social_networks() {
 
 			$catchevolution_social_networks .='
 		</ul></div>';
-		
-		set_transient( 'catchevolution_social_networks', $catchevolution_social_networks, 86940 );	 
+
+		set_transient( 'catchevolution_social_networks', $catchevolution_social_networks, 86940 );
 	}
 	echo $catchevolution_social_networks;
 }
@@ -1023,13 +1003,13 @@ endif; //catchevolution_social_networks
  * Footer Social Icons
  *
  */
-function catchevolution_footer_social() {		
+function catchevolution_footer_social() {
 	global $catchevolution_options_settings;
-	$options = $catchevolution_options_settings;	
-	
+	$options = $catchevolution_options_settings;
+
 	if ( !empty( $options[ 'disable_footer_social' ] ) ) :
 		return catchevolution_social_networks();
-	endif;	
+	endif;
 }
 add_action( 'catchevolution_site_generator', 'catchevolution_footer_social', 10 );
 
@@ -1044,14 +1024,14 @@ if ( ! function_exists( 'catchevolution_social_search' ) ) :
   */
 function catchevolution_social_search() {
 	//delete_transient( 'catchevolution_social_search' );
-	
+
 	// get the data value from theme options
 	global $catchevolution_options_settings;
-	$options = $catchevolution_options_settings;	
+	$options = $catchevolution_options_settings;
 
     $elements = array();
 
-	$elements = array( 	$options[ 'social_facebook' ], 
+	$elements = array( 	$options[ 'social_facebook' ],
 						$options[ 'social_twitter' ],
 						$options[ 'social_googleplus' ],
 						$options[ 'social_linkedin' ],
@@ -1089,14 +1069,14 @@ function catchevolution_social_search() {
 				break;
 			}
 		}
-	}	
-	
+	}
+
 	if ( ( !$catchevolution_social_search = get_transient( 'catchevolution_social_search' ) ) && ( $flag == 1 ) )  {
 		echo '<!-- refreshing cache -->';
-		
+
 		$catchevolution_social_search .='
 		<div class="social-profile"><ul>';
-	
+
 			//facebook
 			if ( !empty( $options[ 'social_facebook' ] ) ) {
 				$catchevolution_social_search .=
@@ -1121,7 +1101,7 @@ function catchevolution_social_search() {
 			if ( !empty( $options[ 'social_pinterest' ] ) ) {
 				$catchevolution_social_search .=
 					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Pinterest', 'catch-evolution' ).'</a></li>';
-			}				
+			}
 			//Youtube
 			if ( !empty( $options[ 'social_youtube' ] ) ) {
 				$catchevolution_social_search .=
@@ -1131,12 +1111,12 @@ function catchevolution_social_search() {
 			if ( !empty( $options[ 'social_vimeo' ] ) ) {
 				$catchevolution_social_search .=
 					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Vimeo', 'catch-evolution' ).'</a></li>';
-			}				
+			}
 			//Slideshare
 			if ( !empty( $options[ 'social_aim' ] ) ) {
 				$catchevolution_social_search .=
 					'<li class="aim"><a href="'.esc_url( $options[ 'social_aim' ] ).'" title="'. esc_attr__( 'AIM', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'AIM', 'catch-evolution' ).'</a></li>';
-			}				
+			}
 			//MySpace
 			if ( !empty( $options[ 'social_myspace' ] ) ) {
 				$catchevolution_social_search .=
@@ -1166,12 +1146,12 @@ function catchevolution_social_search() {
 			if ( !empty( $options[ 'social_wordpress' ] ) ) {
 				$catchevolution_social_search .=
 					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'WordPress', 'catch-evolution' ).'</a></li>';
-			}				
+			}
 			//RSS
 			if ( !empty( $options[ 'social_rss' ] ) ) {
 				$catchevolution_social_search .=
 					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'RSS', 'catch-evolution' ).'</a></li>';
-			}	
+			}
 			//Slideshare
 			if ( !empty( $options[ 'social_slideshare' ] ) ) {
 				$catchevolution_social_search .=
@@ -1181,7 +1161,7 @@ function catchevolution_social_search() {
 			if ( !empty( $options[ 'social_instagram' ] ) ) {
 				$catchevolution_social_search .=
 					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Instagram', 'catch-evolution' ).'</a></li>';
-			}				
+			}
 			//Skype
 			if ( !empty( $options[ 'social_skype' ] ) ) {
 				$catchevolution_social_search .=
@@ -1191,7 +1171,7 @@ function catchevolution_social_search() {
 			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
 				$catchevolution_social_search .=
 					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'Soundcloud', 'catch-evolution' ) .'" target="_blank">'. esc_attr__( 'Soundcloud', 'catch-evolution' ) .'</a></li>';
-			}	
+			}
 			//Email
 			if ( !empty( $options[ 'social_email' ] )  && is_email( $options[ 'social_email' ] ) ) {
 				$catchevolution_social_search .=
@@ -1206,19 +1186,19 @@ function catchevolution_social_search() {
 			if ( !empty( $options[ 'social_xing' ] ) ) {
 				$catchevolution_social_search .=
 					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Xing', 'catch-evolution' ).'</a></li>';
-			}	
+			}
 			//Meetup
 			if ( !empty( $options[ 'social_meetup' ] ) ) {
 				$catchevolution_social_search .=
 					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Meetup', 'catch-evolution' ).'</a></li>';
-			}	
+			}
 			//Search Icon
 			$catchevolution_social_search .= '<li class="social-search">' . get_search_form( false ) . '</li>';
-	
+
 			$catchevolution_social_search .='
 		</ul></div>';
-		
-		set_transient( 'catchevolution_social_search', $catchevolution_social_search, 86940 );	 
+
+		set_transient( 'catchevolution_social_search', $catchevolution_social_search, 86940 );
 	}
 	echo $catchevolution_social_search;
 }
@@ -1237,19 +1217,19 @@ function catchevolution_site_verification() {
 	//delete_transient( 'catchevolution_site_verification' );
 
 	if ( ( !$catchevolution_site_verification = get_transient( 'catchevolution_site_verification' ) ) )  {
-		
+
 		// get the data value from theme options
 		global $catchevolution_options_settings;
 		$options = $catchevolution_options_settings;
-		echo '<!-- refreshing cache -->';	
-		
+		echo '<!-- refreshing cache -->';
+
 		$catchevolution_site_verification = '';
-		
+
 		//site stats, analytics header code
 		if ( !empty( $options['analytic_header'] ) ) {
 			$catchevolution_site_verification .=  $options[ 'analytic_header' ] ;
 		}
-		
+
 		set_transient( 'catchevolution_site_verification', $catchevolution_site_verification, 86940 );
 	}
 	echo $catchevolution_site_verification;
@@ -1266,20 +1246,20 @@ add_action('wp_head', 'catchevolution_site_verification');
  * @uses set_transient and delete_transient
  */
 function catchevolution_footercode() {
-	//delete_transient( 'catchevolution_footercode' );	
-	
+	//delete_transient( 'catchevolution_footercode' );
+
 	if ( ( !$catchevolution_footercode = get_transient( 'catchevolution_footercode' ) ) ) {
 
 		// get the data value from theme options
 		global $catchevolution_options_settings;
    	 	$options = $catchevolution_options_settings;
-		echo '<!-- refreshing cache -->';	
-		
+		echo '<!-- refreshing cache -->';
+
 		//site stats, analytics header code
 		if ( !empty( $options['analytic_footer'] ) ) {
 			$catchevolution_footercode =  $options[ 'analytic_footer' ] ;
 		}
-			
+
 		set_transient( 'catchevolution_footercode', $catchevolution_footercode, 86940 );
 	}
 	echo $catchevolution_footercode;
@@ -1290,37 +1270,37 @@ add_action('wp_footer', 'catchevolution_footercode');
 /**
  * Get the Web Clip Icon Image from theme options
  *
- * @uses web_clip and remove_web_clip 
+ * @uses web_clip and remove_web_clip
  * @get the data value of image from theme options
  * @display favicon
  *
  * @uses default Web Click Icon if web_clip field on theme options is empty
  *
- * @uses set_transient and delete_transient 
+ * @uses set_transient and delete_transient
  */
 function catchevolution_web_clip() {
-	//delete_transient( 'catchevolution_web_clip' );	
-	
+	//delete_transient( 'catchevolution_web_clip' );
+
 	if( ( !$catchevolution_web_clip = get_transient( 'catchevolution_web_clip' ) ) ) {
-		
+
 		global $catchevolution_options_settings;
-        $options = $catchevolution_options_settings;	
-		
+        $options = $catchevolution_options_settings;
+
 		//echo '<!-- refreshing cache -->';
 		if ( empty( $options[ 'remove_web_clip' ] ) ) :
 			// if not empty fav_icon on theme options
 			if ( !empty( $options[ 'web_clip' ] ) ) :
-				$catchevolution_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />'; 	
+				$catchevolution_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';
 			else:
 				// if empty fav_icon on theme options, display default fav icon
 				$catchevolution_web_clip = '<link rel="apple-touch-icon-precomposed" href="'. get_template_directory_uri() .'/images/apple-touch-icon.png" />';
 			endif;
-		endif;	
-	
-		
-		set_transient( 'catchevolution_web_clip', $catchevolution_web_clip, 86940 );	
-	}	
-	echo $catchevolution_web_clip ;	
+		endif;
+
+
+		set_transient( 'catchevolution_web_clip', $catchevolution_web_clip, 86940 );
+	}
+	echo $catchevolution_web_clip ;
 } // catchevolution_web_clip
 
 //Load WebClip in Header Section
@@ -1334,7 +1314,7 @@ if ( ! function_exists( 'catchevolution_footer_menu' ) ) :
  * @Hooked in catchevolution_after_footer_sidebar
  * @since Catch Evolution 1.2.1
  */
-function catchevolution_footer_menu() { 
+function catchevolution_footer_menu() {
 
 	if ( has_nav_menu( 'footer', 'catch-evolution' ) ) {
 		?>
@@ -1342,12 +1322,12 @@ function catchevolution_footer_menu() {
 			<h3 class="assistive-text"><?php _e( 'Footer menu', 'catch-evolution' ); ?></h3>
 			<?php wp_nav_menu( array( 'theme_location'  => 'footer', 'container_class' => 'menu-footer-container wrapper', 'depth' => 1 ) );  ?>
 		</nav>
-	<?php } 
-	
+	<?php }
+
 } // catchevolution_footer_menu
 endif;
 
-add_action( 'catchevolution_after_footer_sidebar', 'catchevolution_footer_menu', 10 ); 
+add_action( 'catchevolution_after_footer_sidebar', 'catchevolution_footer_menu', 10 );
 
 /**
  * Third Sidebar
@@ -1357,6 +1337,6 @@ add_action( 'catchevolution_after_footer_sidebar', 'catchevolution_footer_menu',
  */
 
 function catchevolution_third_sidebar() {
-	get_sidebar( 'third' ); 
-}  
+	get_sidebar( 'third' );
+}
 add_action( 'catchevolution_after_contentsidebarwrap', 'catchevolution_third_sidebar', 10 );

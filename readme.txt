@@ -1,8 +1,8 @@
 = Catch Evolution =
-* Catch Evolution by the Catch Themes, http://catchthemes.com/
+* Catch Evolution by the Catch Themes, https://catchthemes.com/
 
 == ABOUT Catch Evolution ==
-Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Danish, Italian, Japanese, Russian, Czech, Bosnian and Brazilian Portuguese. If you need support with this theme, please go to http://catchthemes.com/support/
+Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Danish, Italian, Japanese, Russian, Czech, Bosnian and Brazilian Portuguese. If you need support with this theme, please go to https://catchthemes.com/support/
 
 == Translation ==
 Catch Evolution theme is translation ready.
@@ -43,7 +43,7 @@ Scripts used in the site are as below:
 
 
 == Post ID shown in the All Posts Table ==
-This theme shows the post id of the posts in the all posts table in the dashboard.This is added to help the users to use those ids in the Featured Post Slider Options.== Theme Support ==Theme support at http://catchthemes.com/support/
+This theme shows the post id of the posts in the all posts table in the dashboard.This is added to help the users to use those ids in the Featured Post Slider Options.== Theme Support ==Theme support at https://catchthemes.com/support/
 
 == Menus ==
 There are 4 Menus registered in this theme. Fixed Header Top, Primary, Secondary and Footer menu.Fixed Header Top, Primary and Secondary menu is dull drop down menu while the Footer menu displays only parent menu and no drop down.Only Primary Menu and Fixed Header Top menus are visible in responsive mobile devices
@@ -58,4 +58,4 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
-Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/catch-evolution-change-log/
+Please refer to changelog.txt file or change log page at https://catchthemes.com/changelogs/catch-evolution-change-log/

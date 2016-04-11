@@ -39,57 +39,27 @@
  */
 
 
-/**
- * Sets up the content width value based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 678;	
-	
-
 if ( ! function_exists( 'catchevolution_content_width' ) ) :
-/**
- * Change the content width based on the Theme Settings and Page/Post Settings
- */
-function catchevolution_content_width() {
-	
-	//Getting Ready to load data from Theme Options Panel
-	global $post, $wp_query, $content_width, $catchevolution_options_settings;
-   	$options = $catchevolution_options_settings;
-	$themeoption_layout = $options['sidebar_layout'];
-	
-	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
+	/**
+	 * Set the content width in pixels, based on the theme's design and stylesheet.
+	 *
+	 * Priority 0 to make it available to lower priority callbacks.
+	 *
+	 * @global int $content_width
+	 */
+	function catchevolution_content_width() {
+		$layout  = catchevolution_get_theme_layout();
 
-	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();
-	
-	// Blog Page setting in Reading Settings
-	if ( $page_id == $page_for_posts ) {
-		$layout = get_post_meta( $page_for_posts,'catchevolution-sidebarlayout', true );
-	}	
-	// Settings for page/post/attachment
-	elseif ( $post) {
- 		if ( is_attachment() ) { 
-			$parent = $post->post_parent;
-			$layout = get_post_meta( $parent,'catchevolution-sidebarlayout', true );
-		} else {
-			$layout = get_post_meta( $post->ID,'catchevolution-sidebarlayout', true ); 
+		$content_width = 678;
+
+		if ( $layout == 'three-columns' ) {
+			$content_width = 454; /* pixels */
 		}
-	}
-	
-	if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-		$layout='default';
-	}	
 
-	if ( ( $layout == 'three-columns' || ( $layout=='default' && $themeoption_layout == 'three-columns') ) ) {
-		$content_width = 454; /* pixels */	
+		$GLOBALS['content_width'] = apply_filters( 'catchevolution_content_width', $content_width );
 	}
-	
-}
-endif; // catchevolution_content_width
-
-add_action( 'template_redirect', 'catchevolution_content_width' );
+endif;
+add_action( 'after_setup_theme', 'catchevolution_content_width', 0 );
 
 
 /**
@@ -125,14 +95,14 @@ function catchevolution_setup() {
 	 * If you're building a theme based on Catch Evolution, use a find and replace
 	 * to change 'catch-evolution' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'catch-evolution', get_template_directory() . '/languages' );	
+	load_theme_textdomain( 'catch-evolution', get_template_directory() . '/languages' );
 
 	/**
      * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
      * @see http://codex.wordpress.org/Function_Reference/add_editor_style
      */
 	add_editor_style();
-	
+
 	// Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -142,20 +112,20 @@ function catchevolution_setup() {
 	* hard-coded <title> tag in the document head, and expect WordPress to
 	* provide it for us.
 	*/
-	add_theme_support( 'title-tag' );	
+	add_theme_support( 'title-tag' );
 
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image', 'chat' ) );
-	
+
 	// Load up theme options defaults
 	require( get_template_directory() . '/inc/panel/catchevolution-themeoptions-defaults.php' );
-	
+
 	// Load up our theme options page and related code.
 	require( get_template_directory() . '/inc/panel/theme-options.php' );
-	
+
 	// Register Sidebar and Widget.
 	require( get_template_directory() . '/inc/catchevolution-widgets.php' );
-	
+
 	// Load up our Catch Evolution Pro's Functions
 	require( get_template_directory() . '/inc/catchevolution-functions.php' );
 
@@ -164,18 +134,18 @@ function catchevolution_setup() {
 
 	/**
      * This feature enables Jetpack plugin Infinite Scroll
-     */		
+     */
     add_theme_support( 'infinite-scroll', array(
-		'type'           => 'click',										
+		'type'           => 'click',
         'container'      => 'content',
         'footer_widgets' => array( 'sidebar-2', 'sidebar-3', 'sidebar-4' ),
         'footer'         => 'page',
     ) );
-	
+
 	/**
      * This feature enables custom-menus support for a theme.
      * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
-     */		
+     */
 	register_nav_menus(array(
 		'top' 		=> __( 'Fixed Header Top Menu', 'catch-evolution' ),
 		'primary' 	=> __( 'Primary Menu', 'catch-evolution' ),
@@ -183,26 +153,92 @@ function catchevolution_setup() {
 		'footer'	=> __( 'Footer Menu', 'catch-evolution' )
 	) );
 
-	// Add support for custom backgrounds	
-	add_theme_support( 'custom-background' ); 
+	// Add support for custom backgrounds
+	add_theme_support( 'custom-background' );
 
 	/**
      * This feature enables post-thumbnail support for a theme.
      * @see http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
      */
 	add_theme_support( 'post-thumbnails' );
-	
+
 	//Featued Posts for Normal Width
 	add_image_size( 'featured-slider', 754, 400, true ); // Used for featured posts if a large-feature doesn't exist
-	
+
 	//Featured Posts for Full Width
 	add_image_size( 'featured-slider-larger', 1190, 500, true ); // Used for featured posts if a large-feature doesn't exist
-	
+
 	//Plugin Support for WooCommerce
 	catchevolution_woocommerce_activated();
 
+	//@remove Remove check when WordPress 4.8 is released
+	if ( function_exists( 'has_custom_logo' ) ) {
+		/**
+		* Setup Custom Logo Support for theme
+		* Supported from WordPress version 4.5 onwards
+		* More Info: https://make.wordpress.org/core/2016/03/10/custom-logo/
+		*/
+		add_theme_support( 'custom-logo' );
+	}
 }
 endif; // catchevolution_setup
+
+
+if ( ! function_exists( 'catchevolution_get_theme_layout' ) ) :
+	/**
+	 * Returns Theme Layout prioritizing the meta box layouts
+	 *
+	 * @uses  get_options
+	 *
+	 * @action wp_head
+	 *
+	 * @since Catch Evolution Pro 3.5
+	 */
+	function catchevolution_get_theme_layout() {
+		$id = '';
+
+		global $post, $wp_query;
+
+	    // Front page displays in Reading Settings
+		$page_on_front  = get_option('page_on_front') ;
+		$page_for_posts = get_option('page_for_posts');
+
+		// Get Page ID outside Loop
+		$page_id = $wp_query->get_queried_object_id();
+
+		// Blog Page or Front Page setting in Reading Settings
+		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
+	        $id = $page_id;
+	    }
+	    else if ( is_singular() ) {
+	 		if ( is_attachment() ) {
+				$id = $post->post_parent;
+			}
+			else {
+				$id = $post->ID;
+			}
+		}
+
+		//Get appropriate metabox value of layout
+		if ( '' != $id ) {
+			$layout = get_post_meta( $id, 'catchevolution-sidebarlayout', true );
+		}
+		else {
+			$layout = 'default';
+		}
+
+		//Load options data
+		global $catchevolution_options_settings;
+   		$options = $catchevolution_options_settings;
+
+   		//check empty and load default
+		if ( empty( $layout ) || 'default' == $layout ) {
+			$layout = $options['sidebar_layout'];
+		}
+
+		return $layout;
+	}
+endif; //catchevolution_get_theme_layout
 
 
 /**
@@ -214,12 +250,12 @@ require( get_template_directory() . '/inc/custom-header.php' );
 if ( ! function_exists( 'catchevolution_woocommerce_activated' ) ) :
 /**
  * Add Suport for WooCommerce Plugin
- */	
+ */
 function catchevolution_woocommerce_activated() {
-	if ( class_exists( 'woocommerce' ) ) { 
-		add_theme_support( 'woocommerce' );			
+	if ( class_exists( 'woocommerce' ) ) {
+		add_theme_support( 'woocommerce' );
 	    require( get_template_directory() . '/inc/catchevolution-woocommerce.php' );
-	} 
+	}
 }
 endif; // catchevolution_woocommerce_activated
 
@@ -239,6 +275,83 @@ function catchevolution_html_validate( $text ) {
 }
 add_filter( 'the_category', 'catchevolution_html_validate' );
 add_filter( 'wp_list_categories', 'catchevolution_html_validate' );
+
+
+/**
+ * Migrate Logo to New WordPress core Custom Logo
+ *
+ * Runs if version number saved in theme_mod "logo_version" doesn't match current theme version.
+ */
+function catchevolution_logo_migrate() {
+	$ver = get_theme_mod( 'logo_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '3.2' ) >= 0 ) {
+		return;
+	}
+
+	/**
+	 * Get Theme Options Values
+	 */
+	global $catchevolution_options_settings;
+   	$options = $catchevolution_options_settings;
+
+   	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'the_custom_logo' ) ) {
+		if( isset( $options['featured_logo_header'] ) && '' != $options['featured_logo_header'] ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$logo = attachment_url_to_postid( $options['featured_logo_header'] );
+
+			if ( is_int( $logo ) ) {
+				set_theme_mod( 'custom_logo', $logo );
+			}
+		}
+
+		// Delete transients after migration
+		delete_transient( 'catchevolution_logo' );
+
+  		// Update to match logo_version so that script is not executed continously
+		set_theme_mod( 'logo_version', '3.6' );
+	}
+}
+add_action( 'after_setup_theme', 'catchevolution_logo_migrate' );
+
+
+/**
+ * Migrate Custom Favicon to WordPress core Site Icon
+ *
+ * Runs if version number saved in theme_mod "site_icon_version" doesn't match current theme version.
+ */
+function catchevolution_site_icon_migrate() {
+	$ver = get_theme_mod( 'site_icon_version', false );
+
+	//Return if update has already been run
+	if ( version_compare( $ver, '3.6' ) >= 0 ) {
+		return;
+	}
+
+	/**
+	 * Get Theme Options Values
+	 */
+	global $catchevolution_options_settings;
+   	$options = $catchevolution_options_settings;
+
+   	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'has_site_icon' ) ) {
+		if( isset( $options['fav_icon'] ) && '' != $options['fav_icon'] ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$site_icon = attachment_url_to_postid( $options['fav_icon'] );
+
+			if ( is_int( $site_icon ) ) {
+				update_option( 'site_icon', $site_icon );
+			}
+		}
+
+	  	// Update to match site_icon_version so that script is not executed continously
+		set_theme_mod( 'site_icon_version', '3.6' );
+	}
+}
+add_action( 'after_setup_theme', 'catchevolution_site_icon_migrate' );
 
 /**
  * Customizer Options

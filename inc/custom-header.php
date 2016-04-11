@@ -19,25 +19,25 @@
  * @since Catch Evolution Pro 1.0
  */
 function catchevolution_custom_header_setup() {
-	
+
 	$args = array(
 		// Text color and image (empty to use none).
 		'default-text-color'     => '000',
-		
+
 		// Header image default
 		'default-image'			=> get_template_directory_uri() . '/images/headers/buddha.jpg',
-		
+
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 400,
 		'width'                  => 1600,
-		
+
 		// Support flexible height and width.
 		'flex-height'            => true,
 		'flex-width'             => true,
-			
+
 		// Random image rotation off by default.
-		'random-default'         => false,	
-			
+		'random-default'         => false,
+
 		// Callbacks for styling the header and the admin preview.
 		'wp-head-callback'       => 'catchevolution_header_style',
 		'admin-head-callback'    => 'catchevolution_admin_header_style',
@@ -60,11 +60,11 @@ if ( ! function_exists( 'catchevolution_header_style' ) ) :
  */
 function catchevolution_header_style() {
 	global $catchevolution_options_settings, $catchevolution_options_defaults;
-    $options = $catchevolution_options_settings;	
+    $options = $catchevolution_options_settings;
 	$defaults = $catchevolution_options_defaults;
 
 	$text_color = get_header_textcolor();
-	
+
 	// If no custom options for text are set, let's bail.
 	if ( $text_color == HEADER_TEXTCOLOR )
 		return;
@@ -81,8 +81,8 @@ function catchevolution_header_style() {
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-	<?php 
-	
+	<?php
+
 		// If the user has set a custom color for the text use that
 		else :
 	?>
@@ -104,7 +104,7 @@ if ( ! function_exists( 'catchevolution_admin_header_style' ) ) :
  */
 function catchevolution_admin_header_style() {
 	global $catchevolution_options_settings, $catchevolution_options_defaults;
-    $options = $catchevolution_options_settings;	
+    $options = $catchevolution_options_settings;
 	$defaults = $catchevolution_options_defaults;
 ?>
 	<style type="text/css">
@@ -147,7 +147,7 @@ function catchevolution_admin_header_style() {
 		#site-description {
 			color: #<?php echo get_header_textcolor(); ?>;
 		}
-		
+
 	<?php endif; ?>
 	#headimg img {
 		height: auto;
@@ -175,7 +175,7 @@ function catchevolution_admin_header_image() { ?>
 		else
 			$style = ' style="display:none"';
 		?>
-        
+
         <?php catchevolution_headerdetails(); ?>
 
 		<?php if ( $image ) : ?>
@@ -193,31 +193,31 @@ if ( ! function_exists( 'catchevolution_header_top_menu' ) ) :
  * @Hooked in catchevolution_after_headercontent
  * @since Catch Evolution 1.0
  */
-function catchevolution_header_top_menu() { 
+function catchevolution_header_top_menu() {
 	// Getting data from Theme Options
 	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings; 
-	
+    $options = $catchevolution_options_settings;
+
 	if ( has_nav_menu( 'top', 'catch-evolution' ) ) : ?>
         <div id="fixed-header-top" class="full-menu">
             <div class="wrapper">
-                <?php 
+                <?php
 				echo '<nav id="access-top" role="navigation">';
 					$args = array(
 						'theme_location'    => 'top',
 						'container' 		=> false,
-						'items_wrap'        => '<ul id="top-nav" class="menu">%3$s</ul>' 
+						'items_wrap'        => '<ul id="top-nav" class="menu">%3$s</ul>'
 					);
 					wp_nav_menu( $args );
 				echo '</nav><!-- #access -->
             </div><!-- .wrapper -->
         </div><!-- #header-menu -->';
-	endif; 
-	
+	endif;
+
 } // catchevolution_header_top_menu
 endif;
 
-add_action( 'catchevolution_before_header', 'catchevolution_header_top_menu', 10 ); 
+add_action( 'catchevolution_before_header', 'catchevolution_header_top_menu', 10 );
 
 
 if ( ! function_exists( 'catchevolution_logo' ) ) :
@@ -230,60 +230,95 @@ if ( ! function_exists( 'catchevolution_logo' ) ) :
  * @since Catch Evolution Pro 1.0
  */
 function catchevolution_logo() {
-		
-	delete_transient( 'catchevolution_logo' );	
-	
+
+	delete_transient( 'catchevolution_logo' );
+
 	// Getting data from Theme Options
 	global $catchevolution_options_settings, $catchevolution_options_defaults;
-    $options = $catchevolution_options_settings;	
+    $options = $catchevolution_options_settings;
 	$defaults = $catchevolution_options_defaults;
 	$sitedetails = $options['site_title_above'];
 	$text_color = get_header_textcolor();
 	$seperatelogo = $options['seperate_logo'];
-	
-	
+
+
 	$removetitle = $options['remove_site_title'];
 	$removedesc = $options['remove_site_description'];
-	
-	
-	
-	if ( ( !$catchevolution_logo = get_transient( 'catchevolution_logo' ) ) && empty( $options[ 'remove_header_logo' ] ) ) {
-		echo '<!-- refreshing cache -->';	
-		
-		$catchevolution_logo = '';
-		
-		if ( empty( $sitedetails ) && ( 'blank' == $text_color ) ) {
-			$classses = 'title-disable';
+
+
+
+	if ( !$catchevolution_logo = get_transient( 'catchevolution_logo' ) ) {
+		echo '<!-- refreshing transient cache -->';
+
+		// Getting data from Theme Options
+		global $catchevolution_options_settings;
+		$options      = $catchevolution_options_settings;
+		$sitedetails  = $options['site_title_above'];
+		$seperatelogo = $options['seperate_logo'];
+		$removetitle  = $options['remove_site_title'];
+		$removedesc   = $options['remove_site_description'];
+
+		// Check Logo
+		if ( function_exists( 'has_custom_logo' ) ) {
+			if ( has_custom_logo() ) {
+				$text_color   = get_header_textcolor();
+
+				if ( empty( $sitedetails ) && ( 'blank' == $text_color ) ) {
+					$classses = 'title-disable';
+				}
+				elseif ( empty( $sitedetails ) && ( 'blank' != $text_color ) && ( empty( $removetitle ) || empty( $removedesc ) ) && empty( $seperatelogo ) ) {
+					$classses = 'title-right';
+				}
+				elseif ( !empty( $sitedetails ) && ( 'blank' != $text_color ) && ( empty( $removetitle ) || empty( $removedesc ) ) && empty( $seperatelogo ) ) {
+					$classses = 'title-left';
+				}
+				else {
+					$classses = 'clear';
+				}
+
+				$catchevolution_logo = '
+				<div id="site-logo" class="' . esc_attr( $classses ) . '">' . get_custom_logo() . '</div><!-- #site-logo -->';
+			}
 		}
-		elseif ( empty( $sitedetails ) && ( 'blank' != $text_color ) && ( empty( $removetitle ) || empty( $removedesc ) ) && empty( $seperatelogo ) ) {
-			$classses = 'title-right';
+		else if( empty( $options[ 'remove_header_logo' ] ) ) {
+			//@remove else if block when WP v4.8 is released
+			echo '<!-- refreshing cache -->';
+
+			$catchevolution_logo = '';
+
+			if ( empty( $sitedetails ) && ( 'blank' == $text_color ) ) {
+				$classses = 'title-disable';
+			}
+			elseif ( empty( $sitedetails ) && ( 'blank' != $text_color ) && ( empty( $removetitle ) || empty( $removedesc ) ) && empty( $seperatelogo ) ) {
+				$classses = 'title-right';
+			}
+			elseif ( !empty( $sitedetails ) && ( 'blank' != $text_color ) && ( empty( $removetitle ) || empty( $removedesc ) ) && empty( $seperatelogo ) ) {
+				$classses = 'title-left';
+			}
+			else {
+				$classses = 'clear';
+			}
+
+			$catchevolution_logo .= '<div id="site-logo" class="' . $classses . '">';
+
+			$catchevolution_logo .= '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
+
+			if ( !empty( $options[ 'featured_logo_header' ] ) ) {
+
+				$catchevolution_logo .= '<img src="' . esc_url( $options['featured_logo_header'] ) . '" alt="' . get_bloginfo( 'name' ) . '" />';
+
+			} else {
+
+				// if empty featured_logo_header on theme options, display default logo
+				$catchevolution_logo .='<img src="' . esc_url( $defaults['featured_logo_header'] ) . '" alt="' . get_bloginfo( 'name' ) . '" />';
+			}
+
+			$catchevolution_logo .= '</a></div><!-- #site-logo -->';
 		}
-		elseif ( !empty( $sitedetails ) && ( 'blank' != $text_color ) && ( empty( $removetitle ) || empty( $removedesc ) ) && empty( $seperatelogo ) ) {
-			$classses = 'title-left';
-		}
-		else {
-			$classses = 'clear';
-		}
-		
-		$catchevolution_logo .= '<div id="site-logo" class="' . $classses . '">';
-			
-		$catchevolution_logo .= '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
-		
-		if ( !empty( $options[ 'featured_logo_header' ] ) ) {
-		
-			$catchevolution_logo .= '<img src="' . esc_url( $options['featured_logo_header'] ) . '" alt="' . get_bloginfo( 'name' ) . '" />';
-		
-		} else {
-			
-			// if empty featured_logo_header on theme options, display default logo
-			$catchevolution_logo .='<img src="' . esc_url( $defaults['featured_logo_header'] ) . '" alt="' . get_bloginfo( 'name' ) . '" />';
-		}
-		
-		$catchevolution_logo .= '</a></div><!-- #site-logo -->';
 
 		set_transient( 'catchevolution_logo', $catchevolution_logo, 86940 );
 	}
-	echo $catchevolution_logo;	
+	echo $catchevolution_logo;
 } // catchevolution_logo
 endif;
 
@@ -297,30 +332,30 @@ if ( ! function_exists( 'catchevolution_site_details' ) ) :
  *
  * @since Catch Evolution Pro 1.0
  */
-function catchevolution_site_details() { 
+function catchevolution_site_details() {
 	// Getting data from Theme Options
 	global $catchevolution_options_settings;
     $options = $catchevolution_options_settings;
 	$removetitle = $options['remove_site_title'];
 	$removedesc = $options['remove_site_description'];
 	$seperatelogo = $options['seperate_logo'];
-	
-	if ( !empty ( $seperatelogo ) ) { 
+
+	if ( !empty ( $seperatelogo ) ) {
 		$classses = 'clear';
-	} 
-	else { 
+	}
+	else {
 		$classses = 'normal';
 	};
-?> 
+?>
 	<?php if ( empty( $removetitle ) || empty( $removedesc ) ) { ?>
 		<div id="site-details" class="<?php echo $classses; ?>">
 			<?php if ( empty( $removetitle ) ) : ?>
 				<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php endif; ?>  
+			<?php endif; ?>
 			<?php if ( empty( $removedesc ) ) : ?>
 				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 			<?php endif; ?>
-		</div>   
+		</div>
 		<?php
 	}
 }
@@ -335,14 +370,14 @@ if ( ! function_exists( 'catchevolution_headerdetails' ) ) :
  * @since Catch Evolution 1.0
  */
 function catchevolution_headerdetails() {
-	
+
 	// Getting data from Theme Options
 	global $catchevolution_options_settings;
 	$options = $catchevolution_options_settings;
 	$sitedetails = $options['site_title_above'];
-	
+
 	echo '<div id="logo-wrap" class="clearfix">';
-	
+
 	if ( empty( $sitedetails ) ) {
 		echo catchevolution_logo();
 		echo catchevolution_site_details();
@@ -350,13 +385,13 @@ function catchevolution_headerdetails() {
 		echo catchevolution_site_details();
 		echo catchevolution_logo();
 	}
-	
+
 	echo '</div><!-- #logo-wrap -->';
 
-} 
+}
 endif; //catchevolution_headerdetails
 
-add_action( 'catchevolution_headercontent', 'catchevolution_headerdetails', 10 ); 
+add_action( 'catchevolution_headercontent', 'catchevolution_headerdetails', 10 );
 
 
 if ( ! function_exists( 'catchevolution_header_search' ) ) :
@@ -370,7 +405,7 @@ function catchevolution_header_search() { ?>
 		<?php get_search_form(); ?>
 	</aside>
     <?php
-}        
+}
 endif; //catchevolution_header_search
 
 
@@ -380,10 +415,10 @@ endif; //catchevolution_header_search
  * @Hooked in catchevolution_headercontent
  * @since Catch Evolution 1.0
  */
-add_action( 'catchevolution_headercontent', 'catchevolution_header_rightpsidebar', 15 ); 
+add_action( 'catchevolution_headercontent', 'catchevolution_header_rightpsidebar', 15 );
 function catchevolution_header_rightpsidebar() {
-	get_sidebar( 'headerright' ); 
-}  
+	get_sidebar( 'headerright' );
+}
 
 
 if ( ! function_exists( 'catchevolution_featured_header' ) ) :
@@ -394,9 +429,9 @@ if ( ! function_exists( 'catchevolution_featured_header' ) ) :
  * @Hooked in catchevolution_headercontent
  * @since Catch Evolution 1.0
  */
-function catchevolution_featured_header() { 
+function catchevolution_featured_header() {
 	global $wp_query, $post, $paged, $_wp_default_headers;
-	
+
 	// Header Image
 	$header_image_path = get_header_image();
 
@@ -413,13 +448,13 @@ function catchevolution_featured_header() {
 		<div id="header-image">
 			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
 		</div>
-	<?php endif; 
-	
-	
+	<?php endif;
+
+
 } // catchevolution_featured_header
 endif;
 
-add_action( 'catchevolution_after_headercontent', 'catchevolution_featured_header', 10 ); 
+add_action( 'catchevolution_after_headercontent', 'catchevolution_featured_header', 10 );
 
 
 if ( ! function_exists( 'catchevolution_header_menu' ) ) :
@@ -429,13 +464,13 @@ if ( ! function_exists( 'catchevolution_header_menu' ) ) :
  * @Hooked in catchevolution_after_headercontent
  * @since Catch Evolution 1.0
  */
-function catchevolution_header_menu() { 
+function catchevolution_header_menu() {
 	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;	
+    $options = $catchevolution_options_settings;
 	$header_menu = $options['disable_header_menu'];
-	
+
 	if ( empty ( $header_menu ) ) : ?>
-	
+
     <div id="header-menu">
         <nav id="access" role="navigation">
             <h3 class="assistive-text"><?php _e( 'Primary menu', 'catch-evolution' ); ?></h3>
@@ -443,13 +478,13 @@ function catchevolution_header_menu() {
             <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catch-evolution' ); ?>"><?php _e( 'Skip to primary content', 'catch-evolution' ); ?></a></div>
             <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catch-evolution' ); ?>"><?php _e( 'Skip to secondary content', 'catch-evolution' ); ?></a></div>
             <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
-        
+
             <?php
-                if ( has_nav_menu( 'primary', 'catch-evolution' ) ) { 
+                if ( has_nav_menu( 'primary', 'catch-evolution' ) ) {
                     $args = array(
                         'theme_location'    => 'primary',
-                        'container_class' 	=> 'menu-header-container wrapper', 
-                        'items_wrap'        => '<ul class="menu">%3$s</ul>' 
+                        'container_class' 	=> 'menu-header-container wrapper',
+                        'items_wrap'        => '<ul class="menu">%3$s</ul>'
                     );
                     wp_nav_menu( $args );
                 }
@@ -457,11 +492,11 @@ function catchevolution_header_menu() {
                     echo '<div class="menu-header-container wrapper">';
                         wp_page_menu( array( 'menu_class'  => 'menu' ) );
                     echo '</div>';
-                } ?> 		
-                   
+                } ?>
+
             </nav><!-- #access -->
-            
-        <?php if ( has_nav_menu( 'secondary', 'catch-evolution' ) ) { 
+
+        <?php if ( has_nav_menu( 'secondary', 'catch-evolution' ) ) {
 			// Check is footer menu is enable or not
 			$options = get_option( 'catchevolution_options' );
 			if ( !empty ($options ['enable_menus'] ) ) :
@@ -477,12 +512,12 @@ function catchevolution_header_menu() {
                     <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catch-evolution' ); ?>"><?php _e( 'Skip to secondary content', 'catch-evolution' ); ?></a></div>
                 <?php wp_nav_menu( array( 'theme_location'  => 'secondary', 'container_class' 	=> 'menu-secondary-container wrapper' ) );  ?>
             </nav>
-        <?php }	
-		
+        <?php }
+
 	echo '</div><!-- #header-menu -->';
-	
+
 	endif;
-	
+
 } // catchevolution_header_menu
 endif;
 
