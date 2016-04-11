@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.8
+- Fixed:   404 page now displays correctly. Issue introduced in previous version now corrected.
+
 Version 1.3.7
 - Fixed:   Comments form updated to use custom arguments. PHP notices fixed for comments form - changes made comments.php file.
 
