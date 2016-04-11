@@ -17,7 +17,7 @@
  */
 function catchflames_customize_register( $wp_customize ) {
 	global $catchflames_options_settings, $catchflames_options_defaults;
-    
+
     $options = $catchflames_options_settings;
 
 	$defaults = $catchflames_options_defaults;
@@ -64,7 +64,7 @@ function catchflames_customize_register( $wp_customize ) {
 					'id' 			=> 'layout_options',
 					'title' 		=> __( 'Layout Options', 'catch-flames' ),
 					'description' 	=> '',
-				),				
+				),
 				'homepage_settings' => array(
 					'id' 			=> 'homepage_settings',
 					'title' 		=> __( 'Homepage / Frontpage Category Setting', 'catch-flames' ),
@@ -134,13 +134,13 @@ function catchflames_customize_register( $wp_customize ) {
 	//Add Panels and sections
 	foreach ( $settings_page_tabs as $panel ) {
 		$wp_customize->add_panel(
-			$theme_slug . $panel['id'], 
+			$theme_slug . $panel['id'],
 			array(
 				'priority' 		=> 200,
 				'capability' 	=> 'edit_theme_options',
 				'title' 		=> $panel['title'],
 				'description' 	=> $panel['description'],
-			) 
+			)
 		);
 
 		// Loop through tabs for sections
@@ -160,19 +160,19 @@ function catchflames_customize_register( $wp_customize ) {
 				$theme_slug . $section['id'],
 				// parameters
 				$params
-				
+
 			);
 		}
 	}
 
 	//Add Menu Options Section Without a panel
-	$wp_customize->add_section( 
-		'catchflames_menu_options', 
+	$wp_customize->add_section(
+		'catchflames_menu_options',
 		array(
 			'description'	=> __( 'Extra Menu Options specific to this theme', 'catch-flames' ),
 			'priority' 		=> 105,
 			'title'    		=> __( 'Menu Options', 'catch-flames' ),
-			) 
+			)
 		);
 
 	$settings_parameters = array(
@@ -186,50 +186,6 @@ function catchflames_customize_register( $wp_customize ) {
 			'panel' 			=> 'theme_options',
 			'section' 			=> 'menu_options',
 			'default' 			=> $defaults['disable_header_menu'],
-		),
-
-		//Favicon
-		'remove_favicon' => array(
-			'id' 				=> 'remove_favicon',
-			'title' 			=> __( 'Check to Disable Favicon', 'catch-flames' ),
-			'description'		=> '',
-			'field_type' 		=> 'checkbox',
-			'sanitize' 			=> 'catchflames_sanitize_checkbox',
-			'panel' 			=> 'theme_options',
-			'section' 			=> 'favicon',
-			'default' 			=> $defaults['remove_favicon'],
-		),
-		'fav_icon' => array(
-			'id' 				=> 'fav_icon',
-			'title' 			=> __( 'Fav Icon', 'catch-flames' ),
-			'description'		=> '',
-			'field_type' 		=> 'image',
-			'sanitize' 			=> 'catchflames_sanitize_image',
-			'panel' 			=> 'theme_options',
-			'section' 			=> 'favicon',
-			'default' 			=> $defaults['favicon'],
-		),
-
-		//Web Clip Icon
-		'remove_web_clip' => array(
-			'id' 				=> 'remove_web_clip',
-			'title' 			=> __( 'Check to Disable Web Clip Icon', 'catch-flames' ),
-			'description'		=> '',
-			'field_type' 		=> 'checkbox',
-			'sanitize' 			=> 'catchflames_sanitize_checkbox',
-			'panel' 			=> 'theme_options',
-			'section' 			=> 'web_clip_icon_options',
-			'default' 			=> $defaults['remove_web_clip'],
-		),
-		'web_clip' => array(
-			'id' 				=> 'web_clip',
-			'title' 			=> __( 'Web Clip Icon', 'catch-flames' ),
-			'description'		=> '',
-			'field_type' 		=> 'image',
-			'sanitize' 			=> 'catchflames_sanitize_image',
-			'panel' 			=> 'theme_options',
-			'section' 			=> 'web_clip_icon_options',
-			'default' 			=> $defaults['web_clip'],
 		),
 
 		//Fixed Header Top Options
@@ -262,28 +218,6 @@ function catchflames_customize_register( $wp_customize ) {
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'fixed_header_top_options',
 			'default' 		=> $defaults['top_menu_logo']
-		),
-
-		//Header Options
-		'remove_header_logo' => array(
-			'id' 			=> 'remove_header_logo',
-			'title' 		=> __( 'Check to Disable Header Logo', 'catch-flames' ),
-			'description'	=> '',
-			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchflames_sanitize_checkbox',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'header_options',
-			'default' 		=> $defaults['remove_header_logo']
-		),
-		'featured_logo_header' => array(
-			'id' 			=> 'featured_logo_header',
-			'title' 		=> __( 'Logo', 'catch-flames' ),
-			'description'	=> '',
-			'field_type' 	=> 'image',
-			'sanitize' 		=> 'catchflames_sanitize_image',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'header_options',
-			'default' 		=> $defaults['featured_logo_header']
 		),
 
 		//Header Image Options
@@ -381,7 +315,7 @@ function catchflames_customize_register( $wp_customize ) {
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'homepage_settings',
 			'default' 		=> $defaults['front_page_category']
-		),		
+		),
 
 		//Excerpt More Settings
 		'more_tag_text' => array(
@@ -784,7 +718,86 @@ function catchflames_customize_register( $wp_customize ) {
 			'section' 			=> 'social_links',
 			'default' 			=> $defaults['enable_specificfeeds'],
 		),
-	);	
+	);
+
+	//@remove Remove if block when WordPress 4.8 is released
+	if( !function_exists( 'has_site_icon' ) ) {
+		$settings_favicon = array(
+			//Favicon
+			'remove_favicon' => array(
+				'id' 				=> 'remove_favicon',
+				'title' 			=> __( 'Check to Disable Favicon', 'catch-flames' ),
+				'description'		=> '',
+				'field_type' 		=> 'checkbox',
+				'sanitize' 			=> 'catchflames_sanitize_checkbox',
+				'panel' 			=> 'theme_options',
+				'section' 			=> 'favicon',
+				'default' 			=> $defaults['remove_favicon'],
+			),
+			'fav_icon' => array(
+				'id' 				=> 'fav_icon',
+				'title' 			=> __( 'Fav Icon', 'catch-flames' ),
+				'description'		=> '',
+				'field_type' 		=> 'image',
+				'sanitize' 			=> 'catchflames_sanitize_image',
+				'panel' 			=> 'theme_options',
+				'section' 			=> 'favicon',
+				'default' 			=> $defaults['fav_icon'],
+			),
+
+			//Web Clip Icon
+			'remove_web_clip' => array(
+				'id' 				=> 'remove_web_clip',
+				'title' 			=> __( 'Check to Disable Web Clip Icon', 'catch-flames' ),
+				'description'		=> '',
+				'field_type' 		=> 'checkbox',
+				'sanitize' 			=> 'catchflames_sanitize_checkbox',
+				'panel' 			=> 'theme_options',
+				'section' 			=> 'web_clip_icon_options',
+				'default' 			=> $defaults['remove_web_clip'],
+			),
+			'web_clip' => array(
+				'id' 				=> 'web_clip',
+				'title' 			=> __( 'Web Clip Icon', 'catch-flames' ),
+				'description'		=> '',
+				'field_type' 		=> 'image',
+				'sanitize' 			=> 'catchflames_sanitize_image',
+				'panel' 			=> 'theme_options',
+				'section' 			=> 'web_clip_icon_options',
+				'default' 			=> $defaults['web_clip'],
+			),
+		);
+
+		$settings_parameters = array_merge( $settings_parameters, $settings_favicon);
+	}
+
+	//@remove Remove if block when WordPress 4.8 is released
+	if( !function_exists( 'has_custom_logo' ) ) {
+		$settings_logo = array(
+			'remove_header_logo' => array(
+				'id' 			=> 'remove_header_logo',
+				'title' 		=> __( 'Check to Disable Header Logo', 'catch-flames' ),
+				'description'	=> '',
+				'field_type' 	=> 'checkbox',
+				'sanitize' 		=> 'catchflames_sanitize_checkbox',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'header_options',
+				'default' 		=> $defaults['remove_header_logo']
+			),
+			'featured_logo_header' => array(
+				'id' 			=> 'featured_logo_header',
+				'title' 		=> __( 'Logo', 'catch-flames' ),
+				'description'	=> '',
+				'field_type' 	=> 'image',
+				'sanitize' 		=> 'catchflames_sanitize_image',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'header_options',
+				'default' 		=> $defaults['featured_logo_header']
+			),
+		);
+
+		$settings_parameters = array_merge( $settings_parameters, $settings_logo);
+	}
 
 	foreach ( $settings_parameters as $option ) {
 		if( 'image' == $option['field_type'] ) {
@@ -799,15 +812,15 @@ function catchflames_customize_register( $wp_customize ) {
 				)
 			);
 
-			$wp_customize->add_control( 
-				new WP_Customize_Image_Control( 
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
 					array(
 						'label'		=> $option['title'],
 						'section'   => $theme_slug . $option['section'],
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
-					) 
-				) 
+					)
+				)
 			);
 		}
 		else if ('checkbox' == $option['field_type'] ) {
@@ -826,7 +839,7 @@ function catchflames_customize_register( $wp_customize ) {
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
 						'name'  	=> $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
@@ -838,11 +851,11 @@ function catchflames_customize_register( $wp_customize ) {
 				$params['section']	= $theme_slug . $option['section'];
 			}
 
-			$wp_customize->add_control( 
-				new Catchflames_Customize_Checkbox( 
+			$wp_customize->add_control(
+				new Catchflames_Customize_Checkbox(
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
-					$params	
-				) 
+					$params
+				)
 			);
 		}
 		else if ('category-multiple' == $option['field_type'] ) {
@@ -864,13 +877,13 @@ function catchflames_customize_register( $wp_customize ) {
 						'description'	=> $option['description'],
 						'name'	 		=> $theme_slug . 'options[' . $option['id'] . ']',
 					);
-			
+
 			if ( isset( $option['active_callback']  ) ){
 				$params['active_callback'] = $option['active_callback'];
 			}
 
-			$wp_customize->add_control( 
-				new Catchflames_Customize_Dropdown_Categories_Control ( 
+			$wp_customize->add_control(
+				new Catchflames_Customize_Dropdown_Categories_Control (
 					$wp_customize,
 					$theme_slug . 'options[' . $option['id'] . ']',
 					$params
@@ -920,7 +933,7 @@ function catchflames_customize_register( $wp_customize ) {
 			$wp_customize->add_control(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
-				$params			
+				$params
 			);
 		}
 	}
@@ -937,7 +950,7 @@ function catchflames_customize_register( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_control( 
+		$wp_customize->add_control(
 			$theme_slug . 'options[featured_slider_page][' . $i . ']',
 			array(
 				'label'				=> sprintf( __( 'Featured Page Slider #%s', 'catch-flames' ), $i ),
@@ -992,7 +1005,7 @@ function catchflames_customize_register( $wp_customize ) {
         'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',
-    ) ) );  
+    ) ) );
     //Important Links End
 }
 add_action( 'customize_register', 'catchflames_customize_register' );

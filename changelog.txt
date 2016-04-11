@@ -1,11 +1,18 @@
-== Changelog ==
+== Change log ==
+
+Version 2.9
+* Added Swedish translation sv_SE.po and sv_SE.mo
+* Updated: Content Width Implementation
+* Updated: Theme Layout retrieval via function
+* Updated: Favicon and Web Clip Migration to Site Icon( Core Support )
+* Updated: Logo to Custom Logo( Core Support ) for WP version 4.5
 
 Version 2.8.1
 * Updated: Sidr menu script to version 2.1.1.1
 * Updated: Meta viewport for better responsive support
 
 Version 2.8
-* Added Text Domain in style.css 
+* Added Text Domain in style.css
 * Bug Fixed: Customizer Dropdown type saving issue
 * Bug Fixed: Full Content Display changed to Archive Content Layout in customizer
 * Bug Fixed: Theme Instructions and Changelog links in customizer

@@ -37,70 +37,29 @@
  * @subpackage Catch Flames
  * @since Catch Flames 1.0
  */
- 
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 600; /* pixels */
-}	
-	
 
 if ( ! function_exists( 'catchflames_content_width' ) ) :
-/**
- * Change the content width based on the Theme Settings and Page/Post Settings
- */
-function catchflames_content_width() {
-	//Getting Ready to load data from Theme Options Panel
-	global $post, $wp_query, $content_width, $catchflames_options_settings;
-	$options = $catchflames_options_settings;
-	$themeoption_layout = $options['sidebar_layout'];
-	$themeoption_content_layout = $options['content_layout'];
-	
-	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
-	
-	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();
-	
-	// Blog Page setting in Reading Settings
-	if ( $page_id == $page_for_posts ) {
-		$layout = get_post_meta( $page_for_posts,'catchflames-sidebarlayout', true );
-	}	
-	// Front Page setting in Reading Settings
-	elseif ( $page_id == $page_on_front ) {
-		$layout = get_post_meta( $page_on_front,'catchflames-sidebarlayout', true );
-	}		
-	// Settings for page/post/attachment
-	elseif ( is_singular() ) {
-		if ( is_attachment() ) { 
-			$parent = $post->post_parent;
-			$layout = get_post_meta( $parent,'catchflames-sidebarlayout', true );
-		} else {
-			$layout = get_post_meta( $post->ID,'catchflames-sidebarlayout', true ); 
-		}
-	}
-	else {
-		$layout = 'default';	
-	}
-	
-	//check empty and load default
-	if ( empty( $layout ) ) {
-		$layout = 'default';	
-	}
-	
-	// Two Colums: Left and Right Sidebar & One Column: No Sidbear, No Sidebar One Column
-	elseif ( $layout == 'right-sidebar' || $layout == 'left-sidebar' || $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'left-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'no-sidebar' ) ) {
-			$content_width = 710;
-	}
-	
-	
-}
-endif;
+	/**
+	 * Set the content width in pixels, based on the theme's design and stylesheet.
+	 *
+	 * Priority 0 to make it available to lower priority callbacks.
+	 *
+	 * @global int $content_width
+	 */
+	function catchflames_content_width() {
+		$layout  = catchflames_get_theme_layout();
 
-add_action( 'template_redirect', 'catchflames_content_width' );
+		$content_width = 600;
+
+		if ( $layout == 'right-sidebar' || $layout == 'left-sidebar' || $layout == 'no-sidebar' ) {
+			$content_width = 710;
+		}
+
+		$GLOBALS['content_width'] = apply_filters( 'catchflames_content_width', $content_width );
+	}
+endif;
+add_action( 'after_setup_theme', 'catchflames_content_width', 0 );
 
 
 /**
@@ -137,20 +96,20 @@ function catchflames_setup() {
 	 * If you're building a theme based on Catch Flames, use a find and replace
 	 * to change 'catch-flames' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'catch-flames', get_template_directory() . '/languages' );	
+	load_theme_textdomain( 'catch-flames', get_template_directory() . '/languages' );
 
 	/**
      * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
      * @see http://codex.wordpress.org/Function_Reference/add_editor_style
      */
 	add_editor_style();
-	
+
 	// Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'automatic-feed-links' );
 
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image', 'chat' ) );
-	
+
 	/*
 	* Let WordPress manage the document title.
 	* By adding theme support, we declare that this theme does not use a
@@ -158,70 +117,137 @@ function catchflames_setup() {
 	* provide it for us.
 	*/
 	add_theme_support( 'title-tag' );
-		
+
 	// Load up theme options defaults
 	require( get_template_directory() . '/inc/panel/catchflames-themeoptions-defaults.php' );
-	
+
 	// Load up our theme options page and related code.
 	require( get_template_directory() . '/inc/panel/theme-options.php' );
-	
+
 	// Load up our Catch Flames metabox
-	require( get_template_directory() . '/inc/catchflames-metabox.php' );	
-	
+	require( get_template_directory() . '/inc/catchflames-metabox.php' );
+
 	// Load up our Catch Flames Functions
 	require( get_template_directory() . '/inc/catchflames-functions.php' );
-	
+
 	// Load up our Catch Flames Slider Function
-	require( get_template_directory() . '/inc/catchflames-slider.php' );	
-	
+	require( get_template_directory() . '/inc/catchflames-slider.php' );
+
 	// Register Sidebar and Widget.
 	require( get_template_directory() . '/inc/catchflames-widgets.php' );
-	
+
 	// Load up our Catch Flames Menus
-	require( get_template_directory() . '/inc/catchflames-menus.php' );	
+	require( get_template_directory() . '/inc/catchflames-menus.php' );
 
 
 	/**
      * This feature enables Jetpack plugin Infinite Scroll
-     */		
+     */
     add_theme_support( 'infinite-scroll', array(
-		'type'           => 'click',										
+		'type'           => 'click',
         'container'      => 'content',
         'footer_widgets' => array( 'sidebar-2', 'sidebar-3', 'sidebar-4' ),
         'footer'         => 'page',
     ) );
-	
+
 	/**
      * This feature enables custom-menus support for a theme.
      * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
-     */		
+     */
 	register_nav_menus(array(
 		'top' 		=> __( 'Fixed Header Top Menu', 'catch-flames' ),
 		'primary' 	=> __( 'Primary Menu', 'catch-flames' ),
 	) );
 
-	// Add support for custom backgrounds	
+	// Add support for custom backgrounds
 	add_theme_support( 'custom-background' );
-	
+
 	/**
      * This feature enables post-thumbnail support for a theme.
      * @see http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
      */
 	add_theme_support( 'post-thumbnails' );
-	
-	
+
+
 	//Featured Posts for Full Width
 	add_image_size( 'featured-slider-full', 1600, 533, true ); // 1:3 ratio Used for featured posts if a large-feature doesn't exist
-	
+
 	add_image_size( 'featured', 750, 470, true ); // 4:3 Used for featured posts if a large-feature doesn't exist
-	
+
 	add_image_size( 'featured-three', 640, 401, true ); // 1.6 Used for featured posts if a large-feature doesn't exist
-	
-	if ( function_exists('catchflames_woocommerce' ) ) { 
+
+	if ( function_exists('catchflames_woocommerce' ) ) {
  		catchflames_woocommerce();
     }
+
+    //@remove Remove check when WordPress 4.8 is released
+	if ( function_exists( 'has_custom_logo' ) ) {
+		/**
+		* Setup Custom Logo Support for theme
+		* Supported from WordPress version 4.5 onwards
+		* More Info: https://make.wordpress.org/core/2016/03/10/custom-logo/
+		*/
+		add_theme_support( 'custom-logo' );
+	}
 }
 endif; // catchflames_setup
+
+
+if ( ! function_exists( 'catchflames_get_theme_layout' ) ) :
+	/**
+	 * Returns Theme Layout prioritizing the meta box layouts
+	 *
+	 * @uses  get_options
+	 *
+	 * @action wp_head
+	 *
+	 * @since Catch Flames 2.9
+	 */
+	function catchflames_get_theme_layout() {
+		$id = '';
+
+		global $post, $wp_query;
+
+	    // Front page displays in Reading Settings
+		$page_on_front  = get_option('page_on_front') ;
+		$page_for_posts = get_option('page_for_posts');
+
+		// Get Page ID outside Loop
+		$page_id = $wp_query->get_queried_object_id();
+
+		// Blog Page or Front Page setting in Reading Settings
+		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
+	        $id = $page_id;
+	    }
+	    else if ( is_singular() ) {
+	 		if ( is_attachment() ) {
+				$id = $post->post_parent;
+			}
+			else {
+				$id = $post->ID;
+			}
+		}
+
+		//Get appropriate metabox value of layout
+		if ( '' != $id ) {
+			$layout = get_post_meta( $id, 'catchflames-sidebarlayout', true );
+		}
+		else {
+			$layout = 'default';
+		}
+
+		//Load options data
+		global $catchflames_options_settings;
+   		$options = $catchflames_options_settings;
+
+   		//check empty and load default
+		if ( empty( $layout ) || 'default' == $layout ) {
+			$layout = $options['sidebar_layout'];
+		}
+
+		return $layout;
+	}
+endif; //catchflames_get_theme_layout
 
 
 /**
@@ -233,8 +259,8 @@ require( get_template_directory() . '/inc/catchflames-custom-header.php' );
 /**
  * Adds support for WooCommerce Plugin
  */
-if ( class_exists( 'woocommerce' ) ) { 
-	add_theme_support( 'woocommerce' );	
+if ( class_exists( 'woocommerce' ) ) {
+	add_theme_support( 'woocommerce' );
     require( get_template_directory() . '/inc/catchflames-woocommerce.php' );
 }
 
@@ -243,18 +269,18 @@ if ( class_exists( 'woocommerce' ) ) {
  * Adds support for mqtranslate and qTranslate Plugin
  */
 if ( in_array( 'qtranslate/qtranslate.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ||
-in_array( 'mqtranslate/mqtranslate.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) { 
+in_array( 'mqtranslate/mqtranslate.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
     require( get_template_directory() . '/inc/catchflames-qtranslate.php' );
 }
 
 /**
  * Adds support for WPML Plugin and Polyland
- */	
+ */
 if ( defined( 'ICL_SITEPRESS_VERSION' ) || class_exists( 'Polylang' ) ) {
 	require( get_template_directory() . '/inc/catchflames-wpml.php' );
 }
-	
-	
+
+
 /**
   * Filters the_category() to output html 5 valid rel tag
   *
@@ -271,6 +297,81 @@ function catchflames_html_validate( $text ) {
 add_filter( 'the_category', 'catchflames_html_validate' );
 add_filter( 'wp_list_categories', 'catchflames_html_validate' );
 
+/**
+ * Migrate Logo to New WordPress core Custom Logo
+ *
+ * Runs if version number saved in theme_mod "logo_version" doesn't match current theme version.
+ */
+function catchflames_logo_migrate() {
+	$ver = get_theme_mod( 'logo_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '2.9' ) >= 0 ) {
+		return;
+	}
+
+	/**
+	 * Get Theme Options Values
+	 */
+	global $catchflames_options_settings;
+   	$options = $catchflames_options_settings;
+
+   	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'the_custom_logo' ) ) {
+		if( isset( $options['featured_logo_header'] ) && '' != $options['featured_logo_header'] ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$logo = attachment_url_to_postid( $options['featured_logo_header'] );
+
+			if ( is_int( $logo ) ) {
+				set_theme_mod( 'custom_logo', $logo );
+			}
+		}
+
+		// Delete transients after migration
+		delete_transient( 'catchflames_logo' );
+
+  		// Update to match logo_version so that script is not executed continously
+		set_theme_mod( 'logo_version', '2.9' );
+	}
+}
+add_action( 'after_setup_theme', 'catchflames_logo_migrate' );
+
+
+/**
+ * Migrate Custom Favicon to WordPress core Site Icon
+ *
+ * Runs if version number saved in theme_mod "site_icon_version" doesn't match current theme version.
+ */
+function catchflames_site_icon_migrate() {
+	$ver = get_theme_mod( 'site_icon_version', false );
+
+	//Return if update has already been run
+	if ( version_compare( $ver, '2.9' ) >= 0 ) {
+		return;
+	}
+
+	/**
+	 * Get Theme Options Values
+	 */
+	global $catchflames_options_settings;
+   	$options = $catchflames_options_settings;
+
+   	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'has_site_icon' ) ) {
+		if( isset( $options['fav_icon'] ) && '' != $options['fav_icon'] ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$site_icon = attachment_url_to_postid( $options['fav_icon'] );
+
+			if ( is_int( $site_icon ) ) {
+				update_option( 'site_icon', $site_icon );
+			}
+		}
+
+	  	// Update to match site_icon_version so that script is not executed continously
+		set_theme_mod( 'site_icon_version', '2.9' );
+	}
+}
+add_action( 'after_setup_theme', 'catchflames_site_icon_migrate' );
 
 //Include customizer options
 require get_template_directory() . '/inc/panel/customizer/customizer.php';

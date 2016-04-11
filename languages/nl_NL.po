@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames\n"
-"POT-Creation-Date: 2016-03-07 10:38+0545\n"
+"POT-Creation-Date: 2016-04-11 08:50+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Yoshi van den Akker <yoshivda@gmail.com>\n"
@@ -323,11 +323,11 @@ msgstr "Status"
 msgid "Featured"
 msgstr "Uitgelicht"
 
-#: ../functions.php:199 ../inc/panel/theme-options.php:269
+#: ../functions.php:158 ../inc/panel/theme-options.php:276
 msgid "Fixed Header Top Menu"
 msgstr "Vast header top menu"
 
-#: ../functions.php:200
+#: ../functions.php:159
 msgid "Primary Menu"
 msgstr "Primair menu"
 
@@ -415,30 +415,30 @@ msgid "ID"
 msgstr "ID"
 
 #: ../inc/catchflames-functions.php:711
-#: ../inc/panel/customizer/customizer.php:560
-#: ../inc/panel/theme-options.php:115 ../inc/panel/theme-options.php:847
+#: ../inc/panel/customizer/customizer.php:494
+#: ../inc/panel/theme-options.php:115 ../inc/panel/theme-options.php:861
 msgid "Facebook"
 msgstr "Facebook"
 
 #: ../inc/catchflames-functions.php:716
-#: ../inc/panel/customizer/customizer.php:570
-#: ../inc/panel/theme-options.php:116 ../inc/panel/theme-options.php:855
+#: ../inc/panel/customizer/customizer.php:504
+#: ../inc/panel/theme-options.php:116 ../inc/panel/theme-options.php:869
 msgid "Twitter"
 msgstr "Twitter"
 
 #: ../inc/catchflames-functions.php:721
-#: ../inc/panel/customizer/customizer.php:580
-#: ../inc/panel/theme-options.php:117 ../inc/panel/theme-options.php:863
+#: ../inc/panel/customizer/customizer.php:514
+#: ../inc/panel/theme-options.php:117 ../inc/panel/theme-options.php:877
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchflames-functions.php:726 ../inc/panel/theme-options.php:895
+#: ../inc/catchflames-functions.php:726 ../inc/panel/theme-options.php:909
 msgid "Linkedin"
 msgstr "Linkedin"
 
 #: ../inc/catchflames-functions.php:731
-#: ../inc/panel/customizer/customizer.php:590
-#: ../inc/panel/theme-options.php:871
+#: ../inc/panel/customizer/customizer.php:524
+#: ../inc/panel/theme-options.php:885
 msgid "Pinterest"
 msgstr "Pinterest"
 
@@ -447,98 +447,98 @@ msgid "YouTube"
 msgstr "YouTube"
 
 #: ../inc/catchflames-functions.php:741
-#: ../inc/panel/customizer/customizer.php:610
-#: ../inc/panel/theme-options.php:887
+#: ../inc/panel/customizer/customizer.php:544
+#: ../inc/panel/theme-options.php:901
 msgid "Vimeo"
 msgstr "Vimeo"
 
 #: ../inc/catchflames-functions.php:746
-#: ../inc/panel/customizer/customizer.php:630
-#: ../inc/panel/theme-options.php:903
+#: ../inc/panel/customizer/customizer.php:564
+#: ../inc/panel/theme-options.php:917
 msgid "AIM"
 msgstr "AIM"
 
 #: ../inc/catchflames-functions.php:751
-#: ../inc/panel/customizer/customizer.php:640
-#: ../inc/panel/theme-options.php:911
+#: ../inc/panel/customizer/customizer.php:574
+#: ../inc/panel/theme-options.php:925
 msgid "MySpace"
 msgstr "MySpace"
 
 #: ../inc/catchflames-functions.php:756
-#: ../inc/panel/customizer/customizer.php:650
-#: ../inc/panel/theme-options.php:920
+#: ../inc/panel/customizer/customizer.php:584
+#: ../inc/panel/theme-options.php:934
 msgid "Flickr"
 msgstr "Flickr"
 
 #: ../inc/catchflames-functions.php:761
-#: ../inc/panel/customizer/customizer.php:660
-#: ../inc/panel/theme-options.php:928
+#: ../inc/panel/customizer/customizer.php:594
+#: ../inc/panel/theme-options.php:942
 msgid "Tumblr"
 msgstr "Tumblr"
 
 #: ../inc/catchflames-functions.php:766
-#: ../inc/panel/customizer/customizer.php:670
-#: ../inc/panel/theme-options.php:936
+#: ../inc/panel/customizer/customizer.php:604
+#: ../inc/panel/theme-options.php:950
 msgid "deviantART"
 msgstr "deviantART"
 
 #: ../inc/catchflames-functions.php:771
-#: ../inc/panel/customizer/customizer.php:680
-#: ../inc/panel/theme-options.php:944
+#: ../inc/panel/customizer/customizer.php:614
+#: ../inc/panel/theme-options.php:958
 msgid "Dribbble"
 msgstr "Dribbble"
 
 #: ../inc/catchflames-functions.php:776
-#: ../inc/panel/customizer/customizer.php:690
-#: ../inc/panel/theme-options.php:953
+#: ../inc/panel/customizer/customizer.php:624
+#: ../inc/panel/theme-options.php:967
 msgid "WordPress"
 msgstr "WordPress"
 
 #: ../inc/catchflames-functions.php:781
-#: ../inc/panel/customizer/customizer.php:700
-#: ../inc/panel/theme-options.php:961
+#: ../inc/panel/customizer/customizer.php:634
+#: ../inc/panel/theme-options.php:975
 msgid "RSS"
 msgstr "RSS"
 
 #: ../inc/catchflames-functions.php:786
-#: ../inc/panel/customizer/customizer.php:710
-#: ../inc/panel/theme-options.php:969
+#: ../inc/panel/customizer/customizer.php:644
+#: ../inc/panel/theme-options.php:983
 msgid "Slideshare"
 msgstr "Slideshare"
 
 #: ../inc/catchflames-functions.php:791
-#: ../inc/panel/customizer/customizer.php:720
-#: ../inc/panel/theme-options.php:977
+#: ../inc/panel/customizer/customizer.php:654
+#: ../inc/panel/theme-options.php:991
 msgid "Instagram"
 msgstr "Instagram"
 
 #: ../inc/catchflames-functions.php:796
-#: ../inc/panel/customizer/customizer.php:730
-#: ../inc/panel/theme-options.php:985
+#: ../inc/panel/customizer/customizer.php:664
+#: ../inc/panel/theme-options.php:999
 msgid "Skype"
 msgstr "Skype"
 
 #: ../inc/catchflames-functions.php:801
-#: ../inc/panel/customizer/customizer.php:740
-#: ../inc/panel/theme-options.php:993
+#: ../inc/panel/customizer/customizer.php:674
+#: ../inc/panel/theme-options.php:1007
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
 #: ../inc/catchflames-functions.php:806
-#: ../inc/panel/customizer/customizer.php:750
-#: ../inc/panel/theme-options.php:1001
+#: ../inc/panel/customizer/customizer.php:684
+#: ../inc/panel/theme-options.php:1015
 msgid "Email"
 msgstr "Email"
 
 #: ../inc/catchflames-functions.php:811
-#: ../inc/panel/customizer/customizer.php:760
-#: ../inc/panel/theme-options.php:1009
+#: ../inc/panel/customizer/customizer.php:694
+#: ../inc/panel/theme-options.php:1023
 msgid "Contact"
 msgstr "Contact"
 
 #: ../inc/catchflames-functions.php:816
-#: ../inc/panel/customizer/customizer.php:770
-#: ../inc/panel/theme-options.php:1017
+#: ../inc/panel/customizer/customizer.php:704
+#: ../inc/panel/theme-options.php:1031
 msgid "Xing"
 msgstr "Xing"
 
@@ -599,7 +599,7 @@ msgid "No sidebar"
 msgstr "Geen sidebar"
 
 #: ../inc/catchflames-metabox.php:75
-#: ../inc/panel/customizer/customizer.php:343
+#: ../inc/panel/customizer/customizer.php:277
 msgid "Sidebar Layout Options"
 msgstr "Layout-opties voor sidebar"
 
@@ -662,141 +662,141 @@ msgid "Continue Reading"
 msgstr "Lees verder"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:143
-#: ../inc/panel/theme-options.php:673
+#: ../inc/panel/theme-options.php:687
 msgid "Light"
 msgstr "Licht"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:144
-#: ../inc/panel/theme-options.php:677
+#: ../inc/panel/theme-options.php:691
 msgid "Dark"
 msgstr "Donker"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:157
 #: ../inc/panel/catchflames-themeoptions-defaults.php:206
-#: ../inc/panel/theme-options.php:348
+#: ../inc/panel/theme-options.php:362
 msgid "Homepage"
 msgstr "Homepagina"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:158
-#: ../inc/panel/theme-options.php:343
+#: ../inc/panel/theme-options.php:357
 msgid "Excluding Homepage"
 msgstr "Homepagina uitgezonderd"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:159
 #: ../inc/panel/catchflames-themeoptions-defaults.php:207
-#: ../inc/panel/theme-options.php:353 ../inc/panel/theme-options.php:722
+#: ../inc/panel/theme-options.php:367 ../inc/panel/theme-options.php:736
 msgid "Entire Site"
 msgstr "Gehele site"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:160
-#: ../inc/panel/theme-options.php:358
+#: ../inc/panel/theme-options.php:372
 msgid "Entire Site, Page/Post Featured Image"
 msgstr "Gehele site, uitgelichte afbeelding voor pagina/bericht"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:161
-#: ../inc/panel/theme-options.php:363
+#: ../inc/panel/theme-options.php:377
 msgid "Pages & Posts"
 msgstr "Pagina's & berichten"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:162
 #: ../inc/panel/catchflames-themeoptions-defaults.php:208
-#: ../inc/panel/theme-options.php:368 ../inc/panel/theme-options.php:727
+#: ../inc/panel/theme-options.php:382 ../inc/panel/theme-options.php:741
 msgid "Disable"
 msgstr "Uitschakelen"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:175
-#: ../inc/panel/theme-options.php:506
+#: ../inc/panel/theme-options.php:520
 msgid "Right Sidebar"
 msgstr "Rechter sidebar"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:176
-#: ../inc/panel/theme-options.php:511
+#: ../inc/panel/theme-options.php:525
 msgid "Left Sidebar"
 msgstr "Linker sidebar"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:177
-#: ../inc/panel/theme-options.php:516
+#: ../inc/panel/theme-options.php:530
 msgid "No Sidebar"
 msgstr "Geen sidebar"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:178
-#: ../inc/panel/theme-options.php:501
+#: ../inc/panel/theme-options.php:515
 msgid "Three Columns"
 msgstr "Drie kolommen"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:192
-#: ../inc/panel/theme-options.php:532
+#: ../inc/panel/theme-options.php:546
 msgid "Full Content Display"
 msgstr "Volledige content display"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:193
-#: ../inc/panel/theme-options.php:527
+#: ../inc/panel/theme-options.php:541
 msgid "Excerpt/Blog Display"
 msgstr "Excerpt/blog display"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:222
-#: ../inc/panel/theme-options.php:747
+#: ../inc/panel/theme-options.php:761
 msgid "fade"
 msgstr "vervagen"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:223
-#: ../inc/panel/theme-options.php:748
+#: ../inc/panel/theme-options.php:762
 msgid "wipe"
 msgstr "vegen"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:224
 #: ../inc/panel/catchflames-themeoptions-defaults.php:226
-#: ../inc/panel/theme-options.php:749
+#: ../inc/panel/theme-options.php:763
 msgid "scrollUp"
 msgstr "scrollen naar boven"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:225
-#: ../inc/panel/theme-options.php:750
+#: ../inc/panel/theme-options.php:764
 msgid "scrollDown"
 msgstr "scrollen naar beneden"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:227
-#: ../inc/panel/theme-options.php:751
+#: ../inc/panel/theme-options.php:765
 msgid "scrollLeft"
 msgstr "scrollen naar links"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:228
-#: ../inc/panel/theme-options.php:752
+#: ../inc/panel/theme-options.php:766
 msgid "scrollRight"
 msgstr "scrollen naar rechts"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:229
-#: ../inc/panel/theme-options.php:753
+#: ../inc/panel/theme-options.php:767
 msgid "blindX"
 msgstr "dambord horizontaal"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:230
-#: ../inc/panel/theme-options.php:754
+#: ../inc/panel/theme-options.php:768
 msgid "blindY"
 msgstr "dambord verticaal"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:231
-#: ../inc/panel/theme-options.php:755
+#: ../inc/panel/theme-options.php:769
 msgid "blindZ"
 msgstr "dambord diagonaal"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:232
-#: ../inc/panel/theme-options.php:756
+#: ../inc/panel/theme-options.php:770
 msgid "cover"
 msgstr "bedekken"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:233
-#: ../inc/panel/theme-options.php:757
+#: ../inc/panel/theme-options.php:771
 msgid "shuffle"
 msgstr "willekeurig"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:247
-#: ../inc/panel/theme-options.php:700
+#: ../inc/panel/theme-options.php:714
 msgid "Demo Slider"
 msgstr "Demoslider"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:248
-#: ../inc/panel/theme-options.php:705
+#: ../inc/panel/theme-options.php:719
 msgid "Featured Page Slider"
 msgstr "Uitgelichte pagina slider"
 
@@ -836,7 +836,7 @@ msgid "Basic theme Options"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:38
-#: ../inc/panel/theme-options.php:141
+#: ../inc/panel/theme-options.php:145
 msgid "Favicon"
 msgstr "Favicon"
 
@@ -851,7 +851,7 @@ msgid ""
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:50
-#: ../inc/panel/theme-options.php:234
+#: ../inc/panel/theme-options.php:241
 msgid "Fixed Header Top Options"
 msgstr "Vaste header top opties"
 
@@ -862,27 +862,27 @@ msgid ""
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:55
-#: ../inc/panel/theme-options.php:282
+#: ../inc/panel/theme-options.php:289
 msgid "Header Options"
 msgstr "Header-opties"
 
 #: ../inc/panel/customizer/customizer.php:60
-#: ../inc/panel/theme-options.php:475
+#: ../inc/panel/theme-options.php:489
 msgid "Search Options"
 msgstr "Zoekinstellingen"
 
 #: ../inc/panel/customizer/customizer.php:65
-#: ../inc/panel/theme-options.php:492
+#: ../inc/panel/theme-options.php:506
 msgid "Layout Options"
 msgstr "Layoutopties"
 
 #: ../inc/panel/customizer/customizer.php:70
-#: ../inc/panel/theme-options.php:553
+#: ../inc/panel/theme-options.php:567
 msgid "Homepage / Frontpage Category Setting"
 msgstr "Homepagina/voorpagina categorie-instelling"
 
 #: ../inc/panel/customizer/customizer.php:75
-#: ../inc/panel/theme-options.php:583
+#: ../inc/panel/theme-options.php:597
 msgid "Excerpt / More Tag Settings"
 msgstr "Afbraak/Meer-tag instellingen"
 
@@ -891,12 +891,12 @@ msgid "Feed Redirect"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:85
-#: ../inc/panel/theme-options.php:618
+#: ../inc/panel/theme-options.php:632
 msgid "Custom CSS"
 msgstr "Aangepaste CSS"
 
 #: ../inc/panel/customizer/customizer.php:90
-#: ../inc/panel/theme-options.php:643
+#: ../inc/panel/theme-options.php:657
 msgid "Scroll Up"
 msgstr "Scroll naar boven"
 
@@ -907,7 +907,7 @@ msgid "Featured Slider"
 msgstr "Uitgelichte slider"
 
 #: ../inc/panel/customizer/customizer.php:102
-#: ../inc/panel/theme-options.php:691
+#: ../inc/panel/theme-options.php:705
 msgid "Slider Options"
 msgstr "Sliderinstellingen"
 
@@ -941,7 +941,7 @@ msgid "Extra Menu Options specific to this theme"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:174
-#: ../inc/panel/theme-options.php:432
+#: ../inc/panel/theme-options.php:446
 msgid "Menu Options"
 msgstr "Menu-instellingen"
 
@@ -950,194 +950,194 @@ msgid "Check to Disable Default Page Menu"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:194
-msgid "Check to Disable Favicon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:204
-msgid "Fav Icon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:216
-msgid "Check to Disable Web Clip Icon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:226
-msgid "Web Clip Icon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:238
 msgid "Check to Enable Fixed Header Top"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:248
+#: ../inc/panel/customizer/customizer.php:204
 msgid "Check to Disable Logo in Fixed Header Top"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:258
+#: ../inc/panel/customizer/customizer.php:214
 msgid "Logo in Fixed Header Top"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:270
-msgid "Check to Disable Header Logo"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:280
-msgid "Logo"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:292
+#: ../inc/panel/customizer/customizer.php:226
 msgid "Enable Featured Header Image on"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:302
-#: ../inc/panel/theme-options.php:401
+#: ../inc/panel/customizer/customizer.php:236
+#: ../inc/panel/theme-options.php:415
 msgid "Featured Header Image Alt/Title Tag"
 msgstr "Uitgelichte header afbeelding alt/title tag"
 
-#: ../inc/panel/customizer/customizer.php:311
-#: ../inc/panel/theme-options.php:409
+#: ../inc/panel/customizer/customizer.php:245
+#: ../inc/panel/theme-options.php:423
 msgid "Featured Header Image Link URL"
 msgstr "Uitgelichte afbeelding header link URL"
 
-#: ../inc/panel/customizer/customizer.php:320
+#: ../inc/panel/customizer/customizer.php:254
 msgid "Check to Reset Header Featured Image Options"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:321
-#: ../inc/panel/customizer/customizer.php:366
-#: ../inc/panel/customizer/customizer.php:416
+#: ../inc/panel/customizer/customizer.php:255
+#: ../inc/panel/customizer/customizer.php:300
+#: ../inc/panel/customizer/customizer.php:350
 msgid "Please refresh the customizer after saving if reset option is used"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:331
-#: ../inc/panel/theme-options.php:479
+#: ../inc/panel/customizer/customizer.php:265
+#: ../inc/panel/theme-options.php:493
 msgid "Default Display Text in Search"
 msgstr "Standaard tekst in Zoeken"
 
-#: ../inc/panel/customizer/customizer.php:354
-#: ../inc/panel/theme-options.php:522
+#: ../inc/panel/customizer/customizer.php:288
+#: ../inc/panel/theme-options.php:536
 msgid "Archive Content Layout"
 msgstr "Contentarchief layout"
 
-#: ../inc/panel/customizer/customizer.php:365
+#: ../inc/panel/customizer/customizer.php:299
 msgid "Check to Reset Layout"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:377
-#: ../inc/panel/theme-options.php:557
+#: ../inc/panel/customizer/customizer.php:311
+#: ../inc/panel/theme-options.php:571
 msgid "Front page posts categories:"
 msgstr "Categorie voor berichten op homepagina:"
 
-#: ../inc/panel/customizer/customizer.php:378
+#: ../inc/panel/customizer/customizer.php:312
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:389
-#: ../inc/panel/theme-options.php:587
+#: ../inc/panel/customizer/customizer.php:323
+#: ../inc/panel/theme-options.php:601
 msgid "More Tag Text"
 msgstr "Meer-tag tekst"
 
-#: ../inc/panel/customizer/customizer.php:399
-#: ../inc/panel/theme-options.php:595
+#: ../inc/panel/customizer/customizer.php:333
+#: ../inc/panel/theme-options.php:609
 msgid "Excerpt length(words)"
 msgstr "Afbraaklengte (woorden)"
 
-#: ../inc/panel/customizer/customizer.php:415
+#: ../inc/panel/customizer/customizer.php:349
 msgid "Check to Reset Excerpt"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:427
+#: ../inc/panel/customizer/customizer.php:361
 msgid "Enter your custom CSS styles"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:439
+#: ../inc/panel/customizer/customizer.php:373
 msgid "Check to Disable Scroll Up"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:451
-#: ../inc/panel/theme-options.php:668
+#: ../inc/panel/customizer/customizer.php:385
+#: ../inc/panel/theme-options.php:682
 msgid "Default Color Scheme"
 msgstr "Standaard kleurschema"
 
-#: ../inc/panel/customizer/customizer.php:463
+#: ../inc/panel/customizer/customizer.php:397
 msgid "Enable Slider"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:474
-#: ../inc/panel/theme-options.php:695
+#: ../inc/panel/customizer/customizer.php:408
+#: ../inc/panel/theme-options.php:709
 msgid "Select Slider Type"
 msgstr "Selecteer slidertype"
 
-#: ../inc/panel/customizer/customizer.php:486
+#: ../inc/panel/customizer/customizer.php:420
 msgid "Transition Effect"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:498
-#: ../inc/panel/theme-options.php:764
+#: ../inc/panel/customizer/customizer.php:432
+#: ../inc/panel/theme-options.php:778
 msgid "Transition Delay"
 msgstr "Overgangsvertraging"
 
-#: ../inc/panel/customizer/customizer.php:515
-#: ../inc/panel/theme-options.php:774
+#: ../inc/panel/customizer/customizer.php:449
+#: ../inc/panel/theme-options.php:788
 msgid "Transition Length"
 msgstr "Overgangslengte"
 
-#: ../inc/panel/customizer/customizer.php:532
-#: ../inc/panel/theme-options.php:734
+#: ../inc/panel/customizer/customizer.php:466
+#: ../inc/panel/theme-options.php:748
 msgid "Number of Slides"
 msgstr "Aantal slides"
 
-#: ../inc/panel/customizer/customizer.php:533
+#: ../inc/panel/customizer/customizer.php:467
 msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:551
+#: ../inc/panel/customizer/customizer.php:485
 msgid "Check to Enable Social Icons in Footer"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:600
-#: ../inc/panel/theme-options.php:879
+#: ../inc/panel/customizer/customizer.php:534
+#: ../inc/panel/theme-options.php:893
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/panel/customizer/customizer.php:620
+#: ../inc/panel/customizer/customizer.php:554
 msgid "LinkedIn"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:780
+#: ../inc/panel/customizer/customizer.php:714
 msgid "Check to Enable SpecificFeeds"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:943
-#: ../inc/panel/theme-options.php:794
+#: ../inc/panel/customizer/customizer.php:729
+msgid "Check to Disable Favicon"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:739
+msgid "Fav Icon"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:751
+msgid "Check to Disable Web Clip Icon"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:761
+msgid "Web Clip Icon"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:779
+msgid "Check to Disable Header Logo"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:789
+msgid "Logo"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:956
+#: ../inc/panel/theme-options.php:808
 #, php-format
 msgid "Featured Page Slider #%s"
 msgstr "Uitgelichte pagina slider #%s"
 
-#: ../inc/panel/customizer/customizer.php:958
+#: ../inc/panel/customizer/customizer.php:971
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:960
+#: ../inc/panel/customizer/customizer.php:973
 msgid "Reset all settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:970
+#: ../inc/panel/customizer/customizer.php:983
 msgid "Check to reset all settings to default"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:980
-#: ../inc/panel/customizer/customizer.php:991
+#: ../inc/panel/customizer/customizer.php:993
+#: ../inc/panel/customizer/customizer.php:1004
 msgid "Important Links"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1029
+#: ../inc/panel/customizer/customizer.php:1042
 msgid "Upgrade To Pro &raquo;"
 msgstr ""
 
@@ -1154,7 +1154,7 @@ msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:105 ../inc/panel/theme-options.php:106
-#: ../inc/panel/theme-options.php:1451
+#: ../inc/panel/theme-options.php:1465
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
@@ -1222,65 +1222,65 @@ msgstr ""
 msgid "Color Options"
 msgstr "Kleurinstellingen"
 
-#: ../inc/panel/theme-options.php:145
+#: ../inc/panel/theme-options.php:149
 msgid "Disable Favicon?"
 msgstr "Favicon uitschakelen?"
 
-#: ../inc/panel/theme-options.php:149 ../inc/panel/theme-options.php:194
-#: ../inc/panel/theme-options.php:251 ../inc/panel/theme-options.php:298
-#: ../inc/panel/theme-options.php:465 ../inc/panel/theme-options.php:651
+#: ../inc/panel/theme-options.php:153 ../inc/panel/theme-options.php:198
+#: ../inc/panel/theme-options.php:258 ../inc/panel/theme-options.php:309
+#: ../inc/panel/theme-options.php:479 ../inc/panel/theme-options.php:665
 msgid "Check to disable"
 msgstr "Vink aan om uit te schakelen"
 
-#: ../inc/panel/theme-options.php:154
+#: ../inc/panel/theme-options.php:158
 msgid "Fav Icon URL:"
 msgstr "URL voor Favicon:"
 
-#: ../inc/panel/theme-options.php:162
+#: ../inc/panel/theme-options.php:166
 msgid "Insert as Favicon"
 msgstr "Insert as Favicon"
 
-#: ../inc/panel/theme-options.php:162
+#: ../inc/panel/theme-options.php:166
 msgid "Change Favicon"
 msgstr "Change Favicon"
 
-#: ../inc/panel/theme-options.php:167 ../inc/panel/theme-options.php:212
-#: ../inc/panel/theme-options.php:388
+#: ../inc/panel/theme-options.php:171 ../inc/panel/theme-options.php:216
+#: ../inc/panel/theme-options.php:402
 msgid "Preview"
 msgstr "Voorbeeld"
 
-#: ../inc/panel/theme-options.php:180 ../inc/panel/theme-options.php:228
-#: ../inc/panel/theme-options.php:276 ../inc/panel/theme-options.php:328
-#: ../inc/panel/theme-options.php:426 ../inc/panel/theme-options.php:469
-#: ../inc/panel/theme-options.php:486 ../inc/panel/theme-options.php:547
-#: ../inc/panel/theme-options.php:577 ../inc/panel/theme-options.php:612
-#: ../inc/panel/theme-options.php:637 ../inc/panel/theme-options.php:655
-#: ../inc/panel/theme-options.php:682 ../inc/panel/theme-options.php:782
-#: ../inc/panel/theme-options.php:818 ../inc/panel/theme-options.php:1033
+#: ../inc/panel/theme-options.php:184 ../inc/panel/theme-options.php:232
+#: ../inc/panel/theme-options.php:283 ../inc/panel/theme-options.php:342
+#: ../inc/panel/theme-options.php:440 ../inc/panel/theme-options.php:483
+#: ../inc/panel/theme-options.php:500 ../inc/panel/theme-options.php:561
+#: ../inc/panel/theme-options.php:591 ../inc/panel/theme-options.php:626
+#: ../inc/panel/theme-options.php:651 ../inc/panel/theme-options.php:669
+#: ../inc/panel/theme-options.php:696 ../inc/panel/theme-options.php:796
+#: ../inc/panel/theme-options.php:832 ../inc/panel/theme-options.php:1047
 msgid "Save Changes"
 msgstr "Wijzigingen opslaan"
 
-#: ../inc/panel/theme-options.php:186
+#: ../inc/panel/theme-options.php:190
 msgid "Web Clip Icon Options"
 msgstr "Web Clip Icon-instellingen"
 
-#: ../inc/panel/theme-options.php:190
+#: ../inc/panel/theme-options.php:194
 msgid "Disable Web Clip Icon?"
 msgstr "Web Clip Icon uitschakelen?"
 
-#: ../inc/panel/theme-options.php:199
+#: ../inc/panel/theme-options.php:203
 msgid "Web Clip Icon URL:"
 msgstr "URL voor Web Clip Icon:"
 
-#: ../inc/panel/theme-options.php:207
+#: ../inc/panel/theme-options.php:211
 msgid "Insert as Web Clip Icon"
 msgstr "Insert as Web Clip Icon"
 
-#: ../inc/panel/theme-options.php:207
+#: ../inc/panel/theme-options.php:211
 msgid "Change Web Clip Icon"
 msgstr "Verander Web Clip Icon"
 
-#: ../inc/panel/theme-options.php:225
+#: ../inc/panel/theme-options.php:229
 msgid ""
 "Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and "
 "Height 144px height, which will support High Resolution Devices like iPad "
@@ -1289,32 +1289,32 @@ msgstr ""
 "Noot: Web Clip Icon voor Apple-apparaten. Voorgestelde resolutie: 144px bij "
 "144px, zodat ook apparaten met een hoge resolutie het ondersteunen."
 
-#: ../inc/panel/theme-options.php:238
+#: ../inc/panel/theme-options.php:245
 msgid "Enable Fixed Header Top?"
 msgstr "Vaste header top inschakelen?"
 
-#: ../inc/panel/theme-options.php:242 ../inc/panel/theme-options.php:842
-#: ../inc/panel/theme-options.php:1029
+#: ../inc/panel/theme-options.php:249 ../inc/panel/theme-options.php:856
+#: ../inc/panel/theme-options.php:1043
 msgid "Check to enable"
 msgstr "Vink aan om in te schakelen"
 
-#: ../inc/panel/theme-options.php:247
+#: ../inc/panel/theme-options.php:254
 msgid "Disable Logo in Fixed Header Top?"
 msgstr "Logo in vaste header top uitschakelen?"
 
-#: ../inc/panel/theme-options.php:256
+#: ../inc/panel/theme-options.php:263
 msgid "Logo in Fixed Header Top:"
 msgstr "Logo in vaste header top:"
 
-#: ../inc/panel/theme-options.php:264
+#: ../inc/panel/theme-options.php:271
 msgid "Insert as Header Logo"
 msgstr "Insert as Header Logo"
 
-#: ../inc/panel/theme-options.php:264
+#: ../inc/panel/theme-options.php:271
 msgid "Change Header Logo"
 msgstr "Wijzig header logo"
 
-#: ../inc/panel/theme-options.php:272
+#: ../inc/panel/theme-options.php:279
 msgid ""
 "You need to create custom menu and then assign menu location as Featured "
 "Header Top Menu. For more go to Menu Option Below"
@@ -1322,102 +1322,102 @@ msgstr ""
 "Je moet een aangepast menu maken en dan de menulocatie instellen als "
 "Uitgelichte Header Top-menu. Voor meer, ga naar de Menu-optie hieronder"
 
-#: ../inc/panel/theme-options.php:286
+#: ../inc/panel/theme-options.php:293
 msgid "Custom Header Image"
 msgstr "Aangepaste header-afbeelding"
 
-#: ../inc/panel/theme-options.php:289
+#: ../inc/panel/theme-options.php:296
 msgid "Custom Header Image can be managed from Header Featured Image Options"
 msgstr ""
 "Aangepaste header-afbeelding kan worden ingesteld vanuit de instellingen "
 "voor Header uitgelichte afbeelding"
 
-#: ../inc/panel/theme-options.php:294
+#: ../inc/panel/theme-options.php:305
 msgid "Disable Header Logo?"
 msgstr "Header logo uitschakelen?"
 
-#: ../inc/panel/theme-options.php:303
+#: ../inc/panel/theme-options.php:314
 msgid "Logo url:"
 msgstr "Logo URL:"
 
-#: ../inc/panel/theme-options.php:311
+#: ../inc/panel/theme-options.php:322
 msgid "Insert as Logo"
 msgstr "Insert as Logo"
 
-#: ../inc/panel/theme-options.php:311
+#: ../inc/panel/theme-options.php:322
 msgid "Change Logo"
 msgstr "Change Logo"
 
-#: ../inc/panel/theme-options.php:316
+#: ../inc/panel/theme-options.php:327
 msgid "Preview:"
 msgstr "Voorbeeld:"
 
-#: ../inc/panel/theme-options.php:334
+#: ../inc/panel/theme-options.php:348
 msgid "Header Featured Image Options"
 msgstr "Instellingen voor header uitgelichte afbeelding:"
 
-#: ../inc/panel/theme-options.php:338
+#: ../inc/panel/theme-options.php:352
 msgid "Enable Featured Header Image"
 msgstr "Schakel header uitgelichte afbeelding in"
 
-#: ../inc/panel/theme-options.php:374
+#: ../inc/panel/theme-options.php:388
 msgid "Header Image:"
 msgstr "Header-afbeelding:"
 
-#: ../inc/panel/theme-options.php:380 ../inc/panel/theme-options.php:382
+#: ../inc/panel/theme-options.php:394 ../inc/panel/theme-options.php:396
 msgid "Click here to change header image"
 msgstr "Klik hier om de header-afbeelding te wijzigen"
 
-#: ../inc/panel/theme-options.php:380
+#: ../inc/panel/theme-options.php:394
 msgid "Click here to change Header Image"
 msgstr "Klik hier om de header-afbeelding te wijzigen"
 
-#: ../inc/panel/theme-options.php:382
+#: ../inc/panel/theme-options.php:396
 msgid "Click here to add Header Image"
 msgstr "Klik hier om een header-afbeelding toe te voegen"
 
-#: ../inc/panel/theme-options.php:395
+#: ../inc/panel/theme-options.php:409
 msgid "There is no Header Image"
 msgstr "Er is geen header-afbeelding"
 
-#: ../inc/panel/theme-options.php:418
+#: ../inc/panel/theme-options.php:432
 msgid "Reset Header Featured Image Options?"
 msgstr "Instellingen voor header uitgelichte afbeelding resetten?"
 
-#: ../inc/panel/theme-options.php:422 ../inc/panel/theme-options.php:543
-#: ../inc/panel/theme-options.php:608
+#: ../inc/panel/theme-options.php:436 ../inc/panel/theme-options.php:557
+#: ../inc/panel/theme-options.php:622
 msgid "Check to reset"
 msgstr "Vink aan om te resetten"
 
-#: ../inc/panel/theme-options.php:436 ../inc/panel/theme-options.php:439
+#: ../inc/panel/theme-options.php:450 ../inc/panel/theme-options.php:453
 msgid "Menu Tutorial"
 msgstr "Menu-tutorial"
 
-#: ../inc/panel/theme-options.php:439
+#: ../inc/panel/theme-options.php:453
 msgid "http://catchthemes.com/blog/custom-menus-wordpress-themes/"
 msgstr "http://catchthemes.com/blog/custom-menus-wordpress-themes/"
 
-#: ../inc/panel/theme-options.php:439
+#: ../inc/panel/theme-options.php:453
 msgid "Click Here to Read Menu Tutorial"
 msgstr "Klik hier om de menu-tutorial te lezen"
 
-#: ../inc/panel/theme-options.php:444
+#: ../inc/panel/theme-options.php:458
 msgid "Custom Menus"
 msgstr "Aangepaste menu's"
 
-#: ../inc/panel/theme-options.php:447
+#: ../inc/panel/theme-options.php:461
 msgid "Click to Create Custom Menus"
 msgstr "Klik hier om aangepaste menu's te maken"
 
-#: ../inc/panel/theme-options.php:447
+#: ../inc/panel/theme-options.php:461
 msgid "Click Here to Create Menu"
 msgstr "Klik hier om een menu te maken"
 
-#: ../inc/panel/theme-options.php:452
+#: ../inc/panel/theme-options.php:466
 msgid "Assign Locations"
 msgstr "Wijs locatie toe"
 
-#: ../inc/panel/theme-options.php:453
+#: ../inc/panel/theme-options.php:467
 msgid ""
 "Note: You can assign your custom menu to Fixed Header Top Menu, Header Right "
 "Sidebar Menu, Primary Menu, Secondary Menu and Footer Menu Locations. This "
@@ -1427,23 +1427,23 @@ msgstr ""
 "header rechter sidebar, primair menu, secundair menu en footer menu. Dit zal "
 "het standaard Wordpress-menu vervangen."
 
-#: ../inc/panel/theme-options.php:456
+#: ../inc/panel/theme-options.php:470
 msgid "Click to Manage Menu Locations"
 msgstr "Klik om menulocaties te beheren"
 
-#: ../inc/panel/theme-options.php:461
+#: ../inc/panel/theme-options.php:475
 msgid "Disable Default Page Menu?"
 msgstr "Standaard paginamenu uitschakelen?"
 
-#: ../inc/panel/theme-options.php:496
+#: ../inc/panel/theme-options.php:510
 msgid "Default Layout Options"
 msgstr "Standaard layoutopties"
 
-#: ../inc/panel/theme-options.php:539
+#: ../inc/panel/theme-options.php:553
 msgid "Reset Layout?"
 msgstr "Layout resetten?"
 
-#: ../inc/panel/theme-options.php:558
+#: ../inc/panel/theme-options.php:572
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
@@ -1451,104 +1451,104 @@ msgstr ""
 "Alleen berichten in deze categorie(ën) zullen worden getoond op de "
 "homepagina."
 
-#: ../inc/panel/theme-options.php:562
+#: ../inc/panel/theme-options.php:576
 msgid "--Disabled--"
 msgstr "--Uitgeschakeld--"
 
-#: ../inc/panel/theme-options.php:573
+#: ../inc/panel/theme-options.php:587
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr ""
 "Je kunt meerdere categorieën selecteren door de CTRL-toets in te drukken."
 
-#: ../inc/panel/theme-options.php:604
+#: ../inc/panel/theme-options.php:618
 msgid "Reset Excerpt?"
 msgstr "Afbraak resetten?"
 
-#: ../inc/panel/theme-options.php:622
+#: ../inc/panel/theme-options.php:636
 msgid "Enter your custom CSS styles."
 msgstr "Voer je aangepaste CSS in."
 
-#: ../inc/panel/theme-options.php:630
+#: ../inc/panel/theme-options.php:644
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS tutorial van W3Schools."
 
-#: ../inc/panel/theme-options.php:633
+#: ../inc/panel/theme-options.php:647
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/panel/theme-options.php:633
+#: ../inc/panel/theme-options.php:647
 msgid "CSS Tutorial"
 msgstr "CSS Tutorial"
 
-#: ../inc/panel/theme-options.php:633
+#: ../inc/panel/theme-options.php:647
 msgid "Click Here to Read"
 msgstr "Klik hier om te lezen"
 
-#: ../inc/panel/theme-options.php:647
+#: ../inc/panel/theme-options.php:661
 msgid "Disable Scroll Up?"
 msgstr "Scrollen naar boven uitschakelen?"
 
-#: ../inc/panel/theme-options.php:664
+#: ../inc/panel/theme-options.php:678
 msgid "Color Scheme"
 msgstr "Kleurschema"
 
-#: ../inc/panel/theme-options.php:712
+#: ../inc/panel/theme-options.php:726
 msgid "Enable Sidebar"
 msgstr "Sidebar inschakelen"
 
-#: ../inc/panel/theme-options.php:717
+#: ../inc/panel/theme-options.php:731
 msgid "Homepage / Frontpage"
 msgstr "Homepagina/voorpagina"
 
-#: ../inc/panel/theme-options.php:743
+#: ../inc/panel/theme-options.php:757
 msgid "Transition Effect:"
 msgstr "Overgangseffect:"
 
-#: ../inc/panel/theme-options.php:768 ../inc/panel/theme-options.php:778
+#: ../inc/panel/theme-options.php:782 ../inc/panel/theme-options.php:792
 msgid "second(s)"
 msgstr "seconde(n)"
 
-#: ../inc/panel/theme-options.php:788
+#: ../inc/panel/theme-options.php:802
 msgid "Featured Page Slider Options"
 msgstr "Instellingen voor uitgelichte pagina slider"
 
-#: ../inc/panel/theme-options.php:811
+#: ../inc/panel/theme-options.php:825
 msgid "Click Here To Edit"
 msgstr "Klik hier om te wijzigen"
 
-#: ../inc/panel/theme-options.php:826
+#: ../inc/panel/theme-options.php:840
 msgid "Social Icons"
 msgstr "Sociale iconen"
 
-#: ../inc/panel/theme-options.php:830
+#: ../inc/panel/theme-options.php:844
 msgid "Enable Social Icons in Sidebar?"
 msgstr "Sociale iconen in de sidebar inschakelen?"
 
-#: ../inc/panel/theme-options.php:833
+#: ../inc/panel/theme-options.php:847
 msgid "Just add Catch Flames Social Widget in Sidebar"
 msgstr "Voeg Catch Flames Sociale Widget toe in de Sidebar"
 
-#: ../inc/panel/theme-options.php:838
+#: ../inc/panel/theme-options.php:852
 msgid "Enable Social Icons in Footer?"
 msgstr "Sociale iconen in de footer inschakelen?"
 
-#: ../inc/panel/theme-options.php:1025
+#: ../inc/panel/theme-options.php:1039
 msgid "Enable SpecificFeeds?"
 msgstr "SpecificFeeds inschakelen?"
 
-#: ../inc/panel/theme-options.php:1419
+#: ../inc/panel/theme-options.php:1433
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1440
+#: ../inc/panel/theme-options.php:1454
 msgid "Theme: Catch Flames by "
 msgstr "Thema: Catch Flames door "
 
-#: ../inc/panel/theme-options.php:1462
+#: ../inc/panel/theme-options.php:1476
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/panel/theme-options.php:1462
+#: ../inc/panel/theme-options.php:1476
 msgid "All Rights Reserved"
 msgstr "Alle rechten voorbehouden"
 
