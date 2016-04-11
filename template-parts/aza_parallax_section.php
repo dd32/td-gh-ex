@@ -13,19 +13,8 @@ $parallax_layer_2 = get_theme_mod('aza_parallax_layer_2', aza_get_file('/images/
 
 $parallax_image = get_theme_mod('aza_parallax_image', aza_get_file('/images/parallax-image.png'));
 
-$parallax_text = get_theme_mod ('aza_parallax_text',json_encode(
-            array(
-                array(
-                    'title' => esc_html__('Parallax Section','aza-lite') ,
+$parallax_text = get_theme_mod ('aza_parallax_text', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Itaque hic ipse iam pridem est reiectus;');
 
-                    'text' =>  esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Equidem e Cn. Itaque hic ipse iam pridem est reiectus; Ita prorsus, inquam; Respondent extrema primis, media utrisque, omnia omnibus. Duo Reges: constructio interrete. Est, ut dicis, inquam.
-
-Quae ista amicitia est? Dici enim nihil potest verius. Sit enim idem caecus, debilis.
-
-Primum quid tu dicis breve? Hoc Hieronymus summum bonum esse dixit. Quod vestri non item. At coluit ipse amicitias. Nihil illinc huc pervenit. Nos cum te, M.
-
-Sed ad rem redeamus; Quid enim? Quonam, inquit, modo? Ille enim occurrentia nescio quae comminiscebatur;','aza-lite')))));
-$parallax_text_decoded = json_decode($parallax_text);
 
 
         ?>
@@ -53,12 +42,8 @@ $parallax_text_decoded = json_decode($parallax_text);
 
                         <?php
      if(!empty($parallax_text)){
-                           $parallax_text_decoded = json_decode($parallax_text);
-                            if(!empty($parallax_text_decoded)) {
 
-                                    foreach($parallax_text_decoded as $parallax_text) {
-                                echo '<h3>'.esc_html($parallax_text->title).'<h3>
-                                <p>'.html_entity_decode($parallax_text->text).'</p>'; }}} ?>
+                              echo '<h3>'. esc_html($parallax_text) . '</h3>'; }?>
                                                        </div>
                     </div>
                 </div>

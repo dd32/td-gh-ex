@@ -50,7 +50,7 @@ $button_link = get_theme_mod('aza_team_button_link', '#');
                     <div class="col-lg-12 col-centered text-center">
                         <?php
                     if(!empty($heading)) {
-                        echo '<h1>'.$heading.'</h1>';
+                        echo '<h2>'.$heading.'</h2>';
                     }?>
                     <?php echo ($separator_top) ? "<hr class='separator'/>" : "" ?>
                      <?php

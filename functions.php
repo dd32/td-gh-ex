@@ -163,8 +163,6 @@ function aza_scripts() {
 
     wp_enqueue_script( 'aza-parallax-scroll', aza_get_file('/js/parallax-scroll.js'), array('jquery'), '1.0.0', true );
 
-    wp_enqueue_script( 'aza-jquery-knobs', aza_get_file('/js/jquery.knob.js'), array('jquery'), '1.0.0', true );
-
     wp_enqueue_script( 'aza-script', aza_get_file('/js/script.js'), array('jquery'), '1.0.0', true );
 
     wp_localize_script( 'aza-custom-all', 'screenReaderText', array(
@@ -210,7 +208,7 @@ function aza_admin_styles() {
 		wp_enqueue_style( 'aza_admin_stylesheet');
 
 		wp_register_script( 'aza_admin_customizer_script', get_template_directory_uri() . '/js/admin/aza_admin_customizer.js', array( 'jquery' ), NULL, true );
-		wp_enqueue_script( 'aza_admin_customizer_script', get_file('/js/aza_admin_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
+		wp_enqueue_script( 'aza_admin_customizer_script', aza_get_file('/js/aza_admin_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
 }
 add_action( 'customize_controls_print_styles', 'aza_admin_styles');
 
@@ -229,23 +227,6 @@ function aza_get_file($file){
 		}
 	}
 }
-
-
-// Get File
-
-function get_file($file){
-	$file_parts = pathinfo($file);
-	$accepted_ext = array('jpg','img','png','css','js');
-	if( in_array($file_parts['extension'], $accepted_ext) ){
-		$file_path = get_stylesheet_directory() . $file;
-		if ( file_exists( $file_path ) ){
-			return esc_url(get_stylesheet_directory_uri() . $file);
-		} else {
-			return esc_url(get_template_directory_uri() . $file);
-		}
-	}
-}
-
 
 // Register menus
 

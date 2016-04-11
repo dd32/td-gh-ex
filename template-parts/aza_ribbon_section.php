@@ -31,14 +31,14 @@ $button_text_color = get_theme_mod  ('aza_ribbon_button_text_color','#ffffff');
 
                                if(!empty($text)) {
                                   echo '<div class="col-lg-7 col-md-12 col-xs-12 col-sm-12 text-center">
-                                  <h2 style="color:'. $text_color .'">'.esc_html($text).'</h2></div>';
+                                  <h3 style="color:'. $text_color .'">'.esc_html($text).'</h3></div>';
                                 }
                      break;
 
                      case '2':
                                if(!empty($text)) {
                                  echo '<div class="col-lg-7 col-md-12 col-xs-12 col-sm-12 text-center">
-                                 <h2 style="color:'. $text_color .'">'.esc_html($text).'</h2></div>';
+                                 <h3 style="color:'. $text_color .'">'.esc_html($text).'</h3></div>';
                                }
                                if(!empty($button_text)) {
                                  echo '<div class="col-lg-5 col-md-12 col-xs-12 col-sm-12">'; ?>

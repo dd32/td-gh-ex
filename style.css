@@ -1,10 +1,10 @@
 /*
 Theme Name: AZA Lite
-Theme URI: http://themeisle.com/themes/aza-lite/
+Theme URI: http://themeisle.com/themes/aza-lite
 Author: Andrei Băicuș
 Author URI: http://themeisle.com/
 Description: AZA Lite is a perfect one-page Wordpress theme for small businesses, freelancers and anyone who wishes to build a responsive, one-page, straightforward website in a matter of minutes. This highly customizable Wordpress theme strives to give the end-user a really cozy feel and a great experience while carefully delivering important content and information. The fully customizable layered Parallax section is just stunning to look at and can be a great hook for anybody landing on your website. Have a great time using something that was carefully engineered for beautiful minds.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aza-lite
@@ -88,6 +88,10 @@ body {
   text-align: left;
   overflow-x: hidden !important;
   margin: auto !important;
+}
+
+body.blog {
+  background-image: none !important;
 }
 
 /*=============================================================================--------
@@ -744,12 +748,20 @@ ul {
   list-style: none;
 }
 h1 {
-  text-transform: uppercase;
   font: 100 40px Montserrat;
   color: #ffffff;
   letter-spacing: 3px;
   margin: 0;
 }
+
+h2{
+  text-transform: uppercase;
+  font: 100 35px Montserrat;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
 .separator {
   width: 300px;
   height: 1px;
@@ -1107,6 +1119,7 @@ header .navbar-brand {
   padding-top: 40px;
   margin: 0;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
 }
 .cover-text h2 {
   font-size: 30px;
@@ -1137,8 +1150,9 @@ button.btn-normal-header {
   padding: 10px 20px;
   margin: 0 10px 20px 10px;
 }
-button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-normal-header:active {
-  opacity: 0.9;
+button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-normal-header:active, .features-btn:hover, .features-btn:focus, .features-btn:active {
+  background-color: #fff !important;
+  color: #fc535f !important;
 }
 .btn-row {
   /*margin-top: 25%;*/
@@ -1154,7 +1168,7 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
 =============================================================================*/
 
 .features-background {
-  background-color: #464448;
+  background-color: #3d3d3d;
   height: inherit;
   padding: 80px 0;
   -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
@@ -1229,17 +1243,14 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
   transition: all 0.5s ease;
   padding: 10px;
 }
-.features-btn:hover, .features-btn:focus, .features-btn:active {
-  background-color: #e63340;
-  color: #eeeeee;
-}
+
 #left-column, #right-column {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .zig-zag-bottom {
-  background: linear-gradient(45deg, transparent 20px, #464448 0), linear-gradient( -45deg, transparent 20px, #464448 0);
+  background: linear-gradient(45deg, transparent 20px, #3d3d3d 0), linear-gradient( -45deg, transparent 20px, #3d3d3d 0);
   background-size: 20px 20px;
   height: 20px;
   position: absolute;
@@ -1247,7 +1258,7 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
   z-index: 200;
 }
 .zig-zag-top {
-  background: linear-gradient(135deg, transparent 20px, #464448 0), linear-gradient( -135deg, transparent 20px, #464448 0);
+  background: linear-gradient(135deg, transparent 20px, #3d3d3d 0), linear-gradient( -135deg, transparent 20px, #3d3d3d 0);
   background-size: 20px 20px;
   height: 20px;
   position: absolute;
@@ -1412,11 +1423,12 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
   align-items: center;
   justify-content: center;
 }
-#ribbon .ribbon-row h2 {
-  font: 700 24px Montserrat;
+#ribbon .ribbon-row h3 {
+  font: 700 21px Montserrat;
   text-transform: uppercase;
   margin: 0 auto;
   padding: 10px 0;
+  letter-spacing: normal;
 }
 #ribbon button {
   margin-top: 0;
@@ -1424,65 +1436,6 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
 }
 .ribbon-row div {
   display: block;
-}
-
-/*=============================================================================
-3.6 CLIENTS SECTION
-=============================================================================*/
-
-.clients-header {
-  margin-bottom: 40px;
-}
-section#clients p {
-  margin-top: 40px;
-  color: #ededed;
-  font: 400 21px Roboto;
-}
-#clients {
-  height: auto;
-  padding: 40px 0;
-  background-color: #252426;
-  text-align: center;
-  -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-}
-#clients .container .client-list.row {
-  margin-bottom: 40px;
-  text-align: center;
-}
-#clients .container .client-list img {
-  margin: 0 auto;
-  display: static;
-  margin-bottom: 40px;
-}
-#clients > div.container .client-list .client-item:hover {
-  -webkit-filter: grayscale(0%);
-  -moz-filter: grayscale(0%);
-  -ms-filter: grayscale(0%);
-  -o-filter: grayscale(0%);
-  filter: grayscale(0%);
-  filter: none;
-  /* IE 6-9 */
-}
-#clients > div.container .client-list .client-item {
-  float: none;
-  display: inline-block;
-  vertical-align: top;
-  font-size: 0px;
-  padding: 0;
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  filter: grayscale(100%);
-  filter: gray;
-  /* IE 6-9 */
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
 }
 
 /*=============================================================================
@@ -1568,7 +1521,7 @@ section#clients p {
   top: 5%;
   bottom: 5%;
   left: 5%;
-  right: 5%;
+  right: 15%;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 17px 17px;
   text-align: center;
@@ -1609,7 +1562,7 @@ section#clients p {
 
 #blog {
   padding: 80px 0;
-  background-color: #464448;
+  background-color: #3d3d3d;
   -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
@@ -1631,12 +1584,22 @@ section#clients p {
   margin-top: 30px;
   text-align: center;
 }
+#blog a {
+  color: #ffcbcd;
+}
+
 #blog h4 {
-  color: #fc535f;
-  font: 700 24px Montserrat;
+  font: normal 24px Montserrat;
   text-transform: uppercase;
   text-align: center;
 }
+
+#blog a:hover,
+#blog a:focus,
+#blog a:active {
+  color: #fc535f;
+}
+
 #blog a>i {
   font-size: 40px;
   color: #ffffff;
@@ -1757,7 +1720,7 @@ section#contact .wpcf7-form input.wpcf7-submit:hover, section#contact .wpcf7-for
 =============================================================================*/
 
 #social {
-  background-color: #464448;
+  background-color: #3d3d3d;
   padding: 20px 0;
   -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
@@ -1778,7 +1741,9 @@ section#contact .wpcf7-form input.wpcf7-submit:hover, section#contact .wpcf7-for
   margin: 0 20px;
   transition: all 0.5s ease;
 }
-#social p>a:hover {
+#social p>a:hover,
+#social p>a:focus,
+#social p>a:active {
   color: #fff !important;
 }
 .social-btn-row .btn img {
@@ -1828,7 +1793,9 @@ section#contact .wpcf7-form input.wpcf7-submit:hover, section#contact .wpcf7-for
   font-weight: 300;
   transition: all 0.5s ease;
 }
-.site-footer ul li a:hover {
+.site-footer ul li a:hover ,
+.site-footer ul li a:focus ,
+.site-footer ul li a:active {
   color: #fc535f;
   transition: all 0.5s ease;
 }
@@ -1947,7 +1914,7 @@ section#contact .wpcf7-form input.wpcf7-submit:hover, section#contact .wpcf7-for
 =============================================================================*/
 
 .blog-content-wrapper, .archive-content-wrapper {
-  background-color: #464448;
+  background-color: #3d3d3d;
 }
 #secondary, #primary {
   margin-top: 80px;
@@ -1975,12 +1942,13 @@ section#contact .wpcf7-form input.wpcf7-submit:hover, section#contact .wpcf7-for
 }
 #secondary h2 {
   font-size: 16px;
-  color: #fc535f;
+  color: #ffcbcd;
   text-transform: uppercase;
   font-weight: bold;
   font-family: Roboto;
 }
 #secondary h2::before {
+  margin-bottom: 10px;
   content: "";
   max-width: 200px;
   height: 1px;
@@ -2380,7 +2348,8 @@ section#contact .wpcf7-form input.wpcf7-submit:hover, section#contact .wpcf7-for
     border: 0;
   }
   .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-    left: 100%;
+    left: -100%;
+    margin-right: 100%;
   }
   .main-navigation ul ul a {
     white-space: normal;

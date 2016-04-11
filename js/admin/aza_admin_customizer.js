@@ -424,15 +424,3 @@ jQuery(document).ready(function() {
 		 }
 	});
 });
-
-
-jQuery(document).ready(function() {
-	jQuery('li.panel-meta.customize-info.accordion-section > button').css({
- 'height' : '96px',
-	});
-
-	jQuery(' .customize-section-description-container > div.customize-section-title > button').css({
- 'height' : '97px',
-	});
-
-});

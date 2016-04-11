@@ -19,7 +19,7 @@ $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
                     <div class="col-lg-12 col-md-12 text-center">
                              <?php
                     if(!empty($heading)) {
-                        echo '<h1>'.$heading.'</h1>';
+                        echo '<h2>'.$heading.'</h2>';
                     }?>
                      <?php echo ($separator_top) ? "<hr class='separator'/>" : "" ?>
                      <?php
@@ -37,12 +37,7 @@ $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
 
 	<?php if ( have_posts() ) : ?>
     <?php query_posts("showposts=2"); ?>
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-			<?php endif; ?>
-
+			
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 

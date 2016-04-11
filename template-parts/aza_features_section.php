@@ -48,7 +48,7 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                     <?php if(!empty($features_heading)) {
             echo '<div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center">'.$features_heading.'</h1>
+                    <h2 class="text-center">'.$features_heading.'</h2>
                 </div>
             </div>';
             }?>

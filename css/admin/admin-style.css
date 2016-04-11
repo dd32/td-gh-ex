@@ -151,17 +151,3 @@ button.repeater_general_control_remove_field:hover {
   left: -999999px;
   visibility: hidden;
 }
-#accordion-section-aza_shortcodes .accordion-section-title::after,
-#accordion-section-aza_appearance_testimonials .accordion-section-title::after,
-#accordion-section-aza_appearance_about .accordion-section-title::after,
-#accordion-section-aza_appearance_portfolio .accordion-section-title::after {
-	content: "\f160";
-	color:#c85656;	}
-
-#accordion-section-aza_shortcodes .accordion-section-title, #customize-controls .control-section #accordion-section-aza_shortcodes .accordion-section-title:hover, #customize-controls .control-section #accordion-section-aza_shortcodes .accordion-section-title:focus, #customize-controls .control-section #accordion-section-aza_shortcodes .accordion-section-title:active,
-#accordion-section-aza_appearance_testimonials .accordion-section-title, #customize-controls .control-section #accordion-section-aza_appearance_testimonials .accordion-section-title:hover, #customize-controls .control-section #accordion-section-aza_appearance_testimonials .accordion-section-title:focus, #customize-controls .control-section #accordion-section-aza_appearance_testimonials .accordion-section-title:active,
-#accordion-section-aza_appearance_about .accordion-section-title, #customize-controls .control-section #accordion-section-aza_appearance_about .accordion-section-title:hover,  #customize-controls .control-section #accordion-section-aza_appearance_about .accordion-section-title:focus,  #customize-controls .control-section #accordion-section-aza_appearance_about .accordion-section-title:active,
-#accordion-section-aza_appearance_portfolio .accordion-section-title, #customize-controls .control-section #accordion-section-aza_appearance_portfolio .accordion-section-title:hover, #customize-controls .control-section #accordion-section-aza_appearance_portfolio .accordion-section-title:focus, #customize-controls .control-section #accordion-section-aza_appearance_portfolio .accordion-section-title:active {
-	color:#7e7e7e;
-	background-color: #eeeeee;
-}
