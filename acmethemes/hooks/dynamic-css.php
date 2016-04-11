@@ -112,7 +112,7 @@ if ( ! function_exists( 'acmeblog_dynamic_css' ) ) :
                 }
             }";
         /*custom css*/
-        $acmeblog_custom_css = wp_filter_nohtml_kses ( $acmeblog_customizer_all_values['acmeblog-custom-css'] );
+        $acmeblog_custom_css = wp_strip_all_tags ( $acmeblog_customizer_all_values['acmeblog-custom-css'] );
         if ( ! empty( $acmeblog_custom_css ) ) {
             $custom_css .= $acmeblog_custom_css;
         }
