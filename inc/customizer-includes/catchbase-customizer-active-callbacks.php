@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -20,7 +20,12 @@ if( ! function_exists( 'catchbase_is_logo_enabled' ) ) :
 	* @since  Catch Base 2.7
 	*/
 	function catchbase_is_logo_enabled( $control ) {
-		return !$control->manager->get_setting( 'catchbase_theme_options[logo_disable]' )->value();
+		if ( function_exists( 'has_custom_logo' ) ) {
+			return true;
+		}
+		else {
+			return !$control->manager->get_setting( 'catchbase_theme_options[logo_disable]' )->value();
+		}
 	}
 endif;
 
@@ -33,7 +38,7 @@ if( ! function_exists( 'catchbase_is_featured_header_image_enabled' ) ) :
 	*/
 	function catchbase_is_featured_header_image_enabled( $control ) {
 		$enabled = $control->manager->get_setting( 'catchbase_theme_options[enable_featured_header_image]' )->value();
-		return ( $enabled !== 'disabled' );		
+		return ( $enabled !== 'disabled' );
 	}
 endif;
 
@@ -45,7 +50,7 @@ if( ! function_exists( 'catchbase_is_promotion_headline_enabled' ) ) :
 	*/
 	function catchbase_is_promotion_headline_enabled( $control ) {
 		$enabled = $control->manager->get_setting( 'catchbase_theme_options[promotion_headline_option]' )->value();
-		return ( $enabled !== 'disabled' );		
+		return ( $enabled !== 'disabled' );
 	}
 endif;
 
@@ -58,11 +63,11 @@ if( ! function_exists( 'catchbase_is_slider_active' ) ) :
 	*/
 	function catchbase_is_slider_active( $control ) {
 		global $wp_query;
-		
+
 		$page_id = $wp_query->get_queried_object_id();
 
 		// Front page display in Reading Settings
-		$page_for_posts = get_option('page_for_posts'); 
+		$page_for_posts = get_option('page_for_posts');
 
 		$enable = $control->manager->get_setting( 'catchbase_theme_options[featured_slider_option]' )->value();
 
@@ -80,11 +85,11 @@ if( ! function_exists( 'catchbase_is_demo_slider_inactive' ) ) :
 	*/
 	function catchbase_is_demo_slider_inactive( $control ) {
 		global $wp_query;
-		
+
 		$page_id = $wp_query->get_queried_object_id();
 
 		// Front page display in Reading Settings
-		$page_for_posts = get_option('page_for_posts'); 
+		$page_for_posts = get_option('page_for_posts');
 
 		$enable	= $control->manager->get_setting( 'catchbase_theme_options[featured_slider_option]' )->value();
 
@@ -104,11 +109,11 @@ if( ! function_exists( 'catchbase_is_featured_content_active' ) ) :
 	*/
 	function catchbase_is_featured_content_active( $control ) {
 		global $wp_query;
-		
+
 		$page_id = $wp_query->get_queried_object_id();
 
 		// Front page display in Reading Settings
-		$page_for_posts = get_option('page_for_posts'); 
+		$page_for_posts = get_option('page_for_posts');
 
 		$enable = $control->manager->get_setting( 'catchbase_theme_options[featured_content_option]' )->value();
 
@@ -126,11 +131,11 @@ if( ! function_exists( 'catchbase_is_demo_featured_content_inactive' ) ) :
 	*/
 	function catchbase_is_demo_featured_content_inactive( $control ) {
 		global $wp_query;
-		
+
 		$page_id = $wp_query->get_queried_object_id();
 
 		// Front page display in Reading Settings
-		$page_for_posts = get_option('page_for_posts'); 
+		$page_for_posts = get_option('page_for_posts');
 
 		$enable 	= $control->manager->get_setting( 'catchbase_theme_options[featured_content_option]' )->value();
 

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2016-03-05 21:02+0545\n"
-"PO-Revision-Date: 2016-03-05 21:02+0545\n"
+"POT-Creation-Date: 2016-04-11 08:11+0545\n"
+"PO-Revision-Date: 2016-04-11 08:11+0545\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -98,7 +98,7 @@ msgstr "Ljud"
 msgid "Chats"
 msgstr "Chatt"
 
-#: ../archive.php:69 ../sidebar-secondary.php:45 ../sidebar.php:56
+#: ../archive.php:69 ../sidebar-secondary.php:45 ../sidebar.php:54
 msgid "Archives"
 msgstr "Arkiv"
 
@@ -152,8 +152,8 @@ msgstr "Det verkar som att vi inte kan hitta det du letar efter. Testa att söka
 msgid "Pages:"
 msgstr "Sidor:"
 
-#: ../content-page.php:35 ../inc/catchbase-core.php:622
-#: ../inc/catchbase-core.php:641 ../inc/catchbase-core.php:767
+#: ../content-page.php:35 ../inc/catchbase-core.php:648
+#: ../inc/catchbase-core.php:667 ../inc/catchbase-core.php:793
 msgid "Edit"
 msgstr "Redigera"
 
@@ -198,104 +198,104 @@ msgstr "Primär meny"
 msgid "Secondary Menu"
 msgstr "Sekundär meny"
 
-#: ../inc/catchbase-core.php:588
+#: ../inc/catchbase-core.php:614
 msgid "Post navigation"
 msgstr "Inläggsnavigering"
 
-#: ../inc/catchbase-core.php:597
+#: ../inc/catchbase-core.php:623
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Äldre inlägg"
 
-#: ../inc/catchbase-core.php:598
+#: ../inc/catchbase-core.php:624
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nyare inlägg <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/catchbase-core.php:622
+#: ../inc/catchbase-core.php:648
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/catchbase-core.php:632
+#: ../inc/catchbase-core.php:658
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">skriver:</span>"
 
-#: ../inc/catchbase-core.php:638
+#: ../inc/catchbase-core.php:664
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s kl. %2$s"
 
-#: ../inc/catchbase-core.php:645
+#: ../inc/catchbase-core.php:671
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar inväntar granskning."
 
-#: ../inc/catchbase-core.php:748
+#: ../inc/catchbase-core.php:774
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Postades den</span>"
 
-#: ../inc/catchbase-core.php:755
+#: ../inc/catchbase-core.php:781
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Författare</span>"
 
-#: ../inc/catchbase-core.php:763
+#: ../inc/catchbase-core.php:789
 msgid "Leave a comment"
 msgstr "Lämna en kommentar"
 
-#: ../inc/catchbase-core.php:763
+#: ../inc/catchbase-core.php:789
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../inc/catchbase-core.php:763
+#: ../inc/catchbase-core.php:789
 msgid "% Comments"
 msgstr "% Kommentarer"
 
-#: ../inc/catchbase-core.php:784 ../inc/catchbase-core.php:792
+#: ../inc/catchbase-core.php:810 ../inc/catchbase-core.php:818
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/catchbase-core.php:787
+#: ../inc/catchbase-core.php:813
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategorier</span>"
 
-#: ../inc/catchbase-core.php:795
+#: ../inc/catchbase-core.php:821
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Taggar</span>"
 
-#: ../inc/catchbase-core.php:938
+#: ../inc/catchbase-core.php:964
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catchbase-core.php:1452
+#: ../inc/catchbase-core.php:1482
 msgid "Scroll Up"
 msgstr "Scrolla upp"
 
-#: ../inc/catchbase-core.php:1470
+#: ../inc/catchbase-core.php:1500
 msgid "Posted on"
 msgstr "﻿Publicerat den"
 
-#: ../inc/catchbase-core.php:1471
+#: ../inc/catchbase-core.php:1501
 msgid "By"
 msgstr "Av"
 
-#: ../inc/catchbase-core.php:1512
+#: ../inc/catchbase-core.php:1542
 msgid "Next &rarr;"
 msgstr "Nästa &rarr;"
 
-#: ../inc/catchbase-core.php:1513
+#: ../inc/catchbase-core.php:1543
 msgid "Next post:"
 msgstr "Nästa inlägg:"
 
-#: ../inc/catchbase-core.php:1515
+#: ../inc/catchbase-core.php:1545
 msgid "&larr; Previous"
 msgstr "&larr; Föregående"
 
-#: ../inc/catchbase-core.php:1516
+#: ../inc/catchbase-core.php:1546
 msgid "Previous post:"
 msgstr "Föregående inlägg:"
 
@@ -728,7 +728,7 @@ msgid "Menu"
 msgstr "meny"
 
 #: ../inc/catchbase-metabox.php:92
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:205
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:208
 msgid "Layout Options"
 msgstr "Layoutalternativ"
 
@@ -737,7 +737,7 @@ msgid "Header Featured Image Options"
 msgstr "Rubrik utvald bild alternativ"
 
 #: ../inc/catchbase-metabox.php:94
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:262
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:265
 msgid "Single Page/Post Image Layout "
 msgstr "Enda sida/inlägg bildlayouten"
 
@@ -952,7 +952,7 @@ msgid "Featured Header Image Link URL"
 msgstr "Utvald rubrik bild länk-URL"
 
 #: ../inc/customizer-includes/catchbase-customizer-header-options.php:98
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:431
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:434
 msgid "Check to Open Link in New Window/Tab"
 msgstr "﻿Öppna länken i ett nytt fönster/flik"
 
@@ -1047,19 +1047,19 @@ msgstr "Hemsida / startsida alternativ"
 msgid "Select Categories"
 msgstr "Välj kategorier"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:170
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:172
 msgid "Remove Icon images to disable."
 msgstr "Ta bort ikonbilder att inaktivera."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:173
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:175
 msgid "Icon Options"
 msgstr "Ikonalternativ"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:182
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:184
 msgid "Select/Add Favicon"
 msgstr "Välj/Lägg till Favoritikon"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:193
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:195
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
 "height, which will support High Resolution Devices like iPad Retina."
@@ -1067,19 +1067,19 @@ msgstr ""
 "Web Clip ikonen för Apple-enheter. Rekommenderade storleken - bredd 144px och "
 "höjd 144px höjd, som kommer att stödja hög upplösning enheter som iPad retina"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:194
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:196
 msgid "Select/Add Web Clip Icon"
 msgstr "Välj/Lägg till Web Clip Icon"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:222
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:225
 msgid "Default Layout"
 msgstr "Standardlayout"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:242
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:245
 msgid "Archive Content Layout"
 msgstr "Arkivet innehåll Layout"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:273
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:276
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -1090,7 +1090,7 @@ msgstr ""
 "a>.<br/>Oändlig Scroll alternativ kräver <a target=\"_blank\" href=\"%s"
 "\">JetPack Plugin</a> med oändlig Scroll modul aktiverad."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:280
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:283
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
@@ -1099,7 +1099,7 @@ msgstr ""
 "Oändligt Scroll alternativ kräver <a target=\"_blank\" href=\"%s\">JetPack "
 "Plugin</a> med oändlig Scroll modul aktiverad."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:291
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:294
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -1107,79 +1107,79 @@ msgstr ""
 "Numerisk alternativ kräver <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</"
 "a>."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:302
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:305
 msgid "Pagination Options"
 msgstr "Sidbrytningsalternativ"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:319
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:322
 msgid "Pagination type"
 msgstr "Sidbrytningstyp"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:328
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:331
 msgid "To disable the fields, simply leave them empty."
 msgstr "Om du vill inaktivera fälten lämna dem tomma."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:331
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:334
 msgid "Promotion Headline Options"
 msgstr "Utvald rubrik alternativ"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:348
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:351
 msgid "Enable Promotion Headline on"
 msgstr "Aktivera utvald rubrik på"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:364
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:367
 msgid "Appropriate Words: 10"
 msgstr "Lämpligt ord: 10"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:365
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:368
 msgid "Promotion Headline Text"
 msgstr "Utvald rubrik text"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:381
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:384
 msgid "Appropriate Words: 15"
 msgstr "Lämpligt ord: 15"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:382
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:385
 msgid "Promotion Subheadline Text"
 msgstr "Utvald underrubrik text"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:398
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:401
 msgid "Appropriate Words: 3"
 msgstr "Lämpligt ord: 3"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:399
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:402
 msgid "Promotion Headline Button Text "
 msgstr "Utvald rubrik knapptext"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:415
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:418
 msgid "Promotion Headline Link"
 msgstr "Utvald rubrik länk"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:443
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:446
 msgid "Scrollup Options"
 msgstr "Scrollupp alternativ"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:453
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:456
 msgid "Check to disable Scroll Up"
 msgstr "Markera för att inaktivera Scroll Upp"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:462
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:465
 msgid "Change default placeholder text in Search."
 msgstr "Ändra standardplacering för text i Sök"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:465
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:468
 msgid "Search Options"
 msgstr "Sökalternativ"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:476
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:479
 msgid "Default Display Text in Search"
 msgstr "Standardtext i sök"
 
-#: ../inc/customizer-includes/catchbase-customizer.php:53
+#: ../inc/customizer-includes/catchbase-customizer.php:55
 msgid "Check to disable logo"
 msgstr "Markera för att inaktivera logo"
 
-#: ../inc/customizer-includes/catchbase-customizer.php:69
+#: ../inc/customizer-includes/catchbase-customizer.php:70
 msgid "Logo"
 msgstr "Logga"
 
@@ -1257,7 +1257,7 @@ msgid ""
 "layout option."
 msgstr "Detta en den sekundära sidopanelen om du använder en tre kolumners layout"
 
-#: ../sidebar-secondary.php:32 ../sidebar.php:43
+#: ../sidebar-secondary.php:32 ../sidebar.php:41
 #, php-format
 msgid ""
 "By default it will load Search and Archives widgets as shown below. You can add "
@@ -1268,11 +1268,11 @@ msgstr ""
 "widgeten på detta område genom att besöka din <a href=\"%s\">Widgets Panel</a> "
 "som kommer att ersätta standard widgets."
 
-#: ../sidebar.php:39
+#: ../sidebar.php:37
 msgid "Primary Sidebar Widget Area"
 msgstr "Primära sidofältet Widget område"
 
-#: ../sidebar.php:42
+#: ../sidebar.php:40
 msgid ""
 "This is the Primary Sidebar Widget Area if you are using a two or three column "
 "site layout option."

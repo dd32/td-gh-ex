@@ -128,6 +128,16 @@ if ( ! function_exists( 'catchbase_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+		//@remove Remove check when WordPress 4.8 is released
+		if ( function_exists( 'has_custom_logo' ) ) {
+			/**
+			* Setup Custom Logo Support for theme
+			* Supported from WordPress version 4.5 onwards
+			* More Info: https://make.wordpress.org/core/2016/03/10/custom-logo/
+			*/
+			add_theme_support( 'custom-logo' );
+		}
+
 		/**
 		 * Setup Infinite Scroll using JetPack if navigation type is set
 		 */
@@ -368,8 +378,10 @@ function catchbase_flush_transients(){
 
 	delete_transient( 'catchbase_featured_slider' );
 
+	//@remove Remove this when WordPress 4.8 is released
 	delete_transient( 'catchbase_favicon' );
 
+	//@remove Remove this when WordPress 4.8 is released
 	delete_transient( 'catchbase_webclip' );
 
 	delete_transient( 'catchbase_custom_css' );
@@ -442,8 +454,15 @@ if ( ! function_exists( 'catchbase_favicon' ) ) :
 	 * @action wp_head, admin_head
 	 *
 	 * @since Catch Base 1.0
+	 *
+	 * @remove Remove this function when WordPress 4.8 is released
 	 */
 	function catchbase_favicon() {
+		if ( function_exists( 'has_site_icon' ) ) {
+			//Bail Early if Core Site Icon Feature is Present
+			return;
+		}
+
 		if( ( !$catchbase_favicon = get_transient( 'catchbase_favicon' ) ) ) {
 			$options 	= catchbase_get_theme_options();
 
@@ -480,8 +499,15 @@ if ( ! function_exists( 'catchbase_web_clip' ) ) :
 	 * @action wp_head
 	 *
 	 * @since Catch Base 1.0
+	 *
+	 * @remove Remove this function when WordPress 4.8 is released
 	 */
 	function catchbase_web_clip() {
+		if ( function_exists( 'has_site_icon' ) ) {
+			//Bail Early if Core Site Icon Feature is Present
+			return;
+		}
+
 		if( ( !$catchbase_web_clip = get_transient( 'catchbase_web_clip' ) ) ) {
 			$options 	= catchbase_get_theme_options();
 
@@ -1122,36 +1148,40 @@ if ( ! function_exists( 'catchbase_get_theme_layout' ) ) :
 	 * @since Catch Base 3.4
 	 */
 	function catchbase_get_theme_layout() {
+		$id = '';
+
 		global $post, $wp_query;
 
-		$options 		= catchbase_get_theme_options();
-
-		// Front page displays in Reading Settings
+	    // Front page displays in Reading Settings
+		$page_on_front  = get_option('page_on_front') ;
 		$page_for_posts = get_option('page_for_posts');
 
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();
 
-		//Get Page ID of Front Page
-		$page_on_front = get_option('page_on_front') ;
-
+		// Blog Page or Front Page setting in Reading Settings
 		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
-			// Blog Page or Front Page setting in Reading Settings
-	        $layout = get_post_meta( $page_id, 'catchbase-layout-option', true );
+	        $id = $page_id;
 	    }
-    	else if ( is_singular() ) {
+	    else if ( is_singular() ) {
 	 		if ( is_attachment() ) {
-				$parent = $post->post_parent;
-
-				$layout = get_post_meta( $parent, 'catchbase-layout-option', true );
+				$id = $post->post_parent;
 			}
 			else {
-				$layout = get_post_meta( $post->ID, 'catchbase-layout-option', true );
+				$id = $post->ID;
 			}
+		}
+
+		//Get appropriate metabox value of layout
+		if ( '' != $id ) {
+			$layout = get_post_meta( $id, 'catchbase-layout-option', true );
 		}
 		else {
 			$layout = 'default';
 		}
+
+		//Load options data
+		$options = catchbase_get_theme_options();
 
 		//check empty and load default
 		if ( empty( $layout ) || 'default' == $layout ) {
@@ -1520,3 +1550,77 @@ if ( ! function_exists( 'catchbase_post_navigation' ) ) :
 	}
 endif; //catchbase_post_navigation
 add_action( 'catchbase_after_post', 'catchbase_post_navigation', 10 );
+
+
+/**
+ * Migrate Logo to New WordPress core Custom Logo
+ *
+ *
+ * Runs if version number saved in theme_mod "logo_version" doesn't match current theme version.
+ */
+function catchbase_logo_migrate() {
+	$ver = get_theme_mod( 'logo_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '2.8' ) >= 0 ) {
+		return;
+	}
+
+	/**
+	 * Get Theme Options Values
+	 */
+	$options 	= catchbase_get_theme_options();
+
+	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'the_custom_logo' ) ) {
+		if( isset( $options['logo'] ) && '' != $options['logo'] ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$logo = attachment_url_to_postid( $options['logo'] );
+
+			if ( is_int( $logo ) ) {
+				set_theme_mod( 'custom_logo', $logo );
+			}
+		}
+
+  		// Update to match logo_version so that script is not executed continously
+		set_theme_mod( 'logo_version', '2.8' );
+	}
+
+}
+add_action( 'after_setup_theme', 'catchbase_logo_migrate' );
+
+
+/**
+ * Migrate Custom Favicon to WordPress core Site Icon
+ *
+ * Runs if version number saved in theme_mod "site_icon_version" doesn't match current theme version.
+ */
+function catchbase_site_icon_migrate() {
+	$ver = get_theme_mod( 'site_icon_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '2.8' ) >= 0 ) {
+		return;
+	}
+
+	/**
+	 * Get Theme Options Values
+	 */
+	$options 	= catchbase_get_theme_options();
+
+	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'has_site_icon' ) ) {
+		if ( isset( $options['favicon'] ) && '' != $options['favicon'] ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$site_icon = attachment_url_to_postid( $options['favicon'] );
+
+			if ( is_int( $site_icon ) ) {
+				update_option( 'site_icon', $site_icon );
+			}
+		}
+
+	  	// Update to match site_icon_version so that script is not executed continously
+		set_theme_mod( 'site_icon_version', '2.8' );
+	}
+}
+add_action( 'after_setup_theme', 'catchbase_site_icon_migrate' );

@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -26,7 +26,7 @@ function catchbase_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport			= 'postMessage';
 
 	/**
-	  * Set priority of blogname (Site Title) to 1. 
+	  * Set priority of blogname (Site Title) to 1.
 	  *  Strangly, if more than two options is added, Site title is moved below Tagline. This rectifies this issue.
 	  */
 	$wp_customize->get_control( 'blogname' )->priority			= 1;
@@ -42,69 +42,69 @@ function catchbase_customize_register( $wp_customize ) {
 	//Custom Controls
 	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-custom-controls.php';
 
-	// Custom Logo (added to Site Title and Tagline section in Theme Customizer)
-    $wp_customize->add_setting( 'catchbase_theme_options[logo_disable]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['logo_disable'],
-		'sanitize_callback' => 'catchbase_sanitize_checkbox',
-	) );
+	//@remove Remove this block when WordPress 4.8 is released
+	if ( ! function_exists( 'has_custom_logo' ) ) {
+		// Custom Logo (added to Site Title and Tagline section in Theme Customizer)
+	    $wp_customize->add_setting( 'catchbase_theme_options[logo_disable]', array(
+			'capability'		=> 'edit_theme_options',
+			'default'			=> $defaults['logo_disable'],
+			'sanitize_callback' => 'catchbase_sanitize_checkbox',
+		) );
 
-	$wp_customize->add_control( 'catchbase_theme_options[logo_disable]', array(
-		'label'    => __( 'Check to disable logo', 'catch-base' ),
-		'priority' => 100,
-		'section'  => 'title_tagline',
-		'settings' => 'catchbase_theme_options[logo_disable]',
-		'type'     => 'checkbox',
-	) );
+		$wp_customize->add_control( 'catchbase_theme_options[logo_disable]', array(
+			'label'    => __( 'Check to disable logo', 'catch-base' ),
+			'priority' => 100,
+			'section'  => 'title_tagline',
+			'settings' => 'catchbase_theme_options[logo_disable]',
+			'type'     => 'checkbox',
+		) );
 
-	$wp_customize->add_setting( 'catchbase_theme_options[logo]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['logo'],
-		'sanitize_callback'	=> 'catchbase_sanitize_image',
-		'transport'			=> 'postMessage',
-	) );
+		$wp_customize->add_setting( 'catchbase_theme_options[logo]', array(
+			'capability'		=> 'edit_theme_options',
+			'default'			=> $defaults['logo'],
+			'sanitize_callback'	=> 'catchbase_sanitize_image',
+		) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo', array(
-		'active_callback' 	=> 'catchbase_is_logo_enabled',
-		'label'				=> __( 'Logo', 'catch-base' ),
-		'priority'			=> 101,
-		'section'   		=> 'title_tagline',
-        'settings'  		=> 'catchbase_theme_options[logo]',
-    ) ) );
-	
-	$wp_customize->add_setting( 'catchbase_theme_options[logo_alt_text]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['logo_alt_text'],
-		'sanitize_callback'	=> 'sanitize_text_field',
-		'transport'			=> 'postMessage',
-	) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo', array(
+			'active_callback' 	=> 'catchbase_is_logo_enabled',
+			'label'				=> __( 'Logo', 'catch-base' ),
+			'priority'			=> 101,
+			'section'   		=> 'title_tagline',
+	        'settings'  		=> 'catchbase_theme_options[logo]',
+	    ) ) );
 
-	$wp_customize->add_control( 'catchbase_logo_alt_text', array(
-		'active_callback' 	=> 'catchbase_is_logo_enabled',
-		'label'    			=> __( 'Logo Alt Text', 'catch-base' ),
-		'priority'			=> 102,
-		'section' 			=> 'title_tagline',
-		'settings' 			=> 'catchbase_theme_options[logo_alt_text]',
-		'type'     			=> 'text',
-	) );
+		$wp_customize->add_setting( 'catchbase_theme_options[logo_alt_text]', array(
+			'capability'		=> 'edit_theme_options',
+			'default'			=> $defaults['logo_alt_text'],
+			'sanitize_callback'	=> 'sanitize_text_field',
+		) );
+
+		$wp_customize->add_control( 'catchbase_logo_alt_text', array(
+			'active_callback' 	=> 'catchbase_is_logo_enabled',
+			'label'    			=> __( 'Logo Alt Text', 'catch-base' ),
+			'priority'			=> 102,
+			'section' 			=> 'title_tagline',
+			'settings' 			=> 'catchbase_theme_options[logo_alt_text]',
+			'type'     			=> 'text',
+		) );
+	}
 
 	$wp_customize->add_setting( 'catchbase_theme_options[move_title_tagline]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['move_title_tagline'],
 		'sanitize_callback' => 'catchbase_sanitize_checkbox',
-		'transport'			=> 'postMessage',
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[move_title_tagline]', array(
 		'active_callback' 	=> 'catchbase_is_logo_enabled',
 		'label'    			=> __( 'Check to move Site Title and Tagline before logo', 'catch-base' ),
-		'priority' 			=> 103,
+		'priority' 			=> function_exists( 'has_custom_logo' ) ? 10 : 103,
 		'section'  			=> 'title_tagline',
 		'settings' 			=> 'catchbase_theme_options[move_title_tagline]',
 		'type'     			=> 'checkbox',
 	) );
 	// Custom Logo End
-	 
+
 	// Color Scheme
 	$wp_customize->add_setting( 'catchbase_theme_options[color_scheme]', array(
 		'capability' 		=> 'edit_theme_options',
@@ -136,16 +136,16 @@ function catchbase_customize_register( $wp_customize ) {
 
 	//Theme Options
 	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-theme-options.php';
-	
+
 	//Featured Content Setting
 	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-featured-content-setting.php';
-   	
+
 	//Featured Slider
 	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-featured-slider.php';
 
 	//Social Links
 	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-social-icons.php';
-	
+
 	// Reset all settings to default
 	$wp_customize->add_section( 'catchbase_reset_all_settings', array(
 		'description'	=> __( 'Caution: Reset all settings to default. Refresh the page after save to view full effects.', 'catch-base' ),
@@ -186,7 +186,7 @@ function catchbase_customize_register( $wp_customize ) {
          'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',
-    ) ) );  
+    ) ) );
     //Important Links End
 }
 add_action( 'customize_register', 'catchbase_customize_register' );
@@ -207,7 +207,7 @@ function catchbase_customize_preview() {
 		);
 
 	wp_localize_script( 'catchbase_customizer', 'data', $data );
-	
+
 	//Flush transients on preview
 	catchbase_flush_transients();
 }
@@ -251,7 +251,7 @@ function catchbase_color_list() {
 
 	$catchbase_color_list['background_color']['light']	= $default['background_color'];
 	$catchbase_color_list['background_color']['dark']	= $default_dark['background_color'];
-	
+
 	$catchbase_color_list['header_textcolor']['light']	= $default['header_textcolor'];
 	$catchbase_color_list['header_textcolor']['dark']	= $default_dark['header_textcolor'];
 

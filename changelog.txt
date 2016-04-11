@@ -1,5 +1,9 @@
 == Change log ==
 
+= 2.8.1 =
+* Updated: Favicon and Web Clip Migration to Site Icon( Core Support )
+* Updated: Logo to Custom Logo( Core Support ) for WP version 4.5
+
 = 2.8 =
 * Fixed: Featured Page Content anchor attribute issue (title missing)
 * Updated: Sidr menu script to version 2.1.1.1

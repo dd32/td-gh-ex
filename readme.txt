@@ -1,11 +1,11 @@
 === Catch Base ===
 
-If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Catch Base is where your search ends. Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Catch Base is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German, Hungarian, Lithuanian and Danish languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-base/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-base/
+If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Catch Base is where your search ends. Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Catch Base is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German, Hungarian, Lithuanian and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-base/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-base/
 
 == Support ==
 
-Support: http://catchthemes.com/support/
-Support Forum: http://catchthemes.com/support-forum/forum/catch-base-free/
+Support: https://catchthemes.com/support/
+Support Forum: https://catchthemes.com/support-forum/forum/catch-base-free/
 
 
 == Translation ==
@@ -65,11 +65,11 @@ JS Files
 
 Catch Base theme supports two custom menus that is primary and secondary. 
 To create a custom menu, go to Appearance -> Menus in your dashboard. 
-For more about custom menu, check out http://catchthemes.com/blog/custom-menus-wordpress-themes/
+For more about custom menu, check out https://catchthemes.com/blog/custom-menus-wordpress-themes/
 
 = Featured Image =
 
-This theme relies heavily on Featured Images. If your post/page is missing a Featured Image, the post image will not show up on homepage, on archived pages and on Featured Page Slider. For more about featured image, check out http://catchthemes.com/blog/videos-blog/video-series-adding-featured-image-wordpress-postpage/
+This theme relies heavily on Featured Images. If your post/page is missing a Featured Image, the post image will not show up on homepage, on archived pages and on Featured Page Slider. For more about featured image, check out https://catchthemes.com/blog/videos-blog/video-series-adding-featured-image-wordpress-postpage/
 
 If you are migrating your old site to this new them then you need to regenerate thumbnails. You can do that easily with this plugin: https://wordpress.org/plugins/regenerate-thumbnails/. This plugin allows you to regenerate your thumbnails after changing the thumbnail sizes, which occurs by switching from one theme to another.
 
@@ -145,9 +145,9 @@ Number:
 
 = Theme Instructions =
 
-For detail instructions, check out theme instructions page at http://catchthemes.com/theme-instructions/catch-base/
+For detail instructions, check out theme instructions page at https://catchthemes.com/theme-instructions/catch-base/
 
 
 == Change Log ==
 
-Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/catch-base-theme/
+Please refer to changelog.txt file or change log page at https://catchthemes.com/changelogs/catch-base-theme/

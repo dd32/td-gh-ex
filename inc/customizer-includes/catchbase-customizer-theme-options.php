@@ -165,37 +165,40 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
     ) ) );
 	//Homepage / Frontpage Settings End
 
-	// Icon Options
-	$wp_customize->add_section( 'catchbase_icons', array(
-		'description'	=> __( 'Remove Icon images to disable.', 'catch-base'),
-		'panel'  => 'catchbase_theme_options',
-		'priority' 		=> 210,
-		'title'    		=> __( 'Icon Options', 'catch-base' ),
-	) );
+	//@remove Remove this block when WordPress 4.8 is released
+	if ( ! function_exists( 'has_site_icon' ) ) {
+		// Icon Options
+		$wp_customize->add_section( 'catchbase_icons', array(
+			'description'	=> __( 'Remove Icon images to disable.', 'catch-base'),
+			'panel'  => 'catchbase_theme_options',
+			'priority' 		=> 210,
+			'title'    		=> __( 'Icon Options', 'catch-base' ),
+		) );
 
-	$wp_customize->add_setting( 'catchbase_theme_options[favicon]', array(
-		'capability'		=> 'edit_theme_options',
-		'sanitize_callback'	=> 'catchbase_sanitize_image',
-	) );
+		$wp_customize->add_setting( 'catchbase_theme_options[favicon]', array(
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'catchbase_sanitize_image',
+		) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'catchbase_theme_options[favicon]', array(
-		'label'		=> __( 'Select/Add Favicon', 'catch-base' ),
-		'section'    => 'catchbase_icons',
-        'settings'   => 'catchbase_theme_options[favicon]',
-	) ) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'catchbase_theme_options[favicon]', array(
+			'label'		=> __( 'Select/Add Favicon', 'catch-base' ),
+			'section'    => 'catchbase_icons',
+	        'settings'   => 'catchbase_theme_options[favicon]',
+		) ) );
 
-	$wp_customize->add_setting( 'catchbase_theme_options[web_clip]', array(
-		'capability'		=> 'edit_theme_options',
-		'sanitize_callback'	=> 'catchbase_sanitize_image',
-	) );
+		$wp_customize->add_setting( 'catchbase_theme_options[web_clip]', array(
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'catchbase_sanitize_image',
+		) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'catchbase_theme_options[web_clip]', array(
-		'description'	=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catch-base'),
-		'label'		 	=> __( 'Select/Add Web Clip Icon', 'catch-base' ),
-		'section'    	=> 'catchbase_icons',
-        'settings'   	=> 'catchbase_theme_options[web_clip]',
-	) ) );
-	// Icon Options End
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'catchbase_theme_options[web_clip]', array(
+			'description'	=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catch-base'),
+			'label'		 	=> __( 'Select/Add Web Clip Icon', 'catch-base' ),
+			'section'    	=> 'catchbase_icons',
+	        'settings'   	=> 'catchbase_theme_options[web_clip]',
+		) ) );
+		// Icon Options End
+	}
 
 	// Layout Options
 	$wp_customize->add_section( 'catchbase_layout', array(

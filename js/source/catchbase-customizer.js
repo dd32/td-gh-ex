@@ -214,17 +214,17 @@
 			$promotion_content += '<div id="promotion-message">';
 			$promotion_content += '<div class="wrapper">';
 			$promotion_content += '<div class="section left">';
-			
+
 				if ( "" != promotion_headline ) {
 					$promotion_content += '<h2>' + promotion_headline + '</h2>';
 				}
 
 				if ( "" != promotion_subheadline ) {
 					$promotion_content += '<p>' + promotion_subheadline + '</p>';
-				}			
-				
-				$promotion_content += '</div><!-- .section.left -->';  
-					
+				}
+
+				$promotion_content += '</div><!-- .section.left -->';
+
 				if ( "" != promotion_headline_url ) {
 					if ( true == promotion_headline_target ) {
 						headlinetarget = '_blank';
@@ -232,12 +232,12 @@
 					else {
 						headlinetarget = '_self';
 					}
-					
+
 					$promotion_content += '<div class="section right">';
 					$promotion_content += '<a href="' + promotion_headline_url + '"target="' + headlinetarget + '">' + promotion_headline_button + '</a>'
 					$promotion_content += '</div><!-- .section.right -->';
 				}
-		
+
 		$promotion_content += '</div><!-- .wrapper -->';
 		$promotion_content += '</div><!-- #promotion-message -->';
 
@@ -334,7 +334,7 @@
 			var $featured_content_subheadline 	= $( 'section#featured-content .wrapper .featured-heading-wrap p' );
 
 			var headline 	= wp.customize( 'catchbase_theme_options[featured_content_headline]' ).get();
-			
+
 			//check if at least headline or subheadline is not empty
 			if ( '' != to || '' != headline ) {
 				//check if featured-content-wrapper exists
