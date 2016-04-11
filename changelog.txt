@@ -1,5 +1,9 @@
 == Change log ==
 
+Version 4.4.1
+* Updated: max width of content editor
+* Bug Fixed: Color scheme not changing
+
 Version 4.4
 * Added: Metabox Options For Layout in page and post add/edit pages
 * Updated: Values for Theme Layouts to match wigh Pro Version

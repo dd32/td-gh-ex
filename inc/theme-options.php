@@ -1188,17 +1188,17 @@ function catchbox_enqueue_color_scheme() {
 	$color_scheme = $options['color_scheme'];
 
 	if ( 'dark' == $color_scheme )
-		wp_enqueue_style( 'dark', get_template_directory_uri() . '/colors/dark.css', array(), null );
+		wp_enqueue_style( 'dark', get_template_directory_uri() . '/colors/dark.css', array( 'catchbox-style' ), null );
 	elseif ( 'blue' == $color_scheme )
-		wp_enqueue_style( 'blue', get_template_directory_uri() . '/colors/blue.css', array(), null );
+		wp_enqueue_style( 'blue', get_template_directory_uri() . '/colors/blue.css', array( 'catchbox-style' ), null );
 	elseif ( 'green' == $color_scheme )
-		wp_enqueue_style( 'green', get_template_directory_uri() . '/colors/green.css', array(), null );
+		wp_enqueue_style( 'green', get_template_directory_uri() . '/colors/green.css', array( 'catchbox-style' ), null );
 	elseif ( 'red' == $color_scheme )
-		wp_enqueue_style( 'red', get_template_directory_uri() . '/colors/red.css', array(), null );
+		wp_enqueue_style( 'red', get_template_directory_uri() . '/colors/red.css', array( 'catchbox-style' ), null );
 	elseif ( 'brown' == $color_scheme )
-		wp_enqueue_style( 'brown', get_template_directory_uri() . '/colors/brown.css', array(), null );
+		wp_enqueue_style( 'brown', get_template_directory_uri() . '/colors/brown.css', array( 'catchbox-style' ), null );
 	elseif ( 'orange' == $color_scheme )
-		wp_enqueue_style( 'orange', get_template_directory_uri() . '/colors/orange.css', array(), null );
+		wp_enqueue_style( 'orange', get_template_directory_uri() . '/colors/orange.css', array( 'catchbox-style' ), null );
 
 	do_action( 'catchbox_enqueue_color_scheme', $color_scheme );
 }
