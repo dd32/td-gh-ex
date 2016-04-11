@@ -45,6 +45,9 @@ http://www.gratisography.com/pictures/46_1.jpg
 16. Other theme options are self explanatory.
 
 == Change Log ==
+Version 1.1.7
+	*  Remove `Try pro for free` option
+
 Version 1.1.6
 	*  Added Woocommerce support
 	*  Fix single page featured image
