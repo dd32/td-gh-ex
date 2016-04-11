@@ -217,53 +217,6 @@ function catcheverest_customize_register( $wp_customize ) {
 			'section' 		=> 'responsive_design',
 			'default' 		=> $defaults['disable_responsive'],
 		),
-		//Favicon
-		'remove_favicon' => array(
-			'id' 				=> 'remove_favicon',
-			'title' 			=> __( 'Check to Disable Favicon', 'catch-everest' ),
-			'description'		=> '',
-			'field_type' 		=> 'checkbox',
-			'sanitize' 			=> 'catcheverest_sanitize_checkbox',
-			'panel' 			=> 'theme_options',
-			'section' 			=> 'favicon',
-			'default' 			=> $defaults['remove_favicon'],
-			'active_callback'	=> 'catcheverest_is_site_icon_active'
-		),
-		'fav_icon' => array(
-			'id' 				=> 'fav_icon',
-			'title' 			=> __( 'Fav Icon', 'catch-everest' ),
-			'description'		=> '',
-			'field_type' 		=> 'image',
-			'sanitize' 			=> 'catcheverest_sanitize_image',
-			'panel' 			=> 'theme_options',
-			'section' 			=> 'favicon',
-			'default' 			=> $defaults['fav_icon'],
-			'active_callback'	=> 'catcheverest_is_site_icon_active'
-		),
-
-		//Web Clip Icon
-		'remove_web_clip' => array(
-			'id' 				=> 'remove_web_clip',
-			'title' 			=> __( 'Check to Disable Web Clip Icon', 'catch-everest' ),
-			'description'		=> '',
-			'field_type' 		=> 'checkbox',
-			'sanitize' 			=> 'catcheverest_sanitize_checkbox',
-			'panel' 			=> 'theme_options',
-			'section' 			=> 'web_clip_icon_options',
-			'default' 			=> $defaults['remove_web_clip'],
-			'active_callback'	=> 'catcheverest_is_site_icon_active'
-		),
-		'web_clip' => array(
-			'id' 				=> 'web_clip',
-			'title' 			=> __( 'Web Clip Icon', 'catch-everest' ),
-			'description'		=> '',
-			'field_type' 		=> 'image',
-			'sanitize' 			=> 'catcheverest_sanitize_image',
-			'panel' 			=> 'theme_options',
-			'section' 			=> 'web_clip_icon_options',
-			'default' 			=> $defaults['web_clip'],
-			'active_callback'	=> 'catcheverest_is_site_icon_active'
-		),
 
 		'disable_header_right_sidebar' => array(
 			'id' 			=> 'disable_header_right_sidebar',
@@ -483,7 +436,7 @@ function catcheverest_customize_register( $wp_customize ) {
 			'input_attrs' 	=> array(
 					            'style' => 'width: 45px;',
 					            'min'   => 0,
-					            'max'   => 20,
+					            'max'   => 24,
 					            'step'  => 1,
 					        	)
 		),
@@ -889,6 +842,61 @@ function catcheverest_customize_register( $wp_customize ) {
 			'default' 		=> ''
 		),
 	);
+
+
+	//@remove Remove if block when WordPress 4.8 is released
+	if( !function_exists( 'has_site_icon' ) ) {
+		$settings_site_icon = array(
+			//Favicon
+			'remove_favicon' => array(
+				'id' 				=> 'remove_favicon',
+				'title' 			=> __( 'Check to Disable Favicon', 'catch-everest' ),
+				'description'		=> '',
+				'field_type' 		=> 'checkbox',
+				'sanitize' 			=> 'catcheverest_sanitize_checkbox',
+				'panel' 			=> 'theme_options',
+				'section' 			=> 'favicon',
+				'default' 			=> $defaults['remove_favicon'],
+				'active_callback'	=> 'catcheverest_is_site_icon_active'
+			),
+			'fav_icon' => array(
+				'id' 				=> 'fav_icon',
+				'title' 			=> __( 'Fav Icon', 'catch-everest' ),
+				'description'		=> '',
+				'field_type' 		=> 'image',
+				'sanitize' 			=> 'catcheverest_sanitize_image',
+				'panel' 			=> 'theme_options',
+				'section' 			=> 'favicon',
+				'default' 			=> $defaults['fav_icon'],
+				'active_callback'	=> 'catcheverest_is_site_icon_active'
+			),
+
+			//Web Clip Icon
+			'remove_web_clip' => array(
+				'id' 				=> 'remove_web_clip',
+				'title' 			=> __( 'Check to Disable Web Clip Icon', 'catch-everest' ),
+				'description'		=> '',
+				'field_type' 		=> 'checkbox',
+				'sanitize' 			=> 'catcheverest_sanitize_checkbox',
+				'panel' 			=> 'theme_options',
+				'section' 			=> 'web_clip_icon_options',
+				'default' 			=> $defaults['remove_web_clip'],
+				'active_callback'	=> 'catcheverest_is_site_icon_active'
+			),
+			'web_clip' => array(
+				'id' 				=> 'web_clip',
+				'title' 			=> __( 'Web Clip Icon', 'catch-everest' ),
+				'description'		=> '',
+				'field_type' 		=> 'image',
+				'sanitize' 			=> 'catcheverest_sanitize_image',
+				'panel' 			=> 'theme_options',
+				'section' 			=> 'web_clip_icon_options',
+				'default' 			=> $defaults['web_clip'],
+				'active_callback'	=> 'catcheverest_is_site_icon_active'
+			),
+		);
+		$settings_parameters = array_merge( $settings_parameters, $settings_site_icon);
+	}
 
 	foreach ( $settings_parameters as $option ) {
 		if( 'image' == $option['field_type'] ) {

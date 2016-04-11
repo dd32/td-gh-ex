@@ -1,8 +1,8 @@
 == Catch Everest ==
-Catch Everest Theme by Catch Themes, http://catchthemes.com/
+Catch Everest Theme by Catch Themes, https://catchthemes.com/
 
 == ABOUT Catch Everest ==
-Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Translation Ready and currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French, Brazilian Portuguese, Dutch, German, Catalan, Turkish and Bosnian. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-everest/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-everest/ 
+Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Translation Ready and currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French, Brazilian Portuguese, Dutch, German, Catalan, Turkish and Bosnian. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-everest/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-everest/ 
 
 == Tags ==
 light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -56,10 +56,10 @@ Licensed under GPL
 This theme shows the Post ID of the posts in the All Posts table in the WordPress Dashboard. This is added to help the users to use those ids in the featured Post Slider Options in Theme Options Panel.
 
 == Theme Instruction ==
-Check out the theme instruction at http://catchthemes.com/theme-instructions/catch-everest/
+Check out the theme instruction at https://catchthemes.com/theme-instructions/catch-everest/
 
 == Free Support Forum ==
-Access to free support forum at http://catchthemes.com/support-forum/forum/catch-everest-public/
+Access to free support forum at https://catchthemes.com/support-forum/forum/catch-everest-public/
 
 == Installation ==
 1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Select Install tab and click on Upload link. Select theme .zip and click on Install now button. If you have any errors, use alternate method.
@@ -68,4 +68,4 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
-Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/catch-everest-theme/
+Please refer to changelog.txt file or change log page at https://catchthemes.com/changelogs/catch-everest-theme/

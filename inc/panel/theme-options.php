@@ -154,84 +154,91 @@ function catcheverest_theme_options_do_page() {
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
 
-                    <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon', 'catch-everest' ); ?></a></h3>
-                        <div class="option-content inside">
-                            <table class="form-table">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Disable Favicon?', 'catch-everest' ); ?></th>
-                                         <input type='hidden' value='0' name='catcheverest_options[remove_favicon]'>
-                                        <td><input type="checkbox" id="favicon" name="catcheverest_options[remove_favicon]" value="1" <?php checked( '1', $options['remove_favicon'] ); ?> /> <?php _e('Check to disable', 'catch-everest'); ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Fav Icon URL:', 'catch-everest' ); ?></th>
-                                        <td><?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                                                <input class="upload-url" size="65" type="text" name="catcheverest_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
-                                            <?php } else { ?>
-                                                <input class="upload-url" size="65" type="text" name="catcheverest_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
-                                            <?php }  ?>
-                                            <input ref="<?php esc_attr_e( 'Insert as Fav Icon','catch-everest' );?>" class="catcheverest_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catch-everest' );?>" />
-                                        </td>
-                                    </tr>
+                    <?php
+                    //@remove Remove if block when WordPress 4.8 is released
+                    if( !function_exists( 'has_site_icon' ) ) {
+                    ?>
+                        <div class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon', 'catch-everest' ); ?></a></h3>
+                            <div class="option-content inside">
+                                <table class="form-table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><?php _e( 'Disable Favicon?', 'catch-everest' ); ?></th>
+                                             <input type='hidden' value='0' name='catcheverest_options[remove_favicon]'>
+                                            <td><input type="checkbox" id="favicon" name="catcheverest_options[remove_favicon]" value="1" <?php checked( '1', $options['remove_favicon'] ); ?> /> <?php _e('Check to disable', 'catch-everest'); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><?php _e( 'Fav Icon URL:', 'catch-everest' ); ?></th>
+                                            <td><?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
+                                                    <input class="upload-url" size="65" type="text" name="catcheverest_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
+                                                <?php } else { ?>
+                                                    <input class="upload-url" size="65" type="text" name="catcheverest_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
+                                                <?php }  ?>
+                                                <input ref="<?php esc_attr_e( 'Insert as Fav Icon','catch-everest' );?>" class="catcheverest_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catch-everest' );?>" />
+                                            </td>
+                                        </tr>
 
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Preview: ', 'catch-everest' ); ?></th>
-                                        <td>
-                                            <?php
-                                                if ( !empty( $options[ 'fav_icon' ] ) ) {
-                                                    echo '<img src="'.esc_url( $options[ 'fav_icon' ] ).'" alt="fav" />';
-                                                } else {
-                                                    echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
-                                                }
-                                            ?>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catch-everest' ); ?>" /></p>
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->
+                                        <tr>
+                                            <th scope="row"><?php _e( 'Preview: ', 'catch-everest' ); ?></th>
+                                            <td>
+                                                <?php
+                                                    if ( !empty( $options[ 'fav_icon' ] ) ) {
+                                                        echo '<img src="'.esc_url( $options[ 'fav_icon' ] ).'" alt="fav" />';
+                                                    } else {
+                                                        echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
+                                                    }
+                                                ?>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catch-everest' ); ?>" /></p>
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
 
-                    <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'catch-everest' ); ?></a></h3>
-                        <div class="option-content inside">
-                            <table class="form-table">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Disable Web Clip Icon?', 'catch-everest' ); ?></th>
-                                         <input type='hidden' value='0' name='catcheverest_options[remove_web_clip]'>
-                                        <td><input type="checkbox" id="favicon" name="catcheverest_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'catch-everest'); ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Web Clip Icon URL:', 'catch-everest' ); ?></th>
-                                        <td><?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
-                                                <input class="upload-url" size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
-                                            <?php } else { ?>
-                                                <input size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
-                                            <?php }  ?>
-                                            <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catch-everest' );?>" class="catcheverest_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catch-everest' );?>" />
-                                        </td>
-                                    </tr>
+                        <div class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'catch-everest' ); ?></a></h3>
+                            <div class="option-content inside">
+                                <table class="form-table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><?php _e( 'Disable Web Clip Icon?', 'catch-everest' ); ?></th>
+                                             <input type='hidden' value='0' name='catcheverest_options[remove_web_clip]'>
+                                            <td><input type="checkbox" id="favicon" name="catcheverest_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'catch-everest'); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><?php _e( 'Web Clip Icon URL:', 'catch-everest' ); ?></th>
+                                            <td><?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
+                                                    <input class="upload-url" size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
+                                                <?php } else { ?>
+                                                    <input size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
+                                                <?php }  ?>
+                                                <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catch-everest' );?>" class="catcheverest_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catch-everest' );?>" />
+                                            </td>
+                                        </tr>
 
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Preview: ', 'catch-everest' ); ?></th>
-                                        <td>
-                                            <?php
-                                                if ( !empty( $options[ 'web_clip' ] ) ) {
-                                                    echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="fav" />';
-                                                } else {
-                                                    echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
-                                                }
-                                            ?>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p><?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catch-everest' ); ?></p>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catch-everest' ); ?>" /></p>
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->
+                                        <tr>
+                                            <th scope="row"><?php _e( 'Preview: ', 'catch-everest' ); ?></th>
+                                            <td>
+                                                <?php
+                                                    if ( !empty( $options[ 'web_clip' ] ) ) {
+                                                        echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="fav" />';
+                                                    } else {
+                                                        echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
+                                                    }
+                                                ?>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p><?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catch-everest' ); ?></p>
+                                <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catch-everest' ); ?>" /></p>
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
+                    <?php
+                    }
+                    ?>
 
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Header Right Section', 'catch-everest' ); ?></a></h3>

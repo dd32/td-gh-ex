@@ -260,68 +260,15 @@ add_action('template_redirect', 'catcheverest_rss_redirect');
  */
 function catcheverest_body_classes( $classes ) {
 	//Getting Ready to load data from Theme Options Panel
-	global $post, $wp_query, $catcheverest_options_settings;
+	global $catcheverest_options_settings;
 	$options = $catcheverest_options_settings;
-	$themeoption_layout = $options['sidebar_layout'];
-
-	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts');
-
-	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();
 
 	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
 
-	// Blog Page setting in Reading Settings
-	if ( $page_id == $page_for_posts ) {
-		$layout = get_post_meta( $page_for_posts,'catcheverest-sidebarlayout', true );
-	}
-	// Front Page setting in Reading Settings
-	elseif ( $page_id == $page_on_front ) {
-		$layout = get_post_meta( $page_on_front,'catcheverest-sidebarlayout', true );
-	}
-	// Settings for page/post/attachment
-	elseif ( is_singular() ) {
-		if ( is_attachment() ) {
-			$parent = $post->post_parent;
-			$layout = get_post_meta( $parent, 'catcheverest-sidebarlayout', true );
-		} else {
-			$layout = get_post_meta( $post->ID, 'catcheverest-sidebarlayout', true );
-		}
-	}
-	else {
-		$layout = 'default';
-	}
-
-	//check empty and load default
-	if ( empty( $layout ) ) {
-		$layout = 'default';
-	}
-
-	if( ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar') ) ) {
-		$classes[] = 'no-sidebar';
-	}
-	elseif( ( $layout == 'no-sidebar-full-width' || ( $layout=='default' && $themeoption_layout == 'no-sidebar-full-width') ) ) {
-		$classes[] = 'no-sidebar-full-width';
-	}
-	elseif( ( $layout == 'left-sidebar' || ( $layout=='default' && $themeoption_layout == 'left-sidebar') ) ){
-		$classes[] = 'left-sidebar';
-	}
-	elseif( ( $layout == 'right-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar') ) ){
-		$classes[] = 'right-sidebar';
-	}
-
-	$current_content_layout = $options['content_layout'];
-	if( $current_content_layout == 'full' ) {
-		$classes[] = 'content-full';
-	}
-	elseif ( $current_content_layout == 'excerpt' ) {
-		$classes[] = 'content-excerpt';
-	}
+	$classes[] = catcheverest_get_theme_layout();
 
 	return $classes;
 }
@@ -355,9 +302,14 @@ add_filter( 'attachment_link', 'catcheverest_enhanced_image_navigation', 10, 2 )
  * @uses default favicon if favicon field on theme options is empty
  *
  * @uses set_transient and delete_transient
+ *
+ * @remove Remove this function when WordPress 4.8 is released
  */
 function catcheverest_favicon() {
-	//delete_transient( 'catcheverest_favicon' );
+	if ( function_exists( 'has_site_icon' ) ) {
+		//Bail Early if Core Site Icon Feature is Present
+		return;
+	}
 
 	if( ( !$catcheverest_favicon = get_transient( 'catcheverest_favicon' ) ) ) {
 		global $catcheverest_options_settings;
@@ -398,9 +350,20 @@ function catcheverest_header_left() { ?>
         <div id="header-left">
             <?php
             // Check to see if the header image has been removed
-			global $_wp_default_headers;
-            $header_image = get_header_image();
-            if ( ! empty( $header_image ) ) : ?>
+			$header_image = get_header_image();
+
+            // Check Logo
+			if ( function_exists( 'has_custom_logo' ) ) {
+				if ( has_custom_logo() ) {?>
+                	<h1 id="site-logo"><?php the_custom_logo(); ?></h1>
+                	<div id="hgroup" class="with-logo">
+                <?php
+				}
+				else {
+					echo '<div id="hgroup">';
+				}
+			}
+			else if ( ! empty( $header_image ) ) : ?>
                 <h1 id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
                     <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
                 </a></h1>
@@ -1393,9 +1356,14 @@ add_filter('wp_page_menu', 'catcheverest_pagemenu_filter');
  * @uses default Web Click Icon if web_clip field on theme options is empty
  *
  * @uses set_transient and delete_transient
+ *
+ * @remove Remove this function when WordPress 4.8 is released
  */
 function catcheverest_web_clip() {
-	//delete_transient( 'catcheverest_web_clip' );
+	if ( function_exists( 'has_site_icon' ) ) {
+		//Bail Early if Core Site Icon Feature is Present
+		return;
+	}
 
 	if( ( !$catcheverest_web_clip = get_transient( 'catcheverest_web_clip' ) ) ) {
 

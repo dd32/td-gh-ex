@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * @remove Remove this file and its include WordPress 4.8 is released
+ *
  * Sample implementation of the Custom Header feature
  * http://codex.wordpress.org/Custom_Headers
  *
@@ -38,19 +41,19 @@ function catcheverest_custom_header_setup() {
 		// Text color and image (empty to use none).
 		'default-text-color'     => '000',
 		'default-image'          => '',
-		
+
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 125,
 		'width'                  => 300,
 		'max-width'              => 1038,
-		
+
 		// Support flexible height and width.
 		'flex-height'            => true,
 		'flex-width'             => true,
-			
+
 		// Random image rotation off by default.
-		'random-default'         => false,	
-			
+		'random-default'         => false,
+
 		// Callbacks for styling the header and the admin preview.
 		'wp-head-callback'       => 'catcheverest_header_style',
 		'admin-head-callback'    => 'catcheverest_admin_header_style',

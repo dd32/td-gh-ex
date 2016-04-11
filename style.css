@@ -1,10 +1,10 @@
 /*
 Theme Name: Catch Everest
-Theme URI: http://catchthemes.com/themes/catch-everest
+Theme URI: https://catchthemes.com/themes/catch-everest
 Author: Catch Themes
-Author URI: http://catchthemes.com
-Description: Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Translation Ready and currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French, Brazilian Portuguese, Dutch, German, Catalan, Turkish and Bosnian. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-everest/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-everest/
-Version: 2.6
+Author URI: https://catchthemes.com
+Description: Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Translation Ready and currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French, Brazilian Portuguese, Dutch, German, Catalan, Turkish and Bosnian. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-everest/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-everest/
+Version: 2.7
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -130,7 +130,7 @@ a img {
 #header-left {
     float: left;
 	max-width: 100%;
-} 
+}
 #primary {
 	clear: both;
     float: left;
@@ -182,7 +182,7 @@ p,
 article.format-aside .entry-title,
 .comments-area article header,
 .widget-feat-content {
-	margin-bottom: 20px;	
+	margin-bottom: 20px;
 }
 .page .entry-header,
 .widget-title,
@@ -204,7 +204,7 @@ article.format-aside .entry-title,
 }
 #hgroup-wrap,
 .hentry,
-.comments-area article { 
+.comments-area article {
 	padding-bottom: 40px;
 }
 #site-generator .site-info {
@@ -238,12 +238,12 @@ textarea {
 .entry-header .entry-title,
 #homepage-message {
 	font-size: 26px;
-	font-size: 2.6rem;	
+	font-size: 2.6rem;
 }
 #homepage-message span {
 	font-size: 18px;
 	font-size: 1.8rem;
-	
+
 }
 #featured-post .entry-title {
 	font-size: 20px;
@@ -266,9 +266,9 @@ textarea {
 }
 .site {
 	background-color: #fff;
-	-webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);	
-	-moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);	
-	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);	
+	-webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	-moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 }
 
 /* Headings */
@@ -501,7 +501,7 @@ a:hover {
 }
 .displaynone {
 	display: none;
-}	
+}
 img#wpstats {
 	display: none;
 }
@@ -554,7 +554,7 @@ img#wpstats {
 	margin: 0;
 }
 #header-right .menu ul {
-	display: inline;	
+	display: inline;
 }
 #header-right .menu a {
 	border-left: 1px solid #e6e6e6;
@@ -635,10 +635,10 @@ img#wpstats {
 	width: 168px;
 	white-space: normal;
 }
-#header-menu ul.menu li:last-child, 
+#header-menu ul.menu li:last-child,
 #header-menu ul.menu ul li {
 	border:none;
-} 
+}
 #header-menu ul.menu li:hover > a,
 #header-menu ul.menu a:focus {
 	background-color: #2d2d2d;
@@ -652,7 +652,7 @@ img#wpstats {
 #header-menu .menu .current_page_ancestor > a {
 	background-color: #000;
 }
-#access-secondary { 
+#access-secondary {
 	background-color: #e6e6e6;
 	clear: both;
     display: block;
@@ -676,14 +676,14 @@ img#wpstats {
     list-style: none;
 	top: 35px;
 }
-#access-secondary ul.menu ul ul { 
+#access-secondary ul.menu ul ul {
 	top: 0;
 }
 
 
 /* =Responsive Menu (Tinynav.js)
 -------------------------------------------------------------- */
-.tinynav { 
+.tinynav {
     display: none;
 	font-size: 16px;
 }
@@ -861,7 +861,7 @@ img#wpstats {
     width: 100%;
 	z-index: 20;
 }
-#controllers a { 
+#controllers a {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
@@ -877,7 +877,7 @@ img#wpstats {
 	text-indent: -48px;
 	overflow: hidden;
 }
-#controllers a:hover, 
+#controllers a:hover,
 #controllers a.active {
 	background:rgba(255,255,255,.8);
 }
@@ -901,7 +901,7 @@ img#wpstats {
 }
 #slider-nav .slide-previous { }
 #slider-nav .slide-next { }
-	
+
 
 /* =Featured Images
 -------------------------------------------------------------- */
@@ -957,7 +957,7 @@ img#wpstats {
 .entry-header .entry-title a:hover {
 	color: #0088cc;
 }
-.page-header { 
+.page-header {
 	border-top: 4px double #e6e6e6;
 	border-bottom: 4px double #e6e6e6;
 	color: #757575;
@@ -983,7 +983,7 @@ img#wpstats {
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
-	hyphens: auto;	
+	hyphens: auto;
 }
 .entry-content ol,
 .comment-content ol,
@@ -1024,12 +1024,12 @@ img#wpstats {
 	font-size: 2.4rem;
 }
 .entry-content h2,
-.comment-content h2 { 
+.comment-content h2 {
 	font-size: 22px;
 	font-size: 2.2rem;
 }
 .entry-content h3,
-.comment-content h3 { 
+.comment-content h3 {
 	font-size: 20px;
 	font-size: 2rem;
 }
@@ -1042,17 +1042,17 @@ img#wpstats {
 	margin-bottom: 10px;
 }
 .entry-content h4,
-.comment-content h4 { 
+.comment-content h4 {
 	font-size: 18px;
 	font-size: 1.8rem;
 }
 .entry-content h5,
-.comment-content h5 { 
+.comment-content h5 {
 	font-size: 16px;
 	font-size: 1.6rem;
 }
 .entry-content h6,
-.comment-content h6 { 
+.comment-content h6 {
 	font-size: 14px;
 	font-size: 1.4rem;
 }
@@ -1061,7 +1061,7 @@ img#wpstats {
     border-bottom: 1px solid #e6e6e6;
     width: 100%;
 }
-.entry-content td, 
+.entry-content td,
 .comment-content td {
     border-top: 1px solid #e6e6e6;
     padding: 10px 10px 8px 0;
@@ -1188,7 +1188,7 @@ article .entry-format a:hover {
 /* =Link
 ----------------------------------------------- */
 
-article.format-link .entry-content { 
+article.format-link .entry-content {
 	float: left;
 	font-size: 25px;
 	font-size: 2.5rem;
@@ -1283,7 +1283,7 @@ img[class*="wp-image-"] {
 .entry-content img,
 img.size-full,
 img.size-large,
-img.wp-post-image {	
+img.wp-post-image {
 	display: block;
 	max-width: 100%;
 	height: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
@@ -1337,7 +1337,7 @@ img.alignright,
 	margin: 1.2% auto 0;
 	max-width: 98%;
 }
-.wp-caption .wp-caption-text, 
+.wp-caption .wp-caption-text,
 .gallery-caption, .entry-caption {
 	color: #757575;
 	font-size: 14px;
@@ -1467,8 +1467,8 @@ a#scrollup:hover {
 #nav-below .wp-pagenavi {
 	float: right;
 }
-#nav-below .wp-pagenavi a, 
-#nav-below .wp-pagenavi span, 
+#nav-below .wp-pagenavi a,
+#nav-below .wp-pagenavi span,
 #nav-below #wp_page_numbers ul li a,
 .page-link span,
 .page-link a span {
@@ -1484,7 +1484,7 @@ a#scrollup:hover {
 	padding: 0 12px;
 	text-decoration: none;
 }
-#nav-below .wp-pagenavi a, 
+#nav-below .wp-pagenavi a,
 #nav-below .wp-pagenavi span,
 .page-link span {
 	margin: 0 0 0 10px;
@@ -1492,7 +1492,7 @@ a#scrollup:hover {
 #nav-below .wp-pagenavi span.pages,
 .page-link span.pages {
 	color: #555;
-	background: none; 
+	background: none;
 	padding: 2px 0 0 0;
 }
 #nav-below .wp-pagenavi a:hover,
@@ -1501,7 +1501,7 @@ a#scrollup:hover {
 	background:#444;
 	color:#fff;
 }
-#nav-below .wp-pagenavi span.current, 
+#nav-below .wp-pagenavi span.current,
 #nav-below #wp_page_numbers ul li.active_page a,
 .page-link span {
 	background:#444;
@@ -1535,7 +1535,7 @@ a#scrollup:hover {
 ----------------------------------------------- */
 
 .bypostauthor {
-}	
+}
 #commentform input {
 	display: block;
 }
@@ -1615,7 +1615,7 @@ li.bypostauthor cite span {
 .widget-area .widget a:hover {
 	color: #0088cc;
 }
-.widget ul, 
+.widget ul,
 .widget ol {
     list-style: none;
     margin-left: 0;
@@ -1674,12 +1674,12 @@ input#s {
 	margin-bottom: 0;
 }
 #header-right .widget,
-input[type="text"], 
-input[type="email"], 
+input[type="text"],
+input[type="email"],
 textarea {
 	color: #757575;
 }
-	
+
 #header-right .widget ul {
 	list-style: none;
 }
@@ -1704,7 +1704,7 @@ ul.social-profile {
 }
 ul.social-profile li {
     display: inline-block;
-	float: left;    
+	float: left;
     margin: 0 0 10px 10px;
 }
 ul.social-profile li a {
@@ -1892,7 +1892,7 @@ ul.social-profile li.xing a:hover {
 
 /* =Footer
 ----------------------------------------------- */
-#footer-sidebar { 
+#footer-sidebar {
 	background-color: #fafafa;
 	border-top: 1px solid #e6e6e6;
 }
@@ -1939,16 +1939,16 @@ ul.social-profile li.xing a:hover {
 	font-size: 13px;
 	font-size: 1.3rem;
 }
-#site-generator .copyright, 
+#site-generator .copyright,
 #site-generator .powered {
     width: 48%;
 }
-#site-generator .copyright { 
+#site-generator .copyright {
 	clear: both;
 	float: left;
     text-align: left;
 }
-#site-generator .powered { 
+#site-generator .powered {
 	float: right;
     text-align: right;
 }
