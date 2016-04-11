@@ -1,5 +1,20 @@
 == Change log ==
 
+= 1.5 =
+* Added: Disable scrollup option.
+* Added: Social Icons for Phone, Handset, Cart, Cloud, Link( Custom Link )
+* Bug Fixed: Sanitize Callback typo in Featured Content Sub-headline
+* Enhancement: Used antispambot() function on emails output on social icons
+* Fixed: Genericions issue with To Top plugin
+* Updated: Genericons to 3.4.1
+* Updated: Jetpack Scroll Pagination Option to enable infinite scroll in Reading Settings
+* Updated: Sidr menu script to version 2.1.1.1
+* Updated: Meta viewport for better responsive support
+* Updated: Content Width Implementation
+* Updated: Theme Layout retrieval via function
+* Updated: Favicon and Web Clip Migration to Site Icon( Core Support )
+* Updated: Logo to Custom Logo( Core Support ) for WP version 4.5
+
 = 1.4 =
 * Bug Fixed: Breadcrumb css issue in IE 11
 * Bug Fixed: Featured Slider Transition Effect Not Updating
@@ -8,10 +23,10 @@
 * Updated Customizer active callback scripts (previously handled by jQuery)
 * Updated Customizer Color Scheme Script for changing values of colors on change of color scheme
 
-= 1.3 = 
+= 1.3 =
 * Added: French translation fr_FR.po and fr_FR.mo
 
-= 1.2 = 
+= 1.2 =
 * Added: Single Post navigation
 * Bug Fixed: Changed esc_attr_e to echo esc_attr in searchform.php
 * Compatible with WordPress 4.3
@@ -38,7 +53,7 @@
 * Bug Fixed: Featured Content Layout Type css issue
 * Bug Fixed: added missing keyword _nx:1,2,4c and esc_html__ in language file gridalicious.pot
 * Bug Fixed: Skype Social icon and open link in new window for email issues
-* Bug Fixed: Sidebar layout option 
+* Bug Fixed: Sidebar layout option
 * Bug Fixed: Social icon wrap
 * Removed unnecessary file gridalicious-menu.js
 * Removed duplicate class site-­header as ID found
@@ -63,7 +78,7 @@
 * Sanitized custom metabox settings
 
 = 0.3 =
-* Bug Fixed: Homepage Category Options ( missing function gridalicious_sanitize_category_list ) 
+* Bug Fixed: Homepage Category Options ( missing function gridalicious_sanitize_category_list )
 
 = 0.2 =
 * Bug Fixed: classes for excerpt and content fixed in content.php

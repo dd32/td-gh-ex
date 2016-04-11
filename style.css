@@ -1,10 +1,10 @@
 /*
 Theme Name: Gridalicious
-Theme URI: http://catchthemes.com/themes/gridalicious
+Theme URI: https://catchthemes.com/themes/gridalicious
 Author: Catch Themes
-Author URI: http://catchthemes.com/
-Description: Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in French language. Check out Theme Instructions at http://catchthemes.com/theme-instructions/gridalicious/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/gridalicious/
-Version: 1.4
+Author URI: https://catchthemes.com/
+Description: Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in French language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/gridalicious/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/gridalicious/
+Version: 1.5
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: gridalicious
@@ -278,12 +278,15 @@ big {
 }
 
 .comments-title,
-.genericon:before {
+#search-toggle,
+#header-toggle,
+.genericon.genericon-menu,
+.widget_gridalicious_social_icons .genericon {
     font-size: 20px;
 }
 
 .entry-meta span a:before {
-    font-size: 16px;	
+    font-size: 16px;
 }
 
 .widget-title {
@@ -302,7 +305,7 @@ big {
 	font-size: 14px;
 }
 
-#nav-below .wp-pagenavi a, 
+#nav-below .wp-pagenavi a,
 #nav-below .wp-pagenavi span,
 .page-links span {
 	font-size: 14px;
@@ -328,7 +331,7 @@ body {
 }
 
 .site {
-	width: 100%;	
+	width: 100%;
 }
 
 .wrapper {
@@ -425,7 +428,7 @@ blockquote:before {
 	top: -10px;
 }
 
-.entry-content ol, 
+.entry-content ol,
 .entry-content ul,
 .sidebar ol,
 .sidebar ul,
@@ -493,7 +496,7 @@ blockquote:before {
 }
 
 #search-toggle:before {
-    content: "\f400";	
+    content: "\f400";
 }
 
 #scrollup:before {
@@ -501,15 +504,15 @@ blockquote:before {
 }
 
 .entry-meta .posted-on a:before {
-	content: "\f307";   
+	content: "\f307";
 }
 
 .entry-meta .author a:before {
-	content: "\f304";   
+	content: "\f304";
 }
 
 .edit-link a:before {
-	content: "\f411";   
+	content: "\f411";
 }
 
 .cat-links span + a:before {
@@ -521,7 +524,7 @@ blockquote:before {
 }
 
 .entry-meta .comments-link a:before {
-	content: "\f300";   
+	content: "\f300";
 }
 
 
@@ -552,7 +555,7 @@ blockquote {
 }
 
 #search-toggle:before {
-    margin-top: 12px;	
+    margin-top: 12px;
 }
 
 #promotion-message .right a,
@@ -570,11 +573,11 @@ blockquote {
 	margin: 0 0 20px;
 }
 
-h1, 
+h1,
 h2,
-h3, 
-h4, 
-h5, 
+h3,
+h4,
+h5,
 h6 {
     margin: 0 0 15px;
 }
@@ -592,7 +595,7 @@ h6 {
 
 .entry-title,
 p,
-.hentry .featured-image, 
+.hentry .featured-image,
 .has-post-thumbnail.excerpt-image-left .featured-image,
 .has-post-thumbnail.excerpt-image-right .featured-image {
 	margin-bottom: 20px;
@@ -821,7 +824,7 @@ textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;	
+	-webkit-border-radius: 3px;
 }
 
 input[type="text"]:focus,
@@ -895,11 +898,11 @@ textarea {
 	color: #21759b;
 }
 
-.gridalicious-nav-menu .current-menu-item > a, 
+.gridalicious-nav-menu .current-menu-item > a,
 .gridalicious-nav-menu .current-menu-ancestor > a,
-.gridalicious-nav-menu .current_page_item > a, 
+.gridalicious-nav-menu .current_page_item > a,
 .gridalicious-nav-menu .current_page_ancestor > a,
-.sidebar-header-right .widget_nav_menu .current-menu-item > a, 
+.sidebar-header-right .widget_nav_menu .current-menu-item > a,
 .sidebar-header-right .widget_nav_menu .current-menu-ancestor > a {
 	color: #21759b;
 }
@@ -1004,9 +1007,9 @@ textarea {
 	color: #ddd;
 }
 
-.nav-primary .menu .current-menu-item > a, 
+.nav-primary .menu .current-menu-item > a,
 .nav-primary .menu .current-menu-ancestor > a,
-.nav-primary .menu .current_page_item > a, 
+.nav-primary .menu .current_page_item > a,
 .nav-primary .menu .current_page_ancestor > a{
 	color: #ddd;
 }
@@ -1019,7 +1022,7 @@ textarea {
 }
 
 .nav-primary .menu .sub-menu,
-.nav-primary .menu .children {	
+.nav-primary .menu .children {
 	left: -9999px;
 	margin: 0;
 	opacity: 0;
@@ -1033,7 +1036,7 @@ textarea {
 	z-index: 200;
 }
 
-.nav-primary .menu .sub-menu a, 
+.nav-primary .menu .sub-menu a,
 .nav-primary .menu .children a,
 #search-container {
 	background: #444;
@@ -1041,13 +1044,13 @@ textarea {
 	border: none;
 }
 
-.nav-primary .menu .sub-menu .sub-menu, 
+.nav-primary .menu .sub-menu .sub-menu,
 .nav-primary .menu .children .children {
 	border: none;
 	margin: -42px 0 0 250px;
 }
 
-.nav-primary .menu .sub-menu .sub-menu a, 
+.nav-primary .menu .sub-menu .sub-menu a,
 .nav-primary .menu .children .children a {
 	border: none;
 }
@@ -1087,7 +1090,7 @@ textarea {
 
 #search-toggle:hover {
 	background-color: transparent;
-    color: #000;	
+    color: #000;
 }
 
 #search-container {
@@ -1154,7 +1157,7 @@ textarea {
 
 .nav-secondary .menu .sub-menu .sub-menu,
 .nav-secondary .menu .children .children  {
-    margin: -45px 0 0 249px;	
+    margin: -45px 0 0 249px;
 }
 
 /* Seconday & Footer Menu */
@@ -1165,7 +1168,7 @@ textarea {
 .nav-secondary li:hover > a,
 .nav-secondary li a:hover,
 .nav-secondary li a:focus,
-.nav-secondary .current-menu-item > a, 
+.nav-secondary .current-menu-item > a,
 .nav-secondary .current-menu-ancestor > a,
 .nav-secondary .sub-menu li a:hover,
 .nav-secondary .sub-menu li a:focus,
@@ -1208,7 +1211,7 @@ textarea {
 	text-decoration: none;
 }
 
-#nav-below .wp-pagenavi a, 
+#nav-below .wp-pagenavi a,
 #nav-below .wp-pagenavi span,
 .page-links span {
 	border: none;
@@ -1243,15 +1246,15 @@ textarea {
 	padding: 0;
 }
 
-#nav-below .wp-pagenavi a, 
+#nav-below .wp-pagenavi a,
 #nav-below .wp-pagenavi span {
-	background-color: #f2f2f2;	
+	background-color: #f2f2f2;
 	margin: 0 0 0 10px;
 }
 
 #nav-below .wp-pagenavi span.pages {
 	color: #404040;
-	background-color: transparent; 
+	background-color: transparent;
 	padding: 2px 0 0 0;
 }
 
@@ -1272,7 +1275,7 @@ textarea {
     background-color: #f2f2f2;
     border-radius: 3px;
 	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px; 
+	-webkit-border-radius: 3px;
     color: #21759b;
     cursor: pointer;
     display: block;
@@ -1283,7 +1286,7 @@ textarea {
 
 #infinite-handle span:hover {
 	background-color: #222;
-    color: #fff;	
+    color: #fff;
     text-decoration: none;
 }
 
@@ -1577,7 +1580,7 @@ textarea {
 	border: 2px solid #eee;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px; 
+	-webkit-border-radius: 5px;
 	color: #666;
 	display: inline-block;
 }
@@ -1592,7 +1595,7 @@ textarea {
 13. Featured Content Area
 --------------------------------------------------------------*/
 #featured-content .wrapper {
-	background-color: #f2f2f2;	
+	background-color: #f2f2f2;
 }
 
 #featured-content .featured-heading-wrap {
@@ -1995,7 +1998,7 @@ caption {
 
 #supplementary {
 	background-color: #333;
-    color: #bbb;	
+    color: #bbb;
     height: 1%;
     overflow: hidden;
 }
@@ -2039,11 +2042,11 @@ caption {
     color: #ccc;
 }
 #site-generator a:hover {
-    color: #fff;	
+    color: #fff;
     text-decoration: none;
 }
 
-#footer-left-content, 
+#footer-left-content,
 #footer-right-content {
 	clear: both;
 	display: block;
@@ -2060,10 +2063,10 @@ caption {
     background-color: #666;
     border-radius: 3px;
 	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px; 
+	-webkit-border-radius: 3px;
     -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 	0 2px 6px rgba(0, 0, 0, 0.5);	
-	box-shadow: 		0 2px 6px rgba(0, 0, 0, 0.5);	
+	-moz-box-shadow: 	0 2px 6px rgba(0, 0, 0, 0.5);
+	box-shadow: 		0 2px 6px rgba(0, 0, 0, 0.5);
     color: #eee;
     cursor: pointer;
     display: none;
@@ -2072,14 +2075,14 @@ caption {
     bottom: 20px;
 	right: 20px;
     text-align: center;
-	text-decoration: none; 
+	text-decoration: none;
     width: 40px;
     z-index: 9999;
 }
 
 #scrollup:hover {
 	background-color: #000;
-    color: #fff;	
+    color: #fff;
     text-decoration: none;
 }
 
@@ -2094,7 +2097,7 @@ caption {
     color: #666;
 	display: block;
    	float: left;
-   	font-style: italic; 
+   	font-style: italic;
 }
 
 #breadcrumb-list span.sep {
@@ -2115,7 +2118,7 @@ caption {
 #breadcrumb-list a span {
 	color: #21759b;
 	display: inline-block;
-	padding: 7px 5px 5px; 
+	padding: 7px 5px 5px;
 }
 
 #breadcrumb-list a:hover,
@@ -2125,7 +2128,7 @@ caption {
 }
 
 #breadcrumb-list .breadcrumb-current {
-	padding: 7px 5px 5px; 
+	padding: 7px 5px 5px;
 }
 
 /* Social Icons */
@@ -2138,7 +2141,7 @@ caption {
 	border: 1px solid #ccc;
 	border-radius: 20px;
 	-moz-border-radius:	20px;
-	-webkit-border-radius:	20px; 
+	-webkit-border-radius:	20px;
 	box-sizing: content-box;
     -webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
 	-moz-box-sizing:    content-box;
@@ -2160,137 +2163,155 @@ caption {
 
 .site .widget_gridalicious_social_icons .genericon-facebook-alt:hover {
 	background-color: #3b5998;
-	border-color: #3b5998;	
+	border-color: #3b5998;
 }
 
 .site .widget_gridalicious_social_icons .genericon-twitter:hover {
 	background-color: #00aced;
-	border-color: #00aced;	
+	border-color: #00aced;
 }
 
 .site .widget_gridalicious_social_icons .genericon-googleplus-alt:hover {
 	background-color: #dd4b39;
-	border-color: #dd4b39;	
+	border-color: #dd4b39;
 }
 
 .site .widget_gridalicious_social_icons .genericon-mail:hover {
 	background-color: #1d62f0;
-	border-color: #1d62f0;	
+	border-color: #1d62f0;
 }
 
 .site .widget_gridalicious_social_icons .genericon-feed:hover {
 	background-color: #dc622c;
-	border-color: #dc622c;	
+	border-color: #dc622c;
 }
 
 .site .widget_gridalicious_social_icons .genericon-wordpress:hover {
 	background-color: #21759b;
-	border-color: #21759b;	
+	border-color: #21759b;
 }
 
 .site .widget_gridalicious_social_icons a.genericon-github:hover {
 	background-color: #4183c4;
-	border-color: #4183c4;	
+	border-color: #4183c4;
 }
 
 .site .widget_gridalicious_social_icons .genericon-linkedin:hover {
 	background-color: #007bb6;
-	border-color: #007bb6;	
+	border-color: #007bb6;
 }
 
 .site .widget_gridalicious_social_icons .genericon-pinterest:hover {
 	background-color: #cb2027;
-	border-color: #cb2027;	
+	border-color: #cb2027;
 }
 
 .site .widget_gridalicious_social_icons .genericon-flickr:hover {
 	background-color: #ff0084;
-	border-color: #ff0084;	
+	border-color: #ff0084;
 }
 
 .site .widget_gridalicious_social_icons .genericon-vimeo:hover {
 	background-color: #aad450;
-	border-color: #aad450;	
+	border-color: #aad450;
 }
 
 .site .widget_gridalicious_social_icons .genericon-youtube:hover {
 	background-color: #bb0000;
-	border-color: #bb0000;	
+	border-color: #bb0000;
 }
 
 .site .widget_gridalicious_social_icons .genericon-tumblr:hover {
 	background-color: #32506d;
-	border-color: #32506d;	
+	border-color: #32506d;
 }
 
 .site .widget_gridalicious_social_icons .genericon-instagram:hover {
 	background-color: #517fa4;
-	border-color: #517fa4;	
+	border-color: #517fa4;
 }
 
 .site .widget_gridalicious_social_icons .genericon-codepen:hover {
 	background-color: #000;
-	border-color: #000;	
+	border-color: #000;
 }
 
 .site .widget_gridalicious_social_icons .genericon-path:hover {
 	background-color: #ff442c;
-	border-color: #ff442c;	
+	border-color: #ff442c;
 }
 
 .site .widget_gridalicious_social_icons .genericon-dribbble:hover {
 	background-color: #ea4c89;
-	border-color: #ea4c89;	
+	border-color: #ea4c89;
 }
 
 .site .widget_gridalicious_social_icons .genericon-skype:hover {
 	background-color: #12a5f4;
-	border-color: #12a5f4;	
+	border-color: #12a5f4;
 }
 
 .site .widget_gridalicious_social_icons .genericon-digg:hover {
 	background-color: #333;
-	border-color: #333;	
+	border-color: #333;
 }
 
 .site .widget_gridalicious_social_icons .genericon-reddit:hover {
 	background-color: #ff4500;
-	border-color: #ff4500;	
+	border-color: #ff4500;
 }
 
 .site .widget_gridalicious_social_icons .genericon-stumbleupon:hover {
 	background-color: #eb4924;
-	border-color: #eb4924;	
+	border-color: #eb4924;
 }
 
 .site .widget_gridalicious_social_icons .genericon-pocket:hover {
 	background-color: #f13753;
-	border-color: #f13753;	
+	border-color: #f13753;
 }
 
 .site .widget_gridalicious_social_icons .genericon-dropbox:hover {
 	background-color: #2281cf;
-	border-color: #2281cf;	
+	border-color: #2281cf;
 }
 
 .site .widget_gridalicious_social_icons .genericon-spotify:hover {
 	background-color: #81b900;
-	border-color: #73a500;	
+	border-color: #73a500;
 }
 
 .site .widget_gridalicious_social_icons .genericon-polldaddy:hover {
 	background-color: #bc0b0b;
-	border-color: #bc0b0b;	
+	border-color: #bc0b0b;
 }
 
 .site .widget_gridalicious_social_icons .genericon-foursquare:hover {
 	background-color: #f94877;
-	border-color: #f94877;	
+	border-color: #f94877;
 }
 
 .site .widget_gridalicious_social_icons .genericon-twitch:hover {
 	background-color: #6441a5;
-	border-color: #6441a5;	
+	border-color: #6441a5;
+}
+
+.site .widget_gridalicious_social_icons a.genericon-cloud:hover {
+	background-color: #00aced;
+	border-color: #00aced;
+}
+
+.site .widget_gridalicious_social_icons a.genericon-website:hover,
+.site .widget_gridalicious_social_icons a.genericon-cart:hover,
+.site .widget_gridalicious_social_icons a.genericon-phone:hover,
+.site .widget_gridalicious_social_icons a.genericon-handset:hover {
+	background-color: #42b41e;
+	border-color: #42b41e;
+}
+
+.site .widget_gridalicious_social_icons a.genericon-link:hover {
+	background-color: #2e6da4;
+	border-color: #2e6da4;
 }
 
 .site .widget_gridalicious_social_icons .custom-icon {

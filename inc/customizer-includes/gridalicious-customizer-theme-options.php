@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Gridalicious
- * @since Gridalicious 0.1 
+ * @since Gridalicious 0.1
  */
 
 // Additional Color Scheme (added to Color Scheme section in Theme Customizer)
@@ -14,7 +14,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	exit();
 }
 
-	
+
 	//Theme Options
 	$wp_customize->add_panel( 'gridalicious_theme_options', array(
 	    'description'    => __( 'Basic theme Options', 'gridalicious' ),
@@ -71,10 +71,10 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 			'section' 	=> 'gridalicious_breadcumb_options',
 			'settings' 	=> 'gridalicious_theme_options[breadcrumb_seperator]',
 			'type'     	=> 'text'
-		) 
+		)
 	);
    	// Breadcrumb Option End
-   	
+
    	// Custom CSS Option
 	$wp_customize->add_section( 'gridalicious_custom_css', array(
 		'description'	=> __( 'Custom/Inline CSS', 'gridalicious'),
@@ -163,38 +163,41 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
         'type'     	=> 'dropdown-categories',
     ) ) );
 	//Homepage / Frontpage Settings End
-	
-	// Icon Options
-	$wp_customize->add_section( 'gridalicious_icons', array(
-		'description'	=> __( 'Remove Icon images to disable.', 'gridalicious'),
-		'panel'  => 'gridalicious_theme_options',
-		'priority' 		=> 210,
-		'title'    		=> __( 'Icon Options', 'gridalicious' ),
-	) );
 
-	$wp_customize->add_setting( 'gridalicious_theme_options[favicon]', array(
-		'capability'		=> 'edit_theme_options',
-		'sanitize_callback'	=> 'gridalicious_sanitize_image',
-	) );
+	//@remove Remove this block when WordPress 4.8 is released
+	if ( ! function_exists( 'has_site_icon' ) ) {
+		// Icon Options
+		$wp_customize->add_section( 'gridalicious_icons', array(
+			'description'	=> __( 'Remove Icon images to disable.', 'gridalicious'),
+			'panel'  => 'gridalicious_theme_options',
+			'priority' 		=> 210,
+			'title'    		=> __( 'Icon Options', 'gridalicious' ),
+		) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'gridalicious_theme_options[favicon]', array(
-		'label'		=> __( 'Select/Add Favicon', 'gridalicious' ),
-		'section'    => 'gridalicious_icons',
-        'settings'   => 'gridalicious_theme_options[favicon]',
-	) ) );
+		$wp_customize->add_setting( 'gridalicious_theme_options[favicon]', array(
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'gridalicious_sanitize_image',
+		) );
 
-	$wp_customize->add_setting( 'gridalicious_theme_options[web_clip]', array(
-		'capability'		=> 'edit_theme_options',
-		'sanitize_callback'	=> 'gridalicious_sanitize_image',
-	) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'gridalicious_theme_options[favicon]', array(
+			'label'		=> __( 'Select/Add Favicon', 'gridalicious' ),
+			'section'    => 'gridalicious_icons',
+	        'settings'   => 'gridalicious_theme_options[favicon]',
+		) ) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'gridalicious_theme_options[web_clip]', array(
-		'description'	=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'gridalicious'),
-		'label'		 	=> __( 'Select/Add Web Clip Icon', 'gridalicious' ),
-		'section'    	=> 'gridalicious_icons',
-        'settings'   	=> 'gridalicious_theme_options[web_clip]',
-	) ) );
-	// Icon Options End
+		$wp_customize->add_setting( 'gridalicious_theme_options[web_clip]', array(
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'gridalicious_sanitize_image',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'gridalicious_theme_options[web_clip]', array(
+			'description'	=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'gridalicious'),
+			'label'		 	=> __( 'Select/Add Web Clip Icon', 'gridalicious' ),
+			'section'    	=> 'gridalicious_icons',
+	        'settings'   	=> 'gridalicious_theme_options[web_clip]',
+		) ) );
+		// Icon Options End
+	}
 
 	// Layout Options
 	$wp_customize->add_section( 'gridalicious_layout', array(
@@ -250,7 +253,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
-	
+
 	$single_post_image_layouts = gridalicious_single_post_image_layout_options();
 	$choices = array();
 	foreach ( $single_post_image_layouts as $single_post_image_layout ) {
@@ -265,12 +268,12 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 			'choices'  	=> $choices,
 	) );
    	// Layout Options End
-	
+
 	// Pagination Options
 	$pagination_type	= $options['pagination_type'];
 
 	$gridalicious_navigation_description = sprintf( __( 'Numeric Option requires <a target="_blank" href="%s">WP-PageNavi Plugin</a>.<br/>Infinite Scroll Options requires <a target="_blank" href="%s">JetPack Plugin</a> with Infinite Scroll module Enabled.', 'gridalicious' ), esc_url( 'https://wordpress.org/plugins/wp-pagenavi' ), esc_url( 'https://wordpress.org/plugins/jetpack/' ) );
-	
+
 	/**
 	 * Check if navigation type is Jetpack Infinite Scroll and if it is enabled
 	 */
@@ -422,6 +425,27 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'type'     	=> 'checkbox',
 	) );
 	// Promotion Headline Options End
+
+	// Scrollup
+	$wp_customize->add_section( 'gridalicious_scrollup', array(
+		'panel'    => 'gridalicious_theme_options',
+		'priority' => 215,
+		'title'    => __( 'Scrollup Options', 'gridalicious' ),
+	) );
+
+	$wp_customize->add_setting( 'gridalicious_theme_options[disable_scrollup]', array(
+		'capability'		=> 'edit_theme_options',
+        'default'			=> $defaults['disable_scrollup'],
+		'sanitize_callback' => 'gridalicious_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'gridalicious_theme_options[disable_scrollup]', array(
+		'label'		=> __( 'Check to disable Scroll Up', 'gridalicious' ),
+		'section'   => 'gridalicious_scrollup',
+        'settings'  => 'gridalicious_theme_options[disable_scrollup]',
+		'type'		=> 'checkbox',
+	) );
+	// Scrollup End
 
 	// Search Options
 	$wp_customize->add_section( 'gridalicious_search_options', array(

@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Gridalicious
- * @since Gridalicious 0.1 
+ * @since Gridalicious 0.1
  */
 
 if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
@@ -20,59 +20,56 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	    'priority'       => 600,
 		'title'    		 => __( 'Social Links', 'gridalicious' ),
 	) );
-	
+
 	$wp_customize->add_section( 'gridalicious_social_links', array(
 		'panel'			=> 'gridalicious_social_links',
 		'priority' 		=> 1,
 		'title'   	 	=> __( 'Social Links', 'gridalicious' ),
 	) );
 
-	$gridalicious_social_icons 	=	gridalicious_get_social_icons_list();	
-	
-	$i 	=	1;
+	$gridalicious_social_icons 	=	gridalicious_get_social_icons_list();
 
-	foreach ( $gridalicious_social_icons as $option ){
-		$lower_case_option	=	str_replace( ' ', '_', strtolower( $option ) );
-			
-		if( $option == 'Skype' ){
-			$wp_customize->add_setting( 'gridalicious_theme_options['. $lower_case_option .'_link]', array(
+	foreach ( $gridalicious_social_icons as $key => $value ){
+		if( 'skype_link' == $key ){
+			$wp_customize->add_setting( 'gridalicious_theme_options['. $key .']', array(
 					'capability'		=> 'edit_theme_options',
 					'sanitize_callback' => 'esc_attr',
 				) );
 
-			$wp_customize->add_control( 'gridalicious_'. $lower_case_option .'_link', array(
+			$wp_customize->add_control( 'gridalicious_theme_options['. $key .']', array(
 				'description'	=> __( 'Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?{action}. More Information in readme file', 'gridalicious' ),
-				'label'    		=> $option,
-				'priority' 		=> $i + '2',
+				'label'    		=> $value['label'],
 				'section'  		=> 'gridalicious_social_links',
-				'settings' 		=> 'gridalicious_theme_options['. $lower_case_option .'_link]',
+				'settings' 		=> 'gridalicious_theme_options['. $key .']',
 				'type'	   		=> 'url',
 			) );
 		}
 		else {
-			if( $option == 'Email' ){
-				$wp_customize->add_setting( 'gridalicious_theme_options['. $lower_case_option .'_link]', array(
+			if( 'email_link' == $key ){
+				$wp_customize->add_setting( 'gridalicious_theme_options['. $key .']', array(
 						'capability'		=> 'edit_theme_options',
 						'sanitize_callback' => 'sanitize_email',
 					) );
 			}
-			
+			else if( 'handset_link' == $key || 'phone_link' == $key ){
+				$wp_customize->add_setting( 'gridalicious_theme_options['. $key .']', array(
+						'capability'		=> 'edit_theme_options',
+						'sanitize_callback' => 'sanitize_text_field',
+					) );
+			}
 			else {
-				$wp_customize->add_setting( 'gridalicious_theme_options['. $lower_case_option .'_link]', array(
+				$wp_customize->add_setting( 'gridalicious_theme_options['. $key .']', array(
 						'capability'		=> 'edit_theme_options',
 						'sanitize_callback' => 'esc_url_raw',
 					) );
 			}
 
-			$wp_customize->add_control( 'gridalicious_'. $lower_case_option .'_link', array(
-				'label'    => $option,
-				'priority' => $i + '2',
+			$wp_customize->add_control( 'gridalicious_theme_options['. $key .']', array(
+				'label'    => $value['label'],
 				'section'  => 'gridalicious_social_links',
-				'settings' => 'gridalicious_theme_options['. $lower_case_option .'_link]',
+				'settings' => 'gridalicious_theme_options['. $key .']',
 				'type'	   => 'url',
 			) );
 		}
-	
-		$i++;
 	}
 	// Social Icons End

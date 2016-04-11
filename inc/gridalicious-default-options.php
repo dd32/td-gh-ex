@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Gridalicious
- * @since Gridalicious 0.1 
+ * @since Gridalicious 0.1
  */
 
 if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
@@ -20,19 +20,19 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
  * @since Gridalicious 0.1
  */
 function gridalicious_get_default_theme_options() {
-	
+
 	$default_theme_options = array(
 		//Site Title an Tagline
 		'logo'												=> get_template_directory_uri() . '/images/headers/logo.png',
 		'logo_alt_text' 									=> '',
 		'logo_disable'										=> 1,
 		'move_title_tagline'								=> 0,
-		
+
 		//Layout
 		'theme_layout' 										=> 'right-sidebar',
 		'content_layout'									=> 'excerpt-image-left',
 		'single_post_image_layout'							=> 'featured',
-		
+
 		//Header Image
 		'enable_featured_header_image'						=> 'disabled',
 		'featured_image_size'								=> 'featured-header',
@@ -48,13 +48,16 @@ function gridalicious_get_default_theme_options() {
 		//Custom CSS
 		'custom_css'										=> '',
 
+		//Scrollup Options
+		'disable_scrollup'									=> 0,
+
 		//Excerpt Options
 		'excerpt_length'									=> '40',
 		'excerpt_more_text'									=> __( 'Read More ...', 'gridalicious' ),
-		
+
 		//Homepage / Frontpage Settings
 		'front_page_category'								=> array(),
-		
+
 		//Pagination Options
 		'pagination_type'									=> 'default',
 
@@ -70,8 +73,8 @@ function gridalicious_get_default_theme_options() {
 		'search_text'										=> __( 'Search...', 'gridalicious' ),
 
 		//Basic Color Options
-		'color_scheme' 										=> 'light',	
-		
+		'color_scheme' 										=> 'light',
+
 		//Featured Content Options
 		'featured_content_option'							=> 'homepage',
 		'featured_content_layout'							=> 'layout-three',
@@ -88,7 +91,7 @@ function gridalicious_get_default_theme_options() {
 		'featured_grid_content_option'						=> 'homepage',
 		'featured_grid_content_type'						=> 'demo-featured-grid-content',
 		'featured_grid_content_number'						=> '3',
-		
+
 		//Reset all settings
 		'reset_all_settings'								=> 0,
 	);
@@ -152,7 +155,7 @@ function gridalicious_get_archive_content_layout() {
 		'excerpt-image-left' => array(
 			'value' => 'excerpt-image-left',
 			'label' => __( 'Show Excerpt (Image Left)', 'gridalicious' ),
-		),		
+		),
 		'full-content' => array(
 			'value' => 'full-content',
 			'label' => __( 'Show Full Content (No Featured Image)', 'gridalicious' ),
@@ -401,35 +404,140 @@ function gridalicious_single_post_image_layout_options() {
  * @since Gridalicious 0.1
 */
 function gridalicious_get_social_icons_list() {
-	$gridalicious_social_icons_list =	array( 
-											__( 'Facebook', 'gridalicious' ), 
-											__( 'Twitter', 'gridalicious' ), 
-											__( 'Googleplus', 'gridalicious' ),
-											__( 'Email', 'gridalicious' ),
-											__( 'Feed', 'gridalicious' ),	
-											__( 'WordPress', 'gridalicious' ), 
-											__( 'GitHub', 'gridalicious' ), 
-											__( 'LinkedIn', 'gridalicious' ), 
-											__( 'Pinterest', 'gridalicious' ), 
-											__( 'Flickr', 'gridalicious' ), 
-											__( 'Vimeo', 'gridalicious' ), 
-											__( 'YouTube', 'gridalicious' ), 
-											__( 'Tumblr', 'gridalicious' ), 
-											__( 'Instagram', 'gridalicious' ), 
-											__( 'PollDaddy', 'gridalicious' ),
-											__( 'CodePen', 'gridalicious' ), 
-											__( 'Path', 'gridalicious' ), 
-											__( 'Dribbble', 'gridalicious' ), 
-											__( 'Skype', 'gridalicious' ), 
-											__( 'Digg', 'gridalicious' ), 
-											__( 'Reddit', 'gridalicious' ), 
-											__( 'StumbleUpon', 'gridalicious' ), 
-											__( 'Pocket', 'gridalicious' ), 
-											__( 'DropBox', 'gridalicious' ),
-											__( 'Foursquare', 'gridalicious' ),											
-											__( 'Spotify', 'gridalicious' ),
-											__( 'Twitch', 'gridalicious' ),
-										);
+	$gridalicious_social_icons_list = array(
+		'facebook_link'		=> array(
+			'genericon_class' 	=> 'facebook-alt',
+			'label' 			=> esc_html__( 'Facebook', 'gridalicious' )
+			),
+		'twitter_link'		=> array(
+			'genericon_class' 	=> 'twitter',
+			'label' 			=> esc_html__( 'Twitter', 'gridalicious' )
+			),
+		'googleplus_link'	=> array(
+			'genericon_class' 	=> 'googleplus-alt',
+			'label' 			=> esc_html__( 'Googleplus', 'gridalicious' )
+			),
+		'email_link'		=> array(
+			'genericon_class' 	=> 'mail',
+			'label' 			=> esc_html__( 'Email', 'gridalicious' )
+			),
+		'feed_link'			=> array(
+			'genericon_class' 	=> 'feed',
+			'label' 			=> esc_html__( 'Feed', 'gridalicious' )
+			),
+		'wordpress_link'	=> array(
+			'genericon_class' 	=> 'wordpress',
+			'label' 			=> esc_html__( 'WordPress', 'gridalicious' )
+			),
+		'github_link'		=> array(
+			'genericon_class' 	=> 'github',
+			'label' 			=> esc_html__( 'GitHub', 'gridalicious' )
+			),
+		'linkedin_link'		=> array(
+			'genericon_class' 	=> 'linkedin',
+			'label' 			=> esc_html__( 'LinkedIn', 'gridalicious' )
+			),
+		'pinterest_link'	=> array(
+			'genericon_class' 	=> 'pinterest',
+			'label' 			=> esc_html__( 'Pinterest', 'gridalicious' )
+			),
+		'flickr_link'		=> array(
+			'genericon_class' 	=> 'flickr',
+			'label' 			=> esc_html__( 'Flickr', 'gridalicious' )
+			),
+		'vimeo_link'		=> array(
+			'genericon_class' 	=> 'vimeo',
+			'label' 			=> esc_html__( 'Vimeo', 'gridalicious' )
+			),
+		'youtube_link'		=> array(
+			'genericon_class' 	=> 'youtube',
+			'label' 			=> esc_html__( 'YouTube', 'gridalicious' )
+			),
+		'tumblr_link'		=> array(
+			'genericon_class' 	=> 'tumblr',
+			'label' 			=> esc_html__( 'Tumblr', 'gridalicious' )
+			),
+		'instagram_link'	=> array(
+			'genericon_class' 	=> 'instagram',
+			'label' 			=> esc_html__( 'Instagram', 'gridalicious' )
+			),
+		'polldaddy_link'	=> array(
+			'genericon_class' 	=> 'polldaddy',
+			'label' 			=> esc_html__( 'PollDaddy', 'gridalicious' )
+			),
+		'codepen_link'		=> array(
+			'genericon_class' 	=> 'codepen',
+			'label' 			=> esc_html__( 'CodePen', 'gridalicious' )
+			),
+		'path_link'			=> array(
+			'genericon_class' 	=> 'path',
+			'label' 			=> esc_html__( 'Path', 'gridalicious' )
+			),
+		'dribbble_link'		=> array(
+			'genericon_class' 	=> 'dribbble',
+			'label' 			=> esc_html__( 'Dribbble', 'gridalicious' )
+			),
+		'skype_link'		=> array(
+			'genericon_class' 	=> 'skype',
+			'label' 			=> esc_html__( 'Skype', 'gridalicious' )
+			),
+		'digg_link'			=> array(
+			'genericon_class' 	=> 'digg',
+			'label' 			=> esc_html__( 'Digg', 'gridalicious' )
+			),
+		'reddit_link'		=> array(
+			'genericon_class' 	=> 'reddit',
+			'label' 			=> esc_html__( 'Reddit', 'gridalicious' )
+			),
+		'stumbleupon_link'	=> array(
+			'genericon_class' 	=> 'stumbleupon',
+			'label' 			=> esc_html__( 'Stumbleupon', 'gridalicious' )
+			),
+		'pocket_link'		=> array(
+			'genericon_class' 	=> 'pocket',
+			'label' 			=> esc_html__( 'Pocket', 'gridalicious' ),
+			),
+		'dropbox_link'		=> array(
+			'genericon_class' 	=> 'dropbox',
+			'label' 			=> esc_html__( 'DropBox', 'gridalicious' ),
+			),
+		'spotify_link'		=> array(
+			'genericon_class' 	=> 'spotify',
+			'label' 			=> esc_html__( 'Spotify', 'gridalicious' ),
+			),
+		'foursquare_link'	=> array(
+			'genericon_class' 	=> 'foursquare',
+			'label' 			=> esc_html__( 'Foursquare', 'gridalicious' ),
+			),
+		'twitch_link'		=> array(
+			'genericon_class' 	=> 'twitch',
+			'label' 			=> esc_html__( 'Twitch', 'gridalicious' ),
+			),
+		'website_link'		=> array(
+			'genericon_class' 	=> 'website',
+			'label' 			=> esc_html__( 'Website', 'gridalicious' ),
+			),
+		'phone_link'		=> array(
+			'genericon_class' 	=> 'phone',
+			'label' 			=> esc_html__( 'Phone', 'gridalicious' ),
+			),
+		'handset_link'		=> array(
+			'genericon_class' 	=> 'handset',
+			'label' 			=> esc_html__( 'Handset', 'gridalicious' ),
+			),
+		'cart_link'			=> array(
+			'genericon_class' 	=> 'cart',
+			'label' 			=> esc_html__( 'Cart', 'gridalicious' ),
+			),
+		'cloud_link'		=> array(
+			'genericon_class' 	=> 'cloud',
+			'label' 			=> esc_html__( 'Cloud', 'gridalicious' ),
+			),
+		'link_link'		=> array(
+			'genericon_class' 	=> 'link',
+			'label' 			=> esc_html__( 'Link', 'gridalicious' ),
+			),
+	);
 
 	return apply_filters( 'gridalicious_social_icons_list', $gridalicious_social_icons_list );
 }
@@ -482,7 +590,7 @@ function gridalicious_metabox_header_featured_image_options() {
 			'id'		=> 'gridalicious-header-image',
 			'value' 	=> 'enable',
 			'label' 	=> __( 'Enable', 'gridalicious' ),
-		),	
+		),
 		'disable' => array(
 			'id'		=> 'gridalicious-header-image',
 			'value' 	=> 'disable',
@@ -504,7 +612,7 @@ function gridalicious_metabox_featured_image_options() {
 			'id'		=> 'gridalicious-featured-image',
 			'value' 	=> 'default',
 			'label' 	=> __( 'Default', 'gridalicious' ),
-		),							   
+		),
 		'featured' => array(
 			'id'		=> 'gridalicious-featured-image',
 			'value' 	=> 'featured',

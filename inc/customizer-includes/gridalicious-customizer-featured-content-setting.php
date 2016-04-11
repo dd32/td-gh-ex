@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Gridalicious
- * @since Gridalicious 0.1 
+ * @since Gridalicious 0.1
  */
 
 if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
@@ -136,7 +136,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[featured_content_subheadline]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_subheadline'],
-		'sanitize_callback'	=> 'wp_kese_post',
+		'sanitize_callback'	=> 'wp_kses_post',
 	) );
 
 	$wp_customize->add_control( 'gridalicious_theme_options[featured_content_subheadline]' , array(
@@ -147,7 +147,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'section'  		=> 'gridalicious_featured_content_settings',
 		'settings' 		=> 'gridalicious_theme_options[featured_content_subheadline]',
 		'type'	   		=> 'text',
-		) 
+		)
 	);
 
 	$wp_customize->add_setting( 'gridalicious_theme_options[featured_content_number]', array(
@@ -170,14 +170,14 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'section'  		=> 'gridalicious_featured_content_settings',
 		'settings' 		=> 'gridalicious_theme_options[featured_content_number]',
 		'type'	   		=> 'number',
-		) 
+		)
 	);
 
 	$wp_customize->add_setting( 'gridalicious_theme_options[featured_content_show]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_show'],
 		'sanitize_callback'	=> 'gridalicious_sanitize_select',
-	) ); 
+	) );
 
 	$gridalicious_featured_content_show = gridalicious_featured_content_show();
 	$choices = array();

@@ -1,12 +1,12 @@
 === Gridalicious ===
 
-Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in French language. Check out Theme Instructions at http://catchthemes.com/theme-instructions/gridalicious/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/gridalicious/
+Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in French language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/gridalicious/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/gridalicious/
 
 
 == Support ==
 
-Support: http://catchthemes.com/support/
-Support Forum: http://catchthemes.com/support-forum/forum/gridalicious-free/
+Support: https://catchthemes.com/support/
+Support Forum: https://catchthemes.com/support-forum/forum/gridalicious-free/
 
 
 == Translation ==
@@ -22,7 +22,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Gridalicious WordPress Theme, Copyright 2015 Catchthemes.com
 Gridalicious is distributed under the terms of the GNU General Public License v3
 
-Gridalicious is based on Catch Base theme http://catchthemes.com/themes/catch-base/
+Gridalicious is based on Catch Base theme https://catchthemes.com/themes/catch-base/
 
 Images used are released under the CC0 license
 1. http://pixabay.com/en/bridge-manhattan-brooklyn-new-york-370542/ - 1st Grid Image
@@ -62,11 +62,11 @@ JS Files
 
 Gridalicious theme supports two custom menus that is primary and secondary. 
 To create a custom menu, go to Appearance -> Menus in your dashboard. 
-For more about custom menu, check out http://catchthemes.com/blog/custom-menus-wordpress-themes/
+For more about custom menu, check out https://catchthemes.com/blog/custom-menus-wordpress-themes/
 
 = Featured Image =
 
-This theme relies heavily on Featured Images. If your post/page is missing a Featured Image, the post image will not show up on homepage, on archived pages and on Featured Page Slider. For more about featured image, check out http://catchthemes.com/blog/videos-blog/video-series-adding-featured-image-wordpress-postpage/
+This theme relies heavily on Featured Images. If your post/page is missing a Featured Image, the post image will not show up on homepage, on archived pages and on Featured Page Slider. For more about featured image, check out https://catchthemes.com/blog/videos-blog/video-series-adding-featured-image-wordpress-postpage/
 
 If you are migrating your old site to this new them then you need to regenerate thumbnails. You can do that easily with this plugin: https://wordpress.org/plugins/regenerate-thumbnails/. This plugin allows you to regenerate your thumbnails after changing the thumbnail sizes, which occurs by switching from one theme to another.
 
@@ -143,9 +143,9 @@ Number:
 
 = Theme Instructions =
 
-For detail instructions, check out theme instructions page at http://catchthemes.com/theme-instructions/gridalicious/
+For detail instructions, check out theme instructions page at https://catchthemes.com/theme-instructions/gridalicious/
 
 
 == Change Log ==
 
-Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/gridalicious-theme/
+Please refer to changelog.txt file or change log page at https://catchthemes.com/changelogs/gridalicious-theme/
