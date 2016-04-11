@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 // Additional Color Scheme (added to Color Scheme section in Theme Customizer)
@@ -14,7 +14,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	exit();
 }
 
-	
+
 	//Theme Options
 	$wp_customize->add_panel( 'fullframe_theme_options', array(
 	    'description'    => __( 'Basic theme Options', 'full-frame' ),
@@ -71,10 +71,10 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 			'section' 	=> 'fullframe_breadcumb_options',
 			'settings' 	=> 'fullframe_theme_options[breadcumb_seperator]',
 			'type'     	=> 'text'
-		) 
+		)
 	);
    	// Breadcrumb Option End
-   	
+
    	// Custom CSS Option
 	$wp_customize->add_section( 'fullframe_custom_css', array(
 		'description'	=> __( 'Custom/Inline CSS', 'full-frame'),
@@ -163,50 +163,53 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
         'type'     	=> 'dropdown-categories',
     ) ) );
 	//Homepage / Frontpage Settings End
-	
-	// Icon Options
-	$wp_customize->add_section( 'fullframe_icons', array(
-		'description'	=> __( 'Remove Icon images to disable.', 'full-frame'),
-		'panel'  => 'fullframe_theme_options',
-		'priority' 		=> 210,
-		'title'    		=> __( 'Icon Options', 'full-frame' ),
-	) );
 
-	$wp_customize->add_setting( 'fullframe_theme_options[favicon]', array(
-		'capability'		=> 'edit_theme_options',
-		'sanitize_callback'	=> 'fullframe_sanitize_image',
-	) );
+	//@remove Remove this block when WordPress 4.8 is released
+	if ( ! function_exists( 'has_site_icon' ) ) {
+		// Icon Options
+		$wp_customize->add_section( 'fullframe_icons', array(
+			'description'	=> __( 'Remove Icon images to disable.', 'full-frame'),
+			'panel'  => 'fullframe_theme_options',
+			'priority' 		=> 210,
+			'title'    		=> __( 'Icon Options', 'full-frame' ),
+		) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[favicon]', array(
-		'label'		=> __( 'Select/Add Favicon', 'full-frame' ),
-		'section'    => 'fullframe_icons',
-        'settings'   => 'fullframe_theme_options[favicon]',
-	) ) );
+		$wp_customize->add_setting( 'fullframe_theme_options[favicon]', array(
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'fullframe_sanitize_image',
+		) );
 
-	$wp_customize->add_setting( 'fullframe_theme_options[web_clip]', array(
-		'capability'		=> 'edit_theme_options',
-		'sanitize_callback'	=> 'fullframe_sanitize_image',
-	) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[favicon]', array(
+			'label'		=> __( 'Select/Add Favicon', 'full-frame' ),
+			'section'    => 'fullframe_icons',
+	        'settings'   => 'fullframe_theme_options[favicon]',
+		) ) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[web_clip]', array(
-		'description'	=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'full-frame'),
-		'label'		 	=> __( 'Select/Add Web Clip Icon', 'full-frame' ),
-		'section'    	=> 'fullframe_icons',
-        'settings'   	=> 'fullframe_theme_options[web_clip]',
-	) ) );
+		$wp_customize->add_setting( 'fullframe_theme_options[web_clip]', array(
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'fullframe_sanitize_image',
+		) );
 
-	$wp_customize->add_setting( 'fullframe_theme_options[logo_icon]', array(
-		'capability'		=> 'edit_theme_options',
-		'sanitize_callback'	=> 'fullframe_sanitize_image',
-	) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[web_clip]', array(
+			'description'	=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'full-frame'),
+			'label'		 	=> __( 'Select/Add Web Clip Icon', 'full-frame' ),
+			'section'    	=> 'fullframe_icons',
+	        'settings'   	=> 'fullframe_theme_options[web_clip]',
+		) ) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[logo_icon]', array(
-		'description'	=> __( 'Logo Icon is displayed in Primary Menu', 'full-frame'),
-		'label'		 	=> __( 'Select/Add Logo Icon', 'full-frame' ),
-		'section'    	=> 'fullframe_icons',
-        'settings'   	=> 'fullframe_theme_options[logo_icon]',
-	) ) );
-	// Icon Options End
+		$wp_customize->add_setting( 'fullframe_theme_options[logo_icon]', array(
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'fullframe_sanitize_image',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[logo_icon]', array(
+			'description'	=> __( 'Logo Icon is displayed in Primary Menu', 'full-frame'),
+			'label'		 	=> __( 'Select/Add Logo Icon', 'full-frame' ),
+			'section'    	=> 'fullframe_icons',
+	        'settings'   	=> 'fullframe_theme_options[logo_icon]',
+		) ) );
+		// Icon Options End
+	}
 
 	// Layout Options
 	$wp_customize->add_section( 'fullframe_layout', array(
@@ -262,7 +265,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
-	
+
 	$single_post_image_layouts = fullframe_single_post_image_layout_options();
 	$choices = array();
 	foreach ( $single_post_image_layouts as $single_post_image_layout ) {
@@ -277,12 +280,12 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 			'choices'  	=> $choices,
 	) );
    	// Layout Options End
-	
+
 	// Pagination Options
 	$pagination_type	= $options['pagination_type'];
 
 	$fullframe_navigation_description = sprintf( __( 'Numeric Option requires <a target="_blank" href="%s">WP-PageNavi Plugin</a>.<br/>Infinite Scroll Options requires <a target="_blank" href="%s">JetPack Plugin</a> with Infinite Scroll module Enabled.', 'full-frame' ), esc_url( 'https://wordpress.org/plugins/wp-pagenavi' ), esc_url( 'https://wordpress.org/plugins/jetpack/' ) );
-	
+
 	/**
 	 * Check if navigation type is Jetpack Infinite Scroll and if it is enabled
 	 */
@@ -434,6 +437,27 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'type'     	=> 'checkbox',
 	) );
 	// Promotion Headline Options End
+
+	// Scrollup
+	$wp_customize->add_section( 'fullframe_scrollup', array(
+		'panel'    => 'fullframe_theme_options',
+		'priority' => 215,
+		'title'    => __( 'Scrollup Options', 'full-frame' ),
+	) );
+
+	$wp_customize->add_setting( 'fullframe_theme_options[disable_scrollup]', array(
+		'capability'		=> 'edit_theme_options',
+        'default'			=> $defaults['disable_scrollup'],
+		'sanitize_callback' => 'fullframe_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'fullframe_theme_options[disable_scrollup]', array(
+		'label'		=> __( 'Check to disable Scroll Up', 'full-frame' ),
+		'section'   => 'fullframe_scrollup',
+        'settings'  => 'fullframe_theme_options[disable_scrollup]',
+		'type'		=> 'checkbox',
+	) );
+	// Scrollup End
 
 	// Search Options
 	$wp_customize->add_section( 'fullframe_search_options', array(

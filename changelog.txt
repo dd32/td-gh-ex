@@ -1,9 +1,21 @@
 == Change log ==
 
+= 2.3 =
+* Added: Disable scrollup option
+* Changed: Color scheme transport to refresh
+* Fixed: Genericions issue with To Top plugin
+* Updated: Sidr menu script to version 2.1.1.1
+* Updated: Meta viewport for better responsive support
+* Updated: Content Width Implementation
+* Updated: Theme Layout retrieval via function
+* Updated: Favicon and Web Clip Migration to Site Icon( Core Support )
+* Updated: Logo to Custom Logo( Core Support ) for WP version 4.5
+
 = 2.2 =
 * Added: Social Icons for Phone, Handset, Cart, Cloud, Link( Custom Link )
 * Enhancement: Used antispambot() function on emails output on social icons
 * Updated Genericons to 3.4.1
+* Updated Jetpack Scroll Pagination Option to enable infinite scroll in Reading Settings
 
 = 2.1.1 =
 * Bug Fixed: Featured Slider Transition Effect Not Updating
@@ -45,7 +57,7 @@
 * Added: Single Post navigation
 * Updated: Sidr scripts to latest version 1.2.1
 
-= 1.6 = 
+= 1.6 =
 * Added: Support for Random Header Image
 * Bug Fixed: Removal of extra '/' in sub-categories in breadcrumb and updates in breadcrumb
 * Bug Fixed: Blog page featured image not overwriting default header image
@@ -64,7 +76,7 @@
 = 1.4 =
 * Added Brazilian Portuguese translation pt_BR.po and pt_BR.mo
 * Bug Fixed: Responsive css issue with iPhone5 and below
-* Bug Fixed: Sidebar layout option 
+* Bug Fixed: Sidebar layout option
 * Bug Fixed: Featured content issues
 
 = 1.3 =
@@ -106,7 +118,7 @@
 * Bug Fixed: Admin bar overlap with fixed header while login
 * Bug Fixed: Spacing issue when there is no Header Featured Image & Slider
 * Bug Fixed: Featured Content layout clear on column 4
-* Bug Fixed: Featured Content sliding effect 
+* Bug Fixed: Featured Content sliding effect
 * Bug Fixed: Featured Content missing classes entry-header and entry-title
 * Bug Fixed: featured-heading-wrap, $headline and $subheadline empty check in featured content
 * Bug Fixed: Html is now allowed in Promotion Headline
@@ -128,7 +140,7 @@
 * Removed extra featured content
 
 = 0.4 =
-* Added Option in Enable Header Image: Excluding Home, Page/Post Featured Image 
+* Added Option in Enable Header Image: Excluding Home, Page/Post Featured Image
 * Bug Fixed: Breadcrumb position
 * Bug Fixed: Responsive layout for Footer text
 * Initial Release in Catchthemes.com

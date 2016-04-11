@@ -48,8 +48,7 @@ Responsive Style
 }
 
 .sidr {
-	display: none;
-	position: absolute;
+	display: block;
 	position: fixed;
 	top: 0;
 	height: 100%;
@@ -62,7 +61,7 @@ Responsive Style
 	color: #fff;
 	-webkit-box-shadow: inset 0 0 5px 5px #222;
 	-moz-box-shadow: inset 0 0 5px 5px #222;
-	box-shadow:i nset 0 0 5px 5px #222;
+	box-shadow: inset 0 0 5px 5px #222;
 }
 
 .sidr .sidr-inner {
@@ -76,7 +75,7 @@ Responsive Style
 
 .sidr.right {
 	left: auto;
-	right: -260px; 
+	right: -260px;
 }
 
 .sidr.left {
@@ -84,11 +83,11 @@ Responsive Style
 	right: auto;
 }
 
-.sidr h1, 
-.sidr h2, 
-.sidr h3, 
-.sidr h4, 
-.sidr h5, 
+.sidr h1,
+.sidr h2,
+.sidr h3,
+.sidr h4,
+.sidr h5,
 .sidr h6 {
 	font-size: 11px;
 	font-weight: normal;
@@ -136,25 +135,25 @@ Responsive Style
 	border-bottom: 1px solid #1a1a1a;
 }
 
-.sidr ul li:hover, 
-.sidr ul li.active, 
+.sidr ul li:hover,
+.sidr ul li.active,
 .sidr ul li.sidr-class-active {
 	border-top: none;
 	line-height: 49px;
 }
 
-.sidr ul li:hover>a, 
-.sidr ul li:hover>span, 
-.sidr ul li.active>a, 
-.sidr ul li.active>span, 
-.sidr ul li.sidr-class-active>a, 
+.sidr ul li:hover>a,
+.sidr ul li:hover>span,
+.sidr ul li.active>a,
+.sidr ul li.active>span,
+.sidr ul li.sidr-class-active>a,
 .sidr ul li.sidr-class-active>span {
 	-webkit-box-shadow: inset 0 0 15px 3px #222;
 	-moz-box-shadow: inset 0 0 15px 3px #222;
 	box-shadow: inset 0 0 15px 3px #222;
 }
 
-.sidr ul li a, 
+.sidr ul li a,
 .sidr ul li span {
 	padding: 0 15px;
 	display: block;
@@ -176,31 +175,31 @@ Responsive Style
 	border-bottom: none;
 }
 
-.sidr ul li ul li:hover, 
-.sidr ul li ul li.active, 
+.sidr ul li ul li:hover,
+.sidr ul li ul li.active,
 .sidr ul li ul li.sidr-class-active {
 	border-top: none;
 	line-height: 41px;
 }
 
-.sidr ul li ul li:hover>a, 
-.sidr ul li ul li:hover>span, 
-.sidr ul li ul li.active>a, 
-.sidr ul li ul li.active>span, 
-.sidr ul li ul li.sidr-class-active>a, 
+.sidr ul li ul li:hover>a,
+.sidr ul li ul li:hover>span,
+.sidr ul li ul li.active>a,
+.sidr ul li ul li.active>span,
+.sidr ul li ul li.sidr-class-active>a,
 .sidr ul li ul li.sidr-class-active>span {
 	-webkit-box-shadow: inset 0 0 15px 3px #222;
 	-moz-box-shadow: inset 0 0 15px 3px #222;
 	box-shadow: inset 0 0 15px 3px #222;
 }
 
-.sidr ul li ul li a, 
+.sidr ul li ul li a,
 .sidr ul li ul li span {
 	color: #ccc;
 	padding-left: 20px;
 }
 
-.sidr ul li ul li ul li a, 
+.sidr ul li ul li ul li a,
 .sidr ul li ul li ul li span {
 	padding-left: 30px;
 }
@@ -213,16 +212,16 @@ Responsive Style
 	font-size: 13px;
 }
 
-.sidr input[type="text"], 
-.sidr input[type="password"], 
-.sidr input[type="date"], 
-.sidr input[type="datetime"], 
-.sidr input[type="email"], 
-.sidr input[type="number"], 
-.sidr input[type="search"], 
-.sidr input[type="tel"], 
-.sidr input[type="time"], 
-.sidr input[type="url"], 
+.sidr input[type="text"],
+.sidr input[type="password"],
+.sidr input[type="date"],
+.sidr input[type="datetime"],
+.sidr input[type="email"],
+.sidr input[type="number"],
+.sidr input[type="search"],
+.sidr input[type="tel"],
+.sidr input[type="time"],
+.sidr input[type="url"],
 .sidr textarea, .sidr select {
 	width: 100%;
 	font-size: 13px;
@@ -249,7 +248,7 @@ Responsive Style
 	clear: none;
 }
 
-.sidr input[type=button], 
+.sidr input[type=button],
 .sidr input[type=submit] {
 	color: #333;
 	background: #fff;
@@ -299,7 +298,7 @@ Responsive Style
 	#featured-content.layout-four .hentry,
 	#supplementary.four .widget-area {
 	    width: 25%;
-	}	
+	}
 
 	#featured-content.layout-three .hentry,
 	#supplementary.three .widget-area {
@@ -312,10 +311,10 @@ Responsive Style
 	}
 
 	#supplementary.two .widget-area,
-	#footer-left-content, 
+	#footer-left-content,
 	#footer-right-content {
 		width: 50%;
-	}	
+	}
 
 }
 
@@ -350,9 +349,9 @@ Responsive Style
 	#featured-content,
 	#supplementary {
 		padding-top:  15px;
-	}	
+	}
 
-	.fullframe-nav-menu a, 
+	.fullframe-nav-menu a,
 	.sidebar-header-right .widget_nav_menu a {
 	    padding: 10px 15px;
 	}
@@ -396,21 +395,21 @@ Responsive Style
 		font-size: 25px;
 	    line-height: 30px;
 	    width: 30px;
-	    height: 30px;   
-	} 
+	    height: 30px;
+	}
 
 }
 
 /*--------------------------------------------------------------
 6. x <= 990px (iPad Portrait)
 --------------------------------------------------------------*/
-@media screen and (max-width: 990px) {	
+@media screen and (max-width: 990px) {
 	.wrapper {
 		width: 740px;
 	}
 
 	#logo-icon {
-	    text-align: center; 
+	    text-align: center;
 	    width: 612px;
 	}
 
@@ -455,7 +454,7 @@ Responsive Style
 	    padding: 10px 10px 0;
 	}
 
-	#feature-slider .entry-container,	
+	#feature-slider .entry-container,
 	#promotion-message .section,
 	#content .wrapper,
 	.hentry,
@@ -497,7 +496,7 @@ Responsive Style
 
 	.archive-post-wrap {
 	    padding-bottom: 10px;
-	}	
+	}
 
 	.site-title {
 	    font-size: 30px;
@@ -546,7 +545,7 @@ Responsive Style
 	.no-sidebar.content-width #main,
 	.sidebar-primary {
 	    width: 100%;
-	}	
+	}
 
 	.sidebar-primary {
 		clear: both;
@@ -572,14 +571,14 @@ Responsive Style
 		float: left;
 		margin-left: 0;
 	    padding: 10px;
-	    width: 50%;	
+	    width: 50%;
 	}
 
 	.sidebar-primary .widget:nth-child(2n+1),
 	#featured-content.layout-four .hentry:nth-child(2n+1),
-	#supplementary .widget-area:nth-child(2n+1) {  
+	#supplementary .widget-area:nth-child(2n+1) {
 		clear: both;
-	}	
+	}
 
 	#supplementary.four .widget-area,
 	#supplementary.three .widget-area,
@@ -653,21 +652,21 @@ Responsive Style
 	#feature-slider:hover .cycle-prev {
 	    left: 20px;
 	    opacity: 1;
-	}	
+	}
 
 	#feature-slider .cycle-next,
 	#feature-slider:hover .cycle-next {
 	    right: 20px;
 	    opacity: 1;
-	}	
+	}
 
 	#feature-slider .cycle-prev:before,
 	#feature-slider .cycle-next:before {
 		font-size: 25px;
 	    line-height: 30px;
 	    width: 30px;
-	    height: 30px;   
-	} 
+	    height: 30px;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -686,7 +685,7 @@ Responsive Style
 	.wrapper {
 		width: 660px;
 	}
-	
+
 	#logo-icon {
 	    width: 532px;
 	}
@@ -710,7 +709,7 @@ Responsive Style
 	    width: 432px;
 	}
 
-	#footer-left-content, 
+	#footer-left-content,
 	#footer-right-content {
 		display: block;
 		text-align: center;
@@ -802,10 +801,10 @@ Responsive Style
 	    width: 332px;
 	}
 
-	body, 
-	button, 
-	input, 
-	select, 
+	body,
+	button,
+	input,
+	select,
 	textarea {
 	    font-size: 14px;
 	}
@@ -819,7 +818,7 @@ Responsive Style
 
 	.site-title {
 	    font-size: 24px;
-	}	
+	}
 
 	h1 {
 		font-size: 22px;
@@ -885,7 +884,7 @@ Responsive Style
 
 	#content .has-post-thumbnail .archive-post-wrap .featured-image,
 	#content .has-post-thumbnail .archive-post-wrap .entry-container,
-	#promotion-message .section,	
+	#promotion-message .section,
 	.sidebar-primary .widget,
 	#featured-content.layout-four .hentry,
 	#featured-content.layout-three .hentry,
@@ -896,7 +895,7 @@ Responsive Style
 		display: block;
 	    float: none;
 	    width: 100%;
-	}	
+	}
 
 	#promotion-message .section {
 		max-width: 100%;
@@ -916,7 +915,7 @@ Responsive Style
 
 	#site-generator {
 		font-size: 11px;
-	}	
+	}
 
 }
 
@@ -928,14 +927,14 @@ Responsive Style
 		width: 100%;
 		padding: 0 10px;
 	}
-	
+
 	#logo-icon {
 	    width: 70%;
-	}	
+	}
 
 	#masthead {
 		padding-top: 5px;
-	}	
+	}
 }
 
 /*--------------------------------------------------------------
@@ -961,13 +960,13 @@ Responsive Style
 
 	#masthead .sidebar-header-right {
 		padding-right: 0;
-		padding-left: 0;		
+		padding-left: 0;
 	}
 
-	body, 
-	button, 
-	input, 
-	select, 
+	body,
+	button,
+	input,
+	select,
 	textarea {
 	    font-size: 13px;
 	}
@@ -1020,19 +1019,19 @@ Responsive Style
 	#feature-slider .entry-title {
 	    font-size: 14px;
 	    margin-bottom: 0;
-	}	
-	
+	}
+
 }
 
 /*--------------------------------------------------------------
 15. Form Zoom Fix
 --------------------------------------------------------------*/
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-	select:focus, 
-	textarea:focus, 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	select:focus,
+	textarea:focus,
 	input:focus,
 	input#s,
-	#respond form input[type="text"], 
+	#respond form input[type="text"],
 	#respond form textarea,
 	input[type="text"],
 	input[type="email"],

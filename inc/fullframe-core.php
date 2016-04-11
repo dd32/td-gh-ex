@@ -21,11 +21,22 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 }
 
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 860; /* pixels */
+if ( ! function_exists( 'fullframe_content_width' ) ) :
+	/**
+	 * Set the content width in pixels, based on the theme's design and stylesheet.
+	 *
+	 * Priority 0 to make it available to lower priority callbacks.
+	 *
+	 * @global int $content_width
+	 */
+	function fullframe_content_width() {
+		$content_width = 860; /* pixels */
+
+		$GLOBALS['content_width'] = apply_filters( 'fullframe_content_width', $content_width );
+	}
+endif;
+add_action( 'after_setup_theme', 'fullframe_content_width', 0 );
+
 
 
 if ( ! function_exists( 'fullframe_setup' ) ) :
@@ -106,6 +117,16 @@ if ( ! function_exists( 'fullframe_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+		//@remove Remove check when WordPress 4.8 is released
+		if ( function_exists( 'has_custom_logo' ) ) {
+			/**
+			* Setup Custom Logo Support for theme
+			* Supported from WordPress version 4.5 onwards
+			* More Info: https://make.wordpress.org/core/2016/03/10/custom-logo/
+			*/
+			add_theme_support( 'custom-logo' );
+		}
+
 		/**
 		 * Setup Infinite Scroll using JetPack if navigation type is set
 		 */
@@ -119,6 +140,9 @@ if ( ! function_exists( 'fullframe_setup' ) ) :
 			) );
 		}
 		else if ( 'infinite-scroll-scroll' == $pagination_type ) {
+			//Override infinite scroll disable scroll option
+        	update_option('infinite_scroll', true);
+
 			add_theme_support( 'infinite-scroll', array(
 				'type'		=> 'scroll',
 				'container' => 'main',
@@ -170,9 +194,19 @@ function fullframe_scripts() {
 	wp_enqueue_style( 'fullframe-responsive', get_template_directory_uri() . '/css/responsive.css' );
 
 	//Responsive Menu
-	wp_enqueue_script('sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1', false );
+	wp_enqueue_script('sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '2.2.1.1', false );
 
 	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.1', true );
+
+	/**
+	 * Loads default sidr color scheme styles(Does not require handle prefix)
+	 */
+	if ( isset( $options['color_scheme'] ) && ( 'dark' == $options['color_scheme'] ) ) {
+		wp_enqueue_style( 'sidr', get_template_directory_uri() . '/css/jquery.sidr.dark.min.css', false, '2.1.0' );
+	}
+	else if ( isset( $options['color_scheme'] ) && ( 'light' == $options['color_scheme'] ) ) {
+		wp_enqueue_style( 'sidr', get_template_directory_uri() . '/css/jquery.sidr.light.min.css', false, '2.1.0' );
+	}
 
 
 	/**
@@ -208,7 +242,9 @@ function fullframe_scripts() {
 	/**
 	 * Loads up Scroll Up script
 	 */
-	wp_enqueue_script( 'fullframe-scrollup', get_template_directory_uri() . '/js/fullframe-scrollup.min.js', array( 'jquery' ), '20072014', true  );
+	if ( ! $options['disable_scrollup'] ) {
+		wp_enqueue_script( 'fullframe-scrollup', get_template_directory_uri() . '/js/fullframe-scrollup.min.js', array( 'jquery' ), '20072014', true  );
+	}
 
 	/**
 	 * Enqueue custom script for fullframe.
@@ -331,8 +367,10 @@ function fullframe_flush_transients(){
 
 	delete_transient( 'fullframe_featured_slider' );
 
+	//@remove Remove version check when WordPress 4.8 is released
 	delete_transient( 'fullframe_favicon' );
 
+	//@remove Remove version check when WordPress 4.8 is released
 	delete_transient( 'fullframe_webclip' );
 
 	delete_transient( 'fullframe_custom_css' );
@@ -405,6 +443,8 @@ if ( ! function_exists( 'fullframe_favicon' ) ) :
 	 * @action wp_head, admin_head
 	 *
 	 * @since Fullframe 1.0
+	 *
+	 * @remove Remove version check when WordPress 4.8 is released
 	 */
 	function fullframe_favicon() {
 		if( ( !$fullframe_favicon = get_transient( 'fullframe_favicon' ) ) ) {
@@ -443,6 +483,8 @@ if ( ! function_exists( 'fullframe_web_clip' ) ) :
 	 * @action wp_head
 	 *
 	 * @since Fullframe 1.0
+	 *
+	 * @remove Remove version check when WordPress 4.8 is released
 	 */
 	function fullframe_web_clip() {
 		if( ( !$fullframe_web_clip = get_transient( 'fullframe_web_clip' ) ) ) {
@@ -967,53 +1009,16 @@ if ( ! function_exists( 'fullframe_body_classes' ) ) :
 	 * @since Fullframe 1.0
 	 */
 	function fullframe_body_classes( $classes ) {
-		global $post, $wp_query;
+		$options = fullframe_get_theme_options();
 
 		// Adds a class of group-blog to blogs with more than 1 published author
 		if ( is_multi_author() ) {
 			$classes[] = 'group-blog';
 		}
 
-		// Front page displays in Reading Settings
-	    $page_on_front 	= get_option('page_on_front') ;
-	    $page_for_posts = get_option('page_for_posts');
+		$layout = fullframe_get_theme_layout();
 
-		// Get Page ID outside Loop
-	    $page_id = $wp_query->get_queried_object_id();
-
-		// Blog Page or Front Page setting in Reading Settings
-		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
-	        $layout = get_post_meta( $page_id,'fullframe-layout-option', true );
-	    }
-    	else if ( is_singular() ) {
-	 		if ( is_attachment() ) {
-				$parent = $post->post_parent;
-				$layout = get_post_meta( $parent,'fullframe-layout-option', true );
-			}
-			else {
-				$layout = get_post_meta( $post->ID,'fullframe-layout-option', true );
-			}
-		}
-		else {
-			$layout = 'default';
-		}
-
-		if( empty( $layout ) ) {
-			$layout = 'default';
-		}
-
-		$options 		= fullframe_get_theme_options();
-
-		$current_layout = $options['theme_layout'];
-
-		if( 'default' == $layout ) {
-			$layout_selector = $current_layout;
-		}
-		else {
-			$layout_selector = $layout;
-		}
-
-		switch ( $layout_selector ) {
+		switch ( $layout ) {
 			case 'left-sidebar':
 				$classes[] = 'two-columns content-right';
 			break;
@@ -1061,12 +1066,68 @@ if ( ! function_exists( 'fullframe_responsive' ) ) :
 	function fullframe_responsive() {
 		$options 			= fullframe_get_theme_options();
 
-		$fullframe_responsive = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+		$fullframe_responsive = '<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">';
 
 		echo $fullframe_responsive;
 	}
 endif; //fullframe_responsive
 add_filter( 'wp_head', 'fullframe_responsive', 1 );
+
+
+if ( ! function_exists( 'fullframe_get_theme_layout' ) ) :
+	/**
+	 * Returns Theme Layout prioritizing the meta box layouts
+	 *
+	 * @uses  get_theme_mod
+	 *
+	 * @action wp_head
+	 *
+	 * @since Full Frame 2.3
+	 */
+	function fullframe_get_theme_layout() {
+		$id = '';
+
+		global $post, $wp_query;
+
+	    // Front page displays in Reading Settings
+		$page_on_front  = get_option('page_on_front') ;
+		$page_for_posts = get_option('page_for_posts');
+
+		// Get Page ID outside Loop
+		$page_id = $wp_query->get_queried_object_id();
+
+		// Blog Page or Front Page setting in Reading Settings
+		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
+	        $id = $page_id;
+	    }
+	    else if ( is_singular() ) {
+	 		if ( is_attachment() ) {
+				$id = $post->post_parent;
+			}
+			else {
+				$id = $post->ID;
+			}
+		}
+
+		//Get appropriate metabox value of layout
+		if ( '' != $id ) {
+			$layout = get_post_meta( $id, 'fullframe-layout-option', true );
+		}
+		else {
+			$layout = 'default';
+		}
+
+		//Load options data
+		$options = fullframe_get_theme_options();
+
+		//check empty and load default
+		if ( empty( $layout ) || 'default' == $layout ) {
+			$layout = $options['theme_layout'];
+		}
+
+		return $layout;
+	}
+endif; //fullframe_get_theme_layout
 
 
 if ( ! function_exists( 'fullframe_archive_content_image' ) ) :
@@ -1347,7 +1408,10 @@ if ( ! function_exists( 'fullframe_scrollup' ) ) {
 			$options = fullframe_get_theme_options();
 			echo '<!-- refreshing cache -->';
 
-			$fullframe_scrollup =  '<a href="#masthead" id="scrollup" class="genericon"><span class="screen-reader-text">' . __( 'Scroll Up', 'full-frame' ) . '</span></a>' ;
+			//site stats, analytics header code
+			if ( ! $options['disable_scrollup'] ) {
+				$fullframe_scrollup =  '<a href="#masthead" id="scrollup" class="genericon"><span class="screen-reader-text">' . __( 'Scroll Up', 'full-frame' ) . '</span></a>' ;
+			}
 
 			set_transient( 'fullframe_scrollup', $fullframe_scrollup, 86940 );
 		}
@@ -1417,3 +1481,75 @@ if ( ! function_exists( 'fullframe_post_navigation' ) ) :
 	}
 endif; //fullframe_post_navigation
 add_action( 'fullframe_after_post', 'fullframe_post_navigation', 10 );
+
+/**
+ * Migrate Logo to New WordPress core Custom Logo
+ *
+ *
+ * Runs if version number saved in theme_mod "logo_version" doesn't match current theme version.
+ */
+function fullframe_logo_migrate() {
+	$ver = get_theme_mod( 'logo_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '2.8' ) >= 0 ) {
+		return;
+	}
+
+	/**
+	 * Get Theme Options Values
+	 */
+	$options 	= fullframe_get_theme_options();
+
+	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'the_custom_logo' ) ) {
+		if( isset( $options['logo'] ) && '' != $options['logo'] ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$logo = attachment_url_to_postid( $options['logo'] );
+
+			if ( is_int( $logo ) ) {
+				set_theme_mod( 'custom_logo', $logo );
+			}
+		}
+
+  		// Update to match logo_version so that script is not executed continously
+		set_theme_mod( 'logo_version', '2.8' );
+	}
+
+}
+add_action( 'after_setup_theme', 'fullframe_logo_migrate' );
+
+/**
+ * Migrate Custom Favicon to WordPress core Site Icon
+ *
+ * Runs if version number saved in theme_mod "site_icon_version" doesn't match current theme version.
+ */
+function fullframe_site_icon_migrate() {
+	$ver = get_theme_mod( 'site_icon_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '2.8' ) >= 0 ) {
+		return;
+	}
+
+	/**
+	 * Get Theme Options Values
+	 */
+	$options 	= fullframe_get_theme_options();
+
+	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'has_site_icon' ) ) {
+		if ( isset( $options['favicon'] ) && '' != $options['favicon'] ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$site_icon = attachment_url_to_postid( $options['favicon'] );
+
+			if ( is_int( $site_icon ) ) {
+				update_option( 'site_icon', $site_icon );
+			}
+		}
+
+	  	// Update to match site_icon_version so that script is not executed continously
+		set_theme_mod( 'site_icon_version', '2.8' );
+	}
+}
+add_action( 'after_setup_theme', 'fullframe_site_icon_migrate' );

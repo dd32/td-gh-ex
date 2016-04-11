@@ -48,6 +48,9 @@ function fullframe_get_default_theme_options() {
 		//Custom CSS
 		'custom_css'										=> '',
 
+		//Scrollup Options
+		'disable_scrollup'									=> 0,
+
 		//Excerpt Options
 		'excerpt_length'									=> '40',
 		'excerpt_more_text'									=> __( 'Read More ...', 'full-frame' ),

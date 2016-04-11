@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Responsive\n"
-"POT-Creation-Date: 2016-01-12 23:13+0545\n"
+"POT-Creation-Date: 2016-04-11 23:24+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: PA Angelini <nosencheres@free.fr>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -95,7 +95,7 @@ msgstr "Audios"
 msgid "Chats"
 msgstr "Discutions"
 
-#: ../archive.php:69 ../sidebar.php:91
+#: ../archive.php:69 ../sidebar.php:53
 msgid "Archives"
 msgstr "Archives"
 
@@ -153,8 +153,8 @@ msgstr ""
 msgid "Pages:"
 msgstr "Pages:"
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:592
-#: ../inc/fullframe-core.php:611 ../inc/fullframe-core.php:737
+#: ../content-page.php:35 ../inc/fullframe-core.php:634
+#: ../inc/fullframe-core.php:653 ../inc/fullframe-core.php:779
 msgid "Edit"
 msgstr "Editer"
 
@@ -347,7 +347,7 @@ msgid "Featured Header Image Link URL"
 msgstr "URL de l' Image d'en tête"
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:91
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:430
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:433
 msgid "Check to Open Link in New Window/Tab"
 msgstr "Sélectionner pour que le lien s'ouvre dans une nouvelle fenêtre / onglet "
 
@@ -446,19 +446,19 @@ msgstr "Options de Page d'accueil / Première page"
 msgid "Select Categories"
 msgstr "Sélectionner Catégories "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:169
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:171
 msgid "Remove Icon images to disable."
 msgstr "Supprimer les icônes d'image pour désactiver la fonction."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:172
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:174
 msgid "Icon Options"
 msgstr " Options de l'icône"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:181
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:183
 msgid "Select/Add Favicon"
 msgstr "Sélectionner / Ajouter Favicon "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:192
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:194
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
 "height, which will support High Resolution Devices like iPad Retina."
@@ -467,37 +467,37 @@ msgstr ""
 "144px de hauteur, pour s'adapter aux dispositifs à haute résolution comme iPad "
 "Retina."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:193
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:195
 msgid "Select/Add Web Clip Icon"
 msgstr "Sélectionner / Ajouter Web clip "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:204
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:206
 msgid "Logo Icon is displayed in Primary Menu"
 msgstr "L'îcone du Logo est affichée dans le Menu Primaire"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:205
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:207
 msgid "Select/Add Logo Icon"
 msgstr "Sélectionner / Ajouter une îcone du Logo"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:216
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:219
 #: ../inc/fullframe-metabox.php:92
 msgid "Layout Options"
 msgstr "Options de mise en page"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:233
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:236
 msgid "Default Layout"
 msgstr "Mise en page par défaut "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:253
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:256
 msgid "Archive Content Layout"
 msgstr "Mise en page du contenu des archives"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:273
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:276
 #: ../inc/fullframe-metabox.php:94
 msgid "Single Page/Post Image Layout "
 msgstr "Mise en page des images dans un article/page"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:284
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:287
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -508,7 +508,7 @@ msgstr ""
 "PageNavi Plugin </a>. <br/>  L'option de défilement infini nécessite <a target="
 "\"_blank\" href=\"%s\"> JetPack Plugin </a> avec module Infinite Scroll activé."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:291
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:294
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
@@ -517,7 +517,7 @@ msgstr ""
 "L'option de défilement infini nécessite <a target=\"_blank\" href=\"%s\"> "
 "JetPack Plugin </a> avec module Infini Scroll activé. "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:302
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:305
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -525,87 +525,95 @@ msgstr ""
 "L'option Numérique nécessite <a target=\"_blank\" href=\"%s\"> WP-PageNavi "
 "Plugin </a>. "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:313
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:316
 msgid "Pagination Options"
 msgstr "Options de pagination "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:330
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:333
 msgid "Pagination type"
 msgstr "Type de pagination "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:339
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:342
 msgid "To disable the fields, simply leave them empty."
 msgstr "Pour désactiver les champs, laissez les simplement vide. "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:342
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:345
 msgid "Promotion Headline Options"
 msgstr "Options pour le titre de promotion"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:359
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:362
 msgid "Enable Promotion Headline on"
 msgstr "Activer le titre de promotion"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:373
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:376
 msgid "Appropriate Words: 10"
 msgstr "Nombre de mots recommandé : 10 "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:374
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:377
 msgid "Promotion Headline Text"
 msgstr "Texte du titre de promotion"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:387
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:390
 msgid "Appropriate Words: 15"
 msgstr "Nombre de mots recommandés: 15 "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:388
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:391
 msgid "Promotion Subheadline Text"
 msgstr "Texte du sous-titre de promotion"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:401
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:404
 msgid "Appropriate Words: 3"
 msgstr "Nombre de mots recommandés: 3 "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:402
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:405
 msgid "Promotion Headline Button Text "
 msgstr "Texte du bouton \"Titre de Promotion\""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:416
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:419
 msgid "Promotion Headline Link"
 msgstr "Lien du titre de promotion"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:440
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:445
+msgid "Scrollup Options"
+msgstr ""
+
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:455
+msgid "Check to disable Scroll Up"
+msgstr ""
+
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:464
 msgid "Change default placeholder text in Search."
 msgstr "Changer le texte affiché par défaut dans Recherche"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:443
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:467
 msgid "Search Options"
 msgstr "Options de recherche "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:453
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:477
 msgid "Default Display Text in Search"
 msgstr "Texte affiché par défaut dans Rechercher "
 
-#: ../inc/customizer-includes/fullframe-customizer.php:51
+#: ../inc/customizer-includes/fullframe-customizer.php:53
 msgid "Logo"
 msgstr "Logo"
 
-#: ../inc/customizer-includes/fullframe-customizer.php:64
+#: ../inc/customizer-includes/fullframe-customizer.php:66
 msgid "Check to disable logo"
 msgstr "Sélectionner pour désactiver le logo "
 
-#: ../inc/customizer-includes/fullframe-customizer.php:78
+#: ../inc/customizer-includes/fullframe-customizer.php:80
 msgid "Logo Alt Text"
 msgstr "Texte alternatif du Logo"
 
-#: ../inc/customizer-includes/fullframe-customizer.php:92
+#: ../inc/customizer-includes/fullframe-customizer.php:95
 msgid "Check to move Site Title and Tagline before logo"
 msgstr "Sélectionner pour déplacer le titre du site et le le slogan avant le logo "
 
-#: ../inc/customizer-includes/fullframe-customizer.php:118
+#: ../inc/customizer-includes/fullframe-customizer.php:121
 msgid "Color Scheme"
 msgstr "Choix des couleurs"
 
-#: ../inc/customizer-includes/fullframe-customizer.php:143
+#: ../inc/customizer-includes/fullframe-customizer.php:146
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view full "
 "effects."
@@ -613,20 +621,20 @@ msgstr ""
 "Attention: Réinitialise tous les réglages par défaut. Rafraîchissez la page "
 "après enregistrement pour visualiser l'effet."
 
-#: ../inc/customizer-includes/fullframe-customizer.php:145
+#: ../inc/customizer-includes/fullframe-customizer.php:148
 msgid "Reset all settings"
 msgstr "Réinitialiser tous les réglages "
 
-#: ../inc/customizer-includes/fullframe-customizer.php:156
+#: ../inc/customizer-includes/fullframe-customizer.php:159
 msgid "Check to reset all settings to default"
 msgstr "Sélectionner pour réinitialiser tous les paramètres par défaut "
 
-#: ../inc/customizer-includes/fullframe-customizer.php:166
-#: ../inc/customizer-includes/fullframe-customizer.php:177
+#: ../inc/customizer-includes/fullframe-customizer.php:169
+#: ../inc/customizer-includes/fullframe-customizer.php:180
 msgid "Important Links"
 msgstr "Liens importants "
 
-#: ../inc/customizer-includes/fullframe-customizer.php:212
+#: ../inc/customizer-includes/fullframe-customizer.php:215
 msgid "Upgrade To Pro &raquo;"
 msgstr "Upgrader vers version Pro &raquo;"
 
@@ -663,120 +671,120 @@ msgstr "Erreur 404"
 msgid "Page %s"
 msgstr "Page %s"
 
-#: ../inc/fullframe-core.php:77 ../inc/fullframe-menus.php:26
+#: ../inc/fullframe-core.php:88 ../inc/fullframe-menus.php:26
 msgid "Primary Menu"
 msgstr "Menu primaire"
 
-#: ../inc/fullframe-core.php:558
+#: ../inc/fullframe-core.php:600
 msgid "Post navigation"
 msgstr "Navigation dans les articles"
 
-#: ../inc/fullframe-core.php:567
+#: ../inc/fullframe-core.php:609
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Anciens articles"
 
-#: ../inc/fullframe-core.php:568
+#: ../inc/fullframe-core.php:610
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Articles récents<span class=\"meta-nav\">&rarr;</span> "
 
-#: ../inc/fullframe-core.php:592
+#: ../inc/fullframe-core.php:634
 msgid "Pingback:"
 msgstr "Pingback: "
 
-#: ../inc/fullframe-core.php:602
+#: ../inc/fullframe-core.php:644
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"dit\">dit:</span>"
 
-#: ../inc/fullframe-core.php:608
+#: ../inc/fullframe-core.php:650
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s "
 
-#: ../inc/fullframe-core.php:615
+#: ../inc/fullframe-core.php:657
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération. "
 
-#: ../inc/fullframe-core.php:718
+#: ../inc/fullframe-core.php:760
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class = \"screen-reader-text\"> Posté le </ span>"
 
-#: ../inc/fullframe-core.php:725
+#: ../inc/fullframe-core.php:767
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class = \"screen-reader-text\"> Auteur </ span>"
 
-#: ../inc/fullframe-core.php:733
+#: ../inc/fullframe-core.php:775
 msgid "Leave a comment"
 msgstr "Laisser un commentaire"
 
-#: ../inc/fullframe-core.php:733
+#: ../inc/fullframe-core.php:775
 msgid "1 Comment"
 msgstr "1 commentaire"
 
-#: ../inc/fullframe-core.php:733
+#: ../inc/fullframe-core.php:775
 msgid "% Comments"
 msgstr "% Commentaires"
 
-#: ../inc/fullframe-core.php:754 ../inc/fullframe-core.php:762
+#: ../inc/fullframe-core.php:796 ../inc/fullframe-core.php:804
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", ␣"
 
-#: ../inc/fullframe-core.php:757
+#: ../inc/fullframe-core.php:799
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class = \"screen-reader-text\"> Catégories </ span>"
 
-#: ../inc/fullframe-core.php:765
+#: ../inc/fullframe-core.php:807
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class = \"screen-reader-text\"> Etiquettes </ span>"
 
-#: ../inc/fullframe-core.php:908
+#: ../inc/fullframe-core.php:950
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/fullframe-core.php:1350
+#: ../inc/fullframe-core.php:1413
 msgid "Scroll Up"
 msgstr "Remonter"
 
-#: ../inc/fullframe-core.php:1367
+#: ../inc/fullframe-core.php:1431
 msgid "Posted on"
 msgstr "Posté le"
 
-#: ../inc/fullframe-core.php:1368
+#: ../inc/fullframe-core.php:1432
 msgid "By"
 msgstr "par"
 
-#: ../inc/fullframe-core.php:1409
+#: ../inc/fullframe-core.php:1473
 msgid "Next &rarr;"
 msgstr "Suivant &rarr;"
 
-#: ../inc/fullframe-core.php:1410
+#: ../inc/fullframe-core.php:1474
 msgid "Next post:"
 msgstr "Article suivant:"
 
-#: ../inc/fullframe-core.php:1412
+#: ../inc/fullframe-core.php:1476
 msgid "&larr; Previous"
 msgstr "&larr; Précédant"
 
-#: ../inc/fullframe-core.php:1413
+#: ../inc/fullframe-core.php:1477
 msgid "Previous post:"
 msgstr "Article précédent:"
 
-#: ../inc/fullframe-default-options.php:53
+#: ../inc/fullframe-default-options.php:56
 msgid "Read More ..."
 msgstr "En lire plus ..."
 
-#: ../inc/fullframe-default-options.php:63
+#: ../inc/fullframe-default-options.php:66
 msgid "Full Frame is a Premium Responsive WordPress Theme"
 msgstr "Full Frame est un thème Wordpress Premium et Responsive "
 
-#: ../inc/fullframe-default-options.php:64
+#: ../inc/fullframe-default-options.php:67
 msgid ""
 "This is promotion headline. You can edit this from Appearance -> Customize -> "
 "Theme Options -> Promotion Headline Options"
@@ -784,360 +792,360 @@ msgstr ""
 "Ceci est le titre de promotion. Vous pouvez l'éditer à partir Apparence -> "
 "Personnaliser -> Options de thème -> Options du titre de promotion"
 
-#: ../inc/fullframe-default-options.php:65
+#: ../inc/fullframe-default-options.php:68
 msgid "Reviews"
 msgstr "Avis"
 
-#: ../inc/fullframe-default-options.php:70
+#: ../inc/fullframe-default-options.php:73
 msgid "Search..."
 msgstr "Recherche"
 
-#: ../inc/fullframe-default-options.php:115
+#: ../inc/fullframe-default-options.php:118
 msgid "Light"
 msgstr "Clair"
 
-#: ../inc/fullframe-default-options.php:119
+#: ../inc/fullframe-default-options.php:122
 msgid "Dark"
 msgstr "Sombre"
 
-#: ../inc/fullframe-default-options.php:136
-#: ../inc/fullframe-default-options.php:641
+#: ../inc/fullframe-default-options.php:139
+#: ../inc/fullframe-default-options.php:644
 msgid "Primary Sidebar, Content"
 msgstr "Première colonne latérale, contenu"
 
-#: ../inc/fullframe-default-options.php:140
-#: ../inc/fullframe-default-options.php:646
+#: ../inc/fullframe-default-options.php:143
+#: ../inc/fullframe-default-options.php:649
 msgid "Content, Primary Sidebar"
 msgstr "Contenu, première colonne latérale"
 
-#: ../inc/fullframe-default-options.php:144
-#: ../inc/fullframe-default-options.php:651
+#: ../inc/fullframe-default-options.php:147
+#: ../inc/fullframe-default-options.php:654
 msgid "No Sidebar ( Content Width )"
 msgstr "Aucune colonne latérale (Largeur du contenu)"
 
-#: ../inc/fullframe-default-options.php:160
-#: ../inc/fullframe-default-options.php:313
+#: ../inc/fullframe-default-options.php:163
+#: ../inc/fullframe-default-options.php:316
 msgid "Show Excerpt"
 msgstr "Montrer l'extrait"
 
-#: ../inc/fullframe-default-options.php:164
+#: ../inc/fullframe-default-options.php:167
 msgid "Show Full Content (No Featured Image)"
 msgstr "Afficher le contenu complet (pas d'image à la Une)"
 
-#: ../inc/fullframe-default-options.php:181
-#: ../inc/fullframe-default-options.php:247
+#: ../inc/fullframe-default-options.php:184
+#: ../inc/fullframe-default-options.php:250
 msgid "Homepage / Frontpage"
 msgstr " Page d'accueil / Première page"
 
-#: ../inc/fullframe-default-options.php:185
+#: ../inc/fullframe-default-options.php:188
 msgid "Excluding Homepage"
 msgstr "Hormis la page d'accueil"
 
-#: ../inc/fullframe-default-options.php:189
+#: ../inc/fullframe-default-options.php:192
 msgid "Excluding Homepage, Page/Post Featured Image"
 msgstr "Hormis page d'accueil et Pages/Articles avec image à la Une"
 
-#: ../inc/fullframe-default-options.php:193
-#: ../inc/fullframe-default-options.php:251
+#: ../inc/fullframe-default-options.php:196
+#: ../inc/fullframe-default-options.php:254
 msgid "Entire Site"
 msgstr "Tout le site"
 
-#: ../inc/fullframe-default-options.php:197
+#: ../inc/fullframe-default-options.php:200
 msgid "Entire Site, Page/Post Featured Image"
 msgstr "Tout le site, Pages/articles avec Images à la Une"
 
-#: ../inc/fullframe-default-options.php:201
+#: ../inc/fullframe-default-options.php:204
 msgid "Pages and Posts"
 msgstr "Pages et articles"
 
-#: ../inc/fullframe-default-options.php:205
-#: ../inc/fullframe-default-options.php:255
-#: ../inc/fullframe-default-options.php:474
+#: ../inc/fullframe-default-options.php:208
+#: ../inc/fullframe-default-options.php:258
+#: ../inc/fullframe-default-options.php:477
 msgid "Disabled"
 msgstr "Désactivé"
 
-#: ../inc/fullframe-default-options.php:222
+#: ../inc/fullframe-default-options.php:225
 msgid "Full Image"
 msgstr "Image taille réelle"
 
-#: ../inc/fullframe-default-options.php:226
+#: ../inc/fullframe-default-options.php:229
 msgid "Large Image"
 msgstr "Grande image"
 
-#: ../inc/fullframe-default-options.php:230
+#: ../inc/fullframe-default-options.php:233
 msgid "Slider Image"
 msgstr "Image du bandeau défilant"
 
-#: ../inc/fullframe-default-options.php:272
+#: ../inc/fullframe-default-options.php:275
 msgid "Demo Featured Content"
 msgstr "Démo du Contenu à la Une"
 
-#: ../inc/fullframe-default-options.php:276
+#: ../inc/fullframe-default-options.php:279
 msgid "Featured Page Content"
 msgstr "Votre Contenu à la Une"
 
-#: ../inc/fullframe-default-options.php:293
+#: ../inc/fullframe-default-options.php:296
 msgid "3 columns"
 msgstr "3 colonnes"
 
-#: ../inc/fullframe-default-options.php:297
+#: ../inc/fullframe-default-options.php:300
 msgid "4 columns"
 msgstr "4 colonnes "
 
-#: ../inc/fullframe-default-options.php:317
+#: ../inc/fullframe-default-options.php:320
 msgid "Show Full Content"
 msgstr "Montrer tout le contenu"
 
-#: ../inc/fullframe-default-options.php:321
+#: ../inc/fullframe-default-options.php:324
 msgid "Hide Content"
 msgstr "Cacher le contenu"
 
-#: ../inc/fullframe-default-options.php:338
+#: ../inc/fullframe-default-options.php:341
 msgid "Demo Featured Slider"
 msgstr "Bandeau défilant de démonstration "
 
-#: ../inc/fullframe-default-options.php:342
+#: ../inc/fullframe-default-options.php:345
 msgid "Featured Page Slider"
 msgstr "Vos pages de Bandeau défilant"
 
-#: ../inc/fullframe-default-options.php:359
+#: ../inc/fullframe-default-options.php:362
 msgid "Fade"
 msgstr "Fondu enchainé"
 
-#: ../inc/fullframe-default-options.php:363
+#: ../inc/fullframe-default-options.php:366
 msgid "Fade Out"
 msgstr "Disparaître "
 
-#: ../inc/fullframe-default-options.php:367
+#: ../inc/fullframe-default-options.php:370
 msgid "None"
 msgstr "Aucun "
 
-#: ../inc/fullframe-default-options.php:371
+#: ../inc/fullframe-default-options.php:374
 msgid "Scroll Horizontal"
 msgstr "Défilement horizontal "
 
-#: ../inc/fullframe-default-options.php:375
+#: ../inc/fullframe-default-options.php:378
 msgid "Scroll Vertical"
 msgstr "Défilement Vertical "
 
-#: ../inc/fullframe-default-options.php:379
+#: ../inc/fullframe-default-options.php:382
 msgid "Flip Horizontal"
 msgstr "Retourner horizontalement "
 
-#: ../inc/fullframe-default-options.php:383
+#: ../inc/fullframe-default-options.php:386
 msgid "Flip Vertical"
 msgstr "Symétrie axe vertical "
 
-#: ../inc/fullframe-default-options.php:387
+#: ../inc/fullframe-default-options.php:390
 msgid "Tile Slide"
 msgstr "Défilement tuilé"
 
-#: ../inc/fullframe-default-options.php:391
+#: ../inc/fullframe-default-options.php:394
 msgid "Tile Blind"
 msgstr "Défilement aveugle"
 
-#: ../inc/fullframe-default-options.php:395
+#: ../inc/fullframe-default-options.php:398
 msgid "Suffle"
 msgstr "Aléatoire"
 
-#: ../inc/fullframe-default-options.php:412
+#: ../inc/fullframe-default-options.php:415
 msgid "True"
 msgstr "Vrai"
 
-#: ../inc/fullframe-default-options.php:416
+#: ../inc/fullframe-default-options.php:419
 msgid "Wait"
 msgstr "Attendre"
 
-#: ../inc/fullframe-default-options.php:420
+#: ../inc/fullframe-default-options.php:423
 msgid "False"
 msgstr "Faux"
 
-#: ../inc/fullframe-default-options.php:437
+#: ../inc/fullframe-default-options.php:440
 msgid "Default(Older Posts/Newer Posts)"
 msgstr "Par défaut (anciens articles / articles récents) "
 
-#: ../inc/fullframe-default-options.php:441
+#: ../inc/fullframe-default-options.php:444
 msgid "Numeric"
 msgstr "Numérique"
 
-#: ../inc/fullframe-default-options.php:445
+#: ../inc/fullframe-default-options.php:448
 msgid "Infinite Scroll (Click)"
 msgstr "Infini Scroll (avec clic) "
 
-#: ../inc/fullframe-default-options.php:449
+#: ../inc/fullframe-default-options.php:452
 msgid "Infinite Scroll (Scroll)"
 msgstr "Infini Scroll (avec défilement) "
 
-#: ../inc/fullframe-default-options.php:466
+#: ../inc/fullframe-default-options.php:469
 msgid "Featured"
 msgstr "Sélectionné"
 
-#: ../inc/fullframe-default-options.php:470
-#: ../inc/fullframe-default-options.php:704
+#: ../inc/fullframe-default-options.php:473
+#: ../inc/fullframe-default-options.php:707
 msgid "Full Size"
 msgstr "Pleine taille"
 
-#: ../inc/fullframe-default-options.php:490
+#: ../inc/fullframe-default-options.php:493
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/fullframe-default-options.php:494
+#: ../inc/fullframe-default-options.php:497
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/fullframe-default-options.php:498
+#: ../inc/fullframe-default-options.php:501
 msgid "Googleplus"
 msgstr "Googleplus"
 
-#: ../inc/fullframe-default-options.php:502 ../inc/fullframe-social-icons.php:37
+#: ../inc/fullframe-default-options.php:505 ../inc/fullframe-social-icons.php:37
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/fullframe-default-options.php:506
+#: ../inc/fullframe-default-options.php:509
 msgid "Feed"
 msgstr "Feed"
 
-#: ../inc/fullframe-default-options.php:510
+#: ../inc/fullframe-default-options.php:513
 msgid "WordPress"
 msgstr "Wordpress"
 
-#: ../inc/fullframe-default-options.php:514
+#: ../inc/fullframe-default-options.php:517
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/fullframe-default-options.php:518
+#: ../inc/fullframe-default-options.php:521
 msgid "LinkedIn"
 msgstr "Linkedln"
 
-#: ../inc/fullframe-default-options.php:522
+#: ../inc/fullframe-default-options.php:525
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/fullframe-default-options.php:526
+#: ../inc/fullframe-default-options.php:529
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/fullframe-default-options.php:530
+#: ../inc/fullframe-default-options.php:533
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/fullframe-default-options.php:534
+#: ../inc/fullframe-default-options.php:537
 msgid "YouTube"
 msgstr "Youtube"
 
-#: ../inc/fullframe-default-options.php:538
+#: ../inc/fullframe-default-options.php:541
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/fullframe-default-options.php:542
+#: ../inc/fullframe-default-options.php:545
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/fullframe-default-options.php:546
+#: ../inc/fullframe-default-options.php:549
 msgid "PollDaddy"
 msgstr "PollDaddy "
 
-#: ../inc/fullframe-default-options.php:550
+#: ../inc/fullframe-default-options.php:553
 msgid "CodePen"
 msgstr "CodePen "
 
-#: ../inc/fullframe-default-options.php:554
+#: ../inc/fullframe-default-options.php:557
 msgid "Path"
 msgstr "Path "
 
-#: ../inc/fullframe-default-options.php:558
+#: ../inc/fullframe-default-options.php:561
 msgid "Dribbble"
 msgstr "Dribbble "
 
-#: ../inc/fullframe-default-options.php:562
+#: ../inc/fullframe-default-options.php:565
 msgid "Skype"
 msgstr "Skype "
 
-#: ../inc/fullframe-default-options.php:566
+#: ../inc/fullframe-default-options.php:569
 msgid "Digg"
 msgstr "Digg "
 
-#: ../inc/fullframe-default-options.php:570
+#: ../inc/fullframe-default-options.php:573
 msgid "Reddit"
 msgstr "Reddit "
 
-#: ../inc/fullframe-default-options.php:574
+#: ../inc/fullframe-default-options.php:577
 msgid "Stumbleupon"
 msgstr "Stumbleupon"
 
-#: ../inc/fullframe-default-options.php:578
+#: ../inc/fullframe-default-options.php:581
 msgid "Pocket"
 msgstr "Pocket "
 
-#: ../inc/fullframe-default-options.php:582
+#: ../inc/fullframe-default-options.php:585
 msgid "DropBox"
 msgstr "DropBox "
 
-#: ../inc/fullframe-default-options.php:586
+#: ../inc/fullframe-default-options.php:589
 msgid "Spotify"
 msgstr "Spotify "
 
-#: ../inc/fullframe-default-options.php:590
+#: ../inc/fullframe-default-options.php:593
 msgid "Foursquare"
 msgstr "Foursquare "
 
-#: ../inc/fullframe-default-options.php:594
+#: ../inc/fullframe-default-options.php:597
 msgid "Twitch"
 msgstr "Twitch "
 
-#: ../inc/fullframe-default-options.php:598
+#: ../inc/fullframe-default-options.php:601
 msgid "Website"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:602
+#: ../inc/fullframe-default-options.php:605
 msgid "Phone"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:606
+#: ../inc/fullframe-default-options.php:609
 msgid "Handset"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:610
+#: ../inc/fullframe-default-options.php:613
 msgid "Cart"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:614
+#: ../inc/fullframe-default-options.php:617
 msgid "Cloud"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:618
+#: ../inc/fullframe-default-options.php:621
 msgid "Link"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:636
-#: ../inc/fullframe-default-options.php:667
-#: ../inc/fullframe-default-options.php:694
+#: ../inc/fullframe-default-options.php:639
+#: ../inc/fullframe-default-options.php:670
+#: ../inc/fullframe-default-options.php:697
 msgid "Default"
 msgstr "Par défaut"
 
-#: ../inc/fullframe-default-options.php:672
+#: ../inc/fullframe-default-options.php:675
 msgid "Enable"
 msgstr "Permettre"
 
-#: ../inc/fullframe-default-options.php:677
+#: ../inc/fullframe-default-options.php:680
 msgid "Disable"
 msgstr "Désactiver"
 
-#: ../inc/fullframe-default-options.php:699
+#: ../inc/fullframe-default-options.php:702
 msgid "Featured Image"
 msgstr "Image à la Une"
 
-#: ../inc/fullframe-default-options.php:709
+#: ../inc/fullframe-default-options.php:712
 msgid "Disable Image"
 msgstr "Désactiver l'image"
 
-#: ../inc/fullframe-default-options.php:724
+#: ../inc/fullframe-default-options.php:727
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr "Copyright &copy; %1$s %2$s. Tous Droits Réservés."
 
-#: ../inc/fullframe-default-options.php:726
+#: ../inc/fullframe-default-options.php:729
 msgid "by"
 msgstr "par"
 
@@ -1227,11 +1235,11 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Recherche"
 
-#: ../sidebar.php:74
+#: ../sidebar.php:36
 msgid "Primary Sidebar Widget Area"
 msgstr "Zone de widget pour la première colonne latérale "
 
-#: ../sidebar.php:77
+#: ../sidebar.php:39
 msgid ""
 "This is the Primary Sidebar Widget Area if you are using a two column site "
 "layout option."
@@ -1239,7 +1247,7 @@ msgstr ""
 "Ceci est la zone de widget de la première colonne latérale si vous utilisez la "
 "mise en page \"deux colonnes\" pour ce site."
 
-#: ../sidebar.php:78
+#: ../sidebar.php:40
 #, php-format
 msgid ""
 "By default it will load Search and Archives widgets as shown below. You can add "

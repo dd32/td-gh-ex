@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
@@ -26,7 +26,7 @@ function fullframe_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport			= 'postMessage';
 
 	/**
-	  * Set priority of blogname (Site Title) to 1. 
+	  * Set priority of blogname (Site Title) to 1.
 	  *  Strangly, if more than two options is added, Site title is moved below Tagline. This rectifies this issue.
 	  */
 	$wp_customize->get_control( 'blogname' )->priority			= 1;
@@ -40,47 +40,50 @@ function fullframe_customize_register( $wp_customize ) {
 	//Custom Controls
 	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-custom-controls.php';
 
-	// Custom Logo (added to Site Title and Tagline section in Theme Customizer)
-	$wp_customize->add_setting( 'fullframe_theme_options[logo]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['logo'],
-		'sanitize_callback'	=> 'fullframe_sanitize_image'
-	) );
+	//@remove Remove this block when WordPress 4.8 is released
+	if ( ! function_exists( 'has_custom_logo' ) ) {
+		// Custom Logo (added to Site Title and Tagline section in Theme Customizer)
+		$wp_customize->add_setting( 'fullframe_theme_options[logo]', array(
+			'capability'		=> 'edit_theme_options',
+			'default'			=> $defaults['logo'],
+			'sanitize_callback'	=> 'fullframe_sanitize_image'
+		) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo', array(
-		'label'		=> __( 'Logo', 'full-frame' ),
-		'priority'	=> 100,
-		'section'   => 'title_tagline',
-        'settings'  => 'fullframe_theme_options[logo]',
-    ) ) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo', array(
+			'label'		=> __( 'Logo', 'full-frame' ),
+			'priority'	=> 100,
+			'section'   => 'title_tagline',
+	        'settings'  => 'fullframe_theme_options[logo]',
+	    ) ) );
 
-    $wp_customize->add_setting( 'fullframe_theme_options[logo_disable]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['logo_disable'],
-		'sanitize_callback' => 'fullframe_sanitize_checkbox',
-	) );
+	    $wp_customize->add_setting( 'fullframe_theme_options[logo_disable]', array(
+			'capability'		=> 'edit_theme_options',
+			'default'			=> $defaults['logo_disable'],
+			'sanitize_callback' => 'fullframe_sanitize_checkbox',
+		) );
 
-	$wp_customize->add_control( 'fullframe_theme_options[logo_disable]', array(
-		'label'    => __( 'Check to disable logo', 'full-frame' ),
-		'priority' => 101,
-		'section'  => 'title_tagline',
-		'settings' => 'fullframe_theme_options[logo_disable]',
-		'type'     => 'checkbox',
-	) );
-	
-	$wp_customize->add_setting( 'fullframe_theme_options[logo_alt_text]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['logo_alt_text'],
-		'sanitize_callback'	=> 'sanitize_text_field',
-	) );
+		$wp_customize->add_control( 'fullframe_theme_options[logo_disable]', array(
+			'label'    => __( 'Check to disable logo', 'full-frame' ),
+			'priority' => 101,
+			'section'  => 'title_tagline',
+			'settings' => 'fullframe_theme_options[logo_disable]',
+			'type'     => 'checkbox',
+		) );
 
-	$wp_customize->add_control( 'fullframe_logo_alt_text', array(
-		'label'    	=> __( 'Logo Alt Text', 'full-frame' ),
-		'priority'	=> 102,
-		'section' 	=> 'title_tagline',
-		'settings' 	=> 'fullframe_theme_options[logo_alt_text]',
-		'type'     	=> 'text',
-	) );
+		$wp_customize->add_setting( 'fullframe_theme_options[logo_alt_text]', array(
+			'capability'		=> 'edit_theme_options',
+			'default'			=> $defaults['logo_alt_text'],
+			'sanitize_callback'	=> 'sanitize_text_field',
+		) );
+
+		$wp_customize->add_control( 'fullframe_logo_alt_text', array(
+			'label'    	=> __( 'Logo Alt Text', 'full-frame' ),
+			'priority'	=> 102,
+			'section' 	=> 'title_tagline',
+			'settings' 	=> 'fullframe_theme_options[logo_alt_text]',
+			'type'     	=> 'text',
+		) );
+	}
 
 	$wp_customize->add_setting( 'fullframe_theme_options[move_title_tagline]', array(
 		'capability'		=> 'edit_theme_options',
@@ -90,19 +93,19 @@ function fullframe_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'fullframe_theme_options[move_title_tagline]', array(
 		'label'    => __( 'Check to move Site Title and Tagline before logo', 'full-frame' ),
-		'priority' => 103,
+		'priority' => function_exists( 'has_custom_logo' ) ? 10 : 103,
 		'section'  => 'title_tagline',
 		'settings' => 'fullframe_theme_options[move_title_tagline]',
 		'type'     => 'checkbox',
 	) );
 	// Custom Logo End
-	 
+
 	// Color Scheme
 	$wp_customize->add_setting( 'fullframe_theme_options[color_scheme]', array(
 		'capability' 		=> 'edit_theme_options',
 		'default'    		=> $defaults['color_scheme'],
 		'sanitize_callback'	=> 'fullframe_sanitize_select',
-		'transport'         => 'postMessage',
+		'transport'         => 'refresh',
 	) );
 
 	$schemes = fullframe_color_schemes();
@@ -128,16 +131,16 @@ function fullframe_customize_register( $wp_customize ) {
 
 	//Theme Options
 	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-theme-options.php';
-	
+
 	//Featured Content Setting
 	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-featured-content-setting.php';
-   	
+
 	//Featured Slider
 	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-featured-slider.php';
 
 	//Social Links
 	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-social-icons.php';
-	
+
 	// Reset all settings to default
 	$wp_customize->add_section( 'fullframe_reset_all_settings', array(
 		'description'	=> __( 'Caution: Reset all settings to default. Refresh the page after save to view full effects.', 'full-frame' ),
@@ -178,7 +181,7 @@ function fullframe_customize_register( $wp_customize ) {
          'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',
-    ) ) );  
+    ) ) );
     //Important Links End
 }
 add_action( 'customize_register', 'fullframe_customize_register' );
@@ -192,7 +195,7 @@ add_action( 'customize_register', 'fullframe_customize_register' );
  */
 function fullframe_customize_preview() {
 	wp_enqueue_script( 'fullframe_customizer', get_template_directory_uri() . '/js/fullframe-customizer.min.js', array( 'customize-preview' ), '20120827', true );
-	
+
 	//Flush transients on preview
 	fullframe_flush_transients();
 }
