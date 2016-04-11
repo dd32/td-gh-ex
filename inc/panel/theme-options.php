@@ -387,98 +387,106 @@ function catchkathmandu_theme_options_do_page() {
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
 
-                  	<div id="fav-icons" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon', 'catch-kathmandu' ); ?></a></h3>
-                        <div class="option-content inside">
-                       		<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Disable Favicon?', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type='hidden' value='0' name='catchkathmandu_options[remove_favicon]'>
-                                    <input type="checkbox" id="favicon" name="catchkathmandu_options[remove_favicon]" value="1" <?php checked( '1', $options['remove_favicon'] ); ?> /> <?php _e('Check to disable', 'catch-kathmandu'); ?>
-                                </div>
-                          	</div><!-- .row -->
-                       		<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Fav Icon URL:', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                                        <input class="upload-url" size="65" type="text" name="catchkathmandu_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
-                                    <?php } else { ?>
-                                        <input class="upload-url" size="65" type="text" name="catchkathmandu_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
-                                    <?php }  ?>
-                                    <input ref="<?php esc_attr_e( 'Insert as Fav Icon','catch-kathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catch-kathmandu' );?>" />
-                                </div>
-                            </div><!-- .row -->
-                       		<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Preview', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                        			<?php
-										if ( !empty( $options[ 'fav_icon' ] ) ) {
-											echo '<img src="'.esc_url( $options[ 'fav_icon' ] ).'" alt="fav" />';
-										} else {
-											echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
-										}
-									?>
-                              	</div>
-                            </div><!-- .row -->
-                            <div class="row">
-                      			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-kathmandu' ); ?>" />
-                          	</div><!-- .row -->
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->
+                  	<?php
+                    //@remove Remove if block when WordPress 4.8 is released
+                    if( !function_exists( 'has_site_icon' ) ) {
+                    ?>
 
-                    <div id="webclip-icon" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'catch-kathmandu' ); ?></a></h3>
-                        <div class="option-content inside">
-                       		<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Disable Web Clip Icon?', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                        			<input type='hidden' value='0' name='catchkathmandu_options[remove_web_clip]'>
-                        			<input type="checkbox" id="favicon" name="catchkathmandu_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'catch-kathmandu'); ?>
-                              	</div>
-                         	</div><!-- .row -->
-                            <div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Web Clip Icon URL:', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                        			<?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
-                                        <input class="upload-url" size="65" type="text" name="catchkathmandu_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
-                                    <?php } else { ?>
-                                        <input size="65" type="text" name="catchkathmandu_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
-                                    <?php }  ?>
-                                    <input  ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catch-kathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catch-kathmandu' );?>" />
-                              	</div>
-                         	</div><!-- .row -->
-                            <div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Preview', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-									<?php
-									if ( !empty( $options[ 'web_clip' ] ) ) {
-										echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="Web Clip Icon" />';
-									} else {
-										echo '<img src="'. get_template_directory_uri().'/images/apple-touch-icon.png" alt="Web Clip Icon" />';
-									}
-									?>
-                              	</div>
-                         	</div><!-- .row -->
-                            <div class="row">
-                             	<?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catch-kathmandu' ); ?>
-                           	</div><!-- .row -->
-                            <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-kathmandu' ); ?>" />
-                          	</div><!-- .row -->
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->
+                        <div id="fav-icons" class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon', 'catch-kathmandu' ); ?></a></h3>
+                            <div class="option-content inside">
+                           		<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Disable Favicon?', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<input type='hidden' value='0' name='catchkathmandu_options[remove_favicon]'>
+                                        <input type="checkbox" id="favicon" name="catchkathmandu_options[remove_favicon]" value="1" <?php checked( '1', $options['remove_favicon'] ); ?> /> <?php _e('Check to disable', 'catch-kathmandu'); ?>
+                                    </div>
+                              	</div><!-- .row -->
+                           		<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Fav Icon URL:', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
+                                            <input class="upload-url" size="65" type="text" name="catchkathmandu_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
+                                        <?php } else { ?>
+                                            <input class="upload-url" size="65" type="text" name="catchkathmandu_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
+                                        <?php }  ?>
+                                        <input ref="<?php esc_attr_e( 'Insert as Fav Icon','catch-kathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catch-kathmandu' );?>" />
+                                    </div>
+                                </div><!-- .row -->
+                           		<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Preview', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                            			<?php
+    										if ( !empty( $options[ 'fav_icon' ] ) ) {
+    											echo '<img src="'.esc_url( $options[ 'fav_icon' ] ).'" alt="fav" />';
+    										} else {
+    											echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
+    										}
+    									?>
+                                  	</div>
+                                </div><!-- .row -->
+                                <div class="row">
+                          			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-kathmandu' ); ?>" />
+                              	</div><!-- .row -->
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
+
+                        <div id="webclip-icon" class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'catch-kathmandu' ); ?></a></h3>
+                            <div class="option-content inside">
+                           		<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Disable Web Clip Icon?', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                            			<input type='hidden' value='0' name='catchkathmandu_options[remove_web_clip]'>
+                            			<input type="checkbox" id="favicon" name="catchkathmandu_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'catch-kathmandu'); ?>
+                                  	</div>
+                             	</div><!-- .row -->
+                                <div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Web Clip Icon URL:', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                            			<?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
+                                            <input class="upload-url" size="65" type="text" name="catchkathmandu_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
+                                        <?php } else { ?>
+                                            <input size="65" type="text" name="catchkathmandu_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
+                                        <?php }  ?>
+                                        <input  ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catch-kathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catch-kathmandu' );?>" />
+                                  	</div>
+                             	</div><!-- .row -->
+                                <div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Preview', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+    									<?php
+    									if ( !empty( $options[ 'web_clip' ] ) ) {
+    										echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="Web Clip Icon" />';
+    									} else {
+    										echo '<img src="'. get_template_directory_uri().'/images/apple-touch-icon.png" alt="Web Clip Icon" />';
+    									}
+    									?>
+                                  	</div>
+                             	</div><!-- .row -->
+                                <div class="row">
+                                 	<?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catch-kathmandu' ); ?>
+                               	</div><!-- .row -->
+                                <div class="row">
+                                	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-kathmandu' ); ?>" />
+                              	</div><!-- .row -->
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
+                    <?php
+                    }
+                    ?>
 
                     <div id="header-options" class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Header Options', 'catch-kathmandu' ); ?></a></h3>
@@ -488,7 +496,7 @@ function catchkathmandu_theme_options_do_page() {
                                 	<?php _e( 'Custom Header: Logo & Site Details', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<a class="button" href="<?php echo admin_url('themes.php?page=custom-header'); ?>"><?php _e('Click Here to Add/Replace Header Logo & Site Details', 'catch-kathmandu'); ?></a>
+                                	<a class="button" href="<?php echo admin_url('customize.php?autofocus[control]=custom_logo'); ?>"><?php _e('Click Here to Add/Replace Header Logo & Site Details', 'catch-kathmandu'); ?></a>
                            		</div>
                          	</div><!-- .row -->
                         	<div class="row">
@@ -517,106 +525,124 @@ function catchkathmandu_theme_options_do_page() {
                     <div id="header-featured-image" class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Header Featured Image Options', 'catch-kathmandu' ); ?></a></h3>
                         <div class="option-content inside">
-                        	<div class="row">
-                            	<div class="col col-header">
-                        			<?php _e( 'Enable Featured Header Image', 'catch-kathmandu' ); ?>
-                               	</div>
-                                <div class="col col-options">
-                                	<label title="enable-header-homepage">
-                                    <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="enable-header-homepage" <?php checked($options['enable_featured_header_image'], 'homepage'); ?> value="homepage"  />
-                                    <?php _e( 'Homepage', 'catch-kathmandu' ); ?>
-                                    </label>
+                        	<?php
+                            if( function_exists( 'has_custom_logo' ) ) {
+                            ?>
+                                <div class="row">
+                                    <div class="col col-1">
+                                        <?php _e( 'Custom Header', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                        <a class="button" href="<?php echo admin_url('customize.php?autofocus[control]=header_image'); ?>"><?php _e('Click Here to Add/Replace Header Image', 'catch-kathmandu'); ?></a>
+                                    </div>
+                                </div><!-- .row -->
+                            <?php
+                                }
+                            else {
+                            ?>
+                                <div class="row">
+                                	<div class="col col-header">
+                            			<?php _e( 'Enable Featured Header Image', 'catch-kathmandu' ); ?>
+                                   	</div>
+                                    <div class="col col-options">
+                                    	<label title="enable-header-homepage">
+                                        <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="enable-header-homepage" <?php checked($options['enable_featured_header_image'], 'homepage'); ?> value="homepage"  />
+                                        <?php _e( 'Homepage', 'catch-kathmandu' ); ?>
+                                        </label>
 
-                                    <label title="enable-header-homepage">
-                                    <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="enable-header-exclude-homepage" <?php checked($options['enable_featured_header_image'], 'excludehome'); ?> value="excludehome"  />
-                                    <?php _e( 'Excluding Homepage', 'catch-kathmandu' ); ?>
-                                    </label>
+                                        <label title="enable-header-homepage">
+                                        <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="enable-header-exclude-homepage" <?php checked($options['enable_featured_header_image'], 'excludehome'); ?> value="excludehome"  />
+                                        <?php _e( 'Excluding Homepage', 'catch-kathmandu' ); ?>
+                                        </label>
 
-                                    <label title="enable-header-allpage">
-                                    <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="enable-header-allpage" <?php checked($options['enable_featured_header_image'], 'allpage'); ?> value="allpage"  />
-                                     <?php _e( 'Entire Site', 'catch-kathmandu' ); ?>
-                                    </label>
+                                        <label title="enable-header-allpage">
+                                        <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="enable-header-allpage" <?php checked($options['enable_featured_header_image'], 'allpage'); ?> value="allpage"  />
+                                         <?php _e( 'Entire Site', 'catch-kathmandu' ); ?>
+                                        </label>
 
-                                    <label title="enable-header-postpage">
-                                    <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="enable-header-postpage" <?php checked($options['enable_featured_header_image'], 'postpage'); ?> value="postpage"  />
-                                     <?php _e( 'Entire Site, Page/Post Featured Image', 'catch-kathmandu' ); ?>
-                                    </label>
+                                        <label title="enable-header-postpage">
+                                        <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="enable-header-postpage" <?php checked($options['enable_featured_header_image'], 'postpage'); ?> value="postpage"  />
+                                         <?php _e( 'Entire Site, Page/Post Featured Image', 'catch-kathmandu' ); ?>
+                                        </label>
 
-                                    <label title="enable-header-pagespostes">
-                                    <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="enable-header-pagespostes" <?php checked($options['enable_featured_header_image'], 'pagespostes'); ?> value="pagespostes"  />
-                                     <?php _e( 'Pages & Posts', 'catch-kathmandu' ); ?>
-                                    </label>
+                                        <label title="enable-header-pagespostes">
+                                        <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="enable-header-pagespostes" <?php checked($options['enable_featured_header_image'], 'pagespostes'); ?> value="pagespostes"  />
+                                         <?php _e( 'Pages & Posts', 'catch-kathmandu' ); ?>
+                                        </label>
 
-                                    <label title="disable-header">
-                                    <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="disable-header" <?php checked($options['enable_featured_header_image'], 'disable'); ?> value="disable" />
-                                     <?php _e( 'Disable', 'catch-kathmandu' ); ?>
-                                    </label>
-                                </div>
-                          	</div><!-- .row -->
-                            <div class="row">
-                            	<div class="col col-header">
-                        			<?php _e( 'Page/Post Featured Image Size', 'catch-kathmandu' ); ?>
-                               	</div>
-                                <div class="col col-options">
-                                	<label title="featured-image"><input type="radio" name="catchkathmandu_options[page_featured_image]" id="image-full" <?php checked($options['page_featured_image'], 'full'); ?> value="full"  />
-									<?php _e( 'Full Image', 'catch-kathmandu' ); ?>
-                                    </label>
+                                        <label title="disable-header">
+                                        <input type="radio" name="catchkathmandu_options[enable_featured_header_image]" id="disable-header" <?php checked($options['enable_featured_header_image'], 'disable'); ?> value="disable" />
+                                         <?php _e( 'Disable', 'catch-kathmandu' ); ?>
+                                        </label>
+                                    </div>
+                              	</div><!-- .row -->
+                                <div class="row">
+                                	<div class="col col-header">
+                            			<?php _e( 'Page/Post Featured Image Size', 'catch-kathmandu' ); ?>
+                                   	</div>
+                                    <div class="col col-options">
+                                    	<label title="featured-image"><input type="radio" name="catchkathmandu_options[page_featured_image]" id="image-full" <?php checked($options['page_featured_image'], 'full'); ?> value="full"  />
+    									<?php _e( 'Full Image', 'catch-kathmandu' ); ?>
+                                        </label>
 
-                                    <label title="featured-image"><input type="radio" name="catchkathmandu_options[page_featured_image]" id="content-image-slider" <?php checked($options['page_featured_image'], 'slider'); ?> value="slider"  />
-                                    <?php _e( 'Slider Image', 'catch-kathmandu' ); ?>
-                                    </label>
+                                        <label title="featured-image"><input type="radio" name="catchkathmandu_options[page_featured_image]" id="content-image-slider" <?php checked($options['page_featured_image'], 'slider'); ?> value="slider"  />
+                                        <?php _e( 'Slider Image', 'catch-kathmandu' ); ?>
+                                        </label>
 
-                                    <label title="featured-image"><input type="radio" name="catchkathmandu_options[page_featured_image]" id="image-featured" <?php checked($options['page_featured_image'], 'featured'); ?> value="featured"  />
-                                    <?php _e( 'Featured Image', 'catch-kathmandu' ); ?>
-                                    </label>
-                            	</div>
-                          	</div><!-- .row -->
-                            <div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Featured Header Image URL', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input class="upload-url" size="65" type="text" name="catchkathmandu_options[featured_header_image]" value="<?php echo esc_url( $options [ 'featured_header_image' ] ); ?>" /> <input ref="<?php esc_attr_e( 'Insert as Featured Header Image','catch-kathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Image','catch-kathmandu' );?>" />
-                              	</div>
-                          	</div><!-- .row -->
-                            <div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Featured Header Image Alt/Title Tag', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input class="upload-url" size="65" type="text" name="catchkathmandu_options[featured_header_image_alt]" value="<?php echo esc_attr( $options [ 'featured_header_image_alt' ] ); ?>" />
-                              	</div>
-                          	</div><!-- .row -->
-                            <div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Featured Header Image Link URL', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type="text" size="65" name="catchkathmandu_options[featured_header_image_url]" value="<?php echo esc_url( $options [ 'featured_header_image_url' ] ); ?>" />
-                              	</div>
-                          	</div><!-- .row -->
-                            <div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Target. Open Link in New Window?', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type="hidden" value="0" name="catchkathmandu_options[featured_header_image_base]">
-                                    <input type="checkbox" id="header-image-base" name="catchkathmandu_options[featured_header_image_base]" value="1" <?php checked( '1', $options['featured_header_image_base'] ); ?> /> <?php _e('Check to open in new window', 'catch-kathmandu'); ?>
-                              	</div>
-                          	</div><!-- .row -->
-                            <div class="row">
-                            	<div class="col col-1">
-                                	<?php if( $options[ 'reset_featured_image' ] == "1" ) { $options[ 'reset_featured_image' ] = "0"; } ?>
-                                	<?php _e( 'Reset Header Featured Image Options?', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type='hidden' value='0' name='catchkathmandu_options[reset_featured_image]'>
-                                    <input type="checkbox" id="headerlogo" name="catchkathmandu_options[reset_featured_image]" value="1" <?php checked( '1', $options['reset_featured_image'] ); ?> /> <?php _e('Check to reset', 'catch-kathmandu'); ?>
-                              	</div>
-                          	</div><!-- .row -->
-                            <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-kathmandu' ); ?>" />
-                          	</div><!-- .row -->
+                                        <label title="featured-image"><input type="radio" name="catchkathmandu_options[page_featured_image]" id="image-featured" <?php checked($options['page_featured_image'], 'featured'); ?> value="featured"  />
+                                        <?php _e( 'Featured Image', 'catch-kathmandu' ); ?>
+                                        </label>
+                                	</div>
+                              	</div><!-- .row -->
+                                <div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Featured Header Image URL', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<input class="upload-url" size="65" type="text" name="catchkathmandu_options[featured_header_image]" value="<?php echo esc_url( $options [ 'featured_header_image' ] ); ?>" /> <input ref="<?php esc_attr_e( 'Insert as Featured Header Image','catch-kathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Image','catch-kathmandu' );?>" />
+                                  	</div>
+                              	</div><!-- .row -->
+                                <div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Featured Header Image Alt/Title Tag', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<input class="upload-url" size="65" type="text" name="catchkathmandu_options[featured_header_image_alt]" value="<?php echo esc_attr( $options [ 'featured_header_image_alt' ] ); ?>" />
+                                  	</div>
+                              	</div><!-- .row -->
+                                <div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Featured Header Image Link URL', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<input type="text" size="65" name="catchkathmandu_options[featured_header_image_url]" value="<?php echo esc_url( $options [ 'featured_header_image_url' ] ); ?>" />
+                                  	</div>
+                              	</div><!-- .row -->
+                                <div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Target. Open Link in New Window?', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<input type="hidden" value="0" name="catchkathmandu_options[featured_header_image_base]">
+                                        <input type="checkbox" id="header-image-base" name="catchkathmandu_options[featured_header_image_base]" value="1" <?php checked( '1', $options['featured_header_image_base'] ); ?> /> <?php _e('Check to open in new window', 'catch-kathmandu'); ?>
+                                  	</div>
+                              	</div><!-- .row -->
+                                <div class="row">
+                                	<div class="col col-1">
+                                    	<?php if( $options[ 'reset_featured_image' ] == "1" ) { $options[ 'reset_featured_image' ] = "0"; } ?>
+                                    	<?php _e( 'Reset Header Featured Image Options?', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<input type='hidden' value='0' name='catchkathmandu_options[reset_featured_image]'>
+                                        <input type="checkbox" id="headerlogo" name="catchkathmandu_options[reset_featured_image]" value="1" <?php checked( '1', $options['reset_featured_image'] ); ?> /> <?php _e('Check to reset', 'catch-kathmandu'); ?>
+                                  	</div>
+                              	</div><!-- .row -->
+                                <div class="row">
+                                	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-kathmandu' ); ?>" />
+                              	</div><!-- .row -->
+                             <?php
+                            }
+                            ?>
 						</div><!-- .option-content -->
                  	</div><!-- .option-container -->
 

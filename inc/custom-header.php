@@ -39,29 +39,39 @@ function catchkathmandu_custom_header_setup() {
 		// Text color and image (empty to use none).
 		'default-text-color'     => '000',
 		'default-image'          => '',
-		
+
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 85,
 		'width'                  => 84,
 		'max-width'              => 1280,
-		
+
 		// Support flexible height and width.
 		'flex-height'            => true,
 		'flex-width'             => true,
-			
+
 		// Random image rotation off by default.
-		'random-default'         => false,	
-			
+		'random-default'         => false,
+
 		// Callbacks for styling the header and the admin preview.
 		'wp-head-callback'       => 'catchkathmandu_header_style',
 		'admin-head-callback'    => 'catchkathmandu_admin_header_style',
 		'admin-preview-callback' => 'catchkathmandu_header_image',
 	);
 
+	if( function_exists( 'has_custom_logo' ) ) {
+		/* Previously, custom header was being used as logo, but with implementation of custom logo
+		 * from WordPress version 4.5 onwards, we have migrated custom header to custom logo
+		 * and Our custom field for header to core custom header
+		 */
+		$args['height']        = 400;
+		$args['width']         = 1280;
+		$args['default-image'] = get_template_directory_uri().'/images/demo/header-image-1280x400.jpg';
+	}
+
 	$args = apply_filters( 'catchkathmandu_custom_header_args', $args );
 
 	add_theme_support( 'custom-header', $args );
-	
+
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
 		'defaultlogo' => array(
@@ -76,8 +86,8 @@ function catchkathmandu_custom_header_setup() {
 			/* translators: header image description */
 			'description' => __( 'Catch Kathmandu Logo', 'catch-kathmandu' )
 		)
-	) );	
- 
+	) );
+
 }
 add_action( 'after_setup_theme', 'catchkathmandu_custom_header_setup' );
 
@@ -186,7 +196,7 @@ function catchkathmandu_admin_header_style() {
 		#site-title a {
 			color: #000;
 			text-decoration: none;
-		}		
+		}
 		#site-description  {
 			color: #333;
 			font-size: 14px;
@@ -194,11 +204,11 @@ function catchkathmandu_admin_header_style() {
 			font-style: italic;
 			line-height: 1.4;
 			padding: 0;
-			
+
 		}
 	<?php endif; ?>
-	
-		
+
+
 	<?php
 		// Has the text been hidden?
 		if ( 'blank' == get_header_textcolor() ) :
@@ -233,43 +243,53 @@ if ( ! function_exists( 'catchkathmandu_header_image' ) ) :
  *
  * @since Catch Kathmandu 1.0
  */
-function catchkathmandu_header_image() { 	
+function catchkathmandu_header_image() {
 	?>
 	<div id="header-left">
-		<?php 		
+		<?php
+		$logoenable = 'logo-disable';
+
+		$catchkathmandu_header_logo = '';
+
 		//Checking Logo/Header Image
 		$header_image = get_header_image();
-		
-		if ( ! empty( $header_image ) ) : 
-		
+
+		//Checking Logo/Header Image
+		if( function_exists( 'has_custom_logo' ) ) :
+			if( has_custom_logo() ) :
+				$logoenable = 'logo-enable';
+
+				$logoenable = 'logo-enable logo-left';
+
+				$catchkathmandu_header_logo = '<div id="site-logo">' . get_custom_logo() .  '</div><!-- #site-logo -->';
+			endif;
+		elseif ( ! empty( $header_image ) ) :
+
 			$logoenable = 'logo-enable logo-left';
-			
+
 			$catchkathmandu_header_logo = '
 			<div id="site-logo">
             	<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">
             		<img src="' . esc_url( $header_image ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" />
 				</a>
 			</div><!-- #site-logo -->';
-		else :
-			$logoenable = 'logo-disable'; 
-			$catchkathmandu_header_logo = '';
-		endif; 
-		
+		endif;
+
 		// Checking Header Details
-		
+
 		$catchkathmandu_header_details = '
 		<div id="hgroup" class="' . $logoenable . '">
 			<h1 id="site-title">
 				<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>
 			</h1>
 			<h2 id="site-description"> ' . esc_attr( get_bloginfo( 'description', 'display' ) ) . '</h2>
-		</div><!-- #hgroup -->';  		
-		
+		</div><!-- #hgroup -->';
+
 		echo $catchkathmandu_header_logo;
 		echo $catchkathmandu_header_details;
-		   
+
 		?>
-        
+
 	</div><!-- #header-left"> -->
 <?php }
 endif; // catchkathmandu_header_image

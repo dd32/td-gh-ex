@@ -9,28 +9,20 @@
 
 get_header();
 
-//Getting data from Theme Options Panel and Meta Box 
-global $catchkathmandu_options_settings;
-$options = $catchkathmandu_options_settings;
-
-//Sidebar Layout
-$themeoption_layout = $options['sidebar_layout'];
-$parent = $post->post_parent;
-$layout = get_post_meta( $parent,'catchkathmandu-sidebarlayout', true );
 ?>
-            
+
     <div id="primary" class="content-area image-attachment">
-		<div id="content" class="site-content" role="main">   
-    
+		<div id="content" class="site-content" role="main">
+
 			<?php while ( have_posts() ) : the_post(); ?>
-    
+
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          
+
 					<div class="entry-container">
-                            
+
 						<header class="entry-header">
                             <h1 class="entry-title"><?php the_title(); ?></h1>
-    
+
                             <div class="entry-meta">
                                 <?php
                                     $metadata = wp_get_attachment_metadata();
@@ -46,16 +38,16 @@ $layout = get_post_meta( $parent,'catchkathmandu-sidebarlayout', true );
                                 ?>
                                 <?php edit_post_link( __( 'Edit', 'catch-kathmandu' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
                             </div><!-- .entry-meta -->
-    
+
                             <nav id="image-navigation" class="site-image-navigation">
                                 <span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'catch-kathmandu' ) ); ?></span>
                                 <span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'catch-kathmandu' ) ); ?></span>
                             </nav><!-- #image-navigation -->
-                            
+
                         </header><!-- .entry-header -->
 
                         <div class="entry-content">
-    
+
                             <div class="entry-attachment">
                                 <div class="attachment">
                                     <?php
@@ -82,29 +74,29 @@ $layout = get_post_meta( $parent,'catchkathmandu-sidebarlayout', true );
                                             $next_attachment_url = wp_get_attachment_url();
                                         }
                                     ?>
-    
+
                                     <a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
                                         $attachment_size = apply_filters( 'catchkathmandu_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
                                         echo wp_get_attachment_image( $post->ID, 'full' );
                                     ?></a>
                                 </div><!-- .attachment -->
-    
+
                                 <?php if ( ! empty( $post->post_excerpt ) ) : ?>
                                 <div class="entry-caption">
                                     <?php the_excerpt(); ?>
                                 </div><!-- .entry-caption -->
                                 <?php endif; ?>
                             </div><!-- .entry-attachment -->
-    
+
                             <?php the_content(); ?>
-                            <?php wp_link_pages( array( 
+                            <?php wp_link_pages( array(
                                 'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-kathmandu' ) . '</span>',
                                 'after'			=> '</div>',
                                 'link_before' 	=> '<span>',
                                 'link_after'   	=> '</span>',
-                            ) ); 
+                            ) );
                             ?>
-    
+
                         </div><!-- .entry-content -->
 
                         <footer class="entry-meta">
@@ -119,9 +111,9 @@ $layout = get_post_meta( $parent,'catchkathmandu-sidebarlayout', true );
                             <?php endif; ?>
                             <?php edit_post_link( __( 'Edit', 'catch-kathmandu' ), ' <span class="edit-link">', '</span>' ); ?>
                         </footer><!-- .entry-meta -->
-                        
+
                    	</div><!-- .entry-container -->
-                        
+
 				</article><!-- #post-<?php the_ID(); ?> -->
 
 				<?php comments_template(); ?>

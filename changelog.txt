@@ -1,5 +1,12 @@
 == Changelog ==
 
+Version 3.7
+* Bug Fixed: Unnecessary sidebar-third.php and third column related codes removed
+* Update: Theme layout delivery
+* Update: Content width in new style
+* Updated: Favicon and Web Clip Migration to Site Icon( Core Support )
+* Updated: Logo to Custom Logo( Core Support ) for WP version 4.5
+
 Version 3.6
 * Added: Disable scrollup option
 * Removed: HTML script loading from header and added it as wp_enqueue_script() in catchkathmandu_scripts() function
@@ -53,7 +60,7 @@ Version 3.2
 Version 3.1
 * Added more theme options button in Customizer
 * Bug Fixed: Margin issue in Comments
-* Bug Fixed: Fixed function prefix and comment text 
+* Bug Fixed: Fixed function prefix and comment text
 * Bug Fixed: WooCommerce plugin compatibility
 
 Version 3.0
@@ -77,8 +84,8 @@ Version 2.5.1 & Version 2.5 (Merged)
 * Removed unused codes
 * Updated media uploader to new version in theme options
 
-Version 2.4 
-* Added support for WooCommerce plugin 
+Version 2.4
+* Added support for WooCommerce plugin
 
 Version 2.3
 * Added meetup social icon
@@ -133,7 +140,7 @@ Version 1.5.1
 
 Version 1.5
 * Added Polish translation pl_PL.po and pl_PL.mo
-* Fixed Footer widget issues in Mobile devices when using 3 footer areas (Reported By Tim) 
+* Fixed Footer widget issues in Mobile devices when using 3 footer areas (Reported By Tim)
 
 Version 1.4
 * Added Spanish translation es_ES.po and es_ES.mo
@@ -166,7 +173,7 @@ Version 1.1
 Version 1.0
 * Change logo image to generic logo image as per WordPress.org guideline
 * Change default slider images, homepage featured images and screenshot image to all GPL selfshot images by CatchThemes
-* Fixed Menu css 
+* Fixed Menu css
 * Updated responsive menu script
 * Updated responsive video script
 * Updated HTML5 script
@@ -178,12 +185,12 @@ Version 0.5
 * Demo link changed to review link at WordPress.org
 
 Version 0.4
-* Added user capability condition for header and footer codes 
-* Removed WordPress SEO plugin condition in header.php 
+* Added user capability condition for header and footer codes
+* Removed WordPress SEO plugin condition in header.php
 * Changed Favicon default to disabled
 
 Version 0.3
-* Fixed UTF character issue in style.css theme description 
+* Fixed UTF character issue in style.css theme description
 
 Version 0.2
 * Re-uploading in WordPress.org as the previous ticket got empty

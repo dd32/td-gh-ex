@@ -1,10 +1,10 @@
 /*
 Theme Name: Catch Kathmandu
-Theme URI: http://catchthemes.com/themes/catch-kathmandu
+Theme URI: https://catchthemes.com/themes/catch-kathmandu
 Author: Catch Themes
-Author URI: http://catchthemes.com
-Description: Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledged WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese, Italian, German(SWITZERLAND), Japanese, Dutch, German and Danish languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-kathmandu/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-kathmandu/
-Version: 3.6
+Author URI: https://catchthemes.com
+Description: Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledged WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese, Italian, German(SWITZERLAND), Japanese, Dutch, German and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-kathmandu/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-kathmandu/
+Version: 3.7
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging, holiday
@@ -126,7 +126,7 @@ a img {
 
 .site {
 	width: 1280px;
-	margin: 40px auto;		
+	margin: 40px auto;
 }
 #hgroup-wrap,
 #main-feat-img {
@@ -153,7 +153,7 @@ a img {
 }
 #secondary {
     float: right;
-    width: 380px;	
+    width: 380px;
 }
 
 
@@ -165,7 +165,7 @@ a img {
 }
 #hgroup-wrap,
 .hentry,
-.comments-area article { 
+.comments-area article {
 	padding-bottom: 50px;
 }
 #site-logo,
@@ -212,7 +212,7 @@ p,
 article.format-aside .entry-title,
 .comments-area article header,
 .widget-feat-content {
-	margin-bottom: 20px;	
+	margin-bottom: 20px;
 }
 .page .entry-header,
 .widget-title {
@@ -242,10 +242,10 @@ article.format-aside .entry-title,
 	padding-bottom: 0;
 }
 #secondary .widget {
-    padding: 30px 40px;		
+    padding: 30px 40px;
 }
 #secondary .widget.widget_catchkathmandu_social_widget {
-    padding: 30px 40px 20px;		
+    padding: 30px 40px 20px;
 }
 
 
@@ -264,14 +264,14 @@ textarea {
 	font-size: 36px;
     font-size: 3.6rem;
     font-weight: bold;
-    line-height: 1.6;	
+    line-height: 1.6;
 }
 .entry-header .entry-title,
 #homepage-message h2,
 #homepage-message .right-section a,
 #featured-post #feature-heading {
 	font-size: 26px;
-	font-size: 2.6rem;	
+	font-size: 2.6rem;
 }
 #homepage-message p {
     font-size: 16px;
@@ -303,9 +303,9 @@ body {
 }
 .site {
 	background-color: #fff;
-	-webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);	
-	-moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);	
-	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);	
+	-webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	-moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 }
 
 hr {
@@ -541,7 +541,7 @@ a:hover {
 }
 .displaynone {
 	display: none;
-}	
+}
 img#wpstats {
 	display: none;
 }
@@ -550,7 +550,7 @@ img#wpstats {
 /* =Header
 ----------------------------------------------- */
 
-#site-logo, 
+#site-logo,
 #hgroup {
     display: inline-block;
     float: left;
@@ -626,14 +626,14 @@ img#wpstats {
 	line-height: 4.5rem;
 	padding: 0 20px;
 	text-decoration: none;
-	white-space: nowrap;	
+	white-space: nowrap;
 }
 #secondary-menu ul.menu a {
 	color: #fff;
 	padding: 5px 25px;
 }
 #footer-menu ul.menu a {
-	color: #ccc;	
+	color: #ccc;
 }
 .header-sidebar .widget ul.menu ul a,
 #secondary-menu ul.menu  ul a {
@@ -648,7 +648,7 @@ img#wpstats {
 	height: auto;
 	padding: 10px 19px;
 	width: 168px;
-	white-space: normal;	
+	white-space: normal;
 }
 .header-sidebar .widget ul.menu ul,
 #secondary-menu ul.menu ul {
@@ -666,19 +666,19 @@ img#wpstats {
 	z-index: 99999;
 }
 #secondary-menu ul.menu ul {
-	top: 55px;	
+	top: 55px;
 }
 .header-sidebar .widget ul.menu ul ul,
 #secondary-menu ul.menu ul ul {
 	left: 100%;
 	top: 0;
 }
-.header-sidebar .widget ul.menu li:last-child, 
+.header-sidebar .widget ul.menu li:last-child,
 .header-sidebar .widget ul.menu ul li,
-#secondary-menu ul.menu li:last-child, 
+#secondary-menu ul.menu li:last-child,
 #secondary-menu ul.menu ul li {
 	border: none;
-} 
+}
 .header-sidebar .widget ul.menu li:hover > ul,
 #secondary-menu ul.menu li:hover > ul {
 	display: block;
@@ -705,7 +705,7 @@ img#wpstats {
 
 /* =Responsive Menu (Tinynav.js)
 -------------------------------------------------------------- */
-.tinynav { 
+.tinynav {
     display: none;
 	font-size: 16px;
 }
@@ -899,7 +899,7 @@ img#wpstats {
     width: 100%;
 	z-index: 20;
 }
-#controllers a { 
+#controllers a {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
@@ -913,7 +913,7 @@ img#wpstats {
 	text-indent: -48px;
 	overflow: hidden;
 }
-#controllers a:hover, 
+#controllers a:hover,
 #controllers a.active {
 	background: #21759b; /* Show a solid color for older browsers */
 }
@@ -939,7 +939,7 @@ img#wpstats {
 }
 #main-slider:hover #slider-nav a {
 	background-color: #21759b; /* Show a solid color for older browsers */
-	background-color: rgba(33, 117, 155, 0.6);	
+	background-color: rgba(33, 117, 155, 0.6);
 	visibility: visible;
 }
 #main-slider #slider-nav a:hover {
@@ -965,7 +965,7 @@ img#wpstats {
     margin: 0;
 	text-align: left;
 }
-#homepage-message .right-section { 
+#homepage-message .right-section {
 	float: right;
 	text-align: center;
 }
@@ -977,7 +977,7 @@ img#wpstats {
 	border: 2px solid #fff;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px; 
+	-webkit-border-radius: 5px;
 	box-shadow: 0 -3px 0 rgba(0, 0, 0, 0.2) inset;
 	color: #fff;
 	display: block;
@@ -1009,7 +1009,7 @@ img#wpstats {
 #featured-post .entry-title {
 	color: #222;
 	padding-bottom: 5px;
-}	
+}
 #featured-post .post {
     display: inline;
     float: left;
@@ -1051,7 +1051,7 @@ img#wpstats {
 .entry-header .entry-title a:hover {
 	color: #0088cc;
 }
-.page-header { 
+.page-header {
 	border-top: 4px double #ddd;
 	border-bottom: 4px double #ddd;
 	color: #757575;
@@ -1077,7 +1077,7 @@ img#wpstats {
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
-	hyphens: auto;	
+	hyphens: auto;
 }
 .entry-content ol,
 .comment-content ol,
@@ -1117,12 +1117,12 @@ img#wpstats {
 	font-size: 2.4rem;
 }
 .entry-content h2,
-.comment-content h2 { 
+.comment-content h2 {
 	font-size: 22px;
 	font-size: 2.2rem;
 }
 .entry-content h3,
-.comment-content h3 { 
+.comment-content h3 {
 	font-size: 20px;
 	font-size: 2rem;
 }
@@ -1135,17 +1135,17 @@ img#wpstats {
 	margin-bottom: 10px;
 }
 .entry-content h4,
-.comment-content h4 { 
+.comment-content h4 {
 	font-size: 18px;
 	font-size: 1.8rem;
 }
 .entry-content h5,
-.comment-content h5 { 
+.comment-content h5 {
 	font-size: 16px;
 	font-size: 1.6rem;
 }
 .entry-content h6,
-.comment-content h6 { 
+.comment-content h6 {
 	font-size: 14px;
 	font-size: 1.4rem;
 }
@@ -1154,7 +1154,7 @@ img#wpstats {
     border-bottom: 1px solid #eee;
     width: 100%;
 }
-.entry-content td, 
+.entry-content td,
 .comment-content td {
     border-top: 1px solid #eee;
     padding: 10px 10px 8px 0;
@@ -1281,7 +1281,7 @@ article .entry-format a:hover {
 /* =Link
 ----------------------------------------------- */
 
-article.format-link .entry-content { 
+article.format-link .entry-content {
 	float: left;
 	font-size: 25px;
 	font-size: 2.5rem;
@@ -1354,7 +1354,7 @@ article.format-status .entry-title {
 }
 .chat-row {
     border-bottom: 1px solid #eee;
-    padding-top: 30px;	
+    padding-top: 30px;
 }
 .chat-row:last-child {
 	border: none;
@@ -1376,7 +1376,7 @@ img[class*="wp-image-"] {
 .entry-content img,
 img.size-full,
 img.size-large,
-img.wp-post-image {	
+img.wp-post-image {
 	display: block;
 	max-width: 100%;
 	height: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
@@ -1425,7 +1425,7 @@ img.alignright,
 	margin: 1.2% auto 0;
 	max-width: 98%;
 }
-.wp-caption .wp-caption-text, 
+.wp-caption .wp-caption-text,
 .gallery-caption, .entry-caption {
 	color: #757575;
 	font-size: 14px;
@@ -1554,8 +1554,8 @@ a#scrollup:hover {
 #nav-below .wp-pagenavi {
 	float: right;
 }
-#nav-below .wp-pagenavi a, 
-#nav-below .wp-pagenavi span, 
+#nav-below .wp-pagenavi a,
+#nav-below .wp-pagenavi span,
 #nav-below #wp_page_numbers ul li a,
 .page-link span,
 .page-link a span {
@@ -1571,7 +1571,7 @@ a#scrollup:hover {
 	padding: 0 12px;
 	text-decoration: none;
 }
-#nav-below .wp-pagenavi a, 
+#nav-below .wp-pagenavi a,
 #nav-below .wp-pagenavi span,
 .page-link span {
 	margin: 0 0 0 10px;
@@ -1579,7 +1579,7 @@ a#scrollup:hover {
 #nav-below .wp-pagenavi span.pages,
 .page-link span.pages {
 	color: #555;
-	background: none; 
+	background: none;
 	padding: 2px 0 0 0;
 }
 #nav-below .wp-pagenavi a:hover,
@@ -1588,7 +1588,7 @@ a#scrollup:hover {
 	background-color: #1b5f7d;
 	color: #fff;
 }
-#nav-below .wp-pagenavi span.current, 
+#nav-below .wp-pagenavi span.current,
 #nav-below #wp_page_numbers ul li.active_page a,
 .page-link span {
 	background-color: #1b5f7d;
@@ -1622,7 +1622,7 @@ a#scrollup:hover {
 ----------------------------------------------- */
 
 .bypostauthor {
-}	
+}
 #commentform input {
 	display: block;
 }
@@ -1706,7 +1706,7 @@ li.bypostauthor cite span {
 .widget-area .widget a:hover {
 	color: #0088cc;
 }
-.widget ul, 
+.widget ul,
 .widget ol {
     list-style: none;
     margin-left: 0;
@@ -1768,12 +1768,12 @@ input#s {
 	margin-bottom: 0;
 }
 .header-sidebar .widget,
-input[type="text"], 
-input[type="email"], 
+input[type="text"],
+input[type="email"],
 textarea {
 	color: #757575;
 }
-	
+
 .header-sidebar .widget ul {
 	list-style: none;
 }
@@ -1997,7 +1997,7 @@ ul.social-profile li.custom-social a img {
 	border: 1px solid #bbb;
     border-radius: 20px;
 	-moz-border-radius: 20px;
-	-webkit-border-radius: 20px; 
+	-webkit-border-radius: 20px;
 	box-shadow: none;
 	max-height: 31px;
 }
@@ -2010,7 +2010,7 @@ ul.social-profile li.custom-social a img {
 	border-top: 2px solid #1b5f7d;
 	clear: both;
 }
-#footer-sidebar { 
+#footer-sidebar {
 	background-color: #21759b;
 }
 #site-generator {
@@ -2075,16 +2075,16 @@ ul.social-profile li.custom-social a img {
 	font-size: 13px;
 	font-size: 1.3rem;
 }
-#site-generator .copyright, 
+#site-generator .copyright,
 #site-generator .powered {
     width: 49%;
 }
-#site-generator .copyright { 
+#site-generator .copyright {
 	clear: both;
 	float: left;
     text-align: left;
 }
-#site-generator .powered { 
+#site-generator .powered {
 	float: right;
     text-align: right;
 }
@@ -2096,16 +2096,16 @@ ul.social-profile li.custom-social a img {
 #masthead .breadcrumb {
 	padding-top: 25px;
 }
-.breadcrumb ul {	
+.breadcrumb ul {
 	list-style: none;
 	margin: 0 0 0 1px;
 	float: left;
 }
 .breadcrumb ul li {
 	float: left;
-	margin: 0 0 0 -1px;	
+	margin: 0 0 0 -1px;
 	font-size: 12px;
-	line-height: 23px;   
+	line-height: 23px;
 	border: 1px solid #1b5F7d;
 }
 .breadcrumb ul li a {

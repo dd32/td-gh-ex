@@ -110,7 +110,7 @@ function catchkathmandu_scripts() {
 
 	// Load the html5 shiv.
 	wp_enqueue_script( 'catchresponsive-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
-	wp_script_add_data( 'catchresponsive-html5', 'conditional', 'lt IE 9' );	
+	wp_script_add_data( 'catchresponsive-html5', 'conditional', 'lt IE 9' );
 
 }
 add_action( 'wp_enqueue_scripts', 'catchkathmandu_scripts' );
@@ -153,8 +153,14 @@ add_filter( 'wp_head', 'catchkathmandu_responsive', 1 );
  * @uses default favicon if favicon field on theme options is empty
  *
  * @uses set_transient and delete_transient
+ *
+ * @remove Remove this function when WordPress 4.8 is released
  */
 function catchkathmandu_favicon() {
+	if ( function_exists( 'has_site_icon' ) ) {
+		//Bail Early if Core Site Icon Feature is Present
+		return;
+	}
 	//delete_transient( 'catchkathmandu_favicon' );
 
 	if( ( !$catchkathmandu_favicon = get_transient( 'catchkathmandu_favicon' ) ) ) {
@@ -603,7 +609,7 @@ add_action('template_redirect', 'catchkathmandu_rss_redirect');
  * @since Catch Kathmandu 1.0
  */
 function catchkathmandu_body_classes( $classes ) {
-	global $post, $catchkathmandu_options_settings;
+	global $catchkathmandu_options_settings;
 	$options = $catchkathmandu_options_settings;
 
 	if ( is_page_template( 'page-blog.php') ) {
@@ -615,38 +621,9 @@ function catchkathmandu_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	if ( $post) {
- 		if ( is_attachment() ) {
-			$parent = $post->post_parent;
-			$layout = get_post_meta( $parent, 'catchkathmandu-sidebarlayout', true );
-		} else {
-			$layout = get_post_meta( $post->ID, 'catchkathmandu-sidebarlayout', true );
-		}
-	}
+	$layout = catchkathmandu_get_theme_layout();
 
-	if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-		$layout='default';
-	}
-
-	$themeoption_layout = $options['sidebar_layout'];
-
-	if( ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar') ) ) {
-		$classes[] = 'no-sidebar';
-	}
-	elseif( ( $layout == 'left-sidebar' || ( $layout=='default' && $themeoption_layout == 'left-sidebar') ) ){
-		$classes[] = 'left-sidebar';
-	}
-	elseif( ( $layout == 'right-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar') ) ){
-		$classes[] = 'right-sidebar';
-	}
-
-	$current_content_layout = $options['content_layout'];
-	if( $current_content_layout == 'full' ) {
-		$classes[] = 'content-full';
-	}
-	elseif ( $current_content_layout == 'excerpt' ) {
-		$classes[] = 'content-excerpt';
-	}
+	$classes[] = $layout;
 
 	return $classes;
 }
@@ -1383,20 +1360,6 @@ add_action( 'catchkathmandu_content_sidebar_end', 'catchkathmandu_content_sideba
 
 
 /**
- * Third Sidebar
- *
- * @Hooked in catchkathmandu_content_sidebar_end
- * @since Catch Kathmandu 1.1
- */
-
-function catchkathmandu_third_sidebar() {
-	get_sidebar( 'third' );
-}
-add_action( 'catchkathmandu_content_sidebar_end', 'catchkathmandu_third_sidebar', 15 );
-
-
-
-/**
  * Count the number of footer sidebars to enable dynamic classes for the footer
  */
 function catchkathmandu_footer_sidebar_class() {
@@ -1885,8 +1848,14 @@ add_action( 'catchkathmandu_before_hgroup_wrap', 'catchkathmandu_header_top', 10
  * @uses default Web Click Icon if web_clip field on theme options is empty
  *
  * @uses set_transient and delete_transient
+ *
+ * @remove Remove this function when WordPress 4.8 is released
  */
 function catchkathmandu_web_clip() {
+	if ( function_exists( 'has_site_icon' ) ) {
+		//Bail Early if Core Site Icon Feature is Present
+		return;
+	}
 	//delete_transient( 'catchkathmandu_web_clip' );
 
 	if( ( !$catchkathmandu_web_clip = get_transient( 'catchkathmandu_web_clip' ) ) ) {

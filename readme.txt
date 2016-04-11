@@ -1,8 +1,8 @@
 == Catch Kathmandu ==
-Catch Kathmandu Theme by Catch Themes, http://catchthemes.com/
+Catch Kathmandu Theme by Catch Themes, https://catchthemes.com/
 
 == About Catch Kathmandu ==
-Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledged WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese, Italian, German(SWITZERLAND), Japanese, Dutch, German and Danish languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-kathmandu/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-kathmandu/
+Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledged WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese, Italian, German(SWITZERLAND), Japanese, Dutch, German and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-kathmandu/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-kathmandu/
 
 == Tags ==
 black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout,  custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -31,7 +31,7 @@ Catch Kathmandu WordPress Theme, Copyright 2015 Catchthemes.com
 Catch Kathmandu is distributed under the terms of the GNU General Public License v3
 
 Catch Kathmandu is a derivative of the Catch Everest theme by the Catch Themes Team:
-http://wordpress.org/themes/catch-everest
+https://wordpress.org/themes/catch-everest
 Copyright: Catch Themes, catchthemes.com
 Licensed under GPLv3 or later
 
@@ -70,10 +70,10 @@ This theme shows the post id of the posts in the all posts table in the dashboar
 This is added to help the users to use those ids in the Featured Post Slider Options.
 
 == Theme Instruction ==
-Check out the theme instruction at http://catchthemes.com/theme-instructions/catch-kathmandu/
+Check out the theme instruction at https://catchthemes.com/theme-instructions/catch-kathmandu/
 
 == Free Support Forum ==
-Access to free support forum at http://catchthemes.com/support-forum/forum/catch-kathmandu-public/
+Access to free support forum at https://catchthemes.com/support-forum/forum/catch-kathmandu-public/
 
 == Installation ==
 1. Primary: Login to your wp-admin area and go to Appearance => Themes. Select Install tab and click on Upload link. Select theme .zip and click on Install now button. If you have any errors, use alternate method.
@@ -82,4 +82,4 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
-Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/catch-kathmandu-theme/
+Please refer to changelog.txt file or change log page at https://catchthemes.com/changelogs/catch-kathmandu-theme/

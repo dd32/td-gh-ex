@@ -382,50 +382,6 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			'default' 		=> $defaults['enable_menus']
 		),
 
-		//Favicon
-		'remove_favicon' => array(
-			'id' 			=> 'remove_favicon',
-			'title' 		=> __( 'Check to Disable Favicon', 'catch-kathmandu' ),
-			'description'	=> '',
-			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'favicon',
-			'default' 		=> $defaults['remove_favicon']
-		),
-		'fav_icon' => array(
-			'id' 			=> 'fav_icon',
-			'title' 		=> __( 'Fav Icon', 'catch-kathmandu' ),
-			'description'	=> '',
-			'field_type' 	=> 'image',
-			'sanitize' 		=> 'catchkathmandu_sanitize_image',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'favicon',
-			'default' 		=> $defaults['fav_icon']
-		),
-
-		//Web Clip Icon
-		'remove_web_clip' => array(
-			'id' 			=> 'remove_web_clip',
-			'title' 		=> __( 'Check to Disable Web Clip Icon', 'catch-kathmandu' ),
-			'description'	=> '',
-			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'web_clip_icon_options',
-			'default' 		=> $defaults['remove_web_clip']
-		),
-		'web_clip' => array(
-			'id' 			=> 'web_clip',
-			'title' 		=> __( 'Web Clip Icon', 'catch-kathmandu' ),
-			'description'	=> '',
-			'field_type' 	=> 'image',
-			'sanitize' 		=> 'catchkathmandu_sanitize_image',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'web_clip_icon_options',
-			'default' 		=> $defaults['web_clip']
-		),
-
 		//Header Options
 		'disable_header_right_sidebar' => array(
 			'id' 			=> 'disable_header_right_sidebar',
@@ -436,80 +392,6 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'header_options',
 			'default' 		=> $defaults['disable_header_right_sidebar']
-		),
-
-		//Header Featured image Options
-		'enable_featured_header_image' => array(
-			'id' 			=> 'enable_featured_header_image',
-			'title' 		=> __( 'Enable Featured Header Image', 'catch-kathmandu' ),
-			'description'	=> '',
-			'field_type' 	=> 'select',
-			'sanitize' 		=> 'catchkathmandu_sanitize_select',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'header_featured_image_options',
-			'default' 		=> $defaults['enable_featured_header_image'],
-			'choices'		=> catchkathmandu_enable_header_featured_image(),
-		),
-		'page_featured_image' => array(
-			'id' 			=> 'page_featured_image',
-			'title' 		=> __( 'Page/Post Featured Image Size', 'catch-kathmandu' ),
-			'description'	=> '',
-			'field_type' 	=> 'select',
-			'sanitize' 		=> 'catchkathmandu_sanitize_select',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'header_featured_image_options',
-			'default' 		=> $defaults['page_featured_image'],
-			'choices'		=> catchkathmandu_page_post_featured_image_size(),
-		),
-		'featured_header_image' => array(
-			'id' 			=> 'featured_header_image',
-			'title' 		=> __( 'Featured Header Image', 'catch-kathmandu' ),
-			'description'	=> '',
-			'field_type' 	=> 'image',
-			'sanitize' 		=> 'catchkathmandu_sanitize_image',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'header_featured_image_options',
-			'default' 		=> $defaults['featured_header_image']
-		),
-		'featured_header_image_alt' => array(
-			'id' 			=> 'featured_header_image_alt',
-			'title' 		=> __( 'Featured Header Image Alt/Title Tag', 'catch-kathmandu' ),
-			'description'	=> '',
-			'field_type' 	=> 'text',
-			'sanitize' 		=> 'sanitize_text_field',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'header_featured_image_options',
-			'default' 		=> $defaults['featured_header_image_alt']
-		),
-		'featured_header_image_url' => array(
-			'id' 			=> 'featured_header_image_url',
-			'title' 		=> __( 'Featured Header Image Link URL', 'catch-kathmandu' ),
-			'description'	=> '',
-			'field_type' 	=> 'url',
-			'sanitize' 		=> 'esc_url_raw',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'header_featured_image_options',
-			'default' 		=> $defaults['featured_header_image_url']
-		),
-		'featured_header_image_base' => array(
-			'id' 			=> 'featured_header_image_base',
-			'title' 		=> __( 'Check to Open Link in New Tab/Window', 'catch-kathmandu' ),
-			'description'	=> '',
-			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'header_featured_image_options',
-			'default' 		=> $defaults['featured_header_image_base']
-		),
-		'reset_featured_image' => array(
-			'id' 			=> 'reset_featured_image',
-			'title' 		=> __( 'Check to Reset Header Featured Image Options', 'catch-kathmandu' ),
-			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-kathmandu' ),
-			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchkathmandu_sanitize_reset_featured_image',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'header_featured_image_options',
-			'default' 		=> $defaults['reset_featured_image']
 		),
 
 		//Content Featured Image Options
@@ -1084,6 +966,213 @@ function catchkathmandu_customize_register( $wp_customize ) {
 		),
 
 	);
+
+	if( !function_exists( 'has_custom_logo' ) ) {
+		$settings_header_image = array(
+			//Header Featured image Options
+		'enable_featured_header_image' => array(
+			'id' 			=> 'enable_featured_header_image',
+			'title' 		=> __( 'Enable Featured Header Image', 'catch-kathmandu' ),
+			'description'	=> '',
+			'field_type' 	=> 'select',
+			'sanitize' 		=> 'catchkathmandu_sanitize_select',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'header_featured_image_options',
+			'default' 		=> $defaults['enable_featured_header_image'],
+			'choices'		=> catchkathmandu_enable_header_featured_image(),
+		),
+		'page_featured_image' => array(
+			'id' 			=> 'page_featured_image',
+			'title' 		=> __( 'Page/Post Featured Image Size', 'catch-kathmandu' ),
+			'description'	=> '',
+			'field_type' 	=> 'select',
+			'sanitize' 		=> 'catchkathmandu_sanitize_select',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'header_featured_image_options',
+			'default' 		=> $defaults['page_featured_image'],
+			'choices'		=> catchkathmandu_page_post_featured_image_size(),
+		),
+		'featured_header_image' => array(
+			'id' 			=> 'featured_header_image',
+			'title' 		=> __( 'Featured Header Image', 'catch-kathmandu' ),
+			'description'	=> '',
+			'field_type' 	=> 'image',
+			'sanitize' 		=> 'catchkathmandu_sanitize_image',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'header_featured_image_options',
+			'default' 		=> $defaults['featured_header_image']
+		),
+		'featured_header_image_alt' => array(
+			'id' 			=> 'featured_header_image_alt',
+			'title' 		=> __( 'Featured Header Image Alt/Title Tag', 'catch-kathmandu' ),
+			'description'	=> '',
+			'field_type' 	=> 'text',
+			'sanitize' 		=> 'sanitize_text_field',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'header_featured_image_options',
+			'default' 		=> $defaults['featured_header_image_alt']
+		),
+		'featured_header_image_url' => array(
+			'id' 			=> 'featured_header_image_url',
+			'title' 		=> __( 'Featured Header Image Link URL', 'catch-kathmandu' ),
+			'description'	=> '',
+			'field_type' 	=> 'url',
+			'sanitize' 		=> 'esc_url_raw',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'header_featured_image_options',
+			'default' 		=> $defaults['featured_header_image_url']
+		),
+		'featured_header_image_base' => array(
+			'id' 			=> 'featured_header_image_base',
+			'title' 		=> __( 'Check to Open Link in New Tab/Window', 'catch-kathmandu' ),
+			'description'	=> '',
+			'field_type' 	=> 'checkbox',
+			'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'header_featured_image_options',
+			'default' 		=> $defaults['featured_header_image_base']
+		),
+		'reset_featured_image' => array(
+			'id' 			=> 'reset_featured_image',
+			'title' 		=> __( 'Check to Reset Header Featured Image Options', 'catch-kathmandu' ),
+			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-kathmandu' ),
+			'field_type' 	=> 'checkbox',
+			'sanitize' 		=> 'catchkathmandu_sanitize_reset_featured_image',
+			'panel' 		=> 'theme_options',
+			'section' 		=> 'header_featured_image_options',
+			'default' 		=> $defaults['reset_featured_image']
+		),
+		);
+		$settings_parameters = array_merge( $settings_parameters, $settings_header_image);
+	}
+	else {
+		$settings_header_image = array(
+			//Header Featured image Options
+			'enable_featured_header_image' => array(
+				'id' 			=> 'enable_featured_header_image',
+				'title' 		=> __( 'Enable Featured Header Image', 'catch-kathmandu' ),
+				'description'	=> '',
+				'field_type' 	=> 'select',
+				'sanitize' 		=> 'catchkathmandu_sanitize_select',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'header_image',
+				'default' 		=> $defaults['enable_featured_header_image'],
+				'choices'		=> catchkathmandu_enable_header_featured_image(),
+			),
+			'page_featured_image' => array(
+				'id' 			=> 'page_featured_image',
+				'title' 		=> __( 'Page/Post Featured Image Size', 'catch-kathmandu' ),
+				'description'	=> '',
+				'field_type' 	=> 'select',
+				'sanitize' 		=> 'catchkathmandu_sanitize_select',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'header_image',
+				'default' 		=> $defaults['page_featured_image'],
+				'choices'		=> catchkathmandu_page_post_featured_image_size(),
+			),
+			'featured_header_image' => array(
+				'id' 			=> 'featured_header_image',
+				'title' 		=> __( 'Featured Header Image', 'catch-kathmandu' ),
+				'description'	=> '',
+				'field_type' 	=> 'image',
+				'sanitize' 		=> 'catchkathmandu_sanitize_image',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'header_image',
+				'default' 		=> $defaults['featured_header_image']
+			),
+			'featured_header_image_alt' => array(
+				'id' 			=> 'featured_header_image_alt',
+				'title' 		=> __( 'Featured Header Image Alt/Title Tag', 'catch-kathmandu' ),
+				'description'	=> '',
+				'field_type' 	=> 'text',
+				'sanitize' 		=> 'sanitize_text_field',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'header_image',
+				'default' 		=> $defaults['featured_header_image_alt']
+			),
+			'featured_header_image_url' => array(
+				'id' 			=> 'featured_header_image_url',
+				'title' 		=> __( 'Featured Header Image Link URL', 'catch-kathmandu' ),
+				'description'	=> '',
+				'field_type' 	=> 'url',
+				'sanitize' 		=> 'esc_url_raw',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'header_image',
+				'default' 		=> $defaults['featured_header_image_url']
+			),
+			'featured_header_image_base' => array(
+				'id' 			=> 'featured_header_image_base',
+				'title' 		=> __( 'Check to Open Link in New Tab/Window', 'catch-kathmandu' ),
+				'description'	=> '',
+				'field_type' 	=> 'checkbox',
+				'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'header_image',
+				'default' 		=> $defaults['featured_header_image_base']
+			),
+			'reset_featured_image' => array(
+				'id' 			=> 'reset_featured_image',
+				'title' 		=> __( 'Check to Reset Header Featured Image Options', 'catch-kathmandu' ),
+				'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-kathmandu' ),
+				'field_type' 	=> 'checkbox',
+				'sanitize' 		=> 'catchkathmandu_sanitize_reset_featured_image',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'header_image',
+				'default' 		=> $defaults['reset_featured_image']
+			),
+		);
+		$settings_parameters = array_merge( $settings_parameters, $settings_header_image);
+	}
+
+	//@remove Remove if block when WordPress 4.8 is released
+	if( !function_exists( 'has_site_icon' ) ) {
+		$settings_site_icon = array(
+			//Favicon
+			'remove_favicon' => array(
+				'id' 			=> 'remove_favicon',
+				'title' 		=> __( 'Check to Disable Favicon', 'catch-kathmandu' ),
+				'description'	=> '',
+				'field_type' 	=> 'checkbox',
+				'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'favicon',
+				'default' 		=> $defaults['remove_favicon']
+			),
+			'fav_icon' => array(
+				'id' 			=> 'fav_icon',
+				'title' 		=> __( 'Fav Icon', 'catch-kathmandu' ),
+				'description'	=> '',
+				'field_type' 	=> 'image',
+				'sanitize' 		=> 'catchkathmandu_sanitize_image',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'favicon',
+				'default' 		=> $defaults['fav_icon']
+			),
+
+			//Web Clip Icon
+			'remove_web_clip' => array(
+				'id' 			=> 'remove_web_clip',
+				'title' 		=> __( 'Check to Disable Web Clip Icon', 'catch-kathmandu' ),
+				'description'	=> '',
+				'field_type' 	=> 'checkbox',
+				'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'web_clip_icon_options',
+				'default' 		=> $defaults['remove_web_clip']
+			),
+			'web_clip' => array(
+				'id' 			=> 'web_clip',
+				'title' 		=> __( 'Web Clip Icon', 'catch-kathmandu' ),
+				'description'	=> '',
+				'field_type' 	=> 'image',
+				'sanitize' 		=> 'catchkathmandu_sanitize_image',
+				'panel' 		=> 'theme_options',
+				'section' 		=> 'web_clip_icon_options',
+				'default' 		=> $defaults['web_clip']
+			),
+		);
+		$settings_parameters = array_merge( $settings_parameters, $settings_site_icon);
+	}
 
 	foreach ( $settings_parameters as $option ) {
 		if( 'image' == $option['field_type'] ) {

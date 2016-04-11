@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-11 21:06+0545\n"
-"PO-Revision-Date: 2016-02-11 21:06+0545\n"
+"POT-Creation-Date: 2016-04-11 08:03+0545\n"
+"PO-Revision-Date: 2016-04-11 08:03+0545\n"
 "Last-Translator: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language-Team: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language: ca_ES\n"
@@ -71,7 +71,7 @@ msgstr "Arxiu mensual: %s"
 msgid "Yearly Archives: %s"
 msgstr "Arxiu anual: %s"
 
-#: ../archive.php:50 ../sidebar.php:62
+#: ../archive.php:50 ../sidebar.php:36
 msgid "Archives"
 msgstr "Arxius"
 
@@ -102,7 +102,7 @@ msgstr "Els comentaris estan tancats."
 #: ../content-gallery.php:25 ../content-gallery.php:42
 #: ../content-gallery.php:43 ../content-image.php:23 ../content-page.php:18
 #: ../content-single.php:18 ../content-video.php:24 ../content.php:32
-#: ../inc/catchkathmandu-functions.php:447
+#: ../inc/catchkathmandu-functions.php:453
 #, php-format
 msgid "Permalink to %s"
 msgstr "Enllaç permanent a %s"
@@ -111,7 +111,7 @@ msgstr "Enllaç permanent a %s"
 #: ../content-gallery.php:49 ../content-image.php:35 ../content-link.php:30
 #: ../content-page.php:24 ../content-quote.php:26 ../content-single.php:29
 #: ../content-status.php:34 ../content-video.php:36 ../content.php:52
-#: ../image.php:101
+#: ../image.php:93
 msgid "Pages:"
 msgstr "Pàgines:"
 
@@ -139,7 +139,7 @@ msgstr "% respostes;"
 #: ../content-gallery.php:65 ../content-image.php:50 ../content-link.php:44
 #: ../content-page.php:33 ../content-quote.php:40 ../content-single.php:49
 #: ../content-status.php:48 ../content-video.php:51 ../content.php:69
-#: ../image.php:47 ../image.php:120 ../inc/template-tags.php:196
+#: ../image.php:39 ../image.php:112 ../inc/template-tags.php:196
 msgid "Edit"
 msgstr "Edita"
 
@@ -178,7 +178,7 @@ msgstr[1] "Aquesta galeria conté <a %1$s>%2$s fotos</a>."
 msgid "All Image Posts"
 msgstr "Totes les entrades d'imatge"
 
-#: ../content-image.php:24 ../inc/panel/customizer/customizer.php:1252
+#: ../content-image.php:24 ../inc/panel/customizer/customizer.php:1341
 #: ../inc/panel/theme-options.php:258
 msgid "Image"
 msgstr "Imatge"
@@ -225,15 +225,15 @@ msgstr "Vídeo"
 msgid "Featured post"
 msgstr "Entrada destacada"
 
-#: ../functions.php:106 ../inc/catchkathmandu-menus.php:11
+#: ../functions.php:114 ../inc/catchkathmandu-menus.php:11
 msgid "Primary Menu"
 msgstr "Menú principal"
 
-#: ../functions.php:107 ../inc/catchkathmandu-menus.php:45
+#: ../functions.php:115 ../inc/catchkathmandu-menus.php:45
 msgid "Secondary Menu"
 msgstr "Menú secundari"
 
-#: ../image.php:37
+#: ../image.php:29
 #, php-format
 msgid ""
 "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
@@ -246,15 +246,15 @@ msgstr ""
 "imatge de mida completa\">%4$s &times; %5$s</a> a <a href=\"%6$s\" title="
 "\"Torna a %7$s\" rel=\"gallery\">%7$s</a>"
 
-#: ../image.php:51
+#: ../image.php:43
 msgid "&larr; Previous"
 msgstr "&larr; Anterior"
 
-#: ../image.php:52
+#: ../image.php:44
 msgid "Next &rarr;"
 msgstr "Següent &rarr;"
 
-#: ../image.php:112
+#: ../image.php:104
 #, php-format
 msgid ""
 "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
@@ -266,7 +266,7 @@ msgstr ""
 "\" href=\"%s\" title=\"URL del retroenllaç per a la teva entrada\" rel="
 "\"trackback\">URL del retroenllaç</a>."
 
-#: ../image.php:114
+#: ../image.php:106
 #, php-format
 msgid ""
 "Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
@@ -277,7 +277,7 @@ msgstr ""
 "\"trackback-link\" href=\"%s\" title=\"URL del retroenllaç per a la teva "
 "entrada\" rel=\"trackback\">URL del retroenllaç</a>."
 
-#: ../image.php:116
+#: ../image.php:108
 msgid ""
 "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
 "\" title=\"Post a comment\">post a comment</a>."
@@ -285,192 +285,192 @@ msgstr ""
 "Els retroenllaços estan tancats, però pots <a class=\"comment-link\" href="
 "\"#respond\" title=\"Escriu un comentari\">escriure un comentari</a>."
 
-#: ../image.php:118
+#: ../image.php:110
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Els comentaris i els retroenllaços estan tancats."
 
-#: ../inc/catchkathmandu-functions.php:536
-#: ../inc/catchkathmandu-functions.php:1033
-#: ../inc/catchkathmandu-functions.php:1036 ../searchform.php:18
+#: ../inc/catchkathmandu-functions.php:542
+#: ../inc/catchkathmandu-functions.php:1010
+#: ../inc/catchkathmandu-functions.php:1013 ../searchform.php:18
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catchkathmandu-functions.php:1564
-#: ../inc/panel/customizer/customizer.php:765
-#: ../inc/panel/theme-options.php:108 ../inc/panel/theme-options.php:1038
+#: ../inc/catchkathmandu-functions.php:1527
+#: ../inc/panel/customizer/customizer.php:647
+#: ../inc/panel/theme-options.php:108 ../inc/panel/theme-options.php:1064
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchkathmandu-functions.php:1569
-#: ../inc/panel/customizer/customizer.php:775
-#: ../inc/panel/theme-options.php:109 ../inc/panel/theme-options.php:1046
+#: ../inc/catchkathmandu-functions.php:1532
+#: ../inc/panel/customizer/customizer.php:657
+#: ../inc/panel/theme-options.php:109 ../inc/panel/theme-options.php:1072
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchkathmandu-functions.php:1574
-#: ../inc/panel/customizer/customizer.php:785
-#: ../inc/panel/theme-options.php:1054
+#: ../inc/catchkathmandu-functions.php:1537
+#: ../inc/panel/customizer/customizer.php:667
+#: ../inc/panel/theme-options.php:1080
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchkathmandu-functions.php:1579
-#: ../inc/panel/customizer/customizer.php:825
+#: ../inc/catchkathmandu-functions.php:1542
+#: ../inc/panel/customizer/customizer.php:707
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/catchkathmandu-functions.php:1584
-#: ../inc/panel/customizer/customizer.php:795
-#: ../inc/panel/theme-options.php:1062
+#: ../inc/catchkathmandu-functions.php:1547
+#: ../inc/panel/customizer/customizer.php:677
+#: ../inc/panel/theme-options.php:1088
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchkathmandu-functions.php:1589
+#: ../inc/catchkathmandu-functions.php:1552
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchkathmandu-functions.php:1594
-#: ../inc/panel/customizer/customizer.php:815
-#: ../inc/panel/theme-options.php:1078
+#: ../inc/catchkathmandu-functions.php:1557
+#: ../inc/panel/customizer/customizer.php:697
+#: ../inc/panel/theme-options.php:1104
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchkathmandu-functions.php:1599
+#: ../inc/catchkathmandu-functions.php:1562
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/catchkathmandu-functions.php:1604
+#: ../inc/catchkathmandu-functions.php:1567
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/catchkathmandu-functions.php:1609
-#: ../inc/panel/customizer/customizer.php:855
-#: ../inc/panel/theme-options.php:1110
+#: ../inc/catchkathmandu-functions.php:1572
+#: ../inc/panel/customizer/customizer.php:737
+#: ../inc/panel/theme-options.php:1136
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchkathmandu-functions.php:1614
-#: ../inc/panel/customizer/customizer.php:865
-#: ../inc/panel/theme-options.php:1118
+#: ../inc/catchkathmandu-functions.php:1577
+#: ../inc/panel/customizer/customizer.php:747
+#: ../inc/panel/theme-options.php:1144
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchkathmandu-functions.php:1619
-#: ../inc/panel/customizer/customizer.php:875
-#: ../inc/panel/theme-options.php:1126
+#: ../inc/catchkathmandu-functions.php:1582
+#: ../inc/panel/customizer/customizer.php:757
+#: ../inc/panel/theme-options.php:1152
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchkathmandu-functions.php:1624
-#: ../inc/panel/customizer/customizer.php:885
-#: ../inc/panel/theme-options.php:1134
+#: ../inc/catchkathmandu-functions.php:1587
+#: ../inc/panel/customizer/customizer.php:767
+#: ../inc/panel/theme-options.php:1160
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchkathmandu-functions.php:1629
-#: ../inc/panel/customizer/customizer.php:895
-#: ../inc/panel/theme-options.php:1142
+#: ../inc/catchkathmandu-functions.php:1592
+#: ../inc/panel/customizer/customizer.php:777
+#: ../inc/panel/theme-options.php:1168
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchkathmandu-functions.php:1634
-#: ../inc/panel/customizer/customizer.php:905
-#: ../inc/panel/theme-options.php:1150
+#: ../inc/catchkathmandu-functions.php:1597
+#: ../inc/panel/customizer/customizer.php:787
+#: ../inc/panel/theme-options.php:1176
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchkathmandu-functions.php:1639
-#: ../inc/panel/customizer/customizer.php:915
-#: ../inc/panel/theme-options.php:1158
+#: ../inc/catchkathmandu-functions.php:1602
+#: ../inc/panel/customizer/customizer.php:797
+#: ../inc/panel/theme-options.php:1184
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchkathmandu-functions.php:1644
-#: ../inc/panel/customizer/customizer.php:925
-#: ../inc/panel/theme-options.php:1166
+#: ../inc/catchkathmandu-functions.php:1607
+#: ../inc/panel/customizer/customizer.php:807
+#: ../inc/panel/theme-options.php:1192
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/catchkathmandu-functions.php:1649
-#: ../inc/panel/customizer/customizer.php:935
-#: ../inc/panel/theme-options.php:1174
+#: ../inc/catchkathmandu-functions.php:1612
+#: ../inc/panel/customizer/customizer.php:817
+#: ../inc/panel/theme-options.php:1200
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/catchkathmandu-functions.php:1654
-#: ../inc/panel/customizer/customizer.php:945
-#: ../inc/panel/theme-options.php:1182
+#: ../inc/catchkathmandu-functions.php:1617
+#: ../inc/panel/customizer/customizer.php:827
+#: ../inc/panel/theme-options.php:1208
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchkathmandu-functions.php:1659
-#: ../inc/panel/customizer/customizer.php:955
-#: ../inc/panel/theme-options.php:1190
+#: ../inc/catchkathmandu-functions.php:1622
+#: ../inc/panel/customizer/customizer.php:837
+#: ../inc/panel/theme-options.php:1216
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/catchkathmandu-functions.php:1664
-#: ../inc/panel/customizer/customizer.php:965
-#: ../inc/panel/theme-options.php:1198
+#: ../inc/catchkathmandu-functions.php:1627
+#: ../inc/panel/customizer/customizer.php:847
+#: ../inc/panel/theme-options.php:1224
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/catchkathmandu-functions.php:1669
-#: ../inc/panel/customizer/customizer.php:975
-#: ../inc/panel/theme-options.php:1206
+#: ../inc/catchkathmandu-functions.php:1632
+#: ../inc/panel/customizer/customizer.php:857
+#: ../inc/panel/theme-options.php:1232
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/catchkathmandu-functions.php:1674
-#: ../inc/panel/customizer/customizer.php:985
-#: ../inc/panel/theme-options.php:1214
+#: ../inc/catchkathmandu-functions.php:1637
+#: ../inc/panel/customizer/customizer.php:867
+#: ../inc/panel/theme-options.php:1240
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/catchkathmandu-functions.php:1679
+#: ../inc/catchkathmandu-functions.php:1642
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/catchkathmandu-functions.php:1684
-#: ../inc/panel/customizer/customizer.php:1005
-#: ../inc/panel/theme-options.php:1230
+#: ../inc/catchkathmandu-functions.php:1647
+#: ../inc/panel/customizer/customizer.php:887
+#: ../inc/panel/theme-options.php:1256
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchkathmandu-functions.php:1689
+#: ../inc/catchkathmandu-functions.php:1652
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/catchkathmandu-functions.php:1694
-#: ../inc/panel/customizer/customizer.php:1025
-#: ../inc/panel/theme-options.php:1246
+#: ../inc/catchkathmandu-functions.php:1657
+#: ../inc/panel/customizer/customizer.php:907
+#: ../inc/panel/theme-options.php:1272
 msgid "Email"
 msgstr "Correu-e"
 
-#: ../inc/catchkathmandu-functions.php:1699
-#: ../inc/panel/customizer/customizer.php:1035
-#: ../inc/panel/theme-options.php:1254
+#: ../inc/catchkathmandu-functions.php:1662
+#: ../inc/panel/customizer/customizer.php:917
+#: ../inc/panel/theme-options.php:1280
 msgid "Contact"
 msgstr "Contacte"
 
-#: ../inc/catchkathmandu-functions.php:1704
-#: ../inc/panel/customizer/customizer.php:1045
-#: ../inc/panel/theme-options.php:1262
+#: ../inc/catchkathmandu-functions.php:1667
+#: ../inc/panel/customizer/customizer.php:927
+#: ../inc/panel/theme-options.php:1288
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchkathmandu-functions.php:1709
-#: ../inc/panel/customizer/customizer.php:1055
-#: ../inc/panel/theme-options.php:1270
+#: ../inc/catchkathmandu-functions.php:1672
+#: ../inc/panel/customizer/customizer.php:937
+#: ../inc/panel/theme-options.php:1296
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/catchkathmandu-functions.php:1804
+#: ../inc/catchkathmandu-functions.php:1767
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchkathmandu-functions.php:1828
-#: ../inc/catchkathmandu-functions.php:1841
+#: ../inc/catchkathmandu-functions.php:1791
+#: ../inc/catchkathmandu-functions.php:1804
 msgid "Menu"
 msgstr "Menú"
 
@@ -493,7 +493,7 @@ msgstr "Activa"
 #: ../inc/catchkathmandu-metabox.php:44
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:193
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:289
-#: ../inc/panel/theme-options.php:552 ../inc/panel/theme-options.php:906
+#: ../inc/panel/theme-options.php:575 ../inc/panel/theme-options.php:932
 msgid "Disable"
 msgstr "Desactiva"
 
@@ -522,27 +522,27 @@ msgstr "Sense barres laterals"
 #: ../inc/catchkathmandu-metabox.php:90
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:209
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:225
-#: ../inc/panel/theme-options.php:570 ../inc/panel/theme-options.php:632
+#: ../inc/panel/theme-options.php:593 ../inc/panel/theme-options.php:658
 msgid "Featured Image"
 msgstr "Imatge destacada"
 
 #: ../inc/catchkathmandu-metabox.php:95
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:207
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:223
-#: ../inc/panel/theme-options.php:562 ../inc/panel/theme-options.php:636
+#: ../inc/panel/theme-options.php:585 ../inc/panel/theme-options.php:662
 msgid "Full Image"
 msgstr "Imatge sencera"
 
 #: ../inc/catchkathmandu-metabox.php:100
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:208
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:224
-#: ../inc/panel/theme-options.php:566 ../inc/panel/theme-options.php:640
+#: ../inc/panel/theme-options.php:589 ../inc/panel/theme-options.php:666
 msgid "Slider Image"
 msgstr "Imatge d'slider"
 
 #: ../inc/catchkathmandu-metabox.php:105
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:226
-#: ../inc/panel/theme-options.php:644
+#: ../inc/panel/theme-options.php:670
 msgid "Disable Image"
 msgstr "Desactiva la imatge"
 
@@ -550,13 +550,13 @@ msgstr "Desactiva la imatge"
 msgid "Sidebar Layout"
 msgstr "Disposició de barra lateral"
 
-#: ../inc/catchkathmandu-metabox.php:152 ../inc/panel/theme-options.php:518
+#: ../inc/catchkathmandu-metabox.php:152 ../inc/panel/theme-options.php:526
 msgid "Header Featured Image Options"
 msgstr "Opcions d'imatge destacada de capçalera"
 
 #: ../inc/catchkathmandu-metabox.php:180
 #: ../inc/panel/customizer/customizer.php:100
-#: ../inc/panel/theme-options.php:624
+#: ../inc/panel/theme-options.php:650
 msgid "Content Featured Image Options"
 msgstr "Opcions d'imatge destacada del contingut"
 
@@ -568,7 +568,7 @@ msgstr "Barra lateral principal"
 msgid "Shows the Widgets at the side of Content"
 msgstr "Mostra els ginys al costat del contingut"
 
-#: ../inc/catchkathmandu-widgets.php:25 ../inc/panel/theme-options.php:505
+#: ../inc/catchkathmandu-widgets.php:25 ../inc/panel/theme-options.php:513
 msgid "Header Right Sidebar"
 msgstr "Barra lateral dreta de capçalera"
 
@@ -611,27 +611,27 @@ msgid "Title (optional):"
 msgstr "Títol (opcional):"
 
 #. translators: header image description
-#: ../inc/custom-header.php:71
+#: ../inc/custom-header.php:81
 msgid "Default Logo"
 msgstr "Logotip per defecte"
 
 #. translators: header image description
-#: ../inc/custom-header.php:77
+#: ../inc/custom-header.php:87
 msgid "Catch Kathmandu Logo"
 msgstr "Catch Kathmandu Logo"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:107
-#: ../inc/panel/theme-options.php:1812
+#: ../inc/panel/theme-options.php:1838
 msgid "Copyright"
 msgstr "Copyright"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:107
-#: ../inc/panel/theme-options.php:1812
+#: ../inc/panel/theme-options.php:1838
 msgid "All Rights Reserved"
 msgstr "Tots els drets reservats"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:107
-#: ../inc/panel/theme-options.php:1812
+#: ../inc/panel/theme-options.php:1838
 msgid "Catch Kathmandu by"
 msgstr "Catch Kathmandu by"
 
@@ -649,17 +649,17 @@ msgid "Catch Themes"
 msgstr "Catch Themes"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:157
-#: ../inc/panel/theme-options.php:718
+#: ../inc/panel/theme-options.php:744
 msgid "Light (Blue)"
 msgstr "Clar"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:158
-#: ../inc/panel/theme-options.php:722
+#: ../inc/panel/theme-options.php:748
 msgid "Dark"
 msgstr "Fosc"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:159
-#: ../inc/panel/theme-options.php:726
+#: ../inc/panel/theme-options.php:752
 msgid "Light (Black)"
 msgstr "Light (Black)"
 
@@ -675,54 +675,54 @@ msgstr "4 columnes"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:188
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:287
-#: ../inc/panel/theme-options.php:527 ../inc/panel/theme-options.php:898
+#: ../inc/panel/theme-options.php:550 ../inc/panel/theme-options.php:924
 msgid "Homepage"
 msgstr "Pàgina d'inici"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:189
-#: ../inc/panel/theme-options.php:532
+#: ../inc/panel/theme-options.php:555
 msgid "Excluding Homepage"
 msgstr "Excloent la pàgina d'inici"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:190
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:288
-#: ../inc/panel/theme-options.php:537 ../inc/panel/theme-options.php:902
+#: ../inc/panel/theme-options.php:560 ../inc/panel/theme-options.php:928
 msgid "Entire Site"
 msgstr "El lloc sencer"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:191
-#: ../inc/panel/theme-options.php:542
+#: ../inc/panel/theme-options.php:565
 msgid "Entire Site, Page/Post Featured Image"
 msgstr "Per a tot el lloc, imatge destacada de Pàgina/Entrada"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:192
-#: ../inc/panel/theme-options.php:547
+#: ../inc/panel/theme-options.php:570
 msgid "Pages & Posts"
 msgstr "Pàgines i entrades"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:240
-#: ../inc/panel/theme-options.php:664
+#: ../inc/panel/theme-options.php:690
 msgid "Right Sidebar"
 msgstr "Barra lateral dreta"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:241
-#: ../inc/panel/theme-options.php:669
+#: ../inc/panel/theme-options.php:695
 msgid "Left Sidebar"
 msgstr "Barra lateral esquerra"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:242
-#: ../inc/panel/theme-options.php:674
+#: ../inc/panel/theme-options.php:700
 msgid "No Sidebar"
 msgstr "Sense barres laterals"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:256
-#: ../inc/panel/customizer/customizer.php:542
-#: ../inc/panel/theme-options.php:684
+#: ../inc/panel/customizer/customizer.php:424
+#: ../inc/panel/theme-options.php:710
 msgid "Full Content Display"
 msgstr "Mostrar tot el contingut"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:257
-#: ../inc/panel/theme-options.php:688
+#: ../inc/panel/theme-options.php:714
 msgid "Excerpt/Blog Display"
 msgstr "Mostrar resum/blog"
 
@@ -731,68 +731,68 @@ msgid "Demo Slider"
 msgstr "Demo Slider"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:272
-#: ../inc/panel/theme-options.php:882
+#: ../inc/panel/theme-options.php:908
 msgid "Post Slider"
 msgstr "Slider d'entrades"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:273
-#: ../inc/panel/theme-options.php:887
+#: ../inc/panel/theme-options.php:913
 msgid "Category Slider"
 msgstr "Slider de categories"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:303
-#: ../inc/panel/theme-options.php:924
+#: ../inc/panel/theme-options.php:950
 msgid "fade"
 msgstr "fade"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:304
-#: ../inc/panel/theme-options.php:925
+#: ../inc/panel/theme-options.php:951
 msgid "wipe"
 msgstr "wipe"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:305
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:307
-#: ../inc/panel/theme-options.php:926
+#: ../inc/panel/theme-options.php:952
 msgid "scrollUp"
 msgstr "scrollUp"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:306
-#: ../inc/panel/theme-options.php:927
+#: ../inc/panel/theme-options.php:953
 msgid "scrollDown"
 msgstr "scrollDown"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:308
-#: ../inc/panel/theme-options.php:928
+#: ../inc/panel/theme-options.php:954
 msgid "scrollLeft"
 msgstr "scrollLeft"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:309
-#: ../inc/panel/theme-options.php:929
+#: ../inc/panel/theme-options.php:955
 msgid "scrollRight"
 msgstr "scrollRight"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:310
-#: ../inc/panel/theme-options.php:930
+#: ../inc/panel/theme-options.php:956
 msgid "blindX"
 msgstr "blindX"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:311
-#: ../inc/panel/theme-options.php:931
+#: ../inc/panel/theme-options.php:957
 msgid "blindY"
 msgstr "blindY"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:312
-#: ../inc/panel/theme-options.php:932
+#: ../inc/panel/theme-options.php:958
 msgid "blindZ"
 msgstr "blindZ"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:313
-#: ../inc/panel/theme-options.php:933
+#: ../inc/panel/theme-options.php:959
 msgid "cover"
 msgstr "cover"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:314
-#: ../inc/panel/theme-options.php:934
+#: ../inc/panel/theme-options.php:960
 msgid "shuffle"
 msgstr "shuffle"
 
@@ -856,7 +856,7 @@ msgid "Responsive Design"
 msgstr "Disseny adaptatiu"
 
 #: ../inc/panel/customizer/customizer.php:80
-#: ../inc/panel/theme-options.php:391
+#: ../inc/panel/theme-options.php:396
 msgid "Favicon"
 msgstr "Icona preferida (favicon)"
 
@@ -871,7 +871,7 @@ msgid ""
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:90
-#: ../inc/panel/theme-options.php:484
+#: ../inc/panel/theme-options.php:492
 msgid "Header Options"
 msgstr "Opcions de capçalera"
 
@@ -880,22 +880,22 @@ msgid "Header Featured image Options"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:105
-#: ../inc/panel/theme-options.php:655
+#: ../inc/panel/theme-options.php:681
 msgid "Layout Options"
 msgstr "Opcions de disposició"
 
 #: ../inc/panel/customizer/customizer.php:110
-#: ../inc/panel/theme-options.php:757
+#: ../inc/panel/theme-options.php:783
 msgid "Search Text Settings"
 msgstr "Configuració de cerca textual"
 
 #: ../inc/panel/customizer/customizer.php:115
-#: ../inc/panel/theme-options.php:774
+#: ../inc/panel/theme-options.php:800
 msgid "Excerpt / More Tag Settings"
 msgstr "Configuració de l'extracte (etiqueta Llegeix més)"
 
 #: ../inc/panel/customizer/customizer.php:120
-#: ../inc/panel/theme-options.php:809
+#: ../inc/panel/theme-options.php:835
 msgid "Feed Redirect"
 msgstr "Redirecció del canal RSS"
 
@@ -906,12 +906,12 @@ msgid ""
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:125
-#: ../inc/panel/theme-options.php:826
+#: ../inc/panel/theme-options.php:852
 msgid "Custom CSS"
 msgstr "CSS personalitzat"
 
 #: ../inc/panel/customizer/customizer.php:130
-#: ../inc/panel/theme-options.php:851
+#: ../inc/panel/theme-options.php:877
 msgid "Scroll Up"
 msgstr "Desplaçament cap amunt"
 
@@ -922,7 +922,7 @@ msgid "Featured Slider"
 msgstr "Slider destacat"
 
 #: ../inc/panel/customizer/customizer.php:144
-#: ../inc/panel/theme-options.php:873
+#: ../inc/panel/theme-options.php:899
 msgid "Slider Options"
 msgstr "Opcions d'slider"
 
@@ -945,7 +945,7 @@ msgid "Tools"
 msgstr "Eines"
 
 #: ../inc/panel/customizer/customizer.php:169
-#: ../inc/panel/theme-options.php:1288
+#: ../inc/panel/theme-options.php:1314
 msgid "Header and Footer Codes"
 msgstr "Codi per a la capçalera i el peu de pàgina"
 
@@ -955,7 +955,7 @@ msgid "Homepage Headline Text"
 msgstr "Text del titular de la pàgina d'inici"
 
 #: ../inc/panel/customizer/customizer.php:215
-#: ../inc/panel/customizer/customizer.php:1336
+#: ../inc/panel/customizer/customizer.php:1425
 msgid "Appropriate Words: 10"
 msgstr ""
 
@@ -1042,161 +1042,114 @@ msgid "Check to Enable Secondary Menu in Mobile Devices"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:388
-msgid "Check to Disable Favicon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:398
-msgid "Fav Icon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:410
-msgid "Check to Disable Web Clip Icon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:420
-msgid "Web Clip Icon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:432
 msgid "Check to Disable Header Right Sidebar"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:444
-#: ../inc/panel/theme-options.php:522
-msgid "Enable Featured Header Image"
-msgstr "Habilita la imatge destacada de capçalera"
-
-#: ../inc/panel/customizer/customizer.php:455
-#: ../inc/panel/theme-options.php:558
-msgid "Page/Post Featured Image Size"
-msgstr "Mida de la imatge destacada de Pàgina/Entrada"
-
-#: ../inc/panel/customizer/customizer.php:466
-msgid "Featured Header Image"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:476
-#: ../inc/panel/theme-options.php:584
-msgid "Featured Header Image Alt/Title Tag"
-msgstr "Text per a les etiquetes Alt/Title de la imatge destacada de capçalera"
-
-#: ../inc/panel/customizer/customizer.php:486
-#: ../inc/panel/theme-options.php:592
-msgid "Featured Header Image Link URL"
-msgstr "URL per a la imatge destacada de capçalera"
-
-#: ../inc/panel/customizer/customizer.php:496
-msgid "Check to Open Link in New Tab/Window"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:506
-msgid "Check to Reset Header Featured Image Options"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:507
-#: ../inc/panel/customizer/customizer.php:554
-#: ../inc/panel/customizer/customizer.php:604
-#: ../inc/panel/customizer/customizer.php:740
-msgid "Please refresh the customizer after saving if reset option is used"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:518
-#: ../inc/panel/theme-options.php:628
+#: ../inc/panel/customizer/customizer.php:400
+#: ../inc/panel/theme-options.php:654
 msgid "Content Featured Image Size"
 msgstr "Mides de la imatge destacada del contingut"
 
-#: ../inc/panel/customizer/customizer.php:531
-#: ../inc/panel/theme-options.php:659
+#: ../inc/panel/customizer/customizer.php:413
+#: ../inc/panel/theme-options.php:685
 msgid "Sidebar Layout Options"
 msgstr "Opcions de disposició de la barra lateral"
 
-#: ../inc/panel/customizer/customizer.php:553
+#: ../inc/panel/customizer/customizer.php:435
 msgid "Check to Reset Layout"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:565
-#: ../inc/panel/theme-options.php:761
+#: ../inc/panel/customizer/customizer.php:436
+#: ../inc/panel/customizer/customizer.php:486
+#: ../inc/panel/customizer/customizer.php:622
+#: ../inc/panel/customizer/customizer.php:1038
+#: ../inc/panel/customizer/customizer.php:1116
+msgid "Please refresh the customizer after saving if reset option is used"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:447
+#: ../inc/panel/theme-options.php:787
 msgid "Default Display Text in Search"
 msgstr "Text per defecte per mostrar a la casella de cerca"
 
-#: ../inc/panel/customizer/customizer.php:577
-#: ../inc/panel/theme-options.php:778
+#: ../inc/panel/customizer/customizer.php:459
+#: ../inc/panel/theme-options.php:804
 msgid "More Tag Text"
 msgstr "Text per a l'etiqueta Llegeix més"
 
-#: ../inc/panel/customizer/customizer.php:587
-#: ../inc/panel/theme-options.php:786
+#: ../inc/panel/customizer/customizer.php:469
+#: ../inc/panel/theme-options.php:812
 msgid "Excerpt length(words)"
 msgstr "Longitud de l'extracte (en paraules)"
 
-#: ../inc/panel/customizer/customizer.php:603
+#: ../inc/panel/customizer/customizer.php:485
 msgid "Check to Reset Excerpt"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:615
-#: ../inc/panel/theme-options.php:813
+#: ../inc/panel/customizer/customizer.php:497
+#: ../inc/panel/theme-options.php:839
 msgid "Feed Redirect URL"
 msgstr "URL de redirecció del canal RSS"
 
-#: ../inc/panel/customizer/customizer.php:616
-#: ../inc/panel/theme-options.php:816
+#: ../inc/panel/customizer/customizer.php:498
+#: ../inc/panel/theme-options.php:842
 msgid "Add in the Feedburner URL"
 msgstr "Afegeix a la URL de Feedburner"
 
-#: ../inc/panel/customizer/customizer.php:627
+#: ../inc/panel/customizer/customizer.php:509
 msgid "Enter your custom CSS styles"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:639
+#: ../inc/panel/customizer/customizer.php:521
 msgid "Check to Disable Scroll Up"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:651
-#: ../inc/panel/theme-options.php:893
+#: ../inc/panel/customizer/customizer.php:533
+#: ../inc/panel/theme-options.php:919
 msgid "Enable Slider"
 msgstr "Habilita l'slider"
 
-#: ../inc/panel/customizer/customizer.php:662
+#: ../inc/panel/customizer/customizer.php:544
 msgid "Transition Effect"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:674
-#: ../inc/panel/theme-options.php:940
+#: ../inc/panel/customizer/customizer.php:556
+#: ../inc/panel/theme-options.php:966
 msgid "Transition Delay"
 msgstr "Temps entre slides"
 
-#: ../inc/panel/customizer/customizer.php:691
-#: ../inc/panel/theme-options.php:949
+#: ../inc/panel/customizer/customizer.php:573
+#: ../inc/panel/theme-options.php:975
 msgid "Transition Length"
 msgstr "Durada de la transició entre slides"
 
-#: ../inc/panel/customizer/customizer.php:708
-#: ../inc/panel/theme-options.php:877
+#: ../inc/panel/customizer/customizer.php:590
+#: ../inc/panel/theme-options.php:903
 msgid "Select Slider Type"
 msgstr "Escull el tipus d'slider"
 
-#: ../inc/panel/customizer/customizer.php:720
-#: ../inc/panel/theme-options.php:912
+#: ../inc/panel/customizer/customizer.php:602
+#: ../inc/panel/theme-options.php:938
 msgid "Number of Slides"
 msgstr "Nombre de diapositives"
 
-#: ../inc/panel/customizer/customizer.php:721
+#: ../inc/panel/customizer/customizer.php:603
 msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:739
+#: ../inc/panel/customizer/customizer.php:621
 msgid "Check to Exclude Slider posts from Homepage posts"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:752
-#: ../inc/panel/theme-options.php:1001
+#: ../inc/panel/customizer/customizer.php:634
+#: ../inc/panel/theme-options.php:1027
 msgid "Select Slider Categories"
 msgstr "Escull les categories per a l'slider"
 
-#: ../inc/panel/customizer/customizer.php:753
-#: ../inc/panel/theme-options.php:1002
+#: ../inc/panel/customizer/customizer.php:635
+#: ../inc/panel/theme-options.php:1028
 msgid ""
 "Use this only is you want to display posts from Specific Categories in "
 "Featured Slider"
@@ -1204,108 +1157,163 @@ msgstr ""
 "Fes-ho servir si només vols mostrar entrades de determinades categories a "
 "l'slider destacat"
 
-#: ../inc/panel/customizer/customizer.php:805
-#: ../inc/panel/theme-options.php:1070
+#: ../inc/panel/customizer/customizer.php:687
+#: ../inc/panel/theme-options.php:1096
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/panel/customizer/customizer.php:835
-#: ../inc/panel/theme-options.php:1094
+#: ../inc/panel/customizer/customizer.php:717
+#: ../inc/panel/theme-options.php:1120
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/panel/customizer/customizer.php:845
-#: ../inc/panel/theme-options.php:1102
+#: ../inc/panel/customizer/customizer.php:727
+#: ../inc/panel/theme-options.php:1128
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../inc/panel/customizer/customizer.php:995
-#: ../inc/panel/theme-options.php:1222
+#: ../inc/panel/customizer/customizer.php:877
+#: ../inc/panel/theme-options.php:1248
 msgid "Goodreads"
 msgstr "Goodreads"
 
-#: ../inc/panel/customizer/customizer.php:1015
-#: ../inc/panel/theme-options.php:1238
+#: ../inc/panel/customizer/customizer.php:897
+#: ../inc/panel/theme-options.php:1264
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/panel/customizer/customizer.php:1066
+#: ../inc/panel/customizer/customizer.php:948
 msgid "Header Code"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1067
+#: ../inc/panel/customizer/customizer.php:949
 msgid ""
 "Here you can put scripts from Google, Facebook, Twitter, Add This etc. which "
 "will load on Header"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1077
+#: ../inc/panel/customizer/customizer.php:959
 msgid "Footer Code"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1078
+#: ../inc/panel/customizer/customizer.php:960
 msgid ""
 "Here you can put scripts from Google, Facebook, Twitter, Add This etc. which "
 "will load on footer"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1231
+#: ../inc/panel/customizer/customizer.php:975
+#: ../inc/panel/customizer/customizer.php:1053
+#: ../inc/panel/theme-options.php:545
+msgid "Enable Featured Header Image"
+msgstr "Habilita la imatge destacada de capçalera"
+
+#: ../inc/panel/customizer/customizer.php:986
+#: ../inc/panel/customizer/customizer.php:1064
+#: ../inc/panel/theme-options.php:581
+msgid "Page/Post Featured Image Size"
+msgstr "Mida de la imatge destacada de Pàgina/Entrada"
+
+#: ../inc/panel/customizer/customizer.php:997
+#: ../inc/panel/customizer/customizer.php:1075
+msgid "Featured Header Image"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:1007
+#: ../inc/panel/customizer/customizer.php:1085
+#: ../inc/panel/theme-options.php:607
+msgid "Featured Header Image Alt/Title Tag"
+msgstr "Text per a les etiquetes Alt/Title de la imatge destacada de capçalera"
+
+#: ../inc/panel/customizer/customizer.php:1017
+#: ../inc/panel/customizer/customizer.php:1095
+#: ../inc/panel/theme-options.php:615
+msgid "Featured Header Image Link URL"
+msgstr "URL per a la imatge destacada de capçalera"
+
+#: ../inc/panel/customizer/customizer.php:1027
+#: ../inc/panel/customizer/customizer.php:1105
+msgid "Check to Open Link in New Tab/Window"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:1037
+#: ../inc/panel/customizer/customizer.php:1115
+msgid "Check to Reset Header Featured Image Options"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:1133
+msgid "Check to Disable Favicon"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:1143
+msgid "Fav Icon"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:1155
+msgid "Check to Disable Web Clip Icon"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:1165
+msgid "Web Clip Icon"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:1320
 #: ../inc/panel/theme-options.php:255
 #, php-format
 msgid "Featured Content #%s"
 msgstr "Contingut destacat %s"
 
-#: ../inc/panel/customizer/customizer.php:1272
+#: ../inc/panel/customizer/customizer.php:1361
 #: ../inc/panel/theme-options.php:267
 msgid "Link URL"
 msgstr "URL"
 
-#: ../inc/panel/customizer/customizer.php:1292
-#: ../inc/panel/theme-options.php:275 ../inc/panel/theme-options.php:600
+#: ../inc/panel/customizer/customizer.php:1381
+#: ../inc/panel/theme-options.php:275 ../inc/panel/theme-options.php:623
 msgid "Target. Open Link in New Window?"
 msgstr "Obrir l'enllaç en una finestra nova?"
 
-#: ../inc/panel/customizer/customizer.php:1312
+#: ../inc/panel/customizer/customizer.php:1401
 #: ../inc/panel/theme-options.php:284
 msgid "Title"
 msgstr "Títol"
 
-#: ../inc/panel/customizer/customizer.php:1315
+#: ../inc/panel/customizer/customizer.php:1404
 #: ../inc/panel/theme-options.php:287
 msgid "Leave empty if you want to remove title"
 msgstr "Deixa-ho buit si vols eliminar el títol"
 
-#: ../inc/panel/customizer/customizer.php:1333
+#: ../inc/panel/customizer/customizer.php:1422
 #: ../inc/panel/theme-options.php:292
 msgid "Content"
 msgstr "Contingut"
 
-#: ../inc/panel/customizer/customizer.php:1357
-#: ../inc/panel/theme-options.php:978
+#: ../inc/panel/customizer/customizer.php:1446
+#: ../inc/panel/theme-options.php:1004
 #, php-format
 msgid "Featured Post Slider #%s"
 msgstr "Slide d'entrada destacada %s"
 
-#: ../inc/panel/customizer/customizer.php:1372
+#: ../inc/panel/customizer/customizer.php:1461
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1374
+#: ../inc/panel/customizer/customizer.php:1463
 msgid "Reset all settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1384
+#: ../inc/panel/customizer/customizer.php:1473
 msgid "Check to reset all settings to default"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1394
-#: ../inc/panel/customizer/customizer.php:1405
+#: ../inc/panel/customizer/customizer.php:1483
+#: ../inc/panel/customizer/customizer.php:1494
 msgid "Important Links"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1443
+#: ../inc/panel/customizer/customizer.php:1532
 msgid "Upgrade To Pro &raquo;"
 msgstr ""
 
@@ -1415,8 +1423,8 @@ msgstr "Deshabilitar el titular de la pàgina d'inici?"
 
 #: ../inc/panel/theme-options.php:180 ../inc/panel/theme-options.php:189
 #: ../inc/panel/theme-options.php:198 ../inc/panel/theme-options.php:216
-#: ../inc/panel/theme-options.php:372 ../inc/panel/theme-options.php:399
-#: ../inc/panel/theme-options.php:444 ../inc/panel/theme-options.php:859
+#: ../inc/panel/theme-options.php:372 ../inc/panel/theme-options.php:404
+#: ../inc/panel/theme-options.php:449 ../inc/panel/theme-options.php:885
 msgid "Check to disable"
 msgstr "Marca per desactivar"
 
@@ -1430,15 +1438,15 @@ msgstr "Deshabilitar el botó del titular de la pàgina d'inici?"
 
 #: ../inc/panel/theme-options.php:202 ../inc/panel/theme-options.php:302
 #: ../inc/panel/theme-options.php:358 ../inc/panel/theme-options.php:385
-#: ../inc/panel/theme-options.php:430 ../inc/panel/theme-options.php:478
-#: ../inc/panel/theme-options.php:512 ../inc/panel/theme-options.php:618
-#: ../inc/panel/theme-options.php:649 ../inc/panel/theme-options.php:703
-#: ../inc/panel/theme-options.php:751 ../inc/panel/theme-options.php:768
-#: ../inc/panel/theme-options.php:803 ../inc/panel/theme-options.php:820
-#: ../inc/panel/theme-options.php:845 ../inc/panel/theme-options.php:863
-#: ../inc/panel/theme-options.php:957 ../inc/panel/theme-options.php:991
-#: ../inc/panel/theme-options.php:1024 ../inc/panel/theme-options.php:1277
-#: ../inc/panel/theme-options.php:1307
+#: ../inc/panel/theme-options.php:435 ../inc/panel/theme-options.php:483
+#: ../inc/panel/theme-options.php:520 ../inc/panel/theme-options.php:641
+#: ../inc/panel/theme-options.php:675 ../inc/panel/theme-options.php:729
+#: ../inc/panel/theme-options.php:777 ../inc/panel/theme-options.php:794
+#: ../inc/panel/theme-options.php:829 ../inc/panel/theme-options.php:846
+#: ../inc/panel/theme-options.php:871 ../inc/panel/theme-options.php:889
+#: ../inc/panel/theme-options.php:983 ../inc/panel/theme-options.php:1017
+#: ../inc/panel/theme-options.php:1050 ../inc/panel/theme-options.php:1303
+#: ../inc/panel/theme-options.php:1333
 msgid "Save Changes"
 msgstr "Desa els canvis"
 
@@ -1467,7 +1475,7 @@ msgstr "Afegeix una imatge"
 msgid "Add in the Target URL for the content"
 msgstr "Afegeix la URL de destí del contingut"
 
-#: ../inc/panel/theme-options.php:279 ../inc/panel/theme-options.php:604
+#: ../inc/panel/theme-options.php:279 ../inc/panel/theme-options.php:627
 msgid "Check to open in new window"
 msgstr "Marca per obrir l'enllaç en una finestra nova"
 
@@ -1505,11 +1513,11 @@ msgstr ""
 "Només les entrades que pertanyin a les categories escollides es mostraran a "
 "la pàgina d'inici."
 
-#: ../inc/panel/theme-options.php:334 ../inc/panel/theme-options.php:1006
+#: ../inc/panel/theme-options.php:334 ../inc/panel/theme-options.php:1032
 msgid "--Disabled--"
 msgstr "--Deshabilitat--"
 
-#: ../inc/panel/theme-options.php:345 ../inc/panel/theme-options.php:1017
+#: ../inc/panel/theme-options.php:345 ../inc/panel/theme-options.php:1043
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "Pots escollir diverses categories prement la tecla CTRL."
 
@@ -1536,47 +1544,47 @@ msgstr ""
 msgid "Check to enable"
 msgstr "Marca per activar"
 
-#: ../inc/panel/theme-options.php:395
+#: ../inc/panel/theme-options.php:400
 msgid "Disable Favicon?"
 msgstr "Desactivar la icona preferida?"
 
-#: ../inc/panel/theme-options.php:404
+#: ../inc/panel/theme-options.php:409
 msgid "Fav Icon URL:"
 msgstr "URL per a la icona preferida"
 
-#: ../inc/panel/theme-options.php:412
+#: ../inc/panel/theme-options.php:417
 msgid "Insert as Fav Icon"
 msgstr "Insereix com a favicon"
 
-#: ../inc/panel/theme-options.php:412
+#: ../inc/panel/theme-options.php:417
 msgid "Change Fav Icon"
 msgstr "Canvia la icona preferida"
 
-#: ../inc/panel/theme-options.php:417 ../inc/panel/theme-options.php:462
+#: ../inc/panel/theme-options.php:422 ../inc/panel/theme-options.php:467
 msgid "Preview"
 msgstr "Previsualitza"
 
-#: ../inc/panel/theme-options.php:436
+#: ../inc/panel/theme-options.php:441
 msgid "Web Clip Icon Options"
 msgstr "Opcions d'icona de Web Clip"
 
-#: ../inc/panel/theme-options.php:440
+#: ../inc/panel/theme-options.php:445
 msgid "Disable Web Clip Icon?"
 msgstr "Desactivar la icona de Web Clip?"
 
-#: ../inc/panel/theme-options.php:449
+#: ../inc/panel/theme-options.php:454
 msgid "Web Clip Icon URL:"
 msgstr "URL de la icona de Web Clip:"
 
-#: ../inc/panel/theme-options.php:457
+#: ../inc/panel/theme-options.php:462
 msgid "Insert as Web Clip Icon"
 msgstr "Insereix com a icona de Web Clip"
 
-#: ../inc/panel/theme-options.php:457
+#: ../inc/panel/theme-options.php:462
 msgid "Change Web Clip Icon"
 msgstr "Canvia la icona de Web Clip"
 
-#: ../inc/panel/theme-options.php:475
+#: ../inc/panel/theme-options.php:480
 msgid ""
 "Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and "
 "Height 144px height, which will support High Resolution Devices like iPad "
@@ -1586,153 +1594,161 @@ msgstr ""
 "144px d'amplada i 144px d'alçada, compatible amb dispositius d'alta "
 "resolució com l'iPad Retina."
 
-#: ../inc/panel/theme-options.php:488
+#: ../inc/panel/theme-options.php:496
 msgid "Custom Header: Logo & Site Details"
 msgstr "Capçalera personalitzada: Logo i detalls del lloc"
 
-#: ../inc/panel/theme-options.php:491
+#: ../inc/panel/theme-options.php:499
 msgid "Click Here to Add/Replace Header Logo & Site Details"
 msgstr ""
 "Fes clic aquí per afegir o substituir el logo de la capçalera i els detalls "
 "del lloc"
 
-#: ../inc/panel/theme-options.php:496
+#: ../inc/panel/theme-options.php:504
 msgid "Disable Header Right Sidebar?"
 msgstr "Desactivar la barra lateral dreta de la capçalera?"
 
-#: ../inc/panel/theme-options.php:500
+#: ../inc/panel/theme-options.php:508
 msgid "Check to Disable"
 msgstr "Marca per desactivar"
 
-#: ../inc/panel/theme-options.php:508
+#: ../inc/panel/theme-options.php:516
 msgid "Widgets"
 msgstr "Ginys"
 
-#: ../inc/panel/theme-options.php:508
+#: ../inc/panel/theme-options.php:516
 msgid "Click Here to Add/Replace Widgets"
 msgstr "Fes clic aquí per afegir o substituir ginys"
 
-#: ../inc/panel/theme-options.php:576
+#: ../inc/panel/theme-options.php:533
+msgid "Custom Header"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:536
+msgid "Click Here to Add/Replace Header Image"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:599
 msgid "Featured Header Image URL"
 msgstr "URL de la imatge destacada de capçalera"
 
-#: ../inc/panel/theme-options.php:579
+#: ../inc/panel/theme-options.php:602
 msgid "Insert as Featured Header Image"
 msgstr "Insereix com a imatge destacada de la capçalera"
 
-#: ../inc/panel/theme-options.php:579
+#: ../inc/panel/theme-options.php:602
 msgid "Change Header Image"
 msgstr "Canvia la imatge de capçalera"
 
-#: ../inc/panel/theme-options.php:610
+#: ../inc/panel/theme-options.php:633
 msgid "Reset Header Featured Image Options?"
 msgstr ""
 "Restaurar les opcions per defecte de la imatge destacada de la capçalera?"
 
-#: ../inc/panel/theme-options.php:614 ../inc/panel/theme-options.php:699
-#: ../inc/panel/theme-options.php:799
+#: ../inc/panel/theme-options.php:637 ../inc/panel/theme-options.php:725
+#: ../inc/panel/theme-options.php:825
 msgid "Check to reset"
 msgstr "Marca per restablir els valors per defecte"
 
-#: ../inc/panel/theme-options.php:680
+#: ../inc/panel/theme-options.php:706
 msgid "Content Layout"
 msgstr "Disposició del contingut"
 
-#: ../inc/panel/theme-options.php:695
+#: ../inc/panel/theme-options.php:721
 msgid "Reset Layout?"
 msgstr "Restablir la disposició?"
 
-#: ../inc/panel/theme-options.php:709
+#: ../inc/panel/theme-options.php:735
 msgid "Color Options"
 msgstr "Opcions de color"
 
-#: ../inc/panel/theme-options.php:713
+#: ../inc/panel/theme-options.php:739
 msgid "Default Color Scheme"
 msgstr "Esquema de colors per defecte"
 
-#: ../inc/panel/theme-options.php:732
+#: ../inc/panel/theme-options.php:758
 msgid "Custom Background Color:"
 msgstr "Color de fons personalitzat:"
 
-#: ../inc/panel/theme-options.php:736
+#: ../inc/panel/theme-options.php:762
 msgid "Click Here to change Background Color/Image"
 msgstr "Fes clic aquí per canviar la imatge o el color de fons"
 
-#: ../inc/panel/theme-options.php:742
+#: ../inc/panel/theme-options.php:768
 msgid "Custom Header: "
 msgstr "Capçalera personalitzada:"
 
-#: ../inc/panel/theme-options.php:746
+#: ../inc/panel/theme-options.php:772
 msgid "Click Here to change Site Title and Tagline Color"
 msgstr ""
 "Fes clic aquí per personalitzar les imatges i altres elements de la capçalera"
 
-#: ../inc/panel/theme-options.php:795
+#: ../inc/panel/theme-options.php:821
 msgid "Reset Excerpt?"
 msgstr "Restablir l'extracte?"
 
-#: ../inc/panel/theme-options.php:830
+#: ../inc/panel/theme-options.php:856
 msgid "Enter your custom CSS styles."
 msgstr "Insereix els teus estils CSS personalitzats."
 
-#: ../inc/panel/theme-options.php:838
+#: ../inc/panel/theme-options.php:864
 msgid "CSS Tutorial from W3Schools."
 msgstr "Tutorial CSS de W3Schools."
 
-#: ../inc/panel/theme-options.php:841
+#: ../inc/panel/theme-options.php:867
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/panel/theme-options.php:841
+#: ../inc/panel/theme-options.php:867
 msgid "CSS Tutorial"
 msgstr "Tutorial de CSS"
 
-#: ../inc/panel/theme-options.php:841
+#: ../inc/panel/theme-options.php:867
 msgid "Click Here to Read"
 msgstr "Fes clic aquí per llegir-lo"
 
-#: ../inc/panel/theme-options.php:855
+#: ../inc/panel/theme-options.php:881
 msgid "Disable Scroll Up?"
 msgstr "Desactivar el desplaçament cap amunt?"
 
-#: ../inc/panel/theme-options.php:920
+#: ../inc/panel/theme-options.php:946
 msgid "Transition Effect:"
 msgstr "Efecte de transició:"
 
-#: ../inc/panel/theme-options.php:944 ../inc/panel/theme-options.php:953
+#: ../inc/panel/theme-options.php:970 ../inc/panel/theme-options.php:979
 msgid "second(s)"
 msgstr "segon(s)"
 
-#: ../inc/panel/theme-options.php:963
+#: ../inc/panel/theme-options.php:989
 msgid "Featured Post Slider Options"
 msgstr "Opcions de l'slider d'entrades destacades"
 
-#: ../inc/panel/theme-options.php:967
+#: ../inc/panel/theme-options.php:993
 msgid "Exclude Slider post from Homepage posts?"
 msgstr ""
 "Excloure les entrades destacades de l'slider de la llista d'entrades de la "
 "pàgina d'inici?"
 
-#: ../inc/panel/theme-options.php:971
+#: ../inc/panel/theme-options.php:997
 msgid "Check to exclude"
 msgstr "Marca per excloure"
 
-#: ../inc/panel/theme-options.php:982
+#: ../inc/panel/theme-options.php:1008
 msgid "Click Here To Edit"
 msgstr "Fes clic aquí per editar"
 
-#: ../inc/panel/theme-options.php:988
+#: ../inc/panel/theme-options.php:1014
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Nota: Pots indicar l'ID de les entrades que vulguis que es vegin a l'slider "
 "de la pàgina d'inici."
 
-#: ../inc/panel/theme-options.php:997
+#: ../inc/panel/theme-options.php:1023
 msgid "Featured Category Slider Options"
 msgstr "Opcions de l'slider de categories destacades"
 
-#: ../inc/panel/theme-options.php:1021
+#: ../inc/panel/theme-options.php:1047
 msgid ""
 "Note: Here you can select the categories from which latest posts will "
 "display on Featured Slider."
@@ -1740,19 +1756,19 @@ msgstr ""
 "Nota: aquí pots escollir les categories de les quals es mostraran entrades a "
 "l'slider destacat."
 
-#: ../inc/panel/theme-options.php:1034
+#: ../inc/panel/theme-options.php:1060
 msgid "Predefine Social Icons"
 msgstr "Predefineix les icones socials"
 
-#: ../inc/panel/theme-options.php:1086
+#: ../inc/panel/theme-options.php:1112
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/panel/theme-options.php:1292
+#: ../inc/panel/theme-options.php:1318
 msgid "Code to display on Header"
 msgstr "Codi per incloure a la capçalera"
 
-#: ../inc/panel/theme-options.php:1295
+#: ../inc/panel/theme-options.php:1321
 msgid ""
 "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
 "This etc. which will load on Header"
@@ -1760,11 +1776,11 @@ msgstr ""
 "Nota: aquí pots posar-hi scripts de Google, Facebook, Twitter, Add This, "
 "etc. que hagin de ser carregats a la capçalera."
 
-#: ../inc/panel/theme-options.php:1300
+#: ../inc/panel/theme-options.php:1326
 msgid "Code to display on Footer"
 msgstr "Codi per incloure al peu de pàgina"
 
-#: ../inc/panel/theme-options.php:1303
+#: ../inc/panel/theme-options.php:1329
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
 "which will load on footer"
