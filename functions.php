@@ -316,7 +316,3 @@ function boxy_remove_wc_breadcrumbs() {
    	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 }
 
-add_action('admin_notices','wbls_try_free');
-function wbls_try_free() {
-	printf( __('<div class="notice notice-warning is-dismissible"><p>Try <a href="%1$s">Boxy Pro Version </a> for Free</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button></div>','boxy'),esc_url('http://www.webulousthemes.com/request-free-trial-for-themes/') );
-}

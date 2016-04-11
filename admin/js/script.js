@@ -1,9 +1,9 @@
 ( function( $ ) {
 	// Add Make Plus message
 		upgrade = $('<a class="boxy-buy-pro"></a>')
-			.attr('href', 'http://www.webulousthemes.com/request-free-trial-for-themes/')
+			.attr('href', 'http://www.webulousthemes.com/?add-to-cart=25')
 			.attr('target', '_blank')
-			.text(boxy_upgrade.message)
+			.text(boxy_upgrade.message) 
 		;
 		demo = $('<a class="boxy-docs"></a>')
 			.attr('href','http://demo.webulous.in/boxy/')   
