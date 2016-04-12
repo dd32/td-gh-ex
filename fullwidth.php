@@ -2,7 +2,7 @@
 /*
 	Template Name: Full Width
  	Awesome Theme's Full Width Page to show the Pages Selected Full Width
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Awesome 1.0
 */

@@ -1,7 +1,7 @@
 ----------------------------------
 Awesome
 ----------------------------------
-Version: 	1.0
+Version: 	1.1
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -11,7 +11,7 @@ Copyright: 	D5 Creation
 License: 		GNU General Public License v2 or later
 License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 
-This Product is provided "as is" with no waranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License (GPL) of the Theme or Compatible  Licenses.
+This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License (GPL) of the Theme or Compatible  Licenses.
 
 slideback1.jpg:
 https://pixabay.com/en/interior-hotel-rendering-1026456
@@ -30,9 +30,6 @@ jQuery OwlCarousel: Licensed under MIT, http://owlgraphic.com/owlcarousel
 
 FontAwesome		: GPL Friendly Licenses, http://fortawesome.github.io/Font-Awesome
 
-innovation.png: - https://pixabay.com/en/girl-quieter-silence-emotions-1076998
-premium.png, newspress.png, simplicity.png: https://pixabay.com/en/model-girl-beauty-bella-fashion-456964
-
 
 All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
 
@@ -40,6 +37,15 @@ Limitations: Site Title/ Logo, Top Menu and Main Menu width are fixed. So you sh
 
 Instructions:
 - You can set the Slide Images, About  Heading, Featured Boxes Texts, Social Links from Appearance > Customize
+
+
+Changelog
+============
+
+Version 1.1
+______________
+- Removed Extra Links from Customizer except one link suggested
+- Removed D5 Themes Page from Dashboard
 
 
 

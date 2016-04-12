@@ -1,17 +1,15 @@
 <?php
 /* 	Awesome Theme's Functions
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Awesome 1.0
 */
   
   	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
 	function awesome_about_page() { 
-	add_theme_page( 'D5 Creation Themes', 'D5 Creation Themes', 'edit_theme_options', 'd5-themes', 'awesome_d5_themes' );
 	add_theme_page( 'AWESOME Options', 'AWESOME Options', 'edit_theme_options', 'theme-about', 'awesome_theme_about' ); 
 	}
 	add_action('admin_menu', 'awesome_about_page');
-	function awesome_d5_themes() {  require_once ( trailingslashit(get_template_directory()) . 'inc/d5-themes.php' ); }
 	function awesome_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }	
 	function awesome_setup() {
 //	Theme TextDomain for the Language File
@@ -62,15 +60,14 @@
 	function awesome_enqueue_scripts() { 
 	wp_enqueue_style('awesome-style', get_stylesheet_uri(), false );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' );  }
-
 	wp_enqueue_script( 'awesome-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
-	
 	wp_register_style('awesome-gfonts1', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', false );
 	wp_enqueue_style('awesome-gfonts1');
 	wp_enqueue_style('awesome-font-awesome-css', get_template_directory_uri(). '/css/font-awesome.css' );
 	
 	if (is_front_page() || is_page_template( 'front-page.php' ) ): 
 	wp_enqueue_script( 'awesome-owl-js', get_template_directory_uri(). '/js/owl.carousel.js', array( 'jquery' ) );
+	wp_enqueue_script( 'awesome-slide', get_template_directory_uri(). '/js/slide.js', array( 'jquery' ) );
 	wp_enqueue_style('awesome-owl-m-css', get_template_directory_uri(). '/css/owl.theme.css' ); 
 	wp_enqueue_style('awesome-owl-css', get_template_directory_uri(). '/css/owl.carousel.css' ); 
 	wp_enqueue_style('awesome-owl-t-css', get_template_directory_uri(). '/css/owl.transitions.css' ); 
@@ -91,10 +88,9 @@
 	.site-title a, 
 	.site-title a:active, 
 	.site-title a:hover {
-	
 	color: #<?php echo get_header_textcolor(); ?>;
-	<?php if ( is_admin_bar_showing() ): echo '#header { top: 32px; }'; endif; ?>
 	}
+	<?php if ( is_admin_bar_showing() ): echo '#header { top: 32px; }'; endif; ?>
 	</style>
 	
 <?php 

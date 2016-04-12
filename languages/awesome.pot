@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2015-12-20 19:15+0600\n"
+"POT-Creation-Date: 2016-04-13 01:05+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -48,11 +48,11 @@ msgstr ""
 msgid "now browsing the general archives"
 msgstr ""
 
-#: comments.php:12 functions.php:146
+#: comments.php:12 functions.php:141
 msgid "No Comments"
 msgstr ""
 
-#: comments.php:12 functions.php:146
+#: comments.php:12 functions.php:141
 msgid "One Comment"
 msgstr ""
 
@@ -64,67 +64,67 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:105
 msgid "Theme by:"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:105
 msgid "Powered by:"
 msgstr ""
 
-#: functions.php:126 functions.php:132
+#: functions.php:121 functions.php:127
 msgid "Read More"
 msgstr ""
 
-#: functions.php:146
+#: functions.php:141
 msgid "Edit"
 msgstr ""
 
-#: functions.php:146
+#: functions.php:141
 msgid "Comments"
 msgstr ""
 
-#: functions.php:155
+#: functions.php:150
 msgid "NEWER ENTRIES"
 msgstr ""
 
-#: functions.php:156
+#: functions.php:151
 msgid "OLDER ENTRIES"
 msgstr ""
 
-#: functions.php:164
+#: functions.php:159
 msgid "SORRY, NOT FOUND ANYTHING"
 msgstr ""
 
-#: functions.php:165
+#: functions.php:160
 msgid "You Can Try Another Search..."
 msgstr ""
 
-#: functions.php:167
+#: functions.php:162
 msgid "&laquo; Or Return to the Home Page"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:171
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:185
+#: functions.php:180
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:194
+#: functions.php:189
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:203
+#: functions.php:198
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:212
+#: functions.php:207
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:222
+#: functions.php:217
 msgid "Footer Area Four"
 msgstr ""
 
@@ -251,13 +251,12 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Awesome is CSS3 Powered and WordPress Latest Version Ready Responsive "
-"Theme.  Awesome has Multi Layered Slider where Slides can show multiple "
-"Items with different transition effects which can be controlled from the "
-"AWESOME Options Panel.  Super Elegant and Professional Awesome Theme will be "
-"adjusted automatically with all smart devices if the Responsive Layout be "
+"Theme.  Awesome Extend has Multi Layered Slider, Gallery/Portfolio and "
+"Animated Staff Box Items.  Super Elegant and Professional Awesome Theme will "
+"be adjusted automatically with all smart devices if the Responsive Layout be "
 "selected.  Full Wide Template can be used for showing showcase or other "
-"pages. Featured Boxes, Gallery and Staff Boxes can represent your company to "
-"the world. You can Visit the Awesome Demo at demo.d5creation.com/themes/?"
+"pages. Featured Boxes, Portfolio and Staff Boxes can represent your company "
+"to the world. You can Visit the Awesome Demo at demo.d5creation.com/themes/?"
 "theme=Awesome and Awesome descriptions at http://d5creation.com/theme/awesome"
 msgstr ""
 

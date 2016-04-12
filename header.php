@@ -1,7 +1,7 @@
 <?php
 
 /* 	Awesome Theme's Header
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Awesome 1.0
 */
@@ -34,7 +34,7 @@
         			</nav> 
                     <?php get_search_form(); ?>
         <div class="social">
-	  		<?php foreach (range(1, 5 ) as $numslinksn) { echo '<a href="'. esc_url(awesome_get_option('sl' . $numslinksn, '#')) .'" target="_blank"> </a>'; } 	?>        
+	  		<?php foreach (range(1, 5 ) as $awesome_numslinksn) { echo '<a href="'. esc_url(awesome_get_option('sl' . $awesome_numslinksn, '#')) .'" target="_blank"> </a>'; } 	?>        
         </div>
         </div>
  		</div>

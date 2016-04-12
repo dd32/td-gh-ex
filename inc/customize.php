@@ -7,13 +7,12 @@ function awesome_customize_register($wp_customize){
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
 		'title'    		=> __('AWESOME OPTIONS', 'awesome'),
-        'description'   => '<div class="infohead"><span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can<a href="https://wordpress.org/support/view/theme-reviews/awesome" target="_blank"> <strong>Review Here</strong></a></span><br /><br /><br /><span class="donation"> Need More Features and Options including Multi Layer Slides, Unlimited Slide Items, Links from Featured Boxes, Portfolio and 100+ Advanced Features and Controls? Try <a href="http://d5creation.com/theme/awesome/" target="_blank"><strong>Awesome Extend</strong></a></span><br /> <br /><br /><span class="donation"> You can Visit the Awesome Extend <a href="http://demo.d5creation.com/themes/?theme=Awesome" target="_blank"><strong>DEMO 01</strong></a> and <a href="http://demo.d5creation.com/themes/?theme=Awesome-Box" target="_blank"><strong>DEMO 02</strong></a></span>
-	</div>'
+        'description'   => '<div class="infohead"><span class="donation"> Awesome is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. You can Learn More about the Features from the <a href="'. esc_url('http://d5creation.com/theme/awesome/').'" target="_blank"><strong>Awesome Theme Page</strong></a></span></div>'
     ));
 	
 //  Social Links
-	foreach (range(1, 5 ) as $numslinksn) {
-    $wp_customize->add_setting('awesome[sl' . $numslinksn .']', array(
+	foreach (range(1, 5 ) as $awesome_numslinksn) {
+    $wp_customize->add_setting('awesome[sl' . $awesome_numslinksn .']', array(
         'default'        	=> 'https://wordpress.org/themes/author/d5creation',
     	'sanitize_callback' => 'esc_url',
         'capability'     	=> 'edit_theme_options',
@@ -21,20 +20,20 @@ function awesome_customize_register($wp_customize){
 
     ));
 
-    $wp_customize->add_control('awesome_sl' . $numslinksn, array(
-        'label'      => __('Social Link - ',  'awesome'). $numslinksn,
+    $wp_customize->add_control('awesome_sl' . $awesome_numslinksn, array(
+        'label'      => __('Social Link - ',  'awesome'). $awesome_numslinksn,
         'section'    => 'awesome_options',
-        'settings'   => 'awesome[sl' . $numslinksn .']',
+        'settings'   => 'awesome[sl' . $awesome_numslinksn .']',
 		'description' => __('Input Your Social Page Link. Example: <b>http://wordpress.org/d5creation</b>.  If you do not want to show anything here leave the box blank. Supported Links are: wordpress.org, wordpress.com, dribbble.com, github.com, tumblr.com, youtube.com, flickr.com, vimeo.com, codepen.io, linkedin.com', 'awesome'),
     ));	
 	}
 	
 //  Banner Images/ Slide Images
 
-	foreach (range(1, 3 ) as $sldksn) {
+	foreach (range(1, 3 ) as $awesome_sldksn) {
 
-    $wp_customize->add_setting('awesome[slide-back'.$sldksn.']', array(
-        'default'           => get_template_directory_uri() . '/images/slide/slideback'.$sldksn.'.jpg',
+    $wp_customize->add_setting('awesome[slide-back'.$awesome_sldksn.']', array(
+        'default'           => get_template_directory_uri() . '/images/slide/slideback'.$awesome_sldksn.'.jpg',
         'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'esc_url',
         'type'           	=> 'option'
@@ -42,10 +41,10 @@ function awesome_customize_register($wp_customize){
 
     ));
 
-    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'slide-back'.$sldksn, array(
-        'label'    			=> __('Slide Image-', 'awesome') . $sldksn,
+    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'slide-back'.$awesome_sldksn, array(
+        'label'    			=> __('Slide Image-', 'awesome') . $awesome_sldksn,
         'section'  			=> 'awesome_options',
-        'settings' 			=> 'awesome[slide-back'.$sldksn.']',
+        'settings' 			=> 'awesome[slide-back'.$awesome_sldksn.']',
 		'description'   	=> __('Upload or Input the Slide Image URL Here. Recommended Size: 1600px X 600px','awesome')
 		
     )));
@@ -101,10 +100,10 @@ function awesome_customize_register($wp_customize){
 
 	
 	
-	foreach (range(1,3) as $fbsinumber) {
+	foreach (range(1,3) as $awesome_fbsinumber) {
 	  
 // Featured Title
-    $wp_customize->add_setting('awesome[featured-title' . $fbsinumber . ']', array(
+    $wp_customize->add_setting('awesome[featured-title' . $awesome_fbsinumber . ']', array(
         'default'        	=> __('Awesome Responsive','awesome'),
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
@@ -112,15 +111,15 @@ function awesome_customize_register($wp_customize){
 
     ));
 
-    $wp_customize->add_control('awesome_featured-title' . $fbsinumber, array(
-        'label'      => __('Featured Title', 'awesome'). '-' . $fbsinumber,
+    $wp_customize->add_control('awesome_featured-title' . $awesome_fbsinumber, array(
+        'label'      => __('Featured Title', 'awesome'). '-' . $awesome_fbsinumber,
         'section'    => 'awesome_options',
-        'settings'   => 'awesome[featured-title' . $fbsinumber .']'
+        'settings'   => 'awesome[featured-title' . $awesome_fbsinumber .']'
     ));
 
 
 // Featured Description
-    $wp_customize->add_setting('awesome[featured-description' . $fbsinumber . ']', array(
+    $wp_customize->add_setting('awesome[featured-description' . $awesome_fbsinumber . ']', array(
         'default'        	=> __('The Color changing options of Awesome will give the WordPress Driven Site an attractive look. Awesome is super elegant and Professional Responsive Theme which will create the business widely expressed','awesome'),
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
@@ -128,10 +127,10 @@ function awesome_customize_register($wp_customize){
 
     ));
 
-    $wp_customize->add_control('awesome_featured-description' . $fbsinumber  , array(
-        'label'      => __('Featured Description', 'awesome') . '-' . $fbsinumber,
+    $wp_customize->add_control('awesome_featured-description' . $awesome_fbsinumber  , array(
+        'label'      => __('Featured Description', 'awesome') . '-' . $awesome_fbsinumber,
         'section'    => 'awesome_options',
-        'settings'   => 'awesome[featured-description' . $fbsinumber .']',
+        'settings'   => 'awesome[featured-description' . $awesome_fbsinumber .']',
 		'type' 		 => 'textarea'
     ));
 	

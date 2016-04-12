@@ -1509,4 +1509,7 @@ if (typeof Object.create !== "function") {
         startDragging : false,
         afterLazyLoad: false
     };
+	
 }(jQuery, window, document));
+
+			

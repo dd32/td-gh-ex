@@ -1,7 +1,7 @@
 <?php
 
 /* 	Awesome Theme's Post Content
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Awesome 1.0
 */
@@ -43,8 +43,8 @@
 	<!-- End the Loop. -->          
         	
 		<?php 
-		if ( is_page() ): if (comments_open( $post->ID ) == true ): comments_template('', true); endif; endif;
-		if ( is_single() ): if (comments_open( $post->ID ) == true ): comments_template('', true); endif;
+		if ( is_page() ): comments_template(); endif;
+		if ( is_single() ): comments_template();
 		endif; ?>
             
 		<?php awesome_page_nav(); ?>
