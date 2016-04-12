@@ -503,7 +503,7 @@ function hu_clean_old_sidebar_options( $_new_sb_opts, $__options ) {
 
 
 
-function hu_maybe_update_options() {
+function hu_update_options() {
   $_options = get_option( HU_THEME_OPTIONS );
 
   $copy_option_tree = isset( $_GET['copy_option_tree'] );
@@ -531,14 +531,14 @@ function hu_maybe_update_options() {
 //copy old options from option tree framework into new option raw 'hu_theme_options'
 //only if user is logged in
 if ( is_user_logged_in() )
-  hu_maybe_update_options();
+  hu_update_options();
 
 
-/* ------------------------------------------------------------------------- *
-* Load OptionTree framework
-* Has to be loaded before after_setup_theme (important for plugin compatibility like ACF)
-/* ------------------------------------------------------------------------- */
-load_template( get_template_directory() . '/option-tree/ot-loader.php' );
+
+
+
+
+
 
 
 /* ------------------------------------------------------------------------- *
@@ -548,12 +548,17 @@ load_template( get_template_directory() . '/option-tree/ot-loader.php' );
 if ( ! function_exists( 'hu_load' ) ) {
 
   function hu_load() {
+    /* ------------------------------------------------------------------------- *
+    * Load OptionTree framework
+    /* ------------------------------------------------------------------------- */
+    load_template( get_template_directory() . '/option-tree/ot-loader.php' );
+
     // Load theme languages
     load_theme_textdomain( 'hueman', get_template_directory().'/languages' );
 
     // Load theme options and meta boxes
     //load_template( get_template_directory() . '/functions/theme-options.php' );
-    load_template( get_template_directory() . '/functions/init-meta-boxes.php' );
+    load_template( get_template_directory() . '/functions/meta-boxes.php' );
 
     // Load custom widgets
     load_template( get_template_directory() . '/functions/widgets/alx-tabs.php' );
@@ -715,7 +720,6 @@ function hu_get_contexts_list() {
   return array(
     '_all_'             => __('All contexts', 'hueman'),
     'home'              => __('Home', 'hueman'),
-    'blog-page'         => __('Blog Page', 'hueman'),
     'page'              => __('Pages', 'hueman'),
     'single'            => __('Single Posts', 'hueman'),
     'archive'           => __('Archives', 'hueman'),
@@ -730,8 +734,8 @@ function hu_get_contexts_list() {
 //widget_zone_name => location, title
 function hu_get_builtin_widget_zones_location() {
   return array(
-    'primary'     => array( 's1' => __('Primary Sidebar (on the left in a 3 columns layout)', 'hueman') ),
-    'secondary'   => array( 's2' => __('Secondary Sidebar (on the right in a 3 columns layout)', 'hueman') ),
+    'primary'     => array( 's1' => __('Left Sidebar', 'hueman') ),
+    'secondary'   => array( 's2' => __('Right Sidebar', 'hueman') ),
     'header-ads'  => array( 'header-ads' => __('Header', 'hueman') ),
     'footer-ads'  => array( 'footer-ads' => __('Before footer', 'hueman') ),
     'footer-1'    => array( 'footer-1' => __('Footer 1', 'hueman') ),
@@ -1029,65 +1033,13 @@ function hu_add_help_button() {
 }
 
 
+function hu_may_be_display_update_notice() {
+
+}
+
 
 
 /* ------------------------------------------------------------------------- *
  *  Loads Front End files
 /* ------------------------------------------------------------------------- */
 load_template( get_template_directory() . '/functions/init-front.php' );
-
-
-/* Backward compatibility. Typically useful for users of child themes using old function names. */
-if ( ! function_exists('alx_layout_class') ) {
-  function alx_layout_class() {
-    return hu_layout_class();
-  }
-}
-
-if ( ! function_exists('alx_social_links') ) {
-  function alx_social_links() {
-    return hu_print_social_links();
-  }
-}
-
-if ( ! function_exists('alx_site_title') ) {
-  function alx_site_title() {
-    return hu_site_title();
-  }
-}
-
-if ( ! function_exists('alx_blog_title') ) {
-  function alx_blog_title() {
-    return hu_blog_title();
-  }
-}
-
-if ( ! function_exists('alx_page_title') ) {
-  function alx_page_title() {
-    return hu_page_title();
-  }
-}
-
-if ( ! function_exists('alx_post_images') ) {
-  function alx_post_images() {
-    return hu_post_images();
-  }
-}
-
-if ( ! function_exists('alx_related_posts') ) {
-  function alx_related_posts() {
-    return hu_related_posts();
-  }
-}
-
-if ( ! function_exists('alx_sidebar_secondary') ) {
-  function alx_sidebar_secondary() {
-    return 'secondary';
-  }
-}
-
-if ( ! function_exists('alx_sidebar_primary') ) {
-  function alx_sidebar_primary() {
-    return 'primary';
-  }
-}
