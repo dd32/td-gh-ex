@@ -73,11 +73,12 @@ Right sidebar, top to bottom:
 See headers of files for further details.
 
 # Changelog
-= 3.0.6 April 12 2016  =
+= 3.0.7 April 12 2016  =
 * Moved options from the previous admin option ( Appearance > Theme Options ) to the customizer panel. Users settings from a previous version are being preserved an re-used in the customizer.
 * New settings organization. In the customizer, the settings have been reorganized in 5 panels : Global settings, Header, Content, Footer, Dynamic Sidebars and Widgets.
 * Added a new way to create dynamic content with widgets for a given context (home, page, archive ...) and in a specific location of the page ( right sidebar, footer left, ...)
 * Added backward compatibility for the renamed functions used in the templates, like alx_social_links() now is hu_social_links()
+* Fixed backward compatibility issue with already declared old functions in child theme
 
 = 1.5.7 November 24 2015 =
 * Updated to OptionTree 2.5.5
