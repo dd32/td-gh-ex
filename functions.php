@@ -49,11 +49,19 @@ function zeedynamic_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'zeedynamic_custom_background_args', array( 'default-color' => 'e5e5e5' ) ) );
 	
+	// Set up the WordPress core custom logo feature
+	add_theme_support( 'custom-logo', apply_filters( 'zeedynamic_custom_logo_args', array(
+		'height' => 40,
+		'width' => 250,
+		'flex-height' => true,
+		'flex-width' => true,
+	) ) );
+	
 	// Set up the WordPress core custom header feature.
 	add_theme_support('custom-header', apply_filters( 'zeedynamic_custom_header_args', array(
 		'header-text' => false,
-		'width'	=> 1920,
-		'height' => 480,
+		'width'	=> 1230,
+		'height' => 410,
 		'flex-height' => true
 	) ) );
 	
@@ -87,7 +95,7 @@ function zeedynamic_widgets_init() {
 	register_sidebar( array(
 		'name' => esc_html__( 'Sidebar', 'zeedynamic' ),
 		'id' => 'sidebar',
-		'description' => esc_html__( 'Appears on posts and pages except full width template.', 'zeedynamic' ),
+		'description' => esc_html__( 'Appears on posts and pages except the full width template.', 'zeedynamic' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
 		'before_title' => '<div class="widget-header"><h3 class="widget-title">',

@@ -2,6 +2,10 @@
 zeeDynamic Changelog
 ===================================
 
+Version 1.1.1
+-----------------------------------
+[added] support for new custom logo feature from WordPress 4.5
+
 Version 1.1.0
 -----------------------------------
 [moved] all theme settings to Customizer
