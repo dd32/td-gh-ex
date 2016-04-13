@@ -1,0 +1,11 @@
+===================================
+Admiral Changelog
+===================================
+
+Version 1.0.1
+-----------------------------------
+[added] support for new custom logo feature from WordPress 4.5
+
+Version 1.0
+-----------------------------------
+Initial Release

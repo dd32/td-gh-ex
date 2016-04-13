@@ -49,6 +49,14 @@ function admiral_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'admiral_custom_background_args', array( 'default-color' => 'e5e5e5' ) ) );
 	
+	// Set up the WordPress core custom logo feature
+	add_theme_support( 'custom-logo', apply_filters( 'admiral_custom_logo_args', array(
+		'height' => 60,
+		'width' => 300,
+		'flex-height' => true,
+		'flex-width' => true,
+	) ) );
+	
 	// Add Theme Support for wooCommerce
 	add_theme_support( 'woocommerce' );
 	
@@ -92,7 +100,7 @@ function admiral_widgets_init() {
 	register_sidebar( array(
 		'name' => esc_html__( 'Small Sidebar', 'admiral' ),
 		'id' => 'sidebar-small',
-		'description' => esc_html__( 'Appears on posts and pages except full width template.', 'admiral' ),
+		'description' => esc_html__( 'Appears on posts and pages except the full width template.', 'admiral' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
 		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
