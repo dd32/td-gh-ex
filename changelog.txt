@@ -1,5 +1,7 @@
 == Change log ==
 
+2.7.1
+* Bug Fixed: Page layout issue (Reported by Marebos)
 2.7
 * Compatibility fix: Customizer Reset option not working when returning any value in WordPress 4.4
 * Updated: Content Width Implementation

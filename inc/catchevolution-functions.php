@@ -464,18 +464,25 @@ function catchevolution_body_classes( $classes ) {
 
 	$layout = catchevolution_get_theme_layout();
 
-	if ( $layout == 'three-columns' ) {
+	
+	if ( $layout == 'three-columns' || is_page_template( 'page-three-columns.php' ) ) {
 		$classes[] = 'three-columns';
 	}
-	elseif ( $layout == 'no-sidebar' ) {
+	elseif ( $layout == 'no-sidebar' || is_page_template( 'page-disable-sidebar.php' ) ) {
 		$classes[] = 'no-sidebar';
 	}
+	elseif ( $layout == 'no-sidebar-one-column' || is_page_template( 'page-onecolumn.php' ) ) {
+		$classes[] = 'no-sidebar one-column';
+	}	
+	elseif ( $layout == 'no-sidebar-full-width' || is_page_template( 'page-fullwidth.php' ) ) {
+		$classes[] = 'no-sidebar full-width';
+	}	
 	elseif ( $layout == 'left-sidebar' ) {
 		$classes[] = 'left-sidebar';
 	}
 	elseif ( $layout == 'right-sidebar' ) {
 		$classes[] = 'right-sidebar';
-	}
+	}	
 
 	return $classes;
 }
