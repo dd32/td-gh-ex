@@ -30,6 +30,7 @@ function smartline_theme_options() {
 function smartline_default_options() {
 
 	$default_options = array(
+		'site_title'						=> true,
 		'header_tagline'					=> true,
 		'custom_header_link'				=> '',
 		'custom_header_hide'				=> false,
@@ -46,10 +47,11 @@ function smartline_default_options() {
 		'meta_author'						=> true,
 		'meta_category'						=> true,
 		'meta_tags'							=> true,
+		'post_navigation' 					=> false,
 		'slider_activated_front_page' 		=> false,
 		'slider_activated_blog' 			=> false,
-		'slider_animation' 					=> 'horizontal',
-		'post_navigation' 					=> false,
+		'slider_animation' 					=> 'slide',
+		'slider_speed' 						=> 7000,
 	);
 	
 	return $default_options;
