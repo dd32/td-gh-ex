@@ -30,6 +30,7 @@ function dynamicnews_theme_options() {
 function dynamicnews_default_options() {
 
 	$default_options = array(
+		'site_title'						=> true,
 		'header_tagline'					=> false,
 		'custom_header_link'				=> '',
 		'custom_header_hide'				=> false,
@@ -53,7 +54,8 @@ function dynamicnews_default_options() {
 		'post_navigation' 					=> false,
 		'slider_activated_front_page' 		=> false,
 		'slider_activated_blog' 			=> false,
-		'slider_animation' 					=> 'horizontal',
+		'slider_animation' 					=> 'slide',
+		'slider_speed' 						=> 7000,
 	);
 	
 	return $default_options;
