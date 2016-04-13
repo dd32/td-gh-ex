@@ -30,6 +30,7 @@ function rubine_theme_options() {
 function rubine_default_options() {
 
 	$default_options = array(
+		'site_title'						=> true,
 		'header_tagline'					=> false,
 		'custom_header_link'				=> '',
 		'custom_header_hide'				=> false,

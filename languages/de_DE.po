@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rubine Lite\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-01-19 18:08+0100\n"
-"PO-Revision-Date: 2016-01-19 18:08+0100\n"
+"POT-Creation-Date: 2016-04-13 14:54+0100\n"
+"PO-Revision-Date: 2016-04-13 14:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -32,11 +32,11 @@ msgstr ""
 msgid "Enter password to view comments."
 msgstr "Passwort eingeben, um Kommentare zu sehen."
 
-#: comments.php:23 inc/template-tags.php:168
+#: comments.php:23 inc/template-tags.php:199
 msgid "One comment"
 msgstr "Ein Kommentar"
 
-#: comments.php:23 inc/template-tags.php:168
+#: comments.php:23 inc/template-tags.php:199
 #, php-format
 msgid "% comments"
 msgstr "% Kommentare"
@@ -49,28 +49,25 @@ msgstr "Weiterlesen"
 msgid "Menu"
 msgstr "Menü"
 
-#: functions.php:99
+#: functions.php:107
 msgid "Main Navigation"
 msgstr "Hauptnavigation"
 
-#: functions.php:100
+#: functions.php:108
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: functions.php:101
+#: functions.php:109
 msgid "Social Icons"
 msgstr "Social Icons"
 
-#: functions.php:132 sidebar.php:14
+#: functions.php:140 sidebar.php:14
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: functions.php:134
-msgid ""
-"Appears on posts and pages except Magazine Homepage and Fullwidth template."
-msgstr ""
-"Erscheint auf allen Beiträgen und Seiten mit Ausnahme der Magazine Homepage "
-"und Fullwidth Templates."
+#: functions.php:142
+msgid "Appears on posts and pages except the full width template."
+msgstr "Erscheint auf allen Beiträgen und Seiten außer dem Fullwidth Template."
 
 #: search.php:15
 #, php-format
@@ -132,21 +129,21 @@ msgstr ""
 msgid "Display featured posts in latest blog post listing."
 msgstr "Zeige hervorgehobene Beiträge in der Liste der letzten Beiträge."
 
-#: inc/template-tags.php:144
+#: inc/template-tags.php:175
 #, php-format
 msgid "View all posts by %s"
 msgstr "Alle Beiträge von %s ansehen"
 
-#: inc/template-tags.php:168
+#: inc/template-tags.php:199
 msgid "Leave a comment"
 msgstr "Kommentar hinterlassen"
 
-#: inc/template-tags.php:293
+#: inc/template-tags.php:324
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr "Erstellt mit %1$s und %2$s."
 
-#: inc/template-tags.php:327
+#: inc/template-tags.php:358
 msgid ""
 "Please go to Appearance &#8594; Menus and create a new custom menu with "
 "custom links to all your social networks. Then click on \"Manage Locations\" "
@@ -156,15 +153,15 @@ msgstr ""
 "all deinen sozialen Netzwerken. Klicke danach auf den Tab 'Positionen "
 "verwalten' und weise deinem erstelltes Menü die \"Social Icons\" Position zu."
 
-#: inc/template-tags.php:346
+#: inc/template-tags.php:377
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: inc/template-tags.php:347 inc/template-tags.php:366
+#: inc/template-tags.php:378 inc/template-tags.php:397
 msgid "(Edit)"
 msgstr "(Bearbeiten)"
 
-#: inc/template-tags.php:377
+#: inc/template-tags.php:408
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wird überprüft."
 
@@ -177,15 +174,15 @@ msgstr "Willkommen bei %1$s %2$s"
 msgid "Theme Info"
 msgstr "Theme Info"
 
-#: inc/theme-info.php:44 inc/customizer/customizer.php:110
+#: inc/theme-info.php:44 inc/customizer/customizer.php:127
 msgid "Theme Links"
 msgstr "Theme Links"
 
-#: inc/theme-info.php:45 inc/customizer/customizer.php:111
+#: inc/theme-info.php:45 inc/customizer/customizer.php:128
 msgid "https://themezee.com/themes/rubine/"
 msgstr "https://themezee.com/de/themes/rubine/"
 
-#: inc/theme-info.php:45 inc/customizer/customizer.php:112
+#: inc/theme-info.php:45 inc/customizer/customizer.php:129
 msgid "Theme Page"
 msgstr "Theme Seite"
 
@@ -198,16 +195,16 @@ msgid "Theme Demo"
 msgstr "Theme Demo"
 
 #: inc/theme-info.php:48 inc/theme-info.php:69
-#: inc/customizer/customizer.php:113
+#: inc/customizer/customizer.php:130
 msgid "https://themezee.com/docs/rubine-documentation/"
 msgstr "https://themezee.com/de/docs/rubine-dokumentation/"
 
 #: inc/theme-info.php:48 inc/theme-info.php:63
-#: inc/customizer/customizer.php:114
+#: inc/customizer/customizer.php:131
 msgid "Theme Documentation"
 msgstr "Theme Dokumentation"
 
-#: inc/theme-info.php:49 inc/customizer/customizer.php:116
+#: inc/theme-info.php:49 inc/customizer/customizer.php:133
 msgid "Rate this theme"
 msgstr "Theme bewerten"
 
@@ -287,14 +284,18 @@ msgid "Background"
 msgstr "Hintergrund"
 
 #: inc/customizer/customizer.php:49
+msgid "Display Site Title"
+msgstr "Zeige Titel der Website"
+
+#: inc/customizer/customizer.php:66
 msgid "Display Tagline below site title."
 msgstr "Zeige den Untertitel unter dem Seitentitel."
 
-#: inc/customizer/customizer.php:66
+#: inc/customizer/customizer.php:83
 msgid "Header Image Link"
 msgstr "Header-Bild Link"
 
-#: inc/customizer/customizer.php:83
+#: inc/customizer/customizer.php:100
 msgid "Hide header image on front page"
 msgstr "Verstecke Header-Bild auf der Startseite"
 
@@ -737,9 +738,6 @@ msgstr "Mehr Features"
 
 #~ msgid "Latest Posts"
 #~ msgstr "Letzte Beiträge"
-
-#~ msgid "Display Category Titles"
-#~ msgstr "Zeige Kategorien als Titel"
 
 #~ msgid ""
 #~ "Displays a single post from a selected category. Please use this widget "

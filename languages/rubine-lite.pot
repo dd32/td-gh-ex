@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rubine Lite\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-01-19 18:08+0100\n"
-"PO-Revision-Date: 2016-01-19 18:08+0100\n"
+"POT-Creation-Date: 2016-04-13 14:54+0100\n"
+"PO-Revision-Date: 2016-04-13 14:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -34,11 +34,11 @@ msgstr ""
 msgid "Enter password to view comments."
 msgstr ""
 
-#: comments.php:23 inc/template-tags.php:168
+#: comments.php:23 inc/template-tags.php:199
 msgid "One comment"
 msgstr ""
 
-#: comments.php:23 inc/template-tags.php:168
+#: comments.php:23 inc/template-tags.php:199
 #, php-format
 msgid "% comments"
 msgstr ""
@@ -51,25 +51,24 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:107
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:108
 msgid "Top Navigation"
 msgstr ""
 
-#: functions.php:101
+#: functions.php:109
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:132 sidebar.php:14
+#: functions.php:140 sidebar.php:14
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:134
-msgid ""
-"Appears on posts and pages except Magazine Homepage and Fullwidth template."
+#: functions.php:142
+msgid "Appears on posts and pages except the full width template."
 msgstr ""
 
 #: search.php:15
@@ -125,36 +124,36 @@ msgstr ""
 msgid "Display featured posts in latest blog post listing."
 msgstr ""
 
-#: inc/template-tags.php:144
+#: inc/template-tags.php:175
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-tags.php:168
+#: inc/template-tags.php:199
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:293
+#: inc/template-tags.php:324
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr ""
 
-#: inc/template-tags.php:327
+#: inc/template-tags.php:358
 msgid ""
 "Please go to Appearance &#8594; Menus and create a new custom menu with "
 "custom links to all your social networks. Then click on \"Manage Locations\" "
 "tab and assign your created menu to the \"Social Icons\" location."
 msgstr ""
 
-#: inc/template-tags.php:346
+#: inc/template-tags.php:377
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:347 inc/template-tags.php:366
+#: inc/template-tags.php:378 inc/template-tags.php:397
 msgid "(Edit)"
 msgstr ""
 
-#: inc/template-tags.php:377
+#: inc/template-tags.php:408
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -167,15 +166,15 @@ msgstr ""
 msgid "Theme Info"
 msgstr ""
 
-#: inc/theme-info.php:44 inc/customizer/customizer.php:110
+#: inc/theme-info.php:44 inc/customizer/customizer.php:127
 msgid "Theme Links"
 msgstr ""
 
-#: inc/theme-info.php:45 inc/customizer/customizer.php:111
+#: inc/theme-info.php:45 inc/customizer/customizer.php:128
 msgid "https://themezee.com/themes/rubine/"
 msgstr ""
 
-#: inc/theme-info.php:45 inc/customizer/customizer.php:112
+#: inc/theme-info.php:45 inc/customizer/customizer.php:129
 msgid "Theme Page"
 msgstr ""
 
@@ -188,16 +187,16 @@ msgid "Theme Demo"
 msgstr ""
 
 #: inc/theme-info.php:48 inc/theme-info.php:69
-#: inc/customizer/customizer.php:113
+#: inc/customizer/customizer.php:130
 msgid "https://themezee.com/docs/rubine-documentation/"
 msgstr ""
 
 #: inc/theme-info.php:48 inc/theme-info.php:63
-#: inc/customizer/customizer.php:114
+#: inc/customizer/customizer.php:131
 msgid "Theme Documentation"
 msgstr ""
 
-#: inc/theme-info.php:49 inc/customizer/customizer.php:116
+#: inc/theme-info.php:49 inc/customizer/customizer.php:133
 msgid "Rate this theme"
 msgstr ""
 
@@ -270,14 +269,18 @@ msgid "Background"
 msgstr ""
 
 #: inc/customizer/customizer.php:49
-msgid "Display Tagline below site title."
+msgid "Display Site Title"
 msgstr ""
 
 #: inc/customizer/customizer.php:66
-msgid "Header Image Link"
+msgid "Display Tagline below site title."
 msgstr ""
 
 #: inc/customizer/customizer.php:83
+msgid "Header Image Link"
+msgstr ""
+
+#: inc/customizer/customizer.php:100
 msgid "Hide header image on front page"
 msgstr ""
 

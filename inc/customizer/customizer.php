@@ -37,6 +37,23 @@ function rubine_customize_register_options( $wp_customize ) {
 	$wp_customize->get_control( 'background_color'  )->section   = 'background_image';
 	$wp_customize->get_section( 'background_image'  )->title     = esc_html__( 'Background', 'rubine-lite' );
 	
+	// Add Display Site Title Setting
+	$wp_customize->add_setting( 'rubine_theme_options[site_title]', array(
+        'default'           => true,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'rubine_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'rubine_theme_options[site_title]', array(
+        'label'    => esc_html__( 'Display Site Title', 'rubine-lite' ),
+        'section'  => 'title_tagline',
+        'settings' => 'rubine_theme_options[site_title]',
+        'type'     => 'checkbox',
+		'priority' => 10
+		)
+	);
+	
 	// Add Header Tagline option
 	$wp_customize->add_setting( 'rubine_theme_options[header_tagline]', array(
         'default'           => false,
@@ -50,7 +67,7 @@ function rubine_customize_register_options( $wp_customize ) {
         'section'  => 'title_tagline',
         'settings' => 'rubine_theme_options[header_tagline]',
         'type'     => 'checkbox',
-		'priority' => 10
+		'priority' => 11
 		)
 	);
 	

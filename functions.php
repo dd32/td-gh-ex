@@ -84,6 +84,14 @@ function rubine_setup() {
 	// Add Custom Background
 	add_theme_support('custom-background', array('default-color' => 'f0f0f0'));
 
+	// Set up the WordPress core custom logo feature
+	add_theme_support( 'custom-logo', apply_filters( 'rubine_custom_logo_args', array(
+		'height' => 40,
+		'width' => 250,
+		'flex-height' => true,
+		'flex-width' => true,
+	) ) );
+	
 	// Add Custom Header
 	add_theme_support('custom-header', array(
 		'header-text' => false,
@@ -131,7 +139,7 @@ function rubine_register_sidebars() {
 	register_sidebar( array(
 		'name' => esc_html__( 'Sidebar', 'rubine-lite' ),
 		'id' => 'sidebar',
-		'description' => esc_html__( 'Appears on posts and pages except Magazine Homepage and Fullwidth template.', 'rubine-lite' ),
+		'description' => esc_html__( 'Appears on posts and pages except the full width template.', 'rubine-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widgettitle"><span>',

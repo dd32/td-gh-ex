@@ -2,6 +2,12 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.2.5
+-----------------------------------
+[added] support for new custom logo feature from WordPress 4.5
+
+You can upload your logo image on Appearance -> Customize -> Site Identity now.
+
 Version 1.2.4
 -----------------------------------
 [added] support for Jetpack Infinite Scroll feature

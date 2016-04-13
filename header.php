@@ -63,7 +63,8 @@
 
 			<div id="logo">
 			
-				<?php do_action('rubine_site_title'); ?>
+				<?php rubine_site_logo(); ?>
+				<?php rubine_site_title(); ?>
 				
 				<?php // Display Tagline on header if activated
 				if ( isset($theme_options['header_tagline']) and $theme_options['header_tagline'] == true ) : ?>			
