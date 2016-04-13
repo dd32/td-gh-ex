@@ -503,7 +503,7 @@ function hu_clean_old_sidebar_options( $_new_sb_opts, $__options ) {
 
 
 
-function hu_update_options() {
+function hu_maybe_update_options() {
   $_options = get_option( HU_THEME_OPTIONS );
 
   $copy_option_tree = isset( $_GET['copy_option_tree'] );
@@ -531,14 +531,14 @@ function hu_update_options() {
 //copy old options from option tree framework into new option raw 'hu_theme_options'
 //only if user is logged in
 if ( is_user_logged_in() )
-  hu_update_options();
+  hu_maybe_update_options();
 
 
-
-
-
-
-
+/* ------------------------------------------------------------------------- *
+* Load OptionTree framework
+* Has to be loaded before after_setup_theme (important for plugin compatibility like ACF)
+/* ------------------------------------------------------------------------- */
+load_template( get_template_directory() . '/option-tree/ot-loader.php' );
 
 
 /* ------------------------------------------------------------------------- *
@@ -548,17 +548,12 @@ if ( is_user_logged_in() )
 if ( ! function_exists( 'hu_load' ) ) {
 
   function hu_load() {
-    /* ------------------------------------------------------------------------- *
-    * Load OptionTree framework
-    /* ------------------------------------------------------------------------- */
-    load_template( get_template_directory() . '/option-tree/ot-loader.php' );
-
     // Load theme languages
     load_theme_textdomain( 'hueman', get_template_directory().'/languages' );
 
     // Load theme options and meta boxes
     //load_template( get_template_directory() . '/functions/theme-options.php' );
-    load_template( get_template_directory() . '/functions/meta-boxes.php' );
+    load_template( get_template_directory() . '/functions/init-meta-boxes.php' );
 
     // Load custom widgets
     load_template( get_template_directory() . '/functions/widgets/alx-tabs.php' );
@@ -1055,8 +1050,8 @@ if ( ! function_exists('alx_social_links') ) {
 if ( ! function_exists('alx_site_title') ) {
   function alx_site_title() {
     return hu_site_title();
-  } 
-} 
+  }
+}
 
 if ( ! function_exists('alx_blog_title') ) {
   function alx_blog_title() {

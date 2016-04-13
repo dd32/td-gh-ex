@@ -567,14 +567,6 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'      => 'checkbox',
                 'notice'    => __( 'While the default blog design is a grid of posts, you can check this option and display one post per row, whith the thumbnail beside the text.' , 'hueman')
           ),
-          'blog-standard' => array(
-                'default'   => 0,
-                'control'   => 'HU_controls',
-                'label'     => __("Display your blog post as a standard list.", 'hueman'),
-                'section'   => 'content_blog_sec',
-                'type'      => 'checkbox',
-                'notice'    => __( 'While the default blog design is a grid of posts, you can check this option to display one post per row, whith the thumbnail beside the text.' , 'hueman')
-          ),
           'featured-posts-enabled' => array(
                 'default'   => 1,
                 'title'       => __( 'Featured posts', 'customizr' ),
@@ -583,6 +575,15 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'section'   => 'content_blog_sec',
                 'type'      => 'checkbox',
                 'notice'    => __( 'Check this box to display a selection of posts with a slideshow, on top of your blog.' , 'hueman')
+          ),
+          'featured-category' => array(
+                'default'   => 0,
+                'control'   => 'HU_controls',
+                'label'     => __("Select a category to feature", 'hueman'),
+                'section'   => 'content_blog_sec',
+                'type'      => 'select',//@todo create a simple cat picker with select type. => evolve to multipicker? Retrocompat ?
+                'choices'   => $this -> hu_get_the_cat_list(),
+                'notice'    => __( 'If no specific category is selected, the featured posts block will display your latest post(s) from all categories.' , 'hueman')
           ),
           'featured-posts-count'  =>  array(
                 'default'   => 1,
