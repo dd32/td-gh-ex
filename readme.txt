@@ -1,4 +1,4 @@
-# Hueman v3.0.8
+# Hueman v3.0.9
 ![Hueman - Free Wordpress Theme](/screenshot.png)
 
 > Hueman is a mobile friendly WordPress theme for blogs, magazines and business websites. It's been designed to beautifully display pictures and text content, and engineered to be easy to use and fast. The Hueman theme helps you attract and retain more visitors, that's why it's already used by 70K+ active websites in the world and has received hundreds of five stars ratings.
@@ -73,7 +73,7 @@ Right sidebar, top to bottom:
 See headers of files for further details.
 
 # Changelog
-= 3.0.8 April 13 2016  =
+= 3.0.9 April 13th 2016  =
 * Moved options from the previous admin option ( Appearance > Theme Options ) to the customizer panel. Users settings from a previous version are being preserved an re-used in the customizer.
 * New settings organization. In the customizer, the settings have been reorganized in 5 panels : Global settings, Header, Content, Footer, Dynamic Sidebars and Widgets.
 * Added a new way to create dynamic content with widgets for a given context (home, page, archive ...) and in a specific location of the page ( right sidebar, footer left, ...)
@@ -81,6 +81,7 @@ See headers of files for further details.
 * Fixed backward compatibility issue with already declared old functions in child theme
 * Added back the featured-category option
 * Fixed undefined function ot_register_meta_box()
+* Fixed blog page sidebars not showing up
 
 = 1.5.7 November 24 2015 =
 * Updated to OptionTree 2.5.5

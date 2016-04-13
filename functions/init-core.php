@@ -715,6 +715,7 @@ function hu_get_contexts_list() {
   return array(
     '_all_'             => __('All contexts', 'hueman'),
     'home'              => __('Home', 'hueman'),
+    'blog-page'         => __('Blog Page', 'hueman'),
     'page'              => __('Pages', 'hueman'),
     'single'            => __('Single Posts', 'hueman'),
     'archive'           => __('Archives', 'hueman'),
@@ -729,8 +730,8 @@ function hu_get_contexts_list() {
 //widget_zone_name => location, title
 function hu_get_builtin_widget_zones_location() {
   return array(
-    'primary'     => array( 's1' => __('Left Sidebar', 'hueman') ),
-    'secondary'   => array( 's2' => __('Right Sidebar', 'hueman') ),
+    'primary'     => array( 's1' => __('Primary Sidebar (on the left in a 3 columns layout)', 'hueman') ),
+    'secondary'   => array( 's2' => __('Secondary Sidebar (on the right in a 3 columns layout)', 'hueman') ),
     'header-ads'  => array( 'header-ads' => __('Header', 'hueman') ),
     'footer-ads'  => array( 'footer-ads' => __('Before footer', 'hueman') ),
     'footer-1'    => array( 'footer-1' => __('Footer 1', 'hueman') ),
@@ -1027,10 +1028,6 @@ function hu_add_help_button() {
    ));
 }
 
-
-function hu_may_be_display_update_notice() {
-
-}
 
 
 
