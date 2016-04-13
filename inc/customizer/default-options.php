@@ -30,6 +30,7 @@ function anderson_theme_options() {
 function anderson_default_options() {
 
 	$default_options = array(
+		'site_title'						=> true,
 		'header_tagline'					=> false,
 		'custom_header_link'				=> '',
 		'custom_header_hide'				=> false,
@@ -48,7 +49,8 @@ function anderson_default_options() {
 		'post_navigation' 					=> false,
 		'slider_active' 					=> false,
 		'slider_active_magazine' 			=> false,
-		'slider_animation' 					=> 'horizontal',
+		'slider_animation' 					=> 'slide',
+		'slider_speed' 						=> 7000,
 	);
 	
 	return $default_options;
