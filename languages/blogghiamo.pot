@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Blogghiamo\n"
-"POT-Creation-Date: 2016-01-18 09:40+0100\n"
-"PO-Revision-Date: 2016-01-18 09:40+0100\n"
+"POT-Creation-Date: 2016-04-13 11:10+0100\n"
+"PO-Revision-Date: 2016-04-13 11:10+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -106,6 +106,18 @@ msgstr ""
 
 #: archive.php:66
 msgid "Archives"
+msgstr ""
+
+#: archive.php:93 index.php:34 search.php:32
+msgid "Previous"
+msgstr ""
+
+#: archive.php:94 index.php:35 search.php:33
+msgid "Next"
+msgstr ""
+
+#: archive.php:95 index.php:36 search.php:34
+msgid "Page"
 msgstr ""
 
 #: comments.php:28
@@ -234,7 +246,7 @@ msgstr ""
 
 #: footer.php:24
 #, php-format
-msgid "%1$s by %2$s."
+msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #: functions.php:54
@@ -249,63 +261,63 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:48
+#: header.php:57
 msgid "Facebook"
 msgstr ""
 
-#: header.php:52
+#: header.php:61
 msgid "Twitter"
 msgstr ""
 
-#: header.php:56
+#: header.php:65
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:60
+#: header.php:69
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:64
+#: header.php:73
 msgid "Instagram"
 msgstr ""
 
-#: header.php:68
+#: header.php:77
 msgid "YouTube"
 msgstr ""
 
-#: header.php:72
+#: header.php:81
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:76 header.php:92
+#: header.php:85 header.php:101
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:80
+#: header.php:89
 msgid "VK"
 msgstr ""
 
-#: header.php:84
+#: header.php:93
 msgid "GitHub"
 msgstr ""
 
-#: header.php:88
+#: header.php:97
 msgid "Vine"
 msgstr ""
 
-#: header.php:92
+#: header.php:101
 msgid "Email"
 msgstr ""
 
-#: header.php:107
+#: header.php:116
 msgid "Search for:"
 msgstr ""
 
-#: header.php:108
+#: header.php:117
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: header.php:115
+#: header.php:124
 msgid "Menu"
 msgstr ""
 

@@ -69,6 +69,12 @@
 				});
 			}
 			
+			$(window).resize(function() {
+				if ($( window ).width() > 769) {
+					$('.main-navigation ul > li.menu-item-has-children, .main-navigation ul > li.page_item_has_children').find('> ul.sub-menu, > ul.children').slideDown(300);
+				}
+			});
+			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Detect Mobile Browser
 		/*-----------------------------------------------------------------------------------*/ 

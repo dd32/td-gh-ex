@@ -26,8 +26,16 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
-
-			<?php blogghiamo_paging_nav(); ?>
+	
+			<?php if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) {
+				blogghiamo_paging_nav();
+			} else {
+				the_posts_pagination( array(
+					'prev_text'          => '<i class="fa fa-angle-double-left spaceRight"></i>' . esc_html__( 'Previous', 'blogghiamo' ),
+					'next_text'          => esc_html__( 'Next', 'blogghiamo' ) . '<i class="fa fa-angle-double-right spaceLeft"></i>',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'blogghiamo' ) . ' </span>',
+				) );
+			} ?>	
 
 		<?php else : ?>
 

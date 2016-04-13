@@ -325,6 +325,9 @@ function blogghiamo_custom_css_styles() {
 	.menu-toggle {
 		color: <?php echo esc_attr($text_color_first); ?>;
 	}
+	.navigation.pagination .nav-links span.current {
+		background: <?php echo esc_attr($text_color_first); ?>;
+	}
 	<?php endif; ?>
 	
 	<?php if (!empty($box_color_second) && $box_color_second != '#ffffff' ) : ?>
@@ -341,7 +344,8 @@ function blogghiamo_custom_css_styles() {
 	.edit-link a, .tagcloud a,
 	#comments .reply a,
 	.menu-toggle:hover,
-	.menu-toggle:focus	{
+	.menu-toggle:focus,
+	.navigation.pagination .nav-links span.current	{
 		color: <?php echo esc_attr($box_color_second); ?>;
 	}
 	@media screen and (max-width: 768px) {
@@ -349,7 +353,7 @@ function blogghiamo_custom_css_styles() {
 			color: <?php echo esc_attr($box_color_second); ?>;
 		}
 	}
-	.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header, #disqus_thread,
+	.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header, #disqus_thread, .navigation.pagination .nav-links > a,
 	.crestaPostStripeInner,
 	.page-content,
 	.entry-content,

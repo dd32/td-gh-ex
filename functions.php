@@ -103,7 +103,7 @@ add_action( 'widgets_init', 'blogghiamo_widgets_init' );
 function blogghiamo_scripts() {
 	wp_enqueue_style( 'blogghiamo-style', get_stylesheet_uri() );
 	$protocol = is_ssl() ? 'https' : 'http';
-	wp_enqueue_style( 'blogghiamo-fontAwesome', get_template_directory_uri() .'/css/font-awesome.min.css');
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/css/font-awesome.min.css');
 	wp_enqueue_style( 'blogghiamo-googlefonts', $protocol .'://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
 	
 	wp_enqueue_script( 'blogghiamo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), '1.0', true );

@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/blogghiamo/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Minimal WordPress Theme with two columns, unlimited colors, theme options and share buttons created by CrestaProject.com. Live demo http://crestaproject.com/demo/blogghiamo/
-Version: 1.3.9
+Version: 1.4.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blogghiamo
@@ -738,6 +738,10 @@ a:active {
 	
 }
 
+.navigation.pagination .nav-links {
+	text-align: center;
+}
+
 .paging-navigation .nav-links a {
 	width: 4rem;
 	height: 4rem;
@@ -748,6 +752,18 @@ a:active {
 	-webkit-transition: border .3s ease-in-out;
 	transition: border .3s ease-in-out;
 	display: inline-block;
+}
+
+.navigation.pagination .nav-links a,
+.navigation.pagination .nav-links span {
+	text-align: center;
+	-o-transition: border .3s ease-in-out;
+	-moz-transition: border .3s ease-in-out;
+	-webkit-transition: border .3s ease-in-out;
+	transition: border .3s ease-in-out;
+	display: inline-block;
+	padding: 0.4em 1.1em;
+    margin: 0 0.2em 1em;
 }
 
 /*--------------------------------------------------------------
@@ -1001,12 +1017,20 @@ aside ul li {
 .theTop {
 	text-align: center;
 }
-.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header, #disqus_thread {
+.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header, #disqus_thread, .navigation.pagination .nav-links > a {
 	background: #ffffff;
 	-webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
 	-moz-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
 	box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
 	border-radius: 2px;
+}
+.navigation.pagination .nav-links span.current {
+	background: #404040;
+	color: #ffffff;
+    -webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
 }
 .theTop, .comments-area, .site-main .post-navigation {
 	padding: 3em 5em;
@@ -1287,6 +1311,7 @@ span.overlay-img {
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll .navigation.pagination,
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
 	display: none;
 }

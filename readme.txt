@@ -128,3 +128,8 @@ Version 1.3.9
 * Improved RTL mode
 * Updated SmoothScroll to 1.4.4 version
 * Minor bug fixes
+
+Version 1.4.0
+* Updated FontAwesome to 4.6.1 version
+* Improved page navigation
+* Minor bug fixes
