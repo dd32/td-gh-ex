@@ -13,11 +13,11 @@
  * @see  actions_header_widget_region()
  * @see  actions_get_sidebar()
  */
-add_action( 'after_setup_theme',			 'actions_setup' );
-add_action( 'widgets_init',					 'actions_widgets_init' );
-add_action( 'wp_enqueue_scripts',			 'actions_scripts',				 10 );
-add_action( 'wp_enqueue_scripts',			 'actions_child_scripts',		 30 );
-add_action( 'actions_sidebar',			     'actions_get_sidebar',			 10 );
+add_action( 'after_setup_theme',	 'actions_setup' );
+add_action( 'widgets_init',			 'actions_widgets_init' );
+add_action( 'wp_enqueue_scripts',	 'actions_scripts',				 10 );
+add_action( 'wp_enqueue_scripts',	 'actions_child_scripts',		 30 );
+add_action( 'actions_sidebar',		 'actions_get_sidebar',			 10 );
 
 /**
  * Header

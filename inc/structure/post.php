@@ -40,9 +40,7 @@ if ( ! function_exists( 'actions_post_content' ) ) {
 		
 		while ( have_posts() ) : the_post(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php actions_post_header();
-		
-		?>
+		<?php actions_post_header(); ?>
 		<div class="entry-content">
 		<?php
 		actions_post_thumbnail( 'full' );

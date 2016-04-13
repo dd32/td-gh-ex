@@ -18,12 +18,11 @@ if ( ! function_exists( 'actions_site_branding' ) ) {
 	    <div class="main">
 			<header id="masthead" class="site-header inner">
 				<div class="header-elements">
-					<?php actions_the_site_logo(); ?>
+					<?php actions_the_custom_logo(); ?>					
 					<span class="site-title">
 						<?php 
 						$title = get_bloginfo('name');
-						$description = get_bloginfo( 'description'); ?>
-						
+						$description = get_bloginfo( 'description'); ?>						
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $description ); ?>" alt="<?php echo esc_attr( $title ); ?>">
 								<?php bloginfo( 'name' ); ?>
 							</a>

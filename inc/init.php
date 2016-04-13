@@ -7,9 +7,15 @@
 
 /**
  * Setup.
- * Enqueue styles, register widget regions, etc.
+ * Load our theme's setup functions.
  */
 require( trailingslashit(get_template_directory()) . 'inc/functions/setup.php' );
+
+/**
+ * Customizer.
+ * Let's fire up the customizer.
+ */
+require( trailingslashit(get_template_directory()) . 'inc/customizer/customizer.php' );
 
 /**
  * Structure.

@@ -102,7 +102,7 @@ function actions_posted_on() {
 	    }
 	
 	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><i class="fa fa-comments"></i><?php comments_popup_link( __( 'Comments', 'actions' ), __( '1 Comment', 'actions' ), __( '% Comments', 'actions' ) ); ?></span>
+		<span class="comments-link"><?php comments_popup_link( __( 'Comments', 'actions' ), __( '1 Comment', 'actions' ), __( '% Comments', 'actions' ) ); ?></span>
 	<?php endif;
 }
 }

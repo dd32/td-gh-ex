@@ -151,7 +151,7 @@ if ( ! function_exists( 'actions_body_bottom' ) ) {
 		?>
 		        </div>
 		    </div>
-	    </div>
+	    </div>		
 	    <?php
 	}
 }
