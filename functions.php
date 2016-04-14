@@ -11,8 +11,7 @@ the extra functions and features.
 @package        Beyond Expectations WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://luminathemes.com/contact/
-@since          0.0.1
+@author         Benjamin Lu (http://ninjablume.com/contact/
 ================================================================================================
 */
 
@@ -45,8 +44,8 @@ if (!function_exists('beyond_expectations_content_width')) {
 2.0 - Required Files
 ================================================================================================
 */
-require(get_template_directory() . '/includes/template-tags.php');
-require(get_template_directory() . '/includes/custom-header.php');
+require_once(get_template_directory() . '/includes/template-tags.php');
+require_once(get_template_directory() . '/includes/custom-header.php');
 /*
 ================================================================================================
 3.0 - Enqueue Styles and Scripts
@@ -76,7 +75,7 @@ if (!function_exists('beyond_expectations_scripts_setup')) {
 if (!function_exists('beyond_expectations_theme_setup')) {
     function beyond_expectations_theme_setup() {
         // Load Text Domain
-        load_theme_textdomain('beyond-expectations', get_template_directory() . '/languages');
+        load_theme_textdomain('beyond-expectations');
         
         // Enable HTML5 Support for Beyond Expectations
         add_theme_support('html5', array('search-form', 'caption'));
@@ -103,10 +102,6 @@ if (!function_exists('beyond_expectations_theme_setup')) {
             'primary-navigation'    => esc_html__('Primary Navigation', 'beyond-expectations'),
             'social-navigation'     => esc_html__('Social Navigation', 'beyond-expectations'),
         ));
-        
-        
-        
-
     }
     add_action('after_setup_theme', 'beyond_expectations_theme_setup');
 }

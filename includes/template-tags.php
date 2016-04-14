@@ -21,9 +21,7 @@ and features for this theme.
 Table of Content
 ================================================================================================
 1.0 - Timestamp
-2.0 - Comments
-1.0 - Metadata Posted On
-2.0 - Metadata Posted In
+2.0 - Entry Comments and Taxonomies
 3.0 - Custom Widget Sidebars
 4.0 - Pagination Navigation
 5.0 - Social Navigation
@@ -52,7 +50,7 @@ if (!function_exists('beyond_expectations_post_timestamp_author_setup')) {
 
 /*
 ================================================================================================
-2.0 - Comments
+2.0 - Entry Comments and Taxonomies
 ================================================================================================
 */
 if (!function_exists('beyond_expectations_entry_meta')) {
@@ -65,11 +63,6 @@ if (!function_exists('beyond_expectations_entry_meta')) {
     }
 }
 
-/*
-================================================================================================
-6.0 - Entry Taxonomies
-================================================================================================
-*/
 if (!function_exists('beyond_expectations_entry_taxonomies')) {
     function beyond_expectations_entry_taxonomies() {
         $cat_list = get_the_category_list(__(' | ', 'beyond-expectations'));
@@ -109,21 +102,21 @@ if (!function_exists('beyond_expectations_custom_widgets_init_setup')) {
         ));
         
         register_sidebar(array(
-        'name'          => __( 'Secondary Sidebar', 'beyond-expectations' ),
-        'id'            => 'secondary-sidebar',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
+            'name'          => __( 'Secondary Sidebar', 'beyond-expectations' ),
+            'id'            => 'secondary-sidebar',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</aside>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
         ));
         
         register_sidebar(array(
-        'name'          => __( 'Custom Sidebar', 'beyond-expectations' ),
-        'id'            => 'custom-sidebar',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
+            'name'          => __( 'Custom Sidebar', 'beyond-expectations' ),
+            'id'            => 'custom-sidebar',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</aside>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
         ));
     }
     add_action('widgets_init', 'beyond_expectations_custom_widgets_init_setup');
@@ -159,15 +152,15 @@ if (!function_exists('beyond_expectations_paging_navigation_setup')) {
 
         // Set up paginated links.
         $links = paginate_links( array(
-            'base'     => $pagenum_link,
-            'format'   => $format,
-            'total'    => $GLOBALS['wp_query']->max_num_pages,
-            'current'  => $paged,
-            'mid_size' => 2,
-            'add_args' => array_map( 'urlencode', $query_args ),
+            'base'      => $pagenum_link,
+            'format'    => $format,
+            'total'     => $GLOBALS['wp_query']->max_num_pages,
+            'current'   => $paged,
+            'mid_size'  => 2,
+            'add_args'  => array_map( 'urlencode', $query_args ),
             'prev_text' => __( 'Previous', 'beyond-expectations' ),
             'next_text' => __( 'Next', 'beyond-expectations' ),
-                    'type'      => 'list',
+            'type'      => 'list',
         ) );
 
         if ( $links ) :
@@ -190,10 +183,10 @@ if (!function_exists('beyond_expectations_social_navigation_setup')) {
     function beyond_expectations_social_navigation_setup() {
         if(has_nav_menu('social-navigation')){
             wp_nav_menu(array(
-                'theme_location'    =>  'social-navigation',
-                'container'         =>  'div',
+                'theme_location'    => 'social-navigation',
+                'container'         => 'div',
                 'container_id'      => 'menu-social',
-                'container_class'     => 'menu-social',
+                'container_class'   => 'menu-social',
                 'menu_id'           => 'menu-social-items',
                 'menu_class'        => 'menu-items',
                 'depth'             => 1,
