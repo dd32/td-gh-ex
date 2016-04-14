@@ -1,30 +1,30 @@
-﻿== Sampression Lite ==
+== Sampression Lite ==
 
 Theme Name: Sampression Lite
 Theme URI: http://sampression.com/themes/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.5.3
+Version: 2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 == Theme Description ==
-The first theme for Sampression is clean, lightweight and fully responsive. Its not just another responsive theme - its a unique responsive theme with an attractive masonry blog layout. On the back-end it has a user friendly theme options panel which allows you to easily customize your blog’s header, menus, widgets, background color and image. Upfront its a retina ready, four-column, state-of-the-art blog that will help you reach out to your target audience and their various internet-enabled devices.
+Sampression Lite is a free, Pinterest inspired responsive WordPress theme with an attractive masonry blog layout. The theme has clean and lightweight design. It boasts of user friendly customizing options making it very easy to customize your blog’s header, menus, widgets, background color and images. The theme is also SEO friendly and translation ready, allowing you the freedom of expressing in your native language.
 
 == Features ==
-Responsive design, Theme Options, Custom Logo/Fav Icons/Apple Touch Icons, Custom Widgets, Custom Menu, iSotope jQuery, Sticky Post, W3C validated, supports social media, supports webmaster tools.
+Responsive Design, Cross Browser Compatibility, Custom Code, Custom Logo, Customizer Options, Options to fine tune the theme to your exacting requirement, Easy Customization, Easy Installation, Retina Ready, Search Engine Optimized, Translation Ready, RTL Language Support, Social Media, Typography Options
 
 == Tags ==
-Tags: white, orange, green, one-column, two-columns, responsive-layout, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, right-sidebar
+Tags: custom-background, custom-colors, custom-header, custom-menu, responsive-layout, right-sidebar, four-columns, green, sticky-post, threaded-comments, two-columns, white, orange, translation-ready, rtl-language-support
 
 == Installation ==
 
 1. Primary:
  = Login to your wp-admin account and go to Appearance -> Themes.
  = Select "Install" tab and click on the "Upload" link.
- = Select "theme .zip" and click on "Install Now" button.
+ = Select "theme.zip" and click on "Install Now" button.
  = In case of errors, use an alternate method.
 
 2. Alternate:
@@ -35,28 +35,76 @@ Tags: white, orange, green, one-column, two-columns, responsive-layout, custom-m
 
 3. Log into your WP admin panel and click on "Appearance". Go to "Themes" tab.
 4. Now click on "sampression-lite" to activate the theme.
-5. Complete all of the required inputs in the theme Options page (in the WP admin panel) and click "Save".
 
-6. Change Logo and Favicon:
- = Login to your wp-admin area and go to Appearance -> Theme Options.
- = Select Logo & Icons Tab.
- = Upload the logo, favicon and different sizes of apple touch icons that you require.
+5. Change Logo:
+ = Login to your wp-admin area and go to Appearance -> Customize -> General Settings -> Site Identity.
+ = Upload the logo.
 
-7. Social Media:
- = Login to your wp-admin area and go to Appearance -> Theme Options.
- = Select Social Media tab
- = Here you can add your Facebook, Twitter and Google+ id which appears at the top of the site beside the search form.
+6. Change Background
+ = Login to your wp-admin are and go to Appearance -> Customize -> General Settings -> 
+ = You can upload background image or set background colour here.
 
-8. Advanced Settings:
- = Login to your wp-admin area and go to Appearance -> Theme Options.
- = Select "Advance" tab.
+7. Change display Font-face
+ = Login to your wp-admin are and go to Appearance -> Customize -> General Settings -> Typography
+ = You can set your font’s color and Font-face for both header and body text here.
+ = Sampression Lite now has inbuilt support for 30 popular Google Fonts.
+
+8. Social Media:
+ = Login to your wp-admin area and go to Appearance -> Customize -> Header & Navigation -> Social Media.
+ = Here you can add your social media URLs (we support 11 of the popular social medias) which appears at the top of the site beside the search form.
+
+9. Custom Code:
+ = Login to your wp-admin area and go to Appearance -> Customize -> Custom Code.
  = Here you can add different codes to the header and footer of theme.
-Please be careful to add codes because it might crop the functionality and appearance of theme.
- =You can also add the Webmaster verification codes for Google, Bing and Yahoo.
+   Please be careful to add codes because it might crop the functionality and appearance of theme.
+ = You can also add the Webmaster verification codes for Google, Bing and Yahoo.
 
-9. Copyright & License
- = Sampression Lite, Copyright 2012 Sampression.com
+10. Copyright & License
+ = Sampression Lite, Copyright 2016 Sampression.com
  = Sampression Lite is distributed under the terms of the GNU GPL.
+
+== Credits ==
+
+= Fonts & Icons =
+ = Genericons: https://github.com/Automattic/Genericons/blob/master/LICENSE.txt
+ = Google Web Fonts: Roboto+Slab (https://www.google.com/fonts/specimen/Roboto+Slab) is licensed under Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
+ = Google Web Fonts: Roboto (https://www.google.com/fonts/specimen/Roboto) is licensed under Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
+ = Google Web Fonts: Playfair+Display (https://www.google.com/fonts/specimen/Playfair+Display) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Work+Sans (https://www.google.com/fonts/specimen/Work+Sans) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Alegreya (https://www.google.com/fonts/specimen/Alegreya) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Alegreya+Sans (https://www.google.com/fonts/specimen/Alegreya+Sans) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Fira+Sans (https://www.google.com/fonts/specimen/Fira+Sans) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Droid+Sans (https://www.google.com/fonts/specimen/Droid+Sans) is licensed under Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
+ = Google Web Fonts: Source+Sans+Pro (https://www.google.com/fonts/specimen/Source+Sans+Pro) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Source+Serif+Pro (https://www.google.com/fonts/specimen/Source+Serif+Pro) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Lora (https://www.google.com/fonts/specimen/Lora) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Neuton (https://www.google.com/fonts/specimen/Neuton) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Poppins (https://www.google.com/fonts/specimen/Poppins) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Karla (https://www.google.com/fonts/specimen/Karla) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Merriweather (https://www.google.com/fonts/specimen/Merriweather) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Open+Sans (https://www.google.com/fonts/specimen/Open+Sans) is licensed under Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
+ = Google Web Fonts: Lato (https://www.google.com/fonts/specimen/Lato) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Droid+Serif (https://www.google.com/fonts/specimen/Droid+Serif) is licensed under Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
+ = Google Web Fonts: Archivo+Narrow (https://www.google.com/fonts/specimen/Archivo+Narrow) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Libre+Baskerville (https://www.google.com/fonts/specimen/Libre+Baskerville) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Crimson+Text (https://www.google.com/fonts/specimen/Crimson+Text) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Montserrat (https://www.google.com/fonts/specimen/Montserrat) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Chivo (https://www.google.com/fonts/specimen/Chivo) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Old+Standard+TT (https://www.google.com/fonts/specimen/Old+Standard+TT) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Domine (https://www.google.com/fonts/specimen/Domine) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Varela+Round (https://www.google.com/fonts/specimen/Varela+Round) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Bitter (https://www.google.com/fonts/specimen/Bitter) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Cardo (https://www.google.com/fonts/specimen/Cardo) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: Arvo (https://www.google.com/fonts/specimen/Arvo) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+ = Google Web Fonts: PT+Serif (https://www.google.com/fonts/specimen/PT+Serif) is licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+
+= CSS =
+ = Skeleton: https://github.com/dhg/Skeleton/blob/master/LICENSE.md
+
+= JS =
+ = Shuffle.js by @Vestride (http://vestride.github.io/Shuffle/) - @license MIT license (https://opensource.org/licenses/MIT)
+ = Modernizr: https://github.com/Modernizr/Modernizr - @license MIT license (https://opensource.org/licenses/MIT)
+ = Selectivizr: https://github.com/keithclark/selectivizr - @license MIT license (https://opensource.org/licenses/MIT)
 
 == Changelog ==
 Version 1.1.2.1.2
@@ -75,7 +123,7 @@ Version 1.3
  = Fixed the "Theme Options" issue: Subscribers cannot change "Theme Options" anymore.
  = Supports WP-Pagenavi plugin.
  = Supports dropdown menu.
- = Theme Options layout enchance.
+ = Theme Options layout enhance.
  
 Version 1.3.2
 = Fixed CSS related bugs, especially on the IE browsers < version 9.x
@@ -101,10 +149,10 @@ Version 1.3.2
 = A slightly darker color has been used for links
 = Fixed Meta links now redirect to their respective archive pages
 
-= Users can now use any name for apple touch icons, favicons and logos
-= Added Options to not use the default logos and favicons
+= Users can now use any name for apple touch icons, favicon and logos
+= Added Options to not use the default logos and favicon
 = Removed Site verification, analytics, etc.
-= Removed default logo, favicons and apple touch icons
+= Removed default logo, favicon and apple touch icons
 
 = Few sampression hooks ( sampression_meta, sampression_title, sampression_favicon, sampression_styles, sampression_links, sampression_logo, etc. ) are introduced.
  
@@ -117,7 +165,7 @@ Version 1.4
 = Added: Added rtl.css for RTL(right-to-left) support 
 = Added: Sampresson Lite now supports custom background image and color
 = Added: Sampresson Lite now supports custom header image and color
-= Added: Apple touch icon of size 144x144 for high resolution ipads with option on admin panel
+= Added: Apple touch icon of size 144x144 for high resolution iPads with option on admin panel
 
 = Fixed: Top Nav resizing problem
 = Fixed: Custom code not working
@@ -137,7 +185,7 @@ Version 1.4.1.1
 Version 1.5
 = Added: Responsive video feature added.
 
-= Changed: Isotope jquery plugin replaced by shuffle.js jquery plugin
+= Changed: Isotope jQuery plugin replaced by shuffle.js jQuery plugin
 = Changed: Multiple category filtering changed to single category filtering in home page
 = Changed: Sticky post's position changed from right to left.
 
@@ -145,7 +193,7 @@ Version 1.5
 
 Version 1.5.1
 = Fixed: Repeating id changed to class
-= Fixed: Category Filtering menu fixed in ios devices
+= Fixed: Category Filtering menu fixed in iOS devices
 = Fixed: Removed extra closing tags on sidebar.php file
 
 Version 1.5.2
@@ -166,6 +214,24 @@ Version 1.5.3
 = Added: Buttons/Links on Theme Options header
 = Changed: Copyright text
 = Changed: Translation (.po and .mo files)
+
+Version 2.0
+= Added: All options to Customizer
+= Added: About Theme pages under Appearance menu
+= Added: Social Media Links (Tumblr, Pinterest, Linkedin, Github, Instagram, Flickr, Vimeo)
+= Added: Color options (Body text color and Link color)
+= Added: Theme support - Custom Logo
+= Fixed: Responsive issues
+= Changed: Translation (.po and .mo files)
+= Changed: Theme description
+= Changed: Theme tags
+= Changed: Icons
+= Removed: Theme Options page (Added options to Customizer)
+= Removed: Default widget (Most Popular Posts and Recent Comments) if not added
+= Removed: favicon.png
+= Removed: Hook - sampression_favicon
+= Removed: Hook - sampression_title
+= Removed: Hook - sampression_footer
 
  == Child Theme Support ===
  Sampresson Lite supports child themes. Please use child themes for customization of "Sampression Lite". For further reading: http://codex.wordpress.org/Child_Themes.

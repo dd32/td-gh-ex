@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( !defined('ABSPATH')) exit;
 /**
  * The template for displaying the footer.
  *
@@ -11,26 +13,18 @@
 </div>
 <!-- #content-wrapper -->
 
-<footer id="footer">
-	<div class="container">
-		<div class="columns fourteen">
-            <div class="alignleft copyright"><?php bloginfo( 'name' ); ?> &copy; <?php _e(date('Y')); ?>.</div><?php do_action( 'sampression_credits' ); ?>
-		</div>
+   <?php get_sidebar(); ?>
 
-		<div class="columns two footer-right">
-			<div id="btn-top-wrapper">
-			<a href="javascript:pageScroll('.top');" class="btn-top"><?php _e('Goto Top', 'sampression'); ?></a>
+	<footer id="footer">
+		<div class="container">
+			<div class="columns twelve">
+	            <?php do_action( 'sampression_credits' ); ?>
+	            <div id="btn-top-wrapper">
+				<a href="javascript:pageScroll('.top');" class="btn-top"></a>
+				</div>
 			</div>
-		</div><!--/footer-right-->
-
-	</div><!--.container-->
-</footer><!--#footer-->
-
-<?php 
-	   	/** sampression_footer hook **/
-	   	do_action( 'sampression_footer' );
-	   ?>	
-  
-<?php wp_footer(); ?>
+		</div><!--.container-->
+	</footer><!--#footer-->
+	<?php wp_footer(); ?>
 </body>
 </html>

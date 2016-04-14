@@ -1,5 +1,4 @@
 <?php
-
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
 
@@ -10,33 +9,33 @@ if ( !defined('ABSPATH')) exit;
  * @since Sampression Lite 1.0
  */
 ?>
-<aside id="sidebar" class="columns four sidebar-right" role="complementary">
+<aside class="columns three sidebar sidebar-right">
 
 	<?php
 	// Showing Default Widgets untill User put any widget in "Right Sidebar"
 	 if (!dynamic_sidebar('right-sidebar')) : ?>
             <section class="widget">
-                <header class="widget-title"><?php _e('Most Popular', 'sampression'); ?></header>
+                <h3 class="widget-title"><?php _e('Most Popular', 'sampression'); ?></h3>
                 <div class="widget-entry">
 				<?php $args = array(
-								'showposts' => 5,
+								'posts_per_page' => 5,
 								'orderby' => 'comment_count'
 							);
-						query_posts($args);
-						if (have_posts()):
+						$query = new WP_Query($args);
+						if ($query->have_posts()):
 				?>
                 <ul class="widget-popular-posts">
-                <?php while (have_posts()) : the_post(); ?>
+                <?php while ($query->have_posts()) : $query->the_post(); ?>
                 <li><a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="bookmark" ><?php the_title(); ?></a></li>
 
 				<?php endwhile; ?>	
                 </ul>
-                <?php endif; ?>
+                <?php endif; wp_reset_postdata(); ?>
 				</div>
 			</section><!--.widget-->
             
             <section class="widget">
-                <header class="widget-title"><?php _e('Categories', 'sampression'); ?></header>
+                <h3 class="widget-title"><?php _e('Categories', 'sampression'); ?></h3>
                 <div class="widget-entry">
                 
                 <ul class="widget-categories">
@@ -46,7 +45,7 @@ if ( !defined('ABSPATH')) exit;
 			</section><!--.widget -->
             
               <section class="widget">
-                <header class="widget-title"><?php _e('Archive', 'sampression'); ?></header>
+                <h3 class="widget-title"><?php _e('Archive', 'sampression'); ?></h3>
                 <div class="widget-entry">
                 
                 <ul class="widget-categories">

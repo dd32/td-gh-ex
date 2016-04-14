@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( !defined('ABSPATH')) exit;
 /**
  * The template for displaying all pages.
  *
@@ -14,7 +16,7 @@
 get_header(); ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-<section id="content" class="columns twelve" role="main">
+<section id="content" class="columns nine" role="main">
   <article <?php post_class('post'); ?> id="post-<?php the_ID(); ?>">
     <?php if ( has_post_thumbnail() ) { ?>
     <div class="featured-img">
@@ -36,12 +38,13 @@ get_header(); ?>
       
       <?php if(is_user_logged_in()){ ?>
        <div class="meta">
-      	<div class="edit"><span class="ico">Edit</span> <?php edit_post_link( __( 'Edit', 'sampression' ) ); ?> </div>
+      	<div class="edit genericon-edit"><?php edit_post_link( __( 'Edit', 'sampression' ) ); ?> </div>
        </div>
 	  <?php } ?>
     </div>
+    <?php comments_template( '', true ); ?>
   </article>
-  <?php comments_template( '', true ); ?>
+  
 </section>
 <!-- #content -->
 

@@ -14,7 +14,7 @@ get_header(); ?>
 <section id="content"  class="clearfix">
   <?php if (have_posts()) : ?>
 
-<header class="page-header columns sixteen">
+<header class="page-header columns twelve">
     <h2 class="page-title quick-note"><?php
         printf( __( 'Category Archives: %s', 'sampression' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
     </h2>
@@ -29,15 +29,15 @@ get_header(); ?>
   
 <div id="post-listing" class="clearfix">
   <!-- Corner Stamp: It will always remaing to the right top of the page -->
-  <section class="corner-stamp post columns four item">
-  <header><h3><?php _e('Categories', 'sampression'); ?></h3></header>
+  <section class="corner-stamp post columns three item">
+  <header><h3 class="widget-title"><?php _e('Categories', 'sampression'); ?></h3></header>
   <div class="entry">
     <ul class="categories">
     	<?php wp_list_categories('title_li'); ?> 
     </ul>
   </div>
   
-  <header><h3><?php _e('Archive', 'sampression'); ?></h3></header>
+  <header><h3 class="widget-title"><?php _e('Archive', 'sampression'); ?></h3></header>
   <div class="entry">
     <ul class="categories archives">
     	<?php wp_get_archives( '' ); ?>  
@@ -48,10 +48,10 @@ get_header(); ?>
   
  <?php
   	while (have_posts()) : the_post(); 
-    get_template_part( 'loop', 'category' );
+      get_template_part( 'loop', 'category' );
     endwhile;
 	?>
-    
+    <div class="three columns shuffle__sizer"></div>
 </div>
 <!-- #post-listing --> 
 <?php
@@ -72,8 +72,5 @@ get_header(); ?>
 
 </section>
 <!-- #content -->
-<?php
-// Getting Bottom Sidebar
- get_sidebar(); ?>
 
 <?php get_footer(); ?>

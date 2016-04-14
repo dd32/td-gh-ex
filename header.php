@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( !defined('ABSPATH')) exit;
 /**
  * The Header for our theme.
  *
@@ -15,45 +17,41 @@
 <!--[if IE 9 ]> <html <?php language_attributes(); ?> class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
 <head>
-	<?php		
+	<?php
 		/** sampression hooks **/
 		// Metas
 		do_action( 'sampression_meta' );
-		// Title
-		do_action( 'sampression_title' );
-		// Favicons
-		do_action( 'sampression_favicon' );
-		// CSS
-		do_action( 'sampression_styles' );
-		// Custom header styles
-		do_action('sampression_custom_header_style');
 		// Links
 		do_action( 'sampression_links' );
-		
+    
 		wp_head();
+    // Custom header styles
+    do_action('sampression_custom_header_style');
 	?>
 </head>
 
 <body <?php body_class('top'); ?>>
 <header id="header">
-  <div class="container">
-    <div class="columns nine">
-	
-			<?php
-            if(get_option('opt_sam_use_logo') == 'no' && get_option('opt_sam_logo')) {
-						do_action('sampression_logo');
-				} else {
-			?>
-			
-			<div class="logo-txt">
-			  <h1 class="site-title" id="site-title">
-			  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			  <?php bloginfo( 'name' ); ?>
-			  </a>
-			  </h1>
-			  <h2 id="site-description" class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</div>
-        <?php } ?>
+    <div class="container">
+        <div class="columns five">
+        <?php
+        if( (get_theme_mod( 'custom_logo' ) != '' && get_theme_mod('sampression_remove_logo') != 1) || (get_theme_mod('sampression_logo', get_option('opt_sam_logo')) != '' && get_theme_mod('sampression_remove_logo') != 1) ) {
+			do_action('sampression_logo');
+		} else {
+		?>
+        <div class="logo-txt">
+            <h1 class="site-title" id="site-title">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                    <?php bloginfo( 'name' ); ?>
+			    </a>
+			</h1>
+            <?php if(get_theme_mod('sampression_remove_tagline') != 1) { ?>
+                <h2 id="site-description" class="site-description"><?php bloginfo( 'description' ); ?></h2>
+            <?php } ?>
+		</div>
+        <?php
+        }
+        ?>
     </div>
     <div class="columns seven">
       <nav id="top-nav">
@@ -81,32 +79,96 @@
 				
 	  </div> 
       <!-- #top-nav-mobile-->
-      <div id="interaction-sec" class="clearfix <?php echo getnoofclass(); ?>">
-        <?php get_search_form(); ?>
+      <div id="interaction-sec" class="clearfix">
+       
      
        <ul class="sm-top">
-       <?php // Being Social 
+       <?php // Being Social
 	   //Facebook
-	    if( get_option( 'opt_get_facebook' ) !=''){ ?>
-          <li class="sm-top-fb"><a href="<?php echo stripslashes(get_option( 'opt_get_facebook' )); ?>" target="_blank">Facebook</a></li>
+       $fb_icon = '';
+       if(get_option('opt_get_facebook'))
+           $fb_icon = get_option('opt_get_facebook');
+
+	    if( get_theme_mod( 'sampression_socials_facebook', $fb_icon ) ) { ?>
+          <li class="sm-top-fb"><a class="genericon-facebook-alt" href="<?php echo stripslashes(get_theme_mod( 'sampression_socials_facebook', $fb_icon )); ?>" target="_blank"></a></li>
        <?php }
 		// Twitter
-	   if( get_option( 'opt_get_twitter' ) !='') {
+       $tw_icon = '';
+       if(get_option('opt_get_twitter'))
+           $tw_icon = get_option('opt_get_twitter');
+
+	   if( get_theme_mod( 'sampression_socials_twitter', $tw_icon ) ) {
 	    ?>
-          <li class="sm-top-tw"><a href="<?php echo stripslashes(get_option( 'opt_get_twitter') ); ?>" target="_blank">Twitter</a></li>
+          <li class="sm-top-tw"><a class="genericon-twitter" href="<?php echo stripslashes(get_theme_mod( 'sampression_socials_twitter', $tw_icon ) ); ?>" target="_blank"></a></li>
          <?php }
-		// Google plus 
-	   if( get_option( 'opt_get_gplus' ) !='') {
+		// Google plus
+       $gp_icon = '';
+       if(get_option('opt_get_gplus'))
+           $gp_icon = get_option('opt_get_gplus');
+
+	   if( get_theme_mod( 'sampression_socials_googleplus', $gp_icon ) ) {
 	    ?>
-          <li class="sm-top-gplus"><a href="<?php echo stripslashes(get_option( 'opt_get_gplus') ); ?>" target="_blank">Google Plus</a></li>
+          <li class="sm-top-gplus"><a class="genericon-googleplus" href="<?php echo stripslashes(get_theme_mod( 'sampression_socials_googleplus', $gp_icon ) ); ?>" target="_blank"></a></li>
           <?php } 
 		// Youtube
-		if( get_option( 'opt_get_youtube' ) !='' ) {
+       $yt_icon = '';
+       if(get_option('opt_get_youtube'))
+           $yt_icon = get_option('opt_get_youtube');
+
+		if( get_theme_mod( 'sampression_socials_youtube', $yt_icon ) ) {
 	    ?>
-          <li class="sm-top-youtube"><a href="<?php echo stripslashes(get_option( 'opt_get_youtube') ); ?>" target="_blank">YouTube</a></li>
-          <?php } ?> 
+          <li class="sm-top-youtube"><a class="genericon-youtube" href="<?php echo stripslashes(get_theme_mod( 'sampression_socials_youtube', $yt_icon ) ); ?>" target="_blank"></a></li>
+          <?php }
+        // Tumblr
+        if( get_theme_mod( 'sampression_socials_tumblr' ) ) {
+        ?>
+          <li class="sm-top-tumblr"><a class="genericon-tumblr" href="<?php echo stripslashes(get_theme_mod( 'sampression_socials_tumblr' ) ); ?>" target="_blank"></a></li>
+        <?php
+        }
+        // Pinterest
+        if( get_theme_mod( 'sampression_socials_pinterest' ) ) {
+        ?>
+          <li class="sm-top-pinterest"><a class="genericon-pinterest" href="<?php echo stripslashes(get_theme_mod( 'sampression_socials_pinterest' ) ); ?>" target="_blank"></a></li>
+        <?php
+        }
+        // Linkedin
+        if( get_theme_mod( 'sampression_socials_linkedin' ) ) {
+        ?>
+          <li class="sm-top-linkedin"><a class="genericon-linkedin" href="<?php echo stripslashes(get_theme_mod( 'sampression_socials_linkedin' ) ); ?>" target="_blank"></a></li>
+        <?php
+        }
+        // Github
+        if( get_theme_mod( 'sampression_socials_github' ) ) {
+        ?>
+          <li class="sm-top-github"><a class="genericon-github" href="<?php echo stripslashes(get_theme_mod( 'sampression_socials_github' ) ); ?>" target="_blank"></a></li>
+        <?php
+        }
+        // Instagram
+        if( get_theme_mod( 'sampression_socials_instagram' ) ) {
+        ?>
+          <li class="sm-top-instagram"><a class="genericon-instagram" href="<?php echo stripslashes(get_theme_mod( 'sampression_socials_instagram' ) ); ?>" target="_blank"></a></li>
+        <?php
+        }
+        // Flickr
+        if( get_theme_mod( 'sampression_socials_flickr' ) ) {
+        ?>
+          <li class="sm-top-flickr"><a class="genericon-flickr" href="<?php echo stripslashes(get_theme_mod( 'sampression_socials_flickr' ) ); ?>" target="_blank"></a></li>
+        <?php
+        }
+        // Vimeo
+        if( get_theme_mod( 'sampression_socials_vimeo' ) ) {
+        ?>
+          <li class="sm-top-vimeo"><a class="genericon-vimeo" href="<?php echo stripslashes(get_theme_mod( 'sampression_socials_vimeo' ) ); ?>" target="_blank"></a></li>
+        <?php
+        }
+        ?> 
        </ul>
         <!-- .sm-top --> 
+         <?php
+        if( get_theme_mod( 'sampression_remove_search' ) != 1 ) {
+            get_search_form();
+        }
+        ?>
       </div>
       <!-- #interaction-sec -->
     </div>
@@ -121,8 +183,11 @@
 <span id="primary-nav-scroll"></span>
 <nav id="primary-nav">
   <div class="container">
-  <a href="#" id="btn-nav-opt">show/hide</a>
-  <div class="columns sixteen">
+  <a href="#" id="btn-nav-opt">
+    <i class="genericon-collapse"></i>
+    <i class="genericon-expand"></i>
+  </a>
+  <div class="columns twelve">
     <div class="nav-label"><?php _e('Filter By:','sampression'); ?></div>
 	
     <ul class="nav-listing clearfix" id="filter">

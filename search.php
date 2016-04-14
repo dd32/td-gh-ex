@@ -14,7 +14,7 @@ get_header(); ?>
 <section id="content" class="clearfix">
   <?php if (have_posts()) : ?>
 
-<header class="page-header columns sixteen">
+<header class="page-header columns twelve">
     <h2 class="page-title quick-note search-title"><?php
         printf( __( 'Search Results for: %s', 'sampression' ), '<span>' . get_search_query() . '</span>' ); ?>
     </h2>
@@ -24,9 +24,9 @@ get_header(); ?>
   
    <?php
   	while (have_posts()) : the_post(); 
-    get_template_part( 'loop', 'search' );
+      get_template_part( 'loop', 'search' );
     endwhile;
-	?>
+	?><div class="three columns shuffle__sizer"></div>
     
 </div>
 <!-- #post-listing --> 
@@ -47,6 +47,5 @@ get_header(); ?>
   
 </section>
 <!-- #content -->
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
