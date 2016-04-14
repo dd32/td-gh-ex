@@ -332,41 +332,6 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			
 			),
 
-			/* LOGIN AREA SECTION */ 
-
-			array( 
-
-				"title" => __( "Login Area",'suevafree'),
-				"type" => "section",
-				"id" => "login_area_section",
-				"panel" => "general_panel",
-				"priority" => "15",
-
-			),
-
-			array( 
-
-				"label" => __( "Custom Logo",'suevafree'),
-				"description" => __( "Upload your custom logo, for the admin area.( Max 320px as width )",'suevafree'),
-				"id" => "suevafree_login_logo",
-				"type" => "upload",
-				"section" => "login_area_section",
-				"std" => "",
-
-			),
-
-
-			array( 
-
-				"label" => __( "Height",'suevafree'),
-				"description" => __( "Insert the height of your custom logo, without “px” (for example 550 and not 550px).",'suevafree'),
-				"id" => "suevafree_login_logo_height",
-				"type" => "text",
-				"section" => "login_area_section",
-				"std" => "550",
-
-			),
-
 			/* HEADER AREA SECTION */ 
 
 			array( 

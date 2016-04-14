@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 2.1.3 - Released: 14.04.2016
+
+-- Removed: Custom admin logo ( You can use ‘WIP Custom Login’ plugin, available on WordPress.org )
+
 - Version 2.1.1 - Released: 29.03.2016
 
 -- Fixed: Search widget layout.

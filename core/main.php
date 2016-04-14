@@ -34,8 +34,6 @@ if ( ! function_exists( 'suevafree_is_woocommerce_active' ) ) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-
-/*-----------------------------------------------------------------------------------*/
 /* TAG TITLE */
 /*-----------------------------------------------------------------------------------*/  
 
@@ -465,81 +463,6 @@ if (!function_exists('suevafree_template')) {
 	}
 	
 }
-
-/*-----------------------------------------------------------------------------------*/
-/* LOGIN AREA */
-/*-----------------------------------------------------------------------------------*/ 
-
-if ( ! function_exists( 'suevafree_custom_login_logo' ) ) {
- 
-	function suevafree_custom_login_logo() { 
-	
-		if ( suevafree_setting('suevafree_login_logo') ) : ?>
-	
-			<style type="text/css">
-
-				body.login div#login h1 a {
-					background-image: url('<?php echo esc_url(suevafree_setting('suevafree_login_logo')); ?>');
-					-webkit-background-size: inherit;
-					background-size: inherit ;
-					width:100%;
-					
-					<?php 
-					
-						if ( suevafree_setting('suevafree_login_logo_height') ) :
-						
-							echo 'height:'.suevafree_setting('suevafree_login_logo_height').'px;';
-						
-						else:
-
-							echo 'height:550px;';
-
-						endif;
-					
-					?>
-				
-				}
-				
-			</style>
-		
-	<?php 
-	
-		endif;
-	
-	}
-	
-	add_action( 'login_enqueue_scripts', 'suevafree_custom_login_logo' );
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* LOGIN LOGO URL */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('suevafree_login_logo_url')) {
-
-	function suevafree_login_logo_url() {
-		return home_url();
-	}
-
-	add_filter( 'login_headerurl', 'suevafree_login_logo_url' );
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* LOGIN LOGO TITLE */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('suevafree_login_logo_title')) {
-
-	function suevafree_login_logo_title() {
-		return get_bloginfo('name') . " | " . get_bloginfo('description') ;
-	}
-	
-	add_filter( 'login_headertitle', 'suevafree_login_logo_title' );
-	
-}
-
 
 /*-----------------------------------------------------------------------------------*/
 /* Excerpt */
