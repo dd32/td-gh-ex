@@ -25,4 +25,4 @@ from the single.php in a loop and displays the content here.
         <?php wp_link_pages(); ?>
     </div>
     <?php comments_template(); ?>
-</article>e
+</article>

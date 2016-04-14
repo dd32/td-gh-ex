@@ -24,7 +24,7 @@ archive in many ways.
     <div class="entry-content-container">
         <div class="entry-metadata-container cf">
             <div class="posted-comments">
-                <?php beyond_expectations_add_comments_setup(); ?>
+                <?php beyond_expectations_entry_meta(); ?>
             </div>
         </div>
         <div class="entry-content">
@@ -33,19 +33,7 @@ archive in many ways.
                     <a href="<?php echo get_permalink(); ?>"><?php _e('Read More', 'beyond-expectations'); ?></a>
                 </div>
             <?php wp_link_pages(); ?>
-            
-            <div class="index-meta cf">
-                <ul>
-                    <li>
-                        <?php
-                            $category_terms = wp_get_post_categories( $post->ID );
-                                if ( $category_terms ) {
-                                    echo the_category(); 
-                                }
-                        ?>
-                    </li>
-                </ul>		
-            </div>
+            <?php beyond_expectations_entry_taxonomies(); ?>
         </div>
     </div>
 </article>
