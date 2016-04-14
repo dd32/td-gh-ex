@@ -62,6 +62,40 @@ if (!function_exists('bazaarlite_breadcrumb')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* LOGO */
+/*-----------------------------------------------------------------------------------*/   
+
+if (!function_exists('bazaarlite_get_logo')) {
+
+	function bazaarlite_get_logo() {
+		
+		if ( function_exists( 'the_custom_logo' ) && get_custom_logo() ) :
+		
+			the_custom_logo();
+						
+		else :
+		
+			echo '<a href="' . esc_url(home_url()) . '" title="' . get_bloginfo('name') . '">';
+			
+				if ( bazaarlite_setting('wip_custom_logo') ):
+                                                
+					echo "<img src='" . bazaarlite_setting('wip_custom_logo') . "' alt='logo'>"; 
+                                           
+				else: 
+                                                
+					bloginfo('name');
+            
+				endif; 
+
+			echo '</a>';
+
+		endif;
+		
+	}
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* READ MORE */
 /*-----------------------------------------------------------------------------------*/   
 
@@ -218,37 +252,6 @@ if (!function_exists('bazaarlite_prettyPhoto')) {
 	
 	add_filter( 'wp_get_attachment_link', 'bazaarlite_prettyPhoto', 10, 6);
 	
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* REMOVE CATEGORY LIST REL */
-/*-----------------------------------------------------------------------------------*/   
-
-if (!function_exists('bazaarlite_remove_category_list_rel')) {
-
-	function bazaarlite_remove_category_list_rel($output) {
-		$output = str_replace('rel="category"', '', $output);
-		return $output;
-	}
-	
-	add_filter('wp_list_categories', 'bazaarlite_remove_category_list_rel');
-	add_filter('the_category', 'bazaarlite_remove_category_list_rel');
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* REMOVE THUMBNAIL DIMENSION */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('bazaarlite_remove_thumbnail_dimensions')) {
-
-	function bazaarlite_remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
-		$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-		return $html;
-	}
-	
-	add_filter( 'post_thumbnail_html', 'bazaarlite_remove_thumbnail_dimensions', 10, 3 );
-
 }
 
 /*-----------------------------------------------------------------------------------*/

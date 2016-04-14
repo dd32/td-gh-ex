@@ -92,115 +92,6 @@ if (!function_exists('bazaarlite_postmeta')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* REQUIRE */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('bazaarlite_require')) {
-
-	function bazaarlite_require() {
-
-		$files = array (
-			'/core/classes/customize.php',
-			'/core/classes/metaboxes.php',
-			'/core/admin/customize/customize.php',
-			'/core/admin/customize/general.php',
-			'/core/templates/after-content.php',
-			'/core/templates/before-content.php',
-			'/core/templates/bottom_sidebar.php',
-			'/core/templates/breadcrumb.php',
-			'/core/templates/footer_sidebar.php',
-			'/core/templates/header_sidebar.php',
-			'/core/templates/masonry.php',
-			'/core/templates/media.php',
-			'/core/templates/pagination.php',
-			'/core/templates/post-formats.php',
-			'/core/templates/readmore.php',
-			'/core/templates/side_sidebar.php',
-			'/core/templates/social_buttons.php',
-			'/core/templates/title.php',
-			'/core/scripts/infinitescroll.php',
-			'/core/scripts/infinitescroll_masonry.php',
-			'/core/scripts/masonry.php',
-			'/core/functions/functions_generals.php',
-			'/core/functions/functions_style.php',
-			'/core/functions/functions_templates.php',
-			'/core/functions/functions_widgets.php',
-			'/core/functions/functions_woocommerce.php',
-			'/core/metaboxes/pages.php',
-			'/core/metaboxes/posts.php',
-			'/core/metaboxes/product.php'
-		);
-		
-		foreach ($files as $file ) {
-
-			require_once( trailingslashit( get_template_directory() ) . $file );
-
-		}
-		
-	}
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* SCRIPTS */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('bazaarlite_enqueue_script')) {
-
-	function bazaarlite_enqueue_script() {
-
-		$files = array (
-			'bazaar-lite-jquery.easing' => '/assets/js/jquery.easing.js',
-			'bazaar-lite-jquery.imagesloaded' => '/assets/js/jquery.imagesloaded.js',
-			'bazaar-lite-jquery.infinitescroll' => '/assets/js/jquery.infinitescroll.js',
-			'bazaar-lite-jquery.modernizr' => '/assets/js/jquery.modernizr.js',
-			'bazaar-lite-jquery.prettyPhoto' => '/assets/js/jquery.prettyPhoto.js',
-			'bazaar-lite-jquery.scrollTo' => '/assets/js/jquery.scrollTo.js',
-			'bazaar-lite-jquery.swipebox' => '/assets/js/jquery.swipebox.js',
-			'bazaar-lite-jquery.tinynav' => '/assets/js/jquery.tinynav.js',
-			'bazaar-lite-jquery.wip' => '/assets/js/jquery.wip.js'
-		);
-		
-		foreach ($files as $name => $file ) {
-
-			wp_enqueue_script( $name, get_template_directory_uri() . $file , array('jquery'), FALSE, TRUE ); 
-
-		}
-		
-	}
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* STYLES */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('bazaarlite_enqueue_style')) {
-
-	function bazaarlite_enqueue_style() {
-
-		$files = array (
-			'bazaar-lite-bootstrap' => '/assets/css/bootstrap.css',
-			'bazaar-lite-font-awesome' => '/assets/css/font-awesome.css',
-			'bazaar-lite-genericons' => '/assets/css/genericons.css',
-			'bazaar-lite-minimal_layout' => '/assets/css/minimal_layout.css',
-			'bazaar-lite-prettyPhoto' => '/assets/css/prettyPhoto.css',
-			'bazaar-lite-swipebox' => '/assets/css/swipebox.css',
-			'bazaar-lite-template' => '/assets/css/template.css',
-			'bazaar-lite-woocommerce' => '/assets/css/woocommerce.css'
-		);
-		
-		foreach ($files as $name => $file ) {
-
-			wp_enqueue_style ( $name, get_template_directory_uri() . $file );
-
-		}
-
-	}
-
-}
-
-/*-----------------------------------------------------------------------------------*/
 /* THUMBNAILS */
 /*-----------------------------------------------------------------------------------*/         
 
@@ -253,7 +144,9 @@ if (!function_exists('bazaarlite_setup')) {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'title-tag' );
-		
+
+		add_theme_support( 'custom-logo');
+
 		add_image_size( 'bazaar-lite-thumbnail', bazaarlite_get_width(), bazaarlite_get_height(), TRUE ); 
 		add_image_size( 'bazaar-lite-product', 500,500, TRUE ); 
 	
@@ -265,11 +158,94 @@ if (!function_exists('bazaarlite_setup')) {
 			'default-color' => 'fafafa',
 		) );
 		
-		bazaarlite_require();
+		require_once( trailingslashit( get_template_directory() ) . '/core/classes/customize.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/classes/metaboxes.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/admin/customize/customize.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/admin/customize/general.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/after-content.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/before-content.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/bottom_sidebar.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/breadcrumb.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/footer_sidebar.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/header_sidebar.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/masonry.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/media.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/pagination.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/post-formats.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/readmore.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/side_sidebar.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/social_buttons.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/title.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/scripts/infinitescroll.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/scripts/infinitescroll_masonry.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/scripts/masonry.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/functions/functions_generals.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/functions/functions_style.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/functions/functions_templates.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/functions/functions_widgets.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/functions/functions_woocommerce.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/metaboxes/pages.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/metaboxes/posts.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/metaboxes/product.php' );
 		
 	}
 
 	add_action( 'after_setup_theme', 'bazaarlite_setup' );
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* STYLES AND SCRIPTS */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('bazaarlite_scripts_styles')) {
+
+	function bazaarlite_scripts_styles() {
+
+		wp_enqueue_style( 'bazaar-style', get_stylesheet_uri(), array() );
+
+		wp_enqueue_style ( 'bazaar-lite-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css' );
+		wp_enqueue_style ( 'bazaar-lite-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css' );
+		wp_enqueue_style ( 'bazaar-lite-genericons', get_template_directory_uri() . '/assets/css/genericons.css' );
+		wp_enqueue_style ( 'bazaar-lite-minimal_layout', get_template_directory_uri() . '/assets/css/minimal_layout.css' );
+		wp_enqueue_style ( 'bazaar-lite-prettyPhoto', get_template_directory_uri() . '/assets/css/prettyPhoto.css' );
+		wp_enqueue_style ( 'bazaar-lite-swipebox', get_template_directory_uri() . '/assets/css/swipebox.css' );
+		wp_enqueue_style ( 'bazaar-lite-template', get_template_directory_uri() . '/assets/css/template.css' );
+		wp_enqueue_style ( 'bazaar-lite-woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css' );
+	
+		if ( ( get_theme_mod('wip_skin') ) && ( get_theme_mod('wip_skin') <> "black_turquoise" ) ):
+	
+			wp_enqueue_style( 'bazaar-lite-' . get_theme_mod('wip_skin') , get_template_directory_uri() . '/assets/skins/' . get_theme_mod('wip_skin') . '.css' ); 
+	
+		endif;
+		
+		wp_enqueue_style( 'bazaar-lite-google-fonts', '//fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Yesteryear' );
+		
+		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+	
+		wp_enqueue_script( "jquery-ui-core", array('jquery'));
+		wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
+		wp_enqueue_script( "masonry", array('jquery') );
+
+		wp_enqueue_script( 'bazaar-lite-jquery.easing', get_template_directory_uri() . '/assets/js/jquery.easing.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'bazaar-lite-jquery.imagesloaded', get_template_directory_uri() . '/assets/js/jquery.imagesloaded.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'bazaar-lite-jquery.infinitescroll', get_template_directory_uri() . '/assets/js/jquery.infinitescroll.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'bazaar-lite-jquery.modernizr', get_template_directory_uri() . '/assets/js/jquery.modernizr.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'bazaar-lite-jquery.prettyPhoto', get_template_directory_uri() . '/assets/js/jquery.prettyPhoto.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'bazaar-lite-jquery.scrollTo', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'bazaar-lite-jquery.swipebox', get_template_directory_uri() . '/assets/js/jquery.swipebox.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'bazaar-lite-jquery.tinynav', get_template_directory_uri() . '/assets/js/jquery.tinynav.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'bazaar-lite-jquery.wip', get_template_directory_uri() . '/assets/js/jquery.wip.js' , array('jquery'), FALSE, TRUE ); 
+
+		wp_enqueue_script ( 'bazaar-lite-html5',get_template_directory_uri().'/js/html5.js');
+		wp_script_add_data ( 'bazaar-lite-html5', 'conditional', 'IE 8' );
+		
+		wp_enqueue_script ( 'bazaar-lite-selectivizr',get_template_directory_uri().'/js/selectivizr-min.js');
+		wp_script_add_data ( 'bazaar-lite-selectivizr', 'conditional', 'IE 8' );
+
+	}
+	
+	add_action( 'wp_enqueue_scripts', 'bazaarlite_scripts_styles', 11 );
 
 }
 

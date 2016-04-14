@@ -103,28 +103,6 @@ if (!function_exists('bazaarlite_is_single')) {
 
 }
 
-
-/*-----------------------------------------------------------------------------------*/
-/* VERSION */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('bazaarlite_remove_version')) {
-
-	function bazaarlite_remove_version( $src ) {
-	
-		if ( strpos( $src, 'ver=' ) )
-	
-			$src = remove_query_arg( 'ver', $src );
-	
-		return $src;
-	
-	}
-
-	add_filter( 'style_loader_src', 'bazaarlite_remove_version', 9999 );
-	add_filter( 'script_loader_src', 'bazaarlite_remove_version', 9999 );
-
-}
-
 /*-----------------------------------------------------------------------------------*/
 /* TAG TITLE */
 /*-----------------------------------------------------------------------------------*/  
@@ -265,38 +243,5 @@ if (!function_exists('bazaarlite_hide_excerpt_more')) {
 
 }
 
-/*-----------------------------------------------------------------------------------*/
-/* STYLES AND SCRIPTS */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('bazaarlite_scripts_styles')) {
-
-	function bazaarlite_scripts_styles() {
-
-		wp_enqueue_style( 'bazaar-style', get_stylesheet_uri(), array() );
-
-		bazaarlite_enqueue_style();
-	
-		if ( ( get_theme_mod('wip_skin') ) && ( get_theme_mod('wip_skin') <> "black_turquoise" ) ):
-	
-			wp_enqueue_style( 'bazaar-lite-' . get_theme_mod('wip_skin') , get_template_directory_uri() . '/assets/skins/' . get_theme_mod('wip_skin') . '.css' ); 
-	
-		endif;
-		
-		wp_enqueue_style( 'bazaar-lite-google-fonts', '//fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Yesteryear' );
-		
-		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-	
-		wp_enqueue_script( "jquery-ui-core", array('jquery'));
-		wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
-		wp_enqueue_script( "masonry", array('jquery') );
-
-		bazaarlite_enqueue_script();
-		
-	}
-	
-	add_action( 'wp_enqueue_scripts', 'bazaarlite_scripts_styles', 11 );
-
-}
 
 ?>
