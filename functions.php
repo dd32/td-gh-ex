@@ -103,7 +103,7 @@ add_action( 'widgets_init', 'annina_widgets_init' );
  */
 function annina_scripts() {
 	wp_enqueue_style( 'annina-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'annina-fontAwesome', get_template_directory_uri() .'/css/font-awesome.min.css');
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/css/font-awesome.min.css');
 	$protocol = is_ssl() ? 'https' : 'http';
 	wp_enqueue_style( 'annina-googlefonts', $protocol .'://fonts.googleapis.com/css?family=Lato:300,400,700');
 

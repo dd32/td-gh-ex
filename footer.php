@@ -13,7 +13,7 @@
 			<div class="text-copy">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'annina' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'annina' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( '%1$s by %2$s.', 'annina' ), 'Annina Free', '<a target="_blank" href="http://crestaproject.com" rel="designer" title="CrestaProject">CrestaProject</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'annina' ), 'Annina Free', '<a target="_blank" href="http://crestaproject.com/downloads/annina/" rel="designer" title="CrestaProject">CrestaProject</a>' ); ?>
 			</div>
 			<div id="toTop"><i class="fa fa-angle-up fa-lg"></i></div>
 		</div><!-- .site-info -->

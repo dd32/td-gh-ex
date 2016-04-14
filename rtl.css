@@ -57,3 +57,6 @@ textarea {
 	padding-right: 14px;
 	padding-left: 0;
 }
+span.read-more i.fa-caret-right:before {
+	content: "\f0d9";
+}

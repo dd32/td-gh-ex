@@ -20,12 +20,14 @@
 		/*  Masonry & ImagesLoaded
 		/*-----------------------------------------------------------------------------------*/ 	
 		if ( $( '#mainAnnina' ).length ) {
+			var whatText = $('body').hasClass('rtl') ? true : false;
 			var $container = $('#mainAnnina').masonry();
 			$container.imagesLoaded(function(){
 				$container.masonry({
 				  columnWidth: '.grid-sizer',
 				  itemSelector: '.anninamas',
-				  transitionDuration: '0.3s'
+				  transitionDuration: '0.3s',
+				  isRTL: whatText
 				});
 			});
 		}
@@ -43,7 +45,11 @@
 		/*-----------------------------------------------------------------------------------*/
 		/*  Home icon in main menu
 		/*-----------------------------------------------------------------------------------*/ 
-			$('.main-navigation .menu-item-home > a').prepend('<i class="fa fa-home spaceRight"></i>');
+			if($('body').hasClass('rtl')) {
+				$('.main-navigation .menu-item-home > a').append('<i class="fa fa-home spaceLeft"></i>');
+			} else {
+				$('.main-navigation .menu-item-home > a').prepend('<i class="fa fa-home spaceRight"></i>');
+			}
 			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Search button
