@@ -133,38 +133,11 @@ function aripop_theme_customizer( $wp_customize ) {
 	
 		 
 	
-	
-	
-	
 	 
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-		$wp_customize->add_setting(
-	    'custom_css', array(
-		    'default' => '',
-			'capability' => 'edit_theme_options', 
-		    'sanitize_callback' => 'wp_filter_nohtml_kses',
-			'sanitize_js_callback' => 'wp_filter_nohtml_kses'
-	    )
-	);
-	
-	$wp_customize->add_control(
-		'aripop_custom_css_control', array(
-			'label'    => __( 'Custom CSS', 'aripop' ),
-			'section' => 'aripop_logo_section',
-			'settings' => 'custom_css',
-			'type' => 'textarea',
-		)
-	);
-	
+	 
 	
 }
 add_action('customize_register', 'aripop_theme_customizer');
@@ -493,7 +466,7 @@ function aripop_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }
 // Sanitize Textarea
-function aripop_sanitize_textarea($input) {
+function aripop_sanitize_text_field($input) {
 	global $allowedposttags;
 	$output = wp_kses( $input, $allowedposttags);
 	return $output;
@@ -508,7 +481,7 @@ function aripop_sanitize_checkbox( $input ) {
 	return $output;
 }
 // Sanitize Numbers
-function aripop_sanitize_integer( $input ) {
+function aripop_absint( $input ) {
 	$value = (int) $input; // Force the value into integer type.
     return ( 0 < $input ) ? $input : null;
 }
