@@ -22,7 +22,7 @@
 							'before_title' => '<div class="widget_title"><h2><i>',
 							'after_title' => '</i></h2></div>', );
 							
-							the_widget('WP_Widget_Calendar', null, $footer_widget);
+							the_widget('WP_Widget_Calendar','title=Calendar', $footer_widget);
 							the_widget('WP_Widget_Categories', null, $footer_widget);
 							the_widget('WP_Widget_Pages', null, $footer_widget);
 							the_widget('WP_Widget_Archives', null, $footer_widget);
