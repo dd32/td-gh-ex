@@ -143,54 +143,6 @@
 		)
 	);
 
-	// Setting - flg_enable_footer_widgets.
-	$wp_customize->add_setting( 'blueplanet_options[flg_enable_footer_widgets]',
-		array(
-		'default'              => $new_defaults['flg_enable_footer_widgets'],
-		'capability'           => 'edit_theme_options',
-		'sanitize_callback'    => 'blue_planet_sanitize_checkbox_input',
-		'sanitize_js_callback' => 'blue_planet_sanitize_checkbox_output',
-		)
-	);
-	$wp_customize->add_control(
-		'blueplanet_options[flg_enable_footer_widgets]',
-		array(
-		'label'       => __( 'Enable Footer Widgets', 'blue-planet' ),
-		'section'     => 'blue_planet_options_footer',
-		'settings'    => 'blueplanet_options[flg_enable_footer_widgets]',
-		'type'        => 'checkbox',
-		'priority'    => 45,
-		)
-	);
-
-	// Setting - number_of_footer_widgets.
-	$wp_customize->add_setting( 'blueplanet_options[number_of_footer_widgets]',
-		array(
-		'default'              => $new_defaults['number_of_footer_widgets'],
-		'capability'           => 'edit_theme_options',
-		'sanitize_callback'    => 'esc_attr',
-		'sanitize_js_callback' => 'esc_attr',
-		)
-	);
-	$wp_customize->add_control(
-		'blueplanet_options[number_of_footer_widgets]',
-		array(
-		'label'           => __( 'Number of Footer widgets', 'blue-planet' ),
-		'section'         => 'blue_planet_options_footer',
-		'settings'        => 'blueplanet_options[number_of_footer_widgets]',
-		'active_callback' => 'blue_planet_check_footer_widgets_status_cb',
-		'type'            => 'select',
-		'priority'        => 50,
-		'choices'         => array(
-								'1' => 1,
-								'2' => 2,
-								'3' => 3,
-								'4' => 4,
-								'6' => 6,
-							),
-		)
-	);
-
 	// Setting - copyright_text.
 	$wp_customize->add_setting( 'blueplanet_options[copyright_text]',
 		array(
@@ -277,7 +229,7 @@
 		'label'       => __( 'Default Layout', 'blue-planet' ),
 		'section'     => 'blue_planet_options_layout',
 		'settings'    => 'blueplanet_options[default_layout]',
-		'type'        => 'radio',
+		'type'        => 'select',
 		'priority'    => 55,
 		'choices'    => array(
 			'right-sidebar' => __( 'Right Sidebar', 'blue-planet' ),
@@ -286,7 +238,7 @@
 		)
 	);
 
-	// Setting - content_layout.
+	// Setting - content_layout ~ Archive Layout.
 	$wp_customize->add_setting( 'blueplanet_options[content_layout]',
 		array(
 		'default'              => $new_defaults['content_layout'],
@@ -297,16 +249,96 @@
 	$wp_customize->add_control(
 		'blueplanet_options[content_layout]',
 		array(
-		'label'       => __( 'Content Layout', 'blue-planet' ),
+		'label'       => __( 'Archive Layout', 'blue-planet' ),
 		'section'     => 'blue_planet_options_layout',
 		'settings'    => 'blueplanet_options[content_layout]',
-		'type'        => 'radio',
+		'type'        => 'select',
 		'priority'    => 65,
 		'choices'    => array(
 			'full'          => __( 'Full', 'blue-planet' ),
 			'excerpt'       => __( 'Excerpt', 'blue-planet' ),
 			'excerpt-thumb' => __( 'Excerpt with thumbnail', 'blue-planet' ),
 		  ),
+		)
+	);
+
+	// Setting - archive_image.
+	$wp_customize->add_setting( 'blueplanet_options[archive_image]',
+		array(
+		'default'              => $new_defaults['archive_image'],
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'blue_planet_sanitize_select',
+		)
+	);
+	$wp_customize->add_control(
+		'blueplanet_options[archive_image]',
+		array(
+		'label'    => __( 'Image in Archive', 'blue-planet' ),
+		'section'  => 'blue_planet_options_layout',
+		'settings' => 'blueplanet_options[archive_image]',
+		'type'     => 'select',
+		'priority' => 65,
+		'choices'  => blue_planet_get_image_sizes_options(),
+		)
+	);
+
+	// Setting - archive_image_alignment.
+	$wp_customize->add_setting( 'blueplanet_options[archive_image_alignment]',
+		array(
+		'default'              => $new_defaults['archive_image_alignment'],
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'blue_planet_sanitize_select',
+		)
+	);
+	$wp_customize->add_control(
+		'blueplanet_options[archive_image_alignment]',
+		array(
+		'label'    => __( 'Image Alignment in Archive', 'blue-planet' ),
+		'section'  => 'blue_planet_options_layout',
+		'settings' => 'blueplanet_options[archive_image_alignment]',
+		'type'     => 'select',
+		'priority' => 65,
+		'choices'  => blue_planet_get_image_alignment_options(),
+		)
+	);
+
+	// Setting - single_image.
+	$wp_customize->add_setting( 'blueplanet_options[single_image]',
+		array(
+		'default'              => $new_defaults['single_image'],
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'blue_planet_sanitize_select',
+		)
+	);
+	$wp_customize->add_control(
+		'blueplanet_options[single_image]',
+		array(
+		'label'    => __( 'Image in Single Post/Page', 'blue-planet' ),
+		'section'  => 'blue_planet_options_layout',
+		'settings' => 'blueplanet_options[single_image]',
+		'type'     => 'select',
+		'priority' => 65,
+		'choices'  => blue_planet_get_image_sizes_options(),
+		)
+	);
+
+	// Setting - single_image_alignment.
+	$wp_customize->add_setting( 'blueplanet_options[single_image_alignment]',
+		array(
+		'default'              => $new_defaults['single_image_alignment'],
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'blue_planet_sanitize_select',
+		)
+	);
+	$wp_customize->add_control(
+		'blueplanet_options[single_image_alignment]',
+		array(
+		'label'    => __( 'Image Alignment in Single Post/Page', 'blue-planet' ),
+		'section'  => 'blue_planet_options_layout',
+		'settings' => 'blueplanet_options[single_image_alignment]',
+		'type'     => 'select',
+		'priority' => 65,
+		'choices'  => blue_planet_get_image_alignment_options(),
 		)
 	);
 

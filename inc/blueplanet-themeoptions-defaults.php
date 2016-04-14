@@ -10,15 +10,15 @@
 /**
  * Get theme option.
  *
- * @since 1.0.0
+ * @since 3.0.0
  *
  * @param string $key Option key.
  * @return mixed Option value.
  */
-function blueplanet_get_option( $key ) {
+function blue_planet_get_option( $key ) {
 
-	$defaults = blueplanet_get_default_options();
-	$options = blueplanet_get_option_all();
+	$defaults = blue_planet_get_default_options();
+	$options = blue_planet_get_option_all();
 
 	$output = '';
 
@@ -31,25 +31,18 @@ function blueplanet_get_option( $key ) {
 	}
 	return $output;
 
-	// Set default value first.
-	if ( is_array( $defaults ) && isset( $defaults[ $key ] ) ) {
-		$output = $defaults[ $key ];
-	}
-
-	return $output;
-
 }
 
 /**
  * Get all theme options.
  *
- * @since 1.0.0
+ * @since 3.0.0
  *
  * @return array Theme options.
  */
-function blueplanet_get_option_all() {
+function blue_planet_get_option_all() {
 
-	$defaults = blueplanet_get_default_options();
+	$defaults = blue_planet_get_default_options();
 
 	$output = get_theme_mod( 'blueplanet_options', $defaults );
 
@@ -62,32 +55,34 @@ function blueplanet_get_option_all() {
 /**
  * Get default theme options.
  *
- * @since 1.0.0
+ * @since 3.0.0
  *
  * @return array Default theme options.
  */
-function blueplanet_get_default_options() {
+function blue_planet_get_default_options() {
 
 	$defaults = array(
 		'custom_css'                   => '',
-		'flg_enable_goto_top'          => '1',
+		'flg_enable_goto_top'          => 1,
 		'banner_background_color'      => '#00ADB3',
 		'search_placeholder'           => esc_html__( 'Search...', 'blue-planet' ),
-		'flg_hide_search_box'          => '1',
-		'flg_hide_social_icons'        => '0',
-		'flg_enable_footer_widgets'    => '0',
-		'number_of_footer_widgets'     => '3',
+		'flg_hide_search_box'          => 1,
+		'flg_hide_social_icons'        => 1,
 		'copyright_text'               => esc_html__( 'Copyright &copy; All Rights Reserved.', 'blue-planet' ),
-		'flg_hide_powered_by'          => '1',
-		'flg_hide_footer_social_icons' => '1',
+		'flg_hide_powered_by'          => 0,
+		'flg_hide_footer_social_icons' => 0,
 		'default_layout'               => 'right-sidebar',
-		'content_layout'               => 'excerpt',
+		'content_layout'               => 'excerpt', // Archive layout.
+		'archive_image'                => 'large',
+		'archive_image_alignment'      => 'center',
+		'single_image'                 => 'large',
+		'single_image_alignment'       => 'center',
 		'read_more_text'               => esc_html__( 'Read more', 'blue-planet' ),
-		'excerpt_length'               => '50',
+		'excerpt_length'               => 50,
 		'slider_status'                => 'none',
 		'transition_effect'            => 'fade',
-		'direction_nav'                => '1',
-		'slider_autoplay'              => '1',
+		'direction_nav'                => 1,
+		'slider_autoplay'              => 1,
 		'transition_delay'             => 4,
 		'transition_length'            => 1,
 		'main_slider_image'            => array(),
@@ -97,11 +92,11 @@ function blueplanet_get_default_options() {
 		'slider_status_2'              => 'none',
 		'number_of_slides_2'           => 3,
 		'slider_category_2'            => '',
-		'control_nav_2'                => '1',
-		'direction_nav_2'              => '1',
+		'control_nav_2'                => 1,
+		'direction_nav_2'              => 1,
 		'transition_effect_2'          => 'fade',
-		'slider_autoplay_2'            => '1',
-		'slider_caption_2'             => '1',
+		'slider_autoplay_2'            => 1,
+		'slider_caption_2'             => 1,
 		'transition_delay_2'           => 4,
 		'transition_length_2'          => 1,
 		'social_facebook'              => '',

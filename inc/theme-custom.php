@@ -5,25 +5,53 @@
  * @package Blue_Planet
  */
 
-if ( ! function_exists( 'blue_planet_layout_setup_class' ) ) :
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array Body classes
+ */
+function blue_planet_body_classes( $classes ) {
+    // Adds a class of group-blog to blogs with more than 1 published author.
+    if ( is_multi_author() ) {
+        $classes[] = 'group-blog';
+    }
 
-	/**
-	 * Return default layout class.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return string Class.
-	 */
-	function blue_planet_layout_setup_class() {
-		$default_layout = blueplanet_get_option( 'default_layout' );
-		if ( 'right-sidebar' === $default_layout ) {
-			$class = ' pull-left ';
-		} else {
-			$class = ' pull-right ';
-		}
-		return $class;
-	}
+    if ( get_header_image() ) {
+    	$classes[] = 'custom-header-enabled';
+    }
+    else {
+    	$classes[] = 'custom-header-disabled';
+    }
+
+    return $classes;
+}
+
+add_filter( 'body_class', 'blue_planet_body_classes' );
+
+if ( ! function_exists( 'blue_planet_featured_image_instruction' ) ) :
+    /**
+     * Message to show in the Featured Image Meta box.
+     *
+     * @since 1.0.0
+     *
+     * @param string $content Admin post thumbnail HTML markup.
+     * @param int    $post_id Post ID.
+     * @return string HTML.
+     */
+    function blue_planet_featured_image_instruction( $content, $post_id ) {
+
+        if ( 'post' === get_post_type( $post_id ) ) {
+            $content .= '<strong>' . __( 'Recommended image sizes', 'blue-planet' ) . '</strong><br/>';
+            $content .= '<br/>' . sprintf( __( 'Secondary Slider : %dpx X %dpx', 'blue-planet' ), 720, 350 );
+        }
+
+        return $content;
+    }
 endif;
+
+add_filter( 'admin_post_thumbnail_html', 'blue_planet_featured_image_instruction', 10, 2 );
+
 
 if ( ! function_exists( 'blue_planet_excerpt_readmore' ) ) :
 
@@ -36,11 +64,16 @@ if ( ! function_exists( 'blue_planet_excerpt_readmore' ) ) :
 	 * @return string The excerpt.
 	 */
 	function blue_planet_excerpt_readmore( $more ) {
-		global $post;
-		$read_more_text = blueplanet_get_option( 'read_more_text' );
 
-		$output = '... <a href="'. esc_url( get_permalink( $post->ID ) ) . '" class="readmore">' . esc_attr( $read_more_text )  . '</a>';
+		global $post;
+		$read_more_text = blue_planet_get_option( 'read_more_text' );
+		if ( ! empty( $read_more_text ) ) {
+			$more = '...';
+		}
+
+		$output = $more . ' <a href="'. esc_url( get_permalink( $post->ID ) ) . '" class="readmore">' . esc_attr( $read_more_text )  . '<span class="screen-reader-text">"' . esc_html( get_the_title() ) . '"</span></a>';
 		$output = apply_filters( 'blue_planet_filter_read_more_content' , $output );
+
 		return $output;
 	}
 endif;
@@ -58,7 +91,7 @@ if ( ! function_exists( 'blue_planet_custom_excerpt_length' ) ) :
 	 * @return int Excerpt length.
 	 */
 	function blue_planet_custom_excerpt_length( $length ) {
-		$excerpt_length = blueplanet_get_option( 'excerpt_length' );
+		$excerpt_length = blue_planet_get_option( 'excerpt_length' );
 		return apply_filters( 'blue_planet_filter_excerpt_length', esc_attr( $excerpt_length ) );
 	}
 endif;
@@ -72,16 +105,16 @@ if ( ! function_exists( 'blue_planet_add_secondary_slider_function' ) ) :
 	 * @since 1.0.0
 	 */
 	function blue_planet_add_secondary_slider_function() {
-		$bp_options = blueplanet_get_option_all();
-		$slider_status_2 = blueplanet_get_option( 'slider_status_2' );
+		$bp_options = blue_planet_get_option_all();
+		$slider_status_2 = blue_planet_get_option( 'slider_status_2' );
 
 		if ( 'none' !== $slider_status_2 &&  ( is_home() || is_front_page() ) ) {
-			$slider_category_2 = esc_attr( $bp_options['slider_category_2'] );
-			$number_of_slides_2 = esc_attr( $bp_options['number_of_slides_2'] );
+			$slider_category_2  = absint( $bp_options['slider_category_2'] );
+			$number_of_slides_2 = absint( $bp_options['number_of_slides_2'] );
 			$args = array(
 				'posts_per_page' => $number_of_slides_2,
 				'meta_query'     => array(
-					array( 'key' => '_thumbnail_id' ), // Show only posts with featured images
+					array( 'key' => '_thumbnail_id' ),
 				  ),
 				);
 			if ( absint( $slider_category_2 ) > 0  ) {
@@ -132,10 +165,10 @@ if ( ! function_exists( 'blue_planet_add_secondary_slider_function' ) ) :
 									echo '/>';
 									?>
                                 </a>
-                            <?php }//endforeach ?>
+                            <?php } // Endforeach. ?>
                           </div>
 
-							<?php endif ?>
+							<?php endif; ?>
 
 
 					<?php unset( $slide ); ?>
@@ -164,30 +197,6 @@ if ( ! function_exists( 'blue_planet_add_secondary_slider_function' ) ) :
 endif;
 add_action( 'blue_planet_after_main_open','blue_planet_add_secondary_slider_function' );
 
-if ( ! function_exists( 'blue_planet_custom_css' ) ) :
-
-	/**
-	 * Implement Custom CSS option.
-	 *
-	 * @since 1.0.0
-	 */
-	function blue_planet_custom_css() {
-
-		$banner_background_color = blueplanet_get_option( 'banner_background_color' );
-		$custom_css = blueplanet_get_option( 'custom_css' );
-
-		echo '<style type="text/css">' . "\n";
-		echo 'header#masthead{background-color: ' . esc_attr( $banner_background_color ) . ';}';
-		if ( ! empty( $custom_css ) ) {
-			echo $custom_css;
-		}
-		echo "\n". '</style>' . "\n";
-	}
-
-endif;
-
-add_action( 'wp_head', 'blue_planet_custom_css' );
-
 if ( ! function_exists( 'blue_planet_copyright_text_content' ) ) :
 	/**
 	 * Implement copyright text in footer.
@@ -195,7 +204,7 @@ if ( ! function_exists( 'blue_planet_copyright_text_content' ) ) :
 	 * @since 1.0.0
 	 */
 	function blue_planet_copyright_text_content() {
-		$copyright_text = blueplanet_get_option( 'copyright_text' );
+		$copyright_text = blue_planet_get_option( 'copyright_text' );
 		if ( empty( $copyright_text )  ) {
 			return;
 		}
@@ -214,53 +223,22 @@ if ( ! function_exists( 'blue_planet_footer_powered_by' ) ) :
 	 * @since 1.0.0
 	 */
 	function blue_planet_footer_powered_by() {
-		$flg_hide_powered_by = blueplanet_get_option( 'flg_hide_powered_by' );
-		if ( 1 !== $flg_hide_powered_by ) {  ?>
-      <div class="footer-powered-by">
-          <a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Powered by %s', 'blue-planet' ), 'WordPress' ); ?></a>
-          <span class="sep"> | </span>
-          <?php printf( __( '%1$s by %2$s.', 'blue-planet' ), 'Blue Planet', '<a href="' . esc_url( 'http://www.nilambar.net' ) . '" rel="designer">Nilambar Sharma</a>' ); ?>
-      </div>
-    <?php }
-		return;
+		$extra_style = '';
+		$flg_hide_powered_by = blue_planet_get_option( 'flg_hide_powered_by' );
+		if ( 1 === $flg_hide_powered_by ) {
+			$extra_style = 'display:none;';
+		}
+		?>
+		<div class="footer-powered-by" style="<?php echo esc_attr( $extra_style ); ?>">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blue-planet' ) ); ?>"><?php printf( __( 'Powered by %s', 'blue-planet' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( __( '%1$s by %2$s', 'blue-planet' ), 'Blue Planet', '<a href="' . esc_url( 'http://nilambar.net' ) . '" rel="designer">Nilambar</a>' ); ?>
+		</div>
+		<?php
 	}
 endif;
 
 add_action( 'blue_planet_credits', 'blue_planet_footer_powered_by' );
-
-if ( ! function_exists( 'blue_planet_get_main_slider_details' ) ) :
-
-	/**
-	 * Fetch main slider details.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return array Main slider details.
-	 */
-	function blue_planet_get_main_slider_details() {
-
-		$bp_options = blueplanet_get_option_all();
-		$output = array();
-
-		for ( $i = 1; $i <= 5 ; $i++ ) {
-
-			if ( isset( $bp_options[ 'main_slider_image_' . $i ] ) && ! empty( $bp_options[ 'main_slider_image_' . $i ] ) ) {
-
-				$item = array();
-				$item['image'] = esc_url( $bp_options[ 'main_slider_image_'.$i ] );
-				$item['url'] = ( isset( $bp_options[ 'main_slider_url_' . $i ] ) ) ? esc_url( $bp_options[ 'main_slider_url_' . $i ] ) : '' ;
-				$item['caption'] = ( isset( $bp_options[ 'main_slider_caption_' . $i ] ) ) ? esc_html( $bp_options[ 'main_slider_caption_' . $i ] ) : '' ;
-				$item['new_tab'] = ( isset( $bp_options[ 'main_slider_new_tab_' . $i ] ) && 1 === $bp_options[ 'main_slider_new_tab_' . $i ] ) ? 1 : 0 ;
-
-				$output[] = $item;
-			}
-		}
-
-		return $output;
-
-	}
-
-endif;
 
 
 if ( ! function_exists( 'blue_planet_add_main_slider' ) ) :
@@ -272,7 +250,7 @@ if ( ! function_exists( 'blue_planet_add_main_slider' ) ) :
 	 */
 	function blue_planet_add_main_slider() {
 
-		$bp_options = blueplanet_get_option_all();
+		$bp_options = blue_planet_get_option_all();
 
 		$slides = blue_planet_get_main_slider_details();
 
@@ -307,51 +285,18 @@ if ( ! function_exists( 'blue_planet_add_main_slider' ) ) :
 						?>
 						<?php echo $link_close; ?>
 
-					<?php endforeach ?>
+					<?php endforeach; ?>
 
                 </div>
               </div>
             </div>
 
             <?php
-		} //end main if
+		} // End main if.
 	}
 endif;
-add_action( 'blue_planet_after_content_open','blue_planet_add_main_slider' );
 
-
-if ( ! function_exists( 'blue_planet_footer_widgets' ) ) :
-
-	/**
-	 * Implement footer widgets.
-	 *
-	 * @since 1.0.0
-	 */
-	function blue_planet_footer_widgets() {
-		$bp_options = blueplanet_get_option_all();
-
-		if ( 1 === $bp_options['flg_enable_footer_widgets'] && isset( $bp_options['number_of_footer_widgets'] ) && absint( $bp_options['number_of_footer_widgets'] ) > 0 ) {
-			echo '<div class="footer-widgets-wrapper">';
-			$num_footer = $bp_options['number_of_footer_widgets'];
-
-			$grid = 12 / $num_footer;
-			for ( $i = 1 ; $i <= $num_footer; $i++ ) {
-				echo '<div class="footer-widget-area col-md-'.$grid.'">';
-				?>
-                    <?php
-					if ( is_active_sidebar( "footer-area-$i" ) ) :
-						dynamic_sidebar( "footer-area-$i" );
-					endif;
-					?>
-                <?php
-				echo '</div>';
-			}
-			echo '</div>';
-		}
-
-	}
-endif; // blue_planet_footer_widgets
-add_action( 'blue_planet_after_content_close','blue_planet_footer_widgets' );
+add_action( 'blue_planet_before_content_open','blue_planet_add_main_slider' );
 
 if ( ! function_exists( 'blue_planet_header_social' ) ) :
 	/**
@@ -360,7 +305,7 @@ if ( ! function_exists( 'blue_planet_header_social' ) ) :
 	 * @since 1.0.0
 	 */
 	function blue_planet_header_social() {
-		$flg_hide_social_icons = blueplanet_get_option( 'flg_hide_social_icons' );
+		$flg_hide_social_icons = blue_planet_get_option( 'flg_hide_social_icons' );
 
 		if ( 1 !== $flg_hide_social_icons ) {
 			blue_planet_generate_social_links();
@@ -377,7 +322,7 @@ if ( ! function_exists( 'blue_planet_footer_social' ) ) :
 	 * @since 1.0.0
 	 */
 	function blue_planet_footer_social() {
-		$flg_hide_footer_social_icons = blueplanet_get_option( 'flg_hide_footer_social_icons' );
+		$flg_hide_footer_social_icons = blue_planet_get_option( 'flg_hide_footer_social_icons' );
 
 		if ( 1 !== $flg_hide_footer_social_icons ) {
 			blue_planet_generate_social_links();
@@ -387,59 +332,7 @@ endif;
 
 add_action( 'blue_planet_before_page_close','blue_planet_footer_social' );
 
-if ( ! function_exists( 'blue_planet_generate_social_links' ) ) :
 
-	/**
-	 * Generate social links.
-	 *
-	 * @since 1.0.0
-	 */
-	function blue_planet_generate_social_links() {
-		$bp_options = blueplanet_get_option_all();
-
-		echo '<div class="social-wrapper">';
-
-		if ( '' !== $bp_options['social_email'] ) {
-			echo '<a class="social-email" href="mailto:'.esc_attr( $bp_options['social_email'] ).'"></a>';
-		}
-
-		$social_sites = array(
-				'facebook'    => 'facebook',
-				'twitter'     => 'twitter',
-				'googleplus'  => 'googleplus',
-				'youtube'     => 'youtube',
-				'pinterest'   => 'pinterest',
-				'linkedin'    => 'linkedin',
-				'flickr'      => 'flickr',
-				'tumblr'      => 'tumblr',
-				'dribbble'    => 'dribbble',
-				'deviantart'  => 'deviantart',
-				'rss'         => 'rss',
-				'instagram'   => 'instagram',
-				'skype'       => 'skype',
-				'digg'        => 'digg',
-				'stumbleupon' => 'stumbleupon',
-				'forrst'      => 'forrst',
-				'500px'       => '500px',
-				'vimeo'       => 'vimeo',
-			);
-		$social_sites = apply_filters( 'blue_planet_filter_social_sites', $social_sites );
-		$social_sites = array_reverse( $social_sites );
-
-		$link_target = apply_filters( 'blue_planet_filter_social_sites_link_target', '_blank' );
-
-		foreach ( $social_sites as $key => $site ) {
-			if ( '' !== $bp_options[ "social_$site" ] ) {
-				if ( 'skype' === $site ) {
-					echo '<a class="social-'.$site.'" href="skype:'.esc_attr( $bp_options[ "social_$site" ] ).'?call"></a>';
-				} else {
-					echo '<a class="social-'.$site.'" href="'.esc_url( $bp_options[ "social_$site" ] ).'" target="' . esc_attr( $link_target ) . '"></a>';
-				}
-			}
-		}
-		echo '</div>';
-	}
-endif;
 
 if ( ! function_exists( 'blue_planet_goto_top' ) ) :
 	/**
@@ -449,9 +342,10 @@ if ( ! function_exists( 'blue_planet_goto_top' ) ) :
 	 */
 	function blue_planet_goto_top() {
 
-		$flg_enable_goto_top = blueplanet_get_option( 'flg_enable_goto_top' );
-		if ( $flg_enable_goto_top ) {
-			echo '<a href="#" class="scrollup">'. __( 'Scroll', 'blue-planet' ) . '</a>';
+		$flg_enable_goto_top = blue_planet_get_option( 'flg_enable_goto_top' );
+
+		if ( 1 == $flg_enable_goto_top ) {
+			echo '<a href="#" class="scrollup"><span class="genericon genericon-collapse" aria-hidden="true"></span><span class="screen-reader-text">'. __( 'Go to top', 'blue-planet' ) . '</span></a>';
 		}
 	}
 endif;
@@ -474,10 +368,12 @@ if ( ! function_exists( 'blue_planet_header_content_stuff' ) ) :
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img id="bs-header-image" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
                             <div class="site-branding">
                                 <div class="site-info">
-                                    <h1 class="site-title">
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                                    </h1>
-                                    <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+                                    <?php if ( is_front_page() && is_home() ) : ?>
+                                    		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                                    	<?php else : ?>
+                                    		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                                    	<?php endif; ?>
+                                    <p class="site-description"><?php bloginfo( 'description' ); ?></p>
                                 </div>
                             </div>
                     </div>
@@ -488,10 +384,12 @@ if ( ! function_exists( 'blue_planet_header_content_stuff' ) ) :
             <div class="only-site-branding">
                 <div class="site-branding">
                     <div class="site-info">
-                        <h1 class="site-title">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                        </h1>
-                        <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	                    <?php if ( is_front_page() && is_home() ) : ?>
+	                    		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	                    	<?php else : ?>
+	                    		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+	                    	<?php endif; ?>
+	                    <p class="site-description"><?php bloginfo( 'description' ); ?></p>
                     </div>
                 </div>
             </div>  <!-- .only-site-branding -->
@@ -504,21 +402,6 @@ if ( ! function_exists( 'blue_planet_header_content_stuff' ) ) :
 endif;
 
 add_action( 'blue_planet_after_masthead_open','blue_planet_header_content_stuff' );
-
-if ( ! function_exists( 'blue_planet_add_editor_styles' ) ) :
-
-	/**
-	 * Load editor styles.
-	 *
-	 * @since 1.0.0
-	 */
-	function blue_planet_add_editor_styles() {
-		add_editor_style( 'editor-style.css' );
-	}
-
-endif;
-
-add_action( 'init', 'blue_planet_add_editor_styles' );
 
 if ( ! function_exists( 'blue_planet_custom_content_width' ) ) :
 
@@ -541,3 +424,28 @@ if ( ! function_exists( 'blue_planet_custom_content_width' ) ) :
 endif;
 
 add_filter( 'template_redirect', 'blue_planet_custom_content_width' );
+
+if ( ! function_exists( 'blue_planet_add_image_in_single_display' ) ) :
+
+	/**
+	 * Add image in single post.
+	 *
+	 * @since 3.0
+	 */
+	function blue_planet_add_image_in_single_display() {
+
+		global $post;
+		if ( has_post_thumbnail() ) {
+			$single_image           = blue_planet_get_option( 'single_image' );
+			$single_image_alignment = blue_planet_get_option( 'single_image_alignment' );
+			if ( 'disable' !== $single_image ) {
+				$args = array(
+					'class' => 'align' . $single_image_alignment,
+				);
+				the_post_thumbnail( $single_image, $args );
+			}
+		}
+	}
+
+endif;
+add_action( 'blue_planet_single_image', 'blue_planet_add_image_in_single_display' );
