@@ -24,31 +24,13 @@ content. This content.php is the main content that will be displayed.
     <div class="entry-content-container">
         <div class="entry-metadata-container cf">
             <div class="posted-comments">
-                <?php beyond_expectations_add_comments_setup(); ?>
+                <?php beyond_expectations_entry_meta(); ?>
             </div>
         </div>
         <div class="entry-content">
             <?php the_content(); ?>
             <?php wp_link_pages(); ?>
-            
-            <div class="index-meta">
-                <?php
-                    $category_terms = wp_get_post_categories( $post->ID );
-                        if ( $category_terms ) {
-                            echo the_category(); 
-                        }
-                ?>
-                <ul class="post-tags">
-                    <li>
-                        <?php
-                        $tag_terms = wp_get_post_tags($post->ID);
-                        if ($tag_terms) {
-                        echo the_tags();
-                        }
-                        ?>
-                    </li>
-                </ul>
-            </div>
+            <?php beyond_expectations_entry_taxonomies(); ?>
         </div>
     </div>
 </article>

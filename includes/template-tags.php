@@ -55,21 +55,41 @@ if (!function_exists('beyond_expectations_post_timestamp_author_setup')) {
 2.0 - Comments
 ================================================================================================
 */
-if (!function_exists('beyond_expectations_add_comments_setup')) {
-    function beyond_expectations_add_comments_setup() {
-        if (comments_open()) {
-            comments_popup_link('Add Comment','1 Comment','% Comments');
-        }
-        else {
-            _e('Comments are Closed', 'beyond-expectations');
+if (!function_exists('beyond_expectations_entry_meta')) {
+    function beyond_expectations_entry_meta() {   
+        if ( !is_page() && !post_password_required() && (comments_open() || get_comments_number())) {
+            echo '<span class="comments-link">';
+                comments_popup_link( sprintf( __( 'Leave a Comment', 'beyond-expectations')));
+            echo '</span>';
         }
     }
 }
 
 /*
 ================================================================================================
-2.0 - Metadata Posted In
+6.0 - Entry Taxonomies
 ================================================================================================
+*/
+if (!function_exists('beyond_expectations_entry_taxonomies')) {
+    function beyond_expectations_entry_taxonomies() {
+        $cat_list = get_the_category_list(__(' | ', 'beyond-expectations'));
+        $tag_list = get_the_tag_list('', __(' | ', 'beyond-expectations'));
+        
+        if ($cat_list) {
+            printf('<div class="cat-link"> %1$s <span class="cat-list"l>%2$s</span></div>',
+            __('<span class="screen-reader-text"><i class="fa fa-folder-open-o"></i> Posted In</span>', 'beyond-expectations'),  
+            $cat_list
+            );
+        }
+        
+        if ($tag_list) {
+            printf('<div class="tag-link">%1$s <span class="tag-list">%2$s</span></div>',
+            __('<span class="screen-reader-text"><i class="fa fa-tags"></i>Tagged</span>', 'beyond-expectations'),  
+            $tag_list 
+            );
+        }
+    }
+}
 
 
 /*
