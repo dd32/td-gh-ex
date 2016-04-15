@@ -1,5 +1,11 @@
 == Change log ==
 
+Versioin 4.4.2
+* Fixed: Relocated customizer options
+* Bug Fixed: Layout Options Not Changing in Customizer and Theme Options
+* Added: Custom Header Functionality
+* Bug Fixed: Made default search text translation-ready
+
 Version 4.4.1
 * Updated: max width of content editor
 * Bug Fixed: Color scheme not changing
