@@ -208,6 +208,49 @@ function catcheverest_customize_register( $wp_customize ) {
 	}
 
 	$settings_parameters = array(
+		//Header Featured Image
+		'enable_featured_header_image' => array(
+			'id' 			=> 'enable_featured_header_image',
+			'title' 		=> __( 'Enable Featured Header Image', 'catch-everest' ),
+			'description'	=> '',
+			'field_type' 	=> 'select',
+			'priority' 		=> 1,
+			'sanitize' 		=> 'catcheverest_sanitize_select',
+			'section' 		=> 'header_image',
+			'default' 		=> $defaults['enable_featured_header_image'],
+			'choices'		=> array(
+				'homepage' 		=> __( 'Homepage', 'catch-everest' ),
+				'allpage' 		=> __( 'Entire Site', 'catch-everest' ),
+			)
+		),
+		'featured_header_image_alt' => array(
+			'id' 			=> 'featured_header_image_alt',
+			'title' 		=> __( 'Featured Header Image Alt/Title Tag', 'catch-everest' ),
+			'description'	=> '',
+			'field_type' 	=> 'text',
+			'sanitize' 		=> 'sanitize_text_field',
+			'section' 		=> 'header_image',
+			'default' 		=> $defaults['featured_header_image_alt'],
+		),
+		'featured_header_image_url' => array(
+			'id' 			=> 'featured_header_image_url',
+			'title' 		=> __( 'Featured Header Image Link URL', 'catch-everest' ),
+			'description'	=> '',
+			'field_type' 	=> 'url',
+			'sanitize' 		=> 'esc_url_raw',
+			'section' 		=> 'header_image',
+			'default' 		=> $defaults['featured_header_image_url'],
+		),
+		'featured_header_image_base' => array(
+			'id' 			=> 'featured_header_image_base',
+			'title' 		=> __( 'Check to Open Link in New Window', 'catch-everest' ),
+			'description'	=> '',
+			'field_type' 	=> 'checkbox',
+			'sanitize' 		=> 'catcheverest_sanitize_checkbox',
+			'section' 		=> 'header_image',
+			'default' 		=> $defaults['featured_header_image_base'],
+		),
+
 		'disable_responsive' => array(
 			'id' 			=> 'disable_responsive',
 			'title' 		=> __( 'Check to Disable Responsive Design', 'catch-everest' ),
@@ -1015,6 +1058,10 @@ function catcheverest_customize_register( $wp_customize ) {
 					'type'			=> $option['field_type'],
 					'description'   => $option['description'],
 				) ;
+
+			if ( isset( $option['priority']  ) ){
+				$params['priority'] = $option['priority'];
+			}
 
 			if ( isset( $option['choices']  ) ){
 				$params['choices'] = $option['choices'];

@@ -146,11 +146,12 @@ function catcheverest_setup() {
 		* Supported from WordPress version 4.5 onwards
 		* More Info: https://make.wordpress.org/core/2016/03/10/custom-logo/
 		*/
-		add_image_size( 'catcheverest-logo', 300, 125 );
-
 		add_theme_support( 'custom-logo',
 			array(
-		   		'size' => 'catcheverest-logo',
+				'height'      => 125,
+				'width'       => 300,
+				'flex-height' => true,
+				'flex-width'  => true,
 			)
 		);
 	}
@@ -216,17 +217,10 @@ if ( ! function_exists( 'catcheverest_get_theme_layout' ) ) :
 	}
 endif; //catcheverest_get_theme_layout
 
-// @remove if block and the included file when WP 4.8 is released
-if( ! function_exists( 'has_custom_logo' ) ) {
-	/* Previously, custom header was being used as logo, but with implementation of custom logo
-	 * from WordPress version 4.5 onwards, we have migrated custom header to custom logo
-	 */
-
-	/**
-	 * Implement the Custom Header feature
-	 */
-	require( get_template_directory() . '/inc/custom-header.php' );
-}
+/**
+ * Implement the Custom Header feature
+ */
+require( get_template_directory() . '/inc/custom-header.php' );
 
 
 /**

@@ -11,6 +11,10 @@
  */
 global $catcheverest_options_defaults;
 $catcheverest_options_defaults = array(
+	'enable_featured_header_image'			=> 'allpage',
+	'featured_header_image_url'				=> '',
+	'featured_header_image_alt'				=> '',
+	'featured_header_image_base'			=> '0',
 	'disable_responsive'					=> '0',
  	'fav_icon'								=> get_template_directory_uri().'/images/favicon.ico',
  	'remove_favicon'						=> '1',

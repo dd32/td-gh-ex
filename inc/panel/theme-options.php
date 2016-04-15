@@ -880,6 +880,22 @@ function catcheverest_theme_options_validate( $options ) {
     $input = array();
     $input = $options;
 
+
+    // Data validation for Large Header Image
+    if ( isset( $input[ 'featured_header_image_alt' ] ) ) {
+        $input_validated[ 'featured_header_image_alt' ] = sanitize_text_field( $input[ 'featured_header_image_alt' ] );
+    }
+    if ( isset( $input[ 'featured_header_image_url' ] ) ) {
+        $input_validated[ 'featured_header_image_url' ] = esc_url_raw( $input[ 'featured_header_image_url' ] );
+    }
+    if ( isset( $input['featured_header_image_base'] ) ) {
+        // Our checkbox value is either 0 or 1
+        $input_validated[ 'featured_header_image_base' ] = $input[ 'featured_header_image_base' ];
+    }
+    if ( isset( $input[ 'enable_featured_header_image' ] ) ) {
+        $input_validated[ 'enable_featured_header_image' ] = $input[ 'enable_featured_header_image' ];
+    }
+
     // Data Validation for Resonsive Design
     if ( isset( $input['disable_responsive'] ) ) {
         // Our checkbox value is either 0 or 1
@@ -1197,6 +1213,7 @@ function catcheverest_themeoption_invalidate_caches(){
     delete_transient( 'catcheverest_footercode' ); // scripts which loads on footer
     delete_transient( 'catcheverest_inline_css' ); // Custom Inline CSS
     delete_transient( 'catcheverest_scrollup' ); // Scroll up Navigation
+    delete_transient( 'catcheverest_featured_image' );//Header image
 }
 
 

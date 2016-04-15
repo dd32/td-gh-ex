@@ -1,5 +1,9 @@
 == Changelog ==
 
+Version 2.7.1
+* Added: Custom Header Support
+* Bug Fixed: Made Custom Logo width flexible
+
 Version 2.7
 * Changed: Featured Content limit changed from 20 to 24
 * Updated: Content Width Implementation

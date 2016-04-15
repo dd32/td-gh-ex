@@ -60,6 +60,16 @@ function catcheverest_custom_header_setup() {
 		'admin-preview-callback' => 'catcheverest_admin_header_image',
 	);
 
+	if( function_exists( 'has_custom_logo' ) ) {
+		/* Previously, custom header was being used as logo, but with implementation of custom logo
+		 * from WordPress version 4.5 onwards, we have migrated custom header to custom logo
+		 * and Our custom field for header to core custom header
+		 */
+		$args['height'] = 450;
+		$args['width']  = 1140;
+		unset($args['max-width']);
+	}
+
 	$args = apply_filters( 'catcheverest_custom_header_args', $args );
 
 	add_theme_support( 'custom-header', $args );
@@ -194,3 +204,61 @@ function catcheverest_admin_header_image() { ?>
 	</div>
 <?php }
 endif; // catcheverest_admin_header_image
+
+
+if ( ! function_exists( 'catcheverest_featured_image' ) ) :
+/**
+ * Template for Featured Header Image from theme options
+ *
+ * To override this in a child theme
+ * simply create your own catcheverest_featured_image(), and that function will be used instead.
+ *
+ * @since Catch Everest
+ */
+function catcheverest_featured_image() {
+	if ( !function_exists( 'has_custom_logo' ) ) {
+		//Bail early if WP version is less than 4.5 as custom header was used as logo
+		return;
+	}
+
+	// Getting Data from Theme Options Panel
+	global $catcheverest_options_settings, $catcheverest_options_defaults;
+   	$options = $catcheverest_options_settings;
+	$enableheaderimage =  $options[ 'enable_featured_header_image' ];
+
+	if ( $enableheaderimage == 'allpage' || ( $enableheaderimage == 'homepage' && ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) ) ) {
+		$header_image = get_header_image();
+
+		if ( ! empty( $header_image ) ){
+			$catcheverest_featured_image = '<div id="header-image">';
+
+			// Header Image Link Target
+			if ( !empty( $options[ 'featured_header_image_base' ] ) ) :
+				$base = '_blank';
+			else:
+				$base = '_self';
+			endif;
+
+			// Header Image Title/Alt
+			if ( !empty( $options[ 'featured_header_image_alt' ] ) ) :
+				$title = $options[ 'featured_header_image_alt' ];
+			else:
+				$title = '';
+			endif;
+
+			// Header Image Link
+			if ( !empty( $options[ 'featured_header_image_url' ] ) ) :
+				$catcheverest_featured_image .= '<a title="' . esc_attr( $title ) . '" href="' . esc_url( $options[ 'featured_header_image_url' ] ) .'" target="' . $base . '"><img id="main-feat-img" class="wp-post-image" alt="' . esc_attr( $title ) . '" src="' . esc_url( $header_image ) . ' " /></a>';
+			else:
+				// if empty featured_header_image on theme options, display default
+				$catcheverest_featured_image .= '<img id="main-feat-img" class="wp-post-image" alt="' . esc_attr( $title ) . '" src="' . esc_url( $header_image ) . '" />';
+			endif;
+
+		$catcheverest_featured_image .= '</div><!-- #header-image -->';
+
+		echo $catcheverest_featured_image;
+		}
+	}
+} // catcheverest_featured_image
+endif;
+add_action( 'catcheverest_after_hgroup_wrap', 'catcheverest_featured_image', 9 );
