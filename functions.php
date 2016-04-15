@@ -165,7 +165,12 @@ function adventurous_setup() {
 		* Supported from WordPress version 4.5 onwards
 		* More Info: https://make.wordpress.org/core/2016/03/10/custom-logo/
 		*/
-		add_theme_support( 'custom-logo' );
+		add_theme_support( 'custom-logo', array(
+			'height'      => 41,
+			'width'       => 245,
+			'flex-height' => true,
+			'flex-width'  => true
+		) );	
 	}
 
 }

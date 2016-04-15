@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 1.9.2
+* Bug Fixed: Custom Logo stretch out issue in WordPress 4.5
+
 Version 1.9.1
 * Bug Fixed: Target. Open Link in New Window? input type in Customizer=> Featured Content changed from text to checkbox ( Reported by krizgriz )
 * Updated: Meta viewport for better responsive support
