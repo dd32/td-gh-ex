@@ -228,16 +228,7 @@ add_action( 'wp_enqueue_scripts', 'aripop_scripts_styles' );
 
 
 
-function load_aripop_wp_admin_style() {
-
-        wp_register_style( 'aripop_wp_admin_css', get_template_directory_uri() . '/styles/admin-style.css', false, '1.0.0' );
-        wp_enqueue_style( 'aripop_wp_admin_css' );
-}
-add_action( 'admin_enqueue_scripts', 'load_aripop_wp_admin_style' );
-
-
-
-
+ 
 
 // placeholder to textarea
 function aripop_comment_textarea_field($comment_field) {
