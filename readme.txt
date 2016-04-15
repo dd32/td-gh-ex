@@ -103,3 +103,9 @@ Version 1.6.0
 
 Version 1.6.1
 * Minor bug fixes
+
+Version 1.6.2
+* Update FontAwesome to 4.6.1v
+* Improved main menu in mobile version
+* Improved RTL mode
+* Minor bug fixes

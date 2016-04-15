@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Semplicemente\n"
-"POT-Creation-Date: 2016-01-06 14:44+0100\n"
-"PO-Revision-Date: 2016-01-06 14:44+0100\n"
+"POT-Creation-Date: 2016-04-15 10:11+0100\n"
+"PO-Revision-Date: 2016-04-15 10:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: it_IT\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,6 +28,7 @@ msgid ""
 "below or a search?"
 msgstr ""
 
+#. translators: %1$s: smiley
 #: 404.php:27
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
@@ -252,7 +253,7 @@ msgstr ""
 
 #: footer.php:24
 #, php-format
-msgid "%1$s by %2$s."
+msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #: functions.php:54
@@ -263,43 +264,43 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:45
+#: header.php:55
 msgid "Facebook"
 msgstr ""
 
-#: header.php:49
+#: header.php:59
 msgid "Twitter"
 msgstr ""
 
-#: header.php:53
+#: header.php:63
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:57
+#: header.php:67
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:61
+#: header.php:71
 msgid "Instagram"
 msgstr ""
 
-#: header.php:65
+#: header.php:75
 msgid "YouTube"
 msgstr ""
 
-#: header.php:69
+#: header.php:79
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:73
+#: header.php:83
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:77
+#: header.php:87
 msgid "VK"
 msgstr ""
 
-#: header.php:93
+#: header.php:103
 msgid "Menu"
 msgstr ""
 
@@ -328,7 +329,7 @@ msgstr ""
 msgid "Secondary Color "
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:64 inc/theme-options.php:24
+#: inc/semplicemente-dynamic.php:64
 msgid "Semplicemente Theme Options"
 msgstr ""
 
@@ -384,7 +385,7 @@ msgstr ""
 msgid "Get Semplicemente PRO Theme"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:174 inc/theme-options.php:73
+#: inc/semplicemente-dynamic.php:174
 msgid "Advanced Theme Options"
 msgstr ""
 
@@ -404,7 +405,7 @@ msgstr ""
 msgid "Loading Page"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:179 inc/theme-options.php:75
+#: inc/semplicemente-dynamic.php:179
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
@@ -416,7 +417,7 @@ msgstr ""
 msgid "Post format"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:182 inc/theme-options.php:77
+#: inc/semplicemente-dynamic.php:182
 msgid "7 Shortcodes"
 msgstr ""
 
@@ -424,15 +425,15 @@ msgstr ""
 msgid "12 Exclusive Widgets"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:184 inc/theme-options.php:79
+#: inc/semplicemente-dynamic.php:184
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:185 inc/theme-options.php:80
+#: inc/semplicemente-dynamic.php:185
 msgid "Information About Author Box"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:186 inc/theme-options.php:81
+#: inc/semplicemente-dynamic.php:186
 msgid "And much more..."
 msgstr ""
 
@@ -474,167 +475,6 @@ msgstr ""
 #, php-format
 msgctxt "post author"
 msgid "<i class=\"fa fa-user spaceRight\"></i>%s"
-msgstr ""
-
-#: inc/theme-options.php:48
-msgid "Theme Options"
-msgstr ""
-
-#: inc/theme-options.php:61
-msgid " Theme Options"
-msgstr ""
-
-#: inc/theme-options.php:64
-msgid "Need more features and options? Upgrade to PRO!"
-msgstr ""
-
-#: inc/theme-options.php:65
-msgid "Get"
-msgstr ""
-
-#: inc/theme-options.php:65
-msgid "Semplicemente PRO"
-msgstr ""
-
-#: inc/theme-options.php:65
-msgid "WordPress Theme for only"
-msgstr ""
-
-#: inc/theme-options.php:67
-msgid "Demo (Semplicemente PRO)"
-msgstr ""
-
-#: inc/theme-options.php:69
-msgid "Get The Pro Version"
-msgstr ""
-
-#: inc/theme-options.php:73
-msgid ""
-"(Manage Loading Page, Additional Custom Code, Font switcher and much more...)"
-msgstr ""
-
-#: inc/theme-options.php:74
-msgid "Logo and Favicon Upload"
-msgstr ""
-
-#: inc/theme-options.php:76
-msgid "Breadcrumb"
-msgstr ""
-
-#: inc/theme-options.php:77
-msgid "(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)"
-msgstr ""
-
-#: inc/theme-options.php:78
-msgid "10 Exclusive Widgets"
-msgstr ""
-
-#: inc/theme-options.php:78
-msgid ""
-"(Latest Tweet, Instagram, Social Buttons, Recent Posts with Thumbnail and "
-"Most Commented Posts...)"
-msgstr ""
-
-#: inc/theme-options.php:86
-msgid ""
-"These options will let you setup the social icons at the top of the theme. "
-"You can enter the URLs of your profiles to have the icons show up."
-msgstr ""
-
-#: inc/theme-options.php:88
-msgid "Options saved"
-msgstr ""
-
-#: inc/theme-options.php:103
-msgid "Hide RSS Icon?"
-msgstr ""
-
-#: inc/theme-options.php:106
-msgid "Hide the RSS feed icon?"
-msgstr ""
-
-#: inc/theme-options.php:115
-msgid "Hide Search Icon?"
-msgstr ""
-
-#: inc/theme-options.php:118
-msgid "Hide the Search icon?"
-msgstr ""
-
-#: inc/theme-options.php:127
-msgid "Enter your Facebook URL"
-msgstr ""
-
-#: inc/theme-options.php:130
-msgid "Leave blank to hide Facebook Icon"
-msgstr ""
-
-#: inc/theme-options.php:139
-msgid "Enter your Twitter URL"
-msgstr ""
-
-#: inc/theme-options.php:142
-msgid "Leave blank to hide Twitter Icon"
-msgstr ""
-
-#: inc/theme-options.php:151
-msgid "Enter your Google + URL"
-msgstr ""
-
-#: inc/theme-options.php:154
-msgid "Leave blank to hide Google + Icon"
-msgstr ""
-
-#: inc/theme-options.php:163
-msgid "Enter your Linkedin URL"
-msgstr ""
-
-#: inc/theme-options.php:166
-msgid "Leave blank to hide Linkedin Icon"
-msgstr ""
-
-#: inc/theme-options.php:175
-msgid "Enter your Instagram URL"
-msgstr ""
-
-#: inc/theme-options.php:178
-msgid "Leave blank to hide Instagram Icon"
-msgstr ""
-
-#: inc/theme-options.php:187
-msgid "Enter your YouTube URL"
-msgstr ""
-
-#: inc/theme-options.php:190
-msgid "Leave blank to hide YouTube Icon"
-msgstr ""
-
-#: inc/theme-options.php:199
-msgid "Enter your Pinterest URL"
-msgstr ""
-
-#: inc/theme-options.php:202
-msgid "Leave blank to hide Pinterest Icon"
-msgstr ""
-
-#: inc/theme-options.php:211
-msgid "Enter your Tumblr URL"
-msgstr ""
-
-#: inc/theme-options.php:214
-msgid "Leave blank to hide Tumblr Icon"
-msgstr ""
-
-#: inc/theme-options.php:223
-msgid "Enter your VK URL"
-msgstr ""
-
-#: inc/theme-options.php:226
-msgid "Leave blank to hide VK Icon"
-msgstr ""
-
-#: inc/theme-options.php:233
-msgid "Save Options"
 msgstr ""
 
 #: search.php:16

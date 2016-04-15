@@ -21,7 +21,7 @@ body {
 	padding-left: 0;
 	padding-right: 5px;
 }
-.widget_archive li a, .widget_categories li a {
+.widget_archive li a, .widget_categories li a, .main-navigation, .main-navigation li {
 	float: right;
 }
 .widget_archive li, .widget_categories li {
@@ -47,4 +47,40 @@ textarea {
 }
 .readMoreLink {
 	float: left;
+}
+
+.main-navigation li a:not(:last-child):after {
+    margin: 0 4px 0 0;
+    float: left;
+}
+.main-navigation ul ul li a:not(:last-child):after {
+    content: "\f0d9";
+    margin: 0 4px 0 0;
+    float: left;
+}
+.main-navigation ul ul ul {
+	right: 100%;
+	left: inherit;
+}
+.readMoreLink i.fa-angle-double-right:before {
+	content: "\f100";
+}
+@media screen and (max-width: 768px) {
+	.menu-toggle, .main-navigation.toggled .nav-menu {
+		text-align: right;
+		float: right;
+	}
+	.menu-toggle i {
+		float: left;
+	}
+	.main-navigation ul li .indicator {
+		left: 0;
+		right: inherit;
+		border-right: 1px solid rgba(0,0,0,.05);
+		border-left: none;
+	}
+	.main-navigation.toggled .nav-menu ul {
+		padding-left: 0;
+		padding-right: 5%;
+	}
 }

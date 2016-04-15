@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/semplicemente/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Clean WordPress Theme created by CrestaProject.com. Live demo http://crestaproject.com/demo/semplicemente/
-Version: 1.6.1
+Version: 1.6.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: semplicemente
@@ -450,23 +450,16 @@ a:active {
 	-webkit-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;
 }
-.main-navigation ul li .indicator {
-	position: absolute;
-	right: 43%;
-	bottom: 5px;
-	font-family: 'FontAwesome';
-	font-size: 12px;
-	line-height: 1;
-}
-.main-navigation ul li .indicator:before {
+.main-navigation li a:not(:last-child):after {
 	content: "\f0d7";
+	font-family: FontAwesome;
+	margin: 0 0 0 4px;
+	font-size: 12px;
 }
-.main-navigation ul ul li .indicator {
-	right: 20px;
-	bottom: 39%;
-}
-.main-navigation ul ul li .indicator:before {
+.main-navigation ul ul li a:not(:last-child):after {
 	content: "\f0da";
+	margin: 0 0 0 4px;
+	float: right;
 }
 .main-navigation ul ul {
 	float: left;
@@ -527,8 +520,9 @@ a:active {
 	}
 	
 	.main-navigation.toggled .nav-menu ul {
-		display: block;
+		display: none;
 		left: auto;
+		right: auto;
 		position: relative;
 		top: 0;
 		border-bottom: 0px;
@@ -567,6 +561,32 @@ a:active {
 	}
 	
 	.main-small-navigation .menu a {
+	}
+	
+	.main-navigation li a:not(:last-child):after, .main-navigation ul ul li a:not(:last-child):after {
+		content: "" !important;
+		font-family: FontAwesome;
+		margin: 0 !important;
+	}
+	
+	.main-navigation ul li .indicator {
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-family: 'FontAwesome';
+		font-size: 12px;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		color: #ffffff;
+		border-left: 1px solid rgba(0,0,0,.05);
+	}
+	.main-navigation ul li .indicator:before {
+		content: "\f067";
+	}
+	.main-navigation ul li .yesOpen.indicator:before {
+		content: "\f068";
 	}
 }
 .site-main .comment-navigation,
