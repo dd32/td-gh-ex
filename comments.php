@@ -21,11 +21,12 @@ if (post_password_required())
     <?php if (have_comments()) : ?>
         <ol class="comment-list">
             <?php
+			
             wp_list_comments(array(
                 'style' => 'ol',
                 'short_ping' => true,
                 'avatar_size' => 72,
-                'callback' => array($mp_artwork,'theme_comment')
+                'callback' => 'mp_artwork_theme_comment'
             ));
             ?>
         </ol><!-- .comment-list -->

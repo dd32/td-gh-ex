@@ -47,6 +47,10 @@ class MP_Artwork_Custom_Header {
         );
 
         add_theme_support('custom-header', $args);
+        $args_bg = array(
+            'default-color' => '000000',
+        );
+        add_theme_support('custom-background', $args_bg);
     }
 
     /**

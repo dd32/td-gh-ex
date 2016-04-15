@@ -1131,18 +1131,33 @@ button, input[type="button"], input[type="submit"] {
 }
 
 .comment-description .fn {
-  margin-bottom: 0.813em;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .comment-description .comment-meta {
-  margin: 0 0 0.813em;
+  margin: 0;
   font-style: italic;
 }
 .comment-description .comment-author {
   float: left;
   margin-right: 1.375em;
 }
+.comment-description .comment-author img {
+  border-radius: 100%;
+}
 .comment-description .comment-content {
   overflow: hidden;
+}
+.comment-description .comment-content .comment-content-header {
+  height: 72px;
+  line-height: 72px;
+}
+.comment-description .comment-content .comment-content-header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.comment-description .comment-content .comment-content-header > div * {
+  line-height: 1.6;
 }
 .comment-description .reply {
   text-transform: uppercase;
