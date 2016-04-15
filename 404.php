@@ -19,7 +19,7 @@ perform their jobs.
 ?>
 <?php get_header(); ?>
     <div id="main-content" class="content-area">
-        <?php get_template_part('template-parts/content', '404'); ?>
+        <?php get_template_part('template-parts/content', 'none'); ?>
     </div>
 <?php get_sidebar('post-content'); ?>
 <?php get_footer(); ?>
