@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/zenzero/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Zenzero is a modern and Minimal WordPress Theme with generous white space and large legible fonts, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com. Live demo http://crestaproject.com/demo/zenzero/
-Version: 1.3.1
+Version: 1.3.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zenzero
@@ -573,29 +573,17 @@ a:active {
 	position: relative;
 	text-transform: uppercase;
 }
-
-.main-navigation ul li .indicator {
-	position: absolute;
-	right: 0;
-	top: 19px;
-	font-family: 'FontAwesome';
-	font-size: 12px;
-	line-height: 1;
-	color: #727272;
-	-webkit-transition: color 0.3s;
-	-moz-transition: color 0.3s;
-	transition: color 0.3s;
-}
-.main-navigation ul ul li .indicator {
-	right: 8px;
-}
-.main-navigation ul li .indicator:before {
+.main-navigation li a:not(:last-child):after {
 	content: "\f0d7";
+	font-family: FontAwesome;
+	margin: 0 0 0 6px;
+	font-size: 12px;
 }
-.main-navigation ul ul li .indicator:before {
+.main-navigation ul ul li a:not(:last-child):after {
 	content: "\f0da";
+	margin: 0 0 0 6px;
+	float: right;
 }
-
 .main-navigation a {
 	display: block;
 	text-decoration: none;
@@ -720,8 +708,9 @@ a:active {
 	}
 	
 	.main-navigation.toggled .nav-menu ul {
-		display: block;
+		display: none;
 		left: auto;
+		right: auto;
 		position: relative;
 		top: 0;
 		border-bottom: 0px;
@@ -757,6 +746,31 @@ a:active {
 	.main-navigation ul:not(.sub-menu) > li > a:focus::before {
 		color: transparent !important;
 		text-shadow: none !important;
+	}
+	
+	.main-navigation li a:not(:last-child):after, .main-navigation ul ul li a:not(:last-child):after {
+		content: "" !important;
+		font-family: FontAwesome;
+		margin: 0 !important;
+	}
+	
+	.main-navigation ul li .indicator {
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-family: 'FontAwesome';
+		font-size: 12px;
+		width: 51px;
+		line-height: 51px;
+		text-align: center;
+		color: #727272;
+		border-left: 1px solid rgba(0,0,0,.08);
+	}
+	.main-navigation ul li .indicator:before {
+		content: "\f067";
+	}
+	.main-navigation ul li .yesOpen.indicator:before {
+		content: "\f068";
 	}
 }
 

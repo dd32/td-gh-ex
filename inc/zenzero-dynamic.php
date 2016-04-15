@@ -401,6 +401,11 @@ function zenzero_custom_css_styles() {
 	.tagcloud a:hover {
 		border: 1px solid <?php echo esc_attr($special_box_color_fourth); ?>;
 	}
+	@media screen and (max-width: 768px) {
+		.main-navigation ul li .indicator {
+			color: <?php echo esc_attr($special_box_color_fourth); ?>;
+		}
+	}
 	<?php endif; ?>
 	
 </style>

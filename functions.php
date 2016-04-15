@@ -95,7 +95,7 @@ add_action( 'widgets_init', 'zenzero_widgets_init' );
 function zenzero_scripts() {
 	wp_enqueue_style( 'zenzero-style', get_stylesheet_uri() );
 	$protocol = is_ssl() ? 'https' : 'http';
-	wp_enqueue_style( 'zenzero-fontAwesome', get_template_directory_uri() .'/css/font-awesome.min.css');
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/css/font-awesome.min.css');
 	wp_enqueue_style( 'zenzero-googlefonts', $protocol .'://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
 	wp_enqueue_script( 'zenzero-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
