@@ -37,7 +37,7 @@ $greenr_why_upgrade = <<< FEATURES
 <p class="wrap-header">
     <a class="view-demo" href="http://demo.webulous.in/greenr/">
         <i class="fa fa-eye"></i> $view_demo</a> 
-    <a class="upgrade" href="http://www.webulousthemes.com/?add-to-cart=27">
+    <a class="upgrade" href="http://www.webulousthemes.com/theme/greenr/">
         <i class="fa fa-upload"></i> $upgrade_to_pro</a>
 </p>
 <div class="one-third column clear">
@@ -142,7 +142,7 @@ function greenr_display_upgrade() {
 $options = array( 
     'capability' => 10,   
     'type' => 'theme_mod', 
-    'pro_url' => 'http://www.webulousthemes.com/?add-to-cart',
+    'pro_url' => 'http://www.webulousthemes.com/theme/greenr/',
     'panels' => apply_filters( 'greenr_customizer_options', array(
         'theme_options' => array(
             'priority'       => 9,

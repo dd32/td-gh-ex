@@ -45,6 +45,9 @@ http://www.gratisography.com/pictures/46_1.jpg
 16. Other theme options are self explanatory.
 
 == Change Log ==
+Version 1.1.9
+   * Change Pro Theme URL
+
 Version 1.1.8
    * Fix Woocommerce Breadcrumb Heading issue
 
