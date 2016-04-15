@@ -10,7 +10,6 @@ content. This content.php is the main content that will be displayed.
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (http://ninjablume.com/contact/
-@since          0.0.1
 ================================================================================================
 */
 ?>
@@ -21,17 +20,32 @@ content. This content.php is the main content that will be displayed.
     <header class="entry-header">
         <?php the_title(sprintf('<h1 class="entry-title"><a href="%s">', esc_url( get_permalink() ) ), '</a></h1>'); ?> 
     </header>
-    <div class="entry-content-container">
-        <div class="entry-metadata-container cf">
-            <div class="posted-comments">
-                <?php beyond_expectations_entry_meta(); ?>
+    <?php if (comments_open()) { ?>
+        <div class="entry-content-container">
+            <div class="entry-metadata-container cf">
+                <div class="posted-comments">
+                    <?php beyond_expectations_entry_meta(); ?>
+                </div>
+            </div>
+            <div class="entry-content">
+                <?php the_content(); ?>
+                <?php wp_link_pages(); ?>
+                <?php beyond_expectations_entry_taxonomies(); ?>
             </div>
         </div>
-        <div class="entry-content">
-            <?php the_content(); ?>
-            <?php wp_link_pages(); ?>
-            <?php beyond_expectations_entry_taxonomies(); ?>
+    <?php } else { ?>
+        <div class="entry-content-container-full">
+            <div class="entry-metadata-container cf">
+                <div class="posted-comments">
+                    <?php beyond_expectations_entry_meta(); ?>
+                </div>
+            </div>
+            <div class="entry-content">
+                <?php the_content(); ?>
+                <?php wp_link_pages(); ?>
+                <?php beyond_expectations_entry_taxonomies(); ?>
+            </div>
         </div>
-    </div>
+    <?php } ?>
 </article>
     <?php comments_template(); ?>

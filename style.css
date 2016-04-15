@@ -7,7 +7,7 @@ Description: Beyond Expectations is a responsive WordPress theme with many featu
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, white, dark, one-column, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, sticky-post, threaded-comments, translation-ready
-Version: 0.0.8
+Version: 0.0.9
 Text Domain: beyond-expectations
 
 This theme, like WordPress, is licensed under the GPL.
@@ -547,13 +547,12 @@ img {
 ================================================================================================
 */
 a {
-    color: #000080;
+    color: #1a1a1a;
     text-decoration: none;
 }
 
 a:hover {
-    color: #333333;
-    text-decoration: none;
+    color: #007acc;
 }
 
 /*

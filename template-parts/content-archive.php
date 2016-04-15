@@ -1,4 +1,4 @@
-<?php
+df<?php
 /*
 ================================================================================================
 Beyond Expectations - content-archive.php
@@ -10,7 +10,6 @@ archive in many ways.
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (http://ninjablume.com/contact/
-@since          0.0.1
 ================================================================================================
 */
 ?>
