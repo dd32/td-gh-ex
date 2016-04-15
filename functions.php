@@ -153,9 +153,10 @@ function catchkathmandu_setup() {
 		*/
 		add_theme_support( 'custom-logo',
 			array(
-		   		'height'      => 85,
-	 			'width'       => 84,
-	 			'flex-height' => true,
+		   		'height'		=> 85,
+	 			'width'			=> 84,
+	 			'flex-height'	=> true,
+	 			'flex-width'	=> true,
 			)
 		);
 	}

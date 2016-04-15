@@ -1,9 +1,12 @@
-== Changelog ==
+== Change log ==
+
+Version 3.7.1
+* Bug Fixed: Make the logo width flexible
 
 Version 3.7
 * Bug Fixed: Unnecessary sidebar-third.php and third column related codes removed
-* Update: Theme layout delivery
-* Update: Content width in new style
+* Updated: Theme layout delivery
+* Updated: Content width in new style
 * Updated: Favicon and Web Clip Migration to Site Icon( Core Support )
 * Updated: Logo to Custom Logo( Core Support ) for WP version 4.5
 
