@@ -42,6 +42,10 @@ http://pixabay.com/static/uploads/photo/2010/12/20/16/02/child-3853_640.jpg
 16. Other theme options are self explanatory.
 
 == Change Log ==
+
+v. 1.2.1
+ * Change Pro theme url
+
 v. 1.2.0
  * Fix Woocommerce Breadcrumb Heading issue
 

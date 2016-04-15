@@ -37,7 +37,7 @@ $boxy_why_upgrade = <<< FEATURES
 <p class="wrap-header">
     <a class="view-demo" href="http://demo.webulous.in/boxy/">
         <i class="fa fa-eye"></i> $view_demo</a> 
-    <a class="upgrade" href="http://www.webulousthemes.com/?add-to-cart=25">
+    <a class="upgrade" href="http://www.webulousthemes.com/theme/boxy-pro/">
         <i class="fa fa-upload"></i> $upgrade_to_pro</a>
 </p>
 <div class="one-third column clear">
@@ -140,7 +140,7 @@ function boxy_display_upgrade() {
 $options = array( 
     'capability' => 10,   
     'type' => 'theme_mod',
-    'pro_url' => 'http://www.webulousthemes.com/?add-to-cart=25',
+    'pro_url' => 'http://www.webulousthemes.com/theme/boxy-pro/',
     'panels' => apply_filters( 'boxy_customizer_options', array(
         'theme_options' => array(
             'priority'       => 9,
