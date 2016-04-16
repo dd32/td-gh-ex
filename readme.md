@@ -6,8 +6,17 @@
 View more themes from this author: http://presscustomizr.com
 
 ## Demo and Documentation
-* DEMO : http://demo-hueman.presscustomizr.com/
-* DOCUMENTATION : http://hueman.presscustomizr.com/
+* **Demo** : http://demo-hueman.presscustomizr.com/
+* **Documentation** : http://docs.presscustomizr.com/article/236-first-steps-with-the-hueman-wordpress-theme
+
+## Hueman Addons plugin
+The Hueman Addons plugin is a free WordPress plugin which includes cool additional features specifically designed for the Hueman WordPress : 
+* Shortcodes to help you style your content ( columns, dropcaps, ...)
+* A social sharing bar for your posts with count boxes for Twitter, Facebook, Google Plus, Pinterest
+
+**Download the plugin : [hueman-addons.zip](http://08bcf6c59e1667b0c11e-d508f833103a9ef76bbbec804d0292d4.r24.cf1.rackcdn.com/hueman-addons.zip)**
+
+The Hueman Addons plugin is documented [here](https://github.com/presscustomizr/hueman-addons)
 
 
 ## Theme License
@@ -72,7 +81,7 @@ Right sidebar, top to bottom:
 ## Other Licenses
 See headers of files for further details.
 
-# Changelog
+## Changelog
 = 3.1.0 April 16th 2016 =
 * fixed : wrong path to the default font Titillium in main stylesheet
 * fixed : child theme stylesheet : style.css is loaded again as a dependency of the parent Hueman theme style, to make it easier to override the main stylesheet rules

@@ -114,13 +114,13 @@ if ( ! function_exists( 'hu_print_social_links' ) ) {
       //So, if the id is not present, let's build it base on the key, like when added to the collection in the customizer
 
       // Put them together
-      printf( '<li><a rel="nofollow" class="social-tooltip" id="%1$s" title="%2$s" href="%3$s" %4$s><i class="fa %5$s" style="color:%6$s"></i></a></li>',
+      printf( '<li><a rel="nofollow" class="social-tooltip" id="%1$s" title="%2$s" href="%3$s" %4$s style="color:%5$s"><i class="fa %6$s"></i></a></li>',
         ! isset( $item['id'] ) ? 'hu_socials_'. $key : $item['id'],
         isset($item['title']) ? esc_attr( $item['title'] ) : '',
         ( isset($item['social-link']) && ! empty( $item['social-link'] ) ) ? esc_url( $item['social-link'] ) : 'javascript:void(0)',
         ( isset($item['social-target']) && false != $item['social-target'] ) ? 'target="_blank"' : '',
-        isset($item['social-icon']) ? esc_attr($item['social-icon']) : '',
-        isset($item['social-color']) ? esc_attr($item['social-color']) : '#000'
+        isset($item['social-color']) ? esc_attr($item['social-color']) : '#000',
+        isset($item['social-icon']) ? esc_attr($item['social-icon']) : ''
       );
     }
     echo '</ul>';
@@ -180,9 +180,9 @@ if ( ! function_exists( 'hu_page_title' ) ) {
 if ( ! function_exists( 'hu_blog_title' ) ) {
 
   function hu_blog_title() {
-    $heading    = esc_attr( hu_get_option('blog-heading') );
+    $heading    =  wp_kses_post( hu_get_option('blog-heading') );
     $heading    = $heading ? $heading : get_bloginfo('name');
-    $subheading = esc_attr( hu_get_option('blog-subheading') );
+    $subheading =  wp_kses_post( hu_get_option('blog-subheading') );
     $subheading = $subheading ? $subheading : __('Blog', 'hueman');
 
     return sprintf('%1$s <span class="hu-blog-subheading">%2$s</span>',
@@ -325,7 +325,7 @@ if ( ! function_exists( 'hu_feed_link' ) ) {
     if ( strpos( $output, 'comments' ) )
       return $output;
     // Return feed url
-    return esc_attr( hu_get_option('rss-feed',$output) );
+    return esc_url( hu_get_option('rss-feed',$output) );
   }
 
 }
@@ -426,9 +426,21 @@ add_filter( 'body_class', 'hu_browser_body_class' );
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_scripts' ) ) {
   function hu_scripts() {
-    wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/assets/front/js/jquery.flexslider.min.js', array( 'jquery' ),'', false );
-    wp_enqueue_script( 'jplayer', get_template_directory_uri() . '/assets/front/js/jquery.jplayer.min.js', array( 'jquery' ),'', true );
-    wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/front/js/scripts.js', array( 'jquery' ),'', true );
+    if ( has_post_format( 'gallery' ) || ( is_home() && ! is_paged() && ( hu_get_option('featured-posts-count') != '0' ) ) ) {
+      wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/assets/front/js/jquery.flexslider.min.js', array( 'jquery' ),'', false );
+    }
+
+    if ( has_post_format( 'audio' ) ) {
+      wp_enqueue_script( 'jplayer', get_template_directory_uri() . '/assets/front/js/jquery.jplayer.min.js', array( 'jquery' ),'', true );
+    }
+
+    wp_enqueue_script(
+      'scripts',
+      sprintf('%1$s/assets/front/js/scripts%2$s.js' , get_template_directory_uri(), ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
+      array( 'jquery' ),
+      ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+      true
+    );
 
     if ( is_singular() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
   }
@@ -440,9 +452,31 @@ add_action( 'wp_enqueue_scripts', 'hu_scripts' );
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_styles' ) ) {
   function hu_styles() {
-    wp_enqueue_style( 'style', get_stylesheet_uri() );
-    if ( hu_is_checked('responsive') ) { wp_enqueue_style( 'responsive', get_template_directory_uri().'/responsive.css' ); }
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/global/fonts/font-awesome.min.css' );
+    $_main_style = hu_is_checked('responsive') ? 'main' : 'main-not-responsive';
+
+    //registered only, will be loaded as a dependency of the wp style.css
+    wp_register_style(
+      'hueman-main',
+      sprintf('%1$s/assets/front/css/%2$s%3$s.css',
+          get_template_directory_uri(),
+          $_main_style,
+          hu_is_checked('minified-css') ? '.min' : ''
+      ),
+      array(),
+      ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+      'all'
+    );
+
+    //This function loads the main theme stylesheet or the child theme one
+    //1) Not mandatory if only the main theme is activated. But mandatory if a child theme is used (otherwise the child theme style won't be loaded)
+    //2) must be loaded as a dependency of 'hueman-main', to make it easier to override the main stylesheet rules without having to increase the specificicty of each child theme css rules
+    wp_enqueue_style(
+      'theme-stylesheet',
+      get_stylesheet_uri(),
+      array('hueman-main'),
+      ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+      'all'
+    );
   }
 }
 add_action( 'wp_enqueue_scripts', 'hu_styles' );

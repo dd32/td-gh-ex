@@ -1038,6 +1038,12 @@ load_template( get_template_directory() . '/functions/init-front.php' );
 
 
 /* Backward compatibility. Typically useful for users of child themes using old function names. */
+if ( ! function_exists('alx_layout_class') ) {
+  function alx_layout_class() {
+    return hu_layout_class();
+  }
+}
+
 if ( ! function_exists('alx_social_links') ) {
   function alx_social_links() {
     return hu_print_social_links();
