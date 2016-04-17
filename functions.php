@@ -1,91 +1,79 @@
 <?php
-function whitespektrum_setup() {
-// Setup Content Width value based on the theme's design and stylesheet.
-if (!isset($content_width))
-	$content_width = 600;
-	
-// Add Theme Support for feeds
-add_theme_support('automatic-feed-links');
+/*
+================================================================================================
+White Spektrum - functions.php
+================================================================================================
+This is the most generic template file in a WordPress theme and is one of the two required files
+for a theme (the other being template-tags.php). This file is used to maintain the main
+functionality and features for this theme. The second file is the template-tags.php that contains
+the extra functions and features.
 
-//Header Menu Section
-register_nav_menu('header-menu', __('Header Menu', 'whitespektrum'));
-	
-function whitespektrum_widgets_init() {
-	register_sidebar( array (
-		'name'              => __('Main Sidebar', 'whitespektrum'),
-        'id'			    => 'sidebar-1',	
-		'description' 		=>__('Appear Only on Posts', 'whitespektrum'),
-		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' 		=> '</aside>',
-		'before_title' 		=> '<h2 class="widget-title">',
-		'after_title' 		=> '</h2>',
-	));
-	
-	register_sidebar( array (
-		'name' 			=> __('Page Sidebar', 'whitespektrum'),
-		'id'			=> 'sidebar-2',	
-		'description' 		=>__('Appear Only on Pages', 'whitespektrum'),
-		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' 		=> '</aside>',
-		'before_title' 		=> '<h2 class="widget-title">',
-		'after_title' 		=> '</h2>',
-	));
+@package        White Spektrum WordPress Theme
+@copyright      Copyright (C) 2016. Benjamin Lu
+@license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+@author         Benjamin Lu (http://ninjablume.com/contact/
+================================================================================================
+*/
 
-	register_sidebar( array (
-		'name' 			=> __('Custom Sidebar', 'whitespektrum'),
-		'id'			=> 'sidebar-3',	
-		'description' 		=>__('Appear Only on Custom Pages', 'whitespektrum'),
-		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' 		=> '</aside>',
-		'before_title' 		=> '<h2 class="widget-title">',
-		'after_title' 		=> '</h2>',
-	));
-	
-	register_sidebar( array (
-		'name' 			=> __('Profile Sidebar', 'whitespektrum'),
-		'id'			=> 'sidebar-4',	
-		'description' 		=>__('Appear Only on Profile Page', 'whitespektrum'),
-		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' 		=> '</aside>',
-		'before_title' 		=> '<h2 class="widget-title">',
-		'after_title' 		=> '</h2>',
-	));
-	
-	register_sidebar( array (
-		'name' 			=> __('Contact Sidebar', 'whitespektrum'),
-		'id'			=> 'sidebar-5',	
-		'description' 		=>__('Appear Only on Contact Page', 'whitespektrum'),
-		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' 		=> '</aside>',
-		'before_title' 		=> '<h2 class="widget-title">',
-		'after_title' 		=> '</h2>',
-	));
+/*
+================================================================================================
+Table of Contents
+================================================================================================
+ 1.0 - Content Width
+ 2.0 - Require Files
+ 3.0 - Enqueue Styles and Scripts
+ 4.0 - Main Theme Setup
+================================================================================================
+*/
+
+/*
+================================================================================================
+ 1.0 - Content Width
+================================================================================================
+*/
+if (!function_exists('white_spektrum_content_width')) {
+    function white_spektrum_content_width() {
+        $GLOBALS['content_width'] = apply_filters( 'white_spektrum_content_width', 800 );
+    }
+    add_action('after_setup_theme', 'white_spektrum_content_width', 0);
 }
-add_action( 'widgets_init', 'whitespektrum_widgets_init' );
-	
-function whitespektrum_content_nav() {  
-global $wp_query;
 
-$big = 999999999; // need an unlikely integer
+/*
+================================================================================================
+ 2.0 - Require Files
+================================================================================================
+*/
+require_once(get_template_directory() . '/includes/template-tags.php');
 
-echo paginate_links( array(
-	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-	'format' => '?paged=%#%',
-	'current' => max( 1, get_query_var('paged') ),
-	'total' => $wp_query->max_num_pages
-) );
+/*
+================================================================================================
+ 3.0 - Enqueue Styles and Scripts
+================================================================================================
+*/
+function white_spektrum_scripts_setup() {
+    // Add and Enable the Default Stylesheet
+    wp_enqueue_style('white-spektrum-style', get_stylesheet_uri());
+    
+    // Add and Enable Google Fonts for Ubuntu
+    wp_enqueue_style('white-spektrum-google-ubuntu', '//fonts.googleapis.com/css?family=Ubuntu:400,300,500');
+    
+    // Add and Enable Font Awesome
+    wp_enqueue_style('white-spektrum-font-awesome', get_template_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '', true);
+    
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
 }
-	
-}
-add_action('after_setup_theme', 'whitespektrum_setup');
+add_action('wp_enqueue_scripts', 'white_spektrum_scripts_setup');
 
-// Scripts
-function whitespektrum_scripts_styles() {
-	// Enables Ubuntu Font
-        wp_enqueue_style('whitespektrum-style', get_stylesheet_uri());
-	wp_enqueue_style('whitespektrum-ubuntu','//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
-	
-	if (is_singular() && comments_open() && get_option( 'thread_comments' ))
-		wp_enqueue_script( 'comment-reply' );
+/*
+================================================================================================
+ 4.0 - Main Theme Setup
+================================================================================================
+*/
+function white_spektrum_theme_setup() {
+    // Add and Enable Add Theme Support 
+    add_theme_support('title-tag');
+    add_theme_support('automatic-feed-links');
 }
-add_action('wp_enqueue_scripts', 'whitespektrum_scripts_styles');
+add_action('after_theme_setup', 'white_spektrum_theme_setup');

@@ -1,5 +1,20 @@
-<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-	<div id = "site-aside">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</div>
-<?php endif; ?>
+<?php
+/*
+================================================================================================
+Ecclesiastical - sidebar.php
+================================================================================================
+This is the most generic template file in a WordPress theme and is one of the requirements to 
+display widgets on the right side of the page. This is the post content sidebar that is assigned
+in the widget area in the customizer and widget area.
+
+@package        Ecclesiastical WordPress Theme
+@copyright      Copyright (C) 2016. Benjamin Lu
+@license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+@author         Benjamin Lu (http://ninjablume.com/contact/
+@since          0.0.1
+================================================================================================
+*/
+?>
+<div id="main-sidebar" class="widget-area">
+    <?php dynamic_sidebar('post-content'); ?>
+</div>
