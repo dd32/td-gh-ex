@@ -8,7 +8,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, one-column, responsive-layout, sticky-post, translation-ready, two-columns
 Text Domain: white-spektrum
-Version: 0.0.9
+Version: 0.1.0
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and shared what you have learned with others.
@@ -776,9 +776,10 @@ span.page-numbers {
 }
 
 .comment-body {
+    border-bottom: 1px solid #cccccc;
     margin-bottom: 20px;
     padding: 10px;
-    border-bottom: 1px solid #CCCCCC;
+
 }
 
 .comments-area > ol, li  {
@@ -847,7 +848,6 @@ ol.children {
 }
 
 .comment-reply-title {
-    border-top: 1px dotted #CCCCCC;
     font-size: 20px;
     margin: 0;
     margin-top: 10px;

@@ -2,6 +2,7 @@
 /*
 ================================================================================================
 White Spektrum - index.php
+Template Name: Custom Sidebar
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of the two required files 
 for a theme (the other style.css). The index.php template file is flexible. It can be used to 
@@ -21,12 +22,12 @@ perform their jobs.
     <div id="content-area" class="content-area">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/content', 'page'); ?>
+                <?php get_template_part('page-templates/content', 'custom-sidebar'); ?>
         <?php endwhile; ?>
                 <?php white_spektrum_paging_navigation_setup(); ?>
         <?php else : ?>
                 <?php get_template_part('template-parts/content', 'none'); ?>
         <?php endif; ?>
     </div>
-<?php get_sidebar('page'); ?>
+<?php get_sidebar('custom'); ?>
 <?php get_footer(); ?>
