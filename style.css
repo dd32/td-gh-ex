@@ -8,7 +8,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, one-column, responsive-layout, sticky-post, translation-ready, two-columns
 Text Domain: white-spektrum
-Version: 0.0.8
+Version: 0.0.9
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and shared what you have learned with others.
@@ -632,6 +632,10 @@ a:hover {
     display: none;
 }
 
+.menu-toggle-container {
+    display: block;
+}
+
 /*
 ====================================================================================================
 10.0 - Navigation (Footer Navigation)
@@ -1091,6 +1095,74 @@ input[type = "search"] {
     .widget-area {
         float: none;
         width: 100%;
+    }
+    
+    .menu-toggle {
+        background: transparent;
+        border: 1px solid #d1d1d1;
+        color: #1a1a1a;
+        display: block;
+        padding: 8px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .primary-container {
+        margin-top: 10px;
+    }
+
+    .primary-navigation  {
+        display: none;
+        margin-top: 0;
+    }
+
+    .primary-expanded {
+        display: block;
+    }
+
+    .primary-navigation ul li {
+        float: none;
+    }
+
+    .primary-navigation ul li a {
+        background: #ffffff;
+    }
+
+    .primary-navigation ul li ul li a {
+        padding-left: 2em;
+        background: #ffffff;
+    }
+
+    .primary-navigation ul li ul li ul li a {
+        padding-left: 6em;
+    }
+
+    .primary-navigation li:hover > a,
+    .primary-navigation li > a:focus {
+        background: #ffffff;
+    }
+
+    .primary-navigation ul ul,
+    .primary-navigation ul ul ul {
+        position: relative;
+        top: inherit;
+        left: 0;
+        display: block;
+        float: none;
+        background: #ffffff;
+        color: #333333;
+    }
+
+    .primary-navigation ul ul a,
+    .primary-navigation ul ul ul a {
+        color: #333333;
+    }
+
+    .primary-navigation ul ul a { width: 100%; }
+
+    .primary-navigation ul ul :hover > a {
+        background: #ffffff;
+        color: #007acc;
     }
 }
 

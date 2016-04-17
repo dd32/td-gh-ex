@@ -60,6 +60,9 @@ function white_spektrum_scripts_setup() {
     // Add and Enable Font Awesome
     wp_enqueue_style('white-spektrum-font-awesome', get_template_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '', true);
     
+    // Enable Navigation
+    wp_enqueue_script('white-spektrum-navigation-js', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '04062015', true);
+    
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }

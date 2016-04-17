@@ -26,7 +26,7 @@ section of this theme. This also displays the navigation menu as well.
     </head>
 <body <?php body_class(); ?>>
     <section id="main-container" class="site-container cf">
-        <header id="main-header" class="site-header">
+        <header id="main-header" class="site-header" cf>
             <div class="site-branding">
                 <div class="title-box">
                     <h1 class="site-title"><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1>
@@ -34,7 +34,9 @@ section of this theme. This also displays the navigation menu as well.
                 </div>
             </div>
         </header>
-        <button class="menu-toggle"><?php _e('Menu', 'white-spektrum'); ?></button>
+        <div class="menu-toggle-container cf">
+            <button class="menu-toggle"><?php _e('Menu', 'white-spektrum'); ?></button>
+        </div>
         <nav id="main-navigation" class="primary-navigation cf">
             <?php wp_nav_menu(array(
                 'theme_location'    => 'primary-navigation'
