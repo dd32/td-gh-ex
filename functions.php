@@ -81,6 +81,9 @@ function bhost_setup() {
 endif; // bhost_setup
 add_action( 'after_setup_theme', 'bhost_setup' );
 
+define('BHOST_PRO_THEME_URL','//devitems.com/items/bhost-pro-responsive-wordpress-theme/','bhost');
+define('BHOST_LIVE_DEMO','//getmasum.net/bhost/','bhost');
+
 //default menu
 function bhost_default_menu(){
 	echo '<ul class="nav">';
@@ -178,26 +181,41 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Load About Theme file.
+ */
+ 
+require get_template_directory() . '/inc/about-theme.php';
+
 // comment list modify
 function bhost_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 <li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
-
-	<article class="comment-body">
-		<div class="comment-author-img">
-			 <?php echo get_avatar( $comment, 83 ); ?>
-		</div>
-		
-		<div class="comment-content">
-			<h3><?php comment_author_link(); ?> <span><i class="fa fa-clock-o"></i> <?php comment_date('F j, Y'); ?></span></h3>
+	<div class="single_comment clear">
+		<div class="comment_title clear">
+			<div class="comment_author_thumb">
+				<?php if(get_comment_author_url()) {?>
+				<a href="<?php esc_url(comment_author_url()); ?>"><?php echo get_avatar( $comment, 70 ); ?></a>
+				<?php }else { ?>
+					<?php echo get_avatar( $comment, 70 ); ?>
+				<?php }?>
+			</div>
+			<div class="comment_info">
+				<h4>
+					<?php comment_author_link() ?>
+					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+				</h4>
+				<div><?php comment_date('F j, Y'); ?> <?php esc_html_e('at' , 'bhost');?> <?php comment_date('g:i'); ?></div>
 				<?php if ($comment->comment_approved == '0') : ?>
 				<p><em><?php _e('Your comment is awaiting moderation.','bhost'); ?></em></p>
-				<?php endif; ?>
+				<?php endif; ?>			
+			</div>
+		</div>	
+		<div class="comment_text">
 			<?php comment_text(); ?>
 		</div>
-
-		<div class="reply"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?></div>
-	</article>	
+			
+	</div>													
 </li>
 
 
