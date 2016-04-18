@@ -13,9 +13,11 @@
  	                    <?php
  	                }
  	                ?>
-                <h1 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+                    
+                    <div class="blogdetails">
+                <h3 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
                 <ul class="meta">
-                 
+                  
                     <li><i class="fa fa-clock-o blogin-color"></i> <?php
                         $archive_year = get_the_time('Y');
                         $archive_month = get_the_time('m');
@@ -33,11 +35,10 @@
                                 'Comments: %'); ?></li>
                 </ul>
         <div class="blog-border"></div>
-                
-       <div class="blog-content"> 
-        <?php the_excerpt(); ?> </div>
-               <hr>  
-            </div>
+                                    
+                          <div class="blog-content">   <?php the_excerpt(); ?>  </div>
+                 
+            </div> </div>
         </div>
         <?php
     endwhile;

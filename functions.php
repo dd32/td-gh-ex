@@ -1,5 +1,7 @@
 <?php
  
+ 
+ 
 /* aripop Theme Starts */
 if ( ! function_exists( 'aripop_setup' ) ) :
 function aripop_setup() {
@@ -8,15 +10,15 @@ function aripop_setup() {
 	 *
 	 */
 	load_theme_textdomain( 'aripop', get_template_directory() . '/languages' );
- 	add_editor_style();
+	// This theme styles the visual editor to resemble the theme style.
+	add_editor_style();
+	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 	 	global $content_width;
 if ( ! isset( $content_width ) )
      $content_width = 900; /* pixels */
+	 add_theme_support( "title-tag" );
 	
-	
-	
-		 add_theme_support( "title-tag" );
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 798, 398, true );
 	add_image_size( 'aripop-full-width', 1038, 576, true );
@@ -25,14 +27,7 @@ if ( ! isset( $content_width ) )
 		'primary'   => __( 'Main Menu', 'aripop' ),
 		'secondary' => __( 'Secondary menu  for footer menu', 'aripop' ),		
 	) );
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	
-	/*
-	 * Enable support for Post Formats.
-	 */
+	 
 	// This theme allows users to set a custom background.
 	add_theme_support( 'custom-background', apply_filters( 'aripop_custom_background_args', array(
 		'default-color' => 'f5f5f5',
@@ -47,54 +42,14 @@ if ( ! isset( $content_width ) )
 }
 endif; // aripop_setup
 add_action( 'after_setup_theme', 'aripop_setup' );
-
  
  
  
  
-function aripop_of_head_css() {
-  
-    $output = '';
-    $custom_css = esc_attr(get_theme_mod( 'aripop_custom_css' ) );
-    if ($custom_css <> '') {
-        $output .= $custom_css . "\n";
-    }
-// Output styles
-    if ($output <> '') {
-        $output = "<!-- Custom Styling -->\n<style type=\"text/css\">\n" . $output . "</style>\n";
-        echo $output;
-    }
-}
-
-add_action('wp_head', 'aripop_of_head_css');
+ 
+ 
 
 
-
-function aripop_header_add_favicon() {
-  
-    $outputfevicon = '';
-    $custom_fevicon = esc_attr(get_theme_mod( 'aripop_logo2' ) );
-    if ($custom_fevicon <> '') {
-        $outputfevicon .= $custom_fevicon . "\n";
-    }
-// Output styles
-    if ($outputfevicon <> '') {
-        $outputfevicon = '<link rel="shortcut icon" href="' . $outputfevicon . '">';
-        echo $outputfevicon;
-    }
-}
-
-add_action('wp_head', 'aripop_header_add_favicon');
-
-
-
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -157,15 +112,6 @@ if (is_attachment()) {
     }
  
 
- 
-
- 
- 
- 
- 
- 
- 
-
 if ( ! function_exists( 'aripop_entry_meta' ) ) :
 /**
  * Set up post entry meta.
@@ -210,7 +156,6 @@ function aripop_entry_meta() {
 }
 
 endif;
-
 /**********************************/
 function aripop_special_nav_class( $classes, $item )
 {
@@ -250,31 +195,32 @@ add_action( 'widgets_init', 'aripop_widgets_init' );
 add_filter('nav_menu_css_class' , 'aripop_active_nav_class' , 10 , 2);
  
  
+ 
 function aripop_add_nav_class($output) {
 	
     $output= preg_replace('/<ul/', '<ul class="list-unstyled widget-list"', $output);
     return $output;
 }
 add_filter('wp_list_categories', 'aripop_add_nav_class');
- 
+/*
+ * Replace Excerpt [...] with Read More
+**/
+function aripop_read_more( ) {
+return ' ...';
+ }
+add_filter( 'excerpt_more', 'aripop_read_more' ); 
 /**
  * Enqueues scripts and styles for front-end.
  */
 function aripop_scripts_styles() {
 	 wp_enqueue_style('bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.css');
-         wp_enqueue_style( 'aripop-basic-style', get_stylesheet_uri() );
-		  wp_enqueue_style('font-awesome', get_template_directory_uri() . '/styles/font-awesome.css');
-		    wp_enqueue_style('normalize', get_template_directory_uri() . '/styles/normalize.css');
-	 
-		    // Add Google Fonts
-  wp_register_style( 'aripop-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,700,800,600');
-
-  wp_enqueue_style( 'aripop-fonts' );
-		 
-	 
-		  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array('jquery'),false,true);
+          wp_enqueue_style( 'aripop-basic-style', get_stylesheet_uri() );
+		 wp_enqueue_style('font-awesome', get_template_directory_uri() . '/styles/font-awesome.css');
+		   
+			 
+		  wp_enqueue_script( 'aripop_modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array('jquery'),false,true);
 		  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.js',array('jquery'),false,true);
-		  wp_enqueue_script( 'custom', get_template_directory_uri() . '/scripts/custom.js',array('jquery'),false,true);
+		  wp_enqueue_script( 'aripop_custom', get_template_directory_uri() . '/scripts/custom.js',array('jquery'),false,true);
 	  if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'aripop_scripts_styles' );
@@ -282,12 +228,6 @@ add_action( 'wp_enqueue_scripts', 'aripop_scripts_styles' );
 
 
 
-
- 
-
-
-
- 
  
 
 // placeholder to textarea
@@ -344,7 +284,9 @@ add_action( 'wp_footer', 'aripop_ie_js_footer', 20 );
 
 
 
- 
+
+
+
 
 
 
@@ -371,6 +313,8 @@ add_filter('wp_page_menu', 'aripop_add_menuid');
 /**
  * aripop custom pagination for posts 
  */
+ 
+ 
 function aripop_paginate($pages = '', $range = 1)
 {  
      $showitems = ($range * 2)+1;  
@@ -387,19 +331,19 @@ function aripop_paginate($pages = '', $range = 1)
      }   
      if(1 != $pages)
      {
-         echo "<div class='pagination'>";
-         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<li class='pagination-previous-all'><a href='".get_pagenum_link(1)."'><span class='sprite previous-all-icon'><<</span></a></li>";
-         if($paged > 1 && $showitems < $pages) echo "<li class='pagination-previous'><a href='".get_pagenum_link($paged - 1)."'><span class='sprite previous-icon'><</span></a></li>";
+         echo "<ul class='pagination'>";
+         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<li><a href='".get_pagenum_link(1)."'><span><i class='fa fa-angle-double-left'></i></span></a></li>";
+         if($paged > 1 && $showitems < $pages) echo "<li><a href='".get_pagenum_link($paged - 1)."'><span><i class='fa fa-angle-left'></i></span></a></li>";
          for ($i=1; $i <= $pages; $i++)
          {
              if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
              {
-                 echo ($paged == $i)? "<li><a href='#'>".$i."</a></li>":"<li><a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a></li>";
+                 echo ($paged == $i)? "<li><a href='#' class='active'>".$i."</a></li>":"<li><a href='".get_pagenum_link($i)."' >".$i."</a></li>";
              }
          }
-         if ($paged < $pages && $showitems < $pages) echo "<li class='pagination-next'><a href='".get_pagenum_link($paged + 1)."'><span class='sprite next-icon'>></span></a></li>";  
-         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<li class='pagination-next-all'><a href='".get_pagenum_link($pages)."'><span class='sprite next-all-icon'>>></span></a></li>";
-         echo "</div>\n";
+         if ($paged < $pages && $showitems < $pages) echo "<li><a href='".get_pagenum_link($paged + 1)."'><span><i class='fa fa-angle-right'></i></span></a></li>";  
+         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<li><a href='".get_pagenum_link($pages)."'><span><i class='fa fa-angle-double-right'></i></span></a></li>";
+         echo "</ul>\n";
      }
 }
 
@@ -409,5 +353,9 @@ require get_template_directory() . '/inc/customizer.php';
 
 
 require get_template_directory() . '/inc/aripop-admin_page.php';
+
+
+
+
 
 

@@ -17,14 +17,14 @@
 					<div class="row">
  <div class="col-md-12  col-sm-12 ">
         <ol class="breadcrumb ">
-          <?php aripop_breadcrumbs(); ?>
+        <i class="fa fa-home pr-10"></i>  <?php aripop_breadcrumbs(); ?>
         </ol>
       </div>
 </div>
 				</div>
 			</div>
 <!--Start Content Grid-->
-<div class="mainblogwrapper clearfix">
+<div class="mainblogwrapper">
     <div class="container">
         <div class="row">
             <div class="mainblogcontent">
@@ -37,13 +37,13 @@
                 if (have_posts())
                     the_post();
                 ?>
-                <h1><?php printf(__('Author Archives: %s', 'aripop'), "<a class='url fn n' href='" . get_author_posts_url(get_the_author_meta('ID')) . "' title='" . esc_attr(get_the_author()) . "' rel='me'>" . get_the_author() . "</a>"); ?></h1>
+                 <h1><?php printf(__('Author Archives: %s', 'aripop'), "<a class='url fn n' href='" . get_author_posts_url(get_the_author_meta('ID')) . "' title='" . esc_attr(get_the_author()) . "' rel='me'>" . get_the_author() . "</a>"); ?></h1>
                 <?php
                 // If a user has filled out their description, show a bio on their entries.
                 if (get_the_author_meta('description')) :
                     ?>
                     <?php echo get_avatar(get_the_author_meta('user_email'), apply_filters('aripop_author_bio_avatar_size', 60)); ?>
-                    <h2><?php printf(__('About %s', 'aripop') . get_the_author()); ?></h2>
+                    <h2><?php printf('About %s' . get_the_author()); ?></h2>
                     <?php the_author_meta('description'); ?>
                 <?php endif; ?>
                 </div>
@@ -57,14 +57,16 @@
                  * If you want to overload this in a child theme then include a file
                  * called loop-author.php and that will be used instead.
                  */
-                get_template_part('loop', 'author');
+                  get_template_part('loop', 'author'); 
                 ?>
+               
+                
            <div class="clearfix"></div>
-                    <nav id="nav-single"> <span class="nav-previous">
- <?php next_posts_link(__( 'Next Post', 'aripop' )); ?>
-                        </span> <span class="nav-next">
- <?php previous_posts_link(__( 'Previous Post', 'aripop' )); ?>
-                        </span> </nav>
+                           <?php wp_reset_query();?>
+      <div class="pagecount">
+        <?php if (function_exists("aripop_paginate"))
+   		 aripop_paginate($query->max_num_pages); ?>		
+      </div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="col-md-3">

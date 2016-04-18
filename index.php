@@ -18,21 +18,20 @@ get_header(); ?>
 					<div class="row">
  <div class="col-md-12  col-sm-12 ">
         <ol class="breadcrumb ">
-          <?php aripop_breadcrumbs(); ?>
+        &nbsp;
         </ol>
       </div>
 </div>
 				</div>
 			</div>
 <!--end / page-title-->
-<div class="mainblogwrapper clearfix">
+<div class="mainblogwrapper">
     <div class="container">
         <div class="row">
             <div class="mainblogcontent">
               
                 <div class="col-md-9">
-                                    <!-- *** Post loop starts *** -->
-       <?php 
+                    <?php 
 	  $post_per_page = get_option('posts_per_page');
 	  $args = array( 'posts_per_page'  => $post_per_page, 
 		'orderby'      => 'post_date', 
@@ -50,15 +49,18 @@ get_header(); ?>
  <?php get_template_part('loop', 'index'); ?>
                     <div class="clearfix"></div>
 
-         
-                    <nav id="nav-single"> <span class="nav-previous">
-                             <?php next_posts_link(__( 'Next Post', 'aripop' )); ?>
+                     
+      <div class="pagecount">
+         <nav id="nav-single"> <span class="nav-previous">
+                            <?php next_posts_link(__( 'Next Post <i class="fa fa-long-arrow-right"></i>', 'aripop' )); ?>
                         </span> <span class="nav-next">
- <?php previous_posts_link(__( 'Previous Post', 'aripop' )); ?>
-                        </span> </nav>
+<?php previous_posts_link(__( '<i class="fa fa-long-arrow-left"></i> Previous Post', 'aripop' )); ?>
+                        </span> </nav>	
+      </div>
+                     
                     <div class="clearfix"></div>
                     <!-- ***Comment Template *** -->
-                    <?php comments_template(); ?>
+                   
                     <!-- ***Comment Template *** -->
                 </div>
                 <div class="col-md-3">

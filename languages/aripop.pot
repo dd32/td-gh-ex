@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Aron\n"
-"POT-Creation-Date: 2015-09-14 17:30+0530\n"
-"PO-Revision-Date: 2015-09-14 17:31+0530\n"
+"Project-Id-Version: Aripop\n"
+"POT-Creation-Date: 2016-02-03 14:53+0530\n"
+"PO-Revision-Date: 2016-02-03 14:54+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -15,83 +15,81 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:34
+#: 404.php:36
 msgid "Not Found"
 msgstr ""
 
-#: 404.php:35
+#: 404.php:37
 msgid ""
 "Apologies, but the page you requested could not be found. Perhaps searching "
 "will help."
 msgstr ""
 
-#: archive.php:46
+#: archive.php:47
 #, php-format
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: archive.php:48
+#: archive.php:49
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: archive.php:50
+#: archive.php:51
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: archive.php:52
+#: archive.php:53
 msgid "Blog Archives"
 msgstr ""
 
-#: archive.php:69 author.php:64 category.php:58 index.php:55 search.php:39
-#: tag.php:46
-msgid "Next Post"
+#: archive.php:75 category.php:48 index.php:55 search.php:46 tag.php:46
+msgid "Next Post <i class=\"fa fa-long-arrow-right\"></i>"
 msgstr ""
 
-#: archive.php:71 author.php:66 category.php:60 index.php:57 search.php:41
-#: tag.php:48
-msgid "Previous Post"
+#: archive.php:77 category.php:50 index.php:57 search.php:48 tag.php:48
+msgid "<i class=\"fa fa-long-arrow-left\"></i> Previous Post"
 msgstr ""
 
-#: attachment.php:35
+#: attachment.php:37
 #, php-format
 msgid "Return to %s"
 msgstr ""
 
-#: attachment.php:38
+#: attachment.php:40
 #, php-format
 msgid "<span>&larr;</span> %s"
 msgstr ""
 
-#: attachment.php:43
+#: attachment.php:45
 #, php-format
 msgid "By %2$s"
 msgstr ""
 
-#: attachment.php:49
+#: attachment.php:51
 #, php-format
 msgid "Published %2$s"
 msgstr ""
 
-#: attachment.php:55
+#: attachment.php:57
 #, php-format
 msgid "Full size is %s pixels"
 msgstr ""
 
-#: attachment.php:55
+#: attachment.php:57
 msgid "Link to full-size image"
 msgstr ""
 
-#: attachment.php:60 attachment.php:100
+#: attachment.php:62 attachment.php:102
 msgid "Edit"
 msgstr ""
 
-#: attachment.php:98
+#: attachment.php:100
 msgid "Continue reading &rarr;"
 msgstr ""
 
-#: attachment.php:99
+#: attachment.php:101
 msgid "Pages:"
 msgstr ""
 
@@ -100,12 +98,7 @@ msgstr ""
 msgid "Author Archives: %s"
 msgstr ""
 
-#: author.php:46
-#, php-format
-msgid "About %s"
-msgstr ""
-
-#: category.php:38
+#: category.php:37
 #, php-format
 msgid "Category Archives: %s"
 msgstr ""
@@ -142,101 +135,101 @@ msgstr ""
 msgid "Leave a Comment"
 msgstr ""
 
-#: comments.php:82
+#: comments.php:80
 msgid "LEAVE A COMMENT"
 msgstr ""
 
-#: comments.php:83
+#: comments.php:81
 msgid "Submit Comment"
 msgstr ""
 
-#: comments.php:87
+#: comments.php:85
 msgid "Your Name*"
 msgstr ""
 
-#: comments.php:92
+#: comments.php:90
 msgid "E-mail*"
 msgstr ""
 
-#: comments.php:97
+#: comments.php:95
 msgid "Website"
 msgstr ""
 
-#: comments.php:101
+#: comments.php:99
 msgid "Comment*"
 msgstr ""
 
-#: footer.php:17
-msgid "Copyright &#169; 2015 All Rights Reserved."
+#: footer.php:9
+msgid "Copyright &#169; 2016 All Rights Reserved."
 msgstr ""
 
-#: footer.php:19
+#: footer.php:11
 msgid "Powered by"
 msgstr ""
 
-#: footer.php:19
+#: footer.php:11
 msgid "WordPress"
 msgstr ""
 
-#: footer.php:19
+#: footer.php:11
 msgid "Theme by"
 msgstr ""
 
-#: footer.php:19
+#: footer.php:11
 msgid "Arinio"
 msgstr ""
 
-#: functions.php:25
+#: functions.php:27
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:26
+#: functions.php:28
 msgid "Secondary menu  for footer menu"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:97
 msgid "Home"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:101
 msgid "attachment:"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:111
 msgid "Category By:"
 msgstr ""
 
-#: functions.php:142
+#: functions.php:130
 msgid "Search Results for..."
 msgstr ""
 
-#: functions.php:148 functions.php:149 functions.php:150
+#: functions.php:136 functions.php:137 functions.php:138
 msgid "Archive for "
 msgstr ""
 
-#: functions.php:151
+#: functions.php:139
 msgid "Author Archive for "
 msgstr ""
 
-#: functions.php:151
+#: functions.php:139
 #, php-format
 msgid " %s"
 msgstr ""
 
-#: functions.php:155
+#: functions.php:143
 msgid "Search Results for \""
 msgstr ""
 
-#: functions.php:177 functions.php:179
+#: functions.php:156 functions.php:158
 msgid ", "
 msgstr ""
 
-#: functions.php:190
+#: functions.php:169
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: functions.php:196 functions.php:198
+#: functions.php:175 functions.php:177
 #, php-format
 msgid ""
 "<div class=\"post-category\"> Posted in : %1$s  on %3$s </div><div class="
@@ -244,183 +237,35 @@ msgid ""
 "href=\"#\">"
 msgstr ""
 
-#: functions.php:200
+#: functions.php:179
 #, php-format
 msgid ""
 "<div class=\"post-category\"> Posted on : %3$s </div><div class=\"post-author"
 "\"> by : %4$s </div> <div class=\"post-comment\"> Comments: <a href=\"#\">"
 msgstr ""
 
-#: functions.php:228
+#: functions.php:206
 msgid "Content Sidebar"
 msgstr ""
 
-#: functions.php:230
+#: functions.php:208
 msgid "Additional sidebar that appears on the right."
 msgstr ""
 
-#: functions.php:298
+#: functions.php:279
 msgid "Enter Your Comments"
 msgstr ""
 
-#: inc/customizer.php:19
-msgid "Get Aron PRO Theme!  Just $19"
-msgstr ""
-
-#: inc/customizer.php:22
-msgid "Upgrade to Aron PRO Theme"
-msgstr ""
-
-#: inc/customizer.php:25
-msgid "View More our themes"
-msgstr ""
-
-#: inc/customizer.php:29
-msgid "Free Support"
-msgstr ""
-
-#: inc/customizer.php:32
-msgid "View Demo"
-msgstr ""
-
-#: inc/customizer.php:56
-msgid "Aron Support"
-msgstr ""
-
-#: inc/customizer.php:57
-msgid ""
-"You are using the Aron, Free Version of Aron Pro Theme. Upgrade to Pro for "
-"extra features like Home Page Unlimited Slider, Work Gallery, Team section, "
-"Client Section and Life time theme support and much more. "
-msgstr ""
-
-#: inc/customizer.php:70
-msgid "Aron Upgrade"
-msgstr ""
-
-#: inc/customizer.php:97
-msgid "Basic Setting"
-msgstr ""
-
-#: inc/customizer.php:98
-msgid "This Is a Basic Setting Section For Frontpage"
-msgstr ""
-
-#: inc/customizer.php:104
-msgid "Site Logo"
-msgstr ""
-
-#: inc/customizer.php:115
-msgid "Favicon"
-msgstr ""
-
-#: inc/customizer.php:124
-msgid "Copyright"
-msgstr ""
-
-#: inc/customizer.php:132
-msgid "Copyright Text"
-msgstr ""
-
-#: inc/customizer.php:166
-msgid "Custom CSS"
-msgstr ""
-
-#: inc/customizer.php:229
-msgid "Slider 1"
-msgstr ""
-
-#: inc/customizer.php:230
-msgid "Slider 2"
-msgstr ""
-
-#: inc/customizer.php:234
-msgid "Slider Setting"
-msgstr ""
-
-#: inc/customizer.php:235
-msgid "You can upload here images for slider"
-msgstr ""
-
-#: inc/customizer.php:261
-msgid "File Upload"
-msgstr ""
-
-#: inc/customizer.php:271 inc/customizer.php:381 inc/customizer.php:386
-msgid "Title"
-msgstr ""
-
-#: inc/customizer.php:276
-msgid "Slider Title"
-msgstr ""
-
-#: inc/customizer.php:286 inc/customizer.php:398 inc/customizer.php:457
-msgid "Description"
-msgstr ""
-
-#: inc/customizer.php:292
-msgid "Slider Description"
-msgstr ""
-
-#: inc/customizer.php:324 template-front-page.php:63
-msgid "Icon 1"
-msgstr ""
-
-#: inc/customizer.php:325 template-front-page.php:64
-msgid "Icon 2"
-msgstr ""
-
-#: inc/customizer.php:326 template-front-page.php:65
-msgid "Icon 3"
-msgstr ""
-
-#: inc/customizer.php:327 template-front-page.php:66
-msgid "Icon 4"
-msgstr ""
-
-#: inc/customizer.php:332
-msgid "Services Setting"
-msgstr ""
-
-#: inc/customizer.php:333
-msgid ""
-"This is a Services settings section to change the servise section Details."
-msgstr ""
-
-#: inc/customizer.php:366
-msgid "Font class Name"
-msgstr ""
-
-#: inc/customizer.php:371
-msgid "Class Name"
-msgstr ""
-
-#: inc/customizer.php:404
-msgid "Services Description"
-msgstr ""
-
-#: inc/customizer.php:438
-msgid "Heading"
-msgstr ""
-
-#: inc/customizer.php:447
-msgid "Main Heading"
-msgstr ""
-
-#: inc/customizer.php:466
-msgid "Main Description"
-msgstr ""
-
-#: loop.php:48 single.php:84
+#: loop.php:49 single.php:83
 msgid "Sorry no post matched your criteria"
 msgstr ""
 
-#: search.php:29
+#: search.php:31
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:3
+#: searchform.php:4
 msgid "Search"
 msgstr ""
 
@@ -432,37 +277,43 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: tag.php:35
+#: tag.php:39
 #, php-format
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: template-front-page.php:31
-msgid "WordPress Theme"
+#: template-front-page.php:34
+msgid "ELEGANT BUSINESS TEMPLATE"
 msgstr ""
 
-#: template-front-page.php:31
+#: template-front-page.php:38
 msgid ""
-"Lorem ipsum dolor sit amet, consectetur. <br> Suspendisse venenatis mi et "
-"risus fringilla."
+"Lorem ipsum dolor sit amet, consectetur adipis elit. Suspendisse venenatis "
+"mi et risus fringilla, sit amet posuere rhoncus."
 msgstr ""
 
-#: template-front-page.php:77
-msgid "Our Services"
+#: template-front-page.php:74
+msgid "Icon 1"
 msgstr ""
 
-#: template-front-page.php:79
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam"
+#: template-front-page.php:75
+msgid "Icon 2"
 msgstr ""
 
-#: template-front-page.php:91
-msgid "Consultation"
+#: template-front-page.php:76
+msgid "Icon 3"
 msgstr ""
 
 #: template-front-page.php:92
+msgid "Our Services"
+msgstr ""
+
+#: template-front-page.php:103
+msgid "Mobile Ready"
+msgstr ""
+
+#: template-front-page.php:104
 msgid ""
-"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
-"Lorem Ipsum."
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore"
 msgstr ""

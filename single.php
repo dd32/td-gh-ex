@@ -12,7 +12,7 @@ get_header();
 					<div class="row">
  <div class="col-md-12  col-sm-12 ">
         <ol class="breadcrumb ">
-          <?php aripop_breadcrumbs(); ?>
+          <i class="fa fa-home pr-10"></i> <?php aripop_breadcrumbs(); ?>
         </ol>
       </div>
 </div>
@@ -32,9 +32,8 @@ get_header();
             
                 <div class="col-md-9">
                     <!-- *** Post loop starts *** -->
-
-                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?> 
-                                   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?> 
+                  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="article-page">
                <?php if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) { ?>
              <?php
@@ -47,7 +46,9 @@ get_header();
  	                    <?php
  	                }
  	                ?>
-                <h1 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+                    
+                    <div class="blogdetails">
+                <h3 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
                 <ul class="meta">
                  
                     <li><i class="fa fa-clock-o blogin-color"></i> <?php
@@ -70,22 +71,23 @@ get_header();
                                     
                           <div class="blog-content">   <?php the_content(); ?>  </div>
                  
-            </div>
+            </div> </div>
         </div>
-      
- 
-<div class="clearfix"></div>
-                            <?php
-                        endwhile;
-                    else:
-                        ?>
-                        <div>
-                            <p>
-                        <?php _e('Sorry no post matched your criteria',
-                                'aripop'); ?>
-                            </p>
-                        </div>
-<?php endif; ?>
+                 
+          <?php
+    endwhile;
+else:
+    ?>
+    <div>
+        <p>
+    <?php _e('Sorry no post matched your criteria',
+            'akyra'); ?>
+        </p>
+    </div>
+<?php endif; ?>          
+                 
+                 
+                 
                     <!-- *** Post loop ends*** -->
                     <div class="clearfix"></div>
                     <!-- ***Comment Template *** -->

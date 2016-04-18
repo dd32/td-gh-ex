@@ -1,12 +1,22 @@
 <?php
 
- 
-
-// admin area styling
-function aripop_custom_admin_colors() { 
-   echo '<style type="text/css">
-
-body {
+    
+    add_action('admin_menu', 'aripop_setup_menu');
+     
+    function aripop_setup_menu(){
+    	add_theme_page( __('AR Theme Details', 'aripop' ), __('AR Theme Details', 'aripop' ), 'edit_theme_options', 'aripop-setup', 'aripop_init' ); 
+    }  
+     
+ 	function aripop_init(){ 
+	
+	
+	
+	
+	
+	
+	echo '
+	<style>
+	body {
 	margin: 0px;
 }
 
@@ -198,19 +208,31 @@ a {
 
 }
 		
-         </style>';
-}
-
-add_action('admin_head', 'aripop_custom_admin_colors');
-
-     
-    add_action('admin_menu', 'aripop_setup_menu');
-     
-    function aripop_setup_menu(){
-    	add_theme_page( __('AR Theme Details', 'aripop' ), __('AR Theme Details', 'aripop' ), 'edit_theme_options', 'aripop-setup', 'aripop_init' ); 
-    }  
-     
- 	function aripop_init(){ 
+	</style>
+	
+	
+	
+	';
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	 	echo '<div class="grid grid-pad"><div class="col-1-1"><h1 style="text-align: center;">';
 		printf( __('Thank you for using Aripop Theme :)', 'aripop' ));  
         echo "</h1></div></div>";

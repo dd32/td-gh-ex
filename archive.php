@@ -17,14 +17,15 @@
 					<div class="row">
  <div class="col-md-12  col-sm-12 ">
         <ol class="breadcrumb ">
-          <?php aripop_breadcrumbs(); ?>
+         <i class="fa fa-home pr-10"></i> <?php aripop_breadcrumbs(); ?>
         </ol>
       </div>
 </div>
 				</div>
 			</div>
+
 <!--Start Content Grid-->
-<div class="mainblogwrapper clearfix">
+<div class="mainblogwrapper">
     <div class="container">
         <div class="row">
             <div class="mainblogcontent">
@@ -41,7 +42,7 @@
                 if (have_posts())
                     the_post();
                 ?>
-                 <h1>
+               <h1>
                     <?php if (is_day()) : ?>
                         <?php printf(__('Daily Archives: %s', 'aripop'), get_the_date()); ?>
                     <?php elseif (is_month()) : ?>
@@ -62,14 +63,20 @@
                  * If you want to overload this in a child theme then include a file
                  * called loop-archives.php and that will be used instead.
                  */
-                get_template_part('loop', 'archive');
+                 
                 ?>
+                
+                
+                <?php get_template_part('loop', 'archive'); ?>
             <div class="clearfix"></div>
-                        <nav id="nav-single"> <span class="nav-previous">
-                                <?php next_posts_link(__( 'Next Post', 'aripop' )); ?>
-                            </span> <span class="nav-next">
-                        <?php previous_posts_link(__( 'Previous Post', 'aripop' )); ?>
-                            </span> </nav>
+                               
+      <div class="pagecount">
+       <nav id="nav-single"> <span class="nav-previous">
+                            <?php next_posts_link(__( 'Next Post <i class="fa fa-long-arrow-right"></i>', 'aripop' )); ?>
+                        </span> <span class="nav-next">
+<?php previous_posts_link(__( '<i class="fa fa-long-arrow-left"></i> Previous Post', 'aripop' )); ?>
+                        </span> </nav>
+      </div>
            <div class="clearfix"></div>
                 </div>
                 <div class="col-md-3">
