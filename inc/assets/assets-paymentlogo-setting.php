@@ -183,13 +183,12 @@ function accesspress_paymentlogo_setting($wp_customize){
         'label' => __( 'AccessPress PRO Themes' , 'accesspress-store' ),
         'section' => 'our_product_info',
         'description' => $our_product
-        )));
-
+    )));
 
     $wp_customize->add_setting('theme_info_useful_plugins',array(
         'default' => '',
         'sanitize_callback' => 'accesspress_store_sanitize_text',
-        ));
+    ));
 
     $our_product = '<a target="_blank" href="'.esc_url('https://accesspressthemes.com/plugins/').'">'.__('AccessPress Plugins','accesspress-store').'</a>';  
 
@@ -197,29 +196,25 @@ function accesspress_paymentlogo_setting($wp_customize){
         'label' => __( 'AccessPress Plugins' , 'accesspress-store' ),
         'section' => 'our_product_info',
         'description' => $our_product
-        )));
-
-
-
-
+    )));
 
     $wp_customize->add_section(
         'accesspress_store_pro_features',
         array(
           'title'           =>  __('AccessPress Store Pro Features', 'accesspress-store'),
           'priority'        =>  '4',
-          'panel' => 'theme_info', )
-        );
+          'panel' => 'theme_info', 
+    ));
 
     $wp_customize->add_setting('theme_info_theme',array(
         'default' => '',
         'sanitize_callback' => 'accesspress_store_sanitize_text',
-        ));
+    ));
 
     $wp_customize->add_control( new Theme_Info_Custom_Control( $wp_customize ,'theme_info_theme',array(
         'label' => __( 'Store Pro Features' , 'accesspress-store' ),
         'section' => 'accesspress_store_pro_features',
-       )));
+    )));
 
 }
 add_action('customize_register', 'accesspress_paymentlogo_setting');

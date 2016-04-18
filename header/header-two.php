@@ -8,7 +8,7 @@
                 <?php
                     if (is_user_logged_in()) {
                         global $current_user;
-                        get_currentuserinfo();
+                        wp_get_current_user();
                 ?>
                         <div class="welcome-user">
                             <span class="line">|</span>
@@ -60,7 +60,7 @@
                     <?php
                     if (is_user_logged_in()) {
                         global $current_user;
-                        get_currentuserinfo();
+                        wp_get_current_user();
                     ?>
                         <a href="<?php echo wp_logout_url( home_url() ); ?>" class="logout">
                             <?php _e(' Logout', 'accesspress-store'); ?>

@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 2.0.6 =
+
+** Remove the deprecated, make the theme compatible with 4.5 version.
+
 = 2.0.5 =
 
 ** Add the options to change widget header layout.
