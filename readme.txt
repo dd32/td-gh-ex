@@ -99,3 +99,8 @@ Version 1.3.8
 * Fixed site title in single post
 * Fixed h1 and h2 post title
 * Minor bug fixes
+
+Version 1.3.9
+* Updated FontAwesome to 4.6.1v
+* Updated Sticky Sidebar script
+* Minor bug fixes

@@ -19,7 +19,7 @@
 			<span class="sep"> | </span>
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'storto' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'storto' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( '%1$s by %2$s.', 'storto' ), 'Storto', '<a title="CrestaProject" href="http://crestaproject.com/" rel="designer" target="_blank">CrestaProject WordPress Themes</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'storto' ), 'Storto', '<a target="_blank" title="CrestaProject" href="http://crestaproject.com/downloads/storto/" rel="designer">CrestaProject WordPress Themes</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 	
