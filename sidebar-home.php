@@ -4,7 +4,8 @@
  *
  * @package AccessPress Mag
  */
- 
+
+global $post;
 $accesspress_mag_theme_option = get_option( 'accesspress-mag-theme' );
 
 $trans_ads = of_get_option( 'trans_advertisement', 'Advertisement' );
@@ -14,10 +15,9 @@ $trans_editor = of_get_option( 'trans_editor_picks' );
 if( empty( $trans_editor ) ){ $trans_editor = __( "Editor Pick's", "accesspress-mag" ); }
 
 $page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout', true);
-
 ?>
 
-<div id="secondary-<?php if( empty( $page_sidebar ) && ( $accesspress_mag_theme_option == '' ) ){ echo 'right-sidebar';}else{ echo $page_sidebar; } ?>" class="widget-area" role="complementary">
+<div id="secondary-<?php if( empty( $page_sidebar ) ){ echo 'right-sidebar';}else{ echo $page_sidebar; } ?>" class="widget-area" role="complementary">
     <div id="secondary" class="secondary-wrapper">
         <?php if ( is_active_sidebar( 'accesspress-mag-home-top-sidebar' )) { ?>
         <div id="home-top-sidebar" class="widget-area wow fadeInUp" data-wow-delay="0.5s" role="complementary">

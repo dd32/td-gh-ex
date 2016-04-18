@@ -282,7 +282,7 @@ get_header();
 	</div><!-- #primary -->
 <?php 
 wp_reset_query();
-$page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout', true);
+$page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout', true);
     if( $page_sidebar != 'no-sidebar' ){
         get_sidebar( 'home' );
     } 

@@ -4,7 +4,7 @@ Theme URI:    https://accesspressthemes.com/wordpress-themes/accesspress-mag/
 Author:       AccessPress Theme
 Author URI:   http://accesspressthemes.com/
 Description:  AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-Version:      2.3.3
+Version:      2.3.4
 License:      GNU General Public License v3 or later
 License URI:  http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain:  accesspress-mag
@@ -2351,7 +2351,46 @@ direction: ltr;
 }
 .widget-area:first-child{
     margin-top: 0;
-}   
+}
+.widget ul li.recentcomments {
+    background: none repeat scroll 0 0 #f1f1f1;
+    margin-bottom: 0;
+    padding: 5px 10px 5px 35px;
+}
+.recentcomments .comment-author-link {
+    font-size: 15px;
+    font-weight: 600;
+}
+.widget ul li.recentcomments:nth-last-of-type(2n) {
+    background: none repeat scroll 0 0 #f6f6f6;
+}
+.widget_recent_comments ul li::before {
+    left: 10px;
+    top: 5px;
+}
+#recentcomments {
+    margin-left: 0;
+}
+.postshare-wrapper {
+    border: 1px solid #eeeeee;
+    border-left: none;
+    border-right: none;
+}
+.postshare-wrapper > span {
+    display: inline-block;
+    float: left;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 51px;
+    margin: 0 40px 0 20px;
+}
+.widget_tag_cloud .tagcloud > a {
+    color: #3d3d3d;
+}
+.widget_tag_cloud .tagcloud > a:hover {
+    color: #dc3522;
+}
+
 
 /*--------------------------------------------------------------
         Search page css 
@@ -2696,44 +2735,6 @@ direction: ltr;
     margin-bottom: 20px;
     width: 100%;
 }
-
-/*--------------------------------------------------------------
-        Widget css 
---------------------------------------------------------------*/
-.widget ul li.recentcomments {
-    background: none repeat scroll 0 0 #f1f1f1;
-    margin-bottom: 0;
-    padding: 5px 10px 5px 35px;
-}
-.recentcomments .comment-author-link {
-    font-size: 15px;
-    font-weight: 600;
-}
-.widget ul li.recentcomments:nth-last-of-type(2n) {
-    background: none repeat scroll 0 0 #f6f6f6;
-}
-.widget_recent_comments ul li::before {
-    left: 10px;
-    top: 5px;
-}
-#recentcomments {
-    margin-left: 0;
-}
-.postshare-wrapper {
-    border: 1px solid #eeeeee;
-    border-left: none;
-    border-right: none;
-}
-.postshare-wrapper > span {
-    display: inline-block;
-    float: left;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 51px;
-    margin: 0 40px 0 20px;
-}
-
-/*- edit css --*/
 
 /*Extra css */
 .top-menu-wrapper.no_menu {

@@ -73,6 +73,10 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.3.4
+ * Fixed homepage widget bugs
+ * Compatible with WordPress version 4.5
+
 Version 2.3.3
  * Fixed header tag for widgets
  
