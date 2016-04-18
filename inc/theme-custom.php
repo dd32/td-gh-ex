@@ -234,19 +234,6 @@ if ( ! function_exists( 'simple_life_excerpt_readmore' ) ) :
 endif;
 add_filter( 'excerpt_more', 'simple_life_excerpt_readmore' );
 
-
-if ( ! function_exists( 'simple_life_add_editor_styles' ) ) :
-	/**
-	 * Implement editor style.
-	 *
-	 * @since 1.0.0
-	 */
-	function simple_life_add_editor_styles() {
-		add_editor_style( 'editor-style.css' );
-	}
-endif;
-add_action( 'after_setup_theme', 'simple_life_add_editor_styles' );
-
 if ( ! function_exists( 'simple_life_add_go_to_top' ) ) :
 	/**
 	 * Add go to top icon.
@@ -286,3 +273,39 @@ if ( ! function_exists( 'simple_life_custom_content_width' ) ) :
 endif;
 
 add_filter( 'template_redirect', 'simple_life_custom_content_width' );
+
+/**
+ * Import existing logo URL and set it to Custom Logo.
+ *
+ * @since 1.8
+ */
+function simple_life_import_logo_field() {
+
+    // Bail if Custom Logo feature is not available.
+    if ( ! function_exists( 'the_custom_logo' ) ) {
+        return;
+    }
+
+    // Fetch old logo URL.
+    $site_logo = simple_life_get_option( 'site_logo' );
+
+    // Bail if there is no existing logo.
+    if ( empty( $site_logo ) ) {
+        return;
+    }
+
+    // Get attachment ID.
+    $attachment_id = attachment_url_to_postid( $site_logo );
+
+    if ( $attachment_id > 0 ) {
+        // We got valid attachment ID.
+        set_theme_mod( 'custom_logo', $attachment_id );
+        // Remove old logo value.
+        $all_options = simple_life_get_options();
+        $all_options['site_logo'] = '';
+        set_theme_mod( 'simple_life_options', $all_options );
+
+    }
+
+}
+add_action( 'after_setup_theme', 'simple_life_import_logo_field', 20 );

@@ -46,7 +46,7 @@ if ( ! function_exists( 'simple_life_get_theme_option_defaults' ) ) :
 
 		$defaults = array(
 		'site_logo'                    => '',
-		'replace_site_title'           => true,
+		'replace_site_title'           => false,
 		'site_layout'                  => 'content-sidebar',
 		'content_layout'               => 'excerpt-thumb',
 		'archive_image_thumbnail_size' => 'large',
@@ -65,6 +65,26 @@ if ( ! function_exists( 'simple_life_get_theme_option_defaults' ) ) :
 
 	}
 endif;
+
+if ( ! function_exists( 'simple_life_get_options' ) ) :
+
+	/**
+	 * Get theme options.
+	 *
+	 * @since 1.8
+	 */
+	function simple_life_get_options() {
+
+		$value = array();
+
+		$value = get_theme_mod( 'simple_life_options' );
+
+		return $value;
+
+	}
+
+endif;
+
 
 /**
  * Render content class.
