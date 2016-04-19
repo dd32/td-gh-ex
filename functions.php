@@ -113,21 +113,12 @@ add_action( 'widgets_init', 'bhost_widgets_init' );
 /**
  * Google font For Bhost theme
  */
-function bhost_font_url() {
-	$font_url = '';
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Raleway:400,500,600,700, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Raleway font: on or off', 'bhost' ) ) {
-		$query_args = array(
-			'family' => urlencode( 'Raleway:400,500,600,700' ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
-		$font_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
-	}
-
-	return $font_url;
+/**
+ * register google fonts
+ */
+function bhost_fonts_url() {
+	$bhost_google_fonts_url = add_query_arg( 'family', urlencode( 'Montserrat:400,700|Open Sans:400,400italic,600,700,700italic' ), "https://fonts.googleapis.com/css" );
+	return $bhost_google_fonts_url;
 }
 
 /**
@@ -147,7 +138,7 @@ add_action('wp_head' , 'bhost_html5js');
  */
 function bhost_scripts() {
 	// Add Open sanse font, used in the main stylesheet.
-	wp_enqueue_style( 'bhost-Raleway', bhost_font_url(), array(), null );
+	wp_enqueue_style( 'google-fonts', bhost_fonts_url(), array(), null );
 	wp_enqueue_style( 'bhost-bootstrap-css', get_template_directory_uri() .'/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bhost-meanmenu', get_template_directory_uri() .'/css/meanmenu.css' );
 	wp_enqueue_style( 'bhost-font-awesome.min', get_template_directory_uri() .'/css/font-awesome.min.css' );

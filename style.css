@@ -4,7 +4,7 @@ Theme URI:
 Author: Masum Billah
 Author URI: http://getmasum.net/
 Description: Bhost is a nice , clean , beautifull, Responsive and modern design free WordPress Theme. This theme made with Latest Bootstrap v3.3.5. You can use it for your corporate , personal , blog sites etc.
-Version: 1.2.8
+Version: 1.2.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
@@ -397,6 +397,12 @@ select{
     display: inline-block;
     cursor:pointer;
 	padding: 8px;
+	border: 1px solid #eaeaea;
+}
+input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
+	width: auto;
+	display: inline-block;
+	margin-right: 3px;
 }
 
 
@@ -503,7 +509,8 @@ input[type="submit"] {
 }
 button,
 input[type="button"],
-input[type="submit"] {
+input[type="submit"],
+input[type="reset"] {
 	border: 1px solid #e1e1e1 ;
 	box-shadow: inherit;
 	padding: 14px 20px !important;
@@ -877,7 +884,9 @@ a:active {
 #stickymenu{
   z-index: 100;
 }
-
+.nav > li > a{
+	display: inline-block;
+}
 
 /*-------------------------------
 10.1.1 dropdwon menu 
@@ -1879,35 +1888,9 @@ li.cat-item{
 #footer a{
 	color: #2bcdc1;
 	text-decoration: none;	
+	font-size: 13px;
 }
 #footer a:hover{
-	color: #fff;
-}
-.list-inline{
-	margin-left: 0;
-}
-#footer .social_links{
-	margin-bottom: 10px;
-}
-#footer ul.list-inline li{
-	padding-left: 7px;
-    padding-right: 7px;	
-}
-#footer .social_links li{
-	padding-bottom: 15px;
-}
-#footer .social_links li a{
-	border: 1px solid #2bcdc1;
-	border-radius: 50%;
-	color: #2bcdc1;
-	display: block;
-	font-size: 19px;
-	height: 45px;
-	line-height: 45px;
-	width: 45px;
-}
-#footer .social_links li a:hover{
-	background: #2bcdc1;
 	color: #fff;
 }
 
@@ -1996,8 +1979,12 @@ h1.entry-title a:hover{
 }
 .page-header, .page-header h1{
 	border: inherit;
-	font-size: 25px;
-	margin-bottom: 40px;
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+.page-header h1{
+	border-bottom: 1px solid #eee;
+	padding-bottom: 10px;
 }
 
 .entry-footer a,
