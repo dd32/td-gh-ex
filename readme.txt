@@ -62,6 +62,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.46.6
+*Menu Align Issue solve
+
 Version 2.46.5
 * Update default template selection ssue
 
