@@ -86,7 +86,7 @@ URL: http://pixabay.com/en/office-meeting-business-partners-336368/
 Source:http://pixabay.com
 License: CC0 Public Domain
 
-Font Awesome 4.4.0 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.6.1 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 
@@ -94,6 +94,9 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.4.8
+1. Update Font awesome Library 4.5 to 4.6.1
+2. Solved Header Image issue.
 @version 2.4.7
 1. Change Theme URI
 @version 2.4.6

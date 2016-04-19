@@ -4,7 +4,7 @@ function theme_setup_data()
 	return $appointment_options=array(
 	//Header Settings
 	'upload_image_favicon' => '',
-	'header_one_name' => 1 ,
+	'header_one_name' => '' ,
 	'header_one_text' => '' ,
 	'text_title' => 1 ,
 	'height' => '50',
