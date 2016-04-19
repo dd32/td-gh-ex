@@ -208,7 +208,55 @@ function catchkathmandu_featured_image() {
 	$defaults = $catchkathmandu_options_defaults;
 	$enableheaderimage = $options[ 'enable_featured_header_image' ];
 
-	if ( !empty( $options[ 'featured_header_image' ] ) ) {
+	// Check function exists for WordPress version >= 4.5
+	if ( function_exists( 'has_custom_logo' ) ) {
+		$header_image = get_header_image();
+
+		if ( ! empty( $header_image ) ){
+			$catchkathmandu_featured_image = '<div id="header-image">';
+
+			// Header Image Link and Target
+			if ( !empty( $options[ 'featured_header_image_url' ] ) ) {
+				//support for qtranslate custom link
+				if ( function_exists( 'qtrans_convertURL' ) ) {
+					$link = qtrans_convertURL($options[ 'featured_header_image_url' ]);
+				}
+				else {
+					$link = esc_url( $options[ 'featured_header_image_url' ] );
+				}
+				//Checking Link Target
+				if ( !empty( $options[ 'featured_header_image_base' ] ) )  {
+					$target = '_blank';
+				}
+				else {
+					$target = '_self';
+				}
+			}
+			else {
+				$link = '';
+				$target = '';
+			}
+
+			// Header Image Title/Alt
+			if ( !empty( $options[ 'featured_header_image_alt' ] ) ) {
+				$title = esc_attr( $options[ 'featured_header_image_alt' ] );
+			}
+			else {
+				$title = '';
+			}
+
+			// Header Image Link
+			if ( !empty( $options[ 'featured_header_image_url' ] ) ) :
+				$catchkathmandu_featured_image .= '<a title="' . esc_attr( $title ) . '" href="' . esc_url( $options[ 'featured_header_image_url' ] ) .'" target="' . $base . '"><img id="main-feat-img" class="wp-post-image" alt="' . esc_attr( $title ) . '" src="' . esc_url( $header_image ) . ' " /></a>';
+			else:
+				// if empty featured_header_image on theme options, display default
+				$catchkathmandu_featured_image .= '<img id="main-feat-img" class="wp-post-image" alt="' . esc_attr( $title ) . '" src="' . esc_url( $header_image ) . '" />';
+			endif;
+
+			$catchkathmandu_featured_image .= '</div><!-- #header-image -->';
+		}
+	}
+	else if ( !empty( $options[ 'featured_header_image' ] ) ) {
 
 		$catchkathmandu_featured_image = '<div id="header-image">';
 

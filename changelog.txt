@@ -1,5 +1,8 @@
 == Change log ==
 
+Version 3.7.2
+* Bug Fixed: Customizer options for Custom Header ( Reported by igarciadelamo )
+
 Version 3.7.1
 * Bug Fixed: Make the logo width flexible
 

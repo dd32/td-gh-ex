@@ -25,9 +25,6 @@ function catchkathmandu_customize_register( $wp_customize ) {
 	//Custom Controls
 	require get_template_directory() . '/inc/panel/customizer/customizer-custom-controls.php';
 
-	//Change Header Image name to Header Image / Logo
-	$wp_customize->get_section('header_image')->title = __( 'Header Image / Logo', 'catch-kathmandu' );
-
 	// Color Scheme added to built in section
 	$wp_customize->add_setting( 'catchkathmandu_options[color_scheme]', array(
 		'capability' 		=> 'edit_theme_options',
@@ -1055,6 +1052,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 				'field_type' 	=> 'select',
 				'sanitize' 		=> 'catchkathmandu_sanitize_select',
 				'panel' 		=> 'theme_options',
+				'priority'		=> 1,
 				'section' 		=> 'header_image',
 				'default' 		=> $defaults['enable_featured_header_image'],
 				'choices'		=> catchkathmandu_enable_header_featured_image(),
@@ -1069,16 +1067,6 @@ function catchkathmandu_customize_register( $wp_customize ) {
 				'section' 		=> 'header_image',
 				'default' 		=> $defaults['page_featured_image'],
 				'choices'		=> catchkathmandu_page_post_featured_image_size(),
-			),
-			'featured_header_image' => array(
-				'id' 			=> 'featured_header_image',
-				'title' 		=> __( 'Featured Header Image', 'catch-kathmandu' ),
-				'description'	=> '',
-				'field_type' 	=> 'image',
-				'sanitize' 		=> 'catchkathmandu_sanitize_image',
-				'panel' 		=> 'theme_options',
-				'section' 		=> 'header_image',
-				'default' 		=> $defaults['featured_header_image']
 			),
 			'featured_header_image_alt' => array(
 				'id' 			=> 'featured_header_image_alt',
@@ -1175,6 +1163,12 @@ function catchkathmandu_customize_register( $wp_customize ) {
 	}
 
 	foreach ( $settings_parameters as $option ) {
+		$section = $option['section'];
+
+		if( 'header_image' != $option['section'] ) {
+			$section = $theme_slug . $option['section'];
+		}
+
 		if( 'image' == $option['field_type'] ) {
 			$wp_customize->add_setting(
 				// $id
@@ -1192,7 +1186,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 					$wp_customize,$theme_slug . 'options[' . $option['id'] . ']',
 					array(
 						'label'		=> $option['title'],
-						'section'   => $theme_slug . $option['section'],
+						'section'   => $section,
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
 					)
 				)
@@ -1204,14 +1198,15 @@ function catchkathmandu_customize_register( $wp_customize ) {
 				$theme_slug . 'options[' . $option['id'] . ']',
 				// parameters array
 				array(
-					'type'				=> 'option',
-					'sanitize_callback'	=> $option['sanitize'],
-					'default'			=> $option['default'],				)
+					'type'              => 'option',
+					'sanitize_callback' => $option['sanitize'],
+					'default'           => $option['default'],
+				)
 			);
 
 			$params = array(
 						'label'		=> $option['title'],
-						'section'   => $theme_slug . $option['section'],
+						'section'   => $section,
 						'settings'  => $theme_slug . 'options[' . $option['id'] . ']',
 						'name'  	=> $theme_slug . 'options[' . $option['id'] . ']',
 					);
@@ -1241,7 +1236,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 
 			$params = array(
 						'label'			=> $option['title'],
-						'section'		=> $theme_slug . $option['section'],
+						'section'		=> $section,
 						'settings'		=> $theme_slug . 'options[' . $option['id'] . ']',
 						'description'	=> $option['description'],
 						'name'	 		=> $theme_slug . 'options[' . $option['id'] . ']',
@@ -1274,15 +1269,19 @@ function catchkathmandu_customize_register( $wp_customize ) {
 
 			// Add setting control
 			$params = array(
-					'label'			=> $option['title'],
-					'section'		=> $theme_slug . $option['section'],
-					'settings'		=> $theme_slug . 'options[' . $option['id'] . ']',
-					'type'			=> $option['field_type'],
-					'description'   => $option['description'],
+					'label'       => $option['title'],
+					'section'     => $section,
+					'settings'    => $theme_slug . 'options[' . $option['id'] . ']',
+					'type'        => $option['field_type'],
+					'description' => $option['description'],
 				) ;
 
 			if ( isset( $option['choices']  ) ){
 				$params['choices'] = $option['choices'];
+			}
+
+			if ( isset( $option['priority']  ) ){
+				$params['priority'] = $option['priority'];
 			}
 
 			if ( isset( $option['active_callback']  ) ){

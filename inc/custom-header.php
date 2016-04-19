@@ -63,9 +63,8 @@ function catchkathmandu_custom_header_setup() {
 		 * from WordPress version 4.5 onwards, we have migrated custom header to custom logo
 		 * and Our custom field for header to core custom header
 		 */
-		$args['height']        = 400;
+		$args['height']        = 600;
 		$args['width']         = 1280;
-		$args['default-image'] = get_template_directory_uri().'/images/demo/header-image-1280x400.jpg';
 	}
 
 	$args = apply_filters( 'catchkathmandu_custom_header_args', $args );
