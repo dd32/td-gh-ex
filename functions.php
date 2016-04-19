@@ -89,7 +89,7 @@
 	// Read more tag to formatting in blog page 	
 	function new_content_more($more)
 	{  global $post;
-		return '<div class="blog-btn-col"><a href="' . get_permalink() . "\" class=\"blog-btn\">Read More</a></div>";
+		return '<div class="blog-btn-col"><a href="' . get_permalink() . "\" class=\"more-link\">Read More</a></div>";
 	}   
 	add_filter( 'the_content_more_link', 'new_content_more' );
 ?>

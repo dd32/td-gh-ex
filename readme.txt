@@ -85,6 +85,8 @@ Source: http://fontawesome.io
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.2
+1. Update Font awesome Library 4.5 to 4.6.10
 @Version 1.6.1
 1. Add Theme Description.
 2. Update Theme Tags.

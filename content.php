@@ -33,10 +33,7 @@ $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $co
 	<div class="entry-content">
 		<p>
 			<?php 
-			   if( ! is_single() )
-				echo get_home_blog_excerpt();
-			   else
-				echo get_the_content();
+			  the_content();
 			?>
 		</p>
 	</div>	
