@@ -69,7 +69,8 @@ function ascent_getting_started_page() {
                                     <p><?php _e( 'When you have a page that you want to use for the homepage, go to that page and select the <em>Home</em> template under <em>Page Attributes &rarr; Template</em>.', 'ascent-light' ); ?></p>
                                     <p><?php _e( 'Go to <em>Settings</em> &rarr; <em>Reading</em> and select a page to use as your blog. If you don\'t have one yet, just create a page first.', 'ascent-light' ); ?></p>
                                     <p><?php _e( 'Download and active the Easy Digital Downloads plugin. Go to the Easy Digital Downloads settings page and configure your options. See their documentation for more information.', 'ascent-light' ); ?></p>
-                                    <p><?php _e( 'Set up your products in Easy Digital Downloads.', 'ascent-light' ); ?></p>
+                                    <p><?php _e( 'Set up your products in Easy Digital Downloads. The product will show on the "Homepage" template and the "Shop page with sidebar" template.', 'ascent-light' ); ?></p>
+                                    <p><?php _e( 'Create a page for your checkout. Assign it to the "Checkout" template.', 'ascent-light' ); ?></p>
                                     <p><?php _e( 'To set up your portfolio, create a new page and assign it to the <em>Portfolio</em> page template. Then create an item to be shown on this portfolio by adding a new page and selecting the <em>Portfolio item</em> template as the template. This will then show on the page you have assigned the <em>Portfolio</em> template to. Do the same for all the items you want to add to your portfolio.', 'ascent-light' ); ?></p>
 
 				</div>
