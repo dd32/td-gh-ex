@@ -1,4 +1,5 @@
-<?php
+<div class="blog-content-wrapper">
+    <?php
 /**
  * The main template file.
  *
@@ -11,54 +12,51 @@
  *
  * @package aza-lite
  */
-if( is_active_sidebar( 'sidebar-1' ) ) {
-    $class_to_add = "col-md-8";
-} else {
-    $class_to_add = "col-md-8 col-md-offset-2";
-}
 
 get_header(); ?>
+        <div class="container blog-content">
+            <div class="row">
+                <div id="primary" class="content-area col-md-9">
+                    <main id="main" class="site-main" role="main">
+                        <?php if ( have_posts() ) : ?>
+                            <?php if ( is_home() && ! is_front_page() ) : ?>
+                                <header>
+                                    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+                                </header>
+                                <?php endif; ?>
 
-<div class="blog-content-wrapper">
-    <div class="container blog-content">
-        <div class="row">
-            <div id="primary" class="content-area <?php echo esc_attr( $class_to_add ); ?>">
-                <main id="main" class="site-main" role="main">
-                    <?php if ( have_posts() ) :
+                                    <?php /* Start the Loop */ ?>
+                                        <?php while ( have_posts() ) : the_post(); ?>
 
-                        if ( is_home() && ! is_front_page() ) : ?>
+                                            <?php
 
-                            <header>
-                                <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-                            </header>
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', get_post_format() );
+				?>
 
-                        <?php endif;
+                                                <?php endwhile; ?>
 
-                        while ( have_posts() ) : the_post();
+                                                    <?php the_posts_navigation(); ?>
 
-                            get_template_part( 'template-parts/content', get_post_format() );
+                                                        <?php else : ?>
 
-                        endwhile;
+                                                            <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-                        the_posts_navigation();
+                                                                <?php endif; ?>
 
-                    else :
-
-                        get_template_part( 'template-parts/content', 'none' );
-
-                    endif; ?>
-
-                </main><!-- #main -->
-            </div><!-- #primary -->
-
-            <?php if( is_active_sidebar( 'sidebar-1' ) ) { ?>
-                <div class="col-md-3 col-md-offset-1">
-                    <?php get_sidebar( 'sidebar-1' ); ?>
+                    </main>
+                    <!-- #main -->
                 </div>
-            <?php } ?>
+                <!-- #primary -->
 
+                <div class="col-md-3">
+                    <?php get_sidebar(); ?>
+                </div>
+            </div>
         </div>
-    </div>
 </div>
-
 <?php get_footer(); ?>
