@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-18 17:46+0545\n"
-"PO-Revision-Date: 2016-04-18 17:46+0545\n"
+"POT-Creation-Date: 2016-04-20 15:36+0545\n"
+"PO-Revision-Date: 2016-04-20 15:36+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: H.P. Brinkmann\n"
 "Language: de_DE\n"
@@ -167,7 +167,7 @@ msgstr "Kommentare sind abgeschaltet."
 #: ../content-aside.php:15 ../content-featured.php:14
 #: ../content-gallery.php:15 ../content-gallery.php:46 ../content-image.php:14
 #: ../content-link.php:16 ../content-quote.php:14 ../content-status.php:15
-#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:921
+#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:926
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permanenter Link zu %s"
@@ -197,7 +197,7 @@ msgctxt "comments number"
 msgid "%"
 msgstr "%"
 
-#: ../content-aside.php:34 ../content.php:58 ../functions.php:468
+#: ../content-aside.php:34 ../content.php:58 ../functions.php:473
 #, php-format
 msgid "Continue reading %s"
 msgstr "weiterlesen  %s"
@@ -235,8 +235,8 @@ msgstr "<b>%</b> Antworten"
 #: ../content-aside.php:56 ../content-featured.php:51
 #: ../content-gallery.php:94 ../content-image.php:71 ../content-link.php:50
 #: ../content-page.php:27 ../content-quote.php:78 ../content-single.php:64
-#: ../content-status.php:51 ../content.php:108 ../functions.php:693
-#: ../functions.php:721 ../image.php:97
+#: ../content-status.php:51 ../content.php:108 ../functions.php:698
+#: ../functions.php:726 ../image.php:97
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -323,7 +323,7 @@ msgstr ""
 "title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
 # @ catchbox
-#: ../content-image.php:42 ../functions.php:759
+#: ../content-image.php:42 ../functions.php:764
 #, php-format
 msgid "View all posts by %s"
 msgstr "Alle Beiträge von %s ansehen"
@@ -437,53 +437,53 @@ msgid "Footer Menu"
 msgstr "Seitenfuß-Menü"
 
 # @ catchbox
-#: ../functions.php:514
+#: ../functions.php:519
 msgid "Main Sidebar"
 msgstr "Haupt-Seitenleiste"
 
 # @ catchbox
-#: ../functions.php:523
+#: ../functions.php:528
 msgid "Footer Area One"
 msgstr "Seitenfuß-Bereich Eins"
 
 # @ catchbox
-#: ../functions.php:525 ../functions.php:535 ../functions.php:545
+#: ../functions.php:530 ../functions.php:540 ../functions.php:550
 msgid "An optional widget area for your site footer"
 msgstr "Ein optionaler Widget-Bereich für den Seitenfuß"
 
 # @ catchbox
-#: ../functions.php:533
+#: ../functions.php:538
 msgid "Footer Area Two"
 msgstr "Seitenfuß-Bereich Zwei"
 
 # @ catchbox
-#: ../functions.php:543
+#: ../functions.php:548
 msgid "Footer Area Three"
 msgstr "Seitenfuß-Bereich Drei"
 
 # @ catchbox
-#: ../functions.php:577 ../functions.php:606 ../single.php:15
+#: ../functions.php:582 ../functions.php:611 ../single.php:15
 msgid "Post navigation"
 msgstr "Beitragsnavigation"
 
 # @ catchbox
-#: ../functions.php:585 ../functions.php:614
+#: ../functions.php:590 ../functions.php:619
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Beiträge"
 
 # @ catchbox
-#: ../functions.php:586 ../functions.php:615
+#: ../functions.php:591 ../functions.php:620
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Neuere Beiträge <span class=\"meta-nav\">&rarr;</span>"
 
 # @ catchbox
-#: ../functions.php:693
+#: ../functions.php:698
 msgid "Pingback:"
 msgstr "Pingback:"
 
 # @ catchbox
 #. translators: 1: comment author, 2: date and time
-#: ../functions.php:710
+#: ../functions.php:715
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr ""
@@ -492,23 +492,23 @@ msgstr ""
 
 # @ catchbox
 #. translators: 1: date, 2: time
-#: ../functions.php:716
+#: ../functions.php:721
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s um %2$s"
 
 # @ catchbox
-#: ../functions.php:725
+#: ../functions.php:730
 msgid "Your comment is awaiting moderation."
 msgstr "Ihr Kommentar wartet auf Freischaltung."
 
 # @ catchbox
-#: ../functions.php:734
+#: ../functions.php:739
 msgid "Reply <span>&darr;</span>"
 msgstr "Antworten <span>&darr;</span>"
 
 # @ catchbox
-#: ../functions.php:753
+#: ../functions.php:758
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -524,125 +524,125 @@ msgstr ""
 "\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
 # @ catchbox
-#: ../functions.php:826
+#: ../functions.php:831
 msgid "ID"
 msgstr "ID"
 
 # @ default
-#: ../functions.php:1035
+#: ../functions.php:1040
 msgid "Name"
 msgstr "Name"
 
 # @ default
-#: ../functions.php:1037 ../functions.php:1264
+#: ../functions.php:1042 ../functions.php:1269
 #: ../inc/customizer/customizer.php:613 ../inc/theme-options.php:923
 msgid "Email"
 msgstr "E-Mail"
 
-#: ../functions.php:1170
+#: ../functions.php:1175
 msgid "Footer Social Links Menu"
 msgstr ""
 
 # @ catchbox
-#: ../functions.php:1174 ../inc/customizer/customizer.php:433
+#: ../functions.php:1179 ../inc/customizer/customizer.php:433
 #: ../inc/theme-options.php:676 ../inc/theme-options.php:816
 msgid "Facebook"
 msgstr "Facebook"
 
 # @ catchbox
-#: ../functions.php:1179 ../inc/customizer/customizer.php:443
+#: ../functions.php:1184 ../inc/customizer/customizer.php:443
 #: ../inc/theme-options.php:677 ../inc/theme-options.php:821
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../functions.php:1184
+#: ../functions.php:1189
 msgid "Google Plus"
 msgstr "Google Plus"
 
-#: ../functions.php:1189
+#: ../functions.php:1194
 msgid "Linkedin"
 msgstr "Linkedin"
 
 # @ catchbox
-#: ../functions.php:1194 ../inc/customizer/customizer.php:473
+#: ../functions.php:1199 ../inc/customizer/customizer.php:473
 #: ../inc/theme-options.php:839
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions.php:1199
+#: ../functions.php:1204
 msgid "YouTube"
 msgstr "YouTube"
 
 # @ catchbox
-#: ../functions.php:1204 ../inc/theme-options.php:851
+#: ../functions.php:1209 ../inc/theme-options.php:851
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
 # @ catchbox
-#: ../functions.php:1209 ../inc/theme-options.php:857
+#: ../functions.php:1214 ../inc/theme-options.php:857
 msgid "Deviantart"
 msgstr "Deviantart"
 
 # @ catchbox
-#: ../functions.php:1214 ../inc/customizer/customizer.php:513
+#: ../functions.php:1219 ../inc/customizer/customizer.php:513
 #: ../inc/theme-options.php:863
 msgid "Tumblr"
 msgstr "Tumblr"
 
 # @ catchbox
-#: ../functions.php:1219 ../inc/customizer/customizer.php:523
+#: ../functions.php:1224 ../inc/customizer/customizer.php:523
 #: ../inc/theme-options.php:869
 msgid "Vimeo"
 msgstr "Vimeo"
 
 # @ catchbox
-#: ../functions.php:1224 ../inc/customizer/customizer.php:533
+#: ../functions.php:1229 ../inc/customizer/customizer.php:533
 #: ../inc/theme-options.php:875
 msgid "Dribbble"
 msgstr "Dribbble"
 
 # @ catchbox
-#: ../functions.php:1229 ../inc/customizer/customizer.php:543
+#: ../functions.php:1234 ../inc/customizer/customizer.php:543
 #: ../inc/theme-options.php:881
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions.php:1234
+#: ../functions.php:1239
 msgid "AIM"
 msgstr "AIM"
 
 # @ catchbox
-#: ../functions.php:1239 ../inc/customizer/customizer.php:563
+#: ../functions.php:1244 ../inc/customizer/customizer.php:563
 #: ../inc/theme-options.php:893
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions.php:1244 ../inc/customizer/customizer.php:573
+#: ../functions.php:1249 ../inc/customizer/customizer.php:573
 #: ../inc/theme-options.php:899
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions.php:1249 ../inc/customizer/customizer.php:583
+#: ../functions.php:1254 ../inc/customizer/customizer.php:583
 #: ../inc/theme-options.php:905
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions.php:1254 ../inc/customizer/customizer.php:593
+#: ../functions.php:1259 ../inc/customizer/customizer.php:593
 #: ../inc/theme-options.php:911
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions.php:1259 ../inc/customizer/customizer.php:603
+#: ../functions.php:1264 ../inc/customizer/customizer.php:603
 #: ../inc/theme-options.php:917
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../functions.php:1269 ../inc/customizer/customizer.php:623
+#: ../functions.php:1274 ../inc/customizer/customizer.php:623
 #: ../inc/theme-options.php:928
 msgid "Xing"
 msgstr "Xing"
 
-#: ../functions.php:1274 ../inc/customizer/customizer.php:633
+#: ../functions.php:1279 ../inc/customizer/customizer.php:633
 #: ../inc/theme-options.php:933
 msgid "Meetup"
 msgstr "Meetup"

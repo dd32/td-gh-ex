@@ -338,6 +338,11 @@ function catchbox_logo_migrate() {
 			}
 		}
 
+		//Remove header image previously set as logo
+		set_theme_mod( 'header_image', '' );
+
+		set_theme_mod( 'header_image_data', array() );
+
   		// Update to match logo_version so that script is not executed continously
 		set_theme_mod( 'logo_version', '3.6' );
 	}

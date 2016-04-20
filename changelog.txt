@@ -1,5 +1,9 @@
 == Change log ==
 
+Version 4.4.4
+* Bug Fixed: Remove Header Image after Migration it to logo
+* Bug Fized: Search bar issue in Safari
+
 Version 4.4.3
 * Bug Fixed: Sidebar Showing on no-sidebar layout
 
