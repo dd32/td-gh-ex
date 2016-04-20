@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 3.6 - april 2016
+- resized all headings (thanks Tom)
+- changed address tag display
+- several small adjustments
+
 MyKnowledgeBase version 3.5 - march 2016
 - localized mobile menu
 - mobile menu now supports 2 level subpages

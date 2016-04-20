@@ -23,17 +23,17 @@
 		add_theme_support( 'title-tag' );
 
 	// Add editor styles
-		add_editor_style( array( 'custom-editor-style.css' ) );
+		add_editor_style( 'custom-editor-style.css' );
 
 	// Custom header	
-		$args = array(		
+		$header_args = array(		
 			'width' => 600,
 			'height' => 400,
 			'default-image' => get_template_directory_uri() . '/images/boats.jpg',
 			'header-text' => false,
 			'uploads' => true,
 		);	
-		add_theme_support( 'custom-header', $args );
+		add_theme_support( 'custom-header', $header_args );
 
 	// Default header
 		register_default_headers( array(
@@ -60,10 +60,10 @@
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'caption' ) );
 
 	// Background color
-		$args = array( 
+		$background_args = array( 
 			'default-color' => 'ffffff', 
 		); 
-		add_theme_support( 'custom-background', $args ); 
+		add_theme_support( 'custom-background', $background_args ); 
 
 	}
 	add_action( 'after_setup_theme', 'myknowledgebase_setup' ); 
@@ -184,7 +184,7 @@
 	add_filter( 'excerpt_length', 'myknowledgebase_excerpt_length', 999 ); 
 
 
-// Theme Customizer (logo and posts per page)
+// Theme Customizer (logo and search bar title and posts per category)
 	function myknowledgebase_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'myknowledgebase_logo_section' , array( 
 			'title' => __( 'Logo', 'myknowledgebase' ), 

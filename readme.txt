@@ -1,9 +1,9 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 3.5
+Version: 3.6
 Requires at least: 3.7
-Tested up to: 4.4
+Tested up to: 4.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, blue, gray, editor-style, translation-ready
@@ -59,7 +59,7 @@ When you click the post link in frontend it will redirect you to this URL (so th
 You can change the search bar title via WordPress Dashboard > Appearance > Customize.
 
 = Browser support =
-Because I have used css selector 'nth-of-type' it might not display 100% in IE8 and older.
+The knowledgebase might not display 100% in IE8 and older because I have used css selector 'nth-of-type'.
 
 
 == Copyright ==
