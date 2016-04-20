@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkOrange version 4.4 - april 2016
+- resized all headings (thanks Tom)
+- changed address tag display
+- several small adjustments
+
 DarkOrange version 4.3 - march 2016
 - fixed bug: items where listed double in mobile menu
 - mobile menu has it's own class now: .nav-head-mobile
