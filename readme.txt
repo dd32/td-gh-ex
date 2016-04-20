@@ -1,9 +1,9 @@
 === MultiColors ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 3.7
+Version: 3.8
 Requires at least: 3.7
-Tested up to: 4.4
+Tested up to: 4.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, red, orange, yellow, green, blue, purple, editor-style, translation-ready

@@ -1,7 +1,7 @@
 /*
 Theme Name: MultiColors
 Theme URI: http://www.guidovanderleest.nl/multicolors
-Version: 3.7
+Version: 3.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MultiColors is a free, clean, minimalistic, responsive, mobile friendly, colorful WordPress theme. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
@@ -81,12 +81,12 @@ body {background:#800080; font-family:'Open Sans', sans-serif; font-size:1em; co
 
 
 /* HEADINGS */
-h1 {font-size:3.0em; line-height:1.2em;}
-h2 {font-size:2.5em; line-height:1.2em;}
-h3 {font-size:2.0em; line-height:1.5em;}
-h4 {font-size:1.5em; line-height:1.5em;}
-h5 {font-size:1.0em; line-height:2em;}
-h6 {font-size:0.75em; line-height:2em;}
+h1 {font-size:2.25em; line-height:1.5em;}
+h2 {font-size:2.0em; line-height:2em;}
+h3 {font-size:1.75em; line-height:2em;}
+h4 {font-size:1.5em; line-height:2em;}
+h5 {font-size:1.25em; line-height:2.5em;}
+h6 {font-size:1.0em; line-height:2.5em;}
 
 
 /* LINKS AND HTML TAGS */
@@ -103,7 +103,7 @@ cite, em, abbr, acronym {font-style:italic;}
 code, kbd, samp, var {font-family:monospace, monospace;}
 pre {margin:10px 0; padding:5px 10px; white-space:pre-wrap; border:1px solid #eee;}
 blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #eee;}
-address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #eee;}
+address {margin:10px 0; font-size:1.2em; line-height:1.5em; font-style:italic;}
 p {margin:0 0 10px;}
 
 
@@ -191,14 +191,14 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* PAGE */
-.page-title {clear:both; padding:0 0 20px; font-size:1.5em; line-height:1.5em;}
-.page-title-post {clear:both; font-size:1.5em; line-height:1.5em;}
+.page-title {clear:both; padding:0 0 20px; line-height:1.5em;}
+.page-title-post {clear:both; line-height:1.5em;}
 .archive-description {display:block; font-style:italic;}
 .pagelink {clear:both; display:block; margin:20px 0 10px;}
 
 
 /* POST */
-.post-title {clear:both; font-size:1.5em; line-height:1.5em;}
+.post-title {clear:both; line-height:1.5em;}
 .post-title a {color:#eee; text-decoration:none;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .sticky {clear:both; display:block; text-align:center; margin:10px 0; padding:5px; border-top:2px solid #eee; border-bottom:2px solid #eee;}
@@ -278,7 +278,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .widget {padding:15px 5%; margin:0 0 20px; background:#f8f8f8; color:#333; border:1px solid #eee;}
 .widget a {color:#00aaff; text-decoration:none;}
 .widget a:hover {text-decoration:underline;}
-.widgettitle {margin:0 0 10px; padding:0 0 5px; color:#00aaff; border-bottom:2px solid #00aaff; font-size:1.5em;}
+.widgettitle {margin:0 0 10px; padding:0 0 5px; color:#00aaff; border-bottom:2px solid #00aaff; font-size:1.5em; line-height:1.5em;}
 
 
 /* WIDGET INPUTS */
@@ -322,7 +322,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* HEADER */
 	#header-first-container .logo {width:96%; float:left; padding:10px 2%; text-align:center;}
 	#header-first-container .logo h1 {font-size:2em; text-align:center;}
-	#header-first-container .logo h2 {font-size:1.3em; text-align:center; margin:10px 0 0;}
+	#header-first-container .logo h2 {font-size:1.5em; text-align:center; margin:10px 0 0;}
 	#header-third {width:96%; float:left; padding:0 2%;}
 	#header-third .image-header {width:100%;}
 	#header-third .sidebar-header {width:100%; padding:0;}
@@ -338,7 +338,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.post-home, .post-home.left {width:100%; clear:both; float:left; margin:0 auto 0;}
 
 	/* HEADINGS */
-	.post-title, .page-title, .page-title-post, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
+	.post-title, .page-title, .page-title-post {font-size:1.75em;}
+	.widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.5em;}
 
 	/* IMAGES */
 	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
