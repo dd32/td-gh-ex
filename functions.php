@@ -23,17 +23,17 @@
 		add_theme_support( 'title-tag' );
 
 	// Add editor styles
-		add_editor_style( array( 'custom-editor-style.css' ) );
+		add_editor_style( 'custom-editor-style.css' );
 
 	// Custom header	
-		$args = array(		
+		$header_args = array(		
 			'width' => 460,
 			'height' => 300,
 			'default-image' => get_template_directory_uri() . '/images/boats.jpg',
 			'header-text' => false,
 			'uploads' => true,
 		);	
-		add_theme_support( 'custom-header', $args );
+		add_theme_support( 'custom-header', $header_args );
 
 	// Default header
 		register_default_headers( array(
@@ -60,10 +60,10 @@
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'caption' ) );
 
 	// Background color
-		$args = array( 
+		$background_args = array( 
 			'default-color' => 'ffffff', 
 		); 
-		add_theme_support( 'custom-background', $args ); 
+		add_theme_support( 'custom-background', $background_args ); 
 
 	}
 	add_action( 'after_setup_theme', 'medical_setup' ); 
