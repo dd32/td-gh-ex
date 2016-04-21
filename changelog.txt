@@ -9,6 +9,10 @@ Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+= 1.8 - 21/04/16
+* Removed unnecessary image from img directory
+* Updated Theme URI
+
 = 1.7 - 20/04/16
 * Changed screenshot to be GPL compatible
 * Updated getting started help text
