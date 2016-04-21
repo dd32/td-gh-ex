@@ -41,7 +41,7 @@
        <div id="slider" class="nivoSlider">
           <?php
 		  		$slider_flag = false;
-		  		for ($i=1;$i<9;$i++)
+		  		for ($i=1;$i<5;$i++)
 					if ( of_get_option('slide'.$i, true) != "" ) {
 						echo "<a href='".esc_url(of_get_option('slideurl'.$i, true))."'><img src='".of_get_option('slide'.$i, true)."' title='".of_get_option('slidetitle'.$i, true)."'></a>";    
 						$slider_flag = true; }  ?>

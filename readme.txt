@@ -36,6 +36,9 @@ Custom Css:
 
 == Change log ==
 
+= 1.3.4 =
+* Fixed slider issue
+
 = 1.3 =
 * Updated theme codes
 * Fixed css issue

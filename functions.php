@@ -149,7 +149,7 @@ function digital_theme_setup() {
 			array(
  				'primary' => __('Top Navigation', 'digital'),
 				'digital-navigation' => __('Navigation', 'digital'),				
- 				'Footer-menu' => __('Footer Menu', 'digital'),
+ 				'footer-menu' => __('Footer Menu', 'digital'),
 				)		
 				);
 		
@@ -315,6 +315,11 @@ function digital_register_required_plugins() {
 		array(
 			'name'      => 'Menu Icons',
 			'slug'      => 'menu-icons',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Shortcodes Ultimate',
+			'slug'      => 'shortcodes-ultimate',
 			'required'  => false,
 		),
 

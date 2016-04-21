@@ -393,28 +393,19 @@ $options[] = array(
 		'desc' => __('Enter your ads code here, preferably units Ex. 728*90 lead-board ad.', 'digital'),
 		'id' => 'banner_top',
 		'std' => '',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings= array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5));
+		'type' => 'textarea');
 	$options[] = array(
 		 'name' => __( 'AD Code For Single Post', 'digital' ),
             'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
             'id' => 'digital_ad2',
             'std' => '',
-            'type' => 'editor',
-		'settings' => $wp_editor_settings= array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5));
+            'type' => 'textarea');
      $options[] = array(
 		'name' => __( 'AD Code For Footer', 'digital' ),
             'desc' => 'Paste Ad Code for Footer Area.',
             'id' => 'digital_ad1',
             'std' => '',
-            'type' => 'editor',
-		'settings' => $wp_editor_settings= array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5));	
+            'type' => 'textarea');	
 			
 $options[] = array(
 		'name' => __('Advance (Pro Only)', 'digital'),
@@ -708,7 +699,7 @@ $options[] = array(
 		  'desc' => '<h2>' . esc_attr__( 'Need support about theme go to Support forum', 'digital' ) . '</h2>' . esc_attr__( 'If you have any problem in using options then please read theme documentation first ', 'digital' ) . '<a href="' . esc_url(__('http://www.insertcart.com/digital-theme-documentation-setup/','digital')) . '" target="_blank">' . esc_attr__( 'Theme Documentation', 'digital' ) . '</a>  ' . esc_attr__( 'Before you contact us via directly please use support forum also We recommend you to use some WordPress plugin like "Regenerate Thumbnails" WordPress SEO and W3tc to optimize and get great website experience.', 'digital' ) . '
             <p><span class="buypre"><a href="' . esc_url(__('http://forum.insertcart.com','digital')) . '" target="_blank">' . esc_attr__( 'Support Forum', 'digital' ) . '</a></span></p></br>
 			<ol>
-			<li><a href="' . esc_url(__('http://www.insertcart.com/faq-frequently-asked-question-theme-setup/','digital')) . '" target="_blank">' . esc_attr__( 'FAQ – Frequently Asked Question About Theme Setup', 'digital' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/faq-frequently-asked-question-theme-setup/','digital')) . '" target="_blank">' . esc_attr__( 'FAQ - Frequently Asked Question About Theme Setup', 'digital' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/making-post-by-importing-docx-file-content-into-post-images/','digital')) . '" target="_blank">' . esc_attr__( 'Making Post by Importing Docx File Content into Post Images', 'digital' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/how-to-secure-website-made-these-changes-in-htaccess/','digital')) . '" target="_blank">' . esc_attr__( 'How to Secure Website? Made these changes in .htaccess', 'digital' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/how-to-add-icon-navigation-menu/','digital')) . '" target="_blank">' . esc_attr__( 'How to Add Icon Navigation Menu', 'digital' ) . '</a></li>
