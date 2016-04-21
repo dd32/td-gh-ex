@@ -20,7 +20,7 @@
 				<?php if ( get_theme_mod( $u ) ) {?>
 				<a href="<?php echo esc_url( get_theme_mod($u) ); ?>">
 				<?php } ?>
-					<p><?php echo __(get_theme_mod($d), 'attirant' ); ?> </p>
+					<p><?php echo get_theme_mod($d); ?> </p>
 				<?php if ( get_theme_mod( $u ) ) { ?>
 				</a>
 				<?php } ?>

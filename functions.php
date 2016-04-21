@@ -281,6 +281,14 @@ function attirant_comment($comment, $args, $depth) {
 <?php
 }
 
+function attirant_custom_mod() {
+	echo "<style>";
+		echo ".site-description {color: " . get_theme_mod('attirant-desc-color', '#ffffff') . "; }";
+	echo "</style>";
+}
+
+add_action('wp_head', 'attirant_custom_mod');
+
 /**
  * Implement the Custom Header feature.
  */

@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package klean
+ * @package attirant
  */
 
 if ( is_home() ) :

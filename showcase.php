@@ -40,7 +40,7 @@
 				<a href = "<?php echo esc_url(get_theme_mod($u) ); ?>">
 			<?php } 
 		?>		
-			<?php esc_attr_e( get_theme_mod( $t ) ); ?>		
+			<?php echo get_theme_mod( $t ); ?>		
 	<?php if ( get_theme_mod( $u ) ) { ?>
 		</a>
 	<?php } ?>

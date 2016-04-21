@@ -15,6 +15,28 @@ function attirant_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
+	$wp_customize-> add_setting(
+    'attirant-desc-color',
+    array(
+	    'default'			=> '#ffffff',
+    	'sanitize_callback'	=> 'sanitize_hex_color',
+    	'transport'			=> 'postMessage',
+    	)
+    );
+    
+    $wp_customize->add_control(
+	    new WP_Customize_Color_Control(
+	        $wp_customize,
+	        'attirant-desc-color',
+	        array(
+	            'label' => __('Site Description Color','attirant'),
+	            'section' => 'colors',
+	            'settings' => 'attirant-desc-color',
+                'priority'  => 12
+	        )
+	    )
+	);
+	
 	$wp_customize-> add_section(
     'attirant_social',
     array(
@@ -656,8 +678,34 @@ function attirant_customize_register( $wp_customize ) {
 	 function attirant_sanitize_text( $input ) {
 	    return wp_kses_post( force_balance_tags( $input ) );
 	}
+	
+	if ( $wp_customize->is_preview() ) {
+	    add_action( 'wp_footer', 'attirant_customize_preview', 21);
+	}
+	
+	function attirant_customize_preview() {
+    ?>
+    <script type="text/javascript">
+        ( function( jQuery ) {
+            wp.customize('attirant-desc-color',function( value ) {
+                value.bind(function(to) {
+                    jQuery('.site-description').css('color', to );
+                });
+            });
+             wp.customize('header_textcolor',function( value ) {
+                value.bind(function(to) {
+                    jQuery('.site-title a').css('color', to );
+                });
+            });
+        } )( jQuery )
+    </script>
+    <?php
+}  // End function attirant_customize_preview()
+	
 }
 add_action( 'customize_register', 'attirant_customize_register' );
+
+
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

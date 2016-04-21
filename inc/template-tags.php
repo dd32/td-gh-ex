@@ -75,19 +75,19 @@ function attirant_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'attirant' ) );
 		if ( $categories_list && attirant_categorized_blog() ) {
-			printf( '<span class="cat-links col-lg-4 col-md-4 col-sm-12 col-xs-12"><span class="text">CATEGORIES</span>' . __( '%1$s', 'klean' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links col-lg-4 col-md-4 col-sm-12 col-xs-12"><span class="text">CATEGORIES</span>' . __( '%1$s', 'attirant' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'attirant' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links col-lg-4 col-md-4 col-sm-12 col-xs-12"><span class="text">TAGS</span>' . __( '%1$s', 'klean' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links col-lg-4 col-md-4 col-sm-12 col-xs-12"><span class="text">TAGS</span>' . __( '%1$s', 'attirant' ) . '</span>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link col-lg-4 col-md-4 col-sm-12 col-xs-12"><span class="text">COMMENTS</span>';
-		comments_popup_link( __( 'Leave a comment', 'klean' ), __( '1 Comment', 'klean' ), __( '% Comments', 'klean' ) );
+		comments_popup_link( __( 'Leave a comment', 'attirant' ), __( '1 Comment', 'attirant' ), __( '% Comments', 'attirant' ) );
 		echo '</span>';
 	}
 

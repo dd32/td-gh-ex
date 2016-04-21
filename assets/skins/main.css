@@ -160,7 +160,7 @@ a:hover {
 }
 #site-navigation ul li {
   float: none;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.6);
   outline: solid 1px transparent;
   margin-bottom: 1px;
 }
@@ -170,7 +170,8 @@ a:hover {
   color: #000;
 }
 #site-navigation ul li:nth-child(odd) > a {
-  color: #6fb624;
+  color: #5d981e;
+  text-shadow: 0px 1px 0px #487617;
 }
 #site-navigation ul li:hover ul {
   left: 100%;
