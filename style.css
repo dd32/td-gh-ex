@@ -4,7 +4,7 @@ Theme URI: http://nilambar.net/2015/03/simple-life-free-wordpress-theme.html
 Author: Nilambar Sharma
 Author URI: http://nilambar.net/
 Description: Simple Life is a simple, minimal and accessibility ready theme for your awesome WordPress website. It comes with a whole set of interesting, rich features and flexible theme customization. This theme is easily customizable with the Customizer feature of WordPress. It is also translation ready.
-Version: 1.8
+Version: 1.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: simple-life
@@ -171,19 +171,20 @@ code{
 	white-space: normal !important;
 }
 ::-webkit-input-placeholder {
-   color: #111;
+   color: #6e6e6e;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #111;
+   color: #6e6e6e;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #111;
+   color: #6e6e6e;
+   opacity: 1;
 }
 
 :-ms-input-placeholder {
-   color: #111;
+   color: #6e6e6e;
 }
 /* Clearing floats */
 
@@ -321,7 +322,6 @@ a:active {
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
 	width: 100%;
 	background-color: #0b789c;
 }
@@ -334,23 +334,15 @@ a:active {
 }
 
 .main-navigation li {
-	float: left;
+	display: inline-block;
 	position: relative;
 }
 
-/*.main-navigation > div > ul > li.menu-item-has-children > a:hover:after {
-	border-bottom: 6px solid #fff;
-	border-left: 6px solid rgba(0, 0, 0, 0);
-	border-right: 6px solid rgba(0, 0, 0, 0);
-	content: "";
-	height: 0;
-	margin: 0 auto 0 -4px;
-	position: absolute;
-	text-align: center;
-	width: 0;
-	left: 1em;
-	bottom: 0;
-}*/
+.main-navigation li ul li {
+	float: left;
+	text-align: left;
+}
+
 .main-navigation a {
 	display: block;
 	text-decoration: none;
@@ -536,7 +528,8 @@ a:active {
 .aligncenter {
 	clear: both;
 	display: block;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*--------------------------------------------------------------
@@ -774,6 +767,7 @@ nav.pagination a.next .meta-nav{
 .post-thumbnail-wrapper{
 	margin-bottom: 10px;
 }
+
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
@@ -1056,7 +1050,9 @@ footer#colophon a{
 #copyright-wrap{
 	margin-bottom: 10px;
 }
-
+#footer_widgets_wrap {
+	padding: 0;
+}
 
 .page-header {
     background-color: #ffffff;
@@ -1071,7 +1067,12 @@ footer#colophon a{
     text-transform: uppercase;
     font-weight: bold;
 }
-
+.taxonomy-description {
+	margin-top: 10px;
+}
+.taxonomy-description p {
+	margin-bottom: 0;
+}
 header#masthead{
 	padding:0;
 }
@@ -1095,27 +1096,34 @@ body.search-no-results .page-content {
 
 .woocommerce div.type-product{
 	background-color: #FFFFFF;
-	padding: 10px;
+	padding: 20px;
 }
 .woocommerce div.type-product h1.product_title{
 	font-size: 1.714em;
 	font-weight: bold;
 }
-.woocommerce h1.page-title{
-  font-size: 1.1em;
+.woocommerce .page-title{
+	font-size: 1.1em;
 	background-color: #FFFFFF;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 1em;
+	margin-top: 0;
 }
 .woocommerce ul.products li.product{
 	background-color: #FFFFFF;
 	text-align: center;
 	padding-bottom: 5px;
 }
-.woocommerce ul.products li.product .price del, .woocommerce-page ul.products li.product .price del {
-    color: rgba(145, 145, 145, 0.5);
+.woocommerce ul.products li.product .price del,
+.woocommerce-page ul.products li.product .price del {
+    color: #333;
     font-size: 0.9em;
+}
+.woocommerce span.onsale {
+	padding: 0;
+	left: 1em;
+	top: 1em;
 }
 /*woocommerce ends*/
 
@@ -1135,6 +1143,29 @@ a.scrollup:focus {
 	border: 1px #FFF solid;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+#breadcrumb {
+	margin-top: 25px;
+}
+
+.breadcrumb-trail ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.breadcrumb-trail ul li {
+	display: inline-block;
+}
+
+.breadcrumb-trail .trail-items li::after {
+	content: "\002F";
+	padding: 0 5px;
+}
+
+.breadcrumb-trail .trail-items li:last-of-type::after {
+	display: none;
 }
 
 @media only screen and (max-width:767px) {

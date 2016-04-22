@@ -92,6 +92,12 @@ if ( ! function_exists( 'simple_life_setup' ) ) :
 				'default-image' => '',
 			) ) );
 
+		// Enable support for footer widgets.
+		add_theme_support( 'footer-widgets', 4 );
+
+		// Load Supports.
+		require get_template_directory() . '/inc/supports.php';
+
 		global $simple_life_default_options;
 		$simple_life_default_options = simple_life_get_theme_option_defaults();
 
@@ -128,7 +134,7 @@ function simple_life_scripts() {
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri().'/third-party/font-awesome/css/font-awesome' . $min . '.css', false ,'4.6.1' );
 	wp_enqueue_style( 'simple-life-style-meanmenu', get_template_directory_uri().'/third-party/meanmenu/meanmenu' . $min . '.css', false ,'2.0.6' );
 
-	wp_enqueue_style( 'simple-life-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'simple-life-style', get_stylesheet_uri(), array(), '1.9' );
 
 	// Load the html5 shiv.
 	wp_enqueue_script( 'simple-life-html5', get_template_directory_uri() . '/js/html5' . $min . '.js', array(), '3.7.3' );
@@ -186,5 +192,7 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Third Party Compatibility.
  */
-require get_template_directory() . '/support/woocommerce.php';
+if ( class_exists( 'WooCommerce' ) ) {
+	require get_template_directory() . '/support/woocommerce.php';
+}
 
