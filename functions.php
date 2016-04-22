@@ -146,6 +146,11 @@ require_once( SPACIOUS_ADMIN_DIR . '/meta-boxes.php' );
 /** Load Widgets and Widgetized Area */
 require_once( SPACIOUS_WIDGETS_DIR . '/widgets.php' );
 
+/**
+ * Detect plugin. For use on Front End only.
+ */
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
 /*
  * Adding Admin Menu for theme options
  */
