@@ -1,11 +1,11 @@
 /* 
 Theme Name: Bfront
-Theme URI: http://www.infotuts.com/bfront-buisness-wordpress-theme/
-Author: Infotuts.com
-Author URI: http://infotuts.com/
+Theme URI: http://www.themesflow.com/wp-themes/bfront-pro/
+Author: themesflow.com
+Author URI: http://themesflow.com/
 Description: Bfront is a beautiful theme, designed especially for business websites. This theme has many customizable features that will help you showcase your company's web presence.
 
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bfront
@@ -1013,6 +1013,7 @@ margin-bottom: 40px;
     
 }
 .sidebar_widget {
+background: #fff;
 border: 1px solid #e9e9e9;
 -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.07);
 -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.07);
@@ -1787,6 +1788,12 @@ height: auto;
 }
 }
 
+@media only screen and (max-width: 640px){
+  .header-wrapper-home {
+    position: inherit;
+    background: rgba(0, 0, 0, 0.9);
+  }
+}
 @media only screen and (max-width: 480px){
 .thumb.clear a img, .thumb.clear img {
 max-width: 100%;

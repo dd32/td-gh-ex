@@ -20,17 +20,19 @@ function bfront_customize_register( $wp_customize ) {
 
     $wp_customize->get_section('title_tagline')->title = esc_html__('General Settings', 'bfront');
     $wp_customize->get_section('title_tagline')->priority = 3;
-    //Logo upload
-     $wp_customize->add_setting('logo', array(
-        'capability'     => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_upload'
-    ));
-      $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'logo', array(
-        'label'    => __('Logo Upload', 'bfront'),
-        'section'  => 'title_tagline',
-        'settings' => 'logo',
-    )));
 
+    // Setting : Homepage Sidebar Display Option
+    $wp_customize->add_setting( 'site_title_and_tagline', array( 
+        'default' => true, 
+        'sanitize_callback' => 'bfront_sanitize_checkbox' 
+    ));
+    $wp_customize->add_control( 'site_title_and_tagline', array(
+            'type' => 'checkbox',
+            'label' => __( 'Display Site Title and Tagline', 'bfront' ),
+            'settings' => 'site_title_and_tagline',
+            'section' => 'title_tagline'
+        )
+    );  
 
     //  =============================
     //  ==== Slider Image Option ====

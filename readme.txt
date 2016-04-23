@@ -43,3 +43,8 @@ License and resources links for js bundled:
 6. Google Fonts
     Monda Font https://www.google.com/fonts/specimen/Monda
     License: Distributed under SIL Open Font License, 1.1 (Open font license) 
+	
+7. FontAwesome
+	http://fortawesome.github.io/Font-Awesome/, 
+	License: SIL OFL 1.1
+	URL: http://scripts.sil.org/OFL

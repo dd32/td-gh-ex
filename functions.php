@@ -44,10 +44,8 @@ add_action('wp_enqueue_scripts', 'yogesh_wp_enqueue_scripts');
 
 add_theme_support( 'post-thumbnails', array( 'post', 'movie' ) );
 add_theme_support( 'automatic-feed-links' );
-//add_theme_support( "custom-background"  ) ;
-//add_theme_support( "custom-header") ;
+add_theme_support( 'custom-logo' );
 load_theme_textdomain('bfront', get_template_directory() . '/languages');
-
 
 function bfront_widgets_init() {
 // Area 1, located at the top of the sidebar.

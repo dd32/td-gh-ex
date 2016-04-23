@@ -22,11 +22,19 @@ function bfront_sanitize_upload( $upload ) {
 }
 
 /**
- * vaild int.
+ * validate int.
  */
 function bfront_sanitize_int( $input ) {
 $return = absint($input);
     return $return;
 }
+
+/**
+ * validate checkbox option.
+ */
+function bfront_sanitize_checkbox( $input ) {
+        if ( $input == 1 ) { return 1; }
+        else { return ''; }
+    }
 
 ?>

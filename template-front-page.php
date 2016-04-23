@@ -56,7 +56,7 @@
                         <?php } ?>
                             
                         <?php if ( isset($first_slider_first_button_text) && $first_slider_first_button_text != '') { ?>
-                            <a href="<?php echo $first_slider_secoond_button_link; ?>" class="btn btn-sm animated-button victoria-four orange not-first">  <?php echo $first_slider_second_button_text; ?> </a>
+                            <a href="<?php echo $first_slider_second_button_link; ?>" class="btn btn-sm animated-button victoria-four orange not-first">  <?php echo $first_slider_second_button_text; ?> </a>
                         <?php } else { ?> 
                             <a href="#" class="btn btn-sm animated-button victoria-four orange not-first"> Download </a>
                         <?php } ?>

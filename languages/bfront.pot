@@ -1,0 +1,462 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-22 22:39+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: archive.php:81 author.php:79 index.php:53 loop.php:42 tag.php:69
+#, php-format
+msgid "Continue reading..%s"
+msgstr ""
+
+#: archive.php:94 author.php:92 index.php:66 loop.php:54 tag.php:82
+#: inc/define_template.php:23
+msgid "Sorry no post matched your criteria"
+msgstr ""
+
+#: single.php:57
+msgid ""
+"<span class=\"meta-nav\">&larr;</span> Previous Post <span class=\"post-title"
+"\">%title</span>"
+msgstr ""
+
+#: single.php:59
+msgid ""
+"Next Post <span class=\"meta-nav\">&rarr;</span><span class=\"post-title\">"
+"%title</span>"
+msgstr ""
+
+#: template-front-page.php:333
+#, php-format
+msgid "Read More %s"
+msgstr ""
+
+#: inc/customizer.php:21
+msgid "General Settings"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "Display Site Title and Tagline"
+msgstr ""
+
+#: inc/customizer.php:44
+msgid "Slider Options"
+msgstr ""
+
+#: inc/customizer.php:50
+msgid "First Slider"
+msgstr ""
+
+#: inc/customizer.php:60 inc/customizer.php:141
+msgid "Slider Image"
+msgstr ""
+
+#: inc/customizer.php:70 inc/customizer.php:151
+msgid "Slider Title"
+msgstr ""
+
+#: inc/customizer.php:80 inc/customizer.php:161
+msgid "Slider Description"
+msgstr ""
+
+#: inc/customizer.php:90 inc/customizer.php:171
+msgid "First Button Text"
+msgstr ""
+
+#: inc/customizer.php:101 inc/customizer.php:182
+msgid "First Button Link URL"
+msgstr ""
+
+#: inc/customizer.php:111 inc/customizer.php:192
+msgid "Second Button Text"
+msgstr ""
+
+#: inc/customizer.php:122 inc/customizer.php:203
+msgid "Second Button Link URL"
+msgstr ""
+
+#: inc/customizer.php:131
+msgid "Second Slider"
+msgstr ""
+
+#: inc/customizer.php:217 inc/customizer.php:231
+msgid "Service Area"
+msgstr ""
+
+#: inc/customizer.php:223
+msgid "Service Area Heading"
+msgstr ""
+
+#: inc/customizer.php:234
+msgid "Service Area Title"
+msgstr ""
+
+#: inc/customizer.php:242
+msgid "First Column"
+msgstr ""
+
+#: inc/customizer.php:251
+msgid "First Icon"
+msgstr ""
+
+#: inc/customizer.php:261
+msgid "First Title"
+msgstr ""
+
+#: inc/customizer.php:272
+msgid "First Title Link URL"
+msgstr ""
+
+#: inc/customizer.php:282
+msgid "First Description"
+msgstr ""
+
+#: inc/customizer.php:290
+msgid "Second Column"
+msgstr ""
+
+#: inc/customizer.php:299
+msgid "Second Icon"
+msgstr ""
+
+#: inc/customizer.php:309
+msgid "Second Title"
+msgstr ""
+
+#: inc/customizer.php:320
+msgid "Second Title Link URL"
+msgstr ""
+
+#: inc/customizer.php:330
+msgid "Second Description"
+msgstr ""
+
+#: inc/customizer.php:338
+msgid "Third Column"
+msgstr ""
+
+#: inc/customizer.php:347
+msgid "Third Icon"
+msgstr ""
+
+#: inc/customizer.php:357
+msgid "Third Title"
+msgstr ""
+
+#: inc/customizer.php:368
+msgid "Third Title Link URL"
+msgstr ""
+
+#: inc/customizer.php:378
+msgid "Third Description"
+msgstr ""
+
+#: inc/customizer.php:388
+msgid "Parallax Section"
+msgstr ""
+
+#: inc/customizer.php:397
+msgid "Parallax Section Image"
+msgstr ""
+
+#: inc/customizer.php:407
+msgid "Parallax Section Title"
+msgstr ""
+
+#: inc/customizer.php:417
+msgid "Parallax Section Description"
+msgstr ""
+
+#: inc/customizer.php:431
+msgid "Testimonial Area"
+msgstr ""
+
+#: inc/customizer.php:436
+msgid "Testimonial Background Image"
+msgstr ""
+
+#: inc/customizer.php:446
+msgid "Testimonial Background Video"
+msgstr ""
+
+#: inc/customizer.php:453
+msgid "First Testimonial Options"
+msgstr ""
+
+#: inc/customizer.php:462 inc/customizer.php:489
+msgid "Testimonial Text"
+msgstr ""
+
+#: inc/customizer.php:472 inc/customizer.php:499
+msgid "Name of Person"
+msgstr ""
+
+#: inc/customizer.php:480
+msgid "Second Testimonial Options"
+msgstr ""
+
+#: inc/customizer.php:510
+msgid "Blog Area Options"
+msgstr ""
+
+#: inc/customizer.php:519
+msgid "Heading For Blogs"
+msgstr ""
+
+#: inc/customizer.php:531
+msgid "Number of Blogs on HomePage"
+msgstr ""
+
+#: inc/customizer.php:542
+msgid "Footer Text"
+msgstr ""
+
+#: inc/customizer.php:550
+msgid "Footer Credit Text"
+msgstr ""
+
+#: inc/customizer.php:560
+msgid "Scoial Media Options"
+msgstr ""
+
+#: inc/customizer.php:570
+msgid "Facebook Page URL"
+msgstr ""
+
+#: inc/customizer.php:582
+msgid "Twitter Page URL"
+msgstr ""
+
+#: inc/customizer.php:594
+msgid "Google Plus Page URL"
+msgstr ""
+
+#: inc/customizer.php:606
+msgid "RSS Page URL"
+msgstr ""
+
+#: inc/customizer.php:618
+msgid "Pinterest Page URL"
+msgstr ""
+
+#: inc/customizer.php:630
+msgid "Linkedin Page URL"
+msgstr ""
+
+#: inc/customizer.php:637
+msgid "Custom Style"
+msgstr ""
+
+#: inc/customizer.php:643
+msgid "Custom CSS"
+msgstr ""
+
+#: inc/define_template.php:2
+msgid "Daily Archives"
+msgstr ""
+
+#: inc/define_template.php:3
+msgid "Monthly Archives"
+msgstr ""
+
+#: inc/define_template.php:4
+msgid "Yearly Archives"
+msgstr ""
+
+#: inc/define_template.php:5
+msgid "Blog Archives"
+msgstr ""
+
+#: inc/define_template.php:6
+msgid "Most Used Categories"
+msgstr ""
+
+#: inc/define_template.php:7
+msgid "Try Looking Monthly Archives"
+msgstr ""
+
+#: inc/define_template.php:8
+msgid "&larr; Older Posts"
+msgstr ""
+
+#: inc/define_template.php:9
+msgid "Newer posts &rarr;"
+msgstr ""
+
+#: inc/define_template.php:10
+#, php-format
+msgid "Return to %s"
+msgstr ""
+
+#: inc/define_template.php:11
+#, php-format
+msgid "By %2$s"
+msgstr ""
+
+#: inc/define_template.php:12
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/define_template.php:13
+#, php-format
+msgid "Published %2$s"
+msgstr ""
+
+#: inc/define_template.php:14
+#, php-format
+msgid "Full size is %s pixels"
+msgstr ""
+
+#: inc/define_template.php:15
+msgid "Link to full-size image"
+msgstr ""
+
+#: inc/define_template.php:16 inc/template-tags.php:70
+msgid "Edit"
+msgstr ""
+
+#: inc/define_template.php:17
+msgid "Bookmark the"
+msgstr ""
+
+#: inc/define_template.php:18
+msgid "&nbsp;permalink"
+msgstr ""
+
+#: inc/define_template.php:19
+msgid "Pages:"
+msgstr ""
+
+#: inc/define_template.php:20
+#, php-format
+msgid "All posts by : %s"
+msgstr ""
+
+#: inc/define_template.php:21
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: inc/define_template.php:22
+msgid "Home"
+msgstr ""
+
+#: inc/define_template.php:24
+msgid "Primary Widget Area"
+msgstr ""
+
+#: inc/define_template.php:25
+msgid "The primary widget area"
+msgstr ""
+
+#: inc/define_template.php:26
+msgid "Secondary Widget Area"
+msgstr ""
+
+#: inc/define_template.php:27
+msgid "The secondary widget area"
+msgstr ""
+
+#: inc/define_template.php:28
+msgid "First Footer Widget Area"
+msgstr ""
+
+#: inc/define_template.php:29
+msgid "The first footer widget area"
+msgstr ""
+
+#: inc/define_template.php:30
+msgid "Second Footer Widget Area"
+msgstr ""
+
+#: inc/define_template.php:31
+msgid "The second footer widget area"
+msgstr ""
+
+#: inc/define_template.php:32
+msgid "Third Footer Widget Area"
+msgstr ""
+
+#: inc/define_template.php:33
+msgid "The third footer widget area"
+msgstr ""
+
+#: inc/define_template.php:34
+msgid "Fourth Footer Widget Area"
+msgstr ""
+
+#: inc/define_template.php:35
+msgid "The fourth footer widget area"
+msgstr ""
+
+#: inc/define_template.php:36
+msgid "Main Menu"
+msgstr ""
+
+#: inc/define_template.php:37
+msgid "Categories"
+msgstr ""
+
+#: inc/define_template.php:38
+msgid "Archives"
+msgstr ""
+
+#: inc/define_template.php:39
+msgid "Contact Us"
+msgstr ""
+
+#: inc/define_template.php:40
+msgid "Location Map"
+msgstr ""
+
+#: inc/extras.php:52
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:28
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:33
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:58
+msgid " "
+msgstr ""
+
+#: inc/template-tags.php:60
+#, php-format
+msgid " %1$s "
+msgstr ""
+
+#: inc/template-tags.php:66
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:66
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:66
+msgid "% Comments"
+msgstr ""

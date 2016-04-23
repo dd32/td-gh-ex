@@ -23,14 +23,15 @@
                         <div class="col-md-4 col-sm-4">
                             <div class="logo">
 
-                                <?php if ( get_theme_mod('logo') != '' ): ?> 
-                                    <a href="<?php echo esc_url( home_url() ); ?>">
-                                        <img src="<?php echo esc_url( get_theme_mod( 'logo' ) ); ?>" alt="<?php bloginfo('name'); ?>">
-                                    </a>
+                                <?php if ( function_exists( 'the_custom_logo' ) ): ?>
+                                    <?php the_custom_logo(); ?>
                                 <?php else: ?>
-                                    <h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('name'); ?></a></h1>
-                                    </a>
                                 <?php endif; ?>
+
+                                <?php if(get_theme_mod('site_title_and_tagline') == 1){ ?>
+                                    <h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('name'); ?></a></h1>
+                                    <p><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('description'); ?></a></p>
+                                <?php } ?>
 
                             </div>
                         </div>
@@ -76,6 +77,3 @@
                 </p>
             </div>
         </div>        
-
-
-            <!---------------------------------------------------->

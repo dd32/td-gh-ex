@@ -82,7 +82,7 @@
                         <?php if ( isset($footer_credits) && $footer_credits != '') { ?>
                             <p><?php echo $footer_credits; ?></p>
                         <?php } else { ?>    
-                            <p>Theme Design and Develop by Yogesh Bhade</p>
+                            <p>Theme Design and Develop by <a href="wwww.themesflow.com">ThemesFlow</a></p>
                         <?php } ?>  
                     </div>
                 </div>

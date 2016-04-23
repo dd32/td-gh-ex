@@ -1,5 +1,8 @@
 == Changelog ==
 
+= Version: 1.0.3 =
+* some Bcorrections
+
 = Version: 1.0.2 =
 * Minor Bug Fixes
 

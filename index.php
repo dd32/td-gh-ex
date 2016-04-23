@@ -1,7 +1,4 @@
 <?php
-/*
-  Template name: Blog
- */
 
 get_header(); ?>
 <div class="content-wrapper">
