@@ -1,49 +1,62 @@
-<?php get_template_part('pink','header'); ?>
-<div class="container">
-  <!-- Main --> 
-  <div class="_blank"></div>
-  <div class="row-fluid">
-    <div class="<?php if(!is_active_sidebar('sidebar-primary')){ echo 'span12'; }else { echo 'span8'; } ?>" id="main-content">
-      <?php  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-        $args = array( 'post_type' => 'post','paged'=>$paged);
-        
-        $post_type_data = new WP_Query( $args );
-        while($post_type_data ->have_posts()):
-        $post_type_data ->the_post();?>
-      <div id="post-<?php the_ID(); ?>" <?php post_class('class-name'); ?>>
-        <div class="media" id="blog-media">
-          <div class="blog-icon-media">
-            <?php $defalt_arg =array('class' => "img-responsive" )?>
-            <?php if(has_post_thumbnail()):?>
-            <a class="pull-left" href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_post_thumbnail('blog-left-thumb', $defalt_arg); ?></a>
-            <?php endif;?>
-            <ul class="spa-blog-icon clearfix" id="blog-left-icons">
-              <li class="admin-icon"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php the_author();?></a></li>
-              <li class="calendar-icon"><a href="#"><?php echo get_the_date(get_option('M j,Y'));?> </a></li>
-              <li class="blog-comment-icon">  <?php  comments_popup_link( __( 'Leave a comment', 'sis_spa' ),__( '1 Comment', 'sis_spa' ), __( '% Comments', 'sis_spa' ) ); ?></li>
-            </ul>
-          </div>
-          <div class="media-body">
-            <h4>
-              <a href="<?php the_permalink(); ?>"title="<?php the_title(); ?>" class="blog-heading"><?php the_title(); ?></a>
-            </h4>
-            <div class="blog_content">
-              <p><?php echo spa_get_the_other_excerpt();?></p>
-              <span> <?php the_tags('<b>Tags:</b>',', ');?> </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <?php endwhile;?>
-      <div class="span12">
-        <div class="span3"></div>
-        <div class="span8">
-          <?php	$Webriti_pagination = new Webriti_pagination();
-            $Webriti_pagination->Webriti_page($paged, $post_type_data);		?>
-        </div>
-      </div>
-    </div>
-    <?php get_sidebar();?>
-  </div>
-</div>
-<?php get_footer();?>
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ *
+ * @package WordPress
+ * @subpackage spasalon
+ */
+ 
+get_header();
+page_banner_strip(); // banner strip
+?>
+
+<!-- Blog & Sidebar Section -->
+<section id="section">		
+	<div class="container">
+		<div class="row">
+			
+			<!--Blog Detail-->
+			<div class="col-md-8 col-xs-12">
+				<div class="site-content">
+					
+					<?php if( have_posts() ): ?>
+					
+						<?php while( have_posts() ): the_post(); ?>
+						
+							<?php get_template_part('content',''); ?>
+					
+						<?php endwhile; ?>
+						
+						<div class="paginations">
+						<?php						
+						// Previous/next page navigation.
+						the_posts_pagination( array(
+						'prev_text'          => __('Previous','sis_spa'),
+						'next_text'          => __('Next','sis_spa')
+						) ); ?>
+						</div>
+						
+					<?php else: ?>
+						
+						<?php get_template_part('content','none'); ?>
+						
+					<?php endif; ?>
+			
+				</div>
+			</div>
+			<!--/End of Blog Detail-->
+
+			<?php get_sidebar(); ?>
+		
+		</div>	
+	</div>
+</section>
+<!-- End of Blog & Sidebar Section -->
+ 
+<div class="clearfix"></div>
+
+<?php get_footer(); ?>

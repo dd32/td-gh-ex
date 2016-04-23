@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-  <head>
-    <!--[if IE]>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    ``
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="<?php bloginfo('charset'); ?>" />
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
-	<?php 
-    $spa_current_options = get_option('spa_theme_options',spa_the_theme_setup());
-	?>
-    <?php if($spa_current_options['upload_image_favicon']!=''){?>
-    <link rel="shortcut icon" href="<?php  echo $spa_current_options['upload_image_favicon']; ?>" />
-    <?php }?>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <?php wp_head(); ?>
-  </head>
-  <body <?php body_class(); ?>>
-    <!-- Header -->
-    <div class="container">
-      <div class="navbar navbar-inverse" id="menu_position">
-        <div class="navbar-inner">
-          <div class="container">
-            <a data-target=".navbar-inverse-collapse" data-toggle="collapse" class="btn btn-navbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </a>
-            <?php 	if($spa_current_options['upload_image']!='') { ?>
-            <a href="<?php echo home_url( '/' ); ?>" class="brand">
-            <img src="<?php echo $spa_current_options['upload_image']; ?>"  height="<?php echo $spa_current_options['height'].'px' ?>" width="<?php echo $spa_current_options['width'].'px'; ?>" alt="Spa Logo" class="logo-img" />
-            </a>
-            <?php  } else { ?>
-            <a href="<?php echo home_url( '/' ); ?>" class="brand">
-            <img src="<?php echo get_template_directory_uri();?>/images/spa_logo.png" alt="spasalon" /></a>
-            <?php } ?>
-            <div class="nav-collapse navbar-inverse-collapse collapse">
-              <?php
-                wp_nav_menu( array(  
-                   'theme_location' => 'header-menu',
-                  'container'  => 'nav-collapse collapse navbar-inverse-collapse',
-                   'menu_class' => 'nav',
-                   'fallback_cb' => 'spa_fallback_page_menu',
-                   'walker' => new spasalon_nav_walker()
-                	)
-                	);
-                ?> 
-            </div>
-            <!-- /.nav-collapse -->
-          </div>
-        </div>
-        <!-- /navbar-inner -->
-      </div>
-    </div>
+<head>	
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	
+	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<?php endif; ?>
+
+	<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+
+<?php 
+$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), default_data() );
+?>
+<!-- Navbar -->	
+<nav class="navbar navbar-default">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<?php
+				if( $current_options['enable_logo_text'] == true ){
+					bloginfo('name');
+				}else{
+				?>
+				<img alt="<?php bloginfo("name"); ?>" src="<?php echo ( esc_url($current_options['upload_image']) ? $current_options['upload_image'] : get_template_directory_uri() . '/images/logo.png' ); ?>" class="img-responsive" style="width:<?php echo esc_html($current_options['width']).'px'; ?>; height:<?php echo esc_html($current_options['height']).'px'; ?>;">
+				<?php } ?>
+				
+			</a>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only"><?php _e('Toggle navigation', 'sis_spa'); ?></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<?php 
+				wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'container'  => 'nav-collapse collapse navbar-inverse-collapse',
+				'menu_class' => 'nav navbar-nav navbar-right',
+				'fallback_cb' => 'webriti_fallback_page_menu',
+				'walker' => new webriti_nav_walker()) 
+				); 
+			?>
+		</div>
+	</div>
+</nav>	
+<!-- End of Navbar -->
+
+<div class="clearfix"></div>
+

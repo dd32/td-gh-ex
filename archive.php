@@ -1,45 +1,64 @@
-<?php get_template_part('pink','header'); ?>
-<div class="container">
-  <div class="_blank"></div>
-  <!-- Main --> 
-  <div class="row-fluid">
-    <div class="<?php if(!is_active_sidebar('sidebar-primary')){ echo 'span12'; }else { echo 'span8'; } ?>" >
-      <h2 class="blog_detail_head">
-        <?php if ( is_day() ) : ?>
-        <?php  _e( "Daily Archives:", 'sis_spa' ); echo (get_the_date()); ?>
-        <?php elseif ( is_month() ) : ?>
-        <?php  _e( "Monthly Archives:", 'sis_spa' ); echo (get_the_date( 'F Y' )); ?>
-        <?php elseif ( is_year() ) : ?>
-        <?php  _e( "Yearly Archives:", 'sis_spa' );  echo (get_the_date( 'Y' )); ?>
-        <?php else : ?>
-        <?php _e( "Blog Archives", 'sis_spa' ); ?>
-        <?php endif; ?>
-      </h2>
-      <?php    while(have_posts()): the_post();?>
-      <div class="media" id="blog-media">
-        <div class="blog-icon-media">
-          <?php $defalt_arg =array('class' => "img-responsive" )?>
-          <?php if(has_post_thumbnail()):?>
-          <a class="pull-left" href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?></a>
-          <?php endif;?>
-          <ul class="spa-blog-icon clearfix">
-            <li class="admin-icon"> <a href="#"><?php the_author();?></a></li>
-            <li class="calendar-icon"><a href="#"><?php echo get_the_date(get_option('M j,Y'));?> </a></li>
-            <li class="blog-comment-icon">  <?php  comments_popup_link( __( 'Leave a comment', 'sis_spa' ),__( '1 Comment', 'sis_spa' ), __( '% Comments', 'sis_spa' ),'name' ); ?></li>
-          </ul>
-        </div>
-        <div class="media-body">
-          <h4 ><a  class="blog-heading" href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_title(); ?></a>
-          </h4>
-          <div class="blog_content">
-            <p><?php echo spa_get_the_other_excerpt();?></p>
-          </div>
-          <br>
-        </div>
-      </div>
-      <?php endwhile;?>		 
-    </div>
-    <?php get_sidebar();?>
-  </div>
-</div>
-<?php  get_footer(); ?>
+<?php
+/**
+ * The archive template file
+ * @package WordPress
+ * @subpackage spasalon
+ */
+ 
+get_header(); 
+page_banner_strip(); // banner strip
+?>
+
+<!-- Blog & Sidebar Section -->
+<section id="section">		
+	<div class="container">
+		<div class="row">
+			
+			<!--Blog Detail-->
+			<div class="col-md-8 col-xs-12">
+				<div class="site-content">
+					
+					<?php if( have_posts() ): ?>
+						
+						<header class="page-header">
+							<?php
+								the_archive_title( '<h1 class="page-title">', '</h1>' );
+								the_archive_description( '<div class="taxonomy-description">', '</div>' );
+							?>
+						</header><!-- .page-header -->
+			
+						<?php while( have_posts() ): the_post(); ?>
+						
+							<?php get_template_part('content',''); ?>
+					
+						<?php endwhile; ?>
+						
+						<div class="paginations">
+						<?php						
+						// Previous/next page navigation.
+						the_posts_pagination( array(
+						'prev_text'          => __('Previous','sis_spa'),
+						'next_text'          => __('Next','sis_spa')
+						) ); ?>
+						</div>
+						
+					<?php else: ?>
+						
+						<?php get_template_part('content','none'); ?>
+						
+					<?php endif; ?>
+			
+				</div>
+			</div>
+			<!--/End of Blog Detail-->
+
+			<?php get_sidebar(); ?>
+		
+		</div>	
+	</div>
+</section>
+<!-- End of Blog & Sidebar Section -->
+ 
+<div class="clearfix"></div>
+
+<?php get_footer(); ?>

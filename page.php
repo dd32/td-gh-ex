@@ -1,38 +1,80 @@
-<?php get_template_part('pink','header');?>
-<!-- Container for products -->
-<div class="container">
-  <!-- Main --> 
-  <div class="_blank"></div>
-  <div class="row-fluid">
-    <!-- Spa-Saloon main Content -->	
-    <div class="<?php if(!is_active_sidebar('sidebar-primary')){ echo 'span12'; }else { echo 'span8'; } ?>">
-      <!-- Blog-post-detail 1--> 
-      <?php the_post();?>
-      <h2 class="blog_detail_head"><?php the_title(); ?></h2>
-      <?php $defalt_arg =array('class' => "img-responsive" )?>
-      <?php if(has_post_thumbnail()):?>
-      <div class="media" >
-        <a href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?>
-        </a>
-      </div>
-      <?php endif;?>
-      <div class="media" >       
-        <div class="media-body">
-          <div class="blog-detail-content"><?php the_content(); ?> </div>
-          <?php if(wp_link_pages(array('echo'=>0))):?>
-          <div class="pagination pagination-large">
-            <ul class="page-numbers"><?php 
-              $args=array('before' => '<li>'.__('Pages:','sis_spa'),'after' => '</li>');
-              wp_link_pages($args); ?></ul>
-          </div>
-          <?php endif;?>
-          <?php comments_template( '', true );?>
-        </div>
-      </div>
-    </div>
-    <!-- /Spa-Saloon main Content -->
-    <div class="sidebar-topspacer"></div>
-    <?php get_sidebar(); ?>
-  </div>
-</div>
-<?php get_footer();?>
+<?php
+/**
+ * single page detail file
+ * @package WordPress
+ * @subpackage spasalon
+ */
+ 
+get_header(); 
+page_banner_strip(); // banner strip
+?>
+
+<!-- Blog & Sidebar Section -->
+<section id="section">		
+	<div class="container">
+		<div class="row">
+			
+			<!--Blog Detail-->
+			<?php 
+				if ( class_exists( 'WooCommerce' ) ) {
+					
+					if( is_account_page() || is_cart() || is_checkout() ) {
+							echo '<div class="col-md-'.( !is_active_sidebar( "woocommerce-1" ) ?"12" :"8" ).'">'; 
+					}
+					else{ 
+				
+					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">'; 
+					
+					}
+					
+				}
+				else{ 
+				
+					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">';
+					
+					} ?>
+				<div class="site-content">
+					
+					<?php while( have_posts() ): the_post(); ?>
+						
+						<?php get_template_part('content','page'); ?>
+						
+						<?php 
+						if ( comments_open() || get_comments_number() ) {
+							comments_template();
+						}
+						?>
+					
+					<?php endwhile; ?>
+			
+				</div>
+			</div>
+			<!--/End of Blog Detail-->
+
+			<?php 
+				if ( class_exists( 'WooCommerce' ) ) {
+					
+					if( is_account_page() || is_cart() || is_checkout() ) {
+							get_sidebar('woocommerce'); 
+					}
+					else{ 
+				
+					get_sidebar(); 
+					
+					}
+					
+				}
+				else{ 
+				
+					get_sidebar(); 
+					
+					} ?>
+		
+		</div>	
+	</div>
+</section>
+<!-- End of Blog & Sidebar Section -->
+ 
+<div class="clearfix"></div>
+
+<?php get_footer(); ?>

@@ -71,27 +71,33 @@ along with this program.  If not, see .
 
 Spasalon WordPress Theme bundles the following third-party resources:
 
-Font License
-    Applies to all desktop and webfont files in the following directory: /fonts/.
-    License: SIL OFL 1.1
-    URL: http://scripts.sil.org/OFL
+Screenshot & Banner Image : CCO by skeeze
+Screenshot Image...
+https://pixabay.com/en/wellness-massage-reiki-285590/
 
-JavaScripts		
-		1. Bootstrap.js => http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
-		
-Images
-		1. Static Home Feature Image all created by webriti
-		2. Image in the screenshot are taken from pixabay.com
-			https://pixabay.com/en/wellness-massage-reiki-285590/
-			https://pixabay.com/en/wellness-massage-relax-relaxing-285587/
-			https://pixabay.com/en/wellness-massage-sound-massage-285588/
-			https://pixabay.com/en/wellness-massage-sound-massage-285591/
-			https://pixabay.com/en/wellness-spa-bless-you-prevention-185005/
-			https://pixabay.com/en/lemon-basil-hairy-natural-spice-906141/
-			https://pixabay.com/en/cosmetics-tube-cream-care-hygiene-575521/
-			https://pixabay.com/en/wellness-massage-relax-relaxing-589770/
-		License: CC0 Public Domain
-		URL: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
+Banner Images...
+https://pixabay.com/en/wellness-massage-reiki-285590/
+
+Slider Banner Thumbnail Image : CCO by rhythmuswege
+https://pixabay.com/en/wellness-massage-sound-massage-285588/
+
+
+Service Images: CCO by nnoeki
+https://pixabay.com/en/wellness-massage-relax-relaxing-589770/
+
+Project Images : CCO by kerdkanno
+1. https://pixabay.com/en/lemon-basil-hairy-natural-spice-906141/
+
+
+Font Awesome...
+Font Awesome 4.6.1 by @davegandy - http://fontawesome.io - @fontawesome
+License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Source: http://fontawesome.io
+
+Bootstrap...
+* Bootstrap (http://bootstrapdocs.com/v3.0.2/docs/)
+* Copyright (c) 2011-2014 Twitter, Inc
+* Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE		
 		
 ----------------------------------------------------------------------
 Support
@@ -100,6 +106,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version 1.6
+1. Move Option panel Setting To Customizer Setting.
 @version 1.5.9.1
 1. Add Message Next version moving option panel to Customizer.
 @version 1.5.9

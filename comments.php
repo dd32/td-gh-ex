@@ -1,60 +1,102 @@
-<?php if ( post_password_required() ) : ?>
-<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'sis_spa' ); ?>
-</p>
-<?php return;endif;?>
+<?php 
+if ( post_password_required() ) {
+	return;
+}
+?>
+
+<?php
+if( !function_exists('webriti_comments') ):
+function webriti_comments( $comment, $args, $depth ){
+	
+	$GLOBALS['comment'] = $comment;
+	
+	//get theme data
+	global $comment_data;
+	
+	//translations
+	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : __('Reply','sis_spa');
+	?>
+	<div id="comment-<?php comment_ID(); ?>" <?php comment_class('media comments'); ?>>
+	
+		<figure class="comment-author">
+			<?php echo get_avatar( $comment , $size = 70 ); ?>
+		</figure>
+		
+		<div class="media-body">
+			<div class="comment-content">
+			
+				<h5 class="fn"><?php comment_author(); ?> 
+				
+					<a href="#" class="datetime">
+						<time datetime="<?php  echo comment_time('g:i a'); ?>">
+						<?php echo comment_date('M j, Y');?> <?php _e('at','sis_spa') ?> <?php  echo comment_time('g:i a'); ?>
+						</time>
+					</a>
+			
+					<div class="reply">
+						<?php comment_reply_link( array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth'], 'per_page' => $args['per_page']))) ?>
+					</div>
+				</h5>
+				
+				<?php comment_text(); ?>
+			</div>
+								
+		</div>
+	</div>
+	<?php
+}
+endif; 
+?>
+
+
 <?php if ( have_comments() ) : ?>
-<div class="comment_mn">
-  <fieldset><?php printf( _n( '<p style="color: #f22853; margin-bottom: 30px; margin-top:20px;">One thought on &ldquo;%2$s&rdquo;', '<p style="color: #f22853; margin-top:20px;">%1$s thoughts on &ldquo;%2$s&rdquo;</p>', get_comments_number(), 'sis_spa' ),number_format_i18n( get_comments_number() ),  get_the_title()  );?>
-  </fieldset>
-  <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>
-  <nav id="comment-nav-above">
-    <h1 class="assistive-text"><?php _e( 'Comment navigation', 'sis_spa' ); ?></h1>
-    <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sis_spa' ) ); ?></div>
-    <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sis_spa' ) ); ?></div>
-  </nav>
-  <?php endif;  ?>
-  <?php wp_list_comments( array( 'callback' => 'spa_comment' ) );?>
+
+<!--Comments-->
+<div class="comments-area">
+	
+	<h3 class="comment-title">
+	<?php 
+	$comments_number = get_comments_number();
+	
+	if ( 1 === $comments_number ) {
+		printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'sis_spa' ), get_the_title() );
+	}
+	else{
+		printf(
+				_nx(
+					'%1$s thought on &ldquo;%2$s&rdquo;',
+					'%1$s thoughts on &ldquo;%2$s&rdquo;',
+					$comments_number,
+					'comments title',
+					'sis_spa'
+				),
+				number_format_i18n( $comments_number ),
+				get_the_title()
+			);
+	}
+	?>
+	</h3>
+	
+	<?php wp_list_comments( array( 'callback' => 'webriti_comments' ) ); ?>
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
+		<nav id="comment-nav-below">
+			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'sis_spa' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sis_spa' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sis_spa' ) ); ?></div>
+		</nav>
+		<?php }  
+		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
+	<p class="no-comments"><?php _e( 'Comments are closed.', 'sis_spa' ); ?></p>
+	<?php endif; ?>
+						
 </div>
-<!-- comment_mn -->
-<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-<nav id="comment-nav-below">
-  <h1 class="assistive-text"><?php _e( 'Comment navigation', 'sis_spa' ); ?></h1>
-  <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sis_spa' ) ); ?></div>
-  <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sis_spa' ) ); ?></div>
-</nav>
-<?php endif;  ?>
-<?php elseif ( ! comments_open()  && post_type_supports( get_post_type(), 'comments' ) ) :
-  _e('<p id="comment">'.__('comments are closed','sis_spa'),'</p>','sis_spa');?>
+<!--/End of Comments-->
 <?php endif; ?>
-<?php if ('open' == $post->comment_status) : ?>
-<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p><?php _e('You must be','sis_spa' ); ?><a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e('logged in','sis_spa');?></a> <?php _e('to post a comment.','sis_spa');?></p>
-<?php else : ?>
-<?php $fields=array(
-  'author' => '<label for="author" class="blog-form-feild">'.__('Name','sis_spa'),'*</label>
-               <input type="text" name="author" id="author" value=""   placeholder="' . __('Name','sis_spa') . '" class="span8 cmt_input_bg" tabindex="1" />',   
-  'email'  => '<label for="email" class="blog-form-feild">'.__('Mail','sis_spa').__('will not be published','sis_spa'),'</label>
-               <input type="text" name="email" id="email" value="" placeholder="' . __('email','sis_spa') .'"  tabindex="2" class="span8 cmt_input_bg" />',
-  'url'    => ' <label for="url" class="blog-form-feild">'.__('Website','sis_spa'),'</label>
-                <input type="text" name="url" id="url" value="" placeholder="' . __('website','sis_spa') . '"  tabindex="3" class="span8 cmt_input_bg" />'
-  );
-  
-  function my_fields($fields) {
-  
-  return $fields;
-  }
-  add_filter('comment_form_default_fields','my_fields');
-  
-  $defaults = array(
-   'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
-  'comment_field'        => ' <label for="url" class="blog-form-feild">Comment</label><p class="comment-form-comment"><textarea name="comment" id="comment" rows="3" placeholder="' .__('Comment','sis_spa') . '" class="span8 cmt_input_bg" tabindex="4"></textarea></p>',
-  
-  'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'sis_spa' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__('Log out?','sis_spa').'</a>' . '</p>',
-  'comment_notes_after'  => '<dl class="form-allowed-tags"></dl>',
-  'id_form'              => 'commentform',
-  'id_submit'            => 'blog-form-post',
-  );
-  ?>
-<?php comment_form($defaults) ;?> 
-<?php endif; // If registration required and not logged in ?>
-<?php endif;  ?>
+
+<?php
+		comment_form( array(
+			'title_reply_before' => '<h3 class="comment-title">',
+			'title_reply_after'  => '</h3>',
+		) );
+	?>

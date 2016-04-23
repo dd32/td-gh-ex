@@ -1,47 +1,64 @@
-<?php get_template_part('pink','header'); ?>
-<div class="container">
-  <div class="_blank"></div>
-  <div class="row-fluid">
-    <div class="<?php if(!is_active_sidebar('sidebar-primary')){ echo 'span12'; }else { echo 'span8'; } ?>" id="main-content">
-      <?php if ( have_posts() ) : ?>
-      <h2><?php printf( __( "Search Results for:", 'sis_spa' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
-      <?php /* Start the Loop */ ?>
-      <?php while ( have_posts() ) : the_post(); ?>
-      <div class="media" id="blog-media">
-        <div class="blog-icon-media">
-          <?php $defalt_arg =array('class' => "img-responsive" )?>
-          <?php if(has_post_thumbnail()):?>
-          <a class="pull-left" href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?></a>
-          <?php endif;?>
-          <ul class="blog-icons clearfix">
-            <li><i class="icon-user"></i> <a href="#"><?php the_author();?></a></li>
-            <li class="calendar-icon"><a href="#"><?php echo get_the_date(get_option('M j,Y'));?> </a></li>
-            <li><i class="icon-comment"></i>  <?php  comments_popup_link( __( "Leave a comment", 'sis_spa' ),__( "1 Comment", 'sis_spa' ), __( "% Comments", 'sis_spa' ),'name' ); ?></li>
-          </ul>
-        </div>
-        <div class="media-body">
-        <h4 class="blog-detail-head"><a href="<?php the_permalink(); ?>"title="<?php get_search_query(); ?>"></a></h4>
-          <div class="blog_content">
-            <p><?php the_excerpt();?></p>
-          </div>
-          <br>
-        </div>
-      </div>
-      <?php endwhile; ?><?php else : ?>
-      <h2 class="blog-heading"><?php _e( "Nothing Found", 'sis_spa' ); ?></h2>
-      <div class="">
-        <p><?php _e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'sis_spa' ); ?></p>
-        <?php get_search_form(); ?>
-      </div>
-      <!-- .blog_con_mn -->
-      <?php endif; ?>
-    </div>
-    <?php get_sidebar();?>
-  </div>
-</div>
-<div class="_blank"></div>
-<div class="_blank"></div>
-<div class="_blank"></div>
-<div class="_blank"></div>
-<div class="_blank"></div>
-<?php  get_footer() ?>
+<?php
+/**
+ * The search template file
+ * @package WordPress
+ * @subpackage spasalon
+ */
+ 
+get_header(); 
+page_banner_strip(); // banner strip
+?>
+
+<!-- Blog & Sidebar Section -->
+<section id="section">		
+	<div class="container">
+		<div class="row">
+			
+			<!--Blog Detail-->
+			<div class="col-md-8 col-xs-12">
+				<div class="site-content">
+					
+					<?php if( have_posts() ): ?>
+						
+						<header class="page-header">
+							<?php
+								the_archive_title( '<h1 class="page-title">', '</h1>' );
+								the_archive_description( '<div class="taxonomy-description">', '</div>' );
+							?>
+						</header><!-- .page-header -->
+			
+						<?php while( have_posts() ): the_post(); ?>
+						
+							<?php get_template_part('content',''); ?>
+					
+						<?php endwhile; ?>
+						
+						<div class="paginations">
+						<?php						
+						// Previous/next page navigation.
+						the_posts_pagination( array(
+						'prev_text'          => __('Previous','sis_spa'),
+						'next_text'          => __('Next','sis_spa')
+						) ); ?>
+						</div>
+						
+					<?php else: ?>
+						
+						<?php get_template_part('content','none'); ?>
+						
+					<?php endif; ?>
+			
+				</div>
+			</div>
+			<!--/End of Blog Detail-->
+
+			<?php get_sidebar(); ?>
+		
+		</div>	
+	</div>
+</section>
+<!-- End of Blog & Sidebar Section -->
+ 
+<div class="clearfix"></div>
+
+<?php get_footer(); ?>
