@@ -123,6 +123,11 @@ JavaScripts
 		   https://pixabay.com/en/business-hard-working-autonomous-1067978/
 
 		images are licensed under GPL.
+		
+Font Awesome...
+Font Awesome 4.6.1 by @davegandy - http://fontawesome.io - @fontawesome
+License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Source: http://fontawesome.io
 		   
 CSS Tooltips by Adam Whitcroft
 https://github.com/AdamWhitcroft/CSS.Tooltips
@@ -136,6 +141,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@Version 1.5.4
+1. Solved Theme Review Issue.
+2. Update Font awesome Icon 4.5 to 4.6.1
 @Version 1.5.3
 1. Add Parallax Demo Link.
 @Version 1.5.2

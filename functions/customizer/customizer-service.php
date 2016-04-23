@@ -317,46 +317,7 @@ $wp_customize->add_control(
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
     )
-);	
-	
-	
-$wp_customize->add_section( 'more_service' , array(
-		'title'      => __('Add More Service', 'quality'),
-		'panel'  => 'quality_service_options',
-		'priority'   => 400,
-   	) );	
-	
-class WP_service_Customize_Control extends WP_Customize_Control {
-    public $type = 'new_menu';
-    /**
-    * Render the control's content.
-    */
-    public function render_content() {
-    ?>
-     <div class="pro-vesrion">
-	 <P><?php _e('Want to add more services, than upgrade to pro version','quality');?></P>
-	 </div>
-	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/quality/', 'quality'));?>" target="_blank" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','quality' ); ?></a>
-	 <div>
-    <?php
-    }
-}
-
-$wp_customize->add_setting(
-    'service_pro',
-    array(
-        'default' => __('','quality'),
-		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
-    )	
 );
-$wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'service_pro', array(	
-		'label' => __('Discover quality Pro','quality'),
-        'section' => 'more_service',
-		'setting' => 'service_pro',
-    ))
-);	
 }
 add_action( 'customize_register', 'quality_service_customizer' );
 ?>

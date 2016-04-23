@@ -117,3 +117,8 @@ background-color: #db2723;
   border-radius: 2px;
   }
   .pro-vesrion p{line-height:20px;}  
+  
+  #accordion-section-front_page_parallex_options .accordion-section-title, .accordion-section-title:after,
+  #accordion-section-quality_pro_section .accordion-section-title, .accordion-section-title:after  {
+  background:#f8504b; color:#fff;}
+  #accordion-section-front_page_parallex_options .accordion-section-title:after, #accordion-section-quality_pro_section .accordion-section-title:after {color:#fff;}

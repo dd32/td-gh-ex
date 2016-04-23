@@ -9,16 +9,29 @@
 	background-color: #e7e7e7;
 	box-shadow: 7px 1px 3px #DEDEDE;
 }
-.qua-separator-small, .qua-head-detail,.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .open > a,
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"], button,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover, table th, .qua-separator-small, .qua-head-detail,.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus, .dropdown-menu, .qua-separator, .qua_col_padding:hover .qua_home_portfolio_caption, .qua_proejct_button a:hover, .qua_callout_area, .qua_short_tabs li.active > a,
 .qua_short_tabs li > a:hover, .qua-footer-separator,.qua_contact_btn,.qua_send_button , #qua_send_button, .qua_post_date,a.qua_blog_btn:hover, .more-link:hover  , .more-link:focus ,
-a.qua_blog_btn:focus, .qua_dropcape_square span,.qua_dropcape_circle span, .qua_sidebar_widget #searchsubmit, .qua_dropcape_square span, .qua_sidebar_link p:hover span,.qua_sidebar_tweeter_link h3 i, .qua-service-area:hover > .hexagon-box, .blog-post-btn:hover, .blog-post-btn:hover  { background-color: #f8504b; }
+a.qua_blog_btn:focus, .qua_dropcape_square span,.qua_dropcape_circle span, .qua_sidebar_widget #searchsubmit, .qua_dropcape_square span, .qua_sidebar_link p:hover span,.qua_sidebar_tweeter_link h3 i, .qua-service-area:hover > .hexagon-box, .blog-post-btn:hover, .blog-post-btn:hover { background-color: #f8504b; }
 
 .dropdown .fa-angle-down, li.dropdown:hover .fa-angle-down, li.dropdown.active .fa-angle-down, .qua_heading_title h1 span, .qua_page_heading h1 span, .qua-separator, .qua-service-area p > a , .qua_port_title h1 span, .qua_portfolio_tabs li.active > a, .qua_portfolio_tabs li > a:hover, .qua-blog-post-detail,.qua-blog-post-detail span, .qua-blog-post-detail a, .qua-blog-post-detail a , .qua-tags a:hover, .blog-post-btn, .qua-blog-area .qua-blog-info  .qua-blog-date-cm  .right a:hover, .qua_testimonianl_sec  i, .qua_testimonianl_desig, .qua_footer_widget_post h3 a, .qua_footer_widget_link a:hover, .qua_tooltip a, a.qua_blog_btn , .more-link, .reply a , .qua_title_head, .qua_footer_widget_column ul li a:hover, .qua_sidebar_link p:hover a , .widget ul li a:hover , .qua_sidebar_widget ul li a:hover, .tweet_info a, .qua_media_sidebar h3 a{ color: #F8504B; }
 
-.head-contact-info li, .head-contact-social li > a > i ,.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .open > a,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"], button,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover, table th, .head-contact-info li, .head-contact-social li > a > i ,.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus,.navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus, .dropdown-menu > li > a ,.dropdown-menu > li > a:hover,
@@ -31,6 +44,22 @@ a.qua_blog_btn:focus, .qua_widget_tags a:hover  , .tagcloud a:hover, .qua_sideba
 { color: #ffffff; }
 
 .navbar-default, .dropdown .fa-angle-down, li.dropdown:hover .fa-angle-down, li.dropdown.active .fa-angle-down, .qua_home_portfolio_caption, .qua_portfolio_image .qua_home_portfolio_showcase_icons a i , .qua_portfolio_tabs li.active > a, .qua_portfolio_tabs li > a:hover,.qua_portfolio_tabs li a, .qua_short_tabs li a, .qua_dropcap_section,.qua_tooltip_section, .qua_alert_section, .qua_button_section, .qua_btn_white, .blog-post-btn, .qua_blog_pagination, .qua-project-detail-sidebar .launch-qua-project a, .qua_callout_area a:hover, .qua_blog_pagi a, .qua_blog_pagi a:hover, .qua_blog_pagi a.active, .qua_widget_tags a  , .tagcloud a  { background-color: #ffffff; }
+
+#post-559 {	
+	border-left: 22px solid #F8504B;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"], button,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover
+{
+	border: 1px solid #f8504b;
+}
+
 
 /* Header Logo & Menus---------------------------------------------------------------------------------------*/
  .navbar-default .navbar-nav > li > a {

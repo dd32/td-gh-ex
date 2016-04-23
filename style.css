@@ -4,7 +4,7 @@ Theme URI: http://webriti.com/quality-lite-version-details-page/
 Author: Webriti
 Author URI: http://webriti.com/
 Description: Business theme which is ideal for creating a corporate / business website.It boasts of 2 beautifully designed page templates , Home and Blog Page.
-Version:  1.5.3
+Version:  1.5.4
 Tags: white, red,pink , full-width-template, threaded-comments, custom-menu, two-columns,translation-ready , custom-background , sticky-post,featured-images,theme-options,responsive-layout
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -24,6 +24,46 @@ a:hover,a:focus{
 color: #F8504B ;
 text-decoration:none !important;
 }
+
+input[type="checkbox"], input[type="radio"] {  display: inline-block; margin: 4px 0 5px !important; }
+
+input[type="text"], input[type="password"], input[type="email"], textarea 
+{
+	border: 1px solid #d1d1d1;
+    border-radius: 2px;
+    color: #686868;
+    padding: 0.625em 0.4375em;
+    width: 100%;	
+}
+
+button,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover
+{
+  transition: all 0.4s ease 0s;
+}
+
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"]
+{
+	background-color: transparent;
+	border-radius: 3px;
+    display: inline-block;
+    font-family: 'Raleway';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 5px 0;
+    padding: 7px 15px;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    vertical-align: middle
+}
+
 .row {
     margin-left: 0px ;
     margin-right: 0px ;
@@ -2007,7 +2047,6 @@ margin: 0;
 	padding: 24px 24px 0;
 	padding: 1.714285714rem;
 	background: #f9f9f9;
-	border-left: 22px solid #dddcdc;
 }
 .qua_sidebar_widget .textwidget img
 {

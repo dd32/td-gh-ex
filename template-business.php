@@ -1,5 +1,5 @@
-<?php
-// Template Name: Home Page
+	<?php 
+		// Template Name: Business Template
 		
 		get_header();
 		get_template_part('index', 'static');	
@@ -17,6 +17,6 @@
 		if (  $current_options['home_blog_enabled'] == true ) {
 		get_template_part('index', 'blog');
 		}
-		get_footer(); 
-	
-?>
+		get_footer();  
+	?>
+		
