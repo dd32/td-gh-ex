@@ -120,7 +120,6 @@ if ( !function_exists('acmeblog_get_default_theme_options') ) :
 
             /*header options*/
             'acmeblog-header-logo'          => '',
-            'acmeblog-header-alt'           => __( 'Logo', 'acmeblog' ),
             'acmeblog-header-id-display-opt'=> 'title-and-tagline',
             'acmeblog-show-date'            => 1,
             'acmeblog-facebook-url'         => '',

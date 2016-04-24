@@ -29,6 +29,17 @@ if ( ! function_exists( 'acmeblog_setup' ) ) :
         add_theme_support( 'title-tag' );
 
         /*
+         * Enable support for custom logo.
+         *
+         *  @since AcmeBlog 1.3.0
+          */
+        add_theme_support( 'custom-logo', array(
+            'height'      => 70,
+            'width'       => 290,
+            'flex-height' => true,
+        ) );
+
+        /*
          * Enable support for Post Thumbnails on posts and pages.
          *
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/

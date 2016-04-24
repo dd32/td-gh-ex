@@ -154,14 +154,18 @@ if ( ! function_exists( 'acmeblog_header' ) ) :
                             <?php if ( 'disable' != $acmeblog_customizer_all_values['acmeblog-header-id-display-opt'] ):?>
                             <?php
                             if ( 'logo-only' == $acmeblog_customizer_all_values['acmeblog-header-id-display-opt'] ):
-                                if( !empty( $acmeblog_customizer_all_values['acmeblog-header-logo'] ) ):
-                                    $acmeblog_header_alt = $acmeblog_customizer_all_values['acmeblog-header-alt'];
-                                    ?>
-                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                        <img src="<?php echo esc_url( $acmeblog_customizer_all_values['acmeblog-header-logo'] ); ?>" alt="<?php echo esc_attr( $acmeblog_header_alt ); ?>">
-                                    </a>
-                                    <?php
-                                endif;/*acmeblog-header-logo*/
+                                if ( function_exists( 'the_custom_logo' ) ) :
+                                    the_custom_logo();
+                                else :
+                                    if( !empty( $acmeblog_customizer_all_values['acmeblog-header-logo'] ) ):
+                                        $acmeblog_header_alt = get_bloginfo('name');
+                                        ?>
+                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                                            <img src="<?php echo esc_url( $acmeblog_customizer_all_values['acmeblog-header-logo'] ); ?>" alt="<?php echo esc_attr( $acmeblog_header_alt ); ?>">
+                                        </a>
+                                        <?php
+                                    endif;/*acmeblog-header-logo*/
+                                endif;
                             else:/*else is title-only or title-and-tagline*/
                                 if ( is_front_page() && is_home() ) : ?>
                                     <h1 class="site-title">
