@@ -1,8 +1,14 @@
-== Change log ==
+== Change Log ==
+
+Version 4.4.5
+* Bug Fixed: Change mobile menu color as per menu color options
+* Replaced: default header image as per new header image size 1000x400
+* Update: Added Default Custom Header Sizes for all WordPress versions
+* Update: Functions organization in separate files
 
 Version 4.4.4
 * Bug Fixed: Remove Header Image after Migration it to logo
-* Bug Fized: Search bar issue in Safari
+* Bug Fixed: Search bar issue in Safari
 
 Version 4.4.3
 * Bug Fixed: Sidebar Showing on no-sidebar layout

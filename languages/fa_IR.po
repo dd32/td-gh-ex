@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-20 15:36+0545\n"
-"PO-Revision-Date: 2016-04-20 15:36+0545\n"
+"POT-Creation-Date: 2016-04-24 13:44+0545\n"
+"PO-Revision-Date: 2016-04-24 13:44+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: wiki10.net, Ali Akbar Kaviani <persian@wiki10.net>\n"
 "Language: fa\n"
@@ -141,7 +141,7 @@ msgstr "دیدگاه بسته شده است"
 #: ../content-aside.php:15 ../content-featured.php:14 ../content-gallery.php:15
 #: ../content-gallery.php:46 ../content-image.php:14 ../content-link.php:16
 #: ../content-quote.php:14 ../content-status.php:15 ../content.php:15
-#: ../content.php:19 ../content.php:47 ../functions.php:926
+#: ../content.php:19 ../content.php:47 ../inc/catchbox-sliders.php:83
 #, php-format
 msgid "Permalink to %s"
 msgstr "پیوند یکتا به %s"
@@ -167,7 +167,7 @@ msgctxt "comments number"
 msgid "%"
 msgstr "%"
 
-#: ../content-aside.php:34 ../content.php:58 ../functions.php:473
+#: ../content-aside.php:34 ../content.php:58 ../functions.php:348
 #, php-format
 msgid "Continue reading %s"
 msgstr " ادامه مطلب  %s"
@@ -200,7 +200,7 @@ msgstr "<b>%</b> پاسخ"
 #: ../content-aside.php:56 ../content-featured.php:51 ../content-gallery.php:94
 #: ../content-image.php:71 ../content-link.php:50 ../content-page.php:27
 #: ../content-quote.php:78 ../content-single.php:64 ../content-status.php:51
-#: ../content.php:108 ../functions.php:698 ../functions.php:726 ../image.php:97
+#: ../content.php:108 ../functions.php:519 ../functions.php:547 ../image.php:97
 msgid "Edit"
 msgstr "ویرایش"
 
@@ -276,7 +276,7 @@ msgstr ""
 "</span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title="
 "\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
-#: ../content-image.php:42 ../functions.php:764
+#: ../content-image.php:42 ../functions.php:585
 #, php-format
 msgid "View all posts by %s"
 msgstr "دیدن همه‌ی نوشته‌های  %s"
@@ -344,92 +344,57 @@ msgstr "وضعیت"
 msgid "Featured"
 msgstr "ویژه"
 
-#. translators: header image description
-#: ../functions.php:170
-msgid "Garden"
-msgstr "باغ"
-
-#. translators: header image description
-#: ../functions.php:176
-msgid "Flower"
-msgstr "گل"
-
-#. translators: header image description
-#: ../functions.php:182
-msgid "Mountain"
-msgstr "کوه"
-
-#: ../functions.php:192 ../inc/catchbox-menus.php:70
+#: ../functions.php:128 ../inc/catchbox-menus.php:70
 msgid "Primary Menu"
 msgstr "منوی اولیه"
 
-#: ../functions.php:193 ../inc/catchbox-menus.php:98
+#: ../functions.php:129 ../inc/catchbox-menus.php:98
 #: ../inc/catchbox-menus.php:189
 msgid "Secondary Menu"
 msgstr "منوی ثانویه"
 
-#: ../functions.php:194 ../inc/catchbox-menus.php:126
+#: ../functions.php:130 ../inc/catchbox-menus.php:126
 #: ../inc/catchbox-menus.php:229
 msgid "Footer Menu"
 msgstr "منوی پانویس"
 
-#: ../functions.php:519
-msgid "Main Sidebar"
-msgstr "اسلایدر اصلی"
-
-#: ../functions.php:528
-msgid "Footer Area One"
-msgstr "ناحیه نخست پانویس"
-
-#: ../functions.php:530 ../functions.php:540 ../functions.php:550
-msgid "An optional widget area for your site footer"
-msgstr "یک ناخیه ابزارک اختیاری برای پانویس سایت"
-
-#: ../functions.php:538
-msgid "Footer Area Two"
-msgstr "ناحیه دوم پانویس"
-
-#: ../functions.php:548
-msgid "Footer Area Three"
-msgstr "ناحیه سوم پانویس"
-
-#: ../functions.php:582 ../functions.php:611 ../single.php:15
+#: ../functions.php:403 ../functions.php:432 ../single.php:15
 msgid "Post navigation"
 msgstr "ناوبری نوشته"
 
-#: ../functions.php:590 ../functions.php:619
+#: ../functions.php:411 ../functions.php:440
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> نوشته‌های قدیمی‌تر"
 
-#: ../functions.php:591 ../functions.php:620
+#: ../functions.php:412 ../functions.php:441
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "‌‌<span class=\"meta-nav\">&larr;</span> نوشته‌های تازه‌تر"
 
-#: ../functions.php:698
+#: ../functions.php:519
 msgid "Pingback:"
 msgstr "بازتاب:"
 
 #. translators: 1: comment author, 2: date and time
-#: ../functions.php:715
+#: ../functions.php:536
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s on %2$s <span class=\"says\">گفت:</span>"
 
 #. translators: 1: date, 2: time
-#: ../functions.php:721
+#: ../functions.php:542
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s در %2$s"
 
-#: ../functions.php:730
+#: ../functions.php:551
 msgid "Your comment is awaiting moderation."
 msgstr "دیدگاه شما در انتظار بررسی است"
 
-#: ../functions.php:739
+#: ../functions.php:560
 msgid "Reply <span>&darr;</span>"
 msgstr "پاسخ <span>&darr;</span>"
 
-#: ../functions.php:758
+#: ../functions.php:579
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -444,114 +409,114 @@ msgstr ""
 "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
 "\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../functions.php:831
+#: ../functions.php:652
 msgid "ID"
 msgstr "شناسه"
 
-#: ../functions.php:1040
+#: ../functions.php:760
 msgid "Name"
 msgstr "نام"
 
-#: ../functions.php:1042 ../functions.php:1269
-#: ../inc/customizer/customizer.php:613 ../inc/theme-options.php:923
+#: ../functions.php:762 ../functions.php:989
+#: ../inc/customizer/customizer.php:613 ../inc/theme-options.php:747
 msgid "Email"
 msgstr "ایمیل"
 
-#: ../functions.php:1175
+#: ../functions.php:895
 msgid "Footer Social Links Menu"
 msgstr ""
 
-#: ../functions.php:1179 ../inc/customizer/customizer.php:433
-#: ../inc/theme-options.php:676 ../inc/theme-options.php:816
+#: ../functions.php:899 ../inc/customizer/customizer.php:433
+#: ../inc/theme-options.php:500 ../inc/theme-options.php:640
 msgid "Facebook"
 msgstr "فیسبوک"
 
-#: ../functions.php:1184 ../inc/customizer/customizer.php:443
-#: ../inc/theme-options.php:677 ../inc/theme-options.php:821
+#: ../functions.php:904 ../inc/customizer/customizer.php:443
+#: ../inc/theme-options.php:501 ../inc/theme-options.php:645
 msgid "Twitter"
 msgstr "تویتر"
 
-#: ../functions.php:1189
+#: ../functions.php:909
 msgid "Google Plus"
 msgstr "‏Google Plus"
 
-#: ../functions.php:1194
+#: ../functions.php:914
 msgid "Linkedin"
 msgstr "‏Linkedin"
 
-#: ../functions.php:1199 ../inc/customizer/customizer.php:473
-#: ../inc/theme-options.php:839
+#: ../functions.php:919 ../inc/customizer/customizer.php:473
+#: ../inc/theme-options.php:663
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions.php:1204
+#: ../functions.php:924
 msgid "YouTube"
 msgstr "‏YouTube"
 
-#: ../functions.php:1209 ../inc/theme-options.php:851
+#: ../functions.php:929 ../inc/theme-options.php:675
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-#: ../functions.php:1214 ../inc/theme-options.php:857
+#: ../functions.php:934 ../inc/theme-options.php:681
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../functions.php:1219 ../inc/customizer/customizer.php:513
-#: ../inc/theme-options.php:863
+#: ../functions.php:939 ../inc/customizer/customizer.php:513
+#: ../inc/theme-options.php:687
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions.php:1224 ../inc/customizer/customizer.php:523
-#: ../inc/theme-options.php:869
+#: ../functions.php:944 ../inc/customizer/customizer.php:523
+#: ../inc/theme-options.php:693
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions.php:1229 ../inc/customizer/customizer.php:533
-#: ../inc/theme-options.php:875
+#: ../functions.php:949 ../inc/customizer/customizer.php:533
+#: ../inc/theme-options.php:699
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions.php:1234 ../inc/customizer/customizer.php:543
-#: ../inc/theme-options.php:881
+#: ../functions.php:954 ../inc/customizer/customizer.php:543
+#: ../inc/theme-options.php:705
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions.php:1239
+#: ../functions.php:959
 msgid "AIM"
 msgstr "‏AIM"
 
-#: ../functions.php:1244 ../inc/customizer/customizer.php:563
-#: ../inc/theme-options.php:893
+#: ../functions.php:964 ../inc/customizer/customizer.php:563
+#: ../inc/theme-options.php:717
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions.php:1249 ../inc/customizer/customizer.php:573
-#: ../inc/theme-options.php:899
+#: ../functions.php:969 ../inc/customizer/customizer.php:573
+#: ../inc/theme-options.php:723
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions.php:1254 ../inc/customizer/customizer.php:583
-#: ../inc/theme-options.php:905
+#: ../functions.php:974 ../inc/customizer/customizer.php:583
+#: ../inc/theme-options.php:729
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions.php:1259 ../inc/customizer/customizer.php:593
-#: ../inc/theme-options.php:911
+#: ../functions.php:979 ../inc/customizer/customizer.php:593
+#: ../inc/theme-options.php:735
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions.php:1264 ../inc/customizer/customizer.php:603
-#: ../inc/theme-options.php:917
+#: ../functions.php:984 ../inc/customizer/customizer.php:603
+#: ../inc/theme-options.php:741
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../functions.php:1274 ../inc/customizer/customizer.php:623
-#: ../inc/theme-options.php:928
+#: ../functions.php:994 ../inc/customizer/customizer.php:623
+#: ../inc/theme-options.php:752
 msgid "Xing"
 msgstr "Xing"
 
-#: ../functions.php:1279 ../inc/customizer/customizer.php:633
-#: ../inc/theme-options.php:933
+#: ../functions.php:999 ../inc/customizer/customizer.php:633
+#: ../inc/theme-options.php:757
 msgid "Meetup"
 msgstr "‏Meetup"
 
@@ -629,13 +594,28 @@ msgstr ""
 msgid "Sidebar Layout Options"
 msgstr ""
 
+#. translators: header image description
+#: ../inc/custom-header.php:31
+msgid "Garden"
+msgstr "باغ"
+
+#. translators: header image description
+#: ../inc/custom-header.php:37
+msgid "Flower"
+msgstr "گل"
+
+#. translators: header image description
+#: ../inc/custom-header.php:43
+msgid "Mountain"
+msgstr "کوه"
+
 #: ../inc/customizer/customizer-custom-controls.php:18
-#: ../inc/theme-options.php:675
+#: ../inc/theme-options.php:499
 msgid "Theme Instructions"
 msgstr "Theme Instructions"
 
 #: ../inc/customizer/customizer-custom-controls.php:22
-#: ../inc/theme-options.php:673
+#: ../inc/theme-options.php:497
 msgid "Support"
 msgstr "Support"
 
@@ -652,7 +632,7 @@ msgid "Review"
 msgstr ""
 
 #: ../inc/customizer/customizer.php:33 ../inc/theme-options.php:209
-#: ../inc/theme-options.php:210 ../inc/theme-options.php:693
+#: ../inc/theme-options.php:210 ../inc/theme-options.php:517
 msgid "Theme Options"
 msgstr "تنظیمات پوسته"
 
@@ -717,11 +697,11 @@ msgstr ""
 msgid "Featured Slider"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:101 ../inc/theme-options.php:723
+#: ../inc/customizer/customizer.php:101 ../inc/theme-options.php:547
 msgid "Slider Options"
 msgstr "تنظیمات اسلایدر"
 
-#: ../inc/customizer/customizer.php:106 ../inc/theme-options.php:757
+#: ../inc/customizer/customizer.php:106 ../inc/theme-options.php:581
 msgid "Slider Effect Options"
 msgstr "تنظیمات جلوه اسلایدر"
 
@@ -737,7 +717,7 @@ msgstr ""
 msgid "Custom Color Options"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:133 ../inc/theme-options.php:695
+#: ../inc/customizer/customizer.php:133 ../inc/theme-options.php:519
 msgid "Social Links"
 msgstr "پیوندهای اجتماعی"
 
@@ -750,7 +730,7 @@ msgid "Predefined Social Icons"
 msgstr ""
 
 #: ../inc/customizer/customizer.php:145 ../inc/customizer/customizer.php:150
-#: ../inc/theme-options.php:696
+#: ../inc/theme-options.php:520
 msgid "Webmaster Tools"
 msgstr "ابزارهای مدیر سایت"
 
@@ -775,7 +755,7 @@ msgstr "رنگ پیوندها"
 msgid "Feed Redirect url"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:291 ../inc/theme-options.php:509
+#: ../inc/customizer/customizer.php:291 ../inc/theme-options.php:333
 msgid "Check to move above the Header/Logo Image"
 msgstr "تیک بزنید تا تصویر سربرگ/لوگو برداشته شود"
 
@@ -783,11 +763,11 @@ msgstr "تیک بزنید تا تصویر سربرگ/لوگو برداشته ش�
 msgid "Default Display Text in Search"
 msgstr "Default Display Text in Search"
 
-#: ../inc/customizer/customizer.php:309 ../inc/theme-options.php:539
+#: ../inc/customizer/customizer.php:309 ../inc/theme-options.php:363
 msgid "Check to Disable"
 msgstr "تیک بزنید تا غیرفعال شود"
 
-#: ../inc/customizer/customizer.php:318 ../inc/theme-options.php:554
+#: ../inc/customizer/customizer.php:318 ../inc/theme-options.php:378
 msgid "Check to Enable"
 msgstr "تیک بزنید تا فعال شود"
 
@@ -799,7 +779,7 @@ msgstr ""
 msgid "Check to Exclude Slider posts from Homepage posts"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:360 ../inc/theme-options.php:738
+#: ../inc/customizer/customizer.php:360 ../inc/theme-options.php:562
 msgid "Number of Slides"
 msgstr "تعداد اسلایدها"
 
@@ -813,47 +793,47 @@ msgstr ""
 msgid "Transition Effect"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:384 ../inc/theme-options.php:767
+#: ../inc/customizer/customizer.php:384 ../inc/theme-options.php:591
 msgid "fade"
 msgstr "محوشدن"
 
-#: ../inc/customizer/customizer.php:385 ../inc/theme-options.php:768
+#: ../inc/customizer/customizer.php:385 ../inc/theme-options.php:592
 msgid "wipe"
 msgstr "جارویی"
 
-#: ../inc/customizer/customizer.php:386 ../inc/theme-options.php:769
+#: ../inc/customizer/customizer.php:386 ../inc/theme-options.php:593
 msgid "scrollUp"
 msgstr "پیمایش به بالا"
 
-#: ../inc/customizer/customizer.php:387 ../inc/theme-options.php:770
+#: ../inc/customizer/customizer.php:387 ../inc/theme-options.php:594
 msgid "scrollDown"
 msgstr "پیمایش به پایین"
 
-#: ../inc/customizer/customizer.php:388 ../inc/theme-options.php:771
+#: ../inc/customizer/customizer.php:388 ../inc/theme-options.php:595
 msgid "scrollLeft"
 msgstr "پیمایش به چپ"
 
-#: ../inc/customizer/customizer.php:389 ../inc/theme-options.php:772
+#: ../inc/customizer/customizer.php:389 ../inc/theme-options.php:596
 msgid "scrollRight"
 msgstr "پیمایش به راست"
 
-#: ../inc/customizer/customizer.php:390 ../inc/theme-options.php:773
+#: ../inc/customizer/customizer.php:390 ../inc/theme-options.php:597
 msgid "blindX"
 msgstr "نابیناX"
 
-#: ../inc/customizer/customizer.php:391 ../inc/theme-options.php:774
+#: ../inc/customizer/customizer.php:391 ../inc/theme-options.php:598
 msgid "blindY"
 msgstr "نابیناY"
 
-#: ../inc/customizer/customizer.php:392 ../inc/theme-options.php:775
+#: ../inc/customizer/customizer.php:392 ../inc/theme-options.php:599
 msgid "blindZ"
 msgstr "نابیناZ"
 
-#: ../inc/customizer/customizer.php:393 ../inc/theme-options.php:776
+#: ../inc/customizer/customizer.php:393 ../inc/theme-options.php:600
 msgid "cover"
 msgstr "پوششی"
 
-#: ../inc/customizer/customizer.php:394 ../inc/theme-options.php:777
+#: ../inc/customizer/customizer.php:394 ../inc/theme-options.php:601
 msgid "shuffle"
 msgstr "بر زدنی"
 
@@ -861,7 +841,7 @@ msgstr "بر زدنی"
 msgid "Transition Delay (in seconds)"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:415 ../inc/theme-options.php:792
+#: ../inc/customizer/customizer.php:415 ../inc/theme-options.php:616
 msgid "Transition Length"
 msgstr "طول انتقال"
 
@@ -869,11 +849,11 @@ msgstr "طول انتقال"
 msgid "Google+"
 msgstr "‏Google+"
 
-#: ../inc/customizer/customizer.php:463 ../inc/theme-options.php:833
+#: ../inc/customizer/customizer.php:463 ../inc/theme-options.php:657
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/customizer/customizer.php:483 ../inc/theme-options.php:845
+#: ../inc/customizer/customizer.php:483 ../inc/theme-options.php:669
 msgid "Youtube"
 msgstr "Youtube"
 
@@ -885,11 +865,11 @@ msgstr "‏RSS"
 msgid "deviantART"
 msgstr "‏deviantART"
 
-#: ../inc/customizer/customizer.php:553 ../inc/theme-options.php:887
+#: ../inc/customizer/customizer.php:553 ../inc/theme-options.php:711
 msgid "Aim"
 msgstr "Aim"
 
-#: ../inc/customizer/customizer.php:645 ../inc/theme-options.php:957
+#: ../inc/customizer/customizer.php:645 ../inc/theme-options.php:781
 msgid "Code to display on Header"
 msgstr "کد برای نمایش در سربرگ"
 
@@ -898,7 +878,7 @@ msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:656 ../inc/theme-options.php:968
+#: ../inc/customizer/customizer.php:656 ../inc/theme-options.php:792
 msgid "Code to display on Footer"
 msgstr "کد برای نمایش در پانویس"
 
@@ -958,6 +938,83 @@ msgstr ""
 msgid "Upgrade To Pro"
 msgstr ""
 
+#: ../inc/default-options.php:29
+msgid "Light"
+msgstr "روشن"
+
+#: ../inc/default-options.php:35
+msgid "Dark"
+msgstr "تیره"
+
+#: ../inc/default-options.php:41
+msgid "Blue"
+msgstr "آبی"
+
+#: ../inc/default-options.php:47
+msgid "Green"
+msgstr "Green"
+
+#: ../inc/default-options.php:53
+msgid "Red"
+msgstr "Red"
+
+#: ../inc/default-options.php:59
+msgid "Brown"
+msgstr "Brown"
+
+#: ../inc/default-options.php:65
+msgid "Orange"
+msgstr "Orange"
+
+#: ../inc/default-options.php:85
+msgid "Content on left"
+msgstr "متن سمت راست"
+
+#: ../inc/default-options.php:91
+msgid "Content on right"
+msgstr "متن سمت چپ"
+
+#: ../inc/default-options.php:97
+msgid "One-column, no sidebar"
+msgstr "یک ستون بدون سایدبار"
+
+#: ../inc/default-options.php:115
+msgid "Show excerpt"
+msgstr "نمایش خلاصه نوشته"
+
+#: ../inc/default-options.php:120
+msgid "Show full content"
+msgstr "نمایش کامل نوشته"
+
+#: ../inc/default-options.php:145
+msgid "Search"
+msgstr "جستجو"
+
+#: ../inc/default-options.php:193
+msgid "Y"
+msgstr "‏Y"
+
+#: ../inc/default-options.php:214
+msgid "WordPress"
+msgstr "‏WordPress"
+
+#: ../inc/default-options.php:224
+msgid "Theme: Catch Box by "
+msgstr "‏Theme: Catch Box by "
+
+#: ../inc/default-options.php:235 ../inc/theme-options.php:484
+#: ../inc/theme-options.php:485
+msgid "Catch Themes"
+msgstr "کچ‌تمز"
+
+#: ../inc/default-options.php:246
+msgid "Copyright"
+msgstr "کپی‌رایت"
+
+#: ../inc/default-options.php:246
+msgid "All Rights Reserved"
+msgstr "همه حقوق محفوظ است"
+
 #: ../inc/theme-options.php:65
 msgid "Favicon URL"
 msgstr "نشانی فاویکُن"
@@ -994,156 +1051,99 @@ msgstr "‏Insert as Web Clip Icon"
 msgid "Add/Change Web Clip Icon"
 msgstr "افزودن/تغییر آیکُن وب‌کلیپ"
 
-#: ../inc/theme-options.php:264
-msgid "Light"
-msgstr "روشن"
-
-#: ../inc/theme-options.php:270
-msgid "Dark"
-msgstr "تیره"
-
-#: ../inc/theme-options.php:276
-msgid "Blue"
-msgstr "آبی"
-
-#: ../inc/theme-options.php:282
-msgid "Green"
-msgstr "Green"
-
-#: ../inc/theme-options.php:288
-msgid "Red"
-msgstr "Red"
-
-#: ../inc/theme-options.php:294
-msgid "Brown"
-msgstr "Brown"
-
-#: ../inc/theme-options.php:300
-msgid "Orange"
-msgstr "Orange"
-
-#: ../inc/theme-options.php:320
-msgid "Content on left"
-msgstr "متن سمت راست"
-
-#: ../inc/theme-options.php:326
-msgid "Content on right"
-msgstr "متن سمت چپ"
-
-#: ../inc/theme-options.php:332
-msgid "One-column, no sidebar"
-msgstr "یک ستون بدون سایدبار"
-
-#: ../inc/theme-options.php:350
-msgid "Show excerpt"
-msgstr "نمایش خلاصه نوشته"
-
-#: ../inc/theme-options.php:355
-msgid "Show full content"
-msgstr "نمایش کامل نوشته"
-
-#: ../inc/theme-options.php:380
-msgid "Search"
-msgstr "جستجو"
-
-#: ../inc/theme-options.php:481
+#: ../inc/theme-options.php:305
 msgid "Words"
 msgstr "واژه"
 
-#: ../inc/theme-options.php:568
+#: ../inc/theme-options.php:392
 msgid "CSS Tutorial from W3Schools."
 msgstr "آموزش کار با CSS در وبسایت W3Schools"
 
-#: ../inc/theme-options.php:568
+#: ../inc/theme-options.php:392
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/theme-options.php:568
+#: ../inc/theme-options.php:392
 msgid "CSS Tutorial"
 msgstr "آموزش CSS"
 
-#: ../inc/theme-options.php:568
+#: ../inc/theme-options.php:392
 msgid "Click Here to Read"
 msgstr "برای خواندن، اینجا را کلیک کنید"
 
-#: ../inc/theme-options.php:582 ../inc/theme-options.php:735
+#: ../inc/theme-options.php:406 ../inc/theme-options.php:559
 msgid "Check to disable"
 msgstr "تیک بزنید تا غیرفعال شود"
 
-#: ../inc/theme-options.php:658
+#: ../inc/theme-options.php:482
 msgid "Theme Options By"
 msgstr "Theme Options By"
 
-#: ../inc/theme-options.php:660
+#: ../inc/theme-options.php:484
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../inc/theme-options.php:660 ../inc/theme-options.php:661
-#: ../inc/theme-options.php:1394
-msgid "Catch Themes"
-msgstr "کچ‌تمز"
-
-#: ../inc/theme-options.php:667
+#: ../inc/theme-options.php:491
 msgid "http://catchthemes.com/themes/catch-box-pro/"
 msgstr "http://catchthemes.com/themes/catch-box-pro/"
 
-#: ../inc/theme-options.php:667
+#: ../inc/theme-options.php:491
 msgid "Upgrade to Catch Box Pro"
 msgstr "ارتقا به پوسته‌ی حرفه‌ای و پولی کچ‌باکس"
 
-#: ../inc/theme-options.php:672
+#: ../inc/theme-options.php:496
 msgid "http://catchthemes.com/donate/"
 msgstr "http://catchthemes.com/donate/"
 
-#: ../inc/theme-options.php:672
+#: ../inc/theme-options.php:496
 msgid "Donate"
 msgstr "کمک مالی"
 
-#: ../inc/theme-options.php:673
+#: ../inc/theme-options.php:497
 msgid "http://catchthemes.com/support/"
 msgstr "http://catchthemes.com/support/"
 
-#: ../inc/theme-options.php:674
+#: ../inc/theme-options.php:498
 msgid "http://catchthemes.com/support-forum/forum/catch-box-public/"
 msgstr "http://catchthemes.com/support-forum/forum/catch-box-public/"
 
-#: ../inc/theme-options.php:674
+#: ../inc/theme-options.php:498
 msgid "Support Forum"
 msgstr "Support Forum"
 
-#: ../inc/theme-options.php:675
+#: ../inc/theme-options.php:499
 msgid "http://catchthemes.com/theme-instructions/catch-box/"
 msgstr "http://catchthemes.com/theme-instructions/catch-box/"
 
-#: ../inc/theme-options.php:676
+#: ../inc/theme-options.php:500
 msgid "https://www.facebook.com/catchthemes/"
 msgstr "https://www.facebook.com/catchthemes/"
 
-#: ../inc/theme-options.php:676
+#: ../inc/theme-options.php:500
 msgid "Like Catch Themes on Facebook"
 msgstr "Like Catch Themes on Facebook"
 
-#: ../inc/theme-options.php:677
+#: ../inc/theme-options.php:501
 msgid "https://twitter.com/catchthemes/"
 msgstr "https://twitter.com/catchthemes/"
 
-#: ../inc/theme-options.php:677
+#: ../inc/theme-options.php:501
 msgid "Follow Catch Themes on Twitter"
 msgstr "Follow Catch Themes on Twitter"
 
-#: ../inc/theme-options.php:678
+#: ../inc/theme-options.php:502
 msgid "http://wordpress.org/support/view/theme-reviews/catch-box/"
 msgstr "http://wordpress.org/support/view/theme-reviews/catch-box/"
 
-#: ../inc/theme-options.php:678
+#: ../inc/theme-options.php:502
 msgid "Rate us 5 Star on WordPress"
 msgstr "Rate us 5 Star on WordPress"
 
-#: ../inc/theme-options.php:678
+#: ../inc/theme-options.php:502
 msgid "5 Star Rating"
 msgstr "5 Star Rating"
 
-#: ../inc/theme-options.php:684
+#: ../inc/theme-options.php:508
 #, php-format
 msgctxt "1: Customizer Link Start, 2: Customizer Link End"
 msgid ""
@@ -1151,15 +1151,15 @@ msgid ""
 "Customizer %2$s instead."
 msgstr ""
 
-#: ../inc/theme-options.php:694
+#: ../inc/theme-options.php:518
 msgid "Featured Post Slider"
 msgstr "Featured Post Slider"
 
-#: ../inc/theme-options.php:727 ../inc/theme-options.php:729
+#: ../inc/theme-options.php:551 ../inc/theme-options.php:553
 msgid "Post Slider Tutorial"
 msgstr "Post Slider Tutorial"
 
-#: ../inc/theme-options.php:729
+#: ../inc/theme-options.php:553
 msgid ""
 "http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
 "slider/"
@@ -1167,25 +1167,25 @@ msgstr ""
 "http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
 "slider/"
 
-#: ../inc/theme-options.php:729
+#: ../inc/theme-options.php:553
 msgid "Click Here to Read Post Slider Tutorial"
 msgstr "Click Here to Read Post Slider Tutorial"
 
-#: ../inc/theme-options.php:733
+#: ../inc/theme-options.php:557
 msgid "Exclude Slider post from Home page posts:"
 msgstr ""
 "نوشته‌ای را که در اسلایدر نمایش داده می‌شود دوباره در کنار سایر نوشته‌های صفحه "
 "اصلی نمایش نده"
 
-#: ../inc/theme-options.php:744
+#: ../inc/theme-options.php:568
 msgid "Featured Post ID"
 msgstr "‌شناسه‌ی نوشته موردنظر"
 
-#: ../inc/theme-options.php:746
+#: ../inc/theme-options.php:570
 msgid "Click Here To Edit"
 msgstr "برای ویرایش اینجا را کلیک کنید"
 
-#: ../inc/theme-options.php:752
+#: ../inc/theme-options.php:576
 msgid ""
 "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage "
 "Featured Slider."
@@ -1193,37 +1193,37 @@ msgstr ""
 "<strong>توجه</strong>: شناسه نوشته را اینجا اضافه کنید تا در اسلایدر نمایش "
 "داده شود"
 
-#: ../inc/theme-options.php:753 ../inc/theme-options.php:799
-#: ../inc/theme-options.php:940 ../inc/theme-options.php:979
+#: ../inc/theme-options.php:577 ../inc/theme-options.php:623
+#: ../inc/theme-options.php:764 ../inc/theme-options.php:803
 msgid "Save"
 msgstr "ذخیره"
 
-#: ../inc/theme-options.php:762
+#: ../inc/theme-options.php:586
 msgid "Transition Effect:"
 msgstr "جلوه انتقالی:"
 
-#: ../inc/theme-options.php:783
+#: ../inc/theme-options.php:607
 msgid "Transition Delay"
 msgstr "میزان مکث"
 
-#: ../inc/theme-options.php:786 ../inc/theme-options.php:795
+#: ../inc/theme-options.php:610 ../inc/theme-options.php:619
 msgid "second(s)"
 msgstr "ثانیه"
 
-#: ../inc/theme-options.php:827
+#: ../inc/theme-options.php:651
 msgid "Google +"
 msgstr "Google +"
 
-#: ../inc/theme-options.php:939
+#: ../inc/theme-options.php:763
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking website"
 msgstr "<strong>توجه:</strong> نشانی مربوط به هر وبسایت را وارد کنید"
 
-#: ../inc/theme-options.php:952
+#: ../inc/theme-options.php:776
 msgid "Header and Footer Code"
 msgstr "کد سربرگ و پانویس"
 
-#: ../inc/theme-options.php:964
+#: ../inc/theme-options.php:788
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -1231,7 +1231,7 @@ msgstr ""
 "توجه: در اینجا میتوانید اسکریپت مربوط به گوگل، فیسبوک و ... را که میخواهید در "
 "سربرگ فراخوانی شود وارد کنید"
 
-#: ../inc/theme-options.php:975
+#: ../inc/theme-options.php:799
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which will "
 "load on footer"
@@ -1239,51 +1239,51 @@ msgstr ""
 "توجه: در اینجا میتوانید اسکریپت مربوط به گوگل، فیسبوک و ... را که میخواهید در "
 "پانویس فراخوانی شود وارد کنید"
 
-#: ../inc/theme-options.php:1352
-msgid "Y"
-msgstr "‏Y"
+#: ../inc/widgets.php:23
+msgid "Main Sidebar"
+msgstr "اسلایدر اصلی"
 
-#: ../inc/theme-options.php:1373
-msgid "WordPress"
-msgstr "‏WordPress"
+#: ../inc/widgets.php:32
+msgid "Footer Area One"
+msgstr "ناحیه نخست پانویس"
 
-#: ../inc/theme-options.php:1383
-msgid "Theme: Catch Box by "
-msgstr "‏Theme: Catch Box by "
+#: ../inc/widgets.php:34 ../inc/widgets.php:44 ../inc/widgets.php:54
+msgid "An optional widget area for your site footer"
+msgstr "یک ناخیه ابزارک اختیاری برای پانویس سایت"
 
-#: ../inc/theme-options.php:1405
-msgid "Copyright"
-msgstr "کپی‌رایت"
+#: ../inc/widgets.php:42
+msgid "Footer Area Two"
+msgstr "ناحیه دوم پانویس"
 
-#: ../inc/theme-options.php:1405
-msgid "All Rights Reserved"
-msgstr "همه حقوق محفوظ است"
+#: ../inc/widgets.php:52
+msgid "Footer Area Three"
+msgstr "ناحیه سوم پانویس"
 
-#: ../inc/widgets.php:20
+#: ../inc/widgets.php:73
 msgid "CT: Adspace Widget"
 msgstr ""
 
-#: ../inc/widgets.php:21
+#: ../inc/widgets.php:74
 msgid "Use this widget to add any type of Ad as a widget. "
 msgstr ""
 
-#: ../inc/widgets.php:39
+#: ../inc/widgets.php:92
 msgid "Title (optional):"
 msgstr "عنوان (اختیاری):"
 
-#: ../inc/widgets.php:44
+#: ../inc/widgets.php:97
 msgid "Ad Code:"
 msgstr "کد تبلیغ:"
 
-#: ../inc/widgets.php:50
+#: ../inc/widgets.php:103
 msgid "Image Url:"
 msgstr "نشانی تصویر:"
 
-#: ../inc/widgets.php:54
+#: ../inc/widgets.php:107
 msgid "Link URL:"
 msgstr "نشانی پیوند:"
 
-#: ../inc/widgets.php:58
+#: ../inc/widgets.php:111
 msgid "Alt text:"
 msgstr "نوشته جایگزین:"
 
