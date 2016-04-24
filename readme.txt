@@ -96,6 +96,9 @@ Pattern Images
 
 ---------------------------------------------
 == Changelog ==
+Version 1.23
+ * Woocommerce Compatible
+
 Version 1.22
 * Fontawesome path error fixed.
 * Minor edit in off canvas menu js file

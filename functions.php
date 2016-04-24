@@ -157,6 +157,7 @@ function accesspress_root_scripts() {
     wp_enqueue_style('accesspress-root-font-awesome-css', get_template_directory_uri() . '/css/font-awesome.min.css');
     wp_enqueue_style('accesspress-root-bx-slider-css', get_template_directory_uri() . '/css/jquery.bxslider.css');
     wp_enqueue_style('accesspress-root-nivo-lightbox-css', get_template_directory_uri() . '/css/nivo-lightbox.css');
+    wp_enqueue_style('accesspress-root-woocommerce-style',get_template_directory_uri().'/woocommerce/woocommerce-style.css');
     wp_enqueue_style('accesspress-root-style', get_stylesheet_uri() );
     if(of_get_option('responsive') == '1') :
 		wp_enqueue_style( 'accesspress-root-responsive', get_template_directory_uri() . '/css/responsive.css' );
@@ -209,5 +210,6 @@ require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
  * Load More Theme Page
  */
 require get_template_directory() . '/inc/more-themes.php';
+require get_template_directory() .'/woocommerce/woocommerce-function.php';
 
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/panel/' );
