@@ -1,4 +1,5 @@
 === Aesblo ===
+
 Theme URI: http://www.wpaesthetic.com/portfolio/aseblo
 Author: wpaesthetic
 Author URI: http://wpaesthetic.com/
@@ -7,18 +8,28 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
 
 == Description ==
+
 Aesblo is a modern and aesthetic theme. Excerpt the regular functions it also include some excellent transition and animation effects that make your blog to look awesome. You can define your favorite color scheme from Customizer, so it is also a flexible blog theme. It always works well whether your visitors arrive by smartphone, tablet, laptop or desktop computer. It supports the popular modern browsers, includes IE(9+), Chrome, Opera, Safari, Firefox.
 
 
 == Demo ==
+
 http://demo.wpaesthetic.com/aesblo/
 
 
 == Documentation ==
+
 http://www.wpaesthetic.com/portfolio/aseblo#documentation
 
 
+== Notes ==
+The background color(or background image) is responsive. So it hides on the mobile phones, tablets, laptop and small desktop. It only works on the large desktop(1500x900 resolution or larger).
+
+
 == Changelog ==
+
+= 1.0.2 (2016-0425 ) =
+* Review update.
 
 = 1.0.1 (2015-1217 ) =
 * Review update.
@@ -28,6 +39,7 @@ http://www.wpaesthetic.com/portfolio/aseblo#documentation
 
 
 == Feedback ==
+
 @link http://www.wpaesthetic.com/portfolio/aseblo
 
 

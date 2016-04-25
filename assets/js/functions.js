@@ -202,7 +202,7 @@
 					$( '.site-main' ).css( 'min-height', ( windowHeight - containerHeight + mainHeight ) + 'px' );
 				}			
 			}
-		})()
+		})();	
 	
 	});	
 	

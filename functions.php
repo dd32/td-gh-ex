@@ -176,9 +176,6 @@ function aesblo_enqueue_scripts() {
 	// Include style.css file.
 	wp_enqueue_style( 'aesblo-style', get_stylesheet_uri() );
 	
-	// Translate the theme description in the style.css file header.
-	__( 'Aesblo is a modern and aesthetic theme. Excerpt the regular functions it also include some excellent transition and animation effects that make your blog to look awesome. You can define your favorite color scheme from Customizer, so it is also a flexible blog theme. It always works well whether your visitors arrive by smartphone, tablet, laptop or desktop computer. It supports the popular modern browsers, includes IE(9+), Chrome, Opera, Safari, Firefox. Click to see the <a href="http://demo.wpaesthetic.com/aesblo/">Demo</a> and the <a href="http://www.wpaesthetic.com/portfolio/aseblo#documentation">Documentation</a>', 'aesblo' );
-	
 	// Theme javascript functions file.
 	wp_enqueue_script( 'aesblo-functions', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery' ), '', true );
 	wp_localize_script( 'aesblo-functions', 'aesblo', array(

@@ -1,9 +1,9 @@
 <?php 
 /**
- * The main template file.
+ * The main template file. 
  *
- * @package aesblo
- * @since 1.0.0
+ * @package aesblo   
+ * @since 1.0.0 
  */
 
 get_header();
