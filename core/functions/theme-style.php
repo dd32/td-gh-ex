@@ -32,6 +32,13 @@
 		echo "@media (min-width:768px){.container.grid-container{width:" . (suevafree_setting('suevafree_screen3')-20) . "px}}"; 
 	}
 	
+	if (suevafree_setting('suevafree_screen4'))  {
+		
+		echo "@media (min-width:1400px){.container{width:".suevafree_setting('suevafree_screen4')."px}}"; 
+		echo "@media (min-width:1400px){.container.block{width:" . (suevafree_setting('suevafree_screen4')-10) . "px}}"; 
+		echo "@media (min-width:768px){.container.grid-container{width:" . (suevafree_setting('suevafree_screen4')-20) . "px}}"; 
+	}
+	
 /* =================== BEGIN LOGO STYLE =================== */
 
 	$logostyle = '';

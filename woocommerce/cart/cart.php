@@ -178,18 +178,4 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 </div>
 
-<script type="text/javascript">
-		
-	jQuery.noConflict()(function($){
-				
-		<?php do_action('suevafree_masonry_script'); ?>
-			
-	});
-							
-</script>
-
-<?php 
-	
-	do_action( 'woocommerce_after_cart' ); 
-	
-?>
+<?php do_action( 'woocommerce_after_cart' ); ?>

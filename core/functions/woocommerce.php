@@ -145,16 +145,6 @@ if (!function_exists('suevafree_woocommerce_after_main_content')) {
 		
 	</div>
 
-	<script type="text/javascript">
-		
-		jQuery.noConflict()(function($){
-				
-			<?php do_action('suevafree_masonry_script'); ?>
-			
-		});
-							
-	</script>
-
 <?php
 
 	}

@@ -154,6 +154,17 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			),
 
+			array( 
+
+				"label" => __( "Screen greater than 1400px",'suevafree'),
+				"description" => __( "Set a width, in px, for a screen greater than 1400px pixel (for example 1370 and not 1370px ) ",'suevafree'),
+				"id" => "suevafree_screen4",
+				"type" => "text",
+				"section" => "pagewidth_section",
+				"std" => "940",
+
+			),
+
 			/* SETTINGS SECTION */ 
 
 			array( 
@@ -258,9 +269,10 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				   "full" => __( "Full Width","suevafree"),
 				   "left-sidebar" => __( "Left Sidebar","suevafree"),
 				   "right-sidebar" => __( "Right Sidebar","suevafree"),
+				   "masonry" => __( "Masonry","suevafree"),
 				),
 				
-				"std" => "right-sidebar",
+				"std" => "masonry",
 			
 			),
 	
@@ -276,9 +288,10 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				   "full" => __( "Full Width","suevafree"),
 				   "left-sidebar" => __( "Left Sidebar","suevafree"),
 				   "right-sidebar" => __( "Right Sidebar","suevafree"),
+				   "masonry" => __( "Masonry","suevafree"),
 				),
 				
-				"std" => "right-sidebar",
+				"std" => "masonry",
 			
 			),
 
@@ -310,9 +323,10 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				   "full" => __( "Full Width","suevafree"),
 				   "left-sidebar" => __( "Left Sidebar","suevafree"),
 				   "right-sidebar" => __( "Right Sidebar","suevafree"),
+				   "masonry" => __( "Masonry","suevafree"),
 				),
 				
-				"std" => "right-sidebar",
+				"std" => "masonry",
 			
 			),
 
@@ -331,6 +345,30 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"std" => "",
 			
 			),
+
+			/* THUMBNAILS SECTION */ 
+
+			array( 
+
+				"title" => __( "Thumbnails","suevafree"),
+				"type" => "section",
+				"id" => "thumbnails_section",
+				"panel" => "general_panel",
+				"priority" => "15",
+
+			),
+
+			array( 
+
+				"label" => __( "Blog Thumbnail","suevafree"),
+				"description" => __( "Insert the height for blog thumbnail (Use a plugin like Regenerate Thumbnails, to regenerate each thumbnail)","suevafree"),
+				"id" => "suevafree_blog_thumbinal",
+				"type" => "text",
+				"section" => "thumbnails_section",
+				"std" => "429",
+
+			),
+
 
 			/* HEADER AREA SECTION */ 
 

@@ -21,10 +21,16 @@ if (!function_exists('suevafree_postformat_function')) {
 			
 			$postformats = "product";
 			
-		} else {
-			
+		} else if ( get_post_format() == "image" ) {
+		
+			$postformats = "image";
+		
+		}
+
+		else {
+		
 			$postformats = "standard";
-			
+		
 		}
 						
 		get_template_part( 'core/post-formats/' . $postformats );

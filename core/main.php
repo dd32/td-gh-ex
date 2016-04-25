@@ -83,7 +83,7 @@ if (!function_exists('suevafree_get_archive_title')) {
 
 	function suevafree_get_archive_title() {
 		
-		if ( get_the_archive_title()  && ( get_the_archive_title() <> 'Archives' ) ) :
+		if ( get_the_archive_title() && ( get_the_archive_title() <> 'Archives' ) ) :
 		
 			return get_the_archive_title();
 		
@@ -366,33 +366,72 @@ if (!function_exists('suevafree_posticon')) {
 /*-----------------------------------------------------------------------------------*/   
 
 if (!function_exists('suevafree_post_class')) {
-	
-	function suevafree_post_class($classes) {
 
-		if ( suevafree_is_woocommerce_active('is_cart') ) :
-		
-			$classes[] = 'woocommerce_cart_page';
+	function suevafree_post_class($classes) {	
+
+		$masonry  = 'post-container masonry-item col-md-4';
+		$standard = 'post-container col-md-12';
+
+		if ( !suevafree_is_single() ) {
+
+			if ( is_home() ) {
 				
-		endif;
-
-		if ( !suevafree_is_woocommerce_active('is_product') ) :
+				if ( !suevafree_setting('suevafree_home') || suevafree_setting('suevafree_home') == "masonry" ) {
+	
+					$classes[] = $masonry;
+	
+				} else {
+	
+					$classes[] = $standard;
+	
+				}
+				
+			} else if ( is_archive() ) {
+	
+				if ( !suevafree_setting('suevafree_category_layout') || suevafree_setting('suevafree_category_layout') == "masonry" ) {
+	
+					$classes[] = $masonry;
+	
+				} else {
+	
+					$classes[] = $standard;
+	
+				}
+				
+			} else if ( is_search() ) {
+				
+				if ( !suevafree_setting('suevafree_search_layout') || suevafree_setting('suevafree_search_layout') == "masonry" ) {
+	
+					$classes[] = $masonry;
+	
+				} else {
+	
+					$classes[] = $standard;
+	
+				}
+			
+			}
+			
+		} else if ( suevafree_is_single() && !suevafree_is_woocommerce_active('is_product') ) {
 
 			$classes[] = 'post-container col-md-12';
 
-		endif;
+		} else if ( suevafree_is_woocommerce_active('is_cart') ) {
 		
-		if ( is_page() ) :
+			$classes[] = 'woocommerce_cart_page';
+				
+		} else if ( is_page() ) {
 
 			$classes[] = 'full';
 
-		endif;
-		
+		}
+
 		return $classes;
 		
 	}
 	
 	add_filter('post_class', 'suevafree_post_class');
-	
+
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -441,7 +480,7 @@ if (!function_exists('suevafree_template')) {
 			$span = $template[suevafree_postmeta('suevafree_template')];
 			$sidebar =  suevafree_postmeta('suevafree_template');
 
-		} else if ( ! suevafree_is_woocommerce_active('is_woocommerce') && ( is_category() || is_tag() || is_tax() || is_month() ) && suevafree_setting('suevafree_category_layout') ) {
+		} else if ( ! suevafree_is_woocommerce_active('is_woocommerce') && ( is_archive() ) && suevafree_setting('suevafree_category_layout') ) {
 
 			$span = $template[suevafree_setting('suevafree_category_layout')];
 			$sidebar =  suevafree_setting('suevafree_category_layout');
@@ -596,6 +635,50 @@ if (!function_exists('suevafree_embed_html')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* THUMBNAIL WIDTH */
+/*-----------------------------------------------------------------------------------*/         
+
+if (!function_exists('suevafree_get_width')) {
+
+	function suevafree_get_width() {
+		
+		if (suevafree_setting('suevafree_screen3')):
+		
+			return suevafree_setting('suevafree_screen3');
+		
+		else:
+		
+			return "1170";
+		
+		endif;
+	
+	}
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* THUMBNAIL HEIGHT */
+/*-----------------------------------------------------------------------------------*/         
+
+if (!function_exists('suevafree_get_thumbs')) {
+
+	function suevafree_get_thumbs($type) {
+		
+		if (suevafree_setting('suevafree_'.$type.'_thumbinal')):
+		
+			return suevafree_setting('suevafree_'.$type.'_thumbinal');
+		
+		else:
+		
+			return "429";
+		
+		endif;
+	
+	}
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* THEME SETUP */
 /*-----------------------------------------------------------------------------------*/   
 
@@ -616,10 +699,7 @@ if (!function_exists('suevafree_setup')) {
 
 		add_theme_support( 'title-tag' );
 	
-		add_image_size( 'blog', 940,429, TRUE ); 
-		add_image_size( 'large', 449,304, TRUE ); 
-		add_image_size( 'medium', 290,220, TRUE ); 
-		add_image_size( 'small', 211,150, TRUE ); 
+		add_image_size( 'blog', suevafree_get_width(), suevafree_get_thumbs('blog'), TRUE ); 
 	
 		add_theme_support( 'custom-background', array(
 			'default-color' => 'f3f3f3',

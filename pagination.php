@@ -6,7 +6,7 @@ global $wp_query;
 
 $big = 999999999;
 
-if ( (is_category()) || (is_search()) ) { 
+if ( is_archive() || is_search() ) { 
 
     $paginate_links = paginate_links( array(
 
@@ -20,7 +20,7 @@ if ( (is_category()) || (is_search()) ) {
 
 	));
 
-} else if (is_home() ) { 
+} else if ( is_home() ) { 
 
 	$total = $wp_query->max_num_pages ; 
    
@@ -36,7 +36,7 @@ if ( (is_category()) || (is_search()) ) {
 
 	));
 
-} else if (is_page() ) { 
+} else if ( is_page() ) { 
 
 	$paged1 = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args1 = array('post_type' => get_post_type( $post->ID ),'paged' => $paged1,'posts_per_page' => get_option('posts_per_page'));

@@ -1,10 +1,10 @@
 /*
 Theme Name: SuevaFree
 Theme URI: https://www.themeinprogress.com/sueva/
-Description: Suevafree is a free responsive clean and corporate Tumblelog WordPress theme, perfect to manage your personal, lifestyle, travel, food, recipes or fashion blog. Now is ecommerce ready and is optimized to work with WooCommerce and Contact Form 7 plugins. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3. 
+Description: Suevafree is a free clean and minimal WordPress blog theme, perfect to manage your personal, lifestyle, travel, food, recipes or fashion blog. Now is ecommerce ready and is optimized to work with WooCommerce and Contact Form 7 plugins. The blog section has a beautiful masonry grid and you are able to create a pinterest style gallery, adding the image post formats. You can manage the options of Suevafree from the WordPress Theme Customizer. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3. 
 Author: ThemeinProgress.
 Author URI: https://www.themeinprogress.com
-Version: 2.1.3
+Version: 2.1.4
 Tags: gray, light, black, orange, blue, pink, purple, yellow, green, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options,responsive-layout, translation-ready, one-column, photoblogging, featured-images, full-width-template, post-formats
 Text Domain: suevafree
 Domain Path: /languages
@@ -355,6 +355,10 @@ textarea:focus {
 #blog,
 #blog .post-container,
 #blog #sidebar,
+#top_sidebar .post-container,
+#header_sidebar .post-container,
+#masonry .post-container,
+.row.masonry,
 .row.portfolio-grid,
 #sidebar.sneak_sidebar .post-article,
 .post-article.col-md-4,
@@ -688,9 +692,11 @@ nav#mainmenu.menubar:after {
 	-webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 	word-wrap: break-word
 }
-.post-container.col-md-4 .post-article { 
+
+#sidebar .post-article { 
 	padding:20px;
 }
+
 .row.masonry,
 .post-container.col-md-4,
 .post-container.col-md-6 { 
@@ -753,6 +759,11 @@ nav#mainmenu.menubar:after {
 	z-index:1000;
 }
 
+.pin-container.overlay-container:after {
+	display:none;
+	visibility:hidden;
+}
+
 .post-article .title {
 	font-style: normal;
 	font-weight: normal;
@@ -774,6 +785,10 @@ nav#mainmenu.menubar:after {
 
 .post-container.col-md-4 .line {
 	margin:30px 0 20px 0;
+}
+
+#masonry .col-md-4 .line {
+	border:none;
 }
 
 .post-container .separator:after {
@@ -1199,6 +1214,51 @@ div.wpcf7-mail-sent-ok {
 	width:90px;
 }
 
+.col-md-3 .line ,
+.col-md-4 .line ,
+.col-md-6 .line {
+	width:auto;
+	background:none;
+	margin:30px 0;
+}
+
+.col-md-3 .line:before ,
+.col-md-4 .line:before ,
+.col-md-6 .line:before {
+	display:none;
+}
+
+.col-md-3 .line .tags ,
+.col-md-4 .line .tags ,
+.col-md-6 .line .tags {
+	padding:0;
+}
+
+.col-md-3 .entry-info  ,
+.col-md-4 .entry-info  ,
+.col-md-6 .entry-info  {
+	display:block;
+	padding:0;
+}
+
+.col-md-3 .entry-info span ,
+.col-md-4 .entry-info span ,
+.col-md-6 .entry-info span {
+	display:block;
+	width:inherit;
+	padding:inherit;
+	margin:5px auto;
+}
+
+.col-md-3 .entry-info i  ,
+.col-md-4 .entry-info i  ,
+.col-md-6 .entry-info i  {
+	line-height: 23px;
+	position:absolute;
+	left:0;
+	margin:0;
+	padding:0
+}
 /* END DEFAULT STYLE */
 
 /* START IMAGE STYLE */
@@ -1407,6 +1467,88 @@ p.list-tags {
 	padding:10px 0 10px 36px;
 	background:url('assets/images/icons/article.png') left 15px no-repeat;
 }
+
+/* ===============================================
+   OVERLAY
+   =============================================== */
+
+.overlay-thumbnail a {
+	opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #333;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+    text-align: center;
+    z-index: 2;
+}
+
+.overlay-thumbnail:hover a {
+	opacity: 0.60; 
+	filter: alpha(opacity=60);
+}
+
+article .overlay-image { 
+	position:relative; 
+	overflow:hidden;
+}
+
+.overlay-image .overlay{ 
+	opacity: 0; 
+	filter: alpha(opacity=0);
+	border:none;
+}
+
+.overlay-image .zoom { 
+	background: #000 url(../images/icons/zoom.png) no-repeat center; 
+	position:absolute; 
+	top:5px; 
+	left:5px; 
+	-webkit-transition: none; 
+	-moz-transition: none; 
+	-o-transition: none;
+}
+
+.overlay-image .link { 
+	background: #000 url(../images/icons/link.png) no-repeat center; 
+	position:absolute; 
+	top:5px; 
+	left:5px; 
+	-webkit-transition: none;
+	-moz-transition: none; 
+	-o-transition: none;
+}
+
+.overlay-image .video { 
+	background: #000 url(../images/icons/video.png) no-repeat center; 
+	position:absolute; 
+	top:5px; 
+	left:5px; 
+	-webkit-transition: none; 
+	-moz-transition: none; 
+	-o-transition: none;
+}
+
+.overlay-image .wp-post-image { 
+	border:solid 1px #ddd;
+	padding:4px;
+	max-width:100%;
+	max-height:100%;
+	width:auto;
+	height:auto;
+}
+
+.overlay-image .wp-post-image:hover { 
+	-moz-transform:	none;
+	-webkit-transform: none;
+	-o-transform: none;
+	transform: none;
+}
+
 .post-article .overlay-image { 
 	position:relative; 
 	overflow:hidden;

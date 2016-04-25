@@ -1,9 +1,11 @@
 Sueva Free Wordpress Theme
 ---------------------
-Sueva is a free responsive clean and corporate Tumblelog Wordpress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3.
+Suevafree is a free clean and minimal WordPress blog theme, perfect to manage your personal, lifestyle, travel, food, recipes or fashion blog. Now is ecommerce ready and is optimized to work with WooCommerce and Contact Form 7 plugins. The blog section has a beautiful masonry grid and you are able to create a pinterest style gallery, adding the image post formats. You can manage the options of Suevafree from the WordPress Theme Customizer. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3
 
-Created by ThemeinProgress, http://www.themeinprogress.com 
-Demo: http://www.wpinprogress.com/demo/sueva
+Created by ThemeinProgress, http://www.themeinprogress.com
+ 
+Suevafree Demo: http://www.wpinprogress.com/demo/suevafree
+Sueva Pro Demo: http://www.wpinprogress.com/demo/sueva
 
 
 License
@@ -20,10 +22,7 @@ Credits
 
 -- By Unsplash - https://unsplash.com
 
--- https://ununsplash.imgix.net/photo-1433838552652-f9a46b332c40 by Daniela Cuevas ( https://unsplash.com/danielacuevas )
--- https://ununsplash.imgix.net/photo-1429277158984-614d155e0017 by Julia Caesar ( https://unsplash.com/juliacaesa )
-
---- Both images licensed under CC0 License.
+--- Licensed under CC0 License.
 
 - Patters
 

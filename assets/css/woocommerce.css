@@ -406,6 +406,10 @@ h3.additional_information_title {
 	background:#fff;
 }
 
+.woocommerce tr.shipping td {
+	width:50%;
+}
+
 .woocommerce table.shop_table th,
 .woocommerce table.shop_table td {
     padding: 12px 0;

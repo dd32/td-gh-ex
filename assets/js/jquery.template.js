@@ -93,5 +93,61 @@ jQuery.noConflict()(function($){
 		$.scrollTo(0,'slow');
 		return false;
 	});
+	
+/* ===============================================
+   Masonry
+   =============================================== */
 
+	function suevafree_masonry() {
+
+		if ( $(window).width() >= 992 ) {
+
+			$('.masonry').imagesLoaded(function () {
+
+				$('.masonry').masonry({
+					itemSelector: '.masonry-item',
+					isAnimated: true
+				});
+
+			});
+	
+		} else {
+
+			$('.masonry').imagesLoaded(function () {
+
+				$('.masonry').masonry( 'destroy' );
+
+			});
+
+		}
+	
+	}
+					
+	$(window).resize(function(){
+		suevafree_masonry();
+	});
+						
+	$(document).ready(function(){
+		suevafree_masonry();
+	});
+
+/* ===============================================
+   Overlay
+   =============================================== */
+
+	$('.overlay-image').hover(function(){
+		
+		var imgwidth = $(this).children('img').width();
+		var imgheight = $(this).children('img').height();
+		$(this).children('.zoom').css({'width':imgwidth,'height':imgheight});	
+		$(this).children('.link').css({'width':imgwidth,'height':imgheight});
+		$(this).css({'width':imgwidth+10});		
+		
+		$('.overlay',this).animate({ opacity : 0.6 },{queue:false});
+		}, 
+		function() {
+		$('.overlay',this).animate({ opacity: 0.0 },{queue:false});
+	
+	});
+	
 });          
