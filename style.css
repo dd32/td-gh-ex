@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.402
+Version: 1.403
 Tags: black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout, rtl-language-support, microformats
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1643,6 +1643,9 @@ div[class^="entry-meta"] .emoji-date,
 
 .rd-featured-yes-left .index .wp-post-image{
    top:10px;
+}
+.rd-featured-yes-left .index .h2-thumb + .entry-title-text{
+    padding:0;
 }
 ul.archive,
 ul.index {
@@ -3699,7 +3702,8 @@ body#front-page-template-pages:not(.logged-in) .entry-meta{
     float:left!important;
     height:0;
     overflow:hidden;
-    padding-bottom:18.75%;
+    /* @1.403 */
+    padding-bottom:25%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -4172,7 +4176,9 @@ ol.list-of-post-list .entry-title{
 .topsidebar .raindrops-pinup-entries img{
     margin-top:3em;
 }
-
+.topsidebar .raindrops-pinup-entries p img{
+    margin-top:0;
+}
 .raindrops-pinup-entries p img{
     width:auto;
     height:auto;
@@ -4662,6 +4668,7 @@ video{
 #access li ul ul {
     top: 0;
     left: 100%;
+    margin:-1px;/* @1.403 */
 }
 
 .widget_nav_menu.sticky-widget ul li:hover > ul,
@@ -4844,6 +4851,12 @@ body:not(.page-template-blank_front) .raindrops-recent-posts .entry-title{
 .raindrops-recent-posts article{
     margin-left:135px;
 }
+.topsidebar .raindrops-tag-posts article,
+.topsidebar .raindrops-category-posts article,
+.topsidebar .raindrops-recent-posts article{
+   min-height:125px;
+   box-sizing:border-box;
+}
 .raindrops-pinup-entries p{
     overflow:hidden;
 }
@@ -4895,6 +4908,7 @@ body:not(.page-template-blank_front) .raindrops-recent-posts .entry-title{
 .clip-link .quote-raindrops .first:empty + .second{margin-left:0;display:block;list-style:none;}
 .clip-link .link-info:empty{display:none;}
 .clip-link .link-excerpt{font-size:13px;}
+.clip-link .titles span {padding:.2em .5em!important;border-bottom:1px solid #ccc;margin:.25em!important;display:inline-block;}
 @media (max-width: 640px) {
    .clip-link .quote-raindrops .second,
     .clip-link .quote-raindrops .first{
@@ -5846,6 +5860,15 @@ body.rd-primary-menu-responsive-active .raindrops-mobile-menu .open,
 .topsidebar li:empty{
     display:none;
 }
+
+.centered{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    height:100%;
+}
+
 .link-to-sidebar-settings {
     display: flex;
     align-items: center;
@@ -5867,4 +5890,9 @@ body.rd-primary-menu-responsive-active .raindrops-mobile-menu .open,
 #front-page-top-container .static-front-media #header-image{
     /* override inline style this case */
     background-origin:padding-box!important;
+}
+.topsidebar .raindrops-tag-posts li,
+.topsidebar .raindrops-category-posts li,
+.topsidebar .raindrops-recent-posts li{
+    margin-bottom:1em;
 }
