@@ -260,6 +260,22 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array(
 				
+				"label" => __("Main Layout","suevafree"),
+				"description" => __("Choose a layout for your site.","suevafree"),
+				"id" => "suevafree_body_layout",
+				"type" => "select",
+				"section" => "layouts_section",
+				"options" => array (
+				   "default" => __( "Default","suevafree"),
+				   "minimal" => __( "Minimal Layout","suevafree"),
+				),
+				
+				"std" => "default",
+			
+			),
+	
+			array(
+				
 				"label" => __("Home Blog Layout","suevafree"),
 				"description" => __("If you've set the latest articles, for the homepage, choose a layout.","suevafree"),
 				"id" => "suevafree_home",

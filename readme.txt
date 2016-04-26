@@ -7,6 +7,8 @@ Created by ThemeinProgress, http://www.themeinprogress.com
 Suevafree Demo: http://www.wpinprogress.com/demo/suevafree
 Sueva Pro Demo: http://www.wpinprogress.com/demo/sueva
 
+Important: With the version 2.1.4 of Suevafree, masonry grid is the default layout for the homepage, you can choose another layout from the WordPress Customize.
+
 
 License
 -------

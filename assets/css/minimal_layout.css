@@ -1,0 +1,893 @@
+/* ===============================================
+   GENERAL
+   =============================================== */
+
+body.minimal_layout { 
+	background:#fff;
+	font-weight: 600;
+}
+
+body.minimal_layout h1,
+body.minimal_layout h2,
+body.minimal_layout h3,
+body.minimal_layout h4,
+body.minimal_layout h5,
+body.minimal_layout h6,
+body.minimal_layout h1.title a,
+body.minimal_layout h2.title a,
+body.minimal_layout h3.title a,
+body.minimal_layout h4.title a,
+body.minimal_layout h5.title a,
+body.minimal_layout h6.title a,
+body.minimal_layout .post-container .title,
+body.minimal_layout .post-container .link a { 
+	font-weight:800;
+} 
+
+body.minimal_layout a:hover,
+body.minimal_layout #logo a:hover,
+body.minimal_layout #footer a:hover,
+body.minimal_layout .entry-info a:hover,
+body.minimal_layout .post-article .title a:hover {
+	color:#8d8d8d;
+}
+
+body.minimal_layout a { 
+	outline: none; 
+	border:none;
+	font-weight:normal; 
+	text-decoration:none;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+}
+
+body.minimal_layout a:hover ,
+body.minimal_layout a:active ,
+body.minimal_layout a:focus {
+	outline:none;
+	text-decoration:none;
+	border:none;
+}
+
+
+body.minimal_layout .entry-info ,
+body.minimal_layout .entry-info a {
+	font-weight:normal;
+	color:#616161;
+}
+
+body.minimal_layout ::selection {
+	background: #8d8d8d;
+}
+body.minimal_layout ::-moz-selection {
+	background: #8d8d8d;
+}
+
+body.minimal_layout #sidebar .sidebar-box {
+    padding: 0 ;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+/* ===============================================
+   MENU
+   =============================================== */
+
+body.minimal_layout nav#mainmenu ul li.current-menu-item > a, 
+body.minimal_layout nav#mainmenu ul li.current_page_item > a, 
+body.minimal_layout nav#mainmenu ul li.current-menu-parent > a, 
+body.minimal_layout nav#mainmenu ul li.current_page_ancestor > a, 
+body.minimal_layout nav#mainmenu ul li.current-menu-ancestor > a { 
+	border:none;
+}
+
+body.minimal_layout .product-container .product-thumbnail {
+	box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+body.archive.woocommerce .product-category h3:hover,
+body.archive.woocommerce .product-category h3:active,
+body.archive.woocommerce .product-category h3:focus{
+	color:#8d8d8d;
+}
+
+/* ===============================================
+   WOOCOMMERCE PAGINATION
+   =============================================== */
+
+body.minimal_layout nav.woocommerce-pagination ul li span.current,
+body.minimal_layout nav.woocommerce-pagination ul li a:focus, 
+body.minimal_layout nav.woocommerce-pagination ul li a:hover { 
+	background:#333333;
+}
+
+body.minimal_layout nav.woocommerce-pagination ul li {
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+	margin:0
+}
+
+/* ===============================================
+   BUTTONS
+   =============================================== */
+
+body.minimal_layout span.button {
+	background:#333;
+}
+
+body.minimal_layout span.button:hover {
+	background:#8d8d8d;
+}
+
+body.minimal_layout.sneak_button .wpcf7-form input[type=submit],
+body.minimal_layout .contact-form input.sneak[type=submit],
+body.minimal_layout .button.sneak,
+body.minimal_layout .post-article span.button.sneak {
+	color:#8d8d8d;
+	border:solid 1px #333;
+	padding:12px 36px;
+}
+
+body.minimal_layout.sneak_button .wpcf7-form input[type=submit],
+body.minimal_layout .contact-form input.sneak[type=submit] {
+	color:#fff;
+}
+
+body.minimal_layout.sneak_button .wpcf7-form input[type=submit]:hover,
+body.minimal_layout .button.sneak:hover,
+body.minimal_layout .post-article span.button.sneak:hover,
+body.minimal_layout .contact-form input.sneak[type=submit]:hover  {
+	background:#8d8d8d;
+	border:solid 1px #8d8d8d;
+	padding:12px 36px;
+	color:#fff;
+}
+
+body.minimal_layout #back-to-top i.open,
+body.minimal_layout #back-to-top i:hover {
+	background:#333;
+	border:solid 2px #333;
+}
+
+body.minimal_layout article blockquote { 
+	border-left: 4px solid #333; 
+	padding:0 35px; 
+	position:relative; 
+	margin-left:0px;
+}
+
+body.minimal_layout .wpcf7-form input[type=submit] ,
+body.minimal_layout .woocommerce-product-search input[type=submit],
+body.minimal_layout .contact-form input[type=submit] ,
+body.minimal_layout .searchform input[type=submit] ,
+body.minimal_layout .comment-form input[type=submit],
+body.minimal_layout.woocommerce #respond input#submit.alt, 
+body.minimal_layout.woocommerce a.button.alt, 
+body.minimal_layout.woocommerce button.button.alt, 
+body.minimal_layout.woocommerce input.button.alt,
+body.minimal_layout.woocommerce a.button,
+body.minimal_layout.woocommerce #respond input#submit, 
+body.minimal_layout.woocommerce button.button, 
+body.minimal_layout.woocommerce input.button,
+body.minimal_layout.woocommerce input.button#place_order,
+body.minimal_layout.woocommerce .wc-proceed-to-checkout input,
+body.minimal_layout .woocommerce #respond input#submit.alt, 
+body.minimal_layout .woocommerce a.button.alt, 
+body.minimal_layout .woocommerce button.button.alt, 
+body.minimal_layout .woocommerce input.button.alt,
+body.minimal_layout .woocommerce a.button,
+body.minimal_layout .woocommerce #respond input#submit, 
+body.minimal_layout .woocommerce button.button, 
+body.minimal_layout .woocommerce input.button,
+body.minimal_layout .woocommerce input.button#place_order,
+body.minimal_layout .woocommerce .wc-proceed-to-checkout input {
+	background-color:#333333;
+}
+
+body.minimal_layout .wpcf7-form input[type=submit]:hover ,
+body.minimal_layout .woocommerce-product-search input[type=submit]:hover,
+body.minimal_layout .contact-form input[type=submit]:hover ,
+body.minimal_layout .searchform input[type=submit]:hover ,
+body.minimal_layout .comment-form input[type=submit]:hover,
+body.minimal_layout.woocommerce #respond input#submit.alt:hover, 
+body.minimal_layout.woocommerce a.button.alt:hover, 
+body.minimal_layout.woocommerce button.button.alt:hover, 
+body.minimal_layout.woocommerce input.button.alt:hover,
+body.minimal_layout.woocommerce a.button:hover,
+body.minimal_layout.woocommerce a.add_to_cart_button:hover,
+body.minimal_layout.woocommerce .woocommerce-message a.button:hover ,
+body.minimal_layout.woocommerce #respond input#submit:hover, 
+body.minimal_layout.woocommerce a.button:hover, 
+body.minimal_layout.woocommerce button.button:hover, 
+body.minimal_layout.woocommerce input.button:hover,
+body.minimal_layout.woocommerce input.button#place_order:hover,
+body.minimal_layout.woocommerce .wc-proceed-to-checkout input:hover,
+body.minimal_layout .woocommerce #respond input#submit.alt:hover, 
+body.minimal_layout .woocommerce a.button.alt:hover, 
+body.minimal_layout .woocommerce button.button.alt:hover, 
+body.minimal_layout .woocommerce input.button.alt:hover,
+body.minimal_layout .woocommerce a.button:hover,
+body.minimal_layout .woocommerce a.add_to_cart_button:hover,
+body.minimal_layout .woocommerce .woocommerce-message a.button:hover ,
+body.minimal_layout .woocommerce #respond input#submit:hover, 
+body.minimal_layout .woocommerce a.button:hover, 
+body.minimal_layout .woocommerce button.button:hover, 
+body.minimal_layout .woocommerce input.button:hover,
+body.minimal_layout .woocommerce input.button#place_order:hover,
+body.minimal_layout .woocommerce .wc-proceed-to-checkout input:hover {
+	background:#8d8d8d;
+	color:#fff;
+	text-decoration:none;
+}
+
+body.minimal_layout.woocommerce div.product .woocommerce-tabs ul.tabs li.active ,
+body.minimal_layout.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+    z-index: 2;
+	color:#8d8d8d;
+}
+
+/* ===============================================
+   TAG CLOUD
+   =============================================== */
+
+body.minimal_layout #sidebar .tagcloud a, 
+body.minimal_layout #footer .tagcloud a { 
+	background:#333;
+}
+
+body.minimal_layout #sidebar .tagcloud a:hover, 
+body.minimal_layout #footer .tagcloud a:hover { 
+	background: #8d8d8d;
+	color:#fff;
+}
+
+/* ===============================================
+   MENU
+   =============================================== */
+
+body.minimal_layout nav#mainmenu ul li { 
+	padding:0;
+	margin-bottom: -5px;
+}
+
+body.minimal_layout nav#mainmenu ul li a   { 
+	padding:10px 15px;
+	margin:15px 0 !important ;
+	font-weight:600;
+	text-transform:uppercase;
+	font-size:14px;
+}
+
+body.minimal_layout nav#mainmenu ul ul li a   { 
+	font-size:12px;
+}
+
+body.minimal_layout nav#mainmenu ul li a:hover,
+body.minimal_layout nav#mainmenu li:hover > a,
+body.minimal_layout nav#mainmenu ul li.current-menu-item > a, 
+body.minimal_layout nav#mainmenu ul li.current_page_item > a, 
+body.minimal_layout nav#mainmenu ul li.current-menu-parent > a, 
+body.minimal_layout nav#mainmenu ul li.current_page_ancestor > a, 
+body.minimal_layout nav#mainmenu ul li.current-menu-ancestor > a { 
+	color:#fff !important;
+	background:#333;
+}
+
+body.minimal_layout nav#mainmenu ul ul:before {
+	display:none;
+	visibility:hidden;
+}
+
+body.minimal_layout nav#mainmenu ul ul { 
+	top:60px; 
+	left:0; 
+	border-top:none;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	background:#333;
+}
+
+body.minimal_layout nav#mainmenu ul ul li   { 
+	margin-bottom: 0;
+}
+
+body.minimal_layout nav#mainmenu ul ul li a   { 
+	margin:0 !important;
+	padding:15px;
+	border:none;
+	color:#fff;
+}
+
+body.minimal_layout nav#mainmenu ul ul li a:hover,
+body.minimal_layout nav#mainmenu ul ul li:hover > a,
+body.minimal_layout nav#mainmenu ul ul li.current-menu-item > a, 
+body.minimal_layout nav#mainmenu ul ul li.current_page_item > a, 
+body.minimal_layout nav#mainmenu ul ul li.current-menu-parent > a, 
+body.minimal_layout nav#mainmenu ul ul li.current_page_ancestor > a, 
+body.minimal_layout nav#mainmenu ul ul li.current-menu-ancestor > a { 
+	color:#fff !important;
+}
+
+body.minimal_layout nav#mainmenu ul ul li a:hover { 
+	padding-left:20px;
+	background:none !important;
+}
+
+body.minimal_layout nav#mainmenu.sneak ul li a {
+	padding: 12px 16px;
+}
+
+body.minimal_layout nav#mainmenu.sneak ul ul  {
+	top: 69px !important;
+}
+
+body.minimal_layout nav#mainmenu.sneak ul ul li a {
+	color: #333;
+}
+body.minimal_layout nav#mainmenu.sneak ul ul li a:hover { 
+	padding-left:16px;
+}
+
+/* ===============================================
+   FOOTER
+   =============================================== */
+
+body.minimal_layout #footer .socials a {
+	background:#333;
+	color:#fff;
+}
+
+body.minimal_layout #footer .socials a:hover { 
+	opacity: 1.0; 
+	filter: alpha(opacity=100);
+	background:#8d8d8d;
+}
+
+body.minimal_layout #footer a:hover { 
+	color:#8d8d8d;
+}
+
+body.minimal_layout #footer .copyright p {
+    padding: 0;
+    line-height: initial;
+}
+body.minimal_layout #footer .container { 
+	background:none;
+	padding:0;
+}
+
+body.minimal_layout #footer  {
+	background:#212121;
+}
+
+body.minimal_layout #footer,
+body.minimal_layout #footer .widget {
+	border:none;
+}
+
+body.minimal_layout #footer .widget {
+    padding: 20px 0 40px 0;
+}
+
+body.minimal_layout .wp-pagenavi a:hover, 
+body.minimal_layout .wip-pagination span,
+body.minimal_layout .wip-pagination a span:hover,
+body.minimal_layout .wp-pagenavi span.current {
+	background:#333;
+	color:#fff;
+}
+
+/* ===============================================
+   TIPSY
+   ============================================= */
+
+body.minimal_layout .tipsy-inner { 
+	background-color: #8d8d8d ; 
+}
+body.minimal_layout .tipsy-arrow-n { 
+	border-bottom-color: #8d8d8d ; 
+}
+body.minimal_layout .tipsy-arrow-s { 
+	border-top-color: #8d8d8d ; 
+}
+body.minimal_layout .tipsy-arrow-e { 
+	border-left-color: #8d8d8d ; 
+}
+body.minimal_layout .tipsy-arrow-w { 
+	border-right-color: #8d8d8d ; 
+}
+
+/* ===============================================
+   PAGINATION
+   =============================================== */
+
+body.minimal_layout .wp-pagenavi a, 
+body.minimal_layout .wp-pagenavi a:link,
+body.minimal_layout .wip-pagination span { 
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+	margin-right:-3px;
+}
+
+body.minimal_layout .wp-pagenavi span.current { 
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+	margin-right:-5px;
+}
+
+/* ===============================================
+   BUTTONS
+   =============================================== */
+
+body.minimal_layout .wpcf7-form input[type=submit] ,
+body.minimal_layout .woocommerce-product-search input[type=submit],
+body.minimal_layout .contact-form input[type=submit] ,
+body.minimal_layout .searchform input[type=submit] ,
+body.minimal_layout .comment-form input[type=submit] ,
+body.minimal_layout span.button {
+	padding:10px 22px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+	font-weight:800;
+}
+
+
+body.minimal_layout.sneak_button .wpcf7-form input[type=submit],
+body.minimal_layout .contact-form input.sneak[type=submit],
+body.minimal_layout .wpcf7-form input[type=submit],
+body.minimal_layout .contact-form input[type=submit], 
+body.minimal_layout .searchform input[type=submit] {
+	margin-top:40px;
+}
+
+body.minimal_layout .wpcf7-form input[type=submit] ,
+body.minimal_layout .woocommerce-product-search input[type=submit],
+body.minimal_layout .contact-form input[type=submit] ,
+body.minimal_layout .searchform input[type=submit] ,
+body.minimal_layout .comment-form input[type=submit] ,
+body.minimal_layout span.button {
+	padding:10px 22px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+	font-weight:800;
+}
+
+body.minimal_layout .wpcf7-form input[type=submit]:hover ,
+body.minimal_layout .woocommerce-product-search input[type=submit]:hover,
+body.minimal_layout .contact-form input[type=submit]:hover,
+body.minimal_layout .searchform input[type=submit]:hover ,
+body.minimal_layout span.button:hover {
+	padding:10px 33px;
+}
+
+body.minimal_layout .wpcf7-form input, 
+body.minimal_layout .wpcf7-form select, 
+body.minimal_layout .wpcf7-form textarea ,
+body.minimal_layout .woocommerce-product-search input[type=search],
+body.minimal_layout .contact-form input[type=text],
+body.minimal_layout .contact-form textarea ,
+body.minimal_layout .searchform input[type=text],
+body.minimal_layout .searchform textarea ,
+body.minimal_layout .comment-form input[type=text], 
+body.minimal_layout .comment-form textarea {
+	background:#fff;
+	border:solid 1px #ddd ;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+/* ===============================================
+   CONTENT
+   =============================================== */
+
+body.minimal_layout .product-content,
+body.minimal_layout .post-article {
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+body.minimal_layout .post-article {
+    padding: 0;
+}
+
+body.minimal_layout .post-container .title {
+    margin: 0 0 50px 0;
+}
+
+body.minimal_layout .masonry .post-container .title ,
+body.minimal_layout #blog .post-container .title ,
+body.minimal_layout #sidebar .post-container .title {
+    margin: 0 0 30px 0;
+}
+
+body.minimal_layout .masonry .product-content,
+body.minimal_layout .masonry .post-article,
+body.minimal_layout #blog .post-article {
+    padding: 40px;
+    border: solid 1px #ddd;
+}
+
+body.minimal_layout .pin-container, 
+body.minimal_layout .video-container, 
+body.minimal_layout .maps-container {
+	margin-bottom:50px;
+}
+
+body.minimal_layout .masonry .pin-container,
+body.minimal_layout .masonry .video-container,
+body.minimal_layout .masonry .maps-container ,
+body.minimal_layout #blog .pin-container,
+body.minimal_layout #blog .video-container,
+body.minimal_layout #blog .maps-container {
+	margin-bottom:0;
+}
+
+body.minimal_layout .post-article.link,
+body.minimal_layout .masonry .post-article.link ,
+body.minimal_layout #blog .post-article.link {
+    padding: 0;
+}
+
+body.minimal_layout .post-container .aside {
+	background: none;
+}
+
+body.minimal_layout .pin-container:after,
+body.minimal_layout .maps-container:after {
+	display:none;
+	visibility:hidden;
+}
+
+body.minimal_layout .woocommerce-error, 
+body.minimal_layout .woocommerce-message, 
+body.minimal_layout .woocommerce-info,
+body.minimal_layout .post-container .category,
+body.minimal_layout .post-container .portfolio,
+body.minimal_layout .post-container .search ,
+body.minimal_layout .post-container .category h1,
+body.minimal_layout .post-container .category h1 span, 
+body.minimal_layout .post-container .portfolio h1,
+body.minimal_layout .post-container .search h1 {
+	font-weight:800;
+	font-size:22px
+}
+
+body.minimal_layout .post-container .category h1,
+body.minimal_layout .post-container .category h1 span, 
+body.minimal_layout .post-container .portfolio h1,
+body.minimal_layout .post-container .search h1 {
+	margin:0;
+}
+
+body.minimal_layout .post-container .category,
+body.minimal_layout .post-container .portfolio,
+body.minimal_layout .post-container .search {
+	padding:40px;
+}
+
+body.minimal_layout .post-article blockquote {
+	border-color:#8d8d8d;
+}
+
+body.minimal_layout .form-allowed-tags, 
+body.minimal_layout p.categories {
+	text-align:center;
+}
+
+body.minimal_layout p.categories {
+	margin-top:30px
+}
+
+body.minimal_layout .post-container .link a,
+body.minimal_layout .post-container .quote {
+	background-color:#333;
+	border:none;
+}
+
+body.minimal_layout .post-container .link a:hover,
+body.minimal_layout .post-container .quote:hover {
+	background-color:#8d8d8d;
+}
+
+body.minimal_layout.page .line {
+	display:none;
+	visibility:hidden;
+}
+
+/* ===============================================
+   MASONRY
+   =============================================== */
+
+body.minimal_layout .col-md-4 .line:before{
+    display: none;
+}
+
+body.minimal_layout .col-md-4 .line{
+    width: auto;
+    background: none;
+    margin: 30px 0;
+}
+
+body.minimal_layout .col-md-4.page .line {
+	display:none;
+	visibility:hidden;
+}
+
+body.minimal_layout .col-md-4 .entry-info {
+	padding:0;
+}
+
+body.minimal_layout .entry-info span:first-of-type i {
+    margin-left: 0;
+}
+
+body.minimal_layout .col-md-4 .entry-info i {
+    line-height: 23px;
+    position: absolute;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body.minimal_layout .col-md-4 .entry-info .entry-link ,
+body.minimal_layout .col-md-4 .entry-info .entry-status ,
+body.minimal_layout .col-md-4 .entry-info .entry-image ,
+body.minimal_layout .col-md-4 .entry-info .entry-chat ,
+body.minimal_layout .col-md-4 .entry-info .entry-quote ,
+body.minimal_layout .col-md-4 .entry-info .entry-aside {
+	display:block;
+	text-align:center;
+	width:inherit;
+	padding:inherit;
+	margin:5px auto;
+}
+
+/* ===============================================
+   COMMENTS
+   =============================================== */
+
+body.minimal_layout h3#reply-title, 
+body.minimal_layout h3.comments ,
+body.minimal_layout .comment-respond h3#reply-title, 
+body.minimal_layout .comment-respond h3.comments {
+	margin: 30px 0 ;
+    text-align: center;
+    background: none;
+	text-transform:none;
+	padding-left: 0;
+}
+
+body.minimal_layout .comment-notes {
+    margin: -10px 0 25px 0;
+}
+
+/* ===============================================
+   SIDEBAR
+   =============================================== */
+
+body.minimal_layout #sidebar .sidebar-box {
+    border: solid 1px #ddd;
+	padding:40px
+}
+
+body.minimal_layout .widget-box {
+    padding: 0;
+	margin-bottom:25px;
+}
+
+body.minimal_layout .widget-box:last-of-type {
+	margin-bottom:0;
+}
+
+/* ===============================================
+   BACK TO TOP
+   =============================================== */
+
+body.minimal_layout #back-to-top i {
+    padding: 8px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+	background:#333;
+	border:none;
+}
+
+body.minimal_layout #back-to-top i:hover{
+	background:#8d8d8d;
+	border:none;
+}
+
+/* ===============================================
+   WOOCOMMERCE MESSAGE
+   =============================================== */
+
+body.minimal_layout.woocommerce .woocommerce-error ,
+body.minimal_layout.woocommerce .woocommerce-message ,
+body.minimal_layout.woocommerce .woocommerce-info {
+	background-color: #fafafa;
+}
+
+/* ===============================================
+   Woocommerce Header Cart
+   ============================================= */
+
+body.minimal_layout .woocommerce-ordering select.orderby ,
+body.minimal_layout .woocommerce-ordering select.orderby:active ,
+body.minimal_layout .woocommerce-ordering select.orderby:focus {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding:0 8px;
+	background:#fff;
+	border:solid 1px #ddd;
+	outline:none;
+}
+
+body.minimal_layout .header-cart { 
+    margin-top: -20px;	
+	right:0;
+	padding:0;
+	color:#333; 
+	border:solid 1px #ddd;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+	text-align:center;
+}
+
+body.minimal_layout .header-cart a.cart-contents { 
+	color:#333; 
+}
+
+body.minimal_layout .header-cart a span {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+	text-align:center;
+    background: #333;
+    color: #fff;
+    top: -10px;
+    right: -10px;
+}
+
+body.minimal_layout .header-cart .mini_cart_item a ,
+body.minimal_layout .header-cart span.quantity {
+	line-height: 1.8em
+}
+
+body.minimal_layout .header-cart .widget_shopping_cart li.empty {
+	padding:0 !important;
+	border:none;
+	text-transform:none
+}
+
+body.minimal_layout .header-cart-widget:before {
+	display: none;
+	visibility:hidden;
+}
+
+body.minimal_layout .header-cart-widget { 
+	top:39px; 
+	right:-1px;
+	background:#333; 
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+	border-top:none;
+}
+
+body.minimal_layout .header-cart-widget p , 
+body.minimal_layout .header-cart-widget span, 
+body.minimal_layout .header-cart-widget li, 
+body.minimal_layout .header-cart-widget a { 
+	color:#fff
+}
+
+body.minimal_layout .header-cart-widget .woocommerce.widget_shopping_cart a.button {
+	border:solid 1px #8d8d8d;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+body.minimal_layout .header-cart-widget .woocommerce.widget_shopping_cart a.button:hover {
+	border:solid 1px #8d8d8d;
+}
+
+body.minimal_layout .widget_shopping_cart li, .product_list_widget li {
+	border-color: #8d8d8d;
+}
+
+body.minimal_layout .header-cart a.remove {
+    border: solid 1px #8d8d8d;
+	background:none;
+    width: 25px;
+    height: 25px;
+    line-height: 22px !important;
+}
+
+body.minimal_layout .header-cart a.remove:hover {
+    border-color: red;
+}
+
+body.minimal_layout.woocommerce-page #respond input#submit.alt, 
+body.minimal_layout.woocommerce-page a.button.alt, 
+body.minimal_layout.woocommerce-page button.button.alt, 
+body.minimal_layout.woocommerce-page input.button.alt,
+body.minimal_layout.woocommerce-page a.button,
+body.minimal_layout.woocommerce-page #respond input#submit, 
+body.minimal_layout.woocommerce-page button.button, 
+body.minimal_layout.woocommerce-page input.button,
+body.minimal_layout.woocommerce-page input.button#place_order,
+body.minimal_layout.woocommerce-page .wc-proceed-to-checkout input {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+/* ===============================================
+   Woocommerce comments
+   ============================================= */
+
+body.minimal_layout .star-rating span,
+body.minimal_layout.woocommerce p.stars,
+body.minimal_layout.woocommerce p.stars a,
+body.minimal_layout.woocommerce p.stars:hover a {
+	color:#333333;
+}
+
+/* ===============================================
+   Woocommerce comments
+   ============================================= */
+
+body.minimal_layout .cross-sells h2,
+body.minimal_layout .upsells-products h2 ,
+body.minimal_layout .related-products h2 {
+	box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+	padding:40px 0;
+	text-align:center;
+}
+
+body.minimal_layout .header-cart-widget p , 
+body.minimal_layout .header-cart-widget span, 
+body.minimal_layout .header-cart-widget li, 
+body.minimal_layout .header-cart-widget a { 
+	color:#fff !important; 
+}
+
+body.minimal_layout .header-cart-widget .woocommerce.widget_shopping_cart a.button:hover {
+    border: solid 1px #8d8d8d !important;
+}
+
+body.minimal_layout .woocommerce .woocommerce_cart_details,
+body.minimal_layout .woocommerce .cart-collaterals .cart_totals, 
+body.minimal_layout .woocommerce-page .cart-collaterals .cart_totals {
+    padding: 30px 0;
+}

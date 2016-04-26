@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 2.1.5 - Released: 26.04.2016
+
+-- Added : Optional minimal layout.
+
 - Version 2.1.4 - Released: 25.04.2016
 
 -- Added : Masonry Layout.

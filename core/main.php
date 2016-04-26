@@ -443,6 +443,12 @@ if (!function_exists('suevafree_body_class')) {
 	function suevafree_body_class($classes) {
 	
 		$classes[] = 'custombody';
+		
+		if ( suevafree_setting('suevafree_body_layout') == "minimal" ) :
+
+			$classes[] = 'minimal_layout';
+
+		endif;
 			
 		return $classes;
 		

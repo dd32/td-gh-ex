@@ -148,3 +148,187 @@ a:focus,
 #footer .copyright a {
     color: #ffffff;
 }
+
+body.minimal_layout  nav.woocommerce-pagination ul li span.current,
+body.minimal_layout  nav.woocommerce-pagination ul li a:focus, 
+body.minimal_layout  nav.woocommerce-pagination ul li a:hover,
+body.minimal_layout span.button,
+body.minimal_layout #back-to-top i.open,
+body.minimal_layout #back-to-top i:hover,
+body.minimal_layout .wpcf7-form input[type=submit] ,
+body.minimal_layout .woocommerce-product-search input[type=submit],
+body.minimal_layout .contact-form input[type=submit] ,
+body.minimal_layout .searchform input[type=submit] ,
+body.minimal_layout .comment-form input[type=submit],
+body.minimal_layout.woocommerce #respond input#submit.alt, 
+body.minimal_layout.woocommerce a.button.alt, 
+body.minimal_layout.woocommerce button.button.alt, 
+body.minimal_layout.woocommerce input.button.alt,
+body.minimal_layout.woocommerce a.button,
+body.minimal_layout.woocommerce #respond input#submit, 
+body.minimal_layout.woocommerce button.button, 
+body.minimal_layout.woocommerce input.button,
+body.minimal_layout.woocommerce input.button#place_order,
+body.minimal_layout.woocommerce .wc-proceed-to-checkout input,
+body.minimal_layout .woocommerce #respond input#submit.alt, 
+body.minimal_layout .woocommerce a.button.alt, 
+body.minimal_layout .woocommerce button.button.alt, 
+body.minimal_layout .woocommerce input.button.alt,
+body.minimal_layout .woocommerce a.button,
+body.minimal_layout .woocommerce #respond input#submit, 
+body.minimal_layout .woocommerce button.button, 
+body.minimal_layout .woocommerce input.button,
+body.minimal_layout .woocommerce input.button#place_order,
+body.minimal_layout .woocommerce .wc-proceed-to-checkout input,
+body.minimal_layout #sidebar .tagcloud a, 
+body.minimal_layout #footer .tagcloud a , 
+body.minimal_layout nav#mainmenu ul li a:hover,
+body.minimal_layout nav#mainmenu li:hover > a,
+body.minimal_layout nav#mainmenu ul li.current-menu-item > a, 
+body.minimal_layout nav#mainmenu ul li.current_page_item > a, 
+body.minimal_layout nav#mainmenu ul li.current-menu-parent > a, 
+body.minimal_layout nav#mainmenu ul li.current_page_ancestor > a, 
+body.minimal_layout nav#mainmenu ul li.current-menu-ancestor > a,
+body.minimal_layout nav#mainmenu ul ul,
+body.minimal_layout #footer .socials a ,
+body.minimal_layout .wp-pagenavi a:hover, 
+body.minimal_layout .wip-pagination span,
+body.minimal_layout .wip-pagination a span:hover,
+body.minimal_layout .wp-pagenavi span.current,
+body.minimal_layout .post-container .link a,
+body.minimal_layout .post-container .quote,
+body.minimal_layout #back-to-top i ,
+body.minimal_layout .header-cart a span,
+body.minimal_layout .header-cart-widget,
+body.minimal_layout span.button {
+    background-color: #f97c8a;
+}
+
+body.minimal_layout nav#mainmenu.sneak ul ul li a,
+body.minimal_layout .header-cart,
+body.minimal_layout .header-cart a.cart-contents,
+body.minimal_layout .star-rating span,
+body.minimal_layout.woocommerce p.stars,
+body.minimal_layout.woocommerce p.stars a,
+body.minimal_layout.woocommerce p.stars:hover a {
+	color: #f97c8a;
+}
+
+body.minimal_layout.sneak_button .wpcf7-form input[type=submit],
+body.minimal_layout .contact-form input.sneak[type=submit],
+body.minimal_layout .button.sneak,
+body.minimal_layout .post-article span.button.sneak,
+body.minimal_layout article blockquote,
+body.minimal_layout.sneak_button .wpcf7-form input[type=submit],
+body.minimal_layout .contact-form input.sneak[type=submit],
+body.minimal_layout .button.sneak,
+body.minimal_layout .post-article span.button.sneak,
+body.minimal_layout #back-to-top i.open,
+body.minimal_layout #back-to-top i:hover {
+    border-color: #f97c8a;
+}
+
+body.minimal_layout ::-moz-selection {
+    background-color: #f07381;
+}
+body.minimal_layout ::selection {
+    background-color: #f07381;
+}
+
+body.minimal_layout a:hover,
+body.minimal_layout #logo a:hover,
+body.minimal_layout #footer a:hover,
+body.minimal_layout a:hover,
+body.minimal_layout #logo a:hover,
+body.minimal_layout #footer a:hover,
+body.minimal_layout .entry-info a:hover,
+body.minimal_layout .post-article .title a:hover,
+body.archive.woocommerce .product-category h3:hover,
+body.archive.woocommerce .product-category h3:active,
+body.archive.woocommerce .product-category h3:focus,
+body.minimal_layout.sneak_button .wpcf7-form input[type=submit],
+body.minimal_layout .contact-form input.sneak[type=submit],
+body.minimal_layout .button.sneak,
+body.minimal_layout .post-article span.button.sneak,
+body.minimal_layout.woocommerce div.product .woocommerce-tabs ul.tabs li.active ,
+body.minimal_layout.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
+body.minimal_layout #footer a:hover { 
+    color: #f07381;
+}
+
+body.minimal_layout .tipsy-inner { 
+	background-color: #f07381 ; 
+}
+body.minimal_layout .tipsy-arrow-n { 
+	border-bottom-color: #f07381 ; 
+}
+body.minimal_layout .tipsy-arrow-s { 
+	border-top-color: #f07381 ; 
+}
+body.minimal_layout .tipsy-arrow-e { 
+	border-left-color: #f07381 ; 
+}
+body.minimal_layout .tipsy-arrow-w { 
+	border-right-color: #f07381 ; 
+}
+
+body.minimal_layout span.button:hover,
+body.minimal_layout.sneak_button .wpcf7-form input[type=submit]:hover,
+body.minimal_layout .button.sneak:hover,
+body.minimal_layout .post-article span.button.sneak:hover,
+body.minimal_layout .contact-form input.sneak[type=submit]:hover,
+body.minimal_layout .wpcf7-form input[type=submit]:hover ,
+body.minimal_layout .woocommerce-product-search input[type=submit]:hover,
+body.minimal_layout .contact-form input[type=submit]:hover ,
+body.minimal_layout .searchform input[type=submit]:hover ,
+body.minimal_layout .comment-form input[type=submit]:hover,
+body.minimal_layout.woocommerce #respond input#submit.alt:hover, 
+body.minimal_layout.woocommerce a.button.alt:hover, 
+body.minimal_layout.woocommerce button.button.alt:hover, 
+body.minimal_layout.woocommerce input.button.alt:hover,
+body.minimal_layout.woocommerce a.button:hover,
+body.minimal_layout.woocommerce a.add_to_cart_button:hover,
+body.minimal_layout.woocommerce .woocommerce-message a.button:hover ,
+body.minimal_layout.woocommerce #respond input#submit:hover, 
+body.minimal_layout.woocommerce a.button:hover, 
+body.minimal_layout.woocommerce button.button:hover, 
+body.minimal_layout.woocommerce input.button:hover,
+body.minimal_layout.woocommerce input.button#place_order:hover,
+body.minimal_layout.woocommerce .wc-proceed-to-checkout input:hover,
+body.minimal_layout .woocommerce #respond input#submit.alt:hover, 
+body.minimal_layout .woocommerce a.button.alt:hover, 
+body.minimal_layout .woocommerce button.button.alt:hover, 
+body.minimal_layout .woocommerce input.button.alt:hover,
+body.minimal_layout .woocommerce a.button:hover,
+body.minimal_layout .woocommerce a.add_to_cart_button:hover,
+body.minimal_layout .woocommerce .woocommerce-message a.button:hover ,
+body.minimal_layout .woocommerce #respond input#submit:hover, 
+body.minimal_layout .woocommerce a.button:hover, 
+body.minimal_layout .woocommerce button.button:hover, 
+body.minimal_layout .woocommerce input.button:hover,
+body.minimal_layout .woocommerce input.button#place_order:hover,
+body.minimal_layout .woocommerce .wc-proceed-to-checkout input:hover,
+body.minimal_layout #sidebar .tagcloud a:hover, 
+body.minimal_layout #footer .tagcloud a:hover,
+body.minimal_layout #footer .socials a:hover,
+body.minimal_layout .post-container .link a:hover,
+body.minimal_layout .post-container .quote:hover,
+body.minimal_layout #back-to-top i:hover{
+	background-color: #f07381 ; 
+}
+
+body.minimal_layout .post-article blockquote,
+body.minimal_layout .header-cart-widget .woocommerce.widget_shopping_cart a.button,
+body.minimal_layout .header-cart-widget .woocommerce.widget_shopping_cart a.button:hover,
+body.minimal_layout .widget_shopping_cart li, .product_list_widget li,
+body.minimal_layout .header-cart a.remove,
+body.minimal_layout.sneak_button .wpcf7-form input[type=submit]:hover,
+body.minimal_layout .button.sneak:hover,
+body.minimal_layout .post-article span.button.sneak:hover,
+body.minimal_layout .contact-form input.sneak[type=submit]:hover  {
+	border-color: #f07381 ; 
+}
+
+body.minimal_layout .header-cart-widget .woocommerce.widget_shopping_cart a.button:hover {
+    border: solid 1px #f07381 !important;
+}

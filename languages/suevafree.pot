@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-25 19:03+0200\n"
+"POT-Creation-Date: 2016-04-26 20:15+0200\n"
 "PO-Revision-Date: 2015-09-08 18:41+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -81,14 +81,14 @@ msgstr ""
 #: core/admin/customize/customize.php:17 core/admin/customize/customize.php:188
 #: core/admin/customize/customize.php:204
 #: core/admin/customize/customize.php:220
-#: core/admin/customize/customize.php:636
+#: core/admin/customize/customize.php:652
 msgid "No"
 msgstr ""
 
 #: core/admin/customize/customize.php:18 core/admin/customize/customize.php:189
 #: core/admin/customize/customize.php:205
 #: core/admin/customize/customize.php:221
-#: core/admin/customize/customize.php:637
+#: core/admin/customize/customize.php:653
 msgid "Yes"
 msgstr ""
 
@@ -259,373 +259,386 @@ msgid "Layouts"
 msgstr ""
 
 #: core/admin/customize/customize.php:263
-msgid "Home Blog Layout"
+msgid "Main Layout"
 msgstr ""
 
 #: core/admin/customize/customize.php:264
-msgid "If you've set the latest articles, for the homepage, choose a layout."
+msgid "Choose a layout for your site."
 msgstr ""
 
 #: core/admin/customize/customize.php:269
-#: core/admin/customize/customize.php:288
-#: core/admin/customize/customize.php:306
-#: core/admin/customize/customize.php:323 core/metaboxes/post.php:32
+#: core/admin/customize/customize.php:357
+msgid "Default"
+msgstr ""
+
+#: core/admin/customize/customize.php:270
+msgid "Minimal Layout"
+msgstr ""
+
+#: core/admin/customize/customize.php:279
+msgid "Home Blog Layout"
+msgstr ""
+
+#: core/admin/customize/customize.php:280
+msgid "If you've set the latest articles, for the homepage, choose a layout."
+msgstr ""
+
+#: core/admin/customize/customize.php:285
+#: core/admin/customize/customize.php:304
+#: core/admin/customize/customize.php:322
+#: core/admin/customize/customize.php:339 core/metaboxes/post.php:32
 #: core/metaboxes/products.php:32
 msgid "Full Width"
 msgstr ""
 
-#: core/admin/customize/customize.php:270
-#: core/admin/customize/customize.php:289
-#: core/admin/customize/customize.php:307
-#: core/admin/customize/customize.php:324 core/metaboxes/post.php:33
+#: core/admin/customize/customize.php:286
+#: core/admin/customize/customize.php:305
+#: core/admin/customize/customize.php:323
+#: core/admin/customize/customize.php:340 core/metaboxes/post.php:33
 #: core/metaboxes/products.php:33
 msgid "Left Sidebar"
 msgstr ""
 
-#: core/admin/customize/customize.php:271
-#: core/admin/customize/customize.php:290
-#: core/admin/customize/customize.php:308
-#: core/admin/customize/customize.php:325 core/metaboxes/post.php:34
+#: core/admin/customize/customize.php:287
+#: core/admin/customize/customize.php:306
+#: core/admin/customize/customize.php:324
+#: core/admin/customize/customize.php:341 core/metaboxes/post.php:34
 #: core/metaboxes/products.php:34
 msgid "Right Sidebar"
 msgstr ""
 
-#: core/admin/customize/customize.php:272
-#: core/admin/customize/customize.php:291
-#: core/admin/customize/customize.php:326
+#: core/admin/customize/customize.php:288
+#: core/admin/customize/customize.php:307
+#: core/admin/customize/customize.php:342
 msgid "Masonry"
 msgstr ""
 
-#: core/admin/customize/customize.php:282
+#: core/admin/customize/customize.php:298
 msgid "Category Layout"
 msgstr ""
 
-#: core/admin/customize/customize.php:283
+#: core/admin/customize/customize.php:299
 msgid "Select a layout for category pages."
 msgstr ""
 
-#: core/admin/customize/customize.php:300
+#: core/admin/customize/customize.php:316
 msgid "WooCommerce Category Layout"
 msgstr ""
 
-#: core/admin/customize/customize.php:301
+#: core/admin/customize/customize.php:317
 msgid "Select a layout for the woocommerce categories."
 msgstr ""
 
-#: core/admin/customize/customize.php:317
+#: core/admin/customize/customize.php:333
 msgid "Search Layout"
 msgstr ""
 
-#: core/admin/customize/customize.php:318
+#: core/admin/customize/customize.php:334
 msgid "Select a layout for the search section."
 msgstr ""
 
-#: core/admin/customize/customize.php:335
+#: core/admin/customize/customize.php:351
 msgid "Menu Layout"
 msgstr ""
 
-#: core/admin/customize/customize.php:336
+#: core/admin/customize/customize.php:352
 msgid "Choose a layout for the menu."
 msgstr ""
 
-#: core/admin/customize/customize.php:341
-msgid "Default"
-msgstr ""
-
-#: core/admin/customize/customize.php:342
+#: core/admin/customize/customize.php:358
 msgid "Alternative menu"
 msgstr ""
 
-#: core/admin/customize/customize.php:353
+#: core/admin/customize/customize.php:369
 msgid "Thumbnails"
 msgstr ""
 
-#: core/admin/customize/customize.php:363
+#: core/admin/customize/customize.php:379
 msgid "Blog Thumbnail"
 msgstr ""
 
-#: core/admin/customize/customize.php:364
+#: core/admin/customize/customize.php:380
 msgid ""
 "Insert the height for blog thumbnail (Use a plugin like Regenerate "
 "Thumbnails, to regenerate each thumbnail)"
 msgstr ""
 
-#: core/admin/customize/customize.php:377
+#: core/admin/customize/customize.php:393
 msgid "Header"
 msgstr ""
 
-#: core/admin/customize/customize.php:387
+#: core/admin/customize/customize.php:403
 msgid "Custom Logo"
 msgstr ""
 
-#: core/admin/customize/customize.php:388
+#: core/admin/customize/customize.php:404
 msgid "Insert the url of your custom logo"
 msgstr ""
 
-#: core/admin/customize/customize.php:400
+#: core/admin/customize/customize.php:416
 msgid "Footer"
 msgstr ""
 
-#: core/admin/customize/customize.php:410
+#: core/admin/customize/customize.php:426
 msgid "Copyright Text"
 msgstr ""
 
-#: core/admin/customize/customize.php:411
+#: core/admin/customize/customize.php:427
 msgid "Insert your copyright text."
 msgstr ""
 
-#: core/admin/customize/customize.php:421
+#: core/admin/customize/customize.php:437
 msgid "Facebook Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:422
+#: core/admin/customize/customize.php:438
 msgid "Insert Facebook Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:432
+#: core/admin/customize/customize.php:448
 msgid "Twitter Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:433
+#: core/admin/customize/customize.php:449
 msgid "Insert Twitter Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:443
+#: core/admin/customize/customize.php:459
 msgid "Flickr Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:444
+#: core/admin/customize/customize.php:460
 msgid "Insert Flickr Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:454
+#: core/admin/customize/customize.php:470
 msgid "Google Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:455
+#: core/admin/customize/customize.php:471
 msgid "Insert Google Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:465
+#: core/admin/customize/customize.php:481
 msgid "Linkedin Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:466
+#: core/admin/customize/customize.php:482
 msgid "Insert Linkedin Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:476
+#: core/admin/customize/customize.php:492
 msgid "Myspace Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:477
+#: core/admin/customize/customize.php:493
 msgid "Insert Myspace Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:487
+#: core/admin/customize/customize.php:503
 msgid "Pinterest Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:488
+#: core/admin/customize/customize.php:504
 msgid "Insert Pinterest Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:498
+#: core/admin/customize/customize.php:514
 msgid "Tumblr Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:499
+#: core/admin/customize/customize.php:515
 msgid "Insert Tumblr Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:509
+#: core/admin/customize/customize.php:525
 msgid "Youtube Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:510
+#: core/admin/customize/customize.php:526
 msgid "Insert Youtube Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:520
+#: core/admin/customize/customize.php:536
 msgid "Vimeo Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:521
+#: core/admin/customize/customize.php:537
 msgid "Insert Vimeo Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:531
+#: core/admin/customize/customize.php:547
 msgid "Instagram Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:532
+#: core/admin/customize/customize.php:548
 msgid "Insert Instagram Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:542
+#: core/admin/customize/customize.php:558
 msgid "Deviantart Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:543
+#: core/admin/customize/customize.php:559
 msgid "Insert Deviantart Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:553
+#: core/admin/customize/customize.php:569
 msgid "Github Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:554
+#: core/admin/customize/customize.php:570
 msgid "Insert Github Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:564
+#: core/admin/customize/customize.php:580
 msgid "Xing Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:565
+#: core/admin/customize/customize.php:581
 msgid "Insert Xing Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:575
+#: core/admin/customize/customize.php:591
 msgid "Dribbble Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:576
+#: core/admin/customize/customize.php:592
 msgid "Insert Dribbble Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:586
+#: core/admin/customize/customize.php:602
 msgid "Dropbox Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:587
+#: core/admin/customize/customize.php:603
 msgid "Insert Dropbox Url (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:597
+#: core/admin/customize/customize.php:613
 msgid "Whatsapp Number"
 msgstr ""
 
-#: core/admin/customize/customize.php:598
+#: core/admin/customize/customize.php:614
 msgid "Insert Whatsapp number (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:608
+#: core/admin/customize/customize.php:624
 msgid "Skype Url"
 msgstr ""
 
-#: core/admin/customize/customize.php:609
+#: core/admin/customize/customize.php:625
 msgid "Insert Skype ID (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:619
+#: core/admin/customize/customize.php:635
 msgid "Email Address"
 msgstr ""
 
-#: core/admin/customize/customize.php:620
+#: core/admin/customize/customize.php:636
 msgid "Insert Email Address (leave empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/customize/customize.php:630
+#: core/admin/customize/customize.php:646
 msgid "Feed Rss Button"
 msgstr ""
 
-#: core/admin/customize/customize.php:631
+#: core/admin/customize/customize.php:647
 msgid "Do you want to display the Feed Rss button?"
 msgstr ""
 
-#: core/admin/customize/customize.php:648
-#: core/admin/customize/customize.php:649
+#: core/admin/customize/customize.php:664
+#: core/admin/customize/customize.php:665
 msgid "Typography"
 msgstr ""
 
-#: core/admin/customize/customize.php:660
+#: core/admin/customize/customize.php:676
 msgid "Logo"
 msgstr ""
 
-#: core/admin/customize/customize.php:670
-#: core/admin/customize/customize.php:704
-#: core/admin/customize/customize.php:727
+#: core/admin/customize/customize.php:686
+#: core/admin/customize/customize.php:720
+#: core/admin/customize/customize.php:743
 msgid "Font size"
 msgstr ""
 
-#: core/admin/customize/customize.php:671
+#: core/admin/customize/customize.php:687
 msgid "Insert a size, for logo font (For example, 60px) "
 msgstr ""
 
-#: core/admin/customize/customize.php:681
+#: core/admin/customize/customize.php:697
 msgid "Description font size"
 msgstr ""
 
-#: core/admin/customize/customize.php:682
+#: core/admin/customize/customize.php:698
 msgid "Insert a size, for logo description (For example, 14px) "
 msgstr ""
 
-#: core/admin/customize/customize.php:694
+#: core/admin/customize/customize.php:710
 msgid "Menu"
 msgstr ""
 
-#: core/admin/customize/customize.php:705
+#: core/admin/customize/customize.php:721
 msgid "Insert a size, for menu font (For example, 14px) "
 msgstr ""
 
-#: core/admin/customize/customize.php:717
+#: core/admin/customize/customize.php:733
 msgid "Content"
 msgstr ""
 
-#: core/admin/customize/customize.php:728
+#: core/admin/customize/customize.php:744
 msgid "Insert a size, for content font (For example, 14px) "
 msgstr ""
 
-#: core/admin/customize/customize.php:741
+#: core/admin/customize/customize.php:757
 msgid "Headlines"
 msgstr ""
 
-#: core/admin/customize/customize.php:751
+#: core/admin/customize/customize.php:767
 msgid "H1 headline"
 msgstr ""
 
-#: core/admin/customize/customize.php:752
+#: core/admin/customize/customize.php:768
 msgid "Insert a size, for for H1 elements (For example, 24px) "
 msgstr ""
 
-#: core/admin/customize/customize.php:762
+#: core/admin/customize/customize.php:778
 msgid "H2 headline"
 msgstr ""
 
-#: core/admin/customize/customize.php:763
+#: core/admin/customize/customize.php:779
 msgid "Insert a size, for for H2 elements (For example, 22px) "
 msgstr ""
 
-#: core/admin/customize/customize.php:773
+#: core/admin/customize/customize.php:789
 msgid "H3 headline"
 msgstr ""
 
-#: core/admin/customize/customize.php:774
+#: core/admin/customize/customize.php:790
 msgid "Insert a size, for for H3 elements (For example, 20px) "
 msgstr ""
 
-#: core/admin/customize/customize.php:784
+#: core/admin/customize/customize.php:800
 msgid "H4 headline"
 msgstr ""
 
-#: core/admin/customize/customize.php:785
+#: core/admin/customize/customize.php:801
 msgid "Insert a size, for for H4 elements (For example, 18px) "
 msgstr ""
 
-#: core/admin/customize/customize.php:795
+#: core/admin/customize/customize.php:811
 msgid "H5 headline"
 msgstr ""
 
-#: core/admin/customize/customize.php:796
+#: core/admin/customize/customize.php:812
 msgid "Insert a size, for for H5 elements (For example, 16px) "
 msgstr ""
 
-#: core/admin/customize/customize.php:806
+#: core/admin/customize/customize.php:822
 msgid "H6 headline"
 msgstr ""
 
-#: core/admin/customize/customize.php:807
+#: core/admin/customize/customize.php:823
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr ""
 
@@ -892,6 +905,10 @@ msgstr ""
 
 #: core/classes/customize.php:353
 msgid "Subscribe our newsletter"
+msgstr ""
+
+#: core/classes/customize.php:354
+msgid "Download our free WordPress themes"
 msgstr ""
 
 #: core/functions/widgets.php:7

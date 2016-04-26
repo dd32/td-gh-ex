@@ -351,6 +351,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                     <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php _e('Rate this Theme','suevafree');?>" target="_blank"><?php _e('Rate this Theme','suevafree');?></a></li>
                     <li><a class="button" href="<?php echo esc_url( 'https://www.facebook.com/WpInProgress' ); ?>" title="<?php _e('Like on Facebook','suevafree');?>" target="_blank"><?php _e('Like on Facebook','suevafree');?></a></li>
                     <li><a class="button" href="<?php echo esc_url( 'http://eepurl.com/SknoL' ); ?>" title="<?php _e('Subscribe our newsletter','suevafree');?>" target="_blank"><?php _e('Subscribe our newsletter','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/themes/author/alexvtn/' ); ?>" title="<?php _e('Download our free WordPress themes','suevafree');?>" target="_blank"><?php _e('Download our free WordPress themes','suevafree');?></a></li>
                 
                 </ul>
     
