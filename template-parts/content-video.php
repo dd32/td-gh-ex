@@ -1,7 +1,7 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class('bhumi_blog_full'); ?>>
 	<div class="post-content-wrap">
-	  <?php if( is_single() ){
-	  	 if(has_post_thumbnail()):
+	  	<?php if(is_single() || is_home()){
+	  	if(has_post_thumbnail()):
 					$img = array('class' => 'bhumi_img_responsive'); ?>
 					<div class="bhumi_blog_thumb_wrapper_showcase">
 						<div class="bhumi_blog-img">
@@ -18,23 +18,17 @@
 					<?php endif; ?>
 				</div>
 		<?php endif; }
-		elseif(is_search() || is_archive() ){
-				  $gallery = get_post_gallery_images();
-				   $post_thumbnail_id = get_post_thumbnail_id();
-    			   $attachment =  get_post($post_thumbnail_id);
-    			   ?>
-			        	<?php foreach ( $gallery as $key => $images ) { ?>
-			                <div class="post-gallery-item">
-			                    <a href="<?php the_permalink();?>" class="fulla">
-			                        <div class="gallery-item fulla" style="background-image: url('<?php echo esc_url( $images); ?>');" title="<?php echo  esc_attr( $attachment->post_title ); ?>" alt= "<?php echo esc_attr( $attachment->post_excerpt );?>">
-			                        </div>
-			                    </a>
-			                </div>
-			            <?php } ?>
-                 <?php
-			}
-			?>
-
+		elseif(is_archive() || is_search() ){
+			$post_content = trim(get_the_content());
+			$new_content =  preg_match_all("/\[[^\]]*\]/", $post_content, $matches);
+			// echo '<pre>',print_r($matches),'</pre>';
+			if( $new_content){
+                echo do_shortcode( $matches[0][0] );
+            }
+            else{
+            	echo bhumi_the_featured_video($post_content);
+            }
+		}?>
 		<div class="bhumi_full_blog_detail_padding">
 
 			<h2><?php if(!is_single()) {?><a href="<?php the_permalink(); ?>"><?php } ?><?php the_title(); ?></a></h2>
@@ -49,7 +43,7 @@
 
 				<div class="col-md-6 col-sm-3">
 					<?php if(get_the_category_list() != '') { ?>
-					<p class="bhumi_cats"><?php echo __("Category : ",'bhumi');
+					<p class="bhumi_cats"><?php esc_attr_e('Category : ','bhumi');
 					the_category(' , '); ?></p>
 					<?php } ?>
 				</div>
@@ -59,14 +53,13 @@
 			<?php if(is_search() ){
 				the_excerpt(); ?>
 
-				<a class="bhumi_blog_read_btn" href="<?php the_permalink(); ?>">Read More</a>
+				<a class="bhumi_blog_read_btn" href="<?php the_permalink(); ?>"><?php esc_attr_e('Read More','bhumi'); ?></a>
 				<?php
 			}
 			elseif(is_archive() ){
 				echo strip_shortcodes(wp_trim_words( get_the_content(), 40, '.....'));
 			}
-			else
-			{
+			else{
 				the_content( __( 'Read More' , 'bhumi' ) );
 			}
 			$defaults = array(

@@ -1,6 +1,7 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class('bhumi_blog_full'); ?>>
 	<div class="post-content-wrap">
-	  	<?php if(has_post_thumbnail()):
+	  	<?php if(is_home() || is_single() ){
+	  	if(has_post_thumbnail()):
 					$img = array('class' => 'bhumi_img_responsive'); ?>
 					<div class="bhumi_blog_thumb_wrapper_showcase">
 						<div class="bhumi_blog-img">
@@ -16,7 +17,7 @@
 						</div>
 					<?php endif; ?>
 				</div>
-		<?php endif; ?>
+		<?php endif; }?>
 		<div class="bhumi_full_blog_detail_padding">
 
 			<h2><?php if(!is_single()) {?><a href="<?php the_permalink(); ?>"><?php } ?><?php the_title(); ?></a></h2>
@@ -31,7 +32,7 @@
 
 				<div class="col-md-6 col-sm-3">
 					<?php if(get_the_category_list() != '') { ?>
-					<p class="bhumi_cats"><?php echo __("Category : ",'bhumi');
+					<p class="bhumi_cats"><?php esc_attr_e('Category : ','bhumi');
 					the_category(' , '); ?></p>
 					<?php } ?>
 				</div>
@@ -41,7 +42,7 @@
 			<?php if(is_search() ){
 				the_excerpt(); ?>
 
-				<a class="bhumi_blog_read_btn" href="<?php the_permalink(); ?>">Read More</a>
+				<a class="bhumi_blog_read_btn" href="<?php the_permalink(); ?>"><?php esc_attr_e('Read More','bhumi' );?></a>
 				<?php
 			}
 			elseif(is_archive() ){

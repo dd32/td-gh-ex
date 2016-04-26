@@ -24,7 +24,7 @@
 				if ( false === $format ) {
 					$format = 'standard';
 				}
-				get_template_part('content', get_post_format() ); ?>
+				get_template_part('template-parts/content', get_post_format() ); ?>
 				<?php endwhile;
 				bhumi_navigation();
 			else :

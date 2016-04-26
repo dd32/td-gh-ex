@@ -31,25 +31,23 @@
 
 				<div class="col-md-6 col-sm-3">
 					<?php if(get_the_category_list() != '') { ?>
-					<p class="bhumi_cats"><?php echo __("Category : ",'bhumi');
+					<p class="bhumi_cats"><?php esc_attr_e('Category : ','bhumi');
 					the_category(' , '); ?></p>
 					<?php } ?>
 				</div>
 
 			</div>
 
-			<?php if(is_search() ){
+			<?php if( is_search() ){
 				the_excerpt(); ?>
 
-				<a class="bhumi_blog_read_btn" href="<?php the_permalink(); ?>">Read More</a>
+				<a class="bhumi_blog_read_btn" href="<?php the_permalink(); ?>"><?php esc_attr_e('Read More','bhumi' );?></a>
 				<?php
-			}
-			elseif(is_archive() ){
-				echo strip_shortcodes(wp_trim_words( get_the_content(), 40, '.....'));
 			}
 			else{
 				the_content( __( 'Read More' , 'bhumi' ) );
 			}
+
 			$defaults = array(
 	              'before'           => '<div class="bhumi_blog_pagination"><div class="bhumi_blog_pagi">',
 	              'after'            => '</div></div>',

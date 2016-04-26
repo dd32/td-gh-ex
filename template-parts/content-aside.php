@@ -31,7 +31,7 @@
 
 				<div class="col-md-6 col-sm-3">
 					<?php if(get_the_category_list() != '') { ?>
-					<p class="bhumi_cats"><?php echo __("Category : ",'bhumi');
+					<p class="bhumi_cats"><?php esc_attr_e('Category : ','bhumi');
 					the_category(' , '); ?></p>
 					<?php } ?>
 				</div>
@@ -41,7 +41,7 @@
 			<?php if(is_search() ){
 				the_excerpt(); ?>
 
-				<a class="bhumi_blog_read_btn" href="<?php the_permalink(); ?>">Read More</a>
+				<a class="bhumi_blog_read_btn" href="<?php the_permalink(); ?>"><?php esc_attr_e('Read More','bhumi') ?></a>
 				<?php
 			}
 			elseif(is_archive() ){

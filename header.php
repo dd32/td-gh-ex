@@ -8,14 +8,9 @@
     <!--[if gt IE 8]><!-->
 <html <?php language_attributes(); ?>><!--<![endif]-->
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="<?php bloginfo('charset'); ?>" />
 	<?php $cpm_theme_options = bhumi_get_options(); ?>
-	<?php if($cpm_theme_options['upload_image_favicon']!=''){ ?>
-	<link rel="shortcut icon" href="<?php  echo esc_url($cpm_theme_options['upload_image_favicon']); ?>" />
-	<?php } ?>
-	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

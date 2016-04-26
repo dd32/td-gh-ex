@@ -6,12 +6,12 @@
 			<div class="col-md-8">
 
 				<?php if ( have_posts()):
-					while ( have_posts() ): the_post(); 
+					while ( have_posts() ): the_post();
 						$format = get_post_format();
 						if ( false === $format ) {
 							$format = 'standard';
 						}
-					    get_template_part('content',$format); 
+					    get_template_part('template-parts/content',$format);
 					 endwhile;
 				endif; ?>
 

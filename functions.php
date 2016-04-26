@@ -1,16 +1,18 @@
 <?php
-/** Theme Name	: bhumi
-* Theme Core Functions and Codes
+/** Theme Name	: Bhumi Lite
+* 	Theme Core Functions and Codes
 */
 	/**Includes required resources here**/
 	define('CPM_TEMPLATE_DIR_URI', get_template_directory_uri());
 	define('CPM_TEMPLATE_DIR', get_template_directory());
 	define('CPM_TEMPLATE_DIR_CORE' , CPM_TEMPLATE_DIR . '/core');
+	define( 'CPM_TEMPLATE_DIR_ASSETS' , CPM_TEMPLATE_DIR . '/assets' );
 	require( CPM_TEMPLATE_DIR_CORE . '/menu/default_menu_walker.php' );
 	require( CPM_TEMPLATE_DIR_CORE . '/menu/bhumi_nav_walker.php' );
 	require( CPM_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here
 	require( CPM_TEMPLATE_DIR_CORE . '/comment-function.php' );
-	require(dirname(__FILE__).'/customizer.php');
+	require( CPM_TEMPLATE_DIR_ASSETS . '/inc/customizer.php');
+	require( CPM_TEMPLATE_DIR_ASSETS . '/inc/customizer-controls.php' );
 
 	//Sane Defaults
 	function bhumi_default_settings() {
@@ -27,9 +29,8 @@
 				'upload_image_logo'=>'',
 				'height'=>'55',
 				'width'=>'150',
-				'_frontpage' => '1',
+				'_frontpage' => '',
 				'blog_count'=>'3',
-				'upload_image_favicon'=>'',
 				'custom_css'=>'',
 				'slide_image_1' => $ImageUrl,
 				'slide_title_1' => __('Slide Title', 'bhumi' ),
@@ -55,19 +56,19 @@
 				//Social media links
 				'header_social_media_in_enabled'=>'1',
 				'footer_section_social_media_enbled'=>'1',
-				'twitter_link' =>"#",
-				'fb_link' =>"#",
-				'linkedin_link' =>"#",
-				'youtube_link' =>"#",
-				'instagram' =>"#",
-				'gplus' =>"#",
+				'twitter_link' =>"",
+				'fb_link' =>"",
+				'linkedin_link' =>"",
+				'youtube_link' =>"",
+				'instagram' =>"",
+				'gplus' =>"",
 
-				'email_id' => 'example@mymail.com',
-				'phone_no' => '0159753586',
-				'footer_customizations' => __(' &#169; 2015 bhumi Theme', 'bhumi' ),
+				'email_id' => '',
+				'phone_no' => '',
+				'footer_customizations' => __(' &#169; 2015 Code Themes', 'bhumi' ),
 				'developed_by_text' => __('Theme Developed By', 'bhumi' ),
-				'developed_by_bhumi_text' => __('bhumi Themes', 'bhumi' ),
-				'developed_by_link' => 'http://bhumi.com/',
+				'developed_by_bhumi_text' => __('Code Themes', 'bhumi' ),
+				'developed_by_link' => 'https://codethemes.co/',
 
 				'home_service_heading' => __('Our Services', 'bhumi' ),
 				'service_1_title'=>__("Gears",'bhumi' ),
@@ -112,7 +113,7 @@
 			);
 			return apply_filters( 'bhumi_options', $cpm_theme_options );
     }
-     
+
 	 /*
 	 * Enable support for Post Formats.
 	 * See http://codex.wordpress.org/Post_Formats
@@ -131,8 +132,8 @@
 	}
 	// require( CPM_TEMPLATE_DIR_CORE . '/theme-options/option-panel.php' ); // for Options Panel
 
-	
-	
+
+
 	/*After Theme Setup*/
 	add_action( 'after_setup_theme', 'bhumi_head_setup' );
 	function bhumi_head_setup()
@@ -148,7 +149,7 @@
 		add_image_size('blog_2c_thumb',570,350,true);
 		add_theme_support( 'title-tag' );
 		// Load text domain for translation-ready
-		load_theme_textdomain( 'bhumi', CPM_TEMPLATE_DIR_CORE . '/lang' );
+		load_theme_textdomain( 'bhumi' );
 
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		// This theme uses wp_nav_menu() in one location.
@@ -157,7 +158,6 @@
 		$args = array('default-color' => '000000',);
 		add_theme_support( 'custom-background', $args);
 		add_theme_support( 'automatic-feed-links');
-		require( CPM_TEMPLATE_DIR . '/options-reset.php'); //Reset Theme Options Here
 	}
 
 

@@ -1,6 +1,6 @@
-=== Bhumi - WordPress Theme by CodePixelz Media ===
-Contributors: Code Pixelz Market
-Version: 1.0.0
+=== Bhumi - WordPress Theme by Code Themes ===
+Contributors: Code Themes
+Version: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
@@ -24,7 +24,7 @@ For more information about bhumi please go to http://demo.codepixelz.market/bhum
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in bhumi in the search form and press the 'Enter' key on your keyboard or download the zip file of the theme and upload it.
 3. Click on the 'Activate' button to use your new theme right away.
-4. Go to http://demo.codepixelz.market/bhumi-lite/ for a guide on how to customize this theme.
+4. Go to https://codethemes.co/bhumi-lite-documentation/ for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Copyrights Attribution ==
