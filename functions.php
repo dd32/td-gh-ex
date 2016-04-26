@@ -4,6 +4,43 @@
 /* SIDEBAR OVERRIDE */
 /*-----------------------------------------------------------------------------------*/  
 
+if (!function_exists('sneaklite_customize_register')) {
+
+	function sneaklite_customize_register($wp_customize) {
+		
+		$wp_customize->remove_control( 'suevafree_body_layout' );
+
+	}
+	
+	add_action('customize_register','sneaklite_customize_register', 11);
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Body class */
+/*-----------------------------------------------------------------------------------*/   
+
+if (!function_exists('sneaklite_body_class')) {
+	
+	function sneaklite_body_class($classes) {
+	
+		$unset_key = array_search('minimal_layout', $classes);
+		if ( false !== $unset_key ) {
+			unset( $classes[$unset_key] );
+		}
+	
+		return $classes;
+		
+	}
+	
+	add_filter('body_class', 'sneaklite_body_class', 11);
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* SIDEBAR OVERRIDE */
+/*-----------------------------------------------------------------------------------*/  
+
 if (!function_exists('sneaklite_actions_override')) {
 
 	function sneaklite_actions_override() {
