@@ -1,6 +1,6 @@
 === Bhumi - WordPress Theme by Code Themes ===
 Contributors: Code Themes
-Version: 1.0.1
+Version: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
@@ -17,7 +17,7 @@ Bhumi theme is clean, blog-focused, and designed for Corporate Business houses, 
 * Post Formats
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
-For more information about bhumi please go to http://demo.codepixelz.market/bhumi-lite/
+For more information about bhumi please go to https://codethemes.co/product/bhumi-lite/
 
 == Installation ==
 
@@ -111,3 +111,12 @@ https://unsplash.com/photos/S-PyX-IVPfA
 
 Other Images used inside theme Bhumi :
 https://unsplash.com/photos/lGmHxHcuvbw
+
+== ChangeLog ==
+
+= 1.0.1 =
+Fixes as per review 
+Added Support links to the customizer
+
+= 1.0.2 =
+Changed Description and demo link.
