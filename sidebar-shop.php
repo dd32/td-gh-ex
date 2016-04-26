@@ -5,7 +5,7 @@
  * @package AccessPress Mag
  */
 
-if ( ! is_active_sidebar( 'accesspress-mag-sidebar-right' ) ) {
+if ( ! is_active_sidebar( 'shop' ) ) {
 	return;
 }
 ?>

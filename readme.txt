@@ -73,6 +73,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.3.5
+ * Fixed sidebar widget bug
+ 
 Version 2.3.4
  * Fixed homepage widget bugs
  * Compatible with WordPress version 4.5
