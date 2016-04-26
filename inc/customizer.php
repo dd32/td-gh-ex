@@ -74,7 +74,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 300,
             'step'  => 5,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );    
 	//Favicon Upload
@@ -388,7 +387,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 200,
             'step'  => 5,
-            'style' => 'padding: 15px;',
         ),
     ) );       
 	//___Welcome area___//
@@ -455,7 +453,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 500,
             'step'  => 5,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );        
    //Header description
@@ -670,7 +667,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 5,
             'max'   => 100,
             'step'  => 5,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //Sticky menu height
@@ -691,7 +687,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 5,
             'max'   => 100,
             'step'  => 5,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //Unsticky menu
@@ -2369,7 +2364,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //H2 size
@@ -2390,7 +2384,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //H3 size
@@ -2411,7 +2404,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //h4 size
@@ -2432,7 +2424,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //h5 size
@@ -2453,7 +2444,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //h6 size
@@ -2474,7 +2464,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //body
@@ -2495,7 +2484,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 24,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //Home page widget titles size
@@ -2505,7 +2493,7 @@ function moesia_customize_register( $wp_customize ) {
             'sanitize_callback' => 'absint',
             'default'           => '56',
             'transport'         => 'postMessage'
-        )       
+        )      
     );
     $wp_customize->add_control( 'widget_title_size', array(
         'type'        => 'number',
@@ -2516,8 +2504,7 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 90,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
-        ),
+        )
     ) );
     //Menu links font size
     $wp_customize->add_setting(
@@ -2537,7 +2524,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 30,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );	
     //___Pro___//
@@ -2645,7 +2631,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 200,
             'max'   => 1440,
             'step'  => 5,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //Header max height 1025
@@ -2666,7 +2651,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 200,
             'max'   => 1440,
             'step'  => 5,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //Welcome info top offset 1199
@@ -2687,7 +2671,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 0,
             'max'   => 300,
             'step'  => 5,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
     //Welcome info top offset 991
@@ -2708,7 +2691,6 @@ function moesia_customize_register( $wp_customize ) {
             'min'   => 0,
             'max'   => 300,
             'step'  => 5,
-            'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );           
 }

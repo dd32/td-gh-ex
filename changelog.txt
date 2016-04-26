@@ -1,5 +1,11 @@
 Changelog
 
+1.38 - 26 April 2016
+Fixed numeric inputs styling in Customizer.
+
+1.37 - no info
+1.36 - no info
+
 26 August 2015 - 1.35
 --------------------------------------
 - changed PHP 4 constructors in widgets.
