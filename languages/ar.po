@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-24 13:43+0545\n"
+"POT-Creation-Date: 2016-04-26 10:37+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: www.ed3s.com <master@ed3s.com>\n"
@@ -890,7 +890,7 @@ msgid "Web Clip Icon"
 msgstr ""
 
 #: ../inc/customizer/customizer.php:704
-msgid "Header Image"
+msgid "Header Image Location"
 msgstr ""
 
 #: ../inc/customizer/customizer.php:711

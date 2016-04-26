@@ -1263,3 +1263,6 @@ require get_template_directory() . '/inc/customizer/customizer.php' ;
 
 // Load up Widgets and Sidebars
 require get_template_directory() . '/inc/widgets.php';
+
+// Load Catch Box Sliders
+require get_template_directory() . '/inc/catchbox-sliders.php';

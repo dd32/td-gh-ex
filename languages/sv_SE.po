@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-24 13:45+0545\n"
-"PO-Revision-Date: 2016-04-24 13:45+0545\n"
+"POT-Creation-Date: 2016-04-26 10:38+0545\n"
+"PO-Revision-Date: 2016-04-26 10:38+0545\n"
 "Last-Translator: Johnny Eriksson <info@johnnysblogg.se>\n"
 "Language-Team: Johnny Eriksson <info@johnnysblogg.se>\n"
 "Language: sv\n"
@@ -919,7 +919,7 @@ msgid "Web Clip Icon"
 msgstr "Web Clip Icon"
 
 #: ../inc/customizer/customizer.php:704
-msgid "Header Image"
+msgid "Header Image Location"
 msgstr ""
 
 #: ../inc/customizer/customizer.php:711
