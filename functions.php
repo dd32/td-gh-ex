@@ -1,32 +1,28 @@
 <?php
 /* 	Design Theme's Functions
-	Copyright: 2012-2014, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Design 1.0
 */
    
   
-  	
-
-// Load the D5 Framework Optios Page
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once get_template_directory() . '/inc/options-framework.php';
-
-
-// 	Tell WordPress for wp_title in order to modify document title content
-	function design_filter_wp_title( $title ) {
-    $site_name = get_bloginfo( 'name' );
-    $filtered_title = $site_name . $title;
-    return $filtered_title;
-	}
-	add_filter( 'wp_title', 'design_filter_wp_title' );
+ 	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
 	
-function design_setup() {	
+	function design_about_page() { 
+	add_theme_page( 'Design Options', 'Design Options', 'edit_theme_options', 'theme-about', 'design_theme_about' ); 
+	}
+	add_action('admin_menu', 'design_about_page');
+	function design_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); } 	
+
+
+	function design_setup() {	
 // 	Tell WordPress for the Feed Link
 	add_editor_style();
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( "title-tag" );
 	
-	register_nav_menus( array( 'main-menu' => "Main Menu" ) );
+	register_nav_menus( array( 'main-menu' => __('Main Menu', 'd5-design') ) );
+	load_theme_textdomain( 'd5-design', get_template_directory() . '/languages' );
 //	Set the content width based on the theme's design and stylesheet.
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 584;
@@ -74,11 +70,16 @@ function design_setup() {
 	wp_enqueue_style('design-gfonts1');
 	}
 	add_action( 'wp_enqueue_scripts', 'design_enqueue_scripts' );
+	
+// 	Functions for adding script to Admin Area
+	function design_admin_style() { wp_enqueue_style( 'design_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
+	add_action( 'admin_enqueue_scripts', 'design_admin_style' );
+
 		
 // 	Functions for adding some custom code within the head tag of site
 	function design_custom_code() {
-	if ( esc_url(of_get_option ( 'feat-image' , get_template_directory_uri() . '/images/slide-image/thumb-back.jpg')) != '' ) : 
-	echo '<style>#container .thumb { background: url("' . esc_url(of_get_option ( 'feat-image' , get_template_directory_uri() . '/images/thumb-back.jpg')) . '") no-repeat scroll 0 0 #CCCCCC; }</style>' ;
+	if ( esc_url(design_get_option ( 'feat-image' , get_template_directory_uri() . '/images/slide-image/thumb-back.jpg')) != '' ) : 
+	echo '<style>#container .thumb { background: url("' . esc_url(design_get_option ( 'feat-image' , get_template_directory_uri() . '/images/thumb-back.jpg')) . '") no-repeat scroll 0 0 #CCCCCC; }</style>' ;
 	endif;
 	}	
 	add_action('wp_head', 'design_custom_code');
@@ -111,14 +112,14 @@ function design_setup() {
 	add_filter( 'wp_page_menu_args', 'design_page_menu_args' );
 	
 	function design_credit() {
-		echo '&nbsp;| Design Theme by: <a href="http://d5creation.com" target="_blank"><img  src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
+		echo '&nbsp;| Design Theme by: <a href="'. esc_url('http://d5creation.com').'" target="_blank"><img  src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
 	}
 
 //	Registers the Widgets and Sidebars for the site
 	function design_widgets_init() {
 
 	register_sidebar( array(
-		'name' => 'Primary Sidebar', 
+		'name' => __('Primary Sidebar','d5-design'), 
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -126,20 +127,19 @@ function design_setup() {
 		'after_title' => '</h3>',
 	) );
 
+	 
 	register_sidebar( array(
-		'name' => 'Footer Area One', 
+		'name' => __('Footer Area One', 'd5-design'),
 		'id' => 'sidebar-2',
-		'description' => __( 'An optional widget area for your site footer', 'design' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-
+	    
 	register_sidebar( array(
-		'name' => 'Footer Area Two', 
+		'name' => __('Footer Area Two', 'd5-design'),
 		'id' => 'sidebar-3',
-		'description' => 'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -147,24 +147,25 @@ function design_setup() {
 	) );
 
 	register_sidebar( array(
-		'name' => 'Footer Area Three', 
+		'name' => __('Footer Area Three','d5-design'),
 		'id' => 'sidebar-4',
-		'description' => __( 'An optional widget area for your site footer', 'design' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 	
+	
 	register_sidebar( array(
-		'name' =>  'Footer Area Four', 
+		'name' =>  __('Footer Area Four', 'd5-design'),
 		'id' => 'sidebar-5',
-		'description' => __( 'An optional widget area for your site footer', 'design' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+	
+	
 	}
 	add_action( 'widgets_init', 'design_widgets_init' );
 
@@ -177,6 +178,6 @@ function design_setup() {
         }
     }
 	
-	function design_breadcrumbs() { }
+	function design_breadcrumbs() {  }
 //	Remove WordPress Custom Header Support for the theme design
 //	remove_theme_support('custom-header');

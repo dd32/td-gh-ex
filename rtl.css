@@ -7,17 +7,17 @@ Author URI: http://d5creation.com/
 
 Description: Design is WordPress Latest Version Ready CSS3 Powered super elegant and Professional Responsive Theme. Design is for Smart Companies and Persons who love to innovate. Customizable Background and Them Options will give the WordPress Driven Site an attractive look. Right and Footer Sidebar will be usable for showing the widgets. Full Wide page can be used for showing showcase or other pages. Pro version of Design Theme has more than 100 Options which will give you the opportunity to customize almost all the features of this Theme with extra functionality. A demo of Design Theme can be found here: http://demo.d5creation.com/themes/?theme=Design
 
-Version: 1.9.1
+Version: 2.0
 
 Tags: gray, light, black, orange, blue, white, two-columns, right-sidebar, fixed-layout, fluid-layout, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, full-width-template, theme-options 
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-D5 Design WordPress Theme, Copyright 2012-2014: D5 Creation (www.d5creation.com)
+D5 Design WordPress Theme, Copyright 2012-2016: D5 Creation (www.d5creation.com)
 D5 Design is distributed under the terms of the GNU GPL
 
-Text Domain: design
+Text Domain: d5-design
 
 */
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
@@ -298,6 +298,13 @@ h2.post-title-color {
 
 /*..... Others 
 -------------------------------------------------- */
+
+/* Text meant only for screen readers. */
+
+.screen-reader-text:focus {
+	right: 5px;
+	left: auto;
+}
 
 /* =Media Print
 -------------------------------------------------------------- */

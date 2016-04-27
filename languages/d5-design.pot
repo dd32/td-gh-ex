@@ -1,0 +1,347 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: selfie\n"
+"POT-Creation-Date: 2016-04-27 15:56+0600\n"
+"PO-Revision-Date: 2015-09-26 00:35+0600\n"
+"Last-Translator: support@d5creation.com\n"
+"Language-Team: D5 Creation <support@d5creation.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:14 ../archive.php:64 ../index.php:31 ../search.php:43
+msgid "Not Found"
+msgstr ""
+
+#: ../404.php:15 ../archive.php:65 ../index.php:32 ../search.php:44
+msgid ""
+"Apologies, but the page you requested could not be found. Perhaps searching "
+"will help"
+msgstr ""
+
+#: ../404.php:18 ../archive.php:68 ../search.php:47
+msgid "Or Return to the Home Page"
+msgstr ""
+
+#: ../404.php:20 ../archive.php:70 ../index.php:33 ../search.php:49
+msgid "You can also Visit the Following. These are the Featured Contents"
+msgstr ""
+
+#: ../archive.php:17
+msgid "now browsing by category"
+msgstr ""
+
+#: ../archive.php:23
+msgid "now browsing by tag"
+msgstr ""
+
+#: ../archive.php:28
+msgid "now browsing by day"
+msgstr ""
+
+#: ../archive.php:31
+msgid "now browsing by month"
+msgstr ""
+
+#: ../archive.php:34
+msgid "now browsing by year"
+msgstr ""
+
+#: ../archive.php:37
+msgid "now browsing by author"
+msgstr ""
+
+#: ../archive.php:40
+msgid "now browsing the general archives"
+msgstr ""
+
+#: ../archive.php:48 ../front-page-blog.php:16 ../index.php:16 ../search.php:26
+#: ../single.php:20
+msgid "By:"
+msgstr ""
+
+#: ../archive.php:48 ../front-page-blog.php:16 ../index.php:16 ../search.php:26
+#: ../single.php:20
+msgid "No Comments &#187;"
+msgstr ""
+
+#: ../archive.php:48 ../front-page-blog.php:16 ../index.php:16 ../search.php:26
+#: ../single.php:20
+msgid "1 Comment &#187;"
+msgstr ""
+
+#: ../archive.php:48 ../front-page-blog.php:16 ../index.php:16 ../search.php:26
+#: ../single.php:20
+msgid "% Comments &#187;"
+msgstr ""
+
+#: ../archive.php:48 ../front-page-blog.php:16 ../index.php:16 ../search.php:26
+#: ../single.php:20
+msgid "Posted in"
+msgstr ""
+
+#: ../archive.php:48 ../front-page-blog.php:16 ../index.php:16 ../search.php:26
+#: ../single.php:20
+msgid "Tags: "
+msgstr ""
+
+#: ../archive.php:48 ../front-page-blog.php:16 ../index.php:16 ../search.php:26
+#: ../single.php:20
+msgid "Edit This Post"
+msgstr ""
+
+#: ../archive.php:58 ../front-page-blog.php:27 ../index.php:25 ../search.php:37
+msgid "&laquo; Previous Entries"
+msgstr ""
+
+#: ../archive.php:59 ../front-page-blog.php:28 ../index.php:26 ../search.php:38
+msgid "Next Entries &raquo;"
+msgstr ""
+
+#: ../archive.php:68 ../search.php:47
+msgid "Browse the Home Page"
+msgstr ""
+
+#: ../comments.php:15
+msgid "No Comments"
+msgstr ""
+
+#: ../comments.php:15
+msgid "One Comment"
+msgstr ""
+
+#: ../comments.php:15
+msgid "% Comments"
+msgstr ""
+
+#: ../comments.php:30
+msgid "Comments are Closed"
+msgstr ""
+
+#: ../front-page-blog.php:10
+msgid "Show Posts"
+msgstr ""
+
+#: ../fullwidth.php:22 ../page.php:26
+msgid "Edit This Entry"
+msgstr ""
+
+#: ../functions.php:24
+msgid "Main Menu"
+msgstr ""
+
+#: ../functions.php:122
+msgid "Primary Sidebar"
+msgstr ""
+
+#: ../functions.php:132
+msgid "Footer Area One"
+msgstr ""
+
+#: ../functions.php:141
+msgid "Footer Area Two"
+msgstr ""
+
+#: ../functions.php:150
+msgid "Footer Area Three"
+msgstr ""
+
+#: ../functions.php:160
+msgid "Footer Area Four"
+msgstr ""
+
+#: ../inc/customize.php:9
+msgid "DESIGN OPTIONS"
+msgstr ""
+
+#: ../inc/customize.php:34
+msgid "Banner Image"
+msgstr ""
+
+#: ../inc/customize.php:37
+msgid ""
+"Upload an image for the Front Page Banner.950px X 300px image is recommended"
+msgstr ""
+
+#: ../inc/customize.php:45
+msgid ""
+"WordPress is web software you can use to create a beautiful website or blog"
+msgstr ""
+
+#: ../inc/customize.php:53
+msgid "Front Page Heading"
+msgstr ""
+
+#: ../inc/customize.php:69
+msgid "Show the Footer Sidebar"
+msgstr ""
+
+#: ../inc/customize.php:72
+msgid ""
+"Uncheck this if you do not want to show the footer sidebar (Widgets) "
+"automatically"
+msgstr ""
+
+#: ../inc/customize.php:90
+msgid "Featured Image"
+msgstr ""
+
+#: ../inc/customize.php:93
+msgid ""
+"Upload an image for the Featured Box. 270px X 200px image is recommended"
+msgstr ""
+
+#: ../inc/customize.php:107 ../inc/customize.php:174
+msgid "Featured Link"
+msgstr ""
+
+#: ../inc/customize.php:120
+msgid "Design a Smart Theme by"
+msgstr ""
+
+#: ../inc/customize.php:128
+msgid "Featured Title First Part, Black Color"
+msgstr ""
+
+#: ../inc/customize.php:135
+msgid "D5 Creation"
+msgstr ""
+
+#: ../inc/customize.php:143
+msgid "Featured Title Second Part, Orange Color"
+msgstr ""
+
+#: ../inc/customize.php:150
+msgid ""
+"The Customizable Background and other options of Design Theme will give the "
+"WordPress Driven Site an attractive look.  Design Theme is super elegant and "
+"Professional Responsive which will create the business widely expressed"
+msgstr ""
+
+#: ../inc/customize.php:158
+msgid "Featured Description"
+msgstr ""
+
+#: ../inc/customize.php:183
+msgid ""
+"All the developers of D5 Creation have come from the disadvantaged part or "
+"group of the society. All have established themselves after a long and hard "
+"struggle in their life ----- D5 Creation Team"
+msgstr ""
+
+#: ../inc/customize.php:191
+msgid "Quote Text"
+msgstr ""
+
+#: ../inc/customize.php:209
+msgid "Do not show any Posts or Page in the Front Page"
+msgstr ""
+
+#: ../inc/customize.php:212
+msgid ""
+"Check the Box if you do not want to show any Posts or Page in the Front Page"
+msgstr ""
+
+#: ../inc/customize.php:226
+msgid "Featured Image Background with Posts/Pages"
+msgstr ""
+
+#: ../inc/customize.php:229
+msgid ""
+"Upload an image for the Featured Image Background.600px X 200px image is "
+"recommended"
+msgstr ""
+
+#: ../page.php:21 ../single.php:27
+msgid "Pages:"
+msgstr ""
+
+#: ../page.php:29
+msgid "Sorry, no pages matched your criteria"
+msgstr ""
+
+#: ../search.php:13
+msgid "Search Results"
+msgstr ""
+
+#: ../search.php:20
+msgid "Search Term:"
+msgstr ""
+
+#: ../search.php:21
+msgid "Number of Results:"
+msgstr ""
+
+#: ../sidebar-footer.php:24
+msgid "Categories"
+msgstr ""
+
+#: ../sidebar-footer.php:35
+msgid "Sample Text"
+msgstr ""
+
+#: ../sidebar-footer.php:35
+msgid ""
+"The Customizable Background and other options of Design Theme will give the "
+"WordPress Driven Site an attractive look. You can change these texts or "
+"insert new itms from Appearence > Widgets. You will also find Theme Options.."
+msgstr ""
+
+#: ../sidebar-footer.php:43
+msgid "List Items"
+msgstr ""
+
+#: ../sidebar-footer.php:45
+msgid "This is a Test List 01"
+msgstr ""
+
+#: ../sidebar-footer.php:46
+msgid "This is a Test List 02"
+msgstr ""
+
+#: ../sidebar-footer.php:47
+msgid "This is a Test List 03"
+msgstr ""
+
+#: ../sidebar-footer.php:48
+msgid "This is a Test List 04"
+msgstr ""
+
+#: ../sidebar-footer.php:49
+msgid "This is a Test List 05"
+msgstr ""
+
+#: ../sidebar-footer.php:63
+msgid "Some Link"
+msgstr ""
+
+#: ../sidebar-footer.php:64
+msgid "Test Link"
+msgstr ""
+
+#: ../sidebar-footer.php:65
+msgid "D5 Design Theme"
+msgstr ""
+
+#: ../sidebar.php:12
+msgid "Archives"
+msgstr ""
+
+#: ../sidebar.php:19
+msgid "Meta"
+msgstr ""
+
+#: ../single.php:31
+msgid "&laquo; Previous Image"
+msgstr ""
+
+#: ../single.php:32
+msgid "Next Image &raquo;"
+msgstr ""
