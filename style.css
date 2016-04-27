@@ -4,7 +4,7 @@ Theme URI: http://themefreesia.com/themes/arise
 Author: Theme Freesia
 Author URI: http://themefreesia.com
 Description: Arise is a Responsive Multi-Purpose Business WordPress Theme, Designed and Developed by Theme Freesia. This theme supports popular plugins like Breadcrumb NavXT, WP-PageNavi, Contact Form 7, Jetpack by WordPress.com, Polylang, Newsletter, bbPress and wooCommerce. It is also translation ready and currently translated in French language. It is also easily customizable with lots of theme options using Customizer. It consists contact us template, gallery template and many widgets and sidebar. Get free support at http://themefreesia.com/support-forum/ and View demo site at http://demo.themefreesia.com/arise
-Version: 2.0.5
+Version: 2.0.6
 Text Domain: arise
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -150,18 +150,6 @@ object {
 ::-moz-selection {
 	background: #2b9b9b;
 	color: #fff;
-}
-
-/* ----- Genericons ----- */
-@font-face {
-	font-family: 'Genericons';
-	font-weight: normal;
-	font-style: normal;
-	src: url('genericons/Genericons.eot');
-	src: url('genericons/Genericons.eot?') format('embedded-opentype'),
-		  url('genericons/Genericons.woff') format('woff'),
-		  url('genericons/Genericons.ttf') format('truetype'),
-		  url('genericons/Genericons.svg#Genericons') format('svg');
 }
 
 /* 2.0 Typography
@@ -3479,6 +3467,12 @@ ul.next-prev li.active, ul.next-prev li:hover {
 	padding: 12px 30px;
 	margin: 10px 10px 0;
 }
+.main-slider .show-display {
+	display: block;
+}
+.main-slider .hide-display {
+	display: none;
+}
 
 /* ----- Slider Buttons ----- */
 a.slider-prev, a.slider-next {
@@ -3719,7 +3713,9 @@ div.bbp-template-notice, div.indicator-hint {
 .woocommerce input.button {
 	background-color: #2b9b9b;
 	color: #fff;
-	border-radius: 0px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+	border-radius: 3px;
 	font-size: 14px;
 	font-weight: 400;
 		-ms-transition: all 0.3s ease 0s;
@@ -3751,11 +3747,11 @@ div.bbp-template-notice, div.indicator-hint {
 	height: 34px;
 }
 .woocommerce span.onsale {
-	background-color: #2b9b9b;
+	background-color: #2eb851;
 	min-height: 4em;
 	min-width: 4em;
 	padding: 0.402em;
-	font-size: 17px;
+	font-size: 14px;
 	left: -20px;
 	top: -20px;
 	font-weight: 500;
@@ -3763,12 +3759,18 @@ div.bbp-template-notice, div.indicator-hint {
 .woocommerce ul.products li.product .onsale {
 	margin: -1em -1em 0 0;
 }
-.woocommerce div.product p.price, 
-.woocommerce div.product span.price {
-	color: #2b9b9b;
+.woocommerce ul.products li.product h3 {
+	font-size: 1.2em;
 }
 .woocommerce ul.products li.product .price {
-	color: #2b9b9b;
+	font-size: 1em;
+}
+.woocommerce div.product p.price, 
+.woocommerce div.product span.price {
+	color: #747474;
+}
+.woocommerce ul.products li.product .price {
+	color: #747474;
 }
 .woocommerce div.product .woocommerce-tabs .panel {
 	padding-top: 20px;
@@ -3781,6 +3783,9 @@ div.bbp-template-notice, div.indicator-hint {
 .woocommerce-page table.cart td.actions .input-text {
 	width: auto;
 }
+.woocommerce .woocommerce-message:before {
+	color: #2b9b9b;
+}
 .woocommerce-cart table.cart td.actions .coupon .input-text {
 	padding: 10px 6px 12px;
 }
@@ -3792,10 +3797,14 @@ div.bbp-template-notice, div.indicator-hint {
 	border-top: 0px;
 }
 .woocommerce table.shop_table {
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
 	border-radius: 0px;
 }
 .woocommerce #reviews #comments ol.commentlist li .comment-text,
 .woocommerce div.product .woocommerce-tabs ul.tabs li {
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
 	border-radius: 0px;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li:after, 
@@ -3809,4 +3818,29 @@ div.bbp-template-notice, div.indicator-hint {
 .woocommerce .woocommerce-ordering, 
 .woocommerce .woocommerce-result-count {
 	margin: 0 0 3em;
+}
+.woocommerce ul.products li.product a img {
+	border: 1px solid #ddd;
+	margin: 0px;
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+	background-color: #2eb851;
+}
+.woocommerce .star-rating {
+	color: #f9b91e;
+}
+.woocommerce .woocommerce-product-search input.search-field {
+	width: calc(100% - 95px);
+}
+.woocommerce .woocommerce-product-search input[type="submit"] {
+	padding: 11px 20px 12px;
+	border-radius: 0px;
+}
+.woocommerce .tagcloud a {
+	border: 1px solid #ddd;
+	padding: 5px 10px;
+}
+.woocommerce-review-link {
+	color: #747474;
 }

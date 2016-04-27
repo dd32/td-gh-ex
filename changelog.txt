@@ -1,4 +1,10 @@
 == CHANGE LOG ==
+= 2.0.6 =
+	- Fix - add_editor_style path issue fixed
+	- Fix - CSS added for slider issues
+	- Tweak - Slider version changed
+	- Update - WooCommerce CSS Updated
+
 = 2.0.5 =
 	- Fix - Excerpt more function added which was previously removed
 

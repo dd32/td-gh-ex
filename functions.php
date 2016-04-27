@@ -76,7 +76,7 @@ function arise_setup() {
 		'default-image' => '',
 	) ) );
 
-	add_editor_style( array( 'css/editor-style.css', 'font/genericons.css', '//fonts.googleapis.com/css?family=Roboto:400,300,500,700' ) );
+	add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', '//fonts.googleapis.com/css?family=Roboto:400,300,500,700' ) );
 
 	/**
 	* Making the theme Woocommrece compatible
