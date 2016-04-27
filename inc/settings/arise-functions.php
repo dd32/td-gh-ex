@@ -179,7 +179,7 @@ function arise_page_sliders() {
 						$i++;
 						$title_attribute       	 	 = apply_filters('the_title', get_the_title($post->ID));
 						$excerpt               	 	 = get_the_excerpt();
-						if (1 == $i) {$classes   	 = "slides show-display";} else { $classes = "slides displaynone";}
+						if (1 == $i) {$classes   	 = "slides show-display";} else { $classes = "slides hide-display";}
 				$arise_page_sliders_display    	.= '<div class="'.$classes.'">';
 				if ($image_attributes) {
 					$arise_page_sliders_display 	.= '<div class="image-slider clearfix" title="'.the_title('', '', false).'"' .' style="background-image:url(' ."'" .esc_url($image_attributes[0])."'" .')">';
