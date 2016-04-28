@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.6.9 | 27th April 2016 =
+* Fix: Portfolio single.
+
 = Version 2.6.8 | 27th April 2016 =
 * Update: Cat issue.
 * Update: Screenshot.

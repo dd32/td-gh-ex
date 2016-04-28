@@ -200,6 +200,7 @@
 				    	<?php do_action( 'kadence_single_portfolio_value_after' );  ?> 
 					</div>
 				</div>
+			<?php } ?>
     	</div><!--textclass -->
     </div><!--row-->
     <div class="clearfix"></div>
