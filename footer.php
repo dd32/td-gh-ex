@@ -62,11 +62,11 @@
  
 </div><!--div class="ct_acool "-->
 
-<div class="side">
+<!--div class="side">
 	<ul>
 		<li id="gotop"><a href="javascript:goTop();" class="sidetop"><img src="<?php echo get_template_directory_uri(); ?>/images/side_icon05.png"></a></li>
 	</ul>
-</div>
+</div-->
 
 <?php wp_footer(); ?>
 </body>
