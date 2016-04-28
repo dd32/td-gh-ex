@@ -205,6 +205,19 @@ function weaverx_edit_link($echo = 'echo') {
 }
 //--
 
+if ( ! function_exists( 'twentysixteen_the_custom_logo' ) ) {
+/**
+ * Displays the optional custom logo.
+ *
+ * Does nothing if the custom logo is not available.
+ *
+ */
+function weaverx_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+}
 
 if ( ! function_exists( 'weaverx_entry_header' ) ) {
 function weaverx_entry_header( $format_title='', $do_excerpt = false ) {

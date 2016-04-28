@@ -74,6 +74,7 @@ function weaverx_setup() {
 	// Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'automatic-feed-links' );
 
+
 	// html5 for search
 
 	add_theme_support( 'html5', array(  'search-form' ) );
@@ -100,10 +101,18 @@ function weaverx_setup() {
 
 	$width = weaverx_getopt_default('theme_width_int',940);
 
-
 	$height = weaverx_getopt('header_image_height_int');
 	if (!$height)
 		$height = 188;          // now that everything is responsive, we can just set this to an arbitrary height.
+
+		// Enable support for custom logo.
+
+	add_theme_support( 'custom-logo', array(
+		'height'      => $height,
+		'width'       => $width,
+		'flex-height' => true,
+	) );
+
 
 	global $weaverx_header;
 	$weaverx_header = array(

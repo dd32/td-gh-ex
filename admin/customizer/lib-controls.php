@@ -510,7 +510,8 @@ function weaverx_cz_line() {
  *
  */
 function weaverx_cz_sanitize_float( $value ) {
-	return floatval( $value );
+	if (!$value) return '0';	// need to be able detect '0' vs 0 or false
+	else return floatval( $value );
 }
 
 function weaverx_cz_sanitize_int( $value ) {

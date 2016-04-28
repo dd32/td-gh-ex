@@ -1181,8 +1181,9 @@ a {
 	box-sizing:			border-box;
 	list-style:			none;
 	padding:			0;
-	transition:			all .33s ease;
+	transition:			background-color .33s ease, color .33s ease, font-size .33s ease;
 }
+/* was: transition:			all .33s ease; - fixed Version 2.0.10 */
 
 .wvrx-menu * {          /* can't be on plain .wvrx-menu - breaks rounded */
 	margin:			0;
@@ -1997,9 +1998,23 @@ li.mega-normal ul.mega-menu li a:hover {
 	width:				100%;       /* need this for float right to work */
 }
 
+/* Custom logo */
+
+.custom-logo-link {
+	display: block;
+	float:left;
+	margin-right:2em;
+	max-width: 100%;
+}
+
+.custom-logo {
+	max-width:100%;
+}
+
 
 /* =Header (img under =Image section)
 ----------------------------------------------- */
+
 
 
 #site-title,
@@ -2187,6 +2202,7 @@ ol.trackbacklist {
 }
 
 .commentlist .comment-content {
+	clear:			both;
 	font-size:      0.90em;
 	padding:		0 1em;
 }
@@ -3491,6 +3507,7 @@ dl.gallery-item {
 /* -- /Area wrapper */
 
 /* =Area - device specific */
+
 @media (max-width:580px) {   /* =phones ==================================================================================== */
 #site-title,
 .site-title {
@@ -4142,7 +4159,20 @@ dl.gallery-item {
 }
 /* -- /Font Size */
 
+.wvrx-fullwidth {
+	float:none;
+}
+
 @media print {  /* =Print */
+
+.wvrx-fullwidth {
+	width:100% !important;
+	margin-left:0 !important;
+	margin-right:0 !important;
+	padding-left:0 !important;
+	padding-right:0 !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	page-break-after:   avoid;
 }

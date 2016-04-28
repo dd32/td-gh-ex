@@ -409,7 +409,8 @@ weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xt
 	$new_opts = weaverx_cz_add_fonts('page_title', __('Page Title', 'weaver-xtreme'), '', 'postMessage');
 	$typography_sections['typo-content']['options'] = array_merge( $typography_sections['typo-content']['options'],  $new_opts);
 
-	$new_opts = weaverx_cz_add_fonts('archive_title', __('Archive Pages Title', 'weaver-xtreme'), '', 'postMessage');
+	// archive pages title needs refresh due to interaction witih page title attributes (fixed: V 2.0.10)
+	$new_opts = weaverx_cz_add_fonts('archive_title', __('Archive Pages Title', 'weaver-xtreme'), '', 'refresh');
 	$typography_sections['typo-content']['options'] = array_merge( $typography_sections['typo-content']['options'],  $new_opts);
 
 	$new_opts = weaverx_cz_add_fonts('content_h', __('Content Headings', 'weaver-xtreme'),

@@ -189,10 +189,10 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Container Width (%)', 'weaver-xtreme' ) . $container_refresh,
-					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Container "Center align" setting.', 'weaver-xtreme'),
+					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Container "Center align" setting. (Default: 100%, use 0 for auto)', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 10,
+						'min'  => 0,
 						'max'  =>  100,
 						'step' => 0.5,
 					),
@@ -332,10 +332,10 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Header Area Width (%)', 'weaver-xtreme' ) . $hdr_refresh ,
-					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Header "Center align" setting.', 'weaver-xtreme'),
+					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Header "Center align" setting. (Default: 100%, use 0 for auto)', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 10,
+						'min'  => 0,
 						'max'  =>  100,
 						'step' => 0.5,
 					),
@@ -569,14 +569,14 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				__( 'Spacing for the Header Widget Area', 'weaver-xtreme' )),
 
 			'header_sb_width_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Header Widget Area Width (%)', 'weaver-xtreme' ),
-					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align Header Widget Area "Center align" setting.', 'weaver-xtreme'),
+					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align Header Widget Area "Center align" setting. (Default: 0, means auto)', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 10,
+						'min'  => 0,
 						'max'  =>  100,
 						'step' => 0.5,
 					),
@@ -689,10 +689,10 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Header HTML Area Width (%)', 'weaver-xtreme' ),
-					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align HTML Area "Center align" setting. You will have to "Save & Publish" and refresh this page if you are using Center Area align.', 'weaver-xtreme'),
+					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align HTML Area "Center align" setting. You will have to "Save & Publish" and refresh this page if you are using Center Area align. (Default: 100%, use 0 for auto)', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 10,
+						'min'  => 0,
 						'max'  =>  100,
 						'step' => 0.5,
 					),
@@ -1133,10 +1133,10 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Info Bar Width (%)', 'weaver-xtreme' ),
-					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Info Bar "Center align" setting.', 'weaver-xtreme'),
+					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Info Bar "Center align" setting. (Default: 100%, use 0 for auto)', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 10,
+						'min'  => 0,
 						'max'  =>  100,
 						'step' => 0.5,
 					),
@@ -1558,7 +1558,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 					'label'   => __( 'Width for Split Sidebar, Left Side', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 0,
+						'min'  => 10,
 						'max'  => 100,
 						'step' => .5,
 					),
@@ -1572,7 +1572,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 					'label'   => __( 'Width for Split Sidebar, Right Side', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 0,
+						'min'  => 10,
 						'max'  => 100,
 						'step' => .5,
 					),
@@ -1792,14 +1792,14 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				__('Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
 
 			'top_width_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Widget Areas Width (%)', 'weaver-xtreme' ),
-					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Container "Center align" setting.', 'weaver-xtreme'),
+					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Container "Center align" setting. (Default: 0, means auto)', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 10,
+						'min'  => 0,
 						'max'  =>  100,
 						'step' => 0.5,
 					),
@@ -1905,14 +1905,14 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				__('Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme')),
 
 			'bottom_width_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
-					'label'   => __( 'Top Widget Areas Width (%)', 'weaver-xtreme' ),
-					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Container "Center align" setting.', 'weaver-xtreme'),
+					'label'   => __( 'Bottom Widget Areas Width (%)', 'weaver-xtreme' ),
+					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Container "Center align" setting. (Default: 0, means auto)', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 10,
+						'min'  => 0,
 						'max'  =>  100,
 						'step' => 0.5,
 					),
@@ -2132,10 +2132,10 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Footer Area Width (%)', 'weaver-xtreme' ) . $foot_refresh,
-					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Footer "Center align" setting.', 'weaver-xtreme'),
+					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Footer "Center align" setting. (Default: 100%, 0 means auto)', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 10,
+						'min'  => 0,
 						'max'  =>  100,
 						'step' => 0.5,
 					),
@@ -2254,14 +2254,14 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				__( 'Spacing for the Footer Widget Area', 'weaver-xtreme' )),
 
 			'footer_sb_width_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Footer Widget Area Width (%)', 'weaver-xtreme' ),
-					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align Footer Widget Area "Center align" setting.', 'weaver-xtreme'),
+					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align Footer Widget Area "Center align" setting. (Default: 0, means auto)', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 10,
+						'min'  => 0,
 						'max'  =>  100,
 						'step' => 0.5,
 					),
@@ -2374,10 +2374,10 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Footer HTML Area Width (%)', 'weaver-xtreme' ),
-					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align HTML Area "Center align" setting. You will have to "Save & Publish" and refresh this page if you are using Center Area align.', 'weaver-xtreme'),
+					'description' => __('Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align HTML Area "Center align" setting. You will have to "Save & Publish" and refresh this page if you are using Center Area align. (Default: 100%, use 0 for auto)', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 10,
+						'min'  => 0,
 						'max'  =>  100,
 						'step' => 0.5,
 					),

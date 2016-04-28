@@ -6,10 +6,10 @@ Theme URI: http://weavertheme.com
 Tags: custom-header, custom-colors, custom-background, custom-menu, theme-options, left-sidebar, right-sidebar,
 fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red, tan, dark, white, light,
 translation-ready, rtl-language-support, editor-style
-Copyright: Weaver Xtreme Theme - Copyright 2014-1015 Bruce E Wampler
+Copyright: Weaver Xtreme Theme - Copyright 2014-1016 Bruce E Wampler
 Requires at least: 4.2
-Tested up to: 4.4
-Stable tag: 2.0.9
+Tested up to: 4.5
+Stable tag: 2.1
 
 == Description ==
 
@@ -266,3 +266,17 @@ with testing and feature suggestions.
 * Tweak: Internal hooks to Weaver Xtreme Plus and Weaver Xtreme Theme Support
 * Tweak: Handling of .gif header image
 * Fix: Some zero value Customizer settings failed to save correctly.
+
+= Version 2.1 =
+* New: Support for WP 4.5 Custom Logo in header
+* Fix: Fixed some setting incompatibilities between Customizer and Legacy options
+* Fix: Corrected 100% vs auto width default information in width option descriptions
+* New: Support width value of 0 to force 'auto' width attribute for areas with 100% width default.
+* Tweak: changed Footer HTML area to default 100% width.
+  NOTE: This may cause incompatibility with some customized themes. Changing width to explicit 0 should fix issues.
+* Fix: Problem with saving generated styles to file from Customizer with Xtreme Plus installed
+* Fix: Print page was clipping content when extend background .wvrx-fullwidth class used on an area
+* Fix: Customizer refresh of Archive Page Title font size - had interaction with Page Title font size
+* Tweak: Improved rendering of custom width desktop sidebars. IE8 degrades to showing sidebars at 25% only.
+* Tweak: Improved rendering of menu transitions
+* Tweak: make phone width 100% (was 98%) for most horizontal areas like the top/bottom widget areas, html areas, etc.

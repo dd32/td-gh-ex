@@ -384,6 +384,12 @@ textarea {
 	background-position: right center;
 }
 
+.custom-logo-link {
+	float:right;
+	margin-left:2em;
+}
+
+
 
 /* =Print
 ----------------------------------------------- */

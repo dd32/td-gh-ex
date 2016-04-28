@@ -86,10 +86,9 @@
 		customControls.init();
 
 	});
-
-	wp.customize.previewer.bind( 'refresh', function() {
+	/*wp.customize.previewer.bind( 'refresh', function() {
 		wp.customize.previewer.refresh();
-	} );
+	} ); */
 
 
 

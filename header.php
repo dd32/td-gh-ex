@@ -126,6 +126,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 <header id="branding" role="banner">
 <?php
+
 	/* ======== SITE LOGO and TITLE ======== */
 	if ( weaverx_getopt('title_over_image') )
 		echo '<div id="title-over-image">' . "\n";
@@ -137,12 +138,16 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 		$lead = ' ';
 	}
 
+
+
 	if ( weaverx_getopt('site_title_add_class') != 'hide-none') {
 		$t_class = weaverx_getopt('site_title_add_class');
 		echo "    <div id=\"title-tagline\" class=\"clearfix {$t_class}\" >\n";
 	} else {
 		echo "    <div id=\"title-tagline\" class=\"clearfix\" >\n";
 	}
+	weaverx_the_custom_logo();
+
 	$logo = weaverx_getopt( '_site_logo' );
 	$hide_logo = weaverx_getopt( '_hide_site_logo' );
 

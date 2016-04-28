@@ -32,11 +32,9 @@ function weaverx_getopt($opt) {
 	global $weaverx_opts_cache;
 
 	weaverx_opt_cache();
-	/*
-	if ($opt == 'wrapper_bgcolor')
-		echo "<h2>wrapper_bgcolor: {$weaverx_opts_cache['wrapper_bgcolor']}</h2>"; */
 
 	if (!isset($weaverx_opts_cache[$opt])) {	// handles changes to data structure
+		//if (strpos($opt, '_width_int') > 0 ) weaverx_alert('WIDTH LOOKUP FALSE ' . $opt . '= getopt:false');
 		return false;
 	}
 	return $weaverx_opts_cache[$opt];
