@@ -7,6 +7,7 @@
  */
 
 ( function( $ ) {
+	api = wp.customize;
 	// Site title.
 	api( 'blogname', function( value ) {
 		value.bind( function( to ) {

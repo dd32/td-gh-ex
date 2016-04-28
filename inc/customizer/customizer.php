@@ -30,7 +30,7 @@ function actions_customize_register( $wp_customize ) {
 			'default'			=> true,
 			'type'				=> 'theme_mod',
 			'capability'		=> 'edit_theme_options',
-			'sanitize_callback'	=> 'actions_sanitize_checkbox'
+			'sanitize_callback'	=> 'actions_sanitize_checkbox',
 		)
 	);
 	
@@ -73,7 +73,7 @@ function actions_customize_partial_blogname() {
 /**
  * Render the site tagline for the selective refresh partial.
  *
- * @since Twenty Sixteen 1.2
+ * @since Actions 1.2
  * @see actions_customize_register()
  *
  * @return void
@@ -104,5 +104,5 @@ if ( ! function_exists( 'actions_custom_style' ) && get_theme_mod( 'actions_show
 	    </style>
 	<?php
     }
-	add_action( 'wp_head', 'actions_custom_style');
+	add_action( 'wp_head', 'actions_custom_style' );
 }

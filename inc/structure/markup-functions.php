@@ -50,8 +50,8 @@ if ( ! function_exists( 'actions_top_wrapper' ) ) {
 	function actions_top_wrapper() {
 		?>
 		<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-	    	<?php
+		    <main id="main" class="site-main" role="main">
+	    <?php
 	}
 }
 
@@ -89,10 +89,9 @@ if ( ! function_exists( 'actions_get_sidebar' ) ) {
  * @return  void
  */
 if ( ! function_exists( 'actions_top_sidebar' ) ) {
-	function actions_top_sidebar() {
-		?>
+	function actions_top_sidebar() { ?>
 		<div id="secondary" class="widget-area" role="complementary">
-	    	<?php
+	<?php
 	}
 }
 
@@ -103,10 +102,9 @@ if ( ! function_exists( 'actions_top_sidebar' ) ) {
  * @return  void
  */
 if ( ! function_exists( 'actions_bottom_sidebar' ) ) {
-	function actions_bottom_sidebar() {
-		?>
+	function actions_bottom_sidebar() { ?>
 		</div><!-- .sidebar .widget-area -->
-		<?php
+	<?php
 	}
 }
 
@@ -117,11 +115,10 @@ if ( ! function_exists( 'actions_bottom_sidebar' ) ) {
  * @return  void
  */
 if ( ! function_exists( 'actions_footer_top' ) ) {
-	function actions_footer_top() {
-		?>		
-		    <footer id="colophon" class="site-footer inner" role="contentinfo">
-		        <div class="site-info">		
-	    <?php
+	function actions_footer_top() { ?>		
+		<footer id="colophon" class="site-footer inner" role="contentinfo">
+		    <div class="site-info">		
+	<?php
 	}
 }
 
@@ -132,11 +129,10 @@ if ( ! function_exists( 'actions_footer_top' ) ) {
  * @return  void
  */
 if ( ! function_exists( 'actions_footer_bottom' ) ) {
-	function actions_footer_bottom() {
-		?>
-		        </div><!-- .site-info -->
-		    </footer>
-	    <?php
+	function actions_footer_bottom() { 	?>
+		    </div><!-- .site-info -->
+		</footer>
+	<?php
 	}
 }
 
@@ -147,8 +143,7 @@ if ( ! function_exists( 'actions_footer_bottom' ) ) {
  * @return  void
  */
 if ( ! function_exists( 'actions_body_bottom' ) ) {
-	function actions_body_bottom() {
-		?>
+	function actions_body_bottom() { ?>
 		        </div>
 		    </div>
 	    </div>		
@@ -188,8 +183,7 @@ if ( ! function_exists( 'actions_content_none' ) ) {
 }
 
 if ( ! function_exists( 'actions_footer_before' ) ) {
-	function actions_footer_before() {
-		?>
+	function actions_footer_before() { ?>
 		<div class="footer-area full">
 		    <div class="main"> 
 	    <?php
@@ -197,8 +191,7 @@ if ( ! function_exists( 'actions_footer_before' ) ) {
 }
 
 if ( ! function_exists( 'actions_footer_after' ) ) {
-	function actions_footer_after() {
-		?>
+	function actions_footer_after() { ?>
 		    </div>
 	    </div> 
 	    <?php

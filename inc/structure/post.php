@@ -39,35 +39,33 @@ if ( ! function_exists( 'actions_post_content' ) ) {
 		<?php }
 		
 		while ( have_posts() ) : the_post(); ?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php actions_post_header(); ?>
-		<div class="entry-content">
-		<?php
-		actions_post_thumbnail( 'full' );
-		if ( 'post' == get_post_type() ) { ?>
-			<div class="entry-meta">
-			<?php
-				actions_posted_on(); 
-			?>
-			</div>
-	    <?php }
+		    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		        <?php actions_post_header(); ?>
+		        <div class="entry-content">
+		        <?php
+		            actions_post_thumbnail( 'full' );
+		            if ( 'post' == get_post_type() ) { ?>
+			            <div class="entry-meta">
+			               <?php actions_posted_on(); ?>
+			            </div>
+	            <?php }
 
-		the_content(
-			sprintf(
-				__( 'Continue reading %s', 'actions' ),
-				'<span class="screen-reader-text">' . get_the_title() . '</span>'
-			)
-		);
+		        the_content(
+			        sprintf(
+				        __( 'Continue reading %s', 'actions' ),
+				        '<span class="screen-reader-text">' . esc_url( get_the_title() ) . '</span>'
+			        )
+		        );
 		
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'actions' ),
-			'after'  => '</div>',
-		) );
-		//actions_entry_footer(); ?>
-		</div><!-- .entry-content -->
-		</article><!-- #post-## -->
-        <?php endwhile;
-		
+		        wp_link_pages( array(
+			        'before' => '<div class="page-links">' . __( 'Pages:', 'actions' ),
+			        'after'  => '</div>',
+		        ) );
+		        //actions_entry_footer(); ?>
+		        </div><!-- .entry-content -->
+		    </article><!-- #post-## -->
+        <?php 
+		endwhile;		
 	}
 }
 
@@ -77,11 +75,11 @@ if ( ! function_exists( 'actions_paging_nav' ) ) {
 	 */
 	function actions_paging_nav() {
     // Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'actions' ),
-				'next_text'          => __( 'Next page', 'actions' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'actions' ) . ' </span>',
-			) );
+		the_posts_pagination( array(
+			'prev_text'          => __( 'Previous page', 'actions' ),
+			'next_text'          => __( 'Next page', 'actions' ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'actions' ) . ' </span>',
+		) );
 	}
 }
 

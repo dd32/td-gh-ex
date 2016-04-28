@@ -15,4 +15,4 @@
  * Initialize Home Actions
  */
 
-actionsHome();
+actions_home();

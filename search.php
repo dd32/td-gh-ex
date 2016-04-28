@@ -13,4 +13,4 @@
 
 //* Initialize Actions
 
-actionsSearch();
+actions_search();

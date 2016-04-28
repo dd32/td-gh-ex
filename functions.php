@@ -8,12 +8,11 @@
 /**
  * Initialize all the good things.
  */
-require get_template_directory() . '/inc/init.php';
+require_once ( get_template_directory() . '/inc/init.php' );
 
-require get_template_directory() . '/inc/framework.php';
+require_once ( get_template_directory() . '/inc/framework.php' );
 
 /**
  * Note: Do not add any custom code here. Please use a custom plugin or child theme so that your customizations aren't lost during updates.
- * https://wpdevhq.com/theme-customisations
+ * http://wpdevhq.com/theme-customisations
  */
- 

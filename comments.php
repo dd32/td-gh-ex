@@ -6,7 +6,7 @@
  * and the comment form.
  *
  * @package Actions
- * @since Actions 1.0
+ * @since Actions 1.0.5
  */
 
 /*

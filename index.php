@@ -16,4 +16,4 @@
  * Initialize Index Actions
  */
  
-actionsIndex();
+actions_index();

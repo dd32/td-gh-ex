@@ -20,8 +20,8 @@ add_action( 'after_setup_theme', 'actions_content_width', 0 );
 /**
  * Assign the Actions version to a var
  */
-$theme 					= wp_get_theme( 'actions' );
-$actions_version 	= $theme['Version'];
+$theme 			  = wp_get_theme( 'actions' );
+$actions_version  = $theme['Version'];
 
 if ( ! function_exists( 'actions_setup' ) ) :
 	/**
@@ -39,7 +39,7 @@ if ( ! function_exists( 'actions_setup' ) ) :
 	     * If you're building a theme based on actions, use a find and replace
 	     * to change 'actions' to the name of your theme in all the template files.
 	     */
-	    load_theme_textdomain( 'actions', get_template_directory() . '/languages' );
+	    load_theme_textdomain( 'actions' );
 
 		/**
 		 * Add default posts and comments RSS feed links to head.
@@ -156,7 +156,7 @@ function actions_fonts_url() {
 		$fonts_url = esc_url( add_query_arg( array(
 			'family' => urlencode( implode( '|', $fonts ) ),
 			'subset' => urlencode( $subsets ),
-		), '//fonts.googleapis.com/css' ));
+		), '//fonts.googleapis.com/css' ) );
 	}
 
 	return $fonts_url;
@@ -171,7 +171,7 @@ endif;
  * @since Actions 1.0.1
  */
 function actions_javascript_detection() {
-	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+	echo "<script>( function( html ){html.className = html.className.replace(/\bno-js\b/,'js')})( document.documentElement );</script>\n";
 }
 add_action( 'wp_head', 'actions_javascript_detection', 0 );
 

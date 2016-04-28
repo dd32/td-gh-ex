@@ -4,4 +4,4 @@
  * Initialize Single Post Actions
  */
 
-actionsSingle();
+actions_single();

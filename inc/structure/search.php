@@ -30,8 +30,8 @@ function actions_search_form() {
 
 	$button_text = apply_filters( 'actions_search_button_text', esc_attr__( 'Search', 'actions' ) );
 
-	$onfocus = "if ('" . esc_js( $search_text ) . "' === this.value) {this.value = '';}";
-	$onblur  = "if ('' === this.value) {this.value = '" . esc_js( $search_text ) . "';}";
+	$onfocus = "if ( '" . esc_js( $search_text ) . "' === this.value ) {this.value = '';}";
+	$onblur  = "if ( '' === this.value ) {this.value = '" . esc_js( $search_text ) . "';}";
 
 	//* Empty label, by default. Filterable.
 	$label = apply_filters( 'actions_search_form_label', '' );
@@ -44,7 +44,7 @@ function actions_search_form() {
 
 		$form = sprintf(
 			'<form method="get" class="searchform search-form" action="%s" role="search" >%s<input type="text" value="%s" name="s" class="s search-input" onfocus="%s" onblur="%s" /><input type="submit" class="searchsubmit search-submit" value="%s" /></form>',
-			home_url( '/' ),
+			esc_url( home_url( '/' ) ),
 			esc_html( $label ),
 			esc_attr( $search_text ),
 			esc_attr( $onfocus ),

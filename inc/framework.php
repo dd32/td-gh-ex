@@ -11,10 +11,11 @@
  * @link    http://www.wpdevhq.com/themes/actions/
  */
  
+if ( ! function_exists( 'actions_home' ) ) {
 /*
  * Setup Home/Blog template Actions
  */
-function actionsHome() {
+function actions_home() {
 
 get_header();
  
@@ -46,11 +47,13 @@ get_header();
 	
 get_footer();
 }
+}
 
+if ( ! function_exists( 'actions_index' ) ) {
 /*
  * Setup Index template Actions
  */
-function actionsIndex() {
+function actions_index() {
 get_header();
  
     do_action( 'actions_before_content_wrapper' );
@@ -81,11 +84,13 @@ get_header();
 	
 get_footer();
 }
+}
 
+if ( ! function_exists( 'actions_page' ) ) {
 /*
  * Setup default page template Actions
  */
-function actionsPage() {
+function actions_page() {
 	get_header();
     
 	do_action( 'actions_before_content_wrapper' );
@@ -102,12 +107,14 @@ function actionsPage() {
 
 get_footer();
 }
+}
 
+if ( ! function_exists( 'actions_single' ) ) {
 /*
  * Setup dsingle post template Actions
  */
  
-function actionsSingle() {
+function actions_single() {
 get_header(); 
 
     do_action( 'actions_before_content_wrapper' );
@@ -124,39 +131,42 @@ get_header();
 
 get_footer();
 }
+}
 
+if ( ! function_exists( 'actions_search' ) ) {
 /*
  * Setup dsingle post template Actions
  */
  
-function actionsSearch() {
-get_header();
+    function actions_search() {
+    get_header();
  
-    do_action( 'actions_before_content_wrapper' );
+        do_action( 'actions_before_content_wrapper' );
 	
-	do_action( 'actions_before_index' );
+	    do_action( 'actions_before_index' );
 	
-        if ( have_posts() ) :
+            if ( have_posts() ) :
 		
-		    do_action( 'actions_before_search_elements' );
+		        do_action( 'actions_before_search_elements' );
 			
-			    do_action( 'actions_index_elements' ); // Give your elements priorities so that they hook in the right place.
+			        do_action( 'actions_index_elements' ); // Give your elements priorities so that they hook in the right place.
 				
-			do_action( 'actions_after_search_elements' );
+			    do_action( 'actions_after_search_elements' );
         
-		// If no content, include the "No posts found" action.
-		else :
-			do_action( 'actions_before_content_none' );
+		    // If no content, include the "No posts found" action.
+		    else :
+			    do_action( 'actions_before_content_none' );
 			
-			    do_action( 'actions_index_content_none' );
+			        do_action( 'actions_index_content_none' );
 				
-			do_action( 'actions_after_content_none' );
+			    do_action( 'actions_after_content_none' );
 			
-		endif;
+		    endif;
 		
-    do_action( 'actions_after_content_wrapper' );
+        do_action( 'actions_after_content_wrapper' );
 	
-	do_action( 'actions_sidebar' );
+	    do_action( 'actions_sidebar' );
 	
-get_footer();
+    get_footer();
+    }
 }

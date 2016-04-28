@@ -39,10 +39,6 @@ function actions_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	if ( ! function_exists( 'woocommerce_breadcrumb' ) ) {
-		$classes[]	= 'no-wc-breadcrumb';
-	}
-
 	/**
 	 * What is this?!
 	 * Take the blue pill, close this file and forget you saw the following code.
@@ -55,15 +51,6 @@ function actions_body_classes( $classes ) {
 	}
 
 	return $classes;
-}
-
-/**
- * Query WooCommerce activation
- */
-if ( ! function_exists( 'is_woocommerce_activated' ) ) {
-	function is_woocommerce_activated() {
-		return class_exists( 'woocommerce' ) ? true : false;
-	}
 }
 
 /**

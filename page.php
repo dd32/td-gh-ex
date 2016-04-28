@@ -14,4 +14,4 @@
  * Initialize Home Actions
  */
  
-actionsPage();
+actions_page();
