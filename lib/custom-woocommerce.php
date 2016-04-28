@@ -196,18 +196,14 @@ if ($woocommerce_loop['columns'] == '3'){
           $image_product = aq_resize($product_image_url, $productimgwidth, $productimgwidth, true);
           if(empty($image_product)) {$image_product = $product_image_url;} 
           // Get srcset
-          $image_meta = get_post_meta( $image_id, '_wp_attachment_metadata', true );
-          $img_srcset = wp_calculate_image_srcset(array( $productimgwidth, $productimgheight), $product_image_url, $image_meta, $image_id);
+          $img_srcset_output = kt_get_srcset_output( $productimgwidth, $productimgheight, $product_image_url, $image_id);
            // Get alt and fall back to title if no alt
           $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
           if(empty($alt_text)) {$alt_text = get_the_title();}
           ?> 
                 <img width="<?php echo esc_attr($productimgwidth);?>" height="<?php echo esc_attr($productimgheight);?>" 
                 src="<?php echo esc_url($image_product);?>"
-                <?php if(!empty($img_srcset)) { ?>
-                srcset="<?php echo esc_attr( $img_srcset ); ?>"
-                sizes="(max-width: <?php echo esc_attr($productimgwidth);?>px) 100vw, <?php echo esc_attr($productimgwidth);?>px" 
-                <?php } ?>
+                <?php echo $img_srcset_output;?>
                 class="attachment-shop_catalog size-<?php echo esc_attr($productimgwidth.'x'.$productimgheight);?> wp-post-image" 
                 alt="<?php echo esc_attr($alt_text); ?>">
         <?php } elseif ( woocommerce_placeholder_img_src() ) {

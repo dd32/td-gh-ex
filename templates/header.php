@@ -79,10 +79,12 @@
     </div><!--close container-->
   </section>
   <?php endif;
-  if (!empty($virtue['virtue_banner_upload']['url'])) { ?>
+  if (!empty($virtue['virtue_banner_upload']['url'])) { 
+    $banner_image = apply_filters('kt_banner_image', $virtue['virtue_banner_upload']['url']); ?>
+
      <div class="container">
         <div class="virtue_banner">
-          <img alt="" src="<?php echo esc_url($virtue['virtue_banner_upload']['url']); ?>" />
+          <img alt="" src="<?php echo esc_url($banner_image); ?>" />
         </div>
       </div>
   <?php } ?>

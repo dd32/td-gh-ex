@@ -30,6 +30,13 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.6.8 | 27th April 2016 =
+* Update: Cat issue.
+* Update: Screenshot.
+* Update: Remove gallery boxshaddow if image border off.
+* Update: Srcset for product images.
+* Add: Filter for banner.
+
 = Version 2.6.7 | 22nd March 2016 =
 * Update: Cat issue.
 * Update: Blog carousel issue.

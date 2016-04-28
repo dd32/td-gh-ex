@@ -35,10 +35,9 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 					$image_url = aq_resize($product_image_url, $productimgwidth, $productimgheight, true);
 					if(empty($image_url)) {$image_url = $product_image_url;} 
 					// Get srcset
-          			$image_meta = get_post_meta( $image_id, '_wp_attachment_metadata', true );
-          			$img_srcset = wp_calculate_image_srcset(array( $productimgwidth, $productimgheight), $product_image_url, $image_meta, $image_id);
+			        $img_srcset_output = kt_get_srcset_output( $productimgwidth, $productimgheight, $product_image_url, $image_id); 
 
-					$image = '<img width="'.esc_attr($productimgwidth).'" height="'.esc_attr($productimgheight).'" src="'.esc_url($image_url).'" scrset="'.esc_attr($img_srcset).'" sizes="(max-width: '.esc_attr($productimgwidth).'px) 100vw, '.esc_attr($productimgwidth).'px" class="attachment-shop_single wp-post-image" alt="'.esc_attr( get_the_title( get_post_thumbnail_id() ) ).'">';
+					$image = '<img width="'.esc_attr($productimgwidth).'" height="'.esc_attr($productimgheight).'" src="'.esc_url($image_url).'" '.$img_srcset_output.' class="attachment-shop_single wp-post-image" alt="'.esc_attr( get_the_title( get_post_thumbnail_id() ) ).'">';
 			} else {
 				$image = get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), array('title' => $image_title) );
 			}
