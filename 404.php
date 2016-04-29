@@ -1,22 +1,22 @@
 <?php get_header(); ?>
-<div class="bhumi_header_breadcrumb_title">	
+<div class="bhumi_header_breadcrumb_title">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<h1><?php _e('404 Error','bhumi'); ?></h1>
 				<ul class="breadcrumb">
-					<li><a href="<?php echo home_url( '/' ); ?>"><?php _e('Home','bhumi'); ?></a></li>
+					<li><a href="<?php echo esc_url(home_url( '/' )); ?>"><?php _e('Home','bhumi'); ?></a></li>
 					<li><?php _e('404 Error','bhumi'); ?></li>
-				
+
 				</ul>
 			</div>
 		</div>
-	</div>	
+	</div>
 </div>
 
 <div class="container">
 	<div class="row bhumi_blog_wrapper">
-		
+
 			<div class="col-md-8 hc_404_error_section">
 				<div class="error_404">
 					<h2><?php _e('404','bhumi'); ?></h2>
@@ -26,14 +26,14 @@
 			</div>
 		<div class="col-md-4 bhumi-sidebar">
 			<div class="bhumi_sidebar_widget">
-				<p><a href="<?php echo home_url( '/' ); ?>" class="bhumi_send_button"><?php _e('Go To Homepage','bhumi'); ?></a></p>
+				<p><a href="<?php echo esc_url(home_url( '/' )); ?>" class="bhumi_send_button"><?php _e('Go To Homepage','bhumi'); ?></a></p>
 			</div>
 			<div class="bhumi_sidebar_widget">
 				<?php get_search_form(); ?>
 			</div>
-			
+
 		</div>
-		
+
 	</div>
 </div>
 

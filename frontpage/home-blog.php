@@ -56,7 +56,7 @@ if($cpm_theme_options['blog_title'] !='') { ?>
 			<div class="col-md-4 col-sm-12 scale-in d2 pull-left in">
 			<div class="bhumi_blog_thumb_wrapper">
 				<div class="bhumi_blog_thumb_wrapper_showcase">
-					<img  alt="bhumi" src="<?php echo esc_url(CPM_TEMPLATE_DIR_URI . '/images/wall/img(11).jpg' ?>)">
+					<img  alt="bhumi" src="<?php echo esc_url(CPM_TEMPLATE_DIR_URI . '/images/wall/img(11).jpg') ?>">
 					<div class="bhumi_blog_thumb_wrapper_showcase_overlay">
 						<div class="bhumi_blog_thumb_wrapper_showcase_overlay_inner ">
 							<div class="bhumi_blog_thumb_wrapper_showcase_icons">
