@@ -4,12 +4,18 @@ function solon_custom_styles($custom) {
 	//Primary color
 	$primary_color = esc_html(get_theme_mod( 'primary_color' ));
 	if ( $primary_color != '#e86f67' ) {
-		$custom = ".wp-pagenavi .pages,  .wp-pagenavi .page, .wp-pagenavi .last, .wp-pagenavi .previouspostslink, .wp-pagenavi .nextpostslink, .site-header, .social-navigation, .main-navigation ul ul li:hover, .page-header, .slide .entry-title, .post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next, .comment-respond input[type=\"submit\"], .site-info, #today { background-color: {$primary_color} !important; }"."\n";
-		$custom .= ".entry-title a:hover, .main-navigation a:hover, .entry-meta, .entry-meta a, .entry-footer, .entry-footer a, .author-social a, .comment-meta a, .comment-form-author:before, .comment-form-email:before, .comment-form-url:before, .comment-form-comment:before, .widget-title, .widget li:before, .error404 .widgettitle, .main-navigation ul ul a, .flex-direction-nav a, .social-widget li a::before { color: {$primary_color}; }"."\n";
+		$custom = ".wp-pagenavi .pages,  .wp-pagenavi .page, .wp-pagenavi .last, .wp-pagenavi .previouspostslink, .wp-pagenavi .nextpostslink, .site-header, .social-navigation, .main-navigation ul ul li:hover, .main-navigation ul ul .current-menu-item, .page-header, .slide .entry-title, .post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next, .comment-respond input[type=\"submit\"], .site-info, #today { background-color: {$primary_color} !important; }"."\n";
+		$custom .= ".main-navigation .current_page_item > a, .main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a, .main-navigation .current-menu-item.menu-item-home > a:hover, .main-navigation.is-mobile-menu .current-menu-item > a, .main-navigation.is-mobile-menu .current-menu-ancestor > a, .entry-title a:hover, .main-navigation a:hover, .entry-meta, .entry-meta a, .entry-footer, .entry-footer a, .author-social a, .comment-meta a, .comment-form-author:before, .comment-form-email:before, .comment-form-url:before, .comment-form-comment:before, .widget-title, .widget li:before, .error404 .widgettitle, .main-navigation ul ul a, .flex-direction-nav a, .social-widget li a::before { color: {$primary_color}; }"."\n";
 		$custom .= ".author-bio .col-md-3, .main-navigation li, .read-more { border-right-color: {$primary_color}; }"."\n";
 		$custom .= ".author-bio .col-md-9 { border-left-color: {$primary_color}; }"."\n";
 		$custom .= ".widget-title, .main-navigation ul ul li, .hentry .entry-meta, .entry-footer, .error404 .widgettitle { border-bottom-color: {$primary_color}; }"."\n";
 		$custom .= ".footer-widget-area, .hentry .entry-meta, .entry-footer { border-top-color: {$primary_color}; }"."\n";
+
+		// Media query
+		$custom .= "@media only screen and (max-width:991px){";
+		$custom .= ".is-mobile-menu .current-menu-item > a, .is-mobile-menu .current-menu-ancestor > a{ color: {$primary_color} !important; }";
+		$custom .= "}";
+
 	}
 	//Secondary color
 	$secondary_color = esc_html(get_theme_mod( 'secondary_color' ));
@@ -29,7 +35,7 @@ function solon_custom_styles($custom) {
 	$site_desc = esc_html(get_theme_mod( 'site_desc_color' ));
 	if ( $site_desc != '#fff' ) {
 		$custom .= ".site-description { color: {$site_desc}; }"."\n";
-	}	
+	}
 	//Entry title
 	$entry_title = esc_html(get_theme_mod( 'entry_title_color' ));
 	if ( $entry_title != '#2A363B' ) {
@@ -40,11 +46,11 @@ function solon_custom_styles($custom) {
 	if ( $body_text != '#7B848F' ) {
 		$custom .= "body { color: {$body_text}; }"."\n";
 	}
-	
+
 	//Fonts
-	$headings_font = esc_html(get_theme_mod('headings_fonts'));	
-	$body_font = esc_html(get_theme_mod('body_fonts'));	
-	
+	$headings_font = esc_html(get_theme_mod('headings_fonts'));
+	$body_font = esc_html(get_theme_mod('body_fonts'));
+
 	if ( $headings_font ) {
 		$font_pieces = explode(":", $headings_font);
 		$custom .= "h1, h2, h3, h4, h5, h6 { font-family: {$font_pieces[0]}; }"."\n";
@@ -52,9 +58,9 @@ function solon_custom_styles($custom) {
 	if ( $body_font ) {
 		$font_pieces = explode(":", $body_font);
 		$custom .= "body { font-family: {$font_pieces[0]}; }"."\n";
-	}	
-	
+	}
+
 	//Output all the styles
-	wp_add_inline_style( 'solon-style', $custom );	
+	wp_add_inline_style( 'solon-style', $custom );
 }
 add_action( 'wp_enqueue_scripts', 'solon_custom_styles' );

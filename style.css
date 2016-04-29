@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/solon
 Author: aThemes
 Author URI: http://athemes.com
 Description: Solon is a fully responsive theme, ideal to use if you want your blog to have a slick and modern look. Some of the features that are packed in this theme include: custom logo upload, custom favicon upload, color changing for various elements, including the primary and the secondary color, integration with FontAwesome, about 20 of the most used Google Fonts, option to change the layout from content-sidebar to sidebar-content, css transitions, custom scroll effect and design etc.
-Version: 1.04
+Version: 1.05
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: solon
@@ -23,14 +23,14 @@ Solon is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, 
 4.0 - Accessibility
 5.0 - Posts and page navigation
 6.0 - Posts and pages
-7.0 - Comments		
+7.0 - Comments
 8.0 - Widgets
 9.0 - Alignments
 10.0 - Infinite scroll
 11.0 - Media
 	11.1 - Captions
 	11.2 - Galleries
-12.0 - Structure	
+12.0 - Structure
 13.0 - Slider
 14.0 - Responsive
 --------------------------------------------------------------*/
@@ -151,64 +151,44 @@ input[type="text"] {
 .main-navigation a:hover {
 	color: #e86f67;
 }
-.main-navigation ul ul {
-	box-shadow: 0 1px 1px;
-	color: #2A363B; /* Used for the box-shadow above. Provides easy acces from the live customizer */
-	display: none;
-	float: left;
-	left: 0;
-	position: absolute;
-	top: 100%;
-	z-index: 99999;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 13px;
-	background-color: #fff;
-	border-top: 15px solid #2A363B; /* Color must be the same as .main-navigation */
-}
-.main-navigation ul ul ul {
-	left: 100%;
-	top: -15px;
-}
-.main-navigation ul ul a {
-	width: 200px;
-	color: #e86f67;
-}
-.main-navigation ul ul li {
-	padding: 10px;
-	border-bottom: 1px dashed #e86f67;
-	border-right: 0;
-	text-transform: none;
-	font-weight: 400;
-	-webkit-transition: background 0.3s;
-	transition: background 0.3s;
-}
-.main-navigation ul ul li:hover {
-	background-color: #e86f67;
-}
-.main-navigation ul ul li a {
-	-webkit-transition: color 0.3s 0.2s;
-	transition: color 0.3s 0.2s;
-}
-.main-navigation ul ul li:hover > a {
-	color: #fff;
-}
-.main-navigation ul ul li:first-child {
-	padding: 10px;
-}
-.main-navigation ul ul li:last-child {
-	border-bottom: 0;
-}
 .main-navigation li:hover > a {
 }
 .main-navigation ul ul :hover > a {
 }
 .main-navigation ul ul a:hover {
 }
-.main-navigation ul li:hover > ul {
-	display: block;
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-ancestor > a {
+	color: #e86f67;
 }
-.main-navigation .current_page_item a,
-.main-navigation .current-menu-item a {
+.main-navigation .current-menu-item.menu-item-home > a{
+	color: #fff;
+}
+.main-navigation .current-menu-item.menu-item-home > a:hover{
+	color: #e86f67;
+}
+.main-navigation ul ul .current-menu-item{
+	background-color: #e86f67;
+}
+.main-navigation ul ul .current-menu-item > a{
+	color: #fff;
+}
+.is-mobile-menu ul ul .current-menu-item{
+	background: transparent;
+}
+.is-mobile-menu ul ul .current-menu-item > a{
+	color: #e86f67;
+}
+.is-mobile-menu ul ul.sub-menu li:hover{
+	background-color: transparent !important;
+}
+.is-mobile-menu a,
+.main-navigation.is-mobile-menu .current-menu-item.menu-item-home > a{
+	color: #fff !important;
+}
+.is-mobile-menu ul ul.sub-menu .current-menu-item{
+	background-color: transparent !important;
 }
 /* Small menu */
 .menu-toggle {
@@ -217,7 +197,94 @@ input[type="text"] {
 	color: #2a363b;
 	background-color: #dadada;
 }
-@media screen and (max-width: 991px) {
+
+.main-navigation.toggled .menu-toggle {
+	margin-bottom: 15px;
+}
+
+/* Dropdown menu on mobile */
+.btn-submenu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: "FontAwesome";
+  font-size: 26px;
+  line-height: 45px;
+  text-align: center;
+  cursor: pointer;
+  width: 40px;
+  height: 45px;
+}
+
+.btn-submenu:before {
+  content: '\f107';
+  color: #fff;
+}
+
+.btn-submenu.active:before {
+  content: '\f106';
+}
+
+
+@media screen and (min-width:992px){
+
+	.main-navigation ul li:hover > ul {
+		display: block;
+	}
+
+	.main-navigation ul ul {
+		box-shadow: 0 1px 1px;
+		color: #2A363B; /* Used for the box-shadow above. Provides easy acces from the live customizer */
+		display: none;
+		float: left;
+		left: 0;
+		position: absolute;
+		top: 100%;
+		z-index: 99999;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 13px;
+		background-color: #fff;
+		border-top: 15px solid #2A363B; /* Color must be the same as .main-navigation */
+	}
+	.main-navigation ul ul ul {
+		left: 100%;
+		top: -15px;
+	}
+	.main-navigation ul ul a {
+		width: 200px;
+		color: #e86f67;
+	}
+	.main-navigation ul ul li {
+		padding: 10px;
+		border-bottom: 1px dashed #e86f67;
+		border-right: 0;
+		text-transform: none;
+		font-weight: 400;
+		-webkit-transition: background 0.3s;
+		transition: background 0.3s;
+	}
+	.main-navigation ul ul li:hover {
+		background-color: #e86f67;
+	}
+	.main-navigation ul ul li a {
+		-webkit-transition: color 0.3s 0.2s;
+		transition: color 0.3s 0.2s;
+	}
+	.main-navigation ul ul li:hover > a {
+		color: #fff;
+	}
+	.main-navigation ul ul li:first-child {
+		padding: 10px;
+	}
+	.main-navigation ul ul li:last-child {
+		border-bottom: 0;
+	}
+
+}
+
+
+@media only screen and (max-width:991px){
+
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: block;
@@ -225,10 +292,6 @@ input[type="text"] {
 	.main-navigation li {
 		width: 100%;
 		border: 0;
-		padding: 5px 0;
-	}
-	.main-navigation li:first-child {
-		padding-top: 15px;
 	}
 	.main-navigation ul ul li:hover {
 		background-color: transparent;
@@ -243,7 +306,42 @@ input[type="text"] {
 		border: none;
 		background: transparent;
 		box-shadow: none;
-	}	
+	}
+
+  .main-navigation .sub-menu{
+    position: relative;
+		background: #212B2F;
+  }
+
+	.main-navigation li{
+		border-bottom: 1px solid rgba(0, 0, 0, 0.4) !important;
+		padding: 0;
+	}
+
+	.main-navigation li a{
+		padding: 10px 0;
+	}
+
+	.main-navigation ul.sub-menu li:last-child{
+		border-bottom: none !important;
+	}
+
+	.main-navigation ul.sub-menu li a{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.main-navigation .sub-menu:before,
+	.main-navigation .sub-menu:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+  .main-navigation ul li:hover > ul.sub-menu {
+  	display: none;
+  }
+
 }
 /*--------------------------------------------------------------
 3.0 Social Menu
@@ -269,7 +367,7 @@ input[type="text"] {
 .social-widget li,
 .social-navigation li {
 	-webkit-transition: all 0.3s;
-	transition: all 0.3s;	
+	transition: all 0.3s;
 }
 .social-widget li:hover,
 .social-navigation li:hover {
@@ -402,7 +500,7 @@ input[type="text"] {
 .post-navigation a,
 .paging-navigation a {
 	color: #fff;
-	text-decoration: none;	
+	text-decoration: none;
 }
 .post-navigation .nav-previous:hover,
 .post-navigation .nav-next:hover,
@@ -495,9 +593,9 @@ input[type="text"] {
 	position: absolute;
 	right: -30px;
 	bottom: -40px;
-	width: 0; 
-	height: 0; 
-	border-top: 40px solid transparent;	
+	width: 0;
+	height: 0;
+	border-top: 40px solid transparent;
 	border-right: 40px solid #e86f67;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
@@ -609,7 +707,7 @@ input[type="text"] {
 	background-color: #e86f67;
 	font-size: 12px;
 	-webkit-transition: background-color 0.2s;
-	transition: background-color 0.2s;	
+	transition: background-color 0.2s;
 }
 a.comment-reply-link {
 	color: #fff;
@@ -662,7 +760,7 @@ textarea#comment {
 	border: none;
 	background-color: #e86f67;
 	-webkit-transition: background-color 0.3s;
-	transition: background-color 0.3s;	
+	transition: background-color 0.3s;
 }
 .comment-respond input[type="submit"]:hover {
 	background-color: #2A363B;
@@ -966,7 +1064,7 @@ object {
 .entry-title a,
 .entry-title {
 	color: #2A363B;
-	text-decoration: none;	
+	text-decoration: none;
 }
 .content-area {
 	width: 670px;
@@ -1070,7 +1168,7 @@ object {
 .flex-direction-nav a {
 	color: #e86f67;
 }
-	
+
 /*--------------------------------------------------------------
 14.0 Responsive
 --------------------------------------------------------------*/
@@ -1087,7 +1185,7 @@ object {
 	}
 	.content-area {
 		width: 100%;
-	}	
+	}
 }
 @media only screen and (max-width: 767px) {
 	.author-bio .col-md-3 {
@@ -1121,5 +1219,5 @@ object {
 	}
 	.entry-meta span:after {
 		content: '';
-	}	
+	}
 }

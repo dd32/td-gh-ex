@@ -46,6 +46,7 @@ function solon_customize_register( $wp_customize ) {
 		'site_logo',
 		array(
 			'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
     $wp_customize->add_control(
@@ -65,6 +66,7 @@ function solon_customize_register( $wp_customize ) {
 		'site_favicon',
 		array(
 			'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw'			
 		)
 	);
     $wp_customize->add_control(
@@ -100,6 +102,7 @@ function solon_customize_register( $wp_customize ) {
 		'solon_layout',
 		array(
 			'default' => 'content-sidebar',
+			'sanitize_callback' => 'esc_attr'
 		)
 	);
 	 
