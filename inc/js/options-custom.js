@@ -69,3 +69,10 @@ jQuery(document).ready(function($) {
 	}
 
 });
+
+//D5 Add Extra
+jQuery(function() { jQuery( ".section-radio, .section-multicheck, .section-checkbox" ).buttonset(); });
+
+
+
+

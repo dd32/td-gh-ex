@@ -42,6 +42,8 @@ add_filter( 'of_sanitize_radio', 'of_sanitize_enum', 10, 2 );
  */
 add_filter( 'of_sanitize_images', 'of_sanitize_enum', 10, 2 );
 
+
+
 /**
  * Sanitization for textarea field
  *
@@ -50,7 +52,7 @@ add_filter( 'of_sanitize_images', 'of_sanitize_enum', 10, 2 );
  */
 function of_sanitize_textarea( $input ) {
 	global $allowedposttags;
-	$output = wp_kses( $input, $allowedposttags);
+	$output = wp_kses( $input, $allowedposttags );
 	return $output;
 }
 add_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
@@ -70,6 +72,16 @@ function of_sanitize_checkbox( $input ) {
 	return $output;
 }
 add_filter( 'of_sanitize_checkbox', 'of_sanitize_checkbox' );
+
+function of_sanitize_switch( $input ) {
+	if ( $input ) {
+		$output = '1';
+	} else {
+		$output = false;
+	}
+	return $output;
+}
+add_filter( 'of_sanitize_switch', 'of_sanitize_switch' );
 
 /**
  * Sanitization for multicheck
@@ -92,6 +104,30 @@ function of_sanitize_multicheck( $input, $option ) {
 	return $output;
 }
 add_filter( 'of_sanitize_multicheck', 'of_sanitize_multicheck', 10, 2 );
+
+// D5 Extra Start
+function string_to_array($string, $element_delimiter = '|', $value_delimiter = ':') {
+	$results = array();
+    $array = explode($element_delimiter, $string);
+    foreach ($array as $result) {
+        $element = explode($value_delimiter, $result);
+        $results[$element[0]] = isset($element[1]) ? $element[1] : null;
+    }
+    return $results;
+}
+
+
+function of_sanitize_sorter( $input ) {
+	$output ='';
+	if ( isset($input) && is_array( $input )): $output = $input; else:
+	if ( substr($input, -1) == '|'): $sorteroutput = substr($input, 0, -1); endif;
+	if (isset($sorteroutput)) : $outputtext = sanitize_text_field($sorteroutput); $output = string_to_array($outputtext, '|', ':');   endif;
+	endif;
+	return $output;
+}
+
+add_filter( 'of_sanitize_sorter', 'of_sanitize_sorter' );
+
 
 /**
  * File upload sanitization.
@@ -124,8 +160,8 @@ function of_sanitize_editor( $input ) {
 		$output = $input;
 	}
 	else {
-		global $allowedtags;
-		$output = wpautop( wp_kses( $input, $allowedtags ) );
+		global $allowedposttags;
+		$output = wpautop( wp_kses( $input, $allowedposttags ) );
 	}
 	return $output;
 }
@@ -250,6 +286,9 @@ function of_sanitize_typography( $input, $option ) {
 		'size'  => '',
 		'face'  => '',
 		'style' => '',
+		'weight' => '',
+		'align' => '',
+		'cface' => '',
 		'color' => ''
 	) );
 
@@ -264,6 +303,9 @@ function of_sanitize_typography( $input, $option ) {
 
 	$output['size']  = apply_filters( 'of_font_size', $output['size'] );
 	$output['style'] = apply_filters( 'of_font_style', $output['style'] );
+	$output['weight'] = apply_filters( 'of_font_weight', $output['weight'] );
+	$output['align'] = apply_filters( 'of_font_align', $output['align'] );
+	$output['cface'] = apply_filters( 'of_font_cface', $output['cface'] );
 	$output['color'] = apply_filters( 'of_sanitize_color', $output['color'] );
 	return $output;
 }
@@ -294,6 +336,26 @@ function of_sanitize_font_style( $value ) {
 }
 add_filter( 'of_font_style', 'of_sanitize_font_style' );
 
+function of_sanitize_font_weight( $value ) {
+	$recognized = of_recognized_font_weights();
+	if ( array_key_exists( $value, $recognized ) ) {
+		return $value;
+	}
+	return apply_filters( 'of_default_font_weight', current( $recognized ) );
+}
+add_filter( 'of_font_weight', 'of_sanitize_font_weight' );
+
+
+
+function of_sanitize_font_align( $value ) {
+	$recognized = of_recognized_font_aligns();
+	if ( array_key_exists( $value, $recognized ) ) {
+		return $value;
+	}
+	return apply_filters( 'of_default_font_align', current( $recognized ) );
+}
+add_filter( 'of_font_align', 'of_sanitize_font_align' );
+
 /**
  * Sanitization for font face
  */
@@ -313,10 +375,10 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'options-framework' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'options-framework' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'options-framework' ),
-		'repeat'    => __( 'Repeat All', 'options-framework' ),
+		'no-repeat' => __( 'No Repeat', 'searchlight' ),
+		'repeat-x'  => __( 'Repeat Horizontally', 'searchlight' ),
+		'repeat-y'  => __( 'Repeat Vertically', 'searchlight' ),
+		'repeat'    => __( 'Repeat All', 'searchlight' ),
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -328,15 +390,15 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'options-framework' ),
-		'top center'    => __( 'Top Center', 'options-framework' ),
-		'top right'     => __( 'Top Right', 'options-framework' ),
-		'center left'   => __( 'Middle Left', 'options-framework' ),
-		'center center' => __( 'Middle Center', 'options-framework' ),
-		'center right'  => __( 'Middle Right', 'options-framework' ),
-		'bottom left'   => __( 'Bottom Left', 'options-framework' ),
-		'bottom center' => __( 'Bottom Center', 'options-framework' ),
-		'bottom right'  => __( 'Bottom Right', 'options-framework')
+		'top left'      => __( 'Top Left', 'searchlight' ),
+		'top center'    => __( 'Top Center', 'searchlight' ),
+		'top right'     => __( 'Top Right', 'searchlight' ),
+		'center left'   => __( 'Middle Left', 'searchlight' ),
+		'center center' => __( 'Middle Center', 'searchlight' ),
+		'center right'  => __( 'Middle Right', 'searchlight' ),
+		'bottom left'   => __( 'Bottom Left', 'searchlight' ),
+		'bottom center' => __( 'Bottom Center', 'searchlight' ),
+		'bottom right'  => __( 'Bottom Right', 'searchlight')
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
 }
@@ -348,8 +410,8 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'options-framework' ),
-		'fixed'  => __( 'Fixed in Place', 'options-framework')
+		'scroll' => __( 'Scroll Normally', 'searchlight' ),
+		'fixed'  => __( 'Fixed in Place', 'searchlight')
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
 }
@@ -421,12 +483,38 @@ function of_recognized_font_faces() {
  */
 function of_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'options-framework' ),
-		'italic'      => __( 'Italic', 'options-framework' ),
-		'bold'        => __( 'Bold', 'options-framework' ),
-		'bold italic' => __( 'Bold Italic', 'options-framework' )
+		'normal'      => __( 'Normal', 'searchlight' ),
+		'italic'      => __( 'Italic', 'searchlight' )
 		);
 	return apply_filters( 'of_recognized_font_styles', $default );
+}
+
+function of_recognized_font_weights() {
+	$default = array(
+		'normal'      => __( 'Normal', 'searchlight' ),
+		'bold'      => __( 'Bold', 'searchlight' ),
+		'100'      => __( '100', 'searchlight' ),
+		'200'      => __( '200', 'searchlight' ),
+		'300'      => __( '300', 'searchlight' ),
+		'400'      => __( '400', 'searchlight' ),
+		'500'      => __( '500', 'searchlight' ),
+		'600'      => __( '600', 'searchlight' ),
+		'700'      => __( '700', 'searchlight' ),
+		'800'      => __( '800', 'searchlight' ),
+		'900'      => __( '900', 'searchlight' ),
+		
+		);
+	return apply_filters( 'of_recognized_font_weights', $default );
+}
+
+function of_recognized_font_aligns() {
+	$default = array(
+		'left'      => __( 'Left Align', 'searchlight' ),
+		'right'      => __( 'Right Align', 'searchlight' ),
+		'center'        => __( 'Center Align', 'searchlight' ),
+		'justify' => __( 'Justify Align', 'searchlight' )
+		);
+	return apply_filters( 'of_recognized_font_aligns', $default );
 }
 
 /**

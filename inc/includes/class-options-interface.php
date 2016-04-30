@@ -6,6 +6,9 @@
  * @link      http://wptheming.com
  * @copyright 2010-2014 WP Theming
  */
+ 
+ 
+				
 
 class Options_Framework_Interface {
 
@@ -30,6 +33,8 @@ class Options_Framework_Interface {
 
 		return $menu;
 	}
+	
+	
 
 	/**
 	 * Generates the options fields that are used in the form.
@@ -179,6 +184,26 @@ class Options_Framework_Interface {
 				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' />';
 				$output .= '<label class="explain" for="' . esc_attr( $value['id'] ) . '">' . wp_kses( $explain_value, $allowedtags) . '</label>';
 				break;
+				
+				
+				// Switch
+			case "switch":
+			
+				$sclass = 'swit'. esc_attr( $value['id'] );
+				$capop = '';
+				if (isset($value['capt'])): $capop = $value['capt']; endif;
+				if (!empty($capop)): $dcapop = $capop[0]; $ecapop = $capop[1]; echo '<style>.'.$sclass.' .onoffswitch-inner:before { content: "'.$ecapop.'"; } .' .$sclass. ' .onoffswitch-inner:after { content: "'.$dcapop.'"; }</style>'; endif;
+				$output .= '<div class="onoffswitch '.$sclass.'">';
+				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="switch onoffswitch-checkbox of-input-switch" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' />';
+				$output .= '<label class="onoffswitch-label" for="myonoffswitch">';
+        		$output .= '<span class="onoffswitch-inner"></span>';
+        		$output .= '<span class="onoffswitch-switch"></span>';
+    			$output .= '</label>';
+				$output .= '</div>';
+				$output .= '<label class="explainswitch" for="' . esc_attr( $value['id'] ) . '"> </label>';
+				
+				break;
+				
 
 			// Multicheck
 			case "multicheck":
@@ -217,13 +242,16 @@ class Options_Framework_Interface {
 
 			// Typography
 			case 'typography':
-
-				unset( $font_size, $font_style, $font_face, $font_color );
+				$fvid = $value['id'];
+				unset( $font_size, $font_style, $font_weight, $font_align, $font_face,  $font_cface, $font_color );
 
 				$typography_defaults = array(
 					'size' => '',
 					'face' => '',
 					'style' => '',
+					'weight' => '',
+					'align' => '',
+					'cface' => '',
 					'color' => ''
 				);
 
@@ -233,7 +261,10 @@ class Options_Framework_Interface {
 					'sizes' => of_recognized_font_sizes(),
 					'faces' => of_recognized_font_faces(),
 					'styles' => of_recognized_font_styles(),
-					'color' => true
+					'weights' => of_recognized_font_weights(),
+					'aligns' => of_recognized_font_aligns(),
+					'cface' => true,
+					'color' => true,
 				);
 
 				if ( isset( $value['options'] ) ) {
@@ -270,6 +301,26 @@ class Options_Framework_Interface {
 					}
 					$font_style .= '</select>';
 				}
+				
+				// Font Weight
+				if ( $typography_options['weights'] ) {
+					$font_weight = '<select class="of-typography of-typography-weight" name="'.$option_name.'['.$value['id'].'][weight]" id="'. $value['id'].'_weight">';
+					$weights = $typography_options['weights'];
+					foreach ( $weights as $key => $weight ) {
+						$font_weight .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['weight'], $key, false ) . '>'. $weight .'</option>';
+					}
+					$font_weight .= '</select>';
+				}
+				
+				// Font Align
+				if ( $typography_options['aligns'] ) {
+					$font_align = '<select class="of-typography of-typography-align" name="'.$option_name.'['.$value['id'].'][align]" id="'. $value['id'].'_align">';
+					$aligns = $typography_options['aligns'];
+					foreach ( $aligns as $key => $align ) {
+						$font_align .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['align'], $key, false ) . '>'. $align .'</option>';
+					}
+					$font_align .= '</select>';
+				}
 
 				// Font Color
 				if ( $typography_options['color'] ) {
@@ -278,13 +329,41 @@ class Options_Framework_Interface {
 						if ( $val !=  $value['std']['color'] )
 							$default_color = ' data-default-color="' .$value['std']['color'] . '" ';
 					}
-					$font_color = '<input name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" class="of-color of-typography-color  type="text" value="' . esc_attr( $typography_stored['color'] ) . '"' . $default_color .' />';
+					$font_color = '<input name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" class="of-color of-typography-color"  type="text" value="' . esc_attr( $typography_stored['color'] ) . '"' . $default_color .' />';
 				}
+				
+				// Font CFace
+				if ( $typography_options['cface'] ) {
+					$default_cface = '';
+					if ( isset($value['std']['cface']) ) {
+						if ( $val !=  $value['std']['cface'] )
+							$default_cface = ' data-default-cface="' .$value['std']['cface'] . '" ';
+					}
+					$font_cface = '<input name="' . esc_attr( $option_name . '[' . $value['id'] . '][cface]' ) . '" id="' . esc_attr( $value['id'] . '_cface' ) . '" class="of-cface of-typography-cface"  type="text"  value="' . esc_attr( $typography_stored['cface'] ) . '"' . $default_cface .' placeholder="Custom Font Family" />';
+				}
+				
 
 				// Allow modification/injection of typography fields
-				$typography_fields = compact( 'font_size', 'font_face', 'font_style', 'font_color' );
+				$typography_fields = compact( 'font_size', 'font_face', 'font_style', 'font_weight', 'font_align', 'font_color', 'font_cface'  );
 				$typography_fields = apply_filters( 'of_typography_fields', $typography_fields, $typography_stored, $option_name, $value );
 				$output .= implode( '', $typography_fields );
+				$output .= '<div class="typoshow">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0 1 2 3 4 5 6 7 8 9 World Class, Responsive and Premium WordPress Themes by D5 CREATION</div>';
+				?>
+                
+                <script type="text/javascript">
+                jQuery(document).ready(function(){
+					jQuery("<?php echo '#section-'. $fvid .' '; ?> .of-typography-face").change(function(){ jQuery("<?php echo '#section-'. $fvid .' '; ?> .typoshow").css("font-family", jQuery(this).val()); }).change();
+					jQuery("<?php echo '#section-'. $fvid .' '; ?> .of-typography-size").change(function(){ jQuery("<?php echo '#section-'. $fvid .' '; ?> .typoshow").css("font-size", jQuery(this).val()); }).change();
+					jQuery("<?php echo '#section-'. $fvid .' '; ?> .of-typography-style").change(function(){ jQuery("<?php echo '#section-'. $fvid .' '; ?> .typoshow").css("font-style", jQuery(this).val()); }).change();
+					jQuery("<?php echo '#section-'. $fvid .' '; ?> .of-typography-weight").change(function(){ jQuery("<?php echo '#section-'. $fvid .' '; ?> .typoshow").css("font-weight", jQuery(this).val()); }).change();
+					jQuery("<?php echo '#section-'. $fvid .' '; ?> .of-typography-align").change(function(){ jQuery("<?php echo '#section-'. $fvid .' '; ?> .typoshow").css("text-align", jQuery(this).val()); }).change();
+					jQuery("<?php echo '#section-'. $fvid .' '; ?> .wp-color-picker").wpColorPicker( 'option', 'change', function(event, ui) { jQuery("<?php echo '#section-'. $fvid .' '; ?> .typoshow").css("color", jQuery(this).val()); } );
+					jQuery("<?php echo '#section-'. $fvid .' '; ?>  .of-typography-cface").blur(function(){ jQuery("<?php echo '#section-'. $fvid .' '; ?> .typoshow").css("font-family", jQuery(this).val()); });
+				});
+				</script>	
+				
+				
+				<?php
 
 				break;
 
@@ -352,7 +431,7 @@ class Options_Framework_Interface {
 				$default_editor_settings = array(
 					'textarea_name' => $textarea_name,
 					'media_buttons' => false,
-					'tinymce' => array( 'plugins' => 'wordpress' )
+					'tinymce' => array( 'plugins' => 'wordpress,wplink' )
 				);
 				$editor_settings = array();
 				if ( isset( $value['settings'] ) ) {
@@ -362,6 +441,55 @@ class Options_Framework_Interface {
 				wp_editor( $val, $value['id'], $editor_settings );
 				$output = '';
 				break;
+				
+	// D5 Extra
+				//Drag & Drop Block Manager
+				case 'sorter':
+				$itemid = $value['id'];
+				$itemdef = $value['std'];
+				$itemsv = of_get_option( $itemid, $itemdef );
+				$bodylayout = $itemsv;
+				if ( is_array( $itemsv )  && is_array( $itemdef ) ):
+					if($itemsv === array_intersect($itemsv, $itemdef) && $itemdef === array_intersect($itemdef, $itemsv)): 
+						$bodylayout = $itemsv; 
+						else: $itemall = array_merge($itemsv,$itemdef); $bodylayout = array_intersect($itemall,$itemdef); $output .= '<div class="ofnote">Note: Items Added/Deducted, Please Update Your Settings Again!</div>';
+					endif;
+				endif;				
+				if ( isset($bodylayout) && is_array( $bodylayout )):
+				$val ='';
+				$blayout= $bodylayout; 
+				$output .= '<div id="'.$itemid.'sorter">';
+				$output .= '<ol class="shorterobject">';
+				foreach ( $blayout as $xkey => $xvalue ) {
+					$aval = $xkey.':'.$xvalue.'|';
+					$output .= '<li role="'.$aval.'" class="sorterli">' . $xvalue . '</li>';
+					$val .= $aval;
+				}
+				$output .= '</ol>';
+				$output .= '</div>';
+				?>
+				<script type="text/javascript">
+				jQuery(document).ready(function() {
+					// jQuery( ".shorterobject" ).sortable();
+    				// jQuery( ".shorterobject" ).disableSelection();
+    				jQuery("<?php echo '#'.$itemid.'sorter '; ?> .shorterobject").sortable({    
+						stop : function(event, ui){
+							jQuery("<?php echo '#'.$itemid; ?>").val('');	
+							jQuery("<?php echo '#'.$itemid.'sorter '; ?> .shorterobject li").each(function(){ jQuery("<?php echo '#'.$itemid; ?>").val(jQuery("<?php echo '#'.$itemid; ?>").val() + jQuery(this).attr("role") ); });
+						}
+					});
+				});
+				</script>
+                <?php
+								
+				else:
+				$output .= 'Not Proper Default Data. Default Data should be an Array !';
+				endif;
+				$output .= '<input id="' . esc_attr( $itemid ) . '" class="'.$itemid.'-sort of-sorter" name="' . esc_attr( $option_name . '[' . $itemid . ']' ) . '" type="text" value="' . esc_attr( $val ) . '"' . $placeholder . ' />';
+				$output .= '';
+				break;
+	// D5 Extra End
+				
 
 			// Info
 			case "info":
@@ -399,6 +527,7 @@ class Options_Framework_Interface {
 				$output .= '<div id="options-group-' . $counter . '" class="group ' . $class . '">';
 				$output .= '<h3>' . esc_html( $value['name'] ) . '</h3>' . "\n";
 				break;
+				
 			}
 
 			if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {
@@ -419,3 +548,5 @@ class Options_Framework_Interface {
 	}
 
 }
+
+				

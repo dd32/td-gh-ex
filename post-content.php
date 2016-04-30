@@ -1,7 +1,7 @@
 <?php
 
 /* 	Searchlight Theme's Post Content
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Searchlight 1.0
 */
@@ -44,9 +44,9 @@
 	<!-- End the Loop. -->          
         	
 		<?php 
-		if ( is_page() ): if (comments_open( $post->ID ) == true ): comments_template('', true); endif;	endif;
+		if ( is_page() ): comments_template('', true);	endif;
 		if ( is_single() ): 
-			if (comments_open( $post->ID ) == true ): comments_template('', true); endif; 
+			comments_template('', true); 
 			if (get_post_meta( get_the_ID(), 'sb_pl', true ) == 'fullwidth' ): echo '<style>#content { width: 100%; } #right-sidebar { display: none; }</style>'; endif;
 		endif; ?>
             

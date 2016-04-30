@@ -1,7 +1,7 @@
 ----------------------------------
 Searchlight
 ----------------------------------
-Version: 	1.6
+Version: 	1.7
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -11,27 +11,13 @@ Copyright: 	D5 Creation
 License: 	GNU General Public License v2 or later
 License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 
-This Product is provided "as is" with no waranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License (GPL) of the Theme or Compatible  Licenses.
-
-
-	banner.jpg
-	Author:		shreeshphotography
-	License:		Public Domain CC0
-	Source:		http://pixabay.com/en/fashion-portrait-floral-beauty-279612/
+This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License (GPL) of the Theme or Compatible  Licenses.
 
 
 License of the Images used in the screenshot.png
----------------------------------------------------------------------------
-
-
-1. 	Author:		PublicDomainPictures
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/citrus-food-fresh-fruit-green-2272/
-
-2. 	Author:		weinstock
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/glass-marble-colorful-green-pearl-96237/
-
+Source:		http://pixabay.com/en/fashion-portrait-floral-beauty-279612/
+Source:		https://pixabay.com/en/girl-red-green-eyes-beauty-1308307/
+Source:		https://pixabay.com/en/girl-red-green-eyes-beauty-1308310/
 
 Options Framework, License: GPL-2.0+, Author: Devin Price, Source: http://wptheming.com
 Genericons Fonts, License: GPL, Author: AUTOMATTIC, Source: http://genericons.com

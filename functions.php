@@ -1,6 +1,6 @@
 <?php
 /* 	Searchlight Theme's Functions
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Searchlight 1.0
 */
@@ -29,6 +29,7 @@
 // 	Tell WordPress for the Feed Link
 	add_theme_support( 'automatic-feed-links' );
 	add_editor_style();
+	add_theme_support( "title-tag" );
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
@@ -76,8 +77,7 @@
 	add_action( 'wp_enqueue_scripts', 'searchlight_enqueue_scripts' );
 	
 function searchlight_creditline () {
-	$searchlight_theme_data = wp_get_theme(); $searchlight_author_uri = $searchlight_theme_data->get( 'AuthorURI' );
-	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Searchlight ' . __('Theme by:', 'searchlight') . ' <a href="'. $searchlight_author_uri .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'searchlight') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
+	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Searchlight ' . __('Theme by:', 'searchlight') . ' <a href="'.  esc_url('http://d5creation.com/theme/searchlight/') .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'searchlight') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
     }
 	
 
