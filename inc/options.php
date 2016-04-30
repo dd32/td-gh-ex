@@ -18,7 +18,21 @@ function optionsframework_options() {
 		'type' => 'heading');
 		
 	$options[] = array(
-		'desc' => '<div class="infohead"><span class="donation">'. __('A Theme is an effort of many sleepless nights of Developers. You can contribute on this development translating this theme in your Language. You can send your translation/language file to us, ','searchlight').' <a href="'.esc_url('http://d5creation.com/contact/').'" target="_blank"><strong>'. __('Contact Us.','searchlight') .'</a> '. __('You can inspire us writing a ','searchlight').'<a href="http://wordpress.org/support/view/theme-reviews/searchlight" target="_blank">'.__('Positive Review','searchlight').'</a> '.__('of our Theme','searchlight').'</span><br /><br /><span class="donation"> '. __('Need More Features and Options including Exciting Multi Layer Slide, Unlimited Slides with layered Effects, Unlimited Featured Boxes, Color Changing Options, Easy Translation Option and 100+ Advanced Features? Try','searchlight').' <a href="http://d5creation.com/theme/searchlight/" target="_blank"><strong>Searchlight Extend</strong></a></span><br /> <br /><span class="donation"> '. __('You can Visit the Searchlight Extend Demo ','searchlight').' <a href="http://demo.d5creation.com/themes/?theme=simplify" target="_blank"><strong>'. __('Here','searchlight').'</strong></a></span><a href="http://d5creation.com/theme/searchlight/" target="_blank" class="extendlink"> </a></div>',
+		'desc' => '<div class="infohead"><span class="donation">'. __('A Theme is an effort of many sleepless nights of Developers. You can contribute on this development translating this theme in your Language. You can send your translation/language file to us, ','searchlight').' <a href="'.esc_url('http://d5creation.com/contact/').'" target="_blank"><strong>'. __('Contact Us.','searchlight') .'</a> '. __('You can inspire us writing a ','searchlight').'<a href="http://wordpress.org/support/view/theme-reviews/searchlight" target="_blank">'.__('Positive Review','searchlight').'</a> '.__('of our Theme','searchlight').'</span><br /><br /><span class="donation"> '. __('Need More Features and Options including Exciting Multi Layer Slide, Unlimited Slides with layered Effects, Unlimited Featured Boxes, Color Changing Options, Easy Translation Option and 100+ Advanced Features? Try','searchlight').' <a href="http://d5creation.com/theme/searchlight/" target="_blank"><strong>Searchlight Extend</strong></a></span><br /> <br /><span class="donation"> '. __('You can Visit the Searchlight Extend Demo ','searchlight').' <a href="http://demo.d5creation.com/themes/?theme=Searchlight" target="_blank"><strong>'. __('Here','searchlight').'</strong></a></span><a href="http://d5creation.com/theme/searchlight/" target="_blank" class="extendlink"> </a></div><br />
+<br />
+<br />
+<br />
+		<div class="floatcntr">
+    		<a class="specialbutton inblk" href="'. esc_url('http://d5creation.com/theme/searchlight/').'">Searchlight Theme Page</a>
+            <a class="specialbutton inblk" href="'. esc_url('http://demo.d5creation.com/themes/?theme=Searchlight').'">Searchlight Demo</a>
+            <a class="specialbutton inblk" href="'. esc_url('http://d5creation.com/themegallery/').'">D5 Theme Gallery</a>
+    	</div>
+		
+		<div class="specialmsg">
+    		<div class="specialtext floatlt ">Learn More about our Flexible Membership Options</div>
+        	<a class="specialbutton floatrt" href="'. esc_url('http://d5creation.com/mp/').'">View Pricing and Features</a>
+    	</div>
+',
 		'type' => 'info');
 		
 		

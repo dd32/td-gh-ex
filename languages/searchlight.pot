@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2016-04-30 19:04+0600\n"
+"POT-Creation-Date: 2016-04-30 19:52+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -339,76 +339,76 @@ msgstr ""
 msgid "Here"
 msgstr ""
 
-#: inc/options.php:26
+#: inc/options.php:35
 msgid "Banner Image"
 msgstr ""
 
-#: inc/options.php:27
+#: inc/options.php:36
 msgid "You can upload a Banner Image for your site here"
 msgstr ""
 
-#: inc/options.php:33 options.php:31
+#: inc/options.php:42 options.php:31
 msgid "Fixed Header?"
 msgstr ""
 
-#: inc/options.php:34
+#: inc/options.php:43
 msgid ""
 "Uncheck it if you do not want to show the Header Fixed. Default is Fixed."
 msgstr ""
 
-#: inc/options.php:40
+#: inc/options.php:49
 msgid "Site Layout"
 msgstr ""
 
-#: inc/options.php:41
+#: inc/options.php:50
 msgid "You can set the Site Layout for Whole the Site."
 msgstr ""
 
-#: inc/options.php:52
+#: inc/options.php:61
 msgid "Contact Number"
 msgstr ""
 
-#: inc/options.php:53
+#: inc/options.php:62
 msgid "Set Your Contact Number"
 msgstr ""
 
-#: inc/options.php:63
+#: inc/options.php:72
 msgid "Site Colors"
 msgstr ""
 
-#: inc/options.php:67
+#: inc/options.php:76
 msgid "Use This Customized Design"
 msgstr ""
 
-#: inc/options.php:68
+#: inc/options.php:77
 msgid "Check this box if you want to use the following Custom Style Code"
 msgstr ""
 
-#: inc/options.php:74
+#: inc/options.php:83
 msgid "Color 01"
 msgstr ""
 
-#: inc/options.php:75 inc/options.php:82 inc/options.php:89
+#: inc/options.php:84 inc/options.php:91 inc/options.php:98
 msgid "Change the Color"
 msgstr ""
 
-#: inc/options.php:81
+#: inc/options.php:90
 msgid "Color 02"
 msgstr ""
 
-#: inc/options.php:88
+#: inc/options.php:97
 msgid "Color 03"
 msgstr ""
 
-#: inc/options.php:97
+#: inc/options.php:106
 msgid "Social Links"
 msgstr ""
 
-#: inc/options.php:104
+#: inc/options.php:113
 msgid "Social Link - "
 msgstr ""
 
-#: inc/options.php:105
+#: inc/options.php:114
 msgid ""
 "Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/"
 "d5creation</b>.  If you do not want to show anything here leave the box "
@@ -457,7 +457,7 @@ msgid "Searchlight"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://d5creation.com/themes/searchlight/"
+msgid "http://d5creation.com/theme/searchlight/"
 msgstr ""
 
 #. Description of the plugin/theme

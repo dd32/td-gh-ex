@@ -115,4 +115,13 @@ a.extendlink{float:right;height:50px;width:290px; background: url("../images/ext
 #optionsframework .section-radio label.ui-state-active::before, #optionsframework .section-checkbox label.ui-state-active::before, #optionsframework .section-multicheck label.ui-state-active::before { content: "\f147"; font-family: dashicons; vertical-align: middle; font-size: 17px; color: #0ec2ea; position: absolute; margin-left: 3px; border: 1px solid #0ec2ea; line-height: 1; }
 #optionsframework .section-checkbox label { width: auto; min-width: 300px; }
 
-
+#optionsframework .specialbutton { background: #00aeef; border: 0 none; box-shadow: 0 2px 0 0 #0089bc, 0 1px 0 0 rgba(225, 225, 225, 0.2) inset; color: #ffffff; text-shadow: 0 1px rgba(0, 0, 0, 0.1); border-radius: 3px; cursor: pointer; display: block; font-size: 15px; font-weight: bold; height: auto; margin: 5px; padding: 13px; text-align: center; text-decoration: none; text-transform: uppercase; width: auto;}
+#optionsframework .inblk { display: inline-block; vertical-align: top; margin: 5px 10px; }
+#optionsframework .specialbutton:hover { background: #0098d0 ; box-shadow: none; }
+#optionsframework .specialbutton:active { position: relative; top: 1px; }
+#optionsframework .specialmsg { background: #ffffff; border-left: 5px solid #0098d0; display: block; margin: 20px auto; overflow: hidden; padding: 15px 10px; font-size: 15px; }
+#optionsframework .specialmsg h2 { line-height: 0; }
+#optionsframework .specialtext { font-size: 19px; max-width: 70%; padding: 16px 0; }
+#optionsframework .floatlt { float: left; }
+#optionsframework .floatrt { float: right; }
+#optionsframework .floatcntr { text-align: center; }
