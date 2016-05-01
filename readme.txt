@@ -1,7 +1,7 @@
 ----------------------------------
 Theme:		D5 COLORFUL
 ----------------------------------
-Version: 	1.7
+Version: 	1.9
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -11,7 +11,7 @@ Copyright: 	D5 Creation
 License: 	GNU General Public License v2 or later
 License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 
-This Product is provided "as is" with no waranty or liabilities of D5 Creation. 
+This Product is provided "as is" with no warranty or liabilities of D5 Creation. 
 
 All the PHP Code, Images and other particulars included with this product are licensed under the same License: GNU General Public License v2 or later.
 
@@ -43,6 +43,11 @@ All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
 
 
 Limitation: You can add only two widgets in the footer sidebar. The footer sidebar's hight is fixed. So, please consider the limitation of height during using the Widgets.
+
+Changelog: 1.8
+==================
+- Theme URL Change
+- Added Theme About Page
 
 Changelog: 1.7
 ==================
