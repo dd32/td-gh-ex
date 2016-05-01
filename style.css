@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.403
+Version: 1.404
 Tags: black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout, rtl-language-support, microformats
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -388,6 +388,9 @@ iframe[src^="https://embed-ssl.ted.com/"]{
     padding-bottom: 56.25%;
     padding-top: 30px;
     height: 0;
+}
+.oembed-container.rd-mixcloud{
+   padding-bottom: 36.25%;
 }
 .oembed-container .issuuembed{
    clear:both;
@@ -2029,6 +2032,8 @@ br.clearfix {
     position:static;
     text-align:center;
     width:14.2857142857%;
+    word-wrap: normal;
+    overflow-wrap: normal;
 
 }
 #ft #calendar_wrap td{
@@ -2038,6 +2043,8 @@ br.clearfix {
     height:0;
     padding-top:3.5%;
     padding-bottom:3.5%;
+    word-wrap: normal;
+    overflow-wrap: normal;
 }
 #wp-calendar #next a,
 #wp-calendar #prev a{
@@ -4217,7 +4224,6 @@ ol.list-of-post-list .entry-title{
 .entry-content .gist .line-numbers{
     background:#555;
     color:#fff;
-    border:1px solid red;
 }
 .textwidget .gist .pl-vo,
 .entry-content .gist .pl-vo{
@@ -5860,7 +5866,6 @@ body.rd-primary-menu-responsive-active .raindrops-mobile-menu .open,
 .topsidebar li:empty{
     display:none;
 }
-
 .centered{
     display: flex;
     align-items: center;
@@ -5896,3 +5901,80 @@ body.rd-primary-menu-responsive-active .raindrops-mobile-menu .open,
 .topsidebar .raindrops-recent-posts li{
     margin-bottom:1em;
 }
+/**
+ * @1.404
+ * for grid pinup widget
+ */
+.topsidebar .grid-pinup-widgets{
+    display:flex;
+    flex-wrap:wrap;
+    text-align:left;
+
+}
+.topsidebar .grid-pinup-widgets > li{
+    flex-grow:1;
+    flex-basis: 0;
+    min-width:240px;
+}
+.rd-col-1 .topsidebar .grid-pinup-widgets .page,
+.rd-col-1 .topsidebar .grid-pinup-widgets .post{
+    padding:1em;
+}
+.topsidebar .grid-pinup-widgets > li:hover{
+    border:1px solid rgba(122,122,122,.3);
+    background:rgba(122,122,122,.15);
+    margin:-1px;
+}
+.topsidebar .grid-pinup-widgets .pinup-entry-title{
+    margin:0;
+    padding:.5em .1em;
+    box-sizing:border-box;
+}
+.topsidebar .grid-pinup-widgets .widgettitle{
+    padding: 0;
+}
+.topsidebar .grid-pinup-widgets img.aligncenter{
+    padding:0;
+}
+
+.rsidebar .grid-pinup-item h2,
+.lsidebar .grid-pinup-item h2,
+.rsidebar .grid-pinup-item h2 span,
+.lsidebar .grid-pinup-item h2 span{
+    background:transparent;
+}
+.rsidebar .raindrops-pinup-entries .widgettitle,
+.lsidebar .raindrops-pinup-entries .widgettitle{
+    padding:0 .5em;
+}
+.rsidebar .raindrops-pinup-entries img.aligncenter,
+.lsidebar .raindrops-pinup-entries img.aligncenter{
+   padding:0;
+}
+.ie9 .topsidebar .grid-pinup-widgets{
+    display:block;
+}
+.ie9 .topsidebar .grid-pinup-widgets:after{
+    content:'';
+    display:table;
+}
+.ie9 .grid-pinup-widgets > li,
+.ie9 .grid-pinup-widgets .grid-pinup-item{
+    display:inline-block;
+    width:33%;
+    float:left;
+}
+.ie9 .topsidebar .grid-pinup-widgets .pinup-entry-title{
+    margin:0;
+    padding:.5em .1em;
+    box-sizing:border-box;
+}
+.ie9 .topsidebar .grid-pinup-widgets .widgettitle{
+    padding:.5em 0;
+}
+.ie9 .topsidebar .grid-pinup-widgets img.aligncenter{
+    padding:0;
+    box-sizing:border-box;
+}
+/*  * for grid pinup widget END */
+
