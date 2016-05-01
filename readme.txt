@@ -127,6 +127,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.9
+- Fixed:   Post content displayed on main blog page can be set by user using core WordPress <!--more--> tag.
+- Updated: Logo image width set to "auto".
+
 Version 1.3.8
 - Fixed:   404 page now displays correctly. Issue introduced in previous version now corrected.
 

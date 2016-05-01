@@ -33,13 +33,18 @@ global $post;
 
 /* Input post excerpt / content to blog page */
 function thinkup_input_blogtext() {
+global $post;
 global $thinkup_blog_postswitch;
 
-	/* Output post thumbnail / featured media */
-	if ( $thinkup_blog_postswitch == 'option1' or empty( $thinkup_blog_postswitch ) ) {
+	// Output post content
+	if ( is_search() ) {
 		the_excerpt();
-	} else if ( $thinkup_blog_postswitch == 'option2' ) {		
-		the_content();
+	} else if ( ! is_search() ) {
+		if ( ( empty( $thinkup_blog_postswitch ) or $thinkup_blog_postswitch == 'option1' ) and ! is_numeric( strpos( $post->post_content, '<!--more-->' ) ) ) {
+			the_excerpt();
+		} else if ( $thinkup_blog_postswitch == 'option2' ) {
+			the_content();
+		}
 	}
 }
 
