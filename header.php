@@ -12,7 +12,7 @@
 <body  <?php body_class(); ?>  >
 <div class="ct_acool ">
 	<header id="ct_header" class="ct_header_class site-header ct_header_class_post_page fixed">
-    <div class="header_box <?php if(ct_get_option( 'ct_acool','box_header_center' )){echo 'container';}?>" >
+    <div class="header_box <?php if(ct_get_option( 'ct_acool','box_header_center',false)){echo 'container';}?>" >
 
         <div class="ct_logo ct_f_left">
         
@@ -49,8 +49,9 @@
 	
     <?php //if (get_option( 'header_textcolor' ) ){echo '124';}?>
     
-
-            <?php if ( 0 != ct_get_option( 'ct_acool','show_search_icon' ) ) :  //?>
+            <?php do_action( 'ct_header_top' ); ?>    
+    
+            <?php if ( ct_get_option( 'ct_acool','show_search_icon','1' ) ==1 ) { //?>
             
             <div id="ct_top_search">
                 <span id="ct_search_icon"></span>
@@ -64,9 +65,9 @@
                 ?>
                 </form>
             </div>
-            <?php  endif; // true === ct_get_option( 'show_search_icon', false ) ?>
+            <?php  } // true === ct_get_option( 'show_search_icon', false ) ?>
 
-            <?php do_action( 'ct_header_top' ); ?>
+
 
 
         </div> <!-- #ct-top-navigation -->

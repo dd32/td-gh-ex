@@ -35,7 +35,7 @@
                           	</ul>
                           	<p>
 							<?php 
-								$footer_info = ct_get_option( 'ct_acool','footer_info' );
+								$footer_info = ct_get_option( 'ct_acool','footer_info','' );
 								
 								if ( '' != $footer_info )
 								{

@@ -9,8 +9,8 @@ Tags:black, green, gray, two-columns, left-sidebar, fixed-layout, responsive-lay
 
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version:      2.0.2
-Update date: 2016.4.28
+Version:      2.0.3
+Update date: 2016.4.29
 */
 
 
@@ -168,6 +168,8 @@ hr {background-color: rgba(0, 0, 0, 0.1);border: 0;	height: 1px;margin-bottom: 2
 @font-face{font-family:'FontAwesome';src:url('fonts/fontawesome-webfont.eot?v=4.5.0');src:url('fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'),url('fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'),url('fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'),url('fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'),url('fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}
 ol, ul { list-style: none; }
 nav#top-menu-nav, #top-menu { float: left; }
+
+#top-menu { margin-right:-50px; }
 #top-menu li { display: inline-block; font-size: 14px; padding-right: 0px; }
 #top-menu a {  text-decoration: none; display: block; position: relative; }
 
@@ -219,7 +221,7 @@ content: ' >\0000a0'; font-size: 9px; position: absolute; right: 0; top: 13px; }
 .ct_mobile_menu li .menu-item-has-children > a { background-color: transparent; }
 
 
-#ct_mobile_nav_menu { float: right; display: none; }
+#ct_mobile_nav_menu { float: right; display: none; margin-right:20px; }
 .mobile_menu_bar { position: relative; }
 .mobile_menu_bar:before { content: "\f0c9"; font-size: 28px; right: 10px; position: relative; top: 10px;	font-weight: lighter;color: #808080; }
 .mobile_nav .select_page { display: none; }
@@ -259,9 +261,15 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff, endCo
 }
 .carousel-caption a.btn:hover,.ct_setion_text a.btn:hover{	background-color: #0c8432;text-decoration: none;color: #fff;border: 1px solid #0c8432;}
 
-.carousel-caption{bottom: 20%;right: 15%;left: 15%;color: #fff;z-index: 3;}
+.carousel-caption{top: 10%;right: 0%;left: 3%;color: #fff;z-index: 3;}
+.carousel-caption{ width:50%; margin-right:50%;}
+
 .ct_setion_text{ margin-bottom:8%;}
 .carousel-caption h1,.ct_setion_text h1 {color: #fff;font-size: 6em;text-transform: uppercase;font-weight: normal;}
+
+.carousel-caption h1,.ct_setion_text h1 {color: #fff;font-size: 5em;text-transform: uppercase;font-weight: normal;}
+.carousel-caption{top: 10%;right: 0%;left: 3%;color: #fff;z-index: 3;}
+
 .ct_setion_text h1 {margin:10% auto 0 auto; max-width:80%;}
 .ct_setion_text .ct_slider_text{ font-size:1.5em; margin-bottom:5%;}
 .carousel-caption .ct_slider_text,.ct_setion_text .ct_slider_text{ font-size:1.5em;}
@@ -275,6 +283,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff, endCo
 .carousel-control .fa-angle-left {left: 50%;}
 .carousel-control .fa-angle-right {	right: 50%;}
 .carousel-inner > .item > img, .carousel-inner > .item > a > img{width:100%;}
+
 
 @media screen and (max-width:1750px) {
 .carousel-caption {bottom: 10%;}

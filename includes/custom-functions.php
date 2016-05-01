@@ -221,12 +221,15 @@ function acool_previous_next($str)
  * @return mixed Theme option value or false if not found.
  */
 if ( ! function_exists( 'ct_get_option' ) ){
-	function ct_get_option( $ct_row,$option_name )
+	function ct_get_option( $ct_row,$option_name,$default )
 	{				
 		$arr =  get_option($ct_row);
 		@$option_value     = sanitize_text_field($arr[$option_name]);
-
-		return $option_value;
+		if($option_value !=''){
+			return $option_value;
+		}else{			
+			return  $default;	
+		}
 	}
 }
 

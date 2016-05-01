@@ -4,7 +4,7 @@
 *
 */
 
-$enable_home_page = of_get_option('enable_home_page');
+$enable_home_page = of_get_option('enable_home_page',1);
 
 if ( 'posts' == get_option( 'show_on_front' ) )
 {
@@ -13,8 +13,8 @@ if ( 'posts' == get_option( 'show_on_front' ) )
 }
 else
 {
-	if(  $enable_home_page == "1" )
-	{
+	if(  $enable_home_page == 1 )
+	{		
 		get_template_part( 'front-page-content' ); //front-page-content.php
 	}
 	else

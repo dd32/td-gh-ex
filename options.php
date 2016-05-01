@@ -172,9 +172,8 @@ function optionsframework_options()
 		'std' => 'body{margin:0px;}',
 		'type' => 'textarea');
 
+
 	//Home page
-	if ( defined( 'CT_FEATURED_HOMEPAGE_USED' ) && CT_FEATURED_HOMEPAGE_USED )
-	{	
 	 	$options[] = array(
 			'name' => __('Home Page', 'Acool'),
 			'type' => 'heading');
@@ -183,8 +182,14 @@ function optionsframework_options()
 			'name' => __('Enable Featured Homepage', 'Acool'),
 			'desc' => sprintf(__('Active featured homepage Layout.  The standardized way of creating Static Front Pages: <a href="%s" target="_blank">Creating a Static Front Page</a>', 'Acool'),esc_url('http://codex.wordpress.org/Creating_a_Static_Front_Page')),
 			'id' => 'enable_home_page',
-			'std' => '0',
-			'type' => 'checkbox');
+			'std' => '1',
+			'type' => 'checkbox');	
+	
+	
+	
+	if ( defined( 'CT_FEATURED_HOMEPAGE_USED' ) && CT_FEATURED_HOMEPAGE_USED )
+	{	
+
 		  
 		 $options[] = array(
 			'name' => __('Number of Sections', 'Acool'),
@@ -644,7 +649,7 @@ function optionsframework_options()
 		
 	$options[] = array('name' => __('Header Opacity', 'Acool'),'desc' =>'',	'id' => 'header_opacity',	'type' => 'select',	'class' => 'mini',	'std' => '0.8','options' => array_combine(range(0,1,0.1), range(0,1,0.1)) );	
 		
-	$options[] = array('name' => __('Fixed Header', 'Acool'),'desc' =>'',	'id' => 'fixed_header',	'type' => 'select',	'class' => 'mini',	'std' => '1','options' => array('no'=>'no','yes'=>'yes') );
+	$options[] = array('name' => __('Fixed Header', 'Acool'),'desc' =>'',	'id' => 'fixed_header',	'type' => 'select',	'class' => 'mini',	'std' => 'yes','options' => array('no'=>'no','yes'=>'yes') );
 
 	//since 1.0.2
 	$options[] = array('name' => __('Breadcrumb', 'Acool'),'desc' =>__( "Display the breadcrumb in posts lists :post page, blog page, archives, search results..." , "Acool" ),	'id' => 'show_breadcrumb',	'type' => 'select',	'class' => 'mini',	'std' => '1','options' => array('yes'=>'yes','no'=>'no')  );
@@ -685,9 +690,9 @@ function optionsframework_options()
 		$options[] = array('name' => sprintf(__('Social Link #%s', 'Acool'),($i+1)),'id' => 'social_link_'.$i,'type' => 'text');	
 	}
 
-	if ( defined( 'CT_HOMEPAGE_SLIDER_USED' ) && CT_HOMEPAGE_SLIDER_USED )
-	{		
+
 		// Slider
+
 		$options[] = array(	'name' => __('Homepage Slider', 'Acool'),	'type' => 'heading');
 		
 		//HOME PAGE SLIDER
@@ -700,6 +705,12 @@ function optionsframework_options()
 		$options[] = array('name' => __('Text', 'Acool'),'id' => 'acool_slide_text_1','type' => 'editor','std'=>'<h1>The jQuery slider that just slides.</h1><p class="ct_slider_text">No fancy effects or unnecessary markup.</p><a class="btn" href="#download">Download</a>');
 		
 		$options[] = array(	'desc' => __('</div>', 'Acool'),	'class' => 'toggle_title','type' => 'info');
+
+
+	if ( defined( 'CT_HOMEPAGE_SLIDER_USED' ) && CT_HOMEPAGE_SLIDER_USED )
+	{		
+
+
 		
 		$options[] = array(	'desc' => __('<div class="options-section"><h3 class="groupTitle">'.__('Slide Two','Acool').'</h3>', 'Acool'),	'class' => 'toggle_option_group group_close','type' => 'info');
 		
@@ -730,11 +741,12 @@ function optionsframework_options()
 		
 		$options[] = array(	'desc' => __('</div>', 'Acool'),	'class' => 'toggle_title','type' => 'info');
 		
-		
+	}
+
 		$options[] = array(	'name' => __('Slide Time', 'Acool'),'id' => 'slide_time',	'std' => '5000','desc'=>__('Milliseconds between the end of the sliding effect and the start of the nex one.','Acool'),'type' => 'text');
 		//END HOME PAGE SLIDER
 
-	}
+
 
 	//Blog
 	$options[] = array('name' => __('Blog', 'Acool'),'type' => 'heading');

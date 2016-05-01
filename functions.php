@@ -13,6 +13,7 @@ define( 'CT_VIDEO_BACKGROUND_USED', true );
 define( 'CT_GOOGLE_FONTS_USED', true );
 define( 'CT_PAGE_BUILDER_USED', false );//  --delete
 }
+//define( 'CT_ACOOL_FREE', true );
 define( 'CT_ACOOL_VERSION', '1.3.1' );
 define( 'CT_ACOOL_COOTHEMES', false );
 
@@ -261,7 +262,7 @@ function acool_customize_register( $wp_customize ) {
          'description' => '<p style="padding-bottom: 10px;border-bottom: 1px solid #d3d2d2">' . __('1. Documentation for Very Simple Start can be found <a target="_blank" href="https://www.coothemes.com/doc/acool-manual.php">here</a>', 'Acool') . '</p><p style="padding-bottom: 10px;border-bottom: 1px solid #d3d2d2">' . __('2. A full theme demo can be found <a target="_blank" href="https://www.coothemes.com/themes/acool.php">here</a>', 'Acool') . '</p>',  			
 	) );
 	$wp_customize->add_setting( 'ct_acool[show_search_icon]', array(
-		'default'       => 'on',
+		'default'       => '1',
 		'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_callback_re',

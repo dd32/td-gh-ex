@@ -111,14 +111,17 @@ function acool_customize_css()
 			}
 			
 			$header_opacity       =  of_get_option("header_opacity");
-			$header_opacity = $header_opacity?$header_opacity:1;	
+			$header_opacity = $header_opacity?$header_opacity:0.6;	
 			
-			$fixed_header         =  of_get_option("fixed_header");
+			$fixed_header         =  of_get_option("fixed_header",'yes');
 			$section_1_content        = esc_attr(of_get_option('section_1_content','content'));
 			if( $fixed_header == "yes" /*&& $section_1_content != 'slider'*/  )
 			{
+				if( is_home() || is_front_page()){
 				$acool_custom_css  .= ".fixed{ position: fixed; width: 100%; background: rgba(220, 220, 220, ".$header_opacity.") !important;opacity:".$header_opacity.";
 		z-index:999;}.carousel-caption{bottom: 10%;}\n";
+				}
+				if ( !(defined( 'CT_THEME_PRO_USED' ) && CT_THEME_PRO_USED) ){$acool_custom_css  .=  '.carousel-caption{top: 25%;}';}
 			}
 			
 			$blog_title_color    = of_get_option('blog_title_color');
@@ -145,12 +148,31 @@ function acool_customize_css()
 			if( $home_footer_background )
 			$acool_custom_css  .=  'footer .ct_footer_bottom{'.$home_footer_background.'}';
 			
-			$enable_home_page = of_get_option('enable_home_page');
+			$enable_home_page = of_get_option('enable_home_page',1);
 
 			//if( !(is_front_page() && $enable_home_page == "1"  && $fixed_header != "yes") )
 			//{
-					$acool_custom_css  .=  '.ct_header_class_post_page{border-bottom-width: 1px;border-bottom-style: solid;	border-bottom-color: #EEE;}';
+					//$acool_custom_css  .=  '.ct_header_class_post_page{border-bottom-width: 1px;border-bottom-style: solid;	border-bottom-color: #EEE;}';
 			//}
+
+			if( $enable_home_page == 1  && $fixed_header != "yes" )
+			{
+					$acool_custom_css  .=  '.ct_header_class_post_page{border-bottom-width: 1px;border-bottom-style: solid;	border-bottom-color: #EEE;}';
+					
+					//if ( !(defined( 'CT_THEME_PRO_USED' ) && CT_THEME_PRO_USED) ){$acool_custom_css  .=  '.carousel-caption{top: 20%;}';}
+			}
+			
+			  if ( is_single() || is_paged() ) {
+				  $acool_custom_css  .=  '.ct_header_class_post_page{border-bottom-width: 1px;border-bottom-style: solid;	border-bottom-color: #EEE;}';
+			  }
+			  
+			  
+			if ( ct_get_option( 'ct_acool','show_search_icon','1' ) ==1 ) {
+				
+				$acool_custom_css  .=  '#top-menu{ margin-right:10px;}';
+				$acool_custom_css  .=  '#ct_top_search{ margin:18px 40px 0 0;}';
+			}
+
 			
 			/* ==============================CUSTOM CSS================================ */	
 			$custom_css           =  of_get_option("custom_css","");
@@ -165,13 +187,13 @@ function acool_customize_css()
 			echo $acool_custom_css;		
 	
 			//------- customize css  -------
-			$header_bgcolor = ct_get_option( 'ct_acool','header_bgcolor' );
+			$header_bgcolor = ct_get_option( 'ct_acool','header_bgcolor','#ffffff');
 
-			if($header_bgcolor !='')
+			if($header_bgcolor !='' && $header_bgcolor !='#ffffff')
 			{
 				echo '.site-header { background-color:'.$header_bgcolor.';}';
 			}
-			$fixed_header         =  of_get_option("fixed_header") ;
+			$fixed_header         =  of_get_option("fixed_header",'yes') ;
 			if($header_bgcolor == '#ffffff') 
 			{
 				if($fixed_header != "yes" ){
@@ -191,16 +213,16 @@ function acool_customize_css()
 			{			
 				//$ct_gf_font_arr =  get_option( 'ct_acool');
 				
-				$ct_gf_heading_font     = sanitize_text_field(ct_get_option( 'ct_acool','heading_font' ),'');
+				$ct_gf_heading_font     = sanitize_text_field(ct_get_option( 'ct_acool','heading_font','' ),'');
 				$ct_gf_heading_font_css = '.ct_logo .ct_site_name,.ct_logo .ct_site_tagline';
 
-				$ct_gf_menu_font     	= sanitize_text_field(ct_get_option( 'ct_acool','menu_font' ),'');
+				$ct_gf_menu_font     	= sanitize_text_field(ct_get_option( 'ct_acool','menu_font','' ),'');
 				$ct_gf_menu_font_css 	= '#ct-top-navigation nav#top-menu-nav ul li a,#ct_mobile_nav_menu ul li a';
 				
-				$ct_gf_title_font     	= sanitize_text_field(ct_get_option( 'ct_acool','title_font' ),'');
+				$ct_gf_title_font     	= sanitize_text_field(ct_get_option( 'ct_acool','title_font','' ),'');
 				$ct_gf_title_font_css 	= 'h1, h2, h3, h4, h5, h6,.case-tx0,.case-tx1,h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,.footer-widget .ioftsc-lt span';				
 							
-				$ct_gf_body_font        = sanitize_text_field(ct_get_option( 'ct_acool','body_font' ),'');
+				$ct_gf_body_font        = sanitize_text_field(ct_get_option( 'ct_acool','body_font','' ),'');
 				$ct_gf_body_font_css    = 'html, body, div, span, applet, object, iframe, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td ';
 
 
@@ -225,7 +247,7 @@ function acool_customize_css()
 			{			
 				echo '.ct_site_name{ line-height:52px; }';	
 			}
-			if(ct_get_option( 'ct_acool','box_header_center' ))
+			if(ct_get_option( 'ct_acool','box_header_center','1' ))
 			{
 				echo '#ct-top-navigation{ margin:15px 0 0 0;}.ct_logo{ padding-left:20px;}';
 			
@@ -234,7 +256,7 @@ function acool_customize_css()
 			/* free del */
 			
 			$options = get_option('theme_mods_acool');
-			if ( '' != ct_get_option( 'ct_acool','footer_info' ) )
+			if ( '' != ct_get_option( 'ct_acool','footer_info','' ) )
 			{
 				echo '.ct_social{ margin-top:15px;}';
 			}else if($options['ct_acool']['footer_info'] !=='')
@@ -242,10 +264,10 @@ function acool_customize_css()
 				echo '.ct_social{ margin-top:15px;}';	
 			}
 			
-			$other_link_color      		= ct_get_option( 'ct_acool','other_link_color' );
-			$other_link_hover_color 	= ct_get_option( 'ct_acool','other_link_hover_color' );			
-			$content_link_color 		= ct_get_option( 'ct_acool','content_link_color' );			
-			$content_link_hover_color 	= ct_get_option( 'ct_acool','content_link_hover_color' );			
+			$other_link_color      		= ct_get_option( 'ct_acool','other_link_color','' );
+			$other_link_hover_color 	= ct_get_option( 'ct_acool','other_link_hover_color','' );			
+			$content_link_color 		= ct_get_option( 'ct_acool','content_link_color','' );			
+			$content_link_hover_color 	= ct_get_option( 'ct_acool','content_link_hover_color','' );			
 			
 			if( $other_link_color !='' )
 			{

@@ -14,6 +14,7 @@
 	);
 
 	$sectionNum               = absint(of_get_option('section_num', 0));
+	
 	$section_1_content        = esc_attr(of_get_option('section_1_content','content'));
 	
 	
@@ -29,7 +30,7 @@
 	<div id="ct_content" class="ct_acool_content">   
 	<?php
        
-		if(  $sectionNum > 0 )
+		if(  $sectionNum > 0 && defined( 'CT_THEME_PRO_USED' ) && CT_THEME_PRO_USED )
 		{
 			for( $i=0; $i<$sectionNum; $i++ )
 			{
@@ -125,7 +126,7 @@
                     <div class="row most">
                     <?php 
                         global $wpdb;//ignore_sticky_posts //caller_get_posts 3.1 del
-                        query_posts( array( 'showposts' => 4, 'ignore_sticky_posts' => 1 ) ); 
+                        query_posts( array( 'showposts' => 10 ) ); 
                         if (have_posts()) :  while (have_posts()) : the_post(); 
                                                     
                     ?> 
@@ -193,6 +194,124 @@
 			}//for( $i=0; $i<$sectionNum; $i++ )
 		}//if(  $sectionNum > 0 )
     ?>    
+
+
+	<?php
+
+		if ( !(defined( 'CT_THEME_PRO_USED' ) && CT_THEME_PRO_USED) ){
+
+			$controller   = '';
+			$slideContent = '';
+			
+			$slide_time       = absint(of_get_option("slide_time","5000"));
+			$slide_height     = esc_attr(of_get_option("slide_height",""));
+			$slide_height     = $slide_height==""?"":"height:".$slide_height.";";
+			
+			$anchor_0       = esc_attr(of_get_option('section_anchor_0', ''))  ;
+			$anchor_1       = esc_attr(of_get_option('section_anchor_1', ''))  ;
+					  
+			$return = '<!---section_slide--->
+				<section class="ct_section ct_section_slider">
+					<div id="carousel-acool-generic" class="carousel slide" data-ride="carousel" data-interval="'.$slide_time.'" >';
+		
+	  //'https://www.coothemes.com/wp-content/themes/acool/images/banner1.jpg'
+			$active = '';
+			$text       = of_get_option('acool_slide_text_1','<h1>The jQuery slider that just slides.</h1><p class="ct_slider_text">No fancy effects or unnecessary markup.</p><a class="btn" href="#download">Download</a>');
+			$image      = of_get_option('acool_slide_image_1','https://www.coothemes.com/wp-content/themes/acool/images/banner1.jpg');
+			$link       = of_get_option('acool_slide_link_1','https://www.coothemes.com/');	
+			if( $image != "" )
+			{
+				
+				$active     = 'active';
+				$controller   .= '<li data-target="#carousel-acool-generic" data-slide-to="0" class="'.$active.'"></li>';
+				
+				$slideContent .= '<div class="item '.$active.'">';
+				if(trim($link) == "")
+				{
+					$slideContent .= '<img src="'.esc_url($image).'" alt=""  width="100%"/>';
+				}
+				else
+				{
+					$slideContent .= '<a href="'.esc_url($link).'" target="_blank"><img src="'.esc_url($image).'" alt=""   width="100%"/></a>';
+				}	
+				
+				$slideContent .= '<div class="carousel-caption">'.$text.'</div>';				
+				$slideContent .= '</div>';		 
+				
+			}
+				
+	
+			//$return .= '<ol class="carousel-indicators">'. $controller .'</ol>';
+			$return .= '<div class="carousel-inner">'.$slideContent.'</div>';		 
+
+			$return .= '</div></section><!---section_slide end--->';
+	
+	
+			echo $return;
+			
+		?>
+
+
+            <div class="container"><div class="row">
+            <br>
+            <?php if(function_exists('acool_breadcrumbs') && of_get_option("show_breadcrumb") =='yes' ) acool_breadcrumbs();?> 
+                
+                <div class="col-md-9 ct_single_content ct_post_content">    
+                <?php 	global $wpdb;
+            query_posts( array( 'showposts' => 10, 'caller_get_posts' => 1 ) ); 
+            if (have_posts()) :  while (have_posts()) : the_post(); 
+             ?>
+            
+                    <h1 class="ct_title_h1"><a href="<?php echo get_permalink();?>"><?php the_title(); ?></a></h1>
+                    
+                    <?php 
+                        $hide_post_meta = of_get_option('hide_post_meta','no'); 
+                        if($hide_post_meta == 'no'){
+                    ?>
+                    <div class="ct_entry_meta">
+                        <span><i class="fa fa-clock-o"></i><a href="<?php echo get_month_link(get_the_time('Y'), get_the_time('m'));?>"><?php echo get_the_date("M d, Y");?></a></span>
+                        <span><i class="fa fa-user"></i><?php echo get_the_author_link(); ?></span> 
+                        <span><i class="fa fa-file-o"></i><?php the_category(', '); ?></span>
+                        <?php edit_post_link( __('Edit','Acool'), '<span><i class="fa fa-pencil"></i>', '</span>', get_the_ID() ); ?>         
+                    </div>
+                    <?php }?>  
+                    
+                    <a href="<?php the_permalink(); ?>" class="ct_post_thumbnail">
+                    <?php
+                        if(has_post_thumbnail()) 
+                        {
+                            the_post_thumbnail();
+                        }
+                    ?>
+                    </a>           
+                                
+                    <?php the_content(); ?>
+        
+        
+                    <p class="ct_clear"></p>
+                    <hr class="ct_hr">    
+             
+                    
+                <?php endwhile;endif; ?> 
+                
+                
+                <?php acool_paging_nav(); ?>
+                
+                </div>
+                
+                <?php get_sidebar( 'acool' ); ?>
+                  
+            
+            </div></div>
+
+
+
+	<?php
+		}
+
+	?>
+
+
         
     </div><!--div id="ct_content" class="ct_acool_content"-->
 
