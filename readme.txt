@@ -93,6 +93,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.9
+- Fixed:   Post content displayed on main blog page can be set by user using core WordPress <!--more--> tag.
+- Updated: Logo image width set to "auto".
+
 Version 1.2.8
 - Fixed:   PHP notices fixed for comments form - changes made comments.php file.
 - Fixed:   Custom titles now display correctly on mobile layouts. Issue previously caused titles to be squashed on smaller screens.
