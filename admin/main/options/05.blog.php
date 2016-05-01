@@ -32,27 +32,17 @@ global $post;
 
 // Input post excerpt / content to blog page
 function thinkup_input_blogtext() {
-global $more;
 global $post;
 global $thinkup_blog_postswitch;
 
-	// Output post thumbnail / featured media
+	// Output post content
 	if ( is_search() ) {
 		the_excerpt();
 	} else if ( ! is_search() ) {
-		if ( $thinkup_blog_postswitch == 'option1' or empty( $thinkup_blog_postswitch ) ) {
+		if ( ( empty( $thinkup_blog_postswitch ) or $thinkup_blog_postswitch == 'option1' ) and ! is_numeric( strpos( $post->post_content, '<!--more-->' ) ) ) {
 			the_excerpt();
-		} else if ( $thinkup_blog_postswitch == 'option2' ) {
-
-			// Allow user to user <!--more--> HTML tag
-			$more = 0;
-
-			// Remove all HMTL from the_content - Only allow specified tags
-			ob_start();
-			the_content('');
-			$old_content = ob_get_clean();
-			$new_content = strip_tags($old_content, '<p><a><b><br/><br /><input><form><textarea><li><ol><ul><table><h1><h2><h3><h4><h5><h6>');
-			echo $new_content;
+		} else {
+			the_content();
 		}
 	}
 }
