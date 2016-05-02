@@ -41,7 +41,7 @@ function attirant_customize_register( $wp_customize ) {
     'attirant_social',
     array(
     	'title'			=> __('Social Settings','attirant'),
-    	'description'	=> __('Manage the Social Icon Setings of your site.','attirant'),
+    	'description'	=> __('Manage the Social Icon Settings of your site.','attirant'),
     	'priority'		=> 3,
     	)
     );
@@ -185,7 +185,7 @@ function attirant_customize_register( $wp_customize ) {
     array(
     	'label'		=> __('E-Mail','attirant'),
     	'section'	=> 'attirant_social',
-    	'type'		=> 'e-mail',
+    	'type'		=> 'text',
         'priority'   => 8
     	)
     );    
@@ -198,8 +198,35 @@ function attirant_customize_register( $wp_customize ) {
 		    'priority'       => 12,
 		    'capability'     => 'edit_theme_options',
 		    'theme_supports' => '',
-		    'title'          => __('Showcase Settings', 'attirant'),
+		    'title'          => __('Featured Area Settings', 'attirant'),
 		)
+	);
+	
+	$wp_customize-> add_section(
+    'attirant-showcase-enable',
+    array(
+    	'title'			=> __('Enable Featured Area','attirant'),
+    	'description'	=> __('T<i>o Enable Featured Area on Front Page (Template), just drag it in Home Sidebar in Widgets Section</i>', 'attirant'),
+    	'priority'		=> 1,
+    	'panel'			=> 'attirant-showcase',
+    	)
+    );
+    
+    $wp_customize->add_setting(
+	    'attirant-showcase-blog',
+	    array(
+	        'default' => true,
+	        'sanitize_callback'	=> 'attirant_sanitize_checkbox',
+	    )
+	);
+ 
+	$wp_customize->add_control(
+	    'attirant-showcase-blog',
+	    array(
+	        'type' => 'checkbox',
+	        'label' => __('Enable Featured Area on the Blog Page','attirant'),
+	        'section' => 'attirant-showcase-enable',
+	    )	    
 	);
     
     $wp_customize->add_section(
@@ -382,13 +409,14 @@ function attirant_customize_register( $wp_customize ) {
     'attirant-slides',
     array(
     	'title'			=> __('Enable Slider','attirant'),
+    	'description'	=> __('<i>To Enable Slider on Front Page (Template), just drag it in Home Sidebar in Widgets Section</i>', 'attirant'),
     	'priority'		=> 3,
     	'panel'			=> 'attirant-slider',
     	)
     );
     
     $wp_customize->add_setting(
-	    'attirant-slider-front',
+	    'attirant-slider-blog',
 	    array(
 	        'default' => true,
 	        'sanitize_callback'	=> 'attirant_sanitize_checkbox',
@@ -396,44 +424,10 @@ function attirant_customize_register( $wp_customize ) {
 	);
  
 	$wp_customize->add_control(
-	    'attirant-slider-front',
+	    'attirant-slider-blog',
 	    array(
 	        'type' => 'checkbox',
-	        'label' => __('Enable Slider on the Home Page','attirant'),
-	        'section' => 'attirant-slides',
-	    )	    
-	);
-	
-	$wp_customize->add_setting(
-	    'attirant-slider-post',
-	    array(
-	        'default' => false,
-	        'sanitize_callback'	=> 'attirant_sanitize_checkbox',
-	    )
-	);
- 
-	$wp_customize->add_control(
-	    'attirant-slider-post',
-	    array(
-	        'type' => 'checkbox',
-	        'label' => __('Enable Slider on the Posts','attirant'),
-	        'section' => 'attirant-slides',
-	    )	    
-	);
-	
-	$wp_customize->add_setting(
-	    'attirant-slider-page',
-	    array(
-	        'default' => false,
-	        'sanitize_callback'	=> 'attirant_sanitize_checkbox',
-	    )
-	);
- 
-	$wp_customize->add_control(
-	    'attirant-slider-page',
-	    array(
-	        'type' => 'checkbox',
-	        'label' => __('Enable Slider on the Pages','attirant'),
+	        'label' => __('Enable Slider on the Blog Page','attirant'),
 	        'section' => 'attirant-slides',
 	    )	    
 	);

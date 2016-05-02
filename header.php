@@ -44,10 +44,23 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 		<?php
-			get_template_part('social');
+			if ( get_theme_mod('social', false) ) {
+				get_template_part('social');
+			}
 		?>
 		<div class="header-image"></div>
 	</header><!-- #masthead -->
 	
+	<?php
+		if ( is_home() && get_theme_mod('attirant-showcase-blog', false ) ) {
+			get_template_part('showcase');
+		}
+	?>
+	
+	<?php
+		if ( is_home() && get_theme_mod('attirant-slider-blog', false ) ) {
+			get_template_part('slider');
+		}
+	?>
 
 	<div id="content" class="site-content container">

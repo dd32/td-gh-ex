@@ -41,7 +41,9 @@
 			endif; ?>
 		</div><!-- .site-branding -->
 		<?php
-			get_template_part('social-post');
+			if ( get_theme_mod('social', false) ) {
+				get_template_part('social','post');
+			}
 		?>
 	</header><!-- #masthead -->
 	

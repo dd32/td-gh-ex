@@ -305,14 +305,11 @@ a:hover {
 	text-align: center;
 	margin: auto;
 	padding-bottom: 50px;
-}
-	section.widget_at_featured {
-		overflow: auto;
-		h2.widget-title {
+	h2.widget-title {
 			text-align: center;
 			font-family: "Lato", sans-serif;
 			font-weight: 900;
-			margin: 40px auto;
+			margin-bottom: 40px;
 		}
 		.showcase-box {
 			padding: 1px;
@@ -403,60 +400,63 @@ a:hover {
 				}
 			}
 		}
+}
+	section.widget_at_featured {
+		overflow: auto;
 	}
+	
 
 
 /*---- Slider ----*/
 
-.widget_at_slider {
-	h2.widget-title {
-		text-align: center;
-		margin: 40px 0;
-		font-weight: 800;
-	}
-	#slider-wrapper {
-		margin: 80px auto;
-		margin-bottom: 0px;
-		margin-top: 0px;
-		.bx-viewport {
-			box-shadow: none;
-			border: none;
-			border-top: solid 5px @main-color;
-			left: 0;
-			border-bottom: solid 5px @main-color;
-			ul {
-				margin: 0px;
-				.slide_caption {
-					position: absolute;
-					z-index: 100;
-					bottom: 20%;
-					color: #000;
-					background: rgba(111,182,36,.5);
-					padding: 15px;
-					left: 8%;
-					font-size: 24px;
-					width: 50%;
-					font-weight: 400;
-					border-left: solid 5px #000;
-					a {
-						color: black;
-					}
+h2.widget-title {
+	text-align: center;
+	margin: 40px 0;
+	font-weight: 800;
+}
+#slider-wrapper {
+	margin: 80px auto;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	display: inline-block;
+	.bx-viewport {
+		box-shadow: none;
+		border: none;
+		border-top: solid 5px @main-color;
+		left: 0;
+		border-bottom: solid 5px @main-color;
+		ul {
+			margin: 0px;
+			.slide_caption {
+				position: absolute;
+				z-index: 100;
+				bottom: 20%;
+				color: #000;
+				background: rgba(111,182,36,.5);
+				padding: 15px;
+				left: 8%;
+				font-size: 24px;
+				width: 50%;
+				font-weight: 400;
+				border-left: solid 5px #000;
+				a {
+					color: black;
 				}
 			}
 		}
-		.bx-pager {
-			position: absolute;
-			bottom: 20px;
-			padding: 0px;
-			.bx-pager-item {
-				a {
-					border-radius: 0px;
-					height: 8px;
-					width: 70px;
-					background: black;
-					&.active {
-						background: white;
-					}
+	}
+	.bx-pager {
+		position: absolute;
+		bottom: 20px;
+		padding: 0px;
+		.bx-pager-item {
+			a {
+				border-radius: 0px;
+				height: 8px;
+				width: 70px;
+				background: black;
+				&.active {
+					background: white;
 				}
 			}
 		}
