@@ -17,9 +17,9 @@ function accelerate_customize_register($wp_customize) {
       public function render_content() {
          //Add Theme instruction, Support Forum, Demo Link, Rating Link
          $important_links = array(
-            'upgrade' => array(
-               'link' => esc_url('http://themegrill.com/themes/accelerate-pro/'),
-               'text' => __('Upgrade to Pro', 'accelerate'),
+            'theme-info' => array(
+               'link' => esc_url('http://themegrill.com/themes/accelerate/'),
+               'text' => __('Theme Info', 'accelerate'),
             ),
             'support' => array(
                'link' => esc_url('http://themegrill.com/support-forum/'),
@@ -34,7 +34,7 @@ function accelerate_customize_register($wp_customize) {
                'text' => __('View Demo', 'accelerate'),
             ),
             'rating' => array(
-               'link' => esc_url('http://wordpress.org/themes/accelerate/'),
+               'link' => esc_url('http://wordpress.org/support/view/theme-reviews/accelerate?filter=5'),
                'text' => __('Rate this theme', 'accelerate'),
             ),
          );
@@ -46,8 +46,8 @@ function accelerate_customize_register($wp_customize) {
    }
 
    $wp_customize->add_section('accelerate_important_links', array(
-      'priority' => 700,
-      'title' => __('Accelerate', 'accelerate'),
+      'priority' => 1,
+      'title' => __('Accelerate Important Links', 'accelerate'),
    ));
 
    /**
@@ -85,18 +85,20 @@ function accelerate_customize_register($wp_customize) {
       'panel' => 'accelerate_header_options'
    ));
 
-   $wp_customize->add_setting($accelerate_themename.'[accelerate_header_logo_image]', array(
-      'default' => '',
-      'type' => 'option',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'esc_url_raw'
-   ));
+   if ( !function_exists( 'the_custom_logo' ) || ( accelerate_options( 'accelerate_header_logo_image', '' ) != '') ) {
+      $wp_customize->add_setting($accelerate_themename.'[accelerate_header_logo_image]', array(
+         'default' => '',
+         'type' => 'option',
+         'capability' => 'edit_theme_options',
+         'sanitize_callback' => 'esc_url_raw'
+      ));
 
-   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $accelerate_themename.'[accelerate_header_logo_image]', array(
-      'label' => __('Upload logo for your header. Recommended size is 100 X 100 pixels but you can add any size you like.', 'accelerate'),
-      'section' => 'accelerate_header_logo',
-      'setting' => $accelerate_themename.'[accelerate_header_logo_image]'
-   )));
+      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $accelerate_themename.'[accelerate_header_logo_image]', array(
+         'label' => __('Upload logo for your header. Recommended size is 100 X 100 pixels but you can add any size you like.', 'accelerate'),
+         'section' => 'accelerate_header_logo',
+         'setting' => $accelerate_themename.'[accelerate_header_logo_image]'
+      )));
+   }
 
    // Header logo and text display type option
    $wp_customize->add_section('accelerate_show_option', array(
@@ -639,10 +641,47 @@ function accelerate_customizer_js() {
 
    wp_localize_script( 'accelerate_customizer_script', 'accelerate_customizer_obj', array(
 
-      'info' => __( 'Theme Info', 'accelerate' ),
       'pro' => __('View PRO version','accelerate')
 
    ) );
 }
 add_action( 'customize_controls_enqueue_scripts', 'accelerate_customizer_js' );
+
+/*
+ * Custom Scripts
+ */
+add_action( 'customize_controls_print_footer_scripts', 'accelerate_customizer_custom_scripts' );
+
+function accelerate_customizer_custom_scripts() { ?>
+<style>
+	/* Theme Instructions Panel CSS */
+	li#accordion-section-accelerate_important_links h3.accordion-section-title, li#accordion-section-accelerate_important_links h3.accordion-section-title:focus { background-color: #77CC6D !important; color: #fff !important; }
+	li#accordion-section-accelerate_important_links h3.accordion-section-title:hover { background-color: #77CC6D !important; color: #fff !important; }
+	li#accordion-section-accelerate_important_links h3.accordion-section-title:after { color: #fff !important; }
+	/* Upsell button CSS */
+	.themegrill-pro-info,
+	.customize-control-accelerate-important-links a {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
+		background: #008EC2;
+		color: #fff;
+		display: block;
+		margin: 15px 0 0;
+		padding: 5px 0;
+		text-align: center;
+		font-weight: 600;
+	}
+
+	.customize-control-accelerate-important-links a{
+		padding: 8px 0;
+	}
+
+	.themegrill-pro-info:hover,
+	.customize-control-accelerate-important-links a:hover {
+		color: #ffffff;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
+		background:#2380BA;
+	}
+</style>
+<?php
+}
 ?>

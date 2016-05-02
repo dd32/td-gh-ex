@@ -4,7 +4,7 @@ Theme URI: http://themegrill.com/themes/accelerate/
 Author: ThemeGrill
 Author URI: http://themegrill.com
 Description: Accelerate is multipurpose WordPress theme made for simplicity and ease of use. This theme is a piece of art that has this premium look and feel which will make your site stand out. Supports all post formats. Accelerate can be used for portfolio, business, blog, personal, travel, corporate, business services or any other kinds of sites. Get free support in http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/accelerate/. Available Translation: Polish and Hungarian.
-Version: 1.2.4
+Version: 1.2.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, post-formats
@@ -1849,7 +1849,9 @@ a.read-more:hover {
 .entry-content a.read-more:hover {
 	text-decoration: none;
 }
-
+.sub-toggle{
+	display: none;
+}
 /* =RESPONSIVE STRUCTURE
 ----------------------------------------------- */
 @media screen and (max-width: 1190px) {
@@ -1863,6 +1865,8 @@ a.read-more:hover {
 		width: 94%;
 	}
 }
+
+
 @media screen and (max-width: 768px) {
 	#header-text-nav-wrap {
 		padding: 15px 0;
@@ -1920,7 +1924,85 @@ a.read-more:hover {
 		padding: 5px 5px 0;
 	}
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main-navigation ul li ul {
+        top: 103%;
+    }
+    .main-navigation li.menu-item-has-children {
+        padding: 0 20px 0 0;
+    }
+    .main-navigation li.menu-item-has-children:hover {
+        background: #77cc6d none repeat scroll 0 0;
+    }
+    .main-navigation ul.menu-main-menu-container ul li:hover > ul.sub-menu {
+        display: none;
+    }
+    .main-navigation li.menu-item-has-children > a::after,
+    .main-navigation li.page_item_has_children > a::after {
+        display: none;
+    }
+    .sub-toggle,
+    .sub-menu .sub-toggle {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        background: none;
+        border-color: #ffbb31;
+        -webkit-transform: translateY(-50%) rotate(0deg);
+        -moz-transform: translateY(-50%) rotate(0deg);
+        -ms-transform: translateY(-50%) rotate(0deg);
+        -o-transform: translateY(-50%) rotate(0deg);
+        transform: translateY(-50%) rotate(0deg);
+    }
+    .sub-toggle.active {
+        -webkit-transform: translateY(-50%) rotate(0deg);
+        -moz-transform: translateY(-50%) rotate(0deg);
+        -ms-transform: translateY(-50%) rotate(0deg);
+        -o-transform: translateY(-50%) rotate(0deg);
+        transform: translateY(-50%) rotate(0deg);
+    }
+    .main-navigation .sub-menu {
+        display: none;
+    }
+    .sub-menu .sub-toggle {
+        top: 50%;
+        -webkit-transform: translatey(-50%) rotate(270deg);
+        -ms-transform: translatey(-50%) rotate(270deg);
+        -o-transform: translatey(-50%) rotate(270deg);
+        transform: translatey(-50%) rotate(270deg);
+        right: 10px;
+        color: #333;
+    }
+    .sub-menu .sub-toggle.active {
+        -webkit-transform: translatey(-50%) rotate(270deg);
+        -ms-transform: translatey(-50%) rotate(270deg);
+        -o-transform: translatey(-50%) rotate(270deg);
+        transform: translatey(-50%) rotate(270deg);
+        right: 10px;
+        color: #333;
+    }
+    .main-navigation ul.sub-menu li {
+        padding-right: 0;
+    }
+    .main-navigation ul.sub-menu,
+    .main-navigation ul li:hover > ul.sub-menu {
+        display: none;
+        opacity: 1;
+        -webkit-transition: none 0s ease 0s;
+        -moz-transition: none 0s ease 0s;
+        -ms-transition: none 0s ease 0s;
+        -o-transition: none 0s ease 0s;
+        transition: none 0s ease 0s;
+        visibility: visible;
+    }
+}
+
 @media screen and (max-width: 767px) {
+	.sub-toggle{
+		display: none;
+	}
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: block;
