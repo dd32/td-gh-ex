@@ -214,11 +214,10 @@
 				<section class="ct_section ct_section_slider">
 					<div id="carousel-acool-generic" class="carousel slide" data-ride="carousel" data-interval="'.$slide_time.'" >';
 		
-	  //'https://www.coothemes.com/wp-content/themes/acool/images/banner1.jpg'
 			$active = '';
 			$text       = of_get_option('acool_slide_text_1','<h1>The jQuery slider that just slides.</h1><p class="ct_slider_text">No fancy effects or unnecessary markup.</p><a class="btn" href="#download">Download</a>');
-			$image      = of_get_option('acool_slide_image_1','https://www.coothemes.com/wp-content/themes/acool/images/banner1.jpg');
-			$link       = of_get_option('acool_slide_link_1','https://www.coothemes.com/');	
+			$image      = of_get_option('acool_slide_image_1',get_stylesheet_directory_uri().'/images/banner1.jpg');
+			$link       = of_get_option('acool_slide_link_1','#');	
 			if( $image != "" )
 			{
 				
@@ -258,7 +257,7 @@
                 
                 <div class="col-md-9 ct_single_content ct_post_content">    
                 <?php 	global $wpdb;
-            query_posts( array( 'showposts' => 10, 'caller_get_posts' => 1 ) ); 
+            query_posts( array( 'showposts' => 10 ) ); 
             if (have_posts()) :  while (have_posts()) : the_post(); 
              ?>
             

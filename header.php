@@ -15,10 +15,15 @@
     <div class="header_box <?php if(ct_get_option( 'ct_acool','box_header_center',false)){echo 'container';}?>" >
 
         <div class="ct_logo ct_f_left">
+			<?php
+				/*$logo = ( $user_logo = of_get_option( 'logo' ) ) && '' != $user_logo
+					? $user_logo
+					: get_stylesheet_directory_uri(). '/images/logo.png';*/
+			?>
         
         <?php if ( of_get_option('logo')!="") { ?>
             <a href="<?php echo esc_url(home_url('/')); ?>">
-            <img src="<?php echo esc_url(of_get_option('logo')); ?>" class="site-logo" alt="<?php bloginfo('name'); ?>" />
+            <img src="<?php echo $logo; ?>" class="site-logo" alt="<?php bloginfo('name'); ?>" />
             </a>
         <?php } else{?>
             <div class="name-box">

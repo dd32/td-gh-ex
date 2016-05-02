@@ -255,14 +255,14 @@ function acool_customize_css()
 			/* free del */
 			/* free del */
 			
-			$options = get_option('theme_mods_acool');
+			//$options = get_option('theme_mods_acool');
 			if ( '' != ct_get_option( 'ct_acool','footer_info','' ) )
 			{
 				echo '.ct_social{ margin-top:15px;}';
-			}else if($options['ct_acool']['footer_info'] !=='')
+			}/*else if($options['ct_acool']['footer_info'] !=='')
 			{
 				echo '.ct_social{ margin-top:15px;}';	
-			}
+			}*/
 			
 			$other_link_color      		= ct_get_option( 'ct_acool','other_link_color','' );
 			$other_link_hover_color 	= ct_get_option( 'ct_acool','other_link_hover_color','' );			
