@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2016-04-11 23:24+0545\n"
-"PO-Revision-Date: 2016-04-11 23:24+0545\n"
+"POT-Creation-Date: 2016-05-03 21:57+0545\n"
+"PO-Revision-Date: 2016-05-03 21:57+0545\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -435,11 +435,11 @@ msgstr "Hemsida / startsida alternativ"
 msgid "Select Categories"
 msgstr "Välj kategorier"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:171
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:169
 msgid "Remove Icon images to disable."
 msgstr "Remove Icon images to disable."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:174
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:172
 msgid "Icon Options"
 msgstr "Ikonalternativ"
 
@@ -459,11 +459,11 @@ msgstr ""
 msgid "Select/Add Web Clip Icon"
 msgstr "Välj/Lägg till Web Clip Icon"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:206
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:207
 msgid "Logo Icon is displayed in Primary Menu"
 msgstr "Logo Icon is displayed in Primary Menu"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:207
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:208
 msgid "Select/Add Logo Icon"
 msgstr "Select/Add Logo Icon"
 

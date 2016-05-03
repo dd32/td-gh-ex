@@ -163,17 +163,17 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
         'type'     	=> 'dropdown-categories',
     ) ) );
 	//Homepage / Frontpage Settings End
+	
+	// Icon Options
+	$wp_customize->add_section( 'fullframe_icons', array(
+		'description'	=> __( 'Remove Icon images to disable.', 'full-frame'),
+		'panel'  => 'fullframe_theme_options',
+		'priority' 		=> 210,
+		'title'    		=> __( 'Icon Options', 'full-frame' ),
+	) );
 
 	//@remove Remove this block when WordPress 4.8 is released
 	if ( ! function_exists( 'has_site_icon' ) ) {
-		// Icon Options
-		$wp_customize->add_section( 'fullframe_icons', array(
-			'description'	=> __( 'Remove Icon images to disable.', 'full-frame'),
-			'panel'  => 'fullframe_theme_options',
-			'priority' 		=> 210,
-			'title'    		=> __( 'Icon Options', 'full-frame' ),
-		) );
-
 		$wp_customize->add_setting( 'fullframe_theme_options[favicon]', array(
 			'capability'		=> 'edit_theme_options',
 			'sanitize_callback'	=> 'fullframe_sanitize_image',
@@ -196,20 +196,20 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 			'section'    	=> 'fullframe_icons',
 	        'settings'   	=> 'fullframe_theme_options[web_clip]',
 		) ) );
-
-		$wp_customize->add_setting( 'fullframe_theme_options[logo_icon]', array(
-			'capability'		=> 'edit_theme_options',
-			'sanitize_callback'	=> 'fullframe_sanitize_image',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[logo_icon]', array(
-			'description'	=> __( 'Logo Icon is displayed in Primary Menu', 'full-frame'),
-			'label'		 	=> __( 'Select/Add Logo Icon', 'full-frame' ),
-			'section'    	=> 'fullframe_icons',
-	        'settings'   	=> 'fullframe_theme_options[logo_icon]',
-		) ) );
-		// Icon Options End
 	}
+	
+	$wp_customize->add_setting( 'fullframe_theme_options[logo_icon]', array(
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'fullframe_sanitize_image',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[logo_icon]', array(
+		'description'	=> __( 'Logo Icon is displayed in Primary Menu', 'full-frame'),
+		'label'		 	=> __( 'Select/Add Logo Icon', 'full-frame' ),
+		'section'    	=> 'fullframe_icons',
+        'settings'   	=> 'fullframe_theme_options[logo_icon]',
+	) ) );
+	// Icon Options End
 
 	// Layout Options
 	$wp_customize->add_section( 'fullframe_layout', array(

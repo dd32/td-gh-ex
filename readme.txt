@@ -16,7 +16,7 @@ Added Translation for Swedish by Anders Paulcén ( Email: anderspaulcen@gmail.co
 Added Translation for French by Jérôme Joseph ( Email: jerome.joseph28@hotmail.com )
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@gmail.com )
 Added Translation for German by Micky261 ( Email: karlo261@hotmail.de )
-Added Translation for Lithuanian by Jurgis Šatas ( Email: ssattass@gmail.com )
+Added Translation for Lithuanian
 
 
 == License ==

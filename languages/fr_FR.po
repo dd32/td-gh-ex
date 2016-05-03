@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Responsive\n"
-"POT-Creation-Date: 2016-04-11 23:24+0545\n"
+"POT-Creation-Date: 2016-05-03 21:57+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: PA Angelini <nosencheres@free.fr>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -446,11 +446,11 @@ msgstr "Options de Page d'accueil / Première page"
 msgid "Select Categories"
 msgstr "Sélectionner Catégories "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:171
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:169
 msgid "Remove Icon images to disable."
 msgstr "Supprimer les icônes d'image pour désactiver la fonction."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:174
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:172
 msgid "Icon Options"
 msgstr " Options de l'icône"
 
@@ -471,11 +471,11 @@ msgstr ""
 msgid "Select/Add Web Clip Icon"
 msgstr "Sélectionner / Ajouter Web clip "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:206
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:207
 msgid "Logo Icon is displayed in Primary Menu"
 msgstr "L'îcone du Logo est affichée dans le Menu Primaire"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:207
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:208
 msgid "Select/Add Logo Icon"
 msgstr "Sélectionner / Ajouter une îcone du Logo"
 
