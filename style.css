@@ -1,0 +1,58 @@
+/*
+Theme Name: Backyard
+Theme URI: http://www.ydesignservices.com/backyard-free-wordpress-theme/
+Author: Y Design Services
+Author URI: http://www.ydesignservices.com/
+Description: Backyard is a clean and modern WordPress blog theme with premium look and feel well suited for everyone. Theme is built using bootstrap framework making it fully responsive and mobile friendly. This theme has several customization options that are available in WordPress Theme Customizer. Theme is also multilingual ready and translated in several languages. Theme comes with a lot of features to showcase your content with style and pixel perfect graphics. 
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: white, gray, yellow, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, editor-style, translation-ready, custom-background, custom-menu, featured-images, full-width-template, post-formats, theme-options, threaded-comments
+Text Domain: backyard
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+/* =WordPress Core
+
+-------------------------------------------------------------- */
+
+.alignnone{margin:5px 20px 20px 0}
+
+.aligncenter,div.aligncenter{margin:5px auto}
+
+.alignright{float:right;margin:5px 0 20px 20px}
+
+.alignleft{float:left;margin:5px 20px 20px 0}
+
+a img.alignright{float:right;margin:5px 0 20px 20px}
+
+a img.alignnone{margin:5px 20px 20px 0}
+
+a img.alignleft{float:left;margin:5px 20px 20px 0}
+
+a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
+
+.wp-caption{background:#fff;border:1px solid #f0f0f0;max-width:96%;padding:5px 3px 10px;text-align:center}
+
+.wp-caption.alignnone{margin:5px 20px 20px 0}
+
+.wp-caption.alignleft{margin:5px 20px 20px 0}
+
+.wp-caption.alignright{margin:5px 0 20px 20px}
+
+.wp-caption img{border:0 none;height:auto;margin:0;max-width:98.5%;padding:0;width:auto}
+
+.wp-caption p.wp-caption-text{font-size:11px;line-height:17px;margin:0;padding:0 4px 5px}
+
+.screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute!important;height:1px;width:1px;overflow:hidden}
+
+.screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto!important;color:#21759b;display:block;font-size:14px;font-size:.875rem;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
+
+.sticky{}.gallery-caption{}.bypostauthor {}
+
+/*
+
+Defaults
+
+---------------------------------------------------------------------------------------------------- */
