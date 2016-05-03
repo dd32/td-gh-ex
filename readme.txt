@@ -2,14 +2,14 @@
 Contributors: MotoPress
 Tags: one-column,two-columns,right-sidebar,responsive-layout,custom-colors,custom-menu,featured-images,full-width-template,post-formats,theme-options,translation-ready
 Requires at least: 4.1
-Tested up to: 4.4
+Tested up to: 4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 Exclusive Responsive WordPress theme created to showcase diverse artworks of artists and photographers. It can be easily adapted for needs of both art experts and fans in building online art studios and portfolios. The front page scrolls smoothly among posts with slide effects. The posts can be displayed in different formats such as image, gallery or video.
 
-The functionality allows choosing between light and dark font colors of item’s title and description depending on the main color scheme of the presented image.
+The functionality allows choosing between light and dark font colors of item's title and description depending on the main color scheme of the presented image.
 A trendy big header picture on the home page focuses on promoting the business brand; the logotype and the menu bar are put over this image once the header is hovered.
 Thumbnail grid layout is a perfect pattern for a multiple images gallery integrated into the theme.
 The design will help fully realize any creative idea like online art gallery, photographer portfolio, online museum of landscape art, publishing group business card, interior/fashion design blog, tea ceremony blog, etc.

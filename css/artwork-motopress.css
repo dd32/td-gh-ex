@@ -155,6 +155,9 @@
   text-align: left;
 }
 
+.artwork .motopress-button-group-obj {
+  font-size: 1em;
+}
 .artwork .motopress-button-obj .motopress-btn {
   margin: 0 0 1.500em;
 }
@@ -205,7 +208,7 @@
 .artwork .motopress-service-box-obj .motopress-service-box-button-section .motopress-btn-size-middle,
 .artwork .motopress-button-group-obj .motopress-btn-size-middle,
 .artwork .motopress-button-obj .motopress-btn-size-middle, .artwork .motopress-download-button-obj .motopress-btn-size-middle, .artwork .motopress-modal-obj .motopress-btn-size-middle {
-  padding: 0.75em 1.75em;
+  padding: 0.750em 1.750em;
   font-size: 1em;
 }
 .artwork .motopress-button-inner-obj .motopress-btn-size-small, .artwork .motopress-cta-obj .motopress-button-wrap .motopress-btn-size-small,
@@ -226,13 +229,13 @@
 .artwork .motopress-service-box-obj .motopress-service-box-button-section .mp-theme-button-brand.motopress-btn-size-large,
 .artwork .motopress-button-group-obj .mp-theme-button-white.motopress-btn-size-large,
 .artwork .motopress-button-obj .mp-theme-button-white.motopress-btn-size-large {
-  padding: 0.55em 2.3em;
+  padding: 0.550em 2.300em;
 }
 .artwork .motopress-button-inner-obj.motopress-btn-size-middle, .artwork .motopress-cta-obj .motopress-button-wrap.motopress-btn-size-middle,
 .artwork .motopress-service-box-obj .motopress-service-box-button-section .mp-theme-button-brand.motopress-btn-size-middle,
 .artwork .motopress-button-group-obj .mp-theme-button-white.motopress-btn-size-middle,
 .artwork .motopress-button-obj .mp-theme-button-white.motopress-btn-size-middle {
-  padding: 0.563em 1.75em;
+  padding: 0.563em 1.750em;
 }
 .artwork .motopress-button-inner-obj.motopress-btn-size-small, .artwork .motopress-cta-obj .motopress-button-wrap.motopress-btn-size-small,
 .artwork .motopress-service-box-obj .motopress-service-box-button-section .mp-theme-button-brand.motopress-btn-size-small,
@@ -333,9 +336,7 @@
   content: "\f104";
 }
 .artwork .motopress-image-slider-obj .flex-control-paging li a {
-  height: 40px !important;
   opacity: 1;
-  width: 40px !important;
   border-radius: 100%;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;

@@ -12,8 +12,7 @@
         var logoWrap = $('.site-logo');
         var containerWrap = $('.container');
         var classToAdd = 'header-align-center';
-        if (headerWrap.hasClass(classToAdd))
-        {
+        if (headerWrap.hasClass(classToAdd)) {
             headerWrap.removeClass(classToAdd);
         }
         var logoWidth = logoWrap.outerWidth();
@@ -22,13 +21,13 @@
         if (menuWidth + logoWidth > containerWidth) {
             headerWrap.addClass(classToAdd);
         } else {
-            if (headerWrap.hasClass(classToAdd))
-            {
+            if (headerWrap.hasClass(classToAdd)) {
                 headerWrap.removeClass(classToAdd);
             }
         }
 
     }
+
     wp.customize('blogdescription', function (value) {
         value.bind(function (to) {
             $('.site-header .site-logo').text('');
@@ -105,8 +104,8 @@
                 text2 += '<a class="home-link" href="#" title="" rel="home">';
                 if (wp.customize.instance('mp_artwork_logo_footer').get() !== '') {
                     text2 += '<div class="header-logo "><img src="' + wp.customize.instance('mp_artwork_logo_footer').get() + '" alt=""></div>';
-                }                
-                 text2 += '<div class="site-description" ';
+                }
+                text2 += '<div class="site-description" ';
                 if (wp.customize.instance('blogdescription').get() === '') {
                     text2 += 'style="margin:0;"';
                 }
@@ -147,6 +146,18 @@
             if (wp.customize.instance('mp_artwork_google_plus_link').get() !== '') {
                 text += '<a href="' + wp.customize.instance('mp_artwork_google_plus_link').get() + '" class="button-google" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a>';
             }
+            if (wp.customize.instance('mp_artwork_instagram_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_instagram_link').get() + '" class="button-instagram" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_pinterest_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_pinterest_link').get() + '" class="button-pinterest" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_tumblr_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_tumblr_link').get() + '" class="button-tumblr" title="tumblr" target="_blank"><i class="fa fa-tumblr"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_youtube_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_youtube_link').get() + '" class="button-youtube" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a>';
+            }
             if (to !== '') {
                 text += '<a href="' + to + '" class="button-rss" title="rss" target="_blank"><i class="fa fa-rss"></i></a>';
             }
@@ -168,6 +179,18 @@
             }
             if (wp.customize.instance('mp_artwork_google_plus_link').get() !== '') {
                 text += '<a href="' + wp.customize.instance('mp_artwork_google_plus_link').get() + '" class="button-google" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_instagram_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_instagram_link').get() + '" class="button-instagram" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_pinterest_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_pinterest_link').get() + '" class="button-pinterest" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_tumblr_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_tumblr_link').get() + '" class="button-tumblr" title="tumblr" target="_blank"><i class="fa fa-tumblr"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_youtube_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_youtube_link').get() + '" class="button-youtube" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a>';
             }
             if (wp.customize.instance('mp_artwork_rss_link').get() !== '') {
                 text += '<a href="' + wp.customize.instance('mp_artwork_rss_link').get() + '" class="button-rss" title="Rss" target="_blank"><i class="fa fa-rss"></i></a>';
@@ -191,6 +214,18 @@
             if (wp.customize.instance('mp_artwork_google_plus_link').get() !== '') {
                 text += '<a href="' + wp.customize.instance('mp_artwork_google_plus_link').get() + '" class="button-google" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a>';
             }
+            if (wp.customize.instance('mp_artwork_instagram_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_instagram_link').get() + '" class="button-instagram" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_pinterest_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_pinterest_link').get() + '" class="button-pinterest" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_tumblr_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_tumblr_link').get() + '" class="button-tumblr" title="tumblr" target="_blank"><i class="fa fa-tumblr"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_youtube_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_youtube_link').get() + '" class="button-youtube" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a>';
+            }
             if (wp.customize.instance('mp_artwork_rss_link').get() !== '') {
                 text += '<a href="' + wp.customize.instance('mp_artwork_rss_link').get() + '" class="button-rss" title="Rss" target="_blank"><i class="fa fa-rss"></i></a>';
             }
@@ -213,6 +248,18 @@
             if (wp.customize.instance('mp_artwork_google_plus_link').get() !== '') {
                 text += '<a href="' + wp.customize.instance('mp_artwork_google_plus_link').get() + '" class="button-google" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a>';
             }
+            if (wp.customize.instance('mp_artwork_instagram_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_instagram_link').get() + '" class="button-instagram" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_pinterest_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_pinterest_link').get() + '" class="button-pinterest" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_tumblr_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_tumblr_link').get() + '" class="button-tumblr" title="tumblr" target="_blank"><i class="fa fa-tumblr"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_youtube_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_youtube_link').get() + '" class="button-youtube" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a>';
+            }
             if (wp.customize.instance('mp_artwork_rss_link').get() !== '') {
                 text += '<a href="' + wp.customize.instance('mp_artwork_rss_link').get() + '" class="button-rss" title="Rss" target="_blank"><i class="fa fa-rss"></i></a>';
             }
@@ -234,6 +281,156 @@
             }
             if (to !== '') {
                 text += '<a href="' + to + '" class="button-google" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_instagram_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_instagram_link').get() + '" class="button-instagram" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_pinterest_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_pinterest_link').get() + '" class="button-pinterest" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_tumblr_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_tumblr_link').get() + '" class="button-tumblr" title="tumblr" target="_blank"><i class="fa fa-tumblr"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_youtube_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_youtube_link').get() + '" class="button-youtube" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_rss_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_rss_link').get() + '" class="button-rss" title="Rss" target="_blank"><i class="fa fa-rss"></i></a>';
+            }
+            $('.site-footer .social-profile').append(text);
+        });
+    });
+
+
+    wp.customize('mp_artwork_instagram_link', function (value) {
+        value.bind(function (to) {
+            $('.site-footer .social-profile').text('');
+            var text = '';
+            if (wp.customize.instance('mp_artwork_facebook_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_facebook_link').get() + '" class="button-facebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_twitter_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_twitter_link').get() + '" class="button-twitter" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_linkedin_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_linkedin_link').get() + '" class="button-linkedin" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_google_plus_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_google_plus_link').get() + '" class="button-google" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a>';
+            }
+            if (to !== '') {
+                text += '<a href="' + to + '" class="button-instagram" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_pinterest_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_pinterest_link').get() + '" class="button-pinterest" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_tumblr_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_tumblr_link').get() + '" class="button-tumblr" title="tumblr" target="_blank"><i class="fa fa-tumblr"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_youtube_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_youtube_link').get() + '" class="button-youtube" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_rss_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_rss_link').get() + '" class="button-rss" title="Rss" target="_blank"><i class="fa fa-rss"></i></a>';
+            }
+            $('.site-footer .social-profile').append(text);
+        });
+    });
+    wp.customize('mp_artwork_pinterest_link', function (value) {
+        value.bind(function (to) {
+            $('.site-footer .social-profile').text('');
+            var text = '';
+            if (wp.customize.instance('mp_artwork_facebook_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_facebook_link').get() + '" class="button-facebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_twitter_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_twitter_link').get() + '" class="button-twitter" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_linkedin_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_linkedin_link').get() + '" class="button-linkedin" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_google_plus_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_google_plus_link').get() + '" class="button-google" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_instagram_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_instagram_link').get() + '" class="button-instagram" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>';
+            }
+            if (to !== '') {
+                text += '<a href="' + to + '" class="button-pinterest" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_tumblr_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_tumblr_link').get() + '" class="button-tumblr" title="tumblr" target="_blank"><i class="fa fa-tumblr"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_youtube_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_youtube_link').get() + '" class="button-youtube" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_rss_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_rss_link').get() + '" class="button-rss" title="Rss" target="_blank"><i class="fa fa-rss"></i></a>';
+            }
+            $('.site-footer .social-profile').append(text);
+        });
+    });
+    wp.customize('mp_artwork_tumblr_link', function (value) {
+        value.bind(function (to) {
+            $('.site-footer .social-profile').text('');
+            var text = '';
+            if (wp.customize.instance('mp_artwork_facebook_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_facebook_link').get() + '" class="button-facebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_twitter_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_twitter_link').get() + '" class="button-twitter" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_linkedin_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_linkedin_link').get() + '" class="button-linkedin" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_google_plus_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_google_plus_link').get() + '" class="button-google" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_instagram_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_instagram_link').get() + '" class="button-instagram" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_pinterest_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_pinterest_link').get() + '" class="button-pinterest" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>';
+            }
+            if (to !== '') {
+                text += '<a href="' + to + '" class="button-tumblr" title="tumblr" target="_blank"><i class="fa fa-tumblr"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_youtube_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_youtube_link').get() + '" class="button-youtube" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_rss_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_rss_link').get() + '" class="button-rss" title="Rss" target="_blank"><i class="fa fa-rss"></i></a>';
+            }
+            $('.site-footer .social-profile').append(text);
+        });
+    });
+    wp.customize('mp_artwork_youtube_link', function (value) {
+        value.bind(function (to) {
+            $('.site-footer .social-profile').text('');
+            var text = '';
+            if (wp.customize.instance('mp_artwork_facebook_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_facebook_link').get() + '" class="button-facebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_twitter_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_twitter_link').get() + '" class="button-twitter" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_linkedin_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_linkedin_link').get() + '" class="button-linkedin" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_google_plus_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_google_plus_link').get() + '" class="button-google" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_instagram_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_instagram_link').get() + '" class="button-instagram" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_pinterest_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_pinterest_link').get() + '" class="button-pinterest" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>';
+            }
+            if (wp.customize.instance('mp_artwork_tumblr_link').get() !== '') {
+                text += '<a href="' + wp.customize.instance('mp_artwork_tumblr_link').get() + '" class="button-tumblr" title="tumblr" target="_blank"><i class="fa fa-tumblr"></i></a>';
+            }
+            if (to !== '') {
+                text += '<a href="' + to + '" class="button-youtube" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a>';
             }
             if (wp.customize.instance('mp_artwork_rss_link').get() !== '') {
                 text += '<a href="' + wp.customize.instance('mp_artwork_rss_link').get() + '" class="button-rss" title="Rss" target="_blank"><i class="fa fa-rss"></i></a>';
@@ -325,7 +522,6 @@
         });
 
     });
-
 
 
 })(jQuery);
