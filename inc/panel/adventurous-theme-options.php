@@ -1403,10 +1403,10 @@ function adventurous_theme_options_validate( $options ) {
 		$input_validated[ 'enable_promotion' ] = $input[ 'enable_promotion' ];
 	}
 	if( isset( $input[ 'homepage_headline' ] ) ) {
-		$input_validated['homepage_headline'] =  sanitize_text_field( $input[ 'homepage_headline' ] ) ? $input [ 'homepage_headline' ] : $defaults[ 'homepage_headline' ];
+		$input_validated['homepage_headline'] =  wp_kses_post( $input[ 'homepage_headline' ] ) ? $input [ 'homepage_headline' ] : $defaults[ 'homepage_headline' ];
 	}
 	if( isset( $input[ 'homepage_subheadline' ] ) ) {
-		$input_validated['homepage_subheadline'] =  sanitize_text_field( $input[ 'homepage_subheadline' ] ) ? $input [ 'homepage_subheadline' ] : $defaults[ 'homepage_subheadline' ];
+		$input_validated['homepage_subheadline'] =  wp_kses_post( $input[ 'homepage_subheadline' ] ) ? $input [ 'homepage_subheadline' ] : $defaults[ 'homepage_subheadline' ];
 	}
 	if( isset( $input[ 'homepage_headline_button' ] ) ) {
 		$input_validated['homepage_headline_button'] =  sanitize_text_field( $input[ 'homepage_headline_button' ] ) ? $input [ 'homepage_headline_button' ] : $defaults[ 'homepage_headline_button' ];

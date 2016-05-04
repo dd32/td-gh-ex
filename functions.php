@@ -169,7 +169,7 @@ function adventurous_setup() {
 			'height'      => 41,
 			'width'       => 245,
 			'flex-height' => true,
-			'flex-width'  => true
+			'flex-width'  => true,
 		) );	
 	}
 
