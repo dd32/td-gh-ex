@@ -10,7 +10,7 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Catch Box WordPress Theme, Copyright 2012-2015 Catchthemes.com
+Catch Box WordPress Theme, Copyright 2012-2016 Catchthemes.com
 Catch Box is distributed under the terms of the GNU General Public License v3 
 
 Catch Box is a derivative of the Twenty Eleven theme by the WordPress team:

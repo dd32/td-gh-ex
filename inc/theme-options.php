@@ -253,6 +253,31 @@ function catchbox_settings_field_webclip() {
 
 
 /**
+ * Renders the Header Image setting field.
+ *
+ * @since Catch Box 4.4.6
+ */
+function catchbox_settings_field_header_image() {
+	$options = catchbox_get_theme_options();
+
+	foreach ( catchbox_color_schemes() as $scheme ) {
+	?>
+        <div class="layout image-radio-option color-scheme">
+        <label class="description">
+            <input type="radio" name="catchbox_theme_options[color_scheme]" value="<?php echo esc_attr( $scheme['value'] ); ?>" <?php checked( $options['color_scheme'], $scheme['value'] ); ?> />
+            <input type="hidden" id="default-color-<?php echo esc_attr( $scheme['value'] ); ?>" value="<?php echo esc_attr( $scheme['default_link_color'] ); ?>" />
+            <span>
+                <img src="<?php echo esc_url( $scheme['thumbnail'] ); ?>" width="164" height="122" alt="" />
+                <?php echo $scheme['label']; ?>
+            </span>
+        </label>
+        </div>
+	<?php
+	}
+}
+
+
+/**
  * Renders the Color Scheme setting field.
  *
  * @since Catch Box 1.0
@@ -522,6 +547,42 @@ function catchbox_theme_options_render_page() {
                <form method="post" action="options.php">
                 <!-- Option for Theme Options -->
                 <div id="themeoptions">
+                	<div class="option-container">
+                        	<table class="form-table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><?php _e( 'Header Image:', 'catch-box' ); ?></th>
+                                        <td>
+                                        <?php
+                                        settings_fields( 'catchbox_options' );
+
+                                        $options = catchbox_get_theme_options();
+
+                                        $header_image = get_header_image();
+                                        if ( !empty ( $header_image ) ) {
+                                            echo '<a class="button" href="' . admin_url('themes.php?page=custom-header') . '" title="' .esc_attr__( 'Click here to change header image', 'catch-box' ). '">' . __( 'Click here to change Header Image', 'catch-box' ) . '</a>';
+                                        } else {
+                                            echo '<a class="button" href="' . admin_url('themes.php?page=custom-header') . '" title="' .esc_attr__( 'Click here to change header image', 'catch-box' ). '">' . __( 'Click here to add Header Image', 'catch-box' ) . '</a>';
+                                        }  ?>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Header Image Location', 'catch-box' ); ?></label></th>
+                                        <td>
+                                            <select name="catchbox_theme_options[header_image_position]">
+                                                <option value="above" <?php selected( 'above', $options[ 'header_image_position' ] ); ?>><?php echo __( 'Above Header Content', 'catch-box' ); ?></option>
+
+                                                <option value="between" <?php selected( 'between', $options[ 'header_image_position' ] ); ?>><?php echo __( 'Between Site Title-Logo', 'catch-box' ); ?></option>
+
+                                                <option value="below" <?php selected( 'below', $options[ 'header_image_position' ] ); ?>><?php echo __( 'Below Header Content', 'catch-box' ); ?></option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div><!-- .option-container -->
+
                 	<div class="option-container">
 
                             <?php
@@ -825,8 +886,6 @@ function catchbox_theme_options_render_page() {
 function catchbox_theme_options_validate( $input ) {
 	$options_validated = $defaults = catchbox_get_default_theme_options();
 
-	//print_r($input);
-	//die();
 	// favicon url
 	if ( isset( $input['fav_icon'] ) )
 		$options_validated['fav_icon'] = esc_url_raw($input['fav_icon']);
