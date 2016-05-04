@@ -45,7 +45,6 @@ function catcheverest_custom_header_setup() {
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 125,
 		'width'                  => 300,
-		'max-width'              => 1038,
 
 		// Support flexible height and width.
 		'flex-height'            => true,
@@ -67,7 +66,6 @@ function catcheverest_custom_header_setup() {
 		 */
 		$args['height'] = 450;
 		$args['width']  = 1140;
-		unset($args['max-width']);
 	}
 
 	$args = apply_filters( 'catcheverest_custom_header_args', $args );

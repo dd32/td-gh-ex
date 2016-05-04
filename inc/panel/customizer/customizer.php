@@ -219,8 +219,8 @@ function catcheverest_customize_register( $wp_customize ) {
 			'section' 		=> 'header_image',
 			'default' 		=> $defaults['enable_featured_header_image'],
 			'choices'		=> array(
-				'homepage' 		=> __( 'Homepage', 'catch-everest' ),
-				'allpage' 		=> __( 'Entire Site', 'catch-everest' ),
+				'allpage'  => __( 'Entire Site', 'catch-everest' ),
+				'homepage' => __( 'Homepage', 'catch-everest' ),
 			)
 		),
 		'featured_header_image_alt' => array(

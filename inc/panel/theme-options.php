@@ -150,7 +150,14 @@ function catcheverest_theme_options_do_page() {
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Upload Logo', 'catch-everest' ); ?></a></h3>
                         <div class="option-content inside">
-                            <p><?php printf(__('Custom Header. Need to Add or Remove Logo?','catch-everest')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'catch-everest'), admin_url('themes.php?page=custom-header')); ?></p>
+                            <p><?php printf(__('Custom Logo. Need to Add or Remove Logo?','catch-everest')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'catch-everest'), admin_url('customize.php?autofocus[control]=custom_logo')); ?></p>
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container -->
+
+                    <div class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header Image', 'catch-everest' ); ?></a></h3>
+                        <div class="option-content inside">
+                            <p><?php printf(__('Custom Header. Need to Add or Remove Header Image?','catch-everest')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'catch-everest'), admin_url('customize.php?autofocus[control]=header_image')); ?></p>
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
 

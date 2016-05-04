@@ -1,4 +1,10 @@
-== Changelog ==
+== Change Log ==
+
+Version 2.7.2
+* Added: Helper Text and buttons in Theme Options Page
+* Bug Fixed: Made Header image empty when it is migrated to logo
+* Removed: max-width parameter in custom header(depreciated)
+* Updated: Default strings made translation ready
 
 Version 2.7.1
 * Added: Custom Header Support
