@@ -1,11 +1,11 @@
 /*
 Theme Name: DarkOrange
 Theme URI: http://www.guidovanderleest.nl/darkorange
-Version: 4.4
+Version: 4.5
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkOrange is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
-Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, gray, orange, translation-ready
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, post-formats, gray, orange, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: darkorange
@@ -174,7 +174,6 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 /* PAGE */
 .page-title {clear:both; padding:0 0 20px; line-height:1.5em;}
-.page-title-post {clear:both; line-height:1.5em;}
 .archive-description {display:block; font-style:italic;}
 .pagelink {clear:both; display:block; margin:20px 0 10px;}
 
@@ -182,7 +181,8 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* POST */
 .post-title {clear:both; line-height:1.5em;}
 .post-title a:hover {color:#333; text-decoration:none;}
-.sticky {clear:both; display:block; text-align:center; color:#ff6600; background:#444; margin:10px 0; padding:5px; border-radius:5px;}
+.post-title-single {clear:both; line-height:1.5em;}
+.sticky-title {clear:both; display:block; text-align:center; margin:10px 0; padding:2px 0; border-top:1px solid #eee; border-bottom:1px solid #eee; line-height:1.5em;}
 .postmetadata {clear:both; display:block; margin:20px 0; padding:5px 10px; background:#f8f8f8; border:1px solid #ccc; border-radius:5px;}
 .more {width:100%; clear:both; display:block; float:left; margin:20px 0; padding:0 0 20px; border-bottom:1px solid #eee;}
 a.readmore {float:right; padding:2px 5px; background:#444; color:#fff; text-decoration:none; border-radius:5px;}
@@ -190,6 +190,14 @@ a.readmore:hover {background:#ff6600; text-decoration:none;}
 
 .post-home {width:48%; float:left; margin:0;}
 .post-home.left {clear:left; margin:0 4% 0 0;}
+.post-not-home {width:100%; clear:both; float:left;}
+
+
+/* POST FORMATS */
+.format-aside .post-title, .format-status .post-title, .format-image .post-title, .format-video .post-title, .format-gallery .post-title, .format-audio .post-title {font-size:1.5em;}
+.format-aside .post-title-single, .format-status .post-title-single, .format-image .post-title-single, .format-video .post-title-single, .format-gallery .post-title-single, .format-audio .post-title-single {font-size:1.5em;}
+.format-image .postmetadata, .format-video .postmetadata, .format-gallery .postmetadata, .format-audio .postmetadata {font-style:italic;}
+.format-status .avatar {width:96px; float:left; margin:0.4em 1em 0.4em 0;}
 
 
 /* POST NAV */
