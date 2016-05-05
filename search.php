@@ -6,29 +6,12 @@
 
 <?php get_header(); ?>
 <div id="content">
-
 	<?php if ( have_posts() ) : ?>
 
 		<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'medical' ), get_search_query() ); ?></h1>
 			
 		<?php while ( have_posts() ) : the_post(); ?>
-
-			<h2 class="post-title">
-				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'medical'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
-			</h2>
-
-			<?php get_template_part( 'postmeta' ); ?>
-
-			<?php if ( has_post_thumbnail() ) { 
-				the_post_thumbnail(); 
-			} ?>
-
-			<?php the_excerpt(); ?>
-
-			<div class="more">
-				<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'medical' ); ?></a>
-			</div>
-
+			<?php get_template_part( 'content-list' ); ?>
 		<?php endwhile; ?>
 
 		<div class="post-nav">
@@ -36,13 +19,12 @@
 			<?php previous_posts_link(); ?>
 		</div>
 
-		<?php else: ?>
-			<h1 class="page-title"><?php _e( 'Nothing Found', 'medical' ); ?></h1>
-			<p><?php _e('Sorry, no posts matched your criteria.', 'medical'); ?></p>
-			<?php get_search_form(); ?>
+	<?php else: ?>
+		<h1 class="page-title"><?php _e( 'Nothing Found', 'medical' ); ?></h1>
+		<p><?php _e('Sorry, no posts matched your criteria.', 'medical'); ?></p>
+		<?php get_search_form(); ?>
 
 	<?php endif; ?>
-
 </div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
