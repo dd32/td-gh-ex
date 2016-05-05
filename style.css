@@ -9,8 +9,8 @@ Tags:black, green, gray, two-columns, left-sidebar, fixed-layout, responsive-lay
 
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version:      2.0.4
-Update date: 2016.5.2
+Version:      2.0.5
+Update date: 2016.5.5
 */
 
 
@@ -86,12 +86,12 @@ hr {background-color: rgba(0, 0, 0, 0.1);border: 0;	height: 1px;margin-bottom: 2
 
 /*Alignment*/
 .alignleft {
-   display:inline;
+   display:block;
    float:left;
    margin-right:1.625em;
 }
 .alignright {
-   display:inline;
+   display:block;
    float:right;
    margin-left:1.625em;
 }
@@ -981,7 +981,5 @@ a,img{border:0;}
 .name-box{ max-width:450px; overflow:hidden;  word-wrap:break-word;white-space:nowrap;}
 
 @media screen and (max-width: 600px) {
-	
-	.name-box{ max-width:250px; overflow:hidden; white-space:nowrap;}
-	
+	.name-box{ max-width:350px; overflow:hidden; white-space:nowrap;}
 }

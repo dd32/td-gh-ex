@@ -4,8 +4,7 @@
 
 	<div class="container"><div class="row">
     
-    	<?php get_sidebar( 'content' ); ?>
-    
+    	<?php get_sidebar( 'content' ); ?>   
     
  		<div style="margin-left:15px; padding:0;"><?php if(function_exists('acool_breadcrumbs') && of_get_option("show_breadcrumb") =='yes' ) acool_breadcrumbs();?></div>  
     

@@ -433,4 +433,66 @@ function acool_hex2rgb( $hex )
 	return $rgb; // returns an array with the rgb values
 }
 
+
+
+/* this function gets thumbnail from Post Thumbnail or Custom field or First post image */
+if ( ! function_exists( 'ct_get_thumbnail' ) ) {
+	function ct_get_thumbnail($post_id)
+	{
+		//if ( $post == '' ) global $post;
+		if(has_post_thumbnail())
+		{
+			
+			$ct_post_thumbnail_fullpath=wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), "Full");
+			$thumb_array['fullpath'] = $ct_post_thumbnail_fullpath[0];
+		
+		}else{
+			$post_content = get_post($post_id)->post_content;
+			$thumb_array['fullpath'] = catch_that_image($post_content);
+		}
+		if($post = 'front-page' && $thumb_array['fullpath']=="" )
+		{
+			
+			$thumb_array['fullpath'] = esc_url(of_get_option('default-featured-image'));
+		
+		}		
+		
+		if($post = 'front-page' && $thumb_array['fullpath']=="" )
+		{
+			
+			$thumb_array['fullpath'] = get_template_directory_uri()."/images/default-thumbnail.jpg";
+		
+		}		
+
+		return $thumb_array;
+		
+	}
+}
+
+function catch_that_image($post_content)
+{
+  global $post, $posts;
+  //$post_content = $post->post_content;
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post_content, $matches);
+  if($output!='')  $first_img = $matches[1][0];
+
+  return $first_img;
+}
+
+
+
+
+
+
+function ct_get_title($str,$limit) {
+    //$title = get_the_title($post->ID);
+    if(strlen($str) > $limit) {
+        $str = substr($str, 0, $limit);
+    }
+ 
+    echo $str;
+}
 ?>

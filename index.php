@@ -24,15 +24,17 @@ get_header(); ?>
             </div>
             <?php }?>  
             
-            <a href="<?php the_permalink(); ?>" class="ct_post_thumbnail">
-            <?php
-                if(has_post_thumbnail()) 
-                {
-                    the_post_thumbnail();
-                }
-            ?>
-            </a>           
-                        
+                <?php  if(has_post_thumbnail()){ ?>               
+                    <div class="ct_center">
+                    <a href="<?php the_permalink(); ?>" class="ct_post_thumbnail" >
+                    <?php 						
+						$exclude_id = get_the_ID();
+					?>
+                    <img src="<?php $arr = ct_get_thumbnail($exclude_id);echo $arr['fullpath'];?>"  />
+                    </a> 
+                    </div>          
+                <?php } ?>
+                      
             <?php the_content(); ?>
 
 

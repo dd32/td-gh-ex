@@ -15,21 +15,15 @@
     <div class="header_box <?php if(ct_get_option( 'ct_acool','box_header_center',false)){echo 'container';}?>" >
 
         <div class="ct_logo ct_f_left">
-			<?php
-				/*$logo = ( $user_logo = of_get_option( 'logo' ) ) && '' != $user_logo
-					? $user_logo
-					: get_stylesheet_directory_uri(). '/images/logo.png';*/
-			?>
-        
         <?php if ( of_get_option('logo')!="") { ?>
             <a href="<?php echo esc_url(home_url('/')); ?>">
             <img src="<?php echo $logo; ?>" class="site-logo" alt="<?php bloginfo('name'); ?>" />
             </a>
         <?php } else{?>
             <div class="name-box">
-                <a href="<?php echo esc_url(home_url('/')); ?>"><h1 class="ct_site_name"><?php bloginfo('name'); ?></h1></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>"><h1 class="ct_site_name"><?php ct_get_title(get_bloginfo('name'),25);?></h1></a>
                 <?php if ( 'blank' != get_header_textcolor() && '' != get_header_textcolor() ){?>
-                <span class="ct_site_tagline"><?php echo  get_bloginfo( 'description' );?></span>
+                <span class="ct_site_tagline"><?php ct_get_title(get_bloginfo('description'),45);?></span>
                 <?php }?>
             </div>
 		<?php }?>       
