@@ -1,7 +1,12 @@
 == Change log ==
 
+2.7.2
+* Updated: French translation fr_FR.po and fr_FR.mo
+* Rename: widget_catchevolution_social_widget from "CT: Social Widget" to "CT Social-Search Widget"
+
 2.7.1
 * Bug Fixed: Page layout issue (Reported by Marebos)
+
 2.7
 * Compatibility fix: Customizer Reset option not working when returning any value in WordPress 4.4
 * Updated: Content Width Implementation

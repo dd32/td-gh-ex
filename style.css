@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/catch-evolution
 Author: Catch Themes
 Author URI: https://catchthemes.com
 Description: Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Italian, Japanese, Russian, Czech, Bosnian, Brazilian Portuguese and Dutch. If you need support with this theme, please go to https://catchthemes.com/support/
-Version: 2.7.1
+Version: 2.7.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: catch-everest
@@ -95,7 +95,7 @@ footer, header, hgroup, menu, nav, section, .sticky {
 #content {
 	width: 100%;
 }
-.hentry, 
+.hentry,
 .no-results,
 #author-info,
 #disqus_thread,
@@ -146,7 +146,7 @@ footer, header, hgroup, menu, nav, section, .sticky {
 .one-column.no-sidebar #fixed-header-top {
 	width: 754px;
 }
-.one-column.no-sidebar #fixed-header-top .wrapper, 
+.one-column.no-sidebar #fixed-header-top .wrapper,
 .one-column.no-sidebar #header-content .wrapper,
 .one-column.no-sidebar #supplementary .wrapper,
 .one-column.no-sidebar #site-generator .wrapper {
@@ -177,26 +177,26 @@ footer, header, hgroup, menu, nav, section, .sticky {
 .one-column #primary #content {
 	margin: 0 auto;
 }
-.one-column.no-sidebar #supplementary { 
+.one-column.no-sidebar #supplementary {
 	padding-top: 20px;
 }
 .one-column.no-sidebar #supplementary .widget {
     margin-bottom: 10px;
 }
-.one-column.no-sidebar #site-generator .copyright, 
+.one-column.no-sidebar #site-generator .copyright,
 .one-column.no-sidebar #site-generator .powered {
     margin: 0 auto;
     text-align: center;
     width: 100%;
 }
-.home.one-column.no-sidebar #content nav#nav-below, 
+.home.one-column.no-sidebar #content nav#nav-below,
 .archive.one-column.no-sidebar #content nav#nav-below {
 	padding-bottom: 25px;
 }
-.one-column.no-sidebar .entry-header, 
-.one-column.no-sidebar .entry-content, 
+.one-column.no-sidebar .entry-header,
+.one-column.no-sidebar .entry-content,
 .one-column.no-sidebar .entry-summary,
-.one-column.no-sidebar .post footer, 
+.one-column.no-sidebar .post footer,
 .one-column.no-sidebar #comments {
 	width: auto;
 }
@@ -273,7 +273,7 @@ body, input, textarea {
 	color: #444;
 	font-size: 15px;
 	font-weight: 300;
-	line-height: 1.62em;	
+	line-height: 1.62em;
 	font-family: Arial, Helvetica, sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
@@ -578,8 +578,8 @@ a:hover {
     font-size: 14px;
     line-height: 1.62em;
 }
-#header-image a { 
-	line-height: 0; 
+#header-image a {
+	line-height: 0;
 }
 
 
@@ -619,7 +619,7 @@ a:hover {
     font-weight: bold;
     line-height: 1.5;
     padding: 14px 15px;
-	white-space: nowrap;	
+	white-space: nowrap;
 }
 #fixed-header-top ul.menu > li a {
     color: #ddd;
@@ -639,7 +639,7 @@ a:hover {
 	position: absolute;
 	top: 100%;
     visibility: hidden;
-    z-index: 9999;	
+    z-index: 9999;
 }
 #fixed-header-top ul.menu ul li {
 	display: block;
@@ -651,7 +651,7 @@ a:hover {
 }
 #fixed-header-top ul.menu li:hover > ul {
 	visibility: visible;
-}  
+}
 #fixed-header-top ul.nav ul li {
     display: block;
 }
@@ -666,7 +666,7 @@ a:hover {
     /* Firefox, other Gecko */
     box-sizing: border-box;
     /* Opera/IE 8+ */
-	white-space: normal;	
+	white-space: normal;
 }
 #fixed-header-top ul.menu ul li a:hover {
 	background: rgba(0, 0, 0, 0.8);
@@ -685,7 +685,7 @@ a:hover {
 	margin: 0 auto;
 	width: 100%;
 }
-#header-menu ul.menu, 
+#header-menu ul.menu,
 .sidebar-top .widget_nav_menu ul.menu,
 #colophon #access-footer ul.menu {
 	list-style: none;
@@ -706,7 +706,7 @@ a:hover {
 	line-height: 3.5em;
     padding: 0 2em;
 	text-decoration: none;
-	white-space: nowrap;	
+	white-space: nowrap;
 }
 #header-menu ul.menu a,
 .sidebar-top .widget_nav_menu ul.menu a {
@@ -715,7 +715,7 @@ a:hover {
 #header-menu ul.menu ul li a,
 .sidebar-top .widget_nav_menu ul.menu ul li a,
 #colophon #access-footer ul.menu ul li a {
-	white-space: normal;	
+	white-space: normal;
 }
 #header-menu ul.menu ul,
 .sidebar-top .widget_nav_menu ul.menu ul {
@@ -749,12 +749,12 @@ a:hover {
 	padding: 10px;
 	width: 185px;
 }
-#header-menu ul.menu li:last-child, 
+#header-menu ul.menu li:last-child,
 #header-menu ul.menu ul li,
 .sidebar-top .widget_nav_menu ul.menu li:last-child,
 .sidebar-top .widget_nav_menu ul.menu  ul li {
 	border: none;
-} 
+}
 #header-menu ul.menu li:hover > a,
 #header-menu ul.menu ul :hover > a,
 #header-menu ul.menu a:focus,
@@ -767,7 +767,7 @@ a:hover {
 #header-menu ul.menu li:hover > a,
 #header-menu ul.menu a:focus,
 .sidebar-top .widget_nav_menu ul.menu li:hover > a,
-.sidebar-top .widget_nav_menu ul.menu a:focus, 
+.sidebar-top .widget_nav_menu ul.menu a:focus,
 #colophon #access-footer ul.menu a:hover,
 #colophon #access-footer ul.menu a:focus {
 	background: #e5e5e5; /* Show a solid color for older browsers */
@@ -793,7 +793,7 @@ a:hover {
 #colophon .menu .current-menu-item a {
 	font-weight: bold;
 }
-#header-menu #access-secondary { 
+#header-menu #access-secondary {
 	background-color: #e6e6e6;
 	clear: both;
     display: block;
@@ -818,7 +818,7 @@ a:hover {
 #header-menu #access-secondary ul.menu ul a {
     line-height: 1.5em;
 }
-#header-menu #access-secondary ul.menu ul ul { 
+#header-menu #access-secondary ul.menu ul ul {
 	top: 0;
 }
 #colophon #access-footer {
@@ -844,7 +844,7 @@ a:hover {
 }
 /* =Responsive Menu (Tinynav.js)
 -------------------------------------------------------------- */
-.tinynav { 
+.tinynav {
     display: none;
 	font-size: 16px;
 }
@@ -864,10 +864,10 @@ a:hover {
 	-o-transition-duration: 400ms;
 	-o-transition-property: width, background;
 	-o-transition-timing-function: ease;
-	
+
 }
 #branding .widget_search #s {
-	width: 72px;	
+	width: 72px;
 }
 .widget_catchevolution_social_search_widget .social-search #s {
 	background: url("images/search-icon.png") no-repeat scroll 9px 7px #999;
@@ -964,7 +964,7 @@ a:hover {
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
-	hyphens: auto;	
+	hyphens: auto;
 }
 .entry-content,
 .entry-summary {
@@ -1086,7 +1086,7 @@ dl.gallery-item {
 	clear: both;
 	display: block;
 }
-a.more-link { 
+a.more-link {
 	white-space: nowrap;
 }
 /* Images */
@@ -1267,7 +1267,7 @@ object {
 	border-radius: 3px;
 	-webkit-box-shadow: 0 1px 2px #bbb;
 	-moz-box-shadow: 0 1px 2px #bbb;
-	box-shadow: 0 1px 2px #bbb;	
+	box-shadow: 0 1px 2px #bbb;
 	height: auto;
     max-width: 90%;
     padding: 5%;
@@ -1326,7 +1326,7 @@ object {
     color: #ddd;
 	cursor: pointer;
 	width: 100%;
-    
+
     position: absolute;
 }
 #slider-wrap .featured-text:hover {
@@ -1346,7 +1346,7 @@ object {
     width: 100%;
 	z-index: 99;
 }
-#controllers a { 
+#controllers a {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
@@ -1360,11 +1360,11 @@ object {
 	text-indent: -48px;
 	overflow: hidden;
 }
-#controllers a:hover, 
+#controllers a:hover,
 #controllers a.active {
 	background:rgba(255,255,255,.8);
 }
-	
+
 #content nav#nav-slider {
 	padding: 0;
 }
@@ -1558,7 +1558,7 @@ blockquote.pull {
 }
 .no-sidebar .indexed.format-image footer.entry-meta {
 	padding: 20px 3%;
-    width: 94%;	
+    width: 94%;
 }
 .indexed.format-image div.entry-meta {
 	display: inline-block;
@@ -2032,8 +2032,8 @@ section.recent-posts .other-recent-posts li:after {
 #nav-below .wp-pagenavi {
 	float: right;
 }
-#nav-below .wp-pagenavi a, 
-#nav-below .wp-pagenavi span, 
+#nav-below .wp-pagenavi a,
+#nav-below .wp-pagenavi span,
 #nav-below #wp_page_numbers ul li a,
 .page-link span,
 .page-link a span {
@@ -2049,7 +2049,7 @@ section.recent-posts .other-recent-posts li:after {
 	padding:0 12px;
 	text-decoration:none;
 }
-#nav-below .wp-pagenavi a, 
+#nav-below .wp-pagenavi a,
 #nav-below .wp-pagenavi span,
 .page-link span {
 	margin: 0 0 0 10px;
@@ -2057,7 +2057,7 @@ section.recent-posts .other-recent-posts li:after {
 #nav-below .wp-pagenavi span.pages,
 .page-link span.pages {
 	color: #555;
-	background: none; 
+	background: none;
 	padding: 2px 0 0 0;
 }
 #nav-below .wp-pagenavi a:hover,
@@ -2066,7 +2066,7 @@ section.recent-posts .other-recent-posts li:after {
 	background:#444;
 	color:#fff;
 }
-#nav-below .wp-pagenavi span.current, 
+#nav-below .wp-pagenavi span.current,
 #nav-below #wp_page_numbers ul li.active_page a,
 .page-link span {
 	background:#444;
@@ -2636,17 +2636,17 @@ p.comment-form-comment {
 #site-generator .sep {
 	margin: 0 7px;
 }
-#site-generator .copyright, 
+#site-generator .copyright,
 #site-generator .powered {
     display: inline;
     width: 47%;
 }
-#site-generator .copyright { 
+#site-generator .copyright {
 	clear: both;
 	float: left;
     text-align: left;
 }
-#site-generator .powered { 
+#site-generator .powered {
 	float: right;
     text-align: right;
 }
@@ -2726,10 +2726,10 @@ p.comment-form-comment {
 	background-position: -264px -44px;
 }
 .social-profile ul li.slideshare a {
-	background-position: -264px 0;	
+	background-position: -264px 0;
 }
 .social-profile ul li.slideshare a:hover {
-	background-position: -264px -44px;	
+	background-position: -264px -44px;
 }
 .social-profile ul li.dribbble a {
 	background-position: -308px 0;
@@ -2844,7 +2844,7 @@ img#wpstats {
 	margin-right: 3%;
 }
 
-/* =Contactform7 
+/* =Contactform7
 ----------------------------------------------- */
 #content span.wpcf7-not-valid-tip {
     background: none repeat scroll 0 0 transparent;
@@ -2872,7 +2872,7 @@ img#wpstats {
 ----------------------------------------------- */
 #infinite-handle {
 	padding-bottom: 40px;
-    text-align: center;	
+    text-align: center;
 }
 #infinite-handle span {
 	background-color: #444;

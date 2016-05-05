@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-13 22:58+0545\n"
-"PO-Revision-Date: 2016-04-13 22:58+0545\n"
+"POT-Creation-Date: 2016-05-06 03:10+0545\n"
+"PO-Revision-Date: 2016-05-06 03:10+0545\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -707,19 +707,18 @@ msgstr "Abrir link em nova janela"
 msgid "Alt text:"
 msgstr "Texto alternativo (alt text):"
 
-#: ../inc/catchevolution-widgets.php:241 ../inc/catchevolution-widgets.php:320
-msgid "CT: Social Widget"
+#: ../inc/catchevolution-widgets.php:241
+msgid "CT: Social-Search Widget"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:242
-msgid ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget."
-msgstr ""
-
-#: ../inc/catchevolution-widgets.php:321
+#: ../inc/catchevolution-widgets.php:242 ../inc/catchevolution-widgets.php:321
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings & Search  as "
 "a widget."
+msgstr ""
+
+#: ../inc/catchevolution-widgets.php:320
+msgid "CT: Social Widget"
 msgstr ""
 
 #: ../inc/custom-header.php:476

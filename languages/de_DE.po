@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-13 22:57+0545\n"
+"POT-Creation-Date: 2016-05-06 03:10+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -685,19 +685,18 @@ msgstr "Link in neuem Fenster öffnen"
 msgid "Alt text:"
 msgstr "Alternativtext"
 
-#: ../inc/catchevolution-widgets.php:241 ../inc/catchevolution-widgets.php:320
-msgid "CT: Social Widget"
+#: ../inc/catchevolution-widgets.php:241
+msgid "CT: Social-Search Widget"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:242
-msgid ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget."
-msgstr ""
-
-#: ../inc/catchevolution-widgets.php:321
+#: ../inc/catchevolution-widgets.php:242 ../inc/catchevolution-widgets.php:321
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings & Search  as "
 "a widget."
+msgstr ""
+
+#: ../inc/catchevolution-widgets.php:320
+msgid "CT: Social Widget"
 msgstr ""
 
 #: ../inc/custom-header.php:476

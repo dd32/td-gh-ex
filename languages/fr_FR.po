@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Catch Evolution\n"
+"Project-Id-Version: Catch Evolution 2.7.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-13 22:58+0545\n"
-"PO-Revision-Date: 2016-04-13 22:58+0545\n"
-"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
-"Language-Team: Catch Themes Team <info@catchthemes.com>\n"
+"POT-Creation-Date: 2016-05-06 03:10+0545\n"
+"PO-Revision-Date: 2016-05-06 03:10+0545\n"
+"Last-Translator: Luc Capronnier <lcapronnier@yahoo.com>\n"
+"Language-Team: Luc Capronnier <lcapronnier@yahoo.fr>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../404.php:14
 msgid "Error 404 - Page Not Found."
-msgstr "Erreur 404 - Page introuvable"
+msgstr "Erreur 404 - Page introuvable."
 
 #: ../404.php:18
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
@@ -36,19 +36,20 @@ msgid ""
 "may have been moved, updated or deleted."
 msgstr ""
 "Vous avez tapé une adresse Web inexacte, ou la page que vous cherchiez peut "
-"avoir été déplacé, mis à jour ou supprimé."
+"avoir été déplacée, mise à jour ou supprimée."
 
 #: ../404.php:21
 msgid "Please try the following options instead:"
-msgstr "Essayez S'il vous plaît les options suivantes au lieu de cela :"
+msgstr "Essayez s'il vous plaît les options suivantes au lieu de cela :"
 
 #: ../404.php:22
 msgid ""
 "Check for a mis-typed URL error, then press the refresh button on your "
 "browser or Use the search box below."
 msgstr ""
-"Vérifiez si une erreur d'URL, appuyez ensuite le bouton de rafraîchissant de "
-"votre navigateur ou Utilisez la boîte de recherche ci-dessous."
+"Vérifiez si une erreur de saisie dans l''URL n'a pas été faite, appuyez "
+"ensuite le bouton de rafraîchissant de votre navigateur ou Utilisez la boîte "
+"de recherche ci-dessous."
 
 #: ../archive.php:22
 #, php-format
@@ -90,8 +91,8 @@ msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
-"Nos excuses, mais aucun résultats n'ont été trouvées pour les archives "
-"demandées. Peut-être la recherche aidera à trouver un poste lié."
+"Nos excuses, mais aucun résultats n'ont été trouvés pour les archives "
+"demandées. Peut-être la recherche aidera à trouver un article lié."
 
 #: ../author.php:25
 #, php-format
@@ -124,7 +125,7 @@ msgstr[1] "%1$s Des réflexions sur &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
-msgstr "Navigation de commentaire"
+msgstr "Navigation dans les commentaires"
 
 #: ../comments.php:41 ../comments.php:61
 msgid "&larr; Older Comments"
@@ -136,7 +137,7 @@ msgstr "Commentaires Plus récents &rarr;"
 
 #: ../comments.php:72
 msgid "Comments are closed."
-msgstr "Commentaires fermés"
+msgstr "Les commentaires sont fermés."
 
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
@@ -173,7 +174,7 @@ msgstr "1 commentaire &darr;"
 #: ../content-status.php:21 ../content-status.php:49 ../content.php:40
 #: ../content.php:117
 msgid "% Comments &darr;"
-msgstr "% Commentaires &darr;"
+msgstr "% commentaires &darr;"
 
 #: ../content-aside.php:33 ../content-gallery.php:32 ../content-link.php:33
 #: ../content-quote.php:36 ../content-status.php:34
@@ -194,7 +195,7 @@ msgstr "Pages:"
 #: ../inc/catchevolution-functions.php:358
 #: ../inc/catchevolution-functions.php:386
 msgid "Edit"
-msgstr "Editer"
+msgstr "Modifier"
 
 #. translators: used between list items, there is a space after the comma
 #: ../content-featured.php:35 ../content-featured.php:44
@@ -211,8 +212,8 @@ msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Cette entrée a été postée dans %1$s et %2$s taggé. Marquez le <a href=\"%3$s"
-"\" title=\"Permalien de %4$s\" rel=\"bookmark\">permalink</a>."
+"Cette entrée a été publiée dans %1$s et marquée %2$s. Marquez le <a href="
+"\"%3$s\" title=\"Permalien de %4$s\" rel=\"bookmark\">permalink</a>."
 
 #: ../content-featured.php:39
 #, php-format
@@ -220,31 +221,31 @@ msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Cette entrée a été postée dans %1$s. Marquez le <a href=\"%3$s\" title="
+"Cette entrée a été publiée dans %1$s. Marquez le <a href=\"%3$s\" title="
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 
 #: ../content-gallery.php:17
 msgid "Gallery"
-msgstr "Galérie"
+msgstr "Galerie"
 
 #: ../content-gallery.php:47
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
 msgstr[0] "Cette galerie contient <a %1$s>%2$s photo</a>."
-msgstr[1] "Cettes galerie contient <a %1$s>%2$s photos</a>."
+msgstr[1] "Cette galerie contient <a %1$s>%2$s photos</a>."
 
 #: ../content-gallery.php:72 ../content-image.php:56 ../content-quote.php:55
 #: ../content.php:95
 #, php-format
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
-msgstr "<span class=\"%1$s\">Posté dans</span> %2$s"
+msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
 
 #: ../content-gallery.php:84 ../content-image.php:64 ../content-quote.php:67
 #: ../content.php:107
 #, php-format
 msgid "<span class=\"%1$s\">Tagged</span> %2$s"
-msgstr "<span class=\"%1$s\">Taggé</span> %2$s"
+msgstr "<span class=\"%1$s\">Marqué</span> %2$s"
 
 #: ../content-image.php:16
 msgid "Image"
@@ -289,7 +290,7 @@ msgid ""
 "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
-"Cette entrée a été publiée dans %1$ s et taggé %2$s par <a href=\"%6$s\">"
+"Cette entrée a été publiée dans %1$ s et marquée %2$s par <a href=\"%6$s\">"
 "%5$s</ a>. Marquer le <a href=\"%3$s\"title=\"Permalink to %4$s\" rel="
 "\"bookmark\">permalink</a>."
 
@@ -315,7 +316,7 @@ msgstr ""
 #: ../content-single.php:80
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Voir tous les messages de %s <span class=\"meta-nav\">&rarr,</span>"
+msgstr "Voir tous les articles de %s <span class=\"meta-nav\">&rarr,</span>"
 
 #: ../content-status.php:16
 msgid "Status"
@@ -327,7 +328,7 @@ msgstr "Représenté"
 
 #: ../functions.php:150
 msgid "Fixed Header Top Menu"
-msgstr "Menu d'En-tête fixé"
+msgstr "Menu d’en-tête fixé"
 
 #: ../functions.php:151
 msgid "Primary Menu"
@@ -339,11 +340,11 @@ msgstr "Second menu"
 
 #: ../functions.php:153
 msgid "Footer Menu"
-msgstr "Menu pied de page"
+msgstr "Menu de pied de page"
 
 #: ../image.php:15
 msgid "Image navigation"
-msgstr "Navigation d'image"
+msgstr "Navigation dans les images"
 
 #: ../image.php:16
 msgid "&larr; Previous"
@@ -368,15 +369,15 @@ msgstr ""
 
 #: ../inc/catchevolution-functions.php:271 ../single.php:15
 msgid "Post navigation"
-msgstr "Navigation des posts"
+msgstr "Navigation dans les articles"
 
 #: ../inc/catchevolution-functions.php:279
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Anciens posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Anciens articles"
 
 #: ../inc/catchevolution-functions.php:280
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Posts récents <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articles récents <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/catchevolution-functions.php:358
 msgid "Pingback:"
@@ -386,7 +387,7 @@ msgstr "Pingback:"
 #: ../inc/catchevolution-functions.php:375
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
-msgstr "%1$s on %2$s <span class=\"says\">Dit:</span>"
+msgstr "%1$s sur %2$s <span class=\"says\">Dit:</span>"
 
 #. translators: 1: date, 2: time
 #: ../inc/catchevolution-functions.php:381
@@ -396,7 +397,7 @@ msgstr "%1$s à %2$s"
 
 #: ../inc/catchevolution-functions.php:390
 msgid "Your comment is awaiting moderation."
-msgstr "Votre commentaire attend la modération."
+msgstr "Votre commentaire attend une validation."
 
 #: ../inc/catchevolution-functions.php:399
 msgid "Reply <span>&darr;</span>"
@@ -589,14 +590,14 @@ msgstr "Menu pied de page"
 
 #: ../inc/catchevolution-metabox.php:14 ../inc/catchevolution-metabox.php:20
 msgid "Catch Evolution Options"
-msgstr "Catch Evolution Options"
+msgstr "Options de Catch Evolution"
 
 #: ../inc/catchevolution-metabox.php:34
 #, php-format
 msgid "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
 msgstr ""
-"Les Options de maquette par défaut sont réglés dans <a href=\"%s"
-"\">Paramètres du</a>"
+"Les options de mise en page par défaut sont réglées dans les <a href=\"%s"
+"\">paramètres du thème</a>"
 
 #: ../inc/catchevolution-metabox.php:40
 msgid "Right sidebar"
@@ -627,11 +628,11 @@ msgstr "Sidebar principale"
 
 #: ../inc/catchevolution-widgets.php:27
 msgid "Third Column Sidebar"
-msgstr "Sidebar troisième colone"
+msgstr "Sidebar troisième colonne"
 
 #: ../inc/catchevolution-widgets.php:37
 msgid "Header Right Sidebar"
-msgstr "Sidebar de Droite d'En-tête"
+msgstr "Sidebar de Droite d’en-tête"
 
 #: ../inc/catchevolution-widgets.php:48
 msgid "WooCommerce Sidebar"
@@ -639,7 +640,7 @@ msgstr "Sidebar Woocommerce"
 
 #: ../inc/catchevolution-widgets.php:59
 msgid "Footer Area One"
-msgstr "Zone de pied de page"
+msgstr "Zone une de pied de page"
 
 #: ../inc/catchevolution-widgets.php:61 ../inc/catchevolution-widgets.php:72
 #: ../inc/catchevolution-widgets.php:83
@@ -656,12 +657,12 @@ msgstr "Zone 3 de Pied de page"
 
 #: ../inc/catchevolution-widgets.php:111
 msgid "CT: Adspace Widget"
-msgstr ""
+msgstr "CT: Adspace Widget"
 
 #: ../inc/catchevolution-widgets.php:112
 msgid "Use this widget to add any type of Advertisement as a widget."
 msgstr ""
-"Utilisez ce widget pour ajouter n'importe quel type de Publicité comme un "
+"Utilisez ce widget pour ajouter n'importe quel type de publicité comme un "
 "widget."
 
 #: ../inc/catchevolution-widgets.php:130 ../inc/catchevolution-widgets.php:255
@@ -689,20 +690,21 @@ msgstr "Ouvrir le lien dans un nouvelle fenêtre"
 msgid "Alt text:"
 msgstr "Texte alternatif:"
 
-#: ../inc/catchevolution-widgets.php:241 ../inc/catchevolution-widgets.php:320
-msgid "CT: Social Widget"
-msgstr ""
+#: ../inc/catchevolution-widgets.php:241
+msgid "CT: Social-Search Widget"
+msgstr "CT: Social-Search Widget"
 
-#: ../inc/catchevolution-widgets.php:242
-msgid ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget."
-msgstr ""
-
-#: ../inc/catchevolution-widgets.php:321
+#: ../inc/catchevolution-widgets.php:242 ../inc/catchevolution-widgets.php:321
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings & Search  as "
 "a widget."
 msgstr ""
+"Utiliser ce widget pour ajouter des icônes de réseaux sociaux en fonctions "
+"de vos paramètres comme des widgets."
+
+#: ../inc/catchevolution-widgets.php:320
+msgid "CT: Social Widget"
+msgstr "CT: Social Widget"
 
 #: ../inc/custom-header.php:476
 msgid "Primary menu"
@@ -754,11 +756,11 @@ msgstr "Affichage du contenu complet"
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:121
 #: ../inc/panel/theme-options.php:452
 msgid "Excerpt/Blog Display"
-msgstr "Affichage d'Extrait/Blog"
+msgstr "Affichage d'extrait/Blog"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:134
 msgid "Homepage"
-msgstr ""
+msgstr "Page d'accueil"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:135
 #: ../inc/panel/theme-options.php:592
@@ -831,10 +833,12 @@ msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
 msgstr ""
+"Maintenir la touche CTRL (Windows)/ Command (Mac) pour effectuer une "
+"sélection multiple."
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:60
 msgid "Theme Instructions"
-msgstr ""
+msgstr "Instruction du thème"
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:64
 #: ../inc/panel/theme-options.php:106
@@ -843,16 +847,16 @@ msgstr "Aides"
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:68
 msgid "Changelog"
-msgstr ""
+msgstr "Modifications"
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:72
 #: ../inc/panel/theme-options.php:104
 msgid "Donate Now"
-msgstr "Donate Now"
+msgstr "Donner maintenant"
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:76
 msgid "Review"
-msgstr ""
+msgstr "Revoir"
 
 #: ../inc/panel/customizer/customizer.php:33 ../inc/panel/theme-options.php:42
 #: ../inc/panel/theme-options.php:43 ../inc/panel/theme-options.php:124
@@ -861,21 +865,24 @@ msgstr "Options du thème"
 
 #: ../inc/panel/customizer/customizer.php:34
 msgid "Basic theme Options"
-msgstr ""
+msgstr "Options basique du thème"
 
 #: ../inc/panel/customizer/customizer.php:38
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #: ../inc/panel/customizer/customizer.php:44
 msgid "Webclip Icon Options"
-msgstr ""
+msgstr "Options Web Clip Icon"
 
 #: ../inc/panel/customizer/customizer.php:45
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height "
 "144px height, which will support High Resolution Devices like iPad Retina"
 msgstr ""
+"Web Clip Icon pour les appareils Apple. La taille recommandée est : Largeur "
+"144px et hauteur 144px, ce qui apportera le support des appareil avec une "
+"grande résolution comme l'iPad Retina."
 
 #: ../inc/panel/customizer/customizer.php:50
 #: ../inc/panel/theme-options.php:222
@@ -884,7 +891,7 @@ msgstr "Options de l'en-tête"
 
 #: ../inc/panel/customizer/customizer.php:55
 msgid "Search Text Settings"
-msgstr ""
+msgstr "Options de recherche"
 
 #: ../inc/panel/customizer/customizer.php:60
 #: ../inc/panel/theme-options.php:418
@@ -899,7 +906,7 @@ msgstr "Configuration Page d'accueil et catégories de première page"
 #: ../inc/panel/customizer/customizer.php:70
 #: ../inc/panel/theme-options.php:508
 msgid "Excerpt / More Tag Settings"
-msgstr "Config balise Excerpt/More"
+msgstr "Options pour Excerpt/More"
 
 #: ../inc/panel/customizer/customizer.php:75
 #: ../inc/panel/theme-options.php:534
@@ -909,28 +916,28 @@ msgstr "Flux de redirection"
 #: ../inc/panel/customizer/customizer.php:80
 #: ../inc/panel/theme-options.php:552
 msgid "Custom CSS"
-msgstr "Personnaliser CSS"
+msgstr "CSS personnalisé"
 
 #: ../inc/panel/customizer/customizer.php:88
 #: ../inc/panel/customizer/customizer.php:89
 #: ../inc/panel/theme-options.php:125
 msgid "Featured Post Slider"
-msgstr "Représenté Post slider"
+msgstr "Diaporama des articles"
 
 #: ../inc/panel/customizer/customizer.php:93
 #: ../inc/panel/theme-options.php:580
 msgid "Slider Options"
-msgstr "Options du slider"
+msgstr "Options du diaporama"
 
 #: ../inc/panel/customizer/customizer.php:101
 #: ../inc/panel/customizer/customizer.php:106
 #: ../inc/panel/theme-options.php:126
 msgid "Social Links"
-msgstr "Liens socials"
+msgstr "Liens sociales"
 
 #: ../inc/panel/customizer/customizer.php:102
 msgid "Add your social links here"
-msgstr ""
+msgstr "Ajouter vos liens de réseau sociaux ici"
 
 #: ../inc/panel/customizer/customizer.php:113
 #: ../inc/panel/customizer/customizer.php:118
@@ -947,15 +954,20 @@ msgid ""
 "Catch Evolution free version. If you want this feature, then you can add <a "
 "target=\"_blank\" href=\"%s\">Catch Web Tools</a>  plugin."
 msgstr ""
+"Les outils passent dans la partie extension pour suivre les recommandations "
+"du guide de réalisation d'un thème pour WordPress. Cette fonction sera "
+"supprimée des version gratuite de Catch Evolution. Si vous voulez ces "
+"fonctions, vous pouvez ajouter l'extension <a target=\"_blank\" href=\"%s"
+"\">Catch Web Tools</a>."
 
 #: ../inc/panel/customizer/customizer.php:163
 msgid "Extra Menu Options specific to this theme"
-msgstr ""
+msgstr "Options supplémentaires spécifique à ce thème"
 
 #: ../inc/panel/customizer/customizer.php:165
 #: ../inc/panel/theme-options.php:309
 msgid "Menu Options"
-msgstr "Options menu"
+msgstr "Options des menus"
 
 #: ../inc/panel/customizer/customizer.php:173
 #: ../inc/panel/theme-options.php:373
@@ -964,94 +976,100 @@ msgstr "Combinaison des couleurs par défaut"
 
 #: ../inc/panel/customizer/customizer.php:185
 msgid "Check to Disable Primary & Secondary Menu"
-msgstr ""
+msgstr "Désactiver le 1er et 2nd menu"
 
 #: ../inc/panel/customizer/customizer.php:197
 msgid "Check to Disable Header"
-msgstr ""
+msgstr "Cochez pour désactiver l'entête"
 
 #: ../inc/panel/customizer/customizer.php:207
 #: ../inc/panel/customizer/customizer.php:217
 msgid "Check to Disable Site Title"
-msgstr ""
+msgstr "Désactiver le titre du site"
 
 #: ../inc/panel/customizer/customizer.php:227
 msgid "Check to Move Site Title and Tagline before the logo"
-msgstr ""
+msgstr "Déplacer le titre et slogan avant le logo"
 
 #: ../inc/panel/customizer/customizer.php:237
 msgid "Check to Separate Logo and Site Details"
-msgstr ""
+msgstr "Séparer le logo et les détails du site"
 
 #: ../inc/panel/customizer/customizer.php:249
 #: ../inc/panel/theme-options.php:355
 msgid "Default Display Text in Search"
-msgstr "Texte d'Affichage par défaut dans Recherche"
+msgstr "Texte pour l'affichage par défaut dans la zone de recherche"
 
 #: ../inc/panel/customizer/customizer.php:283
 msgid "Check to Reset Layout"
-msgstr ""
+msgstr "Cliquer pour réinitialiser la mise en page"
 
 #: ../inc/panel/customizer/customizer.php:284
 #: ../inc/panel/customizer/customizer.php:334
 msgid "Please refresh the customizer after saving if reset option is used"
 msgstr ""
+"Merci de rafraîchir les personnalisation après un enregistrement si la "
+"réinitialisation a été utilisée"
 
 #: ../inc/panel/customizer/customizer.php:295
 #: ../inc/panel/theme-options.php:480
 msgid "Front page posts categories:"
-msgstr "Affiche catégories 1ère page"
+msgstr "Catégories des articles pour la page d'accueil :"
 
 #: ../inc/panel/customizer/customizer.php:296
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page"
 msgstr ""
+"Seul les articles qui appartiennent aux catégories choisies seront affichés "
+"en 1ère page."
 
 #: ../inc/panel/customizer/customizer.php:307
 #: ../inc/panel/theme-options.php:513
 msgid "More Tag Text"
-msgstr "Texte de la balise \\\"More\\\""
+msgstr "Texte de la balise \"More\""
 
 #: ../inc/panel/customizer/customizer.php:317
 #: ../inc/panel/theme-options.php:518
 msgid "Excerpt length(words)"
-msgstr "Longueur de la balise \\\"Excerpt\\\" (mots)"
+msgstr "Longueur du résumé  (mots)"
 
 #: ../inc/panel/customizer/customizer.php:333
 msgid "Check to Reset Excerpt"
-msgstr ""
+msgstr "Cliquer pour réinitialiser le résumé"
 
 #: ../inc/panel/customizer/customizer.php:345
 msgid "Feed Redirect url"
-msgstr ""
+msgstr "URL pour se rediriger vers le flux"
 
 #: ../inc/panel/customizer/customizer.php:346
 msgid " Add in the Feedburner URL"
-msgstr ""
+msgstr "Ajouter l'URL pour Feedburner"
 
 #: ../inc/panel/customizer/customizer.php:358
 msgid "Enter your custom CSS styles"
-msgstr ""
+msgstr "Saisir votre personnalisation avec des styles en CSS"
 
 #: ../inc/panel/customizer/customizer.php:370
 msgid "Enable Slider"
-msgstr ""
+msgstr "Activer le diaporama"
 
 #: ../inc/panel/customizer/customizer.php:381
 #: ../inc/panel/theme-options.php:601
 msgid "Number of Slides"
-msgstr "Nombre de slides"
+msgstr "Nombre de diapositives"
 
 #: ../inc/panel/customizer/customizer.php:382
 msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
+"La page des personnalisations doit être rechargée après l'enregistrement si "
+"le nombre de diapositives a été changé"
 
 #: ../inc/panel/customizer/customizer.php:397
 msgid "Transition Effect"
-msgstr ""
+msgstr "Effets de transition"
 
 #: ../inc/panel/customizer/customizer.php:408
 #: ../inc/panel/theme-options.php:626
@@ -1065,11 +1083,11 @@ msgstr "Longueur de transition"
 
 #: ../inc/panel/customizer/customizer.php:442
 msgid "Check to Exclude Slider posts from Homepage posts"
-msgstr ""
+msgstr "Cliquer pour exclure le diaporama des articles de la page d'accueil"
 
 #: ../inc/panel/customizer/customizer.php:453
 msgid "Check to Enable Social Icons in Footer"
-msgstr ""
+msgstr "Cliquer pour activer les icônes sociales dans le pied de page"
 
 #: ../inc/panel/customizer/customizer.php:502
 #: ../inc/panel/theme-options.php:714
@@ -1078,17 +1096,19 @@ msgstr "Youtube"
 
 #: ../inc/panel/customizer/customizer.php:522
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #: ../inc/panel/customizer/customizer.php:694
 #: ../inc/panel/theme-options.php:823
 msgid "Code to display on Header"
-msgstr "Code pour affichage sur en-tête"
+msgstr "Code pour affichage dans l'en-tête"
 
 #: ../inc/panel/customizer/customizer.php:695
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr ""
+"Ici vous pouvez mettre des scripts de Google, Facebook etc... qui se "
+"chargeront sur l'En-tête"
 
 #: ../inc/panel/customizer/customizer.php:705
 #: ../inc/panel/theme-options.php:832
@@ -1099,62 +1119,66 @@ msgstr "Code pour affichage sur pied de page"
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Footer"
 msgstr ""
+"Ici vous pouvez mettre des scripts de Google, Facebook etc... qui se "
+"chargeront sur le pied de page"
 
 #: ../inc/panel/customizer/customizer.php:722
 msgid "Check to Disable Favicon"
-msgstr ""
+msgstr "Désactiver la Favicon"
 
 #: ../inc/panel/customizer/customizer.php:732
 msgid "Fav Icon"
-msgstr ""
+msgstr "Favicon"
 
 #: ../inc/panel/customizer/customizer.php:744
 msgid "Check to Disable Web Clip Icon"
-msgstr ""
+msgstr "Désactiver Web Clip Icon"
 
 #: ../inc/panel/customizer/customizer.php:754
 msgid "Web Clip Icon"
-msgstr ""
+msgstr "Web Clip Icon"
 
 #: ../inc/panel/customizer/customizer.php:772
 msgid "Check to Disable Header Logo"
-msgstr ""
+msgstr "Désactiver le logo d'en-tête"
 
 #: ../inc/panel/customizer/customizer.php:782
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: ../inc/panel/customizer/customizer.php:949
 #, php-format
 msgid "Featured Post Slider #%s"
-msgstr ""
+msgstr "Diaporama des articles #%s"
 
 #: ../inc/panel/customizer/customizer.php:963
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
+"Attention: remettre toutes les valeurs à celles par défaut. Recharger la "
+"page après pour en voir les effets."
 
 #: ../inc/panel/customizer/customizer.php:965
 msgid "Reset all settings"
-msgstr ""
+msgstr "Remettre tous les paramètres par défaut"
 
 #: ../inc/panel/customizer/customizer.php:975
 msgid "Check to reset all settings to default"
-msgstr ""
+msgstr "Remettre tous les paramètres par défaut"
 
 #: ../inc/panel/customizer/customizer.php:985
 #: ../inc/panel/customizer/customizer.php:996
 msgid "Important Links"
-msgstr ""
+msgstr "Liens importants"
 
 #: ../inc/panel/customizer/customizer.php:1034
 msgid "Upgrade To Pro &raquo;"
-msgstr ""
+msgstr "Passer à la version PRO &raquo;"
 
 #: ../inc/panel/theme-options.php:84
 msgid "Options Saved"
-msgstr "Options sauvegardées"
+msgstr "Options enregistrées"
 
 #: ../inc/panel/theme-options.php:90
 msgid "Theme Options By"
@@ -1183,7 +1207,7 @@ msgstr "http://catchthemes.com/donate/"
 
 #: ../inc/panel/theme-options.php:104
 msgid "Donate to Catch Evolution"
-msgstr "Donate to Catch Evolution"
+msgstr "Faire un don à Catch Evolution"
 
 #: ../inc/panel/theme-options.php:105
 msgid "http://catchthemes.com/theme-instructions/catch-evolution/"
@@ -1203,7 +1227,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:107
 msgid "Like Catch Themes on Facebook"
-msgstr "Like Catch Themes on Facebook"
+msgstr "Aimer les thèmes Catch sur Facebook"
 
 #: ../inc/panel/theme-options.php:108
 msgid "https://twitter.com/catchthemes/"
@@ -1211,7 +1235,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:108
 msgid "Follow Catch Themes on Twitter"
-msgstr "Follow Catch Themes on Twitter"
+msgstr "Suivre les thèmes Catch sur Twitter"
 
 #: ../inc/panel/theme-options.php:109
 msgid "http://wordpress.org/support/view/theme-reviews/catch-evolution/"
@@ -1219,11 +1243,11 @@ msgstr "http://wordpress.org/support/view/theme-reviews/catch-evolution/"
 
 #: ../inc/panel/theme-options.php:109
 msgid "Rate us 5 Star on WordPress"
-msgstr "Rate us 5 Star on WordPress"
+msgstr "Nous noter 5 étoiles sur WordPress"
 
 #: ../inc/panel/theme-options.php:109
 msgid "5 Star Rating"
-msgstr "Évaluation  5 Étoiles"
+msgstr "Évaluation 5 Étoiles"
 
 #: ../inc/panel/theme-options.php:115
 #, php-format
@@ -1232,6 +1256,8 @@ msgid ""
 "Theme Options Panel will be retired on future versions. Please use %1$s "
 "Customizer %2$s instead."
 msgstr ""
+"Le panneau des options du thème sera supprimé dans les prochaines version. "
+"Merci d’utiliser  %1$s Personnaliser %2$s à la place."
 
 #: ../inc/panel/theme-options.php:140
 msgid "Favicon Options"
@@ -1250,15 +1276,15 @@ msgstr "Cochez pour désactiver"
 
 #: ../inc/panel/theme-options.php:150
 msgid "Fav Icon URL:"
-msgstr "Favicon URL"
+msgstr "Favicon URL:"
 
 #: ../inc/panel/theme-options.php:156
 msgid "Insert as Fav Icon"
-msgstr "Insert as Fav Icon"
+msgstr "Ajouter comme Fav Icon"
 
 #: ../inc/panel/theme-options.php:156
 msgid "Change Fav Icon"
-msgstr "Change Fav Icon"
+msgstr "Modifier la  Fav Icon"
 
 #: ../inc/panel/theme-options.php:161 ../inc/panel/theme-options.php:200
 msgid "Preview: "
@@ -1288,11 +1314,11 @@ msgstr "Web Clip Icon URL:"
 
 #: ../inc/panel/theme-options.php:195
 msgid "Insert as Web Clip Icon"
-msgstr "Insert as Web Clip Icon"
+msgstr "Ajouter comme Web Clip Icon"
 
 #: ../inc/panel/theme-options.php:195
 msgid "Change Web Clip Icon"
-msgstr "Changer Web Clip Icon"
+msgstr "Modifierla Web Clip Icon"
 
 #: ../inc/panel/theme-options.php:213
 msgid ""
@@ -1300,9 +1326,9 @@ msgid ""
 "Height 144px height, which will support High Resolution Devices like iPad "
 "Retina."
 msgstr ""
-"Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and "
-"Height 144px height, which will support High Resolution Devices like iPad "
-"Retina."
+"Note: Web Clip Icon pour les appareils Apple. La taille recommandée est une "
+"largeur de 144px et une hauteur de 144px qui permettent de prendre en compte "
+"les hautes résolutions comme pour les iPad Retina."
 
 #: ../inc/panel/theme-options.php:227
 msgid "Disable Header?"
@@ -1326,11 +1352,11 @@ msgstr "Logo url:"
 
 #: ../inc/panel/theme-options.php:256
 msgid "Insert as Header Logo"
-msgstr "Insert as Header Logo"
+msgstr "Ajouter comme logo dans l'en-tête"
 
 #: ../inc/panel/theme-options.php:256
 msgid "Change Header Logo"
-msgstr "Changer Header Logo"
+msgstr "Modifier le logo dans l'en-tête"
 
 #: ../inc/panel/theme-options.php:260
 msgid "Preview:"
@@ -1342,11 +1368,11 @@ msgstr "Désactiver le titre du site?"
 
 #: ../inc/panel/theme-options.php:280
 msgid "Disable Site Description (Tagline)?"
-msgstr "Désactiver la description du site (Tagline)?"
+msgstr "Désactiver la description du site (slogan)?"
 
 #: ../inc/panel/theme-options.php:285
 msgid "Move Site Title and Tagline?"
-msgstr "Déplacer le titre et tagline?"
+msgstr "Déplacer le titre et le slogan ?"
 
 #: ../inc/panel/theme-options.php:287
 msgid "Check to move before the Logo"
@@ -1366,11 +1392,11 @@ msgstr "Activez sidebar droite d'en-tête?"
 
 #: ../inc/panel/theme-options.php:297
 msgid "Just add Widgets in Header Right Sidebar"
-msgstr "Ajoutez Widgets dans sidebar d'en-tête droite"
+msgstr "Ajoutez des widgets dans sidebar d'en-tête droite"
 
 #: ../inc/panel/theme-options.php:314 ../inc/panel/theme-options.php:316
 msgid "Menu Tutorial"
-msgstr "Menu Tutoriel"
+msgstr "Exemple de menu "
 
 #: ../inc/panel/theme-options.php:316
 msgid "http://catchthemes.com/blog/custom-menus-wordpress-themes/"
@@ -1390,15 +1416,15 @@ msgstr "Cliquez ici pour créer un menu"
 
 #: ../inc/panel/theme-options.php:326
 msgid "Assign Menu to Respective Location"
-msgstr "Assignez le menu à un emplacement respectif"
+msgstr "Assignez le menu à un emplacement"
 
 #: ../inc/panel/theme-options.php:328
 msgid "Assign Menu Location"
-msgstr "Attribuer Menu Lieu"
+msgstr "Attribuer le menu à une emplacement"
 
 #: ../inc/panel/theme-options.php:328
 msgid "Click Here to Assign Menu Location"
-msgstr "Cliquez ici pour assigner l'emplacement de menu"
+msgstr "Cliquez ici pour choisir l'emplacement de menu"
 
 #: ../inc/panel/theme-options.php:332
 msgid "Add Menu in Header Right Sidebar"
@@ -1414,7 +1440,7 @@ msgstr "Désactiver le 1er et 2nd menu?"
 
 #: ../inc/panel/theme-options.php:344 ../inc/panel/theme-options.php:362
 msgid "Save"
-msgstr "Enregister"
+msgstr "Enregistrer"
 
 #: ../inc/panel/theme-options.php:350
 msgid "Search Options"
@@ -1426,11 +1452,11 @@ msgstr "Options des couleurs"
 
 #: ../inc/panel/theme-options.php:389
 msgid "Main Background Color:"
-msgstr "Couleur Principale de Fond :"
+msgstr "Couleur principale de fond :"
 
 #: ../inc/panel/theme-options.php:394
 msgid "Click Here to change Main Background Image/Color"
-msgstr "Cliquez Ici pour changer l'image/Couleur de fond"
+msgstr "Cliquez ici pour changer l'image/couleur de fond"
 
 #: ../inc/panel/theme-options.php:401
 msgid "Site Title Color:"
@@ -1438,7 +1464,7 @@ msgstr "Couleur du titre du site:"
 
 #: ../inc/panel/theme-options.php:406
 msgid "Click Here to change Site Title Color"
-msgstr "Cliquez ici pour changer le couleur du titre"
+msgstr "Cliquez ici pour changer la couleur du titre"
 
 #: ../inc/panel/theme-options.php:423
 msgid "Default Layout"
@@ -1450,18 +1476,18 @@ msgstr "Disposition du contenu"
 
 #: ../inc/panel/theme-options.php:463
 msgid "Reset Layout?"
-msgstr "Reset disposition?"
+msgstr "Réinitialiser la disposition?"
 
 #: ../inc/panel/theme-options.php:465 ../inc/panel/theme-options.php:525
 msgid "Check to reset"
-msgstr "Cochez pour reseter"
+msgstr "Cochez pour réinitialiser"
 
 #: ../inc/panel/theme-options.php:482
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr ""
-"Seul les posts qui appartiennent aux catégories choisies seront ici affichés "
+"Seul les articles qui appartiennent aux catégories choisies seront affichés "
 "en 1ère page."
 
 #: ../inc/panel/theme-options.php:487
@@ -1475,7 +1501,7 @@ msgstr ""
 
 #: ../inc/panel/theme-options.php:523
 msgid "Reset?"
-msgstr "Annuler?"
+msgstr "Réinitialiser?"
 
 #: ../inc/panel/theme-options.php:539
 msgid "Feed Redirect URL"
@@ -1483,15 +1509,15 @@ msgstr "URL du flux de redirection"
 
 #: ../inc/panel/theme-options.php:540
 msgid "Add in the Feedburner URL"
-msgstr "Ajouter Feedburner URL"
+msgstr "Ajouter dans l'URL de Feedburner"
 
 #: ../inc/panel/theme-options.php:557
 msgid "Enter your custom CSS styles."
-msgstr "Entrer votre personnalisation CSS styles."
+msgstr "Entrer votre personnalisation CSS."
 
 #: ../inc/panel/theme-options.php:564
 msgid "CSS Tutorial from W3Schools."
-msgstr "Tutoriel CSS "
+msgstr "Tutoriel CSS par W3Schools."
 
 #: ../inc/panel/theme-options.php:566
 msgid "http://www.w3schools.com/css/default.asp"
@@ -1499,7 +1525,7 @@ msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../inc/panel/theme-options.php:566
 msgid "CSS Tutorial"
-msgstr "CSS Tutorial"
+msgstr "Tutoriel CSS"
 
 #: ../inc/panel/theme-options.php:566
 msgid "Click Here to Read"
@@ -1507,7 +1533,7 @@ msgstr "Cliquez ici pour lire"
 
 #: ../inc/panel/theme-options.php:584
 msgid "Enable Sidebar"
-msgstr "Activer sidebar"
+msgstr "Activer le diaporama"
 
 #: ../inc/panel/theme-options.php:588
 msgid "Homepage / Frontpage"
@@ -1519,15 +1545,15 @@ msgstr "Effets de transition:"
 
 #: ../inc/panel/theme-options.php:629 ../inc/panel/theme-options.php:636
 msgid "second(s)"
-msgstr "En seconde(s)"
+msgstr "seconde(s)"
 
 #: ../inc/panel/theme-options.php:646
 msgid "Featured Post Slider Options"
-msgstr "Option du Slider post représenté"
+msgstr "Option du diaporama des articles"
 
 #: ../inc/panel/theme-options.php:650 ../inc/panel/theme-options.php:652
 msgid "Post Slider Tutorial"
-msgstr "Post Slider Tutorial"
+msgstr "Tutoriel pour le diaporama des articles"
 
 #: ../inc/panel/theme-options.php:652
 msgid ""
@@ -1539,11 +1565,12 @@ msgstr ""
 
 #: ../inc/panel/theme-options.php:652
 msgid "Click Here to Read Post Slider Tutorial"
-msgstr "Click Here to Read Post Slider Tutorial"
+msgstr "Cliquer ici pour lire le tutoriel sur le diaporama des articles"
 
 #: ../inc/panel/theme-options.php:656
 msgid "Exclude Slider post from Homepage posts?"
-msgstr "Exclure le Slider post de la page d'accueil?"
+msgstr ""
+"Exclure les articles se trouvant dans le diaporama de la première page?"
 
 #: ../inc/panel/theme-options.php:658
 msgid "Check to exclude"
@@ -1551,22 +1578,22 @@ msgstr "Cochez pour exclure"
 
 #: ../inc/panel/theme-options.php:663
 msgid "Featured Slider Post #"
-msgstr "Slider post représenté #"
+msgstr "Diaporama des articles #"
 
 #: ../inc/panel/theme-options.php:665
 msgid "Click Here To Edit"
-msgstr "Cliquez ici pour éditer"
+msgstr "Cliquez ici pour modifier"
 
 #: ../inc/panel/theme-options.php:671
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
-"Notez : Ici Vous pouvez mettre votre Post ID qui affichera sur le slider de "
-"la page d'accueil."
+"Notez : Ici Vous pouvez mettre votre ID d'article qui s'affichera dans le "
+"diaporama de la page d'accueil."
 
 #: ../inc/panel/theme-options.php:683
 msgid "Enable Social Icons in Header Right Sidebar?"
-msgstr "Activez les icône socials sur l'en-tête de la sidebar droite"
+msgstr "Activez les icône sociales dans l'en-tête de la sidebar droite"
 
 #: ../inc/panel/theme-options.php:685
 msgid "Just add Catch Evolution Social Widget in Header Right Sidebar"
@@ -1583,15 +1610,15 @@ msgstr "Cochez pour activer"
 
 #: ../inc/panel/theme-options.php:818
 msgid "Header and Footer Codes"
-msgstr "Codes En-tête et pied de page"
+msgstr "Codes en-tête et pied de page"
 
 #: ../inc/panel/theme-options.php:829
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr ""
-"Notez : Ici vous pouvez mettre des scripts de Google, Facebook etc... qui "
-"chargera sur l'En-tête"
+"Notez : Ici vous pouvez mettre des scripts de Google, Facebook etc... qui se "
+"chargeront dans l'en-tête"
 
 #: ../inc/panel/theme-options.php:839
 msgid ""
@@ -1599,7 +1626,7 @@ msgid ""
 "will load on footer"
 msgstr ""
 "Notez : Ici vous pouvez mettre des scripts de Google, Facebook, etc... qui "
-"chargera sur le pied de page"
+"se chargeront dans le pied de page"
 
 #: ../inc/panel/theme-options.php:1164
 msgid "Y"
@@ -1607,7 +1634,7 @@ msgstr "Y"
 
 #: ../inc/panel/theme-options.php:1185
 msgid "Theme: Catch Evolution by "
-msgstr "Theme: Catch Evolution by "
+msgstr "Theme: Catch Evolution par"
 
 #: ../inc/panel/theme-options.php:1207
 msgid "Copyright"
@@ -1615,7 +1642,7 @@ msgstr "Copyright"
 
 #: ../inc/panel/theme-options.php:1207
 msgid "All Rights Reserved"
-msgstr "All Rights Reserved"
+msgstr "Tous droits réservés"
 
 #: ../search.php:15
 #, php-format
@@ -1646,6 +1673,13 @@ msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Archives des Tags: %s"
+
+#~ msgid ""
+#~ "Use this widget to add Social Icons from Social Icons Settings as a "
+#~ "widget."
+#~ msgstr ""
+#~ "Utiliser ce widget pour ajouter des icônes de réseaux sociaux en "
+#~ "fonctions de vos paramètres comme des widgets."
 
 #~ msgid "More Theme Options &raquo;"
 #~ msgstr "More Theme Options &raquo;"
