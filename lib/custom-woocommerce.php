@@ -13,14 +13,23 @@ function woocommerce_support() {
 
 if (class_exists('woocommerce')) {
 
-  // Disable WooCommerce styles
-  if ( version_compare( WOOCOMMERCE_VERSION, "2.1" ) >= 0 ) {
   add_filter( 'woocommerce_enqueue_styles', '__return_false' );
-  } else {
-    define( 'WOOCOMMERCE_USE_CSS', false );
-  }
   // Disable WooCommerce Lightbox
   update_option( 'woocommerce_enable_lightbox', false );
+
+  // Makes the product finder plugin work.
+  remove_action( 'template_redirect' , array( 'WooCommerce_Product_finder' , 'load_template' ) );
+
+   if(class_exists('WC_PDF_Product_Vouchers')) {
+      add_filter('template_include', 'kt_wc_voucher_override', 20);
+        function kt_wc_voucher_override($template) {
+            $cpt = get_post_type();
+            if ($cpt == 'wc_voucher') {
+              remove_filter('template_include', array('Kadence_Wrapping', 'wrap'), 101);
+            }
+            return $template;
+        }
+    }
     
 }
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20);

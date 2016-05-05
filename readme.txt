@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.7.0 | 4th May 2016 =
+* Fix: Archive title with polylang.
+* Update: Small woocommerce changes.
+
 = Version 2.6.9 | 27th April 2016 =
 * Fix: Portfolio single.
 
