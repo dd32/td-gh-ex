@@ -5,67 +5,68 @@
 
 // Sets up theme defaults and registers various WordPress features that PrivateBusiness supports
 	function privatebusiness_setup() { 
+		// Set max content width for img, video, and more
+			global $content_width; 
+			if ( ! isset( $content_width ) )
+			$content_width = 720;
 
-	// Set max content width for img, video, and more
-		global $content_width; 
-		if ( ! isset( $content_width ) )
-		$content_width = 720;
+		// Make theme available for translation
+			load_theme_textdomain('privatebusiness', get_template_directory() . '/languages');  
 
-	// Make theme available for translation
-		load_theme_textdomain('privatebusiness', get_template_directory() . '/languages');  
+		// Register Menu
+			register_nav_menus( array( 
+				'primary' => __( 'Primary Navigation', 'privatebusiness' ),
+				'secondary' => __( 'Secondary Navigation', 'privatebusiness' ), 
+		 	) ); 
 
-	// Register Menu
-		register_nav_menus( array( 
-			'primary' => __( 'Primary Navigation', 'privatebusiness' ),
-			'secondary' => __( 'Secondary Navigation', 'privatebusiness' ), 
-	 	) ); 
+		// Add document title
+			add_theme_support( 'title-tag' );
 
-	// Add document title
-		add_theme_support( 'title-tag' );
+		// Add editor styles
+			add_editor_style( 'custom-editor-style.css' );
 
-	// Add editor styles
-		add_editor_style( 'custom-editor-style.css' );
+		// Custom header	
+			$header_args = array(		
+				'width' => 1200,
+				'height' => 350,
+				'default-image' => get_template_directory_uri() . '/images/boats.jpg',
+				'header-text' => false,
+				'uploads' => true,
+			);	
+			add_theme_support( 'custom-header', $header_args );
 
-	// Custom header	
-		$header_args = array(		
-			'width' => 1200,
-			'height' => 350,
-			'default-image' => get_template_directory_uri() . '/images/boats.jpg',
-			'header-text' => false,
-			'uploads' => true,
-		);	
-		add_theme_support( 'custom-header', $header_args );
+		// Default header
+			register_default_headers( array(
+				'boats' => array(
+					'url' => get_template_directory_uri() . '/images/boats.jpg',
+					'thumbnail_url' => get_template_directory_uri() . '/images/boats.jpg',
+					'description' => __( 'Default header', 'privatebusiness' )
+				)
+			) );
 
-	// Default header
-		register_default_headers( array(
-			'boats' => array(
-				'url' => get_template_directory_uri() . '/images/boats.jpg',
-				'thumbnail_url' => get_template_directory_uri() . '/images/boats.jpg',
-				'description' => __( 'Default header', 'privatebusiness' )
-			)
-		) );
+		// Post thumbnails
+			add_theme_support( 'post-thumbnails' ); 
 
-	// Post thumbnails
-		add_theme_support( 'post-thumbnails' ); 
+		// Resize mode thumbnails
+			set_post_thumbnail_size( 300, 300 ); 
 
-	// Resize mode thumbnails
-		set_post_thumbnail_size( 300, 300 ); 
+		// Resize single page thumbnail
+			add_image_size( 'single', 300, 300 ); 
 
-	// Resize single page thumbnail
-		add_image_size( 'single', 300, 300 ); 
+		// This feature adds RSS feed links to html head 
+			add_theme_support( 'automatic-feed-links' );
 
-	// This feature adds RSS feed links to html head 
-		add_theme_support( 'automatic-feed-links' );
+		// Switch default core markup for search form, comment form, comments and caption to output valid html5
+			add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'caption' ) );
 
-	// Switch default core markup for search form, comment form, comments and caption to output valid html5
-		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'caption' ) );
+		// Background color
+			$background_args = array( 
+				'default-color' => 'eeeeee', 
+			); 
+			add_theme_support( 'custom-background', $background_args ); 
 
-	// Background color
-		$background_args = array( 
-			'default-color' => 'eeeeee', 
-		); 
-		add_theme_support( 'custom-background', $background_args ); 
-
+		// Post formats
+			add_theme_support( 'post-formats', array( 'aside', 'status', 'image', 'video', 'gallery', 'audio' ) );
 	}
 	add_action( 'after_setup_theme', 'privatebusiness_setup' ); 
 
@@ -89,6 +90,7 @@
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+
 		// mobile nav args
 		$privatebusiness_mobile_nav_args = array(
 			'navText' => __( 'Menu', 'privatebusiness' )
@@ -102,56 +104,55 @@
 
 // Sidebars
 	function privatebusiness_widgets_init() {
-	register_sidebar( array(
-		'name' => __( 'Primary Sidebar', 'privatebusiness' ),
-		'id' => 'primary',
-		'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
-		'after_title' => '</h3>',
-	) );
+		register_sidebar( array(
+			'name' => __( 'Primary Sidebar', 'privatebusiness' ),
+			'id' => 'primary',
+			'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widgettitle">',
+			'after_title' => '</h3>',
+		) );
 
-	register_sidebar( array(
-		'name' => __( 'Homepage Right', 'privatebusiness' ),
-		'id' => 'homepage-right',
-		'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
-		'after_title' => '</h3>',
-	) );
+		register_sidebar( array(
+			'name' => __( 'Homepage Right', 'privatebusiness' ),
+			'id' => 'homepage-right',
+			'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widgettitle">',
+			'after_title' => '</h3>',
+		) );
 
-	register_sidebar( array(
-		'name' => __( 'Homepage Left', 'privatebusiness' ),
-		'id' => 'homepage-left',
-		'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
-		'after_title' => '</h3>',
-	) );
+		register_sidebar( array(
+			'name' => __( 'Homepage Left', 'privatebusiness' ),
+			'id' => 'homepage-left',
+			'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widgettitle">',
+			'after_title' => '</h3>',
+		) );
 
-	register_sidebar( array(
-		'name' => __( 'Footer Right', 'privatebusiness' ),
-		'id' => 'footer-right',
-		'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
-		'after_title' => '</h3>',
-	) );
+		register_sidebar( array(
+			'name' => __( 'Footer Right', 'privatebusiness' ),
+			'id' => 'footer-right',
+			'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widgettitle">',
+			'after_title' => '</h3>',
+		) );
 
-	register_sidebar( array(
-		'name' => __( 'Footer Left', 'privatebusiness' ),
-		'id' => 'footer-left',
-		'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
-		'after_title' => '</h3>',
-	) );
-
+		register_sidebar( array(
+			'name' => __( 'Footer Left', 'privatebusiness' ),
+			'id' => 'footer-left',
+			'description' => __( 'You can add one or multiple widgets here.', 'privatebusiness' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widgettitle">',
+			'after_title' => '</h3>',
+		) );
 	}
 	add_action( 'widgets_init', 'privatebusiness_widgets_init' );
 
