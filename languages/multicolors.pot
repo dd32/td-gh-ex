@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultiColors\n"
-"POT-Creation-Date: 2016-04-20 23:26+0200\n"
+"POT-Creation-Date: 2016-05-05 22:52+0200\n"
 "PO-Revision-Date: 2015-11-15 20:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,21 +19,12 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:11 archive.php:43 index.php:48 search.php:42
+#: 404.php:11 archive.php:28 index.php:24 search.php:25
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:12 archive.php:44 index.php:49 search.php:43
+#: 404.php:12 archive.php:29 index.php:25 search.php:26
 msgid "Sorry, no posts matched your criteria."
-msgstr ""
-
-#: archive.php:20 index.php:23 search.php:19
-#, php-format
-msgid "Permalink to %s"
-msgstr ""
-
-#: archive.php:32 index.php:35 search.php:31
-msgid "Read More &raquo;"
 msgstr ""
 
 #: comments.php:16
@@ -46,6 +37,19 @@ msgstr[0] ""
 msgid "Comments are closed."
 msgstr ""
 
+#: content-list.php:18
+msgid "Featured post"
+msgstr ""
+
+#: content-list.php:22
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: content-list.php:34
+msgid "Read More &raquo;"
+msgstr ""
+
 #: footer.php:26
 msgid "Copyright"
 msgstr ""
@@ -54,68 +58,64 @@ msgstr ""
 msgid "MultiColors WordPress Theme"
 msgstr ""
 
-#: functions.php:19
+#: functions.php:18
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:43
+#: functions.php:42
 msgid "Default header"
 msgstr ""
 
-#: functions.php:92
+#: functions.php:94
 msgid "Menu"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:105
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:105 functions.php:115 functions.php:125 functions.php:135
-#: functions.php:145 functions.php:155 functions.php:165 functions.php:175
+#: functions.php:107 functions.php:117 functions.php:127 functions.php:137
+#: functions.php:147 functions.php:157 functions.php:167 functions.php:177
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:113
+#: functions.php:115
 msgid "Homepage Sidebar"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:125
 msgid "Homepage Right"
 msgstr ""
 
-#: functions.php:133
+#: functions.php:135
 msgid "Homepage Middle"
 msgstr ""
 
-#: functions.php:143
+#: functions.php:145
 msgid "Homepage Left"
 msgstr ""
 
-#: functions.php:153
+#: functions.php:155
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:163
+#: functions.php:165
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:175
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:220 functions.php:229
+#: functions.php:221 functions.php:230
 msgid "Logo"
 msgstr ""
 
-#: functions.php:222
+#: functions.php:223
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
-#: index.php:18
-msgid "Featured post"
-msgstr ""
-
-#: page-full.php:31 page.php:30 single.php:32
+#: page-full.php:31 page.php:30 single.php:36
 msgid "Edit"
 msgstr ""
 
@@ -156,7 +156,7 @@ msgstr ""
 msgid "% comments"
 msgstr ""
 
-#: search.php:14
+#: search.php:13
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
