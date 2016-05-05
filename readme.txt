@@ -1,12 +1,12 @@
 === Shipyard ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 4.2
+Version: 4.3
 Requires at least: 3.7
 Tested up to: 4.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, orange, gray, editor-style, translation-ready
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, post-formats, orange, gray, editor-style, translation-ready
 
 
 == Description ==
