@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 3.7 - may 2016
+- theme now supports post formats
+- file header: updated head section
+- added file content-list 
+- files archive, index and search: relocated part of loop to separate file
+- file index en css: changed featured post notice
+- file single: changed .page-title-post into .post-title-single
+- changed .sticky into .sticky-title
+- several small adjustments
+
 MyKnowledgeBase version 3.6 - april 2016
 - resized all headings (thanks Tom)
 - changed address tag display

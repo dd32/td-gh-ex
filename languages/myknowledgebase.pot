@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2016-04-20 23:26+0200\n"
+"POT-Creation-Date: 2016-05-05 22:52+0200\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,21 +19,12 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 archive.php:40 index.php:42 search.php:40
+#: 404.php:9 archive.php:26 index.php:22 search.php:23
 msgid "Nothing Found"
 msgstr ""
 
-#: 404.php:10 archive.php:41 index.php:43 search.php:41
+#: 404.php:10 archive.php:27 index.php:23 search.php:24
 msgid "Sorry, no posts matched your criteria."
-msgstr ""
-
-#: archive.php:17 index.php:19 search.php:17
-#, php-format
-msgid "Permalink to %s"
-msgstr ""
-
-#: archive.php:29 index.php:31 search.php:29
-msgid "Read More &raquo;"
 msgstr ""
 
 #: comments.php:16
@@ -46,6 +37,19 @@ msgstr[0] ""
 msgid "Comments are closed."
 msgstr ""
 
+#: content-list.php:9
+msgid "Featured post"
+msgstr ""
+
+#: content-list.php:13
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: content-list.php:25
+msgid "Read More &raquo;"
+msgstr ""
+
 #: footer.php:25
 msgid "Copyright"
 msgstr ""
@@ -54,96 +58,92 @@ msgstr ""
 msgid "MyKnowledgeBase WordPress Theme"
 msgstr ""
 
-#: functions.php:19
+#: functions.php:18
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:43
+#: functions.php:42
 msgid "Default header"
 msgstr ""
 
-#: functions.php:92
+#: functions.php:94
 msgid "Menu"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:105
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:105 functions.php:115 functions.php:125 functions.php:135
-#: functions.php:145
+#: functions.php:107 functions.php:117 functions.php:127 functions.php:137
+#: functions.php:147
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:113
+#: functions.php:115
 msgid "Homepage Sidebar"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:125
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:133
+#: functions.php:135
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:143
+#: functions.php:145
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:190 functions.php:199
+#: functions.php:191 functions.php:200
 msgid "Logo"
 msgstr ""
 
-#: functions.php:192
+#: functions.php:193
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
-#: functions.php:204
+#: functions.php:205
 msgid "Knowledgebase"
 msgstr ""
 
-#: functions.php:206
+#: functions.php:207
 msgid "Set amount of posts for each knowledgebase category."
 msgstr ""
 
-#: functions.php:213
+#: functions.php:214
 msgid "Posts per category"
 msgstr ""
 
-#: functions.php:214
+#: functions.php:215
 msgid "Only numeric characters allowed."
 msgstr ""
 
-#: functions.php:220
+#: functions.php:221
 msgid "Search Bar"
 msgstr ""
 
-#: functions.php:222
+#: functions.php:223
 msgid "Change title of the knowledgebase search bar."
 msgstr ""
 
-#: functions.php:229
+#: functions.php:230
 msgid "Search Bar Title"
 msgstr ""
 
-#: functions.php:230
+#: functions.php:231
 msgid "This will overwrite the default title."
 msgstr ""
 
-#: header.php:57
+#: header.php:59
 msgid "Search Posts"
 msgstr ""
 
-#: header.php:63
+#: header.php:65
 msgid "Search"
 msgstr ""
 
-#: index.php:14
-msgid "Featured post"
-msgstr ""
-
-#: page-full.php:29 page.php:28 single.php:30
+#: page-full.php:29 page.php:28 single.php:34
 msgid "Edit"
 msgstr ""
 
@@ -184,7 +184,7 @@ msgstr ""
 msgid "% comments"
 msgstr ""
 
-#: search.php:12
+#: search.php:11
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
