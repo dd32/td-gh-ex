@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 4.8 - may 2016
+- fyle style: bugfix
+
 PrivateBusiness version 4.7 - may 2016
 - theme now supports post formats
 - file header: updated head section
