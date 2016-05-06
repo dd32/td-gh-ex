@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-MyKnowledgeBase version 3.7 - may 2016
+MyKnowledgeBase version 3.8 - may 2016
 - theme now supports post formats
 - file header: updated head section
 - added file content-list 
