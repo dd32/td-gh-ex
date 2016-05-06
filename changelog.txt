@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-OneColumn version 4.5 - may 2016
+OneColumn version 4.6 - may 2016
 - theme now supports post formats
 - file header: updated head section
 - added file content-list 
