@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-LeftSide version 3.5 - may 2016
+LeftSide version 3.6 - may 2016
 - theme now supports post formats
 - file header: updated head section
 - added file content-list 
