@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-Shipyard version 4.3 - may 2016
+Shipyard version 4.4 - may 2016
 - theme now supports post formats
 - file header: updated head section
 - added file content-list 
