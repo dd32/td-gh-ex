@@ -96,8 +96,7 @@ class arise_portfolio_widget extends WP_Widget {
 <div class="three-column-full-width">
   <?php
 				if (has_post_thumbnail()) { ?>
-  <a href="#" title="<?php echo esc_attr($page_title); ?>"> <?php echo get_the_post_thumbnail($post->ID, 'post-thumbnails');
-					echo '</a>';
+  <?php echo get_the_post_thumbnail($post->ID, 'post-thumbnails');
 				} ?>
   <div class="portfolio-content slide-caption" title="<?php echo esc_attr($page_title); ?>">
     <h3><a href="<?php the_permalink();?>" title="<?php echo esc_attr($page_title); ?>"><?php echo esc_attr($page_title); ?></a></h3>

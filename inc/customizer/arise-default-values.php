@@ -25,7 +25,6 @@ function arise_get_option_defaults_values() {
 		'arise_slider_link' =>0,
 		'arise_tag_text' => 'Read More',
 		'arise_excerpt_length'	=> '30',
-		'arise_search_text' => 'Search',
 		'arise_single_post_image' => 'off',
 		'arise_reset_all' => 0,
 		'arise_stick_menu'	=>0,

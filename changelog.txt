@@ -1,4 +1,8 @@
 == CHANGE LOG ==
+= 2.0.8 =
+	- Fix - entry meta and entry display on Single Page
+	- Fix - portfolio widgets hover issue fixed for user friendly
+
 = 2.0.7 =
 	- Fix - CSS slider class name fixed
 

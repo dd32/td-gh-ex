@@ -36,6 +36,9 @@ get_header();
 		<?php $format = get_post_format(); ?>
 			<article class="format-<?php echo $format; ?>">
 			<header class="entry-header">
+			<?php 
+			$entry_format_meta_blog = $arise_settings['arise_entry_meta_blog'];
+			if($entry_format_meta_blog == 'show-meta' ){?>
 				<div class="entry-meta clearfix">
 					<?php	
 						if ( current_theme_supports( 'post-formats', $format ) ) {
@@ -54,6 +57,7 @@ get_header();
 					</span>
 					<?php } ?>
 				</div> <!-- .entry-meta -->
+			<?php } ?>
 			</header> <!-- .entry-header -->
 			<?php $featured_image_display = $arise_settings['arise_single_post_image'];
 				if($featured_image_display == 'on'):
@@ -81,27 +85,30 @@ get_header();
 			) ); ?>
 		</div> <!-- .entry-content -->
 		<?php if( is_single() ) {
-			$tag_list = get_the_tag_list( '', __( ' ', 'arise' ) ); ?>
-		<footer class="entry-meta clearfix"> <span class="cat-links">
-			<?php _e('Category : ','arise');  the_category(', '); ?> </span> <!-- .cat-links -->
-			<?php $tag_list = get_the_tag_list( '', __( ', ', 'arise' ) );
-				if(!empty($tag_list)){ ?>
-				<span class="tag-links">  <?php   echo $tag_list; ?> </span> <!-- .tag-links -->
-				<?php } ?>
-		</footer> <!-- .entry-meta -->
-		<?php if ( is_single() ) {
-				if( is_attachment() ) { ?>
-				<ul class="default-wp-page clearfix">
-					<li class="previous"> <?php previous_image_link( false, __( '&larr; Previous', 'arise' ) ); ?> </li>
-					<li class="next">  <?php next_image_link( false, __( 'Next &rarr;', 'arise' ) ); ?> </li>
-				</ul>
-				<?php } else { ?>
-				<ul class="default-wp-page clearfix">
-					<li class="previous"> <?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'arise' ) . '</span> %title' ); ?> </li>
-					<li class="next"> <?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'arise' ) . '</span>' ); ?> </li>
-				</ul>
-					<?php }
-				}
+			$tag_list = get_the_tag_list( '', __( ' ', 'arise' ) );
+			$disable_entry_format = $arise_settings['arise_entry_format_blog'];
+			if($disable_entry_format =='show' || $disable_entry_format =='show-button' || $disable_entry_format =='hide-button'){  ?>
+			<footer class="entry-meta clearfix"> <span class="cat-links">
+				<?php _e('Category : ','arise');  the_category(', '); ?> </span> <!-- .cat-links -->
+				<?php $tag_list = get_the_tag_list( '', __( ', ', 'arise' ) );
+					if(!empty($tag_list)){ ?>
+					<span class="tag-links">  <?php   echo $tag_list; ?> </span> <!-- .tag-links -->
+					<?php } ?>
+			</footer> <!-- .entry-meta -->
+		<?php }
+		}
+		if ( is_single() ) {
+			if( is_attachment() ) { ?>
+			<ul class="default-wp-page clearfix">
+				<li class="previous"> <?php previous_image_link( false, __( '&larr; Previous', 'arise' ) ); ?> </li>
+				<li class="next">  <?php next_image_link( false, __( 'Next &rarr;', 'arise' ) ); ?> </li>
+			</ul>
+			<?php } else { ?>
+			<ul class="default-wp-page clearfix">
+				<li class="previous"> <?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'arise' ) . '</span> %title' ); ?> </li>
+				<li class="next"> <?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'arise' ) . '</span>' ); ?> </li>
+			</ul>
+			<?php }
 		}
 				comments_template(); ?>
 			</article>
