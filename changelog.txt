@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-DarkElements version 4.1 - may 2016
+DarkElements version 4.2 - may 2016
 - theme now supports post formats
 - file header: updated head section
 - added file content-list 
