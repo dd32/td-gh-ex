@@ -7,18 +7,19 @@
 <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>	
 <![endif]-->	
-	
+
 <?php wp_head(); ?>
 
 </head>
 <body <?php body_class(); ?>>
 <div class="wrapper cleafix">
 
-<!-- BEGIN header --><?php $header_image = get_header_image(); ?>
-<header id="header"<?php if ($header_image){ echo 'style="background-image:url('. esc_url( $header_image ) .')"'; } ?>>
-    
+<?php do_action( 'basic_before_header' ); ?>
+
+<!-- BEGIN header -->
+<header id="header">
 	<div class="sitetitle maxwidth grid">	
-		<div class="logo col5">
+		<div class="logo">
 			
 			<?php if ( is_home() ) : 
 				?><h1><a id="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
@@ -27,12 +28,13 @@
 			<?php endif; ?>
 			<p class="sitedescription"><?php bloginfo('description'); ?></p>
 
-		</div>		
-		<div class="ban col7 on_desktop">
-			
+			<?php do_action( 'basic_after_sitelogo' ); ?>
+
 		</div>		
 	</div>
-	
+
+	<?php do_action( 'basic_before_topnav' ); ?>
+
 	<div class="topnav grid">
 		<div id="mobile-menu" class="mm-active"><?php _e( 'Menu', 'basic' ); ?></div>
 		<nav>
@@ -41,16 +43,27 @@
 					'theme_location' => 'top',
 					'menu_id' => 'navpages',
 					'container' => false,
-					'items_wrap' => '<ul class="menu maxwidth clearfix">%3$s</ul>'
+					'items_wrap' => '<ul class="top-menu maxwidth clearfix">%3$s</ul>'
 				) ); 
 			else : ?>
-				<ul class="menu maxwidth clearfix"><?php wp_list_pages('title_li=&depth=2'); ?> </ul>
+				<ul class="menu maxwidth clearfix">
+					<?php if ( is_front_page() ) { ?>
+						<li class="page_item current_page_item"><span><?php _e( 'Home', 'basic' ); ?></span></li>
+					<?php } else { ?>
+						<li class="page_item"><a href="<?php echo home_url(); ?>"><?php _e( 'Home', 'basic' ); ?></a></li>
+					<?php } 
+					wp_list_pages('title_li=&depth=2'); ?>
+				</ul>
 			<?php endif; ?>
 		</nav>				
 	</div>
-	
+
+	<?php do_action( 'basic_after_topnav' ); ?>
+
 </header>
-<!-- END header -->	
+<!-- END header -->
+
+<?php do_action( 'basic_after_header' ); ?>
 
 
 <div id="main" class="maxwidth clearfix">
