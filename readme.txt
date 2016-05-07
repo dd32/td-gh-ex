@@ -141,6 +141,21 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@Version 1.7.1
+1. Changed Theme Description in style.css File.
+@Version 1.7
+1.add footer widget area and change screenshot
+@Version 1.6
+1.Remove Page Author Meta.
+2.Remove empty wrapper of feature image when there is no feature image
+3.Remove Top border from the content in pages.
+4.Add Full Width Template
+5.Add button in banner image.
+6.Remove empty wrapper of content when there is no content.
+7.Change menu font size and align.
+8.Added galary image css.
+9.Added contact form 7 css.
+10.Fixed banner image description issue.
 @Version 1.5.4
 1. Solved Theme Review Issue.
 2. Update Font awesome Icon 4.5 to 4.6.1

@@ -14,22 +14,26 @@
     <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "col-md-8"; } else { echo "col-md-12"; } ?>">
       <?php the_post(); ?>
 	  <div class="qua_blog_section" >
+	   <?php if(has_post_thumbnail()): ?>
         <div class="qua_blog_post_img">
           <?php $defalt_arg =array('class' => "img-responsive"); ?>
-          <?php if(has_post_thumbnail()): ?>
-          <a  href="<?php the_permalink(); ?>">
+         <a  href="<?php the_permalink(); ?>">
           <?php the_post_thumbnail('quality_blog_img', $defalt_arg); ?>
           </a>
-          <?php endif; ?>	
         </div>
+		 <?php endif; 	
+		if (!is_page()) { ?>
         <div class="qua_post_date">
           <span class="date"><?php echo get_the_date('j'); ?></span>
           <h6><?php echo the_time('M'); ?></h6>
         </div>
+		<?php } ?>
         <div class="clear"></div>
+		<?php if ( get_the_content()!="" ) {?>
         <div class="qua_blog_post_content">
           <?php the_content(); ?>
 		</div>
+		<?php }?>
       </div>
 	  <?php comments_template('',true); ?>
     </div>

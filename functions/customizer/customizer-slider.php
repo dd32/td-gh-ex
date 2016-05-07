@@ -81,6 +81,39 @@ function quality_slider_customizer( $wp_customize ) {
 		'type' => 'text',
     ));
 	
+	
+	// Slider banner button text
+	$wp_customize->add_setting(
+	'quality_pro_options[home_image_button_text]', array(
+	'dafault'	=> 'Get this theme',
+	'capability' => 'edit_theme_options',
+	'sanitize_callback' => 'sanitize_text_field',
+	'type'	=> 'option',
+	));
+	
+	$wp_customize->add_control('quality_pro_options[home_image_button_text]', array(
+	'label' => __('Banner image button text', 'quality'),
+	'section' => 'slider_section_settings',
+	'priority'	=> 150,
+	'type' => 'text',
+	));
+	
+	// Slider banner button link
+	$wp_customize->add_setting(
+	'quality_pro_options[home_image_button_link]', array(
+	'dafault'	=> 'http://webriti.com/demo/wp/quality/',
+	'capability' => 'edit_theme_options',
+	'sanitize_callback' => 'sanitize_text_field',
+	'type'	=> 'option',
+	));
+	
+	$wp_customize->add_control('quality_pro_options[home_image_button_link]', array(
+	'label' => __('Banner image button link', 'quality'),
+	'section' => 'slider_section_settings',
+	'priority'	=> 150,
+	'type' => 'text',
+	));
+	
 	 }
 	add_action( 'customize_register', 'quality_slider_customizer' );
 	?>

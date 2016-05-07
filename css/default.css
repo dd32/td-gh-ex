@@ -21,9 +21,9 @@ input[type="submit"]:hover, table th, .qua-separator-small, .qua-head-detail,.na
 .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus, .dropdown-menu, .qua-separator, .qua_col_padding:hover .qua_home_portfolio_caption, .qua_proejct_button a:hover, .qua_callout_area, .qua_short_tabs li.active > a,
 .qua_short_tabs li > a:hover, .qua-footer-separator,.qua_contact_btn,.qua_send_button , #qua_send_button, .qua_post_date,a.qua_blog_btn:hover, .more-link:hover  , .more-link:focus ,
-a.qua_blog_btn:focus, .qua_dropcape_square span,.qua_dropcape_circle span, .qua_sidebar_widget #searchsubmit, .qua_dropcape_square span, .qua_sidebar_link p:hover span,.qua_sidebar_tweeter_link h3 i, .qua-service-area:hover > .hexagon-box, .blog-post-btn:hover, .blog-post-btn:hover { background-color: #f8504b; }
+a.qua_blog_btn:focus, .qua_dropcape_square span,.qua_dropcape_circle span, .qua_sidebar_widget #searchsubmit, .qua_dropcape_square span, .qua_sidebar_link p:hover span,.qua_sidebar_tweeter_link h3 i, .qua-service-area:hover > .hexagon-box, .blog-post-btn:hover, .blog-post-btn:hover, #searchsubmit { background-color: #f8504b; }
 
-.dropdown .fa-angle-down, li.dropdown:hover .fa-angle-down, li.dropdown.active .fa-angle-down, .qua_heading_title h1 span, .qua_page_heading h1 span, .qua-separator, .qua-service-area p > a , .qua_port_title h1 span, .qua_portfolio_tabs li.active > a, .qua_portfolio_tabs li > a:hover, .qua-blog-post-detail,.qua-blog-post-detail span, .qua-blog-post-detail a, .qua-blog-post-detail a , .qua-tags a:hover, .blog-post-btn, .qua-blog-area .qua-blog-info  .qua-blog-date-cm  .right a:hover, .qua_testimonianl_sec  i, .qua_testimonianl_desig, .qua_footer_widget_post h3 a, .qua_footer_widget_link a:hover, .qua_tooltip a, a.qua_blog_btn , .more-link, .reply a , .qua_title_head, .qua_footer_widget_column ul li a:hover, .qua_sidebar_link p:hover a , .widget ul li a:hover , .qua_sidebar_widget ul li a:hover, .tweet_info a, .qua_media_sidebar h3 a{ color: #F8504B; }
+.dropdown .fa-angle-down, li.dropdown:hover .fa-angle-down, li.dropdown.active .fa-angle-down, .qua_heading_title h1 span, .qua_page_heading h1 span, .qua-separator, .qua-service-area p > a , .qua_port_title h1 span, .qua_portfolio_tabs li.active > a, .qua_portfolio_tabs li > a:hover, .qua-blog-post-detail,.qua-blog-post-detail span, .qua-blog-post-detail a, .qua-blog-post-detail a , .qua-tags a:hover, .blog-post-btn, .qua-blog-area .qua-blog-info  .qua-blog-date-cm  .right a:hover, .qua_testimonianl_sec  i, .qua_testimonianl_desig, .qua_footer_widget_post h3 a, .qua_footer_widget_link a:hover, .qua_tooltip a, a.qua_blog_btn , .more-link, .reply a , .qua_title_head, .qua_footer_widget_column ul li a:hover, .qua_sidebar_link p:hover a , .widget ul li a:hover , .qua_sidebar_widget ul li a:hover, .tweet_info a, .qua_media_sidebar h3 a, .qua_footer_widget_column ul#recentcomments li.recentcomments > a { color: #F8504B; }
 
 button,
 html input[type="button"],
@@ -271,6 +271,13 @@ border: 1px solid #F8504B;
 }
 .qua_blog_post_content {
 	border-top:1px solid #e9e9e9;
+}
+
+.page .qua_blog_post_content {
+	border-top:0;
+}
+.page .qua_blog_post_content{
+	padding-top: 0;
 }
 a.qua_blog_btn , .more-link {
 	background-color: transparent;

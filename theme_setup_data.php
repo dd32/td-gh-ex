@@ -13,7 +13,9 @@ function theme_data_setup()
 			/* Home Image */
 			'home_image_title' => __('Theme Feature Goes Here!','quality'),
 			'home_image_sub_title' => __('Wordpress Premium Theme','quality'),
-			'home_image_description' => __('Fully Responsive Theme Amazing Design.','quality'),
+			'home_image_description' => __('WordPress Premium Theme!','quality'),
+			'home_image_button_text' => __('Get this theme','quality'),
+			'home_image_button_link' => '#',
 
 			'service_title'=>'What We Do',
 			'service_description' => __('We provide best WordPress solutions for your business. Thanks to our framework you will get more happy customers.','quality'),
