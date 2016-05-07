@@ -355,6 +355,7 @@
 <?php 
 	}
 if (is_admin()) {
-	require_once('core/admin/admin.php');
+	//require_once('core/admin/admin.php');
+	require_once('core/admin/admin-themes.php');
 }	
 ?>

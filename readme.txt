@@ -6,6 +6,11 @@ Enigma
 
 
 CHANGE-LOG:
+@Version: 2.4 [05/07/2016]
+1. Update Pro Themes and Plugins Page with features.
+2. Minor Google Font issue fixed.
+
+
 @Version: 2.3 [04/03/2016]
 1. Google font option added.
 2. Some other minor issue fixed.
@@ -16,9 +21,6 @@ CHANGE-LOG:
 3. Service On/Off.
 4. Footer-Call-Out icon setting added.
 
-
-
-CHANGE-LOG:
 @Version: 2.2 [17/10/2015]
 1. Mobils Menus Fix.
 
