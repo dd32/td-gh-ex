@@ -567,10 +567,15 @@ $options[] = array(
 		 'desc' => '<h2>' . esc_attr__( 'Need support about theme go to Support forum', 'promax' ) . '</h2>' . esc_attr__( 'If you have any problem in using options then please read theme documentation first ', 'promax' ) . '<a href="' . esc_url(__('http://www.insertcart.com/promax-theme-setup-guide-and-documentation/','promax')) . '" target="_blank">' . esc_attr__( 'Theme Documentation', 'promax' ) . '</a>  ' . esc_attr__( 'Before you contact us via directly please use support forum also We recommend you to use some WordPress plugin like "Regenerate Thumbnails" WordPress SEO and W3tc to optimize and get great website experience.', 'promax' ) . '
             <p><span class="buypre"><a href="' . esc_url(__('http://forum.insertcart.com','promax')) . '" target="_blank">' . esc_attr__( 'Support Forum', 'promax' ) . '</a></span></p></br>
 			<ol>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/faq-frequently-asked-question-theme-setup/','promax')) . '" target="_blank">' . esc_attr__( 'FAQ - Frequently Asked Question About Theme Setup', 'promax' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/making-post-by-importing-docx-file-content-into-post-images/','promax')) . '" target="_blank">' . esc_attr__( 'Making Post by Importing Docx File Content into Post Images', 'promax' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/how-to-secure-website-made-these-changes-in-htaccess/','promax')) . '" target="_blank">' . esc_attr__( 'How to Secure Website? Made these changes in .htaccess', 'promax' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/how-to-add-icon-navigation-menu/','promax')) . '" target="_blank">' . esc_attr__( 'How to Add Icon Navigation Menu', 'promax' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/how-to-install-a-required-or-recommended-plugin/','promax')) . '" target="_blank">' . esc_attr__( 'How to Install a Required or Recommended Plugin', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/fix-woocommerce-pages-issue-missing-reinstall/','promax')) . '" target="_blank">' . esc_attr__( 'Fix Woocommerce Pages Issue Missing or reinstall', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/get-current-page-url-in-wordpress/','promax')) . '" target="_blank">' . esc_attr__( 'Get Current Page URL in WordPress', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/add-ad-code-after-every-few-post/','promax')) . '" target="_blank">' . esc_attr__( 'Add Ad Code After Every Few Post', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/add-icons-wordpress-customizer-setting-panel/','promax')) . '" target="_blank">' . esc_attr__( 'Add Icons to WordPress Customizer Setting Panel', 'promax' ) . '</a></li>
 			</ol>',
             'type' => 'info');		
 		

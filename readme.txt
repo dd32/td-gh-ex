@@ -36,6 +36,9 @@ Custom Css:
 
 == Change log ==
 
+= 1.6.1 =
+* Metaformat updated
+
 = 1.5.7 =
 * Added German, Arabic, Hindi translation
 * Now you can change text of latest post

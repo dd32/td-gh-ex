@@ -1,4 +1,5 @@
 /* Options Framework Admin Styles */
+#optionsframework .section{line-height: 1.4;}
 .basicsettings-tab, .basicsettings-tab :hover{
 background-image: url("../images/home.png");
 background-repeat: no-repeat;

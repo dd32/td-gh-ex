@@ -5,8 +5,8 @@
 		<div id="singlecontent"><?php promax_breadcrumbs(); ?>
 			<?php if(have_posts()) : ?>
 			<?php while(have_posts())  : the_post(); ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/Article">
-<h1 itemprop="headline"><?php the_title(); ?></h1>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<h1><?php the_title(); ?></h1>
 <div id="metad"><span class="postmeta_box">
 		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link(
 		sprintf(
