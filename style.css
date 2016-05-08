@@ -3,11 +3,12 @@ Theme Name: Academica
 Theme URI: http://www.wpzoom.com/themes/academica/
 Description: Academica is an education- and school-oriented CMS theme with a three-column layout and modern design. It is easy to customize and comes with a custom widget, three templates for Posts and Pages.
 Tags: blue, two-columns, three-columns, custom-header, custom-menu, translation-ready
-Version: 2.0
+Version: 2.0.1
 Author: WPZOOM
 Author URI: http://www.wpzoom.com/
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: academica
 */
 
 /* =General
@@ -314,6 +315,36 @@ td {
 	padding: 5px 0;
 }
 
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+
 a {
 	color: #0A5794;
 	text-decoration: none;
@@ -472,7 +503,7 @@ img.aligncenter,
 
 #logo {
    	line-height: 1.2;
- 	margin: 30px 0 0;
+ 	padding: 30px 0 0;
 }
 
 #site-title {
@@ -512,10 +543,6 @@ img.aligncenter,
  	z-index: 300;
  	display: inline-block;
  	width: 100%;
- 	border-top: 1px solid #11609E;
-}
-
-.header_overlay #main-nav {
 	border-top: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -1300,7 +1327,7 @@ p.pages {
 	text-align: left;
 }
 
-/* =Featured Posts Gallery Widget
+/* =Featured Posts Widget
 -------------------------------------------------------------- */
 
 .academica-featured-posts-gallery ul {
@@ -1331,6 +1358,17 @@ p.pages {
 	font-family: "Roboto Condensed", sans-serif;
 }
 
+
+
+/* =Featured Posts Gallery Widget
+-------------------------------------------------------------- */
+
+.wpzoom-featured-posts-gallery .post h3 {
+    margin: 0 0 10px;
+    font-size: 26px;
+    line-height: 1.3;
+    font-family: "Roboto Condensed", sans-serif;
+}
 
 
 

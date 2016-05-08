@@ -11,6 +11,10 @@ The Footer Menu is best suitable for short menues with just a few links, as it o
 
 == Changelog ==
 
+= 2.0.1 (May 8, 2016) =
+* Added TGM Plugin Activator in order to installed recommended plugins used by the theme easier
+* Minor bug fixes
+
 = 2.0 (March 26, 2015) =
 * Theme re-design and major updates, including many modifications.
 * All files were modified

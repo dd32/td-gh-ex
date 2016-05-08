@@ -105,8 +105,9 @@ function academica_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
-	// Custom Theme Widget
-	require_once get_template_directory() . '/inc/widgets.php';
+	// Custom Theme Widgets
+    require_once get_template_directory() . '/inc/widgets.php';
+	require_once get_template_directory() . '/inc/wpzoom-widgets.php';
 }
 add_action( 'widgets_init', 'academica_widgets_init' );
 
@@ -347,9 +348,9 @@ function academica_entry_meta() {
 
 	// Translators: 1 is the author's name, 2 is category, and 3 is the date.
 	if ( $categories_list ) {
-		$utility_text = __( '<span class="by-author">By %1$s </span>in <span class="category">%2$s</span> on <span class="datetime">%3$s</span>.', 'academica' );
+		$utility_text = __( '<span class="by-author">By %1$s </span>in <span class="category">%2$s</span> on <span class="datetime">%3$s</span>', 'academica' );
 	} else {
-		$utility_text = __( '<span class="by-author">By %1$s </span>on <span class="datetime">%3$s</span>.', 'academica' );
+		$utility_text = __( '<span class="by-author">By %1$s </span>on <span class="datetime">%3$s</span>', 'academica' );
 	}
 
 	printf(
@@ -546,4 +547,61 @@ function academica_the_footer_text( $date_fmt = 'Y', $echo = true ) {
 		echo $html;
 	}
 	return $html;
+}
+
+
+
+/**
+ * Include the TGM_Plugin_Activation class.
+ */
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+add_action( 'tgmpa_register', 'academica_register_required_plugins' );
+/**
+ * Register the required plugins for this theme.
+ *
+ * The variable passed to tgmpa_register_plugins() should be an array of plugin
+ * arrays.
+ *
+ * This function is hooked into tgmpa_init, which is fired within the
+ * TGM_Plugin_Activation class constructor.
+ */
+function academica_register_required_plugins() {
+    /*
+     * Array of plugin arrays. Required keys are name and slug.
+     * If the source is NOT from the .org repo, then source is also required.
+     */
+    $plugins = array(
+
+        // This is an example of how to include a plugin from the WordPress Plugin Repository.
+        array(
+            'name'      => 'Social Icons Widget by WPZOOM',
+            'slug'      => 'social-icons-widget-by-wpzoom',
+            'required'  => true,
+        ),
+
+    );
+
+    /*
+     * Array of configuration settings. Amend each line as needed.
+     *
+     * TGMPA will start providing localized text strings soon. If you already have translations of our standard
+     * strings available, please help us make TGMPA even better by giving us access to these translations or by
+     * sending in a pull-request with .po file(s) with the translations.
+     *
+     * Only uncomment the strings in the config array if you want to customize the strings.
+     */
+    $config = array(
+        'id'           => 'academica',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+        'default_path' => '',                      // Default absolute path to bundled plugins.
+        'menu'         => 'tgmpa-install-plugins', // Menu slug.
+        'has_notices'  => true,                    // Show admin notices or not.
+        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+        'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+        'message'      => '',                      // Message to output right before the plugins table.
+
+    );
+
+    tgmpa( $plugins, $config );
 }

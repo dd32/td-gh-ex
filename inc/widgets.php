@@ -9,11 +9,8 @@ class Academica_Featured_Posts_Gallery extends WP_Widget {
 			'classname'   => 'academica-featured-posts-gallery',
 			'description' => 'Shows the latest posts with a featured image from a category (or all categories).'
 		);
-		parent::__construct( 'academica-featured-posts-gallery', 'Academica: Featured Posts Gallery', $widget_ops );
+		parent::__construct( 'academica-featured-posts-gallery', 'Academica: Featured Posts', $widget_ops );
 
-		add_action( 'save_post',    array( &$this, 'flush_widget_cache' ) );
-		add_action( 'deleted_post', array( &$this, 'flush_widget_cache' ) );
-		add_action( 'switch_theme', array( &$this, 'flush_widget_cache' ) );
 	}
 
 	function widget( $args, $instance ) {
@@ -105,14 +102,9 @@ class Academica_Featured_Posts_Gallery extends WP_Widget {
 		$instance['category'] = absint( $new_instance['category'] );
 		$instance['amount']   = absint( $new_instance['amount'] );
 
-		$this->flush_widget_cache();
-
 		return $instance;
 	}
 
-	function flush_widget_cache() {
-		wp_cache_delete( $this->id_base, 'widget' );
-	}
 
 	function form( $instance ) {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'category' => 0, 'amount' => 4 ) );
