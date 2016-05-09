@@ -43,50 +43,6 @@ function animals_format_for_editor( $text, $default_editor = null ) {
 	
 	$wp_customize->remove_control('header_textcolor');
 	
-	$wp_customize->add_section(
-        'logo_sec',
-        array(
-            'title' => __('Logo (PRO Version)', 'animals'),
-            'priority' => 1,
-            'description' => __('<strong>Logo Settings available in</strong>','animals').' <a href="'.esc_url(animals_pro_theme_url).'" target="_blank">'.__('PRO Version','animals').'</a>.',
-        )
-    );  
-    $wp_customize->add_setting('Animals_options[font-info]', array(
-			'sanitize_callback' => 'sanitize_text_field',
-            'type' => 'info_control',
-            'capability' => 'edit_theme_options',
-        )
-    );
-    $wp_customize->add_control( new Animals_Info( $wp_customize, 'logo_section', array(
-        'section' => 'logo_sec',
-        'settings' => 'Animals_options[font-info]',
-        'priority' => null
-        ) )
-    );
-	
-	$wp_customize->add_section('opacity',array(
-			'title'	=> __('Background Opacity (PRO Version)','animals'),
-			'description'	=> __('<strong>Background opacity available in</strong>','animals'). '<a href="'.esc_url(animals_pro_theme_url).'">'.__('PRO Version','animals').'</a>',
-			'priority'	=> 2
-	));
-	
-	$wp_customize->add_setting('bg_opacity',array(
-			'sanitize_callback'	=> 'sanitize_text_field',
-			'type'	=> 'info-control',
-			'capability'	=> 'edit_theme_options'
-	));
-	
-	$wp_customize->add_control(
-		new Animals_Info(
-			$wp_customize,
-			'bg_opacity',
-			array(
-				'setting'	=> 'bg_opacity',
-				'section'	=> 'opacity'
-			)
-		)
-	);
-	
 	$wp_customize->add_setting('color_scheme', array(
 		'default' => '#fc9530',
 		'sanitize_callback'	=> 'sanitize_hex_color',
@@ -95,7 +51,7 @@ function animals_format_for_editor( $text, $default_editor = null ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control($wp_customize,'color_scheme',array(
 			'label' => __('Color Scheme','animals'),
-			'description'	=> __('<strong>More color options in</strong>','animals'). '<a href="'.esc_url(animals_pro_theme_url).'" target="_blank">PRO version</a>',
+			'description'	=> __('Select color form here.','animals'),
 			'section' => 'colors',
 			'settings' => 'color_scheme'
 		))
@@ -103,7 +59,7 @@ function animals_format_for_editor( $text, $default_editor = null ) {
 	
 	$wp_customize->add_section('social_section',array(
 		'title'	=> __('Social Links','animals'),
-		'description'	=> __('Add your social links here. <br><strong>More social links in</strong>','animals'). '<a href="'.esc_url(animals_pro_theme_url).'" target="_blank"> PRO version</a>.',
+		'description'	=> __('Add your social links here.','animals'),
 		'priority'		=> null
 	));
 	
@@ -174,16 +130,29 @@ function animals_format_for_editor( $text, $default_editor = null ) {
 		'priority'		=> null
 	));
 	
-	$wp_customize->add_setting('shpeone',array(
-		'default'	=> '<h2>Welcome to Pets Animals...</h2><p>Lorem ipsum dolor sit amo nsec tetuer adipiscing elit</p>',
-		'sanitize_callback'	=> 'animals_format_for_editor',
+	$wp_customize->add_setting('shpeone_txthd',array(
+		'default'	=> 'Welcome to Pets Animals...',
+		'sanitize_callback'	=> 'sanitize_text_field',
 	));
 	
-	$wp_customize->add_control('shpeone',array(
+	$wp_customize->add_control('shpeone_txthd',array(
+				'label' => __('Left shaper title here','animals'),
+				'section' => 'belowsld_section',
+				'setting'	=> 'shpeone_txthd',
+				'type'	=> 'text'
+		)
+	);
+	
+	$wp_customize->add_setting('shpeone_txt',array(
+		'default'	=> 'Lorem ipsum dolor sit amo nsec tetuer adipiscing elit',
+		'sanitize_callback'	=> 'sanitize_text_field',
+	));
+	
+	$wp_customize->add_control('shpeone_txt',array(
 				'label' => __('Left shaper content here','animals'),
 				'section' => 'belowsld_section',
-				'setting'	=> 'shpeone',
-				'type'	=> 'textarea'
+				'setting'	=> 'shpeone_txt',
+				'type'	=> 'text'
 		)
 	);
 	
@@ -204,7 +173,7 @@ function animals_format_for_editor( $text, $default_editor = null ) {
 	
 	$wp_customize->add_section('slider_section',array(
 		'title'	=> __('Slider Settings','animals'),
-		'description'	=> __('Add slider images here. <br><strong>More slider settings available in</strong>','animals'). '<a href="'.esc_url(animals_pro_theme_url).'" target="_blank">PRO version</a>.',
+		'description'	=> __('Add slider images here.','animals'),
 		'priority'		=> null
 	));
 	
@@ -367,76 +336,6 @@ function animals_format_for_editor( $text, $default_editor = null ) {
 		'type'		=> 'text'
 	));
 	
-	// Page settings 
-	$wp_customize->add_section('page_boxes',array(
-		'title'	=> __('Homepage Boxes','animals'),
-		'description'	=> __('Select Pages from the dropdown','animals'),
-		'priority'	=> null
-	));
-	
-	$wp_customize->add_setting(
-    'page-setting1',
-		array(
-			'sanitize_callback' => 'animals_sanitize_integer',
-		)
-	);
- 
-	$wp_customize->add_control(
-		'page-setting1',
-		array(
-			'type' => 'dropdown-pages',
-			'label' => __('Choose a page for box one:','animals'),
-			'section' => 'page_boxes',
-		)
-	);
-	
-	$wp_customize->add_setting(
-    'page-setting2',
-		array(
-			'sanitize_callback' => 'animals_sanitize_integer',
-		)
-	);
-	
-	$wp_customize->add_control(
-		'page-setting2',
-		array(
-			'type' => 'dropdown-pages',
-			'label' => __('Choose a page for box Two:','animals'),
-			'section' => 'page_boxes',
-		)
-	);
-	
-	$wp_customize->add_setting(
-    'page-setting3',
-		array(
-			'sanitize_callback' => 'animals_sanitize_integer',
-		)
-	);
-	
-	$wp_customize->add_control(
-		'page-setting3',
-		array(
-			'type' => 'dropdown-pages',
-			'label' => __('Choose a page for box Three:','animals'),
-			'section' => 'page_boxes',
-		)
-	);
-	
-	$wp_customize->add_setting(
-    'page-setting4',
-		array(
-			'sanitize_callback' => 'animals_sanitize_integer',
-		)
-	);
-	
-	$wp_customize->add_control(
-		'page-setting4',
-		array(
-			'type' => 'dropdown-pages',
-			'label' => __('Choose a page for box Four:','animals'),
-			'section' => 'page_boxes',
-		)
-	);
 	
 	$wp_customize->add_section('footer_section',array(
 		'title'	=> __('Footer Text','animals'),
@@ -454,61 +353,6 @@ function animals_format_for_editor( $text, $default_editor = null ) {
 		'section'	=> 'footer_section',
 		'type'		=> 'text'
 	));
-	
-	$wp_customize->add_setting('Animals_options[credit-info]', array(
-			'sanitize_callback' => 'sanitize_text_field',
-            'type' => 'info_control',
-            'capability' => 'edit_theme_options',
-        )
-    );
-    $wp_customize->add_control( new Animals_Info( $wp_customize, 'cred_section', array(
-        'section' => 'footer_section',
-		'label'	=> __('To remove credit link upgrade to pro','animals'),
-        'settings' => 'Animals_options[credit-info]',
-        ) )
-    );
-	
-	$wp_customize->add_section(
-        'theme_layout_sec',
-        array(
-            'title' => __('Layout Settings (PRO Version)', 'animals'),
-            'priority' => null,
-            'description' => __('<strong>Layout Settings available in</strong>','animals'). '<a href="'.esc_url(animals_pro_theme_url).'" target="_blank">'.__('PRO Version','animals').'</a>.',
-        )
-    );  
-    $wp_customize->add_setting('Animals_options[layout-info]', array(
-			'sanitize_callback' => 'sanitize_text_field',
-            'type' => 'info_control',
-            'capability' => 'edit_theme_options',
-        )
-    );
-    $wp_customize->add_control( new Animals_Info( $wp_customize, 'layout_section', array(
-        'section' => 'theme_layout_sec',
-        'settings' => 'Animals_options[layout-info]',
-        'priority' => null
-        ) )
-    );
-	
-	$wp_customize->add_section(
-        'theme_font_sec',
-        array(
-            'title' => __('Fonts Settings (PRO Version)', 'animals'),
-            'priority' => null,
-            'description' => __('<strong>Font Settings available in</strong>','animals'). '<a href="'.esc_url(animals_pro_theme_url).'" target="_blank">'.__('PRO Version','animals').'</a>.',
-        )
-    );  
-    $wp_customize->add_setting('Animals_options[font-info]', array(
-			'sanitize_callback' => 'sanitize_text_field',
-            'type' => 'info_control',
-            'capability' => 'edit_theme_options',
-        )
-    );
-    $wp_customize->add_control( new Animals_Info( $wp_customize, 'font_section', array(
-        'section' => 'theme_font_sec',
-        'settings' => 'Animals_options[font-info]',
-        'priority' => null
-        ) )
-    );
 	
     $wp_customize->add_section(
         'animals_theme_doc',
@@ -534,21 +378,6 @@ function animals_format_for_editor( $text, $default_editor = null ) {
 	
 }
 add_action( 'customize_register', 'animals_customize_register' );
-
-//Integer
-function animals_sanitize_integer( $input ) {
-    if( is_numeric( $input ) ) {
-        return intval( $input );
-    }
-}	
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function animals_customize_preview_js() {
-	wp_enqueue_script( 'animals_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
-}
-add_action( 'customize_preview_init', 'animals_customize_preview_js' );
 
 function animals_css(){
 		?>

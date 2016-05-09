@@ -4,8 +4,8 @@
 
 Theme Name      :   Animals
 Theme URI       :   http://www.flythemes.net/wordpress-themes/animals-wordpress-theme/
-Version         :   1.0
-Tested up to    :   WP 4.4.1
+Version         :   1.1
+Tested up to    :   WP 4.5.2
 Author          :   Flythemes
 Author URI      :   http://www.flythemes.net/
 

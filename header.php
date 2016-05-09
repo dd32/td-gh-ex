@@ -24,10 +24,12 @@
                         	<div class="handler">
                                 <div class="header-inner">
                                     <div class="logo">
-                                        <a href="<?php echo home_url('/'); ?>">
-                                                <h1><?php bloginfo('name'); ?></h1>
-                                        </a>
-                                            <p><?php bloginfo('description'); ?></p>
+                                        <?php if ( function_exists( 'the_custom_logo' ) ) {
+											the_custom_logo();
+									} else { ?>
+									<a href="<?php echo esc_url(home_url('/')); ?>"><h1><?php esc_attr(bloginfo('name')); ?></h1></a>
+									<p><?php esc_attr(bloginfo('description')); ?></p>
+                                    <?php } ?>
                                     </div><!--logo-->					                  
                                     <div class="toggle">
                                         <a class="toggleMenu" href="#"><?php _e('Menu','animals'); ?></a>
@@ -42,7 +44,7 @@
 					</div><!--header-->
 		
 		
-<?php if ( is_home() || is_front_page() ) { ?>
+<?php if ( is_front_page() ) { ?>
     <div class="slider-main">
        <?php
 			$slideimage = '';
@@ -101,19 +103,22 @@
                 <div class="clear"></div><?php 
 			}
             ?>
-        </div>
-      </div><!-- slider -->
 <?php } ?>
 
 
-		<?php if ( is_home() || is_front_page() ) { ?>
+		<?php if ( is_front_page() ) { ?>
 		<div id="welcome">
         	<div class="wel-shaper"></div>
             	<div class="container">
                     <div class="wel-handler">
                         <div class="welcome-inner">
                             <div class="wel-left">
-                            	<?php if( get_theme_mod('shpeone',true) != ''){ echo get_theme_mod('shpeone','<h2>Welcome to Pets Animals...</h2><p>Lorem ipsum dolor sit amo nsec tetuer adipiscing elit</p>'); }; ?>
+                            	<?php if( get_theme_mod('shpeone_txthd',true) != ''){ ?>
+                            		<h2><?php echo get_theme_mod('shpeone_txthd',__('Welcome to Pets Animals...','animals')); ?></h2>
+                                <?php } ?>
+                                <?php if( get_theme_mod('shpeone_txt',true) != ''){ ?>
+                                <p><?php echo get_theme_mod('shpeone_txt',__('Lorem ipsum dolor sit amo nsec tetuer adipiscing elit','animals')); ?></p>
+                                <?php } ?>
                             </div><!--wel-left-->
                             
                             <div class="wel-right">

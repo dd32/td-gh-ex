@@ -27,6 +27,7 @@ function animals_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'custom-logo' );
 	add_image_size('animals-homepage-thumb',240,145,true);
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'animals' ),
@@ -34,7 +35,7 @@ function animals_setup() {
 	add_theme_support( 'custom-background', array(
 		'default-color' => 'f8f8f8'
 	) );
-	add_editor_style( 'editor-style.css' );
+	add_editor_style( array( 'editor-style.css', animals_font_url() ) );
 }
 endif; // animals_setup
 add_action( 'after_setup_theme', 'animals_setup' );
@@ -103,7 +104,6 @@ function animals_font_url(){
 function animals_scripts() {
 	wp_enqueue_style( 'animals-font', animals_font_url(), array() );
 	wp_enqueue_style( 'animals-basic-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'animals-editor-style', get_template_directory_uri().'/editor-style.css' );
 	wp_enqueue_style( 'animals-responsive-style', get_template_directory_uri().'/css/theme-responsive.css' );
 	wp_enqueue_style( 'animals-nivo-style', get_template_directory_uri().'/css/nivo-slider.css' );
 	if ( is_home() || is_front_page() ) { 
@@ -163,9 +163,9 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-define('animals_pro_theme_url','http://flythemes.net/wordpress-themes/animals-wordpress-theme/');
+define('animals_pro_theme_url','https://flythemes.net/wordpress-themes/animals-wordpress-theme/');
 define('animals_theme_doc','http://flythemesdemo.net/documentation/animals-doc/');
-define('animals_site_url','http://flythemes.net/');
+define('animals_site_url','https://flythemes.net/');
 
 
 function animals_custom_blogpost_pagination( $wp_query ){
