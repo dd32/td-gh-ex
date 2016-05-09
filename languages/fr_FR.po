@@ -2,10 +2,10 @@
 # This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Catch Box 4.3.5\n"
+"Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-04 18:37+0545\n"
-"PO-Revision-Date: 2016-05-04 18:37+0545\n"
+"POT-Creation-Date: 2016-05-09 16:54+0545\n"
+"PO-Revision-Date: 2016-05-09 16:54+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: D'CLIC, L Capronnier <contact@dclic.info, lcapronnier@yahoo."
 "Com>\n"
@@ -143,8 +143,8 @@ msgstr "Les commentaires sont désactivés."
 
 #: ../content-aside.php:15 ../content-featured.php:14
 #: ../content-gallery.php:15 ../content-gallery.php:46 ../content-image.php:14
-#: ../content-link.php:16 ../content-quote.php:14 ../content-status.php:15
-#: ../content.php:15 ../content.php:19 ../content.php:47
+#: ../content-link.php:15 ../content-quote.php:13 ../content-status.php:14
+#: ../content.php:14 ../content.php:17 ../content.php:45
 #: ../inc/catchbox-sliders.php:83
 #, php-format
 msgid "Permalink to %s"
@@ -154,57 +154,57 @@ msgstr "Permalien pour %s"
 msgid "Aside"
 msgstr "De côté"
 
-#: ../content-aside.php:20 ../content-image.php:18 ../content-link.php:22
-#: ../content-quote.php:24 ../content-status.php:21
+#: ../content-aside.php:20 ../content-image.php:18 ../content-link.php:20
+#: ../content-quote.php:22 ../content-status.php:19
 msgid "Reply"
 msgstr "Répondre"
 
-#: ../content-aside.php:20 ../content-image.php:18 ../content-link.php:22
-#: ../content-quote.php:24 ../content-status.php:21
+#: ../content-aside.php:20 ../content-image.php:18 ../content-link.php:20
+#: ../content-quote.php:22 ../content-status.php:19
 msgctxt "comments number"
 msgid "1"
 msgstr "1"
 
-#: ../content-aside.php:20 ../content-image.php:18 ../content-link.php:22
-#: ../content-quote.php:24 ../content-status.php:21
+#: ../content-aside.php:20 ../content-image.php:18 ../content-link.php:20
+#: ../content-quote.php:22 ../content-status.php:19
 msgctxt "comments number"
 msgid "%"
 msgstr "%"
 
-#: ../content-aside.php:34 ../content.php:58 ../functions.php:348
+#: ../content-aside.php:34 ../content.php:56 ../functions.php:348
 #, php-format
 msgid "Continue reading %s"
 msgstr "Continuer la lecture %s"
 
 #: ../content-aside.php:41 ../content-featured.php:24
-#: ../content-gallery.php:53 ../content-image.php:26 ../content-link.php:35
-#: ../content-page.php:19 ../content-quote.php:37 ../content-single.php:31
-#: ../content-status.php:36 ../content.php:65 ../image.php:87
+#: ../content-gallery.php:53 ../content-image.php:26 ../content-link.php:33
+#: ../content-page.php:19 ../content-quote.php:35 ../content-single.php:31
+#: ../content-status.php:34 ../content.php:63 ../image.php:87
 msgid "Pages:"
 msgstr "Pages&nbsp;:"
 
 #: ../content-aside.php:54 ../content-gallery.php:91 ../content-image.php:67
-#: ../content-link.php:48 ../content-quote.php:75 ../content-status.php:49
-#: ../content.php:105
+#: ../content-link.php:46 ../content-quote.php:73 ../content-status.php:47
+#: ../content.php:103
 msgid "Leave a reply"
 msgstr "Publier un commentaire"
 
 #: ../content-aside.php:54 ../content-gallery.php:91 ../content-image.php:67
-#: ../content-link.php:48 ../content-quote.php:75 ../content-status.php:49
-#: ../content.php:105
+#: ../content-link.php:46 ../content-quote.php:73 ../content-status.php:47
+#: ../content.php:103
 msgid "<b>1</b> Reply"
 msgstr "<b>1</b> commentaire"
 
 #: ../content-aside.php:54 ../content-gallery.php:91 ../content-image.php:67
-#: ../content-link.php:48 ../content-quote.php:75 ../content-status.php:49
-#: ../content.php:105
+#: ../content-link.php:46 ../content-quote.php:73 ../content-status.php:47
+#: ../content.php:103
 msgid "<b>%</b> Replies"
 msgstr "<b>%</b> commentaires"
 
 #: ../content-aside.php:56 ../content-featured.php:51
-#: ../content-gallery.php:94 ../content-image.php:71 ../content-link.php:50
-#: ../content-page.php:27 ../content-quote.php:78 ../content-single.php:64
-#: ../content-status.php:51 ../content.php:108 ../functions.php:519
+#: ../content-gallery.php:94 ../content-image.php:71 ../content-link.php:48
+#: ../content-page.php:27 ../content-quote.php:76 ../content-single.php:64
+#: ../content-status.php:49 ../content.php:106 ../functions.php:519
 #: ../functions.php:547 ../image.php:97
 msgid "Edit"
 msgstr "Modifier"
@@ -212,9 +212,9 @@ msgstr "Modifier"
 #. translators: used between list items, there is a space after the comma
 #: ../content-featured.php:35 ../content-featured.php:44
 #: ../content-gallery.php:66 ../content-gallery.php:76 ../content-image.php:50
-#: ../content-image.php:59 ../content-quote.php:50 ../content-quote.php:60
-#: ../content-single.php:42 ../content-single.php:45 ../content.php:79
-#: ../content.php:89
+#: ../content-image.php:59 ../content-quote.php:48 ../content-quote.php:58
+#: ../content-single.php:42 ../content-single.php:45 ../content.php:77
+#: ../content.php:87
 msgid ", "
 msgstr ", "
 
@@ -241,8 +241,8 @@ msgstr ""
 msgid "Gallery"
 msgstr "Album"
 
-#: ../content-gallery.php:30 ../content-image.php:24 ../content-link.php:33
-#: ../content-quote.php:35 ../content-status.php:34
+#: ../content-gallery.php:30 ../content-image.php:24 ../content-link.php:31
+#: ../content-quote.php:33 ../content-status.php:32
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Lire la suite <span class=\"meta-nav\">&rarr;</span>"
 
@@ -253,14 +253,14 @@ msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
 msgstr[0] "Cet album contient <a %1$s>%2$s photo</a>."
 msgstr[1] "Cet album contient <a %1$s>%2$s photos</a>."
 
-#: ../content-gallery.php:70 ../content-image.php:54 ../content-quote.php:54
-#: ../content.php:83
+#: ../content-gallery.php:70 ../content-image.php:54 ../content-quote.php:52
+#: ../content.php:81
 #, php-format
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
 msgstr "<span class=\"%1$s\">Posté dans</span> %2$s"
 
-#: ../content-gallery.php:82 ../content-image.php:62 ../content-quote.php:66
-#: ../content.php:95
+#: ../content-gallery.php:82 ../content-image.php:62 ../content-quote.php:64
+#: ../content.php:93
 #, php-format
 msgid "<span class=\"%1$s\">Tagged</span> %2$s"
 msgstr "<span class=\"%1$s\">Marqué comme</span> %2$s"
@@ -287,23 +287,23 @@ msgstr ""
 msgid "View all posts by %s"
 msgstr "Voir tous les articles par %s"
 
-#: ../content-link.php:17
+#: ../content-link.php:16
 msgid "Link"
 msgstr "Lien"
 
-#: ../content-quote.php:15
+#: ../content-quote.php:14
 msgid "Quote"
 msgstr "Citation"
 
-#: ../content-single.php:21 ../content.php:28
+#: ../content-single.php:21 ../content.php:26
 msgid "No Comments &darr;"
 msgstr "Aucun commentaire &darr;"
 
-#: ../content-single.php:21 ../content.php:28
+#: ../content-single.php:21 ../content.php:26
 msgid "1 Comment &darr;"
 msgstr "1 commentaire &darr;"
 
-#: ../content-single.php:21 ../content.php:28
+#: ../content-single.php:21 ../content.php:26
 msgid "% Comments &darr;"
 msgstr "% commentaires &darr;"
 
@@ -342,11 +342,11 @@ msgstr ""
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Voir tous les articles par %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../content-status.php:16
+#: ../content-status.php:15
 msgid "Status"
 msgstr "Statut"
 
-#: ../content.php:16
+#: ../content.php:15
 msgid "Featured"
 msgstr "Mis en avant"
 
@@ -355,12 +355,12 @@ msgid "Primary Menu"
 msgstr "Menu principal"
 
 #: ../functions.php:129 ../inc/catchbox-menus.php:98
-#: ../inc/catchbox-menus.php:189
+#: ../inc/catchbox-menus.php:190
 msgid "Secondary Menu"
 msgstr "Menu secondaire"
 
 #: ../functions.php:130 ../inc/catchbox-menus.php:126
-#: ../inc/catchbox-menus.php:229
+#: ../inc/catchbox-menus.php:230
 msgid "Footer Menu"
 msgstr "Menu de bas de page"
 
@@ -572,34 +572,34 @@ msgstr "Menu"
 msgid "Primary Mobile Menu"
 msgstr "Menu principal pour les mobiles"
 
-#: ../inc/catchbox-menus.php:194 ../inc/catchbox-menus.php:233
+#: ../inc/catchbox-menus.php:195 ../inc/catchbox-menus.php:234
 msgid "Secondary Mobile Menu"
 msgstr "Menu secondaire pour les mobiles"
 
 #: ../inc/catchbox-metabox.php:31 ../inc/catchbox-metabox.php:37
 msgid "Catch Box Options"
-msgstr ""
+msgstr "Options de Catch Box"
 
 #: ../inc/catchbox-metabox.php:50
 #, php-format
 msgid "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
-msgstr ""
+msgstr "Mise en page définie dans les <a href=\"%s\">Paramètres du thème</a>"
 
 #: ../inc/catchbox-metabox.php:56
 msgid "Right sidebar"
-msgstr ""
+msgstr "Barre de  droite"
 
 #: ../inc/catchbox-metabox.php:62
 msgid "Left sidebar"
-msgstr ""
+msgstr "Barre de gauche"
 
 #: ../inc/catchbox-metabox.php:68
 msgid "No Sidebar, One Column"
-msgstr ""
+msgstr "Pa de barre latérale, une colonne"
 
 #: ../inc/catchbox-metabox.php:84
 msgid "Sidebar Layout Options"
-msgstr ""
+msgstr "Options de la mise en page des barres"
 
 #. translators: header image description
 #: ../inc/custom-header.php:31
@@ -684,7 +684,7 @@ msgstr "URL de redirection pour flux"
 
 #: ../inc/customizer/customizer.php:68
 msgid "Search Text Settings"
-msgstr ""
+msgstr "Paramètres du texte pour la recherche"
 
 #: ../inc/customizer/customizer.php:73 ../inc/theme-options.php:148
 msgid "Disable Search in Header?"
@@ -719,15 +719,15 @@ msgstr "Paramétrage des effets du diaporama"
 
 #: ../inc/customizer/customizer.php:114
 msgid "Colors"
-msgstr ""
+msgstr "Couleurs"
 
 #: ../inc/customizer/customizer.php:120
 msgid "Basic Colors"
-msgstr ""
+msgstr "Couleurs de base"
 
 #: ../inc/customizer/customizer.php:125
 msgid "Custom Color Options"
-msgstr ""
+msgstr "Options pour les couleurs personalisées"
 
 #: ../inc/customizer/customizer.php:133 ../inc/theme-options.php:544
 msgid "Social Links"
@@ -921,19 +921,19 @@ msgstr "Web Clip Icon"
 
 #: ../inc/customizer/customizer.php:704 ../inc/theme-options.php:571
 msgid "Header Image Location"
-msgstr ""
+msgstr "Position de l'image d'entête"
 
 #: ../inc/customizer/customizer.php:711
 msgid "Above Site Title-Logo"
-msgstr ""
+msgstr "Au dessus du titre du site et du logo"
 
 #: ../inc/customizer/customizer.php:712 ../inc/theme-options.php:576
 msgid "Between Site Title-Logo"
-msgstr ""
+msgstr "Entre le titre du site et le logo"
 
 #: ../inc/customizer/customizer.php:713
 msgid "Below Site Title-Logo"
-msgstr ""
+msgstr "En dessous du titre du site et du logo"
 
 #: ../inc/customizer/customizer.php:852
 #, php-format
@@ -1014,7 +1014,7 @@ msgstr "Montrer tout le contenu"
 
 #: ../inc/default-options.php:145
 msgid "Search"
-msgstr ""
+msgstr "Recherche"
 
 #: ../inc/default-options.php:193
 msgid "Y"
@@ -1185,27 +1185,27 @@ msgstr "Options pour le diaporama"
 
 #: ../inc/theme-options.php:554
 msgid "Header Image:"
-msgstr ""
+msgstr "Image d'entête:"
 
 #: ../inc/theme-options.php:563 ../inc/theme-options.php:565
 msgid "Click here to change header image"
-msgstr ""
+msgstr "Cliquez ici pour changer l'image d'entête"
 
 #: ../inc/theme-options.php:563
 msgid "Click here to change Header Image"
-msgstr ""
+msgstr "Cliquez ici pour changer l'image d'entête"
 
 #: ../inc/theme-options.php:565
 msgid "Click here to add Header Image"
-msgstr ""
+msgstr "Cliquer ici pour ajouter une image d'entête"
 
 #: ../inc/theme-options.php:574
 msgid "Above Header Content"
-msgstr ""
+msgstr "Au dessus de l'entête du contenu"
 
 #: ../inc/theme-options.php:578
 msgid "Below Header Content"
-msgstr ""
+msgstr "En dessous de l'entête du contenu"
 
 #: ../inc/theme-options.php:612 ../inc/theme-options.php:614
 msgid "Post Slider Tutorial"
@@ -1314,7 +1314,7 @@ msgstr "Zone 3 de pied de page"
 
 #: ../inc/widgets.php:73
 msgid "CT: Adspace Widget"
-msgstr "CT&nbsp;: Widget Adspace"
+msgstr "CT: Widget Adspace"
 
 #: ../inc/widgets.php:74
 msgid "Use this widget to add any type of Ad as a widget. "

@@ -250,7 +250,7 @@ function catchbox_main_header_image() {
         	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
                 <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
             </a><!-- #site-logo -->
-      	</div>
+      	</div><!-- #site-header-image -->
 
 	<?php endif; // end check for removed header image
 }
@@ -314,19 +314,19 @@ function catchbox_headerdetails() {
 
 	echo '<div class="logo-wrap clearfix">';
 
-	if ( $sitedetails == '0' ) {
-		echo catchbox_header_image();
-		if ( 'between' == $position ) {
-			catchbox_main_header_image();
+		if ( $sitedetails == '0' ) {
+			echo catchbox_header_image();
+			if ( 'between' == $position ) {
+				catchbox_main_header_image();
+			}
+			echo catchbox_header_details();
+		} else {
+			echo catchbox_header_details();
+			if ( 'between' == $position ) {
+				catchbox_main_header_image();
+			}
+			echo catchbox_header_image();
 		}
-		echo catchbox_header_details();
-	} else {
-		echo catchbox_header_details();
-		if ( 'between' == $position ) {
-			catchbox_main_header_image();
-		}
-		echo catchbox_header_image();
-	}
 
 	echo '</div><!-- .logo-wrap -->';
 
