@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#CFCFCF;}
+	.st1{font-family:'Arial'; font-weight: bold; font-size:18.5063px;}
+</style>
+<path class="st0" d="M25,1.1C11.8,1.1,1.1,11.8,1.1,25S11.8,48.9,25,48.9S48.9,38.2,48.9,25S38.2,1.1,25,1.1z M37.7,33.5
+	c0,1.7-1.4,3-3,3H15.3c-1.7,0-3-1.4-3-3V18.7c0-1.7,1.4-3,3-3h3.3v-3c0-0.8,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4v3h7.2v-3
+	c0-0.8,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4v3h3.4c1.7,0,3,1.4,3,3L37.7,33.5z"/>
+<text transform="matrix(1 0 0 1 15.2471 32.7451)" class="st0 st1">31</text>
+</svg>
