@@ -33,23 +33,23 @@
 
 <?php if ( has_nav_menu( 'fixed-menu' ) ) { ?>
 
-<!-- BEGIN #nav-top -->
-<nav id="nav-top" class="navigation-main clearfix" role="navigation">
+<!-- BEGIN #navigation -->
+<nav id="navigation" class="navigation-main fixed-nav clearfix" role="navigation">
 
 	<button class="menu-toggle"><i class="fa fa-bars"></i></button>
 
 	<?php
 		wp_nav_menu( array(
-			'theme_location' 	=> 'fixed-menu',
-			'title_li' 			=> '',
-			'depth' 			=> 4,
+			'theme_location' 		=> 'fixed-menu',
+			'title_li' 					=> '',
+			'depth' 						=> 4,
 			'container_class' 	=> '',
 			'menu_class'      	=> 'menu',
 			)
 		);
 	?>
 
-<!-- END #nav-top -->
+<!-- END #navigation -->
 </nav>
 
 <?php } ?>
@@ -59,7 +59,7 @@
 
 	<?php $header_image = get_header_image(); if ( ! empty( $header_image ) ) { ?>
 
-		<div id="custom-header" <?php if ( has_nav_menu( 'fixed-menu' ) ) { ?>class="fixed-menu"<?php } ?> style="background-image: url(<?php header_image(); ?>);">
+		<div id="custom-header" style="background-image: url(<?php header_image(); ?>);">
 
 			<?php get_template_part( 'content/logo', 'title' ); ?>
 
@@ -69,7 +69,7 @@
 
 	<?php } else { ?>
 
-		<div id="custom-header" class="non-active<?php if ( has_nav_menu( 'fixed-menu' ) ) { ?> fixed-menu<?php } ?>">
+		<div id="custom-header" class="non-active">
 
 			<?php get_template_part( 'content/logo', 'title' ); ?>
 
@@ -80,19 +80,20 @@
 <!-- END #header -->
 </div>
 
-<?php if ( '1' == get_theme_mod( 'display_main_menu', '1' ) ) { ?>
+<?php if ( has_nav_menu( 'main-menu' ) ) { ?>
 
 <!-- BEGIN #navigation -->
 <nav id="navigation" class="navigation-main clearfix" role="navigation">
 
-	<button class="menu-toggle"><i class="fa fa-bars"></i></button>
+	<?php if ( ! has_nav_menu( 'fixed-menu' ) ) { ?>
+		<button class="menu-toggle"><i class="fa fa-bars"></i></button>
+	<?php } ?>
 
 	<?php
 		wp_nav_menu( array(
-			'theme_location' 	=> 'main-menu',
-			'title_li' 			=> '',
-			'depth' 			=> 4,
-			'fallback_cb'     	=> 'wp_page_menu',
+			'theme_location' 		=> 'main-menu',
+			'title_li' 					=> '',
+			'depth' 						=> 4,
 			'container_class' 	=> '',
 			'menu_class'      	=> 'menu',
 			)
