@@ -885,7 +885,7 @@ function catcheverest_homepage_featured_display() {
 
 
 	if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
-		if  ( !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) {
+		if ( ( !empty( $options[ 'homepage_featured_image' ] ) && ( array_filter( $options[ 'homepage_featured_image' ] ) ) ) || ( !empty( $options[ 'homepage_featured_title' ] ) && ( array_filter( $options[ 'homepage_featured_title' ] ) ) ) || ( !empty( $options[ 'homepage_featured_content' ] ) && ( array_filter( $options[ 'homepage_featured_content' ] ) ) ) ) {
 			catcheverest_homepage_featured_content();
 		} else {
 			catcheverest_default_featured_content();

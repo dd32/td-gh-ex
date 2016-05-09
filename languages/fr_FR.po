@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
-"POT-Creation-Date: 2016-05-04 19:00+0545\n"
-"PO-Revision-Date: 2016-05-04 19:00+0545\n"
+"POT-Creation-Date: 2016-05-09 17:48+0545\n"
+"PO-Revision-Date: 2016-05-09 17:48+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -501,11 +501,11 @@ msgstr "Aucune barre, pleine largeur"
 
 #: ../inc/panel/catcheverest-theme-options-defaults.php:29
 msgid "Continue Reading &rarr;"
-msgstr ""
+msgstr "Continuer la lecture &rarr;"
 
 #: ../inc/panel/catcheverest-theme-options-defaults.php:31
 msgid "Search &hellip;"
-msgstr ""
+msgstr "Recherche &hellip;"
 
 #: ../inc/panel/catcheverest-theme-options-defaults.php:33
 #: ../inc/panel/theme-options.php:431
@@ -627,7 +627,7 @@ msgstr ""
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:60
 msgid "Theme Instructions"
-msgstr ""
+msgstr "Mode d'emploi du thème"
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:64
 #: ../inc/panel/theme-options.php:104
@@ -636,7 +636,7 @@ msgstr "Supporte"
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:68
 msgid "Changelog"
-msgstr ""
+msgstr "Modifications"
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:72
 #: ../inc/panel/theme-options.php:103
@@ -645,7 +645,7 @@ msgstr "Faites une donation maintenant"
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:76
 msgid "Review"
-msgstr ""
+msgstr "Revoir"
 
 #: ../inc/panel/customizer/customizer.php:33 ../inc/panel/theme-options.php:43
 #: ../inc/panel/theme-options.php:44 ../inc/panel/theme-options.php:123
@@ -654,7 +654,7 @@ msgstr "Options du thème"
 
 #: ../inc/panel/customizer/customizer.php:34
 msgid "Basic theme Options"
-msgstr ""
+msgstr "Options de base du thème"
 
 #: ../inc/panel/customizer/customizer.php:38
 #: ../inc/panel/theme-options.php:135
@@ -668,13 +668,16 @@ msgstr "Favicon"
 
 #: ../inc/panel/customizer/customizer.php:48
 msgid "Webclip Icon Options"
-msgstr ""
+msgstr "Option pour l'icône Webclip"
 
 #: ../inc/panel/customizer/customizer.php:49
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height "
 "144px height, which will support High Resolution Devices like iPad Retina"
 msgstr ""
+"L'icône Web Clip est pour les terminaux Apple. La taille recommandée est une "
+"largeur de 144 pixels et une hauteur de 144 pixels, ce qui permet de "
+"supporter les appareils avec une haute résolution comme l'Ipad Retina"
 
 #: ../inc/panel/customizer/customizer.php:53
 #: ../inc/panel/theme-options.php:251
@@ -725,7 +728,7 @@ msgstr "Personalisation du CSS"
 #: ../inc/panel/customizer/customizer.php:103
 #: ../inc/panel/theme-options.php:405
 msgid "Scroll Up"
-msgstr ""
+msgstr "Défiler vers le haut"
 
 #: ../inc/panel/customizer/customizer.php:111
 #: ../inc/panel/customizer/customizer.php:112
@@ -770,11 +773,11 @@ msgstr "Liens sociaux"
 
 #: ../inc/panel/customizer/customizer.php:153
 msgid "Add your social links here"
-msgstr ""
+msgstr "Ajouter vos liens vers les réseaux sociaux ici"
 
 #: ../inc/panel/customizer/customizer.php:157
 msgid "Predefined Social Icons"
-msgstr ""
+msgstr "Icônes prédéfinies des réseaux sociaux"
 
 #: ../inc/panel/customizer/customizer.php:164
 #: ../inc/panel/customizer/customizer.php:169
@@ -791,6 +794,11 @@ msgid ""
 "versions from Catch Box free version. If you want this feature, then you can "
 "add <a target=\"_blank\" href=\"%s\">Catch Web Tools</a>  plugin."
 msgstr ""
+"Les outils du webmaster sont maintenant du ressort des extensions selon "
+"Theme Review Guidelines dans WordPress.org. Cette fonction sera supprimée "
+"dans les prochaines versions gratuites. Si vous souhaitez ces fonctions, "
+"vous pouvez ajouter l'extension <a target=\"_blank\" href=\"%s\">Catch Web "
+"Tools</a>"
 
 #: ../inc/panel/customizer/customizer.php:214
 msgid "Enable Featured Header Image"
@@ -864,7 +872,7 @@ msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:376
 msgid "Check to Disable Scroll Up"
-msgstr ""
+msgstr "Cocher pour désactiver le défilement vers le haut"
 
 #: ../inc/panel/customizer/customizer.php:388
 msgid "Homepage Headline Text"
@@ -945,10 +953,12 @@ msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
+"La page de personnalisation doit être rechargée après l'enregistrement si le "
+"nombre de slides a changé"
 
 #: ../inc/panel/customizer/customizer.php:518
 msgid "Transition Effect"
-msgstr ""
+msgstr "Effet de transition"
 
 #: ../inc/panel/customizer/customizer.php:529
 #: ../inc/panel/theme-options.php:627
@@ -963,6 +973,8 @@ msgstr "Durée de la transition"
 #: ../inc/panel/customizer/customizer.php:563
 msgid "Check to Exclude Slider posts from Homepage posts"
 msgstr ""
+"Valider pour exclure les articles du diaporama de ceux affichés sur la page "
+"principale"
 
 #: ../inc/panel/customizer/customizer.php:615
 #: ../inc/panel/theme-options.php:700
@@ -999,6 +1011,8 @@ msgid ""
 "Here you can put scripts from Google, Facebook, Twitter, Add This etc. which "
 "will load on Header"
 msgstr ""
+"Ici vous pouvez ajouter des scripts provenant de Google, Facebook, ... qui "
+"seront chargés dans l'entête"
 
 #: ../inc/panel/customizer/customizer.php:878
 #: ../inc/panel/theme-options.php:850
@@ -1010,6 +1024,8 @@ msgid ""
 "Here you can put scripts from Google, Facebook, Twitter, Add This etc. which "
 "will load on footer"
 msgstr ""
+"Ici vous pouvez ajouter des scripts provenant de Google, Facebook, ... qui "
+"seront chargés dans le pied de page"
 
 #: ../inc/panel/customizer/customizer.php:896
 msgid "Check to Disable Favicon"
@@ -1017,7 +1033,7 @@ msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:907
 msgid "Fav Icon"
-msgstr ""
+msgstr "Fav Icon"
 
 #: ../inc/panel/customizer/customizer.php:920
 msgid "Check to Disable Web Clip Icon"
@@ -1025,7 +1041,7 @@ msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:931
 msgid "Web Clip Icon"
-msgstr ""
+msgstr "Web Clip Icon"
 
 #: ../inc/panel/customizer/customizer.php:1109
 #: ../inc/panel/theme-options.php:489
@@ -1068,23 +1084,25 @@ msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
+"Attention&nbsp;: remettre tous les paramètres par défaut. Recharger la page "
+"après l'enregistrement pour en voir les effets."
 
 #: ../inc/panel/customizer/customizer.php:1251
 msgid "Reset all settings"
-msgstr ""
+msgstr "Réinitialiser tous les paramètres"
 
 #: ../inc/panel/customizer/customizer.php:1261
 msgid "Check to reset all settings to default"
-msgstr ""
+msgstr "Valider pour remettre toutes les valeurs par défauts des paramètres"
 
 #: ../inc/panel/customizer/customizer.php:1271
 #: ../inc/panel/customizer/customizer.php:1282
 msgid "Important Links"
-msgstr ""
+msgstr "Liens importants"
 
 #: ../inc/panel/customizer/customizer.php:1320
 msgid "Upgrade To Pro &raquo;"
-msgstr ""
+msgstr "Passer à la version PRO"
 
 #: ../inc/panel/theme-options.php:84
 msgid "Options Saved"
@@ -1166,6 +1184,8 @@ msgid ""
 "Theme Options Panel will be retired on future versions. Please use %1$s "
 "Customizer %2$s instead."
 msgstr ""
+"Le panneau de configuration des options sera supprimé dans les prochaines "
+"version. Merci d'utiliser %1$s Personnaliser %2$s à la place."
 
 #: ../inc/panel/theme-options.php:140
 msgid "Disable Responsive Design?"
@@ -1205,7 +1225,7 @@ msgstr "<a class=\"button\" href=\"%s\">Cliquez ici</a>"
 
 #: ../inc/panel/theme-options.php:158
 msgid "Header Image"
-msgstr ""
+msgstr "Image d'entête:"
 
 #: ../inc/panel/theme-options.php:160
 msgid "Custom Header. Need to Add or Remove Header Image?"

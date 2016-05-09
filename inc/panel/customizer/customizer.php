@@ -448,7 +448,7 @@ function catcheverest_customize_register( $wp_customize ) {
 
 		//Featured Content
 		'disable_homepage_featured' => array(
-			'id' 			=> 'enable-featured',
+			'id' 			=> 'disable_homepage_featured',
 			'title' 		=> __( 'Check to Disable Homepage Featured Content', 'catch-everest' ),
 			'description'	=> '',
 			'field_type' 	=> 'checkbox',
