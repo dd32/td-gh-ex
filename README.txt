@@ -1,4 +1,4 @@
-Swell Lite v1.5
+Swell Lite v1.5.1
 http://www.swelltheme.com
 http://organicthemes.com
 
@@ -183,3 +183,8 @@ CHANGELOG v1.5:
 - Replaced option to hide main menu with custom menu active conditional
 - Better handling of mobile menu display
 - Style tweaks
+
+CHANGELOG v1.5.1:
+- Updated screenshot
+- Updated customizer text
+- Removed customizer layout panel
