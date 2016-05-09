@@ -4,7 +4,7 @@
  *
  * @class Baton
  * @author Slocum Studio
- * @version 1.0.3
+ * @version 1.0.4
  * @since 1.0.0
  */
 
@@ -17,7 +17,7 @@ if ( ! class_exists( 'Baton' ) ) {
 		/**
 		 * @var string, Current version number
 		 */
-		public $version = '1.0.3';
+		public $version = '1.0.4';
 
 		/**
 		 * @var Baton, Instance of the class
@@ -1430,7 +1430,8 @@ if ( ! class_exists( 'Baton' ) ) {
 		?>
 			<!-- Article Header -->
 			<header class="article-title-wrap">
-				<div class="article-categories-wrap"><?php the_category( ', ' ); ?></div>
+				<?php baton_categories_tags(); ?>
+
 				<?php if ( strlen( get_the_title() ) > 0 ) : ?>
 					<h1 class="article-title">
 						<?php

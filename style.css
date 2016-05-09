@@ -5,7 +5,7 @@
  * Text Domain: baton
  * Author: Slocum Studio
  * Author URI: https://slocumthemes.com/
- * Version: 1.0.3
+ * Version: 1.0.4
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl.html
  * Tags: blue, green, orange, pink, purple, red, white, light, two-columns, left-sidebar, fluid-layout, custom-colors, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments
@@ -2101,6 +2101,16 @@ nav .primary-nav .children .children:after {
 	font-size: 0.66666666em;
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+.article-categories-wrap .fa {
+	font-size: 0.77777777em;
+	padding-right: 0.1em;
+	opacity: 0.75;
+}
+
+.article-categories-wrap .tags .fa {
+	padding-left: 0.75em;
 }
 
 .article-post-meta {
