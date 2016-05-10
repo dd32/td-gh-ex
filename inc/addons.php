@@ -11,7 +11,7 @@ add_action( 'after_setup_theme', 'zeedynamic_theme_addons_setup' );
 
 function zeedynamic_theme_addons_setup() {
 
-	// Add Theme Support for Anderson Pro Plugin
+	// Add Theme Support for zeeDynamic Pro Plugin
 	add_theme_support( 'zeedynamic-pro' );
 	
 	// Add Theme Support for ThemeZee Plugins
@@ -43,7 +43,7 @@ function zeedynamic_theme_addons_scripts() {
 	) {
 	
 		// Enqueue Widget Bundle Stylesheet
-		wp_enqueue_style( 'themezee-widget-bundle', get_template_directory_uri() . '/css/themezee-widget-bundle.css' );
+		wp_enqueue_style( 'themezee-widget-bundle', get_template_directory_uri() . '/css/themezee-widget-bundle.css', array(), '20160421' );
 
 	}
 	
@@ -51,7 +51,7 @@ function zeedynamic_theme_addons_scripts() {
 	if( is_singular( 'post' ) ) {
 	
 		// Enqueue Related Post Stylesheet
-		wp_enqueue_style( 'themezee-related-posts', get_template_directory_uri() . '/css/themezee-related-posts.css' );
+		wp_enqueue_style( 'themezee-related-posts', get_template_directory_uri() . '/css/themezee-related-posts.css', array(), '20160421' );
 
 	}
 	
