@@ -7,14 +7,21 @@ add_action('wp_enqueue_scripts', 'rubine_enqueue_scripts');
 
 function rubine_enqueue_scripts() {
 
+	// Get Theme Version
+	$theme_version = wp_get_theme()->get( 'Version' );
+	
 	// Register and Enqueue Stylesheet
-	wp_enqueue_style('rubine-lite-stylesheet', get_stylesheet_uri());
+	wp_enqueue_style( 'rubine-lite-stylesheet', get_stylesheet_uri(), array(), $theme_version );
 	
 	// Register Genericons
-	wp_enqueue_style('rubine-lite-genericons', get_template_directory_uri() . '/css/genericons/genericons.css');
+	wp_enqueue_style( 'rubine-lite-genericons', get_template_directory_uri() . '/css/genericons/genericons.css', array(), '3.4.1' );
+	
+	// Register and Enqueue HTML5shiv to support HTML5 elements in older IE versions
+	wp_enqueue_script( 'rubine-lite-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.3' );
+	wp_script_add_data( 'rubine-lite-html5shiv', 'conditional', 'lt IE 9' );
 
 	// Register and enqueue navigation.js
-	wp_enqueue_script('rubine-lite-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery'));
+	wp_enqueue_script( 'rubine-lite-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160421' );
 	
 	// Passing Parameters to Navigation.js Javascript
 	wp_localize_script( 'rubine-lite-jquery-navigation', 'rubine_navigation_params', array( 'menuTitle' => esc_html__( 'Menu', 'rubine-lite' ) ) );
@@ -25,7 +32,7 @@ function rubine_enqueue_scripts() {
 	}
 
 	// Register and Enqueue Font
-	wp_enqueue_style('rubine-lite-default-fonts', rubine_fonts_url(), array(), null );
+	wp_enqueue_style( 'rubine-lite-default-fonts', rubine_fonts_url(), array(), null );
 
 }
 
@@ -109,6 +116,9 @@ function rubine_setup() {
 		'social' => esc_html__( 'Social Icons', 'rubine-lite' ),
 		) 
 	);
+	
+	// Add Theme Support for Selective Refresh in Customizer
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
 }
 

@@ -2,7 +2,7 @@
 Theme Name: Rubine Lite
 Theme URI: https://themezee.com/themes/rubine/
 Description: Rubine Lite is a clean and retina-ready magazine theme created with usability and simplicity in mind. The theme offers a gorgeous featured content area on the home page to highlight your most important posts. Of course the design is fully responsive and makes your content readable on every device.
-Version: 1.2.5
+Version: 1.2.6
 Author: ThemeZee
 Author URI: https://themezee.com
 Tags: two-columns, light, red, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, four-columns, black, blue, silver, white, green, gray
@@ -2005,7 +2005,7 @@ embed, iframe, object, video {
 }
 
 /* Big Screens Navi Fix | >720px */
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 60.001em) {
 	/* ensure #nav is visible on desktop version */
 	#topnav-menu, #mainnav-menu {
 		display: block !important;
