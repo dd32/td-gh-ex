@@ -102,7 +102,12 @@ function create_setup() {
 		* Supported from WordPress version 4.5 onwards
 		* More Info: https://make.wordpress.org/core/2016/03/10/custom-logo/
 		*/
-		add_theme_support( 'custom-logo' );
+		add_theme_support( 'custom-logo', array(
+			'height'      => 150,
+			'width'       => 520,
+			'flex-height' => true,
+			'flex-width'  => true
+		) );
 	}
 }
 endif; // create_setup
@@ -270,6 +275,11 @@ add_action( 'admin_print_scripts-appearance_page_custom-header', 'create_admin_f
  * Include Default Options for Create
  */
 require get_template_directory() . '/inc/default-options.php';
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

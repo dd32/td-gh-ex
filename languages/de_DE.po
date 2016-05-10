@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Create\n"
-"POT-Creation-Date: 2016-04-11 09:06+0545\n"
-"PO-Revision-Date: 2016-04-11 09:06+0545\n"
+"POT-Creation-Date: 2016-05-10 22:20+0545\n"
+"PO-Revision-Date: 2016-05-10 22:20+0545\n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de_DE\n"
@@ -114,39 +114,39 @@ msgstr "Hauptmenü"
 msgid "Social Menu"
 msgstr "Social Media Menü"
 
-#: ../functions.php:118
+#: ../functions.php:123
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: ../functions.php:120
+#: ../functions.php:125
 msgid "Main sidebar that appears on the left."
 msgstr "Haupt-Seitenleiste, die links erscheint."
 
-#: ../functions.php:128
+#: ../functions.php:133
 msgid "Intro Widget"
 msgstr ""
 
-#: ../functions.php:130
+#: ../functions.php:135
 msgid "Additional widget that appears only on your default homepage."
 msgstr ""
 
-#: ../functions.php:149
+#: ../functions.php:154
 msgid "Your Name"
 msgstr "Ihr Name"
 
-#: ../functions.php:150
+#: ../functions.php:155
 msgid "E-mail"
 msgstr "E-Mail"
 
-#: ../functions.php:151
+#: ../functions.php:156
 msgid "Website"
 msgstr "Webseite"
 
-#: ../functions.php:152
+#: ../functions.php:157
 msgid "Your Comment"
 msgstr "Dein Kommentar"
 
-#: ../functions.php:254
+#: ../functions.php:259
 msgctxt "Google font: on or off"
 msgid "on"
 msgstr "An"
@@ -574,13 +574,13 @@ msgstr "Zum Inhalt springen"
 msgid "Menu"
 msgstr "Menü"
 
-#: ../inc/structure.php:359
+#: ../inc/structure.php:374
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "&copy; %1$s %2$s"
 msgstr "&copy; %1$s %2$s"
 
-#: ../inc/structure.php:389
+#: ../inc/structure.php:404
 msgctxt "attribution"
 msgid "by"
 msgstr "von"

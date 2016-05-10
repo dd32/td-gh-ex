@@ -50,6 +50,7 @@ wp_head(); ?>
 	 * @hooked create_logo -  50
 	 * @hooked create_site_title_description -  60
 	 * @hooked create_site_branding_end -  70
+	 * @hooked create_header_featured_image - 80
 	 * @hooked create_social_menu - 90
 	 * @hooked create_site_banner_end - 110
 	 * @hooked create_header_end -  200

@@ -193,6 +193,21 @@ if ( ! function_exists( 'create_site_branding_end' ) ) :
 endif;
 add_action( 'create_header', 'create_site_branding_end', 70 );
 
+
+if ( ! function_exists( 'create_header_featured_image' ) ) :
+	/**
+	 * End in header class .site-branding
+	 *
+	 * @since Create 2.3
+	 *
+	 */
+	function create_header_featured_image() {
+		create_featured_image();
+	}
+endif;
+add_action( 'create_header', 'create_header_featured_image', 80 );
+
+
 if ( ! function_exists( 'create_social_menu' ) ) :
 	/**
 	 * Display Primary menu

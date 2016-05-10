@@ -1,5 +1,8 @@
 == Change log ==
 
+= 2.3 =
+* Added: Custom Header Support
+
 = 2.2 =
 * Added: Custom Logo( Core Support ) for WP version 4.5
 
