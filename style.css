@@ -4,7 +4,7 @@ Theme URI:    https://accesspressthemes.com/wordpress-themes/accesspress-mag/
 Author:       AccessPress Theme
 Author URI:   http://accesspressthemes.com/
 Description:  AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-Version:      2.3.5
+Version:      2.3.6
 License:      GNU General Public License v3 or later
 License URI:  http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain:  accesspress-mag
@@ -2903,4 +2903,29 @@ direction: ltr;
 }
 .rtl .link-caption {
     direction: ltr;
+}
+
+/*=========================
+Woo Commerce compatible
+=========================*/
+.woocommerce .woocommerce-error, .woocommerce .woocommerce-info, .woocommerce .woocommerce-message {
+    border-color: #dc3522;
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {    background-color: #dc3522;
+}
+.woocommerce .woocommerce-info:before,
+.woocommerce .star-rating span:before {
+    color: #dc3522;
+}
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content,
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+    background-color: #B92615;
+}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
+    color: #fff;
 }

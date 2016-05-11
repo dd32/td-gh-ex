@@ -73,6 +73,11 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.3.6
+ * Fixed top menu section functionality
+ * Fully compatible woocommerce color
+ * Fixed template version of woocommerce
+
 Version 2.3.5
  * Fixed sidebar widget bug
  

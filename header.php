@@ -20,7 +20,6 @@
 <body <?php body_class(); ?>>
 <?php do_action( 'accesspress_mag_before' ); ?>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'accesspress-mag' ); ?></a>
     <?php
         $accesspress_mag_logo_alt = of_get_option( 'logo_alt' );
         $accesspress_mag_logo_title = of_get_option( 'logo_title' );
@@ -31,10 +30,11 @@
     <header id="masthead" class="site-header">    
     
         <?php
+            $apmag_date_option = of_get_option( 'header_current_date_option', '' );        
             /**
              * Top menu section
              */ 
-            if( has_nav_menu( 'top_menu' ) || has_nav_menu( 'top_menu_right' ) ){
+            if( has_nav_menu( 'top_menu' ) || has_nav_menu( 'top_menu_right' ) || $apmag_date_option != '1' ){
                 $top_menu_class = 'has_menu'; 
             } else {
                 $top_menu_class = 'no_menu';
@@ -42,10 +42,7 @@
         ?>
         <div class="top-menu-wrapper <?php echo esc_attr( $top_menu_class ); ?> clearfix">
             <div class="apmag-container">
-            <?php 
-                $apmag_date_option = of_get_option( 'header_current_date_option', '' );
-                if( empty( $apmag_date_option ) && $apmag_date_option != '1' ) {
-            ?>
+            <?php if( empty( $apmag_date_option ) && $apmag_date_option != '1' ) { ?>
             <div class="current-date"><?php echo date('l, F j, Y'); ?></div>
             <?php } ?>
             <?php if ( has_nav_menu( 'top_menu' ) ) { ?>   
