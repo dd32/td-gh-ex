@@ -23,6 +23,7 @@ if( !function_exists('spasalon_scripts'))
 		
 		// js
 		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'spasalon-bootstrap-js' , WEBRITI_TEMPLATE_DIR_URI . '/js/bootstrap.min.js' );
 		wp_enqueue_script( 'spasalon-custom-js' , WEBRITI_TEMPLATE_DIR_URI . '/js/custom.js' );
 		
 		if ( is_singular() ) wp_enqueue_script( "comment-reply" );

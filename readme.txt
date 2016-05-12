@@ -106,6 +106,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version 1.6.1
+1. Menu Tuggle issue solved.
 @Version 1.6
 1. Move Option panel Setting To Customizer Setting.
 @version 1.5.9.1
