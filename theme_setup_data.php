@@ -61,7 +61,8 @@ function theme_data_setup()
 			'client_section_enable' => false,
 			'footer_callout_section_enable' => false,
 			
-			// portfolio 
+			// portfolio
+			'portfolio_section_enabled' => true,
 			'portfolio_title' => __('Our Work Speaks Thousand Words','corpbiz'),
 			'portfolio_description' =>__('We have successfully completed over 2500 projects in mobile and web. Here are few of them.','corpbiz'),
 			

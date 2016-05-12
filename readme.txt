@@ -85,8 +85,13 @@ Source: http://fontawesome.io
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.3
+1. Add Contact Form 7 Support.
+2. Add Gallery Css.
+3. Styling issue Fixed.
+4. Solved Footer widget issue.
 @Version 1.6.2
-1. Update Font awesome Library 4.5 to 4.6.10
+1. Update Font awesome Library 4.5 to 4.6.1
 @Version 1.6.1
 1. Add Theme Description.
 2. Update Theme Tags.

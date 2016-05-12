@@ -22,4 +22,24 @@ function webriti_widgets_init() {
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
 	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Footer Widget Area Center', 'corpbiz' ),
+		'id' => 'footer_widget_area_center',
+		'description' => __( 'footer widget center area', 'corpbiz' ),
+		'before_widget' => '<div class="widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Footer Widget Area Right', 'corpbiz' ),
+		'id' => 'footer_widget_area_right',
+		'description' => __( 'footer widget right area', 'corpbiz' ),
+		'before_widget' => '<div class="widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
 }

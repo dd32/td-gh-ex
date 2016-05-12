@@ -1,6 +1,8 @@
 <!--Homepage Service Section-->
 <?php $corpbiz_options=theme_data_setup(); 
-$current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $corpbiz_options ); ?>
+$current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $corpbiz_options ); 
+if($current_options['service_section_enabled'] == true) { 
+?>
 <div class="service_section">
 	<div class="container">
 		<div class="row">
@@ -75,3 +77,4 @@ $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $co
 	</div>
 </div>	
 <!--/Homepage Service Section-->
+<?php } ?>

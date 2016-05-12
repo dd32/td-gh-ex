@@ -1939,14 +1939,15 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	 
 	 
 	 
-	 // add section to manage featured Latest blog on category basis	
+	// add section to manage featured Latest blog on category basis	
 	$wp_customize->add_setting(
 	'corpbiz_options[blog_selected_category_id]', array(
         'default'        => 1,
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'corpbiz_slider_sanitize_layout',
     ));
+	
 	$wp_customize->add_control( new Category_Dropdown_Custom_Control1( $wp_customize,'corpbiz_options[blog_selected_category_id]', array(
     'label'   => __('Select Category for Latest blog','corpbiz'),
     'section' => 'blog_setting',
@@ -1969,19 +1970,23 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
         'section' => 'blog_setting',
 		 'choices' => array('3'=>__('3', 'corpbiz'), '6'=>__('6', 'corpbiz'), '9' => __('9','corpbiz'), '12' => __('12','corpbiz'),'15'=> __('15','corpbiz')),
 		));
-	 
-	 function corpbiz_input_field_sanitize_text( $input ) 
+		
+	function corpbiz_input_field_sanitize_text( $input ) 
 	{
 	return wp_kses_post( force_balance_tags( $input ) );
 	}
-	function corpbiz_input_field_sanitize_html( $input ) 
+	function corpbiz_input_sanitize_html( $input ) 
 	{
 	return force_balance_tags( $input );
 	}
-	 
-	
+		
 }
 add_action( 'customize_register', 'corpbiz_home_page_customizer' );
+
+function corpbiz_slider_sanitize_layout( $value ) {
+    if ( ! in_array( $value, array( 'Uncategorized','category_slider' ) ) )    
+    return $value;
+}
 
 
 function get_categories_select() {

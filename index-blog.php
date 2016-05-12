@@ -17,7 +17,7 @@ $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $co
 		<div class="row">
 		<?php
 		$cat_id = $current_options['blog_selected_category_id'];
-		$no_of_post = $current_options['post_display_count'];
+		$no_of_post = $current_options['post_display_count'];	
 
 		 $args = array( 'post_type' => 'post','ignore_sticky_posts' => 1 , 'category__in' => $cat_id, 'posts_per_page' => $no_of_post);
 		 $news_query = new WP_Query($args);	
@@ -46,7 +46,7 @@ $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $co
 			  if($i==3)
 			  { 
 			     echo '<div class="clearfix"></div>';
-				 $i=1;
+				 $i=0;
 			  }$i++;
 			  wp_reset_postdata();
 			endwhile;  ?>

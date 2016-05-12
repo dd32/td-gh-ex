@@ -13,7 +13,7 @@
 
 .navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus, .navbar .navbar-nav > .active > a,
 .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus, .navbar .navbar-nav > .open > a, .navbar .navbar-nav > .open > a:hover, .navbar .navbar-nav > .open > a:focus, .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus, .dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus, .btn_login, .btn_green, .footer_callout_area, .pagination span.current { 
+.dropdown-menu > li > a:focus, .btn_login, .btn_green, .footer_callout_area, .pagination span.current, .dropdown-menu > .active > a,  .dropdown-menu > .active > a:hover { 
 	background-color: #66d1b9; 
 }
 
