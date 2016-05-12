@@ -64,18 +64,12 @@ function atlantic_setup() {
 	 * See https://developer.wordpress.org/themes/functionality/post-formats/
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside',
 		'image',
 		'video',
-		'quote',
 		'link',
+		'quote',
+		'status'
 	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'atlantic_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif;
 add_action( 'after_setup_theme', 'atlantic_setup' );
@@ -88,27 +82,9 @@ add_action( 'after_setup_theme', 'atlantic_setup' );
  * @global int $content_width
  */
 function atlantic_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'atlantic_content_width', 640 );
+	$GLOBALS['content_width'] = get_theme_mod('atlantic_width') ? get_theme_mod('atlantic_width') : apply_filters( 'atlantic_content_width', 1280 );
 }
 add_action( 'after_setup_theme', 'atlantic_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function atlantic_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'atlantic' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'atlantic_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -117,7 +93,17 @@ function atlantic_scripts() {
 	wp_enqueue_style( 'atlantic-normalize', get_template_directory_uri() . '/css/normalize.css', array(), '3.0.3' );
 	wp_enqueue_style( 'atlantic-style', get_stylesheet_uri(), array('atlantic-normalize'), '1.0.0' );
 
-	wp_enqueue_style( 'atlantic-google-fonts', '//fonts.googleapis.com/css?family=Source+Code+Pro:400,900,200' );
+	if ( get_theme_mod('atlantic_font') ) :
+		wp_enqueue_style( 'atlantic-google-fonts-content', '//fonts.googleapis.com/css?family=' . get_theme_mod('atlantic_font') . '' );
+	endif;
+
+	if ( get_theme_mod('atlantic_heading_font') ) :
+		wp_enqueue_style( 'atlantic-google-fonts-heading', '//fonts.googleapis.com/css?family=' . get_theme_mod('atlantic_heading_font') . '' );
+	endif;
+
+	if ( get_theme_mod('atlantic_font') == '' && get_theme_mod('atlantic_heading_font') == '' ) :
+		wp_enqueue_style( 'atlantic-google-fonts', '//fonts.googleapis.com/css?family=Source+Code+Pro:400,900,200' );
+	endif;
 
 	wp_enqueue_script( 'atlantic-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -135,21 +121,6 @@ function atlantic_add_editor_styles() {
 add_action( 'admin_init', 'atlantic_add_editor_styles' );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
@@ -159,7 +130,9 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-// Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links
+/**
+ * Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links
+ */
 function atlantic_pagination()
 {
     global $wp_query;
@@ -170,4 +143,13 @@ function atlantic_pagination()
         'current' => max(1, get_query_var('paged')),
         'total' => $wp_query->max_num_pages
     ));
+}
+
+/**
+ * Size of embedded objects
+ */
+add_filter( 'embed_defaults', 'atlantic_embed_size' );
+function atlantic_embed_size() {
+    // Adjust values
+    return array('width' => 1280);
 }

@@ -25,7 +25,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'atlantic' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
+		<div class="site-branding <?php if ( get_theme_mod('atlantic_logo') ) echo 'logo'; ?>">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -39,6 +39,12 @@
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 			endif; ?>
+
+			<?php if ( get_theme_mod('atlantic_logo') ) : ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo-img">
+					<img src="<?php echo get_theme_mod('atlantic_logo'); ?>" alt="<?php bloginfo( 'name' ); ?>">
+				</a>
+			<?php endif; ?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

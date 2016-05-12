@@ -1,15 +1,13 @@
 === Atlantic ===
 
 Contributors: automattic
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Tags: black, white, light, one-column, fluid-layout, custom-header, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready, threaded-comments, theme-options
 
 Requires at least: 4.0
-Tested up to: 4.3.1
+Tested up to: 4.4.1
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-A starter theme called Atlantic, or underscores.
 
 == Description ==
 
@@ -23,13 +21,9 @@ Hi. I'm a starter theme called Atlantic, or underscores, if you like. I'm a them
 
 == Frequently Asked Questions ==
 
-= Does this theme support any plugins? =
-
-Atlantic includes support for Infinite Scroll in Jetpack.
-
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0 - January 13 2016 =
 * Initial release
 
 == Credits ==

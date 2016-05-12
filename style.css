@@ -1,14 +1,14 @@
 /*
 Theme Name: Atlantic
-Theme URI: http://underscores.me/
-Author: elevate360
+Theme URI: https://elevate360.com.au/atlantic/
+Author: Elevate
 Author URI: https://elevate360.com.au/
 Description: Atlantic
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: atlantic
-Tags: black, white, light, one-column, fluid-layout, custom-header, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready
+Tags: black, white, light, one-column, fluid-layout, custom-header, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready, threaded-comments, theme-options
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -85,31 +85,33 @@ h1 {
 	font-size: 3rem;
 }
 h2 {
-	font-size: 2.6rem;
+	font-size: 2.7rem;
 }
 h3 {
-	font-size: 2.2rem;
+	font-size: 2.4rem;
 }
 h4 {
-	font-size: 1.8rem;
+	font-size: 2rem;
 }
 h5 {
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 }
 h6 {
 	font-size: 1.5rem;
 }
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
 	text-decoration: none;
+	color: #404040;
 }
 
 p {
 	margin: 0 0 1.5rem;
+}
+
+b,
+strong {
+	font-weight: bold;
 }
 
 dfn,
@@ -120,11 +122,11 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 1.5rem;
 }
 
 address {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 }
 
 pre {
@@ -160,8 +162,16 @@ ins {
 	text-decoration: none;
 }
 
+small {
+	font-size: 75%;
+}
+
 big {
 	font-size: 125%;
+}
+
+figure {
+	margin: 0;
 }
 
 /*--------------------------------------------------------------
@@ -181,28 +191,30 @@ body {
 	background: #fff; /* Fallback for when there is no custom background color defined. */
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
+blockquote p:before,
+q p:before {
+	content: open-quote;
+}
+blockquote p:after,
+q p:after {
+	content: close-quote;
 }
 
-blockquote,
-q {
-	quotes: "" "";
+blockquote p,
+q p {
+	quotes: "“" "”" "‘" "’";
 }
 
 hr {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.5em;
+	margin: 1.5rem 0;
 }
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5rem 0;
 }
 
 ul {
@@ -216,7 +228,11 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-top: 0.5rem;
+}
+ul li,
+ol li {
+	margin: 0 0 0.5rem 0;
 }
 
 dt {
@@ -388,20 +404,19 @@ textarea {
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin: 0 1.5rem 1.5rem 0;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin: 0 0 1.5rem 1.5rem;
 }
 
 .aligncenter {
 	clear: both;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto 1.5rem;
 }
 
 /*--------------------------------------------------------------
@@ -465,11 +480,29 @@ textarea {
 	text-align: center;
 }
 .site-title {
+	margin: 2rem 0 1.5rem;
 	font-size: 3rem;
 	font-weight: bold;
 }
 .site-title a {
 	text-decoration: none;
+}
+.site-branding.logo .site-title,
+.site-branding.logo .site-description {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	/* many screen reader and browser combinations announce broken words as they would appear visually */
+	word-wrap: normal !important;
+}
+.site-branding .logo-img {
+	display: block;
+	margin: 1.5rem auto;
+}
+.site-branding .logo-img img {
+	margin: 0 auto;
 }
 
 /*--------------------------------------------------------------
@@ -538,6 +571,7 @@ textarea {
 		left: -999em;
 		z-index: 99999;
 		text-align: left;
+		background: white;
 	}
 	.main-navigation ul ul ul {
 		top: 0;
@@ -594,6 +628,25 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+.hentry.format-status .entry-content {
+	font-size: 125%;
+	font-weight: bold;
+	text-align: center;
+}
+
+.hentry.format-quote .entry-content {
+	text-align: right;
+}
+.hentry.format-quote .entry-content blockquote {
+	text-align: left;
+	font-style: italic;
+}
+
+.hentry.format-video .entry-content iframe {
+	margin: 0 auto 1.5rem !important;
+	display: block;
+}
+
 .byline,
 .updated:not(.published) {
 	display: none;
@@ -610,12 +663,20 @@ textarea {
 	margin: 1em auto 0;
 }
 
+.page-content img,
+.entry-content img,
+.entry-summary img {
+	margin-bottom: 1.5rem;
+	margin-top: 0;
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
 
-.entry-title {
+.entry-title,
+.page-title {
 	text-align: center;
 }
 
@@ -674,7 +735,8 @@ textarea {
     float: left;
     margin: 0 3px;
 }
-.pagination a {
+.pagination a,
+.pagination a:visited {
 	background: #404040;
 	color: white;
 	text-decoration: none;
@@ -691,22 +753,9 @@ textarea {
 	color: white;
 	font-size: 75%;
 }
-.site-footer a {
+.site-footer a,
+.site-footer a:visited {
 	color: white;
-}
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-	display: block;
 }
 
 /*--------------------------------------------------------------

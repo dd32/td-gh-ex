@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<header class="page-header inner">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -35,7 +35,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			get_template_part( 'template-parts/pagination' );
 
 		else :
 
@@ -46,6 +46,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer();
