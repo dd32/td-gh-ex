@@ -1,0 +1,76 @@
+/*--------------------------------------------------------------
+# PAGINATION
+--------------------------------------------------------------*/
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+    clear: both;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+    text-decoration: none;
+    a {
+        text-decoration: none;
+    }
+    &:before {
+        font-family: 'FontAwesome';
+        content:'\f053';
+        margin-right: 10px;
+    }
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+    a {
+        text-decoration: none;
+    }
+    &:after {
+        font-family: 'FontAwesome';
+        content:'\f054';
+        margin-left: 10px;
+    }
+}
+ul.page-numbers {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 100%;
+    clear: both;
+    border-left: 1px solid $border_color;
+    li {
+        display: inline-block;
+        float: left;
+        @include margin(0);
+        .current,
+        a {
+            display: inline-block;
+            @include padding(5px 14px);
+            border-top:1px solid $border_color;
+            border-bottom:1px solid $border_color;
+            border-right:1px solid $border_color;
+            text-decoration: none;
+        }
+    }
+}
+
+.breadcrumb {
+    border-bottom: 1px solid $border_color;
+    @include padding(10px null);
+    @include font-size(14,22);
+    background: $light-gray;
+        a {
+            @include link-colors($text_color,$secondary_color);
+            text-decoration: none;
+        }
+}

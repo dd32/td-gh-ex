@@ -1,0 +1,51 @@
+/*--------------------------------------------------------------
+# INFINITE SCROLL
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+/*--------------------------------------------------------------
+# WP PAGENAVI
+--------------------------------------------------------------*/
+.wp-pagenavi {
+    clear: both;
+    display: inline-block;
+    width: 100%;
+    border-left:1px solid $border_color;
+    .pages,
+    .current,
+     a {
+        display: block;
+        float: left;
+        @include margin(0)
+        @include padding(5px 14px);
+        border-top:1px solid $border_color;
+        border-bottom:1px solid $border_color;
+        border-right:1px solid $border_color;
+        text-decoration: none;
+    }
+}
+.widget_wp_posts_carousel {
+    .owl-next {
+        margin-right: 1px!important;
+    }
+}
+/*--------------------------------------------------------------
+# BB Builder
+--------------------------------------------------------------*/
+.fl-builder-bar-title img {
+    display: inline-block;
+}
+.fl-builder .site-content .container  {
+    max-width: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}

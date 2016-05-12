@@ -1,0 +1,50 @@
+//WELCOME CSS 
+@import 'susy';
+@include susy-breakpoint(780px) {
+    .panel {
+        .item {
+            @include gallery(4 of 12);
+        }
+        .theme_link {
+             @include gallery(6 of 12);
+        }
+    }
+}
+
+.evidence {
+    background: #fff;
+    border: 1px solid #dedede;
+    margin-top: 1em;
+    padding: 15px;
+    h3 {
+        margin-top: 0;
+    }
+    .button-upgrade {
+        background: #fc3;
+        border:1px solid darken(#fc3,15%);
+        border-bottom: 2px solid darken(#fc3,15%);
+        color: #5d4b16;
+        text-decoration: none;
+        padding: 10px 15px;
+        text-transform: uppercase;
+        line-height: 1;
+        display: inline-block;
+        background: #fc3;
+        color: #5d4b16;
+        &:hover,
+        &:focus {
+            background: #fd3;
+            color: #5d4b16;
+            border-color: darken(#fc3,5%);
+        }
+    }
+}
+.theme-name {
+    font-weight: bold;
+    .version {
+        font-size: 14px;
+        background: #fff;
+        padding: 5px 10px;
+        margin-left: 5px;
+    }
+}

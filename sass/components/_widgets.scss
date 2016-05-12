@@ -1,0 +1,200 @@
+/*--------------------------------------------------------------
+# WIDGETS
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+    font-size: .95em;
+    ul {
+        list-style: none;
+        @include margin(0);
+        @include padding(0);
+        li {
+            @include padding(0);
+        }
+        ul {
+            margin-left: 20px;
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+	max-width: 100%;
+}
+.header-widgets {
+    @include padding($base_spacing null);
+    background: $light-gray;
+    border-bottom: 1px solid $border_color;
+    .widget-title {
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+.footer-widgets {
+    @include padding($base_spacing null);
+    border-top: 1px solid $border_color;
+     background: $light-gray;
+}
+@include susy-breakpoint($tablet) {
+    // Footer widgets
+    .footer-widgets,
+    .header-widgets {
+        .widget-title {
+            margin-top: $base_spacing;
+        }
+		@include clearfix;
+		&.col-2 {
+			.block {
+				@include span(6 of 12);
+
+				&.footer-widget-2,
+                &.header-widget-2 {
+					@include last;
+				}
+			}
+		}
+
+		&.col-3 {
+			.block {
+				@include span(4 of 12);
+
+				&.footer-widget-3,
+                &.header-widget-3 {
+					@include last;
+				}
+			}
+		}
+
+		&.col-4 {
+			.block {
+				@include span(3 of 12);
+
+				&.footer-widget-4,
+                &.header-widget-4 {
+					@include last;
+				}
+			 }
+        }
+    }
+}
+//menu widget
+.widget_nav_menu {
+    ul {
+        list-style: none;
+        @include margin(0);
+        @include padding(0);
+        li{
+            
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+}
+//calendar widget
+.widget_calendar {
+    table {
+        @include margin(0);
+        @include padding(0);
+        border:1px solid $border_color;
+        #today {
+             background: $light-gray;
+        }
+        tr {
+            background: none!important;
+        }
+        thead {
+            td {
+                background: $light-gray;
+            }
+        }
+        tbody {
+            td {
+                background: none;
+                @include padding(4px!important);
+                width: 5px;
+                height: 5px;
+                text-align: center;
+            }
+        }
+        tfoot {
+            td {
+                 background: $light-gray;
+            }
+        }
+        
+    }
+}
+//recent comments widget
+.widget_recent_comments {
+    .recentcomments{
+    }
+}
+//recent posts widget
+.widget_recent_entries {
+    li {
+        &:before {
+            font-family: 'FontAwesome';
+            content:'\f0f6';
+            @include margin(0 5px 0 2px);
+        }
+    }
+}
+//search widget
+.widget_search {
+    .search-field {
+        width: 100%;
+    }
+    .search-submit {
+        width: 100%;
+        @include margin(10px 0);
+    }
+}
+//archive widget
+.widget_archive {
+    li {
+        &:before {
+            font-family: 'FontAwesome';
+            content:'\f114';
+            @include margin(0 5px 0 2px);
+        }
+    }
+}
+//category widget
+.widget_categories {
+    @extend .widget_archive;
+}
+//menu widget 
+.widget_nav_menu {
+    ul {
+        border-bottom: 1px solid $border_color;
+        border-left: 1px solid $border_color;
+        border-right: 1px solid $border_color;
+        li {
+            @include padding(0);
+            a {
+                @include padding(8px);
+                @include margin(0);
+                border-top: 1px solid $border_color;
+                display: block;
+                &:before {
+                        font-family: 'FontAwesome';
+                        content: '\f0da';
+                        @include margin(0 5px);
+                        @include opacity(.4);
+                    }
+            }
+        }
+        ul {
+            border: none;
+            li {
+                a {
+                    background: $light-gray;
+                }
+            }    
+        }
+    }
+}

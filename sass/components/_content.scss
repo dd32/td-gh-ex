@@ -1,0 +1,207 @@
+/*--------------------------------------------------------------
+# CONTENT
+--------------------------------------------------------------*/
+.site-content {
+    @include padding(2em null);
+}
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.archive {
+    .page-title {
+        font-weight: $normal;
+    }
+}
+.page-header {
+    margin-bottom: $base_spacing;
+}
+.entry-title {
+    a {
+        text-decoration: none;
+    }
+}
+.entry-meta {
+    @include padding(0);
+    @include margin(0 0 15px 0);
+    font-style: italic;
+    font-size: 0.923em;
+    a {
+        text-decoration:none;
+    }
+    .posted-on,
+    .cat-links,
+    .tags-links,
+    .author {
+        margin-right: 10px;
+        .fa {
+            margin: 0 5px 0 0;
+        }
+    }
+}
+.entry-footer {
+    border-bottom: 1px solid $border_color;
+    @include padding(1em 0);
+    font-style: italic;
+    font-size: 0.923em;
+    a {
+        text-decoration:none;
+    }
+
+    .comments-link {
+       @include margin (15px 0);
+       display: block;
+       font-style: normal;
+        a {
+	       cursor: pointer;
+           background: none;
+	       border: 1px solid $primary_color;
+	       letter-spacing: 1px;
+	       text-transform: uppercase;
+	       line-height: 1;
+	       text-align: center;
+           @include padding(5px 15px);
+	       @include border-radius(2px);
+	       text-decoration: none;
+	       font-weight: $normal;
+           @include font-size(14,22);
+           @include transition(background-color .2s, color .2s);
+            &:hover,
+            &:focus {
+                 background: none;
+	             border-color: $secondary_color;
+            }
+        }
+    }
+}
+.sticky {
+	display: block;
+    background: $light-gray;
+    padding: $base_spacing;
+    .entry-footer {
+        border-bottom: none;
+    }
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+# ASIDES
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+# COMMENT
+--------------------------------------------------------------*/
+.comment-list {
+    @include padding(0);
+    @include margin($base_spacing 0);
+}
+.comment {
+    .children {
+    }
+    .comment-meta {
+        .comment-author {
+            .avatar {
+                @include padding(0);
+                @include margin(5px 10px 5px 0);
+                @include border-radius(4px);
+                float: left
+            }
+        }
+        .comment-metadata {
+            font-size: 0.923em;
+            a {
+                @include link-colors(lighten($text_color,20%), $secondary-color);
+                clear: right;
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+    .comment-content {
+        @include margin(15px 10px 15px 74px);
+        @include padding(10px 20px);
+        border: 1px solid $border_color;
+        background: rgba(255, 255, 255, 0.1);
+        display: block;
+        &:before {
+            border-color: transparent $border_color transparent transparent;
+            border-style: solid;
+            border-width: 0 15px 15px 0;
+            content: "";
+            height: 0;
+            margin-left: -37px;
+            width: 0;
+        }
+        a {
+	       word-wrap: break-word;
+        }
+    }
+    .reply {
+        @include margin(10px 0);
+        a {
+	       cursor: pointer;
+           background: none;
+	       border: 1px solid $border_color;
+	       display: inline-block;
+	       letter-spacing: 1px;
+	       text-transform: uppercase;
+	       line-height: 1;
+	       text-align: center;
+           @include padding(3px 15px);
+	       @include border-radius(2px);
+           @include margin(0 0 $base_spacing 74px);
+	       text-decoration: none;
+	       font-weight: $normal;
+           @include font-size(14,22);
+           @include transition(background-color .2s, color .2s);
+            &:hover,
+            &:focus {
+                 background: none;
+	             border-color: $secondary-color;
+            }
+        }
+    }
+}
+
+.bypostauthor {
+	display: block;
+}
+
+//Comment form
+.comment-form-url,
+.comment-form-email,
+.comment-form-author {
+    label {
+        min-width:70px;
+        display: inline-block;
+    }
+}

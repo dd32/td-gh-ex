@@ -1,0 +1,41 @@
+/*------------------------------------------------------
+# VARIABLES
+--------------------------------------------------------*/
+// Text weight
+$bold: 700;
+$light: 300;
+$normal: 400;
+
+// Text colors
+$text_color: #666666;
+$heading_color: #313131;
+
+// Active color
+$primary_color: #313131;
+$secondary-color: #77cc6d;
+
+// Color
+$border_color: rgba(0,0,0,0.15);
+$light-gray: rgba(170, 170, 170, 0.1);
+
+// Misc
+$base_spacing: 25px;
+
+// Fonts
+$font_text: "Open Sans", Helvetica, Arial, sans-serif;
+$font_heading: "Raleway",Helvetica,Arial,sans-serif;
+$monaco: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+// Screen resolutions
+$mobile: 480px;
+$tablet: 780px;
+
+//Grid
+$susy: (
+    container:1170px,
+	columns: 12,
+	gutters: 2/4,
+	math: fluid,
+	output: float,
+	gutter-position: after,
+);
