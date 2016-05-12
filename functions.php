@@ -6,12 +6,12 @@
 /**
  * The current version of the theme.
  */
-define( 'TTFMAKE_VERSION', '1.7.13' );
+define( 'TTFMAKE_VERSION', '1.7.2' );
 
 /**
  * The minimum version of WordPress required for Make.
  */
-define( 'TTFMAKE_MIN_WP_VERSION', '4.4' );
+define( 'TTFMAKE_MIN_WP_VERSION', '4.2' );
 
 // Activation
 require_once get_template_directory() . '/inc/activation.php';

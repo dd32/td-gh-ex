@@ -37,9 +37,9 @@ final class MAKE_Layout_View extends MAKE_Util_Modules implements MAKE_Layout_Vi
 	 *
 	 * @since 1.7.0.
 	 *
-	 * @var string|null
+	 * @var string
 	 */
-	private $default_view = null;
+	private $default_view = 'post';
 
 	/**
 	 * Indicator of whether the load routine has been run.

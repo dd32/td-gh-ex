@@ -19,7 +19,6 @@ final class MAKE_Setup_Head extends MAKE_Util_Modules implements MAKE_Setup_Head
 	 * @var array
 	 */
 	protected $dependencies = array(
-		'error'         => 'MAKE_Error_CollectorInterface',
 		'compatibility' => 'MAKE_Compatibility_MethodsInterface',
 		'scripts'       => 'MAKE_Setup_ScriptsInterface',
 	);
@@ -166,7 +165,7 @@ final class MAKE_Setup_Head extends MAKE_Util_Modules implements MAKE_Setup_Head
 	 */
 	public function backcompat_icons() {
 		// Core Site Icon option overrides Make's deprecated Favicon and Apple Touch Icon settings
-		if ( ! get_option( 'site_icon' ) ) :
+		if ( false === get_option( 'site_icon', false ) ) :
 			// Favicon
 			$logo_favicon = make_get_thememod_value( 'logo-favicon' );
 			if ( ! empty( $logo_favicon ) ) :
@@ -188,17 +187,6 @@ final class MAKE_Setup_Head extends MAKE_Util_Modules implements MAKE_Setup_Head
 				?>
 				<link rel="apple-touch-icon" href="<?php echo esc_url( $logo_apple_touch ); ?>" />
 			<?php endif;
-
-			// Add a Make Notice if old settings are still in use
-			if ( ! empty( $logo_favicon ) || ! empty( $logo_apple_touch ) ) :
-				$this->error()->add_error(
-					'make_deprecated_site_icon',
-					wp_kses(
-						__( 'This site is using the old Favicon and Apple Touch Icon settings, which were deprecated in version 1.6.2. Go to <em>General &rarr; Site Identity</em> in the Customizer to switch to the new, improved Site Icon setting.', 'make' ),
-						array( 'em' => true )
-					)
-				);
-			endif;
 		endif;
 	}
 

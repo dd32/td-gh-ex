@@ -15,10 +15,6 @@ $panel = $this->prefix . 'color';
 $this->add_section_definitions( 'color', array(
 	'panel'   => $panel,
 	'title'   => __( 'Global', 'make' ),
-	'description' => sprintf(
-		'<a href="https://thethemefoundry.com/docs/make-docs/customizer/color-scheme/" target="_blank">%s</a>',
-		esc_html__( 'Need help?', 'make' )
-	),
 	'controls' => array(
 		'color-group-color-scheme'      => array(
 			'control' => array(

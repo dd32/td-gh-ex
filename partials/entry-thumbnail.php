@@ -7,13 +7,18 @@ if ( is_attachment() ) :
 	// Always show post-header style image on Attachment view
 	$thumb_option   = 'post-header';
 	$thumbnail_id   = get_post()->ID;
-	$thumbnail_size = make_get_entry_thumbnail_size( $thumb_option );
-
+	$thumbnail_size = 'full';
 	$thumbnail_html = '<a href="' . wp_get_attachment_url() . '">' . wp_get_attachment_image( $thumbnail_id, $thumbnail_size ) . '</a>';
 else:
-	$thumb_option = make_get_thememod_value( 'layout-' . make_get_current_view() . '-featured-images' );
+	$thumb_key    = 'layout-' . make_get_current_view() . '-featured-images';
+	$thumb_option = make_get_thememod_value( $thumb_key );
 	$thumbnail_id = get_post_thumbnail_id();
-	$thumbnail_size = make_get_entry_thumbnail_size( $thumb_option );
+
+	if ( 'post-header' === $thumb_option ) :
+		$thumbnail_size = 'large';
+	else :
+		$thumbnail_size = ( is_singular() ) ? 'medium' : 'thumbnail';
+	endif;
 
 	$thumbnail_html = get_the_post_thumbnail( get_the_ID(), $thumbnail_size );
 endif;

@@ -3,7 +3,7 @@
  * @package Make
  */
 
-// Updated: 2016-12-09T14:57:43+00:00
+// Updated: 2016-05-11T22:53:04+00:00
 
 // Bail if this isn't being included inside of MAKE_Font_Source_Google.
 if ( ! isset( $this ) || ! $this instanceof MAKE_Font_Source_Google ) {
@@ -32,22 +32,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'sans-serif',
-	),
-	'Abhaya Libre' => array(
-		'label' => 'Abhaya Libre',
-		'variants' => array(
-			'500',
-			'600',
-			'700',
-			'800',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'sinhala',
-		),
-		'category' => 'serif',
 	),
 	'Abril Fatface' => array(
 		'label' => 'Abril Fatface',
@@ -420,19 +404,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'handwriting',
 	),
-	'Amatica SC' => array(
-		'label' => 'Amatica SC',
-		'variants' => array(
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'hebrew',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'display',
-	),
 	'Amethysta' => array(
 		'label' => 'Amethysta',
 		'variants' => array(
@@ -442,20 +413,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'serif',
-	),
-	'Amiko' => array(
-		'label' => 'Amiko',
-		'variants' => array(
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'devanagari',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'sans-serif',
 	),
 	'Amiri' => array(
 		'label' => 'Amiri',
@@ -665,38 +622,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'sans-serif',
 	),
-	'Aref Ruqaa' => array(
-		'label' => 'Aref Ruqaa',
-		'variants' => array(
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'latin',
-		),
-		'category' => 'serif',
-	),
-	'Arima Madurai' => array(
-		'label' => 'Arima Madurai',
-		'variants' => array(
-			'100',
-			'200',
-			'300',
-			'500',
-			'700',
-			'800',
-			'900',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'tamil',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
 	'Arimo' => array(
 		'label' => 'Arimo',
 		'variants' => array(
@@ -778,8 +703,6 @@ $this->load_font_data( array(
 	'Asap' => array(
 		'label' => 'Asap',
 		'variants' => array(
-			'500',
-			'500italic',
 			'700',
 			'700italic',
 			'italic',
@@ -788,7 +711,6 @@ $this->load_font_data( array(
 		'subsets' => array(
 			'latin',
 			'latin-ext',
-			'vietnamese',
 		),
 		'category' => 'sans-serif',
 	),
@@ -814,22 +736,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'display',
 	),
-	'Assistant' => array(
-		'label' => 'Assistant',
-		'variants' => array(
-			'200',
-			'300',
-			'600',
-			'700',
-			'800',
-			'regular',
-		),
-		'subsets' => array(
-			'hebrew',
-			'latin',
-		),
-		'category' => 'sans-serif',
-	),
 	'Astloch' => array(
 		'label' => 'Astloch',
 		'variants' => array(
@@ -851,40 +757,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'sans-serif',
-	),
-	'Athiti' => array(
-		'label' => 'Athiti',
-		'variants' => array(
-			'200',
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'thai',
-			'vietnamese',
-		),
-		'category' => 'sans-serif',
-	),
-	'Atma' => array(
-		'label' => 'Atma',
-		'variants' => array(
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'bengali',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'display',
 	),
 	'Atomic Age' => array(
 		'label' => 'Atomic Age',
@@ -1016,110 +888,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'handwriting',
-	),
-	'Baloo' => array(
-		'label' => 'Baloo',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'devanagari',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
-	'Baloo Bhai' => array(
-		'label' => 'Baloo Bhai',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'gujarati',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
-	'Baloo Bhaina' => array(
-		'label' => 'Baloo Bhaina',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'oriya',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
-	'Baloo Chettan' => array(
-		'label' => 'Baloo Chettan',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'malayalam',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
-	'Baloo Da' => array(
-		'label' => 'Baloo Da',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'bengali',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
-	'Baloo Paaji' => array(
-		'label' => 'Baloo Paaji',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'gurmukhi',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
-	'Baloo Tamma' => array(
-		'label' => 'Baloo Tamma',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'kannada',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
-	'Baloo Thambi' => array(
-		'label' => 'Baloo Thambi',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'tamil',
-			'vietnamese',
-		),
-		'category' => 'display',
 	),
 	'Balthazar' => array(
 		'label' => 'Balthazar',
@@ -1291,36 +1059,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'handwriting',
 	),
-	'BioRhyme' => array(
-		'label' => 'BioRhyme',
-		'variants' => array(
-			'200',
-			'300',
-			'700',
-			'800',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'serif',
-	),
-	'BioRhyme Expanded' => array(
-		'label' => 'BioRhyme Expanded',
-		'variants' => array(
-			'200',
-			'300',
-			'700',
-			'800',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'serif',
-	),
 	'Biryani' => array(
 		'label' => 'Biryani',
 		'variants' => array(
@@ -1479,66 +1217,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'serif',
 	),
-	'Bungee' => array(
-		'label' => 'Bungee',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
-	'Bungee Hairline' => array(
-		'label' => 'Bungee Hairline',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
-	'Bungee Inline' => array(
-		'label' => 'Bungee Inline',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
-	'Bungee Outline' => array(
-		'label' => 'Bungee Outline',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
-	'Bungee Shade' => array(
-		'label' => 'Bungee Shade',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
 	'Butcherman' => array(
 		'label' => 'Butcherman',
 		'variants' => array(
@@ -1575,8 +1253,6 @@ $this->load_font_data( array(
 		),
 		'subsets' => array(
 			'latin',
-			'latin-ext',
-			'vietnamese',
 		),
 		'category' => 'sans-serif',
 	),
@@ -1590,8 +1266,6 @@ $this->load_font_data( array(
 		),
 		'subsets' => array(
 			'latin',
-			'latin-ext',
-			'vietnamese',
 		),
 		'category' => 'sans-serif',
 	),
@@ -1623,23 +1297,6 @@ $this->load_font_data( array(
 		),
 		'subsets' => array(
 			'latin',
-		),
-		'category' => 'sans-serif',
-	),
-	'Cairo' => array(
-		'label' => 'Cairo',
-		'variants' => array(
-			'200',
-			'300',
-			'600',
-			'700',
-			'900',
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'latin',
-			'latin-ext',
 		),
 		'category' => 'sans-serif',
 	),
@@ -1869,24 +1526,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'display',
 	),
-	'Changa' => array(
-		'label' => 'Changa',
-		'variants' => array(
-			'200',
-			'300',
-			'500',
-			'600',
-			'700',
-			'800',
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'sans-serif',
-	),
 	'Changa One' => array(
 		'label' => 'Changa One',
 		'variants' => array(
@@ -1908,21 +1547,6 @@ $this->load_font_data( array(
 			'latin-ext',
 		),
 		'category' => 'display',
-	),
-	'Chathura' => array(
-		'label' => 'Chathura',
-		'variants' => array(
-			'100',
-			'300',
-			'700',
-			'800',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'telugu',
-		),
-		'category' => 'sans-serif',
 	),
 	'Chau Philomene One' => array(
 		'label' => 'Chau Philomene One',
@@ -2107,19 +1731,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'display',
 	),
-	'Coiny' => array(
-		'label' => 'Coiny',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'tamil',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
 	'Combo' => array(
 		'label' => 'Combo',
 		'variants' => array(
@@ -2241,122 +1852,6 @@ $this->load_font_data( array(
 			'latin-ext',
 		),
 		'category' => 'display',
-	),
-	'Cormorant' => array(
-		'label' => 'Cormorant',
-		'variants' => array(
-			'300',
-			'300italic',
-			'500',
-			'500italic',
-			'600',
-			'600italic',
-			'700',
-			'700italic',
-			'italic',
-			'regular',
-		),
-		'subsets' => array(
-			'cyrillic',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'serif',
-	),
-	'Cormorant Garamond' => array(
-		'label' => 'Cormorant Garamond',
-		'variants' => array(
-			'300',
-			'300italic',
-			'500',
-			'500italic',
-			'600',
-			'600italic',
-			'700',
-			'700italic',
-			'italic',
-			'regular',
-		),
-		'subsets' => array(
-			'cyrillic',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'serif',
-	),
-	'Cormorant Infant' => array(
-		'label' => 'Cormorant Infant',
-		'variants' => array(
-			'300',
-			'300italic',
-			'500',
-			'500italic',
-			'600',
-			'600italic',
-			'700',
-			'700italic',
-			'italic',
-			'regular',
-		),
-		'subsets' => array(
-			'cyrillic',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'serif',
-	),
-	'Cormorant SC' => array(
-		'label' => 'Cormorant SC',
-		'variants' => array(
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'cyrillic',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'serif',
-	),
-	'Cormorant Unicase' => array(
-		'label' => 'Cormorant Unicase',
-		'variants' => array(
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'cyrillic',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'serif',
-	),
-	'Cormorant Upright' => array(
-		'label' => 'Cormorant Upright',
-		'variants' => array(
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'serif',
 	),
 	'Courgette' => array(
 		'label' => 'Courgette',
@@ -2545,21 +2040,6 @@ $this->load_font_data( array(
 			'khmer',
 		),
 		'category' => 'display',
-	),
-	'David Libre' => array(
-		'label' => 'David Libre',
-		'variants' => array(
-			'500',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'hebrew',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'serif',
 	),
 	'Dawning of a New Day' => array(
 		'label' => 'Dawning of a New Day',
@@ -2916,21 +2396,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'sans-serif',
 	),
-	'El Messiri' => array(
-		'label' => 'El Messiri',
-		'variants' => array(
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'cyrillic',
-			'latin',
-		),
-		'category' => 'sans-serif',
-	),
 	'Electrolize' => array(
 		'label' => 'Electrolize',
 		'variants' => array(
@@ -3148,19 +2613,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'serif',
-	),
-	'Farsan' => array(
-		'label' => 'Farsan',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'gujarati',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
 	),
 	'Fascinate' => array(
 		'label' => 'Fascinate',
@@ -3389,22 +2841,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'sans-serif',
 	),
-	'Frank Ruhl Libre' => array(
-		'label' => 'Frank Ruhl Libre',
-		'variants' => array(
-			'300',
-			'500',
-			'700',
-			'900',
-			'regular',
-		),
-		'subsets' => array(
-			'hebrew',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'sans-serif',
-	),
 	'Freckle Face' => array(
 		'label' => 'Freckle Face',
 		'variants' => array(
@@ -3532,17 +2968,6 @@ $this->load_font_data( array(
 			'latin-ext',
 		),
 		'category' => 'sans-serif',
-	),
-	'Galada' => array(
-		'label' => 'Galada',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'bengali',
-			'latin',
-		),
-		'category' => 'display',
 	),
 	'Galdeano' => array(
 		'label' => 'Galdeano',
@@ -3921,17 +3346,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'display',
 	),
-	'Harmattan' => array(
-		'label' => 'Harmattan',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'latin',
-		),
-		'category' => 'sans-serif',
-	),
 	'Headland One' => array(
 		'label' => 'Headland One',
 		'variants' => array(
@@ -3942,23 +3356,6 @@ $this->load_font_data( array(
 			'latin-ext',
 		),
 		'category' => 'serif',
-	),
-	'Heebo' => array(
-		'label' => 'Heebo',
-		'variants' => array(
-			'100',
-			'300',
-			'500',
-			'700',
-			'800',
-			'900',
-			'regular',
-		),
-		'subsets' => array(
-			'hebrew',
-			'latin',
-		),
-		'category' => 'sans-serif',
 	),
 	'Henny Penny' => array(
 		'label' => 'Henny Penny',
@@ -3994,38 +3391,6 @@ $this->load_font_data( array(
 			'devanagari',
 			'latin',
 			'latin-ext',
-		),
-		'category' => 'sans-serif',
-	),
-	'Hind Guntur' => array(
-		'label' => 'Hind Guntur',
-		'variants' => array(
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'telugu',
-		),
-		'category' => 'sans-serif',
-	),
-	'Hind Madurai' => array(
-		'label' => 'Hind Madurai',
-		'variants' => array(
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'tamil',
 		),
 		'category' => 'sans-serif',
 	),
@@ -4088,6 +3453,7 @@ $this->load_font_data( array(
 		),
 		'subsets' => array(
 			'latin',
+			'latin-ext',
 		),
 		'category' => 'sans-serif',
 	),
@@ -4236,7 +3602,6 @@ $this->load_font_data( array(
 		'subsets' => array(
 			'latin',
 			'latin-ext',
-			'vietnamese',
 		),
 		'category' => 'monospace',
 	),
@@ -4412,18 +3777,6 @@ $this->load_font_data( array(
 			'regular',
 		),
 		'subsets' => array(
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'display',
-	),
-	'Jomhuria' => array(
-		'label' => 'Jomhuria',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
 			'latin',
 			'latin-ext',
 		),
@@ -4671,18 +4024,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'serif',
 	),
-	'Katibeh' => array(
-		'label' => 'Katibeh',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'display',
-	),
 	'Kaushan Script' => array(
 		'label' => 'Kaushan Script',
 		'variants' => array(
@@ -4691,18 +4032,6 @@ $this->load_font_data( array(
 		'subsets' => array(
 			'latin',
 			'latin-ext',
-		),
-		'category' => 'handwriting',
-	),
-	'Kavivanar' => array(
-		'label' => 'Kavivanar',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'tamil',
 		),
 		'category' => 'handwriting',
 	),
@@ -4887,30 +4216,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'sans-serif',
 	),
-	'Kumar One' => array(
-		'label' => 'Kumar One',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'gujarati',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'display',
-	),
-	'Kumar One Outline' => array(
-		'label' => 'Kumar One Outline',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'gujarati',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'display',
-	),
 	'Kurale' => array(
 		'label' => 'Kurale',
 		'variants' => array(
@@ -4960,19 +4265,6 @@ $this->load_font_data( array(
 			'telugu',
 		),
 		'category' => 'handwriting',
-	),
-	'Lalezar' => array(
-		'label' => 'Lalezar',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
 	),
 	'Lancelot' => array(
 		'label' => 'Lancelot',
@@ -5071,22 +4363,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'display',
 	),
-	'Lemonada' => array(
-		'label' => 'Lemonada',
-		'variants' => array(
-			'300',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'display',
-	),
 	'Libre Baskerville' => array(
 		'label' => 'Libre Baskerville',
 		'variants' => array(
@@ -5099,34 +4375,6 @@ $this->load_font_data( array(
 			'latin-ext',
 		),
 		'category' => 'serif',
-	),
-	'Libre Franklin' => array(
-		'label' => 'Libre Franklin',
-		'variants' => array(
-			'100',
-			'100italic',
-			'200',
-			'200italic',
-			'300',
-			'300italic',
-			'500',
-			'500italic',
-			'600',
-			'600italic',
-			'700',
-			'700italic',
-			'800',
-			'800italic',
-			'900',
-			'900italic',
-			'italic',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'sans-serif',
 	),
 	'Life Savers' => array(
 		'label' => 'Life Savers',
@@ -5347,20 +4595,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'display',
 	),
-	'Mada' => array(
-		'label' => 'Mada',
-		'variants' => array(
-			'300',
-			'500',
-			'900',
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'latin',
-		),
-		'category' => 'sans-serif',
-	),
 	'Magra' => array(
 		'label' => 'Magra',
 		'variants' => array(
@@ -5382,24 +4616,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'display',
-	),
-	'Maitree' => array(
-		'label' => 'Maitree',
-		'variants' => array(
-			'200',
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'thai',
-			'vietnamese',
-		),
-		'category' => 'serif',
 	),
 	'Mako' => array(
 		'label' => 'Mako',
@@ -5625,17 +4841,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'display',
 	),
-	'Meera Inimai' => array(
-		'label' => 'Meera Inimai',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'tamil',
-		),
-		'category' => 'sans-serif',
-	),
 	'Megrim' => array(
 		'label' => 'Megrim',
 		'variants' => array(
@@ -5810,34 +5015,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'display',
 	),
-	'Miriam Libre' => array(
-		'label' => 'Miriam Libre',
-		'variants' => array(
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'hebrew',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'sans-serif',
-	),
-	'Mirza' => array(
-		'label' => 'Mirza',
-		'variants' => array(
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'display',
-	),
 	'Miss Fajardose' => array(
 		'label' => 'Miss Fajardose',
 		'variants' => array(
@@ -5848,24 +5025,6 @@ $this->load_font_data( array(
 			'latin-ext',
 		),
 		'category' => 'handwriting',
-	),
-	'Mitr' => array(
-		'label' => 'Mitr',
-		'variants' => array(
-			'200',
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'thai',
-			'vietnamese',
-		),
-		'category' => 'sans-serif',
 	),
 	'Modak' => array(
 		'label' => 'Modak',
@@ -5885,18 +5044,6 @@ $this->load_font_data( array(
 			'regular',
 		),
 		'subsets' => array(
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'display',
-	),
-	'Mogra' => array(
-		'label' => 'Mogra',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'gujarati',
 			'latin',
 			'latin-ext',
 		),
@@ -6117,46 +5264,16 @@ $this->load_font_data( array(
 		),
 		'category' => 'handwriting',
 	),
-	'Mukta Vaani' => array(
-		'label' => 'Mukta Vaani',
-		'variants' => array(
-			'200',
-			'300',
-			'500',
-			'600',
-			'700',
-			'800',
-			'regular',
-		),
-		'subsets' => array(
-			'gujarati',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'sans-serif',
-	),
 	'Muli' => array(
 		'label' => 'Muli',
 		'variants' => array(
-			'200',
-			'200italic',
 			'300',
 			'300italic',
-			'600',
-			'600italic',
-			'700',
-			'700italic',
-			'800',
-			'800italic',
-			'900',
-			'900italic',
 			'italic',
 			'regular',
 		),
 		'subsets' => array(
 			'latin',
-			'latin-ext',
-			'vietnamese',
 		),
 		'category' => 'sans-serif',
 	),
@@ -6457,50 +5574,12 @@ $this->load_font_data( array(
 	'Nunito' => array(
 		'label' => 'Nunito',
 		'variants' => array(
-			'200',
-			'200italic',
 			'300',
-			'300italic',
-			'600',
-			'600italic',
 			'700',
-			'700italic',
-			'800',
-			'800italic',
-			'900',
-			'900italic',
-			'italic',
 			'regular',
 		),
 		'subsets' => array(
 			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'sans-serif',
-	),
-	'Nunito Sans' => array(
-		'label' => 'Nunito Sans',
-		'variants' => array(
-			'200',
-			'200italic',
-			'300',
-			'300italic',
-			'600',
-			'600italic',
-			'700',
-			'700italic',
-			'800',
-			'800italic',
-			'900',
-			'900italic',
-			'italic',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'vietnamese',
 		),
 		'category' => 'sans-serif',
 	),
@@ -6851,8 +5930,6 @@ $this->load_font_data( array(
 		),
 		'subsets' => array(
 			'latin',
-			'latin-ext',
-			'vietnamese',
 		),
 		'category' => 'handwriting',
 	),
@@ -6969,20 +6046,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'handwriting',
 	),
-	'Pattaya' => array(
-		'label' => 'Pattaya',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'cyrillic',
-			'latin',
-			'latin-ext',
-			'thai',
-			'vietnamese',
-		),
-		'category' => 'sans-serif',
-	),
 	'Patua One' => array(
 		'label' => 'Patua One',
 		'variants' => array(
@@ -6992,18 +6055,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'display',
-	),
-	'Pavanam' => array(
-		'label' => 'Pavanam',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'tamil',
-		),
-		'category' => 'sans-serif',
 	),
 	'Paytone One' => array(
 		'label' => 'Paytone One',
@@ -7332,24 +6383,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'display',
 	),
-	'Pridi' => array(
-		'label' => 'Pridi',
-		'variants' => array(
-			'200',
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'thai',
-			'vietnamese',
-		),
-		'category' => 'serif',
-	),
 	'Princess Sofia' => array(
 		'label' => 'Princess Sofia',
 		'variants' => array(
@@ -7371,36 +6404,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'serif',
 	),
-	'Prompt' => array(
-		'label' => 'Prompt',
-		'variants' => array(
-			'100',
-			'100italic',
-			'200',
-			'200italic',
-			'300',
-			'300italic',
-			'500',
-			'500italic',
-			'600',
-			'600italic',
-			'700',
-			'700italic',
-			'800',
-			'800italic',
-			'900',
-			'900italic',
-			'italic',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'thai',
-			'vietnamese',
-		),
-		'category' => 'sans-serif',
-	),
 	'Prosto One' => array(
 		'label' => 'Prosto One',
 		'variants' => array(
@@ -7412,26 +6415,6 @@ $this->load_font_data( array(
 			'latin-ext',
 		),
 		'category' => 'display',
-	),
-	'Proza Libre' => array(
-		'label' => 'Proza Libre',
-		'variants' => array(
-			'500',
-			'500italic',
-			'600',
-			'600italic',
-			'700',
-			'700italic',
-			'800',
-			'800italic',
-			'italic',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'sans-serif',
 	),
 	'Puritan' => array(
 		'label' => 'Puritan',
@@ -7521,14 +6504,11 @@ $this->load_font_data( array(
 		'label' => 'Quicksand',
 		'variants' => array(
 			'300',
-			'500',
 			'700',
 			'regular',
 		),
 		'subsets' => array(
 			'latin',
-			'latin-ext',
-			'vietnamese',
 		),
 		'category' => 'sans-serif',
 	),
@@ -7592,18 +6572,6 @@ $this->load_font_data( array(
 			'latin-ext',
 		),
 		'category' => 'sans-serif',
-	),
-	'Rakkas' => array(
-		'label' => 'Rakkas',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'display',
 	),
 	'Raleway' => array(
 		'label' => 'Raleway',
@@ -7725,22 +6693,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'display',
 	),
-	'Rasa' => array(
-		'label' => 'Rasa',
-		'variants' => array(
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'gujarati',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'serif',
-	),
 	'Rationale' => array(
 		'label' => 'Rationale',
 		'variants' => array(
@@ -7771,17 +6723,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'handwriting',
-	),
-	'Reem Kufi' => array(
-		'label' => 'Reem Kufi',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'arabic',
-			'latin',
-		),
-		'category' => 'sans-serif',
 	),
 	'Reenie Beanie' => array(
 		'label' => 'Reenie Beanie',
@@ -8069,7 +7010,6 @@ $this->load_font_data( array(
 		),
 		'subsets' => array(
 			'cyrillic',
-			'hebrew',
 			'latin',
 			'latin-ext',
 		),
@@ -8368,17 +7308,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'handwriting',
 	),
-	'Scope One' => array(
-		'label' => 'Scope One',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'serif',
-	),
 	'Seaweed Script' => array(
 		'label' => 'Seaweed Script',
 		'variants' => array(
@@ -8389,18 +7318,6 @@ $this->load_font_data( array(
 			'latin-ext',
 		),
 		'category' => 'display',
-	),
-	'Secular One' => array(
-		'label' => 'Secular One',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'hebrew',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'sans-serif',
 	),
 	'Sevillana' => array(
 		'label' => 'Sevillana',
@@ -8510,18 +7427,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'handwriting',
-	),
-	'Shrikhand' => array(
-		'label' => 'Shrikhand',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'gujarati',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'display',
 	),
 	'Siemreap' => array(
 		'label' => 'Siemreap',
@@ -8810,21 +7715,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'serif',
 	),
-	'Space Mono' => array(
-		'label' => 'Space Mono',
-		'variants' => array(
-			'700',
-			'700italic',
-			'italic',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'vietnamese',
-		),
-		'category' => 'monospace',
-	),
 	'Special Elite' => array(
 		'label' => 'Special Elite',
 		'variants' => array(
@@ -8886,19 +7776,6 @@ $this->load_font_data( array(
 			'telugu',
 		),
 		'category' => 'serif',
-	),
-	'Sriracha' => array(
-		'label' => 'Sriracha',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'thai',
-			'vietnamese',
-		),
-		'category' => 'handwriting',
 	),
 	'Stalemate' => array(
 		'label' => 'Stalemate',
@@ -8987,18 +7864,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'handwriting',
-	),
-	'Suez One' => array(
-		'label' => 'Suez One',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'hebrew',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'serif',
 	),
 	'Sumana' => array(
 		'label' => 'Sumana',
@@ -9131,36 +7996,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'sans-serif',
 	),
-	'Taviraj' => array(
-		'label' => 'Taviraj',
-		'variants' => array(
-			'100',
-			'100italic',
-			'200',
-			'200italic',
-			'300',
-			'300italic',
-			'500',
-			'500italic',
-			'600',
-			'600italic',
-			'700',
-			'700italic',
-			'800',
-			'800italic',
-			'900',
-			'900italic',
-			'italic',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'thai',
-			'vietnamese',
-		),
-		'category' => 'serif',
-	),
 	'Teko' => array(
 		'label' => 'Teko',
 		'variants' => array(
@@ -9184,7 +8019,6 @@ $this->load_font_data( array(
 		),
 		'subsets' => array(
 			'latin',
-			'latin-ext',
 		),
 		'category' => 'sans-serif',
 	),
@@ -9332,36 +8166,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'display',
-	),
-	'Trirong' => array(
-		'label' => 'Trirong',
-		'variants' => array(
-			'100',
-			'100italic',
-			'200',
-			'200italic',
-			'300',
-			'300italic',
-			'500',
-			'500italic',
-			'600',
-			'600italic',
-			'700',
-			'700italic',
-			'800',
-			'800italic',
-			'900',
-			'900italic',
-			'italic',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-			'thai',
-			'vietnamese',
-		),
-		'category' => 'serif',
 	),
 	'Trocchi' => array(
 		'label' => 'Trocchi',
@@ -9563,8 +8367,6 @@ $this->load_font_data( array(
 		),
 		'subsets' => array(
 			'latin',
-			'latin-ext',
-			'vietnamese',
 		),
 		'category' => 'monospace',
 	),
@@ -9596,7 +8398,6 @@ $this->load_font_data( array(
 			'regular',
 		),
 		'subsets' => array(
-			'hebrew',
 			'latin',
 		),
 		'category' => 'sans-serif',
@@ -9827,18 +8628,6 @@ $this->load_font_data( array(
 		),
 		'category' => 'sans-serif',
 	),
-	'Yatra One' => array(
-		'label' => 'Yatra One',
-		'variants' => array(
-			'regular',
-		),
-		'subsets' => array(
-			'devanagari',
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'display',
-	),
 	'Yellowtail' => array(
 		'label' => 'Yellowtail',
 		'variants' => array(
@@ -9870,21 +8659,6 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'handwriting',
-	),
-	'Yrsa' => array(
-		'label' => 'Yrsa',
-		'variants' => array(
-			'300',
-			'500',
-			'600',
-			'700',
-			'regular',
-		),
-		'subsets' => array(
-			'latin',
-			'latin-ext',
-		),
-		'category' => 'serif',
 	),
 	'Zeyada' => array(
 		'label' => 'Zeyada',

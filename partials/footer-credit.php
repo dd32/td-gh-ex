@@ -21,14 +21,12 @@ $footer_credit = apply_filters( 'make_show_footer_credit', true );
 
 <?php if ( true === $footer_credit ) : ?>
 <div class="site-info">
-	<?php
-	printf(
-		wp_kses(
-			__( 'Built with <a class="theme-name" href="%s" target="_blank">Make</a>. Your friendly small business site builder.', 'make' ),
-			array( 'a' => array( 'class' => true, 'href' => true, 'target' => true ) )
-		),
-		'https://thethemefoundry.com/make/'
-	);
-	?>
+	<span class="theme-name">Make: A WordPress template</span>
+	<span class="theme-by"><?php /* Translators: this string indicates attribution. */ esc_html_e( 'by', 'make' ); ?></span>
+	<span class="theme-author">
+		<a title="The Theme Foundry <?php esc_attr_e( 'homepage', 'make' ); ?>" href="https://thethemefoundry.com/">
+			The Theme Foundry
+		</a>
+	</span>
 </div>
 <?php endif; ?>

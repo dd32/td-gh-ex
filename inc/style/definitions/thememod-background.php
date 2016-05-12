@@ -8,8 +8,6 @@ if ( ! isset( $this ) || ! $this instanceof MAKE_Style_ManagerInterface ) {
 	return;
 }
 
-$is_style_preview = isset( $_POST['make-preview'] );
-
 /**
  * Background images
  */
@@ -34,7 +32,7 @@ foreach ( $regions as $region => $selectors ) {
 		) );
 	}
 	// Explicitly set empty background images if this is a style preview.
-	else if ( $is_style_preview ) {
+	else if ( isset( $_POST['make-preview'] ) ) {
 		$this->css()->add( array(
 			'selectors'    => $selectors,
 			'declarations' => array(

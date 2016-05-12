@@ -32,7 +32,12 @@ var oneApp = oneApp || {}, $oneApp = $oneApp || jQuery(oneApp);
 			// Allow custom init functions
 			$oneApp.trigger('viewInit', this);
 
-			this.template = _.template($('#tmpl-ttfmake-' + this.model.get('sectionType')).html(), oneApp.templateSettings);
+			_.templateSettings = {
+				evaluate   : /<#([\s\S]+?)#>/g,
+				interpolate: /\{\{\{([\s\S]+?)\}\}\}/g,
+				escape     : /\{\{([^\}]+?)\}\}(?!\})/g
+			};
+			this.template = _.template($('#tmpl-ttfmake-' + this.model.get('sectionType')).html());
 		},
 
 		render: function () {
@@ -47,33 +52,26 @@ var oneApp = oneApp || {}, $oneApp = $oneApp || jQuery(oneApp);
 		toggleSection: function (evt) {
 			evt.preventDefault();
 
-
 			var $this = $(evt.target),
 				$section = $this.parents('.ttfmake-section'),
 				$sectionBody = $('.ttfmake-section-body', $section),
 				$input = $('.ttfmake-section-state', this.$el);
 
-			oneApp.setActiveSectionID(this.model.get('id'));
-
 			if ($section.hasClass('ttfmake-section-open')) {
 				$sectionBody.slideUp(oneApp.options.closeSpeed, function() {
 					$section.removeClass('ttfmake-section-open');
 					$input.val('closed');
-					oneApp.updateSectionJSON();
 				});
 			} else {
 				$sectionBody.slideDown(oneApp.options.openSpeed, function() {
 					$section.addClass('ttfmake-section-open');
 					$input.val('open');
-					oneApp.updateSectionJSON();
 				});
 			}
 		},
 
 		removeSection: function (evt) {
 			evt.preventDefault();
-
-			oneApp.setActiveSectionID(this.model.get('id'));
 
 			// Confirm the action
 			if (false === window.confirm(ttfmakeBuilderData.confirmString)) {
@@ -132,7 +130,6 @@ var oneApp = oneApp || {}, $oneApp = $oneApp || jQuery(oneApp);
 				props, image;
 
 			oneApp.$currentPlaceholder = $placeholder;
-			oneApp.setActiveSectionID(this.model.get('id'));
 
 			// If the media frame already exists, reopen it.
 			if ('function' === typeof frame.open) {
@@ -176,9 +173,6 @@ var oneApp = oneApp || {}, $oneApp = $oneApp || jQuery(oneApp);
 
 				// Show the remove link
 				$remove.show();
-
-				// Update section JSON on image select
-				oneApp.updateSectionJSON();
 			});
 
 			// Finally, open the modal
@@ -193,7 +187,6 @@ var oneApp = oneApp || {}, $oneApp = $oneApp || jQuery(oneApp);
 				iframeID = ($target.attr('data-iframe')) ? $target.attr('data-iframe') : '',
 				textAreaID = $target.attr('data-textarea');
 
-			oneApp.setActiveSectionID(this.model.get('id'));
 			oneApp.setMakeContentFromTextArea(iframeID, textAreaID);
 		},
 
@@ -211,8 +204,6 @@ var oneApp = oneApp || {}, $oneApp = $oneApp || jQuery(oneApp);
 				self.setSize($overlay, $wrapper);
 				$overlay.find('input,select').filter(':first').focus();
 			});
-
-			oneApp.setActiveSectionID(self.model.get('id'));
 
 			$oneApp.trigger('ttfOverlayOpened', [this.model.get('sectionType'), $overlay]);
 		},
@@ -242,9 +233,6 @@ var oneApp = oneApp || {}, $oneApp = $oneApp || jQuery(oneApp);
 				$overlay = $this.parents('.ttfmake-overlay');
 
 			$overlay.hide();
-
-			oneApp.setActiveSectionID(this.model.get('id'));
-			oneApp.updateSectionJSON();
 		}
 	});
 })(window, Backbone, jQuery, _, oneApp, $oneApp);
