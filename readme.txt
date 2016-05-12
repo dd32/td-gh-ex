@@ -32,6 +32,16 @@ attirant includes support for Infinite Scroll in Jetpack.
 = 1.0.1  =
 * Initial release
 
+== Resources ==
+
+BXSlider, WTFPL
+Slicknav © 2013 The C-3 Group, MIT
+Bootstrap Framework, MIT
+Google Fonts, SIL Open Font License
+Pixabay Images, Creative Commons CC0
+	- https://pixabay.com/en/ocean-sea-boats-island-blue-sky-926061/
+Font Awesome Icons, SIL OFL 1.1
+
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
