@@ -14,54 +14,6 @@ function simple_life_customize_register( $wp_customize ) {
 
 	global $simple_life_default_options;
 
-	// Sanitization callback functions.
-	if ( ! function_exists( 'simple_life_sanitize_number_absint' ) ) {
-		/**
-		 * Sanitize positive integer.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param int                  $number Number to sanitize.
-		 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
-		 * @return int Sanitized number; otherwise, the setting default.
-		 */
-		function simple_life_sanitize_number_absint( $number, $setting ) {
-			$number = absint( $number );
-			return ( $number ? $number : $setting->default );
-		}
-	}
-
-	if ( ! function_exists( 'simple_life_sanitize_checkbox' ) ) {
-		/**
-		 * Sanitize checkbox.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param bool $checked Whether the checkbox is checked.
-		 * @return bool Whether the checkbox is checked.
-		 */
-		function simple_life_sanitize_checkbox( $checked ) {
-			return ( ( isset( $checked ) && true === $checked ) ? true : false );
-		}
-	}
-
-	if ( ! function_exists( 'simple_life_sanitize_select' ) ) {
-		/**
-		 * Sanitize select.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param mixed                $input The value to sanitize.
-		 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
-		 * @return mixed Sanitized value.
-		 */
-		function simple_life_sanitize_select( $input, $setting ) {
-			$input = sanitize_key( $input );
-			$choices = $setting->manager->get_control( $setting->id )->choices;
-			return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-		}
-	}
-
 	// Panels, sections and fields.
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -153,7 +105,7 @@ function simple_life_customize_register( $wp_customize ) {
 		  'priority' => 115,
 		  'choices'  => array(
 			'full'          => __( 'Full Post (with image)', 'simple-life' ),
-			'excerpt'       => __( 'Excerpt', 'simple-life' ),
+			'excerpt'       => __( 'Excerpt Only', 'simple-life' ),
 			'excerpt-thumb' => __( 'Excerpt with thumbnail', 'simple-life' ),
 			),
 	));
@@ -167,11 +119,12 @@ function simple_life_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control('simple_life_options[archive_image_thumbnail_size]', array(
-		  'label'    => __( 'Archive Image Size', 'simple-life' ),
-		  'section'  => 'simple_life_options_general',
-		  'type'     => 'select',
-		  'priority' => 120,
-		  'choices'  => simple_life_get_image_sizes_options( false ),
+			'label'           => __( 'Archive Image Size', 'simple-life' ),
+			'section'         => 'simple_life_options_general',
+			'type'            => 'select',
+			'priority'        => 120,
+			'choices'         => simple_life_get_image_sizes_options( false ),
+			'active_callback' => 'simple_life_is_non_excerpt_content_layout_active',
 	));
 
 	// Setting - archive_image_alignment.
@@ -182,12 +135,13 @@ function simple_life_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'simple_life_sanitize_select',
 		)
 	);
-	$wp_customize->add_control('simple_life_options[archive_image_alignment]', array(
-		  'label'    => __( 'Archive Image Alignment', 'simple-life' ),
-		  'section'  => 'simple_life_options_general',
-		  'type'     => 'select',
-		  'priority' => 125,
-		  'choices'  => simple_life_get_image_alignment_options(),
+	$wp_customize->add_control( 'simple_life_options[archive_image_alignment]', array(
+			'label'           => __( 'Archive Image Alignment', 'simple-life' ),
+			'section'         => 'simple_life_options_general',
+			'type'            => 'select',
+			'priority'        => 125,
+			'choices'         => simple_life_get_image_alignment_options(),
+			'active_callback' => 'simple_life_is_non_excerpt_content_layout_active',
 	));
 
 	// Setting - enable_breadcrumb.
@@ -220,7 +174,8 @@ function simple_life_customize_register( $wp_customize ) {
 		array(
 			'default'           => $simple_life_default_options['read_more_text'],
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'sanitize_callback' => 'sanitize_text_field',
+			'transport'         => 'postMessage',
 		)
 	);
 	$wp_customize->add_control('simple_life_options[read_more_text]', array(
@@ -261,7 +216,7 @@ function simple_life_customize_register( $wp_customize ) {
 		array(
 			'default'           => $simple_life_default_options['search_placeholder'],
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control('simple_life_options[search_placeholder]', array(
@@ -312,11 +267,10 @@ function simple_life_customize_register( $wp_customize ) {
 	// Setting - copyright_text.
 	$wp_customize->add_setting( 'simple_life_options[copyright_text]',
 		array(
-			'default'              => $simple_life_default_options['copyright_text'],
-			'capability'           => 'edit_theme_options',
-			'sanitize_callback'    => 'esc_attr',
-			'sanitize_js_callback' => 'esc_attr',
-			'transport'            => 'postMessage',
+			'default'           => $simple_life_default_options['copyright_text'],
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'sanitize_text_field',
+			'transport'         => 'postMessage',
 		)
 	);
 	$wp_customize->add_control('simple_life_options[copyright_text]', array(
@@ -363,6 +317,121 @@ add_action( 'customize_register', 'simple_life_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function simple_life_customize_preview_js() {
-	wp_enqueue_script( 'simple_life_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+
+	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+	wp_enqueue_script( 'simple-life-customizer', get_template_directory_uri() . '/js/customizer' . $min . '.js', array( 'customize-preview' ), '2.0.0', true );
+
 }
 add_action( 'customize_preview_init', 'simple_life_customize_preview_js' );
+
+if ( ! function_exists( 'simple_life_is_non_excerpt_content_layout_active' ) ) :
+
+	/**
+	 * Check if non excerpt content layout is active.
+	 *
+	 * @since 2.0.0
+	 *
+	 * @param WP_Customize_Control $control WP_Customize_Control instance.
+	 *
+	 * @return bool Whether the control is active to the current preview.
+	 */
+	function simple_life_is_non_excerpt_content_layout_active( $control ) {
+
+		if ( 'excerpt' !== $control->manager->get_setting( 'simple_life_options[content_layout]' )->value() ) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
+endif;
+
+// Sanitization callback functions.
+if ( ! function_exists( 'simple_life_sanitize_number_absint' ) ) {
+	/**
+	 * Sanitize positive integer.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int                  $number Number to sanitize.
+	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
+	 * @return int Sanitized number; otherwise, the setting default.
+	 */
+	function simple_life_sanitize_number_absint( $number, $setting ) {
+		$number = absint( $number );
+		return ( $number ? $number : $setting->default );
+	}
+}
+
+if ( ! function_exists( 'simple_life_sanitize_checkbox' ) ) {
+	/**
+	 * Sanitize checkbox.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param bool $checked Whether the checkbox is checked.
+	 * @return bool Whether the checkbox is checked.
+	 */
+	function simple_life_sanitize_checkbox( $checked ) {
+		return ( ( isset( $checked ) && true === $checked ) ? true : false );
+	}
+}
+
+if ( ! function_exists( 'simple_life_sanitize_select' ) ) {
+	/**
+	 * Sanitize select.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param mixed                $input The value to sanitize.
+	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
+	 * @return mixed Sanitized value.
+	 */
+	function simple_life_sanitize_select( $input, $setting ) {
+		$input = sanitize_key( $input );
+		$choices = $setting->manager->get_control( $setting->id )->choices;
+		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+	}
+}
+
+/**
+ * Customizer partials.
+ *
+ * @since 1.0.0
+ */
+function simple_life_customizer_partials( WP_Customize_Manager $wp_customize ) {
+
+	if ( ! isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->get_setting( 'simple_life_options[copyright_text]' )->transport = 'refresh';
+		$wp_customize->get_setting( 'simple_life_options[read_more_text]' )->transport = 'refresh';
+		return;
+	}
+
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector'            => '.site-title a',
+		'container_inclusive' => false,
+		'render_callback'     => 'simple_life_customize_partial_blogname',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector'            => '.site-description',
+		'container_inclusive' => false,
+		'render_callback'     => 'simple_life_customize_partial_blogdescription',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'copyright-text', array(
+		'selector'            => '.copyright-text',
+		'settings'            => array( 'simple_life_options[copyright_text]' ),
+		'container_inclusive' => false,
+		'render_callback'     => 'simple_life_customize_partial_copyright_text',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'read-more-text', array(
+		'selector'            => 'a.readmore',
+		'settings'            => array( 'simple_life_options[read_more_text]' ),
+		'container_inclusive' => false,
+		'render_callback'     => 'simple_life_customize_partial_read_more_text',
+	) );
+
+}
+
+add_action( 'customize_register', 'simple_life_customizer_partials', 99 );
