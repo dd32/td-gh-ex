@@ -97,16 +97,19 @@ Template Name: Portfolio Grid
 	                	<div class="<?php echo esc_attr($itemsize);?> all kad_portfolio_fade_in">
 	                		<div class="portfolio_item grid_item postclass">
 							<?php if (has_post_thumbnail( $post->ID ) ) {
-									$image_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full' ); 
+									$image_id = get_post_thumbnail_id( $post->ID);
+									$image_url = wp_get_attachment_image_src($image_id, 'full' ); 
 									$thumbnailURL = $image_url[0]; 
-									$image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
-									if(empty($image)) {$image = $thumbnailURL; } ?>
+									$image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true, false);
+									if(empty($image[0])) {$image = array($thumbnailURL,$slidewidth,$slideheight);}
+									$img_srcset = kt_get_srcset_output($image[1], $image[2], $thumbnailURL, $image_id);
+									?>
 									<div class="imghoverclass">
 	                                    <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-	                                       	<img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" width="<?php echo esc_attr($slidewidth);?>" height="<?php echo esc_attr($slideheight);?>" class="lightboxhover" style="display: block;">
+	                                       	<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo $img_srcset; ?> class="lightboxhover" style="display: block;">
 	                                    </a> 
 	                                </div>
-	                                <?php if($plb) {?>
+	                                <?php if($plb) { ?>
 	                                	<a href="<?php echo esc_url($thumbnailURL); ?>" class="kad_portfolio_lightbox_link" title="<?php the_title();?>" data-rel="lightbox">
 	                                		<i class="icon-search"></i>
 	                                	</a>

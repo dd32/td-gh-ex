@@ -1,4 +1,4 @@
-<footer id="containerfooter" class="footerclass" role="contentinfo">
+<footer id="containerfooter" class="footerclass">
   <div class="container">
   	<div class="row">
   		<?php global $virtue; if(isset($virtue['footer_layout'])) { $footer_layout = $virtue['footer_layout']; } else { $footer_layout = 'fourc'; }

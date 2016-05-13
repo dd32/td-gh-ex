@@ -31,3 +31,4 @@ require_once locate_template('/lib/template_hooks/portfolio_hooks.php'); 	// Por
 require_once locate_template('/lib/custom-woocommerce.php'); 				// Woocommerce functions
 require_once locate_template('/lib/virtuetoolkit-activate.php'); 			// Plugin Activation
 require_once locate_template('/lib/custom-css.php'); 			    		// Fontend Custom CSS
+

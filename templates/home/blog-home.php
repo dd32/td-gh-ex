@@ -40,7 +40,7 @@
 			$xyz = 0;
 			if ( $wp_query ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 				<div class="<?php echo esc_attr($postwidthclass); ?> clearclass<?php echo esc_attr( ($xyz++%2) ); ?>">
-				  	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				  	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
 	                    <div class="rowtight">
 	                    	<?php if(isset($virtue['post_summery_default']) && ($virtue['post_summery_default'] != 'text')) {
 	                    			if($home_sidebar == true) {
@@ -56,8 +56,7 @@
 										$thumbnailURL = $image_url[0];
 										$image = aq_resize($thumbnailURL, $img_width, 270, true);
 										if(empty($image)) { $image = $thumbnailURL; }
-										$image_meta = get_post_meta( $image_id, '_wp_attachment_metadata', true );
-          								$img_srcset = wp_calculate_image_srcset(array( $img_width, '270'), $image, $image_meta, $image_id);
+          								$img_srcset = kt_get_srcset_output($img_width, '270', $thumbnailURL, $image_id);
 							 		} else {
 								 		$thumbnailURL = virtue_post_default_placeholder();
 										$image = aq_resize($thumbnailURL, $img_width, 270, true);
@@ -69,10 +68,7 @@
 			                           		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			                           			<img src="<?php echo esc_url($image); ?>"
 			                           			width="<?php echo esc_attr($img_width);?>" height="270" 
-			                           			<?php if(!empty($img_srcset)) { ?>
-			                           				srcset="<?php echo esc_attr( $img_srcset ); ?>"
-                									sizes="(max-width: <?php echo esc_attr($img_width);?>px) 100vw, <?php echo esc_attr($img_width);?>px"
-                								<?php } ?>
+			                           			<?php echo $img_srcset; ?>
 			                           			alt="<?php the_title(); ?>" 
 			                           			class="iconhover" 
 			                           			style="display:block;">
@@ -94,16 +90,14 @@
 										$thumbnailURL = $image_url[0];
 										$image = aq_resize($thumbnailURL, $img_width, 270, true);
 										if(empty($image)) { $image = $thumbnailURL; }
-										$image_meta = get_post_meta( $image_id, '_wp_attachment_metadata', true );
-          								$img_srcset = wp_calculate_image_srcset(array( $img_width, '270'), $image, $image_meta, $image_id);
+										$img_srcset = kt_get_srcset_output($img_width, '270', $thumbnailURL, $image_id);
 										?>
 									<div class="<?php echo esc_attr($imagesize);?>">
 									 	<div class="imghoverclass">
 			                           		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			                           			<img src="<?php echo esc_url($image); ?>"
 			                           			width="<?php echo esc_attr($img_width);?>" height="270" 
-			                           			srcset="<?php echo esc_attr( $img_srcset ); ?>"
-                								sizes="(max-width: <?php echo esc_attr($img_width);?>px) 100vw, <?php echo esc_attr($img_width);?>px"
+			                           			<?php echo $img_srcset; ?>
 			                           			alt="<?php the_title(); ?>" 
 			                           			class="iconhover" 
 			                           			style="display:block;">

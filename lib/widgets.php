@@ -207,7 +207,7 @@ class Kadence_Contact_Widget extends WP_Widget {
     <div class="vcard">
       
       <?php if(!empty($instance['company'])):?><h5 class="vcard-company"><i class="icon-building"></i><?php echo $instance['company']; ?></h5><?php endif;?>
-      <?php if(!empty($instance['name'])):?><p class="vcard-name" class="fn" rel="author"><i class="icon-user"></i><?php echo $instance['name']; ?></p><?php endif;?>
+      <?php if(!empty($instance['name'])):?><p class="vcard-name fn"><i class="icon-user"></i><?php echo $instance['name']; ?></p><?php endif;?>
       <?php if(!empty($instance['street_address']) || !empty($instance['locality']) || !empty($instance['region']) ):?>
         <p class="vcard-address"><i class="icon-map-marker"></i><?php echo $instance['street_address']; ?>
        <span><?php echo $instance['locality']; ?> <?php echo $instance['region']; ?> <?php echo $instance['postal_code']; ?></span></p>

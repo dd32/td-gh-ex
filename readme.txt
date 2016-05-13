@@ -30,6 +30,11 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.7.1 | 13th May 2016 =
+* Fix: Embed layout issue.
+* Fix: Img srcset issue.
+* Update: imageloaded.
+
 = Version 2.7.0 | 4th May 2016 =
 * Fix: Archive title with polylang.
 * Update: Small woocommerce changes.
