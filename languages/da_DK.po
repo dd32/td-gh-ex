@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-09 17:40+0545\n"
-"PO-Revision-Date: 2016-05-09 17:40+0545\n"
+"POT-Creation-Date: 2016-05-13 18:08+0545\n"
+"PO-Revision-Date: 2016-05-13 18:08+0545\n"
 "Last-Translator: Alexander Leo-Hansen <alexanderleoh@gmail.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: da_DK\n"
@@ -228,7 +228,7 @@ msgstr "Om %s"
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Vis alle indlæg af %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:116 ../inc/catcheverest-functions.php:409
+#: ../functions.php:116 ../inc/catcheverest-functions.php:411
 msgid "Primary Menu"
 msgstr "Primær Menu"
 
@@ -288,187 +288,187 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Både kommentarer og trackback er i øjeblikket lukket."
 
-#: ../inc/catcheverest-functions.php:192 ../inc/catcheverest-functions.php:656
-#: ../inc/catcheverest-functions.php:659 ../inc/catcheverest-functions.php:776
-#: ../inc/catcheverest-functions.php:807 ../inc/catcheverest-functions.php:839
+#: ../inc/catcheverest-functions.php:192 ../inc/catcheverest-functions.php:658
+#: ../inc/catcheverest-functions.php:661 ../inc/catcheverest-functions.php:778
+#: ../inc/catcheverest-functions.php:809 ../inc/catcheverest-functions.php:841
 #: ../searchform.php:17
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catcheverest-functions.php:410
+#: ../inc/catcheverest-functions.php:412
 msgid "Skip to content"
 msgstr "Spring til indhold"
 
-#: ../inc/catcheverest-functions.php:1047
+#: ../inc/catcheverest-functions.php:1049
 #: ../inc/panel/customizer/customizer.php:575
 #: ../inc/panel/theme-options.php:106 ../inc/panel/theme-options.php:680
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catcheverest-functions.php:1052
+#: ../inc/catcheverest-functions.php:1054
 #: ../inc/panel/customizer/customizer.php:585
 #: ../inc/panel/theme-options.php:107 ../inc/panel/theme-options.php:685
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catcheverest-functions.php:1057
+#: ../inc/catcheverest-functions.php:1059
 #: ../inc/panel/customizer/customizer.php:595
 #: ../inc/panel/theme-options.php:690
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catcheverest-functions.php:1062
+#: ../inc/catcheverest-functions.php:1064
 #: ../inc/panel/customizer/customizer.php:635
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/catcheverest-functions.php:1067
+#: ../inc/catcheverest-functions.php:1069
 #: ../inc/panel/customizer/customizer.php:605
 #: ../inc/panel/theme-options.php:695
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catcheverest-functions.php:1072
+#: ../inc/catcheverest-functions.php:1074
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catcheverest-functions.php:1077
+#: ../inc/catcheverest-functions.php:1079
 #: ../inc/panel/customizer/customizer.php:625
 #: ../inc/panel/theme-options.php:705
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catcheverest-functions.php:1082
+#: ../inc/catcheverest-functions.php:1084
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/catcheverest-functions.php:1087
+#: ../inc/catcheverest-functions.php:1089
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/catcheverest-functions.php:1092
+#: ../inc/catcheverest-functions.php:1094
 #: ../inc/panel/customizer/customizer.php:665
 #: ../inc/panel/theme-options.php:726
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catcheverest-functions.php:1097
+#: ../inc/catcheverest-functions.php:1099
 #: ../inc/panel/customizer/customizer.php:675
 #: ../inc/panel/theme-options.php:731
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catcheverest-functions.php:1102
+#: ../inc/catcheverest-functions.php:1104
 #: ../inc/panel/customizer/customizer.php:685
 #: ../inc/panel/theme-options.php:736
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catcheverest-functions.php:1107
+#: ../inc/catcheverest-functions.php:1109
 #: ../inc/panel/customizer/customizer.php:695
 #: ../inc/panel/theme-options.php:741
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catcheverest-functions.php:1112
+#: ../inc/catcheverest-functions.php:1114
 #: ../inc/panel/customizer/customizer.php:705
 #: ../inc/panel/theme-options.php:746
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catcheverest-functions.php:1117
+#: ../inc/catcheverest-functions.php:1119
 #: ../inc/panel/customizer/customizer.php:715
 #: ../inc/panel/theme-options.php:751 ../inc/panel/theme-options.php:1265
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catcheverest-functions.php:1122
+#: ../inc/catcheverest-functions.php:1124
 #: ../inc/panel/customizer/customizer.php:725
 #: ../inc/panel/theme-options.php:756
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catcheverest-functions.php:1127
+#: ../inc/catcheverest-functions.php:1129
 #: ../inc/panel/customizer/customizer.php:735
 #: ../inc/panel/theme-options.php:761
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/catcheverest-functions.php:1132
+#: ../inc/catcheverest-functions.php:1134
 #: ../inc/panel/customizer/customizer.php:745
 #: ../inc/panel/theme-options.php:766
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/catcheverest-functions.php:1137
+#: ../inc/catcheverest-functions.php:1139
 #: ../inc/panel/customizer/customizer.php:755
 #: ../inc/panel/theme-options.php:771
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catcheverest-functions.php:1142
+#: ../inc/catcheverest-functions.php:1144
 #: ../inc/panel/customizer/customizer.php:765
 #: ../inc/panel/theme-options.php:776
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/catcheverest-functions.php:1147
+#: ../inc/catcheverest-functions.php:1149
 #: ../inc/panel/customizer/customizer.php:775
 #: ../inc/panel/theme-options.php:781
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/catcheverest-functions.php:1152
+#: ../inc/catcheverest-functions.php:1154
 #: ../inc/panel/customizer/customizer.php:785
 #: ../inc/panel/theme-options.php:786
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/catcheverest-functions.php:1157
+#: ../inc/catcheverest-functions.php:1159
 #: ../inc/panel/customizer/customizer.php:795
 #: ../inc/panel/theme-options.php:791
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/catcheverest-functions.php:1162
+#: ../inc/catcheverest-functions.php:1164
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/catcheverest-functions.php:1167
+#: ../inc/catcheverest-functions.php:1169
 #: ../inc/panel/customizer/customizer.php:815
 #: ../inc/panel/theme-options.php:801
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catcheverest-functions.php:1172
+#: ../inc/catcheverest-functions.php:1174
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/catcheverest-functions.php:1177
+#: ../inc/catcheverest-functions.php:1179
 #: ../inc/panel/customizer/customizer.php:835
 #: ../inc/panel/theme-options.php:811
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catcheverest-functions.php:1182
+#: ../inc/catcheverest-functions.php:1184
 #: ../inc/panel/customizer/customizer.php:845
 #: ../inc/panel/theme-options.php:816
 msgid "Contact"
 msgstr "Kontakt"
 
-#: ../inc/catcheverest-functions.php:1187
+#: ../inc/catcheverest-functions.php:1189
 #: ../inc/panel/customizer/customizer.php:855
 #: ../inc/panel/theme-options.php:821
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catcheverest-functions.php:1282
+#: ../inc/catcheverest-functions.php:1284
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catcheverest-functions.php:1309
-#: ../inc/catcheverest-functions.php:1323
+#: ../inc/catcheverest-functions.php:1311
+#: ../inc/catcheverest-functions.php:1325
 msgid "Menu"
 msgstr "Menu"
 

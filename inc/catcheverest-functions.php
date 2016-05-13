@@ -354,8 +354,8 @@ function catcheverest_header_left() { ?>
 
             // Check Logo
 			if ( function_exists( 'has_custom_logo' ) ) {
-				if ( has_custom_logo() ) {?>
-                	<h1 id="site-logo"><?php the_custom_logo(); ?></h1>
+				if ( has_custom_logo() ) { ?>
+                	<div id="site-logo"><?php the_custom_logo(); ?></div>
                 	<div id="hgroup" class="with-logo">
                 <?php
 				}
@@ -363,14 +363,16 @@ function catcheverest_header_left() { ?>
 					echo '<div id="hgroup">';
 				}
 			}
-			else if ( ! empty( $header_image ) ) : ?>
-                <h1 id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			elseif ( ! empty( $header_image ) ) { ?>
+                <div id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
                     <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-                </a></h1>
+                </a></div>
                 <div id="hgroup" class="with-logo">
-            <?php else :
+            <?php 
+        	}
+        	else {
                 echo '<div id="hgroup">';
-            endif; // end check for removed header image ?>
+            } // end check for removed header image ?>
 
                 <h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                 <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
