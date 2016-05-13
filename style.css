@@ -4,7 +4,7 @@ Theme URI: http://www.howlthemes.com/aqueduct-free-magazine-wordpress-theme/
 Author: HowlThemes
 Author URI: http://www.howlthemes.com
 Description: Aqueduct is easy to use minimal magazine/blog theme for wordpress. It has advance theme builder which let you customize this theme without even touching a single line of code, This Theme is compatible with WooCommerce and BBPress.
-Version: 2.0.0
+Version: 2.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -1142,28 +1142,28 @@ width: 400px;
     text-align: center;
     padding-top: 8px;
 }
-.fblink{
+.drag-social-button-best .fblink{
 background: #3b5998;
 }
-.twitterlink{
+.drag-social-button-best .twitterlink{
 background:#55acee;
 }
-.gpluslink{
+.drag-social-button-best .gpluslink{
 background:#dd4b39;
 }
-.pinlink{
+.drag-social-button-best .pinlink{
 background:#cc2127;
 }
-.instalink{
+.drag-social-button-best .instalink{
 background:#3f729b;
 }
-.linkdlink{
+.drag-social-button-best .linkdlink{
 background:#000000;
 }
-.ytubelink{
+.drag-social-button-best .ytubelink{
 background:#cd201f;
 }
-.rsslink{
+.drag-social-button-best .rsslink{
 background:#f26522;
 }
 .drag-social-button-best ul li a:hover{
