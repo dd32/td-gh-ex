@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-09 16:54+0545\n"
-"PO-Revision-Date: 2016-05-09 16:54+0545\n"
+"POT-Creation-Date: 2016-05-13 17:46+0545\n"
+"PO-Revision-Date: 2016-05-13 17:46+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: D'CLIC, L Capronnier <contact@dclic.info, lcapronnier@yahoo."
 "Com>\n"
@@ -1187,10 +1187,6 @@ msgstr "Options pour le diaporama"
 msgid "Header Image:"
 msgstr "Image d'entête:"
 
-#: ../inc/theme-options.php:563 ../inc/theme-options.php:565
-msgid "Click here to change header image"
-msgstr "Cliquez ici pour changer l'image d'entête"
-
 #: ../inc/theme-options.php:563
 msgid "Click here to change Header Image"
 msgstr "Cliquez ici pour changer l'image d'entête"
@@ -1404,6 +1400,9 @@ msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Archives des mots-clés&nbsp;: %s"
+
+#~ msgid "Click here to change header image"
+#~ msgstr "Cliquez ici pour changer l'image d'entête"
 
 #~ msgid "Skip to primary content"
 #~ msgstr "Aller au contenu principal"

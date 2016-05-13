@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-"
 "responsive-free/\n"
-"POT-Creation-Date: 2016-05-09 16:54+0545\n"
-"PO-Revision-Date: 2016-05-09 16:54+0545\n"
+"POT-Creation-Date: 2016-05-13 17:46+0545\n"
+"PO-Revision-Date: 2016-05-13 17:46+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: lt\n"
@@ -1147,10 +1147,6 @@ msgstr ""
 
 #: ../inc/theme-options.php:554
 msgid "Header Image:"
-msgstr ""
-
-#: ../inc/theme-options.php:563 ../inc/theme-options.php:565
-msgid "Click here to change header image"
 msgstr ""
 
 #: ../inc/theme-options.php:563

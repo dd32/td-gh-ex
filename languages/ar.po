@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-09 16:53+0545\n"
+"POT-Creation-Date: 2016-05-13 17:45+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: www.ed3s.com <master@ed3s.com>\n"
@@ -1151,10 +1151,6 @@ msgstr "سلايدر"
 
 #: ../inc/theme-options.php:554
 msgid "Header Image:"
-msgstr ""
-
-#: ../inc/theme-options.php:563 ../inc/theme-options.php:565
-msgid "Click here to change header image"
 msgstr ""
 
 #: ../inc/theme-options.php:563

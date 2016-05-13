@@ -560,9 +560,9 @@ function catchbox_theme_options_render_page() {
 
                                         $header_image = get_header_image();
                                         if ( !empty ( $header_image ) ) {
-                                            echo '<a class="button" href="' . admin_url('themes.php?page=custom-header') . '" title="' .esc_attr__( 'Click here to change header image', 'catch-box' ). '">' . __( 'Click here to change Header Image', 'catch-box' ) . '</a>';
+                                            echo '<a class="button" href="' . admin_url('themes.php?page=custom-header') . '" title="' .esc_attr__( 'Click here to change Header Image', 'catch-box' ). '">' . __( 'Click here to change Header Image', 'catch-box' ) . '</a>';
                                         } else {
-                                            echo '<a class="button" href="' . admin_url('themes.php?page=custom-header') . '" title="' .esc_attr__( 'Click here to change header image', 'catch-box' ). '">' . __( 'Click here to add Header Image', 'catch-box' ) . '</a>';
+                                            echo '<a class="button" href="' . admin_url('themes.php?page=custom-header') . '" title="' .esc_attr__( 'Click here to add Header Image', 'catch-box' ). '">' . __( 'Click here to add Header Image', 'catch-box' ) . '</a>';
                                         }  ?>
                                         </td>
                                     </tr>

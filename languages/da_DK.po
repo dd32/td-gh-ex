@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-09 16:53+0545\n"
-"PO-Revision-Date: 2016-05-09 16:53+0545\n"
+"POT-Creation-Date: 2016-05-13 17:45+0545\n"
+"PO-Revision-Date: 2016-05-13 17:45+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Kris Thomsen <mail@kristhomsen.dk>\n"
 "Language: da_DK\n"
@@ -1173,10 +1173,6 @@ msgstr "Featured Post Slider"
 
 #: ../inc/theme-options.php:554
 msgid "Header Image:"
-msgstr ""
-
-#: ../inc/theme-options.php:563 ../inc/theme-options.php:565
-msgid "Click here to change header image"
 msgstr ""
 
 #: ../inc/theme-options.php:563

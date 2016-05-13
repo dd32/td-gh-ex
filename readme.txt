@@ -56,7 +56,7 @@ Added translation for Japanese by IIOKA Shinji (Email: iiokashinji@gmail.com)
 Added translation for Bosnian
 Added translation for Catalan by Rafa Gares (Email: ragafus@gmail.com)
 Added translation for Romanian by Marius Tirteu (Email: admin@mannius.ro)
-Added translation for Ukrainian by Alexandr Baryshnyev (Email: abb@eksi.net)
+Added translation for Ukrainian by Alexandr Baryshnyev (Email: abb@eksi.net) and Eksi.Net (Email: info@eksi.net) 
 Added Translation for Lithuanian
 
 == Menus ===
