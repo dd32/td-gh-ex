@@ -130,11 +130,24 @@ endwhile; ?>
   
 
 
-<?php if(get_theme_mod("newsbox_one") != 0){?>
+<?php 
+
+if(get_theme_mod("homebuilder") && get_theme_mod("category_remember")){
+        $totalslide =  explode(', ', get_theme_mod("homebuilder"));
+        $slidecount = count($totalslide) -1;
+        $totalcat = explode(', ', get_theme_mod("category_remember"));
+
+
+for($i=0;$i<=$slidecount;$i++){
+  $catboxnum = str_replace(',', '', $totalslide[$i]);
+  $catid = str_replace(',', '', $totalcat[$i]);
+
+
+if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 
 <!--Slider--> 
-<div id="cat-slider"><div class="slider-title"><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category(get_theme_mod("newsbox_one"))->name) ?>'><?php echo get_category(get_theme_mod("newsbox_one"))->name ?></a></div><ul class="bjqs">
-<?php $featpost = new WP_Query( 'cat='.get_theme_mod("newsbox_one").'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>    
+<div id="cat-slider"><div class="slider-title"><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($catid)->name) ?>'><?php echo get_category($catid)->name ?></a></div><ul class="bjqs">
+<?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>    
 <li> 
 
 <div class="slider-img-con" itemprop="image">
@@ -184,11 +197,11 @@ endwhile; ?>
 <?php endwhile; ?>
 </ul></div>
 
-<?php  } if(get_theme_mod("newsbox_two") != 0){?>
+<?php  } if($catboxnum == 2 && $catid != 'none' && $catid !=''){?>
 
 <!--Carousel-->
 <div id="carouselpost">
-<div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category(get_theme_mod("newsbox_two"))->name) ?>'><?php echo get_category(get_theme_mod("newsbox_two"))->name ?></a></span>
+<div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($catid)->name) ?>'><?php echo get_category($catid)->name ?></a></span>
 <div class="navigator-holder">
 <a class="buttons prev" href="#"><i class="fa fa-angle-left"></i></a>
 <a class="buttons next" href="#"><i class="fa fa-angle-right"></i></a></div>
@@ -196,7 +209,7 @@ endwhile; ?>
     <div class="viewport">
       <ul class="overview">
 
-<?php $featpost = new WP_Query( 'cat='.get_theme_mod("newsbox_two").'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>    
+<?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>    
 <li>  
 <div class="imgcarholder" itemprop="image">
  <?php if ( get_the_post_thumbnail() != '' ) { 
@@ -253,12 +266,12 @@ endwhile; ?>
     </div>
     
   </div>
-<?php  } if(get_theme_mod("newsbox_three") != 0){?>
+<?php  } if($catboxnum == 3 && $catid != 'none' && $catid !=''){?>
 
 <!--Grid Posts-->
 <div class="grid-posts-holder">
-<div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category(get_theme_mod("newsbox_three"))->name) ?>'><?php echo get_category(get_theme_mod("newsbox_three"))->name ?></a></span></div>
-<?php $featpost = new WP_Query( 'cat='.get_theme_mod("newsbox_three").'&posts_per_page=5' ); $rnewnum = 1;  while($featpost->have_posts()) : $featpost->the_post(); ?>    
+<div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($catid)->name) ?>'><?php echo get_category($catid)->name ?></a></span></div>
+<?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=5' ); $rnewnum = 1;  while($featpost->have_posts()) : $featpost->the_post(); ?>    
 <?php if($rnewnum == 1 or $rnewnum == 4){ ?>
 <div class="grid-posts-big" itemprop="image">
  <?php 
@@ -360,12 +373,12 @@ endwhile; ?>
 <?php  } ?>
 <?php $rnewnum++; endwhile; ?>
 </div>
-<?php } if(get_theme_mod("newsbox_four") != 0){?>
+<?php } if($catboxnum == 4 && $catid != 'none' && $catid !=''){?>
 
 <!--Blog Posts-->
 <div class="blog-cnt-holder">
-  <div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category(get_theme_mod("newsbox_four"))->name) ?>'><?php echo get_category(get_theme_mod("newsbox_four"))->name ?></a></span></div>
-<?php $featpost = new WP_Query( 'cat='.get_theme_mod("newsbox_four").'&posts_per_page=6' ); $randnewnum = 1;  while($featpost->have_posts()) : $featpost->the_post(); ?>
+  <div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($catid)->name) ?>'><?php echo get_category($catid)->name ?></a></span></div>
+<?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=6' ); $randnewnum = 1;  while($featpost->have_posts()) : $featpost->the_post(); ?>
 <div class="blogposts <?php if($randnewnum== 1 or $randnewnum== 3 or $randnewnum== 5){echo"left-posts";} else{ echo"right-post"; } ?>">
 <div class="hldrblog4" itemprop="image">
 <?php 
@@ -425,11 +438,11 @@ endwhile; ?>
  <?php $randnewnum++; endwhile; ?>
 </div>
 
-<?php  } if(get_theme_mod("newsbox_five") != 0){?>
+<?php  } if($catboxnum == 5 && $catid != 'none' && $catid !=''){?>
 <!--Simple Posts-->
 <div class="simple-posts">
-    <div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category(get_theme_mod("newsbox_five"))->name) ?>'><?php echo get_category(get_theme_mod("newsbox_five"))->name ?></a></span></div>
-<?php $featpost = new WP_Query( 'cat='.get_theme_mod("newsbox_five").'&posts_per_page=6' ); while($featpost->have_posts()) : $featpost->the_post(); ?>
+    <div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($catid)->name) ?>'><?php echo get_category($catid)->name ?></a></span></div>
+<?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=6' ); while($featpost->have_posts()) : $featpost->the_post(); ?>
 <article itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 <?php if ( get_the_post_thumbnail() != '' ) { 
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
@@ -485,7 +498,12 @@ endwhile; ?>
 <?php endwhile; ?>
 </div>
 
-<?php }?>
+<?php }
+
+} // foreach loop ends
+
+}
+?>
 
 
 </main><!-- #main -->

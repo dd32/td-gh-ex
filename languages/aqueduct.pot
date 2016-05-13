@@ -1,9 +1,8 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: aqueduct\n"
-"POT-Creation-Date: 2016-01-27 19:35+0530\n"
-"PO-Revision-Date: 2015-12-30 19:43+0530\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-05-13 17:01+0530\n"
+"PO-Revision-Date: 2016-05-13 17:01+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -11,30 +10,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.6\n"
-"X-Poedit-Basepath: ..\n"
+"X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;_x;_ex\n"
-"X-Poedit-SearchPath-0: inc/template-tags.php\n"
-"X-Poedit-SearchPath-1: inc/dragfun/dragthemesfunction.php\n"
-"X-Poedit-SearchPath-2: 404.php\n"
-"X-Poedit-SearchPath-3: archive.php\n"
-"X-Poedit-SearchPath-4: blog.php\n"
-"X-Poedit-SearchPath-5: blogpage.php\n"
-"X-Poedit-SearchPath-6: comments.php\n"
-"X-Poedit-SearchPath-7: content.php\n"
-"X-Poedit-SearchPath-8: content-none.php\n"
-"X-Poedit-SearchPath-9: content-page.php\n"
-"X-Poedit-SearchPath-10: content-single.php\n"
-"X-Poedit-SearchPath-11: footer.php\n"
-"X-Poedit-SearchPath-12: fullwidth.php\n"
-"X-Poedit-SearchPath-13: functions.php\n"
-"X-Poedit-SearchPath-14: header.php\n"
-"X-Poedit-SearchPath-15: index.php\n"
-"X-Poedit-SearchPath-16: magazine.php\n"
-"X-Poedit-SearchPath-17: page.php\n"
-"X-Poedit-SearchPath-18: search.php\n"
-"X-Poedit-SearchPath-19: sidebar.php\n"
-"X-Poedit-SearchPath-20: single.php\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;_ex;_nx;esc_attr__;esc_attr_e;esc_attr_x;"
+"esc_html__;esc_html_e;esc_html_x;_n_noop;_nx_noop\n"
+"X-Poedit-SearchPath-0: 404.php\n"
+"X-Poedit-SearchPath-1: archive.php\n"
+"X-Poedit-SearchPath-2: blog.php\n"
+"X-Poedit-SearchPath-3: blogpage.php\n"
+"X-Poedit-SearchPath-4: comments.php\n"
+"X-Poedit-SearchPath-5: content.php\n"
+"X-Poedit-SearchPath-6: content-none.php\n"
+"X-Poedit-SearchPath-7: content-page.php\n"
+"X-Poedit-SearchPath-8: content-single.php\n"
+"X-Poedit-SearchPath-9: footer.php\n"
+"X-Poedit-SearchPath-10: fullwidth.php\n"
+"X-Poedit-SearchPath-11: functions.php\n"
+"X-Poedit-SearchPath-12: header.php\n"
+"X-Poedit-SearchPath-13: index.php\n"
+"X-Poedit-SearchPath-14: magazine.php\n"
+"X-Poedit-SearchPath-15: page.php\n"
+"X-Poedit-SearchPath-16: search.php\n"
+"X-Poedit-SearchPath-17: sidebar.php\n"
+"X-Poedit-SearchPath-18: single.php\n"
+"X-Poedit-SearchPath-19: inc/template-tags.php\n"
+"X-Poedit-SearchPath-20: inc/dragfun/dragtheme-css.php\n"
+"X-Poedit-SearchPath-21: inc/dragfun/dragthemesfunction.php\n"
 
 #: 404.php:12
 msgid "Page not Found"
@@ -44,6 +45,11 @@ msgstr ""
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
+msgstr ""
+
+#: comments.php:28
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
 msgstr ""
 
 #: comments.php:35 comments.php:57
@@ -112,169 +118,171 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: functions.php:169
-msgid "&laquo; Previous"
-msgstr ""
-
-#: functions.php:170
-msgid "Next &raquo;"
-msgstr ""
-
-#: header.php:64
+#: header.php:100
 msgid "Breaking"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:32
+#: inc/dragfun/dragthemesfunction.php:34
 msgid "Designed By"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:35
+#: inc/dragfun/dragthemesfunction.php:37
 msgid "Back To Top"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:49 inc/dragfun/dragthemesfunction.php:60
-msgid "Logo"
+#: inc/dragfun/dragthemesfunction.php:130
+msgid "Slider"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:51
-msgid ""
-"Upload a logo to replace the default site name and description in the header"
+#: inc/dragfun/dragthemesfunction.php:133
+msgid "Carousel"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:68
+#: inc/dragfun/dragthemesfunction.php:136
+#: inc/dragfun/dragthemesfunction.php:165
+msgid "Grid 1"
+msgstr ""
+
+#: inc/dragfun/dragthemesfunction.php:139
+#: inc/dragfun/dragthemesfunction.php:166
+msgid "Grid 2"
+msgstr ""
+
+#: inc/dragfun/dragthemesfunction.php:142
+#: inc/dragfun/dragthemesfunction.php:167
+msgid "Blog Style"
+msgstr ""
+
+#: inc/dragfun/dragthemesfunction.php:163
+msgid "Add Category Box"
+msgstr ""
+
+#: inc/dragfun/dragthemesfunction.php:169
+msgid "Reset"
+msgstr ""
+
+#: inc/dragfun/dragthemesfunction.php:253
+msgid "Header"
+msgstr ""
+
+#: inc/dragfun/dragthemesfunction.php:254
+msgid "Choose style for header"
+msgstr ""
+
+#: inc/dragfun/dragthemesfunction.php:288
 msgid "Styling"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:75
+#: inc/dragfun/dragthemesfunction.php:295
 msgid "Choose layout"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:93
+#: inc/dragfun/dragthemesfunction.php:313
 msgid "Theme Layout"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:104
+#: inc/dragfun/dragthemesfunction.php:324
 msgid "Background Image"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:106
+#: inc/dragfun/dragthemesfunction.php:326
 msgid "It will work only if theme layout is Boxed"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:122
+#: inc/dragfun/dragthemesfunction.php:342
 msgid "Home Page Setting"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:129
+#: inc/dragfun/dragthemesfunction.php:349
 msgid "Front Page"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:147
+#: inc/dragfun/dragthemesfunction.php:367
 msgid "Home Page Display"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:150
+#: inc/dragfun/dragthemesfunction.php:370
 msgid "Latest posts - Blog Layout"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:151
+#: inc/dragfun/dragthemesfunction.php:371
 msgid "News Boxes - use Home Builder"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:158
+#: inc/dragfun/dragthemesfunction.php:378
 msgid "News Boxes"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:184
-msgid "Choose category for slider:"
-msgstr ""
-
-#: inc/dragfun/dragthemesfunction.php:204
-msgid "Choose category for carousel:"
-msgstr ""
-
-#: inc/dragfun/dragthemesfunction.php:222
-msgid "Choose Category for Grid box 1:"
-msgstr ""
-
-#: inc/dragfun/dragthemesfunction.php:240
-msgid "Choose Category for Grid box 2:"
-msgstr ""
-
-#: inc/dragfun/dragthemesfunction.php:258
-msgid "Choose Category for blog box:"
-msgstr ""
-
-#: inc/dragfun/dragthemesfunction.php:267
+#: inc/dragfun/dragthemesfunction.php:419
 msgid "Theme Color"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:284
+#: inc/dragfun/dragthemesfunction.php:436
 msgid "Choose Color"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:292
-#: inc/dragfun/dragthemesfunction.php:310
+#: inc/dragfun/dragthemesfunction.php:444
+#: inc/dragfun/dragthemesfunction.php:462
 msgid "Link Color"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:328
+#: inc/dragfun/dragthemesfunction.php:480
 msgid "Link Hover Color"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:338
+#: inc/dragfun/dragthemesfunction.php:490
 msgid "Typography"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:342
+#: inc/dragfun/dragthemesfunction.php:494
 msgid "Choose Font"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:400
+#: inc/dragfun/dragthemesfunction.php:558
 msgid "Font color"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:416
+#: inc/dragfun/dragthemesfunction.php:574
 msgid "Font Color"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:439
+#: inc/dragfun/dragthemesfunction.php:597
 msgid "Font size"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:468
+#: inc/dragfun/dragthemesfunction.php:626
 msgid "Add URLs"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:481
+#: inc/dragfun/dragthemesfunction.php:639
 msgid "Facebook"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:495
+#: inc/dragfun/dragthemesfunction.php:653
 msgid "Twitter"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:508
+#: inc/dragfun/dragthemesfunction.php:666
 msgid "Google+"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:521
+#: inc/dragfun/dragthemesfunction.php:679
 msgid "Pinterest"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:534
+#: inc/dragfun/dragthemesfunction.php:692
 msgid "Instagram"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:547
+#: inc/dragfun/dragthemesfunction.php:705
 msgid "Linkedin"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:560
+#: inc/dragfun/dragthemesfunction.php:718
 msgid "Youtube"
 msgstr ""
 
-#: inc/dragfun/dragthemesfunction.php:573
+#: inc/dragfun/dragthemesfunction.php:731
 msgid "RSS"
 msgstr ""
 
@@ -307,98 +315,6 @@ msgstr ""
 
 #: inc/template-tags.php:62
 msgid "% Comments"
-msgstr ""
-
-#: inc/template-tags.php:82
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: inc/template-tags.php:84
-#, php-format
-msgid "Tag: %s"
-msgstr ""
-
-#: inc/template-tags.php:86
-#, php-format
-msgid "Author: %s"
-msgstr ""
-
-#: inc/template-tags.php:88
-#, php-format
-msgid "Year: %s"
-msgstr ""
-
-#: inc/template-tags.php:88
-msgid "Y"
-msgstr ""
-
-#: inc/template-tags.php:90
-#, php-format
-msgid "Month: %s"
-msgstr ""
-
-#: inc/template-tags.php:90
-msgid "F Y"
-msgstr ""
-
-#: inc/template-tags.php:92
-#, php-format
-msgid "Day: %s"
-msgstr ""
-
-#: inc/template-tags.php:92
-msgid "F j, Y"
-msgstr ""
-
-#: inc/template-tags.php:95
-msgid "Asides"
-msgstr ""
-
-#: inc/template-tags.php:97
-msgid "Galleries"
-msgstr ""
-
-#: inc/template-tags.php:99
-msgid "Images"
-msgstr ""
-
-#: inc/template-tags.php:101
-msgid "Videos"
-msgstr ""
-
-#: inc/template-tags.php:103
-msgid "Quotes"
-msgstr ""
-
-#: inc/template-tags.php:105
-msgid "Links"
-msgstr ""
-
-#: inc/template-tags.php:107
-msgid "Statuses"
-msgstr ""
-
-#: inc/template-tags.php:109
-msgid "Audio"
-msgstr ""
-
-#: inc/template-tags.php:111
-msgid "Chats"
-msgstr ""
-
-#: inc/template-tags.php:114
-#, php-format
-msgid "Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:118
-#, php-format
-msgid "%1$s: %2$s"
-msgstr ""
-
-#: inc/template-tags.php:120
-msgid "Archives"
 msgstr ""
 
 #: search.php:16

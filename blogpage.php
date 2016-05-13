@@ -25,7 +25,7 @@ get_header();
 		<?php endif; ?>
 
 <div class="paging">
-    <?php howlthemes_numberedhowlnav(); ?>
+    <?php the_posts_pagination(); ?>
 </div>
 
 	</main><!-- #main -->

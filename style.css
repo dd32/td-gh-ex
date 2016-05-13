@@ -4,7 +4,7 @@ Theme URI: http://www.howlthemes.com/aqueduct-free-magazine-wordpress-theme/
 Author: HowlThemes
 Author URI: http://www.howlthemes.com
 Description: Aqueduct is easy to use minimal magazine/blog theme for wordpress. It has advance theme builder which let you customize this theme without even touching a single line of code, This Theme is compatible with WooCommerce and BBPress.
-Version: 1.5.6
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -622,6 +622,23 @@ ul.sub-menu li a:before {
 float: right;
 }
 
+.secondary-navigation-center, .secondary-navigation-best{
+    background: #efefef;
+}
+.secondary-navigation-center .menu-footer > ul > li > a, .secondary-navigation-best .menu-footer > ul > li > a{
+    padding: 20px;
+}
+.secondary-navigation-center ul li+li a:before, .secondary-navigation-best ul li+li a:before{
+    content: "";
+    padding-right: 0px;
+}
+.site-branding-center {
+    text-align: center;
+}
+.secondary-navigation-best {
+    clear: both;
+    width: 100%;
+}
 /*--------------------------------------------------------------
 6.0 Alignments
 --------------------------------------------------------------*/
@@ -739,72 +756,7 @@ padding-bottom: 20px;
 padding-top: 0px;
 margin-bottom: 10px;
 }
-/*-----Email Subscription-----*/
-.howl-email-subs-box{
-    width:300px;
-     font-style: normal;
-     font-weight: 400;
-    color:#fff;
-    padding:15px;
-}
-.howl-title-form{
-      font-weight: 700;
-font-size:40px;
-    text-align:center;
-    margin:0px;
-    margin-top:20px;
-}
-.short-dec-form{
-    font-size:18px;
-    text-align:center;
-}
-.real-content-form{
-    background:rgba(0, 0, 0, 0.1);
-    margin:-15px;
-margin-top:10px;  
-    padding:15px;
-}
-.email-container-howl input{
-    width:270px;
-    margin-bottom:10px;
-    margin-top:10px;
-    border:none;
-    background:rgba(0, 0, 0, 0.2);
-    outline:none;
-    padding:10px;
-    border-radius:2px;
-        color:    #efefef;
-text-align:center;
-    font-size:18px;
-}
 
-.email-container-howl input::-webkit-input-placeholder { 
-    color:    #efefef;
-      font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 400;
-    
-}
-.email-container-howl input::-moz-placeholder {
-      color:    #efefef;
-      font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 400;
-}
-.sub-scribe-button{
-    background:#fff !important;
-    border:none;
- font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 700;    
-    padding:10px;
-    font-size:18px;
-    text-transform:uppercase;
-    width:270px;
-margin-top:10px;
-    margin-bottom:20px;
-    border-radius:2px;
-}
 /*--------------------------------------------------------------
 9.0 Content
 --------------------------------------------------------------*/
@@ -1088,18 +1040,18 @@ padding-bottom: 20px;
 width: 1100px;
 margin: 0 auto;
 }
-h2.site-title {
+.site-title {
 font-weight: 700;
 font-size: 48px;
 line-height: 48px;
 margin-bottom: 10px;
 margin-top: 0px;
 }
-h2.site-title a {
+.site-title a {
 color: #4b4b4b;
 text-decoration: none;
 }
-h2.site-description {
+.site-description {
 color: #999;
 font-size: 14px;
 margin: 0px;
@@ -1109,14 +1061,117 @@ float: right;
 margin-top: 34px;
 }
 
-.site-branding {
+.site-branding, .site-branding-best{
 float: left;
 height: 79px;
 width: 400px;
 }
-.site-branding img {
-  max-width: 400px;
-  height: 79px;
+.site-branding img, .site-branding-best img{
+    max-width: 400px;
+    max-height: 79px;
+    width: auto;
+    height: auto;
+}
+.site-branding-center img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+.drag-social-button-center {
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.drag-social-button-center ul {
+    clear: left;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 50%;
+    text-align: center;
+}
+.drag-social-button-center ul li {
+    display: block;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    right: 50%;
+}
+.drag-social-button-center ul li a {
+    background: #3E3E3E;
+    display: block;
+    margin-bottom: 10px;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 11px;
+    float: left;
+    margin-right: 10px;
+}
+
+.drag-social-button-best {
+    width: 420px;
+    float: right;
+    margin-top: 20px;
+}
+
+.drag-social-button-best ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float:right;
+}
+.drag-social-button-best ul li {
+    display: inline-block;
+}
+.drag-social-button-best ul li a {
+    color: #fff;
+    display: block;
+    width: 38px;
+    height: 38px;
+    margin-left: 10px;
+    text-align: center;
+    padding-top: 8px;
+}
+.fblink{
+background: #3b5998;
+}
+.twitterlink{
+background:#55acee;
+}
+.gpluslink{
+background:#dd4b39;
+}
+.pinlink{
+background:#cc2127;
+}
+.instalink{
+background:#3f729b;
+}
+.linkdlink{
+background:#000000;
+}
+.ytubelink{
+background:#cd201f;
+}
+.rsslink{
+background:#f26522;
+}
+.drag-social-button-best ul li a:hover{
+background:#BABABA;
+}
+.masthead-logo-social {
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 /*--------------------------------------------------------------
 Social Icon and Breaking News
@@ -1838,6 +1893,7 @@ padding-left: 15px;
 }
 .read-more-button a:hover {
 background: #000;
+color:#fff;
 }
 .read-more-button {
 margin-top: 10px;
@@ -1850,12 +1906,12 @@ height:auto;
 /*------------------------------------------------------
 Numbered Page Navigation
 ----------------------------------------------*/
-.paging ul {
+.paging .nav-links {
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
-.paging ul li a, .paging ul li span {
+.paging .nav-links a, .paging .nav-links span {
   background: #333;
   color: #fff;
   padding: 10px;
@@ -2168,6 +2224,26 @@ li.bjqs-slide {
 }
 .rmeta-holder {
   width: 140px;
+}
+.drag-social-button-best {
+    float: left;
+    width: 100%;
+    max-width: 100%;
+}
+.drag-social-button-best {
+    float: left;
+}
+.drag-social-button-best ul li a {
+    margin-right: 10px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+.drag-social-button-best ul {
+    float: left;
+}
+.site-branding-best {
+    width: 100%;
+    max-width: 100%;
 }
 }
 @media only screen and (max-width: 740px){

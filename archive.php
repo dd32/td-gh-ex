@@ -35,10 +35,10 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 <div class="paging">
-<ul>
-        <?php howlthemes_numberedhowlnav(); ?>
 
-    </ul>
+        <?php the_posts_pagination(); ?>
+
+
 </div>
 		<?php else : ?>
 

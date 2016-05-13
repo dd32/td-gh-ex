@@ -28,7 +28,7 @@ html{
 }
 <?php } else{?>
 html{
-  font-family:Josefin Sans;
+  font-family:Titillium Web;
 }
   <?php }?>
 
@@ -49,7 +49,7 @@ input[type="submit"],
 .slider-title,
 .titlecatholder span,
 .read-more-button a,
-.paging ul li span,
+.paging .nav-links span,
 .howl-email-subs-box,
 .woocommerce #respond input#submit, 
 .woocommerce a.button,
@@ -58,7 +58,8 @@ input[type="submit"],
 .main-navigation ul ul,
 .main-navigation ul li:hover,
 .main-navigation ul .current-menu-item,
-.tagcloud a:hover
+.tagcloud a:hover,
+.drag-social-button-center ul li a:hover
 {
 <?php if(get_theme_mod("color-setting")){ ?>
 background: <?php echo get_theme_mod("color-setting"); ?>;

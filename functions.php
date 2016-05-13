@@ -115,7 +115,7 @@ function howlthemes_scripts() {
 }
 
 else{
-    wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Josefin+Sans:400,600,700');
+    wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Titillium+Web:400,600,700');
 }
   wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css');
         wp_enqueue_script( 'myscript', get_template_directory_uri().'/js/dragjs.js', array( 'jquery' ), '', true);
@@ -150,28 +150,6 @@ Removing Some Default Widgets
  }
  add_action('widgets_init', 'howlthemes_unregister_default_widgets', 11);
 
-
-/*--------------------------
-PageNavi
----------------------------------*/
-function howlthemes_numberedhowlnav(){
-  global $wp_query;
-        $big = 999999999; // need an unlikely integer
-        $args = array(
-            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-            'format' => '?page=%#%',
-            'total' => $wp_query->max_num_pages,
-            'current' => max( 1, get_query_var( 'paged') ),
-            'show_all' => false,
-            'end_size' => 3,
-            'mid_size' => 2,
-            'prev_next' => True,
-            'prev_text' => __('&laquo; Previous', 'aqueduct'),
-            'next_text' => __('Next &raquo;', 'aqueduct'),
-            'type' => 'list',
-            );
-        echo paginate_links($args);
-}
 /**
  * Title         : Aqua Resizer
  * Description   : Resizes WordPress images on the fly
@@ -413,30 +391,110 @@ Social Media Follow Buttons
 -----------------------------------------*/
 function howlthemes_socialmediafollow(){
    if(get_theme_mod("fsocial_url")){
-    echo'<li><a href="'.esc_url(get_theme_mod("fsocial_url")).'" target="blank"><i class="fa fa-facebook"></i></a></li>';
+    echo'<li><a class="fblink" href="'.esc_url(get_theme_mod("fsocial_url")).'" target="blank"><i class="fa fa-facebook"></i></a></li>';
 }
    if(get_theme_mod("tsocial_url")){
-echo'<li><a href="'.esc_url(get_theme_mod("tsocial_url")).'" target="blank"><i class="fa fa-twitter"></i></a></li>';
+echo'<li><a class="twitterlink" href="'.esc_url(get_theme_mod("tsocial_url")).'" target="blank"><i class="fa fa-twitter"></i></a></li>';
 }
    if(get_theme_mod("gsocial_url")){
 echo'
-<li><a href="'.esc_url(get_theme_mod("gsocial_url")).'" target="blank"><i class="fa fa-google-plus"></i></a></li>';
+<li><a class="gpluslink" href="'.esc_url(get_theme_mod("gsocial_url")).'" target="blank"><i class="fa fa-google-plus"></i></a></li>';
 }
 if(get_theme_mod("psocial_url")){
 echo'
- <li><a href="'.esc_url(get_theme_mod("psocial_url")).'" target="blank"><i class="fa fa-pinterest-p"></i></a></li>';
+ <li><a class="pinlink" href="'.esc_url(get_theme_mod("psocial_url")).'" target="blank"><i class="fa fa-pinterest-p"></i></a></li>';
 }
 if(get_theme_mod("isocial_url")){
 echo'
- <li><a href="'.esc_url(get_theme_mod("isocial_url")).'" target="blank"><i class="fa fa-instagram"></i></a></li>';
+ <li><a class="instalink" href="'.esc_url(get_theme_mod("isocial_url")).'" target="blank"><i class="fa fa-instagram"></i></a></li>';
 }
 if(get_theme_mod("lsocial_url")){
-echo'<li><a href="'.esc_url(get_theme_mod("lsocial_url")).'" target="blank"><i class="fa fa-linkedin"></i></a></li>';
+echo'<li><a class="linkdlink" href="'.esc_url(get_theme_mod("lsocial_url")).'" target="blank"><i class="fa fa-linkedin"></i></a></li>';
 }
 if(get_theme_mod("ysocial_url")){
-echo' <li><a href="'.esc_url(get_theme_mod("ysocial_url")).'" target="blank"><i class="fa fa-youtube"></i></a></li>';
+echo' <li><a class="ytubelink" href="'.esc_url(get_theme_mod("ysocial_url")).'" target="blank"><i class="fa fa-youtube"></i></a></li>';
 }
 if(get_theme_mod("rsocial_url")){
-echo' <li><a href="'.esc_url(get_theme_mod("rsocial_url")).'" target="blank"><i class="fa fa-rss"></i></a></li>';
+echo' <li><a class="rsslink" href="'.esc_url(get_theme_mod("rsocial_url")).'" target="blank"><i class="fa fa-rss"></i></a></li>';
 }
 }
+/*------------------
+* Support Core Logo
+--------------------*/
+function aqueduct_logo_setup() {
+    add_theme_support( 'custom-logo' );
+}
+add_action( 'after_setup_theme', 'aqueduct_logo_setup' );
+
+
+function aqueduct_oldlogotonew(){
+
+
+  if (get_theme_mod('howl-themes_logo') && function_exists('get_custom_logo')) {
+    $logo = attachment_url_to_postid( get_theme_mod( 'howl-themes_logo' ) );
+    if ( is_int( $logo ) ) {
+      set_theme_mod( 'custom_logo', $logo );
+    }
+    remove_theme_mod( 'howl-themes_logo' );
+  }
+
+
+ 
+}
+add_action( 'after_setup_theme', 'aqueduct_oldlogotonew' );
+
+function aqueduct_previous_magazine_settings() {
+  
+if(get_theme_mod("newsbox_one") || get_theme_mod("newsbox_two") || get_theme_mod("newsbox_three") || get_theme_mod("newsbox_four") || get_theme_mod("newsbox_five")){
+// Slider
+if(get_theme_mod("newsbox_one")){
+  $slider_cat = get_theme_mod("newsbox_one");
+  remove_theme_mod( 'newsbox_one' );
+}
+else{
+  $slider_cat = 'none';
+}
+
+//Carousel
+if(get_theme_mod("newsbox_two")){
+  $carousel_cat = get_theme_mod("newsbox_two");
+  remove_theme_mod( 'newsbox_two' );
+}
+else{
+  $carousel_cat = 'none';
+}
+
+//Grid 1
+if(get_theme_mod("newsbox_three")){
+  $gridone_cat = get_theme_mod("newsbox_three");
+  remove_theme_mod( 'newsbox_three' );
+}
+else{
+  $gridone_cat = 'none';
+}
+
+//Grid 2
+if(get_theme_mod("newsbox_four")){
+  $gridtwo_cat = get_theme_mod("newsbox_four");
+  remove_theme_mod( 'newsbox_four' );
+}
+else{
+  $gridtwo_cat = 'none';
+}
+
+//Blog
+if(get_theme_mod("newsbox_five")){
+  $blog_cat = get_theme_mod("newsbox_five");
+  remove_theme_mod( 'newsbox_five' );
+}
+else{
+  $blog_cat = 'none';
+}
+
+$all_prev_cat = $slider_cat. ', '. $carousel_cat. ', '. $gridone_cat. ', '. $gridtwo_cat. ', '. $blog_cat. ',';
+set_theme_mod( 'category_remember', $all_prev_cat );
+$prev_box_arrang = '1, 2, 3, 4, 5,';
+set_theme_mod( 'homebuilder', $prev_box_arrang );
+}
+}
+add_action( 'after_setup_theme', 'aqueduct_previous_magazine_settings' );
