@@ -498,6 +498,15 @@ function weaverx_check_version() {
 			$msg;
 			weaverx_save_msg($saveme);
 	}
+
+	if ( defined('WEAVER_XPLUS_VERSION') ) {
+		if ( WEAVER_XPLUS_VERSION == '2.1' || WEAVER_XPLUS_VERSION == '2.1.1')
+			weaverx_error_msg('IMPORTANT NOTICE! You are using <em>Weaver Xtreme Plus Version ' . WEAVER_XPLUS_VERSION .
+			'. This version requires a <em>Manual Update</em>. Please click to see the <a href="http://shop.weavertheme.com/weaver-xtreme-plus-2-1-to-2-1-1-manual-update/" target="_blank">Update Instructions</a>.');
+	}
+
+
+
 	return '';
 }
 

@@ -280,3 +280,9 @@ with testing and feature suggestions.
 * Tweak: Improved rendering of custom width desktop sidebars. IE8 degrades to showing sidebars at 25% only.
 * Tweak: Improved rendering of menu transitions
 * Tweak: make phone width 100% (was 98%) for most horizontal areas like the top/bottom widget areas, html areas, etc.
+
+= Version 2.1.1 =
+* Change: RAW Page template behavior significantly changed so that it is now really "raw".
+  The Per Page options for the RAW page template now show only those options related to the RAW template.
+  If you were using the RAW template, you can simply switch to the Blank Template to retain behavior.
+* Tweak: Add notice for users of Weaver Xtreme Plus 2.1 and 2.1.1 to do manual update.

@@ -12,7 +12,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	// no #container or #content wrappers, and no sidebars or injection
 ?>
 <!-- This page formatted using Weaver Xtreme Raw Page Template -->
-<div id="page-raw" class="page-raw-<?php the_ID(); ?>">
+<div id="page-raw" class="page-raw-<?php the_ID(); ?> page-id-<?php the_ID();?>">
 <?php
 	do_action('weaverx_per_page');
 
@@ -22,14 +22,16 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		weaverx_post_count_clear();
 
 		the_post();
-
-		get_template_part( 'templates/content', 'blank' );	// content output same as 'blank' template
-
-		comments_template( '', true );
+		if ( weaverx_is_checked_page_opt('_pp_raw_html') || weaverx_is_checked_post_opt('_pp_raw_html') ) {
+			echo do_shortcode(get_the_content());
+		} else {
+			the_content();
+		}
 	}
+	edit_post_link( __( 'Edit','weaver-xtreme'), '<br /><span class="edit-link">', '</span>' );
 ?>
+
 </div> <!-- #page-raw -->
 <?php
 	weaverx_get_footer( 'raw' );
-
 ?>
