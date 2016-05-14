@@ -1,9 +1,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Safreen 0.1.20150828\n"
-"POT-Creation-Date: 2016-01-24 22:08+0600\n"
-"PO-Revision-Date: 2016-01-24 22:05+0600\n"
+"Project-Id-Version: Safreen\n"
+"POT-Creation-Date: 2016-04-10 01:23+0600\n"
+"PO-Revision-Date: 2016-04-10 01:23+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -35,17 +35,17 @@ msgstr ""
 msgid "Or Return home?"
 msgstr ""
 
-#: archive.php:61 search.php:55 tag.php:57
+#: archive.php:60 tag.php:47
 msgid "No comments"
 msgstr ""
 
-#: archive.php:61 layout/part-layout2.php:58 search.php:55 single.php:57
-#: tag.php:57 template-blog.php:91
+#: archive.php:60 layout/part-layout2.php:77 single.php:57 tag.php:47
+#: template-blog.php:66
 msgid "1 Comment"
 msgstr ""
 
-#: archive.php:61 layout/part-layout2.php:58 search.php:55 single.php:57
-#: tag.php:57 template-blog.php:91
+#: archive.php:60 layout/part-layout2.php:77 single.php:57 tag.php:47
+#: template-blog.php:66
 msgid "% Comments"
 msgstr ""
 
@@ -68,102 +68,113 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:66
+#: comments.php:68
 msgid "Comments are closed."
 msgstr ""
 
-#: footer/part-footer1.php:48
-msgid "Theme by"
+#: footer/part-footer1.php:49
+#, php-format
+msgid "Theme by %s"
 msgstr ""
 
-#: functions.php:77
-msgid "6000"
+#: functions.php:55
+msgid "Primary Navigation(Header)"
 msgstr ""
 
-#: functions.php:227 functions.php:229
+#: functions.php:178
+msgctxt "Droid Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:184
+msgctxt "Droid Sans Serif font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:283 functions.php:285
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:237
+#: functions.php:293
 msgid "Footer Widgets"
 msgstr ""
 
-#: functions.php:239
+#: functions.php:295
 msgid "Widget Area for the Footer"
 msgstr ""
 
-#: functions.php:247 inc/widgets.php:37
+#: functions.php:303 inc/widgets.php:40
 msgid "Service Block"
 msgstr ""
 
-#: functions.php:249
+#: functions.php:305
 msgid ""
 "With safreen Free you can only add 3 widgets to this Area. Upgrade to PRO to "
 "add unlimited Widgets."
 msgstr ""
 
-#: functions.php:255
+#: functions.php:311
 msgid "About Us"
 msgstr ""
 
-#: functions.php:257
+#: functions.php:313
 msgid ""
 "With safreen Free you can only add 2 widgets to this Area. Upgrade to PRO to "
 "add unlimited Widgets."
 msgstr ""
 
-#: functions.php:265 inc/customizer/fields.php:151
+#: functions.php:321
 msgid "Our Team"
 msgstr ""
 
-#: functions.php:267
+#: functions.php:323
 msgid ""
 "With safreen Free you can only add 4 widgets to this Area. Upgrade to PRO to "
 "add unlimited Widgets."
 msgstr ""
 
-#: functions.php:273 inc/customizer/fields.php:152
+#: functions.php:329
 msgid "Our Client"
 msgstr ""
 
-#: functions.php:275
+#: functions.php:331
 msgid ""
 "With safreen Free you can only add 1 widgets to this Area. Upgrade to PRO to "
 "add unlimited Widgets."
 msgstr ""
 
-#: functions.php:326 inc/class-tgm-plugin-activation.php:196
+#: functions.php:383 inc/class-tgm-plugin-activation.php:196
 msgid "Install Required Plugins"
 msgstr ""
 
-#: functions.php:327 inc/class-tgm-plugin-activation.php:197
+#: functions.php:384 inc/class-tgm-plugin-activation.php:197
 msgid "Install Plugins"
 msgstr ""
 
-#: functions.php:328 inc/class-tgm-plugin-activation.php:198
+#: functions.php:385 inc/class-tgm-plugin-activation.php:198
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: functions.php:329
+#: functions.php:386
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: functions.php:330 inc/class-tgm-plugin-activation.php:200
+#: functions.php:387 inc/class-tgm-plugin-activation.php:200
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:331 inc/class-tgm-plugin-activation.php:201
+#: functions.php:388 inc/class-tgm-plugin-activation.php:201
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:332 inc/class-tgm-plugin-activation.php:202
+#: functions.php:389 inc/class-tgm-plugin-activation.php:202
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s plugin. "
@@ -176,21 +187,21 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:333 inc/class-tgm-plugin-activation.php:203
+#: functions.php:390 inc/class-tgm-plugin-activation.php:203
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:334 inc/class-tgm-plugin-activation.php:204
+#: functions.php:391 inc/class-tgm-plugin-activation.php:204
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:335 inc/class-tgm-plugin-activation.php:205
+#: functions.php:392 inc/class-tgm-plugin-activation.php:205
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
@@ -203,7 +214,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:336 inc/class-tgm-plugin-activation.php:206
+#: functions.php:393 inc/class-tgm-plugin-activation.php:206
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -214,7 +225,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:337 inc/class-tgm-plugin-activation.php:207
+#: functions.php:394 inc/class-tgm-plugin-activation.php:207
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
@@ -227,38 +238,38 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:338 inc/class-tgm-plugin-activation.php:208
+#: functions.php:395 inc/class-tgm-plugin-activation.php:208
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:339 inc/class-tgm-plugin-activation.php:209
+#: functions.php:396 inc/class-tgm-plugin-activation.php:209
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:340 inc/class-tgm-plugin-activation.php:210
+#: functions.php:397 inc/class-tgm-plugin-activation.php:210
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: functions.php:341 inc/class-tgm-plugin-activation.php:212
+#: functions.php:398 inc/class-tgm-plugin-activation.php:212
 #: inc/class-tgm-plugin-activation.php:1951
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: functions.php:342
+#: functions.php:399
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: functions.php:383
-msgid "Primary Navigation(Header)"
-msgstr ""
-
 #: header.php:29
 msgid "Loading"
+msgstr ""
+
+#: headers/part-head1.php:106 headers/part-headsingle.php:96
+msgid "Menu"
 msgstr ""
 
 #: inc/about-theme.php:20
@@ -452,175 +463,171 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/customizer.php:35 inc/extra.php:20
-msgid "View Documentation"
-msgstr ""
-
-#: inc/customizer.php:36
-msgid "View PRO version"
-msgstr ""
-
-#: inc/customizer/config.php:21 inc/kirki/includes/class-kirki-toolkit.php:52
+#: inc/customizer/config.php:27 inc/kirki/includes/class-kirki-l10n.php:103
 msgid "Background Color"
 msgstr ""
 
-#: inc/customizer/config.php:22 inc/kirki/includes/class-kirki-toolkit.php:53
+#: inc/customizer/config.php:28 inc/kirki/includes/class-kirki-l10n.php:104
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer/config.php:23 inc/kirki/includes/class-kirki-toolkit.php:54
+#: inc/customizer/config.php:29 inc/kirki/includes/class-kirki-l10n.php:105
 msgid "No Repeat"
 msgstr ""
 
-#: inc/customizer/config.php:24 inc/kirki/includes/class-kirki-toolkit.php:55
+#: inc/customizer/config.php:30 inc/kirki/includes/class-kirki-l10n.php:106
 msgid "Repeat All"
 msgstr ""
 
-#: inc/customizer/config.php:25 inc/kirki/includes/class-kirki-toolkit.php:56
+#: inc/customizer/config.php:31 inc/kirki/includes/class-kirki-l10n.php:107
 msgid "Repeat Horizontally"
 msgstr ""
 
-#: inc/customizer/config.php:26 inc/kirki/includes/class-kirki-toolkit.php:57
+#: inc/customizer/config.php:32 inc/kirki/includes/class-kirki-l10n.php:108
 msgid "Repeat Vertically"
 msgstr ""
 
-#: inc/customizer/config.php:27 inc/kirki/includes/class-kirki-toolkit.php:58
+#: inc/customizer/config.php:33 inc/kirki/includes/class-kirki-l10n.php:109
 msgid "Inherit"
 msgstr ""
 
-#: inc/customizer/config.php:28 inc/kirki/includes/class-kirki-toolkit.php:59
+#: inc/customizer/config.php:34 inc/kirki/includes/class-kirki-l10n.php:110
 msgid "Background Repeat"
 msgstr ""
 
-#: inc/customizer/config.php:29 inc/kirki/includes/class-kirki-toolkit.php:60
+#: inc/customizer/config.php:35 inc/kirki/includes/class-kirki-l10n.php:111
 msgid "Cover"
 msgstr ""
 
-#: inc/customizer/config.php:30 inc/kirki/includes/class-kirki-toolkit.php:61
+#: inc/customizer/config.php:36 inc/kirki/includes/class-kirki-l10n.php:112
 msgid "Contain"
 msgstr ""
 
-#: inc/customizer/config.php:31 inc/kirki/includes/class-kirki-toolkit.php:62
+#: inc/customizer/config.php:37 inc/kirki/includes/class-kirki-l10n.php:113
 msgid "Background Size"
 msgstr ""
 
-#: inc/customizer/config.php:32 inc/kirki/includes/class-kirki-toolkit.php:63
+#: inc/customizer/config.php:38 inc/kirki/includes/class-kirki-l10n.php:114
 msgid "Fixed"
 msgstr ""
 
-#: inc/customizer/config.php:33 inc/kirki/includes/class-kirki-toolkit.php:64
+#: inc/customizer/config.php:39 inc/kirki/includes/class-kirki-l10n.php:115
 msgid "Scroll"
 msgstr ""
 
-#: inc/customizer/config.php:34 inc/kirki/includes/class-kirki-toolkit.php:65
+#: inc/customizer/config.php:40 inc/kirki/includes/class-kirki-l10n.php:116
 msgid "Background Attachment"
 msgstr ""
 
-#: inc/customizer/config.php:35 inc/kirki/includes/class-kirki-toolkit.php:66
+#: inc/customizer/config.php:41 inc/kirki/includes/class-kirki-l10n.php:117
 msgid "Left Top"
 msgstr ""
 
-#: inc/customizer/config.php:36 inc/kirki/includes/class-kirki-toolkit.php:67
+#: inc/customizer/config.php:42 inc/kirki/includes/class-kirki-l10n.php:118
 msgid "Left Center"
 msgstr ""
 
-#: inc/customizer/config.php:37 inc/kirki/includes/class-kirki-toolkit.php:68
+#: inc/customizer/config.php:43 inc/kirki/includes/class-kirki-l10n.php:119
 msgid "Left Bottom"
 msgstr ""
 
-#: inc/customizer/config.php:38 inc/kirki/includes/class-kirki-toolkit.php:69
+#: inc/customizer/config.php:44 inc/kirki/includes/class-kirki-l10n.php:120
 msgid "Right Top"
 msgstr ""
 
-#: inc/customizer/config.php:39 inc/kirki/includes/class-kirki-toolkit.php:70
+#: inc/customizer/config.php:45 inc/kirki/includes/class-kirki-l10n.php:121
 msgid "Right Center"
 msgstr ""
 
-#: inc/customizer/config.php:40 inc/kirki/includes/class-kirki-toolkit.php:71
+#: inc/customizer/config.php:46 inc/kirki/includes/class-kirki-l10n.php:122
 msgid "Right Bottom"
 msgstr ""
 
-#: inc/customizer/config.php:41 inc/kirki/includes/class-kirki-toolkit.php:72
+#: inc/customizer/config.php:47 inc/kirki/includes/class-kirki-l10n.php:123
 msgid "Center Top"
 msgstr ""
 
-#: inc/customizer/config.php:42 inc/kirki/includes/class-kirki-toolkit.php:73
+#: inc/customizer/config.php:48 inc/kirki/includes/class-kirki-l10n.php:124
 msgid "Center Center"
 msgstr ""
 
-#: inc/customizer/config.php:43 inc/kirki/includes/class-kirki-toolkit.php:74
+#: inc/customizer/config.php:49 inc/kirki/includes/class-kirki-l10n.php:125
 msgid "Center Bottom"
 msgstr ""
 
-#: inc/customizer/config.php:44 inc/kirki/includes/class-kirki-toolkit.php:75
+#: inc/customizer/config.php:50 inc/kirki/includes/class-kirki-l10n.php:126
 msgid "Background Position"
 msgstr ""
 
-#: inc/customizer/config.php:45 inc/kirki/includes/class-kirki-toolkit.php:76
+#: inc/customizer/config.php:51 inc/kirki/includes/class-kirki-l10n.php:127
 msgid "Background Opacity"
 msgstr ""
 
-#: inc/customizer/config.php:46 inc/kirki/includes/class-kirki-toolkit.php:77
+#: inc/customizer/config.php:52 inc/kirki/includes/class-kirki-l10n.php:128
 msgid "ON"
 msgstr ""
 
-#: inc/customizer/config.php:47 inc/kirki/includes/class-kirki-toolkit.php:78
+#: inc/customizer/config.php:53 inc/kirki/includes/class-kirki-l10n.php:129
 msgid "OFF"
 msgstr ""
 
-#: inc/customizer/config.php:48 inc/kirki/includes/class-kirki-toolkit.php:79
+#: inc/customizer/config.php:54 inc/kirki/includes/class-kirki-l10n.php:130
 msgid "All"
 msgstr ""
 
-#: inc/customizer/config.php:49 inc/kirki/includes/class-kirki-toolkit.php:80
+#: inc/customizer/config.php:55 inc/kirki/includes/class-kirki-l10n.php:131
 msgid "Cyrillic"
 msgstr ""
 
-#: inc/customizer/config.php:50 inc/kirki/includes/class-kirki-toolkit.php:81
+#: inc/customizer/config.php:56 inc/kirki/includes/class-kirki-l10n.php:132
 msgid "Cyrillic Extended"
 msgstr ""
 
-#: inc/customizer/config.php:51 inc/kirki/includes/class-kirki-toolkit.php:82
+#: inc/customizer/config.php:57 inc/kirki/includes/class-kirki-l10n.php:133
 msgid "Devanagari"
 msgstr ""
 
-#: inc/customizer/config.php:52 inc/kirki/includes/class-kirki-toolkit.php:83
+#: inc/customizer/config.php:58 inc/kirki/includes/class-kirki-l10n.php:134
 msgid "Greek"
 msgstr ""
 
-#: inc/customizer/config.php:53 inc/kirki/includes/class-kirki-toolkit.php:84
+#: inc/customizer/config.php:59 inc/kirki/includes/class-kirki-l10n.php:135
 msgid "Greek Extended"
 msgstr ""
 
-#: inc/customizer/config.php:54 inc/kirki/includes/class-kirki-toolkit.php:85
+#: inc/customizer/config.php:60 inc/kirki/includes/class-kirki-l10n.php:136
 msgid "Khmer"
 msgstr ""
 
-#: inc/customizer/config.php:55 inc/kirki/includes/class-kirki-toolkit.php:86
+#: inc/customizer/config.php:61 inc/kirki/includes/class-kirki-l10n.php:137
 msgid "Latin"
 msgstr ""
 
-#: inc/customizer/config.php:56 inc/kirki/includes/class-kirki-toolkit.php:87
+#: inc/customizer/config.php:62 inc/kirki/includes/class-kirki-l10n.php:138
 msgid "Latin Extended"
 msgstr ""
 
-#: inc/customizer/config.php:57 inc/kirki/includes/class-kirki-toolkit.php:88
+#: inc/customizer/config.php:63 inc/kirki/includes/class-kirki-l10n.php:139
 msgid "Vietnamese"
 msgstr ""
 
-#: inc/customizer/config.php:58 inc/kirki/includes/class-kirki-toolkit.php:96
+#: inc/customizer/config.php:64 inc/kirki/includes/class-kirki-l10n.php:147
 msgctxt "font style"
 msgid "Serif"
 msgstr ""
 
-#: inc/customizer/config.php:59 inc/kirki/includes/class-kirki-toolkit.php:97
+#: inc/customizer/config.php:65 inc/kirki/includes/class-kirki-l10n.php:148
 msgctxt "font style"
 msgid "Sans Serif"
 msgstr ""
 
-#: inc/customizer/config.php:60 inc/kirki/includes/class-kirki-toolkit.php:98
+#: inc/customizer/config.php:66 inc/kirki/includes/class-kirki-l10n.php:149
 msgctxt "font style"
 msgid "Monospace"
+msgstr ""
+
+#: inc/customizer/config.php:79
+msgid "The theme description."
 msgstr ""
 
 #: inc/customizer/fields.php:14
@@ -635,311 +642,284 @@ msgstr ""
 msgid "Make website box layout"
 msgstr ""
 
-#: inc/customizer/fields.php:46
-msgid "Disable Transparent Header "
-msgstr ""
-
-#: inc/customizer/fields.php:55
-msgid "Disable sidebar from post and page "
-msgstr ""
-
-#: inc/customizer/fields.php:65
+#: inc/customizer/fields.php:50
 msgid "Front Page post Layout"
 msgstr ""
 
-#: inc/customizer/fields.php:66
+#: inc/customizer/fields.php:51
 msgid "Select a front page post layout"
 msgstr ""
 
-#: inc/customizer/fields.php:82
-msgid "Custom logo image"
-msgstr ""
-
-#: inc/customizer/fields.php:83
-msgid "You can upload custom image for your website logo (optional)."
-msgstr ""
-
-#: inc/customizer/fields.php:92
+#: inc/customizer/fields.php:69
 msgid "Latest Blog Title"
 msgstr ""
 
-#: inc/customizer/fields.php:94
+#: inc/customizer/fields.php:71
 msgid "Latest Blog"
 msgstr ""
 
-#: inc/customizer/fields.php:103
+#: inc/customizer/fields.php:89
 msgid "Enable Latest Posts"
 msgstr ""
 
-#: inc/customizer/fields.php:108 inc/customizer/fields.php:238
-#: inc/customizer/fields.php:407 inc/customizer/fields.php:443
-#: inc/customizer/fields.php:487 layout/part-layout2.php:58 single.php:57
-#: template-blog.php:91
-msgid "Off"
+#: inc/customizer/fields.php:95 inc/customizer/fields.php:599
+#: inc/customizer/fields.php:766 inc/customizer/fields.php:832
+#: inc/customizer/fields.php:876
+msgid "off"
 msgstr ""
 
-#: inc/customizer/fields.php:109 inc/customizer/fields.php:239
-#: inc/customizer/fields.php:408 inc/customizer/fields.php:444
-#: inc/customizer/fields.php:488
-msgid "On"
+#: inc/customizer/fields.php:96 inc/customizer/fields.php:600
+#: inc/customizer/fields.php:767 inc/customizer/fields.php:833
+#: inc/customizer/fields.php:877
+msgid "on"
 msgstr ""
 
-#: inc/customizer/fields.php:119
+#: inc/customizer/fields.php:106
 msgid "Footer Text."
 msgstr ""
 
+#: inc/customizer/fields.php:128
+msgid "Disable Transparent Header "
+msgstr ""
+
 #: inc/customizer/fields.php:137
-msgid "Reorder font page section"
+msgid "Custom logo image"
 msgstr ""
 
 #: inc/customizer/fields.php:138
-msgid ""
-"You can enable/disable the font page section that interest you below and "
-"reorder them to your liking."
+msgid "You can upload custom image for your website logo (optional)."
 msgstr ""
 
-#: inc/customizer/fields.php:147
-msgid "service-block"
+#: inc/customizer/fields.php:154
+msgid "Site title Typography"
 msgstr ""
 
-#: inc/customizer/fields.php:148
-msgid "Welcome"
+#: inc/customizer/fields.php:180 inc/customizer/fields.php:295
+#: inc/kirki/includes/class-kirki-l10n.php:152
+msgid "Font Weight"
 msgstr ""
 
-#: inc/customizer/fields.php:149
-msgid "About-us"
+#: inc/customizer/fields.php:210 inc/customizer/fields.php:323
+#: inc/customizer/fields.php:353
+msgid "Font size"
 msgstr ""
 
-#: inc/customizer/fields.php:150
-msgid "Latest Post"
+#: inc/customizer/fields.php:241
+msgid "Title  text color"
 msgstr ""
 
-#: inc/customizer/fields.php:161
-msgid "Flavour color"
-msgstr ""
-
-#: inc/customizer/fields.php:172
-msgid "Hover color"
-msgstr ""
-
-#: inc/customizer/fields.php:183
-msgid "Home Page welcome section"
-msgstr ""
-
-#: inc/customizer/fields.php:184
-msgid "This is a tooltip"
-msgstr ""
-
-#: inc/customizer/fields.php:186
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor "
-"sit amet."
-msgstr ""
-
-#: inc/customizer/fields.php:193
-msgid "change background color"
-msgstr ""
-
-#: inc/customizer/fields.php:203
-msgid "change text color"
-msgstr ""
-
-#: inc/customizer/fields.php:213
-msgid "Welcome section padding"
-msgstr ""
-
-#: inc/customizer/fields.php:214
-msgid "percentage"
-msgstr ""
-
-#: inc/customizer/fields.php:233
-msgid "Enable/disabel slider"
-msgstr ""
-
-#: inc/customizer/fields.php:246
-msgid "eanbel Static Slider (single image)"
-msgstr ""
-
-#: inc/customizer/fields.php:255
-msgid "Slider Speed"
-msgstr ""
-
-#: inc/customizer/fields.php:256
-msgid "milliseconds"
-msgstr ""
-
-#: inc/customizer/fields.php:272
-msgid "Slideer button 1st"
-msgstr ""
-
-#: inc/customizer/fields.php:274 inc/customizer/fields.php:318
-#: inc/customizer/fields.php:364 nivo.php:51 nivo.php:52 nivo.php:61
-msgid "Know More"
-msgstr ""
-
-#: inc/customizer/fields.php:281
-msgid "Slider button 2nd"
-msgstr ""
-
-#: inc/customizer/fields.php:283 nivo.php:62
-msgid "Buy Theme"
-msgstr ""
-
-#: inc/customizer/fields.php:292
-msgid "Slider title text color"
-msgstr ""
-
-#: inc/customizer/fields.php:306
-msgid "Slide1 Image"
-msgstr ""
-
-#: inc/customizer/fields.php:316
-msgid "Slide1 title"
-msgstr ""
-
-#: inc/customizer/fields.php:326 inc/customizer/fields.php:372
-msgid "Description or Tagline"
-msgstr ""
-
-#: inc/customizer/fields.php:328 inc/customizer/fields.php:374 nivo.php:53
-#: nivo.php:54
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec rhoncus "
-"risus. In ultrices lacinia ipsum, posuere faucibus velit bibendum ac. Sed "
-"ultrices leo."
-msgstr ""
-
-#: inc/customizer/fields.php:335
-msgid "Slide1 1st link"
-msgstr ""
-
-#: inc/customizer/fields.php:337 inc/customizer/fields.php:345
-#: inc/customizer/fields.php:391
-msgid "#"
-msgstr ""
-
-#: inc/customizer/fields.php:343
-msgid "Slide1 2nd link"
-msgstr ""
-
-#: inc/customizer/fields.php:352
-msgid "Slide2 Image"
-msgstr ""
-
-#: inc/customizer/fields.php:362
-msgid "Slide2 title"
-msgstr ""
-
-#: inc/customizer/fields.php:381
-msgid "Slide2 1st link"
+#: inc/customizer/fields.php:269
+msgid " Menu Typography"
 msgstr ""
 
 #: inc/customizer/fields.php:383
-msgid "# "
+msgid "text color"
 msgstr ""
 
-#: inc/customizer/fields.php:389
-msgid "Slide2 2nd link"
+#: inc/customizer/fields.php:420
+msgid "Flavour color"
 msgstr ""
 
-#: inc/customizer/fields.php:402
+#: inc/customizer/fields.php:451
+msgid "Hover color"
+msgstr ""
+
+#: inc/customizer/fields.php:485
+msgid "Home Page welcome section"
+msgstr ""
+
+#: inc/customizer/fields.php:486
+msgid "This is a tooltip"
+msgstr ""
+
+#: inc/customizer/fields.php:488
+msgid "RESPONSIVE . EASY TO CUSTOMIZE . USER FRIENDLY. MODERN DESIGN "
+msgstr ""
+
+#: inc/customizer/fields.php:505
+msgid "change background color"
+msgstr ""
+
+#: inc/customizer/fields.php:534
+msgid "change text color"
+msgstr ""
+
+#: inc/customizer/fields.php:566
+msgid "Welcome section padding"
+msgstr ""
+
+#: inc/customizer/fields.php:567
+msgid "percentage"
+msgstr ""
+
+#: inc/customizer/fields.php:594
+msgid "Enable/disabel slider"
+msgstr ""
+
+#: inc/customizer/fields.php:607
+msgid "Disable static slider parallax effect"
+msgstr ""
+
+#: inc/customizer/fields.php:619
+msgid "Slideer button 1st"
+msgstr ""
+
+#: inc/customizer/fields.php:621 parts/part-static.php:3
+msgid "Know More"
+msgstr ""
+
+#: inc/customizer/fields.php:638
+msgid "Slider button 2nd"
+msgstr ""
+
+#: inc/customizer/fields.php:640 parts/part-static.php:4
+msgid "Buy Theme"
+msgstr ""
+
+#: inc/customizer/fields.php:658
+msgid "Slider title text color"
+msgstr ""
+
+#: inc/customizer/fields.php:689
+msgid "Upload your image  "
+msgstr ""
+
+#: inc/customizer/fields.php:698
+msgid "video slider Title"
+msgstr ""
+
+#: inc/customizer/fields.php:700
+msgid "HERE IS Safreen"
+msgstr ""
+
+#: inc/customizer/fields.php:717
+msgid "video slider Description or Tagline"
+msgstr ""
+
+#: inc/customizer/fields.php:719
+msgid "Background Video Cover Background"
+msgstr ""
+
+#: inc/customizer/fields.php:736
+msgid "video slider link 1"
+msgstr ""
+
+#: inc/customizer/fields.php:738 inc/customizer/fields.php:748
+msgid "#"
+msgstr ""
+
+#: inc/customizer/fields.php:746
+msgid "video slider link 2"
+msgstr ""
+
+#: inc/customizer/fields.php:761
 msgid "Enable service Blocks"
 msgstr ""
 
-#: inc/customizer/fields.php:418
+#: inc/customizer/fields.php:777
 msgid "Service Block text color"
 msgstr ""
 
-#: inc/customizer/fields.php:438
+#: inc/customizer/fields.php:827
 msgid "Enable about us section "
 msgstr ""
 
-#: inc/customizer/fields.php:452
+#: inc/customizer/fields.php:841
 msgid "Service Block Title"
 msgstr ""
 
-#: inc/customizer/fields.php:454
+#: inc/customizer/fields.php:843
 msgid "Why Choose Us?"
 msgstr ""
 
-#: inc/customizer/fields.php:462
+#: inc/customizer/fields.php:851
 msgid "Service Block Sub Title"
 msgstr ""
 
-#: inc/customizer/fields.php:464 inc/customizer/fields.php:508
-#: parts/our-team.php:5
+#: inc/customizer/fields.php:853 inc/customizer/fields.php:897
+#: parts/part-our-team.php:5 parts/part-static.php:13
 msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
 msgstr ""
 
-#: inc/customizer/fields.php:482
+#: inc/customizer/fields.php:871
 msgid "Enable Our Team section "
 msgstr ""
 
-#: inc/customizer/fields.php:496
+#: inc/customizer/fields.php:885
 msgid "Our team Title"
 msgstr ""
 
-#: inc/customizer/fields.php:498
+#: inc/customizer/fields.php:887
 msgid "Our Dream Team"
 msgstr ""
 
-#: inc/customizer/fields.php:506
+#: inc/customizer/fields.php:895
 msgid "Our Team Sub Title"
 msgstr ""
 
-#: inc/customizer/fields.php:517
+#: inc/customizer/fields.php:906
 msgid "Show social Icon in header"
 msgstr ""
 
-#: inc/customizer/fields.php:526
+#: inc/customizer/fields.php:915
 msgid "Show social Icon in footer"
 msgstr ""
 
-#: inc/customizer/fields.php:538
+#: inc/customizer/fields.php:924
+msgid "Show search Icon in header"
+msgstr ""
+
+#: inc/customizer/fields.php:935
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer/fields.php:547
+#: inc/customizer/fields.php:944
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer/fields.php:555
+#: inc/customizer/fields.php:952
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer/fields.php:563
+#: inc/customizer/fields.php:960
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer/fields.php:571
+#: inc/customizer/fields.php:968
 msgid "YouTube"
 msgstr ""
 
-#: inc/customizer/fields.php:580
+#: inc/customizer/fields.php:977
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer/fields.php:588
+#: inc/customizer/fields.php:985
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer/fields.php:597
+#: inc/customizer/fields.php:994
 msgid "Flickr"
 msgstr ""
 
-#: inc/customizer/fields.php:605
+#: inc/customizer/fields.php:1002
 msgid "Vimeo"
 msgstr ""
 
-#: inc/customizer/fields.php:613
+#: inc/customizer/fields.php:1010
 msgid "RSS"
 msgstr ""
 
-#: inc/customizer/fields.php:636
+#: inc/customizer/fields.php:1023
+msgid ""
+"<div style=\"padding: 20px;background-color:#D03232; color: #fff;"
+"\">Typography controls available in pro version </div>"
+msgstr ""
+
+#: inc/customizer/fields.php:1032
 msgid "Disable slider in mobile "
 msgstr ""
 
-#: inc/customizer/fields.php:645
+#: inc/customizer/fields.php:1041
 msgid "Disable sidebar in mobile "
 msgstr ""
 
@@ -951,20 +931,20 @@ msgstr ""
 msgid "This panel will provide all the options of the Theme."
 msgstr ""
 
-#: inc/customizer/sections.php:10
+#: inc/customizer/sections.php:8
 msgid "General setting"
 msgstr ""
 
-#: inc/customizer/sections.php:18
-msgid "Color and Reoder settings"
+#: inc/customizer/sections.php:17
+msgid "Header and Title settings"
 msgstr ""
 
-#: inc/customizer/sections.php:30
+#: inc/customizer/sections.php:25
+msgid "Color and Reorder settings"
+msgstr ""
+
+#: inc/customizer/sections.php:37
 msgid "Slider setup"
-msgstr ""
-
-#: inc/customizer/sections.php:38
-msgid "Slider "
 msgstr ""
 
 #: inc/customizer/sections.php:47
@@ -995,72 +975,260 @@ msgstr ""
 msgid "Mobile Layout"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:89
+#: inc/extra.php:20
+msgid "View Documentation"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:140
 msgid "Hebrew"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:90
+#: inc/kirki/includes/class-kirki-l10n.php:141
 msgid "Arabic"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:91
+#: inc/kirki/includes/class-kirki-l10n.php:142
 msgid "Bengali"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:92
+#: inc/kirki/includes/class-kirki-l10n.php:143
 msgid "Gujarati"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:93
+#: inc/kirki/includes/class-kirki-l10n.php:144
 msgid "Tamil"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:94
+#: inc/kirki/includes/class-kirki-l10n.php:145
 msgid "Telugu"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:95
+#: inc/kirki/includes/class-kirki-l10n.php:146
 msgid "Thai"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:99
+#: inc/kirki/includes/class-kirki-l10n.php:150
 msgid "Font Family"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:100
+#: inc/kirki/includes/class-kirki-l10n.php:151
 msgid "Font Size"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:101
-msgid "Font Weight"
-msgstr ""
-
-#: inc/kirki/includes/class-kirki-toolkit.php:102
+#: inc/kirki/includes/class-kirki-l10n.php:153
 msgid "Line Height"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:103
+#: inc/kirki/includes/class-kirki-l10n.php:154
+msgid "Font Style"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:155
 msgid "Letter Spacing"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:104
+#: inc/kirki/includes/class-kirki-l10n.php:156
 msgid "Top"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:105
+#: inc/kirki/includes/class-kirki-l10n.php:157
 msgid "Bottom"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:106
+#: inc/kirki/includes/class-kirki-l10n.php:158
 msgid "Left"
 msgstr ""
 
-#: inc/kirki/includes/class-kirki-toolkit.php:107
+#: inc/kirki/includes/class-kirki-l10n.php:159
 msgid "Right"
 msgstr ""
 
-#: inc/kirki/includes/controls/class-kirki-controls-repeater-control.php:34
-msgid "Add new row"
+#: inc/kirki/includes/class-kirki-l10n.php:160
+msgid "Center"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:161
+msgid "Justify"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:162
+msgid "Color"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:163
+msgid "Add Image"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:164
+msgid "Change Image"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:165
+msgid "Remove"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:166
+msgid "No Image Selected"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:167
+msgid "Select a font-family"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:168
+msgid "Variant"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:169
+msgid "Subset"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:170
+msgid "Size"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:171
+msgid "Height"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:172
+msgid "Spacing"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:173
+msgid "Ultra-Light 100"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:174
+msgid "Ultra-Light 100 Italic"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:175
+msgid "Light 200"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:176
+msgid "Light 200 Italic"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:177
+msgid "Book 300"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:178
+msgid "Book 300 Italic"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:179
+msgid "Normal 400"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:180
+msgid "Normal 400 Italic"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:181
+msgid "Medium 500"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:182
+msgid "Medium 500 Italic"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:183
+msgid "Semi-Bold 600"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:184
+msgid "Semi-Bold 600 Italic"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:185
+msgid "Bold 700"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:186
+msgid "Bold 700 Italic"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:187
+msgid "Extra-Bold 800"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:188
+msgid "Extra-Bold 800 Italic"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:189
+msgid "Ultra-Bold 900"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:190
+msgid "Ultra-Bold 900 Italic"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:191
+msgid "Invalid Value"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:192
+msgid "Add new"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:193
+msgid "row"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:194
+#, php-format
+msgid "Limit: %s rows"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:195
+#: inc/kirki/includes/sections/class-kirki-sections-hover-section.php:23
+msgid "Press return or enter to open this section"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:196
+#: inc/kirki/includes/sections/class-kirki-sections-hover-section.php:29
+msgid "Back"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:197
+#, php-format
+msgid "%s Reset"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:198
+msgid "Text Align"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:199
+msgid "Text Transform"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:200
+msgid "None"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:201
+msgid "Capitalize"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:202
+msgid "Uppercase"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:203
+msgid "Lowercase"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:204
+msgid "Initial"
+msgstr ""
+
+#: inc/kirki/includes/class-kirki-l10n.php:205
+msgid "Select a Page"
 msgstr ""
 
 #: inc/upsell.php:19
@@ -1068,112 +1236,104 @@ msgid "Upgrade to Pro"
 msgstr ""
 
 #: inc/widgets/serviceblock.php:14
-msgid "safreen - Service Block"
-msgstr ""
-
-#: inc/widgets/serviceblock.php:89
-msgid "Modern Design"
-msgstr ""
-
-#: inc/widgets/serviceblock.php:90
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec rhoncus "
-"risus. In ultrices lacinia ipsum, posuere faucibus velit bibendum ac.Lorem "
-"Ipsum is simply dummy text of the printing and typesetting industry."
-msgstr ""
-
-#: inc/widgets/serviceblock.php:101
-msgid "Title"
-msgstr ""
-
-#: inc/widgets/serviceblock.php:105
-msgid "Text"
+msgid "Safreen - Service Block"
 msgstr ""
 
 #: inc/widgets/serviceblock.php:109
+msgid "Category"
+msgstr ""
+
+#: inc/widgets/serviceblock.php:115
 msgid "Link"
 msgstr ""
 
-#: inc/widgets/serviceblock.php:113
+#: inc/widgets/serviceblock.php:119
 msgid "Link Name"
 msgstr ""
 
-#: inc/widgets/serviceblock.php:119
+#: inc/widgets/serviceblock.php:124
 msgid "Image"
 msgstr ""
 
-#: inc/widgets/serviceblock.php:126
+#: inc/widgets/serviceblock.php:131
 msgid "Select Image"
 msgstr ""
 
-#: index.php:129
-msgid "Latest Post "
+#: inc/widgets/serviceblock.php:138
+msgid "Background Image size "
 msgstr ""
 
-#: layout/part-layout2.php:58 single.php:57 template-blog.php:91
+#: layout/part-layout2.php:77 single.php:57 template-blog.php:66
 msgid "0 Comment"
 msgstr ""
 
-#: layout/part-layout2.php:67 template-blog.php:100
+#: layout/part-layout2.php:77 single.php:57 template-blog.php:66
+msgid "Off"
+msgstr ""
+
+#: layout/part-layout2.php:88 parts/part-service-block.php:9
+#: parts/part-service-block.php:11 parts/part-service-block.php:13
+#: template-blog.php:77
 msgid "Read more"
 msgstr ""
 
-#: pagination.php:8
-msgid "Older posts"
-msgstr ""
-
-#: pagination.php:9
-msgid "Newer posts"
-msgstr ""
-
-#: parts/about-us.php:5
-msgid "Why Choose Us? "
-msgstr ""
-
-#: parts/about-us.php:6
-msgid "Find reasons to choose us as your Web partner "
-msgstr ""
-
-#: parts/our-team.php:4
-msgid "Our Dream Team "
-msgstr ""
-
-#: parts/welcome-text.php:3
-msgid "Use this section to showcase important details about your business."
-msgstr ""
-
-#: search.php:19
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: search.php:21
-msgid "Total posts found for"
-msgstr ""
-
-#: search.php:21
-msgid "<span class=\"search-terms\">\""
-msgstr ""
-
-#: search.php:21
-msgid "\"</span>"
-msgstr ""
-
-#: search.php:21
-msgid " &mdash; "
-msgstr ""
-
-#: single.php:33 tag.php:33
+#: page.php:38 single.php:25 tag.php:23
 #, php-format
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: single.php:64 tag.php:64
+#: parts/part-about-us.php:5
+msgid "Why Choose Us? "
+msgstr ""
+
+#: parts/part-about-us.php:6
+msgid "Find reasons to choose us as your Web partner "
+msgstr ""
+
+#: parts/part-layout.php:11
+msgid "Latest Post "
+msgstr ""
+
+#: parts/part-our-team.php:4
+msgid "Our Dream Team "
+msgstr ""
+
+#: parts/part-static.php:12
+msgid "HERE IS Safreen "
+msgstr ""
+
+#: parts/part-static.php:14
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+msgstr ""
+
+#: parts/part-welcome-text.php:3 parts/part-welcome-text.php:4
+msgid "Use this section to showcase important details about your business."
+msgstr ""
+
+#: search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:18
+msgid "Total posts found - "
+msgstr ""
+
+#: single.php:49
+#, php-format
+msgid "View all posts in %s"
+msgstr ""
+
+#: single.php:64 tag.php:54
 msgid "Pages:"
 msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "Safreen"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://www.imonthemes.com/safreen-lite"
 msgstr ""
 
 #. Description of the plugin/theme

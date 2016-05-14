@@ -6,18 +6,8 @@
  */
 ?>
  <!-- head select -->   
-<?php 	
-
-
-
-
-   
-       
-        get_template_part('footer/part','footer1'); ?>
+<?php  get_template_part('footer/part','footer1'); ?>
 <!-- / head select --> 
-
-
-
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -2,22 +2,22 @@
 /**
  * Display upgrade notice on customizer page
  */
-function prefix_upsell_extra() {
+function advance_upsell_extra() {
  // Enqueue the script
  wp_enqueue_script(
- 'prefix-customizer-upsell2',
+ 'advance-customizer-upsell2',
  get_template_directory_uri() . '/js/extra.js',
  array(), '1.0.0',
  true
  );
  // Localize the script
  wp_localize_script(
- 'prefix-customizer-upsell2',
- 'prefixL11n',
+ 'advance-customizer-upsell2',
+ 'advanceL11n',
  
  array(
- 'prefixURL2'	=> esc_url( 'https://upsell.com' ),
- 'prefixLabel2'	=> __( 'View Documentation', 'safreen' ),
+ 'advanceURL2'	=> esc_url( 'http://advance-docs.imonthemes.com/' ),
+ 'advanceLabel2'	=> __( 'View Documentation', 'advance' ),
  
  )
  );
@@ -26,5 +26,5 @@ function prefix_upsell_extra() {
  
  
 }
- add_action( 'customize_controls_enqueue_scripts', 'prefix_upsell_extra' );
+ add_action( 'customize_controls_enqueue_scripts', 'advance_upsell_extra' );
 

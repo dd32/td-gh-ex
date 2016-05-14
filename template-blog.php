@@ -3,41 +3,35 @@
     get_header(); 
 ?>
 
-<?php global $safreen;?>
+<?php global $advance;?>
 
         <?php get_template_part('headers/part','headsingle'); ?>
 
-   <div id="sub_banner">
- <h1>
-<?php the_title(); ?>
-</h1>
+<div id="sub_banner">
+     <h1>
+    <?php the_title(); ?>
+    </h1>
 <div class='h-line'></div>
-
-</div>
-
-
-
-
+	</div><!-- sub_banner -->
+	
 <div id="content" >
 
 <div class="row">
 
 <div class="large-9 columns <?php if ( !is_active_sidebar( 'sidebar' ) ){ ?> nosid <?php }?>">
 
-
-
 <!--Content-->
  <?php  
   		
-		if(!empty($safreen['blog_cat_id'])){
-			$blogcat = $safreen['blog_cat_id'];
+		if(!empty($advance['blog_cat_id'])){
+			$blogcat = $advance['blog_cat_id'];
 			$blogcats =implode(',', $blogcat);
 			}else{$blogcats = '';}
        $args = array(
                      'post_type' => 'post',
                      'cat' => ''.$blogcats.'',
                      'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
-                     'posts_per_page' => ''.absint($safreen['blog_num_id']).'');
+                     'posts_per_page' => ''.absint($advance['blog_num_id']).'');
       $the_query = new WP_Query( $args );
    ?>
                 <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
@@ -69,7 +63,7 @@
 							</span>
 							
 							<?php } ?>
-                          <div class="post_comments"><a><i class="fa fa-comments"></i><span class="comments_number"> <?php comments_popup_link( __('0 Comment', 'safreen'), __('1 Comment', 'safreen'), __('% Comments', 'safreen'), '', __('Off' , 'safreen')); ?> </span><span class="icon-comment"></span></a></div>  
+                          <div class="post_comments"><a><i class="fa fa-comments"></i><span class="comments_number"> <?php comments_popup_link( __('0 Comment', 'advance'), __('1 Comment', 'advance'), __('% Comments', 'advance'), '', __('Off' , 'advance')); ?> </span><span class="icon-comment"></span></a></div>  
                             
 						</div>
                         
@@ -78,12 +72,10 @@
 							<p><?php the_excerpt(); ?></p>
 							
 						</div>
-                        <div class="readmore"><a href="<?php echo get_permalink();?>" rel="bookmark" class="more-link"><?php esc_html__('Read more', 'safreen'); ?>
-                        
-                        
-                      </a>
-                      
-                      
+                        <div class="readmore">
+                        <a href="<?php echo get_permalink();?>" rel="bookmark" class="more-link">
+						<?php echo esc_html__('Read more', 'advance'); ?>
+                       </a>
                       </div>
 						<div class="post_info post_info_3 clearboth">
                        
@@ -101,11 +93,11 @@
   <?php endwhile ?>
   
   
-              <!--PAGINATION START-ast_pagenav-->
-                <div class="safreen_nav">
+              <!--PAGINATION -->
+                <div class="advance_nav">
                     <?php
                         global $the_query;
-                        $big = 999999999; // need an unlikely integer
+                        $big = 999999999; 
                             echo paginate_links( array(
                                 'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
                                 'format' => '?paged=%#%',

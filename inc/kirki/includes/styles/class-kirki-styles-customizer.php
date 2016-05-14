@@ -9,134 +9,167 @@
  * @category    Core
  * @author      Aristeides Stathopoulos
  * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 if ( ! class_exists( 'Kirki_Styles_Customizer' ) ) {
+
+	/**
+	 * Adds styles to the customizer.
+	 */
 	class Kirki_Styles_Customizer {
 
-		public $color_back;
-		public $color_font;
+		/**
+		 * Background Color.
+		 *
+		 * @access public
+		 * @var string
+		 */
+		public $color_back = false;
+
+		/**
+		 * Font Color.
+		 *
+		 * @access public
+		 * @var string
+		 */
+		public $color_font = false;
+
+		/**
+		 * Accent Color.
+		 *
+		 * @access public
+		 * @var string
+		 */
 		public $color_accent;
+
+		/**
+		 * Border Color.
+		 *
+		 * @access public
+		 * @var string
+		 */
 		public $border_color;
+
+		/**
+		 * Buttons Color.
+		 *
+		 * @access public
+		 * @var string
+		 */
 		public $buttons_color;
+
+		/**
+		 * Controls Color.
+		 *
+		 * @access public
+		 * @var string
+		 */
 		public $controls_color;
+
+		/**
+		 * Arrows Color.
+		 *
+		 * @access public
+		 * @var string
+		 */
 		public $arrows_color;
+
+		/**
+		 * Accent text Color.
+		 *
+		 * @access public
+		 * @var string
+		 */
 		public $color_accent_text;
+
+		/**
+		 * Section Background Color.
+		 *
+		 * @access public
+		 * @var string
+		 */
 		public $section_background_color;
 
+		/**
+		 * Have we already processed styling?
+		 *
+		 * @access public
+		 * @var bool
+		 */
 		public $process = false;
 
+		/**
+		 * Constructor.
+		 *
+		 * @access public
+		 */
 		public function __construct() {
-
 			add_action( 'customize_controls_print_styles', array( $this, 'customizer_styles' ), 99 );
-			add_action( 'customize_controls_enqueue_scripts', array( $this, 'customizer_scripts' ), 99 );
-
 		}
 
 		/**
 		 * Enqueue the stylesheets required.
+		 *
+		 * @access public
 		 */
 		public function customizer_styles() {
-			wp_enqueue_style( 'kirki-customizer-css', trailingslashit( Kirki::$url ) . 'assets/css/customizer.css', null, Kirki_Toolkit::$version );
+			wp_enqueue_style( 'kirki-customizer-css', trailingslashit( Kirki::$url ) . 'assets/css/customizer.css', null );
 			wp_add_inline_style( 'kirki-customizer-css', $this->custom_css() );
 		}
 
 		/**
-		 * Enqueue the scripts required.
+		 * Gets the colors used.
+		 *
+		 * @access public
+		 * @return null|void
 		 */
-		public function customizer_scripts() {
-			if ( ! Kirki_Toolkit::kirki_debug() ) {
-				$suffix = '.min';
-				if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-					$suffix = '';
-				}
-
-				self::enqueue_customizer_control_script( 'codemirror', 'vendor/codemirror/lib/codemirror', array( 'jquery' ) );
-				self::enqueue_customizer_control_script( 'selectize', 'vendor/selectize', array( 'jquery' ) );
-				wp_enqueue_script( 'jquery-ui-core' );
-				wp_enqueue_script( 'jquery-ui-sortable' );
-				wp_enqueue_script( 'jquery-ui-button' );
-
-				$deps = array(
-					'jquery',
-					'customize-base',
-					'jquery-ui-core',
-					'jquery-ui-button',
-					'jquery-ui-sortable',
-					'codemirror',
-					'jquery-ui-spinner',
-					'selectize',
-				);
-
-				wp_enqueue_script( 'kirki-customizer-js', trailingslashit( Kirki::$url ) . 'assets/js/customizer' . $suffix . '.js', $deps, Kirki_Toolkit::$version );
-			}
-		}
-
-		/**
-		 * Helper that enqueues a script for a control.
-		 *
-		 * Every Kirki Control should use this function to enqueue
-		 * its main JS file (not dependencies like jQuery or jQuery UI).
-		 *
-		 * These files are only enqueued when debugging Kirki
-		 *
-		 * @param string $handle
-		 * @param string $file
-		 * @param array  $deps
-		 */
-		public static function enqueue_customizer_control_script( $handle, $file = null, $deps = array(), $in_footer = false ) {
-			if ( ( false !== strpos( $file, 'controls/' ) && Kirki_Toolkit::kirki_debug() ) || false === strpos( $file, 'controls/' ) ) {
-				$file = trailingslashit( Kirki::$url ) . 'assets/js/' . $file . '.js';
-				foreach ( $deps as $dep ) {
-					wp_enqueue_script( $dep );
-				}
-				// We are debugging, no need of version or suffix
-				wp_enqueue_script( $handle, $file, $deps, '', $in_footer );
-			}
-		}
-
 		public function get_colors() {
 
 			$config = apply_filters( 'kirki/config', array() );
 
-			// No need to proceed if we haven't set any colors
+			// No need to proceed if we haven't set any colors.
 			if ( ! isset( $config['color_back'] ) && ! isset( $config['color_accent'] ) ) {
 				return;
 			}
-			// set the $process to true.
+			if ( ! $config['color_back'] && ! $config['color_accent'] ) {
+				return;
+			}
+			// Set the $process to true.
 			$this->process = true;
-			// Calculate the accent color
+			// Calculate the accent color.
 			if ( isset( $config['color_accent'] ) ) {
 				$this->color_accent = Kirki_Color::sanitize_hex( $config['color_accent'] );
 			}
 
-			// Calculate the background & font colors
-			$this->color_back = false;
-			$this->color_font = false;
+			// Calculate the background & font colors.
 			if ( isset( $config['color_back'] ) ) {
 				$this->color_back = Kirki_Color::sanitize_hex( $config['color_back'] );
 				$this->color_font = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? '#f2f2f2' : '#222';
 			}
 
-			$this->border_color             = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? 'rgba(255,255,255,.2)' : 'rgba(0,0,0,.2)';
-			$this->buttons_color            = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? Kirki_Color::adjust_brightness( $this->color_back, 80 ) : Kirki_Color::adjust_brightness( $this->color_back, -80 );
+			if ( $this->color_back ) {
+				$this->buttons_color = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? Kirki_Color::adjust_brightness( $this->color_back, 80 ) : Kirki_Color::adjust_brightness( $this->color_back, -80 );
+				$this->border_color             = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? 'rgba(255,255,255,.2)' : 'rgba(0,0,0,.2)';
+				$this->arrows_color             = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? Kirki_Color::adjust_brightness( $this->color_back, 120 ) : Kirki_Color::adjust_brightness( $this->color_back, -120 );
+				$this->section_background_color = Kirki_Color::mix_colors( $this->color_back, '#ffffff', 10 );
+			}
 			$this->controls_color           = ( ( 170 > Kirki_Color::get_brightness( $this->color_accent ) ) ) ? '#ffffff;' : '#333333';
-			$this->arrows_color             = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? Kirki_Color::adjust_brightness( $this->color_back, 120 ) : Kirki_Color::adjust_brightness( $this->color_back, -120 );
 			$this->color_accent_text        = ( 170 > Kirki_Color::get_brightness( $this->color_accent ) ) ? Kirki_Color::adjust_brightness( $this->color_accent, 120 ) : Kirki_Color::adjust_brightness( $this->color_accent, -120 );
-			$this->section_background_color = Kirki_Color::mix_colors( $this->color_back, '#ffffff', 10 );
 
 		}
 
 
 		/**
-		 * Add custom CSS rules to the head, applying our custom styles
+		 * Add custom CSS rules to the head, applying our custom styles.
+		 *
+		 * @access public
 		 */
 		public function custom_css() {
 
@@ -152,12 +185,15 @@ if ( ! class_exists( 'Kirki_Styles_Customizer' ) ) {
 		}
 
 		/**
-		 * @param string $styles
+		 * Replaces CSS placefolders with our settings.
+		 *
+		 * @access public
+		 * @param string $styles The CSS.
+		 * @return string
 		 */
 		public function replace_placeholders( $styles ) {
-			/**
-			 * replace CSS placeholders with actual values
-			 */
+
+			// Replace CSS placeholders with actual values.
 			$replacements = array(
 				'COLOR_BACK'               => $this->color_back,
 				'COLOR_ACCENT_TEXT'        => $this->color_accent_text,
@@ -177,41 +213,38 @@ if ( ! class_exists( 'Kirki_Styles_Customizer' ) ) {
 
 		}
 
+		/**
+		 * Get the stylesheets.
+		 *
+		 * @access public
+		 * @return string
+		 */
 		public function include_stylesheets() {
 
 			$config = apply_filters( 'kirki/config', array() );
 			$styles = '';
 
-			Kirki_Helper::init_filesystem();
-			global $wp_filesystem;
-
-			/**
-			 * Include the width CSS if necessary
-			 */
+			// Include the width CSS if necessary.
 			if ( isset( $config['width'] ) ) {
-				$styles .= $wp_filesystem->get_contents( Kirki::$path . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'customizer-dynamic-css-width.css' );
-				/**
-				 * Replace width placeholder with actual value
-				 */
+				$path = wp_normalize_path( Kirki::$path . '/assets/css/customizer-dynamic-css-width.php' );
+				$styles .= include $path;
+
+				// Replace width placeholder with actual value.
 				$styles = str_replace( 'WIDTH', $config['width'], $styles );
 			}
 
-			/**
-			 * Include the color modifications CSS if necessary
-			 */
+			// Include the color modifications CSS if necessary.
 			if ( false !== $this->color_back && false !== $this->color_font ) {
-				$styles .= $wp_filesystem->get_contents( Kirki::$path . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'customizer-dynamic-css-colors.css' );
+				$path = wp_normalize_path( Kirki::$path . '/assets/css/customizer-dynamic-css-colors.php' );
+				$styles .= include $path;
 			}
 
-			/**
-			 * Include generic CSS for controls
-			 */
-			$styles .= $wp_filesystem->get_contents( Kirki::$path . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'customizer-dynamic-css.css' );
+			// Include generic CSS for controls.
+			$path = wp_normalize_path( Kirki::$path . '/assets/css/customizer-dynamic-css.php' );
+			$styles .= include $path;
 
 			return $styles;
 
 		}
-
 	}
-
 }

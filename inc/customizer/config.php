@@ -4,63 +4,82 @@
  * The configuration options for Kirki.
  * Change the assets URL for kirki so the customizer styles & scripts are properly loaded.
  */
-function safreen_customizer_config( $args ) {
+function advance_customizer_config( $args ) {
 
 	$args['url_path'] = get_template_directory_uri() . '/inc/kirki/';
+	
 	return $args;
+	
+	 	
+	
+	
 
 }
 
 
+					
 	
-add_filter( 'kirki/config', 'safreen_customizer_config' );
+add_filter( 'kirki/config', 'advance_customizer_config' );
 
-function safreen_kirki_i18n( $config ) {
+function advance_kirki_i10n( $config ) {
 
-    $config['i18n'] = array(
-        'background-color'      => __( 'Background Color', 'safreen' ),
-        'background-image'      => __( 'Background Image', 'safreen' ),
-        'no-repeat'             => __( 'No Repeat', 'safreen' ),
-        'repeat-all'            => __( 'Repeat All', 'safreen' ),
-        'repeat-x'              => __( 'Repeat Horizontally', 'safreen' ),
-        'repeat-y'              => __( 'Repeat Vertically', 'safreen' ),
-        'inherit'               => __( 'Inherit', 'safreen' ),
-        'background-repeat'     => __( 'Background Repeat', 'safreen' ),
-        'cover'                 => __( 'Cover', 'safreen' ),
-        'contain'               => __( 'Contain', 'safreen' ),
-        'background-size'       => __( 'Background Size', 'safreen' ),
-        'fixed'                 => __( 'Fixed', 'safreen' ),
-        'scroll'                => __( 'Scroll', 'safreen' ),
-        'background-attachment' => __( 'Background Attachment', 'safreen' ),
-        'left-top'              => __( 'Left Top', 'safreen' ),
-        'left-center'           => __( 'Left Center', 'safreen' ),
-        'left-bottom'           => __( 'Left Bottom', 'safreen' ),
-        'right-top'             => __( 'Right Top', 'safreen' ),
-        'right-center'          => __( 'Right Center', 'safreen' ),
-        'right-bottom'          => __( 'Right Bottom', 'safreen' ),
-        'center-top'            => __( 'Center Top', 'safreen' ),
-        'center-center'         => __( 'Center Center', 'safreen' ),
-        'center-bottom'         => __( 'Center Bottom', 'safreen' ),
-        'background-position'   => __( 'Background Position', 'safreen' ),
-        'background-opacity'    => __( 'Background Opacity', 'safreen' ),
-        'ON'                    => __( 'ON', 'safreen' ),
-        'OFF'                   => __( 'OFF', 'safreen' ),
-        'all'                   => __( 'All', 'safreen' ),
-        'cyrillic'              => __( 'Cyrillic', 'safreen' ),
-        'cyrillic-ext'          => __( 'Cyrillic Extended', 'safreen' ),
-        'devanagari'            => __( 'Devanagari', 'safreen' ),
-        'greek'                 => __( 'Greek', 'safreen' ),
-        'greek-ext'             => __( 'Greek Extended', 'safreen' ),
-        'khmer'                 => __( 'Khmer', 'safreen' ),
-        'latin'                 => __( 'Latin', 'safreen' ),
-        'latin-ext'             => __( 'Latin Extended', 'safreen' ),
-        'vietnamese'            => __( 'Vietnamese', 'safreen' ),
-        'serif'                 => _x( 'Serif', 'font style', 'safreen' ),
-        'sans-serif'            => _x( 'Sans Serif', 'font style', 'safreen' ),
-        'monospace'             => _x( 'Monospace', 'font style', 'safreen' ),
+    $config['Kirki_l10n'] = array(
+        'background-color'      => __( 'Background Color', 'advance' ),
+        'background-image'      => __( 'Background Image', 'advance' ),
+        'no-repeat'             => __( 'No Repeat', 'advance' ),
+        'repeat-all'            => __( 'Repeat All', 'advance' ),
+        'repeat-x'              => __( 'Repeat Horizontally', 'advance' ),
+        'repeat-y'              => __( 'Repeat Vertically', 'advance' ),
+        'inherit'               => __( 'Inherit', 'advance' ),
+        'background-repeat'     => __( 'Background Repeat', 'advance' ),
+        'cover'                 => __( 'Cover', 'advance' ),
+        'contain'               => __( 'Contain', 'advance' ),
+        'background-size'       => __( 'Background Size', 'advance' ),
+        'fixed'                 => __( 'Fixed', 'advance' ),
+        'scroll'                => __( 'Scroll', 'advance' ),
+        'background-attachment' => __( 'Background Attachment', 'advance' ),
+        'left-top'              => __( 'Left Top', 'advance' ),
+        'left-center'           => __( 'Left Center', 'advance' ),
+        'left-bottom'           => __( 'Left Bottom', 'advance' ),
+        'right-top'             => __( 'Right Top', 'advance' ),
+        'right-center'          => __( 'Right Center', 'advance' ),
+        'right-bottom'          => __( 'Right Bottom', 'advance' ),
+        'center-top'            => __( 'Center Top', 'advance' ),
+        'center-center'         => __( 'Center Center', 'advance' ),
+        'center-bottom'         => __( 'Center Bottom', 'advance' ),
+        'background-position'   => __( 'Background Position', 'advance' ),
+        'background-opacity'    => __( 'Background Opacity', 'advance' ),
+        'ON'                    => __( 'ON', 'advance' ),
+        'OFF'                   => __( 'OFF', 'advance' ),
+        'all'                   => __( 'All', 'advance' ),
+        'cyrillic'              => __( 'Cyrillic', 'advance' ),
+        'cyrillic-ext'          => __( 'Cyrillic Extended', 'advance' ),
+        'devanagari'            => __( 'Devanagari', 'advance' ),
+        'greek'                 => __( 'Greek', 'advance' ),
+        'greek-ext'             => __( 'Greek Extended', 'advance' ),
+        'khmer'                 => __( 'Khmer', 'advance' ),
+        'latin'                 => __( 'Latin', 'advance' ),
+        'latin-ext'             => __( 'Latin Extended', 'advance' ),
+        'vietnamese'            => __( 'Vietnamese', 'advance' ),
+        'serif'                 => _x( 'Serif', 'font style', 'advance' ),
+        'sans-serif'            => _x( 'Sans Serif', 'font style', 'advance' ),
+        'monospace'             => _x( 'Monospace', 'font style', 'advance' ),
+		
+		
     );
 
     return $config;
 
 }
-add_filter( 'kirki/config', 'safreen_kirki_i18n' );
+add_filter( 'kirki/config', 'advance_kirki_i10n' );
+
+function kirki_demo_configuration_sample_styling( $config ) {
+	return wp_parse_args( array(
+		'logo_image'   => esc_url(get_template_directory_uri() . '/images/logosaf.png'),
+		'description'  => esc_attr__( 'The theme description.', 'advance' ),
+		'color_accent' => '#0091EA',
+		'color_back'   => '#FFFFFF',
+		
+	), $config );
+}
+add_filter( 'kirki/config', 'kirki_demo_configuration_sample_styling' );

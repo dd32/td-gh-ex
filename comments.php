@@ -4,7 +4,7 @@
  *
  * The area of the page that contains both current comments
  * and the comment form.
- * @since safreen 1.0
+ * @since advance 1.0
  */
 
 /*
@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 				$comments_number = get_comments_number();
 				if ( 1 === $comments_number ) {
 					/* translators: %s: post title */
-					printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'safreen' ), get_the_title() );
+					printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'advance' ), get_the_title() );
 				} else {
 					printf(
 						/* translators: 1: number of comments, 2: post title */
@@ -34,7 +34,7 @@ if ( post_password_required() ) {
 							'%1$s thoughts on &ldquo;%2$s&rdquo;',
 							$comments_number,
 							'comments title',
-							'safreen'
+							'advance'
 						),
 						number_format_i18n( $comments_number ),
 						get_the_title()
@@ -48,14 +48,14 @@ if ( post_password_required() ) {
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
-					'style'       => 'ol',
+					'style'       => 'ul',
 					'short_ping'  => true,
 					'avatar_size' => 42,
 				) );
 			?>
 		</ol><!-- .comment-list -->
 
-		<div class="safreen_nav">
+		<div class="advance_nav">
         <?php paginate_comments_links( array('prev_text' => '&laquo;', 'next_text' => '&raquo;')) ?> 
         </div>
 
@@ -65,7 +65,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'safreen' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'advance' ); ?></p>
 	<?php endif; ?>
 
 	<?php

@@ -1,7 +1,17 @@
 @import "global.scss";
 
+@import "panels/expanded";
+
+@import "sections/expanded";
+@import "sections/hover";
+
 @import "controls/checkbox";
 @import "controls/code";
+@import "controls/color";
+@import "controls/multicolor";
+@import "controls/color-palette";
+@import "controls/date";
+@import "controls/dashicons";
 @import "controls/dimension";
 @import "controls/number";
 @import "controls/palette";

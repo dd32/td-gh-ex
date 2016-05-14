@@ -4,9 +4,10 @@
 				
 			else :
 		?>
-			<div class="wp-pagenavi">
-				<div class="alignleft"><?php next_posts_link('&laquo; '.__('Older posts','safreen')) ?></div> 
-				<div class="alignright"><?php previous_posts_link(__('Newer posts','safreen').' &raquo;') ?></div>
+			<div class="advance_nav">
+			<?php	// Previous/next page navigation.
+			the_posts_pagination(  array('prev_text' => '&laquo;', 'next_text' => '&raquo;') );?> 
+
 			</div>
 		<?php endif; ?>      
 <!-- /pagination -->

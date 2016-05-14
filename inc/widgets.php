@@ -1,19 +1,19 @@
 <?php
 
 //Load the widgets
-require(get_template_directory() . '/inc/widgets/serviceblock.php');
 
 
 
-add_action('admin_enqueue_scripts', 'safreen_widget_scripts');
 
-function safreen_widget_scripts() {    
+add_action('admin_enqueue_scripts', 'advance_widget_scripts');
+
+function advance_widget_scripts() {    
 
 	if( function_exists( 'wp_enqueue_media' ) ) {
 
 	wp_enqueue_media();
 	}
-    wp_enqueue_script('safreen_widget_scripts', get_template_directory_uri() . '/js/widget.js', false, '1.0', true);
+    wp_enqueue_script('advance_widget_scripts', get_template_directory_uri() . '/js/widget.js', false, '1.0', true);
 	
 }
 
@@ -22,22 +22,22 @@ function safreen_widget_scripts() {
 /******          WIDGETS     *************/
 /*****************************************/
 
-add_action('widgets_init', 'safreentheme_register_widgets');
+add_action('widgets_init', 'advancetheme_register_widgets');
 
-function safreentheme_register_widgets() {    
+function advancetheme_register_widgets() {    
 
-		register_widget('safreen_serviceblock');
+		register_widget('advance_aboutus');
 	
-	$safreen_sidebars = array ( 'sidebar-serviceblock' => 'sidebar-serviceblock');
+	$advance_sidebars = array ( 'sidebar-frontpage' => 'sidebar-frontpage');
 	
 	/* Register sidebars */
-	foreach ( $safreen_sidebars as $safreen_sidebar ):
+	foreach ( $advance_sidebars as $advance_sidebar ):
 	
 		
 			
-			if( $safreen_sidebar == 'sidebar-serviceblock' ):
+			if( $advance_sidebar == 'sidebar-frontpage' ):
 		
-			$safreen_name = __('Service Block', 'safreen');
+			$advance_name = __('Frontpage widget area', 'advance');
 			
             endif;
 		endforeach;

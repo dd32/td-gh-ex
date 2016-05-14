@@ -1,13 +1,11 @@
 <?php
-
 /**
  * Add sections
  */
-
-
+ 
 /* adding layout_front_page section*/
 Kirki::add_section( 'layout_front_page', array(
-    'title'          =>esc_attr__( 'General setting', 'safreen' ),
+    'title'          =>esc_attr__( 'General setting', 'advance' ),
     'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 1,
     
@@ -15,16 +13,16 @@ Kirki::add_section( 'layout_front_page', array(
 ) );
 
 
-Kirki::add_section( 'safreen_headtitle_settings', array(
-    'title'          =>esc_attr__( 'Header and Title settings', 'safreen' ),
+Kirki::add_section( 'advance_headtitle_settings', array(
+    'title'          =>esc_attr__( 'Header and Title settings', 'advance' ),
      'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 1,
     
     
 ) );
 
-Kirki::add_section( 'safreen_color_settings', array(
-    'title'          =>esc_attr__( 'Color and Reorder settings', 'safreen' ),
+Kirki::add_section( 'advance_color_settings', array(
+    'title'          =>esc_attr__( 'Color and Reorder settings', 'advance' ),
      'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 1,
     
@@ -36,40 +34,33 @@ Kirki::add_section( 'safreen_color_settings', array(
 
 
 Kirki::add_section( 'slider_setup', array(
-    'title'          => esc_attr__( 'Slider setup', 'safreen' ),
+    'title'          => esc_attr__( 'Slider setup', 'advance' ),
     'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 2,
     
     
 ) );
 
-Kirki::add_section( 'slider_img', array(
-    'title'          => esc_attr__( 'Slider ', 'safreen' ),
-    'panel'          => 'theme_options', // Not typically needed.
-    'priority'       => 3,
-    
-    
-) );
 
 
-Kirki::add_section( 'safreen_servicesetup', array(
-    'title'          =>esc_attr__( 'Service block setup  ' , 'safreen'),
+Kirki::add_section( 'advance_servicesetup', array(
+    'title'          =>esc_attr__( 'Service block setup  ' , 'advance'),
     'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 4,
    
     
 ) );
 
-Kirki::add_section( 'safreen_aboutus_setting', array(
-    'title'          =>esc_attr__( 'About us setup  ' , 'safreen'),
+Kirki::add_section( 'advance_aboutus_setting', array(
+    'title'          =>esc_attr__( 'About us setup  ' , 'advance'),
     'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 6,
    
     
 ) );
 
-Kirki::add_section( 'safreen_ourteam_setting', array(
-    'title'          =>esc_attr__( 'Our Team setup  ' , 'safreen'),
+Kirki::add_section( 'advance_ourteam_setting', array(
+    'title'          =>esc_attr__( 'Our Team setup  ' , 'advance'),
     'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 8,
    
@@ -77,16 +68,16 @@ Kirki::add_section( 'safreen_ourteam_setting', array(
 ) );
 
 
-Kirki::add_section( 'safreen_callout',array(
-    'title'          => esc_attr__( 'Welcome Section', 'safreen' ),
+Kirki::add_section( 'advance_callout',array(
+    'title'          => esc_attr__( 'Welcome Section', 'advance' ),
     'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 11,
     
     
 ) );
 
-Kirki::add_section( 'safreen_typography', array(
-    'title'          => esc_attr__( 'Typography settings', 'safreen' ),
+Kirki::add_section( 'advance_typography', array(
+    'title'          => esc_attr__( 'Typography settings', 'advance' ),
     'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 12,
     
@@ -95,8 +86,8 @@ Kirki::add_section( 'safreen_typography', array(
 
 
 
-Kirki::add_section( 'safreen_social', array(
-    'title'          => esc_attr__( 'social', 'safreen' ),
+Kirki::add_section( 'advance_social', array(
+    'title'          => esc_attr__( 'social', 'advance' ),
     'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 13,
     'capability'     => 'edit_theme_options',
@@ -104,13 +95,10 @@ Kirki::add_section( 'safreen_social', array(
 ) );
 
 
-Kirki::add_section( 'safreen_mobile', array(
-    'title'          => esc_attr__( 'Mobile Layout', 'safreen' ),
+Kirki::add_section( 'advance_mobile', array(
+    'title'          => esc_attr__( 'Mobile Layout', 'advance' ),
     'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 14,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
-
-
-

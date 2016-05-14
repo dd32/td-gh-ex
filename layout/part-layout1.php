@@ -1,41 +1,26 @@
-     <?php global $safreen;?>
-  
-  
-  
-  
   <div class="lay1 wow fadeInup">
   
-  
+ 
   
   <?php if(is_front_page()) { 
-      $args = array(
+      $args_advancepost = array(
                      
                      'post_type' => 'post',
                      'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
-                     
+					 
+                  
                      );
       
-     new WP_Query( $args ); 
+     new WP_Query( $args_advancepost ); 
      
   } ?>
   
-  
-          
-   <?php wp_reset_postdata(); ?>
-  
-  
-         
-                     <?php if(have_posts()): ?><?php while(have_posts()): ?><?php the_post(); ?>
+<?php wp_reset_postdata(); ?>
+  			<?php if(have_posts()): ?><?php while(have_posts()): ?><?php the_post(); ?>
                   <div <?php post_class(); ?> id="post-<?php the_ID(); ?>"> 
-                               </div>
-                               
-   
-     
-     
-     
-                
-  
-                    <div class="matchhe large-3 medium-6 columns  ">
+                      
+                       
+                    <div class="matchhe large-3 medium-6 columns wow fadeInLeft page-delay   ">
               
                   <div class="post_image">
                        <!--CALL TO POST IMAGE-->
@@ -53,31 +38,30 @@
                                 echo '<div class=" imgwrap">';
                                 echo '<a href="'; esc_url( the_permalink()); echo '">';
      							echo '<img src="';
-     							echo catch_that_image();
+     							echo  advance_catch_that_image();
      							echo '" alt="" />';
      							echo '</a>';
     							echo '</div>';
     					};?>
-        
-       
-                     </div>
+													</div><!-- post image -->
                   
                   
                   <div class=" post_content2">
                  <div class=" post_content3">
                       
-                      <?php the_title( sprintf( '<h2 class="postitle_lay"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+    <?php the_title( sprintf( '<h2 class="postitle_lay"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
                        
-                      <?php safreen_excerpt('safreen_excerptlength_teaser', 'safreen_excerptmore'); ?> 
+                      <p><?php echo excerpt(30); ?></p> 
                       
-                  </div> </div>
-   
-                          </div>
+                  </div> <!-- .post_content2 -->
+                  	</div><!-- post_content3 -->
+   						</div><!-- columns -->
+                        </div>
               <?php endwhile ?> 
   
               <?php endif ?>
           <?php get_template_part('pagination'); ?>  
-  </div>
+  </div><!-- lay-->
               
                     
        

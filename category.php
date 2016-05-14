@@ -18,7 +18,7 @@ get_header(); ?>
 
  <div id="sub_banner">
 <h1>
-<?php printf( __( ' %s', 'safreen' ), single_cat_title( '', false ) ); ?>
+<?php printf( __( ' %s', 'advance' ), single_cat_title( '', false ) ); ?>
 </h1>
 </div>
 

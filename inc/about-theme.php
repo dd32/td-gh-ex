@@ -16,8 +16,8 @@ function prefix_upsell_theme() {
  'prefixL12n',
  
  array(
- 'prefixURL3'	=> esc_url( 'https://upsell.com' ),
- 'prefixLabel3'	=> __( 'About Theme & Demo', 'safreen' ),
+ 'prefixURL3'	=> esc_url( 'http://www.imonthemes.com/advance-lite/' ),
+ 'prefixLabel3'	=> __( 'About Theme & Demo', 'advance' ),
  
  )
  );
