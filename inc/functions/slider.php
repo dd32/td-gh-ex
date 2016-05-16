@@ -47,13 +47,29 @@ if ( !function_exists( 'awaken_featured_posts' ) ) :
             <div class="awaken-featured-posts">
                 <?php
 
-                $fposts_category = get_theme_mod( 'featured_posts_category', '' );
+                $method = get_theme_mod( 'fposts_display_method', 'category' );
 
-                $fposts = new WP_Query( array(
-                    'posts_per_page' => 2,
-                    'cat'	=>	$fposts_category,
-                    'ignore_sticky_posts' => 1
-                ));
+                if ( $method == "sticky" ) {
+                    
+                    $args = array(
+                        'posts_per_page'        => 2,
+                        'post__in'              => get_option( 'sticky_posts' ),
+                        'ignore_sticky_posts'   => 1
+                    );
+
+                } else {
+                    
+                    $fposts_category = get_theme_mod( 'featured_posts_category', '' );
+
+                    $args = array(
+                        'posts_per_page'        => 2,
+                        'cat'                   => $fposts_category,
+                        'ignore_sticky_posts'   => 1
+                    );
+
+                }
+
+                $fposts = new WP_Query( $args );
 
                 while( $fposts->have_posts() ) : $fposts->the_post(); ?>
 

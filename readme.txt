@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.0.4
+Version    : 2.0.5
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -175,4 +175,7 @@ Fixed Google Plus icon not displaying issue.
 
 - Version 2.0.4
 Removed checking useragent for html5shiv and used wp_script_add_data instead.
-Removed unwanted file_exists check for admin-config.php. 
+Removed unwanted file_exists check for admin-config.php.
+
+- Version 2.0.5
+Added a method to display sticky posts for the two featured posts that are just next to the slider.
