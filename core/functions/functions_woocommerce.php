@@ -34,7 +34,7 @@ if ( ! function_exists( 'bazaarlite_header_cart' ) ) {
 
         <section class="header-cart">
         
-            <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','bazaar-lite' ); ?>">
+            <a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e( 'View your shopping cart','bazaar-lite' ); ?>">
                 
                 <i class="fa fa-shopping-cart"></i> 
                 <span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'bazaar-lite' ), WC()->cart->cart_contents_count ); ?></span>
@@ -62,7 +62,7 @@ if ( ! function_exists( 'bazaarlite_cart_link_fragment' ) ) {
 		ob_start();
 
 ?>
-		<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','bazaar-lite' ); ?>">
+		<a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e( 'View your shopping cart','bazaar-lite' ); ?>">
             
 			<i class="fa fa-shopping-cart"></i> 
 			<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'bazaar-lite' ), WC()->cart->cart_contents_count ); ?></span>

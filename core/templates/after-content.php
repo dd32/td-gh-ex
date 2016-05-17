@@ -16,7 +16,7 @@ if (!function_exists('bazaarlite_after_content_function')) {
 	
 		if ( ! bazaarlite_is_single() ) :
 			
-			do_action('bazaarlite_excerpt');
+			the_excerpt();
 	
 		else: 
 			

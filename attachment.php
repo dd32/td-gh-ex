@@ -30,11 +30,11 @@
            
 					?>
                             
-                        <a rel="prettyPhoto"  href="<?php echo wp_get_attachment_url($post->id); ?>" title="<?php the_title(); ?>"><img src="<?php echo $att_image[0];?>" width="<?php echo $att_image[1];?>" height="<?php echo $att_image[2];?>"  class="attachment-medium" alt="<?php $post->post_excerpt; ?>" /></a>
+                        <a rel="prettyPhoto" href="<?php echo esc_url(wp_get_attachment_url($post->id)); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><img src="<?php echo $att_image[0];?>" width="<?php echo $att_image[1];?>" height="<?php echo $att_image[2];?>"  class="attachment-medium" alt="<?php echo esc_attr(get_the_title()); ?>" /></a>
                             
 					<?php else: ?>
                         
-                        <a href="<?php echo wp_get_attachment_url($post->id); ?>" title="<?php the_title(); ?>"> <?php the_title(); ?>  </a>
+                        <a href="<?php echo esc_url(wp_get_attachment_url($post->id)); ?>" title="<?php echo esc_attr(get_the_title()); ?>"> <?php the_title(); ?>  </a>
         
 					<?php endif; ?>
         	

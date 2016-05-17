@@ -48,20 +48,11 @@
         
                         <h3> <?php _e( 'What can i do?',"bazaar-lite" ) ?> </h3>           
         
-                        <p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage','bazaar-lite'); ?> </a> </p>
+                        <p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr(get_bloginfo('name')) ?>"> <?php _e( 'Back to the homepage','bazaar-lite'); ?> </a> </p>
         
                         <p> <?php _e( 'Make a search, from the below form:','bazaar-lite'); ?> </p>
                         
-                        <section class="contact-form">
-                        
-                            <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                                 <input type="text" value="<?php _e( 'Search', 'bazaar-lite' ) ?>" name="s" id="s" onblur="if (this.value == '') {this.value = '<?php _e( 'Search', 'bazaar-lite' ) ?>';}" onfocus="if (this.value == '<?php _e( 'Search', 'bazaar-lite' ) ?>') {this.value = '';}" class="input-search"/>
-                                 <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', 'bazaar-lite' ) ?>" />
-                            </form>
-                            
-                            <div class="clear"></div>
-                            
-                        </section>
+						<?php get_search_form(); ?>
     
                     </div>
          

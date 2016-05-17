@@ -45,7 +45,7 @@ array( "type" => "begintab",
 			   "std" => "right-sidebar",
 			   
 		),
-
+		
 ),
 
 array( "type" => "endtab"),

@@ -75,7 +75,7 @@ if (!function_exists('bazaarlite_get_logo')) {
 						
 		else :
 		
-			echo '<a href="' . esc_url(home_url()) . '" title="' . get_bloginfo('name') . '">';
+			echo '<a href="' . esc_url(home_url()) . '" title="' .  esc_attr(get_bloginfo('name')) . '">';
 			
 				if ( bazaarlite_setting('wip_custom_logo') ):
                                                 
@@ -99,14 +99,25 @@ if (!function_exists('bazaarlite_get_logo')) {
 /* READ MORE */
 /*-----------------------------------------------------------------------------------*/   
 
-if (!function_exists('bazaarlite_readmore_function')) {
+if (!function_exists('bazaarlite_remove_readmore')) {
 
-	function bazaarlite_readmore_function() {
+	function bazaarlite_remove_readmore($more) {
 		
-		global $post,$more;
+		return '';
 		
-		$more = 0;
+	}
 	
+	add_filter('excerpt_more', 'bazaarlite_remove_readmore' );
+
+}
+
+
+if (!function_exists('bazaarlite_manual_excerpt_more')) {
+
+	function bazaarlite_manual_excerpt_more( $excerpt ) {
+	
+		global $post;
+		
 		$class = 'button';
 		$button = __('Read more','bazaar-lite');
 
@@ -117,21 +128,11 @@ if (!function_exists('bazaarlite_readmore_function')) {
 		
 		endif;
 	
-		if ($pos=strpos($post->post_content, '<!--more-->')): 
-		
-			$content = substr(apply_filters( 'the_content', get_the_content()), 0, -5);
-		
-		else:
-		
-			$content = substr(apply_filters( 'the_excerpt', get_the_excerpt()), 0, -5);
-		
-		endif;
-		
-		$html = $content. '<a class="'.$class.'" href="'.esc_url( get_permalink( $post->ID ) ).'" title="More">'.$button.'</a>';
-		
-		return $html;
-		
+		return $excerpt . '<a class="'.$class.'" href="'.esc_url( get_permalink( $post->ID ) ).'" title="More">'.$button.'</a>';
+	
 	}
+	
+	add_filter( 'get_the_excerpt', 'bazaarlite_manual_excerpt_more' );
 
 }
 

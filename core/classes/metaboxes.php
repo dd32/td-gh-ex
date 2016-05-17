@@ -103,7 +103,7 @@
 						
 						<div class="input-right">
 						
-							<input name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" value="<?php if ( bazaarlite_postmeta( $field['id']) != "") { echo bazaarlite_postmeta( $field['id']); } ?>" style="width:100%"/>
+							<input name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" value="<?php if ( bazaarlite_postmeta( $field['id']) != "") { echo esc_html(bazaarlite_postmeta( $field['id'])); } ?>" style="width:100%"/>
 							
 						</div>
 						
@@ -157,7 +157,7 @@
 					
                     	<div class="input-right">
                        
-                            <textarea name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" style="width:100%"><?php if ( bazaarlite_postmeta( $field['id']) != "") { echo stripslashes(bazaarlite_postmeta( $field['id'])); } ?></textarea>
+                            <textarea name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" style="width:100%"><?php if ( bazaarlite_postmeta( $field['id']) != "") { echo esc_textarea(bazaarlite_postmeta( $field['id'])); } ?></textarea>
 						
                         </div>
 					

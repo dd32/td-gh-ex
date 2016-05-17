@@ -17,7 +17,7 @@ if (!function_exists('bazaarlite_admin_init')) {
 	
 	}
 	
-	add_action('admin_init', 'bazaarlite_admin_init');
+	add_action('admin_enqueue_scripts', 'bazaarlite_admin_init');
 
 }
 

@@ -10,8 +10,19 @@ License
 -------
 Bazaar Lite is licensed under GNU General Public License v3.
 
+Bazaar Lite Theme incorporates code from WooCommerce plugin, Copyright 2015 by WooThemes
+WooCommerce plugin is distributed under the terms of the GNU GPL
+
+
 Credits
 -------
+
+/** IMAGES **/
+
+- Featured image in the screenshot
+
+-- Copyright © WooThemes
+--- Image licensed under CC0 License (Compatible with GNU General Public License v3)
 
 /** ICONS **/
 

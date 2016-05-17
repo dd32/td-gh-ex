@@ -41,6 +41,8 @@ class bazaarlite_customize {
 	
    public function customize_panel ( $wp_customize ) {
 
+		global $wp_version;
+
 		$theme_panel = $this->theme_fields ;
 
 		foreach ( $theme_panel as $element ) {
@@ -228,7 +230,13 @@ class bazaarlite_customize {
 			}
 			
 		}
+
+		if ( $wp_version >= 4.5 ) :
 		
+			$wp_customize->remove_section( 'header_section');
+		
+		endif;
+
 		if ( !bazaarlite_is_woocommerce_active() ) :
 		
 			$wp_customize->remove_control( 'wip_woocommerce_header_cart');

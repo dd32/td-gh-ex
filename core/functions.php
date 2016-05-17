@@ -66,7 +66,7 @@ if (!function_exists('bazaarlite_postmeta')) {
 	function bazaarlite_postmeta($id) {
 	
 		global $post, $wp_query;
-		
+
 		$content_ID = $post->ID;
 	
 		if( bazaarlite_is_woocommerce_active('is_shop') ) {
@@ -77,7 +77,7 @@ if (!function_exists('bazaarlite_postmeta')) {
 
 		$val = get_post_meta( $content_ID , $id, TRUE);
 		
-		if(isset($val)) {
+		if( isset($val) ) {
 			
 			return $val;
 			
@@ -172,7 +172,6 @@ if (!function_exists('bazaarlite_setup')) {
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/media.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/pagination.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/post-formats.php' );
-		require_once( trailingslashit( get_template_directory() ) . '/core/templates/readmore.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/side_sidebar.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/social_buttons.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/title.php' );
@@ -204,12 +203,12 @@ if (!function_exists('bazaarlite_scripts_styles')) {
 
 		wp_enqueue_style( 'bazaar-style', get_stylesheet_uri(), array() );
 
-		wp_enqueue_style ( 'bazaar-lite-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css' );
-		wp_enqueue_style ( 'bazaar-lite-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css' );
-		wp_enqueue_style ( 'bazaar-lite-genericons', get_template_directory_uri() . '/assets/css/genericons.css' );
+		wp_enqueue_style ( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css' );
+		wp_enqueue_style ( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css' );
+		wp_enqueue_style ( 'genericons', get_template_directory_uri() . '/assets/css/genericons.css' );
 		wp_enqueue_style ( 'bazaar-lite-minimal_layout', get_template_directory_uri() . '/assets/css/minimal_layout.css' );
-		wp_enqueue_style ( 'bazaar-lite-prettyPhoto', get_template_directory_uri() . '/assets/css/prettyPhoto.css' );
-		wp_enqueue_style ( 'bazaar-lite-swipebox', get_template_directory_uri() . '/assets/css/swipebox.css' );
+		wp_enqueue_style ( 'prettyPhoto', get_template_directory_uri() . '/assets/css/prettyPhoto.css' );
+		wp_enqueue_style ( 'swipebox', get_template_directory_uri() . '/assets/css/swipebox.css' );
 		wp_enqueue_style ( 'bazaar-lite-template', get_template_directory_uri() . '/assets/css/template.css' );
 		wp_enqueue_style ( 'bazaar-lite-woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css' );
 	
@@ -223,25 +222,25 @@ if (!function_exists('bazaarlite_scripts_styles')) {
 		
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	
-		wp_enqueue_script( "jquery-ui-core", array('jquery'));
-		wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
-		wp_enqueue_script( "masonry", array('jquery') );
+		wp_enqueue_script( "jquery-ui-core");
+		wp_enqueue_script( "jquery-ui-tabs");
+		wp_enqueue_script( "masonry");
 
-		wp_enqueue_script( 'bazaar-lite-jquery.easing', get_template_directory_uri() . '/assets/js/jquery.easing.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'bazaar-lite-jquery.imagesloaded', get_template_directory_uri() . '/assets/js/jquery.imagesloaded.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'bazaar-lite-jquery.infinitescroll', get_template_directory_uri() . '/assets/js/jquery.infinitescroll.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'bazaar-lite-jquery.modernizr', get_template_directory_uri() . '/assets/js/jquery.modernizr.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'bazaar-lite-jquery.prettyPhoto', get_template_directory_uri() . '/assets/js/jquery.prettyPhoto.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'bazaar-lite-jquery.scrollTo', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'bazaar-lite-jquery.swipebox', get_template_directory_uri() . '/assets/js/jquery.swipebox.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'bazaar-lite-jquery.tinynav', get_template_directory_uri() . '/assets/js/jquery.tinynav.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery.easing', get_template_directory_uri() . '/assets/js/jquery.easing.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery.imagesloaded', get_template_directory_uri() . '/assets/js/jquery.imagesloaded.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery.infinitescroll', get_template_directory_uri() . '/assets/js/jquery.infinitescroll.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery.modernizr', get_template_directory_uri() . '/assets/js/jquery.modernizr.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery.prettyPhoto', get_template_directory_uri() . '/assets/js/jquery.prettyPhoto.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery.scrollTo', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery.swipebox', get_template_directory_uri() . '/assets/js/jquery.swipebox.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery.tinynav', get_template_directory_uri() . '/assets/js/jquery.tinynav.js' , array('jquery'), FALSE, TRUE ); 
 		wp_enqueue_script( 'bazaar-lite-jquery.wip', get_template_directory_uri() . '/assets/js/jquery.wip.js' , array('jquery'), FALSE, TRUE ); 
 
 		wp_enqueue_script ( 'bazaar-lite-html5',get_template_directory_uri().'/js/html5.js');
-		wp_script_add_data ( 'bazaar-lite-html5', 'conditional', 'IE 8' );
+		wp_script_add_data ( 'html5', 'conditional', 'IE 8' );
 		
 		wp_enqueue_script ( 'bazaar-lite-selectivizr',get_template_directory_uri().'/js/selectivizr-min.js');
-		wp_script_add_data ( 'bazaar-lite-selectivizr', 'conditional', 'IE 8' );
+		wp_script_add_data ( 'selectivizr', 'conditional', 'IE 8' );
 
 	}
 	
