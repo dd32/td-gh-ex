@@ -48,6 +48,13 @@ Images
 
 == Changelog ==
 
+= 2.0.7 =
+
+** Fixed the box layout spacing issue.
+** Fixed the view cart button style issue in homepage.
+** Fixed missing text-domain issue.
+** Fixed the small issue in wishlist template.
+
 = 2.0.6 =
 
 ** Remove the deprecated, make the theme compatible with 4.5 version.

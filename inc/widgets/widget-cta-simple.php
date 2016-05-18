@@ -92,10 +92,10 @@ if( !class_exists( 'Accesspress_cta_simple' ) ) :
                 $cta_simple_btn_url = "";
                 $cta_simple_font_class = "";
             }
-            echo $before_widget; ?>
-            <h1 class="widget-title"><?php echo $cta_simple_title;?></h1>
+            echo $before_widget; ?>            
             <div class="cta-banner clearfix">
-                <div class="banner-text wow fadeInLeft" data-wow-delay="0.5s">                        
+                <div class="banner-text wow fadeInLeft" data-wow-delay="0.5s">
+                    <h1 class="widget-title"><?php echo $cta_simple_title;?></h1>                        
                     <div class="cta-desc_simple"><?php echo $cta_simple_desc;  ?></div>
                 </div>
                 <div class="banner-btn wow fadeInRight" data-wow-delay="0.5s">

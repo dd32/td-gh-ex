@@ -16,7 +16,6 @@
         <?php endif; ?>
         <div class="content-inner clearfix">
             <h2 class="post-title"><?php the_title(); ?></h2>
-            <?php /* <p class="meta-info">Posted On <?php the_time('F j, Y'); ?> at <?php the_time('g:i a'); ?> by <?php the_author_posts_link(); ?> /  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></p> */ ?>
             <div class="content-page">
                 <?php the_content(); ?>
             </div>

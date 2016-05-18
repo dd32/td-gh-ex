@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessPress Store\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sun Mar 20 2016 16:40:28 GMT+0545 (Nepal Standard Time)\n"
-"POT-Revision-Date: Sun Mar 20 2016 16:40:32 GMT+0545 (Nepal Standard Time)\n"
+"POT-Creation-Date: Wed May 18 2016 11:58:53 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Wed May 18 2016 11:58:56 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -58,15 +58,18 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../content-blog.php:64 ../content.php:20 ../template-blog.php:99
+#: ../content-blog.php:64 ../content-single.php:18 ../content.php:20 ../template-
+#: blog.php:99
 msgid "Posted On"
 msgstr ""
 
-#: ../content-blog.php:66 ../content.php:22 ../template-blog.php:101
+#: ../content-blog.php:66 ../content-single.php:20 ../content.php:22 ../template-
+#: blog.php:101
 msgid "at"
 msgstr ""
 
-#: ../content-blog.php:68 ../content.php:24 ../template-blog.php:103
+#: ../content-blog.php:68 ../content-single.php:22 ../content.php:24 ../template-
+#: blog.php:103
 msgid "by"
 msgstr ""
 
@@ -74,7 +77,7 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: ../content-blog.php:91 ../content-page.php:25 ../content-single.php:23 ..
+#: ../content-blog.php:91 ../content-page.php:24 ../content-single.php:30 ..
 #: /template-blog.php:126
 msgid "Pages:"
 msgstr ""
@@ -100,7 +103,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../content-page.php:33 ../inc/template-tags.php:126
+#: ../content-page.php:32 ../inc/template-tags.php:126
 msgid "Edit"
 msgstr ""
 
@@ -900,13 +903,13 @@ msgstr ""
 
 #: ../inc/template-tags.php:86
 #, php-format
-msgctxt "post date"
+msgctxt "accesspress-store"
 msgid "Posted on %s"
 msgstr ""
 
 #: ../inc/template-tags.php:91
 #, php-format
-msgctxt "post author"
+msgctxt "accesspress-store"
 msgid "by %s"
 msgstr ""
 
@@ -1247,156 +1250,156 @@ msgstr ""
 msgid "AccessPress PRO Themes"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:194 ../inc/assets/assets-
-#: paymentlogo-setting.php:197
+#: ../inc/assets/assets-paymentlogo-setting.php:193 ../inc/assets/assets-
+#: paymentlogo-setting.php:196
 msgid "AccessPress Plugins"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:209
+#: ../inc/assets/assets-paymentlogo-setting.php:204
 msgid "AccessPress Store Pro Features"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:220
+#: ../inc/assets/assets-paymentlogo-setting.php:215
 msgid "Store Pro Features"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:261
+#: ../inc/assets/assets-paymentlogo-setting.php:256
 msgid "Fully built on customizer!"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:262
+#: ../inc/assets/assets-paymentlogo-setting.php:257
 msgid "Next generation WooCommerce theme"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:263
+#: ../inc/assets/assets-paymentlogo-setting.php:258
 msgid "Deep WooCommerce Integration!"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:264
+#: ../inc/assets/assets-paymentlogo-setting.php:259
 msgid "Mega menu"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:265
+#: ../inc/assets/assets-paymentlogo-setting.php:260
 msgid "Advanced product search"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:266
+#: ../inc/assets/assets-paymentlogo-setting.php:261
 msgid "Boxed and full layout"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:267
+#: ../inc/assets/assets-paymentlogo-setting.php:262
 msgid "Unlimited slider options"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:268
+#: ../inc/assets/assets-paymentlogo-setting.php:263
 msgid "Background configuration"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:269
+#: ../inc/assets/assets-paymentlogo-setting.php:264
 msgid "Color configuration"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:270
+#: ../inc/assets/assets-paymentlogo-setting.php:265
 msgid "Highly configurable home page"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:271
+#: ../inc/assets/assets-paymentlogo-setting.php:266
 msgid "Youtube video integration"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:272
+#: ../inc/assets/assets-paymentlogo-setting.php:267
 msgid "Multiple Category display layout"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:273
+#: ../inc/assets/assets-paymentlogo-setting.php:268
 msgid "Product and content search"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:274
+#: ../inc/assets/assets-paymentlogo-setting.php:269
 msgid "Promo Ticker"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:275
+#: ../inc/assets/assets-paymentlogo-setting.php:270
 msgid "Unlimited SSL Badge and credit card icons upload"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:276
+#: ../inc/assets/assets-paymentlogo-setting.php:271
 msgid "WooCommerce settings"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:277
+#: ../inc/assets/assets-paymentlogo-setting.php:272
 msgid "4 WooCommerce Archive layout"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:278
+#: ../inc/assets/assets-paymentlogo-setting.php:273
 msgid "4 Page layout"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:279
+#: ../inc/assets/assets-paymentlogo-setting.php:274
 msgid "4 Post layout"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:280
+#: ../inc/assets/assets-paymentlogo-setting.php:275
 msgid "Grid / list Archive view"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:281
+#: ../inc/assets/assets-paymentlogo-setting.php:276
 msgid "4 Blog layout"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:282
+#: ../inc/assets/assets-paymentlogo-setting.php:277
 msgid "14 Widgets"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:283
+#: ../inc/assets/assets-paymentlogo-setting.php:278
 msgid "Page banner"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:284
+#: ../inc/assets/assets-paymentlogo-setting.php:279
 msgid "Beautiful product page"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:285
+#: ../inc/assets/assets-paymentlogo-setting.php:280
 msgid "Beautiful checkout pages"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:286
+#: ../inc/assets/assets-paymentlogo-setting.php:281
 msgid "Widget for latest product with accordance"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:287
+#: ../inc/assets/assets-paymentlogo-setting.php:282
 msgid "Tab section to show category"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:288
+#: ../inc/assets/assets-paymentlogo-setting.php:283
 msgid "Tab section to show products"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:289
+#: ../inc/assets/assets-paymentlogo-setting.php:284
 msgid "Team section"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:290
+#: ../inc/assets/assets-paymentlogo-setting.php:285
 msgid "Testimonial section"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:291
+#: ../inc/assets/assets-paymentlogo-setting.php:286
 msgid "Client Logo Section"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:292
+#: ../inc/assets/assets-paymentlogo-setting.php:287
 msgid "Fully SEO optimized"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:293
+#: ../inc/assets/assets-paymentlogo-setting.php:288
 msgid "Fast loading"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:294
+#: ../inc/assets/assets-paymentlogo-setting.php:289
 msgid "A perfect theme to start your online shop of any kind!"
 msgstr ""
 
-#: ../inc/assets/assets-paymentlogo-setting.php:297
+#: ../inc/assets/assets-paymentlogo-setting.php:292
 msgid "Buy Now"
 msgstr ""
 

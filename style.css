@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.0.6
+Version: 2.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -1248,10 +1248,7 @@ HEADER TWO
     border: 1px solid #c97178;
     color: #FFF;
 }
-.boxed .caption-content-wrapper,
-.boxed .caption-read-more {
-    margin-left: 100px;
-}
+
 #main-slider .bx-controls .bx-pager {
     position: absolute;
     bottom: 30px;
@@ -2260,6 +2257,10 @@ widget css
     text-transform: uppercase;
     padding: 10px 0 0 10px;
 }
+
+.cta-video-section-wrap .widget-title {
+    color: #fff;
+}
 .widget_archive ul,
 .widget_categories ul,
 .widget_recent_entries ul,
@@ -3079,7 +3080,8 @@ Responsive grid for pages
 }
 .page-template .add_to_cart_button, 
 .page-template .product_type_simple,
-.page-template .product_type_external {
+.page-template .product_type_external,
+.page-template .added_to_cart {
     background: rgba(226, 69, 69, 0.51);
     color: #ffffff !important;
     line-height: 30px;
@@ -3095,7 +3097,8 @@ Responsive grid for pages
 }
 .page-template .item-img:hover .add_to_cart_button,
 .page-template .item-img:hover .product_type_simple,
-.page-template .item-img:hover .product_type_external {
+.page-template .item-img:hover .product_type_external,
+.page-template .item-img:hover .added_to_cart {
     opacity: 1;
 }
 .new-prod-slide .slick-slide .price,
@@ -3567,11 +3570,12 @@ Responsive grid for pages
     text-transform: uppercase;
 }
 .cta-desc_simple {
-    font-weight: 700;
+    color: #a0a0a0;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 40px;
-    color: #e24545;
-    text-transform: uppercase;
+    line-height: 22px;
+    margin: 0px;
+    text-transform: none;
 }
 .banner-btn .btn {
     display: block;
@@ -3965,6 +3969,11 @@ ul.products.list li.product .gridlist-buttonwrap {
     background-color: #c97178;
     color: #FFF;
 }
+
+a.compare.button {
+    margin-top: 40px;
+}
+
 .woocommerce #respond input#submit:hover,
 .woocommerce a.button:hover,
 .woocommerce button.button:hover,
@@ -6238,9 +6247,9 @@ h3#order_review_heading {
     top: 0 !important;
     right: 2px !important;
 }
-.wishlist_table tfoot {
+/* .wishlist_table tfoot {
     display: none;
-}
+} */
 
 /*=================404 Page Not Found ===============*/
 
@@ -6935,4 +6944,13 @@ AP WIDGET TITLE SECOND AYOUT
     display: table;
     content: "";
     clear: both;
+}
+/*
+boxd layout css
+*/
+.boxed .ak-container {
+    padding: 0 10px; 
+}
+.boxed .new-prod-slide .slick-slide {
+    padding: 0 10px 0 0;
 }

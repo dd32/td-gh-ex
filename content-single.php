@@ -13,8 +13,15 @@
 			</div>
 		<?php endif; ?>
 		<span class="cat-name"><?php $category = get_the_category(); echo $category[0]->cat_name; ?></span>
-		<h2 class="post-title"><?php the_title();?></h2>
-		<p class="meta-info">Posted On <?php the_time('F j, Y'); ?> at <?php the_time('g:i a'); ?> by <?php the_author_posts_link(); ?> /  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></p>
+		<h2 class="post-title"><?php the_title();?></h2>		
+        <p class="meta-info">
+            <?php echo __('Posted On', 'accesspress-store'); ?> 
+            <?php the_time('F j, Y'); ?> 
+            <?php echo __('at', 'accesspress-store'); ?>
+            <?php the_time('g:i a'); ?> 
+            <?php echo __('by', 'accesspress-store'); ?>
+			<?php the_author_posts_link(); ?> /  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
+        </p>
 		<div class="content-page">
 		  <?php the_content(); ?>
         </div>
