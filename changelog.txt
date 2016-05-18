@@ -1,4 +1,8 @@
 == CHANGE LOG ==
+= 2.0.9 =
+	- New - New logo Options Compatible for Polylang
+	- Fix - WooCommerce Product Category title added
+
 = 2.0.8 =
 	- Fix - entry meta and entry display on Single Page
 	- Fix - portfolio widgets hover issue fixed for user friendly

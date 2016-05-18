@@ -12,6 +12,7 @@
 			<key name="arise_secondary_url" />
 			<key name="arise_search_text" />
 			<key name="arise_tag_text" />
+			<key name="arise-img-upload-header-logo" />
 		</key>
 	</admin-texts>
 </wpml-config>
