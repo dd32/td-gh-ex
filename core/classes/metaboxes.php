@@ -188,7 +188,7 @@
 
 					if ((isset($field['id'])) && (isset($_POST[$field['id']]))) {
 		
-						$new = $_POST[$field['id']];
+						$new = esc_html($_POST[$field['id']]);
 						update_post_meta( $post_id , $field['id'], $new );
 	
 					}

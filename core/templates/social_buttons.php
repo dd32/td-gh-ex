@@ -3,7 +3,6 @@
 /**
  * Wp in Progress
  * 
- * @package Wordpress
  * @author WPinProgress
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
@@ -54,7 +53,7 @@ if (!function_exists('bazaarlite_socials_function')) {
 		if ( bazaarlite_setting('wip_footer_rss_button') == "on" ): 
 		
 			$i++;	
-			$html.= '<a href="'. esc_url(get_bloginfo('rss2_url')). '" title="Rss" class="social rss"> <i class="fa fa-rss" ></i>  </a> ';
+			$html.= '<a href="'. esc_url(get_bloginfo('rss2_url')). '" title="'.esc_attr__( 'Rss', 'bazaar-lite' ).'" class="social rss"> <i class="fa fa-rss" ></i>  </a> ';
 		
 		endif; 
 			

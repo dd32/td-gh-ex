@@ -177,11 +177,11 @@ $order = wc_get_order( $order_id );
 <table class="shop_table shop_table_responsive customer_details">
 <?php
 	if ( $order->billing_email ) {
-		echo '<tr><th>' . __( 'Email:', 'bazaar-lite' ) . '</th><td data-title="' . __( 'Email', 'bazaar-lite' ) . '">' . $order->billing_email . '</td></tr>';
+		echo '<tr><th>' . __( 'Email:', 'bazaar-lite' ) . '</th><td data-title="' . esc_attr__( 'Email', 'bazaar-lite' ) . '">' . $order->billing_email . '</td></tr>';
 	}
 
 	if ( $order->billing_phone ) {
-		echo '<tr><th>' . __( 'Telephone:', 'bazaar-lite' ) . '</th><td data-title="' . __( 'Telephone', 'bazaar-lite' ) . '">' . $order->billing_phone . '</td></tr>';
+		echo '<tr><th>' . __( 'Telephone:', 'bazaar-lite' ) . '</th><td data-title="' . esc_attr__( 'Telephone', 'bazaar-lite' ) . '">' . $order->billing_phone . '</td></tr>';
 	}
 
 	// Additional customer details hook

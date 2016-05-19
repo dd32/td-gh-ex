@@ -11,8 +11,8 @@ if (!function_exists('bazaarlite_admin_init')) {
 		wp_enqueue_style ( 'bazaarlite_style', $file_dir.'css/theme.css' ); 
 		wp_enqueue_script( 'bazaarlite_script', $file_dir.'js/theme.js',array('jquery'),'',TRUE ); 
 		
-		wp_enqueue_script( "jquery-ui-core", array('jquery'));
-		wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
+		wp_enqueue_script( "jquery-ui-core");
+		wp_enqueue_script( "jquery-ui-tabs");
 	
 	
 	}

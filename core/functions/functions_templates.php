@@ -127,8 +127,8 @@ if (!function_exists('bazaarlite_manual_excerpt_more')) {
 			$button = ' [&hellip;] ';
 		
 		endif;
-	
-		return $excerpt . '<a class="'.$class.'" href="'.esc_url( get_permalink( $post->ID ) ).'" title="More">'.$button.'</a>';
+
+		return $excerpt . '<a class="'.$class.'" href="'.esc_url( get_permalink( $post->ID ) ).'" title="'.esc_attr_e( 'More', 'bazaar-lite' ).'">'.$button.'</a>';
 	
 	}
 	

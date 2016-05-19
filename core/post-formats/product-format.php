@@ -3,14 +3,12 @@
 /**
  * Wp in Progress
  * 
- * @package Wordpress
  * @author WPinProgress
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 	
-
 global $product;
 
 $image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'bazaar-lite-product');
@@ -24,7 +22,7 @@ if ( $image ) :
 	$contentclass = "";
 				
 	$html .= '<div class="product-thumbnail">';
-	$html .= '<img src="'.$image[0].'" class="attachment-blog wp-post-image" alt="post image" title="post image">';
+	$html .= '<img src="'.$image[0].'" class="attachment-blog wp-post-image" alt="'.esc_attr__( 'post image', 'bazaar-lite' ).'" title="'.esc_attr__( 'post image', 'bazaar-lite' ).'">';
 	$html .= '</div>';
 
 endif;

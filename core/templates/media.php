@@ -3,7 +3,6 @@
 /**
  * Wp in Progress
  * 
- * @package Wordpress
  * @author WPinProgress
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
@@ -51,7 +50,7 @@ if (!function_exists('bazaarlite_thumbnail_function')) {
                     
                     <div class="overlay-image blog-thumb">
                         
-                        <img src="<?php echo $thumb[0]; ?>" class="attachment-blog wp-post-image" alt="post image" title="post image"> 
+                        <img src="<?php echo $thumb[0]; ?>" class="attachment-blog wp-post-image" alt="<?php esc_attr_e( 'post image', 'bazaar-lite' ); ?>" title="<?php esc_attr_e( 'post image', 'bazaar-lite' ); ?>"> 
                         <a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" class="overlay link"></a>
                         
                     </div>

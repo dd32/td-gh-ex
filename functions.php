@@ -11,6 +11,6 @@
  *
 */
 
-	require_once dirname(__FILE__) . '/core/functions.php';
+	require_once get_template_directory() . '/core/functions.php';
 
 ?>
