@@ -1,258 +1,129 @@
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?php wp_title("",true); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php get_header();
+        
+if (is_home()) :
 
-<!-- Begin WordPress Header -->
-<?php wp_head(); ?>
-<!-- End WordPress Header -->
+    if (get_theme_mod('number_slides') == '')
+        $number_of_slides = 3;
+    else
+        $number_of_slides = get_theme_mod('number_slides');
+   
+    $args = array(
+        'post_type' => array('post', 'page', 'product'),
+        'post_status' => 'publish',
+        'posts_per_page' => $number_of_slides,
+        'orderby' => 'meta_value_num',
+        'meta_key'  => 'meta-select',
+        'meta_query' => array(
+            array(
+                'key' => '_thumbnail_id',
+                'value' => '',
+                'compare' => '!='),
+            array(
+                'key' => 'meta-checkbox',
+                'value' => 'yes',
+                'compare' => '=')));
 
-</head>
-<body <?php body_class(); ?>>
+    $slider_posts = new WP_Query($args);
 
-<!-- The Navigation Menu -->
-<ul id="header">
+    if ($slider_posts->have_posts()) :
 
-<!-- The Website Title and Slogan -->
-<h1 id="fittext3"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a><i><?php bloginfo('description');?></i></h1>
-<!-- End Website Title and Slogan -->
+    $total_post = $slider_posts->found_posts;
 
-<?php if ( has_nav_menu( 'bar' ) ) :  wp_nav_menu( array( 'theme_location' => 'bar', 'depth' => 2 ) ); else : ?>
-<?php wp_list_pages( 'title_li=&depth=2' ); ?>
-<?php endif; ?>
-<?php if ( ( get_theme_mod('facebook_setting') != 'The url link goes in here.' ) && ( get_theme_mod('facebook_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('facebook_setting') ;?>" class="icon-facebook-rect"></a></li><?php endif; ?>
-<?php if ( ( get_theme_mod('twitter_setting') != 'The url link goes in here.' ) && ( get_theme_mod('twitter_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('twitter_setting') ;?>" class="icon-twitter"></a></li><?php endif; ?>
-<?php if ( ( get_theme_mod('google_plus_setting') != 'The url link goes in here.' ) && ( get_theme_mod('google_plus_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('google_plus_setting') ;?>" class="icon-googleplus-rect"></a></li><?php endif; ?>
-<?php if ( ( get_theme_mod('youtube_setting') != 'The url link goes in here.' ) && ( get_theme_mod('youtube_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('youtube_setting') ;?>" class="icon-youtube"></a></li><?php endif; ?>
-<?php if ( ( get_theme_mod('vimeo_setting') != 'The url link goes in here.' ) && ( get_theme_mod('vimeo_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('vimeo_setting') ;?>" class="icon-vimeo"></a></li><?php endif; ?>
-<?php if ( ( get_theme_mod('soundcloud_setting') != 'The url link goes in here.' ) && ( get_theme_mod('soundcloud_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('soundcloud_setting') ;?>" class="icon-soundcloud"></a></li><?php endif; ?>
-<?php if ( get_theme_mod('navi_search_setting') == 'on' ) : ?><li><form role="search" method="get" id="navi_search" action="<?php echo home_url(); ?>/" ><input type="text" value="Search" onfocus="if(this.value == 'Search') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Search'; }"  name="s" id="s" /></form></li><?php endif; ?>
-</ul>
-<!-- End Navigation Menu -->
+    if ($total_post >= $number_of_slides) $total_post = $number_of_slides;
 
+    $count = 1; ?>
 
-<!-- Setting up The Layout of the Webpage -->
-<div id="centered">
-<div id="margin">
+        <div class="slider">
+            <div id="continue_slide"></div>
 
-<?php $header_image = get_header_image(); if ( ! empty( $header_image ) ) : ?> <img src="<?php header_image(); ?>" class="logo" alt="" /><?php endif; ?>
+            <?php while($slider_posts->have_posts()) : $slider_posts->the_post() ?>
 
-<?php $semperfi_404 = false;/* A 404 Error check */?> 
-<?php if (is_search()) : ?>
+            <div id="slide<?php echo $count; ?>" class="slide_padding number_slides<?php echo $total_post; ?>">
+                <?php $background = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large_featured' ); ?>
+                <div class="slide" style="background-image:url(<?php echo $background[0]; ?>)">
+                    <?php if (('yes' != get_post_meta( get_the_ID(), 'meta-checkbox-image', true )) && (get_theme_mod('slider_text') != 'on')) : ?>
+                        <a href="<?php the_permalink() ?>">
+                            <h3><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'localize_semperfi'); } ?></h3>
+                            <p><span><?php echo substr(strip_tags(get_the_excerpt()), 0,100) . '...'; ?></span></p>
+                        </a>
+                    <?php endif; ?>
+                    <a href="#slide<?php if ($count > 1) echo $count - 1; else echo $total_post; ?>" class="fa previous_slide">&#xf137;</a>
+                    <a href="#slide<?php echo $count; ?>" class="fa pause_sliding">&#xf04c;</a>
+                    <a href="#continue_slide" class="fa continue_sliding">&#xf144;</a>
+                    <a href="#slide<?php if($total_post != $count) echo $count + 1; else echo '1'; ?>" class="fa next_slide">&#xf138;</a>
+                </div>
+            </div>
 
-<!-- Searching Code -->
-<?php if (have_posts()) : ?>
-<ul id="single">
-    <li>
-    	<h2>Your Search "<?php echo get_search_query(); ?>" Returned <?php echo $wp_query->found_posts; ?> Results</h2>
-    </li>
-</ul>
-<ul id="paged">
-<?php while (have_posts()) : the_post(); ?>
+            <?php $count = $count + 1;
 
-	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-		<h2><?php if ( is_page() || ( get_theme_mod('display_date_setting') == 'off' ) ) : else : ?><time datetime="<?php the_time('Y-m-d H:i') ?>"><?php the_time('M') ?><br/><?php the_time('jS') ?></time><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
-        <?php if ( has_post_thumbnail()) : ?><div class="under"><?php the_post_thumbnail('page-thumbnail'); ?><div class="over"></div></div><?php endif; ?>
-        <?php the_excerpt(); ?>
-	</a></li>
-<?php endwhile; ?>
+            endwhile ?>
+            
+            <div class="transitions_helper"></div>
+
+        </div>
+
+    <div class="stars_and_bars" style="margin: 0 0 1.5em;">
+        <span class="left">Blog</span>
+        <?php if ( (get_next_posts_link() != '') || (get_previous_posts_link() != '') ) : ?>
+        <span class="right"><?php next_post_link('%link', __('Older Post', 'localize_semperfi') . ' &#8250;'); ?></span>
+        <?php endif; ?>
+    </div>
+
+<?php endif ?>
+        
+<?php wp_reset_postdata(); // reset the query ?>
+
+    <?php endif; ?>
+
+            <div class="blog_content">
+
+    <?php if (have_posts()) :
+
+        while (have_posts()) : the_post(); ?>
+
+            <div id="post-<?php the_ID(); ?>" <?php if ( has_post_thumbnail()) : post_class('has_featured_image every_third'); else : post_class('every_third'); endif;?>>
+
+                <?php if ( get_theme_mod('display_post_title_setting') == 'off' ) : else : ?>
+
+                    <h5 class="post_title"><?php if (get_theme_mod('display_date_setting') != 'off' ) : ?><time datetime="<?php the_time('Y-m-d H:i') ?>"><?php the_time('M jS') ?><br/><?php the_time('Y') ?></time><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'localize_semperfi'); } ?></a></h5>
+
+                <?php endif; ?>
+
+                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+                    <?php the_post_thumbnail('small_featured', array( 'class' => "featured_image")); ?>
+                </a>
+				
+                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+				    <?php the_excerpt(); ?>
+                </a>
+
+            </div>
+
+            <?php if (!is_home() && (get_theme_mod('comments_setting') != 'none')) :
+
+                comments_template();
+
+            endif;
+
+        endwhile;?>
+        
+    </div>
+
+    <?php endif; ?>
+
+<?php if ( (get_next_posts_link() != '') || (get_previous_posts_link() != '') ) : ?>
+
+    <div class="stars_and_bars">   
+        <span class="left"><?php next_posts_link( '&#8249; ' . __('Older Posts', 'localize_semperfi')); ?></span>
+        <span class="right"><?php previous_posts_link( __('Newer Posts', 'localize_semperfi') . ' &#8250;'); ?></span>
+    </div>
 
 <?php else : ?>
 
-<ul id="single">
-    <li>
-    	<h2>Your search resulted with nothing being found.</h2>
-        <img class="featured_image" src="<?php echo get_template_directory_uri(); ?>/images/nothing_found.jpg"/>
-        <p>Sorry, your search for "<?php echo get_search_query(); ?>" returned with not find anything in the website.</p>
-        <form role="search" method="get" action="http://schwarttzy.com/">
-		<label class="screen-reader-text" for="s">Search:</label>
-		<input value="Search" onfocus="if(this.value == 'Search') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Search'; }" name="s" id="s" type="text">
-		<input value="Search" type="submit">
-		</form>
-	</li>
-<?php endif; ?>
-<li class="stars"><span class="left"><?php next_posts_link('&#8249; Older Results'); ?></span><span class="right"><?php previous_posts_link('Newer Results &#8250;'); ?></span></li>
-</ul>
-<!-- End Search -->
-<?php elseif ( have_posts() && is_home() || is_category() || is_day() || is_month() || is_year() || is_paged() || is_tag() ) : ?>
+    <div class="stars_and_bars"></div>
 
-<!-- Paged -->
-<ul id="paged">
+<?php endif;
 
-<?php while (have_posts()) : the_post(); ?>
-	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-		<h2><?php if ( is_page() || ( get_theme_mod('display_date_setting') == 'off' ) ) : else : ?><time datetime="<?php the_time('Y-m-d H:i') ?>"><?php the_time('M') ?><br/><?php the_time('jS') ?></time><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
-        <?php if ( has_post_thumbnail()) : ?><div class="under"><?php the_post_thumbnail('page-thumbnail'); ?><div class="over"></div></div><?php endif; ?>
-        <?php the_excerpt(); ?>
-	</a></li>
+if (semperfi_is_sidebar_active('widget')) get_sidebar();
 
-<?php endwhile; ?>
-<?php if ( $wp_query->max_num_pages > 1 ) { ?>
-<li class="stars"><span class="left"><?php next_posts_link('&#8249; Older Posts'); ?></span><span class="right"><?php previous_posts_link('Newer Search Results &#8250;'); ?></span></li>
-<?php } else { ?>
-<li class="stars"></li>
-<?php } ?>
-
-</ul>
-<!-- End Many Things -->
-<?php elseif ( is_404() ) : ?>
-
-<!-- 404 Error -->
-<ul id="comments">
-    <li>
-    	<h2>Code Error 404</h2>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/error404.jpg" class="attachment-page-thumbnail wp-post-image">
-		<p>Echo Bravo Eight Two Four Five. This is Three Two One One Romeo. Be advised. We're recieving a coding error 404. Repeat, We're recieving a coding error 404. You are to be extracked at the rondevu point at <?php echo date('H') ?>57 Hundred Hours. Over and out.</p>
-	</li>
-    
-	<li class="comments">
-    <h4 class="title">Comments</h4>
-    
-    <ol class="commentlist">
-		<li class="comment even thread-even">
-				<div class="comment-body">
-                    <div class="comment-author vcard">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/gary.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
-                    </div>
-    				<p>"Well, it appears that link fed us bad intell. We are to be extracked at the rondevu point in <?php echo date('H') ?>00 Hundred Hours which doesn't give us much time, but we should manage just fine."</p>
-					</div>
-		</li>
-		<li class="comment odd alt">
-				<div class="comment-body">
-                    <div class="comment-author vcard">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Mike</cite> <span class="says">says:</span>
-                    </div>
-    				<p>Just great! So tired of humping it through these data files. And for what!? Nothing. Absolutely nothing...</p>
-					</div>
-		</li>
-        <li class="comment even thread-even">
-				<div class="comment-body">
-                    <div class="comment-author vcard">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/gary.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
-                    </div>
-    				<p>I know. You think they would spend more time checking the links. For cry eye, everything is on the inter-webs. It's not like this is something new. Hell, the fact that it is an 404 error means it's most likely old in the first place.</p>
-					</div>
-		</li>
-		<li class="comment odd alt">
-				<div class="comment-body">
-                    <div class="comment-author vcard">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Mike</cite> <span class="says">says:</span>
-                    </div>
-    				<p>Well, on the brightside, we don't have to keep searching any more.</p>
-					</div>
-		</li>
-        <li class="comment even thread-even">
-				<div class="comment-body">
-                    <div class="comment-author vcard">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/gary.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
-                    </div>
-    				<p>Ya, that is nice.</p>
-					</div>
-		</li>
-        <li class="comment odd alt">
-				<div class="comment-body">
-                    <div class="comment-author vcard">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/blackhawk.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Blackhawk Helicopter</cite> <span class="says">says:</span>
-                    </div>
-    				<p>Thump. Thump. Thump.</p>
-					</div>
-		</li>
-        <li class="comment even thread-even">
-				<div class="comment-body">
-                    <div class="comment-author vcard">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Mike</cite> <span class="says">says:</span>
-                    </div>
-    				<p>O Hell Ya! Do you hear that!</p>
-					</div>
-		</li>
-        <li class="comment odd alt">
-				<div class="comment-body">
-                    <div class="comment-author vcard">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pilot.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
-                    </div>
-    				<p>Come in Three Two One One Romeo.  Come in Three Two One One Romeo. Light that smoke. Repeat. Light that smoke.</p>
-					</div>
-		</li>
-        <li class="comment even thread-even">
-				<div class="comment-body">
-                    <div class="comment-author vcard">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/gary.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
-                    </div>
-    				<p>Smoke is lit.</p>
-					</div>
-		</li>
-        <li class="comment odd alt">
-				<div class="comment-body">
-                    <div class="comment-author vcard">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pilot.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
-                    </div>
-    				<p>Roger, Roger. Prepair for extraction.</p>
-					</div>
-		</li>
-        <li class="comment even thread-even">
-        <div class="comment-body">
-		<p>Hurry up and click the <a href="<?php echo home_url(); ?>/">Extraction Point</a>.</p>
-        </div>
-		</li>
-	</ol>
-    </li>
-        <li class="stars"></li>
-</ul>
-<!-- End 404 Error -->
-<?php $semperfi_404 = true;?>
-
-<?php /* Some of the Formating is weird below so that when the page is finished the formating looks cleaner than it would otherwise. */ ?>
-<?php elseif (have_posts()) : the_post();?>
-<ul id="single">
-    <li id="post-<?php the_ID(); ?>" <?php post_class('content'); ?>>
-    	<h2><?php if ( is_page() || ( get_theme_mod('display_date_setting') == 'off' ) ) : else : ?><time datetime="<?php the_time('Y-m-d H:i') ?>"><?php the_time('M') ?><br/><?php the_time('jS') ?></time><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
-        <?php if ( ( get_theme_mod('featured_image_on_single_setting') == 'on' ) && ( has_post_thumbnail() ) ) the_post_thumbnail('post-thumbnail', array( 'class'	=> "featured_image")); ?>
-		<?php the_content(); ?>
-    	<span class="pagesandtags"><?php wp_link_pages(); ?>
-		<?php if (is_single()) : ?>Post Categories: <?php the_category(', '); the_tags('</br>Tags: ', ', ', ''); endif;?><?php if ( is_single($post) && !comments_open() ) : ?> Commenting is closed.<?php endif; ?>
-        </span>
-    </li>
-    
-<?php if ( is_single() ) : ?>
-        <li class="stars"><span class="left"><?php previous_post_link('%link', '&#8249; %title'); ?></span><span class="right"><?php next_post_link('%link', '%title &#8250;'); ?></span></li>
-<?php elseif ( is_attachment() ) : ?>
-        <li class="stars"><span class="left"><?php previous_image_link( false, '&#8249; Previous Image'); ?></span><span class="right"><?php next_image_link( false, 'Next Image &#8250;'); ?></span></li>
-<?php endif; ?>
-</ul>
-<?php endif; ?><!-- End of Post / Page Stuff -->
-
-<!-- The Comments -->
-<?php if (is_search() || $semperfi_404 || is_front_page() ) : ?> 
-<?php elseif ( comments_open() && ( (get_theme_mod('comments_setting') == '' ) || ( is_page() && ( get_theme_mod('comments_setting') == 'pages' ) ) || ( is_single() && ( get_theme_mod('comments_setting') == 'posts' ) ) || ( get_theme_mod('comments_setting') == 'pages_and_posts' ) ) ) : ?>
-<?php comments_template( '', true ); ?>
-<?php endif; ?>
-<!-- End Comments -->
-
-<!-- The Sidebar / Widget Area -->
-<?php if (semperfi_is_sidebar_active('widget')) : ?><ul id="paged" class="widget">
-<li><?php if (!dynamic_sidebar('footer widget1')) : ?><?php endif; ?></li>
-<li><?php if (!dynamic_sidebar('footer widget2')) : ?><?php endif; ?></li>
-<li><?php if (!dynamic_sidebar('footer widget3')) : ?><?php endif; ?></li>
-<li class="bottomline"></li>
-</ul>
-<?php endif; ?>
-<!-- End Sidebar / Widget Area -->
-
-</div>
-</div>
-<!-- Closing the Layout of the Page with a Finishing Touch. -->
-
-<div id="footer">
-<p>Good Old Fashioned Hand Written Code by <a href="http://schwarttzy.com/about-2/">Eric J. Schwarz</a> <!-- <?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds --></p>
-</div>
-
-<!-- Start of WordPress Footer  -->
-<?php wp_footer(); ?>
-<!-- End of WordPress Footer -->
-
-</body>
-</html>
+get_footer(); ?>
