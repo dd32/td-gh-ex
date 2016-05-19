@@ -19,10 +19,11 @@ col-md-6
                             <?php $image_no = 1; ?>
                             <?php foreach($images as $image) : ?>
                                 <div class="item <?php if($image_no == 1){ echo 'active'; }; ?>">
-                                    <?php $the_image = wp_get_attachment_image_src( $image, 'post-thumbnails' ); ?>
+                                    <?php $the_image = wp_get_attachment_image_src( $image, 'aster-post-thumbnails' )
+                                    ; ?>
                                     <?php $the_caption = get_post_field('post_excerpt', $image); ?>
                                     <img src="<?php echo esc_url($the_image[0]); ?>" <?php if($the_caption) : ?>title="<?php
-                                    echo esc_attr($the_caption); ?>"<?php endif; ?> />
+                                    echo esc_html($the_caption); ?>"<?php endif; ?> />
                                 </div>
                                 <?php $image_no++ ?>
                             <?php endforeach; ?>
@@ -70,7 +71,7 @@ col-md-6
 
             <?php if(has_post_thumbnail()) : ?>
                 <div class="thumbnails">
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('post-thumbnails', array('class' => 'post-thumbnail img-responsive')); ?></a>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('aster-post-thumbnails', array('class' => 'post-thumbnail img-responsive')); ?></a>
                 </div>
             <?php endif; ?>
 

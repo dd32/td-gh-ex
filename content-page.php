@@ -2,7 +2,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if (has_post_thumbnail()) { ?>
         <div class="thumbnails">
-            <?php the_post_thumbnail('post-thumbnails', array('class' => 'post-thumbnail img-responsive')); ?>
+            <?php the_post_thumbnail('aster-post-thumbnails', array('class' => 'post-thumbnail img-responsive')); ?>
         </div>
     <?php } ?>
 

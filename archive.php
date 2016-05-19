@@ -3,9 +3,9 @@
 <div class="container main-content">
 	<div class="row">
 		<div class="
-		<?php if(get_theme_mod('aster_home_layout') == 'full') : ?>
+		<?php if ( get_theme_mod( 'aster_home_layout' ) == 'full' ) : ?>
 		col-md-12
-		<?php elseif(get_theme_mod('aster_home_layout') == 'leftsidebar') : ?>
+		<?php elseif ( get_theme_mod( 'aster_home_layout' ) == 'leftsidebar' ) : ?>
 		col-md-8 col-md-push-4
 		<?php else : ?>
 		col-md-8
@@ -18,22 +18,26 @@
 					aster_archive_title( '<div class="archive-title">', '</div>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 					?>
-				</header><!-- .page-header -->
+				</header>
+				<!-- .page-header -->
 
 
 				<div class="masonry_area">
-					<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-						<?php get_template_part('content', 'post'); ?>
+						<?php get_template_part( 'content', 'post' ); ?>
 
 					<?php endwhile; ?>
 
 						<div class="col-md-12">
-							<?php if (get_theme_mod('aster_blog_pagination') == 'navigation') {
-								aster_posts_navigation();
-							} else {
-								aster_posts_pagination();
-							} ?>
+							<div class="next-previous-posts">
+								<?php the_posts_navigation(
+									array(
+										'prev_text' => __( '<div class="text-left"><i class="fa fa-angle-left"></i> Older posts</div>', 'aster' ),
+										'next_text' => __( '<div class="text-right">Newer posts <i class="fa fa-angle-right"></i></div>', 'aster' ),
+									)
+								) ?>
+							</div>
 						</div>
 
 					<?php else : ?>

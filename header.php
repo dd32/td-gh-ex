@@ -23,13 +23,14 @@
 	<div class="header-top text-center">
 		<?php if(get_theme_mod('aster_logo')): ?>
 			<div class="main-logo">
-				<a href="<?php echo esc_url(site_url()); ?>"><img src="<?php echo esc_url(get_theme_mod('aster_logo'));
-					?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"></a>
+				<a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_theme_mod
+				('aster_logo'));
+					?>" alt="<?php echo esc_html(get_bloginfo('name')); ?>"></a>
 			</div><!-- /.main-logo -->
 		<?php else: ?>
 			<div class="text-logo">
-				<a href="<?php echo esc_url(home_url()); ?>"><?php echo esc_attr(get_bloginfo('name')); ?></a>
-				<p><?php echo esc_attr(get_bloginfo('description')); ?></p>
+				<a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_attr(get_bloginfo('name')); ?></a>
+				<p><?php echo esc_html(get_bloginfo('description')); ?></p>
 			</div><!-- /.text-logo -->
 		<?php endif; ?>
 	</div><!-- /.header-top -->

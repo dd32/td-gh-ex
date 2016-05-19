@@ -47,11 +47,11 @@ class aster_about_widget extends WP_Widget {
 			<div class="about-widget">
 			
 			<?php if($image) : ?>
-			<img class="img-responsive" src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($title); ?>" />
+			<img class="img-responsive" src="<?php echo esc_url($image); ?>" alt="<?php echo esc_html($title); ?>" />
 			<?php endif; ?>
 			
 			<?php if($description) : ?>
-			<div class="about-me-content"><?php echo esc_attr($description); ?></div>
+			<div class="about-me-content"><?php echo esc_textarea($description); ?></div>
 			<?php endif; ?>	
 			
 			</div>
@@ -85,8 +85,8 @@ class aster_about_widget extends WP_Widget {
 
 		<!-- Widget Title: Text Input -->
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php _e('Title:', 'aster') ?></label>
-			<input id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" value="<?php echo esc_attr($instance['title']); ?>" style="width:96%;" />
+			<label for="<?php echo esc_html($this->get_field_id( 'title' )); ?>"><?php _e('Title:', 'aster') ?></label>
+			<input id="<?php echo esc_html($this->get_field_id( 'title' )); ?>" name="<?php echo esc_html($this->get_field_name('title')); ?>" value="<?php echo esc_html($instance['title']); ?>" style="width:96%;" />
 		</p>
 		
 		<!-- image url -->
@@ -98,8 +98,8 @@ class aster_about_widget extends WP_Widget {
 
 		<!-- description -->
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'description' )); ?>"><?php _e('About me text:', 'aster') ?></label>
-			<textarea id="<?php echo esc_attr($this->get_field_id( 'description' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'description' )); ?>" style="width:95%;" rows="6"><?php echo esc_attr($instance['description']); ?></textarea>
+			<label for="<?php echo esc_textarea($this->get_field_id( 'description' )); ?>"><?php _e('About me text:', 'aster') ?></label>
+			<textarea id="<?php echo esc_textarea($this->get_field_id( 'description' )); ?>" name="<?php echo esc_textarea($this->get_field_name( 'description' )); ?>" style="width:95%;" rows="6"><?php echo esc_textarea($instance['description']); ?></textarea>
 		</p>
 
 

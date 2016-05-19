@@ -52,14 +52,6 @@
 
                 <?php endwhile; ?>
 
-                    <div class="col-md-12">
-                        <?php if (get_theme_mod('aster_blog_pagination') == 'navigation') {
-                            aster_posts_navigation();
-                        } else {
-                            aster_posts_pagination();
-                        } ?>
-                    </div>
-
                 <?php else : ?>
 
                     <?php get_template_part( 'content', 'none' ); ?>

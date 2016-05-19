@@ -73,7 +73,7 @@ class Aster_Blog_Posts_Widget extends WP_Widget{
 
 					if(has_post_thumbnail()):
 						$output .='<div class="pull-left">';
-						$output .='<a href="'.esc_url(get_permalink()).'">'.get_the_post_thumbnail( get_the_ID(), 'recent-post', array('class' => 'img-responsive')).'</a>';
+						$output .='<a href="'.esc_url(get_permalink()).'">'.get_the_post_thumbnail( get_the_ID(), 'aster-recent-post', array('class' => 'img-responsive')).'</a>';
 						$output .='</div>';
 					endif;
 
@@ -119,8 +119,9 @@ class Aster_Blog_Posts_Widget extends WP_Widget{
 		$instance = wp_parse_args( (array) $instance, $defaults );
 	?>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php _e('Widget Title', 'aster'); ?></label>
-			<input id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" value="<?php echo esc_attr($instance['title']); ?>" style="width:100%;" />
+			<label for="<?php echo esc_html($this->get_field_id( 'title' )); ?>"><?php _e('Widget Title', 'aster');
+				?></label>
+			<input id="<?php echo esc_html($this->get_field_id( 'title' )); ?>" name="<?php echo esc_html($this->get_field_name('title')); ?>" value="<?php echo esc_html($instance['title']); ?>" style="width:100%;" />
 		</p>
 
 		<p>
