@@ -18,25 +18,6 @@ $wp_customize->remove_control('header_textcolor');
    	) );
 	//Hide slider
 	$wp_customize->add_setting(
-    'becorp_option[front_page_enabled]',
-    array(
-        'default' => 1 ,
-		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
-		'type' => 'option',
-    )	
-	);
-	$wp_customize->add_control(
-    'becorp_option[front_page_enabled]',
-    array(
-        'label' => __('Front Page Enable/Disabe','becorp'),
-        'section' => 'header_front_data',
-        'type' => 'checkbox',
-    )
-	);
-	
-	
-	$wp_customize->add_setting(
 	'becorp_option[header_info_phone]', array(
         'default'        => __('(2)245 23 68','becorp'),
         'capability'     => 'edit_theme_options',

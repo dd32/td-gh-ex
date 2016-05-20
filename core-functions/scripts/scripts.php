@@ -2,13 +2,11 @@
 function becorp_scripts()
 {
  /*--------Css----------*/
-	
-		$becorp_custom_css = get_option('becorp_options');
-		$custom_css= esc_attr($becorp_custom_css['becorp_custom_css']);
+	$becorp_options=becorp_theme_default_data(); 
+	$becorp_custom_css = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options ); 
+	$custom_css= esc_attr($becorp_custom_css['becorp_custom_css']);
 		
-	
 	wp_enqueue_style('becorp-style', get_stylesheet_uri());
-	
 	wp_add_inline_style( 'becorp-style', $custom_css );
    
 	 wp_enqueue_style('becorp-bootstrap', BECORP_TEMPLATE_DIR_URI . '/css/bootstrap.css');

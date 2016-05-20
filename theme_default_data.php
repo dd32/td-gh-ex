@@ -3,9 +3,6 @@ function becorp_theme_default_data()
   	{
 	return $becorp_option=array(
 	
-	//Front-page 
-	'front_page_enabled'=> 1,
-	
 	//Header Settings
 	'header_info_phone' =>get_theme_mod('header_info_phone',__('(2)245 23 68','becorp')),
 	'header_info_mail'=> get_theme_mod('header_info_mail',__('becorp@gmail.com','becorp')),

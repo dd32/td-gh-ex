@@ -8,7 +8,7 @@
 							'before_title' => '<ul><h3>',
 							'after_title' => '</h3></ul>',
 						); 
-						the_widget('WP_Widget_Search','title=Search', $args);
+						the_widget('WP_Widget_Search', null, $args);
 						the_widget('WP_Widget_Archives', null, $args);
 						the_widget('WP_Widget_Recent_Posts', null, $args);
 						the_widget('WP_Widget_Categories', null, $args);

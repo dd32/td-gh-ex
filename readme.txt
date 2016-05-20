@@ -55,11 +55,15 @@ released
 
 2. Add About theme Feature.
 
-@version 3.3
+@version 2.3
 
 1.Add Sidebar widget title.
 
 2. Update pot translation file.
+
+@version 2.4
+
+1. Update pot translation file.
 
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
