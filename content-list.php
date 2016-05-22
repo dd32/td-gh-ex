@@ -1,6 +1,6 @@
 <?php
 /*
- * The content used by files archive and search.
+ * The content used by files archive, index and search.
  */
 ?>
 
@@ -21,7 +21,6 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class('post-archive'); ?>> 
 	<?php endif; ?> 
 <?php } ?>
-
 	<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 		<h4 class="sticky-title"><?php _e( 'Featured post', 'gridbulletin' ); ?></h4>
 	<?php endif; ?>
@@ -31,11 +30,10 @@
 	</h2>
 
 	<?php if ( has_post_thumbnail() ) { 
-		the_post_thumbnail(); 
+		the_post_thumbnail('list', array('class' => 'list-image')); 
 	} ?>
 
 	<?php the_excerpt(); ?>
 
-	<?php get_template_part( 'postmeta' ); ?>
-
+	<?php get_template_part( 'content-postmeta' ); ?>
 </article>
