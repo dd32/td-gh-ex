@@ -1,7 +1,7 @@
 === SimplyBlack ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 4.3
+Version: 4.4
 Requires at least: 3.7
 Tested up to: 4.5
 License: GNU General Public License v3 or later
