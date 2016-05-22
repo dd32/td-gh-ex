@@ -12,7 +12,7 @@
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
 			<h1 class="post-title-single"><?php the_title(); ?></h1>
 
-			<?php get_template_part( 'postmeta' ); ?>
+			<?php get_template_part( 'content-postmeta' ); ?>
 
 			<?php if (has_post_format('status') ) {?>
 				<?php printf( '<a href="%1$s">%2$s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), get_avatar( get_the_author_meta( 'ID' ), 96 )  ); ?>
@@ -24,7 +24,7 @@
 				<div class="pagelink"><?php wp_link_pages(); ?></div>
 			<?php } ?> 
 
-			<?php get_template_part( 'postmeta-single' ); ?>
+			<?php get_template_part( 'content-postmeta-single' ); ?>
 		</div>
 
 		<?php comments_template(); ?>
