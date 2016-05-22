@@ -2,6 +2,10 @@
 Beetle Changelog
 ===================================
 
+Version 1.0.5
+-----------------------------------
+No changes, only update for review purposes
+
 Version 1.0.4
 -----------------------------------
 [added] license credit information about html5shiv
