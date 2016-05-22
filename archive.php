@@ -23,8 +23,7 @@
 		</div>
 
 	<?php else: ?>
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'leftside' ); ?></h1>
-		<p><?php _e('Sorry, no posts matched your criteria.', 'leftside'); ?></p>
+		<?php get_template_part( 'content-none' ); ?>
 
 	<?php endif; ?>
 </div>
