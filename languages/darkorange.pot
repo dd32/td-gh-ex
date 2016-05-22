@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkOrange\n"
-"POT-Creation-Date: 2016-05-05 22:51+0200\n"
+"POT-Creation-Date: 2016-05-22 20:24+0200\n"
 "PO-Revision-Date: 2015-11-15 18:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,14 +19,6 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 archive.php:26 index.php:22 search.php:23
-msgid "Nothing Found"
-msgstr ""
-
-#: 404.php:10 archive.php:27 index.php:23 search.php:24
-msgid "Sorry, no posts matched your criteria."
-msgstr ""
-
 #: comments.php:16
 #, php-format
 msgid "1 comment on %2$s"
@@ -37,17 +29,62 @@ msgstr[0] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-list.php:18
+#: content-list.php:17
 msgid "Featured post"
 msgstr ""
 
-#: content-list.php:22
+#: content-list.php:21
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: content-list.php:34
+#: content-list.php:33
 msgid "Read More &raquo;"
+msgstr ""
+
+#: content-none.php:8 content-none.php:12
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:9 content-none.php:13
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: content-postmeta-single.php:8
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: content-postmeta-single.php:8 content-postmeta-single.php:10
+msgid ", "
+msgstr ""
+
+#: content-postmeta-single.php:10
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: content-postmeta.php:8
+#, php-format
+msgid "Posted on %s"
+msgstr ""
+
+#: content-postmeta.php:9
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: content-postmeta.php:11
+msgid "No comments"
+msgstr ""
+
+#: content-postmeta.php:11
+msgid "1 comment"
+msgstr ""
+
+#: content-postmeta.php:11
+#, php-format
+msgid "% comments"
 msgstr ""
 
 #: footer.php:22
@@ -66,77 +103,40 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:97
+#: functions.php:94
 msgid "Menu"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:105
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:110 functions.php:120 functions.php:130 functions.php:140
+#: functions.php:107 functions.php:117 functions.php:127 functions.php:137
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:118
+#: functions.php:115
 msgid "Homepage Sidebar"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:125
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:135
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:184 functions.php:193
+#: functions.php:181 functions.php:190
 msgid "Logo"
 msgstr ""
 
-#: functions.php:186
+#: functions.php:183
 msgid "Upload a logo to replace blogname and description in header."
 msgstr ""
 
 #: page-full.php:29 page.php:28 single.php:34
 msgid "Edit"
-msgstr ""
-
-#: postmeta-single.php:8
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: postmeta-single.php:8 postmeta-single.php:10
-msgid ", "
-msgstr ""
-
-#: postmeta-single.php:10
-#, php-format
-msgid "Tag: %s"
-msgstr ""
-
-#: postmeta.php:8
-#, php-format
-msgid "Posted on %s"
-msgstr ""
-
-#: postmeta.php:9
-#, php-format
-msgid "By %s"
-msgstr ""
-
-#: postmeta.php:11
-msgid "No comments"
-msgstr ""
-
-#: postmeta.php:11
-msgid "1 comment"
-msgstr ""
-
-#: postmeta.php:11
-#, php-format
-msgid "% comments"
 msgstr ""
 
 #: search.php:11
