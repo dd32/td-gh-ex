@@ -8,9 +8,7 @@
 <div id="main-content-container">
 <div id="main-content">
 <div id="content">
-	<h1 class="page-title"><?php _e( 'Nothing Found', 'multicolors' ); ?></h1>
-	<p><?php _e('Sorry, no posts matched your criteria.', 'multicolors'); ?></p>
-	<?php get_search_form(); ?>
+	<?php get_template_part( 'content-none' ); ?>
 </div>
 <?php get_sidebar(); ?>
 </div>

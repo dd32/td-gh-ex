@@ -8,12 +8,11 @@
 <div id="main-content-container">
 <div id="main-content">
 <div id="content-full">
+	<?php if ( have_posts() ) : ?>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-		<?php get_template_part( 'content-list' ); ?>
-
-	<?php endwhile; ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'content-list' ); ?>
+		<?php endwhile; ?>
 
 		<div class="post-nav">
 			<?php next_posts_link(); ?>
@@ -21,11 +20,9 @@
 		</div>
 
 	<?php else: ?>
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'multicolors' ); ?></h1>
-		<p><?php _e('Sorry, no posts matched your criteria.', 'multicolors'); ?></p>
+		<?php get_template_part( 'content-none' ); ?>
 
 	<?php endif; ?>
-				
 </div>
 </div>
 </div>

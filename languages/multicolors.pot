@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultiColors\n"
-"POT-Creation-Date: 2016-05-05 22:52+0200\n"
+"POT-Creation-Date: 2016-05-22 20:24+0200\n"
 "PO-Revision-Date: 2015-11-15 20:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,14 +19,6 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:11 archive.php:28 index.php:24 search.php:25
-msgid "Nothing Found"
-msgstr ""
-
-#: 404.php:12 archive.php:29 index.php:25 search.php:26
-msgid "Sorry, no posts matched your criteria."
-msgstr ""
-
 #: comments.php:16
 #, php-format
 msgid "1 comment on %2$s"
@@ -37,17 +29,62 @@ msgstr[0] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-list.php:18
+#: content-list.php:17
 msgid "Featured post"
 msgstr ""
 
-#: content-list.php:22
+#: content-list.php:21
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: content-list.php:34
+#: content-list.php:33
 msgid "Read More &raquo;"
+msgstr ""
+
+#: content-none.php:8 content-none.php:12
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:9 content-none.php:13
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: content-postmeta-single.php:8
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: content-postmeta-single.php:8 content-postmeta-single.php:10
+msgid ", "
+msgstr ""
+
+#: content-postmeta-single.php:10
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: content-postmeta.php:8
+#, php-format
+msgid "Posted on %s"
+msgstr ""
+
+#: content-postmeta.php:9
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: content-postmeta.php:11
+msgid "No comments"
+msgstr ""
+
+#: content-postmeta.php:11
+msgid "1 comment"
+msgstr ""
+
+#: content-postmeta.php:11
+#, php-format
+msgid "% comments"
 msgstr ""
 
 #: footer.php:26
@@ -117,43 +154,6 @@ msgstr ""
 
 #: page-full.php:31 page.php:30 single.php:36
 msgid "Edit"
-msgstr ""
-
-#: postmeta-single.php:8
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: postmeta-single.php:8 postmeta-single.php:10
-msgid ", "
-msgstr ""
-
-#: postmeta-single.php:10
-#, php-format
-msgid "Tag: %s"
-msgstr ""
-
-#: postmeta.php:8
-#, php-format
-msgid "Posted on %s"
-msgstr ""
-
-#: postmeta.php:9
-#, php-format
-msgid "By %s"
-msgstr ""
-
-#: postmeta.php:11
-msgid "No comments"
-msgstr ""
-
-#: postmeta.php:11
-msgid "1 comment"
-msgstr ""
-
-#: postmeta.php:11
-#, php-format
-msgid "% comments"
 msgstr ""
 
 #: search.php:13
