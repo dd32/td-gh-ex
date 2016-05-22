@@ -6,9 +6,7 @@
 
 <?php get_header(); ?>
 <div id="content">
-	<h1 class="page-title"><?php _e( 'Nothing Found', 'myknowledgebase' ); ?></h1>
-	<p><?php _e('Sorry, no posts matched your criteria.', 'myknowledgebase'); ?></p>
-	<?php get_search_form(); ?>
+	<?php get_template_part( 'content-none' ); ?>
 </div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

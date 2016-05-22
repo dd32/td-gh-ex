@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 3.9 - may 2016
+- added file content-none 
+- files 404, archive, index and search: relocated nothing found to separate file
+- updated file index
+- renamed both postmetadata files
+- several small adjustments
+
 MyKnowledgeBase version 3.8 - may 2016
 - theme now supports post formats
 - file header: updated head section

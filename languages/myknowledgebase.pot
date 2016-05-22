@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2016-05-05 22:52+0200\n"
+"POT-Creation-Date: 2016-05-22 20:25+0200\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,14 +18,6 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
-
-#: 404.php:9 archive.php:26 index.php:22 search.php:23
-msgid "Nothing Found"
-msgstr ""
-
-#: 404.php:10 archive.php:27 index.php:23 search.php:24
-msgid "Sorry, no posts matched your criteria."
-msgstr ""
 
 #: comments.php:16
 #, php-format
@@ -48,6 +40,51 @@ msgstr ""
 
 #: content-list.php:25
 msgid "Read More &raquo;"
+msgstr ""
+
+#: content-none.php:8 content-none.php:12
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:9 content-none.php:13
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: content-postmeta-single.php:8
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: content-postmeta-single.php:8 content-postmeta-single.php:10
+msgid ", "
+msgstr ""
+
+#: content-postmeta-single.php:10
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: content-postmeta.php:8
+#, php-format
+msgid "Posted on %s"
+msgstr ""
+
+#: content-postmeta.php:9
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: content-postmeta.php:11
+msgid "No comments"
+msgstr ""
+
+#: content-postmeta.php:11
+msgid "1 comment"
+msgstr ""
+
+#: content-postmeta.php:11
+#, php-format
+msgid "% comments"
 msgstr ""
 
 #: footer.php:25
@@ -145,43 +182,6 @@ msgstr ""
 
 #: page-full.php:29 page.php:28 single.php:34
 msgid "Edit"
-msgstr ""
-
-#: postmeta-single.php:8
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: postmeta-single.php:8 postmeta-single.php:10
-msgid ", "
-msgstr ""
-
-#: postmeta-single.php:10
-#, php-format
-msgid "Tag: %s"
-msgstr ""
-
-#: postmeta.php:8
-#, php-format
-msgid "Posted on %s"
-msgstr ""
-
-#: postmeta.php:9
-#, php-format
-msgid "By %s"
-msgstr ""
-
-#: postmeta.php:11
-msgid "No comments"
-msgstr ""
-
-#: postmeta.php:11
-msgid "1 comment"
-msgstr ""
-
-#: postmeta.php:11
-#, php-format
-msgid "% comments"
 msgstr ""
 
 #: search.php:11

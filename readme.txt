@@ -1,7 +1,7 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 3.8
+Version: 3.9
 Requires at least: 3.7
 Tested up to: 4.5
 License: GNU General Public License v3 or later

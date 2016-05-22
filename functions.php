@@ -46,7 +46,7 @@
 		// Post thumbnails
 			add_theme_support( 'post-thumbnails' ); 
 
-		// Resize mode thumbnails
+		// Resize thumbnails
 			set_post_thumbnail_size( 250, 250 ); 
 
 		// Resize single page thumbnail
@@ -185,7 +185,7 @@
 	add_filter( 'excerpt_length', 'myknowledgebase_excerpt_length', 999 ); 
 
 
-// Theme Customizer (logo and search bar title and posts per category)
+// Theme Customizer (logo and searchbar title and posts per category)
 	function myknowledgebase_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'myknowledgebase_logo_section' , array( 
 			'title' => __( 'Logo', 'myknowledgebase' ), 
