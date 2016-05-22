@@ -46,7 +46,7 @@
 		// Post thumbnails
 			add_theme_support( 'post-thumbnails' ); 
 
-		// Resize mode thumbnails
+		// Resize thumbnails
 			set_post_thumbnail_size( 450, 450 ); 
 
 		// Resize single page thumbnail
