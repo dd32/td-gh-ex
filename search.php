@@ -2,8 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package WordPress
- * @since The Box 1.0
+ * @package The Box
  */
 
 get_header(); ?>

@@ -2,8 +2,7 @@
 /**
  * The template for displaying search forms in thebox
  *
- * @package WordPress
- * @since The Box 1.0
+ * @package The Box
  */
 ?>
 	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">

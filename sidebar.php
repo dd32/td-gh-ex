@@ -2,8 +2,7 @@
 /**
  * The Sidebar Primary containing the main widget areas.
  *
- * @package WordPress
- * @since The Box 1.0
+ * @package The Box
  */
 ?>
 		<div id="secondary" class="widget-area" role="complementary">

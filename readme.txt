@@ -75,3 +75,10 @@ Please visit https://wordpress.org/support/theme/the-box if you have any questio
 1.4.1
 - Fix: Site Title repeated in the head
 - Fix: Third Level Menu
+
+1.4.2
+- Update: Translation
+
+1.4.3
+- New: Featured Image on Single Posts and Pages
+- New: Footer Background Color

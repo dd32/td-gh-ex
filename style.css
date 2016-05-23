@@ -4,7 +4,7 @@ Theme URI: http://www.designlabthemes.com/the-box-wordpress-theme/
 Author: Design Lab
 Author URI: http://www.designlabthemes.com/
 Description: Simple and minimal two columns Theme: custom header, custom background, custom colors, post thumbnails, post formats
-Version: 1.4.2.1
+Version: 1.4.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: thebox
@@ -764,7 +764,7 @@ a:hover {
 
 .edit-link a {
 	display: inline-block;
-	padding: 0.25em 1em;
+	padding: 5px 15px;
 	margin-left: 0.5em;
 	font-weight: 700;
 	border: 1px solid #0fa5d9;
@@ -773,6 +773,8 @@ a:hover {
 	text-decoration: none;	
 	font-size: 	0.923em;
 	line-height: 1;
+	-webkit-border-radius: 64px;
+	border-radius: 64px;
 }
 
 #content .edit-link a:hover {
@@ -1206,11 +1208,11 @@ button.menu-toggle .icon-font:before {
 /* 08: Content */
 
 .site-main {
-	margin: 2.0409% 0;
+	margin: 20px 0;
 }
 
 .hentry {
-	margin: 0 0 3.125% 0;
+	margin: 0 0 20px 0;
 	padding: 0;
 	background-color: #fff;
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.06);
@@ -1218,16 +1220,16 @@ button.menu-toggle .icon-font:before {
 }
 
 .entry-header {
-	margin-bottom: 2.34375%;
+	margin-bottom: 20px;
 	position: relative;
-	padding: 2.34375% 3.125%;
+	padding: 15px 20px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 .entry-content,
 .entry-summary {
-	margin: 0 0 2.34375% 0;
-	padding: 0 3.125%;
+	margin: 0 0 20px 0;
+	padding: 0 20px;
 }
 
 .entry-content p:last-child,
@@ -1236,7 +1238,7 @@ button.menu-toggle .icon-font:before {
 }
 
 .entry-footer {
-	padding: 2.34375% 3.125%;
+	padding: 15px 20px;
 	border-top: 1px solid rgba(0, 0, 0, 0.07);
 	color: #959595;
 }
@@ -1345,6 +1347,16 @@ button.menu-toggle .icon-font:before {
 	float: left;
 	width: 90%;
 	max-width: 90%;
+}
+
+.featured-image {
+	margin-bottom: 1em;
+}
+
+.featured-image img {
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
 
 /* 08: Content > Archive */
@@ -1577,9 +1589,9 @@ object {
 /* 11: Navigation */
 
 .site-navigation {
-	margin: 0 0 3.125%;
+	margin: 0 0 20px;
 	overflow: hidden;
-	padding: 2.34375% 3.125%;
+	padding: 15px 20px;
 	background-color: #fff;
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.06);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.06);
@@ -1789,7 +1801,7 @@ ul.page-numbers span {
 .site-footer {
 	clear: both;
 	color: #ccc;
-    padding: 2.04082%;
+    padding: 20px;
     background: #353535;
 }
 
@@ -1800,7 +1812,7 @@ ul.page-numbers span {
 .credits,
 .footer-navigation {
 	width: 45%;
-	margin: 1.0639% 0;
+	margin: 10px 0;
 }
 
 .credits {
@@ -1921,9 +1933,9 @@ textarea {
 }
 
 .comments-area {
-	margin: 3.125% 0;
+	margin: 20px 0;
 	font-size: 0.929em;
-	padding: 3.125%;
+	padding: 15px 20px;
 	background-color: #fff;
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.06);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.06);

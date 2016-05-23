@@ -7,8 +7,7 @@
  * handled by a callback to thebox_comment() which is
  * located in the functions.php file.
  *
- * @package WordPress
- * @since The Box 1.0
+ * @package The Box
  */
 ?>
 

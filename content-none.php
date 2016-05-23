@@ -2,8 +2,7 @@
 /**
  * The template for displaying a "No posts found" message
  *
- * @package WordPress
- * @since The Box 1.0
+ * @package The Box
  */
 ?>
 

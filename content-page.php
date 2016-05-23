@@ -1,9 +1,8 @@
 <?php
 /**
- * The template used for displaying page content in page.php
+ * The template part for displaying page content in page.php
  *
- * @package WordPress
- * @since The Box 1.0
+ * @package The Box
  */
 ?>
 
@@ -13,6 +12,9 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php if ( has_post_thumbnail() ) { ?>
+	    	<?php if  ( get_option( 'thebox_page_featured_image' ) ) { ?><div class="featured-image"><?php the_post_thumbnail( 'large' ); ?></div><?php } ?>
+		<?php } // has_post_thumbnail ?>
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'thebox' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->

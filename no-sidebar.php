@@ -2,8 +2,7 @@
 /**
  * Template Name: No-Sidebar Page Template
  *
- * @package WordPress
- * @since The Box 1.0
+ * @package The Box
  */
 
 get_header(); ?>

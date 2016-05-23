@@ -1,8 +1,8 @@
 <?php
 /**
+ * The template part for displaying content
  *
- * @package WordPress
- * @since The Box 1.0
+ * @package The Box
  */
 ?>
 
@@ -33,6 +33,9 @@
 	<?php if ( is_single() ) : ?>
 		
 		<div class="entry-content">
+			<?php if ( has_post_thumbnail() ) { ?>
+	    		<?php if  ( get_option( 'thebox_enable_featured_image' ) ) { ?><div class="featured-image"><?php the_post_thumbnail( 'large' ); ?></div><?php } ?>
+			<?php } // has_post_thumbnail ?>
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'thebox' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'thebox' ), 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->

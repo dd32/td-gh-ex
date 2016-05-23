@@ -2,8 +2,7 @@
 /**
  * The Box functions and definitions
  *
- * @package WordPress
- * @since The Box 1.0
+ * @package The Box
  */
 
 
@@ -65,7 +64,7 @@ function thebox_scripts() {
 	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/icons-font.css', array(), '1.6' );
 		
 	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.2.1' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.3' );
 	
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -283,35 +282,34 @@ if ( ! function_exists('thebox_pagination') ) {
 
 
 /**
- * Update to Plus Version
+ * Update to The Box Plus
  *
  */
- 
-if(is_admin()){
+ if( is_admin() ) {
 
-  if(!get_option('thebox_basic_notice')){
+ 	if( !get_option('thebox_basic_notice') ) {
 
     add_action('admin_notices', 'thebox_basic_notice');
     add_action('wp_ajax_thebox_hide_notice', 'thebox_hide_notice');
 
     function thebox_basic_notice(){
        ?>
-      <div class="basic-notice updated" style="position:relative;">
+      <div class="basic-notice updated is-dismissible" style="position: relative;padding-right: 40px;">
         <p>
           <?php
             printf(__('<strong>Upgrade to The Box Plus</strong> version to get extended functionality and advanced customization options: %1$s', 'thebox'),
-            sprintf('<a class="button button-primary" style="text-decoration:none" href="http://www.designlabthemes.com/the-box-plus-wordpress-theme/">%s</a>', '<strong>Try The Box Plus</strong>')
+            sprintf('<a class="button button-primary" style="text-decoration:none" href="http://www.designlabthemes.com/the-box-plus-wordpress-theme/" target="_blank">%s</a>', '<strong>Try The Box Plus</strong>')
             );
           ?>
         </p>
-         <a class="hide-me" style="position:absolute;top:10px;right:12px;text-decoration:none;cursor:pointer" title="<?php _e('Close and don\'t show this message again', 'thebox'); ?>">
-	         <img src="<?php echo get_template_directory_uri(); ?>/inc/images/icon-dismiss.png" alt="" />
+         <a class="notice-dismiss" style="text-decoration:none;cursor:pointer;" title="<?php _e('Close and don\'t show this message again', 'thebox'); ?>">
+	         <span class="screen-reader-text">Dismiss this notice.</span>
          </a>
       </div>
 
       <script type="text/javascript">
        jQuery(document).ready(function($){
-         $('#wpbody').delegate('.basic-notice a.hide-me', 'click', function(){
+         $('#wpbody').delegate('.basic-notice a.notice-dismiss', 'click', function(){
            $.ajax({
              url: ajaxurl,
              type: 'GET',
@@ -331,7 +329,7 @@ if(is_admin()){
       <?php
     }
 
-    function thebox_hide_notice(){
+    function thebox_hide_notice() {
       check_ajax_referer('thebox_hide_notice');
       update_option('thebox_basic_notice', true);
       die();

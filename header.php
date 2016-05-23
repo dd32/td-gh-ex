@@ -4,8 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package WordPress
- * @since The Box 1.0
+ * @package The Box
  */
 ?>
 <!DOCTYPE html>

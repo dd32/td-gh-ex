@@ -4,8 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @since The Box 1.0
+ * @package The Box
  */
 
 get_header(); ?>
