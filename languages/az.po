@@ -2,13 +2,17 @@
 # This file is distributed under the same license as the Argent package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-07-15 06:25:21+0000\n"
+"PO-Revision-Date: 2016-04-28 04:16:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Argent\n"
+
+#: content-front-portfolio.php:9
+msgid "Recent Projects"
+msgstr "Ən son layihələr"
 
 #. Template Name of the plugin/theme
 #: wp-content/themes/pub/argent/page-templates/front-page.php
@@ -288,7 +292,7 @@ msgstr "Bağışlayın, axtarış kriteriyalarınıza uyğun heç bir şey tapı
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "İlk yazınızı dərc etməyə hazırsınızmı? <a href=\"%1$s\">Buradan başlayın</a>."
 
-#: content-front-portfolio.php:63
+#: content-front-portfolio.php:65
 msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
 msgstr "İlk layihənizi dərc etməyə hazırsınızmı? <a href=\"%1$s\">Buradan başlayın</a>."
 
@@ -296,7 +300,7 @@ msgstr "İlk layihənizi dərc etməyə hazırsınızmı? <a href=\"%1$s\">Burad
 msgid "Nothing Found"
 msgstr "Heç Nə Tapılmadı"
 
-#: content-front-portfolio.php:59
+#: content-front-portfolio.php:61
 msgid "No Projects Found"
 msgstr "Heç bir layihə tapılmadı"
 

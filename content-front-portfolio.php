@@ -6,7 +6,7 @@
  */
 
 // Get Portfolio title
-$front_portfolio_title = get_theme_mod ( 'argent_front_portfoliotitle' );
+$front_portfolio_title = get_theme_mod ( 'argent_front_portfoliotitle', __( 'Recent Projects', 'argent') );
 
 // Get number of projects to display
 $portfolio_items_number = absint( get_theme_mod( 'argent_front_portfolio_number', 3 ) );
@@ -56,12 +56,15 @@ $project_query = new WP_Query ( $args );
 	<?php if ( current_user_can( 'publish_posts' ) ) : ?>
 
 	<section class="no-results not-found">
-		<h3><?php _e( 'No Projects Found', 'argent' ); ?></h3>
+
+		<div class="page-content">
+			<h3 class="page-title"><?php _e( 'No Projects Found', 'argent' ); ?></h3>
 
 			<p>
 				<?php printf( esc_html__( 'This section will display your latest projects. It can can be disbaled via the Customizer.', 'argent' ) ); ?><br />
-				<?php printf( esc_html__( 'Ready to publish your first project? <a href="%1$s">Get started here</a>.', 'argent' ), esc_url( admin_url( 'post-new.php?post_type=jetpack-portfolio' ) ) ); ?>
+				<?php printf( wp_kses( __( 'Ready to publish your first project? <a href="%1$s">Get started here</a>.', 'argent' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php?post_type=jetpack-portfolio' ) ) ); ?>
 			</p>
+		</div>
 
 	</section><!-- .no-results.not-found -->
 

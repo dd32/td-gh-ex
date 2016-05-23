@@ -8,7 +8,7 @@ Tested up to: 4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Argent Theme, Copyright 2015 Automattic
+Argent Theme, Copyright 2016 Automattic
 Argent is distributed under the terms of the GNU GPL
 
 == Description ==
@@ -72,6 +72,38 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 * Screenshot image by Unsplash (http://pixabay.com/en/macbook-notebook-apple-inc-336651/), licensed under CC0 Public Domain (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
 == Changelog ==
+
+= 23 May 2016 =
+* Update copyright dates
+* Use solid element instead of font to display slider's bullet points.
+
+= 12 May 2016 =
+* Add new classic-menu tag.
+
+= 5 May 2016 =
+* Fix link and formatting in 'No projects found' message.
+* Move annotations into the `inc` directory.
+
+= 4 May 2016 =
+* Move existing annotations into their respective theme directories.
+
+= 27 April 2016 =
+* Add default value for front page portfolio header;
+
+= 12 April 2016 =
+* Swap screenshot.jpg for .png.
+
+= 11 April 2016 =
+* Update screenshot.
+
+= 9 March 2016 =
+* Style subscripting and superscripting text.
+
+= 25 February 2016 =
+* Add blog-excerpts tag.
+
+= 21 January 2016 =
+* Make sure site title doesn't overflow, especially on small screens.
 
 = 2 December 2015 =
 * Chaning background color of header area to black with transparency, when user selects custom background color to match Customizer preview with front-end for users without Custom Design; See #3536;
