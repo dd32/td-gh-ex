@@ -224,14 +224,14 @@ if (!function_exists('bazaarlite_scripts_styles')) {
 		wp_enqueue_script( "jquery-ui-tabs");
 		wp_enqueue_script( "masonry");
 
-		wp_enqueue_script( 'jquery.easing', get_template_directory_uri() . '/assets/js/jquery.easing.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'jquery.imagesloaded', get_template_directory_uri() . '/assets/js/jquery.imagesloaded.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'jquery.infinitescroll', get_template_directory_uri() . '/assets/js/jquery.infinitescroll.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'jquery.modernizr', get_template_directory_uri() . '/assets/js/jquery.modernizr.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'jquery.prettyPhoto', get_template_directory_uri() . '/assets/js/jquery.prettyPhoto.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'jquery.scrollTo', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'jquery.swipebox', get_template_directory_uri() . '/assets/js/jquery.swipebox.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'jquery.tinynav', get_template_directory_uri() . '/assets/js/jquery.tinynav.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/assets/js/jquery.easing.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery-imagesloaded', get_template_directory_uri() . '/assets/js/jquery.imagesloaded.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery-infinitescroll', get_template_directory_uri() . '/assets/js/jquery.infinitescroll.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery-modernizr', get_template_directory_uri() . '/assets/js/jquery.modernizr.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery-prettyPhoto', get_template_directory_uri() . '/assets/js/jquery.prettyPhoto.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery-scrollTo', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery-swipebox', get_template_directory_uri() . '/assets/js/jquery.swipebox.js' , array('jquery'), FALSE, TRUE ); 
+		wp_enqueue_script( 'jquery-tinynav', get_template_directory_uri() . '/assets/js/jquery.tinynav.js' , array('jquery'), FALSE, TRUE ); 
 		wp_enqueue_script( 'bazaar-lite-jquery.wip', get_template_directory_uri() . '/assets/js/jquery.wip.js' , array('jquery'), FALSE, TRUE ); 
 
 		wp_enqueue_script ( 'bazaar-lite-html5',get_template_directory_uri().'/js/html5.js');

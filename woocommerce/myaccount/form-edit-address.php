@@ -15,7 +15,7 @@ global $current_user;
 
 $page_title = ( $load_address === 'billing' ) ? __( 'Billing Address', 'bazaar-lite' ) : __( 'Shipping Address', 'bazaar-lite' );
 
-get_currentuserinfo();
+wp_get_current_user();
 
 ?>
 
