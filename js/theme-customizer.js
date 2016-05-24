@@ -30,25 +30,24 @@
 
     wp.customize('blogdescription', function (value) {
         value.bind(function (to) {
+            $logo= $('.site-header .header-logo ').html();
             $('.site-header .site-logo').text('');
             $('.site-footer .site-logo').text('');
             var text = '';
             var text2 = '';
-            if ((wp.customize.instance('mp_artwork_logo').get() !== '') || (to !== '') || (wp.customize.instance('blogname').get() !== '')) {
-                text += '<a class="home-link" href="#" title="" rel="home">';
-                if (wp.customize.instance('mp_artwork_logo').get() !== '') {
-                    text += '<div class="header-logo "><img src="' + wp.customize.instance('mp_artwork_logo').get() + '" alt=""></div>';
+            if (($logo !== '') || (to !== '') || (wp.customize.instance('blogname').get() !== '')) {
+                if ($logo !== '') {
+                    text += '<div class="header-logo ">' + $logo + '</div>';
                 }
 
-                text += '<div class="site-description">';
+                text += '<a class="home-link" href="#" title="" rel="home"><div class="site-description">';
                 text += '<h1 class="site-title';
                 if (to !== '') {
                     text += ' empty-tagline';
                 }
                 text += '">' + wp.customize.instance('blogname').get() + '</h1>';
                 text += '<p class="site-tagline">' + to + '</p>';
-                text += '</div>';
-                text += '</a>';
+                text += '</div></a>';
             }
             if ((wp.customize.instance('mp_artwork_logo_footer').get() !== '') || (to !== '') || (wp.customize.instance('blogname').get() !== '')) {
                 text2 += '<a class="home-link" href="#" title="" rel="home">';
@@ -79,17 +78,19 @@
     });
     wp.customize('blogname', function (value) {
         value.bind(function (to) {
+            $logo= $('.site-header .header-logo ').html();
             $('.site-header .site-logo').text('');
             $('.site-footer .site-logo').text('');
             var text = '';
             var text2 = '';
-            if ((wp.customize.instance('mp_artwork_logo').get() !== '') || (wp.customize.instance('blogdescription').get() !== '') || (to !== '')) {
-                text += '<a class="home-link" href="#" title="" rel="home">';
-                if (wp.customize.instance('mp_artwork_logo').get() !== '') {
-                    text += '<div class="header-logo "><img src="' + wp.customize.instance('mp_artwork_logo').get() + '" alt=""></div>';
+            if (($logo !== '') || (wp.customize.instance('blogdescription').get() !== '') || (to !== '')) {
+
+                if ($logo !== '') {
+                    text += '<div class="header-logo ">'+$logo+'</div>';
                 }
 
                 text += '<div class="site-description">';
+                text += '<a class="home-link" href="#" title="" rel="home">';
                 text += '<h1 class="site-title';
                 if (wp.customize.instance('blogdescription').get() !== '') {
                     text += ' empty-tagline';
@@ -97,8 +98,8 @@
                 text += '">' + to + '</h1>';
                 text += '<p class="site-tagline">' + wp.customize.instance('blogdescription').get() + '</p>';
 
-                text += '</div>';
                 text += '</a>';
+                text += '</div>';
             }
             if ((wp.customize.instance('mp_artwork_logo_footer').get() !== '') || (wp.customize.instance('blogdescription').get() !== '') || (to !== '')) {
                 text2 += '<a class="home-link" href="#" title="" rel="home">';

@@ -7,7 +7,7 @@
  * @since Artwork
  */
 
-class Artwork_MP_Timetable {
+class MP_Artwork_MP_Timetable {
 
 	public function __construct() {
 		$this->remove_action_plugin();
@@ -38,4 +38,4 @@ class Artwork_MP_Timetable {
 
 }
 
-new Artwork_MP_Timetable();
+new MP_Artwork_MP_Timetable();

@@ -34,7 +34,7 @@ function mp_artwork_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $si
         }
         if ($size != 'post-thumbnail') {
            
-              $html .=' srcset="'.$image_thumbnails[0].'   720w, '.$image_medium[0].'   940w, ' .$attr['src'].'  1170w, " sizes=" (min-width:1230px) 1170px, (min-width:992px) 940px,  720px" width="1170" height="543"';
+              $html .=' srcset="'.esc_url($image_thumbnails[0]).'   720w, '.esc_url($image_medium[0]).'   940w, ' .$attr['src'].'  1170w, " sizes=" (min-width:1230px) 1170px, (min-width:992px) 940px,  720px" width="1170" height="543"';
         }
               $html .= ' />';
     }

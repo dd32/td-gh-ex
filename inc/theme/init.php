@@ -3,7 +3,6 @@
 class MP_Artwork {
 
 	private $prefix;
-	private $textDomain;
 
 	public function __construct() {
 		$this->prefix = 'mp_artwork';
@@ -172,10 +171,10 @@ class MP_Artwork {
 	 */
 
 	function load_google_fonts() {
-		wp_register_style( 'JosefinSans', 'https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700italic,700' );
-		wp_enqueue_style( 'JosefinSans' );
-		wp_register_style( 'Niconne', 'https://fonts.googleapis.com/css?family=Niconne' );
-		wp_enqueue_style( 'Niconne' );
+		wp_register_style( $this->get_prefix() . 'JosefinSans', 'https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700italic,700' );
+		wp_enqueue_style( $this->get_prefix() . 'JosefinSans' );
+		wp_register_style( $this->get_prefix() . 'Niconne', 'https://fonts.googleapis.com/css?family=Niconne' );
+		wp_enqueue_style( $this->get_prefix() . 'Niconne' );
 	}
 
 	/**
@@ -192,15 +191,15 @@ class MP_Artwork {
 		/*
 		 *  Scripts for template masonry blog
 		 */
-		wp_enqueue_script( 'jquery.infinitescroll', get_template_directory_uri() . '/js/jquery.infinitescroll.min.js', array( 'jquery' ), '2.1.0', true );
-		wp_enqueue_script( 'superfish.min', get_template_directory_uri() . '/js/superfish.min.js', array( 'jquery' ), '1.7.5', true );
+		wp_enqueue_script( 'jquery-infinitescroll', get_template_directory_uri() . '/js/jquery.infinitescroll.min.js', array( 'jquery' ), '2.1.0', true );
+		wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.min.js', array( 'jquery' ), '1.7.5', true );
 		wp_enqueue_script( 'jquery-labelauty', get_template_directory_uri() . '/js/jquery-labelauty.min.js', array( 'jquery', ), '1.1', true );
 		wp_enqueue_script( $this->get_prefix() . 'script', get_template_directory_uri() . '/js/artwork.min.js', array(
 			'jquery',
-			'superfish.min',
+			'superfish',
 			'jquery-labelauty',
-			'jquery.infinitescroll'
-		), $this->get_theme_vertion(), true );
+			'jquery-infinitescroll'
+		), $this->get_theme_version(), true );
 
 		$translation_array = array(
 			'url' => get_template_directory_uri()
@@ -215,14 +214,14 @@ class MP_Artwork {
 		wp_enqueue_style( $this->get_prefix() . 'main', get_template_directory_uri() . '/css/artwork-style.min.css', array(
 			'bootstrap',
 			'font-awesome'
-		), $this->get_theme_vertion(), 'all' );
+		), $this->get_theme_version(), 'all' );
 
 		if ( is_plugin_active( 'motopress-content-editor/motopress-content-editor.php' ) || is_plugin_active( 'motopress-content-editor-lite/motopress-content-editor.php' ) ) {
 			wp_enqueue_style( $this->get_prefix() . 'motopress', get_template_directory_uri() . '/css/artwork-motopress.min.css', array(
 				'bootstrap',
 				'font-awesome',
 				$this->get_prefix() . 'main'
-			), $this->get_theme_vertion(), 'all' );
+			), $this->get_theme_version(), 'all' );
 		}
 
 		if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
@@ -230,7 +229,7 @@ class MP_Artwork {
 				'bootstrap',
 				'font-awesome',
 				$this->get_prefix() . 'main'
-			), $this->get_theme_vertion(), 'all' );
+			), $this->get_theme_version(), 'all' );
 		}
 
 		if ( is_plugin_active( 'bbpress/bbpress.php' ) ) {
@@ -238,19 +237,19 @@ class MP_Artwork {
 				'bootstrap',
 				'font-awesome',
 				$this->get_prefix() . 'main'
-			), $this->get_theme_vertion(), 'all' );
+			), $this->get_theme_version(), 'all' );
 		}
 		if ( is_rtl() ) {
 			wp_enqueue_style( $this->get_prefix() . 'rtl', get_template_directory_uri() . '/css/artwork-rtl.min.css', array(
 				'bootstrap',
 				'font-awesome',
 				$this->get_prefix() . 'main'
-			), $this->get_theme_vertion(), 'all' );
+			), $this->get_theme_version(), 'all' );
 		}
 		/*
 		 *  Loads our main stylesheet.
 		 */
-		wp_enqueue_style( $this->get_prefix() . 'style', get_stylesheet_uri(), array(), $this->get_theme_vertion());
+		wp_enqueue_style( $this->get_prefix() . 'style', get_stylesheet_uri(), array(), $this->get_theme_version() );
 	}
 
 	/**
@@ -329,7 +328,7 @@ class MP_Artwork {
 		 * Customizer
 		 */
 		require get_template_directory() . '/inc/admin/customize.php';
-		new MP_Profit_Customizer( $this->prefix );
+		new MP_Artwork_Customizer( $this->prefix );
 
 		/*
 		 * Artwork only works in WordPress 3.6 or later.
@@ -362,7 +361,7 @@ class MP_Artwork {
 		 */
 		if ( is_plugin_active( 'motopress-content-editor/motopress-content-editor.php' ) || is_plugin_active( 'motopress-content-editor-lite/motopress-content-editor.php' ) ) {
 			require get_template_directory() . '/inc/motopress/motopress-init.php';
-			new MP_Motopress_Init( $this->get_prefix() );
+			new MP_Artwork_MP_Motopress_Init( $this->get_prefix() );
 		}
 		/*
 			 * Init  mp-restaurant-menu
@@ -396,7 +395,7 @@ class MP_Artwork {
 	 * @access public
 	 * @return string
 	 */
-	function get_theme_vertion() {
+	function get_theme_version() {
 		$theme_info = wp_get_theme();
 
 		return $theme_info->get( 'Version' );

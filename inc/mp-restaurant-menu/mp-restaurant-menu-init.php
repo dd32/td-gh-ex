@@ -7,7 +7,7 @@
  * @since Artwork
  */
 
-class Artwork_MP_Restaurant_Menu {
+class MP_Artwork_MP_Restaurant_Menu {
 
 	public function __construct() {
 		$this->remove_action_plugin();
@@ -64,4 +64,4 @@ class Artwork_MP_Restaurant_Menu {
 
 }
 
-new Artwork_MP_Restaurant_Menu();
+new MP_Artwork_MP_Restaurant_Menu();

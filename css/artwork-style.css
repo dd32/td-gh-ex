@@ -857,6 +857,7 @@ button, input[type="button"], input[type="submit"] {
 }
 .top-header .header-logo img {
   max-height: 5.938em;
+  width: auto;
 }
 .top-header .site-logo {
   position: absolute;
@@ -936,6 +937,7 @@ button, input[type="button"], input[type="submit"] {
   .top-header {
     position: relative;
     height: auto;
+    min-height: 5.375em;
   }
 
   .artwork-custom-home .top-header-content .site-logo {
@@ -1257,6 +1259,21 @@ button, input[type="button"], input[type="submit"] {
 @media (max-width: 991px) {
   .main-container {
     padding-top: 2.500em;
+  }
+}
+@media (max-width: 767px) {
+  .main-container .post-in-blog:last-child {
+    margin-bottom: 5.000em;
+  }
+
+  .main-container .post-in-blog .entry-footer {
+    margin: 0;
+  }
+  .main-container .post-in-blog .entry-header {
+    margin: 0 0 1em;
+  }
+  .main-container .post-in-blog .entry-thumbnail, .main-container .post-in-blog .entry-media {
+    margin: 0 0 1.375em;
   }
 }
 .page-404 {
@@ -1746,25 +1763,38 @@ iframe {
 }
 
 @media (max-width: 991px) {
+  .posts-related .two-col-works .work-content,
   .two-col-works .work-content {
-    bottom: auto;
-    top: 0;
-    padding: 0;
+    bottom: 0;
+    padding: 1em;
     opacity: 1;
   }
+  .posts-related .two-col-works .work-content h5,
   .two-col-works .work-content h5 {
     text-transform: none;
   }
 
-  .two-col-works .work-wrapper-light + .work-content h5 {
-    color: #ffffff;
+  .posts-related .two-col-works .work-content {
+    top: auto;
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  .posts-related .two-col-works .work-content .work-header {
+    padding: 1.188em;
+  }
+  .posts-related .two-col-works .work-content .work-header h5 {
+    color: #171717;
+  }
+
+  .posts-related .two-col-works .work-content .work-header,
+  .two-col-works .work-content .work-header {
+    background: rgba(255, 255, 255, 0.75);
   }
 
   .two-col-works .work-content .work-header {
-    display: block;
-    text-align: left;
-    background: transparent;
-    width: 100%;
+    bottom: 0;
   }
 }
 @media (max-width: 767px) {
@@ -1809,6 +1839,7 @@ iframe {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .work-blog.home-work-blog .entry-title {

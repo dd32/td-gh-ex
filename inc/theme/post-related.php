@@ -14,7 +14,6 @@ class MP_Artwork_Related {
 
     function related_posts() {
         global $post;
-        $orig_post = $post;
         if (strcmp(get_post_type($post), 'post') === 0) {
             $this->related_posts_post();
         } else {
@@ -166,7 +165,6 @@ class MP_Artwork_Related {
 
     function related_posts_content($args, $argscat) {
         global $post;
-        $orig_post = $post;
         $post_ids = array($post->ID);
         $first = false;
         $works = null;
@@ -201,7 +199,7 @@ class MP_Artwork_Related {
     function related_posts_loop($works) {
         global $post;
         $works->the_post();
-        $mp_artwork_feat_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumb-large');
+        $mp_artwork_feat_image_url =wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumb-large');
         $mp_artwork_width_img = $mp_artwork_feat_image_url[1];
         $mp_artwork_class_page = '';
         if ($mp_artwork_width_img >= 600) {
@@ -216,13 +214,13 @@ class MP_Artwork_Related {
         if ($mp_artwork_feat_image_url):
             ?>
             <a href="<?php the_permalink(); ?>" class="work-element" id="post-<?php echo $post->ID; ?>">
-                <div class="work-wrapper work-wrapper-bg <?php echo $mp_artwork_work_bg; ?> <?php echo $mp_artwork_class_page; ?>" style="background-image: url(<?php echo $mp_artwork_feat_image_url[0]; ?>)">
+                <div class="work-wrapper work-wrapper-bg <?php echo  esc_attr($mp_artwork_work_bg); ?> <?php echo esc_attr($mp_artwork_class_page); ?>" style="background-image: url(<?php echo esc_url($mp_artwork_feat_image_url[0]); ?>)">
                 </div>
             <?php the_title('<div class="work-content"><div class="work-header"><h5>', '</h5></div></div>'); ?>                            
             </a>
             <?php else: ?>
             <a href="<?php the_permalink(); ?>" class="work-element default-elemet"  id="post-<?php echo $post->ID; ?>">
-                <div class="work-wrapper <?php echo $mp_artwork_work_bg; ?> <?php echo $mp_artwork_class_page; ?>" >
+                <div class="work-wrapper <?php echo  esc_attr($mp_artwork_work_bg); ?> <?php echo esc_attr($mp_artwork_class_page); ?>" >
                 </div>
             <?php the_title('<div class="work-content"><div class="work-header"><h5>', '</h5></div></div>'); ?>  
             </a>

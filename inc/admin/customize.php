@@ -5,9 +5,8 @@
  *
  * add actions for default widgets if footer
  */
-require get_template_directory() . '/inc/admin/customise-classes.php';
 
-class MP_Profit_Customizer {
+class MP_Artwork_Customizer {
 
 	private $prefix;
 
@@ -144,33 +143,9 @@ class MP_Profit_Customizer {
 				'capability' => 'edit_theme_options'
 			)
 		);
-
 		/*
-		 * Add the 'logo ' upload setting.
-		 */
-		$wp_customize->add_setting(
-			$this->get_prefix() . 'logo', array(
-				
-				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'esc_url_raw',
-			)
-		);
-
-		/*
-		 * Add the upload control for the$this->get_prefix().'logo' setting.
-		 */
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize, $this->get_prefix() . 'logo', array(
-					'label'    => esc_html__( 'Logo', 'artwork-lite' ),
-					'section'  => $this->get_prefix() . 'logo_section',
-					'settings' => $this->get_prefix() . 'logo',
-				)
-			)
-		);
-		/*
-		 * Add the 'logo footer' upload setting.
-		 */
+		* Add the 'logo footer' upload setting.
+		*/
 		$wp_customize->add_setting(
 			$this->get_prefix() . 'logo_footer', array(
 				
@@ -218,11 +193,12 @@ class MP_Profit_Customizer {
 			'sanitize_callback' => array( $this, 'sanitize_text' ),
 			'transport'         => 'postMessage'
 		) );
-		$wp_customize->add_control( new MP_Artwork_Customize_Textarea_Control( $wp_customize, $this->get_prefix() . 'location_info', array(
+		$wp_customize->add_control( $this->get_prefix() . 'location_info', array(
 			'label'    => __( 'Contact Information 1', 'artwork-lite' ),
 			'section'  => $this->get_prefix() . 'header_info',
 			'settings' => $this->get_prefix() . 'location_info',
-		) ) );
+			'type'     => 'textarea'
+		) );
 		$wp_customize->add_setting( $this->get_prefix() . 'hours_info_label', array(
 			'default'           => __( 'Address', 'artwork-lite' ),
 			'capability'        => 'edit_theme_options',
@@ -240,11 +216,12 @@ class MP_Profit_Customizer {
 			'sanitize_callback' => array( $this, 'sanitize_text' ),
 			'transport'         => 'postMessage'
 		) );
-		$wp_customize->add_control( new MP_Artwork_Customize_Textarea_Control( $wp_customize, $this->get_prefix() . 'hours_info', array(
+		$wp_customize->add_control(  $this->get_prefix() . 'hours_info', array(
 			'label'    => __( 'Contact Information 2', 'artwork-lite' ),
 			'section'  => $this->get_prefix() . 'header_info',
 			'settings' => $this->get_prefix() . 'hours_info',
-		) ) );
+			'type'     => 'textarea'
+		)  );
 
 
 		/*
@@ -359,7 +336,7 @@ class MP_Profit_Customizer {
 		/* Add the upload control for the 'Instagram link' setting. */
 		$wp_customize->add_control(
 			$this->get_prefix() . 'instagram_link', array(
-				'label'    => esc_html__( 'Instagram link', 'profit-lite' ),
+				'label'    => esc_html__( 'Instagram link', 'artwork-lite' ),
 				'section'  => $this->get_prefix() . 'header_socials',
 				'settings' => $this->get_prefix() . 'instagram_link',
 			)
@@ -376,7 +353,7 @@ class MP_Profit_Customizer {
 		/* Add the upload control for the 'pinterest link' setting. */
 		$wp_customize->add_control(
 			$this->get_prefix() . 'pinterest_link', array(
-				'label'    => esc_html__( 'Pinterest link', 'profit-lite' ),
+				'label'    => esc_html__( 'Pinterest link', 'artwork-lite' ),
 				'section'  => $this->get_prefix() . 'header_socials',
 				'settings' => $this->get_prefix() . 'pinterest_link',
 			)
@@ -392,7 +369,7 @@ class MP_Profit_Customizer {
 		/* Add the upload control for the 'tumblr link' setting. */
 		$wp_customize->add_control(
 			$this->get_prefix() . 'tumblr_link', array(
-				'label'    => esc_html__( 'Tumblr link', 'profit-lite' ),
+				'label'    => esc_html__( 'Tumblr link', 'artwork-lite' ),
 				'section'  => $this->get_prefix() . 'header_socials',
 				'settings' => $this->get_prefix() . 'tumblr_link',
 			)
@@ -408,7 +385,7 @@ class MP_Profit_Customizer {
 		/* Add the upload control for the 'google plus link' setting. */
 		$wp_customize->add_control(
 			$this->get_prefix() . 'youtube_link', array(
-				'label'    => esc_html__( 'Youtube link', 'profit-lite' ),
+				'label'    => esc_html__( 'Youtube link', 'artwork-lite' ),
 				'section'  => $this->get_prefix() . 'header_socials',
 				'settings' => $this->get_prefix() . 'youtube_link',
 			)
@@ -556,7 +533,7 @@ class MP_Profit_Customizer {
 	 * @since Artwork 1.0
 	 */
 	function customize_preview_js() {
-		wp_enqueue_script( 'theme-customizer', get_template_directory_uri() . '/js/theme-customizer.min.js', array( 'customize-preview' ), $this->get_theme_vertion(), true );
+		wp_enqueue_script( 'theme-customizer', get_template_directory_uri() . '/js/theme-customizer.min.js', array( 'customize-preview' ), $this->get_theme_version(), true );
 	}
 
 	/**
@@ -651,7 +628,7 @@ class MP_Profit_Customizer {
 	 * @access public
 	 * @return string
 	 */
-	function get_theme_vertion() {
+	function get_theme_version() {
 		$theme_info = wp_get_theme();
 
 		return $theme_info->get( 'Version' );

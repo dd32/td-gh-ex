@@ -19,15 +19,15 @@
 	<?php wp_head(); ?>
 </head>
 <?php
-$classHome = 'artwork';
+$mp_artwork_class = 'artwork';
 if ( is_front_page() ) :
 	if ( get_page_template_slug() === 'template-front-page.php' ):
-		$classHome = $classHome . ' artwork-custom-home';
+		$mp_artwork_class = $mp_artwork_class . ' artwork-custom-home';
 	endif;
 endif;
 ?>
 
-<body <?php body_class( $classHome ); ?> >
+<body <?php body_class( $mp_artwork_class ); ?> >
 <div class="site-wrapper">
 	<?php if ( get_page_template_slug() != 'template-landing-page.php' ): ?>
 	<header id="header" class="main-header">
@@ -36,33 +36,29 @@ endif;
 			<div class="top-header-content">
 				<div class="top-content">
 					<div class="site-logo">
-						<?php if ( get_theme_mod( mp_artwork_get_prefix() . 'logo' ) != "" || get_bloginfo( 'description' ) || get_theme_mod( 'name' ) != "" ) : ?>
-							<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>"
-							   title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<?php if ( get_theme_mod( 'custom_logo' ) != "" || get_bloginfo( 'description' ) || get_theme_mod( 'name' ) != "" ) : ?>
+							<?php  ?>
+								<?php if ( get_theme_mod( 'custom_logo' ) ) : ?>
+									<div class="header-logo ">
+										<?php the_custom_logo(); ?>
+									</div>
+								<?php endif; ?>
 								<?php  ?>
-									<?php if ( get_theme_mod( mp_artwork_get_prefix() . 'logo' ) ) : ?>
-										<div class="header-logo "><img
-												src="<?php echo esc_url( get_theme_mod( mp_artwork_get_prefix() . 'logo' ) ); ?>"
-												alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-										</div>
-									<?php endif; ?>
-									<?php  ?>
-							</a>
 						<?php endif ?>
 					</div>
 					<div id="navbar" class="navbar <?php
-					if ( get_theme_mod( mp_artwork_get_prefix() . 'logo' ) === "" ): echo 'navbar-full-width';
+					if ( get_theme_mod( 'custom_logo' ) === "" ): echo 'navbar-full-width';
 					endif;
 					?>">
 						<nav id="site-navigation" class="main-navigation">
 							<?php
-							$defaults = array(
+							$mp_artwork_defaults = array(
 								'theme_location' => 'primary',
 								'menu_class'     => 'sf-menu ',
 								'menu_id'        => 'main-menu',
 								'fallback_cb'    => 'mp_artwork_page_menu'
 							);
-							wp_nav_menu( $defaults );
+							wp_nav_menu( $mp_artwork_defaults );
 							?>
 						</nav>
 					</div>

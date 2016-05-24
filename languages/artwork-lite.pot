@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2016-04-29 10:09+0300\n"
-"PO-Revision-Date: 2016-04-29 10:09+0300\n"
+"POT-Creation-Date: 2016-05-24 09:48+0300\n"
+"PO-Revision-Date: 2016-05-24 09:48+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.3\n"
 "X-Poedit-Basepath: ../../../artwork-lite\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_n;_e;_x;esc_html;esc_attr_el\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html__;esc_attr_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:15
@@ -96,6 +96,38 @@ msgstr ""
 
 #: classes/theme/class-tgm-plugin-activation.php:405
 msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:521
+msgid "Update Required"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:635
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:828
+#: classes/theme/class-tgm-plugin-activation.php:3438
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:935
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:935
+#: classes/theme/class-tgm-plugin-activation.php:938
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:938
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
 msgstr ""
 
 #: classes/theme/class-tgm-plugin-activation.php:1881
@@ -225,6 +257,10 @@ msgstr ""
 msgid "Activate %2$s"
 msgstr ""
 
+#: classes/theme/class-tgm-plugin-activation.php:2570
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
 #: classes/theme/class-tgm-plugin-activation.php:2603
 msgid "Install"
 msgstr ""
@@ -251,6 +287,14 @@ msgstr ""
 
 #: classes/theme/class-tgm-plugin-activation.php:2683
 msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2788
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:2814
+msgid "No plugins are available to be activated at this time."
 msgstr ""
 
 #: classes/theme/class-tgm-plugin-activation.php:3028
@@ -283,6 +327,16 @@ msgstr ""
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
+#: classes/theme/class-tgm-plugin-activation.php:3370
+#: classes/theme/class-tgm-plugin-activation.php:3376
+msgid "Show Details"
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3370
+#: classes/theme/class-tgm-plugin-activation.php:3376
+msgid "Hide Details"
+msgstr ""
+
 #: classes/theme/class-tgm-plugin-activation.php:3371
 msgid "All installations and activations have been completed."
 msgstr ""
@@ -296,6 +350,11 @@ msgstr ""
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
+msgstr ""
+
+#: classes/theme/class-tgm-plugin-activation.php:3376
+#, php-format
+msgid "%1$s installed successfully."
 msgstr ""
 
 #: classes/theme/class-tgm-plugin-activation.php:3377
@@ -362,11 +421,11 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: footer.php:60 inc/admin/customize.php:227
+#: footer.php:60 inc/admin/customize.php:203
 msgid "Address"
 msgstr ""
 
-#: footer.php:79 inc/admin/customize.php:205
+#: footer.php:79 inc/admin/customize.php:180
 msgid "Opening hours"
 msgstr ""
 
@@ -387,6 +446,10 @@ msgid "http://www.getmotopress.com/"
 msgstr ""
 
 #: footer.php:165
+msgid "Premium WordPress Plugins and Themes"
+msgstr ""
+
+#: footer.php:165
 msgid "MotoPress"
 msgstr ""
 
@@ -399,62 +462,134 @@ msgid "http://wordpress.org/"
 msgstr ""
 
 #: footer.php:166
+msgid "Semantic Personal Publishing Platform"
+msgstr ""
+
+#: footer.php:166
 msgid "WordPress"
 msgstr ""
 
-#: inc/admin/customize.php:81
+#: inc/admin/customize.php:57
+msgid "General"
+msgstr ""
+
+#: inc/admin/customize.php:80
 msgid "Text Color"
 msgstr ""
 
-#: inc/admin/customize.php:93
+#: inc/admin/customize.php:92
 msgid "Accent Color"
 msgstr ""
 
-#: inc/admin/customize.php:106
+#: inc/admin/customize.php:105
 msgid "Second Accent Color"
 msgstr ""
 
-#: inc/admin/customize.php:119
+#: inc/admin/customize.php:118
 msgid "Third Accent Color"
 msgstr ""
 
-#: inc/admin/customize.php:131
+#: inc/admin/customize.php:130
 msgid "Fourth Accent Color"
 msgstr ""
 
-#: inc/admin/customize.php:142
+#: inc/admin/customize.php:141
 msgid "Logo"
 msgstr ""
 
-#: inc/admin/customize.php:211
+#: inc/admin/customize.php:163
+msgid "Footer logo"
+msgstr ""
+
+#: inc/admin/customize.php:174
+msgid "Contact Information"
+msgstr ""
+
+#: inc/admin/customize.php:186
 msgid "Title Contact Information 1"
 msgstr ""
 
-#: inc/admin/customize.php:222
+#: inc/admin/customize.php:197
 msgid "Contact Information 1"
 msgstr ""
 
-#: inc/admin/customize.php:233
+#: inc/admin/customize.php:209
 msgid "Title Contact Information 2"
 msgstr ""
 
-#: inc/admin/customize.php:244
+#: inc/admin/customize.php:220
 msgid "Contact Information 2"
 msgstr ""
 
-#: inc/admin/customize.php:457
+#: inc/admin/customize.php:232
+msgid "Social Links"
+msgstr ""
+
+#: inc/admin/customize.php:254
+msgid "Facebook link"
+msgstr ""
+
+#: inc/admin/customize.php:276
+msgid "Twitter link"
+msgstr ""
+
+#: inc/admin/customize.php:299
+msgid "LinkedIn link"
+msgstr ""
+
+#: inc/admin/customize.php:321
+msgid "Google+ link"
+msgstr ""
+
+#: inc/admin/customize.php:339
+msgid "Instagram link"
+msgstr ""
+
+#: inc/admin/customize.php:356
+msgid "Pinterest link"
+msgstr ""
+
+#: inc/admin/customize.php:372
+msgid "Tumblr link"
+msgstr ""
+
+#: inc/admin/customize.php:388
+msgid "Youtube link"
+msgstr ""
+
+#: inc/admin/customize.php:410
+msgid "Rss link"
+msgstr ""
+
+#: inc/admin/customize.php:420
+msgid "Posts Settings"
+msgstr ""
+
+#: inc/admin/customize.php:434
 msgid "Blog Layout"
 msgstr ""
 
-#: inc/admin/customize.php:582
+#: inc/admin/customize.php:452
+msgid "Show Meta"
+msgstr ""
+
+#: inc/admin/customize.php:471
+msgid "Show Categories"
+msgstr ""
+
+#: inc/admin/customize.php:490
+msgid "Show Tags"
+msgstr ""
+
+#: inc/admin/customize.php:559
 msgid "Default"
 msgstr ""
 
-#: inc/admin/customize.php:640
+#: inc/admin/customize.php:617
 msgid "Full Width"
 msgstr ""
 
-#: inc/admin/customize.php:641
+#: inc/admin/customize.php:618
 msgid "With Sidebar"
 msgstr ""
 
@@ -479,19 +614,19 @@ msgstr ""
 msgid "Light"
 msgstr ""
 
-#: inc/theme/init.php:140
+#: inc/theme/init.php:139
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/theme/init.php:265
+#: inc/theme/init.php:264
 msgid "Main Widget Area"
 msgstr ""
 
-#: inc/theme/init.php:267
+#: inc/theme/init.php:266
 msgid "Appears on posts and pages in the sidebar."
 msgstr ""
 
-#: inc/theme/post-related.php:153
+#: inc/theme/post-related.php:152
 msgid "Related Posts"
 msgstr ""
 

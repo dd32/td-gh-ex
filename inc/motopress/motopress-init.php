@@ -6,7 +6,7 @@
  * Change default classes
  */
 
-class MP_Motopress_Init {
+class MP_Artwork_MP_Motopress_Init {
 
     private $prefix;
 

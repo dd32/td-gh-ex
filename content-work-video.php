@@ -39,11 +39,11 @@ global $mp_artwork_page_template;
                 </div>  
             </div>              
             <?php
-            $media = mp_artwork_get_first_embed_media($post->ID);
-            if ($media === false):
+            $mp_artwork_media = mp_artwork_get_first_embed_media($post->ID);
+            if ($mp_artwork_media === false):
                 mp_artwork_post_thumbnail($post, $mp_artwork_page_template);
             else:
-                echo $media;
+                echo $mp_artwork_media;
             endif;
             ?>
         </div>  

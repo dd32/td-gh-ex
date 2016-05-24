@@ -19,7 +19,7 @@ if (have_posts()) :
     </div>
     <div class="hidden">
         <div class="older-works">
-        <?php next_posts_link(__('&laquo; Older Entries', 'artwork-lite'), $mp_artwork_works->max_num_pages); ?>
+        <?php next_posts_link(__('&laquo; Older Entries', 'artwork-lite')); ?>
         </div>
     <?php previous_posts_link(__('Newer Entries &raquo;', 'artwork-lite')); ?>
     </div>
