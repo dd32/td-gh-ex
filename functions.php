@@ -3,55 +3,44 @@
 * 	Theme Core Functions and Codes
 */
 	/**Includes required resources here**/
-	define('CPM_TEMPLATE_DIR_URI', get_template_directory_uri());
-	define('CPM_TEMPLATE_DIR', get_template_directory());
-	define('CPM_TEMPLATE_DIR_CORE' , CPM_TEMPLATE_DIR . '/core');
-	define( 'CPM_TEMPLATE_DIR_ASSETS' , CPM_TEMPLATE_DIR . '/assets' );
-	require( CPM_TEMPLATE_DIR_CORE . '/menu/default_menu_walker.php' );
-	require( CPM_TEMPLATE_DIR_CORE . '/menu/bhumi_nav_walker.php' );
-	require( CPM_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here
-	require( CPM_TEMPLATE_DIR_CORE . '/comment-function.php' );
-	require( CPM_TEMPLATE_DIR_ASSETS . '/inc/customizer.php');
-	require( CPM_TEMPLATE_DIR_ASSETS . '/inc/customizer-controls.php' );
+	define('BHUMI_TEMPLATE_DIR_URI', get_template_directory_uri());
+	define('BHUMI_TEMPLATE_DIR', get_template_directory());
+	define('BHUMI_TEMPLATE_DIR_CORE' , BHUMI_TEMPLATE_DIR . '/core');
+	define( 'BHUMI_TEMPLATE_DIR_ASSETS' , BHUMI_TEMPLATE_DIR . '/assets' );
+	require( BHUMI_TEMPLATE_DIR_CORE . '/menu/default_menu_walker.php' );
+	require( BHUMI_TEMPLATE_DIR_CORE . '/menu/bhumi_nav_walker.php' );
+	require( BHUMI_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here
+	require( BHUMI_TEMPLATE_DIR_CORE . '/comment-function.php' );
+	require( BHUMI_TEMPLATE_DIR_ASSETS . '/inc/customizer.php');
+	require( BHUMI_TEMPLATE_DIR_ASSETS . '/inc/customizer-controls.php' );
 
 	//Sane Defaults
 	function bhumi_default_settings() {
-		$ImageUrl  = CPM_TEMPLATE_DIR_URI ."/assets/images/1.png";
-		$ImageUrl2 = CPM_TEMPLATE_DIR_URI ."/assets/images/2.png";
-		$ImageUrl3 = CPM_TEMPLATE_DIR_URI ."/assets/images/3.png";
-		$ImageUrl4 = CPM_TEMPLATE_DIR_URI ."/assets/images/portfolio1.png";
-		$ImageUrl5 = CPM_TEMPLATE_DIR_URI ."/assets/images/portfolio2.png";
-		$ImageUrl6 = CPM_TEMPLATE_DIR_URI ."/assets/images/portfolio3.png";
-		$ImageUrl7 = CPM_TEMPLATE_DIR_URI ."/assets/images/portfolio4.png";
-		$ImageUrl8 = CPM_TEMPLATE_DIR_URI ."/assets/images/portfolio5.png";
-		$ImageUrl9 = CPM_TEMPLATE_DIR_URI ."/assets/images/portfolio6.png";
 		$cpm_theme_options=array(
 				'upload_image_logo'=>'',
 				'height'=>'55',
 				'width'=>'150',
-				'_frontpage' => '',
-				'blog_count'=>'3',
 				'custom_css'=>'',
-				'slide_image_1' => $ImageUrl,
-				'slide_title_1' => __('Slide Title', 'bhumi' ),
-				'slide_desc_1' => __('Lorem Ipsum is simply dummy text of the printing', 'bhumi' ),
-				'slide_btn_text_1' => __('Read More', 'bhumi' ),
-				'slide_btn_link_1' => '#',
-				'slide_image_2' => $ImageUrl2,
-				'slide_title_2' => __('Phasellus ultrices nulla quis nibh', 'bhumi' ),
-				'slide_desc_2' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry', 'bhumi' ),
-				'slide_btn_text_2' => __('Read More', 'bhumi' ),
-				'slide_btn_link_2' => '#',
-				'slide_image_3' => $ImageUrl3,
-				'slide_title_3' => __('Contrary to popular ', 'bhumi' ),
-				'slide_desc_3' => __('Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi', 'bhumi' ),
-				'slide_btn_text_3' => __('Read More', 'bhumi' ),
-				'slide_btn_link_3' => '#',
+				'slide_image_1' => '',
+				'slide_title_1' => '',
+				'slide_desc_1' => '',
+				'slide_btn_text_1' => '',
+				'slide_btn_link_1' => '',
+				'slide_image_2' => '',
+				'slide_title_2' => '',
+				'slide_desc_2' => '',
+				'slide_btn_text_2' => '',
+				'slide_btn_link_2' => '',
+				'slide_image_3' => '',
+				'slide_title_3' => '',
+				'slide_desc_3' => '',
+				'slide_btn_text_3' => '',
+				'slide_btn_link_3' => '',
 				// Footer Call-Out
 				'fc_home'=>'1',
-				'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'bhumi' ),
-				'fc_btn_txt' => __('More Features', 'bhumi' ),
-				'fc_btn_link' =>"#",
+				'fc_title' => '',
+				'fc_btn_txt' => '',
+				'fc_btn_link' =>'',
 				'fc_radio'=>'bottom',
 				//Social media links
 				'header_social_media_in_enabled'=>'1',
@@ -70,58 +59,49 @@
 				'developed_by_bhumi_text' => __('Code Themes', 'bhumi' ),
 				'developed_by_link' => 'https://codethemes.co/',
 
-				'home_service_heading' => __('Our Services', 'bhumi' ),
-				'service_1_title'=>__("Gears",'bhumi' ),
-				'service_1_icons'=>"fa fa-gears",
-				'service_1_text'=>__("Lorem Ipsum is simply dummy text. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.", 'bhumi' ),
-				'service_1_link'=>"#",
+				'home_service_heading' => '',
+				'service_1_title'=> '',
+				'service_1_icons'=> '',
+				'service_1_text'=> '',
+				'service_1_link'=>'',
 
-				'service_2_title'=>__('Star', 'bhumi' ),
-				'service_2_icons'=>"fa fa-star",
-				'service_2_text'=>__("Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC", 'bhumi' ),
-				'service_2_link'=>"#",
+				'service_2_title'=> '',
+				'service_2_icons'=> '',
+				'service_2_text'=> '',
+				'service_2_link'=> '',
 
-				'service_3_title'=>__("WordPress", 'bhumi' ),
-				'service_3_icons'=>"fa fa-wordpress",
-				'service_3_text'=>__("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. ", 'bhumi' ),
-				'service_3_link'=>"#",
+				'service_3_title'=> '',
+				'service_3_icons'=> '',
+				'service_3_text'=> '',
+				'service_3_link'=>"",
 
-				'service_4_title'=>__("Base", 'bhumi'),
-				'service_4_icons'=>("fa fa-database"),
-				'service_4_text'=>__("Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.", 'bhumi'),
-				'service_4_link'=>"#",
+				'service_4_title'=> '',
+				'service_4_icons'=> '',
+				'service_4_text'=> '',
+				'service_4_link'=> '',
 
 				//Portfolio Settings:
 				'portfolio_home'=>'1',
-				'port_heading' => __('Recent Works', 'bhumi' ),
-				'port_1_img'=> $ImageUrl4,
-				'port_1_title'=>__('Charity', 'bhumi' ),
-				'port_1_link'=>'#',
-				'port_2_img'=> $ImageUrl5,
-				'port_2_title'=>__('Explore', 'bhumi' ),
-				'port_2_link'=>'#',
-				'port_3_img'=> $ImageUrl6,
-				'port_3_title'=>__('Dream', 'bhumi' ),
-				'port_3_link'=>'#',
-				'port_4_img'=> $ImageUrl7,
-				'port_4_title'=>__('Magazine', 'bhumi' ),
-				'port_4_link'=>'#',
+				'port_heading' => '',
+				'port_1_img'=> '',
+				'port_1_title'=> '',
+				'port_1_link'=>'',
+				'port_2_img'=> '',
+				'port_2_title'=> '',
+				'port_2_link'=>'',
+				'port_3_img'=> '',
+				'port_3_title'=> '',
+				'port_3_link'=>'',
+				'port_4_img'=> '',
+				'port_4_title'=> '',
+				'port_4_link'=> '',
 				//BLOG Settings
 				'show_blog' => '1',
-				'blog_title'=>__('Latest Blog', 'bhumi' )
+				'blog_title'=> '',
 
 			);
 			return apply_filters( 'bhumi_options', $cpm_theme_options );
     }
-
-	 /*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
-		) );
-	add_post_type_support( 'bhumi', 'post-formats', array('aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat') );
 
 	function bhumi_get_options() {
 	    // Options API
@@ -130,8 +110,6 @@
 	        bhumi_default_settings()
 	    );
 	}
-	// require( CPM_TEMPLATE_DIR_CORE . '/theme-options/option-panel.php' ); // for Options Panel
-
 
 
 	/*After Theme Setup*/
@@ -143,22 +121,29 @@
 		if ( ! isset( $content_width ) ) $content_width = 550; //px
 
 	    //Blog Thumb Image Sizes
-		add_image_size('home_post_thumb',340,210,true);
+		add_image_size('bhumi_home_post_thumb',340,210,true);
 		//Blogs thumbs
-		add_image_size('cpm_page_thumb',730,350,true);
-		add_image_size('blog_2c_thumb',570,350,true);
+		add_image_size('bhumi_cpm_page_thumb',730,350,true);
+		add_image_size('bhumi_blog_2c_thumb',570,350,true);
 		add_theme_support( 'title-tag' );
 		// Load text domain for translation-ready
 		load_theme_textdomain( 'bhumi' );
 
-		add_theme_support( 'post-thumbnails' ); //supports featured image
-		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu( 'primary', __( 'Primary Menu', 'bhumi' ) );
 		// theme support
+		add_theme_support( 'post-thumbnails' ); //supports featured image
 		$args = array('default-color' => '000000',);
 		add_theme_support( 'custom-background', $args);
 		add_theme_support( 'automatic-feed-links');
+		add_theme_support( 'post-formats', array(
+			'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
+			) );
 	}
+
+	function bhumi_support_for_pages() {
+		add_post_type_support( 'bhumi', 'post-formats', array('aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat') );
+	}
+	add_action( 'init', 'bhumi_support_for_pages' );
 
 
 	// Read more tag to formatting in blog page
@@ -219,7 +204,7 @@
 		        $parentCat = get_category($thisCat->parent);
 		        if ($thisCat->parent != 0)
 		            echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-		        echo $before . ' _e("Archive by category","bhumi") "' . single_cat_title('', false) . '"' . $after;
+		        echo $before . ' esc_html__("Archive by category","bhumi") "' . single_cat_title('', false) . '"' . $after;
 		    } elseif (is_day()) {
 		        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
 		        echo '<li><a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
@@ -267,58 +252,21 @@
 		            echo $crumb . ' ' . $delimiter . ' ';
 		        echo $before . get_the_title() . $after;
 		    } elseif (is_search()) {
-		        echo $before . _e("Search results for","bhumi")  . get_search_query() . '"' . $after;
+		        echo $before . esc_html__("Search results for","bhumi")  . get_search_query() . '"' . $after;
 
 		    } elseif (is_tag()) {
-				echo $before . _e('Tag','bhumi') . single_tag_title('', false) . $after;
+				echo $before . esc_html__('Tag','bhumi') . single_tag_title(' ', false) . $after;
 		    } elseif (is_author()) {
 		        global $author;
 		        $userdata = get_userdata($author);
-		        echo $before . _e("Articles posted by","bhumi") . $userdata->display_name . $after;
+		        echo $before . esc_html__("Articles posted by","bhumi") . $userdata->display_name . $after;
 		    } elseif (is_404()) {
-		        echo $before . _e("Error 404","bhumi") . $after;
+		        echo $before . esc_html__("Error 404","bhumi") . $after;
 		    }
 
 		    echo '</ul>';
 	}
 
-
-	//PAGINATION
-	function bhumi_pagination($pages = '', $range = 2) {
-	     $showitems = ($range * 2)+1;
-
-	     global $paged;
-	     if(empty($paged)) $paged = 1;
-
-	     if($pages == '')
-	     {
-	         global $wp_query;
-	         $pages = $wp_query->max_num_pages;
-	         if(!$pages)
-	         {
-	             $pages = 1;
-	         }
-	     }
-
-	     if(1 != $pages)
-	     {
-	         echo "<div class='bhumi_blog_pagination'><div class='bhumi_blog_pagi'>";
-	         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
-	         if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";
-
-	         for ($i=1; $i <= $pages; $i++)
-	         {
-	             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-	             {
-	                echo ($paged == $i)? "<a class='active'>".$i."</a>":"<a href='".get_pagenum_link($i)."'>".$i."</a>";
-	             }
-	         }
-
-	         if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";
-	         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
-	         echo "</div></div>";
-	     }
-	}
 	/*===================================================================================
 	* Add Author Links
 	* =================================================================================*/
@@ -380,7 +328,6 @@ function bhumi_post_link_previous() {
     return 'class="previous"';
 }
 
-
 if ( ! function_exists( 'bhumi_the_featured_video' ) ) {
     function bhumi_the_featured_video( $content ) {
         $ori_url = explode( "\n", $content );
@@ -391,7 +338,7 @@ if ( ! function_exists( 'bhumi_the_featured_video' ) ) {
 
         if ( 0 === strpos( $url, 'https://' ) ) {
 
-            echo apply_filters( 'the_content', $url );
+            echo apply_filters( 'bhumi_lite_video_content', $url );
             $content = trim( str_replace( $url, '', $content ) );
         }
         elseif ( preg_match ( '#^<(script|iframe|embed|object)#i', $url ) ) {
@@ -413,5 +360,3 @@ if ( ! function_exists( 'bhumi_the_featured_video' ) ) {
         }
     }
 }
-?>
-

@@ -1,6 +1,6 @@
 === Bhumi - WordPress Theme by Code Themes ===
 Contributors: Code Themes
-Version: 1.0.3
+Version: 1.0.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow,light,right-sidebar,two-columns,custom-menu,right-sidebar,fluid-layout,featured-image-header,theme-options, threaded-comments, featured-images, flexible-header, responsive-layout, translation-ready ,rtl-language-support,post-formats
@@ -94,23 +94,13 @@ Theme Animate CSS  |  v1.0 |
 Copyright 2014 bhumi
 Licensed under GPL
 
+==== Images ====
+License: Images used are published on Unsplash are licensed under Creative Commons Zero
+License URI: https://unsplash.com/license
+
 Images Taken for screenshot :
-unsplash.com
-https://images.unsplash.com/photo-1440635592348-167b1b30296f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=370477211fd6605e597e0d1e9534d99e
+Source: https://images.unsplash.com/photo-1440635592348-167b1b30296f
 
-Images Taken for Slider :
-Image Slide 1: https://images.unsplash.com/photo-1440635592348-167b1b30296f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=370477211fd6605e597e0d1e9534d99e
-Image Slide 2: https://unsplash.com/photos/DWnUGvN2xsw
-Image Slide 3: https://unsplash.com/photos/vATgbfp7oXA
-
-Images Taken for Recent Works :
-https://unsplash.com/photos/9dI3g8owHiI
-https://unsplash.com/photos/ChY016PARQY
-https://unsplash.com/photos/v-9ufgETCSI
-https://unsplash.com/photos/S-PyX-IVPfA
-
-Other Images used inside theme Bhumi :
-https://unsplash.com/photos/lGmHxHcuvbw
 
 == ChangeLog ==
 
@@ -120,3 +110,9 @@ Added Support links to the customizer
 
 = 1.0.2 =
 Changed Description and demo link.
+
+= 1.0.3 =
+Fixed escaping issues.
+
+= 1.0.4 =
+Escaping and prefixing redone.

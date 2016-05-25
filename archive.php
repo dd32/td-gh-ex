@@ -11,7 +11,7 @@
 					elseif ( is_year() ) :
 						printf( __( 'Yearly Archives: %s', 'bhumi' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'bhumi' ) ) . '</span>' );
 					else :
-						_e( 'Archives', 'bhumi' );
+						esc_html_e( 'Archives', 'bhumi' );
 					endif; ?>
 			</h1></div>
 		<?php endif; ?>

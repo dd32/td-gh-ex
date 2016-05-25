@@ -14,19 +14,20 @@
 <?php } ?>
 <div class="container">
 		<div class="row isotope" id="isotope-service-container">
-			<?php for($i=1; $i<5; $i++ ) { 
+			<?php for($i=1; $i<5; $i++ ) {
 				    if($cpm_theme_options['service_'.$i.'_icons'] !='' && $cpm_theme_options['service_'.$i.'_title'] !='' && $cpm_theme_options['service_'.$i.'_text'] !='' ) { ?>
 						<div class=" col-md-3 service">
 							<div class="bhumi_service_area appear-animation bounceIn appear-animation-visible">
 								<?php if($cpm_theme_options['service_'.$i.'_icons'] !='') { ?>
-									<a class="bhumi_service_icon" href="#"><i class="<?php echo esc_attr($cpm_theme_options['service_'.$i.'_icons']); ?>"></i></a><?php } ?>
+									<a class="bhumi_service_icon" href="#"><i class="fa <?php echo esc_attr($cpm_theme_options['service_'.$i.'_icons']); ?>"></i></a><?php } ?>
 									<div class="bhumi_service_detail media-body">
 										<?php if($cpm_theme_options['service_'.$i.'_title'] !='') { ?><h3><a href="<?php echo esc_url($cpm_theme_options['service_'.$i.'_link']); ?>"><?php echo esc_attr($cpm_theme_options['service_'.$i.'_title']); ?></a></h3><?php } ?>
-										<?php if($cpm_theme_options['service_'.$i.'_text'] !='') { ?><p><?php echo apply_filters('the_content', $cpm_theme_options['service_'.$i.'_text'], true); ?></p><?php } ?>
+										<?php if($cpm_theme_options['service_'.$i.'_text'] !='') { ?><p>
+										<?php echo apply_filters('bhumi_lite_content', wp_kses_post($cpm_theme_options['service_'.$i.'_text']), true); ?></p><?php } ?>
 									</div>
 							</div>
 						</div>
-			        <?php } 
+			        <?php }
 			} ?>
 		</div>
 	</div>

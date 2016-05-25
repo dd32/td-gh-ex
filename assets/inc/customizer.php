@@ -2,10 +2,10 @@
 add_action( 'customize_register', 'bhumi_customizer' );
 
 function bhumi_customizer( $wp_customize ) {
-	wp_enqueue_style('customizer', CPM_TEMPLATE_DIR_URI .'/assetscss/customizer.css');
-	$ImageUrl1 = CPM_TEMPLATE_DIR_URI ."/assets/images/1.png";
-	$ImageUrl2 = CPM_TEMPLATE_DIR_URI ."/assets/images/2.png";
-	$ImageUrl3 = CPM_TEMPLATE_DIR_URI ."/assets/images/3.png";
+	wp_enqueue_style('customizer', BHUMI_TEMPLATE_DIR_URI .'/assetscss/customizer.css');
+	$ImageUrl1 = BHUMI_TEMPLATE_DIR_URI ."/assets/images/1.png";
+	$ImageUrl2 = BHUMI_TEMPLATE_DIR_URI ."/assets/images/2.png";
+	$ImageUrl3 = BHUMI_TEMPLATE_DIR_URI ."/assets/images/3.png";
 	$ImageUrl4 = esc_url(get_template_directory_uri() ."/images/home-ppt1.png");
 	$ImageUrl5 = esc_url(get_template_directory_uri() ."/images/home-ppt2.png");
 	$ImageUrl6 = esc_url(get_template_directory_uri() ."/images/home-ppt3.png");
@@ -48,28 +48,13 @@ function bhumi_customizer( $wp_customize ) {
             'priority' => 35,
         )
     );
-		$cpm_theme_options = bhumi_get_options();
-	$wp_customize->add_setting(
-		'bhumi_options[_frontpage]',
-		array(
-			'type'    => 'option',
-			'default'=>'',
-			'sanitize_callback'=>'bhumi_sanitize_checkbox',
-			'capability'        => 'edit_theme_options',
-		)
-	);
-	$wp_customize->add_control( 'bhumi_front_page', array(
-		'label'        => __( 'Show Front Page', 'bhumi' ),
-		'type'=>'checkbox',
-		'section'    => 'general_sec',
-		'settings'   => 'bhumi_options[_frontpage]',
-	) );
+	$cpm_theme_options = bhumi_get_options();
 
 	$wp_customize->add_setting(
 		'bhumi_options[upload_image_logo]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['upload_image_logo'],
+			'default'=> '',
 			'sanitize_callback'=>'esc_url_raw',
 			'capability'        => 'edit_theme_options',
 		)
@@ -78,7 +63,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[height]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['height'],
+			'default'=>'55',
 			'sanitize_callback'=>'bhumi_sanitize_integer',
 			'capability'        => 'edit_theme_options'
 		)
@@ -87,7 +72,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[width]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['width'],
+			'default'=>'150',
 			'sanitize_callback'=>'bhumi_sanitize_integer',
 			'capability'        => 'edit_theme_options',
 		)
@@ -127,7 +112,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_image_1]',
 		array(
 			'type'    => 'option',
-			'default'=>$ImageUrl1,
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'esc_url_raw',
 		)
@@ -136,7 +121,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_image_2]',
 		array(
 			'type'    => 'option',
-			'default'=>$ImageUrl2,
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'esc_url_raw'
 		)
@@ -145,7 +130,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_image_3]',
 		array(
 			'type'    => 'option',
-			'default'=>$ImageUrl3,
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'esc_url_raw',
 
@@ -155,7 +140,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_title_1]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_title_1'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'bhumi_sanitize_text',
 
@@ -165,7 +150,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_title_2]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_title_2'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'bhumi_sanitize_text',
 
@@ -175,7 +160,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_title_3]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_title_3'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'bhumi_sanitize_text',
 
@@ -185,7 +170,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_desc_1]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_desc_1'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'bhumi_sanitize_text',
 
@@ -195,7 +180,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_desc_2]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_desc_2'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'bhumi_sanitize_text',
 
@@ -205,7 +190,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_desc_3]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_desc_3'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'bhumi_sanitize_text',
 
@@ -215,7 +200,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_btn_text_1]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_btn_text_1'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'bhumi_sanitize_text',
 
@@ -225,7 +210,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_btn_text_2]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_btn_text_2'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'bhumi_sanitize_text',
 
@@ -235,7 +220,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_btn_text_3]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_btn_text_3'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'bhumi_sanitize_text',
 
@@ -245,7 +230,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_btn_link_1]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_btn_link_1'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'esc_url_raw',
 
@@ -255,7 +240,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_btn_link_2]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_btn_link_2'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'esc_url_raw',
 
@@ -265,7 +250,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[slide_btn_link_3]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['slide_btn_link_3'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'esc_url_raw',
 
@@ -372,7 +357,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[home_service_heading]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['home_service_heading']),
+		'default'=>'',
 		'type'=>'option',
 		'capability'=>'edit_theme_options',
 		'sanitize_callback'=>'bhumi_sanitize_text',
@@ -388,7 +373,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_1_icons]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_1_icons']),
+		'default'=>'',
 		'type'=>'option',
 		'capability'=>'edit_theme_options',
 		'sanitize_callback'=>'bhumi_sanitize_text',
@@ -398,7 +383,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_2_icons]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_2_icons']),
+		'default'=>'',
 		'type'=>'option',
 		'capability'=>'edit_theme_options',
 		'sanitize_callback'=>'bhumi_sanitize_text',
@@ -408,7 +393,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_3_icons]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_3_icons']),
+		'default'=>'',
 		'type'=>'option',
 		'capability'=>'edit_theme_options',
 		'sanitize_callback'=>'bhumi_sanitize_text',
@@ -418,7 +403,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_4_icons]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_4_icons']),
+		'default'=>'',
 		'type'=>'option',
 		'capability'=>'edit_theme_options',
 		'sanitize_callback'=>'bhumi_sanitize_text',
@@ -428,7 +413,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_1_title]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_1_title']),
+		'default'=>'',
 		'type'=>'option',
 		'capability'=>'edit_theme_options',
 		'sanitize_callback'=>'bhumi_sanitize_text',
@@ -437,7 +422,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_2_title]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_2_title']),
+		'default'=>'',
 		'type'=>'option',
 		'capability'=>'edit_theme_options',
 		'sanitize_callback'=>'bhumi_sanitize_text'
@@ -446,7 +431,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_3_title]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_3_title']),
+		'default'=>'',
 		'type'=>'option',
 		'sanitize_callback'=>'bhumi_sanitize_text',
 		'capability'=>'edit_theme_options',
@@ -455,7 +440,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_4_title]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_4_title']),
+		'default'=>'',
 		'type'=>'option',
 		'sanitize_callback'=>'bhumi_sanitize_text',
 		'capability'=>'edit_theme_options',
@@ -464,7 +449,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_1_text]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_1_text']),
+		'default'=>'',
 		'type'=>'option',
 		'sanitize_callback'=>'bhumi_sanitize_text',
 		'capability'=>'edit_theme_options',
@@ -473,7 +458,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_2_text]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_2_text']),
+		'default'=>'',
 		'type'=>'option',
 		'sanitize_callback'=>'bhumi_sanitize_text',
 		'capability'=>'edit_theme_options',
@@ -482,7 +467,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_3_text]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_3_text']),
+		'default'=>'',
 		'type'=>'option',
 		'sanitize_callback'=>'bhumi_sanitize_text',
 		'capability'=>'edit_theme_options',
@@ -491,7 +476,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[service_4_text]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['service_4_text']),
+		'default'=>'',
 		'type'=>'option',
 		'sanitize_callback'=>'bhumi_sanitize_text',
 		'capability'=>'edit_theme_options',
@@ -625,7 +610,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[portfolio_home]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['portfolio_home'],
+			'default'=>1,
 			'sanitize_callback'=>'bhumi_sanitize_checkbox',
 			'capability' => 'edit_theme_options'
 		)
@@ -634,7 +619,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[port_heading]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['port_heading'],
+			'default'=>'',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'bhumi_sanitize_text',
 		)
@@ -645,7 +630,7 @@ function bhumi_customizer( $wp_customize ) {
 			'bhumi_options[port_'.$i.'_img]',
 			array(
 				'type'    => 'option',
-				'default'=>$cpm_theme_options['port_'.$i.'_img'],
+				'default'=>'',
 				'capability' => 'edit_theme_options',
 				'sanitize_callback'=>'esc_url_raw',
 			)
@@ -654,7 +639,7 @@ function bhumi_customizer( $wp_customize ) {
 			'bhumi_options[port_'.$i.'_title]',
 			array(
 				'type'    => 'option',
-				'default'=>$cpm_theme_options['port_'.$i.'_title'],
+				'default'=>'',
 				'capability' => 'edit_theme_options',
 				'sanitize_callback'=>'bhumi_sanitize_text',
 			)
@@ -664,7 +649,7 @@ function bhumi_customizer( $wp_customize ) {
 			'bhumi_options[port_'.$i.'_link]',
 			array(
 				'type'    => 'option',
-				'default'=>$cpm_theme_options['port_'.$i.'_link'],
+				'default'=>'',
 				'capability' => 'edit_theme_options',
 				'sanitize_callback'=>'esc_url_raw',
 			)
@@ -766,7 +751,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[show_blog]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['show_blog']),
+		'default'=>1,
 		'type'=>'option',
 		'sanitize_callback'=>'bhumi_sanitize_checkbox',
 		'capability'=>'edit_theme_options'
@@ -782,7 +767,7 @@ function bhumi_customizer( $wp_customize ) {
 		'bhumi_options[blog_title]',
 		array(
 			'type'    => 'option',
-			'default'=>$cpm_theme_options['blog_title'],
+			'default'=>'',
 			'sanitize_callback'=>'bhumi_sanitize_text',
 			'capability'        => 'edit_theme_options',
 		)
@@ -804,7 +789,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[header_social_media_in_enabled]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['header_social_media_in_enabled']),
+		'default'=>1,
 		'type'=>'option',
 		'sanitize_callback'=>'bhumi_sanitize_checkbox',
 		'capability'=>'edit_theme_options'
@@ -819,7 +804,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[footer_section_social_media_enbled]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['footer_section_social_media_enbled']),
+		'default'=>1,
 		'type'=>'option',
 		'sanitize_callback'=>'bhumi_sanitize_checkbox',
 		'capability'=>'edit_theme_options'
@@ -962,7 +947,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[fc_home]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['fc_home']),
+		'default'=>1,
 		'type'=>'option',
 		'capability'=>'edit_theme_options',
 		'sanitize_callback'=>'bhumi_sanitize_text',
@@ -977,7 +962,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'bhumi_options[fc_radio]',
 		     array(
-			'default'           => esc_attr($cpm_theme_options['fc_radio']),
+			'default'           => 'bottom',
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'bhumi_sanitize_text',
@@ -998,7 +983,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[fc_title]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['fc_title']),
+		'default'=>'',
 		'type'=>'option',
 		'capability'=>'edit_theme_options',
 		'sanitize_callback'=>'bhumi_sanitize_text',
@@ -1013,7 +998,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[fc_btn_txt]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['fc_btn_txt']),
+		'default'=>'',
 		'type'=>'option',
 		'capability'=>'edit_theme_options',
 		'sanitize_callback'=>'bhumi_sanitize_text',
@@ -1028,7 +1013,7 @@ function bhumi_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'bhumi_options[fc_btn_link]',
 		array(
-		'default'=>esc_attr($cpm_theme_options['fc_btn_link']),
+		'default'=>'',
 		'type'=>'option',
 		'capability'=>'edit_theme_options',
 		'sanitize_callback'=>'bhumi_sanitize_text',

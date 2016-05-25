@@ -4,7 +4,7 @@
 					$img = array('class' => 'bhumi_img_responsive'); ?>
 					<div class="bhumi_blog_thumb_wrapper_showcase">
 						<div class="bhumi_blog-img">
-							<?php the_post_thumbnail('blog_2c_thumb',$img); ?>
+							<?php the_post_thumbnail('bhumi_blog_2c_thumb',$img); ?>
 						</div>
 						<?php if (is_home()) : ?>
 						<div class="bhumi_blog_thumb_wrapper_showcase_overlay">
@@ -19,7 +19,16 @@
 		<?php endif; ?>
 		<div class="bhumi_full_blog_detail_padding">
 
-			<h2><?php if(!is_single()) {?><a href="<?php the_permalink(); ?>"><?php } ?><?php the_title(); ?></a></h2>
+			<h2><?php if(!is_single()) {?>
+				<a href="<?php the_permalink(); ?>"><?php } ?><?php
+				if(is_archive()){
+					the_archive_title();
+				}else{
+					the_title();
+				}
+				?>
+				</a>
+			</h2>
 
 			<div class="row">
 
