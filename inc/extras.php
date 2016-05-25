@@ -72,8 +72,11 @@ endif;
  
     function accesspress_basic_slidercb(){
         global $apbasic_options;
-        $apbasic_settings = get_option('apbasic_options', $apbasic_options);
+        $old_setting = get_option('apbasic_options', $apbasic_options);
+        $apbasic_settings = wp_parse_args($old_setting, $apbasic_options);
+
         $mode = $apbasic_settings['slider_mode'];
+        $slider_type = $apbasic_settings['slider_type'];
         $ositab = isset($apbasic_settings['open_slider_link_in_new_tab']) ? $apbasic_settings['open_slider_link_in_new_tab'] : '';
 
         for($i = 1; $i <= 4; $i++) :
@@ -100,7 +103,7 @@ endif;
                 });
             </script>
             <?php if(!empty($slides)) : ?>
-                <div id="apbasic-slider">
+                <div id="apbasic-slider" class="<?php echo $slider_type; ?>">
                     <?php $slide_id = 1; ?>
                     <?php foreach($slides as $slide) : ?>
                         <?php if(!empty($slide['slide'])) : ?>

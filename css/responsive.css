@@ -24,6 +24,9 @@
 	.slider-image-container{
 		width: 57%;
 	}
+	.fullwidth-slider .slider-image-container{
+		width:100%;
+	}
 
 }
 
@@ -147,8 +150,10 @@
 
 
 /*----- Potrait tablet to Landscape and Desktop -----*/
-@media(max-width: 979px){
-	
+@media(max-width: 992px){
+	.fullwidth .caption-description{
+		margin:0;
+	}
 
 }
 
@@ -201,11 +206,16 @@
 	.caption-title{
 		margin-top: 0;
 	}
+	.fullwidth .caption-title{
+		font-size:30px;
+	}
 
 	.caption-description p{
 		display: none;
 	}
-
+	.fullwidth .caption-description{
+		font-size:15px;
+	}
 	.feature-post-wrap, .service-post-wrap{
 		width: 47%;
 	}
@@ -284,6 +294,10 @@
 		width: 100%;
 		float: none;
 	}
+	.fullwidth .slide_readmore-button{
+		line-height:27px;
+		margin-top:8px;
+	}
 
 }
 
@@ -308,7 +322,9 @@
 		text-align: center;
 	}
 
-
+	.fullwidth .slider-caption-container{
+		display:none;
+	}
 }
 
 @media(max-width: 580px){

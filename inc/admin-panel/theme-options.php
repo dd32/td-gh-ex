@@ -27,6 +27,7 @@
         
         //Slider Settings
         'show_slider' => 'no',
+        'slider_type' => 'default',
         'show_slider_in_post' => 1,
         'slider_mode' => 'horizontal',
         'slide1' => '',
@@ -165,7 +166,8 @@
                 </div>
                 <div id="optionsframework-metabox" class="metabox-holder clearfix">
                     <form id="form_options" method="POST" action="options.php" enctype="multipart/form-data">
-                        <?php $settings = get_option('apbasic_options', $apbasic_options); ?>
+                        <?php $old_settings = get_option('apbasic_options', $apbasic_options); ?>
+                        <?php $settings = wp_parse_args( $old_settings, $apbasic_options ); ?>
                         <?php settings_fields('apbasic_theme_options'); ?>
                         
                         <!-- Header Settings -->
@@ -553,6 +555,23 @@
                                         <?php endforeach; ?>
                                     </td>
                                 </tr>
+                                <?php
+                                    $slider_type = array(
+                                        'default' => __('Default', 'accesspress-basic'),
+                                        'fullwidth' => __('Full Width Slider', 'accesspress-basic'),
+                                    );
+                                ?>
+                                <tr>
+                                    <th><label><?php _e('Slider Type','accesspress-basic'); ?></label></th>
+                                    <td>
+                                        <?php foreach($slider_type as $val => $label) : ?>
+                                            <div class="radio">
+                                                <input id="<?php echo $val; ?>" type="radio" name="apbasic_options[slider_type]" value="<?php echo esc_attr($val); ?>" <?php checked($val, $settings['slider_type']); ?> />
+                                                <label for="<?php echo $val; ?>"><?php echo $label; ?></label>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <th><label for="enable_slider_in_post"><?php _e('Enable/Disable','accesspress-basic'); ?></label></th>
                                     <td>
@@ -607,7 +626,7 @@
                                             <span class="remove_slide_preview">Remove</span>
                                         </div>
                                         <p style="font-size: 11px; font-weight: bold; color: #939393;">
-                                        <?php _e('The Recommended Slider Image size is 676X444px.', 'accesspress-basic'); ?><br />
+                                        <?php _e('The Recommended Slider Image size is 676X444px for Default Slider & 1350X530px for fullwidth slider.', 'accesspress-basic'); ?><br />
                                         <?php _e('Try using Transparent image for better result.', 'accesspress-basic'); ?>
                                         </p>
                                     </td> 
@@ -848,6 +867,7 @@
         
         //Slider Settings
         $apbasic_inputs['show_slider'] = sanitize_text_field($input['show_slider']);
+        $apbasic_inputs['slider_type'] = sanitize_text_field($input['slider_type']);
         
         if(!isset($input['show_slider_in_post'])){
             $apbasic_inputs['show_slider_in_post'] = null;

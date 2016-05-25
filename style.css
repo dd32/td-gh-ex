@@ -1,14 +1,15 @@
+
 /*
 Theme Name: Accesspress Basic
 Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-basic/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Description: AccessPress Basic is a simple, basic & clean.  It is beautifully designed responsive free WordPress business theme. It has useful features to setup your website fast and make your website operate smoothly. It doesn't have much features which you probably won't use at all! Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. AccessPress Basic is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: https://accesspressthemes.com/accesspress-basic/
-Version: 3.0.2
+Version: 3.0.3
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: accesspress-basic
-Tags: orange, left-sidebar, right-sidebar, custom-background, featured-images, full-width-template,	rtl-language-support, theme-options, threaded-comments, translation-ready
+Tags: left-sidebar, right-sidebar, custom-background, featured-images, full-width-template,	rtl-language-support, theme-options, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1487,7 +1488,34 @@ NAV CSS
     margin-right: 3%;
     width: 40%;
 }
-
+.fullwidth-slider .slider-image-container{
+	position:relative;
+	text-align:center;
+	float:none;
+}
+.fullwidth-slider .content-area{
+	padding-top:40px;
+}
+.fullwidth-slider .slider-image-container:before{
+	content:"";
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.4);
+	z-index:1;
+}
+.fullwidth .slider-caption-container {
+	float: none;
+	margin-left: 0;
+	margin-right: 0;
+	width: auto;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	left: 50%;
+	text-align:center;
+	z-index:2;
+}
 .caption-title {
     color: #212121;
     font-size: 48px;
@@ -1496,7 +1524,11 @@ NAV CSS
     margin: 60px 0 20px;
     text-transform: capitalize;
 }
-
+.fullwidth  .caption-title{
+	font-weight:500;
+	color:#fff;
+	margin:0;
+}
 .caption-title span {
     color: #dc3522;
 }
@@ -1507,6 +1539,10 @@ NAV CSS
 	color: #737373;
     font-weight: 400;
     margin: 20px 0;
+}
+.fullwidth .caption-description{
+	color:#fff;
+	font-size:20px;
 }
 
 .slide_readmore-button {
@@ -1519,7 +1555,10 @@ NAV CSS
     margin-top: 25px;
     padding: 0 24px;
 }
-
+.fullwidth .slide_readmore-button{
+	border-color:#fff;
+	color:#fff;
+}
 .readmore-button.slide_readmore-button:after {
     display: none;
 }
@@ -1583,7 +1622,18 @@ NAV CSS
     text-align: center;
     padding-top: 0 !important;
 }
-
+.fullwidth-slider .bx-wrapper{
+	position:relative;
+}
+.fullwidth-slider .bx-controls .bx-pager{
+	position:absolute;
+	left:50%;
+	bottom:5px;
+	transform:translateX(-50%);
+	-webkit-transform:translateX(-50%);
+	-moz-transform:translateX(-50%);
+	margin:auto;
+}
 .ap-basic-slider-wrapper .ap-container {
     position: relative;
 }
@@ -1599,6 +1649,14 @@ NAV CSS
     color: transparent;
     width: 22px;
     height: 48px;
+}
+.fullwidth-slider .ap-basic-slider-wrapper .bx-controls-direction .bx-prev,
+.fullwidth-slider .ap-basic-slider-wrapper .bx-controls-direction .bx-prev:hover{
+	left:10px;
+} 
+.fullwidth-slider .ap-basic-slider-wrapper .bx-controls-direction .bx-next,
+.fullwidth-slider .ap-basic-slider-wrapper .bx-controls-direction .bx-next:hover{
+	right:10px;
 }
 
 .ap-basic-slider-wrapper .bx-controls-direction .bx-prev:hover,
@@ -1617,6 +1675,9 @@ NAV CSS
     background: url("images/slider-shadow.png") no-repeat scroll center bottom -25px;
     padding-bottom: 105px;
 }
+#content.site-content.fullwidth-slider .ap-basic-slider-wrapper{
+	padding-bottom:0;
+}
 /*--------------------------------------------------------------
 FEATURE CSS
 --------------------------------------------------------------*/
@@ -1624,7 +1685,9 @@ FEATURE CSS
 #content {
     margin-top: 25px;
 }
-
+#content.site-content.fullwidth-slider{
+	margin-top:0;
+}
 .widget_accesspress_basic_features, .widget_accesspress_basic_featured_page,
 .widget_accesspress_basic_services, #test-services-container .widget_text,
 .featured-footer .widget_text{

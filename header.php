@@ -9,7 +9,9 @@
 ?><!DOCTYPE html>
 <?php
     global $apbasic_options;
-    $apbasic_settings = get_option('apbasic_options',$apbasic_options);
+    $old_setting = get_option('apbasic_options', $apbasic_options);
+    $apbasic_settings = wp_parse_args($old_setting, $apbasic_options);
+    $slider_type = $apbasic_settings['slider_type'];
     if ( is_array( $apbasic_settings ) && ! empty( $apbasic_settings )) {
         extract($apbasic_settings);
     }
@@ -131,18 +133,22 @@
     		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content <?php echo $slider_type.'-slider'; ?>">
     <?php
         if($show_slider == 'yes') :
             if($show_slider_in_post == 1) :
                  if(is_front_page() || is_single()) :
                  ?>
                 <div class="ap-basic-slider-wrapper">
+                <?php if($slider_type == 'default') : ?>
                 <div class="ap-container">
+                <?php endif; ?>
                  <?php 
                     do_action('accesspress_basic_slider');
                 ?>
+                <?php if($slider_type == 'default') : ?>
                 </div>
+                <?php endif; ?>
                 </div>
                 <?php
                  endif;
@@ -150,11 +156,15 @@
                 if(is_front_page()) :
                 ?>
                 <div class="ap-basic-slider-wrapper">
+                <?php if($slider_type == 'default') : ?>
                 <div class="ap-container">
+                <?php endif; ?>
                 <?php
                     do_action('accesspress_basic_slider');
                 ?>
+                <?php if($slider_type == 'default') : ?>
                 </div>
+                <?php endif; ?>
                 </div>
                 <?php
                 endif;
