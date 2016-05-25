@@ -3,13 +3,6 @@ add_action( 'customize_register', 'bhumi_customizer' );
 
 function bhumi_customizer( $wp_customize ) {
 	wp_enqueue_style('customizer', BHUMI_TEMPLATE_DIR_URI .'/assetscss/customizer.css');
-	$ImageUrl1 = BHUMI_TEMPLATE_DIR_URI ."/assets/images/1.png";
-	$ImageUrl2 = BHUMI_TEMPLATE_DIR_URI ."/assets/images/2.png";
-	$ImageUrl3 = BHUMI_TEMPLATE_DIR_URI ."/assets/images/3.png";
-	$ImageUrl4 = esc_url(get_template_directory_uri() ."/images/home-ppt1.png");
-	$ImageUrl5 = esc_url(get_template_directory_uri() ."/images/home-ppt2.png");
-	$ImageUrl6 = esc_url(get_template_directory_uri() ."/images/home-ppt3.png");
-	$ImageUrl7 = esc_url(get_template_directory_uri() ."/images/home-ppt4.png");
 
 		$wp_customize->add_section( 'bhumi_theme_support', array(
 		    'title' => __( 'Support','bhumi' ),

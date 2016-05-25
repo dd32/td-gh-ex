@@ -1,10 +1,9 @@
 === Bhumi - WordPress Theme by Code Themes ===
 Contributors: Code Themes
-Version: 1.0.4
+Version: 1.0.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow,light,right-sidebar,two-columns,custom-menu,right-sidebar,fluid-layout,featured-image-header,theme-options, threaded-comments, featured-images, flexible-header, responsive-layout, translation-ready ,rtl-language-support,post-formats
-
+Tags: right-sidebar,two-columns,custom-menu, right-sidebar,featured-image-header,theme-options, threaded-comments, featured-images, flexible-header,footer-widgets, translation-ready ,rtl-language-support
 == Description ==
 Bhumi theme is clean, blog-focused, and designed for Corporate Business houses, Portfolio Showcase for Artists.
 
@@ -116,3 +115,6 @@ Fixed escaping issues.
 
 = 1.0.4 =
 Escaping and prefixing redone.
+
+= 1.0.5 =
+Deprecated tags removed
