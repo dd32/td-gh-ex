@@ -5,37 +5,29 @@
  */
 get_header(); ?>
 	
-<?php get_template_part('pageheader'); ?>
-
-<div class="site-body site-pad">
+	<?php get_template_part( '/templates/title-bar' ); ?>
+	
 	<div class="site-container">
 		
 		<div id="primary" class="content-area content-area-full">
-			
-			<?php if ( have_posts() ) : ?>
+			<main id="main" class="site-main" role="main">
 				
-				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-					
+
+					<?php get_template_part( 'templates/contents/content', 'page' ); ?>
+
 					<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to overload this in a child theme then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', 'page' ); ?>
-					
-				<?php endwhile; ?>
-				
-				<?php kaira_content_nav( 'nav-below' ); ?>
-				
-			<?php else : ?>
-				
-				<?php get_template_part( 'no-results', 'index' ); ?>
-				
-			<?php endif; ?>
-			
+						// If comments are open or we have at least one comment, load up the comment template
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
+					?>
+
+				<?php endwhile; // end of the loop. ?>
+
+			</main><!-- #main -->
 		</div><!-- #primary -->
 		
 	</div>
-</div>
+	
 <?php get_footer(); ?>

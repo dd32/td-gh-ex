@@ -66,6 +66,5 @@ View the settings under Appearance -> CONICA Settings.
 
 == Changelog ==
 
-
-
+#### 1.2.4
 * Initial release.

@@ -16,7 +16,7 @@
 		<div class="site-container">
 			<div class="scroll-to-top"><i class="fa fa-angle-up"></i></div> <!-- Scroll To Top Button -->
 			<div class="footer-left">
-                <?php echo wp_kses_post( 'Built with the <a href="http://wordpress.org/themes/conica" target="_blank">Conica WordPress Theme</a>' ) ?>
+                <?php echo wp_kses_post( get_theme_mod( 'conica-website-txt-copy', 'Conica theme, by <a href="http://kairaweb.com">Kaira</a>' ) ) ?>
 			</div>
 			<div class="footer-right">
 				<?php get_template_part( '/includes/inc/social-links' ); ?>
@@ -25,6 +25,10 @@
 		</div><!-- .site-info -->
 	</div>
 </footer><!-- #colophon -->
+
+<?php if ( get_theme_mod( 'conica-site-layout' ) == 'conica-site-boxed' ) : ?>
+</div>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 </body>
