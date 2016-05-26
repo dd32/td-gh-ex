@@ -35,6 +35,7 @@ function aza_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	add_theme_support( 'custom-header' );
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -65,10 +66,10 @@ function aza_setup() {
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside',
-//		'image',
-//		'video',
-//		'quote',
-//		'link',
+		'image',
+		'video',
+		'quote',
+		'link',
 	) );
 
 	// Set up the WordPress core custom background feature.
@@ -76,6 +77,25 @@ function aza_setup() {
 		'default-color' => '#ffffff',
 		'default-image' => get_template_directory_uri().'/images/background.jpg',
 	) ) );
+
+	// Set up the WordPress core custom logo feature.
+	if ( function_exists( 'the_custom_logo' ) ) {
+		add_theme_support( 'custom-logo', array(
+			'height'      => 70,
+			'width'       => 200,
+			'flex-width' => true,
+		) );
+
+		if ( get_theme_mod('aza_logo') ) {
+			$logo = attachment_url_to_postid( get_theme_mod( 'aza_logo' ) );
+			if ( is_int( $logo ) ) {
+				set_theme_mod( 'custom_logo', $logo );
+  			}
+			remove_theme_mod( 'lawyeriax_navbar_logo' );
+		}
+
+	}
+
 
 
 }
@@ -145,9 +165,9 @@ add_action( 'widgets_init', 'aza_widgets_init' );
  */
 function aza_scripts() {
 
-    wp_enqueue_style( 'aza-bootstrap-style', aza_get_file( '/css/bootstrap.min.css'), array(), '3.3.1');
+    wp_enqueue_style( 'aza-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.1');
 
-    wp_enqueue_style( 'aza-stamp-icons', aza_get_file('/stamp-icons.css'));
+    wp_enqueue_style( 'aza-stamp-icons', get_template_directory_uri() . '/stamp-icons.css' );
 
     wp_enqueue_style( 'aza-style', get_stylesheet_uri() );
 
@@ -157,13 +177,13 @@ function aza_scripts() {
 
 		wp_enqueue_script( 'aza-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-    wp_enqueue_script( 'aza-bootstrap', aza_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
+    wp_enqueue_script( 'aza-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.5', true );
 
-		wp_enqueue_script( 'aza-custom-all', aza_get_file('/js/custom.all.js'), array('jquery'), '2.0.2', true );
+		wp_enqueue_script( 'aza-custom-all', get_template_directory_uri() . '/js/custom.all.js', array('jquery'), '2.0.2', true );
 
-    wp_enqueue_script( 'aza-parallax-scroll', aza_get_file('/js/parallax-scroll.js'), array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'aza-parallax-scroll', get_template_directory_uri() . '/js/parallax-scroll.js', array('jquery'), '1.0.0', true );
 
-    wp_enqueue_script( 'aza-script', aza_get_file('/js/script.js'), array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'aza-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0.0', true );
 
     wp_localize_script( 'aza-custom-all', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'aza-lite' ) . '</span>',
@@ -201,6 +221,12 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Load custom colors file.
+ */
+require_once get_template_directory() . '/inc/custom-colors.php';
+
+
 // Enqueue admin styles and scripts
 
 function aza_admin_styles() {
@@ -208,32 +234,16 @@ function aza_admin_styles() {
 		wp_enqueue_style( 'aza_admin_stylesheet');
 
 		wp_register_script( 'aza_admin_customizer_script', get_template_directory_uri() . '/js/admin/aza_admin_customizer.js', array( 'jquery' ), NULL, true );
-		wp_enqueue_script( 'aza_admin_customizer_script', aza_get_file('/js/aza_admin_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
+		wp_enqueue_script( 'aza_admin_customizer_script', get_template_directory_uri() . '/js/aza_admin_customizer.js', array("jquery","jquery-ui-draggable"),'1.0.0', true  );
 }
 add_action( 'customize_controls_print_styles', 'aza_admin_styles');
 
-
-// Get File Custom
-
-function aza_get_file($file){
-	$file_parts = pathinfo($file);
-	$accepted_ext = array('jpg','img','png','css','js');
-	if( in_array($file_parts['extension'], $accepted_ext) ){
-		$file_path = get_stylesheet_directory() . $file;
-		if ( file_exists( $file_path ) ){
-			return esc_url(get_stylesheet_directory_uri() . $file);
-		} else {
-			return esc_url(get_template_directory_uri() . $file);
-		}
-	}
-}
-
 // Register menus
 
-function register_my_menus() {
+function aza_register_menus() {
   register_nav_menus(
       array(
           'footer-menu-1' => __( 'Footer Menu', 'aza-lite'),
       ));
 }
-add_action( 'init', 'register_my_menus' );
+add_action( 'init', 'aza_register_menus' );

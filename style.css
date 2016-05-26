@@ -4,11 +4,11 @@ Theme URI: https://wordpress.org/themes/aza-lite/
 Author: Andrei Băicuș
 Author URI: https://profiles.wordpress.org/baicusandrei
 Description: AZA Lite is a perfect one-page Wordpress theme for small businesses, freelancers and anyone who wishes to build a responsive, one-page, straightforward website in a matter of minutes. This highly customizable Wordpress theme strives to give the end-user a really cozy feel and a great experience while carefully delivering important content and information. The fully customizable layered Parallax section is just stunning to look at and can be a great hook for anybody landing on your website. Have a great time using something that was carefully engineered for beautiful minds.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aza-lite
-Tags:red, white, gray, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
 
 This theme, like WordPress, is licensed under the GPL.
 
@@ -1101,9 +1101,9 @@ header .navbar-brand {
   -o-background-size: cover;
   background-size: cover;
   top: 0;
-  right 0;
+  right: 0;
   left: 0;
-  bottom 0;
+  bottom: 0;
   overflow: visible;
 }
 .header-image {
@@ -1367,7 +1367,6 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
   background-repeat: no-repeat;
   height: 650px;
   position: absolute;
-  /*    bottom: -1000px;*/
   z-index: -100;
 }
 .parallax-layer-2 {
@@ -1376,9 +1375,7 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
   background-size: auto;
   background-repeat: no-repeat;
   height: 650px;
-  opacity: 50%;
   position: absolute;
-  /*    bottom: -1000px;*/
   z-index: -1;
 }
 .parallax-img {
@@ -1444,7 +1441,6 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
 
 #team {
   padding: 80px 0 60px 0;
-  background: ;
   height: auto;
   z-index: 300;
 }
@@ -1521,7 +1517,7 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
   top: 5%;
   bottom: 5%;
   left: 5%;
-  right: 15%;
+  right: 5%;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 17px 17px;
   text-align: center;
@@ -2578,7 +2574,7 @@ section#contact .wpcf7-form input.wpcf7-submit:hover, section#contact .wpcf7-for
     text-align: center;
     width: 25px;
     height: 25px;
-    color: #FFF;
+    color: #ffffff;
     line-height: 26px !important;
     text-align: center;
     float: left;

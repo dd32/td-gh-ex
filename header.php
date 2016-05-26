@@ -7,11 +7,8 @@
  * @package aza-lite
  */
 
-$preloader_color = get_theme_mod('aza_preloader_color','#fc535f');
-$preloader_background_color = get_theme_mod('aza_preloader_background_color','#333333');
 $preloader_toggle = get_theme_mod('aza_preloader_toggle','1');
 $preloader_type = get_theme_mod('aza_preloader_type','1');
-$navbar_color = get_theme_mod('aza_navbar_color','rgba(0, 0, 0, 0.75)');
 $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 
 ?><!DOCTYPE html>
@@ -35,44 +32,40 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 
         switch ( $preloader_type ) {
             case '1': ?>
-               <div class="sk-rotating-plane" style="background-color: <?php echo $preloader_color ?>"></div>
+               <div class="sk-rotating-plane"></div>
             <?php break;
             case '2': ?>
                 <div class="sk-three-bounce">
-                    <div class="sk-child sk-bounce1" style="background-color: <?php echo $preloader_color ?>"></div>
-                    <div class="sk-child sk-bounce2" style="background-color: <?php echo $preloader_color ?>"></div>
-                    <div class="sk-child sk-bounce3" style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="sk-child sk-bounce1"></div>
+                    <div class="sk-child sk-bounce2"></div>
+                    <div class="sk-child sk-bounce3"></div>
                 </div>
              <?php
                 break;
             case '3': ?>
                 <div class="sk-folding-cube">
-                    <div class="sk-cube1 sk-cube" style="background-color: <?php echo $preloader_color ?>"></div>
-                    <div class="sk-cube2 sk-cube" style="background-color: <?php echo $preloader_color ?>"></div>
-                    <div class="sk-cube4 sk-cube" style="background-color: <?php echo $preloader_color ?>"></div>
-                    <div class="sk-cube3 sk-cube" style="background-color: <?php echo $preloader_color ?>"></div>
-                    <style>
-                        .sk-folding-cube .sk-cube:before {
-                                background-color: <?php echo $preloader_background_color ?>;
-                    </style>
+                    <div class="sk-cube1 sk-cube"></div>
+                    <div class="sk-cube2 sk-cube"></div>
+                    <div class="sk-cube4 sk-cube"></div>
+                    <div class="sk-cube3 sk-cube"></div>
                 </div>
             <?php
                 break;
             case '4': ?>
                 <div class="spinner">
-                    <div class="rect1" style="background-color: <?php echo $preloader_color ?>"></div>
-                    <div class="rect2" style="background-color: <?php echo $preloader_color ?>"></div>
-                    <div class="rect3" style="background-color: <?php echo $preloader_color ?>"></div>
-                    <div class="rect4" style="background-color: <?php echo $preloader_color ?>"></div>
-                    <div class="rect5" style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
                 </div>
                 <?php
                 break;
         }
                  ?>
         </div>
-        <div class="loader-section section-left" style="background-color: <?php echo $preloader_background_color ?>"></div>
-        <div class="loader-section section-right"  style="background-color: <?php echo $preloader_background_color ?>"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
     </div>
 
     <?php } ?>
@@ -83,7 +76,7 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
      SECTION: HOME / HEADER
     ============================== -->
 	<!--header-->
-	<header itemscope itemtype="http://schema.org/WPHeader" id="masthead" role="banner" class="header header-style-one site-header">
+	<header itemscope itemtype="http://schema.org/WPHeader" id="masthead" role="banner" class="header site-header">
 
         <!-- COLOR OVER IMAGE -->
         <?php
@@ -108,7 +101,7 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 		<div class="overlay-layer-nav <?php if(!empty($fixedheader)) {echo esc_attr($fixedheader);} ?>">
 
             <!-- STICKY NAVIGATION -->
-            <div class="navbar navbar-inverse bs-docs-nav navbar-top sticky-navigation appear-on-scroll" style="background-color: <?php echo $navbar_color; ?>">
+            <div class="navbar navbar-inverse bs-docs-nav navbar-top sticky-navigation appear-on-scroll">
 				<!-- CONTAINER -->
                 <div class="container">
 
@@ -125,23 +118,29 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 
 						<?php
 
-							$aza_logo = get_theme_mod('aza_logo', aza_get_file('/images/logo.png') );
+              if ( function_exists( 'the_custom_logo' ) ) {
+               	$website_logo_id = get_theme_mod( 'custom_logo' );
+               	$website_logo_meta = wp_get_attachment_image_src($website_logo_id, 'full');
+               	$website_logo = $website_logo_meta[0];
+               } else {
+               	$website_logo = get_theme_mod('aza_logo', get_template_directory_uri() . '/images/logo.png' );
+               }
 
 
 
-							if(!empty($aza_logo)):
+							if(!empty($website_logo)):
 
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
 
-									echo '<img src="'.esc_url($aza_logo).'" alt="'.get_bloginfo('title').'">';
+									echo '<img src="'.esc_url($website_logo).'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
 
 								echo '<div class="header-logo-wrap text-header aza_only_customizer">';
 
-									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+									echo '<h1 id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 
-									echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
+									echo '<p id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 
 								echo '</div>';
 
@@ -159,9 +158,9 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 
 								echo '<div class="header-logo-wrap text-header">';
 
-									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+									echo '<h1 id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 
-									echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
+									echo '<p id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 
 								echo '</div>';
 							endif;

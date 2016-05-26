@@ -21,7 +21,7 @@ $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
                     if(!empty($heading)) {
                         echo '<h2>'.$heading.'</h2>';
                     }?>
-                     <?php echo ($separator_top) ? "<hr class='separator'/>" : "" ?>
+                     <?php if ($separator_top) { echo "<hr class='separator'/>"; } ?>
                      <?php
                                 if(!empty($subheading)) {
                                 echo '<p class="blog-p">'.$subheading.'</p>';
@@ -36,8 +36,8 @@ $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
 
 
 	<?php if ( have_posts() ) : ?>
-    <?php query_posts("showposts=2"); ?>
-			
+    <?php query_posts("showposts=3"); ?>
+
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -60,7 +60,6 @@ $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
 
 		<?php endif; ?>
          </div>
-
-         <?php echo ($separator_bottom) ? "<hr class='separator'/>" : "" ?>
+         <?php if ($separator_bottom) { echo "<hr class='separator'/>"; } ?>
      </div>
 </section>

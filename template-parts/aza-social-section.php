@@ -6,8 +6,8 @@ SOCIAL SECTION
 
 $aza_primary_header = get_theme_mod('aza_social_heading_1', 'STAY CONNECTED');
 $aza_secondary_header = get_theme_mod('aza_social_heading_2', 'GET STARTED USING OUR THEME TODAY');
-$aza_appstore = get_theme_mod('aza_appstore', aza_get_file('/images/appstore.png'));
-$aza_playstore = get_theme_mod('aza_playstore', aza_get_file('/images/playstore.png'));
+$aza_appstore = get_theme_mod('aza_appstore', get_template_directory_uri() . '/images/appstore.png');
+$aza_playstore = get_theme_mod('aza_playstore', get_template_directory_uri() . '/images/playstore.png');
 $aza_appstore_link = get_theme_mod('aza_appstore_link','#');
 $aza_playstore_link = get_theme_mod('aza_playstore_link','#');
 

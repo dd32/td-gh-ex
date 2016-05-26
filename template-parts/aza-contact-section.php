@@ -3,7 +3,6 @@ PIRATE FORMS
 ============================== -->
 <?php
 $frontpage_contact_shortcode = get_theme_mod('frontpage_contact_shortcode');
-$background_color = get_theme_mod('aza_contact_background','rgba(0, 0, 0, 0.75)');
 $heading = get_theme_mod('aza_contact_title', 'Contact');
 $subheading = get_theme_mod('aza_contact_subtitle', 'Message us');
 $separator_top = get_theme_mod('aza_separator_contact_top', '1');
@@ -11,7 +10,7 @@ $separator_top = get_theme_mod('aza_separator_contact_top', '1');
 
 
 
-<section id="contact" style="background: <?php echo $background_color ?> ">
+<section id="contact">
 
 
 <div class="container">
@@ -21,7 +20,7 @@ $separator_top = get_theme_mod('aza_separator_contact_top', '1');
                     if(!empty($heading)) {
                         echo '<h2>'.$heading.'</h2>';
                     }?>
-                     <?php echo ($separator_top) ? "<hr class='separator'/>" : "" ?>
+                     <?php if ($separator_top) { echo "<hr class='separator'/>"; } ?>
                      <?php
                                 if(!empty($subheading)) {
                                 echo '<p class = "team-p">'.$subheading.'</p>';

@@ -37,9 +37,10 @@ function aza_customize_register($wp_customize)
     /*=============================================================================
     Logo
     =============================================================================*/
+if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_logo', array(
-        'default'           => aza_get_file('/images/logo.png'),
+        'default'           => get_template_directory_uri() . '/images/logo.png',
         'sanitize_callback' => 'esc_url'
     ));
 
@@ -49,6 +50,7 @@ function aza_customize_register($wp_customize)
         'priority'    => 1,
         'description' => __('We recommend using a logo that has a <b>maximum height</b> of <b>60px</b>.', 'aza-lite')
     )));
+}
 
     $wp_customize->add_setting('aza_navbar_color', array(
         'default'           => 'rgba(0, 0, 0, 0.75)',
@@ -69,7 +71,13 @@ function aza_customize_register($wp_customize)
     $page_on_front   = $wp_customize->get_control('page_on_front');
     $page_for_posts  = $wp_customize->get_control('page_for_posts');
     $site_background = $wp_customize->get_control('background_image');
+    $custom_logo     = $wp_customize->get_control('custom_logo');
 
+    if (!empty($custom_logo)) {
+        $custom_logo->section     = 'aza_general_section';
+        $custom_logo->priority    = 1;
+        $custom_logo->description = __('Change your website background image. This will show up throughout the <b>front page</b> of your website', 'aza-lite');
+    }
     if (!empty($site_background)) {
         $site_background->section     = 'aza_general_section';
         $site_background->priority    = 3;
@@ -236,23 +244,6 @@ function aza_customize_register($wp_customize)
         'description' => __('Subheading', 'aza-lite')
 
     ));
-
-    /*=============================================================================
-    Header image overlay color and opacity
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_hero_background', array(
-        'default'           => 'rgba(0, 0, 0, 0.25)',
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-    $wp_customize->add_control(new Aza_Customize_Alpha_Color_Control($wp_customize, 'aza_hero_background', array(
-        'label'       => __(' Overlay', 'aza-lite'),
-        'section'     => 'aza_appearance_cover',
-        'priority'    => 4,
-        'description' => __('Edit the background <b>overlay</b> color and opacity', 'aza-lite'),
-        'palette'     => false
-    )));
-
 
     /*=============================================================================
     Header buttons
@@ -452,7 +443,7 @@ function aza_customize_register($wp_customize)
         ))
     ));
 
-    $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_features_icons_left', array(
+    $wp_customize->add_control(new AZA_General_Repeater($wp_customize, 'aza_features_icons_left', array(
         'label'                   => __('Section content', 'aza-lite'),
         'description'             => __('Left collumn content', 'aza-lite'),
         'section'                 => 'aza_appearance_features',
@@ -467,7 +458,7 @@ function aza_customize_register($wp_customize)
 
     //Features Phone screen
     $wp_customize->add_setting('aza_phone_screen', array(
-        'default'           => aza_get_file('/images/screen.png'),
+        'default'           => get_template_directory_uri() . '/images/screen.png',
         'sanitize_callback' => 'esc_url'
     ));
 
@@ -499,7 +490,7 @@ function aza_customize_register($wp_customize)
         ))
     ));
 
-    $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_features_icons_right', array(
+    $wp_customize->add_control(new AZA_General_Repeater($wp_customize, 'aza_features_icons_right', array(
         'description'             => __('Right collumn content', 'aza-lite'),
         'section'                 => 'aza_appearance_features',
         'priority'                => 4,
@@ -582,7 +573,7 @@ function aza_customize_register($wp_customize)
 
 
     $wp_customize->add_setting('aza_parallax_image', array(
-        'default'           => aza_get_file('/images/parallax-image.png'),
+        'default'           => get_template_directory_uri() . '/images/parallax-image.png',
         'sanitize_callback' => 'esc_url'
     ));
 
@@ -610,7 +601,7 @@ function aza_customize_register($wp_customize)
     =============================================================================*/
 
     $wp_customize->add_setting('aza_parallax_background', array(
-        'default'           => aza_get_file('/images/parallax-background.jpg'),
+        'default'           => get_template_directory_uri() . '/images/parallax-background.jpg',
         'sanitize_callback' => 'esc_url'
     ));
 
@@ -622,7 +613,7 @@ function aza_customize_register($wp_customize)
     )));
 
     $wp_customize->add_setting('aza_parallax_layer_1', array(
-        'default'           => aza_get_file('/images/parallax-layer1.png'),
+        'default'           => get_template_directory_uri() . '/images/parallax-layer1.png',
         'sanitize_callback' => 'esc_url'
     ));
 
@@ -633,7 +624,7 @@ function aza_customize_register($wp_customize)
     )));
 
     $wp_customize->add_setting('aza_parallax_layer_2', array(
-        'default'           => aza_get_file('/images/parallax-layer2.png'),
+        'default'           => get_template_directory_uri() . '/images/parallax-layer2.png',
         'sanitize_callback' => 'esc_url'
     ));
 
@@ -814,14 +805,14 @@ function aza_customize_register($wp_customize)
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default'           => json_encode(array(
             array(
-                  "image_url" => aza_get_file('/images/team1.jpg'),
+                  "image_url" => get_template_directory_uri() . '/images/team1.jpg',
                   "title"     => esc_html__('Jane Doe', 'aza-lite'),
                   "subtitle"  => esc_html__('Project Supervisor', 'aza-lite'),
                   "color"     => '#f0b57c',
                   "text"      => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite')
             ),
             array(
-                  "image_url" => aza_get_file('/images/team2.jpg'),
+                  "image_url" => get_template_directory_uri() . '/images/team2.jpg',
                   "title"     => esc_html__('Ola Nordmann', 'aza-lite'),
                   "subtitle"  => esc_html__('Web Designer', 'aza-lite'),
                   "color"     => '#4bb992',
@@ -829,14 +820,14 @@ function aza_customize_register($wp_customize)
             ),
 
             array(
-                  "image_url" => aza_get_file('/images/team3.jpg'),
+                  "image_url" => get_template_directory_uri() . '/images/team3.jpg',
                   "title"     => esc_html__('Average Joe', 'aza-lite'),
                   "subtitle"  => esc_html__('Front End Developer', 'aza-lite'),
                   "color"     => '#349ae0',
                   "text"      => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite')
             ),
             array(
-                  "image_url" => aza_get_file('/images/team4.jpg'),
+                  "image_url" => get_template_directory_uri() . '/images/team4.jpg',
                   "title"     => esc_html__('Joe Bloggs', 'aza-lite'),
                   "subtitle"  => esc_html__('UX Designer', 'aza-lite'),
                   "color"     => '#887caf',
@@ -845,7 +836,7 @@ function aza_customize_register($wp_customize)
         ))
     ));
 
-    $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_team_content', array(
+    $wp_customize->add_control(new AZA_General_Repeater($wp_customize, 'aza_team_content', array(
         'label'                     => esc_html__('Edit the Team members', 'aza-lite'),
         'section'                   => 'aza_appearance_team',
         'priority'                  => 3,
@@ -1161,7 +1152,7 @@ function aza_customize_register($wp_customize)
         ))
     ));
 
-    $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_social_ribbon_icons', array(
+    $wp_customize->add_control(new AZA_General_Repeater($wp_customize, 'aza_social_ribbon_icons', array(
         'label'                   => __('Social Icons', 'aza-lite'),
         'section'                 => 'aza_appearance_social_ribbon',
         'priority'                => 2,
@@ -1210,7 +1201,7 @@ require_once('class/alpha-general-customizer.php');
 function aza_custom_background_settings()
 {
     add_theme_support('custom-background', array(
-        'default-image'       => aza_get_file('/images/background.jpg'),
+        'default-image'       => get_template_directory_uri() . '/images/background.jpg',
         'default-repeat'      => 'no-repeat',
         'default-position-x'  => 'center',
         'default-attachment'  => 'fixed'
@@ -1244,7 +1235,7 @@ function aza_sanitize_repeater($input)
                 $input_decoded[$boxk][$key] = wp_kses($value, $allowed_html);
 
             } else {
-                $input_decoded[$boxk][$key] = wp_kses_post(force_balance_tags($value));
+                $input_decoded[$boxk][$key] = wp_kses_post($value);
             }
 
         }

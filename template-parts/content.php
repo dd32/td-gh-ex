@@ -23,11 +23,11 @@
        <?php the_title( sprintf( '<h1 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<div class="colored-line-left"></div>
 		<div class="clearfix"></div>
-       
+
        <div class="aza-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'aza-lite' ) ); ?>">
 					<?php echo get_the_date('F j, Y');?>
 				</div>
-       
+
        <div class="entry-meta list-post-entry-meta">
 				<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="entry-author post-author">
 					<span  itemprop="name" class="entry-author author vcard">
@@ -47,19 +47,19 @@
 						}
 					?>
 				</span>
-				
+
 					<i class="icon-comment-alt"></i><a href="<?php comments_link(); ?>" class="post-comments"><?php comments_number( esc_html__('No comments', 'aza-lite'), esc_html__('One comment', 'aza-lite'), esc_html__('% comments', 'aza-lite') ); ?>
 				</a>
 			</div><!-- .entry-meta -->
-        
+
 			<div class="post-img-wrap">
-             
+
 			 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
-					<?php 
+					<?php
 						if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 					?>
-						<?php 
+						<?php
 							$image_id = get_post_thumbnail_id();
 							$image_url_big = wp_get_attachment_image_src($image_id,'aza-post-thumbnail-big', true);
 							$image_url_mobile = wp_get_attachment_image_src($image_id,'aza-post-thumbnail-mobile', true);
@@ -72,16 +72,16 @@
 						} else {
 					?>
 				 		<picture itemscope itemprop="image">
-							<source media="(max-width: 600px)" srcset="<?php echo aza_get_file('/images/no-thumbnail-mobile.jpg');?> ">
-							<img src="<?php echo aza_get_file('/images/no-thumbnail.jpg'); ?>" alt="<?php the_title_attribute(); ?>">
+							<source media="(max-width: 600px)" srcset="<?php echo get_template_directory_uri() . '/images/no-thumbnail-mobile.jpg';?> ">
+							<img src="<?php echo get_template_directory_uri() . '/images/no-thumbnail.jpg'; ?>" alt="<?php the_title_attribute(); ?>">
 						</picture>
 					<?php } ?>
 
 				</a>
-				
+
 			</div>
-			
-			
+
+
 
 	</header><!-- .entry-header -->
 	<div itemprop="description" class="entry-content entry-summary">
@@ -99,8 +99,6 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-		
+
 
 </article><!-- #post-## -->
-
-

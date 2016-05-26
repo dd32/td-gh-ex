@@ -5,8 +5,6 @@ FEATURES SECTION
 
 $features_heading = get_theme_mod('aza_features_heading', "KEY FEATURES");
 
-$phone_screen = get_theme_mod('aza_phone_screen', aza_get_file('/images/screen.png'));
-
 $button_text = get_theme_mod('aza_features_button_text', "LEARN MORE");
 
 $button_link = get_theme_mod('aza_features_button_link',"#");
@@ -83,7 +81,7 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                                         <div class="iphone-speaker"></div>
                                     </div>
 
-                                    <div class="screen iphone-screen" style=" background-image: url(<?php echo esc_url($phone_screen) ?>)">
+                                    <div class="screen iphone-screen">
                                     </div>
                                     <div class="button">
                                     </div>

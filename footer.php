@@ -25,10 +25,7 @@
 
 $menu_location = 'footer-menu-1';
 $menu_locations = get_nav_menu_locations();
-$menu_object = (isset($menu_locations[$menu_location]) ? wp_get_nav_menu_object($menu_locations[$menu_location]) : null);
-$menu_name = (isset($menu_object->name) ? $menu_object->name : '');
-
-echo $menu_name;?>
+$menu_object = (isset($menu_locations[$menu_location]) ? wp_get_nav_menu_object($menu_locations[$menu_location]) : null);?>
 <div class="row">
 <div class="col-lg-12 text-center">
 
