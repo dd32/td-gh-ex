@@ -2,10 +2,10 @@
 Contributors: wppuzzle, avovkdesign
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.5.2
-Version: 1.1.2
+Version: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: light, two-columns, one-column, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images,sticky-post, threaded-comments, translation-ready
+Tags: two-columns, one-column, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images,sticky-post, threaded-comments, translation-ready
 
 == Description ==
 Basic is simple responsive WordPress theme. It has custom color option, customized layout (left- or rightbar, full or centered content). Preset share buttons, structured data mark-up, clean, valid and SEO-friendly code.
@@ -26,6 +26,10 @@ Basic is simple responsive WordPress theme. It has custom color option, customiz
 
 
 == Changelog ==
+
+= 1.1.3 =
+* fix: renamed main theme option prefix (from `theme_option_*` to `basic_theme_option_*`)
+* fix: some functions prefixed with `basic_`
 
 = 1.1.2 =
 * add: new option for customize header image repeatable and header height
@@ -103,14 +107,14 @@ Basic is simple responsive WordPress theme. It has custom color option, customiz
 
 = 1.0 =
 
-Релиз
+* Release
 
 
 
 == Copyright ==
 
 Basic WordPress Theme, Copyright 2014-2015 WordPress.org
-Basic is distributed under the terms of the GNU GPL
+Basic theme files, scripts, icons and images is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -122,12 +126,17 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+
 Basic Theme bundles the following third-party resources:
 
-HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
-Licenses: MIT/GPL2
+Thumbnail image in theme screenshot
+Author: Alexandra Vovk (http://avovkdesign.com)
+License: GNU GPL, Version 2 (or later)
+
+Script HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
+License: MIT/GPL2
 Source: https://github.com/aFarkas/html5shiv
 
-Share42.com,  Copyright 23.09.2014 Dimox
+Script Share42.com with icons (file `/js/icons.png`),  Copyright 23.09.2014 Dimox
 License: GNU GPL, Version 2 (or later)
 Source: http://share42.com
