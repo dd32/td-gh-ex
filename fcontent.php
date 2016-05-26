@@ -14,7 +14,7 @@
         <div class="featured-boxs" >
 
 			<?php  if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div class="featured-box view effect"><a href="<?php the_permalink(); ?>" target="_blank" ><div class="fpthumb"><?php the_post_thumbnail('fpage-thumb'); ?><div class="mask"></div></div><h3 class="ftitle"><?php the_title(); ?></h3></a><div class="fppost-content"><?php $awesome_excerpt_length=20; the_excerpt(); ?></div></div>
+			<div class="featured-box view effect"><a href="<?php the_permalink(); ?>" target="_blank" ><div class="fpthumb"><?php the_post_thumbnail('awesome-fpage-thumb'); ?><div class="mask"></div></div><h3 class="ftitle"><?php the_title(); ?></h3></a><div class="fppost-content"><?php $awesome_excerpt_length=20; the_excerpt(); ?></div></div>
 			<?php endwhile; ?>
 			<?php awesome_page_nav(); ?>
 		<?php endif; wp_reset_query(); ?>

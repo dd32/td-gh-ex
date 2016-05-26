@@ -23,35 +23,23 @@
 	add_theme_support( 'title-tag' );
 
 // 	Tell WordPress for the Feed Link
-	add_editor_style();
 	add_theme_support( 'automatic-feed-links' );
 	
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
-	add_image_size( 'fpage-thumb', 1100, 600, array( 'left', 'top' ) ); 
+	add_image_size( 'awesome-fpage-thumb', 1100, 600, array( 'left', 'top' ) ); 
 	
 		
 // 	WordPress 3.4 Custom Background Support	
 	$awesome_custom_background = array( 'default-color' => '025A05', 'default-image'  => get_template_directory_uri() . '/images/background.png', );
 	add_theme_support( 'custom-background', $awesome_custom_background );
 	
-// 	WordPress 3.4 Custom Header Support				
-	$awesome_custom_header = array(
-	'default-image'          => '',
-	'random-default'         => false,
-	'width'                  => 300,
-	'height'                 => 90,
-	'flex-height'            => false,
-	'flex-width'             => false,
-	'default-text-color'     => '0a96d8',
-	'header-text'            => false,
-	'uploads'                => false,
-	'wp-head-callback' 		 => '',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => '',
-	);
-	add_theme_support( 'custom-header', $awesome_custom_header );
+	add_theme_support( 'custom-logo', array(
+   'height'      =>90,
+   'width'       => 300,
+   'flex-width' => true,
+	) );
 	
 	}
 	add_action( 'after_setup_theme', 'awesome_setup' );
@@ -59,6 +47,8 @@
 // 	Functions for adding script
 	function awesome_enqueue_scripts() { 
 	wp_enqueue_style('awesome-style', get_stylesheet_uri(), false );
+	wp_enqueue_script( 'awesome-html5', get_template_directory_uri().'/js/html5.js');
+    wp_script_add_data( 'awesome-html5', 'conditional', 'lt IE 9' );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' );  }
 	wp_enqueue_script( 'awesome-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	wp_register_style('awesome-gfonts1', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', false );
@@ -118,7 +108,7 @@
 	
 	function awesome_excerpt_more($more) {
     global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' . __('Read More', 'awesome'). '</a>';
+	return '<a href="'. esc_url(get_permalink($post->ID)) . '" class="read-more">' . __('Read More', 'awesome'). '</a>';
 	}
 	add_filter('excerpt_more', 'awesome_excerpt_more');
 	

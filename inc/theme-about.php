@@ -36,21 +36,7 @@
     	</div>
         
         <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>
-  
-
-	<div class="floatcntr">
-		<h2 class="spetitle">World Class, Responsive and Premium WordPress Themes</h2>
-		<p class="heading-des" >Ready to take your WordPress site to the next level? Give your CMS a beautiful design to draw in more visitors. Peoples love us because of the Simplicity of our Themes. We deliver User Friendly Responsive and Premium WordPress Themes with Unique and Modern Design. You can Trust our Themes</p>
-		
-		<a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'http://d5creation.com/themegallery' ) ?>">Visit Our Theme Gallery</a>
-        <a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'http://demo.d5creation.com' ) ?>">Visit Theme Demos</a>
-		<a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'http://d5creation.com/wp-login.php?action=register' ) ?>">Become a Happy Member</a> <br /><br /><br />
-        
-        <img width="100%" src="<?php echo get_template_directory_uri() . '/inc/images/themefeatures.png' ?>" alt="D5 Creation Themes" />
-	</div>
     
-     	
-   
 
 </div>
 

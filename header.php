@@ -34,7 +34,7 @@
         			</nav> 
                     <?php get_search_form(); ?>
         <div class="social">
-	  		<?php foreach (range(1, 5 ) as $awesome_numslinksn) { echo '<a href="'. esc_url(awesome_get_option('sl' . $awesome_numslinksn, '#')) .'" target="_blank"> </a>'; } 	?>        
+	  		<?php foreach (range(1, 5 ) as $awesome_numslinksn) { if ( awesome_get_option('sl' . $awesome_numslinksn ) != '' ): echo '<a href="'. esc_url(awesome_get_option('sl' . $awesome_numslinksn )) .'" target="_blank"> </a>'; endif; } 	?>        
         </div>
         </div>
  		</div>
@@ -43,7 +43,7 @@
       <div id ="header-content">
 		<!-- Site Titele and Description Goes Here -->
          
-       <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if ( get_header_image() !='' ): ?><img class="site-logo" src="<?php header_image(); ?>"/><?php else: ?><h1 class="site-title"><?php echo bloginfo( 'name' ); ?></h1><?php endif; ?></a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if ( has_custom_logo()): the_custom_logo(); else: ?><h1 class="site-title"><?php echo bloginfo( 'name' ); ?></h1><?php endif; ?></a>
 		<h2 class="site-title-hidden"><?php bloginfo( 'description' ); ?></h2>
         <!-- Site Main Menu Goes Here -->
         <div class="mobile-menu"><?php echo __('Main Menu', 'awesome'); ?></div>

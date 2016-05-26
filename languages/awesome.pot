@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2016-04-13 01:05+0600\n"
+"POT-Creation-Date: 2016-05-27 04:42+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -48,11 +48,11 @@ msgstr ""
 msgid "now browsing the general archives"
 msgstr ""
 
-#: comments.php:12 functions.php:141
+#: comments.php:12 functions.php:131
 msgid "No Comments"
 msgstr ""
 
-#: comments.php:12 functions.php:141
+#: comments.php:12 functions.php:131
 msgid "One Comment"
 msgstr ""
 
@@ -64,67 +64,83 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
-#: functions.php:105
+#: front-page.php:16 inc/customize.php:56
+msgid "We are <em>D5 Creation</em>"
+msgstr ""
+
+#: front-page.php:17 inc/customize.php:71
+msgid "Where Passion and Creativity Meets Experience"
+msgstr ""
+
+#: front-page.php:19 inc/customize.php:86
+msgid ""
+"We are a small team of industry veterans having decades of experience in "
+"<em>web development</em> and design. Our work is our passion. We hand craft "
+"every piece of the work we do and we take pride in our hand crafted design "
+"and clean codes"
+msgstr ""
+
+#: functions.php:95
 msgid "Theme by:"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:95
 msgid "Powered by:"
 msgstr ""
 
-#: functions.php:121 functions.php:127
+#: functions.php:111 functions.php:117
 msgid "Read More"
 msgstr ""
 
-#: functions.php:141
+#: functions.php:131
 msgid "Edit"
 msgstr ""
 
-#: functions.php:141
+#: functions.php:131
 msgid "Comments"
 msgstr ""
 
-#: functions.php:150
+#: functions.php:140
 msgid "NEWER ENTRIES"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:141
 msgid "OLDER ENTRIES"
 msgstr ""
 
-#: functions.php:159
+#: functions.php:149
 msgid "SORRY, NOT FOUND ANYTHING"
 msgstr ""
 
-#: functions.php:160
+#: functions.php:150
 msgid "You Can Try Another Search..."
 msgstr ""
 
-#: functions.php:162
+#: functions.php:152
 msgid "&laquo; Or Return to the Home Page"
 msgstr ""
 
-#: functions.php:171
+#: functions.php:161
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:180
+#: functions.php:170
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:189
+#: functions.php:179
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:198
+#: functions.php:188
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:207
+#: functions.php:197
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:217
+#: functions.php:207
 msgid "Footer Area Four"
 msgstr ""
 
@@ -136,11 +152,21 @@ msgstr ""
 msgid "AWESOME OPTIONS"
 msgstr ""
 
-#: inc/customize.php:24
+#: inc/customize.php:10
+msgid ""
+"Awesome is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. "
+"You can Learn More about the Features from the"
+msgstr ""
+
+#: inc/customize.php:10
+msgid "Awesome Theme Page"
+msgstr ""
+
+#: inc/customize.php:23
 msgid "Social Link - "
 msgstr ""
 
-#: inc/customize.php:27
+#: inc/customize.php:26
 msgid ""
 "Input Your Social Page Link. Example: <b>http://wordpress.org/d5creation</"
 "b>.  If you do not want to show anything here leave the box blank. Supported "
@@ -148,59 +174,43 @@ msgid ""
 "com, youtube.com, flickr.com, vimeo.com, codepen.io, linkedin.com"
 msgstr ""
 
-#: inc/customize.php:45
+#: inc/customize.php:44
 msgid "Slide Image-"
 msgstr ""
 
-#: inc/customize.php:48
+#: inc/customize.php:47
 msgid ""
 "Upload or Input the Slide Image URL Here. Recommended Size: 1600px X 600px"
 msgstr ""
 
-#: inc/customize.php:57
-msgid "We are <em>D5 Creation</em>"
-msgstr ""
-
-#: inc/customize.php:65
+#: inc/customize.php:64
 msgid "About Heading"
 msgstr ""
 
-#: inc/customize.php:72
-msgid "Where Passion and Creativity Meets Experience"
-msgstr ""
-
-#: inc/customize.php:80
+#: inc/customize.php:79
 msgid "About Sub Heading"
 msgstr ""
 
-#: inc/customize.php:87
-msgid ""
-"We are a small team of industry veterans having decades of experience in "
-"<em>web development</em> and design. Our work is our passion. We hand craft "
-"every piece of the work we do and we take pride in our hand crafted design "
-"and clean codes"
-msgstr ""
-
-#: inc/customize.php:95
+#: inc/customize.php:94
 msgid "About Description"
 msgstr ""
 
-#: inc/customize.php:107
+#: inc/customize.php:106
 msgid "Awesome Responsive"
 msgstr ""
 
-#: inc/customize.php:115
+#: inc/customize.php:114
 msgid "Featured Title"
 msgstr ""
 
-#: inc/customize.php:123
+#: inc/customize.php:122
 msgid ""
 "The Color changing options of Awesome will give the WordPress Driven Site an "
 "attractive look. Awesome is super elegant and Professional Responsive Theme "
 "which will create the business widely expressed"
 msgstr ""
 
-#: inc/customize.php:131
+#: inc/customize.php:130
 msgid "Featured Description"
 msgstr ""
 
@@ -245,7 +255,7 @@ msgid "Awesome"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://d5creation.com/themes/awesome/"
+msgid "http://d5creation.com/theme/awesome/"
 msgstr ""
 
 #. Description of the plugin/theme

@@ -7,13 +7,12 @@ function awesome_customize_register($wp_customize){
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
 		'title'    		=> __('AWESOME OPTIONS', 'awesome'),
-        'description'   => '<div class="infohead"><span class="donation"> Awesome is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. You can Learn More about the Features from the <a href="'. esc_url('http://d5creation.com/theme/awesome/').'" target="_blank"><strong>Awesome Theme Page</strong></a></span></div>'
+        'description'   => '<div class="infohead"><span class="donation">'. __('Awesome is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. You can Learn More about the Features from the', 'awesome').' <a href="'. esc_url('http://d5creation.com/theme/awesome/').'" target="_blank"><strong>'. __('Awesome Theme Page', 'awesome').'</strong></a></span></div>'
     ));
 	
 //  Social Links
 	foreach (range(1, 5 ) as $awesome_numslinksn) {
     $wp_customize->add_setting('awesome[sl' . $awesome_numslinksn .']', array(
-        'default'        	=> 'https://wordpress.org/themes/author/d5creation',
     	'sanitize_callback' => 'esc_url',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
