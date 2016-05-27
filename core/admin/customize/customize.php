@@ -28,6 +28,214 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 
 			array( 
 				
+				"title" => __( "Slideshow",'bazaar-lite'),
+				"description" => __( "Slideshow",'bazaar-lite'),
+				"type" => "panel",
+				"id" => "slideshow_panel",
+				"priority" => "10",
+				
+			),
+
+			/* SLIDESHOW */ 
+
+			array( 
+
+				"title" => __( "Slideshow Settings",'bazaar-lite'),
+				"type" => "section",
+				"panel" => "slideshow_panel",
+				"priority" => "10",
+				"id" => "slideshow_settings",
+
+			),
+
+			array(
+				
+				"label" => __( "Slideshow",'bazaar-lite'),
+				"description" => __( "Do you want to enable the slideshow?",'bazaar-lite'),
+				"id" => "wip_enable_slideshow",
+				"type" => "select",
+				"section" => "slideshow_settings",
+				"options" => array (
+				   "off" => __( "No",'bazaar-lite'),
+				   "on" => __( "Yes",'bazaar-lite'),
+				),
+				
+				"std" => "on",
+			
+			),
+
+			/* #1 SLIDE */ 
+
+			array( 
+
+				"title" => __( "Slide #1",'bazaar-lite'),
+				"type" => "section",
+				"panel" => "slideshow_panel",
+				"priority" => "10",
+				"id" => "slideshow_1",
+
+			),
+
+			array( 
+
+				"label" => __( "Image",'bazaar-lite'),
+				"description" => __( "Upload the image",'bazaar-lite'),
+				"id" => "wip_slideshow_1_image",
+				"type" => "upload",
+				"section" => "slideshow_1",
+				"std" => get_template_directory_uri().'/assets/images/slideshow/img01.jpg',
+
+			),
+
+			array( 
+
+				"label" => __( "Title",'bazaar-lite'),
+				"description" => __( "Insert the title of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_1_title",
+				"type" => "text",
+				"section" => "slideshow_1",
+				"std" => "Welcome to Bazaar Lite",
+
+			),
+
+			array( 
+
+				"label" => __( "Call to action",'bazaar-lite'),
+				"description" => __( "Insert the call to action of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_1_cta",
+				"type" => "text",
+				"section" => "slideshow_1",
+				"std" => "Get Now",
+
+			),
+
+			array( 
+
+				"label" => __( "Url",'bazaar-lite'),
+				"description" => __( "Insert the url of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_1_url",
+				"type" => "url",
+				"section" => "slideshow_section",
+				"std" => "#",
+
+			),
+
+			/* #2 SLIDE */ 
+
+			array( 
+
+				"title" => __( "Slide #2",'bazaar-lite'),
+				"type" => "section",
+				"panel" => "slideshow_panel",
+				"priority" => "10",
+				"id" => "slideshow_2",
+
+			),
+
+			array( 
+
+				"label" => __( "Image",'bazaar-lite'),
+				"description" => __( "Upload the image",'bazaar-lite'),
+				"id" => "wip_slideshow_2_image",
+				"type" => "upload",
+				"section" => "slideshow_2",
+				"std" => get_template_directory_uri().'/assets/images/slideshow/img02.jpg',
+
+			),
+
+			array( 
+
+				"label" => __( "Title",'bazaar-lite'),
+				"description" => __( "Insert the title of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_2_title",
+				"type" => "text",
+				"section" => "slideshow_2",
+				"std" => "Welcome to Bazaar Lite",
+
+			),
+
+			array( 
+
+				"label" => __( "Call to action",'bazaar-lite'),
+				"description" => __( "Insert the call to action of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_2_cta",
+				"type" => "text",
+				"section" => "slideshow_2",
+				"std" => "Get Now",
+
+			),
+
+			array( 
+
+				"label" => __( "Url",'bazaar-lite'),
+				"description" => __( "Insert the url of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_2_url",
+				"type" => "url",
+				"section" => "slideshow_2",
+				"std" => "#",
+
+			),
+
+			/* #3 SLIDE */ 
+
+			array( 
+
+				"title" => __( "Slide #3",'bazaar-lite'),
+				"type" => "section",
+				"panel" => "slideshow_panel",
+				"priority" => "10",
+				"id" => "slideshow_3",
+
+			),
+
+			array( 
+
+				"label" => __( "Image",'bazaar-lite'),
+				"description" => __( "Upload the image",'bazaar-lite'),
+				"id" => "wip_slideshow_3_image",
+				"type" => "upload",
+				"section" => "slideshow_3",
+				"std" => get_template_directory_uri().'/assets/images/slideshow/img03.jpg',
+
+			),
+
+			array( 
+
+				"label" => __( "Title",'bazaar-lite'),
+				"description" => __( "Insert the title of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_3_title",
+				"type" => "text",
+				"section" => "slideshow_3",
+				"std" => "Welcome to Bazaar Lite",
+
+			),
+
+			array( 
+
+				"label" => __( "Call to action",'bazaar-lite'),
+				"description" => __( "Insert the call to action of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_3_cta",
+				"type" => "text",
+				"section" => "slideshow_3",
+				"std" => "Get Now",
+
+			),
+
+			array( 
+
+				"label" => __( "Url",'bazaar-lite'),
+				"description" => __( "Insert the url of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_3_url",
+				"type" => "url",
+				"section" => "slideshow_3",
+				"std" => "#",
+
+			),
+
+			/* START GENERAL SECTION */ 
+
+			array( 
+				
 				"title" => __( "General",'bazaar-lite'),
 				"description" => __( "General",'bazaar-lite'),
 				"type" => "panel",
@@ -578,11 +786,11 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 			array( 
 
 				"label" => __( "Font size",'bazaar-lite'),
-				"description" => __( "Insert a size, for logo font (For example, 60px) ",'bazaar-lite'),
+				"description" => __( "Insert a size, for logo font (For example, 30px) ",'bazaar-lite'),
 				"id" => "wip_logo_font_size",
 				"type" => "text",
 				"section" => "logo_section",
-				"std" => "60px",
+				"std" => "30px",
 
 			),
 

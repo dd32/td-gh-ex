@@ -71,4 +71,47 @@
     
     </div>
     
-    <?php do_action('bazaarlite_get_breadcrumb'); ?>
+<?php 
+
+	if ( is_front_page() ) {
+
+		if ( bazaarlite_setting('wip_enable_slideshow') == 'on' || !bazaarlite_setting('wip_enable_slideshow') ) : 
+		
+?>
+	
+		<div class="slick-wrapper">
+	
+			<div class="slick-image" style="background-image:url('<?php echo esc_url(bazaarlite_setting('wip_slideshow_1_image', get_template_directory_uri().'/assets/images/slideshow/img01.jpg'))?>')">
+			
+				<p class="slick-title"><?php echo esc_html(bazaarlite_setting('wip_slideshow_1_title','Welcome to Bazaar Lite'))?></p>
+				<a class="button" href="<?php echo esc_url(bazaarlite_setting('wip_slideshow_1_url','#'))?>"><?php echo esc_html(bazaarlite_setting('wip_slideshow_1_cta','Get Now'))?></a>
+		   
+			</div>
+		
+			<div class="slick-image" style="background-image:url('<?php echo esc_url(bazaarlite_setting('wip_slideshow_2_image', get_template_directory_uri().'/assets/images/slideshow/img02.jpg'))?>')">
+			
+				<p class="slick-title"><?php echo esc_html(bazaarlite_setting('wip_slideshow_2_title','Welcome to Bazaar Lite'))?></p>
+				<a class="button" href="<?php echo esc_url(bazaarlite_setting('wip_slideshow_2_url','#'))?>"><?php echo esc_html(bazaarlite_setting('wip_slideshow_2_cta','Get Now'))?></a>
+		   
+			</div>
+		
+			<div class="slick-image" style="background-image:url('<?php echo esc_url(bazaarlite_setting('wip_slideshow_3_image', get_template_directory_uri().'/assets/images/slideshow/img03.jpg'))?>')">
+			
+				<p class="slick-title"><?php echo esc_html(bazaarlite_setting('wip_slideshow_3_title','Welcome to Bazaar Lite'))?></p>
+				<a class="button" href="<?php echo esc_url(bazaarlite_setting('wip_slideshow_3_url','#'))?>"><?php echo esc_html(bazaarlite_setting('wip_slideshow_3_cta','Get Now'))?></a>
+		   
+			</div>
+		
+		</div>
+	
+<?php
+	
+		endif;
+	
+	} else {
+	
+		do_action('bazaarlite_get_breadcrumb'); 
+
+	}
+	
+?>

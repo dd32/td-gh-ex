@@ -109,6 +109,7 @@ class bazaarlite_customize {
 					$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, $element['id'], array(
 					
 						'label' => $element['label'],
+						'mime_type' => 'image',
 						'description' => $element['description'],
 						'section' => $element['section'],
 						'settings' => $element['id'],

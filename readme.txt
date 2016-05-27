@@ -19,6 +19,17 @@ Credits
 
 /** IMAGES **/
 
+- Slideshow images by Unsplash - https://unsplash.com
+
+-- Image 01 by Dustin Lee, https://unsplash.com/photos/jLwVAUtLOAQ
+--- Licensed under CC0 License.
+
+-- Image 02 by Leonardo Wong, https://unsplash.com/photos/7pGehyH7o64
+--- Licensed under CC0 License.
+
+-- Image 03 by Gilles Lambert, https://unsplash.com/photos/pb_lF8VWaPU
+--- Licensed under CC0 License.
+
 - Featured image in the screenshot
 
 -- Copyright © WooThemes
