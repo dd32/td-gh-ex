@@ -1,6 +1,6 @@
 Bazaar Lite Changelog
 
-- Version 1.1.7 - Released: 27.05.2016
+- Version 1.1.8 - Released: 28.05.2016
 
 -- Added : Optional slideshow on homepage (This feature is not still available on the premium version).
 -- Fixed : Breadcrumb on homepage.
