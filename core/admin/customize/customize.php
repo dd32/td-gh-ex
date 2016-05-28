@@ -24,6 +24,18 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 			
 			),
 
+			/* START SUPPORT SECTION */ 
+
+			array(
+			
+				"title" => __( "Get support","bazaar-lite"),
+				"id" => "bazaarlite-customize-info",
+				"type" => "bazaarlite-customize-info",
+				"section" => "bazaarlite-customize-info",
+				"priority" => "08",
+
+			),
+
 			/* START GENERAL SECTION */ 
 
 			array( 
@@ -32,7 +44,7 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				"description" => __( "Slideshow",'bazaar-lite'),
 				"type" => "panel",
 				"id" => "slideshow_panel",
-				"priority" => "10",
+				"priority" => "09",
 				
 			),
 
@@ -115,7 +127,7 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				"description" => __( "Insert the url of this slide",'bazaar-lite'),
 				"id" => "wip_slideshow_1_url",
 				"type" => "url",
-				"section" => "slideshow_section",
+				"section" => "slideshow_1",
 				"std" => "#",
 
 			),

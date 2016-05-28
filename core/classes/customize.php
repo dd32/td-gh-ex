@@ -227,7 +227,27 @@ class bazaarlite_customize {
 					) );
 							
 				break;
-	
+
+				case 'bazaarlite-customize-info' :
+
+					$wp_customize->add_section( $element['id'], array(
+					
+						'title' => $element['title'],
+						'priority' => $element['priority'],
+						'capability' => 'edit_theme_options',
+
+					) );
+
+					$wp_customize->add_setting(  $element['id'], array(
+						'sanitize_callback' => 'esc_url_raw'
+					) );
+					 
+					$wp_customize->add_control( new BazaarLite_Customize_Info_Control( $wp_customize,  $element['id'] , array(
+						'section' => $element['section'],
+					) ) );		
+										
+				break;
+
 			}
 			
 		}
@@ -287,6 +307,49 @@ class bazaarlite_customize {
 
 		endif;
 
+	}
+
+}
+
+if ( class_exists( 'WP_Customize_Control' ) ) {
+
+	class BazaarLite_Customize_Info_Control extends WP_Customize_Control {
+
+		public $type = "bazaarlite-customize-info";
+
+		public function render_content() { ?>
+
+			<h2><?php _e('Get support','bazaar-lite');?></h2> 
+            
+            <div class="inside">
+    
+                <p><?php _e("If you've opened a new support ticket from <strong>WordPress.org</strong>, please send a reminder to <strong>support@wpinprogress.com</strong>, to get a faster reply.","bazaar-lite");?></p>
+
+                <ul>
+                
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/theme/'.get_stylesheet() ); ?>" title="<?php _e('Open a new ticket','bazaar-lite');?>" target="_blank"><?php _e('Open a new ticket','bazaar-lite');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'mailto:support@wpinprogress.com' ); ?>" title="<?php _e('Send a reminder','bazaar-lite');?>" target="_blank"><?php _e('Send a reminder','bazaar-lite');?></a></li>
+                
+                </ul>
+    
+
+                <p><?php _e("If you like this theme and support, <strong>I'd appreciate</strong> any of the following:","bazaar-lite");?></p>
+
+                <ul>
+                
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php _e('Rate this Theme','bazaar-lite');?>" target="_blank"><?php _e('Rate this Theme','bazaar-lite');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://www.facebook.com/WpInProgress' ); ?>" title="<?php _e('Like on Facebook','bazaar-lite');?>" target="_blank"><?php _e('Like on Facebook','bazaar-lite');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'http://eepurl.com/SknoL' ); ?>" title="<?php _e('Subscribe our newsletter','bazaar-lite');?>" target="_blank"><?php _e('Subscribe our newsletter','bazaar-lite');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/themes/author/alexvtn/' ); ?>" title="<?php _e('Download our free WordPress themes','bazaar-lite');?>" target="_blank"><?php _e('Download our free WordPress themes','bazaar-lite');?></a></li>
+                
+                </ul>
+    
+            </div>
+    
+		<?php
+
+		}
+	
 	}
 
 }

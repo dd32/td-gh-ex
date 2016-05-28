@@ -1,3 +1,14 @@
+li#accordion-section-bazaarlite-customize-info h3.accordion-section-title, 
+li#accordion-section-bazaarlite-customize-info h3.accordion-section-title:focus,
+li#accordion-section-bazaarlite-customize-info h3.accordion-section-title:hover { 
+	background-color: #d54e21 !important; 
+	color: #fff !important;
+}
+
+li#accordion-section-bazaarlite-customize-info h3.accordion-section-title:after { 
+	color: #fff !important;
+}
+
 a.getpremium {
 	content:"plus";
 	position: relative;
