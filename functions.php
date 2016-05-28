@@ -5,7 +5,7 @@
  * @package GeneratePress
  */
 	
-define( 'GENERATE_VERSION', '1.3.29');
+define( 'GENERATE_VERSION', '1.3.30');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -239,7 +239,7 @@ function generate_scripts()
 	// Font Awesome
 	$icon_essentials = apply_filters( 'generate_fontawesome_essentials', false );
 	$icon_essentials = ( $icon_essentials ) ? '-essentials' : false;
-	wp_enqueue_style( "fontawesome{$icon_essentials}", get_template_directory_uri() . "/css/font-awesome{$icon_essentials}{$suffix}.css", false, '4.6.1', 'all' );
+	wp_enqueue_style( "fontawesome{$icon_essentials}", get_template_directory_uri() . "/css/font-awesome{$icon_essentials}{$suffix}.css", false, '4.6.3', 'all' );
 	
 	// Add jQuery
 	wp_enqueue_script( 'jquery' );
@@ -645,6 +645,22 @@ function generate_show_title()
 	return apply_filters( 'generate_show_title', true );
 }
 endif;
+
+add_filter( 'wp_calculate_image_sizes', 'generate_responsive_image_width' );
+function generate_responsive_image_width() 
+{
+	// Get Customizer settings
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
+	
+	// Get the container width
+	$container = $generate_settings[ 'container_width' ];
+	
+	// Set our sizes
+	return "(min-width: {$container}px) {$container}px, 100vw"; 
+}
 
 /**
  * Migrate the old logo database entry to the new custom_logo theme mod (WordPress 4.5)
