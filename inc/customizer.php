@@ -13,15 +13,15 @@
 function benevolent_customize_register( $wp_customize ) {
 	
     /* Option list of all post */	
-    $benevolent_options_posts = array();
-    $benevolent_options_posts_obj = get_posts('posts_per_page=-1');
-    $benevolent_options_posts[''] = __( 'Choose Post', 'benevolent' );
-    foreach ( $benevolent_options_posts_obj as $benevolent_posts ) {
-    	$benevolent_options_posts[$benevolent_posts->ID] = $benevolent_posts->post_title;
+    $options_posts = array();
+    $options_posts_obj = get_posts( 'posts_per_page=-1' );
+    $options_posts[''] = __( 'Choose Post', 'benevolent' );
+    foreach ( $options_posts_obj as $posts ) {
+    	$options_posts[$posts->ID] = $posts->post_title;
     }
     
     /* Option list of all categories */
-    $benevolent_args = array(
+    $args = array(
 	   'type'                     => 'post',
 	   'orderby'                  => 'name',
 	   'order'                    => 'ASC',
@@ -29,11 +29,11 @@ function benevolent_customize_register( $wp_customize ) {
 	   'hierarchical'             => 1,
 	   'taxonomy'                 => 'category'
     ); 
-    $benevolent_option_categories = array();
-    $benevolent_category_lists = get_categories( $benevolent_args );
-    $benevolent_option_categories[''] = __( 'Choose Category', 'benevolent' );
-    foreach( $benevolent_category_lists as $benevolent_category ){
-        $benevolent_option_categories[$benevolent_category->term_id] = $benevolent_category->name;
+    $option_categories = array();
+    $category_lists = get_categories( $args );
+    $option_categories[''] = __( 'Choose Category', 'benevolent' );
+    foreach( $category_lists as $category ){
+        $option_categories[$category->term_id] = $category->name;
     }
     
     /** Default Settings */    
@@ -50,14 +50,13 @@ function benevolent_customize_register( $wp_customize ) {
     
     $wp_customize->get_section( 'title_tagline' )->panel     = 'wp_default_panel';
     $wp_customize->get_section( 'colors' )->panel            = 'wp_default_panel';
-    $wp_customize->get_section( 'header_image' )->panel      = 'wp_default_panel';
     $wp_customize->get_section( 'background_image' )->panel  = 'wp_default_panel';
     $wp_customize->get_section( 'static_front_page' )->panel = 'wp_default_panel'; 
     
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-    
+	$wp_customize->get_setting( 'background_color' )->transport = 'refresh';
+    $wp_customize->get_setting( 'background_image' )->transport = 'refresh';
     /** Default Settings Ends */
     
     /** Donate Button */
@@ -75,7 +74,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_button_text',
         array(
             'default' => __( 'Donate Now', 'benevolent' ),
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -92,7 +91,7 @@ function benevolent_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'benevolent_button_url',
         array(
-            'default' => __( '#', 'benevolent' ),
+            'default' => '',
             'sanitize_callback' => 'benevolent_sanitize_url',
         )
     );
@@ -270,7 +269,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_slider_readmore',
         array(
             'default' => __( 'Learn More', 'benevolent' ),
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -298,7 +297,7 @@ function benevolent_customize_register( $wp_customize ) {
             'label' => __( 'Choose Slider Category', 'benevolent' ),
             'section' => 'benevolent_slider_settings',
             'type' => 'select',
-            'choices' => $benevolent_option_categories,
+            'choices' => $option_categories,
         )
     );
     /** Slider Settings Ends */
@@ -347,7 +346,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_intro_section_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -365,7 +364,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_intro_section_content',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_html',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -383,7 +382,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_intro_one_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -396,19 +395,19 @@ function benevolent_customize_register( $wp_customize ) {
         )
     );
     
-    /** Intro One Link */
+    /** Intro One Link Label */
     $wp_customize->add_setting(
         'benevolent_intro_one_link',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
     $wp_customize->add_control(
         'benevolent_intro_one_link',
         array(
-            'label' => __( 'Intro One Link', 'benevolent' ),
+            'label' => __( 'Intro One Link Label', 'benevolent' ),
             'section' => 'benevolent_intro_settings',
             'type' => 'text',
         )
@@ -481,7 +480,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_intro_two_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -494,19 +493,19 @@ function benevolent_customize_register( $wp_customize ) {
         )
     );
     
-    /** Intro Two Link */
+    /** Intro Two Link Label */
     $wp_customize->add_setting(
         'benevolent_intro_two_link',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
     $wp_customize->add_control(
         'benevolent_intro_two_link',
         array(
-            'label' => __( 'Intro Two Link', 'benevolent' ),
+            'label' => __( 'Intro Two Link Label', 'benevolent' ),
             'section' => 'benevolent_intro_settings',
             'type' => 'text',
         )
@@ -579,7 +578,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_intro_three_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -592,19 +591,19 @@ function benevolent_customize_register( $wp_customize ) {
         )
     );
     
-    /** Intro Three Link */
+    /** Intro Three Link Label */
     $wp_customize->add_setting(
         'benevolent_intro_three_link',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
     $wp_customize->add_control(
         'benevolent_intro_three_link',
         array(
-            'label' => __( 'Intro Three Link', 'benevolent' ),
+            'label' => __( 'Intro Three Link Label', 'benevolent' ),
             'section' => 'benevolent_intro_settings',
             'type' => 'text',
         )
@@ -706,7 +705,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_community_section_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -734,7 +733,7 @@ function benevolent_customize_register( $wp_customize ) {
             'label' => __( 'Select Post One', 'benevolent' ),
             'section' => 'benevolent_community_settings',
             'type' => 'select',
-            'choices' => $benevolent_options_posts,
+            'choices' => $options_posts,
         )
     );
     
@@ -753,7 +752,7 @@ function benevolent_customize_register( $wp_customize ) {
             'label' => __( 'Select Post Two', 'benevolent' ),
             'section' => 'benevolent_community_settings',
             'type' => 'select',
-            'choices' => $benevolent_options_posts,
+            'choices' => $options_posts,
         )
     );
     
@@ -772,7 +771,7 @@ function benevolent_customize_register( $wp_customize ) {
             'label' => __( 'Select Post Three', 'benevolent' ),
             'section' => 'benevolent_community_settings',
             'type' => 'select',
-            'choices' => $benevolent_options_posts,
+            'choices' => $options_posts,
         )
     );
     
@@ -791,7 +790,7 @@ function benevolent_customize_register( $wp_customize ) {
             'label' => __( 'Select Post Four', 'benevolent' ),
             'section' => 'benevolent_community_settings',
             'type' => 'select',
-            'choices' => $benevolent_options_posts,
+            'choices' => $options_posts,
         )
     );
     /** Community Section Ends */
@@ -847,7 +846,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_first_stats_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -883,7 +882,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_second_stats_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -919,7 +918,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_third_stats_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -955,7 +954,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_fourth_stats_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -1020,7 +1019,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_blog_section_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -1038,7 +1037,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_blog_section_content',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_html',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -1056,7 +1055,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_blog_section_readmore',
         array(
             'default' => __( 'Read More', 'benevolent' ),
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -1103,7 +1102,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_sponsor_section_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -1340,7 +1339,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_promotional_section_title',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -1358,7 +1357,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_promotional_button_text',
         array(
             'default' => '',
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -1463,7 +1462,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_breadcrumb_home_text',
         array(
             'default' => __( 'Home', 'benevolent' ),
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -1481,7 +1480,7 @@ function benevolent_customize_register( $wp_customize ) {
         'benevolent_breadcrumb_separator',
         array(
             'default' => __( '>', 'benevolent' ),
-            'sanitize_callback' => 'benevolent_sanitize_nohtml',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
     
@@ -1495,6 +1494,36 @@ function benevolent_customize_register( $wp_customize ) {
     );
     /** BreadCrumb Settings Ends */
     
+    /** Custom CSS*/
+    $wp_customize->add_section(
+        'benevolent_custom_settings',
+        array(
+            'title' => __( 'Custom CSS Settings', 'benevolent' ),
+            'priority' => 50,
+            'capability' => 'edit_theme_options',
+        )
+    );
+    
+    $wp_customize->add_setting(
+        'benevolent_custom_css',
+        array(
+            'default' => '',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'benevolent_sanitize_css'
+            )
+    );
+    
+    $wp_customize->add_control(
+        'benevolent_custom_css',
+        array(
+            'label' => __( 'Custom Css', 'benevolent' ),
+            'section' => 'benevolent_custom_settings',
+            'description' => __( 'Put your custom CSS', 'benevolent' ),
+            'type' => 'textarea',
+        )
+    );
+    /** Custom CSS Ends */
+    
     /**
      * Sanitization Functions
      * 
@@ -1503,14 +1532,6 @@ function benevolent_customize_register( $wp_customize ) {
      function benevolent_sanitize_checkbox( $checked ){
         // Boolean check.
         return ( ( isset( $checked ) && true == $checked ) ? true : false );
-     }
-     
-     function benevolent_sanitize_nohtml( $nohtml ){
-        return wp_filter_nohtml_kses( $nohtml );
-     }
-     
-     function benevolent_sanitize_html( $html ){
-        return wp_filter_post_kses( $html );
      }
      
      function benevolent_sanitize_select( $input, $setting ){
@@ -1555,6 +1576,11 @@ function benevolent_customize_register( $wp_customize ) {
     	// If $image has a valid mime_type, return it; otherwise, return the default.
         return ( $file['ext'] ? $image : $setting->default );
     }
+    
+    function benevolent_sanitize_css( $css ){
+   	    return wp_strip_all_tags( $css );
+    }
+     
 }
 add_action( 'customize_register', 'benevolent_customize_register' );
 

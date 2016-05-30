@@ -26,9 +26,13 @@
 		endif; ?>
 	</header><!-- .entry-header -->
     
-    <?php echo ( !is_single() ) ? '<a href="' . esc_url( get_the_permalink() ) . '" class="post-thumbnail">' : '<div class="post-thumbnail">'; ?>
-        <?php ( is_active_sidebar( 'right-sidebar' ) ) ? the_post_thumbnail( 'benevolent-with-sidebar' ) : the_post_thumbnail( 'benevolent-without-sidebar' ) ; ?>
-    <?php echo ( !is_single() ) ? '</a>' : '</div>' ; ?>
+    <?php 
+        if( has_post_thumbnail() ){
+            echo ( is_single() ) ? '<div class="post-thumbnail">' : '<a href="' . esc_url( get_the_permalink() ) . '" class="post-thumbnail">';
+            ( is_active_sidebar( 'right-sidebar' ) ) ? the_post_thumbnail( 'benevolent-with-sidebar' ) : the_post_thumbnail( 'benevolent-without-sidebar' );
+            echo ( is_single() ) ? '</div>' : '</a>' ; 
+        }
+    ?>
     
 	<div class="entry-content">
 		<?php
@@ -40,7 +44,7 @@
     			) );
             }else{
                 if( false === get_post_format() ){
-                    echo wpautop( benevolent_excerpt( get_the_content(), 750, '.', false, false ) );
+                    the_excerpt();
                 }else{
                     the_content( sprintf(
         				/* translators: %s: Name of current post. */
@@ -50,7 +54,6 @@
                 }
             }
             
-
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'benevolent' ),
 				'after'  => '</div>',
@@ -58,7 +61,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php if( !is_single() ){ ?>
+	<?php if( ! is_single() ){ ?>
     <footer class="entry-footer">
 		<a href="<?php the_permalink(); ?>" class="readmore"><?php esc_html_e( 'Read More', 'benevolent' ); ?></a>
 	</footer><!-- .entry-footer -->

@@ -8,7 +8,7 @@
  */
 
 global $post;
-$benevolent_sidebar_layout = get_post_meta( $post->ID, 'benevolent_sidebar_layout', true );
+$sidebar_layout = get_post_meta( $post->ID, 'benevolent_sidebar_layout', true );
 
 ?>
 
@@ -19,7 +19,7 @@ $benevolent_sidebar_layout = get_post_meta( $post->ID, 'benevolent_sidebar_layou
     
     <?php if( has_post_thumbnail() ){ ?>
     <div class="post-thumbnail">
-        <?php ( is_active_sidebar( 'right-sidebar' ) && ( $benevolent_sidebar_layout == 'right-sidebar' ) ) ? the_post_thumbnail( 'benevolent-with-sidebar' ) : the_post_thumbnail( 'benevolent-without-sidebar' ) ; ?>
+        <?php ( is_active_sidebar( 'right-sidebar' ) && ( $sidebar_layout == 'right-sidebar' ) ) ? the_post_thumbnail( 'benevolent-with-sidebar' ) : the_post_thumbnail( 'benevolent-without-sidebar' ) ; ?>
     </div>
     <?php }?>
     

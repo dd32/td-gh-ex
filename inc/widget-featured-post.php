@@ -32,27 +32,28 @@ class Benevolent_Featured_Post extends WP_Widget {
 	 *
 	 * @see WP_Widget::widget()
 	 *
-	 * @param array $benevolent_args     Widget arguments.
-	 * @param array $benevolent_instance Saved values from database.
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
 	 */
-	public function widget( $benevolent_args, $benevolent_instance ) {
-        $benevolent_post_id = intval( $benevolent_instance['post_list'] );
-        $benevolent_read_more = $benevolent_instance['readmore'];
-        $benevolent_excerpt_char = absint( $benevolent_instance['excerpt_char'] );
-        $benevolent_show_thumb = $benevolent_instance['show_thumbnail'];
+	public function widget( $args, $instance ) {
         
-        if( get_post_type( $benevolent_post_id ) == 'post' ){
-            $benevolent_qry = new WP_Query( "p=$benevolent_post_id" );
+        $read_more      = ! empty( $instance['readmore'] ) ? $instance['readmore'] : __( 'Read More', 'benevolent' );
+		$excerpt_char   = ! empty( $instance['excerpt_char'] ) ? absint( $instance['excerpt_char'] ) : 200 ;
+        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? $instance['show_thumbnail'] : '';
+        $post_id        = ! empty( $instance['post_list'] ) ? $instance['post_list'] : 1 ;
+        
+        if( get_post_type( $post_id ) == 'post' ){
+            $qry = new WP_Query( "p=$post_id" );
         }else{
-            $benevolent_qry = new WP_Query( "page_id=$benevolent_post_id" );
+            $qry = new WP_Query( "page_id=$post_id" );
         }
-        if( $benevolent_qry->have_posts() ){
-            echo $benevolent_args['before_widget'];
-            while( $benevolent_qry->have_posts() ){
-                $benevolent_qry->the_post();
-                echo $benevolent_args['before_title'] . apply_filters('the_title', get_the_title()) . $benevolent_args['after_title']; 
+        if( $qry->have_posts() ){
+            echo $args['before_widget'];
+            while( $qry->have_posts() ){
+                $qry->the_post();
+                echo $args['before_title'] . apply_filters( 'widget_title', get_the_title() ) . $args['after_title']; 
             ?>
-                <?php if( has_post_thumbnail() && $benevolent_show_thumb ){ ?>                    
+                <?php if( has_post_thumbnail() && $show_thumbnail ){ ?>                    
                 <div class="img-holder">
                     <a href="<?php the_permalink(); ?>">
                         <?php the_post_thumbnail( 'benevolent-featured-post' ); ?>
@@ -60,12 +61,12 @@ class Benevolent_Featured_Post extends WP_Widget {
                 </div>    				
                 <?php } ?>
                 <div class="text-holder">
-                    <?php echo wpautop( benevolent_excerpt( get_the_content(), $benevolent_excerpt_char, '...', false, false ) );?>
-                    <a href="<?php the_permalink();?>" class="readmore"><?php echo esc_attr( $benevolent_read_more );?></a>
+                    <?php echo wpautop( benevolent_excerpt( get_the_content(), $excerpt_char, '...', false, false ) );?>
+                    <a href="<?php the_permalink();?>" class="readmore"><?php echo esc_attr( $read_more );?></a>
                 </div>        
             <?php    
             }
-            echo $benevolent_args['after_widget'];   
+            echo $args['after_widget'];   
         }
         wp_reset_postdata();  
 	}
@@ -75,52 +76,51 @@ class Benevolent_Featured_Post extends WP_Widget {
 	 *
 	 * @see WP_Widget::form()
 	 *
-	 * @param array $benevolent_instance Previously saved values from database.
+	 * @param array $instance Previously saved values from database.
 	 */
-	public function form( $benevolent_instance ) {
-		$benevolent_postlist[0] = array(
+	public function form( $instance ) {
+		
+        $postlist[0] = array(
     		'value' => 0,
-    		'label' => __('--choose--', 'benevolent'),
+    		'label' => __( '--choose--', 'benevolent' ),
     	);
-    	$benevolent_arg = array('posts_per_page'   => -1, 'post_type' => array( 'post', 'page' ));
-    	$benevolent_posts = get_posts($benevolent_arg); $benevolent_i = 1;
+    	$arg = array( 'posts_per_page' => -1, 'post_type' => array( 'post', 'page' ) );
+    	$posts = get_posts( $arg );
     	
-        foreach( $benevolent_posts as $benevolent_post ){ 
-    		$benevolent_postlist[$benevolent_post->ID] = array(
-    			'value' => $benevolent_post->ID,
-    			'label' => $benevolent_post->post_title
+        foreach( $posts as $p ){ 
+    		$postlist[$p->ID] = array(
+    			'value' => $p->ID,
+    			'label' => $p->post_title
     		);
-    		$benevolent_i++;
     	}
         
-        $benevolent_read_more = !empty( $benevolent_instance['readmore'] ) ? $benevolent_instance['readmore'] : __( 'Read More', 'benevolent' );
-		
-        $benevolent_excerpt_char = !empty( $benevolent_instance['excerpt_char'] ) ? absint($benevolent_instance['excerpt_char']) : 200 ;
+        $read_more      = ! empty( $instance['readmore'] ) ? $instance['readmore'] : __( 'Read More', 'benevolent' );
+		$excerpt_char   = ! empty( $instance['excerpt_char'] ) ? absint( $instance['excerpt_char'] ) : 200 ;
+        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? $instance['show_thumbnail'] : '';
+        $post_list      = ! empty( $instance['post_list'] ) ? $instance['post_list'] : 1 ;
         
-        $benevolent_show_thumbnail = !empty( $benevolent_instance['show_thumbnail'] ) ? $benevolent_instance['show_thumbnail'] : '' ;
-        $benevolent_post_list = !empty( $benevolent_instance['post_list'] ) ? $benevolent_instance['post_list'] : 0 ;
         ?>
 		<p>
             <label for="<?php echo $this->get_field_id( 'post_list' ); ?>"><?php esc_html_e( 'Posts', 'benevolent' ); ?></label>
             <select name="<?php echo $this->get_field_name( 'post_list' ); ?>" id="<?php echo $this->get_field_id( 'post_list' ); ?>" class="widefat">
 				<?php
-				foreach ( $benevolent_postlist as $benevolent_single_post ) { ?>
-					<option value="<?php echo $benevolent_single_post['value']; ?>" id="<?php echo $this->get_field_id( $benevolent_single_post['label'] ); ?>" <?php selected( $benevolent_single_post['value'], $benevolent_post_list ); ?>><?php echo $benevolent_single_post['label']; ?></option>
+				foreach ( $postlist as $single_post ) { ?>
+					<option value="<?php echo $single_post['value']; ?>" id="<?php echo $this->get_field_id( $single_post['label'] ); ?>" <?php selected( $single_post['value'], $post_list ); ?>><?php echo $single_post['label']; ?></option>
 				<?php } ?>
 			</select>
 		</p>
         
         <p>
             <label for="<?php echo $this->get_field_id( 'readmore' ); ?>"><?php esc_html_e( 'Read More Text', 'benevolent' ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id( 'readmore' ); ?>" name="<?php echo $this->get_field_name( 'readmore' ); ?>" type="text" value="<?php echo esc_attr( $benevolent_read_more ); ?>" />
+            <input class="widefat" id="<?php echo $this->get_field_id( 'readmore' ); ?>" name="<?php echo $this->get_field_name( 'readmore' ); ?>" type="text" value="<?php echo esc_attr( $read_more ); ?>" />
 		</p>
         <p>
             <label for="<?php echo $this->get_field_id( 'excerpt_char' ); ?>"><?php esc_html_e( 'Excerpt Character', 'benevolent' ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id( 'excerpt_char' ); ?>" name="<?php echo $this->get_field_name( 'excerpt_char' ); ?>" type="text" value="<?php echo esc_attr( $benevolent_excerpt_char ); ?>" />
+            <input class="widefat" id="<?php echo $this->get_field_id( 'excerpt_char' ); ?>" name="<?php echo $this->get_field_name( 'excerpt_char' ); ?>" type="text" value="<?php echo esc_attr( $excerpt_char ); ?>" />
 		</p>
         
         <p>
-            <input id="<?php echo $this->get_field_id( 'show_thumbnail' ); ?>" name="<?php echo $this->get_field_name( 'show_thumbnail' ); ?>" type="checkbox" value="1" <?php checked( '1', $benevolent_show_thumbnail ); ?>/>
+            <input id="<?php echo $this->get_field_id( 'show_thumbnail' ); ?>" name="<?php echo $this->get_field_name( 'show_thumbnail' ); ?>" type="checkbox" value="1" <?php checked( '1', $show_thumbnail ); ?>/>
             <label for="<?php echo $this->get_field_id( 'show_thumbnail' ); ?>"><?php esc_html_e( 'Show Post Thumbnail', 'benevolent' ); ?></label>
 		</p>
         
@@ -132,19 +132,22 @@ class Benevolent_Featured_Post extends WP_Widget {
 	 *
 	 * @see WP_Widget::update()
 	 *
-	 * @param array $benevolent_new_instance Values just sent to be saved.
-	 * @param array $benevolent_old_instance Previously saved values from database.
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
 	 *
 	 * @return array Updated safe values to be saved.
 	 */
-	public function update( $benevolent_new_instance, $benevolent_old_instance ) {
-		$benevolent_instance = array();
+	public function update( $new_instance, $old_instance ) {
 		
-        $benevolent_instance['readmore'] = !empty( $benevolent_new_instance['readmore'] ) ? strip_tags( $benevolent_new_instance['readmore'] ) : __( 'Read More', 'benevolent' );
-        $benevolent_instance['excerpt_char'] = !empty( $benevolent_new_instance['excerpt_char'] ) ? absint($benevolent_new_instance['excerpt_char']) : 200 ;
-        $benevolent_instance['post_list'] = !empty( $benevolent_new_instance['post_list'] ) ? esc_attr( $benevolent_new_instance['post_list'] ) : '';
-        $benevolent_instance['show_thumbnail'] = !empty( $benevolent_new_instance['show_thumbnail'] ) ? esc_attr( $benevolent_new_instance['show_thumbnail'] ) : '';
-		return $benevolent_instance;
+        $instance = array();
+		
+        $instance['readmore']       = ! empty( $new_instance['readmore'] ) ? strip_tags( $new_instance['readmore'] ) : __( 'Read More', 'benevolent' );
+        $instance['excerpt_char']   = ! empty( $new_instance['excerpt_char'] ) ? absint( $new_instance['excerpt_char'] ) : 200 ;
+        $instance['post_list']      = ! empty( $new_instance['post_list'] ) ? esc_attr( $new_instance['post_list'] ) : 1;
+        $instance['show_thumbnail'] = ! empty( $new_instance['show_thumbnail'] ) ? esc_attr( $new_instance['show_thumbnail'] ) : '';
+        
+		return $instance;
+                
 	}
 
 } // class Benevolent_Featured_Post

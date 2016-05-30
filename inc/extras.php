@@ -14,7 +14,10 @@
  * @return array
  */
 function benevolent_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
+	
+    global $post;
+    
+    // Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
@@ -23,11 +26,36 @@ function benevolent_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
-
+    
+    // Adds a class of custom-background-image to sites with a custom background image.
+	if ( get_background_image() ) {
+		$classes[] = 'custom-background-image';
+	}
+    
+    // Adds a class of custom-background-color to sites with a custom background color.
+    if ( get_background_color() != 'ffffff' ) {
+		$classes[] = 'custom-background-color';
+	}
+    
+    if( !( is_active_sidebar( 'right-sidebar' )) || is_page_template( 'template-home.php' ) || is_search() ) {
+		$classes[] = 'full-width';	
+	}
+    
+    if( is_page() ){
+		$sidebar_layout = get_post_meta( $post->ID, 'benevolent_sidebar_layout', true );
+        if( $sidebar_layout == 'no-sidebar' )
+		$classes[] = 'full-width';
+	}
+    
+    if( get_theme_mod( 'benevolent_ed_slider' ) ){
+	   $classes[] = 'has-slider';
+	}
+    
 	return $classes;
 }
 add_filter( 'body_class', 'benevolent_body_classes' );
 
+if( ! function_exists( 'benevolent_excerpt' ) ):  
 /**
  * benevolent_excerpt can truncate a string up to a number of characters while preserving whole words and HTML tags
  *
@@ -130,13 +158,13 @@ function benevolent_excerpt($text, $length = 100, $ending = '...', $exact = fals
 	}
 	return $truncate;
 }
+endif; // End function_exists
 
 /**
  * Custom Bread Crumb
  *
  * @link http://www.qualitytuts.com/wordpress-custom-breadcrumbs-without-plugin/
  */
- 
 function benevolent_breadcrumbs_cb() {
  
   $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
@@ -240,31 +268,7 @@ function benevolent_breadcrumbs_cb() {
  
   }
 } // end benevolent_breadcrumbs()
-
 add_action( 'benevolent_breadcrumbs', 'benevolent_breadcrumbs_cb' );
-
-/** Filter for Body Class **/
-function benevolent_layout_class( $benevolent_classes ){
-	global $post;
-    $benevolent_ed_slider = get_theme_mod( 'benevolent_ed_slider' );
-	if( is_404()){
-		$benevolent_classes[] = '';
-	}elseif( !( is_active_sidebar( 'right-sidebar' )) || is_page_template( 'template-home.php' ) || is_search() ) {
-		$benevolent_classes[] = 'full-width';	
-	}elseif(is_singular()){
-		$benevolent_post_class = get_post_meta( $post->ID, 'benevolent_sidebar_layout', true );
-        if( $benevolent_post_class == 'no-sidebar' )
-		$benevolent_classes[] = 'full-width';
-	}elseif( $benevolent_ed_slider ){
-	   $benevolent_classes[] = 'has-slider';
-	}else{
-	   $benevolent_classes[] = '';
-	}
-    
-	return $benevolent_classes;
-}
-
-add_filter( 'body_class', 'benevolent_layout_class' );
 
 /** 
  * Hook to move comment text field to the bottom in WP 4.4 
@@ -277,7 +281,6 @@ function benevolent_move_comment_field_to_bottom( $fields ) {
     $fields['comment'] = $comment_field;
     return $fields;
 }
-
 add_filter( 'comment_form_fields', 'benevolent_move_comment_field_to_bottom' );
 
 /**
@@ -285,8 +288,7 @@ add_filter( 'comment_form_fields', 'benevolent_move_comment_field_to_bottom' );
  * 
  * @link https://codex.wordpress.org/Function_Reference/wp_list_comments 
  */
- 
- function benevolent_theme_comment($comment, $args, $depth) {
+function benevolent_theme_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 	extract($args, EXTR_SKIP);
 
@@ -333,10 +335,12 @@ add_filter( 'comment_form_fields', 'benevolent_move_comment_field_to_bottom' );
 <?php
 }
 
-/** Fuction to get Sections */
- function benevolent_get_sections(){
+/**
+ * Fuction to get Sections 
+ */
+function benevolent_get_sections(){
     
-    $benevolent_sections = array( 
+    $sections = array( 
         'intro-section' => array(
             'class' => 'intro',
             'id'    => 'intro'    
@@ -358,33 +362,35 @@ add_filter( 'comment_form_fields', 'benevolent_move_comment_field_to_bottom' );
             'id'    => 'sponsor'
         )              
     );
-    
-    
-    $benevolent_enabled_section = array();
-    foreach ( $benevolent_sections as $benevolent_section ) {
         
-        if ( esc_attr( get_theme_mod( 'benevolent_ed_' . $benevolent_section['id'] . '_section' ) ) == 1 ){
-            $benevolent_enabled_section[] = array(
-                'id' => $benevolent_section['id'],
-                'class' => $benevolent_section['class']
+    $enabled_section = array();
+    foreach ( $sections as $section ) {
+        
+        if ( esc_attr( get_theme_mod( 'benevolent_ed_' . $section['id'] . '_section' ) ) == 1 ){
+            $enabled_section[] = array(
+                'id' => $section['id'],
+                'class' => $section['class']
             );
         }
     }
-    return $benevolent_enabled_section;
- }
+    return $enabled_section;
+}
  
- /** Callback for Banner Slider */
- function benevolent_slider_cb(){
-    $benevolent_slider_caption = get_theme_mod( 'benevolent_slider_caption', '1' );
-    $benevolent_slider_readmore = get_theme_mod( 'benevolent_slider_readmore', __( 'Learn More', 'benevolent' ) );
-    $benevolent_slider_cat = get_theme_mod( 'benevolent_slider_cat' );
+/**
+ * Callback for Banner Slider 
+ */
+function benevolent_slider_cb(){
+
+    $slider_caption  = get_theme_mod( 'benevolent_slider_caption', '1' );
+    $slider_readmore = get_theme_mod( 'benevolent_slider_readmore', __( 'Learn More', 'benevolent' ) );
+    $slider_cat      = get_theme_mod( 'benevolent_slider_cat' );
     
-    if( $benevolent_slider_cat ){
+    if( $slider_cat ){
         $slider_qry = new WP_Query( array( 
             'post_type'             => 'post', 
             'post_status'           => 'publish',
             'posts_per_page'        => -1,                    
-            'cat'                   => $benevolent_slider_cat,
+            'cat'                   => $slider_cat,
             'ignore_sticky_posts'   => true
         ) );
         if( $slider_qry->have_posts() ){
@@ -397,14 +403,14 @@ add_filter( 'comment_form_fields', 'benevolent_move_comment_field_to_bottom' );
     			<li>
     				<?php 
                     the_post_thumbnail( 'benevolent-slider' ); 
-                    if( $benevolent_slider_caption ){
+                    if( $slider_caption ){
                     ?>
                     <div class="banner-text">
     					<div class="container">
     						<div class="text">
     							<strong class="main-title"><?php the_title(); ?></strong>
-    							<?php echo wpautop( benevolent_excerpt( get_the_content(), 75, '.', false, false ) ); ?>
-    							<a href="<?php the_permalink(); ?>" class="btn-learn"><?php echo esc_html( $benevolent_slider_readmore );?></a>
+    							<?php if( has_excerpt() ) the_excerpt(); ?>
+    							<a href="<?php the_permalink(); ?>" class="btn-learn"><?php echo esc_html( $slider_readmore );?></a>
     						</div>
     					</div>
     				</div>
@@ -419,32 +425,130 @@ add_filter( 'comment_form_fields', 'benevolent_move_comment_field_to_bottom' );
             wp_reset_postdata(); 
         }
     }   
- }
+}
+add_action( 'benevolent_slider', 'benevolent_slider_cb' );
  
- add_action( 'benevolent_slider', 'benevolent_slider_cb' );
- 
- /** Callback Function for Promotional Block */
- function benevolent_promotional_cb(){
-    $benevolent_ed_promotional_section = get_theme_mod( 'benevolent_ed_promotional_section' );
-    $benevolent_promotional_section_title = get_theme_mod( 'benevolent_promotional_section_title' );
-    $benevolent_promotional_button_text = get_theme_mod( 'benevolent_promotional_button_text' );
-    $benevolent_promotional_button_url = get_theme_mod( 'benevolent_promotional_button_url' );
-    $benevolent_promotional_section_bg = get_theme_mod( 'benevolent_promotional_section_bg' );
+/**
+ * Callback Function for Promotional Block 
+ */
+function benevolent_promotional_cb(){
+
+    $ed_promotional_section    = get_theme_mod( 'benevolent_ed_promotional_section' );
+    $promotional_section_title = get_theme_mod( 'benevolent_promotional_section_title' );
+    $promotional_button_text   = get_theme_mod( 'benevolent_promotional_button_text' );
+    $promotional_button_url    = get_theme_mod( 'benevolent_promotional_button_url' );
+    $promotional_section_bg    = get_theme_mod( 'benevolent_promotional_section_bg' );
     
-    if( $benevolent_ed_promotional_section ){
+    if( $ed_promotional_section ){
     ?>
-    <div class="promotional-block" <?php if( $benevolent_promotional_section_bg ) echo 'style="background: url(' . esc_url( $benevolent_promotional_section_bg ) . '); background-size: cover; background-repeat: no-repeat; background-position: center;"';?>>
+    <div class="promotional-block" <?php if( $promotional_section_bg ) echo 'style="background: url(' . esc_url( $promotional_section_bg ) . '); background-size: cover; background-repeat: no-repeat; background-position: center;"';?>>
 			<div class="container">
 				<div class="text">
 					<?php 
-                    if( $benevolent_promotional_section_title ) echo '<h3 class="title">' . esc_html( $benevolent_promotional_section_title ) . '</h3>';
-					if( $benevolent_promotional_button_url ) echo '<a href="' . esc_url( $benevolent_promotional_button_url ) . '" class="btn-donate" target="_blank">' . esc_html( $benevolent_promotional_button_text ) . '</a>';
+                    if( $promotional_section_title ) echo '<h3 class="title">' . esc_html( $promotional_section_title ) . '</h3>';
+					if( $promotional_button_url && $promotional_button_text ) echo '<a href="' . esc_url( $promotional_button_url ) . '" class="btn-donate" target="_blank">' . esc_html( $promotional_button_text ) . '</a>';
                     ?>
 				</div>
 			</div>
 		</div>
     <?php
     }
- }
- 
- add_action( 'benevolent_promotional', 'benevolent_promotional_cb' );
+}
+add_action( 'benevolent_promotional', 'benevolent_promotional_cb' );
+
+/**
+ * Helper function for listing Intro section
+*/
+function benevolent_intro_helper( $image, $logo, $title, $link, $url ){
+    
+    if( $image ){
+        $img = wp_get_attachment_image_src( $image, 'full' );
+        $log = wp_get_attachment_image_src( $logo, 'full' );
+        
+        echo '<div class="columns-3">';
+        echo '<div class="img-holder"><img src="' . esc_url( $img[0] ) . '" alt="' . esc_attr( $title ) . '" /></div>';
+        
+        if( $logo ) echo '<div class="icon-holder"><img src="' . esc_url( $log[0] ) .'" alt="' . esc_attr( $title ) . '" /></div>';
+        
+		if( $title || $url ){ 
+            echo '<div class="text-holder">';
+			if( $title ) echo '<strong class="title">' . esc_html( $title ) . '</strong>'; 
+			if( $url && $link ) echo '<a class="btn" href="' . esc_url( $url ) . '" target="_blank">' . esc_html( $link ) . '<span class="fa fa-angle-right"></span></a>';
+            echo '</div>';
+        } 
+        echo '</div>';
+    }
+    
+}
+
+/**
+ * Helper function for listing sponsor 
+*/
+function benevolent_sponsor_helper( $logo, $url ){
+    
+    if( $url ) echo '<a href="' . esc_url( $url ) . '" target="_blank">'; 
+    if( $logo ) echo '<div class="columns-5"><img src="' . esc_url( $logo ) . '" alt=""></div>';
+    if( $url ) echo '</a>';
+     
+}
+
+/**
+ * Helper function for listing stat counter
+*/
+function benevolent_stat_helper( $title, $counter ){
+    if( $counter ){ ?>
+        <div class="columns-4">
+			<strong class="number"><?php echo absint( $counter );?></strong>
+			<?php if( $title ) echo '<span>' . esc_html( $title ) . '</span>'; ?>
+		</div>
+    <?php }
+}
+
+/**
+ * Custom CSS
+*/
+function benevolent_custom_css(){
+    $custom_css = get_theme_mod( 'benevolent_custom_css' );
+    if( !empty( $custom_css ) ){
+		echo '<style type="text/css">';
+		echo wp_strip_all_tags( $custom_css );
+		echo '</style>';
+	}
+}
+add_action( 'wp_head', 'benevolent_custom_css', 100 );
+
+if ( ! function_exists( 'benevolent_excerpt_more' ) && ! is_admin() ) :
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with ... * 
+ */
+function benevolent_excerpt_more() {
+	return ' &hellip; ';
+}
+add_filter( 'excerpt_more', 'benevolent_excerpt_more' );
+endif;
+
+if ( ! function_exists( 'benevolent_excerpt_length' ) ) :
+/**
+ * Changes the default 55 character in excerpt 
+*/
+function benevolent_excerpt_length( $length ) {
+	return 60;
+}
+add_filter( 'excerpt_length', 'benevolent_excerpt_length', 999 );
+endif;
+
+/**
+ * Footer Credits 
+*/
+function benevolent_footer_credit(){
+        
+    $text  = '<div class="site-info"><div class="container"><span class="copyright">';
+    $text .=  esc_html__( '&copy; ', 'benevolent' ) . date('Y'); 
+    $text .= ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>.</span>';
+    $text .= '<span class="by">' . esc_html__( 'Theme by ', 'benevolent' );
+    $text .= '<a href="' . esc_url( 'http://raratheme.com/' ) .'" rel="author">' . esc_html__( 'Rara Theme', 'benevolent' ) . '</a>. ';
+    $text .= sprintf( esc_html__( 'Powered by %s', 'benevolent' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'benevolent' ) ) .'">WordPress</a>.' );
+    $text .= '</span></div></div>';
+    echo apply_filters( 'benevolent_footer_text', $text );    
+}
+add_action( 'benevolent_footer', 'benevolent_footer_credit' );

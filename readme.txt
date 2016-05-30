@@ -1,18 +1,18 @@
 === Benevolent ===
 Author: Rara Theme (http://raratheme.com)
 
-Tags: Blue, green, white, light, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
+Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
 
-Requires at least: 4.0
-Tested up to: 4.3.1
-Stable tag: 1.0.0
+Requires at least: 4.4.2
+Tested up to: 4.5.2
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
 
-Benevolent is a simple, modern and easy to use WordPress theme for non-profit organisations, charity causes, political organisations and foundations. The theme is apt for organisations looking for clean and professional WordPress Theme. The design is responsive and the theme looks great on tablets, laptops and mobile phones. Benevolent comes with several features and it is customisable. The front page has advance slider option, call for donation at several places, project showcase, impact showcase with statistics counter, latest articles and sponsors showcase of the cause. The theme is also SEO friendly which makes it easy to find on search engines like Google. The theme supports all kinds of post formats such as gallery, image, video, etc. It has 3 custom widgets - recent posts, social media and about us. The theme is translation ready.   
+Benevolent is a simple, modern and easy to use WordPress theme for non-profit organisations, charity causes, political organisations and foundations. The theme is apt for organisations looking for clean and professional WordPress Theme. The design is responsive and the theme looks great on tablets, laptops and mobile phones. Benevolent comes with several features and it is customisable. The front page has advance slider option, call for donation at several places, project showcase, impact showcase with statistics counter, latest articles and sponsors showcase of the cause. The theme is also SEO friendly which makes it easy to find on search engines like Google. The theme supports all kinds of post formats such as gallery, image, video, etc. It has 4 custom widgets - recent posts, popular posts, social media and about us. The theme is translation ready.   
 
 
 == Installation ==
@@ -37,29 +37,16 @@ https://fortawesome.github.io/Font-Awesome/
 All images are under Creative Commons Public Domain deed CC0.
 
 https://pixabay.com/en/boys-poor-person-children-happy-60680/
-https://pixabay.com/en/money-coins-donate-moneybox-cash-230265/
-https://pixabay.com/en/children-boy-girl-young-innocent-82272/
-https://pixabay.com/en/team-together-hands-joined-prayer-472488/
-https://pixabay.com/en/bali-indonesia-amed-beach-children-1083941/
-https://pixabay.com/en/happy-children-children-smile-happy-835527/
-https://pixabay.com/en/children-school-africa-color-1054858/
-https://pixabay.com/en/enthusiastic-children-beneficiaries-876543/
-https://pixabay.com/en/children-kindergarten-smile-laugh-205219/
-https://pixabay.com/en/mom-daughter-asian-family-mother-300296/
-https://pixabay.com/en/clasped-hands-comfort-hands-people-541849/
-https://pixabay.com/en/mother-daughter-love-family-happy-434355/
-https://pixabay.com/en/joy-of-children-happy-children-945590/
-https://pixabay.com/en/person-man-human-face-portrait-700099/
-https://pixabay.com/en/girl-african-africa-black-child-852545/
-https://pixabay.com/en/school-india-children-ahmedabad-330580/
 
+Other images are self taken or self created and are GPL compatible.
 
 # JS
 All the JS are licensed under GPLv2 or later
 https://jqueryui.com/tabs/
 http://flexslider.woothemes.com/
 https://www.berriart.com/sidr/
-
+https://github.com/bfintal/Counter-Up/blob/master/LICENSE
+https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -78,3 +65,13 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
+   
+   
+== Changelog ==
+
+    1.0.1
+    * Added Popular Post and Social Links Widgets.
+    * Added ability to add Custom CSS in theme options.
+    * Added compatibility for custom logo feature.
+    * Added comment_template in page.php
+    * Updated and integrated new theme tags in style.css

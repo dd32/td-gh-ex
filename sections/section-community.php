@@ -5,23 +5,23 @@
  * @package Benevolent
  */
  
- $benevolent_community_section_title = get_theme_mod( 'benevolent_community_section_title' );
- $benevolent_community_post_one = get_theme_mod( 'benevolent_community_post_one' );
- $benevolent_community_post_two = get_theme_mod( 'benevolent_community_post_two' );
- $benevolent_community_post_three = get_theme_mod( 'benevolent_community_post_three' );
- $benevolent_community_post_four = get_theme_mod( 'benevolent_community_post_four' );
+$community_section_title = get_theme_mod( 'benevolent_community_section_title' );
+$community_post_one      = get_theme_mod( 'benevolent_community_post_one' );
+$community_post_two      = get_theme_mod( 'benevolent_community_post_two' );
+$community_post_three    = get_theme_mod( 'benevolent_community_post_three' );
+$community_post_four     = get_theme_mod( 'benevolent_community_post_four' );
  
- if( $benevolent_community_section_title ) echo '<header class="header"><h2 class="main-title">' . esc_html( $benevolent_community_section_title ) . '</h2></header>'; 
+ if( $community_section_title ) echo '<header class="header"><h2 class="main-title">' . esc_html( $community_section_title ) . '</h2></header>'; 
  
- if( $benevolent_community_post_one || $benevolent_community_post_two || $benevolent_community_post_three || $benevolent_community_post_four ){
-    $community_posts = array( $benevolent_community_post_one, $benevolent_community_post_two, $benevolent_community_post_three, $benevolent_community_post_four );
-    $community_posts = array_filter( $community_posts );
+ if( $community_post_one || $community_post_two || $community_post_three || $community_post_four ){
+    $community_posts = array( $community_post_one, $community_post_two, $community_post_three, $community_post_four );
+    $community_posts = array_diff( array_unique( $community_posts ), array('') );
     
     $community_qry = new WP_Query( array( 
-        'post_type'     => 'post',
-        'posts_per_page'=> -1,
-        'post__in'     => $community_posts,
-        'orderby'       => 'post__in',
+        'post_type'           => 'post',
+        'posts_per_page'      => -1,
+        'post__in'            => $community_posts,
+        'orderby'             => 'post__in',
         'ignore_sticky_posts' => true
     
     ) );
@@ -40,7 +40,7 @@
                             <strong class="title"><?php the_title(); ?></strong>
 				            <?php 
                             if( has_excerpt() ){ 
-				                echo wpautop( get_the_excerpt() );
+				                the_excerpt();                                
                             }else{
                                 echo wpautop( benevolent_excerpt( get_the_content(), 25, '.', false, false ) );    
                             } ?>
@@ -55,7 +55,7 @@
 				                <strong class="title"><?php the_title(); ?></strong>
 				                <?php 
                                 if( has_excerpt() ){ 
-    				                echo wpautop( get_the_excerpt() );
+    				                the_excerpt();
                                 }else{
                                     echo wpautop( benevolent_excerpt( get_the_content(), 25, '.', false, false ) );    
                                 } ?>
@@ -74,4 +74,4 @@
         wp_reset_postdata(); 
         echo '</div>';
     }
- }			
+}			

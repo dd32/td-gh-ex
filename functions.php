@@ -24,13 +24,7 @@ function benevolent_setup() {
 	 */
 	load_theme_textdomain( 'benevolent', get_template_directory() . '/languages' );
     
-    /**
-	 * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
-	 * @see http://codex.wordpress.org/Function_Reference/add_editor_style
-	 */
-	add_editor_style( 'css/editor-style.css' );
-    
-	// Add default posts and comments RSS feed links to head.
+    // Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
@@ -95,6 +89,14 @@ function benevolent_setup() {
     add_image_size( 'benevolent-without-sidebar', 1200, 437, true );
     add_image_size( 'benevolent-featured-post', 275, 275, true );
     add_image_size( 'benevolent-recent-post', 75, 75, true );
+    
+    /* Custom Logo */
+    add_theme_support( 'custom-logo', array(
+    	'width'       => 270,
+		'height'      => 60,
+    	'header-text' => array( 'site-title', 'site-description' ),
+    ) );
+    
 }
 endif;
 add_action( 'after_setup_theme', 'benevolent_setup' );
@@ -216,11 +218,6 @@ function benevolent_scripts() {
 add_action( 'wp_enqueue_scripts', 'benevolent_scripts' );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -228,7 +225,7 @@ require get_template_directory() . '/inc/template-tags.php';
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/benevolent-custom-functions.php';
+require get_template_directory() . '/inc/extras.php';
 
 /**
  * Customizer additions.
@@ -243,7 +240,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Meta Box.
  */
-require get_template_directory() . '/inc/benevolent-metabox.php';
+require get_template_directory() . '/inc/metabox.php';
 
 /**
  * Featured Post Widget
@@ -254,6 +251,11 @@ require get_template_directory() . '/inc/widget-featured-post.php';
  * Recent Post Widget
  */
 require get_template_directory() . '/inc/widget-recent-post.php';
+
+/**
+ * Popular Post Widget
+ */
+require get_template_directory() . '/inc/widget-popular-post.php';
 
 /**
  * Social Link Widget

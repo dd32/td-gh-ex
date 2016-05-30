@@ -1,14 +1,14 @@
 /*
 Theme Name: Benevolent
-Theme URI: http://raratheme.com/theme/benevolent/
+Theme URI: http://raratheme.com/wordpress-themes/benevolent/
 Author: Rara Theme
 Author URI: http://raratheme.com/
-Description: Benevolent is a simple, modern and easy to use WordPress theme for non-profit organisations, charity causes, political organisations and foundations. The theme is apt for organisations looking for clean and professional WordPress Theme. The design is responsive and the theme looks great on tablets, laptops and mobile phones. Benevolent comes with several features and it is customisable. The front page has advance slider option, call for donation at several places, project showcase, impact showcase with statistics counter, latest articles and sponsors showcase of the cause. The theme is also SEO friendly which makes it easy to find on search engines like Google. The theme supports all kinds of post formats such as gallery, image, video, etc. It has 3 custom widgets - recent posts, social media and about us. The theme is translation ready.
-Version: 1.0.0
+Description: Benevolent is a simple, modern and easy to use WordPress theme for non-profit organisations, charity causes, political organisations and foundations. The theme is apt for organisations looking for clean and professional WordPress Theme. The design is responsive and the theme looks great on tablets, laptops and mobile phones. Benevolent comes with several features and it is customisable. The front page has advance slider option, call for donation at several places, project showcase, impact showcase with statistics counter, latest articles and sponsors showcase of the cause. The theme is also SEO friendly which makes it easy to find on search engines like Google. The theme supports all kinds of post formats such as gallery, image, video, etc. It has 4 custom widgets - recent posts, popular posts, social media and about us. The theme is translation ready.
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: benevolent
-Tags: Blue, green, white, light, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready, theme-options
+Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -531,7 +531,7 @@ textarea {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-.site-header{padding: 25px 0 0;}
+.site-header{padding: 25px 0 10px;}
 .home.blog .site-header{
 	position: relative !important;
 	background: #202020 !important;
@@ -543,11 +543,12 @@ textarea {
 	left: 0;
 	top: 0;
 	width: 100%;
-	padding: 25px 0 0;
+	padding: 25px 0 10px;
 	z-index: 3;
-	background: none !important;
 	border-bottom: 0 !important;
+	background: rgba(0, 0, 0, 0.5);
 }
+.home.has-slider .site-header{background: rgba(0, 0, 0, 0.5);}
 .site-header .site-branding{
 	float: left;
 	margin: 4px 0 0;
@@ -558,6 +559,7 @@ textarea {
 .site-header .site-branding .site-description{
 	font: 12px/20px Arial, Helvetica, sans-serif;
 	color: #fff;
+	margin-bottom: 0;
 	/*margin-left: 44px; */
 }
 
@@ -851,6 +853,14 @@ a:active {
 .widget select {
 	max-width: 100%;
 }
+
+.site{
+	background: #fff;
+	position: relative;
+}
+
+.custom-background-color .site,
+.custom-background-image .site{margin: 20px;}
 
 /*--------------------------------------------------------------
 # banner
@@ -2068,39 +2078,50 @@ object {
 	text-decoration: none;
 	color: #fcb216;
 }
-.widget.widget_benevolent_recent_post ul li{
+.widget.widget_benevolent_recent_post ul li,
+.widget.widget_benevolent_popular_post ul li{
 	overflow: hidden;
 	border-bottom: 0;
 	padding-bottom: 0;
 	margin-bottom: 19px;
 }
-.widget.widget_benevolent_recent_post .post-thumbnail{
+.widget.widget_benevolent_recent_post .post-thumbnail,
+.widget.widget_benevolent_popular_post .post-thumbnail{
 	float: left;
 	width: 75px;
 	margin-right: 22px;
 }
-.widget.widget_benevolent_recent_post .post-thumbnail img{vertical-align: top;}
-.widget.widget_benevolent_recent_post .entry-header{overflow: hidden;}
-.widget.widget_benevolent_recent_post .entry-header .entry-title{
+.widget.widget_benevolent_recent_post .post-thumbnail img,
+.widget.widget_benevolent_popular_post .post-thumbnail img{vertical-align: top;}
+.widget.widget_benevolent_recent_post .entry-header,
+.widget.widget_benevolent_popular_post .entry-header{overflow: hidden;}
+.widget.widget_benevolent_recent_post .entry-header .entry-title,
+.widget.widget_benevolent_popular_post .entry-header .entry-title{
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 700;
 	margin: 0;
 }
-.widget.widget_benevolent_recent_post .entry-header .entry-title a{color: #000;}
-.widget.widget_benevolent_recent_post .entry-header .entry-title a:hover{
+.widget.widget_benevolent_recent_post .entry-header .entry-title a,
+.widget.widget_benevolent_popular_post .entry-header .entry-title a{color: #000;}
+.widget.widget_benevolent_recent_post .entry-header .entry-title a:hover,
+.widget.widget_benevolent_popular_post .entry-header .entry-title a:hover{
 	text-decoration: none;
 	color: #fcb216;
 }
-.widget.widget_benevolent_recent_post .entry-header .entry-meta{
+.widget.widget_benevolent_recent_post .entry-header .entry-meta,
+.widget.widget_benevolent_popular_post .entry-header .entry-meta{
 	font-size: 16px;
 }
-.widget.widget_benevolent_recent_post .entry-header .entry-meta a{color: #0f907f;}
-.widget.widget_benevolent_recent_post .entry-header .entry-meta a:hover{
+.widget.widget_benevolent_recent_post .entry-header .entry-meta a,
+.widget.widget_benevolent_popular_post .entry-header .entry-meta a{color: #0f907f;}
+.widget.widget_benevolent_recent_post .entry-header .entry-meta a:hover,
+.widget.widget_benevolent_popular_post .entry-header .entry-meta a:hover{
 	text-decoration: none;
 	color: #fcb216;
 }
-.widget.widget_benevolent_recent_post .entry-header .entry-meta .posted-on a:before{
+.widget.widget_benevolent_recent_post .entry-header .entry-meta .posted-on a:before,
+.widget.widget_benevolent_popular_post .entry-header .entry-meta .posted-on a:before{
 	content: '\f133';
 	font-family: 'FontAwesome';
 	font-size: 12px;
@@ -2458,7 +2479,7 @@ object {
 		background: #202020;
 		padding: 20px 0 65px;
 	}
-	#mobile-header{top: 106px;}
+	#mobile-header{top: 80px;}
 	.site-header .btn-donate{
 		float: none;
 		display: inline-block;

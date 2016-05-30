@@ -5,28 +5,30 @@
  * @package Benevolent
  */
  
- $benevolent_ed_blog_date = get_theme_mod( 'benevolent_ed_blog_date', '1' );
- $benevolent_blog_section_title = get_theme_mod( 'benevolent_blog_section_title' );
- $benevolent_blog_section_content = get_theme_mod( 'benevolent_blog_section_content' );
- $benevolent_blog_section_readmore = get_theme_mod( 'benevolent_blog_section_readmore', __( 'Read More', 'benevolent' ) );
+$ed_blog_date          = get_theme_mod( 'benevolent_ed_blog_date', '1' );
+$blog_section_title    = get_theme_mod( 'benevolent_blog_section_title' );
+$blog_section_content  = get_theme_mod( 'benevolent_blog_section_content' );
+$blog_section_readmore = get_theme_mod( 'benevolent_blog_section_readmore', __( 'Read More', 'benevolent' ) );
  
- if( $benevolent_blog_section_title || $benevolent_blog_section_content ){
- ?>
-    <header class="header">
-    	<div class="container">
-    		<div class="text">
-    			<?php if( $benevolent_blog_section_title ) echo '<h2 class="main-title">' . esc_html( $benevolent_blog_section_title ) . '</h2>';
-                echo wpautop( esc_html( $benevolent_blog_section_content ) );?>
-    		</div>
-    	</div>
-    </header>
-    <?php } 
+if( $blog_section_title || $blog_section_content ){
+?>
+<header class="header">
+	<div class="container">
+		<div class="text">
+			<?php 
+                if( $blog_section_title ) echo '<h2 class="main-title">' . esc_html( $blog_section_title ) . '</h2>';
+                if( $blog_section_content ) echo wpautop( esc_html( $blog_section_content ) );
+            ?>
+		</div>
+	</div>
+</header>
+<?php } 
     
     $blog_qry = new WP_Query( array( 
-        'post_type'             => 'post',
-        'post_status'           => 'publish',
-        'posts_per_page'        => 3,
-        'ignore_sticky_posts'   => true    
+        'post_type'           => 'post',
+        'post_status'         => 'publish',
+        'posts_per_page'      => 3,
+        'ignore_sticky_posts' => true    
     ) );
     if( $blog_qry->have_posts() ){
     ?>    
@@ -45,14 +47,16 @@
     					<div class="text-holder">
     						<header class="entry-header">
     							<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-    							<div class="entry-meta">
+    							<?php if( $ed_blog_date ){ ?>
+                                <div class="entry-meta">
     								<span class="posted-on"><span class="fa fa-calendar-o"></span><a href="<?php the_permalink(); ?>"><?php echo esc_html( get_the_date() ); ?></a></span>
     							</div>
+                                <?php } ?>
     						</header>
     						<div class="entry-content">
     							<?php echo wpautop( benevolent_excerpt( get_the_content(), 100, '.', false, false ) ); ?>
     						</div>
-    						<a href="<?php the_permalink(); ?>" class="readmore"><?php echo esc_html( $benevolent_blog_section_readmore ); ?></a>
+    						<a href="<?php the_permalink(); ?>" class="readmore"><?php echo esc_html( $blog_section_readmore ); ?></a>
     					</div>
     				</div>
     			</div>

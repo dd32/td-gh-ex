@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Benevolent\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jan 27 2016 17:39:19 GMT+0545 (Nepal Standard Time)\n"
-"POT-Revision-Date: Wed Jan 27 2016 17:39:21 GMT+0545 (Nepal Standard Time)\n"
+"POT-Creation-Date: Mon May 30 2016 12:23:33 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Mon May 30 2016 12:23:36 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -40,8 +40,7 @@ msgstr ""
 msgid "Return to Homepage"
 msgstr ""
 
-#: ../archive.php:40 ../index.php:46 ../search.php:42 ../inc/benevolent-custom-
-#: functions.php:235
+#: ../archive.php:40 ../index.php:46 ../search.php:42 ../inc/extras.php:263
 msgid "Page"
 msgstr ""
 
@@ -107,60 +106,35 @@ msgstr ""
 msgid "Your email address will not be published. "
 msgstr ""
 
-#: ../footer.php:42
-msgid "All Rights Reserved."
-msgstr ""
-
-#: ../footer.php:43
-msgid "Theme by "
-msgstr ""
-
-#: ../footer.php:43
-msgid "Rara Theme"
-msgstr ""
-
-#: ../footer.php:43
-#, php-format
-msgid "Powered by %s"
-msgstr ""
-
-#: ../footer.php:43
-msgid "https://wordpress.org/"
-msgstr ""
-
-#: ../functions.php:53
+#: ../functions.php:47
 msgid "Primary"
 msgstr ""
 
-#: ../functions.php:121
+#: ../functions.php:123
 msgid "Right Sidebar"
 msgstr ""
 
-#: ../functions.php:131
+#: ../functions.php:133
 msgid "Footer One"
 msgstr ""
 
-#: ../functions.php:141
+#: ../functions.php:143
 msgid "Footer Two"
 msgstr ""
 
-#: ../functions.php:151
+#: ../functions.php:153
 msgid "Footer Three"
 msgstr ""
 
-#: ../functions.php:161
+#: ../functions.php:163
 msgid "Footer Four"
 msgstr ""
 
-#: ../header.php:47 ../inc/customizer.php:77
+#: ../header.php:44 ../inc/customizer.php:76
 msgid "Donate Now"
 msgstr ""
 
-#: ../header.php:48 ../inc/customizer.php:95
-msgid "#"
-msgstr ""
-
-#: ../header.php:57
+#: ../header.php:54
 msgid "Menu"
 msgstr ""
 
@@ -175,58 +149,6 @@ msgstr ""
 
 #. Name of the template
 msgid "Home Page"
-msgstr ""
-
-#: ../inc/benevolent-custom-functions.php:143 ../inc/customizer.php:1483
-msgid ">"
-msgstr ""
-
-#: ../inc/benevolent-custom-functions.php:144 ../inc/customizer.php:1465
-msgid "Home"
-msgstr ""
-
-#: ../inc/benevolent-custom-functions.php:166
-msgid "Search Result"
-msgstr ""
-
-#: ../inc/benevolent-custom-functions.php:310
-#, php-format
-msgid "<b class=\"fn\">%s</b>"
-msgstr ""
-
-#: ../inc/benevolent-custom-functions.php:313
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#. translators: 1: date, 2: time
-#: ../inc/benevolent-custom-functions.php:320
-#, php-format
-msgid "%s"
-msgstr ""
-
-#: ../inc/benevolent-custom-functions.php:320
-msgid "(Edit)"
-msgstr ""
-
-#: ../inc/benevolent-custom-functions.php:379 ../inc/customizer.php:272
-msgid "Learn More"
-msgstr ""
-
-#. $id
-#: ../inc/benevolent-metabox.php:13
-msgid "Sidebar Layout"
-msgstr ""
-
-#: ../inc/benevolent-metabox.php:23
-msgid "Right sidebar<br/>(default)"
-msgstr ""
-
-#: ../inc/benevolent-metabox.php:28
-msgid "No sidebar"
-msgstr ""
-
-#: ../inc/benevolent-metabox.php:40
-msgid "Choose Sidebar Template"
 msgstr ""
 
 #: ../inc/customizer.php:18
@@ -245,338 +167,423 @@ msgstr ""
 msgid "Default section provided by wordpress customizer."
 msgstr ""
 
-#: ../inc/customizer.php:67
+#: ../inc/customizer.php:66
 msgid "Donate Button"
 msgstr ""
 
-#: ../inc/customizer.php:85 ../inc/customizer.php:1368
+#: ../inc/customizer.php:84 ../inc/customizer.php:1367
 msgid "Button Text"
 msgstr ""
 
-#: ../inc/customizer.php:103 ../inc/customizer.php:1386
+#: ../inc/customizer.php:102 ../inc/customizer.php:1385
 msgid "Button Url"
 msgstr ""
 
-#: ../inc/customizer.php:114
+#: ../inc/customizer.php:113
 msgid "Slider Settings"
 msgstr ""
 
-#: ../inc/customizer.php:132
+#: ../inc/customizer.php:131
 msgid "Enable Home Page Slider"
 msgstr ""
 
-#: ../inc/customizer.php:150
+#: ../inc/customizer.php:149
 msgid "Enable Slider Auto Transition"
 msgstr ""
 
-#: ../inc/customizer.php:168
+#: ../inc/customizer.php:167
 msgid "Enable Slider Loop"
 msgstr ""
 
-#: ../inc/customizer.php:186
+#: ../inc/customizer.php:185
 msgid "Enable Slider Pager"
 msgstr ""
 
-#: ../inc/customizer.php:204
+#: ../inc/customizer.php:203
 msgid "Enable Slider Caption"
 msgstr ""
 
-#: ../inc/customizer.php:222
+#: ../inc/customizer.php:221
 msgid "Choose Slider Animation"
 msgstr ""
 
-#: ../inc/customizer.php:226
+#: ../inc/customizer.php:225
 msgid "Fade"
 msgstr ""
 
-#: ../inc/customizer.php:227
+#: ../inc/customizer.php:226
 msgid "Slide"
 msgstr ""
 
-#: ../inc/customizer.php:244
+#: ../inc/customizer.php:243
 msgid "Slider Speed"
 msgstr ""
 
-#: ../inc/customizer.php:262
+#: ../inc/customizer.php:261
 msgid "Animation Speed"
 msgstr ""
 
-#: ../inc/customizer.php:280
+#: ../inc/customizer.php:271 ../inc/extras.php:385
+msgid "Learn More"
+msgstr ""
+
+#: ../inc/customizer.php:279
 msgid "Readmore Text"
 msgstr ""
 
-#: ../inc/customizer.php:298
+#: ../inc/customizer.php:297
 msgid "Choose Slider Category"
 msgstr ""
 
-#: ../inc/customizer.php:312
+#: ../inc/customizer.php:311
 msgid "Home Page Settings"
 msgstr ""
 
-#: ../inc/customizer.php:313
+#: ../inc/customizer.php:312
 msgid "Customize Home Page Settings"
 msgstr ""
 
-#: ../inc/customizer.php:321
+#: ../inc/customizer.php:320
 msgid "Intro Section"
 msgstr ""
 
-#: ../inc/customizer.php:339
+#: ../inc/customizer.php:338
 msgid "Enable Intro Section"
 msgstr ""
 
-#: ../inc/customizer.php:357
+#: ../inc/customizer.php:356
 msgid "Intro Section Title"
 msgstr ""
 
-#: ../inc/customizer.php:375
+#: ../inc/customizer.php:374
 msgid "Intro Section Content"
 msgstr ""
 
-#: ../inc/customizer.php:393
+#: ../inc/customizer.php:392
 msgid "Intro One Title"
 msgstr ""
 
-#: ../inc/customizer.php:411
-msgid "Intro One Link"
+#: ../inc/customizer.php:410
+msgid "Intro One Link Label"
 msgstr ""
 
-#: ../inc/customizer.php:429
+#: ../inc/customizer.php:428
 msgid "Intro One Url"
 msgstr ""
 
-#: ../inc/customizer.php:449
+#: ../inc/customizer.php:448
 msgid "Upload a Logo One"
 msgstr ""
 
-#: ../inc/customizer.php:471
+#: ../inc/customizer.php:470
 msgid "Upload a Image One"
 msgstr ""
 
-#: ../inc/customizer.php:491
+#: ../inc/customizer.php:490
 msgid "Intro Two Title"
 msgstr ""
 
-#: ../inc/customizer.php:509
-msgid "Intro Two Link"
+#: ../inc/customizer.php:508
+msgid "Intro Two Link Label"
 msgstr ""
 
-#: ../inc/customizer.php:527
+#: ../inc/customizer.php:526
 msgid "Intro Two Url"
 msgstr ""
 
-#: ../inc/customizer.php:547
+#: ../inc/customizer.php:546
 msgid "Upload a Logo Two"
 msgstr ""
 
-#: ../inc/customizer.php:569
+#: ../inc/customizer.php:568
 msgid "Upload a Image Two"
 msgstr ""
 
-#: ../inc/customizer.php:589
+#: ../inc/customizer.php:588
 msgid "Intro Three Title"
 msgstr ""
 
-#: ../inc/customizer.php:607
-msgid "Intro Three Link"
+#: ../inc/customizer.php:606
+msgid "Intro Three Link Label"
 msgstr ""
 
-#: ../inc/customizer.php:625
+#: ../inc/customizer.php:624
 msgid "Intro Three Url"
 msgstr ""
 
-#: ../inc/customizer.php:645
+#: ../inc/customizer.php:644
 msgid "Upload a Logo Three"
 msgstr ""
 
-#: ../inc/customizer.php:667
+#: ../inc/customizer.php:666
 msgid "Upload a Image Three"
 msgstr ""
 
-#: ../inc/customizer.php:680
+#: ../inc/customizer.php:679
 msgid "Community Section"
 msgstr ""
 
-#: ../inc/customizer.php:698
+#: ../inc/customizer.php:697
 msgid "Enable Community Section"
 msgstr ""
 
-#: ../inc/customizer.php:716
+#: ../inc/customizer.php:715
 msgid "Community Section Title"
 msgstr ""
 
-#: ../inc/customizer.php:734
+#: ../inc/customizer.php:733
 msgid "Select Post One"
 msgstr ""
 
-#: ../inc/customizer.php:753
+#: ../inc/customizer.php:752
 msgid "Select Post Two"
 msgstr ""
 
-#: ../inc/customizer.php:772
+#: ../inc/customizer.php:771
 msgid "Select Post Three"
 msgstr ""
 
-#: ../inc/customizer.php:791
+#: ../inc/customizer.php:790
 msgid "Select Post Four"
 msgstr ""
 
-#: ../inc/customizer.php:803
+#: ../inc/customizer.php:802
 msgid "Stat Counter Section"
 msgstr ""
 
-#: ../inc/customizer.php:821
+#: ../inc/customizer.php:820
 msgid "Enable Stat Counter Section"
 msgstr ""
 
-#: ../inc/customizer.php:839
+#: ../inc/customizer.php:838
 msgid "First Stat Counter Number"
 msgstr ""
 
-#: ../inc/customizer.php:857
+#: ../inc/customizer.php:856
 msgid "First Stat Counter Title"
 msgstr ""
 
-#: ../inc/customizer.php:875
+#: ../inc/customizer.php:874
 msgid "Second Stat Counter Number"
 msgstr ""
 
-#: ../inc/customizer.php:893
+#: ../inc/customizer.php:892
 msgid "Second Stat Counter Title"
 msgstr ""
 
-#: ../inc/customizer.php:911
+#: ../inc/customizer.php:910
 msgid "Third Stat Counter Number"
 msgstr ""
 
-#: ../inc/customizer.php:929
+#: ../inc/customizer.php:928
 msgid "Third Stat Counter Title"
 msgstr ""
 
-#: ../inc/customizer.php:947
+#: ../inc/customizer.php:946
 msgid "Fourth Stat Counter Number"
 msgstr ""
 
-#: ../inc/customizer.php:965
+#: ../inc/customizer.php:964
 msgid "Fourth Stat Counter Title"
 msgstr ""
 
-#: ../inc/customizer.php:976
+#: ../inc/customizer.php:975
 msgid "Blog Section"
 msgstr ""
 
-#: ../inc/customizer.php:994
+#: ../inc/customizer.php:993
 msgid "Enable Blog Section"
 msgstr ""
 
-#: ../inc/customizer.php:1012
+#: ../inc/customizer.php:1011
 msgid "Show Blog Date"
 msgstr ""
 
-#: ../inc/customizer.php:1030
+#: ../inc/customizer.php:1029
 msgid "Blog Section Title"
 msgstr ""
 
-#: ../inc/customizer.php:1048
+#: ../inc/customizer.php:1047
 msgid "Blog Section Content"
 msgstr ""
 
-#: ../inc/customizer.php:1058 ../inc/widget-featured-post.php:96 ../inc/widget-
-#: featured-post.php:143 ../sections/section-blog.php:11 ../template-
-#: parts/content.php:63
+#: ../inc/customizer.php:1057 ../inc/widget-featured-post.php:40 ../inc/widget-
+#: featured-post.php:97 ../inc/widget-featured-post.php:144 ../sections/section-
+#: blog.php:11 ../template-parts/content.php:66
 msgid "Read More"
 msgstr ""
 
-#: ../inc/customizer.php:1066
+#: ../inc/customizer.php:1065
 msgid "Blog Section Read More Text"
 msgstr ""
 
-#: ../inc/customizer.php:1077
+#: ../inc/customizer.php:1076
 msgid "Sponsor Section"
 msgstr ""
 
-#: ../inc/customizer.php:1095
+#: ../inc/customizer.php:1094
 msgid "Enable Sponsor Section"
 msgstr ""
 
-#: ../inc/customizer.php:1113
+#: ../inc/customizer.php:1112
 msgid "Sponsor Section Title"
 msgstr ""
 
-#: ../inc/customizer.php:1133
+#: ../inc/customizer.php:1132
 msgid "Upload Logo One"
 msgstr ""
 
-#: ../inc/customizer.php:1151
+#: ../inc/customizer.php:1150
 msgid "Logo One Url"
 msgstr ""
 
-#: ../inc/customizer.php:1171
+#: ../inc/customizer.php:1170
 msgid "Upload Logo Two"
 msgstr ""
 
-#: ../inc/customizer.php:1189
+#: ../inc/customizer.php:1188
 msgid "Logo Two Url"
 msgstr ""
 
-#: ../inc/customizer.php:1209
+#: ../inc/customizer.php:1208
 msgid "Upload Logo Three"
 msgstr ""
 
-#: ../inc/customizer.php:1227
+#: ../inc/customizer.php:1226
 msgid "Logo Three Url"
 msgstr ""
 
-#: ../inc/customizer.php:1247
+#: ../inc/customizer.php:1246
 msgid "Upload Logo Four"
 msgstr ""
 
-#: ../inc/customizer.php:1265
+#: ../inc/customizer.php:1264
 msgid "Logo Four Url"
 msgstr ""
 
-#: ../inc/customizer.php:1285
+#: ../inc/customizer.php:1284
 msgid "Upload Logo Five"
 msgstr ""
 
-#: ../inc/customizer.php:1303
+#: ../inc/customizer.php:1302
 msgid "Logo Five Url"
 msgstr ""
 
-#: ../inc/customizer.php:1314
+#: ../inc/customizer.php:1313
 msgid "Promotional Section"
 msgstr ""
 
-#: ../inc/customizer.php:1332
+#: ../inc/customizer.php:1331
 msgid "Enable Promotional Section"
 msgstr ""
 
-#: ../inc/customizer.php:1350
+#: ../inc/customizer.php:1349
 msgid "Promotional Section Title"
 msgstr ""
 
-#: ../inc/customizer.php:1406
+#: ../inc/customizer.php:1405
 msgid "Background Image"
 msgstr ""
 
-#: ../inc/customizer.php:1419
+#: ../inc/customizer.php:1418
 msgid "Breadcrumb Settings"
 msgstr ""
 
-#: ../inc/customizer.php:1437
+#: ../inc/customizer.php:1436
 msgid "Enable Breadcrumb"
 msgstr ""
 
-#: ../inc/customizer.php:1455
+#: ../inc/customizer.php:1454
 msgid "Show current"
 msgstr ""
 
-#: ../inc/customizer.php:1473
+#: ../inc/customizer.php:1464 ../inc/extras.php:172
+msgid "Home"
+msgstr ""
+
+#: ../inc/customizer.php:1472
 msgid "Breadcrumb Home Text"
 msgstr ""
 
-#: ../inc/customizer.php:1491
+#: ../inc/customizer.php:1482 ../inc/extras.php:171
+msgid ">"
+msgstr ""
+
+#: ../inc/customizer.php:1490
 msgid "Breadcrumb Separator"
+msgstr ""
+
+#: ../inc/customizer.php:1501
+msgid "Custom CSS Settings"
+msgstr ""
+
+#: ../inc/customizer.php:1519
+msgid "Custom Css"
+msgstr ""
+
+#: ../inc/customizer.php:1521
+msgid "Put your custom CSS"
+msgstr ""
+
+#: ../inc/extras.php:194
+msgid "Search Result"
+msgstr ""
+
+#: ../inc/extras.php:312
+#, php-format
+msgid "<b class=\"fn\">%s</b>"
+msgstr ""
+
+#: ../inc/extras.php:315
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: ../inc/extras.php:322
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: ../inc/extras.php:322
+msgid "(Edit)"
+msgstr ""
+
+#: ../inc/extras.php:546
+msgid "&copy; "
+msgstr ""
+
+#: ../inc/extras.php:548
+msgid "Theme by "
+msgstr ""
+
+#: ../inc/extras.php:549
+msgid "Rara Theme"
+msgstr ""
+
+#: ../inc/extras.php:550
+#, php-format
+msgid "Powered by %s"
+msgstr ""
+
+#: ../inc/extras.php:550
+msgid "https://wordpress.org/"
+msgstr ""
+
+#. $id
+#: ../inc/metabox.php:13
+msgid "Sidebar Layout"
+msgstr ""
+
+#: ../inc/metabox.php:23
+msgid "Right sidebar (default)"
+msgstr ""
+
+#: ../inc/metabox.php:28
+msgid "No sidebar"
+msgstr ""
+
+#: ../inc/metabox.php:40
+msgid "Choose Sidebar Template"
 msgstr ""
 
 #: ../inc/template-tags.php:23
@@ -636,7 +643,7 @@ msgstr ""
 msgid "A Featured Post Widget"
 msgstr ""
 
-#: ../inc/widget-featured-post.php:83
+#: ../inc/widget-featured-post.php:85
 msgid "--choose--"
 msgstr ""
 
@@ -652,8 +659,41 @@ msgstr ""
 msgid "Excerpt Character"
 msgstr ""
 
-#: ../inc/widget-featured-post.php:124 ../inc/widget-recent-post.php:117
+#: ../inc/widget-featured-post.php:124 ../inc/widget-popular-post.php:118 ..
+#: /inc/widget-recent-post.php:117
 msgid "Show Post Thumbnail"
+msgstr ""
+
+#. Base ID
+#: ../inc/widget-popular-post.php:25
+msgid "RARA: Popular Post"
+msgstr ""
+
+#: ../inc/widget-popular-post.php:26
+msgid "A Popular Post Widget"
+msgstr ""
+
+#: ../inc/widget-popular-post.php:40 ../inc/widget-popular-post.php:99 ..
+#: /inc/widget-popular-post.php:142
+msgid "Popular Posts"
+msgstr ""
+
+#: ../inc/widget-popular-post.php:73 ../inc/widget-recent-post.php:72
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: ../inc/widget-popular-post.php:107 ../inc/widget-recent-post.php:106 ..
+#: /inc/widget-social-links.php:96
+msgid "Title"
+msgstr ""
+
+#: ../inc/widget-popular-post.php:112 ../inc/widget-recent-post.php:111
+msgid "Number of Posts"
+msgstr ""
+
+#: ../inc/widget-popular-post.php:123 ../inc/widget-recent-post.php:122
+msgid "Show Post Date"
 msgstr ""
 
 #. Base ID
@@ -665,69 +705,54 @@ msgstr ""
 msgid "A Recent Post Widget"
 msgstr ""
 
-#: ../inc/widget-recent-post.php:72
-#, php-format
-msgid "%1$s"
-msgstr ""
-
-#: ../inc/widget-recent-post.php:98 ../inc/widget-recent-post.php:140
+#: ../inc/widget-recent-post.php:40 ../inc/widget-recent-post.php:98 ..
+#: /inc/widget-recent-post.php:141
 msgid "Recent Posts"
 msgstr ""
 
-#: ../inc/widget-recent-post.php:106 ../inc/widget-social-links.php:95
-msgid "Title"
-msgstr ""
-
-#: ../inc/widget-recent-post.php:111
-msgid "Number of Posts"
-msgstr ""
-
-#: ../inc/widget-recent-post.php:122
-msgid "Show Post Date"
-msgstr ""
-
 #. Base ID
-#: ../inc/widget-social-links.php:24
+#: ../inc/widget-social-links.php:25
 msgid "RARA: Social Links"
 msgstr ""
 
-#: ../inc/widget-social-links.php:25
+#: ../inc/widget-social-links.php:26
 msgid "A Social Links Widget"
 msgstr ""
 
-#: ../inc/widget-social-links.php:54 ../inc/widget-social-links.php:100
+#: ../inc/widget-social-links.php:40 ../inc/widget-social-links.php:84 ..
+#: /inc/widget-social-links.php:151
+msgid "Subscribe & Follow"
+msgstr ""
+
+#: ../inc/widget-social-links.php:55 ../inc/widget-social-links.php:101
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/widget-social-links.php:56 ../inc/widget-social-links.php:105
+#: ../inc/widget-social-links.php:57 ../inc/widget-social-links.php:106
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/widget-social-links.php:58 ../inc/widget-social-links.php:110
+#: ../inc/widget-social-links.php:59 ../inc/widget-social-links.php:111
 msgid "Pinterest"
 msgstr ""
 
-#: ../inc/widget-social-links.php:60
+#: ../inc/widget-social-links.php:61
 msgid "Linkedin"
 msgstr ""
 
-#: ../inc/widget-social-links.php:62 ../inc/widget-social-links.php:120
+#: ../inc/widget-social-links.php:63 ../inc/widget-social-links.php:121
 msgid "Google Plus"
 msgstr ""
 
-#: ../inc/widget-social-links.php:64 ../inc/widget-social-links.php:125
+#: ../inc/widget-social-links.php:65 ../inc/widget-social-links.php:126
 msgid "Instagram"
 msgstr ""
 
-#: ../inc/widget-social-links.php:66 ../inc/widget-social-links.php:130
+#: ../inc/widget-social-links.php:67 ../inc/widget-social-links.php:131
 msgid "YouTube"
 msgstr ""
 
-#: ../inc/widget-social-links.php:83 ../inc/widget-social-links.php:149
-msgid "Social Media"
-msgstr ""
-
-#: ../inc/widget-social-links.php:115
+#: ../inc/widget-social-links.php:116
 msgid "LinkedIn"
 msgstr ""
 
@@ -752,12 +777,12 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../template-parts/content-page.php:31 ../template-parts/content.php:55
+#: ../template-parts/content-page.php:31 ../template-parts/content.php:58
 msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post.
-#: ../template-parts/content.php:38 ../template-parts/content.php:47
+#: ../template-parts/content.php:42 ../template-parts/content.php:51
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
@@ -767,7 +792,7 @@ msgid "Benevolent"
 msgstr ""
 
 #. Theme URI of the theme
-msgid "http://raratheme.com/theme/benevolent/"
+msgid "http://raratheme.com/wordpress-themes/benevolent/"
 msgstr ""
 
 #. Description of the theme
@@ -782,8 +807,8 @@ msgid ""
 "statistics counter, latest articles and sponsors showcase of the cause. The "
 "theme is also SEO friendly which makes it easy to find on search engines "
 "like Google. The theme supports all kinds of post formats such as gallery, "
-"image, video, etc. It has 3 custom widgets - recent posts, social media and "
-"about us. The theme is translation ready."
+"image, video, etc. It has 4 custom widgets - recent posts, popular posts, "
+"social media and about us. The theme is translation ready."
 msgstr ""
 
 #. Author URI of the theme

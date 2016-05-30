@@ -28,25 +28,22 @@
     	
             <div class="site-branding">
     			<?php
-    			if ( get_header_image() ) : ?>
-                	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
-                	</a>
-                <?php else : ?>
-    				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
+                        the_custom_logo();
+                    } 
+                ?>
+   				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
     			<?php
     			$description = get_bloginfo( 'description', 'display' );
     			if ( $description || is_customize_preview() ) : ?>
     				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
     			<?php endif; ?>
-                
-                <?php endif; // End header image check. ?>
     		</div><!-- .site-branding -->
             
             <?php 
-                $benevolent_button_text = get_theme_mod( 'benevolent_button_text', __( 'Donate Now', 'benevolent' ) );
-                $benevolent_button_url = get_theme_mod( 'benevolent_button_url', __( '#', 'benevolent' ) );
-                if( $benevolent_button_url ) echo '<a href="' . esc_url( $benevolent_button_url ). '" class="btn-donate">' . esc_html( $benevolent_button_text ) . '</a>';
+                $button_text = get_theme_mod( 'benevolent_button_text', __( 'Donate Now', 'benevolent' ) );
+                $button_url = get_theme_mod( 'benevolent_button_url' );
+                if( $button_text && $button_url ) echo '<a href="' . esc_url( $button_url ). '" class="btn-donate">' . esc_html( $button_text ) . '</a>';
             ?>
             
     		<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -61,12 +58,13 @@
     </header><!-- #masthead -->
     
     <?php 
-    $benevolent_ed_slider = get_theme_mod( 'benevolent_ed_slider' );
-    if( is_front_page() && $benevolent_ed_slider ) do_action( 'benevolent_slider' );
+    $ed_breadcrumb = get_theme_mod( 'benevolent_ed_breadcrumb' );
+    
+    if( is_front_page() && get_theme_mod( 'benevolent_ed_slider' ) ) do_action( 'benevolent_slider' );
     
     if( !is_page_template( 'template-home.php' ) ) echo '<div class="container">';
     
     //BreadCrumbs
-    if( !is_page_template( 'template-home.php' ) && !is_404() ) do_action( 'benevolent_breadcrumbs' ); 
+    if( !is_page_template( 'template-home.php' ) && !is_404() && $ed_breadcrumb ) do_action( 'benevolent_breadcrumbs' ); 
         
    	if( !is_page_template( 'template-home.php' ) ) echo '<div id="content" class="site-content"><div class="row">';

@@ -12,6 +12,13 @@
  * @package Benevolent
  */
 
+global $post;
+if( get_post_meta( $post->ID, 'benevolent_sidebar_layout', true ) ){
+    $sidebar_layout = get_post_meta( $post->ID, 'benevolent_sidebar_layout', true );    
+}else{
+    $sidebar_layout = 'right-sidebar';
+}
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -21,6 +28,11 @@ get_header(); ?>
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', 'page' );
+                
+                // If comments are open or we have at least one comment, load up the comment template.
+    			if ( comments_open() || get_comments_number() ) :
+    				comments_template();
+    			endif;
 
 			endwhile; // End of the loop.
 			?>
@@ -29,5 +41,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
+if( $sidebar_layout == 'right-sidebar' )
 get_sidebar();
 get_footer();

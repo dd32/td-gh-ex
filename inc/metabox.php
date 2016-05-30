@@ -20,7 +20,7 @@ function benevolent_add_sidebar_layout_box(){
 $benevolent_sidebar_layout = array(         
         'right-sidebar' => array(
                         'value' => 'right-sidebar',
-                        'label' => __( 'Right sidebar<br/>(default)', 'benevolent' ),
+                        'label' => __( 'Right sidebar (default)', 'benevolent' ),
                         'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png'
                     ),
         'no-sidebar' => array(
@@ -43,13 +43,13 @@ function benevolent_sidebar_layout_callback(){
     <tr>
         <td>
         <?php  
-            foreach ($benevolent_sidebar_layout as $benevolent_field) {  
-                $benevolent_sidebar_metalayout = get_post_meta( $post->ID, 'benevolent_sidebar_layout', true ); ?>
+            foreach( $benevolent_sidebar_layout as $field ){  
+                $layout = get_post_meta( $post->ID, 'benevolent_sidebar_layout', true ); ?>
 
             <div class="radio-image-wrapper" style="float:left; margin-right:30px;">
                 <label class="description">
-                    <span><img src="<?php echo esc_url( $benevolent_field['thumbnail'] ); ?>" alt="" /></span><br/>
-                    <input type="radio" name="benevolent_sidebar_layout" value="<?php echo $benevolent_field['value']; ?>" <?php checked( $benevolent_field['value'], $benevolent_sidebar_metalayout ); if(empty($benevolent_sidebar_metalayout) && $benevolent_field['value']=='right-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo $benevolent_field['label']; ?>
+                    <span><img src="<?php echo esc_url( $field['thumbnail'] ); ?>" alt="" /></span><br/>
+                    <input type="radio" name="benevolent_sidebar_layout" value="<?php echo esc_attr( $field['value'] ); ?>" <?php checked( $field['value'], $layout ); if( empty( $layout ) ){ checked( $field['value'], 'right-sidebar' ); } ?>/>&nbsp;<?php echo esc_html( $field['label'] ); ?>
                 </label>
             </div>
             <?php } // end foreach 
@@ -65,35 +65,33 @@ function benevolent_sidebar_layout_callback(){
  * save the custom metabox data
  * @hooked to save_post hook
  */
-function benevolent_save_sidebar_layout( $benevolent_post_id ) { 
+function benevolent_save_sidebar_layout( $post_id ) { 
     global $benevolent_sidebar_layout, $post; 
 
     // Verify the nonce before proceeding.
-    if ( !isset( $_POST[ 'benevolent_sidebar_layout_nonce' ] ) || !wp_verify_nonce( $_POST[ 'benevolent_sidebar_layout_nonce' ], basename( __FILE__ ) ) )
+    if( !isset( $_POST[ 'benevolent_sidebar_layout_nonce' ] ) || !wp_verify_nonce( $_POST[ 'benevolent_sidebar_layout_nonce' ], basename( __FILE__ ) ) )
         return;
 
     // Stop WP from clearing custom fields on autosave
-    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE)  
+    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )  
         return;
         
-    if ('page' == $_POST['post_type']) {  
-        if (!current_user_can( 'edit_page', $benevolent_post_id ) )  
-            return $benevolent_post_id;  
-    } elseif (!current_user_can( 'edit_post', $benevolent_post_id ) ) {  
-            return $benevolent_post_id;  
+    if( 'page' == $_POST['post_type'] ){  
+        if( !current_user_can( 'edit_page', $post_id ) )  
+            return $post_id;  
+    }elseif( !current_user_can( 'edit_post', $post_id ) ) {  
+            return $post_id;  
     }  
     
-
-    foreach ($benevolent_sidebar_layout as $benevolent_field) {  
+    foreach( $benevolent_sidebar_layout as $field ){  
         //Execute this saving function
-        $benevolent_old = get_post_meta( $benevolent_post_id, 'benevolent_sidebar_layout', true); 
-        $benevolent_new = sanitize_text_field( $_POST['benevolent_sidebar_layout'] );
-        if ( $benevolent_new && $benevolent_new != $benevolent_old ) {  
-            update_post_meta( $benevolent_post_id, 'benevolent_sidebar_layout', $benevolent_new );  
-        } elseif ( '' == $benevolent_new && $benevolent_old ) {  
-            delete_post_meta( $benevolent_post_id,'benevolent_sidebar_layout', $benevolent_old );  
+        $old = get_post_meta( $post_id, 'benevolent_sidebar_layout', true ); 
+        $new = sanitize_text_field( $_POST['benevolent_sidebar_layout'] );
+        if( $new && $new != $old ){  
+            update_post_meta( $post_id, 'benevolent_sidebar_layout', $new );  
+        }elseif ( '' == $new && $old ){  
+            delete_post_meta( $post_id,'benevolent_sidebar_layout', $old );  
         }  
-     } // end foreach   
-     
+     } // end foreach
 }
-add_action('save_post', 'benevolent_save_sidebar_layout'); 
+add_action( 'save_post', 'benevolent_save_sidebar_layout' ); 

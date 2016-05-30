@@ -35,15 +35,11 @@
 				</div>
 			</div>
 		</div>
-        <?php } ?>
+        <?php } 
+            
+            do_action( 'benevolent_footer' );
         
-        <div class="site-info">
-            <div class="container">
-				<span class="copyright">&copy; <?php echo date('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>. <?php esc_html_e( 'All Rights Reserved.', 'benevolent' ); ?></span>
-				<span class="by"><?php esc_html_e( 'Theme by ', 'benevolent' ); ?><a href="<?php echo esc_url( 'http://raratheme.com/' ); ?>" rel="designer"><?php esc_html_e( 'Rara Theme', 'benevolent' ); ?></a>. <?php printf( esc_html__( 'Powered by %s', 'benevolent' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'benevolent' ) ) .'">WordPress</a>' ); ?>.</span>
-			</div>
-		</div><!-- .site-info -->
-        
+        ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

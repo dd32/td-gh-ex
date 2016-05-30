@@ -1,29 +1,29 @@
 <?php
 /**
- * Widget Recent Post
+ * Widget Popular Post
  *
  * @package Benevolent
  */
  
-// register Benevolent_Recent_Post widget
-function benevolent_register_recent_post_widget() {
-    register_widget( 'Benevolent_Recent_Post' );
+// register Benevolent_Popular_Post widget
+function benevolent_register_popular_post_widget() {
+    register_widget( 'Benevolent_Popular_Post' );
 }
-add_action( 'widgets_init', 'benevolent_register_recent_post_widget' );
+add_action( 'widgets_init', 'benevolent_register_popular_post_widget' );
  
  /**
- * Adds Benevolent_Recent_Post widget.
+ * Adds Benevolent_Popular_Post widget.
  */
-class Benevolent_Recent_Post extends WP_Widget {
+class Benevolent_Popular_Post extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'benevolent_recent_post', // Base ID
-			__( 'RARA: Recent Post', 'benevolent' ), // Name
-			array( 'description' => __( 'A Recent Post Widget', 'benevolent' ), ) // Args
+			'benevolent_popular_post', // Base ID
+			__( 'RARA: Popular Post', 'benevolent' ), // Name
+			array( 'description' => __( 'A Popular Post Widget', 'benevolent' ), ) // Args
 		);
 	}
 
@@ -37,7 +37,7 @@ class Benevolent_Recent_Post extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 	   
-        $title      = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Recent Posts', 'benevolent' );
+        $title      = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Popular Posts', 'benevolent' );
         $num_post   = ! empty( $instance['num_post'] ) ? absint($instance['num_post']) : 3 ;
         $show_thumb = ! empty( $instance['show_thumbnail'] ) ? $instance['show_thumbnail'] : '';
         $show_date  = ! empty( $instance['show_postdate'] ) ? $instance['show_postdate'] : '';
@@ -46,7 +46,8 @@ class Benevolent_Recent_Post extends WP_Widget {
             'post_type'             => 'post',
             'post_status'           => 'publish',
             'posts_per_page'        => $num_post,
-            'ignore_sticky_posts'   => true
+            'ignore_sticky_posts'   => true,
+            'orderby'               => 'comment_count'
         ) );
         if( $benevolent_qry->have_posts() ){
             echo $args['before_widget'];
@@ -95,7 +96,7 @@ class Benevolent_Recent_Post extends WP_Widget {
 	 */
 	public function form( $instance ) {
         
-        $title          = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Recent Posts', 'benevolent' );		
+        $title          = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Popular Posts', 'benevolent' );		
         $num_post       = ! empty( $instance['num_post'] ) ? absint($instance['num_post']) : 3 ;
         $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? $instance['show_thumbnail'] : '';
         $show_postdate  = ! empty( $instance['show_postdate'] ) ? $instance['show_postdate'] : '';
@@ -138,7 +139,7 @@ class Benevolent_Recent_Post extends WP_Widget {
 		
         $instance = array();
 		
-        $instance['title']          = ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : __( 'Recent Posts', 'benevolent' );
+        $instance['title']          = ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : __( 'Popular Posts', 'benevolent' );
         $instance['num_post']       = ! empty( $new_instance['num_post'] ) ? absint( $new_instance['num_post'] ) : 3 ;        
         $instance['show_thumbnail'] = ! empty( $new_instance['show_thumbnail'] ) ? esc_attr( $new_instance['show_thumbnail'] ) : '';
         $instance['show_postdate']  = ! empty( $new_instance['show_postdate'] ) ? esc_attr( $new_instance['show_postdate'] ) : '';
@@ -147,4 +148,4 @@ class Benevolent_Recent_Post extends WP_Widget {
         
 	}
 
-} // class Benevolent_Recent_Post 
+} // class Benevolent_Popular_Post 
