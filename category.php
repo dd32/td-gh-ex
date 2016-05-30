@@ -1,31 +1,73 @@
-<?php get_template_part('banner','header')?>
-<div class="container">
-  <!-- Main --> 
-  <div class="row-fluid">
-    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "span8"; } else { echo "span12"; } ?> blog_left">
-      
-      <?php    while(have_posts()): the_post();?>
-      <div class="blog_section">
-	  <h2 class="cate-archive"><?php  _e( "Category  Archives:", 'busi_prof'); echo single_cat_title( '', false ); ?></h2>
-        <div class="blog_con_mn">
-          <h2><a href="<?php the_permalink(); ?>"title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-          <?php $defalt_arg =array('class' => "blog_section_img" )?>
-          <?php if(has_post_thumbnail()):?>
-          <a href="<?php the_permalink(); ?>"title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?></a>
-          <?php endif;?>
-          <br>
-          <p><?php the_content( __( 'Read More' , 'busi_prof' ) );?></p>
-        </div>
-      </div>
-      <?php endwhile;?>
-      <div class="pagination_blog">
-        <ul>
-          <li class="paginanext"><?php previous_posts_link(); ?></li>
-          <li class="paginanext"><?php next_posts_link(); ?></li>
-        </ul>
-      </div>
-    </div>
-    <?php get_sidebar();?>
-  </div>
-</div>
-<?php  get_footer(); ?>
+<?php
+/**
+ * The category template file
+ * @package WordPress
+ */
+get_header(); 
+?>
+<!-- Page Title -->
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="page-title">
+					<h2><?php  _e( "Category  Archives:", 'busi_prof'); echo single_cat_title( '', false ); ?></h2>
+					<p><?php bloginfo('description');?></p>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="search_box">
+					<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<input type="text" id="appendedInputButton" class="search_input" placeholder=<?php _e( 'Search', 'busi_prof' ); ?> name="s">
+					<input type="button" value="" class="search_btn">
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>	
+</section>
+<!-- End of Page Title -->
+<div class="clearfix"></div>
+
+<!-- Blog & Sidebar Section -->
+<section>		
+	<div class="container">
+		<div class="row">
+			<!--Blog Posts-->
+			<div class="col-md-8 col-xs-12">
+				<div class="site-content">
+					<?php 
+					if ( have_posts() ) :
+					// Start the Loop.
+					while ( have_posts() ) : the_post();
+					
+						get_template_part( 'content','' );
+						
+					endwhile;
+					?>
+					<!-- Pagination -->			
+					<div class="paginations">
+						<?php
+						// Previous/next page navigation.
+						the_posts_pagination( array(
+						'prev_text'          => __('Previous','busi_prof'),
+						'next_text'          => __('Next','busi_prof'),
+						'screen_reader_text' => ' ',
+						) ); ?>
+					</div>
+					<?php endif; ?>
+					<!-- /Pagination -->
+				</div>
+			<!--/End of Blog Posts-->
+			</div>
+			<!--Sidebar-->
+			<?php get_sidebar();?>
+			<!--/End of Sidebar-->
+		</div>	
+	</div>
+</section>
+<!-- End of Blog & Sidebar Section -->
+ 
+<div class="clearfix"></div>
+
+<?php get_footer(); ?>

@@ -1,12 +1,17 @@
-<?php
-  $is_front_page = get_option('busiprof_theme_options');
+<?php 
+/* 	
+* Template Name: Home
+*/
+
+$busiprof_theme_options=theme_setup_data();
+  $is_front_page = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), $busiprof_theme_options );
   
   if (  $is_front_page['front_page'] != 'yes' ) {
   get_template_part('index');
   }
   else {	
   		get_header();
-  		$current_options=get_option('busiprof_theme_options');
+  $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), $busiprof_theme_options );
   		?>
 <!-- Slider Section of Index Page -->
 <?php get_template_part('index', 'slider') ;?>

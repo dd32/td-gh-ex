@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.7
+1. Added Customizer Setting
 @version 1.6.3
 1. Update Theme URI
 2. Add Message : In the next version ie 1.7 we are moving all the theme options in the customizer
@@ -197,13 +199,32 @@ along with this program.  If not, see .
 
 BusiProf WordPress Theme bundles the following third-party resources:
 
-Screenshot: Image used in screenshot By Jeff Sheldon
-URL: https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?fit=crop&fm=jpg&h=800&q=75&w=1050
-Source: http://unsplash.com
-License: GPL
+Screenshot: Image used in screenshot By FirmBee
+URL: https://pixabay.com/p-667280/?no_redirect
 
-Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
-License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Slider Banner Image: Image used in screenshot By FirmBee
+URL: https://pixabay.com/p-667280/?no_redirect
+
+Portfolio Image :
+ 
+1. https://pixabay.com/en/balloon-heart-love-romance-sky-1046658/
+
+2. https://pixabay.com/en/computer-macbook-tablet-editing-767781/
+
+3. https://pixabay.com/en/man-reading-touchscreen-blog-791049/
+
+4. https://pixabay.com/en/carriage-clock-timepiece-time-797833/
+
+Testimonial Image :
+
+1. https://pixabay.com/en/runner-race-competition-female-888016/
+
+2. https://pixabay.com/en/girl-sitting-posing-trees-woods-535877/
+
+
+
+Font Awesome 4.6.1 by @davegandy - http://fontawesome.io - @fontawesome
+License - http://fontawesome.io/license
 Source: http://fontawesome.io
 
 Bootstrap v2.3.0  Copyright 2012 Twitter, Inc.

@@ -1,6 +1,9 @@
 <?php
 /** nav-menu-walker.php */
-class busiprof_nav_walker extends Walker_Nav_Menu {	
+class busiprof_nav_walker extends Walker_Nav_Menu 
+
+{
+	
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class=\"dropdown-menu\">\n";

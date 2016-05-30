@@ -1,58 +1,103 @@
-<?php 
-$current_options=get_option('busiprof_theme_options');
-$template_uri=get_template_directory_uri(). '/images/default' ;
-?>
-<div class="container">		
-	<div class="row">
-		<div class="span6 testimonial_mn">
-				<?php if($current_options['testimonials_title']!='') {?>
-				<h2><?php echo $current_options['testimonials_title']; ?>
-				<?php } ?><br><span><?php if($current_options['testimonials_text']!='') { echo $current_options['testimonials_text'];  } ?></span></h2>
-				<div id="testimonial_mn_cols" class="media">
-					<img alt="webriti" src="<?php if($current_options['testimonials_image_one']!='') { echo esc_url($current_options['testimonials_image_one']);} ?>"  class="media-object img-circle pull-left recent_blog_thumb">
-					<div class="media-body">
-					<p><?php if($current_options['testimonials_text_one']!='') { echo $current_options['testimonials_text_one'];} ?></p>
-					<a href="#"><?php if($current_options['testimonials_name_one']!='') { echo $current_options['testimonials_name_one'];} ?> <span><?php if($current_options['testimonials_designation_one']!='') { echo $current_options['testimonials_designation_one'];} ?></span></a>
+<?php  $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), theme_setup_data() ); ?>
+<!-- Testimonial & Blog Section -->
+<section id="section">
+	<div class="container">	
+		<div class="row">
+		
+			<!-- Testimonial -->
+			<div class="col-md-6 testimonial">
+				<!-- Section Title -->
+				<div class="section-title-small">
+					<?php if( $current_options['testimonials_title'] != '' ) { ?>
+					<h3 class="section-heading"><?php echo $current_options['testimonials_title'];?></h3>
+					<?php } if( $current_options['testimonial_tagline'] !='') { ?>
+					<p><?php echo $current_options['testimonial_tagline'];?></p>
+					<?php } ?>
+				</div>
+				<!-- /Section Title -->
+				<div class="post"> 
+					<div class="media"> 
+						<figure class="post-thumbnail width-lg">
+						<div class="home-post-img">
+						<img src="<?php if($current_options['testimonials_image_one']!='') { echo esc_url($current_options['testimonials_image_one']);} ?>" class="img-circle" alt="img">
+						</div>
+						</figure> 
+						<div class="media-body">
+							<div class="entry-content">
+								<p><?php if($current_options['testimonials_text_one']!='') { echo $current_options['testimonials_text_one'];} ?></p>
+								<span class="author-name"><?php if($current_options['testimonials_name_one']!='') { echo $current_options['testimonials_name_one'];} ?> <small class="designation">(<?php if($current_options['testimonials_designation_one']!='') { echo $current_options['testimonials_designation_one'];} ?>)</small></span>
+							</div>
+						</div> 
 					</div>
 				</div>
 				
-				<div id="testimonial_mn_cols" class="media">
-					<img alt="webriti" src="<?php if($current_options['testimonials_image_two']!='') { echo esc_url($current_options['testimonials_image_two']);} ?>"  class="media-object img-circle pull-left recent_blog_thumb">
-					<div class="media-body">
-					<p><?php if($current_options['testimonials_text_two']!='') { echo $current_options['testimonials_text_two'];} ?></p>
-					<a href="#"><?php if($current_options['testimonials_name_two']!='') { echo $current_options['testimonials_name_two'];} ?> <span>(<?php if($current_options['testimonials_designation_two']!='') { echo $current_options['testimonials_designation_two'];} ?>)</span></a>
+				<div class="post"> 
+					<div class="media"> 
+						<figure class="post-thumbnail width-lg">
+						<div class="home-post-img">
+						<img src="<?php if($current_options['testimonials_image_two']!='') { echo esc_url($current_options['testimonials_image_two']);} ?>" class="img-circle" alt="img">
+						</div>
+						</figure> 
+						<div class="media-body">
+							<div class="entry-content">
+								<p><?php if($current_options['testimonials_text_two']!='') { echo $current_options['testimonials_text_two'];} ?></p>
+								<span class="author-name"><?php if($current_options['testimonials_name_two']!='') { echo $current_options['testimonials_name_two'];} ?> <small class="designation">(<?php if($current_options['testimonials_designation_two']!='') { echo $current_options['testimonials_designation_two'];} ?>)</small></span>
+							</div>
+						</div> 
 					</div>
 				</div>
-		</div>
-		<div class="span6 recent_blog">			
-			<h2><?php if($current_options['recent_blog_title']!='') { echo $current_options['recent_blog_title'];} ?><br><span><?php if($current_options['recent_blog_description']!='') { echo $current_options['recent_blog_description'];} ?></span></h2>
-			<div class="row">
-				<?php	$args = array( 'numberposts' => '4' );
-						$recent_posts = wp_get_recent_posts( $args );
-						if($recent_posts)
-						{ foreach( $recent_posts as $recent )
-							{ ?><div class="span3">
-										<div id="recent_blog_cols" class="media">
-										<?php if(get_post_thumbnail_id($recent["ID"])!='') {?>
-										<?php 	$defalt_arg=array('class'=>'media-object img-circle pull-left recent_blog_thumb');
-												echo get_the_post_thumbnail($recent["ID"],'recent-blog-thumb', $defalt_arg); ?>
-											<?php } else { ?>
-											<img alt="webriti" src="<?php echo $template_uri .'/testimonial.jpg'; ?>"  class="media-object img-circle pull-left recent_blog_thumb">
-											<?php } ?>
-											<div class="media-body">
-											<p><?php echo '<a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a>'; ?></p>
-											<span><?php echo date("M d. Y", strtotime($recent['post_modified'])); ?></span>
-											</div>
-										</div>
-								</div>		
-								<?php } } else { ?>
-								<div class="span3">
-									<div class="media-body">
-									<p><?php _e("NO POST TO DISPLAY...",'busi_prof');?></p>
-									</div>
+			</div>
+			<!-- /Testimonial -->
+			
+			<!-- Blog Post -->
+			<div class="col-md-6 home-post">
+				<!-- Section Title -->
+				<div class="section-title-small">
+				<?php
+					if( $current_options['recent_blog_title'] != '' ) { ?> 
+					<h3 class="section-heading"><?php echo $current_options['recent_blog_title'];?></h3>
+					<?php } if( $current_options['recent_blog_description'] !='')  { ?>
+					<p><?php echo $current_options['recent_blog_description'];?></p>
+					<?php } ?>
+				</div>
+				<!-- /Section Title -->	
+				
+				<div class="row">
+					<?php 	$args = array( 'post_type' => 'post','posts_per_page' => 4,'post__not_in'=>get_option("sticky_posts")) ; 	
+						query_posts( $args );
+						if(query_posts( $args ))
+					{	
+						while(have_posts()):the_post();
+					{ ?>
+					<div class="col-md-6">
+						<div class="post"> 
+							<div class="media"> 
+								<figure class="post-thumbnail width-lg">
+								<div class="home-post-img">
+								<?php $defalt_arg =array('class' => "img-circle");?>
+								<?php if(has_post_thumbnail()){?>
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('',$defalt_arg);?></a>
+								<?php } ?>
 								</div>
-								<?php } ?>	
-			</div>	
-		</div>
-	</div>			
-</div>
+								</figure> 
+								<div class="media-body">
+									<div class="entry-header">
+										<h5 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h5>
+										<span class="entry-date">
+											<a href="<?php the_permalink(); ?>"><?php echo get_the_date('M j,Y');?></a>
+										</span>
+									</div>
+								</div> 
+							</div>
+						</div>
+					</div>
+					<?php } endwhile; } ?>
+				</div>
+			</div>
+			<!-- /Blog Post -->
+		</div>	
+	</div>
+</section>
+<!-- End of Testimonial & Blog Section -->
+
+<div class="clearfix"></div>
