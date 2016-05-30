@@ -360,7 +360,6 @@ function astrid_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 80,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 10px;',
         ),
     ) ); 
     // Site description
@@ -381,7 +380,6 @@ function astrid_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 50,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 10px;',
         ),
     ) );         
     //H1 size
@@ -402,7 +400,6 @@ function astrid_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 10px;',
         ),
     ) );
     //H2 size
@@ -423,7 +420,6 @@ function astrid_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 10px;',
         ),
     ) );
 
@@ -445,7 +441,6 @@ function astrid_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 10px;',
         ),
     ) );
     //H4 size
@@ -466,7 +461,6 @@ function astrid_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 10px;',
         ),
     ) );
     //H5 size
@@ -487,7 +481,6 @@ function astrid_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 10px;',
         ),
     ) );
     //H6 size
@@ -508,7 +501,6 @@ function astrid_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 60,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 10px;',
         ),
     ) );
     //Body
@@ -529,7 +521,6 @@ function astrid_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 24,
             'step'  => 1,
-            'style' => 'margin-bottom: 15px; padding: 10px;',
         ),
     ) );
 
@@ -597,7 +588,6 @@ function astrid_customize_register( $wp_customize ) {
             'min'   => 10,
             'max'   => 200,
             'step'  => 5,
-            'style' => 'padding: 15px;',
         ),
     ) );
     //Meta

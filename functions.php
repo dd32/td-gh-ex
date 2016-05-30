@@ -83,6 +83,12 @@ function astrid_setup() {
 		'default-color' => 'f5f9f8',
 		'default-image' => '',
 	) ) );
+
+	add_theme_support( 'custom-logo', array(
+		'height'      => 80,
+		'width'       => 200,
+		'flex-height' => true,
+	) );	
 }
 endif;
 add_action( 'after_setup_theme', 'astrid_setup' );
@@ -344,12 +350,14 @@ function astrid_header_text() {
 if ( ! function_exists( 'astrid_branding' ) ) :
 function astrid_branding() {
 	$site_logo = get_theme_mod('site_logo');
-	if ( $site_logo ) :
+	if ( $site_logo ) {
 		echo '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr(get_bloginfo('name')) . '"><img class="site-logo" src="' . esc_url($site_logo) . '" alt="' . esc_attr(get_bloginfo('name')) . '" /></a>'; 
-	else :
+	} elseif ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+		the_custom_logo();
+	} else {
 		echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html(get_bloginfo('name')) . '</a></h1>';
 		echo '<p class="site-description">' . esc_html(get_bloginfo( 'description' )) . '</p>';
-	endif;
+	}
 }
 endif;
 

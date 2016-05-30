@@ -20,6 +20,7 @@ class Atframework_Employees extends WP_Widget {
 		$offset    		= isset( $instance['offset'] ) ? intval( $instance['offset'] ) : 0;
 		$see_all   		= isset( $instance['see_all'] ) ? esc_url_raw( $instance['see_all'] ) : '';		
 		$see_all_text  	= isset( $instance['see_all_text'] ) ? esc_html( $instance['see_all_text'] ) : '';
+		$pageids  		= isset( $instance['pageids'] ) ? esc_html( $instance['pageids'] ) : '';		
 	?>
 
 	<p><?php _e('This widget displays all pages that have the Single Employee page template assigned to them.', 'astrid'); ?></p>
@@ -32,6 +33,8 @@ class Atframework_Employees extends WP_Widget {
 	<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
 	<p><label for="<?php echo $this->get_field_id( 'offset' ); ?>"><?php _e( 'Offset (number of employees needs to be different than -1 for this option to work):', 'astrid' ); ?></label>
 	<input id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo $offset; ?>" size="3" /></p>
+	<p><label for="<?php echo $this->get_field_id( 'pageids' ); ?>"><?php _e( 'Page IDs to display in this widget (separated by commas, example: 14,810,220). Note: you can find the page ID in the URL bar while editing your page.', 'astrid' ); ?></label>
+	<input id="<?php echo $this->get_field_id( 'pageids' ); ?>" name="<?php echo $this->get_field_name( 'pageids' ); ?>" type="text" value="<?php echo $pageids; ?>" size="3" /></p>	
     <p><label for="<?php echo $this->get_field_id('see_all'); ?>"><?php _e('The URL for your button [In case you want a button below your employees block]', 'astrid'); ?></label>
 	<input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'see_all' ); ?>" name="<?php echo $this->get_field_name( 'see_all' ); ?>" type="text" value="<?php echo $see_all; ?>" size="3" /></p>	
     <p><label for="<?php echo $this->get_field_id('see_all_text'); ?>"><?php _e('The text for the button [Defaults to <em>See all our employees</em> if left empty]', 'astrid'); ?></label>
@@ -46,6 +49,7 @@ class Atframework_Employees extends WP_Widget {
 		$instance['offset'] 		= strip_tags($new_instance['offset']);
 		$instance['see_all'] 		= esc_url_raw( $new_instance['see_all'] );	
 		$instance['see_all_text'] 	= strip_tags($new_instance['see_all_text']);		
+		$instance['pageids'] 		= strip_tags($new_instance['pageids']);		
 		    			
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['atframework_employees']) )
@@ -84,7 +88,12 @@ class Atframework_Employees extends WP_Widget {
 		if ( ! $number )
 			$number 	= -1;				
 		$offset 		= ( ! empty( $instance['offset'] ) ) ? intval( $instance['offset'] ) : 0;
-
+		$pageids		= isset( $instance['pageids'] ) ? esc_html($instance['pageids']) : '';
+		if ($pageids) {
+			$ids = explode(',', $pageids);
+		} else {
+			$ids = '';
+		}
 
 		$employees = new WP_Query( array(
 			'post_type'			=> 'page',
@@ -93,6 +102,7 @@ class Atframework_Employees extends WP_Widget {
 			'orderby' 			=> 'menu_order',
 			'order'   			=> 'ASC',
 			'posts_per_page' 	=> $number,
+			'post__in' 			=> $ids,			
 			'offset'			=> $offset,
 	        'meta_query' => array(
 	            array(
