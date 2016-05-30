@@ -128,7 +128,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     //This section has been previously removed from its initial location and added back in the General Settings panel
     //Important Note :
     //IF WP VERSION >= 4.3 AND SITE_ICON SETTING EXISTS
-    //=> The following FAV ICON CONTROL is removed (@see class-admin-customize.php)
+    //=> The following FAV ICON CONTROL is removed (@see class-czr-init.php)
     function hu_site_identity_sec() {
       return array(
           'favicon'  => array(
@@ -136,7 +136,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'label'     =>  __( 'Favicon Upload (supported formats : .ico, .png, .gif)' , 'hueman' ),
                 'title'     => __( 'FAVICON' , 'hueman'),
                 'section'   => 'title_tagline',//<= this is a default WP section, not created for the Hueman theme
-                'type'      => 'hu_upload',
+                'type'      => 'czr_upload',
                 'sanitize_callback' => array( $this , 'hu_sanitize_number' )
           ),
           'rss-feed'  => array(
@@ -228,17 +228,16 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
           ),
           'body-background' => array(
                 //'default'     => array(),
-                'default'       => '#eaeaea',
-                //'control'     => 'HU_Body_Background_Control',
-                'control'     => 'WP_Customize_Color_Control',
+                'default'       => array( 'background-color' => '#eaeaea' ),
+                'control'     => 'HU_Body_Background_Control',
                 'label'       => __( 'Body Background' , 'hueman' ),
                 'description' => __('Set the website background color', 'hueman'),
                 'section'     => 'general_design_sec',
-                //'type'        => 'hu_multi_input' ,
-                'type'        => 'color',
-                'sanitize_callback'    => array( $this, 'hu_sanitize_bg_color' ),
-                'sanitize_js_callback' => array( $this, 'hu_maybe_hash_bg_hex_color' ),
-                'transport'   => 'postMessage',
+                'type'        => 'czr_background' ,
+                //'type'        => 'color',
+                // 'sanitize_callback'    => array( $this, 'hu_sanitize_body_bg' ),@todo
+                // 'sanitize_js_callback' => array( $this, 'hu_sanitize_js_body_bg' ),@todo
+                //'transport'   => 'postMessage',
                 //'notice'        => __('Set background color and/or upload your own background image.', 'hueman')
           ),
           'color-topbar' => array(
@@ -315,8 +314,9 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'control'   => 'HU_Customize_Socials',
                 'label'     => __('Create and organize your social links', 'hueman'),
                 'section'   => 'social_links_sec',
-                'type'      => 'hu_socials',//@todo create dynamic type
-                'transport' => 'postMessage'
+                'type'      => 'czr_socials',//@todo create dynamic type
+                'transport' => 'postMessage',
+                'priority'  => 10
           )
       );
     }
@@ -512,7 +512,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'control'   => 'HU_Customize_Layout_Control',
                 'label'     => __('Global Layout', 'hueman'),
                 'section'   => 'content_layout_sec',
-                'type'      => 'hu_layouts',//@todo create a radio-image type
+                'type'      => 'czr_layouts',//@todo create a radio-image type
                 'choices'   => $this -> hu_get_content_layout_choices( 'global' ),
                 'notice'    => __('Other layouts will override this option if they are set' , 'hueman')
           ),
@@ -521,7 +521,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'control'   => 'HU_Customize_Layout_Control',
                 'label'     => __('Home', 'hueman'),
                 'section'   => 'content_layout_sec',
-                'type'      => 'hu_layouts',//@todo create a radio-image type
+                'type'      => 'czr_layouts',//@todo create a radio-image type
                 'choices'   => $this -> hu_get_content_layout_choices(),
                 'notice'    => __('[ <strong>is_home</strong> ] Posts homepage layout' , 'hueman')
           ),
@@ -530,7 +530,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'control'   => 'HU_Customize_Layout_Control',
                 'label'     => __('Single', 'hueman'),
                 'section'   => 'content_layout_sec',
-                'type'      => 'hu_layouts',//@todo create a radio-image type
+                'type'      => 'czr_layouts',//@todo create a radio-image type
                 'choices'   => $this -> hu_get_content_layout_choices(),
                 'notice'    => __('[ <strong>is_single</strong> ] Single post layout - If a post has a set layout, it will override this.' , 'hueman')
           ),
@@ -539,7 +539,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'control'   => 'HU_Customize_Layout_Control',
                 'label'     => __('Archive', 'hueman'),
                 'section'   => 'content_layout_sec',
-                'type'      => 'hu_layouts',//@todo create a radio-image type
+                'type'      => 'czr_layouts',//@todo create a radio-image type
                 'choices'   => $this -> hu_get_content_layout_choices(),
                 'notice'    => __('[ <strong>is_archive</strong> ] Category, date, tag and author archive layout' , 'hueman')
           ),
@@ -548,7 +548,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'control'   => 'HU_Customize_Layout_Control',
                 'label'     => __('Archive - Category', 'hueman'),
                 'section'   => 'content_layout_sec',
-                'type'      => 'hu_layouts',//@todo create a radio-image type
+                'type'      => 'czr_layouts',//@todo create a radio-image type
                 'choices'   => $this -> hu_get_content_layout_choices(),
                 'notice'    => __('[ <strong>is_category</strong> ] Category archive layout' , 'hueman')
           ),
@@ -557,7 +557,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'control'   => 'HU_Customize_Layout_Control',
                 'label'     => __('Search', 'hueman'),
                 'section'   => 'content_layout_sec',
-                'type'      => 'hu_layouts',//@todo create a radio-image type
+                'type'      => 'czr_layouts',//@todo create a radio-image type
                 'choices'   => $this -> hu_get_content_layout_choices(),
                 'notice'    => __('[ <strong>is_search</strong> ] Search page layout' , 'hueman')
           ),
@@ -566,7 +566,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'control'   => 'HU_Customize_Layout_Control',
                 'label'     => __('Error 404', 'hueman'),
                 'section'   => 'content_layout_sec',
-                'type'      => 'hu_layouts',//@todo create a radio-image type
+                'type'      => 'czr_layouts',//@todo create a radio-image type
                 'choices'   => $this -> hu_get_content_layout_choices(),
                 'notice'    => __('[ <strong>is_404</strong> ] Error 404 page layout' , 'hueman')
           ),
@@ -575,7 +575,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'control'   => 'HU_Customize_Layout_Control',
                 'label'     => __('Default Page', 'hueman'),
                 'section'   => 'content_layout_sec',
-                'type'      => 'hu_layouts',//@todo create a radio-image type
+                'type'      => 'czr_layouts',//@todo create a radio-image type
                 'choices'   => $this -> hu_get_content_layout_choices(),
                 'notice'    => __('[ <strong>is_page</strong> ] Default page layout - If a page has a set layout, it will override this.' , 'hueman')
           ),
@@ -635,7 +635,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
           ),
           'featured-posts-enabled' => array(
                 'default'   => 1,
-                'title'       => __( 'Featured posts', 'customizr' ),
+                'title'       => __( 'Featured posts', 'hueman' ),
                 'control'   => 'HU_controls',
                 'label'     => __("Feature posts on top of your blog", 'hueman'),
                 'section'   => 'content_blog_sec',
@@ -838,7 +838,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'control'   => 'HU_Customize_Layout_Control',
                 'label'     => __('Select columns to enable footer widgets', 'hueman'),
                 'section'   => 'footer_design_sec',
-                'type'      => 'hu_layouts',
+                'type'      => 'czr_layouts',
                 'choices'   => $this -> hu_get_footer_layout_choices(),
                 'notice'    => __('Recommended number of columns : 3' , 'hueman')
           ),
@@ -1195,27 +1195,27 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     function hu_get_content_layout_choices( $_wot = null ) {
       $_layouts = array(
         'col-1c' => array(
-          'src' => get_template_directory_uri() . '/assets/back/img/col-1c.png',
+          'src' => get_template_directory_uri() . '/assets/admin/img/col-1c.png',
           'label' => __( '1 Column' , 'hueman' )
         ),
         'col-2cl'=> array(
-          'src' => get_template_directory_uri() . '/assets/back/img/col-2cl.png',
+          'src' => get_template_directory_uri() . '/assets/admin/img/col-2cl.png',
           'label' => __( '2 Columns - Content Left' , 'hueman' )
         ),
         'col-2cr'=> array(
-          'src' => get_template_directory_uri() . '/assets/back/img/col-2cr.png',
+          'src' => get_template_directory_uri() . '/assets/admin/img/col-2cr.png',
           'label' => __( '2 Columns - Content Right' , 'hueman' )
         ),
         'col-3cm'=> array(
-          'src' => get_template_directory_uri() . '/assets/back/img/col-3cm.png',
+          'src' => get_template_directory_uri() . '/assets/admin/img/col-3cm.png',
           'label' => __( '3 Columns - Content Middle' , 'hueman' )
         ),
         'col-3cl'=> array(
-          'src' => get_template_directory_uri() . '/assets/back/img/col-3cl.png',
+          'src' => get_template_directory_uri() . '/assets/admin/img/col-3cl.png',
           'label' => __( '3 Columns - Content Left' , 'hueman' )
         ),
         'col-3cr'=> array(
-          'src' => get_template_directory_uri() . '/assets/back/img/col-3cr.png',
+          'src' => get_template_directory_uri() . '/assets/admin/img/col-3cr.png',
           'label' => __( '3 Columns - Content Right' , 'hueman' )
         )
       );
@@ -1223,7 +1223,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
         return array_merge(
           array(
             'inherit' => array(
-              'src' => get_template_directory_uri() . '/assets/back/img/layout-off.png',
+              'src' => get_template_directory_uri() . '/assets/admin/img/layout-off.png',
               'label' => __( 'Inherit Global Layout' , 'hueman' )
             )
           ),
@@ -1241,23 +1241,23 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     function hu_get_footer_layout_choices( $_wot = null ) {
       $_layouts = array(
         '0' => array(
-          'src' => get_template_directory_uri() . '/assets/back/img/footer-widgets-0.png',
+          'src' => get_template_directory_uri() . '/assets/admin/img/footer-widgets-0.png',
           'label' => __( 'Disable' , 'hueman' )
         ),
         '1' => array(
-          'src' => get_template_directory_uri() . '/assets/back/img/footer-widgets-1.png',
+          'src' => get_template_directory_uri() . '/assets/admin/img/footer-widgets-1.png',
           'label' => __( '1 Column' , 'hueman' )
         ),
         '2' => array(
-          'src' => get_template_directory_uri() . '/assets/back/img/footer-widgets-2.png',
+          'src' => get_template_directory_uri() . '/assets/admin/img/footer-widgets-2.png',
           'label' => __( '2 Columns' , 'hueman' )
         ),
         '3' => array(
-          'src' => get_template_directory_uri() . '/assets/back/img/footer-widgets-3.png',
+          'src' => get_template_directory_uri() . '/assets/admin/img/footer-widgets-3.png',
           'label' => __( '3 Columns' , 'hueman' )
         ),
         '4' => array(
-          'src' => get_template_directory_uri() . '/assets/back/img/footer-widgets-4.png',
+          'src' => get_template_directory_uri() . '/assets/admin/img/footer-widgets-4.png',
           'label' => __( '4 Columns' , 'hueman' )
         ),
       );
@@ -1370,8 +1370,8 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     ************ TEMPORARY
     *********************************************************************************************/
     //temporary fix for the background color before final move in the customizer
-    function hu_sanitize_bg_color( $color ) {
-      if ( is_array($color) ) {
+    function hu_sanitize_bg_color( $value ) {
+      if ( is_array($value) ) {
         $color = isset($color['body-background']) ? $color['body-background'] : '#eaeaea';
       }
       if ( $unhashed = sanitize_hex_color_no_hash( $color ) )
@@ -1392,7 +1392,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
      * @param string $color
      * @return string
      */
-    function hu_maybe_hash_bg_hex_color( $color ) {
+    function hu_sanitize_js_body_bg( $color ) {
       if ( is_array($color) ) {
         $color = isset($color['body-background']) ? $color['body-background'] : '#eaeaea';
       }

@@ -1645,7 +1645,7 @@ body.ie8,
 
 /* ADMIN BAR
     -------------------------------------------------- */
-#wpadminbar #wp-admin-bar-tc-hueman-help .ab-item:before, li#wp-admin-bar-tc-hueman-help a:before {
+#wp-admin-bar-tc-hueman-help .ab-item:before, li#wp-admin-bar-tc-hueman-help a:before {
   font-family: 'FontAwesome';
   speak: none;
   font-weight: normal;
@@ -1675,7 +1675,7 @@ li#wp-admin-bar-tc-hueman-help a {
 }
 
 
-#wpadminbar .ab-top-menu>li#wp-admin-bar-tc-hueman-help:hover>.ab-item {
+.ab-top-menu>li#wp-admin-bar-tc-hueman-help:hover>.ab-item {
   color: #FFF;
   background: #6B9C51;
 }#wrapper,
@@ -1944,6 +1944,9 @@ li#wp-admin-bar-tc-hueman-help a {
 	.post-standard .post-inner { padding-left: 82px; }
 	.post-standard .post-thumbnail { margin-left: -82px; max-width: 72px; }
 	.format-link .post-format p { margin-bottom: 5px; }
+
+  /* Don't display the sharre bar */
+  .sharrre-container { display: none;}
 
 }
 

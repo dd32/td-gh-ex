@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Hueman v3.1.3\n"
-"POT-Creation-Date: 2016-05-03 14:32+0200\n"
-"PO-Revision-Date: 2016-05-03 14:32+0200\n"
+"Project-Id-Version: Hueman v3.1.4\n"
+"POT-Creation-Date: 2016-05-30 08:47+0200\n"
+"PO-Revision-Date: 2016-05-30 08:47+0200\n"
 "Last-Translator: Elvis Henrique Pereira <elvishp2006@gmail.com>\n"
 "Language-Team: Press Customizr\n"
 "Language: pt_BR\n"
@@ -50,7 +50,7 @@ msgstr "Comentários"
 msgid "Pingbacks"
 msgstr ""
 
-#: footer.php:103 functions/customizer/class-admin-customize.php:601
+#: footer.php:103 functions/czr/czr-resources.php:42
 msgid "All Rights Reserved."
 msgstr "Todos Direitos Reservados."
 
@@ -313,39 +313,39 @@ msgstr ""
 msgid "Secondary Color"
 msgstr ""
 
-#: functions/class-utils-settings-map.php:234
+#: functions/class-utils-settings-map.php:233
 msgid "Body Background"
 msgstr ""
 
-#: functions/class-utils-settings-map.php:235
+#: functions/class-utils-settings-map.php:234
 msgid "Set the website background color"
 msgstr ""
 
-#: functions/class-utils-settings-map.php:247
+#: functions/class-utils-settings-map.php:246
 msgid "Topbar Background"
 msgstr ""
 
-#: functions/class-utils-settings-map.php:257
+#: functions/class-utils-settings-map.php:256
 msgid "Header Background"
 msgstr ""
 
-#: functions/class-utils-settings-map.php:267
+#: functions/class-utils-settings-map.php:266
 msgid "Header Menu Background"
 msgstr ""
 
-#: functions/class-utils-settings-map.php:277
+#: functions/class-utils-settings-map.php:276
 msgid "Footer Background"
 msgstr ""
 
-#: functions/class-utils-settings-map.php:288
+#: functions/class-utils-settings-map.php:287
 msgid "Image Border Radius"
 msgstr ""
 
-#: functions/class-utils-settings-map.php:294
+#: functions/class-utils-settings-map.php:293
 msgid "Give your thumbnails and layout images rounded corners"
 msgstr ""
 
-#: functions/class-utils-settings-map.php:316
+#: functions/class-utils-settings-map.php:315
 msgid "Create and organize your social links"
 msgstr ""
 
@@ -474,7 +474,7 @@ msgstr ""
 msgid "Other layouts will override this option if they are set"
 msgstr ""
 
-#: functions/class-utils-settings-map.php:522 functions/init-core.php:751
+#: functions/class-utils-settings-map.php:522 functions/init-core.php:845
 msgid "Home"
 msgstr ""
 
@@ -977,384 +977,495 @@ msgstr ""
 msgid "Choose Sidebar"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:142
+#: functions/czr/class-czr-init.php:154
 msgid "&mdash; Select &mdash;"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:179
+#: functions/czr/class-czr-init.php:191
 msgid "Assign menus to locations"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:189
+#: functions/czr/class-czr-init.php:201
 #, php-format
 msgid ""
 "You haven't created any menu yet. %s or check the %s to learn more about "
 "menus."
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:190
+#: functions/czr/class-czr-init.php:202
 msgid "Create a new menu now"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:191
+#: functions/czr/class-czr-init.php:203
 msgid "WordPress documentation"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:207
+#: functions/czr/class-czr-init.php:219
 msgid "SITE ICON"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:264
+#: functions/czr/class-czr-init.php:245
 msgid "Create And Order Widget Areas"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:267
-#: functions/customizer/class-admin-customize.php:294
-msgid ""
-"You must save changes for the new areas to appear below. <br /><i>Warning: "
-"Make sure each area has a unique ID.</i>"
-msgstr ""
-
-#: functions/customizer/class-admin-customize.php:291
+#: functions/czr/class-czr-init.php:272
 msgid "Create And Manage Widget Areas"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:301
+#: functions/czr/class-czr-init.php:281
 msgid "Create and manage widget zones"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:323
+#: functions/czr/class-czr-init.php:302
 msgid "Dynamic Sidebars and Widgets"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:646
-#: functions/customizer/controls/class-hu-dynamic-control.php:90
-#: functions/customizer/controls/class-hu-widget-areas-control.php:100
+#: functions/czr/class-czr-init.php:588
+#: functions/czr/controls/class-dynamic-control.php:90
+#: functions/czr/controls/class-widget-areas-control.php:100
 msgid "Edit"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:647
+#: functions/czr/class-czr-init.php:589
 msgid "Close"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:648
+#: functions/czr/class-czr-init.php:590
 msgid ""
 "Your favicon is currently handled with an old method and will not be "
 "properly displayed on all devices. You might consider to re-upload your "
 "favicon with the new control below."
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:649
-#: functions/customizer/controls/class-hu-widget-areas-control.php:77
-#: functions/customizer/controls/class-hu-widget-areas-control.php:126
-#: functions/customizer/controls/class-hu-widget-areas-control.php:170
+#: functions/czr/class-czr-init.php:591
+#: functions/czr/controls/class-widget-areas-control.php:77
+#: functions/czr/controls/class-widget-areas-control.php:126
+#: functions/czr/controls/class-widget-areas-control.php:170
 msgid "Location(s)"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:650
-#: functions/customizer/controls/class-hu-widget-areas-control.php:133
-#: functions/customizer/controls/class-hu-widget-areas-control.php:177
+#: functions/czr/class-czr-init.php:592
+#: functions/czr/controls/class-widget-areas-control.php:133
+#: functions/czr/controls/class-widget-areas-control.php:177
 msgid "Context(s)"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:651
+#: functions/czr/class-czr-init.php:593
 msgid "Not set"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:652
+#: functions/czr/class-czr-init.php:594
 msgid "Rss"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:653
+#: functions/czr/class-czr-init.php:595
 msgid "Select a social icon"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:654
+#: functions/czr/class-czr-init.php:596
 msgid "Follow us on"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:655
+#: functions/czr/class-czr-init.php:597
 msgid "Done !"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:656
+#: functions/czr/class-czr-init.php:598
 msgid "New Social Link created ! Scroll down to edit it."
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:657
+#: functions/czr/class-czr-init.php:599
+msgid "Select repeat property"
+msgstr ""
+
+#: functions/czr/class-czr-init.php:600
+msgid "Select attachment property"
+msgstr ""
+
+#: functions/czr/class-czr-init.php:601
+msgid "Select position property"
+msgstr ""
+
+#: functions/czr/class-czr-init.php:602
+msgid "Widget Zone"
+msgstr ""
+
+#: functions/czr/class-czr-init.php:603
 msgid "New Widget Zone created ! Scroll down to edit it."
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:658
+#: functions/czr/class-czr-init.php:604
 msgid "Inactive in current context/location"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:659
+#: functions/czr/class-czr-init.php:605
 msgid "Unavailable location. Some settings must be changed."
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:660
+#: functions/czr/class-czr-init.php:606
 msgid "A selected location is not available with the current settings."
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:661
+#: functions/czr/class-czr-init.php:607
 msgid "Learn more about this in the documentation"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:699
-msgid "If you like"
+#: functions/czr/controls/class-background-control.php:27
+#: functions/czr/controls/class-background-control.php:32
+msgid "Select Image"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:700
-msgid "the Hueman theme"
+#: functions/czr/controls/class-background-control.php:28
+msgid "Change Image"
 msgstr ""
 
-#: functions/customizer/class-admin-customize.php:701
-msgid "we would love to receive a"
-msgstr ""
-
-#: functions/customizer/class-admin-customize.php:703
-msgid "Review the Hueman theme"
-msgstr ""
-
-#: functions/customizer/class-admin-customize.php:705
-msgid "rating. Thanks :) !"
-msgstr ""
-
-#: functions/customizer/controls/class-hu-background-control.php:64
-msgid "Color"
-msgstr ""
-
-#: functions/customizer/controls/class-hu-background-control.php:71
-msgid "Repeat"
-msgstr ""
-
-#: functions/customizer/controls/class-hu-background-control.php:78
-msgid "Background attachment"
-msgstr ""
-
-#: functions/customizer/controls/class-hu-background-control.php:85
-msgid "Background position"
-msgstr ""
-
-#: functions/customizer/controls/class-hu-background-control.php:92
-msgid "Background size"
-msgstr ""
-
-#: functions/customizer/controls/class-hu-background-control.php:99
-msgid "Background Image"
-msgstr ""
-
-#: functions/customizer/controls/class-hu-dynamic-control.php:60
-msgid "Add New"
-msgstr ""
-
-#: functions/customizer/controls/class-hu-dynamic-control.php:65
-msgid "Cancel"
-msgstr ""
-
-#: functions/customizer/controls/class-hu-dynamic-control.php:65
-msgid "Add it"
-msgstr ""
-
-#: functions/customizer/controls/class-hu-dynamic-control.php:90
-#: functions/customizer/controls/class-hu-upload-control.php:68
+#: functions/czr/controls/class-background-control.php:29
+#: functions/czr/controls/class-dynamic-control.php:90
+#: functions/czr/controls/class-upload-control.php:68
 msgid "Remove"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-dynamic-control.php:103
+#: functions/czr/controls/class-background-control.php:30
+msgid "Default"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:31
+msgid "No image selected"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:33
+msgid "Choose Image"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:38
+msgid "No Repeat"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:39
+msgid "Repeat All"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:40
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:41
+msgid "Repeat Vertically"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:42
+#: functions/czr/controls/class-background-control.php:49
+msgid "Inherit"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:47
+msgid "Fixed"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:48
+msgid "Scroll"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:54
+msgid "Left Top"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:55
+msgid "Left Center"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:56
+msgid "Left Bottom"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:57
+msgid "Center Top"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:58
+msgid "Center Center"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:59
+msgid "Center Bottom"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:60
+msgid "Right Top"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:61
+msgid "Right Center"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:62
+msgid "Right Bottom"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:188
+msgid "Color"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:195
+msgid "Background Image"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:203
+msgid "Repeat"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:210
+msgid "Background attachment"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:217
+msgid "Background position"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:224
+msgid "Background size"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:229
+msgid ""
+"The background-size CSS property specifies the size of the background "
+"images. The size of the image can be fully constrained or only partially in "
+"order to preserve its intrinsic ratio."
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:231
+msgid "Learn more"
+msgstr ""
+
+#: functions/czr/controls/class-background-control.php:232
+msgid "here"
+msgstr ""
+
+#: functions/czr/controls/class-dynamic-control.php:60
+msgid "Add New"
+msgstr ""
+
+#: functions/czr/controls/class-dynamic-control.php:65
+msgid "Cancel"
+msgstr ""
+
+#: functions/czr/controls/class-dynamic-control.php:65
+msgid "Add it"
+msgstr ""
+
+#: functions/czr/controls/class-dynamic-control.php:103
 msgid "Are you sure you want to remove : <strong>{{ data.title }} ?</strong>"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-dynamic-control.php:104
+#: functions/czr/controls/class-dynamic-control.php:104
 msgid "Yes"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-dynamic-control.php:104
+#: functions/czr/controls/class-dynamic-control.php:104
 msgid "No"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:28
+#: functions/czr/controls/class-socials-control.php:28
 msgid "Select an icon"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:34
+#: functions/czr/controls/class-socials-control.php:34
 msgid "Social link url"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:36
-#: functions/customizer/controls/class-hu-socials-control.php:74
+#: functions/czr/controls/class-socials-control.php:36
+#: functions/czr/controls/class-socials-control.php:74
 msgid "http://..."
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:38
+#: functions/czr/controls/class-socials-control.php:38
 msgid "Enter the full url of your social profile (must be valid url)."
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:59
+#: functions/czr/controls/class-socials-control.php:59
 msgid "Id"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:65
+#: functions/czr/controls/class-socials-control.php:65
 msgid "Social icon"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:72
+#: functions/czr/controls/class-socials-control.php:72
 msgid "Social link"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:76
+#: functions/czr/controls/class-socials-control.php:76
 msgid "Enter the full url of your social profile (must be a valid url)."
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:79
+#: functions/czr/controls/class-socials-control.php:79
 msgid "Title"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:81
+#: functions/czr/controls/class-socials-control.php:81
 msgid "Enter a title"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:83
+#: functions/czr/controls/class-socials-control.php:83
 msgid "This is the text displayed on mouse over."
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:87
+#: functions/czr/controls/class-socials-control.php:87
 msgid "Icon color"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:91
+#: functions/czr/controls/class-socials-control.php:91
 msgid "Set a unique color for your icon."
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:98
+#: functions/czr/controls/class-socials-control.php:98
 msgid "Link target"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-socials-control.php:102
+#: functions/czr/controls/class-socials-control.php:102
 msgid "Check this option to open the link in a another tab of the browser."
 msgstr ""
 
-#: functions/customizer/controls/class-hu-upload-control.php:67
+#: functions/czr/controls/class-upload-control.php:67
 msgid "Upload"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-widget-areas-control.php:70
-#: functions/customizer/controls/class-hu-widget-areas-control.php:120
-#: functions/customizer/controls/class-hu-widget-areas-control.php:163
+#: functions/czr/controls/class-widget-areas-control.php:70
+#: functions/czr/controls/class-widget-areas-control.php:120
+#: functions/czr/controls/class-widget-areas-control.php:163
 msgid "Name"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-widget-areas-control.php:72
+#: functions/czr/controls/class-widget-areas-control.php:72
 msgid "Give it a name"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-widget-areas-control.php:74
-#: functions/customizer/controls/class-hu-widget-areas-control.php:167
+#: functions/czr/controls/class-widget-areas-control.php:74
+#: functions/czr/controls/class-widget-areas-control.php:167
 msgid "Personalizing the name of the widget zone will help you identify it."
 msgstr ""
 
-#: functions/customizer/controls/class-hu-widget-areas-control.php:78
-#: functions/customizer/controls/class-hu-widget-areas-control.php:127
-#: functions/customizer/controls/class-hu-widget-areas-control.php:171
+#: functions/czr/controls/class-widget-areas-control.php:78
+#: functions/czr/controls/class-widget-areas-control.php:127
+#: functions/czr/controls/class-widget-areas-control.php:171
 msgid ""
 "Select the pre-defined location(s) in which you will embed this widget zone."
 msgstr ""
 
-#: functions/customizer/controls/class-hu-widget-areas-control.php:114
-#: functions/customizer/controls/class-hu-widget-areas-control.php:157
+#: functions/czr/controls/class-widget-areas-control.php:114
+#: functions/czr/controls/class-widget-areas-control.php:157
 msgid "id"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-widget-areas-control.php:116
-#: functions/customizer/controls/class-hu-widget-areas-control.php:159
+#: functions/czr/controls/class-widget-areas-control.php:116
+#: functions/czr/controls/class-widget-areas-control.php:159
 msgid "unique id"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-widget-areas-control.php:134
+#: functions/czr/controls/class-widget-areas-control.php:134
 msgid "Pick the contexts where this widget area will be displayed."
 msgstr ""
 
-#: functions/customizer/controls/class-hu-widget-areas-control.php:165
+#: functions/czr/controls/class-widget-areas-control.php:165
 msgid "Enter a name"
 msgstr ""
 
-#: functions/customizer/controls/class-hu-widget-areas-control.php:178
+#: functions/czr/controls/class-widget-areas-control.php:178
 msgid "Pick the context(s) where this widget area will be displayed."
 msgstr ""
 
-#: functions/customizer/sections/class-hu-widgets-section.php:36
+#: functions/czr/czr-resources.php:239
+msgid "If you like"
+msgstr ""
+
+#: functions/czr/czr-resources.php:240
+msgid "the Hueman theme"
+msgstr ""
+
+#: functions/czr/czr-resources.php:241
+msgid "we would love to receive a"
+msgstr ""
+
+#: functions/czr/czr-resources.php:243
+msgid "Review the Hueman theme"
+msgstr ""
+
+#: functions/czr/czr-resources.php:245
+msgid "rating. Thanks :) !"
+msgstr ""
+
+#: functions/czr/sections/class-widgets-section.php:36
 msgid "Press return or enter to open this section"
 msgstr ""
 
-#: functions/init-core.php:169
+#: functions/init-core.php:251
 msgid "Theme Options [OLD]"
 msgstr ""
 
-#: functions/init-core.php:657
+#: functions/init-core.php:751
 msgid "Primary"
 msgstr ""
 
-#: functions/init-core.php:659
+#: functions/init-core.php:753
 msgid ""
 "Full width widget zone. Located in the left sidebar in a 3 columns layout. "
 "Can be on the right of a 2 columns sidebar when content is on the left."
 msgstr ""
 
-#: functions/init-core.php:666
+#: functions/init-core.php:760
 msgid "Secondary"
 msgstr ""
 
-#: functions/init-core.php:668
+#: functions/init-core.php:762
 msgid ""
 "Full width widget zone. Located in the right sidebar in a 3 columns layout."
 msgstr ""
 
-#: functions/init-core.php:675 functions/init-core.php:769
+#: functions/init-core.php:769 functions/init-core.php:863
 msgid "Footer 1"
 msgstr ""
 
-#: functions/init-core.php:677
+#: functions/init-core.php:771
 msgid "Widgetized footer 1"
 msgstr ""
 
-#: functions/init-core.php:684 functions/init-core.php:770
+#: functions/init-core.php:778 functions/init-core.php:864
 msgid "Footer 2"
 msgstr ""
 
-#: functions/init-core.php:686
+#: functions/init-core.php:780
 msgid "Widgetized footer 2"
 msgstr ""
 
-#: functions/init-core.php:693 functions/init-core.php:771
+#: functions/init-core.php:787 functions/init-core.php:865
 msgid "Footer 3"
 msgstr ""
 
-#: functions/init-core.php:695
+#: functions/init-core.php:789
 msgid "Widgetized footer 3"
 msgstr ""
 
-#: functions/init-core.php:702 functions/init-core.php:772
+#: functions/init-core.php:796 functions/init-core.php:866
 msgid "Footer 4"
 msgstr ""
 
-#: functions/init-core.php:704
+#: functions/init-core.php:798
 msgid "Widgetized footer 4"
 msgstr ""
 
-#: functions/init-core.php:710 functions/init-core.php:773
+#: functions/init-core.php:804 functions/init-core.php:867
 msgid "Header (next to logo / title)"
 msgstr ""
 
-#: functions/init-core.php:712
+#: functions/init-core.php:806
 msgid "The Header Widget Zone is located next to your logo or site title."
 msgstr ""
 
-#: functions/init-core.php:719 functions/init-core.php:774
+#: functions/init-core.php:813 functions/init-core.php:868
 msgid "Footer Full Width"
 msgstr ""
 
-#: functions/init-core.php:721
+#: functions/init-core.php:815
 #, php-format
 msgid ""
 "The Footer Widget Zone is located before the other footer widgets and takes "
@@ -1362,51 +1473,51 @@ msgid ""
 "advertisement banner."
 msgstr ""
 
-#: functions/init-core.php:750
+#: functions/init-core.php:844
 msgid "All contexts"
 msgstr ""
 
-#: functions/init-core.php:752
+#: functions/init-core.php:846
 msgid "Blog Page"
 msgstr ""
 
-#: functions/init-core.php:753
+#: functions/init-core.php:847
 msgid "Pages"
 msgstr ""
 
-#: functions/init-core.php:754
+#: functions/init-core.php:848
 msgid "Single Posts"
 msgstr ""
 
-#: functions/init-core.php:755
+#: functions/init-core.php:849
 msgid "Archives"
 msgstr ""
 
-#: functions/init-core.php:756
+#: functions/init-core.php:850
 msgid "Categories"
 msgstr ""
 
-#: functions/init-core.php:757
+#: functions/init-core.php:851
 msgid "Search Results"
 msgstr ""
 
-#: functions/init-core.php:758
+#: functions/init-core.php:852
 msgid "404 Error Pages"
 msgstr ""
 
-#: functions/init-core.php:767
+#: functions/init-core.php:861
 msgid "Primary Sidebar (on the left in a 3 columns layout)"
 msgstr ""
 
-#: functions/init-core.php:768
+#: functions/init-core.php:862
 msgid "Secondary Sidebar (on the right in a 3 columns layout)"
 msgstr ""
 
-#: functions/init-core.php:1097
+#: functions/init-core.php:1191
 msgid "Help"
 msgstr ""
 
-#: functions/init-core.php:1100
+#: functions/init-core.php:1194
 msgid "Need help with the Hueman theme ? Click here!"
 msgstr ""
 
@@ -1440,11 +1551,11 @@ msgstr ""
 msgid "Add widgets to the zone :"
 msgstr ""
 
-#: functions/init-meta-boxes.php:30
+#: functions/init-meta-boxes.php:29
 msgid "Select a widget zone for the primary sidebar."
 msgstr ""
 
-#: functions/init-meta-boxes.php:30
+#: functions/init-meta-boxes.php:29
 msgid ""
 "Notes : 1)This will override any default settings of the customizer options "
 "panel. 2) The primary sidebar is placed on the left in a 3 columns layout. "
@@ -1452,31 +1563,31 @@ msgid ""
 "left."
 msgstr ""
 
-#: functions/init-meta-boxes.php:36
+#: functions/init-meta-boxes.php:35
 msgid "Select a widget zone for the secondary sidebar."
 msgstr ""
 
-#: functions/init-meta-boxes.php:36
+#: functions/init-meta-boxes.php:35
 msgid ""
 "Notes : 1)This will override any default settings of the customizer options "
 "panel. 2) The secondary sidebar is placed on the right in a 3 columns layout."
 msgstr ""
 
-#: functions/init-meta-boxes.php:42
+#: functions/init-meta-boxes.php:41
 msgid "Select a layout for this page."
 msgstr ""
 
-#: functions/init-meta-boxes.php:42 functions/init-meta-boxes.php:97
-#: functions/init-meta-boxes.php:103
+#: functions/init-meta-boxes.php:41 functions/init-meta-boxes.php:96
+#: functions/init-meta-boxes.php:102
 msgid ""
 "This will override any default settings of the customizer options panel."
 msgstr ""
 
-#: functions/init-meta-boxes.php:97
+#: functions/init-meta-boxes.php:96
 msgid "Select a widget zone for the left sidebar."
 msgstr ""
 
-#: functions/init-meta-boxes.php:103
+#: functions/init-meta-boxes.php:102
 msgid "Select a widget zone for the right sidebar."
 msgstr ""
 
@@ -1512,7 +1623,7 @@ msgstr "Comentários Recentes"
 msgid "Tags"
 msgstr ""
 
-#: functions/widgets/alx-tabs.php:229
+#: functions/widgets/alx-tabs.php:234
 msgid "says:"
 msgstr "diz:"
 
@@ -1564,8 +1675,7 @@ msgstr "Arquivo Mensal:"
 msgid "Yearly Archive:"
 msgstr "Arquivo Anual:"
 
-#: parts/post-list-author-date.php:11 parts/single-author-date.php:8
-#: parts/single-author-date.php:10
+#: parts/post-list-author-date.php:11 parts/single-author-date.php:6
 msgid "by"
 msgstr "por"
 
@@ -1581,11 +1691,11 @@ msgstr "História anterior"
 msgid "You may also like..."
 msgstr "Você pode gostar..."
 
-#: parts/single-author-date.php:16
+#: parts/single-author-date.php:12
 msgid "Published"
 msgstr ""
 
-#: parts/single-author-date.php:17
+#: parts/single-author-date.php:13
 msgid "Updated"
 msgstr ""
 
