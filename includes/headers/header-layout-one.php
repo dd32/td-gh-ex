@@ -36,21 +36,16 @@ endif; ?>
                     <i class="fa fa-phone"></i> <?php echo wp_kses_post( kaira_theme_option( 'kra-website-txt-phone' ) ) ?>
                     <?php endif; ?>
                     
-                    <?php
-                    if ( kaira_is_woocommerce_activated() ) { ?>
-                    
+                    <?php if ( kaira_is_woocommerce_activated() ) : ?>
                         <div class="header-cart">
                             <a class="header-cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'albar'); ?>">
-                                
                                 <span class="header-cart-checkout<?php echo ( $woocommerce->cart->cart_contents_count > 0 ) ? ' cart-has-items' : ''; ?>">
                                     <i class="fa fa-shopping-cart"></i>
-                                    <span><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'albar'), $woocommerce->cart->cart_contents_count);?></span>
+                                    <span><?php echo sprintf( _n( '%d item', '%d items', $woocommerce->cart->cart_contents_count, 'albar' ), $woocommerce->cart->cart_contents_count); ?></span>
                                 </span>
                             </a>
                         </div>
-                        
-                    <?php
-                    } ?>
+                    <?php endif; ?>
                     
                     <?php if ( kaira_theme_option( 'kra-header-search' ) == 1 ) : ?>
                     <div class="search-button">
@@ -78,8 +73,11 @@ endif; ?>
                             <?php get_template_part( '/includes/inc/social-links' ); ?>
                         </div>
                         <nav id="site-navigation" class="navigation-main" role="navigation">
-                            <h1 class="menu-toggle"><?php _e( 'Menu', 'albar' ); ?></h1>
-                            <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+                            <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php echo _e( 'Menu', 'albar' ); ?></span></span>
+                            <div id="main-menu" class="main-menu-container">
+                                <div class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></div>
+                                <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+                            </div>
                         </nav><!-- #site-navigation -->
                     </div>
                     <div class="clearboth"></div>

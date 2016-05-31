@@ -68,6 +68,14 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.7.1
+* WooCommerce style fixes
+* Theme style fixes
+* Added new slide out mobile navigation
+* Added setting for blog sidebar
+* Added new easier upgrade system -('upgrade' folder)-(user doesn't lose old settings)-(has been approved for WordPress.org by reviewers)
+* Updated language .pot file
+
 #### 1.7.0
 * Fixed Albar Settings page, broken since latest WP update
 * Styling tweaks
@@ -83,44 +91,44 @@ View the settings under Appearance -> ALBAR Settings.
 * Fixed email link bug
 
 #### 1.6.7
-** Added/improved nested mobile navigation.
-** Remove slider category from sidebar widget.
-** Styling tweaks.
-** Fixed textdomain errors.
-** Updated language .pot file.
+* Added/improved nested mobile navigation.
+* Remove slider category from sidebar widget.
+* Styling tweaks.
+* Fixed textdomain errors.
+* Updated language .pot file.
 
 #### 1.6.6
-** Fixed text in header to be translatable.
+* Fixed text in header to be translatable.
 
 #### 1.6.5
-** Made "Email Us" text in top bar editable.
-** Improved responsive styling.
-** Changes widget titles to be h3 (better for SEO).
-** Changes footer widget titles to be h4.
-** Updated language .pot file.
+* Made "Email Us" text in top bar editable.
+* Improved responsive styling.
+* Changes widget titles to be h3 (better for SEO).
+* Changes footer widget titles to be h4.
+* Updated language .pot file.
 
 #### 1.6.4
-** Styling tweaks.
-** Changed text on setting in dashboard.
+* Styling tweaks.
+* Changed text on setting in dashboard.
 
 #### 1.6.3
-** Updated language .pot file.
+* Updated language .pot file.
 
 #### 1.6.2
-** Added WooCommerce cart into the header if WooCommerce is active.
-** Added Styling tweaks.
+* Added WooCommerce cart into the header if WooCommerce is active.
+* Added Styling tweaks.
 
 #### 1.6.1
-** Added 2 help links in the ALBAR Settings -> Slider Settings page.
+* Added 2 help links in the ALBAR Settings -> Slider Settings page.
 
 #### 1.6.0
-** Added dismiss-able notice to plugins.php page.
-** Styling tweaks to page templates - improved.
-** Added image to upgrade page to show that premium includes extra WooCommerce styling.
-** Updated .pot language file
+* Added dismiss-able notice to plugins.php page.
+* Styling tweaks to page templates - improved.
+* Added image to upgrade page to show that premium includes extra WooCommerce styling.
+* Updated .pot language file
 
 #### 1.5.9
-** Add support for add_theme_support( 'title-tag' ).
+* Add support for add_theme_support( 'title-tag' ).
 
 #### 1.5.8
 * Added link to Theme URI

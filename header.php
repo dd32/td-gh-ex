@@ -8,11 +8,11 @@
 <?php if ( kaira_theme_option( 'kra-favicon' ) ) :
     echo '<link rel="icon" href="' . esc_url( kaira_theme_option( 'kra-favicon' ) ) . '">';
 endif; ?>
-
 <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
+
+<div id="page">
     
 <?php if ( kaira_theme_option( 'kra-website-layout' ) == 'site-layout-boxed' ) : ?>
 <div class="site-boxed">

@@ -1,11 +1,16 @@
 <?php
 /**
- * alba functions and definitions
+ * Albar functions and definitions
  *
  * @package Albar
  */
+define( 'KAIRA_THEME_VERSION' , '1.7.1' );
 
-define( 'KAIRA_THEME_VERSION' , '1.7.0' );
+// Is ONLY USED IF the user prompts for the premium update
+define( 'KAIRA_UPDATE_URL', 'https://updates.kairaweb.com/' );
+// Upgrade / Order Premium page
+require get_template_directory() . '/upgrade/upgrade.php';
+require get_template_directory() . '/upgrade/update.php';
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
@@ -13,6 +18,11 @@ if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-sett
 
 // Theme Widgets
 include get_template_directory() . '/includes/widgets.php';
+
+// Load WP included scripts
+require get_template_directory() . '/includes/inc/template-tags.php';
+require get_template_directory() . '/includes/inc/extras.php';
+require get_template_directory() . '/includes/inc/customizer.php';
 
 if ( ! function_exists( 'kaira_setup_theme' ) ) :
 /**
@@ -119,7 +129,7 @@ if(!function_exists('kaira_footer_widget_params')):
  */
 function kaira_footer_widget_params($params){
 	// Check that this is the footer
-	if($params[0]['id'] != 'site-footer') return $params;
+	if ($params[0]['id'] != 'site-footer') return $params;
 
 	$sidebars_widgets = wp_get_sidebars_widgets();
 	$count = count($sidebars_widgets[$params[0]['id']]);
@@ -162,7 +172,6 @@ function kaira_print_styles(){
         .post .alba-blog-permalink-btn,
         .search article.page .alba-blog-permalink-btn,
         .wpcf7-submit,
-        
         #alba-home-slider-prev,
         #alba-home-slider-next,
         .alba-carousel-arrow-prev,
@@ -171,19 +180,14 @@ function kaira_print_styles(){
         }
         .site-header-one .site-title a,
         .site-header-two .site-title a,
-        
         .site-header-one .site-top-bar i,
         .site-header-two .site-social i,
-        
         .navigation-main li:hover > a,
         li.current_page_item > a,
         li.current_page_ancestor > a,
-        
         .page-header .cx-breadcrumbs a,
-        
         .sidebar-navigation-left .current_page_item,
         .sidebar-navigation-right .current_page_item,
-        
         .entry-content a,
         .alba-blog-standard-block a,
         .widget ul li a,
@@ -237,12 +241,12 @@ add_action('wp_head', 'kaira_print_styles', 11);
  * Enqueue scripts and styles
  */
 function kaira_scripts() {
-    if( kaira_theme_option( 'kra-body-google-font-url' ) ) {
+    if ( kaira_theme_option( 'kra-body-google-font-url' ) ) {
         wp_enqueue_style( 'albar-google-font-body', kaira_theme_option( 'kra-body-google-font-url' ), array(), KAIRA_THEME_VERSION );
     } else {
         wp_enqueue_style( 'albar-google-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), KAIRA_THEME_VERSION );
     }
-    if( kaira_theme_option( 'kra-heading-google-font-url' ) ) {
+    if ( kaira_theme_option( 'kra-heading-google-font-url' ) ) {
         wp_enqueue_style( 'albar-google-font-heading', kaira_theme_option( 'kra-heading-google-font-url' ), array(), KAIRA_THEME_VERSION );
     } else {
         wp_enqueue_style( 'albar-google-heading-font-default', '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic', array(), KAIRA_THEME_VERSION );
@@ -251,7 +255,6 @@ function kaira_scripts() {
     wp_enqueue_style( 'albar-fontawesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.0.3' );
 	wp_enqueue_style( 'albar-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
     
-	wp_enqueue_script( 'albar-navigation', get_template_directory_uri() . '/js/navigation.js', array(), KAIRA_THEME_VERSION, true );
 	wp_enqueue_script( 'albar-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), KAIRA_THEME_VERSION, true );
     
 	wp_enqueue_script( 'albar-customjs', get_template_directory_uri() . '/js/custom.js', array('jquery'), KAIRA_THEME_VERSION, true );
@@ -269,19 +272,12 @@ function kaira_scripts() {
 add_action( 'wp_enqueue_scripts', 'kaira_scripts' );
 
 /**
- * Custom template tags for this theme.
+ * Enqueue admin JS.
  */
-require get_template_directory() . '/includes/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/includes/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/includes/inc/customizer.php';
+function kaira_load_admin_script() {
+    wp_enqueue_script( 'albar-admin-js', get_template_directory_uri() . '/upgrade/js/admin-custom.js', array( 'jquery' ), KAIRA_THEME_VERSION, true );
+}
+add_action( 'admin_enqueue_scripts', 'kaira_load_admin_script' );
 
 /**
  * Add Alba wrappers around WooCommerce pages content.
@@ -326,7 +322,7 @@ function kaira_recommended_plugin_notice() {
             <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Contact Form 7', 'albar' ), 'albar' ); ?></a><br />
             <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Breadcrumb NavXT', 'albar' ), 'albar' ); ?></a>
             <?php
-            echo "</p></div>";
+            echo '</p></div>';
         }
     }
 }

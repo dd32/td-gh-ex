@@ -10,6 +10,9 @@
             $( '.premium-upsell-wrap' ).fadeToggle();
             $( 'html, body' ).animate( {'scrollTop':0} );
         });
+        $('.premium-upsell-wrap-close').click(function(e){
+            $( '.premium-upsell-wrap' ).fadeToggle();
+        });
         
         // WP Media upload functionality
         var kra_media = true,

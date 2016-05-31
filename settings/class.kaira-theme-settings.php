@@ -238,7 +238,7 @@ class Kaira_theme_settings {
                 break;
                 
             case 'upsell':
-                echo '<a href="' . esc_url( $desc ) . '" class="kaira-upsell-btn" target="_blank">Upgrade to Albar Premium</a>';
+                echo '<a href="' . esc_url( admin_url( 'themes.php?page=premium_upgrade' ) ) . '" class="kaira-upsell-btn">Upgrade to Albar Premium</a>';
                 echo '<br /><span class="kra-click-preview description">' . __( 'View added Premium Features', 'albar' ) . '</span></label>';
                 break;
 						
@@ -273,13 +273,6 @@ class Kaira_theme_settings {
                 'site-layout-boxed' => 'Boxed Layout'
             )
         );
-		$this->settings['kra-favicon'] = array(
-			'title'   => __( 'Favicon', 'albar' ),
-			'desc'    => __( 'Upload a favicon to your website, this needs to be 16 pixels by 16 pixels', 'albar' ),
-			'std'     => '',
-			'type'    => 'media',
-			'section' => 'general'
-		);
         
         $this->settings['kra-heading-one'] = array(
             'section' => 'general',
@@ -290,7 +283,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-one'] = array(
             'section' => 'general',
             'title'   => __( 'Header Layout', 'albar' ),
-            'desc'    => __( 'http://app.sellwire.net/p/Wu', 'albar' ),
+            'desc'    => __( '', 'albar' ),
             'type'    => 'upsell',
             'std'     => ''
         );
@@ -304,7 +297,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-two'] = array(
             'section' => 'general',
             'title'   => __( 'Sticky Header', 'albar' ),
-            'desc'    => __( 'http://app.sellwire.net/p/Wu', 'albar' ),
+            'desc'    => __( '', 'albar' ),
             'type'    => 'upsell',
             'std'     => ''
         );
@@ -315,7 +308,7 @@ class Kaira_theme_settings {
         $this->settings['kra-enable-home-slider'] = array(
             'section' => 'slider',
             'title'   => __( 'Enable Slider', 'albar' ),
-            'desc'    => __( 'Click to enable the default homepage slider<br /><br />See <a href="http://kairaweb.com/support/topic/setting-up-the-default-slider/" target="_blank">instructions here</a> on setting up the default slider', 'albar' ),
+            'desc'    => __( 'Click to enable the default homepage slider<br /><br />See <a href="http://demo.kairaweb.com/albar/installing-premium/albar-default-slider/" target="_blank">instructions here</a> on setting up the default slider', 'albar' ),
             'type'    => 'checkbox',
             'std'     => 1 // Set to 1 to be checked by default
         );
@@ -329,14 +322,14 @@ class Kaira_theme_settings {
         $this->settings['kra-slider-categories'] = array(
             'section' => 'slider',
             'title'   => __( 'Slider Categories', 'albar' ),
-            'desc'    => __( 'Enter the ID of the post category you\'d like to display in the Home page Slider, separated by a comma (,) -> Eg: "13, 17, 19"', 'albar' ),
+            'desc'    => __( 'Enter the ID of the post category you\'d like to display in the Home page Slider, separated by a comma (,)<br />Eg: "13, 17, 19"', 'albar' ),
             'type'    => 'text',
             'std'     => ''
         );
         $this->settings['kra-heading-upsell-three'] = array(
             'section' => 'slider',
             'title'   => __( 'Slider Transitions', 'albar' ),
-            'desc'    => __( 'http://app.sellwire.net/p/Wu', 'albar' ),
+            'desc'    => __( '', 'albar' ),
             'type'    => 'upsell',
             'std'     => ''
         );
@@ -364,16 +357,23 @@ class Kaira_theme_settings {
         $this->settings['kra-slider-auto-scroll'] = array(
             'section' => 'slider',
             'title'   => __( 'Scroll the slider automatically', 'albar' ),
-            'desc'    => __( 'Click to scroll the slider automatically', 'albar' ),
+            'desc'    => __( 'Click to scroll the slider automatically<br />The demo slider is set to scroll automatically', 'albar' ),
             'type'    => 'checkbox',
-            'std'     => 0 // Set to 1 to be checked by default
+            'std'     => 1 // Set to 1 to be checked by default
         );
         $this->settings['kra-slider-links'] = array(
             'section' => 'slider',
             'title'   => __( 'Enable slider links', 'albar' ),
-            'desc'    => __( 'Select if you want the slides to link to their post page<br /><br />See here how to <a href="http://demo.kairaweb.com/albar/installing-premium/removing-the-slider-title/" target="_blank">remove the slider titles</a>', 'albar' ),
+            'desc'    => __( 'Select if you want the slides to link to their post page', 'albar' ),
             'type'    => 'checkbox',
             'std'     => 0 // Set to 1 to be checked by default
+        );
+        $this->settings['kra-heading-upsell-three-two'] = array(
+            'section' => 'slider',
+            'title'   => __( 'Remove Slider Text', 'albar' ),
+            'desc'    => __( '', 'albar' ),
+            'type'    => 'upsell',
+            'std'     => ''
         );
         
         
@@ -451,7 +451,7 @@ class Kaira_theme_settings {
         );
         $this->settings['kra-custom-css'] = array(
             'title'   => __( 'Custom CSS', 'albar' ),
-            'desc'    => __( 'Add Custom CSS to add your own styling to the Theme. For an advanced CSS Plugin re recommend <a href="https://wordpress.org/plugins/so-css/" target="_blank">SiteOrigin CSS</a>', 'albar' ),
+            'desc'    => __( 'Add Custom CSS to add your own styling to the Theme<br />It\'s recommended to use a <a href="https://wordpress.org/plugins/so-css/" target="_blank">Custom CSS</a> plugin instead', 'albar' ),
             'std'     => '',
             'type'    => 'textarea',
             'section' => 'styling',
@@ -464,9 +464,16 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-four'] = array(
             'section' => 'blog',
             'title'   => __( 'Blog Layout', 'albar' ),
-            'desc'    => __( 'http://app.sellwire.net/p/Wu', 'albar' ),
+            'desc'    => __( '', 'albar' ),
             'type'    => 'upsell',
             'std'     => ''
+        );
+        $this->settings['kra-blog-add-sidebar'] = array(
+            'section' => 'blog',
+            'title'   => __( 'Enable Blog Sidebar', 'albar' ),
+            'desc'    => __( 'Select if you want to show the sidebar on the Blog page', 'albar' ),
+            'type'    => 'checkbox',
+            'std'     => 0
         );
         $this->settings['kra-blog-excl-categories'] = array(
             'section' => 'blog',
@@ -612,7 +619,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-five'] = array(
             'section' => 'website',
             'title'   => __( 'Footer Copy Text', 'albar' ),
-            'desc'    => __( 'http://app.sellwire.net/p/Wu', 'albar' ),
+            'desc'    => __( '', 'albar' ),
             'type'    => 'upsell',
             'std'     => ''
         );

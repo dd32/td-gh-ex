@@ -22,12 +22,27 @@
     padding: 20px;
     display: none;
 }
+.premium-upsell-wrap-close {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #C3C3C3;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #FFF;
+    padding: 1px 0 0;
+    cursor: pointer;
+}
 .kaira-upsell-btn {
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     background-color: #006CC9;
     box-shadow: inset 0 1px 0 rgba(120,200,230,.5),0 1px 0 rgba(0,0,0,.15);
-    color: #EBEBEB;
+    color: #FFF !important;
     display: inline-block;
     font-size: 13px;
     padding: 8px 20px;
@@ -35,12 +50,11 @@
     text-decoration: none;
 }
 .kaira-upsell-btn:hover {
-    color: #FFFFFF;
     background-color: #0546B7;
 }
 
 .kaira-recommended-plugins {
-    margin: 10px 0;
+    margin: 5px 0 -10px;
 }
 .kaira-theme-options-wrap .ui-tabs-nav {
 	border-bottom: 1px solid #ccc;
@@ -51,7 +65,13 @@
 	min-width: 852px;
 }
 .kaira-theme-options-wrap form h2 {
-    padding: 25px 0 0 20px;
+    padding: 30px 0 0 10px;
+    margin: 0 0 15px;
+    font-size: 22px;
+    color: #111;
+}
+.kaira-theme-options-wrap .form-table th label {
+    font-size: 13px;
 }
 .kaira-theme-options-wrap .ui-tabs-nav li {
 	display: block;
@@ -137,6 +157,9 @@
 }
 .wrap table h4 {
     padding: 0 20px 0;
+    color: #111;
+    font-size: 16px;
+    margin: 0 0 15px;
 }
 td.kaira-heading-td {
     margin-bottom: 0;
@@ -213,7 +236,7 @@ td.kaira-heading-td {
     background-color: #F5F5F5;
     outline: none;
     width: 100%;
-    height: 240px;
+    height: 120px;
     max-width: 90%;
 }
 .kaira-theme-options-wrap .radio-option {
@@ -277,9 +300,9 @@ td.kaira-heading-td {
 }
 
 .kaira-theme-options-wrap .premium-upsell-wrap h4 {
-    margin: 15px 0 14px;
+    margin: 18px 0 25px;
     padding: 0;
-    font-size: 16px;
+    font-size: 14px;
 }
 .kaira-theme-options-wrap .premium-upsell-wrap h5 {
     margin: 20px 0 25px;
@@ -304,11 +327,15 @@ td.kaira-heading-td {
     color: #858585;
 }
 
-.premium-albar-wrap {}
 .premium-albar-block {
     border-bottom: 1px solid #E2E2E2;
     margin: 0 0 40px;
     padding: 0 0 35px;
+}
+.premium-albar-block-last {
+    border: 0;
+    margin: 0;
+    padding: 0 0 10px;
 }
 .premium-albar-block-left {
     width: 22%;
@@ -322,6 +349,8 @@ td.kaira-heading-td {
 .premium-albar-block-right {
     width: 78%;
     float: left;
+    box-sizing: border-box;
+    padding: 0 0 0 20px;
 }
 .premium-albar-block-right img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);

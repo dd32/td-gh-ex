@@ -9,8 +9,7 @@
 <div class="site-body site-pad">
 	<div class="site-container blog-standard-layout">
 		
-		<div id="primary" class="content-area content-area-full">
-			<div id="content" class="site-content site-content-full" role="main">
+		<div id="primary" class="content-area <?php echo ( is_home() && kaira_theme_option( 'kra-blog-add-sidebar' ) == 1 ) ? 'content-area-sidebar' : 'content-area-full'; ?>">
 			
 			<?php if ( have_posts() ) : ?>
                 
@@ -44,8 +43,11 @@
 				
 			<?php endif; ?>
 			
-			</div><!-- #content -->
 		</div><!-- #primary -->
+		
+		<?php if ( is_home() && kaira_theme_option( 'kra-blog-add-sidebar' ) == 1 ) : ?>
+            <?php get_sidebar(); ?>
+        <?php endif; ?>
 		
 	</div>
 </div>

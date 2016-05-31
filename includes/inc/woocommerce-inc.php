@@ -7,10 +7,9 @@ function kaira_wc_header_add_to_cart_fragment( $fragments ) {
     
     ob_start(); ?>
         <a class="header-cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'albar'); ?>">
-            
             <span class="header-cart-checkout<?php echo ( $woocommerce->cart->cart_contents_count > 0 ) ? ' cart-has-items' : ''; ?>">
                 <i class="fa fa-shopping-cart"></i>
-                <span><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'albar'), $woocommerce->cart->cart_contents_count);?></span>
+                <span><?php echo sprintf( _n( '%d item', '%d items', $woocommerce->cart->cart_contents_count, 'albar' ), $woocommerce->cart->cart_contents_count); ?></span>
             </span>
         </a>
     <?php

@@ -13,6 +13,14 @@
             $(this).parent().toggleClass( 'open-page-item' );
         });
         
+        // The menu button
+        $('.header-menu-button').click(function(e){
+            $('body').toggleClass('show-main-menu');
+        });
+        $('.main-menu-close').click(function(e){
+            $('.header-menu-button').click();
+        });
+        
 		// Adding padding to the footer widgets
 		$('.footer-widgets .widget').wrapInner('<div class="footer-widgets-pad" />');
 		// Add class to last footer widget

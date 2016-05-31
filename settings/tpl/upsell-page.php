@@ -3,12 +3,18 @@
  * The UpSell page included on the admin settings page
  *
  * @package albar
- */ ?>
+ */
+?>
 
 <div class="premium-upsell-wrap">
+    <div class="premium-upsell-wrap-close"><?php printf( 'X' ); ?></div>
     
     <h4>
-        <?php echo __( '<a href="http://app.sellwire.net/p/Wu" target="_blank">Upgrade to Albar Premium</a> to get all the features for the Albar theme.', 'albar' ); ?>
+        <?php
+        printf(
+            __( '<a href="%s">Upgrade to Albar Premium</a> to get all the features for the Albar theme.', 'albar' ),
+            admin_url( 'themes.php?page=premium_upgrade' )
+        ); ?>
     </h4>
     
     <div class="premium-albar-wrap">
@@ -66,7 +72,7 @@
             <div class="clearboth"></div>
         </div>
         
-        <div class="premium-albar-block">
+        <div class="premium-albar-block premium-albar-block-last">
             <div class="premium-albar-block-left">
                 <h6><?php echo __( 'Extra WooCommerce Styling', 'albar' ); ?></h6>
                 <span class="description">

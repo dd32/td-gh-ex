@@ -56,7 +56,7 @@ if( $slider_cats ) :
                     <img src="<?php echo get_template_directory_uri() ?>/images/demo/dummy_img_01.jpg" alt="<?php esc_attr_e('Demo Slide One', 'albar') ?>" />
                     
                     <h3>
-                        Demo Slide One
+                        <?php _e( 'Beautifully Simple', 'albar' ); ?>
                     </h3>
                     
                 </div>
@@ -66,7 +66,7 @@ if( $slider_cats ) :
                     <img src="<?php echo get_template_directory_uri() ?>/images/demo/dummy_img_02.jpg" alt="<?php esc_attr_e('Demo Slide Two', 'albar') ?>" />
                     
                     <h3>
-                        Demo Slide Two
+                        <?php _e( 'Build Easily', 'albar' ); ?>
                     </h3>
                     
                 </div>
