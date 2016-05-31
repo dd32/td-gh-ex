@@ -1,5 +1,5 @@
-# Translation of Affinity in Hindi
-# This file is distributed under the same license as the Affinity package.
+# Translation of WordPress.com - Themes - Affinity in Hindi
+# This file is distributed under the same license as the WordPress.com - Themes - Affinity package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2016-04-16 11:36:36+0000\n"
@@ -7,8 +7,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Affinity\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Language: hi_IN\n"
+"Project-Id-Version: WordPress.com - Themes - Affinity\n"
 
 #: inc/custom-header.php:36
 msgid "Autumn Path"
@@ -73,14 +74,17 @@ msgstr ", "
 msgid "1 Comment"
 msgstr "1 टिप्पणी"
 
+#: inc/customizer.php:126
+msgid "General"
+msgstr "सामान्य"
+
+#: inc/template-tags.php:35
+msgid "Leave a comment"
+msgstr "एक टिप्पणी छोड़ें"
+
 #: inc/customizer.php:27
 msgid "Panel 1"
 msgstr "पैनल 1"
-
-#: inc/customizer.php:39 inc/customizer.php:58 inc/customizer.php:78
-#: inc/customizer.php:98 inc/customizer.php:118
-msgid "Panel Content"
-msgstr "पैनल सामग्री"
 
 #: inc/customizer.php:46
 msgid "Panel 2"
@@ -98,17 +102,14 @@ msgstr "पैनल 4"
 msgid "Panel 5"
 msgstr "पैनल 5"
 
-#: inc/customizer.php:126
-msgid "General"
-msgstr "सामान्य"
+#: inc/customizer.php:39 inc/customizer.php:58 inc/customizer.php:78
+#: inc/customizer.php:98 inc/customizer.php:118
+msgid "Panel Content"
+msgstr "पैनल सामग्री"
 
 #: inc/customizer.php:138
 msgid "Header Image Opacity"
 msgstr "हैडर छवि अपारदर्शिता"
-
-#: inc/template-tags.php:35
-msgid "Leave a comment"
-msgstr "एक टिप्पणी छोड़ें"
 
 #: functions.php:157
 msgid "Footer Widgets 1"
@@ -130,10 +131,6 @@ msgstr "इसे छोड़कर सामग्री पर जाएं"
 msgid "Theme Options"
 msgstr "थीम विकल्प"
 
-#: front-page.php:72
-msgid "Back to Top"
-msgstr "वापस ऊपर जायें"
-
 #: functions.php:59
 msgid "Top"
 msgstr "शीर्ष"
@@ -142,14 +139,18 @@ msgstr "शीर्ष"
 msgid "Sidebar"
 msgstr "साइडबार"
 
-#: components/post/content-none.php:30
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "ऐसा लगता है आप जो देख रहे हैं हमें नहीं मिल रहा है। शायद खोज मदद कर सकता है।"
+#: front-page.php:72
+msgid "Back to Top"
+msgstr "वापस ऊपर जायें"
 
 #. translators: %s: Name of current post.
 #: components/post/content.php:47
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "पढ़ना जारी रखें %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: components/post/content-none.php:30
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "ऐसा लगता है आप जो देख रहे हैं हमें नहीं मिल रहा है। शायद खोज मदद कर सकता है।"
 
 #: components/post/content-none.php:20
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
@@ -159,28 +160,28 @@ msgstr "अपनी पहली पोस्ट प्रकाशित क�
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr "क्षमा करें, लेकिन कुछ भी आपके खोज शब्दों से मेल नहीं खाते। कृपया कुछ अलग खोजशब्दों के साथ फ़िर से कोशिश करें।"
 
+#: components/post/content-none.php:14
+msgid "Nothing Found"
+msgstr "कुछ नहीं मिला"
+
 #. translators: %s: Name of current post
 #: components/page/content-frontpage.php:59 components/page/content-page.php:36
 #: inc/template-tags.php:42
 msgid "Edit %s"
 msgstr "%s संपादित करें"
 
-#: components/post/content-none.php:14
-msgid "Nothing Found"
-msgstr "कुछ नहीं मिला"
-
 #: components/navigation/navigation-top.php:2
 msgid "Menu"
 msgstr "मेनु"
-
-#: components/page/content-frontpage.php:17
-msgid "Panel %1$s"
-msgstr "पैनल %1$s"
 
 #: components/page/content-frontpage.php:48 components/page/content-page.php:25
 #: components/post/content.php:52
 msgid "Pages:"
 msgstr "पृष्ठ:"
+
+#: components/page/content-frontpage.php:17
+msgid "Panel %1$s"
+msgstr "पैनल %1$s"
 
 #: components/footer/site-info.php:2
 msgid "Proudly powered by %s"

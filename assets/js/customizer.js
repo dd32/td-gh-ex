@@ -16,8 +16,9 @@
 
 				// If there's an expanded panel section, scroll down to that panel & highlight in the preview
 				if ( true === data.expanded ) {
+
 					$( 'body' ).animate( {
-						scrollTop: $( '.' + data.section ).offset().top - 46, //Accounts for fixed header height
+						scrollTop: $( '.' + data.section ).offset().top - $( '.header-wrapper' ).outerHeight(), //Accounts for fixed header height
 					}, 600 );
 
 					$( '.' + data.section ).addClass( 'affinity-highlight' );

@@ -171,6 +171,10 @@
 	//Resize the header to fit its contents
 	function sizeHeader() {
 
+		if ( window.width() < 736 ) {
+			return;
+		}
+
 		currentPosition = window.pageYOffset;
 		header          = $( '.header-wrapper' );
 		headerImg       = $( '.site-header .custom-header' );
