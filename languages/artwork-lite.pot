@@ -433,6 +433,42 @@ msgstr ""
 msgid "Follow us"
 msgstr ""
 
+#: footer.php:106
+msgid "Facebook"
+msgstr ""
+
+#: footer.php:111
+msgid "Twitter"
+msgstr ""
+
+#: footer.php:116
+msgid "LinkedIn"
+msgstr ""
+
+#: footer.php:121
+msgid "Google +"
+msgstr ""
+
+#: footer.php:126
+msgid "Instagram"
+msgstr ""
+
+#: footer.php:131
+msgid "Pinterest"
+msgstr ""
+
+#: footer.php:136
+msgid "Tumblr"
+msgstr ""
+
+#: footer.php:141
+msgid "Youtube"
+msgstr ""
+
+#: footer.php:145
+msgid "RSS"
+msgstr ""
+
 #: footer.php:156
 msgid "&copy; Copyright"
 msgstr ""

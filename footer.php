@@ -103,46 +103,46 @@
 							<div class="social-profile">
 								<?php if ( ! empty( $mp_artwork_facebook_link ) ): ?>
 									<a href="<?php echo $mp_artwork_facebook_link; ?>" class="button-facebook"
-									   title="Facebook"
+									   title="<?php _e( 'Facebook', 'artwork-lite' ); ?>"
 									   target="_blank"><i class="fa fa-facebook"></i></a>
 								<?php endif; ?>
 								<?php if ( ! empty( $mp_artwork_twitter_link ) ): ?>
 									<a href="<?php echo $mp_artwork_twitter_link; ?>" class="button-twitter"
-									   title="Twitter"
+									   title="<?php _e( 'Twitter', 'artwork-lite' ); ?>"
 									   target="_blank"><i class="fa fa-twitter"></i></a>
 								<?php endif; ?>
 								<?php if ( ! empty( $mp_artwork_linkedin_link ) ): ?>
 									<a href="<?php echo $mp_artwork_linkedin_link; ?>" class="button-linkedin"
-									   title="LinkedIn"
+									   title="<?php _e( 'LinkedIn', 'artwork-lite' ); ?>"
 									   target="_blank"><i class="fa fa-linkedin"></i></a>
 								<?php endif; ?>
 								<?php if ( ! empty( $mp_artwork_google_plus_link ) ): ?>
 									<a href="<?php echo $mp_artwork_google_plus_link; ?>" class="button-google"
-									   title="Google +"
+									   title="<?php _e( 'Google +', 'artwork-lite' ); ?>"
 									   target="_blank"><i class="fa fa-google-plus"></i></a>
 								<?php endif; ?>
 								<?php if ( ! empty( $mp_artwork_instagram_link ) ): ?>
 									<a href="<?php echo $mp_artwork_instagram_link; ?>" class="button-instagram"
-									   title="Instagram"
+									   title="<?php _e( 'Instagram', 'artwork-lite' ); ?>"
 									   target="_blank"><i class="fa fa-instagram"></i></a>
 								<?php endif; ?>
 								<?php if ( ! empty( $mp_artwork_pinterest_link ) ): ?>
 									<a href="<?php echo $mp_artwork_pinterest_link; ?>" class="button-pinterest"
-									   title="Pinterest"
+									   title="<?php _e( 'Pinterest', 'artwork-lite' ); ?>"
 									   target="_blank"><i class="fa fa-pinterest"></i></a>
 								<?php endif; ?>
 								<?php if ( ! empty( $mp_artwork_tumblr_link ) ): ?>
 									<a href="<?php echo $mp_artwork_tumblr_link; ?>" class="button-tumblr"
-									   title="Tumblr"
+									   title="<?php _e( 'Tumblr', 'artwork-lite' ); ?>"
 									   target="_blank"><i class="fa fa-tumblr"></i></a>
 								<?php endif; ?>
 								<?php if ( ! empty( $mp_artwork_youtube_link ) ): ?>
 									<a href="<?php echo $mp_artwork_youtube_link; ?>" class="button-youtube"
-									   title="Youtube"
+									   title="<?php _e( 'Youtube', 'artwork-lite' ); ?>"
 									   target="_blank"><i class="fa fa-youtube"></i></a>
 								<?php endif; ?>
 								<?php if ( ! empty( $mp_artwork_rss_link ) ): ?>
-									<a href="<?php echo $mp_artwork_rss_link; ?>" class="button-rss" title="Rss"
+									<a href="<?php echo $mp_artwork_rss_link; ?>" class="button-rss" title="<?php _e( 'RSS', 'artwork-lite' ); ?>"
 									   target="_blank"><i
 											class="fa fa-rss"></i></a>
 								<?php endif; ?>
