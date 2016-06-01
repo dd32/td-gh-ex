@@ -47,6 +47,7 @@
 /* Change "Save & Publish" button color to be grey */
 .wp-core-ui #customize-header-actions .button-primary {
     color: #555 !important;
+	text-shadow: none !important;
     border-color: #ccc !important;
     background: #f7f7f7 !important;
     -webkit-box-shadow: inset 0 1px 0 #fff,0 1px 0 rgba(0,0,0,.08) !important;
@@ -407,12 +408,17 @@
 #customize-controls li[id*="thinkup_redux_variables-thinkup_homepage_section"] textarea,
 #customize-controls li[id*="thinkup_redux_variables-thinkup_homepage_section"] input,
 #customize-controls li[id*="thinkup_redux_variables-thinkup_homepage_section"] .redux-select-item {
-	max-width: 340px;
+	width: 100% !important;
+	max-width: 340px !important;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
+}
+.redux-container [id*="section-thinkup_redux_variables-thinkup_homepage_section"] input[type=checkbox],
+#customize-controls li[id*="thinkup_redux_variables-thinkup_homepage_section"] input[type=checkbox] {
+	width: auto !important;
 }
 .redux-container [id*="section-thinkup_redux_variables-thinkup_homepage_section"] textarea,
 #customize-controls li[id*="thinkup_redux_variables-thinkup_homepage_section"] textarea {
