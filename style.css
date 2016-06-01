@@ -4,15 +4,15 @@ Theme URI: http://www.thinkupthemes.com/free/renden-free/
 Author: ThinkUpThemes
 Author URI: http://www.ThinkUpThemes.com
 Description: Renden is the free version of the multi-purpose professional theme (Renden Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.2.1
+Version: 1.2.10
 License: GNU General Public License
 License URI: /licenses/license.txt
-Tags: black, dark, red, one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background
+Tags: black, dark, red, one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background, grid-layout, footer-widgets, blog, e-commerce, education, entertainment, news, photography, portfolio
 Text Domain: renden
 */
 
 /*  TABLE OF CONTENTS
-00. @IMPORT
+00. IMPORT
 01. RESET
 02. GLOBAL
 03. STRUCTURE
@@ -54,7 +54,7 @@ Text Domain: renden
 */
 
 /* ---------------------------------------------------------------------------------------
-	00. @IMPORT
+	00. IMPORT
 --------------------------------------------------------------------------------------- */
 
 
@@ -314,6 +314,8 @@ input::-moz-focus-inner {
 input[type=text],
 input[type=email],
 input[type=password],
+input[type=search],
+input[type=tel],
 select,
 textarea {
 	background: white;
@@ -323,6 +325,8 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 input[type=password]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
 select:focus,
 textarea:focus {
 	background: #fff;
@@ -392,10 +396,14 @@ a:visited {
 .alignleft {
 	display: inline;
 	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
 }
 .alignright {
 	display: inline;
 	float: right;
+	margin-left: 20px;
+	margin-bottom: 10px;
 }
 .aligncenter {
 	clear: both;
@@ -615,6 +623,7 @@ li.pag-next {
 	transition: all 0.3s ease;
 }
 #logo img {
+	width: auto;
 	max-height: 60px;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -737,8 +746,9 @@ li.pag-next {
 }
 
 /* Pre-header - Alignment */
-#pre-header li.alignright{
+#pre-header li.alignright {
 	float: right;
+	margin: 0;
 }
 
 /* Pre-header - Icon Styling */
@@ -861,6 +871,9 @@ li.pag-next {
 }
 #header .header-links .menu-hover > .sub-menu {
 	margin-left: -16px;
+}
+#header .header-links .sub-menu li {
+	float: none;
 }
 #header .header-links .sub-menu a {
 	color: #232323;
@@ -1463,7 +1476,7 @@ li.pag-next {
 	vertical-align: middle;
 }
 #intro #breadcrumbs .delimiter {
-	padding: 0px 2px;
+	padding: 0px 5px;
 }
 #intro #breadcrumbs a {
 	color: #e0484c;
@@ -1472,6 +1485,7 @@ li.pag-next {
 	color: inherit;
 }
 #intro #breadcrumbs-core {
+	display: inline-block;
 	text-align: right;
 }
 #intro #breadcrumbs-home {
@@ -2194,6 +2208,7 @@ ul.pricing-table:after,
 	padding: 2px 0;
 }
 #footer .widget li a { 
+	display: inline-block;
 	padding: 1px 0px 1px 0px;
 }
 
@@ -2824,9 +2839,6 @@ ul.pricing-table:after,
 	background: #232323;
 }
 
-#footer .thinkup_widget_tagscloud a:nth-child(3n) {
-	margin-right: 0;
-}
 #footer .thinkup_widget_tagscloud a {
 	color: #FFF;
 	text-align: center;
@@ -3108,7 +3120,7 @@ ul.pricing-table:after,
 	font-weight: 600;
 	line-height: 1.2;
 	text-transform: uppercase;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 .blog-article .blog-title a {
 	color: inherit; 
@@ -3137,10 +3149,12 @@ ul.pricing-table:after,
 }
 .blog-article .entry-meta a,
 .blog-article .entry-meta i {
+	color:inherit;
 }
 .blog-article .entry-meta a {
 }
 .blog-article .entry-meta a:hover {
+	color: #e0484c;
 }
 .blog-article .entry-meta i {
 	font-size: 110%;
@@ -3274,15 +3288,19 @@ ul.pricing-table:after,
 .single .post-title {
 	font-size: 30px;
 	text-transform: uppercase;
+	margin: 0;
 }
 
 /* Meta content */
+.single .entry-meta {
+	margin-bottom: 20px;
+}
 .single .entry-meta,
 .single .entry-meta a {
-	color: #e0484c;
+	color: inherit;
 }
 .single .entry-meta a:hover {
-	color: inherit;
+	color: #e0484c;
 }
 .single .entry-meta > span {
 	margin-right: 10px;
@@ -5125,20 +5143,6 @@ ul.iconfont i {
 /* PROGRESS BARS
 ------------------------------------------------------------------ */
 
-.sc-progress {
-display: table;
-width: 100%;
-margin-bottom: 15px
-}
-
-.sc-progress .bar-title,
-.sc-progress .progress {
-display: table-cell;
-vertical-align: middle;
-}
-.sc-progress .bar-title {
-width: 150px;
-}
 span.bar-title,
 span.bar-per {
 	font-size: 14px;

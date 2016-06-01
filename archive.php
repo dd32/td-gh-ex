@@ -9,7 +9,7 @@ get_header(); ?>
 
 			<?php if( have_posts() ): ?>
 
-				<div id="container" class="portfolio-wrapper">
+				<div id="container">
 
 				<?php while( have_posts() ): the_post(); ?>
 
@@ -25,8 +25,8 @@ get_header(); ?>
 
 						<div class="entry-content<?php thinkup_input_stylelayout_class2(); ?><?php thinkup_input_blogcommentclass(); ?>">
 
-							<?php thinkup_input_blogmeta(); ?>
 							<?php thinkup_input_blogtitle(); ?>
+							<?php thinkup_input_blogmeta(); ?>
 							<?php thinkup_input_blogtext(); ?>
 
 						</div><div class="clearboth"></div>

@@ -621,11 +621,11 @@ global $thinkup_general_customjavafront;
 
 	if ( ! empty( $thinkup_general_customjavafront ) ) {
 	echo 	'<script type="text/javascript">',
-			"\n" . esc_js( $thinkup_general_customjavafront ) . "\n",
+			"\n" . wp_kses_post( $thinkup_general_customjavafront ) . "\n",
 			'</script>' . "\n";
 	}
 }
-add_action( 'wp_footer', 'thinkup_custom_javafront' );
+//add_action( 'wp_footer', 'thinkup_custom_javafront' );
 
 
 ?>

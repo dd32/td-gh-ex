@@ -469,19 +469,19 @@
 				'validate'                   => 'css',
 			),
 
-			array(
-				'title'                      => __('Custom jQuery - Front End', 'redux-framework'),
-				$thinkup_subtitle_panel      => __('Developers can use this to apply custom jQuery which will only affect the front end of the website.<br /><br />Use this to control your site by adding great jQuery features.', 'redux-framework'),
-				$thinkup_subtitle_customizer => __('Developers can use this to apply custom jQuery which will only affect the front end of the website.<br /><br />Use this to control your site by adding great jQuery features.', 'redux-framework'),
-				'id'                         => 'thinkup_general_customjavafront',
-				'type'                       => 'textarea',
-				'validate'                   => 'html',
-			),
+//			array(
+//				'title'                      => __('Custom jQuery - Front End', 'redux-framework'),
+//				$thinkup_subtitle_panel      => __('Developers can use this to apply custom jQuery which will only affect the front end of the website.<br /><br />Use this to control your site by adding great jQuery features.', 'redux-framework'),
+//				$thinkup_subtitle_customizer => __('Developers can use this to apply custom jQuery which will only affect the front end of the website.<br /><br />Use this to control your site by adding great jQuery features.', 'redux-framework'),
+//				'id'                         => 'thinkup_general_customjavafront',
+//				'type'                       => 'textarea',
+//				'validate'                   => 'js',
+//			),
 
 			// Ensures ThinkUpThemes custom code is output
 			array(
-				'title'    => __('', 'redux-framework'), 
-				'subtitle' => __('', 'redux-framework'),
+				'title'    => __('Custom Code', 'redux-framework'), 
+				'subtitle' => __('Custom Code', 'redux-framework'),
 				'id'       => 'thinkup_customization',
 				'type'     => 'thinkup_custom_code',
 			),
@@ -684,7 +684,7 @@
 				$thinkup_subtitle_customizer => __('Input a custom url for the action button link.<br>Add http:// if linking to an external webpage.', 'redux-framework'),
 				'id'                         => 'thinkup_homepage_introactioncustom1',
 				'type'                       => 'text',
-				'validate'                   => 'url',
+				'validate'                   => 'html',
 				'required'                   => array( 
 					array( 'thinkup_homepage_introactionlink1', '=', 
 						array( 'option2' ),
@@ -696,11 +696,11 @@
 
 
 	// -----------------------------------------------------------------------------------
-	//	2.2.	Home Content				
+	//	2.2.	Homepage (Featured)
 	// -----------------------------------------------------------------------------------
 
 	Redux::setSection( $opt_name, array(
-		'title'      => __('Homepage (Content)', 'redux-framework'),
+		'title'      => __('Homepage (Featured)', 'redux-framework'),
 		'desc'       => __('<span class="redux-title">Display Pre-Designed Homepage Layout</span>', 'redux-framework'),
 		'icon_class' => '',
 		'icon'       => 'el el-pencil',
@@ -1092,7 +1092,7 @@
 				'desc'     => __('Input the url to your Facebook page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'       => 'thinkup_header_facebooklink',
 				'type'     => 'text',
-				'validate' => 'url',
+				'validate' => 'html',
 				'required' => array( 
 					array( 'thinkup_header_facebookswitch', '=', 
 						array( '1' ),
@@ -1136,7 +1136,7 @@
 				'desc'     => __('Input the url to your Twitter page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'       => 'thinkup_header_twitterlink',
 				'type'     => 'text',
-				'validate' => 'url',
+				'validate' => 'html',
 				'required' => array( 
 					array( 'thinkup_header_twitterswitch', '=', 
 						array( '1' ),
@@ -1180,7 +1180,7 @@
 				'desc'     => __('Input the url to your Google+ page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'       => 'thinkup_header_googlelink',
 				'type'     => 'text',
-				'validate' => 'url',
+				'validate' => 'html',
 				'required' => array( 
 					array( 'thinkup_header_googleswitch', '=', 
 						array( '1' ),
@@ -1224,7 +1224,7 @@
 				'desc'     => __('Input the url to your LinkedIn page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'       => 'thinkup_header_linkedinlink',
 				'type'     => 'text',
-				'validate' => 'url',
+				'validate' => 'html',
 				'required' => array( 
 					array( 'thinkup_header_linkedinswitch', '=', 
 						array( '1' ),
@@ -1268,7 +1268,7 @@
 				'desc'     => __('Input the url to your Flickr page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'       => 'thinkup_header_flickrlink',
 				'type'     => 'text',
-				'validate' => 'url',
+				'validate' => 'html',
 				'required' => array( 
 					array( 'thinkup_header_flickrswitch', '=', 
 						array( '1' ),
@@ -1312,7 +1312,7 @@
 				'desc'     => __('Input the url to your Pinterest page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'       => 'thinkup_header_pinterestlink',
 				'type'     => 'text',
-				'validate' => 'url',
+				'validate' => 'html',
 				'required' => array( 
 					array( 'thinkup_header_pinterestswitch', '=', 
 						array( '1' ),
@@ -1356,7 +1356,7 @@
 				'desc'     => __('Input the url to your YouTube page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'       => 'thinkup_header_youtubelink',
 				'type'     => 'text',
-				'validate' => 'url',
+				'validate' => 'html',
 				'required' => array( 
 					array( 'thinkup_header_youtubeswitch', '=', 
 						array( '1' ),
@@ -1400,7 +1400,7 @@
 				'desc'     => __('Input the url to your RSS page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'       => 'thinkup_header_rsslink',
 				'type'     => 'text',
-				'validate' => 'url',
+				'validate' => 'html',
 				'required' => array( 
 					array( 'thinkup_header_rssswitch', '=', 
 						array( '1' ),

@@ -72,7 +72,7 @@
 
                         $( '.cb-enable', parent ).removeClass( 'selected' );
                         $( this ).addClass( 'selected' );
-                        $( '.checkbox-input', parent ).val( 0 ).trigger('change');
+                        $( '.checkbox-input', parent ).val( 'off' ).trigger('change'); // TUT Customization - Sets value to "off" when switch is turned off.
 
                         redux_change( $( '.checkbox-input', parent ) );
 

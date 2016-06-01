@@ -29,27 +29,27 @@ body.wp-customizer .wp-full-overlay-sidebar .wp-full-overlay-header {
 ---------------------------------------------------------------------------------------------------------- */
 
 /* Change "Upgrade (10% off)" tab hover color */
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux > h3.accordion-section-title,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux:hover > h3.accordion-section-title,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux h3.accordion-section-title:hover,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux.open h3.accordion-section-title,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux h3.accordion-section-title:focus,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux:hover > h3.accordion-section-title,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux h3.accordion-section-title:hover,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux.open h3.accordion-section-title,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux h3.accordion-section-title:focus {
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux > h3.accordion-section-title,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux:hover > h3.accordion-section-title,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux h3.accordion-section-title:hover,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux.open h3.accordion-section-title,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux h3.accordion-section-title:focus,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux:hover > h3.accordion-section-title,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux h3.accordion-section-title:hover,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux.open h3.accordion-section-title,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux h3.accordion-section-title:focus {
     color: #fff !important;
     background: #0067CE !important;
 }
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux > h3.accordion-section-title:after,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux:hover > h3.accordion-section-title:after,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux h3.accordion-section-title:hover:after,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux.open h3.accordion-section-title:after,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux h3.accordion-section-title:focus:after,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux:hover > h3.accordion-section-title:after,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux h3.accordion-section-title:hover:after,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux.open h3.accordion-section-title:after,
-.admin-color-fresh #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux h3.accordion-section-title:focus:after {
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux > h3.accordion-section-title:after,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux:hover > h3.accordion-section-title:after,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux h3.accordion-section-title:hover:after,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux.open h3.accordion-section-title:after,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux h3.accordion-section-title:focus:after,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux:hover > h3.accordion-section-title:after,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux h3.accordion-section-title:hover:after,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux.open h3.accordion-section-title:after,
+#customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux h3.accordion-section-title:focus:after {
     color: #fff !important;
 }
 

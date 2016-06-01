@@ -93,6 +93,74 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.10
+- Fixed:   Checkbox field saves as as "off" when unticked.
+- Fixed:   Switch field saves as as "off" when switched off.
+- Fixed:   Full post content on blog archive pages only displayed if explicitly set by user in theme options.
+- Fixed:   Custom social media icons now applied to footer social media icons as well as header social media icons.
+- Fixed:   Masonry script now output on all archive pages. Fixes issue where masonry layout didn't work on category and tags pages.
+- Updated: Links in breadcrumb function sanitized.
+- Updated: thinkup_input_wptitle() outputs at start of wp_head().
+- Updated: style-shortcodes.css updated to be consistent with all themes.
+- Updated: Link to gmpg.org in header.php now compatible with https sites.
+- Updated: All references to textdomain 'themecheck' changed to 'redux-framework'.
+- Updated: Links to widgets page changed from /wp-admin/widgets.php to esc_url( admin_url( 'widgets.php' ) ).
+- Updated: Homepage (Content) section renamed to Homepage (Featured) to make it clear that the section is intended for minimal content.
+- Updated: Theme tags updated to reflect new tags. Old rags will be removed once WP v4.6 is released and users can no longer filter with old tags.
+- Removed: alert( 'test000' ); removed from jquery.serializeForm.js.
+- Removed: //alert( 'test11-22' ); removed from extension_customizer.min.js.
+- Removed: Code for sc-progress removed from style.css as it's not being used and causes design issues.
+- Removed: Deregistered redux scripts removed for compliance with .org requirements 'wpb_ace' and 'jquerySelect2'.
+
+Version 1.2.9
+- Fixed:   Post content displayed on main blog page can be set by user using core WordPress <!--more--> tag.
+- Updated: Logo image width set to "auto".
+
+Version 1.2.8
+- Fixed:   PHP notices fixed for comments form - changes made comments.php file.
+- Fixed:   Custom titles now display correctly on mobile layouts. Issue previously caused titles to be squashed on smaller screens.
+- Updated: Minor css changes made in style.css to header, breadcrumbs and footer links.
+
+Version 1.2.7
+- Updated: Post share icons now display correctly on single post pages.
+- Updated: Image dimensions for column3-1/3 size changed to be 380px x 127px.
+- Removed: Old files .mo and .po removed.
+- Removed: Function thinkup_check_premium() removed as it has no purpose in the theme.
+
+Version 1.2.6
+- Fixed:   Function home_page_menu_args() renamed to thinkup_menu_homelink() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Updated: Social media links in pre-header now open in new tab.
+- Updated: Translation .pot file added. Old files .mo and .po removed.
+- Updated: Portfolio masonry container checks updated in main-frontend.js.
+- Updated: Variable $open_sans renamed to $font_translate in function thinkup_googlefonts_url().
+- Updated: Function thinkup_add_menuclass() renamed to thinkup_input_menuclass() to be inline with proper naming convention.
+- Updated: Function thinkup_get_comments_number_str() renamed to thinkup_comments_returnstring() to be inline with proper naming convention.
+- Updated: Function thinkup_get_comments_popup_link() renamed to thinkup_input_commentspopuplink() to be inline with proper naming convention.
+
+Version 1.2.5
+- Updated: This is same as v1.2.4. Theme is being updated and released again as v1.2.4 didn't upload successfully to wordpress.org.
+
+Version 1.2.4
+- Fixed:   Disables sortable slides in Customizer. This prevents issues where phantom slides still appear after deleting slides.
+- Updated: Various minor styling updates for theme options in customizer.
+
+Version 1.2.3
+- Fixed:   "$this->_extension_url" used for redux extensions fixed to ensure custom extensions are loaded correctly on all sites.
+
+Version 1.2.2
+- Fixed:   Floating elements now cleared within template-archive.php using class "clearboth".
+- Fixed:   Floating elements now cleared within template-sitemap.php using class "clearboth".
+- Fixed:   Link to font-awesome in admin area now works correctly. Previously showed 404 error.
+- Updated: Redux notices prevented from displaying.
+- Updated: Post title and displays above post meta on blog pages.
+- Updated: Validation for links changed from "url" to "html" to allow for links to inner pages.
+- Updated: input specific type styling extended to include input[type=search] and  input[type=tel].
+- Updated: Post meta links on blog page now have the same color as standard text, and go red on hover.
+- Updated: Class ".portfolio-wrapper" added to all instances of ID "#container" where a masonry layout is used.
+- Updated: Margin removed from alignright class if used in #pre-header to ensure pre-header height displays correctly.
+- Removed: References to "filters.svg#grayscale" removed from style-shortcodes.css.
+- Removed: Custom JS option in customizer removed. Can potentially cause issues with customizer if user specified JS is incorrect.
+
 Version 1.2.1
 - New:     Homepage featured content now allows for both a 3 column and 4 column layout to be used.
 - Fixed:   Slider images now always dispaly when image is selected. Small number of users didn't see thumbnail on backend.

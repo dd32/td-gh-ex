@@ -116,7 +116,7 @@ global $thinkup_general_breadcrumbdelimeter;
 		$output .= '<div id="breadcrumbs"><div id="breadcrumbs-core">';
 		global $post, $cat;
 		$homeLink = home_url( '/' );
-		$output .= '<a href="' . $homeLink . '">' . $main . '</a>' . $delimiter;    
+		$output .= '<a href="' . esc_url( $homeLink ) . '">' . esc_html( $main ) . '</a>' . $delimiter;    
 
 		/* Display breadcrumbs for single post */
 		if ( is_single() ) {
@@ -136,9 +136,9 @@ global $thinkup_general_breadcrumbdelimeter;
 					$count_loop++;
 
 					if ( $count_loop < $count_categories ) {
-						$output .= '<a href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a>' . $delimiter_inner; 
+						$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->cat_name ) . '</a>' . $delimiter_inner; 
 					} else {
-						$output .= '<a href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a>'; 
+						$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->cat_name ) . '</a>'; 
 					}
 				}
 				
@@ -169,7 +169,7 @@ global $thinkup_general_breadcrumbdelimeter;
 			foreach( $post_array as $key=>$postid ){
 				$post_ids = get_post( $postid );
 				$title = $post_ids->post_title;
-				$output  .= '<a href="' . get_permalink($post_ids) . '">' . $title . '</a>' . $delimiter;
+				$output  .= '<a href="' . esc_url( get_permalink( $post_ids ) ) . '">' . esc_html( $title ) . '</a>' . $delimiter;
 			}
 			$output .= get_the_title();
 		} elseif ( is_author() ) {
@@ -298,7 +298,7 @@ if ( ! function_exists( 'thinkup_input_addimagesizes' ) ) {
 
 		// 3 Column Layout
 		add_image_size( 'column3-1/1', 380, 380, true );
-		add_image_size( 'column3-1/3', 320, 107, true );
+		add_image_size( 'column3-1/3', 380, 127, true );
 		add_image_size( 'column3-2/5', 380, 152, true );	
 		add_image_size( 'column3-2/3', 380, 254, true );
 		add_image_size( 'column3-3/4', 380, 285, true );
@@ -349,11 +349,11 @@ if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {
 //	ADD HOME: HOME TO CUSTOM MENU PAGE LIST
 //----------------------------------------------------------------------------------
 
-function home_page_menu_args( $args ) {
+function thinkup_menu_homelink( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'thinkup_menu_homelink' );
 
 
 //----------------------------------------------------------------------------------
@@ -412,11 +412,11 @@ function thinkup_check_ishome() {
 
 
 //----------------------------------------------------------------------------------
-//	ADD CUSTOM 'get_comments_popup_link' FUNCTION - Credit to http://www.thescubageek.com/code/wordpress-code/add-get_comments_popup_link-to-wordpress/
+//	ADD CUSTOM COMMENTS POP UP LINK FUNCTION - Credit to http://www.thescubageek.com/code/wordpress-code/add-get_comments_popup_link-to-wordpress/
 //----------------------------------------------------------------------------------
 
 // Modifies WordPress's built-in comments_popup_link() function to return a string instead of echo comment results
-function thinkup_get_comments_popup_link( $zero = false, $one = false, $more = false, $css_class = '', $none = false ) {
+function thinkup_input_commentspopuplink( $zero = false, $one = false, $more = false, $css_class = '', $none = false ) {
     global $wpcommentspopupfile, $wpcommentsjavascript;
  
     $id = get_the_ID();
@@ -464,14 +464,14 @@ function thinkup_get_comments_popup_link( $zero = false, $one = false, $more = f
     $str .= apply_filters( 'comments_popup_link_attributes', '' );
  
     $str .= ' title="' . esc_attr( sprintf( __('Comment on %s','renden'), $title ) ) . '">';
-    $str .= thinkup_get_comments_number_str( $zero, $one, $more );
+    $str .= thinkup_comments_returnstring( $zero, $one, $more );
     $str .= '</a>';
      
     return $str;
 }
  
 // Modifies WordPress's built-in comments_number() function to return string instead of echo
-function thinkup_get_comments_number_str( $zero = false, $one = false, $more = false, $deprecated = '' ) {
+function thinkup_comments_returnstring( $zero = false, $one = false, $more = false, $deprecated = '' ) {
     if ( !empty( $deprecated ) )
         _deprecated_argument( __FUNCTION__, '1.3' );
  
@@ -492,14 +492,14 @@ function thinkup_get_comments_number_str( $zero = false, $one = false, $more = f
 //	CHANGE FALLBACK WP_PAGE_MENU CLASSES TO MATCH WP_NAV_MENU CLASSES
 //----------------------------------------------------------------------------------
 
-function thinkup_add_menuclass( $ulclass ) {
+function thinkup_input_menuclass( $ulclass ) {
 
 	$ulclass = preg_replace( '/<ul>/', '<ul class="menu">', $ulclass, 1 );
 	$ulclass = str_replace( 'children', 'sub-menu', $ulclass );
 
 	return preg_replace('/<div (.*)>(.*)<\/div>/iU', '$2', $ulclass );
 }
-add_filter( 'wp_page_menu', 'thinkup_add_menuclass' );
+add_filter( 'wp_page_menu', 'thinkup_input_menuclass' );
 
 
 //----------------------------------------------------------------------------------
@@ -573,13 +573,13 @@ function thinkup_posts_custom_columns($column_name, $id){
 function thinkup_googlefonts_url() {
     $fonts_url = '';
 
-    // Translators: Translate thsi to 'off' if there are characters in your language that are not supported by Open Sans
-    $open_sans = _x( 'on', 'Open Sans font: on or off', 'renden' );
+    // Translators: Translate this to 'off' if there are characters in your language that are not supported by Open Sans
+    $font_translate = _x( 'on', 'Open Sans font: on or off', 'renden' );
  
-    if ( 'off' !== $open_sans ) {
+    if ( 'off' !== $font_translate ) {
         $font_families = array();
   
-        if ( 'off' !== $open_sans ) {
+        if ( 'off' !== $font_translate ) {
             $font_families[] = 'Open Sans:300,400,600,700';
         }
  

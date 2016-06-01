@@ -144,15 +144,14 @@ global $thinkup_blog_link;
 
 // Input post excerpt / content to blog page
 function thinkup_input_blogtext() {
-global $more;
 global $post;
 global $thinkup_blog_postswitch;
 
-	// Output post thumbnail / featured media
+	// Output post content
 	if ( is_search() ) {
 		the_excerpt();
 	} else if ( ! is_search() ) {
-		if ( $thinkup_blog_postswitch == 'option1' or empty( $thinkup_blog_postswitch ) ) {
+		if ( ( empty( $thinkup_blog_postswitch ) or $thinkup_blog_postswitch == 'option1' ) and ! is_numeric( strpos( $post->post_content, '<!--more-->' ) ) ) {
 			the_excerpt();
 		} else if ( $thinkup_blog_postswitch == 'option2' ) {		
 			the_content();
@@ -309,6 +308,8 @@ $class_comment = NULL;
 
 	echo '<header class="entry-header' . $class_comment . '">';
 
+	echo '<h3 class="post-title">' . esc_attr( get_the_title() ) . '</h3>';
+
 	echo '<div class="entry-meta">';
 		thinkup_input_blogdate();
 		thinkup_input_blogauthor();
@@ -316,8 +317,6 @@ $class_comment = NULL;
 		thinkup_input_blogcategory();
 		thinkup_input_blogtag();
 	echo '</div>';
-
-	echo '<h3 class="post-title">' . esc_attr( get_the_title() ) . '</h3>';
 
 	echo '<div class="clearboth"></div></header><!-- .entry-header -->';
 }
@@ -353,25 +352,25 @@ global $post;
 		echo	'</div>';
 		echo	'<div id="shareicons" class="">';
 		if ( $thinkup_post_sharefacebook == '1' ) {
-			echo '<a class="shareicon facebook" onclick="MyWindow=window.open(&#39;//www.facebook.com/sharer.php?u=' . esc_url( get_permalink() ) . '&#38;t=' . esc_attr($page_title ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//www.facebook.com/sharer.php?u=' . esc_url( get_permalink() ) . '&#38;t=' . esc_attr( $page_title ) . '" data-tip="top" data-original-title="Facebook"><i class="icon-facebook"></i></a>';
+			echo '<a class="shareicon facebook" onclick="MyWindow=window.open(&#39;//www.facebook.com/sharer.php?u=' . esc_url( get_permalink() ) . '&#38;t=' . esc_attr($page_title ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//www.facebook.com/sharer.php?u=' . esc_url( get_permalink() ) . '&#38;t=' . esc_attr( $page_title ) . '" data-tip="top" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>';
 		}
 		if ( $thinkup_post_sharetwitter == '1' ) {
-			echo '<a class="shareicon twitter" onclick="MyWindow=window.open(&#39;//twitter.com/home?status=Check%20this%20out!%20' . esc_attr( $page_title ) . '%20at%20' . esc_url( get_permalink() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//twitter.com/home?status=Check%20this%20out!%20' . esc_attr( $page_title ) . '%20at%20' . esc_url( get_permalink() ) . '" data-tip="top" data-original-title="Twitter"><i class="icon-twitter"></i></a>';
+			echo '<a class="shareicon twitter" onclick="MyWindow=window.open(&#39;//twitter.com/home?status=Check%20this%20out!%20' . esc_attr( $page_title ) . '%20at%20' . esc_url( get_permalink() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//twitter.com/home?status=Check%20this%20out!%20' . esc_attr( $page_title ) . '%20at%20' . esc_url( get_permalink() ) . '" data-tip="top" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>';
 		}
 		if ( $thinkup_post_sharegoogle == '1' ) {
-			echo '<a class="shareicon Google" onclick="MyWindow=window.open(&#39;//plus.google.com/share?url=' . esc_url( get_permalink() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//plus.google.com/share?url=' . esc_url( get_permalink() ) . '" data-tip="top" data-original-title="Google+"><i class="icon-google-plus"></i></a>';
+			echo '<a class="shareicon Google" onclick="MyWindow=window.open(&#39;//plus.google.com/share?url=' . esc_url( get_permalink() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//plus.google.com/share?url=' . esc_url( get_permalink() ) . '" data-tip="top" data-original-title="Google+"><i class="fa fa-google-plus"></i></a>';
 		}
 		if ( $thinkup_post_sharelinkedin =='1' ) {
-			echo '<a class="shareicon linkedin" onclick="MyWindow=window.open(&#39;//linkedin.com/shareArticle?mini=true&url=' . esc_url( get_permalink() ) . '&summary=' . esc_attr( $page_title ) . '&source=LinkedIn&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//linkedin.com/shareArticle?mini=true&url=' . esc_url( get_permalink() ) . '&summary=' . esc_attr( $page_title ) . '&source=LinkedIn" data-tip="top" data-original-title="LinkedIn"><i class="icon-linkedin"></i></a>';
+			echo '<a class="shareicon linkedin" onclick="MyWindow=window.open(&#39;//linkedin.com/shareArticle?mini=true&url=' . esc_url( get_permalink() ) . '&summary=' . esc_attr( $page_title ) . '&source=LinkedIn&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//linkedin.com/shareArticle?mini=true&url=' . esc_url( get_permalink() ) . '&summary=' . esc_attr( $page_title ) . '&source=LinkedIn" data-tip="top" data-original-title="LinkedIn"><i class="fa fa-linkedin"></i></a>';
 		}
 		if ( $thinkup_post_sharetumblr == '1' ) {
-			echo '<a class="shareicon tumblr" data-tip="top" data-original-title="Tumblr" onclick="MyWindow=window.open(&#39;//www.tumblr.com/share/link?url=' . esc_url( get_permalink() ) . '&amp;name=' . esc_attr( $page_title ) . '&amp;description=' . esc_html( get_the_excerpt() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//www.tumblr.com/share/link?url=' . esc_url( get_permalink() ) . '&amp;name=' . esc_attr( $page_title ) . '&amp;description=' . esc_html( get_the_excerpt() ) . '"><i class="icon-tumblr"></i></a>';
+			echo '<a class="shareicon tumblr" data-tip="top" data-original-title="Tumblr" onclick="MyWindow=window.open(&#39;//www.tumblr.com/share/link?url=' . esc_url( get_permalink() ) . '&amp;name=' . esc_attr( $page_title ) . '&amp;description=' . esc_html( get_the_excerpt() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//www.tumblr.com/share/link?url=' . esc_url( get_permalink() ) . '&amp;name=' . esc_attr( $page_title ) . '&amp;description=' . esc_html( get_the_excerpt() ) . '"><i class="fa fa-tumblr"></i></a>';
 		}
 		if ( $thinkup_post_sharepinterest == '1' ) {
-			echo '<a class="shareicon pinterest" data-tip="top" data-original-title="Pinterest" onclick="MyWindow=window.open(&#39;//pinterest.com/pin/create/button/?url=' . esc_url( get_permalink() ) . '&amp;description=' . esc_attr( $page_title ) . '&amp;media=' . esc_url( wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//pinterest.com/pin/create/button/?url=' . esc_url( get_permalink() ) . '&amp;description=' . esc_attr( $page_title ) . '&amp;media=' . esc_url( wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ) . '"><i class="icon-pinterest"></i></a>';
+			echo '<a class="shareicon pinterest" data-tip="top" data-original-title="Pinterest" onclick="MyWindow=window.open(&#39;//pinterest.com/pin/create/button/?url=' . esc_url( get_permalink() ) . '&amp;description=' . esc_attr( $page_title ) . '&amp;media=' . esc_url( wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//pinterest.com/pin/create/button/?url=' . esc_url( get_permalink() ) . '&amp;description=' . esc_attr( $page_title ) . '&amp;media=' . esc_url( wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ) . '"><i class="fa fa-pinterest"></i></a>';
 		}
 		if ( $thinkup_post_shareemail == '1' ) {
-			echo	'<a class="shareicon email" data-tip="top" data-original-title="Email" onclick="MyWindow=window.open(&#39;mailto:?subject=' . esc_attr( $page_title ) . '&amp;body=' . esc_url( get_permalink() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="mailto:?subject=' . esc_attr( $page_title ) . '&amp;body=' . esc_url( get_permalink() ) . '"><i class="icon-envelope"></i></a>';
+			echo	'<a class="shareicon email" data-tip="top" data-original-title="Email" onclick="MyWindow=window.open(&#39;mailto:?subject=' . esc_attr( $page_title ) . '&amp;body=' . esc_url( get_permalink() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="mailto:?subject=' . esc_attr( $page_title ) . '&amp;body=' . esc_url( get_permalink() ) . '"><i class="fa fa-envelope"></i></a>';
 		}
 		echo	'</div>';		
 	echo	'</div>';
