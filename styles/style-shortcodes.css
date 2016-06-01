@@ -800,6 +800,7 @@ div.wpcf7-mail-sent-ok {
     display: block;
 }
 .sc-grid .entry-header {
+	overflow: hidden;
 	position: relative;
 }
 .sc-grid .entry-header .image-overlay {

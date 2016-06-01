@@ -724,11 +724,11 @@
 
 
 	// -----------------------------------------------------------------------------------
-	//	2.2.	Home Content				
+	//	2.2.	Homepage (Featured)
 	// -----------------------------------------------------------------------------------
 
 	Redux::setSection( $opt_name, array(
-		'title'      => __('Homepage (Content)', 'redux-framework'),
+		'title'      => __('Homepage (Featured)', 'redux-framework'),
 		'desc'       => __('<span class="redux-title">Display Pre-Designed Homepage Layout</span>', 'redux-framework'),
 		'icon_class' => '',
 		'icon'       => 'el el-pencil',

@@ -41,7 +41,7 @@ global $thinkup_blog_postswitch;
 	} else if ( ! is_search() ) {
 		if ( ( empty( $thinkup_blog_postswitch ) or $thinkup_blog_postswitch == 'option1' ) and ! is_numeric( strpos( $post->post_content, '<!--more-->' ) ) ) {
 			the_excerpt();
-		} else {
+		} else if ( $thinkup_blog_postswitch == 'option2' ) {
 			the_content();
 		}
 	}
