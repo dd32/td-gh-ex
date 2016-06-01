@@ -1,24 +1,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TopShop\n"
-"POT-Creation-Date: 2015-09-09 09:25+0200\n"
-"PO-Revision-Date: 2015-09-09 09:25+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2016-06-01 15:20+0200\n"
+"PO-Revision-Date: 2016-06-01 15:20+0200\n"
+"Last-Translator: Kaira <zack@kairaweb.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_attr\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
+"__ngettext_noop:1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;"
+"esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: js/waypoints.js\n"
-"X-Poedit-SearchPathExcluded-1: js/waypoints.min.js\n"
-"X-Poedit-SearchPathExcluded-2: js/waypoints-custom.js\n"
-"X-Poedit-SearchPathExcluded-3: js/waypoints-sticky.js\n"
-"X-Poedit-SearchPathExcluded-4: js/waypoints-sticky.min.js\n"
+"X-Poedit-SearchPathExcluded-0: js\n"
 
 #: comments.php:35 comments.php:52
 msgid "Comment navigation"
@@ -63,7 +61,7 @@ msgid "Buy TopShop Premium"
 msgstr ""
 
 #: customizer/customizer-library/custom-controls/upsell.php:28
-msgid "TopShop Premium is only <b>$15</b><br />See the <a href=\""
+msgid "Upgrade for only $20"
 msgstr ""
 
 #: customizer/customizer-library/extensions/fonts.php:115
@@ -106,68 +104,73 @@ msgstr ""
 msgid "Vietnamese"
 msgstr ""
 
-#: customizer/customizer-options.php:31 customizer/customizer-options.php:38
-msgid "Favicon"
+#: customizer/customizer-library/extensions/fonts.php:184
+msgctxt "font style"
+msgid "Serif"
 msgstr ""
 
-#: customizer/customizer-options.php:33
-msgid "Add a favicon to your website"
+#: customizer/customizer-library/extensions/fonts.php:188
+msgctxt "font style"
+msgid "Sans Serif"
 msgstr ""
 
-#: customizer/customizer-options.php:50
+#: customizer/customizer-library/extensions/fonts.php:192
+msgctxt "font style"
+msgid "Monospaced"
+msgstr ""
+
+#: customizer/customizer-options.php:32
 msgid "Layout Options"
 msgstr ""
 
-#: customizer/customizer-options.php:57 upgrade/kaira-upgrade-page.php:21
+#: customizer/customizer-options.php:39
 msgid "Site Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:65 upgrade/kaira-upgrade-page.php:33
+#: customizer/customizer-options.php:47
 msgid "Header Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:72
+#: customizer/customizer-options.php:54
 msgid "Show Search"
 msgstr ""
 
-#: customizer/customizer-options.php:75
+#: customizer/customizer-options.php:57
 msgid "Enable to a slogan for your site. This uses the site Tagline"
 msgstr ""
 
-#: customizer/customizer-options.php:80
+#: customizer/customizer-options.php:62
 msgid "Sticky Header"
 msgstr ""
 
-#: customizer/customizer-options.php:83
+#: customizer/customizer-options.php:65
 msgid "Select this box to make the main navigation sticky"
 msgstr ""
 
-#: customizer/customizer-options.php:88
+#: customizer/customizer-options.php:70
 msgid "Show Top Bar"
 msgstr ""
 
-#: customizer/customizer-options.php:91
+#: customizer/customizer-options.php:73
 msgid ""
-"This will show/hide the top bar in the header<br /><a href=\"http://kairaweb."
-"com/support/topic/settings-not-showing-on-theme/\" target=\"_blank\">Not "
-"working? See here</a><br /><br /><a href=\"http://kairaweb.com/support/topic/"
-"topshop-hooks-for-developers/\" target=\"_blank\">TopShop Premium has hooks</"
-"a> integrated for developers to hook on to."
+"This will show/hide the top bar in the header<br /><br /><a href=\"http://"
+"kairaweb.com/support/topic/topshop-hooks-for-developers/\" target=\"_blank"
+"\">TopShop Premium has hooks</a> integrated for developers to hook on to."
 msgstr ""
 
-#: customizer/customizer-options.php:101 upgrade/kaira-upgrade-page.php:79
+#: customizer/customizer-options.php:83
 msgid "Slider Options"
 msgstr ""
 
-#: customizer/customizer-options.php:112
+#: customizer/customizer-options.php:94
 msgid "Choose a Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:120
+#: customizer/customizer-options.php:102
 msgid "Slider Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:123
+#: customizer/customizer-options.php:105
 msgid ""
 "Enter the ID's of the post categories you want to display in the slider. Eg: "
 "\"13,17,19\" (no spaces and only comma's)<br /><a href=\"http://kairaweb.com/"
@@ -175,75 +178,78 @@ msgid ""
 "instructions here</b></a>"
 msgstr ""
 
-#: customizer/customizer-options.php:127
+#: customizer/customizer-options.php:109
 msgid "Slider Shortcode"
 msgstr ""
 
-#: customizer/customizer-options.php:130
-msgid "Enter the shortcode give by meta slider."
+#: customizer/customizer-options.php:112
+msgid ""
+"For a more advanced slider we recommend <a href=\"https://getdpd.com/cart/"
+"hoplink/15318?referrer=9jtzbgs34v8k4c0gs\" target=\"_blank\">Meta Slider</"
+"a><br /><br />Enter the slider shortcode here"
 msgstr ""
 
-#: customizer/customizer-options.php:136
+#: customizer/customizer-options.php:118
 msgid "Extra Slider Settings"
 msgstr ""
 
-#: customizer/customizer-options.php:148
+#: customizer/customizer-options.php:130
 msgid "Styling Options"
 msgstr ""
 
-#: customizer/customizer-options.php:154
+#: customizer/customizer-options.php:136
 msgid "Main Color"
 msgstr ""
 
-#: customizer/customizer-options.php:161
+#: customizer/customizer-options.php:143
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:169
+#: customizer/customizer-options.php:151
 msgid "Body Font"
 msgstr ""
 
-#: customizer/customizer-options.php:177
+#: customizer/customizer-options.php:159
 msgid "Body Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:184
+#: customizer/customizer-options.php:166
 msgid "Headings Font"
 msgstr ""
 
-#: customizer/customizer-options.php:192
+#: customizer/customizer-options.php:174
 msgid "Heading Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:201
+#: customizer/customizer-options.php:183
 msgid "Extra Styling options"
 msgstr ""
 
-#: customizer/customizer-options.php:208
+#: customizer/customizer-options.php:190
 msgid "Custom CSS"
 msgstr ""
 
-#: customizer/customizer-options.php:212
+#: customizer/customizer-options.php:194
 msgid "Add custom CSS to your theme"
 msgstr ""
 
-#: customizer/customizer-options.php:221
+#: customizer/customizer-options.php:203
 msgid "Blog Options"
 msgstr ""
 
-#: customizer/customizer-options.php:228
+#: customizer/customizer-options.php:210
 msgid "Blog Post Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:234
+#: customizer/customizer-options.php:216
 msgid "Blog Page Title"
 msgstr ""
 
-#: customizer/customizer-options.php:241
+#: customizer/customizer-options.php:223
 msgid "Exclude Blog Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:244
+#: customizer/customizer-options.php:226
 msgid ""
 "Enter the ID's of the post categories you'd like to EXCLUDE from the Blog, "
 "enter only the ID's with a minus sign (-) before them, separated by a comma "
@@ -251,74 +257,74 @@ msgid ""
 "then it'll show ONLY posts in those categories."
 msgstr ""
 
-#: customizer/customizer-options.php:252
+#: customizer/customizer-options.php:234
 msgid "Blog List Image"
 msgstr ""
 
-#: customizer/customizer-options.php:265 upgrade/kaira-upgrade-page.php:90
+#: customizer/customizer-options.php:247
 msgid "Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:272
+#: customizer/customizer-options.php:254
 msgid "Add Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:283
+#: customizer/customizer-options.php:265
 msgid "Website Text"
 msgstr ""
 
-#: customizer/customizer-options.php:289
+#: customizer/customizer-options.php:271
 msgid "Header Info Text"
 msgstr ""
 
-#: customizer/customizer-options.php:292
+#: customizer/customizer-options.php:274
 msgid "Call Us: 082 444 BOOM"
 msgstr ""
 
-#: customizer/customizer-options.php:293
+#: customizer/customizer-options.php:275
 msgid "This is the text in the header"
 msgstr ""
 
-#: customizer/customizer-options.php:298
+#: customizer/customizer-options.php:280
 msgid "Site Copy Text"
 msgstr ""
 
-#: customizer/customizer-options.php:304
+#: customizer/customizer-options.php:286
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:307
+#: customizer/customizer-options.php:289
 msgid "Oops! <span>404</span>"
 msgstr ""
 
-#: customizer/customizer-options.php:308
+#: customizer/customizer-options.php:290
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: customizer/customizer-options.php:312
+#: customizer/customizer-options.php:294
 msgid "Error 404 Message"
 msgstr ""
 
-#: customizer/customizer-options.php:315
+#: customizer/customizer-options.php:297
 msgid ""
 "It looks like that page does not exist. <br />Return home or try a search"
 msgstr ""
 
-#: customizer/customizer-options.php:316
+#: customizer/customizer-options.php:298
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: customizer/customizer-options.php:320
+#: customizer/customizer-options.php:302
 msgid "No Search Results"
 msgstr ""
 
-#: customizer/customizer-options.php:323
+#: customizer/customizer-options.php:305
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: customizer/customizer-options.php:324
+#: customizer/customizer-options.php:306
 msgid "Enter the default text for when no search results are found"
 msgstr ""
 
@@ -342,51 +348,47 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: functions.php:49
+#: functions.php:67
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:50
+#: functions.php:68
 msgid "Top Bar Menu"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:117
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:127
 msgid "TopShop Footer"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:129
 msgid "The footer will divide into however many widgets are put here."
 msgstr ""
 
-#: functions.php:227
+#: functions.php:204
 #, php-format
 msgid ""
 "<p>Install the plugins we at <a href=\"http://www.kairaweb.com/\" target="
 "\"_blank\">Kaira</a> recommended | <a href=\"%1$s\">Hide Notice</a></p>"
 msgstr ""
 
-#: functions.php:228
+#: functions.php:205
 msgid "WooCommerce"
 msgstr ""
 
-#: functions.php:229
+#: functions.php:206
 msgid "SiteOrigin's Page Builder"
 msgstr ""
 
-#: functions.php:230
+#: functions.php:207
 msgid "Meta Slider"
 msgstr ""
 
-#: functions.php:231
+#: functions.php:208
 msgid "Breadcrumb NavXT"
-msgstr ""
-
-#: functions.php:289
-msgid "TOPSHOP Premium"
 msgstr ""
 
 #: includes/inc/extras.php:64
@@ -408,6 +410,28 @@ msgstr ""
 
 #: includes/inc/template-tags.php:52
 msgid "Post navigation"
+msgstr ""
+
+#: includes/inc/template-tags.php:55
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
+msgstr ""
+
+#: includes/inc/template-tags.php:56
+msgctxt "Next post link"
+msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: includes/inc/template-tags.php:82
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: includes/inc/template-tags.php:87
+#, php-format
+msgctxt "post author"
+msgid "by %s"
 msgstr ""
 
 #: includes/inc/template-tags.php:104 includes/inc/template-tags.php:110
@@ -456,14 +480,74 @@ msgstr ""
 msgid "Year: %s"
 msgstr ""
 
+#: includes/inc/template-tags.php:145
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
 #: includes/inc/template-tags.php:147
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
+#: includes/inc/template-tags.php:147
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
 #: includes/inc/template-tags.php:149
 #, php-format
 msgid "Day: %s"
+msgstr ""
+
+#: includes/inc/template-tags.php:149
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: includes/inc/template-tags.php:151
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: includes/inc/template-tags.php:153
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: includes/inc/template-tags.php:155
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: includes/inc/template-tags.php:157
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: includes/inc/template-tags.php:159
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: includes/inc/template-tags.php:161
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: includes/inc/template-tags.php:163
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: includes/inc/template-tags.php:165
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: includes/inc/template-tags.php:167
+msgctxt "post format archive title"
+msgid "Chats"
 msgstr ""
 
 #: includes/inc/template-tags.php:169
@@ -485,14 +569,27 @@ msgstr ""
 msgid "View your shopping cart"
 msgstr ""
 
-#: includes/inc/woocommerce-inc.php:14
-#: templates/header/header-layout-standard.php:67
-msgid "Checkout"
-msgstr ""
+#: includes/inc/woocommerce-inc.php:11
+#: templates/header/header-layout-standard.php:64
+#, php-format
+msgid "(%d)"
+msgid_plural "(%d)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: search.php:22
 #, php-format
 msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:9
+msgctxt "placeholder"
+msgid "Search&hellip;"
+msgstr ""
+
+#: searchform.php:11
+msgctxt "submit button"
+msgid "&nbsp;"
 msgstr ""
 
 #: templates/header/header-layout-standard.php:57
@@ -507,7 +604,7 @@ msgstr ""
 msgid "Sign In / Register"
 msgstr ""
 
-#: templates/header/header-layout-standard.php:89
+#: templates/header/header-layout-standard.php:86
 msgid "Menu"
 msgstr ""
 
@@ -531,79 +628,207 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:11
+#: upgrade/tpl/upgrade-page.php:4
+msgid "Premium Upgrade"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:12
+#, php-format
 msgid ""
-"<a href=\"http://www.kairaweb.com/\" target=\"_blank\">Visit our website</a> "
-"to view our other Themes and Plugins"
+"Sometimes emails take a while... Please <a href='%s' target='_blank'>Read "
+"here</a> for an easy upgrade."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:13
+#: upgrade/tpl/upgrade-page.php:17
+msgid "<span>Purchase Now </span><em>$20</em>"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:19
+msgid "Already have one?"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:23
+msgid "Enter your Order Number"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:26
+msgid "After purchase you should receive an email with your order number."
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:29
+msgid "Please be patient as this email can take a few minutes to come through."
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:36
+msgid "Get Upgrade"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:42
+#, php-format
 msgid ""
-"<a href=\"http://app.sellwire.net/p/TV\" target=\"_blank\"><big>Upgrade to "
-"Premium</big></a> for only <big><b>$15</b></big>"
+"If you need to look up your order number, please <a href='%s' "
+"target='_blank'>search here</a> using your <strong>PayPal email address</"
+"strong>.<br />"
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:15
+#: upgrade/tpl/upgrade-page.php:43
+msgid "Also, be sure to check your spam folder if you can't find it."
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:53 upgrade/tpl/upgrade-page.php:59
+msgid "Upgrade to Premium"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:56
 msgid ""
-"TopShop Premium now has a <a href=\"http://support.kairaweb.com/"
-"knowledgebase/topshop-hooks-for-developers/\" target=\"_blank\">list of "
-"hooks</a> added for developers to hook on to."
+"If you've enjoyed using our TopShop theme to build your website, then you "
+"should love the premium version which comes with a bunch of extra features "
+"for a low cost of <strong>$20</strong>.<br /><br />With TopShop premium we "
+"offer continued updates and you'll get prioritized support to help you build "
+"the website you want."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:28
+#: upgrade/tpl/upgrade-page.php:64 upgrade/tpl/upgrade-page.php:70
+msgid "Continued Updates"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:67
 msgid ""
-"<a href=\"http://app.sellwire.net/p/TV\" target=\"_blank\">Upgrade to "
-"premium</a> to enable the option to select between the website being full "
-"width or boxed layout."
+"Once you upgrade to TopShop Premium, you'll then support and move over to "
+"our premium updates system which will ensure TopShop works with all future "
+"versions of WordPress that are released."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:40
+#: upgrade/tpl/upgrade-page.php:75 upgrade/tpl/upgrade-page.php:81
+msgid "Get Premium Support"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:78
 msgid ""
-"Enable the option to select between two different header layouts, standard "
-"or centered layout."
+"Upgrading to TopShop Premium will also give you prioritized support, "
+"ensuring we get to your queries first.<br /><br />We have a growing <a "
+"href='https://kairaweb.com/support/' target='_blank'>support forum</a> on "
+"our website as well as <a href='https://kairaweb.com/support-contact/' "
+"target='_blank'>email support</a> to sort out any queries you may have."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:45
-msgid "Extra Styling Settings"
-msgstr ""
-
-#: upgrade/kaira-upgrade-page.php:51
+#: upgrade/tpl/upgrade-page.php:92
 msgid ""
-"On premium we've also ebabled the option to choose your own color for the "
-"Navigation and the Footer."
+"We aim to keep our prices low, all our themes are under <strong>$30</"
+"strong>, while still offering you great WordPress themes."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:56
-msgid "Blog Posts Layout"
-msgstr ""
-
-#: upgrade/kaira-upgrade-page.php:63
+#: upgrade/tpl/upgrade-page.php:94
 msgid ""
-"Enable the option to select between two different blog layouts, side layout "
-"or top layout."
+"Upgrading will support us and enable us to keep building WordPress themes."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:68
-msgid "Blog Width"
-msgstr ""
-
-#: upgrade/kaira-upgrade-page.php:74
+#: upgrade/tpl/upgrade-page.php:96
+#, php-format
 msgid ""
-"Enable the option to make the blog (and archive/search pages) full width."
+"If you like our themes and/or found our support helpful, please let us know "
+"by <a href='%s' target='_blank'>giving us a review</a>."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:85
-msgid "Enable extra settings on the default slider."
+#: upgrade/tpl/upgrade-page.php:100
+msgid "Theme Ratings"
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:96
-msgid "Enable social links on the theme to link to all your social profiles."
+#: upgrade/tpl/upgrade-page.php:112
+msgid "SpySunny"
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:101
-msgid "Website copy text"
+#: upgrade/tpl/upgrade-page.php:115
+msgid "Very user-friendly theme with etopshoplent support."
 msgstr ""
 
-#: upgrade/kaira-upgrade-page.php:107
-msgid "Change the website copy to link out to your own website."
+#: upgrade/tpl/upgrade-page.php:121
+msgid "Fitoni"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:124
+msgid ""
+"What a great theme!! been using it for a long time, very clean code, easy to "
+"use, easy to customize, really cant say any wrong about it!!!<br /><br /"
+">Give it a try and you will not be dissapointed! this theme is THE BEST!!"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:130
+msgid "NayWordPress"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:133
+msgid ""
+"I've purchased the Premium Theme for my Online Store. Very awesome! Support "
+"assistance 100&#37; available, easy to customize. I recommend it to everyone "
+"who want to build a Store Online. Really practicable for E-commerce."
+msgstr ""
+
+#: upgrade/update.php:93
+msgid ""
+"An Unexpected HTTP Error occurred during the API request.</p> <p><a href=\"?"
+"\" onclick=\"document.location.reload(); return false;\">Try again</a>"
+msgstr ""
+
+#: upgrade/update.php:98
+msgid "An unknown error occurred"
+msgstr ""
+
+#: upgrade/upgrade.php:13
+msgid "Premium"
+msgstr ""
+
+#: upgrade/upgrade.php:76
+msgid "Order Number"
+msgstr ""
+
+#: upgrade/upgrade.php:83
+msgid "Order Number: "
+msgstr ""
+
+#: upgrade/upgrade.php:88
+msgid "There was a problem contacting our validation servers."
+msgstr ""
+
+#: upgrade/upgrade.php:89 upgrade/upgrade.php:126
+msgid ""
+"Please try again later, or upgrade manually using the ZIP file we sent you."
+msgstr ""
+
+#: upgrade/upgrade.php:93 upgrade/upgrade.php:130
+msgid "Back"
+msgstr ""
+
+#: upgrade/upgrade.php:102
+msgid "We've validated your order number, and it works!"
+msgstr ""
+
+#: upgrade/upgrade.php:106
+#, php-format
+msgid ""
+"You can now update your theme on the <a href=\"%s\">Themes page</a>,<br /"
+">but <strong>please note</strong> this can take a few minutes to show up so "
+"please be patient :)"
+msgstr ""
+
+#: upgrade/upgrade.php:110
+msgid "This update will add all the premium features."
+msgstr ""
+
+#: upgrade/upgrade.php:115
+msgid ""
+"Updating may lose the theme settings you've made to the free version. Click "
+"'OK' to update."
+msgstr ""
+
+#: upgrade/upgrade.php:117
+msgid "Update Theme Now"
+msgstr ""
+
+#: upgrade/upgrade.php:124
+msgid "We couldn't validate your order number."
+msgstr ""
+
+#: upgrade/upgrade.php:125
+msgid "There might be a problem with our validation server."
 msgstr ""

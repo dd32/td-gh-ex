@@ -71,6 +71,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.8
+* Styling tweaks
+* Added new mobile slide out menu
+* WooCommerce styling fixes
+* Added new easier upgrade system -('upgrade' folder)-(user doesn't lose old settings)-(has been approved for WordPress.org by reviewers)
+* Updated the language .pot file
+
 #### 1.2.7
 * Fix help link
 

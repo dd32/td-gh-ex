@@ -4,7 +4,25 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.2.7' );
+define( 'TOPSHOP_THEME_VERSION' , '1.2.8' );
+
+// Is ONLY USED IF the user prompts for the premium update
+define( 'TOPSHOP_UPDATE_URL', 'https://updates.kairaweb.com/' );
+// Upgrade / Order Premium page
+require get_template_directory() . '/upgrade/upgrade.php';
+require get_template_directory() . '/upgrade/update.php';
+
+// Load WP included scripts
+require get_template_directory() . '/includes/inc/template-tags.php';
+require get_template_directory() . '/includes/inc/extras.php';
+require get_template_directory() . '/includes/inc/jetpack.php';
+require get_template_directory() . '/includes/inc/customizer.php';
+
+// Load Customizer Library scripts
+require get_template_directory() . '/customizer/customizer-options.php';
+require get_template_directory() . '/customizer/customizer-library/customizer-library.php';
+require get_template_directory() . '/customizer/styles.php';
+require get_template_directory() . '/customizer/mods.php';
 
 if ( ! function_exists( 'topshop_theme_setup' ) ) :
 /**
@@ -161,52 +179,11 @@ function topshop_print_styles() {
 }
 add_action('wp_head', 'topshop_print_styles', 11);
 
-// Add the favicon to the header if set
-function topshop_site_favicon() {
-    if ( get_theme_mod( 'topshop-header-favicon', false ) ) :
-        echo '<link rel="icon" href="' . esc_url( get_theme_mod( 'topshop-header-favicon' ) ) . '">';
-    endif;
-}
-add_action('wp_head', 'topshop_site_favicon');
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/includes/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/includes/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/includes/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/includes/inc/jetpack.php';
-
-// Helper library for the theme customizer.
-require get_template_directory() . '/customizer/customizer-library/customizer-library.php';
-
-// Define options for the theme customizer.
-require get_template_directory() . '/customizer/customizer-options.php';
-
-// Output inline styles based on theme customizer selections.
-require get_template_directory() . '/customizer/styles.php';
-
-// Additional filters and actions based on theme customizer selections.
-require get_template_directory() . '/customizer/mods.php';
-
 /**
  * Enqueue topshop custom customizer styling.
  */
 function topshop_load_customizer_script() {
     wp_enqueue_script( 'topshop-customizer-js', get_template_directory_uri() . '/customizer/customizer-library/js/customizer-custom.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
-    
     wp_enqueue_style( 'topshop-customizer-css', get_template_directory_uri() . '/customizer/customizer-library/css/customizer.css' );
 }    
 add_action( 'customize_controls_enqueue_scripts', 'topshop_load_customizer_script' );
@@ -280,25 +257,6 @@ function topshop_set_blog_queries( $query ) {
 add_action( 'pre_get_posts', 'topshop_set_blog_queries' );
 
 /**
- * Display the upgrade to Premium page & losd styles.
- *
- * @action admin_menu
- */
-function topshop_premium_admin_menu() {
-    global $topshop_upgrade_page;
-    $topshop_upgrade_page = add_theme_page( __( 'TOPSHOP Premium', 'topshop' ), __( 'TOPSHOP Premium', 'topshop' ), 'edit_theme_options', 'premium_upgrade', 'topshop_upgrade_page_render' );
-}
-
-add_action( 'admin_menu', 'topshop_premium_admin_menu' );
-
-/**
- * Render the theme upgrade page
- */
-function topshop_upgrade_page_render() {
-    locate_template( 'upgrade/kaira-upgrade-page.php', true, false );
-}
-
-/**
  * Exclude the selected slider category from the categories widget
  */
 function topshop_exclude_slider_categories_widget( $args ) {
@@ -310,16 +268,3 @@ function topshop_exclude_slider_categories_widget( $args ) {
 	return $args;
 }
 add_filter( 'widget_categories_args', 'topshop_exclude_slider_categories_widget' );
-
-/**
- * Enqueue TopShop admin stylesheet only on upgrade page.
- */
-function topshop_load_admin_style($hook) {
-    global $topshop_upgrade_page;
- 
-    if( $hook != $topshop_upgrade_page ) 
-        return;
-    
-    wp_enqueue_style( 'topshop-upgrade-css', get_template_directory_uri() . '/upgrade/css/kaira-admin.css' );
-}    
-add_action( 'admin_enqueue_scripts', 'topshop_load_admin_style' );

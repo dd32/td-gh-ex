@@ -232,7 +232,7 @@ display: inline-block;font-size: 13px;}
     margin: 8px 0 0;
     text-shadow: none;
 }
-/*.woocommerce ul.products li.product a.added_to_cart,
+.woocommerce ul.products li.product a.added_to_cart,
 .woocommerce-page ul.products li.product a.added_to_cart {
     width: 25px;
     overflow: hidden;
@@ -242,12 +242,6 @@ display: inline-block;font-size: 13px;}
     bottom: 5px;
     left: 65px;
     color: transparent;
-}*/
-.woocommerce ul.products li.product a.added_to_cart:before,
-.woocommerce-page ul.products li.product a.added_to_cart:before {
-    color: #FFF;
-    content: "\2713";
-    font-size: 26px;
 }
 
 .woocommerce ul.products li.product a:hover img,
@@ -292,7 +286,7 @@ display: inline-block;font-size: 13px;}
     border: 1px solid rgba(0, 0, 0, 0.14);
     padding: 9px 30px 10px;
     margin: 0 0 0 7px;
-    color: #FFF;
+    color: #FFF !important;
 }
 .woocommerce table.cart td.actions .coupon .input-text,
 .woocommerce-page #content table.cart td.actions .coupon .input-text,
@@ -776,7 +770,7 @@ display: inline-block;font-size: 13px;}
 
 /* -------- Responsive Styling -------- */
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 960px) {
     
     .woocommerce ul.products,
     .woocommerce-page ul.products {
@@ -791,7 +785,7 @@ display: inline-block;font-size: 13px;}
     
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 782px) {
     
     .woocommerce #customer_details,
     .woocommerce-page #customer_details {
@@ -805,10 +799,6 @@ display: inline-block;font-size: 13px;}
     .woocommerce-page #order_review {
         width: 100%;    
     }
-    
-}
-
-@media screen and (max-width: 769px) {
     
     .woocommerce ul.products,
     .woocommerce-page ul.products {
@@ -825,13 +815,19 @@ display: inline-block;font-size: 13px;}
     .woocommerce-page .cart-collaterals .cross-sells {
         margin: 0 auto;
         width: 80%;
+        float: none;
     }
     
+    .woocommerce .cart-collaterals .cart_totals table td,
+    .woocommerce-page .cart-collaterals .cart_totals table td {
+        width: 100%;
+    }
     .woocommerce .cart-collaterals .cart_totals,
     .woocommerce-page .cart-collaterals .cart_totals {
         text-align: center;
         margin: 0 auto;
         width: 80%;
+        float: none;
     }
     
     .woocommerce .cart-collaterals .cart_totals table,

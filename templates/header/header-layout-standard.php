@@ -13,7 +13,7 @@
             <div class="site-top-bar-right">
                 
                 <?php if ( topshop_is_woocommerce_activated() ) : ?>
-                    <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', false ) ) ?></div>
+                    <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
                 <?php endif; ?>
                 
                 <?php if( get_theme_mod( 'topshop-header-search', false ) ) : ?>
@@ -72,7 +72,7 @@
         <?php
         } else { ?>
             
-            <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', false ) ) ?></div>
+            <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
             
         <?php
         } ?>
@@ -83,12 +83,12 @@
 </div>
 
 <nav id="site-navigation" class="main-navigation <?php echo ( get_theme_mod( 'topshop-sticky-header', false ) ) ? ' header-stick' : ''; ?>" role="navigation">
-    
-    <div class="site-container">
-        
-        <button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Menu', 'topshop' ); ?></button>
-        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-        
+    <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php _e( 'Menu', 'topshop' ); ?></span></span>
+    <div id="main-menu" class="main-menu-container">
+        <span class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></span>
+        <div class="site-container">
+            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+            <div class="clearboth"></div>
+        </div>
     </div>
-    
 </nav><!-- #site-navigation -->

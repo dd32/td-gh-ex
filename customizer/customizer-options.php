@@ -22,24 +22,6 @@ function customizer_library_topshop_options() {
 
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
-
-	// Logo
-	$section = 'topshop-favicon';
-    
-	$sections[] = array(
-		'id' => $section,
-		'title' => __( 'Favicon', 'topshop' ),
-		'priority' => '10',
-		'description' => __( 'Add a favicon to your website', 'topshop' )
-	);
-    
-	$options['topshop-header-favicon'] = array(
-		'id' => 'topshop-header-favicon',
-		'label'   => __( 'Favicon', 'topshop' ),
-		'section' => $section,
-		'type'    => 'image',
-		'default' => '',
-	);
     
     
     // Layout Settings
@@ -73,7 +55,7 @@ function customizer_library_topshop_options() {
         'section' => $section,
         'type'    => 'checkbox',
         'description' => __( 'Enable to a slogan for your site. This uses the site Tagline', 'topshop' ),
-        'default' => 1,
+        'default' => 0,
     );
     $options['topshop-sticky-header'] = array(
         'id' => 'topshop-sticky-header',
@@ -88,8 +70,8 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Show Top Bar', 'topshop' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'This will show/hide the top bar in the header<br /><a href="http://kairaweb.com/support/topic/settings-not-showing-on-theme/" target="_blank">Not working? See here</a><br /><br /><a href="http://kairaweb.com/support/topic/topshop-hooks-for-developers/" target="_blank">TopShop Premium has hooks</a> integrated for developers to hook on to.', 'topshop' ),
-        'default' => 1,
+        'description' => __( 'This will show/hide the top bar in the header<br /><br /><a href="http://kairaweb.com/support/topic/topshop-hooks-for-developers/" target="_blank">TopShop Premium has hooks</a> integrated for developers to hook on to.', 'topshop' ),
+        'default' => 0,
     );
     
     
@@ -127,7 +109,7 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Slider Shortcode', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
-        'description' => __( 'Enter the shortcode give by meta slider.', 'topshop' )
+        'description' => __( 'For a more advanced slider we recommend <a href="https://getdpd.com/cart/hoplink/15318?referrer=9jtzbgs34v8k4c0gs" target="_blank">Meta Slider</a><br /><br />Enter the slider shortcode here', 'topshop' )
     );
     
     // Upsell Button Slider

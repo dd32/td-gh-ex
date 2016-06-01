@@ -28,7 +28,8 @@
         <div class="clearboth"></div>
 	</div>
 	
-</footer><!-- #colophon -->
+</footer> <!-- .site-footer -->
+</div>  <!-- #page -->
 <?php wp_footer(); ?>
 </body>
 </html>

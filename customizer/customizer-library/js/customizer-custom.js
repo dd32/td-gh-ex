@@ -18,11 +18,14 @@
             if ( select_value == 'topshop-slider-default' ) {
                 $( '#customize-control-topshop-meta-slider-shortcode' ).hide();
                 $( '#customize-control-topshop-slider-cats' ).show();
+                $( '#customize-control-topshop-upsell-two-one' ).show();
             } else if ( select_value == 'topshop-meta-slider' ) {
                 $( '#customize-control-topshop-slider-cats' ).hide();
+                $( '#customize-control-topshop-upsell-two-one' ).hide();
                 $( '#customize-control-topshop-meta-slider-shortcode' ).show();
             } else {
                 $( '#customize-control-topshop-slider-cats' ).hide();
+                $( '#customize-control-topshop-upsell-two-one' ).hide();
                 $( '#customize-control-topshop-meta-slider-shortcode' ).hide();
             }
         }
