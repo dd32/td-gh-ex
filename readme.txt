@@ -44,7 +44,13 @@ and we will include it within the theme from next version update.
 
 /**********************************************************/
 
-== CHANGE LOG ==
+== Changelog ==
+
+= Version 1.4.0 =
+* Tweaks - Updated theme tags as per new introduced tags
+* Tweaks - Introduced welcome page for theme.
+* Fix - Removed deprecated load() function used for slider-setting script.
+
 = Version 1.3.9 =
 * Fix - WooCommerce shop error fixed.
 * Fix - Box and Wide at 978px Layout issue on Tab is fixed.
