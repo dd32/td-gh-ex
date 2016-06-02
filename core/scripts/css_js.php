@@ -22,11 +22,35 @@
                 wp_enqueue_script('bhumi_theme_script', BHUMI_TEMPLATE_DIR_URI .'/assets/js/bhumi_theme_script.js');
                 if(is_front_page()){
                         //Footer JS//
-        		wp_enqueue_script('bhumi_footer_script', BHUMI_TEMPLATE_DIR_URI .'/assets/js/bhumi-footer-script.js','','',true);
-        		wp_enqueue_script('bhumi_waypoints', BHUMI_TEMPLATE_DIR_URI .'/assets/js/waypoints.js','','',true);
-        		wp_enqueue_script('bhumi_scroll', BHUMI_TEMPLATE_DIR_URI .'/assets/js/scroll.js','','',true);
-		}
+                		wp_enqueue_script('bhumi_footer_script', BHUMI_TEMPLATE_DIR_URI .'/assets/js/bhumi-footer-script.js','','',true);
+                		wp_enqueue_script('bhumi_waypoints', BHUMI_TEMPLATE_DIR_URI .'/assets/js/waypoints.js','','',true);
+                		wp_enqueue_script('bhumi_scroll', BHUMI_TEMPLATE_DIR_URI .'/assets/js/scroll.js','','',true);
+        		}
                 if ( is_singular() ) wp_enqueue_script( "comment-reply" );
         }
         add_action('wp_enqueue_scripts', 'bhumi_scripts');
+
+        function bhumi_load_custom_wp_admin_style() {
+                    wp_register_script( 'bhumi_admin_cat_script', BHUMI_TEMPLATE_DIR_URI .'/assets/js/bhumi_admin_cat.js');
+
+                    // Localize the script with new data
+                    $service_slug = get_category_by_slug( 'service-slug' );
+                    $service_id = "";
+                    $slider_slug = get_category_by_slug( 'slider-slug' );
+                    $slider_id = "";
+                    if(!empty($service_slug)){
+                        $service_id = $service_slug->term_id;
+                    }
+                    if(!empty($slider_slug)){
+                        $slider_id = $slider_slug->term_id;
+                    }
+                    $translation_array = array(
+                        'service_id' => $service_id,
+                        'slider_id'  => $slider_id,
+                    );
+                    wp_localize_script( 'bhumi_admin_cat_script', 'object_name', $translation_array );
+                    wp_enqueue_script('bhumi_admin_cat_script');
+        }
+        add_action( 'admin_enqueue_scripts', 'bhumi_load_custom_wp_admin_style' );
+
 ?>

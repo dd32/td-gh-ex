@@ -14,7 +14,20 @@ if($cpm_theme_options['blog_title'] !='') { ?>
 	<div class="container">
 	<div class="row" id="bhumi_blog_section">
 	<?php 	if ( have_posts()) :
-			$args = array( 'post_type' => 'post','post_status'=>'publish','posts_per_page' => 6 ,'ignore_sticky_posts' => 1);
+			$args = array(
+				'post_type' => 'post',
+				'post_status'=>'publish',
+				'posts_per_page' => 6 ,
+				'ignore_sticky_posts' => 1,
+				'tax_query' => array(
+	                  array(
+	                    'taxonomy' => 'category',
+	                    'field'    => 'slug',
+	                    'terms'    => array( 'portfolio-slug','slider-slug','service-slug' ),
+	                    'operator' => 'NOT IN',
+	                  ),
+                ),
+				);
 			$post_type_data = new WP_Query( $args );
 			while($post_type_data->have_posts()):
 			$post_type_data->the_post(); ?>

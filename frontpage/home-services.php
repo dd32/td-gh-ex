@@ -1,5 +1,18 @@
 <!-- service section -->
-<?php $cpm_theme_options = bhumi_get_options(); ?>
+<?php $cpm_theme_options = bhumi_get_options();
+$bhumi_service_arg = array(
+	'post_type'      => 'post',
+	'posts_per_page' => 4,
+	'post_status'    => 'publish',
+	'order'          => 'desc',
+	'orderby'        => 'date',
+	'category_name' => 'service-slug',
+	);
+$bhumi_service_query = new WP_Query($bhumi_service_arg);
+if($bhumi_service_query->have_posts()):
+
+
+?>
 <div class="bhumi_service">
 <?php if($cpm_theme_options['home_service_heading'] !='') { ?>
 <div class="container">
@@ -14,22 +27,31 @@
 <?php } ?>
 <div class="container">
 		<div class="row isotope" id="isotope-service-container">
-			<?php for($i=1; $i<5; $i++ ) {
-				    if($cpm_theme_options['service_'.$i.'_icons'] !='' && $cpm_theme_options['service_'.$i.'_title'] !='' && $cpm_theme_options['service_'.$i.'_text'] !='' ) { ?>
+			<?php
+			while($bhumi_service_query->have_posts()):
+				$bhumi_service_query->the_post();
+					$value = get_post_meta( $post->ID, 'service_class', true );
+				     ?>
 						<div class=" col-md-3 service">
 							<div class="bhumi_service_area appear-animation bounceIn appear-animation-visible">
-								<?php if($cpm_theme_options['service_'.$i.'_icons'] !='') { ?>
-									<a class="bhumi_service_icon" href="#"><i class="fa <?php echo esc_attr($cpm_theme_options['service_'.$i.'_icons']); ?>"></i></a><?php } ?>
+									<?php if($value !='') { ?>
+										<a class="bhumi_service_icon" href="<?php the_permalink(); ?>"><i class="fa <?php echo esc_attr($value); ?>"></i></a>
+									<?php } ?>
 									<div class="bhumi_service_detail media-body">
-										<?php if($cpm_theme_options['service_'.$i.'_title'] !='') { ?><h3><a href="<?php echo esc_url($cpm_theme_options['service_'.$i.'_link']); ?>"><?php echo esc_attr($cpm_theme_options['service_'.$i.'_title']); ?></a></h3><?php } ?>
-										<?php if($cpm_theme_options['service_'.$i.'_text'] !='') { ?><p>
-										<?php echo apply_filters('bhumi_lite_content', wp_kses_post($cpm_theme_options['service_'.$i.'_text']), true); ?></p><?php } ?>
+										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+										</h3>
+										 <p>
+										<?php the_content(); ?></p>
 									</div>
 							</div>
 						</div>
-			        <?php }
-			} ?>
+			        <?php
+			endwhile;
+			wp_reset_postdata();
+			?>
 		</div>
 	</div>
 </div>
 <!-- /Service section -->
+<?php endif;
+wp_reset_query(); ?>

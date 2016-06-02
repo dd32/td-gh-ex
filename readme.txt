@@ -1,6 +1,6 @@
 === Bhumi - WordPress Theme by Code Themes ===
 Contributors: Code Themes
-Version: 1.0.5
+Version: 1.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: right-sidebar,two-columns,custom-menu, right-sidebar,featured-image-header,theme-options, threaded-comments, featured-images, flexible-header,footer-widgets, translation-ready ,rtl-language-support
@@ -118,3 +118,6 @@ Escaping and prefixing redone.
 
 = 1.0.5 =
 Deprecated tags removed
+
+= 1.1.0 =
+Post Categories used for slider,services and portfolio.

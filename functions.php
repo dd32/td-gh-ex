@@ -11,6 +11,7 @@
 	require( BHUMI_TEMPLATE_DIR_CORE . '/menu/bhumi_nav_walker.php' );
 	require( BHUMI_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here
 	require( BHUMI_TEMPLATE_DIR_CORE . '/comment-function.php' );
+	require( BHUMI_TEMPLATE_DIR_CORE . '/categories.php' );
 	require( BHUMI_TEMPLATE_DIR_ASSETS . '/inc/customizer.php');
 	require( BHUMI_TEMPLATE_DIR_ASSETS . '/inc/customizer-controls.php' );
 
@@ -125,6 +126,7 @@
 		//Blogs thumbs
 		add_image_size('bhumi_cpm_page_thumb',730,350,true);
 		add_image_size('bhumi_blog_2c_thumb',570,350,true);
+		add_image_size( 'bhumi_portfolio',524,364,array( 'center', 'center' ) );
 		add_theme_support( 'title-tag' );
 		// Load text domain for translation-ready
 		load_theme_textdomain( 'bhumi' );
