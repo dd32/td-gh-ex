@@ -139,10 +139,3 @@
 
 
 
-.box-container div:nth-child(4),.box-container div:nth-child(5),.box-container div:nth-child(6),.box-container div:nth-child(7),.box-container div:nth-child(8),.box-container div:nth-child(9),.box-container div:nth-child(10),.box-container div:nth-child(11) { display:none !important;}
-
-
-#section-features > div:nth-child(3),#section-features > div:nth-child(4),#section-features > div:nth-child(5),#section-features > div:nth-child(6),#section-features > div:nth-child(7) { display:none !important;}
-#our-team-advance > div:nth-child(3),#our-team-advance > div:nth-child(4),#our-team-advance > div:nth-child(5),#our-team-advance > div:nth-child(6),#our-team-advance > div:nth-child(7) {display:none !important;}
-
-#advance-clients >div:nth-child(2),#advance-clients >div:nth-child(3),#advance-clients >div:nth-child(4),#advance-clients >div:nth-child(5),#advance-clients >div:nth-child(6){display:none !important;} 

@@ -1,0 +1,269 @@
+<?php
+/*
+ *FRONTPAGE - POSTS SECTION WIDGET
+ */
+ 
+/**
+ * Custom walker to print category checkboxes for widget forms
+ */
+
+ 
+add_action( 'widgets_init', 'advance_register_front_posts' );
+
+/*
+ * Register widget.
+ */
+function advance_register_front_posts() {
+	register_widget( 'advance_front_posts' );
+}
+
+
+/*
+ * Widget class.
+ */
+class advance_front_Posts extends WP_Widget {
+
+	/* ---------------------------- */
+	/* -------- Widget setup -------- */
+	/* ---------------------------- */
+
+	function __construct() {
+		parent::__construct( 'advance_front_posts', __( 'Advance Posts Widget', 'advance' ), array(
+			'classname'   => 'advance_front_posts postsblck',
+			'description' => __( 'This Widget lets you display WordPress Posts, Pages and Woocommerce Products.', 'advance' ),
+		) );
+		
+	}
+
+	/* ---------------------------- */
+	/* ------- Display Widget -------- */
+	/* ---------------------------- */
+	
+	function widget( $args, $instance ) {
+
+		
+		extract( $args );
+		/* Our variables from the widget settings. */
+		$title = isset( $instance['title'] ) ? $instance['title'] : __('Our Work', 'advance');
+		$subtitle = isset( $instance['subtitle'] ) ? $instance['subtitle'] : __('Check Out Our Portfolio', 'advance');
+	    $count = isset( $instance['count'] ) ? absint($instance['count']) : '6';
+		$category = isset( $instance['category'] ) ? $instance['category'] : '';
+		$content_bg = isset( $instance['content_bg'] ) ? $instance['content_bg'] : 'rgb(255, 255, 255)';
+		$subtitle_textcolor = isset( $instance['subtitle_textcolor'] ) ? $instance['subtitle_textcolor'] : '';
+		$padtopbottom = isset( $instance['padtopbottom'] ) ? $instance['padtopbottom'] : '';
+		
+		
+
+		/* Before widget (defined by themes). */
+		echo $before_widget;?>
+		
+	<div class="latest-post-advance" style="<?php if (!empty($instance['content_bg'])): ?> background-color:<?php echo esc_attr($instance['content_bg']); ?> ;<?php endif; ?>  <?php if (!empty($padtopbottom)): ?>padding-top:<?php echo $padtopbottom ;?>%; padding-bottom:<?php echo $padtopbottom ;?>%;  <?php endif; ?>">	
+ <div class=" row">
+<?php if (!empty($instance['title']) || !empty($instance['subtitle'])): ?>
+ <div class="section-header wow fadeIn animated animated">
+ 
+ <?php if (!empty($instance['title'])): ?>
+                            <h2 class="section-title wow fadeIn"  >
+							
+		<?php echo apply_filters('widget_title', $instance['title']); ?>
+  </h2>
+	<?php endif; ?>
+                            <?php if (!empty($instance['subtitle'])): ?>
+                            <div class="colored-line" style="background:<?php echo $subtitle_textcolor ;?>;"></div>
+		
+						<div class="section-description"><h4><?php echo  htmlspecialchars_decode(apply_filters('widget_title', $instance['subtitle'])); ?></h4></div>
+                        <div class="colored-line" style="style="background:<?php echo $subtitle_textcolor ;?>;"></div>
+                             <?php endif;?>
+       				 </div><!--section head end-->
+                       
+                        <?php endif; ?>
+  <div class="lay1 wow fadeInup"> 
+ <?php   
+  $paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+      $args = array(
+										'posts_per_page'=>$count,
+										'cat' => $category,
+										'orderby' => 'ID',
+										'order'=>'ASC',
+										'paged' => $paged);
+										
+
+			$wp_query = new WP_Query($args);
+			?>
+            <?php wp_reset_postdata(); ?>		
+ <?php  if($wp_query->have_posts()) {?>
+			
+			
+						
+							<?php  while ($wp_query->have_posts()) {								
+									$wp_query->the_post();?>
+   
+     
+                    <div class="matchhe post_warp large-3 medium-6 columns  ">
+              
+                  <div class="post_image">
+                          <!--CALL TO POST IMAGE-->
+                             
+                       <?php  if ( get_the_post_thumbnail() != '' ) {
+						        
+								 echo '<div class=" imgwrap">';
+    
+                                 echo '<a href="';esc_url( the_permalink()); echo '" >';
+                                 the_post_thumbnail();
+                                 echo '</a>';
+                                 echo '</div>';
+                                 } else {
+    
+                                echo '<div class=" imgwrap">';
+                                echo '<a href="'; esc_url( the_permalink()); echo '">';
+     							echo '<img src="';
+     							echo  esc_url (advance_catch_that_image());
+     							echo '" alt="" />';
+     							echo '</a>';
+    							echo '</div>';
+    					};?>
+                     </div><!--end POST IMAGE-->
+                  
+                  
+                  <div class=" post_content2">
+                 <div class=" post_content3">
+                      
+                      <?php the_title( sprintf( '<h2 class="postitle_lay"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+             </div> 
+                   </div><!-- POST content-->
+                     </div>
+            <?php } ?>
+             <?php } ?>
+          <!-- pagination -->
+          <?php if ($wp_query->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
+
+		<?php
+			if(function_exists('wp_pagenavi')) :
+				
+			else :
+		?>
+			<div class="advance_nav">
+			<?php	// Previous/next page navigation.
+			the_posts_pagination(  array('prev_text' => '&laquo;', 'next_text' => '&raquo;') );?> 
+
+			</div>
+		<?php endif; ?>   
+        <?php } ?>   
+<!-- /pagination -->
+        </div>
+          </div>   
+           </div> <!-- latest POST section-->
+		<?php
+		/* After widget (defined by themes). */
+		echo $after_widget;
+		
+		
+	}
+
+
+	/* ---------------------------- */
+	/* ------- Update Widget -------- */
+	/* ---------------------------- */
+	
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+
+		/* Strip tags for title and name to remove HTML (important for text inputs). */
+		$instance['title'] = strip_tags( $new_instance['title'] );
+		
+		/* No need to strip tags */
+		$instance['subtitle'] = strip_tags( $new_instance['subtitle'] );
+		$instance['count'] = strip_tags($new_instance['count']);
+		$instance['category'] = $new_instance['category'];
+		
+		/* Color */
+		$instance['content_bg'] = strip_tags($new_instance['content_bg']);
+	   $instance['subtitle_textcolor'] = strip_tags($new_instance['subtitlecolor']);
+	   $instance['padtopbottom'] = strip_tags($new_instance['padtopbottom']);
+
+		return $instance;
+	}
+	
+	/* ---------------------------- */
+	/* ------- Widget Settings ------- */
+	/* ---------------------------- */
+	
+	/**
+	 * Displays the widget settings controls on the widget panel.
+	 * Make use of the get_field_id() and get_field_name() function
+	 * when creating your form elements. This handles the confusing stuff.
+	 */
+	
+	function form( $instance ) {
+	
+		/* Set up some default widget settings. */
+		$defaults = array(
+		'title' => __('Our Work','advance'),
+		'subtitle' => __('Check Out Our Work','advance'),
+		'count' => '6',
+		'category' => array(),
+		'content_bg' => 'rgba(8, 162, 134, 0.02)',
+	    'subtitle_textcolor'=>'#176079',
+		'padtopbottom' =>'2',
+		);
+		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
+
+        
+		<!-- Posts Title Field -->
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'advance') ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo htmlspecialchars($instance['title'], ENT_QUOTES, "UTF-8"); ?>" type="text" />
+		</p>
+        
+        <!-- Posts subtitle Field -->
+		<p>
+			<label for="<?php echo $this->get_field_id( 'subtitle' ); ?>"><?php _e('Subtitle:', 'advance') ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'subtitle' ); ?>" name="<?php echo $this->get_field_name( 'subtitle' ); ?>" value="<?php echo htmlspecialchars($instance['subtitle'], ENT_QUOTES, "UTF-8"); ?>" type="text" />
+		</p>
+        
+        <!-- Posts Category Field -->
+		<p>
+			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e('Categories', 'advance') ?></label>
+			<span class="category_multicheck">
+			<?php
+				$categories = get_terms(array( 'category' ), array( 'fields' => 'ids' ));
+
+                foreach($categories as $cat) {
+            ?>
+            <label><input id="<?php echo $this->get_field_id( 'category' ) . $cat; ?>" name="<?php echo $this->get_field_name('category'); ?>[]" type="checkbox" value="<?php echo $cat; ?>" <?php if(!empty($instance['category'])) { ?><?php foreach ( $instance['category'] as $checked ) { checked( $checked, $cat, true ); } ?><?php } ?>><?php echo get_cat_name($cat); ?></label><br>
+            <?php
+                }
+            ?>
+        	</span>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e('Number of Posts:', 'advance') ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" value="<?php echo $instance['count']; ?>" type="text" />
+		</p>
+
+
+ <!-- Text Content Background Color Field -->
+<p>
+			<label for="<?php echo $this->get_field_id( 'content_bg' ); ?>"><?php _e('Background Color', 'advance') ?></label>
+			<input class="widefat color-picker" id="<?php echo $this->get_field_id( 'content_bg' ); ?>" name="<?php echo $this->get_field_name( 'content_bg' ); ?>" value="<?php echo $instance['content_bg']; ?>" type="text" />
+		</p>
+         
+         <p>
+			<label for="<?php echo $this->get_field_id( 'subtitle_textcolor' ); ?>"><?php _e('Subtitle text  color', 'advance') ?></label>
+			<input class="widefat color-picker" id="<?php echo $this->get_field_id( 'button_textcolor' ); ?>" name="<?php echo $this->get_field_name( 'subtitle_textcolor' ); ?>" value="<?php echo $instance['subtitle_textcolor']; ?>" type="text" />
+		</p>
+        
+       
+        
+        <!-- Text Content Padding top/bottom Field -->
+		<p>
+			<label for="<?php echo $this->get_field_id( 'padtopbottom' ); ?>"><?php _e('Top &amp; Bottom Padding', 'advance') ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'padtopbottom' ); ?>" name="<?php echo $this->get_field_name( 'padtopbottom' ); ?>" value="<?php echo $instance['padtopbottom']; ?>"  min="0" max="80" type="range" />
+		</p>
+        
+           
+        
+<?php
+	}
+		
+}

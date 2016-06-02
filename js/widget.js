@@ -274,3 +274,173 @@ fit: true
         }
     });
 })(jQuery);
+
+
+jQuery(document).ready(function($){
+    $('.my_meta_control .color-picker').wpColorPicker();
+	
+
+});
+		//COLRPICKER FIELD 
+			( function( $ ){
+				function initColorPicker( widget ) {
+					widget.find( '.color-picker' ).wpColorPicker( {
+						change: _.throttle( function() { // For Customizer
+							$(this).trigger( 'change' );
+						}, 2000 )
+					});
+				}
+
+				function onFormUpdate( event, widget ) {
+					initColorPicker( widget );
+				}
+
+				$( document ).on( 'widget-added widget-updated', onFormUpdate );
+
+				$( document ).ready( function() {
+					$( '#widgets-right .widget:has(.color-picker)' ).each( function () {
+						initColorPicker( $( this ) );
+					} );
+				} );
+			}( jQuery ) );
+
+
+/*
+ * Attaches the image uploader to the input field
+ */
+jQuery(document).ready(function($){
+ 
+    // Instantiates the variable that holds the media library frame.
+    var meta_image_frame;
+ 
+    // Runs when the image button is clicked.
+    $('#meta-image-button').click(function(e){
+ 
+        // Prevents the default action from occuring.
+        e.preventDefault();
+ 
+        // If the frame already exists, re-open it.
+        if ( meta_image_frame ) {
+            meta_image_frame.open();
+            return;
+        }
+ 
+        // Sets up the media library frame
+        meta_image_frame = wp.media.frames.meta_image_frame = wp.media({
+            title: meta_image.title,
+            button: { text:  meta_image.button },
+            library: { type: 'image' }
+        });
+ 
+        // Runs when an image is selected.
+        meta_image_frame.on('select', function(){
+ 
+            // Grabs the attachment selection and creates a JSON representation of the model.
+            var media_attachment = meta_image_frame.state().get('selection').first().toJSON();
+ 
+            // Sends the attachment URL to our custom image input field.
+            $('#meta-image').val(media_attachment.url);
+        });
+ 
+        // Opens the media library frame.
+        meta_image_frame.open();
+    });
+});
+
+
+
+/**
+ * WP Editor Widget object
+ */
+WPEditorWidget = {
+	
+	/** 
+	 * @var string
+	 */
+	currentContentId: '',
+	
+	/**
+	 * @var string
+	 */
+	 currentEditorPage: '',
+	 
+	 /**
+	  * @var int
+	  */
+	 wpFullOverlayOriginalZIndex: 0,
+
+	/**
+	 * Show the editor
+	 * @param string contentId
+	 */
+	showEditor: function(contentId) {
+		jQuery('#wp-editor-widget-backdrop').show();
+		jQuery('#wp-editor-widget-container').show();
+		
+		this.currentContentId = contentId;
+		this.currentEditorPage = ( jQuery('body').hasClass('wp-customizer') ? 'wp-customizer':'wp-widgets');
+		
+		if (this.currentEditorPage == "wp-customizer") {
+			this.wpFullOverlayOriginalZIndex = parseInt(jQuery('.wp-full-overlay').css('zIndex'));
+			jQuery('.wp-full-overlay').css({ zIndex: 49000 });
+		}
+		
+		this.setEditorContent(contentId);
+	},
+	
+	/**
+	 * Hide editor
+	 */
+	hideEditor: function() {
+		jQuery('#wp-editor-widget-backdrop').hide();
+		jQuery('#wp-editor-widget-container').hide();
+		
+		if (this.currentEditorPage == "wp-customizer") {
+			jQuery('.wp-full-overlay').css({ zIndex: this.wpFullOverlayOriginalZIndex });
+		}
+	},
+	
+	/**
+	 * Set editor content
+	 */
+	setEditorContent: function(contentId) {
+		var editor = tinyMCE.EditorManager.get('sfeditorwidget');
+		var content = jQuery('#'+ contentId).val();
+
+		if (typeof editor == "object" && editor !== null) {
+			editor.setContent(content);
+		}
+		jQuery('#sfeditorwidget').val(content);
+	},
+	
+	/**
+	 * Update widget and close the editor
+	 */
+	updateWidgetAndCloseEditor: function() {
+		var editor = tinyMCE.EditorManager.get('sfeditorwidget');
+
+		if (typeof editor == "undefined" || editor == null || editor.isHidden()) {
+			var content = jQuery('#sfeditorwidget').val();
+		}
+		else {
+			var content = editor.getContent();
+		}
+
+		jQuery('#'+ this.currentContentId).val(content);
+		
+		// customize.php
+		if (this.currentEditorPage == "wp-customizer") {
+			var widget_id = jQuery('#'+ this.currentContentId).closest('div.form').find('input.widget-id').val();
+			var widget_form_control = wp.customize.Widgets.getWidgetFormControlForWidget( widget_id )
+			widget_form_control.updateWidget();
+		}
+		
+		// widgets.php
+		else {
+			wpWidgets.save(jQuery('#'+ this.currentContentId).closest('div.widget'), 0, 1, 0);	
+		}
+		
+		this.hideEditor();
+	}
+	
+};

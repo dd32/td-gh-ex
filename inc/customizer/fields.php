@@ -83,20 +83,6 @@ Kirki::add_field( 'advance', array(
 
 
 
-Kirki::add_field( 'advance', array(
-    'type'        => 'switch',
-    'settings'    => 'advance_latstpst_checkbox',
-    'label'       => esc_attr__( 'Enable Latest Posts', 'advance' ),
-    'section'     => 'layout_front_page',
-    'default'     => '1',
-    'priority'    => 10,
-    'choices'     => array(
-        
-        'off' => esc_attr__( 'off', 'advance' ),
-		'on'  =>esc_attr__ ( 'on', 'advance' ),
-    ),
-) );
-
 /* Footer section */
 
 
@@ -376,7 +362,7 @@ Kirki::add_field( 'advance', array(
 	
 	'output' => array(
         array(
-            'element'  => '#navmenu li a,#navmenu ul li ul li a,.branding--clone #navmenu li a,.branding--clone #navmenu ul li ul li a,.branding-single #navmenu li a,.branding-single #navmenu ul li ul li a,.home #navmenu ul li.current-menu-item > a',
+            'element'  => '#navmenu li a,#navmenu ul li ul li a,.branding--clone #navmenu li a,.branding--clone #navmenu ul li ul li a,.branding-single #navmenu li a,.branding-single #navmenu ul li ul li a,.home #navmenu ul li.current-menu-item > a,.social-advance i',
 			
             'property' => 'color',
             'units'    => '',
@@ -413,13 +399,13 @@ Kirki::add_field( 'advance', array(
 	
 	'output' => array(
         array(
-            'element'  => '.social-advance i,.postitle_lay a,#footer .widgets .widgettitle, #midrow .widgets .widgettitle a,#sidebar .widgettitle, #sidebar .widgettitle a,#commentform a ,.feature-box i,#our-team-advance h1,.comments-title, .post_content a,.node h1 a,#navmenu ul li.current-menu-item > a,#our-team-advance .node h1 a,a',
+            'element'  => '.postitle_lay a,#footer .widgets .widgettitle, #midrow .widgets .widgettitle a,#sidebar .widgettitle, #sidebar .widgettitle a,#commentform a ,.feature-box i,#our-team-advance h1,.comments-title, .post_content a,.node h1 a,#navmenu ul li.current-menu-item > a,a',
 			
             'property' => 'color',
             'units'    => '',
         ),
         array(
-            'element'  => '#slider .hvr-sweep-to-top,.small-border,#navmenu .search-form .search-submit,.search-form .search-submit,#navmenu .search-form .search-submit,.search-form .search-submit',
+            'element'  => '.colored-line,#navmenu .search-form .search-submit,.search-form .search-submit,#navmenu .search-form .search-submit,.search-form .search-submit,.search-box-wrapper,#loading-center-absolute .object',
             'property' => 'background-color',
             'units'    => '',
         ),
@@ -450,13 +436,14 @@ Kirki::add_field( 'advance', array(
             'units'    => '',
         ),
         array(
-            'element'  => '#navmenu ul li ul li:hover,#navmenu ul > li ul li:hover,btn-slider-advance:hover,btn-border-light:hover,#submit:hover, #searchsubmit:hover,#navmenu ul > li::after,.branding-single--clone #navmenu ul li ul:hover,#slider .hvr-sweep-to-bottom-border:before,#slider .hvr-sweep-to-top:before,.hvr-sweep-to-top:before,.box-container .bg-service-1 .hvr-sweep-to-top-border:before',
+            'element'  => '#navmenu ul li ul li:hover,#navmenu ul > li ul li:hover,btn-slider-advance:hover,btn-border-light:hover,#submit:hover, #searchsubmit:hover,#navmenu ul > li::after,.branding-single--clone #navmenu ul li ul:hover,#slider .hero_btn:hover,.btn-lines .line-top,
+.btn-lines .line-bottom,.btn-lines .line-left,.btn-lines .line-right,.actionbox-controls-two .hero_btn:hover',
             'property' => 'background-color',
             'units'    => '',
         ),
 		
 		  array(
-            'element'  => '#slider .hvr-sweep-to-bottom-border:hover,.hvr-sweep-to-bottom-border:hover,.box-container .bg-service-1 .hvr-sweep-to-top-border:hover',
+            'element'  => '#slider .hero_btn:hover',
             'property' => 'border-color',
             'units'    => '',
         ),

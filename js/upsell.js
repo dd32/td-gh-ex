@@ -3,11 +3,11 @@
  */
 ( function( $ ) {
  // Add Upgrade Message
- if ('undefined' !== typeof safreenL10n) {
+ if ('undefined' !== typeof advanceL10n) {
  upsell = $('<a class="prefix-upsell-link"></a>')
- .attr('href', safreenL10n.safreenURL)
+ .attr('href', advanceL10n.advanceURL)
  .attr('target', '_blank')
- .text(safreenL10n.safreenLabel)
+ .text(advanceL10n.advanceLabel)
  .css({
  'display' : 'inline-block',
  'background-color' : '#D03232',

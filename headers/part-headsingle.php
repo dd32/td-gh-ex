@@ -37,13 +37,15 @@ global $advance;
        
        
        <div id="menu_wrap">
-       <div class="social-advance">
-                 <?php $advance_search_checkbox = get_theme_mod('advance_search_box',1);?>
+       <?php $advance_search_checkbox = get_theme_mod('advance_search_box',1);?>
 <?php if( isset($advance_search_checkbox) && $advance_search_checkbox == 1):?>
-       <a><i class="fa fa-search"></i></a>
-       <?php endif; ?> 
-   </div>
-     
+
+ <div class="social-advance">
+<div class="search-toggle">
+                <i class="fa fa-search"></i>
+                <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'advance' ); ?></a>
+            </div></div>
+        <?php endif; ?>
   
   
     <?php $advance_social1_checkbox = get_theme_mod('advance_social1_checkbox',1);?>
@@ -111,10 +113,7 @@ global $advance;
 		  ) ); 
 		 
 		 ?> 
-        
-        
-          <?php get_search_form(); ?>
-        
+       
     </div>
          
     </div>

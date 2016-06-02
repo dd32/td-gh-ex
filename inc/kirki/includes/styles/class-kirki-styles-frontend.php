@@ -41,25 +41,55 @@ if ( ! class_exists( 'Kirki_Styles_Frontend' ) ) {
 		public static $css_array = array();
 
 		/**
+		 * Set to true if you want to use the AJAX method.
+		 *
+		 * @access public
+		 * @var bool
+		 */
+		public static $ajax = false;
+
+		/**
 		 * Constructor
 		 *
 		 * @access public
 		 */
 		public function __construct() {
 
+			add_action( 'init', array( $this, 'init' ) );
+
+		}
+
+		/**
+		 * Init.
+		 *
+		 * @access public
+		 */
+		public function init() {
+
 			Kirki_Fonts_Google::get_instance();
 
 			global $wp_customize;
 
 			$config   = apply_filters( 'kirki/config', array() );
-			$priority = ( isset( $config['styles_priority'] ) ) ? intval( $config['styles_priority'] ) : 999;
+			$priority = 999;
+			if ( isset( $config['styles_priority'] ) ) {
+				$priority = absint( $config['styles_priority'] );
+			}
 
+			// Allow completely disabling Kirki CSS output.
 			if ( ( defined( 'KIRKI_NO_OUTPUT' ) && KIRKI_NO_OUTPUT ) || ( isset( $config['disable_output'] ) && true !== $config['disable_output'] ) ) {
 				return;
 			}
 
-			add_action( 'wp_enqueue_scripts', array( $this, 'inline_dynamic_css' ), $priority );
-
+			// If we are in the customizer, load CSS using inline-styles.
+			// If we are in the frontend AND self::$ajax is true, then load dynamic CSS using AJAX.
+			if ( ! $wp_customize && ( ( true === self::$ajax ) || ( isset( $config['inline_css'] ) && false === $config['inline_css'] ) ) ) {
+				add_action( 'wp_enqueue_scripts', array( $this, 'frontend_styles' ), $priority );
+				add_action( 'wp_ajax_kirki_dynamic_css', array( $this, 'ajax_dynamic_css' ) );
+				add_action( 'wp_ajax_nopriv_kirki_dynamic_css', array( $this, 'ajax_dynamic_css' ) );
+			} else {
+				add_action( 'wp_enqueue_scripts', array( $this, 'inline_dynamic_css' ), $priority );
+			}
 		}
 
 		/**
@@ -71,7 +101,7 @@ if ( ! class_exists( 'Kirki_Styles_Frontend' ) ) {
 			$configs = Kirki::$config;
 			if ( ! $this->processed ) {
 				foreach ( $configs as $config_id => $args ) {
-					if ( true === $args['disable_output'] ) {
+					if ( isset( $args['disable_output'] ) && true === $args['disable_output'] ) {
 						continue;
 					}
 					$styles = self::loop_controls( $config_id );
@@ -91,7 +121,7 @@ if ( ! class_exists( 'Kirki_Styles_Frontend' ) ) {
 		 * @access public
 		 */
 		public function ajax_dynamic_css() {
-			require( Kirki::$path . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'dynamic-css.php' );
+			require wp_normalize_path( Kirki::$path . '/includes/dynamic-css.php' );
 			exit;
 		}
 
@@ -138,7 +168,7 @@ if ( ! class_exists( 'Kirki_Styles_Frontend' ) ) {
 
 					foreach ( $field['required'] as $requirement ) {
 						if ( isset( $requirement['setting'] ) && isset( $requirement['value'] ) && isset( $requirement['operator'] ) ) {
-							$controller_value = Kirki::get_option( $requirement['setting'] );
+							$controller_value = Kirki_Values::get_value( $config_id, $requirement['setting'] );
 							if ( ! Kirki_Active_Callback::compare( $controller_value, $requirement['value'], $requirement['operator'] ) ) {
 								$valid = false;
 							}
@@ -160,6 +190,8 @@ if ( ! class_exists( 'Kirki_Styles_Frontend' ) ) {
 					}
 				}
 			}
+
+			$css = apply_filters( 'kirki/' . $config_id . '/styles', $css );
 
 			if ( is_array( $css ) ) {
 				return Kirki_Styles_Output_CSS::styles_parse( Kirki_Styles_Output_CSS::add_prefixes( $css ) );

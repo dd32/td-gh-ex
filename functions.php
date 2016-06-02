@@ -46,10 +46,23 @@ add_theme_support('automatic-feed-links');
 // Declare WooCommerce support
 add_theme_support( 'woocommerce' );
 
+//Custom Background
+add_theme_support( 'custom-background', array(
+	'default-color' => 'FFF',
+	
+) );
 
-
-// Declare HTML5 search-form
-add_theme_support( 'html5', array( 'search-form' ) );
+/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
 
 
 
@@ -110,7 +123,6 @@ function advance_the_custom_logo() {
 	}
 }
 endif;
-
 
 /* advance first image */
 
@@ -314,7 +326,7 @@ function advance_widgets_init(){
 	
 	register_sidebar(array(
 	'name'          => __('Frontpage widget area ', 'advance'),
-	'id'            => 'sidebar-frontpage',
+	'id'            => 'sidebar_frontpage',
 	'description'   => __('With advance Free you can only add 3 widgets to this Area. Upgrade to PRO to add unlimited Widgets.', 'advance'),
 	'before_widget' => '',
 	'after_widget'  => '',
@@ -338,7 +350,7 @@ require(get_template_directory() . '/inc/widgets.php');
 require(get_template_directory() . '/inc/upsell.php');
 require(get_template_directory() . '/inc/extra.php');
 require(get_template_directory() . '/inc/about-theme.php');
-require(get_template_directory() . '/inc/widgets/aboutus.php');
+require(get_template_directory() . '/inc/widgets/advance_serviceblock.php');
 if ( is_admin() ) {
 require(get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php');
 }

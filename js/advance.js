@@ -1,4 +1,4 @@
-//safreen JavaScript 
+//advance JavaScript 
 
 jQuery(window).ready(function($) {
 
@@ -125,11 +125,8 @@ jQuery(window).ready(function($) {
 
     //TOP Header Search
 
-    jQuery(".social-safreen a i").click(function() {
-        jQuery("#navmenu .search-form .search-field ,#navmenu .search-form .search-submit").slideToggle("fade");
-    });
 
-    jQuery('.box-container div:nth-child(4),#section-features > div:nth-child(3),#safreen-clients >div:nth-child(2)').attr('style', 'display: none !important');
+    
 
     /* Side responsive menu	 */
     $('.menu-toggle').sidr({
@@ -170,3 +167,17 @@ window.matchMedia = window.matchMedia || (function(e, f) {
         }
     }
 })(document);
+
+
+/* 
+ * Toggles search on and off
+ */
+jQuery(document).ready(function($){
+    $(".search-toggle").click(function(){
+        $("#search-container").slideToggle('slow', function(){
+            $('.search-toggle').toggleClass('active');
+        });
+        // Optional return false to avoid the page "jumping" when clicked
+        return false;
+    });
+});

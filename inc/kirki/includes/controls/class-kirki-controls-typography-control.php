@@ -27,7 +27,7 @@ if ( ! class_exists( 'Kirki_Controls_Typography_Control' ) ) {
 		 * @access public
 		 * @var string
 		 */
-		public $type = 'typography';
+		public $type = 'kirki-typography';
 
 		/**
 		 * Enqueue control related scripts/styles.
@@ -46,17 +46,18 @@ if ( ! class_exists( 'Kirki_Controls_Typography_Control' ) ) {
 		public function to_json() {
 			parent::to_json();
 			$this->add_values_backwards_compatibility();
-			$this->json['l10n'] = Kirki_l10n::get_strings();
 			$defaults = array(
 				'font-family'    => false,
 				'font-size'      => false,
-				'line-height'    => false,
+				'variant'        => false,
 				'line-height'    => false,
 				'letter-spacing' => false,
 				'color'          => false,
 				'text-align'     => false,
 			);
 			$this->json['default'] = wp_parse_args( $this->json['default'], $defaults );
+			$this->json['show_variants'] = ( true === Kirki_Fonts_Google::$force_load_all_variants ) ? false : true;
+			$this->json['show_subsets']  = ( true === Kirki_Fonts_Google::$force_load_all_subsets ) ? false : true;
 		}
 
 		/**
@@ -90,16 +91,20 @@ if ( ! class_exists( 'Kirki_Controls_Typography_Control' ) ) {
 					<# if ( data.choices['fonts'] ) { data.fonts = data.choices['fonts']; } #>
 					<div class="font-family">
 						<h5>{{ data.l10n['font-family'] }}</h5>
-						<select id="kirki-typography-font-family-{{{ data.id }}}" placeholder="{{ data.i18n['select-font-family'] }}"></select>
+						<select id="kirki-typography-font-family-{{{ data.id }}}" placeholder="{{ data.l10n['select-font-family'] }}"></select>
 					</div>
-					<div class="variant hide-on-standard-fonts kirki-variant-wrapper">
-						<h5>{{ data.l10n['variant'] }}</h5>
-						<select class="variant" id="kirki-typography-variant-{{{ data.id }}}"></select>
-					</div>
-					<div class="subset hide-on-standard-fonts kirki-subset-wrapper">
-						<h5>{{ data.l10n['subsets'] }}</h5>
-						<select class="subset" id="kirki-typography-subset-{{{ data.id }}}"></select>
-					</div>
+					<# if ( true === data.show_variants || false !== data.default.variant ) { #>
+						<div class="variant hide-on-standard-fonts kirki-variant-wrapper">
+							<h5>{{ data.l10n['variant'] }}</h5>
+							<select class="variant" id="kirki-typography-variant-{{{ data.id }}}"></select>
+						</div>
+					<# } #>
+					<# if ( true === data.show_subsets ) { #>
+						<div class="subsets hide-on-standard-fonts kirki-subsets-wrapper">
+							<h5>{{ data.l10n['subsets'] }}</h5>
+							<select class="subset" id="kirki-typography-subsets-{{{ data.id }}}"></select>
+						</div>
+					<# } #>
 				<# } #>
 
 				<# if ( data.default['font-size'] ) { #>
@@ -211,7 +216,23 @@ if ( ! class_exists( 'Kirki_Controls_Typography_Control' ) ) {
 			if ( isset( $value['letter-spacing'] ) && is_numeric( $value['letter-spacing'] ) && $value['letter-spacing'] ) {
 				$value['letter-spacing'] .= 'px';
 			}
+
 			$this->json['value'] = wp_parse_args( $value, $old_values );
+
+			// Cleanup.
+			if ( isset( $this->json['value']['font-weight'] ) ) {
+				unset( $this->json['value']['font-weight'] );
+			}
+
+			// Make sure we use "subsets" instead of "subset".
+			if ( isset( $this->json['value']['subset'] ) ) {
+				if ( ! empty( $this->json['value']['subset'] ) ) {
+					if ( ! isset( $this->json['value']['subsets'] ) || empty( $this->json['value']['subsets'] ) ) {
+						$this->json['value']['subsets'] = $this->json['value']['subset'];
+					}
+				}
+				unset( $this->json['value']['subset'] );
+			}
 		}
 	}
 }

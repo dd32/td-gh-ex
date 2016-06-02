@@ -28,9 +28,24 @@
   <!-- Site Preloader -->
     <div id="page-loader">
         <div class="page-loader-inner">
-            <div class="loader"><strong><?php echo esc_html__('Loading', 'advance'); ?></strong></div>
+             <div id="loading">
+<div id="loading-center">
+<div id="loading-center-absolute">
+<div class="object" id="object_one"></div>
+<div class="object" id="object_two"></div>
+<div class="object" id="object_three"></div>
+</div>
+</div>
+            </div>
         </div>
     </div>
     <?php endif;?> 
     <!-- END Site Preloader -->
+    
+            
 <div id="wrapper">
+<div id="search-container" class="search-box-wrapper clear">
+        <div class="search-box clear">
+            <?php get_search_form(); ?>
+        </div>
+    </div> 

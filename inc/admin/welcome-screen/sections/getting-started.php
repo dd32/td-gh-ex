@@ -9,7 +9,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 <div class="backend_wrapper">
     	<div class="back_header">
             <div class="center">
-            	<h3><a><?php _e('Safreen','advance'); ?></a><span><?php $the_theme = wp_get_theme(); echo $the_theme->get('Version');?></span></h3>
+            	<h3><a><?php _e('advance','advance'); ?></a><span><?php $the_theme = wp_get_theme(); echo $the_theme->get('Version');?></span></h3>
                
            </div> 
        </div>
@@ -67,7 +67,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 </div>
 <div>
 <p>
-<h2 style="text-align: left;"><?php _e('Install recommended plugin : Safreen widgets','advance'); ?></h2>
+<h2 style="text-align: left;"><?php _e('Install recommended plugin : advance widgets','advance'); ?></h2>
 <h3 style="text-align: left;"><?php _e('How to add service Block ?','advance'); ?></h3>
 
 <ol style="text-align: left;">
@@ -77,7 +77,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 </ol>
 <ul>
  	<li style="text-align: left;"><?php _e('Create 3 pages from pages tab','advance'); ?></li>
- 	<li style="text-align: left;"><?php _e('Go to customize  =&gt; theme option =&gt; service block =&gt; Add a widgets =&gt; select','advance'); ?> <strong><?php _e('Safreen-service block','advance'); ?> </strong><?php _e('(like that add 3 service block )','advance'); ?></li>
+ 	<li style="text-align: left;"><?php _e('Go to customize  =&gt; theme option =&gt; service block =&gt; Add a widgets =&gt; select','advance'); ?> <strong><?php _e('advance-service block','advance'); ?> </strong><?php _e('(like that add 3 service block )','advance'); ?></li>
  	<li style="text-align: left;"><?php _e('now from service block widgets select your page for service block content (screen shot image )','advance'); ?></li>
 </ul>
 <img class="alignnone wp-image-16" src="<?php echo  esc_url(get_template_directory_uri().'/inc/admin/img/service.jpg');?>" alt="service" width="824" height="375" />

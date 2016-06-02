@@ -49,7 +49,7 @@ class advance_Welcome {
 	public function advance_welcome_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Safreen ! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'advance' ), '<a href="' . esc_url( admin_url( 'themes.php?page=advance-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Advance ! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'advance' ), '<a href="' . esc_url( admin_url( 'themes.php?page=advance-welcome' ) ) . '">', '</a>' ); ?></p>
 				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=advance-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with advance ', 'advance' ); ?></a></p>
 			</div>
 		<?php

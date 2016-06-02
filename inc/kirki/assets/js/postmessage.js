@@ -57,20 +57,33 @@
 							if ( 'string' === typeof newval ) {
 
 								// Process the value pattern
-								if ( undefined !== jsVar.value_pattern ) {
-									val = jsVar.value_pattern.replace( /\$/g, newval );
+								if ( undefined !== args.value_pattern ) {
+									val = args.value_pattern.replace( /\$/g, args.prefix + newval + args.units + args.suffix );
+								} else {
+									val = args.prefix + newval + args.units + args.suffix;
+								}
+
+								// Simple tweak for background-image properties.
+								if ( 'background-image' === args.property ) {
+									if ( 0 > val.indexOf( 'url(' ) ) {
+										val = 'url("' + val + '")';
+									}
 								}
 
 								// Inject HTML
 								if ( 'html' === args['function'] ) {
-									jQuery( args.element ).html( args.prefix + val + args.units + args.suffix );
+									if ( 'undefined' !== typeof args.attr && undefined !== args.attr ) {
+										jQuery( args.element ).attr( args.attr, val );
+									} else {
+										jQuery( args.element ).html( val );
+									}
 
 								// Add CSS
 								} else {
 
 									// If we have new value, replace style contents with custom css
 									if ( '' !== val ) {
-										cssArray[ i ] = args.element + '{' + args.property + ':' + args.prefix + val + args.units + args.suffix + ';}';
+										cssArray[ i ] = args.element + '{' + args.property + ':' + val + ';}';
 									}
 
 									// Else let's clear it out
@@ -93,7 +106,7 @@
 										if ( _.contains( [ 'top', 'bottom', 'left', 'right' ], subValueKey ) ) {
 											cssArray[ i ] += args.element + '{' + args.property + '-' + subValueKey + ':' + args.prefix + subValueValue + args.units + args.suffix + ';}';
 										} else {
-											cssArray[ i ] += args.element + '{' + args.property + ':' + args.prefix + subValueValue + args.units + args.suffix + ';}';
+											cssArray[ i ] += args.element + '{' + subValueKey + ':' + args.prefix + subValueValue + args.units + args.suffix + ';}';
 										}
 									}
 								});

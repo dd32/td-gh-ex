@@ -36,17 +36,18 @@ global $advance;
        
        <?php } ?>
          <!--LOGO END-->
+         
       <div id="menu_wrap">
        <?php $advance_search_checkbox = get_theme_mod('advance_search_box',1);?>
 <?php if( isset($advance_search_checkbox) && $advance_search_checkbox == 1):?>
 
-
-<div class="social-advance">
-        <a><i class="fa fa-search"></i></a>
-         </div>
+ <div class="social-advance">
+<div class="search-toggle">
+                <i class="fa fa-search"></i>
+                <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'advance' ); ?></a>
+            </div></div>
         <?php endif; ?>
   
-
        <?php $advance_social1_checkbox = get_theme_mod('advance_social1_checkbox',1);?>
 <?php if( isset($advance_social1_checkbox) && $advance_social1_checkbox == 1):?>
 
@@ -88,6 +89,8 @@ global $advance;
                  <a href="<?php echo esc_url($advance_instagram);?>" title="instagram" target="_blank"> <i class="fa fa-instagram"></i></a><?php endif; ?>
                  </div>
               <?php endif?>
+              
+              
        
         <!--MENU STARTS-->
        <h3 class="menu-toggle"><?php _e( 'Menu', 'advance' ); ?></h3>
@@ -103,10 +106,7 @@ global $advance;
 		 
 		 ?> 
         
-        
-        <?php get_search_form(); ?>
-        
-         </div>
+     </div>
       
      
          </div>
@@ -116,3 +116,4 @@ global $advance;
         </div>
          
              <!--MENU END-->
+             <a id="showHere"></a> 

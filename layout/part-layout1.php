@@ -20,7 +20,7 @@
                   <div <?php post_class(); ?> id="post-<?php the_ID(); ?>"> 
                       
                        
-                    <div class="matchhe large-3 medium-6 columns wow fadeInLeft page-delay   ">
+                    <div class="matchhe post_warp large-3 medium-6 columns wow fadeInLeft page-delay   ">
               
                   <div class="post_image">
                        <!--CALL TO POST IMAGE-->
