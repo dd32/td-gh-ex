@@ -40,6 +40,7 @@ class SiteOrigin_Settings {
 		}
 
 		add_action( 'after_setup_theme', array( $this, 'load_settings_extras' ) );
+		add_filter( 'siteorigin_premium_affiliate_id', array( $this, 'contributor_affiliate_id' ) );
 
 		spl_autoload_register( array( $this, '_autoload' ) );
 	}
@@ -360,7 +361,6 @@ class SiteOrigin_Settings {
 	 * @param string|bool $after Add this field after another one
 	 */
 	function add_teaser( $section, $id, $type, $label, $args = array(), $after = false ) {
-		// Don't add any teasers if the user is already using Premium
 		if( apply_filters('siteorigin_settings_display_teaser', true, $section, $id) ) {
 			// The theme hasn't implemented this setting yet
 			$this->add_field( $section, $id, 'teaser', $label, $args, $after);
@@ -429,6 +429,7 @@ class SiteOrigin_Settings {
 		// Finally, add the settings
 		foreach( $this->settings as $section_id => $settings ) {
 			foreach( $settings as $setting_id => $setting_args ) {
+				$control_class = false;
 
 				// Setup the sanitize callback
 				$sanitize_callback = 'sanitize_text_field';
@@ -468,13 +469,21 @@ class SiteOrigin_Settings {
 				}
 
 				// Add different control args for the different field types
-				if( $setting_args['type'] == 'radio' || $setting_args['type'] == 'select' || $setting_args['type'] == 'image_select' ) {
+				if( $setting_args['type'] == 'radio' || $setting_args['type'] == 'select' || $setting_args['type'] == 'image_select' || $setting_args['type'] == 'text' ) {
 					if( !empty($setting_args['args']['options']) ) {
 						$control_args['choices'] = $setting_args['args']['options'];
 					}
 					if( !empty($setting_args['args']['choices']) ) {
 						$control_args['choices'] = $setting_args['args']['choices'];
 					}
+
+					if( $setting_args['type'] == 'text' && ! empty( $control_args['choices'] ) ) {
+						$control_class = 'SiteOrigin_Settings_Control_Text_Select';
+					}
+				}
+
+				if( $setting_args['type'] == 'teaser' && ! empty( $setting_args['args']['featured'] ) ) {
+					$control_args['featured'] = $setting_args['args']['featured'];
 				}
 
 				// Arguments for the range field
@@ -498,7 +507,9 @@ class SiteOrigin_Settings {
 					) );
 				}
 
-				$control_class = !empty( self::$control_classes[ $setting_args['type'] ] ) ? self::$control_classes[ $setting_args['type'] ] : false;
+				if( empty( $control_class ) ) {
+					$control_class = !empty( self::$control_classes[ $setting_args['type'] ] ) ? self::$control_classes[ $setting_args['type'] ] : false;
+				}
 
 				if( !empty( $control_class ) ) {
 					$wp_customize->add_control(
@@ -744,6 +755,59 @@ class SiteOrigin_Settings {
 		if( has_filter( 'siteorigin_about_page' ) && apply_filters( 'siteorigin_about_page_show', true ) ) {
 			SiteOrigin_Settings_About_Page::single();
 		}
+	}
+
+	/**
+	 * Get the Premium upgrade URL
+	 */
+	static function get_premium_url( $featured_addon = false ){
+		// Let themes and plugins add their affiliate ID
+		$ref = apply_filters( 'siteorigin_premium_affiliate_id', false );
+
+		// Get the args we want to add to the URL
+		$args = array(
+			'ref' => $ref,
+			'featured_theme' => get_template(),
+			'featured_addon' => $featured_addon
+		);
+		foreach( $args as $k => $v ) {
+			if( empty( $v ) ) {
+				unset( $args[$k] );
+				continue;
+			}
+			$args[$k] = urlencode( $v );
+		}
+
+		$url = add_query_arg( $args, 'https://siteorigin.com/downloads/premium/' );
+
+		return $url;
+	}
+
+	/**
+	 * Add a random affiliate ID based on contributors file
+	 */
+	function contributor_affiliate_id( $aff ){
+		if( file_exists( get_template_directory() . '/inc/contributors.php' ) ) {
+			static $contributor = false;
+			if( empty( $contributor ) ) {
+				$contributors = include get_template_directory() . '/inc/contributors.php';
+				shuffle( $contributors );
+
+				$rand = rand( 0, 10000 ) / 100;
+				$sum = 0;
+
+				foreach ( $contributors as $c ) {
+					$sum += floatval( $c['percent'] );
+					if ( $sum >= $rand ) {
+						$contributor = $c[ 'email' ];
+						break;
+					}
+				}
+			}
+			$aff = $contributor;
+		}
+
+		return $aff;
 	}
 }
 

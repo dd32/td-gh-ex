@@ -21,7 +21,7 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
-#: 404.php:7, inc/settings.php:80
+#: 404.php:7, inc/settings.php:82
 msgid "We couldn't find what you were looking for."
 msgstr ""
 
@@ -887,15 +887,19 @@ msgstr ""
 msgid "Enable FitVids to automatically scale your videos."
 msgstr ""
 
-#: inc/settings.php:79
+#: inc/settings.php:69
+msgid "Comments"
+msgstr ""
+
+#: inc/settings.php:81
 msgid "Copyright %s"
 msgstr ""
 
-#: inc/settings.php:81, search.php:14
+#: inc/settings.php:83, search.php:14
 msgid "No results for your query."
 msgstr ""
 
-#: inc/settings.php:109
+#: inc/settings.php:110
 msgid "Origami is one of our most elegant, mature WordPress themes. Find out more about what it has to offer by watching this short video."
 msgstr ""
 
