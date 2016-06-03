@@ -378,7 +378,7 @@ function weaverx_filter_head( $text ) {
 		'style' => array( 'media' => true, 'scoped' => true, 'type' => true ),
 		'meta' => array( 'charset' => true, 'content' => true, 'http-equiv' => true, 'name' => true,
 						'scheme' => true, 'property'=> true ),
-		'link' => array( 'href' => true, 'rel' => true, 'type' => true, 'title' => true, 'media' => true, 'id' => true, 'class' => true  ),
+		'link' => array( 'href' => true, 'rel' => true, 'type' => true, 'title' => true, 'media' => true, 'id' => true, 'class' => true, 'sizes' => true, 'crossorigin' => true, 'hreflang' => true  ),
 		'script' => array( 'async' => true, 'charset' => true, 'defer' => true, 'src' => true, 'type' => true  ),
 		'noscript' => array(),
 		'base' => array( 'href' => true, 'target' => true )

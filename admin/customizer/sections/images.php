@@ -153,7 +153,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 
 		'images-heading-altimg' => weaverx_cz_heading(
 				__( 'Alternate Header Images', 'weaver-xtreme' ),
-				__( 'You can specify alternate header images using the <em>Featured Image Location</em> option on the <em>Images</em> panel, as well as Per Page and Per Post options.', 'weaver-xtreme' )
+				__( 'You can specify alternate header images using the Content and Post Specific <em>Featured Image Location</em> option on the <em>Images</em> panel, as well as Per Page and Per Post options.', 'weaver-xtreme' )
 			),
 
 			'images-heading-logo-html' => weaverx_cz_heading( __( 'Site Logo/HTML', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,

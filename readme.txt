@@ -286,3 +286,8 @@ with testing and feature suggestions.
   The Per Page options for the RAW page template now show only those options related to the RAW template.
   If you were using the RAW template, you can simply switch to the Blank Template to retain behavior.
 * Tweak: Add notice for users of Weaver Xtreme Plus 2.1 and 2.1.1 to do manual update.
+
+= Version 2.1.2 =
+* Fix: Save Theme Settings via Customizer saved file incorrectly.
+* Tweak: Removed obsolete theme tags (e.g., black, dark, etc.)
+* Fix: Remove some restrictions of <link> parameters in <head> section.

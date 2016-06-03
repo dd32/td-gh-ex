@@ -1002,7 +1002,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 0.0	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
-					'label'   => __( 'Mini Menu Top Margin (em))', 'weaver-xtreme' ),
+					'label'   => __( 'Mini Menu Top Margin (em)', 'weaver-xtreme' ),
 					'description' => __('Top margin for Header Mini Menu. Negative value moves it up. (Default: -1.0em', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(

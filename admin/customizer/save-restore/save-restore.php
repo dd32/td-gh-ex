@@ -146,8 +146,8 @@ The previous Save buttons do <em>not</em> include advanced <em>Weaver Xtreme Plu
 		header( 'Content-disposition: attachment; filename=' . $fn );
 		header( 'Content-Type: application/octet-stream; charset=utf-8');
 
-		// Serialize the export data.
-		echo serialize( $weaverx_settings );
+		// echo the export data.
+		echo $weaverx_settings;
 
 		// Start the download.
 		die();
