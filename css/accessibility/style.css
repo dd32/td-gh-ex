@@ -1,0 +1,9 @@
+#basic_accessibility_widget p{
+	margin: 0px;
+	padding: 0px 0px 5px 0px;
+}
+
+#basic_accessibility_widget_options_show{
+	cursor: pointer;
+	cursor: hand;
+}

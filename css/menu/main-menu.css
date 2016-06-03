@@ -1,0 +1,16 @@
+.nav-menu-standard ul {
+	list-style: none;
+	position: relative;
+	padding: 0px;
+}
+
+.nav-menu-standard ul:after {
+	content: ""; 
+	clear: both; 
+	display: block;
+}
+	
+.nav-menu-standard ul li a {
+	display: inline-block; 
+	text-decoration: none;
+}
