@@ -6,17 +6,21 @@
 */
 ?>
 
+
 <div class="box90">
-	<div class="featured-boxs">
-		<?php foreach (range(1, 3) as $awesome_fboxn) { ?>
+	
+    <?php $awesome_sticky = get_option( 'sticky_posts' ); $awesome_fpbp_args = array( 'post_type'=> 'post',  'orderby' => 'date', 'order' => 'DESC', 'post__in'  => $awesome_sticky ); $awesome_fpbp_query = new WP_Query($awesome_fpbp_args); ?>
+    <div class="featured-boxs">
+    	<?php if (have_posts()) : $awesome_pcount = 0; while ( $awesome_fpbp_query->have_posts()) : if ( $awesome_pcount > 2 ): break; endif;  $awesome_fpbp_query->the_post(); $awesome_pcount++; ?>
 				<span class="featured-box" > 
 					<div class="box-icon fa-modx"></div>
-					<h3 class="ftitle"><?php echo esc_attr(awesome_get_option('featured-title' . $awesome_fboxn, 'Awesome Responsive')); ?></h3>
-					<div class="content-ver-sep"></div><br />
-					<p><?php echo esc_attr(awesome_get_option('featured-description' . $awesome_fboxn , 'The Color changing options of Awesome will give the WordPress Driven Site an attractive look. Awesome is super elegant and Professional Responsive Theme which will create the business widely expressed.')); ?></p>
+						<a href="<?php the_permalink(); ?>" target="_blank" ><h3 class="ftitle"><?php echo the_title(); ?></h3></a>
+						<p><?php echo the_excerpt(); ?></p>
 				</span>
-		<?php } ?>
+		<?php endwhile; endif; wp_reset_query(); ?>
+
 	</div> <!-- featured-boxs -->
 
 </div>
 <div class="lsep"></div>
+

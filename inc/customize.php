@@ -97,45 +97,6 @@ function awesome_customize_register($wp_customize){
 		'type' 		 => 'textarea'
     ));
 
-	
-	
-	foreach (range(1,3) as $awesome_fbsinumber) {
-	  
-// Featured Title
-    $wp_customize->add_setting('awesome[featured-title' . $awesome_fbsinumber . ']', array(
-        'default'        	=> __('Awesome Responsive','awesome'),
-        'capability'     	=> 'edit_theme_options',
-    	'sanitize_callback' => 'esc_textarea',
-        'type'           	=> 'option'
-
-    ));
-
-    $wp_customize->add_control('awesome_featured-title' . $awesome_fbsinumber, array(
-        'label'      => __('Featured Title', 'awesome'). '-' . $awesome_fbsinumber,
-        'section'    => 'awesome_options',
-        'settings'   => 'awesome[featured-title' . $awesome_fbsinumber .']'
-    ));
-
-
-// Featured Description
-    $wp_customize->add_setting('awesome[featured-description' . $awesome_fbsinumber . ']', array(
-        'default'        	=> __('The Color changing options of Awesome will give the WordPress Driven Site an attractive look. Awesome is super elegant and Professional Responsive Theme which will create the business widely expressed','awesome'),
-        'capability'     	=> 'edit_theme_options',
-    	'sanitize_callback' => 'esc_textarea',
-        'type'           	=> 'option'
-
-    ));
-
-    $wp_customize->add_control('awesome_featured-description' . $awesome_fbsinumber  , array(
-        'label'      => __('Featured Description', 'awesome') . '-' . $awesome_fbsinumber,
-        'section'    => 'awesome_options',
-        'settings'   => 'awesome[featured-description' . $awesome_fbsinumber .']',
-		'type' 		 => 'textarea'
-    ));
-	
-  }
-	
-
 }
 
 

@@ -1,7 +1,7 @@
 ----------------------------------
 Awesome
 ----------------------------------
-Version: 	1.2
+Version: 	1.2.1
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -47,10 +47,18 @@ Limitations: Site Title/ Logo, Top Menu and Main Menu width are fixed. So you sh
 
 Instructions:
 - You can set the Slide Images, About  Heading, Featured Boxes Texts, Social Links from Appearance > Customize
+- Featured Boxes will come from the last 03 Sticky Posts in Free Version
+- Slider, About Section and Featured Boxes will be available when you will set a Page for the Front Page from Settings > Reading
 
 
 Changelog
 ============
+
+Version 1.2.1
+______________
+- Code Cleanup
+- Featured Boxs from Sticky Posts
+
 
 Version 1.2
 ______________
