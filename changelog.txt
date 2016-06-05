@@ -1,5 +1,9 @@
 Bazaar Lite Changelog
 
+- Version 1.2.0 - Released: 05.06.2016
+
+-- Fixed : 'More' term between the post thumbnail and the summary.
+
 - Version 1.1.9 - Released: 28.05.2016
 
 -- Fixed : Missing url option on first slide.
