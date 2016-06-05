@@ -30,13 +30,7 @@ if ( post_password_required() ) {
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'miranda' ); ?></h1>
-			<?php previous_comments_link( '<button class="nav-previous">&nbsp;' . __( 'Older Comments', 'miranda' ) . '</button>' ); ?>
-			<?php next_comments_link( '<button class="nav-next">' . __( 'Newer Comments', 'miranda' ) . '&nbsp;</button>' ); ?>
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // check for comment navigation ?>
+		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
 			<?php
@@ -47,14 +41,8 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'miranda' ); ?></h1>
-			<?php previous_comments_link( '<button class="nav-previous">&nbsp;' . __( 'Older Comments', 'miranda' ) . '</button>' ); ?>
-			<?php next_comments_link( '<button class="nav-next">' . __( 'Newer Comments', 'miranda' ) . '&nbsp;</button>' ); ?>
-		</nav><!-- #comment-nav-below -->
-		<?php endif; // check for comment navigation ?>
-
+		<?php the_comments_navigation(); ?>
+		
 	<?php endif; // have_comments() ?>
 
 	<?php

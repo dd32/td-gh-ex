@@ -1,6 +1,6 @@
 <?php
 /**
- * miranda functions and definitions
+ * Miranda functions and definitions
  *
  * @package miranda
  */
@@ -13,53 +13,68 @@ if ( ! isset( $content_width ) ) {
 }
 
 if ( ! function_exists( 'miranda_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function miranda_setup() {
-
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on miranda, use a find and replace
-	 * to change 'miranda' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'miranda', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	add_editor_style();
-	
-	add_theme_support( "title-tag" );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'post-thumbnails' );
+	function miranda_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on miranda, use a find and replace
+		 * to change 'miranda' to the name of your theme in all the template files
+		 */
+		load_theme_textdomain( 'miranda', get_template_directory() . '/languages' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'header' => __( 'Primary Menu', 'miranda' ),
-		'social' => __( 'Social Menu', 'miranda' ),
-	) );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-	) );
+		add_editor_style();
 
-}
-endif; // miranda_setup
+		add_theme_support( 'title-tag' );
+
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+		 */
+		add_theme_support( 'post-thumbnails' );
+
+		add_theme_support( 'custom-logo', array(
+			'height'      => 200,
+			'width'       => 200,
+			'flex-height' => true,
+			'flex-width'  => true,
+		) );
+
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'header' => __( 'Primary Menu', 'miranda' ),
+			'social' => __( 'Social Menu', 'miranda' ),
+		) );
+
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );
+
+		add_theme_support( 'custom-background', array(
+			'default-color'  => '#fff',
+		) );
+
+	}
+endif; // End miranda_setup.
+
 add_action( 'after_setup_theme', 'miranda_setup' );
 
 /**
@@ -84,10 +99,10 @@ add_action( 'widgets_init', 'miranda_widgets_init' );
  * Enqueue scripts and styles.
  */
 function miranda_scripts() {
-	wp_enqueue_style( 'miranda-style', get_stylesheet_uri(), array('dashicons') );
+	wp_enqueue_style( 'miranda-style', get_stylesheet_uri(), array( 'dashicons' ) );
 
-	wp_enqueue_script( 'miranda-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20120206', true );
-	
+	wp_enqueue_script( 'miranda-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20120206', true );
+
 	wp_enqueue_script( 'miranda-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -96,22 +111,15 @@ function miranda_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'miranda_scripts' );
 
-
 /**
  * Custom header for this theme.
  */
 require get_template_directory() . '/inc/custom-header.php';
 
-
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
 
 /**
  * Customizer additions.
@@ -123,39 +131,57 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-
-/* Add a title to posts that are missing title */
+/**
+ * Add a title to posts that are missing title.
+ *
+ * @param mixed $title -The post title.
+ */
 add_filter( 'the_title', 'miranda_post_title' );
 function miranda_post_title( $title ) {
-	if ( $title == '' ) {
+	if ( '' === $title ) {
 		return __( 'Untitled', 'miranda' );
-	}else{
+	} else {
 		return $title;
 	}
 }
 
-
-/* Add support for changing the accent color */
+/**
+ * Add support for changing the accent color.
+ */
 function miranda_customize_css() {
-echo '<style type="text/css">
-		.site-title,
-		.site-description {
-			color: #' . esc_attr( get_header_textcolor() ) . ';}';
-		
-		echo '#header{
-			background:url("' . get_header_image() . '");
-			height:' .  get_custom_header()->height . 'px;
-			}';
-		
-		echo '.widget-title{border-bottom:3px solid ' . esc_attr( get_theme_mod('miranda_color', '#861a50') ) . ';}
-			.social-navigation li a:before,	.plus:before, .more-link:after, .nav-next:after,.nav-previous:before, 
-			.entry-title, .entry-title a{color:' . esc_attr( get_theme_mod('miranda_color', '#861a50') ) . ';}';
-			
-		echo '#header-menu ul ul a:hover, #header-menu ul ul a:focus,#header-menu ul li ul :hover > a{border-left:3px solid ' 
-		. esc_attr( get_theme_mod('miranda_color', '#861a50') ) . ';	border-right:3px solid ' . esc_attr( get_theme_mod('miranda_color', '#861a50') ) . ';}';
-		
-		echo '#header-menu a:hover,#header-menu a:focus{border-bottom:3px solid ' . esc_attr( get_theme_mod('miranda_color', '#861a50') ) . ';}';
-	
+	echo '<style type="text/css">';
+	echo "\n.site-title,
+.site-title a,
+.site-description{color: #" . esc_attr( get_header_textcolor() ) . ";}\n";
+
+	echo '#header{background:url("' . esc_url( get_header_image() ) . '"); height:' . esc_attr( get_custom_header()->height ) . 'px; }';
+	echo "\n";
+	echo '.widget-title{border-bottom:3px solid ' . esc_attr( get_theme_mod( 'miranda_color', '#861a50' ) ) . ';}';
+	echo "\n";
+
+	echo '.social-navigation li a:before,
+.plus:before,
+.more-link:after,
+.nav-next:after,
+.nav-previous:before,
+.entry-title,
+.entry-title a{color:' . esc_attr( get_theme_mod( 'miranda_color', '#861a50' ) ) . ';}';
+	echo "\n";
+
+	echo '.main-navigation ul ul a:hover,
+.main-navigation ul ul a:focus,
+.main-navigation ul li ul :hover > a {
+	border-left:3px solid ' . esc_attr( get_theme_mod( 'miranda_color', '#861a50' ) ) . ';
+	border-right:3px solid ' . esc_attr( get_theme_mod( 'miranda_color', '#861a50' ) ) . ';
+}';
+	echo "\n";
+
+	echo '.main-navigation a:hover,
+.main-navigation a:focus{border-bottom:3px solid ' . esc_attr( get_theme_mod( 'miranda_color', '#861a50' ) ) . ';}';
+	echo "\n";
+
+	echo '.social-menu li a:before, .menu-toggle:before, .bypostauthor .fn,.bypostauthor .says{color: ' . esc_attr( get_theme_mod( 'miranda_color', '#861a50' ) ) . ';}';
+	echo "\n";
 	echo '</style>';
 }
-add_action( 'wp_head', 'miranda_customize_css');
+add_action( 'wp_head', 'miranda_customize_css' );

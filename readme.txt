@@ -4,10 +4,10 @@ Tags: light, white, pink, threaded-comments, custom-menu, sticky-post, translati
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright 2014-2015 Carolina Nymark
+Copyright 2014-2016 Carolina Nymark
 
 = Description ==
-Miranda is an accessible and responsive two column theme with two menus and a flexible sidebar for all your widgets.
+Miranda is an accessible and responsive two column theme with two menus (including a social menu), color options, and a flexible sidebar for your widgets.
 
 == Installation ==
 1. Unzip `miranda.zip` to the `/wp-content/themes/` directory
@@ -15,17 +15,23 @@ Miranda is an accessible and responsive two column theme with two menus and a fl
 
 == Known Limitations ==
 -A one line menu is strongly recommended, instead of using long menus, use sub menus.
--The header is not displayed on single post, pages and archives.
-Please note that changing the colours can impact the accessibility of the theme.
 
 If you have any questions or suggestions for this theme, please visit http://wordpress.org/support/theme/miranda.
 
 == Change log ==
+Version 1.3 2016/06/05
+Added support for custom logo and background color.
+Updated navigation functions.
+Updated the theme tags.
+Fixed errors with the accent color and added a background color option.
+Fixed a problem with the social menu.
+Removed the breadcrumb option.
+Added an option to show the header on all pages.
+Added flexible width to the header image.
+
 Version: 1.1
-Updated menu and realted javascript
+Updated menu and related javascript
 Updated post navigation
-
-
 
 == Folders included in this theme ==
 images/ -contains images.

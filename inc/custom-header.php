@@ -20,6 +20,7 @@ function miranda_custom_header_setup() {
 		'width'                  => 700,
 		'height'                 => 280,
 		'flex-height'            => true,
+		'flex-width'            => true,
 		'wp-head-callback'       => 'miranda_customize_css',
 		'admin-head-callback'    => 'miranda_admin_header_style',
 		'admin-preview-callback' => 'miranda_admin_header_image',
@@ -44,46 +45,3 @@ function miranda_custom_header_setup() {
 	
 }
 add_action( 'after_setup_theme', 'miranda_custom_header_setup' );
-
-
-if ( ! function_exists( 'miranda_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * @see miranda_custom_header_setup().
- */
-function miranda_admin_header_style() {
-?>
-	<style type="text/css">
-		.appearance_page_custom-header #headimg {
-			border: none;
-		}
-			#headimg{text-align:center;}
-			#name{font-size:60px; line-height:1; margin:0 auto; text-decoration:none;}
-			#desc{font-size:16px; margin:0 auto 30px auto;}
-		}
-	</style>
-<?php
-}
-endif; // miranda_admin_header_style
-
-
-if ( ! function_exists( 'miranda_admin_header_image' ) ) :
-/**
- * Custom header image markup displayed on the Appearance > Header admin panel.
- *
- * @see miranda_custom_header_setup().
- */
-function miranda_admin_header_image() {
-	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
-?>
-	<div id="headimg">
-		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php if ( get_header_image() ) : ?>
-			<img src="<?php header_image(); ?>" alt="">
-		<?php endif; ?>
-	</div>
-<?php
-}
-endif; // miranda_admin_header_image
