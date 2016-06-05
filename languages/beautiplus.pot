@@ -1,0 +1,306 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Beautiplus\n"
+"POT-Creation-Date: 2016-06-06 00:09+0530\n"
+"PO-Revision-Date: 2016-06-06 00:09+0530\n"
+"Last-Translator: \n"
+"Language-Team: Grace Themes <support@gracethemes.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _;__;_e;gettext;gettext_noop;esc__attr\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive.php:23
+msgid "Tag: "
+msgstr ""
+
+#: archive.php:30
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:38
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:41
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:44
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:47
+msgid "Asides"
+msgstr ""
+
+#: archive.php:50
+msgid "Images"
+msgstr ""
+
+#: archive.php:53
+msgid "Videos"
+msgstr ""
+
+#: archive.php:56
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:59
+msgid "Links"
+msgstr ""
+
+#: archive.php:62
+msgid "Archives"
+msgstr ""
+
+#: category.php:19 content-single.php:16
+msgid "Category: "
+msgstr ""
+
+#: content.php:26
+msgid "Read More &raquo;"
+msgstr ""
+
+#: footer.php:14 inc/customizer.php:249
+msgid "About Us"
+msgstr ""
+
+#: footer.php:18 inc/customizer.php:260
+msgid ""
+"Donec ut ex ac nulla pellentesque mollis in a enim. Praesent placerat sapien "
+"mauris, vitae sodales tellus venenatis ac. Suspendisse suscipit velit id "
+"ultricies auctor. Duis turpis arcu, aliquet sed sollicitudin sed, porta quis "
+"urna. Quisque velit nibh, egestas et erat a, vehicula interdum augue."
+msgstr ""
+
+#: footer.php:26 inc/customizer.php:271
+msgid "Main Navigation"
+msgstr ""
+
+#: footer.php:37 inc/customizer.php:282
+msgid "Recent Posts"
+msgstr ""
+
+#: footer.php:56 inc/customizer.php:293
+msgid "Contact Info"
+msgstr ""
+
+#: footer.php:61 inc/customizer.php:323
+msgid "4212 E Valley Mesa St. Petter , Ohio United State."
+msgstr ""
+
+#: footer.php:65 inc/customizer.php:335
+msgid " +123 456 7890"
+msgstr ""
+
+#: footer.php:104
+msgid "2016 beautiplus. All Right Reserved."
+msgstr ""
+
+#: functions.php:38
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:39
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:67
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:68
+msgid "Appears on blog page sidebar"
+msgstr ""
+
+#: functions.php:223
+msgid "&laquo; Prev"
+msgstr ""
+
+#: functions.php:224
+msgid "Next &raquo;"
+msgstr ""
+
+#: header.php:171
+msgid "Welcome to Beautiplus"
+msgstr ""
+
+#: header.php:175
+msgid ""
+"This is an example page. Its different from a blog post because it will stay "
+"in one place and will show up in your site navigation (in most themes). Most "
+"people start with an About page that introduces them to potential site "
+"visitors.This is an example page. Its different from a blog post because it "
+"will stay in one place and will show up in your site navigation (in most "
+"themes). Most people start with an About page that introduces them to "
+"potential site visitors. "
+msgstr ""
+
+#: inc/about-themes.php:11
+msgid "About Theme Info"
+msgstr ""
+
+#: inc/customizer.php:52
+msgid "Color Scheme"
+msgstr ""
+
+#: inc/customizer.php:53
+msgid "More color options in PRO Version"
+msgstr ""
+
+#: inc/customizer.php:63
+msgid "Slider Settings"
+msgstr ""
+
+#: inc/customizer.php:65
+msgid ""
+"Featured Image Size Should be same ( 1400x600 ) More slider settings "
+"available in PRO Version."
+msgstr ""
+
+#: inc/customizer.php:76
+msgid "Select page for slide one:"
+msgstr ""
+
+#: inc/customizer.php:86
+msgid "Select page for slide two:"
+msgstr ""
+
+#: inc/customizer.php:96
+msgid "Select page for slide three:"
+msgstr ""
+
+#: inc/customizer.php:102
+msgid "Homepage Three Boxes Section"
+msgstr ""
+
+#: inc/customizer.php:103
+msgid "Select Pages from the dropdown for homepage three boxes section"
+msgstr ""
+
+#: inc/customizer.php:139
+msgid "Welcome Section"
+msgstr ""
+
+#: inc/customizer.php:140
+msgid "Add your details here"
+msgstr ""
+
+#: inc/customizer.php:146
+msgid "Welcome to beautiplus"
+msgstr ""
+
+#: inc/customizer.php:151
+msgid "Add title for welcome"
+msgstr ""
+
+#: inc/customizer.php:157
+msgid ""
+"This is an example page. Its different from a blog post because it will stay "
+"in one place and will show up in your site navigation in most theme. Most "
+"people start with an About page that introduces them to potential site "
+"visitors.This is an example page. Its different from a blog post because it "
+"will stay in one place and will show up in your site navigation . Most "
+"people start with an About page that introduces them to potential site "
+"visitors. "
+msgstr ""
+
+#: inc/customizer.php:162
+msgid "Add here your welcome description"
+msgstr ""
+
+#: inc/customizer.php:175
+msgid "Add read more button link here"
+msgstr ""
+
+#: inc/customizer.php:183
+msgid "Social Settings"
+msgstr ""
+
+#: inc/customizer.php:184
+msgid ""
+"Add social icons link here. <br /> More icon available in in PRO Version"
+msgstr ""
+
+#: inc/customizer.php:195
+msgid "Add facebook link here"
+msgstr ""
+
+#: inc/customizer.php:205
+msgid "Add twitter link here"
+msgstr ""
+
+#: inc/customizer.php:214
+msgid "Add google plus link here"
+msgstr ""
+
+#: inc/customizer.php:223
+msgid "Add linkedin link here"
+msgstr ""
+
+#: inc/customizer.php:230
+msgid "Footer Area"
+msgstr ""
+
+#: inc/customizer.php:232
+msgid "Add footer copyright text"
+msgstr ""
+
+#: inc/customizer.php:254
+msgid "Add title for about us"
+msgstr ""
+
+#: inc/customizer.php:265
+msgid "Add description for about us"
+msgstr ""
+
+#: inc/customizer.php:276
+msgid "Add title for menu"
+msgstr ""
+
+#: inc/customizer.php:287
+msgid "Add title for footer recent posts"
+msgstr ""
+
+#: inc/customizer.php:298
+msgid "Add title for footer contact info"
+msgstr ""
+
+#: inc/customizer.php:304
+msgid "2016 beautiplus. All Right Reserved"
+msgstr ""
+
+#: inc/customizer.php:309
+msgid "Change Copyright Text"
+msgstr ""
+
+#: inc/customizer.php:316
+msgid "Contact Details"
+msgstr ""
+
+#: inc/customizer.php:317
+msgid "Add you contact details here"
+msgstr ""
+
+#: inc/customizer.php:328
+msgid "Add contact address here"
+msgstr ""
+
+#: inc/customizer.php:339
+msgid "Add contact number here."
+msgstr ""
+
+#: inc/customizer.php:349
+msgid "Add you email here"
+msgstr ""
