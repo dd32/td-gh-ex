@@ -180,7 +180,12 @@
 		float: none;
 		width: auto;
 	}
-
+	.search.search-no-results .search-form > label {
+		width: 79%;
+	}
+	.search.search-no-results form .search-submit {
+		width: 20%;
+	}
 
 	/*=========================== RESPONSIVE NAVIGATION MENU =======================================*/
 	.menu-wrapper {
@@ -572,7 +577,6 @@
 	.aglee-search input[type="search"]{
 		font-size: 13px;
 	}
-	
 	.top-header .call-us span{
 		font-size:12px; 
 		text-transform: capitalize;
@@ -590,7 +594,6 @@
 	.header-text-only .menu-wrapper{
 		width: 100%;
 	}
-
 	/* TOGGLE NAVIGATION TAB */
 	.menu-toggle {
 		float: left;
@@ -611,7 +614,13 @@
 		display: none;
 		border-top:none;
 	}
-
+	.search.search-no-results .search-form > label, 
+	.search.search-no-results form .search-submit {
+		width: 100%;
+	}
+	.search.search-no-results .search-form > label {
+		margin-bottom: 5px;
+	}
 
 	/*=========================== FEATURE SECTION =================================*/
 	#featured-post-container .feature-post-wrap {

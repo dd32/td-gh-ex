@@ -60,11 +60,16 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
-= 1.0.11 - 3rd March, 2015 =
+= 1.0.12 - 5th June, 2016 =
+* Minor Design Fixes
+* Search No/result page fix.
+* Search box fix.
+
+= 1.0.11 - 3rd March, 2016 =
 * Added custom css and js boxes
 * Added slider caption show hide feature
 
-= 1.0.10 - 10th February, 2015 =
+= 1.0.10 - 10th February, 2016 =
 * Minor bug fixes.
 
 = 1.0.9 - 22nd December, 2015 =

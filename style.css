@@ -4,11 +4,11 @@ Theme URI: http://8degreethemes.com/wordpress-themes/aglee-lite/
 Author: 8Degree Themes
 Author URI: http://8degreethemes.com/
 Description: Aglee Lite is a simple, basic & clean.  It is beautifully designed responsive free WordPress business theme. It has useful features to setup your website fast and make your website operate smoothly. It doesn't have much features which you probably won't use at all! Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. Aglee Lite is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email. View full demo here: http://8degreethemes.com/demo/aglee-lite/ support: support@8degreethemes.com
-Version: 1.0.11
+Version: 1.0.12
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: aglee-lite
-Tags: blue,green,black, left-sidebar, right-sidebar, custom-background, featured-images, full-width-template, threaded-comments, translation-ready
+Tags: left-sidebar, right-sidebar, custom-background, featured-images, full-width-template, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1229,9 +1229,10 @@ Top Header CSS
     margin-bottom: 8px;
     text-align: right;
 }
-
 .top-header {
     margin-top: 10px;
+    overflow: hidden;
+    position: relative;
     border-bottom: 1px solid #f2f2f2;
 }
 .top-header .call-us {
@@ -1268,18 +1269,18 @@ Top Header CSS
 }
 .aglee-search {
     background: #fff none repeat scroll 0 0;
-    line-height: 39px;
+    /*line-height: 39px;*/
     opacity: 0;
+    overflow: hidden;
     position: absolute;
-    right: 0px;
-    top: 3px;
+    right: -100%;
+    top: 0;
+    transition: all 0.5s ease-in-out 0s;
+    width: 300px;
+    z-index: -9999;
     transition: all 0.5s ease-in-out 0s;
     -webkit-transition: all 0.5s ease-in-out 0s;
-    -moz-transition: all 0.5s ease-in-out 0s;
-    width: 300px;
-    overflow: hidden;
-    z-index: -9999;
-    
+    -moz-transition: all 0.5s ease-in-out 0s;    
 }
 .search-form > label {
     float: left;
@@ -1287,7 +1288,7 @@ Top Header CSS
 }
 .aglee-search form input[type='search']{
     height: 30px;
-    margin-top: 3px;
+    /*margin-top: 3px;*/
     font-size: 13px;
 }
 .aglee-search .search-form > input[type='submit']{
@@ -1298,7 +1299,7 @@ Top Header CSS
     line-height: 10px;
     margin-left: 6px;
     padding: 9px 15px;
-    margin-top: 3px;
+    /*margin-top: 3px;*/
 }
 .aglee-search .search-form > input[type='submit']:hover{
     background: #3b73a7;
@@ -2265,31 +2266,30 @@ Toggle CSS
     background: #fff none repeat scroll 0 0;
     border-bottom: 2px solid #ccc;
 }
-
-.ap_toggle.close .ap_toggle_content {
+/*.ap_toggle.close .ap_toggle_content {
     display: none;
 }
 
 .ap_toggle.open .ap_toggle_content {
     display: block;
-}
+    }*/
 
-.ap_toggle_title {
-   background: #ffffff;
-   color: #295074;
-   cursor: pointer;
-   font-size: 17px;
-   font-weight: 600;
-   height: 45px;
-   line-height: 45px;
-   padding: 0 21px;
-   position: relative;
-   transition: all ease-in-out 0.3s;
-   -webkit-transition: all ease-in-out 0.3s;
-   -moz-transition: all ease-in-out 0.3s;
-}
+    .ap_toggle_title {
+       background: #ffffff;
+       color: #295074;
+       cursor: pointer;
+       font-size: 17px;
+       font-weight: 600;
+       height: 45px;
+       line-height: 45px;
+       padding: 0 21px;
+       position: relative;
+       transition: all ease-in-out 0.3s;
+       -webkit-transition: all ease-in-out 0.3s;
+       -moz-transition: all ease-in-out 0.3s;
+   }
 
-.ap_toggle_title:hover{
+   .ap_toggle_title:hover{
     background: #e8f4ff;
 }
 
@@ -2426,8 +2426,9 @@ Testimonial CSS
     float: left;
 }
 .testimonial_img {
-    border: 2px solid #7797b6;
+    border: 5px solid #ddd;
     border-radius: 100%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     height: 75px;
     margin-right: 5%;
     overflow: hidden;
@@ -2616,8 +2617,12 @@ Footer CSS
 
 /*FOOTER CONTCT INFORMATION*/
 
-.featured-footer-4 div{
-    margin-bottom: 15px;
+.widget.widget_aptf_widget:before, .widget.widget_aptf_widget:after {
+    content: "";
+    display: table;
+}
+.widget.widget_aptf_widget:after {
+    clear: both;
 }
 .featured-footer-4 p{
     margin-bottom: 0;
@@ -2877,13 +2882,10 @@ Footer CSS
     color: #fff;
 }
 
-/*.newsletter.newsletter-widget p:nth-of-type(2) {
-    width: 14%;
-    }*/
-/*--------------------------------------------------------------
+
+    /*--------------------------------------------------------------
     Sidebar layout css 
     --------------------------------------------------------------*/
-
     #secondary .widget_archive a, 
     #secondary .widget_categories a, 
     #secondary .widget_recent_entries a, 
@@ -2972,7 +2974,7 @@ Footer CSS
         padding: 20px;
         width: 94%;
     }
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
     Go to top css 
     --------------------------------------------------------------*/
 
@@ -3010,7 +3012,7 @@ Footer CSS
         -webkit-animation-duration: 0.5s;
         -moz-animation-duration: 0.5s;
     }
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
     Sidebar widget css 
     --------------------------------------------------------------*/
 
@@ -3113,23 +3115,19 @@ Footer CSS
         padding-bottom: 15px;
         margin-bottom: 15px;
     }
-
     .post-date{
         font-size: 15px;
         font-weight: normal;
-        color: #5f5f5f;
+        color: #9f9f9f;
         display: block;
     }
-
     .comment-author-link,
     .comment-author-link a {
         font-weight: bold;
     }
-
     .widget_nav_menu .menu li {
         list-style-type: none;
     }
-
     .widget_nav_menu .menu li a {
         color: #3d3d3d;
         font-size: 14px;
@@ -3137,7 +3135,6 @@ Footer CSS
         position: relative;
         padding-left: 0px;
     }
-
     .widget_nav_menu .menu > li > a:before,
     .widget_nav_menu .menu ul > li a:before {
         content: "\f101";
@@ -3152,16 +3149,14 @@ Footer CSS
         transition: color 0.3s ease 0s;
         display: none;
     }
-
     .widget_nav_menu .menu ul > li a:before {
         content: "\f105"
     }
-
     .widget_nav_menu .menu li a:hover,
     .widget_nav_menu .menu li a:hover:before {
         color: #dc3522;
     }
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
     Page Header css 
     --------------------------------------------------------------*/
 
@@ -3174,7 +3169,7 @@ Footer CSS
         margin-bottom: 20px;
         padding: 5px 20px;
     }
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
     Blog css 
     --------------------------------------------------------------*/
 
@@ -3391,7 +3386,7 @@ Footer CSS
     .widget_tag_cloud .tagcloud a:hover {
         background: #7b7b7b;
     }
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
     Search and single css 
     --------------------------------------------------------------*/
 
@@ -3416,50 +3411,48 @@ Footer CSS
     .single .entry-footer span.tags-links {
         margin-top: 0;
     }
-
-    .no-results .page-content .search-field {
-        width: 50%;
-        float: left;
-    }
-
-    .no-results .page-content input[type="submit"] {
-        height: 36px;
-        background: #dc3522;
-        color: #fff;
-    }
-
-    .no-results .page-content input[type="submit"]:hover {
-        background: #F53A25;
-    }
-
     .search-results article.instock{
         border-bottom: 1px solid #ddd;
     }
-
     .search-results .entry-footer{
         padding: 6px 0;
     }
-
     .search-results .entry-footer span a{
         padding-left: 8px;
     }
-
     .search article.hentry h1.entry-title a:hover{
         color: #3b73a7;
     }
-
     .search-results .entry-title{
         font-weight: 400;
     }
+    .search.search-no-results .search-form > label {
+        float: none;
+        display: inline-block;
+        width: 90%;
+    }
+    .search.search-no-results form .search-field {
+        background: #eee none repeat scroll 0 0;
+        border: 1px solid #ddd;
+        color: #666;
+        font-size: 20px;
+        height: 60px;
+        padding: 5px 15px;
+    }
+    .search.search-no-results form .search-submit {
+        font-size: 20px;
+        font-weight: normal;
+        height: 60px;
+        padding: 0;
+        width: 9%;
+    }
 
-
-/*--------------------------------------------------------------
+   /*--------------------------------------------------------------
    Error 404 css 
    --------------------------------------------------------------*/
-
    .error-404 {
-    text-align: center;
-}
+        text-align: center;
+    }
 
 .error-404 .page-content form,
 .error-404 .page-content p {
