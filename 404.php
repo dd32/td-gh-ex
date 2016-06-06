@@ -6,9 +6,9 @@
 
       <article class="post-content entry-content" itemprop="text">
 
-		<h1 class="not-found-title shake"><?php _e( 'Oopss! 404 Not Found', 'ace' ); ?></h1>
+		<h1 class="not-found-title shake"><?php _e( 'Oopss! 404 Not Found', 'adelle' ); ?></h1>
 
-        <p><?php if( get_option( 'ace_404_page' ) ) { echo stripslashes_deep( get_option( 'ace_404_page' ) ); } else { echo _e( '<p class="not-found-text">The page you are looking for has not been found. How about search it out?</p>', 'ace' ); } ?></p>
+        <p><?php if( get_option( 'ace_404_page' ) ) { echo stripslashes_deep( get_option( 'ace_404_page' ) ); } else { echo _e( '<p class="not-found-text">The page you are looking for has not been found. How about search it out?</p>', 'adelle' ); } ?></p>
 
         <section class="split-columns">
           <article class="col1">&nbsp;</article>
