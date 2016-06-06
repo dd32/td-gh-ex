@@ -44,7 +44,9 @@
 		} );
 	}
 
-	$( '#site-navigation' ).find( '.dropdown-toggle' ).click( function() {
+	$( '#site-navigation' ).find( '.dropdown-toggle' ).click( function(e) {
+		e.preventDefault();
+
 		$( '#site-navigation' ).find( 'li' ).not( $(this).parents() ).removeClass( 'open' );
 		$(this).parent().toggleClass( 'open' );
 	} );

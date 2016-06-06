@@ -61,6 +61,10 @@ Licensed under the terms of CC0
 
 == CHANGELOG ==
 
+06/06/2016 v1.0.8
+* Fix for dropdown menu issue
+* Fix for JS enqueue issue
+
 03/14/2016 v1.0.7
 * H1 tag fix
 * Tweaked mobile menu

@@ -313,7 +313,7 @@ class Bavotasan_Customizer {
     }
 
 	public function customize_controls_enqueue_scripts() {
-		wp_enqueue_script( 'bavotasan-customizer', BAVOTASAN_THEME_URL . '/library//js/admin/customizer.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'bavotasan-customizer', BAVOTASAN_THEME_URL . '/library/js/admin/customizer.js', array( 'jquery' ), '', true );
         wp_localize_script( 'bavotasan-customizer', 'Bavotasan_Customizer', array(
             'upgradeAd' => __( 'Upgrade to premium version', 'arcade-basic' ),
         ));
