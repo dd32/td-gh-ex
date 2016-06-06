@@ -7,7 +7,7 @@
     <article class="article article-page" itemscope itemtype="http://schema.org/CreativeWork">
 
       <header class="post-header">
-        <h2 class="post-title entry-title" itemprop="headline"><?php the_title(); ?></h2>
+        <h1 class="post-title entry-title" itemprop="headline"><?php the_title(); ?></h1>
       </header>
  
       <article class="post-content entry-content" itemprop="text">

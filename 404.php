@@ -4,29 +4,17 @@
 
     <article class="article article-page" itemscope itemtype="http://schema.org/CreativeWork">
 
-      <header class="post-header">
-        <h2 class="post-title entry-title" itemprop="headline"><?php _e( 'Error 404 - Not Found', 'adelle' ); ?></h2>
-      </header>
-
       <article class="post-content entry-content" itemprop="text">
 
-        <p><?php echo _e( '404 Not Found', 'adelle' ); ?></p>
+		<h1 class="not-found-title shake"><?php _e( 'Oopss! 404 Not Found', 'ace' ); ?></h1>
 
-        <?php get_search_form();?>
+        <p><?php if( get_option( 'ace_404_page' ) ) { echo stripslashes_deep( get_option( 'ace_404_page' ) ); } else { echo _e( '<p class="not-found-text">The page you are looking for has not been found. How about search it out?</p>', 'ace' ); } ?></p>
 
-        <section class="left">
-          <h3><?php _e( 'Archives by month', 'adelle' ); ?></h3>
-          <ul>f
-            <?php wp_get_archives( 'type=monthly' ); ?>
-          </ul>
+        <section class="split-columns">
+          <article class="col1">&nbsp;</article>
+          <article class="col2"><?php get_search_form(); ?></article>
+          <article class="col3">&nbsp;</article>
         </section>
-        <section class="right">
-          <h3><?php _e( 'Archives by category', 'adelle' ); ?></h3>
-          <ul>
-            <?php wp_list_categories( 'sort_column=name' ); ?>
-          </ul>
-        </section>
-        <div class="clearfix">&nbsp;</div>
 
       </article><!-- .post-content -->
 

@@ -1,6 +1,7 @@
-<form role="search" class="sideform" method="get" action="<?php echo esc_url( home_url() ); ?>">
-  <fieldset>
-  <input type="text" name="s" class="sidetext" size="15" title="<?php esc_attr_e( 'Search', 'adelle' ); ?>" />
-  <input type="submit" class="sidebutton" value="<?php esc_attr_e( 'Search', 'adelle' ); ?>" />
-  </fieldset>
+<form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-text" placeholder="<?php esc_attr_e( 'Search', 'ace' ); ?>" value="" name="s" />
+	</label>
+  <button type="submit" class="search-button input-button ease-in-out"><i class="fa fa-search sideform-button"></i></button>
 </form>

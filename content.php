@@ -2,7 +2,7 @@
 
       <header class="post-header">
         <div class="post-date radius-100 updated" itemprop="dateModified"><span itemprop="datePublished" content="<?php the_time( get_option( 'date_format' ) ); ?>"><a href="<?php the_permalink(); ?>"><?php echo get_the_date( 'd' ) ?></span><br /><?php echo get_the_date( 'M' ) ?><br /><?php echo get_the_date( 'Y' ) ?></a></div>
-        <h2 class="post-title entry-title" itemprop="headline"><a itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" href="<?php the_permalink(); ?>" rel="<?php esc_attr_e( 'bookmark', 'adelle' ); ?>"><?php the_title(); ?></a></h2>
+        <h1 class="post-title entry-title" itemprop="headline"><a itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" href="<?php the_permalink(); ?>" rel="<?php esc_attr_e( 'bookmark', 'adelle' ); ?>"><?php the_title(); ?></a></h1>
         <div class="post-category"><?php _e( 'categories', 'adelle' ); ?>: <?php the_category( ', ' ); ?></div>
       </header>
 
@@ -10,7 +10,7 @@
 
         <?php the_content(); ?>
 
-        <?php echo adelle_theme_get_link_pages(); ?>
+        <?php adelle_theme_get_link_pages(); ?>
 
         <footer class="post-footer">
 
