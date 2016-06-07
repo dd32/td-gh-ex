@@ -34,7 +34,7 @@ Get theme instruction at http://themegrill.com/theme-instruction/spacious
 Get free support at http://themegrill.com/support-forum
 
 = Theme Features Usage =
-All available options can be used from Appearance->Theme Options
+All available options can be used from Appearance->Customize
 
 /**********************************************************/
 
@@ -45,6 +45,8 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version 1.4.0.1 =
+* Tweaks - HTML tags removed from the string translation.
 
 = Version 1.4.0 =
 * Tweaks - Updated theme tags as per new introduced tags
