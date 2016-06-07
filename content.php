@@ -1,7 +1,8 @@
 <article class="post"> 
 	<span class="site-author">
 		<figure class="avatar">
-			<a data-tip="<?php the_author() ;?>" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></a>
+		<?php $author_id=$post->post_author; ?>
+			<a data-tip="<?php the_author() ;?>" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>" data-toggle="tooltip" title="<?php echo the_author_meta( 'display_name' , $author_id ); ?>"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></a>
 		</figure>
 	</span>
 		<header class="entry-header">

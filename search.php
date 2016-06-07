@@ -13,7 +13,7 @@ get_template_part('index', 'bannerstrip'); // banner strip
 	<div class="container">
 		<div class="row">
 			<!--Blog Posts-->
-			<div class="col-md-8 col-xs-12">
+			<div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "col-md-8"; } else { echo "col-md-12"; } ?>">
 				<div class="site-content">
 					<?php 
 					if ( have_posts() ) :
@@ -23,7 +23,10 @@ get_template_part('index', 'bannerstrip'); // banner strip
 						get_template_part( 'content','' );
 						
 					endwhile;
-					?>
+					else : ?>
+					<h2><?php _e( "Nothing Found", 'busi_prof' ); ?></h2>
+					<p><?php _e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'busi_prof' ); ?>
+					</p>
 					<!-- Pagination -->			
 					<div class="paginations">
 						<?php

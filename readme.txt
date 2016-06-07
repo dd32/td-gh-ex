@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.7.1
+1. Solved Styling issue.
 @version 1.7
 1. Added Customizer Setting
 @version 1.6.3

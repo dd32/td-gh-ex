@@ -22,6 +22,7 @@
 		<?php endif;  ?>
 		<?php wp_list_comments( array( 'callback' => 'busiprof_comment' ) ); ?>
 		<!-- comment_mn -->
+		</div>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below">
 			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'busi_prof' ); ?></h1>
@@ -36,11 +37,8 @@
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 <p><?php _e("You must be",'busi_prof')?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e("logged in",'busi_prof')?></a> <?php _e("to post a comment",'busi_prof')?></p>
 <?php else : ?>
-</div> 
 <div class="comment-form">
-	
 	<div class="row">
-	
 	<?php 
  $fields=array(
     'author' => '<div class="form-group col-xs-6"><input name="author" id="author" value="" type="text"  placeholder="Your name"  /></div>',

@@ -67,6 +67,7 @@
 						query_posts( $args );
 						if(query_posts( $args ))
 					{	
+						$i=1;
 						while(have_posts()):the_post();
 					{ ?>
 					<div class="col-md-6">
@@ -91,7 +92,15 @@
 							</div>
 						</div>
 					</div>
-					<?php } endwhile; } ?>
+					<?php
+					}					
+					if($i==2)
+					{ 
+					echo '<div class="clearfix"></div>';
+					$i=0;
+					}$i++;
+					wp_reset_postdata();
+					endwhile;  } ?>
 				</div>
 			</div>
 			<!-- /Blog Post -->
