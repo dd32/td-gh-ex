@@ -3,13 +3,13 @@ Theme Name: AccessPress Parallax
 Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-parallax/
 Author: AccessPress Themes
 Author URI: https://accesspressthemes.com/
-Description: AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is being adopted because 3D effects are possible with it, you can add some sphere to your product, it is the best way of storytelling, you can draw your visitors in, it is interactive, engaging, makes your visitors curious, fun, surprise, effective to trigger action, invite your visitors in great Call to Action, great conversion rates and many more. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! Demo: http://accesspressthemes.com/theme-demos/?theme=accesspress-parallax Support forum: https://accesspressthemes.com/support/ Pro version: https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/ 
-Version: 1.25.7
+Description: AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is widely implemented these days. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! More over the theme is fully translation ready, WooCommerce Compatible, bbPress Compatible and fully support multilanguage via POLYLANG plugin. Demo: http://accesspressthemes.com/theme-demos/?theme=accesspress-parallax Support forum: https://accesspressthemes.com/support/ Pro version: https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/ 
+Version: 1.25.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: accesspress-parallax
 Domain Path: /languages/
-Tags: black, blue, custom-background, custom-colors, custom-header, custom-menu, dark, featured-images, fluid-layout, gray, light, one-column, orange, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns, white
+Tags: custom-background, custom-colors, custom-header, custom-menu, featured-images, one-column, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns, grid-layout, footer-widgets, blog, e-commerce, photography, portfolio
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -446,10 +446,6 @@ Widgets
 #secondary .widget{
 	background: #FFF;
 	padding: 15px;
-}
-
-#secondary .widget:last-child{
-	margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1729,16 +1725,21 @@ Footer Section
 .top-footer .top-footer-wrap{
     margin-left:-2%;
 }
+
+.footer-column-1.top-footer .top-footer-wrap{
+	margin-left: 0;
+}
 .footer-column-1 .footer-block{
 	width: 100%;
+	margin-left: 0;
 }
 .footer-column-2 .footer-block{
 	width: 48%;
-	margin-right: 2%
+	margin-left: 2%
 }
 .footer-column-3 .footer-block{
 	width: 31.333%;
-	margin-right: 2%
+	margin-left: 2%
 }
 .footer-column-4 .footer-block{
 	width: 23%;
@@ -1765,7 +1766,9 @@ Footer Section
 .site-info{
 	float:right;
 }
-
+.site-info a{
+	text-decoration: underline;
+}
 .tagcloud a{
 	background: #000;
 	padding:10px 15px;

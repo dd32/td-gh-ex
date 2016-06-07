@@ -41,12 +41,16 @@
 					
 			<?php 
 			$sections = of_get_option('parallax_section');
-			if(of_get_option('enable_parallax') == 1 && of_get_option('enable_parallax_nav') == 1):
+			if((of_get_option('enable_parallax') == 1 && of_get_option('enable_parallax_nav') == 1) || (is_page_template('home-page.php') && of_get_option('enable_parallax_nav') == 1)):
 			?>
 			<ul class="nav single-page-nav">
 				<?php
 				$home_text = of_get_option('home_text');
-				if(of_get_option('show_slider')== "yes" && !empty($home_text)) : ?>
+				if(of_get_option('show_slider')== "yes" && !empty($home_text)) : 
+					if(function_exists('pll__')){
+						$home_text = pll__($home_text);
+					}
+					?>
 					<li class="current"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#main-slider"><?php echo esc_attr($home_text); ?></a></li>
 				<?php endif;
 				

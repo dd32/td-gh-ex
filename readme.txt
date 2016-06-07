@@ -89,6 +89,12 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.25.8
+* Logo alignment bug fixed for centered logo in Responsive Layout
+* Responsive bug fixed for the footer
+* Header Menu Bug fixed for home page template
+* PolyLang support for Theme Option Panel Text
+
 Version 1.25.7
 * Section Files Compatibility with Child Theme
 * CSS bug on bottom margin of the Google Map Section fixed

@@ -187,7 +187,7 @@ add_action('accesspress_bxslider','accesspress_bxslidercb', 10);
 //add class for parallax
 function accesspress_is_parallax($class){
 	$is_parallax = of_get_option('enable_parallax');
-	if($is_parallax=='1'):
+	if($is_parallax=='1' || is_page_template('home-page.php')):
 		$class[] = "parallax-on"; 
 	endif;
 	return $class;
@@ -346,6 +346,18 @@ function accesspress_letter_count($content, $limit) {
 	}
 	return $limit_content;
 }
+
+
+
+function accesspress_register_string(){
+	if(function_exists('pll_register_string')){
+		$home_text = of_get_option('home_text');
+		pll_register_string('Menu: Home Text', $home_text ,'Theme Option Text');
+	}
+}
+
+add_action('after_setup_theme','accesspress_register_string');
+
 
 function accesspress_required_plugins() {
     /**
